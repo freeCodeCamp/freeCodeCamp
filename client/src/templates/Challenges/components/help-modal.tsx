@@ -6,7 +6,7 @@ import { Button, FormControl, Modal, Spacer } from '@freecodecamp/ui';
 
 import { t } from 'i18next';
 import envData from '../../../../config/env.json';
-import { createQuestion, closeModal } from '../redux/actions';
+import { createQuestion, closeModal, openModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
 
 import './help-modal.css';
@@ -19,6 +19,9 @@ interface HelpModalProps {
   challengeTitle: string;
   challengeBlock: string;
   superBlock: string;
+  guideUrl?: string;
+  videoUrl?: string;
+  openVideoModal: () => void;
 }
 
 const { forumLocation } = envData;
@@ -31,7 +34,11 @@ const mapStateToProps = (state: unknown) => ({
 });
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { createQuestion, closeHelpModal: () => closeModal('help') },
+    {
+      createQuestion,
+      closeHelpModal: () => closeModal('help'),
+      openVideoModal: () => openModal('video')
+    },
     dispatch
   );
 
@@ -43,7 +50,6 @@ export const generateSearchLink = (
   const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
-
   const search = `${forumLocation}/search?q=${query}`;
   return search;
 };
@@ -99,7 +105,10 @@ function HelpModal({
   isOpen,
   challengeBlock,
   superBlock,
-  challengeTitle
+  challengeTitle,
+  guideUrl,
+  videoUrl,
+  openVideoModal
 }: HelpModalProps): JSX.Element {
   const { t } = useTranslation();
   const [showHelpForm, setShowHelpForm] = useState(false);
@@ -136,6 +145,11 @@ function HelpModal({
     resetFormValues();
   };
 
+  const handleOpenVideo = () => {
+    openVideoModal();
+    handleClose();
+  };
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -149,13 +163,17 @@ function HelpModal({
     closeHelpModal();
   };
 
+  const hintUrl = guideUrl
+    ? guideUrl
+    : generateSearchLink(challengeTitle, challengeBlock, superBlock);
+
   if (isOpen) {
     callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
     <Modal onClose={handleClose} open={!!isOpen}>
       <Modal.Header closeButtonClassNames='close'>
-        {t('buttons.ask-for-help')}
+        {t('buttons.get-help')}
       </Modal.Header>
       <Modal.Body>
         {showHelpForm ? (
@@ -253,37 +271,38 @@ function HelpModal({
           </form>
         ) : (
           <>
-            <div className='help-text-warning'>
-              <p>
-                <Trans i18nKey='learn.tried-rsa'>
-                  <a href={RSA} rel='noopener noreferrer' target='_blank'>
-                    placeholder
-                  </a>
-                </Trans>
-              </p>
-              <p>
-                <Trans i18nKey='learn.rsa-forum'>
-                  <a
-                    href={generateSearchLink(
-                      challengeTitle,
-                      challengeBlock,
-                      superBlock
-                    )}
-                    rel='noopener noreferrer'
-                    target='_blank'
-                  >
-                    placeholder
-                  </a>
-                  placeholder
-                </Trans>
-              </p>
-            </div>
-
+            <Button
+              block={true}
+              size='large'
+              variant='primary'
+              href={hintUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+              data-playwright-test-label='get-hint-modal-button'
+            >
+              {t('buttons.get-hint')}
+            </Button>
+            <Spacer size='xxs' />
+            {videoUrl && (
+              <>
+                <Button
+                  block={true}
+                  size='large'
+                  variant='primary'
+                  onClick={handleOpenVideo}
+                  data-playwright-test-label='watch-a-video-modal-button'
+                >
+                  {t('buttons.watch-video')}
+                </Button>
+                <Spacer size='xxs' />
+              </>
+            )}
             <Button
               block={true}
               size='large'
               variant='primary'
               onClick={() => setShowHelpForm(true)}
+              data-playwright-test-label='create-post-modal-button'
             >
               {t('buttons.create-post')}
             </Button>
@@ -292,7 +311,7 @@ function HelpModal({
               block={true}
               size='large'
               variant='primary'
-              onClick={closeHelpModal}
+              onClick={handleClose}
             >
               {t('buttons.cancel')}
             </Button>

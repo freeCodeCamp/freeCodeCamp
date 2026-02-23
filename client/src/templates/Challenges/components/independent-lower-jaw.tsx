@@ -4,7 +4,14 @@ import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLightbulb, faClose, faZap } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLightbulb,
+  faClose,
+  faZap,
+  faSave,
+  faClockRotateLeft,
+  faRotateLeft
+} from '@fortawesome/free-solid-svg-icons';
 import Progress from '../../../components/Progress';
 import {
   completedChallengesIdsSelector,
@@ -19,12 +26,12 @@ import {
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
 import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
 
 import './independent-lower-jaw.css';
-import Reset from '../../../assets/icons/reset';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -54,7 +61,8 @@ const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
   executeChallenge,
-  submitChallenge
+  submitChallenge,
+  saveChallenge
 };
 
 interface IndependentLowerJawProps {
@@ -62,6 +70,7 @@ interface IndependentLowerJawProps {
   openResetModal: () => void;
   executeChallenge: () => void;
   submitChallenge: () => void;
+  saveChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
   challengeMeta: ChallengeMeta;
@@ -74,6 +83,7 @@ export function IndependentLowerJaw({
   openResetModal,
   executeChallenge,
   submitChallenge,
+  saveChallenge,
   tests,
   isSignedIn,
   challengeMeta,
@@ -127,6 +137,7 @@ export function IndependentLowerJaw({
   };
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
+  const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
@@ -237,15 +248,38 @@ export function IndependentLowerJaw({
           )}
         </div>
         <div className='action-row-right'>
-          <button
-            type='button'
-            className='icon-botton tooltip'
-            data-playwright-test-label='independentLowerJaw-reset-button'
-            onClick={openResetModal}
-          >
-            <Reset />
-            <span className='tooltiptext'> {t('buttons.reset')}</span>
-          </button>
+          {showRevertButton ? (
+            <>
+              <button
+                type='button'
+                className='icon-botton tooltip'
+                data-playwright-test-label='independentLowerJaw-save-button'
+                onClick={() => saveChallenge()}
+              >
+                <FontAwesomeIcon icon={faSave} />
+                <span className='tooltiptext'> {t('buttons.save')}</span>
+              </button>
+              <button
+                type='button'
+                className='icon-botton tooltip'
+                data-playwright-test-label='independentLowerJaw-revert-button'
+                onClick={openResetModal}
+              >
+                <FontAwesomeIcon icon={faClockRotateLeft} />
+                <span className='tooltiptext'> {t('buttons.revert')}</span>
+              </button>
+            </>
+          ) : (
+            <button
+              type='button'
+              className='icon-botton tooltip'
+              data-playwright-test-label='independentLowerJaw-reset-button'
+              onClick={openResetModal}
+            >
+              <FontAwesomeIcon icon={faRotateLeft} />
+              <span className='tooltiptext'> {t('buttons.reset')}</span>
+            </button>
+          )}
           <button
             type='button'
             className='icon-botton tooltip'

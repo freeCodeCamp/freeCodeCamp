@@ -315,7 +315,7 @@ function ShowClassic({
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
 
-  // Independent lower jaw is only enabled for desktop workshops.
+  // Independent lower jaw is only enabled for desktop.
   const showIndependentLowerJaw = !isMobile;
 
   useEffect(() => {
@@ -545,6 +545,8 @@ function ShowClassic({
           challengeTitle={title}
           challengeBlock={block}
           superBlock={superBlock}
+          guideUrl={guideUrl ? guideUrl : undefined}
+          videoUrl={videoUrl}
         />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal
