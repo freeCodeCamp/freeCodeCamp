@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Frontend Development Libraries V8",
+    "title": "Front-End Development Libraries V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular frontend libraries in the industry.",
-      "In the Frontend Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front-end libraries in the industry.",
+      "In the Front-End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Mais tarde, você construirá um carrinho de compras e outras aplicações para aprender a criar Aplicativos de Página Única (Single Page Applications - SPA) poderosos com React e Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a frontend framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap is a front-end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "Neste curso, você aprenderá a criar sites responsivos com Bootstrap, e usará as classes que ele tem para estilizar botões, imagens, formulários, navegação e outros elementos comuns."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Frontend Development Libraries Projects",
+        "title": "Front-End Development Libraries Projects",
         "intro": [
-          "It's time to put your frontend development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Frontend Development Libraries certification."
+          "It's time to put your front-end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Front-End Development Libraries certification."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Backend Development and APIs V8",
+    "title": "Back-End Development and APIs V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the frontend to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
+      "Until this point, you've only used JavaScript on the front-end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back-end, or server, to build entire web applications.",
       "Hoje em dia, uma das formas populares de se criar aplicações é através do uso de microsserviços, que são pequenas aplicações modulares que trabalham em conjunto para formar uma aplicação maior inteira.",
-      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "In the Back-End Development and APIs Certification, you'll learn how to write back-end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -714,7 +714,7 @@
       "basic-node-and-express": {
         "title": "Básico sobre Node e Express",
         "intro": [
-          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "Node.js is a JavaScript runtime that allows developers to write back-end (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
           "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
           "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
           "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Backend Development and APIs Projects",
+        "title": "Back-End Development and APIs Projects",
         "intro": [
           "Você já trabalhou com APIs antes, mas agora que você conhece o npm, Node, Express, MongoDB e o Mongoose, é hora de construir a sua própria API. Utilize tudo o que você aprendeu até esse ponto para criar 5 microsserviços diferentes – aplicações menores e com escopo limitado.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back-End Development and APIs Certification, too."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "Agora é hora de fazer um mergulho profundo no Node.js e no Express.js, construindo uma aplicação de chat com um sistema de login.",
           "Para implementar o sistema de login de forma segura, você precisará saber sobre autenticação. Este é o ato de verificar a identidade de uma pessoa ou um processo.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the frontend, and web sockets for real-time communication between the clients and server."
+          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front-end, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Projetos de garantia de qualidade",
         "intro": [
-          "Now that you're well versed in both the frontend and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Now that you're well versed in both the front-end and back-end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
           "Depois de concluir estes projetos de garantia de qualidade (QA), você terá mais 5 projetos e uma nova certificação para exibir em seu portfólio."
         ]
       }
@@ -3239,6 +3239,18 @@
           "Neste laboratório, você implementará o algoritmo bubble sort para ordenar um array de inteiros em ordem crescente."
         ]
       },
+      "lab-selection-sort-js": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "lab-insertion-sort": {
+        "title": "Implement the Insertion Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the insertion sort algorithm to sort an array of integers in ascending order."
+        ]
+      },
       "lab-quicksort-js": {
         "title": "Implement the Quicksort Algorithm",
         "intro": [
@@ -3337,17 +3349,17 @@
     }
   },
   "front-end-development-libraries-v9": {
-    "title": "Frontend Development Libraries Certification",
+    "title": "Front-End Development Libraries Certification",
     "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Recomendamos completar os cursos disponíveis abaixo para se preparar para o exame de certificação assim que for lançado.",
     "intro": [
       "Este curso ensina as bibliotecas que os desenvolvedores utilizam para criar páginas da web: React, TypeScript, e mais.",
-      "To earn your Frontend Development Libraries Certification:",
+      "To earn your Front-End Development Libraries Certification:",
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
-      "- Pass the Frontend Development Libraries Certification exam."
+      "- Pass the Front-End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Frontend Development Libraries",
-      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
+      "front-end-development-libraries": "Front-End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "Fundamentos do React",
@@ -3359,8 +3371,8 @@
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
       "data-visualization": "Visualização de dados e D3",
       "typescript-fundamentals": "Fundamentos do TypeScript",
-      "review-front-end-libraries": "Frontend Libraries Review",
-      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
+      "review-front-end-libraries": "Front-End Libraries Review",
+      "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
       "data-visualization": {
@@ -3378,7 +3390,7 @@
       "front-end-development-libraries-certification-exam": {
         "note": "Próximo Lançamento: 2026",
         "intro": [
-          "Pass this exam to earn your Frontend Development Libraries Certification."
+          "Pass this exam to earn your Front-End Development Libraries Certification."
         ]
       }
     },
@@ -3386,7 +3398,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introdução às Bibliotecas e Frameworks JavaScript",
         "intro": [
-          "Nestes ensinamentos, você receberá uma introdução às bibliotecas e frameworks JavaScript. Você aprenderá sobre os papéis das bibliotecas e frameworks JavaScript, aplicativos de página única (SPAs) e o problema que os cerca, e React, a biblioteca JavaScript para frontend mais popular."
+          "In these lessons, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular front-end JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -3655,6 +3667,12 @@
           "Nestes cursos, você aprenderá o que é TypeScript e como usá-lo."
         ]
       },
+      "lecture-understanding-type-composition": {
+        "title": "Understanding Type Composition",
+        "intro": [
+          "In these lessons, you will learn how to work with union types, interfaces, void types and more."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Trabalhando com Generics e Redução de Tipos",
         "intro": [
@@ -3681,15 +3699,15 @@
         ]
       },
       "review-front-end-libraries": {
-        "title": "Frontend Libraries Review",
+        "title": "Front-End Libraries Review",
         "intro": [
-          "Review the Frontend Libraries concepts to prepare for the upcoming quiz."
+          "Review the Front-End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
       "exam-front-end-development-libraries-certification": {
-        "title": "Frontend Development Libraries Certification Exam",
+        "title": "Front-End Development Libraries Certification Exam",
         "intro": [
-          "Pass this exam to earn your Frontend Development Libraries Certification"
+          "Pass this exam to earn your Front-End Development Libraries Certification"
         ]
       }
     }
@@ -4432,17 +4450,17 @@
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Backend Development and APIs Certification",
+    "title": "Back-End Development and APIs Certification",
     "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve.",
     "intro": [
-      "This course teaches you the fundamentals of backend development and APIs.",
-      "To earn your Backend Development and APIs Certification:",
+      "This course teaches you the fundamentals of back-end development and APIs.",
+      "To earn your Back-End Development and APIs Certification:",
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
-      "- Pass the Backend Development and APIs Certification exam."
+      "- Pass the Back-End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Backend Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Back-End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "modules": {
       "introduction-to-nodejs": "Introdução a Node.js",
@@ -4458,7 +4476,7 @@
       "security-and-privacy": "Segurança e Privacidade",
       "authentication": "Autenticação",
       "tooling-and-deployment": "Ferramentas e Implantação",
-      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
@@ -4542,7 +4560,7 @@
       "back-end-development-and-apis-certification-exam": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
-          "Pass this exam to earn your Backend Development and APIs Certification."
+          "Pass this exam to earn your Back-End Development and APIs Certification."
         ]
       }
     },
@@ -4550,7 +4568,7 @@
       "lecture-working-with-nodejs-and-event-driven-architecture": {
         "title": "Trabalhando com o NodeJS e com a arquitetura orientada a eventos",
         "intro": [
-          "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no seu computador e as vantagens e desvantagens de usar o Node.js no backend."
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
       },
       "review-node-js-core-modules": {
@@ -4600,9 +4618,9 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Backend Development and APIs Certification Exam",
+        "title": "Back-End Development and APIs Certification Exam",
         "intro": [
-          "Pass this exam to earn your Backend Development and APIs Certification"
+          "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
       }
     }
