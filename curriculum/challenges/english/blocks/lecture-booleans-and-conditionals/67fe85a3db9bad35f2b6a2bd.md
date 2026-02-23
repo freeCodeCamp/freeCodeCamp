@@ -75,6 +75,42 @@ print('You are an adult') # IndentationError: expected an indented block after '
 
 Though you can use any number spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
 
+The following code would raise a SyntaxError, which is Python's way to signal that the structure of the conditional statement is incorrect:
+
+```py
+age = 18
+
+if age >= 18:
+    print('You are an adult')
+
+print('Checking age...')
+
+else:
+    print('You are a minor')  # SyntaxError: invalid syntax
+```
+
+This happens because no statements are allowed between an if block and its corresponding else clause. The else must immediately follow the if block.
+
+The following code would also raise a SyntaxError, because an else clause cannot exist without a preceding if statement:
+
+```py
+else:
+    print('This will not work')  # SyntaxError: invalid syntax
+```
+An else clause must always follow an if or elif statement.
+
+
+The following code would raise a SyntaxError, which indicates that Python expected a colon (:) after the condition:
+
+```py
+age = 18
+
+if age >= 18
+    print('You are an adult')  # SyntaxError: expected ':'
+```
+
+Python requires a colon at the end of every if, elif, and else statement to define the beginning of a block.
+
 Blocks are also found in loops and functions, which you'll learn about in future lessons.
 
 Going back to our example, if `age` is anything less than `18`, nothing is printed in the terminal:
