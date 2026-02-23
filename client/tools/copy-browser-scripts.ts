@@ -8,12 +8,13 @@ const browserScriptDist = resolve(
 );
 
 const destJsDir = resolve(__dirname, '../static/js');
+const srcJsDir = resolve(browserScriptDist, './js');
 
 // Everything is done synchronously to keep the script simple. There's no
 // performance benefit to doing this asynchronously since it's already so fast.
 rmSync(destJsDir, { recursive: true, force: true });
 mkdirSync(destJsDir, { recursive: true });
 
-cpSync(resolve(browserScriptDist, 'artifacts'), destJsDir, {
+cpSync(srcJsDir, destJsDir, {
   recursive: true
 });

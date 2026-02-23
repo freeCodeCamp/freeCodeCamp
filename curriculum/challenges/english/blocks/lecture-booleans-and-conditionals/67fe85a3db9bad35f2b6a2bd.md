@@ -111,10 +111,10 @@ There might be situations in which you want to account for multiple conditions. 
 Here's the syntax:
 
 ```python
-if condition:
-   pass # Code to execute if condition is True
+if condition1:
+   pass # Code to execute if condition1 is True
 elif condition2:
-   pass # Code to execute if condition2 is True
+   pass # Code to execute if condition1 is False and condition2 is True
 else:
    pass # Code to execute if all conditions are False
 ```

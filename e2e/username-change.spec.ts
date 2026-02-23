@@ -26,12 +26,6 @@ test.describe('Username Settings Validation', () => {
     execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(`/certifieduser`);
 
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
-
     await page.getByRole('button', { name: 'Edit my profile' }).click();
   });
 

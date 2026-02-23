@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import { join } from 'path';
 import { describe, it, expect, vi } from 'vitest';
 import { getBlockStructure } from '@freecodecamp/curriculum/file-handler';

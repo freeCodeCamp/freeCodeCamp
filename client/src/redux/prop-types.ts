@@ -3,7 +3,10 @@ import type {
   ChallengeLang,
   SuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
-import type { CertificationFlags } from '@freecodecamp/shared/config/certification-settings';
+import type {
+  Certification,
+  CertificationFlags
+} from '@freecodecamp/shared/config/certification-settings';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
@@ -30,8 +33,7 @@ export type MarkdownRemark = {
   frontmatter: {
     block: string;
     superBlock: SuperBlocks;
-    // TODO: make enum like superBlock
-    certification: string;
+    certification: Certification;
     title: CertTitle;
   };
   html: string;
@@ -209,7 +211,7 @@ export type ChallengeNode = {
     block: string;
     blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
-    certification: string;
+    certification: Certification;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
@@ -347,16 +349,32 @@ type Quiz = {
   questions: QuizQuestion[];
 };
 
+type QuizAudio = {
+  filename: string;
+  startTimestamp?: number | null;
+  finishTimestamp?: number | null;
+};
+
+type QuizTranscriptLine = {
+  character: string;
+  text: string;
+};
+
+type QuizAudioData = {
+  audio: QuizAudio;
+  transcript: QuizTranscriptLine[];
+};
+
 type QuizQuestion = {
   text: string;
   distractors: string[];
   answer: string;
+  audioData?: QuizAudioData | null;
 };
 
 export type CertificateNode = {
   challenge: {
-    // TODO: use enum
-    certification: string;
+    certification: Certification;
     tests: { id: string }[];
   };
 };

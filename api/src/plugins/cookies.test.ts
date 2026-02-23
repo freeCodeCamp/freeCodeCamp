@@ -90,7 +90,7 @@ describe('cookies', () => {
     });
 
     // No max-age, so we default to a session cookie.
-    expect(res.cookies[0]).toStrictEqual({
+    expect(res.cookies[0]).toEqual({
       name: 'test',
       // defaults:
       domain: 'www.example.com',

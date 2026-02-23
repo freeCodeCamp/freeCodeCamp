@@ -258,7 +258,15 @@ describe('userRoutes', () => {
       const lockedUserProfileUI = {
         isLocked: true,
         showAbout: true,
-        showPortfolio: false
+        showCerts: true,
+        showDonation: true,
+        showExperience: true,
+        showHeatMap: true,
+        showLocation: true,
+        showName: true,
+        showPoints: true,
+        showPortfolio: true,
+        showTimeLine: true
       };
       const unlockedUserProfileUI = {
         isLocked: false,
@@ -498,7 +506,17 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
-      experience: [],
+      experience: [
+        {
+          id: 'exp1',
+          title: 'Developer',
+          company: 'Company',
+          location: 'Location',
+          startDate: '01/2020',
+          endDate: '12/2022',
+          description: 'Description'
+        }
+      ],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -609,6 +627,16 @@ describe('get-public-profile helpers', () => {
       };
       expect(replacePrivateData(userWithoutPortfolio)).toMatchObject({
         portfolio: []
+      });
+    });
+
+    test('returns [] for experience if showExperience is not true', () => {
+      const userWithoutExperience = {
+        ...user,
+        profileUI: { ...user.profileUI, showExperience: false }
+      };
+      expect(replacePrivateData(userWithoutExperience)).toMatchObject({
+        experience: []
       });
     });
 

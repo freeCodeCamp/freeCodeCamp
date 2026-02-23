@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import { describe, it, expect } from 'vitest';
 import { getProjectName, getProjectPath } from './get-project-info.js';
 

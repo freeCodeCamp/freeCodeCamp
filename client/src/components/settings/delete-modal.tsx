@@ -36,9 +36,9 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
         <p>{t('settings.danger.delete-p1')}</p>
         <p>{t('settings.danger.delete-p2')}</p>
         <p>
-          <Trans i18nKey='settings.danger.delete-p3'>
+          <Trans i18nKey='settings.danger.delete-p3' values={{ email }}>
             <a href={`mailto:${email}`} title={email}>
-              {{ email }}
+              {'{{email}}'}
             </a>
           </Trans>
         </p>
