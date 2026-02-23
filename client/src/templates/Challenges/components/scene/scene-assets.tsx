@@ -454,7 +454,7 @@ export const characterAssets = {
   Esteban: characterImages.esteban,
   Joaquín: characterImages.joaquin,
   Julieta: characterImages.julieta,
-  Luis: characterImages.bob,
+  Luis: characterImages.luis,
   Luna: characterImages.luna,
   Marisol: characterImages.marisol,
   Mateo: characterImages.mateo,
