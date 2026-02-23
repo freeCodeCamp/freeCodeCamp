@@ -11,19 +11,20 @@ test.describe('Tool Panel', () => {
     page,
     isMobile
   }) => {
-    await page
-      .getByRole('button', {
-        name: 'Run',
-        exact: false
-      })
-      .click();
-
     if (isMobile) {
+      await page
+        .getByRole('button', {
+          name: 'Run',
+          exact: false
+        })
+        .click();
       await page
         .getByRole('tab', {
           name: 'Console'
         })
         .click();
+    } else {
+      await page.getByTestId('independentLowerJaw-check-button').click();
     }
 
     await expect(page.getByTestId('output-text')).toContainText(
@@ -40,9 +41,7 @@ test.describe('Tool Panel', () => {
         .getByRole('button', { name: translations.buttons['reset'] })
         .click();
     } else {
-      await page
-        .getByRole('button', { name: translations.buttons['reset-lesson'] })
-        .click();
+      await page.getByTestId('independentLowerJaw-reset-button').click();
     }
     await expect(
       page.getByRole('heading', { name: translations.learn.reset })
@@ -50,8 +49,10 @@ test.describe('Tool Panel', () => {
   });
 
   test('should display list with expected links after clicking "Get Help"', async ({
-    page
+    page,
+    isMobile
   }) => {
+    test.skip(!isMobile, 'Help dropdown only available on mobile');
     const expectedHelpLinks = [
       `${translations.buttons['get-hint']} , ${translations.aria['opens-new-window']}`,
       translations.buttons['watch-video'],

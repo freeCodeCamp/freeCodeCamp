@@ -1,6 +1,7 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { clearEditor, focusEditor } from './utils/editor';
+
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
     execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
@@ -25,9 +26,10 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.type('save1text');
     await expect(page.getByText('save1text')).toBeVisible();
 
-    await page
-      .getByRole('button', { name: !isMobile ? 'Save your Code' : 'Save' })
-      .click();
+    const saveButton = isMobile
+      ? page.getByRole('button', { name: 'Save' })
+      : page.getByTestId('independentLowerJaw-save-button');
+    await saveButton.click();
 
     await expect(page.getByTestId('flash-message')).toContainText(success);
 

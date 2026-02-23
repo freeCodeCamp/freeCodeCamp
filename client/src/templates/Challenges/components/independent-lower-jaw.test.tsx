@@ -22,6 +22,7 @@ const baseProps = {
   openResetModal: vi.fn(),
   executeChallenge: vi.fn(),
   submitChallenge: vi.fn(),
+  saveChallenge: vi.fn(),
   tests: passingTests,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
