@@ -1,0 +1,20 @@
+{
+  "name": "Build a Bill Splitter",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-bill-splitter",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69757cc0faae0152c1418aad", "title": "Step 1" },
+    { "id": "6976cc0b0c135686a4620b94", "title": "Step 2" },
+    { "id": "6976d8a7cd2a1a5ffcd7f9c4", "title": "Step 3" },
+    { "id": "6982684f3a25f379e195a5fc", "title": "Step 4" },
+    { "id": "69779dcb44016eccc05c15a4", "title": "Step 5" },
+    { "id": "6977a4306bb3e856690a4890", "title": "Step 6" },
+    { "id": "6977a8bbcbdd557886bd0718", "title": "Step 7" },
+    { "id": "697a7f71ebfcd9e4cacd69c2", "title": "Step 8" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
