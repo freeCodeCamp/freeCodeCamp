@@ -45,6 +45,12 @@ You should assign a number to your `distance_mi` variable.
 ({ test: () => runPython(`assert isinstance(distance_mi, (int, float))`) })
 ```
 
+If the value of `distance_mi` is falsy, print `False`
+
+```js
+({ test: () => runPython(`assert bool(distance_mi)`) })
+```
+
 You should have a variable named `is_raining`.
 
 ```js
