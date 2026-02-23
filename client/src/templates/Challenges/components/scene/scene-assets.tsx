@@ -33,6 +33,7 @@ const character = {
   esteban: `${characters}/esteban`,
   joaquin: `${characters}/joaquin`,
   julieta: `${characters}/julieta`,
+  luis: `${characters}/luis`,
   luna: `${characters}/luna`,
   marisol: `${characters}/marisol`,
   mateo: `${characters}/mateo`,
@@ -287,6 +288,15 @@ const characterImages = {
     glasses: null,
     mouthClosed: `${character.luna}/mouth-smile.png`,
     mouthOpen: `${character.luna}/mouth-open.png`
+  },
+  luis: {
+    base: `${character.luis}/base.png`,
+    brows: `${character.luis}/brows-neutral.png`,
+    eyesClosed: `${character.luis}/eyes-closed.png`,
+    eyesOpen: `${character.luis}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.luis}/mouth-smile.png`,
+    mouthOpen: `${character.luis}/mouth-open.png`
   },
   marisol: {
     base: `${character.marisol}/base.png`,
