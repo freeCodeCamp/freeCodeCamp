@@ -7,15 +7,7 @@ dashedName: step-7
 
 # --description--
 
-Now create a function called `addHabitat`.
-
-The function should take two parameters: `animal` and `habitat`.
-
-Inside the function, add a new property called `habitat` to the `animal` object.
-
-Set its value equal to the `habitat` parameter.
-
-Return the updated `animal` object.
+In this step, you will create a function that adds a new property to an object.
 
 Here is an example of adding a property inside a function:
 
@@ -38,28 +30,47 @@ console.log(addColor(cat, "White"));
 
 In this example, the `color` property is added to the `cat` object.
 
+Now create a function called `addHabitat`.
+
+The function should take two parameters: `animal` and `habitat`.
+
+Inside the function, add a new property called `habitat` to the `animal` object.
+
+Set its value equal to the `habitat` parameter.
+
+Return the updated `animal` object.
+
 After creating the function, use `console.log` to call `addHabitat(tiger, "Rainforest")` so you can see the updated `tiger` object in the console.
 
 # --hints--
 
-`addHabitat` should be a function.
+You should create a function named `addHabitat`.
 
 ```js
+assert.exists(addHabitat);
 assert.isFunction(addHabitat);
 ```
 
 Calling `addHabitat(tiger, "Rainforest")` should add a habitat property to tiger.
 
 ```js
-addHabitat(tiger, "Rainforest");
-assert.property(tiger, "habitat");
+const updatedTiger = addHabitat(tiger, "Rainforest");
+
+assert.deepEqual(updatedTiger, {
+  species: "Tiger",
+  age: 5,
+  isEndangered: true,
+  habitat: "Rainforest"
+});
 ```
 
-`tiger.habitat` should equal "Rainforest".
+`addHabitat` should use the function parameters and work with any object.
 
 ```js
-addHabitat(tiger, "Rainforest");
-assert.strictEqual(tiger.habitat, "Rainforest");
+const lion = { species: "Lion" };
+const updatedLion = addHabitat(lion, "Savanna");
+
+assert.strictEqual(updatedLion.habitat, "Savanna");
 ```
 
 # --seed--
