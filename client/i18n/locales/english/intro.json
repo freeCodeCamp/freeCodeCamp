@@ -3212,6 +3212,12 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introduction to Common Searching and Sorting Algorithms",
         "intro": [
