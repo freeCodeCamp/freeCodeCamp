@@ -51,6 +51,12 @@ assert.exists(addHabitat);
 assert.isFunction(addHabitat);
 ```
 
+The `addHabitat` function should have two parameters.
+
+```js
+assert.lengthOf(addHabitat, 2);
+```
+
 Calling `addHabitat(tiger, "Rainforest")` should add a habitat property to tiger.
 
 ```js
