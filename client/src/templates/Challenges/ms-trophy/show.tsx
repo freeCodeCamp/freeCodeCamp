@@ -16,14 +16,12 @@ import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import { getChallengePaths } from '../utils/challenge-paths';
-import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import HelpModal from '../components/help-modal';
 import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues,
-  submitChallenge,
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
@@ -33,6 +31,7 @@ import {
   msUsernameSelector
 } from '../../../redux/selectors';
 import LinkMsUser from './link-ms-user';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -59,8 +58,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateSolutionFormValues,
       openCompletionModal: () => openModal('completion'),
       openHelpModal: () => openModal('help'),
-      setIsProcessing,
-      submitChallenge
+      setIsProcessing
     },
     dispatch
   );
@@ -79,7 +77,6 @@ interface MsTrophyProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
-  submitChallenge: () => void;
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
@@ -94,7 +91,7 @@ function MsTrophy(props: MsTrophyProps) {
     }
   } = props;
 
-  useFetchAllCurriculumData();
+  const submitChallenge = useSubmit();
 
   useEffect(() => {
     const {
@@ -128,7 +125,7 @@ function MsTrophy(props: MsTrophyProps) {
   }, []);
 
   const handleSubmit = () => {
-    const { setIsProcessing, submitChallenge } = props;
+    const { setIsProcessing } = props;
 
     setIsProcessing(true);
     submitChallenge();

@@ -32,7 +32,6 @@ import {
   updateChallengeMeta,
   openModal,
   closeModal,
-  submitChallenge,
   setUserCompletedExam,
   updateSolutionFormValues,
   initTests
@@ -55,12 +54,12 @@ import {
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
 import { getChallengePaths } from '../utils/challenge-paths';
-import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
 import MissingPrerequisites from './components/missing-prerequisites';
 import FoundationalCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './exam.css';
 
@@ -102,7 +101,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       stopExam,
       setUserCompletedExam,
       clearExamResults,
-      submitChallenge,
       initTests,
       updateChallengeMeta,
       updateSolutionFormValues
@@ -133,7 +131,6 @@ interface ShowExamProps {
   t: TFunction;
   startExam: () => void;
   stopExam: () => void;
-  submitChallenge: () => void;
   setUserCompletedExam: (arg0: UserExam) => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
@@ -172,6 +169,8 @@ function ShowExam(props: ShowExamProps) {
 
   const container = useRef<HTMLElement>(null);
 
+  const submitChallenge = useSubmit();
+
   const [examTimeInSeconds, setExamTimeInSeconds] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [generatedExamQuestions, setGeneratedExamQuestions] = useState<
@@ -180,8 +179,6 @@ function ShowExam(props: ShowExamProps) {
   const [userExamQuestions, setUserExamQuestions] = useState<
     UserExamQuestion[]
   >([]);
-
-  useFetchAllCurriculumData();
 
   useEffect(() => {
     const {
@@ -312,7 +309,7 @@ function ShowExam(props: ShowExamProps) {
     // TODO: show loader
     cleanUp();
 
-    const { setUserCompletedExam, submitChallenge } = props;
+    const { setUserCompletedExam } = props;
 
     setUserCompletedExam({ userExamQuestions, examTimeInSeconds });
     submitChallenge();

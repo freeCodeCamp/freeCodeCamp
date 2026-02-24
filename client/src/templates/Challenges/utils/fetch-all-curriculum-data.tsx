@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { updateAllChallengesInfo } from '../../../redux/actions';
+import { submitChallenge } from '../redux/actions';
 import {
   updateSuperBlockStructures,
   superBlockStructuresSelector
@@ -114,4 +115,13 @@ export function useFetchAllCurriculumData(): void {
     allChallengesInfo,
     superBlockStructures
   ]);
+}
+
+export function useSubmit() {
+  // The submitChallenge epic needs the curriculum data to be loaded, so this
+  // useFetchAllCurriculumData call must happen first.
+  useFetchAllCurriculumData();
+  const dispatch = useDispatch();
+
+  return () => dispatch(submitChallenge());
 }

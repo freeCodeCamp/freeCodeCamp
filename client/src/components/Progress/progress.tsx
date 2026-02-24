@@ -17,6 +17,7 @@ import {
   formatDisplayDate
 } from '../daily-coding-challenge/helpers';
 import ProgressInner from './progress-inner';
+import { useFetchAllCurriculumData } from '../../templates/Challenges/utils/fetch-all-curriculum-data';
 
 const mapStateToProps = createSelector(
   currentBlockIdsSelector,
@@ -66,6 +67,7 @@ function Progress({
   completedPercent,
   t
 }: ProgressProps): JSX.Element {
+  useFetchAllCurriculumData(); // needed to compute completedPercent
   let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>

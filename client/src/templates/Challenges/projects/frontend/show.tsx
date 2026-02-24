@@ -29,7 +29,6 @@ import {
 } from '../../redux/actions';
 import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
-import { useFetchAllCurriculumData } from '../../utils/fetch-all-curriculum-data';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 import { getChallengePaths } from '../../utils/challenge-paths';
@@ -81,8 +80,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
   };
 
   const container = useRef<HTMLElement>(null);
-
-  useFetchAllCurriculumData();
 
   useEffect(() => {
     const {
