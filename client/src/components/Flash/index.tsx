@@ -31,7 +31,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
       key={id}
       variant={flashStyle}
       className='flash-container'
-      data-playwright-test-label='flash-container'
+      data-playwright-test-label='flash-message'
     >
       <Container>
         <Row>
@@ -42,7 +42,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
             smOffset={1}
             xs={12}
             className='flash-message'
-            data-testid='flash-message'
+            data-testid='flash-message-content'
           >
             {t(message, variables)}
             <CloseButton

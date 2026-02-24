@@ -12,6 +12,7 @@ div.flash-container {
 div.flash-message {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   @media (max-width: 767.99px) {
     padding: 0;
