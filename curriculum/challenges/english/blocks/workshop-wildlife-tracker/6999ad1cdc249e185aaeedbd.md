@@ -16,7 +16,7 @@ const cat = {
   species: "Cat"
 };
 
-function addColor(pet, color) {
+const addColor = (pet, color) => {
   pet.color = color;
   return pet;
 }
