@@ -68,34 +68,34 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('flex'
 
 ```css
 h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-  height: 600px;
-  padding: 10px;
-  margin: 20px auto;
-  align-content: space-evenly;
+	text-align: center;
+	margin-bottom: 10px;
 }
 
 .box {
-  max-height: 120px;
-  color: #000;
-  border: 1px solid #000;
-  display: flex;
+	max-height: 120px;
+	color: #000;
+	border: 1px solid #000;
+	display: flex;
 --fcc-editable-region-- 
-  flex: 0 1 100px;
+	flex: 0 1 100px;
 --fcc-editable-region-- 
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  font-weight: bold;
-  font-size: 1.125rem;
-  border-radius: 5px;
-  order: 0;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+	font-weight: bold;
+	font-size: 1.125rem;
+	border-radius: 5px;
+	order: 0;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 70%;
+	height: 600px;
+	padding: 10px;
+	margin: 20px auto;
+	align-content: space-evenly;
 }
 ```
