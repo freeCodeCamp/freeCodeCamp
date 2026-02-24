@@ -2832,6 +2832,13 @@
           "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
         ]
       },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Build a Longest Word Finder App",
         "intro": [
@@ -3732,10 +3739,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
-        "intro": ["Build a Heritage Library Catalog", ""]
       }
     }
   },
