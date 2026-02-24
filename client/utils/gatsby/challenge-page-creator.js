@@ -17,10 +17,6 @@ const codeAlly = path.resolve(
   __dirname,
   '../../src/templates/Challenges/codeally/show.tsx'
 );
-const intro = path.resolve(
-  __dirname,
-  '../../src/templates/Introduction/intro.tsx'
-);
 const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/super-block-intro.tsx'
@@ -168,25 +164,6 @@ function getProjectPreviewConfig(challenge, allChallengeNodes) {
     }
   };
 }
-
-exports.createBlockIntroPages = function (createPage) {
-  return function (edge) {
-    const {
-      fields: { slug },
-      frontmatter: { block },
-      id
-    } = edge.node;
-
-    createPage({
-      path: slug,
-      component: intro,
-      context: {
-        block,
-        id
-      }
-    });
-  };
-};
 
 exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {

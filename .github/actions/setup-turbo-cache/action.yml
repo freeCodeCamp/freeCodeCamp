@@ -4,8 +4,6 @@
 #   ├─────────────────────────┼─────────────────┼──────────────────┤
 #   │ main (push)             │ YES             │ YES              │
 #   ├─────────────────────────┼─────────────────┼──────────────────┤
-#   │ renovate/*              │ YES             │ YES              │
-#   ├─────────────────────────┼─────────────────┼──────────────────┤
 #   │ PRs / temp-* / hotfix-* │ YES             │ NO               │
 #   ├─────────────────────────┼─────────────────┼──────────────────┤
 #   │ prod-*                  │ NO              │ NO               │
@@ -63,12 +61,10 @@ runs:
         echo "TURBO_TELEMETRY_DISABLED=1" >> $GITHUB_ENV
 
         # Determine if this context should have write access
-        # Write access: main branch push OR renovate branches
+        # Write access: main branch push
         # Read-only: PRs and other branches (can read from cache, can't pollute it)
         if [[ "$GITHUB_REF_NAME" == "main" && "$GITHUB_EVENT_NAME" == "push" ]]; then
           echo "::notice::Main branch push - Turbo cache READ/WRITE enabled"
-        elif [[ "$GITHUB_REF_NAME" == renovate/* ]]; then
-          echo "::notice::Renovate branch - Turbo cache READ/WRITE enabled"
         else
           # All other contexts: read-only
           # Use TURBO_CACHE=remote:r for read-only remote cache (local still read/write)
