@@ -424,11 +424,10 @@ describe('certificate routes', () => {
           }
         });
 
-        vi.spyOn(fastifyTestInstance.prisma.user, 'update').mockImplementation(
-          () => {
-            throw new Error('test');
-          }
-        );
+        vi.spyOn(fastifyTestInstance.prisma, 'user', 'get').mockReturnValue({
+          ...fastifyTestInstance.prisma.user,
+          update: vi.fn().mockRejectedValueOnce(new Error('test'))
+        });
 
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',

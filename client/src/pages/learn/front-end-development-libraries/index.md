@@ -1,9 +1,9 @@
 ---
-title: Frontend Development Libraries
+title: Front-End Development Libraries
 superBlock: front-end-development-libraries
 certification: front-end-development-libraries
 ---
 
-## Introduction to Frontend Development Libraries
+## Introduction to Front-End Development Libraries
 
-This is a stub introduction for Frontend Development Libraries
+This is a stub introduction for Front-End Development Libraries

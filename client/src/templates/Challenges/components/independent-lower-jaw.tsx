@@ -229,7 +229,7 @@ export function IndependentLowerJaw({
               ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip '>
+              <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
             </Button>
@@ -241,7 +241,7 @@ export function IndependentLowerJaw({
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip '>
+              <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
             </button>

@@ -336,7 +336,10 @@ const availableAudios = [
   'ZH_A1_pinyin_compound_finals.mp3',
   'ZH_A1_pinyin_nasal_finals.mp3',
   'ZH_A1_pinyin_special_spelling_rules.mp3',
-  'ZH_A1_pinyin_practice.mp3'
+  'ZH_A1_pinyin_practice.mp3',
+  'ZH_A1_numbers_and_personal_information_numbers_0_10.mp3',
+  'ZH_A1_numbers_and_personal_information_numbers_11_19.mp3',
+  'ZH_A1_numbers_and_personal_information_numbers_20_99.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];

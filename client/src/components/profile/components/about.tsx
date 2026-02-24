@@ -180,6 +180,7 @@ const AboutSettings = ({
                 type='text'
                 value={formValues.name}
                 id='about-name-input'
+                placeholder='Camper Bot'
               />
             </FormGroup>
             <FormGroup controlId='about-location'>
@@ -191,6 +192,7 @@ const AboutSettings = ({
                 type='text'
                 value={formValues.location}
                 id='about-location-input'
+                placeholder='San Francisco, CA'
               />
             </FormGroup>
             <FormGroup controlId='about-picture'>
@@ -202,6 +204,7 @@ const AboutSettings = ({
                 type='url'
                 value={formValues.picture}
                 id='about-picture-input'
+                placeholder='https://github.com/ghost.png'
               />
               {!isPictureUrlValid && (
                 <ShowImageValidationWarning
@@ -218,6 +221,7 @@ const AboutSettings = ({
                 onChange={handleAboutChange}
                 value={formValues.about}
                 id='about-about-input'
+                placeholder='A short bio about yourself'
               />
             </FormGroup>
           </div>

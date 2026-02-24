@@ -19,6 +19,7 @@ import type {
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import {
+  type Certification,
   certSlugTypeMap,
   certificationRequirements,
   superBlockToCertMap
@@ -45,7 +46,7 @@ type Challenge = {
 };
 
 type SuperBlockMapProps = {
-  certification: string;
+  certification: Certification;
   completedChallengeIds: string[];
   disabledBlocks: string[];
   initialExpandedBlock: string;
@@ -66,7 +67,7 @@ const BlockList = ({
   title,
   user
 }: {
-  certification: string;
+  certification: Certification;
   disabledBlocks: string[];
   showCertification: boolean;
   superBlock: SuperBlocks;
