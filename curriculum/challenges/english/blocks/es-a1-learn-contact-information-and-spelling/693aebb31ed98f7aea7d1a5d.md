@@ -1,8 +1,8 @@
 ---
 id: 693aebb31ed98f7aea7d1a5d
-title: Task 21
+title: Task 23
 challengeType: 19
-dashedName: task-21
+dashedName: task-23
 lang: es
 ---
 

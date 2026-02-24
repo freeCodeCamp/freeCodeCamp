@@ -1,8 +1,8 @@
 ---
 id: 69399bbb6d7a7bfeedaddd96
-title: Task 11
+title: Task 13
 challengeType: 22
-dashedName: task-11
+dashedName: task-13
 lang: es
 ---
 
@@ -10,7 +10,13 @@ lang: es
 
 # --description--
 
-In this task, Basti introduces himself using a common Spanish phrase. This structure is widely used when giving your name in both formal and informal settings.
+The verb `escribir` means to write. When Spanish speakers want to explain how a word is written or spelled, they often use the expression `se escribe`.
+
+This form comes from the verb `escribir` and is commonly used before spelling names, emails, or other words letter by letter. For example:
+
+- `Carlos se escribe c-a-r-l-o-s.` – Carlos is spelled c-a-r-l-o-s.  
+
+- `Mi apellido se escribe con z.` – My last name is spelled with z.
 
 # --instructions--
 
@@ -20,38 +26,46 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`BLANK Sebastián Ávila Gómez.`
+`Hola, buenas noches.`
+
+`Me llamo Sebastián Ávila Gómez.`
+
+`Sebastián BLANK BLANK s-e-b-a-s-t-i-á-n, con acento en la última a.`
 
 ## --blanks--
 
-`Me llamo`
+`se`
 
 ### --feedback--
 
-This is the standard way to say "My name is" in Spanish. Make sure to include both words.
+This small word is part of a common expression used when explaining how something is written.
+
+---
+
+`escribe`
+
+### --feedback--
+
+This verb form comes from `escribir` and is used when spelling a word.
 
 # --explanation--
 
-`Me llamo` means "I call myself" and is used to introduce your name in Spanish.
+`Se escribe` is used when explaining how a word or name is written.
 
-It combines the **reflexive pronoun** `me` (myself) with the **verb** `llamar` (to call). For example:
-
-- `Me llamo Ana.` – My name is Ana.
-
-- `Me llamo Juan Pérez.` – My name is Juan Pérez.
+It comes from the verb `escribir` and is commonly used before spelling something letter by letter.
 
 # --scene--
 
 ```json
 {
   "setup": {
-    "background": "desk.png",
+    "background": "interview-room2.png",
     "characters": [
       {
         "character": "Sebastián",
         "position": {
           "x": 50,
-          "y": 18,
+          "y": 25,
           "z": 1.5
         },
         "opacity": 0
@@ -60,8 +74,8 @@ It combines the **reflexive pronoun** `me` (myself) with the **verb** `llamar` (
     "audio": {
       "filename": "ES_A1_basti_personal_details.mp3",
       "startTime": 1,
-      "startTimestamp": 3.00,
-      "finishTimestamp": 6.06
+      "startTimestamp": 0.81,
+      "finishTimestamp": 16.5
     }
   },
   "commands": [
@@ -73,7 +87,16 @@ It combines the **reflexive pronoun** `me` (myself) with the **verb** `llamar` (
     {
       "character": "Sebastián",
       "startTime": 1,
-      "finishTime": 3.93,
+      "finishTime": 2.41,
+      "dialogue": {
+        "text": "Hola, buenas noches.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sebastián",
+      "startTime": 3.32,
+      "finishTime": 6.25,
       "dialogue": {
         "text": "Me llamo Sebastián Ávila Gómez.",
         "align": "center"
@@ -81,8 +104,17 @@ It combines the **reflexive pronoun** `me` (myself) with the **verb** `llamar` (
     },
     {
       "character": "Sebastián",
+      "startTime": 7.36,
+      "finishTime": 16.69,
+      "dialogue": {
+        "text": "Sebastián se escribe s-e-b-a-s-t-i-á-n, con acento en la última a.",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Sebastián",
       "opacity": 0,
-      "startTime": 4.43
+      "startTime": 17.19
     }
   ]
 }
