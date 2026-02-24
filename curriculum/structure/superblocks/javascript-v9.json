@@ -82,7 +82,6 @@
           "dashedName": "javascript-objects",
           "blocks": [
             "lecture-introduction-to-javascript-objects-and-their-properties",
-            "workshop-heritage-library-catalog",
             "lecture-working-with-json",
             "lecture-working-with-optional-chaining-and-object-destructuring",
             "workshop-recipe-tracker",
@@ -97,6 +96,7 @@
           "blocks": [
             "lecture-working-with-loops",
             "workshop-sentence-analyzer",
+            "workshop-heritage-library-catalog",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
