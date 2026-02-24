@@ -231,7 +231,8 @@ export const schema = Joi.object().keys({
     'Euler',
     'Rosetta',
     'Chinese Curriculum',
-    'Spanish Curriculum'
+    'Spanish Curriculum',
+    'General'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),

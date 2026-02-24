@@ -1,0 +1,46 @@
+{
+  "name": "Function Basics",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "introduction-to-precalculus-function-basics",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Functions"
+    },
+    {
+      "id": "",
+      "title": "Increasing and Decreasing Functions"
+    },
+    {
+      "id": "",
+      "title": "Maximums and Minimums on Graphs"
+    },
+    {
+      "id": "",
+      "title": "Even and Odd Functions"
+    },
+    {
+      "id": "",
+      "title": "Toolkit Functions"
+    },
+    {
+      "id": "",
+      "title": "Transformations of Functions"
+    },
+    {
+      "id": "",
+      "title": "Piecewise Functions"
+    },
+    {
+      "id": "",
+      "title": "Inverse Functions"
+    },
+    {
+      "id": "",
+      "title": "Difference Quotient"
+    }
+  ]
+}

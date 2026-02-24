@@ -1,0 +1,46 @@
+{
+  "name": "Advanced Trig & Conics",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "introduction-to-precalculus-advanced-trig-conics",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Solving Right Triangles"
+    },
+    {
+      "id": "",
+      "title": "Law of Cosines"
+    },
+    {
+      "id": "",
+      "title": "Law of Cosines - old version"
+    },
+    {
+      "id": "",
+      "title": "Law of Sines"
+    },
+    {
+      "id": "",
+      "title": "Parabolas - Vertex, Focus, Directrix"
+    },
+    {
+      "id": "",
+      "title": "Ellipses"
+    },
+    {
+      "id": "",
+      "title": "Hyperbolas"
+    },
+    {
+      "id": "",
+      "title": "Polar Coordinates"
+    },
+    {
+      "id": "",
+      "title": "Parametric Equations"
+    }
+  ]
+}

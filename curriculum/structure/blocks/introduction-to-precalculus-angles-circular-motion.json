@@ -1,0 +1,22 @@
+{
+  "name": "Angles & Circular Motion",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "introduction-to-precalculus-angles-circular-motion",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Angles and Their Measures"
+    },
+    {
+      "id": "",
+      "title": "Arclength and Areas of Sectors"
+    },
+    {
+      "id": "",
+      "title": "Linear and Radial Speed"
+    }
+  ]
+}

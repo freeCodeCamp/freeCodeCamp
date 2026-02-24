@@ -58,7 +58,8 @@
   color: var(--danger-color);
 }
 
-.block-label-exam {
+.block-label-exam,
+.block-label-math {
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
 }

@@ -527,6 +527,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
         "Rosetta",
         "Chinese Curriculum",
         "Spanish Curriculum",
+        "General"
       ],
       "flags": {
         "only": true,

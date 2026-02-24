@@ -1,0 +1,26 @@
+{
+  "name": "Trig Graphs & Inverses",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "introduction-to-precalculus-trig-graphs-inverses",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Graphs of Sinusoidal Functions"
+    },
+    {
+      "id": "",
+      "title": "Graphs of Tan, Sec, Cot, Csc"
+    },
+    {
+      "id": "",
+      "title": "Graphs of Transformations of Tan, Sec, Cot, Csc"
+    },
+    {
+      "id": "",
+      "title": "Inverse Trig Functions"
+    }
+  ]
+}

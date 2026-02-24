@@ -1,0 +1,34 @@
+{
+  "name": "Trig Identities & Formulas",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "introduction-to-precalculus-trig-identities-formulas",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Trig Identities"
+    },
+    {
+      "id": "",
+      "title": "Pythagorean Identities"
+    },
+    {
+      "id": "",
+      "title": "Angle Sum and Difference Formulas"
+    },
+    {
+      "id": "",
+      "title": "Proof of the Angle Sum Formulas"
+    },
+    {
+      "id": "",
+      "title": "Double Angle Formulas"
+    },
+    {
+      "id": "",
+      "title": "Half Angle Formulas"
+    }
+  ]
+}

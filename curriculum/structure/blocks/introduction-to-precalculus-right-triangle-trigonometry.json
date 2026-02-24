@@ -1,0 +1,30 @@
+{
+  "name": "Right Triangle Trigonometry",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "introduction-to-precalculus-right-triangle-trigonometry",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Right Angle Trigonometry"
+    },
+    {
+      "id": "",
+      "title": "Sine and Cosine of Special Angles"
+    },
+    {
+      "id": "",
+      "title": "Unit Circle Definition of Sine and Cosine"
+    },
+    {
+      "id": "",
+      "title": "Properties of Trig Functions"
+    },
+    {
+      "id": "",
+      "title": "Graphs of Sine and Cosine"
+    }
+  ]
+}
