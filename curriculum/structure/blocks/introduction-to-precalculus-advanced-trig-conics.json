@@ -7,40 +7,44 @@
   "helpCategory": "General",
   "challengeOrder": [
     {
-      "id": "",
+      "id": "699e854b8f18cf77dfce5c1e",
       "title": "Solving Right Triangles"
     },
     {
-      "id": "",
+      "id": "699e85518f18cf77dfce5c1f",
       "title": "Law of Cosines"
     },
     {
-      "id": "",
-      "title": "Law of Cosines - old version"
+      "id": "699e85568f18cf77dfce5c20",
+      "title": "Law of Cosines - Old Version"
     },
     {
-      "id": "",
+      "id": "699e855a8f18cf77dfce5c21",
       "title": "Law of Sines"
     },
     {
-      "id": "",
+      "id": "699e855e8f18cf77dfce5c22",
       "title": "Parabolas - Vertex, Focus, Directrix"
     },
     {
-      "id": "",
+      "id": "699e85648f18cf77dfce5c23",
       "title": "Ellipses"
     },
     {
-      "id": "",
+      "id": "699e85688f18cf77dfce5c24",
       "title": "Hyperbolas"
     },
     {
-      "id": "",
+      "id": "699e856c8f18cf77dfce5c25",
       "title": "Polar Coordinates"
     },
     {
-      "id": "",
+      "id": "699e85718f18cf77dfce5c26",
       "title": "Parametric Equations"
+    },
+    {
+      "id": "699e8ca68f18cf77dfce5c27",
+      "title": "Difference Quotient"
     }
   ]
 }
