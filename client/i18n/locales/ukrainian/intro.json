@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Frontend Development Libraries V8",
+    "title": "Front-End Development Libraries V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular frontend libraries in the industry.",
-      "In the Frontend Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front-end libraries in the industry.",
+      "In the Front-End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Згодом ви розробите кошик для покупок та інші застосунки, щоб навчитися створювати потужні односторінкові застосунки (SPAs) з React та Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a frontend framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap is a front-end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "Під час цього курсу ви навчитеся створювати адаптивні вебсайти за допомогою Bootstrap та використовувати готові шаблони для стилізації кнопок, зображень, форм, навігації та інших поширених елементів."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Frontend Development Libraries Projects",
+        "title": "Front-End Development Libraries Projects",
         "intro": [
-          "It's time to put your frontend development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Frontend Development Libraries certification."
+          "It's time to put your front-end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Front-End Development Libraries certification."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Backend Development and APIs V8",
+    "title": "Back-End Development and APIs V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the frontend to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
+      "Until this point, you've only used JavaScript on the front-end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back-end, or server, to build entire web applications.",
       "Сьогодні один із найпопулярніших способів створення застосунків — за допомогою мікрослужб, які є маленькими модульними застосунками та разом формують єдине ціле.",
-      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "In the Back-End Development and APIs Certification, you'll learn how to write back-end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -714,7 +714,7 @@
       "basic-node-and-express": {
         "title": "Основи Node та Express",
         "intro": [
-          "Node.js — це середовище виконання JavaScript, що дозволяє розробникам писати back end (серверні) програми в JavaScript. Node.js має кілька вбудованих модулів (маленьких незалежних програм), які допомагають з цим. Деякі з основних модулів містять HTTP, який працює на зразок сервера, і файлову систему (модуль для читання і редагування файлів).",
+          "Node.js is a JavaScript runtime that allows developers to write back-end (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
           "В останній групі курсів ви навчилися встановлювати та керувати пакетами npm, які є скупченнями менших модулів. Ці пакети можуть допомогти вам створити більші, складніші застосунки.",
           "Express — це спрощений фреймворк вебзастосунків та один з найбільш популярних пакетів на npm. Express значно полегшує створення сервера та керування маршрутизацією вашого застосунку, що відповідає за такі речі, як перенаправлення людей до потрібної сторінки, коли вони відвідують певну кінцеву точку (наприклад, <pre>/blog</pre>).",
           "У цьому курсі ви дізнаєтесь основи Node та Express, включно з тим, як створювати сервер, обслуговувати різні файли та обробляти різні запити з браузера."
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Backend Development and APIs Projects",
+        "title": "Back-End Development and APIs Projects",
         "intro": [
           "Раніше ви мали справу з API, але тепер, коли ви знайомі із nmp, Node, Express, Mongo DB та Mongoose, прийшов час створити щось власне. Застосуйте усі отримані знання, щоб створити 5 окремих мікрослужб, які є меншими застосунками з обмеженими можливостями.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back-End Development and APIs Certification, too."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "Настав час глибоко зануритися у Node.js та Express.js, створивши застосунок чату із системою входу.",
           "Щоб безпечно впровадити систему входу, вам потрібно буде дізнатися про автентифікацію. Це акт перевірки особи або процесу.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the frontend, and web sockets for real-time communication between the clients and server."
+          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front-end, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Проєкти «Забезпечення якості»",
         "intro": [
-          "Now that you're well versed in both the frontend and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Now that you're well versed in both the front-end and back-end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
           "Після завершення цих проєктів із забезпечення якості у вас буде ще 5 проєктів, а також нова сертифікація, якою можна похвалитись у портфоліо."
         ]
       }
@@ -1447,7 +1447,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification (Beta)",
+    "title": "Сертифікація «Англійська мова A2 для розробників (бета)»",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня A2 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Перша частина допоможе освоїти граматику та використання англійської мови. Ви виконаєте багато практичних вправ, дізнавшись основи (наприклад, представлення себе, проведення коротких розмов і обговорення роботи).",
@@ -1462,7 +1462,7 @@
         ]
       },
       "en-a2-quiz-greetings-first-day-office": {
-        "title": "First Day at The Office Greetings Quiz",
+        "title": "Тест «Перший робочий день»",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -1472,7 +1472,7 @@
         ]
       },
       "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Online Team Introductions Quiz",
+        "title": "Тест «Знайомство на онлайн-зустрічі»",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -1482,7 +1482,7 @@
         ]
       },
       "en-a2-quiz-conversation-starters-break-room": {
-        "title": "Break Room Conversations Quiz",
+        "title": "Тест «Розмова в кімнаті відпочинку»",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
@@ -1492,7 +1492,7 @@
         ]
       },
       "en-a2-quiz-talk-about-typical-workday-tasks": {
-        "title": "Talking About Your Workday Quiz",
+        "title": "Тест «Типовий робочий день»",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
@@ -1502,7 +1502,7 @@
         ]
       },
       "en-a2-quiz-discuss-morning-evening-routine": {
-        "title": "Daily Routines at Work Quiz",
+        "title": "Тест «Щоденна робоча рутина»",
         "intro": ["", ""]
       },
       "learn-how-to-describe-your-current-project": {
@@ -1512,7 +1512,7 @@
         ]
       },
       "en-a2-quiz-describe-current-project": {
-        "title": "Describing Your Current Project Quiz",
+        "title": "Тест «Опис поточного проєкту»",
         "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
@@ -1522,7 +1522,7 @@
         ]
       },
       "en-a2-quiz-educational-professional-background": {
-        "title": "Educational and Professional Background Quiz",
+        "title": "Тест «Освіта і досвід роботи»",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
@@ -1532,17 +1532,17 @@
         ]
       },
       "en-a2-quiz-talk-about-hobbies-interests": {
-        "title": "Talking About Hobbies and Interests Quiz",
+        "title": "Тест «Хобі та захоплення»",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
-        "title": "Learn How to Discuss Roles and Responsibilities",
+        "title": "Дізнайтесь, як обговорювати посади та обов’язки",
         "intro": [
-          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+          "У цьому курсі ви обговорюватимете посади та обов’язки людей в компанії й поза нею. Ви дізнаєтеся, як запитувати про посади та обов’язки, а також як ділитися власною інформацією на цю тему."
         ]
       },
       "en-a2-quiz-discuss-roles-responsibilities": {
-        "title": "Roles and Responsibilities Quiz",
+        "title": "Тест «Посада та обов’язки»",
         "intro": ["", ""]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
@@ -1552,7 +1552,7 @@
         ]
       },
       "en-a2-quiz-preferences-motivations": {
-        "title": "Preferences and Motivations Quiz",
+        "title": "Тест «Вподобання та вмотивованість»",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
@@ -1562,7 +1562,7 @@
         ]
       },
       "en-a2-quiz-popular-technology-trends": {
-        "title": "Technology Trends Quiz",
+        "title": "Тест «Технологічні тренди»",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
@@ -1572,7 +1572,7 @@
         ]
       },
       "en-a2-quiz-clarify-information-interactions": {
-        "title": "Clarifying Information Quiz",
+        "title": "Тест «Уточнення інформації»",
         "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
@@ -1582,7 +1582,7 @@
         ]
       },
       "en-a2-quiz-basic-programming-vocabulary": {
-        "title": "Basic Programming Vocabulary Quiz",
+        "title": "Тест «Базові слова з програмування»",
         "intro": ["", ""]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
@@ -1592,7 +1592,7 @@
         ]
       },
       "en-a2-quiz-code-related-concepts-terms": {
-        "title": "Code Concepts and Terms Quiz",
+        "title": "Тест «Поняття та терміни з програмування»",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
@@ -1602,7 +1602,7 @@
         ]
       },
       "en-a2-quiz-tech-trends-updates": {
-        "title": "Tech Updates and Trends Quiz",
+        "title": "Тест «Технологічні тренди та оновлення»",
         "intro": ["", ""]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
@@ -1612,7 +1612,7 @@
         ]
       },
       "en-a2-quiz-help-coworker-github-troubleshooting": {
-        "title": "Helping a Coworker on GitHub Quiz",
+        "title": "Тест «Допомога колезі на GitHub»",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
@@ -1622,7 +1622,7 @@
         ]
       },
       "en-a2-quiz-share-progress-weekly-meeting": {
-        "title": "Weekly Meeting Progress Quiz",
+        "title": "Тест «Прогрес на щотижневій зустрічі»",
         "intro": ["", ""]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
@@ -1632,7 +1632,7 @@
         ]
       },
       "en-a2-quiz-ask-for-code-clarification": {
-        "title": "Asking for Code Clarification Quiz",
+        "title": "Тест «Прохання пояснити код»",
         "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
@@ -1642,7 +1642,7 @@
         ]
       },
       "en-a2-quiz-document-code-project": {
-        "title": "Documenting Code Quiz",
+        "title": "Тест «Документування коду»",
         "intro": ["", ""]
       },
       "learn-how-to-read-and-understand-code-documentation": {
@@ -1652,7 +1652,7 @@
         ]
       },
       "en-a2-quiz-read-understand-code-documentation": {
-        "title": "Understanding Code Documentation Quiz",
+        "title": "Тест «Розуміння документації коду»",
         "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
@@ -1662,7 +1662,7 @@
         ]
       },
       "en-a2-quiz-analyze-code-documentation": {
-        "title": "Analyzing Code Documentation Quiz",
+        "title": "Тест «Аналіз документації коду»",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
@@ -1672,7 +1672,7 @@
         ]
       },
       "en-a2-quiz-share-progress-accomplishments": {
-        "title": "Sharing Progress and Achievements Quiz",
+        "title": "Тест «Прогрес та досягнення»",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
@@ -1682,7 +1682,7 @@
         ]
       },
       "en-a2-quiz-task-project-updates-plans": {
-        "title": "Task and Project Updates Quiz",
+        "title": "Тест «Оновлення щодо завдань і проєкту»",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
@@ -1692,7 +1692,7 @@
         ]
       },
       "en-a2-quiz-express-agreement-disagreement": {
-        "title": "Expressing Agreement and Disagreement Quiz",
+        "title": "Тест «Вираження згоди та незгоди»",
         "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
@@ -1702,7 +1702,7 @@
         ]
       },
       "en-a2-quiz-offer-technical-support-guidance": {
-        "title": "Offering Technical Support Quiz",
+        "title": "Тест «Надання технічної підтримки»",
         "intro": ["", ""]
       },
       "learn-how-to-request-and-receive-guidance": {
@@ -1712,7 +1712,7 @@
         ]
       },
       "en-a2-quiz-request-receive-guidance": {
-        "title": "Requesting and Receiving Guidance Quiz",
+        "title": "Тест «Прохання і отримання порад»",
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
@@ -1722,19 +1722,19 @@
         ]
       },
       "en-a2-quiz-provide-explanations-helping-others": {
-        "title": "Explaining Things to Others Quiz",
+        "title": "Тест «Пояснення іншим людям»",
         "intro": ["", ""]
       },
       "en-a2-certification-exam": {
-        "title": "A2 English for Developers Certification Exam",
+        "title": "Екзамен з сертифікації «Англійська мова A2 для розробників»",
         "intro": [
-          "This exam is required to claim the A2 English for Developers Certification."
+          "Це обов’язковий екзамен, щоб отримати сертифікацію «Англійська мова A2 для розробників»."
         ]
       }
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers Certification (Beta)",
+    "title": "Сертифікація «Англійська мова B1 для розробників (бета)»",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня B1 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Курс допоможе зміцнити базові знання, одночасно ознайомлюючи із більш складною граматикою та використанням. Ви навчитесь описувати місця та речі, ділитися досвідом і впевнено використовувати часи, серед яких теперішній доконаний та простий майбутній. А також отримаєте практичні поради: як вести розмову, ділитись думкою та висловлювати згоду чи незгоду.",
@@ -1747,7 +1747,7 @@
         "intro": ["У цьому курсі ви навчитеся говорити про місця та події."]
       },
       "en-b1-quiz-describe-places-events": {
-        "title": "Describing Places and Events Quiz",
+        "title": "Тест «Опис місць і подій»",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-experiences": {
@@ -1755,7 +1755,7 @@
         "intro": ["У цьому курсі ви навчитеся ділитись власним досвідом."]
       },
       "en-b1-quiz-past-experiences": {
-        "title": "Talking About Past Experiences Quiz",
+        "title": "Тест «Досвід»",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-activities": {
@@ -1763,7 +1763,7 @@
         "intro": ["У цьому курсі ви навчитеся говорити про речі, які зробили."]
       },
       "en-b1-quiz-past-activities": {
-        "title": "Talking About Past Activities Quiz",
+        "title": "Тест «Дії з минулого»",
         "intro": ["", ""]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
@@ -1773,7 +1773,7 @@
         ]
       },
       "en-b1-quiz-present-perfect-accessibility": {
-        "title": "Present Perfect and Accessibility Quiz",
+        "title": "Тест «Present Perfect та доступність»",
         "intro": ["", ""]
       },
       "learn-how-to-plan-future-events": {
@@ -1783,7 +1783,7 @@
         ]
       },
       "en-b1-quiz-plan-future-events": {
-        "title": "Planning Future Events Quiz",
+        "title": "Тест «Планування подій»",
         "intro": ["", ""]
       },
       "learn-future-continuous-while-describing-actions": {
@@ -1793,7 +1793,7 @@
         ]
       },
       "en-b1-quiz-future-continuous-actions": {
-        "title": "Future Continuous Actions Quiz",
+        "title": "Тест «Future Continuous»",
         "intro": ["", ""]
       },
       "learn-how-to-use-conditionals": {
@@ -1803,7 +1803,7 @@
         ]
       },
       "en-b1-quiz-conditionals": {
-        "title": "Using Conditionals Quiz",
+        "title": "Тест «Умовні речення»",
         "intro": ["", ""]
       },
       "learn-how-to-share-feedback": {
@@ -1813,7 +1813,7 @@
         ]
       },
       "en-b1-quiz-share-feedback": {
-        "title": "Sharing Feedback Quiz",
+        "title": "Тест «Зворотний зв’язок»",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-opinion": {
@@ -1823,7 +1823,7 @@
         ]
       },
       "en-b1-quiz-share-opinions": {
-        "title": "Sharing Opinions Quiz",
+        "title": "Тест «Обмін думками»",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement": {
@@ -1833,7 +1833,7 @@
         ]
       },
       "en-b1-quiz-express-agreement": {
-        "title": "Expressing Agreement Quiz",
+        "title": "Тест «Вираження згоди»",
         "intro": ["", ""]
       },
       "learn-how-to-express-disagreement": {
@@ -1843,7 +1843,7 @@
         ]
       },
       "en-b1-quiz-express-disagreement": {
-        "title": "Expressing Disagreement Quiz",
+        "title": "Тест «Вираження незгоди»",
         "intro": ["", ""]
       },
       "learn-how-to-express-concerns": {
@@ -1853,7 +1853,7 @@
         ]
       },
       "en-b1-quiz-express-concerns": {
-        "title": "Expressing Concerns Quiz",
+        "title": "Тест «Вираження занепокоєння»",
         "intro": ["", ""]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
@@ -1863,7 +1863,7 @@
         ]
       },
       "en-b1-quiz-decisions-comparisons": {
-        "title": "Making Decisions with Comparisons Quiz",
+        "title": "Тест «Прийняття рішень на основі порівнянь»",
         "intro": ["", ""]
       },
       "learn-how-to-use-modal-verbs": {
@@ -1873,7 +1873,7 @@
         ]
       },
       "en-b1-quiz-modal-verbs": {
-        "title": "Using Modal Verbs Quiz",
+        "title": "Тест «Модальні дієслова»",
         "intro": ["", ""]
       },
       "learn-how-to-manage-a-conversation": {
@@ -1883,7 +1883,7 @@
         ]
       },
       "en-b1-quiz-manage-conversations": {
-        "title": "Managing Conversations Quiz",
+        "title": "Тест «Керування бесідою»",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-misunderstandings": {
@@ -1893,7 +1893,7 @@
         ]
       },
       "en-b1-quiz-clarify-misunderstandings": {
-        "title": "Clarifying Misunderstandings Quiz",
+        "title": "Тест «Уточнення непорозуміння»",
         "intro": ["", ""]
       },
       "learn-about-speculation-and-requests": {
@@ -1903,7 +1903,7 @@
         ]
       },
       "en-b1-quiz-speculation-requests": {
-        "title": "Speculation and Requests Quiz",
+        "title": "Тест «Припущення та запити»",
         "intro": ["", ""]
       },
       "learn-about-adverbial-phrases": {
@@ -1913,7 +1913,7 @@
         ]
       },
       "en-b1-quiz-adverbial-phrases": {
-        "title": "Adverbial Phrases Quiz",
+        "title": "Тест «Прислівникові звороти»",
         "intro": ["", ""]
       },
       "learn-how-to-use-adjectives-in-conversations": {
@@ -1923,7 +1923,7 @@
         ]
       },
       "en-b1-quiz-adjectives-conversations": {
-        "title": "Using Adjectives in Conversations Quiz",
+        "title": "Тест «Прикметники в розмові»",
         "intro": ["", ""]
       },
       "learn-determiners-and-advanced-use-of-articles": {
@@ -1933,7 +1933,7 @@
         ]
       },
       "en-b1-quiz-determiners-articles": {
-        "title": "Determiners and Articles Quiz",
+        "title": "Тест «Означальні слова та артиклі»",
         "intro": ["", ""]
       },
       "learn-how-to-use-reported-speech": {
@@ -1943,7 +1943,7 @@
         ]
       },
       "en-b1-quiz-reported-speech": {
-        "title": "Using Reported Speech Quiz",
+        "title": "Тест «Використання непрямої мови»",
         "intro": ["", ""]
       },
       "learn-how-to-use-prepositions-according-to-context": {
@@ -1953,7 +1953,7 @@
         ]
       },
       "en-b1-quiz-prepositions-context": {
-        "title": "Using Prepositions by Context Quiz",
+        "title": "Тест «Вживання прийменників за контекстом»",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
@@ -1963,7 +1963,7 @@
         ]
       },
       "en-b1-quiz-numbers-at-work": {
-        "title": "Talking About Numbers at Work Quiz",
+        "title": "Тест «Робочі розмови про числа»",
         "intro": ["", ""]
       },
       "learn-common-phrasal-verbs-and-idioms": {
@@ -1973,13 +1973,13 @@
         ]
       },
       "en-b1-quiz-phrasal-verbs-idioms": {
-        "title": "Phrasal Verbs and Idioms Quiz",
+        "title": "Тест «Фразові дієслова та ідіоми»",
         "intro": ["", ""]
       },
       "en-b1-certification-exam": {
-        "title": "B1 English for Developers Certification Exam",
+        "title": "Екзамен з сертифікації «Англійська мова B1 для розробників»",
         "intro": [
-          "This exam is required to claim the B1 English for Developers Certification."
+          "Це обов’язковий екзамен, щоб отримати сертифікацію «Англійська мова B1 для розробників»."
         ]
       }
     }
@@ -2006,12 +2006,12 @@
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
       "To earn your JavaScript Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the JavaScript Certification exam."
+      "- Виконайте п’ять обов’язкових проєктів, щоб отримати допуск до екзамену.",
+      "- Успішно складіть екзамен «JavaScript»."
     ],
     "chapters": {
       "javascript": "JavaScript",
-      "javascript-certification-exam": "JavaScript Certification Exam"
+      "javascript-certification-exam": "Екзамен з сертифікації «JavaScript»"
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -2045,29 +2045,29 @@
       "asynchronous-javascript": "Asynchronous JavaScript",
       "lab-weather-app": "Build a Weather App",
       "review-javascript": "JavaScript Review",
-      "javascript-certification-exam": "JavaScript Certification Exam"
+      "javascript-certification-exam": "Екзамен з сертифікації «JavaScript»"
     },
     "module-intros": {
       "data-structures": {
-        "note": "Coming Spring 2026",
+        "note": "Очікуйте навесні",
         "intro": [
           "In this module, you will learn about linked lists, stacks, queues and more."
         ]
       },
       "algorithms": {
-        "note": "Coming Spring 2026",
+        "note": "Очікуйте навесні",
         "intro": [
           "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
         ]
       },
       "graphs-and-trees": {
-        "note": "Coming Spring 2026",
+        "note": "Очікуйте навесні",
         "intro": [
           "In this module, you will learn about graphs, trees and tries."
         ]
       },
       "dynamic-programming": {
-        "note": "Coming Spring 2026",
+        "note": "Очікуйте навесні",
         "intro": [
           "In this module, you will learn how dynamic programming works."
         ]
@@ -3211,6 +3211,18 @@
           "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
         ]
       },
+      "lab-selection-sort-js": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "lab-insertion-sort": {
+        "title": "Implement the Insertion Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the insertion sort algorithm to sort an array of integers in ascending order."
+        ]
+      },
       "lab-quicksort-js": {
         "title": "Implement the Quicksort Algorithm",
         "intro": [
@@ -3301,23 +3313,25 @@
         ]
       },
       "exam-javascript-certification": {
-        "title": "JavaScript Certification Exam",
-        "intro": ["Pass this exam to earn your JavaScript Certification."]
+        "title": "Екзамен з сертифікації «JavaScript»",
+        "intro": [
+          "Щоб отримати сертифікацію «JavaScript», потрібно успішно скласти екзамен."
+        ]
       }
     }
   },
   "front-end-development-libraries-v9": {
-    "title": "Frontend Development Libraries Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
+    "title": "Front-End Development Libraries Certification",
+    "note": "Ця сертифікація розробляється і незабаром стане доступною. А поки радимо завершити доступні курси нижче, щоб підготуватися до екзамену.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
-      "To earn your Frontend Development Libraries Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Frontend Development Libraries Certification exam."
+      "To earn your Front-End Development Libraries Certification:",
+      "- Виконайте п’ять обов’язкових проєктів, щоб отримати допуск до екзамену.",
+      "- Pass the Front-End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Frontend Development Libraries",
-      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
+      "front-end-development-libraries": "Front-End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -3329,26 +3343,26 @@
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
-      "review-front-end-libraries": "Frontend Libraries Review",
-      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
+      "review-front-end-libraries": "Front-End Libraries Review",
+      "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
       "data-visualization": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
           "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "Pass this exam to earn your Frontend Development Libraries Certification."
+          "Pass this exam to earn your Front-End Development Libraries Certification."
         ]
       }
     },
@@ -3356,7 +3370,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
-          "In these lessons, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular frontend JavaScript library."
+          "In these lessons, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular front-end JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -3619,6 +3633,12 @@
           "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
+      "lecture-understanding-type-composition": {
+        "title": "Understanding Type Composition",
+        "intro": [
+          "In these lessons, you will learn how to work with union types, interfaces, void types and more."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
@@ -3643,15 +3663,15 @@
         "intro": ["Test what you've learned on Typescript with this quiz."]
       },
       "review-front-end-libraries": {
-        "title": "Frontend Libraries Review",
+        "title": "Front-End Libraries Review",
         "intro": [
-          "Review the Frontend Libraries concepts to prepare for the upcoming quiz."
+          "Review the Front-End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
       "exam-front-end-development-libraries-certification": {
-        "title": "Frontend Development Libraries Certification Exam",
+        "title": "Front-End Development Libraries Certification Exam",
         "intro": [
-          "Pass this exam to earn your Frontend Development Libraries Certification"
+          "Pass this exam to earn your Front-End Development Libraries Certification"
         ]
       }
     }
@@ -3661,12 +3681,12 @@
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Python Certification exam."
+      "- Виконайте п’ять обов’язкових проєктів, щоб отримати допуск до екзамену.",
+      "- Успішно складіть екзамен «Python»."
     ],
     "chapters": {
       "python": "Python",
-      "python-certification-exam": "Python Certification Exam"
+      "python-certification-exam": "Екзамен з сертифікації «Python»"
     },
     "modules": {
       "python-basics": "Python Basics",
@@ -3685,7 +3705,7 @@
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
       "review-python": "Python Review",
-      "python-certification-exam": "Python Certification Exam"
+      "python-certification-exam": "Екзамен з сертифікації «Python»"
     },
     "blocks": {
       "lecture-introduction-to-python": {
@@ -4142,8 +4162,10 @@
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
       },
       "exam-python-certification": {
-        "title": "Python Certification Exam",
-        "intro": ["Pass this exam to earn your Python Certification"]
+        "title": "Екзамен з сертифікації «Python»",
+        "intro": [
+          "Щоб отримати сертифікацію «Python», потрібно успішно скласти екзамен"
+        ]
       }
     }
   },
@@ -4152,12 +4174,12 @@
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Relational Databases Certification exam."
+      "- Виконайте п’ять обов’язкових проєктів, щоб отримати допуск до екзамену.",
+      "- Успішно складіть екзамен «Реляційні бази даних»."
     ],
     "chapters": {
       "relational-databases": "Relational Databases",
-      "relational-databases-certification-exam": "Relational Databases Certification Exam"
+      "relational-databases-certification-exam": "Екзамен з сертифікації «Реляційні бази даних»"
     },
     "modules": {
       "code-editors": "Code Editors",
@@ -4172,7 +4194,7 @@
       "lab-salon-appointment-scheduler": "Build a Salon Appointment Scheduler",
       "lab-periodic-table-database": "Build a Periodic Table Database",
       "lab-number-guessing-game": "Build a Number Guessing Game",
-      "relational-databases-certification-exam": "Relational Databases Certification Exam"
+      "relational-databases-certification-exam": "Екзамен з сертифікації «Реляційні бази даних»"
     },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
@@ -4372,25 +4394,25 @@
         ]
       },
       "exam-relational-databases-certification": {
-        "title": "Relational Databases Certification Exam",
+        "title": "Екзамен з сертифікації «Реляційні бази даних»",
         "intro": [
-          "Pass this exam to earn your Relational Databases Certification"
+          "Щоб отримати сертифікацію «Реляційні бази даних», потрібно успішно скласти екзамен"
         ]
       }
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Backend Development and APIs Certification",
+    "title": "Back-End Development and APIs Certification",
     "note": "This certification is currently in development and will be available soon.",
     "intro": [
-      "This course teaches you the fundamentals of backend development and APIs.",
-      "To earn your Backend Development and APIs Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Backend Development and APIs Certification exam."
+      "This course teaches you the fundamentals of back-end development and APIs.",
+      "To earn your Back-End Development and APIs Certification:",
+      "- Виконайте п’ять обов’язкових проєктів, щоб отримати допуск до екзамену.",
+      "- Pass the Back-End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Backend Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Back-End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "modules": {
       "introduction-to-nodejs": "Introduction to Node.js",
@@ -4406,91 +4428,91 @@
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
       "tooling-and-deployment": "Tooling and Deployment",
-      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn the basics of working with Node.js."
         ]
       },
       "nodejs-core-modules": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
         ]
       },
       "http-and-the-web-standards-model": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
         ]
       },
       "rest-api-and-web-services": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
         ]
       },
       "introduction-to-express": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
         ]
       },
       "express-middleware": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
         ]
       },
       "error-handling-in-express": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
       "websockets": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
       "node-and-sql": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
         ]
       },
       "security-and-privacy": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
         ]
       },
       "authentication": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
       "tooling-and-deployment": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
           "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
-          "Pass this exam to earn your Backend Development and APIs Certification."
+          "Pass this exam to earn your Back-End Development and APIs Certification."
         ]
       }
     },
@@ -4498,7 +4520,7 @@
       "lecture-working-with-nodejs-and-event-driven-architecture": {
         "title": "Working with NodeJS and event driven architecture",
         "intro": [
-          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
       },
       "review-node-js-core-modules": {
@@ -4548,9 +4570,9 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Backend Development and APIs Certification Exam",
+        "title": "Back-End Development and APIs Certification Exam",
         "intro": [
-          "Pass this exam to earn your Backend Development and APIs Certification"
+          "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
       }
     }
@@ -4560,7 +4582,7 @@
     "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
+      "Для допуску до екзамену потрібно отримати сертифікації нижче. Щоб отримати сертифікацію «Розробник Full Stack», потрібно успішно скласти екзамен."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
@@ -4570,9 +4592,9 @@
     },
     "module-intros": {
       "certified-full-stack-developer-exam": {
-        "note": "Coming Late 2026",
+        "note": "Очікуйте наприкінці року",
         "intro": [
-          "This exam will test what you have learned throughout the previous six certifications."
+          "Цей екзамен перевірить ваші знання з шести попередніх сертифікацій."
         ]
       }
     },
@@ -4648,283 +4670,283 @@
     }
   },
   "a1-professional-spanish": {
-    "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "title": "Сертифікація «Іспанська мова A1 для роботи (бета)»",
+    "note": "Ми активно розробляємо цю сертифікацію. Перші три розділи вже опубліковано, а наступні виходитимуть в міру їх створення нашою командою. Коли всі розділи стануть доступними, ми опублікуємо екзамен.",
     "intro": [
-      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
-      "- A Warm-up section for quick review.",
-      "- Learn sections with new vocabulary and grammar.",
-      "- Practice sections to check your comprehension and writing skills.",
-      "- A Review section with key grammar and vocabulary."
+      "У цьому курсі ви вивчите основи іспанської мови рівня A1 відповідно до загальноєвропейських рекомендацій з мовної освіти (CEFR). Уроки орієнтовані на робоче середовище, а кожен модуль поділений на певні розділи:",
+      "- «Розігрів» для короткого повторення.",
+      "- «Навчання» з новою лексикою та граматикою.",
+      "- «Практика» для перевірки розуміння та письма.",
+      "- «Повторення» з ключовою граматикою та лексикою."
     ],
     "chapters": {
-      "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
-      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
-      "es-a1-chapter-basic-personal-details": "Basic Personal Details",
-      "es-a1-chapter-describing-company-and-people": "Describing a Company and Its People"
+      "es-a1-chapter-welcome-to-a1-professional-spanish": "Вступ до іспанської мови рівня A1",
+      "es-a1-chapter-spanish-fundamentals": "Основи іспанської мови",
+      "es-a1-chapter-greetings-and-introductions": "Привітання та знайомство",
+      "es-a1-chapter-basic-personal-details": "Особиста інформація",
+      "es-a1-chapter-describing-company-and-people": "Опис компанії та працівників"
     },
     "modules": {
-      "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-letters-sounds-and-first-numbers": "Letters, Sounds and First Numbers",
-      "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
-      "es-a1-module-introducing-yourself": "Introducing Yourself",
-      "es-a1-module-first-questions": "First Questions",
-      "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
-      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details",
-      "es-a1-module-numbers-30-to-100": "Numbers 30 to 100",
-      "es-a1-module-describing-a-company": "Describing a Company",
-      "es-a1-module-describing-people-at-work": "Describing People at Work"
+      "es-a1-module-introduction-and-certification-overview": "Вступ і опис сертифікації",
+      "es-a1-module-letters-sounds-and-first-numbers": "Літери, звуки та цифри",
+      "es-a1-module-greetings-and-farewells": "Привітання та прощання",
+      "es-a1-module-introducing-yourself": "Представлення",
+      "es-a1-module-first-questions": "Запитання при знайомстві",
+      "es-a1-module-numbers-10-to-29": "Числа від 10 до 29",
+      "es-a1-module-sharing-your-personal-details": "Обмін особистою інформацією",
+      "es-a1-module-numbers-30-to-100": "Числа від 30 до 100",
+      "es-a1-module-describing-a-company": "Опис компанії",
+      "es-a1-module-describing-people-at-work": "Опис колег"
     },
     "module-intros": {
       "es-a1-module-sharing-your-personal-details": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+          "У цьому модулі ви будете працювати з короткими діалогами, у яких запитують про особисті дані (ім’я, контактна інформація, національність та вік)."
         ]
       },
       "es-a1-module-numbers-30-to-100": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will learn how to read, write, and pronounce numbers from 30 to 100."
+          "У цьому модулі ви навчитесь читати, писати і вимовляти числа від 30 до 100."
         ]
       },
       "es-a1-module-describing-a-company": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
+          "У цьому модулі ви навчитесь визначати й описувати базову інформацію про компанію, а саме: назву, вебсайт, розташування, кількість співробітників і відділи."
         ]
       },
       "es-a1-module-describing-people-at-work": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
+          "У цьому модулі ви навчитесь описувати людей й виправляти інформацію в коротких діалогах."
         ]
       }
     },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
-        "title": "Greetings and Farewells Basics",
+        "title": "Основні привітання та прощання",
         "intro": ["", ""]
       },
       "es-a1-learn-greetings-during-the-day": {
-        "title": "Greetings During the Day",
+        "title": "Привітання протягом дня",
         "intro": ["", ""]
       },
       "es-a1-practice-greetings-and-farewells": {
-        "title": "Greetings and Farewells Practice",
+        "title": "Привітання та прощання на практиці",
         "intro": ["", ""]
       },
       "es-a1-review-greetings-and-farewells": {
-        "title": "Greetings and Farewells Review",
+        "title": "Повторення привітань та прощань",
         "intro": ["", ""]
       },
       "es-a1-quiz-greetings-and-farewells": {
-        "title": "Greetings and Farewells Quiz",
+        "title": "Тест «Привітання та прощання»",
         "intro": ["", ""]
       },
       "es-a1-learn-certification-introduction": {
-        "title": "Certification Introduction",
+        "title": "Коротко про сертифікацію",
         "intro": ["", ""]
       },
       "es-a1-learn-alphabet-and-accents": {
-        "title": "Alphabet and Accents",
+        "title": "Алфавіт та акценти",
         "intro": ["", ""]
       },
       "es-a1-learn-punctuation": {
-        "title": "Punctuation",
+        "title": "Пунктуація",
         "intro": ["", ""]
       },
       "es-a1-quiz-spanish-fundamentals": {
-        "title": "Spanish Fundamentals Quiz",
+        "title": "Тест «Основи іспанської мови»",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
-        "title": "Introducing Yourself Basics",
+        "title": "Основне представлення",
         "intro": ["", ""]
       },
       "es-a1-learn-meet-luna": {
-        "title": "Meet Luna",
+        "title": "Знайомство з Луною",
         "intro": ["", ""]
       },
       "es-a1-learn-meet-mateo": {
-        "title": "Meet Mateo",
+        "title": "Знайомство з Матео",
         "intro": ["", ""]
       },
       "es-a1-learn-meet-julieta": {
-        "title": "Meet Julieta",
+        "title": "Знайомство з Хуліетою",
         "intro": ["", ""]
       },
       "es-a1-practice-introducing-yourself": {
-        "title": "Introducing Yourself Practice",
+        "title": "Представлення на практиці",
         "intro": ["", ""]
       },
       "es-a1-review-introducing-yourself": {
-        "title": "Introducing Yourself Review",
+        "title": "Повторення представлення",
         "intro": ["", ""]
       },
       "es-a1-quiz-introducing-yourself": {
-        "title": "Introducing Yourself Quiz",
+        "title": "Тест «Представлення»",
         "intro": ["", ""]
       },
       "es-a1-warm-up-first-questions-basics": {
-        "title": "First Questions Basics",
+        "title": "Основні запитання при знайомстві",
         "intro": ["", ""]
       },
       "es-a1-learn-meet-angela-and-basti": {
-        "title": "Meet Angela and Basti",
+        "title": "Знайомство з Ангелою і Басті",
         "intro": ["", ""]
       },
       "es-a1-practice-first-questions": {
-        "title": "First Questions Practice",
+        "title": "Запитання при знайомстві на практиці",
         "intro": ["", ""]
       },
       "es-a1-review-first-questions": {
-        "title": "First Questions Review",
+        "title": "Повторення запитань при знайомстві",
         "intro": ["", ""]
       },
       "es-a1-quiz-first-questions": {
-        "title": "First Questions Quiz",
+        "title": "Тест «Запитання при знайомстві»",
         "intro": ["", ""]
       },
       "es-a1-learn-vowels": {
-        "title": "Vowels",
+        "title": "Голосні звуки",
         "intro": ["", ""]
       },
       "es-a1-learn-consonants-and-special-characters": {
-        "title": "Consonants and Special Characters",
+        "title": "Приголосні звуки та спеціальні символи",
         "intro": ["", ""]
       },
       "es-a1-review-spanish-fundamentals": {
-        "title": "Spanish Fundamentals Review",
+        "title": "Повторення основ іспанської мови",
         "intro": ["", ""]
       },
       "es-a1-practice-the-alphabet": {
-        "title": "The Spanish Alphabet Practice",
+        "title": "Алфавіт на практиці",
         "intro": ["", ""]
       },
       "es-a1-warm-up-remember-first-numbers": {
-        "title": "Remember First Numbers",
+        "title": "Повторення чисел до 10",
         "intro": ["", ""]
       },
       "es-a1-learn-numbers-10-to-29": {
-        "title": "Numbers 10 to 29",
+        "title": "Числа від 10 до 29",
         "intro": ["", ""]
       },
       "es-a1-practice-using-numbers-10-to-29": {
-        "title": "Using Numbers 10 to 29",
+        "title": "Використання чисел від 10 до 29",
         "intro": ["", ""]
       },
       "es-a1-review-numbers-10-to-29": {
-        "title": "Numbers 10 to 29 Review",
+        "title": "Повторення чисел від 10 до 29",
         "intro": ["", ""]
       },
       "es-a1-quiz-numbers-10-to-29": {
-        "title": "Numbers 10 to 29 Quiz",
+        "title": "Тест «Числа від 10 до 29»",
         "intro": ["", ""]
       },
       "es-a1-warm-up-getting-ready-to-share-personal-details": {
-        "title": "Getting Ready to Share Personal Details",
+        "title": "Готуємось ділитися особистою інформацією",
         "intro": ["", ""]
       },
       "es-a1-learn-basic-personal-information": {
-        "title": "Basic Personal Information",
+        "title": "Базова особиста інформація",
         "intro": ["", ""]
       },
       "es-a1-learn-contact-information-and-spelling": {
-        "title": "Contact Information and Spelling",
+        "title": "Контактні дані та вимова",
         "intro": ["", ""]
       },
       "es-a1-practice-personal-details-in-action": {
-        "title": "Personal Details in Action",
+        "title": "Особиста інформація на практиці",
         "intro": ["", ""]
       },
       "es-a1-review-sharing-your-personal-details": {
-        "title": "Sharing Your Personal Details Review",
+        "title": "Повторення обміну особистою інформацією",
         "intro": ["", ""]
       },
       "es-a1-quiz-sharing-your-personal-details": {
-        "title": "Sharing Your Personal Details Quiz",
+        "title": "Тест «Обмін особистою інформацією»",
         "intro": ["", ""]
       },
       "es-a1-learn-the-first-ten-numbers": {
-        "title": "The First Ten Numbers",
+        "title": "Числа до 10",
         "intro": ["", ""]
       },
       "es-a1-practice-the-first-ten-numbers": {
-        "title": "The First Ten Numbers Practice",
+        "title": "Використання чисел до 10",
         "intro": ["", ""]
       },
       "es-a1-learn-numbers-30-to-60": {
-        "title": "Numbers 30 to 60",
+        "title": "Числа від 30 до 60",
         "intro": ["", ""]
       },
       "es-a1-warm-up-describing-a-company-basics": {
-        "title": "Describing a Company Basics",
+        "title": "Основи для опису компанії",
         "intro": ["", ""]
       },
       "es-a1-learn-numbers-61-to-100": {
-        "title": "Numbers 61 to 100",
+        "title": "Числа від 61 до 100",
         "intro": ["", ""]
       },
       "es-a1-practice-using-the-first-100-numbers": {
-        "title": "Using The First 100 Numbers",
+        "title": "Використання чисел до 100",
         "intro": ["", ""]
       },
       "es-a1-review-first-100-numbers": {
-        "title": "First 100 Numbers Review",
+        "title": "Повторення чисел до 100",
         "intro": ["", ""]
       },
       "es-a1-quiz-numbers-30-to-100": {
-        "title": "Numbers 30 to 100 Quiz",
+        "title": "Тест «Числа від 30 до 100»",
         "intro": ["", ""]
       },
       "es-a1-learn-what-the-company-does": {
-        "title": "What the Company Does",
+        "title": "Чим займається компанія?",
         "intro": ["", ""]
       },
       "es-a1-learn-asking-about-a-company": {
-        "title": "Asking about a Company",
+        "title": "Як запитувати про компанію?",
         "intro": ["", ""]
       },
       "es-a1-practice-company-profile": {
-        "title": "Company Profile",
+        "title": "Опис компанії на практиці",
         "intro": ["", ""]
       },
       "es-a1-review-talking-about-a-company": {
-        "title": "Talking About a Company",
+        "title": "Повторення опису компанії",
         "intro": ["", ""]
       },
       "es-a1-quiz-describing-a-company": {
-        "title": "Describing a Company Quiz",
+        "title": "Тест «Опис компанії»",
         "intro": ["", ""]
       },
       "es-a1-warm-up-describing-people-at-work-basics": {
-        "title": "Describing People at Work Basics",
+        "title": "Основи для опису колег",
         "intro": ["", ""]
       },
       "es-a1-learn-mini-biographies": {
-        "title": "Mini Biographies ",
+        "title": "Коротка біографія",
         "intro": ["", ""]
       },
       "es-a1-practice-asking-about-mini-biographies": {
-        "title": "Asking About Mini Biographies",
+        "title": "Як запитувати про біографію?",
         "intro": ["", ""]
       },
       "es-a1-learn-short-workplace-profile": {
-        "title": "Short Workplace Profile ",
+        "title": "Короткий робочий профіль",
         "intro": ["", ""]
       },
       "es-a1-practice-asking-about-short-workplace-profiles": {
-        "title": "Asking About Short Workplace Profiles",
+        "title": "Як запитувати про роботу?",
         "intro": ["", ""]
       },
       "es-a1-review-describing-people-at-work": {
-        "title": "Describing People at Work",
+        "title": "Повторення опису колег",
         "intro": ["", ""]
       },
       "es-a1-quiz-describing-people-at-work": {
-        "title": "Describing People at Work",
+        "title": "Тест «Опис колег»",
         "intro": ["", ""]
       }
     }
@@ -4934,14 +4956,14 @@
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
       "To earn your Responsive Web Design Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Responsive Web Design Certification exam."
+      "- Виконайте п’ять обов’язкових проєктів, щоб отримати допуск до екзамену.",
+      "- Успішно складіть екзамен «Адаптивний вебдизайн»."
     ],
     "chapters": {
       "html": "HTML",
       "css": "CSS",
       "computers": "Computers",
-      "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
+      "responsive-web-design-certification-exam": "Екзамен з сертифікації «Адаптивний вебдизайн»"
     },
     "modules": {
       "basic-html": "Basic HTML",
@@ -4972,7 +4994,7 @@
       "lab-book-inventory-app": "Build a Book Inventory App",
       "lab-technical-documentation-page": "Build a Technical Documentation Page",
       "lab-product-landing-page": "Build a Product Landing Page",
-      "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
+      "responsive-web-design-certification-exam": "Екзамен з сертифікації «Адаптивний вебдизайн»"
     },
     "blocks": {
       "workshop-curriculum-outline": {
@@ -5960,15 +5982,15 @@
         ]
       },
       "exam-responsive-web-design-certification": {
-        "title": "Responsive Web Design Certification Exam",
+        "title": "Екзамен з сертифікації «Адаптивний вебдизайн»",
         "intro": [
-          "Pass this exam to earn your Responsive Web Design Certification Exam"
+          "Щоб отримати сертифікацію «Адаптивний вебдизайн», потрібно успішно скласти екзамен"
         ]
       }
     }
   },
   "a2-professional-spanish": {
-    "title": "Сертифікація «Іспанська мова A2 для роботи» (бета)",
+    "title": "Сертифікація «Іспанська мова A2 для роботи (бета)»",
     "note": "Сертифікація знаходиться в стані активної розробки. Наразі для цього розділу немає сертифіката, але він буде доступний найближчим часом. Тим часом ви можете дослідити курси, які ми вже створили.",
     "intro": ["Placeholder intro"],
     "blocks": {
@@ -5987,7 +6009,7 @@
     }
   },
   "a2-professional-chinese": {
-    "title": "Сертифікація «Китайська мова A2 для роботи» (бета)",
+    "title": "Сертифікація «Китайська мова A2 для роботи (бета)»",
     "note": "Сертифікація знаходиться в стані активної розробки. Наразі для цього розділу немає сертифіката, але він буде доступний найближчим часом. Тим часом ви можете дослідити курси, які ми вже створили.",
     "intro": ["Placeholder intro"],
     "blocks": {
@@ -6006,211 +6028,213 @@
     }
   },
   "a1-professional-chinese": {
-    "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "title": "Сертифікація «Китайська мова A1 для роботи (бета)»",
+    "note": "Ми активно розробляємо цю сертифікацію. Вступні розділи вже опубліковано, а наступні виходитимуть в міру їх створення нашою командою. Коли всі розділи стануть доступними, ми опублікуємо екзамен.",
     "intro": [
-      "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
-      "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
-      "Each chapter includes hundreds of interactive tasks designed to help you take your first steps in learning Chinese with confidence."
+      "У навчальній програмі «Китайська мова A1 для роботи» ви опануєте базові знання. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня А1 (CEFR) і орієнтований на лексику, корисну в робочому середовищі.",
+      "Навчальна програма розбита на кілька модулів (розігрів, навчання, практика, повторення та тести), щоб ви дійсно засвоїли матеріал перш ніж перейти далі.",
+      "Кожна частина містить сотні інтерактивних завдань, щоб ваші перші кроки у вивченні китайської мови були впевненими."
     ],
     "chapters": {
-      "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
-      "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
-      "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
-      "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
+      "zh-a1-chapter-welcome-to-a1-professional-chinese": "Вступ до китайської мови рівня A1",
+      "zh-a1-chapter-pinyin": "Піньїнь",
+      "zh-a1-chapter-greetings-and-introductions": "Привітання та представлення",
+      "zh-a1-chapter-introducing-colleagues-and-family": "Знайомство з колегами та родиною",
+      "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Як говорити про свої навички?"
     },
     "modules": {
-      "zh-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "zh-a1-module-initials-and-finals": "Initials and Finals",
-      "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
-      "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-introducing-others": "Introducing Others",
-      "zh-a1-module-getting-to-know-the-team": "Getting to Know the Team",
-      "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
-      "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
+      "zh-a1-module-introduction-and-certification-overview": "Вступ і опис сертифікації",
+      "zh-a1-module-initials-and-finals": "Ініціалі та фіналі",
+      "zh-a1-module-greetings-and-basic-introductions": "Привітання та знайомство",
+      "zh-a1-module-asking-and-giving-basic-information": "Як запитувати та надавати базову інформацію?",
+      "zh-a1-module-introducing-others": "Представлення інших",
+      "zh-a1-module-getting-to-know-the-team": "Знайомство з командою",
+      "zh-a1-module-talking-about-personal-skills": "Як говорити про особисті навички?",
+      "zh-a1-module-discussing-team-skills": "Обговорення командних навичок"
     },
     "module-intros": {
       "zh-a1-module-introducing-others": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will practice understanding short monologues that introduce information about other people, such as name, role, nationality, and age."
+          "У цьому модулі ви будете працювати з короткими монологами, у яких йдеться про інших людей (наприклад, про їхні ім’я, посаду, національність і вік)."
         ]
       },
       "zh-a1-module-getting-to-know-the-team": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+          "У цьому модулі ви будете працювати з короткими розмовами, де запитується і надається відповідь на запитання про колег."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will practice understanding short monologues about what people can and cannot do, such as languages and work skills."
+          "У цьому модулі ви будете працювати з короткими монологами, у яких люди розповідають про свої навички (наприклад, якими мовами володіють)."
         ]
       },
       "zh-a1-module-discussing-team-skills": {
-        "note": "Coming 2026",
+        "note": "Очікуйте у 2026",
         "intro": [
-          "In this module, you will practice understanding a short conversation about who can do which tasks on a team and how a project starts."
+          "У цьому модулі ви будете працювати з розмовою про завдання команди і початок проєкту."
         ]
       }
     },
     "blocks": {
       "zh-a1-learn-certification-introduction": {
-        "title": "Certification Introduction",
+        "title": "Коротко про сертифікацію",
         "intro": ["", ""]
       },
       "zh-a1-learn-simple-finals": {
-        "title": "Simple Finals",
+        "title": "Прості фіналі",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": {
-        "title": "Initials",
+        "title": "Ініціалі",
         "intro": ["", ""]
       },
       "zh-a1-learn-compound-finals": {
-        "title": "Compound Finals",
+        "title": "Складні фіналі",
         "intro": ["", ""]
       },
       "zh-a1-learn-nasal-finals": {
-        "title": "Nasal Finals",
+        "title": "Назалізовані фіналі",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-greeting-new-colleagues": {
-        "title": "Greeting New Colleagues",
+        "title": "Знайомство з новими колегами",
         "intro": ["", ""]
       },
       "zh-a1-learn-understanding-greetings-and-introductions": {
-        "title": "Understanding Greetings and Introductions",
+        "title": "Основні привітання та представлення",
         "intro": ["", ""]
       },
       "zh-a1-practice-introducing-yourself": {
-        "title": "​Introducing Yourself",
+        "title": "Власне представлення",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
-        "title": "Greetings and Introductions Review",
+        "title": "Повторення привітань та представлень",
         "intro": ["", ""]
       },
       "zh-a1-quiz-greetings-and-introductions": {
-        "title": "Greetings and Introductions Quiz",
+        "title": "Тест «Привітання та представлення»",
         "intro": ["", ""]
       },
       "zh-a1-learn-understanding-questions-and-answers": {
-        "title": "Understanding Questions and Answers",
+        "title": "Запитання та відповіді на них",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
-        "title": "Exchanging Basic Information",
+        "title": "Обмін інформацією на практиці",
         "intro": ["", ""]
       },
       "zh-a1-review-introduction-questions": {
-        "title": "Introduction Questions Review",
+        "title": "Повторення питань для знайомства",
         "intro": ["", ""]
       },
       "zh-a1-quiz-introduction-questions": {
-        "title": "Introduction Questions Quiz",
+        "title": "Тест «Питання для знайомства»",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-introducing-others-basics": {
-        "title": "Introducing Others Basics",
+        "title": "Як представляти інших?",
         "intro": ["", ""]
       },
       "zh-a1-learn-meeting-the-team": {
-        "title": "Meeting the Team",
+        "title": "Знайомство з командою",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
-        "title": "A New Colleague",
+        "title": "Новий колега",
         "intro": ["", ""]
       },
       "zh-a1-learn-my-family": {
-        "title": "My Family",
+        "title": "Моя родина",
         "intro": ["", ""]
       },
       "zh-a1-practice-introducing-others": {
-        "title": "Introducing Others Practice",
+        "title": "Представлення інших на практиці",
         "intro": ["", ""]
       },
       "zh-a1-review-introducing-others": {
-        "title": "Introducing Others Review",
+        "title": "Повторення представлення інших",
         "intro": ["", ""]
       },
       "zh-a1-quiz-check-your-introduction": {
-        "title": "Check Your Introduction",
+        "title": "Тест «Власне представлення»",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-knowing-the-team-basics": {
-        "title": "Knowing the Team Basics",
+        "title": "Як познайомитись з командою?",
         "intro": ["", ""]
       },
       "zh-a1-learn-asking-about-the-team": {
-        "title": "Asking about the Team",
+        "title": "Як запитувати про команду?",
         "intro": ["", ""]
       },
       "zh-a1-practice-talking-about-others": {
-        "title": "Talking about Others",
+        "title": "Говоримо про інших на практиці",
         "intro": ["", ""]
       },
       "zh-a1-review-team-introduction": {
-        "title": "Team Introduction Review",
+        "title": "Повторення знайомства з командою",
         "intro": ["", ""]
       },
       "zh-a1-quiz-team-introduction": {
-        "title": "Team Introduction Quiz",
+        "title": "Тест «Знайомство з командою»",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-personal-skills-basics": {
-        "title": "Personal Skills Basics",
+        "title": "Як говорити про особисті навички?",
         "intro": ["", ""]
       },
       "zh-a1-learn-can-or-cannot": {
-        "title": "Can or Can't",
+        "title": "Вмію та не вмію",
         "intro": ["", ""]
       },
       "zh-a1-practice-personal-skills": {
-        "title": "Personal Skills Practice",
+        "title": "Особисті навички на практиці",
         "intro": ["", ""]
       },
       "zh-a1-review-describing-skills": {
-        "title": "Describing Skills Review",
+        "title": "Повторення опису навичок",
         "intro": ["", ""]
       },
       "zh-a1-quiz-describing-skills": {
-        "title": "Describing Skills Quiz",
+        "title": "Тест «Опис навичок»",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-team-skills-basics": {
-        "title": "Team Skills Basics",
+        "title": "Як говорити про командні навички?",
         "intro": ["", ""]
       },
       "zh-a1-learn-who-can-do-what-on-the-team": {
-        "title": "Who Can Do What on the Team",
-        "intro": ["Learn to discuss team member capabilities and roles."]
+        "title": "Хто чим займається?",
+        "intro": ["Навчіться говорити про можливості та посади членів команди."]
       },
       "zh-a1-practice-talking-about-skills": {
-        "title": "Talking about Skills",
-        "intro": ["Practice discussing various skills in team contexts."]
+        "title": "Говоримо про навички на практиці",
+        "intro": [
+          "Практикуйтесь обговорювати різні навички в робочому контексті."
+        ]
       },
       "zh-a1-review-discussing-team-skills": {
-        "title": "Discussing Team Skills Review",
+        "title": "Повторення командних навичок",
         "intro": ["", ""]
       },
       "zh-a1-quiz-discussing-team-skills": {
-        "title": "Discussing Team Skills Quiz",
+        "title": "Тест «Командні навички»",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-meeting-new-teammates": {
-        "title": "Meeting New Teammates",
+        "title": "Знайомство з новими колегами",
         "intro": ["", ""]
       },
       "zh-a1-learn-special-spelling-rules": {
-        "title": "Special Spelling Rules",
+        "title": "Особливі правила вимови",
         "intro": ["", ""]
       },
       "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
+        "title": "Піньїнь на практиці",
         "intro": ["", ""]
       }
     }

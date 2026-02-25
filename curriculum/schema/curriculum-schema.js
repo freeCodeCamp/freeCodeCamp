@@ -34,6 +34,7 @@ const superblocks = [
   'project-euler',
   '2022/responsive-web-design',
   'the-odin-project',
+  'introduction-to-algorithms-and-data-structures',
   'lab-survey-form',
   'html-and-accessibility',
   'computer-basics',

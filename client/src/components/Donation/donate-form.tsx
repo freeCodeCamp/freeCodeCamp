@@ -112,7 +112,7 @@ const mapDispatchToProps = {
 
 const PaymentButtonsLoader = () => {
   return (
-    <div className=' donation-completion donation-completion-loading'>
+    <div className='donation-completion donation-completion-loading'>
       <Spinner
         className='script-loading-spinner'
         fadeIn='none'
