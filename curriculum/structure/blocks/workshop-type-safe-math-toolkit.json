@@ -1,0 +1,11 @@
+{
+  "name": "Build a Type Safe Math Toolkit",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-type-safe-math-toolkit",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "699f1d72e906e4616155290d", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
