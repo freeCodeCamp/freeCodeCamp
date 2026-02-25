@@ -14,7 +14,6 @@ import {
 import { Trans, useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import Spinner from 'react-spinkit';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
@@ -37,7 +36,7 @@ import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
-import { Link } from '../../../components/helpers';
+import { Link, Loader } from '../../../components/helpers';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const { deploymentEnv } = envData;
@@ -55,7 +54,7 @@ interface GitProps {
 function PrerequisitesCallout({
   id,
   completedChallenges,
-  nodes,
+  challenges,
   examSuperBlock,
   isSignedIn,
   isHonest
@@ -84,7 +83,7 @@ function PrerequisitesCallout({
     <ExamPrerequisites
       id={id}
       completedChallenges={completedChallenges}
-      nodes={nodes}
+      challenges={challenges}
       examSuperBlock={examSuperBlock}
     />
   );
@@ -93,14 +92,14 @@ function PrerequisitesCallout({
 interface ExamPrerequisitesProps {
   id: string;
   completedChallenges: CompletedChallenge[];
-  nodes: ChallengeNode[];
+  challenges: ChallengeNode['challenge'][];
   examSuperBlock: SuperBlocks;
 }
 
 function ExamPrerequisites({
   id,
   completedChallenges,
-  nodes,
+  challenges,
   examSuperBlock
 }: ExamPrerequisitesProps) {
   const { t } = useTranslation();
@@ -108,7 +107,7 @@ function ExamPrerequisites({
   const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
 
   if (getExamsQuery.isFetching || examIdsQuery.isFetching) {
-    return <Spinner />;
+    return <Loader />;
   }
 
   if (getExamsQuery.isError || examIdsQuery.isError) {
@@ -132,12 +131,12 @@ function ExamPrerequisites({
   const unmetPrerequisites = exam.prerequisites.filter(
     prereq => !completedChallenges.some(challenge => challenge.id === prereq)
   );
-  const challenges = nodes.filter(
-    ({ challenge }) =>
+  const unmetChallenges = challenges.filter(
+    challenge =>
       unmetPrerequisites?.includes(challenge.id) &&
       challenge.superBlock === examSuperBlock
   );
-  const missingPrerequisites = challenges.map(({ challenge }) => {
+  const missingPrerequisites = unmetChallenges.map(challenge => {
     return {
       id: challenge.id,
       title: challenge.title,
@@ -353,7 +352,7 @@ function ShowExamDownload({
               isSignedIn={isSignedIn}
               isHonest={user?.isHonest ?? false}
               id={id}
-              nodes={nodes}
+              challenges={nodes.map(({ challenge }) => challenge)}
               completedChallenges={completedChallenges}
               examSuperBlock={examSuperBlock}
             />
