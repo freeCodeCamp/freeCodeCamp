@@ -533,6 +533,7 @@ export type ChallengeMeta = {
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
   saveSubmissionToDB?: boolean;
+  tokens?: string[];
 } & NavigationPaths;
 
 export type NavigationPaths = {

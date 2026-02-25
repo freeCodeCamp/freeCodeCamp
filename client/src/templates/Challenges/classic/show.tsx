@@ -256,9 +256,9 @@ function ShowClassic({
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
   // Update test messages to include tokens
-  for(let i = 0; tokens != null && i < tests.length;i++)
-  {
-    tests[i].message = tests[i].message?.replaceAll("tokens[" + i.toString() + "]",tokens[i]);
+  for (let i = 0; tokens != null && i < tests.length; i++) {
+    const messageRegex = new RegExp(`\\$tokens\\[${i.toString()}\\]`, 'g');
+    tests[i].message = tests[i].message?.replace(messageRegex, tokens[i]);
   }
 
   const blockNameTitle = `${t(

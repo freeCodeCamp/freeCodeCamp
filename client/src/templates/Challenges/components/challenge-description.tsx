@@ -22,13 +22,13 @@ const ChallengeDescription = ({
     }
   }, [superBlock]);
 
-  for(let i = 0 ; tokens!= null && i < tokens?.length; i++)
-  {
-    description = description?.replaceAll("$" + + "tokens[" + i.toString() + "]", tokens[i]);
+  for (let i = 0; tokens != null && i < tokens?.length; i++) {
+    const descriptionRegex = new RegExp(`\\$tokens\\[${i.toString()}\\]`, 'g');
+    description = description?.replace(descriptionRegex, tokens[i]);
   }
-  for(let i = 0 ; tokens!= null && i < tokens?.length; i++)
-  {
-    instructions = instructions?.replaceAll("$" + "tokens[" + i.toString() + "]", tokens[i]);
+  for (let i = 0; tokens != null && i < tokens?.length; i++) {
+    const instructionRegex = new RegExp(`\\$tokens\\[${i.toString()}\\]`, 'g');
+    instructions = instructions?.replace(instructionRegex, tokens[i]);
   }
   return (
     <div
