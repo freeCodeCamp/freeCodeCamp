@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import fs from 'fs';
 import path, { join } from 'path';
 import matter from 'gray-matter';
@@ -24,7 +25,11 @@ vi.mock('gray-matter', () => {
 
 vi.mock('bson', () => {
   return {
-    ObjectId: vi.fn(() => ({ toString: () => mockChallengeId }))
+    ObjectId: vi.fn().mockImplementation(function () {
+      return {
+        toString: () => mockChallengeId
+      };
+    })
   };
 });
 

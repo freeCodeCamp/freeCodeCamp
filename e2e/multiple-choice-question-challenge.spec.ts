@@ -23,13 +23,11 @@ test.describe('Multiple Choice Question Challenge - With Speaking Modal', () => 
     const speakingButtons = page.getByRole('button', {
       name: translations['speaking-modal']['speaking-button']
     });
-    const speakingButtonCount = await speakingButtons.count();
-    expect(speakingButtonCount).toBeGreaterThan(0);
+    await expect(speakingButtons).toHaveCount(2);
 
-    const radioCount = await page.getByRole('radio').count();
-    expect(speakingButtonCount).toBe(radioCount);
+    await expect(page.getByRole('radio')).toHaveCount(2);
 
-    for (let i = 0; i < speakingButtonCount; i++) {
+    for (let i = 0; i < 2; i++) {
       const btn = speakingButtons.nth(i);
       await expect(btn).toBeVisible();
 
@@ -100,15 +98,12 @@ test.describe('Multiple Choice Question Challenge - Without Speaking Modal', () 
   test('should not show speaking controls on a challenge without speaking', async ({
     page
   }) => {
-    const radioCount = await page.getByRole('radio').count();
-    expect(radioCount).toBeGreaterThan(1);
+    await expect(page.getByRole('radio')).toHaveCount(12);
 
-    const speakingButtonsCount = await page
-      .getByRole('button', {
+    await expect(
+      page.getByRole('button', {
         name: translations['speaking-modal']['speaking-button']
       })
-      .count();
-
-    expect(speakingButtonsCount).toBe(0);
+    ).toHaveCount(0);
   });
 });

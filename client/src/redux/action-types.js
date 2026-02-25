@@ -20,6 +20,7 @@ export const actionTypes = createTypes(
     'onlineStatusChange',
     'serverStatusChange',
     'resetUserData',
+    'routeUpdated',
     'tryToShowDonationModal',
     'startExam',
     'stopExam',

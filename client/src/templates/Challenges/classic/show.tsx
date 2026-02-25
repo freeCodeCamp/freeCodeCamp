@@ -199,7 +199,6 @@ function ShowClassic({
         challengeFiles: seedChallengeFiles,
         block,
         demoType,
-        challengeNumber,
         title,
         description,
         instructions,
@@ -393,7 +392,6 @@ function ShowClassic({
 
     updateChallengeMeta({
       ...challengeMeta,
-      challengeNumber,
       title,
       challengeType,
       helpCategory,

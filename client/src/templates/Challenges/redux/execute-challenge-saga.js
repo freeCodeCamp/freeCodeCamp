@@ -15,7 +15,10 @@ import {
 } from 'redux-saga/effects';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
-import { buildChallenge } from '@freecodecamp/challenge-builder/build';
+import {
+  buildChallenge,
+  canBuildChallenge
+} from '@freecodecamp/challenge-builder/build';
 
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
@@ -27,7 +30,6 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { playTone } from '../../../utils/tone';
 import {
-  canBuildChallenge,
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
@@ -52,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { allChallengesInfoSelector } from '../../../redux/selectors';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -139,7 +142,8 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      const allChallengesInfo = yield select(allChallengesInfoSelector);
+      if (isBlockCompleted && allChallengesInfo?.challengeNodes?.length) {
         fireConfetti();
       }
     } else {

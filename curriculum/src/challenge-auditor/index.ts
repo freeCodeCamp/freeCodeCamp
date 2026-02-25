@@ -1,11 +1,12 @@
 import { flatten } from 'lodash/fp';
 
 import { availableLangs } from '@freecodecamp/shared/config/i18n';
-import { getChallengesForLang } from '../../../curriculum/src/get-challenges';
 import {
   SuperBlocks,
   getAuditedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
+
+import { getChallengesForLang } from '../get-challenges.js';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in

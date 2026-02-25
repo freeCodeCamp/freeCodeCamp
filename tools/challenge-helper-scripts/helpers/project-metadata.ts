@@ -2,7 +2,7 @@ import path from 'path';
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../../curriculum/src/file-handler.js';
+} from '@freecodecamp/curriculum/file-handler';
 import type { BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { getProjectPath } from './get-project-info.js';
 

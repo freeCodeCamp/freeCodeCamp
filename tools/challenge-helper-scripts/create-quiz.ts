@@ -8,11 +8,10 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
 
 const helpCategories = [
@@ -64,8 +63,6 @@ async function createQuiz(
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
   void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -144,7 +141,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },

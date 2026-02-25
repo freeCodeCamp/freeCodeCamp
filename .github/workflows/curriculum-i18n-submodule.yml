@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
 
@@ -44,9 +44,15 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
       - name: Set Environment variables
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
         run: pnpm install
