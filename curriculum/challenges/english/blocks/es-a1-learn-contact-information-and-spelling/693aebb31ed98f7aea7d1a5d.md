@@ -1,8 +1,8 @@
 ---
 id: 693aebb31ed98f7aea7d1a5d
-title: Task 23
+title: Task 26
 challengeType: 19
-dashedName: task-23
+dashedName: task-26
 lang: es
 ---
 
@@ -14,7 +14,7 @@ In this task, you will hear Basti share his full phone number, including the cou
 
 # --instructions--
 
-Listen to the audio and answer the question below. There's just one correct answer.
+Listen to the audio and answer the question below. 
 
 # --questions--
 

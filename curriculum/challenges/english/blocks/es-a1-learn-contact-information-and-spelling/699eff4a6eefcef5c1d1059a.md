@@ -1,18 +1,21 @@
 ---
-id: 693ae9b9770ede7468612b3e
-title: Task 25
+id: 699eff4a6eefcef5c1d1059a
+title: Task 24
 challengeType: 22
-dashedName: task-25
+dashedName: task-24
 lang: es
 ---
-
 <!-- (Audio) Basti: El dominio es q-u-e-t-z-a-l punto g-t. -->
 
 # --description--
 
-In this task, you will hear Basti spell out the domain portion of his email address. 
+The word `dominio` refers to the main part of a web address, usually the section that comes after the `@` in an email or after `www` in a website.
 
-The word `dominio` refers to the **domain**, the part of an email address that comes after the `arroba` (`@`) symbol.
+It is commonly used when giving or confirming email addresses and URLs. For example:
+
+`El dominio es gmail punto com.` – The domain is gmail.com  
+
+`¿Cuál es el dominio?` – What is the domain?
 
 # --instructions--
 
@@ -22,51 +25,21 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`El dominio es BLANK - BLANK - e - t - BLANK - a - BLANK punto BLANK - t.`
+`El BLANK es q-u-e-t-z-a-l punto g-t.`
 
 ## --blanks--
 
-`q`
+`dominio`
 
 ### --feedback--
 
-This letter comes after `P` in the alphabet.
-
----
-
-`u`
-
-### --feedback--
-
-This letter comes after `T` in the alphabet.
-
----
-
-`z`
-
-### --feedback--
-
-This letter comes after `X` in the alphabet.
-
----
-
-`l`
-
-### --feedback--
-
-This letter comes after `K` in the alphabet.
-
----
-
-`g`
-
-### --feedback--
-
-This letter comes after `F` in the alphabet.
+This noun refers to the main part of a web or email address.
 
 # --explanation--
 
-`El dominio es q-u-e-t-z-a-l punto g-t` means "The domain is q-u-e-t-z-a-l dot g-t."
+`Dominio` is a noun used to name the domain portion of an email address or website.
+
+It commonly appears when people spell or confirm digital contact information.
 
 # --scene--
 

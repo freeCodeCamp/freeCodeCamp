@@ -20,7 +20,7 @@ Listen to the audio and complete the sentence below.
 
 ## --sentence--
 
-`Se escribe BLANK - a - s - BLANK - BLANK.`
+`Se escribe BLANK a s BLANK BLANK.`
 
 ## --blanks--
 
@@ -36,7 +36,7 @@ This is the first letter Basti uses to start spelling his nickname.
 
 ### --feedback--
 
-This letter comes after the "s" in "Basti."
+This letter comes after the "s" in "Basti".
 
 ---
 
