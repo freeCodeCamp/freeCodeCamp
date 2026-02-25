@@ -3,16 +3,22 @@ import { ShareTemplate } from './share-template';
 import { ShareProps } from './types';
 import { useShare } from './use-share';
 
-export const Share = ({ superBlock, block }: ShareProps): JSX.Element => {
+export const Share = ({
+  superBlock,
+  block,
+  minified
+}: ShareProps): JSX.Element => {
   const redirectURLs = useShare({
     superBlock,
-    block
+    block,
+    minified
   });
   return (
     <ShareTemplate
       xRedirectURL={redirectURLs.xUrl}
       blueSkyRedirectURL={redirectURLs.blueSkyUrl}
       threadsRedirectURL={redirectURLs.threadsURL}
+      minified={minified}
     />
   );
 };

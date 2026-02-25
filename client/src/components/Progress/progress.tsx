@@ -168,13 +168,11 @@ const useGetAllChallengeData = () => {
   } = useStaticQuery(graphql`
     query getBlockNode {
       allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
       ) {
         nodes {
           challenge {

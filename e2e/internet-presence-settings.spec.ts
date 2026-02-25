@@ -19,10 +19,6 @@ test.beforeEach(async ({ page }) => {
 
   await page.goto('/certifieduser');
 
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
-
   await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
