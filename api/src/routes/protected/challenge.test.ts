@@ -378,11 +378,17 @@ describe('challengeRoutes', () => {
       // function with undefined when restoring a prisma function (for some
       // reason)
       test('Should return an error response if something goes wrong', async () => {
+        const originalUserToken = fastifyTestInstance.prisma.userToken;
+
         vi.spyOn(
-          fastifyTestInstance.prisma.userToken,
-          'findUnique'
-        ).mockImplementationOnce(() => {
-          throw new Error('Database error');
+          fastifyTestInstance.prisma,
+          'userToken',
+          'get'
+        ).mockReturnValue({
+          ...originalUserToken,
+          findUnique: vi.fn().mockImplementationOnce(() => {
+            throw new Error('Database error');
+          })
         });
         const tokenResponse = await superPost('/user/user-token');
         const token = (tokenResponse.body as { userToken: string }).userToken;

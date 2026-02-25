@@ -1,0 +1,22 @@
+{
+  "name": "Algorithms in Code",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-algorithms-in-code",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dca057932b3cc4b19c926",
+      "title": "Linear Search in Code"
+    },
+    {
+      "id": "698dcc2c7932b3cc4b19c927",
+      "title": "Binary Search in Code"
+    },
+    {
+      "id": "698dce727932b3cc4b19c928",
+      "title": "Recursive Binary Search"
+    }
+  ]
+}

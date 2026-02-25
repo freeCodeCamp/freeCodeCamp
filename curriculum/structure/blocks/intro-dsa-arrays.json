@@ -1,0 +1,26 @@
+{
+  "name": "Introduction to Arrays",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-arrays",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dd14c7932b3cc4b19c92c",
+      "title": "Introduction to Data Structures"
+    },
+    {
+      "id": "698dd3547932b3cc4b19c92d",
+      "title": "Array Basics"
+    },
+    {
+      "id": "698dd3ea7932b3cc4b19c92e",
+      "title": "Accessing a Value in an Array"
+    },
+    {
+      "id": "698dd4cd7932b3cc4b19c92f",
+      "title": "Array Search, Insert and Delete"
+    }
+  ]
+}
