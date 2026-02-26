@@ -7,13 +7,6 @@ test.describe('Public profile certifications', () => {
   }) => {
     await page.goto('/certifieduser');
 
-    // If you build the client locally, delete the button click below.
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
-
     await expect(
       page.getByRole('link', { name: /View.+Certification/ })
     ).toHaveCount(25);
@@ -24,11 +17,6 @@ test.describe('Public profile certifications', () => {
   }) => {
     await page.goto('/certifieduser');
 
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
     await page.getByRole('button', { name: 'Edit my profile' }).click();
 
     await page.getByLabel('Username').fill('CertifiedBoozer');
@@ -37,13 +25,6 @@ test.describe('Public profile certifications', () => {
       /We have updated your username to/
     );
     await page.goto('/certifiedboozer');
-
-    // If you build the client locally, delete the button click below.
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
 
     await page.waitForURL('/certifiedboozer');
     await expect(

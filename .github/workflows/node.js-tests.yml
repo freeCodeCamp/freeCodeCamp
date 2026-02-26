@@ -214,8 +214,7 @@ jobs:
       - name: Set Environment variables
         run: |
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
-          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          cat sample.env
+          echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d

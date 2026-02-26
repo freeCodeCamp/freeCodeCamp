@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    "intro-dsa-searching-algorithms",
+    "intro-dsa-time-complexity",
+    "intro-dsa-algorithms-in-code",
+    "intro-dsa-recursion-and-space-complexity",
+    "intro-dsa-arrays",
+    "intro-dsa-linked-lists",
+    "intro-dsa-merge-sort",
+    "intro-dsa-sorting-linked-lists",
+    "intro-dsa-sorting-algorithms",
+    "intro-dsa-sorting-searching-algorithms"
+  ]
+}

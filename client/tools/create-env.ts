@@ -2,6 +2,8 @@ import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import { isEqual } from 'lodash';
+
 import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
 import env from './read-env';
 
@@ -123,11 +125,11 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   `);
 } else {
   if (fs.existsSync(`${configPath}/env.json`)) {
-    const { showUpcomingChanges } = JSON.parse(
+    const envJson = JSON.parse(
       fs.readFileSync(`${configPath}/env.json`, 'utf-8')
-    ) as { showUpcomingChanges: boolean };
+    );
 
-    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+    if (!isEqual(env, envJson)) {
       console.log('Feature flags have been changed, cleaning client cache.');
       const child = spawn('pnpm', ['run', '-w', 'clean:client']);
       child.stdout.setEncoding('utf8');
