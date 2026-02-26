@@ -396,8 +396,4 @@ void getAllBlocks()
         })
     )
   )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+  .then(() => console.log('All set.  Restart the client to see the changes.'));
