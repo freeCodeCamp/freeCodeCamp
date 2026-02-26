@@ -229,7 +229,7 @@ test('User can reset on a multi-file project', async ({
   await getEditors(page).fill(sampleText);
   await expect(page.getByText(sampleText)).toBeVisible();
 
-  await page.getByTestId('independentLowerJaw-reset-button').click();
+  await page.getByTestId('independentLowerJaw-revert-button').click();
 
   await expectToRenderResetModal(page);
 
@@ -288,7 +288,7 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(updatedText);
 
-    await page.getByTestId('independentLowerJaw-reset-button').click();
+    await page.getByTestId('independentLowerJaw-revert-button').click();
 
     await page
       .getByRole('button', {
@@ -325,7 +325,7 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(updatedText);
 
-    await page.getByTestId('independentLowerJaw-reset-button').click();
+    await page.getByTestId('independentLowerJaw-revert-button').click();
 
     await page
       .getByRole('button', {

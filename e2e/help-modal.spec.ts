@@ -14,7 +14,7 @@ test.describe('Help Modal component', () => {
       .click();
 
     await expect(
-      page.getByRole('dialog', { name: translations.buttons['ask-for-help'] })
+      page.getByRole('dialog', { name: translations.buttons['get-help'] })
     ).toBeVisible();
     await expect(
       page.getByText(
@@ -189,7 +189,7 @@ test.describe('Help Modal component', () => {
       .click();
 
     const dialog = page.getByRole('dialog', {
-      name: translations.buttons['ask-for-help']
+      name: translations.buttons['get-help']
     });
 
     await expect(dialog).toBeVisible();

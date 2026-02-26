@@ -159,6 +159,7 @@ export function IndependentLowerJaw({
               className={'tooltip'}
               data-playwright-test-label='independentLowerJaw-hint-close-button'
               onClick={() => setShowHint(false)}
+              aria-label={t('buttons.close')}
             >
               <FontAwesomeIcon icon={faClose} />
               <span className='tooltiptext'> {t('buttons.close')}</span>
@@ -176,6 +177,7 @@ export function IndependentLowerJaw({
             <FontAwesomeIcon icon={faZap} />
             <button
               className={'tooltip'}
+              aria-label={t('buttons.close')}
               data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
               onClick={() => setShowSubmissionHint(false)}
             >
@@ -225,6 +227,7 @@ export function IndependentLowerJaw({
               className={`${isSignedIn && 'btn-cta'} tooltip`}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
+              aria-label={t('buttons.submit-continue')}
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
@@ -238,6 +241,7 @@ export function IndependentLowerJaw({
               type='button'
               className='btn-cta tooltip'
               data-playwright-test-label='independentLowerJaw-check-button'
+              aria-label={t('buttons.check-code')}
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
@@ -254,6 +258,7 @@ export function IndependentLowerJaw({
                 type='button'
                 className='icon-botton tooltip'
                 data-playwright-test-label='independentLowerJaw-save-button'
+                aria-label={t('buttons.save')}
                 onClick={() => saveChallenge()}
               >
                 <FontAwesomeIcon icon={faSave} />
@@ -274,6 +279,7 @@ export function IndependentLowerJaw({
               type='button'
               className='icon-botton tooltip'
               data-playwright-test-label='independentLowerJaw-reset-button'
+              aria-label={t('buttons.reset')}
               onClick={openResetModal}
             >
               <FontAwesomeIcon icon={faRotateLeft} />
@@ -284,6 +290,7 @@ export function IndependentLowerJaw({
             type='button'
             className='icon-botton tooltip'
             data-playwright-test-label='independentLowerJaw-help-button'
+            aria-label={t('buttons.help')}
             onClick={openHelpModal}
           >
             <Help />

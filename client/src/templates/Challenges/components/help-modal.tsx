@@ -271,6 +271,31 @@ function HelpModal({
           </form>
         ) : (
           <>
+            <div className='help-text-warning'>
+              <p>
+                <Trans i18nKey='learn.tried-rsa'>
+                  <a href={RSA} rel='noopener noreferrer' target='_blank'>
+                    placeholder
+                  </a>
+                </Trans>
+              </p>
+              <p>
+                <Trans i18nKey='learn.rsa-forum'>
+                  <a
+                    href={generateSearchLink(
+                      challengeTitle,
+                      challengeBlock,
+                      superBlock
+                    )}
+                    rel='noopener noreferrer'
+                    target='_blank'
+                  >
+                    placeholder
+                  </a>
+                  placeholder
+                </Trans>
+              </p>
+            </div>
             <Button
               block={true}
               size='large'
