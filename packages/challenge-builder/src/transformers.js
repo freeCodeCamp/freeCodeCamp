@@ -272,13 +272,34 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
+    const wrapDeferredScript = (scriptCode, source) => {
+      const serializedCode = JSON.stringify(scriptCode);
+      return `
+(() => {
+  const __fccCode = ${serializedCode};
+  const __fccRun = () => (0, eval)(__fccCode);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', __fccRun, { once: true });
+    return;
+  }
+
+  __fccRun();
+})();
+//# sourceURL=${source}
+`;
+    };
+
     const embedScript = (script, source, contents) => {
       const code = contents ?? '';
 
       // Keep the script in-place, but use a blob URL so defer behaves like an
       // external script rather than being ignored by inline script execution.
       if (script.hasAttribute('defer')) {
-        const scriptBlob = new Blob([code], { type: 'text/javascript' });
+        const deferredCode = wrapDeferredScript(code, source);
+        const scriptBlob = new Blob([deferredCode], {
+          type: 'text/javascript'
+        });
         const blobURL = URL.createObjectURL(scriptBlob);
 
         script.innerHTML = '';
