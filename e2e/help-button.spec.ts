@@ -21,7 +21,7 @@ test.describe('Mobile help-button tests for a page with three links (hint, help 
     await helpButton.click();
     //The menu items are visible
     await expect(page.getByTestId('get-hint')).toBeVisible();
-    await expect(page.getByTestId('get-help')).toBeVisible();
+    await expect(page.getByTestId('ask-for-help')).toBeVisible();
     await expect(page.getByTestId('watch-a-video')).toBeVisible();
   });
 });
