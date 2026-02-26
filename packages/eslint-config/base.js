@@ -100,10 +100,13 @@ const base = defineConfig(
  *
  * @type {import("eslint").Linter.Config[]}
  * */
-export const config = defineConfig(...base, {
-  files: tsFiles,
-  extends: [tseslint.configs.recommended]
-});
+export const config = defineConfig(
+  ...base,
+  {
+    files: tsFiles,
+    extends: [tseslint.configs.recommended]
+  }
+);
 
 /**
  * A shared ESLint configuration with type aware linting

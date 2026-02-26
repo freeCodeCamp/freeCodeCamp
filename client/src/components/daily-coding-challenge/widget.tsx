@@ -10,8 +10,7 @@ import { getTodayUsCentral } from './helpers';
 
 import './widget.css';
 
-interface DailyCodingChallengeWidgetProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface DailyCodingChallengeWidgetProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   forLanding: boolean;
 }
 

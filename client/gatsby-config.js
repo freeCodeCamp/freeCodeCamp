@@ -45,9 +45,8 @@ module.exports = {
       }
     },
     {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-source-challenges'
-      ),
+      resolve:
+        require.resolve('../tools/client-plugins/gatsby-source-challenges'),
       options: {
         name: 'challenges',
         source: buildChallenges,
