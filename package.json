@@ -93,6 +93,7 @@
     "lodash": "4.17.21",
     "npm-run-all2": "5.0.2",
     "oxfmt": "0.28.0",
+    "prettier": "3.2.5",
     "stylelint": "16.14.1",
     "tsx": "4.19.1",
     "turbo": "^2.8.7",
