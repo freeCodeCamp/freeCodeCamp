@@ -272,19 +272,30 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
-    const moveDeferredScript = script => {
-      // Inline scripts ignore the defer attribute, so moving them to the end of
-      // body approximates defer timing while preserving global scope.
-      if (script.hasAttribute('defer')) {
-        contentDocument.body?.appendChild(script);
-      }
-    };
-
     const embedScript = (script, source, contents) => {
-      script.innerHTML = contents ?? '';
+      const code = contents ?? '';
+
+      // Keep the script in-place, but use a blob URL so defer behaves like an
+      // external script rather than being ignored by inline script execution.
+      if (script.hasAttribute('defer')) {
+        const scriptBlob = new Blob([code], { type: 'text/javascript' });
+        const blobURL = URL.createObjectURL(scriptBlob);
+
+        script.innerHTML = '';
+        script.src = blobURL;
+        script.setAttribute('data-src', source);
+
+        if (typeof URL.revokeObjectURL === 'function') {
+          const revokeURL = () => URL.revokeObjectURL(blobURL);
+          script.addEventListener('load', revokeURL, { once: true });
+          script.addEventListener('error', revokeURL, { once: true });
+        }
+        return;
+      }
+
+      script.innerHTML = code;
       script.removeAttribute('src');
       script.setAttribute('data-src', source);
-      moveDeferredScript(script);
     };
 
     const link =
