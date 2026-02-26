@@ -8,7 +8,7 @@ dashedName: solving-trig-equations-that-require-a-calculator-introduction-to-pre
 
 # --description--
 
-In this video, we will learn how to solve trig equations that require a calculator. 
+In this video, you will learn how to solve trig equations that require a calculator. 
 
 # --questions--
 
