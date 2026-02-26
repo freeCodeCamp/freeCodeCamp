@@ -3,13 +3,22 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
-import { Test } from '../../../redux/prop-types';
-import { challengeTestsSelector } from '../redux/selectors';
-import { isSignedInSelector } from '../../../redux/selectors';
+import {
+  completedChallengesIdsSelector,
+  isSignedInSelector
+} from '../../../redux/selectors';
+import { ChallengeMeta, Test } from '../../../redux/prop-types';
+import {
+  challengeMetaSelector,
+  challengeTestsSelector,
+  completedPercentageSelector,
+  currentBlockIdsSelector
+} from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
 import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
+import { Share } from '../../../components/share';
 
 import './independent-lower-jaw.css';
 import Reset from '../../../assets/icons/reset';
@@ -17,9 +26,24 @@ import Reset from '../../../assets/icons/reset';
 const mapStateToProps = createSelector(
   challengeTestsSelector,
   isSignedInSelector,
-  (tests: Test[], isSignedIn: boolean) => ({
+  challengeMetaSelector,
+  completedPercentageSelector,
+  completedChallengesIdsSelector,
+  currentBlockIdsSelector,
+  (
+    tests: Test[],
+    isSignedIn: boolean,
+    challengeMeta: ChallengeMeta,
+    completedPercent: number,
+    completedChallengeIds: string[],
+    currentBlockIds: string[]
+  ) => ({
     tests,
-    isSignedIn
+    isSignedIn,
+    challengeMeta,
+    completedPercent,
+    completedChallengeIds,
+    currentBlockIds
   })
 );
 
@@ -37,6 +61,10 @@ interface IndependentLowerJawProps {
   submitChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
+  challengeMeta: ChallengeMeta;
+  completedPercent: number;
+  completedChallengeIds: string[];
+  currentBlockIds: string[];
 }
 export function IndependentLowerJaw({
   openHelpModal,
@@ -44,41 +72,105 @@ export function IndependentLowerJaw({
   executeChallenge,
   submitChallenge,
   tests,
-  isSignedIn
+  isSignedIn,
+  challengeMeta,
+  completedPercent,
+  completedChallengeIds,
+  currentBlockIds
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
   const [showSubmissionHint, setShowSubmissionHint] = React.useState(true);
+  const signInLinkRef = React.useRef<HTMLAnchorElement>(null);
+  const submitButtonRef = React.useRef<HTMLButtonElement>(null);
+  const [wasCheckButtonClicked, setWasCheckButtonClicked] =
+    React.useState(false);
 
   const isChallengeComplete = tests.every(test => test.pass);
+  const hasBlockIds = currentBlockIds.length > 0;
+  const isLastStepInBlock =
+    hasBlockIds &&
+    currentBlockIds[currentBlockIds.length - 1] === challengeMeta.id;
+  const isBlockCompletedByIds =
+    hasBlockIds &&
+    currentBlockIds.every(challengeId =>
+      completedChallengeIds.includes(challengeId)
+    );
+  const hasCompletedPercent = Number.isFinite(completedPercent);
+  const isBlockCompleted =
+    isBlockCompletedByIds || (hasCompletedPercent && completedPercent === 100);
+  const showShareButton =
+    isChallengeComplete && isLastStepInBlock && isBlockCompleted;
 
   React.useEffect(() => {
     setShowHint(!!hint);
   }, [hint]);
 
+  React.useEffect(() => {
+    if (!isChallengeComplete || !wasCheckButtonClicked) return;
+
+    const focusTarget = isSignedIn
+      ? submitButtonRef.current
+      : signInLinkRef.current;
+    focusTarget?.focus();
+    setWasCheckButtonClicked(false);
+  }, [isChallengeComplete, isSignedIn, wasCheckButtonClicked]);
+
+  const handleCheckButtonClick = () => {
+    setWasCheckButtonClicked(true);
+    executeChallenge();
+  };
+
   const isMacOS = navigator.userAgent.includes('Mac OS');
-  const checkButtonText = isMacOS ? t('command-enter') : t('ctrl-enter');
+  const checkButtonText = isMacOS
+    ? t('buttons.command-enter')
+    : t('buttons.ctrl-enter');
 
   return (
-    <div className='independent-lower-jaw' tabIndex={-1}>
+    <div
+      className='independent-lower-jaw'
+      data-playwright-test-label='independentLowerJaw-container'
+      tabIndex={-1}
+    >
       {showHint && hint && (
-        <div className='hint-container'>
+        <div
+          className='hint-container'
+          data-playwright-test-label='independentLowerJaw-failing-hint'
+        >
           <div dangerouslySetInnerHTML={{ __html: hint }} />
-          <button className={'tooltip'} onClick={() => setShowHint(false)}>
+          <button
+            className={'tooltip'}
+            data-playwright-test-label='independentLowerJaw-hint-close-button'
+            onClick={() => setShowHint(false)}
+          >
             ×<span className='tooltiptext'> {t('buttons.close')}</span>
           </button>
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (
-        <div className='hint-container'>
+        <div
+          className='hint-container'
+          data-playwright-test-label='independentLowerJaw-submission-hint'
+        >
           <div>
             <p>{t('learn.congratulations-code-passes')}</p>
+            {isSignedIn && showShareButton && (
+              <div className='share-button-wrapper'>
+                <Share
+                  superBlock={challengeMeta.superBlock}
+                  block={challengeMeta.block}
+                  minified={true}
+                />
+              </div>
+            )}
             {!isSignedIn && (
               <a
                 href={`${apiLocation}/signin`}
                 className='btn-cta btn btn-block'
+                data-playwright-test-label='independentLowerJaw-signin-link'
+                ref={signInLinkRef}
                 onClick={() => {
                   callGA({
                     event: 'sign_in'
@@ -91,6 +183,7 @@ export function IndependentLowerJaw({
           </div>
           <button
             className={'tooltip'}
+            data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
             onClick={() => setShowSubmissionHint(false)}
           >
             ×<span className='tooltiptext'> {t('buttons.close')}</span>
@@ -104,10 +197,13 @@ export function IndependentLowerJaw({
             <Button
               block
               className={`${isSignedIn && 'btn-cta'} tooltip`}
+              id='independent-lower-jaw-submit-button'
+              data-playwright-test-label='independentLowerJaw-submit-button'
               onClick={() => submitChallenge()}
+              ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip '>
+              <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
             </Button>
@@ -115,10 +211,11 @@ export function IndependentLowerJaw({
             <button
               type='button'
               className='btn-cta tooltip'
-              onClick={() => executeChallenge()}
+              data-playwright-test-label='independentLowerJaw-check-button'
+              onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip '>
+              <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
             </button>
@@ -128,6 +225,7 @@ export function IndependentLowerJaw({
           <button
             type='button'
             className='icon-botton tooltip'
+            data-playwright-test-label='independentLowerJaw-reset-button'
             onClick={openResetModal}
           >
             <Reset />
@@ -136,6 +234,7 @@ export function IndependentLowerJaw({
           <button
             type='button'
             className='icon-botton tooltip'
+            data-playwright-test-label='independentLowerJaw-help-button'
             onClick={openHelpModal}
           >
             <Help />

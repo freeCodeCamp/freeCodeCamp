@@ -20,7 +20,7 @@ import {
   getIsDailyCodingChallenge,
   getDailyCodingChallengeLanguage,
   submitTypes
-} from '../../../../../shared-dist/config/challenge-types';
+} from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowSectionDonationRequests,
@@ -34,7 +34,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
-import { chapterBasedSuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,

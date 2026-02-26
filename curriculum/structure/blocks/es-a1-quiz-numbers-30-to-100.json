@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 30 to 100 Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-quiz-numbers-30-to-100",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696edd3aa0d3be65341acc4b", "title": "Numbers 30 to 100 Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

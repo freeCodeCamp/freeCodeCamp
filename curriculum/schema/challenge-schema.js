@@ -1,19 +1,20 @@
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
+import Joi from 'joi';
+import joiObjectId from 'joi-objectid';
 
-const { challengeTypes } = require('../../shared-dist/config/challenge-types');
-const {
+Joi.objectId = joiObjectId(Joi);
+
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('../../shared-dist/config/curriculum');
-const {
+} from '@freecodecamp/shared/config/curriculum';
+import {
   availableCharacters,
   availableBackgrounds,
   availableAudios,
   availableAlignments
-} = require('./scene-assets');
+} from './scene-assets.js';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -115,7 +116,20 @@ const quizJoi = Joi.object().keys({
           .length(3)
           .required()
           .unique(),
-        answer: Joi.string().required()
+        answer: Joi.string().required(),
+        audioData: Joi.object().keys({
+          audio: Joi.object({
+            filename: Joi.string().required(),
+            startTimestamp: Joi.number(),
+            finishTimestamp: Joi.number()
+          }),
+          transcript: Joi.array().items(
+            Joi.object({
+              character: Joi.string().required(),
+              text: Joi.string().required()
+            })
+          )
+        })
       })
     )
     .custom((value, helpers) => {
@@ -129,11 +143,11 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
-const schema = Joi.object().keys({
+export const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
-    is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
+    is: [...chapterBasedSuperBlocks],
     then: Joi.valid(
       'workshop',
       'lab',
@@ -145,7 +159,7 @@ const schema = Joi.object().keys({
       'learn',
       'practice'
     ).required(),
-    otherwise: Joi.valid(null)
+    otherwise: Joi.optional()
   }),
   blockLayout: Joi.valid(
     'challenge-list',
@@ -174,7 +188,8 @@ const schema = Joi.object().keys({
       challengeTypes.step,
       challengeTypes.video,
       challengeTypes.multipleChoice,
-      challengeTypes.fillInTheBlank
+      challengeTypes.fillInTheBlank,
+      challengeTypes.review
     ],
     then: Joi.string().allow(''),
     otherwise: Joi.string().required()
@@ -339,6 +354,8 @@ const schema = Joi.object().keys({
       })
   }),
   showSpeakingButton: Joi.bool(),
+  // This is only to be used for dynamic client updates.
+  sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),
@@ -378,6 +395,6 @@ const schema = Joi.object().keys({
   usesMultifileEditor: Joi.boolean()
 });
 
-exports.challengeSchemaValidator = () => {
+export const challengeSchemaValidator = () => {
   return challenge => schema.validate(challenge);
 };

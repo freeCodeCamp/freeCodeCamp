@@ -78,13 +78,15 @@
   display: flex;
   justify-content: center;
   gap: 3px;
+  /* these three center the middle items on the page */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
-  /* Ensure the right group pins to the end even when no left/middle items exist */
-  margin-inline-start: auto;
 }
 
 .monaco-editor-tabs button + button {
@@ -96,9 +98,12 @@
   margin-inline-end: auto;
 }
 
-.panel-display-tabs button:first-child,
-.tabs-row > button:first-child {
+.panel-display-tabs button:first-child {
   margin: 0 10px 0 0;
+}
+
+.panel-display-tabs button:last-child {
+  margin: 0;
 }
 
 .panel-display-tabs button:last-of-type {
@@ -111,6 +116,11 @@
 
 .panel-display-tabs button:nth-last-child(2) {
   border-inline-end-width: 1px;
+}
+
+.interactive-editor-tab {
+  /* Ensure the right group pins to the end even when no left/middle items exist */
+  margin-left: auto;
 }
 
 .restart-step-tab {

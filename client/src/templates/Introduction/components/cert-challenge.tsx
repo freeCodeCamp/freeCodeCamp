@@ -7,8 +7,8 @@ import { Button } from '@freecodecamp/ui';
 import {
   type Certification,
   superBlockToCertMap
-} from '../../../../../shared-dist/config/certification-settings';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/certification-settings';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import {
   isSignedInSelector,
@@ -22,8 +22,7 @@ import {
 import { getCertifications } from '../../../components/profile/components/utils/certification';
 
 interface CertChallengeProps {
-  // TODO: create enum/reuse SuperBlocks enum somehow
-  certification: string;
+  certification: Certification;
   fetchState: {
     pending: boolean;
     complete: boolean;

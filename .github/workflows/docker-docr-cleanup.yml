@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Install doctl
-        uses: digitalocean/action-doctl@v2
+        uses: digitalocean/action-doctl@135ac0aa0eed4437d547c6f12c364d3006b42824 # v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
@@ -27,7 +27,7 @@ jobs:
         run: doctl registry login --expiry-seconds 1200
 
       - name: Delete Images
-        uses: raisedadead/action-docr-cleanup@62b968c928fbb2dbce8b0caf11c0391f0921ea46 # v1
+        uses: raisedadead/action-docr-cleanup@1c7d87369bccfdf5da03a9ae3b00eacc3f2a9b51 # v1
         with:
           repository_name: '${{ matrix.variants }}/${{ matrix.repos }}'
           days: '7'

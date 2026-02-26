@@ -11,14 +11,14 @@ import {
   Row,
   Col
 } from '@freecodecamp/ui';
-import { useTranslation, withTranslation } from 'react-i18next';
+import { Trans, useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import useDetectOS from '../utils/use-detect-os';
-import {
+import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
+import type {
   ChallengeNode,
   CompletedChallenge,
   User
@@ -36,6 +36,8 @@ import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
+import { Link, Loader } from '../../../components/helpers';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const { deploymentEnv } = envData;
 
@@ -47,6 +49,110 @@ interface GitProps {
   name: string;
   draft: boolean;
   prerelease: boolean;
+}
+
+function PrerequisitesCallout({
+  id,
+  completedChallenges,
+  challenges,
+  examSuperBlock,
+  isSignedIn,
+  isHonest
+}: ExamPrerequisitesProps & {
+  isSignedIn: boolean;
+  isHonest: boolean;
+}) {
+  const { t } = useTranslation();
+  if (!isSignedIn) {
+    return null;
+  }
+
+  if (!isHonest) {
+    return (
+      <Callout variant='caution' label={t('misc.caution')}>
+        <p>
+          <Trans i18nKey={'learn.exam.not-honest'}>
+            <Link to={'/settings#honesty'}>settings</Link>
+          </Trans>
+        </p>
+      </Callout>
+    );
+  }
+
+  return (
+    <ExamPrerequisites
+      id={id}
+      completedChallenges={completedChallenges}
+      challenges={challenges}
+      examSuperBlock={examSuperBlock}
+    />
+  );
+}
+
+interface ExamPrerequisitesProps {
+  id: string;
+  completedChallenges: CompletedChallenge[];
+  challenges: ChallengeNode['challenge'][];
+  examSuperBlock: SuperBlocks;
+}
+
+function ExamPrerequisites({
+  id,
+  completedChallenges,
+  challenges,
+  examSuperBlock
+}: ExamPrerequisitesProps) {
+  const { t } = useTranslation();
+  const getExamsQuery = examAttempts.useGetExamsQuery();
+  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+
+  if (getExamsQuery.isFetching || examIdsQuery.isFetching) {
+    return <Loader />;
+  }
+
+  if (getExamsQuery.isError || examIdsQuery.isError) {
+    console.error(getExamsQuery.error);
+    console.error(examIdsQuery.error);
+    return null;
+  }
+
+  if (!getExamsQuery.isSuccess || !examIdsQuery.isSuccess) {
+    return null;
+  }
+
+  const examId = examIdsQuery.data.at(0)?.examId;
+  const exam = getExamsQuery.data.find(examItem => examItem.id === examId);
+
+  if (!exam) {
+    // This should never happen
+    return null;
+  }
+
+  const unmetPrerequisites = exam.prerequisites.filter(
+    prereq => !completedChallenges.some(challenge => challenge.id === prereq)
+  );
+  const unmetChallenges = challenges.filter(
+    challenge =>
+      unmetPrerequisites?.includes(challenge.id) &&
+      challenge.superBlock === examSuperBlock
+  );
+  const missingPrerequisites = unmetChallenges.map(challenge => {
+    return {
+      id: challenge.id,
+      title: challenge.title,
+      slug: challenge.fields?.slug || ''
+    };
+  });
+
+  if (missingPrerequisites.length < 1) {
+    return (
+      <Callout className='exam-qualified' variant='note' label={t('misc.note')}>
+        <p>{t('learn.exam.qualified')}</p>
+      </Callout>
+    );
+  }
+
+  return <MissingPrerequisites missingPrerequisites={missingPrerequisites} />;
 }
 
 const mapStateToProps = createSelector(
@@ -78,6 +184,79 @@ interface ShowExamDownloadProps {
   user: User | null;
 }
 
+function normalizeArch(name: string): string {
+  const archMatch = name.match(
+    /(aarch64|arm|arm64|amd64|x86_64|x64|x86|i386|i686)/i
+  );
+
+  const token = archMatch?.[0];
+
+  if (!token) return '';
+  const t = token.toLowerCase();
+  if (/aarch64|arm64|arm/i.test(t)) return 'arm';
+  if (/x86_64|x64|amd64/i.test(t)) return 'x64';
+  if (/x86|i386|i686/i.test(t)) return 'x86';
+  return t;
+}
+
+export function handleDownloadLink(
+  { os, architecture }: UserOSState,
+  downloadLinks: string[]
+) {
+  const items = downloadLinks.map(link => {
+    const urlEnd = link.split('/').pop() ?? '';
+    const name = urlEnd;
+    let ext = '';
+    if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
+    else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
+    else if (name.endsWith('.AppImage')) ext = '.AppImage';
+    else if (name.endsWith('.dmg')) ext = '.dmg';
+    else if (name.endsWith('.exe')) ext = '.exe';
+    else {
+      const m = name.match(/(\.[^./]+)$/);
+      ext = m ? m[0] : '';
+    }
+
+    return { link, name, ext, arch: normalizeArch(name) };
+  });
+
+  const detectedArch = normalizeArch(architecture || '');
+
+  function pickByExts(exts: string[], preferArch?: string) {
+    // prefer both ext + arch
+    for (const ext of exts) {
+      const found = items.find(it => it.ext === ext && it.arch === preferArch);
+      if (found) return found.link;
+    }
+    // then any with ext and unspecified arch
+    const withExt = items.find(
+      it => exts.includes(it.ext) && (!preferArch || it.arch === '')
+    );
+    if (withExt) return withExt.link;
+    // then any with ext
+    const anyExt = items.find(it => exts.includes(it.ext));
+    return anyExt ? anyExt.link : '';
+  }
+
+  if (os === 'WIN') {
+    return pickByExts(['.exe'], detectedArch) || '';
+  }
+
+  if (os === 'MAC') {
+    // prefer .dmg files
+    return pickByExts(['.dmg'], detectedArch) || '';
+  }
+
+  if (os === 'LINUX') {
+    // prefer AppImage, then .app.tar.gz, then .tar.gz
+    return (
+      pickByExts(['.AppImage', '.app.tar.gz', '.tar.gz'], detectedArch) || ''
+    );
+  }
+
+  return '';
+}
+
 function ShowExamDownload({
   data: {
     challengeNode: {
@@ -95,88 +274,9 @@ function ShowExamDownload({
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
 
-  const getExamsQuery = examAttempts.useGetExamsQuery(undefined, {
-    skip: !isSignedIn
-  });
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id, {
-    skip: !isSignedIn
-  });
-
-  const os = useDetectOS();
+  const userOSState = useDetectOS();
 
   const { t } = useTranslation();
-
-  function handleDownloadLink(downloadLinks: string[]) {
-    // Filter out signature and metadata files first
-    const filtered = downloadLinks.filter(link => !/\.(sig|json)$/i.test(link));
-
-    function normalizeArch(token: string): string {
-      if (!token) return '';
-      const t = token.toLowerCase();
-      if (/aarch64|arm64|arm/i.test(t)) return 'arm';
-      if (/x86_64|x64|amd64/i.test(t)) return 'x64';
-      if (/x86|i386|i686/i.test(t)) return 'x86';
-      return t;
-    }
-
-    const items = filtered.map(link => {
-      const urlEnd = link.split('/').pop() ?? '';
-      const name = urlEnd;
-      let ext = '';
-      if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
-      else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
-      else if (name.endsWith('.AppImage')) ext = '.AppImage';
-      else if (name.endsWith('.dmg')) ext = '.dmg';
-      else if (name.endsWith('.exe')) ext = '.exe';
-      else {
-        const m = name.match(/(\.[^./]+)$/);
-        ext = m ? m[0] : '';
-      }
-
-      const archMatch = name.match(
-        /(aarch64|arm64|amd64|x86_64|x64|x86|i386)/i
-      );
-      const archToken = archMatch ? normalizeArch(archMatch[0]) : '';
-
-      return { link, name, ext, arch: archToken };
-    });
-
-    const detectedArch = normalizeArch(os.architecture || '');
-
-    function pickByExts(exts: string[], preferArch?: string) {
-      // prefer both ext + arch
-      let found = items.find(
-        it => exts.includes(it.ext) && it.arch === preferArch
-      );
-      if (found) return found.link;
-      // then any with ext and unspecified arch
-      found = items.find(
-        it => exts.includes(it.ext) && (!preferArch || it.arch === '')
-      );
-      if (found) return found.link;
-      // then any with ext
-      found = items.find(it => exts.includes(it.ext));
-      return found ? found.link : '';
-    }
-
-    if (os.os === 'WIN') {
-      return pickByExts(['.exe'], detectedArch) || '';
-    }
-
-    if (os.os === 'MAC') {
-      // prefer .dmg files
-      return pickByExts(['.dmg'], detectedArch) || '';
-    }
-
-    if (os.os === 'LINUX') {
-      // prefer AppImage, then .app.tar.gz, then .tar.gz
-      return (
-        pickByExts(['.AppImage', '.app.tar.gz', '.tar.gz'], detectedArch) || ''
-      );
-    }
-
-    return '';
-  }
 
   useEffect(() => {
     async function checkLatestVersion() {
@@ -218,39 +318,17 @@ function ShowExamDownload({
         const { tag_name, assets } = latest;
         setLatestVersion(tag_name);
         const urls = assets.map(link => link.browser_download_url);
-        setDownloadLink(handleDownloadLink(urls));
+        setDownloadLink(handleDownloadLink(userOSState, urls));
         setDownloadLinks(urls);
       } catch {
         setLatestVersion(null);
       }
     }
 
-    if (os.os) {
+    if (userOSState.os) {
       void checkLatestVersion();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os]);
-
-  const examId = examIdsQuery.data?.at(0)?.examId;
-  const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);
-  const unmetPrerequisites = exam?.prerequisites?.filter(
-    prereq => !completedChallenges.some(challenge => challenge.id === prereq)
-  );
-  const challenges = nodes.filter(
-    ({ challenge }) =>
-      unmetPrerequisites?.includes(challenge.id) &&
-      challenge.superBlock === examSuperBlock
-  );
-  const missingPrerequisites = challenges.map(({ challenge }) => {
-    return {
-      id: challenge.id,
-      title: challenge.title,
-      slug: challenge.fields?.slug || ''
-    };
-  });
-
-  const showPrereqAlert =
-    isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
+  }, [userOSState]);
 
   return (
     <LearnLayout>
@@ -270,20 +348,14 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {showPrereqAlert &&
-              (missingPrerequisites.length > 0 ? (
-                <MissingPrerequisites
-                  missingPrerequisites={missingPrerequisites}
-                />
-              ) : (
-                <Callout
-                  className='exam-qualified'
-                  variant='note'
-                  label={t('misc.note')}
-                >
-                  <p>{t('learn.exam.qualified')}</p>
-                </Callout>
-              ))}
+            <PrerequisitesCallout
+              isSignedIn={isSignedIn}
+              isHonest={user?.isHonest ?? false}
+              id={id}
+              challenges={nodes.map(({ challenge }) => challenge)}
+              completedChallenges={completedChallenges}
+              examSuperBlock={examSuperBlock}
+            />
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
             <Spacer size='l' />

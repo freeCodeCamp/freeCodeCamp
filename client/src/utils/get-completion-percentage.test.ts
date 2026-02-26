@@ -1,11 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import type { AllChallengesInfo, ChallengeNode } from '../redux/prop-types';
-import { challengeTypes } from '../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   getCompletedPercentage,
   getCompletedChallengesInBlock,
   getCurrentBlockIds
 } from './get-completion-percentage';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 describe('get-completion-percentage', () => {
   describe('getCompletedPercentage', () => {
@@ -156,21 +157,21 @@ describe('get-completion-percentage', () => {
             challenge: {
               id: 'block-challenge-1',
               block: 'basic-html',
-              certification: 'responsive-web-design'
+              certification: Certification.RespWebDesignV9
             }
           } as Partial<ChallengeNode> as ChallengeNode,
           {
             challenge: {
               id: 'block-challenge-2',
               block: 'basic-html',
-              certification: 'responsive-web-design'
+              certification: Certification.RespWebDesignV9
             }
           } as Partial<ChallengeNode> as ChallengeNode,
           {
             challenge: {
               id: 'other-block-challenge',
               block: 'basic-css',
-              certification: 'responsive-web-design'
+              certification: Certification.RespWebDesignV9
             }
           } as Partial<ChallengeNode> as ChallengeNode
         ],
@@ -180,7 +181,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'basic-html',
-        'responsive-web-design',
+        Certification.RespWebDesignV9,
         challengeTypes.step
       );
 
@@ -193,7 +194,7 @@ describe('get-completion-percentage', () => {
         certificateNodes: [
           {
             challenge: {
-              certification: 'responsive-web-design',
+              certification: Certification.RespWebDesignV9,
               tests: [
                 { id: 'cert-project-1' },
                 { id: 'cert-project-2' },
@@ -207,7 +208,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'responsive-web-design-projects',
-        'responsive-web-design',
+        Certification.RespWebDesignV9,
         challengeTypes.frontEndProject
       );
 
@@ -226,14 +227,14 @@ describe('get-completion-percentage', () => {
             challenge: {
               id: 'project-1',
               block: 'back-end-projects',
-              certification: 'back-end-development'
+              certification: Certification.BackEndDevApisV9
             }
           } as Partial<ChallengeNode> as ChallengeNode,
           {
             challenge: {
               id: 'project-2',
               block: 'back-end-projects',
-              certification: 'back-end-development'
+              certification: Certification.BackEndDevApisV9
             }
           } as Partial<ChallengeNode> as ChallengeNode
         ],
@@ -243,7 +244,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'back-end-projects',
-        'back-end-development',
+        Certification.BackEndDevApisV9,
         challengeTypes.backEndProject
       );
 
@@ -267,7 +268,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'non-existent-block',
-        'responsive-web-design',
+        Certification.RespWebDesignV9,
         challengeTypes.step
       );
 

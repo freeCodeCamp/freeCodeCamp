@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 
-import { SuperBlocks } from '../../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { withTrace } from './utils.js';
 
 export type BlockInfo = {

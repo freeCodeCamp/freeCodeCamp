@@ -6,7 +6,7 @@ import { Element } from 'react-scroll';
 import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
-import { regenerateMissingProperties } from '../../../../shared-dist/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -22,7 +22,7 @@ import {
   legacyCertifications,
   upcomingCertifications,
   type CertificationFlags
-} from '../../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import env from '../../../config/env.json';
 
 import type {

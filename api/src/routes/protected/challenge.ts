@@ -6,7 +6,7 @@ import { uniqBy, matches } from 'lodash-es';
 
 import validator from 'validator';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import * as schemas from '../../schemas.js';
 import {
   jsCertProjectIds,

@@ -2,7 +2,9 @@ import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs, Languages } from '../../shared-dist/config/i18n';
+import { isEqual } from 'lodash';
+
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
 import env from './read-env';
 
 const configPath = path.resolve(__dirname, '../config');
@@ -14,7 +16,7 @@ function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as Languages)) {
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in shared-dist/config/i18n.ts
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in packages/shared/src/config/i18n.ts
 
       `);
   }
@@ -30,7 +32,7 @@ function checkCurriculumLocale() {
   ) {
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in shared-dist/config/i18n.ts
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in packages/shared/src/config/i18n.ts
 
       `);
   }
@@ -123,11 +125,11 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   `);
 } else {
   if (fs.existsSync(`${configPath}/env.json`)) {
-    const { showUpcomingChanges } = JSON.parse(
+    const envJson = JSON.parse(
       fs.readFileSync(`${configPath}/env.json`, 'utf-8')
-    ) as { showUpcomingChanges: boolean };
+    );
 
-    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
+    if (!isEqual(env, envJson)) {
       console.log('Feature flags have been changed, cleaning client cache.');
       const child = spawn('pnpm', ['run', '-w', 'clean:client']);
       child.stdout.setEncoding('utf8');

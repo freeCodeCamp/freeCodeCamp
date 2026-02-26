@@ -1,0 +1,52 @@
+---
+id: 69757cc0faae0152c1418aad
+title: Step 1
+challengeType: 20
+dashedName: step-1
+---
+
+# --description--
+
+In this workshop, you will practice working with numbers and mathematical operations to build a bill splitter. This tool will calculate how much each person owes after adding meal costs and a tip.
+
+To start, you need a way to keep track of the total amount as costs are added. In Python, you can use a variable to store an integer (a whole number) that changes over time.
+
+For example, you might write:
+
+```py
+my_number = 2
+```
+
+Create a variable named `running_total` and assign it the value `0`.
+
+# --hints--
+
+You should have a variable named `running_total`.
+
+```js
+({ 
+    test: () => assert(runPython(`
+    _Node(_code).has_variable('running_total')
+    `))
+})
+```
+
+You should assign the integer `0` to your `running_total` variable.
+
+```js
+({
+    test: () => assert(runPython(`
+    _Node(_code).find_variable('running_total').is_equivalent('running_total = 0')
+    `))
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

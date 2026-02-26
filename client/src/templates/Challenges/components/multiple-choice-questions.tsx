@@ -7,7 +7,7 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { Question } from '../../../redux/prop-types';
 import { openModal } from '../redux/actions';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';

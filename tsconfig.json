@@ -1,9 +1,0 @@
-{
-  "include": [
-    "curriculum/*.test.ts",
-    "tools/challenge-editor/**/*",
-    "tools/scripts/**/*.ts",
-    "tools/daily-challenges/**/*.ts"
-  ],
-  "extends": "./tsconfig-base.json"
-}

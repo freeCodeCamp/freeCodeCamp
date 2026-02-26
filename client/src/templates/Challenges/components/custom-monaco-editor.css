@@ -1,0 +1,9 @@
+.monaco-editor-wrapper {
+  padding-block-start: 8px;
+  flex: 1;
+}
+
+.monaco-editor .line-numbers {
+  color: #858591 !important;
+  font-size: 12px;
+}

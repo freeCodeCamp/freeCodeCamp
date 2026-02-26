@@ -1,0 +1,30 @@
+{
+  "name": "First 100 Numbers Review",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-review-first-100-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6973d1ca6b6bf1d399e33a89",
+      "title": "Numbers from 0 to 100 General Review"
+    },
+    {
+      "id": "6973d85796e773d021dd2da7",
+      "title": "0 to 9 Pronunciation Review"
+    },
+    {
+      "id": "6973d974d684bb0586238552",
+      "title": "10 to 29 Pronunciation Review"
+    },
+    {
+      "id": "6973dae19a1d3a4ca3cb3ddd",
+      "title": "30 to 59 Pronunciation Review"
+    },
+    {
+      "id": "6973dc3fe18c258035705ece",
+      "title": "60 to 100 Pronunciation Review"
+    }
+  ],
+  "blockLabel": "review"
+}

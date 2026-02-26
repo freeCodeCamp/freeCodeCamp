@@ -6,9 +6,9 @@ import lodash from 'lodash';
 import {
   challengeTypes,
   hasNoSolution
-} from '../../../shared/config/challenge-types';
-import { getLines } from '../../../shared/utils/get-lines';
-import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
+} from '@freecodecamp/shared/config/challenge-types';
+import { getLines } from '@freecodecamp/shared/utils/get-lines';
+import { prefixDoctype } from '@freecodecamp/challenge-builder/build';
 
 import { getChallengesForLang } from '../get-challenges.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
@@ -16,7 +16,7 @@ import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
 import { validateMetaSchema } from '../../schema/meta-schema.js';
 import { getBlockStructure } from '../file-handler.js';
-import { FCC_CHALLENGE_ID, testedLang } from '../config.js';
+import { FCC_CHALLENGE_ID, CURRICULUM_LOCALE } from '../config.js';
 import ChallengeTitles from './utils/challenge-titles.js';
 import MongoIds from './utils/mongo-ids.js';
 import createPseudoWorker from './utils/pseudo-worker.js';
@@ -26,16 +26,16 @@ import { sortChallenges } from './utils/sort-challenges.js';
 const { flatten, isEmpty, cloneDeep } = lodash;
 
 vi.mock(
-  '../../../client/src/templates/Challenges/utils/typescript-worker-handler',
+  '@freecodecamp/challenge-builder/typescript-worker-handler',
   async importOriginal => {
     const actual = await importOriginal();
 
     // ts and tsvfs must match the versions used in the typescript-worker.
     const tsvfs = await import('@typescript/vfs-1.6.1');
     const ts = await import('typescript-5.9.2');
-    // use the same TS compiler as the client
+    // use the same TS compiler as the challenge-builder
     const tsCompiler = await import(
-      '../../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
+      '@freecodecamp/browser-scripts/ts-compiler'
     );
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
     await compiler.setup({ useNodeModules: true });
@@ -79,8 +79,7 @@ async function newPageContext() {
 }
 
 export async function defineTestsForBlock(testFilter) {
-  const lang = testedLang();
-  const challenges = await getChallenges(lang, testFilter);
+  const challenges = await getChallenges(CURRICULUM_LOCALE, testFilter);
   const nonCertificationChallenges = challenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
@@ -107,7 +106,7 @@ export async function defineTestsForBlock(testFilter) {
     }
   }
 
-  const challengeData = { meta, challenges, lang };
+  const challengeData = { meta, challenges, lang: CURRICULUM_LOCALE };
 
   describe('Check challenges', async () => {
     beforeAll(async () => {
@@ -151,7 +150,7 @@ async function populateTestsForLang({ lang, challenges, meta }) {
   // Presumably this is because we import from_this file in the generated block
   // test files and that happens before the mock is applied.
   const { buildChallenge } = await import(
-    '../../../client/src/templates/Challenges/utils/build'
+    '@freecodecamp/challenge-builder/build'
   );
   const validateChallenge = challengeSchemaValidator();
 
@@ -218,6 +217,13 @@ async function populateTestsForLang({ lang, challenges, meta }) {
               it('Check tests is not implemented.', () => {});
               return;
             }
+
+            it('Has challenge files', function () {
+              expect(
+                challenge.challengeFiles,
+                `challengeFiles should exist. Check that the challenge has a "seed" section in the markdown file.`
+              ).toBeDefined();
+            });
 
             // The python tests are (currently) slow, so we give them more time.
             const timePerTest =
@@ -370,9 +376,7 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
-  const { runnerTypes } = await import(
-    '../../../client/src/templates/Challenges/utils/build'
-  );
+  const { runnerTypes } = await import('@freecodecamp/challenge-builder/build');
 
   const challengeFiles = replaceChallengeFilesContentsWithSolutions(
     challenge.challengeFiles,

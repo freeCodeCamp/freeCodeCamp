@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 import { Button } from '@freecodecamp/ui';
 import { Link } from '../../../components/helpers';
 
-import type { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
+import type { BlockLabel as BlockLabelType } from '@freecodecamp/shared/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
 import CheckMark from './check-mark';
