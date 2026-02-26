@@ -272,6 +272,21 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
+    const moveDeferredScript = script => {
+      // Inline scripts ignore the defer attribute, so moving them to the end of
+      // body approximates defer timing while preserving global scope.
+      if (script.hasAttribute('defer')) {
+        contentDocument.body?.appendChild(script);
+      }
+    };
+
+    const embedScript = (script, source, contents) => {
+      script.innerHTML = contents ?? '';
+      script.removeAttribute('src');
+      script.setAttribute('data-src', source);
+      moveDeferredScript(script);
+    };
+
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -310,27 +325,19 @@ export const embedFilesInHtml = async function (challengeFiles) {
       link.dataset.href = 'styles.css';
     }
     if (script) {
-      script.innerHTML = scriptJs?.contents;
-      script.removeAttribute('src');
-      script.setAttribute('data-src', 'script.js');
+      embedScript(script, 'script.js', scriptJs?.contents);
     }
     if (tsScript) {
-      tsScript.innerHTML = indexTs?.contents;
-      tsScript.removeAttribute('src');
-      tsScript.setAttribute('data-src', 'index.ts');
+      embedScript(tsScript, 'index.ts', indexTs?.contents);
     }
     if (jsxScript) {
-      jsxScript.innerHTML = indexJsx?.contents;
-      jsxScript.removeAttribute('src');
+      embedScript(jsxScript, 'index.jsx', indexJsx?.contents);
       jsxScript.removeAttribute('type');
-      jsxScript.setAttribute('data-src', 'index.jsx');
       jsxScript.setAttribute('data-type', 'text/babel');
     }
     if (tsxScript) {
-      tsxScript.innerHTML = indexTsx?.contents;
-      tsxScript.removeAttribute('src');
+      embedScript(tsxScript, 'index.tsx', indexTsx?.contents);
       tsxScript.removeAttribute('type');
-      tsxScript.setAttribute('data-src', 'index.tsx');
       tsxScript.setAttribute('data-type', 'text/babel');
     }
     return documentElement.innerHTML;
