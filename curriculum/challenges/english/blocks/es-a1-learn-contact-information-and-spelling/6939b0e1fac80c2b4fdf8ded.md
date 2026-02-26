@@ -6,7 +6,7 @@ dashedName: task-17
 lang: es
 ---
 
-<!-- (Audio) Basti: Se escribe b-a-s-t-i. -->
+<!-- (Audio) Basti: Se escribe B-a-s-t-i. -->
 
 # --description--
 
@@ -24,7 +24,7 @@ Listen to the audio and complete the sentence below.
 
 ## --blanks--
 
-`b`
+`B`
 
 ### --feedback--
 
@@ -48,7 +48,7 @@ This is the final letter in "Basti". Listen for the vowel sound at the end.
 
 # --explanation--
 
-Basti spells his nickname as `b-a-s-t-i`.
+Basti spells his nickname as `B-a-s-t-i`.
 
 # --scene--
 
@@ -71,7 +71,7 @@ Basti spells his nickname as `b-a-s-t-i`.
       "filename": "ES_A1_basti_personal_details.mp3",
       "startTime": 1,
       "startTimestamp": 22.6,
-      "finishTimestamp": 26.74
+      "finishTimestamp": 27.5
     }
   },
   "commands": [
@@ -83,16 +83,16 @@ Basti spells his nickname as `b-a-s-t-i`.
     {
       "character": "Sebastián",
       "startTime": 1,
-      "finishTime": 5.14,
+      "finishTime": 5.6,
       "dialogue": {
-        "text": "Se escribe b-a-s-t-i.",
+        "text": "Se escribe B-a-s-t-i.",
         "align": "center"
       }
     },
     {
       "character": "Sebastián",
       "opacity": 0,
-      "startTime": 5.64
+      "startTime": 5.9
     }
   ]
 }
