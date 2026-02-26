@@ -1076,6 +1076,33 @@
       }
     }
   },
+  "introduction-to-bash": {
+    "title": "Introduction to Bash",
+    "intro": [
+      "Bash is a Unix shell and command language that provides a powerful interface for interacting with your computer's operating system. It allows you to execute commands, automate tasks, and manage files and processes efficiently.",
+      "In this course, you'll learn the basics of Bash scripting, including how to navigate the file system, manipulate files and directories."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-bash-commands": {
+        "title": "Learn Bash Commands",
+        "intro": [
+          "In these videos, you will learn basic Bash commands for navigating the file system, managing files and directories, and working with processes."
+        ]
+      },
+      "learn-bash-scripting-basics": {
+        "title": "Learn Bash Scripting Basics",
+        "intro": [
+          "In these videos, you will learn how to write simple Bash scripts to automate tasks. You will learn about variables, conditionals, loops and functions in Bash."
+        ]
+      }
+    }
+  },
+  "introduction-to-sql-and-postgresql": {},
+  "learn-bash-scripting": {},
+  "learn-sql-and-bash": {},
+  "introduction-to-nano": {},
+  "introduction-to-git-and-github": {},
   "information-security": {
     "title": "Information Security",
     "intro": [
