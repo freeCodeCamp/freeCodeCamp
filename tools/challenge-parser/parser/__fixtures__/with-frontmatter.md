@@ -5,6 +5,7 @@ challengeType: 0
 isHidden: false
 videoUrl: 'https://scrimba.com/p/pVMPUv/cE8Gpt2'
 forumTopicId: 18276
+tokens: ['Einey', 'Miney', 'Moe']
 ---
 
 # --description--

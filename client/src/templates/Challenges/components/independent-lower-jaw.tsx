@@ -79,8 +79,17 @@ export function IndependentLowerJaw({
   currentBlockIds
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+
+  for (let i = 0; challengeMeta.tokens != null && i < tests?.length; i++) {
+    const tokenRegex = new RegExp(`\\$tokens\\[${i.toString()}\\]`, 'g');
+    tests[i].message = tests[i].message?.replace(
+      tokenRegex,
+      challengeMeta.tokens[i]
+    );
+  }
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
+
   const [showHint, setShowHint] = React.useState(false);
   const [showSubmissionHint, setShowSubmissionHint] = React.useState(true);
   const signInLinkRef = React.useRef<HTMLAnchorElement>(null);
