@@ -18,8 +18,6 @@ const {
 // createPagesStatefully only runs once, but we need the following when
 // updating challenges, so they have to be stored in memory.
 let allChallengeNodes;
-let idToNextPathCurrentCurriculum;
-let idToPrevPathCurrentCurriculum;
 const filepathToStatefullyCreatedNodes = new Map();
 const filePathToCreatedNodes = new Map();
 // reverse lookup, to detect if an updated file has "overwritten" another file
@@ -256,6 +254,22 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   });
 };
 
+const createIdToNextPathMap = nodes =>
+  nodes.reduce((map, node, index) => {
+    const nextNode = nodes[index + 1];
+    const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
+    if (nextPath) map[node.id] = nextPath;
+    return map;
+  }, {});
+
+const createIdToPrevPathMap = nodes =>
+  nodes.reduce((map, node, index) => {
+    const prevNode = nodes[index - 1];
+    const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
+    if (prevPath) map[node.id] = prevPath;
+    return map;
+  }, {});
+
 exports.createPagesStatefully = async function ({ graphql, actions }) {
   const result = await graphql(`
     {
@@ -324,25 +338,10 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
     ({ node }) => node
   );
 
-  const createIdToNextPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const nextNode = nodes[index + 1];
-      const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
-      if (nextPath) map[node.id] = nextPath;
-      return map;
-    }, {});
-
-  const createIdToPrevPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const prevNode = nodes[index - 1];
-      const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
-      if (prevPath) map[node.id] = prevPath;
-      return map;
-    }, {});
-
-  idToNextPathCurrentCurriculum = createIdToNextPathMap(allChallengeNodes);
-
-  idToPrevPathCurrentCurriculum = createIdToPrevPathMap(allChallengeNodes);
+  const idToNextPathCurrentCurriculum =
+    createIdToNextPathMap(allChallengeNodes);
+  const idToPrevPathCurrentCurriculum =
+    createIdToPrevPathMap(allChallengeNodes);
 
   const nodeToPage = createChallengePages(actions.createPage, {
     idToNextPathCurrentCurriculum,
@@ -364,6 +363,10 @@ exports.createPages = function ({ actions }) {
     [...allChallengeNodes, ...newNodes],
     ['challenge.superOrder', 'challenge.order', 'challenge.challengeOrder']
   );
+
+  const idToNextPathCurrentCurriculum = createIdToNextPathMap(sortedNodes);
+  const idToPrevPathCurrentCurriculum = createIdToPrevPathMap(sortedNodes);
+
   for (const node of newNodes) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
