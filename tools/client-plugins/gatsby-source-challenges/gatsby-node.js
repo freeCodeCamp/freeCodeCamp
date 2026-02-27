@@ -120,6 +120,10 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function handleChallengeUpdate(filePath, action = 'changed') {
+    // This has to be a blunt instrument, since we're not watching the structure
+    // files. If a .md file changes, we have to assume the structure may have
+    // changed too and update the structure nodes accordingly.
+    createSuperBlockStructureNodes();
     if (action === 'deleted') {
       // We have to return before calling onSourceChange, since the file is
       // gone.
