@@ -1274,6 +1274,7 @@
       "foundational-c-sharp-with-microsoft": "Microsoft 連携・基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "Microsoft 連携・基礎 C# 認定証",
       "learn-python-for-beginners": "Learn Python for Beginners",
+      "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
       "a2-english-for-developers": "開発者のための A2 レベル英語",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開発者のための B1 レベル英語",
@@ -1460,7 +1461,8 @@
         "d3": "D3",
         "api": "APIs",
         "information-security": "Information Security",
-        "computer-fundamentals": "Computer Fundamentals"
+        "computer-fundamentals": "Computer Fundamentals",
+        "computer-science": "Computer Science"
       }
     }
   }

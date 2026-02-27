@@ -1,6 +1,6 @@
 {
   "responsive-web-design": {
-    "title": "（旧版）响应式网页设计挑战",
+    "title": "旧版响应式 Web 设计挑战",
     "intro": [
       "在响应式网页设计认证中，你将学习开发者用来编写网页的语言：HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
       "首先，你将通过创建一个展示猫咪图片的应用，学习 HTML 和 CSS 的基本知识。 然后，通过创建企鹅学习像 CSS 变量这样的现代技术，以及通过创建网页表单学习无障碍的最佳实践。",
@@ -37,7 +37,7 @@
         ]
       },
       "responsive-web-design-principles": {
-        "title": "响应式网页设计原则",
+        "title": "响应式 Web 设计原则",
         "intro": [
           "人们可能通过形状和大小不同的设备来访问网页。通过响应式网页设计，你可以设计出能灵活适应不同屏幕大小、方向和分辨率的网页。",
           "在这个课程中，你将学习如何使用 CSS 让你的网页在不同设备上看起来都不错。"
@@ -60,9 +60,9 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Legacy Responsive Web Design V8",
+    "title": "旧版响应式 Web 设计 V8",
     "intro": [
-      "在响应式网页设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
+      "在响应式 Web 设计的认证课程中，你将学习用于构建网页的语言： HTML（超文本标记语言）用于创建内容，CSS（级联样式表）用于样式设计。",
       "首先，你将通过创建一个展示猫咪图片的应用学习 HTML 和 CSS 的基本知识。 然后，通过创建一只企鹅来学习像 CSS 变量这样的现代技术，并通过创建网页表单学习无障碍的最佳实践。",
       "最后，你将通过编写 Twitter 卡片，学习如何使用 Flexbox 实现适应不同屏幕大小的网页 ，以及如何用 CSS Grid 实现一个复杂的博客布局。"
     ],
@@ -152,7 +152,7 @@
         ]
       },
       "learn-responsive-web-design-by-building-a-piano": {
-        "title": "通过创建钢琴学习响应式网页设计",
+        "title": "通过创建钢琴学习响应式 Web 设计",
         "intro": [
           "响应式设计使得你的网页适应不同屏幕尺寸的显示。",
           "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
@@ -992,6 +992,80 @@
         "title": "Object Oriented Programming",
         "intro": [
           "In these videos, you will learn about object-oriented programming by creating classes and objects. You will practice these skills by building a multiple choice quiz application."
+        ]
+      }
+    }
+  },
+  "introduction-to-algorithms-and-data-structures": {
+    "title": "Introduction to Algorithms and Data Structures",
+    "summary": [
+      "Learn about common algorithms and data structures in this introductory course."
+    ],
+    "intro": [
+      "Algorithms and Data Structures are the backbone of programming. So it's important to learn how to work with them.",
+      "In this comprehensive course, you will learn about common sorting and searching algorithms including merge sort, quicksort and binary search.",
+      "You will also learn how to work with common data structures including arrays and linked lists."
+    ],
+    "note": "",
+    "blocks": {
+      "intro-dsa-searching-algorithms": {
+        "title": "Searching Algorithms",
+        "intro": [
+          "In these videos, you will learn what an algorithm is and learn how to work with the binary search and linear search algorithms."
+        ]
+      },
+      "intro-dsa-time-complexity": {
+        "title": "Time Complexity",
+        "intro": [
+          "In these videos, you will learn about time complexity and how it works with measuring efficiency of algorithms."
+        ]
+      },
+      "intro-dsa-algorithms-in-code": {
+        "title": "Algorithms in Code",
+        "intro": [
+          "In these videos, you will write Python code for the linear and binary search algorithms."
+        ]
+      },
+      "intro-dsa-recursion-and-space-complexity": {
+        "title": "Recursion and Space Complexity",
+        "intro": [
+          "In these videos, you will learn about recursion and space complexity for algorithms."
+        ]
+      },
+      "intro-dsa-arrays": {
+        "title": "Introduction to Arrays",
+        "intro": [
+          "In these videos, you will learn how to work with arrays. You will learn about different operations including insert, delete and search."
+        ]
+      },
+      "intro-dsa-linked-lists": {
+        "title": "Introduction to Linked Lists",
+        "intro": [
+          "In these videos, you will learn about linked lists. You will learn how to add nodes to a list as well as remove and search a list."
+        ]
+      },
+      "intro-dsa-merge-sort": {
+        "title": "The Merge Sort Algorithm",
+        "intro": [
+          "In these videos, you will learn about the merge sort algorithm."
+        ]
+      },
+      "intro-dsa-sorting-linked-lists": {
+        "title": "Sorting a Linked List",
+        "intro": [
+          "In these videos, you will learn more about how to sort linked lists."
+        ]
+      },
+      "intro-dsa-sorting-algorithms": {
+        "title": "Sorting Algorithms",
+        "intro": [
+          "In these videos, you will learn about common sorting algorithms including selection sort and quicksort."
+        ]
+      },
+      "intro-dsa-sorting-searching-algorithms": {
+        "title": "Searching Names using Sorting and Searching Algorithms",
+        "intro": [
+          "In these videos, you will practice searching for names using the binary and linear search algorithms and comparing the runtimes for them."
         ]
       }
     }
@@ -3235,6 +3309,12 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "lab-adjacency-list-to-matrix-converter-js": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
@@ -3738,6 +3818,12 @@
         "title": "Numbers and Mathematical Operations",
         "intro": [
           "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "workshop-bill-splitter": {
+        "title": "Build a Bill Splitter",
+        "intro": [
+          "In this workshop you will build a bill splitter to practice working with numbers and mathematical operations in Python"
         ]
       },
       "lecture-booleans-and-conditionals": {
@@ -4951,9 +5037,9 @@
     "title": "Responsive Web Design Certification",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
-      "To earn your Responsive Web Design Certification:",
+      "要获得你的响应式 Web 设计认证：",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Responsive Web Design Certification exam."
+      "- 通过响应式 Web 设计认证考试。"
     ],
     "chapters": {
       "html": "HTML",
@@ -5974,7 +6060,7 @@
         "title": "CSS Review",
         "intro": [
           "Before you take the CSS prep exam, you first need to review the concepts taught in the previous modules.",
-          "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+          "打开此页面以复习 CSS 基础、响应式 Web 设计、动画、可访问性等概念。"
         ]
       },
       "exam-responsive-web-design-certification": {
@@ -7184,7 +7270,7 @@
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
         "intro": [
-          "In these lessons, you will learn about the best practices for responsive web design, the roles concepts like grid, flexbox, media queries, and media breakpoints play in responsive design, and more."
+          "在这些课程中，你将学习响应式 Web 设计的最佳实践、网格、flexbox、媒体查询与断点在响应式设计中的作用等。"
         ]
       },
       "workshop-piano": {
@@ -7195,14 +7281,14 @@
         ]
       },
       "review-responsive-web-design": {
-        "title": "Responsive Web Design Review",
+        "title": "响应式 Web 设计复习",
         "intro": [
           "Before you're quizzed on the fundamentals of responsive design, you should review what you've learned.",
           "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
         ]
       },
       "quiz-responsive-web-design": {
-        "title": "Responsive Web Design Quiz",
+        "title": "响应式 Web 设计测验",
         "intro": [
           "Test what you've learned about making your webpages responsive with this quiz."
         ]
