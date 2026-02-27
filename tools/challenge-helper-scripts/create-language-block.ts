@@ -602,4 +602,4 @@ void getAllBlocks()
       );
     }
   )
-  .then(() => console.log('All set.  Restart the client to see the changes.'));
+  .then(() => console.log('All set.  Refresh the page to see the changes.'));
