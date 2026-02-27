@@ -21,6 +21,8 @@ import {
 } from '../../../redux/selectors';
 import { getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
+import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
+import { useStaticQuery } from 'gatsby';
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
 vi.mock('../../../components/Progress');
@@ -60,6 +62,10 @@ const id = '7';
 const fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
 
 describe('<CompletionModal />', () => {
+  beforeEach(() => {
+    vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
+  });
+
   describe('fireConfetti', () => {
     beforeEach(() => {
       mockFireConfetti.mockClear();

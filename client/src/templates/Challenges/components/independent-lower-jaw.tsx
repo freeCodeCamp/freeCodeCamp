@@ -15,13 +15,14 @@ import {
   currentBlockIdsSelector
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import { openModal, executeChallenge } from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
+import Reset from '../../../assets/icons/reset';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
-import Reset from '../../../assets/icons/reset';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -50,15 +51,13 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
-  executeChallenge,
-  submitChallenge
+  executeChallenge
 };
 
 interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
-  submitChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
   challengeMeta: ChallengeMeta;
@@ -70,7 +69,6 @@ export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
   executeChallenge,
-  submitChallenge,
   tests,
   isSignedIn,
   challengeMeta,
@@ -79,6 +77,7 @@ export function IndependentLowerJaw({
   currentBlockIds
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
