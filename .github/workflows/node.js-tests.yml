@@ -29,6 +29,9 @@ jobs:
     strategy:
       matrix:
         node-version: [24]
+        # Both are linted to populate the cache, otherwise local runs with
+        # upcoming changes will not benefit.
+        upcomingChanges: [true, false]
       fail-fast: false
 
     steps:
@@ -68,7 +71,7 @@ jobs:
       - name: Set Environment variables
         run: |
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
-          cat sample.env
+          echo 'SHOW_UPCOMING_CHANGES=${{ matrix.upcomingChanges }}' >> $GITHUB_ENV
 
       - name: Install node_modules
         run: pnpm install
