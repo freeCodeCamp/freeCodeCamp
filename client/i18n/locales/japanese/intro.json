@@ -1002,6 +1002,80 @@
       }
     }
   },
+  "introduction-to-algorithms-and-data-structures": {
+    "title": "Introduction to Algorithms and Data Structures",
+    "summary": [
+      "Learn about common algorithms and data structures in this introductory course."
+    ],
+    "intro": [
+      "Algorithms and Data Structures are the backbone of programming. So it's important to learn how to work with them.",
+      "In this comprehensive course, you will learn about common sorting and searching algorithms including merge sort, quicksort and binary search.",
+      "You will also learn how to work with common data structures including arrays and linked lists."
+    ],
+    "note": "",
+    "blocks": {
+      "intro-dsa-searching-algorithms": {
+        "title": "Searching Algorithms",
+        "intro": [
+          "In these videos, you will learn what an algorithm is and learn how to work with the binary search and linear search algorithms."
+        ]
+      },
+      "intro-dsa-time-complexity": {
+        "title": "Time Complexity",
+        "intro": [
+          "In these videos, you will learn about time complexity and how it works with measuring efficiency of algorithms."
+        ]
+      },
+      "intro-dsa-algorithms-in-code": {
+        "title": "Algorithms in Code",
+        "intro": [
+          "In these videos, you will write Python code for the linear and binary search algorithms."
+        ]
+      },
+      "intro-dsa-recursion-and-space-complexity": {
+        "title": "Recursion and Space Complexity",
+        "intro": [
+          "In these videos, you will learn about recursion and space complexity for algorithms."
+        ]
+      },
+      "intro-dsa-arrays": {
+        "title": "Introduction to Arrays",
+        "intro": [
+          "In these videos, you will learn how to work with arrays. You will learn about different operations including insert, delete and search."
+        ]
+      },
+      "intro-dsa-linked-lists": {
+        "title": "Introduction to Linked Lists",
+        "intro": [
+          "In these videos, you will learn about linked lists. You will learn how to add nodes to a list as well as remove and search a list."
+        ]
+      },
+      "intro-dsa-merge-sort": {
+        "title": "The Merge Sort Algorithm",
+        "intro": [
+          "In these videos, you will learn about the merge sort algorithm."
+        ]
+      },
+      "intro-dsa-sorting-linked-lists": {
+        "title": "Sorting a Linked List",
+        "intro": [
+          "In these videos, you will learn more about how to sort linked lists."
+        ]
+      },
+      "intro-dsa-sorting-algorithms": {
+        "title": "Sorting Algorithms",
+        "intro": [
+          "In these videos, you will learn about common sorting algorithms including selection sort and quicksort."
+        ]
+      },
+      "intro-dsa-sorting-searching-algorithms": {
+        "title": "Searching Names using Sorting and Searching Algorithms",
+        "intro": [
+          "In these videos, you will practice searching for names using the binary and linear search algorithms and comparing the runtimes for them."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "情報セキュリティ",
     "intro": [
@@ -3249,6 +3323,12 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "lab-adjacency-list-to-matrix-converter-js": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
@@ -3752,6 +3832,12 @@
         "title": "Numbers and Mathematical Operations",
         "intro": [
           "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "workshop-bill-splitter": {
+        "title": "Build a Bill Splitter",
+        "intro": [
+          "In this workshop you will build a bill splitter to practice working with numbers and mathematical operations in Python"
         ]
       },
       "lecture-booleans-and-conditionals": {
