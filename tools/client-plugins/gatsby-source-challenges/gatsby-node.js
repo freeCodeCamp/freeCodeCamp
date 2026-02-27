@@ -1,5 +1,7 @@
 const chokidar = require('chokidar');
 
+const { sortBy } = require('lodash');
+
 const {
   getSuperblockStructure
 } = require('@freecodecamp/curriculum/file-handler');
@@ -352,15 +354,23 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 };
 
 exports.createPages = function ({ actions }) {
+  if (!allChallengeNodes) return;
+
   // actions.createPage has to be called in the createPages hook
-  const nodes = [...filePathToCreatedNodes.values()].flat();
-  for (const node of nodes) {
+  const newNodes = [...filePathToCreatedNodes.values()].flat();
+  // Nodes need sorting so createChallengePages can find the first and last
+  // challenges in a block.
+  const sortedNodes = sortBy(
+    [...allChallengeNodes, ...newNodes],
+    ['challenge.superOrder', 'challenge.order', 'challenge.challengeOrder']
+  );
+  for (const node of newNodes) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
       idToPrevPathCurrentCurriculum
     });
 
-    nodeToPage(node, 0, allChallengeNodes);
+    nodeToPage(node, 0, sortedNodes);
   }
 
   // It's important NOT to clear the createdNodes, since Gatsby deletes any
