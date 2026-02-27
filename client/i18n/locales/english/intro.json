@@ -4055,7 +4055,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Build a Discount Calculator",
+        "title": "Build an Apply Discount Function",
         "intro": [
           "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
         ]
