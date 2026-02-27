@@ -1,5 +1,7 @@
 const chokidar = require('chokidar');
 
+const { sortBy } = require('lodash');
+
 const {
   getSuperblockStructure
 } = require('@freecodecamp/curriculum/file-handler');
@@ -16,8 +18,6 @@ const {
 // createPagesStatefully only runs once, but we need the following when
 // updating challenges, so they have to be stored in memory.
 let allChallengeNodes;
-let idToNextPathCurrentCurriculum;
-let idToPrevPathCurrentCurriculum;
 const filepathToStatefullyCreatedNodes = new Map();
 const filePathToCreatedNodes = new Map();
 // reverse lookup, to detect if an updated file has "overwritten" another file
@@ -120,6 +120,10 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function handleChallengeUpdate(filePath, action = 'changed') {
+    // This has to be a blunt instrument, since we're not watching the structure
+    // files. If a .md file changes, we have to assume the structure may have
+    // changed too and update the structure nodes accordingly.
+    createSuperBlockStructureNodes();
     if (action === 'deleted') {
       // We have to return before calling onSourceChange, since the file is
       // gone.
@@ -254,6 +258,22 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   });
 };
 
+const createIdToNextPathMap = nodes =>
+  nodes.reduce((map, node, index) => {
+    const nextNode = nodes[index + 1];
+    const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
+    if (nextPath) map[node.id] = nextPath;
+    return map;
+  }, {});
+
+const createIdToPrevPathMap = nodes =>
+  nodes.reduce((map, node, index) => {
+    const prevNode = nodes[index - 1];
+    const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
+    if (prevPath) map[node.id] = prevPath;
+    return map;
+  }, {});
+
 exports.createPagesStatefully = async function ({ graphql, actions }) {
   const result = await graphql(`
     {
@@ -322,25 +342,10 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
     ({ node }) => node
   );
 
-  const createIdToNextPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const nextNode = nodes[index + 1];
-      const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
-      if (nextPath) map[node.id] = nextPath;
-      return map;
-    }, {});
-
-  const createIdToPrevPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const prevNode = nodes[index - 1];
-      const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
-      if (prevPath) map[node.id] = prevPath;
-      return map;
-    }, {});
-
-  idToNextPathCurrentCurriculum = createIdToNextPathMap(allChallengeNodes);
-
-  idToPrevPathCurrentCurriculum = createIdToPrevPathMap(allChallengeNodes);
+  const idToNextPathCurrentCurriculum =
+    createIdToNextPathMap(allChallengeNodes);
+  const idToPrevPathCurrentCurriculum =
+    createIdToPrevPathMap(allChallengeNodes);
 
   const nodeToPage = createChallengePages(actions.createPage, {
     idToNextPathCurrentCurriculum,
@@ -352,15 +357,27 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 };
 
 exports.createPages = function ({ actions }) {
+  if (!allChallengeNodes) return;
+
   // actions.createPage has to be called in the createPages hook
-  const nodes = [...filePathToCreatedNodes.values()].flat();
-  for (const node of nodes) {
+  const newNodes = [...filePathToCreatedNodes.values()].flat();
+  // Nodes need sorting so createChallengePages can find the first and last
+  // challenges in a block.
+  const sortedNodes = sortBy(
+    [...allChallengeNodes, ...newNodes],
+    ['challenge.superOrder', 'challenge.order', 'challenge.challengeOrder']
+  );
+
+  const idToNextPathCurrentCurriculum = createIdToNextPathMap(sortedNodes);
+  const idToPrevPathCurrentCurriculum = createIdToPrevPathMap(sortedNodes);
+
+  for (const node of newNodes) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
       idToPrevPathCurrentCurriculum
     });
 
-    nodeToPage(node, 0, allChallengeNodes);
+    nodeToPage(node, 0, sortedNodes);
   }
 
   // It's important NOT to clear the createdNodes, since Gatsby deletes any

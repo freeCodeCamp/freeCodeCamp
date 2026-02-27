@@ -108,4 +108,4 @@ void getAllBlocks()
     async ({ newBlock, newName, oldBlock }: RenameBlockArgs) =>
       await renameBlock({ newBlock, newName, oldBlock })
   )
-  .then(() => console.log('All set.  Restart the client to see the changes.'));
+  .then(() => console.log('All set.  Refresh the page to see the changes.'));

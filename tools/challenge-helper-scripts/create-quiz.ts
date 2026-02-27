@@ -40,25 +40,21 @@ interface CreateQuizArgs {
   questionCount: number;
 }
 
-async function createQuiz(
-  superBlock: SuperBlocks,
-  block: string,
-  helpCategory: string,
-  questionCount: number,
-  title?: string
-) {
+async function createQuiz({
+  superBlock,
+  block,
+  helpCategory,
+  questionCount,
+  title
+}: CreateQuizArgs) {
   if (!title) {
     title = block;
   }
   await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createQuizChallenge(
-    superBlock,
-    block,
-    title,
-    questionCount
-  );
+  const challengeId = new ObjectId();
   await createMetaJson(block, title, helpCategory, challengeId);
+  await createQuizChallenge({ challengeId, block, title, questionCount });
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
@@ -102,13 +98,19 @@ async function createMetaJson(
   await writeBlockStructure(block, newMeta);
 }
 
-async function createQuizChallenge(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  questionCount: number
-): Promise<ObjectId> {
-  return createQuizFile({
+async function createQuizChallenge({
+  block,
+  challengeId,
+  title,
+  questionCount
+}: {
+  block: string;
+  challengeId: ObjectId;
+  title: string;
+  questionCount: number;
+}) {
+  createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
@@ -173,14 +175,5 @@ void getAllBlocks()
       }
     ])
   )
-  .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      questionCount
-    }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, questionCount, title)
-  )
+  .then(async (args: CreateQuizArgs) => await createQuiz(args))
   .then(() => console.log('All set.  Restart the client to see the changes.'));

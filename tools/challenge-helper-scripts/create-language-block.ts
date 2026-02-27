@@ -96,23 +96,7 @@ async function createLanguageBlock(
   });
 
   const challengeLang = getLangFromSuperBlock(superBlock);
-  let challengeId: ObjectId;
-
-  if (blockLabel === BlockLabel.quiz) {
-    challengeId = await createQuizChallenge(
-      block,
-      title,
-      questionCount!,
-      challengeLang
-    );
-    blockLayout = BlockLayouts.Link;
-  } else {
-    challengeId = await createDialogueChallenge(
-      superBlock,
-      block,
-      challengeLang
-    );
-  }
+  const challengeId: ObjectId = new ObjectId();
 
   await createMetaJson(
     block,
@@ -122,6 +106,19 @@ async function createLanguageBlock(
     blockLabel,
     blockLayout
   );
+
+  if (blockLabel === BlockLabel.quiz) {
+    await createQuizChallenge(
+      challengeId,
+      block,
+      title,
+      questionCount!,
+      challengeLang
+    );
+    blockLayout = BlockLayouts.Link;
+  } else {
+    await createDialogueChallenge(challengeId, block, challengeLang);
+  }
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
@@ -242,7 +239,7 @@ async function createMetaJson(
 }
 
 async function createDialogueChallenge(
-  superBlock: SuperBlocks,
+  challengeId: ObjectId,
   block: string,
   challengeLang: string
 ): Promise<ObjectId> {
@@ -254,18 +251,21 @@ async function createDialogueChallenge(
   await fs.mkdir(newChallengeDir, { recursive: true });
 
   return createDialogueFile({
+    challengeId,
     projectPath: newChallengeDir + '/',
     challengeLang: challengeLang
   });
 }
 
 async function createQuizChallenge(
+  challengeId: ObjectId,
   block: string,
   title: string,
   questionCount: number,
   challengeLang: string
 ): Promise<ObjectId> {
   return createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
@@ -602,4 +602,4 @@ void getAllBlocks()
       );
     }
   )
-  .then(() => console.log('All set.  Restart the client to see the changes.'));
+  .then(() => console.log('All set.  Refresh the page to see the changes.'));
