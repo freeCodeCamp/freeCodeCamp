@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input } from '@inquirer/prompts';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
@@ -32,21 +32,13 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
-interface CreateQuizArgs {
-  superBlock: SuperBlocks;
-  block: string;
-  helpCategory: string;
-  title?: string;
-  questionCount: number;
-}
-
-async function createQuiz({
-  superBlock,
-  block,
-  helpCategory,
-  questionCount,
-  title
-}: CreateQuizArgs) {
+async function createQuiz(
+  superBlock: SuperBlocks,
+  block: string,
+  helpCategory: string,
+  questionCount: number,
+  title?: string
+) {
   if (!title) {
     title = block;
   }
@@ -137,43 +129,49 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.RespWebDesignV9,
-        type: 'list',
-        choices: Object.values(SuperBlocks)
-      },
-      {
-        name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this quiz?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
-        }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'HTML-CSS',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'questionCount',
-        message: 'Should this quiz have either ten or twenty questions?',
-        default: 20,
-        type: 'list',
-        choices: [20, 10]
-      }
-    ])
-  )
-  .then(async (args: CreateQuizArgs) => await createQuiz(args))
-  .then(() => console.log('All set.  Restart the client to see the changes.'));
+void getAllBlocks().then(async existingBlocks => {
+  const superBlock = await select<SuperBlocks>({
+    message: 'Which certification does this belong to?',
+    default: SuperBlocks.RespWebDesignV9,
+    choices: Object.values(SuperBlocks)
+  });
+
+  const block = await input({
+    message: 'What is the dashed name (in kebab-case) for this quiz?',
+    validate: (block: string) => validateBlockName(block, existingBlocks)
+  });
+
+  const transformedBlock = block.toLowerCase().trim();
+
+  const title = await input({
+    message: 'What is the new name?',
+    default: transformedBlock
+  });
+
+  const helpCategory = await select<string>({
+    message: 'Choose a help category',
+    default: 'HTML-CSS',
+    choices: helpCategories
+  });
+
+  const questionCount = await select<number>({
+    message: 'Should this quiz have either ten or twenty questions?',
+    default: 20,
+    choices: [
+      { name: '20 questions', value: 20 },
+      { name: '10 questions', value: 10 }
+    ]
+  });
+
+  await createQuiz(
+    superBlock,
+    transformedBlock,
+    helpCategory,
+    questionCount,
+    title
+  );
+
+  console.log(
+    'All set. Now use pnpm run clean:client in the root and it should be good to go.'
+  );
+});
