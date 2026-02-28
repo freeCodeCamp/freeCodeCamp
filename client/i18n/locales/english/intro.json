@@ -3864,6 +3864,12 @@
           "In these lessons, you will learn about functions and scope in Python."
         ]
       },
+      "lecture-understanding-python-references-and-mutability": {
+        "title": "Understanding Python References and Mutability",
+        "intro": [
+          "In these lessons, you will learn how Python variables work as references, and the difference between assignment, shallow copy, and deep copy."
+        ]
+      },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
         "intro": [
