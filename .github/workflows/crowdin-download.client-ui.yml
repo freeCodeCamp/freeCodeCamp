@@ -11,6 +11,9 @@ env:
   CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
   CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CLIENT }}
 
+permissions:
+  contents: read
+
 jobs:
   i18n-download-client-ui-translations:
     name: Client

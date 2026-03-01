@@ -11,6 +11,9 @@ env:
   CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
   CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_CURRICULUM }}
 
+permissions:
+  contents: read
+
 jobs:
   i18n-upload-curriculum-files:
     name: Learn
@@ -19,6 +22,8 @@ jobs:
     steps:
       - name: Checkout Source Files
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
