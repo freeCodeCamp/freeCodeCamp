@@ -21,13 +21,13 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Generate Crowdin Config
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'client'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads

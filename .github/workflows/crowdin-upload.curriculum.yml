@@ -21,13 +21,13 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Generate Crowdin Config
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'curriculum'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -50,25 +50,25 @@ jobs:
           # dryrun_action: true
 
       - name: Remove deleted files
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'remove-deleted-files'
           FILE_PATHS: '["curriculum/challenges/english", "curriculum/dictionaries/english"]'
 
       - name: Hide Non-Translated Strings
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'hide-curriculum-strings'
 
       - name: Hide a String
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'hide-string'
           FILE_NAME: 'basic-html-and-html5/nest-an-anchor-element-within-a-paragraph.md'
           STRING_CONTENT: Here's a <a href="https://www.freecodecamp.org" target="_blank" mark="crwd-mark">link to www.freecodecamp.org</a> for you to follow.
 
       - name: Unhide Title of Use && For a More Concise Conditional
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'unhide-string'
           FILE_NAME: 'react/use--for-a-more-concise-conditional.md'

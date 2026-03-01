@@ -23,14 +23,14 @@ jobs:
           token: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
 
       - name: Generate Crowdin Config
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'client'
 
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -59,14 +59,14 @@ jobs:
 
       # Convert Simplified Chinese to Traditional #
       - name: Convert Chinese
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'convert-chinese'
           FILE_PATHS: '["client/i18n/locales/chinese"]'
 
       ##### Download Espanol #####
       - name: Crowdin Download Espanol Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -95,7 +95,7 @@ jobs:
 
       ##### Download Italian #####
       - name: Crowdin Download Italian Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -124,7 +124,7 @@ jobs:
 
       ##### Download Brazilian Portuguese #####
       - name: Crowdin Download Portuguese (Brazilian) Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -153,7 +153,7 @@ jobs:
 
           ##### Download Ukrainian #####
       - name: Crowdin Download Ukrainian Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -182,7 +182,7 @@ jobs:
 
       ##### Download Japanese #####
       - name: Crowdin Download Japanese Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -211,7 +211,7 @@ jobs:
 
       ##### Download German #####
       - name: Crowdin Download German Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -240,7 +240,7 @@ jobs:
 
       ##### Download Swahili #####
       - name: Crowdin Download Swahili Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -269,7 +269,7 @@ jobs:
 
       ##### Download Korean #####
       - name: Crowdin Download Korean Translations
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@8818ff65bfc4322384f983ea37e3926948c11745 # v2.15.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -307,14 +307,14 @@ jobs:
       ###### Lowercase directory names #####
 
       - name: Lowercase Directories
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'lowercase-directories'
           FILE_PATH: 'client/i18n/locales'
       # Crowdin translators might have the directories
       # Create Commit
       - name: Commit Changes
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'commit-changes'
           GH_USERNAME: 'camperbot'
@@ -326,7 +326,7 @@ jobs:
       # All languages should go ABOVE this. #
 
       - name: Create PR
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'pull-request'
           GH_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
