@@ -3329,6 +3329,12 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "quiz-dynamic-programming-js": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in JavaScript with this quiz."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
