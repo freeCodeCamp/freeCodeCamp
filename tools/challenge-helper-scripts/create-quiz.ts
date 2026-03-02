@@ -177,7 +177,5 @@ void getAllBlocks().then(async existingBlocks => {
     title
   );
 
-  console.log(
-    'All set.  Refresh the page to see the changes.'
-  );
+  console.log('All set.  Refresh the page to see the changes.');
 });
