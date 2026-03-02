@@ -47,7 +47,6 @@ After creating the function, use `console.log` to call `addHabitat(tiger, "Rainf
 You should create a function named `addHabitat`.
 
 ```js
-assert.exists(addHabitat);
 assert.isFunction(addHabitat);
 ```
 
