@@ -75,7 +75,7 @@ jobs:
 
       - name: Check formatting
         run: |
-          pnpm prettier --check . || [ $? -eq 1 ] && printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
+          pnpm oxfmt --check . || [ $? -eq 1 ] && printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
 
       - name: Lint Source Files
         run: |

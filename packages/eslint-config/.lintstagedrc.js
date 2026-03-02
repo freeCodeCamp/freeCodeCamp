@@ -11,22 +11,20 @@ export const createLintStagedConfig = cwd => {
       );
 
       const lintableFiles = files.filter((_, i) => !ignoredIds[i]);
-      const prettierCommand = [
-        ...files.map(filename => `prettier --write '${filename}'`)
-      ];
+      const formatCommand = [...files.map(filename => `oxfmt '${filename}'`)];
 
       // There should be at least one lintable file if we reach here, but if not,
-      // just run prettier.
+      // just run format.
       return lintableFiles.length === 0
-        ? prettierCommand
-        : ['eslint --fix ' + lintableFiles.join(' '), ...prettierCommand];
+        ? formatCommand
+        : ['eslint --fix ' + lintableFiles.join(' '), ...formatCommand];
     },
     '*.!(mjs|js|ts|tsx|css|md)': files =>
-      files.map(filename => `prettier --write --ignore-unknown '${filename}'`),
+      files.map(filename => `oxfmt '${filename}'`),
 
     '*.css': files => [
       ...files.map(filename => `stylelint --fix '${filename}'`),
-      ...files.map(filename => `prettier --write '${filename}'`)
+      ...files.map(filename => `oxfmt '${filename}'`)
     ]
   };
 };

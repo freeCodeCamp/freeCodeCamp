@@ -1,5 +1,3 @@
-// TODO: this belongs in create-project, but we can't test that (since it uses
-// prettier) until we migrate to vitest
 import {
   getSuperblockStructure,
   writeSuperblockStructure
