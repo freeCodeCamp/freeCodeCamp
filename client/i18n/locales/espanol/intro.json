@@ -3343,6 +3343,12 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "quiz-dynamic-programming-js": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in JavaScript with this quiz."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Entender la Programación Funcional",
         "intro": [
@@ -4081,7 +4087,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Construye un calculador de descuentos.",
+        "title": "Build an Apply Discount Function",
         "intro": [
           "En este laboratorio, practicarás conceptos básicos de Python construyendo un calculador para aplicar un descuento a un precio."
         ]
@@ -4837,18 +4843,6 @@
       "es-a1-module-describing-people-at-work": "Describir personas en el trabajo."
     },
     "module-intros": {
-      "es-a1-module-sharing-your-personal-details": {
-        "note": "Disponible en 2026",
-        "intro": [
-          "En este módulo, practicarás la comprensión de conversaciones cortas que solicitan datos personales como nombre, información de contacto, nacionalidad y edad."
-        ]
-      },
-      "es-a1-module-numbers-30-to-100": {
-        "note": "Próximamente en 2026.",
-        "intro": [
-          "En este módulo, aprenderás cómo leer, escribir y pronunciar números del 30 al 100."
-        ]
-      },
       "es-a1-module-describing-a-company": {
         "note": "Próximamente en 2026.",
         "intro": [
