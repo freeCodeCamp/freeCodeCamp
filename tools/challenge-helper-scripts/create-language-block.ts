@@ -671,4 +671,4 @@ void getAllBlocks()
       'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
     )
   )
-  .catch(err => console.error('Error creating language block:', err));
+  .catch(err => console.error('Error creating language block:', err.message));
