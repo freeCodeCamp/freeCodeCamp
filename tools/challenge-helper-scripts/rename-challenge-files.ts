@@ -15,7 +15,7 @@ void (async () => {
 
   const superblock = await select<string>({
     message: 'Select target superblock:',
-    choices: superblocks.map(e => ({ name: e, value: e }))
+    choices: superblocks.map(value => ({ name: value, value }))
   });
 
   const blocks = await readdir(
@@ -24,7 +24,7 @@ void (async () => {
 
   const block = await select<string>({
     message: 'Select target block:',
-    choices: blocks.map(e => ({ name: e, value: e }))
+    choices: blocks.map(value => ({ name: value, value }))
   });
 
   const files = await readdir(

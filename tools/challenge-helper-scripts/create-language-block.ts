@@ -338,13 +338,19 @@ void getAllBlocks()
     const superBlock = await select<SuperBlocks>({
       message: 'Which certification doest this belong to?',
       default: SuperBlocks.A2English,
-      choices: Object.values(languageSuperBlocks)
+      choices: Object.values(languageSuperBlocks).map(value => ({
+        name: value,
+        value
+      }))
     });
 
     const blockLabel = await select<BlockLabel>({
       message: 'Choose a block label',
       default: BlockLabel.learn,
-      choices: Object.values(BlockLabel)
+      choices: Object.values(BlockLabel).map(value => ({
+        name: value,
+        value
+      }))
     });
 
     const rawBlock = await input({
@@ -388,7 +394,10 @@ void getAllBlocks()
     const helpCategory = await select<string>({
       message: 'Choose a help category',
       default: 'English',
-      choices: helpCategories
+      choices: helpCategories.map(value => ({
+        name: value,
+        value
+      }))
     });
 
     let blockLayout: string | undefined;

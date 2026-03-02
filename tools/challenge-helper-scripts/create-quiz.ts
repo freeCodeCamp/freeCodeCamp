@@ -133,7 +133,10 @@ void getAllBlocks().then(async existingBlocks => {
   const superBlock = await select<SuperBlocks>({
     message: 'Which certification does this belong to?',
     default: SuperBlocks.RespWebDesignV9,
-    choices: Object.values(SuperBlocks)
+    choices: Object.values(SuperBlocks).map(value => ({
+      name: value,
+      value
+    }))
   });
 
   const block = await input({
@@ -151,7 +154,10 @@ void getAllBlocks().then(async existingBlocks => {
   const helpCategory = await select<string>({
     message: 'Choose a help category',
     default: 'HTML-CSS',
-    choices: helpCategories
+    choices: helpCategories.map(value => ({
+      name: value,
+      value
+    }))
   });
 
   const questionCount = await select<number>({
