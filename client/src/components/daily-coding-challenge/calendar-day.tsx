@@ -64,7 +64,10 @@ function DailyCodingChallengeCalendarDay({
 
         {completedLanguages.length > 0 ? (
           <>
-            <span className='dc-checkmark completed'>
+            <span
+              className='dc-checkmark completed'
+              data-playwright-test-label='calendar-day-completed'
+            >
               <GreenPass />
             </span>
 
@@ -84,7 +87,10 @@ function DailyCodingChallengeCalendarDay({
             </div>
           </>
         ) : (
-          <span className='dc-checkmark not-completed'>
+          <span
+            className='dc-checkmark not-completed'
+            data-playwright-test-label='calendar-day-not-completed'
+          >
             <GreenNotCompleted />
           </span>
         )}
