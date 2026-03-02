@@ -8,6 +8,7 @@ export const actionTypes = createTypes(
   [
     'createFiles',
     'createQuestion',
+    'initHooks',
     'initTests',
     'initConsole',
     'initLogs',
@@ -22,7 +23,6 @@ export const actionTypes = createTypes(
     'cancelTests',
     'logsToConsole',
     'disableBuildOnError',
-    'storedCodeFound',
     'noStoredCodeFound',
     'saveEditorContent',
     'setShowPreviewPane',
@@ -37,7 +37,6 @@ export const actionTypes = createTypes(
     'storePortalWindow',
     'removePortalWindow',
     'challengeMounted',
-    'sendRenderTime',
     'checkChallenge',
     'resetChallenge',
     'stopResetting',

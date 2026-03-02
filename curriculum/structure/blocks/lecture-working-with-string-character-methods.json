@@ -1,0 +1,14 @@
+{
+  "name": "Working with String Character Methods",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-string-character-methods",
+  "challengeOrder": [
+    {
+      "id": "672d266034b5242126271995",
+      "title": "What Is ASCII, and How Does It Work with charCodeAt() and fromCharCode()?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

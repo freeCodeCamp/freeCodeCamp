@@ -1,0 +1,23 @@
+{
+  "blocks": [
+    "learn-string-manipulation-by-building-a-cipher",
+    "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm",
+    "learn-lambda-functions-by-building-an-expense-tracker",
+    "learn-list-comprehension-by-building-a-case-converter-program",
+    "learn-the-bisection-method-by-finding-the-square-root-of-a-number",
+    "build-an-arithmetic-formatter-project",
+    "learn-regular-expressions-by-building-a-password-generator",
+    "learn-algorithm-design-by-building-a-shortest-path-algorithm",
+    "learn-recursion-by-solving-the-tower-of-hanoi-puzzle",
+    "learn-data-structures-by-building-the-merge-sort-algorithm",
+    "build-a-time-calculator-project",
+    "learn-classes-and-objects-by-building-a-sudoku-solver",
+    "learn-tree-traversal-by-building-a-binary-search-tree",
+    "build-a-budget-app-project",
+    "learn-special-methods-by-building-a-vector-space",
+    "learn-interfaces-by-building-an-equation-solver",
+    "build-a-polygon-area-calculator-project",
+    "learn-encapsulation-by-building-a-projectile-trajectory-calculator",
+    "build-a-probability-calculator-project"
+  ]
+}

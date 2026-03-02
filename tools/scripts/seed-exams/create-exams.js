@@ -22,7 +22,7 @@ const examFilenames = [
   'example-certification-exam.yml'
 ];
 
-const client = new MongoClient(MONGOHQ_URL, { useUnifiedTopology: true });
+const client = new MongoClient(MONGOHQ_URL);
 
 function handleError(err, client) {
   if (err) {
@@ -30,10 +30,9 @@ function handleError(err, client) {
     console.error(err);
     try {
       client.close();
-    } catch (e) {
+    } catch {
       // no-op
     } finally {
-      /* eslint-disable-next-line no-process-exit */
       process.exit(1);
     }
   }

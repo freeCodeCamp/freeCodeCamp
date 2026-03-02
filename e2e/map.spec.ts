@@ -1,24 +1,64 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import intro from '../client/i18n/locales/english/intro.json';
-
-import { SuperBlockStage, superBlockStages } from '../shared/config/curriculum';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/learn');
 });
 
-const superBlocksWithLinks = [
-  ...superBlockStages[SuperBlockStage.Core],
-  ...superBlockStages[SuperBlockStage.English],
-  ...superBlockStages[SuperBlockStage.Professional],
-  ...superBlockStages[SuperBlockStage.Extra],
-  ...superBlockStages[SuperBlockStage.Legacy]
+const LANDING_PAGE_LINKS = [
+  {
+    slug: 'responsive-web-design-v9',
+    name: 'Responsive Web Design Certification'
+  },
+  {
+    slug: 'javascript-v9',
+    name: 'JavaScript Certification'
+  },
+  {
+    slug: 'front-end-development-libraries-v9',
+    name: 'Front-End Development Libraries Certification'
+  },
+  {
+    slug: 'python-v9',
+    name: 'Python Certification'
+  },
+  {
+    slug: 'relational-databases-v9',
+    name: 'Relational Databases Certification'
+  },
+  {
+    slug: 'back-end-development-and-apis-v9',
+    name: 'Back-End Development and APIs Certification'
+  },
+  {
+    slug: 'full-stack-developer-v9',
+    name: 'Certified Full-Stack Developer Curriculum'
+  },
+  {
+    slug: 'a2-english-for-developers',
+    name: 'A2 English for Developers Certification (Beta)'
+  },
+  {
+    slug: 'b1-english-for-developers',
+    name: 'B1 English for Developers Certification (Beta)'
+  },
+  {
+    slug: 'a1-professional-spanish',
+    name: 'A1 Professional Spanish Certification (Beta)'
+  },
+  {
+    slug: 'a1-professional-chinese',
+    name: 'A1 Professional Chinese Certification (Beta)'
+  },
+  {
+    slug: 'foundational-c-sharp-with-microsoft',
+    name: 'Free Foundational C# with Microsoft Certification'
+  },
+  { slug: 'the-odin-project', name: 'The Odin Project - freeCodeCamp Remix' },
+  { slug: 'coding-interview-prep', name: 'Coding Interview Prep' },
+  { slug: 'project-euler', name: 'Project Euler' },
+  { slug: 'rosetta-code', name: 'Rosetta Code' }
 ];
-
-const superBlockTitleOverride: Record<string, string> = {
-  'Responsive Web Design': 'Responsive Web Design Certification'
-};
 
 test.describe('Map Component', () => {
   test('should render correctly', async ({ page }) => {
@@ -32,21 +72,16 @@ test.describe('Map Component', () => {
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
     const curriculumBtns = page.getByTestId('curriculum-map-button');
-    await expect(curriculumBtns).toHaveCount(superBlocksWithLinks.length);
+    await expect(curriculumBtns).toHaveCount(16);
 
-    for (let i = 0; i < superBlocksWithLinks.length; i++) {
+    for (const { name, slug } of LANDING_PAGE_LINKS) {
       const superblockLink = page.getByRole('link', {
-        // This is a hacky bypass because `Responsive Web Design` hits both links.
-        name:
-          superBlockTitleOverride[intro[superBlocksWithLinks[i]].title] ??
-          intro[superBlocksWithLinks[i]].title
+        exact: true,
+        name
       });
 
       await expect(superblockLink).toBeVisible();
-      await expect(superblockLink).toHaveAttribute(
-        'href',
-        `/learn/${superBlocksWithLinks[i]}/`
-      );
+      await expect(superblockLink).toHaveAttribute('href', `/learn/${slug}/`);
     }
   });
 });

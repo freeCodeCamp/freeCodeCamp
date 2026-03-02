@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../../components/helpers/spacer';
 import { formatSecondsToTime } from '../../../../utils/format-seconds';
 import { GeneratedExamResults } from '../../../../redux/prop-types';
 
@@ -66,7 +65,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         {t('learn.exam.results-header', { title })}
       </div>
       <hr />
-      <Spacer size='medium' />
+      <Spacer size='m' />
 
       <div
         className='exam-results-message'
@@ -74,7 +73,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
       >
         {examResultsMessage}
       </div>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <div className='exam-results'>
         <div data-playwright-test-label='exam-results-question-results'>
           {t('learn.exam.question-results', {
@@ -93,8 +92,8 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
           {t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         </div>
       </div>
-      <Spacer size='medium' />
-      <Spacer size='medium' />
+      <Spacer size='m' />
+      <Spacer size='m' />
       <div>
         <Button
           block={true}
@@ -105,7 +104,7 @@ ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
         >
           {t('learn.download-results')}
         </Button>
-        <Spacer size='xxSmall' />
+        <Spacer size='xxs' />
         <Button
           block={true}
           variant='primary'

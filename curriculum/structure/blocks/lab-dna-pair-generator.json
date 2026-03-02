@@ -1,0 +1,15 @@
+{
+  "name": "Implement a DNA Pair Generator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-dna-pair-generator",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "challengeOrder": [
+    {
+      "id": "afd15382cdfb22c9efe8b7de",
+      "title": "Implement a DNA Pair Generator"
+    }
+  ],
+  "usesMultifileEditor": true
+}

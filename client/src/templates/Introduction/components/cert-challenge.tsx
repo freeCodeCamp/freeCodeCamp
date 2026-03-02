@@ -5,25 +5,24 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
-} from '../../../../../shared/config/certification-settings';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+  type Certification,
+  superBlockToCertMap
+} from '@freecodecamp/shared/config/certification-settings';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import {
   isSignedInSelector,
-  userFetchStateSelector,
-  currentCertsSelector
+  userFetchStateSelector
 } from '../../../redux/selectors';
-import { User, Steps } from '../../../redux/prop-types';
+import { User } from '../../../redux/prop-types';
 import {
   type CertTitle,
   liveCerts
 } from '../../../../config/cert-and-project-map';
+import { getCertifications } from '../../../components/profile/components/utils/certification';
 
 interface CertChallengeProps {
-  // TODO: create enum/reuse SuperBlocks enum somehow
-  certification: string;
+  certification: Certification;
   fetchState: {
     pending: boolean;
     complete: boolean;
@@ -31,7 +30,6 @@ interface CertChallengeProps {
     error: null | string;
   };
   isSignedIn: boolean;
-  currentCerts: Steps['currentCerts'];
   superBlock: SuperBlocks;
   title: CertTitle;
   user: User;
@@ -39,15 +37,9 @@ interface CertChallengeProps {
 
 const mapStateToProps = (state: unknown) => {
   return createSelector(
-    currentCertsSelector,
     userFetchStateSelector,
     isSignedInSelector,
-    (
-      currentCerts,
-      fetchState: CertChallengeProps['fetchState'],
-      isSignedIn
-    ) => ({
-      currentCerts,
+    (fetchState: CertChallengeProps['fetchState'], isSignedIn) => ({
       fetchState,
       isSignedIn
     })
@@ -55,16 +47,17 @@ const mapStateToProps = (state: unknown) => {
 };
 
 const CertChallenge = ({
-  currentCerts,
   superBlock,
   title,
   fetchState,
   isSignedIn,
-  user: { username }
+  user
 }: CertChallengeProps): JSX.Element => {
   const { t } = useTranslation();
-  const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
+
+  const { currentCerts, legacyCerts } = getCertifications(user);
+  const { username } = user;
 
   const cert = liveCerts.find(x => x.title === title);
   if (!cert) throw Error(`Certification ${title} not found`);
@@ -78,20 +71,13 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
-  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
-  const superBlockCertTypeMapTyped: { [key: string]: string } =
-    superBlockCertTypeMap;
+  const allCerts = [...currentCerts, ...legacyCerts];
 
-  useEffect(() => {
-    setIsCertified(
-      currentCerts?.find(
-        (cert: { certSlug: string }) =>
-          certSlugTypeMapTyped[cert.certSlug] ===
-          superBlockCertTypeMapTyped[superBlock]
-      )?.show ?? false
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCerts]);
+  const isCertified =
+    allCerts.find(
+      (cert: { certSlug: Certification }) =>
+        cert.certSlug === superBlockToCertMap[superBlock]
+    )?.show ?? false;
 
   const certLocation = `/certification/${username}/${certSlug}`;
 

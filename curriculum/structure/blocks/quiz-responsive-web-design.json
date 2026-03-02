@@ -1,0 +1,11 @@
+{
+  "name": "Responsive Web Design Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-responsive-web-design",
+  "challengeOrder": [
+    { "id": "66ed9034f45ce3ece4053ebd", "title": "Responsive Web Design Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

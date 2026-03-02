@@ -1,8 +1,7 @@
-import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs, Languages } from '../../shared/config/i18n';
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
 import env from './read-env';
 
 const configPath = path.resolve(__dirname, '../config');
@@ -14,7 +13,7 @@ function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as Languages)) {
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in shared/config/i18n.ts
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in packages/shared/src/config/i18n.ts
 
       `);
   }
@@ -30,11 +29,26 @@ function checkCurriculumLocale() {
   ) {
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in shared/config/i18n.ts
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in packages/shared/src/config/i18n.ts
 
       `);
   }
 }
+
+function checkDeploymentEnv() {
+  if (!process.env.DEPLOYMENT_ENV) throw Error('DEPLOYMENT_ENV is not set');
+  if (!['staging', 'production'].includes(process.env.DEPLOYMENT_ENV)) {
+    throw Error(`
+
+${process.env.DEPLOYMENT_ENV} is not a valid value for DEPLOYMENT_ENV.
+Only 'staging' and 'production' are valid deployment environments.
+`);
+  }
+}
+
+checkClientLocale();
+checkCurriculumLocale();
+checkDeploymentEnv();
 
 if (FREECODECAMP_NODE_ENV !== 'development') {
   const locationKeys = [
@@ -48,9 +62,9 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'clientLocale',
     'curriculumLocale',
     'deploymentEnv',
+    'deploymentVersion',
     'environment',
-    'showUpcomingChanges',
-    'showNewCurriculum'
+    'showUpcomingChanges'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
@@ -106,34 +120,6 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   SHOW_UPCOMING_CHANGES should never be 'true' in production
 
   `);
-
-  checkClientLocale();
-  checkCurriculumLocale();
-} else {
-  checkClientLocale();
-  checkCurriculumLocale();
-  if (fs.existsSync(`${configPath}/env.json`)) {
-    /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
-    const { showNewCurriculum, showUpcomingChanges } = require(
-      `${configPath}/env.json`
-    );
-    /* eslint-enable @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment */
-    if (
-      env['showUpcomingChanges'] !== showUpcomingChanges ||
-      env['showNewCurriculum'] !== showNewCurriculum
-    ) {
-      /* eslint-enable @typescript-eslint/no-unsafe-member-access */
-      console.log('Feature flags have been changed, cleaning client cache.');
-      const child = spawn('pnpm', ['run', '-w', 'clean:client']);
-      child.stdout.setEncoding('utf8');
-      child.stdout.on('data', function (data) {
-        console.log(data);
-      });
-      child.on('error', err => {
-        console.error(err);
-      });
-    }
-  }
 }
 
 fs.writeFileSync(`${configPath}/env.json`, JSON.stringify(env));

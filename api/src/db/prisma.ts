@@ -3,7 +3,7 @@ import { FastifyPluginAsync } from 'fastify';
 import { PrismaClient } from '@prisma/client';
 
 // importing MONGOHQ_URL so we can mock it in testing.
-import { MONGOHQ_URL } from '../utils/env';
+import { MONGOHQ_URL } from '../utils/env.js';
 
 declare module 'fastify' {
   interface FastifyInstance {

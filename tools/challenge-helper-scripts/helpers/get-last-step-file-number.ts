@@ -1,5 +1,5 @@
 import { last } from 'lodash';
-import { getMetaData } from './project-metadata';
+import { getMetaData } from './project-metadata.js';
 
 function getLastStep(): { stepNum: number } {
   const meta = getMetaData();

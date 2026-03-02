@@ -3,7 +3,8 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../shared/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
+
 import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -32,10 +33,18 @@ const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
-const upcomingPythonBase = '/learn/upcoming-python';
-const frontEndDevelopmentBase = '/learn/front-end-development';
+const respWebV9Base = '/learn/responsive-web-design-v9';
+const jsV9Base = '/learn/javascript-v9';
+const frontEndDevLibsV9Base = '/learn/front-end-development-libraries-v9';
+const pythonV9Base = '/learn/python-v9';
+const relationalDbV9Base = '/learn/relational-databases-v9';
+const backEndDevApisV9Base = '/learn/back-end-development-and-apis-v9';
+const fullStackDeveloperV9Base = '/learn/full-stack-developer-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
+const a2SpanishBase = '/learn/a2-professional-spanish';
+const a2ChineseBase = '/learn/a2-professional-chinese';
+const a1ChineseBase = '/learn/a1-professional-chinese';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -51,7 +60,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 // from the md/meta.json files for each cert and projects
 const fullstackCert = {
   id: '561add10cb82ac38a17213bd',
-  title: 'Legacy Full Stack',
+  title: 'Legacy Full-Stack',
   certSlug: Certification.LegacyFullStack,
   projects: null
   // Requirements are other certs and is
@@ -99,7 +108,7 @@ const allStandardCerts = [
   },
   {
     id: '658180220947283cdc0689ce',
-    title: 'JavaScript Algorithms and Data Structures (Beta)',
+    title: 'JavaScript Algorithms and Data Structures',
     certSlug: Certification.JsAlgoDataStructNew,
     projects: [
       {
@@ -128,15 +137,15 @@ const allStandardCerts = [
       },
       {
         id: '6555c1d3e11a1574434cf8b5',
-        title: 'Build a Pokémon Search App',
-        link: getJavaScriptAlgoPath('build-a-pokemon-search-app'),
+        title: 'Build an RPG Creature Search App',
+        link: getJavaScriptAlgoPath('build-an-rpg-creature-search-app'),
         certSlug: Certification.JsAlgoDataStructNew
       }
     ]
   },
   {
     id: '561acd10cb82ac38a17513bc',
-    title: 'Front End Development Libraries',
+    title: 'Front-End Development Libraries',
     certSlug: Certification.FrontEndDevLibs,
     projects: [
       {
@@ -247,7 +256,7 @@ const allStandardCerts = [
   },
   {
     id: '561add10cb82ac38a17523bc',
-    title: 'Back End Development and APIs',
+    title: 'Back-End Development and APIs',
     certSlug: Certification.BackEndDevApis,
     projects: [
       {
@@ -508,7 +517,7 @@ const allStandardCerts = [
   // Legacy certifications
   {
     id: '561add10cb82ac38a17513be',
-    title: 'Legacy Front End',
+    title: 'Legacy Front-End',
     certSlug: Certification.LegacyFrontEnd,
     projects: [
       {
@@ -567,8 +576,8 @@ const allStandardCerts = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd1c',
-        title: 'Build a Simon Game',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
+        title: 'Build a Memory Light Game',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-memory-light-game`,
         certSlug: Certification.LegacyFrontEnd
       }
     ]
@@ -612,7 +621,7 @@ const allStandardCerts = [
   },
   {
     id: '660add10cb82ac38a17513be',
-    title: 'Legacy Back End',
+    title: 'Legacy Back-End',
     certSlug: Certification.LegacyBackEnd,
     projects: [
       {
@@ -785,7 +794,7 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '647e3159823e0ef219c7359b',
+    id: '647f7da207d29547b3bee1ba',
     title: 'Foundational C# with Microsoft',
     certSlug: Certification.FoundationalCSharp,
     projects: [
@@ -799,28 +808,93 @@ const allStandardCerts = [
   },
   // Upcoming Certifications
   {
-    id: '64514fda6c245de4d11eb7bb',
-    title: 'Front End Development',
-    certSlug: Certification.FrontEndDevelopment,
+    id: '68db314d3c11a8bff07c7535',
+    title: 'Responsive Web Design',
+    certSlug: Certification.RespWebDesignV9,
     projects: [
       {
-        id: '645147516c245de4d11eb7ba',
-        title: 'Front End Development Certification Exam',
-        link: `${frontEndDevelopmentBase}/front-end-development-certification-exam/front-end-development-certification-exam`,
-        certSlug: Certification.FrontEndDevelopment
+        id: '68db37350b398ecddd1f5dac',
+        title: 'Responsive Web Design Certification Exam',
+        link: `${respWebV9Base}/exam-responsive-web-design-certification/exam-responsive-web-design-certification`,
+        certSlug: Certification.RespWebDesignV9
       }
     ]
   },
   {
-    id: '64afc4e8f3b37856e035b85f',
-    title: 'Upcoming Python Certification',
-    certSlug: Certification.UpcomingPython,
+    id: '68c4069c1ef859270e17c495',
+    title: 'JavaScript',
+    certSlug: Certification.JsV9,
     projects: [
       {
-        id: '64afc37bf3b37856e035b85e',
-        title: 'Upcoming Python Project',
-        link: `${upcomingPythonBase}/upcoming-python-project`,
-        certSlug: Certification.UpcomingPython
+        id: '68c462d7dc707f3ca82f8e6d',
+        title: 'JavaScript Certification Exam',
+        link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
+        certSlug: Certification.JsV9
+      }
+    ]
+  },
+  {
+    id: '68e008aa5f80c6099d47b3a2',
+    title: 'Front-End Development Libraries',
+    certSlug: Certification.FrontEndDevLibsV9,
+    projects: [
+      {
+        id: '68e00b355f80c6099d47b3a3',
+        title: 'Front-End Development Libraries Certification Exam',
+        link: `${frontEndDevLibsV9Base}/exam-front-end-development-libraries-certification/exam-front-end-development-libraries-certification`,
+        certSlug: Certification.FrontEndDevLibsV9
+      }
+    ]
+  },
+  {
+    id: '68e6bd5020effa1586e79855',
+    title: 'Python',
+    certSlug: Certification.PythonV9,
+    projects: [
+      {
+        id: '68e6bf0320effa1586e79858',
+        title: 'Python Certification Exam',
+        link: `${pythonV9Base}/exam-python-certification/exam-python-certification`,
+        certSlug: Certification.PythonV9
+      }
+    ]
+  },
+  {
+    id: '68e6bd5120effa1586e79856',
+    title: 'Relational Databases',
+    certSlug: Certification.RelationalDbV9,
+    projects: [
+      {
+        id: '68e6bf3f20effa1586e79859',
+        title: 'Relational Databases Certification Exam',
+        link: `${relationalDbV9Base}/exam-relational-databases-certification/exam-relational-databases-certification`,
+        certSlug: Certification.RelationalDbV9
+      }
+    ]
+  },
+  {
+    id: '68e6bd5120effa1586e79857',
+    title: 'Back-End Development and APIs',
+    certSlug: Certification.BackEndDevApisV9,
+    projects: [
+      {
+        id: '68e6bfa120effa1586e7985a',
+        title: 'Back-End Development and APIs Certification Exam',
+        link: `${backEndDevApisV9Base}/exam-back-end-development-and-apis-certification/exam-back-end-development-and-apis-certification`,
+        certSlug: Certification.BackEndDevApisV9
+      }
+    ]
+  },
+  {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Certified Full-Stack Developer',
+    certSlug: Certification.FullStackDeveloperV9,
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certified Full-Stack Developer Exam',
+        link: `${fullStackDeveloperV9Base}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
+        certSlug: Certification.FullStackDeveloperV9
       }
     ]
   },
@@ -830,9 +904,9 @@ const allStandardCerts = [
     certSlug: Certification.A2English,
     projects: [
       {
-        id: '651dd3e06ffb500e3f2ce478',
-        title: 'Challenge 1',
-        link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
+        id: '6721db5d9f0c116e6a0fe25a',
+        title: 'A2 English for Developers Certification Exam',
+        link: `${a2EnglishBase}/en-a2-certification-exam/en-a2-certification-exam`,
         certSlug: Certification.A2English
       }
     ]
@@ -843,10 +917,52 @@ const allStandardCerts = [
     certSlug: Certification.B1English,
     projects: [
       {
-        id: '66607e5b317411dd5e8aae22',
-        title: "Dialogue 1: I'm Tom",
-        link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
+        id: '694106b87224ea1c1a9d3201',
+        title: 'B1 English for Developers Certification Exam',
+        link: `${b1EnglishBase}/en-b1-certification-exam/en-b1-certification-exam`,
         certSlug: Certification.B1English
+      }
+    ]
+  },
+  {
+    id: '681a6b22e5a782fe3459984a',
+    title: 'A2 Professional Spanish',
+    certSlug: Certification.A2Spanish,
+    projects: [
+      {
+        id: '681a8796e5a782fe3459984b',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2SpanishBase}/talk-about-who-you-are-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Spanish
+      }
+    ]
+  },
+  {
+    id: '682c3153086dd7cabe7f48bc',
+    title: 'A2 Professional Chinese',
+    certSlug: Certification.A2Chinese,
+    projects: [
+      {
+        id: '682c2753317b88f1ecdad894',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2ChineseBase}/talk-about-what-you-do-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Chinese
+      }
+    ]
+  },
+  {
+    id: '68f1268149f045a650d4229e',
+    title: 'A1 Professional Chinese',
+    certSlug: Certification.A1Chinese,
+    projects: [
+      {
+        id: '688f1daf0133dbe2a36b140b',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
+/text-1`,
+        certSlug: Certification.A1Chinese
       }
     ]
   }
@@ -893,31 +1009,27 @@ const upcomingCerts = allStandardCerts.filter((cert): cert is UpcomingCert =>
 const liveCerts = showUpcomingChanges
   ? [...currentCerts, ...legacyCerts, fullstackCert, ...upcomingCerts]
   : [...currentCerts, ...legacyCerts, fullstackCert];
+const allCerts = [
+  ...currentCerts,
+  ...legacyCerts,
+  fullstackCert,
+  ...upcomingCerts
+];
 
 type CertsToProjects = Record<
-  (typeof allStandardCerts)[number]['title'],
+  (typeof allStandardCerts)[number]['certSlug'],
   (typeof allStandardCerts)[number]['projects']
 >;
 
 const certsToProjects = allStandardCerts.reduce((acc, curr) => {
   return {
     ...acc,
-    [curr.title]: curr.projects
+    [curr.certSlug]: curr.projects
   };
 }, {} as CertsToProjects);
 
-const currentCertTitles = currentCerts.map(({ title }) => title);
-const legacyCertTitles = legacyCerts.map(({ title }) => title);
-const upcomingCertTitles = upcomingCerts.map(({ title }) => title);
-
 export type CertTitle =
   | (typeof liveCerts)[number]['title']
-  | 'Legacy Full Stack';
+  | 'Legacy Full-Stack';
 
-export {
-  currentCertTitles,
-  legacyCertTitles,
-  upcomingCertTitles,
-  liveCerts,
-  certsToProjects
-};
+export { liveCerts, certsToProjects, allCerts };

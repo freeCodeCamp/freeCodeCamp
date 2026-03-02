@@ -1,0 +1,11 @@
+{
+  "name": "CSS Layout and Effects Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-css-layout-and-effects",
+  "challengeOrder": [
+    { "id": "66ed8ff4f45ce3ece4053eb4", "title": "CSS Layout and Effects Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

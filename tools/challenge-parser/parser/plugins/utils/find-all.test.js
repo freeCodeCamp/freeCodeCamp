@@ -1,4 +1,6 @@
-const { findAll } = require('./find-all');
+import { describe, it, expect } from 'vitest';
+
+import { findAll } from './find-all';
 
 const testTree = {
   type: 'root',
@@ -27,7 +29,7 @@ const testTree = {
 
 describe('findAll', () => {
   it('should return an array', () => {
-    expect(findAll(testTree, _node => false)).toEqual([]);
+    expect(findAll(testTree, () => false)).toEqual([]);
   });
   it('should return an array of nodes that match the test', () => {
     expect(findAll(testTree, { type: 'text', value: 'test' })).toEqual([

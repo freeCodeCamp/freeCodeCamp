@@ -3,23 +3,23 @@ import React from 'react';
 import { HotKeys, GlobalHotKeys } from 'react-hotkeys';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+
 import type {
   ChallengeFiles,
   Test,
-  User,
-  ChallengeMeta
+  ChallengeMeta,
+  User
 } from '../../../redux/prop-types';
-
 import { userSelector } from '../../../redux/selectors';
 import {
   setEditorFocusability,
-  submitChallenge,
   openModal,
   setIsAdvancing
 } from '../redux/actions';
 import {
   canFocusEditorSelector,
   challengeFilesSelector,
+  challengeMetaSelector,
   challengeTestsSelector,
   isHelpModalOpenSelector,
   isProjectPreviewModalOpenSelector,
@@ -29,6 +29,7 @@ import {
 import './hotkeys.css';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 const mapStateToProps = createSelector(
   isHelpModalOpenSelector,
@@ -39,6 +40,7 @@ const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeTestsSelector,
   userSelector,
+  challengeMetaSelector,
   (
     isHelpModalOpen: boolean,
     isResetModalOpen: boolean,
@@ -47,7 +49,8 @@ const mapStateToProps = createSelector(
     canFocusEditor: boolean,
     challengeFiles: ChallengeFiles,
     tests: Test[],
-    user: User
+    user: User | null,
+    { nextChallengePath, prevChallengePath }: ChallengeMeta
   ) => ({
     isHelpModalOpen,
     isResetModalOpen,
@@ -56,13 +59,14 @@ const mapStateToProps = createSelector(
     canFocusEditor,
     challengeFiles,
     tests,
-    user
+    keyboardShortcuts: !!user?.keyboardShortcuts,
+    nextChallengePath,
+    prevChallengePath
   })
 );
 
 const mapDispatchToProps = {
   setEditorFocusability,
-  submitChallenge,
   openShortcutsModal: () => openModal('shortcuts'),
   setIsAdvancing
 };
@@ -79,11 +83,7 @@ export type HotkeysProps = Pick<
   > &
   Pick<
     EditorProps,
-    | 'containerRef'
-    | 'tests'
-    | 'challengeFiles'
-    | 'submitChallenge'
-    | 'setEditorFocusability'
+    'containerRef' | 'tests' | 'challengeFiles' | 'setEditorFocusability'
   > & {
     isHelpModalOpen?: boolean;
     isResetModalOpen?: boolean;
@@ -96,7 +96,7 @@ export type HotkeysProps = Pick<
     setIsAdvancing: (arg0: boolean) => void;
     openShortcutsModal: () => void;
     playScene?: () => void;
-    user: User;
+    keyboardShortcuts: boolean;
   };
 
 function Hotkeys({
@@ -111,17 +111,18 @@ function Hotkeys({
   prevChallengePath,
   setEditorFocusability,
   setIsAdvancing,
-  submitChallenge,
   tests,
   usesMultifileEditor,
   openShortcutsModal,
   playScene,
-  user: { keyboardShortcuts },
+  keyboardShortcuts,
   isHelpModalOpen,
   isResetModalOpen,
   isShortcutsModalOpen,
   isProjectPreviewModalOpen
 }: HotkeysProps): JSX.Element {
+  const submitChallenge = useSubmit();
+
   const isModalOpen = [
     isHelpModalOpen,
     isResetModalOpen,
@@ -216,24 +217,22 @@ function Hotkeys({
       : {})
   };
   // GlobalHotKeys is always mounted and tracks all keypresses. Without it,
-  // keyup events can be missed and react-hotkeys assumes that that key is still
+  // keyup events can be missed and react-hotkeys assumes that key is still
   // being pressed.
   // allowChanges is necessary if the handlers depend on props (in this case
   // canFocusEditor)
   return (
-    <>
-      <HotKeys
-        id='editor-layout'
-        data-playwright-test-label='hotkeys'
-        allowChanges={true}
-        handlers={handlers}
-        innerRef={containerRef}
-        keyMap={keyMap}
-      >
-        {children}
-        <GlobalHotKeys />
-      </HotKeys>
-    </>
+    <HotKeys
+      id='editor-layout'
+      data-playwright-test-label='hotkeys'
+      allowChanges={true}
+      handlers={handlers}
+      innerRef={containerRef}
+      keyMap={keyMap}
+    >
+      {children}
+      <GlobalHotKeys />
+    </HotKeys>
   );
 }
 

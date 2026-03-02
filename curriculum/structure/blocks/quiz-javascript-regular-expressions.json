@@ -1,0 +1,14 @@
+{
+  "name": "JavaScript Regular Expressions Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-regular-expressions",
+  "challengeOrder": [
+    {
+      "id": "66edd3011f18f4ee1bd9d28b",
+      "title": "JavaScript Regular Expressions Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

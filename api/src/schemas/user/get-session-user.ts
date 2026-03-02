@@ -1,5 +1,14 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults, profileUI, savedChallenge } from '../types';
+import {
+  examResults,
+  profileUI,
+  savedChallenge,
+  experience
+} from '../types.js';
+
+const languages = Type.Array(
+  Type.Union([Type.Literal('javascript'), Type.Literal('python')])
+);
 
 export const getSessionUser = {
   response: {
@@ -41,7 +50,21 @@ export const getSessionUser = {
               examResults
             })
           ),
+          quizAttempts: Type.Array(
+            Type.Object({
+              challengeId: Type.String(),
+              quizId: Type.String(),
+              timestamp: Type.Number()
+            })
+          ),
           completedChallengeCount: Type.Number(),
+          completedDailyCodingChallenges: Type.Array(
+            Type.Object({
+              id: Type.String(),
+              completedDate: Type.Number(),
+              languages
+            })
+          ),
           currentChallengeId: Type.String(),
           email: Type.String(),
           emailVerified: Type.Boolean(),
@@ -49,6 +72,7 @@ export const getSessionUser = {
           id: Type.String(),
           is2018DataVisCert: Type.Boolean(),
           is2018FullStackCert: Type.Boolean(),
+          isA2EnglishCert: Type.Boolean(),
           isApisMicroservicesCert: Type.Boolean(),
           isBackEndCert: Type.Boolean(),
           isCheater: Type.Boolean(),
@@ -60,16 +84,27 @@ export const getSessionUser = {
           isFrontEndCert: Type.Boolean(),
           isFrontEndLibsCert: Type.Boolean(),
           isFullStackCert: Type.Boolean(),
+          isJavascriptCertV9: Type.Boolean(),
           isHonest: Type.Boolean(),
           isInfosecCertV7: Type.Boolean(),
           isInfosecQaCert: Type.Boolean(),
           isJsAlgoDataStructCert: Type.Boolean(),
           isJsAlgoDataStructCertV8: Type.Boolean(),
           isMachineLearningPyCertV7: Type.Boolean(),
+          isPythonCertV9: Type.Boolean(),
           isQaCertV7: Type.Boolean(),
           isRelationalDatabaseCertV8: Type.Boolean(),
+          isRelationalDatabaseCertV9: Type.Boolean(),
           isRespWebDesignCert: Type.Boolean(),
+          isRespWebDesignCertV9: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
+          isFrontEndLibsCertV9: Type.Boolean(),
+          isBackEndDevApisCertV9: Type.Boolean(),
+          isFullStackDeveloperCertV9: Type.Boolean(),
+          isB1EnglishCert: Type.Boolean(),
+          isA2SpanishCert: Type.Boolean(),
+          isA2ChineseCert: Type.Boolean(),
+          isA1ChineseCert: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
           linkedin: Type.Optional(Type.String()),
           location: Type.String(),
@@ -77,7 +112,7 @@ export const getSessionUser = {
           partiallyCompletedChallenges: Type.Array(
             Type.Object({ id: Type.String(), completedDate: Type.Number() })
           ),
-          picture: Type.String(), // TODO(Post-MVP): format as url/uri?
+          picture: Type.String(),
           points: Type.Number(),
           portfolio: Type.Array(
             Type.Object({
@@ -88,16 +123,19 @@ export const getSessionUser = {
               url: Type.String()
             })
           ),
-          profileUI: Type.Optional(profileUI),
-          sendQuincyEmail: Type.Boolean(),
+          experience: Type.Optional(Type.Array(experience)),
+          profileUI,
+          sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
+          bluesky: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),
           joinDate: Type.String(),
           savedChallenges: Type.Optional(Type.Array(savedChallenge)),
           username: Type.String(),
+          usernameDisplay: Type.String(),
           userToken: Type.Optional(Type.String()),
           completedSurveys: Type.Array(
             Type.Object({

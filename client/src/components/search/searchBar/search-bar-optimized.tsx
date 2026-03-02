@@ -3,13 +3,19 @@ import { useTranslation } from 'react-i18next';
 import Magnifier from '../../../assets/icons/magnifier';
 import InputReset from '../../../assets/icons/input-reset';
 import { searchPageUrl } from '../../../utils/algolia-locale-setup';
-import type { SearchBarProps } from './search-bar';
 
 const SearchBarOptimized = ({
   innerRef
-}: Pick<SearchBarProps, 'innerRef'>): JSX.Element => {
+}: {
+  innerRef: React.RefObject<HTMLDivElement>;
+}): JSX.Element => {
   const { t } = useTranslation();
-  const placeholder = t('search.placeholder');
+  // TODO: Refactor this fallback when all translation files are synced
+  const searchPlaceholder = t('search-bar:placeholder').startsWith(
+    'search.placeholder.'
+  )
+    ? t('search.placeholder')
+    : t('search-bar:placeholder');
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
@@ -50,7 +56,7 @@ const SearchBarOptimized = ({
               className='ais-SearchBox-input'
               maxLength={512}
               onChange={onChange}
-              placeholder={placeholder}
+              placeholder={searchPlaceholder}
               spellCheck='false'
               type='search'
               value={value}

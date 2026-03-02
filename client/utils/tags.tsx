@@ -44,7 +44,7 @@ export function getheadTagComponents(): JSX.Element[] {
   return headTags;
 }
 
-export function getPostBodyComponents(pathname: string): JSX.Element[] {
+export function getPostBodyComponents(superblock: string): JSX.Element[] {
   const scripts = [];
   const mathJaxScriptElement = (
     <script
@@ -56,9 +56,42 @@ export function getPostBodyComponents(pathname: string): JSX.Element[] {
     />
   );
 
-  if (isMathJaxAllowed(pathname)) {
+  if (isMathJaxAllowed(superblock)) {
     scripts.push(mathJaxScriptElement);
   }
 
   return scripts.filter(Boolean);
+}
+
+export function getPreBodyThemeScript(): JSX.Element[] {
+  const script = (
+    <script
+      key='prebody-theme-init'
+      dangerouslySetInnerHTML={{
+        __html: `
+(function(){
+  let theme = 'light';
+  const localTheme = localStorage.getItem('theme');
+
+  if (localTheme !== null) {
+    theme = localTheme === 'dark' ? 'dark' : 'light';
+  } else if (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  ) {
+    theme = 'dark';
+  }
+
+  const bodyEl = document && document.body;
+
+  if (bodyEl && bodyEl.classList) {
+    bodyEl.classList.remove('light-palette');
+    bodyEl.classList.remove('dark-palette');
+    bodyEl.classList.add(theme + '-palette');
+  }
+})();`
+      }}
+    />
+  );
+  return [script];
 }

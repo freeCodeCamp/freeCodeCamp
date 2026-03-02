@@ -1,0 +1,15 @@
+{
+  "name": "Build a Golf Score Translator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-golf-score-translator",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "689f7996426c1534fa5bea66",
+      "title": "Build a Golf Score Translator"
+    }
+  ],
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "usesMultifileEditor": true
+}

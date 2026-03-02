@@ -1,0 +1,11 @@
+{
+  "name": "SQL and PostgreSQL Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-sql-and-postgresql",
+  "challengeOrder": [
+    { "id": "66f1af82732957c895f0b21a", "title": "SQL and PostgreSQL Quiz" }
+  ],
+  "helpCategory": "Backend Development"
+}

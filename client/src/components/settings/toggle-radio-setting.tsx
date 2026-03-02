@@ -40,7 +40,7 @@ export default function ToggleRadioSetting({
         {explain ? <p id={`desc${flagName}`}>{explain}</p> : null}
       </div>
       <div className='toggle-radio-group'>
-        <label htmlFor={firstRadioId}>
+        <label className={!flag ? 'not-checked' : ''} htmlFor={firstRadioId}>
           <input
             id={firstRadioId}
             type='radio'
@@ -52,7 +52,7 @@ export default function ToggleRadioSetting({
           <span className='custom-circle'></span>
           <span>{onLabel}</span>
         </label>
-        <label htmlFor={secondRadioId}>
+        <label className={flag ? 'not-checked' : ''} htmlFor={secondRadioId}>
           <input
             id={secondRadioId}
             type='radio'

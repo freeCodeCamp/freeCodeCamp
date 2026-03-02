@@ -1,7 +1,9 @@
+import { describe, beforeEach, afterEach, it, expect } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
+import accepts from '@fastify/accepts';
 
-import notFound from './not-found';
-import redirectWithMessage, { formatMessage } from './redirect-with-message';
+import notFound from './not-found.js';
+import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 
 describe('fourOhFour', () => {
   let fastify: FastifyInstance;
@@ -9,6 +11,7 @@ describe('fourOhFour', () => {
   beforeEach(async () => {
     fastify = Fastify();
     await fastify.register(redirectWithMessage);
+    await fastify.register(accepts);
     await fastify.register(notFound);
   });
 

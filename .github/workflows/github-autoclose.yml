@@ -8,9 +8,9 @@ on:
 
 jobs:
   autoclose:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -21,7 +21,12 @@ jobs:
             });
             if (
               files.data.length !== 1 ||
-              files.data[0].filename !== ".gitignore"
+              (files.data[0].filename !== ".gitignore" &&
+              // We've had four PRs make this same (irrelevant) change already.
+                !(files.data[0].filename === "664ef4623946e65e18d59764.md" &&
+                  files.data[0].patch.includes("return re.sub('(?<!\d)1', '', equation_string.strip('+'))")
+                )
+              )
             ) {
               return;
             }

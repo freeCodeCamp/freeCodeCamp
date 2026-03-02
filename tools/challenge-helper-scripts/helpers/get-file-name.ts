@@ -1,6 +1,6 @@
 import { readdir } from 'fs/promises';
 import matter from 'gray-matter';
-import { getProjectPath } from './get-project-info';
+import { getProjectPath } from './get-project-info.js';
 
 export const getFileName = async (id: string): Promise<string | null> => {
   const path = getProjectPath();
@@ -12,7 +12,7 @@ export const getFileName = async (id: string): Promise<string | null> => {
     let frontMatter = null;
     try {
       frontMatter = matter.read(`${path}${file}`);
-    } catch (err) {
+    } catch (_err) {
       frontMatter = null;
     }
     if (String(frontMatter?.data.id) === id) {

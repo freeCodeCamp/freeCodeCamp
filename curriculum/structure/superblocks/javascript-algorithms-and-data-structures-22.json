@@ -1,0 +1,29 @@
+{
+  "blocks": [
+    "learn-introductory-javascript-by-building-a-pyramid-generator",
+    "review-js-fundamentals-by-building-a-gradebook-app",
+    "learn-basic-javascript-by-building-a-role-playing-game",
+    "learn-basic-debugging-by-building-a-random-background-color-changer",
+    "learn-form-validation-by-building-a-calorie-counter",
+    "review-dom-manipulation-by-building-a-rock-paper-scissors-game",
+    "learn-basic-string-and-array-methods-by-building-a-music-player",
+    "build-a-palindrome-checker-project",
+    "learn-the-date-object-by-building-a-date-formatter",
+    "learn-modern-javascript-methods-by-building-football-team-cards",
+    "learn-localstorage-by-building-a-todo-app",
+    "learn-recursion-by-building-a-decimal-to-binary-converter",
+    "build-a-roman-numeral-converter-project",
+    "learn-regular-expressions-by-building-a-spam-filter",
+    "learn-basic-algorithmic-thinking-by-building-a-number-sorter",
+    "learn-advanced-array-methods-by-building-a-statistics-calculator",
+    "learn-functional-programming-by-building-a-spreadsheet",
+    "build-a-telephone-number-validator-project",
+    "learn-basic-oop-by-building-a-shopping-cart",
+    "learn-intermediate-oop-by-building-a-platformer-game",
+    "review-algorithmic-thinking-by-building-a-dice-game",
+    "build-a-cash-register-project",
+    "learn-fetch-and-promises-by-building-an-fcc-authors-page",
+    "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard",
+    "build-an-rpg-creature-search-app-project"
+  ]
+}

@@ -21,12 +21,33 @@ const outputTexts = {
 
 interface InsertTextParameters {
   page: Page;
+  browserName: string;
+  containerId?: string;
   isMobile: boolean;
   text: string;
+  updatesConsole?: boolean;
 }
 
-const insertTextInCodeEditor = async ({ page, text }: InsertTextParameters) => {
-  await getEditors(page).fill(text);
+const replaceTextInCodeEditor = async ({
+  page,
+  browserName,
+  isMobile,
+  text,
+  containerId = 'editor-container-indexhtml',
+  updatesConsole = false
+}: InsertTextParameters) => {
+  await expect(async () => {
+    await clearEditor({ page, browserName, isMobile });
+    await getEditors(page).fill(text);
+    await expect(page.getByTestId(containerId)).toContainText(text);
+    if (updatesConsole) {
+      await expect(
+        page.getByRole('region', {
+          name: translations.learn['editor-tabs'].console
+        })
+      ).not.toContainText('Your test output will go here');
+    }
+  }).toPass();
 };
 
 const runChallengeTest = async (page: Page, isMobile: boolean) => {
@@ -67,8 +88,8 @@ test.describe('For classic challenges', () => {
       'Basic HTML and HTML5: Say Hello to HTML Elements |' + ' freeCodeCamp.org'
     );
     await focusEditor({ page, isMobile });
-    await clearEditor({ browserName, page, isMobile });
-    await insertTextInCodeEditor({
+    await replaceTextInCodeEditor({
+      browserName,
       page,
       isMobile,
       text: '<h1>Hello World</h1>'
@@ -85,13 +106,15 @@ test.describe('For classic challenges', () => {
 
   test('shows test output when the tests are triggered by the keyboard', async ({
     page,
+    browserName,
     isMobile
   }) => {
     test.skip(isMobile);
     const closeButton = page.getByRole('button', { name: 'Close' });
 
-    await insertTextInCodeEditor({
+    await replaceTextInCodeEditor({
       page,
+      browserName,
       isMobile,
       text: '<h1>Hello World</h1>'
     });
@@ -128,10 +151,18 @@ test.describe('Challenge Output Component Tests', () => {
 
   test('should contain syntax error output when var is entered in editor', async ({
     page,
-    isMobile
+    isMobile,
+    browserName
   }) => {
     await focusEditor({ page, isMobile });
-    await insertTextInCodeEditor({ page, isMobile, text: 'var' });
+    await replaceTextInCodeEditor({
+      browserName,
+      page,
+      isMobile,
+      text: 'var',
+      containerId: 'editor-container-scriptjs',
+      updatesConsole: true
+    });
 
     if (isMobile) {
       await page.getByRole('tab', { name: 'Console' }).click();
@@ -144,14 +175,20 @@ test.describe('Challenge Output Component Tests', () => {
     ).toHaveText(outputTexts.syntaxError);
   });
 
-  test('should contain reference error output when var is entered in editor', async ({
+  test('should contain a reference error when an undefined var is entered in editor', async ({
+    browserName,
     page,
     isMobile
   }) => {
-    const referenceErrorRegex =
-      /ReferenceError: (myName is not defined|Can't find variable: myName)/;
     await focusEditor({ page, isMobile });
-    await insertTextInCodeEditor({ page, isMobile, text: 'myName' });
+    await replaceTextInCodeEditor({
+      browserName,
+      page,
+      isMobile,
+      text: 'myName',
+      containerId: 'editor-container-scriptjs',
+      updatesConsole: true
+    });
 
     if (isMobile) {
       await page.getByRole('tab', { name: 'Console' }).click();
@@ -161,7 +198,7 @@ test.describe('Challenge Output Component Tests', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toHaveText(referenceErrorRegex);
+    ).toContainText('ReferenceError: myName is not defined');
   });
 
   test('should contain final output after test fail', async ({
@@ -170,20 +207,27 @@ test.describe('Challenge Output Component Tests', () => {
   }) => {
     await runChallengeTest(page, isMobile);
 
-    await expect(
-      page.getByRole('region', {
-        name: translations.learn['editor-tabs'].console
-      })
-    ).toHaveText(outputTexts.empty);
+    await expect(page.getByTestId('output-text')).toContainText(
+      outputTexts.empty,
+      { timeout: 10000 }
+    );
   });
 
   test('should contain final output after test pass', async ({
+    browserName,
     page,
     isMobile
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
     await focusEditor({ page, isMobile });
-    await insertTextInCodeEditor({ page, isMobile, text: 'var myName;' });
+    await replaceTextInCodeEditor({
+      browserName,
+      page,
+      isMobile,
+      text: 'var myName;',
+      containerId: 'editor-container-scriptjs',
+      updatesConsole: true
+    });
     await runChallengeTest(page, isMobile);
     await closeButton.click();
 
@@ -234,10 +278,12 @@ test.describe('Custom output for Set and Map', () => {
 
     await focusEditor({ page, isMobile });
 
-    await insertTextInCodeEditor({
+    await replaceTextInCodeEditor({
+      browserName,
       page,
       isMobile,
-      text: 'const set = new Set(); set.add(1); set.add("set"); set.add(10); console.log(set);'
+      text: 'const set = new Set(); set.add(1); set.add("set"); set.add(10); console.log(set);',
+      containerId: 'editor-container-scriptjs'
     });
 
     if (isMobile) {
@@ -248,15 +294,15 @@ test.describe('Custom output for Set and Map', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toContainText('Set(3) {1, set, 10}');
+    ).toContainText(`Set(3) {1, 'set', 10}`);
 
     await focusEditor({ page, isMobile });
-    await clearEditor({ browserName, page });
-
-    await insertTextInCodeEditor({
+    await replaceTextInCodeEditor({
+      browserName,
       page,
       isMobile,
-      text: 'const map = new Map(); map.set(1, "one"); map.set("two", 2); console.log(map);'
+      text: 'const map = new Map(); map.set(1, "one"); map.set("two", 2); console.log(map);',
+      containerId: 'editor-container-scriptjs'
     });
 
     if (isMobile) {
@@ -267,6 +313,6 @@ test.describe('Custom output for Set and Map', () => {
       page.getByRole('region', {
         name: translations.learn['editor-tabs'].console
       })
-    ).toContainText('Map(2) {1 => one, two => 2}');
+    ).toContainText(`Map(2) {1 => 'one', 'two' => 2}`);
   });
 });

@@ -8,7 +8,7 @@ const keyToSection = {
   head: 'before-user-code',
   tail: 'after-user-code'
 };
-const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py', 'ts'];
+const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py', 'ts', 'tsx'];
 const longToShortLanguages = {
   javascript: 'js',
   typescript: 'ts',
@@ -54,7 +54,7 @@ function codeToData(node, seeds, seedKey, validate) {
     throw Error(`On line ${
       position.start(node).line
     } '${shortLang}' is not a supported language.
- Please use one of js, css, html, jsx or py
+ Please use one of js, css, html, jsx, ts, tsx or py
 `);
 
   const fileId = `index${shortLang}`;
@@ -97,3 +97,4 @@ function idToData(node, index, parent, seeds) {
 }
 
 module.exports.getFileVisitor = getFileVisitor;
+module.exports.getFilenames = getFilenames;

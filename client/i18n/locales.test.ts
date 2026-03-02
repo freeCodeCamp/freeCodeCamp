@@ -1,14 +1,25 @@
 import fs from 'fs';
-import { setup } from 'jest-json-schema-extended';
-import { availableLangs, LangNames, LangCodes } from '../../shared/config/i18n';
-import { SuperBlocks } from '../../shared/config/curriculum';
-import intro from './locales/english/intro.json';
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-setup();
+import { describe, test, expect } from 'vitest';
+
+import {
+  availableLangs,
+  LangNames,
+  LangCodes
+} from '@freecodecamp/shared/config/i18n';
+import {
+  SuperBlocks,
+  superBlockStages,
+  SuperBlockStage
+} from '@freecodecamp/shared/config/curriculum';
+import intro from './locales/english/intro.json';
 
 interface Intro {
   [key: string]: {
     title: string;
+    summary?: string[];
     intro: string[];
     blocks: {
       [block: string]: {
@@ -36,6 +47,9 @@ const filesThatShouldExist = [
     name: 'links.json'
   }
 ];
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const path = `${__dirname}/locales`;
 
@@ -72,14 +86,27 @@ describe('Locale tests:', () => {
 describe('Intro file structure tests:', () => {
   const typedIntro = intro as unknown as Intro;
   const superblocks = Object.values(SuperBlocks);
+  const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
   for (const superBlock of superblocks) {
-    expect(typeof typedIntro[superBlock].title).toBe('string');
-    expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
-    expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
-    const blocks = Object.keys(typedIntro[superBlock].blocks);
-    blocks.forEach(block => {
-      expect(typeof typedIntro[superBlock].blocks[block].title).toBe('string');
-      expect(typedIntro[superBlock].blocks[block].intro).toBeInstanceOf(Array);
+    test(`superBlock ${superBlock} has required properties`, () => {
+      expect(typeof typedIntro[superBlock].title).toBe('string');
+
+      // catalog superblocks should have a summary
+      if (catalogSuperBlocks.includes(superBlock)) {
+        expect(typedIntro[superBlock].summary).toBeInstanceOf(Array);
+      }
+
+      expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
+      expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
+      const blocks = Object.keys(typedIntro[superBlock].blocks);
+      blocks.forEach(block => {
+        expect(typeof typedIntro[superBlock].blocks[block].title).toBe(
+          'string'
+        );
+        expect(typedIntro[superBlock].blocks[block].intro).toBeInstanceOf(
+          Array
+        );
+      });
     });
   }
 });

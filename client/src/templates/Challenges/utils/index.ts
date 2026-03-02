@@ -50,7 +50,14 @@ export function enhancePrismAccessibility(
     sql: 'SQL',
     http: 'HTTP',
     json: 'JSON',
-    pug: 'pug'
+    pug: 'pug',
+    ts: 'TypeScript',
+    typescript: 'TypeScript',
+    tsx: 'TSX',
+    csharp: 'C#',
+    clike: 'CLike',
+    c: 'C',
+    cpp: 'C++'
   };
   const parent = prismEnv?.element?.parentElement;
   if (

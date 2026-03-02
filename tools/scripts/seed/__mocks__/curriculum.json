@@ -61,8 +61,7 @@
           {
             "title": "Challenge Nine",
             "block": "Block One",
-            "superBlock": "super-block-b",
-            "isPrivate": true
+            "superBlock": "super-block-b"
           },
           {
             "title": "Challenge Ten",

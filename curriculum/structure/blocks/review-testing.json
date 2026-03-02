@@ -1,0 +1,11 @@
+{
+  "name": "Testing Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-testing",
+  "challengeOrder": [
+    { "id": "6724e24864b0771a4c4c9dc9", "title": "Testing Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

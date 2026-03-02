@@ -12,7 +12,6 @@ export type FlashMessageArg = {
 export interface State {
   [FlashApp]: FlashState;
   [MainApp]: {
-    appUsername: string;
     recentlyClaimedBlock: null | string;
     showMultipleProgressModals: boolean;
     currentChallengId: string;
@@ -61,4 +60,14 @@ export interface UpdateCardState {
   redirecting: boolean;
   success: boolean;
   error: string;
+}
+
+export enum LocalStorageThemes {
+  Light = 'light',
+  Dark = 'dark'
+}
+
+export enum UserThemes {
+  Night = 'night',
+  Default = 'default'
 }

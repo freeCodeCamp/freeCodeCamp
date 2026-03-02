@@ -1,9 +1,10 @@
-const isArray = require('lodash/isArray');
-const { root } = require('mdast-builder');
-const find = require('unist-util-find');
+import { describe, beforeAll, it, expect } from 'vitest';
+import isArray from 'lodash/isArray';
+import { root } from 'mdast-builder';
+import find from 'unist-util-find';
 
-const parseFixture = require('../../__fixtures__/parse-fixture');
-const { getSection } = require('./get-section');
+import parseFixture from '../../__fixtures__/parse-fixture';
+import { getSection } from './get-section';
 
 describe('getSection', () => {
   let simpleAst, extraHeadingAst;
@@ -14,20 +15,17 @@ describe('getSection', () => {
   });
 
   it('should return an array', () => {
-    expect.assertions(1);
     const actual = getSection(simpleAst, '--hints--');
     expect(isArray(actual)).toBe(true);
   });
 
   it('should return an empty array if the marker is not present', () => {
-    expect.assertions(2);
     const actual = getSection(simpleAst, '--not-a-marker--');
     expect(isArray(actual)).toBe(true);
     expect(actual.length).toBe(0);
   });
 
   it('should include any headings without markers', () => {
-    expect.assertions(1);
     const actual = getSection(extraHeadingAst, '--description--');
     expect(
       find(root(actual), {
@@ -37,12 +35,16 @@ describe('getSection', () => {
   });
 
   it('should include the rest of the AST if there is no end marker', () => {
-    expect.assertions(2);
     const actual = getSection(extraHeadingAst, '--solutions--');
     expect(actual.length > 0).toBe(true);
     expect(
       find(root(actual), { value: 'body {\n  background: white;\n}' })
     ).not.toBeUndefined();
+  });
+
+  it('should ignore a marker if the depth is not correct', () => {
+    const actual = getSection(extraHeadingAst, '--instructions--', 2);
+    expect(actual).toHaveLength(0);
   });
 
   it('should match the hints snapshot', () => {

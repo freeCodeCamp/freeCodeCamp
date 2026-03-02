@@ -1,4 +1,4 @@
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
@@ -16,15 +16,16 @@ import {
   CommunityAchievementsText,
   GetSupporterBenefitsText
 } from '../components/Donation/donation-text-components';
-import { Spacer, Loader } from '../components/helpers';
+import { Loader } from '../components/helpers';
 import {
   signInLoadingSelector,
   userSelector,
   donationFormStateSelector
 } from '../redux/selectors';
-import { PaymentContext } from '../../../shared/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import { DonateFormState } from '../redux/types';
 import callGA from '../analytics/call-ga';
+import type { User } from '../redux/prop-types';
 interface DonatePageProps {
   isDonating?: boolean;
   showLoading: boolean;
@@ -37,11 +38,11 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   donationFormStateSelector,
   (
-    { isDonating }: { isDonating: boolean },
+    user: User | null,
     showLoading: boolean,
     donationFormState: DonateFormState
   ) => ({
-    isDonating,
+    isDonating: user?.isDonating || false,
     showLoading,
     donationFormState
   })
@@ -58,7 +59,6 @@ function DonatePage({
       event: 'donation_view',
       action: `Displayed Donate Page`
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return showLoading ? (
@@ -93,19 +93,19 @@ function DonatePage({
       <Container className='donate-supporter-page-section'>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <SupportBenefitsText />
           </Col>
         </Row>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <CurrentInitiativesText />
           </Col>
         </Row>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <CommunityAchievementsText />
           </Col>
         </Row>
@@ -118,9 +118,9 @@ function DonatePage({
       <Container fluid={true}>
         <Row>
           <Col sm={12}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <hr />
-            <Spacer size='large' />
+            <Spacer size='l' />
           </Col>
         </Row>
       </Container>
@@ -130,7 +130,7 @@ function DonatePage({
             <DonationFaqText />
           </Col>
         </Row>
-        <Spacer size='large' />
+        <Spacer size='l' />
       </Container>
     </>
   );

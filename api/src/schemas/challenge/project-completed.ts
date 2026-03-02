@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { genericError } from '../types';
+import { genericError } from '../types.js';
 
 export const projectCompleted = {
   body: Type.Object({
@@ -37,7 +37,8 @@ export const projectCompleted = {
           ),
           Type.Literal(
             'That does not appear to be a valid challenge submission.'
-          )
+          ),
+          Type.Literal('Exam submissions are not allowed on this endpoint.')
         ])
       }),
       genericError

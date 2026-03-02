@@ -1,0 +1,14 @@
+{
+  "name": "Build a Celestial Bodies Database",
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-celestial-bodies-database",
+  "challengeOrder": [
+    {
+      "id": "5f1a4ef5d5d6b5ab580fc6ae",
+      "title": "Build a Celestial Bodies Database"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

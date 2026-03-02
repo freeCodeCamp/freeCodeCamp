@@ -1,12 +1,20 @@
-/* eslint-disable max-len */
 const { ObjectId } = require('mongodb');
 
 const blankUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
 const publicUserId = new ObjectId('663b839b24a8b29f57728b13');
 const demoUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb5');
 const fullyCertifiedUserId = new ObjectId('5fa2db00a25c1c1fa49ce067');
+const almostFullyCertifiedUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb9');
+const unclaimedUserId = new ObjectId('5bd30e0f1caf6ac3ddddddb1');
 
-const userIds = [blankUserId, publicUserId, demoUserId, fullyCertifiedUserId];
+const userIds = [
+  blankUserId,
+  publicUserId,
+  demoUserId,
+  fullyCertifiedUserId,
+  almostFullyCertifiedUserId,
+  unclaimedUserId
+];
 
 module.exports.blankUser = {
   _id: blankUserId,
@@ -21,7 +29,7 @@ module.exports.blankUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
@@ -45,6 +53,7 @@ module.exports.blankUser = {
   isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
+  experience: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -58,6 +67,7 @@ module.exports.blankUser = {
     showName: false,
     showPoints: false,
     showPortfolio: false,
+    showExperience: false,
     showTimeLine: false
   },
   badges: {
@@ -83,7 +93,7 @@ module.exports.publicUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
@@ -107,6 +117,7 @@ module.exports.publicUser = {
   isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
+  experience: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -120,6 +131,7 @@ module.exports.publicUser = {
     showName: true,
     showPoints: true,
     showPortfolio: true,
+    showExperience: true,
     showTimeLine: true
   },
   badges: {
@@ -145,7 +157,7 @@ module.exports.demoUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
@@ -170,6 +182,7 @@ module.exports.demoUser = {
   isJsAlgoDataStructCertV8: false,
   completedChallenges: [],
   portfolio: [],
+  experience: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -183,6 +196,7 @@ module.exports.demoUser = {
     showName: false,
     showPoints: false,
     showPortfolio: false,
+    showExperience: false,
     showTimeLine: false
   },
   badges: {
@@ -209,20 +223,25 @@ module.exports.fullyCertifiedUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: true,
+  isA2EnglishCert: true,
+  isB1EnglishCert: true,
   isFrontEndCert: true,
   isDataVisCert: true,
   isBackEndCert: true,
   isFullStackCert: true,
   isRespWebDesignCert: true,
+  isRespWebDesignCertV9: true,
   is2018DataVisCert: true,
   isFrontEndLibsCert: true,
+  isJavascriptCertV9: true,
   isJsAlgoDataStructCert: true,
   isJsAlgoDataStructCertV8: true,
   isApisMicroservicesCert: true,
   isInfosecQaCert: true,
+  isPythonCertV9: true,
   isQaCertV7: true,
   isInfosecCertV7: true,
   is2018FullStackCert: true,
@@ -230,6 +249,7 @@ module.exports.fullyCertifiedUser = {
   isDataAnalysisPyCertV7: true,
   isMachineLearningPyCertV7: true,
   isRelationalDatabaseCertV8: true,
+  isRelationalDatabaseCertV9: true,
   isCollegeAlgebraPyCertV8: true,
   isFoundationalCSharpCertV8: true,
   completedChallenges: [
@@ -12219,6 +12239,65 @@ module.exports.fullyCertifiedUser = {
       id: '647f7da207d29547b3bee1ba',
       challengeType: 7,
       files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141d8e32fe934c26fa1be',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141f948cbab359e74cc93',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671141feba228a35cefba82d',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '671144cdcc01d73f7dd79dc9',
+      challengeType: 0,
+      files: []
+    },
+    {
+      completedDate: 1729240849345,
+      id: '6734ddabad59e593a49afafe'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '6734e2c5780912abd874e79c'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '6763500bd5a85d5898cc21a9'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '672d26269456511aa3db614d'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '672d45583fd75a504136fbbb'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '672d45651d83b450801efb3a'
+    },
+    {
+      completedDate: 1729240849345,
+      id: '672d456f4ac35950b300e93f'
+    }
+  ],
+  completedDailyCodingChallenges: [
+    {
+      id: '6814d8e1516e86b171929de4',
+      completedDate: 1729240849345,
+      languages: ['javascript']
     }
   ],
   completedExams: [
@@ -12237,6 +12316,7 @@ module.exports.fullyCertifiedUser = {
     }
   ],
   portfolio: [],
+  experience: [],
   yearsTopContributor: ['2019'],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -12251,6 +12331,7 @@ module.exports.fullyCertifiedUser = {
     showName: true,
     showPoints: true,
     showPortfolio: true,
+    showExperience: true,
     showTimeLine: true
   },
   badges: {
@@ -12261,6 +12342,21 @@ module.exports.fullyCertifiedUser = {
   emailVerifyTTL: null,
   externalId: '',
   unsubscribeId: 'tBX8stC5jiustPBteF2mV'
+};
+
+module.exports.unclaimedUser = {
+  ...module.exports.fullyCertifiedUser,
+  id: unclaimedUserId,
+  isFrontEndLibsCert: false
+};
+
+module.exports.almostFullyCertifiedUser = {
+  ...module.exports.fullyCertifiedUser,
+  id: almostFullyCertifiedUserId,
+  completedChallenges:
+    module.exports.fullyCertifiedUser.completedChallenges.filter(
+      challenge => challenge.id !== 'bd7158d8c442eddfaeb5bd13'
+    )
 };
 
 module.exports.userIds = userIds;

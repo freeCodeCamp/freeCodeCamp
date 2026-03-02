@@ -1,0 +1,11 @@
+{
+  "name": "CSS Flexbox Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-css-flexbox",
+  "challengeOrder": [
+    { "id": "66ed8fe7f45ce3ece4053eb2", "title": "CSS Flexbox Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

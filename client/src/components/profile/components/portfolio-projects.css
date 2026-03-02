@@ -2,7 +2,6 @@
 .portfolio-card {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -84,7 +83,8 @@ a.portfolio-card:focus img {
 
 .timeline-pagination_list_item > button {
   outline-color: transparent;
-  padding: 0 3px;
+  height: 44px;
+  width: 44px;
 }
 
 .timeline-row {

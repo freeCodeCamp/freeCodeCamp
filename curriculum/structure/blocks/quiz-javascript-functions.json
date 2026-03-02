@@ -1,0 +1,11 @@
+{
+  "name": "JavaScript Functions Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-functions",
+  "challengeOrder": [
+    { "id": "66edcc779993c0da6906dbb9", "title": "JavaScript Functions Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

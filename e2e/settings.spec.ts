@@ -2,13 +2,15 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import {
+  currentCertifications,
+  legacyCertifications as legacyCerts
+} from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
   settingsHeading: 'settings-heading',
-  internetPresence: 'internet-presence',
-  portfolioItems: 'portfolio-items',
-  camperIdentity: 'camper-identity'
+  portfolioItems: 'portfolio-items'
 };
 
 const settingsObject = {
@@ -24,35 +26,33 @@ const settingsObject = {
 };
 
 const certifications = [
-  translations.certification.title['Responsive Web Design'],
-  translations.certification.title['JavaScript Algorithms and Data Structures'],
-  translations.certification.title['Front End Development Libraries'],
-  translations.certification.title['Data Visualization'],
-  translations.certification.title['Relational Database'],
-  translations.certification.title['Back End Development and APIs'],
-  translations.certification.title['Quality Assurance'],
-  translations.certification.title['Scientific Computing with Python'],
-  translations.certification.title['Data Analysis with Python'],
-  translations.certification.title['Information Security'],
-  translations.certification.title['Machine Learning with Python'],
-  translations.certification.title['College Algebra with Python'],
-  translations.certification.title['Foundational C# with Microsoft']
+  translations.certification.title['foundational-c-sharp-with-microsoft']
 ];
 
 const legacyCertifications = [
-  translations.certification.title['Legacy Front End'],
-  translations.certification.title['Legacy Back End'],
-  translations.certification.title['Legacy Data Visualization'],
+  translations.certification.title['responsive-web-design'],
   translations.certification.title[
-    'Legacy Information Security and Quality Assurance'
-  ]
+    'javascript-algorithms-and-data-structures-v8'
+  ],
+  translations.certification.title['front-end-development-libraries'],
+  translations.certification.title['data-visualization'],
+  translations.certification.title['relational-database-v8'],
+  translations.certification.title['back-end-development-and-apis'],
+  translations.certification.title['quality-assurance-v7'],
+  translations.certification.title['scientific-computing-with-python-v7'],
+  translations.certification.title['data-analysis-with-python-v7'],
+  translations.certification.title['information-security-v7'],
+  translations.certification.title['machine-learning-with-python-v7'],
+  translations.certification.title['college-algebra-with-python-v8'],
+  translations.certification.title['legacy-front-end'],
+  translations.certification.title['legacy-back-end'],
+  translations.certification.title['legacy-data-visualization'],
+  translations.certification.title['information-security-and-quality-assurance']
 ];
 
 test.describe('Settings - Certified User', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
   });
 
@@ -158,11 +158,19 @@ test.describe('Settings - Certified User', () => {
         .filter({ hasText: translations.settings.labels['my-portfolio'] })
     ).toBeVisible();
     await expect(
+      page
+        .getByRole('group', {
+          name: translations.settings.labels['my-experience']
+        })
+        .locator('p')
+        .filter({ hasText: translations.settings.labels['my-experience'] })
+    ).toBeVisible();
+    await expect(
       page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     await expect(
       page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     const saveButton = page.getByRole('button', {
       name: translations.settings.headings.privacy
     });
@@ -172,56 +180,6 @@ test.describe('Settings - Certified User', () => {
       name: translations.buttons['download-data']
     });
     await expect(downloadButton).toBeVisible();
-
-    // Internet Presence
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.internetPresence)
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', {
-        name: translations.settings.headings.internet
-      })
-    ).toBeVisible();
-
-    // Personal Information
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings['personal-info']
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByTestId(settingsTestIds.camperIdentity)
-    ).toBeVisible();
-    const savePersonalInfoButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-    await expect(savePersonalInfoButton).toBeVisible();
-    await expect(savePersonalInfoButton).toBeDisabled();
-    await expect(
-      page.getByLabel(translations.settings.labels.name, { exact: true })
-    ).toHaveValue('Full Stack User');
-    await expect(
-      page.getByLabel(translations.settings.labels.location)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.picture)
-    ).toHaveValue('');
-    await expect(
-      page.getByLabel(translations.settings.labels.about)
-    ).toHaveValue('');
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['night-mode'],
-          exact: true
-        })
-        .locator('p')
-    ).toBeVisible();
     await expect(page.locator('#legendsound')).toBeVisible();
     await expect(
       page.getByText(translations.settings['sound-volume'])
@@ -282,7 +240,7 @@ test.describe('Settings - Certified User', () => {
     }
 
     // Danger Zone
-    await expect(page.getByText('Danger Zone')).toBeVisible();
+    await expect(page.getByRole('main').getByText('Danger Zone')).toBeVisible();
     await expect(
       page.getByText(
         'Please be careful. Changes in this section are permanent.'
@@ -299,80 +257,31 @@ test.describe('Settings - Certified User', () => {
       })
     ).toBeVisible();
   });
-
-  test('Should allow empty string in any field in about settings', async ({
-    page
-  }) => {
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
-    });
-
-    const nameInput = page.getByLabel(translations.settings.labels.name, {
-      exact: true
-    });
-    const locationInput = page.getByLabel(
-      translations.settings.labels.location
-    );
-    const pictureInput = page.getByLabel(translations.settings.labels.picture);
-    const aboutInput = page.getByLabel(translations.settings.labels.about);
-    const updatedAlert = page.getByText(translations.flash['updated-about-me']);
-
-    await nameInput.fill('Quincy Larson');
-    await locationInput.fill('USA');
-    await pictureInput.fill(
-      'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
-    );
-    await aboutInput.fill('Teacher at freeCodeCamp');
-
-    await expect(saveButton).not.toBeDisabled();
-    await saveButton.click();
-    await expect(updatedAlert).toBeVisible();
-    // clear the alert to make sure it's gone before we save again.
-    await updatedAlert.getByRole('button').click();
-
-    await nameInput.fill('');
-    await locationInput.fill('');
-    await pictureInput.fill('');
-    await aboutInput.fill('');
-
-    await expect(saveButton).not.toBeDisabled();
-    await saveButton.click();
-    await expect(updatedAlert).toBeVisible();
-
-    await page.reload();
-
-    await expect(nameInput).toHaveValue('');
-    await expect(locationInput).toHaveValue('');
-    await expect(pictureInput).toHaveValue('');
-    await expect(aboutInput).toHaveValue('');
-  });
 });
 
-// In order to claim the Full Stack cert, the user needs to complete 6 certs.
+// In order to claim the Full-Stack cert, the user needs to complete 6 certs.
 // Instead of simulating 6 cert claim flows,
-// we use the data of Certified User but remove the Full Stack cert.
-test.describe('Settings - Certified User without Full Stack Certification', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
+// we use the data of Certified User but remove the Full-Stack cert.
+test.describe('Settings - Certified User without Full-Stack Certification', () => {
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
     );
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
+  test('should allow claiming Full-Stack cert if the user has completed all requirements', async ({
     page
   }) => {
     const claimButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Full Stack'
+      name: 'Claim Certification Legacy Full-Stack'
     });
     const showButton = page.getByRole('link', {
-      name: 'Show Certification Legacy Full Stack'
+      name: 'Show Certification Legacy Full-Stack'
     });
 
     await expect(claimButton).toBeVisible();
@@ -381,7 +290,7 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
 
     await alertToBeVisible(
       page,
-      '@certifieduser, you have successfully claimed the Legacy Full Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+      '@certifieduser, you have successfully claimed the Legacy Full-Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
     );
     await expect(claimButton).toBeHidden();
     await expect(showButton).toBeVisible();
@@ -396,31 +305,52 @@ test.describe('Settings - New User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
+  test('should not allow claiming Full-Stack cert if the user has not completed all the required certs', async ({
     page
   }) => {
     const claimFullStackCertButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Full Stack'
+      name: 'Claim Certification Legacy Full-Stack'
     });
 
     const claimRwdCertButton = page.getByRole('button', {
-      name: 'Claim Certification Responsive Web Design'
+      name: 'Claim Certification Legacy Responsive Web Design V8'
     });
 
     // Buttons for normal certs are enabled
     await expect(claimRwdCertButton).toBeVisible();
     await expect(claimRwdCertButton).toBeEnabled();
 
-    // Button for full stack cert is disabled if the user hasn't claimed the required certs
+    // Button for full-stack cert is disabled if the user hasn't claimed the required certs
     await expect(claimFullStackCertButton).toBeVisible();
     await expect(claimFullStackCertButton).toBeDisabled();
+  });
+});
+
+test.describe('Setting - Hash Navigation', () => {
+  test('should scroll to certification sections when navigating with hash', async ({
+    page
+  }) => {
+    const allCerts = [...currentCertifications, ...legacyCerts];
+    for (const certSlug of allCerts) {
+      await page.goto(`/settings#cert-${certSlug}`);
+
+      // Wait for scroll animation
+      await page.waitForTimeout(300);
+
+      const certHeading = page.getByRole('heading', {
+        name: translations.certification.title[certSlug],
+        exact: true
+      });
+
+      await expect(certHeading).toBeInViewport();
+    }
   });
 });

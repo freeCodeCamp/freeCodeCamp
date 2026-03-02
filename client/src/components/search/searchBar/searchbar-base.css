@@ -86,11 +86,15 @@
   display: block;
   width: 70px;
   height: auto;
+  margin-inline-start: 0.3rem;
 }
 .ais-RatingMenu-starIcon {
   display: block;
-  width: 20px;
   height: 20px;
+  position: relative;
+  top: -1px;
+  width: 15px;
+  fill: #ffc168;
 }
 .ais-SearchBox-input::-ms-clear,
 .ais-SearchBox-input::-ms-reveal {
@@ -113,21 +117,23 @@
   height: 6px;
   top: 0px;
   width: 100%;
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #aaa;
+  border-color: #878faf;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .ais-RangeSlider .rheostat-handle {
   margin-inline-start: -12px;
   top: -7px;
-}
-.ais-RangeSlider .rheostat-background {
-  position: relative;
-  background-color: #ffffff;
-  border: 1px solid #aaa;
+  border-color: #878faf;
 }
 .ais-RangeSlider .rheostat-progress {
   position: absolute;
   top: 1px;
   height: 4px;
-  background-color: #333;
+  background-color: #495588;
 }
 .rheostat-handle {
   position: relative;
@@ -539,20 +545,6 @@ a[class^='ais-'] {
 .ais-Stats-text {
   font-size: 0.8rem;
 }
-.ais-PoweredBy-logo {
-  margin-inline-start: 0.3rem;
-}
-.ais-RangeSlider .rheostat-progress {
-  background-color: #495588;
-}
-.ais-RangeSlider .rheostat-background {
-  border-color: #878faf;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.ais-RangeSlider .rheostat-handle {
-  border-color: #878faf;
-}
 .ais-RangeSlider .rheostat-marker {
   background-color: #878faf;
 }
@@ -571,12 +563,6 @@ a[class^='ais-'] {
 }
 .ais-RatingMenu-link > * + * {
   margin-inline-start: 0.3rem;
-}
-.ais-RatingMenu-starIcon {
-  position: relative;
-  top: -1px;
-  width: 15px;
-  fill: #ffc168;
 }
 .ais-RatingMenu-item--disabled .ais-RatingMenu-starIcon {
   fill: #c4c8d8;

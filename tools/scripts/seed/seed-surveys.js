@@ -26,10 +26,9 @@ function handleError(err, client) {
     console.error(err);
     try {
       client.close();
-    } catch (e) {
+    } catch {
       // no-op
     } finally {
-      /* eslint-disable-next-line no-process-exit */
       process.exit(1);
     }
   }
@@ -74,7 +73,7 @@ const certifiedUserSurvey = {
   userId: new ObjectId('5fa2db00a25c1c1fa49ce067')
 };
 
-const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
+const client = new MongoClient(MONGOHQ_URL);
 
 const run = async () => {
   await client.db('admin').command({ ping: 1 });

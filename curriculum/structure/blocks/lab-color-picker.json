@@ -1,0 +1,13 @@
+{
+  "name": "Build a Color Picker App",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-color-picker",
+  "challengeOrder": [
+    { "id": "67bf4350777ac6ffdc027745", "title": "Build a Color Picker App" }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "disableLoopProtectPreview": true
+}

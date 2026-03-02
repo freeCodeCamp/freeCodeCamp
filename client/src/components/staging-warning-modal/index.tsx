@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
-import { Button, Modal } from '@freecodecamp/ui';
+import { useTranslation } from 'react-i18next';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import store from 'store';
-import { Spacer } from '../helpers';
 
 function StagingWarningModal(): JSX.Element {
   const { t } = useTranslation();
@@ -25,17 +24,7 @@ function StagingWarningModal(): JSX.Element {
       <Modal.Body>
         <p className='text-justify'>{t('staging-warning.p1')}</p>
         <p className='text-justify'>{t('staging-warning.p2')}</p>
-        <p className='text-justify'>
-          <Trans i18nKey='staging-warning.p3'>
-            <a
-              href='https://contribute.freecodecamp.org/#/devops?id=known-limitations'
-              target='_blank'
-              rel='noopener noreferrer nofollow'
-            >
-              link
-            </a>
-          </Trans>
-        </p>
+        <p className='text-justify'>{t('staging-warning.p3')}</p>
         <hr />
         <Button
           block={true}
@@ -45,7 +34,7 @@ function StagingWarningModal(): JSX.Element {
         >
           {t('staging-warning.certain')}
         </Button>
-        <Spacer size='small' />
+        <Spacer size='xs' />
       </Modal.Body>
     </Modal>
   );

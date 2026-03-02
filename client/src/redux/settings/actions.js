@@ -46,13 +46,6 @@ export const updateMySoundComplete = createAction(
 );
 export const updateMySoundError = createAction(types.updateMySoundError);
 
-export const updateMyTheme = createAction(types.updateMyTheme);
-export const updateMyThemeComplete = createAction(
-  types.updateMyThemeComplete,
-  checkForSuccessPayload
-);
-export const updateMyThemeError = createAction(types.updateMyThemeError);
-
 export const updateMyKeyboardShortcuts = createAction(
   types.updateMyKeyboardShortcuts
 );
@@ -89,6 +82,15 @@ export const updateMyPortfolioError = createAction(
   types.updateMyPortfolioError
 );
 
+export const updateMyExperience = createAction(types.updateMyExperience);
+export const updateMyExperienceComplete = createAction(
+  types.updateMyExperienceComplete,
+  checkForSuccessPayload
+);
+export const updateMyExperienceError = createAction(
+  types.updateMyExperienceError
+);
+
 export const validateUsername = createAction(types.validateUsername);
 export const validateUsernameComplete = createAction(
   types.validateUsernameComplete
@@ -104,6 +106,14 @@ export const verifyCertError = createAction(types.verifyCertError);
 
 export const resetProgress = createAction(types.resetProgress);
 export const resetProgressError = createAction(types.resetProgressError);
+
+export const resetMyEditorLayout = createAction(types.resetMyEditorLayout);
+export const resetMyEditorLayoutComplete = createAction(
+  types.resetMyEditorLayoutComplete
+);
+export const resetMyEditorLayoutError = createAction(
+  types.resetMyEditorLayoutError
+);
 
 export const deleteAccount = createAction(types.deleteAccount);
 export const deleteAccountError = createAction(types.deleteAccountError);

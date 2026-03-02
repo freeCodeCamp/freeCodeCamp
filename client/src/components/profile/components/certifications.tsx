@@ -1,41 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
 
-import { certificatesByNameSelector } from '../../../redux/selectors';
-import type { CurrentCert } from '../../../redux/prop-types';
-import { FullWidthRow, Spacer, ButtonLink } from '../../helpers';
+import type { CurrentCert, User } from '../../../redux/prop-types';
+import { FullWidthRow, ButtonLink } from '../../helpers';
+import { getCertifications } from './utils/certification';
+
 import './certifications.css';
 
-const mapStateToProps = (
-  state: Record<string, unknown>,
-  props: CertificationProps
-) =>
-  createSelector(
-    certificatesByNameSelector(props.username.toLowerCase()),
-    ({
-      hasModernCert,
-      hasLegacyCert,
-      currentCerts,
-      legacyCerts
-    }: Pick<
-      CertificationProps,
-      'hasModernCert' | 'hasLegacyCert' | 'currentCerts' | 'legacyCerts'
-    >) => ({
-      hasModernCert,
-      hasLegacyCert,
-      currentCerts,
-      legacyCerts
-    })
-  )(state);
-
 interface CertificationProps {
-  currentCerts?: CurrentCert[];
-  hasLegacyCert?: boolean;
-  hasModernCert?: boolean;
-  legacyCerts?: CurrentCert[];
-  username: string;
+  user: User;
 }
 
 interface CertButtonProps {
@@ -53,67 +27,71 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         href={`/certification/${username}/${cert.certSlug}`}
       >
         {t('buttons.view-cert-title', {
-          certTitle: t(`certification.title.${cert.certSlug}`)
+          certTitle: t(`certification.title.${cert.certSlug}-cert`)
         })}
       </ButtonLink>
-      <Spacer size='small' />
+      <Spacer size='xs' />
     </li>
   );
 }
 
-function Certificates({
-  currentCerts,
-  legacyCerts,
-  hasLegacyCert,
-  hasModernCert,
-  username
-}: CertificationProps): JSX.Element {
+function Certificates({ user }: CertificationProps): JSX.Element {
+  const { username } = user;
+
+  const { currentCerts, legacyCerts, hasLegacyCert, hasModernCert } =
+    getCertifications(user);
+
   const { t } = useTranslation();
   return (
     <FullWidthRow className='profile-certifications'>
-      <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
-      <br />
-      {hasModernCert && currentCerts ? (
-        <ul aria-labelledby='fcc-certifications'>
-          {currentCerts
-            .filter(({ show }) => show)
-            .map(cert => (
-              <CertButton key={cert.certSlug} cert={cert} username={username} />
-            ))}
-        </ul>
-      ) : (
-        <p className='text-center'>{t('profile.no-certs')}</p>
-      )}
-      {hasLegacyCert && (
-        <div>
-          <Spacer size='medium' />
-          <h3 id='legacy-certifications'>
-            {t('settings.headings.legacy-certs')}
-          </h3>
-          <Spacer size='medium' />
-          {legacyCerts && (
-            <>
-              <ul aria-labelledby='legacy-certifications'>
-                {legacyCerts
-                  .filter(({ show }) => show)
-                  .map(cert => (
-                    <CertButton
-                      key={cert.certSlug}
-                      cert={cert}
-                      username={username}
-                    />
-                  ))}
-              </ul>
-              <Spacer size='medium' />
-            </>
-          )}
-        </div>
-      )}
-      <hr />
+      <section className='card'>
+        <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+        <br />
+        {hasModernCert && currentCerts ? (
+          <ul aria-labelledby='fcc-certifications'>
+            {currentCerts
+              .filter(({ show }) => show)
+              .map(cert => (
+                <CertButton
+                  key={cert.certSlug}
+                  cert={cert}
+                  username={username}
+                />
+              ))}
+          </ul>
+        ) : (
+          <p className='text-center'>{t('profile.no-certs')}</p>
+        )}
+        {hasLegacyCert && (
+          <div>
+            <Spacer size='m' />
+            <h3 id='legacy-certifications'>
+              {t('settings.headings.legacy-certs')}
+            </h3>
+            <Spacer size='m' />
+            {legacyCerts && (
+              <>
+                <ul aria-labelledby='legacy-certifications'>
+                  {legacyCerts
+                    .filter(({ show }) => show)
+                    .map(cert => (
+                      <CertButton
+                        key={cert.certSlug}
+                        cert={cert}
+                        username={username}
+                      />
+                    ))}
+                </ul>
+                <Spacer size='m' />
+              </>
+            )}
+          </div>
+        )}
+      </section>
     </FullWidthRow>
   );
 }
 
 Certificates.displayName = 'Certifications';
 
-export default connect(mapStateToProps)(Certificates);
+export default Certificates;

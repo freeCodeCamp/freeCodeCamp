@@ -1,0 +1,11 @@
+{
+  "name": "Talking About a Company",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-review-talking-about-a-company",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "696ededdc66d0c4ff561e1ce", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "review"
+}

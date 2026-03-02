@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { surveyTitles } from '../types';
+import { surveyTitles } from '../types.js';
 
 export const submitSurvey = {
   body: Type.Object({

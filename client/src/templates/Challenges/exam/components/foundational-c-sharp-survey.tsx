@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Button, Modal } from '@freecodecamp/ui';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import { SurveyResults, SurveyResponse } from '../../../../redux/prop-types';
-import { Spacer } from '../../../../components/helpers';
 import { setIsProcessing, submitSurvey } from '../../../../redux/actions';
 import { closeModal } from '../../redux/actions';
 import { isProcessingSelector } from '../../../../redux/selectors';
@@ -137,9 +136,9 @@ function FoundationalCSharpSurvey({
       <Modal.Body>
         {i18nSurvey.map((question, i) => (
           <div key={i}>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <div>{question.question}</div>
-            <Spacer size='small' />
+            <Spacer size='xs' />
             <div className='video-quiz-options'>
               {question.options.map((option, j) => (
                 <label className='video-quiz-option-label' key={j}>
@@ -173,7 +172,7 @@ function FoundationalCSharpSurvey({
         >
           {t('survey.misc.submit')}
         </Button>
-        <Spacer size='xxSmall' />
+        <Spacer size='xxs' />
         <Button
           block={true}
           size='medium'

@@ -1,0 +1,11 @@
+{
+  "name": "React Basics Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-react-basics",
+  "challengeOrder": [
+    { "id": "67487e141bb6a7140a352e12", "title": "React Basics Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

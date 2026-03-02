@@ -4,8 +4,7 @@ import {
   getAllEmails,
   getFirstEmail,
   getSubject
-} from './utils/mailhog';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
+} from './utils/email';
 
 test.beforeEach(async () => {
   await deleteAllEmails();
@@ -15,11 +14,6 @@ test('should be possible to report a user from their profile page', async ({
   page
 }) => {
   await page.goto('/twaha');
-
-  // If you build the client locally, delete the button click below.
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
 
   await page.getByText("Flag This User's Account for Abuse").click();
 
@@ -40,7 +34,7 @@ test('should be possible to report a user from their profile page', async ({
 
   await expect(async () => {
     const emails = await getAllEmails();
-    expect(emails.items).toHaveLength(1);
+    expect(emails.messages).toHaveLength(1);
     expect(getSubject(getFirstEmail(emails))).toBe(
       "Abuse Report : Reporting twaha's profile."
     );

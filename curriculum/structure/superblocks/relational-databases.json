@@ -1,0 +1,18 @@
+{
+  "blocks": [
+    "learn-bash-by-building-a-boilerplate",
+    "learn-relational-databases-by-building-a-database-of-video-game-characters",
+    "build-a-celestial-bodies-database-project",
+    "learn-bash-scripting-by-building-five-programs",
+    "learn-sql-by-building-a-student-database-part-1",
+    "learn-sql-by-building-a-student-database-part-2",
+    "build-a-world-cup-database-project",
+    "learn-advanced-bash-by-building-a-kitty-ipsum-translator",
+    "learn-bash-and-sql-by-building-a-bike-rental-shop",
+    "build-a-salon-appointment-scheduler-project",
+    "learn-nano-by-building-a-castle",
+    "learn-git-by-building-an-sql-reference-object",
+    "build-a-periodic-table-database-project",
+    "build-a-number-guessing-game-project"
+  ]
+}

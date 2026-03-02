@@ -2,51 +2,80 @@ const path = require('path');
 
 const _ = require('lodash');
 
-const envData = require('../config/env.json');
 const {
-  getChallengesForLang,
-  generateChallengeCreator,
-  ENGLISH_CHALLENGES_DIR,
-  META_DIR,
-  I18N_CHALLENGES_DIR,
-  getChallengesDirForLang
-} = require('../../curriculum/get-challenges');
+  getBlockCreator,
+  getSuperblocks,
+  superBlockToFilename
+} = require('@freecodecamp/curriculum/build-curriculum');
+const {
+  getContentDir,
+  getBlockStructure,
+  getSuperblockStructure,
+  CURRICULUM_DIR
+} = require('@freecodecamp/curriculum/file-handler');
+const {
+  transformSuperBlock
+} = require('@freecodecamp/curriculum/build-superblock');
+const { getSuperOrder } = require('@freecodecamp/curriculum/super-order');
+const { readFile } = require('fs/promises');
 
-const { curriculumLocale } = envData;
+const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
-exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
+exports.localeChallengesRootDir = getContentDir(curriculumLocale);
 
-exports.replaceChallengeNode = () => {
-  return async function replaceChallengeNode(filePath) {
-    // get the meta so that challengeOrder is accurate
-    const blockNameRe = /\d\d-[-\w]+\/([^/]+)\//;
-    const posix = path.normalize(filePath).split(path.sep).join(path.posix.sep);
-    const blockName = posix.match(blockNameRe)[1];
-    const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
-    delete require.cache[require.resolve(metaPath)];
-    const meta = require(metaPath);
-    const englishPath = path.resolve(
-      ENGLISH_CHALLENGES_DIR,
-      'english',
-      filePath
+const blockCreator = getBlockCreator(curriculumLocale);
+
+function getBlockMetadata(block, superBlock) {
+  // Compute metadata for the given block in the specified superblock
+  const sbFilename = superBlockToFilename[superBlock];
+  const sbData = getSuperblockStructure(sbFilename);
+  const blocks = transformSuperBlock(sbData, {
+    showComingSoon: process.env.SHOW_UPCOMING_CHANGES === 'true'
+  });
+
+  const order = blocks.findIndex(b => b.dashedName === block);
+  const superOrder = getSuperOrder(superBlock);
+
+  if (order === -1) {
+    throw new Error(`Block ${block} not found in superblock ${superBlock}`);
+  }
+
+  return { order, superOrder };
+}
+
+exports.replaceChallengeNodes = () => {
+  return async function replaceChallengeNodes(filePath) {
+    const parentDir = path.dirname(filePath);
+    const block = path.basename(parentDir);
+    const filename = path.basename(filePath);
+
+    const meta = getBlockStructure(block);
+    const superblocks = getSuperblocks(block);
+
+    // Create a challenge for each superblock containing this block
+    const challenges = await Promise.all(
+      superblocks.map(async superBlock => {
+        const { order, superOrder } = getBlockMetadata(block, superBlock);
+        return blockCreator.createChallenge({
+          filename,
+          block,
+          meta: { ...meta, superBlock, order, superOrder },
+          isAudited: true
+        });
+      })
     );
-    const i18nPath = path.resolve(
-      I18N_CHALLENGES_DIR,
-      curriculumLocale,
-      filePath
-    );
-    // TODO: reimplement hot-reloading of certifications
-    const createChallenge = generateChallengeCreator(
-      curriculumLocale,
-      englishPath,
-      i18nPath
-    );
-    return await createChallenge(filePath, meta);
+
+    return challenges;
   };
 };
 
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = await getChallengesForLang(curriculumLocale);
+  const curriculum = JSON.parse(
+    await readFile(
+      path.resolve(CURRICULUM_DIR, 'generated', 'curriculum.json'),
+      'utf-8'
+    )
+  );
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)
@@ -56,7 +85,6 @@ exports.buildChallenges = async function buildChallenges() {
     }, []);
 
   const builtChallenges = blocks
-    .filter(block => !block.isPrivate)
     .map(({ challenges }) => challenges)
     .reduce((accu, current) => accu.concat(current), []);
   return builtChallenges;

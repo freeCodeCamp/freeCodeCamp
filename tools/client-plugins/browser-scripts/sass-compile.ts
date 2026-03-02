@@ -1,3 +1,4 @@
+import { version } from '@freecodecamp/browser-scripts/package.json';
 // work around for SASS error in Edge
 // https://github.com/medialize/sass.js/issues/96#issuecomment-424386171
 interface WorkerWithSass extends Worker {
@@ -20,7 +21,7 @@ if (!ctx.crypto) {
   };
 }
 
-ctx.importScripts('/js/sass.sync.js');
+ctx.importScripts(`/js/workers/${version}/sass.sync.js`);
 
 ctx.onmessage = e => {
   const data: unknown = e.data;

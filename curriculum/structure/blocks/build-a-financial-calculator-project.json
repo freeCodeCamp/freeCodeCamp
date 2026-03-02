@@ -1,0 +1,13 @@
+{
+  "name": "Financial Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-financial-calculator-project",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "63d8401e39c73468b059cd42",
+      "title": "Build a Financial Calculator"
+    }
+  ],
+  "blockLayout": "project-list"
+}

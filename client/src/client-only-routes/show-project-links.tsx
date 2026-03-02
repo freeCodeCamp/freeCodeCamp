@@ -2,15 +2,16 @@ import { find } from 'lodash-es';
 import React, { useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Table } from '@freecodecamp/ui';
+import { Table, Spacer } from '@freecodecamp/ui';
 
-import { Link, Spacer } from '../components/helpers';
+import { Link } from '../components/helpers';
 import ProjectModal from '../components/SolutionViewer/project-modal';
-import type { CompletedChallenge, User } from '../redux/prop-types';
-import {
-  certsToProjects,
-  type CertTitle
-} from '../../config/cert-and-project-map';
+import type {
+  ChallengeData,
+  CompletedChallenge,
+  User
+} from '../redux/prop-types';
+import { certsToProjects } from '../../config/cert-and-project-map';
 
 import { SolutionDisplayWidget } from '../components/solution-display-widget';
 import ProjectPreviewModal from '../templates/Challenges/components/project-preview-modal';
@@ -18,10 +19,14 @@ import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import { regeneratePathAndHistory } from '../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import '../components/layouts/project-links.css';
+import {
+  Certification,
+  currentCertifications
+} from '@freecodecamp/shared/config/certification-settings';
 interface ShowProjectLinksProps {
-  certName: string;
+  certSlug: Certification;
   name: string;
   user: User;
   openModal: (arg: string) => void;
@@ -101,28 +106,27 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     );
   };
 
-  const ProjectsFor = ({ certName }: { certName: CertTitle }) => {
-    if (certName === 'Legacy Full Stack') {
+  const ProjectsFor = ({ certSlug }: { certSlug: Certification }) => {
+    if (certSlug === Certification.LegacyFullStack) {
       const certs = [
-        { title: 'Responsive Web Design' },
-        { title: 'Legacy JavaScript Algorithms and Data Structures' },
-        { title: 'Front End Development Libraries' },
-        { title: 'Data Visualization' },
-        { title: 'Back End Development and APIs' },
-        { title: 'Legacy Information Security and Quality Assurance' }
+        { name: Certification.RespWebDesign },
+        { name: Certification.JsAlgoDataStruct },
+        { name: Certification.LegacyFrontEnd },
+        { name: Certification.LegacyDataVis },
+        { name: Certification.BackEndDevApis },
+        { name: Certification.LegacyInfoSecQa }
       ] as const;
 
       return (
         <>
           {certs.map((cert, ind) => {
-            const projects = certsToProjects[cert.title];
-            const { certSlug } = projects[0];
-            const certLocation = `/certification/${username}/${certSlug}`;
+            const certLocation = `/certification/${username}/${cert.name}`;
+
             return (
               <tr key={ind}>
                 <td>
                   <Link className='project-link' to={certLocation} external>
-                    {t(`certification.title.${cert.title}`, cert.title)}
+                    {t(`certification.title.${cert.name}`)}
                   </Link>
                 </td>
               </tr>
@@ -132,7 +136,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       );
     }
 
-    const projects = certsToProjects[certName];
+    const projects = certsToProjects[certSlug];
     return (
       <>
         {projects.map(({ link, title, id }) => (
@@ -150,43 +154,38 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   };
 
   const {
-    certName,
+    certSlug,
     name,
     user: { username }
   } = props;
   const { completedChallenge, showCode, projectTitle } = solutionState;
   const examResults = completedChallenge?.examResults;
 
-  const getCertHeading = (certName: string) => {
-    if (certName == 'Legacy Full Stack') {
+  const getCertHeading = (cert: Certification) => {
+    if (cert === Certification.LegacyFullStack) {
       return 'certification.project.heading-legacy-full-stack';
-    } else if (certName == 'Foundational C# with Microsoft') {
+    } else if (currentCertifications.includes(cert)) {
       return 'certification.project.heading-exam';
     } else {
       return 'certification.project.heading';
     }
   };
 
-  const challengeData: CompletedChallenge | null = completedChallenge
+  const challengeData: ChallengeData | null = completedChallenge
     ? {
         ...completedChallenge,
         // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         challengeFiles:
-          completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
-          null
+          completedChallenge?.challengeFiles?.map(
+            regenerateMissingProperties
+          ) ?? null
       }
     : null;
 
-  const isCertName = (maybeCertName: string): maybeCertName is CertTitle => {
-    if (maybeCertName === 'Legacy Full Stack') return true;
-    return maybeCertName in certsToProjects;
-  };
-  if (!isCertName(certName)) return <div> Unknown Certification</div>;
-
   return (
     <div data-playwright-test-label='project-links'>
-      {t(getCertHeading(certName), { user: name })}
-      <Spacer size='medium' />
+      {t(getCertHeading(certSlug), { user: name })}
+      <Spacer size='m' />
       <Table striped>
         <thead>
           <tr>
@@ -196,10 +195,10 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           </tr>
         </thead>
         <tbody>
-          <ProjectsFor certName={certName} />
+          <ProjectsFor certSlug={certSlug} />
         </tbody>
       </Table>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <ProjectModal
         challengeFiles={completedChallenge?.challengeFiles ?? null}
         handleSolutionModalHide={handleSolutionModalHide}
@@ -216,7 +215,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
 
-      {certName != 'Foundational C# with Microsoft' && (
+      {certSlug !== Certification.FoundationalCSharp && (
         <Trans i18nKey='certification.project.footnote'>
           If you suspect that any of these projects violate the{' '}
           <a

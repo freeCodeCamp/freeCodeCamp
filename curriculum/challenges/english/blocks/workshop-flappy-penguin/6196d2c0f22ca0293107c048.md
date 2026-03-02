@@ -1,0 +1,112 @@
+---
+id: 6196d2c0f22ca0293107c048
+title: Step 25
+challengeType: 0
+dashedName: step-25
+---
+
+# --description--
+
+Give the `.sun` element a `width` and `height` of `200px`, and a `background-color` of `yellow`.
+
+# --hints--
+
+You should use the `.sun` selector.
+
+```js
+assert.match(code, /\.sun\s*\{/);
+```
+
+You should give `.sun` a `width` of `200px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.width, '200px');
+```
+
+You should give `.sun` a `height` of `200px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.height, '200px');
+```
+
+You should give `.sun` a `background-color` of `yellow`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.sun')?.backgroundColor, 'yellow');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Penguin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="left-mountain"></div>
+    <div class="back-mountain"></div>
+    <div class="sun"></div>
+    <div class="penguin"></div>
+    <div class="ground"></div>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(80, 183, 255));
+  position: absolute;
+  transform: skew(0deg, 44deg);
+  z-index: 2;
+  margin-top: 100px;
+}
+
+.back-mountain {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(rgb(203, 241, 228), rgb(47, 170, 255));
+  position: absolute;
+  z-index: 1;
+  transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
+}
+
+--fcc-editable-region--
+    
+--fcc-editable-region--
+
+.penguin {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+}
+
+.ground {
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
+  position: absolute;
+  margin-top: -58px;
+}
+```

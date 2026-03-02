@@ -5,14 +5,12 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const execP = promisify(exec);
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
 });
 
 test.afterEach(async () => {
-  await execP('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  await execP('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Progress reset modal', () => {

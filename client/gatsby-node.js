@@ -1,21 +1,10 @@
 const { createFilePath } = require('gatsby-source-filesystem');
-// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
-// es modules here.
-const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
+
+const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
-
-const {
-  createChallengePages,
-  createBlockIntroPages,
-  createSuperBlockIntroPages
-} = require('./utils/gatsby');
-
-const createByIdentityMap = {
-  blockIntroMarkdown: createBlockIntroPages,
-  superBlockIntroMarkdown: createSuperBlockIntroPages
-};
+const { createSuperBlockIntroPages } = require('./utils/gatsby');
 
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
@@ -60,55 +49,16 @@ exports.createPages = async function createPages({
   const result = await graphql(`
     {
       allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
       ) {
         edges {
           node {
-            id
             challenge {
               block
-              blockType
-              certification
-              challengeType
-              dashedName
-              demoType
-              disableLoopProtectTests
-              disableLoopProtectPreview
-              fields {
-                slug
-                blockHashSlug
-              }
-              id
-              order
-              required {
-                link
-                src
-              }
-              challengeOrder
-              challengeFiles {
-                name
-                ext
-                contents
-                head
-                tail
-                history
-                fileKey
-              }
-              solutions {
-                contents
-                ext
-                history
-              }
-              superBlock
-              superOrder
-              template
-              usesMultifileEditor
             }
           }
         }
@@ -118,11 +68,9 @@ exports.createPages = async function createPages({
           node {
             fields {
               slug
-              nodeIdentity
             }
             frontmatter {
               certification
-              block
               superBlock
               title
             }
@@ -133,28 +81,8 @@ exports.createPages = async function createPages({
     }
   `);
 
-  // Create challenge pages.
-  result.data.allChallengeNode.edges.forEach(createChallengePages(createPage));
-
-  const blocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { block }
-        }
-      }) => block
-    )
-  );
-
-  const superBlocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { superBlock }
-        }
-      }) => superBlock
-    )
-  );
+  // Includes upcoming superBlocks
+  const allSuperBlocks = Object.values(SuperBlocks);
 
   // Create intro pages
   // TODO: Remove allMarkdownRemark (populate from elsewhere)
@@ -164,33 +92,21 @@ exports.createPages = async function createPages({
     } = edge;
 
     if (!fields) {
-      return;
+      throw Error(
+        "'fields' property missing (this should be added in onCreateNode)"
+      );
     }
-    const { slug, nodeIdentity } = fields;
+    const { slug } = fields;
     if (slug.includes('LICENCE')) {
       return;
     }
-    if (nodeIdentity === 'blockIntroMarkdown') {
-      if (!blocks.includes(frontmatter.block)) {
-        return;
-      }
-    } else if (!superBlocks.includes(frontmatter.superBlock)) {
-      return;
+
+    if (!allSuperBlocks.includes(frontmatter.superBlock)) {
+      throw Error(`Unknown superblock ${frontmatter.superBlock}`);
     }
 
-    try {
-      const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-      pageBuilder(edge);
-    } catch (e) {
-      console.log(e);
-      console.log(`
-            ident: ${nodeIdentity} does not belong to a function
-
-            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
-
-
-            `);
-    }
+    const pageBuilder = createSuperBlockIntroPages(createPage);
+    pageBuilder(edge);
   });
 };
 
@@ -205,9 +121,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
-  // involved in SSR. Also, if the plugin is used during the 'build-html' stage
-  // it overwrites the minfied files with ordinary ones.
-  if (stage !== 'build-html') {
+  // involved in SSR. Also, if the plugin is used during the 'build-html' or
+  // 'develop-html' stage it overwrites the minfied files with ordinary ones.
+  if (stage !== 'build-html' && stage !== 'develop-html') {
     newPlugins.push(
       new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
     );
@@ -225,7 +141,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         process: require.resolve('process/browser')
       }
     },
-    plugins: newPlugins
+    plugins: newPlugins,
+    ignoreWarnings: [
+      warning => {
+        if (warning instanceof Error) {
+          if (warning.message.includes('mini-css-extract-plugin')) {
+            return true;
+          }
+        }
+        return false;
+      }
+    ]
   });
 };
 
@@ -236,108 +162,4 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
-};
-
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions;
-  // Only update the `/challenges` page.
-  if (page.path.match(/^\/challenges/)) {
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
-    page.matchPath = '/challenges/*';
-    // Update the page.
-    createPage(page);
-  }
-};
-
-// Take care to QA the challenges when modifying this. It has broken certain
-// types of challenge in the past.
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  const typeDefs = `
-    type ChallengeNode implements Node {
-      challenge: Challenge
-    }
-    type Challenge {
-      blockType: String
-      challengeFiles: [FileContents]
-      notes: String
-      url: String
-      assignments: [String]
-      prerequisites: [PrerequisiteChallenge]
-      msTrophyId: String
-      fillInTheBlank: FillInTheBlank
-      scene: Scene
-      quizzes: [Quiz]
-    }
-    type FileContents {
-      fileKey: String
-      ext: String
-      name: String
-      contents: String
-      head: String
-      tail: String
-      editableRegionBoundaries: [Int]
-    }
-    type PrerequisiteChallenge {
-      id: String
-      title: String
-    }
-    type FillInTheBlank {
-      sentence: String
-      blanks: [Blank]
-    }
-    type Blank {
-      answer: String
-      feedback: String
-    }
-    type Scene {
-      setup: SceneSetup
-      commands: [SceneCommands]
-    }
-    type SceneSetup {
-      background: String
-      characters: [SetupCharacter]
-      audio: SetupAudio
-      alwaysShowDialogue: Boolean
-    }
-    type SetupCharacter {
-      character: String
-      position: CharacterPosition
-      opacity: Float
-    }
-    type SetupAudio {
-      filename: String
-      startTime: Float
-      startTimestamp: Float
-      finishTimestamp: Float
-    }
-    type SceneCommands {
-      background: String
-      character: String
-      position: CharacterPosition
-      opacity: Float
-      startTime: Float
-      finishTime: Float
-      dialogue: Dialogue
-    }
-    type Dialogue {
-      text: String
-      align: String
-    }
-    type CharacterPosition {
-      x: Float
-      y: Float
-      z: Float
-    }
-    type Quiz {
-      questions: [QuizQuestion]
-    }
-    type QuizQuestion {
-      text: String
-      distractors: [String]
-      answer: String
-    }
-  `;
-  createTypes(typeDefs);
 };

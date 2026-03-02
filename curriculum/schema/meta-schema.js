@@ -1,16 +1,33 @@
 const Joi = require('joi');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
-const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 
 const schema = Joi.object()
   .keys({
     name: Joi.string().required(),
-    blockType: Joi.valid('workshop', 'lab', 'lecture', 'quiz', 'exam'),
+    blockLayout: Joi.valid(
+      'challenge-list',
+      'challenge-grid',
+      'dialogue-grid',
+      'link',
+      'project-list',
+      'legacy-challenge-list',
+      'legacy-link',
+      'legacy-challenge-grid'
+    ).required(),
+    blockLabel: Joi.valid(
+      'workshop',
+      'lab',
+      'lecture',
+      'review',
+      'quiz',
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
+    ),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
-    superBlock: Joi.string().regex(slugWithSlashRE).required(),
-    order: Joi.number().required(),
     usesMultifileEditor: Joi.boolean(),
     hasEditableBoundaries: Joi.boolean(),
     disableLoopProtectTests: Joi.boolean(),
@@ -46,12 +63,14 @@ const schema = Joi.object()
       'English',
       'Odin',
       'Euler',
-      'Rosetta'
+      'Rosetta',
+      'Chinese Curriculum',
+      'Spanish Curriculum'
     ).required()
   })
   // this makes sure there is no unknown key in the object
   .unknown(false);
 
-exports.metaSchemaValidator = meta => {
-  return schema.validate(meta);
+exports.validateMetaSchema = meta => {
+  return schema.validate(meta, { abortEarly: false });
 };

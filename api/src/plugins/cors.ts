@@ -1,8 +1,8 @@
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { HOME_LOCATION } from '../utils/env';
-import { allowedOrigins } from '../utils/allowed-origins';
+import { HOME_LOCATION } from '../utils/env.js';
+import { allowedOrigins } from '../utils/allowed-origins.js';
 
 const cors: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.options('*', (_req, reply) => {
@@ -10,8 +10,10 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
   });
 
   fastify.addHook('onRequest', async (req, reply) => {
+    const logger = fastify.log.child({ req });
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
+      logger.debug(`Allowing access to origin: ${origin}`);
       void reply.header('Access-Control-Allow-Origin', origin);
     } else {
       // TODO: Discuss if this is the correct approach. Standard practice is to
@@ -19,12 +21,18 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
       // separately. If we switch to that approach we can replace use
       // @fastify/cors instead.
       void reply.header('Access-Control-Allow-Origin', HOME_LOCATION);
+
+      if (origin && !req.url?.startsWith('/status/')) {
+        logger.info(`Received request from disallowed origin: ${origin}`);
+      } else {
+        logger.debug(`Unknown or missing origin: ${origin}`);
+      }
     }
 
     void reply
       .header(
         'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token'
+        'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token, Coderoad-User-Token, Exam-Environment-Authorization-Token'
       )
       .header('Access-Control-Allow-Credentials', true)
       // These 4 are the only methods we use

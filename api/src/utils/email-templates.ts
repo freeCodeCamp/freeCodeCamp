@@ -9,13 +9,13 @@ import { user } from '@prisma/client';
  */
 export const generateReportEmail = (
   reporter: user,
-  abuser: string,
+  abuser: user,
   reportDesc: string
 ) => {
   return `
 Hello Team,
 
-This is to report the profile of ${abuser}.
+This is to report the profile of ${abuser.username}. ID: ${abuser.id}.
 
 Report Details:
 
@@ -23,10 +23,11 @@ ${reportDesc}
 
 
 Reported by:
+ID: ${reporter.id}
 Username: ${reporter.username}
 Name:${reporter.name ? ' ' + reporter.name : ''}
 Email: ${reporter.email}
 
 Thanks and regards,
-${reporter.name ?? ''}`;
+${reporter.name ?? reporter.username}`;
 };

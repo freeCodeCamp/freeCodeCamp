@@ -10,7 +10,9 @@ const {
   blankUser,
   publicUser,
   fullyCertifiedUser,
-  userIds
+  userIds,
+  almostFullyCertifiedUser,
+  unclaimedUser
 } = require('./user-data');
 
 const options = {
@@ -18,7 +20,9 @@ const options = {
   'top-contributor': { type: 'boolean' },
   'set-false': { type: 'string', multiple: true },
   'seed-trophy-challenges': { type: 'boolean' },
-  'certified-user': { type: 'boolean' }
+  'certified-user': { type: 'boolean' },
+  'almost-certified-user': { type: 'boolean' },
+  'unclaimed-user': { type: 'boolean' }
 };
 
 const { values: argValues } = parseArgs({ options });
@@ -32,10 +36,9 @@ function handleError(err, client) {
     console.error(err);
     try {
       client.close();
-    } catch (e) {
+    } catch {
       // no-op
     } finally {
-      /* eslint-disable-next-line no-process-exit */
       process.exit(1);
     }
   }
@@ -95,7 +98,7 @@ const trophyChallenges = [
   }
 });
 
-const client = new MongoClient(MONGOHQ_URL, { useNewUrlParser: true });
+const client = new MongoClient(MONGOHQ_URL);
 
 const db = client.db('freecodecamp');
 const user = db.collection('user');
@@ -124,13 +127,17 @@ const run = async () => {
   await dropUsers();
   if (argValues['certified-user']) {
     await user.insertOne(fullyCertifiedUser);
-    await user.insertOne(blankUser);
-    await user.insertOne(publicUser);
+  } else if (argValues['almost-certified-user']) {
+    await user.insertOne(almostFullyCertifiedUser);
+  } else if (argValues['unclaimed-user']) {
+    await user.insertOne(unclaimedUser);
   } else {
     await user.insertOne(demoUser);
-    await user.insertOne(blankUser);
-    await user.insertOne(publicUser);
   }
+
+  await user.insertOne(blankUser);
+  await user.insertOne(publicUser);
+
   log('local auth user seed complete');
 };
 

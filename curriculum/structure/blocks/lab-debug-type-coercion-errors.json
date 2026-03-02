@@ -1,0 +1,15 @@
+{
+  "name": "Debug Type Coercion Errors in a Buggy App",
+  "isUpcomingChange": false,
+  "dashedName": "lab-debug-type-coercion-errors",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "68f890b73bbfc9efa7379e7b",
+      "title": "Debug Type Coercion Errors in a Buggy App"
+    }
+  ]
+}

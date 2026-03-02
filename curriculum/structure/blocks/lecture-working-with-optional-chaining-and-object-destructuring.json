@@ -1,0 +1,18 @@
+{
+  "name": "Working with Optional Chaining and Object Destructuring",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-optional-chaining-and-object-destructuring",
+  "challengeOrder": [
+    {
+      "id": "6732b76c03f7d825c7fc74ee",
+      "title": "What Is the Optional Chaining Operator, and How Does It Work?"
+    },
+    {
+      "id": "6732b77adf9de12617a2dbb3",
+      "title": "What Is Object Destructuring, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

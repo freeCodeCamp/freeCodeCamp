@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { WithTranslation } from 'react-i18next';
 
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   StrictSolutionForm,
   ValidatedValues
@@ -45,7 +45,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
   render(): JSX.Element {
     const { challengeType, description, t } = this.props;
 
-    // back end challenges and front end projects use a single form field
+    // back end challenges and frontend projects use a single form field
     const solutionField = [
       { name: 'solution', label: t('learn.solution-link') }
     ];
@@ -81,7 +81,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
       case challengeTypes.backend:
         formFields = solutionField;
         options.isLocalLinkAllowed = true;
-        solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
+        solutionLink = solutionLink + 'http://localhost:3000/';
         break;
 
       case challengeTypes.backEndProject:
@@ -89,7 +89,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
         // options.required.push('githubLink');
         options.isSourceCodeLinkRequired = true;
         options.isLocalLinkAllowed = true;
-        solutionLink = solutionLink + 'https://3000-project-url.gitpod.io/';
+        solutionLink = solutionLink + 'http://localhost:3000/';
         solutionFormID = 'back-end-form';
         break;
 

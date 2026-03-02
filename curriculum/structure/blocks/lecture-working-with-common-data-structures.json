@@ -1,0 +1,34 @@
+{
+  "name": "Working with Common Data Structures",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-common-data-structures",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68420c314cdf5c6863ca8330",
+      "title": "What Is an Algorithm and How Does Big O Notation Work?"
+    },
+    {
+      "id": "6895d06b5968736797c408e3",
+      "title": "What Are Good Problem-Solving Techniques and Ways to Approach Algorithmic Challenges?"
+    },
+    {
+      "id": "6895d06b5968736797c408e4",
+      "title": "How Do Dynamic Arrays Differ From Static Arrays?"
+    },
+    {
+      "id": "6895d06b5968736797c408e5",
+      "title": "How Do Stacks and Queues Work?"
+    },
+    {
+      "id": "6895d06b5968736797c408e6",
+      "title": "How Do Singly Linked Lists Work and How Do They Differ From Doubly Linked List?"
+    },
+    {
+      "id": "6895d06b5968736797c408e7",
+      "title": "How Do Maps, Hash Maps and Sets Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}

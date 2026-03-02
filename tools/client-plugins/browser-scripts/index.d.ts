@@ -1,4 +1,4 @@
-import { PyodideInterface } from 'pyodide';
+import type { PyodideInterface } from 'pyodide';
 
 export interface FrameDocument extends Document {
   __initTestFrame: (e: InitTestFrameArg) => Promise<void>;
@@ -18,9 +18,7 @@ export interface InitTestFrameArg {
   code: {
     contents?: string;
     editableContents?: string;
-    original?: { [id: string]: string };
   };
-  getUserInput?: (fileName: string) => string;
   loadEnzyme?: () => void;
 }
 

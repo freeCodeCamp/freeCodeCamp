@@ -1,0 +1,12 @@
+{
+  "name": "Build a Weather App",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-weather-app",
+  "challengeOrder": [
+    { "id": "66f12a88741aeb16b9246c59", "title": "Build a Weather App" }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

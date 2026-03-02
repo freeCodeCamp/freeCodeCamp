@@ -1,5 +1,7 @@
-const parseFixture = require('../../__fixtures__/parse-fixture');
-const getId = require('./get-id');
+import { describe, beforeAll, it, expect } from 'vitest';
+
+import parseFixture from '../../__fixtures__/parse-fixture';
+import getId from './get-id';
 
 describe('get-id', () => {
   let idNode, imageNode, multipleChildrenNode;

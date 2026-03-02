@@ -2,10 +2,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { SuperBlocks } from '../../../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 interface SEOProps {
   title?: string;
+  children?: React.ReactNode;
 }
 
 interface SiteData {
@@ -42,7 +43,7 @@ interface StructuredData {
   itemListElement: ListItem[];
 }
 
-const SEO: React.FC<SEOProps> = ({ title, children }) => {
+const SEO = ({ title, children }: SEOProps) => {
   const { t } = useTranslation();
   const {
     site: {
@@ -73,7 +74,10 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
     const superBlockIntroObj: {
       title: string;
       intro: string[];
-    } = t(`intro:${superBlock}`, { returnObjects: true });
+    } = t(`intro:${superBlock}`, { returnObjects: true }) as {
+      title: string;
+      intro: string[];
+    };
 
     const { title: i18nTitle, intro: introText } = superBlockIntroObj;
 

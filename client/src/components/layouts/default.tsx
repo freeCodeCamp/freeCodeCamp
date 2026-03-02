@@ -5,10 +5,17 @@ import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Spacer } from '@freecodecamp/ui';
+import envData, { clientLocale } from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
 import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
+
+import jpSansBoldURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Bold.woff';
+import jpSansLightURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Light.woff';
+import jpSansRegularURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Regular.woff';
+
 import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
 import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
@@ -16,6 +23,7 @@ import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-Z
 import { isBrowser } from '../../../utils';
 import {
   fetchUser,
+  initializeTheme,
   onlineStatusChange,
   serverStatusChange
 } from '../../redux/actions';
@@ -25,7 +33,8 @@ import {
   userSelector,
   isOnlineSelector,
   isServerOnlineSelector,
-  userFetchStateSelector
+  userFetchStateSelector,
+  themeSelector
 } from '../../redux/selectors';
 
 import { UserFetchState, User } from '../../redux/prop-types';
@@ -37,12 +46,11 @@ import StagingWarningModal from '../staging-warning-modal';
 import Footer from '../Footer';
 import Header from '../Header';
 import OfflineWarning from '../OfflineWarning';
-import { Loader, Spacer } from '../helpers';
+import { Loader } from '../helpers';
 import {
   MAX_MOBILE_WIDTH,
   EX_SMALL_VIEWPORT_HEIGHT
 } from '../../../config/misc';
-import envData from '../../../config/env.json';
 
 import '@freecodecamp/ui/dist/base.css';
 // preload common fonts
@@ -50,6 +58,8 @@ import './fonts.css';
 import './global.css';
 import './variables.css';
 import './rtl-layout.css';
+import { LocalStorageThemes } from '../../redux/types';
+import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -59,6 +69,7 @@ const mapStateToProps = createSelector(
   isServerOnlineSelector,
   userFetchStateSelector,
   userSelector,
+  themeSelector,
   (
     isSignedIn,
     examInProgress: boolean,
@@ -66,7 +77,8 @@ const mapStateToProps = createSelector(
     isOnline: boolean,
     isServerOnline: boolean,
     fetchState: UserFetchState,
-    user: User
+    user: User,
+    theme: LocalStorageThemes
   ) => ({
     isSignedIn,
     examInProgress,
@@ -75,8 +87,8 @@ const mapStateToProps = createSelector(
     isOnline,
     isServerOnline,
     fetchState,
-    theme: user.theme,
-    user
+    user,
+    theme
   })
 );
 
@@ -88,7 +100,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       fetchUser,
       removeFlashMessage,
       onlineStatusChange,
-      serverStatusChange
+      serverStatusChange,
+      initializeTheme
     },
     dispatch
   );
@@ -100,18 +113,13 @@ interface DefaultLayoutProps extends StateProps, DispatchProps {
   pathname: string;
   showFooter?: boolean;
   isChallenge?: boolean;
+  isDailyChallenge?: boolean;
+  dailyChallengeParam?: string;
   usesMultifileEditor?: boolean;
   block?: string;
   examInProgress: boolean;
   superBlock?: string;
 }
-
-const getSystemTheme = () =>
-  `${
-    window.matchMedia('(prefers-color-scheme: dark)').matches === true
-      ? 'dark-palette'
-      : 'light-palette'
-  }`;
 
 function DefaultLayout({
   children,
@@ -125,12 +133,16 @@ function DefaultLayout({
   removeFlashMessage,
   showFooter = true,
   isChallenge = false,
+  isDailyChallenge = false,
+  dailyChallengeParam,
   usesMultifileEditor,
   block,
   superBlock,
   theme,
   user,
-  fetchUser
+  pathname,
+  fetchUser,
+  initializeTheme
 }: DefaultLayoutProps): JSX.Element {
   const { t } = useTranslation();
   const isMobileLayout = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
@@ -141,6 +153,12 @@ function DefaultLayout({
   const isExSmallViewportHeight = useMediaQuery({
     maxHeight: EX_SMALL_VIEWPORT_HEIGHT
   });
+
+  useEffect(() => {
+    initializeTheme();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     // componentDidMount
     if (!isSignedIn) {
@@ -163,9 +181,9 @@ function DefaultLayout({
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
-  const useSystemTheme = fetchState.complete && isSignedIn === false;
+  const isJapanese = clientLocale === 'japanese';
 
-  if (fetchState.pending) {
+  if (!fetchState.complete) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
     return (
@@ -174,9 +192,7 @@ function DefaultLayout({
           envData.environment === 'production' && <StagingWarningModal />}
         <Helmet
           bodyAttributes={{
-            class: useSystemTheme
-              ? getSystemTheme()
-              : `${String(theme) === 'night' ? 'dark' : 'light'}-palette`
+            class: `${theme}-palette`
           }}
           meta={[
             {
@@ -207,6 +223,34 @@ function DefaultLayout({
             rel='preload'
             type='font/woff'
           />
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansRegularURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansLightURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+          {isJapanese && (
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={jpSansBoldURL}
+              rel='preload'
+              type='font/woff'
+            />
+          )}
+
           <link
             as='font'
             crossOrigin='anonymous'
@@ -233,6 +277,7 @@ function DefaultLayout({
           <Header
             fetchState={fetchState}
             user={user}
+            pathname={pathname}
             skipButtonText={t('learn.skip-to-content')}
           />
           <OfflineWarning
@@ -247,7 +292,15 @@ function DefaultLayout({
             />
           ) : null}
           <SignoutModal />
-          {isChallenge &&
+          {isDailyChallenge ? (
+            <div className='breadcrumbs-demo'>
+              <DailyChallengeBreadCrumb
+                dailyChallengeParam={dailyChallengeParam}
+              />
+            </div>
+          ) : (
+            isChallenge &&
+            !isDailyChallenge &&
             !examInProgress &&
             (isRenderBreadcrumb ? (
               <div className='breadcrumbs-demo'>
@@ -257,8 +310,9 @@ function DefaultLayout({
                 />
               </div>
             ) : (
-              <Spacer size={isExSmallViewportHeight ? 'xxSmall' : 'small'} />
-            ))}
+              <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
+            ))
+          )}
           {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}

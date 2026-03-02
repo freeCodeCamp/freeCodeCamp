@@ -1,0 +1,26 @@
+{
+  "name": "Understanding Error Handling",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-error-handling",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "68420bacf395f15cd73f8118",
+      "title": "What Are Some Common Error Messages in Python?"
+    },
+    {
+      "id": "688c8ef26f3cad09f36b95b9",
+      "title": "What Are Some Good Debugging Techniques in Python?"
+    },
+    {
+      "id": "688c9c3313b264122a694a08",
+      "title": "How Does Exception Handling Work?"
+    },
+    {
+      "id": "688c9c4fe5fef91262f9bdf8",
+      "title": "What Is the Raise Statement and How Does It Work?"
+    }
+  ]
+}

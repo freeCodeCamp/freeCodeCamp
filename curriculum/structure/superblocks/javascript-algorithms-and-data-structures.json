@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    "basic-javascript",
+    "es6",
+    "regular-expressions",
+    "debugging",
+    "basic-data-structures",
+    "basic-algorithm-scripting",
+    "object-oriented-programming",
+    "functional-programming",
+    "intermediate-algorithm-scripting",
+    "javascript-algorithms-and-data-structures-projects"
+  ]
+}

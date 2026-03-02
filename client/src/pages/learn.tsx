@@ -4,11 +4,10 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
-import { Spacer } from '../components/helpers';
 import LearnLayout from '../components/layouts/learn';
 import {
   isSignedInSelector,
@@ -17,7 +16,7 @@ import {
 } from '../redux/selectors';
 
 import callGA from '../analytics/call-ga';
-import { SuperBlocks } from '../../../shared/config/curriculum';
+import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
 
 interface FetchState {
   pending: boolean;
@@ -25,18 +24,18 @@ interface FetchState {
   errored: boolean;
 }
 
-interface User {
+type MaybeUser = {
   name: string;
   username: string;
   completedChallengeCount: number;
   isDonating: boolean;
-}
+} | null;
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState: FetchState, isSignedIn: boolean, user: User) => ({
+  (fetchState: FetchState, isSignedIn: boolean, user: MaybeUser) => ({
     fetchState,
     isSignedIn,
     user
@@ -51,38 +50,30 @@ interface LearnPageProps {
   isSignedIn: boolean;
   fetchState: FetchState;
   state: Record<string, unknown>;
-  user: User;
+  user: MaybeUser;
   data: {
     challengeNode: {
       challenge: {
         fields: Slug;
       };
-    };
-    allChallengeNode: {
-      nodes: {
-        challenge: {
-          id: string;
-          superBlock: SuperBlocks;
-        };
-      }[];
-    };
+    } | null;
   };
 }
+
+const EMPTY_USER = { name: '', completedChallengeCount: 0, isDonating: false };
 
 function LearnPage({
   isSignedIn,
   fetchState: { pending, complete },
-  user: { name = '', completedChallengeCount = 0, isDonating = false },
-  data: {
-    challengeNode: {
-      challenge: {
-        fields: { slug }
-      }
-    },
-    allChallengeNode: { nodes: challengeNodes }
-  }
+  user,
+  data: { challengeNode }
 }: LearnPageProps) {
+  const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
+
   const { t } = useTranslation();
+  useClaimableCertsNotification();
+
+  const slug = challengeNode?.challenge?.fields?.slug || '';
 
   const onLearnDonationAlertClick = () => {
     callGA({
@@ -106,8 +97,8 @@ function LearnPage({
               onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
             />
-            <Map allChallenges={challengeNodes.map(node => node.challenge)} />
-            <Spacer size='large' />
+            <Map />
+            <Spacer size='l' />
           </Col>
         </Row>
       </Container>
@@ -131,14 +122,6 @@ export const query = graphql`
       challenge {
         fields {
           slug
-        }
-      }
-    }
-    allChallengeNode {
-      nodes {
-        challenge {
-          id
-          superBlock
         }
       }
     }

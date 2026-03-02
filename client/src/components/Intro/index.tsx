@@ -1,16 +1,17 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/login';
-import { Link, Spacer, Loader } from '../helpers';
-import IntroDescription from './components/intro-description';
+import { Link, Loader } from '../helpers';
 
 import './intro.css';
+import EmailSignUpAlert from './email-sign-up-alert';
 import LearnAlert from './learn-alert';
 
 interface IntroProps {
   complete?: boolean;
-  completedChallengeCount?: number;
+  completedChallengeCount: number;
   isSignedIn?: boolean;
   name?: string;
   pending?: boolean;
@@ -34,27 +35,27 @@ const Intro = ({
   if (pending && !complete) {
     return (
       <>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Loader />
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </>
     );
   } else if (isSignedIn) {
     const { quote, author } = randomQuote();
     return (
       <>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <h1 id='content-start' className='text-center'>
           {name
             ? `${t('learn.welcome-1', { name: name })}`
             : `${t('learn.welcome-2')}`}
         </h1>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <div className='text-center quote-partial'>
           <blockquote className='blockquote' data-testid='quote-block'>
             <span>
               <q data-playwright-test-label='random-quote'>{quote}</q>
-              <footer className='quote-author blockquote-footer'>
+              <footer className='quote-author'>
                 <cite data-playwright-test-label='random-author'>{author}</cite>
               </footer>
             </span>
@@ -64,9 +65,10 @@ const Intro = ({
           onLearnDonationAlertClick={onLearnDonationAlertClick}
           isDonating={isDonating}
         />
+        <EmailSignUpAlert />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <p>
               <Trans i18nKey='learn.start-at-beginning'>
                 <Link to={slug} />
@@ -81,19 +83,13 @@ const Intro = ({
   } else {
     return (
       <>
-        <Spacer size='medium' />
-        <h1
-          id='content-start'
-          className='text-center'
-          data-playwright-test-label='learn-heading'
-        >
+        <Spacer size='m' />
+        <h1 id='content-start' className='text-center'>
           {t('learn.heading')}
         </h1>
-        <Spacer size='medium' />
-        <IntroDescription />
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-        <Spacer size='medium' />
+        <Spacer size='m' />
       </>
     );
   }

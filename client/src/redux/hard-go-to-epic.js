@@ -3,11 +3,12 @@ import { tap, ignoreElements } from 'rxjs/operators';
 
 import { actionTypes } from './action-types';
 
-export default function hardGoToEpic(action$, _, { location }) {
+// The third argument contains dependencies, see createEpicMiddleware
+export default function hardGoToEpic(action$, _, { window }) {
   return action$.pipe(
     ofType(actionTypes.hardGoTo),
     tap(({ payload }) => {
-      location.href = payload;
+      window.location.href = payload;
     }),
     ignoreElements()
   );

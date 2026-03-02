@@ -1,0 +1,11 @@
+{
+  "name": "CSS Variables Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-variables",
+  "challengeOrder": [
+    { "id": "671a98fbaabfba994e3d9a7c", "title": "CSS Variables Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

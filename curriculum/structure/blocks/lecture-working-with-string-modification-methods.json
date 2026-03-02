@@ -1,0 +1,18 @@
+{
+  "name": "Working with String Modification Methods",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-string-modification-methods",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "67326c29dcd98fc5ecc49779",
+      "title": "How Can You Replace Parts of a String with Another?"
+    },
+    {
+      "id": "67326c3392068ec6184a0c95",
+      "title": "How Can You Repeat a String x Number of Times?"
+    }
+  ]
+}

@@ -7,16 +7,13 @@ import './output.css';
 
 interface OutputProps {
   defaultOutput: string;
-  output: string[];
+  output: string;
 }
 
 function Output({ defaultOutput, output }: OutputProps): JSX.Element {
-  const message = sanitizeHtml(
-    !isEmpty(output) ? output.join('\n') : defaultOutput,
-    {
-      allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
-    }
-  );
+  const message = sanitizeHtml(!isEmpty(output) ? output : defaultOutput, {
+    allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+  });
   return (
     <pre
       className='output-text'

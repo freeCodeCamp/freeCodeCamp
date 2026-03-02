@@ -1,7 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { Container, Col, Row } from '@freecodecamp/ui';
-
+import { Trans, useTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { clientLocale } from '../../../../config/env.json';
 import {
   AmazonLogo,
@@ -12,68 +12,83 @@ import {
   TencentLogo,
   AlibabaLogo
 } from '../../../assets/images/components';
-import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
+import TwoButtonCTA from './two-button-cta';
 import CampersImage from './campers-image';
 
 function LandingTop(): JSX.Element {
   const { t } = useTranslation();
+  const showTwoButtonCTA = useFeature('landing-two-button-cta').on;
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
+
   return (
-    <Container className='landing-top'>
-      <Row>
-        <Spacer size='medium' />
-        <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-          <h1
-            id='content-start'
-            className='big-heading'
-            data-test-label='landing-header'
-            data-playwright-test-label='landing-big-heading-1'
-          >
-            {t('landing.big-heading-1')}
-          </h1>
-          <p
-            className='big-heading'
-            data-playwright-test-label='landing-big-heading-2'
-          >
-            {t('landing.big-heading-2')}
-          </p>
-          <p
-            className='big-heading'
-            data-playwright-test-label='landing-big-heading-3'
-          >
-            {t('landing.big-heading-3')}
-          </p>
-          <p data-playwright-test-label='landing-h2-heading'>
-            {t('landing.h2-heading')}
-          </p>
-          <div
-            className='logo-row'
-            data-playwright-test-label='brand-logo-container'
-          >
-            <AppleLogo />
-            <GoogleLogo />
-            <MicrosoftLogo />
-            {showChineseLogos ? (
-              <>
-                <TencentLogo />
-                <AlibabaLogo />
-              </>
+    <Container
+      fluid={true}
+      className='landing-top lading-top-c gradient-container'
+    >
+      <Container fluid={true}>
+        <Row className='landing-top-two-column' data-test-label='landing-top'>
+          <Spacer size='m' />
+          <Col className='landing-top-left'>
+            <h1
+              id='content-start'
+              className='ultra-heading'
+              data-test-label='landing-header'
+              data-playwright-test-label='big-heading-1-b'
+            >
+              {t('landing.big-heading-1-b')}
+            </h1>
+            <p data-playwright-test-label='advance-career'>
+              {t('landing.advance-career')}
+            </p>
+            <Spacer size='m' />
+
+            {showTwoButtonCTA ? (
+              <TwoButtonCTA />
             ) : (
-              <>
-                <SpotifyLogo />
-                <AmazonLogo />
-              </>
+              <BigCallToAction testLabel='landing-top-big-cta' />
             )}
-          </div>
-          <Spacer size='medium' />
-          <BigCallToAction />
-          <CampersImage pageName='landing' />
-          <Spacer size='medium' />
-        </Col>
-      </Row>
+            <Spacer size='m' />
+          </Col>
+          <Col className='landing-top-right'>
+            <CampersImage />
+            <Spacer size='m' />
+          </Col>
+        </Row>
+      </Container>
+      <Container>
+        <Row>
+          <Col sm={10} smOffset={1} xs={12} className='brands-container'>
+            <Spacer size='l' />
+            <p data-playwright-test-label='graduates-work'>
+              <Trans>landing.graduates-work</Trans>
+            </p>
+            <Spacer size='s' />
+            <div
+              className='logo-row'
+              data-playwright-test-label='brand-logo-container'
+            >
+              <AppleLogo />
+              <GoogleLogo />
+              <MicrosoftLogo />
+              {showChineseLogos ? (
+                <>
+                  <TencentLogo />
+                  <AlibabaLogo />
+                </>
+              ) : (
+                <>
+                  <SpotifyLogo />
+                  <AmazonLogo />
+                </>
+              )}
+            </div>
+            <Spacer size='m' />
+          </Col>
+        </Row>
+      </Container>
     </Container>
   );
 }

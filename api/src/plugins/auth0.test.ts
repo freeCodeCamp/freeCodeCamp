@@ -1,19 +1,37 @@
-const COOKIE_DOMAIN = 'test.com';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterAll,
+  beforeEach,
+  afterEach,
+  vi,
+  MockInstance
+} from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { createUserInput, nanoidCharSet } from '../utils/create-user';
-import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
-import prismaPlugin from '../db/prisma';
-import cookies, { sign, unsign } from './cookies';
-import { auth0Client } from './auth0';
-import redirectWithMessage, { formatMessage } from './redirect-with-message';
-import auth from './auth';
-import bouncer from './bouncer';
+import { createUserInput } from '../utils/create-user.js';
+import {
+  AUTH0_DOMAIN,
+  HOME_LOCATION,
+  GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
+} from '../utils/env.js';
+import prismaPlugin from '../db/prisma.js';
+import cookies, { sign, unsign } from './cookies.js';
+import { auth0Client } from './auth0.js';
+import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
+import auth from './auth.js';
+import bouncer from './bouncer.js';
+import growthBook from './growth-book.js';
+import { newUser } from './__fixtures__/user.js';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-jest.mock('../utils/env', () => ({
-  ...jest.requireActual('../utils/env'),
-  COOKIE_DOMAIN
+const COOKIE_DOMAIN = 'test.com';
+
+vi.mock('../utils/env', async importOriginal => ({
+  ...(await importOriginal<typeof import('../utils/env.js')>()),
+  COOKIE_DOMAIN: 'test.com'
 }));
 
 describe('auth0 plugin', () => {
@@ -28,14 +46,50 @@ describe('auth0 plugin', () => {
     await fastify.register(bouncer);
     await fastify.register(auth0Client);
     await fastify.register(prismaPlugin);
+    await fastify.register(growthBook, {
+      apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+      clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+    });
+  });
+
+  describe('GET /signin/google', () => {
+    test('should redirect directly to Google via Auth0 with connection param', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/signin/google'
+      });
+      const redirectUrl = new URL(res.headers.location!);
+      expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
+      expect(redirectUrl.pathname).toBe('/authorize');
+      expect(redirectUrl.searchParams.get('connection')).toBe('google-oauth2');
+      expect(res.statusCode).toBe(302);
+    });
+
+    test('sets a login-returnto cookie', async () => {
+      const returnTo = 'http://localhost:3000/learn';
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/signin/google',
+        headers: { referer: returnTo }
+      });
+      const cookie = res.cookies.find(c => c.name === 'login-returnto');
+      expect(unsign(cookie!.value).value).toBe(returnTo);
+      expect(cookie).toMatchObject({
+        domain: COOKIE_DOMAIN,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'Lax'
+      });
+    });
   });
 
   afterAll(async () => {
+    await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
     await fastify.close();
   });
 
   describe('GET /signin', () => {
-    it('should redirect to the auth0 login page', async () => {
+    test('should redirect to the auth0 login page', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/signin'
@@ -47,7 +101,7 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    it('sets a login-returnto cookie', async () => {
+    test('sets a login-returnto cookie', async () => {
       const returnTo = 'http://localhost:3000/learn';
       const res = await fastify.inject({
         method: 'GET',
@@ -70,8 +124,8 @@ describe('auth0 plugin', () => {
 
   describe('GET /auth/auth0/callback', () => {
     const email = 'new@user.com';
-    let getAccessTokenFromAuthorizationCodeFlowSpy: jest.SpyInstance;
-    let userinfoSpy: jest.SpyInstance;
+    let getAccessTokenFromAuthorizationCodeFlowSpy: MockInstance;
+    let userinfoSpy: MockInstance;
 
     const mockAuthSuccess = () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
@@ -81,21 +135,21 @@ describe('auth0 plugin', () => {
     };
 
     beforeEach(() => {
-      getAccessTokenFromAuthorizationCodeFlowSpy = jest.spyOn(
+      getAccessTokenFromAuthorizationCodeFlowSpy = vi.spyOn(
         fastify.auth0OAuth,
         'getAccessTokenFromAuthorizationCodeFlow'
       );
-      userinfoSpy = jest.spyOn(fastify.auth0OAuth, 'userinfo');
+      userinfoSpy = vi.spyOn(fastify.auth0OAuth, 'userinfo');
       // @ts-expect-error - Only mocks part of the Sentry object.
       fastify.Sentry = { captureException: () => '' };
     });
 
     afterEach(async () => {
-      jest.restoreAllMocks();
+      vi.restoreAllMocks();
       await fastify.prisma.user.deleteMany({ where: { email } });
     });
 
-    it('should redirect to the client if authentication fails', async () => {
+    test('should redirect to the client if authentication fails', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
         'any error'
       );
@@ -106,25 +160,25 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
 
-    it('should redirect to the client if the state is invalid', async () => {
+    test('should redirect to the client if the state is invalid', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
 
-    it('should log an error if the state is invalid', async () => {
-      jest.spyOn(fastify.log, 'error');
+    test('should log an error if the state is invalid', async () => {
+      vi.spyOn(fastify.log, 'error');
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
@@ -136,7 +190,34 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    it('should not create a user if the state is invalid', async () => {
+    test('should log expected Auth0 errors', async () => {
+      vi.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 403 Forbidden');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'invalid_grant'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: invalid_grant'
+      );
+
+      expect(res.statusCode).toBe(302);
+    });
+
+    test('should not create a user if the state is invalid', async () => {
       await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
@@ -145,7 +226,7 @@ describe('auth0 plugin', () => {
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('should block requests with "access_denied" error', async () => {
+    test('should block requests with "access_denied" error', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?error=access_denied&error_description=Access denied from your location'
@@ -165,7 +246,7 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('creates a user if the state is valid', async () => {
+    test('creates a user if the state is valid', async () => {
       mockAuthSuccess();
       await fastify.inject({
         method: 'GET',
@@ -175,39 +256,49 @@ describe('auth0 plugin', () => {
       expect(await fastify.prisma.user.count()).toBe(1);
     });
 
-    it('handles userinfo errors', async () => {
+    test('handles userinfo errors', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
         token: 'any token'
       });
-      userinfoSpy.mockResolvedValueOnce(Promise.reject('any error'));
+      userinfoSpy.mockResolvedValueOnce(Promise.reject(Error('any error')));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('handles invalid userinfo responses', async () => {
+    test('handles invalid userinfo responses', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.resolve({}));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.no-email-in-userinfo' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('redirects with the signin-success message on success', async () => {
+    test('redirects with the signin-success message on success', async () => {
       mockAuthSuccess();
 
       const res = await fastify.inject({
@@ -221,7 +312,7 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    it('should set the jwt_access_token cookie', async () => {
+    test('should set the jwt_access_token cookie', async () => {
       mockAuthSuccess();
 
       const res = await fastify.inject({
@@ -234,7 +325,7 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('should use the login-returnto cookie if present and valid', async () => {
+    test('should use the login-returnto cookie if present and valid', async () => {
       mockAuthSuccess();
       await fastify.prisma.user.create({
         data: { ...createUserInput(email), acceptedPrivacyTerms: true }
@@ -261,7 +352,24 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('should redirect home if the login-returnto cookie is invalid', async () => {
+    test('should redirect to learn if the user has signed in from the landing page', async () => {
+      mockAuthSuccess();
+
+      const returnTo = 'https://www.freecodecamp.org/';
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: {
+          'login-returnto': sign(returnTo)
+        }
+      });
+
+      expect(res.headers.location).toEqual(
+        expect.stringContaining('https://www.freecodecamp.org/learn?')
+      );
+    });
+
+    test('should redirect home if the login-returnto cookie is invalid', async () => {
       mockAuthSuccess();
       const returnTo = 'https://www.evilcodecamp.org/espanol/learn';
       // /signin sets the cookie
@@ -283,32 +391,8 @@ describe('auth0 plugin', () => {
       expect(res.headers.location).toMatch(HOME_LOCATION);
     });
 
-    it('should redirect to email-sign-up if the user has not acceptedPrivacyTerms', async () => {
+    test('should populate the user with the correct data', async () => {
       mockAuthSuccess();
-      // Using an italian path to make sure redirection works.
-      const italianReturnTo = 'https://www.freecodecamp.org/italian/settings';
-
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/auth/auth0/callback?state=valid',
-        cookies: {
-          'login-returnto': sign(italianReturnTo)
-        }
-      });
-
-      expect(res.headers.location).toEqual(
-        expect.stringContaining(
-          'https://www.freecodecamp.org/italian/email-sign-up?'
-        )
-      );
-    });
-
-    it('should populate the user with the correct data', async () => {
-      mockAuthSuccess();
-      const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
-      const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
-      const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
-      const mongodbIdRe = /^[a-f0-9]{24}$/;
 
       await fastify.inject({
         method: 'GET',
@@ -319,88 +403,7 @@ describe('auth0 plugin', () => {
         where: { email }
       });
 
-      expect(user).toEqual({
-        about: '',
-        acceptedPrivacyTerms: false,
-        completedChallenges: [],
-        completedExams: [],
-        currentChallengeId: '',
-        donationEmails: [],
-        email,
-        emailAuthLinkTTL: null,
-        emailVerified: true,
-        emailVerifyTTL: null,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        externalId: expect.stringMatching(uuidRe),
-        githubProfile: null,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        id: expect.stringMatching(mongodbIdRe),
-        is2018DataVisCert: false,
-        is2018FullStackCert: false,
-        isApisMicroservicesCert: false,
-        isBackEndCert: false,
-        isBanned: false,
-        isCheater: false,
-        isClassroomAccount: null,
-        isDataAnalysisPyCertV7: false,
-        isDataVisCert: false,
-        isDonating: false,
-        isFoundationalCSharpCertV8: false,
-        isFrontEndCert: false,
-        isFrontEndLibsCert: false,
-        isFullStackCert: false,
-        isHonest: false,
-        isInfosecCertV7: false,
-        isInfosecQaCert: false,
-        isJsAlgoDataStructCert: false,
-        isJsAlgoDataStructCertV8: false,
-        isMachineLearningPyCertV7: false,
-        isQaCertV7: false,
-        isRelationalDatabaseCertV8: false,
-        isCollegeAlgebraPyCertV8: false,
-        isRespWebDesignCert: false,
-        isSciCompPyCertV7: false,
-        isUpcomingPythonCertV8: null,
-        keyboardShortcuts: false,
-        linkedin: null,
-        location: '',
-        name: '',
-        needsModeration: false,
-        newEmail: null,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        unsubscribeId: expect.stringMatching(unsubscribeIdRe),
-        partiallyCompletedChallenges: [],
-        password: null,
-        picture: '',
-        portfolio: [],
-        profileUI: {
-          isLocked: false,
-          showAbout: false,
-          showCerts: false,
-          showDonation: false,
-          showHeatMap: false,
-          showLocation: false,
-          showName: false,
-          showPoints: false,
-          showPortfolio: false,
-          showTimeLine: false
-        },
-        progressTimestamps: [expect.any(Number)],
-        rand: null,
-        savedChallenges: [],
-        sendQuincyEmail: false,
-        theme: 'default',
-        timezone: null,
-        twitter: null,
-        updateCount: 0,
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        username: expect.stringMatching(fccUuidRe),
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        usernameDisplay: expect.stringMatching(fccUuidRe),
-        verificationToken: null,
-        website: null,
-        yearsTopContributor: []
-      });
+      expect(user).toEqual(newUser(email));
       expect(user.username).toBe(user.usernameDisplay);
     });
   });

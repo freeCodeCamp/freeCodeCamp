@@ -5,22 +5,22 @@ test.describe('Donate page', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --set-true isDonating');
+    execSync('node ../tools/scripts/seed/seed-demo-user --set-true isDonating');
     await page.goto('/donate');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should render the donate page correctly', async ({ page }) => {
     await expect(
-      page.getByText('Thank You for Being a Supporter')
+      page.getByText('Thank you for your continued support')
     ).toBeVisible();
 
     await expect(
       page.getByText(
-        'Your contribution will be crucial in creating resources that empower millions of people to learn new skills and support their families.'
+        'Your contributions are crucial in creating resources that empower millions of people to learn new skills and support their families.'
       )
     ).toBeVisible();
 

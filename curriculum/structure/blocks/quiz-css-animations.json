@@ -1,0 +1,11 @@
+{
+  "name": "CSS Animations Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-css-animations",
+  "challengeOrder": [
+    { "id": "66ed8fc9f45ce3ece4053eae", "title": "CSS Animations Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

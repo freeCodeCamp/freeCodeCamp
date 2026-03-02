@@ -16,6 +16,7 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
         <span className='sr-only'>{t('icons.not-passed')}</span>
       )}
       <svg
+        data-testid='green-not-completed'
         aria-hidden='true'
         height='15'
         viewBox='0 0 200 200'

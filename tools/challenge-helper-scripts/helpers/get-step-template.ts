@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
-import { insertErms } from './insert-erms';
+import { ObjectId } from 'bson';
+import { insertErms } from './insert-erms.js';
 
 // Builds a block
 function getCodeBlock(label: string, content?: string) {
@@ -21,11 +20,12 @@ ${content}`
 }
 
 type StepOptions = {
-  challengeId: ObjectID;
-  challengeSeeds: Record<string, ChallengeSeed>;
+  challengeId: ObjectId;
+  challengeSeeds: ChallengeSeed[];
   stepNum: number;
-  challengeType: number;
+  challengeType?: number;
   isFirstChallenge?: boolean;
+  challengeLang?: string;
 };
 
 export interface ChallengeSeed {
@@ -42,10 +42,11 @@ function getStepTemplate({
   challengeSeeds,
   stepNum,
   challengeType,
-  isFirstChallenge = false
+  isFirstChallenge = false,
+  challengeLang
 }: StepOptions): string {
-  const seedTexts = Object.values(challengeSeeds)
-    .map(({ contents, ext, editableRegionBoundaries }: ChallengeSeed) => {
+  const seedTexts = challengeSeeds
+    .map(({ contents, ext, editableRegionBoundaries }) => {
       let fullContents = contents;
       if (editableRegionBoundaries.length >= 2) {
         fullContents = insertErms(contents, editableRegionBoundaries);
@@ -54,14 +55,14 @@ function getStepTemplate({
     })
     .join('\n');
 
-  const seedHeads = Object.values(challengeSeeds)
-    .filter(({ head }: ChallengeSeed) => head)
-    .map(({ ext, head }: ChallengeSeed) => getCodeBlock(ext, head))
+  const seedHeads = challengeSeeds
+    .filter(({ head }) => head)
+    .map(({ ext, head }) => getCodeBlock(ext, head))
     .join('\n');
 
-  const seedTails = Object.values(challengeSeeds)
-    .filter(({ tail }: ChallengeSeed) => tail)
-    .map(({ ext, tail }: ChallengeSeed) => getCodeBlock(ext, tail))
+  const seedTails = challengeSeeds
+    .filter(({ tail }) => tail)
+    .map(({ ext, tail }) => getCodeBlock(ext, tail))
     .join('\n');
 
   const stepDescription = `step ${stepNum} instructions`;
@@ -75,12 +76,17 @@ function getStepTemplate({
 demoType: onClick`
     : '';
 
+  const langString = challengeLang
+    ? `
+lang: ${challengeLang}`
+    : '';
+
   return (
     `---
 id: ${challengeId.toString()}
 title: Step ${stepNum}
-challengeType: ${challengeType}
-dashedName: step-${stepNum}${demoString}
+challengeType: ${challengeType ?? 'placeholder'}
+dashedName: step-${stepNum}${langString}${demoString}
 ---
 
 # --description--

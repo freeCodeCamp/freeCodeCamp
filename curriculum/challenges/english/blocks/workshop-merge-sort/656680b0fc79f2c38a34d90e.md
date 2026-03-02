@@ -1,0 +1,84 @@
+---
+id: 656680b0fc79f2c38a34d90e
+title: Step 7
+challengeType: 20
+dashedName: step-7
+---
+
+# --description--
+
+Now it's time to sort and merge the lists (`left_part` and `right_part`) into the original list. 
+
+You can do this by comparing elements on both lists, and merging the smaller element to the main list. You are going to do this comparison for all the indexes in `left_part` and `right_part`.
+
+Create three variables: `left_array_index`, `right_array_index`, and `sorted_index` and set their values to `0`. These variables will help you keep track of each index during the sorting process.
+
+# --hints--
+
+You should have a variable named `left_array_index` inside your `merge_sort` function
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").has_variable("left_array_index")`)) 
+
+})
+```
+
+The value of `left_array_index` should be `0`.
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").find_variable("left_array_index").is_equivalent("left_array_index = 0")`))  
+
+})
+```
+
+You should have a variable named `right_array_index` inside your `merge_sort` function
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").has_variable("right_array_index")`))
+})
+```
+
+The value of `right_array_index` should be `0`.
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").find_variable("right_array_index").is_equivalent("right_array_index = 0")`))
+})
+
+```
+
+You should have a variable named `sorted_index` inside your `merge_sort` function
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").has_variable("sorted_index")`))
+})
+```
+
+The value of `sorted_index` should be `0`.
+
+```js
+({
+    test: () => assert(runPython(`_Node(_code).find_function("merge_sort").find_variable("sorted_index").is_equivalent("sorted_index = 0")`))
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+def merge_sort(array):
+    
+    middle_point = len(array) // 2
+    left_part = array[:middle_point]
+    right_part = array[middle_point:]
+    merge_sort(left_part)
+    merge_sort(right_part)
+--fcc-editable-region--
+    
+--fcc-editable-region--
+```

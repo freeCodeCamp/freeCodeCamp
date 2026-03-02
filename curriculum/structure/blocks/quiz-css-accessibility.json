@@ -1,0 +1,11 @@
+{
+  "name": "CSS Accessibility Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-css-accessibility",
+  "challengeOrder": [
+    { "id": "66ed8fc1f45ce3ece4053ead", "title": "CSS Accessibility Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

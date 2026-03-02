@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
@@ -35,7 +35,7 @@ type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = { setIsRandomCompletionThreshold: (arg: boolean) => void };
 
 interface GrowthBookReduxConnector extends StateProps, DispatchProps {
-  children: ReactNode;
+  children: JSX.Element;
 }
 
 const mapDispatchToProps = {
@@ -72,7 +72,7 @@ const GrowthBookReduxConnector = ({
     showModalsRandomly,
     setIsRandomCompletionThreshold
   ]);
-  return <>{children}</>;
+  return children;
 };
 
 export default connect(

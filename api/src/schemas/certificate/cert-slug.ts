@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { Certification } from '../../../../shared/config/certification-settings';
-import { genericError } from '../types';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
+import { genericError } from '../types.js';
 
 export const certSlug = {
   params: Type.Object({
@@ -85,14 +85,7 @@ export const certSlug = {
         certSlug: Type.Enum(Certification),
         certTitle: Type.String(),
         username: Type.String(),
-        date: Type.Number(),
-        completionTime: Type.Number()
-      }),
-      Type.Object({
-        certSlug: Type.Enum(Certification),
-        certTitle: Type.String(),
-        username: Type.String(),
-        name: Type.String(),
+        name: Type.Optional(Type.String()),
         date: Type.Number(),
         completionTime: Type.Number()
       }),

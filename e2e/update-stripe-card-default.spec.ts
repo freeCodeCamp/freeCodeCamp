@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Update Card Page for Non-Donor Authenticated User', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test('should render correctly', async ({ page }) => {
     await page.goto('/update-stripe-card');
     await expect(page).toHaveTitle(

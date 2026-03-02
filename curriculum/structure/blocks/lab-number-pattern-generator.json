@@ -1,0 +1,14 @@
+{
+  "name": "Build a Number Pattern Generator",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "isUpcomingChange": false,
+  "dashedName": "lab-number-pattern-generator",
+  "challengeOrder": [
+    {
+      "id": "6842a6cd9836f0114a5b7a8a",
+      "title": "Build a Number Pattern Generator"
+    }
+  ],
+  "helpCategory": "Python"
+}

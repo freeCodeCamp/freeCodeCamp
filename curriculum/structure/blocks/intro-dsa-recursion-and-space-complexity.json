@@ -1,0 +1,22 @@
+{
+  "name": "Recursion and Space Complexity",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-recursion-and-space-complexity",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dcf297932b3cc4b19c929",
+      "title": "Recursive Functions"
+    },
+    {
+      "id": "698dcfd57932b3cc4b19c92a",
+      "title": "Space Complexity"
+    },
+    {
+      "id": "698dd0707932b3cc4b19c92b",
+      "title": "Recap of Algorithms in Code"
+    }
+  ]
+}

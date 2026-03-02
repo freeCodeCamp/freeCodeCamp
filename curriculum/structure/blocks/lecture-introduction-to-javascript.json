@@ -1,0 +1,26 @@
+{
+  "name": "Introduction to JavaScript",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-introduction-to-javascript",
+  "challengeOrder": [
+    {
+      "id": "672d26385dbe73203c4dac81",
+      "title": "What Is JavaScript, and How Does It Work with HTML and CSS?"
+    },
+    {
+      "id": "672d496eca926b5df8176a67",
+      "title": "What Is a Data Type, and What Are the Different Data Types in JavaScript?"
+    },
+    {
+      "id": "672d497cb1a1675e47bf7ea1",
+      "title": "What Are Variables, and What Are Guidelines for Naming JavaScript Variables?"
+    },
+    {
+      "id": "672d49959621885e9d3e672c",
+      "title": "How Do let and const Work Differently When It Comes to Variable Declaration, Assignment, and Reassignment?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

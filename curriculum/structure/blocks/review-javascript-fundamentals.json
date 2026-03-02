@@ -1,0 +1,14 @@
+{
+  "name": "JavaScript Fundamentals Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-fundamentals",
+  "challengeOrder": [
+    {
+      "id": "6723ca166fe90eb0a3146848",
+      "title": "JavaScript Fundamentals Review"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

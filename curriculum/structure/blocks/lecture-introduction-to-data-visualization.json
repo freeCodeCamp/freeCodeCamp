@@ -1,0 +1,23 @@
+{
+  "name": "Introduction to Data Visualization",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-data-visualization",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "695b906494aa8d03c39ec2db",
+      "title": "What Is Data Visualization?"
+    },
+    {
+      "id": "695b9093a0c45b36932dcbca",
+      "title": "What Are Common Chart Types and When Should You Use Them?"
+    },
+    {
+      "id": "695b9093a0c45b36932dcbcb",
+      "title": "What Is the D3 Library Used For?"
+    }
+  ],
+  "blockLabel": "lecture",
+  "usesMultifileEditor": true
+}

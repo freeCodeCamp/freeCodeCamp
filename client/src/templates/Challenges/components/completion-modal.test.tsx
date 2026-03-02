@@ -1,5 +1,6 @@
 import React from 'react';
 import { runSaga } from 'redux-saga';
+import { describe, test, it, expect, beforeEach, vi, type Mock } from 'vitest';
 import { render } from '../../../../utils/test-utils';
 
 import { getCompletedPercentage } from '../../../utils/get-completion-percentage';
@@ -11,26 +12,38 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
-  isBlockNewlyCompletedSelector
+  isBlockNewlyCompletedSelector,
+  currentBlockIdsSelector
 } from '../redux/selectors';
-import { buildChallenge, getTestRunner } from '../utils/build';
-import CompletionModal from './completion-modal';
-
-jest.mock('../../../analytics');
-jest.mock('../../../utils/fire-confetti');
-jest.mock('../../../components/Progress');
-jest.mock('../redux/selectors');
-jest.mock('../utils/build');
-const mockFireConfetti = fireConfetti as jest.Mock;
-const mockTestRunner = jest.fn().mockReturnValue({ pass: true });
-const mockBuildEnabledSelector = isBuildEnabledSelector as jest.Mock;
-const mockChallengeTestsSelector = challengeTestsSelector as jest.Mock;
-const mockChallengeMetaSelector = challengeMetaSelector as jest.Mock;
-const mockChallengeDataSelector = challengeDataSelector as jest.Mock;
-const mockIsBlockNewlyCompletedSelector =
-  isBlockNewlyCompletedSelector as jest.Mock;
-const mockBuildChallenge = buildChallenge as jest.Mock;
-const mockGetTestRunner = getTestRunner as jest.Mock;
+import {
+  completedChallengesIdsSelector,
+  allChallengesInfoSelector
+} from '../../../redux/selectors';
+import { getTestRunner } from '../utils/build';
+import CompletionModal, { combineFileData } from './completion-modal';
+import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
+import { useStaticQuery } from 'gatsby';
+vi.mock('../../../analytics');
+vi.mock('../../../utils/fire-confetti');
+vi.mock('../../../components/Progress');
+vi.mock('../redux/selectors');
+vi.mock('../../../redux/selectors');
+vi.mock('../utils/build');
+vi.mock('../../../utils/get-words');
+vi.mock('@freecodecamp/challenge-builder/build');
+const mockFireConfetti = fireConfetti as Mock;
+const mockTestRunner = vi.fn().mockReturnValue({ pass: true });
+const mockBuildEnabledSelector = isBuildEnabledSelector as Mock;
+const mockChallengeTestsSelector = challengeTestsSelector as Mock;
+const mockChallengeMetaSelector = challengeMetaSelector as Mock;
+const mockChallengeDataSelector = challengeDataSelector as Mock;
+const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
+const mockCurrentBlockIdsSelector = vi.mocked(currentBlockIdsSelector);
+const mockCompletedChallengesIdsSelector =
+  completedChallengesIdsSelector as unknown as Mock;
+const mockAllChallengesInfoSelector =
+  allChallengesInfoSelector as unknown as Mock;
+const mockGetTestRunner = getTestRunner as Mock;
 mockBuildEnabledSelector.mockReturnValue(true);
 mockChallengeTestsSelector.mockReturnValue([
   { text: 'Test 1', testString: 'mock test code' }
@@ -41,35 +54,78 @@ mockChallengeMetaSelector.mockReturnValue({
 mockChallengeDataSelector.mockReturnValue({
   challengeFiles: ['mock_challenge_files']
 });
-mockBuildChallenge.mockReturnValue({ challengeType: 'mock_challenge_type' });
 mockGetTestRunner.mockReturnValue(mockTestRunner);
 
-const completedChallengesIds = ['1', '3', '5'],
-  currentBlockIds = ['1', '3', '5', '7'],
-  id = '7',
-  fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
+const completedChallengesIds = ['1', '3', '5'];
+const currentBlockIds = ['1', '3', '5', '7'];
+const id = '7';
+const fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
 
 describe('<CompletionModal />', () => {
+  beforeEach(() => {
+    vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
+  });
+
   describe('fireConfetti', () => {
     beforeEach(() => {
       mockFireConfetti.mockClear();
     });
-    test('should fire when block is completed', async () => {
+    test('should fire when block is completed and challenge data exists', async () => {
       const payload = { showCompletionModal: true };
+      const challengeId = 'bd7158d8c442eddfaeb5bd18';
+      const blockIds = ['step1', 'step2', 'step3', challengeId];
       const store = createStore({
         challenge: {
           modal: { completion: true },
           challengeMeta: {
-            id: 'bd7158d8c442eddfaeb5bd18',
-            certification: 'responsive-web-design' // Make sure the certification matches
+            id: challengeId,
+            certification: 'responsive-web-design'
           }
         }
       });
       mockIsBlockNewlyCompletedSelector.mockReturnValue(true);
+      mockChallengeMetaSelector.mockReturnValue({
+        id: challengeId,
+        isLastChallengeInBlock: true,
+        challengeType: 'mock_challenge_type'
+      });
+      mockCurrentBlockIdsSelector.mockReturnValue(blockIds);
+      mockCompletedChallengesIdsSelector.mockReturnValue(['step1', 'step2']);
+      mockAllChallengesInfoSelector.mockReturnValue({
+        challengeNodes: [{ challenge: { id: challengeId } }],
+        certificateNodes: []
+      });
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
       expect(mockFireConfetti).toHaveBeenCalledTimes(1);
+    });
+    test('should not fire when challenge data is empty (saga guard)', async () => {
+      const payload = { showCompletionModal: true };
+      const challengeId = 'bd7158d8c442eddfaeb5bd18';
+      const store = createStore({
+        challenge: {
+          modal: { completion: true },
+          challengeMeta: {
+            id: challengeId,
+            certification: 'responsive-web-design'
+          }
+        }
+      });
+      mockIsBlockNewlyCompletedSelector.mockReturnValue(true);
+      mockChallengeMetaSelector.mockReturnValue({
+        id: challengeId,
+        isLastChallengeInBlock: true,
+        challengeType: 'mock_challenge_type'
+      });
+      mockAllChallengesInfoSelector.mockReturnValue({
+        challengeNodes: [],
+        certificateNodes: []
+      });
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      await runSaga(store, executeChallengeSaga, { payload }).done;
+      expect(mockFireConfetti).toHaveBeenCalledTimes(0);
     });
     test('should not fire when block is not completed', async () => {
       const payload = { showCompletionModal: true };
@@ -146,6 +202,33 @@ describe('<CompletionModal />', () => {
       expect(
         getCompletedPercentage(fakeCompletedChallengesIds, currentBlockIds, id)
       ).toBe(100);
+    });
+  });
+
+  describe('File Download Content', () => {
+    it('Should label each section appropriately', () => {
+      const indexHtml = {
+        name: 'index',
+        ext: 'html',
+        contents: 'some html elements'
+      };
+      const stylesCSS = {
+        name: 'styles',
+        ext: 'css',
+        contents: 'some css styles'
+      };
+      const scriptJS = {
+        name: 'script',
+        ext: 'js',
+        contents: 'some javascript'
+      };
+      const result = combineFileData([indexHtml, stylesCSS, scriptJS]);
+      expect(result).toContain('** start of index.html **');
+      expect(result).toContain('** end of index.html **');
+      expect(result).toContain('** start of styles.css **');
+      expect(result).toContain('** end of styles.css **');
+      expect(result).toContain('** start of script.js **');
+      expect(result).toContain('** end of script.js **');
     });
   });
 });

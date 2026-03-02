@@ -1,22 +1,21 @@
 // Package Utilities
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
-import { Trans, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Alert } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import ChallengeHeading from '../components/challenge-heading';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
@@ -43,14 +42,19 @@ import {
   Test
 } from '../../../redux/prop-types';
 import ProjectToolPanel from '../projects/tool-panel';
+import { getChallengePaths } from '../utils/challenge-paths';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
+import RdbStep1Instructions from './rdb-step-1-instructions';
+import RdbStep2Instructions from './rdb-step-2-instructions';
+import { LocalInstructions } from './local-instructions';
+import { OnaInstructions } from './ona-instructions';
 
 import './codeally.css';
-import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
+import { CodespacesInstructions } from './codespaces-instructions';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -109,55 +113,82 @@ interface ShowCodeAllyProps {
   userToken: string | null;
 }
 
-class ShowCodeAlly extends Component<ShowCodeAllyProps> {
-  static displayName: string;
-  private container: React.RefObject<HTMLElement> = React.createRef();
+function ShowCodeAlly({
+  completedChallenges,
+  data,
+  isChallengeCompleted,
+  isSignedIn,
+  partiallyCompletedChallenges,
+  t,
+  updateSolutionFormValues,
+  userToken,
+  updateUserToken,
+  createFlashMessage,
+  challengeMounted,
+  initTests,
+  pageContext: { challengeMeta },
+  updateChallengeMeta,
+  openCompletionModal
+}: ShowCodeAllyProps) {
+  const container = useRef<HTMLElement>(null);
 
-  componentDidMount(): void {
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: {
-            fields: { tests },
-            challengeType,
-            helpCategory,
-            title
-          }
-        }
-      },
-      pageContext: { challengeMeta },
-      initTests,
-      updateChallengeMeta
-    } = this.props;
+  const {
+    challengeNode: {
+      challenge: {
+        block,
+        challengeType,
+        tests,
+        description,
+        helpCategory,
+        id: challengeId,
+        instructions,
+        notes,
+        superBlock,
+        title,
+        translationPending,
+        url
+      }
+    }
+  } = data;
+
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )}: ${title}`;
+  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+
+  const isPartiallyCompleted = partiallyCompletedChallenges.some(
+    challenge => challenge.id === challengeId
+  );
+
+  const isCompleted = completedChallenges.some(
+    challenge => challenge.id === challengeId
+  );
+
+  useEffect(() => {
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    this.container.current?.focus();
-  }
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  handleSubmit = ({
+  const handleSubmit = ({
     showCompletionModal
   }: {
     showCompletionModal: boolean;
   }) => {
-    const {
-      completedChallenges,
-      createFlashMessage,
-      data: {
-        challengeNode: {
-          challenge: { id: challengeId }
-        }
-      },
-      openCompletionModal,
-      partiallyCompletedChallenges
-    } = this.props;
-
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
       challenge => challenge.id === challengeId
     );
@@ -176,248 +207,174 @@ class ShowCodeAlly extends Component<ShowCodeAllyProps> {
     }
   };
 
-  openGitpod = (userToken?: string) => {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { url }
-        }
-      }
-    } = this.props;
+  const rdbLocalInstructions = useFeature('rdb-local-instructions');
+  const rdbCodespacesInstructions = useFeature('rdb-codespaces-instructions');
+  const rdbOnaInstructions = useFeature('rdb-ona-instructions');
 
-    const repoUrl = `https://github.com/${url}`;
-    const coderoadTutorial = encodeURIComponent(
-      `https://raw.githubusercontent.com/${url}/main/tutorial.json`
-    );
-    const gitpodDomain = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true`;
-    const tokenEnv = userToken ? `,CODEROAD_WEBHOOK_TOKEN=${userToken}` : '';
-    const gitpodUrl = `${gitpodDomain}${tokenEnv}/${repoUrl}`;
+  const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
 
-    window.open(gitpodUrl, '_blank');
-  };
+  async function generateUserToken() {
+    const createUserTokenResponse = await postUserToken();
+    const { data = { userToken: null } } = createUserTokenResponse;
 
-  startCourse = async () => {
-    const { isSignedIn, userToken, updateUserToken } = this.props;
+    if (data?.userToken) {
+      updateUserToken(data.userToken);
+      createFlashMessage({
+        type: 'success',
+        message: FlashMessages.UserTokenGenerated
+      });
+    } else {
+      createFlashMessage({
+        type: 'danger',
+        message: FlashMessages.UserTokenGenerateError
+      });
+    }
+  }
 
-    if (!isSignedIn) {
-      this.openGitpod();
-    } else if (!userToken) {
-      const createUserTokenResponse = await postUserToken();
-      const { data = { userToken: null } } = createUserTokenResponse;
-
-      if (data?.userToken) {
-        updateUserToken(data.userToken);
-        this.openGitpod(data.userToken);
-      } else {
+  function copyUserToken() {
+    navigator.clipboard.writeText(userToken ?? '').then(
+      () => {
+        createFlashMessage({
+          type: 'success',
+          message: FlashMessages.UserTokenCopied
+        });
+      },
+      () => {
         createFlashMessage({
           type: 'danger',
-          message: FlashMessages.StartProjectErr
+          message: FlashMessages.UserTokenCopyError
         });
       }
-    } else {
-      this.openGitpod(userToken);
-    }
-  };
-
-  render() {
-    const {
-      completedChallenges,
-      data: {
-        challengeNode: {
-          challenge: {
-            block,
-            challengeType,
-            description,
-            id: challengeId,
-            instructions,
-            notes,
-            superBlock,
-            title,
-            translationPending
-          }
-        }
-      },
-      isChallengeCompleted,
-      isSignedIn,
-      pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
-      },
-      partiallyCompletedChallenges,
-      t,
-      updateSolutionFormValues
-    } = this.props;
-
-    const blockNameTitle = `${t(
-      `intro:${superBlock}.blocks.${block}.title`
-    )}: ${title}`;
-    const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-
-    const isPartiallyCompleted = partiallyCompletedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    const isCompleted = completedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    return (
-      <Hotkeys
-        containerRef={this.container}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-      >
-        <LearnLayout>
-          <Helmet title={windowTitle} />
-          <Container>
-            <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
-                {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
-                <Spacer size='medium' />
-                <ChallengeTitle
-                  isCompleted={isChallengeCompleted}
-                  translationPending={translationPending}
-                >
-                  {title}
-                </ChallengeTitle>
-                <Spacer size='medium' />
-                <PrismFormatted text={description} />
-                <Spacer size='medium' />
-                <div className='ca-description'>
-                  <p>{t('learn.gitpod.intro')}</p>
-
-                  <ol>
-                    <li>
-                      <Trans i18nKey='learn.gitpod.step-1'>
-                        <a
-                          href='https://github.com/join'
-                          rel='noopener noreferrer'
-                          target='_blank'
-                          title={t('learn.source-code-link')}
-                        >
-                          placeholder
-                        </a>
-                      </Trans>
-                    </li>
-
-                    <li>{t('learn.gitpod.step-2')}</li>
-                    <li>{t('learn.gitpod.step-3')}</li>
-                    <li>
-                      {t('learn.gitpod.step-4')}
-                      <ul>
-                        <li>{t('learn.gitpod.step-5')}</li>
-                        <li>{t('learn.gitpod.step-6')}</li>
-                        <li>{t('learn.gitpod.step-7')}</li>
-                        <li>{t('learn.gitpod.step-8')}</li>
-                      </ul>
-                    </li>
-
-                    <li>{t('learn.gitpod.step-9')}</li>
-                  </ol>
-                </div>
-
-                <Spacer size='medium' />
-                {isSignedIn &&
-                  challengeType === challengeTypes.codeAllyCert && (
-                    <>
-                      <div className='ca-description'>
-                        {t('learn.complete-both-steps')}
-                      </div>
-                      <hr />
-                      <Spacer size='medium' />
-                      <ChallengeHeading
-                        heading={t('learn.step-1')}
-                        isCompleted={isPartiallyCompleted || isCompleted}
-                      />
-                      <Spacer size='medium' />
-                      <div className='ca-description'>
-                        {t('learn.runs-in-vm')}
-                      </div>
-                      <Spacer size='medium' />
-                      <PrismFormatted text={instructions} />
-                      <Spacer size='medium' />
-                    </>
-                  )}
-                <Alert variant='info'>
-                  <p>
-                    <Trans
-                      values={{ course: title }}
-                      i18nKey='learn.gitpod.continue-project'
-                    >
-                      <a
-                        href='https://gitpod.io/workspaces'
-                        rel='noopener noreferrer'
-                        target='_blank'
-                      >
-                        placeholder
-                      </a>
-                    </Trans>
-                  </p>
-                  <Trans i18nKey='learn.gitpod.learn-more'>
-                    <a
-                      href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                    >
-                      placeholder
-                    </a>
-                  </Trans>
-                </Alert>
-                {isSignedIn && (
-                  <Alert variant='danger'>
-                    {t('learn.gitpod.logout-warning', { course: title })}
-                  </Alert>
-                )}
-                <CodeAllyButton
-                  text={
-                    challengeType === challengeTypes.codeAllyCert
-                      ? t('buttons.click-start-project')
-                      : t('buttons.click-start-course')
-                  }
-                  // `this.startCourse` being an async callback is acceptable
-                  //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                  onClick={this.startCourse}
-                />
-                {isSignedIn &&
-                  challengeType === challengeTypes.codeAllyCert && (
-                    <>
-                      <hr />
-                      <Spacer size='medium' />
-                      <ChallengeHeading
-                        heading={t('learn.step-2')}
-                        isCompleted={isCompleted}
-                      />
-                      <Spacer size='medium' />
-                      <div className='ca-description'>
-                        {t('learn.submit-public-url')}
-                      </div>
-                      <Spacer size='medium' />
-                      <PrismFormatted text={notes} />
-                      <Spacer size='medium' />
-                      <SolutionForm
-                        challengeType={challengeType}
-                        description={description}
-                        onSubmit={this.handleSubmit}
-                        updateSolutionForm={updateSolutionFormValues}
-                      />
-                    </>
-                  )}
-                <Spacer size='xxSmall' />
-                <ProjectToolPanel />
-                <br />
-                <Spacer size='medium' />
-              </Col>
-              <CompletionModal />
-              <HelpModal challengeTitle={title} challengeBlock={block} />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
     );
   }
-}
 
-ShowCodeAlly.displayName = 'ShowCodeAlly';
+  function copyUrl() {
+    navigator.clipboard.writeText(coderoadTutorial ?? '').then(
+      () => {
+        createFlashMessage({
+          type: 'success',
+          message: FlashMessages.CourseUrlCopied
+        });
+      },
+      () => {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.CourseUrlCopyError
+        });
+      }
+    );
+  }
+
+  const setups = [
+    {
+      name: t('learn.codespaces.summary'),
+      component: CodespacesInstructions,
+      on: rdbCodespacesInstructions.on
+    },
+    {
+      name: t('learn.local.summary'),
+      component: LocalInstructions,
+      on: rdbLocalInstructions.on
+    },
+    {
+      name: t('learn.ona.summary'),
+      component: OnaInstructions,
+      on: rdbOnaInstructions.on
+    }
+  ];
+
+  const setupsToShow = setups.filter(setup => {
+    return setup.on;
+  });
+
+  return (
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet title={windowTitle} />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <Spacer size='m' />
+              <PrismFormatted text={description} />
+              <Spacer size='m' />
+
+              {setupsToShow.map(({ name, component: SetupComponent }, i) => (
+                <Fragment key={name}>
+                  <details
+                    open={i === 0}
+                    style={{ border: '1px solid #ccc', padding: '16px' }}
+                  >
+                    <summary>{name}</summary>
+                    <Spacer size='s' />
+                    <SetupComponent
+                      {...{
+                        challengeType,
+                        copyUrl,
+                        copyUserToken,
+                        generateUserToken,
+                        isSignedIn,
+                        title,
+                        userToken
+                      }}
+                    />
+                  </details>
+                  <Spacer size='s' />
+                </Fragment>
+              ))}
+
+              <Spacer size='m' />
+              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
+                <>
+                  <div className='ca-description'>
+                    {t('learn.complete-both-steps')}
+                  </div>
+                  <hr />
+                  <Spacer size='m' />
+                  <RdbStep1Instructions
+                    instructions={instructions}
+                    isCompleted={isPartiallyCompleted || isCompleted}
+                  />
+                  <hr />
+                  <Spacer size='m' />
+                  <RdbStep2Instructions
+                    isCompleted={isCompleted}
+                    notes={notes}
+                  />
+                  <Spacer size='m' />
+                  <SolutionForm
+                    challengeType={challengeType}
+                    description={description}
+                    onSubmit={handleSubmit}
+                    updateSolutionForm={updateSolutionFormValues}
+                  />
+                </>
+              )}
+
+              <ProjectToolPanel />
+              <br />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
+  );
+}
 
 export default connect(
   mapStateToProps,
@@ -430,12 +387,6 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
-        fields {
-          tests {
-            text
-            testString
-          }
-        }
         challengeType
         description
         helpCategory
@@ -443,6 +394,10 @@ export const query = graphql`
         instructions
         notes
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
         url

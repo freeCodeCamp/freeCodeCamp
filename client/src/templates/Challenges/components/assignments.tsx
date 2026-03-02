@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../components/helpers/spacer';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
 
@@ -24,7 +24,9 @@ function Assignments({
   const { t } = useTranslation();
   return (
     <>
-      <ChallengeHeading heading={t('learn.assignments')} />
+      <ChallengeHeading
+        heading={t('learn.assignments', { count: assignments.length })}
+      />
       <div className='video-quiz-options'>
         {assignments.map((assignment, index) => (
           <label className='video-quiz-option-label' key={index}>
@@ -36,19 +38,19 @@ function Assignments({
               }
             />
             <PrismFormatted className={'video-quiz-option'} text={assignment} />
-            <Spacer size='medium' />
+            <Spacer size='m' />
           </label>
         ))}
       </div>
       {!allAssignmentsCompleted && (
         <>
-          <Spacer size='medium' />
+          <Spacer size='m' />
           <div className='assignments-not-complete'>
-            {t('learn.assignment-not-complete')}
+            {t('learn.assignment-not-complete', { count: assignments.length })}
           </div>
         </>
       )}
-      <Spacer size='medium' />
+      <Spacer size='m' />
     </>
   );
 }

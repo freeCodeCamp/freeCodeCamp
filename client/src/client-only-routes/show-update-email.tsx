@@ -16,16 +16,17 @@ import {
   ControlLabel,
   Col,
   Row,
-  Button
+  Button,
+  Spacer
 } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Spacer, Loader, Link } from '../components/helpers';
-import './show-update-email.css';
+import { Loader } from '../components/helpers';
 import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
+import type { User } from '../redux/prop-types';
 
 const { apiLocation } = envData;
 
@@ -40,11 +41,8 @@ interface ShowUpdateEmailProps {
 const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
-  (
-    { email, emailVerified }: { email: string; emailVerified: boolean },
-    isSignedIn
-  ) => ({
-    isNewEmail: !email || emailVerified,
+  (user: User | null, isSignedIn) => ({
+    isNewEmail: !user?.email || user.emailVerified,
     isSignedIn
   })
 );
@@ -87,7 +85,7 @@ function ShowUpdateEmail({
         <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
       <Container>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
           <Col sm={6} smOffset={3}>
@@ -123,9 +121,7 @@ function ShowUpdateEmail({
                     : t('buttons.verify-email')}
                 </Button>
               </form>
-              <p className='text-center'>
-                <Link to='/signout'>{t('buttons.sign-out')}</Link>
-              </p>
+              <Spacer size='s' />
             </Row>
           </Col>
         </Row>

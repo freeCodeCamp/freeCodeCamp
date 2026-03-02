@@ -1,0 +1,12 @@
+{
+  "name": "Build a Book Organizer",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-book-organizer",
+  "challengeOrder": [
+    { "id": "67172b43f84bcd2dec238a3d", "title": "Build a Book Organizer" }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

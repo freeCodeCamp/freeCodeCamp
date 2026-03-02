@@ -1,9 +1,10 @@
-const cloneDeep = require('lodash/cloneDeep');
-const find = require('unist-util-find');
-const { selectAll } = require('unist-util-select');
+import { describe, beforeEach, beforeAll, it, expect } from 'vitest';
+import cloneDeep from 'lodash/cloneDeep';
+import find from 'unist-util-find';
+import { selectAll } from 'unist-util-select';
 
-const parseFixture = require('../__fixtures__/parse-fixture');
-const restoreDirectives = require('./restore-directives');
+import parseFixture from '../__fixtures__/parse-fixture';
+import restoreDirectives from './restore-directives';
 
 describe('restore-directives', () => {
   let directivesAST, directivesOriginalAST;

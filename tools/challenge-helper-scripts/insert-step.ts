@@ -1,6 +1,4 @@
-import { getArgValue } from './helpers/get-arg-value';
-import { insertStep } from './commands';
-import { validateMetaData } from './helpers/project-metadata';
+import { getArgValue } from './helpers/get-arg-value.js';
+import { insertStep } from './commands.js';
 
-validateMetaData();
-insertStep(getArgValue(process.argv));
+void insertStep(getArgValue(process.argv));

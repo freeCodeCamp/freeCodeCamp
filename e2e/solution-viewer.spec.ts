@@ -1,7 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Solution Viewer component', () => {
   test('renders the modal correctly', async ({ page }) => {
     await page.goto(

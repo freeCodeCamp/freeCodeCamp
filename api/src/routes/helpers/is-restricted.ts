@@ -1,6 +1,6 @@
 import { isProfane } from 'no-profanity';
 
-import { blocklistedUsernames } from '../../../../shared/config/constants';
+import { blocklistedUsernames } from '@freecodecamp/shared/config/constants';
 
 /**
  * Checks if a username is restricted (i.e. It's profane or reserved).

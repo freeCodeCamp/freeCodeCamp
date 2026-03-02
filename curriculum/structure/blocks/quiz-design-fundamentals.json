@@ -1,0 +1,11 @@
+{
+  "name": "Design Fundamentals Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-design-fundamentals",
+  "challengeOrder": [
+    { "id": "66ed901ff45ce3ece4053eba", "title": "Design Fundamentals Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

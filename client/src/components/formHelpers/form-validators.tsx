@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans } from 'react-i18next';
 import { isPrivate } from './form-ip-utils';
 
-// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub. NOT Codespaces, and NOT Gitpod yet
+// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub. NOT Codespaces, and NOT Gitpod/Ona yet
 // Once safari allows negative lookbehinds, this can be used:
 // |(?<!\.app)\.github\.dev
 const editorRegex =
@@ -41,6 +41,8 @@ export const pathValidator: Validator = value =>
 export const sourceCodeLinkExistsValidator: Validator = value =>
   value ? null : <Trans>validation.source-code-link-required</Trans>;
 
+export const sourceCodeLinkPublicValidator: Validator = value =>
+  isPrivate(value) ? <Trans>validation.source-code-link-public</Trans> : null;
 export function composeValidators(...validators: Validator[]) {
   return (value: string): ReturnType<Validator> | null =>
     validators.reduce(

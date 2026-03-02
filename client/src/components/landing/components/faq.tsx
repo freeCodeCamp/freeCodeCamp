@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col } from '@freecodecamp/ui';
+import { Col, Spacer } from '@freecodecamp/ui';
 
-import { Spacer } from '../../helpers';
 import BigCallToAction from './big-call-to-action';
 
 interface FaqItem {
@@ -12,7 +11,7 @@ interface FaqItem {
 
 const Faq = (): JSX.Element => {
   const { t } = useTranslation();
-  const faqItems = t<string, string & FaqItem[]>('landing.faqs');
+  const faqItems = t('landing.faqs', { returnObjects: true }) as FaqItem[];
 
   return (
     <Col
@@ -23,8 +22,9 @@ const Faq = (): JSX.Element => {
       xs={12}
       className='faq-section'
     >
+      <Spacer size='l' />
       <h2 className='big-heading'>{t('landing.faq')}</h2>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       {faqItems.map((faq, i) => (
         <div
           data-test-label='landing-page-faq'
@@ -35,13 +35,13 @@ const Faq = (): JSX.Element => {
           {faq.answer.map((answer, i) => (
             <p key={i}>{answer}</p>
           ))}
-          <Spacer size='small' />
+          <Spacer size='xs' />
         </div>
       ))}
-      <h2 className='landing-page-happy'>{t('learn.read-this.p12')}</h2>
-      <Spacer size='medium' />
+      <h2 className='landing-page-happy'>{t('learn.happy-coding')}</h2>
+      <Spacer size='m' />
       <BigCallToAction />
-      <Spacer size='large' />
+      <Spacer size='l' />
     </Col>
   );
 };

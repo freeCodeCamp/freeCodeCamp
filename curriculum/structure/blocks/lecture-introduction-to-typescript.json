@@ -1,0 +1,26 @@
+{
+  "name": "Introduction to TypeScript",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-typescript",
+  "challengeOrder": [
+    {
+      "id": "67d1d96532bc095aee051657",
+      "title": "What Is TypeScript, and Why Is It Used in the Industry?"
+    },
+    {
+      "id": "67d3018062fe6ba92b7d8299",
+      "title": "How Do Primitive Types Work in TypeScript?"
+    },
+    {
+      "id": "698f53374f7ad3a078dafbc0",
+      "title": "How Do Types Work with Objects and Arrays?"
+    },
+    {
+      "id": "698f515e99f9a25a3462f97f",
+      "title": "How do Function Types Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

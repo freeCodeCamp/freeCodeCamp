@@ -4,14 +4,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Button } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 
 import { userSelector } from '../../redux/selectors';
 import type { ProfileUI } from '../../redux/prop-types';
 import { submitProfileUI } from '../../redux/settings/actions';
 
 import FullWidthRow from '../helpers/full-width-row';
-import Spacer from '../helpers/spacer';
 import SectionHeader from './section-header';
 import ToggleRadioSetting from './toggle-radio-setting';
 
@@ -33,7 +32,9 @@ type PrivacyProps = {
 
 function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
   const { t } = useTranslation();
-  const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
+  const [privacyValues, setPrivacyValues] = useState({
+    ...user.profileUI
+  });
 
   const [madeChanges, setMadeChanges] = useState(false);
 
@@ -126,6 +127,14 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showPortfolio')}
             />
             <ToggleRadioSetting
+              action={t('settings.labels.my-experience')}
+              flag={!privacyValues['showExperience']}
+              flagName='showExperience'
+              offLabel={t('buttons.public')}
+              onLabel={t('buttons.private')}
+              toggleFlag={toggleFlag('showExperience')}
+            />
+            <ToggleRadioSetting
               action={t('settings.labels.my-timeline')}
               explain={t('settings.disabled')}
               flag={!privacyValues['showTimeLine']}
@@ -157,7 +166,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
         </form>
       </FullWidthRow>
       <FullWidthRow>
-        <Spacer size='medium' />
+        <Spacer size='m' />
         <p>{t('settings.data')}</p>
         <Button
           block={true}

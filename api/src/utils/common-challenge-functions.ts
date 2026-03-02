@@ -1,8 +1,9 @@
 import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { omit, pick } from 'lodash';
-import { challengeTypes } from '../../../shared/config/challenge-types';
-import { getChallenges } from './get-challenges';
+import { omit, pick } from 'lodash-es';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import { challenges, savableChallenges } from './get-challenges.js';
+import { normalizeDate } from './normalize.js';
 
 export const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
@@ -12,15 +13,15 @@ export const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-export const multifileCertProjectIds = getChallenges()
+export const multifileCertProjectIds = challenges
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
-export const multifilePythonCertProjectIds = getChallenges()
+export const multifilePythonCertProjectIds = challenges
   .filter(c => c.challengeType === challengeTypes.multifilePythonCertProject)
   .map(c => c.id);
 
-export const msTrophyChallenges = getChallenges()
+export const msTrophyChallenges = challenges
   .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
   .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
 
@@ -132,11 +133,7 @@ export async function updateUserChallengeData(
     _completedChallenge;
   let completedChallenge: CompletedChallenge;
 
-  if (
-    jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId) ||
-    multifilePythonCertProjectIds.includes(challengeId)
-  ) {
+  if (savableChallenges.has(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
       files: files?.map(
@@ -149,7 +146,8 @@ export async function updateUserChallengeData(
             'path',
             'ext'
           ]) as CompletedChallengeFile
-      )
+      ),
+      completedDate: normalizeDate(_completedChallenge.completedDate)
     };
   } else {
     completedChallenge = omit(_completedChallenge, ['files']);
@@ -171,7 +169,7 @@ export async function updateUserChallengeData(
   const finalChallenge = alreadyCompleted
     ? {
         ...completedChallenge,
-        completedDate: oldChallenge.completedDate
+        completedDate: normalizeDate(oldChallenge.completedDate)
       }
     : completedChallenge;
 
@@ -180,7 +178,11 @@ export async function updateUserChallengeData(
   // check and update some property of the user record such that the same update
   // can't be applied twice.
   const userCompletedChallenges = alreadyCompleted
-    ? completedChallenges.map(x => (x.id === challengeId ? finalChallenge : x))
+    ? completedChallenges.map(x =>
+        x.id === challengeId
+          ? finalChallenge
+          : { ...x, completedDate: normalizeDate(x.completedDate) }
+      )
     : { push: finalChallenge };
 
   // We can't use push, because progressTimestamps is a JSON blob and, until
@@ -192,10 +194,7 @@ export async function updateUserChallengeData(
       ? [...progressTimestamps, newProgressTimeStamp]
       : progressTimestamps;
 
-  if (
-    multifileCertProjectIds.includes(challengeId) ||
-    multifilePythonCertProjectIds.includes(challengeId)
-  ) {
+  if (savableChallenges.has(challengeId)) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,

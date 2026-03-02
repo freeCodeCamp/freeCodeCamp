@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "no-invalid-double-slash-comments": true,
+    "no-duplicate-selectors": true,
+    "font-family-no-duplicate-names": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-block-no-duplicate-custom-properties": true,
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "ignore": ["consecutive-duplicates-with-different-values"]
+      }
+    ],
+    "comment-no-empty": true,
+    "color-no-invalid-hex": true,
+    "block-no-empty": true,
+    "shorthand-property-no-redundant-values": true,
+    "keyframe-declaration-no-important": true,
+    "no-duplicate-at-import-rules": true,
+    "named-grid-areas-no-invalid": true,
+    "no-invalid-position-at-import-rule": true
+  }
+}

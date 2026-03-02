@@ -1,6 +1,7 @@
-const { isObject } = require('lodash');
-const parseFixture = require('../__fixtures__/parse-fixture');
-const addSolution = require('./add-solution');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import { isObject } from 'lodash';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addSolution from './add-solution';
 
 describe('add solution plugin', () => {
   let mockAST, multiSolnsAST, editableSolutionAST;

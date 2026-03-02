@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-import { getEditors } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import solution from './fixtures/learn-basic-css-by-building-a-cafe-menu-15.json';
+import { isMacOS } from './utils/user-agent';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -10,8 +12,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('MultifileEditor Component', () => {
   test('Multiple editors should be selected and able to insert text into', async ({
-    page,
-    isMobile
+    page
   }) => {
     // Spawn second editor to test MultifileEditor component
     const stylesEditor = page.getByRole('button', {
@@ -29,13 +30,7 @@ test.describe('MultifileEditor Component', () => {
     const test_string = 'TestString';
     let index = 0;
     for (const editor of await editors.all()) {
-      // For some reason the click event doesn't work on mobile
-      if (isMobile) {
-        await editor.focus();
-      } else {
-        await editor.click();
-      }
-
+      await editor.focus();
       await page.keyboard.insertText(test_string + index.toString());
       const text = page.getByText(test_string + index.toString());
       await expect(text).toBeVisible();
@@ -71,5 +66,55 @@ test.describe('MultifileEditor Component', () => {
     await page.reload();
 
     expect(await editorPane.getAttribute('style')).toBe(newStyle);
+  });
+
+  test('Multiple open editors should remain open on moving to next challenge', async ({
+    page,
+    isMobile,
+    browserName,
+    context
+  }) => {
+    test.skip(
+      browserName !== 'chromium',
+      'Only chromium allows us to use the clipboard API.'
+    );
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName });
+
+    await page.evaluate(
+      async solution => await navigator.clipboard.writeText(solution.content),
+      solution
+    );
+
+    if (isMacOS) {
+      await page.keyboard.press('Meta+v');
+    } else {
+      await page.keyboard.press('Control+v');
+    }
+
+    const stylesEditor = page.getByRole('button', {
+      name: 'styles.css Editor'
+    });
+    await stylesEditor.click();
+    const editorsCurrentPage = getEditors(page);
+    await expect(editorsCurrentPage).toHaveCount(2);
+
+    await page.keyboard.press('Control+Enter');
+
+    const submitButton = page.getByRole('button', {
+      name: 'Submit and Continue'
+    });
+
+    // Mobile screen shifts submit button out of view and Playwright fails at scrolling with multiple editors open
+    if (isMobile) {
+      await submitButton.dispatchEvent('click');
+    } else {
+      await submitButton.click();
+    }
+
+    const editorsNextPage = getEditors(page);
+    await expect(editorsNextPage).toHaveCount(2);
   });
 });

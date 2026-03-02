@@ -1,0 +1,18 @@
+{
+  "name": "Working with String Formatting Methods",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-string-formatting-methods",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "67326c1fdaf9c0c5ad1a2589",
+      "title": "How Can You Change the Casing for a String?"
+    },
+    {
+      "id": "67326c3c3ab931c644cea05b",
+      "title": "How Can You Trim Whitespace from a String?"
+    }
+  ]
+}

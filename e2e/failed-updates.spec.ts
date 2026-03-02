@@ -1,6 +1,5 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
-import { ChallengeData } from '../tools/challenge-editor/api/interfaces/challenge-data';
 
 const failedUpdates = [
   {
@@ -16,17 +15,17 @@ const failedUpdates = [
 ];
 const storeKey = 'fcc-failed-updates';
 
-function getCompletedIds(completedChallenges: ChallengeData[]): string[] {
-  return completedChallenges.map((challenge: ChallengeData) => challenge.id);
+function getCompletedIds(completedChallenges: { id: string }[]): string[] {
+  return completedChallenges.map(challenge => challenge.id);
 }
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('failed update flushing', () => {
@@ -36,7 +35,7 @@ test.describe('failed update flushing', () => {
   }) => {
     // Initially, the user has no completed challenges.
     const userRes = await request.get(
-      'http://localhost:3000/user/get-session-user'
+      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
     );
     const completedChallenges = (await userRes.json()).user.developmentuser
       .completedChallenges;
@@ -55,16 +54,27 @@ test.describe('failed update flushing', () => {
 
     // The update epic sends two requests and this lets us wait for both.
     const submitRes = page
-      .waitForResponse('http://localhost:3000/modern-challenge-completed')
+      .waitForResponse(
+        new URL(
+          '/modern-challenge-completed',
+          process.env.API_LOCATION
+        ).toString()
+      )
+
       .then(() =>
-        page.waitForResponse('http://localhost:3000/modern-challenge-completed')
+        page.waitForResponse(
+          new URL(
+            '/modern-challenge-completed',
+            process.env.API_LOCATION
+          ).toString()
+        )
       );
 
     await page.reload();
     await submitRes;
 
     const updatedUserRes = await request.get(
-      'http://localhost:3000/user/get-session-user'
+      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
     );
 
     // Now the user should have both completed challenges.

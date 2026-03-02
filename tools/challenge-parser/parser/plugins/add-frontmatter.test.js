@@ -1,7 +1,8 @@
-const { isObject } = require('lodash');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import { isObject } from 'lodash';
 
-const parse = require('../__fixtures__/parse-fixture');
-const processFrontmatter = require('./add-frontmatter');
+import parse from '../__fixtures__/parse-fixture';
+import processFrontmatter from './add-frontmatter';
 
 describe('process-frontmatter plugin', () => {
   let mockAST;

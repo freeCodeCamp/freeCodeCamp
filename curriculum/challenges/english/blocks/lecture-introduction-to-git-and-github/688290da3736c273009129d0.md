@@ -1,0 +1,178 @@
+---
+id: 688290da3736c273009129d0
+title: What Is a Pull Request, and How Do You Create One?
+challengeType: 19
+dashedName: what-is-a-pull-request-and-how-do-you-create-one
+---
+
+# --description--
+
+In the previous lesson, we created a feature branch, committed a new file to that branch, and pushed it up to our remote repository. But what are our next steps? We need to create a pull request on GitHub.
+
+A pull request is, effectively, a request to pull changes in from your branch into the target branch. Pull requests are the flow you use when you want to contribute code changes to an open source project. This approach allows the maintainers of the project to review your changes. They can leave comments, ask questions, suggest tweaks, and (hopefully) approve your changes and merge them in!
+
+Let's head over to our repository on GitHub again.
+
+Now, after you pushed your new branch, you should see a fancy banner that says you've pushed to a branch, and a button you can click to create a pull request. This button skips a couple of steps and streamlines the process, so we're going to ignore it for now. That way you are prepared for cases where the banner does not appear.
+
+Click on the pull requests tab at the top the repository page, then ignore the banner again and click "New Pull Request". You'll be taken to a UI to prepare your request.
+
+Now, there are some terms we need to go over here. First, we have the "base" and "compare" drop downs. The "base" is your target for the merge. Since we want to merge into `main`, we can leave this alone.
+
+The "compare" is what you want to merge. We want to merge our `feature` branch, so we should change this to `feature`. This is also known as the head branch, which is a term you will want to remember.
+
+Once you do this, the UI will refresh. It should now show the commits on `feature` that are not on `main`, indicating what you are requesting to merge in. You'll also see what's called a "diff", which is a visual representation of the actual changes you've made.
+
+Because all we've done is add a file, the diff is pretty clean. For more complex changes, GitHub will highlight things like line modifications, additions, deletions, and more. Understanding how to read a diff can be challenging, but with some practice you will become quite proficient at it.
+
+For now, let's go back to our pull request. There is a small link at the top that reads "compare across forks". If we were working from our fork of the freeCodeCamp repository, this would give us the ability to change our PR to target the original freeCodeCamp repo, instead of just the `main` branch within our fork.
+
+Since we are not working with a fork, we can ignore this. However, it is very important to understand that what we are doing here is primarily for learning and exploration. You shouldn't open a PR to someone's project that just contains practice changes - this creates extra noise for the maintainers.
+
+Now, since we are happy with our changes and everything is configured, we can click the "Create Pull Request" button. This takes us to a new UI.
+
+Toward the bottom and out of view are the same commit list and diff view we saw earlier. It never hurts to double check one last time before creating your PR, but for this exploration you are good to move forward.
+
+You'll also see a couple of new inputs. The first input is the title for your pull request. GitHub will automatically generate this based on the commit you are merging, if there is only one in the PR, or the branch name, if you have multiple commits.
+
+The second input is for your description. In most cases, this will not be empty. Instead, maintainers of a project can define a template which gets pre-populated. If they provide one, you should respect their workflow and complete the template.
+
+In both cases, you'll want to read the contributing documentation for the project to ensure you understand and follow their guidelines for how to title and fill out your PR.
+
+Since you own this repository, you'll see on the right that you can set reviewers, assignees, labels, projects, and milestones. You won't be able to edit these, except to request a review, when you contribute to someone else's project. But if you'd like to explore those features, you can set them however you like now since this is your repository.
+
+Once everything is filled out and configured, click "Create pull request". Finally, you'll see the actual result!
+
+When you make a pull request to someone else's project, it needs to go through a "code review". This is a process where the maintainers can evaluate your pull request, request changes, ask questions, and so on. Once the maintainers have approved it, they can merge it.
+
+Since this is your own project, you don't need to wait for a review. Instead, you can double check the commit history under the Commits tab, the changes under the Files changed, and if you are satisfied you can merge it.
+
+After it's merged, you will want to pull these changes to your local repo.
+
+Head back to your terminal, and make sure you are still in the repo's folder. Then switch to the `main` branch with `git checkout main`.
+
+Next, pull down the latest changes with `git pull`.
+
+Now, if you look at the commit history with `git log`, you will see your commit. But you will also see a `Merge pull request #1` message. What is that?
+
+Well, when you merge a pull request on GitHub there are three strategies you can use:
+
+The default is "Merge", which brings all of the commits from the head branch, then creates another commit to process and log the merge.
+
+Another option is "Squash and Merge", which takes ALL of the commits from the head branch, smashes them into a single commit, and merges that new commit directly into the base branch without creating a merge commit.
+
+Finally, there is "Rebase and Merge", which takes all of the commits, resets them to "come after" the latest commit on the base branch, then merges the head in without a merge commit. Rebasing is a complicated topic that you will learn about in depth later, so it's okay if you do not quite understand it today.
+
+Each open source project will choose whatever merge strategy works best. But because of these differences in behavior, you should ALWAYS create a new branch to commit your contributions on. Never commit directly to the default `main` branch, or things will get messy when you need to bring the changes down from the original repo.
+
+With all of that, you have successfully created and merged your first pull request!
+
+# --questions--
+
+## --text--
+
+What is a pull request in GitHub?
+
+## --answers--
+
+A way to force push code to the `main` branch.
+
+### --feedback--
+
+Think about what you're asking project maintainers to do with your code changes.
+
+---
+
+A request to pull changes from one branch into another branch.
+
+---
+
+A way to directly edit files in the main repository.
+
+### --feedback--
+
+Think about what you're asking project maintainers to do with your code changes.
+
+---
+
+A tool for downloading repositories to your local machine.
+
+### --feedback--
+
+Think about what you're asking project maintainers to do with your code changes.
+
+## --video-solution--
+
+2
+
+## --text--
+
+In a pull request, what do the terms "base" and "compare" (or "head") refer to?
+
+## --answers--
+
+"Base" is the source branch; "compare" is the target branch.
+
+### --feedback--
+
+Consider which branch will receive changes and which branch contains the changes.
+
+---
+
+"Base" is the target branch; "compare" is the source branch.
+
+---
+
+"Base" is the fork; "compare" is the original repository.
+
+### --feedback--
+
+Consider which branch will receive changes and which branch contains the changes.
+
+---
+
+"Base" is the original repository; "compare" is the fork.
+
+### --feedback--
+
+Consider which branch will receive changes and which branch contains the changes.
+
+## --video-solution--
+
+2
+
+## --text--
+
+Which of the following is NOT a merge strategy mentioned when merging a pull request on GitHub?
+
+## --answers--
+
+Merge
+
+### --feedback--
+
+The lesson mentioned three specific strategies for handling commits during a merge.
+
+---
+
+Squash and Merge
+
+### --feedback--
+
+The lesson mentioned three specific strategies for handling commits during a merge.
+
+---
+
+Rebase and Merge
+
+### --feedback--
+
+The lesson mentioned three specific strategies for handling commits during a merge.
+
+---
+
+Fork and Merge
+
+## --video-solution--
+
+4

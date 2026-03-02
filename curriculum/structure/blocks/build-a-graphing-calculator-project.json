@@ -1,0 +1,13 @@
+{
+  "name": "Graphing Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-graphing-calculator-project",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "63d83ffd39c73468b059cd40",
+      "title": "Build a Graphing Calculator"
+    }
+  ],
+  "blockLayout": "project-list"
+}

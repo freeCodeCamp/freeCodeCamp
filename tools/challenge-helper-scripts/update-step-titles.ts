@@ -1,5 +1,3 @@
-import { validateMetaData } from './helpers/project-metadata';
-import { updateStepTitles } from './utils';
+import { updateStepTitles } from './utils.js';
 
-validateMetaData();
 updateStepTitles();

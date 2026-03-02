@@ -1,0 +1,28 @@
+{
+  "name": "Build a String Formatter",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-string-formatter",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e4276483b0c71658aab1ca", "title": "Step 1" },
+    { "id": "68ed6079fe0e3e98b94a1b75", "title": "Step 2" },
+    { "id": "68f3eeaa65614107ecd5f1f2", "title": "Step 3" },
+    { "id": "68e4276483b0c71658aab1cc", "title": "Step 4" },
+    { "id": "68e4276483b0c71658aab1cd", "title": "Step 5" },
+    { "id": "68e4276483b0c71658aab1ce", "title": "Step 6" },
+    { "id": "68f3f3d65d51d80ac0b412fc", "title": "Step 7" },
+    { "id": "68f1179eaea3bb59ba434386", "title": "Step 8" },
+    { "id": "68f3f5ca1d2a490c97f14f03", "title": "Step 9" },
+    { "id": "68e4276483b0c71658aab1d0", "title": "Step 10" },
+    { "id": "68f3f890010c870e17bbe754", "title": "Step 11" },
+    { "id": "68e4276483b0c71658aab1d1", "title": "Step 12" },
+    { "id": "68e4276483b0c71658aab1d2", "title": "Step 13" },
+    { "id": "68e4276483b0c71658aab1d3", "title": "Step 14" },
+    { "id": "68f405c8c9df44132c8fe1bb", "title": "Step 15" },
+    { "id": "68f40925d810ae14b2d5a169", "title": "Step 16" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

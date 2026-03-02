@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -12,7 +12,9 @@ import callGA from '../../../analytics/call-ga';
 interface ResetModalProps {
   close: () => void;
   isOpen: boolean;
+  saveSubmissionToDB?: boolean;
   reset: () => void;
+  challengeTitle: string;
 }
 
 const mapStateToProps = createSelector(
@@ -35,18 +37,34 @@ function withActions(...fns: Array<() => void>) {
   return () => fns.forEach(fn => fn());
 }
 
-function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
+function ResetModal({
+  reset,
+  close,
+  saveSubmissionToDB,
+  isOpen,
+  challengeTitle
+}: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
-  if (isOpen) {
-    callGA({ event: 'pageview', pagePath: '/reset-modal' });
-  }
+
+  useEffect(() => {
+    if (isOpen) {
+      callGA({ event: 'pageview', pagePath: '/reset-modal' });
+    }
+  }, [isOpen]);
+
   return (
     <Modal onClose={close} open={isOpen} variant='danger'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         {t('learn.reset')}
       </Modal.Header>
       <Modal.Body alignment='center'>
-        <p>{t('learn.reset-warn')}</p>
+        <p>
+          {saveSubmissionToDB
+            ? t('learn.revert-warn')
+            : t('learn.reset-warn', {
+                title: challengeTitle
+              })}
+        </p>
         <p>
           <em>{t('learn.reset-warn-2')}</em>
         </p>
@@ -58,7 +76,9 @@ function ResetModal({ reset, close, isOpen }: ResetModalProps): JSX.Element {
           variant='danger'
           onClick={withActions(reset, close)}
         >
-          {t('buttons.reset-lesson')}
+          {saveSubmissionToDB
+            ? t('buttons.revert-to-saved-code')
+            : t('buttons.reset-lesson')}
         </Button>
       </Modal.Footer>
     </Modal>

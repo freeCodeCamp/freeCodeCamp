@@ -1,24 +1,42 @@
+import { describe, test, expect } from 'vitest';
 import {
   normalizeTwitter,
+  normalizeBluesky,
   normalizeProfileUI,
   normalizeChallenges,
-  normalizeFlags
-} from './normalize';
+  normalizeFlags,
+  normalizeDate,
+  normalizeChallengeType
+} from './normalize.js';
 
 describe('normalize', () => {
   describe('normalizeTwitter', () => {
-    it('returns the input if it is a url', () => {
-      const url = 'https://twitter.com/a_generic_user';
+    test('returns the input if it is a url', () => {
+      const url = 'https://x.com/a_generic_user';
       expect(normalizeTwitter(url)).toEqual(url);
     });
-    it('adds the handle to twitter.com if it is not a url', () => {
+    test('adds the handle to x.com if it is not a url', () => {
       const handle = '@a_generic_user';
-      expect(normalizeTwitter(handle)).toEqual(
-        'https://twitter.com/a_generic_user'
+      expect(normalizeTwitter(handle)).toEqual('https://x.com/a_generic_user');
+    });
+    test('returns undefined  if that is the input', () => {
+      expect(normalizeTwitter('')).toBeUndefined();
+    });
+  });
+
+  describe('normalizeBluesky', () => {
+    test('returns the input if it is a url', () => {
+      const url = 'https://bsky.app/profile/a_generic_user';
+      expect(normalizeBluesky(url)).toEqual(url);
+    });
+    test('adds the handle to bsky.app if it is not a url', () => {
+      const handle = '@a_generic_user';
+      expect(normalizeBluesky(handle)).toEqual(
+        'https://bsky.app/profile/a_generic_user'
       );
     });
-    it('returns undefined  if that is the input', () => {
-      expect(normalizeTwitter('')).toBeUndefined();
+    test('returns undefined if that is the input', () => {
+      expect(normalizeBluesky('')).toBeUndefined();
     });
   });
 
@@ -32,7 +50,8 @@ describe('normalize', () => {
     showName: true,
     showPoints: true,
     showPortfolio: true,
-    showTimeLine: true
+    showTimeLine: true,
+    showExperience: true
   };
 
   const defaultProfileUI = {
@@ -45,20 +64,21 @@ describe('normalize', () => {
     showName: false,
     showPoints: false,
     showPortfolio: false,
-    showTimeLine: false
+    showTimeLine: false,
+    showExperience: false
   };
 
   describe('normalizeProfileUI', () => {
-    it('should return the input if it is not null', () => {
+    test('should return the input if it is not null', () => {
       expect(normalizeProfileUI(profileUIInput)).toEqual(profileUIInput);
     });
 
-    it('should return the default profileUI if the input is null', () => {
+    test('should return the default profileUI if the input is null', () => {
       const input = null;
       expect(normalizeProfileUI(input)).toEqual(defaultProfileUI);
     });
 
-    it('should convert all "null" values to "undefined"', () => {
+    test('should convert all "null" values to "false"', () => {
       const input = {
         isLocked: null,
         showAbout: false,
@@ -69,25 +89,27 @@ describe('normalize', () => {
         showName: null,
         showPoints: null,
         showPortfolio: null,
-        showTimeLine: null
+        showTimeLine: null,
+        showExperience: null
       };
       expect(normalizeProfileUI(input)).toEqual({
-        isLocked: undefined,
+        isLocked: false,
         showAbout: false,
-        showCerts: undefined,
-        showDonation: undefined,
-        showHeatMap: undefined,
-        showLocation: undefined,
-        showName: undefined,
-        showPoints: undefined,
-        showPortfolio: undefined,
-        showTimeLine: undefined
+        showCerts: false,
+        showDonation: false,
+        showHeatMap: false,
+        showLocation: false,
+        showName: false,
+        showPoints: false,
+        showPortfolio: false,
+        showTimeLine: false,
+        showExperience: false
       });
     });
   });
 
   describe('normalizeChallenges', () => {
-    it('should remove null values from the input', () => {
+    test('should remove null values from the input', () => {
       const completedChallenges = [
         {
           id: 'a6b0bb188d873cb2c8729495',
@@ -141,7 +163,7 @@ describe('normalize', () => {
   });
 
   describe('normalizeFlags', () => {
-    it('should replace nulls with false', () => {
+    test('should replace nulls with false', () => {
       const flags = {
         isLocked: null,
         showAbout: false,
@@ -154,6 +176,45 @@ describe('normalize', () => {
         showCerts: true,
         showDonation: false
       });
+    });
+  });
+
+  describe('normalizeDate', () => {
+    test('should return the date as a number', () => {
+      expect(normalizeDate(1)).toEqual(1);
+      expect(normalizeDate({ $date: '2023-10-01T00:00:00Z' })).toEqual(
+        1696118400000
+      );
+    });
+
+    test('should throw an error if the date is not in the expected shape', () => {
+      expect(() => normalizeDate('2023-10-01T00:00:00Z')).toThrow(
+        'Unexpected date value: "2023-10-01T00:00:00Z"'
+      );
+      expect(() => normalizeDate({ date: '123' })).toThrow(
+        'Unexpected date value: {"date":"123"}'
+      );
+    });
+
+    test('should handle string numbers', () => {
+      expect(normalizeDate('1696118400000')).toEqual(1696118400000);
+    });
+  });
+
+  describe('normalizeChallengeType', () => {
+    test('should return the challenge type as a number or null', () => {
+      expect(normalizeChallengeType(10)).toEqual(10);
+      expect(normalizeChallengeType('10')).toEqual(10);
+      expect(normalizeChallengeType(null)).toEqual(null);
+    });
+
+    test('should throw an error if the challenge type is not in the expected shape', () => {
+      expect(() => normalizeChallengeType('invalid')).toThrow(
+        'Unexpected challengeType value: "invalid"'
+      );
+      expect(() => normalizeChallengeType({ type: '123' })).toThrow(
+        'Unexpected challengeType value: {"type":"123"}'
+      );
     });
   });
 });

@@ -1,11 +1,12 @@
 import {
   HelpBlock,
-  Alert,
+  Callout,
   FormGroup,
   FormGroupProps,
   FormControl,
   ControlLabel,
-  Button
+  Button,
+  Spacer
 } from '@freecodecamp/ui';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
@@ -20,7 +21,6 @@ import { maybeEmailRE } from '../../utils';
 
 import BlockSaveButton from '../helpers/form/block-save-button';
 import FullWidthRow from '../helpers/full-width-row';
-import Spacer from '../helpers/spacer';
 import Link from '../helpers/link';
 import SectionHeader from './section-header';
 import ToggleButtonSetting from './toggle-button-setting';
@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 type EmailProps = {
   email: string;
   isEmailVerified: boolean;
-  sendQuincyEmail: boolean;
+  sendQuincyEmail: boolean | null;
   t: TFunction;
   updateMyEmail: (email: string) => void;
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
@@ -168,8 +168,9 @@ function EmailSettings({
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
-            <Alert
-              variant='info'
+            <Callout
+              variant='note'
+              label={t('misc.note')}
               className='text-center'
               data-playwright-test-label='email-verification-alert'
             >
@@ -181,7 +182,7 @@ function EmailSettings({
                   to='/update-email'
                 />
               </Trans>
-            </Alert>
+            </Callout>
           </HelpBlock>
         </FullWidthRow>
       )}
@@ -246,11 +247,11 @@ function EmailSettings({
           </BlockSaveButton>
         </form>
       </FullWidthRow>
-      <Spacer size='medium' />
+      <Spacer size='m' />
       <FullWidthRow>
         <ToggleButtonSetting
           action={t('settings.email.weekly')}
-          flag={sendQuincyEmail}
+          flag={!!sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
           onLabel={t('buttons.yes-please')}

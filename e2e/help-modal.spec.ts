@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code'
@@ -40,7 +38,7 @@ test.describe('Help Modal component', () => {
     ).toBeVisible();
   });
 
-  test('should disable the submit button if the checboxes are not checked', async ({
+  test('should disable the submit button if the checkboxes are not checked', async ({
     page
   }) => {
     await page
@@ -243,7 +241,7 @@ test.describe('Help Modal component', () => {
     });
     await expect(link).toHaveAttribute(
       'href',
-      'https://forum.freecodecamp.org/search?q=Write%20Your%20First%20C%23%20Code'
+      'https://forum.freecodecamp.org/search?q=Write%20Your%20First%20Code%20Using%20C%23%20-%20Write%20Your%20First%20C%23%20Code%20in%3Atitle'
     );
     await expect(link).toHaveAttribute('target', '_blank');
     await expect(link).toHaveAttribute('rel', 'noopener noreferrer');

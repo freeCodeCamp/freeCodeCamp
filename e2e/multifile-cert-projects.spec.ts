@@ -1,10 +1,9 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import { clearEditor, focusEditor } from './utils/editor';
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );

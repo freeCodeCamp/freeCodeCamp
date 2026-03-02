@@ -1,0 +1,11 @@
+{
+  "name": "Debugging JavaScript Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-debugging-javascript",
+  "challengeOrder": [
+    { "id": "6723cd54fc196dbd053f9dfb", "title": "Debugging JavaScript Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

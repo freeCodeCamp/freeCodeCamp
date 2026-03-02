@@ -1,9 +1,8 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../../components/helpers/spacer';
 import {
   AllChallengeNode,
   PrerequisiteChallenge
@@ -37,9 +36,9 @@ function MissingPrerequisites({
     });
 
   return (
-    <Alert variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       <p>{t('learn.exam.not-qualified')}</p>
-      <Spacer size='small' />
+      <Spacer size='xs' />
       <ul>
         {newMissingPrerequisites.map(({ title, id, slug }) =>
           slug ? (
@@ -51,7 +50,7 @@ function MissingPrerequisites({
           )
         )}
       </ul>
-    </Alert>
+    </Callout>
   );
 }
 

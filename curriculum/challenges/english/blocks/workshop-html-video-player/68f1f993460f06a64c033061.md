@@ -1,0 +1,49 @@
+---
+id: 68f1f993460f06a64c033061
+title: Step 7
+challengeType: 0
+dashedName: step-7
+---
+
+# --description--
+
+The `poster` attribute is a thumbnail image of the video. Think of the videos you watch on YouTube. It's displayed while the video is downloading. If the attribute is omitted, the first video frame is shown during the download phase.
+
+Now, add the `poster` attribute with the value `https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg` to your `video` element.
+
+# --hints--
+
+Your `video` element should have the `poster` attribute with the value `https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg`.
+
+```js
+const video = document.querySelector('video');
+assert.strictEqual(video?.getAttribute('poster'), 'https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with the HTML Video Element</title>
+</head>
+<body>
+  <h1>Working with the HTML Video Element</h1>
+  <video
+    width="640"
+    loop
+    controls
+    muted
+--fcc-editable-region--
+    
+--fcc-editable-region--
+  >
+  </video>
+</body>
+</html>
+```

@@ -1,15 +1,15 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = `
+exports[`<Honesty /> > <Honesty /> snapshot when isHonest is false > Honesty 1`] = `
 <DocumentFragment>
   <section
     id="honesty-policy"
   >
     <div
-      class="mx-[-15px] "
+      class="mx-[-15px]  "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ms-[16.6%]   "
       >
         <h2
           class="text-center"
@@ -20,10 +20,10 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
       </div>
     </div>
     <div
-      class="mx-[-15px] "
+      class="mx-[-15px]  "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ms-[16.6%]   "
       >
         <div
           class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
@@ -50,7 +50,7 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
             <a
               href="mailto:support@freecodecamp.org"
             >
-              support@freecodecamp.org
+              {{email}}
             </a>
           </p>
         </div>
@@ -67,16 +67,16 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is false: Honesty 1`] = 
 </DocumentFragment>
 `;
 
-exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted 1`] = `
+exports[`<Honesty /> > <Honesty /> snapshot when isHonest is true > HonestyAccepted 1`] = `
 <DocumentFragment>
   <section
     id="honesty-policy"
   >
     <div
-      class="mx-[-15px] "
+      class="mx-[-15px]  "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ms-[16.6%]   "
       >
         <h2
           class="text-center"
@@ -87,10 +87,10 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
       </div>
     </div>
     <div
-      class="mx-[-15px] "
+      class="mx-[-15px]  "
     >
       <div
-        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]    "
+        class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ms-[16.6%]   "
       >
         <div
           class="border-1 border-solid shadow-sm mb-6 border-background-tertiary honesty-panel"
@@ -117,13 +117,13 @@ exports[`<Honesty /> <Honesty /> snapshot when isHonest is true: HonestyAccepted
             <a
               href="mailto:support@freecodecamp.org"
             >
-              support@freecodecamp.org
+              {{email}}
             </a>
           </p>
         </div>
         <button
           aria-disabled="true"
-          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 text-center cursor-pointer no-underline block w-full bg-background-quaternary text-foreground-secondary active:before:hidden border-gray-450 aria-disabled:cursor-not-allowed aria-disabled:opacity-80 px-3 py-1.5 text-md"
+          class=" relative inline-block mt-[0.5px] border-solid border-3 active:before:w-full active:before:h-full active:before:absolute active:before:inset-0 active:before:border-3 active:before:border-transparent active:before:bg-gray-900 active:before:opacity-20 text-center cursor-pointer no-underline block w-full bg-background-quaternary text-foreground-secondary border-gray-450 active:before:hidden aria-disabled:cursor-not-allowed aria-disabled:opacity-80 px-3 py-1.5 text-md"
           type="button"
         >
           buttons.accepted-honesty

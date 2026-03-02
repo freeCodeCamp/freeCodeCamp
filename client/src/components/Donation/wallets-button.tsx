@@ -6,18 +6,18 @@ import type { PaymentRequest, Stripe } from '@stripe/stripe-js';
 import React, { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Themes } from '../settings/theme';
+import { LocalStorageThemes } from '../../redux/types';
 import {
   PaymentProvider,
   DonationDuration
-} from '../../../../shared/config/donation-settings';
+} from '@freecodecamp/shared/config/donation-settings';
 import { createStripePaymentIntent } from '../../utils/ajax';
 import { DonationApprovalData, PostPayment } from './types';
 
 interface WrapperProps {
   label: string;
   amount: number;
-  theme: Themes;
+  theme: LocalStorageThemes;
   duration: DonationDuration;
   postPayment: (arg0: PostPayment) => void;
   onDonationStateChange: (donationState: DonationApprovalData) => void;
@@ -145,7 +145,7 @@ const WalletsButton = ({
             style: {
               paymentRequestButton: {
                 type: 'default',
-                theme: theme === Themes.Night ? 'light' : 'dark',
+                theme: theme === LocalStorageThemes.Light ? 'light' : 'dark',
                 height: '43px'
               }
             },

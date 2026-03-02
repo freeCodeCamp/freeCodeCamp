@@ -5,26 +5,27 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Image, Button } from '@freecodecamp/ui';
+import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { getLangCode } from '../../../shared/config/i18n';
-import FreeCodeCampLogo from '../assets/icons/freecodecamp';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
+import FreeCodeCampLogo from '../assets/icons/freecodecamp-logo';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader, Spacer } from '../components/helpers';
+import { Loader } from '../components/helpers';
 import RedirectHome from '../components/redirect-home';
-import { Themes } from '../components/settings/theme';
+import { LocalStorageThemes } from '../redux/types';
 import { showCert, fetchProfileForUser } from '../redux/actions';
 import {
   showCertSelector,
   showCertFetchStateSelector,
   userFetchStateSelector,
   isDonatingSelector,
-  userByNameSelector,
-  usernameSelector
+  usernameSelector,
+  createUserByNameSelector,
+  isSignedInSelector
 } from '../redux/selectors';
-import { UserFetchState, User } from '../redux/prop-types';
+import type { UserFetchState, User } from '../redux/prop-types';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
@@ -32,14 +33,13 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../shared/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
+  Certification,
   CertSlug,
-  certTypes,
-  certTypeTitleMap,
   linkedInCredentialIds
-} from '../../../shared/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import callGA from '../analytics/call-ga';
 import ShowProjectLinks from './show-project-links';
@@ -68,6 +68,7 @@ interface ShowCertificationProps {
   };
   isDonating: boolean;
   isValidCert: boolean;
+  isSignedIn: boolean;
   location: {
     pathname: string;
   };
@@ -79,41 +80,48 @@ interface ShowCertificationProps {
     certSlug: string;
   }) => void;
   signedInUserName: string;
-  user: User;
+  user: User | null;
   userFetchState: UserFetchState;
   userFullName: string;
   username: string;
 }
 
-const requestedUserSelector = (state: unknown, { username = '' }) =>
-  userByNameSelector(username.toLowerCase())(state) as User;
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
   const isValidCert = liveCerts.some(
     ({ certSlug }) => String(certSlug) === props.certSlug
   );
+
+  const { username } = props;
+
+  const userByNameSelector = createUserByNameSelector(username) as (
+    state: unknown
+  ) => User | null;
+
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
+    userByNameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    requestedUserSelector,
+    isSignedInSelector,
     (
       cert: Cert,
       fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
+      user: User | null,
       userFetchState: UserFetchState,
       isDonating: boolean,
-      user: User
+      isSignedIn: boolean
     ) => ({
       cert,
       fetchState,
       isValidCert,
       signedInUserName,
+      user,
       userFetchState,
       isDonating,
-      user
+      isSignedIn
     })
   );
 };
@@ -123,6 +131,157 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     { createFlashMessage, showCert, fetchProfileForUser },
     dispatch
   );
+
+const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <Button block={true} size='small' variant='primary' onClick={onClick}>
+        {t('buttons.close')}
+      </Button>
+    </div>
+  );
+};
+
+const DonationSection = ({
+  isDonationSubmitted,
+  handleProcessing,
+  hideDonationSection
+}: {
+  isDonationSubmitted: boolean;
+  handleProcessing: () => void;
+  hideDonationSection: () => void;
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <div
+      className='donation-section'
+      data-playwright-test-label='donation-section'
+    >
+      <Spacer size='l' />
+      {!isDonationSubmitted && (
+        <Row>
+          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+            <p data-playwright-test-label='donation-text'>
+              {t('donate.only-you')}
+            </p>
+          </Col>
+        </Row>
+      )}
+      <Row>
+        <Col
+          lg={8}
+          lgOffset={2}
+          sm={10}
+          smOffset={1}
+          xs={12}
+          data-playwright-test-label='donation-form'
+        >
+          <MultiTierDonationForm
+            defaultTheme={LocalStorageThemes.Light}
+            handleProcessing={handleProcessing}
+            isMinimalForm={true}
+            paymentContext={PaymentContext.Certificate}
+          />
+        </Col>
+      </Row>
+      <Spacer size='m' />
+      <Row>
+        <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
+          {isDonationSubmitted && (
+            <DonationCloseBtn onClick={hideDonationSection} />
+          )}
+        </Col>
+      </Row>
+      <Spacer size='l' />
+    </div>
+  );
+};
+
+const ShareCertBtns = ({
+  username,
+  certDate,
+  certTitle,
+  certSlug,
+  certURL
+}: {
+  username: string;
+  certDate: Date;
+  certTitle: string;
+  certSlug: CertSlug;
+  certURL: string;
+}) => {
+  const { t } = useTranslation();
+
+  const certYear = certDate.getFullYear();
+  const certMonth = certDate.getMonth();
+  const urlFriendlyCertTitle = encodeURIComponent(certTitle);
+  const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
+
+  return (
+    <Row className='text-center'>
+      <Col xs={12}>
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
+            certMonth + 1
+          }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
+          target='_blank'
+          data-playwright-test-label='linkedin-share-btn'
+        >
+          {t('profile.add-linkedin')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://x.com/intent/post?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='twitter-share-btn'
+        >
+          {t('profile.add-twitter')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='bluesky-share-btn'
+        >
+          {t('profile.add-bluesky')}
+        </Button>
+        <Spacer size='m' />
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          href={`https://threads.net/intent/post?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
+          target='_blank'
+          data-playwright-test-label='thread-share-btn'
+        >
+          {t('profile.add-threads')}
+        </Button>
+      </Col>
+      <Spacer size='l' />
+    </Row>
+  );
+};
 
 const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const { t } = useTranslation();
@@ -143,24 +302,19 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       userFetchState: { complete: userComplete },
       signedInUserName,
       isDonating,
+      isSignedIn,
       cert: { username = '' },
       fetchProfileForUser,
       user
     } = props;
 
-    if (!signedInUserName || signedInUserName !== username) {
-      if (isEmpty(user) && username) {
-        fetchProfileForUser(username);
-      }
+    const isSessionUser = isSignedIn && signedInUserName === username;
+
+    if (isEmpty(user) && username) {
+      fetchProfileForUser(username);
     }
 
-    if (
-      !isDonationDisplayed &&
-      userComplete &&
-      signedInUserName &&
-      signedInUserName === username &&
-      !isDonating
-    ) {
+    if (!isDonationDisplayed && userComplete && isSessionUser && !isDonating) {
       setIsDonationDisplayed(true);
       callGA({
         event: 'donation_view',
@@ -191,7 +345,8 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     isValidCert,
     createFlashMessage,
     signedInUserName,
-    location: { pathname }
+    location: { pathname },
+    user
   } = props;
   const { pending, complete, errored } = fetchState;
 
@@ -209,7 +364,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     return <RedirectHome />;
   }
 
-  if (pending) {
+  if (pending || !user) {
     return <Loader fullScreen={true} />;
   }
 
@@ -226,113 +381,33 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
     completionTime
   } = cert;
 
-  const { user } = props;
-
   const displayName = userFullName ?? username;
 
   const certDate = new Date(date);
-  const certYear = certDate.getFullYear();
-  const certMonth = certDate.getMonth();
+
   const certURL = `https://freecodecamp.org${pathname}`;
 
-  const donationCloseBtn = (
-    <div>
-      <Button
-        block={true}
-        size='small'
-        variant='primary'
-        onClick={hideDonationSection}
-      >
-        {t('buttons.close')}
-      </Button>
-    </div>
-  );
+  const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
-  const donationSection = (
-    <div
-      className='donation-section'
-      data-playwright-test-label='donation-section'
-    >
-      <Spacer size='large' />
-      {!isDonationSubmitted && (
-        <Row>
-          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p data-playwright-test-label='donation-text'>
-              {t('donate.only-you')}
-            </p>
-          </Col>
-        </Row>
-      )}
-      <Row>
-        <Col
-          lg={8}
-          lgOffset={2}
-          sm={10}
-          smOffset={1}
-          xs={12}
-          data-playwright-test-label='donation-form'
-        >
-          <MultiTierDonationForm
-            defaultTheme={Themes.Default}
-            handleProcessing={handleProcessing}
-            isMinimalForm={true}
-            paymentContext={PaymentContext.Certificate}
-          />
-        </Col>
-      </Row>
-      <Spacer size='medium' />
-      <Row>
-        <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
-          {isDonationSubmitted && donationCloseBtn}
-        </Col>
-      </Row>
-      <Spacer size='large' />
-    </div>
-  );
-
-  const urlFriendlyCertTitle = encodeURIComponent(certTitle);
-  const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
-
-  const shareCertBtns = (
-    <Row className='text-center'>
-      <Col xs={12}>
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${urlFriendlyCertTitle}&organizationId=4831032&issueYear=${certYear}&issueMonth=${
-            certMonth + 1
-          }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
-          target='_blank'
-          data-playwright-test-label='linkedin-share-btn'
-        >
-          {t('profile.add-linkedin')}
-        </Button>
-        <Spacer size='medium' />
-        <Button
-          block={true}
-          size='large'
-          variant='primary'
-          href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
-            certTitle: urlFriendlyCertTitle,
-            certURL: certURL
-          })}`}
-          target='_blank'
-          data-playwright-test-label='twitter-share-btn'
-        >
-          {t('profile.add-twitter')}
-        </Button>
-      </Col>
-      <Spacer size='large' />
-    </Row>
-  );
-
-  const isMicrosoftCert =
-    certTitle === certTypeTitleMap[certTypes.foundationalCSharpV8];
+  const isLanguageCert = [
+    Certification.A1Chinese,
+    Certification.A2Chinese,
+    Certification.A2English,
+    Certification.A2Spanish,
+    Certification.B1English
+  ].includes(certSlug);
 
   return (
     <Container className='certificate-outer-wrapper'>
-      {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
+      {isDonationDisplayed && !isDonationClosed ? (
+        <DonationSection
+          hideDonationSection={hideDonationSection}
+          handleProcessing={handleProcessing}
+          isDonationSubmitted={isDonationSubmitted}
+        />
+      ) : (
+        ''
+      )}
       <div
         className='certificate-wrapper'
         data-playwright-test-label='cert-wrapper'
@@ -374,34 +449,34 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 i18nKey={
                   isMicrosoftCert
                     ? 'certification.fulltextNoHours'
-                    : 'certification.fulltext'
+                    : isLanguageCert
+                      ? 'certification.fulltextLanguageExam'
+                      : 'certification.fulltext'
                 }
-                title={certTitle}
+                title={t(`certification.title.${certSlug}`, certTitle)}
+                values={{
+                  user: displayName,
+                  title: t(`certification.title.${certSlug}`, certTitle),
+                  time: certDate.toLocaleString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  }),
+                  completionTime
+                }}
               >
                 <h3>placeholder</h3>
                 <h1>
-                  <strong>{{ user: displayName }}</strong>
+                  <strong>{'{{user}}'}</strong>
                 </h1>
                 <h3 data-playwright-test-label='successful-completion'>
                   placeholder
                 </h3>
                 <h1 data-playwright-test-label='certification-title'>
-                  <strong>
-                    {{
-                      title: t(`certification.title.${certTitle}`, certTitle)
-                    }}
-                  </strong>
+                  <strong>{'{{title}}'}</strong>
                 </h1>
-                <h4 data-playwright-test-label='issue-date'>
-                  {{
-                    time: certDate.toLocaleString([localeCode, 'en-US'], {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })
-                  }}
-                </h4>
-                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
+                <h4 data-playwright-test-label='issue-date'>{'{{time}}'}</h4>
+                <h5 style={{ marginTop: '15px' }}>{'{{completionTime}}'}</h5>
               </Trans>
             </div>
           </main>
@@ -412,7 +487,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div>
                     <Image
                       data-playwright-test-label='quincy-signature'
-                      alt="Quincy Larson's Signature"
+                      alt={t('certification.quincy-larson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/quincy-larson-signature.svg'
@@ -428,7 +503,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div className='microsoft-signature'>
                     <Image
                       data-playwright-test-label='microsoft-signature'
-                      alt="Julia Liusons's Signature"
+                      alt={t('certification.julia-liuson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/microsoft-signature.png'
@@ -447,7 +522,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-playwright-test-label='quincy-signature'
-                    alt="Quincy Larson's Signature"
+                    alt={t('certification.quincy-larson-signature')}
                     src={
                       'https://cdn.freecodecamp.org' +
                       '/platform/english/images/quincy-larson-signature.svg'
@@ -484,11 +559,21 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         className='row certificate-links'
         data-playwright-test-label='cert-links'
       >
-        <Spacer size='large' />
-        {signedInUserName === username ? shareCertBtns : ''}
-        <Spacer size='large' />
-        <ShowProjectLinks certName={certTitle} name={displayName} user={user} />
-        <Spacer size='large' />
+        <Spacer size='l' />
+        {signedInUserName === username ? (
+          <ShareCertBtns
+            username={username}
+            certDate={certDate}
+            certSlug={certSlug}
+            certTitle={certTitle}
+            certURL={certURL}
+          />
+        ) : (
+          ''
+        )}
+        <Spacer size='l' />
+        <ShowProjectLinks certSlug={certSlug} name={displayName} user={user} />
+        <Spacer size='l' />
       </div>
     </Container>
   );

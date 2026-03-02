@@ -1,15 +1,12 @@
-import React, { useEffect, ReactElement, ReactNode } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Trans } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import { Test } from '../../../redux/prop-types';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
-import { initializeMathJax } from '../../../utils/math-jax';
 import { challengeTestsSelector } from '../redux/selectors';
 import { openModal } from '../redux/actions';
-import { Spacer } from '../../../components/helpers';
 import TestSuite from './test-suite';
 
 import './side-panel.css';
@@ -31,36 +28,25 @@ type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
 
 interface SidePanelProps extends DispatchProps, StateProps {
-  block: string;
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
   hasDemo: boolean;
   toolPanel: ReactNode;
-  superBlock: SuperBlocks;
   tests: Test[];
+  showIndependentLowerJaw: boolean;
 }
 
 export function SidePanel({
-  block,
   challengeDescription,
   challengeTitle,
   instructionsPanelRef,
   hasDemo,
   toolPanel,
-  superBlock,
   tests,
-  openModal
+  openModal,
+  showIndependentLowerJaw
 }: SidePanelProps): JSX.Element {
-  const { t } = useTranslation();
-  useEffect(() => {
-    const mathJaxChallenge =
-      superBlock === SuperBlocks.RosettaCode ||
-      superBlock === SuperBlocks.ProjectEuler ||
-      block === 'intermediate-algorithm-scripting';
-    initializeMathJax(mathJaxChallenge);
-  }, [block, superBlock]);
-
   return (
     <div
       className='instructions-panel'
@@ -69,16 +55,30 @@ export function SidePanel({
     >
       {challengeTitle}
       {hasDemo && (
+        <p>
+          <Trans i18nKey='learn.example-app'>
+            <span
+              className='example-app-link'
+              onClick={() => openModal('projectPreview')}
+              role='button'
+              tabIndex={0}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  openModal('projectPreview');
+                }
+              }}
+            ></span>
+          </Trans>
+        </p>
+      )}{' '}
+      {challengeDescription}
+      {!showIndependentLowerJaw && (
         <>
-          <Button size='small' onClick={() => openModal('projectPreview')}>
-            {t('buttons.show-demo')}
-          </Button>
-          <Spacer size='xSmall' />
+          <Spacer size='m' />
+          {toolPanel}
+          <TestSuite tests={tests} />
         </>
       )}
-      {challengeDescription}
-      {toolPanel}
-      <TestSuite tests={tests} />
     </div>
   );
 }

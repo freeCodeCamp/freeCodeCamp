@@ -1,13 +1,14 @@
 import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
-import { SuperBlocks } from '../shared/config/curriculum';
-import tributePageHtml from './fixtures/tribute-page-html.json';
-import tributePageCss from './fixtures/tribute-page-css.json';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import translations from '../client/i18n/locales/english/translations.json';
+import tributePage from './fixtures/tribute-page.json';
 import curriculum from './fixtures/js-ads-projects.json';
 import { authedRequest } from './utils/request';
 
 import { focusEditor, getEditors, clearEditor } from './utils/editor';
 import { isMacOS } from './utils/user-agent';
+import { alertToBeVisible } from './utils/alerts';
 
 interface Meta {
   challengeOrder: { id: string; title: string }[];
@@ -26,7 +27,6 @@ interface Challenge {
   superBlock: string;
   dashedName: string;
   solutions: Solution[];
-  isPrivate?: boolean;
 }
 
 interface block {
@@ -74,11 +74,11 @@ const pasteContent = async (page: Page) => {
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Projects', () => {
@@ -201,7 +201,7 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
       });
       await expect(solutionModal).toBeVisible();
       await solutionModal
-        .getByRole('button', { name: 'Close' })
+        .getByRole('button', { name: translations.buttons['close'] })
         .first()
         .click();
       // Wait for the modal to disappear before continue
@@ -210,18 +210,25 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     await page
       .getByRole('button', {
-        name: "I agree to freeCodeCamp's Academic Honesty Policy."
+        name: translations.buttons['agree-honesty']
       })
       .click();
+
+    await alertToBeVisible(page, translations.buttons['accepted-honesty']);
 
     await page
       .getByRole('button', {
-        name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures'
+        name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures V7'
       })
       .click();
 
+    await alertToBeVisible(
+      page,
+      '@developmentuser, you have successfully claimed the Legacy JavaScript Algorithms and Data Structures V7 Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+    );
+
     const showCertLink = page.getByRole('link', {
-      name: 'Show Certification Legacy JavaScript Algorithms and Data Structures'
+      name: 'Show Certification Legacy JavaScript Algorithms and Data Structures V7'
     });
     await expect(showCertLink).toBeVisible();
     await expect(showCertLink).toHaveAttribute(
@@ -246,8 +253,8 @@ test.describe('Completion modal should be shown after submitting a project', () 
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const tributeContent = [
-      tributePageHtml['tribute-page-html'].contents,
-      tributePageCss['tribute-page-css'].contents
+      tributePage.htmlFile.contents,
+      tributePage.cssFile.contents
     ];
 
     await page.goto(
