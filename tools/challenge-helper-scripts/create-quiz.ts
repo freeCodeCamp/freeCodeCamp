@@ -178,6 +178,6 @@ void getAllBlocks().then(async existingBlocks => {
   );
 
   console.log(
-    'All set. Now use pnpm run clean:client in the root and it should be good to go.'
+    'All set.  Refresh the page to see the changes.'
   );
 });
