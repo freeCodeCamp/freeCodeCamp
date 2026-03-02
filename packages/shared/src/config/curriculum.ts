@@ -67,7 +67,7 @@ export enum SuperBlocks {
   CssAnimations = 'css-animations',
   LearnPythonForBeginners = 'learn-python-for-beginners',
   IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures',
-  IntroductionToBash = 'Introduction-to-bash',
+  IntroductionToBash = 'introduction-to-bash',
   IntroductionToSQLAndPostgreSQL = 'introduction-to-sql-and-postgresql',
   LearnBashScripting = 'learn-bash-scripting',
   LearnSQLAndBash = 'learn-sql-and-bash',

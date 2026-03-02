@@ -1311,7 +1311,13 @@
       "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance",
       "information-security-and-quality-assurance-cert": "Legacy Information Security and Quality Assurance Certification",
       "full-stack": "Legacy Full-Stack",
-      "full-stack-cert": "Legacy Full-Stack Certification"
+      "full-stack-cert": "Legacy Full-Stack Certification",
+      "introduction-to-bash": "Introduction to Bash",
+      "introduction-to-sql-and-postgresql": "Introduction to SQL and PostgreSQL",
+      "learn-bash-scripting": "Learn Bash Scripting",
+      "learn-sql-and-bash": "Learn SQL and Bash",
+      "introduction-to-nano": "Introduction to Nano",
+      "introduction-to-git-and-github": "Introduction to Git and GitHub"
     }
   },
   "certification-card": {
@@ -1463,7 +1469,11 @@
         "api": "APIs",
         "information-security": "Information Security",
         "computer-fundamentals": "Computer Fundamentals",
-        "computer-science": "Computer Science"
+        "computer-science": "Computer Science",
+        "databases": "Databases",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editors"
       }
     }
   }
