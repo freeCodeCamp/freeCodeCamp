@@ -102,12 +102,19 @@ describe('<ChallengeTranscript />', () => {
       />
     );
 
-    const preElement = screen.getByRole('region');
+    const preElement = screen.getByText(
+      (_, element) =>
+        element?.tagName === 'PRE' &&
+        element.textContent?.includes('console.log("hi")') === true
+    );
     expect(preElement).toBeVisible();
     expect(preElement.tagName).toBe('PRE');
 
-    // eslint-disable-next-line testing-library/no-node-access
-    const codeElement = preElement.querySelector('code');
+    const codeElement = screen.getByText(
+      (_, element) =>
+        element?.tagName === 'CODE' &&
+        element.textContent?.includes('console.log("hi")') === true
+    );
     expect(codeElement).toBeInTheDocument();
     expect(preElement).toHaveTextContent('console.log("hi")');
   });
