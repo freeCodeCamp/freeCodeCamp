@@ -8,11 +8,10 @@ const socratesHint = Type.Object({
 export const askSocrates = {
   body: Type.Object(
     {
-      userId: Type.String(),
-      description: Type.String(),
-      userInput: Type.String(),
-      seed: Type.String(),
-      hints: Type.Array(socratesHint)
+      description: Type.String({ minLength: 1, maxLength: 2000 }),
+      userInput: Type.String({ minLength: 1, maxLength: 50000 }),
+      seed: Type.String({ minLength: 1, maxLength: 50000 }),
+      hints: Type.Array(socratesHint, { maxItems: 200 })
     },
     { additionalProperties: false }
   ),
@@ -21,11 +20,19 @@ export const askSocrates = {
       hint: Type.String()
     }),
     400: Type.Object({
-      error: Type.Literal('Too many requests.'),
+      error: Type.String(),
+      type: Type.Literal('info')
+    }),
+    403: Type.Object({
+      error: Type.String(),
+      type: Type.Literal('danger')
+    }),
+    429: Type.Object({
+      error: Type.String(),
       type: Type.Literal('info')
     }),
     500: Type.Object({
-      error: Type.Literal('Something went wrong.'),
+      error: Type.String(),
       type: Type.Literal('danger')
     })
   }

@@ -27,12 +27,15 @@ const baseProps = {
   openResetModal: vi.fn(),
   executeChallenge: vi.fn(),
   submitChallenge: vi.fn(),
+  askSocrates: vi.fn(),
   tests: passingTests,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
   completedPercent: 100,
   completedChallengeIds: ['id-1', 'test-challenge-id'],
-  currentBlockIds: ['id-1', 'test-challenge-id']
+  currentBlockIds: ['id-1', 'test-challenge-id'],
+  hasSocratesAccess: false,
+  socratesHintState: { hint: null, isLoading: false, error: null }
 };
 
 vi.mock('../../../utils/get-words');

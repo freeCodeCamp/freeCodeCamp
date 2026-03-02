@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
+import sanitizeHtml from 'sanitize-html';
 import { Button } from '@freecodecamp/ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faClose } from '@fortawesome/free-solid-svg-icons';
@@ -185,7 +186,11 @@ export function IndependentLowerJaw({
           </div>
           <div
             className='hint-body'
-            dangerouslySetInnerHTML={{ __html: hint }}
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(hint, {
+                allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+              })
+            }}
           />
         </div>
       )}
@@ -210,7 +215,12 @@ export function IndependentLowerJaw({
             <div
               className='hint-body'
               dangerouslySetInnerHTML={{
-                __html: socratesHintState.hint || socratesHintState.error || ''
+                __html: sanitizeHtml(
+                  socratesHintState.hint || socratesHintState.error || '',
+                  {
+                    allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+                  }
+                )
               }}
             />
           )}

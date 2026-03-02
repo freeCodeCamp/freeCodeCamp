@@ -260,12 +260,17 @@ interface Donation {
   startDate: Date;
 }
 
-interface getSocratesHint {
-  userId: string;
+interface SocratesHintPayload {
   userInput: string;
   seed: string;
   description: string;
   hints: Array<{ text: string; failed?: boolean }>;
+}
+
+interface SocratesHintResponse {
+  hint?: string;
+  error?: string;
+  type?: string;
 }
 // TODO: Verify if the body has and needs this Donation type. The api seems to
 // just need the body to exist, but doesn't seem to use the properties.
@@ -295,8 +300,8 @@ export function generateExamToken(): Promise<
   return post('/user/exam-environment/token', {});
 }
 export function getSocratesHint(
-  body: getSocratesHint
-): Promise<ResponseWithData<void>> {
+  body: SocratesHintPayload
+): Promise<ResponseWithData<SocratesHintResponse>> {
   return put('/socrates/get-hint', body);
 }
 
