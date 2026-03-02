@@ -57,6 +57,15 @@ The `addHabitat` function should have two parameters.
 assert.lengthOf(addHabitat, 2);
 ```
 
+You should call the `addHabitat(tiger, "Rainforest")` function inside of the `console.log`.
+
+```js
+assert.match(
+  code,
+  /console\.log\(\s*addHabitat\(\s*tiger\s*,\s*["']Rainforest["']\s*\)\s*\)/
+);
+```
+
 Calling `addHabitat(tiger, "Rainforest")` should add a habitat property to tiger.
 
 ```js
