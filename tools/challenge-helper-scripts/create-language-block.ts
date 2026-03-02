@@ -406,12 +406,12 @@ void getAllBlocks()
       chapterBasedSuperBlocks.includes(superBlock) &&
       blockLabel !== BlockLabel.quiz
     ) {
-      blockLayout = await select({
+      blockLayout = await select<BlockLayouts>({
         message: 'Choose a block layout',
         default: BlockLayouts.DialogueGrid,
         choices: Object.values(BlockLayouts).map(value => ({
-          value,
-          name: value
+          name: value,
+          value
         }))
       });
     }
@@ -671,4 +671,9 @@ void getAllBlocks()
       'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
     )
   )
-  .catch(err => console.error('Error creating language block:', err.message));
+  .catch((err: unknown) =>
+    console.error(
+      'Error creating language block:',
+      err instanceof Error ? err.message : String(err)
+    )
+  );
