@@ -124,6 +124,12 @@ describe('add-quizzes plugin', () => {
     expect(firstQuestion.answer).toBe(
       '<p>Quiz 1, question 1, answer with <ruby>中文<rp>(</rp><rt>zhōng wén</rt><rp>)</rp></ruby></p>'
     );
+    expect(firstQuestion.audioData.transcript).toEqual([
+      {
+        character: 'Wang Hua',
+        text: '<ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>。'
+      }
+    ]);
   });
 
   it('should render Chinese in quizzes when lang is zh-CN and the text does not contain hanzi (pinyin) format', () => {
