@@ -37,7 +37,8 @@ const helpCategories = [
   'English',
   'Odin',
   'Euler',
-  'Rosetta'
+  'Rosetta',
+  'General'
 ] as const;
 
 interface CreateProjectArgs {
