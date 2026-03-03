@@ -3286,6 +3286,12 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introduction to Common Searching and Sorting Algorithms",
         "intro": [
