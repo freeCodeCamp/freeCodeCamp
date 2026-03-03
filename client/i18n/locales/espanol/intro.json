@@ -3436,7 +3436,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front-End Development Libraries Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto. Recomendamos completar los cursos disponibles a continuación para prepararte para el examen de certificación una vez que sea lanzado.",
     "intro": [
       "Este curso te enseña las bibliotecas que los desarrolladores usan para construir páginas web: React, TypeScript, y más.",
       "To earn your Front-End Development Libraries Certification:",
@@ -4545,7 +4544,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back-End Development and APIs Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto.",
     "intro": [
       "This course teaches you the fundamentals of back-end development and APIs.",
       "To earn your Back-End Development and APIs Certification:",
@@ -4723,7 +4721,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
