@@ -22,7 +22,10 @@
     { "id": "699d20623e57e8ffee88545f", "title": "Step 15" },
     { "id": "699d20623e57e8ffee885460", "title": "Step 16" },
     { "id": "699d20623e57e8ffee885461", "title": "Step 17" },
-    { "id": "699d20623e57e8ffee885462", "title": "Step 18" }
+    { "id": "699d20623e57e8ffee885462", "title": "Step 18" },
+    { "id": "69a65722a69bc6f8d87a9952", "title": "Step 19" },
+    { "id": "69a65722a69bc6f8d87a9953", "title": "Step 20" },
+    { "id": "69a65722a69bc6f8d87a9954", "title": "Step 21" }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
