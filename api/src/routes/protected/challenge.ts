@@ -137,7 +137,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         !canSubmitCodeRoadCertProject(projectId, user)
       ) {
         logger.warn(
-          { projectId, userId: user.id },
+          { projectId, user },
           'User tried to submit a codeRoad cert project before completing the required challenges'
         );
         void reply.code(403);
