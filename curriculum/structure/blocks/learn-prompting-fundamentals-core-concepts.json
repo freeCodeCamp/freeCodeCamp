@@ -1,0 +1,22 @@
+{
+  "name": "Core Concepts",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-prompting-fundamentals-core-concepts",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Prompt Engineering Mindset"
+    },
+    {
+      "id": "",
+      "title": "Zero Shot and Few Shot Prompts"
+    },
+    {
+      "id": "",
+      "title": "AI Hallucinations"
+    }
+  ]
+}

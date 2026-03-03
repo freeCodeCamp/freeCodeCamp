@@ -1,0 +1,34 @@
+{
+  "name": "Foundations of AI & Language Models",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-prompting-fundamentals-foundations-of-ai-and-language-models",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Introduction"
+    },
+    {
+      "id": "",
+      "title": "What is Prompt Engineering?"
+    },
+    {
+      "id": "",
+      "title": "Introduction to AI"
+    },
+    {
+      "id": "",
+      "title": "Why is Machine Learning Useful?"
+    },
+    {
+      "id": "",
+      "title": "Linguistics"
+    },
+    {
+      "id": "",
+      "title": "Language Models"
+    }
+  ]
+}
