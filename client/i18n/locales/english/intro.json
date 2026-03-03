@@ -4665,6 +4665,10 @@
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
+      "lecture-working-with-express": {
+        "title": "Working with Express",
+        "intro": ["Working with Express", ""]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
