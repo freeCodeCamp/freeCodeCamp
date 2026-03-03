@@ -699,7 +699,8 @@
       "exit-header": "退出考試",
       "exit": "你確定要退出考試嗎？你將丟失所有進度。",
       "exit-yes": "是的，我想退出考試",
-      "exit-no": "不，我想繼續考試"
+      "exit-no": "不，我想繼續考試",
+      "not-honest": "你需要<0>接受學術誠信政策</0>才能參加這次考試"
     },
     "ms": {
       "link-header": "鏈接你的微軟賬戶",
@@ -1274,7 +1275,7 @@
       "foundational-c-sharp-with-microsoft": "微軟基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "微軟基礎 C# 認證",
       "learn-python-for-beginners": "學習 Python 基礎",
-      "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
+      "introduction-to-algorithms-and-data-structures": "算法和數據結構",
       "a2-english-for-developers": "開發者 A2 英語",
       "a2-english-for-developers-cert": "A2 開發者英語認證（測試版）",
       "b1-english-for-developers": "開發者 B1 英語",
@@ -1462,7 +1463,7 @@
         "api": "API",
         "information-security": "信息安全",
         "computer-fundamentals": "計算機基礎",
-        "computer-science": "Computer Science"
+        "computer-science": "計算機科學"
       }
     }
   }

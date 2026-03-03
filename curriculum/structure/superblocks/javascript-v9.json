@@ -318,7 +318,7 @@
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["quiz-dynamic-programming-js"]
         },
         {
           "dashedName": "functional-programming",

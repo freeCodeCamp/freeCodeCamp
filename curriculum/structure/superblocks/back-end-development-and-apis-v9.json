@@ -46,7 +46,10 @@
         {
           "dashedName": "introduction-to-express",
           "comingSoon": true,
-          "blocks": ["lecture-working-with-express"]
+          "blocks": [
+            "lecture-understanding-rest-api-and-web-services",
+            "lecture-working-with-express"
+          ]
         },
         {
           "dashedName": "express-middleware",
