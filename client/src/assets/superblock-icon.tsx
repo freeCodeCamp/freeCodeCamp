@@ -89,11 +89,11 @@ const iconMap = {
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,
-  [SuperBlocks.IntroductionToBash]: DatabaseIcon,
+  [SuperBlocks.IntroductionToBash]: Code,
   [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
-  [SuperBlocks.LearnBashScripting]: DatabaseIcon,
+  [SuperBlocks.LearnBashScripting]: Code,
   [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
-  [SuperBlocks.IntroductionToNano]: DatabaseIcon,
+  [SuperBlocks.IntroductionToNano]: Code,
   [SuperBlocks.IntroductionToGitAndGithub]: Code
 };
 
