@@ -16,6 +16,23 @@ interface CalendarDayProps {
   title?: string;
 }
 
+function Checkmark({ isCompleted }: { isCompleted: boolean }) {
+  return isCompleted ? (
+    <span
+      className='dc-checkmark completed'
+      data-playwright-test-label='calendar-day-completed'
+    >
+      <GreenPass />
+    </span>
+  ) : (
+    <span
+      className='dc-checkmark not-completed'
+      data-playwright-test-label='calendar-day-not-completed'
+    >
+      <GreenNotCompleted />
+    </span>
+  );
+}
 function DailyCodingChallengeCalendarDay({
   dayNumber,
   date,
@@ -25,6 +42,7 @@ function DailyCodingChallengeCalendarDay({
   challengeNumber
 }: CalendarDayProps): JSX.Element {
   const { t } = useTranslation();
+  const completed = completedLanguages.length > 0;
 
   // dayNumber = 0 -> render nothing
   if (dayNumber === 0) return <div></div>;
@@ -59,41 +77,25 @@ function DailyCodingChallengeCalendarDay({
 
       <div className='dc-info'>
         <div className='dc-title-wrap'>
-          <div className='dc-title'>{truncateTitle(title)}</div>
+          <div className='dc-title'>{truncate(title)}</div>
         </div>
 
-        {completedLanguages.length > 0 ? (
-          <>
-            <span
-              className='dc-checkmark completed'
-              data-playwright-test-label='calendar-day-completed'
-            >
-              <GreenPass />
-            </span>
+        <Checkmark isCompleted={completed} />
 
-            <div className='dc-languages'>
-              {completedLanguages.includes('javascript') && (
-                <div className='dc-language-icon'>
-                  <JavaScriptIcon />
-                  <span className='sr-only'>JavaScript</span>
-                </div>
-              )}
-              {completedLanguages.includes('python') && (
-                <div className='dc-language-icon'>
-                  <PythonIcon />
-                  <span className='sr-only'>Python</span>
-                </div>
-              )}
+        <div className='dc-languages'>
+          {completedLanguages.includes('javascript') && (
+            <div className='dc-language-icon'>
+              <JavaScriptIcon />
+              <span className='sr-only'>JavaScript</span>
             </div>
-          </>
-        ) : (
-          <span
-            className='dc-checkmark not-completed'
-            data-playwright-test-label='calendar-day-not-completed'
-          >
-            <GreenNotCompleted />
-          </span>
-        )}
+          )}
+          {completedLanguages.includes('python') && (
+            <div className='dc-language-icon'>
+              <PythonIcon />
+              <span className='sr-only'>Python</span>
+            </div>
+          )}
+        </div>
       </div>
     </Link>
   );
