@@ -336,7 +336,7 @@ function getBlockPrefix(
 void getAllBlocks()
   .then(async existingBlocks => {
     const superBlock = await select<SuperBlocks>({
-      message: 'Which certification doest this belong to?',
+      message: 'Which certification does it this belong to?',
       default: SuperBlocks.A2English,
       choices: Object.values(languageSuperBlocks).map(value => ({
         name: value,
