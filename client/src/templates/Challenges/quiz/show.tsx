@@ -39,6 +39,7 @@ import PrismFormatted from '../components/prism-formatted';
 import { usePageLeave } from '../hooks';
 import ExitQuizModal from './exit-quiz-modal';
 import FinishQuizModal from './finish-quiz-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 
 import './show.css';
 
@@ -392,6 +393,7 @@ const ShowQuiz = ({
         <CompletionModal />
         <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
         <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );
