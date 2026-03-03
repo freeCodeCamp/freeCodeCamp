@@ -5,7 +5,7 @@ import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
 import JavaScriptIcon from '../../assets/icons/javascript';
 import PythonIcon from '../../assets/icons/python';
-import { formatDisplayDate, truncateTitle } from './helpers';
+import { formatDisplayDate, truncate } from './helpers';
 
 interface CalendarDayProps {
   dayNumber: number;
