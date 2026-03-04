@@ -1,0 +1,30 @@
+{
+  "name": "The Merge Sort Algorithm",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-merge-sort",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dda7a7932b3cc4b19c935",
+      "title": "Merge Sort"
+    },
+    {
+      "id": "698ddca77932b3cc4b19c936",
+      "title": "Splitting Into Sublists"
+    },
+    {
+      "id": "698ddfc37932b3cc4b19c937",
+      "title": "Recursively Merging Sublists"
+    },
+    {
+      "id": "698de0ca7932b3cc4b19c938",
+      "title": "Ensuring the Correctness of Merge Sort"
+    },
+    {
+      "id": "698de2547932b3cc4b19c939",
+      "title": "Evaluating the Runtime of Merge Sort"
+    }
+  ]
+}

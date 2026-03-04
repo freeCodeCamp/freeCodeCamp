@@ -25,11 +25,12 @@ import {
   currentBlockIdsSelector
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import { openModal, executeChallenge } from '../redux/actions';
 import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
 
@@ -61,7 +62,6 @@ const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
   executeChallenge,
-  submitChallenge,
   saveChallenge
 };
 
@@ -69,7 +69,6 @@ interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
-  submitChallenge: () => void;
   saveChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
@@ -82,7 +81,6 @@ export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
   executeChallenge,
-  submitChallenge,
   saveChallenge,
   tests,
   isSignedIn,
@@ -92,6 +90,7 @@ export function IndependentLowerJaw({
   currentBlockIds
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
@@ -190,7 +189,10 @@ export function IndependentLowerJaw({
             <Progress minified={true} />
           </div>
           {isSignedIn && showShareButton && (
-            <div className='share-button-wrapper'>
+            <div
+              className='share-button-wrapper'
+              data-testid='share-button-wrapper'
+            >
               <Share
                 superBlock={challengeMeta.superBlock}
                 block={challengeMeta.block}
