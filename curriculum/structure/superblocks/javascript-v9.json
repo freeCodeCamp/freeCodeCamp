@@ -295,7 +295,11 @@
             "quiz-recursion"
           ]
         },
-        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": ["lecture-working-with-common-data-structures-js"]
+        },
         {
           "dashedName": "algorithms",
           "comingSoon": true,
@@ -318,7 +322,10 @@
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
-          "blocks": ["lecture-understanding-dynamic-programming-js"]
+          "blocks": [
+            "lecture-understanding-dynamic-programming-js",
+            "quiz-dynamic-programming-js"
+          ]
         },
         {
           "dashedName": "functional-programming",

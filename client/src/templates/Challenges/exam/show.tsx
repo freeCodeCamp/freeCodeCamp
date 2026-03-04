@@ -32,7 +32,6 @@ import {
   updateChallengeMeta,
   openModal,
   closeModal,
-  submitChallenge,
   setUserCompletedExam,
   updateSolutionFormValues,
   initTests
@@ -60,6 +59,7 @@ import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
 import MissingPrerequisites from './components/missing-prerequisites';
 import FoundationalCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './exam.css';
 
@@ -101,7 +101,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       stopExam,
       setUserCompletedExam,
       clearExamResults,
-      submitChallenge,
       initTests,
       updateChallengeMeta,
       updateSolutionFormValues
@@ -132,7 +131,6 @@ interface ShowExamProps {
   t: TFunction;
   startExam: () => void;
   stopExam: () => void;
-  submitChallenge: () => void;
   setUserCompletedExam: (arg0: UserExam) => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
@@ -170,6 +168,8 @@ function ShowExam(props: ShowExamProps) {
   let timerInterval: NodeJS.Timeout;
 
   const container = useRef<HTMLElement>(null);
+
+  const submitChallenge = useSubmit();
 
   const [examTimeInSeconds, setExamTimeInSeconds] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -309,7 +309,7 @@ function ShowExam(props: ShowExamProps) {
     // TODO: show loader
     cleanUp();
 
-    const { setUserCompletedExam, submitChallenge } = props;
+    const { setUserCompletedExam } = props;
 
     setUserCompletedExam({ userExamQuestions, examTimeInSeconds });
     submitChallenge();
