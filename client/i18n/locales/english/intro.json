@@ -3340,7 +3340,7 @@
         "intro": [
             "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
           ]
-      }
+      },
       "quiz-dynamic-programming-js": {
         "title": "Dynamic Programming Quiz",
         "intro": [
