@@ -3280,6 +3280,12 @@
           "Перевірте, наскільки добре ви засвоїли матеріал з теми «Рекурсія»."
         ]
       },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Знайомство з поширеними алгоритмами пошуку і сортування",
         "intro": [
@@ -3416,7 +3422,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Сертифікація «Бібліотеки Front End»",
-    "note": "Ця сертифікація розробляється і незабаром стане доступною. А поки радимо завершити доступні курси нижче, щоб підготуватися до екзамену.",
     "intro": [
       "У цьому курсі ви дізнаєтесь про бібліотеки, які використовують для створення вебсторінок; серед них: React, TypeScript та багато інших.",
       "Щоб отримати сертифікацію «Бібліотеки Front End»:",
@@ -3715,6 +3720,12 @@
         "title": "Вступ до візуалізації даних",
         "intro": [
           "У цих лекціях ви дізнаєтесь про базові поняття у візуалізації даних."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4485,7 +4496,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Сертифікація «Back End та API»",
-    "note": "Наразі сертифікація розробляється і незабаром стане доступною.",
     "intro": [
       "У цьому курсі ви отримаєте базові знання з Back End та API.",
       "Щоб отримати сертифікацію «Back End та API»:",
@@ -4637,6 +4647,12 @@
           "Дізнайтесь про основи роботи вебкомунікації на прикладі моделі запиту-відповіді HTTP, ознайомтеся з різними типами вебресурсів і відповідей, а також зрозумійте, як форми обробляють надсилання даних за допомогою різних методів HTTP."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Вступ до npm",
         "intro": [
@@ -4659,7 +4675,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Навчальна програма «Сертифікований розробник Full Stack»",
-    "note": "Якщо ви раніше працювали над нашою навчальною програмою, то не хвилюйтеся: ваш прогрес збережено. Ми розбили її на менші сертифікації, які можна отримувати в міру виконання. Наразі ця сертифікація розробляється і скоро стане доступною. Почніть отримувати необхідні сертифікації, щоб бути готовими.",
     "intro": [
       "Це кульмінація вашої подорожі сертифікацією «Сертифікований розробник Full Stack». Тут ви перевірите свою здатність створювати сучасні вебзастосунки від початку до кінця.",
       "Для допуску до екзамену потрібно отримати сертифікації нижче. Щоб отримати сертифікацію «Розробник Full Stack», потрібно успішно скласти екзамен."
@@ -5729,6 +5744,12 @@
         "title": "Створіть фотогалерею із Flexbox",
         "intro": [
           "У цьому практичному занятті ви будете використовувати Flexbox, щоб створити адаптивну вебсторінку із фотогалереєю."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {
