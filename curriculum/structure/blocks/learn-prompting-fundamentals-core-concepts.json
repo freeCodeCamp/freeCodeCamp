@@ -7,16 +7,12 @@
   "helpCategory": "General",
   "challengeOrder": [
     {
-      "id": "",
+      "id": "69a769365a27934b29e1eac5",
       "title": "Prompt Engineering Mindset"
     },
     {
-      "id": "",
-      "title": "Zero Shot and Few Shot Prompts"
-    },
-    {
-      "id": "",
-      "title": "AI Hallucinations"
+      "id": "69a76a395a27934b29e1eac6",
+      "title": "Using ChatGPT"
     }
   ]
 }

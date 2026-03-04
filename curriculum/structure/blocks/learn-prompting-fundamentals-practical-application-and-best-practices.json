@@ -7,20 +7,20 @@
   "helpCategory": "General",
   "challengeOrder": [
     {
-      "id": "",
-      "title": "Using GPT-4"
-    },
-    {
-      "id": "",
+      "id": "69a772165a27934b29e1eac7",
       "title": "Best Practices"
     },
     {
-      "id": "",
-      "title": "Vectors / Text Embeddings"
+      "id": "69a773545a27934b29e1eac8",
+      "title": "Zero Shot and Few Shot Prompts"
     },
     {
-      "id": "",
-      "title": "Recap"
+      "id": "69a774515a27934b29e1eac9",
+      "title": "AI Hallucinations"
+    },
+    {
+      "id": "69a774ec5a27934b29e1eaca",
+      "title": "Vectors / Text Embeddings"
     }
   ]
 }
