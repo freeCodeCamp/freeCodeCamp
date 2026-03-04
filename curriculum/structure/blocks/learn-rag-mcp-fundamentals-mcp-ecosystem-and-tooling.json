@@ -1,0 +1,42 @@
+{
+  "name": "MCP Ecosystem & Tooling",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-rag-mcp-fundamentals-mcp-ecosystem-and-tooling",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Why MCP?"
+    },
+    {
+      "id": "",
+      "title": "What Is MCP?"
+    },
+    {
+      "id": "",
+      "title": "MCP Architecture"
+    },
+    {
+      "id": "",
+      "title": "JSON RPC"
+    },
+    {
+      "id": "",
+      "title": "Using MCP Servers"
+    },
+    {
+      "id": "",
+      "title": "Building a MCP Server"
+    },
+    {
+      "id": "",
+      "title": "MCP Inspector"
+    },
+    {
+      "id": "",
+      "title": "Building a MCP Client"
+    }
+  ]
+}

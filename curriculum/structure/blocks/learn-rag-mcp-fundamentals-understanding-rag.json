@@ -1,0 +1,26 @@
+{
+  "name": "Understanding RAG",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-rag-mcp-fundamentals-understanding-rag",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Introduction"
+    },
+    {
+      "id": "",
+      "title": "Simple Explanation of RAG"
+    },
+    {
+      "id": "",
+      "title": "When Not To RAG"
+    },
+    {
+      "id": "",
+      "title": "What Is RAG?"
+    }
+  ]
+}

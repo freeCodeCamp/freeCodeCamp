@@ -1,0 +1,22 @@
+{
+  "name": "Designing Reliable RAG Systems",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-rag-mcp-fundamentals-designing-reliable-rag-systems",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "RAG Architecture"
+    },
+    {
+      "id": "",
+      "title": "Catching, Monitoring, and Error Handling"
+    },
+    {
+      "id": "",
+      "title": "RAG in Production"
+    }
+  ]
+}

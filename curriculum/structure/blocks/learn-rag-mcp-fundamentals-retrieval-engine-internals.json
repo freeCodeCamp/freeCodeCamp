@@ -1,0 +1,26 @@
+{
+  "name": "Retrieval Engine Internals",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-rag-mcp-fundamentals-retrieval-engine-internals",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "What is Semantic Search?"
+    },
+    {
+      "id": "",
+      "title": "What are Embedding Models?"
+    },
+    {
+      "id": "",
+      "title": "What are Vector Databases?"
+    },
+    {
+      "id": "",
+      "title": "Chunking"
+    }
+  ]
+}
