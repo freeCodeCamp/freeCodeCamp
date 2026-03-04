@@ -36,6 +36,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
+          persist-credentials: false
 
       - name: Check number of lockfiles
         run: |
@@ -44,6 +45,9 @@ jobs:
             echo -e 'Error: found package-lock files in the repository.\nWe use pnpm workspaces to manage packages so all dependencies should be added via pnpm add'
             exit 1
           fi
+
+      - name: Check format of sample.env
+        run: docker run --rm -v `pwd`:/app -w /app dotenvlinter/dotenv-linter check --ignore-checks UnorderedKey sample.env
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
@@ -64,8 +68,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
         run: pnpm install
@@ -74,11 +77,19 @@ jobs:
         run: |
           pnpm prettier --check . || [ $? -eq 1 ] && printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
 
-      # The two prefixed installs are for the client update which are not,
-      # currently, built as workspaces.
       - name: Lint Source Files
         run: |
           echo pnpm version $(pnpm -v)
+          pnpm lint
+
+      # This is populate the cache, otherwise local runs with upcoming changes
+      # will not benefit.
+      - name: Set UPCOMING_CHANGES
+        run: |
+          echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
+
+      - name: Lint Upcoming Changes
+        run: |
           pnpm lint
 
   # DONT REMOVE THIS JOB.
@@ -96,6 +107,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
+          persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
@@ -116,7 +128,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
         run: |
@@ -138,6 +150,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
+          persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
@@ -158,8 +171,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d
@@ -190,6 +203,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
+          persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
@@ -210,9 +224,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d
@@ -245,6 +258,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
+          persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
@@ -265,8 +279,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1

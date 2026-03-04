@@ -1,22 +1,83 @@
 .catalog-wrap {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
   gap: 2rem;
-  justify-content: space-evenly;
+}
+
+.catalog-filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.catalog-filters .dropdown {
+  min-width: 250px;
+}
+
+.catalog-filters .dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.catalog-filters .dropdown-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.catalog-filters button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.catalog-filters .dropdown-menu .dropdown-item input[type='checkbox'] {
+  flex-shrink: 0;
+}
+
+.filter-checkbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin: 0 0.5rem 0 0;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.catalog-item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .catalog-item {
+  text-decoration: none;
   padding: 1rem;
   background-color: var(--primary-background);
-  width: 400px;
-  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid var(--background-quaternary);
+  max-width: 400px;
+}
+
+.catalog-item h3 {
+  margin: 0;
 }
 
 .catalog-item-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  color: var(--quaternary-color);
+  font-size: 0.9rem;
+}
+
+.catalog-item p {
+  margin-bottom: 0.9rem;
 }

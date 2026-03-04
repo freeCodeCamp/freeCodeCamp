@@ -34,7 +34,10 @@ import type {
   ChapterBasedSuperBlockStructure
 } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
-import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
+import {
+  type Certification,
+  superBlockToCertMap
+} from '@freecodecamp/shared/config/certification-settings';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
@@ -83,7 +86,7 @@ type SuperBlockProps = {
   pageContext: {
     superBlock: SuperBlocks;
     title: CertTitle;
-    certification: string;
+    certification: Certification;
   };
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
@@ -358,13 +361,11 @@ export default connect(
 export const query = graphql`
   query SuperBlockIntroPageQuery {
     allChallengeNode(
-      sort: {
-        fields: [
-          challenge___superOrder
-          challenge___order
-          challenge___challengeOrder
-        ]
-      }
+      sort: [
+        { challenge: { superOrder: ASC } }
+        { challenge: { order: ASC } }
+        { challenge: { challengeOrder: ASC } }
+      ]
     ) {
       nodes {
         challenge {

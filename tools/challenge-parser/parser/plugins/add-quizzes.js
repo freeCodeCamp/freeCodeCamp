@@ -1,6 +1,9 @@
 const { root } = require('mdast-builder');
 const { getSection, getAllSections } = require('./utils/get-section');
-const { createMdastToHtml } = require('./utils/i18n-stringify');
+const {
+  createMdastToHtml,
+  parseHanziPinyinPairs
+} = require('./utils/i18n-stringify');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -21,7 +24,7 @@ function plugin() {
       });
     }
 
-    function getQuestion(textNodes, distractorNodes, answerNodes) {
+    function getQuestion(textNodes, distractorNodes, answerNodes, audioNodes) {
       const text = toHtml(textNodes);
       const distractors = getDistractors(distractorNodes);
       const answer = toHtml(answerNodes);
@@ -31,7 +34,68 @@ function plugin() {
         throw Error('--distractors-- are missing from quiz question');
       if (!answer) throw Error('--answer-- is missing from quiz question');
 
-      return { text, distractors, answer };
+      const questionData = { text, distractors, answer };
+
+      // Extract audio data if present
+      if (audioNodes.length > 0) {
+        // Audio should be in a JSON code block
+        if (audioNodes[0].type !== 'code' || audioNodes[0].lang !== 'json') {
+          throw Error('--audio-- section must contain a ```json code block');
+        }
+
+        try {
+          const audioData = JSON.parse(audioNodes[0].value);
+
+          // Validate structure
+          if (!audioData.audio || !audioData.audio.filename) {
+            throw Error('--audio-- section must contain audio.filename');
+          }
+
+          if (!audioData.transcript || !Array.isArray(audioData.transcript)) {
+            throw Error(
+              '--audio-- section must contain transcript as an array'
+            );
+          }
+
+          if (audioData.transcript.length === 0) {
+            throw Error('--audio-- section transcript array cannot be empty');
+          }
+
+          // Validate each transcript line
+          audioData.transcript.forEach((line, index) => {
+            if (!line.character || !line.text) {
+              throw Error(
+                `--audio-- transcript line ${index} must have character and text properties`
+              );
+            }
+          });
+
+          // Convert hanzi-pinyin pairs in transcript text to HTML ruby elements
+          audioData.transcript = audioData.transcript.map(line => {
+            if (parseHanziPinyinPairs(line.text).length > 0) {
+              const nodes = [
+                {
+                  type: 'paragraph',
+                  children: [{ type: 'inlineCode', value: line.text }]
+                }
+              ];
+              const html = toHtml(nodes);
+              const innerHtml = html.replace(/^<p>|<\/p>$/g, '');
+              return { ...line, text: innerHtml };
+            }
+            return line;
+          });
+
+          questionData.audioData = audioData;
+        } catch (error) {
+          if (error instanceof SyntaxError) {
+            throw Error('--audio-- section must contain valid JSON');
+          }
+          throw error;
+        }
+      }
+
+      return questionData;
     }
 
     if (quizzesNodes.length > 0) {
@@ -60,9 +124,10 @@ function plugin() {
           const textNodes = getSection(questionTree, '--text--');
           const distractorNodes = getSection(questionTree, '--distractors--');
           const answerNodes = getSection(questionTree, '--answer--');
+          const audioNodes = getSection(questionTree, '--audio--');
 
           quizQuestions.push(
-            getQuestion(textNodes, distractorNodes, answerNodes)
+            getQuestion(textNodes, distractorNodes, answerNodes, audioNodes)
           );
         });
 

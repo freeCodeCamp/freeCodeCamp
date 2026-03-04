@@ -119,3 +119,9 @@
 .independent-lower-jaw .tooltip .tooltiptext.left-tooltip {
   left: 0;
 }
+
+.share-button-wrapper {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+}

@@ -13,8 +13,8 @@
 }
 
 .block-label {
-  align-self: center;
   height: fit-content;
+  width: fit-content;
   padding: 1px 6px 2px;
   font-size: 0.85rem;
   border: 1px solid;
@@ -27,26 +27,32 @@
   background-color: var(--tertiary-background);
 }
 
+.block-label-html,
 .block-label-lecture {
   border-color: var(--yellow-color);
   color: var(--yellow-color);
 }
 
+.block-label-css,
 .block-label-workshop {
   border-color: var(--highlight-color);
   color: var(--highlight-color);
 }
 
+.block-label-python,
 .block-label-lab {
   border-color: var(--success-color);
   color: var(--success-color);
 }
 
+.block-label-javascript,
+.block-label-computer-science,
 .block-label-review {
   border-color: var(--purple-color);
   color: var(--purple-color);
 }
 
+.block-label-computer-fundamentals,
 .block-label-quiz {
   border-color: var(--danger-color);
   color: var(--danger-color);
