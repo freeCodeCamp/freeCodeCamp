@@ -79,11 +79,20 @@ async function newPageContext() {
 }
 
 export async function defineTestsForBlock(testFilter) {
-  const challenges = await getChallenges(CURRICULUM_LOCALE, testFilter);
-  const nonCertificationChallenges = challenges.filter(
+  const allChallenges = await getChallenges(CURRICULUM_LOCALE, testFilter);
+  const nonCertificationChallenges = allChallenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
-  if (isEmpty(nonCertificationChallenges)) {
+
+  // This is a bit of a dirty hack, but when we're testing, we only need to
+  // validate the challenges for the block we're testing once, rather than
+  // once for each superBlock the challenge appears in.
+  const firstSuperBlock = allChallenges[0]?.superBlock;
+  const challenges = nonCertificationChallenges.filter(
+    ({ superBlock }) => superBlock === firstSuperBlock
+  );
+
+  if (isEmpty(challenges)) {
     console.warn(
       `No non-certification challenges to test for block ${testFilter.block}.`
     );
