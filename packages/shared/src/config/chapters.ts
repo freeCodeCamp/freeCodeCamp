@@ -39,7 +39,8 @@ export enum A1SpanishChapters {
   esA1Welcome = 'es-a1-chapter-welcome-to-a1-professional-spanish',
   esA1Fundamentals = 'es-a1-chapter-spanish-fundamentals',
   esA1Greetings = 'es-a1-chapter-greetings-and-introductions',
-  esA1Details = 'es-a1-chapter-basic-personal-details'
+  esA1Details = 'es-a1-chapter-basic-personal-details',
+  esA1Describing = 'es-a1-chapter-describing-company-and-people'
 }
 
 export interface Chapter {

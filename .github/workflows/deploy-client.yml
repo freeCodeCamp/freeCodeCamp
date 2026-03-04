@@ -41,12 +41,14 @@ jobs:
     steps:
       - name: Setup
         id: setup
+        env:
+          BRANCH: ${{ github.ref_name }}
+          SHOW_UPCOMING_CHANGES: ${{ inputs.show_upcoming_changes }}
         run: |
-          BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
 
           # Convert boolean input to string 'true' or 'false'
-          if [[ "${{ inputs.show_upcoming_changes }}" == "true" ]]; then
+          if [[ "$SHOW_UPCOMING_CHANGES" == "true" ]]; then
             echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
           else
             echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
