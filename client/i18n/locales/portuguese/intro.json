@@ -3298,6 +3298,12 @@
           "Teste seu conhecimento sobre recursão com este questionário."
         ]
       },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introdução aos Algoritmos Comuns de Busca e Ordenação",
         "intro": [
@@ -3434,7 +3440,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Certificação de Bibliotecas de Desenvolvimento Front-End",
-    "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Recomendamos completar os cursos disponíveis abaixo para se preparar para o exame de certificação assim que for lançado.",
     "intro": [
       "Este curso ensina as bibliotecas que os desenvolvedores utilizam para criar páginas da web: React, TypeScript, e mais.",
       "Para conquistar sua Certificação de Bibliotecas de Desenvolvimento Front-End:",
@@ -3743,6 +3748,12 @@
         "title": "Introdução à visualização de dados",
         "intro": [
           "Nestas aulas, você aprenderá sobre conceitos básicos de visualização de dados."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4541,7 +4552,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Certificação de Desenvolvimento Back-End e APIs",
-    "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve.",
     "intro": [
       "Este curso ensina os fundamentos do Desenvolvimento Back-End e APIs.",
       "Para conquistar sua Certificação de Desenvolvimento Back-End e APIs:",
@@ -4695,6 +4705,12 @@
           "Aprenda os fundamentos de como a comunicação web funciona através do modelo de requisição-resposta HTTP, explore diferentes tipos de ativos e respostas web e entenda como os formulários lidam com o envio de dados usando vários métodos HTTP."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introdução ao npm",
         "intro": [
@@ -4717,7 +4733,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Currículo de Desenvolvedor Full Stack Certificado",
-    "note": "Se você estava previamente trabalhando em nosso currículo de full-stack, não se preocupe - seu progresso está salvo. Nós o dividimos em certificações menores para você conquistar ao longo da sua jornada. Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Comece a obter as certificações necessárias para estar pronto quando for lançado.",
     "intro": [
       "Esta certificação representa o culminar da sua jornada como desenvolvedor full stack. Demonstra sua capacidade de construir aplicações web completas e modernas do início ao fim.",
       "Para se qualificar para o exame, você deve obter as certificações abaixo. Passe no exame para conquistar sua Certificação de Desenvolvedor Full Stack."
@@ -5803,6 +5818,12 @@
         "title": "Crie uma Galeria de Fotos com Flexbox",
         "intro": [
           "Neste workshop, você usará Flexbox para criar uma página da galeria de fotos responsiva."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {
