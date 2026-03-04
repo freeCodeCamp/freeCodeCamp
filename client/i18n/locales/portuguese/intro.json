@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Frontend Development Libraries V8",
+    "title": "Bibliotecas de Desenvolvimento Front-End V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular frontend libraries in the industry.",
-      "In the Frontend Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "Agora que você está familiarizado com HTML, CSS e JavaScript, melhore suas habilidades aprendendo algumas das bibliotecas front-end mais populares do setor.",
+      "Na certificação de Bibliotecas de Desenvolvimento Front-End, você aprenderá a estilizar seu site rapidamente com Bootstrap. Você também aprenderá a adicionar lógica aos seus estilos CSS e a ampliá-los com Sass.",
       "Mais tarde, você construirá um carrinho de compras e outras aplicações para aprender a criar Aplicativos de Página Única (Single Page Applications - SPA) poderosos com React e Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a frontend framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap é um framework de front-end usado para projetar páginas da web e aplicativos responsivos. Ele adota uma abordagem mobile-first para o desenvolvimento na web e inclui estilos e classes CSS pré-construídos, além de algumas funcionalidades JavaScript.",
           "Neste curso, você aprenderá a criar sites responsivos com Bootstrap, e usará as classes que ele tem para estilizar botões, imagens, formulários, navegação e outros elementos comuns."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Frontend Development Libraries Projects",
+        "title": "Projetos de desenvolvimento com bibliotecas de front-end",
         "intro": [
-          "It's time to put your frontend development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Frontend Development Libraries certification."
+          "É hora de testar suas habilidades nas bibliotecas de desenvolvimento de front-end. Use Bootstrap, jQuery, Sass, React e Redux para criar 5 projetos que testarão tudo o que você aprendeu até agora.",
+          "Complete todos os 5 projetos e você ganhará a certificação em Bibliotecas de Desenvolvimento Front-End."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Backend Development and APIs V8",
+    "title": "Desenvolvimento Back-End e APIs V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the frontend to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
+      "Até esse ponto, você usou JavaScript apenas no front-end para adicionar interatividade a uma página, resolver desafios de algoritmos ou construir uma SPA. Mas o JavaScript também pode ser usado no back-end, ou servidor, para construir aplicações web inteiras.",
       "Hoje em dia, uma das formas populares de se criar aplicações é através do uso de microsserviços, que são pequenas aplicações modulares que trabalham em conjunto para formar uma aplicação maior inteira.",
-      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Na certificação de Desenvolvimento Back-End e APIs, você aprenderá a escrever aplicações de back-end com Node.js e npm. Você também vai construir aplicações web com o framework Express, e criará um microsserviço de localização de pessoas com o MongoDB e com a biblioteca Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -714,7 +714,7 @@
       "basic-node-and-express": {
         "title": "Básico sobre Node e Express",
         "intro": [
-          "O Node.js é um ambiente de execução em Javascript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
+          "O Node.js é um ambiente de execução em JavaScript que permite que os desenvolvedores escrevam programas de back-end (no lado do servidor) em JavaScript. O Node.js vem com diversos módulos internos — pequenos programas independentes — que ajudam com isso. Alguns dos principais módulos incluem o HTTP, que atua como um servidor, e um sistema de arquivos, que atua como um módulo para ler e modificar arquivos.",
           "Nos últimos cursos, você aprendeu a instalar e gerenciar pacotes a partir do npm, que são coleções de pequenos módulos. Estes pacotes podem ajudá-lo a construir aplicações maiores e mais complexas.",
           "O Express é um framework leve para a criação de aplicações web, sendo um dos pacotes mais populares no npm. O Express torna muito mais fácil criar um servidor e lidar com o roteamento para seu aplicativo, lidando com coisas como direcionar as pessoas para a página correta quando elas visitam um determinado endpoint, como <pre>/blog</pre>.",
           "Neste curso, você aprenderá o básico do Node e do Express, incluindo como criar um servidor, manusear arquivos diferentes e manipular diferentes solicitações de um navegador."
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Backend Development and APIs Projects",
+        "title": "Projetos de APIs e desenvolvimento de back-end",
         "intro": [
           "Você já trabalhou com APIs antes, mas agora que você conhece o npm, Node, Express, MongoDB e o Mongoose, é hora de construir a sua própria API. Utilize tudo o que você aprendeu até esse ponto para criar 5 microsserviços diferentes – aplicações menores e com escopo limitado.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
+          "Depois de criá-las, você terá 5 APIs de microsserviço sensacionais, que poderão ser mostradas para amigos, familiares e potenciais empregadores. Ah, e você também terá uma Certificação em APIs e desenvolvimento de back-end novinha."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "Agora é hora de fazer um mergulho profundo no Node.js e no Express.js, construindo uma aplicação de chat com um sistema de login.",
           "Para implementar o sistema de login de forma segura, você precisará saber sobre autenticação. Este é o ato de verificar a identidade de uma pessoa ou um processo.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the frontend, and web sockets for real-time communication between the clients and server."
+          "Neste curso, você aprenderá a usar o Passport para gerenciar a autenticação, o Pug para criar modelos reutilizáveis para a construção rápida do front-end, e web sockets para a comunicação em tempo real entre os clientes e o servidor."
         ]
       },
       "quality-assurance-projects": {
         "title": "Projetos de garantia de qualidade",
         "intro": [
-          "Now that you're well versed in both the frontend and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Agora que você conhece bem o front-end e o back-end, chegou a hora de aplicar todas as habilidades e conceitos que aprendeu até agora. Você vai construir 5 aplicações web diferentes e escrever testes para cada uma, para garantir que estão funcionando e que podem lidar com casos diferentes.",
           "Depois de concluir estes projetos de garantia de qualidade (QA), você terá mais 5 projetos e uma nova certificação para exibir em seu portfólio."
         ]
       }
@@ -942,62 +942,134 @@
     }
   },
   "learn-python-for-beginners": {
-    "title": "Learn Python for Beginners",
+    "title": "Aprenda Python para Iniciantes",
     "summary": [
-      "Learn the fundamentals of Python programming from the ground up by practicing foundational concepts and building small projects."
+      "Aprenda os fundamentos da programação em Python do zero praticando conceitos fundamentais e construindo pequenos projetos."
     ],
     "intro": [
-      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
-      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
+      "Python é uma das linguagens de programação mais populares hoje. É fácil de aprender, legível e versátil.",
+      "Neste curso abrangente, você aprenderá os fundamentos da programação em Python do zero. Começará com conceitos básicos como variáveis e tipos de dados, avançará por controle de fluxo e funções, e construirá projetos para praticar o que aprendeu."
     ],
     "note": "",
     "blocks": {
       "learn-python-setup-first-steps": {
-        "title": "Setup & First Steps",
+        "title": "Configuração e Primeiros Passos",
         "intro": [
-          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+          "Nesses vídeos, o instrutor popular de programação Mike Dane irá te apresentar ao Python e mostrar como configurar o ambiente local."
         ]
       },
       "learn-python-core-primitives": {
-        "title": "Core Primitives: Variables, Types, Basic I/O",
+        "title": "Primitivos Principais: Variáveis, Tipos, E/S Básica",
         "intro": [
-          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
+          "Nesses vídeos, você aprenderá sobre variáveis, tipos de dados, strings, números e como obter entrada do usuário."
         ]
       },
       "learn-python-small-projects-basics": {
-        "title": "Small Projects: Using Basics",
+        "title": "Pequenos Projetos: Usando o Básico",
         "intro": [
-          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
+          "Nesses vídeos, você praticará o que aprendeu até agora construindo uma calculadora básica e um jogo de mad libs."
         ]
       },
       "learn-python-data-structures": {
-        "title": "Data Structures: Lists and Tuples",
+        "title": "Estruturas de Dados: Listas e Tuplas",
         "intro": [
-          "In these videos, you will learn about lists, tuples and common operations."
+          "Nesses vídeos, você aprenderá sobre listas, tuplas e operações comuns."
         ]
       },
       "learn-python-control-flow-functions": {
-        "title": "Control Flow and Functions",
+        "title": "Fluxo de Controle e Funções",
         "intro": [
-          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
+          "Nesses vídeos, você aprenderá a controlar o fluxo dos programas com instruções if. Você também aprenderá a escrever código reutilizável com funções."
         ]
       },
       "learn-python-projects-loops": {
-        "title": "Dictionaries and Loops",
+        "title": "Dicionários e Laços",
         "intro": [
-          "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
+          "Nesses vídeos, você aprenderá a trabalhar com dicionários e vários laços, incluindo while e for."
         ]
       },
       "learn-python-practical-errors-files": {
-        "title": "Practical Python: Errors, Files and Modules",
+        "title": "Python Prático: Erros, Arquivos e Módulos",
         "intro": [
-          "In these videos, you will learn how to handle errors gracefully, read and write to files, and organize your code with modules and external packages."
+          "Nesses vídeos, você aprenderá a tratar erros de forma elegante, ler e escrever em arquivos, e organizar seu código com módulos e pacotes externos."
         ]
       },
       "learn-python-oop": {
-        "title": "Object Oriented Programming",
+        "title": "Programação Orientada a Objetos",
         "intro": [
-          "In these videos, you will learn about object-oriented programming by creating classes and objects. You will practice these skills by building a multiple choice quiz application."
+          "Nesses vídeos, você aprenderá sobre programação orientada a objetos criando classes e objetos. Você praticará essas habilidades construindo um aplicativo de questionário de múltipla escolha."
+        ]
+      }
+    }
+  },
+  "introduction-to-algorithms-and-data-structures": {
+    "title": "Introdução a Algoritmos e Estruturas de Dados",
+    "summary": [
+      "Aprenda sobre algoritmos e estruturas de dados comuns neste curso introdutório."
+    ],
+    "intro": [
+      "Algoritmos e Estruturas de Dados são a espinha dorsal da programação. Portanto, é importante aprender a trabalhar com eles.",
+      "Neste curso abrangente, você aprenderá sobre algoritmos comuns de ordenação e busca, incluindo merge sort, quicksort e busca binária.",
+      "Você também aprenderá a trabalhar com estruturas de dados comuns incluindo arrays e listas ligadas."
+    ],
+    "note": "",
+    "blocks": {
+      "intro-dsa-searching-algorithms": {
+        "title": "Algoritmos de Busca",
+        "intro": [
+          "Nesses vídeos, você aprenderá o que é um algoritmo e como trabalhar com os algoritmos de busca binária e busca linear."
+        ]
+      },
+      "intro-dsa-time-complexity": {
+        "title": "Complexidade de Tempo",
+        "intro": [
+          "Nesses vídeos, você aprenderá sobre complexidade de tempo e como ela funciona ao medir a eficiência de algoritmos."
+        ]
+      },
+      "intro-dsa-algorithms-in-code": {
+        "title": "Algoritmos em Código",
+        "intro": [
+          "Nesses vídeos, você escreverá código Python para os algoritmos de busca linear e binária."
+        ]
+      },
+      "intro-dsa-recursion-and-space-complexity": {
+        "title": "Recursão e Complexidade de Espaço",
+        "intro": [
+          "Nesses vídeos, você aprenderá sobre recursão e complexidade de espaço para algoritmos."
+        ]
+      },
+      "intro-dsa-arrays": {
+        "title": "Introdução a Arrays",
+        "intro": [
+          "Nesses vídeos, você aprenderá como trabalhar com arrays. Você aprenderá sobre diferentes operações incluindo inserir, excluir e buscar."
+        ]
+      },
+      "intro-dsa-linked-lists": {
+        "title": "Introdução a Listas Ligadas",
+        "intro": [
+          "Nesses vídeos, você aprenderá sobre listas ligadas. Você aprenderá como adicionar nós a uma lista, assim como remover e buscar em uma lista."
+        ]
+      },
+      "intro-dsa-merge-sort": {
+        "title": "O Algoritmo Merge Sort",
+        "intro": ["Nesses vídeos, você aprenderá sobre o algoritmo merge sort."]
+      },
+      "intro-dsa-sorting-linked-lists": {
+        "title": "Ordenando uma Lista Ligada",
+        "intro": [
+          "Nesses vídeos, você aprenderá mais sobre como ordenar listas ligadas."
+        ]
+      },
+      "intro-dsa-sorting-algorithms": {
+        "title": "Algoritmos de Ordenação",
+        "intro": [
+          "Nesses vídeos, você aprenderá sobre algoritmos comuns de ordenação incluindo selection sort e quicksort."
+        ]
+      },
+      "intro-dsa-sorting-searching-algorithms": {
+        "title": "Buscando Nomes usando Algoritmos de Ordenação e Busca",
+        "intro": [
+          "Nesses vídeos, você praticará buscar nomes usando os algoritmos de busca binária e linear e comparar os tempos de execução entre eles."
         ]
       }
     }
@@ -3239,16 +3311,40 @@
           "Neste laboratório, você implementará o algoritmo bubble sort para ordenar um array de inteiros em ordem crescente."
         ]
       },
-      "lab-quicksort-js": {
-        "title": "Implement the Quicksort Algorithm",
+      "lab-selection-sort-js": {
+        "title": "Implementar o Algoritmo de Ordenação por Seleção",
         "intro": [
-          "In this lab you will implement the quicksort algorithm to sort an array of integers."
+          "Neste laboratório você implementará o algoritmo de ordenação por seleção."
+        ]
+      },
+      "lab-insertion-sort": {
+        "title": "Implementar a Ordenação por Inserção",
+        "intro": [
+          "Neste laboratório, você implementará o algoritmo insertion sort para ordenar um array de inteiros em ordem crescente."
+        ]
+      },
+      "lab-quicksort-js": {
+        "title": "Implementar o Algoritmo Quicksort",
+        "intro": [
+          "Neste laboratório você implementará o algoritmo quicksort para ordenar um array de inteiros."
         ]
       },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Compreendendo Grafos e Árvores",
         "intro": [
           "Nesta lição, você aprenderá sobre estruturas de dados fundamentais como grafos, árvores e suas aplicações práticas em ciência da computação."
+        ]
+      },
+      "lab-adjacency-list-to-matrix-converter-js": {
+        "title": "Crie um Conversor de Lista de Adjacência para Matriz",
+        "intro": [
+          "Neste laboratório, você implementará uma função que converte uma representação em lista de adjacência de um grafo para uma representação em matriz de adjacência."
+        ]
+      },
+      "quiz-dynamic-programming-js": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in JavaScript with this quiz."
         ]
       },
       "lecture-understanding-functional-programming": {
@@ -3337,17 +3433,17 @@
     }
   },
   "front-end-development-libraries-v9": {
-    "title": "Frontend Development Libraries Certification",
+    "title": "Certificação de Bibliotecas de Desenvolvimento Front-End",
     "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Recomendamos completar os cursos disponíveis abaixo para se preparar para o exame de certificação assim que for lançado.",
     "intro": [
       "Este curso ensina as bibliotecas que os desenvolvedores utilizam para criar páginas da web: React, TypeScript, e mais.",
-      "To earn your Frontend Development Libraries Certification:",
+      "Para conquistar sua Certificação de Bibliotecas de Desenvolvimento Front-End:",
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
-      "- Pass the Frontend Development Libraries Certification exam."
+      "- Passe no exame de Certificação de Bibliotecas de Desenvolvimento Front-End."
     ],
     "chapters": {
-      "front-end-development-libraries": "Frontend Development Libraries",
-      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
+      "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End",
+      "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
     },
     "modules": {
       "react-fundamentals": "Fundamentos do React",
@@ -3359,8 +3455,8 @@
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
       "data-visualization": "Visualização de dados e D3",
       "typescript-fundamentals": "Fundamentos do TypeScript",
-      "review-front-end-libraries": "Frontend Libraries Review",
-      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
+      "review-front-end-libraries": "Revisão sobre bibliotecas Front-end",
+      "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
     },
     "module-intros": {
       "data-visualization": {
@@ -3378,7 +3474,7 @@
       "front-end-development-libraries-certification-exam": {
         "note": "Próximo Lançamento: 2026",
         "intro": [
-          "Pass this exam to earn your Frontend Development Libraries Certification."
+          "Passe neste exame para conquistar a Certificação de Bibliotecas de Desenvolvimento Front-End."
         ]
       }
     },
@@ -3386,7 +3482,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introdução às Bibliotecas e Frameworks JavaScript",
         "intro": [
-          "Nestes ensinamentos, você receberá uma introdução às bibliotecas e frameworks JavaScript. Você aprenderá sobre os papéis das bibliotecas e frameworks JavaScript, aplicativos de página única (SPAs) e o problema que os cerca, e React, a biblioteca JavaScript para frontend mais popular."
+          "Nestas lições, você receberá uma introdução às bibliotecas e frameworks JavaScript. Você aprenderá sobre os papéis das bibliotecas e frameworks JavaScript, aplicativos de página única (SPAs) e o problema que os cerca, e React, a biblioteca JavaScript para frontend mais popular."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -3655,6 +3751,12 @@
           "Nestes cursos, você aprenderá o que é TypeScript e como usá-lo."
         ]
       },
+      "lecture-understanding-type-composition": {
+        "title": "Compreendendo Composição de Tipos",
+        "intro": [
+          "Nestas lições, você aprenderá a trabalhar com tipos de união, interfaces, tipos void e mais."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Trabalhando com Generics e Redução de Tipos",
         "intro": [
@@ -3681,15 +3783,15 @@
         ]
       },
       "review-front-end-libraries": {
-        "title": "Frontend Libraries Review",
+        "title": "Revisão sobre Bibliotecas Front-end",
         "intro": [
-          "Review the Frontend Libraries concepts to prepare for the upcoming quiz."
+          "Revise os conceitos de Bibliotecas Front-End para se preparar para o questionário que vem a seguir."
         ]
       },
       "exam-front-end-development-libraries-certification": {
-        "title": "Frontend Development Libraries Certification Exam",
+        "title": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End",
         "intro": [
-          "Pass this exam to earn your Frontend Development Libraries Certification"
+          "Passe neste exame para ganhar sua Certificação de Bibliotecas de Desenvolvimento Front-End"
         ]
       }
     }
@@ -3758,6 +3860,12 @@
         "title": "Números e operações matemáticas",
         "intro": [
           "Nestas aulas, você aprenderá sobre números e operações matemáticas em Python."
+        ]
+      },
+      "workshop-bill-splitter": {
+        "title": "Crie um Divisor de Conta",
+        "intro": [
+          "Neste workshop você criará um divisor de conta para praticar trabalhar com números e operações matemáticas em Python"
         ]
       },
       "lecture-booleans-and-conditionals": {
@@ -3977,7 +4085,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Criar uma Calculadora de Descontos",
+        "title": "Build an Apply Discount Function",
         "intro": [
           "Neste laboratório, você praticará Python básico criando uma calculadora para aplicar um desconto a um preço."
         ]
@@ -4432,17 +4540,17 @@
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Backend Development and APIs Certification",
+    "title": "Certificação de Desenvolvimento Back-End e APIs",
     "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve.",
     "intro": [
-      "This course teaches you the fundamentals of backend development and APIs.",
-      "To earn your Backend Development and APIs Certification:",
+      "Este curso ensina os fundamentos do Desenvolvimento Back-End e APIs.",
+      "Para conquistar sua Certificação de Desenvolvimento Back-End e APIs:",
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
-      "- Pass the Backend Development and APIs Certification exam."
+      "- Passe no exame de Certificação de Desenvolvimento Back-End e APIs."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Backend Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Desenvolvimento Back-End e APIs",
+      "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "modules": {
       "introduction-to-nodejs": "Introdução a Node.js",
@@ -4458,7 +4566,7 @@
       "security-and-privacy": "Segurança e Privacidade",
       "authentication": "Autenticação",
       "tooling-and-deployment": "Ferramentas e Implantação",
-      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "module-intros": {
       "introduction-to-nodejs": {
@@ -4536,13 +4644,13 @@
       "tooling-and-deployment": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
+          "Neste módulo, você aprenderá sobre ferramentas comuns usadas na indústria para a implantação de suas aplicações full-stack. Em seguida, fará um breve questionário para testar seu conhecimento."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
-          "Pass this exam to earn your Backend Development and APIs Certification."
+          "Passe neste exame para ganhar sua Certificação de Desenvolvimento Back End e APIs."
         ]
       }
     },
@@ -4550,7 +4658,7 @@
       "lecture-working-with-nodejs-and-event-driven-architecture": {
         "title": "Trabalhando com o NodeJS e com a arquitetura orientada a eventos",
         "intro": [
-          "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no seu computador e as vantagens e desvantagens de usar o Node.js no backend."
+          "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no computador, e as vantagens e desvantagens de usar o Node.js no back-end."
         ]
       },
       "review-node-js-core-modules": {
@@ -4600,25 +4708,25 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Backend Development and APIs Certification Exam",
+        "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
-          "Pass this exam to earn your Backend Development and APIs Certification"
+          "Passe neste exame para ganhar sua Certificação de Desenvolvimento Back End e APIs"
         ]
       }
     }
   },
   "full-stack-developer-v9": {
-    "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "title": "Currículo de Desenvolvedor Full Stack Certificado",
+    "note": "Se você estava previamente trabalhando em nosso currículo de full-stack, não se preocupe - seu progresso está salvo. Nós o dividimos em certificações menores para você conquistar ao longo da sua jornada. Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Comece a obter as certificações necessárias para estar pronto quando for lançado.",
     "intro": [
-      "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
+      "Esta certificação representa o culminar da sua jornada como desenvolvedor full stack. Demonstra sua capacidade de construir aplicações web completas e modernas do início ao fim.",
+      "Para se qualificar para o exame, você deve obter as certificações abaixo. Passe no exame para conquistar sua Certificação de Desenvolvedor Full Stack."
     ],
     "chapters": {
-      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
     "modules": {
-      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
     "module-intros": {
       "certified-full-stack-developer-exam": {
@@ -4630,71 +4738,73 @@
     },
     "blocks": {
       "exam-certified-full-stack-developer": {
-        "title": "Certified Full-Stack Developer Exam",
-        "intro": ["Pass this exam to become a Certified Full-Stack Developer."]
+        "title": "Exame de Desenvolvedor Full Stack Certificado",
+        "intro": [
+          "Passe neste exame para se tornar um Desenvolvedor Full Stack Certificado."
+        ]
       }
     }
   },
   "html-forms-and-tables": {
-    "title": "HTML Forms and Tables",
+    "title": "Formulários e Tabelas",
     "summary": [
-      "Learn how to build accessible forms and data tables with semantic HTML."
+      "Aprenda a construir formulários acessíveis e tabelas de dados com HTML semântico."
     ],
     "intro": [
-      "Learn how to build accessible forms and data tables with semantic HTML.",
-      "Practice structuring inputs, labels, and tabular data so everyone can navigate and submit information confidently."
+      "Aprenda a construir formulários acessíveis e tabelas de dados com HTML semântico.",
+      "Pratique a estruturação de inputs, labels e dados tabulares para que todos possam navegar e enviar informações com confiança."
     ],
     "blocks": {
       "lecture-working-with-forms": {
-        "title": "Working with Forms",
+        "title": "Trabalhando com Formulários",
         "intro": [
-          "In these lessons, you will learn about forms, the role of labels, inputs and buttons in creating forms, client-side form validation, and form states."
+          "Nestas lições, você aprenderá sobre formulários, o papel das labels, inputs e botões na criação de formulários, validação de formulários no lado do cliente e estados do formulário."
         ]
       },
       "workshop-hotel-feedback-form": {
-        "title": "Build a Hotel Feedback Form",
+        "title": "Crie um Formulário de Feedback de Hotel",
         "intro": [
-          "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "Neste workshop, você construirá um Formulário de Feedback de Hotel.",
+          "Você praticará o trabalho com labels, inputs, fieldsets, legends, textareas e botões."
         ]
       },
       "lecture-working-with-tables": {
-        "title": "Working with Tables",
+        "title": "Trabalhando com Tabelas",
         "intro": [
-          "In these lessons, you will learn about HTML tables, how to create them, and when to use them."
+          "Nestas lições, você aprenderá sobre tabelas HTML, como criá-las e quando usá-las."
         ]
       },
       "workshop-final-exams-table": {
-        "title": "Build a Final Exams Table",
+        "title": "Crie uma tabela dos exames finais",
         "intro": [
-          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+          "Neste workshop, você praticará o trabalho com tabelas HTML criando uma tabela de exames finais."
         ]
       },
       "lab-book-catalog-table": {
-        "title": "Build a Book Catalog Table",
+        "title": "Crie uma tabela de catálogo de livros ",
         "intro": [
-          "In this lab, you'll review HTML tables by building a book information table.",
-          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code>, and <code>td</code> elements."
+          "Neste laboratório, você revisará tabelas HTML criando uma tabela de informações de livros.",
+          "Você praticará os diferentes componentes de tabela, como os elementos <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code> e <code>td</code>."
         ]
       },
       "lecture-working-with-html-tools": {
-        "title": "Working with HTML Tools",
+        "title": "Trabalhando com Ferramentas de HTML",
         "intro": [
-          "In these lectures, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
+          "Nestas lições, você aprenderá sobre ferramentas de HTML e como elas permitem que você escreva um código melhor. Estas ferramentas incluem validadores HTML, DOM Inspector e as ferramentas de desenvolvimento dos navegadores."
         ]
       },
       "review-html-tables-and-forms": {
-        "title": "HTML Tables and Forms Review",
+        "title": "Revisão sobre Tabelas e Formulários em HTML",
         "intro": [
-          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
-          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
+          "Antes de ser questionado sobre formulários HTML, tabelas e ferramentas, você primeiro precisa revisar os conceitos.",
+          "Abra esta página para revisar os elementos <code>table</code>, <code>input</code>, e <code>button</code>, bem como ferramentas comumente usadas como o validador HTML e mais."
         ]
       },
       "quiz-html-tables-and-forms": {
-        "title": "HTML Tables and Forms Quiz",
+        "title": "Questionário sobre Tabelas e Formulários em HTML",
         "intro": [
-          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
-          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+          "O seguinte questionário testará seu conhecimento sobre tabelas HTML, formulários e ferramentas HTML comumente usadas.",
+          "Se você está se preparando para o exame, existem vários conjuntos de questionários disponíveis para prática. Após concluir um questionário, você pode revisitar esta página para acessar um novo conjunto de perguntas."
         ]
       }
     }
@@ -4729,18 +4839,6 @@
       "es-a1-module-describing-people-at-work": "Descrevendo Pessoas no Trabalho"
     },
     "module-intros": {
-      "es-a1-module-sharing-your-personal-details": {
-        "note": "Próximo Lançamento: 2026",
-        "intro": [
-          "Neste módulo, você praticará a compreensão de conversas curtas que pedem dados pessoais, como nome, informações de contato, nacionalidade e idade."
-        ]
-      },
-      "es-a1-module-numbers-30-to-100": {
-        "note": "Próximo Lançamento: 2026",
-        "intro": [
-          "Neste módulo, você aprenderá a ler, escrever e pronunciar números de 30 a 100."
-        ]
-      },
       "es-a1-module-describing-a-company": {
         "note": "Próximo Lançamento: 2026",
         "intro": [
@@ -6295,143 +6393,143 @@
     "intro": ["Grande introdução para a página superblock."],
     "blocks": {
       "workshop-curriculum-outline": {
-        "title": "Build a Curriculum Outline",
+        "title": "Crie um Esquema de Currículo",
         "intro": [
-          "Welcome to freeCodeCamp!",
-          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
+          "Bem-vindo ao freeCodeCamp!",
+          "Este workshop servirá como sua introdução ao HTML e à codificação em geral. Você aprenderá sobre elementos de cabeçalho e parágrafo."
         ]
       },
       "lab-debug-camperbots-profile-page": {
-        "title": "Debug Camperbot's Profile Page",
+        "title": "Depure a Página de Perfil do Camperbot",
         "intro": [
-          "Camperbot is learning how to code too and needs some help with their HTML.",
-          "In this lab, you will help Camperbot find and fix the errors in their code."
+          "O Camperbot também está aprendendo a codificar e precisa de ajuda com o seu HTML.",
+          "Neste laboratório, você ajudará o Camperbot a encontrar e corrigir os erros em seu código."
         ]
       },
       "lecture-understanding-html-attributes": {
-        "title": "Understanding HTML Attributes",
+        "title": "Entendendo Atributos HTML",
         "intro": [
-          "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
-          "You will learn about HTML's role on the web, and what HTML attributes are."
+          "Nestas lições, você aprenderá mais sobre HTML (HyperText Markup Language), uma linguagem de marcação para criar páginas da web.",
+          "Você aprenderá sobre o papel do HTML na web e o que são atributos HTML."
         ]
       },
       "lab-debug-pet-adoption-page": {
-        "title": "Debug a Pet Adoption Page",
+        "title": "Depurar uma Página de Adoção de Animais",
         "intro": [
-          "In this lab, you will need to find and fix the errors in this pet adoption page."
+          "Neste laboratório, você precisará encontrar e corrigir os erros nesta página de adoção de animais."
         ]
       },
       "lecture-understanding-the-html-boilerplate": {
-        "title": "Understanding the HTML Boilerplate",
+        "title": "Entendendo o Boilerplate HTML",
         "intro": [
-          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
-          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
+          "Nestas lições, você aprenderá sobre o boilerplate HTML, que é um modelo pronto para suas páginas da web.",
+          "Você aprenderá a trabalhar com o elemento <code>link</code>, elemento <code>meta</code> e mais."
         ]
       },
       "workshop-cat-photo-app": {
-        "title": "Build a Cat Photo App",
+        "title": "Crie um Aplicativo de Fotos de Gatos",
         "intro": [
-          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
-          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+          "O HTML é a linguagem de marcação de hipertexto e representa o conteúdo e a estrutura de uma página da web.",
+          "Neste workshop, você aprenderá a trabalhar com elementos básicos do HTML, como títulos, parágrafos, imagens, links e listas."
         ]
       },
       "lab-recipe-page": {
-        "title": "Build a Recipe Page",
+        "title": "Crie uma Página de Receitas",
         "intro": [
-          "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+          "Neste laboratório, você revisará os conceitos básicos do HTML criando uma página web com sua receita favorita. Você criará um boilerplate HTML e trabalhará com títulos, listas, imagens e mais."
         ]
       },
       "lecture-html-fundamentals": {
-        "title": "HTML Fundamentals",
+        "title": "Fundamentos de HTML ",
         "intro": [
-          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "Nestas lições, você aprenderá sobre fundamentos do HTML, como o elemento <code>div</code>, os atributos <code>id</code> e <code>class</code>, o boilerplate HTML, entidades HTML e outros conceitos."
         ]
       },
       "workshop-bookstore-page": {
-        "title": "Build a Bookstore Page",
+        "title": "Criar uma Página de Livraria",
         "intro": [
-          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+          "Neste workshop, você praticará trabalhar com classes, ids e o elemento <code>div</code> criando uma página de livraria."
         ]
       },
       "lecture-understanding-how-html-affects-seo": {
-        "title": "Understanding How HTML Affects SEO",
+        "title": "Entendendo Como o HTML Afeta o SEO",
         "intro": [
-          "In these lectures, you will learn how your HTML code impacts search engine optimization."
+          "Nestas lições, você aprenderá como o código HTML impacta a otimização para motores de busca."
         ]
       },
       "lab-travel-agency-page": {
-        "title": "Build a Travel Agency Page",
+        "title": "Crie uma página de agência de viagens ",
         "intro": [
-          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
+          "Neste laboratório, você revisará o trabalho com os fundamentos do HTML criando uma página da Web para uma agência de viagens. Você trabalhará com imagens, o elemento <code>figure</code>, o elemento <code>figcaption</code>, o elemento <code>anchor</code> e mais."
         ]
       },
       "lecture-working-with-audio-and-video-elements": {
-        "title": "Working with Audio and Video Elements",
+        "title": "Trabalhando com Elementos de Áudio e Vídeo",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+          "Nestas lições, você aprenderá como trabalhar com os elementos <code>audio</code> e <code>video</code>."
         ]
       },
       "workshop-html-video-player": {
-        "title": "Build an HTML Video Player",
+        "title": "Crie um reprodutor de vídeo HTML",
         "intro": [
-          "In this workshop, you'll use HTML to create a basic video player.",
-          "This project will cover the <code>video</code> element, the video player setup, and more."
+          "Neste workshop, você usará o HTML para criar um reprodutor de vídeo básico.",
+          "Este projeto tratará do elemento <code>video</code>, da configuração do reprodutor de vídeo e muito mais."
         ]
       },
       "lab-html-audio-and-video-player": {
-        "title": "Build an HTML Audio and Video Player",
+        "title": "Crie um Tocador de Áudio e Vídeo HTML",
         "intro": [
-          "In this lab, you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
+          "Neste laboratório, você criará um tocador de áudio e vídeo HTML usando os elementos <code>video</code> e <code>audio</code> com controles e atributos de fonte."
         ]
       },
       "lecture-working-with-images-and-svgs": {
-        "title": "Working with Images and SVGs",
+        "title": "Trabalhando com Imagens e SVGs",
         "intro": [
-          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+          "Nestas lições, você aprenderá como trabalhar com SVGs e sobre técnicas para otimizar suas imagens."
         ]
       },
       "workshop-build-a-heart-icon": {
-        "title": "Build a Heart Icon",
+        "title": "Crie um Ícone de Coração",
         "intro": [
-          "In this workshop, you will practice working with SVGs by building a heart icon"
+          "Neste workshop, você praticará o uso de SVGs ao criar um ícone de coração"
         ]
       },
       "lecture-working-with-media": {
-        "title": "Working with the iframe Element",
+        "title": "Trabalhando com o Elemento iframe",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+          "Nestas lições, você aprenderá como trabalhar com o elemento <code>iframe</code>, que é usado para incorporar um site externo na sua página da web."
         ]
       },
       "workshop-build-a-video-display-using-iframe": {
-        "title": "Build a Video Display Using iframe",
+        "title": "Crie uma Exibição de Vídeo Usando iframe",
         "intro": [
-          "In this workshop, you'll learn how to work with the <code>iframe</code> element by building a video display."
+          "Neste workshop, você aprenderá como trabalhar com o elemento <code>iframe</code> criando uma exibição de vídeo."
         ]
       },
       "lab-video-compilation-page": {
-        "title": "Build a Video Compilation Page",
+        "title": "Crie uma página de compilação de vídeos",
         "intro": [
-          "In this lab, you'll create a video compilation web page. You'll practice working with the <code>iframe</code> element."
+          "Neste laboratório, você criará uma página da Web de compilação de vídeos. Você praticará o trabalho com o elemento <code>iframe</code>."
         ]
       },
       "lecture-working-with-links": {
-        "title": "Working with Links",
+        "title": "Trabalhando com Links ",
         "intro": [
-          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
+          "Nestas lições, você aprenderá sobre links, o atributo <code>target</code>, diferentes estados de link, caminhos absolutos e relativos, e muito mais."
         ]
       },
       "review-basic-html": {
-        "title": "Basic HTML Review",
+        "title": "Revisão do Básico de HTML",
         "intro": [
-          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
-          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
+          "Antes de você ser questionado sobre seus conhecimentos de HTML adquiridos até agora, você precisa rever os conceitos.",
+          "Abra esta página para rever o boilerplate em HTML, elementos <code>audio</code> e <code>video</code>, os diferentes valores de <code>target</code> e mais."
         ]
       },
       "quiz-basic-html": {
-        "title": "Basic HTML Quiz",
+        "title": "Questionário Básico de HTML",
         "intro": [
-          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
-          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+          "O questionário a seguir testará seu conhecimento dos conceitos básicos de HTML que você aprendeu até agora.",
+          "Se você está se preparando para o exame, existem vários conjuntos de questionários disponíveis para prática. Após concluir um questionário, você pode revisitar esta página para acessar um novo conjunto de perguntas."
         ]
       }
     }
@@ -6444,308 +6542,306 @@
     "intro": ["Grande introdução para a página superblock."],
     "blocks": {
       "lecture-importance-of-semantic-html": {
-        "title": "Importance of Semantic HTML",
+        "title": "Importância do HTML Semântico",
         "intro": [
-          "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+          "Nestas lições, você aprenderá sobre HTML semântico, por que deve se preocupar com ele, elementos semânticos, como o HTML semântico difere do HTML de apresentação, e muito mais."
         ]
       },
       "lecture-understanding-nuanced-semantic-elements": {
-        "title": "Understanding Nuanced Semantic Elements",
+        "title": "Entendendo Elementos Semânticos Nuançados",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "Nestas lições, você aprenderá quando deve usar certos elementos semânticos, como o elemento <code>em</code> em vez do <code>i</code>, listas de descrição, e mais."
         ]
       },
       "workshop-major-browsers-list": {
-        "title": "Build a List of Major Web Browsers",
+        "title": "Crie uma lista dos principais navegadores da Web",
         "intro": [
-          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+          "Neste workshop, você criará uma lista de descrição e trabalhará com os elementos <code>dl</code>, <code>dt</code> e <code>dd</code>."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
-        "title": "Working with Text and Time Semantic Elements ",
+        "title": "Trabalhando com Elementos Semânticos de Texto e Tempo",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "Neste curso, você aprenderá sobre a importância da semântica em transmitir significados para o texto e conteúdos relacionados ao tempo, incluindo os elementos <code>time</code>, <code>blockquote</code> e mais."
         ]
       },
       "workshop-quincys-job-tips": {
-        "title": "Build Quincy's Job Tips Page",
+        "title": "Criar a página de dicas de trabalho do Quincy",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "Neste workshop, você praticará o trabalho com HTML semântico usando os elementos <code>q</code>, <code>blockquote</code> e <code>cite</code>."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
-        "title": "Working with Specialized Semantic Elements",
+        "title": "Trabalhando com Elementos Semânticos Especializados",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "Neste curso, você aprenderá sobre elementos semânticos especializados, como os elementos <code>u</code>, <code>s</code>, <code>code</code> e mais."
         ]
       },
       "workshop-blog-page": {
-        "title": "Build a Cat Blog Page",
+        "title": "Crie uma Página de Blog de Gatos",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "Neste workshop, você criará uma página de blog apenas em HTML usando elementos semânticos, incluindo os elementos <code>main</code>, <code>nav</code>, <code>article</code> e <code>footer</code>."
         ]
       },
       "lab-event-hub": {
-        "title": "Build an Event Hub",
+        "title": "Crie uma Central de Eventos",
         "intro": [
-          "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
+          "Neste laboratório, você criará uma central de eventos e revisará elementos semânticos, como <code>header</code>, <code>nav</code>, <code>article</code> e mais."
         ]
       },
       "review-semantic-html": {
-        "title": "Semantic HTML Review",
+        "title": "Revisão sobre HTML Semântico",
         "intro": [
-          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
-          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
+          "Antes de você ser questionado sobre HTML semântico, você precisa rever os conceitos.",
+          "Abra esta página para rever os elementos HTML semânticos, como <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> e mais."
         ]
       },
       "quiz-semantic-html": {
-        "title": "Semantic HTML Quiz",
+        "title": "Questionário sobre HTML Semântico",
         "intro": [
-          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
-          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+          "O questionário a seguir testará seu conhecimento sobre os conceitos de HTML semântico que você aprendeu até agora.",
+          "Se você está se preparando para o exame, existem vários conjuntos de questionários disponíveis para prática. Após concluir um questionário, você pode revisitar esta página para acessar um novo conjunto de perguntas."
         ]
       }
     }
   },
   "lab-survey-form": {
-    "title": "Build a Survey Form",
+    "title": "Crie um formulário de pesquisa ",
     "summary": [
-      "Create a complete survey form while practicing HTML structure and accessible form controls."
+      "Crie um formulário de pesquisa completo enquanto pratica a estrutura HTML e controles de formulário acessíveis."
     ],
     "intro": [
-      "Build a complete survey form with semantic HTML and accessible inputs."
+      "Crie um formulário de pesquisa completo com HTML semântico e inputs acessíveis."
     ],
     "blocks": {
       "lab-survey-form": {
-        "title": "Build a Survey Form",
+        "title": "Crie um Formulário de Pesquisa",
         "intro": [
-          "In this lab, you'll review HTML forms by creating a survey form.",
-          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+          "Neste laboratório, você revisará formulários HTML criando um formulário de pesquisa.",
+          "Você praticará o trabalho com o elemento <code>label</code>, os diferentes elementos <code>input</code>, o atributo <code>required</code> e mais. "
         ]
       }
     }
   },
   "html-and-accessibility": {
-    "title": "Accessibility",
+    "title": "Acessibilidade",
     "summary": [
-      "Learn how to write inclusive HTML using accessibility best practices and ARIA."
+      "Aprenda a escrever HTML inclusivo usando práticas recomendadas de acessibilidade e ARIA."
     ],
     "intro": [
-      "Practice writing accessible HTML structures and form experiences."
+      "Pratique escrever estruturas HTML acessíveis e experiências de formulários."
     ],
     "blocks": {
       "lecture-importance-of-accessibility-and-good-html-structure": {
-        "title": "Importance of Accessibility and Good HTML Structure",
+        "title": "Importância da Acessibilidade e Estrutura de HTML Boa",
         "intro": [
-          "In these lessons, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
+          "Nestas lições, você aprenderá sobre acessibilidade e sua importância, ferramentas assistivas para pessoas com deficiência, atributos HTML que permitem criar sites inclusivos, práticas recomendadas de acessibilidade, e muito mais."
         ]
       },
       "workshop-debug-coding-journey-blog-page": {
-        "title": "Debug a Coding Journey Blog Page",
+        "title": "Depure uma Página de Blog de Jornada de Código",
         "intro": [
-          "In this workshop, you will debug and fix accessibility errors in a coding blog page."
+          "Neste workshop, você depurará e corrigirá erros de acessibilidade em uma página de blog de codificação."
         ]
       },
       "lecture-accessible-tables-forms": {
-        "title": "Working with Accessible Tables and Forms",
+        "title": "Trabalhando com Tabelas e Formulários Acessíveis",
         "intro": [
-          "In these lessons, you will learn about how to create accessible tables and forms."
+          "Nestas lições, você aprenderá como criar tabelas e formulários acessíveis."
         ]
       },
       "workshop-tech-conference-schedule": {
-        "title": "Build a Tech Conference Schedule Table",
+        "title": "Crie uma Tabela de Horários de Conferência de Tecnologia",
         "intro": [
-          "In this workshop, you will build an accessible tech conference schedule table."
+          "Neste workshop, você criará uma tabela de horários de conferência de tecnologia acessível."
         ]
       },
       "lab-debug-donation-form": {
-        "title": "Debug a Donation Form",
+        "title": "Depurar um formulário de doação",
         "intro": [
-          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
+          "Neste laboratório, você vai depurar um formulário de doação, corrigindo erros de sintaxe no HTML e melhorando a acessibilidade."
         ]
       },
       "lecture-introduction-to-aria": {
-        "title": "Introduction to ARIA",
+        "title": "Introdução ao ARIA",
         "intro": [
-          "In these lectures, you will learn about working with ARIA roles."
+          "Nestas lições, você aprenderá sobre o trabalho com funções ARIA."
         ]
       },
       "workshop-accessible-audio-controller": {
-        "title": "Build an Accessible Audio Controller",
+        "title": "Crie um controlador de áudio com acessibilidade",
         "intro": [
-          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+          "Neste workshop, você praticará HTML acessível criando um controlador de áudio que usa o atributo <code>aria-labelledby</code>."
         ]
       },
       "lecture-accessible-media-elements": {
-        "title": "Working with Accessible Media Elements",
+        "title": "Trabalhando com Elementos de Mídia Acessíveis",
         "intro": [
-          "In these lectures, you will learn about how to create accessible links, audio and video content."
+          "Nestas lições, você aprenderá como criar links, conteúdos de áudio e vídeo acessíveis."
         ]
       },
       "lab-checkout-page": {
-        "title": "Build a Checkout Page",
+        "title": "Crie uma Página de Check-Out",
         "intro": [
-          "In this lab, you'll create an accessible checkout page.",
-          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
+          "Neste laboratório, você criará uma página de check-out acessível.",
+          "Você praticará conceitos como atributos <code>alt</code> e funções ARIA."
         ]
       },
       "lab-movie-review-page": {
-        "title": "Design a Movie Review Page",
+        "title": "Projete uma Página de Resenha de Filmes",
         "intro": [
-          "In this lab, you'll create a movie review page.",
-          "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
+          "Neste laboratório, você criará uma página de resenha de filmes.",
+          "Você praticará conceitos como HTML semântico, atributos <code>alt</code>, listas acessíveis e ocultação de conteúdo decorativo dos leitores de tela usando <code>aria-hidden</code>."
         ]
       },
       "lab-multimedia-player": {
-        "title": "Build a Multimedia Player",
+        "title": "Crie um Player Multimídia",
         "intro": [
-          "In this lab, you'll build a multimedia player.",
-          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
+          "Neste laboratório, você criará um player multimídia.",
+          "Você praticará o trabalho com os elementos <code>audio</code> e <code>video</code>, o atributo <code>controls</code> e o atributo <code>aria-label</code>."
         ]
       },
       "review-html-accessibility": {
-        "title": "HTML Accessibility Review",
+        "title": "Revisão sobre Acessibilidade no HTML",
         "intro": [
-          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
-          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
+          "Antes de ser questionado sobre HTML e acessibilidade, você primeiro precisa revisar os conceitos.",
+          "Abra esta página para revisar conceitos, incluindo os atributos <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> e mais."
         ]
       },
       "quiz-html-accessibility": {
-        "title": "HTML Accessibility Quiz",
+        "title": "Questionário sobre Acessibilidade no HTML",
         "intro": [
-          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
-          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+          "O seguinte questionário testará seu conhecimento sobre os conceitos de acessibilidade que você aprendeu até agora.",
+          "Se você está se preparando para o exame, existem vários conjuntos de questionários disponíveis para prática. Após concluir um questionário, você pode revisitar esta página para acessar um novo conjunto de perguntas."
         ]
       }
     }
   },
   "computer-basics": {
-    "title": "Computer Basics",
+    "title": "Noções Básicas de Computador",
     "summary": [
-      "Build a foundation in computer, internet, and tooling basics for web development."
+      "Construa uma base em fundamentos do computador, internet e ferramentas para desenvolvimento web."
     ],
     "intro": [
-      "Get comfortable with the tools and concepts that power modern web development."
+      "Fique confortável com as ferramentas e conceitos que movem o desenvolvimento web moderno."
     ],
     "blocks": {
       "lecture-understanding-computer-internet-and-tooling-basics": {
-        "title": "Understanding Computer, Internet, and Tooling Basics",
+        "title": "Compreendendo os Fundamentos do Computador, da Internet e das Ferramentas",
         "intro": [
-          "In these lessons, you will learn about the computer, its different parts, internet service providers (ISPs), and the tools professional developers use."
+          "Nestes cursos, você aprenderá sobre o computador, suas diferentes partes, provedores de serviços de internet (ISPs) e as ferramentas usadas por desenvolvedores profissionais."
         ]
       },
       "lecture-working-with-file-systems": {
-        "title": "Working with File Systems",
+        "title": "Trabalhando com Sistemas de Arquivos",
         "intro": [
-          "In these lessons, you will learn how to work with file and folder systems on your computers. You will learn how to create, move, and delete files and folders, the best practices for naming and organizing files and folders, and more."
+          "Nestas lições, você aprenderá como trabalhar com sistemas de arquivos e pastas em seus computadores. Você aprenderá como criar, mover e excluir arquivos e pastas, as práticas recomendadas para nomear e organizar arquivos e pastas e muito mais."
         ]
       },
       "lecture-browsing-the-web-effectively": {
-        "title": "Browsing the Web Effectively",
+        "title": "Navegando na Web de Forma Eficiente",
         "intro": [
-          "In these lessons, you will learn about what websites, search engine, and web browsers are, the different browsers available, and how to get the best out of a search engine."
+          "Nestas lições, você aprenderá sobre o que são websites, mecanismos de busca e navegadores da web, os diferentes navegadores disponíveis, e como obter o melhor de um mecanismo de busca."
         ]
       },
       "review-computer-basics": {
-        "title": "Computer Basics Review",
+        "title": "Revisão sobre o Básico a Respeito de Computadores",
         "intro": [
-          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
-          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
+          "Antes de você ser questionado sobre conceitos básicos de computador e internet, você precisa revisar.",
+          "Abra esta página para rever conceitos como RAM, provedores de serviços de internet, os navegadores web comuns, os motores de busca e mais."
         ]
       },
       "quiz-computer-basics": {
-        "title": "Computer Basics Quiz",
+        "title": "Questionário sobre o Básico a Respeito de Computadores",
         "intro": [
-          "Test what you've learned in this quiz of basic computer knowledge."
+          "Teste o que você aprendeu neste questionário de conhecimentos básicos sobre computadores."
         ]
       }
     }
   },
   "basic-css": {
-    "title": "Basic CSS",
+    "title": "CSS Básico",
     "summary": [
-      "Learn core CSS concepts and start styling real-world layouts."
+      "Aprenda conceitos centrais de CSS e comece a estilizar layouts do mundo real."
     ],
-    "intro": [
-      "Learn the fundamentals of CSS and apply them to practical layouts."
-    ],
+    "intro": ["Aprenda os fundamentos do CSS e aplique-os a layouts práticos."],
     "blocks": {
       "lecture-what-is-css": {
-        "title": "What Is CSS?",
+        "title": "O que é CSS?",
         "intro": [
-          "The following lessons are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
+          "Os cursos seguintes são sobre CSS. Você aprenderá o que é CSS e seu papel na web, uma regra CSS e sua anatomia, as três maneiras de escrever CSS e quando usar cada uma, elementos inline e block, e muitas outras informações."
         ]
       },
       "workshop-cafe-menu": {
-        "title": "Design a Cafe Menu",
+        "title": "Crie um menu de cafeteria ",
         "intro": [
-          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+          "O CSS informa ao navegador como exibir sua página da web. Você pode usar o CSS para definir cor, fonte, tamanho e outros aspectos dos elementos HTML.",
+          "Neste workshop, você aprenderá CSS criando uma página de menu para uma página da web para um café."
         ]
       },
       "lab-business-card": {
-        "title": "Design a Business Card",
+        "title": "Crie um Cartão de Visita",
         "intro": [
-          "In this lab, you'll create a business card and style it using CSS.",
-          "You'll practice style properties like <code>color</code>, <code>font-size</code>, <code>text-align</code>, and more."
+          "Neste laboratório, você vai criar um cartão de visita e estilizá-lo usando CSS.",
+          "Você praticará propriedades de estilo como <code>color</code>, <code>font-size</code>, <code>text-align</code> e mais."
         ]
       },
       "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
-        "title": "CSS Specificity, the Cascade Algorithm, and Inheritance",
+        "title": "Especificidade do CSS, o Algoritmo da Cascata e Herança",
         "intro": [
-          "In these lessons, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
+          "Nestas lições, você aprenderá sobre especificidade CSS, os seletores comuns e suas especificidades, o algoritmo da cascata, herança e mais."
         ]
       },
       "review-basic-css": {
-        "title": "CSS Fundamentals Review",
+        "title": "Revisão de fundamentos do CSS",
         "intro": [
-          "Before you are quizzed on basic CSS concepts, you first need to review.",
-          "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
+          "Antes de você ser questionado sobre conceitos básicos de CSS, você precisa revisar.",
+          "Abra esta página para revisar conceitos incluindo <code>margin</code>, <code>padding</code>, combinadores CSS, especificidade CSS e mais."
         ]
       },
       "quiz-basic-css": {
-        "title": "CSS Fundamentals Quiz",
+        "title": "Questionário de fundamentos do CSS",
         "intro": [
-          "Test what you've learned in this quiz of basic CSS knowledge."
+          "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
         ]
       },
       "lecture-styling-lists-and-links": {
-        "title": "Styling Lists and Links",
+        "title": "Estilizando Listas e Links",
         "intro": [
-          "In these lessons, you will learn the properties you need to know to effectively style lists and links, including link states like <code>link</code>, <code>visited</code>, <code>hover</code>, and <code>active</code>."
+          "Nestas lições, você aprenderá as propriedades que você precisa conhecer para estilizar com eficiência listas e links, incluindo estados de link como <code>link</code>, <code>visited</code>, <code>hover</code>, e <code>active</code>."
         ]
       },
       "lab-stylized-to-do-list": {
-        "title": "Build a Stylized To-Do List",
+        "title": "Crie uma Lista de Tarefas Estilizada",
         "intro": [
-          "In this lab, you'll build a To-Do list and apply different styles to the links",
-          "You'll practice style properties like <code>text-decoration</code>, <code>list-style-type</code> and how to change styles on hover or click."
+          "Neste laboratório, você vai criar uma lista de tarefas e aplicar diferentes estilos aos links",
+          "Você praticará propriedades de estilo como <code>text-decoration</code>, <code>list-style-type</code> e como mudar estilos em hover ou click."
         ]
       },
       "lecture-working-with-backgrounds-and-borders": {
-        "title": "Working with Backgrounds and Borders",
+        "title": "Trabalhando com Fundos e Bordas",
         "intro": [
-          "In these lessons, you will learn about the properties and values you need to know to style backgrounds and borders of elements, alongside the accessibility considerations for backgrounds."
+          "Nestas lições, você aprenderá sobre as propriedades e valores necessários para estilizar fundos e bordas dos elementos, juntamente com as considerações de acessibilidade para fundos."
         ]
       },
       "lab-blog-post-card": {
-        "title": "Design a Blog Post Card",
+        "title": "Projete um Cartão de Postagem de Blog",
         "intro": [
-          "In this lab, you'll design a blog post card using HTML and CSS",
-          "You'll practice concepts like <code>background-color</code>, <code>border-radius</code>, margins, paddings, and more."
+          "Neste laboratório, você projetará um cartão de postagem de blog usando HTML e CSS",
+          "Você praticará conceitos como <code>background-color</code>, <code>border-radius</code>, margens, preenchimentos e mais."
         ]
       },
       "review-css-backgrounds-and-borders": {
-        "title": "Lists, Links, CSS Background and Borders Review",
+        "title": "Revisão de Listas, Links, Fundos e Bordas CSS",
         "intro": [
-          "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
-          "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
+          "Antes de você ser questionado sobre fundos e bordas do CSS, você precisa revisar.",
+          "Abra esta página para rever conceitos incluindo as propriedades <code>background-image</code>, <code>border</code> e mais."
         ]
       },
       "quiz-css-backgrounds-and-borders": {
-        "title": "CSS Backgrounds and Borders Quiz",
+        "title": "Questionário sobre Bordas e Segundo Plano no CSS",
         "intro": [
-          "Test what you've learned in this quiz of backgrounds and borders in CSS."
+          "Teste o que você aprendeu neste questionário sobre bordas e segundo plano em CSS."
         ]
       }
     }
@@ -6753,255 +6849,267 @@
   "design-for-developers": {
     "title": "Design",
     "summary": [
-      "Explore UI design fundamentals and user-centered design principles for developers."
+      "Explore fundamentos de design de UI e princípios de design centrado no usuário para desenvolvedores."
     ],
     "intro": [
-      "Learn the design principles that help developers build better interfaces."
+      "Aprenda os princípios de design que ajudam desenvolvedores a construir interfaces melhores."
     ],
     "blocks": {
       "lecture-user-interface-design-fundamentals": {
-        "title": "User Interface Design Fundamentals",
+        "title": "Fundamentos do Design de Interfaces de Usuário",
         "intro": [
-          "In these lessons, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual hierarchy, scaling, alignment, whitespace, and much more."
+          "Nestas lições, você aprenderá sobre os fundamentos do design de interface do usuário (UI). Você aprenderá sobre os termos que você deve conhecer para se comunicar com designers, hierarquia visual, escalonamento, alinhamento, espaços em branco, e muito mais."
         ]
       },
       "lecture-user-centered-design": {
-        "title": "User-Centered Design",
+        "title": "Design Centrado no Usuário",
         "intro": [
-          "In these lessons, you will learn about best practices for designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to conduct user research, user requirements and testing."
+          "Nestas lições, você aprenderá sobre práticas recomendadas para projetar recursos voltados para o usuário, como modo escuro, breadcrumbs, diálogos modais, e muito mais. Você também aprenderá a realizar pesquisas de usuário, requisitos de usuário e testes."
         ]
       },
       "lecture-common-design-tools": {
-        "title": "Common Design Tools",
+        "title": "Ferramentas Comuns de Design",
         "intro": [
-          "In these lessons, you will learn about the common design tools developers should know. You will also learn about design briefs and how developers work with them."
+          "Nestas lições, você aprenderá sobre as ferramentas de design comuns que os desenvolvedores devem conhecer. Você também aprenderá sobre resumos de design e como os desenvolvedores trabalham com eles."
         ]
       },
       "review-design-fundamentals": {
-        "title": "Design Fundamentals Review",
+        "title": "Revisão de Fundamentos de Design",
         "intro": [
-          "Before you are quizzed on the design fundamentals you have learned so far, you first need to review.",
-          "Open up this page to review concepts like user-centered design, scale, alignment, good visual hierarchy and more."
+          "Antes de você ser questionado sobre os fundamentos de design que aprendeu até agora, você precisa rever.",
+          "Abra esta página para rever conceitos como design centrado no usuário, escala, alinhamento, boa hierarquia visual e mais."
         ]
       },
       "quiz-design-fundamentals": {
-        "title": "Design Fundamentals Quiz",
+        "title": "Questionário de Fundamentos de Design",
         "intro": [
-          "Test what you've learned in this quiz of UI design fundamentals."
+          "Teste o que você aprendeu neste questionário de fundamentos de design de UIs."
         ]
       }
     }
   },
   "absolute-and-relative-units": {
-    "title": "Absolute and Relative Units",
+    "title": "Unidades Absolutas e Relativas",
     "summary": [
-      "Understand when to use absolute and relative CSS units to build flexible layouts."
+      "Entenda quando usar unidades CSS absolutas e relativas para construir layouts flexíveis."
     ],
-    "intro": ["Learn to size elements responsively with CSS units."],
+    "intro": [
+      "Aprenda a dimensionar elementos de forma responsiva com unidades CSS."
+    ],
     "blocks": {
       "lecture-working-with-relative-and-absolute-units": {
-        "title": "Working with Relative and Absolute Units",
+        "title": "Trabalhando com Unidades Relativas e Absolutas",
         "intro": [
-          "In these lessons, you will learn about relative and absolute units, and how they both impact what you see in the browser."
+          "Nestas lições, você aprenderá sobre unidades relativas e absolutas, e como elas impactam o que você vê no navegador."
         ]
       },
       "lab-event-flyer-page": {
-        "title": "Build an Event Flyer Page",
+        "title": "Crie uma Página de Anúncio de Evento",
         "intro": [
-          "In this lab, you'll create an event flyer page.",
-          "You will practice aligning elements using absolute and relative CSS."
+          "Neste laboratório, você criará uma página de anúncio de evento.",
+          "Você praticará alinhando elementos usando CSS absoluto e relativo."
         ]
       },
       "review-css-relative-and-absolute-units": {
-        "title": "CSS Relative and Absolute Units Review",
+        "title": "Revisão de Unidades Relativas e Absolutas no CSS",
         "intro": [
-          "Before you are quizzed on relative and absolute units, you first need to review.",
-          "Open up this page to review concepts like percentages, <code>px</code>, <code>rem</code>, <code>em</code>, and more."
+          "Antes de você ser questionado sobre unidades relativas e absolutas, você precisa revisar.",
+          "Abra esta página para rever conceitos como porcentagens, <code>px</code>, <code>rem</code>, <code>em</code> e mais."
         ]
       },
       "quiz-css-relative-and-absolute-units": {
-        "title": "CSS Relative and Absolute Units Quiz",
+        "title": "Questionário de Unidades Relativas e Absolutas no CSS",
         "intro": [
-          "Test what you've learned in this quiz of relative and absolute units in CSS."
+          "Teste o que você aprendeu neste questionário de unidades relativas e absolutas em CSS."
         ]
       }
     }
   },
   "pseudo-classes-and-elements": {
-    "title": "Pseudo Classes and Elements",
+    "title": "Pseudoclasses e Pseudoelementos",
     "summary": [
-      "Use pseudo-classes and pseudo-elements to create richer, more interactive styles."
+      "Use pseudoclasses e pseudoelementos para criar estilos mais ricos e interativos."
     ],
     "intro": [
-      "Add interaction and detail with CSS pseudo-classes and pseudo-elements."
+      "Adicione interação e detalhe com pseudoclasses e pseudoelementos de CSS."
     ],
     "blocks": {
       "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
-        "title": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
+        "title": "Trabalhando com Pseudo-Classes e Pseudo-Elementos em CSS",
         "intro": [
-          "In these lessons, you will learn about pseudo-classes and pseudo-elements, alongside their examples and how they work."
+          "Nestas lições, você aprenderá sobre pseudo-classes e pseudo-elementos, juntamente com seus exemplos e funcionamento."
         ]
       },
       "workshop-greeting-card": {
-        "title": "Design a Greeting Card",
+        "title": "Desenhe um Cartão de Saudações",
         "intro": [
-          "In the previous lessons, you learned how to work with the different types of pseudo-classes.",
-          "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
+          "Nas lições anteriores, você aprendeu a trabalhar com os diferentes tipos de pseudo-classes.",
+          "Neste workshop, você terá a chance de praticar o que aprendeu desenhando um cartão de saudações."
         ]
       },
       "workshop-parent-teacher-conference-form": {
-        "title": "Design a Parent Teacher Conference Form",
+        "title": "Criar um formulário de conferência de professores e pais",
         "intro": [
-          "In this workshop, you will practice how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
-          "You'll practice concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
+          "Neste workshop, você praticará como estilizar botões de opção com diferentes tipos de pseudo-seletores, construindo um formulário de conferência de pais e professores.",
+          "Você praticará conceitos incluindo o seletor de pseudo-elemento <code>::before</code>, a propriedade <code>transform</code> e mais."
         ]
       },
       "lab-job-application-form": {
-        "title": "Build a Job Application Form",
+        "title": "Crie um Formulário de Aplicação para Trabalho",
         "intro": [
-          "In this lab you'll build a job application form and style it using pseudo-classes.",
-          "You'll practice concepts like <code>:hover</code>, <code>:active</code>, <code>:focus</code>, and more."
+          "Neste laboratório, você criará um formulário de aplicação para trabalho e o estilizará usando pseudoclasses.",
+          "Você praticará conceitos como <code>:hover</code>, <code>:active</code>, <code>:focus</code> e mais."
         ]
       },
       "review-css-pseudo-classes": {
-        "title": "CSS Pseudo-classes Review",
+        "title": "Revisão sobre Pseudoclasses em CSS",
         "intro": [
-          "Before you're quizzed on CSS pseudo-classes and pseudo-elements, you should review what you've learned about them.",
-          "Open up this page to review concepts like the <code>::before</code> and <code>::after</code> pseudo-elements as well as the <code>:hover</code>, <code>:active</code> pseudo-classes and more."
+          "Antes de ser testado em pseudoclasses e pseudoelementos de CSS, você deve revisar o que aprendeu sobre eles.",
+          "Abra esta página para revisar conceitos como os pseudoelementos <code>::before</code> e <code>::after</code> assim como as pseudoclasses <code>:hover</code>, <code>:active</code> e mais."
         ]
       },
       "quiz-css-pseudo-classes": {
-        "title": "CSS Pseudo-classes Quiz",
-        "intro": ["Test your knowledge of CSS pseudo-classes with this quiz."]
+        "title": "Questionário sobre Pseudoclasses em CSS",
+        "intro": [
+          "Teste seu conhecimento sobre pseudoclasses de CSS com este questionário."
+        ]
       }
     }
   },
   "css-colors": {
-    "title": "Colors",
+    "title": "Cores",
     "summary": [
-      "Work with CSS color formats and build cohesive color palettes."
+      "Trabalhe com formatos de cor no CSS e construa paletas coesas."
     ],
-    "intro": ["Learn to apply color with CSS to create polished visuals."],
+    "intro": ["Aprenda a aplicar cor com CSS para criar visuais polidos."],
     "blocks": {
       "lecture-working-with-colors-in-css": {
-        "title": "Working with Colors in CSS",
+        "title": "Trabalhando com Cores no CSS",
         "intro": [
-          "In these lessons, you will learn about linear and radial gradients, the color theory, different kinds of colors like named, RGB, Hex, and HSL colors. You will learn how these colors work, and which to use in specific cases."
+          "Nestas lições, você aprenderá sobre gradientes lineares e radiais, teoria das cores, diferentes tipos de cores como nomeadas, RGB, Hex e HSL. Você aprenderá como essas cores funcionam e quais usar em casos específicos."
         ]
       },
       "workshop-colored-markers": {
-        "title": "Build a Set of Colored Markers",
+        "title": "Crie um Conjunto de Marcadores Coloridos",
         "intro": [
-          "In this workshop, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
+          "Neste workshop, você criará um conjunto de marcadores coloridos. Você praticará diferentes formas de definir valores de cor e como combinar cores entre si."
         ]
       },
       "lab-colored-boxes": {
-        "title": "Design a Set of Colored Boxes",
+        "title": "Projete um Conjunto de Caixas Coloridas",
         "intro": [
-          "In this lab, you'll create a color grid and practice adding background colors to the grid items using hex codes, RGB, and predefined color names."
+          "Neste laboratório, você criará uma grade de cores e praticará adicionar cores de fundo aos itens da grade usando códigos hexadecimais, RGB e nomes de cores predefinidos."
         ]
       },
       "review-css-colors": {
-        "title": "CSS Colors Review",
+        "title": "Revisão sobre Cores no CSS",
         "intro": [
-          "Before you're quizzed on CSS colors, you should review what you've learned about them.",
-          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
+          "Antes de ser testado sobre cores do CSS, você deve revisar o que aprendeu sobre elas.",
+          "Abra esta página para revisar conceitos como a função <code>rgb()</code>, função <code>hsl()</code>, códigos <code>hex</code> e mais."
         ]
       },
       "quiz-css-colors": {
-        "title": "CSS Colors Quiz",
-        "intro": ["Test your knowledge of CSS colors with this quiz."]
+        "title": "Questionário sobre Cores no CSS",
+        "intro": [
+          "Teste seu conhecimento sobre cores CSS com este questionário."
+        ]
       }
     }
   },
   "styling-forms": {
-    "title": "Styling Forms",
-    "summary": ["Apply CSS techniques to create clean, usable form layouts."],
-    "intro": ["Style form elements to improve usability and visual clarity."],
+    "title": "Estilização de Formulários",
+    "summary": [
+      "Aplique técnicas de CSS para criar layouts de formulários limpos e utilizáveis."
+    ],
+    "intro": [
+      "Estilize elementos de formulário para melhorar usabilidade e clareza visual."
+    ],
     "blocks": {
       "lecture-best-practices-for-styling-forms": {
-        "title": "Best Practices for Styling Forms",
+        "title": "Práticas Recomendadas para Estilização de Formulários",
         "intro": [
-          "In these lessons, you will learn about the best practices for styling forms and issues you can encounter while styling special inputs like <code>color</code> and <code>datetime-local</code>."
+          "Nestas lições, você aprenderá sobre as práticas recomendadas para estilizar formulários e os problemas que pode encontrar ao estilizar inputs especiais como <code>color</code> e <code>datetime-local</code>."
         ]
       },
       "workshop-registration-form": {
-        "title": "Design a Registration Form",
+        "title": "Crie um formulário de inscrição ",
         "intro": [
-          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+          "Neste workshop, você aprenderá a projetar formulários HTML criando uma página de cadastro. Você aprenderá a controlar quais tipos de dados as pessoas podem digitar no formulário e algumas novas ferramentas CSS para estilizar sua página."
         ]
       },
       "lab-contact-form": {
-        "title": "Design a Contact Form",
+        "title": "Crie um formulário de contato ",
         "intro": [
-          "In this lab, you'll design a contact form in HTML and style it using CSS."
+          "Neste laboratório, você projetará um formulário de contato em HTML e o estilizará usando CSS."
         ]
       },
       "workshop-game-settings-panel": {
-        "title": "Build a Game Settings Panel",
+        "title": "Criar um painel de configurações do jogo",
         "intro": [
-          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+          "Neste workshop, você praticará a estilização de caixas de seleção criando um painel de configurações de jogo."
         ]
       },
       "lab-feature-selection": {
-        "title": "Design a Feature Selection Page",
+        "title": "Projete uma Página de Seleção de Recursos",
         "intro": [
-          "In this lab, you'll build a feature selection page with custom-styled checkboxes.",
-          "You'll create feature cards with labels and checkboxes, then give custom styling to the checkboxes."
+          "Neste laboratório, você criará uma página de seleção de recursos com caixas de seleção customizadas.",
+          "Você criará cartões de recursos com rótulos e caixas de seleção, em seguida dará um estilo personalizado às caixas de seleção."
         ]
       },
       "review-styling-forms": {
-        "title": "Styling Forms Review",
+        "title": "Revisão sobre Estilização de Formulários",
         "intro": [
-          "Before you're quizzed on styling forms, you should review what you've learned.",
-          "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
+          "Antes de ser testado sobre estilização de formulários, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar como estilizar inputs de formulário, trabalhar com <code>appearance: none</code> e mais."
         ]
       },
       "quiz-styling-forms": {
-        "title": "Styling Forms Quiz",
+        "title": "Questionário sobre Estilização de Formulários",
         "intro": [
-          "In this quiz, you will test your knowledge of how to style forms."
+          "Neste questionário, você testará seu conhecimento sobre como estilizar formulários."
         ]
       }
     }
   },
   "css-box-model": {
-    "title": "The Box Model",
+    "title": "O Modelo de Caixa",
     "summary": [
-      "Master the CSS box model, spacing, and layout effects for precise designs."
+      "Domine o modelo de caixa CSS, espaçamento e efeitos de layout para designs precisos."
     ],
-    "intro": ["Learn how spacing, borders, and layout effects work together."],
+    "intro": [
+      "Aprenda como espaçamentos, bordas e efeitos de layout funcionam em conjunto."
+    ],
     "blocks": {
       "lecture-working-with-css-transforms-overflow-and-filters": {
-        "title": "Working with CSS Transforms, Overflow, and Filters",
+        "title": "Trabalhando com Transformações, Overflow e Filtros em CSS",
         "intro": [
-          "In these lessons, you will learn about working with CSS transforms, overflow, and filters. You will also learn about the box model and how it works."
+          "Nestas lições, você aprenderá sobre transformações CSS, overflow e filtros. Você também aprenderá sobre o modelo de caixa e como ele funciona."
         ]
       },
       "workshop-rothko-painting": {
-        "title": "Design a Rothko Painting",
+        "title": "Projete uma Pintura ao Estilo Rothko",
         "intro": [
-          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
-          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+          "Cada elemento HTML é uma caixa própria – com seu próprio espaçamento e uma borda. A isso chamamos de Modelo de Caixa.",
+          "Neste workshop, você usará o CSS e o Box Model para criar suas próprias obras de arte retangulares ao estilo Rothko."
         ]
       },
       "lab-confidential-email-page": {
-        "title": "Build a Confidential Email Page",
+        "title": "Crie uma Página de E-mail Confidencial",
         "intro": [
-          "In this lab, you'll create a web page using HTML and mask the content using CSS properties."
+          "Neste laboratório, você criará uma página Web usando HTML e mascarará o conteúdo usando propriedades CSS."
         ]
       },
       "review-css-layout-and-effects": {
-        "title": "CSS Layouts and Effects Review",
+        "title": "Revisão sobre Layouts e Efeitos em CSS",
         "intro": [
-          "Before you are quizzed on CSS Layouts and Effects, you first need to review.",
-          "Open up this page to review concepts like the <code>transform</code> property, the box model, the <code>overflow</code> property and more."
+          "Antes de responder ao questionário sobre Layouts e Efeitos em CSS, você precisa revisar.",
+          "Abra esta página para revisar conceitos como a propriedade <code>transform</code>, o modelo de caixas, a propriedade <code>overflow</code> e mais."
         ]
       },
       "quiz-css-layout-and-effects": {
-        "title": "CSS Layout and Effects Quiz",
+        "title": "Questionário sobre Layouts e Efeitos em CSS",
         "intro": [
-          "In this quiz, you will test your knowledge of the box model, transforms, filters, and overflow in CSS."
+          "Neste questionário, você testará seu conhecimento sobre o modelo de caixas, transformações, filtros e overflow em CSS."
         ]
       }
     }
@@ -7009,426 +7117,456 @@
   "css-flexbox": {
     "title": "Flexbox",
     "summary": [
-      "Build responsive layouts using the Flexbox model and alignment tools."
+      "Crie layouts responsivos usando o modelo Flexbox e ferramentas de alinhamento."
     ],
-    "intro": ["Use Flexbox to build responsive, aligned layouts."],
+    "intro": ["Use Flexbox para criar layouts responsivos e alinhados."],
     "blocks": {
       "lecture-working-with-css-flexbox": {
-        "title": "Working with CSS Flexbox",
+        "title": "Trabalhando com CSS Flexbox",
         "intro": [
-          "In these lessons, you will learn how CSS flexbox works, its properties, and when you should use it."
+          "Nestas lições, você aprenderá como o flexbox do CSS funciona, suas propriedades e quando você deve usá-lo."
         ]
       },
       "workshop-flexbox-photo-gallery": {
-        "title": "Build a Flexbox Photo Gallery",
+        "title": "Crie uma Galeria de Fotos com Flexbox",
         "intro": [
-          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+          "Neste workshop, você usará Flexbox para criar uma página da galeria de fotos responsiva."
         ]
       },
       "lab-pricing-plans-layout": {
-        "title": "Build a Pricing Plans Layout",
+        "title": "Crie uma página de layout de planos de preços",
         "intro": [
-          "In this lab, you'll create a pricing plans layout.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+          "Neste laboratório, você criará um layout de planos de preços.",
+          "Você praticará o alinhamento de elementos usando propriedades de flexbox como <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> e mais."
         ]
       },
       "review-css-flexbox": {
-        "title": "CSS Flexbox Review",
+        "title": "Revisão sobre o Flexbox do CSS ",
         "intro": [
-          "Before you're quizzed on CSS flexbox, you should review what you've learned.",
-          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties, and more."
+          "Antes de ser testado no Flexbox do CSS, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar conceitos como as propriedades <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> e mais."
         ]
       },
       "quiz-css-flexbox": {
-        "title": "CSS Flexbox Quiz",
-        "intro": ["Test what you've learned on CSS flexbox with this quiz."]
+        "title": "Questionário sobre o Flexbox do CSS ",
+        "intro": [
+          "Teste o que você aprendeu sobre Flexbox do CSS com este questionário."
+        ]
       }
     }
   },
   "lab-page-of-playing-cards": {
-    "title": "Build a Page of Playing Cards",
+    "title": "Construa uma página de jogos de cartas ",
     "summary": [
-      "Create a multi-card layout to practice flexible CSS composition."
+      "Crie um layout multi-cartão para praticar composição flexível em CSS."
     ],
-    "intro": ["Build a card-based layout and practice reusable styling."],
+    "intro": [
+      "Crie um layout baseado em cartões e pratique estilização reutilizável."
+    ],
     "blocks": {
       "lab-page-of-playing-cards": {
-        "title": "Build a Page of Playing Cards",
+        "title": "Crie uma página de jogos de cartas",
         "intro": [
-          "In this lab, you'll use flexbox to create a webpage of playing cards.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+          "Neste laboratório, você usará flexbox para criar uma página da web de cartas de baralho.",
+          "Você praticará o alinhamento de elementos usando propriedades de flexbox como <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> e mais."
         ]
       }
     }
   },
   "css-typography": {
-    "title": "Typography",
+    "title": "Tipografia",
     "summary": [
-      "Learn how to style text for readability, hierarchy, and visual balance."
+      "Aprenda a estilizar texto para legibilidade, hierarquia e equilíbrio visual."
     ],
-    "intro": ["Use typography to improve readability and visual hierarchy."],
+    "intro": ["Use tipografia para melhorar legibilidade e hierarquia visual."],
     "blocks": {
       "lecture-working-with-css-fonts": {
-        "title": "Working with CSS Fonts",
+        "title": "Trabalhando com Fontes no CSS",
         "intro": [
-          "In these lessons, you will learn about typography and its best practices, fonts, and the <code>text-shadow</code> property."
+          "Nestas lições, você aprenderá sobre tipografia e suas melhores práticas, fontes e a propriedade <code>text-shadow</code>."
         ]
       },
       "workshop-nutritional-label": {
-        "title": "Build a Nutritional Label",
+        "title": "Crie um Rótulo Nutricional",
         "intro": [
-          "Typography is the art of styling your text to be easily readable and suit its purpose.",
-          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+          "A tipografia é a arte de estilizar seu texto para ser facilmente legível e adequado ao seu propósito.",
+          "Neste workshop, você usará a tipografia para construir uma página de rótulo nutricional. Você praticará como estilizar texto, ajustar a altura da linha e posicionar seu texto usando CSS."
         ]
       },
       "lab-newspaper-article": {
-        "title": "Build a Newspaper Article",
+        "title": "Crie um Artigo de Jornal",
         "intro": [
-          "In this lab, you'll build a newspaper article page using HTML and CSS.",
-          "You'll style the fonts using properties like <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, and more."
+          "Neste laboratório, você criará uma página de artigo de jornal usando HTML e CSS.",
+          "Você estilizará as fontes usando propriedades como <code>font-family</code>, <code>font-size</code>, <code>font-weight</code> e mais."
         ]
       },
       "review-css-typography": {
-        "title": "CSS Typography Review",
+        "title": "Revisão sobre Tipografia no CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of typography, you should review what you've learned.",
-          "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
+          "Antes de ser testado nos fundamentos da tipografia, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar conceitos como fontes seguras para a web, a propriedade <code>font-family</code> e mais."
         ]
       },
       "quiz-css-typography": {
-        "title": "CSS Typography Quiz",
-        "intro": ["Test your knowledge of typography with this quiz."]
+        "title": "Questionário sobre Tipografia no CSS",
+        "intro": [
+          "Teste seu conhecimento sobre tipografia com este questionário."
+        ]
       }
     }
   },
   "css-and-accessibility": {
-    "title": "Accessibility",
+    "title": "Acessibilidade",
     "summary": [
-      "Apply CSS techniques that support accessible and inclusive interfaces."
+      "Aplique técnicas de CSS que suportem interfaces acessíveis e inclusivas."
     ],
-    "intro": ["Design with accessibility in mind while styling UI elements."],
+    "intro": [
+      "Projete com acessibilidade em mente ao estilizar elementos de UI."
+    ],
     "blocks": {
       "lecture-best-practices-for-accessibility-and-css": {
-        "title": "Best Practices for Accessibility and CSS",
+        "title": "Práticas Recomendadas para Acessibilidade e CSS",
         "intro": [
-          "In these lessons, you will learn about best practices for accessibility in CSS, and the tools for checking good color contrast on websites."
+          "Nestas lições, você aprenderá sobre práticas recomendadas para acessibilidade em CSS, e as ferramentas para verificar o bom contraste de cores em sites."
         ]
       },
       "workshop-accessibility-quiz": {
-        "title": "Build a Quiz Webpage",
+        "title": "Crie uma Página de Questionário",
         "intro": [
-          "Accessibility is the process of making your webpages usable for everyone, including people with disabilities.",
-          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+          "Acessibilidade é o processo de tornar as páginas da web utilizáveis para todos, incluindo pessoas com deficiências.",
+          "Neste workshop, você criará uma página de questionário. Você aprenderá ferramentas de acessibilidade, como atalhos de teclado, atributos ARIA e melhores práticas de design."
         ]
       },
       "lab-tribute-page": {
-        "title": "Build a Tribute Page",
+        "title": "Criar uma Página de Homenagem",
         "intro": [
-          "In this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
+          "Neste laboratório, você criará uma página de tributo para um assunto de sua escolha, fictício ou real."
         ]
       },
       "review-css-accessibility": {
-        "title": "CSS Accessibility Review",
+        "title": "Revisão sobre Acessibilidade no CSS",
         "intro": [
-          "Before you're quizzed on CSS and accessibility, you should review what you've learned.",
-          "Open up this page to review concepts like color contrast tools and accessibility best practices."
+          "Antes de ser testado em CSS e acessibilidade, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar conceitos como ferramentas de contraste de cores e práticas recomendadas de acessibilidade."
         ]
       },
       "quiz-css-accessibility": {
-        "title": "CSS Accessibility Quiz",
+        "title": "Questionário sobre Acessibilidade no CSS",
         "intro": [
-          "In this quiz, you'll test what you've learned about making your webpages accessible with CSS."
+          "Neste questionário, você testará o que aprendeu sobre tornar suas páginas da web acessíveis com CSS."
         ]
       }
     }
   },
   "css-positioning": {
-    "title": "Positioning",
+    "title": "Posicionamento",
     "summary": [
-      "Use positioning and floats to control layout and element flow."
+      "Use posicionamento e floats para controlar layout e fluxo de elementos."
     ],
-    "intro": ["Control layout with floats and CSS positioning tools."],
+    "intro": [
+      "Controle o layout com floats e ferramentas de posicionamento do CSS."
+    ],
     "blocks": {
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
-        "title": "Understanding How to Work with Floats and Positioning in CSS",
+        "title": "Compreendendo Como Trabalhar com Flutuações e Posicionamento no CSS",
         "intro": [
-          "In these lessons, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
+          "Nestas lições, você aprenderá como usar posicionamento e flutuações do CSS. Você aprenderá sobre o posicionamento <code>absolute</code>, <code>relative</code>, <code>fixed</code> e <code>sticky</code>. Você também usará a propriedade <code>z-index</code>."
         ]
       },
       "workshop-cat-painting": {
-        "title": "Build a Cat Painting",
+        "title": "Crie uma Pintura de um Gato",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
-          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
+          "Dominar o posicionamento em CSS é essencial para criar layouts visualmente atraentes e responsivos para a web.",
+          "Neste workshop, você criará uma pintura de um gato. Você aprenderá como trabalhar com o posicionamento absoluto, a propriedade <code>z-index</code> e a propriedade <code>transform</code>."
         ]
       },
       "lab-house-painting": {
-        "title": "Build a House Painting",
+        "title": "Crie a Pintura de uma Casa",
         "intro": [
-          "In this lab, you'll build a house painting using CSS.",
-          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
+          "Neste laboratório, você criará uma pintura de uma casa usando CSS.",
+          "Você projetará elementos individuais da casa e os posicionará usando propriedades CSS como <code>position</code>, <code>top</code>, <code>left</code> e mais."
         ]
       },
       "review-css-positioning": {
-        "title": "CSS Positioning Review",
+        "title": "Revisão sobre Posicionamento em CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
-          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
+          "Antes de ser testado nos fundamentos do posicionamento em CSS, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar conceitos como flutuações, posicionamento relativo, posicionamento absoluto e mais."
         ]
       },
       "quiz-css-positioning": {
-        "title": "CSS Positioning Quiz",
-        "intro": ["Test your knowledge of CSS positioning with this quiz."]
+        "title": "Questionário sobre Posicionamento em CSS",
+        "intro": [
+          "Teste seu conhecimento sobre posicionamento em CSS com este questionário."
+        ]
       }
     }
   },
   "attribute-selectors": {
-    "title": "Attribute Selectors",
-    "summary": ["Target elements precisely with CSS attribute selectors."],
-    "intro": ["Select elements with precision using attribute selectors."],
+    "title": "Seletores de Atributo",
+    "summary": [
+      "Alvo elementos com precisão usando seletores de atributo do CSS."
+    ],
+    "intro": ["Selecione elementos com precisão usando seletores de atributo."],
     "blocks": {
       "lecture-working-with-attribute-selectors": {
-        "title": "Working with Attribute Selectors",
+        "title": "Trabalhando com Seletores de Atributo",
         "intro": [
-          "In these lessons, you will learn about attribute selectors and how to use them to target elements like links and lists."
+          "Nestas lições, você aprenderá sobre seletores de atributos e como usá-los para direcionar elementos, como links e listas."
         ]
       },
       "workshop-balance-sheet": {
-        "title": "Build a Balance Sheet",
+        "title": "Crie uma folha de balanço ",
         "intro": [
-          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+          "Neste workshop, você criará uma folha de balanço usando pseudosseletores. Você aprenderá como alterar o estilo de um elemento quando passar o mouse sobre ele e acionar outros eventos na sua página da web."
         ]
       },
       "review-css-attribute-selectors": {
-        "title": "CSS Attribute Selectors Review",
+        "title": "Revisão sobre Seletores de Atributos em CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS attribute selectors, you should review what you've learned about them.",
-          "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
+          "Antes de ser testado nos fundamentos dos seletores de atributos CSS, você deve revisar o que aprendeu sobre eles.",
+          "Abra esta página para revisar conceitos como trabalhar com diferentes seletores de atributos que têm como alvo links com os atributos <code>href</code> e <code>title</code>."
         ]
       },
       "quiz-css-attribute-selectors": {
-        "title": "CSS Attribute Selectors Quiz",
+        "title": "Questionário sobre Seletores de Atributos em CSS",
         "intro": [
-          "Test your knowledge of CSS attribute selectors with this quiz."
+          "Teste seu conhecimento sobre seletores de atributos CSS com este questionário."
         ]
       }
     }
   },
   "lab-book-inventory-app": {
-    "title": "Build a Book Inventory App",
-    "summary": ["Build a structured layout for managing a book inventory."],
-    "intro": ["Create a structured UI for a book inventory layout."],
+    "title": "Crie uma aplicação de inventário de livros",
+    "summary": [
+      "Crie um layout estruturado para gerenciar um inventário de livros."
+    ],
+    "intro": [
+      "Crie uma interface estruturada para um layout de inventário de livros."
+    ],
     "blocks": {
       "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
+        "title": "Crie uma aplicação de inventário de livros",
         "intro": [
-          "In this lab, you'll create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+          "Neste laboratório, você criará uma aplicação de inventário de livros.",
+          "Você praticará seletores de atributo CSS como <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> e mais."
         ]
       }
     }
   },
   "responsive-design": {
-    "title": "Responsive Design",
+    "title": "Design Responsivo",
     "summary": [
-      "Learn responsive design principles and build layouts that adapt to any screen."
+      "Aprenda princípios de design responsivo e construa layouts que se adaptam a qualquer tela."
     ],
-    "intro": ["Make layouts adapt to different screen sizes and devices."],
+    "intro": [
+      "Faça layouts se adaptarem a diferentes tamanhos de tela e dispositivos."
+    ],
     "blocks": {
       "lecture-best-practices-for-responsive-web-design": {
-        "title": "Best Practices for Responsive Web Design",
+        "title": "Práticas Recomendadas para Design Responsivo na Web",
         "intro": [
-          "In these lessons, you will learn about the best practices for responsive web design, the roles concepts like grid, flexbox, media queries, and media breakpoints play in responsive design, and more."
+          "Nestas lições, você aprenderá sobre as melhores práticas para design responsivo na web, os conceitos como grid, flexbox, media queries e breakpoints de mídia no design responsivo, entre outros."
         ]
       },
       "workshop-piano": {
-        "title": "Design a Piano",
+        "title": "Crie um piano ",
         "intro": [
-          "Responsive Design tells your webpage how it should look on different-sized screens.",
-          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
+          "O Design Responsivo diz à sua página da web como ela deve ficar em telas de tamanho diferente.",
+          "Neste workshop, você usará CSS e design responsivo para codar um piano. Você também praticará media queries e pseudo selectores."
         ]
       },
       "review-responsive-web-design": {
-        "title": "Responsive Web Design Review",
+        "title": "Revisão sobre Design Responsivo na Web",
         "intro": [
-          "Before you're quizzed on the fundamentals of responsive design, you should review what you've learned.",
-          "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
+          "Antes de ser testado nos fundamentos do design responsivo, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar conceitos como consultas de mídia, pontos de interrupção de mídia e design para abordagem mobile first."
         ]
       },
       "quiz-responsive-web-design": {
-        "title": "Responsive Web Design Quiz",
+        "title": "Questionário sobre Design Responsivo na Web",
         "intro": [
-          "Test what you've learned about making your webpages responsive with this quiz."
+          "Teste o que você aprendeu sobre tornar suas páginas da web responsivas com este questionário."
         ]
       }
     }
   },
   "lab-technical-documentation-page": {
-    "title": "Build a Technical Documentation Page",
+    "title": "Crie uma página de documentação técnica ",
     "summary": [
-      "Create a documentation page and practice responsive structure and layout."
+      "Crie uma página de documentação e pratique estrutura e layout responsivos."
     ],
     "intro": [
-      "Build a documentation page with clear structure and navigation."
+      "Crie uma página de documentação com estrutura e navegação claras."
     ],
     "blocks": {
       "lab-technical-documentation-page": {
-        "title": "Build a Technical Documentation Page",
+        "title": "Crie uma página de documentação técnica",
         "intro": [
-          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
-          "You'll also practice media queries to create a responsive design."
+          "Neste laboratório, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico.",
+          "Você também praticará media queries para criar um design responsivo."
         ]
       }
     }
   },
   "css-variables": {
-    "title": "Variables",
-    "summary": ["Use CSS variables to build reusable, theme-friendly styles."],
-    "intro": ["Create maintainable styles using CSS custom properties."],
+    "title": "Variáveis",
+    "summary": [
+      "Use variáveis CSS para construir estilos reutilizáveis e amigáveis a temas."
+    ],
+    "intro": [
+      "Crie estilos manuteníveis usando propriedades personalizadas do CSS."
+    ],
     "blocks": {
       "lecture-working-with-css-variables": {
-        "title": "Working with CSS Variables",
+        "title": "Trabalhando com Variáveis CSS",
         "intro": [
-          "In these lessons, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
+          "Nestas lições, você aprenderá a definir e usar propriedades personalizadas (também conhecidas como variáveis CSS). Você também aprenderá sobre a regra <code>@property</code> e como ela funciona."
         ]
       },
       "workshop-city-skyline": {
-        "title": "Build a City Skyline",
+        "title": "Crie um Horizonte da Cidade",
         "intro": [
-          "CSS variables help you organize your styles and reuse them.",
-          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+          "As variáveis CSS ajudam você a organizar seus estilos e reutilizá-los.",
+          "Neste workshop, você criará um horizonte da cidade. Você praticará como configurar variáveis CSS para poder reutilizá-las sempre que quiser."
         ]
       },
       "lab-availability-table": {
-        "title": "Build an Availability Table",
+        "title": "Crie uma Tabela de Disponibilidade",
         "intro": [
-          "For this lab, you'll create an availability table that shows the availability of people for a meeting.",
-          "You'll practice using CSS variables to store and reuse colors, fonts, and other styles."
+          "Para este laboratório, você criará uma tabela de disponibilidade que mostra a disponibilidade de pessoas para uma reunião.",
+          "Você praticará o uso de variáveis CSS para armazenar e reutilizar cores, fontes e outros estilos."
         ]
       },
       "review-css-variables": {
-        "title": "CSS Variables Review",
+        "title": "Revisão de Variáveis CSS",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS variables, you should review what you've learned.",
-          "Open up this page to review how to work with CSS custom properties (CSS variables) and the <code>@property</code> rule."
+          "Antes de ser testado sobre os fundamentos de variáveis CSS, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar como trabalhar com propriedades personalizadas CSS (variáveis CSS) e a regra <code>@property</code>."
         ]
       },
       "quiz-css-variables": {
-        "title": "CSS Variables Quiz",
-        "intro": ["Test your knowledge of CSS variables with this quiz."]
+        "title": "Questionário sobre Variáveis CSS",
+        "intro": [
+          "Teste seu conhecimento sobre variáveis CSS com este questionário."
+        ]
       }
     }
   },
   "css-grid": {
     "title": "Grid",
-    "summary": ["Design complex layouts using the CSS Grid system."],
-    "intro": ["Build multi-dimensional layouts with CSS Grid."],
+    "summary": ["Projete layouts complexos usando o sistema CSS Grid."],
+    "intro": ["Construa layouts multidimensionais com CSS Grid."],
     "blocks": {
       "lecture-working-with-css-grid": {
-        "title": "Working with CSS Grid",
+        "title": "Trabalhando com CSS Grid",
         "intro": [
-          "In these lessons, you will learn about CSS grid, its several properties and how to use them, and how CSS grid differs from flexbox."
+          "Nestas lições, você aprenderá sobre o grid CSS, suas várias propriedades e como usá-las, bem como como o grid CSS difere do flexbox."
         ]
       },
       "workshop-magazine": {
-        "title": "Build a Magazine",
+        "title": "Crie uma Revista",
         "intro": [
-          "CSS Grid gives you control over the rows and columns of your webpage design.",
-          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+          "O CSS Grid dá a você controle sobre as linhas e colunas do design da sua página da web.",
+          "Neste workshop, você criará um artigo de revista. Você praticará como usar CSS Grid, incluindo conceitos como linhas de grid e colunas de grid."
         ]
       },
       "lab-newspaper-layout": {
-        "title": "Design a Newspaper Layout",
+        "title": "Projete um Layout de Jornal",
         "intro": [
-          "In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns."
+          "Neste laboratório, você projetará um layout de jornal usando CSS Grid, incluindo conceitos como linhas de grid e colunas de grid."
         ]
       },
       "lecture-debugging-css": {
-        "title": "Debugging CSS",
+        "title": "Depuração de CSS",
         "intro": [
-          "In this lesson, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
+          "Nesta lição, você aprenderá a depurar CSS usando as ferramentas do desenvolvedor do seu navegador e validadores de CSS."
         ]
       },
       "review-css-grid": {
-        "title": "CSS Grid Review",
+        "title": "Revisão do CSS Grid",
         "intro": [
-          "Before you're quizzed on the fundamentals of CSS Grid, you should review what you've learned.",
-          "Open up this page to review how to work with the different CSS Grid properties like <code>grid-template-columns</code>, <code>grid-gap</code> and more."
+          "Antes de ser testado nos fundamentos do CSS Grid, você deve revisar o que aprendeu.",
+          "Abra esta página para revisar como trabalhar com as diferentes propriedades do CSS Grid, como <code>grid-template-columns</code>, <code>grid-gap</code> e mais."
         ]
       },
       "quiz-css-grid": {
-        "title": "CSS Grid Quiz",
-        "intro": ["Test your knowledge of CSS Grid with this quiz."]
+        "title": "Questionário de CSS Grid",
+        "intro": [
+          "Teste seu conhecimento sobre CSS Grid com este questionário."
+        ]
       }
     }
   },
   "lab-product-landing-page": {
-    "title": "Build a Product Landing Page",
+    "title": "Crie uma Página de Produto",
     "summary": [
-      "Build a complete landing page and apply layout, typography, and responsive design."
+      "Crie uma página inicial completa e aplique layout, tipografia e design responsivo."
     ],
-    "intro": [
-      "Create a product landing page with cohesive layout and styling."
-    ],
+    "intro": ["Crie uma página de produto com layout e estilo coesos."],
     "blocks": {
       "lab-product-landing-page": {
-        "title": "Build a Product Landing Page",
+        "title": "Crie uma Página de Produto",
         "intro": [
-          "In this project, you'll build a product landing page to market a product of your choice."
+          "Neste projeto, você criará uma página de produto para comercializar um produto de sua escolha."
         ]
       }
     }
   },
   "css-animations": {
-    "title": "Animations",
-    "summary": ["Create engaging UI motion with accessible CSS animations."],
+    "title": "Animações",
+    "summary": [
+      "Crie movimento de UI envolvente com animações CSS acessíveis."
+    ],
     "intro": [
-      "Add motion with CSS animations while keeping usability in mind."
+      "Adicione movimento com animações CSS mantendo a usabilidade em mente."
     ],
     "blocks": {
       "lecture-animations-and-accessibility": {
-        "title": "Animations and Accessibility",
+        "title": "Animações e Acessibilidade",
         "intro": [
-          "In these lessons, you will learn about CSS animations and their accessibility concerns. You will also learn how <code>prefers-reduced-motion</code> can help address those accessibility concerns."
+          "Nestas lições, você aprenderá sobre animações em CSS e suas preocupações com acessibilidade. Você também aprenderá como <code>prefers-reduced-motion</code> pode ajudar a abordar essas preocupações de acessibilidade."
         ]
       },
       "workshop-ferris-wheel": {
-        "title": "Build an Animated Ferris Wheel",
+        "title": "Crie uma Roda-Gigante Animada",
         "intro": [
-          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
-          "In this workshop, you'll build a Ferris wheel. You'll practice how to use CSS to animate elements, transform them, and adjust their speed."
+          "Você pode usar animação CSS para chamar a atenção para seções específicas da sua página da web e torná-la mais envolvente.",
+          "Neste workshop, você criará uma roda-gigante. Você praticará como usar CSS para animar elementos, transformá-los e ajustar sua velocidade."
         ]
       },
       "lab-moon-orbit": {
-        "title": "Build a Moon Orbit",
+        "title": "Crie uma órbita lunar ",
         "intro": [
-          "In this lab, you'll create an animation of the moon orbiting the earth.",
-          "You'll practice animation properties like <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, and more."
+          "Neste laboratório, você criará uma animação da lua orbitando a Terra.",
+          "Você praticará propriedades de animação como <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code> e mais."
         ]
       },
       "workshop-flappy-penguin": {
-        "title": "Build a Flappy Penguin",
+        "title": "Crie um Pinguim Flappy",
         "intro": [
-          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
-          "In this workshop, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+          "Você pode transformar elementos HTML para criar designs atraentes que chamam a atenção do leitor. Você pode usar transformações para girar elementos, dimensioná-los e muito mais.",
+          "Neste workshop, você criará um pinguim. Você usará transformações CSS para posicionar e redimensionar as partes do seu pinguim, criar um fundo e animar seu trabalho."
         ]
       },
       "lab-personal-portfolio": {
-        "title": "Build a Personal Portfolio",
+        "title": "Crie um Portfólio Pessoal",
         "intro": [
-          "In this project, you'll build your own personal portfolio page."
+          "Neste projeto, você criará sua própria página de portfólio pessoal."
         ]
       },
       "review-css-animations": {
-        "title": "CSS Animations Review",
+        "title": "Revisão de Animações CSS",
         "intro": [
-          "Before you're quizzed on working with CSS animations, you should review what you've learned about them.",
-          "Open up this page to review concepts including <code>prefers-reduced-motion</code>, the <code>@keyframes</code> rule and more."
+          "Antes de ser testado sobre o trabalho com animações CSS, você deve revisar o que aprendeu sobre elas.",
+          "Abra esta página para revisar conceitos como <code>prefers-reduced-motion</code>, a regra <code>@keyframes</code> e mais."
         ]
       },
       "quiz-css-animations": {
-        "title": "CSS Animations Quiz",
-        "intro": ["Test your knowledge of CSS animations with this quiz."]
+        "title": "Questionário de Animações CSS",
+        "intro": [
+          "Teste seu conhecimento sobre animações em CSS com este questionário."
+        ]
       }
     }
   },
