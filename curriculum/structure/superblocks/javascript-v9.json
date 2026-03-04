@@ -298,7 +298,10 @@
         {
           "dashedName": "data-structures",
           "comingSoon": true,
-          "blocks": ["lecture-working-with-common-data-structures-js"]
+          "blocks": [
+            "lecture-working-with-common-data-structures-js",
+            "quiz-data-structures-js"
+          ]
         },
         {
           "dashedName": "algorithms",
@@ -323,7 +326,10 @@
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
-          "blocks": ["quiz-dynamic-programming-js"]
+          "blocks": [
+            "review-dynamic-programming-js",
+            "quiz-dynamic-programming-js"
+          ]
         },
         {
           "dashedName": "functional-programming",

@@ -3286,6 +3286,12 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
+        ]
+      },
       "lecture-working-with-common-data-structures-js": {
         "title": "Working with Common Data Structures",
         "intro": [
@@ -3339,6 +3345,12 @@
         "title": "Implement the N-Queens Problem",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "review-dynamic-programming-js": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming-js": {
