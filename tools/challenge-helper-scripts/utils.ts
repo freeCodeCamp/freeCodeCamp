@@ -17,6 +17,7 @@ import {
 import { getTemplate } from './helpers/get-challenge-template.js';
 
 interface Options {
+  challengeId: ObjectId;
   stepNum: number;
   challengeType?: number;
   projectPath?: string;
@@ -26,6 +27,7 @@ interface Options {
 }
 
 interface QuizOptions {
+  challengeId: ObjectId;
   projectPath?: string;
   title: string;
   dashedName: string;
@@ -49,13 +51,12 @@ export async function getAllBlocks() {
 const createStepFile = ({
   stepNum,
   challengeType,
+  challengeId,
   projectPath = getProjectPath(),
   challengeSeeds = [],
   isFirstChallenge = false,
   challengeLang
-}: Options): ObjectId => {
-  const challengeId = new ObjectId();
-
+}: Options) => {
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
@@ -66,8 +67,6 @@ const createStepFile = ({
   });
 
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
-
-  return challengeId;
 };
 
 const createChallengeFile = (
@@ -79,13 +78,13 @@ const createChallengeFile = (
 };
 
 const createQuizFile = ({
+  challengeId,
   projectPath = getProjectPath(),
   title,
   dashedName,
   questionCount,
   challengeLang
 }: QuizOptions): ObjectId => {
-  const challengeId = new ObjectId();
   const challengeType = challengeTypes.quiz.toString();
   const template = getTemplate(challengeType);
 
@@ -103,13 +102,14 @@ const createQuizFile = ({
 };
 
 const createDialogueFile = ({
+  challengeId,
   projectPath,
   challengeLang
 }: {
+  challengeId: ObjectId;
   projectPath: string;
   challengeLang: string;
 }): ObjectId => {
-  const challengeId = new ObjectId();
   const challengeType = challengeTypes.dialogue.toString();
   const template = getTemplate(challengeType);
 
