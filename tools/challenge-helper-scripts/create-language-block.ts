@@ -353,17 +353,14 @@ void getAllBlocks()
       }))
     });
 
+    const prefix = getBlockPrefix(superBlock, blockLabel);
+
     const rawBlock = await input({
-      message: (() => {
-        const prefix = getBlockPrefix(superBlock, blockLabel);
-        return prefix
-          ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
-          : 'What is the dashed name (in kebab-case) for this block?';
-      })(),
+      message: prefix
+        ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
+        : 'What is the dashed name (in kebab-case) for this block?',
 
       validate: (value: string) => {
-        const prefix = getBlockPrefix(superBlock, blockLabel);
-
         if (prefix) {
           const uniquePart = value.slice(prefix.length);
 
@@ -384,7 +381,9 @@ void getAllBlocks()
       }
     });
 
-    const block = rawBlock.toLowerCase().trim();
+    const block = prefix
+      ? `${prefix}${rawBlock.toLowerCase().trim()}`
+      : rawBlock.toLowerCase().trim();
 
     const title = await input({
       message: 'Enter a title for this block:',
