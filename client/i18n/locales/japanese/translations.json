@@ -699,7 +699,8 @@
       "exit-header": "試験中止",
       "exit": "本当に試験を中止しますか？進捗状況は失われます。",
       "exit-yes": "はい、試験を中止します",
-      "exit-no": "いいえ、試験を続行します"
+      "exit-no": "いいえ、試験を続行します",
+      "not-honest": "You need to <0>accept the Academic Honesty Policy</0> to take this exam"
     },
     "ms": {
       "link-header": "Microsoft アカウントと連携する",

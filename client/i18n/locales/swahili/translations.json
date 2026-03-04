@@ -699,7 +699,8 @@
       "exit-header": "Ondoka kwenye Mtihani",
       "exit": "Je, una uhakika unataka kuacha mtihani? Utapoteza maendeleo yoyote ambayo umefanya.",
       "exit-yes": "Ndiyo, nataka kuacha mtihani",
-      "exit-no": "Hapana, ningependa kuendelea na mtihani"
+      "exit-no": "Hapana, ningependa kuendelea na mtihani",
+      "not-honest": "You need to <0>accept the Academic Honesty Policy</0> to take this exam"
     },
     "ms": {
       "link-header": "Link your Microsoft account",
