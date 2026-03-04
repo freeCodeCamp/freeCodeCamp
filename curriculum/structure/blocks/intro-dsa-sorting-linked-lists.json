@@ -1,0 +1,30 @@
+{
+  "name": "Sorting a Linked List",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-sorting-linked-lists",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698de3bb7932b3cc4b19c93a",
+      "title": "The Merge Function"
+    },
+    {
+      "id": "698de6a07932b3cc4b19c93b",
+      "title": "The Divide Step"
+    },
+    {
+      "id": "698de74b7932b3cc4b19c93c",
+      "title": "The Conquer Step"
+    },
+    {
+      "id": "698de83d7932b3cc4b19c93d",
+      "title": "Evaluating the Runtime"
+    },
+    {
+      "id": "698de8fd7932b3cc4b19c93e",
+      "title": "Recap of Introduction to Data Structures"
+    }
+  ]
+}

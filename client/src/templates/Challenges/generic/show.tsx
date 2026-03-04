@@ -77,12 +77,12 @@ function renderNodule(
 ) {
   switch (nodule.type) {
     case 'paragraph':
-      return <PrismFormatted text={nodule.data} />;
+      return <PrismFormatted text={nodule.contents} />;
     case 'interactiveEditor':
       if (showInteractiveEditor) {
-        return <InteractiveEditor files={nodule.data} />;
+        return <InteractiveEditor files={nodule.files} />;
       } else {
-        const files = nodule.data;
+        const { files } = nodule;
         return files.map((file, index) => (
           <PrismFormatted key={index} text={file.contentsHtml} />
         ));
@@ -406,7 +406,13 @@ export const query = graphql`
         description
         nodules {
           type
-          data
+          contents
+          files {
+            ext
+            name
+            contents
+            contentsHtml
+          }
         }
         explanation
         helpCategory

@@ -17,10 +17,6 @@ const codeAlly = path.resolve(
   __dirname,
   '../../src/templates/Challenges/codeally/show.tsx'
 );
-const intro = path.resolve(
-  __dirname,
-  '../../src/templates/Introduction/intro.tsx'
-);
 const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/super-block-intro.tsx'
@@ -139,9 +135,7 @@ exports.createChallengePages = function (
   };
 };
 
-// TODO: figure out a cleaner way to get the last challenge in a block. Create
-// it during the curriculum build process and attach it to the first challenge?
-// That would remove the need to analyse allChallengeEdges.
+// TODO: figure out a cleaner way to get the last challenge in a block.
 function getProjectPreviewConfig(challenge, allChallengeNodes) {
   const { block } = challenge;
 
@@ -168,25 +162,6 @@ function getProjectPreviewConfig(challenge, allChallengeNodes) {
     }
   };
 }
-
-exports.createBlockIntroPages = function (createPage) {
-  return function (edge) {
-    const {
-      fields: { slug },
-      frontmatter: { block },
-      id
-    } = edge.node;
-
-    createPage({
-      path: slug,
-      component: intro,
-      context: {
-        block,
-        id
-      }
-    });
-  };
-};
 
 exports.createSuperBlockIntroPages = function (createPage) {
   return function (edge) {
