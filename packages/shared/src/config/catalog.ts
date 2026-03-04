@@ -18,7 +18,8 @@ enum Topic {
   Api = 'api',
   InformationSecurity = 'information-security',
   ComputerFundamentals = 'computer-fundamentals',
-  ComputerScience = 'computer-science'
+  ComputerScience = 'computer-science',
+  AI = 'ai'
 }
 
 interface Catalog {
@@ -196,5 +197,11 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 6,
     topic: Topic.ComputerScience
+  },
+  {
+    superBlock: SuperBlocks.LearnRAGAndMCPFundamentals,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.AI
   }
 ];
