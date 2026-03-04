@@ -3347,6 +3347,12 @@
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
       },
+      "lecture-understanding-dynamic-programming-js": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
       "review-dynamic-programming-js": {
         "title": "Dynamic Programming Review",
         "intro": [
