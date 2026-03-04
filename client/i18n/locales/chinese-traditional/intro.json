@@ -2656,7 +2656,7 @@
       "review-javascript-fundamentals": {
         "title": "JavaScript 基礎複習",
         "intro": [
-          "Before you are quizzed on JavaScript fundamentals, you first need to review the concepts.",
+          "在測試你對 JavaScript 基礎的掌握之前，你需要先複習相關概念。",
           "打開此頁面以複習閉包、內存管理等概念。"
         ]
       },
@@ -2683,178 +2683,170 @@
         ]
       },
       "lab-sorted-index-finder": {
-        "title": "Implement a Sorted Index Finder",
+        "title": "實現有序索引查找函數",
         "intro": [
-          "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
+          "在本實驗中，你將實現一個函數，確定一個數字在有序數組中的插入索引，使數組保持排序狀態。"
         ]
       },
       "lab-symmetric-difference": {
-        "title": "Build a Symmetric Difference Function",
-        "intro": [
-          "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
-        ]
+        "title": "實現對稱差函數",
+        "intro": ["在本實驗中，你將練習使用高階函數求兩個數組之間的對稱差。"]
       },
       "lab-value-remover-function": {
-        "title": "Implement a Value Remover Function",
+        "title": "實現指定值移除函數",
         "intro": [
-          "In this lab, you will create a function that removes all instances of a specified value from an array."
+          "在本實驗中，你將創建一個函數，用於從數組中移除指定值的所有實例。"
         ]
       },
       "lab-matching-object-filter": {
-        "title": "Implement a Matching Object Filter",
+        "title": "實現對象匹配過濾函數",
         "intro": [
-          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+          "在本實驗中，你將實現一個函數，從對象數組中篩選出所有包含匹配屬性和值對的對象。"
         ]
       },
       "lab-prime-number-sum-calculator": {
-        "title": "Build a Prime Number Sum Calculator",
+        "title": "創建質數求和計算器",
         "intro": [
-          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+          "在本實驗中，你將創建一個質數求和計算器，計算並返回小於或等於指定數字的所有質數之和。"
         ]
       },
       "lab-range-based-lcm-calculator": {
-        "title": "Implement a Range-Based LCM Calculator",
+        "title": "實現區間最小公倍數計算器",
         "intro": [
-          "In this lab, you will create a function that takes an array of two numbers and returns the least common multiple (LCM) of those two numbers and all the numbers between them."
+          "在本實驗中，你將創建一個函數，接受一個由兩個數字組成的數組，並返回這兩個數字以及它們之間所有數字的最小公倍數（LCM）。"
         ]
       },
       "lab-deep-flattening-tool": {
-        "title": "Create a Deep Flattening Tool",
+        "title": "創建一個深度扁平化工具",
         "intro": [
-          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
+          "在本實驗中，你將創建一個函數，用來將任意層級嵌套的數組進行扁平化處理，並且不使用內置的 flat 方法。"
         ]
       },
       "lab-all-true-property-validator": {
-        "title": "Build an All-True Property Validator",
+        "title": "創建一個全爲真屬性校驗器",
         "intro": [
-          "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
+          "在本實驗中，你將編寫一個函數，用於檢查數組中的所有對象在指定屬性上是否都具有真值。"
         ]
       },
       "review-javascript-higher-order-functions": {
-        "title": "JavaScript Higher Order Functions Review",
+        "title": "JavaScript 高階函數複習",
         "intro": [
-          "Before you're quizzed on JavaScript higher order functions, you should review them.",
-          "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
+          "在進行 JavaScript 高階函數測驗之前，你應該先複習它們。",
+          "打開此頁面以複習如何使用 <code> map() </code>、<code> filter() </code> 和 <code> reduce() </code> 方法等概念。"
         ]
       },
       "quiz-javascript-higher-order-functions": {
-        "title": "JavaScript Higher Order Functions Quiz",
-        "intro": [
-          "Test what you've learned about JavaScript higher order functions with this quiz."
-        ]
+        "title": "JavaScript 高階函數測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 高階函數的掌握程度。"]
       },
       "lecture-working-with-the-dom-click-events-and-web-apis": {
-        "title": "Working with the DOM, Click Events, and Web APIs",
+        "title": "學習 DOM、點擊事件與 Web API",
         "intro": [
-          "In these lectures, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
+          "在這些講座中，你將學習如何處理文檔對象模型（DOM）、<code> addEventListener() </code> 方法與事件，以及 Web API。"
         ]
       },
       "workshop-storytelling-app": {
-        "title": "Build a Storytelling App",
+        "title": "創建一個講故事應用",
         "intro": [
-          "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+          "在本工作坊中，你將構建一個講故事應用，允許你根據類型列出不同的故事。"
         ]
       },
       "workshop-emoji-reactor": {
-        "title": "Build an Emoji Reactor",
+        "title": "創建 Emoji 反應器",
         "intro": [
-          "In this workshop, you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
+          "在本工作坊中，你將構建一個 Emoji 反應器以練習 <code> querySelector </code> 與 <code> querySelectorAll </code>。"
         ]
       },
       "lab-favorite-icon-toggler": {
-        "title": "Build a Favorite Icon Toggler",
+        "title": "創建收藏圖標切換器",
         "intro": [
-          "In this lab, you'll build a favorite icon toggler by utilizing JavaScript click events."
+          "在本實驗中，你將利用 JavaScript 的點擊事件構建一個收藏圖標切換器。"
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
-        "title": "Understanding the Event Object and Event Delegation",
+        "title": "理解事件對象與事件委託",
         "intro": [
-          "In these lectures, you will learn about the event object, the change event, event bubbling, and event delegation."
+          "在這些講座中，你將學習事件對象、change 事件、事件冒泡與事件委託。"
         ]
       },
       "workshop-music-instrument-filter": {
-        "title": "Build a Music Instrument Filter",
-        "intro": [
-          "In this workshop, you will build a music instrument filter with JavaScript."
-        ]
+        "title": "創建樂器篩選器",
+        "intro": ["在本工作坊中，你將使用 JavaScript 構建一個樂器篩選器。"]
       },
       "lab-real-time-counter": {
-        "title": "Build a Real Time Counter",
+        "title": "構建實時計數器",
         "intro": [
-          "In this lab, you'll build a real-time character counter",
-          "You'll practice how to work with the <code>input</code> event when the user types in the input field."
+          "在本實驗中，你將構建一個實時字符計數器。",
+          "你將練習在用戶在輸入字段中輸入時處理 <code> input </code> 事件。"
         ]
       },
       "lab-lightbox-viewer": {
-        "title": "Build a Lightbox Viewer",
+        "title": "創建燈箱查看器",
         "intro": [
-          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
-          "You'll practice click events and toggling classes."
+          "在本實驗中，你將構建一個燈箱查看器，用於以聚焦模式瀏覽圖片。",
+          "你將練習點擊事件與切換類。"
         ]
       },
       "workshop-rps-game": {
-        "title": "Build a Rock, Paper, Scissors Game",
+        "title": "創建石頭剪刀布遊戲",
         "intro": [
-          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+          "在本工作坊中，你將通過構建一個石頭剪刀布遊戲來複習 DOM 操作與事件。"
         ]
       },
       "lab-football-team-cards": {
-        "title": "Build a Set of Football Team Cards",
+        "title": "創建一組足球隊卡片",
         "intro": [
-          "In this lab, you'll use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+          "在本實驗中，你將使用 DOM 操作、對象解構、事件處理與數據過濾來構建一組足球隊卡片。"
         ]
       },
       "review-dom-manipulation-and-click-events-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Review",
+        "title": "JavaScript 中的 DOM 操作與點擊事件複習",
         "intro": [
-          "Before you're quizzed on the DOM, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web APIs</code>, the <code>addEventListener()</code> method, change events, event bubbling and more."
+          "在進行 DOM 測驗之前，你應該複習一下所學的相關內容。",
+          "打開此頁面以複習如何使用 <code> DOM </code>、<code> Web APIs </code>、<code> addEventListener() </code> 方法、change 事件、事件冒泡等概念。"
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
+        "title": "DOM 操作與點擊事件測驗",
         "intro": [
-          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+          "使用本測驗檢驗你對 JavaScript 中 DOM 操作與點擊事件的掌握程度。"
         ]
       },
       "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
-        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "title": "理解 aria-expanded、aria-live 與常見 ARIA 狀態",
         "intro": [
-          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+          "在這些講座中，你將深入瞭解諸如 <code>aria-expanded</code>、<code>aria-live</code> 等 ARIA 屬性，以及常見的 ARIA 狀態。"
         ]
       },
       "workshop-planets-tablist": {
-        "title": "Build a Planets Tablist",
+        "title": "創建行星標籤頁列表",
         "intro": [
-          "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
+          "在本工作坊中，你將構建一個動態的標籤頁界面，用於展示太陽系各行星的相關事實。"
         ]
       },
       "workshop-note-taking-app": {
-        "title": "Build a Note Taking App",
+        "title": "創建筆記應用",
         "intro": [
-          "In this workshop, you are going to build an accessible note taking app.",
-          "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
+          "在本工作坊中，你將構建一個可訪問的筆記應用。",
+          "這將爲你提供練習使用 <code> aria-live </code> 屬性的機會。"
         ]
       },
       "lab-theme-switcher": {
-        "title": "Build a Theme Switcher",
+        "title": "創建主題切換器",
         "intro": [
-          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
+          "在本實驗中，你將構建一個主題切換器並練習使用 <code> aria-haspopup </code>、<code> aria-expanded </code> 和 <code> aria-controls </code> 屬性。"
         ]
       },
       "review-js-a11y": {
-        "title": "JavaScript and Accessibility Review",
+        "title": "JavaScript 與無障礙複習",
         "intro": [
-          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+          "在進行 JavaScript 與無障礙測驗之前，你應該複習一下你所學過的相關知識。",
+          "打開此頁面以複習如何使用 <code> aria-expanded </code>、<code> aria-live </code> 和 <code> aria-controls </code> 屬性等概念。"
         ]
       },
       "quiz-js-a11y": {
-        "title": "JavaScript and Accessibility Quiz",
-        "intro": [
-          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
-        ]
+        "title": "JavaScript 與無障礙測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 與無障礙最佳實踐的掌握程度。"]
       },
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
@@ -3184,6 +3176,12 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introduction to Common Searching and Sorting Algorithms",
         "intro": [
@@ -3318,7 +3316,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front-End Development Libraries Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
       "To earn your Front-End Development Libraries Certification:",
@@ -3621,6 +3618,12 @@
         "title": "Introduction to Data Visualization",
         "intro": [
           "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4403,7 +4406,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back-End Development and APIs Certification",
-    "note": "This certification is currently in development and will be available soon.",
     "intro": [
       "This course teaches you the fundamentals of back-end development and APIs.",
       "To earn your Back-End Development and APIs Certification:",
@@ -4557,6 +4559,12 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introduction to npm",
         "intro": [
@@ -4579,7 +4587,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
@@ -5659,6 +5666,12 @@
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {
