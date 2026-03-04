@@ -8,7 +8,7 @@ dashedName: linguistics-learn-prompting-fundamentals
 
 # --description--
 
-In this video, you will learn what linguistics and how it relates to AI.
+In this video, you will learn what linguistics is and how it relates to AI.
 
 # --questions--
 
@@ -22,15 +22,15 @@ Study of language.
 
 ---
 
-Study of Math.
+Study of math.
 
 ---
 
-Study of Machine Learning.
+Study of machine learning.
 
 ---
 
-Study of Programming.
+Study of programming.
 
 ## --video-solution--
 
