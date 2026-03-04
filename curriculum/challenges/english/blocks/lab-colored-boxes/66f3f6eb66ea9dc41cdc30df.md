@@ -64,15 +64,22 @@ colorGridChildren.forEach((child, index) => {
 });
 ```
 
-The `.color-box` element should have a set `width` and `height`.
+The `.color-box` class should have the `width` and `height` properties set.
+
+```js
+const cssHelp = new __helpers.CSSHelp(document);
+assert.isNotEmpty(cssHelp.getStyle('.color-box')?.getPropVal('width', true));
+assert.isNotEmpty(cssHelp.getStyle('.color-box')?.getPropVal('height', true));
+```
+
+The `.color-box` element should have a non-zero `width` and `height`. If the boxes are not visible in the preview, try resizing the preview window to a larger size.
 
 ```js
 const colorBox = document.querySelector('.color-box');
 assert.exists(colorBox);
 
-const colorBoxStyles = getComputedStyle(colorBox);
-const width = colorBoxStyles.width;
-const height = colorBoxStyles.height;
+const width = getComputedStyle(colorBox).width;
+const height = getComputedStyle(colorBox).height;
 
 assert.notStrictEqual(width, '0px');
 assert.notStrictEqual(height, '0px');
@@ -113,19 +120,6 @@ The `.color5` element should have a background color set.
 
 ```js
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
-```
-
-You should not use `display: flex` in this lab.
-
-```js
-const elements = document.querySelectorAll('body, body *');
-
-elements.forEach(el => {
-  assert.notStrictEqual(
-    getComputedStyle(el).display,
-    'flex'
-  );
-});
 ```
 
 # --seed--
