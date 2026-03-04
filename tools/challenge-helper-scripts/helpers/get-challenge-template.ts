@@ -85,19 +85,10 @@ Test 1
 \`\`\`
 `;
 
-const getQuizChallengeTemplate = (
-  options: ChallengeOptions
-): string => `${buildFrontMatter(options)}
+const getQuizChallengeTemplate = (options: ChallengeOptions): string => {
+  const count = options.questionCount!;
 
-# --description--
-
-To pass the quiz, you must correctly answer at least ${options.questionCount! == 20 ? '18' : '9'} of the ${options.questionCount!.toString()} questions below.
-
-# --quizzes--
-
-## --quiz--
-
-${`### --question--
+  const regularQuestion = `### --question--
 
 #### --text--
 
@@ -119,7 +110,65 @@ Placeholder distractor 3
 
 Placeholder answer
 
-`.repeat(options.questionCount! - 1)}
+`;
+
+  const questionWithAudio = `### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --audio--
+
+\`\`\`json
+{
+  "audio": {
+    "filename": "1.1-1.mp3",
+    "startTimestamp": 5.7,
+    "finishTimestamp": 6.48
+  },
+  "transcript": [
+    {
+      "character": "Tom",
+      "text": "Hi, I'm Tom."
+    }
+  ]
+}
+\`\`\`
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+`;
+
+  const firstQuestion = options.challengeLang
+    ? questionWithAudio
+    : regularQuestion;
+
+  return `${buildFrontMatter(options)}
+
+# --description--
+
+To pass the quiz, you must correctly answer at least ${count == 20 ? '18' : '9'} of the ${count.toString()} questions below.
+
+# --quizzes--
+
+## --quiz--
+
+${firstQuestion}${regularQuestion.repeat(Math.max(0, count - 2))}
 ### --question--
 
 #### --text--
@@ -142,6 +191,7 @@ Placeholder distractor 3
 
 Placeholder answer
 `;
+};
 
 const getVideoChallengeTemplate = (
   options: ChallengeOptions
