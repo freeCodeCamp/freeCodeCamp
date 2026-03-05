@@ -57,7 +57,7 @@
     "eslint-plugin-jsdoc": "48.11.0",
     "msw": "^2.12.10",
     "prisma": "6.19.2",
-    "supertest": "6.3.3",
+    "supertest": "6.3.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "vitest": "^4.0.15"
