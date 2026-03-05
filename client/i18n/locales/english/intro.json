@@ -4687,6 +4687,13 @@
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
         ]
       },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introduction to npm",
         "intro": [
@@ -4704,10 +4711,6 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
-      },
-      "lecture-understanding-routing-in-express-js": {
-        "title": "Understanding Routing in ExpressJS",
-        "intro": ["Understanding Routing in ExpressJS", ""]
       }
     }
   },
