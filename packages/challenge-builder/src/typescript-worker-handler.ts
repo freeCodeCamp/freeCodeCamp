@@ -31,10 +31,12 @@ export function compileTypeScriptCode(code: string): Promise<string> {
   });
 }
 
-export function checkTSServiceIsReady(): Promise<boolean> {
+export function setupTSCompiler(
+  compilerOptions?: Record<string, unknown>
+): Promise<boolean> {
   return awaitResponse({
     messenger: getTypeScriptWorker(),
-    message: { type: 'check-is-ready' },
+    message: { type: 'setup', ...(compilerOptions && { compilerOptions }) },
     onMessage: (data, onSuccess) => {
       if (data.type === 'ready') {
         onSuccess(true);

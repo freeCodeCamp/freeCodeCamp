@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from '@gatsbyjs/reach-router';
 import store from 'store';
 import ShowClassic from '../templates/Challenges/classic/show';
 import { Loader } from '../components/helpers';
@@ -140,9 +139,7 @@ function formatChallengeData({
   return props;
 }
 
-function ShowDailyCodingChallenge(): JSX.Element {
-  const { date } = useParams<{ date?: string }>();
-
+function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
   const initLanguage =
     (store.get(
       'dailyCodingChallengeLanguage'

@@ -3,50 +3,81 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
-import { Test } from '../../../redux/prop-types';
-import { challengeTestsSelector } from '../redux/selectors';
-import { isSignedInSelector } from '../../../redux/selectors';
+import {
+  completedChallengesIdsSelector,
+  isSignedInSelector
+} from '../../../redux/selectors';
+import { ChallengeMeta, Test } from '../../../redux/prop-types';
+import {
+  challengeMetaSelector,
+  challengeTestsSelector,
+  completedPercentageSelector,
+  currentBlockIdsSelector
+} from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import { openModal, executeChallenge } from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
+import { Share } from '../../../components/share';
+import Reset from '../../../assets/icons/reset';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
-import Reset from '../../../assets/icons/reset';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
   isSignedInSelector,
-  (tests: Test[], isSignedIn: boolean) => ({
+  challengeMetaSelector,
+  completedPercentageSelector,
+  completedChallengesIdsSelector,
+  currentBlockIdsSelector,
+  (
+    tests: Test[],
+    isSignedIn: boolean,
+    challengeMeta: ChallengeMeta,
+    completedPercent: number,
+    completedChallengeIds: string[],
+    currentBlockIds: string[]
+  ) => ({
     tests,
-    isSignedIn
+    isSignedIn,
+    challengeMeta,
+    completedPercent,
+    completedChallengeIds,
+    currentBlockIds
   })
 );
 
 const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
-  executeChallenge,
-  submitChallenge
+  executeChallenge
 };
 
 interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
-  submitChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
+  challengeMeta: ChallengeMeta;
+  completedPercent: number;
+  completedChallengeIds: string[];
+  currentBlockIds: string[];
 }
 export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
   executeChallenge,
-  submitChallenge,
   tests,
-  isSignedIn
+  isSignedIn,
+  challengeMeta,
+  completedPercent,
+  completedChallengeIds,
+  currentBlockIds
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
@@ -57,6 +88,20 @@ export function IndependentLowerJaw({
     React.useState(false);
 
   const isChallengeComplete = tests.every(test => test.pass);
+  const hasBlockIds = currentBlockIds.length > 0;
+  const isLastStepInBlock =
+    hasBlockIds &&
+    currentBlockIds[currentBlockIds.length - 1] === challengeMeta.id;
+  const isBlockCompletedByIds =
+    hasBlockIds &&
+    currentBlockIds.every(challengeId =>
+      completedChallengeIds.includes(challengeId)
+    );
+  const hasCompletedPercent = Number.isFinite(completedPercent);
+  const isBlockCompleted =
+    isBlockCompletedByIds || (hasCompletedPercent && completedPercent === 100);
+  const showShareButton =
+    isChallengeComplete && isLastStepInBlock && isBlockCompleted;
 
   React.useEffect(() => {
     setShowHint(!!hint);
@@ -110,6 +155,15 @@ export function IndependentLowerJaw({
         >
           <div>
             <p>{t('learn.congratulations-code-passes')}</p>
+            {isSignedIn && showShareButton && (
+              <div className='share-button-wrapper'>
+                <Share
+                  superBlock={challengeMeta.superBlock}
+                  block={challengeMeta.block}
+                  minified={true}
+                />
+              </div>
+            )}
             {!isSignedIn && (
               <a
                 href={`${apiLocation}/signin`}
@@ -148,7 +202,7 @@ export function IndependentLowerJaw({
               ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip '>
+              <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
             </Button>
@@ -160,7 +214,7 @@ export function IndependentLowerJaw({
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip '>
+              <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
             </button>

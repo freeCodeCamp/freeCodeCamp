@@ -16,7 +16,7 @@ import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
 import { validateMetaSchema } from '../../schema/meta-schema.js';
 import { getBlockStructure } from '../file-handler.js';
-import { FCC_CHALLENGE_ID, testedLang } from '../config.js';
+import { FCC_CHALLENGE_ID, CURRICULUM_LOCALE } from '../config.js';
 import ChallengeTitles from './utils/challenge-titles.js';
 import MongoIds from './utils/mongo-ids.js';
 import createPseudoWorker from './utils/pseudo-worker.js';
@@ -41,7 +41,7 @@ vi.mock(
     await compiler.setup({ useNodeModules: true });
     return {
       ...actual,
-      checkTSServiceIsReady: () => Promise.resolve(true),
+      setupTSCompiler: () => Promise.resolve(true),
       compileTypeScriptCode: code => {
         const { result, error } = compiler.compile(code, 'index.tsx');
         if (error) throw error;
@@ -79,12 +79,20 @@ async function newPageContext() {
 }
 
 export async function defineTestsForBlock(testFilter) {
-  const lang = testedLang();
-  const challenges = await getChallenges(lang, testFilter);
-  const nonCertificationChallenges = challenges.filter(
+  const allChallenges = await getChallenges(CURRICULUM_LOCALE, testFilter);
+  const nonCertificationChallenges = allChallenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
-  if (isEmpty(nonCertificationChallenges)) {
+
+  // This is a bit of a dirty hack, but when we're testing, we only need to
+  // validate the challenges for the block we're testing once, rather than
+  // once for each superBlock the challenge appears in.
+  const firstSuperBlock = allChallenges[0]?.superBlock;
+  const challenges = nonCertificationChallenges.filter(
+    ({ superBlock }) => superBlock === firstSuperBlock
+  );
+
+  if (isEmpty(challenges)) {
     console.warn(
       `No non-certification challenges to test for block ${testFilter.block}.`
     );
@@ -107,7 +115,7 @@ export async function defineTestsForBlock(testFilter) {
     }
   }
 
-  const challengeData = { meta, challenges, lang };
+  const challengeData = { meta, challenges, lang: CURRICULUM_LOCALE };
 
   describe('Check challenges', async () => {
     beforeAll(async () => {
