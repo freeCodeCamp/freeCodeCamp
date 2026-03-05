@@ -36,4 +36,3 @@ This is the process of using AI to refactor a codebase.
 
 2
 
-
