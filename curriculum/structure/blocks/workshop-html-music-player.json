@@ -1,6 +1,6 @@
 {
   "name": "Build an HTML Music Player",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-html-music-player",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
