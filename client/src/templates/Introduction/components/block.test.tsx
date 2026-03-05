@@ -69,7 +69,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.FullStackDeveloper,
+      superBlock: SuperBlocks.FullStackDeveloperV9,
       tail: ['mockTail'],
       template: 'mockTemplate',
       tests: [] as Test[],
@@ -86,7 +86,7 @@ const defaultProps = {
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
   t: vi.fn((key: string) => [key]) as unknown as TFunction,
-  superBlock: SuperBlocks.FullStackDeveloper,
+  superBlock: SuperBlocks.FullStackDeveloperV9,
   toggleBlock: vi.fn()
 };
 

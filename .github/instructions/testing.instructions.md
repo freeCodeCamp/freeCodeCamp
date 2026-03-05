@@ -59,36 +59,31 @@ Flag if existing tests may be outdated:
 ### Example Comment for Outdated Tests
 
 ```
-The existing tests in `src/utils/validate.test.ts` may need updates to cover the new validation rules added in this PR.
+Tests in `src/utils/validate.test.ts` need updates for new validation rules.
 ```
 
 ## Comment Format
 
 ### Missing Tests
 
-Keep feedback specific and actionable:
+Brief, actionable feedback only:
 
 ```
-Consider adding tests for the changes in `src/utils/validate.ts`.
-Suggested coverage:
-- Valid input returns expected output
-- Invalid input throws appropriate error
-- Edge case: empty string handling
+Missing tests for `src/utils/validate.ts`:
+- Valid input case
+- Invalid input error
+- Empty string edge case
 ```
 
 ### Sufficient Coverage
 
-```
-LGTM
-```
+**DO NOT COMMENT.** Silence means approval.
 
 ### Outdated Tests
 
 ```
-The tests in `[test file]` may need updates to reflect the changes to `[source file]`.
-Specifically:
-- [what behavior changed]
-- [what test assertions may be affected]
+Tests in `[test file]` need updates for `[source file]` changes:
+- [specific change]
 ```
 
 ## Test Quality Indicators

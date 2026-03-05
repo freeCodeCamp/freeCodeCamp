@@ -12,8 +12,8 @@ import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import {
   createQuizFile,
   createStepFile,
@@ -21,7 +21,6 @@ import {
   getAllBlocks
 } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import { IntroJson, parseJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
@@ -98,27 +97,29 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.title
   );
 
+  const challengeId = new ObjectId();
+
   if (projectArgs.blockLabel === BlockLabel.quiz) {
     if (projectArgs.questionCount == null) {
       throw new Error(
         'Property `questionCount` is null when creating new Quiz Challenge'
       );
     }
-    const challengeId = await createQuizChallenge(
-      projectArgs.block,
-      projectArgs.title,
-      projectArgs.questionCount
-    );
-    void createMetaJson(
+    await createMetaJson(
       projectArgs.superBlock,
       projectArgs.block,
       projectArgs.title,
       projectArgs.helpCategory,
       challengeId
     );
+    await createQuizChallenge({
+      challengeId,
+      block: projectArgs.block,
+      title: projectArgs.title,
+      questionCount: projectArgs.questionCount
+    });
   } else {
-    const challengeId = await createFirstChallenge(projectArgs.block);
-    void createMetaJson(
+    await createMetaJson(
       projectArgs.superBlock,
       projectArgs.block,
       projectArgs.title,
@@ -128,7 +129,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.blockLabel,
       projectArgs.blockLayout
     );
-    // TODO: remove once we stop relying on markdown in the client.
+    await createFirstChallenge({ block: projectArgs.block, challengeId });
   }
 
   if (
@@ -139,12 +140,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
       'Missing argument: blockLabel when updating intro markdown'
     );
   }
-
-  void createIntroMD(
-    projectArgs.superBlock,
-    projectArgs.block,
-    projectArgs.title
-  );
 }
 
 async function updateIntroJson(
@@ -199,7 +194,13 @@ async function createMetaJson(
   await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(block: string): Promise<ObjectId> {
+async function createFirstChallenge({
+  block,
+  challengeId
+}: {
+  block: string;
+  challengeId: ObjectId;
+}) {
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
   const challengeSeeds = [
@@ -210,7 +211,8 @@ async function createFirstChallenge(block: string): Promise<ObjectId> {
     }
   ];
   // including trailing slash for compatibility with createStepFile
-  return createStepFile({
+  createStepFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     stepNum: 1,
     challengeType: 0,
@@ -219,12 +221,19 @@ async function createFirstChallenge(block: string): Promise<ObjectId> {
   });
 }
 
-async function createQuizChallenge(
-  block: string,
-  title: string,
-  questionCount: number
-): Promise<ObjectId> {
+async function createQuizChallenge({
+  challengeId,
+  block,
+  title,
+  questionCount
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+  questionCount: number;
+}): Promise<ObjectId> {
   return createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
@@ -263,7 +272,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },
@@ -403,8 +412,4 @@ void getAllBlocks()
         })
     )
   )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+  .then(() => console.log('All set.  Refresh the page to see the changes.'));

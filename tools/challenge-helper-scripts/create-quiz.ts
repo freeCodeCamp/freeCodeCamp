@@ -8,11 +8,10 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
 
 const helpCategories = [
@@ -41,31 +40,25 @@ interface CreateQuizArgs {
   questionCount: number;
 }
 
-async function createQuiz(
-  superBlock: SuperBlocks,
-  block: string,
-  helpCategory: string,
-  questionCount: number,
-  title?: string
-) {
+async function createQuiz({
+  superBlock,
+  block,
+  helpCategory,
+  questionCount,
+  title
+}: CreateQuizArgs) {
   if (!title) {
     title = block;
   }
   await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createQuizChallenge(
-    superBlock,
-    block,
-    title,
-    questionCount
-  );
+  const challengeId = new ObjectId();
   await createMetaJson(block, title, helpCategory, challengeId);
+  await createQuizChallenge({ challengeId, block, title, questionCount });
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
   void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -105,13 +98,19 @@ async function createMetaJson(
   await writeBlockStructure(block, newMeta);
 }
 
-async function createQuizChallenge(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  questionCount: number
-): Promise<ObjectId> {
-  return createQuizFile({
+async function createQuizChallenge({
+  block,
+  challengeId,
+  title,
+  questionCount
+}: {
+  block: string;
+  challengeId: ObjectId;
+  title: string;
+  questionCount: number;
+}) {
+  createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
@@ -144,7 +143,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },
@@ -176,18 +175,5 @@ void getAllBlocks()
       }
     ])
   )
-  .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      questionCount
-    }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, questionCount, title)
-  )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+  .then(async (args: CreateQuizArgs) => await createQuiz(args))
+  .then(() => console.log('All set.  Restart the client to see the changes.'));

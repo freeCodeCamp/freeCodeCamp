@@ -7,7 +7,8 @@ import { ObjectId } from 'bson';
 import {
   SuperBlocks,
   languageSuperBlocks,
-  chapterBasedSuperBlocks
+  chapterBasedSuperBlocks,
+  type ChallengeLang
 } from '@freecodecamp/shared/config/curriculum';
 
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
@@ -16,10 +17,9 @@ import {
   writeBlockStructure,
   createBlockFolder,
   getSuperblockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import {
   createDialogueFile,
   createQuizFile,
@@ -96,24 +96,8 @@ async function createLanguageBlock(
     moduleTitle
   });
 
-  const challengeLang = getLangFromSuperBlock(superBlock);
-  let challengeId: ObjectId;
-
-  if (blockLabel === BlockLabel.quiz) {
-    challengeId = await createQuizChallenge(
-      block,
-      title,
-      questionCount!,
-      challengeLang
-    );
-    blockLayout = BlockLayouts.Link;
-  } else {
-    challengeId = await createDialogueChallenge(
-      superBlock,
-      block,
-      challengeLang
-    );
-  }
+  const challengeLang: ChallengeLang = getLangFromSuperBlock(superBlock);
+  const challengeId: ObjectId = new ObjectId();
 
   await createMetaJson(
     block,
@@ -123,6 +107,19 @@ async function createLanguageBlock(
     blockLabel,
     blockLayout
   );
+
+  if (blockLabel === BlockLabel.quiz) {
+    await createQuizChallenge(
+      challengeId,
+      block,
+      title,
+      questionCount!,
+      challengeLang
+    );
+    blockLayout = BlockLayouts.Link;
+  } else {
+    await createDialogueChallenge(challengeId, block, challengeLang);
+  }
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
@@ -144,9 +141,6 @@ async function createLanguageBlock(
   } else {
     void updateSimpleSuperblockStructure(block, {}, superblockFilename);
   }
-
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson({
@@ -246,9 +240,9 @@ async function createMetaJson(
 }
 
 async function createDialogueChallenge(
-  superBlock: SuperBlocks,
+  challengeId: ObjectId,
   block: string,
-  challengeLang: string
+  challengeLang: ChallengeLang
 ): Promise<ObjectId> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
@@ -258,18 +252,21 @@ async function createDialogueChallenge(
   await fs.mkdir(newChallengeDir, { recursive: true });
 
   return createDialogueFile({
+    challengeId,
     projectPath: newChallengeDir + '/',
     challengeLang: challengeLang
   });
 }
 
 async function createQuizChallenge(
+  challengeId: ObjectId,
   block: string,
   title: string,
   questionCount: number,
-  challengeLang: string
+  challengeLang: ChallengeLang
 ): Promise<ObjectId> {
   return createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
@@ -606,8 +603,4 @@ void getAllBlocks()
       );
     }
   )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+  .then(() => console.log('All set.  Refresh the page to see the changes.'));

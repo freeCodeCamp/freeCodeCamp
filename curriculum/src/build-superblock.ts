@@ -1,6 +1,6 @@
 import { existsSync, readdirSync } from 'fs';
-import { resolve } from 'path';
-import { isEmpty } from 'lodash';
+import { join, resolve, basename } from 'path';
+import { isEmpty, cloneDeep } from 'lodash';
 import debug from 'debug';
 
 import { parseMD } from '../../tools/challenge-parser/parser';
@@ -8,7 +8,8 @@ import { createPoly } from '@freecodecamp/shared/utils/polyvinyl';
 import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import {
   CommentDictionary,
-  translateCommentsInChallenge
+  translateCommentsInChallenge,
+  type Challenge as ParsedChallenge
 } from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
@@ -42,6 +43,8 @@ interface Meta extends BlockStructure {
   superBlock: SuperBlocks;
   superOrder: number;
 }
+
+const challengeCache = new Map<string, ParsedChallenge>();
 
 /**
  * Validates challenges against meta.json challengeOrder
@@ -145,9 +148,11 @@ export function buildBlock(foundChallenges: Challenge[], meta: Meta) {
  * @returns {object} The challenge object with added meta information
  */
 export function addMetaToChallenge(
-  challenge: Partial<Challenge>,
+  challengeIn: Partial<Challenge>,
   meta: Meta
 ): Challenge {
+  const challenge = cloneDeep(challengeIn);
+
   const challengeOrderIndex = meta.challengeOrder.findIndex(
     ({ id }) => id === challenge.id
   );
@@ -329,13 +334,26 @@ export class BlockCreator {
 
     const challengePath = langUsed === 'english' ? englishPath : i18nPath;
 
-    const challenge = translateCommentsInChallenge(
-      await parser(challengePath),
-      langUsed,
-      this.commentTranslations
-    );
+    const cachedChallenge = challengeCache.get(challengePath);
+
+    const challenge =
+      cachedChallenge ??
+      translateCommentsInChallenge(
+        await parser(challengePath),
+        langUsed,
+        this.commentTranslations
+      );
 
     challenge.translationPending = this.lang !== 'english' && !isAudited;
+    // Add source location to allow tracing back to original file (necessary to
+    // update the client when files change)
+    challenge.sourceLocation = join(
+      basename(this.blockContentDir),
+      block,
+      filename
+    );
+
+    challengeCache.set(challengePath, challenge);
 
     return finalizeChallenge(challenge, meta);
   }

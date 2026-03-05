@@ -1,0 +1,30 @@
+{
+  "name": "Practical Python: Errors, Files and Modules",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-practical-errors-files",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "71ac60e6488b40e997219f15",
+      "title": "Comments"
+    },
+    {
+      "id": "2a486e3e521b79b874fb5e9a",
+      "title": "Try/Except"
+    },
+    {
+      "id": "04e25c4fdc9ee0e71a844fd6",
+      "title": "Reading Files"
+    },
+    {
+      "id": "bfab38e6a6c1165f7774514d",
+      "title": "Writing to Files"
+    },
+    {
+      "id": "2ccc34bd3f7bb4ae97a67ea3",
+      "title": "Modules and pip"
+    }
+  ]
+}

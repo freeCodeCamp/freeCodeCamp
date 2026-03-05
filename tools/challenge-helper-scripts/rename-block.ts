@@ -14,8 +14,7 @@ import {
   writeSuperblockStructure,
   getContentConfig,
   getCurriculumStructure
-} from '../../curriculum/src/file-handler';
-import matter from 'gray-matter';
+} from '@freecodecamp/curriculum/file-handler';
 
 interface RenameBlockArgs {
   newBlock: string;
@@ -53,26 +52,6 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
           console.log(
             `Updated superblock .json file written for ${superblock}.`
           );
-
-          const superblockPagesDir = path.resolve(
-            __dirname,
-            `../../client/src/pages/learn/${superblock}/`
-          );
-          const blockPagesDir = join(superblockPagesDir, oldBlock);
-          const indexMdPath = join(blockPagesDir, 'index.md');
-          const frontMatter = matter.read(indexMdPath);
-          const newData = {
-            ...frontMatter.data,
-            block: newBlock
-          };
-
-          await fs.writeFile(
-            indexMdPath,
-            matter.stringify(frontMatter.content, newData)
-          );
-          const newBlockClientDir = join(superblockPagesDir, newBlock);
-          await fs.rename(blockPagesDir, newBlockClientDir);
-          console.log("Updated block's index.md file written.");
 
           const introJsonPath = path.resolve(
             __dirname,
@@ -129,8 +108,4 @@ void getAllBlocks()
     async ({ newBlock, newName, oldBlock }: RenameBlockArgs) =>
       await renameBlock({ newBlock, newName, oldBlock })
   )
-  .then(() =>
-    console.log(
-      'All set. Now use pnpm run clean:client in the root and it should be good to go'
-    )
-  );
+  .then(() => console.log('All set.  Refresh the page to see the changes.'));
