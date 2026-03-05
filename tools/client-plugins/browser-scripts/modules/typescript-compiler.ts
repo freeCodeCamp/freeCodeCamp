@@ -1,5 +1,6 @@
 import type { VirtualTypeScriptEnvironment } from '@typescript/vfs';
 import type { CompilerHost, CompilerOptions } from 'typescript';
+import { parse } from 'jsonc-parser';
 
 import reactTypes from './react-types.json';
 
@@ -16,12 +17,19 @@ export class Compiler {
     this.tsvfs = tsvfs;
   }
 
-  async setup(opts?: { useNodeModules?: boolean; compilerOptions?: unknown }) {
+  async setup(opts?: {
+    useNodeModules?: boolean;
+    rawCompilerOptions?: string;
+  }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
 
-    const parsedOptions = ts.convertCompilerOptionsFromJson(
-      opts?.compilerOptions ?? {},
+    const parsedOptions = opts?.rawCompilerOptions
+      ? (parse(opts?.rawCompilerOptions) as unknown)
+      : undefined;
+
+    const validatedOptions = ts.convertCompilerOptionsFromJson(
+      parsedOptions ?? {},
       '/'
     );
 
@@ -34,7 +42,7 @@ export class Compiler {
       // 3.8.0-rc."
       jsx: ts.JsxEmit.Preserve, // Babel will handle JSX,
       allowUmdGlobalAccess: true, // Necessary because React is loaded via a UMD script.
-      ...parsedOptions.options
+      ...validatedOptions.options
     };
 
     const fsMap = opts?.useNodeModules

@@ -8,6 +8,7 @@ import {
   getPythonTransformers,
   getMultifileJSXTransformers
 } from './transformers.js';
+import { setupTSCompiler } from './typescript-worker-handler.js';
 
 interface Source {
   index: string;
@@ -165,6 +166,38 @@ type BuildResult = {
   error?: unknown;
 };
 
+function hasTS(challengeFiles: ChallengeFile[]) {
+  return challengeFiles.some(
+    challengeFile => challengeFile.ext === 'ts' || challengeFile.ext === 'tsx'
+  );
+}
+
+export function getTSConfig(challengeFiles: ChallengeFile[]) {
+  const tsConfigFiles = challengeFiles.filter(
+    file => file.name === 'tsconfig' && file.ext === 'json'
+  );
+
+  if (tsConfigFiles.length > 1) {
+    throw new Error(
+      'TypeScript challenge must include only one tsconfig.json file'
+    );
+  }
+
+  return tsConfigFiles.length === 1 ? tsConfigFiles[0].contents : null;
+}
+
+async function configureTSCompiler(challengeFiles: ChallengeFile[]) {
+  if (hasTS(challengeFiles)) {
+    const tsConfig = getTSConfig(challengeFiles);
+
+    if (tsConfig) {
+      await setupTSCompiler(tsConfig);
+    } else {
+      await setupTSCompiler();
+    }
+  }
+}
+
 // TODO: All the buildXChallenge files have a similar structure, so make that
 // abstraction (function, class, whatever) and then create the various functions
 // out of it.
@@ -182,6 +215,9 @@ async function buildDOMChallenge(
   const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx' || challengeFile.ext === 'tsx'
   );
+
+  await configureTSCompiler(challengeFiles);
+
   const isMultifile = challengeFiles.length > 1;
 
   const requiresReact16 = required.some(({ src }) =>
@@ -230,6 +266,7 @@ async function buildJSChallenge(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
+  await configureTSCompiler(challengeFiles);
   const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 

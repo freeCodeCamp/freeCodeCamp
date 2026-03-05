@@ -104,7 +104,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
-  if (tsconfigjson) editorKeys.push('tsconfigjsonc');
+  if (tsconfigjson) editorKeys.push('tsconfigjson');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
