@@ -72,7 +72,7 @@ assert.isNotEmpty(cssHelp.getStyle('.color-box')?.getPropVal('width', true));
 assert.isNotEmpty(cssHelp.getStyle('.color-box')?.getPropVal('height', true));
 ```
 
-The `.color-box` element should have a non-zero `width` and `height`. If the boxes are not visible in the preview, try resizing the preview window to a larger size.
+The `.color-box` elements should always have a non-zero `width` and `height`. Try to resize the preview to a smaller size, make sure that the boxes do not disappear.
 
 ```js
 const colorBox = document.querySelector('.color-box');
