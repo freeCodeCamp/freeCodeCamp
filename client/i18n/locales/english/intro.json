@@ -4704,6 +4704,10 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": ["Understanding Routing in ExpressJS", ""]
       }
     }
   },
