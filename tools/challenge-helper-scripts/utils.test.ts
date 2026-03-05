@@ -23,16 +23,6 @@ vi.mock('gray-matter', () => {
   };
 });
 
-vi.mock('bson', () => {
-  return {
-    ObjectId: vi.fn().mockImplementation(function () {
-      return {
-        toString: () => mockChallengeId
-      };
-    })
-  };
-});
-
 vi.mock('./helpers/get-step-template', () => {
   return {
     getStepTemplate: vi.fn()
@@ -50,7 +40,6 @@ vi.mock('./helpers/project-metadata', () => {
   };
 });
 
-const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template.js';
 import {
   createChallengeFile,
@@ -75,25 +64,26 @@ describe('Challenge utils helper scripts', () => {
     vi.clearAllMocks();
   });
   describe('createStepFile util', () => {
-    it('should create next step and return its identifier', () => {
+    it('should create next step', () => {
       process.env.INIT_CWD = projectPath;
       const mockTemplate = 'Mock template...';
       (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
         mockTemplate
       );
-      const step = createStepFile({
+
+      const challengeId = new ObjectId();
+
+      createStepFile({
+        challengeId,
         stepNum: 3,
         challengeType: 0
       });
-
-      expect(step.toString()).toEqual(mockChallengeId);
-      expect(ObjectId).toHaveBeenCalledTimes(1);
 
       // Internal tasks
       // - Should generate a template for the step that is being created
       expect(getStepTemplate).toHaveBeenCalledTimes(1);
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        `${projectPath}/${mockChallengeId}.md`,
+        `${projectPath}/${challengeId.toString()}.md`,
         mockTemplate
       );
     });
@@ -146,15 +136,17 @@ describe('Challenge utils helper scripts', () => {
     it('should call updateMetaData with a new file id and name', async () => {
       process.env.INIT_CWD = projectPath;
 
+      const stepId = new ObjectId();
+
       await insertStepIntoMeta({
         stepNum: 3,
-        stepId: new ObjectId(mockChallengeId)
+        stepId
       });
 
       expect(updateMetaData).toHaveBeenCalledWith({
         challengeOrder: [
           { id: 'abc', title: 'Step 1' }, // title gets overwritten
-          { id: mockChallengeId, title: 'Step 2' }
+          { id: stepId.toString(), title: 'Step 2' }
         ]
       });
     });

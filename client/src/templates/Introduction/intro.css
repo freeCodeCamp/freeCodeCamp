@@ -69,7 +69,8 @@
   color: var(--love-color);
 }
 
-.block-label-warm-up {
+.block-label-warm-up,
+.block-label-ai {
   border-color: var(--yellow-color);
   color: var(--yellow-color);
 }

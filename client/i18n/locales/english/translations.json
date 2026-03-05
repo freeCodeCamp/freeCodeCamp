@@ -699,7 +699,8 @@
       "exit-header": "Exit Exam",
       "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
       "exit-yes": "Yes, I want to leave the exam",
-      "exit-no": "No, I would like to continue the exam"
+      "exit-no": "No, I would like to continue the exam",
+      "not-honest": "You need to <0>accept the Academic Honesty Policy</0> to take this exam"
     },
     "ms": {
       "link-header": "Link your Microsoft account",
@@ -1276,6 +1277,7 @@
       "learn-python-for-beginners": "Learn Python for Beginners",
       "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
       "introduction-to-precalculus": "Introduction to Precalculus",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "A2 English for Developers",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
@@ -1464,7 +1466,8 @@
         "information-security": "Information Security",
         "computer-fundamentals": "Computer Fundamentals",
         "computer-science": "Computer Science",
-        "math": "Math"
+        "math": "Math",
+        "ai": "AI"
       }
     }
   }
