@@ -8,7 +8,7 @@
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import type { PyProxy, PythonError } from 'pyodide/ffi';
-import * as helpers from '@freecodecamp/curriculum-helpers';
+import * as formatException from '@freecodecamp/curriculum-helpers';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
@@ -60,8 +60,8 @@ async function setupPyodide() {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
   pyodide.FS.writeFile(
-    '/home/pyodide/ast_helpers.py',
-    helpers.python.astHelpers,
+    '/home/pyodide/format_exception.py',
+    formatException.default,
     {
       encoding: 'utf8'
     }
@@ -170,7 +170,7 @@ function initRunPython() {
   `);
   runPython(`
 def print_exception():
-    from ast_helpers import format_exception
+    from format_exception import format_exception
     formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
     print(formatted)
 `);
