@@ -1,4 +1,5 @@
 import { ObjectId } from 'bson';
+import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
@@ -10,7 +11,7 @@ interface ChallengeOptions {
   dashedName: string;
   challengeType: string;
   questionCount?: number;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
   inputType?: string;
 }
 
