@@ -75,14 +75,15 @@ assert.isNotEmpty(cssHelp.getStyle('.color-box')?.getPropVal('height', true));
 The `.color-box` elements should always have a non-zero `width` and `height`. Try to resize the preview to a smaller size, make sure that the boxes do not disappear.
 
 ```js
-const colorBox = document.querySelector('.color-box');
-assert.exists(colorBox);
+const colorBoxes = document.querySelectorAll('.color-box');
+assert.isNotEmpty(colorBoxes);
 
-const width = getComputedStyle(colorBox).width;
-const height = getComputedStyle(colorBox).height;
-
-assert.notStrictEqual(width, '0px');
-assert.notStrictEqual(height, '0px');
+colorBoxes.forEach(box => {
+  const width = getComputedStyle(box).width;
+  const height = getComputedStyle(box).height;
+  assert.notStrictEqual(width, '0px');
+  assert.notStrictEqual(height, '0px');
+});
 ```
 
 The `.color1` element should have a hexadecimal background color.
@@ -171,6 +172,9 @@ assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVa
 ```css
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
@@ -189,6 +193,9 @@ h1 {
 }
 
 .color-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     border-radius: 8px;
     text-align: center;
