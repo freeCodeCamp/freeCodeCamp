@@ -7,7 +7,8 @@ import { ObjectId } from 'bson';
 import {
   SuperBlocks,
   languageSuperBlocks,
-  chapterBasedSuperBlocks
+  chapterBasedSuperBlocks,
+  type ChallengeLang
 } from '@freecodecamp/shared/config/curriculum';
 
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
@@ -95,7 +96,7 @@ async function createLanguageBlock(
     moduleTitle
   });
 
-  const challengeLang = getLangFromSuperBlock(superBlock);
+  const challengeLang: ChallengeLang = getLangFromSuperBlock(superBlock);
   const challengeId: ObjectId = new ObjectId();
 
   await createMetaJson(
@@ -241,7 +242,7 @@ async function createMetaJson(
 async function createDialogueChallenge(
   challengeId: ObjectId,
   block: string,
-  challengeLang: string
+  challengeLang: ChallengeLang
 ): Promise<ObjectId> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
@@ -262,7 +263,7 @@ async function createQuizChallenge(
   block: string,
   title: string,
   questionCount: number,
-  challengeLang: string
+  challengeLang: ChallengeLang
 ): Promise<ObjectId> {
   return createQuizFile({
     challengeId,

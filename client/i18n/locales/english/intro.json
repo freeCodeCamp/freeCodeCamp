@@ -3286,6 +3286,12 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
+        ]
+      },
       "lecture-working-with-common-data-structures-js": {
         "title": "Working with Common Data Structures",
         "intro": [
@@ -3333,6 +3339,24 @@
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "lab-n-queens-problem-js": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "lecture-understanding-dynamic-programming-js": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "review-dynamic-programming-js": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming-js": {

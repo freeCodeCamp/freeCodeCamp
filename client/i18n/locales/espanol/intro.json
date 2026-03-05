@@ -3300,6 +3300,12 @@
           "Pon a prueba tus conocimientos de recursión con este cuestionario."
         ]
       },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introducción a los algoritmos comunes de búsqueda y ordenamiento.",
         "intro": [
@@ -3436,7 +3442,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front-End Development Libraries Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto. Recomendamos completar los cursos disponibles a continuación para prepararte para el examen de certificación una vez que sea lanzado.",
     "intro": [
       "Este curso te enseña las bibliotecas que los desarrolladores usan para construir páginas web: React, TypeScript, y más.",
       "To earn your Front-End Development Libraries Certification:",
@@ -3745,6 +3750,12 @@
         "title": "Introducción a la visualización de datos",
         "intro": [
           "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4545,7 +4556,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back-End Development and APIs Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto.",
     "intro": [
       "This course teaches you the fundamentals of back-end development and APIs.",
       "To earn your Back-End Development and APIs Certification:",
@@ -4701,6 +4711,12 @@
           "Aprende los fundamentos de cómo funciona la comunicación web a través del modelo de solicitud-respuesta HTTP, explora diferentes tipos de recursos web y respuestas, y comprende cómo los formularios manejan el envío de datos utilizando varios métodos HTTP."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introducción a npm",
         "intro": [
@@ -4723,7 +4739,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
@@ -5807,6 +5822,12 @@
         "title": "Construir una Galería de Fotos Flexbox",
         "intro": [
           "En este taller, utilizarás Flexbox para crear una página web de galería de fotos responsiva."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {

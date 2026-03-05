@@ -4,7 +4,7 @@ import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 export const getInputType = async (
   challengeType: string,
-  challengeLang?: string
+  challengeLang?: ChallengeLang
 ): Promise<string | undefined> => {
   const isRequired =
     parseInt(challengeType) === challengeTypes.fillInTheBlank &&
