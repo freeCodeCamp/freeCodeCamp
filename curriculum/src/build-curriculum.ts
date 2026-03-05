@@ -236,7 +236,8 @@ export const superBlockNames = {
   'learn-bash-scripting': SuperBlocks.LearnBashScripting,
   'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
   'introduction-to-nano': SuperBlocks.IntroductionToNano,
-  'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub
+  'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

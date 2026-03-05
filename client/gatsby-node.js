@@ -163,3 +163,15 @@ exports.onCreateBabelConfig = ({ actions }) => {
     name: '@babel/plugin-proposal-export-default-from'
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  // This hook is supported by the test runner, but is not currently used by the
+  // client, so we have to tell Gatsby that it exists.
+  const typeDefs = `
+    type ChallengeNodeChallengeHooks {
+      afterEach: String
+    }
+  `;
+  createTypes(typeDefs);
+};

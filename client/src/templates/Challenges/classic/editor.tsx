@@ -40,7 +40,6 @@ import {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge,
   initTests,
   stopResetting,
   openModal,
@@ -70,6 +69,7 @@ import LowerJaw from './lower-jaw';
 import reactTypes from './react-types.json';
 
 import './editor.css';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
@@ -105,7 +105,6 @@ export interface EditorProps {
   saveEditorContent: () => void;
   saveSubmissionToDB?: boolean;
   setEditorFocusability: (isFocusable: boolean) => void;
-  submitChallenge: () => void;
   stopResetting: () => void;
   resetAttempts: () => void;
   tests: Test[];
@@ -199,7 +198,6 @@ const mapDispatchToProps = {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge,
   initTests,
   stopResetting,
   resetAttempts,
@@ -296,8 +294,10 @@ const Editor = (props: EditorProps): JSX.Element => {
   const [lowerJawContainer, setLowerJawContainer] =
     React.useState<HTMLDivElement | null>(null);
 
+  const submitChallenge = useSubmit();
+
   const submitChallengeDebounceRef = useRef(
-    debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
+    debounce(submitChallenge, 1000, { leading: true, trailing: false })
   );
 
   const player = useRef<{

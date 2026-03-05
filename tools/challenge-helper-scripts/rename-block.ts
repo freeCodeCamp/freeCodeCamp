@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path, { join } from 'path';
-import { prompt } from 'inquirer';
+import { input } from '@inquirer/prompts';
 import { format } from 'prettier';
 
 import { IntroJson, parseJson } from './helpers/parse-json';
@@ -80,36 +80,24 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
   }
 }
 
-void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'oldBlock',
-        message: 'What is the dashed name of block to rename?',
-        type: 'input',
-        validate: (block: string) => existingBlocks.includes(block)
-      },
-      {
-        name: 'newName',
-        message: 'What is the new name?',
-        type: 'input',
-        default: ({ oldBlock }: RenameBlockArgs) =>
-          getBlockStructure(oldBlock).name
-      },
-      {
-        name: 'newBlock',
-        message: 'What is the new dashed name (in kebab-case)?',
-        validate: (newBlock: string) =>
-          validateBlockName(newBlock, existingBlocks)
-      }
-    ])
-  )
-  .then(
-    async ({ newBlock, newName, oldBlock }: RenameBlockArgs) =>
-      await renameBlock({ newBlock, newName, oldBlock })
-  )
-  .then(() =>
-    console.log(
-      'All set. Now use pnpm run clean:client in the root and it should be good to go'
-    )
-  );
+void getAllBlocks().then(async existingBlocks => {
+  const oldBlock = await input({
+    message: 'What is the dashed name of block to rename?',
+    validate: (block: string) =>
+      existingBlocks.includes(block) || 'Block not found in existing blocks.'
+  });
+
+  const newName = await input({
+    message: 'What is the new name?',
+    default: getBlockStructure(oldBlock).name
+  });
+
+  const newBlock = await input({
+    message: 'What is the new dashed name (in kebab-case)?',
+    validate: (block: string) => validateBlockName(block, existingBlocks)
+  });
+
+  await renameBlock({ newBlock, newName, oldBlock });
+
+  console.log('All set.  Refresh the page to see the changes.');
+});

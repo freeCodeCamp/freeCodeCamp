@@ -23,7 +23,8 @@ const blockSchema = Joi.object().keys({
         'Spanish Curriculum',
         'Odin',
         'Euler',
-        'Rosetta'
+        'Rosetta',
+        'General'
       ).required(),
       order: Joi.number().required(),
       template: Joi.string().allow(''),

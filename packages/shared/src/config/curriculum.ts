@@ -72,7 +72,8 @@ export enum SuperBlocks {
   LearnBashScripting = 'learn-bash-scripting',
   LearnSQLAndBash = 'learn-sql-and-bash',
   IntroductionToNano = 'introduction-to-nano',
-  IntroductionToGitAndGithub = 'introduction-to-git-and-github'
+  IntroductionToGitAndGithub = 'introduction-to-git-and-github',
+  LearnPromptingFundamentals = 'learn-prompting-fundamentals'
 }
 
 export const languageSuperBlocks = [
@@ -230,7 +231,8 @@ export const superBlockStages: StageMap = {
     SuperBlocks.LearnBashScripting,
     SuperBlocks.LearnSQLAndBash,
     SuperBlocks.IntroductionToNano,
-    SuperBlocks.IntroductionToGitAndGithub
+    SuperBlocks.IntroductionToGitAndGithub,
+    SuperBlocks.LearnPromptingFundamentals
   ]
 };
 

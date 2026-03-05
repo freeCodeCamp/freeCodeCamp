@@ -22,7 +22,8 @@ enum Topic {
   Databases = 'databases',
   Bash = 'bash',
   Git = 'git',
-  Editors = 'editors'
+  Editors = 'editors',
+  AI = 'ai'
 }
 
 interface Catalog {
@@ -236,5 +237,11 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 20,
     topic: Topic.Git
+  },
+  {
+    superBlock: SuperBlocks.LearnPromptingFundamentals,
+    level: Levels.Beginner,
+    hours: 1,
+    topic: Topic.AI
   }
 ];

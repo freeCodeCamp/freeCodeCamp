@@ -373,7 +373,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnBashScripting]: null,
   [SuperBlocks.LearnSQLAndBash]: null,
   [SuperBlocks.IntroductionToNano]: null,
-  [SuperBlocks.IntroductionToGitAndGithub]: null
+  [SuperBlocks.IntroductionToGitAndGithub]: null,
+  [SuperBlocks.LearnPromptingFundamentals]: null
 };
 
 export const certificationRequirements: Partial<

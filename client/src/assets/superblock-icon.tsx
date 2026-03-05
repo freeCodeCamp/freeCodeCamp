@@ -94,7 +94,8 @@ const iconMap = {
   [SuperBlocks.LearnBashScripting]: Code,
   [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
   [SuperBlocks.IntroductionToNano]: Code,
-  [SuperBlocks.IntroductionToGitAndGithub]: Code
+  [SuperBlocks.IntroductionToGitAndGithub]: Code,
+  [SuperBlocks.LearnPromptingFundamentals]: Clipboard
 };
 
 type SuperBlockIconProps = {

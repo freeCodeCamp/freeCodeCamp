@@ -63,7 +63,8 @@ const superblocks = [
   'learn-bash-scripting',
   'learn-sql-and-bash',
   'introduction-to-nano',
-  'introduction-to-git-and-github'
+  'introduction-to-git-and-github',
+  'learn-prompting-fundamentals'
 ];
 
 const schema = Joi.object().keys(
