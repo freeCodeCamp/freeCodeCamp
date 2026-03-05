@@ -21,6 +21,23 @@ describe('add-interactive-editor plugin', () => {
     expect(Array.isArray(file.data.nodules)).toBe(true);
   });
 
+  it('converts paragraphs to paragraph nodes', async () => {
+    const mockAST = await parseFixture('with-interactive.md');
+    plugin(mockAST, file);
+
+    expect(file.data.nodules.slice(0, 2)).toEqual([
+      {
+        type: 'paragraph',
+        contents: '<p>Normal markdown</p>'
+      },
+      {
+        type: 'paragraph',
+        contents:
+          '<pre><code class="language-html">&#x3C;div>This is NOT an interactive element&#x3C;/div>\n</code></pre>'
+      }
+    ]);
+  });
+
   it('populates `nodules` with editor objects', async () => {
     const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
@@ -31,7 +48,7 @@ describe('add-interactive-editor plugin', () => {
     expect(editorElements).toEqual([
       {
         type: 'interactiveEditor',
-        data: [
+        files: [
           {
             contents: "console.log('Interactive JS');",
             ext: 'js',
@@ -43,7 +60,7 @@ describe('add-interactive-editor plugin', () => {
       },
       {
         type: 'interactiveEditor',
-        data: [
+        files: [
           {
             contents: '<div>This is an interactive element</div>',
             ext: 'html',
@@ -55,7 +72,7 @@ describe('add-interactive-editor plugin', () => {
       },
       {
         type: 'interactiveEditor',
-        data: [
+        files: [
           {
             contents: '<div>This is an interactive element</div>',
             ext: 'html',
@@ -84,7 +101,7 @@ describe('add-interactive-editor plugin', () => {
 
     expect(editorElements).toHaveLength(1);
 
-    const files = editorElements[0].data;
+    const { files } = editorElements[0];
     expect(files).toHaveLength(2);
 
     // Both files should be JavaScript but have unique names

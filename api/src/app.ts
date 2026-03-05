@@ -41,6 +41,7 @@ import {
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
+  FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
@@ -86,7 +87,11 @@ export const buildOptions: FastifyHttpOptions<
   loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   // disabled so we can customise the request/response logging
-  disableRequestLogging: true
+  disableRequestLogging: true,
+  // destroy all connections on close to avoid EADDRINUSE
+  // on restart, in development. Leave default in production.
+  forceCloseConnections:
+    FREECODECAMP_NODE_ENV === 'production' ? ('idle' as const) : true
 };
 
 /**
@@ -191,13 +196,6 @@ export const build = async (
       await fastify.register(protectedRoutes.userRoutes);
     });
 
-    // CSRF protection disabled:
-    await fastify.register(async function (fastify, _opts) {
-      fastify.addHook('onRequest', fastify.send401IfNoUser);
-
-      await fastify.register(protectedRoutes.userGetRoutes);
-    });
-
     // Routes that redirect if access is denied:
     await fastify.register(async function (fastify, _opts) {
       fastify.addHook('onRequest', fastify.redirectIfNoUser);
@@ -208,6 +206,14 @@ export const build = async (
 
   // TODO: The route should not handle its own AuthZ
   await fastify.register(protectedRoutes.challengeTokenRoutes);
+
+  // CSRF protection disabled:
+  // Routes that work for both authenticated and unauthenticated users:
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.authorize);
+
+    await fastify.register(protectedRoutes.userGetRoutes);
+  });
 
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
