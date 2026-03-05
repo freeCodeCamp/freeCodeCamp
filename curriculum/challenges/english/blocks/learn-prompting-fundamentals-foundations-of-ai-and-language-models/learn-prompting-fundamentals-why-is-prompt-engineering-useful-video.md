@@ -36,4 +36,3 @@ Writing clear and specific prompts will improve the results.
 
 4
 
-
