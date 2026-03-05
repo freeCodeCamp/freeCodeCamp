@@ -8,7 +8,7 @@
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import type { PyProxy, PythonError } from 'pyodide/ffi';
-import * as formatException from '@freecodecamp/curriculum-helpers';
+import { formatException } from '@freecodecamp/curriculum-helpers';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
@@ -59,13 +59,9 @@ async function setupPyodide() {
   Object.freeze(self);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
-  pyodide.FS.writeFile(
-    '/home/pyodide/format_exception.py',
-    formatException.default,
-    {
-      encoding: 'utf8'
-    }
-  );
+  pyodide.FS.writeFile('/home/pyodide/format_exception.py', formatException, {
+    encoding: 'utf8'
+  });
 
   ignoreRunMessages = true;
   postMessage({ type: 'stopped' });
