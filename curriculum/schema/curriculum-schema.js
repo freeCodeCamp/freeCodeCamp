@@ -58,7 +58,8 @@ const superblocks = [
   'css-grid',
   'lab-product-landing-page',
   'css-animations',
-  'learn-rag-mcp-fundamentals'
+  'learn-rag-mcp-fundamentals',
+  'learn-prompting-fundamentals'
 ];
 
 const schema = Joi.object().keys(

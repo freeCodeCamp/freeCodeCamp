@@ -230,7 +230,8 @@ export const superBlockNames = {
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
   'css-animations': SuperBlocks.CssAnimations,
-  'learn-rag-mcp-fundamentals': SuperBlocks.LearnRAGAndMCPFundamentals
+  'learn-rag-mcp-fundamentals': SuperBlocks.LearnRAGAndMCPFundamentals,
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

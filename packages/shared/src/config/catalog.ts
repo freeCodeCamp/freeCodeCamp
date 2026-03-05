@@ -203,5 +203,11 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 2,
     topic: Topic.AI
+  },
+  {
+    superBlock: SuperBlocks.LearnPromptingFundamentals,
+    level: Levels.Beginner,
+    hours: 1,
+    topic: Topic.AI
   }
 ];

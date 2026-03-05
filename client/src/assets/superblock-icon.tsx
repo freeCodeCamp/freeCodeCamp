@@ -89,7 +89,8 @@ const iconMap = {
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,
-  [SuperBlocks.LearnRAGAndMCPFundamentals]: Code
+  [SuperBlocks.LearnRAGAndMCPFundamentals]: Code,
+  [SuperBlocks.LearnPromptingFundamentals]: Clipboard
 };
 
 type SuperBlockIconProps = {
