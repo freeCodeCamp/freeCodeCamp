@@ -4716,7 +4716,8 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
-      }
+      },
+      "review-npm": { "title": "NPM Review", "intro": ["NPM Review", ""] }
     }
   },
   "full-stack-developer-v9": {
