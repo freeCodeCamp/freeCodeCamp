@@ -110,7 +110,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Frontend Development Libraries V8 Certification',
+        title: 'Front-End Development Libraries V8 Certification',
         certSlug: Certification.FrontEndDevLibs
       },
       {
@@ -125,7 +125,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isApisMicroservicesCert,
-        title: 'Backend Development and APIs V8 Certification',
+        title: 'Back-End Development and APIs V8 Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
@@ -160,7 +160,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFrontEndCert,
-        title: 'Frontend Certification',
+        title: 'Front-End Certification',
         certSlug: Certification.LegacyFrontEnd
       },
       {
@@ -171,7 +171,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isBackEndCert,
-        title: 'Backend Certification',
+        title: 'Back-End Certification',
         certSlug: Certification.LegacyBackEnd
       },
       {

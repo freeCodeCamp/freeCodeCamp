@@ -33,3 +33,10 @@ export function formatDisplayDate(dateString: string) {
   }
   return format(parsedDate, 'MMMM d, yyyy');
 }
+
+export function truncate(str: string, maxLength = 35) {
+  if (str.length <= maxLength) {
+    return str;
+  }
+  return str.slice(0, maxLength) + '...';
+}

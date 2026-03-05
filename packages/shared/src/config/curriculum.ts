@@ -65,7 +65,8 @@ export enum SuperBlocks {
   CssGrid = 'css-grid',
   LabProductLandingPage = 'lab-product-landing-page',
   CssAnimations = 'css-animations',
-  LearnPythonForBeginners = 'learn-python-for-beginners'
+  LearnPythonForBeginners = 'learn-python-for-beginners',
+  IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures'
 }
 
 export const languageSuperBlocks = [
@@ -216,7 +217,8 @@ export const superBlockStages: StageMap = {
     SuperBlocks.CssGrid,
     SuperBlocks.LabProductLandingPage,
     SuperBlocks.CssAnimations,
-    SuperBlocks.LearnPythonForBeginners
+    SuperBlocks.LearnPythonForBeginners,
+    SuperBlocks.IntroductionToAlgorithmsAndDataStructures
   ]
 };
 
@@ -233,50 +235,8 @@ type NotAuditedSuperBlocks = {
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.English]: [],
   [Languages.Espanol]: [],
-  [Languages.Chinese]: [
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
-  [Languages.ChineseTraditional]: [
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
+  [Languages.Chinese]: [],
+  [Languages.ChineseTraditional]: [],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,

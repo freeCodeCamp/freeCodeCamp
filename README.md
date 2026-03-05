@@ -22,14 +22,14 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications that make up the [Fullstack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
+freeCodeCamp.org offers several free developer certifications that make up the [Full-Stack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
 
 - [Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design-v9/)
 - [JavaScript](https://www.freecodecamp.org/learn/javascript-v9/)
-- [Frontend Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
+- [Front-End Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
 - [Python](https://www.freecodecamp.org/learn/python-v9/)
 - [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
-- [Backend developer and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
+- [Back-End developer and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
 
 Each of these certifications involves completing interactive lessons, workshops, labs, reviews, and quizzes. Throughout the certification, you'll need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
 
@@ -92,4 +92,4 @@ Copyright © 2014 freeCodeCamp.org
 The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2025 freeCodeCamp.org
+- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org

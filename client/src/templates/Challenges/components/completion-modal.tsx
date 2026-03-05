@@ -11,7 +11,7 @@ import {
   completedChallengesIdsSelector
 } from '../../../redux/selectors';
 import { ChallengeFiles } from '../../../redux/prop-types';
-import { closeModal, submitChallenge } from '../redux/actions';
+import { closeModal } from '../redux/actions';
 import {
   isCompletionModalOpenSelector,
   successMessageSelector,
@@ -24,6 +24,7 @@ import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -54,15 +55,13 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
-  close: () => closeModal('completion'),
-  submitChallenge
+  close: () => closeModal('completion')
 };
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 
 interface CompletionModalProps extends StateProps {
   close: () => void;
-  submitChallenge: () => void;
   t: TFunction;
 }
 
@@ -80,10 +79,10 @@ function CompletionModal({
   isSignedIn,
   isSubmitting,
   message,
-  submitChallenge,
   t
 }: CompletionModalProps): JSX.Element {
   const [downloadURL, setDownloadURL] = useState<string>();
+  const submitChallenge = useSubmit();
   // We can't useMemo here, because it does not guarantee that the URL object
   // will be revoked when the dependencies change.
   useEffect(() => {
