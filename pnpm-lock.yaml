@@ -1112,8 +1112,8 @@ importers:
   tools/client-plugins/browser-scripts:
     dependencies:
       '@freecodecamp/curriculum-helpers':
-        specifier: ^7.2.0
-        version: 7.2.0(debug@4.3.4)(typescript@5.9.3)
+        specifier: ^8.0.0
+        version: 8.0.0(debug@4.3.4)(typescript@5.9.3)
       pyodide:
         specifier: ^0.23.3
         version: 0.23.4
@@ -3310,8 +3310,8 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6 || ~7
       react: ^16.3 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@freecodecamp/curriculum-helpers@7.2.0':
-    resolution: {integrity: sha512-C67fRaglYLDuj4YcjiprBafIanJdACWzeWk65ywD/8IGWThT85e6qKk80pCN1Z7XjSXec/L0wB7PBykqmppP+A==}
+  '@freecodecamp/curriculum-helpers@8.0.0':
+    resolution: {integrity: sha512-7AUPwVjm1LVUUMC8WypTbH9ufTRWuk+7+upbQnC10/zB+KmzCKtoZYm9tf8S2HJljq2kbhLrlzDAnPln8kQLSg==}
     engines: {pnpm: '>= 10'}
 
   '@freecodecamp/loop-protect@3.0.0':
@@ -8626,15 +8626,6 @@ packages:
 
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
-
-  follow-redirects@1.15.3:
-    resolution: {integrity: sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
 
   follow-redirects@1.15.9:
     resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
@@ -17872,7 +17863,7 @@ snapshots:
       prop-types: 15.8.1
       react: 18.2.0
 
-  '@freecodecamp/curriculum-helpers@7.2.0(debug@4.3.4)(typescript@5.9.3)':
+  '@freecodecamp/curriculum-helpers@8.0.0(debug@4.3.4)(typescript@5.9.3)':
     dependencies:
       '@sinonjs/fake-timers': 14.0.0
       '@types/jquery': 3.5.32
@@ -21170,7 +21161,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.14)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@24.10.14)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.14)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@24.10.14)(typescript@5.9.3))(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -24469,10 +24460,6 @@ snapshots:
 
   flatted@3.3.3: {}
 
-  follow-redirects@1.15.3(debug@4.3.4):
-    optionalDependencies:
-      debug: 4.3.4(supports-color@8.1.1)
-
   follow-redirects@1.15.9(debug@4.3.4):
     optionalDependencies:
       debug: 4.3.4(supports-color@8.1.1)
@@ -25529,7 +25516,7 @@ snapshots:
   http-proxy@1.18.1(debug@4.3.4):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.15.3(debug@4.3.4)
+      follow-redirects: 1.15.9(debug@4.3.4)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -28192,7 +28179,7 @@ snapshots:
       debug: 4.4.3
       devtools-protocol: 0.0.1452169
       typed-query-selector: 2.12.0
-      ws: 8.18.2
+      ws: 8.19.0
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
@@ -28233,7 +28220,7 @@ snapshots:
     dependencies:
       base-64: 1.0.0
       node-fetch: 2.7.0
-      ws: 8.18.2
+      ws: 8.19.0
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -31372,8 +31359,7 @@ snapshots:
 
   ws@8.18.3: {}
 
-  ws@8.19.0:
-    optional: true
+  ws@8.19.0: {}
 
   x-is-string@0.1.0: {}
 

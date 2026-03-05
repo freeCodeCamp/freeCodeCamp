@@ -52,7 +52,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^7.2.0",
+    "@freecodecamp/curriculum-helpers": "^8.0.0",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1"
   }
