@@ -1076,6 +1076,36 @@
       }
     }
   },
+  "learn-prompting-fundamentals": {
+    "title": "Learn Prompting Fundamentals",
+    "summary": [
+      "Learn the fundamentals of writing good prompts in this video course."
+    ],
+    "intro": [
+      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
+        "title": "Foundations of AI & Language Models",
+        "intro": [
+          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
+        ]
+      },
+      "learn-prompting-fundamentals-core-concepts": {
+        "title": "Core Concepts",
+        "intro": [
+          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
+        ]
+      },
+      "learn-prompting-fundamentals-practical-application-and-best-practices": {
+        "title": "Practical Application & Best Practices",
+        "intro": [
+          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Information Security",
     "intro": [
