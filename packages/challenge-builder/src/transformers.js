@@ -379,7 +379,18 @@ function challengeFilesToObject(challengeFiles) {
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
   const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
   const indexTsx = challengeFiles.find(file => file.fileKey === 'indextsx');
-  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs, indexTsx };
+  const tsconfigJson = challengeFiles.find(
+    file => file.fileKey === 'tsconfigjson'
+  );
+  return {
+    indexHtml,
+    indexJsx,
+    stylesCss,
+    scriptJs,
+    indexTs,
+    indexTsx,
+    tsconfigJson
+  };
 }
 
 const parseAndTransform = async function (transform, contents) {

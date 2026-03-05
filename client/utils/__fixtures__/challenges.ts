@@ -1,4 +1,4 @@
-import { ChallengeFile } from "../../src/redux/prop-types";
+import { ChallengeFile } from '../../src/redux/prop-types';
 
 export const challengeFiles: ChallengeFile[] = [
   {
@@ -13,7 +13,7 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'index.ts',
+    path: 'index.ts'
   },
   {
     contents: 'some css',
@@ -27,7 +27,7 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'styles.css',
+    path: 'styles.css'
   },
   {
     contents: 'some html',
@@ -41,7 +41,7 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'index.html',
+    path: 'index.html'
   },
   {
     contents: 'some js',
@@ -55,7 +55,7 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'script.js',
+    path: 'script.js'
   },
   {
     contents: 'some jsx',
@@ -69,7 +69,7 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'index.jsx',
+    path: 'index.jsx'
   },
   {
     contents: 'some tsx',
@@ -83,6 +83,20 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'index.tsx',
+    path: 'index.tsx'
+  },
+  {
+    contents: '{\n  "compilerOptions": {}\n}',
+    error: null,
+    ext: 'json',
+    head: '',
+    history: ['tsconfig.jsonc'],
+    fileKey: 'tsconfigjsonc',
+    name: 'tsconfig',
+    seed: '{\n  "compilerOptions": {}\n}',
+    tail: '',
+    editableRegionBoundaries: [],
+    usesMultifileEditor: true,
+    path: 'tsconfig.jsonc'
   }
-]
+];

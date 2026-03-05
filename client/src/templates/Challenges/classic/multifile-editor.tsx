@@ -19,6 +19,7 @@ export type VisibleEditors = {
   indexts?: boolean;
   indextsx?: boolean;
   mainpy?: boolean;
+  tsconfigjson?: boolean;
 };
 type MultifileEditorProps = Pick<
   EditorProps,
@@ -72,7 +73,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       indexts,
       indexjsx,
       indextsx,
-      mainpy
+      mainpy,
+      tsconfigjson
     },
     usesMultifileEditor,
     showProjectPreview,
@@ -102,6 +104,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
+  if (tsconfigjson) editorKeys.push('tsconfigjsonc');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {

@@ -374,6 +374,19 @@ exports[`challenge parser > should parse a simple md file 1`] = `
       "name": "script",
       "tail": "",
     },
+    {
+      "contents": "{
+  "compilerOptions": {
+    "target": "ES2020"
+  }
+}",
+      "editableRegionBoundaries": [],
+      "ext": "jsonc",
+      "head": "",
+      "id": "",
+      "name": "tsconfig",
+      "tail": "",
+    },
   ],
   "description": "<section id="description">
 <p>Paragraph 1</p>
