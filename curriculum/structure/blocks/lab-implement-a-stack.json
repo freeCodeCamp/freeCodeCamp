@@ -1,0 +1,15 @@
+{
+  "name": "Implement a Stack",
+  "isUpcomingChange": true,
+  "dashedName": "lab-implement-a-stack",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "69a92f0b9cc04bb0d5327bb5",
+      "title": "Implement a Stack"
+    }
+  ]
+}

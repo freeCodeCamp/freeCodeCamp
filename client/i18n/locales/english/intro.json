@@ -4141,6 +4141,12 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
+      "lab-implement-a-stack": {
+        "title": "Implement a Stack",
+        "intro": [
+          "In this lab, you will implement a stack data structure using functions."
+        ]
+      },
       "lab-hash-table": {
         "title": "Build a Hash Table",
         "intro": [
