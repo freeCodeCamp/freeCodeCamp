@@ -37,7 +37,7 @@ import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
-import ReviewOutlineNav from './review-outline-nav';
+import ContentOutline from './content-outline';
 
 // Styles
 import './show.css';
@@ -253,7 +253,35 @@ const ShowGeneric = ({
   };
 
   const isReviewChallenge = challengeType === challengeTypes.review;
-  const showReviewToggleInActionRow = isReviewChallenge && hasInteractiveEditor;
+
+  // content outline (review challenges)
+  const [showContentOutline, setShowContentOutline] = useState(false);
+
+  const actionRowProps =
+    isReviewChallenge && hasInteractiveEditor
+      ? {
+          hasContentOutline: true as const,
+          showContentOutline,
+          onToggleContentOutline: () =>
+            setShowContentOutline(current => !current),
+          hasInteractiveEditor: true as const,
+          showInteractiveEditor,
+          toggleInteractiveEditor
+        }
+      : isReviewChallenge
+        ? {
+            hasContentOutline: true as const,
+            showContentOutline,
+            onToggleContentOutline: () =>
+              setShowContentOutline(current => !current)
+          }
+        : hasInteractiveEditor
+          ? {
+              hasInteractiveEditor: true as const,
+              showInteractiveEditor,
+              toggleInteractiveEditor
+            }
+          : null;
 
   const challengeBody = (
     <>
@@ -379,29 +407,21 @@ const ShowGeneric = ({
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
         />
         <Container
-          className={isReviewChallenge ? 'review-layout-fluid' : undefined}
+          className={isReviewChallenge ? 'content-layout-fluid' : undefined}
           fluid
         >
-          {hasInteractiveEditor && (
-            <ActionRow
-              hasInteractiveEditor={hasInteractiveEditor}
-              showInteractiveEditor={showInteractiveEditor}
-              toggleInteractiveEditor={toggleInteractiveEditor}
-            />
-          )}
+          {actionRowProps && <ActionRow {...actionRowProps} />}
 
           {isReviewChallenge ? (
-            <ReviewOutlineNav
-              closeLabel={t('buttons.close')}
+            <ContentOutline
               description={description}
               instructions={instructions}
-              menuLabel={t('buttons.menu')}
               nodules={nodules}
               showInteractiveEditor={showInteractiveEditor}
-              showReviewToggleInActionRow={showReviewToggleInActionRow}
+              showOutline={showContentOutline}
             >
               <Row>{challengeBody}</Row>
-            </ReviewOutlineNav>
+            </ContentOutline>
           ) : (
             <Container>
               <Row>{challengeBody}</Row>

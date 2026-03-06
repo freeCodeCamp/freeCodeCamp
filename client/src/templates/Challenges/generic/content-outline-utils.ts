@@ -1,10 +1,10 @@
-export interface ReviewOutlineItem {
+export interface ContentOutlineItem {
   id: string;
   level: 1 | 2 | 3;
   text: string;
 }
 
-export const reviewHeadingSelector = 'h2, h3';
+export const contentHeadingSelector = 'h2, h3';
 
 export const createAnchorId = (value: string): string =>
   value
@@ -13,9 +13,9 @@ export const createAnchorId = (value: string): string =>
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-');
 
-export const buildReviewOutlineItems = (
+export const buildContentOutlineItems = (
   headingElements: HTMLHeadingElement[]
-): ReviewOutlineItem[] => {
+): ContentOutlineItem[] => {
   const idCounts = new Map<string, number>();
 
   return headingElements
@@ -26,7 +26,7 @@ export const buildReviewOutlineItems = (
       }
 
       const baseId = heading.id || createAnchorId(text);
-      const normalizedBaseId = baseId || `review-section-${index + 1}`;
+      const normalizedBaseId = baseId || `content-section-${index + 1}`;
       const count = (idCounts.get(normalizedBaseId) ?? 0) + 1;
       idCounts.set(normalizedBaseId, count);
       const id = count > 1 ? `${normalizedBaseId}-${count}` : normalizedBaseId;
@@ -41,5 +41,5 @@ export const buildReviewOutlineItems = (
         text
       };
     })
-    .filter((item): item is ReviewOutlineItem => item !== null);
+    .filter((item): item is ContentOutlineItem => item !== null);
 };

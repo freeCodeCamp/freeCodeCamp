@@ -1,0 +1,116 @@
+.content-layout-fluid {
+  padding-inline: 0 !important;
+}
+
+.content-layout-container {
+  padding-inline: 0;
+  width: 100%;
+}
+
+/* Two-column flex row containing the sidebar and the main content */
+.content-layout-row {
+  align-items: flex-start;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.content-main-column {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* Compensate Bootstrap row negative gutters used inside challengeBody. */
+  padding-inline: 15px;
+}
+
+.content-sidebar-column {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 18rem;
+  gap: 0.75rem;
+}
+
+.content-outline-panel {
+  height: calc(
+    100vh - var(--header-height) - var(--breadcrumbs-height) -
+      var(--action-row-height)
+  );
+}
+
+.content-outline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content-outline-item {
+  margin-bottom: 0.35rem;
+}
+
+.content-outline-item-level-2 {
+  padding-inline-start: 0.85rem;
+}
+
+.content-outline-item-level-3 {
+  padding-inline-start: 1.5rem;
+}
+
+.content-outline-link {
+  color: var(--primary-color);
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  padding: 0.2rem 0.45rem 0.2rem 1rem;
+  text-decoration: none;
+}
+
+.content-outline-link:hover,
+.content-outline-link:focus {
+  background-color: var(--tertiary-background);
+  text-decoration: none;
+}
+
+.content-outline-link.active {
+  background-color: var(--tertiary-background);
+  box-shadow: inset 3px 0 0 0 var(--highlight-color);
+}
+
+@media (min-width: 992px) {
+  .content-sidebar-column {
+    align-self: flex-start;
+    position: sticky;
+    top: calc(
+      var(--header-height) + var(--breadcrumbs-height) +
+        var(--action-row-height)
+    );
+  }
+
+  .content-layout-row:not(:has(.content-sidebar-column)) .content-main-column {
+    margin-inline: auto;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 991px) {
+  .content-layout-row {
+    gap: 0;
+  }
+
+  .content-sidebar-column {
+    flex: 0 0 0;
+    overflow: visible;
+  }
+
+  .content-outline-panel {
+    height: calc(
+      100vh - var(--header-height) - var(--breadcrumbs-height) -
+        var(--action-row-height)
+    );
+    left: 0;
+    position: fixed;
+    top: calc(
+      var(--header-height) + var(--breadcrumbs-height) +
+        var(--action-row-height)
+    );
+    width: 100vw;
+    z-index: 200;
+  }
+}
