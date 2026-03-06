@@ -24,71 +24,36 @@ interface ClassicLayoutProps {
   challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
-  hasContentOutline?: never;
 }
 
 interface InteractiveEditorProps {
   hasInteractiveEditor: true;
-  hasContentOutline?: never;
   showInteractiveEditor: boolean;
   toggleInteractiveEditor: () => void;
 }
 
-interface ReviewChallengeProps {
-  hasContentOutline: true;
-  hasInteractiveEditor?: never;
-  showContentOutline: boolean;
-  onToggleContentOutline: () => void;
-}
-
-interface ReviewWithInteractiveEditorProps {
-  hasContentOutline: true;
-  hasInteractiveEditor: true;
-  showContentOutline: boolean;
-  onToggleContentOutline: () => void;
-  showInteractiveEditor: boolean;
-  toggleInteractiveEditor: () => void;
-}
-
-type ActionRowProps =
-  | ClassicLayoutProps
-  | InteractiveEditorProps
-  | ReviewChallengeProps
-  | ReviewWithInteractiveEditorProps;
+type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
 
 const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
-  if (props.hasContentOutline || props.hasInteractiveEditor) {
+  if (props.hasInteractiveEditor) {
+    const { toggleInteractiveEditor, showInteractiveEditor } = props;
+
     return (
       <div className='action-row'>
         <div className='tabs-row'>
-          <div className='tabs-row-left'>
-            {props.hasContentOutline && (
-              <button
-                aria-controls='content-outline-panel'
-                aria-expanded={props.showContentOutline}
-                onClick={props.onToggleContentOutline}
-              >
-                {t('buttons.outline')}
-              </button>
-            )}
-          </div>
-          <div className='tabs-row-right'>
-            {props.hasInteractiveEditor && (
-              <div className='interactive-editor-tab'>
-                <button
-                  aria-expanded={!!props.showInteractiveEditor}
-                  aria-describedby='interactive-editor-desc'
-                  onClick={props.toggleInteractiveEditor}
-                >
-                  {t('learn.editor-tabs.interactive-editor')}
-                </button>
-                <span id='interactive-editor-desc' className='sr-only'>
-                  {t('aria.interactive-editor-desc')}
-                </span>
-              </div>
-            )}
+          <div className='interactive-editor-tab'>
+            <button
+              aria-expanded={!!showInteractiveEditor}
+              aria-describedby='interactive-editor-desc'
+              onClick={toggleInteractiveEditor}
+            >
+              {t('learn.editor-tabs.interactive-editor')}
+            </button>
+            <span id='interactive-editor-desc' className='sr-only'>
+              {t('aria.interactive-editor-desc')}
+            </span>
           </div>
         </div>
       </div>

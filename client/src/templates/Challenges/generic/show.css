@@ -31,3 +31,118 @@ input[type='checkbox']:checked::before {
 audio {
   background-color: aqua;
 }
+
+.review-layout-fluid {
+  padding-inline: 0 !important;
+}
+
+.review-layout-container {
+  padding-inline: 0;
+  width: 100%;
+}
+
+.review-layout-row {
+  align-items: flex-start;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.review-main-column {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* Compensate Bootstrap row negative gutters used inside challengeBody. */
+  padding-inline: 15px;
+}
+
+.review-sidebar-column {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 18rem;
+  gap: 0.75rem;
+}
+
+.review-outline-toggle-btn-action-row {
+  left: 10px;
+  margin-bottom: 0;
+  position: fixed;
+  top: calc(var(--header-height) + var(--breadcrumbs-height) + 10px);
+  z-index: 101;
+}
+
+.review-outline-panel {
+  background-color: var(--tertiary-background);
+  border: 1px solid var(--quaternary-background);
+  height: calc(
+    100vh - var(--header-height) - var(--breadcrumbs-height) -
+      var(--action-row-height)
+  );
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.review-outline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.review-outline-item {
+  margin-bottom: 0.35rem;
+}
+
+.review-outline-item-level-2 {
+  padding-inline-start: 0.85rem;
+}
+
+.review-outline-item-level-3 {
+  padding-inline-start: 1.5rem;
+}
+
+.review-outline-link {
+  border-left: 2px solid transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: block;
+  padding: 0.2rem 0.45rem;
+  text-decoration: none;
+}
+
+.review-outline-link:hover,
+.review-outline-link:focus,
+.review-outline-link.active {
+  background-color: var(--quaternary-background);
+  text-decoration: none;
+}
+
+.review-outline-link.active {
+  border-left-color: var(--primary-color);
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
+  .review-sidebar-column {
+    align-self: flex-start;
+    position: sticky;
+    top: calc(
+      var(--header-height) + var(--breadcrumbs-height) +
+        var(--action-row-height)
+    );
+  }
+}
+
+@media (max-width: 991px) {
+  .review-layout-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .review-sidebar-column {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .review-outline-panel {
+    height: auto;
+    max-height: 50vh;
+  }
+}
