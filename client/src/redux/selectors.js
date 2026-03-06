@@ -124,6 +124,18 @@ export const createUserByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
+
+export const needsCurriculumDataSelector = createSelector(
+  allChallengesInfoSelector,
+  superBlockStructuresSelector,
+  (allChallengesInfo, superBlockStructures) => {
+    return (
+      !allChallengesInfo?.challengeNodes?.length ||
+      !Object.keys(superBlockStructures).length
+    );
+  }
+);
+
 export const getSuperBlockStructure = (state, superBlock) =>
   superBlockStructuresSelector(state)[superBlock];
 
