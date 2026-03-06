@@ -2,18 +2,18 @@
 import { describe, expect, test } from 'vitest';
 
 import {
-  buildReviewOutlineItems,
+  buildContentOutlineItems,
   createAnchorId,
-  reviewHeadingSelector
-} from './review-outline';
+  contentHeadingSelector
+} from './content-outline';
 
-describe('review-outline', () => {
+describe('content-outline', () => {
   test('createAnchorId should normalize heading text', () => {
     expect(createAnchorId('  HTML Basics!  ')).toBe('html-basics');
     expect(createAnchorId('A11y & SEO')).toBe('a11y-seo');
   });
 
-  test('buildReviewOutlineItems should include h2/h3 headings and assign ids', () => {
+  test('buildContentOutlineItems should include h2/h3 headings and assign ids', () => {
     const root = document.createElement('div');
     root.innerHTML = `
       <h2>HTML Basics</h2>
@@ -24,10 +24,10 @@ describe('review-outline', () => {
     `;
 
     const headingElements = Array.from(
-      root.querySelectorAll<HTMLHeadingElement>(reviewHeadingSelector)
+      root.querySelectorAll<HTMLHeadingElement>(contentHeadingSelector)
     );
 
-    const items = buildReviewOutlineItems(headingElements);
+    const items = buildContentOutlineItems(headingElements);
 
     expect(items).toEqual([
       { id: 'html-basics', level: 2, text: 'HTML Basics' },
@@ -42,7 +42,7 @@ describe('review-outline', () => {
     expect(headingElements[3]?.id).toBe('existing-id');
   });
 
-  test('buildReviewOutlineItems should ignore headings outside h2/h3', () => {
+  test('buildContentOutlineItems should ignore headings outside h2/h3', () => {
     const root = document.createElement('div');
     root.innerHTML = `
       <h1>Page Title</h1>
@@ -52,9 +52,9 @@ describe('review-outline', () => {
     `;
 
     const headingElements = Array.from(
-      root.querySelectorAll<HTMLHeadingElement>(reviewHeadingSelector)
+      root.querySelectorAll<HTMLHeadingElement>(contentHeadingSelector)
     );
-    const items = buildReviewOutlineItems(headingElements);
+    const items = buildContentOutlineItems(headingElements);
 
     expect(items).toEqual([
       { id: 'section-one', level: 2, text: 'Section One' },

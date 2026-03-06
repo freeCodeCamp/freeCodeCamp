@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Review outline', () => {
+test.describe('Content outline', () => {
   test.skip(({ isMobile }) => isMobile, 'Only test on desktop');
 
   test('shows section headings without a top menu header item', async ({
@@ -15,21 +15,21 @@ test.describe('Review outline', () => {
     ).toBeVisible();
 
     const menuButton = page.locator(
-      'button[aria-controls="review-outline-panel"]'
+      'button[aria-controls="content-outline-panel"]'
     );
     await menuButton.click();
     await expect(menuButton).toHaveText(/Close/);
 
-    const outlinePanel = page.locator('#review-outline-panel');
+    const outlinePanel = page.locator('#content-outline-panel');
     await expect(outlinePanel).toBeVisible();
 
     const outlineItems = outlinePanel.locator(
-      '.review-outline-item-level-2, .review-outline-item-level-3'
+      '.content-outline-item-level-2, .content-outline-item-level-3'
     );
     expect(await outlineItems.count()).toBeGreaterThan(0);
 
     await expect(
-      outlinePanel.locator('.review-outline-item-level-1')
+      outlinePanel.locator('.content-outline-item-level-1')
     ).toHaveCount(0);
     await expect(
       outlinePanel.getByRole('link', { name: 'Semantic HTML Review' })
@@ -41,13 +41,13 @@ test.describe('Review outline', () => {
       '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
     );
 
-    await page.locator('button[aria-controls="review-outline-panel"]').click();
+    await page.locator('button[aria-controls="content-outline-panel"]').click();
 
-    const outlinePanel = page.locator('#review-outline-panel');
+    const outlinePanel = page.locator('#content-outline-panel');
     await expect(outlinePanel).toBeVisible();
 
     const firstOutlineLink = outlinePanel
-      .locator('.review-outline-link')
+      .locator('.content-outline-link')
       .first();
     await firstOutlineLink.click();
     await expect(firstOutlineLink).toHaveClass(/active/);
@@ -60,7 +60,7 @@ test.describe('Review outline', () => {
     });
 
     const activeLink = outlinePanel
-      .locator('.review-outline-link.active')
+      .locator('.content-outline-link.active')
       .first();
     await expect(activeLink).toBeVisible();
 
@@ -73,7 +73,7 @@ test.describe('Review outline', () => {
       return (
         itemRect.top >= panelRect.top && itemRect.bottom <= panelRect.bottom
       );
-    }, 'review-outline-panel');
+    }, 'content-outline-panel');
 
     expect(inView).toBe(true);
   });
