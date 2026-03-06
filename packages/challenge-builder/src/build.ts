@@ -172,10 +172,11 @@ function hasTS(challengeFiles: ChallengeFile[]) {
   );
 }
 
+const isTSConfig = (f: { name: string; ext: string }) =>
+  f.name === 'tsconfig' && f.ext === 'json';
+
 export function getTSConfig(challengeFiles: ChallengeFile[]) {
-  const tsConfigFiles = challengeFiles.filter(
-    file => file.name === 'tsconfig' && file.ext === 'json'
-  );
+  const tsConfigFiles = challengeFiles.filter(isTSConfig);
 
   if (tsConfigFiles.length > 1) {
     throw new Error(
@@ -217,13 +218,8 @@ async function buildDOMChallenge(
   );
 
   await configureTSCompiler(challengeFiles);
-
-  const isMultifile = challengeFiles.length > 1;
-
-  const requiresReact16 = required.some(({ src }) =>
-    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
-  );
-
+  const sourceFiles = challengeFiles.filter(file => !isTSConfig(file));
+  const isMultifile = sourceFiles.length > 1;
   // I'm reasonably sure this is fine, but we need to migrate transformers to
   // TypeScript to be sure.
   const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
@@ -231,7 +227,7 @@ async function buildDOMChallenge(
     : getTransformers(options)) as unknown as ApplyFunctionProps[];
 
   const pipeLine = composeFunctions(...transformers);
-  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
   const contents = (await embedFilesInHtml(finalFiles)) as string;
 
@@ -244,6 +240,10 @@ async function buildDOMChallenge(
         template,
         contents
       };
+
+  const requiresReact16 = required.some(({ src }) =>
+    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
+  );
 
   return {
     challengeType,
@@ -267,7 +267,8 @@ async function buildJSChallenge(
   );
 
   await configureTSCompiler(challengeFiles);
-  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
+  const sourceFiles = challengeFiles.filter(file => !isTSConfig(file));
+  const finalFiles = await Promise.all(sourceFiles?.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 
   const toBuild = error ? [] : finalFiles;
