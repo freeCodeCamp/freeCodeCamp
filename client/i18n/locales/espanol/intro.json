@@ -1002,6 +1002,80 @@
       }
     }
   },
+  "introduction-to-algorithms-and-data-structures": {
+    "title": "Introduction to Algorithms and Data Structures",
+    "summary": [
+      "Learn about common algorithms and data structures in this introductory course."
+    ],
+    "intro": [
+      "Algorithms and Data Structures are the backbone of programming. So it's important to learn how to work with them.",
+      "In this comprehensive course, you will learn about common sorting and searching algorithms including merge sort, quicksort and binary search.",
+      "You will also learn how to work with common data structures including arrays and linked lists."
+    ],
+    "note": "",
+    "blocks": {
+      "intro-dsa-searching-algorithms": {
+        "title": "Searching Algorithms",
+        "intro": [
+          "In these videos, you will learn what an algorithm is and learn how to work with the binary search and linear search algorithms."
+        ]
+      },
+      "intro-dsa-time-complexity": {
+        "title": "Time Complexity",
+        "intro": [
+          "In these videos, you will learn about time complexity and how it works with measuring efficiency of algorithms."
+        ]
+      },
+      "intro-dsa-algorithms-in-code": {
+        "title": "Algorithms in Code",
+        "intro": [
+          "In these videos, you will write Python code for the linear and binary search algorithms."
+        ]
+      },
+      "intro-dsa-recursion-and-space-complexity": {
+        "title": "Recursion and Space Complexity",
+        "intro": [
+          "In these videos, you will learn about recursion and space complexity for algorithms."
+        ]
+      },
+      "intro-dsa-arrays": {
+        "title": "Introduction to Arrays",
+        "intro": [
+          "In these videos, you will learn how to work with arrays. You will learn about different operations including insert, delete and search."
+        ]
+      },
+      "intro-dsa-linked-lists": {
+        "title": "Introduction to Linked Lists",
+        "intro": [
+          "In these videos, you will learn about linked lists. You will learn how to add nodes to a list as well as remove and search a list."
+        ]
+      },
+      "intro-dsa-merge-sort": {
+        "title": "The Merge Sort Algorithm",
+        "intro": [
+          "In these videos, you will learn about the merge sort algorithm."
+        ]
+      },
+      "intro-dsa-sorting-linked-lists": {
+        "title": "Sorting a Linked List",
+        "intro": [
+          "In these videos, you will learn more about how to sort linked lists."
+        ]
+      },
+      "intro-dsa-sorting-algorithms": {
+        "title": "Sorting Algorithms",
+        "intro": [
+          "In these videos, you will learn about common sorting algorithms including selection sort and quicksort."
+        ]
+      },
+      "intro-dsa-sorting-searching-algorithms": {
+        "title": "Searching Names using Sorting and Searching Algorithms",
+        "intro": [
+          "In these videos, you will practice searching for names using the binary and linear search algorithms and comparing the runtimes for them."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Seguridad de la Información",
     "intro": [
@@ -3226,6 +3300,12 @@
           "Pon a prueba tus conocimientos de recursión con este cuestionario."
         ]
       },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introducción a los algoritmos comunes de búsqueda y ordenamiento.",
         "intro": [
@@ -3261,6 +3341,18 @@
         "title": "Comprender grafos y árboles.",
         "intro": [
           "En esta lección, aprenderás sobre estructuras de datos fundamentales como grafos, árboles y sus aplicaciones prácticas en ciencias de la computación."
+        ]
+      },
+      "lab-adjacency-list-to-matrix-converter-js": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "quiz-dynamic-programming-js": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in JavaScript with this quiz."
         ]
       },
       "lecture-understanding-functional-programming": {
@@ -3350,7 +3442,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front-End Development Libraries Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto. Recomendamos completar los cursos disponibles a continuación para prepararte para el examen de certificación una vez que sea lanzado.",
     "intro": [
       "Este curso te enseña las bibliotecas que los desarrolladores usan para construir páginas web: React, TypeScript, y más.",
       "To earn your Front-End Development Libraries Certification:",
@@ -3661,6 +3752,12 @@
           "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
         ]
       },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+        ]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introducción a TypeScript",
         "intro": [
@@ -3776,6 +3873,12 @@
         "title": "Números y Operaciones Matemáticas",
         "intro": [
           "En estas lecciones, aprenderás sobre números y operaciones matemáticas en Python."
+        ]
+      },
+      "workshop-bill-splitter": {
+        "title": "Build a Bill Splitter",
+        "intro": [
+          "In this workshop you will build a bill splitter to practice working with numbers and mathematical operations in Python"
         ]
       },
       "lecture-booleans-and-conditionals": {
@@ -3995,7 +4098,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Construye un calculador de descuentos.",
+        "title": "Build an Apply Discount Function",
         "intro": [
           "En este laboratorio, practicarás conceptos básicos de Python construyendo un calculador para aplicar un descuento a un precio."
         ]
@@ -4453,7 +4556,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back-End Development and APIs Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto.",
     "intro": [
       "This course teaches you the fundamentals of back-end development and APIs.",
       "To earn your Back-End Development and APIs Certification:",
@@ -4609,6 +4711,12 @@
           "Aprende los fundamentos de cómo funciona la comunicación web a través del modelo de solicitud-respuesta HTTP, explora diferentes tipos de recursos web y respuestas, y comprende cómo los formularios manejan el envío de datos utilizando varios métodos HTTP."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introducción a npm",
         "intro": [
@@ -4631,7 +4739,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
@@ -4751,18 +4858,6 @@
       "es-a1-module-describing-people-at-work": "Describir personas en el trabajo."
     },
     "module-intros": {
-      "es-a1-module-sharing-your-personal-details": {
-        "note": "Disponible en 2026",
-        "intro": [
-          "En este módulo, practicarás la comprensión de conversaciones cortas que solicitan datos personales como nombre, información de contacto, nacionalidad y edad."
-        ]
-      },
-      "es-a1-module-numbers-30-to-100": {
-        "note": "Próximamente en 2026.",
-        "intro": [
-          "En este módulo, aprenderás cómo leer, escribir y pronunciar números del 30 al 100."
-        ]
-      },
       "es-a1-module-describing-a-company": {
         "note": "Próximamente en 2026.",
         "intro": [
@@ -5727,6 +5822,12 @@
         "title": "Construir una Galería de Fotos Flexbox",
         "intro": [
           "En este taller, utilizarás Flexbox para crear una página web de galería de fotos responsiva."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {
