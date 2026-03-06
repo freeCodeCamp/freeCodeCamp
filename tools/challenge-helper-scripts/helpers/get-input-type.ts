@@ -1,4 +1,4 @@
-import { prompt } from 'inquirer';
+import { select } from '@inquirer/prompts';
 import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
@@ -14,12 +14,13 @@ export const getInputType = async (
     return;
   }
 
-  const inputType = await prompt<{ value: string }>({
-    name: 'value',
+  const inputType = await select<string>({
     message: 'What input type is challenge using?',
-    type: 'list',
-    choices: ['pinyin-tone', 'pinyin-to-hanzi']
+    choices: [
+      { name: 'pinyin-tone', value: 'pinyin-tone' },
+      { name: 'pinyin-to-hanzi', value: 'pinyin-to-hanzi' }
+    ]
   });
 
-  return inputType.value;
+  return inputType;
 };
