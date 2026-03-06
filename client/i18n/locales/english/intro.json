@@ -3371,17 +3371,17 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "lab-n-queens-problem-js": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
       "review-graphs-and-trees-js": {
         "title": "Graphs and Trees Review",
         "intro": [
           "Graphs and Trees Review",
           "Before you are quizzed on graphs and trees, you should review what you've learned."
-        ]
-      },
-      "lab-n-queens-problem-js": {
-        "title": "Implement the N-Queens Problem",
-        "intro": [
-          "In this lab, you will implement a solution for the N-Queens problem."
         ]
       },
       "lecture-understanding-dynamic-programming-js": {
