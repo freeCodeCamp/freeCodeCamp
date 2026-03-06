@@ -300,8 +300,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures-js",
-            "quiz-data-structures-js",
-            "lab-implement-a-stack"
+            "lab-implement-a-stack",
+            "quiz-data-structures-js"
           ]
         },
         {
