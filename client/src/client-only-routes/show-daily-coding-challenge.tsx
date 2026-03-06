@@ -46,6 +46,7 @@ function formatChallengeData({
     id,
     challengeNumber,
     title,
+    dashedName: `challenge-${challengeNumber}`,
     description: formatDescription(description),
     superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
@@ -65,6 +66,7 @@ function formatChallengeData({
   const pageContext = {
     challengeMeta: {
       id,
+      dashedName: `challenge-${challengeNumber}`,
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge',
       disableLoopProtectTests: true,
