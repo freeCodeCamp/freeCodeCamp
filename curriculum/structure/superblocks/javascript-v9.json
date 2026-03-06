@@ -298,9 +298,9 @@
         {
           "dashedName": "data-structures",
           "comingSoon": true,
-          "blocks": ["lab-linked-list-operations"]
           "blocks": [
             "lecture-working-with-common-data-structures-js",
+            "lab-linked-list-operations",
             "quiz-data-structures-js"
           ]
         },
