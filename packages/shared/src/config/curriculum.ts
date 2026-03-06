@@ -66,7 +66,8 @@ export enum SuperBlocks {
   LabProductLandingPage = 'lab-product-landing-page',
   CssAnimations = 'css-animations',
   LearnPythonForBeginners = 'learn-python-for-beginners',
-  IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures'
+  IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures',
+  LearnPromptingFundamentals = 'learn-prompting-fundamentals'
 }
 
 export const languageSuperBlocks = [
@@ -218,7 +219,8 @@ export const superBlockStages: StageMap = {
     SuperBlocks.LabProductLandingPage,
     SuperBlocks.CssAnimations,
     SuperBlocks.LearnPythonForBeginners,
-    SuperBlocks.IntroductionToAlgorithmsAndDataStructures
+    SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+    SuperBlocks.LearnPromptingFundamentals
   ]
 };
 
