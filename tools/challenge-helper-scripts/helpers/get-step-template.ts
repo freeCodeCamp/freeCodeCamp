@@ -1,4 +1,5 @@
 import { ObjectId } from 'bson';
+import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 import { insertErms } from './insert-erms.js';
 
 // Builds a block
@@ -25,7 +26,7 @@ type StepOptions = {
   stepNum: number;
   challengeType?: number;
   isFirstChallenge?: boolean;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
 };
 
 export interface ChallengeSeed {

@@ -229,7 +229,8 @@ export const superBlockNames = {
   'css-variables': SuperBlocks.CssVariables,
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
-  'css-animations': SuperBlocks.CssAnimations
+  'css-animations': SuperBlocks.CssAnimations,
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

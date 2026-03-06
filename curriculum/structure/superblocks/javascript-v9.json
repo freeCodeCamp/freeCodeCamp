@@ -295,7 +295,14 @@
             "quiz-recursion"
           ]
         },
-        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-working-with-common-data-structures-js",
+            "quiz-data-structures-js"
+          ]
+        },
         {
           "dashedName": "algorithms",
           "comingSoon": true,
@@ -313,13 +320,18 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
             "lab-adjacency-list-to-matrix-converter-js",
-            "lab-depth-first-search-js"
+            "lab-depth-first-search-js",
+            "lab-n-queens-problem-js"
           ]
         },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-understanding-dynamic-programming-js",
+            "review-dynamic-programming-js",
+            "quiz-dynamic-programming-js"
+          ]
         },
         {
           "dashedName": "functional-programming",
