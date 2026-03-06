@@ -328,6 +328,7 @@
           "dashedName": "dynamic-programming",
           "comingSoon": true,
           "blocks": [
+            "lecture-understanding-dynamic-programming-js",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]
