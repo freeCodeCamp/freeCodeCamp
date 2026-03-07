@@ -11,11 +11,12 @@
 .content-layout-row {
   align-items: flex-start;
   display: flex;
-  gap: 1.5rem;
 }
 
 .content-main-column {
   flex: 1 1 auto;
+  margin-inline: auto;
+  max-width: calc(100% - 16rem);
   min-width: 0;
   /* Compensate row negative gutters used inside challengeBody. */
   padding-inline: 15px;
@@ -24,7 +25,7 @@
 .content-sidebar-column {
   display: flex;
   flex-direction: column;
-  flex: 0 0 18rem;
+  flex: 0 0 16rem;
   gap: 0.75rem;
 }
 
@@ -82,21 +83,16 @@
         var(--action-row-height)
     );
   }
-
-  .content-layout-row:not(:has(.content-sidebar-column)) .content-main-column {
-    margin-inline: auto;
-    max-width: 1200px;
-  }
 }
 
 @media (max-width: 991px) {
-  .content-layout-row {
-    gap: 0;
-  }
-
   .content-sidebar-column {
     flex: 0 0 0;
     overflow: visible;
+  }
+
+  .content-main-column {
+    max-width: 100%;
   }
 
   .content-outline-panel {
