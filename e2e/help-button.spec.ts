@@ -128,7 +128,7 @@ test.describe('Desktop help-button tests for a page with a reset and help button
 
     // Other help options should be present
     await expect(
-      page.getByRole('button', { name: translations.buttons['get-hint'] })
+      page.getByRole('link', { name: translations.buttons['get-hint'] })
     ).toBeVisible();
     await expect(
       page.getByRole('button', { name: translations.buttons['create-post'] })
@@ -162,7 +162,7 @@ test.describe('Desktop help-button tests for a page with a reset and help button
 
     // Other help options should be present
     await expect(
-      page.getByRole('button', { name: translations.buttons['get-hint'] })
+      page.getByRole('link', { name: translations.buttons['get-hint'] })
     ).toBeVisible();
     await expect(
       page.getByRole('button', { name: translations.buttons['create-post'] })
