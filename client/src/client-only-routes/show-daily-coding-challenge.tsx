@@ -49,6 +49,7 @@ function formatChallengeData({
     description: formatDescription(description),
     superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
+    dashedName: `challenge-${challengeNumber}`,
     usesMultifileEditor: true,
 
     // props to satisfy the show classic component

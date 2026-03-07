@@ -313,6 +313,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    dashedName: string;
     saveSubmissionToDB?: boolean;
   };
 };
