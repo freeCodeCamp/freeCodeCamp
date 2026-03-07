@@ -3935,6 +3935,12 @@
           "In these lessons, you will learn about functions and scope in Python."
         ]
       },
+      "lab-discount-calculator": {
+        "title": "Build an Apply Discount Function",
+        "intro": [
+          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
+        ]
+      },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
         "intro": [
@@ -4005,12 +4011,6 @@
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
-      "lab-user-configuration-manager": {
-        "title": "Build a User Configuration Manager",
-        "intro": [
-          "In this lab, you will practice working with dictionaries in Python."
-        ]
-      },
       "review-dictionaries-and-sets": {
         "title": "Dictionaries and Sets review",
         "intro": [
@@ -4022,6 +4022,12 @@
         "title": "Dictionaries and Sets Quiz",
         "intro": [
           "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      },
+      "lab-user-configuration-manager": {
+        "title": "Build a User Configuration Manager",
+        "intro": [
+          "In this lab, you will practice working with dictionaries in Python."
         ]
       },
       "lecture-understanding-error-handling": {
@@ -4070,12 +4076,6 @@
           "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
         ]
       },
-      "lab-budget-app": {
-        "title": "Build a Budget App",
-        "intro": [
-          "In this lab you will build a budget app and practice creating a class and methods for that class."
-        ]
-      },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
         "intro": [
@@ -4087,6 +4087,12 @@
         "title": "Classes and Objects Quiz",
         "intro": [
           "Test what you've learned about classes and objects in Python with this quiz."
+        ]
+      },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
         ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
@@ -4119,18 +4125,6 @@
           "In this workshop, you will create a media catalogue application using object-oriented programming principles."
         ]
       },
-      "lab-polygon-area-calculator": {
-        "title": "Build a Polygon Area Calculator",
-        "intro": [
-          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
-        ]
-      },
-      "lab-discount-calculator": {
-        "title": "Build an Apply Discount Function",
-        "intro": [
-          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
-        ]
-      },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
@@ -4159,6 +4153,12 @@
           "Test what you've learned about object oriented programming in python with this quiz."
         ]
       },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
       "lecture-working-with-common-data-structures": {
         "title": "Working with Common Data Structures",
         "intro": [
@@ -4169,13 +4169,6 @@
         "title": "Build a Linked List",
         "intro": [
           "In this workshop, you'll practice working with data structures by building a linked list."
-        ]
-      },
-      "lab-hash-table": {
-        "title": "Build a Hash Table",
-        "intro": [
-          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
-          "In this lab, you will use your knowledge about data structures to build a hash table."
         ]
       },
       "review-data-structures": {
@@ -4189,6 +4182,13 @@
         "title": "Data Structures Quiz",
         "intro": [
           "Test what you've learned about data structures in Python with this quiz."
+        ]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
         ]
       },
       "lecture-searching-and-sorting-algorithms": {
@@ -4236,12 +4236,6 @@
           "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
         ]
       },
-      "lab-tower-of-hanoi": {
-        "title": "Implement the Tower of Hanoi Algorithm",
-        "intro": [
-          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
-        ]
-      },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
@@ -4252,6 +4246,12 @@
         "title": "Searching and Sorting Algorithms Quiz",
         "intro": [
           "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
         ]
       },
       "lecture-understanding-graphs-and-trees": {
