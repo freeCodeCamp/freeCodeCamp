@@ -313,6 +313,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    dashedName: string;
     saveSubmissionToDB?: boolean;
   };
 };
@@ -322,6 +323,7 @@ export type DailyCodingChallengePageContext = {
     block: 'daily-coding-challenge';
     id: string;
     superBlock: 'daily-coding-challenge';
+    dashedName: string;
     disableLoopProtectTests: boolean;
 
     // props to satisfy the show classic component
