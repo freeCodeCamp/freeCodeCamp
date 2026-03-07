@@ -17,7 +17,7 @@
 .content-main-column {
   flex: 1 1 auto;
   min-width: 0;
-  /* Compensate Bootstrap row negative gutters used inside challengeBody. */
+  /* Compensate row negative gutters used inside challengeBody. */
   padding-inline: 15px;
 }
 

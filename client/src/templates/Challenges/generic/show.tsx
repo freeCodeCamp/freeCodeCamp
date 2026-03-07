@@ -254,7 +254,6 @@ const ShowGeneric = ({
 
   const isReviewChallenge = challengeType === challengeTypes.review;
 
-  // content outline (review challenges)
   const [showContentOutline, setShowContentOutline] = useState(false);
 
   const actionRowProps =

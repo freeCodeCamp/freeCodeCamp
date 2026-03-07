@@ -7,17 +7,6 @@ import { useEffect, useState } from 'react';
  * Reads the current pixel value of each supplied CSS custom property from
  * `:root` on mount and on every resize, returning the negated sum plus any
  * additional fixed offset.
- *
- * @example
- * // Review outline nav: header + breadcrumbs + action row + 8 px buffer
- * const offset = useStickyScrollOffset(
- *   ['--header-height', '--breadcrumbs-height', '--action-row-height'],
- *   8
- * );
- *
- * @example
- * // Settings sidebar: header only
- * const offset = useStickyScrollOffset(['--header-height']);
  */
 function useStickyScrollOffset(
   cssVarNames: string[],
