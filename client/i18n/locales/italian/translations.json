@@ -699,7 +699,8 @@
       "exit-header": "Abbandona Esame",
       "exit": "Sei sicuro di voler abbandonare l'esame? Perderai ogni progresso fatto.",
       "exit-yes": "Sì, voglio abbandonare l'esame",
-      "exit-no": "No, vorrei continuare l'esame"
+      "exit-no": "No, vorrei continuare l'esame",
+      "not-honest": "You need to <0>accept the Academic Honesty Policy</0> to take this exam"
     },
     "ms": {
       "link-header": "Collega il tuo account Microsoft",
