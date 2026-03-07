@@ -3652,24 +3652,10 @@
           "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
         ]
       },
-      "lab-currency-converter": {
-        "title": "Build a Currency Converter",
-        "intro": [
-          "For this lab, you'll build a currency converter app.",
-          "You'll use React state, memoization, and controlled components to convert between currencies."
-        ]
-      },
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
           "In these lessons, you will learn about routing in React, React frameworks, and dependency management tools."
-        ]
-      },
-      "lab-tic-tac-toe": {
-        "title": "Build a Tic-Tac-Toe Game",
-        "intro": [
-          "In this lab, you'll build a Tic-Tac-Toe game using React.",
-          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
         ]
       },
       "lecture-react-strategies-and-debugging": {
@@ -3689,6 +3675,20 @@
         "title": "React Forms, Data Fetching and Routing Quiz",
         "intro": [
           "Test what you've learned about routing, forms, and data fetching with this quiz."
+        ]
+      },
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": [
+          "For this lab, you'll build a currency converter app.",
+          "You'll use React state, memoization, and controlled components to convert between currencies."
+        ]
+      },
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
         ]
       },
       "lecture-understanding-performance-in-web-applications": {
