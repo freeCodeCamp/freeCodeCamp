@@ -5,17 +5,17 @@
 **BE EXTREMELY MINIMAL.** Only provide actionable feedback.
 
 **Skip all non-essential content:**
-- Do not generate "Pull request overview" sections
-- Do not create "Changes:" lists describing what was changed  
-- Do not create "Reviewed changes" sections or tables
-- Do not list files with change descriptions
-- Do not count how many files were reviewed
-- Do not summarize what the PR does (visible in the diff)
+- Do not generate "Pull request overview" sections.
+- Do not create "Changes:" lists describing what was changed.  
+- Do not create "Reviewed changes" sections or tables.
+- Do not list files with change descriptions.
+- Do not count how many files were reviewed.
+- Do not summarize what the PR does (visible in the diff).
 
 **Focus only on problems:**
-- Comment ONLY on actual issues that need fixing
-- Keep each comment 1-3 sentences
-- If everything is correct, provide no output
+- Comment ONLY on actual issues that need fixing.
+- Keep each comment 1-3 sentences.
+- If everything is correct, provide no output.
 
 **Bad example (from PR 65578):**
 ```
@@ -39,8 +39,8 @@ Line 46: Test will fail - `innerText` returns rendered `—`, not `&mdash;`.
 
 ## Focus Areas
 
-1. **Test Coverage** - Ensuring adequate testing for code changes
-2. **Pull Request Guidelines** - Compliance with contribution standards
+1. **Test Coverage** - Ensuring adequate testing for code changes.
+2. **Pull Request Guidelines** - Compliance with contribution standards.
 
 ---
 
@@ -62,16 +62,16 @@ When reviewing pull requests, ensure adequate test coverage for code changes in 
 
 Only leave a comment if:
 
-- The PR modifies JavaScript/TypeScript/JSX/TSX code (bug fixes or new features)
-- AND there are no corresponding test additions or updates
+- The PR modifies JavaScript/TypeScript/JSX/TSX code (bug fixes or new features).
+- AND there are no corresponding test additions or updates.
 
 ### When NOT to Comment
 
 Do not comment if:
 
-- Changes are only to documentation, configuration, or non-JS/TS files
-- The PR includes appropriate test coverage for the changes
-- Changes are test-only modifications
+- Changes are only to documentation, configuration, or non-JS/TS files.
+- The PR includes appropriate test coverage for the changes.
+- Changes are test-only modifications.
 
 ### Comment Style
 
@@ -102,10 +102,10 @@ Check that the title follows conventional commits format:
 
 Flag if:
 
-- Title is vague (e.g., "Update file", "Fix bug", "Changes")
-- Missing type prefix
-- Description exceeds ~50 characters
-- Type doesn't match the actual changes
+- Title is vague (e.g., "Update file", "Fix bug", "Changes").
+- Missing type prefix.
+- Description exceeds ~50 characters.
+- Type doesn't match the actual changes.
 
 Example of good title:
 
@@ -123,27 +123,27 @@ Fixed stuff
 
 Check for:
 
-- Meaningful description explaining what changes were made and why
-- Proper issue linking using `Closes #XXXXX` format (not just `#XXXXX`)
-- Screenshots included for UI/visual changes
+- Meaningful description explaining what changes were made and why.
+- Proper issue linking using `Closes #XXXXX` format (not just `#XXXXX`).
+- Screenshots included for UI/visual changes.
 
 Flag if:
 
-- Description is empty or only contains template boilerplate
-- Issue reference uses incorrect format (e.g., `fixes XXXXX` without `#`)
-- UI changes lack screenshots
+- Description is empty or only contains template boilerplate.
+- Issue reference uses incorrect format (e.g., `fixes XXXXX` without `#`).
+- UI changes lack screenshots.
 
 ### Checklist Completion
 
 Verify the PR template checklist items are completed:
 
-- Boxes should be checked (`[x]`) not left unchecked (`[ ]`)
-- Placeholder text like `#XXXXX` should be replaced with actual issue numbers
+- Boxes should be checked (`[x]`) not left unchecked (`[ ]`).
+- Placeholder text like `#XXXXX` should be replaced with actual issue numbers.
 
 Flag if:
 
-- Checklist boxes are left unchecked
-- Placeholder issue number `#XXXXX` remains unchanged
+- Checklist boxes are left unchecked.
+- Placeholder issue number `#XXXXX` remains unchanged.
 
 ### Comment Style
 
@@ -168,19 +168,19 @@ If PR guidelines are followed, **DO NOT COMMENT**. No "LGTM" needed.
 
 ### Strict Rules
 
-- NO summaries, overviews, or descriptions of changes
-- NO tables or file listings
-- NO "LGTM" or affirmative comments when everything is fine
-- Only comment when action is required
-- Keep each comment brief and actionable
+- NO summaries, overviews, or descriptions of changes.
+- NO tables or file listings.
+- NO "LGTM" or affirmative comments when everything is fine.
+- Only comment when action is required.
+- Keep each comment brief and actionable.
 
 ### Prioritization
 
 When multiple issues exist, address them in order of severity:
 
-1. Security vulnerabilities or critical bugs
-2. Missing test coverage for new functionality
-3. Outdated tests for modified functionality
-4. PR title/description compliance
+1. Security vulnerabilities or critical bugs.
+2. Missing test coverage for new functionality.
+3. Outdated tests for modified functionality.
+4. PR title/description compliance.
 
 Comment on all legitimate issues, but keep each comment concise.
