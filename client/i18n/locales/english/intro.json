@@ -2511,12 +2511,6 @@
           "For this lab, you will use array methods to translate golf scores into their nickname."
         ]
       },
-      "lab-reverse-a-string": {
-        "title": "Build a String Inverter",
-        "intro": [
-          "In this lab, you create a function that reverses a given string."
-        ]
-      },
       "lecture-working-with-common-array-methods": {
         "title": "Working with Common Array Methods",
         "intro": [
@@ -2540,16 +2534,16 @@
           "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
         ]
       },
-      "lecture-working-with-optional-chaining-and-object-destructuring": {
-        "title": "Working with Optional Chaining and Object Destructuring",
-        "intro": [
-          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
-        ]
-      },
       "lecture-working-with-json": {
         "title": "Working with JSON",
         "intro": [
           "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
         ]
       },
       "workshop-recipe-tracker": {
@@ -2666,6 +2660,12 @@
           "In these lectures you will learn what are linters and formatters, what is memory management, and closures."
         ]
       },
+      "lab-reverse-a-string": {
+        "title": "Build a String Inverter",
+        "intro": [
+          "In this lab, you create a function that reverses a given string."
+        ]
+      },
       "lab-largest-number-finder": {
         "title": "Build the Largest Number Finder",
         "intro": [
@@ -2775,12 +2775,6 @@
         "title": "Implement an Element Skipper",
         "intro": [
           "In this lab you will create a function that skips elements in an array based on a specified step value."
-        ]
-      },
-      "lab-optional-arguments-sum-function": {
-        "title": "Build an Optional Arguments Sum Function",
-        "intro": [
-          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
         ]
       },
       "review-javascript-fundamentals": {
@@ -3030,13 +3024,6 @@
           "For this lab, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
-      "lab-markdown-to-html-converter": {
-        "title": "Build a Markdown to HTML Converter",
-        "intro": [
-          "For this lab, you'll build a Markdown to HTML converter using JavaScript.",
-          "You'll practice regular expressions, string manipulation, and more."
-        ]
-      },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
@@ -3071,6 +3058,13 @@
         "title": "JavaScript Regular Expressions Quiz",
         "intro": [
           "Test your knowledge of JavaScript Regular Expressions with this quiz."
+        ]
+      },
+      "lab-markdown-to-html-converter": {
+        "title": "Build a Markdown to HTML Converter",
+        "intro": [
+          "For this lab, you'll build a Markdown to HTML converter using JavaScript.",
+          "You'll practice regular expressions, string manipulation, and more."
         ]
       },
       "lecture-understanding-form-validation": {
@@ -3144,12 +3138,6 @@
           "The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, and previous functionalities and dynamically update your user interface based on the current song."
         ]
       },
-      "lab-drum-machine": {
-        "title": "Build a Drum Machine",
-        "intro": [
-          "For this lab you will use the <code>audio</code> element to build a drum machine."
-        ]
-      },
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
@@ -3161,6 +3149,12 @@
         "title": "JavaScript Audio and Video Quiz",
         "intro": [
           "Test what you've learned about JavaScript audio and video with this quiz."
+        ]
+      },
+      "lab-drum-machine": {
+        "title": "Build a Drum Machine",
+        "intro": [
+          "For this lab you will use the <code>audio</code> element to build a drum machine."
         ]
       },
       "lecture-working-with-maps-and-sets": {
@@ -3175,13 +3169,6 @@
           "In this workshop, you will practice using Maps and Sets by building a plant nursery catalog."
         ]
       },
-      "lab-voting-system": {
-        "title": "Build a Voting System",
-        "intro": [
-          "In this lab, you'll build a voting system using Maps and Sets.",
-          "You'll practice how to use the <code>Map</code> object to store key-value pairs and the <code>Set</code> object to store unique values."
-        ]
-      },
       "review-javascript-maps-and-sets": {
         "title": "JavaScript Maps and Sets Review",
         "intro": [
@@ -3193,6 +3180,13 @@
         "title": "JavaScript Maps and Sets Quiz",
         "intro": [
           "Test what you've learned about JavaScript Maps and Sets with this quiz."
+        ]
+      },
+      "lab-voting-system": {
+        "title": "Build a Voting System",
+        "intro": [
+          "In this lab, you'll build a voting system using Maps and Sets.",
+          "You'll practice how to use the <code>Map</code> object to store key-value pairs and the <code>Set</code> object to store unique values."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3248,12 +3242,6 @@
           "You'll practice how to create classes, add methods to classes, and create instances of classes."
         ]
       },
-      "lab-bank-account-manager": {
-        "title": "Build a Bank Account Management Program",
-        "intro": [
-          "In this lab, you'll build a simple transaction management system for a bank account."
-        ]
-      },
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [
@@ -3265,6 +3253,12 @@
         "title": "JavaScript Classes Quiz",
         "intro": [
           "Test what you've learned about JavaScript classes with this quiz."
+        ]
+      },
+      "lab-bank-account-manager": {
+        "title": "Build a Bank Account Management Program",
+        "intro": [
+          "In this lab, you'll build a simple transaction management system for a bank account."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
@@ -3285,18 +3279,18 @@
           "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
         ]
       },
-      "workshop-decimal-to-binary-converter": {
-        "title": "Build a Decimal to Binary Converter",
-        "intro": [
-          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
-          "In this workshop, you'll build a decimal-to-binary converter using JavaScript. You'll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
-        ]
-      },
       "lab-range-of-numbers": {
         "title": "Build a Range of Numbers Generator",
         "intro": [
           "In this lab, you'll use recursion to generate an array of numbers within a specified range.",
           "You'll practice recursive function calls, base cases, and building arrays through recursion."
+        ]
+      },
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you'll build a decimal-to-binary converter using JavaScript. You'll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
         ]
       },
       "lab-permutation-generator": {
@@ -3316,16 +3310,16 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
-      "quiz-data-structures-js": {
-        "title": "Data Structures Quiz",
-        "intro": [
-          "Test what you've learned about data structures in JavaScript with this quiz."
-        ]
-      },
       "lecture-working-with-common-data-structures-js": {
         "title": "Working with Common Data Structures",
         "intro": [
           "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
         ]
       },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
@@ -3408,6 +3402,12 @@
           "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
         ]
       },
+      "lab-optional-arguments-sum-function": {
+        "title": "Build an Optional Arguments Sum Function",
+        "intro": [
+          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+        ]
+      },
       "lab-sorting-visualizer": {
         "title": "Build a Sorting Visualizer",
         "intro": [
@@ -3446,13 +3446,6 @@
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
-        "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
-        ]
-      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3463,6 +3456,13 @@
         "title": "Asynchronous JavaScript Quiz",
         "intro": [
           "Test what you've learned about asynchronous JavaScript with this quiz."
+        ]
+      },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
       "review-javascript": {
