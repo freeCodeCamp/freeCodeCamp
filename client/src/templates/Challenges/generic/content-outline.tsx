@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { Link as ScrollLink, scroller } from 'react-scroll';
 
 import { ChallengeNode } from '../../../redux/prop-types';
@@ -6,10 +7,10 @@ import SidebarPanel, {
   useActiveHeading,
   useStickyScrollOffset
 } from '../../../components/sidebar-panel';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
 import './content-outline.css';
 
-// utility exports used by tests
 export interface ContentOutlineItem {
   id: string;
   level: 1 | 2 | 3;
@@ -62,6 +63,7 @@ type ContentOutlineProps = {
   nodules?: ChallengeNode['challenge']['nodules'];
   showInteractiveEditor: boolean;
   showOutline: boolean;
+  onClose?: () => void;
   children: React.ReactNode;
 };
 
@@ -71,8 +73,10 @@ function ContentOutline({
   nodules,
   showInteractiveEditor,
   showOutline: showContentOutline,
+  onClose,
   children
 }: ContentOutlineProps) {
+  const isMobileSidebar = useMediaQuery({ maxWidth: MAX_MOBILE_WIDTH });
   const [contentOutlineItems, setContentOutlineItems] = useState<
     ContentOutlineItem[]
   >([]);
@@ -86,6 +90,20 @@ function ContentOutline({
   const activeHeadingId = useActiveHeading(
     showContentOutline ? contentOutlineItems.map(item => item.id) : [],
     contentScrollOffset
+  );
+
+  const handleItemClick = React.useCallback(
+    (id: string) => {
+      scroller.scrollTo(id, {
+        duration: 0,
+        smooth: false,
+        offset: contentScrollOffset
+      });
+      if (isMobileSidebar) {
+        onClose?.();
+      }
+    },
+    [contentScrollOffset, isMobileSidebar, onClose]
   );
 
   useEffect(() => {
@@ -128,13 +146,7 @@ function ContentOutline({
                         duration={0}
                         isDynamic={true}
                         offset={contentScrollOffset}
-                        onClick={() =>
-                          scroller.scrollTo(item.id, {
-                            duration: 0,
-                            smooth: false,
-                            offset: contentScrollOffset
-                          })
-                        }
+                        onClick={() => handleItemClick(item.id)}
                         smooth={false}
                         to={item.id}
                       >

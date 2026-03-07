@@ -418,6 +418,7 @@ const ShowGeneric = ({
               nodules={nodules}
               showInteractiveEditor={showInteractiveEditor}
               showOutline={showContentOutline}
+              onClose={() => setShowContentOutline(false)}
             >
               <Row>{challengeBody}</Row>
             </ContentOutline>

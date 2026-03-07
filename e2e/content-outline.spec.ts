@@ -31,6 +31,32 @@ test.describe('Content outline', () => {
     ).toHaveCount(0);
   });
 
+  test('sidebar closes on mobile when an item is clicked', async ({
+    page,
+    isMobile
+  }) => {
+    test.skip(!isMobile, 'Only test on mobile');
+
+    await page.goto(
+      '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
+    );
+
+    const toggleButton = page.getByRole('button', { name: 'Outline' });
+    await toggleButton.click();
+    await expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
+
+    const outlinePanel = page.getByRole('navigation', {
+      name: 'Content outline'
+    });
+    await expect(outlinePanel).toBeVisible();
+
+    const firstLink = outlinePanel.locator('a').first();
+    await firstLink.click();
+
+    // panel should hide after click
+    await expect(outlinePanel).toBeHidden();
+  });
+
   test('keeps active nav item in view while scrolling', async ({ page }) => {
     await page.goto(
       '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
