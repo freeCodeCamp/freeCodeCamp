@@ -14,23 +14,18 @@ test.describe('Content outline', () => {
       page.getByRole('heading', { name: 'Semantic HTML Review' })
     ).toBeVisible();
 
-    const menuButton = page.locator(
-      'button[aria-controls="content-outline-panel"]'
-    );
-    await menuButton.click();
-    await expect(menuButton).toHaveText(/Close/);
+    const toggleButton = page.getByRole('button', { name: 'Outline' });
+    await toggleButton.click();
+    await expect(toggleButton).toHaveAttribute('aria-expanded', 'true');
 
-    const outlinePanel = page.locator('#content-outline-panel');
+    const outlinePanel = page.getByRole('navigation', {
+      name: 'Content outline'
+    });
     await expect(outlinePanel).toBeVisible();
 
-    const outlineItems = outlinePanel.locator(
-      '.content-outline-item-level-2, .content-outline-item-level-3'
-    );
+    const outlineItems = outlinePanel.getByRole('listitem');
     expect(await outlineItems.count()).toBeGreaterThan(0);
 
-    await expect(
-      outlinePanel.locator('.content-outline-item-level-1')
-    ).toHaveCount(0);
     await expect(
       outlinePanel.getByRole('link', { name: 'Semantic HTML Review' })
     ).toHaveCount(0);
@@ -41,14 +36,14 @@ test.describe('Content outline', () => {
       '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
     );
 
-    await page.locator('button[aria-controls="content-outline-panel"]').click();
+    await page.getByRole('button', { name: 'Outline' }).click();
 
-    const outlinePanel = page.locator('#content-outline-panel');
+    const outlinePanel = page.getByRole('navigation', {
+      name: 'Content outline'
+    });
     await expect(outlinePanel).toBeVisible();
 
-    const firstOutlineLink = outlinePanel
-      .locator('.content-outline-link')
-      .first();
+    const firstOutlineLink = outlinePanel.locator('a').first();
     await firstOutlineLink.click();
     await expect(firstOutlineLink).toHaveClass(/active/);
 
@@ -64,8 +59,8 @@ test.describe('Content outline', () => {
       .first();
     await expect(activeLink).toBeVisible();
 
-    const inView = await activeLink.evaluate((item, panelId) => {
-      const panel = document.getElementById(panelId);
+    const inView = await activeLink.evaluate(item => {
+      const panel = item.closest('nav');
       if (!panel) return false;
 
       const panelRect = panel.getBoundingClientRect();
@@ -73,7 +68,7 @@ test.describe('Content outline', () => {
       return (
         itemRect.top >= panelRect.top && itemRect.bottom <= panelRect.bottom
       );
-    }, 'content-outline-panel');
+    });
 
     expect(inView).toBe(true);
   });
