@@ -1,4 +1,4 @@
-import { existsSync, readdirSync } from 'fs';
+import { existsSync, readdirSync, statSync } from 'fs';
 import { join, resolve, basename } from 'path';
 import { isEmpty, cloneDeep } from 'lodash';
 import debug from 'debug';
@@ -44,7 +44,12 @@ interface Meta extends BlockStructure {
   superOrder: number;
 }
 
-const challengeCache = new Map<string, ParsedChallenge>();
+interface CachedChallenge {
+  challenge: ParsedChallenge;
+  mtime: number;
+}
+
+const challengeCache = new Map<string, CachedChallenge>();
 
 /**
  * Validates challenges against meta.json challengeOrder
@@ -334,15 +339,17 @@ export class BlockCreator {
 
     const challengePath = langUsed === 'english' ? englishPath : i18nPath;
 
-    const cachedChallenge = challengeCache.get(challengePath);
+    const currentMtime = statSync(challengePath).mtimeMs;
+    const cached = challengeCache.get(challengePath);
+    const isCacheValid = cached && cached.mtime === currentMtime;
 
-    const challenge =
-      cachedChallenge ??
-      translateCommentsInChallenge(
-        await parser(challengePath),
-        langUsed,
-        this.commentTranslations
-      );
+    const challenge = isCacheValid
+      ? cached.challenge
+      : translateCommentsInChallenge(
+          await parser(challengePath),
+          langUsed,
+          this.commentTranslations
+        );
 
     challenge.translationPending = this.lang !== 'english' && !isAudited;
     // Add source location to allow tracing back to original file (necessary to
@@ -353,7 +360,12 @@ export class BlockCreator {
       filename
     );
 
-    challengeCache.set(challengePath, challenge);
+    if (!isCacheValid) {
+      challengeCache.set(challengePath, {
+        challenge,
+        mtime: currentMtime
+      });
+    }
 
     return finalizeChallenge(challenge, meta);
   }
