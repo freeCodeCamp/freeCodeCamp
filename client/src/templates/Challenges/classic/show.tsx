@@ -318,6 +318,10 @@ function ShowClassic({
   // Independent lower jaw is only enabled for desktop.
   const showIndependentLowerJaw = !isMobile;
 
+  const showSidePanelTests = isMobile || !hasEditableBoundaries;
+
+  // Show test
+
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
       preloadPage(nextChallengePath);
@@ -428,7 +432,7 @@ function ShowClassic({
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
         hasDemo={hasDemo}
-        hasEditableBoundaries={hasEditableBoundaries}
+        showSidePanelTests={showSidePanelTests}
       />
     );
   };
@@ -545,7 +549,7 @@ function ShowClassic({
           challengeTitle={title}
           challengeBlock={block}
           superBlock={superBlock}
-          guideUrl={guideUrl ? guideUrl : undefined}
+          guideUrl={guideUrl}
           videoUrl={videoUrl}
         />
         <VideoModal videoUrl={videoUrl} />

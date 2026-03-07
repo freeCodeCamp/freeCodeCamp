@@ -34,7 +34,7 @@ interface SidePanelProps extends DispatchProps, StateProps {
   hasDemo: boolean;
   toolPanel: ReactNode;
   tests: Test[];
-  hasEditableBoundaries?: boolean;
+  showSidePanelTests?: boolean;
 }
 
 export function SidePanel({
@@ -45,7 +45,7 @@ export function SidePanel({
   toolPanel,
   tests,
   openModal,
-  hasEditableBoundaries
+  showSidePanelTests
 }: SidePanelProps): JSX.Element {
   return (
     <div
@@ -72,7 +72,7 @@ export function SidePanel({
         </p>
       )}{' '}
       {challengeDescription}
-      {!hasEditableBoundaries && (
+      {showSidePanelTests && (
         <>
           <Spacer size='m' />
           {toolPanel}

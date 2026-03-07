@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor } from './utils/editor';
 
 test.describe('multifileCertProjects', () => {
@@ -26,10 +27,7 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.type('save1text');
     await expect(page.getByText('save1text')).toBeVisible();
 
-    const saveButton = isMobile
-      ? page.getByRole('button', { name: 'Save' })
-      : page.getByTestId('independentLowerJaw-save-button');
-    await saveButton.click();
+    await page.getByRole('button', { name: translations.buttons.save }).click();
 
     await expect(page.getByTestId('flash-message')).toContainText(success);
 

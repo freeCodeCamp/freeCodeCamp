@@ -270,6 +270,7 @@ export function IndependentLowerJaw({
                 type='button'
                 className='icon-botton tooltip'
                 data-playwright-test-label='independentLowerJaw-revert-button'
+                aria-label={t('buttons.revert')}
                 onClick={openResetModal}
               >
                 <FontAwesomeIcon icon={faClockRotateLeft} />

@@ -54,7 +54,7 @@ test.describe('Exit Video Modal E2E Test Suite - Desktop', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(currentUrlPath);
     // Open help modal via independent lower jaw
-    await page.getByTestId('independentLowerJaw-help-button').click();
+    await page.getByRole('button', { name: translations.buttons.help }).click();
     // Click watch video link from help modal
     await page.getByTestId('watch-a-video-modal-button').click();
   });

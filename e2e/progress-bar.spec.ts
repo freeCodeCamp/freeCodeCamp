@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor } from './utils/editor';
 
 test.describe('Progress bar component in editor', () => {
@@ -20,7 +21,9 @@ test.describe('Progress bar component in editor', () => {
       '<html><body><h1>CatPhotoApp</h1><h2>Cat Photos</h2><p>Everyone loves cute cats online!</p></body></html>'
     );
 
-    await page.getByTestId('independentLowerJaw-check-button').click();
+    await page
+      .getByRole('button', { name: translations.buttons['check-code'] })
+      .click();
 
     const progressBarContainer = page.getByTestId('progress-bar-container');
     await expect(progressBarContainer).toContainText(
@@ -57,7 +60,9 @@ test.describe('Progress bar component in modal', () => {
         })
         .click();
     } else {
-      await page.getByTestId('independentLowerJaw-check-button').click();
+      await page
+        .getByRole('button', { name: translations.buttons['check-code'] })
+        .click();
     }
 
     await expect(page.locator('.completion-block-meta')).toContainText(

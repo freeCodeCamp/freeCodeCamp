@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Mobile help-button tests for a page with three links (hint, help and video)', () => {
   test.use({
@@ -93,10 +94,10 @@ test.describe('Desktop help-button tests for a page with a reset and help button
       'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
     );
     await expect(
-      page.getByTestId('independentLowerJaw-reset-button')
+      page.getByRole('button', { name: translations.buttons.reset })
     ).toBeVisible();
     await expect(
-      page.getByTestId('independentLowerJaw-help-button')
+      page.getByRole('button', { name: translations.buttons.help })
     ).toBeVisible();
   });
 
@@ -109,19 +110,29 @@ test.describe('Desktop help-button tests for a page with a reset and help button
     );
 
     // Click the help button in independent lower jaw
-    const helpButton = page.getByTestId('independentLowerJaw-help-button');
+    const helpButton = page.getByRole('button', {
+      name: translations.buttons.help
+    });
     await expect(helpButton).toBeVisible();
     await helpButton.click();
 
     // Help modal should open
-    await expect(page.getByRole('dialog', { name: /get help/i })).toBeVisible();
+    await expect(
+      page.getByRole('dialog', { name: translations.buttons['get-help'] })
+    ).toBeVisible();
 
     // Video button should be present in the modal
-    await expect(page.getByTestId('watch-a-video-modal-button')).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['watch-video'] })
+    ).toBeVisible();
 
     // Other help options should be present
-    await expect(page.getByTestId('get-hint-modal-button')).toBeVisible();
-    await expect(page.getByTestId('create-post-modal-button')).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['get-hint'] })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['create-post'] })
+    ).toBeVisible();
   });
 
   test('should open help modal without video button when video is not available', async ({
@@ -133,18 +144,28 @@ test.describe('Desktop help-button tests for a page with a reset and help button
     );
 
     // Click the help button in independent lower jaw
-    const helpButton = page.getByTestId('independentLowerJaw-help-button');
+    const helpButton = page.getByRole('button', {
+      name: translations.buttons.help
+    });
     await expect(helpButton).toBeVisible();
     await helpButton.click();
 
     // Help modal should open
-    await expect(page.getByRole('dialog', { name: /get help/i })).toBeVisible();
+    await expect(
+      page.getByRole('dialog', { name: translations.buttons['get-help'] })
+    ).toBeVisible();
 
     // Video button should NOT be present in the modal
-    await expect(page.getByTestId('watch-a-video-modal-button')).toBeHidden();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['watch-video'] })
+    ).toBeHidden();
 
     // Other help options should be present
-    await expect(page.getByTestId('get-hint-modal-button')).toBeVisible();
-    await expect(page.getByTestId('create-post-modal-button')).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['get-hint'] })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['create-post'] })
+    ).toBeVisible();
   });
 });

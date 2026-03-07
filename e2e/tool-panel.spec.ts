@@ -24,7 +24,9 @@ test.describe('Tool Panel', () => {
         })
         .click();
     } else {
-      await page.getByTestId('independentLowerJaw-check-button').click();
+      await page
+        .getByRole('button', { name: translations.buttons['check-code'] })
+        .click();
     }
 
     await expect(page.getByTestId('output-text')).toContainText(
@@ -41,7 +43,9 @@ test.describe('Tool Panel', () => {
         .getByRole('button', { name: translations.buttons['reset'] })
         .click();
     } else {
-      await page.getByTestId('independentLowerJaw-reset-button').click();
+      await page
+        .getByRole('button', { name: translations.buttons.reset })
+        .click();
     }
     await expect(
       page.getByRole('heading', { name: translations.learn.reset })

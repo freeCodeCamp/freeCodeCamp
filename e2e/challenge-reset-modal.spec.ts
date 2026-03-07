@@ -47,7 +47,7 @@ test('should render the modal content correctly', async ({ page }) => {
     '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
   );
 
-  await page.getByTestId('independentLowerJaw-reset-button').click();
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
 
   await expectToRenderResetModal(page);
 
@@ -91,10 +91,14 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
 
   // Run the tests so the lower jaw updates (later we confirm that the update
   // are reset)
-  await page.getByTestId('independentLowerJaw-check-button').click();
+  await page
+    .getByRole('button', {
+      name: translations.buttons['check-code']
+    })
+    .click();
 
   // Reset the challenge
-  await page.getByTestId('independentLowerJaw-reset-button').click();
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
   await page
     .getByRole('button', { name: translations.buttons['reset-lesson'] })
     .click();
@@ -143,7 +147,7 @@ test.describe('When the user is not logged in', () => {
 
     const submitButton = isMobile
       ? page.getByRole('button', { name: translations.buttons.run })
-      : page.getByTestId('independentLowerJaw-check-button');
+      : page.getByRole('button', { name: translations.buttons['check-code'] });
 
     await submitButton.click();
 
@@ -161,11 +165,9 @@ test.describe('When the user is not logged in', () => {
       .getByRole('button', { name: translations.buttons.close })
       .click();
 
-    await (
-      isMobile
-        ? page.getByRole('button', { name: translations.buttons.reset })
-        : page.getByTestId('independentLowerJaw-reset-button')
-    ).click();
+    await page
+      .getByRole('button', { name: translations.buttons.reset })
+      .click();
 
     await page
       .getByRole('button', { name: translations.buttons['reset-lesson'] })
@@ -196,7 +198,7 @@ test('should close when the user clicks the close button', async ({ page }) => {
     '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
   );
 
-  await page.getByTestId('independentLowerJaw-reset-button').click();
+  await page.getByRole('button', { name: translations.buttons.reset }).click();
 
   await expect(
     page.getByRole('dialog', { name: translations.learn.reset })
@@ -229,16 +231,14 @@ test('User can reset on a multi-file project', async ({
   await getEditors(page).fill(sampleText);
   await expect(page.getByText(sampleText)).toBeVisible();
 
-  await page.getByTestId('independentLowerJaw-revert-button').click();
+  await page.getByRole('button', { name: translations.buttons.revert }).click();
 
   await expectToRenderResetModal(page);
-
   await expect(
     page.getByRole('button', {
       name: translations.buttons['revert-to-saved-code']
     })
   ).toBeVisible();
-
   await page
     .getByRole('button', {
       name: translations.buttons['revert-to-saved-code']
@@ -288,7 +288,9 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(updatedText);
 
-    await page.getByTestId('independentLowerJaw-revert-button').click();
+    await page
+      .getByRole('button', { name: translations.buttons.revert })
+      .click();
 
     await page
       .getByRole('button', {
@@ -325,7 +327,9 @@ test.describe('Signed in user', () => {
     await clearEditor({ page, browserName });
     await getEditors(page).fill(updatedText);
 
-    await page.getByTestId('independentLowerJaw-revert-button').click();
+    await page
+      .getByRole('button', { name: translations.buttons.revert })
+      .click();
 
     await page
       .getByRole('button', {

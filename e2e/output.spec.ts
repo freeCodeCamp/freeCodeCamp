@@ -55,7 +55,11 @@ const runChallengeTest = async (page: Page, isMobile: boolean) => {
     await page.getByRole('tab', { name: 'Console' }).click();
     await page.getByText('Run').click();
   } else {
-    await page.getByTestId('independentLowerJaw-check-button').click();
+    await page
+      .getByRole('button', {
+        name: translations.buttons['check-code']
+      })
+      .click();
   }
 };
 
