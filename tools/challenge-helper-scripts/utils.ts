@@ -58,14 +58,29 @@ const createStepFile = ({
   isFirstChallenge = false,
   challengeLang
 }: Options) => {
-  const template = getStepTemplate({
-    challengeId,
-    challengeSeeds,
-    stepNum,
-    challengeType,
-    isFirstChallenge,
-    challengeLang
-  });
+  let template: string;
+  if (
+    challengeType === challengeTypes.multipleChoice ||
+    challengeType === challengeTypes.video
+  ) {
+    const templateFn = getTemplate(challengeType.toString());
+    template = templateFn({
+      challengeId,
+      title: `Step ${stepNum}`,
+      dashedName: `step-${stepNum}`,
+      challengeType: challengeType.toString(),
+      challengeLang
+    });
+  } else {
+    template = getStepTemplate({
+      challengeId,
+      challengeSeeds,
+      stepNum,
+      challengeType,
+      isFirstChallenge,
+      challengeLang
+    });
+  }
 
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
 };

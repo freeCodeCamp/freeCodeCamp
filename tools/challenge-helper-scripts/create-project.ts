@@ -8,6 +8,7 @@ import {
   SuperBlocks,
   chapterBasedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   createBlockFolder,
@@ -130,7 +131,17 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.blockLabel,
       projectArgs.blockLayout
     );
-    await createFirstChallenge({ block: projectArgs.block, challengeId });
+
+    const challengeType =
+      projectArgs.blockLabel === BlockLabel.lecture
+        ? challengeTypes.multipleChoice
+        : challengeTypes.html;
+
+    await createFirstChallenge({
+      block: projectArgs.block,
+      challengeId,
+      challengeType
+    });
   }
 
   if (
@@ -176,14 +187,14 @@ async function createMetaJson(
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
-    newMeta = getBaseMeta('FullStack');
+    newMeta = getBaseMeta('FullStack', blockLabel);
     newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
     if (blockLabel === BlockLabel.workshop) {
       newMeta.hasEditableBoundaries = true;
     }
   } else {
-    newMeta = getBaseMeta('Step');
+    newMeta = getBaseMeta('Step', blockLabel);
     newMeta.order = order;
   }
   newMeta.name = title;
@@ -197,10 +208,12 @@ async function createMetaJson(
 
 async function createFirstChallenge({
   block,
-  challengeId
+  challengeId,
+  challengeType = challengeTypes.html
 }: {
   block: string;
   challengeId: ObjectId;
+  challengeType?: number;
 }) {
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
@@ -216,7 +229,7 @@ async function createFirstChallenge({
     challengeId,
     projectPath: await createBlockFolder(block),
     stepNum: 1,
-    challengeType: 0,
+    challengeType,
     challengeSeeds,
     isFirstChallenge: true
   });

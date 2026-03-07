@@ -53,18 +53,30 @@ const languageMeta = {
 };
 
 export const getBaseMeta = (
-  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack'
+  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack',
+  blockLabel?: string
 ): Meta => {
+  let meta: Meta;
   switch (projectType) {
     case 'Step':
-      return stepMeta;
+      meta = { ...stepMeta };
+      break;
     case 'Quiz':
-      return quizMeta;
+      meta = { ...quizMeta };
+      break;
     case 'FullStack':
-      return fullStackStepMeta;
+      meta = { ...fullStackStepMeta };
+      break;
     case 'Language':
-      return languageMeta;
+      meta = { ...languageMeta };
+      break;
     default:
-      return stepMeta;
+      meta = { ...stepMeta };
   }
+
+  if (blockLabel === 'lecture') {
+    meta.usesMultifileEditor = false;
+  }
+
+  return meta;
 };
