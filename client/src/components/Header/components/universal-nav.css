@@ -436,5 +436,5 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 @media (force-colors: active) {
   .universal-nav {
     background-color: #0a0a23;
-  
+  }
 }
