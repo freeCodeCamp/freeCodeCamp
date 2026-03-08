@@ -3,8 +3,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
-import url from 'url';
-import path from 'path';
+import nodeURL from 'url';
+import nodePath from 'path';
 
 import envData from '../../../../config/env.json';
 import { createQuestion, closeModal } from '../redux/actions';
@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 export const generateGithubLink = (challengeId: string, block: string) => {
   let repository = 'freeCodeCamp';
-  const challengesFolder = path.join(
+  const challengesFolder = nodePath.join(
     'blob',
     'main',
     'curriculum',
@@ -46,16 +46,19 @@ export const generateGithubLink = (challengeId: string, block: string) => {
     repository = 'i18n-curriculum';
   }
 
-  const githubPath = path.join(
-    githubLocation,
-    repository,
-    challengesFolder,
-    curriculumLocale,
-    blocksFolder,
-    block,
-    challengeId + '.md'
-  );
-  return githubPath;
+  const gitURL = new nodeURL.URL(githubLocation);
+
+  gitURL.pathname =
+    gitURL.pathname +
+    nodePath.join(
+      repository,
+      challengesFolder,
+      curriculumLocale,
+      blocksFolder,
+      block,
+      challengeId + '.md'
+    );
+  return gitURL.toString();
 };
 
 function SourceModal({

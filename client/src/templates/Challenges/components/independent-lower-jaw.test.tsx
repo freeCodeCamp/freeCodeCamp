@@ -25,6 +25,7 @@ const passingTests: Test[] = [{ pass: true, text: 'test', testString: 'test' }];
 const baseProps = {
   openHelpModal: vi.fn(),
   openResetModal: vi.fn(),
+  openSourceModal: vi.fn(),
   executeChallenge: vi.fn(),
   submitChallenge: vi.fn(),
   tests: passingTests,
