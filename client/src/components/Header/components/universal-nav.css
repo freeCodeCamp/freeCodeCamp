@@ -172,7 +172,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 .nav-link .fa-external-link-alt {
   color: var(--gray-45);
-}
+
 
 .nav-link-supporter {
   color: var(--yellow-light);
@@ -420,7 +420,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   #universal-nav .login-btn-icon {
     display: none;
   }
-}
+
 
 /**
  * Handle submenu containers collapsed and expanded states
@@ -433,9 +433,8 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   display: block;
 }
 
-@media (force-colors: active){
-    .universal-nav{
-        background-color: #0a0a23;
-    }
+@media (force-colors: active) {
+  .universal-nav {
+    background-color: #0a0a23;
+  
 }
-
