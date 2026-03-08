@@ -59,7 +59,6 @@
 }
 
 .block-label-exam {
-  align-self: auto;
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
 }
