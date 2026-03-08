@@ -7,6 +7,7 @@
   height: var(--header-height);
   justify-content: space-between;
   padding: 0 5px;
+  forced-color-adjust: none;
 }
 
 @media (min-width: 401px) {
@@ -431,3 +432,10 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 #universal-nav button[aria-expanded='true'] + div {
   display: block;
 }
+
+@media (force-colors: active){
+    .universal-nav{
+        background-color: #0a0a23;
+    }
+}
+
