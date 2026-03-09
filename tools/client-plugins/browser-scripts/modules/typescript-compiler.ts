@@ -28,8 +28,10 @@ export class Compiler {
       : undefined;
 
     // For now we're only interested in the compilerOptions, so that's all we're
-    // extracting and validating.  For everything else, we would need
-    // parseJsonConfigFileContent and a virtual config file system.
+    // extracting and validating.  For everything else, we could
+    // parseJsonConfigFileContent and create a host using createSystem and
+    // fsMap, but that needs compilerOptions... This is a bit of a chicken and
+    // egg problem, which we don't need to solve yet.
     const validatedOptions = ts.convertCompilerOptionsFromJson(
       parsedOptions?.compilerOptions ?? {},
       './'
