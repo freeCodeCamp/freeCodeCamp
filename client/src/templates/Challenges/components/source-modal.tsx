@@ -3,7 +3,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
-import nodeURL from 'url';
 import nodePath from 'path';
 
 import envData from '../../../../config/env.json';
@@ -46,7 +45,7 @@ export const generateGithubLink = (challengeId: string, block: string) => {
     repository = 'i18n-curriculum';
   }
 
-  const gitURL = new nodeURL.URL(githubLocation);
+  const gitURL = new URL(githubLocation);
 
   gitURL.pathname =
     gitURL.pathname +
