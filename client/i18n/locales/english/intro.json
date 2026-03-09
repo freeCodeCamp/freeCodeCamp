@@ -6399,11 +6399,13 @@
     }
   },
   "basic-html": {
-    "title": "Basic HTML",
+    "title": "Learn Basic HTML",
     "summary": [
       "Learn how to build simple webpages using HTML tags to add text, images, and links."
     ],
-    "intro": ["Larger intro for the superblock page."],
+    "intro": [
+      "HTML stands for HyperText Markup Langauge and represents the content and structure for a web page. In this course, you will learn the basics of writing HTML."
+    ],
     "blocks": {
       "workshop-curriculum-outline": {
         "title": "Build a Curriculum Outline",
@@ -6548,11 +6550,13 @@
     }
   },
   "semantic-html": {
-    "title": "Semantic HTML",
+    "title": "Learn Semantic HTML",
     "summary": [
       "Discover how to write cleaner, more meaningful HTML using semantic tags that improve structure, accessibility, and SEO."
     ],
-    "intro": ["Larger intro for the superblock page."],
+    "intro": [
+      "In this interactive course, you will practice writing semantic HTML."
+    ],
     "blocks": {
       "lecture-importance-of-semantic-html": {
         "title": "Importance of Semantic HTML",
