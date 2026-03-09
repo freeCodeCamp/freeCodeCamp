@@ -7,19 +7,19 @@
   "helpCategory": "Python",
   "challengeOrder": [
     {
-      "id": "",
+      "id": "69ae5c648491ca1dcd31440b",
       "title": "Introduction"
     },
     {
-      "id": "",
+      "id": "69ae5c6d8491ca1dcd31440c",
       "title": "Simple Explanation of RAG"
     },
     {
-      "id": "",
+      "id": "69ae5c728491ca1dcd31440d",
       "title": "When Not To RAG"
     },
     {
-      "id": "",
+      "id": "69ae5c768491ca1dcd31440e",
       "title": "What Is RAG?"
     }
   ]
