@@ -190,11 +190,13 @@ function SuperBlockIntro({
   return (
     <>
       <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
-      <ConditionalDonationAlert
-        superBlock={superBlock}
-        onCertificationDonationAlertClick={onCertificationDonationAlertClick}
-        isDonating={isDonating}
-      />
+      {!superBlockNoteText && (
+        <ConditionalDonationAlert
+          superBlock={superBlock}
+          onCertificationDonationAlertClick={onCertificationDonationAlertClick}
+          isDonating={isDonating}
+        />
+      )}
     </>
   );
 }
