@@ -10,6 +10,11 @@ import { createStore } from '../../../redux/create-store';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { render } from '../../../../utils/test-utils';
 
+vi.mock('../../../components/Progress');
+vi.mock('../utils/fetch-all-curriculum-data', () => ({
+  useSubmit: () => vi.fn()
+}));
+
 const baseChallengeMeta: ChallengeMeta = {
   block: 'test-block',
   id: 'test-challenge-id',
@@ -21,12 +26,11 @@ const baseChallengeMeta: ChallengeMeta = {
 };
 
 const passingTests: Test[] = [{ pass: true, text: 'test', testString: 'test' }];
-
 const baseProps = {
   openHelpModal: vi.fn(),
   openResetModal: vi.fn(),
   executeChallenge: vi.fn(),
-  submitChallenge: vi.fn(),
+  saveChallenge: vi.fn(),
   tests: passingTests,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
