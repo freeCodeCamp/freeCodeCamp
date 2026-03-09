@@ -26,7 +26,7 @@ interface TSCompiledMessage {
 interface SetupEvent extends MessageEvent {
   data: {
     type: 'setup';
-    compilerOptions?: string;
+    tsconfig?: string;
   };
 }
 
@@ -82,7 +82,7 @@ function handleCancelRequest({ value }: { value: number }) {
 
 async function handleSetupRequest(data: SetupEvent['data'], port: MessagePort) {
   await compiler.setup({
-    rawCompilerOptions: data.compilerOptions
+    tsconfig: data.tsconfig
   });
   // We freeze this to prevent learners from getting the worker into a weird
   // state.

@@ -1,6 +1,5 @@
 import type { VirtualTypeScriptEnvironment } from '@typescript/vfs';
 import type { CompilerHost, CompilerOptions } from 'typescript';
-import { parse } from 'jsonc-parser';
 
 import reactTypes from './react-types.json';
 
@@ -17,20 +16,23 @@ export class Compiler {
     this.tsvfs = tsvfs;
   }
 
-  async setup(opts?: {
-    useNodeModules?: boolean;
-    rawCompilerOptions?: string;
-  }) {
+  async setup(opts?: { useNodeModules?: boolean; tsconfig?: string }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
 
-    const parsedOptions = opts?.rawCompilerOptions
-      ? (parse(opts?.rawCompilerOptions) as unknown)
+    // This just parses the JSON, it doesn't do any validation.
+    const parsedOptions = opts?.tsconfig
+      ? (ts.parseConfigFileTextToJson('', opts.tsconfig).config as {
+          compilerOptions?: unknown;
+        })
       : undefined;
 
+    // For now we're only interested in the compilerOptions, so that's all we're
+    // extracting and validating.  For everything else, we would need
+    // parseJsonConfigFileContent and a virtual config file system.
     const validatedOptions = ts.convertCompilerOptionsFromJson(
-      parsedOptions ?? {},
-      '/'
+      parsedOptions?.compilerOptions ?? {},
+      './'
     );
 
     const compilerOptions: CompilerOptions = {

@@ -31,10 +31,10 @@ export function compileTypeScriptCode(code: string): Promise<string> {
   });
 }
 
-export function setupTSCompiler(compilerOptions?: string): Promise<boolean> {
+export function setupTSCompiler(tsconfig?: string): Promise<boolean> {
   return awaitResponse({
     messenger: getTypeScriptWorker(),
-    message: { type: 'setup', ...(compilerOptions && { compilerOptions }) },
+    message: { type: 'setup', ...(tsconfig && { tsconfig }) },
     onMessage: (data, onSuccess) => {
       if (data.type === 'ready') {
         onSuccess(true);
