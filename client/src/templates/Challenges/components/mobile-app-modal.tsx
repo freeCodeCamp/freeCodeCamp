@@ -6,8 +6,6 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import store from 'store';
 
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
-import appleStoreBadge from '../../../assets/images/footer-ads/apple-store-badge.svg';
-import googlePlayBadge from '../../../assets/images/footer-ads/google-play-badge.svg';
 
 // Superblocks that are available in the freeCodeCamp mobile app.
 // Only includes non-legacy public superblocks from orderedSuperBlockInfo
@@ -24,6 +22,19 @@ const mobileAvailableSuperBlocks = new Set<string>([
 
 const STORE_KEY = 'hideMobileAppModal';
 
+const IOS_URL =
+  'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200';
+const ANDROID_URL =
+  'https://play.google.com/store/apps/details?id=org.freecodecamp';
+
+function detectOS(): 'ios' | 'android' | 'other' {
+  if (typeof navigator === 'undefined') return 'other';
+  const ua = navigator.userAgent;
+  if (/iPad|iPhone|iPod/.test(ua)) return 'ios';
+  if (/Android/.test(ua)) return 'android';
+  return 'other';
+}
+
 interface MobileAppModalProps {
   superBlock: string;
 }
@@ -37,20 +48,22 @@ function MobileAppModal({
   });
   const isAvailable = mobileAvailableSuperBlocks.has(superBlock);
 
-  // Only show until the user explicitly clicks "Do not show me again"
   const [show, setShow] = useState(!store.get(STORE_KEY));
 
   if (!isMobile || !isAvailable) return null;
 
-  const handleClose = () => setShow(false);
-
-  const handleDoNotShow = () => {
+  const dismiss = () => {
     store.set(STORE_KEY, true);
     setShow(false);
   };
 
+  const os = detectOS();
+  const storeUrl = os === 'ios' ? IOS_URL : ANDROID_URL;
+  const storeName =
+    os === 'ios' ? t('mobile-app-modal.ios') : t('mobile-app-modal.android');
+
   return (
-    <Modal onClose={handleClose} open={show} size='large'>
+    <Modal onClose={dismiss} open={show} size='large'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         <span style={{ fontWeight: 'bold' }}>
           {t('mobile-app-modal.heading')}
@@ -59,37 +72,8 @@ function MobileAppModal({
       <Modal.Body>
         <p>{t('mobile-app-modal.body')}</p>
         <Spacer size='s' />
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <a
-            href='https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
-            rel='noreferrer'
-            target='_blank'
-            style={{ flex: 1 }}
-          >
-            <img
-              src={appleStoreBadge}
-              lang='en'
-              alt={t('mobile-app-modal.ios')}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </a>
-          <a
-            href='https://play.google.com/store/apps/details?id=org.freecodecamp'
-            rel='noreferrer'
-            target='_blank'
-            style={{ flex: 1 }}
-          >
-            <img
-              src={googlePlayBadge}
-              lang='en'
-              alt={t('mobile-app-modal.android')}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </a>
-        </div>
-        <Spacer size='s' />
-        <Button block={true} onClick={handleDoNotShow}>
-          {t('mobile-app-modal.do-not-show')}
+        <Button block={true} href={storeUrl} target='_blank' onClick={dismiss}>
+          {os === 'other' ? t('mobile-app-modal.open-app') : storeName}
         </Button>
         <Spacer size='xs' />
       </Modal.Body>

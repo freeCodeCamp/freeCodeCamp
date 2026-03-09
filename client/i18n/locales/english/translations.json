@@ -944,10 +944,10 @@
   },
   "mobile-app-modal": {
     "heading": "We see you are on mobile!",
-    "body": "This certification is available in our app for a better experience.",
+    "body": "This course is available in our app for a better experience.",
     "ios": "Download on the App Store",
     "android": "Get it on Google Play",
-    "do-not-show": "Do not show me again"
+    "open-app": "Open in App"
   },
   "icons": {
     "gold-cup": "Gold Cup",
