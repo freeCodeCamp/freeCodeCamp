@@ -3320,7 +3320,7 @@
         "title": "Implement Linked List Operations",
         "intro": [
           "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
-          ]
+        ]
       },
       "review-data-structures-js": {
         "title": "Data Structures Review",
