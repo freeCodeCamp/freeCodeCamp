@@ -1074,6 +1074,36 @@
       }
     }
   },
+  "learn-prompting-fundamentals": {
+    "title": "Learn Prompting Fundamentals",
+    "summary": [
+      "Learn the fundamentals of writing good prompts in this video course."
+    ],
+    "intro": [
+      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
+        "title": "Foundations of AI & Language Models",
+        "intro": [
+          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
+        ]
+      },
+      "learn-prompting-fundamentals-core-concepts": {
+        "title": "Core Concepts",
+        "intro": [
+          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
+        ]
+      },
+      "learn-prompting-fundamentals-practical-application-and-best-practices": {
+        "title": "Practical Application & Best Practices",
+        "intro": [
+          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Segurança da informação",
     "intro": [
@@ -3298,6 +3328,12 @@
           "Teste seu conhecimento sobre recursão com este questionário."
         ]
       },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
+        ]
+      },
       "lecture-working-with-common-data-structures-js": {
         "title": "Working with Common Data Structures",
         "intro": [
@@ -3345,6 +3381,24 @@
         "title": "Crie um Conversor de Lista de Adjacência para Matriz",
         "intro": [
           "Neste laboratório, você implementará uma função que converte uma representação em lista de adjacência de um grafo para uma representação em matriz de adjacência."
+        ]
+      },
+      "lab-n-queens-problem-js": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "lecture-understanding-dynamic-programming-js": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "review-dynamic-programming-js": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming-js": {
@@ -5215,6 +5269,13 @@
         "title": "Trabalhando com Elementos de Áudio e Vídeo",
         "intro": [
           "Nestes cursos, você aprenderá como trabalhar com os elementos <code>audio</code> e <code>video</code>."
+        ]
+      },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
         ]
       },
       "workshop-html-video-player": {
