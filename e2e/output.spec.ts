@@ -55,7 +55,11 @@ const runChallengeTest = async (page: Page, isMobile: boolean) => {
     await page.getByRole('tab', { name: 'Console' }).click();
     await page.getByText('Run').click();
   } else {
-    await page.getByText('Run the Tests (Ctrl + Enter)').click();
+    await page
+      .getByRole('button', {
+        name: translations.buttons['check-code']
+      })
+      .click();
   }
 };
 
@@ -95,7 +99,9 @@ test.describe('For classic challenges', () => {
       text: '<h1>Hello World</h1>'
     });
     await runChallengeTest(page, isMobile);
-    await closeButton.click();
+    if (isMobile) {
+      await closeButton.click();
+    }
 
     await expect(
       page.getByRole('region', {
