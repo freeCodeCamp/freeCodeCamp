@@ -104,12 +104,15 @@ test.describe('Add Experience Item', () => {
     await page.getByRole('button', { name: 'Close' }).click();
 
     await page
-      .getByRole('button', { name: translations.buttons.edit })
+      .locator('.experience-item')
       .first()
+      .getByRole('button', { name: translations.buttons.edit })
       .click();
-    await page
-      .getByRole('button', { name: translations.profile.experience.remove })
-      .click();
+    const removeButton = page.getByRole('button', {
+      name: translations.profile.experience.remove
+    });
+    await expect(removeButton).toBeVisible();
+    await removeButton.click();
 
     await page.getByRole('button', { name: 'Close' }).click();
 

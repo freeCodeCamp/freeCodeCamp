@@ -111,8 +111,9 @@ test.describe('Add Portfolio Item', () => {
     await page.getByRole('button', { name: 'Close' }).click();
 
     await page
-      .getByRole('button', { name: translations.buttons.edit })
+      .locator('.portfolio-item-shell')
       .first()
+      .getByRole('button', { name: translations.buttons.edit })
       .click();
     await page
       .getByRole('button', { name: translations.buttons['remove-portfolio'] })
