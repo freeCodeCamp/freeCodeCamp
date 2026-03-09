@@ -90,13 +90,13 @@ export const challengeFiles: ChallengeFile[] = [
     error: null,
     ext: 'json',
     head: '',
-    history: ['tsconfig.jsonc'],
-    fileKey: 'tsconfigjsonc',
+    history: ['tsconfig.json'],
+    fileKey: 'tsconfigjson',
     name: 'tsconfig',
     seed: '{\n  "compilerOptions": {}\n}',
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
-    path: 'tsconfig.jsonc'
+    path: 'tsconfig.json'
   }
 ];
