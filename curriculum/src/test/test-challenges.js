@@ -41,7 +41,7 @@ vi.mock(
     await compiler.setup({ useNodeModules: true });
     return {
       ...actual,
-      checkTSServiceIsReady: () => Promise.resolve(true),
+      setupTSCompiler: () => Promise.resolve(true),
       compileTypeScriptCode: code => {
         const { result, error } = compiler.compile(code, 'index.tsx');
         if (error) throw error;

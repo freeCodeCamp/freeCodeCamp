@@ -103,11 +103,8 @@ const completeChallenges = async ({
       challenge.solution
     );
     await page.keyboard.press('ControlOrMeta+V');
-    await page.getByRole('button', { name: 'Run' }).click();
-    await expect(
-      page.getByRole('dialog').filter({ hasText: 'Basic Javascript' })
-    ).toBeVisible(); // completion dialog
-    await page.getByRole('button', { name: 'Submit' }).click();
+    await page.getByRole('button', { name: 'Check Your Code' }).click();
+    await page.getByRole('button', { name: 'Submit and continue' }).click();
   }
 };
 

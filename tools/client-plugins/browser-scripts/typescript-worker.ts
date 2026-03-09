@@ -1,3 +1,4 @@
+import type { CompilerOptions } from 'typescript';
 import { Compiler } from './modules/typescript-compiler';
 
 // Most of the ts types are only a guideline. This is because we're not bundling
@@ -23,9 +24,10 @@ interface TSCompiledMessage {
   error: string;
 }
 
-interface CheckIsReadyRequestEvent extends MessageEvent {
+interface SetupEvent extends MessageEvent {
   data: {
-    type: 'check-is-ready';
+    type: 'setup';
+    compilerOptions?: CompilerOptions;
   };
 }
 
@@ -59,12 +61,10 @@ function importTS(version: string) {
   cachedVersion = version;
 }
 
-ctx.onmessage = (
-  e: TSCompileEvent | CheckIsReadyRequestEvent | CancelEvent
-) => {
+ctx.onmessage = (e: TSCompileEvent | SetupEvent | CancelEvent) => {
   const { data, ports } = e;
-  if (data.type === 'check-is-ready') {
-    void handleCheckIsReadyRequest(ports[0]);
+  if (data.type === 'setup') {
+    void handleSetupRequest(data, ports[0]);
   } else if (data.type === 'cancel') {
     handleCancelRequest(data);
   } else {
@@ -75,15 +75,16 @@ ctx.onmessage = (
 importTS(TS_VERSION);
 
 const compiler = new Compiler(ts, tsvfs);
-const isSetup = compiler.setup();
 
 // This lets the client know that there is nothing to cancel.
 function handleCancelRequest({ value }: { value: number }) {
   postMessage({ type: 'is-alive', text: value });
 }
 
-async function handleCheckIsReadyRequest(port: MessagePort) {
-  await isSetup;
+async function handleSetupRequest(data: SetupEvent['data'], port: MessagePort) {
+  await compiler.setup({
+    compilerOptions: data.compilerOptions
+  });
   // We freeze this to prevent learners from getting the worker into a weird
   // state.
   Object.freeze(self);
