@@ -31,6 +31,45 @@
   gap: 0.6rem;
 }
 
+.profile-widget-dropdown {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  padding: 0 0 0.75rem;
+  margin-bottom: 0.25rem;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.profile-widget-dropdown:hover {
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.profile-widget-dropdown-chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.profile-widget-dropdown-chevron svg {
+  width: 15px;
+  height: 15px;
+}
+
+.profile-widget-dropdown-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.profile-widget-dropdown-text {
+  font-size: 0.95rem;
+  color: var(--quaternary-color);
+}
+
 .profile-toggle-row {
   display: flex;
   align-items: center;

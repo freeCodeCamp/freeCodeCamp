@@ -19,6 +19,7 @@ import Certifications from './components/certifications';
 import Stats from './components/stats';
 import HeatMap from './components/heat-map';
 import './profile.css';
+import DropDown from '../../assets/icons/dropdown';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
 import { ProfileCompleteness } from './components/profile-completeness';
@@ -102,6 +103,7 @@ function UserProfile({
   const [activeExperienceItemId, setActiveExperienceItemId] = useState<
     string | null
   >(null);
+  const [isMyProfileExpanded, setIsMyProfileExpanded] = useState(true);
   const { t } = useTranslation();
 
   const {
@@ -191,32 +193,51 @@ function UserProfile({
               isSessionUser={isSessionUser}
               isPrivate={profileUI.isLocked}
             />
-            <div className='profile-toggle-list'>
-              {profileVisibilityToggles.map(({ flag, labelKey }) => {
-                const label = t(labelKey);
-                const isPrivate =
-                  flag === 'isLocked' ? profileUI.isLocked : !profileUI[flag];
+            <button
+              className='profile-widget-dropdown'
+              type='button'
+              onClick={() => setIsMyProfileExpanded(prev => !prev)}
+              aria-expanded={isMyProfileExpanded}
+              aria-label={t('settings.labels.my-profile')}
+            >
+              <span
+                className={`profile-widget-dropdown-chevron${isMyProfileExpanded ? ' expanded' : ''}`}
+                aria-hidden='true'
+              >
+                <DropDown />
+              </span>
+              <span className='profile-widget-dropdown-text'>
+                {t('profile.edit-privacy-settings')}
+              </span>
+            </button>
+            {isMyProfileExpanded && (
+              <div className='profile-toggle-list'>
+                {profileVisibilityToggles.map(({ flag, labelKey }) => {
+                  const label = t(labelKey);
+                  const isPrivate =
+                    flag === 'isLocked' ? profileUI.isLocked : !profileUI[flag];
 
-                return (
-                  <div className='profile-toggle-row' key={flag}>
-                    <span>{label}</span>
-                    <label className='widget-toggle'>
-                      <input
-                        type='checkbox'
-                        checked={!isPrivate}
-                        onChange={() => toggleFlag(flag)}
-                        aria-label={
-                          isPrivate
-                            ? t('aria.make-public', { section: label })
-                            : t('aria.make-private', { section: label })
-                        }
-                      />
-                      <span className='widget-toggle-slider' />
-                    </label>
-                  </div>
-                );
-              })}
-            </div>
+                  return (
+                    <div className='profile-toggle-row' key={flag}>
+                      <span>{label}</span>
+                      <label className='widget-toggle'>
+                        <input
+                          type='checkbox'
+                          checked={!isPrivate}
+                          onChange={() => toggleFlag(flag)}
+                          aria-label={
+                            isPrivate
+                              ? t('aria.make-public', { section: label })
+                              : t('aria.make-private', { section: label })
+                          }
+                        />
+                        <span className='widget-toggle-slider' />
+                      </label>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </section>
         </FullWidthRow>
       )}
