@@ -58,7 +58,8 @@ const superblocks = [
   'css-grid',
   'lab-product-landing-page',
   'css-animations',
-  'learn-prompting-fundamentals'
+  'learn-prompting-fundamentals',
+  'learn-oop-with-python'
 ];
 
 const schema = Joi.object().keys(
