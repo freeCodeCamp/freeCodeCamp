@@ -34,6 +34,7 @@ const superblocks = [
   'project-euler',
   '2022/responsive-web-design',
   'the-odin-project',
+  'introduction-to-algorithms-and-data-structures',
   'lab-survey-form',
   'html-and-accessibility',
   'computer-basics',
@@ -56,7 +57,8 @@ const superblocks = [
   'css-variables',
   'css-grid',
   'lab-product-landing-page',
-  'css-animations'
+  'css-animations',
+  'learn-prompting-fundamentals'
 ];
 
 const schema = Joi.object().keys(

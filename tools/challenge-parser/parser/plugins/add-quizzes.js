@@ -1,6 +1,9 @@
 const { root } = require('mdast-builder');
 const { getSection, getAllSections } = require('./utils/get-section');
-const { createMdastToHtml } = require('./utils/i18n-stringify');
+const {
+  createMdastToHtml,
+  parseHanziPinyinPairs
+} = require('./utils/i18n-stringify');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -65,6 +68,22 @@ function plugin() {
                 `--audio-- transcript line ${index} must have character and text properties`
               );
             }
+          });
+
+          // Convert hanzi-pinyin pairs in transcript text to HTML ruby elements
+          audioData.transcript = audioData.transcript.map(line => {
+            if (parseHanziPinyinPairs(line.text).length > 0) {
+              const nodes = [
+                {
+                  type: 'paragraph',
+                  children: [{ type: 'inlineCode', value: line.text }]
+                }
+              ];
+              const html = toHtml(nodes);
+              const innerHtml = html.replace(/^<p>|<\/p>$/g, '');
+              return { ...line, text: innerHtml };
+            }
+            return line;
           });
 
           questionData.audioData = audioData;

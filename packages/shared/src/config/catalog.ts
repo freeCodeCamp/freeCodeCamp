@@ -17,7 +17,9 @@ enum Topic {
   D3 = 'd3',
   Api = 'api',
   InformationSecurity = 'information-security',
-  ComputerFundamentals = 'computer-fundamentals'
+  ComputerFundamentals = 'computer-fundamentals',
+  ComputerScience = 'computer-science',
+  AI = 'ai'
 }
 
 interface Catalog {
@@ -189,5 +191,17 @@ export const catalog: Catalog[] = [
     level: Levels.Advanced,
     hours: 2,
     topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.ComputerScience
+  },
+  {
+    superBlock: SuperBlocks.LearnPromptingFundamentals,
+    level: Levels.Beginner,
+    hours: 1,
+    topic: Topic.AI
   }
 ];

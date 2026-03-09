@@ -54,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -141,7 +142,7 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      if (isBlockCompleted && curriculumData.hasData) {
         fireConfetti();
       }
     } else {
@@ -362,7 +363,6 @@ function* updatePython(challengeData) {
   };
 
   runPythonCode(code);
-  // TODO: proxy errors to the console
 }
 
 function* previewProjectSolutionSaga({ payload }) {

@@ -366,7 +366,9 @@ export const superBlockToCertMap: {
   [SuperBlocks.CssGrid]: null,
   [SuperBlocks.LabProductLandingPage]: null,
   [SuperBlocks.CssAnimations]: null,
-  [SuperBlocks.LearnPythonForBeginners]: null
+  [SuperBlocks.LearnPythonForBeginners]: null,
+  [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: null,
+  [SuperBlocks.LearnPromptingFundamentals]: null
 };
 
 export const certificationRequirements: Partial<
