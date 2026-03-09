@@ -106,7 +106,16 @@ test.describe('Add Portfolio Item', () => {
       .fill('My description');
 
     await page
-      .getByRole('button', { name: 'Remove this portfolio item' })
+      .getByRole('button', { name: 'Save this portfolio item' })
+      .click();
+    await page.getByRole('button', { name: 'Close' }).click();
+
+    await page
+      .getByRole('button', { name: translations.buttons.edit })
+      .first()
+      .click();
+    await page
+      .getByRole('button', { name: translations.buttons['remove-portfolio'] })
       .click();
 
     await expect(page.getByTestId('portfolio-items')).toBeHidden();

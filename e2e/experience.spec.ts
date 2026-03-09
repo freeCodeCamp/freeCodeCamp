@@ -92,6 +92,7 @@ test.describe('Add Experience Item', () => {
   test('It should be possible to delete an experience item', async ({
     page
   }) => {
+    // Create an item first so delete is available in edit mode.
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('01/2020');
@@ -99,8 +100,16 @@ test.describe('Add Experience Item', () => {
     // Use locator to avoid conflict with About section's Location field
     await page.locator('input[name="experience-location"]').fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
+    await page.getByRole('button', { name: 'Save experience' }).click();
+    await page.getByRole('button', { name: 'Close' }).click();
 
-    await page.getByRole('button', { name: 'Remove Experience' }).click();
+    await page
+      .getByRole('button', { name: translations.buttons.edit })
+      .first()
+      .click();
+    await page
+      .getByRole('button', { name: translations.profile.experience.remove })
+      .click();
 
     await page.getByRole('button', { name: 'Close' }).click();
 

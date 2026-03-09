@@ -283,7 +283,7 @@ test.describe('Profile - Add New Actions', () => {
       })
     ).toBeVisible();
     await expect(
-      page.getByRole('button', { name: translations.buttons['add-portfolio'] })
+      page.getByRole('button', { name: translations.buttons['save-portfolio'] })
     ).toBeVisible();
   });
 
@@ -302,7 +302,7 @@ test.describe('Profile - Add New Actions', () => {
       })
     ).toBeVisible();
     await expect(
-      page.getByRole('button', { name: translations.profile.experience.add })
+      page.getByRole('button', { name: translations.profile.experience.save })
     ).toBeVisible();
   });
 });
