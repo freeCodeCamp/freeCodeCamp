@@ -172,6 +172,7 @@ function UserProfile({
           about={user.about}
           picture={user.picture}
           location={user.location}
+          isProfilePublic={!profileUI.isLocked}
           githubProfile={githubProfile}
           linkedin={linkedin}
           twitter={twitter}

@@ -13,6 +13,7 @@ const baseProps = {
   about: '',
   picture: '',
   location: '',
+  isProfilePublic: false,
   githubProfile: '',
   linkedin: '',
   twitter: '',
@@ -89,6 +90,7 @@ describe('<ProfileCompleteness />', () => {
       about: 'I am a developer',
       picture: 'https://cdn.mysite.com/avatar.png',
       location: 'New York',
+      isProfilePublic: true,
       githubProfile: 'https://github.com/johndoe',
       portfolio: [
         {
@@ -119,9 +121,9 @@ describe('<ProfileCompleteness />', () => {
   it('should display all checklist items when expanded', () => {
     render(<ProfileCompleteness {...baseProps} />);
 
-    // Should show all 7 items
+    // Should show all 8 items
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems).toHaveLength(7);
+    expect(listItems).toHaveLength(8);
   });
 
   it('should start expanded when core items (name, picture, about) are incomplete', () => {
@@ -213,8 +215,8 @@ describe('<ProfileCompleteness />', () => {
     };
     render(<ProfileCompleteness {...propsWithName} />);
 
-    // Should have 1 green-pass (name complete) and 6 green-not-completed
+    // Should have 1 green-pass (name complete) and 7 green-not-completed
     expect(screen.getAllByTestId('green-pass')).toHaveLength(1);
-    expect(screen.getAllByTestId('green-not-completed')).toHaveLength(6);
+    expect(screen.getAllByTestId('green-not-completed')).toHaveLength(7);
   });
 });

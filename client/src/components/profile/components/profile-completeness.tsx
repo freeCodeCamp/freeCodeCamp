@@ -17,6 +17,7 @@ interface ProfileCompletenessProps {
   about: string;
   picture: string;
   location: string;
+  isProfilePublic: boolean;
   githubProfile: string;
   linkedin: string;
   twitter: string;
@@ -50,6 +51,7 @@ export const ProfileCompleteness = ({
   about,
   picture,
   location,
+  isProfilePublic,
   githubProfile,
   linkedin,
   twitter,
@@ -105,13 +107,19 @@ export const ProfileCompleteness = ({
       key: 'portfolio',
       translationKey: 'profile.completeness.portfolio',
       isComplete: portfolio.length > 0,
-      weight: 15
+      weight: 10
     },
     {
       key: 'experience',
       translationKey: 'profile.completeness.experience',
       isComplete: experience.length > 0,
       weight: 10
+    },
+    {
+      key: 'privacy',
+      translationKey: 'profile.completeness.privacy',
+      isComplete: isProfilePublic,
+      weight: 5
     }
   ];
 
