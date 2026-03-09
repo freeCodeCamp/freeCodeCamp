@@ -7,15 +7,15 @@
   "helpCategory": "Python",
   "challengeOrder": [
     {
-      "id": "",
+      "id": "69ae6fd0b4a814be6a4f2be0",
       "title": "RAG Architecture"
     },
     {
-      "id": "",
+      "id": "69ae6fd7b4a814be6a4f2be1",
       "title": "Catching, Monitoring, and Error Handling"
     },
     {
-      "id": "",
+      "id": "69ae6fdbb4a814be6a4f2be2",
       "title": "RAG in Production"
     }
   ]
