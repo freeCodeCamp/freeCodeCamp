@@ -381,7 +381,7 @@ exports[`challenge parser > should parse a simple md file 1`] = `
   }
 }",
       "editableRegionBoundaries": [],
-      "ext": "jsonc",
+      "ext": "json",
       "head": "",
       "id": "",
       "name": "tsconfig",

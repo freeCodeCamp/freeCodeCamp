@@ -42,7 +42,7 @@ exports[`add-seed plugin > should have an output to match the snapshot 1`] = `
   }
 }",
       "editableRegionBoundaries": [],
-      "ext": "jsonc",
+      "ext": "json",
       "head": "",
       "id": "",
       "name": "tsconfig",
