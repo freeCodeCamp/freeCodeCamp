@@ -1,6 +1,6 @@
 import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { isValid, parse } from 'date-fns';
 import {
@@ -18,7 +18,7 @@ import { connect } from 'react-redux';
 import { ExperienceData } from '../../../redux/prop-types';
 import { updateMyExperience } from '../../../redux/settings/actions';
 
-import { FullWidthRow, interleave } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 
 type ExperienceProps = {
@@ -26,6 +26,7 @@ type ExperienceProps = {
   t: TFunction;
   updateMyExperience: (obj: { experience: ExperienceData[] }) => void;
   open: boolean;
+  editingItemId?: string | null;
   onClose: () => void;
 };
 
@@ -99,10 +100,28 @@ const ExperienceSettings = (props: ExperienceProps) => {
     experience: initialExperience = [],
     updateMyExperience,
     open,
+    editingItemId = null,
     onClose
   } = props;
   const [experience, setExperience] = useState(initialExperience);
   const [newItemId, setNewItemId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (open) {
+      const editedItem = editingItemId
+        ? initialExperience.find(byId(editingItemId))
+        : null;
+
+      if (editedItem) {
+        setExperience([editedItem]);
+        setNewItemId(null);
+      } else {
+        const item = createEmptyExperienceItem();
+        setExperience([item]);
+        setNewItemId(item.id);
+      }
+    }
+  }, [editingItemId, initialExperience, open]);
 
   const createOnChangeHandler =
     (
@@ -139,12 +158,6 @@ const ExperienceSettings = (props: ExperienceProps) => {
           : [itemToSave, ...props.experience];
       updateMyExperience({ experience: updatedExperience });
     }
-  };
-
-  const handleAdd = () => {
-    const item = createEmptyExperienceItem();
-    setExperience(prev => [item, ...prev]);
-    setNewItemId(item.id);
   };
 
   const handleRemoveItem = (id: string) => {
@@ -283,6 +296,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
       description: { descriptionState, descriptionMessage },
       pristine
     } = getFormValidation(experienceItem);
+    const isExistingItem = props.experience.some(byId(id));
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
       if (isButtonDisabled) return null;
@@ -435,47 +449,35 @@ const ExperienceSettings = (props: ExperienceProps) => {
           >
             {t('profile.experience.save')}
           </BlockSaveButton>
-          <Spacer size='xs' />
-          <Button
-            block
-            size='large'
-            variant='danger'
-            onClick={() => handleRemoveItem(id)}
-            type='button'
-          >
-            {t('profile.experience.remove')}
-          </Button>
+          {isExistingItem && (
+            <>
+              <Spacer size='xs' />
+              <Button
+                block
+                size='large'
+                variant='danger'
+                onClick={() => handleRemoveItem(id)}
+                type='button'
+              >
+                {t('profile.experience.remove')}
+              </Button>
+            </>
+          )}
         </form>
       </FullWidthRow>
     );
   };
 
+  const displayedExperience = useMemo(() => {
+    if (!newItemId) return experience;
+    return experience.filter(byId(newItemId));
+  }, [experience, newItemId]);
+
   return (
     <Modal onClose={onClose} open={open} size='large'>
       <Modal.Header>{t('profile.edit-experience')}</Modal.Header>
       <Modal.Body alignment='left'>
-        <FullWidthRow>
-          <p>{t('profile.experience.share-experience')}</p>
-          <Spacer size='xs' />
-          <Button
-            block
-            size='large'
-            variant='primary'
-            disabled={newItemId !== null}
-            onClick={handleAdd}
-            type='button'
-          >
-            {t('profile.experience.add')}
-          </Button>
-        </FullWidthRow>
-        <Spacer size='l' />
-        {interleave(experience.map(renderExperience), () => (
-          <>
-            <Spacer size='m' />
-            <hr />
-            <Spacer size='m' />
-          </>
-        ))}
+        {displayedExperience.map(renderExperience)}
       </Modal.Body>
     </Modal>
   );

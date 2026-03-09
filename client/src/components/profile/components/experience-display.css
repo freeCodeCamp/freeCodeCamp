@@ -3,6 +3,12 @@
   margin-top: 0.5rem;
 }
 
+.experience-item--editable {
+  position: relative;
+  padding-top: 0.25rem;
+  padding-right: 6rem;
+}
+
 .experience-date {
   color: #858591;
   font-size: 0.9rem;

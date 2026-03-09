@@ -134,6 +134,9 @@ export const ProfileCompleteness = ({
   return (
     <FullWidthRow>
       <div className='profile-completeness'>
+        <h2 className='profile-completeness-title'>
+          {t('profile.completeness.heading', { percentage })}
+        </h2>
         <button
           className='profile-completeness-header'
           onClick={toggleExpanded}
@@ -153,9 +156,6 @@ export const ProfileCompleteness = ({
               style={{ width: `${percentage}%` }}
             />
           </div>
-          <span className='profile-completeness-text'>
-            {t('profile.completeness.heading', { percentage })}
-          </span>
         </button>
         {isExpanded && (
           <ul className='profile-completeness-checklist'>

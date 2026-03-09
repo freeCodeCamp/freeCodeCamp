@@ -21,16 +21,6 @@ test.describe('Add Portfolio Item', () => {
         name: translations.profile['add-new-project']
       })
       .click();
-
-    // Will check if the portfolio button is hydrated correctly with different intervals.
-    await expect(async () => {
-      const addPortfolioItemButton = page.getByRole('button', {
-        name: 'Add a new portfolio Item'
-      });
-      await addPortfolioItemButton.click();
-
-      await expect(addPortfolioItemButton).toBeDisabled({ timeout: 1 });
-    }).toPass();
   });
 
   test('The title has validation', async ({ page }) => {
@@ -131,10 +121,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('It should be possible to add a portfolio item', async ({ page }) => {
-    await expect(
-      page.getByRole('button', { name: 'Add a new portfolio Item' })
-    ).toBeDisabled();
-
     await page
       .getByLabel(translations.settings.labels.title)
       .fill('My portfolio');

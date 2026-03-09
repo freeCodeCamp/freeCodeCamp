@@ -51,7 +51,7 @@ test.describe('Settings - Certified User', () => {
     // Title
     await expect(page).toHaveTitle(settingsObject.pageTitle);
 
-    // Privacy Settings (simplified - only profile lock toggle and download data)
+    // Privacy Settings (description and data download only)
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.privacy

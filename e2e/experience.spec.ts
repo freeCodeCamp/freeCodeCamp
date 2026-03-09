@@ -26,15 +26,6 @@ test.describe('Add Experience Item', () => {
     });
     await expect(openExperienceModalButton).toBeVisible({ timeout: 30000 });
     await openExperienceModalButton.click();
-
-    await expect(async () => {
-      const addExperienceItemButton = page.getByRole('button', {
-        name: 'Add experience'
-      });
-      await addExperienceItemButton.click();
-
-      await expect(addExperienceItemButton).toBeDisabled({ timeout: 1 });
-    }).toPass();
   });
 
   test('The company has validation', async ({ page }) => {
@@ -119,10 +110,6 @@ test.describe('Add Experience Item', () => {
   });
 
   test('It should be possible to add an experience item', async ({ page }) => {
-    await expect(
-      page.getByRole('button', { name: 'Add experience' })
-    ).toBeDisabled();
-
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('01/2020');

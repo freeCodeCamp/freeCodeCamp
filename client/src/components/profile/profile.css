@@ -26,6 +26,18 @@
   color: var(--quaternary-color);
 }
 
+.profile-toggle-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.profile-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 .profile-add-action-row {
   margin-top: 0.75rem;
   display: flex;
@@ -33,6 +45,50 @@
   justify-content: flex-start;
   border-top: 1px solid var(--quaternary-background);
   padding-top: 0.75rem;
+}
+
+.profile-item-action-row {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-item-action-row--top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  z-index: 1;
+}
+
+.profile-item-edit-action {
+  appearance: none;
+  border: 1px solid var(--primary-color);
+  background: var(--tertiary-background);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  min-height: 34px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.profile-item-edit-action:hover,
+.profile-item-edit-action:focus-visible {
+  background: var(--secondary-background);
+  color: var(--foreground-color);
+  border-color: var(--foreground-color);
+}
+
+.profile-item-edit-action:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
 }
 
 .profile-add-action {

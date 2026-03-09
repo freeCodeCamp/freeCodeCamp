@@ -8,6 +8,7 @@ import './experience-display.css';
 
 interface ExperienceDisplayProps {
   experience: ExperienceData[];
+  onEditExperience?: (id: string) => void;
 }
 
 const formatDate = (dateString: string): string => {
@@ -18,7 +19,8 @@ const formatDate = (dateString: string): string => {
 };
 
 export const ExperienceDisplay = ({
-  experience
+  experience,
+  onEditExperience
 }: ExperienceDisplayProps): JSX.Element | null => {
   const { t } = useTranslation();
 
@@ -27,7 +29,21 @@ export const ExperienceDisplay = ({
   }
 
   const experienceItems = experience.map(exp => (
-    <div key={exp.id} className='experience-item'>
+    <div
+      key={exp.id}
+      className={`experience-item${onEditExperience ? ' experience-item--editable' : ''}`}
+    >
+      {onEditExperience && (
+        <div className='profile-item-action-row profile-item-action-row--top-right'>
+          <button
+            className='profile-item-edit-action'
+            onClick={() => onEditExperience(exp.id)}
+            type='button'
+          >
+            {t('buttons.edit')}
+          </button>
+        </div>
+      )}
       <h3>{exp.title}</h3>
       <h4 className='experience-company'>
         {exp.company}

@@ -5,6 +5,14 @@
   margin-bottom: 1.5em;
 }
 
+.profile-completeness-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.2;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
 .profile-completeness-header {
   display: flex;
   align-items: center;
@@ -13,8 +21,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0 0 0.8rem;
-  border-bottom: 1px solid var(--quaternary-background);
+  padding: 0;
   color: var(--primary-color);
   text-align: left;
 }
@@ -38,12 +45,6 @@
   background-color: var(--primary-color);
   border-radius: 0;
   transition: width 0.3s ease;
-}
-
-.profile-completeness-text {
-  white-space: nowrap;
-  font-size: 1.1rem;
-  font-weight: 600;
 }
 
 .profile-completeness-chevron {

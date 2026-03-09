@@ -7,6 +7,10 @@
   overflow: hidden;
 }
 
+.portfolio-item-shell {
+  position: relative;
+}
+
 .portfolio-image {
   position: relative;
   width: 100%;
@@ -45,6 +49,11 @@ a.portfolio-card:focus h3 {
 a.portfolio-card:hover img,
 a.portfolio-card:focus img {
   opacity: 0.8;
+}
+
+.portfolio-item-shell .profile-item-action-row--top-right {
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 /* Adjust styles for desktop screens */

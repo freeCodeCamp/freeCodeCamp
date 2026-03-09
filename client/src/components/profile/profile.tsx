@@ -55,6 +55,20 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   );
 };
 
+const profileVisibilityToggles: ReadonlyArray<{
+  flag: keyof ProfileUI;
+  labelKey: string;
+}> = [
+  { flag: 'isLocked', labelKey: 'settings.labels.my-profile' },
+  { flag: 'showDonation', labelKey: 'settings.labels.my-donations' },
+  { flag: 'showPoints', labelKey: 'settings.labels.my-points' },
+  { flag: 'showHeatMap', labelKey: 'settings.labels.my-heatmap' },
+  { flag: 'showPortfolio', labelKey: 'settings.labels.my-portfolio' },
+  { flag: 'showExperience', labelKey: 'settings.labels.my-experience' },
+  { flag: 'showCerts', labelKey: 'settings.labels.my-certs' },
+  { flag: 'showTimeLine', labelKey: 'settings.labels.my-timeline' }
+];
+
 const VisitorMessage = ({
   t,
   username
@@ -82,6 +96,12 @@ function UserProfile({
   submitProfileUI
 }: ProfileWithDispatchProps): JSX.Element {
   const [activeModal, setActiveModal] = useState<ActiveModal>(null);
+  const [activePortfolioItemId, setActivePortfolioItemId] = useState<
+    string | null
+  >(null);
+  const [activeExperienceItemId, setActiveExperienceItemId] = useState<
+    string | null
+  >(null);
   const { t } = useTranslation();
 
   const {
@@ -115,7 +135,11 @@ function UserProfile({
     });
   };
 
-  const closeModal = () => setActiveModal(null);
+  const closeModal = () => {
+    setActiveModal(null);
+    setActivePortfolioItemId(null);
+    setActiveExperienceItemId(null);
+  };
 
   return (
     <>
@@ -130,11 +154,13 @@ function UserProfile({
           <Portfolio
             portfolio={portfolio}
             open={activeModal === 'portfolio'}
+            editingItemId={activePortfolioItemId}
             onClose={closeModal}
           />
           <Experience
             experience={experience || []}
             open={activeModal === 'experience'}
+            editingItemId={activeExperienceItemId}
             onClose={closeModal}
           />
         </>
@@ -163,9 +189,33 @@ function UserProfile({
               title={t('settings.labels.my-profile')}
               isSessionUser={isSessionUser}
               isPrivate={profileUI.isLocked}
-              onToggle={() => toggleFlag('isLocked')}
             />
-            <p className='profile-visibility-note'>{t('settings.disabled')}</p>
+            <div className='profile-toggle-list'>
+              {profileVisibilityToggles.map(({ flag, labelKey }) => {
+                const label = t(labelKey);
+                const isPrivate =
+                  flag === 'isLocked' ? profileUI.isLocked : !profileUI[flag];
+
+                return (
+                  <div className='profile-toggle-row' key={flag}>
+                    <span>{label}</span>
+                    <label className='widget-toggle'>
+                      <input
+                        type='checkbox'
+                        checked={!isPrivate}
+                        onChange={() => toggleFlag(flag)}
+                        aria-label={
+                          isPrivate
+                            ? t('aria.make-public', { section: label })
+                            : t('aria.make-private', { section: label })
+                        }
+                      />
+                      <span className='widget-toggle-slider' />
+                    </label>
+                  </div>
+                );
+              })}
+            </div>
           </section>
         </FullWidthRow>
       )}
@@ -174,7 +224,6 @@ function UserProfile({
         user={user}
         isSessionUser={isSessionUser}
         onEditBio={() => setActiveModal('personalInfo')}
-        onToggleDonation={() => toggleFlag('showDonation')}
       />
 
       {/* Stats widget */}
@@ -187,9 +236,6 @@ function UserProfile({
               title={t('profile.stats')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showPoints}
-              onToggle={
-                isSessionUser ? () => toggleFlag('showPoints') : undefined
-              }
             />
             <Stats points={points} calendar={calendar} />
           </section>
@@ -206,9 +252,6 @@ function UserProfile({
               title={t('profile.activity')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showHeatMap}
-              onToggle={
-                isSessionUser ? () => toggleFlag('showHeatMap') : undefined
-              }
             />
             <HeatMap calendar={calendar} />
           </section>
@@ -225,12 +268,19 @@ function UserProfile({
               title={t('profile.projects')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showPortfolio}
-              onToggle={
-                isSessionUser ? () => toggleFlag('showPortfolio') : undefined
-              }
             />
             {portfolio.length > 0 ? (
-              <PortfolioProjects portfolioProjects={portfolio} />
+              <PortfolioProjects
+                portfolioProjects={portfolio}
+                onEditProject={
+                  isSessionUser
+                    ? id => {
+                        setActivePortfolioItemId(id);
+                        setActiveModal('portfolio');
+                      }
+                    : undefined
+                }
+              />
             ) : (
               isSessionUser && (
                 <p className='text-center'>{t('profile.no-portfolio')}</p>
@@ -240,7 +290,10 @@ function UserProfile({
               <div className='profile-add-action-row'>
                 <button
                   className='profile-add-action'
-                  onClick={() => setActiveModal('portfolio')}
+                  onClick={() => {
+                    setActivePortfolioItemId(null);
+                    setActiveModal('portfolio');
+                  }}
                   type='button'
                 >
                   {t('profile.add-new-project')}
@@ -261,12 +314,19 @@ function UserProfile({
               title={t('profile.experience.heading')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showExperience}
-              onToggle={
-                isSessionUser ? () => toggleFlag('showExperience') : undefined
-              }
             />
             {(experience || []).length > 0 ? (
-              <ExperienceDisplay experience={experience || []} />
+              <ExperienceDisplay
+                experience={experience || []}
+                onEditExperience={
+                  isSessionUser
+                    ? id => {
+                        setActiveExperienceItemId(id);
+                        setActiveModal('experience');
+                      }
+                    : undefined
+                }
+              />
             ) : (
               isSessionUser && (
                 <p className='text-center'>{t('profile.no-experience')}</p>
@@ -276,7 +336,10 @@ function UserProfile({
               <div className='profile-add-action-row'>
                 <button
                   className='profile-add-action'
-                  onClick={() => setActiveModal('experience')}
+                  onClick={() => {
+                    setActiveExperienceItemId(null);
+                    setActiveModal('experience');
+                  }}
                   type='button'
                 >
                   {t('profile.add-new-experience')}
@@ -297,9 +360,6 @@ function UserProfile({
               title={t('profile.fcc-certs')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showCerts}
-              onToggle={
-                isSessionUser ? () => toggleFlag('showCerts') : undefined
-              }
             />
             <Certifications user={user} />
           </section>
@@ -316,9 +376,6 @@ function UserProfile({
               title={t('profile.timeline')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showTimeLine}
-              onToggle={
-                isSessionUser ? () => toggleFlag('showTimeLine') : undefined
-              }
             />
             <Timeline completedMap={completedChallenges} username={username} />
           </section>
@@ -340,6 +397,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   } = user;
 
   const showUserProfile = !isLocked || isSessionUser;
+  const showPrivacyNudge = isLocked;
 
   return (
     <>
@@ -349,7 +407,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Spacer size='m' />
       <Container>
         <Spacer size='m' />
-        {isLocked && (
+        {showPrivacyNudge && (
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
         {showUserProfile && (

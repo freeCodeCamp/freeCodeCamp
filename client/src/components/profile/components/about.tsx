@@ -506,6 +506,7 @@ const AboutSettings = ({
             <div role='group' aria-label={t('settings.headings.privacy')}>
               <ToggleRadioSetting
                 action={t('settings.labels.my-name')}
+                explain={t('settings.private-name')}
                 flag={!privacyValues.showName}
                 flagName='showName'
                 offLabel={t('buttons.public')}

@@ -1,6 +1,6 @@
 import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import {
   FormGroup,
@@ -19,7 +19,7 @@ import { PortfolioProjectData } from '../../../redux/prop-types';
 
 import { hasProtocolRE } from '../../../utils';
 
-import { FullWidthRow, interleave } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import { updateMyPortfolio } from '../../../redux/settings/actions';
 
@@ -28,6 +28,7 @@ type PortfolioProps = {
   t: TFunction;
   updateMyPortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
   open: boolean;
+  editingItemId?: string | null;
   onClose: () => void;
 };
 
@@ -61,6 +62,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
     portfolio: initialPortfolio = [],
     updateMyPortfolio,
     open,
+    editingItemId = null,
     onClose
   } = props;
   const [portfolio, setPortfolio] = useState(initialPortfolio);
@@ -69,6 +71,25 @@ const PortfolioSettings = (props: PortfolioProps) => {
     state: 'success',
     message: ''
   });
+
+  useEffect(() => {
+    if (open) {
+      const editedItem = editingItemId
+        ? initialPortfolio.find(byId(editingItemId))
+        : null;
+
+      if (editedItem) {
+        setPortfolio([editedItem]);
+        setUnsavedItemId(null);
+      } else {
+        const item = createEmptyPortfolioItem();
+        setPortfolio([item]);
+        setUnsavedItemId(item.id);
+      }
+
+      setImageValid({ state: 'success', message: '' });
+    }
+  }, [editingItemId, initialPortfolio, open]);
 
   const checkIfValidImage = (url: string): Promise<ProfileValidation> => {
     const img = new Image();
@@ -112,12 +133,6 @@ const PortfolioSettings = (props: PortfolioProps) => {
           : [itemToSave, ...props.portfolio];
       updateMyPortfolio({ portfolio: updatedPortfolio });
     }
-  };
-
-  const handleAdd = () => {
-    const item = createEmptyPortfolioItem();
-    setPortfolio(prev => [item, ...prev]);
-    setUnsavedItemId(item.id);
   };
 
   const handleRemoveItem = (id: string) => {
@@ -238,6 +253,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
     const combineImageStatus =
       imageState === 'success' && !imageIsInvalid ? null : 'error';
     const combineImageMessage = imageMessage || imageValidation.message;
+    const isExistingItem = props.portfolio.some(byId(id));
     return (
       <FullWidthRow key={id}>
         <form
@@ -337,47 +353,35 @@ const PortfolioSettings = (props: PortfolioProps) => {
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
-          <Spacer size='xs' />
-          <Button
-            block
-            size='large'
-            variant='danger'
-            onClick={() => handleRemoveItem(id)}
-            type='button'
-          >
-            {t('buttons.remove-portfolio')}
-          </Button>
+          {isExistingItem && (
+            <>
+              <Spacer size='xs' />
+              <Button
+                block
+                size='large'
+                variant='danger'
+                onClick={() => handleRemoveItem(id)}
+                type='button'
+              >
+                {t('buttons.remove-portfolio')}
+              </Button>
+            </>
+          )}
         </form>
       </FullWidthRow>
     );
   };
 
+  const displayedPortfolio = useMemo(() => {
+    if (!unsavedItemId) return portfolio;
+    return portfolio.filter(byId(unsavedItemId));
+  }, [portfolio, unsavedItemId]);
+
   return (
     <Modal onClose={onClose} open={open} size='large'>
       <Modal.Header>{t('profile.edit-portfolio')}</Modal.Header>
       <Modal.Body alignment='left'>
-        <FullWidthRow>
-          <p>{t('settings.share-projects')}</p>
-          <Spacer size='xs' />
-          <Button
-            block
-            size='large'
-            variant='primary'
-            disabled={unsavedItemId !== null}
-            onClick={handleAdd}
-            type='button'
-          >
-            {t('buttons.add-portfolio')}
-          </Button>
-        </FullWidthRow>
-        <Spacer size='l' />
-        {interleave(portfolio.map(renderPortfolio), () => (
-          <>
-            <Spacer size='m' />
-            <hr />
-            <Spacer size='m' />
-          </>
-        ))}
+        {displayedPortfolio.map(renderPortfolio)}
       </Modal.Body>
     </Modal>
   );
