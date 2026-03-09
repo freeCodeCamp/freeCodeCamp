@@ -85,36 +85,49 @@ describe('MobileAppModal', () => {
     const dialog = screen.getByRole('dialog');
     expect(dialog).toHaveTextContent('mobile-app-modal.heading');
     expect(dialog).toHaveTextContent('mobile-app-modal.body');
-    expect(dialog).toHaveTextContent('mobile-app-modal.do-not-show');
   });
 
-  it('contains links to the iOS App Store and Google Play', () => {
-    render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
-    expect(
-      screen.getByRole('link', { name: 'mobile-app-modal.ios' })
-    ).toHaveAttribute(
-      'href',
-      'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
-    );
-    expect(
-      screen.getByRole('link', { name: 'mobile-app-modal.android' })
-    ).toHaveAttribute(
-      'href',
-      'https://play.google.com/store/apps/details?id=org.freecodecamp'
-    );
-  });
-
-  it('closes the modal without persisting when the X button is clicked', () => {
+  it('closes the modal and persists dismissal when the X button is clicked', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     fireEvent.click(screen.getByText('Close'));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    expect(store.get(STORE_KEY)).toBeFalsy();
+    expect(store.get(STORE_KEY)).toBe(true);
   });
 
-  it('closes the modal and persists dismissal when "do not show me again" is clicked', () => {
+  it('closes the modal and persists dismissal when the store link is clicked', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
-    fireEvent.click(screen.getByText('mobile-app-modal.do-not-show'));
+    const link = screen.getByRole('link');
+    fireEvent.click(link);
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
     expect(store.get(STORE_KEY)).toBe(true);
+  });
+
+  it('shows the correct app store link for iOS', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      value:
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15',
+      configurable: true
+    });
+    render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'href',
+      'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
+    );
+    expect(screen.getByRole('link')).toHaveTextContent('mobile-app-modal.ios');
+  });
+
+  it('shows the correct app store link for Android', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      value: 'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36',
+      configurable: true
+    });
+    render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
+    expect(screen.getByRole('link')).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=org.freecodecamp'
+    );
+    expect(screen.getByRole('link')).toHaveTextContent(
+      'mobile-app-modal.android'
+    );
   });
 });

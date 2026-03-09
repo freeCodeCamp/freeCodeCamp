@@ -34,35 +34,24 @@ test.describe('Mobile App Modal', () => {
       page.getByRole('dialog', { name: mobileAppModal.heading })
     ).toBeVisible();
     await expect(page.getByText(mobileAppModal.body)).toBeVisible();
-    await expect(
-      page.getByRole('link', { name: mobileAppModal.ios })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('link', { name: mobileAppModal.android })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', { name: mobileAppModal['do-not-show'] })
-    ).toBeVisible();
+    await expect(page.getByRole('link')).toBeVisible();
   });
 
-  test('links point to the correct app stores', async ({ page }) => {
+  test('link points to an app store', async ({ page }) => {
     await page.goto(challengePath);
 
-    await expect(
-      page.getByRole('link', { name: mobileAppModal.ios })
-    ).toHaveAttribute(
-      'href',
-      'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200'
-    );
-    await expect(
-      page.getByRole('link', { name: mobileAppModal.android })
-    ).toHaveAttribute(
-      'href',
-      'https://play.google.com/store/apps/details?id=org.freecodecamp'
-    );
+    const link = page.getByRole('link');
+    const href = await link.getAttribute('href');
+    expect(
+      href === mobileAppModal.ios ||
+        href ===
+          'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200' ||
+        href ===
+          'https://play.google.com/store/apps/details?id=org.freecodecamp'
+    ).toBeTruthy();
   });
 
-  test('closing with X hides the modal but does not persist dismissal', async ({
+  test('closing with X hides the modal and persists dismissal', async ({
     page
   }) => {
     await page.goto(challengePath);
@@ -79,17 +68,15 @@ test.describe('Mobile App Modal', () => {
       key => localStorage.getItem(key),
       STORE_KEY
     );
-    expect(stored).toBeNull();
+    expect(stored).not.toBeNull();
   });
 
-  test('"do not show me again" hides the modal and persists dismissal', async ({
+  test('clicking the store link hides the modal and persists dismissal', async ({
     page
   }) => {
     await page.goto(challengePath);
 
-    await page
-      .getByRole('button', { name: mobileAppModal['do-not-show'] })
-      .click();
+    await page.getByRole('link').click();
 
     await expect(
       page.getByRole('dialog', { name: mobileAppModal.heading })
@@ -102,13 +89,13 @@ test.describe('Mobile App Modal', () => {
     expect(stored).not.toBeNull();
   });
 
-  test('does not show again after "do not show me again" and navigating to another challenge', async ({
+  test('does not show again after dismissal and navigating to another challenge', async ({
     page
   }) => {
     await page.goto(challengePath);
 
     await page
-      .getByRole('button', { name: mobileAppModal['do-not-show'] })
+      .getByRole('button', { name: translations.buttons.close })
       .click();
 
     // Navigate to another challenge in the same superblock
