@@ -3766,16 +3766,16 @@
           "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
-      "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
-        "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
-        ]
-      },
       "lecture-understanding-type-composition": {
         "title": "Understanding Type Composition",
         "intro": [
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
+        ]
+      },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
