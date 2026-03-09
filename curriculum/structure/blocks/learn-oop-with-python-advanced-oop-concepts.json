@@ -1,0 +1,18 @@
+{
+  "name": "Advanced OOP Concepts",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "learn-oop-with-python-methods-advanced-oop-concepts",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "",
+      "title": "Getters and Setters"
+    },
+    {
+      "id": "",
+      "title": "OOP Principles"
+    }
+  ]
+}
