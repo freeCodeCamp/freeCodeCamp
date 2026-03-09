@@ -317,8 +317,12 @@ function ShowClassic({
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
 
-  // Independent lower jaw is only enabled for desktop workshops.
-  const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
+  // Independent lower jaw is only enabled for desktop.
+  const showIndependentLowerJaw = !isMobile;
+
+  const showSidePanelTests = isMobile || !hasEditableBoundaries;
+
+  // Show test
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
@@ -430,7 +434,7 @@ function ShowClassic({
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
         hasDemo={hasDemo}
-        showIndependentLowerJaw={showIndependentLowerJaw}
+        showSidePanelTests={showSidePanelTests}
       />
     );
   };
@@ -472,7 +476,7 @@ function ShowClassic({
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
-        {isMobile && (
+        {isMobile ? (
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
@@ -504,8 +508,7 @@ function ShowClassic({
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
           />
-        )}
-        {!isMobile && (
+        ) : (
           <DesktopLayout
             challengeFiles={challengeFiles}
             challengeType={challengeType}
@@ -516,7 +519,7 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             isDailyCodingChallenge={isDailyCodingChallenge}
@@ -548,6 +551,8 @@ function ShowClassic({
           challengeTitle={title}
           challengeBlock={block}
           superBlock={superBlock}
+          guideUrl={guideUrl}
+          videoUrl={videoUrl}
         />
         <SourceModal
           challengeId={id}
