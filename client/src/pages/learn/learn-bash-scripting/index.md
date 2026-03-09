@@ -1,9 +1,11 @@
 ---
-title: Introduction to Bash
-superBlock: introduction-to-bash
-certification: introduction-to-bash
+title: Learn Bash Scripting
+superBlock: learn-bash-scripting
+certification: learn-bash-scripting
 ---
 
-## Introduction to Bash
+## Learn Bash Scripting
 
-Bash is a command-line interface that allows you to interact with your computer's operating system. It is a powerful tool that can be used for a variety of tasks, including file management, system administration, and programming.
+Bash is a command-line interface that allows you to interact with your computer's operating system.
+
+In this course, you will build several bash programs and get quizzed on what you have learned.
