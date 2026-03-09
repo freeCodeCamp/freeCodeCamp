@@ -301,6 +301,8 @@
           "blocks": [
             "lecture-working-with-common-data-structures-js",
             "lab-implement-a-stack",
+            "lab-implement-a-queue",
+            "review-data-structures-js",
             "quiz-data-structures-js"
           ]
         },
