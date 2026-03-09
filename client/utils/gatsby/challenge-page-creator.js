@@ -135,9 +135,7 @@ exports.createChallengePages = function (
   };
 };
 
-// TODO: figure out a cleaner way to get the last challenge in a block. Create
-// it during the curriculum build process and attach it to the first challenge?
-// That would remove the need to analyse allChallengeEdges.
+// TODO: figure out a cleaner way to get the last challenge in a block.
 function getProjectPreviewConfig(challenge, allChallengeNodes) {
   const { block } = challenge;
 

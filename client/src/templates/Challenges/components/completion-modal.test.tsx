@@ -15,12 +15,13 @@ import {
   isBlockNewlyCompletedSelector,
   currentBlockIdsSelector
 } from '../redux/selectors';
-import {
-  completedChallengesIdsSelector,
-  allChallengesInfoSelector
-} from '../../../redux/selectors';
+import { completedChallengesIdsSelector } from '../../../redux/selectors';
+import { curriculumData } from '../../../services/curriculum-data';
 import { getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
+import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
+import { useStaticQuery } from 'gatsby';
+import { ChallengeNode, SuperBlockStructure } from '../../../redux/prop-types';
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
 vi.mock('../../../components/Progress');
@@ -39,8 +40,6 @@ const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
 const mockCurrentBlockIdsSelector = vi.mocked(currentBlockIdsSelector);
 const mockCompletedChallengesIdsSelector =
   completedChallengesIdsSelector as unknown as Mock;
-const mockAllChallengesInfoSelector =
-  allChallengesInfoSelector as unknown as Mock;
 const mockGetTestRunner = getTestRunner as Mock;
 mockBuildEnabledSelector.mockReturnValue(true);
 mockChallengeTestsSelector.mockReturnValue([
@@ -60,6 +59,21 @@ const id = '7';
 const fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
 
 describe('<CompletionModal />', () => {
+  beforeEach(() => {
+    vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
+    // Initialize curriculum data singleton for tests
+    const structuresMap: Record<string, SuperBlockStructure> = {};
+    mockCurriculumData.allSuperBlockStructure.nodes.forEach(node => {
+      structuresMap[node.superBlock] = node as SuperBlockStructure;
+    });
+    curriculumData.initialize({
+      challengeNodes: mockCurriculumData.allChallengeNode
+        .nodes as unknown as ChallengeNode[],
+      certificateNodes: mockCurriculumData.allCertificateNode.nodes,
+      superBlockStructures: structuresMap
+    });
+  });
+
   describe('fireConfetti', () => {
     beforeEach(() => {
       mockFireConfetti.mockClear();
@@ -85,10 +99,7 @@ describe('<CompletionModal />', () => {
       });
       mockCurrentBlockIdsSelector.mockReturnValue(blockIds);
       mockCompletedChallengesIdsSelector.mockReturnValue(['step1', 'step2']);
-      mockAllChallengesInfoSelector.mockReturnValue({
-        challengeNodes: [{ challenge: { id: challengeId } }],
-        certificateNodes: []
-      });
+      // Curriculum data is initialized in beforeEach
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
@@ -112,9 +123,11 @@ describe('<CompletionModal />', () => {
         isLastChallengeInBlock: true,
         challengeType: 'mock_challenge_type'
       });
-      mockAllChallengesInfoSelector.mockReturnValue({
+      // Reset curriculum data to empty state to test the guard
+      curriculumData.initialize({
+        certificateNodes: [],
         challengeNodes: [],
-        certificateNodes: []
+        superBlockStructures: {}
       });
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore

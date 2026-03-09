@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import { uniq } from 'lodash';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 import { parseCurriculumStructure } from '@freecodecamp/curriculum/build-curriculum';
 import { parseMDSync } from '../challenge-parser/parser/index.js';
 import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
@@ -17,20 +18,22 @@ import {
 import { getTemplate } from './helpers/get-challenge-template.js';
 
 interface Options {
+  challengeId: ObjectId;
   stepNum: number;
   challengeType?: number;
   projectPath?: string;
   challengeSeeds?: ChallengeSeed[];
   isFirstChallenge?: boolean;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
 }
 
 interface QuizOptions {
+  challengeId: ObjectId;
   projectPath?: string;
   title: string;
   dashedName: string;
   questionCount: number;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
 }
 
 export async function getAllBlocks() {
@@ -49,13 +52,12 @@ export async function getAllBlocks() {
 const createStepFile = ({
   stepNum,
   challengeType,
+  challengeId,
   projectPath = getProjectPath(),
   challengeSeeds = [],
   isFirstChallenge = false,
   challengeLang
-}: Options): ObjectId => {
-  const challengeId = new ObjectId();
-
+}: Options) => {
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
@@ -66,8 +68,6 @@ const createStepFile = ({
   });
 
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, template);
-
-  return challengeId;
 };
 
 const createChallengeFile = (
@@ -79,13 +79,13 @@ const createChallengeFile = (
 };
 
 const createQuizFile = ({
+  challengeId,
   projectPath = getProjectPath(),
   title,
   dashedName,
   questionCount,
   challengeLang
 }: QuizOptions): ObjectId => {
-  const challengeId = new ObjectId();
   const challengeType = challengeTypes.quiz.toString();
   const template = getTemplate(challengeType);
 
@@ -103,13 +103,14 @@ const createQuizFile = ({
 };
 
 const createDialogueFile = ({
+  challengeId,
   projectPath,
   challengeLang
 }: {
+  challengeId: ObjectId;
   projectPath: string;
-  challengeLang: string;
+  challengeLang: ChallengeLang;
 }): ObjectId => {
-  const challengeId = new ObjectId();
   const challengeType = challengeTypes.dialogue.toString();
   const template = getTemplate(challengeType);
 
@@ -274,7 +275,7 @@ const updateTaskMarkdownFiles = (): void => {
 type Challenge = {
   challengeType: number;
   challengeFiles: ChallengeSeed[];
-  lang?: string;
+  lang?: ChallengeLang;
 };
 
 const getChallenge = (challengeId: string): Challenge => {
