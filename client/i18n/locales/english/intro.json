@@ -3334,6 +3334,12 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "lab-implement-a-queue": {
+        "title": "Implement a Queue",
+        "intro": [
+          "In this lab, you will implement a queue data structure using functions."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introduction to Common Searching and Sorting Algorithms",
         "intro": [

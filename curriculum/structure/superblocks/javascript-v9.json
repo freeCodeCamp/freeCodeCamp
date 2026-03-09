@@ -301,6 +301,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures-js",
+            "lab-implement-a-queue",
             "quiz-data-structures-js"
           ]
         },
