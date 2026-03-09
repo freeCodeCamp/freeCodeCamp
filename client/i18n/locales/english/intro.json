@@ -1078,6 +1078,9 @@
   },
   "learn-rag-mcp-fundamentals": {
     "title": "Learn RAG and MCP Fundamentals",
+    "summary": [
+      "Learn the fundamentals of RAG and MCP in this comprehensive video course."
+    ],
     "intro": [
       "RAG MCP stands for Retrieval-Augmented Generation with a Memory, Context, and Planning. It's a powerful framework for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
       "In this course, you'll learn the fundamentals of RAG MCP and how to implement it in your own projects. You'll explore the components of RAG MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG MCP works and how to use it to build intelligent agents."
