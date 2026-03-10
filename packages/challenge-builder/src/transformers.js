@@ -115,7 +115,7 @@ const replaceNBSP = cond([
 ]);
 
 const transformCompiledChallengeCode = (wrap, challengeFile) =>
-  transformContents(wrap, compileHeadTail('', challengeFile));
+  transformContents(wrap, compileHeadTail('\n', challengeFile));
 
 const getJSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
