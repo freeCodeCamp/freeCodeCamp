@@ -1,9 +1,9 @@
 ---
-title: Responsive Design
+title: Learn Responsive Design
 superBlock: responsive-design
 certification: responsive-design
 ---
 
-## Responsive Design
+## Introduction to Learn Responsive Design
 
 Learn responsive design principles and build layouts that adapt to any screen.

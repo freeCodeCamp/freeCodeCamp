@@ -8,18 +8,34 @@
 .independent-lower-jaw .hint-container {
   background-color: var(--background-quaternary);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   padding: 12px;
   position: absolute;
   bottom: 100%;
-  width: 95%;
+  width: 97%;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 12px;
   border: 1px solid var(--background-secondary);
   opacity: 0;
   animation: jaw-hint-fade-in 0.3s ease forwards;
+}
+
+.independent-lower-jaw .hint-container .hint-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.independent-lower-jaw .hint-container .hint-header svg {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.independent-lower-jaw .hint-container .hint-body p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes jaw-hint-fade-in {
@@ -57,7 +73,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: 1px solid var(--quaternary-color);
 }
 
 .independent-lower-jaw .action-row-right button {
@@ -122,6 +138,12 @@
 
 .share-button-wrapper {
   display: flex;
-  justify-content: start;
+  justify-content: end;
+  margin-top: 10px;
   gap: 10px;
+}
+
+.share-button-wrapper a {
+  border: 1px solid var(--quaternary-color);
+  padding: 2px 6px;
 }

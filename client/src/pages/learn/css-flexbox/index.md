@@ -1,9 +1,9 @@
 ---
-title: Flexbox
+title: Learn CSS Flexbox
 superBlock: css-flexbox
 certification: css-flexbox
 ---
 
-## CSS Flexbox
+## Introduction to Learn CSS Flexbox
 
 Build responsive layouts using the Flexbox model and alignment tools.

@@ -1,5 +1,5 @@
 import { existsSync, readdirSync } from 'fs';
-import { join, resolve, basename } from 'path';
+import { resolve } from 'path';
 import { isEmpty, cloneDeep } from 'lodash';
 import debug from 'debug';
 
@@ -8,8 +8,7 @@ import { createPoly } from '@freecodecamp/shared/utils/polyvinyl';
 import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import {
   CommentDictionary,
-  translateCommentsInChallenge,
-  type Challenge as ParsedChallenge
+  translateCommentsInChallenge
 } from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
@@ -43,8 +42,6 @@ interface Meta extends BlockStructure {
   superBlock: SuperBlocks;
   superOrder: number;
 }
-
-const challengeCache = new Map<string, ParsedChallenge>();
 
 /**
  * Validates challenges against meta.json challengeOrder
@@ -334,26 +331,13 @@ export class BlockCreator {
 
     const challengePath = langUsed === 'english' ? englishPath : i18nPath;
 
-    const cachedChallenge = challengeCache.get(challengePath);
-
-    const challenge =
-      cachedChallenge ??
-      translateCommentsInChallenge(
-        await parser(challengePath),
-        langUsed,
-        this.commentTranslations
-      );
-
-    challenge.translationPending = this.lang !== 'english' && !isAudited;
-    // Add source location to allow tracing back to original file (necessary to
-    // update the client when files change)
-    challenge.sourceLocation = join(
-      basename(this.blockContentDir),
-      block,
-      filename
+    const challenge = translateCommentsInChallenge(
+      await parser(challengePath),
+      langUsed,
+      this.commentTranslations
     );
 
-    challengeCache.set(challengePath, challenge);
+    challenge.translationPending = this.lang !== 'english' && !isAudited;
 
     return finalizeChallenge(challenge, meta);
   }
