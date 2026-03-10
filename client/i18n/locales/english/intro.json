@@ -3560,6 +3560,12 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "lab-linked-list-operations": {
+        "title": "Implement Linked List Operations",
+        "intro": [
+          "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
       "lab-implement-a-queue": {
         "title": "Implement a Queue",
         "intro": [
