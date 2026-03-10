@@ -204,6 +204,10 @@
       ],
       "cta": "Comece a aprender agora (é grátis)"
     },
+    "catalog": {
+      "heading": "Explore o catálogo de cursos.",
+      "seeAll": "Ver todos os cursos"
+    },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
@@ -283,6 +287,7 @@
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
     "for": "Configurações para {{username}}",
+    "profile-note": "Você pode acessar <0>o perfil</0> para atualizar as informações pessoais.",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
@@ -452,6 +457,16 @@
       "present": "Presente",
       "date-format-error": "Por favor, insira a data no formato MM/AAAA.",
       "date-invalid": "Por favor, insira uma data válida."
+    },
+    "completeness": {
+      "heading": "Perfil {{percentage}}% completo",
+      "name": "Adicione o nome",
+      "location": "Adicione a localização",
+      "picture": "Envie uma foto de perfil",
+      "about": "Escreva uma seção 'Sobre'",
+      "social": "Adicione um link social",
+      "portfolio": "Adicione um projeto ao portfólio",
+      "experience": "Adicione experiência"
     }
   },
   "footer": {
@@ -564,7 +579,7 @@
     "codespaces": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o GitHub Codespaces. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
+      "step-2": "Clique no botão Iniciar abaixo desta lista",
       "step-3": "Naquela página, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VSCode,",
@@ -584,7 +599,7 @@
     "ona": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no Ona</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
+      "step-2": "Clique no botão Iniciar abaixo desta lista",
       "step-3": "No modal que aparece para cima, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VScode,",
@@ -684,7 +699,8 @@
       "exit-header": "Sair do exame",
       "exit": "Tem certeza de que deseja sair do exame? Você perderá todo o progresso que já fez.",
       "exit-yes": "Sim, quero sair do exame",
-      "exit-no": "Não, quero continuar no exame"
+      "exit-no": "Não, quero continuar no exame",
+      "not-honest": "Você precisa <0>aceitar a Política de Honestidade Acadêmica</0> para fazer este exame"
     },
     "ms": {
       "link-header": "Vincule sua conta da Microsoft",
@@ -710,7 +726,8 @@
       "exam": "Teste",
       "warm-up": "Aquecimento",
       "learn": "Aprender",
-      "practice": "Praticar"
+      "practice": "Praticar",
+      "video": "Vídeo"
     },
     "archive": {
       "title": "Nossos cursos arquivados",
@@ -914,7 +931,7 @@
     "document-notfound": "documento não encontrado",
     "slow-load-msg": "Parece que está demorando mais do que o normal. Tente atualizar a página.",
     "navigation-warning": "Se sair desta página, perderá o seu progresso. Tem certeza?",
-    "fsd-b-description": "Este abrangente curso prepara você para se tornar um Desenvolvedor Full Stack Certificado. Você aprenderá a construir aplicações web completas usando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, e mais.",
+    "fsd-b-description": "Este curso abrangente prepara você para se tornar um Desenvolvedor Full Stack Certificado. Você aprenderá a construir aplicações web completas usando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, e mais.",
     "fsd-b-cta": "Comece a aprender",
     "continue-learning": "Continuar aprendendo",
     "fsd-b-benefit-1-title": "Mais de 100 mil alunos",
@@ -1143,7 +1160,7 @@
     "quincy-larson-signature": "Assinatura do Quincy Larson",
     "julia-liuson-signature": "Assinatura da Julia Liuson",
     "project": {
-      "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
+      "heading-legacy-full-stack": "Como parte desta edição antiga da certificação de full-stack, {{user}} completou as seguintes certificações:",
       "heading-exam": "Como parte desta certificação, {{user}} passou no seguinte exame: ",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "Solução",
@@ -1257,6 +1274,9 @@
       "college-algebra-with-python-v8-cert": "Certificação de Álgebra universitária com Python",
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
+      "learn-python-for-beginners": "Aprenda Python para iniciantes",
+      "introduction-to-algorithms-and-data-structures": "Introdução a Algoritmos e Estruturas de Dados",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
@@ -1273,8 +1293,8 @@
       "relational-databases-v9-cert": "Certificação de Banco de dados Relacionais",
       "back-end-development-and-apis-v9": "Desenvolvimento Back-End e APIs",
       "back-end-development-and-apis-v9-cert": "Certificação de Desenvolvimento Back-End e APIs",
-      "full-stack-developer-v9": "Desenvolvimento Full Stack",
-      "full-stack-developer-v9-cert": "Certificação de desenvolvimento Full Stack",
+      "full-stack-developer-v9": "Desenvolvedor Full Stack",
+      "full-stack-developer-v9-cert": "Certificação de Desenvolvedor Full Stack",
       "a1-professional-spanish": "Espanhol Profissional A1",
       "a1-professional-spanish-cert": "Certificação de Espanhol Profissional A1",
       "a2-professional-spanish": "Espanhol Profissional A2",
@@ -1429,6 +1449,23 @@
         "beginner": "Iniciante",
         "intermediate": "Intermediário",
         "advanced": "Avançado"
+      },
+      "duration": "{{duration}} horas",
+      "no-results": "Nenhum curso encontrado. Tente ajustar os filtros para ver mais resultados.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Análise de Dados",
+        "machine-learning": "Aprendizado de Máquina",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Segurança da Informação",
+        "computer-fundamentals": "Fundamentos de Computação",
+        "computer-science": "Ciência da Computação",
+        "ai": "AI"
       }
     }
   }

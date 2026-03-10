@@ -39,6 +39,7 @@
     "full-stack-developer-v9",
     "html-forms-and-tables",
     "learn-python-for-beginners",
+    "introduction-to-algorithms-and-data-structures",
     "lab-survey-form",
     "html-and-accessibility",
     "computer-basics",
@@ -61,7 +62,14 @@
     "css-variables",
     "css-grid",
     "lab-product-landing-page",
-    "css-animations"
+    "css-animations",
+    "introduction-to-bash",
+    "introduction-to-sql-and-postgresql",
+    "learn-bash-scripting",
+    "learn-sql-and-bash",
+    "introduction-to-nano",
+    "introduction-to-git-and-github",
+    "learn-prompting-fundamentals"
   ],
   "certifications": [
     "a2-english-for-developers",

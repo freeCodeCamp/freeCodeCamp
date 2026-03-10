@@ -378,9 +378,18 @@ describe('buildSuperblock pure functions', () => {
     test('should add meta properties to challenge', () => {
       const challenge = { id: '1' };
 
+      const updatedChallenge = addMetaToChallenge(challenge, dummyBlockMeta);
+
+      expect(updatedChallenge).toEqual(expectedChallengeProperties);
+    });
+
+    test('should not mutate the original challenge', () => {
+      const challenge = { id: '1' };
+      const challengeCopy = { ...challenge };
+
       addMetaToChallenge(challenge, dummyBlockMeta);
 
-      expect(challenge).toEqual(expectedChallengeProperties);
+      expect(challenge).toEqual(challengeCopy);
     });
 
     test('should add chapter and module properties when present in meta', () => {
@@ -391,9 +400,12 @@ describe('buildSuperblock pure functions', () => {
         module: 'module-1'
       };
 
-      addMetaToChallenge(challenge, metaWithChapterAndModule);
+      const updatedChallenge = addMetaToChallenge(
+        challenge,
+        metaWithChapterAndModule
+      );
 
-      expect(challenge).toMatchObject({
+      expect(updatedChallenge).toMatchObject({
         ...expectedChallengeProperties,
         chapter: 'chapter-1',
         module: 'module-1'

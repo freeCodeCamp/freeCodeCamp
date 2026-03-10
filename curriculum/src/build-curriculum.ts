@@ -205,6 +205,8 @@ export const superBlockNames = {
   'full-stack-developer-v9': SuperBlocks.FullStackDeveloperV9,
   'html-forms-and-tables': SuperBlocks.HtmlFormsAndTables,
   'learn-python-for-beginners': SuperBlocks.LearnPythonForBeginners,
+  'introduction-to-algorithms-and-data-structures':
+    SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
   'lab-survey-form': SuperBlocks.LabSurveyForm,
   'html-and-accessibility': SuperBlocks.HtmlAndAccessibility,
   'computer-basics': SuperBlocks.ComputerBasics,
@@ -227,7 +229,15 @@ export const superBlockNames = {
   'css-variables': SuperBlocks.CssVariables,
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
-  'css-animations': SuperBlocks.CssAnimations
+  'css-animations': SuperBlocks.CssAnimations,
+  'introduction-to-bash': SuperBlocks.IntroductionToBash,
+  'introduction-to-sql-and-postgresql':
+    SuperBlocks.IntroductionToSQLAndPostgreSQL,
+  'learn-bash-scripting': SuperBlocks.LearnBashScripting,
+  'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
+  'introduction-to-nano': SuperBlocks.IntroductionToNano,
+  'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

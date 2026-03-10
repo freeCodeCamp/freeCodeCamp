@@ -17,7 +17,13 @@ enum Topic {
   D3 = 'd3',
   Api = 'api',
   InformationSecurity = 'information-security',
-  ComputerFundamentals = 'computer-fundamentals'
+  ComputerFundamentals = 'computer-fundamentals',
+  ComputerScience = 'computer-science',
+  Databases = 'databases',
+  Bash = 'bash',
+  Git = 'git',
+  Editors = 'editors',
+  AI = 'ai'
 }
 
 interface Catalog {
@@ -189,5 +195,53 @@ export const catalog: Catalog[] = [
     level: Levels.Advanced,
     hours: 2,
     topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.ComputerScience
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToBash,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Bash
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToSQLAndPostgreSQL,
+    level: Levels.Intermediate,
+    hours: 30,
+    topic: Topic.Databases
+  },
+  {
+    superBlock: SuperBlocks.LearnBashScripting,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Bash
+  },
+  {
+    superBlock: SuperBlocks.LearnSQLAndBash,
+    level: Levels.Intermediate,
+    hours: 30,
+    topic: Topic.Databases
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToNano,
+    level: Levels.Intermediate,
+    hours: 10,
+    topic: Topic.Editors
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToGitAndGithub,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Git
+  },
+  {
+    superBlock: SuperBlocks.LearnPromptingFundamentals,
+    level: Levels.Beginner,
+    hours: 1,
+    topic: Topic.AI
   }
 ];

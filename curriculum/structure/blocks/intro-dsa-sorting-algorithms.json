@@ -1,0 +1,50 @@
+{
+  "name": "Sorting Algorithms",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-sorting-algorithms",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698de9ea7932b3cc4b19c93f",
+      "title": "Sorting and Searching"
+    },
+    {
+      "id": "698de9f07932b3cc4b19c940",
+      "title": "Bogosort"
+    },
+    {
+      "id": "698de9f47932b3cc4b19c941",
+      "title": "Selection Sort"
+    },
+    {
+      "id": "698de9fa7932b3cc4b19c942",
+      "title": "Getting the Run Time of a Program"
+    },
+    {
+      "id": "698de9ff7932b3cc4b19c943",
+      "title": "Recursion"
+    },
+    {
+      "id": "698dea057932b3cc4b19c944",
+      "title": "Quicksort"
+    },
+    {
+      "id": "698dea0c7932b3cc4b19c945",
+      "title": "Implementing Quicksort"
+    },
+    {
+      "id": "698dea107932b3cc4b19c946",
+      "title": "Merge Sort"
+    },
+    {
+      "id": "698dea167932b3cc4b19c947",
+      "title": "Actual Run Time for Sorting Algorithms"
+    },
+    {
+      "id": "698dea1c7932b3cc4b19c948",
+      "title": "Big-O Run Times of Sorting Algorithms"
+    }
+  ]
+}

@@ -81,13 +81,21 @@ const iconMap = {
   [SuperBlocks.LabProductLandingPage]: Code,
   [SuperBlocks.CssAnimations]: Code,
   [SuperBlocks.LearnPythonForBeginners]: PythonIcon,
+  [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: Code,
   [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
   [SuperBlocks.JsV9]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
   [SuperBlocks.PythonV9]: PythonIcon,
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
-  [SuperBlocks.FullStackDeveloperV9]: Code
+  [SuperBlocks.FullStackDeveloperV9]: Code,
+  [SuperBlocks.IntroductionToBash]: Code,
+  [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
+  [SuperBlocks.LearnBashScripting]: Code,
+  [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
+  [SuperBlocks.IntroductionToNano]: Code,
+  [SuperBlocks.IntroductionToGitAndGithub]: Code,
+  [SuperBlocks.LearnPromptingFundamentals]: Clipboard
 };
 
 type SuperBlockIconProps = {

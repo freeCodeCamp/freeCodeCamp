@@ -60,7 +60,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 // from the md/meta.json files for each cert and projects
 const fullstackCert = {
   id: '561add10cb82ac38a17213bd',
-  title: 'Legacy Full Stack',
+  title: 'Legacy Full-Stack',
   certSlug: Certification.LegacyFullStack,
   projects: null
   // Requirements are other certs and is
@@ -145,7 +145,7 @@ const allStandardCerts = [
   },
   {
     id: '561acd10cb82ac38a17513bc',
-    title: 'Front End Development Libraries',
+    title: 'Front-End Development Libraries',
     certSlug: Certification.FrontEndDevLibs,
     projects: [
       {
@@ -256,7 +256,7 @@ const allStandardCerts = [
   },
   {
     id: '561add10cb82ac38a17523bc',
-    title: 'Back End Development and APIs',
+    title: 'Back-End Development and APIs',
     certSlug: Certification.BackEndDevApis,
     projects: [
       {
@@ -517,7 +517,7 @@ const allStandardCerts = [
   // Legacy certifications
   {
     id: '561add10cb82ac38a17513be',
-    title: 'Legacy Front End',
+    title: 'Legacy Front-End',
     certSlug: Certification.LegacyFrontEnd,
     projects: [
       {
@@ -621,7 +621,7 @@ const allStandardCerts = [
   },
   {
     id: '660add10cb82ac38a17513be',
-    title: 'Legacy Back End',
+    title: 'Legacy Back-End',
     certSlug: Certification.LegacyBackEnd,
     projects: [
       {
@@ -835,12 +835,12 @@ const allStandardCerts = [
   },
   {
     id: '68e008aa5f80c6099d47b3a2',
-    title: 'Front End Development Libraries',
+    title: 'Front-End Development Libraries',
     certSlug: Certification.FrontEndDevLibsV9,
     projects: [
       {
         id: '68e00b355f80c6099d47b3a3',
-        title: 'Front End Development Libraries Certification Exam',
+        title: 'Front-End Development Libraries Certification Exam',
         link: `${frontEndDevLibsV9Base}/exam-front-end-development-libraries-certification/exam-front-end-development-libraries-certification`,
         certSlug: Certification.FrontEndDevLibsV9
       }
@@ -874,12 +874,12 @@ const allStandardCerts = [
   },
   {
     id: '68e6bd5120effa1586e79857',
-    title: 'Back End Development and APIs',
+    title: 'Back-End Development and APIs',
     certSlug: Certification.BackEndDevApisV9,
     projects: [
       {
         id: '68e6bfa120effa1586e7985a',
-        title: 'Back End Development and APIs Certification Exam',
+        title: 'Back-End Development and APIs Certification Exam',
         link: `${backEndDevApisV9Base}/exam-back-end-development-and-apis-certification/exam-back-end-development-and-apis-certification`,
         certSlug: Certification.BackEndDevApisV9
       }
@@ -887,12 +887,12 @@ const allStandardCerts = [
   },
   {
     id: '64514fda6c245de4d11eb7bb',
-    title: 'Certified Full Stack Developer',
+    title: 'Certified Full-Stack Developer',
     certSlug: Certification.FullStackDeveloperV9,
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Certified Full Stack Developer Exam',
+        title: 'Certified Full-Stack Developer Exam',
         link: `${fullStackDeveloperV9Base}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
         certSlug: Certification.FullStackDeveloperV9
       }
@@ -1030,6 +1030,6 @@ const certsToProjects = allStandardCerts.reduce((acc, curr) => {
 
 export type CertTitle =
   | (typeof liveCerts)[number]['title']
-  | 'Legacy Full Stack';
+  | 'Legacy Full-Stack';
 
 export { liveCerts, certsToProjects, allCerts };
