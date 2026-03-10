@@ -1,6 +1,6 @@
 {
   "name": "Build a Heritage Library Catalog",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-heritage-library-catalog",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
