@@ -34,16 +34,18 @@ exports.createPages = async function createPages({
   const { createPage } = actions;
 
   const {
-    data: { allChallengeNode }
+    data: { allSuperBlockStructure }
   } = await graphql(`
     {
-      allChallengeNode {
-        distinct(field: { challenge: { superBlock: SELECT } })
+      allSuperBlockStructure {
+        nodes {
+          superBlock
+        }
       }
     }
   `);
 
-  const superBlocks = allChallengeNode.distinct;
+  const superBlocks = allSuperBlockStructure.nodes.map(node => node.superBlock);
   superBlocks.forEach(superBlock => {
     createSuperBlockIntroPages(createPage)({ superBlock });
   });
