@@ -13,8 +13,8 @@ const outputTexts = {
   > 1 | var
       |    ^`,
   empty: `// running tests
-  1. You should declare myName with the var keyword, ending with a semicolon
-  // tests completed`,
+1. You should declare myName with the var keyword, ending with a semicolon
+// tests completed`,
   passed: `// running tests
 // tests completed`
 };
@@ -33,20 +33,18 @@ const replaceTextInCodeEditor = async ({
   browserName,
   isMobile,
   text,
-  containerId = 'editor-container-indexhtml',
-  updatesConsole = false
+  containerId = 'editor-container-indexhtml'
 }: InsertTextParameters) => {
   await expect(async () => {
     await clearEditor({ page, browserName, isMobile });
     await getEditors(page).fill(text);
     await expect(page.getByTestId(containerId)).toContainText(text);
-    if (updatesConsole) {
-      await expect(
-        page.getByRole('region', {
-          name: translations.learn['editor-tabs'].console
-        })
-      ).not.toContainText('Your test output will go here');
-    }
+
+    await expect(
+      page.getByRole('region', {
+        name: translations.learn['editor-tabs'].console
+      })
+    ).toContainText('Your test output will go here');
   }).toPass();
 };
 
@@ -211,12 +209,13 @@ test.describe('Challenge Output Component Tests', () => {
     page,
     isMobile
   }) => {
-    await runChallengeTest(page, isMobile);
+    await expect(async () => {
+      await runChallengeTest(page, isMobile);
 
-    await expect(page.getByTestId('output-text')).toContainText(
-      outputTexts.empty,
-      { timeout: 10000 }
-    );
+      expect(await page.getByTestId('output-text').textContent()).toEqual(
+        expect.stringContaining(outputTexts.empty)
+      );
+    }).toPass();
   });
 
   test('should contain final output after test pass', async ({
@@ -231,8 +230,7 @@ test.describe('Challenge Output Component Tests', () => {
       page,
       isMobile,
       text: 'var myName;',
-      containerId: 'editor-container-scriptjs',
-      updatesConsole: true
+      containerId: 'editor-container-scriptjs'
     });
     await runChallengeTest(page, isMobile);
     await closeButton.click();

@@ -254,10 +254,13 @@ export function* previewChallengeSaga(action) {
     return;
   }
 
-  const isExecuting = yield select(isExecutingSelector);
-  // executeChallengeSaga flushes the logs, so there's no need to if that's
-  // just happened.
-  if (flushLogs && !isExecuting) {
+  // the challenge execution will update the preview, so this saga doesn't
+  // need to do anything.
+  if (yield select(isExecutingSelector)) {
+    return;
+  }
+
+  if (flushLogs) {
     yield put(initLogs());
     yield put(initConsole(''));
   }
