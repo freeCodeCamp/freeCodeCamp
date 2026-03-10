@@ -103,6 +103,40 @@ describe('buildChallenge', () => {
     expect(result.build).not.toContain('_readOnlyError("person")');
   });
 
+  it('handles JS head and contents without trailing semicolons', async () => {
+    const challengeFile = createChallengeFile({
+      ext: 'js',
+      fileKey: 'scriptjs',
+      name: 'script',
+      path: 'script.js',
+      head: "const hello = 'hi'",
+      contents: 'function brain() { return hello; }',
+      tail: 'brain();'
+    });
+
+    const result = await buildJsChallenge(challengeFile);
+
+    expect(result.error).toBeUndefined();
+    expect(result.build).toContain('function brain');
+  });
+
+  it('handles JSX contents and tail without trailing semicolons', async () => {
+    const challengeFile = createChallengeFile({
+      ext: 'jsx',
+      fileKey: 'indexjsx',
+      name: 'index',
+      path: 'index.jsx',
+      head: '',
+      contents: 'const MyComponent = function() { return <div>Demo</div>; }',
+      tail: 'ReactDOM.render(<MyComponent />, document.getElementById("root"))'
+    });
+
+    const result = await buildJsChallenge(challengeFile);
+
+    expect(result.error).toBeUndefined();
+    expect(result.build).toContain('ReactDOM.render');
+  });
+
   it('reports a Babel transform error when combined code is invalid', async () => {
     const challengeFile = createChallengeFile({
       ext: 'js',
