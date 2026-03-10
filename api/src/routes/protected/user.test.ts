@@ -530,10 +530,13 @@ describe('userRoutes', () => {
         const userCount = await fastifyTestInstance.prisma.user.count({
           where: { email: testUserData.email }
         });
+        // Both requests race: one deletes the user and returns 200. The other
+        // may get a 401 if the auth middleware queries the DB after the user has
+        // already been deleted by the first request.
         responses.forEach(response => {
-          expect(response.status).toBe(200);
-          expect(response.body).toStrictEqual({});
+          expect([200, 401]).toContain(response.status);
         });
+        expect(responses.some(r => r.status === 200)).toBe(true);
         expect(userCount).toBe(0);
       });
 
