@@ -1062,6 +1062,34 @@
       }
     }
   },
+  "learn-prompting-fundamentals": {
+    "title": "Знайомство з промптами",
+    "summary": ["У цьому відеокурсі ви дізнаєтесь, як писати хороші промпти."],
+    "intro": [
+      "У цьому курсі ви ознайомитесь з ШІ, мовними моделями і основними стратегіями написання промптів, а також дізнаєтесь про найкращі практики для практичного використання."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
+        "title": "Знайомство з ШІ та мовними моделями",
+        "intro": [
+          "Дізнайтесь про ШІ, машинне навчання, лінгвістику та мовні моделі, щоб створювати ефективні промпти."
+        ]
+      },
+      "learn-prompting-fundamentals-core-concepts": {
+        "title": "Основні поняття",
+        "intro": [
+          "Дізнайтесь про ключові техніки написання промптів і ефективне використання ChatGPT."
+        ]
+      },
+      "learn-prompting-fundamentals-practical-application-and-best-practices": {
+        "title": "Практичне застосування та найкращі практики",
+        "intro": [
+          "Дізнайтесь про найкращі практики написання промптів, ознайомтесь з векторами і пригадайте ключові ідеї."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Інформаційна безпека",
     "intro": [
@@ -3280,10 +3308,16 @@
           "Перевірте, наскільки добре ви засвоїли матеріал з теми «Рекурсія»."
         ]
       },
-      "lecture-working-with-common-data-structures-js": {
-        "title": "Working with Common Data Structures",
+      "quiz-data-structures-js": {
+        "title": "Тест «Структури даних»",
         "intro": [
-          "Learn about common data structures and how to work with them in JavaScript."
+          "Перевірте, наскільки добре ви засвоїли матеріал з теми «Структури даних»."
+        ]
+      },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Робота з поширеними структурами даних",
+        "intro": [
+          "Дізнайтеся про поширені структури даних і як працювати з ними в JavaScript."
         ]
       },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
@@ -3329,10 +3363,28 @@
           "У цій лабораторній роботі ви створите функію, яка перетворює представлення графу у вигляді списку суміжності в матрицю."
         ]
       },
-      "quiz-dynamic-programming-js": {
-        "title": "Dynamic Programming Quiz",
+      "lab-n-queens-problem-js": {
+        "title": "Імплементуйте задачу про n-ферзів",
         "intro": [
-          "Test what you've learned about dynamic programming in JavaScript with this quiz."
+          "У цій лабораторній роботі ви імплементуєте розв’язок для задачі про n-ферзів."
+        ]
+      },
+      "lecture-understanding-dynamic-programming-js": {
+        "title": "Знайомство з динамічним програмуванням",
+        "intro": [
+          "У цій лекції ви дізнаєтесь про динамічне програмування — алгоритмічну техніку, яка дозволяє ефективно розв’язувати складні задачі, розбиваючи їх на простіші."
+        ]
+      },
+      "review-dynamic-programming-js": {
+        "title": "Повторення динамічного програмування",
+        "intro": [
+          "Перш ніж перейти до тесту «Динамічне програмування», повторіть основні поняття."
+        ]
+      },
+      "quiz-dynamic-programming-js": {
+        "title": "Тест «Динамічне програмування»",
+        "intro": [
+          "Перевірте, наскільки добре ви засвоїли матеріал з теми «Динамічне програмування»."
         ]
       },
       "lecture-understanding-functional-programming": {
@@ -3723,9 +3775,9 @@
         ]
       },
       "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
+        "title": "Створіть діаграму розсіювання",
         "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+          "У цій лабораторній роботі ви створите діаграму розсіювання d3, використовуючи наданий набір даних."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4056,7 +4108,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Build an Apply Discount Function",
+        "title": "Створіть калькулятор знижок",
         "intro": [
           "У цій лабораторній роботі ви попрактикуєтесь в основах Python, створивши калькулятор знижок."
         ]
@@ -4648,9 +4700,9 @@
         ]
       },
       "lecture-understanding-rest-api-and-web-services": {
-        "title": "Understanding the REST API and Web Services",
+        "title": "Знайомство з REST API та вебслужбами",
         "intro": [
-          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+          "У цих лекціях ви дізнаєтесь про REST API та вебслужби, а також як вони дозволяють застосункам комунікувати між собою в інтернеті."
         ]
       },
       "lecture-introduction-to-npm": {
@@ -5157,6 +5209,13 @@
         "title": "Робота з аудіо та відео",
         "intro": [
           "У цих лекціях ви дізнаєтесь, як працювати з елементами <code>audio</code> та <code>video</code>."
+        ]
+      },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
         ]
       },
       "workshop-html-video-player": {
@@ -5747,9 +5806,9 @@
         ]
       },
       "workshop-colorful-boxes": {
-        "title": "Design a Set of Colorful Boxes",
+        "title": "Створіть кольорові блоки",
         "intro": [
-          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
+          "У цьому практичному занятті ви будете працювати з flexbox в CSS, створивши набір кольорових блоків."
         ]
       },
       "lab-pricing-plans-layout": {

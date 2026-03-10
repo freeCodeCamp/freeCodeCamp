@@ -27,7 +27,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
     "audit-challenges": "pnpm turbo setup && tsx ./src/challenge-auditor/index.ts",
-    "build": "tsc && tsx ./src/generate/build-curriculum",
+    "build": "node ./dist/generate/build-curriculum",
     "type-check": "tsc --noEmit",
     "create-empty-steps": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-challenge": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",
@@ -46,6 +46,7 @@
     "reorder-tasks": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
+    "setup": "tsc",
     "test": "NODE_OPTIONS='--max-old-space-size=7168' pnpm test-gen && vitest run",
     "test:watch": "pnpm test-gen && vitest",
     "test-gen": "tsx ./src/test/utils/generate-block-tests.ts",
