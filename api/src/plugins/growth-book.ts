@@ -12,11 +12,16 @@ declare module 'fastify' {
 
 const growthBook: FastifyPluginAsync<Options> = async (fastify, options) => {
   const gb = new GrowthBook(options);
-  const res = await gb.init({ timeout: 3000 });
 
-  if (res.error && FREECODECAMP_NODE_ENV === 'production') {
-    fastify.log.error(res.error, 'Failed to initialize GrowthBook');
-    fastify.Sentry.captureException(res.error);
+  const hasRequiredConfig = Boolean(options.clientKey && options.apiHost);
+
+  if (hasRequiredConfig) {
+    const res = await gb.init({ timeout: 3000 });
+
+    if (res.error && FREECODECAMP_NODE_ENV === 'production') {
+      fastify.log.error(res.error, 'Failed to initialize GrowthBook');
+      fastify.Sentry.captureException(res.error);
+    }
   }
 
   fastify.decorate('gb', gb);

@@ -131,7 +131,7 @@
   },
   "weekdays": {
     "short": {
-      "sunday": "Sab",
+      "sunday": "Dom",
       "monday": "Lun",
       "tuesday": "Mar",
       "wednesday": "Mier",
@@ -140,7 +140,7 @@
       "saturday": "Sab"
     },
     "long": {
-      "sunday": "Dom",
+      "sunday": "Domingo",
       "monday": "Lunes",
       "tuesday": "Martes",
       "wednesday": "Miércoles",
@@ -204,16 +204,21 @@
       ],
       "cta": "Comienza a aprender ahora (es gratis)"
     },
+    "catalog": {
+      "heading": "Explora el catálogo de cursos.",
+      "seeAll": "Ver todos los cursos"
+    },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
-    "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
+    "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
+    "learn-spanish-heading": "Aprende Español profesional A1:",
+    "learn-chinese-heading": "Aprende Chino Professional:",
     "professional-certs-heading": "Certificaciones profesionales:",
     "interview-prep-heading": "Prepárate para la búsqueda de empleo en la entrevista de desarrollador:",
     "legacy-curriculum-heading": "Nuestros cursos archivados:",
     "next-heading": "Pruebe nuestro plan de estudios beta:",
     "upcoming-heading": "Próximo plan de estudio:",
     "catalog-heading": "Explora nuestro Catálogo:",
-    "fsd-restructure-note": "Si estabas trabajando previamente en nuestro currículo de Desarrollador Full Stack Certificado, no te preocupes: tu progreso está guardado. Lo hemos dividido en certificaciones más pequeñas que puedes obtener a lo largo de tu recorrido.",
     "archive-link": "¿Buscas cursos antiguos? Consulta <0>nuestra página de archivo</0>.",
     "faq": "Preguntas frecuentes:",
     "faqs": [
@@ -282,6 +287,7 @@
     "private-name": "Tu nombre no aparecerá en tus certificaciones, si está establecido como privado.",
     "claim-legacy": "Una vez que hayas obtenido las siguientes certificaciones de FreeCodeCamp, podrás reclamar la {{cert}}:",
     "for": "Ajustes para {{username}}",
+    "profile-note": "Puedes ir a <0>tu perfil</0> para actualizar tu información personal.",
     "sound-mode": "Esto agrega un placentero sonido de guitarra acústica en todo el sitio web. Obtendrás reacciones musicales a medida que escribas en el editor, completes desafíos, obtengas certificados y mucho más.",
     "sound-volume": "Volumen de fogata:",
     "scrollbar-width": "Ancho de la barra de desplazamiento",
@@ -289,7 +295,7 @@
     "reset-editor-layout": "Restablecer el diseño del editor",
     "shortcuts-explained": "Dentro de un desafío, pulse ESC seguido del signo de interrogación para mostrar una lista de atajos disponibles.",
     "username": {
-      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
+      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres no válidos. Usa solo valores alfanuméricos como 'camperbot' o 'camperbot123'.",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
       "must be lowercase": "El nombre de usuario \"{{username}}\" debe estar en minúscula",
@@ -321,6 +327,7 @@
       "my-heatmap": "Mi mapa de calor",
       "my-certs": "Mis certificaciones",
       "my-portfolio": "Mi portafolio",
+      "my-experience": "Mi experiencia},{",
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
@@ -433,7 +440,34 @@
     "page-number": "{{pageNumber}} de {{totalPages}}",
     "edit-my-profile": "Editar mi perfil",
     "add-bluesky": "Comparte esta certificacion en BlueSky",
-    "add-threads": "Comparte esta certificacion en Threads"
+    "add-threads": "Comparte esta certificacion en Threads",
+    "experience": {
+      "heading": "Experiencia",
+      "share-experience": "Comparte tu experiencia profesional",
+      "add": "Agregar experiencia",
+      "save": "Guardar experiencia",
+      "remove": "Eliminar experiencia",
+      "job-title": "Título del puesto",
+      "company": "Empresa",
+      "location": "Ubicación",
+      "start-date": "Fecha de inicio",
+      "end-date": "Fecha de finalización",
+      "end-date-helper": "Dejar en blanco si es tu puesto actual",
+      "description": "Descripción",
+      "present": "Actual",
+      "date-format-error": "Por favor, introduce la fecha en formato MM/AAAA.",
+      "date-invalid": "Por favor, introduce una fecha válida."
+    },
+    "completeness": {
+      "heading": "Perfil {{percentage}}% completo",
+      "name": "Agrega tu nombre",
+      "location": "Agrega tu ubicación",
+      "picture": "Sube una foto de perfil",
+      "about": "Escribe una sección 'Acerca de'",
+      "social": "Agrega un enlace social",
+      "portfolio": "Agrega un proyecto al portafolio",
+      "experience": "Agrega tu experiencia"
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización 501(c)(3) exenta de impuestos y sin fines de lucro respaldada por donaciones (Número de Identificación Tributaria Federal de los Estados Unidos: 82-0779546).",
@@ -484,7 +518,7 @@
     "ms-link": "Link de Microsoft",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
     "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",
-    "congratulations-code-passes": "Felicidades!!! Tu código pasa",
+    "congratulations-code-passes": "Felicidades. Tu código pasa.",
     "i-completed": "He completado este desafío",
     "example-code": "Código de ejemplo",
     "test-output": "El resultado de tu prueba irá aquí",
@@ -545,7 +579,7 @@
     "codespaces": {
       "intro": "Este curso se ejecuta en una máquina virtual Linux usando GitHub Codespaces. Sigue estas instrucciones para iniciar el curso:",
       "step-1": "<0>Crea una cuenta de GitHub</0> si no tienes una",
-      "step-2": "Haz clic en el botón de inicio debajo",
+      "step-2": "Haz clic en el botón de inicio debajo de esta lista",
       "step-3": "En esa página, haz clic en el botón de crear",
       "step-4": "Una vez que la máquina virtual Linux haya terminado de cargar, inicia la extensión CodeRoad mediante:",
       "step-5": "Haciendo clic en el menú “hamburguesa” cerca de la parte superior izquierda de la ventana de VSCode,",
@@ -565,7 +599,7 @@
     "ona": {
       "intro": "Este curso se ejecuta en una máquina virtual de Linux con Ona. Sigue estas instrucciones para comenzar:",
       "step-1": "<0>Crea una cuenta Ona</0> si no tienes una",
-      "step-2": "Haz clic en el botón de inicio debajo",
+      "step-2": "Haz clic en el botón de inicio debajo de esta lista",
       "step-3": "En el modal que aparece de repente, haz clic en el botón de crear",
       "step-4": "Una vez el sistema linux virtual ha terminado de cargar, inicia la extensión CodeRoad mediante:",
       "step-5": "Haciendo clic en el menú “hamburguesa” cerca de la parte superior izquierda de la ventana de VSCode",
@@ -665,7 +699,8 @@
       "exit-header": "Salir del Examen",
       "exit": "¿Seguro de salir del examen? Perderas todo el progreso.",
       "exit-yes": "Sí, quiero salir",
-      "exit-no": "No, quiero continuar"
+      "exit-no": "No, quiero continuar",
+      "not-honest": "Necesitas <0>aceptar la Política de Honestidad Académica</0> para realizar este examen"
     },
     "ms": {
       "link-header": "Vincula tu cuenta Microsoft",
@@ -691,11 +726,12 @@
       "exam": "Examen",
       "warm-up": "Inicializar",
       "learn": "Aprender",
-      "practice": "Practicar"
+      "practice": "Practicar",
+      "video": "Vídeo"
     },
     "archive": {
       "title": "Cursos archivados",
-      "content-not-updated": "<0>Advertencia:</0> El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos intentar <1>nuestro currículo actual</1>."
+      "content-not-updated": "El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos probar <0>nuestro currículo actual</0>."
     }
   },
   "donate": {
@@ -836,7 +872,7 @@
     "help-millions-learn": "Ayuda a millones de personas a aprender",
     "reach-goals-faster": "Alcanza tus metas más rápido",
     "remove-distractions": "Eliminar distracciones",
-    "remove-interruptions": "Remover interrupciones",
+    "remove-interruptions": "Remueve interrupciones",
     "acquire-skills-faster": "Adquiera habilidades más rápido",
     "animation-description": "Este es un anuncio animado de 20 segundos para animar a los campistas a convertirse en seguidores de freeCodeCamp. La animación comienza con un oso de téd que se convierte en un soporte. Como resultado, desaparecen los pop-ups de distracción y el oso llega a completar todas sus metas. Luego, se gradua y se convierte en un superhéroe educativo que ayuda a la gente de todo el mundo.",
     "animation-countdown": "Esta animación se detendrá después de {{secondesRemaining}} segundos."
@@ -869,6 +905,8 @@
   },
   "misc": {
     "coming-soon": "Muy pronto",
+    "note": "Nota",
+    "caution": "Precaución",
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
     "server-offline": "No se pudo acceder al servidor y es posible que tu progreso no se guarde. Ponte en contacto con <0>soporte</0> si este mensaje persiste",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
@@ -893,7 +931,7 @@
     "document-notfound": "documento no encontrado",
     "slow-load-msg": "Parece que esto está tardando más de lo habitual, por favor intente actualizar la página.",
     "navigation-warning": "Si abandonas esta página, perderás tu progreso. ¿Estás seguro?",
-    "fsd-b-description": "Este curso completo te prepara para convertirte en un Desarrollador Full Stack Certificado. Aprenderás a crear aplicaciones web completas utilizando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python y más.",
+    "fsd-b-description": "Este curso completo te prepara para convertirte en un desarrollador Full Stack certificado. Aprenderás a crear aplicaciones web completas utilizando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python y más.",
     "fsd-b-cta": "Comienza a aprender",
     "continue-learning": "Continuar aprendiendo",
     "fsd-b-benefit-1-title": "Más de 100.000 estudiantes",
@@ -930,7 +968,7 @@
     "linkedin": "Enlace al LinkedIn de {{username}}",
     "github": "Enlace al GitHub de {{username}}",
     "website": "Enlace al GitHub de {{username}}",
-    "twitter": "Link to {{username}}'s X",
+    "twitter": "Enlace al X de {{username}}",
     "next-month": "Ir al siguiente mes",
     "previous-month": "Ir al mes anterior",
     "first-page": "Ir a la primera pagina",
@@ -986,6 +1024,7 @@
     "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "Hemos actualizado tu suscripción al correo electrónico de Quincy",
     "portfolio-item-updated": "Hemos actualizado tu portafolio",
+    "experience-updated": "Hemos actualizado tu experiencia",
     "email-invalid": "El formato del correo electrónico no es válido",
     "email-valid": "Tu correo electrónico fue cambiado con éxito, ¡feliz día programando!",
     "bad-challengeId": "currentChallengeId no es un ID de desafío válido",
@@ -1081,16 +1120,22 @@
       "err-3": "Algo salió mal al intentar guardar tu encuesta.",
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
-    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase"
+    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
+    "user-fetch-error": "No se puede recuperar su información de usuario. Puede seguir utilizando el sitio, pero es posible que su progreso no sea guardado."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
+    "max-characters-500": "Hay un límite máximo de 500 caracteres, te quedan {{charsLeft}}",
     "same-email": "Este correo electrónico es el mismo que tu correo electrónico actual",
     "invalid-email": "No pudimos validar tu correo electrónico correctamente, asegúrate de que sea correcto",
     "email-mismatch": "Ambas nuevas direcciones de correo electrónico deben ser iguales",
     "title-required": "Se requiere un título",
     "title-short": "El título es demasiado corto",
     "title-long": "El título es demasiado largo",
+    "company-required": "Se requiere el nombre de la empresa",
+    "company-short": "El nombre de la empresa es demasiado corto",
+    "company-long": "El nombre de la empresa es demasiado largo",
+    "start-date-required": "Se requiere la fecha de inicio",
     "invalid-url": "No hemos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "La URL debe enlazar directamente hacia un archivo de imagen",
@@ -1111,6 +1156,7 @@
     "issued": "Emitido",
     "fulltext": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha completado exitosamente la</2> <3>{{title}}</3> <4>Certificación de Desarrollador en {{time}}</4> <5>que representa aproximadamente {{completionTime}} horas de trabajo en el curso</5>",
     "fulltextNoHours": "<0>La presente certifica que </0> <1>{{user}}</1> <2>completó con éxito la</2> <3>{{title}}</3> <4>Certificación de desarrollador/a en {{time}}</4>",
+    "fulltextLanguageExam": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha pasado exitosamente el examen </2> <3>{{title}}</3> <4>en {{time}}</4> <5>demostrando competencia en las partes de gramática, audición y lectura de los estándares del CEFR para este nivel, basado en el contenido cubierto en el currículo.</5>",
     "quincy-larson-signature": "La firma de Quincy Larson",
     "julia-liuson-signature": "La firma de Julia Liuson",
     "project": {
@@ -1212,8 +1258,8 @@
       "data-visualization-cert": "Certificación en visualización de datos V8",
       "relational-database-v8": "Base de datos relacional V8",
       "relational-database-v8-cert": "Certificación en base de datos relacional V8",
-      "back-end-development-and-apis": "Desarrollo back-end y APIs V8",
-      "back-end-development-and-apis-cert": "Certificación de desarrollo back-end y APIs V8",
+      "back-end-development-and-apis": "Desarrollo Back-End y APIs V8",
+      "back-end-development-and-apis-cert": "Certificación de desarrollo Back-End y APIs V8",
       "quality-assurance-v7": "Seguro de calidad",
       "quality-assurance-v7-cert": "Certificación de Garantía de Calidad",
       "scientific-computing-with-python-v7": "Computación científica con Python",
@@ -1228,24 +1274,26 @@
       "college-algebra-with-python-v8-cert": "Certificación en Álgebra universitaria con Python",
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# con Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Fundamentos de C# con certificación de Microsoft",
+      "learn-python-for-beginners": "Aprende Python para principiantes",
+      "introduction-to-algorithms-and-data-structures": "Introducción a algoritmos y estructuras de datos",
       "a2-english-for-developers": "Inglés A2 para Desarrolladores",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
+      "a2-english-for-developers-cert": "Exámen de certificación (Beta) A2 de inglês para desarrolladores",
       "b1-english-for-developers": "B1 Inglés para Desarrolladores",
       "b1-english-for-developers-cert": "Certificación de inglés B1 para Desarrolladores",
       "responsive-web-design-v9": "Diseño web responsivo",
       "responsive-web-design-v9-cert": "Certificación en diseño web responsivo",
       "javascript-v9": "JavaScript",
       "javascript-v9-cert": "Certificación en JavaScript",
-      "front-end-development-libraries-v9": "Bibliotecas de desarrollo front-end",
-      "front-end-development-libraries-v9-cert": "Certificación en bibliotecas de desarrollo front-end",
+      "front-end-development-libraries-v9": "Bibliotecas de desarrollo Front-End",
+      "front-end-development-libraries-v9-cert": "Certificación de bibliotecas de desarrollo Front-End",
       "python-v9": "Python",
       "python-v9-cert": "Certificación en Python",
       "relational-databases-v9": "Base de datos relacional",
       "relational-databases-v9-cert": "Certificación en base de datos relacional",
-      "back-end-development-and-apis-v9": "Desarrollo back-end y APIs",
-      "back-end-development-and-apis-v9-cert": "Certificación en desarrollo back-end y APIs",
+      "back-end-development-and-apis-v9": "Desarrollo Back-End y APIs",
+      "back-end-development-and-apis-v9-cert": "Certificación de desarrollo Back-End y APIs",
       "full-stack-developer-v9": "Desarrollador Full Stack",
-      "full-stack-developer-v9-cert": "Certificación de desarrollador full stack",
+      "full-stack-developer-v9-cert": "Certificación de desarrollador Full Stack",
       "a1-professional-spanish": "Español profesional A1",
       "a1-professional-spanish-cert": "Certificado de español profesional A1",
       "a2-professional-spanish": "Español Profesional A2",
@@ -1254,16 +1302,16 @@
       "a2-professional-chinese-cert": "Certificación de Chino Profesional A2",
       "a1-professional-chinese": "Chino profesional A1",
       "a1-professional-chinese-cert": "Certificado de chino profesional A1",
-      "legacy-front-end": "Front End heredado",
-      "legacy-front-end-cert": "Certificación Front End Legacy",
-      "legacy-back-end": "Back End heredado",
-      "legacy-back-end-cert": "Certificación de back end heredada",
+      "legacy-front-end": "Front-End heredado",
+      "legacy-front-end-cert": "Certificación Front-End heredada",
+      "legacy-back-end": "Back-End heredado",
+      "legacy-back-end-cert": "Certificación Back-End heredada",
       "legacy-data-visualization": "Visualización de datos heredados",
       "legacy-data-visualization-cert": "Certificación de visualización de datos heredados",
       "information-security-and-quality-assurance": "Seguridad de la información heredada y garantía de calidad",
       "information-security-and-quality-assurance-cert": "Certificación de garantía de calidad y seguridad de la información heredada",
-      "full-stack": "Legado de pila completa",
-      "full-stack-cert": "Certificacion de Legado de pila completa"
+      "full-stack": "Full Stack heredado",
+      "full-stack-cert": "Certificación Full Stack heredada"
     }
   },
   "certification-card": {
@@ -1400,6 +1448,22 @@
         "beginner": "Principiante",
         "intermediate": "Intermedio",
         "advanced": "Avanzado"
+      },
+      "duration": "{{duration}} horas",
+      "no-results": "No se encontraron cursos. Intenta ajustar tus filtros para ver más resultados.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React js",
+        "python": "Python",
+        "data-analysis": "Análisis de datos",
+        "machine-learning": "Aprendizaje automático",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Seguridad de la información",
+        "computer-fundamentals": "Fundamentos de la computación",
+        "computer-science": "Ciencias de la Computación"
       }
     }
   }

@@ -177,6 +177,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -271,6 +272,7 @@ const publicUserData = {
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
   quizAttempts: testUserData.quizAttempts,
+  experience: [],
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
@@ -337,6 +339,7 @@ const sessionUserData = {
 const baseProgressData = {
   currentChallengeId: '',
   isA2EnglishCert: false,
+  isB1EnglishCert: false,
   isRespWebDesignCert: false,
   is2018DataVisCert: false,
   isFrontEndLibsCert: false,
@@ -1004,6 +1007,7 @@ describe('userRoutes', () => {
           completedDailyCodingChallenges: [],
           completedExams: [],
           completedSurveys: [],
+          experience: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],
@@ -1603,7 +1607,6 @@ Thanks and regards,
       { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
-      { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
       { path: '/user/ms-username', method: 'DELETE' },
@@ -1619,6 +1622,18 @@ Thanks and regards,
           setCookies
         });
         expect(response.statusCode).toBe(401);
+      });
+    });
+
+    describe('/user/get-session-user', () => {
+      test('GET returns 200 with empty user object for unauthenticated users', async () => {
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({ user: {}, result: '' });
       });
     });
   });

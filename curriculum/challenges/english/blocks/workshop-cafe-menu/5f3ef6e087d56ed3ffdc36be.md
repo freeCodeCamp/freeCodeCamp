@@ -48,8 +48,8 @@ assert.equal(establishedFont, "italic");
   <body>
     <div class="menu">
       <main>
---fcc-editable-region--
         <h1>CAMPER CAFE</h1>
+--fcc-editable-region--
         <p>Est. 2020</p>
 --fcc-editable-region--
         <section>

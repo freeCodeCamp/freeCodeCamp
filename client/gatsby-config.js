@@ -15,17 +15,23 @@ module.exports = {
   flags: {
     DEV_SSR: false
   },
+  trailingSlash: 'ignore',
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: homeLocation
   },
   pathPrefix: pathPrefix,
   plugins: [
-    'gatsby-plugin-pnpm',
+    'gatsby-plugin-pnpm-gatsby-5',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'disabled',
+        // It doesn't matter if the file is generated or not as far as caching
+        // is concerned. It doesn't affect any tasks in any way, so we can
+        // ignore it.
+
+        // eslint-disable-next-line turbo/no-undeclared-env-vars
         generateStatsFile: process.env.CI
       }
     },
@@ -36,18 +42,6 @@ module.exports = {
         postcssOptions: {
           config: path.resolve(__dirname, 'postcss.config.js')
         }
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-create-client-paths',
-      options: {
-        prefixes: [
-          '/certification/*',
-          '/unsubscribed/*',
-          '/user/*',
-          '/settings/*',
-          '/n/*'
-        ]
       }
     },
     {
@@ -71,48 +65,13 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark'
     },
+    'gatsby-plugin-remove-serviceworker',
     {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-remark-node-identity'
-      ),
+      resolve: 'gatsby-plugin-schema-snapshot',
       options: {
-        identity: 'blockIntroMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && block && superBlock;
-        }
+        path: 'schema.gql',
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === 'true'
       }
-    },
-    {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-remark-node-identity'
-      ),
-      options: {
-        identity: 'superBlockIntroMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && !block && superBlock;
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'freeCodeCamp',
-        short_name: 'fCC',
-        start_url: '/',
-        theme_color: '#0a0a23',
-        background_color: '#fff',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/square_puck.png'
-      }
-    },
-    'gatsby-plugin-remove-serviceworker'
+    }
   ]
 };

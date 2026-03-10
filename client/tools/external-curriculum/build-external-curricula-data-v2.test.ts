@@ -9,7 +9,7 @@ import {
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -269,6 +269,8 @@ describe('external curriculum data build', () => {
     const superBlockStageStringMap: Record<string, SuperBlockStage> = {
       core: SuperBlockStage.Core,
       english: SuperBlockStage.English,
+      spanish: SuperBlockStage.Spanish,
+      chinese: SuperBlockStage.Chinese,
       professional: SuperBlockStage.Professional,
       extra: SuperBlockStage.Extra,
       legacy: SuperBlockStage.Legacy,

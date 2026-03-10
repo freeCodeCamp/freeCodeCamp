@@ -1,3 +1,4 @@
+import { LocationProvider } from '@gatsbyjs/reach-router';
 import cookies from 'browser-cookies';
 import PropTypes from 'prop-types';
 import React from 'react';
@@ -16,15 +17,17 @@ const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <Provider store={store}>
-      <I18nextProvider i18n={i18n}>
-        <GrowthBookProvider>
-          <AppMountNotifier>
-            <Elements stripe={stripe}>{element}</Elements>
-          </AppMountNotifier>
-        </GrowthBookProvider>
-      </I18nextProvider>
-    </Provider>
+    <LocationProvider>
+      <Provider store={store}>
+        <I18nextProvider i18n={i18n}>
+          <GrowthBookProvider>
+            <AppMountNotifier>
+              <Elements stripe={stripe}>{element}</Elements>
+            </AppMountNotifier>
+          </GrowthBookProvider>
+        </I18nextProvider>
+      </Provider>
+    </LocationProvider>
   );
 };
 
@@ -35,6 +38,10 @@ wrapRootElement.propTypes = {
 export const wrapPageElement = layoutSelector;
 
 export const disableCorePrefetching = () => true;
+
+export const onRouteUpdate = () => {
+  store.dispatch({ type: 'app.routeUpdated' });
+};
 
 export const onClientEntry = () => {
   // Letting the users' browsers expire the cookie seems to have caused issues

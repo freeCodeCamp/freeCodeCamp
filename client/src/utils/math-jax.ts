@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { scriptLoader } from './script-loaders';
 
 export const mathJaxSrc =
@@ -13,7 +13,7 @@ const superBlocksWithMathJax = [
   SuperBlocks.ProjectEuler,
   SuperBlocks.RosettaCode,
   SuperBlocks.SciCompPy,
-  SuperBlocks.FullStackDeveloper
+  SuperBlocks.PythonV9
 ];
 
 const configure = () => {

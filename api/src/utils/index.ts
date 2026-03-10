@@ -1,6 +1,9 @@
 import { randomBytes, createHash } from 'crypto';
 import { type TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
 import {
+  ContextConfigDefault,
+  FastifyReply,
+  RawReplyDefaultExpression,
   type FastifyRequest,
   type FastifySchema,
   type RawRequestDefaultExpression,
@@ -32,6 +35,16 @@ export type UpdateReqType<Schema extends FastifySchema> = FastifyRequest<
   RouteGenericInterface,
   RawServerDefault,
   RawRequestDefaultExpression<RawServerDefault>,
+  Schema,
+  TypeBoxTypeProvider
+>;
+
+export type UpdateReplyType<Schema extends FastifySchema> = FastifyReply<
+  RouteGenericInterface,
+  RawServerDefault,
+  RawRequestDefaultExpression<RawServerDefault>,
+  RawReplyDefaultExpression<RawServerDefault>,
+  ContextConfigDefault,
   Schema,
   TypeBoxTypeProvider
 >;

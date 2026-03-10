@@ -1,0 +1,25 @@
+{
+  "name": "Build an HTML Video Player",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-html-video-player",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68f18724d71db1dda8d6fec7", "title": "Step 1" },
+    { "id": "68f1eb9ad0a7575e4dbc31d5", "title": "Step 2" },
+    { "id": "68f1f371fefd448b4f70b898", "title": "Step 3" },
+    { "id": "68f1f57723debf9383c75947", "title": "Step 4" },
+    { "id": "68f1f6f97af9749a42260a43", "title": "Step 5" },
+    { "id": "68f1f8c248306da204655117", "title": "Step 6" },
+    { "id": "68f1f993460f06a64c033061", "title": "Step 7" },
+    { "id": "68f1fac259a4afabb478b960", "title": "Step 8" },
+    { "id": "68f268880219c2485bd71d2a", "title": "Step 9" },
+    { "id": "68f26a5f79e97c5032c10642", "title": "Step 10" },
+    { "id": "68f26d52b13e0f5b6e2d2e09", "title": "Step 11" },
+    { "id": "68f2701b2160c765f23b60f8", "title": "Step 12" },
+    { "id": "68f27139bddf9f6bf2821acf", "title": "Step 13" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
