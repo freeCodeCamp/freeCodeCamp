@@ -54,7 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
-import { allChallengesInfoSelector } from '../../../redux/selectors';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -142,8 +142,7 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      const allChallengesInfo = yield select(allChallengesInfoSelector);
-      if (isBlockCompleted && allChallengesInfo?.challengeNodes?.length) {
+      if (isBlockCompleted && curriculumData.hasData) {
         fireConfetti();
       }
     } else {
