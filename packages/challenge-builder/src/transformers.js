@@ -114,11 +114,14 @@ const replaceNBSP = cond([
   [stubTrue, identity]
 ]);
 
+const transformCompiledChallengeCode = (wrap, challengeFile) =>
+  transformContents(wrap, compileHeadTail('', challengeFile));
+
 const getJSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetEnv();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-  return transformHeadTailAndContents(
+  return transformCompiledChallengeCode(
     babelTransformCode(babelOptions),
     challengeFile
   );
@@ -128,7 +131,7 @@ const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
   const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
-  return transformHeadTailAndContents(
+  return transformCompiledChallengeCode(
     babelTransformCode(babelOptions),
     challengeFile
   );
@@ -152,7 +155,7 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return flow(
     partial(transformHeadTailAndContents, compileTypeScriptCode),
-    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+    partial(transformCompiledChallengeCode, babelTransformCode(babelOptions))
   )(challengeFile);
 };
 

@@ -97,7 +97,7 @@ export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
 export async function buildChallenge(
   challengeData: BuildChallengeData,
   options: BuildOptions
-) {
+): Promise<BuildResult> {
   const { challengeType } = challengeData;
   const build = buildFunctions[challengeType];
   if (build) {
@@ -253,11 +253,18 @@ async function buildJSChallenge(
   };
 }
 
-function buildBackendChallenge({ url, challengeType }: BuildChallengeData) {
+function buildBackendChallenge({
+  url,
+  challengeType
+}: BuildChallengeData): Promise<BuildResult> {
   return {
     challengeType,
     build: '',
-    sources: { contents: url }
+    sources: {
+      index: '',
+      editableContents: '',
+      contents: url
+    }
   };
 }
 
