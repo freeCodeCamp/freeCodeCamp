@@ -164,28 +164,12 @@ function getProjectPreviewConfig(challenge, allChallengeNodes) {
 }
 
 exports.createSuperBlockIntroPages = function (createPage) {
-  return function (edge) {
-    const {
-      fields: { slug },
-      frontmatter: { superBlock, certification, title }
-    } = edge.node;
-
-    if (!certification) {
-      throw Error(
-        `superBlockIntro page, '${superBlock}' must have certification in frontmatter`
-      );
-    }
-
-    // TODO: throw if it encounters an unknown certification. Also, handle
-    // coding-interview-prep. it's not a certification, but it is a superBlock.
-
+  return function ({ superBlock }) {
     createPage({
-      path: slug,
+      path: `/learn/${superBlock}/`,
       component: superBlockIntro,
       context: {
-        certification,
-        superBlock,
-        title
+        superBlock
       }
     });
   };
