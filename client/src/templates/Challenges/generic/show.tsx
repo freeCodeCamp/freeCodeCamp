@@ -85,13 +85,9 @@ function renderNodule(
     case 'interactiveEditor':
       if (showInteractiveEditor) {
         return (
-          <>
-            <Spacer size='s' />
-            <Col xs={12} md={12} lg={10} lgOffset={1}>
-              <InteractiveEditor files={nodule.files} />
-            </Col>
-            <Spacer size='s' />
-          </>
+          <Col xs={12} md={12} lg={10} lgOffset={1}>
+            <InteractiveEditor files={nodule.files} />
+          </Col>
         );
       } else {
         const { files } = nodule;
