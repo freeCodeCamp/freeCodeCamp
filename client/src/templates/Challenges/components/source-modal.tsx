@@ -3,7 +3,6 @@ import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
-import nodePath from 'path';
 
 import envData from '../../../../config/env.json';
 import { createQuestion, closeModal } from '../redux/actions';
@@ -24,7 +23,7 @@ interface SourceModalProps {
 const { curriculumLocale, githubLocation } = envData;
 
 const mapStateToProps = (state: unknown) => ({
-  isOpen: isSourceModalOpenSelector(state) as boolean
+  isOpen: !!isSourceModalOpenSelector(state)
 });
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
@@ -33,30 +32,24 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 export const generateGithubLink = (challengeId: string, block: string) => {
-  let repository = 'freeCodeCamp';
-  const challengesFolder = nodePath.join(
-    'blob',
-    'main',
-    'curriculum',
-    'challenges'
+  const challengesFolder = ['blob', 'main', 'curriculum', 'challenges'].join(
+    '/'
   );
   const blocksFolder = 'blocks';
-  if (curriculumLocale != 'english') {
-    repository = 'i18n-curriculum';
-  }
-
+  const repository =
+    curriculumLocale === 'english' ? 'freeCodeCamp' : 'i18n-curriculum';
   const gitURL = new URL(githubLocation);
 
   gitURL.pathname =
     gitURL.pathname +
-    nodePath.join(
+    [
       repository,
       challengesFolder,
       curriculumLocale,
       blocksFolder,
       block,
       challengeId + '.md'
-    );
+    ].join('/');
   return gitURL.toString();
 };
 
@@ -67,11 +60,6 @@ function SourceModal({
   challengeId
 }: SourceModalProps): JSX.Element {
   const { t } = useTranslation();
-
-  const openChallengeSource = () => {
-    const githubLink = generateGithubLink(challengeId, challengeBlock);
-    window.open(githubLink, '_blank');
-  };
 
   const handleClose = () => {
     closeSourceModal();
@@ -101,7 +89,9 @@ function SourceModal({
             block={true}
             size='large'
             variant='primary'
-            onClick={openChallengeSource}
+            href={generateGithubLink(challengeId, challengeBlock)}
+            target='_blank'
+            rel='noopener noreferrer'
           >
             {t('buttons.challenge-source')}
           </Button>

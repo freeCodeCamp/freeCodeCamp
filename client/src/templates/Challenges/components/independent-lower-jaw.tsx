@@ -33,7 +33,6 @@ import { Share } from '../../../components/share';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const mapStateToProps = createSelector(
