@@ -61,7 +61,7 @@
 }
 
 .block-label-exam,
-.block-label-math, {
+.block-label-math,
 .block-label-editors {
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
