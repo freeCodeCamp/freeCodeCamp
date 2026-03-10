@@ -449,6 +449,7 @@ export type User = {
   savedChallenges: SavedChallenges;
   sendQuincyEmail: boolean | null;
   sound: boolean;
+  ambientSound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;

@@ -46,6 +46,15 @@ export const updateMySoundComplete = createAction(
 );
 export const updateMySoundError = createAction(types.updateMySoundError);
 
+export const updateMyAmbientSound = createAction(types.updateMyAmbientSound);
+export const updateMyAmbientSoundComplete = createAction(
+  types.updateMyAmbientSoundComplete,
+  checkForSuccessPayload
+);
+export const updateMyAmbientSoundError = createAction(
+  types.updateMyAmbientSoundError
+);
+
 export const updateMyKeyboardShortcuts = createAction(
   types.updateMyKeyboardShortcuts
 );
