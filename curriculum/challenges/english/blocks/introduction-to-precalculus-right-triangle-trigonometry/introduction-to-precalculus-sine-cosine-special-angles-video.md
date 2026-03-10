@@ -30,7 +30,7 @@ What is the cosine of 45° for a right triangle with the hypotenuse of length 5?
 
 ---
 
-`Sqrt(2)/2`
+`sqrt(2)/2`
 
 ## --video-solution--
 
