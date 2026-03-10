@@ -1,25 +1,12 @@
-const { createFilePath } = require('gatsby-source-filesystem');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
-const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
 const { createSuperBlockIntroPages } = require('./utils/gatsby');
 
-exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode });
-    if (!slug.includes('LICENSE')) {
-      createNodeField({ node, name: 'slug', value: slug });
-    }
-  }
-};
-
 exports.createPages = async function createPages({
-  graphql,
   actions,
+  graphql,
   reporter
 }) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
@@ -46,67 +33,19 @@ exports.createPages = async function createPages({
 
   const { createPage } = actions;
 
-  const result = await graphql(`
+  const {
+    data: { allChallengeNode }
+  } = await graphql(`
     {
-      allChallengeNode(
-        sort: [
-          { challenge: { superOrder: ASC } }
-          { challenge: { order: ASC } }
-          { challenge: { challengeOrder: ASC } }
-        ]
-      ) {
-        edges {
-          node {
-            challenge {
-              block
-            }
-          }
-        }
-      }
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              certification
-              superBlock
-              title
-            }
-            id
-          }
-        }
+      allChallengeNode {
+        distinct(field: { challenge: { superBlock: SELECT } })
       }
     }
   `);
 
-  // Includes upcoming superBlocks
-  const allSuperBlocks = Object.values(SuperBlocks);
-
-  // Create intro pages
-  // TODO: Remove allMarkdownRemark (populate from elsewhere)
-  result.data.allMarkdownRemark.edges.forEach(edge => {
-    const {
-      node: { frontmatter, fields }
-    } = edge;
-
-    if (!fields) {
-      throw Error(
-        "'fields' property missing (this should be added in onCreateNode)"
-      );
-    }
-    const { slug } = fields;
-    if (slug.includes('LICENCE')) {
-      return;
-    }
-
-    if (!allSuperBlocks.includes(frontmatter.superBlock)) {
-      throw Error(`Unknown superblock ${frontmatter.superBlock}`);
-    }
-
-    const pageBuilder = createSuperBlockIntroPages(createPage);
-    pageBuilder(edge);
+  const superBlocks = allChallengeNode.distinct;
+  superBlocks.forEach(superBlock => {
+    createSuperBlockIntroPages(createPage)({ superBlock });
   });
 };
 
