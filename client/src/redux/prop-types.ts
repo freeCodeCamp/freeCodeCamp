@@ -323,6 +323,7 @@ export type DailyCodingChallengePageContext = {
     id: string;
     superBlock: 'daily-coding-challenge';
     disableLoopProtectTests: boolean;
+    dashedName: string;
 
     // props to satisfy the show classic component
     isFirstStep: boolean;
