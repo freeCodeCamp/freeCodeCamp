@@ -11,19 +11,23 @@ import SectionHeader from './section-header';
 type MiscSettingsProps = {
   keyboardShortcuts: boolean;
   sound: boolean;
+  ambientSound: boolean;
   editorLayout: boolean | null;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   toggleSoundMode: (sound: boolean) => void;
+  toggleAmbientSoundMode: (ambientSound: boolean) => void;
   resetEditorLayout: () => void;
 };
 
 const MiscSettings = ({
   keyboardShortcuts,
   sound,
+  ambientSound,
   editorLayout,
   resetEditorLayout,
   toggleKeyboardShortcuts,
-  toggleSoundMode
+  toggleSoundMode,
+  toggleAmbientSoundMode
 }: MiscSettingsProps) => {
   const { t } = useTranslation();
 
@@ -31,7 +35,12 @@ const MiscSettings = ({
     <div className='account-settings'>
       <SectionHeader>{t('settings.headings.account')}</SectionHeader>
       <FullWidthRow>
-        <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
+        <SoundSettings
+          sound={sound}
+          ambientSound={ambientSound}
+          toggleSoundMode={toggleSoundMode}
+          toggleAmbientSoundMode={toggleAmbientSoundMode}
+        />
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}
           toggleKeyboardShortcuts={toggleKeyboardShortcuts}

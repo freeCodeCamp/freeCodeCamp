@@ -9,12 +9,16 @@ import ToggleButtonSetting from './toggle-button-setting';
 
 type SoundProps = {
   sound: boolean;
+  ambientSound: boolean;
   toggleSoundMode: (sound: boolean) => void;
+  toggleAmbientSoundMode: (ambientSound: boolean) => void;
 };
 
 export default function SoundSettings({
   sound,
-  toggleSoundMode
+  ambientSound,
+  toggleSoundMode,
+  toggleAmbientSoundMode
 }: SoundProps): JSX.Element {
   const { t } = useTranslation();
   const [volumeDisplay, setVolumeDisplay] = useState(
@@ -49,6 +53,17 @@ export default function SoundSettings({
         onLabel={t('buttons.on')}
         toggleFlag={() => {
           toggleSoundMode(sound ? false : true);
+        }}
+      />
+      <ToggleButtonSetting
+        action={t('settings.labels.ambient-sound-mode')}
+        explain={t('settings.ambient-sound-mode')}
+        flag={ambientSound}
+        flagName='ambientSound'
+        offLabel={t('buttons.off')}
+        onLabel={t('buttons.on')}
+        toggleFlag={() => {
+          toggleAmbientSoundMode(ambientSound ? false : true);
         }}
       />
       <label htmlFor='volumeslider'>
