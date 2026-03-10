@@ -57,7 +57,14 @@ const superblocks = [
   'css-variables',
   'css-grid',
   'lab-product-landing-page',
-  'css-animations'
+  'css-animations',
+  'introduction-to-bash',
+  'introduction-to-sql-and-postgresql',
+  'learn-bash-scripting',
+  'learn-sql-and-bash',
+  'introduction-to-nano',
+  'introduction-to-git-and-github',
+  'learn-prompting-fundamentals'
 ];
 
 const schema = Joi.object().keys(
