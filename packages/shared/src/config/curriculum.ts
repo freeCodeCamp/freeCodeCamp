@@ -227,7 +227,6 @@ export const superBlockStages: StageMap = {
     SuperBlocks.CssAnimations,
     SuperBlocks.LearnPythonForBeginners,
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
-    SuperBlocks.LearnPromptingFundamentals,
     SuperBlocks.LearnOOPWithPython,
     SuperBlocks.IntroductionToBash,
     SuperBlocks.IntroductionToSQLAndPostgreSQL,

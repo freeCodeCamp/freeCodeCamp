@@ -230,7 +230,6 @@ export const superBlockNames = {
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
   'css-animations': SuperBlocks.CssAnimations,
-  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals,
   'learn-oop-with-python': SuperBlocks.LearnOOPWithPython,
   'introduction-to-bash': SuperBlocks.IntroductionToBash,
   'introduction-to-sql-and-postgresql':

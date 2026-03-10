@@ -58,7 +58,6 @@ const superblocks = [
   'css-grid',
   'lab-product-landing-page',
   'css-animations',
-  'learn-prompting-fundamentals',
   'learn-oop-with-python',
   'introduction-to-bash',
   'introduction-to-sql-and-postgresql',
