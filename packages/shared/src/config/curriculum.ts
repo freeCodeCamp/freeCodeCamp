@@ -74,8 +74,7 @@ export enum SuperBlocks {
   LearnBashScripting = 'learn-bash-scripting',
   LearnSQLAndBash = 'learn-sql-and-bash',
   IntroductionToNano = 'introduction-to-nano',
-  IntroductionToGitAndGithub = 'introduction-to-git-and-github',
-  LearnPromptingFundamentals = 'learn-prompting-fundamentals'
+  IntroductionToGitAndGithub = 'introduction-to-git-and-github'
 }
 
 export const languageSuperBlocks = [
