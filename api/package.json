@@ -4,7 +4,7 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "3.992.0",
+    "@aws-sdk/client-ses": "3.1000.0",
     "@fastify/accepts": "5.0.4",
     "@fastify/cookie": "11.0.2",
     "@fastify/csrf-protection": "7.1.0",
@@ -57,7 +57,7 @@
     "eslint-plugin-jsdoc": "48.11.0",
     "msw": "^2.12.10",
     "prisma": "6.19.2",
-    "supertest": "6.3.3",
+    "supertest": "6.3.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
     "vitest": "^4.0.15"

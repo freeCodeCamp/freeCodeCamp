@@ -1276,6 +1276,7 @@
       "foundational-c-sharp-with-microsoft-cert": "微軟基礎 C# 認證",
       "learn-python-for-beginners": "學習 Python 基礎",
       "introduction-to-algorithms-and-data-structures": "算法和數據結構",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "開發者 A2 英語",
       "a2-english-for-developers-cert": "A2 開發者英語認證（測試版）",
       "b1-english-for-developers": "開發者 B1 英語",
@@ -1463,7 +1464,8 @@
         "api": "API",
         "information-security": "信息安全",
         "computer-fundamentals": "計算機基礎",
-        "computer-science": "計算機科學"
+        "computer-science": "計算機科學",
+        "ai": "AI"
       }
     }
   }

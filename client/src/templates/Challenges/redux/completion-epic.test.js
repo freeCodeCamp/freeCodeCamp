@@ -19,8 +19,7 @@ describe('completionEpic', () => {
         value: {
           challenge: { challengeMeta: { challengeType: 0 } },
           app: {
-            user: { username: 'test' },
-            allChallengesInfo: { challengeNodes: [], certificateNodes: [] }
+            user: { username: 'test' }
           }
         }
       };

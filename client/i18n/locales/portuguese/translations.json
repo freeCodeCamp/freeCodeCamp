@@ -1276,6 +1276,7 @@
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
       "learn-python-for-beginners": "Aprenda Python para iniciantes",
       "introduction-to-algorithms-and-data-structures": "Introdução a Algoritmos e Estruturas de Dados",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
@@ -1463,7 +1464,8 @@
         "api": "APIs",
         "information-security": "Segurança da Informação",
         "computer-fundamentals": "Fundamentos de Computação",
-        "computer-science": "Ciência da Computação"
+        "computer-science": "Ciência da Computação",
+        "ai": "AI"
       }
     }
   }

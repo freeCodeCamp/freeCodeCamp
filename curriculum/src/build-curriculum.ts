@@ -229,7 +229,15 @@ export const superBlockNames = {
   'css-variables': SuperBlocks.CssVariables,
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
-  'css-animations': SuperBlocks.CssAnimations
+  'css-animations': SuperBlocks.CssAnimations,
+  'introduction-to-bash': SuperBlocks.IntroductionToBash,
+  'introduction-to-sql-and-postgresql':
+    SuperBlocks.IntroductionToSQLAndPostgreSQL,
+  'learn-bash-scripting': SuperBlocks.LearnBashScripting,
+  'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
+  'introduction-to-nano': SuperBlocks.IntroductionToNano,
+  'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(
