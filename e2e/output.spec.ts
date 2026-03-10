@@ -225,14 +225,17 @@ test.describe('Challenge Output Component Tests', () => {
   }) => {
     const closeButton = page.getByRole('button', { name: 'Close' });
     await focusEditor({ page, isMobile });
-    await replaceTextInCodeEditor({
-      browserName,
-      page,
-      isMobile,
-      text: 'var myName;',
-      containerId: 'editor-container-scriptjs'
-    });
-    await runChallengeTest(page, isMobile);
+    await expect(async () => {
+      await replaceTextInCodeEditor({
+        browserName,
+        page,
+        isMobile,
+        text: 'var myName;',
+        containerId: 'editor-container-scriptjs'
+      });
+      await runChallengeTest(page, isMobile);
+      await expect(closeButton).toBeVisible();
+    }).toPass();
     await closeButton.click();
 
     await expect(
