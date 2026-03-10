@@ -4968,13 +4968,6 @@
           "Test what you've learned about Node.js core modules with this quiz."
         ]
       },
-      "lecture-understanding-routing-in-express-js": {
-        "title": "Understanding Routing in ExpressJS",
-        "intro": [
-          "Understanding Routing in ExpressJS",
-          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
-        ]
-      },
       "lecture-introduction-to-npm": {
         "title": "Introduction to npm",
         "intro": [
@@ -5003,6 +4996,13 @@
         "title": "Understanding the REST API and Web Services",
         "intro": [
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
