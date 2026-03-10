@@ -1076,6 +1076,250 @@
       }
     }
   },
+  "introduction-to-bash": {
+    "title": "Introduction to Bash",
+    "summary": [
+      "Learn how to use the terminal and write Bash scripts to automate tasks and manage files and processes."
+    ],
+    "intro": [
+      "Bash is a Unix shell and command language that provides a powerful interface for interacting with your computer's operating system. It allows you to execute commands, automate tasks, and manage files and processes efficiently.",
+      "In this course, you'll learn the basics of Bash scripting, including how to navigate the file system, manipulate files and directories."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-the-command-line-and-working-with-bash": {
+        "title": "Understanding the Command Line and Working with Bash",
+        "intro": [
+          "Learn about the Command Line and Working with Bash in these lessons."
+        ]
+      },
+      "workshop-bash-boilerplate": {
+        "title": "Build a Boilerplate",
+        "intro": [
+          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
+        ]
+      },
+      "review-bash-commands": {
+        "title": "Bash Commands Review",
+        "intro": [
+          "Review the Bash Commands concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-commands": {
+        "title": "Bash Commands Quiz",
+        "intro": ["Test what you've learned bash commands with this quiz."]
+      }
+    }
+  },
+  "introduction-to-sql-and-postgresql": {
+    "title": "Introduction to SQL and PostgreSQL",
+    "summary": [
+      "Learn how to use SQL and PostgreSQL to create and manage relational databases."
+    ],
+    "intro": [
+      "SQL (Structured Query Language) is a programming language used to manage and manipulate relational databases. It allows you to create, read, update, and delete data in a database.",
+      "PostgreSQL is a powerful, open-source relational database management system that uses SQL as its query language. It provides a robust and scalable platform for storing and managing data."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-relational-databases": {
+        "title": "Working with Relational Databases",
+        "intro": [
+          "Learn how to work with Relational Databases in these lessons."
+        ]
+      },
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
+      },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Database",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
+      },
+      "review-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Review",
+        "intro": [
+          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Quiz",
+        "intro": [
+          "Test what you've learned about SQL and PostgreSQL with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-bash-scripting": {
+    "title": "Learn Bash Scripting",
+    "summary": [
+      "Learn how to write Bash scripts to automate tasks and manage files and processes."
+    ],
+    "intro": [
+      "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+      "In this course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-bash-scripting": {
+        "title": "Understanding Bash Scripting",
+        "intro": ["Learn about Bash Scripting in these lessons."]
+      },
+      "workshop-bash-five-programs": {
+        "title": "Build Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
+      },
+      "review-bash-scripting": {
+        "title": "Bash Scripting Review",
+        "intro": [
+          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-scripting": {
+        "title": "Bash Scripting Quiz",
+        "intro": ["Test what you've learned on bash scripting in this quiz."]
+      }
+    }
+  },
+  "learn-sql-and-bash": {
+    "title": "Learn SQL and Bash",
+    "summary": [
+      "Learn how to use SQL and Bash together to manage and manipulate relational databases."
+    ],
+    "intro": [
+      "SQL, or Structured Query Language, is the language for communicating with a relational database. Bash is a Unix shell and command language that provides a powerful interface for interacting with your computer's operating system.",
+      "In this course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-sql": {
+        "title": "Working With SQL",
+        "intro": [
+          "In these lessons, you will learn about SQL injection, normalization, and the N+1 problem."
+        ]
+      },
+      "workshop-sql-student-database-part-1": {
+        "title": "Build a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
+      },
+      "workshop-sql-student-database-part-2": {
+        "title": "Build a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
+      "workshop-kitty-ipsum-translator": {
+        "title": "Build a Kitty Ipsum Translator",
+        "intro": [
+          "There's more to Bash commands than you might think.",
+          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
+        ]
+      },
+      "workshop-bike-rental-shop": {
+        "title": "Build a Bike Rental Shop",
+        "intro": [
+          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
+      },
+      "review-bash-and-sql": {
+        "title": "Bash and SQL Review",
+        "intro": [
+          "Review the Bash and SQL concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-and-sql": {
+        "title": "Bash and SQL Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      }
+    }
+  },
+  "introduction-to-nano": {
+    "title": "Introduction to Nano",
+    "summary": [
+      "Learn how to use the Nano text editor to create and edit files in the terminal."
+    ],
+    "intro": [
+      "Nano is a simple, user-friendly text editor that runs in the terminal. It allows you to create and edit files without leaving the command line.",
+      "In this course, you'll learn how to use Nano to create and edit files, navigate through text, and perform basic editing operations."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-nano": {
+        "title": "Working With Nano",
+        "intro": ["Learn about Nano in this lesson."]
+      },
+      "workshop-castle": {
+        "title": "Build a Castle",
+        "intro": [
+          "Nano is a program that allows you to edit files right in the terminal.",
+          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
+        ]
+      }
+    }
+  },
+  "introduction-to-git-and-github": {
+    "title": "Introduction to Git and GitHub",
+    "summary": [
+      "Learn how to use Git and GitHub to manage and collaborate on software projects."
+    ],
+    "intro": [
+      "Git is a version control system that allows developers to track changes in their code and collaborate with others. GitHub is a web-based platform that provides hosting for Git repositories, making it easier for developers to share and collaborate on projects.",
+      "In this course, you'll learn the basics of Git and GitHub, including how to create repositories, commit changes, and collaborate with others on software projects."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-introduction-to-git-and-github": {
+        "title": "Introduction to Git and GitHub",
+        "intro": ["Learn how to work with Git and GitHub in these lessons."]
+      },
+      "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
+        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "intro": [
+          "Learn about code reviews, branching, deployment, and CI/CD in these lessons."
+        ]
+      },
+      "workshop-sql-reference-object": {
+        "title": "Build an SQL Reference Object",
+        "intro": [
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
+          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+        ]
+      },
+      "review-git": {
+        "title": "Git Review",
+        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+      },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned on Git with this quiz."]
+      }
+    }
+  },
   "learn-prompting-fundamentals": {
     "title": "Learn Prompting Fundamentals",
     "summary": [
@@ -3316,6 +3560,13 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "review-data-structures-js": {
+        "title": "Data Structures Review",
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
+        ]
+      },
       "quiz-data-structures-js": {
         "title": "Data Structures Quiz",
         "intro": [
@@ -3326,6 +3577,12 @@
         "title": "Working with Common Data Structures",
         "intro": [
           "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
+      "lab-implement-a-queue": {
+        "title": "Implement a Queue",
+        "intro": [
+          "In this lab, you will implement a queue data structure using functions."
         ]
       },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
