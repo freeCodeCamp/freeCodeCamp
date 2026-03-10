@@ -257,7 +257,7 @@ function buildBackendChallenge({
   url,
   challengeType
 }: BuildChallengeData): Promise<BuildResult> {
-  return {
+  return Promise.resolve({
     challengeType,
     build: '',
     sources: {
@@ -265,7 +265,7 @@ function buildBackendChallenge({
       editableContents: '',
       contents: url
     }
-  };
+  });
 }
 
 async function buildPythonChallenge({
