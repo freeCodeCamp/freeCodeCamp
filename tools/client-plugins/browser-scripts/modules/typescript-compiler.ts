@@ -16,9 +16,14 @@ export class Compiler {
     this.tsvfs = tsvfs;
   }
 
-  async setup(opts?: { useNodeModules: boolean }) {
+  async setup(opts?: { useNodeModules?: boolean; compilerOptions?: unknown }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
+
+    const parsedOptions = ts.convertCompilerOptionsFromJson(
+      opts?.compilerOptions ?? {},
+      '/'
+    );
 
     const compilerOptions: CompilerOptions = {
       target: ts.ScriptTarget.ES2024,
@@ -28,7 +33,8 @@ export class Compiler {
       // sync with TypeScript over time. It was last synced with TypeScript
       // 3.8.0-rc."
       jsx: ts.JsxEmit.Preserve, // Babel will handle JSX,
-      allowUmdGlobalAccess: true // Necessary because React is loaded via a UMD script.
+      allowUmdGlobalAccess: true, // Necessary because React is loaded via a UMD script.
+      ...parsedOptions.options
     };
 
     const fsMap = opts?.useNodeModules

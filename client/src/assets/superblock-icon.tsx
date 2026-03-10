@@ -88,7 +88,14 @@ const iconMap = {
   [SuperBlocks.PythonV9]: PythonIcon,
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
-  [SuperBlocks.FullStackDeveloperV9]: Code
+  [SuperBlocks.FullStackDeveloperV9]: Code,
+  [SuperBlocks.IntroductionToBash]: Code,
+  [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
+  [SuperBlocks.LearnBashScripting]: Code,
+  [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
+  [SuperBlocks.IntroductionToNano]: Code,
+  [SuperBlocks.IntroductionToGitAndGithub]: Code,
+  [SuperBlocks.LearnPromptingFundamentals]: Clipboard
 };
 
 type SuperBlockIconProps = {
