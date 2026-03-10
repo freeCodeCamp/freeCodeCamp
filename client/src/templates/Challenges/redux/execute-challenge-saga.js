@@ -318,7 +318,9 @@ export function* previewChallengeSaga(action) {
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
           const output = logs?.map(log => log.msg).join('\n');
-          yield put((flushLogs ? initConsole : updateConsole)(output));
+          if (output) {
+            yield put((flushLogs ? initConsole : updateConsole)(output));
+          }
         }
       }
     }
