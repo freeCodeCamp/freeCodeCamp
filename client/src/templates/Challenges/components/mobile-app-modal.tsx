@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMediaQuery } from 'react-responsive';
+import { useSelector } from 'react-redux';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import store from 'store';
 
-import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
+import { isProjectPreviewModalOpenSelector } from '../redux/selectors';
 
 // Superblocks that are available in the freeCodeCamp mobile app.
 // Only includes non-legacy public superblocks from orderedSuperBlockInfo
@@ -19,8 +18,6 @@ const mobileAvailableSuperBlocks = new Set<string>([
   SuperBlocks.A1Spanish,
   SuperBlocks.TheOdinProject
 ]);
-
-const STORE_KEY = 'hideMobileAppModal';
 
 const IOS_URL =
   'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200';
@@ -43,27 +40,31 @@ function MobileAppModal({
   superBlock
 }: MobileAppModalProps): JSX.Element | null {
   const { t } = useTranslation();
-  const isMobile = useMediaQuery({
-    query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
-  });
   const isAvailable = mobileAvailableSuperBlocks.has(superBlock);
-
-  const [show, setShow] = useState(!store.get(STORE_KEY));
-
-  if (!isMobile || !isAvailable) return null;
-
-  const dismiss = () => {
-    store.set(STORE_KEY, true);
-    setShow(false);
-  };
+  const isProjectPreviewOpen = useSelector<unknown, boolean>(
+    isProjectPreviewModalOpenSelector
+  );
 
   const os = detectOS();
+  const [dismissed, setDismissed] = useState(false);
+
+  useEffect(() => {
+    if (isProjectPreviewOpen) setDismissed(true);
+  }, [isProjectPreviewOpen]);
+
+  const dismiss = () => {
+    setDismissed(true);
+  };
+
   const storeUrl = os === 'ios' ? IOS_URL : ANDROID_URL;
   const storeName =
     os === 'ios' ? t('mobile-app-modal.ios') : t('mobile-app-modal.android');
 
+  if (os === 'other' || !isAvailable || isProjectPreviewOpen || dismissed)
+    return null;
+
   return (
-    <Modal onClose={dismiss} open={show} size='large'>
+    <Modal onClose={dismiss} open={true} size='large'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         <span style={{ fontWeight: 'bold' }}>
           {t('mobile-app-modal.heading')}
@@ -73,7 +74,7 @@ function MobileAppModal({
         <p>{t('mobile-app-modal.body')}</p>
         <Spacer size='s' />
         <Button block={true} href={storeUrl} target='_blank' onClick={dismiss}>
-          {os === 'other' ? t('mobile-app-modal.open-app') : storeName}
+          {storeName}
         </Button>
         <Spacer size='xs' />
       </Modal.Body>
