@@ -1,0 +1,11 @@
+{
+  "name": "What Departments Do",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-what-departments-do",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69b05eaaf10061ccbf5009db", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}
