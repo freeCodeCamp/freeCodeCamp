@@ -369,7 +369,14 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnPythonForBeginners]: null,
   [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: null,
   [SuperBlocks.LearnPromptingFundamentals]: null,
-  [SuperBlocks.LearnOOPWithPython]: null
+  [SuperBlocks.LearnOOPWithPython]: null,
+  [SuperBlocks.IntroductionToBash]: null,
+  [SuperBlocks.IntroductionToSQLAndPostgreSQL]: null,
+  [SuperBlocks.LearnBashScripting]: null,
+  [SuperBlocks.LearnSQLAndBash]: null,
+  [SuperBlocks.IntroductionToNano]: null,
+  [SuperBlocks.IntroductionToGitAndGithub]: null,
+  [SuperBlocks.LearnPromptingFundamentals]: null
 };
 
 export const certificationRequirements: Partial<

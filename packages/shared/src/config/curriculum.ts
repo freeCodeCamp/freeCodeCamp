@@ -68,7 +68,14 @@ export enum SuperBlocks {
   LearnPythonForBeginners = 'learn-python-for-beginners',
   IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures',
   LearnPromptingFundamentals = 'learn-prompting-fundamentals',
-  LearnOOPWithPython = 'learn-oop-with-python'
+  LearnOOPWithPython = 'learn-oop-with-python',
+  IntroductionToBash = 'introduction-to-bash',
+  IntroductionToSQLAndPostgreSQL = 'introduction-to-sql-and-postgresql',
+  LearnBashScripting = 'learn-bash-scripting',
+  LearnSQLAndBash = 'learn-sql-and-bash',
+  IntroductionToNano = 'introduction-to-nano',
+  IntroductionToGitAndGithub = 'introduction-to-git-and-github',
+  LearnPromptingFundamentals = 'learn-prompting-fundamentals'
 }
 
 export const languageSuperBlocks = [
@@ -222,7 +229,14 @@ export const superBlockStages: StageMap = {
     SuperBlocks.LearnPythonForBeginners,
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
     SuperBlocks.LearnPromptingFundamentals,
-    SuperBlocks.LearnOOPWithPython
+    SuperBlocks.LearnOOPWithPython,
+    SuperBlocks.IntroductionToBash,
+    SuperBlocks.IntroductionToSQLAndPostgreSQL,
+    SuperBlocks.LearnBashScripting,
+    SuperBlocks.LearnSQLAndBash,
+    SuperBlocks.IntroductionToNano,
+    SuperBlocks.IntroductionToGitAndGithub,
+    SuperBlocks.LearnPromptingFundamentals
   ]
 };
 

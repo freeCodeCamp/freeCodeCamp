@@ -231,7 +231,15 @@ export const superBlockNames = {
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
   'css-animations': SuperBlocks.CssAnimations,
   'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals,
-  'learn-oop-with-python': SuperBlocks.LearnOOPWithPython
+  'learn-oop-with-python': SuperBlocks.LearnOOPWithPython,
+  'introduction-to-bash': SuperBlocks.IntroductionToBash,
+  'introduction-to-sql-and-postgresql':
+    SuperBlocks.IntroductionToSQLAndPostgreSQL,
+  'learn-bash-scripting': SuperBlocks.LearnBashScripting,
+  'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
+  'introduction-to-nano': SuperBlocks.IntroductionToNano,
+  'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(
