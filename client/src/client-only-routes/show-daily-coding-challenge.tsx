@@ -68,6 +68,7 @@ function formatChallengeData({
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge',
       disableLoopProtectTests: true,
+      dashedName: `challenge-${challengeNumber}`,
 
       // props to satisfy the show classic component
       isFirstStep: false,
