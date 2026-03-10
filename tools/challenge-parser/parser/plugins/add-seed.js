@@ -67,6 +67,8 @@ function addSeeds() {
     };
 
     // process region markers - remove them from content and add them to data
+    let totalEditableRegionMarkers = 0;
+
     const challengeFiles = Object.values(seeds).map(data => {
       const seed = { ...data };
       const editRegionMarkers = findRegionMarkers(seed);
@@ -77,16 +79,18 @@ function addSeeds() {
           throw Error('Editable region must be non zero');
         }
         seed.editableRegionBoundaries = editRegionMarkers;
+        totalEditableRegionMarkers += editRegionMarkers.length;
       } else {
-        if (isWorkshop(file)) {
-          throw Error(
-            `Workshop challenge ${file.path} must have exactly 2 editable region markers`
-          );
-        }
         seed.editableRegionBoundaries = [];
       }
       return seed;
     });
+
+    if (isWorkshop(file) && totalEditableRegionMarkers !== 2) {
+      throw Error(
+        `Workshop challenge ${file.path} must have exactly 2 editable region markers`
+      );
+    }
 
     file.data = {
       ...file.data,
