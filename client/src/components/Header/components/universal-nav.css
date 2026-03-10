@@ -7,7 +7,6 @@
   height: var(--header-height);
   justify-content: space-between;
   padding: 0 5px;
-  forced-color-adjust: none;
 }
 
 @media (min-width: 401px) {
@@ -15,6 +14,7 @@
     padding: 0 15px;
   }
 }
+
 .universal-nav a {
   text-decoration: none;
 }
@@ -430,4 +430,46 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 #universal-nav button[aria-expanded='true'] + div {
   display: block;
+}
+
+/**
+ * High contrast mode support
+ *
+ * When the user enables a high contrast theme (e.g. Windows High Contrast),
+ * the browser overrides most colors. We add explicit borders and fills so
+ * navbar elements remain visually distinguishable.
+ */
+@media (forced-colors: active) {
+  .universal-nav {
+    border-bottom: 2px solid ButtonText;
+  }
+
+  .exposed-button-nav,
+  .lang-button-nav {
+    border: 1px solid ButtonText;
+  }
+
+  .nav-list {
+    border: 1px solid ButtonText;
+  }
+
+  .nav-link {
+    border-bottom: 1px solid ButtonText;
+  }
+
+  .nav-line {
+    border-top-color: ButtonText;
+  }
+
+  .universal-nav-logo svg {
+    fill: LinkText;
+  }
+
+  .avatar-container {
+    border-color: ButtonText;
+  }
+
+  .signup-btn {
+    border: 1px solid ButtonText;
+  }
 }
