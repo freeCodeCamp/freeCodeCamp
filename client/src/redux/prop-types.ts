@@ -193,12 +193,12 @@ type Nodule = ParagraphNodule | InteractiveEditorNodule;
 
 type ParagraphNodule = {
   type: 'paragraph';
-  data: string;
+  contents: string;
 };
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: {
+  files: {
     ext: Ext;
     name: string;
     contents: string;
@@ -323,6 +323,7 @@ export type DailyCodingChallengePageContext = {
     id: string;
     superBlock: 'daily-coding-challenge';
     disableLoopProtectTests: boolean;
+    dashedName: string;
 
     // props to satisfy the show classic component
     isFirstStep: boolean;
