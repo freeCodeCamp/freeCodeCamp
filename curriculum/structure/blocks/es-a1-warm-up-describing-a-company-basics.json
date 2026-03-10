@@ -5,7 +5,18 @@
   "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "696edb498cb4867eacc08ac3", "title": "Dialogue 1: I'm Tom" }
+    { "id": "69b0343f7dcadde4b4276fc3", "title": "Task 1" },
+    { "id": "69b0348953ae0c37beb2a3c0", "title": "Task 2" },
+    { "id": "69b034a7dad8974c775dace2", "title": "Task 3" },
+    { "id": "69b034c59a6a0ad502f7edc4", "title": "Task 4" },
+    { "id": "69b034e4fe7096a415898793", "title": "Task 5" },
+    { "id": "69b0352c04fb95e87aacc917", "title": "Task 6" },
+    { "id": "69b03553c97382470aeed16e", "title": "Task 7" },
+    { "id": "69b0357b054d78d52e5b5152", "title": "Task 8" },
+    { "id": "69b0359d82604ab6dd6addb5", "title": "Task 9" },
+    { "id": "69b035ce831a0b784c96f98f", "title": "Task 10" },
+    { "id": "69b035e760a85342613f392d", "title": "Task 11" },
+    { "id": "69b03622572ed2bbca53862f", "title": "Task 12" }
   ],
   "blockLabel": "warm-up"
 }
