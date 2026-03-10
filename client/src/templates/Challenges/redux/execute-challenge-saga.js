@@ -317,7 +317,8 @@ export function* previewChallengeSaga(action) {
           const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
-          yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
+          const output = logs?.map(log => log.msg).join('\n');
+          yield put((flushLogs ? initConsole : updateConsole)(output));
         }
       }
     }
@@ -390,10 +391,14 @@ function* previewProjectSolutionSaga({ payload }) {
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
-    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge, types.previewMounted],
-      previewChallengeSaga
+      [
+        types.updateFile,
+        types.challengeMounted,
+        types.resetChallenge,
+        types.previewMounted
+      ],
+      updatePreviewSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
