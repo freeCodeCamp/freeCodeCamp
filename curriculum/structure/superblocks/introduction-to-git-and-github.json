@@ -1,4 +1,5 @@
 {
+  "isUpcomingChange": true,
   "blocks": [
     "lecture-introduction-to-git-and-github",
     "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",

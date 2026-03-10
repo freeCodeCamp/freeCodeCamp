@@ -40,12 +40,15 @@ exports.createPages = async function createPages({
       allSuperBlockStructure {
         nodes {
           superBlock
+          isUpcomingChange
         }
       }
     }
   `);
 
-  const superBlocks = allSuperBlockStructure.nodes.map(node => node.superBlock);
+  const superBlocks = allSuperBlockStructure.nodes
+    .filter(node => process.env.SHOW_UPCOMING_CHANGES || !node.isUpcomingChange)
+    .map(node => node.superBlock);
   superBlocks.forEach(superBlock => {
     createSuperBlockIntroPages(createPage)({ superBlock });
   });

@@ -1,4 +1,4 @@
-### Type definitions saved at 2026-03-10T08:56:46.271Z ###
+### Type definitions saved at 2026-03-10T14:33:41.072Z ###
 
 enum RemoteFileFit {
   COVER
@@ -307,6 +307,7 @@ type SuperBlockStructure implements Node @derivedTypes @dontInfer {
   chapters: [SuperBlockStructureChapters]
   superBlock: String
   blocks: [String]
+  isUpcomingChange: Boolean
 }
 
 type SuperBlockStructureChapters @derivedTypes {
@@ -340,7 +341,6 @@ type ChallengeNodeChallenge @derivedTypes {
   tests: [ChallengeNodeChallengeTests]
   description: String
   translationPending: Boolean
-  sourceLocation: String
   block: String
   blockLabel: String
   blockLayout: String
@@ -373,14 +373,14 @@ type ChallengeNodeChallenge @derivedTypes {
   explanation: String
   fillInTheBlank: ChallengeNodeChallengeFillInTheBlank
   inputType: String
-  videoUrl: String
   url: String
+  videoUrl: String
   template: String
   transcript: String
   isExam: Boolean
   showSpeakingButton: Boolean
-  videoLocaleIds: ChallengeNodeChallengeVideoLocaleIds
   notes: String
+  videoLocaleIds: ChallengeNodeChallengeVideoLocaleIds
   prerequisites: [ChallengeNodeChallengePrerequisites]
   msTrophyId: String
 }
