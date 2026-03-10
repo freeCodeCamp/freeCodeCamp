@@ -371,7 +371,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       verticalScrollbarSize: getScrollbarWidth(),
       // this helps the scroll bar fit properly between the arrows,
       // but doesn't do anything for the arrows themselves
-      arrowSize: getScrollbarWidth()
+      arrowSize: getScrollbarWidth(),
+      alwaysConsumeMouseWheel: false
     },
     parameterHints: {
       enabled: false
