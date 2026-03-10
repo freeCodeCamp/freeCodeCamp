@@ -22,7 +22,7 @@ LLM → Chunking → Embedding → Vector Database
 
 ---
 
-Chunking --> Embedding --> Vector Database --> LLM
+Chunking → Embedding → Vector Database → LLM
 
 ---
 

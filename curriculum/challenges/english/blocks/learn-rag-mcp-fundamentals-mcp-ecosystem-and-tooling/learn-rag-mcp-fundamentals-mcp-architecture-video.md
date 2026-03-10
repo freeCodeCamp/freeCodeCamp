@@ -14,7 +14,7 @@ In this video, you will learn about the architecture of MCP.
 
 ## --text--
 
-What is the resources portion of a MCP server used for?
+What is the resources portion of an MCP server used for?
 
 ## --answers--
 
