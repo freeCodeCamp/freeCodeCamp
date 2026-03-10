@@ -4609,15 +4609,15 @@
       "code-editors": "Code Editors",
       "bash-fundamentals": "Bash Fundamentals",
       "sql-and-postgresql": "SQL and PostgreSQL",
+      "lab-celestial-bodies-database": "Build a Celestial Bodies Database",
       "bash-scripting": "Bash Scripting",
       "sql-and-bash": "SQL and Bash",
-      "git": "Git",
-      "review-relational-databases": "Relational Databases Review",
-      "lab-celestial-bodies-database": "Build a Celestial Bodies Database",
       "lab-world-cup-database": "Build a World Cup Database",
       "lab-salon-appointment-scheduler": "Build a Salon Appointment Scheduler",
+      "git": "Git",
       "lab-periodic-table-database": "Build a Periodic Table Database",
       "lab-number-guessing-game": "Build a Number Guessing Game",
+      "review-relational-databases": "Relational Databases Review",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "blocks": {
@@ -4663,12 +4663,6 @@
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
-      "lab-celestial-bodies-database": {
-        "title": "Build a Celestial Bodies Database",
-        "intro": [
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
-        ]
-      },
       "review-sql-and-postgresql": {
         "title": "SQL and PostgreSQL Review",
         "intro": [
@@ -4679,6 +4673,12 @@
         "title": "SQL and PostgreSQL Quiz",
         "intro": [
           "Test what you've learned about SQL and PostgreSQL with this quiz."
+        ]
+      },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Database",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
       },
       "lecture-understanding-bash-scripting": {
@@ -4722,12 +4722,6 @@
           "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
         ]
       },
-      "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
-        "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
-        ]
-      },
       "workshop-kitty-ipsum-translator": {
         "title": "Build a Kitty Ipsum Translator",
         "intro": [
@@ -4741,12 +4735,6 @@
           "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
         ]
       },
-      "lab-salon-appointment-scheduler": {
-        "title": "Build a Salon Appointment Scheduler",
-        "intro": [
-          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
-        ]
-      },
       "review-bash-and-sql": {
         "title": "Bash and SQL Review",
         "intro": [
@@ -4756,6 +4744,18 @@
       "quiz-bash-and-sql": {
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
       },
       "lecture-working-with-nano": {
         "title": "Working With Nano",
@@ -4785,6 +4785,14 @@
           "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
         ]
       },
+      "review-git": {
+        "title": "Git Review",
+        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+      },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned on Git with this quiz."]
+      },
       "lab-periodic-table-database": {
         "title": "Build a Periodic Table Database",
         "intro": [
@@ -4797,24 +4805,10 @@
           "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
         ]
       },
-      "review-git": {
-        "title": "Git Review",
-        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-git": {
-        "title": "Git Quiz",
-        "intro": ["Test what you've learned on Git with this quiz."]
-      },
       "review-relational-databases": {
         "title": "Relational Databases Review",
         "intro": [
           "Review relational databases concepts to prepare for the exam."
-        ]
-      },
-      "quiz-node-js-core-modules": {
-        "title": "NodeJS Core Modules Quiz",
-        "intro": [
-          "Test what you've learned about Node.js core modules with this quiz."
         ]
       },
       "exam-relational-databases-certification": {
