@@ -1076,6 +1076,36 @@
       }
     }
   },
+  "learn-prompting-fundamentals": {
+    "title": "Learn Prompting Fundamentals",
+    "summary": [
+      "Learn the fundamentals of writing good prompts in this video course."
+    ],
+    "intro": [
+      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
+        "title": "Foundations of AI & Language Models",
+        "intro": [
+          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
+        ]
+      },
+      "learn-prompting-fundamentals-core-concepts": {
+        "title": "Core Concepts",
+        "intro": [
+          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
+        ]
+      },
+      "learn-prompting-fundamentals-practical-application-and-best-practices": {
+        "title": "Practical Application & Best Practices",
+        "intro": [
+          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Seguridad de la Información",
     "intro": [
@@ -3300,6 +3330,18 @@
           "Pon a prueba tus conocimientos de recursión con este cuestionario."
         ]
       },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
+        ]
+      },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introducción a los algoritmos comunes de búsqueda y ordenamiento.",
         "intro": [
@@ -3341,6 +3383,30 @@
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "lab-n-queens-problem-js": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "lecture-understanding-dynamic-programming-js": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "review-dynamic-programming-js": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
+        ]
+      },
+      "quiz-dynamic-programming-js": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in JavaScript with this quiz."
         ]
       },
       "lecture-understanding-functional-programming": {
@@ -3430,7 +3496,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front-End Development Libraries Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto. Recomendamos completar los cursos disponibles a continuación para prepararte para el examen de certificación una vez que sea lanzado.",
     "intro": [
       "Este curso te enseña las bibliotecas que los desarrolladores usan para construir páginas web: React, TypeScript, y más.",
       "To earn your Front-End Development Libraries Certification:",
@@ -3739,6 +3804,12 @@
         "title": "Introducción a la visualización de datos",
         "intro": [
           "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4081,7 +4152,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Construye un calculador de descuentos.",
+        "title": "Build an Apply Discount Function",
         "intro": [
           "En este laboratorio, practicarás conceptos básicos de Python construyendo un calculador para aplicar un descuento a un precio."
         ]
@@ -4539,7 +4610,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back-End Development and APIs Certification",
-    "note": "Esta certificación está actualmente en desarrollo y estará disponible pronto.",
     "intro": [
       "This course teaches you the fundamentals of back-end development and APIs.",
       "To earn your Back-End Development and APIs Certification:",
@@ -4695,6 +4765,12 @@
           "Aprende los fundamentos de cómo funciona la comunicación web a través del modelo de solicitud-respuesta HTTP, explora diferentes tipos de recursos web y respuestas, y comprende cómo los formularios manejan el envío de datos utilizando varios métodos HTTP."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introducción a npm",
         "intro": [
@@ -4717,7 +4793,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
@@ -4837,18 +4912,6 @@
       "es-a1-module-describing-people-at-work": "Describir personas en el trabajo."
     },
     "module-intros": {
-      "es-a1-module-sharing-your-personal-details": {
-        "note": "Disponible en 2026",
-        "intro": [
-          "En este módulo, practicarás la comprensión de conversaciones cortas que solicitan datos personales como nombre, información de contacto, nacionalidad y edad."
-        ]
-      },
-      "es-a1-module-numbers-30-to-100": {
-        "note": "Próximamente en 2026.",
-        "intro": [
-          "En este módulo, aprenderás cómo leer, escribir y pronunciar números del 30 al 100."
-        ]
-      },
       "es-a1-module-describing-a-company": {
         "note": "Próximamente en 2026.",
         "intro": [
@@ -5210,6 +5273,13 @@
         "title": "Trabajar con Elementos de Audio y Video",
         "intro": [
           "En estas conferencias, aprenderás a trabajar con los elementos <code>audio</code> y <code>video</code>."
+        ]
+      },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
         ]
       },
       "workshop-html-video-player": {
@@ -5813,6 +5883,12 @@
         "title": "Construir una Galería de Fotos Flexbox",
         "intro": [
           "En este taller, utilizarás Flexbox para crear una página web de galería de fotos responsiva."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {

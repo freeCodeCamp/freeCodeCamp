@@ -65,7 +65,8 @@ const schema = Joi.object()
       'Euler',
       'Rosetta',
       'Chinese Curriculum',
-      'Spanish Curriculum'
+      'Spanish Curriculum',
+      'General'
     ).required()
   })
   // this makes sure there is no unknown key in the object
