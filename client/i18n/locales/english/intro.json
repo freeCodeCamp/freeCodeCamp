@@ -4946,12 +4946,6 @@
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
       },
-      "review-node-js-core-modules": {
-        "title": "Node JS Core Modules Review",
-        "intro": [
-          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
-        ]
-      },
       "review-node-js-intro": {
         "title": "NodeJS Intro Review",
         "intro": [
@@ -4966,6 +4960,30 @@
         "title": "Working with Node Core Modules",
         "intro": [
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-node-js-core-modules": {
+        "title": "NodeJS Core Modules Quiz",
+        "intro": [
+          "Test what you've learned about Node.js core modules with this quiz."
+        ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
@@ -4984,18 +5002,6 @@
         "title": "Understanding the REST API and Web Services",
         "intro": [
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
-        ]
-      },
-      "lecture-introduction-to-npm": {
-        "title": "Introduction to npm",
-        "intro": [
-          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
-        ]
-      },
-      "lecture-working-with-npm-scripts": {
-        "title": "Working with npm Scripts",
-        "intro": [
-          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
