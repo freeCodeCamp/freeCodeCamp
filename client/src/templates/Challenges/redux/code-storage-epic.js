@@ -71,6 +71,23 @@ function isFilesAllPoly(challengeFiles) {
   }
 }
 
+function areEditableRegionBoundariesEqual(first = [], second = []) {
+  if (first.length !== second.length) return false;
+  return first.every((value, index) => value === second[index]);
+}
+
+function hasFileChanged(existingFile, nextFile) {
+  if (!existingFile) return true;
+
+  return (
+    existingFile.contents !== nextFile.contents ||
+    !areEditableRegionBoundariesEqual(
+      existingFile.editableRegionBoundaries || [],
+      nextFile.editableRegionBoundaries || []
+    )
+  );
+}
+
 function clearCodeEpic(action$, state$) {
   return action$.pipe(
     ofType(appTypes.submitComplete, actionTypes.resetChallenge),
@@ -228,7 +245,20 @@ function loadCodeEpic(action$, state$) {
       if (finalFiles) {
         // update the contents, rather than replacing the entire file, so that
         // we do not lose the seed values.
-        return of(...finalFiles.map(file => updateFile(file)));
+        // Skip unchanged files so we do not trigger redundant preview/code runs.
+        const filesNeedingUpdate = finalFiles.filter(nextFile => {
+          const existingFile = challengeFiles.find(
+            challengeFile => challengeFile.fileKey === nextFile.fileKey
+          );
+
+          return hasFileChanged(existingFile, nextFile);
+        });
+
+        if (filesNeedingUpdate.length > 0) {
+          return of(...filesNeedingUpdate.map(file => updateFile(file)));
+        }
+
+        return of(noStoredCodeFound());
       }
       return of(noStoredCodeFound());
     })
