@@ -558,7 +558,7 @@ function ShowClassic({
           challengeId={id}
           challengeBlock={block}
           superBlock={superBlock}
-        ></SourceModal>
+        />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal
           saveSubmissionToDB={saveSubmissionToDB}

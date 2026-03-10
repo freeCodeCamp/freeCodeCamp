@@ -8,7 +8,7 @@ describe('generateGitHubLink', () => {
     vi.doMock('../../../../config/env.json', () => ({
       default: {
         curriculumLocale: 'english',
-        githubLocation: 'https://github.com/freeCodeCamp/'
+        githubLocation: 'https://github.com/freeCodeCamp'
       }
     }));
     const { generateGithubLink } = await import('./source-modal');
@@ -26,7 +26,7 @@ describe('generateGitHubLink', () => {
     vi.doMock('../../../../config/env.json', () => ({
       default: {
         curriculumLocale: 'espanol',
-        githubLocation: 'https://github.com/freeCodeCamp/'
+        githubLocation: 'https://github.com/freeCodeCamp'
       }
     }));
     const { generateGithubLink } = await import('./source-modal');

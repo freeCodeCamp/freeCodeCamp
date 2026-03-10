@@ -32,23 +32,19 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 export const generateGithubLink = (challengeId: string, block: string) => {
-  const challengesFolder = ['blob', 'main', 'curriculum', 'challenges'].join(
-    '/'
-  );
-  const blocksFolder = 'blocks';
   const repository =
-    curriculumLocale === 'english' ? 'freeCodeCamp' : 'i18n-curriculum';
+    curriculumLocale === 'english' ? '/freeCodeCamp' : '/i18n-curriculum';
   const gitURL = new URL(githubLocation);
 
   gitURL.pathname =
     gitURL.pathname +
     [
       repository,
-      challengesFolder,
+      'blob/main/curriculum/challenges',
       curriculumLocale,
-      blocksFolder,
+      'blocks',
       block,
-      challengeId + '.md'
+      `${challengeId}.md`
     ].join('/');
   return gitURL.toString();
 };
