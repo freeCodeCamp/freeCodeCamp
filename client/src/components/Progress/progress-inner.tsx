@@ -7,6 +7,7 @@ interface ProgressInnerProps {
   completedPercent: number;
   title: string;
   meta: string;
+  minified?: boolean;
 }
 
 const easing = BezierEasing(0.2, 0.5, 0.4, 1);
@@ -36,7 +37,8 @@ function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
 function ProgressInner({
   completedPercent,
   title,
-  meta
+  meta,
+  minified
 }: ProgressInnerProps): JSX.Element {
   const [shownPercent, setShownPercent] = useState(0);
   const [lastShownPercent, setLastShownPercent] = useState(0);
@@ -93,6 +95,24 @@ function ProgressInner({
       }
     };
   }, []);
+
+  if (minified) {
+    return (
+      <>
+        <div className='progress-header'>
+          <div>{title}</div>
+          <div>{meta}</div>
+        </div>
+        <div
+          className='progress-bar-wrap'
+          aria-hidden='true'
+          ref={progressInnerWrap}
+        >
+          <ProgressBar now={shownPercent} />
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

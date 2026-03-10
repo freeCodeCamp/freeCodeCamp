@@ -1276,6 +1276,7 @@
       "foundational-c-sharp-with-microsoft-cert": "Сертифікація «Основи C# з Microsoft»",
       "learn-python-for-beginners": "Python для початківців",
       "introduction-to-algorithms-and-data-structures": "Вступ до алгоритмів та структур даних",
+      "learn-prompting-fundamentals": "Знайомство з промптами",
       "a2-english-for-developers": "Англійська мова A2 для розробників",
       "a2-english-for-developers-cert": "Сертифікація «Англійська мова A2 для розробників (бета)»",
       "b1-english-for-developers": "Англійська мова B1 для розробників",
@@ -1463,7 +1464,8 @@
         "api": "API",
         "information-security": "Інформаційна безпека",
         "computer-fundamentals": "Основи комп’ютера",
-        "computer-science": "Комп’ютерні науки"
+        "computer-science": "Комп’ютерні науки",
+        "ai": "ШІ"
       }
     }
   }

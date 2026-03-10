@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import { uniq } from 'lodash';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 import { parseCurriculumStructure } from '@freecodecamp/curriculum/build-curriculum';
 import { parseMDSync } from '../challenge-parser/parser/index.js';
 import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
@@ -23,7 +24,7 @@ interface Options {
   projectPath?: string;
   challengeSeeds?: ChallengeSeed[];
   isFirstChallenge?: boolean;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
 }
 
 interface QuizOptions {
@@ -32,7 +33,7 @@ interface QuizOptions {
   title: string;
   dashedName: string;
   questionCount: number;
-  challengeLang?: string;
+  challengeLang?: ChallengeLang;
 }
 
 export async function getAllBlocks() {
@@ -108,7 +109,7 @@ const createDialogueFile = ({
 }: {
   challengeId: ObjectId;
   projectPath: string;
-  challengeLang: string;
+  challengeLang: ChallengeLang;
 }): ObjectId => {
   const challengeType = challengeTypes.dialogue.toString();
   const template = getTemplate(challengeType);
@@ -274,7 +275,7 @@ const updateTaskMarkdownFiles = (): void => {
 type Challenge = {
   challengeType: number;
   challengeFiles: ChallengeSeed[];
-  lang?: string;
+  lang?: ChallengeLang;
 };
 
 const getChallenge = (challengeId: string): Challenge => {

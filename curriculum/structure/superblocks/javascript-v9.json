@@ -300,6 +300,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures-js",
+            "lab-implement-a-queue",
+            "review-data-structures-js",
             "quiz-data-structures-js"
           ]
         },
@@ -319,13 +321,15 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
-            "lab-adjacency-list-to-matrix-converter-js"
+            "lab-adjacency-list-to-matrix-converter-js",
+            "lab-n-queens-problem-js"
           ]
         },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
           "blocks": [
+            "lecture-understanding-dynamic-programming-js",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]

@@ -11,18 +11,21 @@ test.describe('Tool Panel', () => {
     page,
     isMobile
   }) => {
-    await page
-      .getByRole('button', {
-        name: 'Run',
-        exact: false
-      })
-      .click();
-
     if (isMobile) {
+      await page
+        .getByRole('button', {
+          name: 'Run',
+          exact: false
+        })
+        .click();
       await page
         .getByRole('tab', {
           name: 'Console'
         })
+        .click();
+    } else {
+      await page
+        .getByRole('button', { name: translations.buttons['check-code'] })
         .click();
     }
 
@@ -41,7 +44,7 @@ test.describe('Tool Panel', () => {
         .click();
     } else {
       await page
-        .getByRole('button', { name: translations.buttons['reset-lesson'] })
+        .getByRole('button', { name: translations.buttons.reset })
         .click();
     }
     await expect(
@@ -50,8 +53,10 @@ test.describe('Tool Panel', () => {
   });
 
   test('should display list with expected links after clicking "Get Help"', async ({
-    page
+    page,
+    isMobile
   }) => {
+    test.skip(!isMobile, 'Help dropdown only available on mobile');
     const expectedHelpLinks = [
       `${translations.buttons['get-hint']} , ${translations.aria['opens-new-window']}`,
       translations.buttons['watch-video'],
