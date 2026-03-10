@@ -3560,6 +3560,12 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "lab-implement-a-stack": {
+        "title": "Implement a Stack",
+        "intro": [
+          "In this lab, you will implement a stack data structure using functions."
+        ]
+      },
       "lab-implement-a-queue": {
         "title": "Implement a Queue",
         "intro": [
@@ -4426,12 +4432,6 @@
         "title": "Build a Linked List",
         "intro": [
           "In this workshop, you'll practice working with data structures by building a linked list."
-        ]
-      },
-      "lab-implement-a-stack": {
-        "title": "Implement a Stack",
-        "intro": [
-          "In this lab, you will implement a stack data structure using functions."
         ]
       },
       "review-data-structures": {
