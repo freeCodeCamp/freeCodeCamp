@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   padding: 12px;
   position: absolute;
   bottom: 100%;
@@ -71,7 +72,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
+  border: 1px solid var(--quaternary-color);
 }
 
 .independent-lower-jaw .action-row-right button {
@@ -139,7 +140,8 @@
 
 .share-button-wrapper {
   display: flex;
-  justify-content: start;
+  justify-content: end;
+  margin-top: 10px;
   gap: 10px;
 }
 
@@ -187,4 +189,9 @@
   100% {
     opacity: 0.5;
   }
+}
+
+.share-button-wrapper a {
+  border: 1px solid var(--quaternary-color);
+  padding: 2px 6px;
 }

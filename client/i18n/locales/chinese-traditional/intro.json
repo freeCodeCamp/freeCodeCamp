@@ -155,7 +155,7 @@
         "title": "通過創建鋼琴學習響應式 Web 設計",
         "intro": [
           "響應式設計使得你的網頁適應不同屏幕尺寸的顯示。",
-          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "在本課程中，你將使用 CSS 和響應式設計來編寫構建鋼琴。你還將進一步瞭解媒體查詢和僞選擇器的相關知識。"
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Legacy JavaScript Algorithms and Data Structures V7",
+    "title": "舊版 JavaScript 算法與數據結構 V7",
     "intro": [
       "HTML 和 CSS 控制頁面的內容和樣式，JavaScript 則用於頁面交互。在 JavaScript 算法和數據結構認證中，你將學習 JavaScript 的基礎知識，包括變量、 數組、 對象、 循環和函數。",
       "打好基礎之後，你將會通過創建算法來操作字符串、進行階乘運算甚至計算國際空間站的軌道來應用這些知識。",
@@ -300,7 +300,7 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "Legacy JavaScript Algorithms and Data Structures V8",
+    "title": "舊版 JavaScript 算法與數據結構 V8",
     "intro": [
       "開發者使用 HTML 和 CSS 來控制頁面的內容與樣式。他們還使用 JavaScript 來讓頁面可以交互。",
       "在這個 JavaScript 算法與數據結構認證中，你將學習如變量、數組、對象、循環、函數、DOM 等 JavaScript 的基礎知識。",
@@ -309,10 +309,10 @@
     "note": "注意：一些瀏覽器擴展程序，如廣告攔截器和腳本攔截器可能會干擾測試。如果你遇到問題，我們建議你在學習時禁止能更改或攔截頁面內容的擴展程序。",
     "blocks": {
       "build-an-rpg-creature-search-app-project": {
-        "title": "Build an RPG Creature Search App Project",
+        "title": "創建一個 RPG 生物搜索應用程序項目",
         "intro": [
-          "This is one of the required projects to earn your certification.",
-          "For this project, you will build an RPG creature search app."
+          "這是獲得該認證所必須完成的一個項目。",
+          "對於這個項目，你需要開發一款 RPG 生物搜索應用程序。"
         ]
       },
       "build-a-cash-register-project": {
@@ -369,7 +369,7 @@
         "title": "通過創建足球隊卡學習現代 JavaScript 方法",
         "intro": [
           "構建 Web 應用程序的一個常見方面是：處理數據集，然後將信息輸出到屏幕上。在這個運動隊卡片項目中，你將學習如何使用 DOM 操作、對象解構、事件處理和數據過濾。",
-          "This project will cover concepts like, default parameters, <code>Object.freeze()</code>, and reinforce your knowledge of the <code>switch</code> statement and <code>map()</code> method."
+          "本項目涵蓋一些概念，如默認參數、<code>Object.freeze()</code>，並鞏固你對 <code>switch</code> 語句和 <code>map()</code> 方法的掌握。"
         ]
       },
       "learn-advanced-array-methods-by-building-a-statistics-calculator": {
@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front-End Development Libraries V8",
+    "title": "前端開發庫 V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front-end libraries in the industry.",
-      "In the Front-End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "你已經熟悉了 HTML、CSS 和 JavaScript。現在學習行業中一些流行的前端庫來提升你的技能吧。",
+      "在前端開發庫認證中，你將學習如何使用 Bootstrap 快速設置網站樣式，以及如何在 CSS 樣式中添加邏輯，並使用 Sass 對其進行擴展。",
       "稍後，你將建立一個購物車和其他應用程序，學習如何使用 React 和 Redux 創建強大的單頁應用程序（SPAs）。"
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front-end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap 是一個用於設計響應式網頁和應用程序的前端框架。它對 Web 開發採用移動優先的方法，具有預定義的 CSS 樣式和 class，以及一些 JavaScript 功能。",
           "在這個課程中，你將學習如何使用 Bootstrap 來構建響應式網頁，並使用它的 class 來設置按鈕、圖像、表格、導航和其他常見元素的樣式。"
         ]
       },
@@ -553,7 +553,7 @@
     }
   },
   "data-visualization": {
-    "title": "Data Visualization V8",
+    "title": "數據可視化 V8",
     "intro": [
       "數據無處不在。但是，如果沒有上下文，數據就沒有多大意義。",
       "在數據可視化認證中，你會用 D3.js 庫來創建表格、圖表和地圖，以展示不同的數據。",
@@ -588,7 +588,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database V8",
+    "title": "關係數據庫 V8",
     "intro": [
       "對於這些課程，你將使用真正的開發人員工具和軟件，包括 VS Code、PostgreSQL 和 Linux/Unix 命令行來完成交互式教程和構建項目。",
       "這些課程從基本的 Bash 命令開始。使用終端，你將學習從導航和操作文件系統、在 Bash 中編寫腳本到高級用法的所有內容。",
@@ -614,7 +614,7 @@
         "title": "元素週期表數據庫",
         "intro": [
           "這是你獲得認證的必做項目。",
-          "For this project, you will create a Bash script to get information about chemical elements from a periodic table database."
+          "對於此項目，你將創建一個 bash 腳本，以獲取週期表數據庫中有關化學元素的信息。"
         ]
       },
       "build-a-salon-appointment-scheduler-project": {
@@ -673,10 +673,10 @@
         ]
       },
       "learn-relational-databases-by-building-a-database-of-video-game-characters": {
-        "title": "Learn Relational Databases by Building a Database of Video Game Characters",
+        "title": "通過創建一個電子遊戲角色數據庫來學習關係型數據庫",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson course, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "關係型數據庫將數據組織成相互關聯的表格，並通過各種關係將這些表格連接起來。",
+          "在這門共 165 節課的課程中，你將通過創建一個電子遊戲角色的 PostgreSQL 數據庫，學習關係型數據庫的基礎知識。"
         ]
       },
       "learn-sql-by-building-a-student-database-part-1": {
@@ -772,9 +772,9 @@
     }
   },
   "scientific-computing-with-python": {
-    "title": "Scientific Computing with Python",
+    "title": "Python 科學計算",
     "intro": [
-      "The Scientific Computing with Python curriculum will equip you with the skills to analyze and manipulate data using Python, a powerful and versatile programming language. You'll learn key concepts like data structures, algorithm, Object Oriented Programming, and how to perform complex calculations using a variety of tools.",
+      "Python 科學計算課程將幫助你掌握使用 Python 進行數據分析和數據處理的技能。Python 是一種強大且功能豐富的編程語言。你將學習諸如數據結構、算法、面向對象編程等關鍵概念，並學會如何使用各種工具進行復雜的計算。",
       "這個綜合課程將指導你學習科學計算的基礎知識，包括數據結構和算法。"
     ],
     "note": "",
@@ -863,43 +863,39 @@
         "intro": ["這是你要獲得認證必須做的項目之一。"]
       },
       "build-a-polygon-area-calculator-project": {
-        "title": "Build a Polygon Area Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "創建多邊形面積計算器項目",
+        "intro": ["這是你要獲得認證必須做的項目之一。"]
       },
       "build-a-probability-calculator-project": {
-        "title": "Build a Probability Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
+        "title": "創建概率計算器項目",
+        "intro": ["這是你要獲得認證必須做的項目之一。"]
       },
       "learn-interfaces-by-building-an-equation-solver": {
-        "title": "Learn Interfaces by Building an Equation Solver",
+        "title": "通過創建方程求解器學習接口",
         "intro": [
-          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
-          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+          "抽象類使你能夠定義正式的接口——這些對象作爲類的藍圖。",
+          "在這個項目中，你將用 Python 構建一個簡單的方程求解程序，由此學習如何實現一個接口。"
         ]
       },
       "learn-special-methods-by-building-a-vector-space": {
-        "title": "Learn Special Methods by Building a Vector Space",
+        "title": "通過創建向量空間學習特殊方法",
         "intro": [
-          "Python special methods are called in response to specific operations and enable you to customize the behavior of your objects in a detailed and effective way.",
-          "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
+          "Python 特殊方法會在響應特定操作時被調用，使你能夠以詳細有效的方式自定義對象的行爲。",
+          "在這個項目中，你將通過構建一個向量空間來探索一些最常見的特殊方法，同時學習關於向量的知識。"
         ]
       },
       "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
-        "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
+        "title": "通過創建拋射物軌跡計算器學習封裝",
         "intro": [
-          "Encapsulation is a core OOP principle based on writing code that limits direct access to data.",
-          "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
+          "封裝是面向對象編程（OOP）的核心原則，基於該原則編寫的代碼會限制對數據的直接訪問。",
+          "在本項目中，你將探索與封裝相關的新概念，如 getters、setters 和名字修飾，並將這些概念與已經學到的知識結合起來，創建一個計算拋射物軌跡的程序。"
         ]
       },
       "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
-        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "title": "通過尋找一個數的平方根學習二分法",
         "intro": [
-          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
-          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
+          "數值方法用於估計數學問題的解，這些解題通常難以或不可能用解析方法得到。",
+          "在本項目中，你將探索二分法的數值方法，通過迭代縮小可能包含平方根的值範圍來找到一個數的平方根。"
         ]
       }
     }
@@ -936,62 +932,60 @@
     }
   },
   "learn-python-for-beginners": {
-    "title": "Learn Python for Beginners",
+    "title": "學習 Python 基礎",
     "summary": [
-      "Learn the fundamentals of Python programming from the ground up by practicing foundational concepts and building small projects."
+      "通過練習基礎概念和構建小項目，從頭學習 Python 編程的基礎知識。"
     ],
     "intro": [
-      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
-      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
+      "Python 是當今最流行的編程語言之一。它易於學習、可讀性強且用途廣泛。",
+      "在這門綜合課程中，你將從頭學習 Python 編程基礎。你將從變量和數據類型等基礎概念開始，逐步深入學習控制流和函數，然後通過構建項目來練習所學內容。"
     ],
     "note": "",
     "blocks": {
       "learn-python-setup-first-steps": {
-        "title": "Setup & First Steps",
+        "title": "設置與第一步",
         "intro": [
-          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+          "在這些視頻中，知名編程講師 Mike Dane 將向你介紹 Python 並展示如何設置本地環境。"
         ]
       },
       "learn-python-core-primitives": {
-        "title": "Core Primitives: Variables, Types, Basic I/O",
+        "title": "核心概念：變量、類型、基本 I/O",
         "intro": [
-          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
+          "在這些視頻中，你將學習變量、數據類型、字符串、數字以及從用戶獲取輸入。"
         ]
       },
       "learn-python-small-projects-basics": {
-        "title": "Small Projects: Using Basics",
+        "title": "小項目：使用基礎知識",
         "intro": [
-          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
+          "在這些視頻中，你將通過構建一個基礎計算器應用和填詞遊戲來練習到目前爲止所學的內容。"
         ]
       },
       "learn-python-data-structures": {
-        "title": "Data Structures: Lists and Tuples",
-        "intro": [
-          "In these videos, you will learn about lists, tuples and common operations."
-        ]
+        "title": "數據結構：列表與元組",
+        "intro": ["在這些視頻中，你將學習列表、元組及常見操作。"]
       },
       "learn-python-control-flow-functions": {
-        "title": "Control Flow and Functions",
+        "title": "控制流與函數",
         "intro": [
-          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
+          "在這些視頻中，你將學習如何使用 if 語句控制程序流程。你還將學習如何使用函數編寫可重用代碼。"
         ]
       },
       "learn-python-projects-loops": {
-        "title": "Dictionaries and Loops",
+        "title": "字典與循環",
         "intro": [
-          "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
+          "在這些視頻中，你將學習如何使用字典和各種循環，包括 while 和 for 循環。"
         ]
       },
       "learn-python-practical-errors-files": {
-        "title": "Practical Python: Errors, Files and Modules",
+        "title": "實用 Python：錯誤、文件與模塊",
         "intro": [
-          "In these videos, you will learn how to handle errors gracefully, read and write to files, and organize your code with modules and external packages."
+          "在這些視頻中，你將學習如何優雅地處理錯誤、讀寫文件，並使用模塊和外部包組織代碼。"
         ]
       },
       "learn-python-oop": {
-        "title": "Object Oriented Programming",
+        "title": "面向對象編程",
         "intro": [
-          "In these videos, you will learn about object-oriented programming by creating classes and objects. You will practice these skills by building a multiple choice quiz application."
+          "在這些視頻中，你將通過創建類和對象學習面向對象編程。你將通過構建一個多項選擇測驗應用來練習這些技能。"
         ]
       }
     }
@@ -1070,6 +1064,36 @@
       }
     }
   },
+  "learn-prompting-fundamentals": {
+    "title": "Learn Prompting Fundamentals",
+    "summary": [
+      "Learn the fundamentals of writing good prompts in this video course."
+    ],
+    "intro": [
+      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
+        "title": "Foundations of AI & Language Models",
+        "intro": [
+          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
+        ]
+      },
+      "learn-prompting-fundamentals-core-concepts": {
+        "title": "Core Concepts",
+        "intro": [
+          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
+        ]
+      },
+      "learn-prompting-fundamentals-practical-application-and-best-practices": {
+        "title": "Practical Application & Best Practices",
+        "intro": [
+          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "信息安全",
     "intro": [
@@ -1134,7 +1158,7 @@
     }
   },
   "college-algebra-with-python": {
-    "title": "Python 和大學數學",
+    "title": "Python 大學數學",
     "intro": [
       "本課程設計爲一個學期的大學課程。它包含教學視頻、用於交互式跟進的 Google Colaboratory 筆記本、任務和具有挑戰性的項目。",
       "當你按順序學習本課程的每個部分時，你將全面瞭解代數以及如何編寫 Python 代碼來解決代數問題。",
@@ -1249,7 +1273,7 @@
         ]
       },
       "college-algebra-with-python-conclusion": {
-        "title": "Python 和大學數學：總結",
+        "title": "Python 大學數學：總結",
         "intro": [
           "這將是本課程的最後一個單元。讓我們看看如何能夠將你的數學和 Python 知識與外部數據連接起來。"
         ]
@@ -1283,8 +1307,8 @@
     "title": "面試攻略",
     "intro": [
       "如果你正在尋找免費的編程訓練來幫你爲下一個工作面試做準備，我們已經幫你準備好了。",
-      "This section contains dozens of coding challenges that test your knowledge of algorithms, data structures, and mathematics. It also has a number of take-home projects you can use to strengthen your skills, or add to your portfolio.",
-      "This work incorporates material from <a href=\"https://www.wikipedia.org/\" target=\"_blank\">Wikipedia</a>, which is licensed under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License 4.0</a>. The original content might have been modified and adapted. For the unaltered version and additional details, see the original page on <a href=\"https://www.wikipedia.org/\" target\"_blank\">Wikipedia</a>."
+      "這個部分包含數十個編碼挑戰，旨在檢驗你對算法、數據結構和數學知識的掌握程度。同時還提供多個可帶回家完成的項目，可用於強化你的技能或豐富個人作品集。",
+      "這個項目包含了來自 <a href=\"https://www.wikipedia.org/\" target=\"_blank\">Wikipedia</a> 網站的材料，這些材料採用 <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License 4.0</a> 許可。原始內容可能已經被修改和調整。要查看原始版本和更多信息，請訪問 <a href=\"https://www.wikipedia.org/\" target\"_blank\">Wikipedia</a> 上的原始頁面。"
     ],
     "blocks": {
       "algorithms": {
@@ -1292,7 +1316,7 @@
         "intro": [
           "這些免費的編程練習將教你一些現實生活中可能會遇到的常見算法。它們是提高你的邏輯和編程技能的絕佳機會。",
           "這些算法經常在工作面試中被用來測試候選人的技能。我們將爲你提供簡潔明瞭的解釋，說明不同算法是如何運行的，以便你爲每道算法題目編寫解決方案。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       },
       "data-structures": {
@@ -1300,7 +1324,7 @@
         "intro": [
           "這些免費的編程課程旨在幫助你處理可能你還不太熟悉的大型的、複雜的數據結構。",
           "通過下面的課程，你將學習不同類型的數據結構，並通過算法來增強你對它們的理解。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       },
       "take-home-projects": {
@@ -1313,14 +1337,14 @@
     }
   },
   "the-odin-project": {
-    "title": "The Odin Project - freeCodeCamp Remix",
+    "title": "Odin 項目 - freeCodeCamp Remix",
     "intro": [
       "The Odin Project 由開發人員 Erik Trautman 創建於 2013 年。多年來，開源社區不斷維護和擴展該項目。",
       "freeCodeCamp 在開源課程的基礎上進行了擴展，使其可以在瀏覽器中交互運行，並通過測試來評估你的代碼，確保你理解了關鍵概念。",
       "如果你想體驗在本地計算機上配置運行所有 The Odin Project，可以在 <a href='https://www.theodinproject.com/' target='_blank' rel='noopener noreferrer nofollow'>The Odin Project 網站</a> 上查看原始的 Odin Project。衷心感謝 The Odin Project 社區持續爲世界各地的開發人員維護這一寶貴的學習資源。",
-      "This course is unofficial, and not endorsed by The Odin Project. Changes to The Odin Project curriculum content have been made, and all instructional material for this course is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a>",
+      "本課程爲非官方課程，未經 Odin 項目認可。Odin 項目課程內容已作修改，本課程所有教學材料均遵循 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-SA-NC 4.0</a> 許可",
       "<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed' target='_blank' rel='noopener noreferrer nofollow'>&copy; The Odin Project</a>",
-      "This course includes content from <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a>, which is licensed under <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a>."
+      "本課程包含來自 <a href='https://javascript.info/' target='_blank' rel='noopener noreferrer nofollow'>JavaScript.info</a> 的內容，該內容採用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank' rel='noopener noreferrer nofollow'>CC-BY-NC-SA 4.0</a> 許可。"
     ],
     "blocks": {
       "top-learn-html-foundations": {
@@ -1402,20 +1426,16 @@
         "intro": ["通過構建基本函數來測試你的 JavaScript 技能。"]
       },
       "top-learn-arrays-and-loops": {
-        "title": "Learn Arrays and Loops",
-        "intro": ["Learn about arrays and loops in JavaScript."]
+        "title": "學習數組和循環",
+        "intro": ["學習 JavaScript 中的數組和循環。"]
       },
       "top-learn-to-solve-problems-and-understand-errors": {
-        "title": "Learn to Solve Problems and Understand Errors",
-        "intro": [
-          "Learn how to solve problems and understand errors in JavaScript."
-        ]
+        "title": "學習如何解決問題和理解報錯",
+        "intro": ["學習如何解決問題並理解 JavaScript 中的報錯。"]
       },
       "top-build-a-rock-paper-scissors-game": {
-        "title": "Build a Rock Paper Scissors Game",
-        "intro": [
-          "Put your JavaScript skills to the test by building a Rock Paper Scissors game."
-        ]
+        "title": "創建石頭剪刀布遊戲",
+        "intro": ["通過創建石頭剪刀布遊戲測試你的 JavaScript 技能。"]
       }
     }
   },
@@ -1430,41 +1450,41 @@
         "title": "歐拉計劃問題 1 - 100",
         "intro": [
           "在這第一組挑戰中，你將使用斐波那契數列、素數定理和離散數學這樣的數學概念編寫算法來解決這些問題。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       },
       "project-euler-problems-101-to-200": {
         "title": "歐拉計劃問題 101 - 200",
         "intro": [
           "在這一系列的挑戰中，你將在課程第一部分的基礎上，結合更高級的概念，如矢量計算方法、楊輝三角（帕斯卡三角）和 RSA 算法來有效地解決這些問題。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       },
       "project-euler-problems-201-to-300": {
         "title": "歐拉計劃問題 201 - 300",
         "intro": [
           "在這組挑戰中，你將繼續利用你之前學到的技能，並使用二項式定理、漢明和考拉茲序列等概念來進一步提升你的數學和解決問題的技能。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       },
       "project-euler-problems-301-to-400": {
         "title": "歐拉計劃問題 301 - 400",
         "intro": [
           "在這裏，你將繼續發揮你的數學和算法技能，使用組合博弈論、位運算和 Golomb 的自描述序列等概念來開發這些問題的有效解決方案。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       },
       "project-euler-problems-401-to-480": {
         "title": "歐拉計劃問題 401 - 480",
         "intro": [
           "在這最後一組挑戰中，你將需要使用你目前所學到的一切，並使用像元因數、卡普雷卡爾算法等等高級概念來解決這些複雜問題。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       }
     }
   },
   "foundational-c-sharp-with-microsoft": {
-    "title": "Free Foundational C# with Microsoft Certification",
+    "title": "Microsoft 免費 C# 基礎認證",
     "intro": [
       "本課程全面介紹 C# 編程，涵蓋其核心概念、語法和在軟件開發中的實際應用。",
       "通過實踐練習和項目，你將學習 C# 的基礎知識，包括變量、數據類型、控制結構和麪向對象編程原理。",
@@ -1515,7 +1535,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification (Beta)",
+    "title": "A2 開發者英語認證（測試版）",
     "intro": [
       "在開發者英語課程中，你將學習英語交流的基本要素。課程遵循歐洲共同語言參考標準（CEFR）的 A2 級，側重於對開發者有用的詞彙。",
       "課程的前半部分將幫助你熟悉英語語法和用法。你將通過大量的實踐練習學習自我介紹、聊天和討論工作等基礎知識。",
@@ -1530,7 +1550,7 @@
         ]
       },
       "en-a2-quiz-greetings-first-day-office": {
-        "title": "First Day at The Office Greetings Quiz",
+        "title": "上班第一天問候測驗",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -1540,7 +1560,7 @@
         ]
       },
       "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Online Team Introductions Quiz",
+        "title": "在線團隊介紹測驗",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -1550,7 +1570,7 @@
         ]
       },
       "en-a2-quiz-conversation-starters-break-room": {
-        "title": "Break Room Conversations Quiz",
+        "title": "茶水間對話測驗",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
@@ -1560,7 +1580,7 @@
         ]
       },
       "en-a2-quiz-talk-about-typical-workday-tasks": {
-        "title": "Talking About Your Workday Quiz",
+        "title": "談論你的工作測驗",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
@@ -1570,7 +1590,7 @@
         ]
       },
       "en-a2-quiz-discuss-morning-evening-routine": {
-        "title": "Daily Routines at Work Quiz",
+        "title": "工作中的日常作息測驗",
         "intro": ["", ""]
       },
       "learn-how-to-describe-your-current-project": {
@@ -1580,7 +1600,7 @@
         ]
       },
       "en-a2-quiz-describe-current-project": {
-        "title": "Describing Your Current Project Quiz",
+        "title": "描述你當前的項目測驗",
         "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
@@ -1590,7 +1610,7 @@
         ]
       },
       "en-a2-quiz-educational-professional-background": {
-        "title": "Educational and Professional Background Quiz",
+        "title": "教育與職業背景測驗",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
@@ -1600,461 +1620,431 @@
         ]
       },
       "en-a2-quiz-talk-about-hobbies-interests": {
-        "title": "Talking About Hobbies and Interests Quiz",
+        "title": "談論愛好與興趣測驗",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
-        "title": "Learn How to Discuss Roles and Responsibilities",
+        "title": "學習如何談論角色和責任",
         "intro": [
-          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
+          "在本課程中，你將討論人們在公司內外的角色和責任。你將學習如何詢問關於角色和職責的信息，以及如何分享你自己這方面的信息。"
         ]
       },
       "en-a2-quiz-discuss-roles-responsibilities": {
-        "title": "Roles and Responsibilities Quiz",
+        "title": "角色與職責測驗",
         "intro": ["", ""]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "學習如何就偏好和動機進行對話",
         "intro": [
-          "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
+          "在本課程中，你將學習如何詢問人們在個人和職業生活中受到哪些因素驅動，如何回答與自身動機相關的問題，以及如何探討人們的偏好。"
         ]
       },
       "en-a2-quiz-preferences-motivations": {
-        "title": "Preferences and Motivations Quiz",
+        "title": "偏好與動機測驗",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "學習如何討論流行的技術趨勢",
         "intro": [
-          "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
+          "在本課程中，你將學習如何討論當今科技領域大家都在談論的話題。"
         ]
       },
       "en-a2-quiz-popular-technology-trends": {
-        "title": "Technology Trends Quiz",
+        "title": "技術趨勢測驗",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "學習如何在不同的互動中闡明信息",
         "intro": [
-          "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
+          "在本課程中，你將學習如何覈查現有信息的正確性，以及在遇到不明確的情況時如何提出澄清請求。"
         ]
       },
       "en-a2-quiz-clarify-information-interactions": {
-        "title": "Clarifying Information Quiz",
+        "title": "澄清信息測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "學習如何在對話中使用基本編程詞彙",
         "intro": [
-          "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
+          "本課程將介紹與編程相關的基本詞彙。你將學習如何提出與基本編程概念相關的問題。"
         ]
       },
       "en-a2-quiz-basic-programming-vocabulary": {
-        "title": "Basic Programming Vocabulary Quiz",
+        "title": "基礎編程詞彙測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "學習如何使用代碼相關的概念和術語",
         "intro": [
-          "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
+          "在本課程中，你將學習與編程相關的術語，並學習如何在對話中使用它們。"
         ]
       },
       "en-a2-quiz-code-related-concepts-terms": {
-        "title": "Code Concepts and Terms Quiz",
+        "title": "編程概念與術語測驗",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "學習如何談論技術趨勢和更新",
         "intro": [
-          "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
+          "在本課程中，你將瞭解科技領域的一些最新趨勢，並學習如何用英語討論這些話題。"
         ]
       },
       "en-a2-quiz-tech-trends-updates": {
-        "title": "Tech Updates and Trends Quiz",
+        "title": "技術更新與趨勢測驗",
         "intro": ["", ""]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "學習如何在 GitHub 上幫助同事解決問題",
         "intro": [
-          "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
+          "在本課程中，你將學習如何向同事尋求幫助以及如何向同事提供幫助的相關表達。"
         ]
       },
       "en-a2-quiz-help-coworker-github-troubleshooting": {
-        "title": "Helping a Coworker on GitHub Quiz",
+        "title": "在 GitHub 上幫助同事測驗",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "學習如何在每週站立會議上分享你的進展",
         "intro": [
-          "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
+          "本課程將指導你如何圍繞項目進展展開討論，包括已完成的工作內容以及當前正在推進的任務。"
         ]
       },
       "en-a2-quiz-share-progress-weekly-meeting": {
-        "title": "Weekly Meeting Progress Quiz",
+        "title": "每週會議進度測驗",
         "intro": ["", ""]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "學習如何要求澄清對代碼的理解",
-        "intro": [
-          "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
-        ]
+        "intro": ["在本課程中，你將學習如何對代碼中你不清楚的地方提問。"]
       },
       "en-a2-quiz-ask-for-code-clarification": {
-        "title": "Asking for Code Clarification Quiz",
+        "title": "代碼澄清問答測驗",
         "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "學習如何爲項目寫代碼文檔",
-        "intro": [
-          "This course will show you expressions related to what to do when documenting code."
-        ]
+        "intro": ["本課程將介紹給代碼寫文檔時的相關表達。"]
       },
       "en-a2-quiz-document-code-project": {
-        "title": "Documenting Code Quiz",
+        "title": "記錄代碼測驗",
         "intro": ["", ""]
       },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "學習如何閱讀和理解代碼文檔",
-        "intro": [
-          "This course will present more expressions related to code documentation and bring tips on how to understand it."
-        ]
+        "intro": ["本課程將進一步介紹代碼文檔的相關表達，並指導你理解文檔。"]
       },
       "en-a2-quiz-read-understand-code-documentation": {
-        "title": "Understanding Code Documentation Quiz",
+        "title": "理解代碼文檔測驗",
         "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "學習如何分析代碼文檔",
         "intro": [
-          "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
+          "在本課程中，你將瞭解一些有助於你以簡單方式理解文檔並進行分析的方法。"
         ]
       },
       "en-a2-quiz-analyze-code-documentation": {
-        "title": "Analyzing Code Documentation Quiz",
+        "title": "分析代碼文檔測驗",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "學習如何分享進度和成就",
         "intro": [
-          "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
+          "在本課程中，你將學習如何與同事分享你的進展，以及如何講述你在項目中取得的成果。"
         ]
       },
       "en-a2-quiz-share-progress-accomplishments": {
-        "title": "Sharing Progress and Achievements Quiz",
+        "title": "分享進度與成就測驗",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
-        "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
-        "intro": [
-          "This course will show you how to speak about the most recent advancements in your projects and about your plans."
-        ]
+        "title": "學習如何談論任務和項目的更新和計劃",
+        "intro": ["本課程將指導你如何闡述項目中的最新進展以及未來規劃。"]
       },
       "en-a2-quiz-task-project-updates-plans": {
-        "title": "Task and Project Updates Quiz",
+        "title": "任務與項目更新測驗",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "學習如何表達同意或不同意",
         "intro": [
-          "This course will introduce how to say that you agree with what another person says and to tell them politely that you do not agree with them."
+          "本課程將介紹如何表達對他人觀點的認同，以及如何禮貌地表明不同意對方的觀點。"
         ]
       },
       "en-a2-quiz-express-agreement-disagreement": {
-        "title": "Expressing Agreement and Disagreement Quiz",
+        "title": "表達贊同與反對測驗",
         "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "學習如何提供技術支持和指導",
-        "intro": [
-          "In this course, you will see ways of offering some help in terms of technical specifics to another person."
-        ]
+        "intro": ["在本課程中，你將瞭解如何在技術細節方面爲他人提供幫助。"]
       },
       "en-a2-quiz-offer-technical-support-guidance": {
-        "title": "Offering Technical Support Quiz",
+        "title": "提供技術支持測驗",
         "intro": ["", ""]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "學習如何請求和接受指導",
-        "intro": [
-          "This course will show you how to ask for assistance from a coworker when you need it."
-        ]
+        "intro": ["本課程將教你如何在需要時向同事尋求幫助。"]
       },
       "en-a2-quiz-request-receive-guidance": {
-        "title": "Requesting and Receiving Guidance Quiz",
+        "title": "請求與接受指導測驗",
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "學習如何在幫助別人時提供解釋",
-        "intro": [
-          "This course will provide you with ways to explain things to other people while assisting them."
-        ]
+        "intro": ["本課程將指導你如何在需要時向同事尋求幫助。"]
       },
       "en-a2-quiz-provide-explanations-helping-others": {
-        "title": "Explaining Things to Others Quiz",
+        "title": "向他人解釋事物測驗",
         "intro": ["", ""]
       },
       "en-a2-certification-exam": {
-        "title": "A2 English for Developers Certification Exam",
-        "intro": [
-          "This exam is required to claim the A2 English for Developers Certification."
-        ]
+        "title": "A2 開發者英語認證考試",
+        "intro": ["參加這個考試是申請 A2 開發者英語認證的必要條件。"]
       }
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers Certification (Beta)",
+    "title": "B1 開發者英語認證（測試版）",
     "intro": [
-      "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
-      "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
-      "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
-      "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
+      "在這個開發者英語課程中，你將掌握英語溝通的核心要點。課程內容遵循歐洲語言共同參考框架（CEFR）的 B1 級別標準，並重點聚焦對開發者尤爲實用的詞彙體系。",
+      "它將幫助你鞏固基礎技能，同時引入更復雜的語法和用法。你將學會如何描述地點和事物，分享過往經歷，並自信運用現在完成時和將來時等時態。課程還包含實用溝通策略，例如掌控對話節奏、表達觀點，以及在討論中建立共識或表達異議。",
+      "你還將重點學習如何在專業技術場景中運用這些技能。你將練習使用開發人員必備的詞彙和短語，例如描述代碼、參與會議以及探討技術趨勢等。進階內容涵蓋條件句、比較結構及對話管理，助你爲科技行業的實際交流場景做好準備。",
+      "這套完整的 B1 級別課程包含 73 個不同對話場景。每個對話都旨在幫助你積累專業技術領域的詞彙量，並在技術交流場合提升你的表達自信。"
     ],
     "blocks": {
       "learn-how-to-describe-places-and-events": {
-        "title": "Learn How to Describe Places and Events",
-        "intro": [
-          "This course will show you ways of talking about places and events conversationally."
-        ]
+        "title": "學習如何描述地點和事件",
+        "intro": ["本課程將指導你如何在對話中談論地點和事件。"]
       },
       "en-b1-quiz-describe-places-events": {
-        "title": "Describing Places and Events Quiz",
+        "title": "描述地點與事件測驗",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-experiences": {
-        "title": "Learn How to Talk About Past Experiences",
-        "intro": [
-          "In this course, you will learn how to share experiences that you had in the past."
-        ]
+        "title": "學習如何談論過去的經歷",
+        "intro": ["在本課程中，你將學習如何分享過去的經驗。"]
       },
       "en-b1-quiz-past-experiences": {
-        "title": "Talking About Past Experiences Quiz",
+        "title": "談論過去經歷測驗",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-activities": {
-        "title": "Learn How to Talk About Past Activities",
-        "intro": [
-          "In this course, you will learn how talk about things that you did."
-        ]
+        "title": "學習如何談論以前的活動",
+        "intro": ["在本課程中，你將學習如何談論自己做過的事情。"]
       },
       "en-b1-quiz-past-activities": {
-        "title": "Talking About Past Activities Quiz",
+        "title": "談論過去活動測驗",
         "intro": ["", ""]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
-        "title": "Learn Present Perfect while Talking About Accessibility",
+        "title": "通過談論無障礙學習現在完成時",
         "intro": [
-          "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
+          "在本課程中，你將學習使用現在完成時結構，並瞭解更多有關可訪問性的知識。"
         ]
       },
       "en-b1-quiz-present-perfect-accessibility": {
-        "title": "Present Perfect and Accessibility Quiz",
+        "title": "現在完成時與可訪問性測驗",
         "intro": ["", ""]
       },
       "learn-how-to-plan-future-events": {
-        "title": "Learn How to Plan Future Events",
+        "title": "學習如何規劃未來事件",
         "intro": [
-          "In this course, you will learn to use the different forms of the future to plan for upcoming events."
+          "在本課程中，你將學習使用不同的將來時形式規劃即將發生的事件。"
         ]
       },
       "en-b1-quiz-plan-future-events": {
-        "title": "Planning Future Events Quiz",
+        "title": "規劃未來事件測驗",
         "intro": ["", ""]
       },
       "learn-future-continuous-while-describing-actions": {
-        "title": "Learn Future Continuous while Describing Actions",
+        "title": "通過描述動作來學習將來進行時",
         "intro": [
-          "In this course, you will learn to use the Future Continuous tense, and how to describe actions to be performed."
+          "在本課程中，你將學習如何使用將來進行時，以及如何描述即將進行的動作。"
         ]
       },
       "en-b1-quiz-future-continuous-actions": {
-        "title": "Future Continuous Actions Quiz",
+        "title": "將來進行時測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-conditionals": {
-        "title": "Learn How to Use Conditionals",
+        "title": "學習如何使用條件句",
         "intro": [
-          "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
+          "在本課程中，你將學習使用條件句描述在特定條件成立時可能發生的假設性結果。"
         ]
       },
       "en-b1-quiz-conditionals": {
-        "title": "Using Conditionals Quiz",
+        "title": "使用條件句測驗",
         "intro": ["", ""]
       },
       "learn-how-to-share-feedback": {
-        "title": "Learn How to Share Feedback",
+        "title": "學習如何分享反饋",
         "intro": [
-          "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
+          "在本課程中，你將學習如何向他人表達對其工作的看法，既突出其優勢，也指出需要改進的地方。"
         ]
       },
       "en-b1-quiz-share-feedback": {
-        "title": "Sharing Feedback Quiz",
+        "title": "分享反饋測驗",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-opinion": {
-        "title": "Learn How to Share Your Opinion",
-        "intro": [
-          "This course will show you how to express your ideas and feeling towards topics in a discussion."
-        ]
+        "title": "學習如何分享你的意見",
+        "intro": ["本課程將指導你如何在討論中表達自己對話題的想法與感受。"]
       },
       "en-b1-quiz-share-opinions": {
-        "title": "Sharing Opinions Quiz",
+        "title": "表達意見測驗",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement": {
-        "title": "Learn How to Express Agreement",
-        "intro": [
-          "In this course, you will learn to express agreement in different professional settings."
-        ]
+        "title": "學習如何表達贊同",
+        "intro": ["在本課程中，你將學習如何在不同的職業場合表達贊同。"]
       },
       "en-b1-quiz-express-agreement": {
-        "title": "Expressing Agreement Quiz",
+        "title": "表達贊同測驗",
         "intro": ["", ""]
       },
       "learn-how-to-express-disagreement": {
-        "title": "Learn How to Express Disagreement",
-        "intro": [
-          "In this course, you will learn to express disagreement in different professional settings."
-        ]
+        "title": "學習如何表達反對",
+        "intro": ["在本課程中，你將學習如何在不同的職業場合表達不同意。"]
       },
       "en-b1-quiz-express-disagreement": {
-        "title": "Expressing Disagreement Quiz",
+        "title": "表達反對測驗",
         "intro": ["", ""]
       },
       "learn-how-to-express-concerns": {
-        "title": "Learn How to Express Concerns",
+        "title": "學習如何表達關切",
         "intro": [
-          "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
+          "在本課程中，你將學習向他人表達你對項目和任務可能出現的問題感到擔憂。"
         ]
       },
       "en-b1-quiz-express-concerns": {
-        "title": "Expressing Concerns Quiz",
+        "title": "表達關切測驗",
         "intro": ["", ""]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
-        "title": "Learn How to Express Decisions Based on Comparisons",
+        "title": "學習如何通過比較表達決策",
         "intro": [
-          "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
+          "在本課程中，你將學習如何運用“更好”、“更快”和“最佳”等詞彙來比較工具或公司等事物。你還將練習通過友好對話表達觀點並做出決策。"
         ]
       },
       "en-b1-quiz-decisions-comparisons": {
-        "title": "Making Decisions with Comparisons Quiz",
+        "title": "通過比較進行決策測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-modal-verbs": {
-        "title": "Learn How to Use Modal Verbs",
+        "title": "學習如何使用情態動詞",
         "intro": [
-          "In this course, you will learn how to talk about rules, describe things that are necessary, and what could happen if they aren't. You'll also practice asking and answering questions clearly, and adding helpful details to your ideas."
+          "在本課程中，你將學習如何談論規則、描述必要事項以及違反規則可能導致的後果。你還將練習清晰地提問與回答問題，並在表達觀點時添加有用的細節。"
         ]
       },
       "en-b1-quiz-modal-verbs": {
-        "title": "Using Modal Verbs Quiz",
+        "title": "使用情態動詞測驗",
         "intro": ["", ""]
       },
       "learn-how-to-manage-a-conversation": {
-        "title": "Learn How to Manage a Conversation",
+        "title": "學習如何掌控對話",
         "intro": [
-          "In this course, you will learn how to manage conversations at work — like how to continue a talk after a break, change topics politely, or interrupt when needed. You'll also practice using useful expressions to keep the conversation clear, friendly, and organized."
+          "在本課程中，你將學習如何管理工作中的對話——例如如何在中斷後繼續談話、禮貌地轉換話題，或在必要時打斷對話。你還將練習使用實用表達，使對話保持清晰、友好且條理分明。"
         ]
       },
       "en-b1-quiz-manage-conversations": {
-        "title": "Managing Conversations Quiz",
+        "title": "掌控對話測驗",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-misunderstandings": {
-        "title": "Learn How to Clarify Misunderstandings",
+        "title": "學習如何澄清誤解",
         "intro": [
-          "In this course, you will learn how to ask for and give explanations when something is not clear, using polite questions and helpful responses. You'll also practice guessing the meaning of new words, describing problems, and clearing up misunderstandings in a friendly and professional way."
+          "在本課程中，你將學習如何在不清楚的情況下使用禮貌的問題和有用的回答進行詢問和解釋。你還將練習猜測新單詞的含義，描述問題，並以友好和專業的方式消除誤解。"
         ]
       },
       "en-b1-quiz-clarify-misunderstandings": {
-        "title": "Clarifying Misunderstandings Quiz",
+        "title": "澄清誤解測驗",
         "intro": ["", ""]
       },
       "learn-about-speculation-and-requests": {
-        "title": "Learn About Speculation and Requests",
+        "title": "學習做出推測和提出請求",
         "intro": [
-          "In this course, you will learn how to talk about things that should or could have happened in the past, and how to give suggestions or make polite requests. You'll also practice using expressions to guess what might have caused a problem and how to work together to solve it in a clear and respectful way."
+          "在本課程中，你將學習如何談論過去本應發生或可能發生的事情，以及如何提出建議或禮貌地提出請求。你還將練習使用各種表達方式來推測問題可能的原因，並學習如何以清晰且尊重的方式共同解決問題。"
         ]
       },
       "en-b1-quiz-speculation-requests": {
-        "title": "Speculation and Requests Quiz",
+        "title": "推測與請求測驗",
         "intro": ["", ""]
       },
       "learn-about-adverbial-phrases": {
-        "title": "Learn About Adverbial Phrases",
+        "title": "學習副詞短語",
         "intro": [
-          "In this course, you will learn how to use phrases that give more information about when, where, how often, or how much something happens. You'll also practice using these phrases to describe tasks, talk about plans, and explain results more clearly in your daily work."
+          "在本課程中，你將學習如何使用表達時間、地點、頻率或程度的短語。你還將練習使用這些短語來描述工作任務、討論計劃安排，並在日常工作中更清晰地闡述工作成果。"
         ]
       },
       "en-b1-quiz-adverbial-phrases": {
-        "title": "Adverbial Phrases Quiz",
+        "title": "副詞短語測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-adjectives-in-conversations": {
-        "title": "Learn How to Use Adjectives in Conversations",
+        "title": "學習如何在對話中使用形容詞",
         "intro": [
-          "In this course, you will learn how to use adjectives to describe things clearly, compare options, and highlight important details in professional conversations. You'll also practice how to make your ideas stronger and more persuasive."
+          "在本課程中，你將學習如何運用形容詞清晰描述事物、比較選項，並在專業對話中突出重要細節。你還將練習如何使觀點更具說服力，從而增強表達效果。"
         ]
       },
       "en-b1-quiz-adjectives-conversations": {
-        "title": "Using Adjectives in Conversations Quiz",
+        "title": "在對話中使用形容詞測驗",
         "intro": ["", ""]
       },
       "learn-determiners-and-advanced-use-of-articles": {
-        "title": "Learn Determiners and Advanced Use of Articles",
+        "title": "學習限定詞和冠詞的高級用法",
         "intro": [
-          "In this course, you will learn how to use determiners to give clear information about quantity, choice, and distribution. You will also practice using articles in more advanced ways, especially in professional conversations about planning, tasks, and resources."
+          "在本課程中，你將學習如何使用限定詞清晰表達數量、選擇及分佈信息。你還將練習更高級的冠詞用法，尤其在涉及規劃、任務和資源的專業對話中。"
         ]
       },
       "en-b1-quiz-determiners-articles": {
-        "title": "Determiners and Articles Quiz",
+        "title": "限定詞與冠詞測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-reported-speech": {
-        "title": "Learn How to Use Reported Speech",
+        "title": "學習如何使用間接引語",
         "intro": [
-          "In this course, you will learn how to report what someone else said in a clear and natural way. You will also practice using the correct verb tenses and sentence structures to share feedback, explain situations, and talk about past events in professional conversations."
+          "在本課程中，您將學習如何以清晰自然的方式報告別人說的話。您還將練習使用正確的動詞時態和句子結構來分享反饋，解釋情況，並在專業對話中談論過去的事件。"
         ]
       },
       "en-b1-quiz-reported-speech": {
-        "title": "Using Reported Speech Quiz",
+        "title": "使用間接引語測驗",
         "intro": ["", ""]
       },
       "learn-how-to-use-prepositions-according-to-context": {
-        "title": "Learn How to Use Prepositions According to Context",
+        "title": "學習如何根據上下文使用介詞",
         "intro": [
-          "In this course, you will learn how to use prepositions to describe time, place, and direction clearly in everyday work situations. You will also practice talking about schedules, giving directions, and explaining where people or things are located using natural and accurate language."
+          "在本課程中，你將學習如何使用介詞在日常工作場景中清晰地描述時間、地點和方向。你還將練習用自然準確的語言談論日程安排、提供路線指引，以及說明人員或物品的位置。"
         ]
       },
       "en-b1-quiz-prepositions-context": {
-        "title": "Using Prepositions by Context Quiz",
+        "title": "按語境使用介詞測驗",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
-        "title": "Learn How to Talk About Numbers with a Coworker",
+        "title": "學習如何與同事談論數字",
         "intro": [
-          "In this course, you will learn how to use numbers to talk about tasks, schedules, budgets, and resources in the workplace. You will practice using cardinal and ordinal numbers, percentages, and fractions to organize work, explain progress, and share inventory or financial updates clearly with your team."
+          "在本課程中，你將學習如何運用數字在工作場所討論任務、日程安排、預算及資源配置。你將練習使用基數詞、序數詞、百分比和分數來統籌工作、說明進度，並清晰地向團隊通報庫存或財務動態。"
         ]
       },
       "en-b1-quiz-numbers-at-work": {
-        "title": "Talking About Numbers at Work Quiz",
+        "title": "在工作中談論數字測驗",
         "intro": ["", ""]
       },
       "learn-common-phrasal-verbs-and-idioms": {
-        "title": "Learn Common Phrasal Verbs and Idioms",
+        "title": "學習常見的短語動詞和習語",
         "intro": [
-          "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
+          "在本課程中，你將學習如何運用常見的短語動詞和習語，使職場表達更自然自信。你將練習使用各類表達方式，在日常專業對話中發表意見、提出建議、組織會議以及討論工作任務。"
         ]
       },
       "en-b1-quiz-phrasal-verbs-idioms": {
-        "title": "Phrasal Verbs and Idioms Quiz",
+        "title": "短語動詞與習語測驗",
         "intro": ["", ""]
       },
       "en-b1-certification-exam": {
-        "title": "B1 English for Developers Certification Exam",
-        "intro": [
-          "This exam is required to claim the B1 English for Developers Certification."
-        ]
+        "title": "B1 開發者英語認證測驗",
+        "intro": ["參加這個考試是申請 B1 開發者英語認證的必要條件。"]
       }
     }
   },
@@ -2070,879 +2060,823 @@
         "title": "羅塞塔代碼挑戰",
         "intro": [
           "這些是羅賽塔代碼的挑戰。",
-          "NOTE: These challenges support JavaScript only solutions."
+          "注意：這些挑戰只支持用 JavaScript 解答。"
         ]
       }
     }
   },
   "javascript-v9": {
-    "title": "JavaScript Certification",
+    "title": "JavaScript 認證",
     "intro": [
-      "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To earn your JavaScript Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the JavaScript Certification exam."
+      "本課程教授核心的 JavaScript 編程概念，例如使用變量、函數、對象、數組和控制流。你還將學習如何操作 DOM、處理事件，並應用諸如異步編程、函數式編程和無障礙的最佳實踐。",
+      "要獲得你的 JavaScript 認證：",
+      "- 完成五個必做項目，即可具備參加認證考試的資格。",
+      "- 通過 JavaScript 認證考試。"
     ],
     "chapters": {
       "javascript": "JavaScript",
-      "javascript-certification-exam": "JavaScript Certification Exam"
+      "javascript-certification-exam": "JavaScript 認證考試"
     },
     "modules": {
-      "javascript-variables-and-strings": "Variables and Strings",
-      "javascript-booleans-and-numbers": "Booleans and Numbers",
-      "javascript-functions": "Functions",
-      "javascript-arrays": "Arrays",
-      "javascript-objects": "Objects",
-      "javascript-loops": "Loops",
-      "review-javascript-fundamentals": "JavaScript Fundamentals Review",
-      "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
-      "dom-manipulation-and-events": "DOM Manipulation and Events",
-      "js-a11y": "JavaScript and Accessibility",
-      "debugging-javascript": "Debugging",
-      "basic-regex": "Basic Regex",
-      "lab-markdown-to-html-converter": "Build a Markdown to HTML Converter",
-      "form-validation": "Form Validation",
-      "javascript-dates": "Dates",
-      "audio-and-video-events": "Audio and Video Events",
-      "lab-drum-machine": "Build a Drum Machine",
-      "maps-and-sets": "Maps and Sets",
-      "lab-voting-system": "Build a Voting System",
-      "localstorage-and-crud-operations": "localStorage and CRUD Operations",
-      "classes-and-the-this-keyword": "Classes",
-      "lab-bank-account-manager": "Build a Bank Account Management Program",
-      "recursion": "Recursion",
-      "data-structures": "Data Structures",
-      "algorithms": "Algorithms",
-      "graphs-and-trees": "Graphs and Trees",
-      "dynamic-programming": "Dynamic Programming",
-      "functional-programming": "Functional Programming",
-      "asynchronous-javascript": "Asynchronous JavaScript",
-      "lab-weather-app": "Build a Weather App",
-      "review-javascript": "JavaScript Review",
-      "javascript-certification-exam": "JavaScript Certification Exam"
+      "javascript-variables-and-strings": "變量與字符串",
+      "javascript-booleans-and-numbers": "布爾值與數字",
+      "javascript-functions": "函數",
+      "javascript-arrays": "數組",
+      "javascript-objects": "對象",
+      "javascript-loops": "循環",
+      "review-javascript-fundamentals": "JavaScript 基礎複習",
+      "higher-order-functions-and-callbacks": "高階函數與回調函數",
+      "dom-manipulation-and-events": "DOM 操作與事件",
+      "js-a11y": "JavaScript 與無障礙",
+      "debugging-javascript": "調試",
+      "basic-regex": "基礎正則表達式",
+      "lab-markdown-to-html-converter": "構建一個 Markdown 轉 HTML 的轉換器",
+      "form-validation": "表單驗證",
+      "javascript-dates": "日期",
+      "audio-and-video-events": "音頻與視頻事件",
+      "lab-drum-machine": "創建一臺鼓機",
+      "maps-and-sets": "映射與集合",
+      "lab-voting-system": "創建一個投票系統",
+      "localstorage-and-crud-operations": "localStorage 和 CRUD 操作",
+      "classes-and-the-this-keyword": "類",
+      "lab-bank-account-manager": "創建一個銀行賬戶管理程序",
+      "recursion": "遞歸",
+      "data-structures": "數據結構",
+      "algorithms": "算法",
+      "graphs-and-trees": "圖與樹",
+      "dynamic-programming": "動態規劃",
+      "functional-programming": "函數式編程",
+      "asynchronous-javascript": "異步 JavaScript",
+      "lab-weather-app": "創建一個天氣應用",
+      "review-javascript": "JavaScript 複習",
+      "javascript-certification-exam": "JavaScript 認證考試"
     },
     "module-intros": {
       "data-structures": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about linked lists, stacks, queues and more."
-        ]
+        "note": "將於 2026 年春季發佈",
+        "intro": ["在本模塊中，你將學習鏈表、棧、隊列等。"]
       },
       "algorithms": {
-        "note": "Coming Spring 2026",
+        "note": "將於 2026 年春季發佈",
         "intro": [
-          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
+          "在本模塊中，你將學習常見的排序與搜索算法，包括冒泡排序、二分搜索等。"
         ]
       },
       "graphs-and-trees": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about graphs, trees and tries."
-        ]
+        "note": "將於 2026 年春季發佈",
+        "intro": ["在本模塊中，你將學習圖、樹與字典樹。"]
       },
       "dynamic-programming": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn how dynamic programming works."
-        ]
+        "note": "將於 2026 年春季發佈",
+        "intro": ["在本模塊中，你將學習動態規劃的工作原理。"]
       }
     },
     "blocks": {
       "lecture-introduction-to-javascript": {
-        "title": "Introduction to JavaScript",
+        "title": "JavaScript 入門講座",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+          "在這些講座中，你將學習 JavaScript 的基礎知識。涵蓋的主題包括但不限於變量、數據類型、JavaScript 與 HTML 和 CSS 的交互、字符串等。"
         ]
       },
       "lecture-introduction-to-strings": {
-        "title": "Introduction to Strings",
-        "intro": [
-          "In these lessons, you will learn how to work with strings and string concatenation."
-        ]
+        "title": "字符串簡介",
+        "intro": ["在這些課程中，你將學習如何處理字符串與字符串拼接。"]
       },
       "lecture-understanding-code-clarity": {
-        "title": "Understanding Code Clarity",
+        "title": "理解代碼清晰性",
         "intro": [
-          "In these lessons, you will learn about comments in JavaScript and the role of semicolons in programming."
+          "在這些課程中，你將學習 JavaScript 中的註釋以及分號在編程中的作用。"
         ]
       },
       "workshop-greeting-bot": {
-        "title": "Build a Greeting Bot",
+        "title": "構建一個問候機器人",
         "intro": [
-          "In this workshop, you will learn JavaScript fundamentals by building a greeting bot.",
-          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+          "在本工作坊中，你將通過構建一個問候機器人來學習 JavaScript 基礎。",
+          "你將學習變量、 <code> let </code>、 <code> const </code>、 <code> console.log </code> 以及基本的字符串使用方法。"
         ]
       },
       "lab-javascript-trivia-bot": {
-        "title": "Build a JavaScript Trivia Bot",
+        "title": "構建一個 JavaScript 趣味問答機器人",
         "intro": [
-          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot."
+          "在本實驗中，你將通過構建一個趣味問答機器人來練習 JavaScript 變量與字符串。"
         ]
       },
       "lab-sentence-maker": {
-        "title": "Build a Sentence Maker",
+        "title": "構建一個句子生成器",
         "intro": [
-          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
+          "在本實驗中，你將通過創建和自定義各種故事繼續練習字符串與拼接。"
         ]
       },
       "lecture-working-with-data-types": {
-        "title": "Working with Data Types",
+        "title": "處理數據類型",
         "intro": [
-          "In the following lectures, you will learn how to work with data types in JavaScript. You will also learn how dynamic typing differs from static typing, the <code>typeof</code> operator, and the <code>typeof null</code> bug."
+          "在接下來的講座中，你將學習如何處理 JavaScript 中的數據類型。你還將學習動態類型如何不同於靜態類型、 <code> typeof </code> 運算符，以及 <code> typeof null </code> 的 問題。"
         ]
       },
       "review-javascript-variables-and-data-types": {
-        "title": "JavaScript Variables and Data Types Review",
+        "title": "JavaScript 變量與數據類型複習",
         "intro": [
-          "Before you are quizzed on JavaScript variables and data types you first need to review the concepts.",
-          "Open up this page to review variables, data types, logging and commenting."
+          "在測試你對 JavaScript 變量和數據類型的掌握之前，你需要先複習相關概念。",
+          "打開此頁面以複習變量、數據類型、日誌記錄與註釋。"
         ]
       },
       "quiz-javascript-variables-and-data-types": {
-        "title": "JavaScript Variables and Data Types Quiz",
-        "intro": [
-          "Test your knowledge of JavaScript variables and data types with this quiz."
-        ]
+        "title": "JavaScript 變量與數據類型測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 變量與數據類型的掌握程度。"]
       },
       "lecture-working-with-strings-in-javascript": {
-        "title": "Working with Strings in JavaScript",
+        "title": "在 JavaScript 中處理字符串",
         "intro": [
-          "In these lectures, you will learn how to work with strings in JavaScript. You will learn how to access characters from a string, how to use template literals and interpolation, how to create a new line in strings, and much more."
+          "在這些講座中，你將學習如何在 JavaScript 中處理字符串。你將學習如何訪問字符串中的字符、如何使用模板字面量與插值、如何在字符串中創建新行等。"
         ]
       },
       "workshop-teacher-chatbot": {
-        "title": "Build a Teacher Chatbot",
+        "title": "構建一個教師聊天機器人",
         "intro": [
-          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
-          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+          "在本工作坊中，你將通過構建一個聊天機器人繼續學習 JavaScript 字符串。",
+          "你將學習如何使用模板字面量，以及 <code> indexOf </code> 方法。"
         ]
       },
       "lecture-working-with-string-character-methods": {
-        "title": "Working with String Character Methods",
+        "title": "處理字符串字符方法",
         "intro": [
-          "In this lecture you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
+          "在本講座中，你將學習 ASCII 字符編碼，以及如何使用 JavaScript 的 <code> charCodeAt() </code> 和 <code> fromCharCode() </code> 方法在字符與其數值 ASCII 值之間轉換。"
         ]
       },
       "lecture-working-with-string-search-and-slice-methods": {
-        "title": "Working with String Search and Slice Methods",
+        "title": "處理字符串搜索與切片方法",
         "intro": [
-          "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+          "在本講座中，你將學習如何使用 <code> includes() </code> 方法搜索子字符串，以及如何使用 <code> slice() </code> 方法提取字符串的部分內容。"
         ]
       },
       "workshop-string-inspector": {
-        "title": "Build a String Inspector",
+        "title": "創建一個字符串檢查器",
         "intro": [
-          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+          "在本工作坊中，你將通過構建一個字符串檢查器練習使用 <code>includes()</code> 和 <code>slice()</code> 方法。"
         ]
       },
       "lecture-working-with-string-formatting-methods": {
-        "title": "Working with String Formatting Methods",
+        "title": "處理字符串格式化方法",
         "intro": [
-          "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+          "在本講座中，你將學習如何使用 <code> toUpperCase() </code> 與 <code> toLowerCase() </code> 方法更改字符串大小寫，以及如何使用 <code> trim() </code>、 <code> trimStart() </code> 和 <code> trimEnd() </code> 方法去除空白。"
         ]
       },
       "workshop-string-formatter": {
-        "title": "Build a String Formatter",
+        "title": "創建一個字符串格式化器",
         "intro": [
-          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
+          "在本工作坊中，你將練習使用各種字符串方法，包括 <code>trim()</code>、<code>toUpperCase()</code> 和 <code>toLowerCase()</code>。"
         ]
       },
       "lecture-working-with-string-modification-methods": {
-        "title": "Working with String Modification Methods",
+        "title": "處理字符串修改方法",
         "intro": [
-          "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
+          "在本講座中，你將學習如何使用 <code> replace() </code> 方法替換字符串的部分內容，以及如何使用 <code> repeat() </code> 方法重複字符串多次。"
         ]
       },
       "workshop-string-transformer": {
-        "title": "Build a String Transformer",
+        "title": "構建一個字符串轉換器",
         "intro": [
-          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
+          "在本工作坊中，你將練習使用 <code> replace() </code>、<code> replaceAll() </code> 與 <code> repeat() </code> 方法。"
         ]
       },
       "review-javascript-strings": {
-        "title": "JavaScript Strings Review",
+        "title": "JavaScript 字符串複習",
         "intro": [
-          "Before you are quizzed on working with JavaScript strings, you first need to review.",
-          "Open up this page to review how to work with template literals, the <code>slice</code> method, the <code>includes</code> method, the <code>trim</code> method and more."
+          "在測試你對 JavaScript 字符串的掌握之前，你需要先複習。",
+          "打開此頁面以複習如何使用模板字面量、<code> slice </code> 方法、<code> includes </code> 方法、<code> trim </code> 方法等。"
         ]
       },
       "quiz-javascript-strings": {
-        "title": "JavaScript Strings Quiz",
-        "intro": ["Test your knowledge of JavaScript strings with this quiz."]
+        "title": "JavaScript 字符串測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 字符串的掌握程度。"]
       },
       "lecture-working-with-numbers-and-arithmetic-operators": {
-        "title": "Working with Numbers and Arithmetic Operators",
+        "title": "處理數字與算術運算符",
         "intro": [
-          "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
+          "在這些講座中，你將學習數字類型、算術運算符，以及如何將它們與數字和字符串一起使用。"
         ]
       },
       "lab-debug-type-coercion-errors": {
-        "title": "Debug Type Coercion Errors in a Buggy App",
+        "title": "調試有類型強制轉換錯誤的有缺陷應用",
         "intro": [
-          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
-          "Your task is to identify and fix these errors to ensure the app functions correctly."
+          "在本實驗中，你將處理一個存在多個類型強制轉換錯誤的應用程序。",
+          "你的任務是識別並修復這些錯誤，以確保應用正常運行。"
         ]
       },
       "lecture-working-with-operator-behavior": {
-        "title": "Working with Operator Behavior",
+        "title": "學習運算符行爲",
         "intro": [
-          "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+          "在這些講座中，你將學習運算符優先級、自增與自減運算符以及複合賦值運算符。"
         ]
       },
       "lab-debug-increment-and-decrement-operator-errors": {
-        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "title": "調試有缺陷應用中的自增和自減運算符錯誤",
         "intro": [
-          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
-          "Your task is to identify and fix the errors so that the app works as intended."
+          "在本實驗中，你將調試一個在自增和自減運算符方面存在多個錯誤的應用。",
+          "你的任務是識別並修復這些錯誤，以使應用按預期工作。"
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
-        "title": "Working with Comparison and Boolean Operators",
+        "title": "運用比較與布爾運算符",
         "intro": [
-          "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+          "在這些講座中，你將學習布爾值，以及相等和不等運算符和其他比較運算符。"
         ]
       },
       "workshop-logic-checker-app": {
-        "title": "Build a Logic Checker App",
+        "title": "創建一個邏輯檢查應用",
         "intro": [
-          "In this workshop, you'll practice working with conditional statements and comparison operators by building a logic checker app."
+          "在本工作坊中，你將通過構建一個邏輯檢查應用來練習使用條件語句和比較運算符。"
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
-        "title": "Working with Unary and Bitwise Operators",
-        "intro": [
-          "In these lectures, you will learn about unary and bitwise operators."
-        ]
+        "title": "使用一元運算符和位運算符",
+        "intro": ["在這些講座中，你將學習一元運算符和位運算符。"]
       },
       "lecture-working-with-conditional-logic-and-math-methods": {
-        "title": "Working with Conditional Logic and Math Methods",
+        "title": "使用條件邏輯與 Math 方法",
         "intro": [
-          "In these lectures, you will learn about conditional statements, binary logical operators, and the <code>Math</code> object."
+          "在這些講座中，你將學習條件語句、二元邏輯運算符以及 <code> Math </code> 對象。"
         ]
       },
       "workshop-mathbot": {
-        "title": "Build a Mathbot",
+        "title": "創建一個 Mathbot",
         "intro": [
-          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+          "在本工作坊中，你將通過創建一個 Mathbot 來複習如何使用不同的 Math 對象方法。"
         ]
       },
       "lab-fortune-teller": {
-        "title": "Build a Fortune Teller",
+        "title": "創建一個占卜程序",
         "intro": [
-          "In this lab, you'll build a fortune teller by randomly selecting a fortune from the available fortunes.",
-          "You'll practice how to work with the <code>Math.random()</code> method and the <code>Math.floor()</code> method to generate random numbers."
+          "在本實驗中，你將創建一個占卜程序，通過隨機選取預存的占卜語句來生成占卜結果。",
+          "你將練習如何使用 <code> Math.random() </code> 方法和 <code> Math.floor() </code> 方法來生成隨機數。"
         ]
       },
       "lecture-working-with-numbers-and-common-number-methods": {
-        "title": "Working with Numbers and Common Number Methods",
+        "title": "學習數字運算與常用數字方法",
         "intro": [
-          "In these lectures, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
+          "在這些講座中，你將學習數字與常見的數字方法，包括 <code> isNaN() </code>、 <code> parseInt() </code>、 <code> parseFloat() </code> 和 <code> toFixed() </code>。"
         ]
       },
       "review-javascript-math": {
-        "title": "JavaScript Math Review",
+        "title": "JavaScript 數學複習",
         "intro": [
-          "Before you're quizzed on working with the <code>Math</code> object, you should review what you've learned.",
-          "Open up this page to review how to work with the <code>Math.random()</code> method, the <code>Math.floor()</code> method and more."
+          "在測試你對 <code>Math</code> 對象的使用之前，你應該複習已學內容。",
+          "打開此頁面以複習如何使用 <code> Math.random() </code> 方法、<code> Math.floor() </code> 方法等。"
         ]
       },
       "quiz-javascript-math": {
-        "title": "JavaScript Math Quiz",
+        "title": "JavaScript 數學測驗",
         "intro": [
-          "Test your knowledge of the JavaScript <code>Math</code> object with this quiz."
+          "通過這個測驗檢驗你對 JavaScript <code>Math</code> 對象的瞭解程度。"
         ]
       },
       "lecture-understanding-comparisons-and-conditionals": {
-        "title": "Understanding Comparisons and Conditionals",
+        "title": "理解比較與條件語句",
         "intro": [
-          "In these lectures, you will learn about comparison operators and conditionals. You will learn how the various conditionals differ from one another, and how comparisons work with <code>null</code> and <code>undefined</code>."
+          "在本系列講座中，你將學習比較運算符和條件語句。你將瞭解不同條件語句之間的區別，以及比較運算在涉及 <code>null</code> 和 <code>undefined</code> 時的運作方式。"
         ]
       },
       "review-javascript-comparisons-and-conditionals": {
-        "title": "JavaScript Comparisons and Conditionals Review",
+        "title": "JavaScript 比較與條件語句複習",
         "intro": [
-          "Before you're quizzed on working with conditionals, you should review what you've learned about them.",
-          "Open up this page to review how to work with <code>switch</code> statements, other types of conditionals and more."
+          "在進行條件語句應用測試之前，你應該複習已掌握的相關知識。在進行條件語句操作的測驗之前，你應該複習一下關於條件語句的學習內容。",
+          "打開此頁面以複習如何使用 <code> switch </code> 語句、其他類型的條件語句等。"
         ]
       },
       "quiz-javascript-comparisons-and-conditionals": {
-        "title": "JavaScript Comparisons and Conditionals Quiz",
-        "intro": [
-          "Test your knowledge of JavaScript Comparisons and Conditionals with this quiz."
-        ]
+        "title": "JavaScript 比較與條件語句測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 比較與條件語句的掌握程度。"]
       },
       "lecture-working-with-functions": {
-        "title": "Working with Functions",
+        "title": "處理函數",
         "intro": [
-          "In these lectures, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
+          "在本系列講座中，你將學習如何通過函數複用代碼塊。你將瞭解函數的用途及其工作原理，並掌握程序設計中作用域的運作機制。"
         ]
       },
       "workshop-calculator": {
-        "title": "Build a Calculator",
-        "intro": [
-          "In this workshop, you will review your knowledge of functions by building a calculator."
-        ]
+        "title": "創建一個計算器",
+        "intro": ["在本工作坊中，你將通過創建一個計算器來複習函數相關知識。"]
       },
       "lab-boolean-check": {
-        "title": "Build a Boolean Check Function",
-        "intro": [
-          "In this lab, you'll implement a function that checks if a value is a boolean."
-        ]
+        "title": "創建一個布爾值檢查函數",
+        "intro": ["在本實驗中，你將實現一個檢查值是否爲布爾值的函數。"]
       },
       "lab-email-masker": {
-        "title": "Build an Email Masker",
+        "title": "創建一個電子郵件掩碼器",
         "intro": [
-          "In this lab, you'll build an email masker that will take an email address and obscure it.",
-          "You'll practice string slicing, concatenation, and using functions."
+          "在本實驗中，你將創建一個電子郵件掩碼器，用於接收電子郵件地址並將其混淆。",
+          "你將練習字符串切片、拼接和使用函數。"
         ]
       },
       "workshop-loan-qualification-checker": {
-        "title": "Build a Loan Qualification Checker",
+        "title": "創建一個貸款資格檢查器",
         "intro": [
-          "In this workshop, you will continue to learn how to work with conditionals by building a loan qualification checker app.",
-          "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
+          "在本工作坊中，你將通過構建一個貸款資格檢查應用繼續學習如何使用條件語句。",
+          "你將進一步學習 <code> if </code> 語句，以及如何在 <code> if </code> 中使用比較運算符和多個條件。"
         ]
       },
       "lab-celsius-to-fahrenheit-converter": {
-        "title": "Build a Celsius to Fahrenheit Converter",
-        "intro": [
-          "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
-        ]
+        "title": "創建一個攝氏度轉華氏度轉換器",
+        "intro": ["在本實驗中，你將實現一個將溫度從攝氏度轉換爲華氏度的函數。"]
       },
       "lab-counting-cards": {
-        "title": "Build a Card Counting Assistant",
-        "intro": ["In this lab you will use JavaScript to count dealt cards."]
+        "title": "創建一個記牌助手",
+        "intro": ["在本實驗中，你將使用 JavaScript 統計已發出的牌數。"]
       },
       "lab-leap-year-calculator": {
-        "title": "Build a Leap Year Calculator ",
-        "intro": [
-          "In this lab you'll use conditional statements and loops to determine if a year is a leap year."
-        ]
+        "title": "創建一個閏年計算器",
+        "intro": ["在本實驗中，你將使用條件語句和循環來判斷某年是否爲閏年。"]
       },
       "lab-truncate-string": {
-        "title": "Implement the Truncate String Algorithm",
-        "intro": [
-          "In this lab, you will practice truncating a string at a certain length."
-        ]
+        "title": "實現字符串截取算法",
+        "intro": ["在本實驗中，你將練習將字符串截取到一定長度。"]
       },
       "lab-string-ending-checker": {
-        "title": "Build a Confirm the Ending Tool",
+        "title": "創建一個結尾確認工具",
         "intro": [
-          "In this lab, you will implement a function that checks if a given string ends with a specified target string."
+          "在本實驗中，你將實現一個函數，用於檢查給定字符串是否以指定目標字符串結尾。"
         ]
       },
       "review-javascript-functions": {
-        "title": "JavaScript Functions Review",
+        "title": "JavaScript 函數複習",
         "intro": [
-          "Before you're quizzed on JavaScript functions, you should review what you've learned about them.",
-          "Open up this page to review functions, arrow functions and scope."
+          "在進行 JavaScript 函數測驗之前，你應該複習一下你所學過的相關內容。",
+          "打開此頁面以複習函數、箭頭函數與作用域。"
         ]
       },
       "quiz-javascript-functions": {
-        "title": "JavaScript Functions Quiz",
-        "intro": ["Test your knowledge of JavaScript functions with this quiz."]
+        "title": "JavaScript 函數測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 函數的掌握程度。"]
       },
       "lecture-working-with-arrays": {
-        "title": "Working with Arrays",
+        "title": "學習數組",
         "intro": [
-          "In these lectures, you will learn how to work with JavaScript arrays. You will learn about what makes an array, one-dimensional and two-dimensional arrays, how to access and update the elements in an array, and much more."
+          "在這些講座中，你將學習如何處理 JavaScript 數組。你將瞭解數組的構成、一維和二維數組、如何訪問和更新數組中的元素等。"
         ]
       },
       "workshop-shopping-list": {
-        "title": "Build a Shopping List",
+        "title": "創建一個購物清單",
         "intro": [
-          "In this workshop, you will practice how to work with arrays by building a shopping list.",
-          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+          "在本工作坊中，你將通過創建購物清單來練習如何處理數組。",
+          "你將複習如何使用像 <code> push </code>、 <code> pop </code>、 <code> shift </code> 和 <code> unshift </code> 這樣的方法從數組中添加和刪除元素。"
         ]
       },
       "lab-lunch-picker-program": {
-        "title": "Build a Lunch Picker Program",
+        "title": "創建一個午餐選擇程序",
         "intro": [
-          "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
+          "在本實驗中，你將通過創建午餐選擇程序來複習數組和隨機數的使用。"
         ]
       },
       "lab-golf-score-translator": {
-        "title": "Build a Golf Score Translator",
-        "intro": [
-          "For this lab, you will use array methods to translate golf scores into their nickname."
-        ]
+        "title": "創建一個高爾夫得分翻譯器",
+        "intro": ["在本實驗中，你將使用數組方法將高爾夫得分翻譯爲其暱稱。"]
       },
       "lab-reverse-a-string": {
-        "title": "Build a String Inverter",
-        "intro": [
-          "In this lab, you create a function that reverses a given string."
-        ]
+        "title": "創建一個字符串反轉器",
+        "intro": ["在本實驗中，你將創建一個反轉給定字符串的函數。"]
       },
       "lecture-working-with-common-array-methods": {
-        "title": "Working with Common Array Methods",
+        "title": "學習常見數組方法",
         "intro": [
-          "In these lectures, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
+          "在這些講座中，你將學習用於執行更高級操作的數組方法，例如獲取元素位置、檢查數組是否包含某元素、複製數組等。"
         ]
       },
       "review-javascript-arrays": {
-        "title": "JavaScript Arrays Review",
+        "title": "JavaScript 數組複習",
         "intro": [
-          "Before you're quizzed on JavaScript arrays, you should review what you've learned about them.",
-          "Open up this page to review concepts like array destructuring, how to add and remove elements from an array, and more."
+          "在進行 JavaScript 數組測驗之前，你應該複習一下你所學過的相關知識。",
+          "打開此頁面以複習數組解構、如何添加與刪除數組元素等概念。"
         ]
       },
       "quiz-javascript-arrays": {
-        "title": "JavaScript Arrays Quiz",
-        "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
+        "title": "JavaScript 數組測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 數組的掌握程度。"]
       },
       "lecture-introduction-to-javascript-objects-and-their-properties": {
-        "title": "Introduction to JavaScript Objects and Their Properties",
+        "title": "JavaScript 對象及其屬性簡介",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+          "在這些講座中，你將學習 JavaScript 對象的基礎，包括如何創建對象、訪問其屬性，以及理解原始類型與非原始類型的區別。"
         ]
       },
       "lecture-working-with-optional-chaining-and-object-destructuring": {
-        "title": "Working with Optional Chaining and Object Destructuring",
+        "title": "學習可選鏈與對象解構",
         "intro": [
-          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+          "在這些講座中，你將學習 JavaScript 中的高級對象處理技術，包括可選鏈運算符和對象解構語法。"
         ]
       },
       "lecture-working-with-json": {
-        "title": "Working with JSON",
+        "title": "學習 JSON",
         "intro": [
-          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
+          "在這些講座中，你將學習 JavaScript 對象表示法（JSON），包括如何訪問 JSON 數據以及使用 <code> JSON.parse() </code> 和 <code> JSON.stringify() </code> 方法。"
         ]
       },
       "workshop-recipe-tracker": {
-        "title": "Build a Recipe Tracker",
+        "title": "創建一個食譜追蹤器",
         "intro": [
-          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+          "在本工作坊中，你將通過創建一個食譜追蹤器來複習 JavaScript 對象的使用。"
         ]
       },
       "lab-quiz-game": {
-        "title": "Build a Quiz Game",
+        "title": "創建一個測驗遊戲",
         "intro": [
-          "In this lab, you'll build a quiz game using JavaScript arrays and objects.",
-          "You'll also practice using functions to randomly select a question and an answer from an array and compare them."
+          "在本實驗中，你將使用 JavaScript 數組與對象創建一個測驗遊戲。",
+          "你還將練習使用函數從數組中隨機選擇問題和答案並進行比較。"
         ]
       },
       "lab-record-collection": {
-        "title": "Build a Record Collection",
-        "intro": [
-          "In this lab you will build a function to manage a record collection."
-        ]
+        "title": "創建音樂專輯集",
+        "intro": ["在本實驗中，你將創建一個用於管理音樂專輯集的函數。"]
       },
       "review-javascript-objects": {
-        "title": "JavaScript Objects Review",
+        "title": "JavaScript 對象複習",
         "intro": [
-          "Before you're quizzed on JavaScript objects, you should review what you've learned about them.",
-          "Open up this page to review concepts including how to access information from objects, object destructuring, working with JSON, and more."
+          "在進行 JavaScript 對象測驗之前，你應該複習一下你所學過的相關知識。",
+          "打開此頁面以複習如何從對象中訪問信息、對象解構、處理 JSON 等概念。"
         ]
       },
       "quiz-javascript-objects": {
-        "title": "JavaScript Objects Quiz",
-        "intro": ["Test your knowledge of JavaScript objects with this quiz."]
+        "title": "JavaScript 對象測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 對象的掌握程度。"]
       },
       "lecture-working-with-loops": {
-        "title": "Working with Loops",
+        "title": "學習循環",
         "intro": [
-          "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
+          "循環是 JavaScript 的核心部分。因此以下講座將幫助你學習不同類型的循環及其工作原理，以及迭代的運作方式。"
         ]
       },
       "workshop-sentence-analyzer": {
-        "title": "Build a Sentence Analyzer",
+        "title": "創建一個句子分析程序",
         "intro": [
-          "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
+          "在本工作坊中，你將通過構建一個句子分析應用來複習如何使用 JavaScript 循環。"
         ]
       },
       "lab-longest-word-in-a-string": {
-        "title": "Build a Longest Word Finder App",
+        "title": "創建一個最長單詞查找應用",
         "intro": [
-          "In this lab, you will use JavaScript loops to find the length of the longest word in the given sentence."
+          "在本實驗中，你將使用 JavaScript 循環找到給定句子中最長單詞的長度。"
         ]
       },
       "lab-factorial-calculator": {
-        "title": "Build a Factorial Calculator ",
+        "title": "創建一個階乘計算器",
         "intro": [
-          "In this lab, you'll build a factorial calculator.",
-          "You'll practice using loops and conditionals to calculate the factorial of a number."
+          "在本實驗中，你將構建一個階乘計算器。",
+          "你將練習使用循環和條件語句來計算一個數的階乘。"
         ]
       },
       "lab-mutations": {
-        "title": "Implement the Mutations Algorithm",
-        "intro": [
-          "In this lab, you will practice iterating over two different strings to compare their characters."
-        ]
+        "title": "實現字符串字母包含算法",
+        "intro": ["在本實驗中，你將練習迭代兩個不同字符串以比較它們的字符。"]
       },
       "lab-chunky-monkey": {
-        "title": "Implement the Chunky Monkey Algorithm",
+        "title": "實現數組分塊算法",
         "intro": [
-          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+          "在本實驗中，你將練習將數組劃分爲更小數組，可選擇任意方法實現。"
         ]
       },
       "lab-profile-lookup": {
-        "title": "Build a Profile Lookup",
-        "intro": [
-          "In this lab, you'll create a function that looks up profile information."
-        ]
+        "title": "實現資料查詢函數",
+        "intro": ["在本實驗中，你將創建一個用於查詢個人資料信息的函數。"]
       },
       "lab-repeat-a-string": {
-        "title": "Build a String Repeating Function",
-        "intro": [
-          "In this lab, you will implement loops to repeat a string a specified number of times."
-        ]
+        "title": "實現字符串重複函數",
+        "intro": ["在本實驗中，你將使用循環結構，將一個字符串重複指定的次數。"]
       },
       "lab-missing-letter-detector": {
-        "title": "Build a Missing Letter Detector",
+        "title": "實現缺失字母檢測函數",
         "intro": [
-          "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+          "在本實驗中，你將實現一個函數，用於查找給定連續字母範圍中缺失的字母，並返回該字母。"
         ]
       },
       "review-javascript-loops": {
-        "title": "JavaScript Loops Review",
+        "title": "JavaScript 循環複習",
         "intro": [
-          "Before you're quizzed on the different JavaScript loops, you should review them.",
-          "Open up this page to review the <code>for...of</code> loop, <code>while</code> loop, <code>break and continue</code> statements and more."
+          "在測試你對不同 JavaScript 循環的掌握之前，你應該先複習它們。",
+          "打開此頁面以複習 <code> for...of </code> 循環、<code> while </code> 循環、<code> break and continue </code> 語句等。"
         ]
       },
       "quiz-javascript-loops": {
-        "title": "JavaScript Loops Quiz",
-        "intro": ["Test your knowledge of JavaScript loops with this quiz."]
+        "title": "JavaScript 循環測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 循環的掌握程度。"]
       },
       "lecture-working-with-types-and-objects": {
-        "title": "Working with Types and Objects",
+        "title": "學習類型與對象",
         "intro": [
-          "In these lectures you will learn about string objects, the <code>toString()</code> method, the <code>Number</code> constructor and more."
+          "在這些講座中，你將學習字符串對象、<code> toString() </code> 方法、<code> Number </code> 構造函數等。"
         ]
       },
       "lecture-working-with-arrays-variables-and-naming-practices": {
-        "title": "Working with Arrays, Variables, and Naming Practices",
+        "title": "學習數組、變量與命名實踐",
         "intro": [
-          "In these lectures you will learn about common practices for naming variables and functions, and how to work with arrays."
+          "在這些講座中，你將學習給變量和函數命名的常見做法，以及如何處理數組。"
         ]
       },
       "lecture-working-with-code-quality-and-execution-concepts": {
-        "title": "Working with Code Quality and Execution Concepts",
+        "title": "學習代碼質量與執行概念",
         "intro": [
-          "In these lectures you will learn what are linters and formatters, what is memory management, and closures."
+          "在這些講座中，你將學習什麼是 linter 和格式化工具、什麼是內存管理，以及閉包等概念。"
         ]
       },
       "lab-largest-number-finder": {
-        "title": "Build the Largest Number Finder",
+        "title": "實現最大數字查找函數",
         "intro": [
-          "In this lab, you will use JavaScript fundamentals to create a function that finds the largest number in each sub-array of a given array."
+          "在本實驗中，你將使用 JavaScript 基礎語法實現一個函數，找出給定數組中每個子數組的最大值。"
         ]
       },
       "lab-first-element-finder": {
-        "title": "Build a First Element Finder",
+        "title": "構建第一個元素查找器",
         "intro": [
-          "In this lab, you will create a function that looks through an array and returns the first element in it that passes a \"truth test\"."
+          "在本實驗中，你將創建一個函數，遍歷數組並返回第一個通過“真實性測試”的元素。"
         ]
       },
       "lab-slice-and-splice": {
-        "title": "Implement the Slice and Splice Algorithm",
-        "intro": [
-          "In this lab, you will practice merging an array with another."
-        ]
+        "title": "實現切片與拼接算法",
+        "intro": ["在本實驗中，你將練習將一個數組與另一個數組合並。"]
       },
       "lab-pyramid-generator": {
-        "title": "Build a Pyramid Generator",
+        "title": "創建金字塔生成器",
         "intro": [
-          "In this lab you'll build a pyramid generator.",
-          "You'll take a number as input and generate a pyramid with that many levels using a loop."
+          "在本實驗中，你將創建一個金字塔生成器。",
+          "你將接收一個數字作爲參數，並通過循環結構生成指定層數的金字塔圖形。"
         ]
       },
       "lab-gradebook-app": {
-        "title": "Build a Gradebook App",
+        "title": "創建成績簿應用",
         "intro": [
-          "For this lab, you'll create a gradebook app.",
-          "You'll practice conditionals to determine the student's grade based on their score."
+          "在本實驗中，你將創建一個成績簿應用。",
+          "你將練習使用條件語句根據學生的分數確定其等級。"
         ]
       },
       "lecture-the-var-keyword-and-hoisting": {
-        "title": "The var Keyword and Hoisting",
+        "title": "var 關鍵字與提升",
         "intro": [
-          "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
+          "在這些講座中，你將學習 <code> var </code> 關鍵字以及爲什麼不再推薦使用它。你還將瞭解 JavaScript 中的提升，以便避免代碼中的細微錯誤。"
         ]
       },
       "lab-title-case-converter": {
-        "title": "Build a Title Case Converter",
-        "intro": [
-          "In this lab, you will build a function that converts a string to title case."
-        ]
+        "title": "實現標題格式轉換函數",
+        "intro": ["在本實驗中，你將編寫一個函數，用於將字符串轉換爲標題格式。"]
       },
       "lab-falsy-remover": {
-        "title": "Implement a Falsy Remover",
-        "intro": [
-          "In this lab, you will create a function that removes all falsy values from an array."
-        ]
+        "title": "實現假值移除函數",
+        "intro": ["在本實驗中，你將創建一個函數，用於從數組中移除所有假值。"]
       },
       "lab-inventory-management-program": {
-        "title": "Build an Inventory Management Program",
+        "title": "創建庫存管理程序",
         "intro": [
-          "For this lab, you'll build an inventory management program using JavaScript.",
-          "You'll use JavaScript array of objects to manage the inventory."
+          "在本實驗中，你將使用 JavaScript 構建一個庫存管理程序。",
+          "你將使用 JavaScript 的對象數組來管理庫存。"
         ]
       },
       "lecture-understanding-modules-imports-and-exports": {
-        "title": "Understanding Modules, Imports, and Exports",
-        "intro": [
-          "In this lecture, you will learn about modules, imports, and exports in JavaScript."
-        ]
+        "title": "理解模塊、導入與導出",
+        "intro": ["在本講座中，你將學習 JavaScript 中的模塊、導入與導出。"]
       },
       "lecture-working-with-the-arguments-object-and-rest-parameters": {
-        "title": "Working With the Arguments Object and Rest Parameters",
+        "title": "學習 arguments 對象與剩餘參數",
         "intro": [
-          "In these lessons, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+          "在這些課程中，你將學習如何使用 <code> arguments </code> 對象與剩餘參數語法。"
         ]
       },
       "lab-unique-sorted-union": {
-        "title": "Implement a Unique Sorted Union",
+        "title": "實現去重並集函數",
         "intro": [
-          "In this lab, you will create a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays."
+          "在本實驗中，你將創建一個函數，該函數接收兩個或多個數組，並返回一個按原數組順序排列且不包含重複值的新數組。"
         ]
       },
       "lab-password-generator": {
-        "title": "Build a Password Generator App",
-        "intro": [
-          "In this lab, you'll build a password generator app based on the user's input."
-        ]
+        "title": "創建密碼生成器應用",
+        "intro": ["在本實驗中，你將根據用戶輸入構建一個密碼生成器應用。"]
       },
       "lab-sum-all-numbers-algorithm": {
-        "title": "Design a Sum All Numbers Algorithm",
+        "title": "設計一個求和算法",
         "intro": [
-          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+          "在本實驗中，你將設計一個求和算法。該算法接受一個由兩個數字組成的數組，返回這兩個數字以及它們之間所有數字的和。"
         ]
       },
       "lab-dna-pair-generator": {
-        "title": "Implement a DNA Pair Generator",
+        "title": "實現 DNA 配對生成器",
         "intro": [
-          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
+          "在本實驗中，你將實現一個 DNA 鹼基配對算法，將單條 DNA 鏈轉換爲互補鹼基對。"
         ]
       },
       "lab-html-entitiy-converter": {
-        "title": "Implement an HTML Entity Converter",
+        "title": "實現 HTML 實體轉換器",
         "intro": [
-          "In this lab, you will convert special characters in a string to their corresponding HTML entities."
+          "在本實驗中，你將把字符串中的特殊字符轉換爲對應的 HTML 實體。"
         ]
       },
       "lab-odd-fibonacci-sum-calculator": {
-        "title": "Build an Odd Fibonacci Sum Calculator",
+        "title": "創建奇數斐波那契求和計算器",
         "intro": [
-          "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
+          "在本實驗中，你將構建一個奇數斐波那契求和計算器，該計算器接受一個數字並返回小於或等於該數字的所有奇數斐波那契數之和。"
         ]
       },
       "lab-element-skipper": {
-        "title": "Implement an Element Skipper",
+        "title": "實現元素跳過函數",
         "intro": [
-          "In this lab you will create a function that skips elements in an array based on a specified step value."
+          "在本實驗中，你將創建一個函數，根據指定的步長值跳過數組中的元素。"
         ]
       },
       "lab-optional-arguments-sum-function": {
-        "title": "Build an Optional Arguments Sum Function",
+        "title": "實現可選參數求和函數",
         "intro": [
-          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+          "在本實驗中，你將實現一個函數，它最多接受兩個參數並計算其和；當僅提供一個參數時，該函數應返回一個新的函數，用於接收第二個參數並完成求和。"
         ]
       },
       "review-javascript-fundamentals": {
-        "title": "JavaScript Fundamentals Review",
+        "title": "JavaScript 基礎複習",
         "intro": [
-          "Before you are quizzed on JavaScript fundamentals, you first need to review the concepts.",
-          "Open up this page to review concepts like closures, memory management, and more."
+          "在測試你對 JavaScript 基礎的掌握之前，你需要先複習相關概念。",
+          "打開此頁面以複習閉包、內存管理等概念。"
         ]
       },
       "quiz-javascript-fundamentals": {
-        "title": "JavaScript Fundamentals Quiz",
-        "intro": [
-          "Test your knowledge of JavaScript fundamentals with this quiz."
-        ]
+        "title": "JavaScript 基礎測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 基礎的掌握程度。"]
       },
       "lecture-working-with-higher-order-functions-and-callbacks": {
-        "title": "Working with Higher Order Functions and Callbacks",
+        "title": "學習高階函數與回調函數",
         "intro": [
-          "In these lectures, you will learn how to work with higher order functions and callbacks. The higher order functions you will learn include <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>sort()</code>, <code>every()</code>, and <code>some()</code>. You will also learn how to chain these methods together to achieve your desired results."
+          "在這些講座中，你將學習如何使用高階函數和回調函數。你將學習的高階函數包括 <code> map() </code>、<code> filter() </code>、<code> reduce() </code>、<code> sort() </code>、<code> every() </code> 和 <code> some() </code>。你還將學習如何將這些方法鏈式調用以達到預期結果。"
         ]
       },
       "workshop-library-manager": {
-        "title": "Build a Library Manager",
+        "title": "創建圖書館管理器",
         "intro": [
-          "In this workshop, you will learn higher order array methods by building a library manager."
+          "在本工作坊中，你將通過構建一個圖書館管理器來學習高階數組方法。"
         ]
       },
       "lab-book-organizer": {
-        "title": "Build a Book Organizer",
+        "title": "構建圖書整理器",
         "intro": [
-          "In this lab, you'll build a book organizer using higher order functions in JavaScript."
+          "在本實驗中，你將使用 JavaScript 高階函數構建一個圖書整理器。"
         ]
       },
       "lab-sorted-index-finder": {
-        "title": "Implement a Sorted Index Finder",
+        "title": "實現有序索引查找函數",
         "intro": [
-          "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
+          "在本實驗中，你將實現一個函數，確定一個數字在有序數組中的插入索引，使數組保持排序狀態。"
         ]
       },
       "lab-symmetric-difference": {
-        "title": "Build a Symmetric Difference Function",
-        "intro": [
-          "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
-        ]
+        "title": "實現對稱差函數",
+        "intro": ["在本實驗中，你將練習使用高階函數求兩個數組之間的對稱差。"]
       },
       "lab-value-remover-function": {
-        "title": "Implement a Value Remover Function",
+        "title": "實現指定值移除函數",
         "intro": [
-          "In this lab, you will create a function that removes all instances of a specified value from an array."
+          "在本實驗中，你將創建一個函數，用於從數組中移除指定值的所有實例。"
         ]
       },
       "lab-matching-object-filter": {
-        "title": "Implement a Matching Object Filter",
+        "title": "實現對象匹配過濾函數",
         "intro": [
-          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+          "在本實驗中，你將實現一個函數，從對象數組中篩選出所有包含匹配屬性和值對的對象。"
         ]
       },
       "lab-prime-number-sum-calculator": {
-        "title": "Build a Prime Number Sum Calculator",
+        "title": "創建質數求和計算器",
         "intro": [
-          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+          "在本實驗中，你將創建一個質數求和計算器，計算並返回小於或等於指定數字的所有質數之和。"
         ]
       },
       "lab-range-based-lcm-calculator": {
-        "title": "Implement a Range-Based LCM Calculator",
+        "title": "實現區間最小公倍數計算器",
         "intro": [
-          "In this lab, you will create a function that takes an array of two numbers and returns the least common multiple (LCM) of those two numbers and all the numbers between them."
+          "在本實驗中，你將創建一個函數，接受一個由兩個數字組成的數組，並返回這兩個數字以及它們之間所有數字的最小公倍數（LCM）。"
         ]
       },
       "lab-deep-flattening-tool": {
-        "title": "Create a Deep Flattening Tool",
+        "title": "創建一個深度扁平化工具",
         "intro": [
-          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
+          "在本實驗中，你將創建一個函數，用來將任意層級嵌套的數組進行扁平化處理，並且不使用內置的 flat 方法。"
         ]
       },
       "lab-all-true-property-validator": {
-        "title": "Build an All-True Property Validator",
+        "title": "創建一個全爲真屬性校驗器",
         "intro": [
-          "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
+          "在本實驗中，你將編寫一個函數，用於檢查數組中的所有對象在指定屬性上是否都具有真值。"
         ]
       },
       "review-javascript-higher-order-functions": {
-        "title": "JavaScript Higher Order Functions Review",
+        "title": "JavaScript 高階函數複習",
         "intro": [
-          "Before you're quizzed on JavaScript higher order functions, you should review them.",
-          "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
+          "在進行 JavaScript 高階函數測驗之前，你應該先複習它們。",
+          "打開此頁面以複習如何使用 <code> map() </code>、<code> filter() </code> 和 <code> reduce() </code> 方法等概念。"
         ]
       },
       "quiz-javascript-higher-order-functions": {
-        "title": "JavaScript Higher Order Functions Quiz",
-        "intro": [
-          "Test what you've learned about JavaScript higher order functions with this quiz."
-        ]
+        "title": "JavaScript 高階函數測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 高階函數的掌握程度。"]
       },
       "lecture-working-with-the-dom-click-events-and-web-apis": {
-        "title": "Working with the DOM, Click Events, and Web APIs",
+        "title": "學習 DOM、點擊事件與 Web API",
         "intro": [
-          "In these lectures, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
+          "在這些講座中，你將學習如何處理文檔對象模型（DOM）、<code> addEventListener() </code> 方法與事件，以及 Web API。"
         ]
       },
       "workshop-storytelling-app": {
-        "title": "Build a Storytelling App",
+        "title": "創建一個講故事應用",
         "intro": [
-          "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+          "在本工作坊中，你將構建一個講故事應用，允許你根據類型列出不同的故事。"
         ]
       },
       "workshop-emoji-reactor": {
-        "title": "Build an Emoji Reactor",
+        "title": "創建 Emoji 反應器",
         "intro": [
-          "In this workshop, you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
+          "在本工作坊中，你將構建一個 Emoji 反應器以練習 <code> querySelector </code> 與 <code> querySelectorAll </code>。"
         ]
       },
       "lab-favorite-icon-toggler": {
-        "title": "Build a Favorite Icon Toggler",
+        "title": "創建收藏圖標切換器",
         "intro": [
-          "In this lab, you'll build a favorite icon toggler by utilizing JavaScript click events."
+          "在本實驗中，你將利用 JavaScript 的點擊事件構建一個收藏圖標切換器。"
         ]
       },
       "lecture-understanding-the-event-object-and-event-delegation": {
-        "title": "Understanding the Event Object and Event Delegation",
+        "title": "理解事件對象與事件委託",
         "intro": [
-          "In these lectures, you will learn about the event object, the change event, event bubbling, and event delegation."
+          "在這些講座中，你將學習事件對象、change 事件、事件冒泡與事件委託。"
         ]
       },
       "workshop-music-instrument-filter": {
-        "title": "Build a Music Instrument Filter",
-        "intro": [
-          "In this workshop, you will build a music instrument filter with JavaScript."
-        ]
+        "title": "創建樂器篩選器",
+        "intro": ["在本工作坊中，你將使用 JavaScript 構建一個樂器篩選器。"]
       },
       "lab-real-time-counter": {
-        "title": "Build a Real Time Counter",
+        "title": "構建實時計數器",
         "intro": [
-          "In this lab, you'll build a real-time character counter",
-          "You'll practice how to work with the <code>input</code> event when the user types in the input field."
+          "在本實驗中，你將構建一個實時字符計數器。",
+          "你將練習在用戶在輸入字段中輸入時處理 <code> input </code> 事件。"
         ]
       },
       "lab-lightbox-viewer": {
-        "title": "Build a Lightbox Viewer",
+        "title": "創建燈箱查看器",
         "intro": [
-          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
-          "You'll practice click events and toggling classes."
+          "在本實驗中，你將構建一個燈箱查看器，用於以聚焦模式瀏覽圖片。",
+          "你將練習點擊事件與切換類。"
         ]
       },
       "workshop-rps-game": {
-        "title": "Build a Rock, Paper, Scissors Game",
+        "title": "創建石頭剪刀布遊戲",
         "intro": [
-          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+          "在本工作坊中，你將通過構建一個石頭剪刀布遊戲來複習 DOM 操作與事件。"
         ]
       },
       "lab-football-team-cards": {
-        "title": "Build a Set of Football Team Cards",
+        "title": "創建一組足球隊卡片",
         "intro": [
-          "In this lab, you'll use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+          "在本實驗中，你將使用 DOM 操作、對象解構、事件處理與數據過濾來構建一組足球隊卡片。"
         ]
       },
       "review-dom-manipulation-and-click-events-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Review",
+        "title": "JavaScript 中的 DOM 操作與點擊事件複習",
         "intro": [
-          "Before you're quizzed on the DOM, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web APIs</code>, the <code>addEventListener()</code> method, change events, event bubbling and more."
+          "在進行 DOM 測驗之前，你應該複習一下所學的相關內容。",
+          "打開此頁面以複習如何使用 <code> DOM </code>、<code> Web APIs </code>、<code> addEventListener() </code> 方法、change 事件、事件冒泡等概念。"
         ]
       },
       "quiz-dom-manipulation-and-click-event-with-javascript": {
-        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
+        "title": "DOM 操作與點擊事件測驗",
         "intro": [
-          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+          "使用本測驗檢驗你對 JavaScript 中 DOM 操作與點擊事件的掌握程度。"
         ]
       },
       "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
-        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "title": "理解 aria-expanded、aria-live 與常見 ARIA 狀態",
         "intro": [
-          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+          "在這些講座中，你將深入瞭解諸如 <code>aria-expanded</code>、<code>aria-live</code> 等 ARIA 屬性，以及常見的 ARIA 狀態。"
         ]
       },
       "workshop-planets-tablist": {
-        "title": "Build a Planets Tablist",
+        "title": "創建行星標籤頁列表",
         "intro": [
-          "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
+          "在本工作坊中，你將構建一個動態的標籤頁界面，用於展示太陽系各行星的相關事實。"
         ]
       },
       "workshop-note-taking-app": {
-        "title": "Build a Note Taking App",
+        "title": "創建筆記應用",
         "intro": [
-          "In this workshop, you are going to build an accessible note taking app.",
-          "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
+          "在本工作坊中，你將構建一個可訪問的筆記應用。",
+          "這將爲你提供練習使用 <code> aria-live </code> 屬性的機會。"
         ]
       },
       "lab-theme-switcher": {
-        "title": "Build a Theme Switcher",
+        "title": "創建主題切換器",
         "intro": [
-          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
+          "在本實驗中，你將構建一個主題切換器並練習使用 <code> aria-haspopup </code>、<code> aria-expanded </code> 和 <code> aria-controls </code> 屬性。"
         ]
       },
       "review-js-a11y": {
-        "title": "JavaScript and Accessibility Review",
+        "title": "JavaScript 與無障礙複習",
         "intro": [
-          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
-          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+          "在進行 JavaScript 與無障礙測驗之前，你應該複習一下你所學過的相關知識。",
+          "打開此頁面以複習如何使用 <code> aria-expanded </code>、<code> aria-live </code> 和 <code> aria-controls </code> 屬性等概念。"
         ]
       },
       "quiz-js-a11y": {
-        "title": "JavaScript and Accessibility Quiz",
-        "intro": [
-          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
-        ]
+        "title": "JavaScript 與無障礙測驗",
+        "intro": ["使用本測驗檢驗你對 JavaScript 與無障礙最佳實踐的掌握程度。"]
       },
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
@@ -3272,6 +3206,18 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
+        ]
+      },
+      "lecture-working-with-common-data-structures-js": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introduction to Common Searching and Sorting Algorithms",
         "intro": [
@@ -3313,6 +3259,30 @@
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "lab-n-queens-problem-js": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "lecture-understanding-dynamic-programming-js": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "review-dynamic-programming-js": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
+        ]
+      },
+      "quiz-dynamic-programming-js": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in JavaScript with this quiz."
         ]
       },
       "lecture-understanding-functional-programming": {
@@ -3400,7 +3370,6 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front-End Development Libraries Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
       "To earn your Front-End Development Libraries Certification:",
@@ -3703,6 +3672,12 @@
         "title": "Introduction to Data Visualization",
         "intro": [
           "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -4041,7 +4016,7 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Build a Discount Calculator",
+        "title": "Build an Apply Discount Function",
         "intro": [
           "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
         ]
@@ -4485,7 +4460,6 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back-End Development and APIs Certification",
-    "note": "This certification is currently in development and will be available soon.",
     "intro": [
       "This course teaches you the fundamentals of back-end development and APIs.",
       "To earn your Back-End Development and APIs Certification:",
@@ -4639,6 +4613,12 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
       "lecture-introduction-to-npm": {
         "title": "Introduction to npm",
         "intro": [
@@ -4661,7 +4641,6 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full-Stack Developer Curriculum",
-    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
@@ -4781,18 +4760,6 @@
       "es-a1-module-describing-people-at-work": "Describing People at Work"
     },
     "module-intros": {
-      "es-a1-module-sharing-your-personal-details": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
-        ]
-      },
-      "es-a1-module-numbers-30-to-100": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will learn how to read, write, and pronounce numbers from 30 to 100."
-        ]
-      },
       "es-a1-module-describing-a-company": {
         "note": "Coming 2026",
         "intro": [
@@ -5154,6 +5121,13 @@
         "title": "Working with Audio and Video Elements",
         "intro": [
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
         ]
       },
       "workshop-html-video-player": {
@@ -5753,6 +5727,12 @@
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {

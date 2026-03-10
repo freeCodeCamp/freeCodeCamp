@@ -77,15 +77,31 @@ function renderNodule(
 ) {
   switch (nodule.type) {
     case 'paragraph':
-      return <PrismFormatted text={nodule.data} />;
+      return (
+        <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
+          <PrismFormatted text={nodule.contents} />
+        </Col>
+      );
     case 'interactiveEditor':
       if (showInteractiveEditor) {
-        return <InteractiveEditor files={nodule.data} />;
+        return (
+          <>
+            <Spacer size='s' />
+            <Col xs={12} md={12} lg={10} lgOffset={1}>
+              <InteractiveEditor files={nodule.files} />
+            </Col>
+            <Spacer size='s' />
+          </>
+        );
       } else {
-        const files = nodule.data;
-        return files.map((file, index) => (
-          <PrismFormatted key={index} text={file.contentsHtml} />
-        ));
+        const { files } = nodule;
+        return (
+          <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
+            {files.map((file, index) => (
+              <PrismFormatted key={index} text={file.contentsHtml} />
+            ))}
+          </Col>
+        );
       }
     default:
       return null;
@@ -391,7 +407,13 @@ export const query = graphql`
         description
         nodules {
           type
-          data
+          contents
+          files {
+            ext
+            name
+            contents
+            contentsHtml
+          }
         }
         explanation
         helpCategory

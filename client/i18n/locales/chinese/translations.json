@@ -699,7 +699,8 @@
       "exit-header": "退出考试",
       "exit": "你确定要退出考试吗？你将丢失所有进度。",
       "exit-yes": "是的，我想退出考试",
-      "exit-no": "不，我想继续考试"
+      "exit-no": "不，我想继续考试",
+      "not-honest": "你需要<0>接受学术诚信政策</0>才能参加这次考试"
     },
     "ms": {
       "link-header": "链接你的微软账户",
@@ -1274,7 +1275,8 @@
       "foundational-c-sharp-with-microsoft": "微软基础 C#",
       "foundational-c-sharp-with-microsoft-cert": "微软基础 C# 认证",
       "learn-python-for-beginners": "学习 Python 基础",
-      "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
+      "introduction-to-algorithms-and-data-structures": "算法和数据结构",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "开发者 A2 英语",
       "a2-english-for-developers-cert": "A2 开发者英语认证（测试版）",
       "b1-english-for-developers": "开发者 B1 英语",
@@ -1462,7 +1464,8 @@
         "api": "API",
         "information-security": "信息安全",
         "computer-fundamentals": "计算机基础",
-        "computer-science": "Computer Science"
+        "computer-science": "计算机科学",
+        "ai": "AI"
       }
     }
   }

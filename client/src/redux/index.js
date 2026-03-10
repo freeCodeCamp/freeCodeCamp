@@ -65,10 +65,6 @@ export const initialState = {
   userFetchState: {
     ...defaultFetchState
   },
-  allChallengesInfo: {
-    challengeNodes: [],
-    certificateNodes: []
-  },
   userProfileFetchState: {
     ...defaultFetchState
   },
@@ -168,10 +164,6 @@ export const reducer = handleActions(
     [actionTypes.postChargeError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
-    }),
-    [actionTypes.updateAllChallengesInfo]: (state, { payload }) => ({
-      ...state,
-      allChallengesInfo: { ...payload }
     }),
     [actionTypes.fetchUser]: state => ({
       ...state,

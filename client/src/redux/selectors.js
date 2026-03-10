@@ -7,7 +7,7 @@ import {
 
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
-import { superBlockStructuresSelector } from '../templates/Introduction/redux';
+import { curriculumData } from '../services/curriculum-data';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -123,22 +123,6 @@ export const createUserByNameSelector = username => state => {
 };
 
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
-export const allChallengesInfoSelector = state =>
-  state[MainApp].allChallengesInfo;
-
-export const needsCurriculumDataSelector = createSelector(
-  allChallengesInfoSelector,
-  superBlockStructuresSelector,
-  (allChallengesInfo, superBlockStructures) => {
-    return (
-      !allChallengesInfo?.challengeNodes?.length ||
-      !Object.keys(superBlockStructures).length
-    );
-  }
-);
-
-export const getSuperBlockStructure = (state, superBlock) =>
-  superBlockStructuresSelector(state)[superBlock];
 
 export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
@@ -151,21 +135,13 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
 );
 
 export const completionStateSelector = createSelector(
-  [
-    allChallengesInfoSelector,
-    completedChallengesIdsSelector,
-    superBlockStructuresSelector,
-    state => state.challenge.challengeMeta
-  ],
-  (
-    allChallengesInfo,
-    completedChallengesIds,
-    superBlockStructures,
-    challengeMeta
-  ) => {
-    const { challengeNodes } = allChallengesInfo;
+  [completedChallengesIdsSelector, state => state.challenge.challengeMeta],
+  (completedChallengesIds, challengeMeta) => {
+    const challengeNodes = curriculumData.challengeNodes;
 
-    const structure = superBlockStructures[challengeMeta.superBlock];
+    const structure = curriculumData.getSuperBlockStructure(
+      challengeMeta.superBlock
+    );
 
     const chapters = structure?.chapters ?? [];
 
