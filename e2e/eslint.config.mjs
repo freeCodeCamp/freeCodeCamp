@@ -6,6 +6,7 @@ export default defineConfig(globalIgnores(['./playwright']), {
   rules: {
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/no-unsafe-call': 'off',
-    '@typescript-eslint/no-unsafe-assignment': 'off'
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    'turbo/no-undeclared-env-vars': 'off' // If/when we make e2e tests into a turbo task, we can enable this rule again.
   }
 });

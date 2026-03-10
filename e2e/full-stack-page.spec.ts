@@ -10,7 +10,7 @@ const requiredCerts = [
     slug: '/learn/javascript-v9/'
   },
   {
-    text: 'Front End Development Libraries Certification',
+    text: 'Front-End Development Libraries Certification',
     slug: '/learn/front-end-development-libraries-v9/'
   },
   {
@@ -22,12 +22,12 @@ const requiredCerts = [
     slug: '/learn/relational-databases-v9/'
   },
   {
-    text: 'Back End Development and APIs Certification',
+    text: 'Back-End Development and APIs Certification',
     slug: '/learn/back-end-development-and-apis-v9/'
   }
 ];
 
-test.describe('Full Stack Developer V9 superBlock page', () => {
+test.describe('Full-Stack Developer V9 superBlock page', () => {
   test('lists and links to requirements', async ({ page }) => {
     await page.goto('/learn/full-stack-developer-v9/');
 
@@ -49,7 +49,7 @@ test.describe('Full Stack Developer V9 superBlock page', () => {
     test('shows the exam', async ({ page }) => {
       await page.goto('/learn/full-stack-developer-v9/');
       const examChapterButton = page.locator('.chapter .chapter-button', {
-        hasText: /certified full stack developer exam/i
+        hasText: /certified full-stack developer exam/i
       });
 
       await expect(examChapterButton).toBeVisible();
@@ -62,12 +62,12 @@ test.describe('Full Stack Developer V9 superBlock page', () => {
     test('shows the exam module and coming soon text', async ({ page }) => {
       await page.goto('/learn/full-stack-developer-v9/');
       const examChapterButton = page.locator('.chapter .chapter-button', {
-        hasText: /certified full stack developer exam/i
+        hasText: /certified full-stack developer exam/i
       });
       await expect(examChapterButton).toBeVisible();
 
       const examModuleButton = page.locator('.module-button', {
-        hasText: /certified full stack developer exam/i
+        hasText: /certified full-stack developer exam/i
       });
       await examModuleButton.click();
 

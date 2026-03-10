@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from '@gatsbyjs/reach-router';
 import store from 'store';
 import ShowClassic from '../templates/Challenges/classic/show';
 import { Loader } from '../components/helpers';
@@ -69,6 +68,7 @@ function formatChallengeData({
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge',
       disableLoopProtectTests: true,
+      dashedName: `challenge-${challengeNumber}`,
 
       // props to satisfy the show classic component
       isFirstStep: false,
@@ -140,9 +140,7 @@ function formatChallengeData({
   return props;
 }
 
-function ShowDailyCodingChallenge(): JSX.Element {
-  const { date } = useParams<{ date?: string }>();
-
+function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
   const initLanguage =
     (store.get(
       'dailyCodingChallengeLanguage'

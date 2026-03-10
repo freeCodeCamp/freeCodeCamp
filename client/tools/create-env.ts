@@ -1,4 +1,3 @@
-import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -121,24 +120,6 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   SHOW_UPCOMING_CHANGES should never be 'true' in production
 
   `);
-} else {
-  if (fs.existsSync(`${configPath}/env.json`)) {
-    const { showUpcomingChanges } = JSON.parse(
-      fs.readFileSync(`${configPath}/env.json`, 'utf-8')
-    ) as { showUpcomingChanges: boolean };
-
-    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
-      console.log('Feature flags have been changed, cleaning client cache.');
-      const child = spawn('pnpm', ['run', '-w', 'clean:client']);
-      child.stdout.setEncoding('utf8');
-      child.stdout.on('data', function (data) {
-        console.log(data);
-      });
-      child.on('error', err => {
-        console.error(err);
-      });
-    }
-  }
 }
 
 fs.writeFileSync(`${configPath}/env.json`, JSON.stringify(env));

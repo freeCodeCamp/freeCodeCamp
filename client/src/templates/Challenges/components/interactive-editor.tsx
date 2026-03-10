@@ -102,8 +102,12 @@ const InteractiveEditor = ({ files }: Props) => {
             {layout === 'preview' ? (
               showConsole ? (
                 <>
-                  <SandpackPreview style={{ flex: 1.5 }} />
+                  <SandpackPreview
+                    data-playwright-test-label='sp-preview'
+                    style={{ flex: 1.5 }}
+                  />
                   <SandpackConsole
+                    data-playwright-test-label='sp-console'
                     style={{
                       flex: 1,
                       overflow: 'scroll'
@@ -114,7 +118,10 @@ const InteractiveEditor = ({ files }: Props) => {
                 <SandpackPreview />
               )
             ) : (
-              <SandpackConsole standalone={true} />
+              <SandpackConsole
+                data-playwright-test-label='sp-console'
+                standalone={true}
+              />
             )}
           </SandpackStack>
         </SandpackLayout>

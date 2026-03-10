@@ -9,19 +9,13 @@ const __dirname = import.meta.dirname;
 const distDir = resolve(__dirname, 'dist');
 
 const destJsDir = resolve(distDir, './js');
-const destCssDir = resolve(distDir, './css');
 
 rmSync(distDir, { recursive: true, force: true });
 mkdirSync(destJsDir, { recursive: true });
-mkdirSync(destCssDir, { recursive: true });
 
 cpSync(
   resolve(__dirname, './node_modules/sass.js/dist/sass.sync.js'),
   resolve(destJsDir, 'workers', workerVersion, 'sass.sync.js')
-);
-cpSync(
-  resolve(__dirname, './node_modules/xterm/css/xterm.css'),
-  resolve(destCssDir, 'xterm.css')
 );
 cpSync(
   resolve(
