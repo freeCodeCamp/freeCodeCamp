@@ -7,7 +7,7 @@
       "env": ["FCC_*", "SHOW_UPCOMING_CHANGES", "CURRICULUM_LOCALE"]
     },
     "setup": {
-      "outputs": "dist/**"
+      "outputs": ["dist/**"]
     },
     "test": {
       "passThroughEnv": ["VITEST_POOL_ID", "PUPPETEER_WS_ENDPOINT"],
