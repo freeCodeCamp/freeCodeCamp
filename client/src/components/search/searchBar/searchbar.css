@@ -33,7 +33,7 @@
   display: grid;
   gap: 0.25em;
   grid-template-areas: 'submit input reset';
-  grid-template-columns: 26px auto 36px;
+  grid-template-columns: 26px 1fr;
   margin-bottom: 0;
 }
 
