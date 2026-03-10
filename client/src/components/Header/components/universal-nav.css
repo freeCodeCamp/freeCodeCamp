@@ -15,13 +15,6 @@
     padding: 0 15px;
   }
 }
-
-@media (forced-colors) {
-  .universal-nav {
-    background-color: var(--gray-90);
-  }
-}
-
 .universal-nav a {
   text-decoration: none;
 }
