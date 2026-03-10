@@ -6404,7 +6404,7 @@
       "Learn how to build simple webpages using HTML tags to add text, images, and links."
     ],
     "intro": [
-      "HTML stands for HyperText Markup Langauge and represents the content and structure for a web page. In this course, you will learn the basics of writing HTML."
+      "HTML stands for HyperText Markup Language and represents the content and structure for a web page. In this course, you will learn the basics of writing HTML."
     ],
     "blocks": {
       "workshop-curriculum-outline": {
@@ -7030,7 +7030,7 @@
     }
   },
   "styling-forms": {
-    "title": "Learn How to Style Forms using CSS",
+    "title": "Learn How to Style Forms Using CSS",
     "summary": ["Apply CSS techniques to create clean, usable form layouts."],
     "intro": ["Style form elements to improve usability and visual clarity."],
     "blocks": {
