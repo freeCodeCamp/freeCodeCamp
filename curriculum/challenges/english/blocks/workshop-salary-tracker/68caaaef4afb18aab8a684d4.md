@@ -1,8 +1,8 @@
 ---
 id: 68caaaef4afb18aab8a684d4
-title: Step 31
+title: Step 33
 challengeType: 20
-dashedName: step-31
+dashedName: step-33
 ---
 
 # --description--
