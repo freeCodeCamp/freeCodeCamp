@@ -8,8 +8,12 @@ import {
   setEditorFocusability,
   projectPreviewMounted
 } from '../redux/actions';
-import { isProjectPreviewModalOpenSelector } from '../redux/selectors';
+import {
+  isProjectPreviewModalOpenSelector,
+  isProjectPreviewLoadingSelector
+} from '../redux/selectors';
 import { projectPreviewId } from '../utils/frame';
+import Loader from '../../../components/helpers/loader';
 import Preview from './preview';
 
 import './project-preview-modal.css';
@@ -26,10 +30,12 @@ interface Props {
   setEditorFocusability: (focusability: boolean) => void;
   previewTitle: string;
   closeText: string;
+  isProjectPreviewLoading: boolean;
 }
 
 const mapStateToProps = (state: unknown) => ({
-  isOpen: isProjectPreviewModalOpenSelector(state) as boolean
+  isOpen: isProjectPreviewModalOpenSelector(state) as boolean,
+  isProjectPreviewLoading: isProjectPreviewLoadingSelector(state) as boolean
 });
 const mapDispatchToProps = {
   closeModal,
@@ -44,7 +50,8 @@ function ProjectPreviewModal({
   challengeData = null,
   setEditorFocusability,
   previewTitle,
-  closeText
+  closeText,
+  isProjectPreviewLoading
 }: Props): JSX.Element {
   useEffect(() => {
     if (isOpen) setEditorFocusability(false);
@@ -65,6 +72,11 @@ function ProjectPreviewModal({
           previewId={projectPreviewId}
           previewMounted={() => projectPreviewMounted({ challengeData })}
         />
+        {isProjectPreviewLoading && (
+          <div className='project-preview-loader'>
+            <Loader />
+          </div>
+        )}
       </Modal.Body>
       <Modal.Footer>
         <Button

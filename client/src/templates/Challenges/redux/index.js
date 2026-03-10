@@ -58,7 +58,8 @@ const initialState = {
   successMessage: 'Happy Coding!',
   isAdvancing: false,
   chapterSlug: '',
-  isSubmitting: false
+  isSubmitting: false,
+  isProjectPreviewLoading: false
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -252,6 +253,14 @@ export const reducer = handleActions(
     [actionTypes.setUserCompletedExam]: (state, { payload }) => ({
       ...state,
       userCompletedExam: payload
+    }),
+    [actionTypes.projectPreviewMounted]: state => ({
+      ...state,
+      isProjectPreviewLoading: true
+    }),
+    [actionTypes.projectPreviewBuilt]: state => ({
+      ...state,
+      isProjectPreviewLoading: false
     }),
     [actionTypes.closeModal]: (state, { payload }) => ({
       ...state,

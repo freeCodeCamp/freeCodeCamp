@@ -34,6 +34,7 @@ export const actionTypes = createTypes(
     'setUserCompletedExam',
     'previewMounted',
     'projectPreviewMounted',
+    'projectPreviewBuilt',
     'storePortalWindow',
     'removePortalWindow',
     'challengeMounted',

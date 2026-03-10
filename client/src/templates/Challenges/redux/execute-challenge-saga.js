@@ -50,6 +50,7 @@ import {
   initLogs,
   logsToConsole,
   openModal,
+  projectPreviewBuilt,
   updateConsole,
   updateLogs,
   updateTests
@@ -384,6 +385,8 @@ function* previewProjectSolutionSaga({ payload }) {
   } catch (err) {
     console.error('Unable to show project preview');
     console.error(err);
+  } finally {
+    yield put(projectPreviewBuilt());
   }
 }
 
