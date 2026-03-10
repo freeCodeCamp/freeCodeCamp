@@ -1566,6 +1566,7 @@
       "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
       "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
+    "note": "This certification is currently in beta. If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
@@ -1853,6 +1854,7 @@
       "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
       "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
+    "note": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Learn How to Describe Places and Events",
@@ -3486,6 +3488,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Front-End Development Libraries Certification exam."
     ],
+    "note": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "chapters": {
       "front-end-development-libraries": "Front-End Development Libraries",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -4576,6 +4579,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Back-End Development and APIs Certification exam."
     ],
+    "note": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "chapters": {
       "back-end-development-and-apis": "Back-End Development and APIs",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
@@ -4755,6 +4759,7 @@
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
+    "note": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
@@ -4842,7 +4847,7 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "intro": [
       "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
       "- A Warm-up section for quick review.",
@@ -6186,7 +6191,7 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "intro": [
       "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
       "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",

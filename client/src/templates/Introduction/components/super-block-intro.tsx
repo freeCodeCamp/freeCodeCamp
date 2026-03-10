@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import {
   archivedSuperBlocks,
@@ -12,79 +12,13 @@ import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
 import ArchivedWarning from '../../../components/archived-warning';
 
-interface ConditionalDonationAlertProps {
+interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
   onCertificationDonationAlertClick: () => void;
   isDonating: boolean;
-}
-
-interface SuperBlockIntroProps extends ConditionalDonationAlertProps {
   hasNotstarted: boolean;
   nextChallengeSlug: string | null;
 }
-
-export const ConditionalDonationAlert = ({
-  superBlock,
-  onCertificationDonationAlertClick,
-  isDonating
-}: ConditionalDonationAlertProps): JSX.Element | null => {
-  const { t } = useTranslation();
-
-  const betaCertifications: SuperBlocks[] = [SuperBlocks.A2English];
-
-  const unfinishedCertifications = [
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ];
-
-  if (!isDonating && betaCertifications.includes(superBlock))
-    return (
-      <Callout
-        variant='note'
-        label={t('misc.note')}
-        className='annual-donation-alert'
-      >
-        <p>{t('donate.beta-certification')}</p>
-        <hr />
-        <p className='btn-container'>
-          <Link
-            className='btn donate-button'
-            key='donate'
-            sameTab={false}
-            to='/donate'
-            onClick={onCertificationDonationAlertClick}
-          >
-            {t('buttons.donate-now')}
-          </Link>
-        </p>
-      </Callout>
-    );
-
-  if (!isDonating && unfinishedCertifications.includes(superBlock))
-    return (
-      <Callout
-        variant='note'
-        label={t('misc.note')}
-        className='annual-donation-alert'
-      >
-        <p>
-          <Trans i18nKey='donate.consider-donating-2'>
-            <Link className='inline' to='/donate'>
-              placeholder
-            </Link>
-          </Trans>
-        </p>
-      </Callout>
-    );
-
-  return null;
-};
 
 function SuperBlockIntro({
   superBlock,
@@ -116,6 +50,18 @@ function SuperBlockIntro({
     : typeof introRaw === 'string'
       ? [introRaw]
       : [''];
+
+  const donateButtonCertifications = [
+    SuperBlocks.A2English,
+    SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
+    SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
+  ];
 
   const IntroTopDefault = ({ fsd }: { fsd: boolean }) => (
     <>
@@ -180,7 +126,23 @@ function SuperBlockIntro({
         <>
           <Spacer size='m' />
           <Callout variant='note' label={t('misc.note')}>
-            {superBlockNoteText}
+            <p>{superBlockNoteText}</p>
+            {!isDonating && donateButtonCertifications.includes(superBlock) && (
+              <>
+                <hr />
+                <p className='btn-container mb-0'>
+                  <Link
+                    className='btn donate-button'
+                    key='donate'
+                    sameTab={false}
+                    to='/donate'
+                    onClick={onCertificationDonationAlertClick}
+                  >
+                    {t('buttons.donate-now')}
+                  </Link>
+                </p>
+              </>
+            )}
           </Callout>
         </>
       )}
@@ -188,14 +150,7 @@ function SuperBlockIntro({
   );
 
   return (
-    <>
-      <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
-      <ConditionalDonationAlert
-        superBlock={superBlock}
-        onCertificationDonationAlertClick={onCertificationDonationAlertClick}
-        isDonating={isDonating}
-      />
-    </>
+    <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
   );
 }
 
