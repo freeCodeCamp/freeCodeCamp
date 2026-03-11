@@ -301,6 +301,9 @@
           "blocks": [
             "lecture-working-with-common-data-structures-js",
             "workshop-linked-list-js",
+            "lab-linked-list-operations",
+            "lab-implement-a-queue",
+            "review-data-structures-js",
             "quiz-data-structures-js"
           ]
         },

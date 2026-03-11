@@ -1,9 +1,9 @@
 ---
-title: Semantic HTML
+title: Learn Semantic HTML
 superBlock: semantic-html
 certification: semantic-html
 ---
 
-## Introduction to Semantic HTML
+## Introduction to Learn Semantic HTML
 
-Introduction to Semantic HTML.
+In this course, you will learn how to write semantic HTML.

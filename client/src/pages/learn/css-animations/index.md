@@ -1,9 +1,9 @@
 ---
-title: Animations
+title: Learn CSS Animations
 superBlock: css-animations
 certification: css-animations
 ---
 
-## CSS Animations
+## Introduction to Learn CSS Animations
 
 Create engaging UI motion with accessible CSS animations.

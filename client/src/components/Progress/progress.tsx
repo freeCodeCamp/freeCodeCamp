@@ -56,6 +56,7 @@ type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ProgressProps extends PropsFromRedux {
   t: TFunction;
+  minified?: boolean;
 }
 function Progress({
   currentBlockIds,
@@ -65,7 +66,8 @@ function Progress({
   challengeType,
   completedChallengesInBlock,
   completedPercent,
-  t
+  t,
+  minified
 }: ProgressProps): JSX.Element {
   useFetchAllCurriculumData(); // needed to compute completedPercent
   let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
@@ -103,6 +105,7 @@ function Progress({
         title={blockTitle}
         meta={meta}
         completedPercent={completedPercent}
+        minified={minified}
       />
     </div>
   );
