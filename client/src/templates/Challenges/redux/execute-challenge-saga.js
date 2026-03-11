@@ -251,7 +251,7 @@ function* flush() {
   yield put(initConsole(''));
 }
 
-export function* previewChallengeSaga() {
+function* previewChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -335,9 +335,9 @@ export function* previewChallengeSaga() {
   }
 }
 
-function* updatePreviewSaga(action) {
+export function* updatePreviewSaga(action) {
   yield flush();
-  if (action.type == actionTypes.updateFile) {
+  if (action.type === actionTypes.updateFile) {
     yield delay(700);
   }
   const challengeData = yield select(challengeDataSelector);
