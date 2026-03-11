@@ -1087,25 +1087,25 @@
     ],
     "note": "",
     "blocks": {
-      "learn-rag-mcp-fundamentals-understanding-rag": {
+      "understanding-rag": {
         "title": "Understanding RAG",
         "intro": [
           "Learn the fundamentals of Retrieval-Augmented Generation (RAG), including what it is, when to use it, and core concepts."
         ]
       },
-      "learn-rag-mcp-fundamentals-retrieval-engine-internals": {
+      "retrieval-engine-internals": {
         "title": "Retrieval Engine Internals",
         "intro": [
           "Dive into semantic search, embedding models, vector databases, and chunking to understand how retrieval works under the hood."
         ]
       },
-      "learn-rag-mcp-fundamentals-designing-reliable-rag-systems": {
+      "designing-reliable-rag-systems": {
         "title": "Designing Reliable RAG Systems",
         "intro": [
           "Explore RAG architecture, monitoring, error handling, and how to deploy RAG systems in production."
         ]
       },
-      "learn-rag-mcp-fundamentals-mcp-ecosystem-and-tooling": {
+      "mcp-ecosystem-and-tooling": {
         "title": "MCP Ecosystem & Tooling",
         "intro": [
           "Learn why MCP exists, its architecture, JSON-RPC, and how to build and use MCP servers and clients effectively."
