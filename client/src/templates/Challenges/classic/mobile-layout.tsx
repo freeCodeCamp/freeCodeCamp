@@ -7,6 +7,10 @@ import { connect } from 'react-redux';
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
 
 import {
+  DailyCodingChallengeLanguages,
+  ResizeProps
+} from '../../../redux/prop-types';
+import {
   removePortalWindow,
   setShowPreviewPortal,
   setShowPreviewPane
@@ -20,6 +24,7 @@ import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
+import store from 'store';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
@@ -40,6 +45,11 @@ interface MobileLayoutProps {
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   usesMultifileEditor: boolean;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
 }
 
 const tabs = {
@@ -145,6 +155,11 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
   handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
 
+  handleLanguageChange = (language: DailyCodingChallengeLanguages): void => {
+    store.set('dailyCodingChallengeLanguage', language);
+    this.props.setDailyCodingChallengeLanguage(language);
+  };
+
   render(): JSX.Element {
     const { currentTab } = this.state;
     const {
@@ -164,7 +179,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
-      usesMultifileEditor
+      usesMultifileEditor,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage
     } = this.props;
 
     const displayPreviewPane = hasPreview && showPreviewPane;
@@ -211,6 +228,39 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
     return (
       <>
+        {isDailyCodingChallenge && (
+          <div className='tabs-row'>
+            <div
+              className='tabs-row-middle'
+              style={{
+                position: 'static',
+                transform: 'none',
+                padding: '10px',
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '5px',
+                width: '100%'
+              }}
+            >
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+                disabled={dailyCodingChallengeLanguage === 'javascript'}
+                onClick={() => this.handleLanguageChange('javascript')}
+                style={{ flex: 1 }}
+              >
+                JavaScript
+              </button>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                disabled={dailyCodingChallengeLanguage === 'python'}
+                onClick={() => this.handleLanguageChange('python')}
+                style={{ flex: 1 }}
+              >
+                Python
+              </button>
+            </div>
+          </div>
+        )}
         <Tabs
           id='mobile-layout'
           className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
