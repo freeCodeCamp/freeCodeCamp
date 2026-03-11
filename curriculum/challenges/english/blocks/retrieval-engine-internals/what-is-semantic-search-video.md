@@ -3,7 +3,7 @@ id: 69ae69fbb4a814be6a4f2bdc
 title: What is Semantic Search?
 challengeType: 11
 videoId: 1OxzFbEES_g
-dashedName: what-is-semantic-search-learn-rag-mcp-fundamentals
+dashedName: what-is-semantic-search
 ---
 
 # --description--

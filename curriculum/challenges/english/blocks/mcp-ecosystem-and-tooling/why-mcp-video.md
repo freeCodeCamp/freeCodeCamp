@@ -3,7 +3,7 @@ id: 69ae766ab4a814be6a4f2be3
 title: Why MCP?
 challengeType: 11
 videoId: G1bjz6QcgRU
-dashedName: why-mcp-learn-rag-mcp-fundamentals
+dashedName: why-mcp
 ---
 
 # --description--

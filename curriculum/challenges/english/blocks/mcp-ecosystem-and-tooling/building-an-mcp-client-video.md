@@ -3,7 +3,7 @@ id: 69ae7688b4a814be6a4f2bea
 title: Building an MCP Client
 challengeType: 11
 videoId: pzvQoPwNQN0
-dashedName: building-mcp-client-learn-rag-mcp-fundamentals
+dashedName: building-an-mcp-client
 ---
 
 # --description--

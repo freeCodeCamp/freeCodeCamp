@@ -3,7 +3,7 @@
   "isUpcomingChange": false,
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "dashedName": "learn-rag-mcp-fundamentals-retrieval-engine-internals",
+  "dashedName": "retrieval-engine-internals",
   "helpCategory": "Python",
   "challengeOrder": [
     {

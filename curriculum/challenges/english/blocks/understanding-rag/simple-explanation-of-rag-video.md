@@ -3,7 +3,7 @@ id: 69ae5c6d8491ca1dcd31440c
 title: Simple Explanation of RAG
 challengeType: 11
 videoId: _KPPqvJ9ig4
-dashedName: simple-explanation-of-rag-learn-rag-mcp-fundamentals
+dashedName: simple-explanation-of-rag
 ---
 
 # --description--

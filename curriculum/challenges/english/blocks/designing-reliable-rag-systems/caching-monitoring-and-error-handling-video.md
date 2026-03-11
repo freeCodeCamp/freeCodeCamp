@@ -1,14 +1,14 @@
 ---
 id: 69ae6fd7b4a814be6a4f2be1
-title: Catching, Monitoring, and Error Handling
+title: Caching, Monitoring, and Error Handling
 challengeType: 11
 videoId: J0D7kfBORL8
-dashedName: catching-monitoring-and-error-handling-learn-rag-mcp-fundamentals
+dashedName: caching-monitoring-and-error-handling
 ---
 
 # --description--
 
-In this video, you will learn about the importance of catching, monitoring, and error handling in RAG systems. 
+In this video, you will learn about the importance of caching, monitoring, and error handling in RAG systems. 
 
 # --questions--
 

@@ -3,7 +3,7 @@ id: 69ae766eb4a814be6a4f2be4
 title: What Is MCP?
 challengeType: 11
 videoId: OaK6n8Yg3fA
-dashedName: what-is-mcp-learn-rag-mcp-fundamentals
+dashedName: what-is-mcp
 ---
 
 # --description--

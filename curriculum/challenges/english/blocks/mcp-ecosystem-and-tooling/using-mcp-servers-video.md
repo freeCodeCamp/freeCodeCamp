@@ -3,7 +3,7 @@ id: 69ae767ab4a814be6a4f2be7
 title: Using MCP Servers
 challengeType: 11
 videoId: PlILctA_czg
-dashedName: using-mcp-servers-learn-rag-mcp-fundamentals
+dashedName: using-mcp-servers
 ---
 
 # --description--

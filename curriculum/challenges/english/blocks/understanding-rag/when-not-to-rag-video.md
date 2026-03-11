@@ -3,7 +3,7 @@ id: 69ae5c728491ca1dcd31440d
 title: When Not To RAG
 challengeType: 11
 videoId: 3HY38scJb54
-dashedName: when-not-to-rag-learn-rag-mcp-fundamentals
+dashedName: when-not-to-rag
 ---
 
 # --description--

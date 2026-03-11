@@ -3,7 +3,7 @@ id: 69ae6a0eb4a814be6a4f2bdf
 title: Chunking
 challengeType: 11
 videoId: tFUkvObOaHc
-dashedName: chunking-learn-rag-mcp-fundamentals
+dashedName: chunking
 ---
 
 # --description--

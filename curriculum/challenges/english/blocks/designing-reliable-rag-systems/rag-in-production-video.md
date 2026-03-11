@@ -3,7 +3,7 @@ id: 69ae6fdbb4a814be6a4f2be2
 title: RAG in Production
 challengeType: 11
 videoId: EVZRatDET7Y
-dashedName: rag-in-production-learn-rag-mcp-fundamentals
+dashedName: rag-in-production
 ---
 
 # --description--

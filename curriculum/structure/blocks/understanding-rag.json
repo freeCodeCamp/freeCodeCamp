@@ -3,7 +3,7 @@
   "isUpcomingChange": false,
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "dashedName": "learn-rag-mcp-fundamentals-understanding-rag",
+  "dashedName": "understanding-rag",
   "helpCategory": "Python",
   "challengeOrder": [
     {

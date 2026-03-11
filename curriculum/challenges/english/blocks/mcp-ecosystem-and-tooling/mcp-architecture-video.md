@@ -3,7 +3,7 @@ id: 69ae7672b4a814be6a4f2be5
 title: MCP Architecture
 challengeType: 11
 videoId: i0sJXMyGLQY
-dashedName: mcp-architecture-learn-rag-mcp-fundamentals
+dashedName: mcp-architecture
 ---
 
 # --description--

@@ -3,7 +3,7 @@ id: 69ae6a09b4a814be6a4f2bde
 title: What are Vector Databases?
 challengeType: 11
 videoId: kCGgKYMam7o
-dashedName: what-are-vector-databases-learn-rag-mcp-fundamentals
+dashedName: what-are-vector-databases
 ---
 
 # --description--

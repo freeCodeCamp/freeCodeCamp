@@ -3,7 +3,7 @@ id: 69ae6a04b4a814be6a4f2bdd
 title: What are Embedding Models?
 challengeType: 11
 videoId: _B6lL3WM_hQ
-dashedName: what-are-embedding-models-learn-rag-mcp-fundamentals
+dashedName: what-are-embedding-models
 ---
 
 # --description--

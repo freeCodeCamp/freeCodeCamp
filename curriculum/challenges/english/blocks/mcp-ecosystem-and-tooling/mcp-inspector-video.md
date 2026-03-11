@@ -3,7 +3,7 @@ id: 69ae7684b4a814be6a4f2be9
 title: MCP Inspector
 challengeType: 11
 videoId: OIr0TIWc0Bs
-dashedName: mcp-inspector-learn-rag-mcp-fundamentals
+dashedName: mcp-inspector
 ---
 
 # --description--

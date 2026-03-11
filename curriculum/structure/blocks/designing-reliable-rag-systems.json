@@ -3,7 +3,7 @@
   "isUpcomingChange": false,
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "dashedName": "learn-rag-mcp-fundamentals-designing-reliable-rag-systems",
+  "dashedName": "designing-reliable-rag-systems",
   "helpCategory": "Python",
   "challengeOrder": [
     {
@@ -12,7 +12,7 @@
     },
     {
       "id": "69ae6fd7b4a814be6a4f2be1",
-      "title": "Catching, Monitoring, and Error Handling"
+      "title": "Caching, Monitoring, and Error Handling"
     },
     {
       "id": "69ae6fdbb4a814be6a4f2be2",

@@ -3,7 +3,7 @@ id: 69ae7676b4a814be6a4f2be6
 title: JSON-RPC
 challengeType: 11
 videoId: McFdJvKbTQs
-dashedName: json-rpc-learn-rag-mcp-fundamentals
+dashedName: json-rpc
 ---
 
 # --description--

@@ -3,7 +3,7 @@ id: 69ae6fd0b4a814be6a4f2be0
 title: RAG Architecture
 challengeType: 11
 videoId: OVn_ykvG4LE
-dashedName: rag-architecture-learn-rag-mcp-fundamentals
+dashedName: rag-architecture
 ---
 
 # --description--

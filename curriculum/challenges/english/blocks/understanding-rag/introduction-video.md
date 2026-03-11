@@ -3,7 +3,7 @@ id: 69ae5c648491ca1dcd31440b
 title: Introduction
 challengeType: 11
 videoId: LxilAjoRybE
-dashedName: introduction-learn-rag-mcp-fundamentals
+dashedName: introduction
 ---
 
 # --description--
