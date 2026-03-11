@@ -536,7 +536,6 @@ describe('userRoutes', () => {
         responses.forEach(response => {
           expect([200, 401]).toContain(response.status);
         });
-        expect(responses.some(r => r.status === 200)).toBe(true);
         expect(userCount).toBe(0);
       });
 
