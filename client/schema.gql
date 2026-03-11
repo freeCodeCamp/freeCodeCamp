@@ -1,4 +1,4 @@
-### Type definitions saved at 2026-02-12T12:28:08.262Z ###
+### Type definitions saved at 2026-03-10T08:56:46.271Z ###
 
 enum RemoteFileFit {
   COVER
@@ -201,8 +201,6 @@ type File implements Node @dontInfer {
   ctime: Date! @dateformat
   birthtime: Date @deprecated(reason: "Use `birthTime` instead")
   birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
-  blksize: Int
-  blocks: Int
 }
 
 type Directory implements Node @dontInfer {
@@ -296,54 +294,6 @@ type SitePlugin implements Node @dontInfer {
 
 type SiteBuildMetadata implements Node @dontInfer {
   buildTime: Date @dateformat
-}
-
-type MarkdownHeading {
-  id: String
-  value: String
-  depth: Int
-}
-
-enum MarkdownHeadingLevels {
-  h1
-  h2
-  h3
-  h4
-  h5
-  h6
-}
-
-enum MarkdownExcerptFormats {
-  PLAIN
-  HTML
-  MARKDOWN
-}
-
-type MarkdownWordCount {
-  paragraphs: Int
-  sentences: Int
-  words: Int
-}
-
-type MarkdownRemark implements Node
-  @childOf(mimeTypes: ["text/markdown", "text/x-markdown"], types: ["File"])
-  @derivedTypes
-  @dontInfer {
-  frontmatter: MarkdownRemarkFrontmatter
-  excerpt: String
-  rawMarkdownBody: String
-  fileAbsolutePath: String
-  fields: MarkdownRemarkFields
-}
-
-type MarkdownRemarkFrontmatter {
-  title: String
-  superBlock: String
-  certification: String
-}
-
-type MarkdownRemarkFields {
-  slug: String
 }
 
 type ChallengeNodeChallengeHooks {
@@ -508,7 +458,7 @@ type ChallengeNodeChallengeQuizzesQuestionsAudioData @derivedTypes {
 
 type ChallengeNodeChallengeQuizzesQuestionsAudioDataAudio {
   filename: String
-  startTimestamp: Int
+  startTimestamp: Float
   finishTimestamp: Float
 }
 
