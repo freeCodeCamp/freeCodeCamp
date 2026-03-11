@@ -1,9 +1,9 @@
 ---
-title: Positioning
+title: Learn CSS Positioning
 superBlock: css-positioning
 certification: css-positioning
 ---
 
-## CSS Positioning
+## Introduction to Learn CSS Positioning
 
 Use positioning and floats to control layout and element flow.

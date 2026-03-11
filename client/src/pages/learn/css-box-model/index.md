@@ -1,9 +1,9 @@
 ---
-title: The Box Model
+title: Learn the CSS Box Model
 superBlock: css-box-model
 certification: css-box-model
 ---
 
-## CSS Box Model
+## Introduction to Learn the CSS Box Model
 
 Master the CSS box model, spacing, and layout effects for precise designs.
