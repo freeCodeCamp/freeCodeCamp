@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 import {
   FileTabs,
-  SandpackConsole,
   SandpackLayout,
   SandpackPreview,
   SandpackProvider,
@@ -9,6 +8,7 @@ import {
 } from '@codesandbox/sandpack-react';
 import { freeCodeCampDark } from '@codesandbox/sandpack-themes';
 import './interactive-editor.css';
+import InteractiveConsole from './interactive-console';
 import CustomMonacoEditor from './custom-monaco-editor';
 
 export interface InteractiveFile {
@@ -106,11 +106,10 @@ const InteractiveEditor = ({ files }: Props) => {
                     data-playwright-test-label='sp-preview'
                     style={{ flex: 1.5 }}
                   />
-                  <SandpackConsole
+                  <InteractiveConsole
                     data-playwright-test-label='sp-console'
                     style={{
-                      flex: 1,
-                      overflow: 'scroll'
+                      flex: 1
                     }}
                   />
                 </>
@@ -118,10 +117,7 @@ const InteractiveEditor = ({ files }: Props) => {
                 <SandpackPreview />
               )
             ) : (
-              <SandpackConsole
-                data-playwright-test-label='sp-console'
-                standalone={true}
-              />
+              <InteractiveConsole data-playwright-test-label='sp-console' />
             )}
           </SandpackStack>
         </SandpackLayout>
