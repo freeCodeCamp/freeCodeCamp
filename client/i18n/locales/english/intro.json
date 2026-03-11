@@ -1353,7 +1353,7 @@
   "learn-oop-with-python": {
     "title": "Learn OOP with Python",
     "summary": [
-      "In this video course, you learn about object oriented programming using Python."
+      "In this video course, you learn about object-oriented programming using Python."
     ],
     "intro": [
       "Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and code to manipulate that data. This course introduces the key principles of OOP, including classes, objects, inheritance, and shows how to apply them in practice."
