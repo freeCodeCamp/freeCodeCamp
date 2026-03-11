@@ -16,7 +16,6 @@ Examples of location pseudo-classes are:
 - `:any-link`
 - `:local-link`
 - `:target`
-- `:target-within`
 
 Let's take a deeper look at each of these pseudo-classes.
 

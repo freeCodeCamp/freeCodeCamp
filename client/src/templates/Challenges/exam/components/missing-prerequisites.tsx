@@ -36,7 +36,7 @@ function MissingPrerequisites({
     });
 
   return (
-    <Callout variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       <p>{t('learn.exam.not-qualified')}</p>
       <Spacer size='xs' />
       <ul>

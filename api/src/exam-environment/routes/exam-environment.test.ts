@@ -32,7 +32,6 @@ vi.mock('../../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../../utils/env.js')>();
   return {
     ...actual,
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
     DEPLOYMENT_ENV: 'production'
   };
 });
@@ -56,6 +55,11 @@ describe('/exam-environment/', () => {
       examEnvironmentAuthorizationToken =
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         res.body.examEnvironmentAuthorizationToken;
+
+      await fastifyTestInstance.prisma.user.update({
+        where: { id: defaultUserId },
+        data: { isHonest: true }
+      });
     });
 
     afterAll(async () => {
@@ -591,6 +595,7 @@ describe('/exam-environment/', () => {
           userId: defaultUserId,
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
+          examModerationId: null,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTime: expect.any(Date),
@@ -695,6 +700,11 @@ describe('/exam-environment/', () => {
           where: { id: mock.examId },
           data: { deprecated: false }
         });
+
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isHonest: true }
+        });
       });
 
       it('should return 200', async () => {
@@ -706,6 +716,34 @@ describe('/exam-environment/', () => {
         expect(res.body).toStrictEqual([
           {
             canTake: true,
+            config: {
+              name: mock.exam.config.name,
+              note: mock.exam.config.note,
+              passingPercent: mock.exam.config.passingPercent,
+              totalTimeInS: mock.exam.config.totalTimeInS,
+              retakeTimeInS: mock.exam.config.retakeTimeInS
+            },
+            id: mock.examId,
+            prerequisites: mock.exam.prerequisites
+          }
+        ]);
+
+        expect(res.status).toBe(200);
+      });
+
+      it('should return all exams as unable to take, if user has not accepted academic honesty policy', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isHonest: false }
+        });
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual([
+          {
+            canTake: false,
             config: {
               name: mock.exam.config.name,
               note: mock.exam.config.note,

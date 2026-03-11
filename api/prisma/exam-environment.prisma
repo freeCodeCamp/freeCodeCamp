@@ -118,26 +118,31 @@ type ExamEnvironmentTagConfig {
 
 /// An attempt at an exam in the Exam Environment App
 model ExamEnvironmentExamAttempt {
-  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  id               String  @id @default(auto()) @map("_id") @db.ObjectId
   /// Foriegn key to user
-  userId          String @db.ObjectId
+  userId           String  @db.ObjectId
   /// Foreign key to exam
-  examId          String @db.ObjectId
+  examId           String  @db.ObjectId
   /// Foreign key to generated exam id
-  generatedExamId String @db.ObjectId
+  generatedExamId  String  @db.ObjectId
+  /// Un-enforced foreign key to moderation
+  examModerationId String? @db.ObjectId
 
   questionSets ExamEnvironmentQuestionSetAttempt[]
   /// Time exam was started
   startTime    DateTime
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version      Int                                 @default(3)
+  version      Int                                 @default(4)
 
   // Relations
-  user                          user                            @relation(fields: [userId], references: [id], onDelete: Cascade)
-  exam                          ExamEnvironmentExam             @relation(fields: [examId], references: [id], onDelete: Cascade)
-  generatedExam                 ExamEnvironmentGeneratedExam    @relation(fields: [generatedExamId], references: [id])
-  ExamEnvironmentExamModeration ExamEnvironmentExamModeration[]
+  user                          user                           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exam                          ExamEnvironmentExam            @relation(fields: [examId], references: [id], onDelete: Cascade)
+  generatedExam                 ExamEnvironmentGeneratedExam   @relation(fields: [generatedExamId], references: [id])
+  // Ideally, there could be a way to add a one-way optional relation here, but Prisma does not allow that:
+  // Error parsing attribute "@relation": The relation fields `examAttempt` on Model `ExamEnvironmentExamModeration` and `examModeration` on Model `ExamEnvironmentExamAttempt` both provide the `references` argument in the @relation attribute. You have to provide it only on one of the two fields.
+  // examModeration ExamEnvironmentExamModeration? @relation(fields: [examModerationId], references: [id])
+  examEnvironmentExamModeration ExamEnvironmentExamModeration?
 }
 
 type ExamEnvironmentQuestionSetAttempt {

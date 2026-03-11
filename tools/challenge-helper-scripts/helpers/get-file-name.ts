@@ -1,6 +1,6 @@
 import { readdir } from 'fs/promises';
 import matter from 'gray-matter';
-import { getProjectPath } from './get-project-info';
+import { getProjectPath } from './get-project-info.js';
 
 export const getFileName = async (id: string): Promise<string | null> => {
   const path = getProjectPath();

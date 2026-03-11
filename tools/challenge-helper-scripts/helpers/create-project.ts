@@ -3,8 +3,8 @@
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '../../../curriculum/src/file-handler';
-import { insertInto } from './utils';
+} from '@freecodecamp/curriculum/file-handler';
+import { insertInto } from './utils.js';
 
 export async function updateSimpleSuperblockStructure(
   block: string,
@@ -29,6 +29,7 @@ export async function updateSimpleSuperblockStructure(
 function createNewChapter(chapter: string, module: string, block: string) {
   return {
     dashedName: chapter,
+    comingSoon: true,
     modules: [
       {
         dashedName: module,
@@ -41,6 +42,7 @@ function createNewChapter(chapter: string, module: string, block: string) {
 function createNewModule(module: string, block: string) {
   return {
     dashedName: module,
+    comingSoon: true,
     blocks: [block]
   };
 }
@@ -48,8 +50,10 @@ function createNewModule(module: string, block: string) {
 export type ChapterModuleSuperblockStructure = {
   chapters: {
     dashedName: string;
+    comingSoon?: boolean;
     modules: {
       dashedName: string;
+      comingSoon?: boolean;
       blocks: string[];
     }[];
   }[];

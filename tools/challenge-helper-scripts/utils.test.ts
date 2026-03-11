@@ -1,7 +1,8 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import fs from 'fs';
 import path, { join } from 'path';
 import matter from 'gray-matter';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 import { vi, describe, it, expect, afterEach } from 'vitest';
 
 vi.mock('fs', () => {
@@ -22,12 +23,6 @@ vi.mock('gray-matter', () => {
   };
 });
 
-vi.mock('bson-objectid', () => {
-  return {
-    default: vi.fn(() => ({ toString: () => mockChallengeId }))
-  };
-});
-
 vi.mock('./helpers/get-step-template', () => {
   return {
     getStepTemplate: vi.fn()
@@ -45,16 +40,15 @@ vi.mock('./helpers/project-metadata', () => {
   };
 });
 
-const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
-import { getStepTemplate } from './helpers/get-step-template';
+import { getStepTemplate } from './helpers/get-step-template.js';
 import {
   createChallengeFile,
   createStepFile,
   insertStepIntoMeta,
   updateStepTitles,
   validateBlockName
-} from './utils';
-import { updateMetaData } from './helpers/project-metadata';
+} from './utils.js';
+import { updateMetaData } from './helpers/project-metadata.js';
 
 const block = 'utils-project';
 const projectPath = join(
@@ -70,26 +64,26 @@ describe('Challenge utils helper scripts', () => {
     vi.clearAllMocks();
   });
   describe('createStepFile util', () => {
-    it('should create next step and return its identifier', () => {
-      process.env.CALLING_DIR = projectPath;
+    it('should create next step', () => {
+      process.env.INIT_CWD = projectPath;
       const mockTemplate = 'Mock template...';
       (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
         mockTemplate
       );
-      const step = createStepFile({
+
+      const challengeId = new ObjectId();
+
+      createStepFile({
+        challengeId,
         stepNum: 3,
         challengeType: 0
       });
-
-      // eslint-disable-next-line @typescript-eslint/no-base-to-string
-      expect(step.toString()).toEqual(mockChallengeId);
-      expect(ObjectID).toHaveBeenCalledTimes(1);
 
       // Internal tasks
       // - Should generate a template for the step that is being created
       expect(getStepTemplate).toHaveBeenCalledTimes(1);
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        `${projectPath}/${mockChallengeId}.md`,
+        `${projectPath}/${challengeId.toString()}.md`,
         mockTemplate
       );
     });
@@ -126,7 +120,7 @@ describe('Challenge utils helper scripts', () => {
 
   describe('createChallengeFile util', () => {
     it('should create the challenge', () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
       const template = 'pretend this is a template';
 
       createChallengeFile('hi', template);
@@ -140,17 +134,19 @@ describe('Challenge utils helper scripts', () => {
 
   describe('insertStepIntoMeta util', () => {
     it('should call updateMetaData with a new file id and name', async () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
+
+      const stepId = new ObjectId();
 
       await insertStepIntoMeta({
         stepNum: 3,
-        stepId: new ObjectID(mockChallengeId)
+        stepId
       });
 
       expect(updateMetaData).toHaveBeenCalledWith({
         challengeOrder: [
           { id: 'abc', title: 'Step 1' }, // title gets overwritten
-          { id: mockChallengeId, title: 'Step 2' }
+          { id: stepId.toString(), title: 'Step 2' }
         ]
       });
     });
@@ -158,7 +154,7 @@ describe('Challenge utils helper scripts', () => {
 
   describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
       (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
         'Mock template...'
       );
@@ -190,6 +186,6 @@ describe('Challenge utils helper scripts', () => {
     });
   });
   afterEach(() => {
-    delete process.env.CALLING_DIR;
+    delete process.env.INIT_CWD;
   });
 });

@@ -1,13 +1,13 @@
 import { createSelector } from 'reselect';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
-  certTypeIdMap,
-  certTypeTitleMap
-} from '../../../shared-dist/config/certification-settings.js';
+  certSlugTypeMap,
+  certToTitleMap
+} from '@freecodecamp/shared/config/certification-settings';
 
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
-import { superBlockStructuresSelector } from '../templates/Introduction/redux';
+import { curriculumData } from '../services/curriculum-data';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -122,10 +122,6 @@ export const createUserByNameSelector = username => state => {
 };
 
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
-export const allChallengesInfoSelector = state =>
-  state[MainApp].allChallengesInfo;
-export const getSuperBlockStructure = (state, superBlock) =>
-  superBlockStructuresSelector(state)[superBlock];
 
 export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
@@ -138,21 +134,13 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
 );
 
 export const completionStateSelector = createSelector(
-  [
-    allChallengesInfoSelector,
-    completedChallengesIdsSelector,
-    superBlockStructuresSelector,
-    state => state.challenge.challengeMeta
-  ],
-  (
-    allChallengesInfo,
-    completedChallengesIds,
-    superBlockStructures,
-    challengeMeta
-  ) => {
-    const { challengeNodes } = allChallengesInfo;
+  [completedChallengesIdsSelector, state => state.challenge.challengeMeta],
+  (completedChallengesIds, challengeMeta) => {
+    const challengeNodes = curriculumData.challengeNodes;
 
-    const structure = superBlockStructures[challengeMeta.superBlock];
+    const structure = curriculumData.getSuperBlockStructure(
+      challengeMeta.superBlock
+    );
 
     const chapters = structure?.chapters ?? [];
 
@@ -231,17 +219,9 @@ export const claimableCertsSelector = createSelector([userSelector], user => {
     ({ id }) => id
   );
 
-  const isClaimedById = Object.entries(certTypeIdMap).reduce(
-    (acc, [userFlag, certId]) => {
-      acc[certId] = Boolean(user[userFlag]);
-      return acc;
-    },
-    {}
-  );
-  // Invert certTypeIdMap ({[userFlag]: certId}  => {[certId]: userFlag}) to get certType from id
-  const invertedCertTypeIdMap = Object.entries(certTypeIdMap).reduce(
-    (acc, [userFlag, certId]) => {
-      acc[certId] = userFlag;
+  const isClaimedByCert = Object.entries(certSlugTypeMap).reduce(
+    (acc, [cert, userFlag]) => {
+      acc[cert] = Boolean(user[userFlag]);
       return acc;
     },
     {}
@@ -249,17 +229,16 @@ export const claimableCertsSelector = createSelector([userSelector], user => {
 
   const claimable = [];
 
-  for (const { id, projects } of liveCerts) {
+  for (const { projects, certSlug } of liveCerts) {
     if (!projects) continue;
-    if (isClaimedById[id]) continue;
+    if (isClaimedByCert[certSlug]) continue;
 
     const projectIds = projects.map(p => p.id);
     const allProjectsComplete = projectIds.every(id =>
       completedChallengeIds.includes(id)
     );
 
-    const certType = invertedCertTypeIdMap[id];
-    const certTitle = certTypeTitleMap[certType];
+    const certTitle = certToTitleMap[certSlug];
     if (allProjectsComplete) {
       claimable.push({
         certTitle

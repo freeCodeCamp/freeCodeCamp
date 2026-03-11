@@ -6,7 +6,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 const Down = () => {
   const { t } = useTranslation();
   return (
-    <Callout variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       <p>
         <Trans i18nKey='intro:misc-text.course-maintenance'>
           <a
@@ -27,7 +27,7 @@ const Down = () => {
 const Disabled = () => {
   const { t } = useTranslation();
   return (
-    <Callout variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       <p>
         <Trans i18nKey='intro:misc-text.course-disabled'>
           <a

@@ -1,4 +1,4 @@
-import type { FastifyPluginCallback } from 'fastify';
+import type { FastifyError, FastifyPluginCallback } from 'fastify';
 import * as Sentry from '@sentry/node';
 import fp from 'fastify-plugin';
 
@@ -22,7 +22,7 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
 
   fastify.decorate('Sentry', Sentry);
 
-  fastify.setErrorHandler((error, request, reply) => {
+  fastify.setErrorHandler((error: FastifyError, request, reply) => {
     const logger = fastify.log.child({ req: request });
     const accepts = request.accepts().type(['json', 'html']);
     const { returnTo } = getRedirectParams(request);

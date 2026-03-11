@@ -16,7 +16,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'front-end-development-libraries-v9',
-    name: 'Front End Development Libraries Certification'
+    name: 'Front-End Development Libraries Certification'
   },
   {
     slug: 'python-v9',
@@ -28,19 +28,27 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'back-end-development-and-apis-v9',
-    name: 'Back End Development and APIs Certification'
+    name: 'Back-End Development and APIs Certification'
   },
   {
     slug: 'full-stack-developer-v9',
-    name: 'Certified Full Stack Developer Curriculum'
+    name: 'Certified Full-Stack Developer Curriculum'
   },
   {
     slug: 'a2-english-for-developers',
-    name: 'A2 English for Developers Certification'
+    name: 'A2 English for Developers Certification (Beta)'
   },
   {
     slug: 'b1-english-for-developers',
     name: 'B1 English for Developers Certification (Beta)'
+  },
+  {
+    slug: 'a1-professional-spanish',
+    name: 'A1 Professional Spanish Certification (Beta)'
+  },
+  {
+    slug: 'a1-professional-chinese',
+    name: 'A1 Professional Chinese Certification (Beta)'
   },
   {
     slug: 'foundational-c-sharp-with-microsoft',
@@ -64,7 +72,7 @@ test.describe('Map Component', () => {
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
     const curriculumBtns = page.getByTestId('curriculum-map-button');
-    await expect(curriculumBtns).toHaveCount(14);
+    await expect(curriculumBtns).toHaveCount(16);
 
     for (const { name, slug } of LANDING_PAGE_LINKS) {
       const superblockLink = page.getByRole('link', {

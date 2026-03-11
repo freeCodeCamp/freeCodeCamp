@@ -29,7 +29,7 @@ export async function fetchChallenges(language: 'javascript' | 'python') {
 query {
   allChallengeNode(
   filter: {challenge: {superBlock: {eq: "dev-playground"}, block: {eq: "daily-coding-challenges-${language}"}}}
-  sort: {order: ASC, fields: challenge___challengeOrder}
+  sort: {challenge: {challengeOrder: ASC}}
   ) {
     edges {
       node {
@@ -126,12 +126,12 @@ export function combineChallenges({
   return challengeData;
 }
 
-export function handleError(err: Error, client: MongoClient) {
+export async function handleError(err: unknown, client: MongoClient) {
   if (err) {
     console.error('Oh noes!! Error seeding Daily Challenges.');
     console.error(err);
     try {
-      client.close();
+      await client.close();
     } catch {
       // no-op
     } finally {

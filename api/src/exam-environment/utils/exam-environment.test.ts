@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
+import type { MockInstance } from 'vitest';
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentQuestionType
@@ -29,7 +30,7 @@ import {
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
 describe('Exam Environment mocked Math.random', () => {
-  let spy: ReturnType<typeof vi.spyOn>;
+  let spy: MockInstance;
   beforeAll(() => {
     spy = vi.spyOn(Math, 'random').mockReturnValue(0.123456789);
   });
@@ -78,7 +79,8 @@ describe('Exam Environment mocked Math.random', () => {
   describe('checkPrequisites()', () => {
     it("should return true if all items in the second argument exist in the first argument's `.completedChallenges[].id`", () => {
       const user = {
-        completedChallenges: [{ id: '1' }, { id: '2' }]
+        completedChallenges: [{ id: '1' }, { id: '2' }],
+        isHonest: true
       };
       const prerequisites = ['1', '2'];
 
@@ -87,7 +89,8 @@ describe('Exam Environment mocked Math.random', () => {
 
     it("should return false if any items in the second argument do not exist in the first argument's `.completedChallenges[].id`", () => {
       const user = {
-        completedChallenges: [{ id: '2' }]
+        completedChallenges: [{ id: '2' }],
+        isHonest: false
       };
       const prerequisites = ['1', '2'];
 
@@ -518,6 +521,7 @@ describe('Exam Environment Schema', () => {
         data: {
           examId: oid(),
           generatedExamId: oid(),
+          examModerationId: null,
           questionSets: [
             {
               id: oid(),

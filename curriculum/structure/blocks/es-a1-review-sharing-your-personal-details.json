@@ -1,0 +1,12 @@
+{
+  "name": "Sharing Your Personal Details Review",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-review-sharing-your-personal-details",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6967d8fd5874a8e4c9119d55", "title": "Task 1" },
+    { "id": "6967db9498d2ab347fc7c920", "title": "Task 2" }
+  ],
+  "blockLabel": "review"
+}

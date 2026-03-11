@@ -19,9 +19,12 @@ import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import { regenerateMissingProperties } from '../../../shared-dist/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import '../components/layouts/project-links.css';
-import { Certification } from '../../../shared-dist/config/certification-settings';
+import {
+  Certification,
+  currentCertifications
+} from '@freecodecamp/shared/config/certification-settings';
 interface ShowProjectLinksProps {
   certSlug: Certification;
   name: string;
@@ -161,7 +164,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const getCertHeading = (cert: Certification) => {
     if (cert === Certification.LegacyFullStack) {
       return 'certification.project.heading-legacy-full-stack';
-    } else if (cert === Certification.FoundationalCSharp) {
+    } else if (currentCertifications.includes(cert)) {
       return 'certification.project.heading-exam';
     } else {
       return 'certification.project.heading';

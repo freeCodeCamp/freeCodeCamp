@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { normalizeText, compareTexts } from './speaking-modal-helpers';
+import {
+  normalizeText,
+  compareTexts,
+  stripHtmlTags
+} from './speaking-modal-helpers';
 
 describe('speaking-modal-helpers', () => {
   describe('normalizeText', () => {
@@ -229,6 +233,40 @@ describe('speaking-modal-helpers', () => {
           status: 'correct'
         });
       });
+    });
+  });
+
+  describe('stripHtmlTags', () => {
+    it('should remove HTML tags and attributes', () => {
+      expect(stripHtmlTags('<code>hello</code>')).toBe('hello');
+      expect(stripHtmlTags('<span>world</span>')).toBe('world');
+      expect(stripHtmlTags('<p>Text content</p>')).toBe('Text content');
+      expect(
+        stripHtmlTags('<span id="text" class="highlighted-text">Nǐ hǎo</span>')
+      ).toBe('Nǐ hǎo');
+    });
+
+    it('should handle nested tags', () => {
+      expect(stripHtmlTags('<p>Hello <span>world</span></p>')).toBe(
+        'Hello world'
+      );
+      expect(stripHtmlTags('<p><span class="highlight">text</span></p>')).toBe(
+        'text'
+      );
+    });
+
+    it('should handle text without tags', () => {
+      expect(stripHtmlTags('plain text')).toBe('plain text');
+    });
+
+    it('should handle empty string', () => {
+      expect(stripHtmlTags('')).toBe('');
+    });
+
+    it('should remove tags but preserve spacing', () => {
+      expect(stripHtmlTags('Hello <code>world</code> today')).toBe(
+        'Hello world today'
+      );
     });
   });
 });

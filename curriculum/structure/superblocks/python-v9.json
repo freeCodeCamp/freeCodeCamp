@@ -7,6 +7,17 @@
           "dashedName": "python-basics",
           "blocks": [
             "lecture-introduction-to-python",
+            "lecture-understanding-variables-and-data-types",
+            "workshop-report-card-printer",
+            "lecture-introduction-to-python-strings",
+            "workshop-employee-profile-generator",
+            "lecture-numbers-and-mathematical-operations",
+            "workshop-bill-splitter",
+            "lecture-booleans-and-conditionals",
+            "workshop-movie-ticket-booking-calculator",
+            "lab-travel-weather-planner",
+            "lecture-understanding-functions-and-scope",
+            "lab-discount-calculator",
             "workshop-caesar-cipher",
             "lab-rpg-character",
             "review-python-basics",
@@ -148,10 +159,10 @@
     {
       "chapterType": "exam",
       "dashedName": "python-certification-exam",
-      "comingSoon": true,
+      "comingSoon": false,
       "modules": [
         {
-          "comingSoon": true,
+          "comingSoon": false,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }

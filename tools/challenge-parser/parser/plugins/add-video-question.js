@@ -1,6 +1,6 @@
 const { root } = require('mdast-builder');
 const find = require('unist-util-find');
-const { getSection } = require('./utils/get-section');
+const { getSection, getAllSections } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const { getParagraphContent } = require('./utils/get-paragraph-content');
 
@@ -20,6 +20,12 @@ function plugin() {
       if (!text) throw Error('text is missing from question');
       if (!answers) throw Error('answers are missing from question');
       if (!solution) throw Error('solution is missing from question');
+      if (solution > answers.length)
+        throw Error(
+          `solution must be within range of number of answers: 1-${answers.length}`
+        );
+      if (answers[solution - 1].feedback)
+        throw Error('answer selected as solution cannot have feedback section');
 
       return { text, answers, solution };
     }
@@ -27,11 +33,16 @@ function plugin() {
     function getAnswers(answersNodes) {
       const answerGroups = splitOnThematicBreak(answersNodes);
 
-      return answerGroups.map(answerGroup => {
+      return answerGroups.map((answerGroup, index) => {
         const answerTree = root(answerGroup);
-        const feedbackNodes = getSection(answerTree, '--feedback--');
+        const feedbackGroups = getAllSections(answerTree, '--feedback--');
+
+        if (feedbackGroups.length > 1)
+          throw new Error(`answer ${index + 1} has multiple feedback sections`);
+
+        const [feedbackNodes] = feedbackGroups;
         const audioIdNodes = getSection(answerTree, '--audio-id--');
-        const hasFeedback = feedbackNodes.length > 0;
+        const hasFeedback = feedbackNodes?.length > 0;
         const hasAudioId = audioIdNodes.length > 0;
 
         if (hasFeedback || hasAudioId) {
@@ -110,6 +121,8 @@ function plugin() {
           questionNode.children?.[0]?.value === '--text--';
         if (isStartOfQuestion) {
           questionTrees.push([questionNode]);
+        } else if (questionTrees.length === 0) {
+          throw Error('question text is missing in questions section');
         } else {
           questionTrees[questionTrees.length - 1].push(questionNode);
         }

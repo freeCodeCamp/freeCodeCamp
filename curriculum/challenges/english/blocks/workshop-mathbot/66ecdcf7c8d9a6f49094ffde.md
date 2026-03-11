@@ -1,8 +1,8 @@
 ---
 id: 66ecdcf7c8d9a6f49094ffde
-title: Step 11
+title: Step 13
 challengeType: 1
-dashedName: step-11
+dashedName: step-13
 ---
 
 # --description--
@@ -82,7 +82,7 @@ const greeting = `Hi there! My name is ${botName} and I am here to teach you abo
 
 console.log(greeting);
 
-console.log("The Math.random() method returns a pseudo random number between 0 and less than 1.");
+console.log("The Math.random() method returns a pseudo random number greater than or equal to 0 and less than 1.");
 
 const randomNum = Math.random();
 console.log(randomNum);
@@ -99,6 +99,11 @@ console.log("The Math.floor() method rounds the value down to the nearest whole 
 
 const numRoundedDown = Math.floor(6.7);
 console.log(numRoundedDown);
+
+console.log("Now, generate a random integer between two values.");
+
+const randomInt = Math.floor(Math.random() * (max - min) + min);
+console.log(randomInt);
 
 console.log("The Math.ceil() method rounds the value up to the nearest whole integer.");
 

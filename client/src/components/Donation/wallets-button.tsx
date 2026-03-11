@@ -10,7 +10,7 @@ import { LocalStorageThemes } from '../../redux/types';
 import {
   PaymentProvider,
   DonationDuration
-} from '../../../../shared-dist/config/donation-settings';
+} from '@freecodecamp/shared/config/donation-settings';
 import { createStripePaymentIntent } from '../../utils/ajax';
 import { DonationApprovalData, PostPayment } from './types';
 

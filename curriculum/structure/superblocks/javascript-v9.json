@@ -36,6 +36,7 @@
             "lecture-working-with-operator-behavior",
             "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
+            "workshop-logic-checker-app",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",
             "workshop-mathbot",
@@ -72,7 +73,6 @@
             "workshop-shopping-list",
             "lab-lunch-picker-program",
             "lab-golf-score-translator",
-            "lab-reverse-a-string",
             "lecture-working-with-common-array-methods",
             "review-javascript-arrays",
             "quiz-javascript-arrays"
@@ -113,6 +113,7 @@
             "lecture-working-with-types-and-objects",
             "lecture-working-with-arrays-variables-and-naming-practices",
             "lecture-working-with-code-quality-and-execution-concepts",
+            "lab-reverse-a-string",
             "lab-largest-number-finder",
             "lab-first-element-finder",
             "lab-slice-and-splice",
@@ -131,7 +132,6 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
-            "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -286,6 +286,9 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
+            "workshop-countup",
+            "lab-countdown",
+            "lab-range-of-numbers",
             "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
             "review-recursion",
@@ -293,10 +296,51 @@
           ]
         },
         {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-working-with-common-data-structures-js",
+            "lab-linked-list-operations",
+            "lab-implement-a-queue",
+            "review-data-structures-js",
+            "quiz-data-structures-js"
+          ]
+        },
+        {
+          "dashedName": "algorithms",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-common-searching-and-sorting-algorithms",
+            "lab-bubble-sort-algorithm",
+            "lab-selection-sort-js",
+            "lab-insertion-sort",
+            "lab-quicksort-js"
+          ]
+        },
+        {
+          "dashedName": "graphs-and-trees",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-graphs-and-trees-js",
+            "lab-adjacency-list-to-matrix-converter-js",
+            "lab-n-queens-problem-js"
+          ]
+        },
+        {
+          "dashedName": "dynamic-programming",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-dynamic-programming-js",
+            "review-dynamic-programming-js",
+            "quiz-dynamic-programming-js"
+          ]
+        },
+        {
           "dashedName": "functional-programming",
           "blocks": [
             "lecture-understanding-functional-programming",
             "workshop-recipe-ingredient-converter",
+            "lab-optional-arguments-sum-function",
             "lab-sorting-visualizer",
             "review-javascript-functional-programming",
             "quiz-javascript-functional-programming"
@@ -326,11 +370,9 @@
     },
     {
       "chapterType": "exam",
-      "comingSoon": true,
       "dashedName": "javascript-certification-exam",
       "modules": [
         {
-          "comingSoon": true,
           "dashedName": "javascript-certification-exam",
           "blocks": ["exam-javascript-certification"]
         }

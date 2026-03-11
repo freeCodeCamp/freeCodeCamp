@@ -1,0 +1,14 @@
+{
+  "name": "Speculation and Requests Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-speculation-requests",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6960465f000685b94eb1cc5e",
+      "title": "Speculation and Requests Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

@@ -13,7 +13,7 @@ Below this heading, add a block quotation element with a `cite` attribute with t
 
 # --hints--
 
-Your should have an `h2` element nested inside the second section.
+You should have an `h2` element nested inside the second section.
 
 ```js
 assert.exists(document.querySelector('main > section:nth-of-type(2) > h2'));
@@ -77,13 +77,13 @@ assert.equal(blockquoteEl?.getAttribute('cite'), 'https://www.freecodecamp.org/n
         <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
           Can you imagine what it would be like to be a successful developer? To have built software systems that people rely upon?
         </blockquote>
-        <p cite="https://www.freecodecamp.org/news/learn-to-code-book/">
-          —Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book]</cite>
+        <p>
+          &mdash;Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book]</cite>
         </p>
       </section>
       <section>
 --fcc-editable-region--
-
+        
 --fcc-editable-region--
       </section>
       <section>

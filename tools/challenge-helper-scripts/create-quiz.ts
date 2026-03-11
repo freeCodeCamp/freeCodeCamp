@@ -1,19 +1,18 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input } from '@inquirer/prompts';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
-import { createQuizFile, getAllBlocks, validateBlockName } from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
-import { updateSimpleSuperblockStructure } from './helpers/create-project';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
+import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -33,14 +32,6 @@ type SuperBlockInfo = {
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
-interface CreateQuizArgs {
-  superBlock: SuperBlocks;
-  block: string;
-  helpCategory: string;
-  title?: string;
-  questionCount: number;
-}
-
 async function createQuiz(
   superBlock: SuperBlocks,
   block: string,
@@ -53,19 +44,13 @@ async function createQuiz(
   }
   await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createQuizChallenge(
-    superBlock,
-    block,
-    title,
-    questionCount
-  );
+  const challengeId = new ObjectId();
   await createMetaJson(block, title, helpCategory, challengeId);
+  await createQuizChallenge({ challengeId, block, title, questionCount });
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
   void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -93,33 +78,32 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID
+  challengeId: ObjectId
 ) {
   const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
 
   await writeBlockStructure(block, newMeta);
 }
 
-async function createQuizChallenge(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  questionCount: number
-): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
-  return createQuizFile({
-    projectPath: newChallengeDir + '/',
+async function createQuizChallenge({
+  block,
+  challengeId,
+  title,
+  questionCount
+}: {
+  block: string;
+  challengeId: ObjectId;
+  title: string;
+  questionCount: number;
+}) {
+  createQuizFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount
@@ -145,56 +129,53 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
-        type: 'list',
-        choices: Object.values(SuperBlocks)
-      },
-      {
-        name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this quiz?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
-        }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'HTML-CSS',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'questionCount',
-        message: 'Should this quiz have either ten or twenty questions?',
-        default: 20,
-        type: 'list',
-        choices: [20, 10]
-      }
-    ])
-  )
-  .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      questionCount
-    }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, questionCount, title)
-  )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
+void getAllBlocks().then(async existingBlocks => {
+  const superBlock = await select<SuperBlocks>({
+    message: 'Which certification does this belong to?',
+    default: SuperBlocks.RespWebDesignV9,
+    choices: Object.values(SuperBlocks).map(value => ({
+      name: value,
+      value
+    }))
+  });
+
+  const block = await input({
+    message: 'What is the dashed name (in kebab-case) for this quiz?',
+    validate: (block: string) => validateBlockName(block, existingBlocks)
+  });
+
+  const transformedBlock = block.toLowerCase().trim();
+
+  const title = await input({
+    message: 'What is the new name?',
+    default: transformedBlock
+  });
+
+  const helpCategory = await select<string>({
+    message: 'Choose a help category',
+    default: 'HTML-CSS',
+    choices: helpCategories.map(value => ({
+      name: value,
+      value
+    }))
+  });
+
+  const questionCount = await select<number>({
+    message: 'Should this quiz have either ten or twenty questions?',
+    default: 20,
+    choices: [
+      { name: '20 questions', value: 20 },
+      { name: '10 questions', value: 10 }
+    ]
+  });
+
+  await createQuiz(
+    superBlock,
+    transformedBlock,
+    helpCategory,
+    questionCount,
+    title
   );
+
+  console.log('All set.  Refresh the page to see the changes.');
+});

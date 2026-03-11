@@ -1,0 +1,30 @@
+{
+  "name": "Build an Employee Profile Generator",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-employee-profile-generator",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "695c96f82af4fb78e59fa9ed", "title": "Step 1" },
+    { "id": "694bf3af05d10fd89dab05cc", "title": "Step 2" },
+    { "id": "694bf6ea530e19a9c48c59f0", "title": "Step 3" },
+    { "id": "695c9c7c61d446f1451e0ae7", "title": "Step 4" },
+    { "id": "694bf6eb530e19a9c48c59f1", "title": "Step 5" },
+    { "id": "695fcfbba648b3a96a9495a4", "title": "Step 6" },
+    { "id": "695c9f21a8b1d53cf1b97841", "title": "Step 7" },
+    { "id": "695df6480de23758af5a29cd", "title": "Step 8" },
+    { "id": "695fd3dde03273875e5d6709", "title": "Step 9" },
+    { "id": "695ea1e55c0e619e597fc5c9", "title": "Step 10" },
+    { "id": "694bf6eb530e19a9c48c59f2", "title": "Step 11" },
+    { "id": "694bf6eb530e19a9c48c59f3", "title": "Step 12" },
+    { "id": "694bf6eb530e19a9c48c59f4", "title": "Step 13" },
+    { "id": "6980d3ecfe800d8a54130f30", "title": "Step 14" },
+    { "id": "69727ea5c9606bedfe36d3d2", "title": "Step 15" },
+    { "id": "694bf6eb530e19a9c48c59f5", "title": "Step 16" },
+    { "id": "694bf6eb530e19a9c48c59f6", "title": "Step 17" },
+    { "id": "694bf6eb530e19a9c48c59f7", "title": "Step 18" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

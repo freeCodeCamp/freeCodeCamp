@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
@@ -9,7 +10,6 @@ import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
 declare global {
-  // eslint-disable-next-line no-var
   var fastifyTestInstance: FastifyTestInstance;
 }
 
@@ -47,13 +47,13 @@ export const getCookies = (setCookies: string[]): string => {
  * A wrapper around supertest that handles common setup for requests. Namely
  * setting the Origin header, cookies and CSRF token.
  *
- * @param resource - The URL of the resource to be requested
- * @param config - The configuration for the request
- * @param config.method - The HTTP method to be used
- * @param config.setCookies - The cookies to be set in the request
- * @param options - Additional options for the request
- * @param options.sendCSRFToken - Whether to send the CSRF token in the request (default: true)
- * @returns The request object
+ * @param resource - The URL of the resource to be requested.
+ * @param config - The configuration for the request.
+ * @param config.method - The HTTP method to be used.
+ * @param config.setCookies - The cookies to be set in the request.
+ * @param options - Additional options for the request.
+ * @param options.sendCSRFToken - Whether to send the CSRF token in the request (default: true).
+ * @returns The request object.
  */
 export function superRequest(
   resource: string,
@@ -84,9 +84,9 @@ export function superRequest(
  * request function with the desired method and setCookies baked in.
  *
  * @param config
- * @param config.method - HTTP method
- * @param config.setCookies - Cookies to be set in the request
- * @returns A superRequest function with the desired method and setCookies
+ * @param config.method - HTTP method.
+ * @param config.setCookies - Cookies to be set in the request.
+ * @returns A superRequest function with the desired method and setCookies.
  */
 export function createSuperRequest(config: {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';

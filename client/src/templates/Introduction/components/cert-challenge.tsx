@@ -5,10 +5,10 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
-} from '../../../../../shared-dist/config/certification-settings';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+  type Certification,
+  superBlockToCertMap
+} from '@freecodecamp/shared/config/certification-settings';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import {
   isSignedInSelector,
@@ -22,8 +22,7 @@ import {
 import { getCertifications } from '../../../components/profile/components/utils/certification';
 
 interface CertChallengeProps {
-  // TODO: create enum/reuse SuperBlocks enum somehow
-  certification: string;
+  certification: Certification;
   fetchState: {
     pending: boolean;
     complete: boolean;
@@ -55,7 +54,6 @@ const CertChallenge = ({
   user
 }: CertChallengeProps): JSX.Element => {
   const { t } = useTranslation();
-  const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
   const { currentCerts, legacyCerts } = getCertifications(user);
@@ -73,22 +71,13 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
-  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
-  const superBlockCertTypeMapTyped: { [key: string]: string } =
-    superBlockCertTypeMap;
+  const allCerts = [...currentCerts, ...legacyCerts];
 
-  useEffect(() => {
-    const allCerts = [...currentCerts, ...legacyCerts];
-
-    setIsCertified(
-      allCerts.find(
-        (cert: { certSlug: string }) =>
-          certSlugTypeMapTyped[cert.certSlug] ===
-          superBlockCertTypeMapTyped[superBlock]
-      )?.show ?? false
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCerts, legacyCerts]);
+  const isCertified =
+    allCerts.find(
+      (cert: { certSlug: Certification }) =>
+        cert.certSlug === superBlockToCertMap[superBlock]
+    )?.show ?? false;
 
   const certLocation = `/certification/${username}/${certSlug}`;
 

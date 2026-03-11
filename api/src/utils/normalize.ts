@@ -12,7 +12,7 @@ import { pickBy, mapValues } from 'lodash-es';
 type NullToUndefined<T> = T extends null ? undefined : T;
 type NullToFalse<T> = T extends null ? false : T;
 
-type NoNullProperties<T> = {
+export type NoNullProperties<T> = {
   [P in keyof T]: NullToUndefined<T[P]>;
 };
 
@@ -35,7 +35,7 @@ export const normalizeTwitter = (
   try {
     new URL(handleOrUrl);
   } catch {
-    url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
+    url = `https://x.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
 };
@@ -76,9 +76,16 @@ export const normalizeDate = (date?: Prisma.JsonValue): number => {
     typeof date.$date === 'string'
   ) {
     return new Date(date.$date).getTime();
-  } else {
-    throw Error('Unexpected date value: ' + JSON.stringify(date));
+  } else if (typeof date === 'string') {
+    const parsed = Number(date);
+    if (!isNaN(parsed)) {
+      // Number() handles invalid strings e.g. '2023-10-01T00:00:00Z'
+      // parseInt() handles floats
+      return parseInt(String(parsed));
+    }
   }
+
+  throw Error('Unexpected date value: ' + JSON.stringify(date));
 };
 
 /**
@@ -117,9 +124,9 @@ export const normalizeChallengeType = (
  */
 export const normalizeProfileUI = (
   maybeProfileUI: ProfileUI | null
-): NoNullProperties<ProfileUI> => {
+): DefaultToFalse<ProfileUI> => {
   return maybeProfileUI
-    ? removeNulls(maybeProfileUI)
+    ? normalizeFlags(maybeProfileUI)
     : {
         isLocked: true,
         showAbout: false,
@@ -130,7 +137,8 @@ export const normalizeProfileUI = (
         showName: false,
         showPoints: false,
         showPortfolio: false,
-        showTimeLine: false
+        showTimeLine: false,
+        showExperience: false
       };
 };
 

@@ -1,14 +1,33 @@
 {
   "name": "Greeting New Colleagues",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "zh-a1-warm-up-greeting-new-colleagues",
-  "helpCategory": "English",
+  "helpCategory": "Chinese Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    {
-      "id": "68fa3f8467ebb8f4bf838172",
-      "title": "Dialogue 1: I'm Tom"
-    }
+    { "id": "68d7ee770de88379926110e8", "title": "Task 1" },
+    { "id": "68d8d8816b1ad234f9996a1d", "title": "Task 2" },
+    { "id": "68d930253f130252d7135e9a", "title": "Task 3" },
+    { "id": "68d938aa5911e058ecd6862c", "title": "Task 4" },
+    { "id": "68d93cf0a31d255c28af8e85", "title": "Task 5" },
+    { "id": "68da5f443fd1521911fc091a", "title": "Task 6" },
+    { "id": "68da3fe8bdea3799f295751f", "title": "Task 7" },
+    { "id": "68da86acaaf78832f7b6b725", "title": "Task 8" },
+    { "id": "68da89c66b9f993ec08acbed", "title": "Task 9" },
+    { "id": "68da8dffcffd794e83de9d6c", "title": "Task 10" },
+    { "id": "68ecafbd7bc59f56791c016e", "title": "Task 11" },
+    { "id": "68ece776dbb09b63b4ab41b4", "title": "Task 12" },
+    { "id": "68ecebd387bcd514976dbd9a", "title": "Task 13" },
+    { "id": "68ecf0441a3ffb48fded84a5", "title": "Task 14" },
+    { "id": "68ecf13da526705d4405fbea", "title": "Task 15" },
+    { "id": "68ed09ee0d60326947eedb0a", "title": "Task 16" },
+    { "id": "68ed0f449d2071b6942936c6", "title": "Task 17" },
+    { "id": "68ed0c710dbbe59177bdad33", "title": "Task 18" },
+    { "id": "68ed0e4c834864b08e1f0549", "title": "Task 19" },
+    { "id": "68edb9e2d1fc5841459ecff9", "title": "Task 20" },
+    { "id": "68edbb1430339c4583d62dda", "title": "Task 21" },
+    { "id": "68eddbb2c16e5c50e20cad95", "title": "Task 22" },
+    { "id": "68eddd51d8c53955d3eee252", "title": "Task 23" }
   ],
   "blockLabel": "warm-up"
 }

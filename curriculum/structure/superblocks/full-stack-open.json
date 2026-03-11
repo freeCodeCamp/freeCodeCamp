@@ -5,7 +5,7 @@
       "modules": [
         {
           "dashedName": "basic-html",
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },

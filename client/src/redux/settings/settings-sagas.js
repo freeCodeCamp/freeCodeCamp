@@ -10,10 +10,7 @@ import {
 import store from 'store';
 import { navigate } from 'gatsby';
 
-import {
-  certTypeIdMap,
-  certTypes
-} from '../../../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import {
@@ -22,6 +19,7 @@ import {
   putUpdateMyHonesty,
   putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
+  putUpdateMyExperience,
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
   putUpdateMySocials,
@@ -44,6 +42,8 @@ import {
   updateMyKeyboardShortcutsError,
   updateMyPortfolioComplete,
   updateMyPortfolioError,
+  updateMyExperienceComplete,
+  updateMyExperienceError,
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
   updateMySocialsComplete,
@@ -172,6 +172,16 @@ function* updateMyPortfolioSaga({ payload: update }) {
   }
 }
 
+function* updateMyExperienceSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyExperience, update);
+    yield put(updateMyExperienceComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyExperienceError);
+  }
+}
+
 function* validateUsernameSaga({ payload }) {
   try {
     const {
@@ -191,7 +201,7 @@ function* verifyCertificationSaga({ payload }) {
 
   // (20/06/2022) Full Stack client-side validation is already done here:
   // https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/components/settings/certification.js#L309
-  if (currentCert?.id !== certTypeIdMap[certTypes.fullStack]) {
+  if (currentCert?.certSlug !== Certification.LegacyFullStack) {
     const flash = {
       type: 'info',
       message: 'flash.incomplete-steps',
@@ -241,6 +251,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
+    takeEvery(types.updateMyExperience, updateMyExperienceSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     debounce(2000, types.validateUsername, validateUsernameSaga),

@@ -28,7 +28,7 @@ import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
 import request from 'supertest';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   defaultUserId,
   devLogin,
@@ -222,6 +222,8 @@ const dailyCodingChallengeBody = {
   language: DailyCodingChallengeLanguage.javascript
 };
 
+const examId = '6721db5d9f0c116e6a0fe25a';
+
 describe('challengeRoutes', () => {
   setupServer();
   describe('Authenticated user', () => {
@@ -376,11 +378,17 @@ describe('challengeRoutes', () => {
       // function with undefined when restoring a prisma function (for some
       // reason)
       test('Should return an error response if something goes wrong', async () => {
+        const originalUserToken = fastifyTestInstance.prisma.userToken;
+
         vi.spyOn(
-          fastifyTestInstance.prisma.userToken,
-          'findUnique'
-        ).mockImplementationOnce(() => {
-          throw new Error('Database error');
+          fastifyTestInstance.prisma,
+          'userToken',
+          'get'
+        ).mockReturnValue({
+          ...originalUserToken,
+          findUnique: vi.fn().mockImplementationOnce(() => {
+            throw new Error('Database error');
+          })
         });
         const tokenResponse = await superPost('/user/user-token');
         const token = (tokenResponse.body as { userToken: string }).userToken;
@@ -410,6 +418,21 @@ describe('challengeRoutes', () => {
     });
     describe('/project-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/project-completed').send({
+            id: examId,
+            challengeType: challengeTypes.backEndProject,
+            solution: 'http://localhost:3000',
+            githubLink: 'http://localhost:3000'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without ids', async () => {
           const response = await superPost('/project-completed').send({});
 
@@ -674,6 +697,23 @@ describe('challengeRoutes', () => {
 
     describe('/backend-challenge-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/backend-challenge-completed').send(
+            {
+              id: examId,
+              challengeType: challengeTypes.backEndProject,
+              solution: 'http://localhost:3000',
+              githubLink: 'http://localhost:3000'
+            }
+          );
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without ids', async () => {
           const response = await superPost('/backend-challenge-completed');
 
@@ -790,6 +830,21 @@ describe('challengeRoutes', () => {
 
     describe('/modern-challenge-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/modern-challenge-completed').send({
+            id: examId,
+            challengeType: challengeTypes.backEndProject,
+            solution: 'http://localhost:3000',
+            githubLink: 'http://localhost:3000'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without ids', async () => {
           const response = await superPost('/modern-challenge-completed');
 
@@ -901,7 +956,13 @@ describe('challengeRoutes', () => {
             alreadyCompleted: false,
             points: 1,
             completedDate,
-            savedChallenges: []
+            savedChallenges: [
+              {
+                files: jsFiles,
+                id: JsProjectId,
+                lastSavedDate: expect.any(Number)
+              }
+            ]
           });
           expect(response.statusCode).toBe(200);
         });
@@ -1056,6 +1117,23 @@ describe('challengeRoutes', () => {
           }
         });
       });
+      test('should reject exam submissions', async () => {
+        const response = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          id: examId,
+          challengeType: challengeTypes.backEndProject,
+          solution: 'http://localhost:3000',
+          githubLink: 'http://localhost:3000'
+        });
+
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'Exam submissions are not allowed on this endpoint.'
+        });
+        expect(response.statusCode).toBe(403);
+      });
+
       // JS Project(5), Multi-file Cert Project(14)
       test('POST accepts challenges with files present', async () => {
         const now = Date.now();
@@ -1089,7 +1167,13 @@ describe('challengeRoutes', () => {
           alreadyCompleted: false,
           points: 1,
           completedDate,
-          savedChallenges: []
+          savedChallenges: [
+            {
+              files: jsFiles,
+              id: JsProjectId,
+              lastSavedDate: expect.any(Number)
+            }
+          ]
         });
         expect(response.statusCode).toBe(200);
       });
@@ -1228,6 +1312,21 @@ describe('challengeRoutes', () => {
 
     describe('/daily-coding-challenge-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            id: examId,
+            language: 'javascript'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without an id', async () => {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { id, ...noIdReqBody } = dailyCodingChallengeBody;
@@ -1892,6 +1991,31 @@ describe('challengeRoutes', () => {
       });
 
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/exam-challenge-completed').send({
+            id: examId,
+            challengeType: 17,
+            userCompletedExam: {
+              examTimeInSeconds: 111,
+              userExamQuestions: [
+                {
+                  id: 'q-id',
+                  question: '?',
+                  answer: {
+                    id: 'a-id',
+                    answer: 'a'
+                  }
+                }
+              ]
+            }
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests with no body', async () => {
           const response = await superRequest('/exam-challenge-completed', {
             method: 'POST',

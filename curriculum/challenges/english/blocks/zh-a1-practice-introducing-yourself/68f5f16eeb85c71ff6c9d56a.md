@@ -1,0 +1,127 @@
+---
+id: 68f5f16eeb85c71ff6c9d56a
+title: Task 1
+challengeType: 19
+dashedName: task-1
+lang: zh-CN
+---
+
+<!-- (Audio) whole audio Wang Hua -->
+
+# --description--
+
+You've learned how to greet someone and introduce your name, nationality, and profession in the previous blocks.
+
+Now, let's see how Wang Hua, Liu Ming and Chen Na combine all of these to introduce themselves naturally.
+
+# --instructions--
+
+Listen to the audio and answer the question below.
+
+# --questions--
+
+## --text--
+
+How does Wang Hua introduce her name?
+
+## --answers--
+
+`你好 (nǐ hǎo)`
+
+### --feedback--
+
+This is a typical greeting, but it does not include her name. Review the structure she is using to introduce her name.
+
+---
+
+`我是中国人 (wǒ shì zhōng guó rén)。`
+
+### --feedback--
+
+This sentence introduces her nationality. Review the structure she is using to introduce her name.
+
+---
+
+`我是开发者 (wǒ shì kāi fā zhě)。`
+
+### --feedback--
+
+This sentence introduces her profession. Review the structure she is using to introduce her name.
+
+---
+
+`我是王华 (wǒ shì wáng huá)。`
+
+## --video-solution--
+
+4
+
+# --explanation--
+
+`我是王华 (wǒ shì wáng huá)` uses the structure `我是 (wǒ shì)` + name to introduce oneself.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "interview-room3.png",
+    "characters": [
+      {
+        "character": "Wang Hua",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ZH_A1_greetings_and_introductions_wanghua.mp3",
+      "startTime": 1,
+      "startTimestamp": 1.45,
+      "finishTimestamp": 6.88
+    }
+  },
+  "commands": [
+    {
+      "character": "Wang Hua",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Wang Hua",
+      "startTime": 1,
+      "finishTime": 3.1,
+      "dialogue": {
+        "text": "你好 (nǐ hǎo)，我是王华 (wǒ shì wáng huá)。",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Wang Hua",
+      "startTime": 3.59,
+      "finishTime": 4.78,
+      "dialogue": {
+        "text": "我是中国人 (wǒ shì zhōng guó rén)。",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Wang Hua",
+      "startTime": 5.31,
+      "finishTime": 6.43,
+      "dialogue": {
+        "text": "我是开发者 (wǒ shì kāi fā zhě)。",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Wang Hua",
+      "opacity": 0,
+      "startTime": 6.93
+    }
+  ]
+}
+```

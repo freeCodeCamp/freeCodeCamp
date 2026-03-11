@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Callout } from '@freecodecamp/ui';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { isRelationalDbCert, isExamCert } from '../../../utils/is-a-cert';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
@@ -22,7 +22,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
       <>
         <CodeAllyDown />
         {clientLocale != 'english' && (
-          <Callout variant='info'>
+          <Callout variant='note' label={t('misc.note')}>
             <p>{t('intro:misc-text.english-only')}</p>
           </Callout>
         )}
@@ -30,7 +30,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
     );
   } else if (isExamCert(superBlock) && clientLocale != 'english') {
     return (
-      <Callout variant='info'>
+      <Callout variant='note' label={t('misc.note')}>
         <p>{t('intro:misc-text.exam-english-only')}</p>
       </Callout>
     );

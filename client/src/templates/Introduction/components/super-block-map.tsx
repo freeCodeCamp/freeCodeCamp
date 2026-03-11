@@ -6,24 +6,24 @@ import {
   certificationCollectionSuperBlocks,
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import type { CertTitle } from '../../../../config/cert-and-project-map';
 import type {
   ChapterBasedSuperBlockStructure,
-  ClaimedCertifications,
   User
 } from '../../../redux/prop-types';
 import type {
   BlockLabel,
   BlockLayouts
-} from '../../../../../shared-dist/config/blocks';
+} from '@freecodecamp/shared/config/blocks';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import {
+  type Certification,
   certSlugTypeMap,
   certificationRequirements,
   superBlockToCertMap
-} from '../../../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import CheckMark from './check-mark';
 
 import Block from './block';
@@ -33,7 +33,7 @@ import './super-block-accordion.css';
 
 type Challenge = {
   block: string;
-  blockLabel: BlockLabel;
+  blockLabel?: BlockLabel;
   blockLayout: BlockLayouts;
   challengeType: number;
   dashedName: string;
@@ -46,7 +46,7 @@ type Challenge = {
 };
 
 type SuperBlockMapProps = {
-  certification: string;
+  certification: Certification;
   completedChallengeIds: string[];
   disabledBlocks: string[];
   initialExpandedBlock: string;
@@ -67,7 +67,7 @@ const BlockList = ({
   title,
   user
 }: {
-  certification: string;
+  certification: Certification;
   disabledBlocks: string[];
   showCertification: boolean;
   superBlock: SuperBlocks;
@@ -146,11 +146,7 @@ export const SuperBlockMap = ({
         const requirementLink = `/learn/${requirement}/`;
 
         const certSlug = superBlockToCertMap[requirement];
-        const certFlagLookup = certSlugTypeMap as Record<
-          string,
-          keyof ClaimedCertifications
-        >;
-        const certFlagKey = certSlug ? certFlagLookup[certSlug] : undefined;
+        const certFlagKey = certSlug ? certSlugTypeMap[certSlug] : undefined;
         const isRequirementComplete = Boolean(
           certFlagKey && user?.[certFlagKey]
         );

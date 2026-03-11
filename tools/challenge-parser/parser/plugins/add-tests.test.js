@@ -42,7 +42,7 @@ describe('add-tests plugin', () => {
   it('should throw if a test pair is out of order', () => {
     // TODO: update the markdown so it makes this error
     expect(() => plugin(brokenHintsAST, file)).toThrow(
-      'Tests must be in (text, ```testString```) order'
+      'Hints must be in pairs: each hint text followed by a test code block'
     );
   });
 

@@ -1,8 +1,8 @@
 {
   "name": "Introducing Yourself Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-quiz-introducing-yourself",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "link",
   "challengeOrder": [
     { "id": "68dc7558bca0aa734dba9c05", "title": "Introducing Yourself Quiz" }

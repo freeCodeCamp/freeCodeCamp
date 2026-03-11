@@ -13,6 +13,10 @@ export const updateMyAbout = {
       message: Type.Literal('flash.updated-about-me'),
       type: Type.Literal('success')
     }),
+    400: Type.Object({
+      message: Type.Literal('flash.wrong-updating'),
+      type: Type.Literal('danger')
+    }),
     500: Type.Object({
       message: Type.Literal('flash.wrong-updating'),
       type: Type.Literal('danger')

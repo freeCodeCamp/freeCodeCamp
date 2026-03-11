@@ -1,0 +1,11 @@
+{
+  "name": "Expressing Agreement Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-express-agreement",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696044a24dc926aaa99e35c6", "title": "Expressing Agreement Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

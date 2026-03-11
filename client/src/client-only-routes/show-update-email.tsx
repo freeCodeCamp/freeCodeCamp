@@ -21,8 +21,7 @@ import {
 } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Loader, Link } from '../components/helpers';
-import './show-update-email.css';
+import { Loader } from '../components/helpers';
 import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
 import { updateMyEmail } from '../redux/settings/actions';
@@ -122,9 +121,7 @@ function ShowUpdateEmail({
                     : t('buttons.verify-email')}
                 </Button>
               </form>
-              <p className='text-center'>
-                <Link to='/signout'>{t('buttons.sign-out')}</Link>
-              </p>
+              <Spacer size='s' />
             </Row>
           </Col>
         </Row>

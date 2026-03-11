@@ -86,7 +86,7 @@ console.log(arr.includes(3, 3));
 
 ### --feedback--
 
-The second parameter of ``includes()`` specifies the starting position for the search.
+The second parameter of `includes()` specifies the starting position for the search.
 
 ---
 
@@ -98,7 +98,7 @@ The second parameter of ``includes()`` specifies the starting position for the s
 
 ### --feedback--
 
-The second parameter of ``includes()`` specifies the starting position for the search.
+The second parameter of `includes()` specifies the starting position for the search.
 
 ---
 
@@ -106,7 +106,7 @@ This will throw an error.
 
 ### --feedback--
 
-The second parameter of ``includes()`` specifies the starting position for the search.
+The second parameter of `includes()` specifies the starting position for the search.
 
 ## --video-solution--
 
@@ -127,7 +127,7 @@ console.log(arr.includes("C"));
 
 ### --feedback--
 
-Remember that ``includes()`` is case-sensitive when dealing with strings.
+Remember that `includes()` is case-sensitive when dealing with strings.
 
 ---
 
@@ -139,7 +139,7 @@ Remember that ``includes()`` is case-sensitive when dealing with strings.
 
 ### --feedback--
 
-Remember that ``includes()`` is case-sensitive when dealing with strings.
+Remember that `includes()` is case-sensitive when dealing with strings.
 
 ---
 
@@ -147,7 +147,7 @@ This will throw an error.
 
 ### --feedback--
 
-Remember that ``includes()`` is case-sensitive when dealing with strings.
+Remember that `includes()` is case-sensitive when dealing with strings.
 
 ## --video-solution--
 
@@ -168,7 +168,7 @@ console.log(arr.includes("3"));
 
 ### --feedback--
 
-The ``includes()`` method uses strict equality (`===`) for comparison.
+The `includes()` method uses strict equality (`===`) for comparison.
 
 ---
 
@@ -180,7 +180,7 @@ The ``includes()`` method uses strict equality (`===`) for comparison.
 
 ### --feedback--
 
-The ``includes()`` method uses strict equality (`===`) for comparison.
+The `includes()` method uses strict equality (`===`) for comparison.
 
 ---
 
@@ -188,7 +188,7 @@ This will throw an error.
 
 ### --feedback--
 
-The ``includes()`` method uses strict equality (`===`) for comparison.
+The `includes()` method uses strict equality (`===`) for comparison.
 
 ## --video-solution--
 

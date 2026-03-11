@@ -14,10 +14,12 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
-  canSaveToDB,
-  challengeTypes
-} from '../../../../../shared-dist/config/challenge-types';
+  buildChallenge,
+  canBuildChallenge
+} from '@freecodecamp/challenge-builder/build';
+
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -28,8 +30,6 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { playTone } from '../../../utils/tone';
 import {
-  buildChallenge,
-  canBuildChallenge,
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
@@ -54,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -77,11 +78,13 @@ const LOGS_TO_IGNORE = [
 
 // when 'run tests' is clicked, do this first
 function* executeCancellableChallengeSaga(payload) {
-  const { challengeType, id } = yield select(challengeMetaSelector);
+  const { challengeType, id, saveSubmissionToDB } = yield select(
+    challengeMetaSelector
+  );
   const { challengeFiles } = yield select(challengeDataSelector);
 
   // if canSaveToDB, see if body/code size is submittable
-  if (canSaveToDB(challengeType)) {
+  if (saveSubmissionToDB) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -139,7 +142,7 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      if (isBlockCompleted && curriculumData.hasData) {
         fireConfetti();
       }
     } else {
@@ -360,7 +363,6 @@ function* updatePython(challengeData) {
   };
 
   runPythonCode(code);
-  // TODO: proxy errors to the console
 }
 
 function* previewProjectSolutionSaga({ payload }) {
