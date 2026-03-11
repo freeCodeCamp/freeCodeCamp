@@ -893,6 +893,34 @@
     {
       "id": "699c8e045ee7cb94ed2322dd",
       "title": "Challenge 222: Equinox Shadows"
+    },
+    {
+      "id": "69a890af247de743333bd4cc",
+      "title": "Challenge 223: QR Decoder"
+    },
+    {
+      "id": "69a890af247de743333bd4cd",
+      "title": "Challenge 224: Coffee Roast Detector"
+    },
+    {
+      "id": "69a890af247de743333bd4ce",
+      "title": "Challenge 225: No Consecutive Repeats"
+    },
+    {
+      "id": "69a890af247de743333bd4cf",
+      "title": "Challenge 226: Passing Exam Count"
+    },
+    {
+      "id": "69a890af247de743333bd4d0",
+      "title": "Challenge 227: Cooldown Time"
+    },
+    {
+      "id": "69a890af247de743333bd4d1",
+      "title": "Challenge 228: Movie Night"
+    },
+    {
+      "id": "69a890af247de743333bd4d2",
+      "title": "Challenge 229: Truncate the Text 2"
     }
   ]
 }
