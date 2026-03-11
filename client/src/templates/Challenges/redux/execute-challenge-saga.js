@@ -246,9 +246,12 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
-// updates preview frame and the fcc console.
-export function* previewChallengeSaga(action) {
-  const flushLogs = action?.type !== actionTypes.previewMounted;
+function* flush() {
+  yield put(initLogs());
+  yield put(initConsole(''));
+}
+
+export function* previewChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
@@ -259,12 +262,6 @@ export function* previewChallengeSaga(action) {
   if (yield select(isExecutingSelector)) {
     return;
   }
-
-  if (flushLogs) {
-    yield put(initLogs());
-    yield put(initConsole(''));
-  }
-  yield delay(700);
 
   const logProxy = yield channel();
   const proxyLogger = args => {
@@ -321,7 +318,8 @@ export function* previewChallengeSaga(action) {
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
           const output = logs?.map(log => log.msg).join('\n');
-          yield put((flushLogs ? initConsole : updateConsole)(output));
+
+          yield put(updateConsole(output));
         }
       }
     }
@@ -337,10 +335,11 @@ export function* previewChallengeSaga(action) {
   }
 }
 
-// TODO: refactor this so that we can use a single saga for all challenge
-// updates (then they can all go in the same `takeLatest` call and be cancelled
-// appropriately)
 function* updatePreviewSaga(action) {
+  yield flush();
+  if (action.type == actionTypes.updateFile) {
+    yield delay(700);
+  }
   const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
