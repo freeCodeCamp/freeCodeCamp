@@ -1360,8 +1360,8 @@
     ],
     "note": "",
     "blocks": {
-      "basics": {
-        "title": "Basics",
+      "oop-basics": {
+        "title": "OOP Basics",
         "intro": [
           "In these videos, learn the basics of OOP including how to create classes and work with constructors."
         ]
