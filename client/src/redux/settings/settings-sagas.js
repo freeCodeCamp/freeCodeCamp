@@ -124,7 +124,7 @@ function* updateMyAmbientSoundSaga({ payload: update }) {
     yield put(updateMyAmbientSoundComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
   } catch {
-    yield put(updateMyAmbientSoundError);
+    yield put(updateMyAmbientSoundError());
   }
 }
 

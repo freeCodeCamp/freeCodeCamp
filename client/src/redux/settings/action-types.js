@@ -8,6 +8,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('submitNewAbout'),
     ...createAsyncTypes('submitNewUsername'),
     ...createAsyncTypes('updateMyEmail'),
+    ...createAsyncTypes('updateMySocials'),
     ...createAsyncTypes('updateMySound'),
     ...createAsyncTypes('updateMyAmbientSound'),
     ...createAsyncTypes('updateMyKeyboardShortcuts'),

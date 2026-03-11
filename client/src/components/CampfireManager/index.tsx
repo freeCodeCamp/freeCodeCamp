@@ -60,8 +60,10 @@ const CampfireManager = ({ ambientSound }: CampfireManagerProps): null => {
 
   // Volume synchronization
   useEffect(() => {
+    if (!ambientSound) return;
+
     const interval = setInterval(() => {
-      if (playerRef.current && ambientSound) {
+      if (playerRef.current) {
         const storedVolume = (store.get('soundVolume') as number) ?? 50;
         const calculateDecibel = -60 * (1 - storedVolume / 100);
         if (playerRef.current.volume.value !== calculateDecibel) {
