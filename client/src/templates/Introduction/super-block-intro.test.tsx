@@ -257,9 +257,7 @@ const createPageProps = (
     signInLoading: false,
     location: createLocation(),
     pageContext: {
-      superBlock,
-      title: `${superBlock} certification`,
-      certification: superBlock
+      superBlock
     },
     resetExpansion: vi.fn(),
     toggleBlock: vi.fn(),
