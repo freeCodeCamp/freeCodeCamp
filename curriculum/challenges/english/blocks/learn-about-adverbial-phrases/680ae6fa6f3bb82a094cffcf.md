@@ -3,6 +3,7 @@ id: 680ae6fa6f3bb82a094cffcf
 title: Task 91
 challengeType: 19
 dashedName: task-91
+showSpeakingButton: true
 lang: en-US
 ---
 
@@ -24,9 +25,17 @@ What could Maria say to show she is positively surprised by the results?
 
 `That's impressive.`
 
+### --audio-id--
+
+EN70c3200b
+
 ---
 
 `Maybe we should lower our expectations.`
+
+### --audio-id--
+
+EN342dc19a
 
 ### --feedback--
 
