@@ -264,18 +264,10 @@ async function transformScript(documentElement, { useModules }) {
   });
 }
 
-// This does the final transformations of the files needed to embed them into
-// HTML.
-export const embedFilesInHtml = async function (challengeFiles) {
-  const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs, indexTsx } =
-    challengeFilesToObject(challengeFiles);
-
-  const embedStylesAndScript = contentDocument => {
-    const documentElement = contentDocument.documentElement;
-    const deferScript = scriptCode => {
-      // Mimic the behavior of a defer script by waiting until the DOM is loaded
-      // before executing the script.
-      return `
+const deferScript = scriptCode => {
+  // Mimic the behavior of a defer script by waiting until the DOM is loaded
+  // before executing the script.
+  return `
 (() => {
   const run = (() => {${scriptCode};
 });
@@ -287,17 +279,24 @@ export const embedFilesInHtml = async function (challengeFiles) {
   }
 })();
 `;
-    };
+};
 
-    const embedScript = (script, source, contents) => {
-      const code = contents ?? '';
+export const embedScript = (script, source, contents) => {
+  const code = contents ?? '';
 
-      script.innerHTML = script.hasAttribute('defer')
-        ? deferScript(code)
-        : code;
-      script.removeAttribute('src');
-      script.setAttribute('data-src', source);
-    };
+  script.innerHTML = script.hasAttribute('defer') ? deferScript(code) : code;
+  script.removeAttribute('src');
+  script.setAttribute('data-src', source);
+};
+
+// This does the final transformations of the files needed to embed them into
+// HTML.
+export const embedFilesInHtml = async function (challengeFiles) {
+  const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs, indexTsx } =
+    challengeFilesToObject(challengeFiles);
+
+  const embedStylesAndScript = contentDocument => {
+    const documentElement = contentDocument.documentElement;
 
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??

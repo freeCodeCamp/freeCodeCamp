@@ -4,7 +4,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { embedFilesInHtml } from './transformers';
+import { embedFilesInHtml, embedScript } from './transformers';
 
 const parseHtml = html => new DOMParser().parseFromString(html, 'text/html');
 
@@ -54,5 +54,27 @@ describe('embedFilesInHtml', () => {
     expect(script?.getAttribute('src')).toBeNull();
     expect(script?.parentElement?.tagName).toBe('HEAD');
     expect(doc.body.lastElementChild?.id).toBe('app');
+  });
+});
+
+describe('embedScript', () => {
+  const rawScript = 'console.log("Hello, world!");';
+
+  it('embeds script content into a script tag', () => {
+    const script = document.createElement('script');
+    embedScript(script, 'script.js', rawScript);
+
+    expect(script.getAttribute('src')).toBeNull();
+    expect(script.textContent).toEqual(rawScript);
+  });
+
+  it('embeds defered scripts content', () => {
+    const script = document.createElement('script');
+    script.setAttribute('defer', true);
+    embedScript(script, 'script.js', rawScript);
+
+    expect(script.getAttribute('defer')).toBe('true');
+    expect(script.getAttribute('src')).toBeNull();
+    expect(script.textContent).toContain(rawScript);
   });
 });
