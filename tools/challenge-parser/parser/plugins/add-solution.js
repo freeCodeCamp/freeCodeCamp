@@ -34,7 +34,7 @@ function isLastStep(file) {
     const frontmatterMatch = content.match(/^---([\s\S]*?)---/);
     if (frontmatterMatch) {
       try {
-        const data = jsYaml.load(frontmatterMatch[1]);
+        const data = jsYaml.safeLoad(frontmatterMatch[1]);
         if (data && data.title) {
           const stepMatch = data.title.match(/Step (\d+)/i);
           if (stepMatch) {
