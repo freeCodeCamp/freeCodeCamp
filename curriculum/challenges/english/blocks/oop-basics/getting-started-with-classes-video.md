@@ -3,7 +3,7 @@ id: 69ae96daa9e6da4eb0d5f7f4
 title: Getting Started with Classes
 challengeType: 11
 videoId: _066KcCuaYM
-dashedName: getting-started-with-classes-learn-oop-with-python
+dashedName: getting-started-with-classes
 ---
 
 # --description--

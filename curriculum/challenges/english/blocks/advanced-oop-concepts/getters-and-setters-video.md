@@ -3,7 +3,7 @@ id: 69ae9f3ca9e6da4eb0d5f7f9
 title: Getters and Setters
 challengeType: 11
 videoId: o8zKHbpd87s
-dashedName: getters-and-setters-learn-oop-with-python
+dashedName: getters-and-setters
 ---
 
 # --description--

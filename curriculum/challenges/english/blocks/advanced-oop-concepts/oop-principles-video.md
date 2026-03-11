@@ -3,7 +3,7 @@ id: 69ae9f41a9e6da4eb0d5f7fa
 title: OOP Principles
 challengeType: 11
 videoId: rkOObSk6ApA
-dashedName: oop-principles-learn-oop-with-python
+dashedName: oop-principles
 ---
 
 # --description--

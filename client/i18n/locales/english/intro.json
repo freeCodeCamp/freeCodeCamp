@@ -1360,19 +1360,19 @@
     ],
     "note": "",
     "blocks": {
-      "learn-oop-with-python-basics": {
+      "basics": {
         "title": "Basics",
         "intro": [
           "In these videos, learn the basics of OOP including how to create classes and work with constructors."
         ]
       },
-      "learn-oop-with-python-methods-inheritance": {
-        "title": "Methods & Inheritance",
+      "methods-and-inheritance": {
+        "title": "Methods and Inheritance",
         "intro": [
           "In these videos, learn about methods and inheritance in OOP."
         ]
       },
-      "learn-oop-with-python-advanced-oop-concepts": {
+      "advanced-oop-concepts": {
         "title": "Advanced OOP Concepts",
         "intro": [
           "In these videos, learn about advanced OOP concepts including getters, setters and other important OOP principles."

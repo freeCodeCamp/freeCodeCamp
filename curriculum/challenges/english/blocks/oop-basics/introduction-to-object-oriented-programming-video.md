@@ -3,7 +3,7 @@ id: 69ae9744a9e6da4eb0d5f7f6
 title: Introduction to Object-Oriented Programming
 challengeType: 11
 videoId: sQjvwm8P1iY
-dashedName: intro-learn-oop-with-python
+dashedName: introduction-to-object-oriented-programming
 ---
 
 # --description--

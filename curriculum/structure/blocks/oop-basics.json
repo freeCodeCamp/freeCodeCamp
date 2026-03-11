@@ -1,9 +1,9 @@
 {
-  "name": "Basics",
+  "name": "OOP Basics",
   "isUpcomingChange": false,
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "dashedName": "learn-oop-with-python-basics",
+  "dashedName": "oop-basics",
   "helpCategory": "Python",
   "challengeOrder": [
     {

@@ -3,7 +3,7 @@ id: 69ae96dfa9e6da4eb0d5f7f5
 title: Using Constructors
 challengeType: 11
 videoId: CDFRHw4SACU
-dashedName: using-constructors-learn-oop-with-python
+dashedName: using-constructors
 ---
 
 # --description--

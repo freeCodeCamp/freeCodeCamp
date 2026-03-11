@@ -3,7 +3,7 @@ id: 69ae9ce3a9e6da4eb0d5f7f8
 title: Understanding Inheritance
 challengeType: 11
 videoId: 5SehMN6vRgA
-dashedName: understanding-inheritance-learn-oop-with-python
+dashedName: understanding-inheritance
 ---
 
 # --description--
