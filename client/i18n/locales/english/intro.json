@@ -5000,7 +5000,9 @@
       },
       "lecture-working-with-express": {
         "title": "Working with Express",
-        "intro": ["Working with Express", ""]
+        "intro": [
+          "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
       },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
