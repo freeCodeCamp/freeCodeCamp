@@ -273,10 +273,12 @@ export const embedFilesInHtml = async function (challengeFiles) {
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
     const deferScript = scriptCode => {
-      const serializedCode = JSON.stringify(scriptCode);
+      // Mimic the behavior of a defer script by waiting until the DOM is loaded
+      // before executing the script.
       return `
 (() => {
-  const run = () => (0, eval)(${serializedCode});
+  const run = (() => {${scriptCode};
+});
 
   if (document.readyState === 'complete') {
     run();
