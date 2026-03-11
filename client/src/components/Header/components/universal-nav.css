@@ -461,8 +461,27 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
     border-top-color: ButtonText;
   }
 
+  /* The logo SVG uses inline fill="#ffffff" which the browser cannot
+     override automatically. forced-color-adjust: auto tells the browser
+     to remap colors, and the !important fill ensures the logo is visible
+     against the system background. */
   .universal-nav-logo svg {
-    fill: LinkText;
+    forced-color-adjust: auto;
+    fill: LinkText !important;
+  }
+
+  /* Override the hardcoded fill on <use> elements inside the logo */
+  .universal-nav-logo svg use {
+    fill: LinkText !important;
+  }
+
+  /* Ensure the language globe icon strokes are visible */
+  .lang-button-nav svg {
+    forced-color-adjust: auto;
+  }
+
+  .lang-button-nav svg path {
+    stroke: ButtonText !important;
   }
 
   .avatar-container {
