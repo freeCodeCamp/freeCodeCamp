@@ -10,20 +10,24 @@ import {
   vi,
   type Mock
 } from 'vitest';
-import store from 'store';
 
-vi.mock('react-responsive', () => ({
-  useMediaQuery: vi.fn()
+vi.mock('react-redux', () => ({
+  useSelector: vi.fn().mockReturnValue(false)
 }));
 
-import { useMediaQuery } from 'react-responsive';
+import { useSelector } from 'react-redux';
 import MobileAppModal from './mobile-app-modal';
 
-const mockUseMediaQuery = useMediaQuery as Mock;
+const mockUseSelector = useSelector as Mock;
 
 const MOBILE_SUPERBLOCK = 'responsive-web-design-v9';
 const NON_MOBILE_SUPERBLOCK = 'coding-interview-prep';
-const STORE_KEY = 'hideMobileAppModal';
+const ANDROID_UA =
+  'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36';
+const IOS_UA =
+  'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15';
+const DESKTOP_UA =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36';
 
 describe('MobileAppModal', () => {
   beforeAll(() => {
@@ -49,13 +53,15 @@ describe('MobileAppModal', () => {
   });
 
   beforeEach(() => {
-    mockUseMediaQuery.mockReturnValue(true); // default: mobile viewport
-    store.remove(STORE_KEY);
+    mockUseSelector.mockReturnValue(false); // default: project preview closed
+    Object.defineProperty(navigator, 'userAgent', {
+      value: ANDROID_UA,
+      configurable: true
+    });
   });
 
   afterEach(() => {
     vi.clearAllMocks();
-    store.remove(STORE_KEY);
   });
 
   it('renders the modal on mobile for a public superblock', () => {
@@ -63,8 +69,11 @@ describe('MobileAppModal', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
-  it('does not render on a desktop viewport', () => {
-    mockUseMediaQuery.mockReturnValue(false);
+  it('does not render on a desktop OS', () => {
+    Object.defineProperty(navigator, 'userAgent', {
+      value: DESKTOP_UA,
+      configurable: true
+    });
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
@@ -74,8 +83,8 @@ describe('MobileAppModal', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
-  it('does not render when the user has previously dismissed it', () => {
-    store.set(STORE_KEY, true);
+  it('does not render when the project preview is open', () => {
+    mockUseSelector.mockReturnValue(true);
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
@@ -87,25 +96,22 @@ describe('MobileAppModal', () => {
     expect(dialog).toHaveTextContent('mobile-app-modal.body');
   });
 
-  it('closes the modal and persists dismissal when the X button is clicked', () => {
+  it('closes the modal when the X button is clicked', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     fireEvent.click(screen.getByText('Close'));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    expect(store.get(STORE_KEY)).toBe(true);
   });
 
-  it('closes the modal and persists dismissal when the store link is clicked', () => {
+  it('closes the modal when the store link is clicked', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     const link = screen.getByRole('link');
     fireEvent.click(link);
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
-    expect(store.get(STORE_KEY)).toBe(true);
   });
 
   it('shows the correct app store link for iOS', () => {
     Object.defineProperty(navigator, 'userAgent', {
-      value:
-        'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15',
+      value: IOS_UA,
       configurable: true
     });
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
@@ -117,10 +123,6 @@ describe('MobileAppModal', () => {
   });
 
   it('shows the correct app store link for Android', () => {
-    Object.defineProperty(navigator, 'userAgent', {
-      value: 'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36',
-      configurable: true
-    });
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     expect(screen.getByRole('link')).toHaveAttribute(
       'href',
