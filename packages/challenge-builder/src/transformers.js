@@ -272,49 +272,27 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
-    const wrapDeferredScript = (scriptCode, source) => {
+    const deferScript = scriptCode => {
       const serializedCode = JSON.stringify(scriptCode);
       return `
 (() => {
-  const __fccCode = ${serializedCode};
-  const __fccRun = () => (0, eval)(__fccCode);
+  const run = () => (0, eval)(${serializedCode});
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', __fccRun, { once: true });
-    return;
+  if (document.readyState === 'complete') {
+    run();
+  } else {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
   }
-
-  __fccRun();
 })();
-//# sourceURL=${source}
 `;
     };
 
     const embedScript = (script, source, contents) => {
       const code = contents ?? '';
 
-      // Keep the script in-place, but use a blob URL so defer behaves like an
-      // external script rather than being ignored by inline script execution.
-      if (script.hasAttribute('defer')) {
-        const deferredCode = wrapDeferredScript(code, source);
-        const scriptBlob = new Blob([deferredCode], {
-          type: 'text/javascript'
-        });
-        const blobURL = URL.createObjectURL(scriptBlob);
-
-        script.innerHTML = '';
-        script.src = blobURL;
-        script.setAttribute('data-src', source);
-
-        if (typeof URL.revokeObjectURL === 'function') {
-          const revokeURL = () => URL.revokeObjectURL(blobURL);
-          script.addEventListener('load', revokeURL, { once: true });
-          script.addEventListener('error', revokeURL, { once: true });
-        }
-        return;
-      }
-
-      script.innerHTML = code;
+      script.innerHTML = script.hasAttribute('defer')
+        ? deferScript(code)
+        : code;
       script.removeAttribute('src');
       script.setAttribute('data-src', source);
     };
