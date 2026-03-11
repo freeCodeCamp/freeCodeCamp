@@ -1,9 +1,9 @@
 ---
-title: Variables
+title: Learn CSS Variables
 superBlock: css-variables
 certification: css-variables
 ---
 
-## CSS Variables
+## Introduction to Learn CSS Variables
 
 Use CSS variables to build reusable, theme-friendly styles.
