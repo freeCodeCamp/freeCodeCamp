@@ -2,32 +2,14 @@
  * @vitest-environment jsdom
  */
 
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { embedFilesInHtml } from './transformers';
 
 const parseHtml = html => new DOMParser().parseFromString(html, 'text/html');
 
 describe('embedFilesInHtml', () => {
-  const createObjectURL = vi.fn();
-  let oldCreateObjectURL;
-  let oldRevokeObjectURL;
-
-  beforeEach(() => {
-    createObjectURL.mockReset().mockReturnValue('blob:script.js');
-    oldCreateObjectURL = URL.createObjectURL;
-    oldRevokeObjectURL = URL.revokeObjectURL;
-
-    URL.createObjectURL = createObjectURL;
-    URL.revokeObjectURL = vi.fn();
-  });
-
-  afterEach(() => {
-    URL.createObjectURL = oldCreateObjectURL;
-    URL.revokeObjectURL = oldRevokeObjectURL;
-  });
-
-  it('keeps deferred script.js in place and embeds it as a blob URL', async () => {
+  it('keeps deferred script.js in place', async () => {
     const result = await embedFilesInHtml([
       {
         fileKey: 'indexhtml',
@@ -44,11 +26,12 @@ describe('embedFilesInHtml', () => {
     const script = doc.querySelector('script[data-src="script.js"]');
 
     expect(script).toBeTruthy();
-    expect(script?.getAttribute('src')).toBe('blob:script.js');
-    expect(script?.textContent).toBe('');
+    expect(script?.getAttribute('src')).toBeNull();
+    expect(script?.textContent).toContain(
+      'window.app = document.querySelector("#app");'
+    );
     expect(script?.parentElement?.tagName).toBe('HEAD');
     expect(doc.body.lastElementChild?.id).toBe('app');
-    expect(createObjectURL).toHaveBeenCalledTimes(1);
   });
 
   it('keeps non-deferred script.js in place when embedding', async () => {
@@ -71,6 +54,5 @@ describe('embedFilesInHtml', () => {
     expect(script?.getAttribute('src')).toBeNull();
     expect(script?.parentElement?.tagName).toBe('HEAD');
     expect(doc.body.lastElementChild?.id).toBe('app');
-    expect(createObjectURL).not.toHaveBeenCalled();
   });
 });
