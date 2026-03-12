@@ -37,6 +37,7 @@ import {
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import PrismFormatted from '../components/prism-formatted';
 import { usePageLeave } from '../hooks';
+import { sounds } from '../components/scene/scene-assets';
 import ExitQuizModal from './exit-quiz-modal';
 import FinishQuizModal from './finish-quiz-modal';
 
@@ -170,7 +171,7 @@ const ShowQuiz = ({
 
       const audioData = question.audioData?.audio?.filename
         ? {
-            audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioData.audio.filename}`,
+            audioUrl: `${sounds}/${question.audioData.audio.filename}`,
             audioStartTime:
               question.audioData.audio.startTimestamp ?? undefined,
             audioFinishTime:
