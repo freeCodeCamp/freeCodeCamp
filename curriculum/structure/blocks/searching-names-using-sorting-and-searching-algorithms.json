@@ -3,7 +3,7 @@
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "intro-dsa-sorting-searching-algorithms",
+  "dashedName": "searching-names-using-sorting-and-searching-algorithms",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {

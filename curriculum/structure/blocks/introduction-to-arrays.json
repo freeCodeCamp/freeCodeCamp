@@ -3,7 +3,7 @@
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "intro-dsa-arrays",
+  "dashedName": "introduction-to-arrays",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {

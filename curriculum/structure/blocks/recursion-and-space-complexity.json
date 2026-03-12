@@ -3,7 +3,7 @@
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "intro-dsa-recursion-and-space-complexity",
+  "dashedName": "recursion-and-space-complexity",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {

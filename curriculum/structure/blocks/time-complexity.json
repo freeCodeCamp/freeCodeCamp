@@ -3,7 +3,7 @@
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "intro-dsa-time-complexity",
+  "dashedName": "time-complexity",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {

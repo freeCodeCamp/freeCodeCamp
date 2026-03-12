@@ -1,9 +1,9 @@
 {
-  "name": "The Merge Sort Algorithm",
+  "name": "Merge Sort Algorithm",
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "intro-dsa-merge-sort",
+  "dashedName": "merge-sort-algorithm",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {

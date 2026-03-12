@@ -3,7 +3,7 @@
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "intro-dsa-sorting-linked-lists",
+  "dashedName": "sorting-a-linked-list",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {
