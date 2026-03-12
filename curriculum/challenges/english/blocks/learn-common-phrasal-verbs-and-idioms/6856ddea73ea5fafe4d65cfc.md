@@ -3,6 +3,7 @@ id: 6856ddea73ea5fafe4d65cfc
 title: Task 95
 challengeType: 19
 dashedName: task-95
+showSpeakingButton: true
 lang: en-US
 ---
 
@@ -24,9 +25,17 @@ How could Linda praise Jake's idea?
 
 `That's an excellent suggestion.`
 
+### --audio-id--
+
+EN02a86d00
+
 ---
 
 `Are you sure that would work?`
+
+### --audio-id--
+
+EN13416258
 
 ### --feedback--
 

@@ -35,6 +35,7 @@ const superblocks = [
   '2022/responsive-web-design',
   'the-odin-project',
   'introduction-to-algorithms-and-data-structures',
+  'introduction-to-precalculus',
   'lab-survey-form',
   'html-and-accessibility',
   'computer-basics',
