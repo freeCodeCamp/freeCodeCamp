@@ -153,4 +153,24 @@ describe('buildChallenge', () => {
     expect(result.error).toBeDefined();
     expect(result.build).toBe('');
   });
+
+  it('prioritizes syntax errors from editable contents over after-user-code scaffold', async () => {
+    const challengeFile = createChallengeFile({
+      ext: 'js',
+      fileKey: 'scriptjs',
+      name: 'script',
+      path: 'script.js',
+      head: '',
+      contents: 'var',
+      tail: 'if(typeof myName !== "undefined"){(function(v){return v;})(myName);}'
+    });
+
+    const result = await buildJsChallenge(challengeFile);
+    const message = String(result.error);
+
+    expect(result.error).toBeDefined();
+    expect(result.build).toBe('');
+    expect(message).toContain('Unexpected token (1:3)');
+    expect(message).not.toContain("Unexpected keyword 'if'");
+  });
 });
