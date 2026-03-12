@@ -73,7 +73,27 @@ export enum SuperBlocks {
   LearnSQLAndBash = 'learn-sql-and-bash',
   IntroductionToNano = 'introduction-to-nano',
   IntroductionToGitAndGithub = 'introduction-to-git-and-github',
-  LearnPromptingFundamentals = 'learn-prompting-fundamentals'
+  LearnPromptingFundamentals = 'learn-prompting-fundamentals',
+  IntroductionToVariablesAndStringsInJS = 'introduction-to-variables-and-strings-in-javascript',
+  IntroductionToBooleansAndNumbersInJS = 'introduction-to-booleans-and-numbers-in-javascript',
+  IntroductionFunctionsInJS = 'introduction-functions-in-javascript',
+  IntroductionToArraysInJS = 'introduction-to-arrays-in-javascript',
+  IntroductionToObjectsInJS = 'introduction-to-objects-in-javascript',
+  IntroductionToLoopsInJS = 'introduction-to-loops-in-javascript',
+  JavascriptFundamentalsReview = 'javascript-fundamentals-review',
+  IntroductionToHigherOrderFunctionsAndCallbacksInJS = 'introduction-to-higher-order-functions-and-callbacks-in-javascript',
+  LearnDomManipulationAndEventsWithJS = 'learn-dom-manipulation-and-events-with-javascript',
+  IntroductionToJavascriptAndAccessibility = 'introduction-to-javascript-and-accessibility',
+  LearnJavascriptDebugging = 'learn-javascript-debugging',
+  LearnBasicRegexWithJS = 'learn-basic-regex-with-javascript',
+  IntroductionToDatesInJS = 'introduction-to-dates-in-javascript',
+  LearnAudioAndVideoEventsWithJS = 'learn-audio-and-video-events-with-javascript',
+  IntroductionToMapsAndSetsInJS = 'introduction-to-maps-and-sets-in-javascript',
+  LearnLocalstorageAndCrudOperationsWithJS = 'learn-localstorage-and-crud-operations-with-javascript',
+  IntroductionToJavascriptClasses = 'introduction-to-javascript-classes',
+  LearnRecursionWithJS = 'learn-recursion-with-javascript',
+  IntroductionToFunctionalProgrammingWithJS = 'introduction-to-functional-programming-with-javascript',
+  IntroductionToAsynchronousJS = 'introduction-to-asynchronous-javascript'
 }
 
 export const languageSuperBlocks = [
@@ -232,7 +252,27 @@ export const superBlockStages: StageMap = {
     SuperBlocks.LearnSQLAndBash,
     SuperBlocks.IntroductionToNano,
     SuperBlocks.IntroductionToGitAndGithub,
-    SuperBlocks.LearnPromptingFundamentals
+    SuperBlocks.LearnPromptingFundamentals,
+    SuperBlocks.IntroductionToVariablesAndStringsInJS,
+    SuperBlocks.IntroductionToBooleansAndNumbersInJS,
+    SuperBlocks.IntroductionFunctionsInJS,
+    SuperBlocks.IntroductionToArraysInJS,
+    SuperBlocks.IntroductionToObjectsInJS,
+    SuperBlocks.IntroductionToLoopsInJS,
+    SuperBlocks.JavascriptFundamentalsReview,
+    SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS,
+    SuperBlocks.LearnDomManipulationAndEventsWithJS,
+    SuperBlocks.IntroductionToJavascriptAndAccessibility,
+    SuperBlocks.LearnJavascriptDebugging,
+    SuperBlocks.LearnBasicRegexWithJS,
+    SuperBlocks.IntroductionToDatesInJS,
+    SuperBlocks.LearnAudioAndVideoEventsWithJS,
+    SuperBlocks.IntroductionToMapsAndSetsInJS,
+    SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS,
+    SuperBlocks.IntroductionToJavascriptClasses,
+    SuperBlocks.LearnRecursionWithJS,
+    SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
+    SuperBlocks.IntroductionToAsynchronousJS
   ]
 };
 

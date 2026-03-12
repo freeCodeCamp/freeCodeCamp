@@ -95,7 +95,28 @@ const iconMap = {
   [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
   [SuperBlocks.IntroductionToNano]: Code,
   [SuperBlocks.IntroductionToGitAndGithub]: Code,
-  [SuperBlocks.LearnPromptingFundamentals]: Clipboard
+  [SuperBlocks.LearnPromptingFundamentals]: Clipboard,
+  [SuperBlocks.IntroductionToVariablesAndStringsInJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionFunctionsInJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToArraysInJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToObjectsInJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToLoopsInJS]: JavaScriptIcon,
+  [SuperBlocks.JavascriptFundamentalsReview]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS]:
+    JavaScriptIcon,
+  [SuperBlocks.LearnDomManipulationAndEventsWithJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToJavascriptAndAccessibility]: JavaScriptIcon,
+  [SuperBlocks.LearnJavascriptDebugging]: JavaScriptIcon,
+  [SuperBlocks.LearnBasicRegexWithJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToDatesInJS]: JavaScriptIcon,
+  [SuperBlocks.LearnAudioAndVideoEventsWithJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToMapsAndSetsInJS]: JavaScriptIcon,
+  [SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToJavascriptClasses]: JavaScriptIcon,
+  [SuperBlocks.LearnRecursionWithJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToAsynchronousJS]: JavaScriptIcon
 };
 
 type SuperBlockIconProps = {

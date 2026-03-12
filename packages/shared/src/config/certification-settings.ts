@@ -374,7 +374,27 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnSQLAndBash]: null,
   [SuperBlocks.IntroductionToNano]: null,
   [SuperBlocks.IntroductionToGitAndGithub]: null,
-  [SuperBlocks.LearnPromptingFundamentals]: null
+  [SuperBlocks.LearnPromptingFundamentals]: null,
+  [SuperBlocks.IntroductionToVariablesAndStringsInJS]: null,
+  [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: null,
+  [SuperBlocks.IntroductionFunctionsInJS]: null,
+  [SuperBlocks.IntroductionToArraysInJS]: null,
+  [SuperBlocks.IntroductionToObjectsInJS]: null,
+  [SuperBlocks.IntroductionToLoopsInJS]: null,
+  [SuperBlocks.JavascriptFundamentalsReview]: null,
+  [SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS]: null,
+  [SuperBlocks.LearnDomManipulationAndEventsWithJS]: null,
+  [SuperBlocks.IntroductionToJavascriptAndAccessibility]: null,
+  [SuperBlocks.LearnJavascriptDebugging]: null,
+  [SuperBlocks.LearnBasicRegexWithJS]: null,
+  [SuperBlocks.IntroductionToDatesInJS]: null,
+  [SuperBlocks.LearnAudioAndVideoEventsWithJS]: null,
+  [SuperBlocks.IntroductionToMapsAndSetsInJS]: null,
+  [SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS]: null,
+  [SuperBlocks.IntroductionToJavascriptClasses]: null,
+  [SuperBlocks.LearnRecursionWithJS]: null,
+  [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: null,
+  [SuperBlocks.IntroductionToAsynchronousJS]: null
 };
 
 export const certificationRequirements: Partial<
