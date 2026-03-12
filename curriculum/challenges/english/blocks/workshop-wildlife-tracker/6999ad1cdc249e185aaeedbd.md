@@ -56,6 +56,14 @@ The `addHabitat` function should have two parameters.
 assert.lengthOf(addHabitat, 2);
 ```
 
+The `addHabitat` function should return the updated `animal` object.
+
+```js
+const testAnimal = { species: "Cat" };
+const result = addHabitat(testAnimal, "Forest");
+assert.strictEqual(result, testAnimal);
+```
+
 You should call the `addHabitat(tiger, "Rainforest")` function inside of the `console.log`.
 
 ```js
