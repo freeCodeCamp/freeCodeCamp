@@ -481,6 +481,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   }
 
   .lang-button-nav svg path {
+    fill: none !important;
     stroke: ButtonText !important;
   }
 
