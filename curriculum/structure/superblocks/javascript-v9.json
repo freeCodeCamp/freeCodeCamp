@@ -323,7 +323,8 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
             "lab-adjacency-list-to-matrix-converter-js",
-            "lab-n-queens-problem-js"
+            "lab-n-queens-problem-js",
+            "quiz-graph-and-trees-js"
           ]
         },
         {
