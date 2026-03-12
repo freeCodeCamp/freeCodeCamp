@@ -207,6 +207,7 @@ export const superBlockNames = {
   'learn-python-for-beginners': SuperBlocks.LearnPythonForBeginners,
   'introduction-to-algorithms-and-data-structures':
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+  'introduction-to-precalculus': SuperBlocks.IntroductionToPrecalculus,
   'lab-survey-form': SuperBlocks.LabSurveyForm,
   'html-and-accessibility': SuperBlocks.HtmlAndAccessibility,
   'computer-basics': SuperBlocks.ComputerBasics,
