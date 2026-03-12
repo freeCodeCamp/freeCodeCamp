@@ -51,10 +51,17 @@ jobs:
         id: check-commits
         if: steps.pr_author.outputs.is_allow_listed == 'false'
         run: |
+          HEAD_REF="${{ github.head_ref }}"
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           COMMITS_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits"
-          IS_GITHUB_COMMIT=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$COMMITS_URL" | jq '[.[] | select(.commit.committer.name == "GitHub") | select(.commit.message | test("revert"; "i") | not)] | length > 0')
-          if [ "$IS_GITHUB_COMMIT" = "true" ]; then
+          HAS_GITHUB_SIGNED_COMMIT=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$COMMITS_URL" | jq '[.[] | select(.commit.committer.name == "GitHub") | select(.commit.message | test("revert"; "i") | not)] | length > 0')
+          # GitHub Codespaces also produces GitHub-signed commits, but Codespaces users
+          # work on descriptively named branches. The web editor defaults to patch-N branches.
+          IS_PATCH_BRANCH=false
+          if [[ "$HEAD_REF" =~ ^patch-[0-9]+$ ]]; then
+            IS_PATCH_BRANCH=true
+          fi
+          if [ "$HAS_GITHUB_SIGNED_COMMIT" = "true" ] && [ "$IS_PATCH_BRANCH" = "true" ]; then
             echo "IS_GITHUB_COMMIT=true" >> $GITHUB_ENV
           fi
 
