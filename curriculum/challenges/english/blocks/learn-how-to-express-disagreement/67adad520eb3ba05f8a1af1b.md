@@ -3,6 +3,7 @@ id: 67adad520eb3ba05f8a1af1b
 title: Task 33
 challengeType: 19
 dashedName: task-33
+showSpeakingButton: true
 lang: en-US
 ---
 
@@ -24,6 +25,10 @@ What should Anna say to agree with Bob?
 
 `I don't understand.`
 
+### --audio-id--
+
+ENd6da13d0
+
 ### --feedback--
 
 This phrase suggests confusion, but Anna needs to show agreement with Bob's idea.
@@ -31,6 +36,10 @@ This phrase suggests confusion, but Anna needs to show agreement with Bob's idea
 ---
 
 `That makes sense.`
+
+### --audio-id--
+
+ENc50c4990
 
 ## --video-solution--
 

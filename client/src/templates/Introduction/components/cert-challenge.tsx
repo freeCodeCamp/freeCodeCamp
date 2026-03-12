@@ -15,14 +15,10 @@ import {
   userFetchStateSelector
 } from '../../../redux/selectors';
 import { User } from '../../../redux/prop-types';
-import {
-  type CertTitle,
-  liveCerts
-} from '../../../../config/cert-and-project-map';
+import { liveCerts } from '../../../../config/cert-and-project-map';
 import { getCertifications } from '../../../components/profile/components/utils/certification';
 
 interface CertChallengeProps {
-  certification: Certification;
   fetchState: {
     pending: boolean;
     complete: boolean;
@@ -31,7 +27,6 @@ interface CertChallengeProps {
   };
   isSignedIn: boolean;
   superBlock: SuperBlocks;
-  title: CertTitle;
   user: User;
 }
 
@@ -48,7 +43,6 @@ const mapStateToProps = (state: unknown) => {
 
 const CertChallenge = ({
   superBlock,
-  title,
   fetchState,
   isSignedIn,
   user
@@ -59,8 +53,10 @@ const CertChallenge = ({
   const { currentCerts, legacyCerts } = getCertifications(user);
   const { username } = user;
 
-  const cert = liveCerts.find(x => x.title === title);
-  if (!cert) throw Error(`Certification ${title} not found`);
+  const certification = superBlockToCertMap[superBlock];
+
+  const cert = liveCerts.find(x => x.certSlug === certification);
+  if (!cert) throw Error(`Certification ${certification} not found`);
   const certSlug = cert.certSlug;
 
   useEffect(() => {
@@ -80,6 +76,7 @@ const CertChallenge = ({
     )?.show ?? false;
 
   const certLocation = `/certification/${username}/${certSlug}`;
+  const title = t(`certification.title.${certification}`);
 
   return (
     <div>
