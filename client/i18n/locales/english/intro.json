@@ -1086,43 +1086,43 @@
     ],
     "note": "",
     "blocks": {
-      "introduction-to-precalculus-function-basics": {
+      "function-basics": {
         "title": "Function Basics",
         "intro": [
           "In these videos, you will learn about functions and how to work with them."
         ]
       },
-      "introduction-to-precalculus-angles-circular-motion": {
-        "title": "Angles & Circular Motion",
+      "angles-and-circular-motion": {
+        "title": "Angles and Circular Motion",
         "intro": [
           "In these videos, you will learn about angles and circular motion."
         ]
       },
-      "introduction-to-precalculus-right-triangle-trigonometry": {
+      "right-triangle-trigonometry": {
         "title": "Right Triangle Trigonometry",
         "intro": [
           "In these videos, you will learn about right triangle trigonometry and how to work with it."
         ]
       },
-      "introduction-to-precalculus-trig-graphs-inverses": {
+      "trig-graphs-inverses": {
         "title": "Trigonometric Graphs and Inverses",
         "intro": [
           "In these videos, you will learn about trigonometric graphs and inverse functions."
         ]
       },
-      "introduction-to-precalculus-solving-trig-equations": {
+      "solving-trig-equations": {
         "title": "Solving Trigonometric Equations",
         "intro": [
           "In these videos, you will learn how to solve trigonometric equations."
         ]
       },
-      "introduction-to-precalculus-trig-identities-formulas": {
+      "trig-identities-formulas": {
         "title": "Trigonometric Identities and Formulas",
         "intro": [
           "In these videos, you will learn about trigonometric identities and formulas."
         ]
       },
-      "introduction-to-precalculus-advanced-trig-conics": {
+      "advanced-trig-conics": {
         "title": "Advanced Trigonometry and Conics",
         "intro": [
           "In these videos, you will learn about advanced trigonometry and conic sections."
