@@ -106,7 +106,7 @@ else:
     print('You are not an adult yet') # You are not an adult yet
 ```
 
-Note that you cannot place any statements between the if block and the else clause. The following code would raise a SyntaxError:
+Note that you cannot place any statements between the if block and the else clause. The following code would raise a `SyntaxError`:
 
 ```python
 age = 12
