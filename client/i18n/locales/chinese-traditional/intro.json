@@ -1064,6 +1064,250 @@
       }
     }
   },
+  "introduction-to-bash": {
+    "title": "Introduction to Bash",
+    "summary": [
+      "Learn how to use the terminal and write Bash scripts to automate tasks and manage files and processes."
+    ],
+    "intro": [
+      "Bash is a Unix shell and command language that provides a powerful interface for interacting with your computer's operating system. It allows you to execute commands, automate tasks, and manage files and processes efficiently.",
+      "In this course, you'll learn the basics of Bash scripting, including how to navigate the file system, manipulate files and directories."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-the-command-line-and-working-with-bash": {
+        "title": "Understanding the Command Line and Working with Bash",
+        "intro": [
+          "Learn about the Command Line and Working with Bash in these lessons."
+        ]
+      },
+      "workshop-bash-boilerplate": {
+        "title": "Build a Boilerplate",
+        "intro": [
+          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
+          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
+        ]
+      },
+      "review-bash-commands": {
+        "title": "Bash Commands Review",
+        "intro": [
+          "Review the Bash Commands concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-commands": {
+        "title": "Bash Commands Quiz",
+        "intro": ["Test what you've learned bash commands with this quiz."]
+      }
+    }
+  },
+  "introduction-to-sql-and-postgresql": {
+    "title": "Introduction to SQL and PostgreSQL",
+    "summary": [
+      "Learn how to use SQL and PostgreSQL to create and manage relational databases."
+    ],
+    "intro": [
+      "SQL (Structured Query Language) is a programming language used to manage and manipulate relational databases. It allows you to create, read, update, and delete data in a database.",
+      "PostgreSQL is a powerful, open-source relational database management system that uses SQL as its query language. It provides a robust and scalable platform for storing and managing data."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-relational-databases": {
+        "title": "Working with Relational Databases",
+        "intro": [
+          "Learn how to work with Relational Databases in these lessons."
+        ]
+      },
+      "workshop-database-of-video-game-characters": {
+        "title": "Build a Database of Video Game Characters",
+        "intro": [
+          "A relational database organizes data into tables that are linked together through relationships.",
+          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+        ]
+      },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Database",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
+        ]
+      },
+      "review-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Review",
+        "intro": [
+          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Quiz",
+        "intro": [
+          "Test what you've learned about SQL and PostgreSQL with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-bash-scripting": {
+    "title": "Learn Bash Scripting",
+    "summary": [
+      "Learn how to write Bash scripts to automate tasks and manage files and processes."
+    ],
+    "intro": [
+      "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+      "In this course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-bash-scripting": {
+        "title": "Understanding Bash Scripting",
+        "intro": ["Learn about Bash Scripting in these lessons."]
+      },
+      "workshop-bash-five-programs": {
+        "title": "Build Five Programs",
+        "intro": [
+          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+        ]
+      },
+      "review-bash-scripting": {
+        "title": "Bash Scripting Review",
+        "intro": [
+          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-scripting": {
+        "title": "Bash Scripting Quiz",
+        "intro": ["Test what you've learned on bash scripting in this quiz."]
+      }
+    }
+  },
+  "learn-sql-and-bash": {
+    "title": "Learn SQL and Bash",
+    "summary": [
+      "Learn how to use SQL and Bash together to manage and manipulate relational databases."
+    ],
+    "intro": [
+      "SQL, or Structured Query Language, is the language for communicating with a relational database. Bash is a Unix shell and command language that provides a powerful interface for interacting with your computer's operating system.",
+      "In this course, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-sql": {
+        "title": "Working With SQL",
+        "intro": [
+          "In these lessons, you will learn about SQL injection, normalization, and the N+1 problem."
+        ]
+      },
+      "workshop-sql-student-database-part-1": {
+        "title": "Build a Student Database: Part 1",
+        "intro": [
+          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
+          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+        ]
+      },
+      "workshop-sql-student-database-part-2": {
+        "title": "Build a Student Database: Part 2",
+        "intro": [
+          "SQL join commands are used to combine information from multiple tables in a relational database",
+          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
+      "workshop-kitty-ipsum-translator": {
+        "title": "Build a Kitty Ipsum Translator",
+        "intro": [
+          "There's more to Bash commands than you might think.",
+          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
+        ]
+      },
+      "workshop-bike-rental-shop": {
+        "title": "Build a Bike Rental Shop",
+        "intro": [
+          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
+      },
+      "review-bash-and-sql": {
+        "title": "Bash and SQL Review",
+        "intro": [
+          "Review the Bash and SQL concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-bash-and-sql": {
+        "title": "Bash and SQL Quiz",
+        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      }
+    }
+  },
+  "introduction-to-nano": {
+    "title": "Introduction to Nano",
+    "summary": [
+      "Learn how to use the Nano text editor to create and edit files in the terminal."
+    ],
+    "intro": [
+      "Nano is a simple, user-friendly text editor that runs in the terminal. It allows you to create and edit files without leaving the command line.",
+      "In this course, you'll learn how to use Nano to create and edit files, navigate through text, and perform basic editing operations."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-nano": {
+        "title": "Working With Nano",
+        "intro": ["Learn about Nano in this lesson."]
+      },
+      "workshop-castle": {
+        "title": "Build a Castle",
+        "intro": [
+          "Nano is a program that allows you to edit files right in the terminal.",
+          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
+        ]
+      }
+    }
+  },
+  "introduction-to-git-and-github": {
+    "title": "Introduction to Git and GitHub",
+    "summary": [
+      "Learn how to use Git and GitHub to manage and collaborate on software projects."
+    ],
+    "intro": [
+      "Git is a version control system that allows developers to track changes in their code and collaborate with others. GitHub is a web-based platform that provides hosting for Git repositories, making it easier for developers to share and collaborate on projects.",
+      "In this course, you'll learn the basics of Git and GitHub, including how to create repositories, commit changes, and collaborate with others on software projects."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-introduction-to-git-and-github": {
+        "title": "Introduction to Git and GitHub",
+        "intro": ["Learn how to work with Git and GitHub in these lessons."]
+      },
+      "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
+        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "intro": [
+          "Learn about code reviews, branching, deployment, and CI/CD in these lessons."
+        ]
+      },
+      "workshop-sql-reference-object": {
+        "title": "Build an SQL Reference Object",
+        "intro": [
+          "Git is a version control system that keeps track of all the changes you make to your codebase.",
+          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+        ]
+      },
+      "review-git": {
+        "title": "Git Review",
+        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+      },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned on Git with this quiz."]
+      }
+    }
+  },
   "learn-prompting-fundamentals": {
     "title": "Learn Prompting Fundamentals",
     "summary": [
@@ -2431,10 +2675,6 @@
         "title": "創建一個高爾夫得分翻譯器",
         "intro": ["在本實驗中，你將使用數組方法將高爾夫得分翻譯爲其暱稱。"]
       },
-      "lab-reverse-a-string": {
-        "title": "創建一個字符串反轉器",
-        "intro": ["在本實驗中，你將創建一個反轉給定字符串的函數。"]
-      },
       "lecture-working-with-common-array-methods": {
         "title": "學習常見數組方法",
         "intro": [
@@ -2458,16 +2698,16 @@
           "在這些講座中，你將學習 JavaScript 對象的基礎，包括如何創建對象、訪問其屬性，以及理解原始類型與非原始類型的區別。"
         ]
       },
-      "lecture-working-with-optional-chaining-and-object-destructuring": {
-        "title": "學習可選鏈與對象解構",
-        "intro": [
-          "在這些講座中，你將學習 JavaScript 中的高級對象處理技術，包括可選鏈運算符和對象解構語法。"
-        ]
-      },
       "lecture-working-with-json": {
         "title": "學習 JSON",
         "intro": [
           "在這些講座中，你將學習 JavaScript 對象表示法（JSON），包括如何訪問 JSON 數據以及使用 <code> JSON.parse() </code> 和 <code> JSON.stringify() </code> 方法。"
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "學習可選鏈與對象解構",
+        "intro": [
+          "在這些講座中，你將學習 JavaScript 中的高級對象處理技術，包括可選鏈運算符和對象解構語法。"
         ]
       },
       "workshop-recipe-tracker": {
@@ -2576,6 +2816,10 @@
           "在這些講座中，你將學習什麼是 linter 和格式化工具、什麼是內存管理，以及閉包等概念。"
         ]
       },
+      "lab-reverse-a-string": {
+        "title": "創建一個字符串反轉器",
+        "intro": ["在本實驗中，你將創建一個反轉給定字符串的函數。"]
+      },
       "lab-largest-number-finder": {
         "title": "實現最大數字查找函數",
         "intro": [
@@ -2675,12 +2919,6 @@
         "title": "實現元素跳過函數",
         "intro": [
           "在本實驗中，你將創建一個函數，根據指定的步長值跳過數組中的元素。"
-        ]
-      },
-      "lab-optional-arguments-sum-function": {
-        "title": "實現可選參數求和函數",
-        "intro": [
-          "在本實驗中，你將實現一個函數，它最多接受兩個參數並計算其和；當僅提供一個參數時，該函數應返回一個新的函數，用於接收第二個參數並完成求和。"
         ]
       },
       "review-javascript-fundamentals": {
@@ -2920,13 +3158,6 @@
           "For this lab, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
-      "lab-markdown-to-html-converter": {
-        "title": "Build a Markdown to HTML Converter",
-        "intro": [
-          "For this lab, you'll build a Markdown to HTML converter using JavaScript.",
-          "You'll practice regular expressions, string manipulation, and more."
-        ]
-      },
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
@@ -2961,6 +3192,13 @@
         "title": "JavaScript Regular Expressions Quiz",
         "intro": [
           "Test your knowledge of JavaScript Regular Expressions with this quiz."
+        ]
+      },
+      "lab-markdown-to-html-converter": {
+        "title": "Build a Markdown to HTML Converter",
+        "intro": [
+          "For this lab, you'll build a Markdown to HTML converter using JavaScript.",
+          "You'll practice regular expressions, string manipulation, and more."
         ]
       },
       "lecture-understanding-form-validation": {
@@ -3034,12 +3272,6 @@
           "The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, and previous functionalities and dynamically update your user interface based on the current song."
         ]
       },
-      "lab-drum-machine": {
-        "title": "Build a Drum Machine",
-        "intro": [
-          "For this lab you will use the <code>audio</code> element to build a drum machine."
-        ]
-      },
       "review-javascript-audio-and-video": {
         "title": "JavaScript Audio and Video Review",
         "intro": [
@@ -3051,6 +3283,12 @@
         "title": "JavaScript Audio and Video Quiz",
         "intro": [
           "Test what you've learned about JavaScript audio and video with this quiz."
+        ]
+      },
+      "lab-drum-machine": {
+        "title": "Build a Drum Machine",
+        "intro": [
+          "For this lab you will use the <code>audio</code> element to build a drum machine."
         ]
       },
       "lecture-working-with-maps-and-sets": {
@@ -3065,13 +3303,6 @@
           "In this workshop, you will practice using Maps and Sets by building a plant nursery catalog."
         ]
       },
-      "lab-voting-system": {
-        "title": "Build a Voting System",
-        "intro": [
-          "In this lab, you'll build a voting system using Maps and Sets.",
-          "You'll practice how to use the <code>Map</code> object to store key-value pairs and the <code>Set</code> object to store unique values."
-        ]
-      },
       "review-javascript-maps-and-sets": {
         "title": "JavaScript Maps and Sets Review",
         "intro": [
@@ -3083,6 +3314,13 @@
         "title": "JavaScript Maps and Sets Quiz",
         "intro": [
           "Test what you've learned about JavaScript Maps and Sets with this quiz."
+        ]
+      },
+      "lab-voting-system": {
+        "title": "Build a Voting System",
+        "intro": [
+          "In this lab, you'll build a voting system using Maps and Sets.",
+          "You'll practice how to use the <code>Map</code> object to store key-value pairs and the <code>Set</code> object to store unique values."
         ]
       },
       "lecture-working-with-client-side-storage-and-crud-operations": {
@@ -3138,12 +3376,6 @@
           "You'll practice how to create classes, add methods to classes, and create instances of classes."
         ]
       },
-      "lab-bank-account-manager": {
-        "title": "Build a Bank Account Management Program",
-        "intro": [
-          "In this lab, you'll build a simple transaction management system for a bank account."
-        ]
-      },
       "review-javascript-classes": {
         "title": "JavaScript Classes Review",
         "intro": [
@@ -3155,6 +3387,12 @@
         "title": "JavaScript Classes Quiz",
         "intro": [
           "Test what you've learned about JavaScript classes with this quiz."
+        ]
+      },
+      "lab-bank-account-manager": {
+        "title": "Build a Bank Account Management Program",
+        "intro": [
+          "In this lab, you'll build a simple transaction management system for a bank account."
         ]
       },
       "lecture-understanding-recursion-and-the-call-stack": {
@@ -3175,18 +3413,18 @@
           "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
         ]
       },
-      "workshop-decimal-to-binary-converter": {
-        "title": "Build a Decimal to Binary Converter",
-        "intro": [
-          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
-          "In this workshop, you'll build a decimal-to-binary converter using JavaScript. You'll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
-        ]
-      },
       "lab-range-of-numbers": {
         "title": "Build a Range of Numbers Generator",
         "intro": [
           "In this lab, you'll use recursion to generate an array of numbers within a specified range.",
           "You'll practice recursive function calls, base cases, and building arrays through recursion."
+        ]
+      },
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you'll build a decimal-to-binary converter using JavaScript. You'll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
         ]
       },
       "lab-permutation-generator": {
@@ -3206,16 +3444,35 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
-      "quiz-data-structures-js": {
-        "title": "Data Structures Quiz",
-        "intro": [
-          "Test what you've learned about data structures in JavaScript with this quiz."
-        ]
-      },
       "lecture-working-with-common-data-structures-js": {
         "title": "Working with Common Data Structures",
         "intro": [
           "Learn about common data structures and how to work with them in JavaScript."
+        ]
+      },
+      "lab-linked-list-operations": {
+        "title": "Implement Linked List Operations",
+        "intro": [
+          "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
+      "lab-implement-a-queue": {
+        "title": "Implement a Queue",
+        "intro": [
+          "In this lab, you will implement a queue data structure using functions."
+        ]
+      },
+      "review-data-structures-js": {
+        "title": "Data Structures Review",
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
+        ]
+      },
+      "quiz-data-structures-js": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in JavaScript with this quiz."
         ]
       },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
@@ -3298,6 +3555,12 @@
           "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
         ]
       },
+      "lab-optional-arguments-sum-function": {
+        "title": "實現可選參數求和函數",
+        "intro": [
+          "在本實驗中，你將實現一個函數，它最多接受兩個參數並計算其和；當僅提供一個參數時，該函數應返回一個新的函數，用於接收第二個參數並完成求和。"
+        ]
+      },
       "lab-sorting-visualizer": {
         "title": "Build a Sorting Visualizer",
         "intro": [
@@ -3336,13 +3599,6 @@
           "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
         ]
       },
-      "lab-weather-app": {
-        "title": "Build a Weather App",
-        "intro": [
-          "In this lab you'll build a Weather App using an API",
-          "You'll practice how to fetch data from the API, store and display it on your app."
-        ]
-      },
       "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
@@ -3353,6 +3609,13 @@
         "title": "Asynchronous JavaScript Quiz",
         "intro": [
           "Test what you've learned about asynchronous JavaScript with this quiz."
+        ]
+      },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
       "review-javascript": {
@@ -3542,24 +3805,10 @@
           "In this workshop, you'll use the <code>useMemo()</code> and <code>useCallback()</code> hooks in React to build a simple shopping list app. You'll learn more about state and the lifecycle of React components, and how to use memoization to reduce re-renders and make your apps more efficient."
         ]
       },
-      "lab-currency-converter": {
-        "title": "Build a Currency Converter",
-        "intro": [
-          "For this lab, you'll build a currency converter app.",
-          "You'll use React state, memoization, and controlled components to convert between currencies."
-        ]
-      },
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
           "In these lessons, you will learn about routing in React, React frameworks, and dependency management tools."
-        ]
-      },
-      "lab-tic-tac-toe": {
-        "title": "Build a Tic-Tac-Toe Game",
-        "intro": [
-          "In this lab, you'll build a Tic-Tac-Toe game using React.",
-          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
         ]
       },
       "lecture-react-strategies-and-debugging": {
@@ -3579,6 +3828,20 @@
         "title": "React Forms, Data Fetching and Routing Quiz",
         "intro": [
           "Test what you've learned about routing, forms, and data fetching with this quiz."
+        ]
+      },
+      "lab-currency-converter": {
+        "title": "Build a Currency Converter",
+        "intro": [
+          "For this lab, you'll build a currency converter app.",
+          "You'll use React state, memoization, and controlled components to convert between currencies."
+        ]
+      },
+      "lab-tic-tac-toe": {
+        "title": "Build a Tic-Tac-Toe Game",
+        "intro": [
+          "In this lab, you'll build a Tic-Tac-Toe game using React.",
+          "You'll practice managing state, handling user interactions, and updating the UI dynamically."
         ]
       },
       "lecture-understanding-performance-in-web-applications": {
@@ -3825,6 +4088,12 @@
           "In these lessons, you will learn about functions and scope in Python."
         ]
       },
+      "lab-discount-calculator": {
+        "title": "Build an Apply Discount Function",
+        "intro": [
+          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
+        ]
+      },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
         "intro": [
@@ -3895,12 +4164,6 @@
           "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
         ]
       },
-      "lab-user-configuration-manager": {
-        "title": "Build a User Configuration Manager",
-        "intro": [
-          "In this lab, you will practice working with dictionaries in Python."
-        ]
-      },
       "review-dictionaries-and-sets": {
         "title": "Dictionaries and Sets review",
         "intro": [
@@ -3912,6 +4175,12 @@
         "title": "Dictionaries and Sets Quiz",
         "intro": [
           "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      },
+      "lab-user-configuration-manager": {
+        "title": "Build a User Configuration Manager",
+        "intro": [
+          "In this lab, you will practice working with dictionaries in Python."
         ]
       },
       "lecture-understanding-error-handling": {
@@ -3960,12 +4229,6 @@
           "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
         ]
       },
-      "lab-budget-app": {
-        "title": "Build a Budget App",
-        "intro": [
-          "In this lab you will build a budget app and practice creating a class and methods for that class."
-        ]
-      },
       "review-classes-and-objects": {
         "title": "Classes and Objects Review",
         "intro": [
@@ -3977,6 +4240,12 @@
         "title": "Classes and Objects Quiz",
         "intro": [
           "Test what you've learned about classes and objects in Python with this quiz."
+        ]
+      },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
         ]
       },
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
@@ -4009,18 +4278,6 @@
           "In this workshop, you will create a media catalogue application using object-oriented programming principles."
         ]
       },
-      "lab-polygon-area-calculator": {
-        "title": "Build a Polygon Area Calculator",
-        "intro": [
-          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
-        ]
-      },
-      "lab-discount-calculator": {
-        "title": "Build an Apply Discount Function",
-        "intro": [
-          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
-        ]
-      },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
@@ -4049,6 +4306,12 @@
           "Test what you've learned about object oriented programming in python with this quiz."
         ]
       },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
       "lecture-working-with-common-data-structures": {
         "title": "Working with Common Data Structures",
         "intro": [
@@ -4059,13 +4322,6 @@
         "title": "Build a Linked List",
         "intro": [
           "In this workshop, you'll practice working with data structures by building a linked list."
-        ]
-      },
-      "lab-hash-table": {
-        "title": "Build a Hash Table",
-        "intro": [
-          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
-          "In this lab, you will use your knowledge about data structures to build a hash table."
         ]
       },
       "review-data-structures": {
@@ -4079,6 +4335,13 @@
         "title": "Data Structures Quiz",
         "intro": [
           "Test what you've learned about data structures in Python with this quiz."
+        ]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
         ]
       },
       "lecture-searching-and-sorting-algorithms": {
@@ -4126,12 +4389,6 @@
           "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
         ]
       },
-      "lab-tower-of-hanoi": {
-        "title": "Implement the Tower of Hanoi Algorithm",
-        "intro": [
-          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
-        ]
-      },
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
@@ -4142,6 +4399,12 @@
         "title": "Searching and Sorting Algorithms Quiz",
         "intro": [
           "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
         ]
       },
       "lecture-understanding-graphs-and-trees": {
@@ -4242,15 +4505,15 @@
       "code-editors": "Code Editors",
       "bash-fundamentals": "Bash Fundamentals",
       "sql-and-postgresql": "SQL and PostgreSQL",
+      "lab-celestial-bodies-database": "Build a Celestial Bodies Database",
       "bash-scripting": "Bash Scripting",
       "sql-and-bash": "SQL and Bash",
-      "git": "Git",
-      "review-relational-databases": "Relational Databases Review",
-      "lab-celestial-bodies-database": "Build a Celestial Bodies Database",
       "lab-world-cup-database": "Build a World Cup Database",
       "lab-salon-appointment-scheduler": "Build a Salon Appointment Scheduler",
+      "git": "Git",
       "lab-periodic-table-database": "Build a Periodic Table Database",
       "lab-number-guessing-game": "Build a Number Guessing Game",
+      "review-relational-databases": "Relational Databases Review",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "blocks": {
@@ -4296,12 +4559,6 @@
           "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
         ]
       },
-      "lab-celestial-bodies-database": {
-        "title": "Build a Celestial Bodies Database",
-        "intro": [
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
-        ]
-      },
       "review-sql-and-postgresql": {
         "title": "SQL and PostgreSQL Review",
         "intro": [
@@ -4312,6 +4569,12 @@
         "title": "SQL and PostgreSQL Quiz",
         "intro": [
           "Test what you've learned about SQL and PostgreSQL with this quiz."
+        ]
+      },
+      "lab-celestial-bodies-database": {
+        "title": "Build a Celestial Bodies Database",
+        "intro": [
+          "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
       },
       "lecture-understanding-bash-scripting": {
@@ -4355,12 +4618,6 @@
           "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
         ]
       },
-      "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
-        "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
-        ]
-      },
       "workshop-kitty-ipsum-translator": {
         "title": "Build a Kitty Ipsum Translator",
         "intro": [
@@ -4374,12 +4631,6 @@
           "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
         ]
       },
-      "lab-salon-appointment-scheduler": {
-        "title": "Build a Salon Appointment Scheduler",
-        "intro": [
-          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
-        ]
-      },
       "review-bash-and-sql": {
         "title": "Bash and SQL Review",
         "intro": [
@@ -4389,6 +4640,18 @@
       "quiz-bash-and-sql": {
         "title": "Bash and SQL Quiz",
         "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+        ]
+      },
+      "lab-salon-appointment-scheduler": {
+        "title": "Build a Salon Appointment Scheduler",
+        "intro": [
+          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+        ]
       },
       "lecture-working-with-nano": {
         "title": "Working With Nano",
@@ -4418,6 +4681,14 @@
           "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
         ]
       },
+      "review-git": {
+        "title": "Git Review",
+        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+      },
+      "quiz-git": {
+        "title": "Git Quiz",
+        "intro": ["Test what you've learned on Git with this quiz."]
+      },
       "lab-periodic-table-database": {
         "title": "Build a Periodic Table Database",
         "intro": [
@@ -4430,24 +4701,10 @@
           "For this lab, you will use Bash scripting, PostgreSQL, and Git to create a number guessing game that runs in the terminal and saves user information."
         ]
       },
-      "review-git": {
-        "title": "Git Review",
-        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
-      },
-      "quiz-git": {
-        "title": "Git Quiz",
-        "intro": ["Test what you've learned on Git with this quiz."]
-      },
       "review-relational-databases": {
         "title": "Relational Databases Review",
         "intro": [
           "Review relational databases concepts to prepare for the exam."
-        ]
-      },
-      "quiz-node-js-core-modules": {
-        "title": "NodeJS Core Modules Quiz",
-        "intro": [
-          "Test what you've learned about Node.js core modules with this quiz."
         ]
       },
       "exam-relational-databases-certification": {
@@ -4579,12 +4836,6 @@
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
       },
-      "review-node-js-core-modules": {
-        "title": "Node JS Core Modules Review",
-        "intro": [
-          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
-        ]
-      },
       "review-node-js-intro": {
         "title": "NodeJS Intro Review",
         "intro": [
@@ -4599,6 +4850,30 @@
         "title": "Working with Node Core Modules",
         "intro": [
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-node-js-core-modules": {
+        "title": "NodeJS Core Modules Quiz",
+        "intro": [
+          "Test what you've learned about Node.js core modules with this quiz."
+        ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
@@ -4617,18 +4892,6 @@
         "title": "Understanding the REST API and Web Services",
         "intro": [
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
-        ]
-      },
-      "lecture-introduction-to-npm": {
-        "title": "Introduction to npm",
-        "intro": [
-          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
-        ]
-      },
-      "lecture-working-with-npm-scripts": {
-        "title": "Working with npm Scripts",
-        "intro": [
-          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -4667,7 +4930,7 @@
     }
   },
   "html-forms-and-tables": {
-    "title": "HTML Forms and Tables",
+    "title": "Learn HTML Forms and Tables",
     "summary": [
       "Learn how to build accessible forms and data tables with semantic HTML."
     ],
@@ -5010,14 +5273,15 @@
     ],
     "chapters": {
       "html": "HTML",
-      "css": "CSS",
       "computers": "Computers",
+      "css": "CSS",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "modules": {
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
       "html-forms-and-tables": "Forms and Tables",
+      "lab-survey-form": "Build a Survey Form",
       "html-and-accessibility": "Accessibility",
       "review-html": "HTML Review",
       "computer-basics": "Computer Basics",
@@ -5029,20 +5293,19 @@
       "styling-forms": "Styling Forms",
       "css-box-model": "The Box Model",
       "css-flexbox": "Flexbox",
+      "lab-page-of-playing-cards": "Build a Page of Playing Cards",
       "css-typography": "Typography",
       "css-and-accessibility": "Accessibility",
-      "attribute-selectors": "Attribute Selectors",
       "css-positioning": "Positioning",
+      "attribute-selectors": "Attribute Selectors",
+      "lab-book-inventory-app": "Build a Book Inventory App",
       "responsive-design": "Responsive Design",
+      "lab-technical-documentation-page": "Build a Technical Documentation Page",
       "css-variables": "Variables",
       "css-grid": "Grid",
+      "lab-product-landing-page": "Build a Product Landing Page",
       "css-animations": "Animations",
       "review-css": "CSS Review",
-      "lab-survey-form": "Build a Survey Form",
-      "lab-page-of-playing-cards": "Build a Page of Playing Cards",
-      "lab-book-inventory-app": "Build a Book Inventory App",
-      "lab-technical-documentation-page": "Build a Technical Documentation Page",
-      "lab-product-landing-page": "Build a Product Landing Page",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "blocks": {
@@ -5268,13 +5531,6 @@
           "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
         ]
       },
-      "lab-survey-form": {
-        "title": "Build a Survey Form",
-        "intro": [
-          "In this lab, you'll review HTML forms by creating a survey form.",
-          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
-        ]
-      },
       "lecture-working-with-tables": {
         "title": "Working with Tables",
         "intro": [
@@ -5312,6 +5568,13 @@
         "intro": [
           "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
           "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+        ]
+      },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
       "lecture-importance-of-accessibility-and-good-html-structure": {
@@ -5403,10 +5666,6 @@
           "Before you take the HTML prep exam, you first need to review the concepts taught in the previous modules.",
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
-      },
-      "qpra": {
-        "title": "30",
-        "intro": []
       },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
@@ -5742,13 +6001,6 @@
           "You'll practice aligning elements using flexbox properties like <code>flex</code>, <code>flex-grow</code>, <code>order</code>, and more."
         ]
       },
-      "lab-page-of-playing-cards": {
-        "title": "Build a Page of Playing Cards",
-        "intro": [
-          "In this lab, you'll use flexbox to create a webpage of playing cards.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
-        ]
-      },
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
@@ -5759,6 +6011,13 @@
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
         "intro": ["Test what you've learned on CSS flexbox with this quiz."]
+      },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
       },
       "lecture-working-with-css-fonts": {
         "title": "Working with CSS Fonts",
@@ -5866,13 +6125,6 @@
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
-      "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
-        "intro": [
-          "In this lab, you'll create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
-        ]
-      },
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
@@ -5884,6 +6136,13 @@
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
           "Test your knowledge of CSS attribute selectors with this quiz."
+        ]
+      },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
         ]
       },
       "lecture-best-practices-for-responsive-web-design": {
@@ -5899,13 +6158,6 @@
           "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
-      "lab-technical-documentation-page": {
-        "title": "Build a Technical Documentation Page",
-        "intro": [
-          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
-          "You'll also practice media queries to create a responsive design."
-        ]
-      },
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
@@ -5917,6 +6169,13 @@
         "title": "Responsive Web Design Quiz",
         "intro": [
           "Test what you've learned about making your webpages responsive with this quiz."
+        ]
+      },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
         ]
       },
       "lecture-working-with-css-variables": {
@@ -5975,12 +6234,6 @@
           "In this lecture, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
         ]
       },
-      "lab-product-landing-page": {
-        "title": "Build a Product Landing Page",
-        "intro": [
-          "In this project, you'll build a product landing page to market a product of your choice."
-        ]
-      },
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
@@ -5991,6 +6244,12 @@
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
         "intro": ["Test your knowledge of CSS Grid with this quiz."]
+      },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
       },
       "lecture-animations-and-accessibility": {
         "title": "Animations and Accessibility",
@@ -6300,11 +6559,13 @@
     }
   },
   "basic-html": {
-    "title": "Basic HTML",
+    "title": "Learn Basic HTML",
     "summary": [
       "Learn how to build simple webpages using HTML tags to add text, images, and links."
     ],
-    "intro": ["Larger intro for the superblock page."],
+    "intro": [
+      "HTML stands for HyperText Markup Language and represents the content and structure for a web page. In this course, you will learn the basics of writing HTML."
+    ],
     "blocks": {
       "workshop-curriculum-outline": {
         "title": "Build a Curriculum Outline",
@@ -6449,11 +6710,13 @@
     }
   },
   "semantic-html": {
-    "title": "Semantic HTML",
+    "title": "Learn Semantic HTML",
     "summary": [
       "Discover how to write cleaner, more meaningful HTML using semantic tags that improve structure, accessibility, and SEO."
     ],
-    "intro": ["Larger intro for the superblock page."],
+    "intro": [
+      "In this interactive course, you will practice writing semantic HTML."
+    ],
     "blocks": {
       "lecture-importance-of-semantic-html": {
         "title": "Importance of Semantic HTML",
@@ -6538,7 +6801,7 @@
     }
   },
   "html-and-accessibility": {
-    "title": "Accessibility",
+    "title": "Learn HTML and Accessibility",
     "summary": [
       "Learn how to write inclusive HTML using accessibility best practices and ARIA."
     ],
@@ -6632,7 +6895,7 @@
     }
   },
   "computer-basics": {
-    "title": "Computer Basics",
+    "title": "Learn Computer Basics",
     "summary": [
       "Build a foundation in computer, internet, and tooling basics for web development."
     ],
@@ -6674,7 +6937,7 @@
     }
   },
   "basic-css": {
-    "title": "Basic CSS",
+    "title": "Learn Basic CSS",
     "summary": [
       "Learn core CSS concepts and start styling real-world layouts."
     ],
@@ -6763,7 +7026,7 @@
     }
   },
   "design-for-developers": {
-    "title": "Design",
+    "title": "Introduction to UI/UX Design",
     "summary": [
       "Explore UI design fundamentals and user-centered design principles for developers."
     ],
@@ -6805,7 +7068,7 @@
     }
   },
   "absolute-and-relative-units": {
-    "title": "Absolute and Relative Units",
+    "title": "Learn Absolute and Relative Units in CSS",
     "summary": [
       "Understand when to use absolute and relative CSS units to build flexible layouts."
     ],
@@ -6840,7 +7103,7 @@
     }
   },
   "pseudo-classes-and-elements": {
-    "title": "Pseudo Classes and Elements",
+    "title": "Learn CSS Pseudo Classes and Elements",
     "summary": [
       "Use pseudo-classes and pseudo-elements to create richer, more interactive styles."
     ],
@@ -6889,7 +7152,7 @@
     }
   },
   "css-colors": {
-    "title": "Colors",
+    "title": "Learn CSS Colors",
     "summary": [
       "Work with CSS color formats and build cohesive color palettes."
     ],
@@ -6927,7 +7190,7 @@
     }
   },
   "styling-forms": {
-    "title": "Styling Forms",
+    "title": "Learn How to Style Forms Using CSS",
     "summary": ["Apply CSS techniques to create clean, usable form layouts."],
     "intro": ["Style form elements to improve usability and visual clarity."],
     "blocks": {
@@ -6978,7 +7241,7 @@
     }
   },
   "css-box-model": {
-    "title": "The Box Model",
+    "title": "Learn the CSS Box Model",
     "summary": [
       "Master the CSS box model, spacing, and layout effects for precise designs."
     ],
@@ -7019,7 +7282,7 @@
     }
   },
   "css-flexbox": {
-    "title": "Flexbox",
+    "title": "Learn CSS Flexbox",
     "summary": [
       "Build responsive layouts using the Flexbox model and alignment tools."
     ],
@@ -7074,7 +7337,7 @@
     }
   },
   "css-typography": {
-    "title": "Typography",
+    "title": "Learn CSS Typography",
     "summary": [
       "Learn how to style text for readability, hierarchy, and visual balance."
     ],
@@ -7114,7 +7377,7 @@
     }
   },
   "css-and-accessibility": {
-    "title": "Accessibility",
+    "title": "Learn CSS and Accessibility",
     "summary": [
       "Apply CSS techniques that support accessible and inclusive interfaces."
     ],
@@ -7155,7 +7418,7 @@
     }
   },
   "css-positioning": {
-    "title": "Positioning",
+    "title": "Learn CSS Positioning",
     "summary": [
       "Use positioning and floats to control layout and element flow."
     ],
@@ -7195,7 +7458,7 @@
     }
   },
   "attribute-selectors": {
-    "title": "Attribute Selectors",
+    "title": "Learn CSS Attribute Selectors",
     "summary": ["Target elements precisely with CSS attribute selectors."],
     "intro": ["Select elements with precision using attribute selectors."],
     "blocks": {
@@ -7241,7 +7504,7 @@
     }
   },
   "responsive-design": {
-    "title": "Responsive Design",
+    "title": "Learn Responsive Design",
     "summary": [
       "Learn responsive design principles and build layouts that adapt to any screen."
     ],
@@ -7294,7 +7557,7 @@
     }
   },
   "css-variables": {
-    "title": "Variables",
+    "title": "Learn CSS Variables",
     "summary": ["Use CSS variables to build reusable, theme-friendly styles."],
     "intro": ["Create maintainable styles using CSS custom properties."],
     "blocks": {
@@ -7332,7 +7595,7 @@
     }
   },
   "css-grid": {
-    "title": "Grid",
+    "title": "Learn CSS Grid",
     "summary": ["Design complex layouts using the CSS Grid system."],
     "intro": ["Build multi-dimensional layouts with CSS Grid."],
     "blocks": {
@@ -7392,7 +7655,7 @@
     }
   },
   "css-animations": {
-    "title": "Animations",
+    "title": "Learn CSS Animations",
     "summary": ["Create engaging UI motion with accessible CSS animations."],
     "intro": [
       "Add motion with CSS animations while keeping usability in mind."
