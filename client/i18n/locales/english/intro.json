@@ -1109,7 +1109,7 @@
         "title": "MCP Ecosystem & Tooling",
         "intro": [
           "Learn why MCP exists, its architecture, JSON-RPC, and how to build and use MCP servers and clients effectively."
-          ]
+        ]
       }
     }
   },
