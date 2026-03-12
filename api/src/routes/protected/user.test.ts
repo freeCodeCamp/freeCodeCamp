@@ -891,7 +891,7 @@ describe('userRoutes', () => {
           data: { username: '' }
         });
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         expect(response.body).toStrictEqual({ user: {}, result: '' });
         expect(response.statusCode).toBe(500);
@@ -900,13 +900,13 @@ describe('userRoutes', () => {
       // This should help debugging, since this the route returns this if
       // anything throws in the handler.
       test('GET does not return the error response if the request is valid', async () => {
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         expect(response.body).not.toEqual({ user: {}, result: '' });
       });
 
       test('GET returns username as the result property', async () => {
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         expect(response.body).toMatchObject({
           result: testUserData.username
@@ -926,7 +926,7 @@ describe('userRoutes', () => {
           joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
         };
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
         const {
           user: { foobar }
         } = response.body as unknown as {
@@ -953,7 +953,7 @@ describe('userRoutes', () => {
         const tokens = await fastifyTestInstance.prisma.userToken.count();
         expect(tokens).toBe(1);
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         const { userToken } = jwt.decode(
           response.body.user.foobar.userToken
@@ -970,7 +970,7 @@ describe('userRoutes', () => {
         const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
         expect(msUsernames).toBe(1);
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         const { msUsername } = response.body.user.foobar;
 
@@ -1053,7 +1053,7 @@ describe('userRoutes', () => {
           theme: 'default'
         };
 
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -1625,8 +1625,18 @@ Thanks and regards,
       });
     });
 
-    describe('/user/get-session-user', () => {
+    describe('/user/session-user', () => {
       test('GET returns 200 with empty user object for unauthenticated users', async () => {
+        const response = await superRequest('/user/session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({ user: {}, result: '' });
+      });
+
+      test('GET legacy endpoint returns 200 with empty user object for unauthenticated users', async () => {
         const response = await superRequest('/user/get-session-user', {
           method: 'GET',
           setCookies
