@@ -9,6 +9,9 @@ const challengePath =
 const nonPublicChallengePath =
   '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/write-your-first-c-sharp-code';
 
+const STORE_KEY = 'mobileAppModalDismissedAt';
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
 const mobileAppModal = translations['mobile-app-modal'] as Record<
   string,
   string
@@ -43,41 +46,89 @@ test.describe('Mobile App Modal', () => {
     ).toBeTruthy();
   });
 
-  test('closing with X hides the modal', async ({ page }) => {
-    await page.goto(challengePath);
-
-    await page
-      .getByRole('button', { name: translations.buttons.close })
-      .click();
-
-    await expect(
-      page.getByRole('dialog', { name: mobileAppModal.heading })
-    ).not.toBeVisible();
-  });
-
-  test('clicking the store link hides the modal', async ({ page }) => {
-    await page.goto(challengePath);
-
-    await page.getByRole('link').click();
-
-    await expect(
-      page.getByRole('dialog', { name: mobileAppModal.heading })
-    ).not.toBeVisible();
-  });
-
-  test('shows the modal again after navigating to another challenge', async ({
+  test('closing with X hides the modal but shows again on next page load', async ({
     page
   }) => {
     await page.goto(challengePath);
-
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
+    await expect(
+      page.getByRole('dialog', { name: mobileAppModal.heading })
+    ).not.toBeVisible();
+
+    // No timestamp stored — modal reappears on next navigation
+    const stored = await page.evaluate(
+      key => localStorage.getItem(key),
+      STORE_KEY
+    );
+    expect(stored).toBeNull();
 
     await page.goto(
       '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-4'
     );
+    await expect(
+      page.getByRole('dialog', { name: mobileAppModal.heading })
+    ).toBeVisible();
+  });
 
+  test('clicking the store link hides the modal but shows again on next page load', async ({
+    page
+  }) => {
+    await page.goto(challengePath);
+    await page.getByRole('link').click();
+    await expect(
+      page.getByRole('dialog', { name: mobileAppModal.heading })
+    ).not.toBeVisible();
+
+    const stored = await page.evaluate(
+      key => localStorage.getItem(key),
+      STORE_KEY
+    );
+    expect(stored).toBeNull();
+  });
+
+  test('"do not show me again" hides modal and stores a timestamp', async ({
+    page
+  }) => {
+    await page.goto(challengePath);
+    await page
+      .getByRole('button', { name: mobileAppModal['do-not-show'] })
+      .click();
+    await expect(
+      page.getByRole('dialog', { name: mobileAppModal.heading })
+    ).not.toBeVisible();
+
+    const stored = await page.evaluate(
+      key => localStorage.getItem(key),
+      STORE_KEY
+    );
+    expect(stored).not.toBeNull();
+  });
+
+  test('does not show after "do not show" dismissal until 30 days pass', async ({
+    page
+  }) => {
+    // Simulate a recent dismissal
+    await page.addInitScript(
+      ({ key, ts }) => localStorage.setItem(key, String(ts)),
+      { key: STORE_KEY, ts: Date.now() - 1000 }
+    );
+    await page.goto(challengePath);
+    await expect(
+      page.getByRole('dialog', { name: mobileAppModal.heading })
+    ).not.toBeVisible();
+  });
+
+  test('shows again after 30 days have passed since "do not show"', async ({
+    page
+  }) => {
+    // Simulate a dismissal more than 30 days ago
+    await page.addInitScript(
+      ({ key, ts }) => localStorage.setItem(key, String(ts)),
+      { key: STORE_KEY, ts: Date.now() - THIRTY_DAYS_MS - 1000 }
+    );
+    await page.goto(challengePath);
     await expect(
       page.getByRole('dialog', { name: mobileAppModal.heading })
     ).toBeVisible();
@@ -87,7 +138,6 @@ test.describe('Mobile App Modal', () => {
     page
   }) => {
     await page.goto(nonPublicChallengePath);
-
     await expect(
       page.getByRole('dialog', { name: mobileAppModal.heading })
     ).not.toBeVisible();
@@ -102,7 +152,6 @@ test.describe('Mobile App Modal — desktop', () => {
 
   test('does not show on desktop', async ({ page }) => {
     await page.goto(challengePath);
-
     await expect(
       page.getByRole('dialog', { name: mobileAppModal.heading })
     ).not.toBeVisible();

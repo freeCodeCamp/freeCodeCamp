@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import store from 'store';
 
 import { isProjectPreviewModalOpenSelector } from '../redux/selectors';
 
@@ -19,6 +20,9 @@ const mobileAvailableSuperBlocks = new Set<string>([
   SuperBlocks.TheOdinProject
 ]);
 
+const STORE_KEY = 'mobileAppModalDismissedAt';
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
 const IOS_URL =
   'https://apps.apple.com/us/app/freecodecamp/id6446908151?itsct=apps_box_link&itscg=30200';
 const ANDROID_URL =
@@ -30,6 +34,12 @@ function detectOS(): 'ios' | 'android' | 'other' {
   if (/iPad|iPhone|iPod/.test(ua)) return 'ios';
   if (/Android/.test(ua)) return 'android';
   return 'other';
+}
+
+function isDismissedFor30Days(): boolean {
+  const dismissedAt = store.get(STORE_KEY) as number | undefined;
+  if (!dismissedAt) return false;
+  return Date.now() - dismissedAt < THIRTY_DAYS_MS;
 }
 
 interface MobileAppModalProps {
@@ -46,13 +56,16 @@ function MobileAppModal({
   );
 
   const os = detectOS();
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(isDismissedFor30Days);
 
   useEffect(() => {
     if (isProjectPreviewOpen) setDismissed(true);
   }, [isProjectPreviewOpen]);
 
-  const dismiss = () => {
+  const dismiss = () => setDismissed(true);
+
+  const dismissPermanently = () => {
+    store.set(STORE_KEY, Date.now());
     setDismissed(true);
   };
 
@@ -77,6 +90,9 @@ function MobileAppModal({
           {storeName}
         </Button>
         <Spacer size='xs' />
+        <Button block={true} variant='info' onClick={dismissPermanently}>
+          {t('mobile-app-modal.do-not-show')}
+        </Button>
       </Modal.Body>
     </Modal>
   );

@@ -947,7 +947,8 @@
     "body": "This course is available in our app for a better experience.",
     "ios": "Download on the App Store",
     "android": "Get it on Google Play",
-    "open-app": "Open in App"
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
   },
   "icons": {
     "gold-cup": "Gold Cup",

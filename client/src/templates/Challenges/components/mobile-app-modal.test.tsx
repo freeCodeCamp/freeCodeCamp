@@ -10,6 +10,7 @@ import {
   vi,
   type Mock
 } from 'vitest';
+import store from 'store';
 
 vi.mock('react-redux', () => ({
   useSelector: vi.fn().mockReturnValue(false)
@@ -22,6 +23,9 @@ const mockUseSelector = useSelector as Mock;
 
 const MOBILE_SUPERBLOCK = 'responsive-web-design-v9';
 const NON_MOBILE_SUPERBLOCK = 'coding-interview-prep';
+const STORE_KEY = 'mobileAppModalDismissedAt';
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
 const ANDROID_UA =
   'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36';
 const IOS_UA =
@@ -54,6 +58,7 @@ describe('MobileAppModal', () => {
 
   beforeEach(() => {
     mockUseSelector.mockReturnValue(false); // default: project preview closed
+    store.remove(STORE_KEY);
     Object.defineProperty(navigator, 'userAgent', {
       value: ANDROID_UA,
       configurable: true
@@ -62,6 +67,7 @@ describe('MobileAppModal', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    store.remove(STORE_KEY);
   });
 
   it('renders the modal on mobile for a public superblock', () => {
@@ -89,6 +95,18 @@ describe('MobileAppModal', () => {
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
+  it('does not render when dismissed within 30 days', () => {
+    store.set(STORE_KEY, Date.now() - THIRTY_DAYS_MS + 1000);
+    render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  });
+
+  it('renders again after 30 days have passed', () => {
+    store.set(STORE_KEY, Date.now() - THIRTY_DAYS_MS - 1000);
+    render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
   it('displays the correct modal content', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     const dialog = screen.getByRole('dialog');
@@ -96,17 +114,27 @@ describe('MobileAppModal', () => {
     expect(dialog).toHaveTextContent('mobile-app-modal.body');
   });
 
-  it('closes the modal when the X button is clicked', () => {
+  it('closes the modal without persisting when X is clicked', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     fireEvent.click(screen.getByText('Close'));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(store.get(STORE_KEY)).toBeUndefined();
   });
 
-  it('closes the modal when the store link is clicked', () => {
+  it('closes the modal without persisting when the store link is clicked', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
-    const link = screen.getByRole('link');
-    fireEvent.click(link);
+    fireEvent.click(screen.getByRole('link'));
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    expect(store.get(STORE_KEY)).toBeUndefined();
+  });
+
+  it('closes the modal and stores a timestamp when "do not show" is clicked', () => {
+    render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
+    fireEvent.click(screen.getByText('mobile-app-modal.do-not-show'));
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    const stored = store.get(STORE_KEY) as number;
+    expect(stored).toBeGreaterThan(0);
+    expect(Date.now() - stored).toBeLessThan(1000);
   });
 
   it('shows the correct app store link for iOS', () => {
