@@ -19,6 +19,7 @@ enum Topic {
   InformationSecurity = 'information-security',
   ComputerFundamentals = 'computer-fundamentals',
   ComputerScience = 'computer-science',
+  Math = 'math',
   Databases = 'databases',
   Bash = 'bash',
   Git = 'git',
@@ -207,6 +208,12 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 2,
     topic: Topic.AI
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPrecalculus,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.Math
   },
   {
     superBlock: SuperBlocks.IntroductionToBash,
