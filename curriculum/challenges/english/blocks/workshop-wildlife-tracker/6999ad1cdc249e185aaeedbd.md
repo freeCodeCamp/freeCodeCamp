@@ -64,12 +64,12 @@ const result = addHabitat(testAnimal, "Forest");
 assert.strictEqual(result, testAnimal);
 ```
 
-You should call the `addHabitat(tiger, "Rainforest")` function inside of the `console.log`.
+You should log `addHabitat(tiger, "Rainforest")` to the console.
 
 ```js
 assert.match(
   code,
-  /console\.log\(\s*addHabitat\(\s*tiger\s*,\s*["']Rainforest["']\s*\)\s*\)/
+  /console\s*\.\s*log\s*\(\s*addHabitat\s*\(\s*tiger\s*,\s*["']Rainforest["']\s*\)\s*\)/
 );
 ```
 
