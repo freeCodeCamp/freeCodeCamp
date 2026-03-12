@@ -1,0 +1,11 @@
+{
+  "name": "Implement the Merge Sort Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-merge-sort-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69b2713ff6c21fed2d3ad88b", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
