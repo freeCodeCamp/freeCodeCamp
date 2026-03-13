@@ -518,7 +518,7 @@
     "ms-link": "Посилання Microsoft",
     "submit-and-go": "Відправити та перейти до наступного завдання",
     "congratulations": "Вітаємо, ваш код проходить. Відправте свій код, щоб продовжити.",
-    "congratulations-code-passes": "✔ Вітаємо! Ваш код працює.",
+    "congratulations-code-passes": "Вітаємо! Ваш код працює.",
     "i-completed": "Я виконав(-ла) це завдання",
     "example-code": "Приклад коду",
     "test-output": "Результат вашого тесту буде доступний тут",
@@ -556,7 +556,7 @@
     "contact-support-mistake": "Якщо виникла помилка, будь ласка, зв’яжіться з нами на donors@freecodecamp.org",
     "editor-tabs": {
       "code": "Код",
-      "tests": "Тести",
+      "tests": "Тести:",
       "restart": "Перезапустити",
       "restart-step": "Перезапустити крок",
       "console": "Консоль",
@@ -1276,6 +1276,7 @@
       "foundational-c-sharp-with-microsoft-cert": "Сертифікація «Основи C# з Microsoft»",
       "learn-python-for-beginners": "Python для початківців",
       "introduction-to-algorithms-and-data-structures": "Вступ до алгоритмів та структур даних",
+      "learn-prompting-fundamentals": "Знайомство з промптами",
       "a2-english-for-developers": "Англійська мова A2 для розробників",
       "a2-english-for-developers-cert": "Сертифікація «Англійська мова A2 для розробників (бета)»",
       "b1-english-for-developers": "Англійська мова B1 для розробників",
@@ -1311,7 +1312,13 @@
       "information-security-and-quality-assurance": "Інформаційна безпека та забезпечення якості (стара версія)",
       "information-security-and-quality-assurance-cert": "Сертифікація «Інформаційна безпека та забезпечення якості (стара версія)»",
       "full-stack": "Full Stack (стара версія)",
-      "full-stack-cert": "Сертифікація «Full Stack (стара версія)»"
+      "full-stack-cert": "Сертифікація «Full Stack (стара версія)»",
+      "introduction-to-bash": "Вступ до Bash",
+      "introduction-to-sql-and-postgresql": "Вступ до SQL та PostgreSQL",
+      "learn-bash-scripting": "Вивчення скриптів Bash",
+      "learn-sql-and-bash": "Вивчення SQL та Bash",
+      "introduction-to-nano": "Вступ до Nano",
+      "introduction-to-git-and-github": "Вступ до Git та GitHub"
     }
   },
   "certification-card": {
@@ -1463,7 +1470,12 @@
         "api": "API",
         "information-security": "Інформаційна безпека",
         "computer-fundamentals": "Основи комп’ютера",
-        "computer-science": "Комп’ютерні науки"
+        "computer-science": "Комп’ютерні науки",
+        "databases": "Бази даних",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Редактори",
+        "ai": "ШІ"
       }
     }
   }

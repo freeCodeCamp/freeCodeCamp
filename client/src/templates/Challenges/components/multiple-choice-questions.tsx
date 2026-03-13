@@ -12,6 +12,7 @@ import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
 import { stripHtmlTags } from './speaking-modal-helpers';
+import { sounds } from './scene/scene-assets';
 
 type MultipleChoiceQuestionsProps = {
   questions: Question[];
@@ -54,9 +55,7 @@ function MultipleChoiceQuestions({
   };
 
   const constructAudioUrl = (audioId?: string): string | undefined =>
-    audioId
-      ? `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${audioId}`
-      : undefined;
+    audioId ? `${sounds}/${audioId}` : undefined;
 
   const getAudioUrl = (
     questionIndex: number,

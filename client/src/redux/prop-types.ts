@@ -10,7 +10,6 @@ import type {
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
-import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
 export type { ChallengeFile, Ext };
@@ -27,17 +26,6 @@ export type CurrentCert = {
   show: boolean;
   title: string;
   certSlug: string;
-};
-
-export type MarkdownRemark = {
-  frontmatter: {
-    block: string;
-    superBlock: SuperBlocks;
-    certification: Certification;
-    title: CertTitle;
-  };
-  html: string;
-  id: string;
 };
 
 type MultipleChoiceAnswer = {
@@ -323,6 +311,7 @@ export type DailyCodingChallengePageContext = {
     id: string;
     superBlock: 'daily-coding-challenge';
     disableLoopProtectTests: boolean;
+    dashedName: string;
 
     // props to satisfy the show classic component
     isFirstStep: boolean;
