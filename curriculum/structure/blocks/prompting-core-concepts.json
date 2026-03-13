@@ -1,9 +1,9 @@
 {
-  "name": "Core Concepts",
+  "name": "Prompting Core Concepts",
   "isUpcomingChange": false,
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "dashedName": "learn-prompting-fundamentals-core-concepts",
+  "dashedName": "prompting-core-concepts",
   "helpCategory": "General",
   "challengeOrder": [
     {

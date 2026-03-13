@@ -1384,19 +1384,19 @@
     ],
     "note": "",
     "blocks": {
-      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
+      "foundations-of-ai-and-language-models": {
         "title": "Foundations of AI & Language Models",
         "intro": [
           "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
         ]
       },
-      "learn-prompting-fundamentals-core-concepts": {
-        "title": "Core Concepts",
+      "prompting-core-concepts": {
+        "title": "Prompting Core Concepts",
         "intro": [
           "Learn key prompting techniques, and understand how to use ChatGPT effectively."
         ]
       },
-      "learn-prompting-fundamentals-practical-application-and-best-practices": {
+      "practical-application-and-best-practices": {
         "title": "Practical Application & Best Practices",
         "intro": [
           "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
