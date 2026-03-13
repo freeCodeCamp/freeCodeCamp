@@ -269,14 +269,13 @@ const deferScript = scriptCode => {
   // before executing the script.
   return `
 (() => {
-  const run = (() => {${scriptCode};
-});
+  const run = (() => {
+    if (document.readyState === "interactive") {
+      ${scriptCode}
+    }
+  });
 
-  if (document.readyState === 'complete') {
-    run();
-  } else {
-    document.addEventListener('DOMContentLoaded', run, { once: true });
-  }
+  document.addEventListener('readystatechange', run, { once: true });
 })();
 `;
 };
