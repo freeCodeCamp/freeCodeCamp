@@ -114,7 +114,7 @@ age = 12
 if age >= 18:
     print('You are an adult')
 print('Almost there!')
-else:
+else: # SyntaxError: invalid syntax
     print('You are not an adult yet')
 ```
 
