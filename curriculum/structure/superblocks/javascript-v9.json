@@ -324,6 +324,7 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
             "lab-adjacency-list-to-matrix-converter-js",
+            "lab-depth-first-search-js",
             "lab-n-queens-problem-js"
           ]
         },

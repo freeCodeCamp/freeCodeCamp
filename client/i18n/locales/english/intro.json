@@ -3682,6 +3682,12 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "lab-depth-first-search-js": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement a solution for the depth-first search algorithm."
+        ]
+      },
       "lab-n-queens-problem-js": {
         "title": "Implement the N-Queens Problem",
         "intro": [
