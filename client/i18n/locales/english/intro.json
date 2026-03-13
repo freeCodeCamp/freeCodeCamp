@@ -3682,6 +3682,12 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "workshop-breadth-first-search-js": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
+        ]
+      },
       "lab-n-queens-problem-js": {
         "title": "Implement the N-Queens Problem",
         "intro": [
