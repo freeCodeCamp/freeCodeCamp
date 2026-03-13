@@ -1115,10 +1115,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
-      editor.focus();
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
-      editor.focus();
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     }
   }
