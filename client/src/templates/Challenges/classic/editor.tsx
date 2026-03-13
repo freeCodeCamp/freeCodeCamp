@@ -629,7 +629,9 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({ showCompletionModal: true });
+          props.executeChallenge({
+          showCompletionModal: !hasIndependentLowerJaw
+        });
         }
       }
     });

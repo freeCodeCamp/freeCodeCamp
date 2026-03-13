@@ -156,19 +156,19 @@ function Hotkeys({
 
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (
-        usesMultifileEditor &&
-        typeof challengeType == 'number' &&
-        !isProjectBased(challengeType)
-      ) {
-        if (testsArePassing) {
-          submitChallenge();
-        } else {
-          executeChallenge();
-        }
+      if(
+          usesMultifileEditor &&
+          typeof challengeType == 'number' &&
+          !isProjectBased(challengeType)
+        ) {
+      if (testsArePassing) {
+    submitChallenge();
       } else {
-        executeChallenge({ showCompletionModal: true });
-      }
+    executeChallenge();  // no modal
+  }
+} else {
+  executeChallenge({ showCompletionModal: true });
+}
     },
     ...(keyboardShortcuts
       ? {
