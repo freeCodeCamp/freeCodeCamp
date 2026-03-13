@@ -132,7 +132,7 @@ else:
     print('You are a child') # You are a child
 ```
 
-Note that you can use as many `elif` statements as you want:
+Note that you can use as many `elif` clauses as you want:
 
 ```python
 age = 2
