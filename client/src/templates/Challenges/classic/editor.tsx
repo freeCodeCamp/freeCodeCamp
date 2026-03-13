@@ -1109,20 +1109,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     return editableRegionBoundaries.length === 2;
   }
 
-  function focusIfTargetEditor() {
+function focusIfTargetEditor() {
     const { editor } = dataRef.current.monaco;
     const { canFocusOnMountRef } = props;
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
-      requestAnimationFrame(() => {
-        editor.focus();
-      });
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
-      requestAnimationFrame(() => {
-        editor.focus();
-      });
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     }
   }
