@@ -1,0 +1,21 @@
+diff --git a/client/src/templates/Challenges/classic/editor.tsx b/client/src/templates/Challenges/classic/editor.tsx
+index 9413844f55..5e27aa7d00 100644
+--- a/client/src/templates/Challenges/classic/editor.tsx
++++ b/client/src/templates/Challenges/classic/editor.tsx
+@@ -1115,10 +1115,14 @@ const Editor = (props: EditorProps): JSX.Element => {
+     if (!editor || !canFocusOnMountRef.current) return;
+     if (!props.usesMultifileEditor) {
+       // Only one editor? Focus it.
+-      editor.focus();
++      requestAnimationFrame(() => {
++        editor.focus();
++      });
+       canFocusOnMountRef.current = false;
+     } else if (hasEditableRegion()) {
+-      editor.focus();
++      requestAnimationFrame(() => {
++        editor.focus();
++      });
+       canFocusOnMountRef.current = false;
+     }
+   }
