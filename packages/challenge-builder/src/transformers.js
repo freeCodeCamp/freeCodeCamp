@@ -279,6 +279,14 @@ export const embedFilesInHtml = async function (challengeFiles) {
       documentElement.querySelector('script[src="script.js"]') ??
       documentElement.querySelector('script[src="./script.js"]');
 
+    // Check for invalid link and script sources
+    const invalidLinks = documentElement.querySelectorAll(
+      'link[href]:not([href="styles.css"]):not([href="./styles.css"]):not([href^="http"])'
+    );
+    const invalidScripts = documentElement.querySelectorAll(
+      'script[src]:not([src="script.js"]):not([src="./script.js"]):not([src="index.ts"]):not([src="./index.ts"]):not([src="index.jsx"]):not([src="./index.jsx"]):not([src="index.tsx"]):not([src="./index.tsx"]):not([src^="http"])'
+    );
+
     const tsScript =
       documentElement.querySelector('script[src="index.ts"]') ??
       documentElement.querySelector('script[src="./index.ts"]');
@@ -333,6 +341,28 @@ export const embedFilesInHtml = async function (challengeFiles) {
       tsxScript.setAttribute('data-src', 'index.tsx');
       tsxScript.setAttribute('data-type', 'text/babel');
     }
+
+    // Inject warnings for invalid files
+    invalidLinks.forEach(invalidLink => {
+      const href = invalidLink.getAttribute('href');
+      // Only warn if it looks like they are trying to link a local css file
+      if (href && href.endsWith('.css')) {
+        const warning = contentDocument.createElement('script');
+        warning.innerHTML = `console.warn("You have tried to source ${href}, but that does not exist. The only file that can be sourced is styles.css.");`;
+        documentElement.appendChild(warning);
+      }
+    });
+
+    invalidScripts.forEach(invalidScript => {
+      const src = invalidScript.getAttribute('src');
+      // Only warn if it looks like they are trying to link a local js file
+      if (src && src.endsWith('.js')) {
+        const warning = contentDocument.createElement('script');
+        warning.innerHTML = `console.warn("You have tried to source ${src}, but that does not exist. The only file that can be sourced is script.js.");`;
+        documentElement.appendChild(warning);
+      }
+    });
+
     return documentElement.innerHTML;
   };
 
