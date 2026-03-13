@@ -27,7 +27,7 @@ const insertChallenge = async () => {
   const template = getTemplate(options.challengeType);
   const challengeId = new ObjectId();
   const challengeText = template({ ...options, challengeId });
-  createChallengeFile(options.dashedName, challengeText, path);
+  createChallengeFile(challengeId.toString(), challengeText, path);
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToInsert, 0, {

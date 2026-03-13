@@ -1076,6 +1076,60 @@
       }
     }
   },
+  "introduction-to-precalculus": {
+    "title": "Introduction to Precalculus",
+    "summary": [
+      "Learn the fundamentals of precalculus, including functions, and trigonometry."
+    ],
+    "intro": [
+      "Precalculus is a branch of mathematics that prepares you for calculus. It covers a wide range of topics including functions, and trigonometry."
+    ],
+    "note": "",
+    "blocks": {
+      "function-basics": {
+        "title": "Function Basics",
+        "intro": [
+          "In these videos, you will learn about functions and how to work with them."
+        ]
+      },
+      "angles-and-circular-motion": {
+        "title": "Angles and Circular Motion",
+        "intro": [
+          "In these videos, you will learn about angles and circular motion."
+        ]
+      },
+      "right-triangle-trigonometry": {
+        "title": "Right Triangle Trigonometry",
+        "intro": [
+          "In these videos, you will learn about right triangle trigonometry and how to work with it."
+        ]
+      },
+      "trig-graphs-inverses": {
+        "title": "Trigonometric Graphs and Inverses",
+        "intro": [
+          "In these videos, you will learn about trigonometric graphs and inverse functions."
+        ]
+      },
+      "solving-trig-equations": {
+        "title": "Solving Trigonometric Equations",
+        "intro": [
+          "In these videos, you will learn how to solve trigonometric equations."
+        ]
+      },
+      "trig-identities-formulas": {
+        "title": "Trigonometric Identities and Formulas",
+        "intro": [
+          "In these videos, you will learn about trigonometric identities and formulas."
+        ]
+      },
+      "advanced-trig-conics": {
+        "title": "Advanced Trigonometry and Conics",
+        "intro": [
+          "In these videos, you will learn about advanced trigonometry and conic sections."
+        ]
+      }
+    }
+  },
   "introduction-to-bash": {
     "title": "Introduction to Bash",
     "summary": [
@@ -3622,6 +3676,12 @@
           "In this lab you will implement the quicksort algorithm to sort an array of integers."
         ]
       },
+      "review-searching-and-sorting-algorithms-js": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you are quizzed on Algorithms, you should review what you've learned about searching and sorting algorithms."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3632,6 +3692,12 @@
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "lab-depth-first-search-js": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement a solution for the depth-first search algorithm."
         ]
       },
       "lab-n-queens-problem-js": {
@@ -4991,6 +5057,10 @@
         "intro": [
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
+      },
+      "quiz-npm": {
+        "title": "NPM Quiz",
+        "intro": ["Test what you have learned about npm in this quiz."]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
         "title": "Understanding how HTTP, DNS and TCP/IP work",

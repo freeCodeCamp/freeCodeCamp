@@ -315,7 +315,8 @@
             "lab-bubble-sort-algorithm",
             "lab-selection-sort-js",
             "lab-insertion-sort",
-            "lab-quicksort-js"
+            "lab-quicksort-js",
+            "review-searching-and-sorting-algorithms-js"
           ]
         },
         {
@@ -324,6 +325,7 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
             "lab-adjacency-list-to-matrix-converter-js",
+            "lab-depth-first-search-js",
             "lab-n-queens-problem-js"
           ]
         },
