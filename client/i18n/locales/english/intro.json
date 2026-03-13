@@ -7891,7 +7891,7 @@
     "title": "Full-Stack Open",
     "intro": ["A good intro is to be added here."],
     "blocks": {
-      "cat-blog-page": {
+      "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
           "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."

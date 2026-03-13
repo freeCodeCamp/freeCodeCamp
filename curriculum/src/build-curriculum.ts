@@ -17,6 +17,7 @@ import { buildCertification } from './build-certification.js';
 import { getSuperOrder } from './super-order.js';
 import { applyFilters, closestFilters, type Filter } from './filter.js';
 import {
+  CURRICULUM_DIR,
   getContentDir,
   getLanguageConfig,
   getCurriculumStructure,
@@ -28,6 +29,18 @@ import {
 } from './file-handler.js';
 import { SHOW_UPCOMING_CHANGES } from './config.js';
 const log = debug('fcc:build-curriculum');
+
+type IntroJson = Record<
+  string,
+  {
+    blocks?: Record<
+      string,
+      {
+        title?: string;
+      }
+    >;
+  }
+>;
 
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
@@ -345,6 +358,38 @@ function validateBlocks(superblocks: SuperBlocks[], blockStructureDir: string) {
   }
 }
 
+function validateIntroBlockTitles(superblocks: SuperBlocks[]) {
+  const introPath = resolve(
+    CURRICULUM_DIR,
+    '../client/i18n/locales/english/intro.json'
+  );
+  const intros = JSON.parse(readFileSync(introPath, 'utf8')) as IntroJson;
+  const withSuperblockStructure = addSuperblockStructure(superblocks, true);
+  const missingTitles = new Set<string>();
+
+  for (const superblock of withSuperblockStructure) {
+    const blockNames = new Set(
+      superblock.blocks.map(block => block.dashedName)
+    );
+
+    for (const blockName of blockNames) {
+      const blockStructure = getBlockStructure(blockName);
+      if (blockStructure.isUpcomingChange) continue;
+
+      const blockTitle = intros[superblock.name]?.blocks?.[blockName]?.title;
+      if (typeof blockTitle !== 'string' || blockTitle.trim().length === 0) {
+        missingTitles.add(`${superblock.name}/${blockName}`);
+      }
+    }
+  }
+
+  if (missingTitles.size > 0) {
+    throw Error(
+      `Missing block titles in client/i18n/locales/english/intro.json for: ${[...missingTitles].join(', ')}`
+    );
+  }
+}
+
 export async function parseCurriculumStructure(filter?: Filter) {
   const curriculum = getCurriculumStructure();
   const blockStructureDir = getBlockStructureDir();
@@ -356,6 +401,7 @@ export async function parseCurriculumStructure(filter?: Filter) {
   log(`Found ${curriculum.certifications.length} certifications to build`);
 
   validateBlocks(curriculum.superblocks, blockStructureDir);
+  validateIntroBlockTitles(curriculum.superblocks);
 
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
