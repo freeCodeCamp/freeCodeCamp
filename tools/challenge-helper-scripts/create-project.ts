@@ -21,7 +21,7 @@ import {
   getAllBlocks
 } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { IntroJson, parseJson } from './helpers/parse-json.js';
+import { parseIntroJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
@@ -152,7 +152,7 @@ async function updateIntroJson(
     __dirname,
     '../../client/i18n/locales/english/intro.json'
   );
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
+  const newIntro = await parseIntroJson(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
     intro: [title, '']
