@@ -240,22 +240,22 @@ describe('external curriculum data build', () => {
             });
         });
 
-      // Temporary skip these checks to keep CI stable.
-      // TODO: uncomment these once https://github.com/freeCodeCamp/freeCodeCamp/issues/60660 is completed.
+      for (const chapter of superBlockData.chapters) {
+        if (chapter.comingSoon) continue;
 
-      // Check block data
-      // expect(
-      //   superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
-      //     .blocks[randomBlockIndex].intro
-      // ).toEqual(
-      //   superBlockIntros.blocks[randomBlock.meta.dashedName as string].intro
-      // );
-      // expect(
-      //   superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
-      //     .blocks[randomBlockIndex].meta.name
-      // ).toEqual(
-      //   superBlockIntros.blocks[randomBlock.meta.dashedName as string].title
-      // );
+        for (const module of chapter.modules) {
+          if (module.comingSoon) continue;
+
+          for (const block of module.blocks) {
+            expect(block.intro).toEqual(
+              superBlockIntros.blocks[block.meta.dashedName as string].intro
+            );
+            expect(block.meta.name).toEqual(
+              superBlockIntros.blocks[block.meta.dashedName as string].title
+            );
+          }
+        }
+      }
     });
   });
 
