@@ -82,6 +82,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-data-visualization",
+            "lab-bar-chart",
             "lab-scatterplot-graph"
           ]
         },
