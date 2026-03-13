@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi} from 'vitest';
 import i18n from '../../../../i18n/config-for-tests';
 import { generateSearchLink } from './help-modal';
 
@@ -42,3 +42,5 @@ describe('generateSearchLink', () => {
     );
   });
 });
+
+

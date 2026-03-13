@@ -138,6 +138,7 @@ function MsTrophy(props: MsTrophyProps) {
           description,
           instructions,
           superBlock,
+          id,
           block,
           translationPending
         }
@@ -203,6 +204,7 @@ function MsTrophy(props: MsTrophyProps) {
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
+              challengeId={id}
             />
           </Row>
         </Container>

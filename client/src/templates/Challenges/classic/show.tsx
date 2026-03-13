@@ -77,7 +77,6 @@ import { mergeChallengeFiles } from './saved-challenges';
 
 import './classic.css';
 import '../components/test-frame.css';
-import SourceModal from '../components/source-modal';
 
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
@@ -553,11 +552,7 @@ function ShowClassic({
           superBlock={superBlock}
           guideUrl={guideUrl}
           videoUrl={videoUrl}
-        />
-        <SourceModal
           challengeId={id}
-          challengeBlock={block}
-          superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal

@@ -125,6 +125,7 @@ const ShowGeneric = ({
         questions,
         tests,
         title,
+        id,
         transcript,
         translationPending,
         scene,
@@ -378,6 +379,7 @@ const ShowGeneric = ({
                 challengeTitle={title}
                 challengeBlock={block}
                 superBlock={superBlock}
+                challengeId={id}
               />
             </Row>
           </Container>

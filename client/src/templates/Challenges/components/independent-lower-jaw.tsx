@@ -33,7 +33,6 @@ import { Share } from '../../../components/share';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -62,7 +61,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
-  openSourceModal: () => openModal('source'),
   executeChallenge,
   saveChallenge
 };
@@ -70,7 +68,6 @@ const mapDispatchToProps = {
 interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
-  openSourceModal: () => void;
   executeChallenge: () => void;
   saveChallenge: () => void;
   tests: Test[];
@@ -83,7 +80,6 @@ interface IndependentLowerJawProps {
 export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
-  openSourceModal,
   executeChallenge,
   saveChallenge,
   tests,
@@ -293,17 +289,6 @@ export function IndependentLowerJaw({
               <span className='tooltiptext'> {t('buttons.reset')}</span>
             </button>
           )}
-          <button
-            className='icon-botton tooltip'
-            data-playwright-test-label='independentLowerJaw-source-button'
-            onClick={openSourceModal}
-          >
-            <FontAwesomeIcon icon={faGithub} />
-            <span className='tooltiptext'>
-              {' '}
-              {t('buttons.challenge-source')}
-            </span>
-          </button>
           <button
             type='button'
             className='icon-botton tooltip'

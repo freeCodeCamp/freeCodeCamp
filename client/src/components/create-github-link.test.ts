@@ -1,7 +1,5 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 
-vi.unmock('react-i18next');
-
 describe('generateGitHubLink', () => {
   afterEach(() => vi.resetModules());
   it('should return a link to a challenge for an english block', async () => {
@@ -11,7 +9,7 @@ describe('generateGitHubLink', () => {
         githubLocation: 'https://github.com/freeCodeCamp'
       }
     }));
-    const { generateGithubLink } = await import('./source-modal');
+    const { generateGithubLink } = await import('./create-github-link');
     const link = generateGithubLink(
       '5d5a813321b9e3db6c106a46',
       'learn-basic-javascript-by-building-a-role-playing-game'
@@ -29,7 +27,7 @@ describe('generateGitHubLink', () => {
         githubLocation: 'https://github.com/freeCodeCamp'
       }
     }));
-    const { generateGithubLink } = await import('./source-modal');
+    const { generateGithubLink } = await import('./create-github-link');
 
     const link = generateGithubLink(
       '5d5a813321b9e3db6c106a46',
