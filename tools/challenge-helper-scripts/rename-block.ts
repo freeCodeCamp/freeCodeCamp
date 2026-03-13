@@ -3,7 +3,7 @@ import path, { join } from 'path';
 import { input } from '@inquirer/prompts';
 import { format } from 'prettier';
 
-import { IntroJson, parseJson } from './helpers/parse-json';
+import { IntroJson, parseIntroJson } from './helpers/parse-json';
 import { withTrace } from './helpers/utils';
 import { getAllBlocks, validateBlockName } from './utils';
 import {
@@ -113,7 +113,7 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
   await fs.rename(oldBlockContentDir, newBlockContentDir);
   console.log('Block challenges moved to new directory.');
 
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
+  const newIntro = await parseIntroJson(introJsonPath);
   let didUpdateIntro = false;
 
   const { superblocks } = getCurriculumStructure();
@@ -153,7 +153,7 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
 }
 
 void getAllBlocks().then(async existingBlocks => {
-  const intro = await parseJson<IntroJson>(introJsonPath);
+  const intro = await parseIntroJson(introJsonPath);
 
   const oldBlock = await input({
     message: 'What is the dashed name of block to rename?',
