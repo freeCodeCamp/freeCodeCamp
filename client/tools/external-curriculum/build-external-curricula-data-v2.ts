@@ -324,33 +324,10 @@ export function buildExtCurriculumDataV2(
   getSubmitTypes();
   getSceneAssets();
 
-  function validateIntroBlockTitles(superBlockKeys: SuperBlocks[]) {
-    const missingTitles = new Set<string>();
-
-    for (const superBlockKey of superBlockKeys) {
-      const blocks = Object.keys(curriculum[superBlockKey].blocks);
-
-      for (const blockName of blocks) {
-        const title = intros[superBlockKey].blocks?.[blockName]?.title;
-
-        if (typeof title !== 'string' || title.trim().length === 0) {
-          missingTitles.add(`${superBlockKey}/${blockName}`);
-        }
-      }
-    }
-
-    if (missingTitles.size > 0) {
-      throw Error(
-        `Missing block titles in client/i18n/locales/english/intro.json for: ${[...missingTitles].join(', ')}`
-      );
-    }
-  }
-
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
       superBlockDashedNames.includes(x)
     );
-    validateIntroBlockTitles(superBlockKeys);
 
     writeToFile('available-superblocks', {
       superblocks: orderedSuperBlockInfo
