@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
 
-import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { withTrace } from './utils.js';
 
 export type BlockInfo = {
@@ -12,7 +11,7 @@ export type SuperBlockInfo = {
   blocks: Record<string, BlockInfo>;
 };
 
-export type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
+export type IntroJson = Record<string, SuperBlockInfo>;
 
 export function parseJson<JsonSchema>(filePath: string) {
   return withTrace(fs.readFile, filePath, 'utf8').then(
