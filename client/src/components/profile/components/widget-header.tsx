@@ -1,9 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Button } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { PrivateBadge } from './private-badge';
+import DropDown from '../../../assets/icons/dropdown';
 import './widget-header.css';
 
 interface WidgetHeaderProps {
@@ -12,6 +13,11 @@ interface WidgetHeaderProps {
   isSessionUser: boolean;
   onToggle?: () => void;
   onEdit?: () => void;
+  onAdd?: () => void;
+  addLabel?: string;
+  onCollapseToggle?: () => void;
+  isExpanded?: boolean;
+  collapseLabel?: string;
 }
 
 export const WidgetHeader = ({
@@ -19,7 +25,12 @@ export const WidgetHeader = ({
   isPrivate = false,
   isSessionUser,
   onToggle,
-  onEdit
+  onEdit,
+  onAdd,
+  addLabel,
+  onCollapseToggle,
+  isExpanded = true,
+  collapseLabel
 }: WidgetHeaderProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -45,6 +56,32 @@ export const WidgetHeader = ({
               />
               <span className='widget-toggle-slider' />
             </label>
+          )}
+          {onCollapseToggle && (
+            <Button
+              onClick={onCollapseToggle}
+              size='small'
+              className='widget-collapse-btn'
+              aria-expanded={isExpanded}
+              aria-label={collapseLabel || title}
+            >
+              <span
+                className={`widget-collapse-chevron${isExpanded ? '' : ' collapsed'}`}
+                aria-hidden='true'
+              >
+                <DropDown />
+              </span>
+            </Button>
+          )}
+          {onAdd && (
+            <Button
+              onClick={onAdd}
+              size='small'
+              className='widget-add-btn'
+              aria-label={addLabel || title}
+            >
+              <FontAwesomeIcon icon={faPlus} />
+            </Button>
           )}
           {onEdit && (
             <Button

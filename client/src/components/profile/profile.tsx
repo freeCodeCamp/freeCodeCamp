@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -19,11 +19,12 @@ import Certifications from './components/certifications';
 import Stats from './components/stats';
 import HeatMap from './components/heat-map';
 import './profile.css';
-import DropDown from '../../assets/icons/dropdown';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
 import { ProfileCompleteness } from './components/profile-completeness';
 import { WidgetHeader } from './components/widget-header';
+import ToggleRadioSetting from '../settings/toggle-radio-setting';
+import BlockSaveButton from '../helpers/form/block-save-button';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -59,8 +60,22 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
 const profileVisibilityToggles: ReadonlyArray<{
   flag: keyof ProfileUI;
   labelKey: string;
+  explainKey?: string;
 }> = [
   { flag: 'isLocked', labelKey: 'settings.labels.my-profile' },
+  {
+    flag: 'showName',
+    labelKey: 'settings.labels.my-name',
+    explainKey: 'settings.private-name'
+  },
+  {
+    flag: 'showLocation',
+    labelKey: 'settings.labels.my-location'
+  },
+  {
+    flag: 'showAbout',
+    labelKey: 'settings.labels.my-about'
+  },
   { flag: 'showDonation', labelKey: 'settings.labels.my-donations' },
   { flag: 'showPoints', labelKey: 'settings.labels.my-points' },
   { flag: 'showHeatMap', labelKey: 'settings.labels.my-heatmap' },
@@ -104,6 +119,7 @@ function UserProfile({
     string | null
   >(null);
   const [isMyProfileExpanded, setIsMyProfileExpanded] = useState(true);
+  const [privacyDraft, setPrivacyDraft] = useState(user.profileUI);
   const { t } = useTranslation();
 
   const {
@@ -130,11 +146,25 @@ function UserProfile({
     showTimeLine
   } = profileUI;
 
-  const toggleFlag = (flag: keyof ProfileUI) => {
-    submitProfileUI({
-      ...profileUI,
-      [flag]: !profileUI[flag]
-    });
+  useEffect(() => {
+    setPrivacyDraft(profileUI);
+  }, [profileUI]);
+
+  const togglePrivacyFlag = (flag: keyof ProfileUI) => () => {
+    setPrivacyDraft(prev => ({
+      ...prev,
+      [flag]: !prev[flag]
+    }));
+  };
+
+  const isPrivacyChanged = profileVisibilityToggles.some(
+    ({ flag }) => privacyDraft[flag] !== profileUI[flag]
+  );
+
+  const handlePrivacySave = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isPrivacyChanged) return;
+    submitProfileUI(privacyDraft);
   };
 
   const closeModal = () => {
@@ -189,54 +219,49 @@ function UserProfile({
         <FullWidthRow>
           <section className='card'>
             <WidgetHeader
-              title={t('settings.labels.my-profile')}
+              title={t('profile.privacy-title')}
               isSessionUser={isSessionUser}
               isPrivate={profileUI.isLocked}
+              onCollapseToggle={() => setIsMyProfileExpanded(prev => !prev)}
+              isExpanded={isMyProfileExpanded}
+              collapseLabel={t('profile.edit-privacy-settings')}
             />
-            <button
-              className='profile-widget-dropdown'
-              type='button'
-              onClick={() => setIsMyProfileExpanded(prev => !prev)}
-              aria-expanded={isMyProfileExpanded}
-              aria-label={t('settings.labels.my-profile')}
-            >
-              <span
-                className={`profile-widget-dropdown-chevron${isMyProfileExpanded ? ' expanded' : ''}`}
-                aria-hidden='true'
-              >
-                <DropDown />
-              </span>
-              <span className='profile-widget-dropdown-text'>
-                {t('profile.edit-privacy-settings')}
-              </span>
-            </button>
             {isMyProfileExpanded && (
-              <div className='profile-toggle-list'>
-                {profileVisibilityToggles.map(({ flag, labelKey }) => {
-                  const label = t(labelKey);
-                  const isPrivate =
-                    flag === 'isLocked' ? profileUI.isLocked : !profileUI[flag];
+              <form onSubmit={handlePrivacySave}>
+                <div className='profile-toggle-list'>
+                  {profileVisibilityToggles.map(
+                    ({ flag, labelKey, explainKey }) => {
+                      const label = t(labelKey);
+                      const isPrivate =
+                        flag === 'isLocked'
+                          ? privacyDraft.isLocked
+                          : !privacyDraft[flag];
 
-                  return (
-                    <div className='profile-toggle-row' key={flag}>
-                      <span>{label}</span>
-                      <label className='widget-toggle'>
-                        <input
-                          type='checkbox'
-                          checked={!isPrivate}
-                          onChange={() => toggleFlag(flag)}
-                          aria-label={
-                            isPrivate
-                              ? t('aria.make-public', { section: label })
-                              : t('aria.make-private', { section: label })
-                          }
+                      return (
+                        <ToggleRadioSetting
+                          key={flag}
+                          action={label}
+                          explain={explainKey ? t(explainKey) : undefined}
+                          flag={isPrivate}
+                          flagName={flag}
+                          offLabel={t('buttons.public')}
+                          onLabel={t('buttons.private')}
+                          toggleFlag={togglePrivacyFlag(flag)}
                         />
-                        <span className='widget-toggle-slider' />
-                      </label>
-                    </div>
-                  );
-                })}
-              </div>
+                      );
+                    }
+                  )}
+                </div>
+                <div className='profile-privacy-save-btn'>
+                  <BlockSaveButton
+                    disabled={!isPrivacyChanged}
+                    bgSize='large'
+                    {...(!isPrivacyChanged && { tabIndex: -1 })}
+                  >
+                    {t('buttons.save')}
+                  </BlockSaveButton>
+                </div>
+              </form>
             )}
           </section>
         </FullWidthRow>
@@ -290,6 +315,11 @@ function UserProfile({
               title={t('profile.projects')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showPortfolio}
+              onAdd={() => {
+                setActivePortfolioItemId(null);
+                setActiveModal('portfolio');
+              }}
+              addLabel={t('profile.add-new-project')}
             />
             {portfolio.length > 0 ? (
               <PortfolioProjects
@@ -308,20 +338,6 @@ function UserProfile({
                 <p className='text-center'>{t('profile.no-portfolio')}</p>
               )
             )}
-            {isSessionUser && (
-              <div className='profile-add-action-row'>
-                <button
-                  className='profile-add-action'
-                  onClick={() => {
-                    setActivePortfolioItemId(null);
-                    setActiveModal('portfolio');
-                  }}
-                  type='button'
-                >
-                  {t('profile.add-new-project')}
-                </button>
-              </div>
-            )}
           </section>
         </FullWidthRow>
       )}
@@ -336,6 +352,11 @@ function UserProfile({
               title={t('profile.experience.heading')}
               isSessionUser={isSessionUser}
               isPrivate={isSessionUser && !showExperience}
+              onAdd={() => {
+                setActiveExperienceItemId(null);
+                setActiveModal('experience');
+              }}
+              addLabel={t('profile.add-new-experience')}
             />
             {(experience || []).length > 0 ? (
               <ExperienceDisplay
@@ -353,20 +374,6 @@ function UserProfile({
               isSessionUser && (
                 <p className='text-center'>{t('profile.no-experience')}</p>
               )
-            )}
-            {isSessionUser && (
-              <div className='profile-add-action-row'>
-                <button
-                  className='profile-add-action'
-                  onClick={() => {
-                    setActiveExperienceItemId(null);
-                    setActiveModal('experience');
-                  }}
-                  type='button'
-                >
-                  {t('profile.add-new-experience')}
-                </button>
-              </div>
             )}
           </section>
         </FullWidthRow>

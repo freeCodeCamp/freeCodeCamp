@@ -5,34 +5,8 @@
   margin-bottom: 1.5em;
 }
 
-.profile-completeness-title {
-  margin: 0 0 1rem;
-  font-size: clamp(1.35rem, 2vw, 1.85rem);
-  line-height: 1.2;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--quaternary-background);
-}
-
-.profile-completeness-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  color: var(--primary-color);
-  text-align: left;
-}
-
-.profile-completeness-header:hover {
-  background: none;
-  color: var(--primary-color);
-}
-
 .profile-completeness-bar-container {
-  flex: 1;
+  margin-top: 0.25rem;
   height: 10px;
   background: var(--tertiary-background);
   border: 1px solid var(--quaternary-background);
@@ -45,21 +19,6 @@
   background-color: var(--primary-color);
   border-radius: 0;
   transition: width 0.3s ease;
-}
-
-.profile-completeness-chevron {
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.2s ease;
-}
-
-.profile-completeness-chevron svg {
-  width: 15px;
-  height: 15px;
-}
-
-.profile-completeness-chevron.expanded {
-  transform: rotate(180deg);
 }
 
 .profile-completeness-checklist {

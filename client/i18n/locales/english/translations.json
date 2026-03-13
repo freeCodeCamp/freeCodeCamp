@@ -470,9 +470,11 @@
     "add-new-social-link": "Add new social link",
     "add-new-project": "Add new project",
     "add-new-experience": "Add new experience",
+    "privacy-title": "Profile privacy",
     "edit-privacy-settings": "Edit profile privacy settings here",
     "internet-presence": "Internet Presence",
     "completeness": {
+      "title": "Profile completion",
       "heading": "Profile {{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",

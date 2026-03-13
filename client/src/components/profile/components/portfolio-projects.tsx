@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import type { PortfolioProjectData } from '../../../redux/prop-types';
@@ -20,55 +22,53 @@ export const PortfolioProjects = ({
   return (
     <>
       <Spacer size='s' />
-      {portfolioProjects.map(
-        ({ title, url, image, description, id }, index) => (
-          <React.Fragment key={id}>
-            <div className='portfolio-item-shell'>
-              {onEditProject && (
-                <div className='profile-item-action-row profile-item-action-row--top-right'>
-                  <button
-                    className='profile-item-edit-action'
-                    onClick={() => onEditProject(id)}
-                    type='button'
-                  >
-                    {t('buttons.edit')}
-                  </button>
-                </div>
+      <div className='portfolio-list'>
+        {portfolioProjects.map(({ title, url, image, description, id }) => (
+          <div className='portfolio-item-shell' key={id}>
+            {onEditProject && (
+              <div className='profile-item-action-row profile-item-action-row--top-right'>
+                <button
+                  className='profile-item-edit-action profile-item-edit-action--icon'
+                  onClick={() => onEditProject(id)}
+                  type='button'
+                  aria-label={t('buttons.edit')}
+                >
+                  <FontAwesomeIcon icon={faPen} aria-hidden='true' />
+                </button>
+              </div>
+            )}
+            <a
+              href={url}
+              rel='nofollow noopener noreferrer'
+              target='_blank'
+              className='portfolio-card'
+            >
+              {image && (
+                <img
+                  alt=''
+                  className='portfolio-image'
+                  src={image}
+                  onError={({ currentTarget }) => {
+                    currentTarget.src =
+                      'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
+                  }}
+                />
               )}
-              <a
-                href={url}
-                rel='nofollow noopener noreferrer'
-                target='_blank'
-                className='portfolio-card'
-              >
-                {image && (
-                  <img
-                    alt=''
-                    className='portfolio-image'
-                    src={image}
-                    onError={({ currentTarget }) => {
-                      currentTarget.src =
-                        'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
-                    }}
-                  />
-                )}
-                <div className='portfolio-card-description'>
-                  <div className='portfolio-card-text'>
-                    <h3>
-                      {title}
-                      <span className='sr-only'>
-                        , {t('aria.opens-new-window')}
-                      </span>
-                    </h3>
-                    <p>{description}</p>
-                  </div>
+              <div className='portfolio-card-description'>
+                <div className='portfolio-card-text'>
+                  <h3>
+                    {title}
+                    <span className='sr-only'>
+                      , {t('aria.opens-new-window')}
+                    </span>
+                  </h3>
+                  <p>{description}</p>
                 </div>
-              </a>
-            </div>
-            {index < portfolioProjects.length - 1 && <hr />}
-          </React.Fragment>
-        )
-      )}
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
       <Spacer size='m' />
     </>
   );
