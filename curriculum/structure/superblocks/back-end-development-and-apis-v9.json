@@ -27,7 +27,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-npm",
-            "lecture-working-with-npm-scripts"
+            "lecture-working-with-npm-scripts",
+            "review-npm"
           ]
         },
         {
