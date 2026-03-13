@@ -186,7 +186,6 @@ async function createMetaJson(
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
   }
-  newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
 

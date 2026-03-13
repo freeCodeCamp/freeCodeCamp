@@ -215,7 +215,6 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
-  newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
 

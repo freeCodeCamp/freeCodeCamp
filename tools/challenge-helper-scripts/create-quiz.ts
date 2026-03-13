@@ -81,7 +81,6 @@ async function createMetaJson(
   challengeId: ObjectId
 ) {
   const newMeta = getBaseMeta('Quiz');
-  newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
 
