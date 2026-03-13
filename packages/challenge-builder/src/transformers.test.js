@@ -2,7 +2,7 @@
  * @vitest-environment jsdom
  */
 
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { embedFilesInHtml, embedScript } from './transformers';
 
@@ -59,6 +59,35 @@ describe('embedFilesInHtml', () => {
 
 describe('embedScript', () => {
   const rawScript = 'console.log("Hello, world!");';
+
+  afterEach(() => {
+    delete document.__hasRun;
+    document.body.querySelectorAll('script').forEach(s => s.remove());
+    vi.restoreAllMocks();
+  });
+
+  it('runs deferred scripts when the readystate becomes interactive', async () => {
+    const script = document.createElement('script');
+    script.setAttribute('defer', true);
+    embedScript(script, 'script.js', 'document.__hasRun = true;');
+
+    // By default, the jsdom environment is "complete", so we need to mock it to
+    // test the defer behavior.
+    vi.spyOn(document, 'readyState', 'get').mockReturnValueOnce('interactive');
+    // We have to wait for something to happen inside the script. Since we
+    // dispatch this event, that is something we can wait for.
+    const scriptRan = new Promise(resolve =>
+      document.addEventListener('readystatechange', resolve, {
+        once: true
+      })
+    );
+
+    document.body.appendChild(script);
+    document.dispatchEvent(new Event('readystatechange'));
+
+    await scriptRan;
+    expect(document.__hasRun).toBe(true);
+  });
 
   it('embeds script content into a script tag', () => {
     const script = document.createElement('script');
