@@ -161,21 +161,17 @@ describe('external curriculum data build', () => {
         superBlock
       ] as GeneratedBlockBasedCurriculumProps;
 
-      // Temporary skip these checks to keep CI stable.
-      // TODO: uncomment these once https://github.com/freeCodeCamp/freeCodeCamp/issues/60660 is completed.
-
-      // Randomly pick a block to check its data.
-      // const blocks = superBlockData.blocks;
-      // const randomBlockIndex = Math.floor(Math.random() * blocks.length);
-      // const randomBlock = blocks[randomBlockIndex];
-
       expect(superBlockData.intro).toEqual(intros[superBlock].intro);
-      // expect(superBlockData.blocks[randomBlockIndex].intro).toEqual(
-      //   intros[superBlock].blocks[randomBlock.meta.dashedName as string].intro
-      // );
-      // expect(superBlockData.blocks[randomBlockIndex].meta.name).toEqual(
-      //   intros[superBlock].blocks[randomBlock.meta.dashedName as string].title
-      // );
+      const blocks = superBlockData.blocks;
+
+      for (const block of blocks) {
+        expect(block.intro).toEqual(
+          intros[superBlock].blocks[block.meta.dashedName as string].intro
+        );
+        expect(block.meta.name).toEqual(
+          intros[superBlock].blocks[block.meta.dashedName as string].title
+        );
+      }
     });
   });
 
