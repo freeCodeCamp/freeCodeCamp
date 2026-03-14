@@ -1076,6 +1076,43 @@
       }
     }
   },
+  "learn-rag-mcp-fundamentals": {
+    "title": "Learn RAG and MCP Fundamentals",
+    "summary": [
+      "Learn the fundamentals of RAG and MCP in this comprehensive video course."
+    ],
+    "intro": [
+      "RAG stands for Retrieval-Augmented Generation. MCP stands for Model Context Protocol. These are powerful frameworks for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
+      "In this course, you'll learn the fundamentals of RAG and MCP and how to implement them in your own projects. You'll explore the components of RAG and MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG and MCP work and how to use them to build intelligent agents."
+    ],
+    "note": "",
+    "blocks": {
+      "understanding-rag": {
+        "title": "Understanding RAG",
+        "intro": [
+          "Learn the fundamentals of Retrieval-Augmented Generation (RAG), including what it is, when to use it, and core concepts."
+        ]
+      },
+      "retrieval-engine-internals": {
+        "title": "Retrieval Engine Internals",
+        "intro": [
+          "Dive into semantic search, embedding models, vector databases, and chunking to understand how retrieval works under the hood."
+        ]
+      },
+      "designing-reliable-rag-systems": {
+        "title": "Designing Reliable RAG Systems",
+        "intro": [
+          "Explore RAG architecture, monitoring, error handling, and how to deploy RAG systems in production."
+        ]
+      },
+      "mcp-ecosystem-and-tooling": {
+        "title": "MCP Ecosystem & Tooling",
+        "intro": [
+          "Learn why MCP exists, its architecture, JSON-RPC, and how to build and use MCP servers and clients effectively."
+        ]
+      }
+    }
+  },
   "introduction-to-precalculus": {
     "title": "Introduction to Precalculus",
     "summary": [
