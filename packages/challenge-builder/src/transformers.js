@@ -114,11 +114,28 @@ const replaceNBSP = cond([
   [stubTrue, identity]
 ]);
 
+const transformCompiledChallengeCode = async (wrap, challengeFile) => {
+  try {
+    return await transformContents(wrap, compileHeadTail('\n', challengeFile));
+  } catch (combinedError) {
+    // If editable contents alone have a syntax error, surface that instead of
+    // an error caused by parsing the hidden after-user-code scaffold.
+    let contentsError;
+    try {
+      await wrap(challengeFile.contents);
+    } catch (error) {
+      contentsError = error;
+    }
+    if (contentsError) throw contentsError;
+    throw combinedError;
+  }
+};
+
 const getJSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetEnv();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-  return transformHeadTailAndContents(
+  return transformCompiledChallengeCode(
     babelTransformCode(babelOptions),
     challengeFile
   );
@@ -128,7 +145,7 @@ const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
   const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
-  return transformHeadTailAndContents(
+  return transformCompiledChallengeCode(
     babelTransformCode(babelOptions),
     challengeFile
   );
@@ -152,7 +169,7 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return flow(
     partial(transformHeadTailAndContents, compileTypeScriptCode),
-    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+    partial(transformCompiledChallengeCode, babelTransformCode(babelOptions))
   )(challengeFile);
 };
 
