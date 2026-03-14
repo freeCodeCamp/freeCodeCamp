@@ -3,7 +3,6 @@ id: 67f38fac88ead216c0db1dcb
 title: Task 81
 challengeType: 19
 dashedName: task-81
-showSpeakingButton: true
 lang: en-US
 ---
 
