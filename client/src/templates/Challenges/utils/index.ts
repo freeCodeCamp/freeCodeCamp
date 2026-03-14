@@ -33,55 +33,6 @@ export function transformEditorLink(url: string): string {
     );
 }
 
-// Adds region role and accessible name to PrismJS code blocks
-export function enhancePrismAccessibility(
-  prismEnv: Prism.hooks.ElementHighlightedEnvironment
-): void {
-  const langs: { [key: string]: string } = {
-    js: 'JavaScript',
-    javascript: 'JavaScript',
-    css: 'CSS',
-    html: 'HTML',
-    python: 'python',
-    py: 'python',
-    xml: 'XML',
-    jsx: 'JSX',
-    scss: 'SCSS',
-    sql: 'SQL',
-    http: 'HTTP',
-    json: 'JSON',
-    pug: 'pug',
-    ts: 'TypeScript',
-    typescript: 'TypeScript',
-    tsx: 'TSX',
-    csharp: 'C#',
-    clike: 'CLike',
-    c: 'C',
-    cpp: 'C++'
-  };
-  const parent = prismEnv?.element?.parentElement;
-  if (
-    !parent ||
-    parent.nodeName !== 'PRE' ||
-    parent.tabIndex !== 0 ||
-    parent.dataset.noAria === 'true'
-  ) {
-    return;
-  }
-
-  parent.setAttribute('role', 'region');
-  const codeType = prismEnv.element?.className
-    .replace(/language-(.*)/, '$1')
-    .toLowerCase();
-  const codeName = langs[codeType] || '';
-  parent.setAttribute(
-    'aria-label',
-    i18next.t('aria.code-example', {
-      codeName
-    })
-  );
-}
-
 // Make PrismJS code blocks collapsible
 export function makePrismCollapsible(
   prismEnv: Prism.hooks.ElementHighlightedEnvironment

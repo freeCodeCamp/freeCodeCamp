@@ -55,11 +55,7 @@ import {
   isChallengeCompletedSelector
 } from '../redux/selectors';
 import GreenPass from '../../../assets/icons/green-pass';
-import {
-  enhancePrismAccessibility,
-  makePrismCollapsible,
-  setScrollbarArrowStyles
-} from '../utils/index';
+import { makePrismCollapsible, setScrollbarArrowStyles } from '../utils/index';
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
@@ -884,7 +880,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
-    Prism.hooks.add('complete', enhancePrismAccessibility);
 
     // To reduce confusion on the first workshop. Will need to find a better solution.
     if (props.block !== 'workshop-curriculum-outline') {
