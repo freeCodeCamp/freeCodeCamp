@@ -60,14 +60,13 @@ export function enhancePrismAccessibility(
     cpp: 'C++'
   };
   const parent = prismEnv?.element?.parentElement;
-  if (
-    !parent ||
-    parent.nodeName !== 'PRE' ||
-    parent.tabIndex !== 0 ||
-    parent.dataset.noAria === 'true'
-  ) {
-    return;
-  }
+if (
+  !parent ||
+  parent.nodeName !== 'PRE' ||
+  parent.dataset.noAria === 'true'
+) {
+  return;
+}
 
   parent.setAttribute('role', 'region');
   const codeType = prismEnv.element?.className
