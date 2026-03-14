@@ -50,6 +50,8 @@ import {
   updateMySocialsError,
   updateMySoundComplete,
   updateMySoundError,
+  updateMyAmbientSoundComplete,
+  updateMyAmbientSoundError,
   validateUsernameComplete,
   validateUsernameError,
   verifyCertComplete,
@@ -109,6 +111,20 @@ function* updateMySoundSaga({ payload: update }) {
     yield put(createFlashMessage({ ...data }));
   } catch {
     yield put(updateMySoundError);
+  }
+}
+
+function* updateMyAmbientSoundSaga({ payload: update }) {
+  try {
+    store.set('fcc-ambient-sound', !!update.ambientSound);
+    const data = {
+      message: 'flash.updated-sound',
+      type: 'success'
+    };
+    yield put(updateMyAmbientSoundComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyAmbientSoundError());
   }
 }
 
@@ -247,6 +263,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMySocials, updateMySocialsSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
+    takeEvery(types.updateMyAmbientSound, updateMyAmbientSoundSaga),
     takeEvery(types.resetMyEditorLayout, resetMyEditorLayoutSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
