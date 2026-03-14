@@ -2015,9 +2015,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
       },
       "type": "object",
     },
-    "showSpeakingButton": {
-      "type": "boolean",
-    },
     "solutions": {
       "items": [
         {
