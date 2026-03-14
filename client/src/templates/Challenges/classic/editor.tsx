@@ -137,6 +137,8 @@ interface DescriptionZoneState {
 interface OutputZoneState {
   zoneId: string;
   top: number;
+  afterLineNumber: number;
+  heightInPx: number;
   widget?: editor.IOverlayWidget;
 }
 
@@ -281,7 +283,9 @@ const createInitialEditorState = (): EditorState => ({
   },
   outputZone: {
     zoneId: '',
-    top: 0
+    top: 0,
+    afterLineNumber: 0,
+    heightInPx: 0
   },
   editableRegion: {
     decorationId: ''
@@ -816,8 +820,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const tryToSubmitChallenge = submitChallengeDebounceRef.current;
 
-  // TODO: there's a potential performance gain to be had by only updating when
-  // the outputViewZone has actually changed.
   const updateOutputViewZone = (
     lowerJawContainer: HTMLDivElement,
     editor?: editor.IStandaloneCodeEditor
@@ -825,14 +827,29 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor) return;
     // make sure the overlayWidget has resized before using it to set the height
     lowerJawContainer.style.width = `${getEditorContentWidth(editor)}px`;
+    const afterLineNumber = getLastLineOfEditableRegion();
+    const heightInPx = lowerJawContainer.offsetHeight;
+    const { outputZone } = dataRef.current;
+    const hasZone = !!outputZone.zoneId;
+
+    if (
+      hasZone &&
+      outputZone.afterLineNumber === afterLineNumber &&
+      outputZone.heightInPx === heightInPx
+    ) {
+      return;
+    }
+
     // We have to wait for the viewZone to finish rendering before adjusting the
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     editor.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.outputZone.zoneId);
+      if (hasZone) {
+        changeAccessor.removeZone(outputZone.zoneId);
+      }
       const viewZone = {
-        afterLineNumber: getLastLineOfEditableRegion(),
-        heightInPx: lowerJawContainer.offsetHeight,
+        afterLineNumber,
+        heightInPx,
         domNode: document.createElement('div'),
         onComputedHeight: () =>
           dataRef.current.outputZone.widget &&
@@ -844,6 +861,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       };
       dataRef.current.outputZone.zoneId = changeAccessor.addZone(viewZone);
+      dataRef.current.outputZone.afterLineNumber = afterLineNumber;
+      dataRef.current.outputZone.heightInPx = heightInPx;
     });
   };
 
