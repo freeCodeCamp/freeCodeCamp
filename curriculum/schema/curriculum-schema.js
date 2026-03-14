@@ -66,7 +66,27 @@ const superblocks = [
   'learn-sql-and-bash',
   'introduction-to-nano',
   'introduction-to-git-and-github',
-  'learn-prompting-fundamentals'
+  'learn-prompting-fundamentals',
+  'introduction-to-variables-and-strings-in-javascript',
+  'introduction-to-booleans-and-numbers-in-javascript',
+  'introduction-functions-in-javascript',
+  'introduction-to-arrays-in-javascript',
+  'introduction-to-objects-in-javascript',
+  'introduction-to-loops-in-javascript',
+  'javascript-fundamentals-review',
+  'introduction-to-higher-order-functions-and-callbacks-in-javascript',
+  'learn-dom-manipulation-and-events-with-javascript',
+  'introduction-to-javascript-and-accessibility',
+  'learn-javascript-debugging',
+  'learn-basic-regex-with-javascript',
+  'introduction-to-dates-in-javascript',
+  'learn-audio-and-video-events-with-javascript',
+  'introduction-to-maps-and-sets-in-javascript',
+  'learn-localstorage-and-crud-operations-with-javascript',
+  'introduction-to-javascript-classes',
+  'learn-recursion-with-javascript',
+  'introduction-to-functional-programming-with-javascript',
+  'introduction-to-asynchronous-javascript'
 ];
 
 const schema = Joi.object().keys(
