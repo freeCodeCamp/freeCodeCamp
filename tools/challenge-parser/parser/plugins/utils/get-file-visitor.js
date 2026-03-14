@@ -8,7 +8,16 @@ const keyToSection = {
   head: 'before-user-code',
   tail: 'after-user-code'
 };
-const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py', 'ts', 'tsx'];
+const supportedLanguages = [
+  'js',
+  'css',
+  'html',
+  'jsx',
+  'py',
+  'ts',
+  'tsx',
+  'json'
+];
 const longToShortLanguages = {
   javascript: 'js',
   typescript: 'ts',
@@ -30,7 +39,8 @@ function getFilenames(lang) {
   const langToFilename = {
     js: 'script',
     css: 'styles',
-    py: 'main'
+    py: 'main',
+    json: 'tsconfig'
   };
   return langToFilename[lang] ?? 'index';
 }
