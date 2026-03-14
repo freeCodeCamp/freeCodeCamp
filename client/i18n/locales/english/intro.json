@@ -1076,6 +1076,97 @@
       }
     }
   },
+  "learn-rag-mcp-fundamentals": {
+    "title": "Learn RAG and MCP Fundamentals",
+    "summary": [
+      "Learn the fundamentals of RAG and MCP in this comprehensive video course."
+    ],
+    "intro": [
+      "RAG stands for Retrieval-Augmented Generation. MCP stands for Model Context Protocol. These are powerful frameworks for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
+      "In this course, you'll learn the fundamentals of RAG and MCP and how to implement them in your own projects. You'll explore the components of RAG and MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG and MCP work and how to use them to build intelligent agents."
+    ],
+    "note": "",
+    "blocks": {
+      "understanding-rag": {
+        "title": "Understanding RAG",
+        "intro": [
+          "Learn the fundamentals of Retrieval-Augmented Generation (RAG), including what it is, when to use it, and core concepts."
+        ]
+      },
+      "retrieval-engine-internals": {
+        "title": "Retrieval Engine Internals",
+        "intro": [
+          "Dive into semantic search, embedding models, vector databases, and chunking to understand how retrieval works under the hood."
+        ]
+      },
+      "designing-reliable-rag-systems": {
+        "title": "Designing Reliable RAG Systems",
+        "intro": [
+          "Explore RAG architecture, monitoring, error handling, and how to deploy RAG systems in production."
+        ]
+      },
+      "mcp-ecosystem-and-tooling": {
+        "title": "MCP Ecosystem & Tooling",
+        "intro": [
+          "Learn why MCP exists, its architecture, JSON-RPC, and how to build and use MCP servers and clients effectively."
+        ]
+      }
+    }
+  },
+  "introduction-to-precalculus": {
+    "title": "Introduction to Precalculus",
+    "summary": [
+      "Learn the fundamentals of precalculus, including functions, and trigonometry."
+    ],
+    "intro": [
+      "Precalculus is a branch of mathematics that prepares you for calculus. It covers a wide range of topics including functions, and trigonometry."
+    ],
+    "note": "",
+    "blocks": {
+      "function-basics": {
+        "title": "Function Basics",
+        "intro": [
+          "In these videos, you will learn about functions and how to work with them."
+        ]
+      },
+      "angles-and-circular-motion": {
+        "title": "Angles and Circular Motion",
+        "intro": [
+          "In these videos, you will learn about angles and circular motion."
+        ]
+      },
+      "right-triangle-trigonometry": {
+        "title": "Right Triangle Trigonometry",
+        "intro": [
+          "In these videos, you will learn about right triangle trigonometry and how to work with it."
+        ]
+      },
+      "trig-graphs-inverses": {
+        "title": "Trigonometric Graphs and Inverses",
+        "intro": [
+          "In these videos, you will learn about trigonometric graphs and inverse functions."
+        ]
+      },
+      "solving-trig-equations": {
+        "title": "Solving Trigonometric Equations",
+        "intro": [
+          "In these videos, you will learn how to solve trigonometric equations."
+        ]
+      },
+      "trig-identities-formulas": {
+        "title": "Trigonometric Identities and Formulas",
+        "intro": [
+          "In these videos, you will learn about trigonometric identities and formulas."
+        ]
+      },
+      "advanced-trig-conics": {
+        "title": "Advanced Trigonometry and Conics",
+        "intro": [
+          "In these videos, you will learn about advanced trigonometry and conic sections."
+        ]
+      }
+    }
+  },
   "introduction-to-bash": {
     "title": "Introduction to Bash",
     "summary": [
@@ -2838,6 +2929,12 @@
           "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
         ]
       },
+      "workshop-space-mission-roster": {
+        "title": "Build a Space Mission Roster",
+        "intro": [
+          "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Build a Longest Word Finder App",
         "intro": [
@@ -3566,6 +3663,12 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "lab-linked-list-operations": {
+        "title": "Implement Linked List Operations",
+        "intro": [
+          "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
       "lab-implement-a-queue": {
         "title": "Implement a Queue",
         "intro": [
@@ -3616,6 +3719,12 @@
           "In this lab you will implement the quicksort algorithm to sort an array of integers."
         ]
       },
+      "review-searching-and-sorting-algorithms-js": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you are quizzed on Algorithms, you should review what you've learned about searching and sorting algorithms."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3628,10 +3737,23 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "lab-depth-first-search-js": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement a solution for the depth-first search algorithm."
+        ]
+      },
       "lab-n-queens-problem-js": {
         "title": "Implement the N-Queens Problem",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "review-graphs-and-trees-js": {
+        "title": "Graphs and Trees Review",
+        "intro": [
+          "Graphs and Trees Review",
+          "Before you are quizzed on graphs and trees, you should review what you've learned."
         ]
       },
       "lecture-understanding-dynamic-programming-js": {
@@ -4986,6 +5108,10 @@
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
+      "quiz-npm": {
+        "title": "NPM Quiz",
+        "intro": ["Test what you have learned about npm in this quiz."]
+      },
       "lecture-understanding-how-http-dns-tcpip-work": {
         "title": "Understanding how HTTP, DNS and TCP/IP work",
         "intro": [
@@ -5040,7 +5166,7 @@
     }
   },
   "html-forms-and-tables": {
-    "title": "HTML Forms and Tables",
+    "title": "Learn HTML Forms and Tables",
     "summary": [
       "Learn how to build accessible forms and data tables with semantic HTML."
     ],
@@ -6648,11 +6774,13 @@
     }
   },
   "basic-html": {
-    "title": "Basic HTML",
+    "title": "Learn Basic HTML",
     "summary": [
       "Learn how to build simple webpages using HTML tags to add text, images, and links."
     ],
-    "intro": ["Larger intro for the superblock page."],
+    "intro": [
+      "HTML stands for HyperText Markup Language and represents the content and structure for a web page. In this course, you will learn the basics of writing HTML."
+    ],
     "blocks": {
       "workshop-curriculum-outline": {
         "title": "Build a Curriculum Outline",
@@ -6797,11 +6925,13 @@
     }
   },
   "semantic-html": {
-    "title": "Semantic HTML",
+    "title": "Learn Semantic HTML",
     "summary": [
       "Discover how to write cleaner, more meaningful HTML using semantic tags that improve structure, accessibility, and SEO."
     ],
-    "intro": ["Larger intro for the superblock page."],
+    "intro": [
+      "In this interactive course, you will practice writing semantic HTML."
+    ],
     "blocks": {
       "lecture-importance-of-semantic-html": {
         "title": "Importance of Semantic HTML",
@@ -6886,7 +7016,7 @@
     }
   },
   "html-and-accessibility": {
-    "title": "Accessibility",
+    "title": "Learn HTML and Accessibility",
     "summary": [
       "Learn how to write inclusive HTML using accessibility best practices and ARIA."
     ],
@@ -6980,7 +7110,7 @@
     }
   },
   "computer-basics": {
-    "title": "Computer Basics",
+    "title": "Learn Computer Basics",
     "summary": [
       "Build a foundation in computer, internet, and tooling basics for web development."
     ],
@@ -7022,7 +7152,7 @@
     }
   },
   "basic-css": {
-    "title": "Basic CSS",
+    "title": "Learn Basic CSS",
     "summary": [
       "Learn core CSS concepts and start styling real-world layouts."
     ],
@@ -7111,7 +7241,7 @@
     }
   },
   "design-for-developers": {
-    "title": "Design",
+    "title": "Introduction to UI/UX Design",
     "summary": [
       "Explore UI design fundamentals and user-centered design principles for developers."
     ],
@@ -7153,7 +7283,7 @@
     }
   },
   "absolute-and-relative-units": {
-    "title": "Absolute and Relative Units",
+    "title": "Learn Absolute and Relative Units in CSS",
     "summary": [
       "Understand when to use absolute and relative CSS units to build flexible layouts."
     ],
@@ -7188,7 +7318,7 @@
     }
   },
   "pseudo-classes-and-elements": {
-    "title": "Pseudo Classes and Elements",
+    "title": "Learn CSS Pseudo Classes and Elements",
     "summary": [
       "Use pseudo-classes and pseudo-elements to create richer, more interactive styles."
     ],
@@ -7237,7 +7367,7 @@
     }
   },
   "css-colors": {
-    "title": "Colors",
+    "title": "Learn CSS Colors",
     "summary": [
       "Work with CSS color formats and build cohesive color palettes."
     ],
@@ -7275,7 +7405,7 @@
     }
   },
   "styling-forms": {
-    "title": "Styling Forms",
+    "title": "Learn How to Style Forms Using CSS",
     "summary": ["Apply CSS techniques to create clean, usable form layouts."],
     "intro": ["Style form elements to improve usability and visual clarity."],
     "blocks": {
@@ -7326,7 +7456,7 @@
     }
   },
   "css-box-model": {
-    "title": "The Box Model",
+    "title": "Learn the CSS Box Model",
     "summary": [
       "Master the CSS box model, spacing, and layout effects for precise designs."
     ],
@@ -7367,7 +7497,7 @@
     }
   },
   "css-flexbox": {
-    "title": "Flexbox",
+    "title": "Learn CSS Flexbox",
     "summary": [
       "Build responsive layouts using the Flexbox model and alignment tools."
     ],
@@ -7422,7 +7552,7 @@
     }
   },
   "css-typography": {
-    "title": "Typography",
+    "title": "Learn CSS Typography",
     "summary": [
       "Learn how to style text for readability, hierarchy, and visual balance."
     ],
@@ -7462,7 +7592,7 @@
     }
   },
   "css-and-accessibility": {
-    "title": "Accessibility",
+    "title": "Learn CSS and Accessibility",
     "summary": [
       "Apply CSS techniques that support accessible and inclusive interfaces."
     ],
@@ -7503,7 +7633,7 @@
     }
   },
   "css-positioning": {
-    "title": "Positioning",
+    "title": "Learn CSS Positioning",
     "summary": [
       "Use positioning and floats to control layout and element flow."
     ],
@@ -7543,7 +7673,7 @@
     }
   },
   "attribute-selectors": {
-    "title": "Attribute Selectors",
+    "title": "Learn CSS Attribute Selectors",
     "summary": ["Target elements precisely with CSS attribute selectors."],
     "intro": ["Select elements with precision using attribute selectors."],
     "blocks": {
@@ -7589,7 +7719,7 @@
     }
   },
   "responsive-design": {
-    "title": "Responsive Design",
+    "title": "Learn Responsive Design",
     "summary": [
       "Learn responsive design principles and build layouts that adapt to any screen."
     ],
@@ -7642,7 +7772,7 @@
     }
   },
   "css-variables": {
-    "title": "Variables",
+    "title": "Learn CSS Variables",
     "summary": ["Use CSS variables to build reusable, theme-friendly styles."],
     "intro": ["Create maintainable styles using CSS custom properties."],
     "blocks": {
@@ -7680,7 +7810,7 @@
     }
   },
   "css-grid": {
-    "title": "Grid",
+    "title": "Learn CSS Grid",
     "summary": ["Design complex layouts using the CSS Grid system."],
     "intro": ["Build multi-dimensional layouts with CSS Grid."],
     "blocks": {
@@ -7740,7 +7870,7 @@
     }
   },
   "css-animations": {
-    "title": "Animations",
+    "title": "Learn CSS Animations",
     "summary": ["Create engaging UI motion with accessible CSS animations."],
     "intro": [
       "Add motion with CSS animations while keeping usability in mind."

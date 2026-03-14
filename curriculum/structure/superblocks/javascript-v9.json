@@ -97,6 +97,7 @@
           "blocks": [
             "lecture-working-with-loops",
             "workshop-sentence-analyzer",
+            "workshop-space-mission-roster",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
@@ -301,6 +302,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures-js",
+            "lab-linked-list-operations",
             "lab-implement-a-queue",
             "review-data-structures-js",
             "quiz-data-structures-js"
@@ -314,7 +316,8 @@
             "lab-bubble-sort-algorithm",
             "lab-selection-sort-js",
             "lab-insertion-sort",
-            "lab-quicksort-js"
+            "lab-quicksort-js",
+            "review-searching-and-sorting-algorithms-js"
           ]
         },
         {
@@ -323,7 +326,9 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
             "lab-adjacency-list-to-matrix-converter-js",
-            "lab-n-queens-problem-js"
+            "lab-depth-first-search-js",
+            "lab-n-queens-problem-js",
+            "review-graphs-and-trees-js"
           ]
         },
         {
