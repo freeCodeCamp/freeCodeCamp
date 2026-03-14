@@ -142,6 +142,19 @@
   flex-shrink: 0;
 }
 
+#mobile-layout .daily-challenge-language-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  padding: 10px 10px 0;
+}
+
+#mobile-layout .daily-challenge-language-selector button {
+  padding: 6px 12px;
+  border-width: 3px;
+  border-style: solid;
+}
+
 /* Need to narrow width of tabs to make room for preview toggle button */
 #mobile-layout[data-haspreview='true'] [role='tablist'] {
   width: calc(100% - 2rem);
