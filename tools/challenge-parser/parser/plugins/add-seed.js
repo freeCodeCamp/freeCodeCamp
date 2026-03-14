@@ -4,7 +4,13 @@ const visitChildren = require('unist-util-visit-children');
 const { getSection } = require('./utils/get-section');
 const { getFileVisitor } = require('./utils/get-file-visitor');
 
+const path = require('path');
+
 const editableRegionMarker = '--fcc-editable-region--';
+
+function isWorkshop(file) {
+  return file.path && file.path.includes(path.sep + 'workshop-');
+}
 
 function findRegionMarkers(challengeFile) {
   const lines = challengeFile.contents.split('\n');
@@ -61,6 +67,8 @@ function addSeeds() {
     };
 
     // process region markers - remove them from content and add them to data
+    let totalEditableRegionMarkers = 0;
+
     const challengeFiles = Object.values(seeds).map(data => {
       const seed = { ...data };
       const editRegionMarkers = findRegionMarkers(seed);
@@ -71,11 +79,18 @@ function addSeeds() {
           throw Error('Editable region must be non zero');
         }
         seed.editableRegionBoundaries = editRegionMarkers;
+        totalEditableRegionMarkers += editRegionMarkers.length;
       } else {
         seed.editableRegionBoundaries = [];
       }
       return seed;
     });
+
+    if (isWorkshop(file) && totalEditableRegionMarkers !== 2) {
+      throw Error(
+        `Workshop challenge ${file.path} must have exactly 2 editable region markers`
+      );
+    }
 
     file.data = {
       ...file.data,
@@ -113,3 +128,4 @@ function validateEditableMarkers({ value, position }) {
 
 module.exports = addSeeds;
 module.exports.editableRegionMarker = editableRegionMarker;
+module.exports.isWorkshop = isWorkshop;
