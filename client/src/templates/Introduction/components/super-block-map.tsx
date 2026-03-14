@@ -7,7 +7,6 @@ import {
   chapterBasedSuperBlocks,
   SuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
-import type { CertTitle } from '../../../../config/cert-and-project-map';
 import type {
   ChapterBasedSuperBlockStructure,
   User
@@ -45,7 +44,6 @@ type Challenge = {
 };
 
 type SuperBlockMapProps = {
-  certification: string;
   completedChallengeIds: string[];
   disabledBlocks: string[];
   initialExpandedBlock: string;
@@ -53,25 +51,20 @@ type SuperBlockMapProps = {
   structure?: ChapterBasedSuperBlockStructure;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
-  title: CertTitle;
   user: User | null;
 };
 
 const BlockList = ({
-  certification,
   disabledBlocks,
   showCertification,
   superBlock,
   superBlockChallenges,
-  title,
   user
 }: {
-  certification: string;
   disabledBlocks: string[];
   showCertification: boolean;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
-  title: CertTitle;
   user: User | null;
 }) => {
   const visibleBlocks = useMemo(() => {
@@ -103,19 +96,13 @@ const BlockList = ({
         );
       })}
       {showCertification && !!user && (
-        <CertChallenge
-          certification={certification}
-          superBlock={superBlock}
-          title={title}
-          user={user}
-        />
+        <CertChallenge superBlock={superBlock} user={user} />
       )}
     </div>
   );
 };
 
 export const SuperBlockMap = ({
-  certification,
   completedChallengeIds,
   disabledBlocks,
   initialExpandedBlock,
@@ -123,7 +110,6 @@ export const SuperBlockMap = ({
   structure,
   superBlock,
   superBlockChallenges,
-  title,
   user
 }: SuperBlockMapProps) => {
   const { t } = useTranslation();
@@ -200,12 +186,10 @@ export const SuperBlockMap = ({
 
   return (
     <BlockList
-      certification={certification}
       disabledBlocks={disabledBlocks}
       showCertification={showCertification}
       superBlock={superBlock}
       superBlockChallenges={superBlockChallenges}
-      title={title}
       user={user}
     />
   );

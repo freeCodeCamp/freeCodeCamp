@@ -3,11 +3,13 @@ import type {
   ChallengeLang,
   SuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
-import type { CertificationFlags } from '@freecodecamp/shared/config/certification-settings';
+import type {
+  Certification,
+  CertificationFlags
+} from '@freecodecamp/shared/config/certification-settings';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
-import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
 export type { ChallengeFile, Ext };
@@ -24,18 +26,6 @@ export type CurrentCert = {
   show: boolean;
   title: string;
   certSlug: string;
-};
-
-export type MarkdownRemark = {
-  frontmatter: {
-    block: string;
-    superBlock: SuperBlocks;
-    // TODO: make enum like superBlock
-    certification: string;
-    title: CertTitle;
-  };
-  html: string;
-  id: string;
 };
 
 type MultipleChoiceAnswer = {
@@ -191,12 +181,12 @@ type Nodule = ParagraphNodule | InteractiveEditorNodule;
 
 type ParagraphNodule = {
   type: 'paragraph';
-  data: string;
+  contents: string;
 };
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: {
+  files: {
     ext: Ext;
     name: string;
     contents: string;
@@ -209,7 +199,7 @@ export type ChallengeNode = {
     block: string;
     blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
-    certification: string;
+    certification: Certification;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
@@ -321,6 +311,7 @@ export type DailyCodingChallengePageContext = {
     id: string;
     superBlock: 'daily-coding-challenge';
     disableLoopProtectTests: boolean;
+    dashedName: string;
 
     // props to satisfy the show classic component
     isFirstStep: boolean;
@@ -347,16 +338,32 @@ type Quiz = {
   questions: QuizQuestion[];
 };
 
+type QuizAudio = {
+  filename: string;
+  startTimestamp?: number | null;
+  finishTimestamp?: number | null;
+};
+
+type QuizTranscriptLine = {
+  character: string;
+  text: string;
+};
+
+type QuizAudioData = {
+  audio: QuizAudio;
+  transcript: QuizTranscriptLine[];
+};
+
 type QuizQuestion = {
   text: string;
   distractors: string[];
   answer: string;
+  audioData?: QuizAudioData | null;
 };
 
 export type CertificateNode = {
   challenge: {
-    // TODO: use enum
-    certification: string;
+    certification: Certification;
     tests: { id: string }[];
   };
 };

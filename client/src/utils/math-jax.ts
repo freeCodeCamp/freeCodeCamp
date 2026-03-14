@@ -13,7 +13,7 @@ const superBlocksWithMathJax = [
   SuperBlocks.ProjectEuler,
   SuperBlocks.RosettaCode,
   SuperBlocks.SciCompPy,
-  SuperBlocks.FullStackDeveloper
+  SuperBlocks.PythonV9
 ];
 
 const configure = () => {

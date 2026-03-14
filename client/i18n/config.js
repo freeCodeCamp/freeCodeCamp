@@ -2,9 +2,16 @@
 
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
 
-const envData = require('../config/env.json');
-const { i18nextCodes } = require('@freecodecamp/shared/config/i18n');
+import translations from './locales/english/translations.json';
+import trending from './locales/english/trending.json';
+import intro from './locales/english/intro.json';
+import metaTags from './locales/english/meta-tags.json';
+import links from './locales/english/links.json';
+import searchBar from './locales/english/search-bar.json';
+
+import envData from '../config/env.json';
 
 const { clientLocale } = envData;
 
@@ -63,12 +70,12 @@ i18n.use(initReactI18next).init({
     `
     },
     en: {
-      translations: preval`module.exports = require('./locales/english/translations.json')`,
-      trending: preval`module.exports = require('./locales/english/trending.json')`,
-      intro: preval`module.exports = require('./locales/english/intro.json')`,
-      metaTags: preval`module.exports = require('./locales/english/meta-tags.json')`,
-      links: preval`module.exports = require('./locales/english/links.json')`,
-      'search-bar': preval`module.exports = require('./locales/english/search-bar.json')`
+      translations,
+      trending,
+      intro,
+      metaTags,
+      links,
+      'search-bar': searchBar
     }
   },
   ns: ['translations', 'trending', 'intro', 'metaTags', 'links', 'search-bar'],

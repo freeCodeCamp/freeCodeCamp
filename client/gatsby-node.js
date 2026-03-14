@@ -1,37 +1,12 @@
-const { createFilePath } = require('gatsby-source-filesystem');
-// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
-// es modules here.
-const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
-const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
-const {
-  createChallengePages,
-  createBlockIntroPages,
-  createSuperBlockIntroPages
-} = require('./utils/gatsby');
-
-const createByIdentityMap = {
-  blockIntroMarkdown: createBlockIntroPages,
-  superBlockIntroMarkdown: createSuperBlockIntroPages
-};
-
-exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode });
-    if (!slug.includes('LICENSE')) {
-      createNodeField({ node, name: 'slug', value: slug });
-    }
-  }
-};
+const { createSuperBlockIntroPages } = require('./utils/gatsby');
 
 exports.createPages = async function createPages({
-  graphql,
   actions,
+  graphql,
   reporter
 }) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
@@ -58,170 +33,21 @@ exports.createPages = async function createPages({
 
   const { createPage } = actions;
 
-  const result = await graphql(`
+  const {
+    data: { allSuperBlockStructure }
+  } = await graphql(`
     {
-      allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
-      ) {
-        edges {
-          node {
-            id
-            challenge {
-              block
-              blockLabel
-              blockLayout
-              certification
-              challengeType
-              dashedName
-              demoType
-              disableLoopProtectTests
-              disableLoopProtectPreview
-              fields {
-                slug
-                blockHashSlug
-              }
-              id
-              isLastChallengeInBlock
-              order
-              required {
-                link
-                src
-              }
-              challengeOrder
-              challengeFiles {
-                name
-                ext
-                contents
-                head
-                tail
-                history
-                fileKey
-              }
-              saveSubmissionToDB
-              solutions {
-                contents
-                ext
-                history
-                fileKey
-              }
-              superBlock
-              superOrder
-              template
-              usesMultifileEditor
-              chapter
-              module
-            }
-          }
-        }
-      }
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-              nodeIdentity
-            }
-            frontmatter {
-              certification
-              block
-              superBlock
-              title
-            }
-            id
-          }
+      allSuperBlockStructure {
+        nodes {
+          superBlock
         }
       }
     }
   `);
 
-  const allChallengeNodes = result.data.allChallengeNode.edges.map(
-    ({ node }) => node
-  );
-
-  const createIdToNextPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const nextNode = nodes[index + 1];
-      const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
-      if (nextPath) map[node.id] = nextPath;
-      return map;
-    }, {});
-
-  const createIdToPrevPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const prevNode = nodes[index - 1];
-      const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
-      if (prevPath) map[node.id] = prevPath;
-      return map;
-    }, {});
-
-  const idToNextPathCurrentCurriculum =
-    createIdToNextPathMap(allChallengeNodes);
-
-  const idToPrevPathCurrentCurriculum =
-    createIdToPrevPathMap(allChallengeNodes);
-
-  // Create challenge pages.
-  result.data.allChallengeNode.edges.forEach(
-    createChallengePages(createPage, {
-      idToNextPathCurrentCurriculum,
-      idToPrevPathCurrentCurriculum
-    })
-  );
-
-  const blocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { block }
-        }
-      }) => block
-    )
-  );
-
-  // Includes upcoming superBlocks
-  const allSuperBlocks = Object.values(SuperBlocks);
-
-  // Create intro pages
-  // TODO: Remove allMarkdownRemark (populate from elsewhere)
-  result.data.allMarkdownRemark.edges.forEach(edge => {
-    const {
-      node: { frontmatter, fields }
-    } = edge;
-
-    if (!fields) {
-      return;
-    }
-    const { slug, nodeIdentity } = fields;
-    if (slug.includes('LICENCE')) {
-      return;
-    }
-    if (nodeIdentity === 'blockIntroMarkdown') {
-      if (!blocks.includes(frontmatter.block)) {
-        return;
-      }
-    } else if (!allSuperBlocks.includes(frontmatter.superBlock)) {
-      return;
-    }
-
-    try {
-      const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-      pageBuilder(edge);
-    } catch (e) {
-      console.log(e);
-      console.log(`
-            ident: ${nodeIdentity} does not belong to a function
-
-            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
-
-
-            `);
-    }
+  const superBlocks = allSuperBlockStructure.nodes.map(node => node.superBlock);
+  superBlocks.forEach(superBlock => {
+    createSuperBlockIntroPages(createPage)({ superBlock });
   });
 };
 
@@ -236,9 +62,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
-  // involved in SSR. Also, if the plugin is used during the 'build-html' stage
-  // it overwrites the minfied files with ordinary ones.
-  if (stage !== 'build-html') {
+  // involved in SSR. Also, if the plugin is used during the 'build-html' or
+  // 'develop-html' stage it overwrites the minfied files with ordinary ones.
+  if (stage !== 'build-html' && stage !== 'develop-html') {
     newPlugins.push(
       new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
     );
@@ -279,14 +105,14 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions;
-  // Only update the `/challenges` page.
-  if (page.path.match(/^\/challenges/)) {
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
-    page.matchPath = '/challenges/*';
-    // Update the page.
-    createPage(page);
-  }
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  // This hook is supported by the test runner, but is not currently used by the
+  // client, so we have to tell Gatsby that it exists.
+  const typeDefs = `
+    type ChallengeNodeChallengeHooks {
+      afterEach: String
+    }
+  `;
+  createTypes(typeDefs);
 };

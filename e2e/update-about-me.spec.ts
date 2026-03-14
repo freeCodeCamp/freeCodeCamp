@@ -9,10 +9,6 @@ test.beforeEach(async ({ page }) => {
 
   await page.goto('/certifieduser');
 
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
-
   await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
@@ -63,10 +59,6 @@ test('Should allow empty string in any field in about settings', async ({
   await expect(updatedAlert).toBeVisible();
 
   await page.reload();
-
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
 
   await page.getByRole('button', { name: 'Edit my profile' }).click();
   await expect(nameInput).toHaveValue('');

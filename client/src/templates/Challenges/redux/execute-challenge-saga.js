@@ -15,6 +15,11 @@ import {
 } from 'redux-saga/effects';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  buildChallenge,
+  canBuildChallenge
+} from '@freecodecamp/challenge-builder/build';
+
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -25,8 +30,6 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { playTone } from '../../../utils/tone';
 import {
-  buildChallenge,
-  canBuildChallenge,
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
@@ -51,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -138,7 +142,7 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      if (isBlockCompleted && curriculumData.hasData) {
         fireConfetti();
       }
     } else {
@@ -242,22 +246,22 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
-// updates preview frame and the fcc console.
-export function* previewChallengeSaga(action) {
-  const flushLogs = action?.type !== actionTypes.previewMounted;
+function* flush() {
+  yield put(initLogs());
+  yield put(initConsole(''));
+}
+
+function* previewChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
 
-  const isExecuting = yield select(isExecutingSelector);
-  // executeChallengeSaga flushes the logs, so there's no need to if that's
-  // just happened.
-  if (flushLogs && !isExecuting) {
-    yield put(initLogs());
-    yield put(initConsole(''));
+  // the challenge execution will update the preview, so this saga doesn't
+  // need to do anything.
+  if (yield select(isExecutingSelector)) {
+    return;
   }
-  yield delay(700);
 
   const logProxy = yield channel();
   const proxyLogger = args => {
@@ -313,7 +317,9 @@ export function* previewChallengeSaga(action) {
           const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
-          yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
+          const output = logs?.map(log => log.msg).join('\n');
+
+          yield put(updateConsole(output));
         }
       }
     }
@@ -329,10 +335,11 @@ export function* previewChallengeSaga(action) {
   }
 }
 
-// TODO: refactor this so that we can use a single saga for all challenge
-// updates (then they can all go in the same `takeLatest` call and be cancelled
-// appropriately)
-function* updatePreviewSaga(action) {
+export function* updatePreviewSaga(action) {
+  yield flush();
+  if (action.type === actionTypes.updateFile) {
+    yield delay(700);
+  }
   const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
@@ -359,7 +366,6 @@ function* updatePython(challengeData) {
   };
 
   runPythonCode(code);
-  // TODO: proxy errors to the console
 }
 
 function* previewProjectSolutionSaga({ payload }) {
@@ -387,10 +393,14 @@ function* previewProjectSolutionSaga({ payload }) {
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
-    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge, types.previewMounted],
-      previewChallengeSaga
+      [
+        types.updateFile,
+        types.challengeMounted,
+        types.resetChallenge,
+        types.previewMounted
+      ],
+      updatePreviewSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];

@@ -74,11 +74,11 @@ assert.lengthOf(
       <section>
         <h2>Cat Lists</h2>
         <h3>Things cats love:</h3>
---fcc-editable-region--
         <ul>
-          
-        </ul>
 --fcc-editable-region--
+          
+--fcc-editable-region--
+        </ul>
       </section>
     </main>
   </body>

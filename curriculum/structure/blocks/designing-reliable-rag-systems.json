@@ -1,0 +1,22 @@
+{
+  "name": "Designing Reliable RAG Systems",
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "designing-reliable-rag-systems",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "69ae6fd0b4a814be6a4f2be0",
+      "title": "RAG Architecture"
+    },
+    {
+      "id": "69ae6fd7b4a814be6a4f2be1",
+      "title": "Caching, Monitoring, and Error Handling"
+    },
+    {
+      "id": "69ae6fdbb4a814be6a4f2be2",
+      "title": "RAG in Production"
+    }
+  ]
+}

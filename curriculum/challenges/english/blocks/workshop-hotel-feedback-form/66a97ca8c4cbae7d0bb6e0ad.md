@@ -138,9 +138,9 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
         <fieldset>
           <legend>Was this your first time at our hotel?</legend>
-          <input id="yes-option" type="radio" name="hotel-stay" />
+          <input id="yes-option" type="radio" name="hotel-stay" value="yes" />
           <label for="yes-option">Yes</label>
-          <input id="no-option" type="radio" name="hotel-stay" />
+          <input id="no-option" type="radio" name="hotel-stay" value="no" />
           <label for="no-option">No</label>
         </fieldset>
 
@@ -191,11 +191,11 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
           <label for="food">How was the food?</label>
 
-          --fcc-editable-region--
           <select name="food" id="food">
-            
-          </select>
           --fcc-editable-region--
+            
+          --fcc-editable-region--
+          </select>
         </fieldset>
       </form>
     </main>

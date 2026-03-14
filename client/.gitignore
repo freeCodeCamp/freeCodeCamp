@@ -8,8 +8,8 @@ yarn-error.log
 .DS_Store
 
 /static/js
-./static/_redirects
-static/curriculum-data
+/static/css
+/static/curriculum-data
 
 # Generated config
 i18n/locales/**/trending.json
