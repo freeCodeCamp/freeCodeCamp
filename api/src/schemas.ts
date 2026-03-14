@@ -12,6 +12,7 @@ export { msTrophyChallengeCompleted } from './schemas/challenge/ms-trophy-challe
 export { projectCompleted } from './schemas/challenge/project-completed.js';
 export { saveChallenge } from './schemas/challenge/save-challenge.js';
 export { submitQuizAttempt } from './schemas/challenge/submit-quiz-attempt.js';
+export { updateActivity } from './schemas/activity/update-activity.js';
 export { deprecatedEndpoints } from './schemas/deprecated/index.js';
 export { addDonation } from './schemas/donate/add-donation.js';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card.js';
