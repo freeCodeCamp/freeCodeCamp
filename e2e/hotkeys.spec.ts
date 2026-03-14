@@ -215,3 +215,38 @@ test('User can use Cmd+Enter to submit their answer in an assignment-type challe
   // Completion modal shows up
   await expect(page.getByRole('dialog')).toBeVisible();
 });
+test('Ctrl+Enter on a lab does not show the completion modal', async ({
+  page
+}) => {
+  await page.goto(
+    '/learn/responsive-web-design-v9/lab-debug-camperbots-profile-page/lab-debug-camperbots-profile-page'
+  );
+
+  // Wait for page load
+  await expect(
+    page.getByRole('heading', { name: /Debug CamperBot/i })
+  ).toBeVisible();
+
+  await page.keyboard.press('Control+Enter');
+
+  // Completion modal should NOT appear
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+});
+
+test('Cmd+Enter on a lab does not show the completion modal', async ({
+  page
+}) => {
+  await page.goto(
+    '/learn/responsive-web-design-v9/lab-debug-camperbots-profile-page/lab-debug-camperbots-profile-page'
+  );
+
+  // Wait for page load
+  await expect(
+    page.getByRole('heading', { name: /Debug CamperBot/i })
+  ).toBeVisible();
+
+  await page.keyboard.press('Meta+Enter');
+
+  // Completion modal should NOT appear
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+});

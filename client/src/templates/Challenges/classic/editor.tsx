@@ -629,7 +629,9 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({ showCompletionModal: true });
+          props.executeChallenge({
+          showCompletionModal: !hasIndependentLowerJaw
+        });
         }
       }
     });
@@ -1109,7 +1111,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     return editableRegionBoundaries.length === 2;
   }
 
-  function focusIfTargetEditor() {
+function focusIfTargetEditor() {
     const { editor } = dataRef.current.monaco;
     const { canFocusOnMountRef } = props;
     if (!editor || !canFocusOnMountRef.current) return;
