@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
@@ -17,16 +18,14 @@ test.describe('Add Experience Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/developmentuser');
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
-
-    await expect(async () => {
-      const addExperienceItemButton = page.getByRole('button', {
-        name: 'Add experience'
-      });
-      await addExperienceItemButton.click();
-
-      await expect(addExperienceItemButton).toBeDisabled({ timeout: 1 });
-    }).toPass();
+    const openExperienceModalButton = page.getByRole('button', {
+      name: new RegExp(
+        `${translations.profile['add-new-experience']}|profile\\.add-new-experience`,
+        'i'
+      )
+    });
+    await expect(openExperienceModalButton).toBeVisible({ timeout: 30000 });
+    await openExperienceModalButton.click();
   });
 
   test('The company has validation', async ({ page }) => {
@@ -93,6 +92,7 @@ test.describe('Add Experience Item', () => {
   test('It should be possible to delete an experience item', async ({
     page
   }) => {
+    // Create an item first so delete is available in edit mode.
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('01/2020');
@@ -100,8 +100,19 @@ test.describe('Add Experience Item', () => {
     // Use locator to avoid conflict with About section's Location field
     await page.locator('input[name="experience-location"]').fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
+    await page.getByRole('button', { name: 'Save experience' }).click();
+    await page.getByRole('button', { name: 'Close' }).click();
 
-    await page.getByRole('button', { name: 'Remove Experience' }).click();
+    await page
+      .locator('.experience-item')
+      .first()
+      .getByRole('button', { name: translations.buttons.edit })
+      .click();
+    const removeButton = page.getByRole('button', {
+      name: translations.profile.experience.remove
+    });
+    await expect(removeButton).toBeVisible();
+    await removeButton.click();
 
     await page.getByRole('button', { name: 'Close' }).click();
 
@@ -111,10 +122,6 @@ test.describe('Add Experience Item', () => {
   });
 
   test('It should be possible to add an experience item', async ({ page }) => {
-    await expect(
-      page.getByRole('button', { name: 'Add experience' })
-    ).toBeDisabled();
-
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('01/2020');

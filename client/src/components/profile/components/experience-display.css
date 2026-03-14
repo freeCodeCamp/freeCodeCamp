@@ -1,15 +1,43 @@
+.experience-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.experience-item {
+  position: relative;
+  padding: 0.9rem 0.9rem 1rem;
+  background: var(--tertiary-background);
+  border: 1px solid var(--quaternary-background);
+}
+
+.experience-item h3,
+.experience-item h4,
+.experience-item p {
+  overflow-wrap: anywhere;
+}
+
 .experience-company {
   font-weight: normal;
   margin-top: 0.5rem;
 }
 
+.experience-item--editable {
+  padding-right: 4.2rem;
+}
+
+.experience-item .profile-item-action-row--top-right {
+  top: 0.65rem;
+  right: 0.65rem;
+}
+
 .experience-date {
   color: #858591;
   font-size: 0.9rem;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
 }
 
 .experience-description {
   margin-top: 0.75rem;
   white-space: pre-wrap;
+  word-break: break-word;
 }

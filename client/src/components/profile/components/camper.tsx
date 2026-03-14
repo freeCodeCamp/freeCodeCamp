@@ -7,17 +7,20 @@ import './camper.css';
 import SupporterBadgeEmblem from '../../../assets/icons/supporter-badge-emblem';
 import TopContributorBadgeEmblem from '../../../assets/icons/top-contributor-badge-emblem';
 import Bio from './bio';
+import { WidgetHeader } from './widget-header';
 
 export type CamperProps = {
   user: User;
-  setIsEditing: (value: boolean) => void;
   isSessionUser: boolean;
+  onEditBio: () => void;
+  onToggleDonation?: () => void;
 };
 
 function Camper({
   user,
   isSessionUser,
-  setIsEditing
+  onEditBio,
+  onToggleDonation
 }: CamperProps): JSX.Element {
   const {
     isDonating,
@@ -27,22 +30,28 @@ function Camper({
 
   const { t } = useTranslation();
   const isTopContributor = yearsTopContributor.filter(Boolean).length > 0;
+  const showBadges =
+    isSessionUser || (isDonating && showDonation) || isTopContributor;
+
   return (
     <>
       <div className='bio-container'>
         <Spacer size={'m'} />
-        <Bio
-          user={user}
-          setIsEditing={setIsEditing}
-          isSessionUser={isSessionUser}
-        />
+        <Bio user={user} isSessionUser={isSessionUser} onEditBio={onEditBio} />
       </div>
-      {((isDonating && showDonation) || isTopContributor) && (
+      {showBadges && (
         <FullWidthRow>
-          <section className='card'>
-            <h2>{t('profile.badges')}</h2>
+          <section
+            className={`card${isSessionUser && !showDonation ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.badges')}
+              isSessionUser={isSessionUser}
+              isPrivate={!showDonation}
+              onToggle={onToggleDonation}
+            />
             <div className='badge-card-container'>
-              {isDonating && (
+              {isDonating && (isSessionUser || showDonation) && (
                 <div className='badge-card'>
                   <div className='camper-badge'>
                     <SupporterBadgeEmblem />

@@ -1,6 +1,6 @@
 import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { isValid, parse } from 'date-fns';
 import {
@@ -10,6 +10,7 @@ import {
   HelpBlock,
   FormGroupProps,
   Button,
+  Modal,
   Spacer
 } from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
@@ -17,14 +18,16 @@ import { connect } from 'react-redux';
 import { ExperienceData } from '../../../redux/prop-types';
 import { updateMyExperience } from '../../../redux/settings/actions';
 
-import { FullWidthRow, interleave } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
-import SectionHeader from '../../settings/section-header';
 
 type ExperienceProps = {
   experience: ExperienceData[];
   t: TFunction;
   updateMyExperience: (obj: { experience: ExperienceData[] }) => void;
+  open: boolean;
+  editingItemId?: string | null;
+  onClose: () => void;
 };
 
 interface ExperienceValidation {
@@ -50,17 +53,14 @@ export const validateDate = ({
   isRequired: boolean;
   fieldName: 'start-date' | 'end-date';
 }): ValidationResult => {
-  // Check if date is required and empty
   if (isRequired && !date) {
     return { state: 'error', messageKey: `validation.${fieldName}-required` };
   }
 
-  // Allow empty for optional dates
   if (!date) {
     return { state: 'success', messageKey: '' };
   }
 
-  // Check if date matches MM/YYYY format
   const dateRegex = /^\d{2}\/\d{4}$/;
   if (!dateRegex.test(date)) {
     return {
@@ -70,7 +70,6 @@ export const validateDate = ({
   }
 
   const parsedDate = parse(date, 'MM/yyyy', new Date());
-  // Check if the parsed date is valid (e.g., not an invalid month like 13)
   if (!isValid(parsedDate)) {
     return {
       state: 'error',
@@ -96,9 +95,33 @@ const byId = (id: string) => (exp: ExperienceData) => exp.id === id;
 const notById = (id: string) => (exp: ExperienceData) => exp.id !== id;
 
 const ExperienceSettings = (props: ExperienceProps) => {
-  const { t, experience: initialExperience = [], updateMyExperience } = props;
+  const {
+    t,
+    experience: initialExperience = [],
+    updateMyExperience,
+    open,
+    editingItemId = null,
+    onClose
+  } = props;
   const [experience, setExperience] = useState(initialExperience);
   const [newItemId, setNewItemId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (open) {
+      const editedItem = editingItemId
+        ? initialExperience.find(byId(editingItemId))
+        : null;
+
+      if (editedItem) {
+        setExperience([editedItem]);
+        setNewItemId(null);
+      } else {
+        const item = createEmptyExperienceItem();
+        setExperience([item]);
+        setNewItemId(item.id);
+      }
+    }
+  }, [editingItemId, initialExperience, open]);
 
   const createOnChangeHandler =
     (
@@ -135,12 +158,6 @@ const ExperienceSettings = (props: ExperienceProps) => {
           : [itemToSave, ...props.experience];
       updateMyExperience({ experience: updatedExperience });
     }
-  };
-
-  const handleAdd = () => {
-    const item = createEmptyExperienceItem();
-    setExperience(prev => [item, ...prev]);
-    setNewItemId(item.id);
   };
 
   const handleRemoveItem = (id: string) => {
@@ -279,6 +296,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
       description: { descriptionState, descriptionMessage },
       pristine
     } = getFormValidation(experienceItem);
+    const isExistingItem = props.experience.some(byId(id));
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
       if (isButtonDisabled) return null;
@@ -431,47 +449,37 @@ const ExperienceSettings = (props: ExperienceProps) => {
           >
             {t('profile.experience.save')}
           </BlockSaveButton>
-          <Spacer size='xs' />
-          <Button
-            block
-            size='large'
-            variant='danger'
-            onClick={() => handleRemoveItem(id)}
-            type='button'
-          >
-            {t('profile.experience.remove')}
-          </Button>
+          {isExistingItem && (
+            <>
+              <Spacer size='xs' />
+              <Button
+                block
+                size='large'
+                variant='danger'
+                onClick={() => handleRemoveItem(id)}
+                type='button'
+              >
+                {t('profile.experience.remove')}
+              </Button>
+            </>
+          )}
         </form>
       </FullWidthRow>
     );
   };
 
+  const displayedExperience = useMemo(() => {
+    if (!newItemId) return experience;
+    return experience.filter(byId(newItemId));
+  }, [experience, newItemId]);
+
   return (
-    <section id='experience-settings'>
-      <SectionHeader>{t('profile.experience.heading')}</SectionHeader>
-      <FullWidthRow>
-        <p>{t('profile.experience.share-experience')}</p>
-        <Spacer size='xs' />
-        <Button
-          block
-          size='large'
-          variant='primary'
-          disabled={newItemId !== null}
-          onClick={handleAdd}
-          type='button'
-        >
-          {t('profile.experience.add')}
-        </Button>
-      </FullWidthRow>
-      <Spacer size='l' />
-      {interleave(experience.map(renderExperience), () => (
-        <>
-          <Spacer size='m' />
-          <hr />
-          <Spacer size='m' />
-        </>
-      ))}
-    </section>
+    <Modal onClose={onClose} open={open} size='large'>
+      <Modal.Header>{t('profile.edit-experience')}</Modal.Header>
+      <Modal.Body alignment='left'>
+        {displayedExperience.map(renderExperience)}
+      </Modal.Body>
+    </Modal>
   );
 };
 

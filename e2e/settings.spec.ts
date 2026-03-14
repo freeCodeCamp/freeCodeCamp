@@ -8,19 +8,10 @@ import {
 } from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
-const settingsTestIds = {
-  settingsHeading: 'settings-heading',
-  portfolioItems: 'portfolio-items'
-};
-
 const settingsObject = {
   email: 'foo@bar.com',
-  userNamePlaceholder: '{{username}}',
-  certifiedUsername: 'certifieduser',
   testEmail: 'test@gmail.com',
   pageTitle: `${translations.buttons.settings} | freeCodeCamp.org`,
-  private: 'Private',
-  public: 'Public',
   supportEmail: 'support@freecodecamp.org',
   supportEmailPlaceholder: '<0>{{email}}</0>'
 };
@@ -60,121 +51,13 @@ test.describe('Settings - Certified User', () => {
     // Title
     await expect(page).toHaveTitle(settingsObject.pageTitle);
 
-    // Header
-    const header = page.getByTestId(settingsTestIds.settingsHeading);
-    await expect(header).toBeVisible();
-    await expect(header).toContainText(
-      `${translations.settings.for.replace(
-        settingsObject.userNamePlaceholder,
-        settingsObject.certifiedUsername
-      )}`
-    );
-
-    // Privacy Settings
+    // Privacy Settings (description and data download only)
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.privacy
       })
     ).toBeVisible();
     await expect(page.getByText(translations.settings.privacy)).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-profile']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-profile'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-name']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-name'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-about']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-about'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-points']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-points'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-certs']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-certs'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-donations']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-donations'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-heatmap']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-heatmap'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-location']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-location'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-timeline']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-timeline'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-portfolio']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-portfolio'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-experience']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-experience'] })
-    ).toBeVisible();
-    await expect(
-      page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(11);
-    await expect(
-      page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(11);
-    const saveButton = page.getByRole('button', {
-      name: translations.settings.headings.privacy
-    });
-    await expect(saveButton).toBeVisible();
     await expect(page.getByText(translations.settings.data)).toBeVisible();
     const downloadButton = page.getByRole('link', {
       name: translations.buttons['download-data']

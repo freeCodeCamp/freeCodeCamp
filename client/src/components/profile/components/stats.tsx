@@ -10,8 +10,6 @@ import { Spacer } from '@freecodecamp/ui';
 import { last } from 'lodash-es';
 import { uniqBy } from 'lodash';
 
-import { FullWidthRow } from '../../helpers';
-
 import './stats.css';
 
 interface StatsProps {
@@ -70,32 +68,29 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
   }, [calendar]);
 
   return (
-    <FullWidthRow>
-      <section className='card'>
-        <h2>{t('profile.stats')}</h2>
-        <Spacer size='s' />
-        <dl className='stats'>
-          <div>
-            <dt>
-              <b data-testid='current-streak'>{t('profile.current-streak')}</b>
-            </dt>
-            <dd>{currentStreak || 0}</dd>
-          </div>
-          <div data-testid='total-points'>
-            <dt>
-              <b>{t('profile.total-points')}</b>
-            </dt>
-            <dd>{points}</dd>
-          </div>
-          <div>
-            <dt>
-              <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
-            </dt>
-            <dd>{longestStreak || 0}</dd>
-          </div>
-        </dl>
-      </section>
-    </FullWidthRow>
+    <>
+      <Spacer size='s' />
+      <dl className='stats'>
+        <div>
+          <dt>
+            <b data-testid='current-streak'>{t('profile.current-streak')}</b>
+          </dt>
+          <dd>{currentStreak || 0}</dd>
+        </div>
+        <div data-testid='total-points'>
+          <dt>
+            <b>{t('profile.total-points')}</b>
+          </dt>
+          <dd>{points}</dd>
+        </div>
+        <div>
+          <dt>
+            <b data-testid='longest-streak'>{t('profile.longest-streak')}</b>
+          </dt>
+          <dd>{longestStreak || 0}</dd>
+        </div>
+      </dl>
+    </>
   );
 }
 

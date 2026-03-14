@@ -1,10 +1,13 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Picture input field', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certifieduser');
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
+    await page
+      .getByRole('button', { name: translations.profile['edit-personal-info'] })
+      .click();
   });
 
   test('Should be possible to type', async ({ page }) => {

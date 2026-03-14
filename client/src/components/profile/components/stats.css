@@ -1,21 +1,36 @@
 .stats {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: stretch;
   text-align: center;
   color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+.stats > div {
+  background: var(--tertiary-background);
+  border: 1px solid var(--quaternary-background);
+  border-radius: 0;
+  padding: 0.85rem 0.75rem;
 }
 
 .stats dt {
-  font-size: 18px;
+  font-size: 1.05rem;
 }
 
 .stats dd {
   font-size: 2rem;
-  margin-top: 16px;
+  line-height: 1.1;
+  margin: 0.45rem 0 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
   .stats dd {
     font-size: 1.5rem;
   }

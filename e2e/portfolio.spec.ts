@@ -16,17 +16,11 @@ test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certifieduser');
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
-
-    // Will check if the portfolio button is hydrated correctly with different intervals.
-    await expect(async () => {
-      const addPortfolioItemButton = page.getByRole('button', {
-        name: 'Add a new portfolio Item'
-      });
-      await addPortfolioItemButton.click();
-
-      await expect(addPortfolioItemButton).toBeDisabled({ timeout: 1 });
-    }).toPass();
+    await page
+      .getByRole('button', {
+        name: translations.profile['add-new-project']
+      })
+      .click();
   });
 
   test('The title has validation', async ({ page }) => {
@@ -112,7 +106,17 @@ test.describe('Add Portfolio Item', () => {
       .fill('My description');
 
     await page
-      .getByRole('button', { name: 'Remove this portfolio item' })
+      .getByRole('button', { name: 'Save this portfolio item' })
+      .click();
+    await page.getByRole('button', { name: 'Close' }).click();
+
+    await page
+      .locator('.portfolio-item-shell')
+      .first()
+      .getByRole('button', { name: translations.buttons.edit })
+      .click();
+    await page
+      .getByRole('button', { name: translations.buttons['remove-portfolio'] })
       .click();
 
     await expect(page.getByTestId('portfolio-items')).toBeHidden();
@@ -127,10 +131,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('It should be possible to add a portfolio item', async ({ page }) => {
-    await expect(
-      page.getByRole('button', { name: 'Add a new portfolio Item' })
-    ).toBeDisabled();
-
     await page
       .getByLabel(translations.settings.labels.title)
       .fill('My portfolio');

@@ -26,7 +26,9 @@ test.describe('Username Settings Validation', () => {
     execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(`/certifieduser`);
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
+    await page
+      .getByRole('button', { name: translations.profile['edit-personal-info'] })
+      .click();
   });
 
   test('Should display Username Input and Save Button', async ({ page }) => {
