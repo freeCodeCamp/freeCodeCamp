@@ -360,6 +360,18 @@ export const schema = Joi.object().keys({
       })
   }),
   showSpeakingButton: Joi.bool(),
+  speakingSection: Joi.object().keys({
+    sentence: Joi.string().required(),
+    audio: Joi.object()
+      .keys({
+        filename: Joi.string()
+          .valid(...availableAudios)
+          .required(),
+        startTimestamp: Joi.number().required().strict(),
+        finishTimestamp: Joi.number().required().strict()
+      })
+      .required()
+  }),
   // This is only to be used for dynamic client updates.
   sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),

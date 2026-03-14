@@ -19,6 +19,7 @@ const VALID_MARKERS = [
   '# --quizzes--',
   '# --scene--',
   '# --seed--',
+  '# --speaking-section--',
   '# --solutions--',
   '# --transcript--',
 
@@ -28,6 +29,7 @@ const VALID_MARKERS = [
   '## --quiz--',
   '## --seed-contents--',
   '## --sentence--',
+  '## --speaking-audio--',
   '## --text--',
   '## --video-solution--',
   // TODO: Remove these two markers when https://github.com/freeCodeCamp/freeCodeCamp/issues/57107 is resolved
