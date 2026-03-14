@@ -370,6 +370,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: null,
   [SuperBlocks.LearnPromptingFundamentals]: null,
   [SuperBlocks.LearnOOPWithPython]: null,
+  [SuperBlocks.LearnRAGAndMCPFundamentals]: null,
   [SuperBlocks.IntroductionToPrecalculus]: null,
   [SuperBlocks.IntroductionToBash]: null,
   [SuperBlocks.IntroductionToSQLAndPostgreSQL]: null,

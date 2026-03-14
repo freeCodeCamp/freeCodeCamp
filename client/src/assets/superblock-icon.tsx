@@ -91,6 +91,7 @@ const iconMap = {
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,
   [SuperBlocks.LearnOOPWithPython]: PythonIcon,
+  [SuperBlocks.LearnRAGAndMCPFundamentals]: Code,
   [SuperBlocks.IntroductionToBash]: Code,
   [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
   [SuperBlocks.LearnBashScripting]: Code,

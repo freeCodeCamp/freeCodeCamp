@@ -232,6 +232,7 @@ export const superBlockNames = {
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
   'css-animations': SuperBlocks.CssAnimations,
   'learn-oop-with-python': SuperBlocks.LearnOOPWithPython,
+  'learn-rag-mcp-fundamentals': SuperBlocks.LearnRAGAndMCPFundamentals,
   'introduction-to-bash': SuperBlocks.IntroductionToBash,
   'introduction-to-sql-and-postgresql':
     SuperBlocks.IntroductionToSQLAndPostgreSQL,

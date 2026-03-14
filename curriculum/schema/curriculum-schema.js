@@ -60,6 +60,7 @@ const superblocks = [
   'lab-product-landing-page',
   'css-animations',
   'learn-oop-with-python',
+  'learn-rag-mcp-fundamentals',
   'introduction-to-bash',
   'introduction-to-sql-and-postgresql',
   'learn-bash-scripting',

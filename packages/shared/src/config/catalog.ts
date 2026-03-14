@@ -204,6 +204,12 @@ export const catalog: Catalog[] = [
     topic: Topic.ComputerScience
   },
   {
+    superBlock: SuperBlocks.LearnRAGAndMCPFundamentals,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.AI
+  },
+  {
     superBlock: SuperBlocks.IntroductionToPrecalculus,
     level: Levels.Intermediate,
     hours: 6,
