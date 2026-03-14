@@ -1,15 +1,17 @@
-const path = require('path');
-const envData = require('./config/env.json');
-const {
+import path from 'path';
+import type { GatsbyConfig } from 'gatsby';
+
+import envData from './config/env.json';
+import {
   buildChallenges,
   replaceChallengeNodes,
   localeChallengesRootDir
-} = require('./utils/build-challenges');
-const { pathPrefix } = require('./utils/gatsby/path-prefix');
+} from './utils/build-challenges';
+import { pathPrefix } from './utils/gatsby/path-prefix';
 
-const { curriculumLocale, homeLocation } = envData;
+const { homeLocation } = envData;
 
-module.exports = {
+const config: GatsbyConfig = {
   flags: {
     DEV_SSR: false
   },
@@ -43,13 +45,14 @@ module.exports = {
       }
     },
     {
-      resolve: require.resolve(
+      resolve: path.resolve(
+        __dirname,
         '../tools/client-plugins/gatsby-source-challenges'
       ),
       options: {
         name: 'challenges',
         source: buildChallenges,
-        onSourceChange: replaceChallengeNodes(curriculumLocale),
+        onSourceChange: replaceChallengeNodes(),
         curriculumPath: localeChallengesRootDir
       }
     },
@@ -63,3 +66,5 @@ module.exports = {
     }
   ]
 };
+
+export default config;

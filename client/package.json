@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "main": "none",
+  "main": "index.js",
   "scripts": {
     "build": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby build --prefix-paths",
     "clean": "gatsby clean",
