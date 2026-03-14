@@ -368,6 +368,7 @@ function ShowCodeAlly({
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
+              challengeId={challengeId}
             />
           </Row>
         </Container>

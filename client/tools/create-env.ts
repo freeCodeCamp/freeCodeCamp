@@ -56,7 +56,8 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'apiLocation',
     'forumLocation',
     'newsLocation',
-    'radioLocation'
+    'radioLocation',
+    'githubLocation'
   ];
   const deploymentKeys = [
     'clientLocale',

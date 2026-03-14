@@ -21,7 +21,8 @@
         "SHOW_UPCOMING_CHANGES",
         "GROWTHBOOK_URI",
         "DEPLOYMENT_VERSION",
-        "FREECODECAMP_NODE_ENV"
+        "FREECODECAMP_NODE_ENV",
+        "GITHUB_LOCATION"
       ],
       "outputs": ["public/**"]
     },
@@ -47,7 +48,8 @@
         "SHOW_UPCOMING_CHANGES",
         "GROWTHBOOK_URI",
         "DEPLOYMENT_VERSION",
-        "FREECODECAMP_NODE_ENV"
+        "FREECODECAMP_NODE_ENV",
+        "GITHUB_LOCATION"
       ],
       "outputs": [
         "config/env.json",
