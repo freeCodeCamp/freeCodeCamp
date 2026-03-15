@@ -4215,6 +4215,10 @@
         "intro": [
           "Pass this exam to earn your Front-End Development Libraries Certification"
         ]
+      },
+      "workshop-build-a-zoo-animal-scatterplot": {
+        "title": "Build a Zoo Animal Scatterplot",
+        "intro": ["Build a Zoo Animal Scatterplot", ""]
       }
     }
   },

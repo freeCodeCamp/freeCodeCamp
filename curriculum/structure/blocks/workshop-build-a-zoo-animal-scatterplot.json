@@ -1,0 +1,11 @@
+{
+  "name": "Build a Zoo Animal Scatterplot",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-build-a-zoo-animal-scatterplot",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69b1f12e7941b5947294426c", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
