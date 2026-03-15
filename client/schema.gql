@@ -378,7 +378,6 @@ type ChallengeNodeChallenge @derivedTypes {
   template: String
   transcript: String
   isExam: Boolean
-  showSpeakingButton: Boolean
   videoLocaleIds: ChallengeNodeChallengeVideoLocaleIds
   notes: String
   prerequisites: [ChallengeNodeChallengePrerequisites]
