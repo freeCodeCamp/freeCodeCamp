@@ -476,6 +476,7 @@ function ShowClassic({
         <Helmet title={windowTitle} />
         {isMobile ? (
           <MobileLayout
+            challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
