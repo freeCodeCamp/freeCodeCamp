@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Callout, Spacer } from '@freecodecamp/ui';
+import { IfFeatureEnabled } from '@growthbook/growthbook-react';
 import store from 'store';
 import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
@@ -19,6 +20,7 @@ import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
 import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
+import ClassroomMode from '../components/settings/classroom-mode';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -28,6 +30,7 @@ import {
 import type { User } from '../redux/prop-types';
 import {
   submitNewAbout,
+  updateMyClassroomMode,
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
@@ -48,6 +51,7 @@ type ShowSettingsProps = {
   toggleSoundMode: (sound: boolean) => void;
   resetEditorLayout: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
+  updateIsClassroomAccount: () => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User | null;
@@ -74,6 +78,8 @@ const mapDispatchToProps = {
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
+  updateIsClassroomAccount: () =>
+    updateMyClassroomMode({ isClassroomAccount: true }),
   updateIsHonest: updateMyHonesty,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
@@ -92,6 +98,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate,
     showLoading,
     updateQuincyEmail,
+    updateIsClassroomAccount,
     updateIsHonest,
     verifyCert,
     userToken
@@ -158,6 +165,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isA2ChineseCert,
     isA1ChineseCert,
     isEmailVerified,
+    isClassroomAccount,
     isHonest,
     sendQuincyEmail,
     username,
@@ -217,6 +225,15 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='m' />
           <ScrollElement name='honesty'>
             <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          </ScrollElement>
+          <ScrollElement name='classroom-mode'>
+            <IfFeatureEnabled feature='classroom-mode'>
+              <Spacer size='m' />
+              <ClassroomMode
+                isClassroomAccount={isClassroomAccount}
+                updateIsClassroomAccount={updateIsClassroomAccount}
+              />
+            </IfFeatureEnabled>
           </ScrollElement>
           <Spacer size='m' />
           <ScrollElement name='exam-token'>
