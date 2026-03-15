@@ -17,6 +17,7 @@ const replaceImports = require('./plugins/replace-imports');
 const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const addScene = require('./plugins/add-scene');
+const addSpeakingSection = require('./plugins/add-speaking-section');
 const addQuizzes = require('./plugins/add-quizzes');
 const addInteractiveElements = require('./plugins/add-interactive-elements');
 
@@ -57,6 +58,7 @@ const processor = unified()
   .use(addVideoQuestion)
   .use(addAssignment)
   .use(addScene)
+  .use(addSpeakingSection)
   .use(addQuizzes)
   .use(addHooks)
   .use(addTests)

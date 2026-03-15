@@ -31,6 +31,7 @@ import {
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
+import SpeakingSection from '../components/speaking-section';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
@@ -124,6 +125,7 @@ const ShowGeneric = ({
         transcript,
         translationPending,
         scene,
+        speakingSection,
         superBlock,
         videoId,
         videoLocaleIds
@@ -326,6 +328,14 @@ const ShowGeneric = ({
                   </>
                 )}
 
+                {speakingSection && (
+                  <SpeakingSection
+                    sentence={speakingSection.sentence}
+                    audio={speakingSection.audio}
+                    superBlock={superBlock}
+                  />
+                )}
+
                 {assignments.length > 0 && (
                   <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                     <Assignments
@@ -460,6 +470,14 @@ export const query = graphql`
               text
               align
             }
+          }
+        }
+        speakingSection {
+          sentence
+          audio {
+            filename
+            startTimestamp
+            finishTimestamp
           }
         }
         superBlock

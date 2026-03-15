@@ -171,6 +171,17 @@ export interface FullScene {
   commands: SceneCommand[];
 }
 
+export interface SpeakingSectionAudio {
+  filename: string;
+  startTimestamp: number;
+  finishTimestamp: number;
+}
+
+export interface SpeakingSection {
+  sentence: string;
+  audio: SpeakingSectionAudio;
+}
+
 export interface PrerequisiteChallenge {
   id: string;
   title: string;
@@ -239,6 +250,7 @@ export type ChallengeNode = {
     required: Required[];
     saveSubmissionToDB?: boolean;
     scene: FullScene;
+    speakingSection?: SpeakingSection;
     solutions: {
       [T: string]: FileKeyChallenge;
     };
