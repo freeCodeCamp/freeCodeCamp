@@ -96,6 +96,7 @@
           "blocks": [
             "lecture-working-with-loops",
             "workshop-sentence-analyzer",
+            "workshop-space-mission-roster",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
@@ -295,7 +296,17 @@
             "quiz-recursion"
           ]
         },
-        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-working-with-common-data-structures-js",
+            "lab-linked-list-operations",
+            "lab-implement-a-queue",
+            "review-data-structures-js",
+            "quiz-data-structures-js"
+          ]
+        },
         {
           "dashedName": "algorithms",
           "comingSoon": true,
@@ -304,18 +315,30 @@
             "workshop-binary-search-js",
             "lab-bubble-sort-algorithm",
             "lab-selection-sort-js",
-            "lab-quicksort-js"
+            "lab-insertion-sort",
+            "lab-quicksort-js",
+            "review-searching-and-sorting-algorithms-js"
           ]
         },
         {
           "dashedName": "graphs-and-trees",
           "comingSoon": true,
-          "blocks": ["lecture-understanding-graphs-and-trees-js"]
+          "blocks": [
+            "lecture-understanding-graphs-and-trees-js",
+            "lab-adjacency-list-to-matrix-converter-js",
+            "lab-depth-first-search-js",
+            "lab-n-queens-problem-js",
+            "review-graphs-and-trees-js"
+          ]
         },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-understanding-dynamic-programming-js",
+            "review-dynamic-programming-js",
+            "quiz-dynamic-programming-js"
+          ]
         },
         {
           "dashedName": "functional-programming",

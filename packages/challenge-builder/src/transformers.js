@@ -20,7 +20,7 @@ import { version } from '@freecodecamp/browser-scripts/package.json';
 import { WorkerExecutor } from './worker-executor';
 import {
   compileTypeScriptCode,
-  checkTSServiceIsReady
+  setupTSCompiler
 } from './typescript-worker-handler';
 
 const protectTimeout = 100;
@@ -69,7 +69,7 @@ async function loadPresetEnv() {
     );
 
   presetsJS = {
-    presets: [presetEnv]
+    presets: [[presetEnv, { exclude: ['transform-spread'] }]]
   };
 }
 
@@ -84,7 +84,7 @@ async function loadPresetReact() {
     );
 
   presetsJSX = {
-    presets: [presetEnv, presetReact]
+    presets: [[presetEnv, { exclude: ['transform-spread'] }], presetReact]
   };
 }
 
@@ -148,7 +148,7 @@ const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
 
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await checkTSServiceIsReady();
+  await setupTSCompiler();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return flow(
     partial(transformHeadTailAndContents, compileTypeScriptCode),
@@ -159,7 +159,7 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
-  await checkTSServiceIsReady();
+  await setupTSCompiler();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
@@ -264,6 +264,30 @@ async function transformScript(documentElement, { useModules }) {
   });
 }
 
+const deferScript = scriptCode => {
+  // Mimic the behavior of a defer script by waiting until the DOM is loaded
+  // before executing the script.
+  return `
+(() => {
+  const run = (() => {
+    if (document.readyState === "interactive") {
+      ${scriptCode}
+    }
+  });
+
+  document.addEventListener('readystatechange', run, { once: true });
+})();
+`;
+};
+
+export const embedScript = (script, source, contents) => {
+  const code = contents ?? '';
+
+  script.innerHTML = script.hasAttribute('defer') ? deferScript(code) : code;
+  script.removeAttribute('src');
+  script.setAttribute('data-src', source);
+};
+
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
@@ -272,6 +296,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
+
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -310,27 +335,19 @@ export const embedFilesInHtml = async function (challengeFiles) {
       link.dataset.href = 'styles.css';
     }
     if (script) {
-      script.innerHTML = scriptJs?.contents;
-      script.removeAttribute('src');
-      script.setAttribute('data-src', 'script.js');
+      embedScript(script, 'script.js', scriptJs?.contents);
     }
     if (tsScript) {
-      tsScript.innerHTML = indexTs?.contents;
-      tsScript.removeAttribute('src');
-      tsScript.setAttribute('data-src', 'index.ts');
+      embedScript(tsScript, 'index.ts', indexTs?.contents);
     }
     if (jsxScript) {
-      jsxScript.innerHTML = indexJsx?.contents;
-      jsxScript.removeAttribute('src');
+      embedScript(jsxScript, 'index.jsx', indexJsx?.contents);
       jsxScript.removeAttribute('type');
-      jsxScript.setAttribute('data-src', 'index.jsx');
       jsxScript.setAttribute('data-type', 'text/babel');
     }
     if (tsxScript) {
-      tsxScript.innerHTML = indexTsx?.contents;
-      tsxScript.removeAttribute('src');
+      embedScript(tsxScript, 'index.tsx', indexTsx?.contents);
       tsxScript.removeAttribute('type');
-      tsxScript.setAttribute('data-src', 'index.tsx');
       tsxScript.setAttribute('data-type', 'text/babel');
     }
     return documentElement.innerHTML;

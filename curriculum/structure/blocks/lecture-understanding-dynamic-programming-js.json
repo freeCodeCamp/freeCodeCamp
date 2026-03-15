@@ -1,0 +1,14 @@
+{
+  "name": "Understanding Dynamic Programming",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-dynamic-programming-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "699951f2b5e66fca32749fb2",
+      "title": "What is Dynamic Programming and What Are Some Common Algorithms?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

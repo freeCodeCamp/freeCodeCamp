@@ -47,18 +47,6 @@ assert(__helpers.removeJSComments(code).match(/myStr\s*\+=\s*(["']).*\1/g));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){
-  if(typeof myStr === 'string') {
-    return 'myStr = "' + myStr + '"';
-  } else {
-    return 'myStr is not a string';
-  }
-})();
-```
-
 ## --seed-contents--
 
 ```js
