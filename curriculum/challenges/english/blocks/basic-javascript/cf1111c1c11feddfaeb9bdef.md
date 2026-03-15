@@ -40,12 +40,6 @@ assert(__helpers.removeJSComments(code).match(/Math\.random/g).length >= 0);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){return randomFraction();})();
-```
-
 ## --seed-contents--
 
 ```js
