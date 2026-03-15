@@ -886,8 +886,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         data: {
           quizAttempts: existingAttempt
             ? {
-                updateMany: { where: { challengeId }, data: newAttempt }
-              }
+              updateMany: { where: { challengeId }, data: newAttempt }
+            }
             : { push: newAttempt }
         }
       });
