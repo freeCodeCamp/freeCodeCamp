@@ -1,0 +1,18 @@
+{
+  "name": "Numbers 11 to 19 Practice",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-practice-numbers-11-to-19",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69845062d1fa07b76441548d", "title": "Task 1" },
+    { "id": "6984866899c416e45e17c4f6", "title": "Task 2" },
+    { "id": "698488e4b4b920ab0caf2df4", "title": "Task 3" },
+    { "id": "69849170d28256b050e6bb23", "title": "Task 4" },
+    { "id": "698dd9e71bf4ca8fab582c15", "title": "Task 5" },
+    { "id": "698493cab6b9163b155f871f", "title": "Task 6" },
+    { "id": "698496fe375d5dd4b3848506", "title": "Task 7" },
+    { "id": "69849e4520f7448b8c4074aa", "title": "Task 8" }
+  ],
+  "blockLabel": "practice"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Numbers 0 to 10 Practice",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-practice-numbers-0-to-10",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "697f3c984293704873d23595", "title": "Task 1" },
+    { "id": "697f3dc11540a2c63a72f949", "title": "Task 2" },
+    { "id": "697f448d81f541e6af994687", "title": "Task 3" },
+    { "id": "697f4517a8274849376c898e", "title": "Task 4" },
+    { "id": "697f47d15cec8665fbecb34c", "title": "Task 5" },
+    { "id": "697f489ecbd301695b9169db", "title": "Task 6" },
+    { "id": "697f4a3ae314386d90060966", "title": "Task 7" },
+    { "id": "698ddc6952805df7921ac90b", "title": "Task 8" },
+    { "id": "697f4baa3475817639736dc2", "title": "Task 9" },
+    { "id": "697f50a5c4df2cbcb9c1144b", "title": "Task 10" }
+  ],
+  "blockLabel": "practice"
+}
