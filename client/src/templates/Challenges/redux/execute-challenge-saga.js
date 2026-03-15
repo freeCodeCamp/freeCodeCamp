@@ -174,7 +174,8 @@ function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
   yield takeEvery(channel, function* (args) {
-    yield put(updateConsole(escape(args)));
+    // Don't escape - preserve HTML entities as-is for challenges that test entity conversion
+    yield put(updateConsole(String(args)));
   });
 }
 
