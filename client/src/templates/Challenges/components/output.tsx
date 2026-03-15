@@ -11,9 +11,16 @@ interface OutputProps {
 }
 
 function Output({ defaultOutput, output }: OutputProps): JSX.Element {
-  const message = sanitizeHtml(!isEmpty(output) ? output : defaultOutput, {
-    allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+  const rawMessage = !isEmpty(output) ? output : defaultOutput;
+
+  // Sanitize HTML but preserve entities by disabling entity decoding
+  const message = sanitizeHtml(rawMessage, {
+    allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr'],
+    parser: {
+      decodeEntities: false
+    }
   });
+
   return (
     <pre
       className='output-text'
