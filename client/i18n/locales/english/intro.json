@@ -3647,6 +3647,13 @@
           "Open up this page to review what is recursion and what is it used for."
         ]
       },
+      "workshop-linked-list-js": {
+        "title": "Build a Linked List",
+        "intro": [
+          "In the previous lessons, you learned about some common data structures",
+          "In this workshop, you will build a linked list using JavaScript."
+        ]
+      },
       "quiz-recursion": {
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
