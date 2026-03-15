@@ -51,3 +51,7 @@ export {
 } from './schemas/user/exam-environment-token.js';
 export { sentryPostEvent } from './schemas/sentry/event.js';
 export { signout } from './schemas/signout/signout.js';
+export {
+  classroomGetUserIdSchema,
+  classroomGetUserDataSchema
+} from './schemas/classroom/classroom.js';

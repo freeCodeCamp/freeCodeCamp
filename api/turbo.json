@@ -35,7 +35,8 @@
         "SES_REGION",
         "SES_SECRET",
         "SHOW_UPCOMING_CHANGES",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     },
     "test": {
@@ -72,7 +73,8 @@
         "SES_REGION",
         "SES_SECRET",
         "SHOW_UPCOMING_CHANGES",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     }
   }
