@@ -17,11 +17,13 @@ import {
   showPreviewPaneSelector
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
+  challengeType: number;
   editor: JSX.Element | null;
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
@@ -148,6 +150,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   render(): JSX.Element {
     const { currentTab } = this.state;
     const {
+      challengeType,
       hasEditableBoundaries,
       instructions,
       editor,
@@ -166,6 +169,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       windowTitle,
       usesMultifileEditor
     } = this.props;
+
+    const isPythonChallenge =
+      challengeType === challengeTypes.python ||
+      challengeType === challengeTypes.multifilePythonCertProject ||
+      challengeType === challengeTypes.pyLab ||
+      challengeType === challengeTypes.dailyChallengePy;
+
+    const previewTabText = isPythonChallenge
+      ? i18next.t('learn.editor-tabs.terminal')
+      : i18next.t('learn.editor-tabs.preview');
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -239,9 +252,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               {i18next.t('learn.editor-tabs.console')}
             </TabsTrigger>
             {hasPreview && (
-              <TabsTrigger value={tabs.preview}>
-                {i18next.t('learn.editor-tabs.preview')}
-              </TabsTrigger>
+              <TabsTrigger value={tabs.preview}>{previewTabText}</TabsTrigger>
             )}
           </TabsList>
 
