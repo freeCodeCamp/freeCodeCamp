@@ -151,6 +151,7 @@ function ShowExam(props: ShowExamProps) {
           prerequisites,
           superBlock,
           title,
+          id,
           translationPending
         }
       }
@@ -528,6 +529,7 @@ function ShowExam(props: ShowExamProps) {
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
+              challengeId={id}
             />
           </Row>
         </Container>

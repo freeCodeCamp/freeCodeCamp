@@ -86,6 +86,7 @@ const ShowFillInTheBlank = ({
         instructions,
         explanation,
         transcript,
+        id,
         superBlock,
         block,
         translationPending,
@@ -333,6 +334,7 @@ const ShowFillInTheBlank = ({
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
+              challengeId={id}
             />
           </Row>
         </Container>
