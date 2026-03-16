@@ -52,7 +52,7 @@
     "lint:css": "stylelint '**/*.css'",
     "preseed": "turbo setup",
     "playwright:install-build-tools": "npx playwright install --with-deps",
-    "rename-challenges": "tsx curriculum/rename-challenge-files.ts",
+    "rename-challenges": "pnpm -F=curriculum quiet-setup && tsx curriculum/src/challenge-helper-scripts/rename-challenge-files.ts",
     "seed": "pnpm seed:surveys && pnpm seed:exams && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --certified-user",
     "seed:donating-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --set-true isDonating",
