@@ -36,8 +36,9 @@ module.exports = async ({ github, context, isAllowListed }) => {
     'I have read and followed the [how to open a pull request guide]',
     'My pull request targets the'
   ];
-  const allRequiredTicked = requiredTicked.every(
-    item => body.includes(`[x] ${item}`) || body.includes(`[X] ${item}`)
+  const normalizedBody = body.replace(/\[\s*[xX]\s*\]/g, '[x]');
+  const allRequiredTicked = requiredTicked.every(item =>
+    normalizedBody.includes(`[x] ${item}`)
   );
 
   if (templatePresent && allRequiredTicked) return;
