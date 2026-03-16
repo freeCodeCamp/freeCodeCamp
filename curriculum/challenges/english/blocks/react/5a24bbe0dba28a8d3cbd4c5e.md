@@ -53,12 +53,6 @@ assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));
 
 # --seed--
 
-## --after-user-code--
-
-```jsx
-ReactDOM.render(JSX, document.getElementById('root'))
-```
-
 ## --seed-contents--
 
 ```jsx
