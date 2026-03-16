@@ -53,6 +53,27 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
+function getLegacyHeadTailFiles(challengeFiles: ChallengeFile[]) {
+  return challengeFiles.filter(
+    ({ head, tail }) => Boolean(head?.trim()) || Boolean(tail?.trim())
+  );
+}
+
+function throwIfLegacyHeadTail(challengeFiles: ChallengeFile[]) {
+  const legacyFiles = getLegacyHeadTailFiles(challengeFiles);
+  if (!legacyFiles.length) return;
+
+  const fileList = legacyFiles
+    .map(file => file.path || `${file.name}.${file.ext}`)
+    .join(', ');
+
+  throw new Error(
+    'Legacy # --before-user-code-- / # --after-user-code-- sections are no longer supported. ' +
+      `Found in: ${fileList}. ` +
+      'Move setup/fixtures to # --before-all-- or # --before-each-- and move post-run behavior to hooks/tests.'
+  );
+}
+
 function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
   const source: Source | undefined = challengeFiles?.reduce(
@@ -179,6 +200,7 @@ async function buildDOMChallenge(
 ): Promise<BuildResult> {
   // TODO: make this required in the schema.
   if (!challengeFiles) throw Error('No challenge files provided');
+  throwIfLegacyHeadTail(challengeFiles);
   const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx' || challengeFile.ext === 'tsx'
   );
@@ -226,6 +248,7 @@ async function buildJSChallenge(
   options: BuildOptions
 ): Promise<BuildResult> {
   if (!challengeFiles) throw Error('No challenge files provided');
+  throwIfLegacyHeadTail(challengeFiles);
   const pipeLine = composeFunctions(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
@@ -237,17 +260,7 @@ async function buildJSChallenge(
 
   return {
     challengeType,
-    build: toBuild
-      .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
-        [] as string[]
-      )
-      .join('\n'),
+    build: toBuild.map(challengeFile => challengeFile.contents).join('\n'),
     sources: buildSourceMap(finalFiles),
     error
   };
@@ -266,6 +279,7 @@ async function buildPythonChallenge({
   challengeType
 }: BuildChallengeData): Promise<BuildResult> {
   if (!challengeFiles) throw new Error('No challenge files provided');
+  throwIfLegacyHeadTail(challengeFiles);
   const pipeLine = composeFunctions(
     ...(getPythonTransformers() as unknown as ApplyFunctionProps[])
   );

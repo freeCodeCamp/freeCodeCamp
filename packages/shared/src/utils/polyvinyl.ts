@@ -121,25 +121,6 @@ export function regenerateMissingProperties(file: IncompleteChallengeFile) {
   return newFile;
 }
 
-async function clearHeadTail(polyP: Promise<ChallengeFile>) {
-  const poly = await polyP;
-  checkPoly(poly);
-  return {
-    ...poly,
-    head: '',
-    tail: ''
-  };
-}
-
-export async function compileHeadTail(padding = '', poly: ChallengeFile) {
-  return clearHeadTail(
-    transformContents(
-      () => [poly.head, poly.contents, poly.tail].join(padding),
-      poly
-    )
-  );
-}
-
 type Wrapper = (x: string) => Promise<string> | string;
 // transformContents will keep a copy of the original
 // code in the `source` property. If the original polyvinyl
@@ -152,21 +133,6 @@ export async function transformContents(
   const poly = await polyP;
   const newPoly = setContent(await wrap(poly.contents), poly, poly.source);
   return newPoly;
-}
-
-export async function transformHeadTailAndContents(
-  wrap: Wrapper,
-  polyP: ChallengeFile | Promise<ChallengeFile>
-) {
-  const poly = await polyP;
-  const contents = await transformContents(wrap, poly);
-  const head = await wrap(poly.head);
-  const tail = await wrap(poly.tail);
-  return {
-    ...contents,
-    head,
-    tail
-  };
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl
