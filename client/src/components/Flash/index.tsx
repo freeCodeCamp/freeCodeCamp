@@ -1,9 +1,16 @@
-import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
+import {
+  Alert,
+  CloseButton,
+  type AlertProps,
+  Container,
+  Col,
+  Row
+} from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlashState } from '../../redux/types';
+import { getNamespaceResource } from '../../utils/type-guards';
 import { removeFlashMessage } from './redux';
-import { Container, Col, Row } from '@freecodecamp/ui';
 
 import './flash.css';
 
@@ -14,10 +21,8 @@ type FlashProps = {
 
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
-  const { t } = useTranslation();
-  const flashTranslations = t($ => $.flash, {
-    returnObjects: true
-  }) as Record<string, unknown>;
+  const { t, i18n } = useTranslation();
+  const translationData = getNamespaceResource(i18n, 'translations');
 
   // Some APIs are returning 'error' as a flash type, and it needs to be mapped to 'danger'.
   // TODO: Standardize the value of `type`.
@@ -34,8 +39,15 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
       return '';
     }
 
-    const path = message.replace(/^flash\./, '').split('.');
-    let template: unknown = flashTranslations;
+    const [namespace, key] = message.includes(':')
+      ? message.split(':', 2)
+      : ['translations', message];
+    if (namespace !== 'translations') {
+      return message;
+    }
+
+    const path = key.split('.');
+    let template: unknown = translationData;
     for (const segment of path) {
       if (typeof template !== 'object' || template === null) {
         return message;

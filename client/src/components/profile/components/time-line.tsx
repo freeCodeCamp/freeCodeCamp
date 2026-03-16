@@ -2,7 +2,7 @@ import Loadable from '@loadable/component';
 import { graphql, useStaticQuery } from 'gatsby';
 import { reverse, sortBy } from 'lodash-es';
 import React, { useMemo, useState } from 'react';
-import type { TFunction } from 'i18next';
+import i18next, { type TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
@@ -19,7 +19,11 @@ import type {
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
-import { getIntroBlockTitle, getTitleByKey } from '../../../utils/type-guards';
+import {
+  getIntroBlockTitle,
+  getNamespaceResource,
+  getTitleByKey
+} from '../../../utils/type-guards';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
@@ -272,10 +276,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const certificationTitles = t($ => $.certification.title, {
     returnObjects: true
   });
-  const introData = t($ => $, {
-    ns: 'intro',
-    returnObjects: true
-  });
+  const introData = getNamespaceResource(i18next, 'intro');
   const a2EnglishSuperBlock = String(SuperBlocks.A2English);
 
   for (const id of getCertIds()) {

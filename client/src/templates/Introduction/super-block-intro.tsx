@@ -28,7 +28,10 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import { getIntroSuperBlockTitle } from '../../utils/type-guards';
+import {
+  getIntroSuperBlockTitle,
+  getNamespaceResource
+} from '../../utils/type-guards';
 import type { SuperBlockStructure, User } from '../../redux/prop-types';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
@@ -180,10 +183,7 @@ export const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   );
 
   const i18nTitle = getIntroSuperBlockTitle(
-    i18next.t($ => $, {
-      ns: 'intro',
-      returnObjects: true
-    }),
+    getNamespaceResource(i18next, 'intro'),
     superBlock
   );
 

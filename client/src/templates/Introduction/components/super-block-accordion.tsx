@@ -13,7 +13,10 @@ import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { FsdChapters } from '@freecodecamp/shared/config/chapters';
 import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';
-import { getIntroSuperBlockData } from '../../../utils/type-guards';
+import {
+  getIntroSuperBlockData,
+  getNamespaceResource
+} from '../../../utils/type-guards';
 import Block from './block';
 import CheckMark from './check-mark';
 import { default as BlockLabelComponent } from './block-label';
@@ -94,12 +97,9 @@ const Chapter = ({
   isLinkChapter,
   examSlug
 }: ChapterProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
-  const introData = t($ => $, {
-    ns: 'intro',
-    returnObjects: true
-  });
+  const introData = getNamespaceResource(i18n, 'intro');
   const superBlockData = getIntroSuperBlockData(introData, superBlock);
   const chapterLabel = superBlockData.chapters[dashedName] ?? dashedName;
 
@@ -169,12 +169,9 @@ const Module = ({
   superBlock,
   comingSoon
 }: ModuleProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isComplete = totalSteps === 0 ? false : completedSteps === totalSteps;
-  const introData = t($ => $, {
-    ns: 'intro',
-    returnObjects: true
-  });
+  const introData = getNamespaceResource(i18n, 'intro');
   const superBlockData = getIntroSuperBlockData(introData, superBlock);
   const { note = '', intro = [] } =
     superBlockData.moduleIntros[dashedName] ?? {};

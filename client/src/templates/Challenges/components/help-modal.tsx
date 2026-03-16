@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 import { Dispatch, bindActionCreators } from 'redux';
 import { Button, FormControl, Modal, Spacer } from '@freecodecamp/ui';
 
-import { t } from 'i18next';
+import i18next from 'i18next';
 import envData from '../../../../config/env.json';
 import { createQuestion, closeModal, openModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
-import { getIntroBlockTitle } from '../../../utils/type-guards';
+import {
+  getIntroBlockTitle,
+  getNamespaceResource
+} from '../../../utils/type-guards';
 
 import './help-modal.css';
 import callGA from '../../../analytics/call-ga';
@@ -48,10 +51,7 @@ export const generateSearchLink = (
   block: string,
   superBlock: string
 ) => {
-  const introData = t($ => $, {
-    ns: 'intro',
-    returnObjects: true
-  });
+  const introData = getNamespaceResource(i18next, 'intro');
   const titleText = getIntroBlockTitle(introData, superBlock, block);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);

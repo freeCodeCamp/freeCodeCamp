@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
-import type { TFunction } from 'i18next';
+import i18next, { type TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -37,7 +37,10 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
-import { getIntroBlockTitle } from '../../../utils/type-guards';
+import {
+  getIntroBlockTitle,
+  getNamespaceResource
+} from '../../../utils/type-guards';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
@@ -248,10 +251,7 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
-  const introData = t($ => $, {
-    ns: 'intro',
-    returnObjects: true
-  });
+  const introData = getNamespaceResource(i18next, 'intro');
   const blockTitle = getIntroBlockTitle(introData, superBlock, block);
   const blockNameTitle = `${blockTitle} - ${title}`;
 

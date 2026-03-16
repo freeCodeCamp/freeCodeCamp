@@ -1,6 +1,31 @@
+import type { i18n as I18nInstance } from 'i18next';
+
 // Narrow unknown values to indexable objects before reading dynamic keys.
 export const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null;
+
+type I18nResourceAccessor = Pick<
+  I18nInstance,
+  'language' | 'resolvedLanguage' | 'getDataByLanguage'
+>;
+
+/**
+ * Read an i18n namespace as a plain object for dynamic-key lookups.
+ * This avoids selector-root edge cases when requesting entire namespaces.
+ */
+export const getNamespaceResource = (
+  i18n: I18nResourceAccessor,
+  namespace: string
+): Record<string, unknown> => {
+  const language = i18n.resolvedLanguage ?? i18n.language;
+  const currentBundle = language
+    ? i18n.getDataByLanguage(language)?.[namespace]
+    : undefined;
+  if (isRecord(currentBundle)) return currentBundle;
+
+  const englishBundle = i18n.getDataByLanguage('en')?.[namespace];
+  return isRecord(englishBundle) ? englishBundle : {};
+};
 
 // Safely read dynamic key values from unknown dictionary-like objects.
 export const getTitleByKey = (titles: unknown, key: string): string => {

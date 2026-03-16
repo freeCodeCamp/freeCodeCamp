@@ -1,5 +1,5 @@
 import React, { Component, ReactNode } from 'react';
-import type { TFunction } from 'i18next';
+import i18next, { type TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Element } from 'react-scroll';
@@ -18,7 +18,10 @@ import Caret from '../../../assets/icons/caret';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { playTone } from '../../../utils/tone';
-import { getIntroBlockData } from '../../../utils/type-guards';
+import {
+  getIntroBlockData,
+  getNamespaceResource
+} from '../../../utils/type-guards';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import {
@@ -142,10 +145,7 @@ export class Block extends Component<BlockProps> {
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
-    const introData = t($ => $, {
-      ns: 'intro',
-      returnObjects: true
-    });
+    const introData = getNamespaceResource(i18next, 'intro');
     const { title: blockTitle, intro: blockIntroArr } = getIntroBlockData(
       introData,
       superBlock,
