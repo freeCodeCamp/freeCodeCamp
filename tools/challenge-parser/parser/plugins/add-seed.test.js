@@ -272,6 +272,19 @@ const Button = () => {
 };`);
   });
 
+  it('handles json', () => {
+    expect.assertions(1);
+    plugin(simpleAST, file);
+    const {
+      data: { challengeFiles }
+    } = file;
+    const tsconfigjsonc = challengeFiles.find(x => x.ext === 'json');
+
+    expect(tsconfigjsonc.contents).toBe(
+      `{\n  "compilerOptions": {\n    "target": "ES2020"\n  }\n}`
+    );
+  });
+
   it('should throw an error if a seed has no contents', () => {
     expect.assertions(1);
     expect(() => plugin(withEmptyContentsAST, file)).toThrow(

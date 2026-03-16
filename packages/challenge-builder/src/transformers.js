@@ -18,10 +18,7 @@ import {
 import { version } from '@freecodecamp/browser-scripts/package.json';
 
 import { WorkerExecutor } from './worker-executor';
-import {
-  compileTypeScriptCode,
-  setupTSCompiler
-} from './typescript-worker-handler';
+import { compileTypeScriptCode } from './typescript-worker-handler';
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;
@@ -148,7 +145,6 @@ const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
 
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await setupTSCompiler();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return flow(
     partial(transformHeadTailAndContents, compileTypeScriptCode),
@@ -159,7 +155,6 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
-  await setupTSCompiler();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
@@ -379,7 +374,18 @@ function challengeFilesToObject(challengeFiles) {
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
   const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
   const indexTsx = challengeFiles.find(file => file.fileKey === 'indextsx');
-  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs, indexTsx };
+  const tsconfigJson = challengeFiles.find(
+    file => file.fileKey === 'tsconfigjson'
+  );
+  return {
+    indexHtml,
+    indexJsx,
+    stylesCss,
+    scriptJs,
+    indexTs,
+    indexTsx,
+    tsconfigJson
+  };
 }
 
 const parseAndTransform = async function (transform, contents) {
