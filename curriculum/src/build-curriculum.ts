@@ -4,7 +4,7 @@ import { resolve, basename } from 'path';
 import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
-import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
+import type { CommentDictionary } from '@freecodecamp/challenge-parser/translation-parser/index.js';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   SuperblockCreator,
