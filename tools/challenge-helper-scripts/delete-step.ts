@@ -1,6 +1,4 @@
-import { deleteStep } from './commands';
-import { getArgValue } from './helpers/get-arg-value';
-import { validateMetaData } from './helpers/project-metadata';
+import { deleteStep } from './commands.js';
+import { getArgValue } from './helpers/get-arg-value.js';
 
-validateMetaData();
-deleteStep(getArgValue(process.argv));
+void deleteStep(getArgValue(process.argv));

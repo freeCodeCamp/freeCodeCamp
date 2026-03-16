@@ -1,6 +1,6 @@
 {
   "name": "Build a JavaScript Trivia Bot",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

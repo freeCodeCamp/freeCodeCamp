@@ -6,8 +6,7 @@ import {
   actionTypes as challengeTypes,
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
-import { getIsDailyCodingChallenge } from '../../../shared/config/challenge-types';
-import { createAcceptTermsSaga } from './accept-terms-saga';
+import { getIsDailyCodingChallenge } from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
@@ -50,7 +49,8 @@ export const defaultDonationFormState = {
   }
 };
 
-const initialState = {
+// exported for testing purposes.
+export const initialState = {
   isRandomCompletionThreshold: false,
   donatableSectionRecentlyCompleted: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
@@ -64,10 +64,6 @@ const initialState = {
   user: { sessionUser: null, otherUser: null },
   userFetchState: {
     ...defaultFetchState
-  },
-  allChallengesInfo: {
-    challengeNodes: [],
-    certificateNodes: []
   },
   userProfileFetchState: {
     ...defaultFetchState
@@ -88,7 +84,6 @@ const initialState = {
 export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 
 export const sagas = [
-  ...createAcceptTermsSaga(actionTypes),
   ...createThemeSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
   ...createDonationSaga(actionTypes),
@@ -117,26 +112,6 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
-    [actionTypes.acceptTermsComplete]: (state, { payload }) => {
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            // TODO: the user accepts the privacy terms in practice during auth
-            // however, it's currently being used to track if they've accepted
-            // or rejected the newsletter. Ideally this should be migrated,
-            // since they can't sign up without accepting the terms.
-            acceptedPrivacyTerms: true,
-            sendQuincyEmail:
-              payload === null
-                ? state.user.sessionUser.sendQuincyEmail
-                : payload
-          }
-        }
-      };
-    },
     [actionTypes.allowSectionDonationRequests]: (state, { payload }) => {
       return {
         ...state,
@@ -174,26 +149,21 @@ export const reducer = handleActions(
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
     [actionTypes.postChargeComplete]: state => {
+      const sessionUser = state.user.sessionUser
+        ? { ...state.user.sessionUser, isDonating: true }
+        : null;
       return {
         ...state,
         user: {
           ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            isDonating: true
-          }
+          sessionUser
         },
-
         donationFormState: { ...defaultDonationFormState, success: true }
       };
     },
     [actionTypes.postChargeError]: (state, { payload }) => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
-    }),
-    [actionTypes.updateAllChallengesInfo]: (state, { payload }) => ({
-      ...state,
-      allChallengesInfo: { ...payload }
     }),
     [actionTypes.fetchUser]: state => ({
       ...state,
@@ -203,21 +173,23 @@ export const reducer = handleActions(
       ...state,
       userProfileFetchState: { ...defaultFetchState }
     }),
-    [actionTypes.fetchUserComplete]: (state, { payload: { user } }) => ({
-      ...state,
-      user: {
-        ...state.user,
-        sessionUser: user
-      },
-      currentChallengeId:
-        user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
-      userFetchState: {
-        pending: false,
-        complete: true,
-        errored: false,
-        error: null
-      }
-    }),
+    [actionTypes.fetchUserComplete]: (state, { payload: { user } }) => {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: user
+        },
+        currentChallengeId:
+          user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
+        userFetchState: {
+          pending: false,
+          complete: true,
+          errored: false,
+          error: null
+        }
+      };
+    },
     [actionTypes.fetchUserTimeout]: state => ({
       ...state,
       userFetchState: {
@@ -516,6 +488,8 @@ export const reducer = handleActions(
     [settingsTypes.updateMyQuincyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyPortfolioComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyExperienceComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.resetMyEditorLayoutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

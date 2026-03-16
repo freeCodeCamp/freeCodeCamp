@@ -3,6 +3,7 @@ id: 68443eddeab5bb2d7d6e44bf
 title: Task 45
 challengeType: 22
 dashedName: task-45
+lang: en-US
 ---
 
 <!-- (Audio) Bob: Last, where should we set up the break room? -->

@@ -1,6 +1,6 @@
 {
   "name": "React State and Hooks Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-react-state-and-hooks",

@@ -1,14 +1,14 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 
-import { STRIPE_SECRET_KEY } from '../../utils/env';
+import { STRIPE_SECRET_KEY } from '../../utils/env.js';
 import {
   donationSubscriptionConfig,
   allStripeProductIdsArray
-} from '../../../../shared/config/donation-settings';
-import * as schemas from '../../schemas';
-import { inLastFiveMinutes } from '../../utils/validate-donation';
-import { findOrCreateUser } from '../helpers/auth-helpers';
+} from '@freecodecamp/shared/config/donation-settings';
+import * as schemas from '../../schemas.js';
+import { inLastFiveMinutes } from '../../utils/validate-donation.js';
+import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 /**
  * Plugin for public donation endpoints.
@@ -123,32 +123,35 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const isValidCustomer = typeof subscription.customer === 'string';
 
         if (!isSubscriptionActive) {
-          log.warn('Invalid subscription status', {
-            status: subscription.status
-          });
+          log.warn(
+            { status: subscription.status },
+            'Invalid subscription status'
+          );
           throw new Error(
             `Stripe subscription information is invalid: ${subscriptionId}`
           );
         }
         if (!isProductIdValid) {
-          log.warn('Invalid product ID', { productId });
+          log.warn({ productId }, 'Invalid product ID');
           throw new Error(`Product ID is invalid: ${subscriptionId}`);
         }
         if (!isStartedRecently) {
-          log.warn('Subscription not recent', {
-            startTime: subscription.current_period_start
-          });
+          log.warn(
+            { startTime: subscription.current_period_start },
+            'Subscription not recent'
+          );
           throw new Error(`Subscription is not recent: ${subscriptionId}`);
         }
         if (!isValidCustomer) {
-          log.warn('Invalid customer ID', {
-            customerId: subscription.customer
-          });
+          log.warn(
+            { customerId: subscription.customer },
+            'Invalid customer ID'
+          );
           throw new Error(`Customer ID is invalid: ${subscriptionId}`);
         }
 
         const user = await findOrCreateUser(fastify, email);
-        log.debug('Found or created user', { userId: user.id });
+        log.debug({ userId: user.id }, 'Found or created user');
 
         const donation = {
           userId: user.id,

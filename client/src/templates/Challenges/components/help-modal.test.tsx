@@ -1,5 +1,8 @@
+import { describe, it, expect, vi } from 'vitest';
 import i18n from '../../../../i18n/config-for-tests';
 import { generateSearchLink } from './help-modal';
+
+vi.unmock('react-i18next');
 
 describe('generateSearchLink', () => {
   it("should return a link with search query containing block name and challenge title if the title includes 'step'", async () => {

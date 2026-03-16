@@ -127,27 +127,22 @@ Players can disconnect from the game at any time.
 Prevent the client from trying to guess / sniff the MIME type.
 
 ```js
-async () => {
   const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['x-content-type-options'], 'nosniff');
-};
 ```
 
 Prevent cross-site scripting (XSS) attacks.
 
 ```js
-async () => {
   const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['x-xss-protection'], '1; mode=block');
-};
 ```
 
 Nothing from the website is cached in the client.
 
 ```js
-async () => {
   const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['surrogate-control'], 'no-store');
@@ -157,15 +152,12 @@ async () => {
   );
   assert.equal(parsed.headers['pragma'], 'no-cache');
   assert.equal(parsed.headers['expires'], '0');
-};
 ```
 
 The headers say that the site is powered by "PHP 7.4.3" even though it isn't (as a security measure).
 
 ```js
-async () => {
   const data = await fetch(code + '/_api/app-info');
   const parsed = await data.json();
   assert.equal(parsed.headers['x-powered-by'], 'PHP 7.4.3');
-};
 ```

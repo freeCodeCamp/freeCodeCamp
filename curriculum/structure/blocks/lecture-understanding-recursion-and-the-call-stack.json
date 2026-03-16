@@ -1,6 +1,6 @@
 {
   "name": "Understanding Recursion and the Call Stack",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-recursion-and-the-call-stack",

@@ -1,5 +1,6 @@
 import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
+
 // eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
 import type {
@@ -33,16 +34,12 @@ import type {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import {
-  canSaveToDB,
-  challengeTypes
-} from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge,
   initTests,
   stopResetting,
   openModal,
@@ -68,9 +65,18 @@ import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
+// Direct from npm, license in react-types-licence
+import reactTypes from './react-types.json';
+
 import './editor.css';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+
+const monacoModelFileMap = {
+  tsxFile: 'index.tsx',
+  reactTypes: 'react.d.ts'
+};
 
 export interface EditorProps {
   attempts: number;
@@ -97,8 +103,8 @@ export interface EditorProps {
   resizeProps: ResizeProps;
   saveChallenge: () => void;
   saveEditorContent: () => void;
+  saveSubmissionToDB?: boolean;
   setEditorFocusability: (isFocusable: boolean) => void;
-  submitChallenge: () => void;
   stopResetting: () => void;
   resetAttempts: () => void;
   tests: Test[];
@@ -116,19 +122,33 @@ export interface EditorProps {
   showIndependentLowerJaw?: boolean;
 }
 
-// TODO: this is grab bag of unrelated properties.  There's no need for them to
-// all be in the same object.
-interface EditorProperties {
+interface MonacoInstances {
   editor?: editor.IStandaloneCodeEditor;
   model?: editor.ITextModel;
-  descriptionZoneId: string;
-  insideEditDecId: string;
-  descriptionZoneTop: number;
-  outputZoneTop: number;
-  outputZoneId: string;
-  descriptionNode?: HTMLDivElement;
-  descriptionWidget?: editor.IContentWidget;
-  outputWidget?: editor.IOverlayWidget;
+}
+
+interface DescriptionZoneState {
+  zoneId: string;
+  top: number;
+  node?: HTMLDivElement;
+  widget?: editor.IContentWidget;
+}
+
+interface OutputZoneState {
+  zoneId: string;
+  top: number;
+  widget?: editor.IOverlayWidget;
+}
+
+interface EditableRegionState {
+  decorationId: string;
+}
+
+interface EditorState {
+  monaco: MonacoInstances;
+  descriptionZone: DescriptionZoneState;
+  outputZone: OutputZoneState;
+  editableRegion: EditableRegionState;
 }
 
 const mapStateToProps = createSelector(
@@ -145,7 +165,10 @@ const mapStateToProps = createSelector(
   (
     attempts: number,
     canFocus: boolean,
-    { challengeType }: { challengeType: number },
+    {
+      challengeType,
+      saveSubmissionToDB
+    }: { challengeType: number; saveSubmissionToDB?: boolean },
     open,
     previewOpen: boolean,
     isResetting: boolean,
@@ -157,6 +180,7 @@ const mapStateToProps = createSelector(
     attempts,
     canFocus: open ? false : canFocus,
     challengeType,
+    saveSubmissionToDB,
     previewOpen,
     isResetting,
     isSignedIn,
@@ -174,12 +198,30 @@ const mapDispatchToProps = {
   saveEditorContent,
   setEditorFocusability,
   updateFile,
-  submitChallenge,
   initTests,
   stopResetting,
   resetAttempts,
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
+};
+
+const setupTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  monaco.editor.createModel(reactTypes['react-18'], 'typescript', reactFile);
+
+  const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+  return monaco.editor.createModel('', 'typescript', file);
+};
+
+const teardownTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  const tsxFile = monaco.Uri.file(monacoModelFileMap.tsxFile);
+
+  const reactModel = monaco.editor.getModel(reactFile);
+  const tsxModel = monaco.editor.getModel(tsxFile);
+
+  reactModel?.dispose();
+  tsxModel?.dispose();
 };
 
 const modeMap = {
@@ -188,6 +230,7 @@ const modeMap = {
   js: 'javascript',
   jsx: 'javascript',
   ts: 'typescript',
+  tsx: 'typescript',
   py: 'python',
   python: 'python'
 };
@@ -230,13 +273,20 @@ const defineMonacoThemes = (
   });
 };
 
-const initialData: EditorProperties = {
-  descriptionZoneId: '',
-  insideEditDecId: '',
-  descriptionZoneTop: 0,
-  outputZoneId: '',
-  outputZoneTop: 0
-};
+const createInitialEditorState = (): EditorState => ({
+  monaco: {},
+  descriptionZone: {
+    zoneId: '',
+    top: 0
+  },
+  outputZone: {
+    zoneId: '',
+    top: 0
+  },
+  editableRegion: {
+    decorationId: ''
+  }
+});
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
@@ -254,14 +304,19 @@ const Editor = (props: EditorProps): JSX.Element => {
   // only take effect during the next render, which is too late. We could use
   // plain objects here, but useRef is shared between instances, so avoids
   // unnecessary object creation.
+  // Each Editor instance (e.g. per file in MultifileEditor) must get its own
+  // nested state; a shallow copy would share refs across instances and cause
+  // "element was detached" and wrong-editor behavior.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
-  const dataRef = useRef<EditorProperties>({ ...initialData });
+  const dataRef = useRef<EditorState>(createInitialEditorState());
   const [lowerJawContainer, setLowerJawContainer] =
     React.useState<HTMLDivElement | null>(null);
 
+  const submitChallenge = useSubmit();
+
   const submitChallengeDebounceRef = useRef(
-    debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
+    debounce(submitChallenge, 1000, { leading: true, trailing: false })
   );
 
   const player = useRef<{
@@ -352,19 +407,35 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
+    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+      ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
+      jsx: monaco.languages.typescript.JsxEmit.Preserve,
+      allowUmdGlobalAccess: true
+    });
+
     defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
+    function createModel(contents: string, language: string) {
+      if (language !== 'typescript') {
+        return monaco.editor.createModel(contents, language);
+      } else {
+        const model = setupTSModels(monaco);
+        model.setValue(contents);
+        return model;
+      }
+    }
+
     const model =
-      dataRef.current.model ||
-      monaco.editor.createModel(
+      dataRef.current.monaco.model ||
+      createModel(
         challengeFile?.contents ?? '',
         modeMap[challengeFile?.ext ?? 'html']
       );
-    dataRef.current.model = model;
+    dataRef.current.monaco.model = model;
 
     if (player.current.shouldPlay && !player.current.sampler) {
       void import('tone').then(tone => {
@@ -386,7 +457,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   // changes coming from outside the editor (such as code resets).
   const resetEditorValues = () => {
     const { challengeFiles, fileKey } = props;
-    const { model } = dataRef.current;
+    const { model } = dataRef.current.monaco;
 
     const initialContents = challengeFiles?.find(
       challengeFile => challengeFile.fileKey === fileKey
@@ -402,7 +473,10 @@ const Editor = (props: EditorProps): JSX.Element => {
   // reacts to the Tab key. Setting it to true allows the user to tab
   // out of the editor. False keeps it inside the editor and creates a tab.
   const setMonacoTabTrapped = (trapped: boolean) =>
-    dataRef.current.editor?.createContextKey('editorTabMovesFocus', !trapped);
+    dataRef.current.monaco.editor?.createContextKey(
+      'editorTabMovesFocus',
+      !trapped
+    );
 
   const editorDidMount = (
     editor: editor.IStandaloneCodeEditor,
@@ -411,7 +485,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { isMobileLayout, isUsingKeyboardInTablist } = props;
     // TODO this should *probably* be set on focus
     editorRef.current = editor;
-    dataRef.current.editor = editor;
+    dataRef.current.monaco.editor = editor;
 
     if (hasEditableRegion()) {
       initializeRegions();
@@ -584,7 +658,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
       run:
-        canSaveToDB(props.challengeType) && props.isSignedIn
+        props.saveSubmissionToDB && props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage
@@ -713,7 +787,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const descriptionZoneCallback = (
     changeAccessor: editor.IViewZoneChangeAccessor
   ) => {
-    const editor = dataRef.current.editor;
+    const editor = dataRef.current.monaco.editor;
     if (!editor) return;
     const domNode = createDescription(editor);
 
@@ -733,15 +807,15 @@ const Editor = (props: EditorProps): JSX.Element => {
       // This is called when the editor dimensions change and AFTER the
       // text in the editor has shifted.
       onDomNodeTop: () => {
-        dataRef.current.descriptionZoneTop =
+        dataRef.current.descriptionZone.top =
           editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
           domNode.offsetHeight;
-        if (dataRef.current.descriptionWidget)
-          editor.layoutContentWidget(dataRef.current.descriptionWidget);
+        if (dataRef.current.descriptionZone.widget)
+          editor.layoutContentWidget(dataRef.current.descriptionZone.widget);
       }
     };
 
-    dataRef.current.descriptionZoneId = changeAccessor.addZone(viewZone);
+    dataRef.current.descriptionZone.zoneId = changeAccessor.addZone(viewZone);
   };
 
   function tryToExecuteChallenge() {
@@ -763,26 +837,27 @@ const Editor = (props: EditorProps): JSX.Element => {
     // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
     // not the editor may report the wrong value for position of the lines.
     editor.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.outputZoneId);
+      changeAccessor.removeZone(dataRef.current.outputZone.zoneId);
       const viewZone = {
         afterLineNumber: getLastLineOfEditableRegion(),
         heightInPx: lowerJawContainer.offsetHeight,
         domNode: document.createElement('div'),
         onComputedHeight: () =>
-          dataRef.current.outputWidget &&
-          editor.layoutOverlayWidget(dataRef.current.outputWidget),
+          dataRef.current.outputZone.widget &&
+          editor.layoutOverlayWidget(dataRef.current.outputZone.widget),
         onDomNodeTop: (top: number) => {
-          dataRef.current.outputZoneTop = top;
-          if (dataRef.current.outputWidget)
-            editor.layoutOverlayWidget(dataRef.current.outputWidget);
+          dataRef.current.outputZone.top = top;
+          if (dataRef.current.outputZone.widget)
+            editor.layoutOverlayWidget(dataRef.current.outputZone.widget);
         }
       };
-      dataRef.current.outputZoneId = changeAccessor.addZone(viewZone);
+      dataRef.current.outputZone.zoneId = changeAccessor.addZone(viewZone);
     });
   };
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
-    if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
+    if (dataRef.current.descriptionZone.node)
+      return dataRef.current.descriptionZone.node;
     const { description, title, isChallengeCompleted } = props;
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
@@ -836,7 +911,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode.style.width = `${getEditorContentWidth(editor)}px`;
 
     domNode.style.top = getDescriptionZoneTop();
-    dataRef.current.descriptionNode = domNode;
+    dataRef.current.descriptionZone.node = domNode;
     return domNode;
   }
 
@@ -871,7 +946,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function resetMarginDecorations() {
-    const { model, insideEditDecId } = dataRef.current;
+    const { model } = dataRef.current.monaco;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
     const range = model?.getDecorationRange(insideEditDecId);
     if (range) {
       updateEditableRegion(range, { model });
@@ -980,7 +1056,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     options: editor.IModelDecorationOptions = {}
   ) {
     const { model } = modelContext;
-    const { insideEditDecId } = dataRef.current;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
 
     const oldOptions = model?.getDecorationOptions(insideEditDecId);
     const lineDecoration = {
@@ -994,23 +1070,23 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function getDescriptionZoneTop() {
-    return `${dataRef.current.descriptionZoneTop}px`;
+    return `${dataRef.current.descriptionZone.top}px`;
   }
 
   function getOutputZoneTop() {
-    return `${dataRef.current.outputZoneTop}px`;
+    return `${dataRef.current.outputZone.top}px`;
   }
 
   function getLineBeforeEditableRegion() {
-    const range = dataRef.current.model?.getDecorationRange(
-      dataRef.current.insideEditDecId
+    const range = dataRef.current.monaco.model?.getDecorationRange(
+      dataRef.current.editableRegion.decorationId
     );
     return range ? range.startLineNumber - 1 : 1;
   }
 
   function getLastLineOfEditableRegion() {
-    const range = dataRef.current.model?.getDecorationRange(
-      dataRef.current.insideEditDecId
+    const range = dataRef.current.monaco.model?.getDecorationRange(
+      dataRef.current.editableRegion.decorationId
     );
     return range ? range.endLineNumber : 1;
   }
@@ -1018,7 +1094,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   // This Range covers all the text in the editable region,
   const getLinesCoveringEditableRegion = () => {
     const monaco = monacoRef.current;
-    const { model, insideEditDecId } = dataRef.current;
+    const { model } = dataRef.current.monaco;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
     // TODO: this is a little low-level, but we should bail if there is no
     // editable region defined.
     if (!insideEditDecId || !model || !monaco) {
@@ -1046,21 +1123,23 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function focusIfTargetEditor() {
-    const { editor } = dataRef.current;
+    const { editor } = dataRef.current.monaco;
     const { canFocusOnMountRef } = props;
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
-      editor.focus();
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
-      editor.focus();
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     }
   }
 
   function initializeRegions() {
-    const { model, editor } = dataRef.current;
+    const { model, editor } = dataRef.current.monaco;
     const monaco = monacoRef.current;
     if (!model || !monaco || !editor) return;
     const editableRegion = getEditableRegionFromRedux();
@@ -1069,10 +1148,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       editableRegion[1] - 1
     ]);
 
-    dataRef.current.insideEditDecId = initializeEditableRegion(editableRange, {
-      monaco,
-      model
-    })[0];
+    dataRef.current.editableRegion.decorationId = initializeEditableRegion(
+      editableRange,
+      {
+        monaco,
+        model
+      }
+    )[0];
   }
 
   const createWidget = (
@@ -1110,15 +1192,15 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   function addWidgetsToRegions() {
-    const editor = dataRef.current.editor;
+    const editor = dataRef.current.monaco.editor;
     if (!editor) return;
 
     const descriptionNode = createDescription(editor);
 
     const lowerJawNode = createLowerJawContainer(editor);
 
-    if (!dataRef.current.descriptionWidget) {
-      dataRef.current.descriptionWidget = createWidget(
+    if (!dataRef.current.descriptionZone.widget) {
+      dataRef.current.descriptionZone.widget = createWidget(
         editor,
         'description.widget',
         descriptionNode,
@@ -1127,36 +1209,36 @@ const Editor = (props: EditorProps): JSX.Element => {
       // this order (add widget, change zone) is necessary, since the zone
       // relies on the domnode being in the DOM to calculate its height - that
       // doesn't happen until the widget is added.
-      editor.addContentWidget(dataRef.current.descriptionWidget);
+      editor.addContentWidget(dataRef.current.descriptionZone.widget);
       editor.changeViewZones(descriptionZoneCallback);
       // Now that the description zone is in place, the browser knows its height
       // and we can use that to calculate the top of the output zone.  If we do
       // not do this the output zone will be on top of the description zone,
       // initially.
-      dataRef.current.outputZoneTop = editor.getTopForLineNumber(
+      dataRef.current.outputZone.top = editor.getTopForLineNumber(
         getLastLineOfEditableRegion() + 1
       );
     }
-    if (!dataRef.current.outputWidget) {
-      dataRef.current.outputWidget = createWidget(
+    if (!dataRef.current.outputZone.widget) {
+      dataRef.current.outputZone.widget = createWidget(
         editor,
         'output.widget',
         lowerJawNode,
         getOutputZoneTop
       );
-      editor.addOverlayWidget(dataRef.current.outputWidget);
+      editor.addOverlayWidget(dataRef.current.outputZone.widget);
     }
 
     editor.onDidScrollChange(() => {
-      if (dataRef.current.descriptionWidget)
-        editor.layoutContentWidget(dataRef.current.descriptionWidget);
-      if (dataRef.current.outputWidget)
-        editor.layoutOverlayWidget(dataRef.current.outputWidget);
+      if (dataRef.current.descriptionZone.widget)
+        editor.layoutContentWidget(dataRef.current.descriptionZone.widget);
+      if (dataRef.current.outputZone.widget)
+        editor.layoutOverlayWidget(dataRef.current.outputZone.widget);
     });
   }
 
   function addContentChangeListener() {
-    const { model } = dataRef.current;
+    const { model } = dataRef.current.monaco;
     const monaco = monacoRef.current;
     if (!monaco) return;
 
@@ -1235,7 +1317,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     // If a challenge is reset, it needs to communicate that change to the
     // editor.
-    const { editor } = dataRef.current;
+    const { editor } = dataRef.current.monaco;
 
     if (props.isResetting) {
       // NOTE: this looks a lot like a race condition, since stopResetting gets
@@ -1274,7 +1356,8 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.previewOpen]);
 
   useEffect(() => {
-    const { model, insideEditDecId } = dataRef.current;
+    const { model } = dataRef.current.monaco;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
     const isChallengeComplete = challengeIsComplete();
     const range = model?.getDecorationRange(insideEditDecId);
     if (range && isChallengeComplete) {
@@ -1289,7 +1372,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.tests]);
 
   useEffect(() => {
-    const editor = dataRef.current.editor;
+    const editor = dataRef.current.monaco.editor;
     editor?.layout();
     // layout() resets the monaco tab trapping back to default (true), so we
     // need to untrap it if the user had it set to false.
@@ -1299,9 +1382,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, [props.dimensions]);
 
   function updateDescriptionZone() {
-    const editor = dataRef.current.editor;
+    const editor = dataRef.current.monaco.editor;
     editor?.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.descriptionZoneId);
+      changeAccessor.removeZone(dataRef.current.descriptionZone.zoneId);
       descriptionZoneCallback(changeAccessor);
     });
   }
@@ -1340,6 +1423,16 @@ const Editor = (props: EditorProps): JSX.Element => {
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
+          editorWillUnmount={(editor, monaco) => {
+            // Any model we've created has to be manually disposed of to prevent
+            // memory leaks.
+            const language = modeMap[challengeFile?.ext ?? 'html'];
+            if (language === 'typescript') {
+              teardownTSModels(monaco);
+            } else {
+              editor.getModel()?.dispose();
+            }
+          }}
           onChange={onChange}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
@@ -1358,7 +1451,10 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToSubmitChallenge={tryToSubmitChallenge}
             isSignedIn={props.isSignedIn}
             updateContainer={() =>
-              updateOutputViewZone(lowerJawContainer, dataRef.current.editor)
+              updateOutputViewZone(
+                lowerJawContainer,
+                dataRef.current.monaco.editor
+              )
             }
           />,
           lowerJawContainer

@@ -1,9 +1,9 @@
 import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
-import growthBook from './growth-book';
+import growthBook from './growth-book.js';
 
 vi.mock('../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../utils/env')>();
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
   return {
     ...actual,
     // We're only interested in the production behaviour

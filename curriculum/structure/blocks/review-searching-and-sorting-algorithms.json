@@ -1,6 +1,6 @@
 {
   "name": "Searching and Sorting Algorithms Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-searching-and-sorting-algorithms",
   "challengeOrder": [
     {
@@ -9,6 +9,6 @@
     }
   ],
   "helpCategory": "Python",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link"
 }

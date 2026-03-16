@@ -3,13 +3,20 @@ id: 655b275cadbebf5fc0f0db05
 title: Task 82
 challengeType: 22
 dashedName: task-82
+lang: en-US
 ---
 
 <!-- (Audio) Maria: On Tuesdays, I learn Japanese. I take online lessons at 7. -->
 
 # --description--
 
-Focus on the specific actions and timing of Maria's activities on Tuesdays.
+To `take` can mean different things depending on the situation. In the context of learning, to `take` means to attend or participate in a class or course. For example:
+
+- `I take online lessons at 7.` - Here, `take` means to attend the lessons.
+
+- `She is taking a programming course this semester.` - Here, `taking` means she is enrolled in and attending the course.
+
+So, when you say `take lessons` or `take a course`, you are talking about joining or attending them, not physically taking something.
 
 # --fillInTheBlank--
 
@@ -23,7 +30,7 @@ Focus on the specific actions and timing of Maria's activities on Tuesdays.
 
 ### --feedback--
 
-Used here to describe the action of participating in her lessons.
+This verb describes the action of participating in the lessons.
 
 ---
 
@@ -31,7 +38,7 @@ Used here to describe the action of participating in her lessons.
 
 ### --feedback--
 
-Specifies how her lessons occur - in her case, in a virtual environment.
+This word refers to a virtual environment.
 
 # --scene--
 

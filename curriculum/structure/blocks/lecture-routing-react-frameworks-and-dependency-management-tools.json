@@ -1,6 +1,6 @@
 {
   "name": "Routing, React Frameworks, and Dependency Management Tools",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-routing-react-frameworks-and-dependency-management-tools",

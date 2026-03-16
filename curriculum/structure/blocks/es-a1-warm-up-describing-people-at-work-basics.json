@@ -1,0 +1,11 @@
+{
+  "name": "Describing People at Work Basics",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-warm-up-describing-people-at-work-basics",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696ff8e05c223b459e54c365", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "warm-up"
+}

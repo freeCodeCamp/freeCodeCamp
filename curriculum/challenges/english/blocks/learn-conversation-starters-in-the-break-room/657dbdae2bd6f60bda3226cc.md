@@ -3,19 +3,20 @@ id: 657dbdae2bd6f60bda3226cc
 title: Task 81
 challengeType: 22
 dashedName: task-81
+lang: en-US
 ---
 
 <!-- (audio) Tom: Tell me about our team meetings, Sophie. Do they happen every week? -->
-<!-- Sophie: Yes, they do. We have meetings on Monday mornings. -->
-
 
 # --description--
 
-When you want to know how often something happens, you can use `every` followed by a time period like `day,` `week,` or `year.` In this dialogue, Tom is asking about the frequency of the team meetings.
+When you want to know how often something happens, you can use `every` followed by a time period like `day`, `week`, or `year`.
+
+In the dialogue, Tom is asking about the frequency of the team meetings.
 
 # --instructions--
 
-Listen to the audio to complete the sentence below.
+Listen to the audio and complete the sentence below.
 
 # --fillInTheBlank--
 
@@ -29,8 +30,7 @@ Listen to the audio to complete the sentence below.
 
 ### --feedback--
 
-Tom is asking if the meetings happen every week.
-
+This word is used to ask if the meetings happen weekly.
 
 # --scene--
 

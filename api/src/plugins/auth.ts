@@ -3,9 +3,9 @@ import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
-import { JWT_SECRET } from '../utils/env';
-import { type Token, isExpired } from '../utils/tokens';
-import { ERRORS } from '../exam-environment/utils/errors';
+import { JWT_SECRET } from '../utils/env.js';
+import { type Token, isExpired } from '../utils/tokens.js';
+import { ERRORS } from '../exam-environment/utils/errors.js';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -156,9 +156,12 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       });
 
     if (!token) {
-      return {
-        message: 'Token not found'
-      };
+      void reply.code(403);
+      return reply.send(
+        ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'Provided token is revoked.'
+        )
+      );
     }
     // We're using token.userId since it's possible for the user record to be
     // malformed and for prisma to throw while trying to find the user.

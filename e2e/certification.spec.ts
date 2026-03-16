@@ -1,42 +1,8 @@
-import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
-import {
-  deleteAllEmails,
-  getAllEmails,
-  getFirstEmail,
-  getSubject
-} from './utils/mailhog';
 
-test.describe('Claim a certification - almost certified user', () => {
-  test.beforeEach(async () => {
-    await deleteAllEmails();
-    execSync('node ./tools/scripts/seed/seed-demo-user --unclaimed-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
-  });
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
-  test('User receives a congratulations email on completing all certs', async ({
-    page
-  }) => {
-    await page.goto('/settings#cert-front-end-development-libraries');
-    await page
-      .getByRole('button', { name: 'Claim Certification Front End' })
-      .click();
-    // verify that an email is sent
-    await expect(async () => {
-      const emails = await getAllEmails();
-      expect(emails.items).toHaveLength(1);
-      expect(getSubject(getFirstEmail(emails))).toBe(
-        'Congratulations on completing all of the freeCodeCamp certifications!'
-      );
-    }).toPass();
-  });
-});
+// TODO: Include fullstack emails when claiming fullstack is implemented.
 
 test.describe('Certification page - Non Microsoft', () => {
   test.beforeEach(async ({ page }) => {
@@ -90,14 +56,14 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(linkedinLink).toBeVisible();
     await expect(linkedinLink).toHaveAttribute(
       'href',
-      `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Responsive%20Web%20Design&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design&certId=certifieduser-rwd`
+      `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Legacy%20Responsive%20Web%20Design%20V8&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design&certId=certifieduser-rwd`
     );
 
     const twitterLink = certLink.getByTestId('twitter-share-btn');
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      `https://twitter.com/intent/tweet?text=I just earned the Responsive%20Web%20Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
+      `https://x.com/intent/post?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
     const projectLinks = certLink.getByTestId('project-links');
@@ -257,7 +223,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      'https://twitter.com/intent/tweet?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
+      'https://x.com/intent/post?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
     const projectLinks = certLink.getByTestId('project-links');
@@ -277,5 +243,27 @@ test.describe('Certification page - Microsoft', () => {
         'If you suspect that any of these projects violate the academic honesty policy, please report this to our team.'
       )
     ).toHaveCount(0);
+  });
+});
+
+test.describe('Certification page - Current Certifications', () => {
+  const currentCertifications = [
+    { slug: 'python-v9', title: 'Python' },
+    { slug: 'a2-english-for-developers', title: 'A2 English for Developers' },
+    { slug: 'b1-english-for-developers', title: 'B1 English for Developers' },
+    { slug: 'javascript-v9', title: 'JavaScript' },
+    { slug: 'relational-databases-v9', title: 'Relational Database' },
+    { slug: 'responsive-web-design-v9', title: 'Responsive Web Design' },
+    { slug: 'foundational-c-sharp-with-microsoft', title: 'Foundational C#' }
+  ];
+  currentCertifications.forEach(cert => {
+    test(`should show the correct heading for ${cert.title} Certification`, async ({
+      page
+    }) => {
+      await page.goto(`/certification/certifieduser/${cert.slug}`);
+      await expect(page.getByTestId('project-links')).toContainText(
+        'As part of this certification, Full Stack User passed the following exam: '
+      );
+    });
   });
 });

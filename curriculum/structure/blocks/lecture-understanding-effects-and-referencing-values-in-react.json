@@ -1,6 +1,6 @@
 {
   "name": "Understanding Effects and Referencing Values in React",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-effects-and-referencing-values-in-react",

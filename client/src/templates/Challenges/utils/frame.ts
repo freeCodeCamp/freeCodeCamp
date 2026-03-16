@@ -1,6 +1,8 @@
 import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
+import { prefixDoctype } from '@freecodecamp/challenge-builder/build';
+
 import {
   version as _helperVersion,
   type FCCTestRunner
@@ -12,6 +14,7 @@ import type {
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
 import { Hooks } from '../../../redux/prop-types';
+import { pathPrefix } from '../../../../utils/gatsby/path-prefix';
 
 export const helperVersion = _helperVersion;
 
@@ -23,7 +26,7 @@ declare global {
 
 const utilsFormat: <T>(x: T) => string = format;
 
-export interface Source {
+interface Source {
   index: string;
   contents?: string;
   editableContents: string;
@@ -85,7 +88,7 @@ export const scrollManager = new ScrollManager();
 export const mainPreviewId = 'fcc-main-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
-const ASSET_PATH = `/js/test-runner/${helperVersion}/`;
+const ASSET_PATH = `${pathPrefix}/js/test-runner/${helperVersion}/`;
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 
@@ -169,19 +172,14 @@ function getContentDocument<T extends Document = FrameDocument>(
   return frameDocument as T;
 }
 
-export const runTestInTestFrame = async function (
-  test: string,
+export const runTestsInTestFrame = async function (
+  tests: string[],
   timeout: number,
   type: 'dom' | 'javascript' | 'python'
-): Promise<TestResult | undefined> {
+): Promise<TestResult[] | undefined> {
   const runner = window?.FCCTestRunner.getRunner(type);
 
-  return await Promise.race([
-    new Promise<
-      { pass: boolean } | { err: { message: string; stack?: string } }
-    >((_, reject) => setTimeout(() => reject(Error('timeout')), timeout)),
-    runner?.runTest(test)
-  ]);
+  return runner?.runAllTests(tests, timeout);
 };
 
 export const prepTestRunner = async ({
@@ -414,19 +412,6 @@ const waitForFrame = (frameContext: Context) => {
       resolve();
     });
   });
-};
-
-export const prefixDoctype = ({
-  build,
-  sources
-}: {
-  build: string;
-  sources: Source;
-}) => {
-  // DOCTYPE should be the first thing written to the frame, so if the user code
-  // includes a DOCTYPE declaration, we need to find it and write it first.
-  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  return doctype + build;
 };
 
 const createContent = (

@@ -3,6 +3,7 @@ id: 67ee6d7bcacdc02ff7d9beb2
 title: Task 69
 challengeType: 22
 dashedName: task-69
+lang: en-US
 ---
 
 <!-- (Audio) Lisa: It could be a JavaScript issue. Maybe there's a problem with the event handling. -->

@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { genericError, savedChallenge } from '../types';
+import { genericError, savedChallenge } from '../types.js';
 
 export const modernChallengeCompleted = {
   body: Type.Object({
@@ -28,6 +28,12 @@ export const modernChallengeCompleted = {
       type: Type.Literal('error'),
       message: Type.Literal(
         'That does not appear to be a valid challenge submission.'
+      )
+    }),
+    403: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal(
+        'Exam submissions are not allowed on this endpoint.'
       )
     }),
     default: genericError

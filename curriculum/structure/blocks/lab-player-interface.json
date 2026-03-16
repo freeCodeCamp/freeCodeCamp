@@ -1,0 +1,15 @@
+{
+  "name": "Build a Player Interface",
+  "isUpcomingChange": false,
+  "dashedName": "lab-player-interface",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68e2c945cc1d8e778152be31",
+      "title": "Build a Player Interface"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

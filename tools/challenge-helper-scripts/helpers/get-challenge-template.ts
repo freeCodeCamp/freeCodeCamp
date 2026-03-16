@@ -1,29 +1,44 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
+import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
 interface ChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   title: string;
   dashedName: string;
   challengeType: string;
   questionCount?: number;
+  challengeLang?: ChallengeLang;
+  inputType?: string;
 }
 
 const buildFrontMatter = ({
   challengeId,
   title,
   dashedName,
-  challengeType
-}: ChallengeOptions) => `---
+  challengeType,
+  challengeLang,
+  inputType
+}: ChallengeOptions) => {
+  const langString = challengeLang
+    ? `
+lang: ${challengeLang}`
+    : '';
+  const inputTypeString = inputType
+    ? `
+inputType: ${inputType}`
+    : '';
+
+  return `---
 id: ${challengeId.toString()}
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
-dashedName: ${dashedName}
+dashedName: ${dashedName}${langString}${inputTypeString}
 ---`;
+};
 
 const buildFrontMatterWithVideo = ({
   challengeId,
@@ -71,19 +86,10 @@ Test 1
 \`\`\`
 `;
 
-const getQuizChallengeTemplate = (
-  options: ChallengeOptions
-): string => `${buildFrontMatter(options)}
+const getQuizChallengeTemplate = (options: ChallengeOptions): string => {
+  const count = options.questionCount!;
 
-# --description--
-
-To pass the quiz, you must correctly answer at least ${options.questionCount! == 20 ? '18' : '9'} of the ${options.questionCount!.toString()} questions below.
-
-# --quizzes--
-
-## --quiz--
-
-${`### --question--
+  const regularQuestion = `### --question--
 
 #### --text--
 
@@ -105,7 +111,65 @@ Placeholder distractor 3
 
 Placeholder answer
 
-`.repeat(options.questionCount! - 1)}
+`;
+
+  const questionWithAudio = `### --question--
+
+#### --text--
+
+Placeholder question
+
+#### --audio--
+
+\`\`\`json
+{
+  "audio": {
+    "filename": "1.1-1.mp3",
+    "startTimestamp": 5.7,
+    "finishTimestamp": 6.48
+  },
+  "transcript": [
+    {
+      "character": "Tom",
+      "text": "Hi, I'm Tom."
+    }
+  ]
+}
+\`\`\`
+
+#### --distractors--
+
+Placeholder distractor 1
+
+---
+
+Placeholder distractor 2
+
+---
+
+Placeholder distractor 3
+
+#### --answer--
+
+Placeholder answer
+
+`;
+
+  const firstQuestion = options.challengeLang
+    ? questionWithAudio
+    : regularQuestion;
+
+  return `${buildFrontMatter(options)}
+
+# --description--
+
+To pass the quiz, you must correctly answer at least ${count == 20 ? '18' : '9'} of the ${count.toString()} questions below.
+
+# --quizzes--
+
+## --quiz--
+
+${firstQuestion}${regularQuestion.repeat(Math.max(0, count - 2))}
 ### --question--
 
 #### --text--
@@ -128,6 +192,7 @@ Placeholder distractor 3
 
 Placeholder answer
 `;
+};
 
 const getVideoChallengeTemplate = (
   options: ChallengeOptions
@@ -197,7 +262,25 @@ Answer 3
 
 const getMultipleChoiceChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatter(options)}
+): string => {
+  const correctAnswerIndex = Math.floor(Math.random() * 4) + 1;
+  const feedback = (index: number) =>
+    index === correctAnswerIndex
+      ? ''
+      : `
+### --feedback--
+
+Include feedback for answer ${index} here.
+`;
+
+  const answers = [1, 2, 3, 4]
+    .map(
+      index => `Answer ${index}
+${feedback(index)}`
+    )
+    .join('\n---\n\n');
+
+  return `${buildFrontMatter(options)}
 
 # --description--
 
@@ -211,40 +294,12 @@ ${options.title} question?
 
 ## --answers--
 
-Answer 1
-
-### --feedback--
-
-Include feedback for answer 1 here, but remove these last four lines if this is the correct answer.
-
----
-
-Answer 2
-
-### --feedback--
-
-Include feedback for answer 2 here, but remove these last four lines if this is the correct answer.
-
----
-
-Answer 3
-
-### --feedback--
-
-Include feedback for answer 3 here, but remove these last four lines if this is the correct answer.
-
----
-
-Answer 4
-
-### --feedback--
-
-Include feedback for answer 4 here, but remove these last four lines if this is the correct answer.
-
+${answers}
 ## --video-solution--
 
-1
+${correctAnswerIndex}
 `;
+};
 
 const getFillInTheBlankChallengeTemplate = (
   options: ChallengeOptions
@@ -344,7 +399,7 @@ Do the assignment.
 `;
 
 interface DailyCodingChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeNumber: number;
 }
 
@@ -353,9 +408,9 @@ export const getDailyJavascriptChallengeTemplate = ({
   challengeNumber
 }: DailyCodingChallengeOptions) => `---
 id: ${challengeId.toString()}
-title: "JavaScript Challenge ${challengeNumber}: Placeholder"
+title: "Challenge ${challengeNumber}: Placeholder"
 challengeType: 28
-dashedName: javascript-challenge-${challengeNumber}
+dashedName: challenge-${challengeNumber}
 ---
 
 # --description--
@@ -396,9 +451,9 @@ export const getDailyPythonChallengeTemplate = ({
   challengeNumber
 }: DailyCodingChallengeOptions) => `---
 id: ${challengeId.toString()}
-title: "Python Challenge ${challengeNumber}: Placeholder"
+title: "Challenge ${challengeNumber}: Placeholder"
 challengeType: 29
-dashedName: python-challenge-${challengeNumber}
+dashedName: challenge-${challengeNumber}
 ---
 
 # --description--

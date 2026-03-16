@@ -1,11 +1,11 @@
 {
-  "name": "Basic CSS Review",
-  "blockType": "review",
+  "name": "CSS Fundamentals Review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-basic-css",
   "challengeOrder": [
-    { "id": "671a887a7e62c75e9ab1ee4a", "title": "Basic CSS Review" }
+    { "id": "671a887a7e62c75e9ab1ee4a", "title": "CSS Fundamentals Review" }
   ],
   "helpCategory": "HTML-CSS"
 }

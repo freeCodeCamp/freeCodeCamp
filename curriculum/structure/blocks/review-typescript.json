@@ -1,6 +1,6 @@
 {
   "name": "Typescript Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-typescript",

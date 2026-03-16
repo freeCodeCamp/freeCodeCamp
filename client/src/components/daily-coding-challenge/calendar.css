@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   text-align: center;
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 20px;
 }
 
 .calendar-head {
@@ -18,18 +21,86 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
   gap: 4px;
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 20px;
 }
 
 .calendar-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  padding: 10px;
-  min-height: 100px;
+  padding: 5px;
+  min-height: 200px;
   border: 1px solid var(--tertiary-color);
-  text-align: center;
   background-color: var(--primary-background);
+  text-decoration: none;
+}
+
+.calendar-day-number {
+  position: absolute;
+  font-size: 0.8em;
+  top: 0;
+  right: 5px;
+  color: var(--gray-45);
+}
+
+.dc-number {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--gray-45);
+}
+
+.dc-info {
+  position: relative;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dc-title-wrap {
+  width: 100%;
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 10px;
+}
+
+.dc-title {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.dc-checkmark {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+
+.dc-checkmark svg {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.dc-languages {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: 2px;
+}
+
+.dc-language-icon {
+  fill: var(--primary-color);
+}
+
+.dc-language-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
 .not-available:hover,
@@ -38,15 +109,15 @@
   background-color: var(--primary-background);
 }
 
-.not-available:hover .calendar-day-number,
-.not-available:active .calendar-day-number {
-  color: var(--primary-color);
-}
-
 .available:hover,
 .available:active {
   cursor: pointer;
   background-color: var(--primary-color);
+}
+
+.not-available:hover .calendar-day-number,
+.not-available:active .calendar-day-number {
+  color: var(--primary-color);
 }
 
 .available:hover .calendar-day-number,
@@ -54,10 +125,23 @@
   color: var(--primary-background);
 }
 
+.available:hover .dc-language-icon svg path,
+.available:active .dc-language-icon svg path,
 .available:hover .completed svg circle,
 .available:active .completed svg circle {
   fill: var(--primary-background);
   stroke: var(--primary-background);
+}
+
+.dc-language-icon svg path {
+  fill: var(--gray-45);
+  stroke: var(--gray-45);
+}
+
+.available:hover .dc-language-icon svg path,
+.available:active .dc-language-icon svg path {
+  fill: var(--quaternary-background);
+  stroke: var(--quaternary-background);
 }
 
 .available:hover .not-completed svg circle,
@@ -72,31 +156,59 @@
   stroke: var(--primary-color);
 }
 
-.calendar-day-number {
-  position: absolute;
-  top: 0;
-  left: 5px;
+.available:hover .dc-title,
+.available:active .dc-title,
+.available:hover .dc-language-name,
+.available:active .dc-language-name {
+  color: var(--primary-background);
 }
 
-.calendar-day svg,
-.empty-cirle {
-  width: calc(10px + 2vw);
-  height: calc(10px + 2vw);
-  max-width: 40px;
-  max-height: 40px;
-}
-
-.empty-cirle {
-  width: calc(10px + 2vw);
-  height: calc(10px + 2vw);
-  max-width: 40px;
-  max-height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--primary-color);
+.available:hover .dc-number,
+.available:active .dc-number {
+  color: var(--quaternary-background);
 }
 
 @media (max-width: 500px) {
   .calendar-day {
     min-height: 75px;
+  }
+}
+
+@media (max-width: 815px) {
+  .calendar-day {
+    min-height: 100px;
+    padding: 0;
+  }
+
+  .calendar-day-number {
+    display: none;
+  }
+
+  .dc-info {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .dc-title-wrap {
+    display: none;
+  }
+
+  .dc-checkmark {
+    top: unset;
+  }
+
+  .dc-checkmark svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .dc-title-wrap {
+    padding: 0;
+  }
+
+  .dc-title {
+    font-size: 0.8em;
   }
 }

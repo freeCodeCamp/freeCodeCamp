@@ -43,8 +43,7 @@ assert(
 The `Items` component should have a prop of `{ quantity: 10 }` passed from the `ShoppingCart` component.
 
 ```js
-() =>
-  assert(
+assert(
     (function () {
       const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart));
       return (

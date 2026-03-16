@@ -3,6 +3,7 @@ id: 67e5a6e34bfc4b5af2c00ddf
 title: Task 51
 challengeType: 22
 dashedName: task-51
+lang: en-US
 ---
 
 <!-- (Audio) Jessica: Well, we've discovered a critical bug that might affect the user interface. -->

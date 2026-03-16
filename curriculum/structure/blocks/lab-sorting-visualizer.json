@@ -2,7 +2,7 @@
   "name": "Build a Sorting Visualizer",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-sorting-visualizer",
   "challengeOrder": [

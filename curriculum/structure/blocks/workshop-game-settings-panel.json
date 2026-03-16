@@ -1,0 +1,28 @@
+{
+  "name": "Build a Game Settings Panel",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-game-settings-panel",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e6a99a0fd7386fb66e156f", "title": "Step 1" },
+    { "id": "68e9a3194160f8f5620ddf21", "title": "Step 2" },
+    { "id": "68f1560aff1214103ab6b59b", "title": "Step 3" },
+    { "id": "68e9a4a47d8a9802cba886b7", "title": "Step 4" },
+    { "id": "68f29dbf9125476b4808d6fb", "title": "Step 5" },
+    { "id": "68ee86e3ee07b01626a392cc", "title": "Step 6" },
+    { "id": "68e9a54dd97fd9091e18acce", "title": "Step 7" },
+    { "id": "68f15ef0446464325ce1aa45", "title": "Step 8" },
+    { "id": "68e9a6201e2efa142d62bfe1", "title": "Step 9" },
+    { "id": "68e9a6bf1a74721a4e43e217", "title": "Step 10" },
+    { "id": "68e9a73075dc26207320811a", "title": "Step 11" },
+    { "id": "68f29753fd5524530c6e65c8", "title": "Step 12" },
+    { "id": "68e9a7bd60c971278d2d4ffc", "title": "Step 13" },
+    { "id": "68e9a834dfef752dc35f6f90", "title": "Step 14" },
+    { "id": "68f15cd397503429f0345262", "title": "Step 15" },
+    { "id": "68f16192e8a66f3b948d3ebd", "title": "Step 16" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

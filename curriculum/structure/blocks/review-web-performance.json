@@ -1,6 +1,6 @@
 {
   "name": "Web Performance Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-web-performance",

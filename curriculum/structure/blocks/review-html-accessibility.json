@@ -1,6 +1,6 @@
 {
   "name": "HTML Accessibility Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-html-accessibility",

@@ -3,6 +3,7 @@ id: 67b9becbb4fd3b0d7fc2411e
 title: Task 65
 challengeType: 22
 dashedName: task-65
+lang: en-US
 ---
 
 <!-- (Audio) David: It seems like it could lead to a lot of delays and miscommunication. -->

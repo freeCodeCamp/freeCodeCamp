@@ -13,7 +13,7 @@ function* toggleThemeSaga() {
   yield put(createFlashMessage({ ...data }));
 }
 
-function* initializeThemeSaga() {
+export function* initializeThemeSaga() {
   // Wait for the fetch userComplete action
   yield take(actionTypes.fetchUserComplete);
 

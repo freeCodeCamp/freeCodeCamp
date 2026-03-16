@@ -3,16 +3,20 @@ id: 6557dc1aa6be93c1eb4e9efb
 title: Task 29
 challengeType: 19
 dashedName: task-29
+lang: en-US
 ---
 
 <!-- (Audio) Sarah: Anyway, before leaving for work, I like to check my emails and messages to see if there are any urgent updates from the team. -->
 
 # --description--
 
-The word `if` is often used in conditional statements to talk about a possible situation and its consequences. For example:
+The word `if` means "whether or not". For example:
 
-* `If it rains, I will bring an umbrella.` (The action of bringing an umbrella depends on the possibility of rain.)
-* `If you need help, just ask.` (The offer to help is conditional on the other person needing it.)
+`She checks her emails to see if there are any urgent updates.` - This means she is looking to find out whether updates exist.
+
+`If` can also be part of a conditional statement, which shows a possible situation and its result. For example:
+
+`If there are urgent updates, I will reply immediately.` - This means replying depends on the condition of having urgent updates.
 
 # --questions--
 
@@ -22,7 +26,7 @@ What does Sarah imply by using `if` in her statement about checking emails and m
 
 ## --answers--
 
-She always finds urgent updates from her team
+She always finds urgent updates from her team.
 
 ### --feedback--
 
@@ -30,11 +34,11 @@ She always finds urgent updates from her team
 
 ---
 
-Sometimes there are urgent updates, sometimes not
+Sometimes there are urgent updates, sometimes not.
 
 ---
 
-She never checks her emails and messages
+She never checks her emails and messages.
 
 ### --feedback--
 
@@ -42,7 +46,7 @@ Sarah actually states that she does check her emails and messages.
 
 ---
 
-Checking emails is not part of her routine
+Checking emails is not part of her routine.
 
 ### --feedback--
 

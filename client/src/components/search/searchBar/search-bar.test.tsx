@@ -1,5 +1,6 @@
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { describe, it, expect, vi } from 'vitest';
 
 import { SearchBar } from './search-bar';
 
@@ -19,7 +20,7 @@ describe('<SearchBar />', () => {
 });
 
 const searchBarProps = {
-  toggleSearchDropdown: jest.fn(),
-  toggleSearchFocused: jest.fn(),
-  updateSearchQuery: jest.fn()
+  toggleSearchDropdown: vi.fn(),
+  toggleSearchFocused: vi.fn(),
+  updateSearchQuery: vi.fn()
 };

@@ -6,13 +6,17 @@
  * filename. Change the `challengeId` at the bottom to use the dashed name if
  * you want that.
  */
-import ObjectID from 'bson-objectid';
-import { createChallengeFile } from './utils';
-import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData, updateMetaData } from './helpers/project-metadata';
+import { ObjectId } from 'bson';
 
-// eslint-disable-next-line @typescript-eslint/no-base-to-string
-const challengeId = new ObjectID().toString();
+import {
+  getBlockStructure,
+  writeBlockStructure
+} from '@freecodecamp/curriculum/file-handler';
+import { createChallengeFile } from './utils.js';
+import { getProjectPath } from './helpers/get-project-info.js';
+import { getBlock, type Meta } from './helpers/project-metadata.js';
+
+const challengeId = new ObjectId().toString();
 
 /***** Only change code below this line *****/
 
@@ -141,16 +145,18 @@ Watch the video
 
 const path = getProjectPath();
 if (
-  !/freeCodeCamp\/curriculum\/challenges\/english\/[^/]+\/[^/]+\/$/.test(path)
+  !/freeCodeCamp\/curriculum\/challenges\/english\/blocks\/[^/]+\/$/.test(path)
 ) {
   throw Error(`
 You cannot run this script from anywhere other than a block folder of the English curriculum.
 In the terminal, go to the block folder where you want to create this challenge first.
-For example: 'freeCodeCamp/curriculum/challenges/english/21-a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/'
+For example: 'freeCodeCamp/curriculum/challenges/english/blocks/learn-greetings-in-your-first-day-at-the-office/'
   `);
 }
 
-const meta = getMetaData();
+const block = getBlock(path);
+
+const meta = getBlockStructure(block) as Meta;
 if (meta.challengeOrder.some(c => c.title === title)) {
   throw Error(`
     A challenge with the title ${title} already exists in this block.
@@ -162,8 +168,6 @@ meta.challengeOrder.push({
   title
 });
 
-// write the meta.json file
-updateMetaData(meta);
+void writeBlockStructure(block, meta);
 
-// write the challenge file, the first argument is the filename
 createChallengeFile(challengeId, template, path);

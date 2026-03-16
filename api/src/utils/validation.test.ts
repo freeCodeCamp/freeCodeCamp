@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isObjectID } from './validation';
+import { isObjectID } from './validation.js';
 
 describe('Validation', () => {
   describe('isObjectID', () => {

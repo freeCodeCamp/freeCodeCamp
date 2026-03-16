@@ -1,4 +1,5 @@
-import { getArgValue } from './get-arg-value';
+import { describe, it, expect } from 'vitest';
+import { getArgValue } from './get-arg-value.js';
 
 describe('getArgValue helper', () => {
   it('should throw if there no arguments', () => {

@@ -1,6 +1,6 @@
 {
   "name": "Debug a Pet Adoption Page",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "lab-debug-pet-adoption-page",

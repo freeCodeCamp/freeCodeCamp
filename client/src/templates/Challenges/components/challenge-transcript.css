@@ -1,4 +1,19 @@
 .challenge-transcript-heading {
   cursor: pointer;
   font-weight: bold;
+  margin-top: 1.5em;
+}
+
+.challenge-transcript .transcript-dialogue {
+  border: 1px solid var(--secondary-color);
+}
+
+.challenge-transcript .transcript-dialogue p {
+  margin: 0;
+  padding: 6px 13px;
+  text-align: start;
+}
+
+.challenge-transcript .transcript-dialogue p:nth-child(odd) {
+  background-color: var(--tertiary-background);
 }

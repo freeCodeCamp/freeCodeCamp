@@ -1,0 +1,513 @@
+---
+id: 696044ddc473e1631e10002a
+title: Expressing Disagreement Quiz
+challengeType: 8
+dashedName: en-b1-quiz-express-disagreement
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of how to express disagreement.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is a `stipend`?
+
+#### --distractors--
+
+A one-time bonus given after finishing a project
+
+---
+
+A payment received only for overtime work hours
+
+---
+
+A reward given for excellent performance at work
+
+#### --answer--
+
+A fixed amount of money given to cover certain expenses
+
+### --question--
+
+#### --text--
+
+Which of the following is incorrect?
+
+#### --distractors--
+
+`I don't think so` is a simple and direct way to disagree.
+
+---
+
+`I'm not sure about that` is a softer way to express doubt.
+
+---
+
+`I don't really agree` is a polite way to disagree without sounding strong.
+
+#### --answer--
+
+`I understand, but...` is a phrase used to fully agree with someone.
+
+### --question--
+
+#### --text--
+
+What is `productivity`?
+
+#### --distractors--
+
+The number of meetings a team schedules each week
+
+---
+
+The level of satisfaction employees feel at work
+
+---
+
+The tools a company uses to manage projects
+
+#### --answer--
+
+The amount of work completed within a certain period of time
+
+### --question--
+
+#### --text--
+
+Listen to the audio. How does Bob strengthen his argument? <!-- (quiz audio) Bob: I understand, but isn't office furniture also a priority? I mean, a lot of people are working from home with makeshift setups. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_11-1.mp3",
+    "startTimestamp": 18.2,
+    "finishTimestamp": 26.1
+  },
+  "transcript": [
+    {
+      "character": "Bob",
+      "text": "I understand, but isn't office furniture also a priority? I mean, a lot of people are working from home with makeshift setups."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+He uses `but` to change the topic and avoid disagreement.
+
+---
+
+He repeats the same idea without explanation.
+
+---
+
+He asks a question without giving any support.
+
+#### --answer--
+
+He uses `I mean` to explain and support his point further.
+
+### --question--
+
+#### --text--
+
+What do you describe as `makeshift`?
+
+#### --distractors--
+
+Something modern and carefully designed for long-term use
+
+---
+
+Something expensive and professionally manufactured
+
+---
+
+Something permanent and fully optimized for work
+
+#### --answer--
+
+Something temporary or not ideal but used as a solution
+
+### --question--
+
+#### --text--
+
+What does this sentence express: `Office equipment is just as important as software tools`?
+
+#### --distractors--
+
+One thing is less important than the other
+
+---
+
+One thing replaces the other completely
+
+---
+
+The speaker compares two unrelated ideas
+
+#### --answer--
+
+Both things are equally important
+
+### --question--
+
+#### --text--
+
+What is an example of a `setback`?
+
+#### --distractors--
+
+A successful release that improves team performance
+
+---
+
+A meeting that helps solve problems quickly
+
+---
+
+A new feature that increases productivity immediately
+
+#### --answer--
+
+Slow computers that delay work and reduce efficiency
+
+### --question--
+
+#### --text--
+
+Does the phrase `True, but...` show disagreement?
+
+#### --distractors--
+
+No, it shows complete agreement.
+
+---
+
+No, it ends the discussion without responding.
+
+---
+
+Yes, it rejects the other opinion strongly.
+
+#### --answer--
+
+Yes, it accepts an idea but introduces a different view.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. Does Anna agree? <!-- (quiz audio) Anna: I agree that comfort is important, but we shouldn't neglect technology. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_11-1.mp3",
+    "startTimestamp": 47.6,
+    "finishTimestamp": 51
+  },
+  "transcript": [
+    {
+      "character": "Anna",
+      "text": "I agree that comfort is important, but we shouldn't neglect technology."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She completely disagrees with the first idea.
+
+---
+
+She avoids giving any opinion about the topic.
+
+---
+
+She fully agrees without adding another point.
+
+#### --answer--
+
+She partly agrees but adds a different concern.
+
+### --question--
+
+#### --text--
+
+Which of the following best describes `asynchronous remote work`?
+
+#### --distractors--
+
+Employees work together in the same office at fixed hours
+
+---
+
+Employees must always be online at the same time
+
+---
+
+Employees complete tasks only during scheduled meetings
+
+#### --answer--
+
+Employees work remotely and complete tasks at different times
+
+### --question--
+
+#### --text--
+
+Which of the following means working together toward a common goal?
+
+#### --distractors--
+
+`Communication`
+
+---
+
+`Miscommunication`
+
+---
+
+`Delay`
+
+#### --answer--
+
+`Collaboration`
+
+### --question--
+
+#### --text--
+
+Does the phrase `That makes sense` express agreement?
+
+#### --distractors--
+
+No, it shows confusion about the topic.
+
+---
+
+No, it introduces disagreement politely.
+
+---
+
+Yes, but it asks for more explanation.
+
+#### --answer--
+
+Yes, it shows understanding and agreement.
+
+### --question--
+
+#### --text--
+
+You want to acknowledge an opposing view before presenting a counterargument, so you say: `BLANK, we should also consider another option`.
+
+#### --distractors--
+
+`Therefore`
+
+---
+
+`For example`
+
+---
+
+`In addition`
+
+#### --answer--
+
+`However`
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`I am getting used to work remotely.`
+
+---
+
+`I get used to work remotely quickly.`
+
+---
+
+`I am used to work remotely every day.`
+
+#### --answer--
+
+`I am getting used to working remotely.`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does David think about remote work? <!-- (quiz audio) David: I see your perspective, but I still think there's value in having everyone in the office. It builds team spirit and makes problem-solving easier. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_11-2.mp3",
+    "startTimestamp": 37.4,
+    "finishTimestamp": 45.2
+  },
+  "transcript": [
+    {
+      "character": "David",
+      "text": "I see your perspective, but I still think there's value in having everyone in the office. It builds team spirit and makes problem-solving easier."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+He thinks remote work has no benefits at all.
+
+---
+
+He believes communication is the main advantage of office work.
+
+---
+
+He thinks problem-solving is easier when working remotely.
+
+#### --answer--
+
+He believes working in the office improves team spirit and makes problem-solving easier.
+
+### --question--
+
+#### --text--
+
+What are `team-building activities`?
+
+#### --distractors--
+
+Tasks used to evaluate employee performance individually
+
+---
+
+Meetings focused only on technical problem discussions
+
+---
+
+Training sessions designed to teach programming languages
+
+#### --answer--
+
+Activities created to strengthen teamwork and cooperation
+
+### --question--
+
+#### --text--
+
+What is a polite response when someone thanks you?
+
+#### --distractors--
+
+`That could work.`
+
+---
+
+`That's a good suggestion.`
+
+---
+
+`That's a reasonable suggestion.`
+
+#### --answer--
+
+`Don't mention it.`
+
+### --question--
+
+#### --text--
+
+What does this sentence mean: `They have the same opinion about the new project`?
+
+#### --distractors--
+
+Their opinions changed several times recently.
+
+---
+
+Their opinions are completely opposite.
+
+---
+
+One person has no opinion about the project.
+
+#### --answer--
+
+They share an identical opinion.
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`Setup` is an arrangement of equipment or furniture.
+
+---
+
+`Laptop` is a device necessary for completing work tasks.
+
+---
+
+`Webcam` is a device used for video meetings online.
+
+#### --answer--
+
+`Headset` is equipment mainly used for printing documents.
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to mean continuing with a decision instead of changing it?
+
+#### --distractors--
+
+`We decided to stick on the original plan.`
+
+---
+
+`We decided to stick at the original plan.`
+
+---
+
+`We decided to stick into the original plan.`
+
+#### --answer--
+
+`We decided to stick with the original plan.`

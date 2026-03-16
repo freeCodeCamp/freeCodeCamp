@@ -1,6 +1,6 @@
 {
   "name": "Working with Data Fetching and Memoization in React",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-data-fetching-and-memoization-in-react",

@@ -29,7 +29,7 @@
       "title": "Step 6"
     }
   ],
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true

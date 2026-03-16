@@ -4,6 +4,7 @@ title: Build a Personal Portfolio
 challengeType: 25
 dashedName: build-a-personal-portfolio
 demoType: onClick
+saveSubmissionToDB: true
 ---
 
 # --description--
@@ -121,7 +122,6 @@ assert.isTrue(cssCheck.length > 0 || htmlSourceAttr.length > 0);
 Your `#navbar` element should always be at the top of the viewport.
 
 ```js
-(async () => {
   const timeout = milliseconds =>
     new Promise(resolve => setTimeout(resolve, milliseconds));
 
@@ -145,7 +145,6 @@ Your `#navbar` element should always be at the top of the viewport.
     'Navbar should be at the top of the viewport even after ' + 'scrolling '
   );
   window.scroll(0, 0);
-})();
 ```
 
 # --seed--

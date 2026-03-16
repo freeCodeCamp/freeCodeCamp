@@ -1,18 +1,17 @@
-const {
-  ENGLISH_CHALLENGE_NO_FILES
-} = require('./__fixtures__/challenge-objects');
-const { SIMPLE_TRANSLATION } = require('./__mocks__/mock-comments');
-const {
+import { describe, beforeEach, afterEach, it, expect, vi } from 'vitest';
+import { ENGLISH_CHALLENGE_NO_FILES } from './__fixtures__/challenge-objects';
+import { SIMPLE_TRANSLATION } from './__mocks__/mock-comments';
+import {
   translateComments,
   translateCommentsInChallenge,
   translateGeneric
-} = require('.');
+} from '.';
 
 let logSpy;
 
 describe('translation parser', () => {
   beforeEach(() => {
-    logSpy = jest.spyOn(console, 'warn').mockImplementation();
+    logSpy = vi.spyOn(console, 'warn').mockImplementation();
   });
   afterEach(() => {
     logSpy.mockRestore();

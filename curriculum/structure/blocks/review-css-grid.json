@@ -1,6 +1,6 @@
 {
   "name": "CSS Grid Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-grid",

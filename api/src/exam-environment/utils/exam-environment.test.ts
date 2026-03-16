@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
+import type { MockInstance } from 'vitest';
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentQuestionType
@@ -9,9 +10,9 @@ import {
   examAttempt,
   generatedExam,
   oid
-} from '../../../__mocks__/exam-environment-exam';
-import * as schemas from '../schemas';
-import { setupServer } from '../../../vitest.utils';
+} from '../../../__mocks__/exam-environment-exam.js';
+import * as schemas from '../schemas/index.js';
+import { setupServer } from '../../../vitest.utils.js';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
@@ -21,7 +22,7 @@ import {
   validateAttempt,
   compareAnswers,
   shuffleArray
-} from './exam-environment';
+} from './exam-environment.js';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.
@@ -29,7 +30,7 @@ import {
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
 describe('Exam Environment mocked Math.random', () => {
-  let spy: ReturnType<typeof vi.spyOn>;
+  let spy: MockInstance;
   beforeAll(() => {
     spy = vi.spyOn(Math, 'random').mockReturnValue(0.123456789);
   });
@@ -78,7 +79,8 @@ describe('Exam Environment mocked Math.random', () => {
   describe('checkPrequisites()', () => {
     it("should return true if all items in the second argument exist in the first argument's `.completedChallenges[].id`", () => {
       const user = {
-        completedChallenges: [{ id: '1' }, { id: '2' }]
+        completedChallenges: [{ id: '1' }, { id: '2' }],
+        isHonest: true
       };
       const prerequisites = ['1', '2'];
 
@@ -87,7 +89,8 @@ describe('Exam Environment mocked Math.random', () => {
 
     it("should return false if any items in the second argument do not exist in the first argument's `.completedChallenges[].id`", () => {
       const user = {
-        completedChallenges: [{ id: '2' }]
+        completedChallenges: [{ id: '2' }],
+        isHonest: false
       };
       const prerequisites = ['1', '2'];
 
@@ -97,7 +100,7 @@ describe('Exam Environment mocked Math.random', () => {
 
   describe('generateExam()', () => {
     it('should generate a randomized exam without throwing', () => {
-      const _randomizedExam = generateExam(exam);
+      expect(() => generateExam(exam)).not.toThrow();
     });
 
     it('should generate an exam matching with the correct number of question sets', () => {
@@ -199,7 +202,9 @@ describe('Exam Environment mocked Math.random', () => {
 
   describe('validateAttempt()', () => {
     it('should validate a correct attempt', () => {
-      validateAttempt(generatedExam, examAttempt.questionSets);
+      expect(() =>
+        validateAttempt(generatedExam, examAttempt.questionSets)
+      ).not.toThrow();
     });
 
     it('should invalidate an incorrect attempt', () => {
@@ -237,7 +242,7 @@ describe('Exam Environment mocked Math.random', () => {
       const allQuestions = databaseAttemptQuestionSets.flatMap(
         qs => qs.questions
       );
-      expect(allQuestions.every(q => q.submissionTimeInMS)).toBe(true);
+      expect(allQuestions.every(q => q.submissionTime)).toBe(true);
     });
 
     it('should not change the submission time of any questions that have not changed', () => {
@@ -262,7 +267,7 @@ describe('Exam Environment mocked Math.random', () => {
         userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
 
       const submissionTimes = databaseAttemptQuestionSets.flatMap(qs =>
-        qs.questions.map(q => q.submissionTimeInMS)
+        qs.questions.map(q => q.submissionTime)
       );
 
       const sameAttempt = userAttemptToDatabaseAttemptQuestionSets(
@@ -271,7 +276,7 @@ describe('Exam Environment mocked Math.random', () => {
       );
 
       const sameSubmissionTimes = sameAttempt.flatMap(qs =>
-        qs.questions.map(q => q.submissionTimeInMS)
+        qs.questions.map(q => q.submissionTime)
       );
 
       expect(submissionTimes).toEqual(sameSubmissionTimes);
@@ -312,9 +317,9 @@ describe('Exam Environment mocked Math.random', () => {
       );
 
       expect(
-        newAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+        newAttemptQuestionSets[0]?.questions[0]?.submissionTime
       ).not.toEqual(
-        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTime
       );
     });
   });
@@ -422,6 +427,7 @@ describe('Exam Environment Schema', () => {
       await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
     });
 
+    // eslint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       const configQuestionSets = [
         {
@@ -443,9 +449,9 @@ describe('Exam Environment Schema', () => {
         note: '',
         passingPercent: 0.0,
         questionSets: configQuestionSets,
-        retakeTimeInMS: 0,
+        retakeTimeInS: 0,
         tags,
-        totalTimeInMS: 0
+        totalTimeInS: 0
       };
 
       const questions = [
@@ -490,6 +496,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
+    // eslint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
         data: {
@@ -508,20 +515,26 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
+    // eslint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
         data: {
           examId: oid(),
           generatedExamId: oid(),
+          examModerationId: null,
           questionSets: [
             {
               id: oid(),
               questions: [
-                { answers: [oid()], id: oid(), submissionTimeInMS: 0 }
+                {
+                  answers: [oid()],
+                  id: oid(),
+                  submissionTime: new Date()
+                }
               ]
             }
           ],
-          startTimeInMS: 0,
+          startTime: new Date(),
           userId: oid()
         }
       });

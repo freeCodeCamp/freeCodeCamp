@@ -82,6 +82,15 @@ export const updateMyPortfolioError = createAction(
   types.updateMyPortfolioError
 );
 
+export const updateMyExperience = createAction(types.updateMyExperience);
+export const updateMyExperienceComplete = createAction(
+  types.updateMyExperienceComplete,
+  checkForSuccessPayload
+);
+export const updateMyExperienceError = createAction(
+  types.updateMyExperienceError
+);
+
 export const validateUsername = createAction(types.validateUsername);
 export const validateUsernameComplete = createAction(
   types.validateUsernameComplete

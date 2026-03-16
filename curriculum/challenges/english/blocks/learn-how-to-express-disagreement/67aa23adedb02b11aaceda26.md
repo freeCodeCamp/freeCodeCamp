@@ -3,6 +3,7 @@ id: 67aa23adedb02b11aaceda26
 title: Task 8
 challengeType: 19
 dashedName: task-8
+lang: en-US
 ---
 
 <!-- (Audio) Anna: While furniture is important, many people mentioned that their computers need upgrades. -->

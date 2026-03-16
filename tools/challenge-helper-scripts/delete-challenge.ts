@@ -1,38 +1,37 @@
 import { unlink } from 'fs/promises';
-import { prompt } from 'inquirer';
-import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
-import { getFileName } from './helpers/get-file-name';
+import { select } from '@inquirer/prompts';
+import { getProjectPath } from './helpers/get-project-info.js';
+import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
+import { getFileName } from './helpers/get-file-name.js';
 
 const deleteChallenge = async () => {
   const path = getProjectPath();
 
-  const challenges = getChallengeOrderFromMeta();
+  const challenges = getMetaData().challengeOrder;
 
-  const challengeToDelete = (await prompt({
-    name: 'id',
+  const challengeToDeleteId = await select<string>({
     message: 'Which challenge should be deleted?',
-    type: 'list',
     choices: challenges.map(({ id, title }) => ({
       name: title,
       value: id
     }))
-  })) as { id: string };
+  });
+
   const indexToDelete = challenges.findIndex(
-    ({ id }) => id === challengeToDelete.id
+    ({ id }) => id === challengeToDeleteId
   );
-  const fileToDelete = await getFileName(challengeToDelete.id);
+
+  const fileToDelete = await getFileName(challengeToDeleteId);
 
   if (!fileToDelete) {
-    throw new Error(`File not found for challenge ${challengeToDelete.id}`);
+    throw new Error(`File not found for challenge ${challengeToDeleteId}`);
   }
 
   await unlink(`${path}${fileToDelete}`);
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToDelete, 1);
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void deleteChallenge();

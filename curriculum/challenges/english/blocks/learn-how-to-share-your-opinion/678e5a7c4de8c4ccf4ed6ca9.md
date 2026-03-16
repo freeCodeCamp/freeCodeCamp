@@ -3,6 +3,7 @@ id: 678e5a7c4de8c4ccf4ed6ca9
 title: Task 66
 challengeType: 22
 dashedName: task-66
+lang: en-US
 ---
 
 <!-- (audio) Jake: Okay, let's agree to disagree. -->

@@ -31,37 +31,45 @@ There are also a couple of other methods which are used to negotiate a connectio
 Test 1 : Your API endpoint should respond with the correct name
 
 ```js
-  $.post(code + '/name', { first: 'Mick', last: 'Jagger' }).then(
-    (data) => {
-      assert.equal(
-        data.name,
-        'Mick Jagger',
-        'Test 1: "POST /name" route does not behave as expected'
-      );
+  const response = await fetch(code + '/name', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+    body: new URLSearchParams({ first: 'Mick', last: 'Jagger' })
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.name,
+    'Mick Jagger',
+    'Test 1: "POST /name" route does not behave as expected'
   );
 ```
 
 Test 2 : Your API endpoint should respond with the correct name
 
 ```js
-  $.post(code + '/name', {
-    first: 'Keith',
-    last: 'Richards'
-  }).then(
-    (data) => {
-      assert.equal(
-        data.name,
-        'Keith Richards',
-        'Test 2: "POST /name" route does not behave as expected'
-      );
+  const response = await fetch(code + '/name', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+    body: new URLSearchParams({
+      first: 'Keith',
+      last: 'Richards'
+    })
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.name,
+    'Keith Richards',
+    'Test 2: "POST /name" route does not behave as expected'
   );
 ```
 

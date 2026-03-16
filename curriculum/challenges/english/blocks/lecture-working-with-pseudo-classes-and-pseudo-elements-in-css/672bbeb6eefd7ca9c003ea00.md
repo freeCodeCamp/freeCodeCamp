@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: what-are-examples-of-tree-structural-pseudo-classes
 ---
 
-# --description--
+# --interactive--
 
 Tree-structural pseudo-classes allow you to target and style elements based on their position within the document tree. The document tree refers to the hierarchical structure of elements in an HTML document.
 
@@ -25,7 +25,15 @@ Here is a list of tree-structural pseudo-classes:
 
 Let's take a closer look at each of the tree-structural pseudo-classes, accompanied by examples.
 
-​​The `:root` pseudo-class is usually the root `html` element. It helps you target the highest level in the document so you can apply a common style to the entire document.        
+​​The `:root` pseudo-class is usually the root `html` element. It helps you target the highest level in the document so you can apply a common style to the entire document.     
+
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="styles.css" />
+<h1>Welcome to My Website</h1>
+<p>This is a sample paragraph to demonstrate the :root pseudo-class.</p>
+```
 
 ```css
 :root {
@@ -33,6 +41,8 @@ Let's take a closer look at each of the tree-structural pseudo-classes, accompan
   color: aliceblue;
 }
 ```
+
+:::
 
 The `:root` pseudo-class is also commonly used in setting CSS variables:
 
@@ -46,9 +56,12 @@ The `:root` pseudo-class is also commonly used in setting CSS variables:
 
 With CSS variables, you get to store values and reuse them in your stylesheet. You will learn more about these later on.
 
-Empty elements, that is, elements with no children other than white space, are also included in the document tree. That's why there's an `:empty` pseudo-class to target empty elements. For example, this HTML code has two empty list items:
+Empty elements, that is, elements with no children other than white space, are also included in the document tree. That's why there's an `:empty` pseudo-class to target empty elements. For example, this HTML code has two empty list items. With the `:empty` pseudo-class, you can style the empty list items differently:
+
+:::interactive_editor
 
 ```html
+<link rel="stylesheet" href="styles.css" />
 <ul>
   <li>Item 1</li>
   <li></li> <!-- This list is empty -->
@@ -58,15 +71,28 @@ Empty elements, that is, elements with no children other than white space, are a
 </ul>
 ```
 
-With the `:empty` pseudo-class, you can style the empty list items differently:
-
 ```css
 :empty {
   background: black;
 }
 ```
 
+:::
+
 The most practical thing to do with the empty list items is probably not displaying them at all:
+
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="styles.css" />
+<ul>
+  <li>Item 1</li>
+  <li></li> <!-- This list is empty -->
+  <li>Item 2</li>
+  <li></li> <!-- Another empty list -->
+  <li>Item 3</li>
+</ul>
+```
 
 ```css
 :empty {
@@ -74,11 +100,16 @@ The most practical thing to do with the empty list items is probably not display
 }
 ```
 
+:::
+
 `:nth-child(n)` allows you to select elements based on their position within a parent, while `:nth-last-child(n)` enables you to select elements by counting from the end. The `n` can be a specific number or a keyword like `odd` or `even`. This is incredibly useful in styling table cells based on position: even and odd.
 
-Here's an HTML example of a fruit price list table:
+Here's an HTML example of a fruit price list table. The CSS is using the `:nth-child` pseudo-class to target the table cells based on odd and even positions:
+
+:::interactive_editor
 
 ```html
+<link rel="stylesheet" href="styles.css" />
 <table>
   <tr>
     <th>Item</th>
@@ -99,8 +130,6 @@ Here's an HTML example of a fruit price list table:
 </table>
 ```
 
-Here's the CSS using the `:nth-child` pseudo-class to target the table cells based on odd and even positions:
-
 ```css
 th,
 td {
@@ -117,23 +146,26 @@ tr:nth-child(odd) {
 }
 ```
 
+:::
+
 The `:first-child`, `:last-child`, and `:only-child` pseudo-classes all act on items within a parent container or the entire document.
 
 - `:first-child` selects the first element in a parent element or the document.
 - `:last-child` selects the last element in a parent element or the document.
 - `:only-child` selects the only element in a parent element or the document.
 
-Using the `:first-child` and `:last-child` pseudo-classes will select both `Item 1` and `Item 3` in this HTML:
+Using the `:first-child` and `:last-child` pseudo-classes will select both `Item 1` and `Item 3` in this example:
+
+:::interactive_editor
 
 ```html
+<link rel="stylesheet" href="styles.css" />
 <ul>
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
 </ul>
 ```
-
-Here's the CSS:
 
 ```css
 li:first-child {
@@ -145,21 +177,16 @@ li:last-child {
 }
 ```
 
+:::
+
 If you have more unordered lists on the page, you have to be more specific with the selection: 
 
-```css
-ul li:first-child {
-  background-color: orangered;
-}
+To show you how the `:only-child` pseudo-class works, here's an HTML example with two separate `div` elements. Using the `:only-child` pseudo-class ensures only the `div` element with a single child is selected:
 
-ul li:last-child {
-  background-color: lightgreen;
-}
-```
-
-To show you how the `:only-child` pseudo-class works, here's an HTML example with two separate `div` elements:
+:::interactive_editor
 
 ```html
+<link rel="stylesheet" href="styles.css" />
 <div class="container">
   <div>This is the only item in this container.</div>
 </div>
@@ -170,8 +197,6 @@ To show you how the `:only-child` pseudo-class works, here's an HTML example wit
 </div>
 ```
 
-Using the `:only-child` pseudo-class ensures only the `div` element with a single child is selected:
-
 ```css
 .container div:only-child {
   border: 2px solid crimson;
@@ -180,11 +205,17 @@ Using the `:only-child` pseudo-class ensures only the `div` element with a singl
 }
 ```
 
+:::
+
 The `:first-of-type` and `:last-of-type` pseudo-classes select the first and last occurrence of a specific element type within its parent. They are useful for applying unique styles to the first or last instance of that element type among its siblings.
 
-In the HTML below, `:first-of-type` and `:last-of-type` applies to the first element and last element within the `section` element:
+In the example below, `:first-of-type` and `:last-of-type` applies to the first element and last element within the `section` element:
+
+:::interactive_editor
 
 ```html
+<link rel="stylesheet" href="styles.css" />
+
 <section>
   <h2>Introduction</h2>
   <p>This is the first paragraph in the first section</p>
@@ -197,8 +228,6 @@ In the HTML below, `:first-of-type` and `:last-of-type` applies to the first ele
 </section>
 ```
 
-Here's the CSS:
-
 ```css
 section p:first-of-type {
   background-color: lightgreen;
@@ -209,19 +238,21 @@ section p:last-of-type {
 }
 ```
 
+:::
+
 `:nth-of-type(n)` allows you to select a specific element within its parent based on its position among siblings of the same type. For instance, in the HTML below, `:nth-of-type(2)` targets the second element in the container:
 
+:::interactive_editor
+
 ```html
+<link rel="stylesheet" href="styles.css" />
+
 <div class="container">
   <p>First paragraph</p>
-  <h2>First heading</h2>
   <p>Second paragraph</p>
   <p>Third paragraph</p>
-  <h2>Second heading</h2>
 </div>
 ```
-
-Here's the CSS:
 
 ```css
 p:nth-of-type(2) {
@@ -230,11 +261,17 @@ p:nth-of-type(2) {
 }
 ```
 
+:::
+
 `:only-of-type` selects an element if it's the only one of its type within its parent. This can be useful for emphasizing single items or ensuring that they are styled differently when they’re not part of a group.
 
-In the HTML below, there are two `div` elements with one having a single element:
+In the example below, there are two `div` elements with one having a single element. The CSS only applies to the first container:
+
+:::interactive_editor
 
 ```html
+<link rel="stylesheet" href="styles.css" />
+
 <div class="container">
   <p>The only paragraph</p>
 </div>
@@ -245,13 +282,13 @@ In the HTML below, there are two `div` elements with one having a single element
 </div>
 ```
 
-Here's the CSS that only applies to the first container:
-
 ```css
 p:only-of-type {
   border: 4px solid green;
 }
 ```
+
+:::
 
 # --questions--
 

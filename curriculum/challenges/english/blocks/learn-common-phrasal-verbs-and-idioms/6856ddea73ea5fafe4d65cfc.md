@@ -3,6 +3,7 @@ id: 6856ddea73ea5fafe4d65cfc
 title: Task 95
 challengeType: 19
 dashedName: task-95
+lang: en-US
 ---
 
 <!-- (Audio) Jake: We could incorporate an interactive quiz during the onboarding process. It could teach users how to recognize and handle potential phishing attempts. -->
@@ -23,9 +24,17 @@ How could Linda praise Jake's idea?
 
 `That's an excellent suggestion.`
 
+### --audio-id--
+
+EN02a86d00
+
 ---
 
 `Are you sure that would work?`
+
+### --audio-id--
+
+EN13416258
 
 ### --feedback--
 

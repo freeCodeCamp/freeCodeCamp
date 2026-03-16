@@ -4,6 +4,7 @@ title: Build a Tribute Page
 challengeType: 25
 demoType: onClick
 dashedName: build-a-tribute-page
+saveSubmissionToDB: true
 ---
 
 # --description--
@@ -61,7 +62,7 @@ Your `#title` should not be empty.
 ```js
 const el = document.getElementById('title');
 assert.isNotNull(el);
-assert.isNotEmpty(el.innerText, 0);
+assert.isNotEmpty(el.innerText.trim());
 ```
 
 You should have a `figure` or `div` element with an `id` of `img-div`.

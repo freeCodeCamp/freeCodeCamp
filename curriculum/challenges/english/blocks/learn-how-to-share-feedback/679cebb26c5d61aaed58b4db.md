@@ -3,6 +3,7 @@ id: 679cebb26c5d61aaed58b4db
 title: Task 79
 challengeType: 19
 dashedName: task-79
+lang: en-US
 ---
 
 <!-- (Audio) Maria: Did you hear anything about this? James: No, I didn't. What did he say? -->

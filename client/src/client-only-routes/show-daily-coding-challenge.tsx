@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from '@gatsbyjs/reach-router';
 import store from 'store';
 import ShowClassic from '../templates/Challenges/classic/show';
 import { Loader } from '../components/helpers';
@@ -9,8 +8,7 @@ import {
   DailyCodingChallengePageContext
 } from '../redux/prop-types';
 import DailyCodingChallengeNotFound from '../components/daily-coding-challenge/not-found';
-import FourOhFour from '../components/FourOhFour';
-import { apiLocation, showDailyCodingChallenges } from '../../config/env.json';
+import { apiLocation } from '../../config/env.json';
 import { isValidDateString } from '../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
@@ -70,6 +68,7 @@ function formatChallengeData({
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge',
       disableLoopProtectTests: true,
+      dashedName: `challenge-${challengeNumber}`,
 
       // props to satisfy the show classic component
       isFirstStep: false,
@@ -92,10 +91,7 @@ function formatChallengeData({
             ...baseChallengeProps,
             helpCategory: 'JavaScript',
             challengeType: 28,
-            fields: {
-              blockName: 'daily-coding-challenge',
-              tests: javascript.tests
-            },
+            tests: javascript.tests,
             challengeFiles: [
               {
                 name: 'script',
@@ -120,10 +116,7 @@ function formatChallengeData({
             ...baseChallengeProps,
             helpCategory: 'Python',
             challengeType: 29,
-            fields: {
-              blockName: 'daily-coding-challenge',
-              tests: python.tests
-            },
+            tests: python.tests,
             challengeFiles: [
               {
                 fileKey: 'mainpy',
@@ -147,9 +140,7 @@ function formatChallengeData({
   return props;
 }
 
-function ShowDailyCodingChallenge(): JSX.Element {
-  const { date } = useParams<{ date?: string }>();
-
+function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
   const initLanguage =
     (store.get(
       'dailyCodingChallengeLanguage'
@@ -207,10 +198,6 @@ function ShowDailyCodingChallenge(): JSX.Element {
 
     void fetchChallenge(date);
   }, [date]);
-
-  if (!showDailyCodingChallenges) {
-    return <FourOhFour />;
-  }
 
   if (isLoading) return <Loader />;
 

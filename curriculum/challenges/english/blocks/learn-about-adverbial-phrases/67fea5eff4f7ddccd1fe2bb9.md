@@ -3,6 +3,7 @@ id: 67fea5eff4f7ddccd1fe2bb9
 title: Task 22
 challengeType: 22
 dashedName: task-22
+lang: en-US
 ---
 
 <!-- (Audio) Sarah: We might also consider having weekly updates for parts of the project where changes are less frequent. -->

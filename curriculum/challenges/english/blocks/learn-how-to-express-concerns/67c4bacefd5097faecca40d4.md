@@ -3,6 +3,7 @@ id: 67c4bacefd5097faecca40d4
 title: Task 22
 challengeType: 19
 dashedName: task-22
+lang: en-US
 ---
 
 <!-- (Audio) Bob: True, but we could try working even more extra hours just for this project. Wouldn't that make a difference? -->

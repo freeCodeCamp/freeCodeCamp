@@ -106,7 +106,7 @@ In the browser, you'll see a page with an `h1` element that has the text `Hello,
 
 To avoid prop drilling, especially in large, complex applications, consider using the Context API or state management libraries like Redux and Redux Toolkit, Zustand, Recoil, and others.
 
-You'll learn more about these in the coming lectures.
+You'll learn more about these in the coming lessons.
 
 # --questions--
 

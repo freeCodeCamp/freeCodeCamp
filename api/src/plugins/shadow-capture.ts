@@ -1,11 +1,13 @@
 import { randomUUID } from 'crypto';
 import { appendFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import type { FastifyPluginCallback } from 'fastify';
+import type {
+  FastifyPluginCallback,
+  FastifyReply,
+  FastifyRequest
+} from 'fastify';
 
 import fp from 'fastify-plugin';
-import { FastifyReply } from 'fastify/types/reply';
-import { FastifyRequest } from 'fastify/types/request';
 
 const LOGS_DIRECTORY = 'logs';
 const REQUEST_CAPTURE_FILE = 'request-capture.jsonl';

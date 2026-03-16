@@ -3,6 +3,7 @@ id: 677d3b8fac17ba6cbf3d8afa
 title: Task 3
 challengeType: 22
 dashedName: task-3
+lang: en-US
 ---
 
 <!-- (Audio) Bob: I want to start by saying that you've done a great job with your QA work. -->

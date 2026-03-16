@@ -3,6 +3,7 @@ id: 662e4f2edbb46a1dc6efc94f
 title: Task 37
 challengeType: 22
 dashedName: task-37
+lang: en-US
 ---
 
 <!-- (Audio) Tom: Don't worry. Debugging is a common challenge for programmers. -->

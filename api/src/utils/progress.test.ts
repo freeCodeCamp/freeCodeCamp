@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { getCalendar, getPoints } from './progress';
+import { getCalendar, getPoints } from './progress.js';
 
 describe('utils/progress', () => {
   describe('getCalendar', () => {

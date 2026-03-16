@@ -19,64 +19,56 @@ Within `tests/1_unit-tests.js` under the test labeled `#2` in the `Basic Asserti
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=1');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `isDefined` vs. `isUndefined`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'isDefined',
-        'Null is not undefined'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=1');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[0].method,
+    'isDefined',
+    'Null is not undefined'
   );
 ```
 
 You should choose the correct method for the second assertion - `isDefined` vs. `isUndefined`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'isUndefined',
-        'Undefined is undefined'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=1');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[1].method,
+    'isUndefined',
+    'Undefined is undefined'
   );
 ```
 
 You should choose the correct method for the third assertion - `isDefined` vs. `isUndefined`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=1').then(
-    (data) => {
-      assert.equal(
-        data.assertions[2].method,
-        'isDefined',
-        'A string is not undefined'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=1');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[2].method,
+    'isDefined',
+    'A string is not undefined'
   );
 ```
 

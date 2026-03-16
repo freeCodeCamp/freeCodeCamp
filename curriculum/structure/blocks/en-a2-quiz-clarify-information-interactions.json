@@ -1,0 +1,11 @@
+{
+  "name": "Clarifying Information Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-clarify-information-interactions",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "69603079ac6f4f686119e89e", "title": "Clarifying Information Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

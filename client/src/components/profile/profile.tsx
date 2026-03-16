@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Alert, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
+import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
 import Portfolio from './components/portfolio';
+import Experience from './components/experience';
 
 import UsernameSettings from './components/username';
 import About from './components/about';
@@ -17,6 +18,8 @@ import Stats from './components/stats';
 import HeatMap from './components/heat-map';
 import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
+import { ExperienceDisplay } from './components/experience-display';
+import { ProfileCompleteness } from './components/profile-completeness';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -38,18 +41,20 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <Alert variant='info'>{t($ => $.profile['you-change-privacy'])}</Alert>
+      <Callout variant='note' label={t('misc.note')}>
+        {t('profile.you-change-privacy')}
+      </Callout>
       <Spacer size='xl' />
     </FullWidthRow>
   );
 };
 
 const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
-  const { portfolio, username } = user;
+  const { portfolio, experience, username } = user;
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
-      <Modal.Header>{t($ => $.profile['edit-my-profile'])}</Modal.Header>
+      <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='m' />
@@ -57,7 +62,9 @@ const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
         <Spacer size='m' />
         <Internet user={user} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <Portfolio portfolio={portfolio} setIsEditing={setIsEditing} />
+        <Portfolio portfolio={portfolio} />
+        <Spacer size='m' />
+        <Experience experience={experience || []} />
       </Modal.Body>
     </Modal>
   );
@@ -69,11 +76,9 @@ const VisitorMessage = ({
 }: Omit<MessageProps, 'isSessionUser'>) => {
   return (
     <FullWidthRow>
-      <Alert variant='info'>
-        {t($ => $.profile['username-change-privacy'], {
-          username: username
-        })}
-      </Alert>
+      <Callout variant='note' label={t('misc.note')}>
+        {t('profile.username-change-privacy', { username })}
+      </Callout>
       <Spacer size='m' />
     </FullWidthRow>
   );
@@ -95,13 +100,18 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       showHeatMap,
       showPoints,
       showPortfolio,
+      showExperience,
       showTimeLine
     },
+    about,
     calendar,
     completedChallenges,
-    username,
+    name,
+    picture,
     points,
-    portfolio
+    portfolio,
+    experience,
+    username
   } = user;
 
   return (
@@ -114,6 +124,21 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
           setIsEditing={setIsEditing}
         />
       )}
+      {isSessionUser && (
+        <ProfileCompleteness
+          name={name}
+          about={about}
+          picture={picture}
+          location={user.location}
+          githubProfile={user.githubProfile}
+          linkedin={user.linkedin}
+          twitter={user.twitter}
+          bluesky={user.bluesky}
+          website={user.website}
+          portfolio={portfolio}
+          experience={experience || []}
+        />
+      )}
       <Camper
         user={user}
         isSessionUser={isSessionUser}
@@ -123,6 +148,9 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       {showHeatMap ? <HeatMap calendar={calendar} /> : null}
       {showPortfolio ? (
         <PortfolioProjects portfolioProjects={portfolio} />
+      ) : null}
+      {showExperience ? (
+        <ExperienceDisplay experience={experience || []} />
       ) : null}
       {showCerts ? <Certifications user={user} /> : null}
       {showTimeLine ? (
@@ -145,7 +173,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>{t($ => $.buttons.profile)} | freeCodeCamp.org</title>
+        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size='m' />
       <Container>
@@ -159,7 +187,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>
-              {t($ => $.buttons['flag-user'])}
+              {t('buttons.flag-user')}
             </Link>
           </Row>
         )}

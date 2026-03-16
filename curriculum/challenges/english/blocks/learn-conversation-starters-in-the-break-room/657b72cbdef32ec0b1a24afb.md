@@ -3,31 +3,34 @@ id: 657b72cbdef32ec0b1a24afb
 title: Task 30
 challengeType: 19
 dashedName: task-30
+lang: en-US
 ---
 
-<!-- (audio) Tom: Wow! Electric or acoustic? Sophie: Electric, for sure! -->
+<!-- (audio) Tom: Wow! Electric or acoustic? Sophie: Electric, for sure. -->
 
 # --description--
 
-When you hear about different types of guitars, two common kinds might come up: `electric` and `acoustic`. `Electric guitars` usually need something called an amplifier to be loud enough to hear, while `acoustic guitars` can be heard without any extra equipment.
+When you hear about different types of guitars, two common kinds might come up: `electric` and `acoustic`.
+
+`Electric guitars` usually need something called an amplifier to be loud enough to hear, while `acoustic guitars` can be heard without any extra equipment.
 
 # --questions--
 
 ## --text--
 
-Listen to the dialogue and choose the correct type of guitar Sophie prefers.
+What type of guitar does Sophie prefer?
 
 ## --answers--
 
-Electric Guitar
+Electric guitar
 
 ---
 
-Acoustic Guitar
+Acoustic guitar
 
 ### --feedback--
 
-Sophie makes it very clear which type of guitar she likes. Remember, the one she prefers needs an amplifier to be loud.
+Sophie makes it very clear which type of guitar she likes. The one she prefers needs an amplifier to be loud.
 
 ## --video-solution--
 
@@ -88,7 +91,7 @@ Sophie makes it very clear which type of guitar she likes. Remember, the one she
       "startTime": 3.3,
       "finishTime": 5.12,
       "dialogue": {
-        "text": "Electric for sure.",
+        "text": "Electric, for sure.",
         "align": "center"
       }
     },

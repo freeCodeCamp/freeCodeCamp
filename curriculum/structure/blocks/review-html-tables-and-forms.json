@@ -1,6 +1,6 @@
 {
   "name": "HTML Tables and Forms Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-html-tables-and-forms",

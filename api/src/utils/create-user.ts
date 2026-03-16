@@ -14,8 +14,10 @@ export const createResetProperties = () => ({
   completedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   completedExams: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   currentChallengeId: '',
+  experience: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   is2018DataVisCert: false,
   is2018FullStackCert: false,
+  isA2EnglishCert: false,
   isApisMicroservicesCert: false,
   isBackEndCert: false,
   isCollegeAlgebraPyCertV8: false,
@@ -27,13 +29,24 @@ export const createResetProperties = () => ({
   isFullStackCert: false,
   isInfosecCertV7: false,
   isInfosecQaCert: false,
+  isJavascriptCertV9: false,
   isJsAlgoDataStructCert: false,
   isJsAlgoDataStructCertV8: false,
   isMachineLearningPyCertV7: false,
+  isPythonCertV9: false,
   isQaCertV7: false,
   isRelationalDatabaseCertV8: false,
+  isRelationalDatabaseCertV9: false,
   isRespWebDesignCert: false,
+  isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
+  isFrontEndLibsCertV9: false,
+  isBackEndDevApisCertV9: false,
+  isFullStackDeveloperCertV9: false,
+  isB1EnglishCert: false,
+  isA2SpanishCert: false,
+  isA2ChineseCert: false,
+  isA1ChineseCert: false,
   needsModeration: false,
   partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   progressTimestamps: [Date.now()], // TODO(Post-MVP): This may need normalising before we can omit it. Also, does it need to start with a timestamp?
@@ -75,6 +88,7 @@ export function createUserInput(email: string) {
       showAbout: false,
       showCerts: false,
       showDonation: false,
+      showExperience: false,
       showHeatMap: false,
       showLocation: false,
       showName: false,
@@ -82,7 +96,7 @@ export function createUserInput(email: string) {
       showPortfolio: false,
       showTimeLine: false
     },
-    sendQuincyEmail: false,
+    sendQuincyEmail: null,
     theme: 'default',
     username,
     usernameDisplay: username,

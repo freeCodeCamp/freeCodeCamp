@@ -14,8 +14,8 @@ import {
   resetDefaultUser,
   setupServer,
   superRequest
-} from '../../../vitest.utils';
-import { getFallbackFullStackDate } from '../helpers/certificate-utils';
+} from '../../../vitest.utils.js';
+import { getFallbackFullStackDate } from '../helpers/certificate-utils.js';
 
 const DATE_NOW = Date.now();
 

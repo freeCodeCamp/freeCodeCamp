@@ -1,12 +1,11 @@
 import { expect } from 'vitest';
 
-import { nanoidCharSet } from '../../utils/create-user';
+import { nanoidCharSet } from '../../utils/create-user.js';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
 const mongodbIdRe = /^[a-f0-9]{24}$/;
-
 
 // eslint-disable-next-line jsdoc/require-jsdoc
 export const newUser = (email: string) => ({
@@ -22,6 +21,7 @@ export const newUser = (email: string) => ({
   emailAuthLinkTTL: null,
   emailVerified: true,
   emailVerifyTTL: null,
+  experience: [],
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   externalId: expect.stringMatching(uuidRe),
   githubProfile: null,
@@ -29,6 +29,7 @@ export const newUser = (email: string) => ({
   id: expect.stringMatching(mongodbIdRe),
   is2018DataVisCert: false,
   is2018FullStackCert: false,
+  isA2EnglishCert: false,
   isApisMicroservicesCert: false,
   isBackEndCert: false,
   isBanned: false,
@@ -44,14 +45,25 @@ export const newUser = (email: string) => ({
   isHonest: false,
   isInfosecCertV7: false,
   isInfosecQaCert: false,
+  isJavascriptCertV9: false,
   isJsAlgoDataStructCert: false,
   isJsAlgoDataStructCertV8: false,
   isMachineLearningPyCertV7: false,
+  isPythonCertV9: false,
   isQaCertV7: false,
   isRelationalDatabaseCertV8: false,
+  isRelationalDatabaseCertV9: false,
   isCollegeAlgebraPyCertV8: false,
   isRespWebDesignCert: false,
+  isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
+  isFrontEndLibsCertV9: false,
+  isBackEndDevApisCertV9: false,
+  isFullStackDeveloperCertV9: false,
+  isB1EnglishCert: false,
+  isA2SpanishCert: false,
+  isA2ChineseCert: false,
+  isA1ChineseCert: false,
   keyboardShortcuts: false,
   linkedin: null,
   location: '',
@@ -69,6 +81,7 @@ export const newUser = (email: string) => ({
     showAbout: false,
     showCerts: false,
     showDonation: false,
+    showExperience: false,
     showHeatMap: false,
     showLocation: false,
     showName: false,
@@ -79,10 +92,11 @@ export const newUser = (email: string) => ({
   progressTimestamps: [expect.any(Number)],
   rand: null, // TODO(Post-MVP): delete from schema (it's not used or required).
   savedChallenges: [],
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   theme: 'default',
   timezone: null,
   twitter: null,
+  bluesky: null,
   updateCount: 0, // see extendClient in prisma.ts
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   username: expect.stringMatching(fccUuidRe),
@@ -91,5 +105,4 @@ export const newUser = (email: string) => ({
   verificationToken: null,
   website: null,
   yearsTopContributor: []
-}
-)
+});

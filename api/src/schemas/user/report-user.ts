@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { genericError } from '../types';
+import { genericError } from '../types.js';
 
 export const reportUser = {
   body: Type.Object({
@@ -13,6 +13,10 @@ export const reportUser = {
       variables: Type.Object({
         email: Type.String()
       })
+    }),
+    403: Type.Object({
+      type: Type.Literal('danger'),
+      message: Type.Literal('flash.report-error')
     }),
     404: Type.Object({
       type: Type.Literal('danger'),

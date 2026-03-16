@@ -1,21 +1,19 @@
 import i18next from 'i18next';
 import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import {
   type SuperBlocks,
   SuperBlockStage,
   getStageOrder,
-  superBlockStages
-} from '../../../../shared/config/curriculum';
+  superBlockStages,
+  archivedSuperBlocks
+} from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
-import { ButtonLink } from '../helpers';
-import {
-  showUpcomingChanges,
-  showDailyCodingChallenges
-} from '../../../config/env.json';
+import { ButtonLink, Link } from '../helpers';
+import { showUpcomingChanges } from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
@@ -33,6 +31,8 @@ const linkSpacingStyle = {
 const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Core]: 'landing.core-certs-heading',
   [SuperBlockStage.English]: 'landing.learn-english-heading',
+  [SuperBlockStage.Spanish]: 'landing.learn-spanish-heading',
+  [SuperBlockStage.Chinese]: 'landing.learn-chinese-heading',
   [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
@@ -48,9 +48,7 @@ function MapLi({
   superBlock: SuperBlocks;
   landing: boolean;
 }) {
-  const i18nTitle = i18next.t($ => $[superBlock].title, {
-    ns: 'intro'
-  });
+  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
   return (
     <li
@@ -73,6 +71,20 @@ function MapLi({
   );
 }
 
+// used on /learn/archive
+export function ArchiveMap() {
+  return (
+    <div className='map-ui' data-test-label='curriculum-map'>
+      <ul>
+        {archivedSuperBlocks.map(superblock => (
+          <MapLi key={superblock} superBlock={superblock} landing={false} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// used on /learn and landing page
 function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
 
@@ -80,41 +92,52 @@ function Map({ forLanding = false }: MapProps) {
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
         showUpcomingChanges
-      }).map(stage => {
-        const superblocks = superBlockStages[stage];
-        if (superblocks.length === 0) {
-          return null;
-        }
+      })
+        // remove legacy superblocks from main maps - shown in archive map only
+        .filter(
+          stage =>
+            stage !== SuperBlockStage.Legacy &&
+            stage !== SuperBlockStage.Catalog
+        )
+        .map(stage => {
+          const superblocks = superBlockStages[stage];
+          if (superblocks.length === 0) {
+            return null;
+          }
 
-        return (
-          <Fragment key={stage}>
-            {
-              /* Show the daily coding challenge before the "English" curriculum */
-              showDailyCodingChallenges &&
+          return (
+            <Fragment key={stage}>
+              {
+                /* Show the daily coding challenge before the "English" curriculum */
                 stage === SuperBlockStage.English && (
                   <>
                     <DailyCodingChallengeWidget forLanding={forLanding} />
                     <Spacer size='m' />
                   </>
                 )
-            }
-            <h2 className={forLanding ? 'big-heading' : ''}>
-              {/* TODO: convert to selector */}
-              {t(superBlockHeadings[stage] as never)}
-            </h2>
-            <ul key={stage}>
-              {superblocks.map(superblock => (
-                <MapLi
-                  key={superblock}
-                  superBlock={superblock}
-                  landing={forLanding}
-                />
-              ))}
-            </ul>
-            <Spacer size='m' />
-          </Fragment>
-        );
-      })}
+              }
+              <h2 className={forLanding ? 'big-heading' : ''}>
+                {t(superBlockHeadings[stage])}
+              </h2>
+              <ul key={stage}>
+                {superblocks.map(superblock => (
+                  <MapLi
+                    key={superblock}
+                    superBlock={superblock}
+                    landing={forLanding}
+                  />
+                ))}
+              </ul>
+              <Spacer size='m' />
+            </Fragment>
+          );
+        })}
+      <Spacer size='m' />
+      <p className='archive-link'>
+        <Trans i18nKey='landing.archive-link'>
+          <Link to={'/learn/archive'}>placeholder</Link>
+        </Trans>
+      </p>
     </div>
   );
 }

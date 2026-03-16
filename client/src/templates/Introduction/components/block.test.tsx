@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
-import { createStore } from '../../../redux/create-store';
+import { describe, it, expect, afterEach, vi, Mock } from 'vitest';
+import type { TFunction } from 'i18next';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   ChallengeFiles,
   PrerequisiteChallenge,
@@ -12,28 +12,23 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
-import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
-import Block from './block';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { Block } from './block';
 
-jest.mock('../../../../../shared/utils/is-audited', () => ({
-  isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
+vi.mock('@freecodecamp/shared/utils/is-audited', () => ({
+  isAuditedSuperBlock: vi.fn().mockReturnValueOnce(true)
 }));
 
-jest.mock('../redux', () => ({
-  makeExpandedBlockSelector: jest.fn(() => jest.fn(() => true)),
-  completedChallengesSelector: jest.fn(() => [
-    { id: 'mockId', title: 'mockTitle' }
-  ])
-}));
+vi.mock('../../../utils/get-words');
 
 const defaultProps = {
   block: 'test-block',
-  blockType: null,
+  blockLabel: null,
   challenges: [
     {
       block: 'testblock',
-      blockType: BlockTypes.lab,
+      blockLabel: BlockLabel.lab,
       blockLayout: BlockLayouts.ChallengeGrid,
       certification: 'mockCertification',
       challengeOrder: 1,
@@ -49,7 +44,6 @@ const defaultProps = {
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
       instructions: 'mockInstructions',
-      isComingSoon: false,
       internal: {
         content: 'mockContent',
         contentDigest: 'mockContentDigest',
@@ -75,7 +69,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.FullStackDeveloper,
+      superBlock: SuperBlocks.FullStackDeveloperV9,
       tail: ['mockTail'],
       template: 'mockTemplate',
       tests: [] as Test[],
@@ -91,46 +85,34 @@ const defaultProps = {
   ],
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
-  t: jest.fn((key: string) => [key]),
-  superBlock: SuperBlocks.FullStackDeveloper,
-  toggleBlock: jest.fn()
+  t: vi.fn((key: string) => [key]) as unknown as TFunction,
+  superBlock: SuperBlocks.FullStackDeveloperV9,
+  toggleBlock: vi.fn()
 };
 
 describe('<Block />', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('The "Help us translate" badge does not appear on any English blocks', () => {
-    render(
-      <Provider store={createStore()}>
-        <Block {...defaultProps} />
-      </Provider>
-    );
+    render(<Block {...defaultProps} />);
     expect(
       screen.queryByText(/misc.translation-pending/)
     ).not.toBeInTheDocument();
   });
 
   it(`The "Help us translate" badge does not appear on any i18n blocks when the superblock is audited`, () => {
-    (isAuditedSuperBlock as jest.Mock).mockReturnValue(true);
-    render(
-      <Provider store={createStore()}>
-        <Block {...defaultProps} />
-      </Provider>
-    );
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} />);
     expect(
       screen.queryByText(/misc.translation-pending/)
     ).not.toBeInTheDocument();
   });
 
   it(`The "Help us translate" badge does appear on i18n blocks when the superblock is not audited`, () => {
-    (isAuditedSuperBlock as jest.Mock).mockReturnValue(false);
-    render(
-      <Provider store={createStore()}>
-        <Block {...defaultProps} />
-      </Provider>
-    );
+    (isAuditedSuperBlock as Mock).mockReturnValue(false);
+    render(<Block {...defaultProps} />);
     expect(screen.getByText(/misc.translation-pending/)).toBeInTheDocument();
   });
 });

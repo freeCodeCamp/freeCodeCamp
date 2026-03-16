@@ -1,6 +1,6 @@
 {
   "name": "Build a Flappy Penguin",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

@@ -53,7 +53,6 @@ Submit your page when you think you've got it right. If you're running into erro
 You should serialize the user object correctly.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -67,13 +66,11 @@ async () => {
     /null,\s*user._id/gi,
     'There should be a callback in your serializeUser with (null, user._id)'
   );
-}
 ```
 
 You should deserialize the user object correctly.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -87,13 +84,11 @@ async () => {
     /null,\s*null/gi,
     'There should be a callback in your deserializeUser with (null, null) for now'
   );
-}
 ```
 
 MongoDB should be a dependency.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -102,13 +97,11 @@ async () => {
     'mongodb',
     'Your project should list "mongodb" as a dependency'
   );
-}
 ```
 
 Mongodb should be properly required including the ObjectId.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -122,6 +115,5 @@ async () => {
     /new ObjectID.*id/gi,
     'Even though the block is commented out, you should use new ObjectID(id) for when we add the database'
   );
-}
 ```
 

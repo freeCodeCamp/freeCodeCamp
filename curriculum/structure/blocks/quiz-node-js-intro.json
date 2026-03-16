@@ -1,0 +1,14 @@
+{
+  "name": "NodeJS Intro Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-node-js-intro",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "6900a59dedf6c5c52824304f",
+      "title": "NodeJS Intro Quiz"
+    }
+  ],
+  "blockLabel": "quiz",
+  "blockLayout": "link"
+}

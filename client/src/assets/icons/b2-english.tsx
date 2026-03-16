@@ -6,7 +6,7 @@ function B2EnglishIcon(
   return (
     <svg
       aria-hidden='true'
-      viewBox='0 0 175 170'
+      viewBox='0 0 48 48'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       {...props}
@@ -14,8 +14,63 @@ function B2EnglishIcon(
       <path
         fillRule='evenodd'
         clipRule='evenodd'
-        d='M138 9H83V79.5H147V18C147 13 143 9 138 9ZM147 88.5H83V156H138C143 156 147 152 147 147V88.5ZM74 79.5V9H18C13 9 9 13 9 18V79.5H72H74ZM9 88.5H74V156H18C13 156 9 152 9 147V88.5ZM18 0C8.1 0 0 8.1 0 18V147C0 156.9 8.1 165 18 165H138C147.9 165 156 156.9 156 147V18C156 8.1 147.9 0 138 0H18ZM27.5 142V101.3H55V108.4H36.2V118.1H53.6V125.2H36.2V134.9H55.1V142H27.5ZM131.6 142V101.3H123V126.9H122.6L105 101.3H97.4V142H106V116.4H106.3L124 142H131.6ZM100.7 64.9V58.7L115.2 45.3C116.4 44.1 117.5 43 118.3 42.1C119.1 41.1 119.8 40.2 120.2 39.3C120.6 38.4 120.9 37.4 120.9 36.3C120.9 35.1 120.6 34.1 120.1 33.2C119.6 32.3 118.8 31.7 117.9 31.2C117 30.7 115.9 30.5 114.7 30.5C113.5 30.5 112.4 30.8 111.4 31.3C110.5 31.8 109.8 32.5 109.3 33.5C108.8 34.4 108.5 35.6 108.5 36.9H100.3C100.3 34.2 100.9 31.9 102.1 30C103.3 28 105 26.5 107.2 25.4C109.4 24.3 111.9 23.8 114.7 23.8C117.6 23.8 120.2 24.3 122.3 25.4C124.5 26.4 126.2 27.8 127.4 29.7C128.6 31.5 129.2 33.6 129.2 35.9C129.2 37.4 128.9 39 128.3 40.5C127.7 42 126.6 43.7 125.1 45.5C123.6 47.3 121.4 49.5 118.6 52L112.7 57.8V58.1H129.8V65.1H100.7V64.9ZM27.4 64.6H36V48.2H42.7C45.3 48.2 47.4 50.3 47.4 52.9C47.4 55.5 45.3 57.6 42.7 57.6H36V64.6H45.5C50.8 64.6 55.2 60.6 55.8 55.3C55.9 54.6 55.8 53.9 55.7 53.1L55.4 51.3C55.1 49.3 54 47.4 52.4 46.2L50.4 44.6L51.9 43.6C53.8 42.4 55.1 40.4 55.4 38.1L55.7 36.2C55.8 35.5 55.8 34.7 55.8 33.9C55.3 28.1 50.4 23.7 44.6 23.7H27.4V64.6ZM41.9 41.7C44.9 41.7 47.3 39.3 47.3 36.3C47.3 33.3 44.9 30.9 41.9 30.9H36V41.8H41.9V41.7Z'
+        d='M38 2.5H25.5V22.5H45.5V6C45.5 3.79086 43.7091 2 41.5 2.5H38ZM45.5 25.5H25.5V45.5H41.5C43.7091 45.5 45.5 43.7091 45.5 41.5V25.5ZM22.5 22.5V2.5H10H6.5C4.29086 2.5 2.5 4.29086 2.5 6.5V22.5H22.5ZM2.5 25.5H22.5V45.5H6.5C4.29086 45.5 2.5 43.7091 2.5 41.5V25.5ZM6.5 0C2.91015 0 0 2.91015 0 6.5V41.5C0 45.0899 2.91015 48 6.5 48H41.5C45.0899 48 48 45.0899 48 41.5V6.5C48 2.91015 45.0899 0 41.5 0H6.5Z'
       />
+      <text
+        x={12}
+        y={14}
+        fontSize={16}
+        fontFamily='Lato, sans-serif'
+        fontWeight='bold'
+        textAnchor='middle'
+        dominantBaseline='middle'
+        fill='currentColor'
+        stroke='none'
+      >
+        B
+      </text>
+
+      <text
+        x={36}
+        y={14}
+        fontSize={16}
+        fontFamily='Lato, sans-serif'
+        fontWeight='bold'
+        textAnchor='middle'
+        dominantBaseline='middle'
+        fill='currentColor'
+        stroke='none'
+      >
+        2
+      </text>
+
+      <text
+        x={12}
+        y={37}
+        fontSize={16}
+        fontFamily='Lato, sans-serif'
+        fontWeight='bold'
+        textAnchor='middle'
+        dominantBaseline='middle'
+        fill='currentColor'
+        stroke='none'
+      >
+        E
+      </text>
+
+      <text
+        x={36}
+        y={37}
+        fontSize={16}
+        fontFamily='Lato, sans-serif'
+        fontWeight='bold'
+        textAnchor='middle'
+        dominantBaseline='middle'
+        fill='currentColor'
+        stroke='none'
+      >
+        N
+      </text>
     </svg>
   );
 }

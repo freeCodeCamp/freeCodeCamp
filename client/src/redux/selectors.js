@@ -1,10 +1,13 @@
 import { createSelector } from 'reselect';
+import { liveCerts } from '../../config/cert-and-project-map';
+import {
+  certSlugTypeMap,
+  certToTitleMap
+} from '@freecodecamp/shared/config/certification-settings';
 
-// TODO: source the superblock structure via a GQL query, rather than directly
-// from the curriculum
-import superBlockStructure from '../../../curriculum/structure/superblocks/full-stack-developer.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
+import { curriculumData } from '../services/curriculum-data';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -119,8 +122,6 @@ export const createUserByNameSelector = username => state => {
 };
 
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
-export const allChallengesInfoSelector = state =>
-  state[MainApp].allChallengesInfo;
 
 export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
@@ -133,10 +134,15 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
 );
 
 export const completionStateSelector = createSelector(
-  [allChallengesInfoSelector, completedChallengesIdsSelector],
-  (allChallengesInfo, completedChallengesIds) => {
-    const chapters = superBlockStructure.chapters;
-    const { challengeNodes } = allChallengesInfo;
+  [completedChallengesIdsSelector, state => state.challenge.challengeMeta],
+  (completedChallengesIds, challengeMeta) => {
+    const challengeNodes = curriculumData.challengeNodes;
+
+    const structure = curriculumData.getSuperBlockStructure(
+      challengeMeta.superBlock
+    );
+
+    const chapters = structure?.chapters ?? [];
 
     const getCompletionState = ({
       chapters,
@@ -205,3 +211,40 @@ export const userSelector = state => state[MainApp].user.sessionUser;
 export const otherUserSelector = state => state[MainApp].user.otherUser;
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;
+
+export const claimableCertsSelector = createSelector([userSelector], user => {
+  if (!user) return [];
+
+  const completedChallengeIds = (user.completedChallenges || []).map(
+    ({ id }) => id
+  );
+
+  const isClaimedByCert = Object.entries(certSlugTypeMap).reduce(
+    (acc, [cert, userFlag]) => {
+      acc[cert] = Boolean(user[userFlag]);
+      return acc;
+    },
+    {}
+  );
+
+  const claimable = [];
+
+  for (const { projects, certSlug } of liveCerts) {
+    if (!projects) continue;
+    if (isClaimedByCert[certSlug]) continue;
+
+    const projectIds = projects.map(p => p.id);
+    const allProjectsComplete = projectIds.every(id =>
+      completedChallengeIds.includes(id)
+    );
+
+    const certTitle = certToTitleMap[certSlug];
+    if (allProjectsComplete) {
+      claimable.push({
+        certTitle
+      });
+    }
+  }
+
+  return claimable;
+});

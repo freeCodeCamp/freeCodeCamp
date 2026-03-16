@@ -1,5 +1,6 @@
-const parseFixture = require('../__fixtures__/parse-fixture');
-const addTests = require('./add-tests');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addTests from './add-tests';
 
 describe('add-tests plugin', () => {
   let brokenHintsAST, simpleAST, missingTestStringAST;
@@ -41,7 +42,7 @@ describe('add-tests plugin', () => {
   it('should throw if a test pair is out of order', () => {
     // TODO: update the markdown so it makes this error
     expect(() => plugin(brokenHintsAST, file)).toThrow(
-      'Tests must be in (text, ```testString```) order'
+      'Hints must be in pairs: each hint text followed by a test code block'
     );
   });
 

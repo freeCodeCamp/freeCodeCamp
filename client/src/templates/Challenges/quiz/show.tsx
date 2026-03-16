@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import {
   Container,
   Col,
@@ -19,7 +18,7 @@ import {
 } from '@freecodecamp/ui';
 
 // Local Utilities
-import { shuffleArray } from '../../../../../shared/utils/shuffle-array';
+import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -38,6 +37,7 @@ import {
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import PrismFormatted from '../components/prism-formatted';
 import { usePageLeave } from '../hooks';
+import { sounds } from '../components/scene/scene-assets';
 import ExitQuizModal from './exit-quiz-modal';
 import FinishQuizModal from './finish-quiz-modal';
 
@@ -92,13 +92,14 @@ const ShowQuiz = ({
   data: {
     challengeNode: {
       challenge: {
-        fields: { tests, blockHashSlug },
+        fields: { blockHashSlug },
         title,
         description,
         challengeType,
         helpCategory,
         superBlock,
         block,
+        tests,
         translationPending,
         quizzes
       }
@@ -115,8 +116,6 @@ const ShowQuiz = ({
   closeFinishQuizModal
 }: ShowQuizProps) => {
   const { t } = useTranslation();
-  const curLocation = useLocation();
-
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -128,7 +127,7 @@ const ShowQuiz = ({
 
   const [showUnanswered, setShowUnanswered] = useState(false);
 
-  const [exitConfirmed, setExitConfirmed] = useState(false);
+  const exitConfirmed = useRef(false);
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
 
@@ -169,16 +168,36 @@ const ShowQuiz = ({
         value: 4
       };
 
-      return {
+      const allAnswers = shuffleArray([...distractors, answer]);
+
+      const audioData = question.audioData?.audio?.filename
+        ? {
+            audioUrl: `${sounds}/${question.audioData.audio.filename}`,
+            audioStartTime:
+              question.audioData.audio.startTimestamp ?? undefined,
+            audioFinishTime:
+              question.audioData.audio.finishTimestamp ?? undefined,
+            transcript: question.audioData.transcript.length
+              ? question.audioData.transcript
+                  .map(line => `<p><b>${line.character}</b>: ${line.text}</p>`)
+                  .join('')
+              : undefined
+          }
+        : {};
+
+      const questionData = {
         question: (
           <PrismFormatted
             className='quiz-question-label'
             text={question.text}
           />
         ),
-        answers: shuffleArray([...distractors, answer]),
-        correctAnswer: answer.value
+        answers: allAnswers,
+        correctAnswer: answer.value,
+        ...audioData
       };
+
+      return questionData;
     })
   );
 
@@ -220,7 +239,9 @@ const ShowQuiz = ({
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -248,8 +269,8 @@ const ShowQuiz = ({
   };
 
   const handleExitQuizModalBtnClick = () => {
-    setExitConfirmed(true);
-    void navigate(exitPathname || '/learn');
+    exitConfirmed.current = true;
+    void navigate(exitPathname || '/learn', { replace: true });
     closeExitQuizModal();
   };
 
@@ -262,35 +283,26 @@ const ShowQuiz = ({
   );
 
   const onHistoryChange = useCallback(
-    (targetPathname: string) => {
+    (targetPathname: string): boolean => {
       // We don't block navigation in the following cases.
       // - When campers have submitted the quiz:
       //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
       //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
       // - When they have clicked the exit button on the exit modal
-      if (hasSubmitted || exitConfirmed) {
-        return;
+      if (hasSubmitted || exitConfirmed.current) {
+        return false;
       }
 
-      const newPathname = targetPathname.startsWith('/learn')
-        ? blockHashSlug
-        : targetPathname;
+      // For link clicks, save the target pathname. For back button
+      // (empty targetPathname), keep the default (i.e. blockHashSlug).
+      if (targetPathname) {
+        setExitPathname(targetPathname);
+      }
 
-      // Save the pathname of the page the user wants to navigate to before we block the navigation.
-      setExitPathname(newPathname);
-
-      // We need to use Reach Router, because the pathname is already prefixed
-      // with the language and Gatsby's navigate will prefix it again.
-      void reachNavigate(`${curLocation.pathname}`);
       openExitQuizModal();
+      return true;
     },
-    [
-      curLocation.pathname,
-      hasSubmitted,
-      exitConfirmed,
-      openExitQuizModal,
-      blockHashSlug
-    ]
+    [hasSubmitted, openExitQuizModal]
   );
 
   usePageLeave({
@@ -403,19 +415,29 @@ export const query = graphql`
         block
         fields {
           blockHashSlug
-          blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         quizzes {
           questions {
             distractors
             text
             answer
+            audioData {
+              audio {
+                filename
+                startTimestamp
+                finishTimestamp
+              }
+              transcript {
+                character
+                text
+              }
+            }
           }
+        }
+        tests {
+          text
+          testString
         }
         translationPending
       }

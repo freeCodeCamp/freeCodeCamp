@@ -1,10 +1,11 @@
-import { toZonedTime } from 'date-fns-tz';
+import { getTimezoneOffset } from 'date-fns-tz';
 
 /**
  * @returns Now US Central time.
  */
 export function getNowUsCentral() {
-  return toZonedTime(new Date(), 'America/Chicago');
+  const offset = getTimezoneOffset('America/Chicago', new Date());
+  return new Date(Date.now() + offset);
 }
 
 /**

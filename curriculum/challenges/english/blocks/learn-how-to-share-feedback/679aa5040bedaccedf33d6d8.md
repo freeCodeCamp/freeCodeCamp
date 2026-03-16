@@ -3,6 +3,7 @@ id: 679aa5040bedaccedf33d6d8
 title: Task 45
 challengeType: 19
 dashedName: task-45
+lang: en-US
 ---
 
 <!-- (Audio) Brian: If we all agreed on everything, we might miss important details, don't you think? -->

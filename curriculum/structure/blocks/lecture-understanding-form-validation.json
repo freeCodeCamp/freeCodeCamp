@@ -1,6 +1,6 @@
 {
   "name": "Understanding Form Validation",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-form-validation",
@@ -11,7 +11,7 @@
     },
     {
       "id": "6733d3a33abdd27cd562bdf2",
-      "title": "What Is the Purpose of e.preventDefault?"
+      "title": "What Is the Purpose of the preventDefault() Method?"
     },
     {
       "id": "6733d3ab69e94b7df7ee91b0",

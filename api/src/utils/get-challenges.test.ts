@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
-import { getChallenges } from './get-challenges';
-import { isObjectID } from './validation';
+import { getChallenges } from './get-challenges.js';
+import { isObjectID } from './validation.js';
 
 describe('getChallenges', () => {
   test('returns an array of challenges', () => {

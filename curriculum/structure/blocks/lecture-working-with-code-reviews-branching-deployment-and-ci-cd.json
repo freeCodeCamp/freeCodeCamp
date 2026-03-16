@@ -1,0 +1,38 @@
+{
+  "name": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "688290ef85c79973321a23af",
+      "title": "What Does a Typical Code Review Process Look Like for Projects?"
+    },
+    {
+      "id": "68829101d909657350cd80af",
+      "title": "How Do You Use GitHub Pages to Deploy a Project?"
+    },
+    {
+      "id": "68829116a80ecd73681261b1",
+      "title": "What Are Good Practices for Remaining in Sync with Your Remote Counterparts?"
+    },
+    {
+      "id": "6882913b2b58c2738eaaa2d1",
+      "title": "What Is a .gitignore File, and What Are Some Items That Should Be Included Inside It?"
+    },
+    {
+      "id": "6882915386c73273ac489f38",
+      "title": "What Are Some Best Practices for Developing a Git Branching Strategy?"
+    },
+    {
+      "id": "68829162a7f96d73c8505d3d",
+      "title": "What Are Merge Conflicts, and How Can You Resolve Them?"
+    },
+    {
+      "id": "688291b65db00473e1136725",
+      "title": "What Is CI/CD, and How Does CI Work with GitHub Actions?"
+    }
+  ]
+}

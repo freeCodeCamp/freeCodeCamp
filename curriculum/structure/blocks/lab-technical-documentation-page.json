@@ -1,6 +1,6 @@
 {
   "name": "Build a Technical Documentation Page",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

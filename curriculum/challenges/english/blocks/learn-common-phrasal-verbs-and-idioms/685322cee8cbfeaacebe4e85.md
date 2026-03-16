@@ -3,6 +3,7 @@ id: 685322cee8cbfeaacebe4e85
 title: Task 28
 challengeType: 22
 dashedName: task-28
+lang: en-US
 ---
 
 <!-- (Audio) Anna: Great idea, Brian. Encouraging growth is key. -->

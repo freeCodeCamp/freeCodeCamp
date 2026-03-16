@@ -11,7 +11,7 @@ import {
 
 vi.mock('../helpers/challenge-helpers', async () => {
   const originalModule = await vi.importActual<
-    typeof import('../helpers/challenge-helpers')
+    typeof import('../helpers/challenge-helpers.js')
   >('../helpers/challenge-helpers');
 
   return {
@@ -23,12 +23,12 @@ vi.mock('../helpers/challenge-helpers', async () => {
 
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { omit } from 'lodash';
+import { omit } from 'lodash-es';
 import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
 import request from 'supertest';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   defaultUserId,
   devLogin,
@@ -38,7 +38,7 @@ import {
   defaultUserEmail,
   createSuperRequest,
   defaultUsername
-} from '../../../vitest.utils';
+} from '../../../vitest.utils.js';
 import {
   completedExamChallengeOneCorrect,
   completedExamChallengeTwoCorrect,
@@ -53,15 +53,27 @@ import {
   examWithTwoCorrect,
   examWithAllCorrect,
   type ExamSubmission
-} from '../../../__mocks__/exam';
-import { Answer } from '../../utils/exam-types';
-import type { getSessionUser } from '../../schemas/user/get-session-user';
-import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers';
+} from '../../../__mocks__/exam.js';
+import { Answer } from '../../utils/exam-types.js';
+import type { getSessionUser } from '../../schemas/user/get-session-user.js';
+import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
 
 const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
 
 const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
 const DATE_NOW = Date.now();
+
+vi.mock('../helpers/challenge-helpers.js', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('../helpers/challenge-helpers.js')
+  >('../helpers/challenge-helpers');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    verifyTrophyWithMicrosoft: vi.fn()
+  };
+});
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -105,65 +117,112 @@ const HtmlChallengeBody = {
   challengeType: challengeTypes.html,
   id: HtmlChallengeId
 };
-const JsProjectBody = {
+
+const baseJsProjectBody = {
   challengeType: challengeTypes.jsProject,
-  id: JsProjectId,
-  files: [
-    {
-      contents: 'console.log("Hello There!")',
-      key: 'scriptjs',
-      ext: 'js',
-      name: 'script',
-      history: ['script.js']
-    }
-  ]
+  id: JsProjectId
 };
-const multiFileCertProjectBody = {
+
+const jsFiles = [
+  {
+    contents: 'console.log("Hello There!")',
+    key: 'scriptjs',
+    ext: 'js',
+    name: 'script',
+    history: ['script.js']
+  }
+];
+
+const encodedJsFiles = [
+  {
+    contents: btoa('console.log("Hello There!")'),
+    key: 'scriptjs',
+    ext: 'js',
+    name: 'script',
+    history: ['script.js']
+  }
+];
+
+const baseMultiFileCertProjectBody = {
   challengeType: challengeTypes.multifileCertProject,
-  id: multiFileCertProjectId,
-  files: [
-    {
-      contents: '<h1>Multi File Project v1</h1>',
-      key: 'indexhtml',
-      ext: 'html',
-      name: 'index',
-      history: ['index.html']
-    },
-    {
-      contents: '.hello-there { general: kenobi; }',
-      key: 'stylescss',
-      ext: 'css',
-      name: 'styles',
-      history: ['styles.css']
-    }
-  ]
+  id: multiFileCertProjectId
 };
-const updatedMultiFileCertProjectBody = {
-  challengeType: challengeTypes.multifileCertProject,
-  id: multiFileCertProjectId,
-  files: [
-    {
-      contents: '<h1>Multi File Project v2</h1>',
-      key: 'indexhtml',
-      ext: 'html',
-      name: 'index',
-      history: ['index.html']
-    },
-    {
-      contents: '.wibbly-wobbly { timey: wimey; }',
-      key: 'stylescss',
-      ext: 'css',
-      name: 'styles',
-      history: ['styles.css']
-    }
-  ]
-};
+
+const multiFiles = [
+  {
+    contents: '<h1>Multi File Project v1</h1>',
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: '.hello-there { general: kenobi; }',
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const updatedMultiFiles = [
+  {
+    contents: '<h1>Multi File Project v2</h1>',
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: '.wibbly-wobbly { timey: wimey; }',
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const encodedMultiFiles = [
+  {
+    contents: btoa('<h1>Multi File Project v1</h1>'),
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: btoa('.hello-there { general: kenobi; }'),
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const encodedUpdatedMultiFiles = [
+  {
+    contents: btoa('<h1>Multi File Project v2</h1>'),
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: btoa('.wibbly-wobbly { timey: wimey; }'),
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
 
 const dailyCodingChallengeId = '5900f36e1000cf542c50fe80';
 const dailyCodingChallengeBody = {
   id: dailyCodingChallengeId,
   language: DailyCodingChallengeLanguage.javascript
 };
+
+const examId = '6721db5d9f0c116e6a0fe25a';
 
 describe('challengeRoutes', () => {
   setupServer();
@@ -319,11 +378,17 @@ describe('challengeRoutes', () => {
       // function with undefined when restoring a prisma function (for some
       // reason)
       test('Should return an error response if something goes wrong', async () => {
+        const originalUserToken = fastifyTestInstance.prisma.userToken;
+
         vi.spyOn(
-          fastifyTestInstance.prisma.userToken,
-          'findUnique'
-        ).mockImplementationOnce(() => {
-          throw new Error('Database error');
+          fastifyTestInstance.prisma,
+          'userToken',
+          'get'
+        ).mockReturnValue({
+          ...originalUserToken,
+          findUnique: vi.fn().mockImplementationOnce(() => {
+            throw new Error('Database error');
+          })
         });
         const tokenResponse = await superPost('/user/user-token');
         const token = (tokenResponse.body as { userToken: string }).userToken;
@@ -353,6 +418,21 @@ describe('challengeRoutes', () => {
     });
     describe('/project-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/project-completed').send({
+            id: examId,
+            challengeType: challengeTypes.backEndProject,
+            solution: 'http://localhost:3000',
+            githubLink: 'http://localhost:3000'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without ids', async () => {
           const response = await superPost('/project-completed').send({});
 
@@ -617,6 +697,23 @@ describe('challengeRoutes', () => {
 
     describe('/backend-challenge-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/backend-challenge-completed').send(
+            {
+              id: examId,
+              challengeType: challengeTypes.backEndProject,
+              solution: 'http://localhost:3000',
+              githubLink: 'http://localhost:3000'
+            }
+          );
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without ids', async () => {
           const response = await superPost('/backend-challenge-completed');
 
@@ -733,6 +830,21 @@ describe('challengeRoutes', () => {
 
     describe('/modern-challenge-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/modern-challenge-completed').send({
+            id: examId,
+            challengeType: challengeTypes.backEndProject,
+            solution: 'http://localhost:3000',
+            githubLink: 'http://localhost:3000'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without ids', async () => {
           const response = await superPost('/modern-challenge-completed');
 
@@ -755,6 +867,16 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
+        beforeEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: [],
+              savedChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
         afterEach(async () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
@@ -804,21 +926,22 @@ describe('challengeRoutes', () => {
         test('POST accepts challenges with files present', async () => {
           const now = Date.now();
 
-          const response = await superPost('/modern-challenge-completed').send(
-            JsProjectBody
-          );
+          const response = await superPost('/modern-challenge-completed').send({
+            ...baseJsProjectBody,
+            files: jsFiles
+          });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const file = omit(JsProjectBody.files[0], 'history');
+          const file = omit(jsFiles[0], 'history');
 
           expect(user).toMatchObject({
             completedChallenges: [
               {
                 id: JsProjectId,
-                challengeType: JsProjectBody.challengeType,
+                challengeType: baseJsProjectBody.challengeType,
                 files: [file],
                 completedDate: expect.any(Number)
               }
@@ -833,7 +956,13 @@ describe('challengeRoutes', () => {
             alreadyCompleted: false,
             points: 1,
             completedDate,
-            savedChallenges: []
+            savedChallenges: [
+              {
+                files: jsFiles,
+                id: JsProjectId,
+                lastSavedDate: expect.any(Number)
+              }
+            ]
           });
           expect(response.statusCode).toBe(200);
         });
@@ -841,15 +970,16 @@ describe('challengeRoutes', () => {
         test('POST accepts challenges with saved solutions', async () => {
           const now = Date.now();
 
-          const response = await superPost('/modern-challenge-completed').send(
-            multiFileCertProjectBody
-          );
+          const response = await superPost('/modern-challenge-completed').send({
+            ...baseMultiFileCertProjectBody,
+            files: multiFiles
+          });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const testFiles = multiFileCertProjectBody.files.map(
+          const testFiles = multiFiles.map(
             ({ history: _history, ...rest }) => rest
           );
 
@@ -858,7 +988,7 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 id: multiFileCertProjectId,
-                challengeType: multiFileCertProjectBody.challengeType,
+                challengeType: baseMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
                 isManuallyApproved: false
@@ -868,7 +998,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: expect.any(Number),
-                files: multiFileCertProjectBody.files
+                files: multiFiles
               }
             ]
           });
@@ -885,7 +1015,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: completedDate,
-                files: multiFileCertProjectBody.files
+                files: multiFiles
               }
             ]
           });
@@ -895,14 +1025,14 @@ describe('challengeRoutes', () => {
         test('POST correctly handles multiple requests', async () => {
           const resOriginal = await superPost(
             '/modern-challenge-completed'
-          ).send(multiFileCertProjectBody);
+          ).send({ ...baseMultiFileCertProjectBody, files: multiFiles });
 
           await superPost('/modern-challenge-completed').send(
             HtmlChallengeBody
           );
 
           const resUpdate = await superPost('/modern-challenge-completed').send(
-            updatedMultiFileCertProjectBody
+            { ...baseMultiFileCertProjectBody, files: updatedMultiFiles }
           );
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -913,7 +1043,7 @@ describe('challengeRoutes', () => {
             challenge => challenge.completedDate
           );
 
-          const testFiles = updatedMultiFileCertProjectBody.files.map(file =>
+          const testFiles = updatedMultiFiles.map(file =>
             omit(file, 'history')
           );
 
@@ -922,7 +1052,7 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 id: multiFileCertProjectId,
-                challengeType: updatedMultiFileCertProjectBody.challengeType,
+                challengeType: baseMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
                 isManuallyApproved: false
@@ -936,7 +1066,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: expect.any(Number),
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ],
             progressTimestamps: expectedProgressTimestamps
@@ -957,7 +1087,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: expect.any(Number),
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ]
           });
@@ -966,8 +1096,237 @@ describe('challengeRoutes', () => {
       });
     });
 
+    describe('/encoded/modern-challenge-completed', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            completedChallenges: [],
+            savedChallenges: [],
+            progressTimestamps: []
+          }
+        });
+      });
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            completedChallenges: [],
+            savedChallenges: [],
+            progressTimestamps: []
+          }
+        });
+      });
+      test('should reject exam submissions', async () => {
+        const response = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          id: examId,
+          challengeType: challengeTypes.backEndProject,
+          solution: 'http://localhost:3000',
+          githubLink: 'http://localhost:3000'
+        });
+
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'Exam submissions are not allowed on this endpoint.'
+        });
+        expect(response.statusCode).toBe(403);
+      });
+
+      // JS Project(5), Multi-file Cert Project(14)
+      test('POST accepts challenges with files present', async () => {
+        const now = Date.now();
+
+        const response = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({ ...baseJsProjectBody, files: encodedJsFiles });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const file = omit(jsFiles[0], 'history');
+
+        expect(user).toMatchObject({
+          completedChallenges: [
+            {
+              id: JsProjectId,
+              challengeType: baseJsProjectBody.challengeType,
+              files: [file],
+              completedDate: expect.any(Number)
+            }
+          ]
+        });
+
+        const completedDate = user.completedChallenges[0]?.completedDate;
+        expect(completedDate).toBeGreaterThanOrEqual(now);
+        expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+        expect(response.body).toStrictEqual({
+          alreadyCompleted: false,
+          points: 1,
+          completedDate,
+          savedChallenges: [
+            {
+              files: jsFiles,
+              id: JsProjectId,
+              lastSavedDate: expect.any(Number)
+            }
+          ]
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      test('POST accepts challenges with saved solutions', async () => {
+        const now = Date.now();
+
+        const response = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          ...baseMultiFileCertProjectBody,
+          files: encodedUpdatedMultiFiles
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const testFiles = updatedMultiFiles.map(
+          ({ history: _history, ...rest }) => rest
+        );
+
+        expect(user).toMatchObject({
+          needsModeration: true,
+          completedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              challengeType: baseMultiFileCertProjectBody.challengeType,
+              files: testFiles,
+              completedDate: expect.any(Number),
+              isManuallyApproved: false
+            }
+          ],
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: expect.any(Number),
+              files: updatedMultiFiles
+            }
+          ]
+        });
+
+        const completedDate = user.completedChallenges[0]?.completedDate;
+        expect(completedDate).toBeGreaterThanOrEqual(now);
+        expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+        expect(response.body).toStrictEqual({
+          alreadyCompleted: false,
+          points: 1,
+          completedDate,
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: completedDate,
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      test('POST correctly handles multiple requests', async () => {
+        const resOriginal = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          ...baseMultiFileCertProjectBody,
+          files: encodedMultiFiles
+        });
+
+        await superPost('/encoded/modern-challenge-completed').send(
+          HtmlChallengeBody
+        );
+
+        const resUpdate = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          ...baseMultiFileCertProjectBody,
+          files: encodedUpdatedMultiFiles
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const expectedProgressTimestamps = user.completedChallenges.map(
+          challenge => challenge.completedDate
+        );
+
+        const testFiles = updatedMultiFiles.map(file => omit(file, 'history'));
+
+        expect(user).toMatchObject({
+          needsModeration: true,
+          completedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              challengeType: baseMultiFileCertProjectBody.challengeType,
+              files: testFiles,
+              completedDate: expect.any(Number),
+              isManuallyApproved: false
+            },
+            {
+              id: HtmlChallengeId,
+              completedDate: expect.any(Number)
+            }
+          ],
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: expect.any(Number),
+              files: updatedMultiFiles
+            }
+          ],
+          progressTimestamps: expectedProgressTimestamps
+        });
+
+        expect(resUpdate.body.savedChallenges[0].lastSavedDate).toBeGreaterThan(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          resOriginal.body.savedChallenges[0].lastSavedDate
+        );
+
+        expect(resUpdate.body).toStrictEqual({
+          alreadyCompleted: true,
+          points: 2,
+          completedDate: expect.any(Number),
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: expect.any(Number),
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(resUpdate.statusCode).toBe(200);
+      });
+    });
+
     describe('/daily-coding-challenge-completed', () => {
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            id: examId,
+            language: 'javascript'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests without an id', async () => {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           const { id, ...noIdReqBody } = dailyCodingChallengeBody;
@@ -1171,7 +1530,7 @@ describe('challengeRoutes', () => {
             savedChallenges: {
               // valid mongo id, but not a saveable one
               id: 'aaaaaaaaaaaaaaaaaaaaaaa',
-              files: multiFileCertProjectBody.files
+              files: multiFiles
             }
           });
 
@@ -1196,7 +1555,7 @@ describe('challengeRoutes', () => {
         test('rejects requests for challenges that cannot be saved', async () => {
           const response = await superPost('/save-challenge').send({
             id: '66ebd4ae2812430bb883c786',
-            files: multiFileCertProjectBody.files
+            files: multiFiles
           });
 
           const { savedChallenges } =
@@ -1212,7 +1571,7 @@ describe('challengeRoutes', () => {
         test('update the user savedchallenges and return them', async () => {
           const response = await superPost('/save-challenge').send({
             id: multiFileCertProjectId,
-            files: updatedMultiFileCertProjectBody.files
+            files: updatedMultiFiles
           });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -1226,7 +1585,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: savedDate,
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ]
           });
@@ -1235,12 +1594,63 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: savedDate,
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ]
           });
           expect(response.statusCode).toBe(200);
         });
+      });
+    });
+
+    describe('POST /encoded/save-challenge', () => {
+      test('rejects requests for challenges that cannot be saved', async () => {
+        const response = await superPost('/encoded/save-challenge').send({
+          id: '66ebd4ae2812430bb883c786',
+          files: encodedUpdatedMultiFiles
+        });
+
+        const { savedChallenges } =
+          await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.text).toEqual('That challenge type is not saveable.');
+        expect(savedChallenges).toHaveLength(0);
+      });
+
+      test('update the user savedchallenges and return them', async () => {
+        const response = await superPost('/encoded/save-challenge').send({
+          id: multiFileCertProjectId,
+          files: encodedUpdatedMultiFiles
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const savedDate = user.savedChallenges[0]?.lastSavedDate;
+
+        expect(user).toMatchObject({
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: savedDate,
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(response.body).toEqual({
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: savedDate,
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(response.statusCode).toBe(200);
       });
     });
 
@@ -1581,6 +1991,31 @@ describe('challengeRoutes', () => {
       });
 
       describe('validation', () => {
+        test('should reject exam submissions', async () => {
+          const response = await superPost('/exam-challenge-completed').send({
+            id: examId,
+            challengeType: 17,
+            userCompletedExam: {
+              examTimeInSeconds: 111,
+              userExamQuestions: [
+                {
+                  id: 'q-id',
+                  question: '?',
+                  answer: {
+                    id: 'a-id',
+                    answer: 'a'
+                  }
+                }
+              ]
+            }
+          });
+
+          expect(response.body).toStrictEqual({
+            error: 'Exam submissions are not allowed on this endpoint.'
+          });
+          expect(response.statusCode).toBe(403);
+        });
+
         test('POST rejects requests with no body', async () => {
           const response = await superRequest('/exam-challenge-completed', {
             method: 'POST',

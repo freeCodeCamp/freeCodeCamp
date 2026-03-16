@@ -1,6 +1,6 @@
 {
   "name": "Build a Book Catalog Table",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

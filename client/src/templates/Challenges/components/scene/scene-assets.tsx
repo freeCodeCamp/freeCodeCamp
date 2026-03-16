@@ -1,5 +1,5 @@
 // TODO: get domain from env
-const domain =
+export const domain =
   'https://cdn.freecodecamp.org/curriculum/english/animation-assets';
 
 export const sounds = `${domain}/sounds`;
@@ -22,7 +22,34 @@ const character = {
   npc: `${characters}/npc`,
   sarah: `${characters}/sarah`,
   sophie: `${characters}/sophie`,
-  tom: `${characters}/tom`
+  tom: `${characters}/tom`,
+
+  // Spanish:
+  angela: `${characters}/angela`,
+  camila: `${characters}/camila`,
+  carlos: `${characters}/carlos`,
+  diego: `${characters}/diego`,
+  elena: `${characters}/elena`,
+  esteban: `${characters}/esteban`,
+  joaquin: `${characters}/joaquin`,
+  julieta: `${characters}/julieta`,
+  luis: `${characters}/luis`,
+  luna: `${characters}/luna`,
+  marisol: `${characters}/marisol`,
+  mateo: `${characters}/mateo`,
+  noelia: `${characters}/noelia`,
+  sebastian: `${characters}/sebastian`,
+  valeria: `${characters}/valeria`,
+
+  // Chinese
+  chenNa: `${characters}/chen-na`,
+  liHong: `${characters}/li-hong`,
+  liPing: `${characters}/li-ping`,
+  linYating: `${characters}/lin-yating`,
+  liuMing: `${characters}/liu-ming`,
+  wangHua: `${characters}/wang-hua`,
+  zhangWei: `${characters}/zhang-wei`,
+  zhouYongjie: `${characters}/zhou-yongjie`
 };
 
 // All the available characters on our CDN. Do not add to this unless we add more characters there.
@@ -179,6 +206,215 @@ const characterImages = {
     glasses: null,
     mouthClosed: `${character.tom}/mouth-smile.png`,
     mouthOpen: `${character.tom}/mouth-laugh.png`
+  },
+  // Spanish
+  angela: {
+    base: `${character.angela}/base.png`,
+    brows: `${character.angela}/brows-neutral.png`,
+    eyesClosed: `${character.angela}/eyes-closed.png`,
+    eyesOpen: `${character.angela}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.angela}/mouth-smile.png`,
+    mouthOpen: `${character.angela}/mouth-open.png`
+  },
+  camila: {
+    base: `${character.camila}/base.png`,
+    brows: `${character.camila}/brows-neutral.png`,
+    eyesClosed: `${character.camila}/eyes-closed.png`,
+    eyesOpen: `${character.camila}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.camila}/mouth-smile.png`,
+    mouthOpen: `${character.camila}/mouth-open.png`
+  },
+  carlos: {
+    base: `${character.carlos}/base.png`,
+    brows: `${character.carlos}/brows-neutral.png`,
+    eyesClosed: `${character.carlos}/eyes-closed.png`,
+    eyesOpen: `${character.carlos}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.carlos}/mouth-smile.png`,
+    mouthOpen: `${character.carlos}/mouth-open.png`
+  },
+  diego: {
+    base: `${character.diego}/base.png`,
+    brows: `${character.diego}/brows-neutral.png`,
+    eyesClosed: `${character.diego}/eyes-closed.png`,
+    eyesOpen: `${character.diego}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.diego}/mouth-smile.png`,
+    mouthOpen: `${character.diego}/mouth-open.png`
+  },
+  elena: {
+    base: `${character.elena}/base.png`,
+    brows: `${character.elena}/brows-neutral.png`,
+    eyesClosed: `${character.elena}/eyes-closed.png`,
+    eyesOpen: `${character.elena}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.elena}/mouth-smile.png`,
+    mouthOpen: `${character.elena}/mouth-open.png`
+  },
+  esteban: {
+    base: `${character.esteban}/base.png`,
+    brows: `${character.esteban}/brows-neutral.png`,
+    eyesClosed: `${character.esteban}/eyes-closed.png`,
+    eyesOpen: `${character.esteban}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.esteban}/mouth-smile.png`,
+    mouthOpen: `${character.esteban}/mouth-open.png`
+  },
+  joaquin: {
+    base: `${character.joaquin}/base.png`,
+    brows: `${character.joaquin}/brows-neutral.png`,
+    eyesClosed: `${character.joaquin}/eyes-closed.png`,
+    eyesOpen: `${character.joaquin}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.joaquin}/mouth-smile.png`,
+    mouthOpen: `${character.joaquin}/mouth-open.png`
+  },
+  julieta: {
+    base: `${character.julieta}/base.png`,
+    brows: `${character.julieta}/brows-neutral.png`,
+    eyesClosed: `${character.julieta}/eyes-closed.png`,
+    eyesOpen: `${character.julieta}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.julieta}/mouth-smile.png`,
+    mouthOpen: `${character.julieta}/mouth-open.png`
+  },
+  luna: {
+    base: `${character.luna}/base.png`,
+    brows: `${character.luna}/brows-neutral.png`,
+    eyesClosed: `${character.luna}/eyes-closed.png`,
+    eyesOpen: `${character.luna}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.luna}/mouth-smile.png`,
+    mouthOpen: `${character.luna}/mouth-open.png`
+  },
+  luis: {
+    base: `${character.luis}/base.png`,
+    brows: `${character.luis}/brows-neutral.png`,
+    eyesClosed: `${character.luis}/eyes-closed.png`,
+    eyesOpen: `${character.luis}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.luis}/mouth-smile.png`,
+    mouthOpen: `${character.luis}/mouth-open.png`
+  },
+  marisol: {
+    base: `${character.marisol}/base.png`,
+    brows: `${character.marisol}/brows-neutral.png`,
+    eyesClosed: `${character.marisol}/eyes-closed.png`,
+    eyesOpen: `${character.marisol}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.marisol}/mouth-smile.png`,
+    mouthOpen: `${character.marisol}/mouth-open.png`
+  },
+  mateo: {
+    base: `${character.mateo}/base.png`,
+    brows: `${character.mateo}/brows-neutral.png`,
+    eyesClosed: `${character.mateo}/eyes-closed.png`,
+    eyesOpen: `${character.mateo}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.mateo}/mouth-smile.png`,
+    mouthOpen: `${character.mateo}/mouth-open.png`
+  },
+  noelia: {
+    base: `${character.noelia}/base.png`,
+    brows: `${character.noelia}/brows-neutral.png`,
+    eyesClosed: `${character.noelia}/eyes-closed.png`,
+    eyesOpen: `${character.noelia}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.noelia}/mouth-smile.png`,
+    mouthOpen: `${character.noelia}/mouth-open.png`
+  },
+  sebastian: {
+    base: `${character.sebastian}/base.png`,
+    brows: `${character.sebastian}/brows-neutral.png`,
+    eyesClosed: `${character.sebastian}/eyes-closed.png`,
+    eyesOpen: `${character.sebastian}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.sebastian}/mouth-smile.png`,
+    mouthOpen: `${character.sebastian}/mouth-open.png`
+  },
+  valeria: {
+    base: `${character.valeria}/base.png`,
+    brows: `${character.valeria}/brows-neutral.png`,
+    eyesClosed: `${character.valeria}/eyes-closed.png`,
+    eyesOpen: `${character.valeria}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.valeria}/mouth-smile.png`,
+    mouthOpen: `${character.valeria}/mouth-open.png`
+  },
+  // Chinese
+  chenNa: {
+    base: `${character.chenNa}/base.png`,
+    brows: `${character.chenNa}/brows-neutral.png`,
+    eyesClosed: `${character.chenNa}/eyes-closed.png`,
+    eyesOpen: `${character.chenNa}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.chenNa}/mouth-smile.png`,
+    mouthOpen: `${character.chenNa}/mouth-open.png`
+  },
+  liHong: {
+    base: `${character.liHong}/base.png`,
+    brows: `${character.liHong}/brows-neutral.png`,
+    eyesClosed: `${character.liHong}/eyes-closed.png`,
+    eyesOpen: `${character.liHong}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.liHong}/mouth-smile.png`,
+    mouthOpen: `${character.liHong}/mouth-open.png`
+  },
+  liPing: {
+    base: `${character.liPing}/base.png`,
+    brows: `${character.liPing}/brows-neutral.png`,
+    eyesClosed: `${character.liPing}/eyes-closed.png`,
+    eyesOpen: `${character.liPing}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.liPing}/mouth-smile.png`,
+    mouthOpen: `${character.liPing}/mouth-open.png`
+  },
+  linYating: {
+    base: `${character.linYating}/base.png`,
+    brows: `${character.linYating}/brows-neutral.png`,
+    eyesClosed: `${character.linYating}/eyes-closed.png`,
+    eyesOpen: `${character.linYating}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.linYating}/mouth-smile.png`,
+    mouthOpen: `${character.linYating}/mouth-open.png`
+  },
+  liuMing: {
+    base: `${character.liuMing}/base.png`,
+    brows: `${character.liuMing}/brows-neutral.png`,
+    eyesClosed: `${character.liuMing}/eyes-closed.png`,
+    eyesOpen: `${character.liuMing}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.liuMing}/mouth-smile.png`,
+    mouthOpen: `${character.liuMing}/mouth-open.png`
+  },
+  wangHua: {
+    base: `${character.wangHua}/base.png`,
+    brows: `${character.wangHua}/brows-neutral.png`,
+    eyesClosed: `${character.wangHua}/eyes-closed.png`,
+    eyesOpen: `${character.wangHua}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.wangHua}/mouth-smile.png`,
+    mouthOpen: `${character.wangHua}/mouth-open.png`
+  },
+  zhangWei: {
+    base: `${character.zhangWei}/base.png`,
+    brows: `${character.zhangWei}/brows-neutral.png`,
+    eyesClosed: `${character.zhangWei}/eyes-closed.png`,
+    eyesOpen: `${character.zhangWei}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.zhangWei}/mouth-smile.png`,
+    mouthOpen: `${character.zhangWei}/mouth-open.png`
+  },
+  zhouYongjie: {
+    base: `${character.zhouYongjie}/base.png`,
+    brows: `${character.zhouYongjie}/brows-neutral.png`,
+    eyesClosed: `${character.zhouYongjie}/eyes-closed.png`,
+    eyesOpen: `${character.zhouYongjie}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.zhouYongjie}/mouth-smile.png`,
+    mouthOpen: `${character.zhouYongjie}/mouth-open.png`
   }
 };
 
@@ -211,20 +447,30 @@ export const characterAssets = {
 
   // Spanish
   Alex: characterImages.npcGirl,
-  Ángela: characterImages.sarah,
-  Camila: characterImages.sophie,
-  Carlos: characterImages.brian,
-  Elena: characterImages.anna,
-  Esteban: characterImages.james,
-  Joaquín: characterImages.jake,
-  Julieta: characterImages.maria,
-  Luis: characterImages.bob,
-  Luna: characterImages.lisa,
-  Marisol: characterImages.linda,
-  Mateo: characterImages.npcBoy,
-  Noelia: characterImages.npcWoman,
+  Ángela: characterImages.angela,
+  Camila: characterImages.camila,
+  Carlos: characterImages.carlos,
+  Elena: characterImages.elena,
+  Esteban: characterImages.esteban,
+  Joaquín: characterImages.joaquin,
+  Julieta: characterImages.julieta,
+  Luis: characterImages.luis,
+  Luna: characterImages.luna,
+  Marisol: characterImages.marisol,
+  Mateo: characterImages.mateo,
+  Noelia: characterImages.noelia,
   René: characterImages.npcMan,
-  Sebastián: characterImages.david,
-  Diego: characterImages.tom,
-  Valeria: characterImages.alice
+  Sebastián: characterImages.sebastian,
+  Diego: characterImages.diego,
+  Valeria: characterImages.valeria,
+
+  //Chinese
+  'Chen Na': characterImages.chenNa,
+  'Li Hong': characterImages.liHong,
+  'Li Ping': characterImages.liPing,
+  'Lin Yating': characterImages.linYating,
+  'Liu Ming': characterImages.liuMing,
+  'Wang Hua': characterImages.wangHua,
+  'Zhang Wei': characterImages.zhangWei,
+  'Zhou Yongjie': characterImages.zhouYongjie
 };

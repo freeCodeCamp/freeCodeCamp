@@ -4,8 +4,8 @@ import {
   setupServer,
   superRequest,
   createSuperRequest
-} from '../../../vitest.utils';
-import { AUTH0_DOMAIN } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { AUTH0_DOMAIN } from '../../utils/env.js';
 
 const mockedFetch = vi.fn();
 vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
@@ -28,7 +28,9 @@ const mockAuth0ValidEmail = () => ({
 
 vi.mock('../../utils/env', async () => {
   const actual =
-    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
+    await vi.importActual<typeof import('../../utils/env.js')>(
+      '../../utils/env'
+    );
   return {
     ...actual,
     FCC_ENABLE_DEV_LOGIN_MODE: false

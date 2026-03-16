@@ -21,77 +21,67 @@ Within `tests/1_unit-tests.js` under the test labeled `#5` in the `Equality` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=4').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=4');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `equal` vs. `notEqual`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=4').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'equal',
-        'Numbers are coerced into strings with == '
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=4');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[0].method,
+    'equal',
+    'Numbers are coerced into strings with == '
   );
 ```
 
 You should choose the correct method for the second assertion - `equal` vs. `notEqual`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=4').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'notEqual',
-        ' == compares object references'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=4');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[1].method,
+    'notEqual',
+    ' == compares object references'
   );
 ```
 
 You should choose the correct method for the third assertion - `equal` vs. `notEqual`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=4').then(
-    (data) => {
-      assert.equal(
-        data.assertions[2].method,
-        'equal',
-        "6 * '2' is 12 ! It should be equal to '12'"
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=4');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[2].method,
+    'equal',
+    "6 * '2' is 12 ! It should be equal to '12'"
   );
 ```
 
 You should choose the correct method for the fourth assertion - `equal` vs. `notEqual`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=4').then(
-    (data) => {
-      assert.equal(data.assertions[3].method, 'notEqual', "6 + '2' is '62'...");
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=4');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.assertions[3].method, 'notEqual', "6 + '2' is '62'...");
 ```
 

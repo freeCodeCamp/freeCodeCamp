@@ -7,6 +7,7 @@ const settingsPageElement = {
   githubCheckmark: 'internet-github-check',
   linkedinCheckmark: 'internet-linkedin-check',
   twitterCheckmark: 'internet-twitter-check',
+  blueskyCheckmark: 'internet-bluesky-check',
   personalWebsiteCheckmark: 'internet-website-check',
   flashMessageAlert: 'flash-message',
   internetPresenceForm: 'internet-presence'
@@ -14,13 +15,9 @@ const settingsPageElement = {
 
 test.beforeEach(async ({ page }) => {
   // Reset input values
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 
   await page.goto('/certifieduser');
-
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
 
   await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
@@ -59,9 +56,15 @@ test.describe('Your Internet Presence', () => {
     },
     {
       name: 'twitter',
-      url: 'https://twitter.com/certified-user',
-      label: 'Twitter',
+      url: 'https://x.com/certified-user',
+      label: 'X',
       checkTestId: settingsPageElement.twitterCheckmark
+    },
+    {
+      name: 'bluesky',
+      url: 'https://bsky.app/profile/certified-user.bsky.social',
+      label: 'Bluesky',
+      checkTestId: settingsPageElement.blueskyCheckmark
     },
     {
       name: 'website',

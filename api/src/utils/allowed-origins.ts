@@ -1,4 +1,4 @@
-import { HOME_LOCATION, FREECODECAMP_NODE_ENV } from './env';
+import { HOME_LOCATION, FREECODECAMP_NODE_ENV } from './env.js';
 
 const ALLOWED_ORIGINS = [
   'https://www.freecodecamp.dev',

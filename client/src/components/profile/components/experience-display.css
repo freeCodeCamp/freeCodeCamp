@@ -1,0 +1,15 @@
+.experience-company {
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.experience-date {
+  color: #858591;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.experience-description {
+  margin-top: 0.75rem;
+  white-space: pre-wrap;
+}

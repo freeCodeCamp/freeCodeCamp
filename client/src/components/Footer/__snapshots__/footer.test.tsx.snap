@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Footer /> matches snapshot 1`] = `
+exports[`<Footer /> > matches snapshot 1`] = `
 <footer
   className="site-footer"
 >
@@ -327,7 +327,7 @@ exports[`<Footer /> matches snapshot 1`] = `
           footer.mobile-app
         </h2>
         <div
-          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ml-[16.6%]   "
+          className=" min-h-[1px] px-[15px]  md:w-2/3    md:ms-[16.6%]   "
         >
           <ul
             aria-labelledby="mobile-app"
@@ -342,7 +342,7 @@ exports[`<Footer /> matches snapshot 1`] = `
                 <img
                   alt="Download on the App Store"
                   lang="en"
-                  src={{}}
+                  src="/src/assets/images/footer-ads/apple-store-badge.svg"
                 />
               </a>
             </li>
@@ -355,7 +355,7 @@ exports[`<Footer /> matches snapshot 1`] = `
                 <img
                   alt="Get it on Google Play"
                   lang="en"
-                  src={{}}
+                  src="/src/assets/images/footer-ads/google-play-badge.svg"
                 />
               </a>
             </li>

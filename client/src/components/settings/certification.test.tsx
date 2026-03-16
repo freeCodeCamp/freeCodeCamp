@@ -1,6 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
+import { describe, it, expect, vi } from 'vitest';
+
+vi.mock('../../utils/get-words');
+
 import { createStore } from '../../redux/create-store';
 import { Ext } from '../../redux/prop-types';
 import { verifyCert } from '../../redux/settings/actions';
@@ -8,7 +12,7 @@ import { createFlashMessage } from '../Flash/redux';
 
 import CertificationSettings from './certification';
 
-jest.mock('../../analytics');
+vi.mock('../../analytics');
 
 function renderWithRedux(ui: JSX.Element) {
   return render(<Provider store={createStore()}>{ui}</Provider>);
@@ -258,6 +262,7 @@ const defaultTestProps = {
   ],
   createFlashMessage: createFlashMessage,
   is2018DataVisCert: false,
+  isA2EnglishCert: false,
   isApisMicroservicesCert: false,
   isBackEndCert: false,
   isDataVisCert: true,
@@ -266,17 +271,28 @@ const defaultTestProps = {
   isFullStackCert: false,
   isHonest: false,
   isInfosecQaCert: false,
+  isPythonCertV9: false,
   isQaCertV7: false,
   isInfosecCertV7: false,
+  isJavascriptCertV9: false,
   isJsAlgoDataStructCert: false,
   isJsAlgoDataStructCertV8: false,
   isRespWebDesignCert: false,
+  isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
   isDataAnalysisPyCertV7: false,
   isMachineLearningPyCertV7: false,
   isRelationalDatabaseCertV8: false,
+  isRelationalDatabaseCertV9: false,
   isCollegeAlgebraPyCertV8: false,
   isFoundationalCSharpCertV8: false,
+  isFrontEndLibsCertV9: false,
+  isBackEndDevApisCertV9: false,
+  isFullStackDeveloperCertV9: false,
+  isB1EnglishCert: false,
+  isA2SpanishCert: false,
+  isA2ChineseCert: false,
+  isA1ChineseCert: false,
   username: 'developmentuser',
   verifyCert: verifyCert,
   isEmailVerified: false

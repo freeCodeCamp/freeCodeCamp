@@ -1,0 +1,15 @@
+{
+  "name": "Implement a Range-Based LCM Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-range-based-lcm-calculator",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "ae9defd7acaf69703ab432ea",
+      "title": "Implement a Range-Based LCM Calculator"
+    }
+  ]
+}

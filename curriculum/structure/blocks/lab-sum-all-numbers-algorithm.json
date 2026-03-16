@@ -2,7 +2,7 @@
   "name": "Design a Sum All Numbers Algorithm",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-sum-all-numbers-algorithm",
   "challengeOrder": [

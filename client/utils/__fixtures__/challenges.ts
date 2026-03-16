@@ -70,5 +70,19 @@ export const challengeFiles: ChallengeFile[] = [
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
     path: 'index.jsx',
+  },
+  {
+    contents: 'some tsx',
+    error: null,
+    ext: 'tsx',
+    head: '',
+    history: ['index.tsx'],
+    fileKey: 'indextsx',
+    name: 'index',
+    seed: 'some tsx',
+    tail: '',
+    editableRegionBoundaries: [],
+    usesMultifileEditor: true,
+    path: 'index.tsx',
   }
 ]

@@ -15,13 +15,16 @@ const schema = Joi.object()
       'legacy-link',
       'legacy-challenge-grid'
     ).required(),
-    blockType: Joi.valid(
+    blockLabel: Joi.valid(
       'workshop',
       'lab',
       'lecture',
       'review',
       'quiz',
-      'exam'
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
     ),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
@@ -60,7 +63,10 @@ const schema = Joi.object()
       'English',
       'Odin',
       'Euler',
-      'Rosetta'
+      'Rosetta',
+      'Chinese Curriculum',
+      'Spanish Curriculum',
+      'General'
     ).required()
   })
   // this makes sure there is no unknown key in the object

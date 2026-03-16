@@ -2,6 +2,10 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import {
+  currentCertifications,
+  legacyCertifications as legacyCerts
+} from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
@@ -22,6 +26,10 @@ const settingsObject = {
 };
 
 const certifications = [
+  translations.certification.title['foundational-c-sharp-with-microsoft']
+];
+
+const legacyCertifications = [
   translations.certification.title['responsive-web-design'],
   translations.certification.title[
     'javascript-algorithms-and-data-structures-v8'
@@ -36,10 +44,6 @@ const certifications = [
   translations.certification.title['information-security-v7'],
   translations.certification.title['machine-learning-with-python-v7'],
   translations.certification.title['college-algebra-with-python-v8'],
-  translations.certification.title['foundational-c-sharp-with-microsoft']
-];
-
-const legacyCertifications = [
   translations.certification.title['legacy-front-end'],
   translations.certification.title['legacy-back-end'],
   translations.certification.title['legacy-data-visualization'],
@@ -48,7 +52,7 @@ const legacyCertifications = [
 
 test.describe('Settings - Certified User', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
   });
 
@@ -154,11 +158,19 @@ test.describe('Settings - Certified User', () => {
         .filter({ hasText: translations.settings.labels['my-portfolio'] })
     ).toBeVisible();
     await expect(
+      page
+        .getByRole('group', {
+          name: translations.settings.labels['my-experience']
+        })
+        .locator('p')
+        .filter({ hasText: translations.settings.labels['my-experience'] })
+    ).toBeVisible();
+    await expect(
       page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     await expect(
       page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     const saveButton = page.getByRole('button', {
       name: translations.settings.headings.privacy
     });
@@ -228,7 +240,7 @@ test.describe('Settings - Certified User', () => {
     }
 
     // Danger Zone
-    await expect(page.getByText('Danger Zone')).toBeVisible();
+    await expect(page.getByRole('main').getByText('Danger Zone')).toBeVisible();
     await expect(
       page.getByText(
         'Please be careful. Changes in this section are permanent.'
@@ -247,29 +259,29 @@ test.describe('Settings - Certified User', () => {
   });
 });
 
-// In order to claim the Full Stack cert, the user needs to complete 6 certs.
+// In order to claim the Full-Stack cert, the user needs to complete 6 certs.
 // Instead of simulating 6 cert claim flows,
-// we use the data of Certified User but remove the Full Stack cert.
-test.describe('Settings - Certified User without Full Stack Certification', () => {
+// we use the data of Certified User but remove the Full-Stack cert.
+test.describe('Settings - Certified User without Full-Stack Certification', () => {
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
     );
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
+  test('should allow claiming Full-Stack cert if the user has completed all requirements', async ({
     page
   }) => {
     const claimButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Full Stack'
+      name: 'Claim Certification Legacy Full-Stack'
     });
     const showButton = page.getByRole('link', {
-      name: 'Show Certification Legacy Full Stack'
+      name: 'Show Certification Legacy Full-Stack'
     });
 
     await expect(claimButton).toBeVisible();
@@ -278,7 +290,7 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
 
     await alertToBeVisible(
       page,
-      '@certifieduser, you have successfully claimed the Legacy Full Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+      '@certifieduser, you have successfully claimed the Legacy Full-Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
     );
     await expect(claimButton).toBeHidden();
     await expect(showButton).toBeVisible();
@@ -293,31 +305,52 @@ test.describe('Settings - New User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
+  test('should not allow claiming Full-Stack cert if the user has not completed all the required certs', async ({
     page
   }) => {
     const claimFullStackCertButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Full Stack'
+      name: 'Claim Certification Legacy Full-Stack'
     });
 
     const claimRwdCertButton = page.getByRole('button', {
-      name: 'Claim Certification Responsive Web Design'
+      name: 'Claim Certification Legacy Responsive Web Design V8'
     });
 
     // Buttons for normal certs are enabled
     await expect(claimRwdCertButton).toBeVisible();
     await expect(claimRwdCertButton).toBeEnabled();
 
-    // Button for full stack cert is disabled if the user hasn't claimed the required certs
+    // Button for full-stack cert is disabled if the user hasn't claimed the required certs
     await expect(claimFullStackCertButton).toBeVisible();
     await expect(claimFullStackCertButton).toBeDisabled();
+  });
+});
+
+test.describe('Setting - Hash Navigation', () => {
+  test('should scroll to certification sections when navigating with hash', async ({
+    page
+  }) => {
+    const allCerts = [...currentCertifications, ...legacyCerts];
+    for (const certSlug of allCerts) {
+      await page.goto(`/settings#cert-${certSlug}`);
+
+      // Wait for scroll animation
+      await page.waitForTimeout(300);
+
+      const certHeading = page.getByRole('heading', {
+        name: translations.certification.title[certSlug],
+        exact: true
+      });
+
+      await expect(certHeading).toBeInViewport();
+    }
   });
 });

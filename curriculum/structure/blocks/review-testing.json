@@ -1,6 +1,6 @@
 {
   "name": "Testing Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-testing",

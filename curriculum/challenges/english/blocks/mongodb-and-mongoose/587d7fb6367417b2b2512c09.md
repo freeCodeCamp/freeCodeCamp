@@ -28,19 +28,17 @@ person.save(function(err, data) {
 Creating and saving a db item should succeed
 
 ```js
-  $.get(code + '/_api/create-and-save-person').then(
-    (data) => {
-      assert.isString(data.name, '"item.name" should be a String');
-      assert.isNumber(data.age, '28', '"item.age" should be a Number');
-      assert.isArray(
-        data.favoriteFoods,
-        '"item.favoriteFoods" should be an Array'
-      );
-      assert.equal(data.__v, 0, 'The db item should be not previously edited');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/create-and-save-person');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isString(data.name, '"item.name" should be a String');
+  assert.isNumber(data.age, '28', '"item.age" should be a Number');
+  assert.isArray(
+    data.favoriteFoods,
+    '"item.favoriteFoods" should be an Array'
   );
+  assert.equal(data.__v, 0, 'The db item should be not previously edited');
 ```
 

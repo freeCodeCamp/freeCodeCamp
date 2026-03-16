@@ -13,7 +13,7 @@ An `h1` element is the main heading of a webpage and you should only use one per
 <h2>This is a subheading.</h2>
 ```
 
-Turn the `Full Stack Curriculum` text into an `h2` element by surrounding it with opening and closing `h2` tags.
+Turn the `Full-Stack Curriculum` text into an `h2` element by surrounding it with opening and closing `h2` tags.
 
 # --hints--
 
@@ -29,12 +29,12 @@ Your `h2` element should have a closing `</h2>` tag.
 assert.match(code, /<\/h2\s*\>/);
 ```
 
-Your `h2` element should look like this: `<h2>Full Stack Curriculum</h2>`.
+Your `h2` element should look like this: `<h2>Full-Stack Curriculum</h2>`.
 
 ```js
 // purposefully removing friction for early users to help improve retention in early lessons
 // this if very forgiving of spaces and casing
-assert.match(code, /\<h2\s*\>\s*Full\s*Stack\s*Curriculum\s*\<\/h2\s*\>/i);
+assert.match(code, /\<h2\s*\>\s*Full-Stack\s*Curriculum\s*\<\/h2\s*\>/i);
 ```
 
 # --seed--
@@ -44,6 +44,6 @@ assert.match(code, /\<h2\s*\>\s*Full\s*Stack\s*Curriculum\s*\<\/h2\s*\>/i);
 ```html
 <h1>Welcome to freeCodeCamp</h1>
 --fcc-editable-region--
-Full Stack Curriculum
+Full-Stack Curriculum
 --fcc-editable-region--
 ```

@@ -3,8 +3,6 @@ import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import Ajv from 'ajv';
-import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
 import Fastify, {
   FastifyBaseLogger,
@@ -14,25 +12,27 @@ import Fastify, {
   RawRequestDefaultExpression,
   RawServerDefault
 } from 'fastify';
+import { Ajv } from 'ajv';
+import addFormats from 'ajv-formats';
 
-import prismaPlugin from './db/prisma';
-import cookies from './plugins/cookies';
-import cors from './plugins/cors';
-import { NodemailerProvider } from './plugins/mail-providers/nodemailer';
-import { SESProvider } from './plugins/mail-providers/ses';
-import mailer from './plugins/mailer';
-import redirectWithMessage from './plugins/redirect-with-message';
-import security from './plugins/security';
-import auth from './plugins/auth';
-import bouncer from './plugins/bouncer';
-import errorHandling from './plugins/error-handling';
-import csrf from './plugins/csrf';
-import notFound from './plugins/not-found';
-import shadowCapture from './plugins/shadow-capture';
-import growthBook from './plugins/growth-book';
+import prismaPlugin from './db/prisma.js';
+import cookies from './plugins/cookies.js';
+import cors from './plugins/cors.js';
+import { NodemailerProvider } from './plugins/mail-providers/nodemailer.js';
+import { SESProvider } from './plugins/mail-providers/ses.js';
+import mailer from './plugins/mailer.js';
+import redirectWithMessage from './plugins/redirect-with-message.js';
+import security from './plugins/security.js';
+import auth from './plugins/auth.js';
+import bouncer from './plugins/bouncer.js';
+import errorHandling from './plugins/error-handling.js';
+import csrf from './plugins/csrf.js';
+import notFound from './plugins/not-found.js';
+import shadowCapture from './plugins/shadow-capture.js';
+import growthBook from './plugins/growth-book.js';
 
-import * as publicRoutes from './routes/public';
-import * as protectedRoutes from './routes/protected';
+import * as publicRoutes from './routes/public/index.js';
+import * as protectedRoutes from './routes/protected/index.js';
 
 import {
   API_LOCATION,
@@ -40,18 +40,18 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
-  FCC_ENABLE_EXAM_ENVIRONMENT,
   FCC_ENABLE_SENTRY_ROUTES,
+  FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
-} from './utils/env';
-import { isObjectID } from './utils/validation';
-import { getLogger } from './utils/logger';
+} from './utils/env.js';
+import { isObjectID } from './utils/validation.js';
+import { getLogger } from './utils/logger.js';
 import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
-} from './exam-environment/routes/exam-environment';
-import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge';
+} from './exam-environment/routes/exam-environment.js';
+import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge.js';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -65,7 +65,7 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
 const ajv = new Ajv({
   coerceTypes: 'array', // change data type of data to match type keyword
   useDefaults: true, // replace missing properties and items with the values from corresponding default keyword
-  removeAdditional: true, // remove additional properties
+  removeAdditional: 'all', // remove additional properties
   uriResolver,
   addUsedSchema: false,
   // Explicitly set allErrors to `false`.
@@ -74,7 +74,7 @@ const ajv = new Ajv({
 });
 
 // add the default formatters from avj-formats
-addFormats(ajv);
+addFormats.default(ajv);
 ajv.addFormat('objectid', {
   type: 'string',
   validate: (str: string) => isObjectID(str)
@@ -87,7 +87,11 @@ export const buildOptions: FastifyHttpOptions<
   loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   // disabled so we can customise the request/response logging
-  disableRequestLogging: true
+  disableRequestLogging: true,
+  // destroy all connections on close to avoid EADDRINUSE
+  // on restart, in development. Leave default in production.
+  forceCloseConnections:
+    FREECODECAMP_NODE_ENV === 'production' ? ('idle' as const) : true
 };
 
 /**
@@ -192,13 +196,6 @@ export const build = async (
       await fastify.register(protectedRoutes.userRoutes);
     });
 
-    // CSRF protection disabled:
-    await fastify.register(async function (fastify, _opts) {
-      fastify.addHook('onRequest', fastify.send401IfNoUser);
-
-      await fastify.register(protectedRoutes.userGetRoutes);
-    });
-
     // Routes that redirect if access is denied:
     await fastify.register(async function (fastify, _opts) {
       fastify.addHook('onRequest', fastify.redirectIfNoUser);
@@ -209,6 +206,14 @@ export const build = async (
 
   // TODO: The route should not handle its own AuthZ
   await fastify.register(protectedRoutes.challengeTokenRoutes);
+
+  // CSRF protection disabled:
+  // Routes that work for both authenticated and unauthenticated users:
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.authorize);
+
+    await fastify.register(protectedRoutes.userGetRoutes);
+  });
 
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
@@ -223,15 +228,14 @@ export const build = async (
     }
   });
 
-  if (FCC_ENABLE_EXAM_ENVIRONMENT ?? fastify.gb.isOn('exam-environment')) {
-    void fastify.register(function (fastify, _opts, done) {
-      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+  void fastify.register(function (fastify, _opts, done) {
+    fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+    fastify.addHook('onRequest', fastify.send401IfNoUser);
 
-      void fastify.register(examEnvironmentValidatedTokenRoutes);
-      done();
-    });
-    void fastify.register(examEnvironmentOpenRoutes);
-  }
+    void fastify.register(examEnvironmentValidatedTokenRoutes);
+    done();
+  });
+  void fastify.register(examEnvironmentOpenRoutes);
 
   if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);

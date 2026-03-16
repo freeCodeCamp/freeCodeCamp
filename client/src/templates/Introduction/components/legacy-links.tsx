@@ -1,17 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
-import {
-  isOldRespCert,
-  isRelationalDbCert,
-  isExamCert
-} from '../../../utils/is-a-cert';
-import { Link } from '../../../components/helpers';
+import { Callout } from '@freecodecamp/ui';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { isRelationalDbCert, isExamCert } from '../../../utils/is-a-cert';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import envData from '../../../../config/env.json';
-import { GitpodNote } from '../../../components/growth-book/gitpod-note';
+import { OnaNote } from '../../../components/growth-book/ona-note';
 
 const { clientLocale } = envData;
 
@@ -22,48 +17,25 @@ interface LegacyLinksProps {
 function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
   const { t } = useTranslation();
 
-  if (isOldRespCert(superBlock)) {
-    return (
-      <Alert variant='info'>
-        <p>
-          {t($ => $['misc-text']['legacy-desc'], {
-            ns: 'intro'
-          })}{' '}
-          <Link sameTab={false} to={`/learn/2022/responsive-web-design`}>
-            {t($ => $['misc-text']['legacy-go-back'], {
-              ns: 'intro'
-            })}
-          </Link>
-        </p>
-      </Alert>
-    );
-  } else if (isRelationalDbCert(superBlock)) {
+  if (isRelationalDbCert(superBlock)) {
     return (
       <>
         <CodeAllyDown />
         {clientLocale != 'english' && (
-          <Alert variant='info'>
-            <p>
-              {t($ => $['misc-text']['english-only'], {
-                ns: 'intro'
-              })}
-            </p>
-          </Alert>
+          <Callout variant='note' label={t('misc.note')}>
+            <p>{t('intro:misc-text.english-only')}</p>
+          </Callout>
         )}
       </>
     );
   } else if (isExamCert(superBlock) && clientLocale != 'english') {
     return (
-      <Alert variant='info'>
-        <p>
-          {t($ => $['misc-text']['exam-english-only'], {
-            ns: 'intro'
-          })}
-        </p>
-      </Alert>
+      <Callout variant='note' label={t('misc.note')}>
+        <p>{t('intro:misc-text.exam-english-only')}</p>
+      </Callout>
     );
   } else {
-    return <GitpodNote superBlock={superBlock} />;
+    return <OnaNote superBlock={superBlock} />;
   }
 }
 

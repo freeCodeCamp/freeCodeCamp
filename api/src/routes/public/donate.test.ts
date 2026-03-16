@@ -1,5 +1,5 @@
 import { describe, test, expect, beforeAll, vi } from 'vitest';
-import { setupServer, superRequest } from '../../../vitest.utils';
+import { setupServer, superRequest } from '../../../vitest.utils.js';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
@@ -66,31 +66,27 @@ const generateMockSubCreate = (status: string) => () =>
       }
     }
   });
-vi.mock('stripe', () => {
-  return {
-    default: vi.fn().mockImplementation(() => {
-      return {
-        customers: {
-          create: mockCustomerCreate,
-          update: mockCustomerUpdate
-        },
-        paymentMethods: {
-          attach: mockAttachPaymentMethod
-        },
-        subscriptions: {
-          create: mockSubCreate,
-          retrieve: mockSubRetrieve
-        },
-        checkout: {
-          sessions: {
-            create: mockCheckoutSessionCreate
-          }
-        }
-      };
-    })
-  };
-});
-
+vi.mock('stripe', () => ({
+  default: class {
+    constructor() {}
+    customers = {
+      create: mockCustomerCreate,
+      update: mockCustomerUpdate
+    };
+    paymentMethods = {
+      attach: mockAttachPaymentMethod
+    };
+    subscriptions = {
+      create: mockSubCreate,
+      retrieve: mockSubRetrieve
+    };
+    checkout = {
+      sessions: {
+        create: mockCheckoutSessionCreate
+      }
+    };
+  }
+}));
 describe('Donate', () => {
   let setCookies: string[];
   setupServer();

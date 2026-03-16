@@ -1,16 +1,14 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import type { FastifyInstance } from 'fastify';
+import type { FastifyError, FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../../shared/utils/validate';
-import * as schemas from '../../schemas';
-import { createAuthToken, isExpired } from '../../utils/tokens';
-import { API_LOCATION } from '../../utils/env';
-import { getRedirectParams } from '../../utils/redirection';
-import { isRestricted } from '../helpers/is-restricted';
-
-const { isEmail } = validator;
+import { isValidUsername } from '@freecodecamp/shared/utils/validate';
+import * as schemas from '../../schemas.js';
+import { createAuthToken, isExpired } from '../../utils/tokens.js';
+import { API_LOCATION } from '../../utils/env.js';
+import { getRedirectParams } from '../../utils/redirection.js';
+import { isRestricted } from '../helpers/is-restricted.js';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -55,10 +53,50 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+const commonImageExtensions = [
+  'apng',
+  'avif',
+  'gif',
+  'jpg',
+  'jpeg',
+  'jfif',
+  'pjpeg',
+  'pjp',
+  'png',
+  'svg',
+  'webp'
+];
+
+/**
+ * Validate that a picture URL has a common image extension.
+ *
+ * @param picture The URL to check.
+ * @returns Whether the URL has a common image extension.
+ */
+
+const validateImageExtension = (picture?: string): boolean => {
+  if (!picture) return true;
+  return commonImageExtensions.some(ext => picture.includes(`.${ext}`));
+};
+
+/**
+ * Validate that a picture URL is valid. A valid picture URL either:
+ *  - is empty/undefined (no update), or
+ *  - has a valid http/https protocol AND has a common image extension.
+ *
+ * @param picture The URL to validate.
+ * @returns Whether the picture URL is considered valid.
+ */
+const isValidPictureUrl = (picture?: string): boolean => {
+  if (!picture) return true;
+  return isPictureWithProtocol(picture) && validateImageExtension(picture);
+};
+
 const ALLOWED_DOMAINS_MAP = {
   githubProfile: ['github.com'],
   linkedin: ['linkedin.com'],
-  twitter: ['twitter.com', 'x.com']
+  twitter: ['twitter.com', 'x.com'],
+  bluesky: ['bsky.app']
 };
 
 /**
@@ -96,7 +134,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.setErrorHandler((error, request, reply) => {
+  fastify.setErrorHandler((error: FastifyError, request, reply) => {
     const logger = fastify.log.child({ req: request });
     if (error.validation) {
       logger.warn({ validationError: error.validation });
@@ -128,6 +166,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
               showName: req.body.profileUI.showName,
               showPoints: req.body.profileUI.showPoints,
               showPortfolio: req.body.profileUI.showPortfolio,
+              showExperience: req.body.profileUI.showExperience,
               showTimeLine: req.body.profileUI.showTimeLine
             }
           }
@@ -341,14 +380,15 @@ ${isLinkSentWithinLimitTTL}`
 
       const socials = {
         twitter: req.body.twitter,
+        bluesky: req.body.bluesky,
         githubProfile: req.body.githubProfile,
         linkedin: req.body.linkedin,
         website: req.body.website
       };
 
-      const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
-        key => validateSocialUrl(socials[key], key)
-      );
+      const valid = (
+        ['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const
+      ).every(key => validateSocialUrl(socials[key], key));
 
       if (!valid) {
         logger.warn({ socials }, `Invalid social URL`);
@@ -365,6 +405,7 @@ ${isLinkSentWithinLimitTTL}`
           data: {
             website: socials.website,
             twitter: socials.twitter,
+            bluesky: socials.bluesky,
             githubProfile: socials.githubProfile,
             linkedin: socials.linkedin
           }
@@ -483,7 +524,17 @@ ${isLinkSentWithinLimitTTL}`
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const hasProtocol = isPictureWithProtocol(req.body.picture);
+
+      // No need to validate if picture is being deleted.
+      if (req.body.picture) {
+        if (req.body.picture !== req.user!.picture) {
+          if (!isValidPictureUrl(req.body.picture)) {
+            logger.warn(`Invalid picture URL: ${req.body.picture}`);
+            void reply.code(400);
+            return { message: 'flash.wrong-updating', type: 'danger' } as const;
+          }
+        }
+      }
 
       try {
         await fastify.prisma.user.update({
@@ -492,7 +543,7 @@ ${isLinkSentWithinLimitTTL}`
             about: req.body.about,
             name: req.body.name,
             location: req.body.location,
-            picture: hasProtocol ? req.body.picture : ''
+            picture: req.body.picture
           }
         });
 
@@ -662,6 +713,36 @@ ${isLinkSentWithinLimitTTL}`
   );
 
   fastify.put(
+    '/update-my-experience',
+    {
+      schema: schemas.updateMyExperience
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      try {
+        const { experience } = req.body;
+
+        await fastify.prisma.user.update({
+          where: { id: req.user?.id },
+          data: {
+            experience
+          }
+        });
+
+        return {
+          message: 'flash.experience-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        logger.error(err);
+        fastify.Sentry.captureException(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
     '/update-my-classroom-mode',
     {
       schema: schemas.updateMyClassroomMode
@@ -768,7 +849,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);
-      if (!isEmail(email)) {
+      if (!validator.default.isEmail(email)) {
         logger.warn(`Invalid email ${email}`);
         return reply.redirectWithMessage(origin, redirectMessage);
       }
@@ -788,11 +869,14 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 
-      // TODO(Post-MVP): should this fail if it's not the currently signed in
-      // user?
       const targetUser = await fastify.prisma.user.findUnique({
         where: { id: authToken.userId }
       });
+
+      if (targetUser?.id !== req.user?.id) {
+        logger.warn('Target user does not match signed in user');
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
 
       if (targetUser?.newEmail !== email) {
         return reply.redirectWithMessage(origin, redirectMessage);

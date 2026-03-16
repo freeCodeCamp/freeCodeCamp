@@ -16,21 +16,23 @@ import {
   createSuperRequest,
   defaultUserId,
   defaultUserEmail
-} from '../../../vitest.utils';
-import { formatMessage } from '../../plugins/redirect-with-message';
-import { createUserInput } from '../../utils/create-user';
-import { API_LOCATION, HOME_LOCATION } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { formatMessage } from '../../plugins/redirect-with-message.js';
+import { createUserInput } from '../../utils/create-user.js';
+import { API_LOCATION, HOME_LOCATION } from '../../utils/env.js';
 import {
   isPictureWithProtocol,
   getWaitMessage,
   validateSocialUrl
-} from './settings';
+} from './settings.js';
+import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 const baseProfileUI = {
   isLocked: false,
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -109,15 +111,28 @@ describe('settingRoutes', () => {
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGY';
       const tokenWithMissingUser =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGH';
+      const tokenWithDifferentUser =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGI';
       const expiredToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGE';
 
-      const tokens = [validToken, tokenWithMissingUser, expiredToken];
+      const tokens = [
+        validToken,
+        tokenWithMissingUser,
+        expiredToken,
+        tokenWithDifferentUser
+      ];
       const newEmail = 'anything@goes.com';
+      const otherUserEmail = 'another@user.com';
       const encodedEmail = Buffer.from(newEmail).toString('base64');
       const notEmail = Buffer.from('foobar.com').toString('base64');
 
       beforeEach(async () => {
+        const otherUser = await findOrCreateUser(
+          fastifyTestInstance,
+          otherUserEmail
+        );
+
         await fastifyTestInstance.prisma.authToken.create({
           data: {
             created: new Date(),
@@ -134,6 +149,15 @@ describe('settingRoutes', () => {
             ttl: 1000,
             // Random ObjectId
             userId: '6650ac23ccc46c0349a86dee'
+          }
+        });
+
+        await fastifyTestInstance.prisma.authToken.create({
+          data: {
+            created: new Date(),
+            id: tokenWithDifferentUser,
+            ttl: 1000,
+            userId: otherUser.id
           }
         });
 
@@ -157,6 +181,17 @@ describe('settingRoutes', () => {
             emailAuthLinkTTL: new Date()
           }
         });
+
+        // Simulate another user changing their email. This user is signed out.
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: otherUser.id },
+          data: {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date(),
+            emailAuthLinkTTL: new Date()
+          }
+        });
       });
 
       afterEach(async () => {
@@ -166,6 +201,9 @@ describe('settingRoutes', () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: { newEmail: null, email: defaultUserEmail, emailVerified: true }
+        });
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: { email: otherUserEmail }
         });
       });
 
@@ -215,6 +253,20 @@ describe('settingRoutes', () => {
       test('should reject requests when the auth token exists, but the user does not', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
+        );
+
+        expect(res.headers.location).toBe(
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(302);
+      });
+
+      test('should reject requests when the target user does not match the signed in user', async () => {
+        // The signed in user is the default (foo@bar.com), but the token is for
+        // a different user (another@user.com).
+
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${tokenWithDifferentUser}`
         );
 
         expect(res.headers.location).toBe(
@@ -550,16 +602,17 @@ Please wait 5 minutes to resend an authentication link.`
       // function with undefined when restoring a prisma function (for some
       // reason)
       test('PUT sends an email to the new email address', async () => {
+        const originalAuthToken = fastifyTestInstance.prisma.authToken;
         vi.spyOn(
-          fastifyTestInstance.prisma.authToken,
-          'create'
-        ).mockImplementationOnce(() =>
-          // @ts-expect-error This is a mock implementation, all we're
-          // interested in is the id.
-          Promise.resolve({
+          fastifyTestInstance.prisma,
+          'authToken',
+          'get'
+        ).mockReturnValue({
+          ...originalAuthToken,
+          create: vi.fn().mockResolvedValue({
             id: '123'
           })
-        );
+        });
         await superPut('/update-my-email').send({
           email: unusedEmailOne
         });
@@ -670,18 +723,16 @@ Happy coding!
         const response = await superPut('/update-my-username').send({
           username: 'TwaHa1'
         });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.username-updated',
-          type: 'success',
-          variables: { username: 'TwaHa1' }
-        });
-
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
         expect(user?.username).toEqual('twaha1');
+        expect(response.body).toStrictEqual({
+          message: 'flash.username-updated',
+          type: 'success',
+          variables: { username: 'TwaHa1' }
+        });
         expect(response.statusCode).toEqual(200);
       });
 
@@ -725,20 +776,6 @@ Happy coding!
         expect(existingUser.statusCode).toEqual(400);
       });
 
-      test('PUT returns 200 status code with "success" message', async () => {
-        await superPut('/update-my-username').send({ username: 'twaha3' });
-
-        const response = await superPut('/update-my-username').send({
-          username: 'TWaha3'
-        });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.username-updated',
-          type: 'success',
-          variables: { username: 'TWaha3' }
-        });
-        expect(response.statusCode).toEqual(200);
-      });
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
         const username = 'a'.repeat(1001);
         const response = await superPut('/update-my-username').send({
@@ -781,6 +818,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: 'https://www.freecodecamp.org/',
           twitter: 'https://twitter.com/ossia',
+          bluesky: 'https://bsky.app/profile/quincy.bsky.social',
           linkedin: 'https://www.linkedin.com/in/quincylarson',
           githubProfile: 'https://github.com/QuincyLarson'
         });
@@ -796,6 +834,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: 'https://www.freecodecamp.org/',
           twitter: '',
+          bluesky: '',
           linkedin: '',
           githubProfile: ''
         });
@@ -811,6 +850,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: 'invalid',
           twitter: '',
+          bluesky: '',
           linkedin: '',
           githubProfile: ''
         });
@@ -823,6 +863,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: '',
           twitter: '',
+          bluesky: '',
           linkedin: '',
           githubProfile: 'https://x.com/should-be-github'
         });
@@ -883,13 +924,57 @@ Happy coding!
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT updates the values in about settings without image', async () => {
+      test('PUT returns 400 if the URL is invalid', async () => {
         const response = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
           location: 'USA',
-          // `new URL` throws if the image isn't a URL, this checks if it doesn't throw.
           picture: 'invalid'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 if the URL has no image extension', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/avatar'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 if the URL has a non-image extension', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/file.txt'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT accepts an image URL with query string', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/photo.png?size=200&cache=bust'
         });
 
         expect(response.body).toEqual({
@@ -899,7 +984,22 @@ Happy coding!
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT with empty strings clears the values in about settings ', async () => {
+      test('PUT accepts an image URL with a different valid extension (.webp)', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/avatar.webp'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
+      test('PUT with empty strings clears the values in about settings', async () => {
         const initialResponse = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
@@ -943,6 +1043,75 @@ Happy coding!
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT allows updating location/about when picture is unchanged (even without extension)', async () => {
+        // Simulate a user who already has a GitHub avatar URL saved (e.g., from before strict validation)
+        const githubAvatarUrl =
+          'https://avatars0.githubusercontent.com/u/34585031?v=4';
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            picture: githubAvatarUrl,
+            about: 'Initial about',
+            name: 'Test User',
+            location: 'Initial Location'
+          }
+        });
+
+        // Now update only location and about, keeping the same picture (no extension)
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Updated about text',
+          name: 'Test User',
+          location: 'New Location',
+          picture: githubAvatarUrl // Same URL, no extension - should skip validation
+        });
+
+        expect(updateResponse.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(updateResponse.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.about).toEqual('Updated about text');
+        expect(user?.location).toEqual('New Location');
+        expect(user?.picture).toEqual(githubAvatarUrl);
+      });
+
+      test('PUT still validates picture when it is actually changed', async () => {
+        // Set initial valid picture
+        const validPictureUrl = 'https://example.com/avatar.png';
+        await superPut('/update-my-about').send({
+          about: 'Initial',
+          name: 'Test',
+          location: 'Location',
+          picture: validPictureUrl
+        });
+
+        // Try to change picture to invalid URL (no extension)
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Initial',
+          name: 'Test',
+          location: 'Location',
+          picture: 'https://example.com/new-avatar' // Changed but invalid
+        });
+
+        expect(updateResponse.statusCode).toEqual(400);
+        expect(updateResponse.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+
+        // Verify picture wasn't updated
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.picture).toEqual(validPictureUrl);
       });
     });
 
@@ -1025,6 +1194,234 @@ Happy coding!
       });
     });
 
+    describe('/update-my-experience', () => {
+      test('PUT returns 200 status code with "success" message and saves experience', async () => {
+        const payload = {
+          experience: [
+            {
+              id: '1',
+              title: 'Software Engineer',
+              company: 'Tech Corp',
+              location: 'Remote',
+              startDate: '2020-01',
+              endDate: '2022-06',
+              description: 'Worked on various projects'
+            }
+          ]
+        };
+
+        const response = await superPut('/update-my-experience').send(payload);
+
+        expect(response.body).toEqual({
+          message: 'flash.experience-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+
+        expect(user?.experience).toEqual(payload.experience);
+      });
+
+      test('rejects extraneous keys on entries', async () => {
+        const res = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: 'x',
+              title: 'Dev',
+              company: 'Co',
+              startDate: '',
+              description: '',
+              foo: 'bar'
+            }
+          ]
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+
+        expect(user?.experience).toEqual([
+          {
+            id: 'x',
+            title: 'Dev',
+            company: 'Co',
+            location: null,
+            startDate: '',
+            endDate: null,
+            description: ''
+          }
+        ]);
+        expect(res.statusCode).toBe(200);
+      });
+
+      test('returns 400 when experience is not an array', async () => {
+        const response = await superPut('/update-my-experience').send({
+          experience: { not: 'an array' } as unknown as []
+        });
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('supports current position (omitted endDate becomes null)', async () => {
+        const response = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: 'cur',
+              title: 'Engineer',
+              company: 'Now Co',
+              startDate: '2023-01',
+              description: ''
+              // endDate omitted
+            }
+          ]
+        });
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience?.[0]).toEqual({
+          id: 'cur',
+          title: 'Engineer',
+          company: 'Now Co',
+          location: null,
+          startDate: '2023-01',
+          endDate: null,
+          description: ''
+        });
+      });
+
+      test('accepts long descriptions', async () => {
+        const long = 'x'.repeat(1000);
+        const response = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: '',
+              title: 'Writer',
+              company: 'Docs Inc',
+              startDate: '2020-01',
+              endDate: '2020-12',
+              description: long
+            }
+          ]
+        });
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience?.[0]?.description).toEqual(long);
+      });
+      test('PUT accepts empty array and clears experience', async () => {
+        // seed with one item first
+        await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: 'seed',
+              title: 'Seed Title',
+              company: 'Seed Co',
+              location: 'Seed City',
+              startDate: '2019-01',
+              endDate: '2019-12',
+              description: 'Seed desc'
+            }
+          ]
+        });
+
+        const response = await superPut('/update-my-experience').send({
+          experience: []
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.experience-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience).toEqual([]);
+      });
+
+      test('PUT saves multiple experiences and preserves order', async () => {
+        const payload = {
+          experience: [
+            {
+              id: '1',
+              title: 'Junior Dev',
+              company: 'A Inc',
+              location: 'NY',
+              startDate: '2018-01',
+              endDate: '2019-01',
+              description: 'Did stuff'
+            },
+            {
+              id: '2',
+              title: 'Senior Dev',
+              company: 'B LLC',
+              location: 'SF',
+              startDate: '2019-02',
+              endDate: '2021-03',
+              description: 'Did more stuff'
+            }
+          ]
+        };
+
+        const response = await superPut('/update-my-experience').send(payload);
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience).toEqual(payload.experience);
+      });
+
+      test('PUT returns 400 status code when the experience property is missing', async () => {
+        const response = await superPut('/update-my-experience').send({});
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 status code when any data is the wrong type', async () => {
+        const response = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: '',
+              title: '',
+              company: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
+            },
+            {
+              id: '',
+              title: {},
+              company: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
+            }
+          ]
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+    });
+
     describe('/update-my-classroom-mode', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superPut('/update-my-classroom-mode').send({
@@ -1096,7 +1493,8 @@ Happy coding!
       { path: '/update-my-about', method: 'PUT' },
       { path: '/update-my-honesty', method: 'PUT' },
       { path: '/update-privacy-terms', method: 'PUT' },
-      { path: '/update-my-portfolio', method: 'PUT' }
+      { path: '/update-my-portfolio', method: 'PUT' },
+      { path: '/update-my-experience', method: 'PUT' }
     ];
 
     endpoints.forEach(({ path, method }) => {
@@ -1171,7 +1569,7 @@ describe('getWaitMessage', () => {
 });
 
 describe('validateSocialUrl', () => {
-  test.each(['githubProfile', 'linkedin', 'twitter'] as const)(
+  test.each(['githubProfile', 'linkedin', 'twitter', 'bluesky'] as const)(
     'accepts empty strings for %s',
     social => {
       expect(validateSocialUrl('', social)).toBe(true);
@@ -1181,7 +1579,8 @@ describe('validateSocialUrl', () => {
   test.each([
     ['githubProfile', 'https://something.com/user'],
     ['linkedin', 'https://www.x.com/in/username'],
-    ['twitter', 'https://www.toomanyexes.com/username']
+    ['twitter', 'https://www.toomanyexes.com/username'],
+    ['bluesky', 'https://www.twitter.com/username']
   ] as const)('rejects invalid urls for %s', (social, url) => {
     expect(validateSocialUrl(url, social)).toBe(false);
   });
@@ -1190,7 +1589,8 @@ describe('validateSocialUrl', () => {
     ['githubProfile', 'https://something.github.com/user'],
     ['linkedin', 'https://www.linkedin.com/in/username'],
     ['twitter', 'https://twitter.com/username'],
-    ['twitter', 'https://x.com/username']
+    ['twitter', 'https://x.com/username'],
+    ['bluesky', 'https://bsky.app/profile/username.bsky.social']
   ] as const)('accepts valid urls for %s', (social, url) => {
     expect(validateSocialUrl(url, social)).toBe(true);
   });

@@ -1,63 +1,64 @@
-import ObjectID from 'bson-objectid';
-import { prompt } from 'inquirer';
-import { getTemplate } from './helpers/get-challenge-template';
-import { newTaskPrompts } from './helpers/new-task-prompts';
-import { getProjectPath } from './helpers/get-project-info';
-import { validateMetaData } from './helpers/project-metadata';
+import { ObjectId } from 'bson';
+import { select } from '@inquirer/prompts';
+import { getTemplate } from './helpers/get-challenge-template.js';
+import { newTaskPrompts } from './helpers/new-task-prompts.js';
+import { getProjectPath } from './helpers/get-project-info.js';
 import {
   createChallengeFile,
+  getChallenge,
   insertChallengeIntoMeta,
   updateTaskMeta,
   updateTaskMarkdownFiles
-} from './utils';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
+} from './utils.js';
+import { getMetaData } from './helpers/project-metadata.js';
+import { getInputType } from './helpers/get-input-type.js';
 
 const insertChallenge = async () => {
-  validateMetaData();
-
-  const challenges = getChallengeOrderFromMeta();
-  const challengeAfter = await prompt<{ id: string }>({
-    name: 'id',
+  const challenges = getMetaData().challengeOrder;
+  const challengeAfterId = await select<string>({
     message: 'Which challenge should come AFTER this new one?',
-    type: 'list',
     choices: challenges.map(({ id, title }) => ({
       name: title,
       value: id
     }))
   });
+  const challengeLang = getChallenge(challengeAfterId)?.lang;
 
   const indexToInsert = challenges.findIndex(
-    ({ id }) => id === challengeAfter.id
+    ({ id }) => id === challengeAfterId
   );
 
   const newTaskTitle = 'Task 0';
 
   const { challengeType } = await newTaskPrompts();
 
+  const inputType = await getInputType(challengeType, challengeLang);
   const options = {
     title: newTaskTitle,
     dashedName: 'task-0',
-    challengeType
+    challengeType,
+    ...{ ...(challengeLang && { challengeLang }) },
+    ...{ ...(inputType && { inputType }) }
   };
 
   const path = getProjectPath();
   const template = getTemplate(challengeType);
-  const challengeId = new ObjectID();
+  const challengeId = new ObjectId();
   const challengeText = template({ ...options, challengeId });
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   const challengeIdString = challengeId.toString();
 
   createChallengeFile(challengeIdString, challengeText, path);
   console.log('Finished creating new task markdown file.');
 
-  insertChallengeIntoMeta({
+  await insertChallengeIntoMeta({
     index: indexToInsert,
     id: challengeId,
     title: newTaskTitle
   });
   console.log(`Finished inserting task into 'meta.json' file.`);
 
-  updateTaskMeta();
+  await updateTaskMeta();
   console.log("Finished updating tasks in 'meta.json'.");
 
   updateTaskMarkdownFiles();

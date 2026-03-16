@@ -6,7 +6,7 @@ import { Button, FormControl, Modal, Spacer } from '@freecodecamp/ui';
 
 import { t } from 'i18next';
 import envData from '../../../../config/env.json';
-import { createQuestion, closeModal } from '../redux/actions';
+import { createQuestion, closeModal, openModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
 
 import './help-modal.css';
@@ -19,6 +19,9 @@ interface HelpModalProps {
   challengeTitle: string;
   challengeBlock: string;
   superBlock: string;
+  guideUrl?: string;
+  videoUrl?: string;
+  openVideoModal: () => void;
 }
 
 const { forumLocation } = envData;
@@ -31,7 +34,11 @@ const mapStateToProps = (state: unknown) => ({
 });
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
-    { createQuestion, closeHelpModal: () => closeModal('help') },
+    {
+      createQuestion,
+      closeHelpModal: () => closeModal('help'),
+      openVideoModal: () => openModal('video')
+    },
     dispatch
   );
 
@@ -40,11 +47,9 @@ export const generateSearchLink = (
   block: string,
   superBlock: string
 ) => {
-  // TODO: convert to selector #61969
-  const titleText = t(`intro:${superBlock}.blocks.${block}.title` as never);
+  const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
-
   const search = `${forumLocation}/search?q=${query}`;
   return search;
 };
@@ -79,17 +84,14 @@ function Checkbox({
         required
         // Instead of reusing the `i18nKey`, use a plain text version for label
         // as input label should not contain interactive elements
-        // TODO: convert to selector #61969
-        aria-label={t(label as never)}
+        aria-label={t(label)}
       />
+
       <span>
-        {/* TODO: convert to selector #61969 */}
-        <Trans i18nKey={i18nKey as never}>
+        <Trans i18nKey={i18nKey}>
           <a href={href} rel='noopener noreferrer' target='_blank'>
             placeholder
-            <span className='sr-only'>
-              {t($ => $.aria['opens-new-window'])}
-            </span>
+            <span className='sr-only'>{t('aria.opens-new-window')}</span>
           </a>
         </Trans>
       </span>
@@ -103,7 +105,10 @@ function HelpModal({
   isOpen,
   challengeBlock,
   superBlock,
-  challengeTitle
+  challengeTitle,
+  guideUrl,
+  videoUrl,
+  openVideoModal
 }: HelpModalProps): JSX.Element {
   const { t } = useTranslation();
   const [showHelpForm, setShowHelpForm] = useState(false);
@@ -140,6 +145,11 @@ function HelpModal({
     resetFormValues();
   };
 
+  const handleOpenVideo = () => {
+    openVideoModal();
+    handleClose();
+  };
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
@@ -153,20 +163,24 @@ function HelpModal({
     closeHelpModal();
   };
 
+  const hintUrl = guideUrl
+    ? guideUrl
+    : generateSearchLink(challengeTitle, challengeBlock, superBlock);
+
   if (isOpen) {
     callGA({ event: 'pageview', pagePath: '/help-modal' });
   }
   return (
     <Modal onClose={handleClose} open={!!isOpen}>
       <Modal.Header closeButtonClassNames='close'>
-        {t($ => $.buttons['ask-for-help'])}
+        {t('buttons.get-help')}
       </Modal.Header>
       <Modal.Body>
         {showHelpForm ? (
           <form onSubmit={handleSubmit} ref={formRef}>
             <fieldset>
               <legend className='help-form-legend'>
-                {t($ => $.learn['must-confirm-statements'])}
+                {t('learn.must-confirm-statements')}
               </legend>
 
               <Checkbox
@@ -199,10 +213,8 @@ function HelpModal({
             <Spacer size='s' />
 
             <label htmlFor='help-modal-form-description'>
-              {t($ => $['forum-help']['whats-happening'])}
-              <span className='sr-only'>
-                {t($ => $.learn['min-50-max-500'])}
-              </span>
+              {t('forum-help.whats-happening')}
+              <span className='sr-only'>{t('learn.min-50-max-500')}</span>
             </label>
 
             <FormControl
@@ -214,7 +226,7 @@ function HelpModal({
               componentClass='textarea'
               rows={5}
               value={description}
-              placeholder={t($ => $['forum-help'].describe)}
+              placeholder={t('forum-help.describe')}
               minLength={DESCRIPTION_MIN_CHARS}
               maxLength={DESCRIPTION_MAX_CHARS}
               required
@@ -224,13 +236,13 @@ function HelpModal({
 
             {description.length < DESCRIPTION_MIN_CHARS ? (
               <p>
-                {t($ => $.learn['minimum-characters'], {
+                {t('learn.minimum-characters', {
                   characters: DESCRIPTION_MIN_CHARS - description.length
                 })}
               </p>
             ) : (
               <p>
-                {t($ => $.learn['characters-left'], {
+                {t('learn.characters-left', {
                   characters: DESCRIPTION_MAX_CHARS - description.length
                 })}
               </p>
@@ -245,7 +257,7 @@ function HelpModal({
               type='submit'
               disabled={!canSubmitForm}
             >
-              {t($ => $.buttons.submit)}
+              {t('buttons.submit')}
             </Button>
             <Spacer size='xxs' />
             <Button
@@ -254,55 +266,79 @@ function HelpModal({
               variant='primary'
               onClick={handleClose}
             >
-              {t($ => $.buttons.cancel)}
+              {t('buttons.cancel')}
             </Button>
           </form>
         ) : (
           <>
-            <div className='alert'>
-              <div className='help-text-warning'>
-                <p>
-                  <Trans i18nKey={$ => $.learn['tried-rsa']}>
-                    <a href={RSA} rel='noopener noreferrer' target='_blank'>
-                      placeholder
-                    </a>
-                  </Trans>
-                </p>
-                <p>
-                  <Trans i18nKey={$ => $.learn['rsa-forum']}>
-                    <a
-                      href={generateSearchLink(
-                        challengeTitle,
-                        challengeBlock,
-                        superBlock
-                      )}
-                      rel='noopener noreferrer'
-                      target='_blank'
-                    >
-                      placeholder
-                    </a>
+            <div className='help-text-warning'>
+              <p>
+                <Trans i18nKey='learn.tried-rsa'>
+                  <a href={RSA} rel='noopener noreferrer' target='_blank'>
                     placeholder
-                  </Trans>
-                </p>
-              </div>
+                  </a>
+                </Trans>
+              </p>
+              <p>
+                <Trans i18nKey='learn.rsa-forum'>
+                  <a
+                    href={generateSearchLink(
+                      challengeTitle,
+                      challengeBlock,
+                      superBlock
+                    )}
+                    rel='noopener noreferrer'
+                    target='_blank'
+                  >
+                    placeholder
+                  </a>
+                  placeholder
+                </Trans>
+              </p>
             </div>
-
+            <Button
+              block={true}
+              size='large'
+              variant='primary'
+              href={hintUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+              data-playwright-test-label='get-hint-modal-button'
+            >
+              {t('buttons.get-hint')}
+            </Button>
+            <Spacer size='xxs' />
+            {videoUrl && (
+              <>
+                <Button
+                  block={true}
+                  size='large'
+                  variant='primary'
+                  onClick={handleOpenVideo}
+                  data-playwright-test-label='watch-a-video-modal-button'
+                >
+                  {t('buttons.watch-video')}
+                </Button>
+                <Spacer size='xxs' />
+              </>
+            )}
             <Button
               block={true}
               size='large'
               variant='primary'
               onClick={() => setShowHelpForm(true)}
+              data-playwright-test-label='create-post-modal-button'
             >
-              {t($ => $.buttons['create-post'])}
+              {t('buttons.create-post')}
             </Button>
             <Spacer size='xxs' />
             <Button
               block={true}
               size='large'
               variant='primary'
-              onClick={closeHelpModal}
+              onClick={handleClose}
             >
-              {t($ => $.buttons.cancel)}
+              {t('buttons.cancel')}
             </Button>
           </>
         )}

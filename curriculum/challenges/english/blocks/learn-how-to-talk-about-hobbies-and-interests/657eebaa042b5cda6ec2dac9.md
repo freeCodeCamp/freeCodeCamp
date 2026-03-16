@@ -3,13 +3,14 @@ id: 657eebaa042b5cda6ec2dac9
 title: Task 59
 challengeType: 22
 dashedName: task-59
+lang: en-US
 ---
 
 <!-- (Audio) Sarah: Are you kidding? -->
 
 # --description--
 
-The expression `Are you kidding?` is used to express disbelief, surprise, or sometimes to confirm if someone is joking.
+`Are you kidding?` is used to express disbelief, surprise, or sometimes to confirm if someone is joking.
 
 If your friend tells you they saw a dog riding a skateboard down the street, you might be surprised and say `Are you kidding?` to ask if they're really serious or just joking.
 
@@ -17,7 +18,7 @@ If your friend tells you they saw a dog riding a skateboard down the street, you
 
 ## --sentence--
 
-`Sarah: Are you BLANK?`
+`Are you BLANK?`
 
 ## --blanks--
 
@@ -25,7 +26,7 @@ If your friend tells you they saw a dog riding a skateboard down the street, you
 
 ### --feedback--
 
-This phrase is commonly used to express disbelief or surprise in response to a statement.
+This verb is used in the phrase to express disbelief or surprise in response to a statement. It ends in `-ing`.
 
 # --scene--
 

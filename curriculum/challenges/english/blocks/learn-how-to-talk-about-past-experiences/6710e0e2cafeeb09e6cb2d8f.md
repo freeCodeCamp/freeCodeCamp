@@ -3,6 +3,7 @@ id: 6710e0e2cafeeb09e6cb2d8f
 title: Task 55
 challengeType: 22
 dashedName: task-55
+lang: en-US
 ---
 
 <!-- (Audio) Linda: Well, during the project, I was working closely with the development team, and we were constantly updating the user interface based on user feedback. -->

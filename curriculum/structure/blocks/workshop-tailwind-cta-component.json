@@ -3,7 +3,7 @@
   "isUpcomingChange": false,
   "dashedName": "workshop-tailwind-cta-component",
   "helpCategory": "HTML-CSS",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     {

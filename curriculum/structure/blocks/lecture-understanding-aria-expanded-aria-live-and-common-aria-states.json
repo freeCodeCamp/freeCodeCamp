@@ -1,7 +1,7 @@
 {
   "name": "Understanding aria-expanded, aria-live, and Common ARIA States",
   "isUpcomingChange": false,
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "dashedName": "lecture-understanding-aria-expanded-aria-live-and-common-aria-states",
   "helpCategory": "JavaScript",

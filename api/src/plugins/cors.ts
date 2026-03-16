@@ -1,8 +1,8 @@
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { HOME_LOCATION } from '../utils/env';
-import { allowedOrigins } from '../utils/allowed-origins';
+import { HOME_LOCATION } from '../utils/env.js';
+import { allowedOrigins } from '../utils/allowed-origins.js';
 
 const cors: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.options('*', (_req, reply) => {

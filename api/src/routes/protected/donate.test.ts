@@ -5,8 +5,8 @@ import {
   setupServer,
   defaultUserEmail,
   defaultUserId
-} from '../../../vitest.utils';
-import { createUserInput } from '../../utils/create-user';
+} from '../../../vitest.utils.js';
+import { createUserInput } from '../../utils/create-user.js';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
@@ -124,30 +124,31 @@ const generateMockSubCreate = (status: string) => () =>
 const defaultError = () =>
   Promise.reject(new Error('Stripe encountered an error'));
 
-vi.mock('stripe', () => {
-  return {
-    default: vi.fn().mockImplementation(() => {
-      return {
-        customers: {
-          create: mockCustomerCreate,
-          update: mockCustomerUpdate
-        },
-        paymentMethods: {
-          attach: mockAttachPaymentMethod
-        },
-        subscriptions: {
-          create: mockSubCreate,
-          retrieve: mockSubRetrieve
-        },
-        checkout: {
-          sessions: {
-            create: mockCheckoutSessionCreate
-          }
-        }
-      };
-    })
-  };
-});
+vi.mock('stripe', () => ({
+  default: class {
+    constructor() {}
+
+    customers = {
+      create: mockCustomerCreate,
+      update: mockCustomerUpdate
+    };
+
+    paymentMethods = {
+      attach: mockAttachPaymentMethod
+    };
+
+    subscriptions = {
+      create: mockSubCreate,
+      retrieve: mockSubRetrieve
+    };
+
+    checkout = {
+      sessions: {
+        create: mockCheckoutSessionCreate
+      }
+    };
+  }
+}));
 
 describe('Donate', () => {
   let setCookies: string[];

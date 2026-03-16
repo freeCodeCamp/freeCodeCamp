@@ -4,24 +4,20 @@
 */
 
 import { readFileSync, writeFileSync } from 'fs';
-import path, { join } from 'path';
-import { fileURLToPath } from 'url';
-import ObjectID from 'bson-objectid';
-import { Meta } from './helpers/project-metadata';
-import { getArgValue } from './helpers/get-arg-value';
+import { join } from 'path';
+import { ObjectId } from 'bson';
+import { Meta } from './helpers/project-metadata.js';
+import { getArgValue } from './helpers/get-arg-value.js';
 import {
   getDailyJavascriptChallengeTemplate,
   getDailyPythonChallengeTemplate
-} from './helpers/get-challenge-template';
+} from './helpers/get-challenge-template.js';
 
 const numberOfChallengesToCreate = getArgValue(process.argv);
 
 if (numberOfChallengesToCreate > 10) {
   throw new Error('Are you sure you want to create that many challenges?');
 }
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const curriculumPath = join(__dirname, '../../curriculum');
 
@@ -58,31 +54,39 @@ for (let i = 0; i < numberOfChallengesToCreate; i++) {
     );
   }
 
+  const challengeId = new ObjectId();
   const newChallengeNumber = numberOfJsChallenges + 1;
 
-  createDailyJsChallenge({ challengeNumber: newChallengeNumber, meta: jsMeta });
-  createDailyPyChallenge({ challengeNumber: newChallengeNumber, meta: pyMeta });
+  createDailyJsChallenge({
+    challengeId,
+    challengeNumber: newChallengeNumber,
+    meta: jsMeta
+  });
+  createDailyPyChallenge({
+    challengeId,
+    challengeNumber: newChallengeNumber,
+    meta: pyMeta
+  });
 }
 
 interface CreateDailyChallengeOptions {
+  challengeId: ObjectId;
   challengeNumber: number;
   meta: Meta;
 }
 
 function createDailyJsChallenge({
+  challengeId,
   challengeNumber,
   meta
 }: CreateDailyChallengeOptions) {
-  const challengeId = new ObjectID();
-
   const newMeta = {
     ...meta,
     challengeOrder: [
       ...meta.challengeOrder,
       {
-        // eslint-disable-next-line @typescript-eslint/no-base-to-string
         id: challengeId.toString(),
-        title: `JavaScript Challenge ${challengeNumber}`
+        title: `Challenge ${challengeNumber}: Placeholder`
       }
     ]
   };
@@ -96,7 +100,7 @@ function createDailyJsChallenge({
 
   const jsChallengePath = join(
     jsChallengesPath,
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
     `${challengeId.toString()}.md`
   );
 
@@ -104,19 +108,17 @@ function createDailyJsChallenge({
 }
 
 function createDailyPyChallenge({
+  challengeId,
   challengeNumber,
   meta
 }: CreateDailyChallengeOptions) {
-  const challengeId = new ObjectID();
-
   const newMeta = {
     ...meta,
     challengeOrder: [
       ...meta.challengeOrder,
       {
-        // eslint-disable-next-line @typescript-eslint/no-base-to-string
         id: challengeId.toString(),
-        title: `Python Challenge ${challengeNumber}`
+        title: `Challenge ${challengeNumber}: Placeholder`
       }
     ]
   };
@@ -130,7 +132,7 @@ function createDailyPyChallenge({
 
   const pyChallengePath = join(
     pyChallengesPath,
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
     `${challengeId.toString()}.md`
   );
 

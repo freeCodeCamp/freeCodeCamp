@@ -1,6 +1,6 @@
 {
   "name": "User Interface Design Fundamentals",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-user-interface-design-fundamentals",

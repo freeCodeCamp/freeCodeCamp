@@ -34,35 +34,31 @@ In the route `app.get('/now', ...)` chain a middleware function and the final ha
 The /now endpoint should have mounted middleware
 
 ```js
-  $.get(code + '/_api/chain-middleware-time').then(
-    (data) => {
-      assert.equal(
-        data.stackLength,
-        2,
-        '"/now" route has no mounted middleware'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/chain-middleware-time');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.stackLength,
+    2,
+    '"/now" route has no mounted middleware'
   );
 ```
 
 The `/now` endpoint should return the current time.
 
 ```js
-  $.get(code + '/_api/chain-middleware-time').then(
-    (data) => {
-      var now = new Date();
-      assert.isAtMost(
-        Math.abs(new Date(data.time) - now),
-        20000,
-        'the returned time is not between +- 20 secs from now'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/chain-middleware-time');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  var now = new Date();
+  assert.isAtMost(
+    Math.abs(new Date(data.time) - now),
+    20000,
+    'the returned time is not between +- 20 secs from now'
   );
 ```
 

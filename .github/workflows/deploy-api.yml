@@ -11,34 +11,54 @@ on:
           - info
           - warn
         default: info
+      show_upcoming_changes:
+        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-api-${{ github.ref_name }}
+  cancel-in-progress: false
 
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }}
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }}
       api_log_lvl: ${{ steps.setup.outputs.api_log_lvl }}
+      show_upcoming_changes: ${{ steps.setup.outputs.show_upcoming_changes }}
     steps:
       - name: Setup
         id: setup
+        env:
+          BRANCH: ${{ github.ref_name }}
+          SHOW_UPCOMING_CHANGES: ${{ inputs.show_upcoming_changes }}
+          API_LOG_LVL: ${{ inputs.api_log_lvl || 'info' }}
         run: |
-          BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
+
+          # Convert boolean input to string 'true' or 'false'
+          if [[ "$SHOW_UPCOMING_CHANGES" == "true" ]]; then
+            echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
+          fi
+
           case "$BRANCH" in
             "prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
               echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
               echo "tgt_env_long=production" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=${{ inputs.api_log_lvl || 'info' }}" >> $GITHUB_OUTPUT
+              echo "api_log_lvl=$API_LOG_LVL" >> $GITHUB_OUTPUT
               ;;
             *)
               echo "site_tld=dev" >> $GITHUB_OUTPUT
               echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
               echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=${{ inputs.api_log_lvl || 'info' }}" >> $GITHUB_OUTPUT
+              echo "api_log_lvl=$API_LOG_LVL" >> $GITHUB_OUTPUT
               ;;
           esac
 
@@ -49,11 +69,14 @@ jobs:
     with:
       site_tld: ${{ needs.setup-jobs.outputs.site_tld }}
       app: api
-    secrets: inherit
+      show_upcoming_changes: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
+    secrets:
+      DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      DOCR_NAME: ${{ secrets.DOCR_NAME }}
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [setup-jobs, build]
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
@@ -65,13 +88,33 @@ jobs:
 
     steps:
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@v3
+        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
           hostname: gha-${{needs.setup-jobs.outputs.tgt_env_short}}-api-ci-${{ github.run_id }}
           tags: tag:ci
           version: latest
+
+      - name: Wait for Tailscale Network Readiness
+        run: |
+          echo "Waiting for Tailscale network to be ready..."
+          max_wait=60
+          elapsed=0
+
+          while [ $elapsed -lt $max_wait ]; do
+            if tailscale status --json | jq -e '.BackendState == "Running"' > /dev/null 2>&1; then
+              echo "Tailscale network is ready"
+              break
+            fi
+            sleep 2
+            elapsed=$((elapsed + 2))
+          done
+
+          if [ $elapsed -ge $max_wait ]; then
+            echo "Tailscale network not ready after ${max_wait}s"
+            exit 1
+          fi
 
       - name: Configure SSH & Check Connection
         run: |
@@ -80,12 +123,45 @@ jobs:
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
-          sleep 10
-          tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Error: Machine not found"; exit 1; }
-          sleep 1
-          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-          echo -e "\nLOG:Checking connection to $TS_MACHINE_NAME..."
-          ssh $TS_USERNAME@$MACHINE_IP "uptime"
+
+          validate_connection() {
+            local machine_name=$1
+            local max_retries=3
+            local retry_delay=5
+            
+            for attempt in $(seq 1 $max_retries); do
+              echo "Connection attempt $attempt/$max_retries to $machine_name"
+              
+              if ! tailscale status | grep -q "$machine_name"; then
+                echo "Machine $machine_name not found in Tailscale network"
+                if [ $attempt -eq $max_retries ]; then
+                  return 1
+                fi
+                sleep $retry_delay
+                continue
+              fi
+              
+              MACHINE_IP=$(tailscale ip -4 $machine_name)
+              if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
+                echo "Successfully validated connection to $machine_name"
+                return 0
+              fi
+              
+              echo "SSH validation failed for $machine_name"
+              if [ $attempt -lt $max_retries ]; then
+                sleep $retry_delay
+              fi
+            done
+            
+            echo "Failed to establish connection to $machine_name after $max_retries attempts"
+            return 1
+          }
+
+          echo -e "\nLOG:Validating connection to $TS_MACHINE_NAME..."
+          if ! validate_connection "$TS_MACHINE_NAME"; then
+            echo "Error: Failed to establish reliable connection to $TS_MACHINE_NAME"
+            exit 1
+          fi
 
       - name: Deploy with Docker Stack
         env:
@@ -115,11 +191,13 @@ jobs:
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
           DEPLOYMENT_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
           FCC_API_LOG_LEVEL: ${{ needs.setup-jobs.outputs.api_log_lvl }}
+          SHOW_UPCOMING_CHANGES: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
           # Stack name
           STACK_NAME: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api
         run: |
           REMOTE_SCRIPT="
             set -e
+            trap 'rm -f .env age.key secrets.age.asc .env.tmp' EXIT
             echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
             cd /home/$TS_USERNAME/docker-swarm-config/stacks/api
 
@@ -152,6 +230,7 @@ jobs:
               echo \"DEPLOYMENT_TLD=$DEPLOYMENT_TLD\"
               echo \"DEPLOYMENT_ENV=$DEPLOYMENT_ENV\"
               echo \"FCC_API_LOG_LEVEL=$FCC_API_LOG_LEVEL\"
+              echo \"SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES\"
             } >> .env
 
             echo -e '\nLOG:Sourcing environment...'

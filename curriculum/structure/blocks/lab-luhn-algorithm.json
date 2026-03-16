@@ -1,6 +1,6 @@
 {
   "name": "Implement the Luhn Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-luhn-algorithm",
   "helpCategory": "Python",
   "challengeOrder": [
@@ -10,5 +10,5 @@
     }
   ],
   "blockLayout": "link",
-  "blockType": "lab"
+  "blockLabel": "lab"
 }

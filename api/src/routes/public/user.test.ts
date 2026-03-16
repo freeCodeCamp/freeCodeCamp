@@ -1,6 +1,6 @@
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
+import { omit } from 'lodash-es';
 import {
   describe,
   it,
@@ -12,13 +12,13 @@ import {
   vi
 } from 'vitest';
 
-import { createUserInput } from '../../utils/create-user';
+import { createUserInput } from '../../utils/create-user.js';
 import {
   defaultUserEmail,
   setupServer,
   createSuperRequest
-} from '../../../vitest.utils';
-import { replacePrivateData } from './user';
+} from '../../../vitest.utils.js';
+import { replacePrivateData } from './user.js';
 
 const mockedFetch = vi.fn();
 vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
@@ -26,6 +26,7 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
   ...createUserInput(defaultUserEmail),
+  sendQuincyEmail: true,
   username: 'foobar',
   usernameDisplay: 'Foo Bar',
   progressTimestamps: [1520002973119, 1520440323273],
@@ -73,6 +74,16 @@ const testUserData: Prisma.userCreateInput = {
       }
     }
   ],
+  experience: [
+    {
+      id: 'exp1',
+      title: 'Software Engineer',
+      company: 'Company A',
+      startDate: '2020-01-01',
+      endDate: '2021-01-01',
+      description: 'Worked on various projects.'
+    }
+  ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   completedExams: [],
   githubProfile: 'github.com/foobar',
@@ -104,6 +115,7 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
+  bluesky: '@foobar',
   linkedin: 'linkedin.com/foobar'
 };
 
@@ -125,6 +137,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -182,9 +195,12 @@ const publicUserData = {
   ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
+  experience: testUserData.experience,
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
+  isA2EnglishCert: testUserData.isA2EnglishCert,
+  isB1EnglishCert: testUserData.isB1EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -196,26 +212,29 @@ const publicUserData = {
   isFrontEndCert: testUserData.isFrontEndCert,
   isFrontEndLibsCert: testUserData.isFrontEndLibsCert,
   isFullStackCert: testUserData.isFullStackCert,
+  isJavascriptCertV9: testUserData.isJavascriptCertV9,
   isHonest: testUserData.isHonest,
   isInfosecCertV7: testUserData.isInfosecCertV7,
   isInfosecQaCert: testUserData.isInfosecQaCert,
   isJsAlgoDataStructCert: testUserData.isJsAlgoDataStructCert,
   isJsAlgoDataStructCertV8: testUserData.isJsAlgoDataStructCertV8,
   isMachineLearningPyCertV7: testUserData.isMachineLearningPyCertV7,
+  isPythonCertV9: testUserData.isPythonCertV9,
   isQaCertV7: testUserData.isQaCertV7,
   isRelationalDatabaseCertV8: testUserData.isRelationalDatabaseCertV8,
+  isRelationalDatabaseCertV9: testUserData.isRelationalDatabaseCertV9,
   isRespWebDesignCert: testUserData.isRespWebDesignCert,
+  isRespWebDesignCertV9: testUserData.isRespWebDesignCertV9,
   isSciCompPyCertV7: testUserData.isSciCompPyCertV7,
   linkedin: testUserData.linkedin,
   location: testUserData.location,
   name: testUserData.name,
-  partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  savedChallenges: testUserData.savedChallenges,
-  twitter: 'https://twitter.com/foobar',
+  twitter: 'https://x.com/foobar',
+  bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,
@@ -239,13 +258,22 @@ describe('userRoutes', () => {
       const lockedUserProfileUI = {
         isLocked: true,
         showAbout: true,
-        showPortfolio: false
+        showCerts: true,
+        showDonation: true,
+        showExperience: true,
+        showHeatMap: true,
+        showLocation: true,
+        showName: true,
+        showPoints: true,
+        showPortfolio: true,
+        showTimeLine: true
       };
       const unlockedUserProfileUI = {
         isLocked: false,
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showExperience: true,
         showHeatMap: true,
         showLocation: true,
         showName: true,
@@ -377,7 +405,7 @@ describe('userRoutes', () => {
           // it should contain the entire body.
           const publicUser = {
             // TODO(Post-MVP, maybe): return completedSurveys?
-            ..._.omit(publicUserData, 'completedSurveys'),
+            ...omit(publicUserData, 'completedSurveys'),
             username: publicUsername,
             joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
             profileUI: unlockedUserProfileUI
@@ -478,6 +506,17 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      experience: [
+        {
+          id: 'exp1',
+          title: 'Developer',
+          company: 'Company',
+          location: 'Location',
+          startDate: '01/2020',
+          endDate: '12/2022',
+          description: 'Description'
+        }
+      ],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -488,7 +527,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showExperience: true
       }
     };
 
@@ -590,10 +630,18 @@ describe('get-public-profile helpers', () => {
       });
     });
 
+    test('returns [] for experience if showExperience is not true', () => {
+      const userWithoutExperience = {
+        ...user,
+        profileUI: { ...user.profileUI, showExperience: false }
+      };
+      expect(replacePrivateData(userWithoutExperience)).toMatchObject({
+        experience: []
+      });
+    });
+
     test('returns the expected public user object if all showX flags are true', () => {
-      expect(replacePrivateData(user)).toEqual(
-        _.omit(user, ['id', 'profileUI'])
-      );
+      expect(replacePrivateData(user)).toEqual(omit(user, ['id', 'profileUI']));
     });
   });
 });

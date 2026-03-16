@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { describe, it, expect } from 'vitest';
 import React from 'react';
 import { create } from 'react-test-renderer';
 

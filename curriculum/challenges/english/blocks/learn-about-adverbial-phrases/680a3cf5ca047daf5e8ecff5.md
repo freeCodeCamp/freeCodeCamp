@@ -3,6 +3,7 @@ id: 680a3cf5ca047daf5e8ecff5
 title: Task 66
 challengeType: 22
 dashedName: task-66
+lang: en-US
 ---
 
 <!-- (Audio) Sophie: This way, we can understand the limits better before we launch it fully. -->

@@ -2,6 +2,7 @@
 id: bd7158d8c442eddfaeb5bd18
 title: Build a Tribute Page
 challengeType: 14
+saveSubmissionToDB: true
 forumTopicId: 301147
 dashedName: build-a-tribute-page
 ---
@@ -63,7 +64,7 @@ Your `#title` should not be empty.
 ```js
 const el = document.getElementById('title');
 assert.isNotNull(el);
-assert.isNotEmpty(el.innerText, 0);
+assert.isNotEmpty(el.innerText.trim());
 ```
 
 You should have a `figure` or `div` element with an `id` of `img-div`.

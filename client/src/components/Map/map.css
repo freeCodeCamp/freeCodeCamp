@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+.map-ui .archive-link {
+  font-size: 1.25rem;
+}
+
 @media (max-width: 640px) {
   .map-ui .block ul {
     padding-inline-start: 6rem;

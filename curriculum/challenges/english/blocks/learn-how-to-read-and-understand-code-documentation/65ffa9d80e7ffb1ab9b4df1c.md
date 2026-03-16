@@ -3,6 +3,7 @@ id: 65ffa9d80e7ffb1ab9b4df1c
 title: Task 11
 challengeType: 22
 dashedName: task-11
+lang: en-US
 ---
 
 <!-- (Audio) Sarah: Once you've found the section you need, you should start by reading the introductory paragraphs to get an overview of what the documentation covers. -->

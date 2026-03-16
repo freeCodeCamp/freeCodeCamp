@@ -1,12 +1,18 @@
 import assert from 'node:assert';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
-if (error && process.env.FREECODECAMP_NODE_ENV !== 'production') {
+if (
+  error &&
+  process.env.FREECODECAMP_NODE_ENV == 'production' &&
+  process.env.NODE_ENV !== 'test'
+) {
   console.warn(`
   ----------------------------------------------------
   Warning: .env file not found.
@@ -155,9 +161,9 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
-// Mailhog is used in development and test environments, hence the localhost
+// Mailpit is used in development and test environments, hence the localhost
 // default.
-export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
+export const MAILPIT_HOST = process.env.MAILPIT_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
@@ -184,9 +190,6 @@ export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
 export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
 export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
   process.env.FCC_ENABLE_SHADOW_CAPTURE
-);
-export const FCC_ENABLE_EXAM_ENVIRONMENT = undefinedOrBool(
-  process.env.FCC_ENABLE_EXAM_ENVIRONMENT
 );
 export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES

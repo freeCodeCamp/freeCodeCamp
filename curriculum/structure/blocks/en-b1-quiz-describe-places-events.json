@@ -1,0 +1,14 @@
+{
+  "name": "Describing Places and Events Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-describe-places-events",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69604103d290e1c4131ab27b",
+      "title": "Describing Places and Events Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

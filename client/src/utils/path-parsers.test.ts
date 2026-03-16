@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { isLanding } from './path-parsers';
 
 const pathnames = {

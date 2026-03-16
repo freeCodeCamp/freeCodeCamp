@@ -8,7 +8,7 @@ dashedName: url-shortener-microservice
 
 # --description--
 
-Build a full stack JavaScript app that is functionally similar to this: <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Working on this project will involve you writing your code using one of the following methods:
+Build a full-stack JavaScript app that is functionally similar to this: <a href="https://url-shortener-microservice.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://url-shortener-microservice.freecodecamp.rocks</a>. Working on this project will involve you writing your code using one of the following methods:
 
 -   Clone <a href="https://github.com/freeCodeCamp/boilerplate-project-urlshortener/" target="_blank" rel="noopener noreferrer nofollow">this GitHub repo</a> and complete your project locally.
 -   Use a site builder of your choice to complete the project. Be sure to incorporate all the files from our GitHub repo.
@@ -32,7 +32,6 @@ You should provide your own project, not the example URL.
 You can POST a URL to `/api/shorturl` and get a JSON response with `original_url` and `short_url` properties. Here's an example: `{ original_url : 'https://freeCodeCamp.org', short_url : 1}`
 
 ```js
-async () => {
   const url = code;
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
@@ -48,13 +47,11 @@ async () => {
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
-};
 ```
 
 When you visit `/api/shorturl/<short_url>`, you will be redirected to the original URL.
 
 ```js
-async () => {
   const url = code;
   const urlVariable = Date.now();
   const fullUrl = `${url}/?v=${urlVariable}`
@@ -80,13 +77,11 @@ async () => {
   } else {
     throw new Error(`${getResponse.status} ${getResponse.statusText}`);
   }
-};
 ```
 
 If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`
 
 ```js
-async () => {
   const url = code;
   const res = await fetch(url + '/api/shorturl', {
     method: 'POST',
@@ -100,6 +95,5 @@ async () => {
   } else {
     throw new Error(`${res.status} ${res.statusText}`);
   }
-};
 ```
 

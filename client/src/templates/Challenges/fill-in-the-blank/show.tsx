@@ -10,9 +10,11 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import ShortcutsModal from '../components/shortcuts-modal';
+
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 // Local Utilities
+import ShortcutsModal from '../components/shortcuts-modal';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -35,6 +37,7 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
+import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
 
@@ -86,11 +89,12 @@ const ShowFillInTheBlank = ({
         superBlock,
         block,
         translationPending,
-        fields: { blockName, tests },
         challengeType,
         fillInTheBlank,
         helpCategory,
-        scene
+        scene,
+        tests,
+        lang
       }
     }
   },
@@ -103,7 +107,6 @@ const ShowFillInTheBlank = ({
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
   const emptyArray = fillInTheBlank.blanks.map(() => null);
-
   const [showWrong, setShowWrong] = useState(false);
   const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
   const [answersCorrect, setAnswersCorrect] =
@@ -127,20 +130,27 @@ const ShowFillInTheBlank = ({
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmitNonChinese = () => {
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
-    const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) =>
-        !!userAnswer &&
-        replaceAppleQuotes(userAnswer.trim()).toLowerCase() ===
-          blankAnswers[i].toLowerCase()
-    );
+    const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
+      if (!userAnswer) return false;
+
+      const answer = blankAnswers[i];
+      const normalizedUserAnswer = replaceAppleQuotes(
+        userAnswer.trim()
+      ).toLowerCase();
+
+      return normalizedUserAnswer === answer.toLowerCase();
+    });
+
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
@@ -160,11 +170,67 @@ const ShowFillInTheBlank = ({
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputIndex = parseInt(e.target.getAttribute('data-index') as string);
+  const handleSubmitChinese = () => {
+    const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
+    const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
+      if (!userAnswer) return false;
+
+      const answer = blankAnswers[i];
+      const normalizedUserAnswer = userAnswer.trim().toLowerCase();
+
+      if (fillInTheBlank.inputType === 'pinyin-to-hanzi') {
+        const pairs = parseHanziPinyinPairs(answer);
+        if (pairs.length === 1) {
+          const hanziPinyin = pairs[0];
+          const { hanzi } = hanziPinyin;
+          return (
+            normalizedUserAnswer.replace(/\s+/g, '') ===
+            hanzi.replace(/\s+/g, '')
+          );
+        }
+      } else if (fillInTheBlank.inputType === 'pinyin-tone') {
+        // Ignore spaces to allow both syllable formats:
+        // spaced (e.g., 'nǐ hǎo') and unspaced (e.g., 'nǐhǎo').
+        return (
+          normalizedUserAnswer.replace(/\s+/g, '') ===
+          answer.toLowerCase().replace(/\s+/g, '')
+        );
+      }
+
+      return normalizedUserAnswer === answer.toLowerCase();
+    });
+
+    setAnswersCorrect(newAnswersCorrect);
+    const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
+    if (!hasWrongAnswer) {
+      setShowFeedback(false);
+      setFeedback(null);
+      openCompletionModal();
+    } else {
+      const firstWrongIndex = newAnswersCorrect.findIndex(a => a === false);
+      const feedback =
+        firstWrongIndex >= 0
+          ? fillInTheBlank.blanks[firstWrongIndex].feedback
+          : null;
+
+      setFeedback(feedback);
+      setShowWrong(true);
+      setShowFeedback(true);
+    }
+  };
+
+  const handleSubmit = () => {
+    if (lang === ChallengeLang.Chinese) {
+      handleSubmitChinese();
+    } else {
+      handleSubmitNonChinese();
+    }
+  };
+
+  const handleInputChange = (inputIndex: number, value: string): void => {
     const newUserAnswers = [...userAnswers];
-    newUserAnswers[inputIndex] = e.target.value;
+    newUserAnswers[inputIndex] = value;
 
     const newAnswersCorrect = [...answersCorrect];
     newAnswersCorrect[inputIndex] = null;
@@ -216,7 +282,12 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
+              {transcript && (
+                <ChallengeTranscript
+                  transcript={transcript}
+                  isDialogue={true}
+                />
+              )}
 
               {instructions && (
                 <>
@@ -261,7 +332,7 @@ const ShowFillInTheBlank = ({
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -288,13 +359,9 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        lang
         fields {
-          blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         fillInTheBlank {
           sentence
@@ -302,6 +369,11 @@ export const query = graphql`
             answer
             feedback
           }
+          inputType
+        }
+        tests {
+          text
+          testString
         }
         transcript
         scene {

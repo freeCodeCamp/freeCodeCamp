@@ -8,5 +8,5 @@
   "helpCategory": "JavaScript",
   "isUpcomingChange": false,
   "blockLayout": "link",
-  "blockType": "lab"
+  "blockLabel": "lab"
 }

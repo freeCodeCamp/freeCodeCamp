@@ -18,16 +18,13 @@ import {
 import Login from '../components/Header/components/login';
 import { Loader, FullWidthRow } from '../components/helpers';
 import { reportUser } from '../redux/actions';
-import {
-  userFetchStateSelector,
-  isSignedInSelector,
-  userSelector
-} from '../redux/selectors';
+import { userFetchStateSelector, userSelector } from '../redux/selectors';
 import { UserFetchState } from '../redux/prop-types';
 
+type User = { email: string } | null;
+
 interface ShowUserProps {
-  email: string;
-  isSignedIn: boolean;
+  user: User;
   reportUser: (payload: {
     username: string;
     reportDescription: string;
@@ -38,17 +35,11 @@ interface ShowUserProps {
 }
 
 const mapStateToProps = createSelector(
-  isSignedInSelector,
   userFetchStateSelector,
   userSelector,
-  (
-    isSignedIn,
-    userFetchState: UserFetchState,
-    { email }: { email: string }
-  ) => ({
-    isSignedIn,
+  (userFetchState: UserFetchState, user: User) => ({
     userFetchState,
-    email
+    user
   })
 );
 
@@ -56,9 +47,8 @@ const mapDispatchToProps = {
   reportUser
 };
 
-function ShowUser({
-  email,
-  isSignedIn,
+export function ShowUser({
+  user,
   reportUser,
   t,
   userFetchState,
@@ -80,19 +70,19 @@ function ShowUser({
     return <Loader fullScreen={true} />;
   }
 
-  if ((complete || errored) && !isSignedIn) {
+  if (errored || !user) {
     return (
       <main>
         <FullWidthRow>
           <Spacer size='l' />
           <Panel variant='primary' className='text-center'>
             <Panel.Heading>
-              <Panel.Title>{t($ => $.report['sign-in'])}</Panel.Title>
+              <Panel.Title>{t('report.sign-in')}</Panel.Title>
             </Panel.Heading>
             <Panel.Body className='text-center'>
               <Spacer size='l' />
               <Col md={6} mdOffset={3} sm={8} smOffset={2} xs={12}>
-                <Login block={true}>{t($ => $.buttons['click-here'])}</Login>
+                <Login block={true}>{t('buttons.click-here')}</Login>
               </Col>
               <Spacer size='xl' />
             </Panel.Body>
@@ -105,34 +95,34 @@ function ShowUser({
   return (
     <>
       <Helmet>
-        <title>{t($ => $.report.portfolio)} | freeCodeCamp.org</title>
+        <title>{t('report.portfolio')} | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size='l' />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
-          <h2>{t($ => $.report['portfolio-2'], { username: username })}</h2>
+          <h2>{t('report.portfolio-2', { username: username })}</h2>
         </Col>
       </Row>
       <Row className='overflow-fix'>
         <Col sm={6} smOffset={3} xs={12}>
           <p>
-            <Trans i18nKey={$ => $.report['notify-1']}>
-              <strong>{{ email }}</strong>
+            <Trans i18nKey='report.notify-1' values={{ email: user.email }}>
+              <strong>{'{{email}}'}</strong>
             </Trans>
           </p>
-          <p>{t($ => $.report['notify-2'])}</p>
+          <p>{t('report.notify-2')}</p>
           <form onSubmit={handleSubmit}>
             <FormGroup controlId='report-user-textarea'>
-              <ControlLabel>{t($ => $.report.what)}</ControlLabel>
+              <ControlLabel>{t('report.what')}</ControlLabel>
               <FormControl
                 componentClass='textarea'
                 onChange={handleChange}
-                placeholder={t($ => $.report.details)}
+                placeholder={t('report.details')}
                 value={textarea}
               />
             </FormGroup>
             <Button block={true} variant='primary' type='submit'>
-              {t($ => $.report.submit)}
+              {t('report.submit')}
             </Button>
             <Spacer size='m' />
           </form>

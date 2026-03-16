@@ -1,8 +1,8 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 
-import { UpdateReqType } from '../../utils';
-import * as schemas from '../../schemas';
+import { UpdateReqType } from '../../utils/index.js';
+import * as schemas from '../../schemas.js';
 
 /**
  * Plugin for Sentry-related endpoints.

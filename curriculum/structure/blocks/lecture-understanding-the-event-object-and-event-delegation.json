@@ -1,6 +1,6 @@
 {
   "name": "Understanding the Event Object and Event Delegation",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-the-event-object-and-event-delegation",

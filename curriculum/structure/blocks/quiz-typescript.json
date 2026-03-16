@@ -1,6 +1,6 @@
 {
   "name": "TypeScript Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-typescript",

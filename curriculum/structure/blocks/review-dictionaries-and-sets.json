@@ -1,6 +1,6 @@
 {
   "name": "Dictionaries and Sets review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-dictionaries-and-sets",
   "challengeOrder": [
     {
@@ -9,6 +9,6 @@
     }
   ],
   "helpCategory": "Python",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link"
 }

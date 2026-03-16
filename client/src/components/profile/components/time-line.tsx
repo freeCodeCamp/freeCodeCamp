@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regenerateMissingProperties } from '../../../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import type {
   ChallengeData,
@@ -21,7 +21,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -181,20 +181,20 @@ function TimelineInner({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t($ => $.profile.timeline)}</h2>
+        <h2>{t('profile.timeline')}</h2>
         <Spacer size='s' />
         {completedMap.length === 0 ? (
           <p className='text-center'>
-            {t($ => $.profile['none-completed'])}&nbsp;
-            <Link to='/learn'>{t($ => $.profile['get-started'])}</Link>
+            {t('profile.none-completed')}&nbsp;
+            <Link to='/learn'>{t('profile.get-started')}</Link>
           </p>
         ) : (
           <Table condensed={true} striped={true}>
             <thead>
               <tr>
-                <th>{t($ => $.profile.challenge)}</th>
-                <th>{t($ => $.settings.labels.solution)}</th>
-                <th className='text-center'>{t($ => $.profile.completed)}</th>
+                <th>{t('profile.challenge')}</th>
+                <th>{t('settings.labels.solution')}</th>
+                <th className='text-center'>{t('profile.completed')}</th>
               </tr>
             </thead>
             <tbody>
@@ -216,7 +216,7 @@ function TimelineInner({
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={closeSolution}>{t($ => $.buttons.close)}</Button>
+              <Button onClick={closeSolution}>{t('buttons.close')}</Button>
             </Modal.Footer>
           </Modal>
         )}
@@ -232,7 +232,7 @@ function TimelineInner({
         )}
         <ProjectPreviewModal
           challengeData={challengeData}
-          closeText={t($ => $.buttons.close)}
+          closeText={t('buttons.close')}
           previewTitle={projectTitle}
         />
         <ExamResultsModal
@@ -254,9 +254,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         edges {
           node {
             challenge {
+              block
               fields {
                 slug
-                blockName
               }
               id
               superBlock
@@ -271,9 +271,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
-
-    // TODO: convert to selector #61969
-    const certName = t(`certification.title.${certPath}-cert` as never);
+    const certName = t(`certification.title.${certPath}-cert`);
     idToNameMap.set(id, {
       challengeTitle: certName,
       certPath: certPath
@@ -284,22 +282,21 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       node: {
         challenge: {
           // @ts-expect-error Graphql needs typing
+          block,
+          // @ts-expect-error Graphql needs typing
           id,
           // @ts-expect-error Graphql needs typing
           superBlock,
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug, blockName },
+          fields: { slug },
           // @ts-expect-error Graphql needs typing
           hasEditableBoundaries
         }
       }
     }) => {
-      // TODO: convert to selector #61969
-      const blockNameTitle = t(
-        `intro:${superBlock}.blocks.${blockName}.title` as never
-      );
+      const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
       const shouldAppendBlockNameToTitle =
         hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {

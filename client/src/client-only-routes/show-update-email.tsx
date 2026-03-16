@@ -21,8 +21,7 @@ import {
 } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { Loader, Link } from '../components/helpers';
-import './show-update-email.css';
+import { Loader } from '../components/helpers';
 import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
 import { updateMyEmail } from '../redux/settings/actions';
@@ -83,11 +82,11 @@ function ShowUpdateEmail({
   return (
     <>
       <Helmet>
-        <title>{t($ => $.misc['update-email-1'])} | freeCodeCamp.org</title>
+        <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
       </Helmet>
       <Container>
         <Spacer size='m' />
-        <h2 className='text-center'>{t($ => $.misc['update-email-2'])}</h2>
+        <h2 className='text-center'>{t('misc.update-email-2')}</h2>
         <Row>
           <Col sm={6} smOffset={3}>
             <Row>
@@ -100,7 +99,7 @@ function ShowUpdateEmail({
                   validationState={emailValidationState}
                 >
                   <ControlLabel htmlFor='emailInput'>
-                    {t($ => $.misc.email)}
+                    {t('misc.email')}
                   </ControlLabel>
                   <FormControl
                     id='emailInput'
@@ -118,13 +117,11 @@ function ShowUpdateEmail({
                   type='submit'
                 >
                   {isNewEmail
-                    ? t($ => $.buttons['update-email'])
-                    : t($ => $.buttons['verify-email'])}
+                    ? t('buttons.update-email')
+                    : t('buttons.verify-email')}
                 </Button>
               </form>
-              <p className='text-center'>
-                <Link to='/signout'>{t($ => $.buttons['sign-out'])}</Link>
-              </p>
+              <Spacer size='s' />
             </Row>
           </Col>
         </Row>

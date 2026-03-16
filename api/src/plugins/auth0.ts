@@ -1,10 +1,10 @@
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { Type } from '@sinclair/typebox';
-import { Value } from '@sinclair/typebox/value';
+import { Type } from 'typebox';
+import { Value } from 'typebox/value';
 import fp from 'fastify-plugin';
 
-import { isError } from 'lodash';
+import { isError } from 'lodash-es';
 import {
   API_LOCATION,
   AUTH0_CLIENT_ID,
@@ -12,13 +12,10 @@ import {
   AUTH0_DOMAIN,
   COOKIE_DOMAIN,
   HOME_LOCATION
-} from '../utils/env';
-import { findOrCreateUser } from '../routes/helpers/auth-helpers';
-import { createAccessToken } from '../utils/tokens';
-import {
-  getLoginRedirectParams,
-  getPrefixedLandingPath
-} from '../utils/redirection';
+} from '../utils/env.js';
+import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
+import { createAccessToken } from '../utils/tokens.js';
+import { getLoginRedirectParams } from '../utils/redirection.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -85,6 +82,25 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         );
         void reply.redirect(redirectUrl);
       });
+
+      fastify.get('/signin/google', async function (request, reply) {
+        const returnTo = request.headers.referer ?? `${HOME_LOCATION}/learn`;
+        void reply.setCookie('login-returnto', returnTo, {
+          domain: COOKIE_DOMAIN,
+          httpOnly: true,
+          secure: true,
+          signed: true,
+          sameSite: 'lax'
+        });
+
+        const authorizationEndpoint =
+          await this.auth0OAuth.generateAuthorizationUri(request, reply);
+
+        const url = new URL(authorizationEndpoint);
+        url.searchParams.set('connection', 'google-oauth2');
+
+        void reply.redirect(url.toString());
+      });
       done();
     });
 
@@ -108,8 +124,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       }
 
-      const { returnTo, pathPrefix, origin } = getLoginRedirectParams(req);
-      const redirectBase = getPrefixedLandingPath(origin, pathPrefix);
+      const { returnTo, origin } = getLoginRedirectParams(req);
 
       let token;
       try {
@@ -166,24 +181,17 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         });
       }
 
-      const { id, acceptedPrivacyTerms } = await findOrCreateUser(
-        fastify,
-        email
-      );
+      const { id } = await findOrCreateUser(fastify, email);
 
       reply.setAccessTokenCookie(createAccessToken(id));
 
-      if (acceptedPrivacyTerms) {
-        void reply.redirectWithMessage(returnTo, {
-          type: 'success',
-          content: 'flash.signin-success'
-        });
-      } else {
-        void reply.redirectWithMessage(`${redirectBase}/email-sign-up`, {
-          type: 'success',
-          content: 'flash.signin-success'
-        });
-      }
+      const returnPath = new URL(returnTo).pathname;
+      const returnURL = returnPath === '/' ? `${origin}/learn` : returnTo;
+
+      void reply.redirectWithMessage(returnURL, {
+        type: 'success',
+        content: 'flash.signin-success'
+      });
     });
 
     done();

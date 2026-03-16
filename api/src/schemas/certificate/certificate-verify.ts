@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { genericError, isCertMap } from '../types';
+import { genericError, isCertMap } from '../types.js';
 
 export const certificateVerify = {
   // TODO(POST_MVP): Remove partial validation from route for schema validation

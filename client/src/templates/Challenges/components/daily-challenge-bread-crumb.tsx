@@ -19,16 +19,12 @@ function DailyChallengeBreadCrumb({
   return dailyChallengeParam && isValidDateString(dailyChallengeParam) ? (
     <nav
       className='challenge-title-breadcrumbs'
-      aria-label={t($ => $.aria['breadcrumb-nav'])}
+      aria-label={t('aria.breadcrumb-nav')}
     >
       <ol data-playwright-test-label='breadcrumb-desktop'>
         <li className='breadcrumb-left'>
-          <Link to={`/learn`}>
-            <span>
-              {i18next.t($ => $['daily-coding-challenge'].title, {
-                ns: 'intro'
-              })}
-            </span>
+          <Link to={`/learn/daily-coding-challenge/archive`}>
+            <span>{i18next.t(`intro:daily-coding-challenge.title`)}</span>
           </Link>
         </li>
         <li className='breadcrumb-right'>

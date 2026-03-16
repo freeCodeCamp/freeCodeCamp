@@ -1,8 +1,7 @@
-import { spawn } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { availableLangs, Languages } from '../../shared/config/i18n';
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
 import env from './read-env';
 
 const configPath = path.resolve(__dirname, '../config');
@@ -14,7 +13,7 @@ function checkClientLocale() {
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as Languages)) {
     throw Error(`
 
-      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in shared/config/i18n.ts
+      CLIENT_LOCALE, ${process.env.CLIENT_LOCALE}, is not an available language in packages/shared/src/config/i18n.ts
 
       `);
   }
@@ -30,7 +29,7 @@ function checkCurriculumLocale() {
   ) {
     throw Error(`
 
-      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in shared/config/i18n.ts
+      CURRICULUM_LOCALE, ${process.env.CURRICULUM_LOCALE}, is not an available language in packages/shared/src/config/i18n.ts
 
       `);
   }
@@ -63,9 +62,9 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     'clientLocale',
     'curriculumLocale',
     'deploymentEnv',
+    'deploymentVersion',
     'environment',
-    'showUpcomingChanges',
-    'showDailyCodingChallenges'
+    'showUpcomingChanges'
   ];
   const searchKeys = ['algoliaAppId', 'algoliaAPIKey'];
   const donationKeys = ['stripePublicKey', 'paypalClientId', 'patreonClientId'];
@@ -121,24 +120,6 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
   SHOW_UPCOMING_CHANGES should never be 'true' in production
 
   `);
-} else {
-  if (fs.existsSync(`${configPath}/env.json`)) {
-    const { showUpcomingChanges } = JSON.parse(
-      fs.readFileSync(`${configPath}/env.json`, 'utf-8')
-    ) as { showUpcomingChanges: boolean };
-
-    if (env['showUpcomingChanges'] !== showUpcomingChanges) {
-      console.log('Feature flags have been changed, cleaning client cache.');
-      const child = spawn('pnpm', ['run', '-w', 'clean:client']);
-      child.stdout.setEncoding('utf8');
-      child.stdout.on('data', function (data) {
-        console.log(data);
-      });
-      child.on('error', err => {
-        console.error(err);
-      });
-    }
-  }
 }
 
 fs.writeFileSync(`${configPath}/env.json`, JSON.stringify(env));

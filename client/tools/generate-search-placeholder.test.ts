@@ -1,3 +1,5 @@
+import { describe, test, expect } from 'vitest';
+
 import { clientLocale } from '../config/env.json';
 import {
   convertToLocalizedString,

@@ -2,6 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { useStaticQuery } from 'gatsby';
 import React from 'react';
+import { beforeEach, describe, it, expect, vi } from 'vitest';
+
+vi.mock('../../../utils/get-words');
 
 import { render, screen } from '../../../../utils/test-utils';
 import { createStore } from '../../../redux/create-store';

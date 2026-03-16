@@ -73,6 +73,7 @@
   position: absolute;
   right: 0;
   width: 100%;
+  z-index: var(--z-index-site-header);
 }
 
 @media (min-width: 980px) {
@@ -429,4 +430,66 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 #universal-nav button[aria-expanded='true'] + div {
   display: block;
+}
+
+/**
+ * High contrast mode support
+ *
+ * When the user enables a high contrast theme (e.g. Windows High Contrast),
+ * the browser overrides most colors. We add explicit borders and fills so
+ * navbar elements remain visually distinguishable.
+ */
+@media (forced-colors: active) {
+  .universal-nav {
+    border-bottom: 2px solid ButtonText;
+  }
+
+  .exposed-button-nav,
+  .lang-button-nav {
+    border: 1px solid ButtonText;
+  }
+
+  .nav-list {
+    border: 1px solid ButtonText;
+  }
+
+  .nav-link {
+    border-bottom: 1px solid ButtonText;
+  }
+
+  .nav-line {
+    border-top-color: ButtonText;
+  }
+
+  /* The logo SVG uses inline fill="#ffffff" which the browser cannot
+     override automatically. forced-color-adjust: auto tells the browser
+     to remap colors, and the !important fill ensures the logo is visible
+     against the system background. */
+  .universal-nav-logo svg {
+    forced-color-adjust: auto;
+    fill: LinkText !important;
+  }
+
+  /* Override the hardcoded fill on <use> elements inside the logo */
+  .universal-nav-logo svg use {
+    fill: LinkText !important;
+  }
+
+  /* Ensure the language globe icon strokes are visible */
+  .lang-button-nav svg {
+    forced-color-adjust: auto;
+  }
+
+  .lang-button-nav svg path {
+    fill: none !important;
+    stroke: ButtonText !important;
+  }
+
+  .avatar-container {
+    border-color: ButtonText;
+  }
+
+  .signup-btn {
+    border: 1px solid ButtonText;
+  }
 }

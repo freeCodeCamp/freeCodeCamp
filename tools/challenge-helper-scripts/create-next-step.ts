@@ -1,6 +1,4 @@
-import { getLastStep } from './helpers/get-last-step-file-number';
-import { insertStep } from './commands';
-import { validateMetaData } from './helpers/project-metadata';
+import { getLastStep } from './helpers/get-last-step-file-number.js';
+import { insertStep } from './commands.js';
 
-validateMetaData();
-insertStep(getLastStep().stepNum + 1);
+void insertStep(getLastStep().stepNum + 1);

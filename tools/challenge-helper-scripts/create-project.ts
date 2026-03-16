@@ -1,17 +1,33 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input, number } from '@inquirer/prompts';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
-  superBlockToFolderMap
-} from '../../shared/config/curriculum';
-import { createStepFile, validateBlockName } from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+  chapterBasedSuperBlocks
+} from '@freecodecamp/shared/config/curriculum';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import {
+  createBlockFolder,
+  writeBlockStructure
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
+import {
+  createQuizFile,
+  createStepFile,
+  validateBlockName,
+  getAllBlocks
+} from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { IntroJson, parseJson } from './helpers/parse-json.js';
+import {
+  ChapterModuleSuperblockStructure,
+  updateChapterModuleSuperblockStructure,
+  updateSimpleSuperblockStructure
+} from './helpers/create-project.js';
+import { withTrace } from './helpers/utils.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -21,51 +37,110 @@ const helpCategories = [
   'English',
   'Odin',
   'Euler',
-  'Rosetta'
+  'Rosetta',
+  'General'
 ] as const;
-
-type BlockInfo = {
-  title: string;
-  intro: string[];
-};
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  order: number;
+  blockLabel?: string;
+  blockLayout?: string;
+  questionCount?: number;
+  order?: number;
+  chapter?: string;
+  position?: number;
+  module?: string;
   title?: string;
 }
 
-async function createProject(
-  superBlock: SuperBlocks,
-  block: string,
-  helpCategory: string,
-  order: number,
-  title?: string
-) {
-  if (!title) {
-    title = block;
+async function createProject(projectArgs: CreateProjectArgs) {
+  if (!projectArgs.title) {
+    projectArgs.title = projectArgs.block;
   }
-  void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(
-    superBlock,
-    block,
-    title,
-    helpCategory,
-    order,
-    challengeId
+  const order = projectArgs.order;
+  const chapter = projectArgs.chapter;
+  const module = projectArgs.module;
+  const position = projectArgs.position;
+
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[projectArgs.superBlock];
+
+  if (chapterBasedSuperBlocks.includes(projectArgs.superBlock)) {
+    if (!chapter || !module || typeof position == 'undefined') {
+      throw Error(
+        'Missing one of the following arguments: chapter, module, position'
+      );
+    }
+    void updateChapterModuleSuperblockStructure(
+      projectArgs.block,
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
+      { order: position - 1, chapter, module },
+      superblockFilename
+    );
+  } else {
+    if (typeof order == 'undefined') {
+      throw Error('Missing argument: order');
+    }
+    void updateSimpleSuperblockStructure(
+      projectArgs.block,
+      { order },
+      superblockFilename
+    );
+  }
+
+  void updateIntroJson(
+    projectArgs.superBlock,
+    projectArgs.block,
+    projectArgs.title
   );
-  // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+
+  const challengeId = new ObjectId();
+
+  if (projectArgs.blockLabel === BlockLabel.quiz) {
+    if (projectArgs.questionCount == null) {
+      throw new Error(
+        'Property `questionCount` is null when creating new Quiz Challenge'
+      );
+    }
+    await createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId
+    );
+    await createQuizChallenge({
+      challengeId,
+      block: projectArgs.block,
+      title: projectArgs.title,
+      questionCount: projectArgs.questionCount
+    });
+  } else {
+    await createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId,
+      projectArgs.order,
+      projectArgs.blockLabel,
+      projectArgs.blockLayout
+    );
+    await createFirstChallenge({ block: projectArgs.block, challengeId });
+  }
+
+  if (
+    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
+      projectArgs.blockLabel) == null
+  ) {
+    throw new Error(
+      'Missing argument: blockLabel when updating intro markdown'
+    );
+  }
 }
 
 async function updateIntroJson(
@@ -80,7 +155,7 @@ async function updateIntroJson(
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
-    intro: ['', '']
+    intro: [title, '']
   };
   void withTrace(
     fs.writeFile,
@@ -94,55 +169,52 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  order: number,
-  challengeId: ObjectID
+  challengeId: ObjectId,
+  order?: number,
+  blockLabel?: string,
+  blockLayout?: string
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta('Step');
+  let newMeta;
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
+    newMeta = getBaseMeta('FullStack');
+    newMeta.blockLabel = blockLabel;
+    newMeta.blockLayout = blockLayout;
+    if (blockLabel === BlockLabel.workshop) {
+      newMeta.hasEditableBoundaries = true;
+    }
+  } else {
+    newMeta = getBaseMeta('Step');
+    newMeta.order = order;
+  }
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.order = order;
-  newMeta.superBlock = superBlock;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
+  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
+
+  await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(
-  superBlock: SuperBlocks,
-  block: string
-): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
-
+async function createFirstChallenge({
+  block,
+  challengeId
+}: {
+  block: string;
+  challengeId: ObjectId;
+}) {
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
-  const challengeSeeds = {
-    indexhtml: {
+  const challengeSeeds = [
+    {
       contents: '',
       ext: 'html',
       editableRegionBoundaries: [0, 2]
     }
-  };
+  ];
   // including trailing slash for compatibility with createStepFile
-  return createStepFile({
-    projectPath: newChallengeDir + '/',
+  createStepFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
     stepNum: 1,
     challengeType: 0,
     challengeSeeds,
@@ -150,79 +222,182 @@ async function createFirstChallenge(
   });
 }
 
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
-}
-
-// fs Promise functions return errors, but no stack trace.  This adds back in
-// the stack trace.
-function withTrace<Args extends unknown[], Result>(
-  fn: (...x: Args) => Promise<Result>,
-  ...args: Args
-): Promise<Result> {
-  return fn(...args).catch((reason: Error) => {
-    throw Error(reason.message);
+async function createQuizChallenge({
+  challengeId,
+  block,
+  title,
+  questionCount
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+  questionCount: number;
+}): Promise<ObjectId> {
+  return createQuizFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title: title,
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.RespWebDesign,
-    type: 'list',
-    choices: Object.values(SuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this project?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
+async function getChapters(superBlock: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  return blockMetaData.chapters;
+}
+
+async function getModules(superBlock: string, chapterName: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  const modifiedChapter = blockMetaData.chapters.find(
+    x => x.dashedName === chapterName
+  );
+  return modifiedChapter?.modules;
+}
+
+void getAllBlocks()
+  .then(async existingBlocks => {
+    const superBlock = await select<SuperBlocks>({
+      message: 'Which certification does this belong to?',
+      default: SuperBlocks.RespWebDesignV9,
+      choices: Object.values(SuperBlocks).map(value => ({
+        name: value,
+        value
+      }))
+    });
+
+    const rawBlock = await input({
+      message: 'What is the dashed name (in kebab-case) for this project?',
+      validate: (value: string) => validateBlockName(value, existingBlocks)
+    });
+
+    const block = rawBlock.toLowerCase().trim();
+
+    const title = await input({
+      message: 'Enter a title for this project:',
+      default: block
+    });
+
+    const helpCategory = await select<string>({
+      message: 'Choose a help category',
+      default: 'HTML-CSS',
+      choices: helpCategories.map(value => ({
+        name: value,
+        value
+      }))
+    });
+
+    let blockLabel: BlockLabel | undefined;
+    let blockLayout: BlockLayouts | undefined;
+    let questionCount: number | undefined;
+    let chapter: string | undefined;
+    let module: string | undefined;
+    let position: number | undefined;
+    let order: number | undefined;
+
+    if (chapterBasedSuperBlocks.includes(superBlock)) {
+      blockLabel = await select<BlockLabel>({
+        message: 'Choose a block label',
+        default: BlockLabel.lab,
+        choices: Object.values(BlockLabel).map(value => ({
+          name: value,
+          value
+        }))
+      });
+
+      blockLayout = await select<BlockLayouts>({
+        message: 'Choose a block layout',
+        default:
+          blockLabel === BlockLabel.quiz
+            ? BlockLayouts.Link
+            : BlockLayouts.ChallengeList,
+        choices: Object.values(BlockLayouts).map(value => ({
+          name: value,
+          value
+        }))
+      });
+
+      if (blockLabel === BlockLabel.quiz) {
+        questionCount = await select<number>({
+          message: 'Choose a question count',
+          default: 20,
+          choices: [
+            { name: '10', value: 10 },
+            { name: '20', value: 20 }
+          ]
+        });
+      }
+
+      const chapters = await getChapters(superBlock);
+      chapter = await select({
+        message: 'What chapter should this project go in?',
+        choices: chapters.map(x => ({
+          name: x.dashedName,
+          value: x.dashedName
+        }))
+      });
+
+      const modules = await getModules(superBlock, chapter);
+      module = await select({
+        message: 'What module should this project go in?',
+        choices: modules!.map(x => ({
+          name: x.dashedName,
+          value: x.dashedName
+        }))
+      });
+
+      position = await number({
+        message: 'At which position does this appear in the module?',
+        default: 1,
+        validate: (value: number | undefined) =>
+          value && value > 0
+            ? true
+            : 'Position must be a number greater than zero.'
+      });
+    } else {
+      order = await number({
+        message: 'Which position does this appear in the certificate?',
+        default: 42,
+        validate: (value: number | undefined) =>
+          value && value > 0
+            ? true
+            : 'Order must be a number greater than zero.'
+      });
     }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'HTML-CSS',
-    type: 'list',
-    choices: helpCategories
-  },
-  {
-    name: 'order',
-    message: 'Which position does this appear in the certificate?',
-    default: 42,
-    validate: (order: string) => {
-      return parseInt(order, 10) > 0
-        ? true
-        : 'Order must be an number greater than zero.';
-    },
-    filter: (order: string) => {
-      return parseInt(order, 10);
-    }
-  }
-])
-  .then(
-    async ({
+
+    return {
       superBlock,
       block,
       title,
       helpCategory,
+      blockLabel,
+      blockLayout,
+      questionCount,
+      chapter,
+      module,
+      position,
       order
-    }: CreateProjectArgs) =>
-      await createProject(superBlock, block, helpCategory, order, title)
-  )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
+    };
+  })
+  .then(async (answers: CreateProjectArgs) => {
+    await createProject(answers);
+  })
+  .then(() => console.log('All set.  Refresh the page to see the changes.'))
+  .catch((err: unknown) =>
+    console.error(
+      'Error creating project:',
+      err instanceof Error ? err.message : String(err)
     )
   );

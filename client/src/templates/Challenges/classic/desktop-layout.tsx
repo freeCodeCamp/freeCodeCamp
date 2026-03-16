@@ -4,7 +4,7 @@ import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   ChallengeFiles,
   DailyCodingChallengeLanguages,
@@ -23,6 +23,7 @@ import {
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -286,6 +287,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
+          challengeType={challengeType}
           data-playwright-test-label='action-row'
         />
       )}
@@ -312,9 +314,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
+          className='editor-pane'
         >
           {!isEmpty(challengeFiles) && (
-            <ReflexContainer key='codePane' orientation='horizontal'>
+            <ReflexContainer
+              key='codePane'
+              orientation='horizontal'
+              className='editor-pane-code'
+            >
               <ReflexElement
                 name='codePane'
                 {...(displayEditorConsole && { flex: codePane.flex })}
@@ -337,6 +344,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
             </ReflexContainer>
           )}
+          {showIndependentLowerJaw && <IndependentLowerJaw />}
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (

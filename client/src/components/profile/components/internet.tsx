@@ -25,6 +25,7 @@ export interface Socials {
   githubProfile: string;
   linkedin: string;
   twitter: string;
+  bluesky: string;
   website: string;
 }
 
@@ -60,6 +61,7 @@ const InternetSettings = ({
     githubProfile = '',
     linkedin = '',
     twitter = '',
+    bluesky = '',
     website = ''
   } = user;
 
@@ -67,6 +69,7 @@ const InternetSettings = ({
     githubProfile,
     linkedin,
     twitter,
+    bluesky,
     website
   });
 
@@ -99,7 +102,13 @@ const InternetSettings = ({
     };
 
   const isFormPristine = () => {
-    const originalValues = { githubProfile, linkedin, twitter, website };
+    const originalValues = {
+      githubProfile,
+      linkedin,
+      twitter,
+      bluesky,
+      website
+    };
 
     return (Object.keys(originalValues) as Array<keyof Socials>).every(
       key => originalValues[key] === formValues[key]
@@ -119,6 +128,9 @@ const InternetSettings = ({
     }
     setIsEditing(false);
   };
+
+  const { state: blueskyValidation, message: blueskyValidationMessage } =
+    getValidationStateFor(formValues.bluesky);
 
   const {
     state: githubProfileValidation,
@@ -192,12 +204,10 @@ const InternetSettings = ({
               controlId='internet-twitter'
               validationState={twitterValidation}
             >
-              <ControlLabel htmlFor='internet-twitter-input'>
-                Twitter
-              </ControlLabel>
+              <ControlLabel htmlFor='internet-twitter-input'>X</ControlLabel>
               <FormControl
                 onChange={createHandleChange('twitter')}
-                placeholder='https://twitter.com/user-name'
+                placeholder='https://x.com/user-name'
                 type='url'
                 value={formValues.twitter}
                 id='internet-twitter-input'
@@ -208,6 +218,27 @@ const InternetSettings = ({
                 dataPlaywrightTestLabel='internet-twitter-check'
               />
               <Info message={twitterValidationMessage} />
+            </FormGroup>
+            <FormGroup
+              controlId='internet-bluesky'
+              validationState={blueskyValidation}
+            >
+              <ControlLabel htmlFor='internet-bluesky-input'>
+                Bluesky
+              </ControlLabel>
+              <FormControl
+                onChange={createHandleChange('bluesky')}
+                placeholder='https://bsky.app/profile/user-name.bsky.social'
+                type='url'
+                value={formValues.bluesky}
+                id='internet-bluesky-input'
+              />
+              <Check
+                url={formValues.bluesky}
+                validation={blueskyValidation}
+                dataPlaywrightTestLabel='internet-bluesky-check'
+              />
+              <Info message={blueskyValidationMessage} />
             </FormGroup>
             <FormGroup
               controlId='internet-website'
@@ -223,13 +254,11 @@ const InternetSettings = ({
                 value={formValues.website}
                 id='internet-website-input'
               />
-
               <Check
                 url={formValues.website}
                 validation={websiteValidation}
                 dataPlaywrightTestLabel='internet-website-check'
               />
-
               <Info message={websiteValidationMessage} />
             </FormGroup>
           </div>

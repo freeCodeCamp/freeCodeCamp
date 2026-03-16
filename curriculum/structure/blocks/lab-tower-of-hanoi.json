@@ -1,9 +1,9 @@
 {
   "name": "Implement the Tower of Hanoi Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-tower-of-hanoi",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "helpCategory": "Python",
   "challengeOrder": [
     {

@@ -1,4 +1,5 @@
-import { insertErms } from './insert-erms';
+import { describe, it, expect } from 'vitest';
+import { insertErms } from './insert-erms.js';
 
 describe('insertErms helper', () => {
   const code = `<h1>Hello World</h1>

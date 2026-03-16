@@ -1,5 +1,7 @@
-const parseFixture = require('../../__fixtures__/parse-fixture');
-const { getParagraphContent } = require('./get-paragraph-content');
+import { describe, beforeAll, it, expect } from 'vitest';
+
+import parseFixture from '../../__fixtures__/parse-fixture';
+import { getParagraphContent } from './get-paragraph-content';
 
 describe('getParagraphContent', () => {
   let simpleAST;

@@ -7,11 +7,11 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('they should be able to accept it', async ({ page }) => {
@@ -55,7 +55,7 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
     await page.goto('/settings#cert-responsive-web-design');
 
     const claimCertButton = page.getByRole('button', {
-      name: 'Claim Certification Responsive Web Design'
+      name: 'Claim Certification Legacy Responsive Web Design V8'
     });
     await claimCertButton.click();
 

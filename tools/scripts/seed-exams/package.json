@@ -5,8 +5,11 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
+  },
+  "scripts": {
+    "lint": "eslint --max-warnings 0"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,10 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "debug": "4.3.4",
     "dotenv": "16.4.5",
+    "eslint": "^9.39.1",
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",

@@ -3,6 +3,7 @@ id: 657e1fd7b5ffaebc0ff4bd9f
 title: Task 26
 challengeType: 19
 dashedName: task-26
+lang: en-US
 ---
 
 <!-- (audio) Tom: Thanks for sharing, Sophie. I want to get more organized and your tips are a great help to me. -->
@@ -23,7 +24,7 @@ For giving him a time management app.
 
 ### --feedback--
 
-Tom is thanking Sophie for tips, not for giving her an app.
+Tom is thanking Sophie for tips, not for giving him an app.
 
 ---
 
@@ -35,7 +36,7 @@ For inviting him to lunch.
 
 ### --feedback--
 
-The thank you is for the advice, not for a lunch invitation.
+He is thanking her for the advice, not for a lunch invitation.
 
 ---
 

@@ -8,7 +8,9 @@ function plugin() {
   function transformer(tree, file) {
     const hintNodes = getSection(tree, '--hints--');
     if (hintNodes.length % 2 !== 0)
-      throw Error('Tests must be in (text, ```testString```) order');
+      throw Error(
+        'Hints must be in pairs: each hint text followed by a test code block'
+      );
 
     const tests = chunk(hintNodes, 2).map(getTest);
     file.data.tests = tests;

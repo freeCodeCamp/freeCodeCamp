@@ -9,7 +9,7 @@
       "title": "Build a Confirm the Ending Tool"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "usesMultifileEditor": true
 }

@@ -2,7 +2,7 @@
   "name": "Build a Customer Complaint Form",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-customer-complaint-form",
   "challengeOrder": [

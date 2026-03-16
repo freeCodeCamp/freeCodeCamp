@@ -3,6 +3,7 @@ id: 67c86f54f0b8aa4c3dd5bacd
 title: Task 108
 challengeType: 22
 dashedName: task-108
+lang: en-US
 ---
 
 <!-- REVIEW -->
@@ -31,9 +32,9 @@ Write the following words or phrases in the correct spot:
 
 `Maria: And this is Linda, she's our UX/UI designer. BLANK user experience and she creates our interface design.`  
 
-`David: Wonderful to meet you all. I'm David, the project manager from FCC Corp. I'll be your point of contact and I'll help make sure our collaboration is great. BLANK about this project. I'm confident that we can achieve great results.`  
+`David: Wonderful to meet you all. I'm David, the project manager from FCC Corp. I'll be your point of contact and I'll make sure our collaboration is great. BLANK about this project. I'm confident that we can achieve great results.`  
 
-`Maria: Thanks. Now BLANK with the project details and your specific requirements, David…`  
+`Maria: Thanks. Now, BLANK with the project details and your specific requirements, David.`  
 
 ## --blanks--
 
@@ -49,7 +50,7 @@ This expresses ownership of a duty or task. It begins with a pronoun, followed b
 
 ### --feedback--
 
-This describes someone else's role in a task. It begins with a pronoun, followed by the contraction of `is` then a preposition indicating duty.  
+This describes someone else's role in a task. It begins with a pronoun, followed by the contraction of `is`, then a preposition indicating duty.  
 
 ---
 
@@ -57,7 +58,7 @@ This describes someone else's role in a task. It begins with a pronoun, followed
 
 ### --feedback--
 
-This introduces two people as the subject of the sentence. It begins with the pronoun for a third person female followed by a conjunction and then the pronoun referring to oneself.  
+This introduces two people as the subject of the sentence. It begins with the pronoun for a third person female, followed by a conjunction, and then the pronoun referring to oneself.  
 
 ---
 
@@ -65,7 +66,7 @@ This introduces two people as the subject of the sentence. It begins with the pr
 
 ### --feedback--
 
-This indicates a person's professional field or area. It begins with a pronoun followed by a verb and then a preposition showing location or specialization.
+This indicates a person's professional field or area. It begins with a pronoun followed by a verb, and then a preposition showing location or specialization.
 
 ---
 
@@ -73,7 +74,7 @@ This indicates a person's professional field or area. It begins with a pronoun f
 
 ### --feedback--
 
-This expresses enthusiasm about something. It begins with a pronoun, followed by a contraction of `are` and then an adjective meaning "thrilled" or "eager".  
+This expresses enthusiasm about something. It begins with a pronoun, followed by a contraction of `are`, and then an adjective meaning "thrilled" or "eager".  
 
 ---
 
@@ -81,4 +82,4 @@ This expresses enthusiasm about something. It begins with a pronoun, followed by
 
 ### --feedback--
 
-This is used to begin an activity. It begins with a contraction of `let` and `us` followed by a verb, and then the past participle of `start`.
+This is used to begin an activity. It begins with a contraction of `let us`, followed by a verb, and then the past participle of `start`.

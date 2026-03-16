@@ -2,7 +2,7 @@
   "name": "Working with Arrays, Variables, and Naming Practices",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-arrays-variables-and-naming-practices",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "helpCategory": "JavaScript",
   "challengeOrder": [

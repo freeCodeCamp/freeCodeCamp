@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import APIIcon from './icons/api';
 import D3Icon from './icons/d3';
 import DatabaseIcon from './icons/database';
@@ -18,6 +18,10 @@ import CollegeAlgebra from './icons/college-algebra';
 import CSharpLogo from './icons/c-sharp-logo';
 import A2EnglishIcon from './icons/a2-english';
 import B1EnglishIcon from './icons/b1-english';
+import A1SpanishIcon from './icons/a1-spanish';
+import A2SpanishIcon from './icons/a2-spanish';
+import A1ChineseIcon from './icons/a1-chinese';
+import A2ChineseIcon from './icons/a2-chinese';
 import RosettaCodeIcon from './icons/rosetta-code';
 import Code from './icons/code';
 
@@ -40,17 +44,60 @@ const iconMap = {
   [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
-  [SuperBlocks.FullStackDeveloper]: Code,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: B1EnglishIcon,
-  [SuperBlocks.A2Spanish]: A2EnglishIcon,
-  [SuperBlocks.A2Chinese]: A2EnglishIcon,
-  [SuperBlocks.A1Chinese]: A2EnglishIcon,
+  [SuperBlocks.A1Spanish]: A1SpanishIcon,
+  [SuperBlocks.A2Spanish]: A2SpanishIcon,
+  [SuperBlocks.A2Chinese]: A2ChineseIcon,
+  [SuperBlocks.A1Chinese]: A1ChineseIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
   [SuperBlocks.PythonForEverybody]: PythonIcon,
   [SuperBlocks.BasicHtml]: Code,
   [SuperBlocks.SemanticHtml]: Code,
-  [SuperBlocks.DevPlayground]: Code
+  [SuperBlocks.FullStackOpen]: Code,
+  [SuperBlocks.DevPlayground]: Code,
+  [SuperBlocks.HtmlFormsAndTables]: ResponsiveDesign,
+  [SuperBlocks.LabSurveyForm]: Code,
+  [SuperBlocks.HtmlAndAccessibility]: ResponsiveDesign,
+  [SuperBlocks.ComputerBasics]: Code,
+  [SuperBlocks.BasicCss]: Code,
+  [SuperBlocks.DesignForDevelopers]: Code,
+  [SuperBlocks.AbsoluteAndRelativeUnits]: Code,
+  [SuperBlocks.PseudoClassesAndElements]: Code,
+  [SuperBlocks.CssColors]: Code,
+  [SuperBlocks.StylingForms]: Code,
+  [SuperBlocks.CssBoxModel]: Code,
+  [SuperBlocks.CssFlexbox]: Code,
+  [SuperBlocks.LabPageOfPlayingCards]: Code,
+  [SuperBlocks.CssTypography]: Code,
+  [SuperBlocks.CssAndAccessibility]: ResponsiveDesign,
+  [SuperBlocks.CssPositioning]: Code,
+  [SuperBlocks.AttributeSelectors]: Code,
+  [SuperBlocks.LabBookInventoryApp]: Code,
+  [SuperBlocks.ResponsiveDesign]: ResponsiveDesign,
+  [SuperBlocks.LabTechnicalDocumentationPage]: Code,
+  [SuperBlocks.CssVariables]: Code,
+  [SuperBlocks.CssGrid]: Code,
+  [SuperBlocks.LabProductLandingPage]: Code,
+  [SuperBlocks.CssAnimations]: Code,
+  [SuperBlocks.LearnPythonForBeginners]: PythonIcon,
+  [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: Code,
+  [SuperBlocks.IntroductionToPrecalculus]: CollegeAlgebra,
+  [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
+  [SuperBlocks.JsV9]: JavaScriptIcon,
+  [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
+  [SuperBlocks.PythonV9]: PythonIcon,
+  [SuperBlocks.RelationalDbV9]: DatabaseIcon,
+  [SuperBlocks.BackEndDevApisV9]: APIIcon,
+  [SuperBlocks.FullStackDeveloperV9]: Code,
+  [SuperBlocks.LearnRAGAndMCPFundamentals]: Code,
+  [SuperBlocks.IntroductionToBash]: Code,
+  [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
+  [SuperBlocks.LearnBashScripting]: Code,
+  [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
+  [SuperBlocks.IntroductionToNano]: Code,
+  [SuperBlocks.IntroductionToGitAndGithub]: Code,
+  [SuperBlocks.LearnPromptingFundamentals]: Clipboard
 };
 
 type SuperBlockIconProps = {

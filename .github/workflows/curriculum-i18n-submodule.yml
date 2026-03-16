@@ -13,11 +13,11 @@ permissions:
 jobs:
   test-curriculum:
     name: Test Curriculum
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
-        node-version: [22]
+        node-version: [24]
         # Exclude the languages that we currently run in the full CI suite.
         locale:
           - 'chinese'
@@ -29,24 +29,30 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4
         id: pnpm-install
         with:
           run_install: false
 
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
       - name: Set Environment variables
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
         run: pnpm install
@@ -67,4 +73,4 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-        run: pnpm test:curriculum
+        run: pnpm -F=curriculum test-content

@@ -59,7 +59,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Pug should correctly render variables.
 
 ```js
-async () => {
   const url = new URL("/", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -68,6 +67,5 @@ async () => {
     /pug-variable("|')>Please log in/gi,
     'Your projects home page should now be rendered by pug with the projects .pug file unaltered'
   );
-}
 ```
 

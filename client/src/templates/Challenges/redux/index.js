@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash-es';
 import { handleActions } from 'redux-actions';
 
-import { getLines } from '../../../../../shared/utils/get-lines';
+import { getLines } from '@freecodecamp/shared/utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';
@@ -21,12 +21,12 @@ const initialState = {
     superBlock: '',
     block: '',
     blockHashSlug: '/',
-    blockType: '',
     id: '',
     isLastChallengeInBlock: false,
     nextChallengePath: '/',
     prevChallengePath: '/',
-    challengeType: -1
+    challengeType: -1,
+    saveSubmissionToDB: false
   },
   challengeTests: [],
   consoleOut: [],
@@ -48,7 +48,8 @@ const initialState = {
     examResults: false,
     survey: false,
     projectPreview: false,
-    shortcuts: false
+    shortcuts: false,
+    speaking: false
   },
   portalWindow: null,
   showPreviewPortal: false,

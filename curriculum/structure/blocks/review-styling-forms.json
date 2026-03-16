@@ -1,6 +1,6 @@
 {
   "name": "Styling Forms Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-styling-forms",

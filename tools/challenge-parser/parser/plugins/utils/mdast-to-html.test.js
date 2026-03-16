@@ -1,5 +1,6 @@
-const parseFixture = require('../../__fixtures__/parse-fixture');
-const mdastToHTML = require('./mdast-to-html');
+import { describe, beforeAll, it, expect } from 'vitest';
+import parseFixture from '../../__fixtures__/parse-fixture';
+import mdastToHTML from './mdast-to-html';
 
 describe('mdast-to-html', () => {
   let mdastMixedNodes, singleNode, inlineHTMLNodes;

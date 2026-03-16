@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { getLangCode } from '../../../shared/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp-logo';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -33,13 +33,13 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../shared/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   Certification,
   CertSlug,
   linkedInCredentialIds
-} from '../../../shared/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import callGA from '../analytics/call-ga';
 import ShowProjectLinks from './show-project-links';
@@ -138,7 +138,7 @@ const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
   return (
     <div>
       <Button block={true} size='small' variant='primary' onClick={onClick}>
-        {t($ => $.buttons.close)}
+        {t('buttons.close')}
       </Button>
     </div>
   );
@@ -165,7 +165,7 @@ const DonationSection = ({
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
             <p data-playwright-test-label='donation-text'>
-              {t($ => $.donate['only-you'])}
+              {t('donate.only-you')}
             </p>
           </Col>
         </Row>
@@ -233,58 +233,49 @@ const ShareCertBtns = ({
           target='_blank'
           data-playwright-test-label='linkedin-share-btn'
         >
-          {t($ => $.profile['add-linkedin'])}
+          {t('profile.add-linkedin')}
         </Button>
         <Spacer size='m' />
         <Button
           block={true}
           size='large'
           variant='primary'
-          href={`https://twitter.com/intent/tweet?text=${t(
-            $ => $.profile.tweet,
-            {
-              certTitle: urlFriendlyCertTitle,
-              certURL
-            }
-          )}`}
+          href={`https://x.com/intent/post?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
           target='_blank'
           data-playwright-test-label='twitter-share-btn'
         >
-          {t($ => $.profile['add-twitter'])}
+          {t('profile.add-twitter')}
         </Button>
         <Spacer size='m' />
         <Button
           block={true}
           size='large'
           variant='primary'
-          href={`https://bsky.app/intent/compose?text=${t(
-            $ => $.profile.tweet,
-            {
-              certTitle: urlFriendlyCertTitle,
-              certURL
-            }
-          )}`}
+          href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
           target='_blank'
           data-playwright-test-label='bluesky-share-btn'
         >
-          {t($ => $.profile['add-bluesky'])}
+          {t('profile.add-bluesky')}
         </Button>
         <Spacer size='m' />
         <Button
           block={true}
           size='large'
           variant='primary'
-          href={`https://threads.net/intent/post?text=${t(
-            $ => $.profile.tweet,
-            {
-              certTitle: urlFriendlyCertTitle,
-              certURL
-            }
-          )}`}
+          href={`https://threads.net/intent/post?text=${t('profile.tweet', {
+            certTitle: urlFriendlyCertTitle,
+            certURL
+          })}`}
           target='_blank'
           data-playwright-test-label='thread-share-btn'
         >
-          {t($ => $.profile['add-threads'])}
+          {t('profile.add-threads')}
         </Button>
       </Col>
       <Spacer size='l' />
@@ -398,6 +389,14 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
+  const isLanguageCert = [
+    Certification.A1Chinese,
+    Certification.A2Chinese,
+    Certification.A2English,
+    Certification.A2Spanish,
+    Certification.B1English
+  ].includes(certSlug);
+
   return (
     <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? (
@@ -447,42 +446,37 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
               data-playwright-test-label='cert-info-container'
             >
               <Trans
-                i18nKey={$ =>
+                i18nKey={
                   isMicrosoftCert
-                    ? $.certification.fulltextNoHours
-                    : $.certification.fulltext
+                    ? 'certification.fulltextNoHours'
+                    : isLanguageCert
+                      ? 'certification.fulltextLanguageExam'
+                      : 'certification.fulltext'
                 }
-                // TODO: convert to selector #61969
-                title={t(`certification.title.${certSlug}` as never, {
-                  defaultValue: certTitle
-                })}
+                title={t(`certification.title.${certSlug}`, certTitle)}
+                values={{
+                  user: displayName,
+                  title: t(`certification.title.${certSlug}`, certTitle),
+                  time: certDate.toLocaleString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  }),
+                  completionTime
+                }}
               >
                 <h3>placeholder</h3>
                 <h1>
-                  <strong>{{ user: displayName }}</strong>
+                  <strong>{'{{user}}'}</strong>
                 </h1>
                 <h3 data-playwright-test-label='successful-completion'>
                   placeholder
                 </h3>
                 <h1 data-playwright-test-label='certification-title'>
-                  <strong>
-                    {{
-                      title: t(`certification.title.${certSlug}` as never, {
-                        defaultValue: certTitle
-                      })
-                    }}
-                  </strong>
+                  <strong>{'{{title}}'}</strong>
                 </h1>
-                <h4 data-playwright-test-label='issue-date'>
-                  {{
-                    time: certDate.toLocaleString([localeCode, 'en-US'], {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })
-                  }}
-                </h4>
-                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
+                <h4 data-playwright-test-label='issue-date'>{'{{time}}'}</h4>
+                <h5 style={{ marginTop: '15px' }}>{'{{completionTime}}'}</h5>
               </Trans>
             </div>
           </main>
@@ -493,7 +487,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div>
                     <Image
                       data-playwright-test-label='quincy-signature'
-                      alt={t($ => $.certification['quincy-larson-signature'])}
+                      alt={t('certification.quincy-larson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/quincy-larson-signature.svg'
@@ -503,13 +497,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       <strong>Quincy Larson</strong>
                     </p>
                     <p className='signee-role'>
-                      {t($ => $.certification.executive)}
+                      {t('certification.executive')}
                     </p>
                   </div>
                   <div className='microsoft-signature'>
                     <Image
                       data-playwright-test-label='microsoft-signature'
-                      alt={t($ => $.certification['julia-liuson-signature'])}
+                      alt={t('certification.julia-liuson-signature')}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/microsoft-signature.png'
@@ -520,7 +514,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       <strong>Julia Liuson</strong>
                     </p>
                     <p className='signee-role'>
-                      {t($ => $.certification['ms-president'])}
+                      {t('certification.ms-president')}
                     </p>
                   </div>
                 </>
@@ -528,7 +522,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-playwright-test-label='quincy-signature'
-                    alt={t($ => $.certification['quincy-larson-signature'])}
+                    alt={t('certification.quincy-larson-signature')}
                     src={
                       'https://cdn.freecodecamp.org' +
                       '/platform/english/images/quincy-larson-signature.svg'
@@ -537,9 +531,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <p className='signee-name'>
                     <strong>Quincy Larson</strong>
                   </p>
-                  <p className='signee-role'>
-                    {t($ => $.certification.executive)}
-                  </p>
+                  <p className='signee-role'>{t('certification.executive')}</p>
                 </div>
               )}
             </div>
@@ -555,7 +547,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             )}
             <Row>
               <p className='verify'>
-                {t($ => $.certification.verify)}
+                {t('certification.verify')}
                 <br />
                 {certURL}
               </p>

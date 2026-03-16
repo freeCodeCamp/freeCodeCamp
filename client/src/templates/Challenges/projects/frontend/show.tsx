@@ -86,14 +86,14 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { fields, title, challengeType, helpCategory }
+          challenge: { tests, title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
       initTests,
       updateChallengeMeta
     } = props;
-    initTests(fields.tests);
+    initTests(tests);
     const challengePaths = getChallengePaths({
       currentCurriculumPaths: challengeMeta
     });
@@ -105,7 +105,9 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -115,7 +117,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       challengeNode: {
         challenge: {
           challengeType,
-          fields: { blockName },
           forumTopicId,
           title,
           description,
@@ -173,7 +174,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -202,12 +203,11 @@ export const query = graphql`
         block
         translationPending
         fields {
-          blockName
           slug
-          tests {
-            text
-            testString
-          }
+        }
+        tests {
+          text
+          testString
         }
       }
     }

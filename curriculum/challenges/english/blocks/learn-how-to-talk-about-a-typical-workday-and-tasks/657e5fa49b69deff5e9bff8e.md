@@ -3,35 +3,28 @@ id: 657e5fa49b69deff5e9bff8e
 title: Task 105
 challengeType: 22
 dashedName: task-105
+lang: en-US
 ---
 
-<!-- (audio) James: Absolutely. If you see any security breaches or incidents, you have to report them immediately. Reporting helps us address issues effectively. -->
+<!-- (audio) James: Absolutely. If you see any security breaches or incidents, you have to report them immediately. -->
 
 # --description--
 
-Listen to the audio to complete the sentence below.
+Listen to the audio and complete the sentence below.
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`Absolutely. If you see any security breaches or incidents, you BLANK BLANK report them BLANK.`
+`Absolutely. If you see any security breaches or incidents, you BLANK report them BLANK.`
 
 ## --blanks--
 
-`have`
+`have to`
 
 ### --feedback--
 
-Shows a requirement.
-
----
-
-`to`
-
-### --feedback--
-
-Used with the previous word to express obligation.
+These two words express obligation to do something.
 
 ---
 
@@ -39,7 +32,7 @@ Used with the previous word to express obligation.
 
 ### --feedback--
 
-Means right away, without delay.
+This word means right away, without delay.
 
 # --scene--
 

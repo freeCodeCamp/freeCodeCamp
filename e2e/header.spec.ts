@@ -1,7 +1,11 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import { availableLangs, hiddenLangs, LangNames } from '../shared/config/i18n';
+import {
+  availableLangs,
+  hiddenLangs,
+  LangNames
+} from '@freecodecamp/shared/config/i18n';
 import links from '../client/i18n/locales/english/links.json';
 
 const headerComponentElements = {
@@ -15,7 +19,7 @@ const headerComponentElements = {
   languageButton: 'header-lang-list-option',
   menuButton: 'header-menu-button',
   menu: 'header-menu',
-  signInButton: 'header-sign-in-button'
+  signInButton: 'sign-in-button'
 } as const;
 
 const examUrl =
@@ -29,11 +33,11 @@ test.describe('Header', () => {
   });
 
   test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('Has link for skip content', async ({ page }) => {
@@ -243,9 +247,9 @@ test.describe('Header', () => {
     const page = await context.newPage();
     await page.goto('/');
 
-    const signInButton = page.getByRole('link', {
-      name: translations.buttons['sign-in']
-    });
+    const signInButton = page
+      .locator('header')
+      .getByRole('link', { name: translations.buttons['sign-in'] });
 
     const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 

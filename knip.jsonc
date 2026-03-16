@@ -1,6 +1,6 @@
 {
   "$schema": "https://cdn.jsdelivr.net/npm/knip@5/schema.json",
-  "ignoreBinaries": ["create:shared", "install-puppeteer", "pm2"],
+  "ignoreBinaries": ["compile", "install-puppeteer", "pm2"],
   "workspaces": {
     ".": {
       "playwright": ["playwright.config.ts"],
@@ -25,9 +25,6 @@
         "assert",
         "@redux-saga/core" // Not referenced, something seems off related to peer dep and types
       ]
-    },
-    "curriculum": {
-      "ignoreDependencies": ["invariant"] // Used from another workspace: shared/utils/polyvinyl.js
     },
     "shared": {
       "ignore": ["{config,utils}/*.ts"] // Using the same dir for src + outDir files with tsc confuses Knip

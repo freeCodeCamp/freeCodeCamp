@@ -1,8 +1,8 @@
 {
   "name": "Git Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-git",
   "challengeOrder": [{ "id": "66f1b06a5a5d10cc100af620", "title": "Git Quiz" }],
   "helpCategory": "Backend Development"

@@ -22,7 +22,6 @@ import {
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues,
-  submitChallenge,
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
@@ -32,6 +31,7 @@ import {
   msUsernameSelector
 } from '../../../redux/selectors';
 import LinkMsUser from './link-ms-user';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -58,8 +58,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateSolutionFormValues,
       openCompletionModal: () => openModal('completion'),
       openHelpModal: () => openModal('help'),
-      setIsProcessing,
-      submitChallenge
+      setIsProcessing
     },
     dispatch
   );
@@ -78,7 +77,6 @@ interface MsTrophyProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
-  submitChallenge: () => void;
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
@@ -92,17 +90,15 @@ function MsTrophy(props: MsTrophyProps) {
       }
     }
   } = props;
+
+  const submitChallenge = useSubmit();
+
   useEffect(() => {
     const {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            title,
-            challengeType,
-            helpCategory
-          }
+          challenge: { tests, title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -121,13 +117,15 @@ function MsTrophy(props: MsTrophyProps) {
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = () => {
-    const { setIsProcessing, submitChallenge } = props;
+    const { setIsProcessing } = props;
 
     setIsProcessing(true);
     submitChallenge();
@@ -141,8 +139,7 @@ function MsTrophy(props: MsTrophyProps) {
           instructions,
           superBlock,
           block,
-          translationPending,
-          fields: { blockName }
+          translationPending
         }
       }
     },
@@ -205,7 +202,7 @@ function MsTrophy(props: MsTrophyProps) {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -232,12 +229,9 @@ export const query = graphql`
         superBlock
         block
         translationPending
-        fields {
-          blockName
-          tests {
-            text
-            testString
-          }
+        tests {
+          text
+          testString
         }
       }
     }

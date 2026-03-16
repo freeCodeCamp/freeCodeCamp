@@ -1,0 +1,239 @@
+---
+id: 68dc75ee867ccc79d18df2ef
+title: First Questions Quiz
+challengeType: 8
+dashedName: es-a1-quiz-first-questions
+lang: es
+---
+
+# --description--
+
+This quiz checks your understanding of basic questions that you will commonly use in Spanish conversations.
+
+To pass the quiz, you must correctly answer at least **9 of the 10** questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Complete the sentence: `_____ treinta años`:
+
+#### --distractors--
+
+`Voy`
+
+---
+
+`Soy`
+
+---
+
+`Estoy`
+
+#### --answer--
+
+`Tengo`
+
+### --question--
+
+#### --text--
+
+How can you ask someone's age?
+
+#### --distractors--
+
+`¿Qué edad es?`
+
+---
+
+`¿Cuántos años es?`
+
+---
+
+`¿Cómo edad tienes?`
+
+#### --answer--
+
+`¿Cuántos años tienes?`
+
+### --question--
+
+#### --text--
+
+How can you say that you are from Peru?
+
+#### --distractors--
+
+`Estoy de Perú.`
+
+---
+
+`Tengo de Perú.`
+
+---
+
+`Están en Perú.`
+
+#### --answer--
+
+`Soy de Perú.`
+
+### --question--
+
+#### --text--
+
+Which is the most appropriate way to ask someone their name?
+
+#### --distractors--
+
+`Mi nombre es...`
+
+---
+
+`¿Qué nombre te dieron?`
+
+---
+
+`¿Cómo te dicen?`
+
+#### --answer--
+
+`¿Cómo te llamas?`
+
+### --question--
+
+#### --text--
+
+If someone asks you `¿A qué te dedicas?`, what are they asking you about?
+
+#### --distractors--
+
+Your nationality
+
+---
+
+Your name
+
+---
+
+Your address
+
+#### --answer--
+
+Your profession
+
+### --question--
+
+#### --text--
+
+If you are talking to someone and that person says `Soy panameño`, this is expressing their:
+
+#### --distractors--
+
+Age
+
+---
+
+Salary
+
+---
+
+Name
+
+#### --answer--
+
+Nationality
+
+### --question--
+
+#### --text--
+
+What does the phrase `Encantado de conocerte` mean?
+
+#### --distractors--
+
+You are awesome.
+
+---
+
+I don't want to see you again.
+
+---
+
+See you later.
+
+#### --answer--
+
+Nice to meet you.
+
+### --question--
+
+#### --text--
+
+How can you return the compliment when someone tells you `Mucho gusto` or `Encantada`?
+
+#### --distractors--
+
+`Hasta pronto`
+
+---
+
+`Adiós`
+
+---
+
+`Gracias`
+
+#### --answer--
+
+`Igualmente`
+
+### --question--
+
+#### --text--
+
+If a **female** person is from Guatemala, their nationality is:
+
+#### --distractors--
+
+`Guatemalteco`
+
+---
+
+`Guatemaliño`
+
+---
+
+`Guatemalense`
+
+#### --answer--
+
+`Guatemalteca`
+
+### --question--
+
+#### --text--
+
+Complete the sentence: `¿Cuántos años _____?`
+
+#### --distractors--
+
+`eres`
+
+---
+
+`estás`
+
+---
+
+`haces`
+
+#### --answer--
+
+`tienes`

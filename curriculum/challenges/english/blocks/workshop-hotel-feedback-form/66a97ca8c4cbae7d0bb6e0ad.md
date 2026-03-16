@@ -1,8 +1,8 @@
 ---
 id: 66a97ca8c4cbae7d0bb6e0ad
-title: Step 32
+title: Step 29
 challengeType: 0
-dashedName: step-32
+dashedName: step-29
 ---
 
 # --description--
@@ -39,7 +39,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"poor"` should have the text `"Poor"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]')?.textContent, 'Poor');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]')?.textContent.trim(), 'Poor');
 ```
 
 You should have an `option` element with the `value` set to `"satisfactory"`.
@@ -51,7 +51,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"satisfactory"` should have the text `"Satisfactory"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]')?.textContent, 'Satisfactory');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]')?.textContent.trim(), 'Satisfactory');
 ```
 
 You should have an `option` element with the `value` set to `"good"`.
@@ -64,7 +64,7 @@ Your `option` with the `value` of `"good"` should have the text `"Good"`.
 
 ```js
 
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]')?.textContent, 'Good');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]')?.textContent.trim(), 'Good');
 ```
 
 You should have an `option` element with the value set to `"very-good"`.
@@ -76,7 +76,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"very-good"` should have the text `"Very Good"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]')?.textContent, 'Very Good');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]')?.textContent.trim(), 'Very Good');
 ```
 
 You should have an `option` element with the value set to `"excellent"`.
@@ -88,8 +88,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"excellent"` should have the text `"Excellent"`.
 
 ```js
-
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]')?.textContent, 'Excellent');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]')?.textContent.trim(), 'Excellent');
 ```
 
 You should have an `option` element with the `selected` attribute set to `"excellent"`.
@@ -122,7 +121,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
         <fieldset>
           <legend>Personal Information</legend>
           <label for="full-name">Name (required):</label>
-          <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required size="20">
+          <input type="text" id="full-name" name="name" placeholder="e.g., John Doe" required size="20">
 
           <label for="email">Email address (required):</label>
           <input
@@ -139,10 +138,10 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
         <fieldset>
           <legend>Was this your first time at our hotel?</legend>
+          <input id="yes-option" type="radio" name="hotel-stay" value="yes" />
           <label for="yes-option">Yes</label>
-          <input id="yes-option" type="radio" name="hotel-stay" />
+          <input id="no-option" type="radio" name="hotel-stay" value="no" />
           <label for="no-option">No</label>
-          <input id="no-option" type="radio" name="hotel-stay" />
         </fieldset>
 
         <fieldset>
@@ -150,31 +149,31 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
             Why did you choose to stay at our hotel? (Check all that apply)
           </legend>
 
+          <input type="checkbox" id="ads" name="choice" value="ads" />
           <label for="ads">Social Media Ads</label>
-          <input type="checkbox" id="ads" name="ads" value="ads" />
 
-          <label for="recommendation">Personal Recommendation</label>
           <input
             type="checkbox"
             id="recommendation"
-            name="recommendation"
+            name="choice"
             value="recommendation"
           />
-
+          <label for="recommendation">Personal Recommendation</label>
+          
+          <input type="checkbox" id="location" name="choice" value="location" />
           <label for="location">Location</label>
-          <input type="checkbox" id="location" name="location" value="location" />
 
-          <label for="reputation">Reputation</label>
           <input
             checked
             type="checkbox"
             id="reputation"
-            name="reputation"
+            name="choice"
             value="reputation"
           />
-
+          <label for="reputation">Reputation</label>
+          
+          <input type="checkbox" id="price" name="choice" value="price" />
           <label for="price">Price</label>
-          <input type="checkbox" id="price" name="price" value="price" />
         </fieldset>
 
         <fieldset>
@@ -192,11 +191,11 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
           <label for="food">How was the food?</label>
 
-          --fcc-editable-region--
           <select name="food" id="food">
-            
-          </select>
           --fcc-editable-region--
+            
+          --fcc-editable-region--
+          </select>
         </fieldset>
       </form>
     </main>

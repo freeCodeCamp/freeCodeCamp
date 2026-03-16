@@ -33,7 +33,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Modules should be present.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -47,6 +46,5 @@ async () => {
     /client\s*\.db[^]*routes/gi,
     'Your new modules should be called after your connection to the database'
   );
-}
 ```
 

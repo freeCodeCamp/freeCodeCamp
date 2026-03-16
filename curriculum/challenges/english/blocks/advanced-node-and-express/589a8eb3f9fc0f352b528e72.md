@@ -50,7 +50,6 @@ Submit your page when you think you've got it right. If you're running into erro
 GitHub strategy setup should be complete.
 
 ```js
-async () => {
   const url = new URL("/_api/auth.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -64,6 +63,5 @@ async () => {
     /GitHubStrategy[^]*cb/gi,
     'Strategy should return the callback function "cb"'
   );
-}
 ```
 

@@ -3,15 +3,18 @@ id: 657cbef9aa43ceba8af6feb4
 title: Task 51
 challengeType: 22
 dashedName: task-51
+lang: en-US
 ---
 
-<!-- (audio) Sophie: "I think she has a passion for technology and enjoys leading our team." -->
+<!-- (audio) Sophie: I think she has a passion for technology and enjoys leading our team. -->
 
 # --description--
 
 When you like doing something very much, you can say you `enjoy` it. It's a simple way to express that something makes you happy.
 
-For example, you can say, `I enjoy playing video games` if playing video games is fun for you. In the dialogue, Sophie tells us something that Maria enjoys in her job.
+For example, you can say, `I enjoy playing video games`. This means playing video games is fun for you.
+
+In the dialogue, Sophie tells something that Maria enjoys in her job.
 
 # --fillInTheBlank--
 
@@ -25,7 +28,7 @@ For example, you can say, `I enjoy playing video games` if playing video games i
 
 ### --feedback--
 
-What word would you use to say that Maria finds happiness in guiding the team? It's the same word used when you have fun or like doing an activity.
+This verb means Maria likes something and feels happy doing it. It ends in `-s`.
 
 # --scene--
 

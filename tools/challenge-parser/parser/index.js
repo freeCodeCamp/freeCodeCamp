@@ -18,6 +18,7 @@ const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const addScene = require('./plugins/add-scene');
 const addQuizzes = require('./plugins/add-quizzes');
+const addInteractiveElements = require('./plugins/add-interactive-elements');
 
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()
@@ -47,6 +48,7 @@ const processor = unified()
   // about.
   .use(addSeed)
   .use(addSolution)
+  .use(addInteractiveElements)
   // the directives will have been parsed and used by this point, any remaining
   // 'directives' will be from text like the css selector :root. These should be
   // converted back to text before they're added to the challenge object.

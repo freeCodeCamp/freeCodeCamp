@@ -116,5 +116,5 @@
   ],
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop"
+  "blockLabel": "workshop"
 }

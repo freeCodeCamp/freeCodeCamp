@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Alert, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Callout, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -32,7 +32,6 @@ import {
   updateChallengeMeta,
   openModal,
   closeModal,
-  submitChallenge,
   setUserCompletedExam,
   updateSolutionFormValues,
   initTests
@@ -60,6 +59,7 @@ import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
 import MissingPrerequisites from './components/missing-prerequisites';
 import FoundationalCSharpSurveyAlert from './components/foundational-c-sharp-survey-alert';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './exam.css';
 
@@ -101,7 +101,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       stopExam,
       setUserCompletedExam,
       clearExamResults,
-      submitChallenge,
       initTests,
       updateChallengeMeta,
       updateSolutionFormValues
@@ -132,7 +131,6 @@ interface ShowExamProps {
   t: TFunction;
   startExam: () => void;
   stopExam: () => void;
-  submitChallenge: () => void;
   setUserCompletedExam: (arg0: UserExam) => void;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
@@ -149,7 +147,6 @@ function ShowExam(props: ShowExamProps) {
           block,
           dashedName,
           description,
-          fields: { blockName },
           instructions,
           prerequisites,
           superBlock,
@@ -172,6 +169,8 @@ function ShowExam(props: ShowExamProps) {
 
   const container = useRef<HTMLElement>(null);
 
+  const submitChallenge = useSubmit();
+
   const [examTimeInSeconds, setExamTimeInSeconds] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [generatedExamQuestions, setGeneratedExamQuestions] = useState<
@@ -186,12 +185,7 @@ function ShowExam(props: ShowExamProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            challengeType,
-            helpCategory,
-            title
-          }
+          challenge: { tests, challengeType, helpCategory, title }
         }
       },
       pageContext: { challengeMeta },
@@ -211,7 +205,9 @@ function ShowExam(props: ShowExamProps) {
     });
     challengeMounted(challengeMeta.id);
 
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
 
     return () => {
       cleanUp();
@@ -225,14 +221,14 @@ function ShowExam(props: ShowExamProps) {
   // refs make them stable across renders and thus removable.
   const stopWindowCloseRef = useRef((event: Event) => {
     event.preventDefault();
-    alert(props.t($ => $.misc['navigation-warning']));
+    alert(props.t('misc.navigation-warning'));
   });
 
   const stopBrowserBackRef = useRef((event: Event) => {
     event.preventDefault();
     window.history.forward();
     // TODO: useTranslation
-    alert(props.t($ => $.misc['navigation-warning']));
+    alert(props.t('misc.navigation-warning'));
   });
 
   const runExam = async () => {
@@ -313,7 +309,7 @@ function ShowExam(props: ShowExamProps) {
     // TODO: show loader
     cleanUp();
 
-    const { setUserCompletedExam, submitChallenge } = props;
+    const { setUserCompletedExam } = props;
 
     setUserCompletedExam({ userExamQuestions, examTimeInSeconds });
     submitChallenge();
@@ -350,9 +346,8 @@ function ShowExam(props: ShowExamProps) {
   const prerequisitesComplete = missingPrerequisites.length === 0;
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
-  // TODO: convert to selector #61969
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title` as never
+    `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
@@ -376,13 +371,13 @@ function ShowExam(props: ShowExamProps) {
                 <div data-playwright-test-label='exam-show-title'>{title}</div>
                 <span>|</span>
                 <div data-playwright-test-label='exam-show-question-time'>
-                  {t($ => $.learn.exam.time, {
+                  {t('learn.exam.time', {
                     t: formatSecondsToTime(examTimeInSeconds)
                   })}
                 </div>
                 <span>|</span>
                 <div>
-                  {t($ => $.learn.exam.questions, {
+                  {t('learn.exam.questions', {
                     n: currentQuestionIndex + 1,
                     t: generatedExamQuestions.length
                   })}
@@ -438,7 +433,7 @@ function ShowExam(props: ShowExamProps) {
                   variant='primary'
                   onClick={goToPreviousQuestion}
                 >
-                  {t($ => $.buttons['previous-question'])}
+                  {t('buttons.previous-question')}
                 </Button>
 
                 {currentQuestionIndex === generatedExamQuestions.length - 1 ? (
@@ -451,7 +446,7 @@ function ShowExam(props: ShowExamProps) {
                     variant='primary'
                     onClick={openFinishExamModal}
                   >
-                    {t($ => $.buttons['finish-exam'])}
+                    {t('buttons.finish-exam')}
                   </Button>
                 ) : (
                   <Button
@@ -463,7 +458,7 @@ function ShowExam(props: ShowExamProps) {
                     variant='primary'
                     onClick={goToNextQuestion}
                   >
-                    {t($ => $.buttons['next-question'])}
+                    {t('buttons.next-question')}
                   </Button>
                 )}
               </div>
@@ -477,7 +472,7 @@ function ShowExam(props: ShowExamProps) {
                   variant='primary'
                   onClick={openExitExamModal}
                 >
-                  {t($ => $.buttons['exit-exam'])}
+                  {t('buttons.exit-exam')}
                 </Button>
               </div>
             </div>
@@ -503,9 +498,9 @@ function ShowExam(props: ShowExamProps) {
               <Spacer size='m' />
 
               {qualifiedForExam ? (
-                <Alert variant='info'>
-                  <p>{t($ => $.learn.exam.qualified)}</p>
-                </Alert>
+                <Callout variant='note' label={t('misc.note')}>
+                  <p>{t('learn.exam.qualified')}</p>
+                </Callout>
               ) : !prerequisitesComplete ? (
                 <MissingPrerequisites
                   missingPrerequisites={missingPrerequisites}
@@ -525,13 +520,13 @@ function ShowExam(props: ShowExamProps) {
                 //eslint-disable-next-line @typescript-eslint/no-misused-promises
                 onClick={runExam}
               >
-                {t($ => $.buttons['click-start-exam'])}
+                {t('buttons.click-start-exam')}
               </Button>
             </Col>
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -559,11 +554,6 @@ export const query = graphql`
         description
         fields {
           blockHashSlug
-          blockName
-          tests {
-            text
-            testString
-          }
         }
         helpCategory
         id
@@ -573,6 +563,10 @@ export const query = graphql`
           title
         }
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
       }

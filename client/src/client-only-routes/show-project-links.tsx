@@ -19,9 +19,12 @@ import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import { regenerateMissingProperties } from '../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import '../components/layouts/project-links.css';
-import { Certification } from '../../../shared/config/certification-settings';
+import {
+  Certification,
+  currentCertifications
+} from '@freecodecamp/shared/config/certification-settings';
 interface ShowProjectLinksProps {
   certSlug: Certification;
   name: string;
@@ -123,7 +126,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
               <tr key={ind}>
                 <td>
                   <Link className='project-link' to={certLocation} external>
-                    {t($ => $.certification.title[cert.name])}
+                    {t(`certification.title.${cert.name}`)}
                   </Link>
                 </td>
               </tr>
@@ -140,10 +143,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           <tr key={id}>
             <td className='col-xs-8'>
               <Link to={link}>
-                {/* TODO: convert to selector #61969 */}
-                {t(`certification.projects.title.${title}` as never, {
-                  defaultValue: title
-                })}
+                {t(`certification.projects.title.${title}`, title)}
               </Link>
             </td>
             <td className='col-xs-4'>{getProjectSolution(id, title)}</td>
@@ -163,11 +163,11 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   const getCertHeading = (cert: Certification) => {
     if (cert === Certification.LegacyFullStack) {
-      return 'heading-legacy-full-stack';
-    } else if (cert === Certification.FoundationalCSharp) {
-      return 'heading-exam';
+      return 'certification.project.heading-legacy-full-stack';
+    } else if (currentCertifications.includes(cert)) {
+      return 'certification.project.heading-exam';
     } else {
-      return 'heading';
+      return 'certification.project.heading';
     }
   };
 
@@ -184,17 +184,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   return (
     <div data-playwright-test-label='project-links'>
-      {t($ => $.certification.project[getCertHeading(certSlug)], {
-        user: name
-      })}
+      {t(getCertHeading(certSlug), { user: name })}
       <Spacer size='m' />
       <Table striped>
         <thead>
           <tr>
             <th>
-              <span className='sr-only'>
-                {t($ => $.settings.headings.certs)}
-              </span>
+              <span className='sr-only'>{t('settings.headings.certs')}</span>
             </th>
           </tr>
         </thead>
@@ -214,12 +210,13 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       />
       <ProjectPreviewModal
         challengeData={challengeData}
-        closeText={t($ => $.buttons.close)}
+        closeText={t('buttons.close')}
         previewTitle={projectTitle}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
+
       {certSlug !== Certification.FoundationalCSharp && (
-        <Trans i18nKey={$ => $.certification.project.footnote}>
+        <Trans i18nKey='certification.project.footnote'>
           If you suspect that any of these projects violate the{' '}
           <a
             href='https://www.freecodecamp.org/news/academic-honesty-policy/'

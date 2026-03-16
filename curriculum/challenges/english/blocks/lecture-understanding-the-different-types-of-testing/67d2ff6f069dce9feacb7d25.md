@@ -39,7 +39,7 @@ To ensure that your applications have no accessibility errors.
 
 ### --feedback--
 
-Refer to the beginning of the lecture where this was discussed.
+Refer to the beginning of the lesson where this was discussed.
 
 ---
 
@@ -47,7 +47,7 @@ To ensure that your applications are free from linting and formatting errors.
 
 ### --feedback--
 
-Refer to the beginning of the lecture where this was discussed.
+Refer to the beginning of the lesson where this was discussed.
 
 ---
 
@@ -59,7 +59,7 @@ To ensure that your applications only work for different Linux distributions.
 
 ### --feedback--
 
-Refer to the beginning of the lecture where this was discussed.
+Refer to the beginning of the lesson where this was discussed.
 
 ## --video-solution--
 

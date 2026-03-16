@@ -59,11 +59,9 @@ function calculateProduct(num1, num2) {
 console.log(calculateProduct(13, 5));
 
 --fcc-editable-region--
-
 function calculateQuotient(num1, num2) {
   return num1 / num2;
 }
-
 --fcc-editable-region--
 
 console.log(calculateQuotient(7, 11));

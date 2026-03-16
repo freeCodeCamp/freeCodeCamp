@@ -1,6 +1,6 @@
 {
   "name": "Debugging JavaScript Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-debugging-javascript",

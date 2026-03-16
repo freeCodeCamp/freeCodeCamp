@@ -104,7 +104,7 @@ test.describe('MultifileEditor Component', () => {
     await page.keyboard.press('Control+Enter');
 
     const submitButton = page.getByRole('button', {
-      name: 'Submit and go to next challenge'
+      name: 'Submit and Continue'
     });
 
     // Mobile screen shifts submit button out of view and Playwright fails at scrolling with multiple editors open

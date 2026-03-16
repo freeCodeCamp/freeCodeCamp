@@ -29,7 +29,7 @@ export async function fetchChallenges(language: 'javascript' | 'python') {
 query {
   allChallengeNode(
   filter: {challenge: {superBlock: {eq: "dev-playground"}, block: {eq: "daily-coding-challenges-${language}"}}}
-  sort: {order: ASC, fields: challenge___challengeOrder}
+  sort: {challenge: {challengeOrder: ASC}}
   ) {
     edges {
       node {
@@ -37,11 +37,9 @@ query {
           id
           title
           description
-          fields {
-            tests {
+          tests {
               testString
               text
-            }
           }
           challengeFiles {
             contents
@@ -78,18 +76,18 @@ export function combineChallenges({
     id: jsId,
     title: jsTitle,
     description: jsDescription,
-    fields: { tests: jsTests },
+    tests: jsTests,
     challengeFiles: jsChallengeFiles
   } = jsChallenge;
 
   const {
     title: pyTitle,
     description: pyDescription,
-    fields: { tests: pyTests },
+    tests: pyTests,
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
 
-  if (jsTitle.replace('JavaScript ', '') !== pyTitle.replace('Python ', '')) {
+  if (jsTitle !== pyTitle) {
     throw new Error(
       `JavaScript and Python titles do not match for challenge ${challengeNumber}: "${jsTitle}" vs "${pyTitle}"`
     );
@@ -112,7 +110,7 @@ export function combineChallenges({
     // **DO NOT CHANGE THE ID** it's used as the challenge ID - and what gets added to completedDailyCodingChallenges[]
     _id: new ObjectId(`${jsId}`),
     challengeNumber,
-    title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
+    title: jsTitle.replace(`Challenge ${challengeNumber}: `, ''),
     date,
     description: removeSection(jsDescription),
     javascript: {
@@ -128,12 +126,12 @@ export function combineChallenges({
   return challengeData;
 }
 
-export function handleError(err: Error, client: MongoClient) {
+export async function handleError(err: unknown, client: MongoClient) {
   if (err) {
     console.error('Oh noes!! Error seeding Daily Challenges.');
     console.error(err);
     try {
-      client.close();
+      await client.close();
     } catch {
       // no-op
     } finally {
