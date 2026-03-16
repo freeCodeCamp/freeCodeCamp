@@ -258,6 +258,12 @@ export const catalog: Catalog[] = [
     topic: Topic.AI
   },
   {
+    superBlock: SuperBlocks.LearnOOPWithPython,
+    level: Levels.Intermediate,
+    hours: 3,
+    topic: Topic.Python
+  },
+  {
     superBlock: SuperBlocks.IntroductionToPythonBasics,
     level: Levels.Intermediate,
     hours: 40,

@@ -90,6 +90,7 @@ const iconMap = {
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,
+  [SuperBlocks.LearnOOPWithPython]: PythonIcon,
   [SuperBlocks.LearnRAGAndMCPFundamentals]: Code,
   [SuperBlocks.IntroductionToBash]: Code,
   [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
