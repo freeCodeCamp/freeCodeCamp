@@ -32,11 +32,15 @@ module.exports = async ({ github, context, isAllowListed }) => {
   // acceptable to leave unticked.
   const templatePresent = body.includes('Checklist:');
   const requiredTicked = [
-    'I have read and followed the [contribution guidelines]',
-    'I have read and followed the [how to open a pull request guide]',
+    'I have read and followed the contribution guidelines',
+    'I have read and followed the how to open a pull request guide',
     'My pull request targets the'
   ];
-  const normalizedBody = body.replace(/\[\s*[xX]\s*\]/g, '[x]');
+  // Strip markdown links ([text](url) → text) before matching so contributors
+  // who omit the link syntax (e.g. type plain text) still pass the check.
+  const normalizedBody = body
+    .replace(/\[\s*[xX]\s*\]/g, '[x]')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
   const allRequiredTicked = requiredTicked.every(item =>
     normalizedBody.includes(`[x] ${item}`)
   );
