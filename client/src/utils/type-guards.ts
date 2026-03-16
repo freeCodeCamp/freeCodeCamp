@@ -1,13 +1,39 @@
 import type { i18n as I18nInstance } from 'i18next';
 
+/**
+ * Shared runtime guards and safe lookup helpers for dynamic data access.
+ *
+ * We use these when values come from i18n namespace objects or other unknown
+ * sources where keys are dynamic. This keeps call sites type-safe, avoids
+ * `as any` casting, and provides predictable fallbacks when data is missing.
+ */
+
 // Narrow unknown values to indexable objects before reading dynamic keys.
 export const isRecord = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null;
 
 type I18nResourceAccessor = Pick<
   I18nInstance,
-  'language' | 'resolvedLanguage' | 'getDataByLanguage'
->;
+  'language' | 'resolvedLanguage'
+> &
+  Partial<Pick<I18nInstance, 'getResourceBundle'>> & {
+    services?: {
+      resourceStore?: {
+        data?: Record<string, Record<string, unknown>>;
+      };
+    };
+  };
+
+const getNamespaceBundle = (
+  i18n: I18nResourceAccessor,
+  language: string,
+  namespace: string
+): unknown => {
+  if (typeof i18n.getResourceBundle === 'function') {
+    return i18n.getResourceBundle(language, namespace) as unknown;
+  }
+  return i18n.services?.resourceStore?.data?.[language]?.[namespace];
+};
 
 /**
  * Read an i18n namespace as a plain object for dynamic-key lookups.
@@ -19,11 +45,11 @@ export const getNamespaceResource = (
 ): Record<string, unknown> => {
   const language = i18n.resolvedLanguage ?? i18n.language;
   const currentBundle = language
-    ? i18n.getDataByLanguage(language)?.[namespace]
+    ? getNamespaceBundle(i18n, language, namespace)
     : undefined;
   if (isRecord(currentBundle)) return currentBundle;
 
-  const englishBundle = i18n.getDataByLanguage('en')?.[namespace];
+  const englishBundle = getNamespaceBundle(i18n, 'en', namespace);
   return isRecord(englishBundle) ? englishBundle : {};
 };
 
