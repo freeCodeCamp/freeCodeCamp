@@ -1,0 +1,12 @@
+{
+  "name": "Build a Flashcard Quiz App",
+  "isUpcomingChange": true,
+  "dashedName": "lab-flashcard-quiz-app",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "69b868127999e97f1903f8e1", "title": "Build a Flashcard Quiz App" }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

@@ -4750,6 +4750,12 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
