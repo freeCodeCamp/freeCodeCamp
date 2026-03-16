@@ -1321,7 +1321,17 @@
       "learn-bash-scripting": "Learn Bash Scripting",
       "learn-sql-and-bash": "Learn SQL and Bash",
       "introduction-to-nano": "Introduction to Nano",
-      "introduction-to-git-and-github": "Introduction to Git and GitHub"
+      "introduction-to-git-and-github": "Introduction to Git and GitHub",
+      "introduction-to-python-basics": "Introduction to Python Basics",
+      "learn-python-loops-and-sequences": "Learn Python Loops and Sequences",
+      "learn-python-dictionaries-and-sets": "Learn Python Dictionaries and Sets",
+      "learn-error-handling-in-python": "Learn Error Handling in Python",
+      "learn-python-classes-and-objects": "Learn Python Classes and Objects",
+      "introduction-to-oop-in-python": "Introduction to OOP in Python",
+      "introduction-to-linear-data-structures-in-python": "Introduction to Linear Data Structures in Python",
+      "learn-algorithms-in-python": "Learn Algorithms in Python",
+      "learn-graphs-and-trees-in-python": "Learn Graphs and Trees in Python",
+      "learn-dynamic-programming-in-python": "Learn Dynamic Programming in Python"
     }
   },
   "certification-card": {
