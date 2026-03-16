@@ -67,6 +67,9 @@ export enum SuperBlocks {
   CssAnimations = 'css-animations',
   LearnPythonForBeginners = 'learn-python-for-beginners',
   IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures',
+  LearnOOPWithPython = 'learn-oop-with-python',
+  LearnRAGAndMCPFundamentals = 'learn-rag-mcp-fundamentals',
+  IntroductionToPrecalculus = 'introduction-to-precalculus',
   IntroductionToBash = 'introduction-to-bash',
   IntroductionToSQLAndPostgreSQL = 'introduction-to-sql-and-postgresql',
   LearnBashScripting = 'learn-bash-scripting',
@@ -93,7 +96,17 @@ export enum SuperBlocks {
   IntroductionToJavascriptClasses = 'introduction-to-javascript-classes',
   LearnRecursionWithJS = 'learn-recursion-with-javascript',
   IntroductionToFunctionalProgrammingWithJS = 'introduction-to-functional-programming-with-javascript',
-  IntroductionToAsynchronousJS = 'introduction-to-asynchronous-javascript'
+  IntroductionToAsynchronousJS = 'introduction-to-asynchronous-javascript',
+  IntroductionToPythonBasics = 'introduction-to-python-basics',
+  LearnPythonLoopsAndSequences = 'learn-python-loops-and-sequences',
+  LearnPythonDictionariesAndSets = 'learn-python-dictionaries-and-sets',
+  LearnErrorHandlingInPython = 'learn-error-handling-in-python',
+  LearnPythonClassesAndObjects = 'learn-python-classes-and-objects',
+  IntroductionToOOPInPython = 'introduction-to-oop-in-python',
+  IntroductionToLinearDataStructuresInPython = 'introduction-to-linear-data-structures-in-python',
+  LearnAlgorithmsInPython = 'learn-algorithms-in-python',
+  LearnGraphsAndTreesInPython = 'learn-graphs-and-trees-in-python',
+  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python'
 }
 
 export const languageSuperBlocks = [
@@ -246,6 +259,9 @@ export const superBlockStages: StageMap = {
     SuperBlocks.CssAnimations,
     SuperBlocks.LearnPythonForBeginners,
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+    SuperBlocks.LearnOOPWithPython,
+    SuperBlocks.LearnRAGAndMCPFundamentals,
+    SuperBlocks.IntroductionToPrecalculus,
     SuperBlocks.IntroductionToBash,
     SuperBlocks.IntroductionToSQLAndPostgreSQL,
     SuperBlocks.LearnBashScripting,
@@ -272,7 +288,17 @@ export const superBlockStages: StageMap = {
     SuperBlocks.IntroductionToJavascriptClasses,
     SuperBlocks.LearnRecursionWithJS,
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
-    SuperBlocks.IntroductionToAsynchronousJS
+    SuperBlocks.IntroductionToAsynchronousJS,
+    SuperBlocks.IntroductionToPythonBasics,
+    SuperBlocks.LearnPythonLoopsAndSequences,
+    SuperBlocks.LearnPythonDictionariesAndSets,
+    SuperBlocks.LearnErrorHandlingInPython,
+    SuperBlocks.LearnPythonClassesAndObjects,
+    SuperBlocks.IntroductionToOOPInPython,
+    SuperBlocks.IntroductionToLinearDataStructuresInPython,
+    SuperBlocks.LearnAlgorithmsInPython,
+    SuperBlocks.LearnGraphsAndTreesInPython,
+    SuperBlocks.LearnDynamicProgrammingInPython
   ]
 };
 

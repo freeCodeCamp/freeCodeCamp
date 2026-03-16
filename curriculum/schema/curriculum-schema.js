@@ -35,6 +35,7 @@ const superblocks = [
   '2022/responsive-web-design',
   'the-odin-project',
   'introduction-to-algorithms-and-data-structures',
+  'introduction-to-precalculus',
   'lab-survey-form',
   'html-and-accessibility',
   'computer-basics',
@@ -58,6 +59,8 @@ const superblocks = [
   'css-grid',
   'lab-product-landing-page',
   'css-animations',
+  'learn-oop-with-python',
+  'learn-rag-mcp-fundamentals',
   'introduction-to-bash',
   'introduction-to-sql-and-postgresql',
   'learn-bash-scripting',
@@ -84,7 +87,17 @@ const superblocks = [
   'introduction-to-javascript-classes',
   'learn-recursion-with-javascript',
   'introduction-to-functional-programming-with-javascript',
-  'introduction-to-asynchronous-javascript'
+  'introduction-to-asynchronous-javascript',
+  'introduction-to-python-basics',
+  'learn-python-loops-and-sequences',
+  'learn-python-dictionaries-and-sets',
+  'learn-error-handling-in-python',
+  'learn-python-classes-and-objects',
+  'introduction-to-oop-in-python',
+  'introduction-to-linear-data-structures-in-python',
+  'learn-algorithms-in-python',
+  'learn-graphs-and-trees-in-python',
+  'learn-dynamic-programming-in-python'
 ];
 
 const schema = Joi.object().keys(

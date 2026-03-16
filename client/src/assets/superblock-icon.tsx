@@ -82,6 +82,7 @@ const iconMap = {
   [SuperBlocks.CssAnimations]: Code,
   [SuperBlocks.LearnPythonForBeginners]: PythonIcon,
   [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: Code,
+  [SuperBlocks.IntroductionToPrecalculus]: CollegeAlgebra,
   [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
   [SuperBlocks.JsV9]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
@@ -89,6 +90,8 @@ const iconMap = {
   [SuperBlocks.RelationalDbV9]: DatabaseIcon,
   [SuperBlocks.BackEndDevApisV9]: APIIcon,
   [SuperBlocks.FullStackDeveloperV9]: Code,
+  [SuperBlocks.LearnOOPWithPython]: PythonIcon,
+  [SuperBlocks.LearnRAGAndMCPFundamentals]: Code,
   [SuperBlocks.IntroductionToBash]: Code,
   [SuperBlocks.IntroductionToSQLAndPostgreSQL]: DatabaseIcon,
   [SuperBlocks.LearnBashScripting]: Code,
@@ -116,7 +119,17 @@ const iconMap = {
   [SuperBlocks.IntroductionToJavascriptClasses]: JavaScriptIcon,
   [SuperBlocks.LearnRecursionWithJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: JavaScriptIcon,
-  [SuperBlocks.IntroductionToAsynchronousJS]: JavaScriptIcon
+  [SuperBlocks.IntroductionToAsynchronousJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToPythonBasics]: PythonIcon,
+  [SuperBlocks.LearnPythonLoopsAndSequences]: PythonIcon,
+  [SuperBlocks.LearnPythonDictionariesAndSets]: PythonIcon,
+  [SuperBlocks.LearnErrorHandlingInPython]: PythonIcon,
+  [SuperBlocks.LearnPythonClassesAndObjects]: PythonIcon,
+  [SuperBlocks.IntroductionToOOPInPython]: PythonIcon,
+  [SuperBlocks.IntroductionToLinearDataStructuresInPython]: PythonIcon,
+  [SuperBlocks.LearnAlgorithmsInPython]: PythonIcon,
+  [SuperBlocks.LearnGraphsAndTreesInPython]: PythonIcon,
+  [SuperBlocks.LearnDynamicProgrammingInPython]: PythonIcon
 };
 
 type SuperBlockIconProps = {

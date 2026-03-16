@@ -207,6 +207,7 @@ export const superBlockNames = {
   'learn-python-for-beginners': SuperBlocks.LearnPythonForBeginners,
   'introduction-to-algorithms-and-data-structures':
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+  'introduction-to-precalculus': SuperBlocks.IntroductionToPrecalculus,
   'lab-survey-form': SuperBlocks.LabSurveyForm,
   'html-and-accessibility': SuperBlocks.HtmlAndAccessibility,
   'computer-basics': SuperBlocks.ComputerBasics,
@@ -230,6 +231,8 @@ export const superBlockNames = {
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
   'css-animations': SuperBlocks.CssAnimations,
+  'learn-oop-with-python': SuperBlocks.LearnOOPWithPython,
+  'learn-rag-mcp-fundamentals': SuperBlocks.LearnRAGAndMCPFundamentals,
   'introduction-to-bash': SuperBlocks.IntroductionToBash,
   'introduction-to-sql-and-postgresql':
     SuperBlocks.IntroductionToSQLAndPostgreSQL,
@@ -269,7 +272,20 @@ export const superBlockNames = {
   'introduction-to-functional-programming-with-javascript':
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
   'introduction-to-asynchronous-javascript':
-    SuperBlocks.IntroductionToAsynchronousJS
+    SuperBlocks.IntroductionToAsynchronousJS,
+  'introduction-to-python-basics': SuperBlocks.IntroductionToPythonBasics,
+  'learn-python-loops-and-sequences': SuperBlocks.LearnPythonLoopsAndSequences,
+  'learn-python-dictionaries-and-sets':
+    SuperBlocks.LearnPythonDictionariesAndSets,
+  'learn-error-handling-in-python': SuperBlocks.LearnErrorHandlingInPython,
+  'learn-python-classes-and-objects': SuperBlocks.LearnPythonClassesAndObjects,
+  'introduction-to-oop-in-python': SuperBlocks.IntroductionToOOPInPython,
+  'introduction-to-linear-data-structures-in-python':
+    SuperBlocks.IntroductionToLinearDataStructuresInPython,
+  'learn-algorithms-in-python': SuperBlocks.LearnAlgorithmsInPython,
+  'learn-graphs-and-trees-in-python': SuperBlocks.LearnGraphsAndTreesInPython,
+  'learn-dynamic-programming-in-python':
+    SuperBlocks.LearnDynamicProgrammingInPython
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

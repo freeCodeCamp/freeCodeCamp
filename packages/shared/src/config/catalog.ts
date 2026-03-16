@@ -19,6 +19,7 @@ enum Topic {
   InformationSecurity = 'information-security',
   ComputerFundamentals = 'computer-fundamentals',
   ComputerScience = 'computer-science',
+  Math = 'math',
   Databases = 'databases',
   Bash = 'bash',
   Git = 'git',
@@ -203,6 +204,18 @@ export const catalog: Catalog[] = [
     topic: Topic.ComputerScience
   },
   {
+    superBlock: SuperBlocks.LearnRAGAndMCPFundamentals,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.AI
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPrecalculus,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.Math
+  },
+  {
     superBlock: SuperBlocks.IntroductionToBash,
     level: Levels.Intermediate,
     hours: 20,
@@ -363,5 +376,71 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 40,
     topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnOOPWithPython,
+    level: Levels.Intermediate,
+    hours: 3,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPythonBasics,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonLoopsAndSequences,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonDictionariesAndSets,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnErrorHandlingInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonClassesAndObjects,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToOOPInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToLinearDataStructuresInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnAlgorithmsInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnGraphsAndTreesInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnDynamicProgrammingInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
   }
 ];
