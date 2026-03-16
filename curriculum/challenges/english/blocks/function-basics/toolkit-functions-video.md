@@ -18,19 +18,19 @@ Which of the following is NOT an example of a toolkit function?
 
 ## --answers--
 
-`y = |x|`
+$y = |x|$
 
 ---
 
-`y = x`
+$y = x$
 
 ---
 
-`y = << x`
+$y = x^3 + x$
 
 ---
 
-`y = x^2`
+$y = x^2$
 
 ## --video-solution--
 

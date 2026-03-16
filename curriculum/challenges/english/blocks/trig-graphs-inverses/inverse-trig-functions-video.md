@@ -18,19 +18,19 @@ How can you find the graph of an inverse of a function?
 
 ## --answers--
 
-Flipping the graph of the original function across the line `y = x * 2` and then across the line `y = x`.
+Flipping the graph of the original function across the line $y = 2x$ and then across the line $y = x$.
 
 ---
 
-Flipping the graph of the original function across the line `y = x` and then across the line `y = -x`.
+Flipping the graph of the original function across the line $y = x$ and then across the line $y = -x$.
 
 ---
 
-Flipping the graph of the original function across the line `y = x`.
+Flipping the graph of the original function across the line $y = x$.
 
 ---
 
-Flipping the graph of the original function across the line `y = -x`.
+Flipping the graph of the original function across the line $y = -x$.
 
 ## --video-solution--
 
