@@ -1491,7 +1491,7 @@
       "lab-rpg-character": {
         "title": "Build an RPG Character",
         "intro": [
-          "In this lab you will practice basic python by building an RPG character."
+          "In this lab you will practice basic Python by building an RPG character."
         ]
       },
       "review-python-basics": {
@@ -1579,7 +1579,7 @@
         ]
       },
       "review-dictionaries-and-sets": {
-        "title": "Dictionaries and Sets review",
+        "title": "Dictionaries and Sets Review",
         "intro": [
           "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
           "Open up this page to review concepts around dictionaries, sets, and how to import modules."
@@ -1749,7 +1749,7 @@
       "quiz-object-oriented-programming": {
         "title": "Object Oriented Programming Quiz",
         "intro": [
-          "Test what you've learned about object oriented programming in python with this quiz."
+          "Test what you've learned about object oriented programming in Python with this quiz."
         ]
       }
     }
@@ -1898,7 +1898,7 @@
       "workshop-breadth-first-search": {
         "title": "Implement the Breadth-First Search Algorithm",
         "intro": [
-          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
         ]
       },
       "lab-depth-first-search": {
@@ -1956,7 +1956,7 @@
       "quiz-dynamic-programming": {
         "title": "Dynamic Programming Quiz",
         "intro": [
-          "Test what you've learned about dynamic programming in python with this quiz."
+          "Test what you've learned about dynamic programming in Python with this quiz."
         ]
       }
     }
