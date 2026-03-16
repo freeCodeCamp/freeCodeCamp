@@ -18,19 +18,19 @@ Which of the following is a valid form for the equation of a parabola?
 
 ## --answers--
 
-`x - h = 4p(y - k)^2`
+$x - h = 4p(y - k)^2$
 
 ---
 
-`y^2 - k^2 = 4p(x - h)`
+$y^2 - k^2 = 4p(x - h)$
 
 ---
 
-`(y - k)^2 = 4p(x - h) `
+$(y - k)^2 = 4p(x - h)$
 
 ---
 
-`y - k = 4p(x - h)^2`
+$y - k = 4p(x - h)^2$
 
 ## --video-solution--
 
