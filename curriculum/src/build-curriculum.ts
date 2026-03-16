@@ -239,7 +239,20 @@ export const superBlockNames = {
   'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
   'introduction-to-nano': SuperBlocks.IntroductionToNano,
   'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
-  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals
+  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals,
+  'introduction-to-python-basics': SuperBlocks.IntroductionToPythonBasics,
+  'learn-python-loops-and-sequences': SuperBlocks.LearnPythonLoopsAndSequences,
+  'learn-python-dictionaries-and-sets':
+    SuperBlocks.LearnPythonDictionariesAndSets,
+  'learn-error-handling-in-python': SuperBlocks.LearnErrorHandlingInPython,
+  'learn-python-classes-and-objects': SuperBlocks.LearnPythonClassesAndObjects,
+  'introduction-to-oop-in-python': SuperBlocks.IntroductionToOOPInPython,
+  'introduction-to-linear-data-structures-in-python':
+    SuperBlocks.IntroductionToLinearDataStructuresInPython,
+  'learn-algorithms-in-python': SuperBlocks.LearnAlgorithmsInPython,
+  'learn-graphs-and-trees-in-python': SuperBlocks.LearnGraphsAndTreesInPython,
+  'learn-dynamic-programming-in-python':
+    SuperBlocks.LearnDynamicProgrammingInPython
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(
