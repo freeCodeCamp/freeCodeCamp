@@ -3,7 +3,7 @@
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '@freecodecamp/curriculum/file-handler';
+} from '../../file-handler.js';
 import { insertInto } from './utils.js';
 
 export async function updateSimpleSuperblockStructure(

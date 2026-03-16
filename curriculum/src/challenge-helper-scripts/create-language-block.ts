@@ -17,8 +17,8 @@ import {
   writeBlockStructure,
   createBlockFolder,
   getSuperblockStructure
-} from '@freecodecamp/curriculum/file-handler';
-import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
+} from '../file-handler.js';
+import { superBlockToFilename } from '../build-curriculum.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
 import {
   createDialogueFile,
@@ -162,7 +162,7 @@ async function updateIntroJson({
 }) {
   const introJsonPath = path.resolve(
     __dirname,
-    '../../client/i18n/locales/english/intro.json'
+    '../../../client/i18n/locales/english/intro.json'
   );
   const newIntro = await parseJson<IntroJson>(introJsonPath);
 
