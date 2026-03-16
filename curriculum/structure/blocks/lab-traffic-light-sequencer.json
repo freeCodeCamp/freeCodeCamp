@@ -1,0 +1,15 @@
+{
+  "name": "Build a Traffic Light Sequencer",
+  "isUpcomingChange": false,
+  "dashedName": "lab-traffic-light-sequencer",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69b83e35f19ba26ba1fa517a",
+      "title": "Build a Traffic Light Sequencer"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
