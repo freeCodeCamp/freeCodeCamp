@@ -221,14 +221,14 @@ function ShowExam(props: ShowExamProps) {
   // refs make them stable across renders and thus removable.
   const stopWindowCloseRef = useRef((event: Event) => {
     event.preventDefault();
-    alert(props.t('misc.navigation-warning'));
+    alert(props.t($ => $.misc['navigation-warning']));
   });
 
   const stopBrowserBackRef = useRef((event: Event) => {
     event.preventDefault();
     window.history.forward();
     // TODO: useTranslation
-    alert(props.t('misc.navigation-warning'));
+    alert(props.t($ => $.misc['navigation-warning']));
   });
 
   const runExam = async () => {
@@ -346,9 +346,13 @@ function ShowExam(props: ShowExamProps) {
   const prerequisitesComplete = missingPrerequisites.length === 0;
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const superBlockData = t($ => $[superBlock as keyof typeof $], {
+    ns: 'intro',
+    returnObjects: true
+  }) as {
+    blocks: Record<string, { title: string }>;
+  };
+  const blockNameTitle = `${superBlockData.blocks[block]?.title ?? ''}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
   // TODO: If already taken exam, show different messages
@@ -371,13 +375,13 @@ function ShowExam(props: ShowExamProps) {
                 <div data-playwright-test-label='exam-show-title'>{title}</div>
                 <span>|</span>
                 <div data-playwright-test-label='exam-show-question-time'>
-                  {t('learn.exam.time', {
+                  {t($ => $.learn.exam.time, {
                     t: formatSecondsToTime(examTimeInSeconds)
                   })}
                 </div>
                 <span>|</span>
                 <div>
-                  {t('learn.exam.questions', {
+                  {t($ => $.learn.exam.questions, {
                     n: currentQuestionIndex + 1,
                     t: generatedExamQuestions.length
                   })}
@@ -433,7 +437,7 @@ function ShowExam(props: ShowExamProps) {
                   variant='primary'
                   onClick={goToPreviousQuestion}
                 >
-                  {t('buttons.previous-question')}
+                  {t($ => $.buttons['previous-question'])}
                 </Button>
 
                 {currentQuestionIndex === generatedExamQuestions.length - 1 ? (
@@ -446,7 +450,7 @@ function ShowExam(props: ShowExamProps) {
                     variant='primary'
                     onClick={openFinishExamModal}
                   >
-                    {t('buttons.finish-exam')}
+                    {t($ => $.buttons['finish-exam'])}
                   </Button>
                 ) : (
                   <Button
@@ -458,7 +462,7 @@ function ShowExam(props: ShowExamProps) {
                     variant='primary'
                     onClick={goToNextQuestion}
                   >
-                    {t('buttons.next-question')}
+                    {t($ => $.buttons['next-question'])}
                   </Button>
                 )}
               </div>
@@ -472,7 +476,7 @@ function ShowExam(props: ShowExamProps) {
                   variant='primary'
                   onClick={openExitExamModal}
                 >
-                  {t('buttons.exit-exam')}
+                  {t($ => $.buttons['exit-exam'])}
                 </Button>
               </div>
             </div>
@@ -498,8 +502,8 @@ function ShowExam(props: ShowExamProps) {
               <Spacer size='m' />
 
               {qualifiedForExam ? (
-                <Callout variant='note' label={t('misc.note')}>
-                  <p>{t('learn.exam.qualified')}</p>
+                <Callout variant='note' label={t($ => $.misc.note)}>
+                  <p>{t($ => $.learn.exam.qualified)}</p>
                 </Callout>
               ) : !prerequisitesComplete ? (
                 <MissingPrerequisites
@@ -520,7 +524,7 @@ function ShowExam(props: ShowExamProps) {
                 //eslint-disable-next-line @typescript-eslint/no-misused-promises
                 onClick={runExam}
               >
-                {t('buttons.click-start-exam')}
+                {t($ => $.buttons['click-start-exam'])}
               </Button>
             </Col>
             <CompletionModal />

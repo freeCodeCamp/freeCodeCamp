@@ -12,13 +12,12 @@ function Archive(): JSX.Element {
     <>
       <Spacer size='l' />
       <h1 className='text-center big-heading'>
-        {t('daily-coding-challenges.title')}
+        {t($ => $['daily-coding-challenges'].title)}
       </h1>
       <Spacer size='m' />
       <DailyCodingChallengeIcon className='cert-header-icon' />
       <Spacer size='l' />
       <DailyCodingChallengeCalendar />
-
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

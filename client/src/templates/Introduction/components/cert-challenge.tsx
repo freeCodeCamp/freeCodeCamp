@@ -14,6 +14,7 @@ import {
   isSignedInSelector,
   userFetchStateSelector
 } from '../../../redux/selectors';
+import { getTitleByKey } from '../../../utils/type-guards';
 import { User } from '../../../redux/prop-types';
 import { liveCerts } from '../../../../config/cert-and-project-map';
 import { getCertifications } from '../../../components/profile/components/utils/certification';
@@ -30,7 +31,7 @@ interface CertChallengeProps {
   user: User;
 }
 
-const mapStateToProps = (state: unknown) => {
+const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     userFetchStateSelector,
     isSignedInSelector,
@@ -38,7 +39,7 @@ const mapStateToProps = (state: unknown) => {
       fetchState,
       isSignedIn
     })
-  )(state as Record<string, unknown>);
+  )(state);
 };
 
 const CertChallenge = ({
@@ -76,7 +77,10 @@ const CertChallenge = ({
     )?.show ?? false;
 
   const certLocation = `/certification/${username}/${certSlug}`;
-  const title = t(`certification.title.${certification}`);
+  const certificationTitles = t($ => $.certification.title, {
+    returnObjects: true
+  });
+  const title = getTitleByKey(certificationTitles, certSlug);
 
   return (
     <div>

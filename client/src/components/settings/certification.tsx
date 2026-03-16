@@ -33,6 +33,7 @@ import type {
 } from '../../redux/prop-types';
 import { createFlashMessage } from '../Flash/redux';
 import { verifyCert } from '../../redux/settings/actions';
+import { getTitleByKey } from '../../utils/type-guards';
 import SectionHeader from './section-header';
 
 import './certification.css';
@@ -97,25 +98,39 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
       <FullWidthRow key={certSlug}>
         <Spacer size='m' />
         <h3 className='text-center'>
-          {t(`certification.title.${Certification.LegacyFullStack}`)}
+          {t($ => $.certification.title['full-stack'])}
         </h3>
         <div>
           <p>
-            {t('settings.claim-legacy', {
-              cert: t(
-                `certification.title.${Certification.LegacyFullStack}-cert`
-              )
+            {t($ => $.settings['claim-legacy'], {
+              cert: t($ => $.certification.title['full-stack-cert'])
             })}
           </p>
           <ul>
-            <li>{t(`certification.title.${Certification.RespWebDesign}`)}</li>
+            <li>{t($ => $.certification.title['responsive-web-design'])}</li>
             <li>
-              {t(`certification.title.${Certification.JsAlgoDataStruct}`)}
+              {t(
+                $ =>
+                  $.certification.title[
+                    'javascript-algorithms-and-data-structures'
+                  ]
+              )}
             </li>
-            <li>{t(`certification.title.${Certification.FrontEndDevLibs}`)}</li>
-            <li>{t(`certification.title.${Certification.DataVis}`)}</li>
-            <li>{t(`certification.title.${Certification.BackEndDevApis}`)}</li>
-            <li>{t(`certification.title.${Certification.LegacyInfoSecQa}`)}</li>
+            <li>
+              {t($ => $.certification.title['front-end-development-libraries'])}
+            </li>
+            <li>{t($ => $.certification.title['data-visualization'])}</li>
+            <li>
+              {t($ => $.certification.title['back-end-development-and-apis'])}
+            </li>
+            <li>
+              {t(
+                $ =>
+                  $.certification.title[
+                    'information-security-and-quality-assurance'
+                  ]
+              )}
+            </li>
           </ul>
         </div>
 
@@ -129,9 +144,9 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
               id={'button-' + certSlug}
               target='_blank'
             >
-              {t('buttons.show-cert')}{' '}
+              {t($ => $.buttons['show-cert'])}{' '}
               <span className='sr-only'>
-                {t(`certification.title.${Certification.LegacyFullStack}`)}
+                {t($ => $.certification.title['full-stack'])}
               </span>
             </Button>
           ) : (
@@ -143,9 +158,9 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
               id={'button-' + certSlug}
               onClick={handleClaim(certSlug)}
             >
-              {t('buttons.claim-cert')}{' '}
+              {t($ => $.buttons['claim-cert'])}{' '}
               <span className='sr-only'>
-                {t(`certification.title.${Certification.LegacyFullStack}`)}
+                {t($ => $.certification.title['full-stack'])}
               </span>
             </Button>
           )}
@@ -174,6 +189,18 @@ function CertificationSettings(props: CertificationSettingsProps) {
     setExamResults(null);
     setIsOpen(false);
   }
+
+  const { t } = props;
+  const certificationTitles = t($ => $.certification.title, {
+    returnObjects: true
+  });
+  const projectTitles = t($ => $.certification.project.title, {
+    returnObjects: true
+  });
+  const certificationTitle = (certSlug: string) =>
+    getTitleByKey(certificationTitles, certSlug);
+  const projectTitleByKey = (projectTitle: string) =>
+    getTitleByKey(projectTitles, projectTitle);
 
   const handleSolutionModalHide = () => initialiseState();
 
@@ -241,14 +268,12 @@ function CertificationSettings(props: CertificationSettingsProps) {
         <section>
           <FullWidthRow>
             <Spacer size='m' />
-            <h3 className='text-center'>
-              {t(`certification.title.${certSlug}`, certSlug)}
-            </h3>
+            <h3 className='text-center'>{certificationTitle(certSlug)}</h3>
             <Table>
               <thead>
                 <tr>
-                  <th>{t('settings.labels.project-name')}</th>
-                  <th>{t('settings.labels.solution')}</th>
+                  <th>{t($ => $.settings.labels['project-name'])}</th>
+                  <th>{t($ => $.settings.labels.solution)}</th>
                 </tr>
               </thead>
               <tbody>
@@ -287,9 +312,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
         {certsToProjects[certSlug].map(({ link, title, id }) => (
           <tr className='project-row' key={id}>
             <td className='project-title col-xs-8'>
-              <Link to={link}>
-                {t(`certification.project.title.${title}`, title)}
-              </Link>
+              <Link to={link}>{projectTitleByKey(title)}</Link>
             </td>
             <td className='project-solution col-xs-4'>
               {getProjectSolution(id, title)}
@@ -300,17 +323,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
           <td colSpan={2}>
             {isCert ? (
               <Button block={true} variant='primary' href={certLocation}>
-                {t('buttons.show-cert')}{' '}
-                <span className='sr-only'>
-                  {t(`certification.title.${certSlug}`)}
-                </span>
+                {t($ => $.buttons['show-cert'])}{' '}
+                <span className='sr-only'>{certificationTitle(certSlug)}</span>
               </Button>
             ) : (
               <Button block={true} variant='primary' onClick={handleClaim}>
-                {t('buttons.claim-cert')}{' '}
-                <span className='sr-only'>
-                  {t(`certification.title.${certSlug}`)}
-                </span>
+                {t($ => $.buttons['claim-cert'])}{' '}
+                <span className='sr-only'>{certificationTitle(certSlug)}</span>
               </Button>
             )}
           </td>
@@ -318,18 +337,17 @@ function CertificationSettings(props: CertificationSettingsProps) {
       </>
     );
   }
-
-  const { t } = props;
-
   return (
     <section className='certification-settings'>
-      <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
+      <SectionHeader>{t($ => $.settings.headings.certs)}</SectionHeader>
       {currentCertifications.map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       <Spacer size='m' />
       <Element name='legacy-certifications'>
-        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+        <SectionHeader>
+          {t($ => $.settings.headings['legacy-certs'])}
+        </SectionHeader>
       </Element>
       <LegacyFullStack {...props} />
       {legacyCertifications.map(cert => (
@@ -351,7 +369,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <ProjectPreviewModal
         challengeData={challengeData}
         previewTitle={projectTitle}
-        closeText={t('buttons.close')}
+        closeText={t($ => $.buttons.close)}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
     </section>

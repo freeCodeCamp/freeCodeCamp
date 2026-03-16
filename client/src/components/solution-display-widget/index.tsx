@@ -219,7 +219,7 @@ export function SolutionDisplayWidget({
     ) : null;
 
   const NoSolutionToDisplay = (
-    <> {t('certification.project.no-solution-to-display')} </>
+    <> {t($ => $.certification.project['no-solution-to-display'])} </>
   );
 
   // This is to hide the "view" button on the timeline for the ms trophy challenges,

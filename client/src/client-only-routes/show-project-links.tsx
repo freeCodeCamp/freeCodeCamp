@@ -126,7 +126,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
               <tr key={ind}>
                 <td>
                   <Link className='project-link' to={certLocation} external>
-                    {t(`certification.title.${cert.name}`)}
+                    {t($ => $.certification.title[cert.name])}
                   </Link>
                 </td>
               </tr>
@@ -143,7 +143,12 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
           <tr key={id}>
             <td className='col-xs-8'>
               <Link to={link}>
-                {t(`certification.projects.title.${title}`, title)}
+                {t(
+                  $ =>
+                    $.certification.project.title[
+                      title as keyof typeof $.certification.project.title
+                    ]
+                )}
               </Link>
             </td>
             <td className='col-xs-4'>{getProjectSolution(id, title)}</td>
@@ -163,11 +168,15 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
 
   const getCertHeading = (cert: Certification) => {
     if (cert === Certification.LegacyFullStack) {
-      return 'certification.project.heading-legacy-full-stack';
+      return ($: {
+        certification: { project: { 'heading-legacy-full-stack': string } };
+      }) => $.certification.project['heading-legacy-full-stack'];
     } else if (currentCertifications.includes(cert)) {
-      return 'certification.project.heading-exam';
+      return ($: { certification: { project: { 'heading-exam': string } } }) =>
+        $.certification.project['heading-exam'];
     } else {
-      return 'certification.project.heading';
+      return ($: { certification: { project: { heading: string } } }) =>
+        $.certification.project.heading;
     }
   };
 
@@ -190,7 +199,9 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
         <thead>
           <tr>
             <th>
-              <span className='sr-only'>{t('settings.headings.certs')}</span>
+              <span className='sr-only'>
+                {t($ => $.settings.headings.certs)}
+              </span>
             </th>
           </tr>
         </thead>
@@ -210,11 +221,10 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
       />
       <ProjectPreviewModal
         challengeData={challengeData}
-        closeText={t('buttons.close')}
+        closeText={t($ => $.buttons.close)}
         previewTitle={projectTitle}
       />
       <ExamResultsModal projectTitle={projectTitle} examResults={examResults} />
-
       {certSlug !== Certification.FoundationalCSharp && (
         <Trans i18nKey='certification.project.footnote'>
           If you suspect that any of these projects violate the{' '}

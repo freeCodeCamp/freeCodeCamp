@@ -38,7 +38,7 @@ export const ExperienceDisplay = ({
         {' - '}
         {exp.endDate
           ? formatDate(exp.endDate)
-          : t('profile.experience.present')}
+          : t($ => $.profile.experience.present)}
       </p>
       {exp.description && (
         <p className='experience-description'>{exp.description}</p>
@@ -49,7 +49,7 @@ export const ExperienceDisplay = ({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.experience.heading')}</h2>
+        <h2>{t($ => $.profile.experience.heading)}</h2>
         <Spacer size='s' />
         {interleave(experienceItems, index => (
           <hr key={`separator-${index}`} />

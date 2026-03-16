@@ -13,6 +13,7 @@ import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { FsdChapters } from '@freecodecamp/shared/config/chapters';
 import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';
+import { getIntroSuperBlockData } from '../../../utils/type-guards';
 import Block from './block';
 import CheckMark from './check-mark';
 import { default as BlockLabelComponent } from './block-label';
@@ -95,7 +96,12 @@ const Chapter = ({
 }: ChapterProps) => {
   const { t } = useTranslation();
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
-  const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
+  const introData = t($ => $, {
+    ns: 'intro',
+    returnObjects: true
+  });
+  const superBlockData = getIntroSuperBlockData(introData, superBlock);
+  const chapterLabel = superBlockData.chapters[dashedName] ?? dashedName;
 
   const chapterButtonContent = (
     <>
@@ -112,9 +118,9 @@ const Chapter = ({
       <div className='chapter-button-right'>
         {!comingSoon && !isLinkChapter && (
           <span className='chapter-steps'>
-            {t('learn.steps-completed', {
-              totalSteps,
-              completedSteps
+            {t($ => $.learn['steps-completed'], {
+              totalSteps: totalSteps,
+              completedSteps: completedSteps
             })}
           </span>
         )}
@@ -165,12 +171,13 @@ const Module = ({
 }: ModuleProps) => {
   const { t } = useTranslation();
   const isComplete = totalSteps === 0 ? false : completedSteps === totalSteps;
-  const { note, intro } = t(`intro:${superBlock}.module-intros.${dashedName}`, {
+  const introData = t($ => $, {
+    ns: 'intro',
     returnObjects: true
-  }) as {
-    note: string;
-    intro: string[];
-  };
+  });
+  const superBlockData = getIntroSuperBlockData(introData, superBlock);
+  const { note = '', intro = [] } =
+    superBlockData.moduleIntros[dashedName] ?? {};
 
   const showModuleContent = !(comingSoon && !showUpcomingChanges);
 
@@ -184,14 +191,14 @@ const Module = ({
           <span className='checkmark-wrap'>
             <CheckMark isCompleted={isComplete} />
           </span>
-          {t(`intro:${superBlock}.modules.${dashedName}`)}
+          {superBlockData.modules[dashedName] ?? dashedName}
         </div>
         <div className='module-button-right' data-testid='module-button-right'>
           {!comingSoon && !!totalSteps && (
             <span className='module-steps'>
-              {t('learn.steps-completed', {
-                totalSteps,
-                completedSteps
+              {t($ => $.learn['steps-completed'], {
+                totalSteps: totalSteps,
+                completedSteps: completedSteps
               })}
             </span>
           )}

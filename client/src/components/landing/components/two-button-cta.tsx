@@ -65,15 +65,13 @@ const TwoButtonCTA = ({ isSignedIn }: TwoButtonCTAProps): JSX.Element => {
             <path fill='none' d='M0 0h48v48H0z' />
           </svg>
         </span>
-        <span>{t('buttons.sign-in-with-google')}</span>
+        <span>{t($ => $.buttons['sign-in-with-google'])}</span>
       </a>
-
       <div className='cta-divider' role='separator' aria-label='or'>
         <span className='cta-divider-line' />
-        <span>{t('misc.or')}</span>
+        <span>{t($ => $.misc.or)}</span>
         <span className='cta-divider-line' />
       </div>
-
       <a
         className='signup-btn btn btn-sm btn-block more-ways-btn'
         data-test-label='landing-more-ways-cta'
@@ -82,7 +80,7 @@ const TwoButtonCTA = ({ isSignedIn }: TwoButtonCTAProps): JSX.Element => {
         onClick={handleMoreWaysClick}
       >
         <span className='login-btn-text'>
-          {t('buttons.more-ways-to-sign-in')}
+          {t($ => $.buttons['more-ways-to-sign-in'])}
         </span>
       </a>
     </div>

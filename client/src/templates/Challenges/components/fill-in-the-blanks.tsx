@@ -127,14 +127,16 @@ function FillInTheBlanks({
 
   const ariaInputDescription =
     inputType === 'pinyin-to-hanzi'
-      ? t('aria.pinyin-to-hanzi-input-desc')
+      ? t($ => $.aria['pinyin-to-hanzi-input-desc'])
       : inputType === 'pinyin-tone'
-        ? t('aria.pinyin-tone-input-desc')
+        ? t($ => $.aria['pinyin-tone-input-desc'])
         : '';
 
   return (
     <>
-      <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
+      <ChallengeHeading
+        heading={t($ => $.learn['fill-in-the-blank'].heading)}
+      />
       <Spacer size='xs' />
       <p className='sr-only'>{ariaInputDescription}</p>
       <div className='fill-in-the-blank-wrap'>
@@ -174,7 +176,7 @@ function FillInTheBlanks({
                   isCorrect={answersCorrect[value]}
                   className={getInputClass(value)}
                   onChange={handleInputChange}
-                  ariaLabel={t('learn.fill-in-the-blank.blank')}
+                  ariaLabel={t($ => $.learn['fill-in-the-blank'].blank)}
                   inputType={inputType}
                 />
               );
@@ -186,7 +188,7 @@ function FillInTheBlanks({
       <div aria-live='polite'>
         {showWrong && (
           <div className='text-center'>
-            <span>{t('learn.wrong-answer')}</span>
+            <span>{t($ => $.learn['wrong-answer'])}</span>
             <Spacer size='m' />
           </div>
         )}

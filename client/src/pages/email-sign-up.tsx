@@ -54,7 +54,7 @@ function EmailSignUp({
   ) : (
     <>
       <Helmet>
-        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
+        <title>{t($ => $.misc['email-signup'])} | freeCodeCamp.org</title>
       </Helmet>
       <Container>
         <Spacer size='l' />

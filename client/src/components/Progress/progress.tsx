@@ -70,7 +70,13 @@ function Progress({
   minified
 }: ProgressProps): JSX.Element {
   useFetchAllCurriculumData(); // needed to compute completedPercent
-  let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  const superBlockData = t($ => $[superBlock as keyof typeof $], {
+    ns: 'intro',
+    returnObjects: true
+  }) as {
+    blocks: Record<string, { title: string }>;
+  };
+  let blockTitle = superBlockData.blocks[block]?.title ?? block;
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>
     cert.projects?.some((project: { id: string }) => project.id === id)
@@ -89,11 +95,11 @@ function Progress({
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
   const meta =
     isCertificationProject && totalChallengesInBlock > 0
-      ? t('learn.project-complete', {
+      ? t($ => $.learn['project-complete'], {
           completedChallengesInBlock,
           totalChallengesInBlock
         })
-      : t('learn.percent-complete', {
+      : t($ => $.learn['percent-complete'], {
           percent: completedPercent
         });
   return (

@@ -70,7 +70,9 @@ function MultipleChoiceQuestions({
     <>
       <ChallengeHeading
         heading={
-          questions.length > 1 ? t('learn.questions') : t('learn.question')
+          questions.length > 1
+            ? t($ => $.learn.questions)
+            : t($ => $.learn.question)
         }
       />
       {questions.map((question, questionIndex) => (
@@ -136,8 +138,8 @@ function MultipleChoiceQuestions({
                       >
                         <p>
                           {isCorrect
-                            ? t('learn.quiz.correct-answer')
-                            : t('learn.quiz.incorrect-answer')}
+                            ? t($ => $.learn.quiz['correct-answer'])
+                            : t($ => $.learn.quiz['incorrect-answer'])}
                         </p>
                         {feedback && (
                           <p>
@@ -156,7 +158,6 @@ function MultipleChoiceQuestions({
                       </div>
                     )}
                   </div>
-
                   {hasAudio && (
                     <div className='mcq-speaking-button-wrapper'>
                       <Button
@@ -170,7 +171,9 @@ function MultipleChoiceQuestions({
                         }
                         className='mcq-speaking-button'
                         aria-describedby={labelId}
-                        aria-label={t('speaking-modal.speaking-button')}
+                        aria-label={t(
+                          $ => $['speaking-modal']['speaking-button']
+                        )}
                       >
                         <FontAwesomeIcon icon={faMicrophone} />
                       </Button>
@@ -183,7 +186,6 @@ function MultipleChoiceQuestions({
           <Spacer size='m' />
         </fieldset>
       ))}
-
       <Spacer size='m' />
       <SpeakingModal
         sentence={modalText}

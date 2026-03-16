@@ -28,11 +28,8 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type {
-  SuperBlockStructure,
-  User,
-  ChapterBasedSuperBlockStructure
-} from '../../redux/prop-types';
+import { getIntroSuperBlockTitle } from '../../utils/type-guards';
+import type { SuperBlockStructure, User } from '../../redux/prop-types';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
@@ -49,6 +46,9 @@ type FetchState = {
   complete: boolean;
   errored: boolean;
 };
+
+type IntroUser = Partial<User> &
+  Pick<User, 'completedChallenges' | 'isDonating'>;
 
 type ChallengeNode = {
   challenge: {
@@ -67,7 +67,7 @@ type ChallengeNode = {
   };
 };
 
-type SuperBlockProps = {
+export type SuperBlockProps = {
   currentChallengeId: string;
   data: {
     allChallengeNode: { nodes: ChallengeNode[] };
@@ -86,7 +86,7 @@ type SuperBlockProps = {
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
-  user: User | null;
+  user: IntroUser | null;
 };
 
 const mapStateToProps = (state: Record<string, unknown>) => {
@@ -132,7 +132,7 @@ const handleHashChange = () => {
   }
 };
 
-const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
+export const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   const { t } = useTranslation();
   useEffect(() => {
     initializeExpandedState();
@@ -179,11 +179,21 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, user?.completedChallenges]
   );
 
-  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+  const i18nTitle = getIntroSuperBlockTitle(
+    i18next.t($ => $, {
+      ns: 'intro',
+      returnObjects: true
+    }),
+    superBlock
+  );
 
   const currentSuperBlockStructure = allSuperBlockStructure.nodes.find(
     node => node.superBlock === superBlock
   );
+  const chapterStructure =
+    currentSuperBlockStructure && 'chapters' in currentSuperBlockStructure
+      ? currentSuperBlockStructure
+      : { superBlock, chapters: [] };
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
@@ -303,8 +313,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <Spacer size='l' />
               <h2 className='text-center big-subheading'>
                 {certificationCollectionSuperBlocks.includes(superBlock)
-                  ? t(`intro:misc-text.requirements`)
-                  : t(`intro:misc-text.courses`)}
+                  ? t($ => $['misc-text'].requirements, { ns: 'intro' })
+                  : t($ => $['misc-text'].courses, { ns: 'intro' })}
               </h2>
               <Spacer size='m' />
               <SuperBlockMap
@@ -312,9 +322,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 disabledBlocks={disabledBlocksFeature}
                 initialExpandedBlock={initialExpandedBlock}
                 showCertification={showCertification}
-                structure={
-                  currentSuperBlockStructure as ChapterBasedSuperBlockStructure
-                }
+                structure={chapterStructure}
                 superBlock={superBlock}
                 superBlockChallenges={superBlockChallenges}
                 user={user}
@@ -322,7 +330,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               {!isSignedIn && !signInLoading && (
                 <>
                   <Spacer size='l' />
-                  <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+                  <Login block={true}>
+                    {t($ => $.buttons['logged-out-cta-btn'])}
+                  </Login>
                 </>
               )}
               <Spacer size='l' />
@@ -330,7 +340,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 className='text-center big-block-title'
                 style={{ whiteSpace: 'pre-line' }}
               >
-                {t(`intro:misc-text.browse-other`)}
+                {t($ => $['misc-text']['browse-other'], { ns: 'intro' })}
               </h3>
               <Spacer size='m' />
               <Map />

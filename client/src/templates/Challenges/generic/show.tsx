@@ -142,9 +142,13 @@ const ShowGeneric = ({
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const superBlockData = t($ => $[superBlock as keyof typeof $], {
+    ns: 'intro',
+    returnObjects: true
+  }) as {
+    blocks: Record<string, { title: string }>;
+  };
+  const blockNameTitle = `${superBlockData.blocks[block]?.title ?? ''} - ${title}`;
 
   useEffect(() => {
     initTests(tests);
@@ -367,17 +371,17 @@ const ShowGeneric = ({
         ) : null}
 
         {!hasAnsweredMcqCorrectly && (
-          <p className='text-center'>{t('learn.answered-mcq')}</p>
+          <p className='text-center'>{t($ => $.learn['answered-mcq'])}</p>
         )}
 
         <Button block={true} variant='primary' onClick={handleSubmit}>
           {questions.length == 0
-            ? t('buttons.submit')
-            : t('buttons.check-answer')}
+            ? t($ => $.buttons.submit)
+            : t($ => $.buttons['check-answer'])}
         </Button>
         <Spacer size='xxs' />
         <Button block={true} variant='primary' onClick={openHelpModal}>
-          {t('buttons.ask-for-help')}
+          {t($ => $.buttons['ask-for-help'])}
         </Button>
 
         <Spacer size='l' />
@@ -399,7 +403,7 @@ const ShowGeneric = ({
     >
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container
           className={isReviewChallenge ? 'content-layout-fluid' : undefined}

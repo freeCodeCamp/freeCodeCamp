@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect, afterEach, vi, Mock } from 'vitest';
-import type { TFunction } from 'i18next';
+import { describe, it, expect, afterAll, afterEach, vi, Mock } from 'vitest';
+import i18next from 'i18next';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   ChallengeFiles,
@@ -21,6 +21,48 @@ vi.mock('@freecodecamp/shared/utils/is-audited', () => ({
 }));
 
 vi.mock('../../../utils/get-words');
+
+type KeyFromSelector = <S, T>(selector: ($: S) => T) => unknown;
+const isKeyFromSelector = (value: unknown): value is KeyFromSelector =>
+  typeof value === 'function';
+
+const selectorToKey = <S, T>(selector: ($: S) => T) => {
+  const keyResolver: unknown = Reflect.get(i18next, 'keyFromSelector');
+  if (isKeyFromSelector(keyResolver)) {
+    const key = String(keyResolver(selector));
+    if (key) return key;
+  }
+
+  const path: string[] = [];
+  const proxy = new Proxy<Record<string, unknown>>(
+    {},
+    {
+      get(_target, prop) {
+        path.push(String(prop));
+        return proxy;
+      }
+    }
+  );
+  Reflect.apply(selector, undefined, [proxy]);
+  return path.join('.');
+};
+
+const i18nSpy = vi.spyOn(i18next, 't').mockImplementation((key, options) => {
+  const namespace =
+    typeof options?.ns === 'string' ? options.ns : String(options?.ns ?? '');
+
+  if (options?.returnObjects && namespace === 'intro') {
+    return {};
+  }
+
+  const resolvedSelectorKey =
+    typeof key === 'function' ? selectorToKey(key) : String(key);
+  const resolvedKey = namespace
+    ? namespace + ':' + String(resolvedSelectorKey)
+    : String(resolvedSelectorKey);
+
+  return resolvedKey;
+});
 
 const defaultProps = {
   block: 'test-block',
@@ -85,7 +127,7 @@ const defaultProps = {
   ],
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
-  t: vi.fn((key: string) => [key]) as unknown as TFunction,
+  t: i18next.t,
   superBlock: SuperBlocks.FullStackDeveloperV9,
   toggleBlock: vi.fn()
 };
@@ -93,6 +135,10 @@ const defaultProps = {
 describe('<Block />', () => {
   afterEach(() => {
     vi.clearAllMocks();
+  });
+
+  afterAll(() => {
+    i18nSpy.mockRestore();
   });
 
   it('The "Help us translate" badge does not appear on any English blocks', () => {

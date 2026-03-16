@@ -35,18 +35,18 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
   }
   if (examIdsQuery.error || !examIdsQuery.data) {
     console.error(examIdsQuery.error);
-    return <p>{t('flash.generic-error')}</p>;
+    return <p>{t($ => $.flash['generic-error'])}</p>;
   }
 
   if (attemptsMutation.error) {
     console.error(attemptsMutation.error);
-    return <p>{t('flash.generic-error')}</p>;
+    return <p>{t($ => $.flash['generic-error'])}</p>;
   }
 
   const attempts = attemptsMutation.data;
 
   if (attempts === undefined || attempts.length === 0) {
-    return <p>{t('exam.no-attempts-yet')}</p>;
+    return <p>{t($ => $.exam['no-attempts-yet'])}</p>;
   }
 
   function renderScore(attempt: Attempt) {
@@ -54,13 +54,13 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       case 'Approved':
         return `${attempt.result.score.toFixed(2)}%`;
       case 'Denied':
-        return t('exam.denied');
+        return t($ => $.exam.denied);
       case 'InProgress':
-        return t('exam.in-progress');
+        return t($ => $.exam['in-progress']);
       case 'PendingModeration':
-        return t('exam.pending');
+        return t($ => $.exam.pending);
       case 'Expired':
-        return t('exam.pending');
+        return t($ => $.exam.pending);
     }
   }
 
@@ -68,16 +68,16 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
     switch (attempt.status) {
       case 'Approved':
         return attempt.result.score >= attempt.result.passingPercent
-          ? t('exam.passed')
-          : t('exam.failed');
+          ? t($ => $.exam.passed)
+          : t($ => $.exam.failed);
       case 'Denied':
-        return t('exam.denied');
+        return t($ => $.exam.denied);
       case 'InProgress':
-        return t('exam.in-progress');
+        return t($ => $.exam['in-progress']);
       case 'PendingModeration':
-        return t('exam.pending');
+        return t($ => $.exam.pending);
       case 'Expired':
-        return t('exam.pending');
+        return t($ => $.exam.pending);
     }
   }
 
@@ -85,9 +85,9 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
     <Table striped>
       <thead>
         <tr>
-          <th>{t('exam.date-taken')}</th>
-          <th>{t('exam.score')} [%]</th>
-          <th>{t('exam.status')}</th>
+          <th>{t($ => $.exam['date-taken'])}</th>
+          <th>{t($ => $.exam.score)} [%]</th>
+          <th>{t($ => $.exam.status)}</th>
         </tr>
       </thead>
       <tbody>

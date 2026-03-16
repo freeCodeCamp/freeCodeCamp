@@ -23,7 +23,7 @@ export function EmailListOptIn({
             variant='primary'
             onClick={() => updateQuincyEmail(true)}
           >
-            {t('buttons.yes-please')}
+            {t($ => $.buttons['yes-please'])}
           </Button>
           <Spacer size='xs' />
         </Col>
@@ -33,7 +33,7 @@ export function EmailListOptIn({
             variant='primary'
             onClick={() => updateQuincyEmail(false)}
           >
-            {t('buttons.no-thanks')}
+            {t($ => $.buttons['no-thanks'])}
           </Button>
           <Spacer size='xs' />
         </Col>
@@ -45,7 +45,7 @@ export function EmailListOptIn({
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='xs' />
           <Button block={true} variant='primary' href={`${apiLocation}/signin`}>
-            {t('buttons.sign-up-email-list')}
+            {t($ => $.buttons['sign-up-email-list'])}
           </Button>
           <Spacer size='xs' />
         </Col>
@@ -72,21 +72,20 @@ function EmailOptions({
       <Row>
         <Col xs={12}>
           {isPage ? (
-            <h1 className='text-center'>{t('misc.email-signup')}</h1>
+            <h1 className='text-center'>{t($ => $.misc['email-signup'])}</h1>
           ) : (
-            <h2 className='text-center'>{t('misc.email-signup')}</h2>
+            <h2 className='text-center'>{t($ => $.misc['email-signup'])}</h2>
           )}
           <Spacer size='xs' />
         </Col>
       </Row>
-
       <Row>
         <Col
           {...(isPage ? { md: 8, mdOffset: 2, sm: 10, smOffset: 1 } : {})}
           xs={12}
         >
-          <p>{t('misc.email-blast')}</p>
-          <span className='message-author'>{t('misc.quincy')}</span>
+          <p>{t($ => $.misc['email-blast'])}</p>
+          <span className='message-author'>{t($ => $.misc.quincy)}</span>
           <Spacer size='m' />
         </Col>
       </Row>

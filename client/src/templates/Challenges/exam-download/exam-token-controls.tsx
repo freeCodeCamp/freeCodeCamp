@@ -32,11 +32,11 @@ export function ExamTokenControls({
   function handleCopyExamToken() {
     navigator.clipboard.writeText(token ?? '').then(
       () => {
-        setCopySuccess(t('exam-token.copied'));
+        setCopySuccess(t($ => $['exam-token'].copied));
         setCopyError(null);
       },
       () => {
-        setCopyError(t('exam-token.copy-error'));
+        setCopyError(t($ => $['exam-token']['copy-error']));
         setCopySuccess(null);
       }
     );
@@ -47,32 +47,34 @@ export function ExamTokenControls({
 
   return (
     <>
-      <h3>{t('exam-token.exam-token')}</h3>
-      <p>{t('exam-token.token-usage')}</p>
+      <h3>{t($ => $['exam-token']['exam-token'])}</h3>
+      <p>{t($ => $['exam-token']['token-usage'])}</p>
       {generateMutation.isError && (
-        <p style={{ color: 'var(--danger-color)' }}>{t('exam-token.error')}</p>
+        <p style={{ color: 'var(--danger-color)' }}>
+          {t($ => $['exam-token'].error)}
+        </p>
       )}
       {generateMutation.isSuccess && (
         <p style={{ color: 'var(--success-color)' }}>
-          {t('exam-token.generated')}
+          {t($ => $['exam-token'].generated)}
         </p>
       )}
       {!!token && generateMutation.isSuccess && (
         <p style={{ color: 'var(--yellow-color)' }}>
-          {t('exam-token.invalidation-2')}
+          {t($ => $['exam-token']['invalidation-2'])}
         </p>
       )}
       {!!token && !generateMutation.isSuccess && (
         <p style={{ color: 'var(--yellow-color)' }}>
-          {t('exam-token.invalidation-1')}
+          {t($ => $['exam-token']['invalidation-1'])}
         </p>
       )}
       {getTokenQuery.isError && !token && (
         <p style={{ color: 'var(--highlight-color)' }}>
-          {t('exam-token.no-token')}
+          {t($ => $['exam-token']['no-token'])}
         </p>
       )}
-      {nonStaffTesting && <p>{t('exam-token.non-staff-testing')}</p>}
+      {nonStaffTesting && <p>{t($ => $['exam-token']['non-staff-testing'])}</p>}
       {generateMutation.isLoading || getTokenQuery.isLoading ? (
         <Button block={true}>
           <Loader />
@@ -87,7 +89,7 @@ export function ExamTokenControls({
           }
           onClick={() => void generateToken()}
         >
-          {t('exam-token.generate-exam-token')}
+          {t($ => $['exam-token']['generate-exam-token'])}
         </Button>
       )}
       <Spacer size='s' />
@@ -101,7 +103,7 @@ export function ExamTokenControls({
         </Button>
       ) : (
         <Button block={true} disabled={!token} onClick={handleCopyExamToken}>
-          {t('exam-token.copy')}
+          {t($ => $['exam-token'].copy)}
         </Button>
       )}
       <Spacer size='m' />

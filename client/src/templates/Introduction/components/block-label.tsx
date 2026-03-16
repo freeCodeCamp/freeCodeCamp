@@ -11,7 +11,7 @@ function BlockLabel({ blockLabel }: BlockLabelProps): JSX.Element {
 
   return (
     <div className={`block-label block-label-${blockLabel}`}>
-      {t(`learn.block-type.${blockLabel}`)}
+      {t($ => $.learn['block-type'][blockLabel])}
     </div>
   );
 }

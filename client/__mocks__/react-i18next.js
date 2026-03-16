@@ -1,8 +1,52 @@
 import React from 'react';
-import i18next from 'i18next';
+import * as i18next from 'i18next';
+
+function fallbackKeyFromSelector(selector) {
+  const buildProxy = path =>
+    new Proxy(
+      {},
+      {
+        get(_target, prop) {
+          if (prop === 'toString') {
+            return () => path.join('.');
+          }
+          if (prop === Symbol.toPrimitive) {
+            return () => path.join('.');
+          }
+          return buildProxy([...path, String(prop)]);
+        }
+      }
+    );
+
+  try {
+    const value = selector(buildProxy([]));
+    if (typeof value === 'string') return value;
+    if (value && typeof value.toString === 'function') {
+      const key = value.toString();
+      if (key && key !== '[object Object]') return key;
+    }
+  } catch {
+    // ignore and fall through
+  }
+
+  return String(selector);
+}
 
 function mockKeyFromSelector($) {
-  return typeof $ === 'function' ? i18next.keyFromSelector($) : $;
+  if (typeof $ !== 'function') return $;
+
+  if (typeof i18next.keyFromSelector === 'function') {
+    return i18next.keyFromSelector($);
+  }
+
+  if (
+    i18next.default &&
+    typeof i18next.default.keyFromSelector === 'function'
+  ) {
+    return i18next.default.keyFromSelector($);
+  }
+
+  return fallbackKeyFromSelector($);
 }
 // modified from https://github.com/i18next/react-i18next/blob/master/example/test-jest/src/__mocks__/react-i18next.js
 const hasChildren = node =>

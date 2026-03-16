@@ -138,8 +138,8 @@ export function IndependentLowerJaw({
   const isMacOS = navigator.userAgent.includes('Mac OS');
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const checkButtonText = isMacOS
-    ? t('buttons.command-enter')
-    : t('buttons.ctrl-enter');
+    ? t($ => $.buttons['command-enter'])
+    : t($ => $.buttons['ctrl-enter']);
 
   return (
     <div
@@ -158,10 +158,10 @@ export function IndependentLowerJaw({
               className={'tooltip'}
               data-playwright-test-label='independentLowerJaw-hint-close-button'
               onClick={() => setShowHint(false)}
-              aria-label={t('buttons.close')}
+              aria-label={t($ => $.buttons.close)}
             >
               <FontAwesomeIcon icon={faClose} />
-              <span className='tooltiptext'> {t('buttons.close')}</span>
+              <span className='tooltiptext'> {t($ => $.buttons.close)}</span>
             </button>
           </div>
           <div dangerouslySetInnerHTML={{ __html: hint }} />
@@ -176,15 +176,15 @@ export function IndependentLowerJaw({
             <FontAwesomeIcon icon={faZap} />
             <button
               className={'tooltip'}
-              aria-label={t('buttons.close')}
+              aria-label={t($ => $.buttons.close)}
               data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
               onClick={() => setShowSubmissionHint(false)}
             >
               <FontAwesomeIcon icon={faClose} />
-              <span className='tooltiptext'> {t('buttons.close')}</span>
+              <span className='tooltiptext'> {t($ => $.buttons.close)}</span>
             </button>
           </div>
-          <b>{t('learn.congratulations-code-passes')}</b>
+          <b>{t($ => $.learn['congratulations-code-passes'])}</b>
           <div className='progress-bar-container'>
             <Progress minified={true} />
           </div>
@@ -214,13 +214,12 @@ export function IndependentLowerJaw({
                   });
                 }}
               >
-                {t('learn.sign-in-save')}
+                {t($ => $.learn['sign-in-save'])}
               </a>
             </>
           )}
         </div>
       )}
-
       <div className='buttons-row-container'>
         <div className='action-row-left'>
           {isChallengeComplete ? (
@@ -229,11 +228,11 @@ export function IndependentLowerJaw({
               className={`${isSignedIn && 'btn-cta'} tooltip`}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
-              aria-label={t('buttons.submit-continue')}
+              aria-label={t($ => $.buttons['submit-continue'])}
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
-              {t('buttons.submit-continue')}
+              {t($ => $.buttons['submit-continue'])}
               <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
@@ -243,10 +242,10 @@ export function IndependentLowerJaw({
               type='button'
               className='btn-cta tooltip'
               data-playwright-test-label='independentLowerJaw-check-button'
-              aria-label={t('buttons.check-code')}
+              aria-label={t($ => $.buttons['check-code'])}
               onClick={handleCheckButtonClick}
             >
-              {t('buttons.check-code')}
+              {t($ => $.buttons['check-code'])}
               <span className='tooltiptext left-tooltip'>
                 {checkButtonText}
               </span>
@@ -260,21 +259,21 @@ export function IndependentLowerJaw({
                 type='button'
                 className='icon-botton tooltip'
                 data-playwright-test-label='independentLowerJaw-save-button'
-                aria-label={t('buttons.save')}
+                aria-label={t($ => $.buttons.save)}
                 onClick={() => saveChallenge()}
               >
                 <FontAwesomeIcon icon={faSave} />
-                <span className='tooltiptext'> {t('buttons.save')}</span>
+                <span className='tooltiptext'> {t($ => $.buttons.save)}</span>
               </button>
               <button
                 type='button'
                 className='icon-botton tooltip'
                 data-playwright-test-label='independentLowerJaw-revert-button'
-                aria-label={t('buttons.revert')}
+                aria-label={t($ => $.buttons.revert)}
                 onClick={openResetModal}
               >
                 <FontAwesomeIcon icon={faClockRotateLeft} />
-                <span className='tooltiptext'> {t('buttons.revert')}</span>
+                <span className='tooltiptext'> {t($ => $.buttons.revert)}</span>
               </button>
             </>
           ) : (
@@ -282,22 +281,22 @@ export function IndependentLowerJaw({
               type='button'
               className='icon-botton tooltip'
               data-playwright-test-label='independentLowerJaw-reset-button'
-              aria-label={t('buttons.reset')}
+              aria-label={t($ => $.buttons.reset)}
               onClick={openResetModal}
             >
               <FontAwesomeIcon icon={faRotateLeft} />
-              <span className='tooltiptext'> {t('buttons.reset')}</span>
+              <span className='tooltiptext'> {t($ => $.buttons.reset)}</span>
             </button>
           )}
           <button
             type='button'
             className='icon-botton tooltip'
             data-playwright-test-label='independentLowerJaw-help-button'
-            aria-label={t('buttons.help')}
+            aria-label={t($ => $.buttons.help)}
             onClick={openHelpModal}
           >
             <Help />
-            <span className='tooltiptext'> {t('buttons.help')}</span>
+            <span className='tooltiptext'> {t($ => $.buttons.help)}</span>
           </button>
         </div>
       </div>

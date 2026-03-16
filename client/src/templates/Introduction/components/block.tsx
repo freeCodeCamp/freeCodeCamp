@@ -18,6 +18,7 @@ import Caret from '../../../assets/icons/caret';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { playTone } from '../../../utils/tone';
+import { getIntroBlockData } from '../../../utils/type-guards';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import {
@@ -38,7 +39,10 @@ import './block.css';
 
 const { curriculumLocale } = envData;
 
-const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
+const mapStateToProps = (
+  state: Record<string, unknown>,
+  ownProps: { block: string }
+) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.block);
 
   return createSelector(
@@ -48,7 +52,7 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
       isExpanded,
       completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
-  )(state as Record<string, unknown>);
+  )(state);
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -138,19 +142,17 @@ export class Block extends Component<BlockProps> {
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
-    // TODO: convert to selector #61969
-    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title` as never);
-    // TODO: convert to selector #61969
-    const blockIntroArr: string[] = t(
-      `intro:${superBlock}.blocks.${block}.intro` as never,
-      {
-        returnObjects: true
-      }
+    const introData = t($ => $, {
+      ns: 'intro',
+      returnObjects: true
+    });
+    const { title: blockTitle, intro: blockIntroArr } = getIntroBlockData(
+      introData,
+      superBlock,
+      block
     );
-    // TODO: convert to selector #61969
-    const expandText = t('intro:misc-text.expand' as never);
-    // TODO: convert to selector #61969
-    const collapseText = t('intro:misc-text.collapse' as never);
+    const expandText = t($ => $['misc-text'].expand, { ns: 'intro' });
+    const collapseText = t($ => $['misc-text'].collapse, { ns: 'intro' });
 
     const isBlockCompleted = completedCount === challenges.length;
 
@@ -168,15 +170,12 @@ export class Block extends Component<BlockProps> {
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
-        // TODO: convert to selector #61969
-        return t('learn.not-started' as never);
+        return t($ => $.learn['not-started']);
       }
       if (isBlockCompleted) {
-        // TODO: convert to selector #61969
-        return t('learn.completed' as never);
+        return t($ => $.learn.completed);
       }
-      // TODO: convert to selector #61969
-      return `${percentageCompleted}% ${t('learn.completed' as never)}`;
+      return `${percentageCompleted}% ${t($ => $.learn.completed)}`;
     };
 
     /**
@@ -194,13 +193,11 @@ export class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  // TODO: convert to selector #61969
-                  to={t('links:help-translate-link-url' as never)}
+                  to={t($ => $['help-translate-link-url'], {
+                    ns: 'links'
+                  })}
                 >
-                  {
-                    // TODO: convert to selector #61969
-                    t('misc.translation-pending' as never)
-                  }
+                  {t($ => $.misc['translation-pending'])}
                 </Link>
               </div>
             )}
@@ -222,13 +219,10 @@ export class Block extends Component<BlockProps> {
               <span aria-hidden='true'>{`${completedCount}/${challenges.length}`}</span>
               <span className='sr-only'>
                 ,{' '}
-                {
-                  // TODO: convert to selector #61969
-                  t('learn.challenges-completed' as never, {
-                    completedCount,
-                    totalChallenges: challenges.length
-                  })
-                }
+                {t($ => $.learn['challenges-completed'], {
+                  completedCount,
+                  totalChallenges: challenges.length
+                })}
               </span>
             </div>
           </button>
@@ -257,13 +251,11 @@ export class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  // TODO: convert to selector #61969
-                  to={t('links:help-translate-link-url' as never)}
+                  to={t($ => $['help-translate-link-url'], {
+                    ns: 'links'
+                  })}
                 >
-                  {
-                    // TODO: convert to selector #61969
-                    t('misc.translation-pending' as never)
-                  }
+                  {t($ => $.misc['translation-pending'])}
                 </Link>
               </div>
             )}
@@ -304,13 +296,11 @@ export class Block extends Component<BlockProps> {
                 <div className='tags-wrapper'>
                   <Link
                     className='cert-tag'
-                    // TODO: convert to selector #61969
-                    to={t('links:help-translate-link-url' as never)}
+                    to={t($ => $['help-translate-link-url'], {
+                      ns: 'links'
+                    })}
                   >
-                    {
-                      // TODO: convert to selector #61969
-                      t('misc.translation-pending' as never)
-                    }
+                    {t($ => $.misc['translation-pending'])}
                   </Link>
                 </div>
               )}
@@ -358,9 +348,11 @@ export class Block extends Component<BlockProps> {
                 <div className='tags-wrapper'>
                   <Link
                     className='cert-tag'
-                    to={t('links:help-translate-link-url')}
+                    to={t($ => $['help-translate-link-url'], {
+                      ns: 'links'
+                    })}
                   >
-                    {t('misc.translation-pending')}
+                    {t($ => $.misc['translation-pending'])}
                   </Link>
                 </div>
               )}
@@ -389,27 +381,18 @@ export class Block extends Component<BlockProps> {
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
-              {
-                // TODO: convert to selector #61969
-                t('misc.certification-project' as never)
-              }
+              {t($ => $.misc['certification-project'])}
             </span>
             {!isAudited && (
               <Link
                 className='cert-tag'
-                // TODO: convert to selector #61969
-                to={t('links:help-translate-link-url' as never)}
+                to={t($ => $['help-translate-link-url'], {
+                  ns: 'links'
+                })}
               >
-                {
-                  // TODO: convert to selector #61969
-                  t('misc.translation-pending' as never)
-                }{' '}
+                {t($ => $.misc['translation-pending'])}{' '}
                 <span className='sr-only'>
-                  {blockTitle}{' '}
-                  {
-                    // TODO: convert to selector #61969
-                    t('misc.certification-project' as never)
-                  }
+                  {blockTitle} {t($ => $.misc['certification-project'])}
                 </span>
               </Link>
             )}
@@ -425,12 +408,9 @@ export class Block extends Component<BlockProps> {
                 <CheckMark isCompleted={isBlockCompleted} />
                 {blockTitle}{' '}
                 <span className='sr-only'>
-                  {
-                    // TODO: convert to selector #61969
-                    isBlockCompleted
-                      ? `${t('misc.certification-project' as never)}, ${t('learn.completed' as never)}`
-                      : `${t('misc.certification-project' as never)}, ${t('learn.not-completed' as never)}`
-                  }
+                  {isBlockCompleted
+                    ? `${t($ => $.misc['certification-project'])}, ${t($ => $.learn.completed)}`
+                    : `${t($ => $.misc['certification-project'])}, ${t($ => $.learn['not-completed'])}`}
                 </span>
               </Link>
             </h3>
@@ -469,9 +449,11 @@ export class Block extends Component<BlockProps> {
                 <div className='tags-wrapper'>
                   <Link
                     className='cert-tag'
-                    to={t('links:help-translate-link-url')}
+                    to={t($ => $['help-translate-link-url'], {
+                      ns: 'links'
+                    })}
                   >
-                    {t('misc.translation-pending')}
+                    {t($ => $.misc['translation-pending'])}
                   </Link>
                 </div>
               )}
@@ -526,13 +508,11 @@ export class Block extends Component<BlockProps> {
                 <div className='tags-wrapper'>
                   <Link
                     className='cert-tag'
-                    // TODO: convert to selector #61969
-                    to={t('links:help-translate-link-url' as never)}
+                    to={t($ => $['help-translate-link-url'], {
+                      ns: 'links'
+                    })}
                   >
-                    {
-                      // TODO: convert to selector #61969
-                      t('misc.translation-pending' as never)
-                    }
+                    {t($ => $.misc['translation-pending'])}
                   </Link>
                 </div>
               )}

@@ -43,6 +43,12 @@ type Challenge = {
   title: string;
 };
 
+type IntroUser = Partial<User> &
+  Pick<User, 'completedChallenges' | 'isDonating'>;
+
+const isUserWithCertData = (user: IntroUser | null): user is User =>
+  Boolean(user && typeof user.username === 'string');
+
 type SuperBlockMapProps = {
   completedChallengeIds: string[];
   disabledBlocks: string[];
@@ -51,7 +57,7 @@ type SuperBlockMapProps = {
   structure?: ChapterBasedSuperBlockStructure;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
-  user: User | null;
+  user: IntroUser | null;
 };
 
 const BlockList = ({
@@ -65,7 +71,7 @@ const BlockList = ({
   showCertification: boolean;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
-  user: User | null;
+  user: IntroUser | null;
 }) => {
   const visibleBlocks = useMemo(() => {
     const uniqueBlocks = Array.from(
@@ -95,7 +101,7 @@ const BlockList = ({
           />
         );
       })}
-      {showCertification && !!user && (
+      {showCertification && isUserWithCertData(user) && (
         <CertChallenge superBlock={superBlock} user={user} />
       )}
     </div>
@@ -127,7 +133,7 @@ export const SuperBlockMap = ({
         [];
 
       const requirementItems = requirements.map((requirement: SuperBlocks) => {
-        const requirementTitle = t(`intro:${requirement}.title`);
+        const requirementTitle = t($ => $[requirement].title, { ns: 'intro' });
         const requirementLink = `/learn/${requirement}/`;
 
         const certSlug = superBlockToCertMap[requirement];
@@ -167,12 +173,11 @@ export const SuperBlockMap = ({
             </ul>
             <Spacer size='m' />
             <h2 className='text-center big-subheading'>
-              {t(`intro:misc-text.courses`)}
+              {t($ => $['misc-text'].courses, { ns: 'intro' })}
             </h2>
             <Spacer size='m' />
           </>
         )}
-
         <SuperBlockAccordion
           challenges={superBlockChallenges}
           superBlock={superBlock}

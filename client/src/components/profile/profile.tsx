@@ -41,8 +41,8 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <Callout variant='note' label={t('misc.note')}>
-        {t('profile.you-change-privacy')}
+      <Callout variant='note' label={t($ => $.misc.note)}>
+        {t($ => $.profile['you-change-privacy'])}
       </Callout>
       <Spacer size='xl' />
     </FullWidthRow>
@@ -54,7 +54,7 @@ const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
-      <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
+      <Modal.Header>{t($ => $.profile['edit-my-profile'])}</Modal.Header>
       <Modal.Body alignment='left'>
         <UsernameSettings username={username} setIsEditing={setIsEditing} />
         <Spacer size='m' />
@@ -76,8 +76,10 @@ const VisitorMessage = ({
 }: Omit<MessageProps, 'isSessionUser'>) => {
   return (
     <FullWidthRow>
-      <Callout variant='note' label={t('misc.note')}>
-        {t('profile.username-change-privacy', { username })}
+      <Callout variant='note' label={t($ => $.misc.note)}>
+        {t($ => $.profile['username-change-privacy'], {
+          username: username
+        })}
       </Callout>
       <Spacer size='m' />
     </FullWidthRow>
@@ -173,7 +175,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   return (
     <>
       <Helmet>
-        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
+        <title>{t($ => $.buttons.profile)} | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size='m' />
       <Container>
@@ -187,7 +189,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
         {!isSessionUser && (
           <Row className='text-center'>
             <Link to={`/user/${username}/report-user`}>
-              {t('buttons.flag-user')}
+              {t($ => $.buttons['flag-user'])}
             </Link>
           </Row>
         )}

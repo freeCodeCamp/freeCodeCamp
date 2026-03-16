@@ -138,7 +138,7 @@ const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
   return (
     <div>
       <Button block={true} size='small' variant='primary' onClick={onClick}>
-        {t('buttons.close')}
+        {t($ => $.buttons.close)}
       </Button>
     </div>
   );
@@ -165,7 +165,7 @@ const DonationSection = ({
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
             <p data-playwright-test-label='donation-text'>
-              {t('donate.only-you')}
+              {t($ => $.donate['only-you'])}
             </p>
           </Col>
         </Row>
@@ -233,49 +233,55 @@ const ShareCertBtns = ({
           target='_blank'
           data-playwright-test-label='linkedin-share-btn'
         >
-          {t('profile.add-linkedin')}
+          {t($ => $.profile['add-linkedin'])}
         </Button>
         <Spacer size='m' />
         <Button
           block={true}
           size='large'
           variant='primary'
-          href={`https://x.com/intent/post?text=${t('profile.tweet', {
+          href={`https://x.com/intent/post?text=${t($ => $.profile.tweet, {
             certTitle: urlFriendlyCertTitle,
-            certURL
+            certURL: certURL
           })}`}
           target='_blank'
           data-playwright-test-label='twitter-share-btn'
         >
-          {t('profile.add-twitter')}
+          {t($ => $.profile['add-twitter'])}
         </Button>
         <Spacer size='m' />
         <Button
           block={true}
           size='large'
           variant='primary'
-          href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
-            certTitle: urlFriendlyCertTitle,
-            certURL
-          })}`}
+          href={`https://bsky.app/intent/compose?text=${t(
+            $ => $.profile.tweet,
+            {
+              certTitle: urlFriendlyCertTitle,
+              certURL: certURL
+            }
+          )}`}
           target='_blank'
           data-playwright-test-label='bluesky-share-btn'
         >
-          {t('profile.add-bluesky')}
+          {t($ => $.profile['add-bluesky'])}
         </Button>
         <Spacer size='m' />
         <Button
           block={true}
           size='large'
           variant='primary'
-          href={`https://threads.net/intent/post?text=${t('profile.tweet', {
-            certTitle: urlFriendlyCertTitle,
-            certURL
-          })}`}
+          href={`https://threads.net/intent/post?text=${t(
+            $ => $.profile.tweet,
+            {
+              certTitle: urlFriendlyCertTitle,
+              certURL: certURL
+            }
+          )}`}
           target='_blank'
           data-playwright-test-label='thread-share-btn'
         >
-          {t('profile.add-threads')}
+          {t($ => $.profile['add-threads'])}
         </Button>
       </Col>
       <Spacer size='l' />
@@ -453,10 +459,20 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       ? 'certification.fulltextLanguageExam'
                       : 'certification.fulltext'
                 }
-                title={t(`certification.title.${certSlug}`, certTitle)}
+                title={t(
+                  $ =>
+                    $.certification.title[
+                      certSlug as keyof typeof $.certification.title
+                    ]
+                )}
                 values={{
                   user: displayName,
-                  title: t(`certification.title.${certSlug}`, certTitle),
+                  title: t(
+                    $ =>
+                      $.certification.title[
+                        certSlug as keyof typeof $.certification.title
+                      ]
+                  ),
                   time: certDate.toLocaleString([localeCode, 'en-US'], {
                     year: 'numeric',
                     month: 'long',
@@ -487,7 +503,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <div>
                     <Image
                       data-playwright-test-label='quincy-signature'
-                      alt={t('certification.quincy-larson-signature')}
+                      alt={t($ => $.certification['quincy-larson-signature'])}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/quincy-larson-signature.svg'
@@ -497,13 +513,13 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       <strong>Quincy Larson</strong>
                     </p>
                     <p className='signee-role'>
-                      {t('certification.executive')}
+                      {t($ => $.certification.executive)}
                     </p>
                   </div>
                   <div className='microsoft-signature'>
                     <Image
                       data-playwright-test-label='microsoft-signature'
-                      alt={t('certification.julia-liuson-signature')}
+                      alt={t($ => $.certification['julia-liuson-signature'])}
                       src={
                         'https://cdn.freecodecamp.org' +
                         '/platform/english/images/microsoft-signature.png'
@@ -514,7 +530,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       <strong>Julia Liuson</strong>
                     </p>
                     <p className='signee-role'>
-                      {t('certification.ms-president')}
+                      {t($ => $.certification['ms-president'])}
                     </p>
                   </div>
                 </>
@@ -522,7 +538,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 <div>
                   <Image
                     data-playwright-test-label='quincy-signature'
-                    alt={t('certification.quincy-larson-signature')}
+                    alt={t($ => $.certification['quincy-larson-signature'])}
                     src={
                       'https://cdn.freecodecamp.org' +
                       '/platform/english/images/quincy-larson-signature.svg'
@@ -531,7 +547,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                   <p className='signee-name'>
                     <strong>Quincy Larson</strong>
                   </p>
-                  <p className='signee-role'>{t('certification.executive')}</p>
+                  <p className='signee-role'>
+                    {t($ => $.certification.executive)}
+                  </p>
                 </div>
               )}
             </div>
@@ -547,7 +565,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
             )}
             <Row>
               <p className='verify'>
-                {t('certification.verify')}
+                {t($ => $.certification.verify)}
                 <br />
                 {certURL}
               </p>

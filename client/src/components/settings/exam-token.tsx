@@ -32,7 +32,7 @@ function ExamToken({ email }: ExamTokenProps) {
       setExamToken(examEnvironmentAuthorizationToken);
       setExamTokenError('');
     } catch (_e) {
-      setExamTokenError(t('exam-token.error'));
+      setExamTokenError(t($ => $['exam-token'].error));
     }
 
     setRecentlyGenerated(true);
@@ -52,11 +52,11 @@ function ExamToken({ email }: ExamTokenProps) {
           setCopyError(null);
         }}
       >
-        <Modal.Header>{t('exam-token.exam-token')}</Modal.Header>
+        <Modal.Header>{t($ => $['exam-token']['exam-token'])}</Modal.Header>
         <Modal.Body>
           {examToken && (
             <p style={{ wordBreak: 'break-word' }}>
-              {t('exam-token.your-exam-token', {
+              {t($ => $['exam-token']['your-exam-token'], {
                 token: examToken
               })}
             </p>
@@ -70,17 +70,17 @@ function ExamToken({ email }: ExamTokenProps) {
             onClick={() => {
               navigator.clipboard.writeText(examToken ?? '').then(
                 () => {
-                  setCopySuccess(t('exam-token.copied'));
+                  setCopySuccess(t($ => $['exam-token'].copied));
                   setCopyError(null);
                 },
                 () => {
-                  setCopyError(t('exam-token.copy-error'));
+                  setCopyError(t($ => $['exam-token']['copy-error']));
                   setCopySuccess(null);
                 }
               );
             }}
           >
-            {t('buttons.copy')}
+            {t($ => $.buttons.copy)}
           </Button>
           <Spacer size='s' />
           <Button
@@ -90,27 +90,29 @@ function ExamToken({ email }: ExamTokenProps) {
               setCopyError(null);
             }}
           >
-            {t('buttons.close')}
+            {t($ => $.buttons.close)}
           </Button>
         </Modal.Footer>
       </Modal>
       <Panel variant='info' id='exam-environment-authorization-token'>
         <Panel.Heading>
           <h2 className='settings-exam-token-heading'>
-            {t('exam-token.exam-token')}
+            {t($ => $['exam-token']['exam-token'])}
           </h2>
         </Panel.Heading>
         <Panel.Body>
-          <p>{t('exam-token.note')}</p>
-          <strong>{t('exam-token.invalidation-2')}</strong>
+          <p>{t($ => $['exam-token'].note)}</p>
+          <strong>{t($ => $['exam-token']['invalidation-2'])}</strong>
           <Spacer size='s' />
-          {nonStaffTesting && <p>{t('exam-token.non-staff-testing')}</p>}
+          {nonStaffTesting && (
+            <p>{t($ => $['exam-token']['non-staff-testing'])}</p>
+          )}
           <Button
             block={true}
             disabled={recentlyGenerated || nonStaffTesting}
             onClick={() => void getToken()}
           >
-            {t('exam-token.generate-exam-token')}
+            {t($ => $['exam-token']['generate-exam-token'])}
           </Button>
         </Panel.Body>
       </Panel>

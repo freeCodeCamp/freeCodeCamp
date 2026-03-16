@@ -10,8 +10,10 @@ function RdbOnaLogoutAlert({ course }: RdbOnaLogoutAlertProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Callout variant='caution' label={t('misc.caution')}>
-      {t('learn.ona.logout-warning', { course })}
+    <Callout variant='caution' label={t($ => $.misc.caution)}>
+      {t($ => $.learn.ona['logout-warning'], {
+        course: course
+      })}
     </Callout>
   );
 }

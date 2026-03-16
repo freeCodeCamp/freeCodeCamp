@@ -34,7 +34,12 @@ interface ExperienceValidation {
 
 interface ValidationResult {
   state: FormGroupProps['validationState'];
-  messageKey: string;
+  messageKey:
+    | ''
+    | 'validation.start-date-required'
+    | 'validation.end-date-required'
+    | 'profile.experience.date-format-error'
+    | 'profile.experience.date-invalid';
 }
 
 const mapDispatchToProps = {
@@ -52,7 +57,13 @@ export const validateDate = ({
 }): ValidationResult => {
   // Check if date is required and empty
   if (isRequired && !date) {
-    return { state: 'error', messageKey: `validation.${fieldName}-required` };
+    return {
+      state: 'error',
+      messageKey:
+        fieldName === 'start-date'
+          ? 'validation.start-date-required'
+          : 'validation.end-date-required'
+    };
   }
 
   // Allow empty for optional dates
@@ -169,13 +180,13 @@ const ExperienceSettings = (props: ExperienceProps) => {
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: t('validation.max-characters-500', { charsLeft: 0 })
+        message: t($ => $.validation['max-characters-500'], { charsLeft: 0 })
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
       return {
         state: 'warning',
-        message: t('validation.max-characters-500', { charsLeft })
+        message: t($ => $.validation['max-characters-500'], { charsLeft })
       };
     }
     if (charsLeft === 500) {
@@ -188,15 +199,34 @@ const ExperienceSettings = (props: ExperienceProps) => {
     value: string,
     field: 'title' | 'company'
   ): ExperienceValidation => {
+    const messageSelectors = {
+      title: {
+        required: ($: { validation: { 'title-required': string } }) =>
+          $.validation['title-required'],
+        short: ($: { validation: { 'title-short': string } }) =>
+          $.validation['title-short'],
+        long: ($: { validation: { 'title-long': string } }) =>
+          $.validation['title-long']
+      },
+      company: {
+        required: ($: { validation: { 'company-required': string } }) =>
+          $.validation['company-required'],
+        short: ($: { validation: { 'company-short': string } }) =>
+          $.validation['company-short'],
+        long: ($: { validation: { 'company-long': string } }) =>
+          $.validation['company-long']
+      }
+    } as const;
+
     if (!value) {
-      return { state: 'error', message: t(`validation.${field}-required`) };
+      return { state: 'error', message: t(messageSelectors[field].required) };
     }
     const len = value.length;
     if (len < 2) {
-      return { state: 'error', message: t(`validation.${field}-short`) };
+      return { state: 'error', message: t(messageSelectors[field].short) };
     }
     if (len > 144) {
-      return { state: 'error', message: t(`validation.${field}-long`) };
+      return { state: 'error', message: t(messageSelectors[field].long) };
     }
     return { state: 'success', message: '' };
   };
@@ -206,6 +236,22 @@ const ExperienceSettings = (props: ExperienceProps) => {
   const getCompanyValidation = (company: string) =>
     getTextValidation(company, 'company');
 
+  const getDateValidationMessage = (
+    messageKey: ValidationResult['messageKey']
+  ) => {
+    switch (messageKey) {
+      case 'validation.start-date-required':
+      case 'validation.end-date-required':
+        return t($ => $.validation['start-date-required']);
+      case 'profile.experience.date-format-error':
+        return t($ => $.profile.experience['date-format-error']);
+      case 'profile.experience.date-invalid':
+        return t($ => $.profile.experience['date-invalid']);
+      default:
+        return '';
+    }
+  };
+
   const getStartDateValidation = (startDate: string): ExperienceValidation => {
     const result = validateDate({
       date: startDate,
@@ -214,7 +260,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     });
     return {
       state: result.state,
-      message: result.messageKey ? t(result.messageKey) : ''
+      message: getDateValidationMessage(result.messageKey)
     };
   };
 
@@ -226,7 +272,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     });
     return {
       state: result.state,
-      message: result.messageKey ? t(result.messageKey) : ''
+      message: getDateValidationMessage(result.messageKey)
     };
   };
 
@@ -294,7 +340,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-title-input`}>
-              {t('profile.experience.job-title')}{' '}
+              {t($ => $.profile.experience['job-title'])}{' '}
               <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
@@ -317,7 +363,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-company-input`}>
-              {t('profile.experience.company')}{' '}
+              {t($ => $.profile.experience.company)}{' '}
               <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
@@ -337,7 +383,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           </FormGroup>
           <FormGroup controlId={`${id}-location`}>
             <ControlLabel htmlFor={`${id}-location-input`}>
-              {t('profile.experience.location')}
+              {t($ => $.profile.experience.location)}
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'location')}
@@ -354,7 +400,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-startDate-input`}>
-              {t('profile.experience.start-date')}{' '}
+              {t($ => $.profile.experience['start-date'])}{' '}
               <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
@@ -382,8 +428,8 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-endDate-input`}>
-              {t('profile.experience.end-date')} (
-              {t('profile.experience.end-date-helper')})
+              {t($ => $.profile.experience['end-date'])} (
+              {t($ => $.profile.experience['end-date-helper'])})
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'endDate')}
@@ -404,7 +450,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             validationState={pristine ? null : descriptionState}
           >
             <ControlLabel htmlFor={`${id}-description-input`}>
-              {t('profile.experience.description')}{' '}
+              {t($ => $.profile.experience.description)}{' '}
               <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
@@ -429,7 +475,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             bgSize='large'
             {...((isButtonDisabled || pristine) && { tabIndex: -1 })}
           >
-            {t('profile.experience.save')}
+            {t($ => $.profile.experience.save)}
           </BlockSaveButton>
           <Spacer size='xs' />
           <Button
@@ -439,7 +485,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             onClick={() => handleRemoveItem(id)}
             type='button'
           >
-            {t('profile.experience.remove')}
+            {t($ => $.profile.experience.remove)}
           </Button>
         </form>
       </FullWidthRow>
@@ -448,9 +494,9 @@ const ExperienceSettings = (props: ExperienceProps) => {
 
   return (
     <section id='experience-settings'>
-      <SectionHeader>{t('profile.experience.heading')}</SectionHeader>
+      <SectionHeader>{t($ => $.profile.experience.heading)}</SectionHeader>
       <FullWidthRow>
-        <p>{t('profile.experience.share-experience')}</p>
+        <p>{t($ => $.profile.experience['share-experience'])}</p>
         <Spacer size='xs' />
         <Button
           block
@@ -460,7 +506,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           onClick={handleAdd}
           type='button'
         >
-          {t('profile.experience.add')}
+          {t($ => $.profile.experience.add)}
         </Button>
       </FullWidthRow>
       <Spacer size='l' />

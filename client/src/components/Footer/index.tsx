@@ -18,7 +18,7 @@ function Footer(): JSX.Element {
           <p>{t($ => $.footer['mission-statement'])}</p>
           <p>{t($ => $.footer['donation-initiatives'])}</p>
           <p className='footer-donation'>
-            <Trans i18nKey={$ => $.footer['donate-text']}>
+            <Trans i18nKey='footer.donate-text'>
               You can
               <Link className='inline' to='/donate'>
                 make a tax-deductible donation here

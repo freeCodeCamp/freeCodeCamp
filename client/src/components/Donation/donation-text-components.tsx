@@ -67,7 +67,7 @@ const OtherWaysToSupport = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <p>
-      <Trans i18nKey={$ => $.donate['if-support-further']}>
+      <Trans i18nKey='donate.if-support-further'>
         <a
           href={t($ => $.donate['one-time-external-url'], {
             ns: 'links'
@@ -133,7 +133,7 @@ export const DonationFaqText = (): JSX.Element => {
         <>
           <p>{t($ => $.donate['very-transparent'])}</p>
           <p>
-            <Trans i18nKey={$ => $.donate['download-irs']}>
+            <Trans i18nKey='donate.download-irs'>
               <a
                 href={t($ => $.donate['download-irs-url'], {
                   ns: 'links'
@@ -144,7 +144,7 @@ export const DonationFaqText = (): JSX.Element => {
             </Trans>
           </p>
           <p>
-            <Trans i18nKey={$ => $.donate['download-990']}>
+            <Trans i18nKey='donate.download-990'>
               <a
                 href={t($ => $.donate['download-990-url'], {
                   ns: 'links'
@@ -171,7 +171,7 @@ export const DonationFaqText = (): JSX.Element => {
       A: (
         <>
           <p>
-            <Trans i18nKey={$ => $.donate['one-time']}>
+            <Trans i18nKey='donate.one-time'>
               <a
                 href={t($ => $.donate['one-time-url'], {
                   ns: 'links'
@@ -275,7 +275,7 @@ const BenefitsList = (): JSX.Element => {
       <li>{t($ => $.donate['support-benefits-2'])}</li>
       <li>{t($ => $.donate['support-benefits-3'])}</li>
       <li>
-        <Trans i18nKey={$ => $.donate['support-benefits-4']}>
+        <Trans i18nKey='donate.support-benefits-4'>
           <a
             href='https://discord.gg/KVUmVXA'
             target='_blank'
@@ -321,22 +321,22 @@ export const CommunityAchievementsText = (): JSX.Element => {
       <h2>{t($ => $.donate['community-achivements-title'])}</h2>
       <ul>
         <li>
-          <Trans i18nKey={$ => $.donate['community-achivements-1']}>
+          <Trans i18nKey='donate.community-achivements-1'>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey={$ => $.donate['community-achivements-2']}>
+          <Trans i18nKey='donate.community-achivements-2'>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey={$ => $.donate['community-achivements-3']}>
+          <Trans i18nKey='donate.community-achivements-3'>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey={$ => $.donate['community-achivements-4']}>
+          <Trans i18nKey='donate.community-achivements-4'>
             <b>placeholder</b>
           </Trans>
         </li>

@@ -33,7 +33,7 @@ export function CodespacesInstructions({
 
   return (
     <div className='ca-description'>
-      <p>{t('learn.codespaces.intro')}</p>
+      <p>{t($ => $.learn.codespaces.intro)}</p>
       <ol>
         <li>
           <Trans i18nKey='learn.codespaces.step-1'>
@@ -49,26 +49,26 @@ export function CodespacesInstructions({
         {isSignedIn && (
           <>
             <Spacer size='s' />
-            <p>{t('learn.local.sub-step-heading')}</p>
+            <p>{t($ => $.learn.local['sub-step-heading'])}</p>
             <ol>
-              <li>{t('learn.local.sub-step-1')}</li>
+              <li>{t($ => $.learn.local['sub-step-1'])}</li>
               <Spacer size='xxs' />
               <Button
                 disabled={!!userToken}
                 block={true}
                 onClick={() => void generateUserToken()}
               >
-                {t('learn.local.generate-token-btn')}
+                {t($ => $.learn.local['generate-token-btn'])}
               </Button>
               <Spacer size='xs' />
-              <li>{t('learn.local.sub-step-2')}</li>
+              <li>{t($ => $.learn.local['sub-step-2'])}</li>
               <Spacer size='xxs' />
               <Button
                 disabled={!userToken}
                 block={true}
                 onClick={copyUserToken}
               >
-                {t('learn.local.copy-token-btn')}
+                {t($ => $.learn.local['copy-token-btn'])}
               </Button>
               <Spacer size='xs' />
               <li>
@@ -102,12 +102,12 @@ export function CodespacesInstructions({
             <Spacer size='s' />
           </>
         )}
-        <li>{t('learn.codespaces.step-2')}</li>
-        <li>{t('learn.codespaces.step-3')}</li>
+        <li>{t($ => $.learn.codespaces['step-2'])}</li>
+        <li>{t($ => $.learn.codespaces['step-3'])}</li>
         <li>
-          {t('learn.codespaces.step-4')}
+          {t($ => $.learn.codespaces['step-4'])}
           <ul>
-            <li>{t('learn.codespaces.step-5')}</li>
+            <li>{t($ => $.learn.codespaces['step-5'])}</li>
             <li>
               <Trans i18nKey='learn.codespaces.step-6'>
                 <code>placeholder</code>
@@ -123,17 +123,17 @@ export function CodespacesInstructions({
                 <code>placeholder</code>
               </Trans>
             </li>
-            <li>{t('learn.local.step-6')}</li>
-            <li>{t('learn.local.step-7')}</li>
+            <li>{t($ => $.learn.local['step-6'])}</li>
+            <li>{t($ => $.learn.local['step-7'])}</li>
             <Spacer size='xxs' />
             <Button block={true} onClick={copyUrl}>
-              {t('learn.local.copy-url')}
+              {t($ => $.learn.local['copy-url'])}
             </Button>
             <Spacer size='xs' />
-            <li>{t('learn.local.step-8')}</li>
+            <li>{t($ => $.learn.local['step-8'])}</li>
           </ul>
         </li>
-        <li>{t('learn.codespaces.step-9')}</li>
+        <li>{t($ => $.learn.codespaces['step-9'])}</li>
       </ol>
       <Spacer size='m' />
       <CodespacesContinueAlert title={title} />
@@ -150,7 +150,7 @@ interface CodespacesContinueAlertProps {
 function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
   const { t } = useTranslation();
   return (
-    <Callout variant='note' label={t('misc.note')}>
+    <Callout variant='note' label={t($ => $.misc.note)}>
       <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
         <a
           href='https://github.com/freeCodeCamp/rdb-alpha'
@@ -184,8 +184,10 @@ function CodespacesLogoutAlert({
   const { t } = useTranslation();
 
   return (
-    <Callout variant='caution' label={t('misc.caution')}>
-      {t('learn.codespaces.logout-warning', { course })}
+    <Callout variant='caution' label={t($ => $.misc.caution)}>
+      {t($ => $.learn.codespaces['logout-warning'], {
+        course: course
+      })}
     </Callout>
   );
 }

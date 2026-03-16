@@ -114,11 +114,13 @@ const GridChallenge = ({
       }`}
     >
       <span className='sr-only'>
-        {isTask ? t('aria.task') : t('aria.step')}
+        {isTask ? t($ => $.aria.task) : t($ => $.aria.step)}
       </span>
       <span>{challenge.stepNumber}</span>
       <span className='sr-only'>
-        {challenge.isCompleted ? t('icons.passed') : t('icons.not-passed')}
+        {challenge.isCompleted
+          ? t($ => $.icons.passed)
+          : t($ => $.icons['not-passed'])}
       </span>
     </Link>
   );
@@ -146,8 +148,8 @@ const LinkToFirstIncompleteChallenge = ({
         onClick={onChallengeClick}
       >
         {!isChallengeStarted
-          ? t('buttons.start-project')
-          : t('buttons.resume-project')}{' '}
+          ? t($ => $.buttons['start-project'])
+          : t($ => $.buttons['resume-project'])}{' '}
         <span className='sr-only'>{blockTitle}</span>
       </ButtonLink>
     </div>
@@ -171,7 +173,11 @@ export const GridMapChallenges = ({
           onChallengeClick={onChallengeClick}
         />
       )}
-      <nav aria-label={t('aria.steps-for', { blockTitle })}>
+      <nav
+        aria-label={t($ => $.aria['steps-for'], {
+          blockTitle: blockTitle
+        })}
+      >
         <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
             <li
@@ -220,8 +226,11 @@ export const ChallengesWithDialogues = ({
           onChallengeClick={onChallengeClick}
         />
       )}
-
-      <nav aria-label={t('aria.dialogues-and-tasks-for', { blockTitle })}>
+      <nav
+        aria-label={t($ => $.aria['dialogues-and-tasks-for'], {
+          blockTitle: blockTitle
+        })}
+      >
         <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
             <li

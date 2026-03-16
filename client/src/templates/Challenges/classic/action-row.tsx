@@ -70,7 +70,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 aria-expanded={props.showContentOutline}
                 onClick={props.onToggleContentOutline}
               >
-                {t('buttons.outline')}
+                {t($ => $.buttons.outline)}
               </button>
             )}
           </div>
@@ -82,10 +82,10 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                   aria-describedby='interactive-editor-desc'
                   onClick={props.toggleInteractiveEditor}
                 >
-                  {t('learn.editor-tabs.interactive-editor')}
+                  {t($ => $.learn['editor-tabs']['interactive-editor'])}
                 </button>
                 <span id='interactive-editor-desc' className='sr-only'>
-                  {t('aria.interactive-editor-desc')}
+                  {t($ => $.aria['interactive-editor-desc'])}
                 </span>
               </div>
             )}
@@ -115,19 +115,21 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
   function getPreviewBtnsSrText() {
     // no preview open
     const previewBtnsSrText = {
-      pane: t('aria.show-preview'),
-      portal: t('aria.open-preview-in-new-window')
+      pane: t($ => $.aria['show-preview']),
+      portal: t($ => $.aria['open-preview-in-new-window'])
     };
 
     // preview open in main window
     if (showPreviewPane && !showPreviewPortal) {
-      previewBtnsSrText.pane = t('aria.hide-preview');
-      previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
+      previewBtnsSrText.pane = t($ => $.aria['hide-preview']);
+      previewBtnsSrText.portal = t($ => $.aria['move-preview-to-new-window']);
 
       // preview open in external window
     } else if (showPreviewPortal && !showPreviewPane) {
-      previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-preview-window');
+      previewBtnsSrText.pane = t($ => $.aria['move-preview-to-main-window']);
+      previewBtnsSrText.portal = t(
+        $ => $.aria['close-external-preview-window']
+      );
     }
 
     return previewBtnsSrText;
@@ -140,8 +142,8 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     challengeType === challengeTypes.dailyChallengePy;
 
   const previewButtonText = isPythonChallenge
-    ? t('learn.editor-tabs.terminal')
-    : t('learn.editor-tabs.preview');
+    ? t($ => $.learn['editor-tabs'].terminal)
+    : t($ => $.learn['editor-tabs'].preview);
 
   const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
     store.set('dailyCodingChallengeLanguage', language);
@@ -159,7 +161,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
               aria-expanded={!!showInstructions}
               onClick={() => togglePane('showInstructions')}
             >
-              {t('learn.editor-tabs.instructions')}
+              {t($ => $.learn['editor-tabs'].instructions)}
             </button>
           )}
           <EditorTabs data-playwright-test-label='editor-tabs' />
@@ -189,14 +191,14 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
             aria-expanded={!!showConsole}
             onClick={() => togglePane('showConsole')}
           >
-            {t('learn.editor-tabs.console')}
+            {t($ => $.learn['editor-tabs'].console)}
           </button>
           {hasNotes && (
             <button
               aria-expanded={!!showNotes}
               onClick={() => togglePane('showNotes')}
             >
-              {t('learn.editor-tabs.notes')}
+              {t($ => $.learn['editor-tabs'].notes)}
             </button>
           )}
           {hasPreview && (

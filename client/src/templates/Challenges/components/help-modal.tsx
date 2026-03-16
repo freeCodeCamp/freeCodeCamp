@@ -8,6 +8,7 @@ import { t } from 'i18next';
 import envData from '../../../../config/env.json';
 import { createQuestion, closeModal, openModal } from '../redux/actions';
 import { isHelpModalOpenSelector } from '../redux/selectors';
+import { getIntroBlockTitle } from '../../../utils/type-guards';
 
 import './help-modal.css';
 import callGA from '../../../analytics/call-ga';
@@ -30,7 +31,7 @@ const DESCRIPTION_MAX_CHARS = 500;
 const RSA = forumLocation + '/t/19514';
 
 const mapStateToProps = (state: unknown) => ({
-  isOpen: isHelpModalOpenSelector(state) as boolean
+  isOpen: Boolean(isHelpModalOpenSelector(state))
 });
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
@@ -47,20 +48,29 @@ export const generateSearchLink = (
   block: string,
   superBlock: string
 ) => {
-  const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
+  const introData = t($ => $, {
+    ns: 'intro',
+    returnObjects: true
+  });
+  const titleText = getIntroBlockTitle(introData, superBlock, block);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
   const search = `${forumLocation}/search?q=${query}`;
   return search;
 };
 
+type CheckboxI18nKey =
+  | 'learn.read-search-ask-checkbox'
+  | 'learn.similar-questions-checkbox';
+type CheckboxLabelKey = 'aria.rsa-checkbox' | 'aria.similar-questions-checkbox';
+
 interface CheckboxProps {
   name: string;
-  i18nKey: string;
+  i18nKey: CheckboxI18nKey;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: boolean;
   href: string;
-  label: string;
+  label: CheckboxLabelKey;
 }
 
 function Checkbox({
@@ -82,16 +92,19 @@ function Checkbox({
         onChange={onChange}
         checked={value}
         required
-        // Instead of reusing the `i18nKey`, use a plain text version for label
-        // as input label should not contain interactive elements
-        aria-label={t(label)}
+        aria-label={
+          label === 'aria.rsa-checkbox'
+            ? t($ => $.aria['rsa-checkbox'])
+            : t($ => $.aria['similar-questions-checkbox'])
+        }
       />
-
       <span>
         <Trans i18nKey={i18nKey}>
           <a href={href} rel='noopener noreferrer' target='_blank'>
             placeholder
-            <span className='sr-only'>{t('aria.opens-new-window')}</span>
+            <span className='sr-only'>
+              {t($ => $.aria['opens-new-window'])}
+            </span>
           </a>
         </Trans>
       </span>
@@ -173,14 +186,14 @@ function HelpModal({
   return (
     <Modal onClose={handleClose} open={!!isOpen}>
       <Modal.Header closeButtonClassNames='close'>
-        {t('buttons.get-help')}
+        {t($ => $.buttons['get-help'])}
       </Modal.Header>
       <Modal.Body>
         {showHelpForm ? (
           <form onSubmit={handleSubmit} ref={formRef}>
             <fieldset>
               <legend className='help-form-legend'>
-                {t('learn.must-confirm-statements')}
+                {t($ => $.learn['must-confirm-statements'])}
               </legend>
 
               <Checkbox
@@ -213,8 +226,10 @@ function HelpModal({
             <Spacer size='s' />
 
             <label htmlFor='help-modal-form-description'>
-              {t('forum-help.whats-happening')}
-              <span className='sr-only'>{t('learn.min-50-max-500')}</span>
+              {t($ => $['forum-help']['whats-happening'])}
+              <span className='sr-only'>
+                {t($ => $.learn['min-50-max-500'])}
+              </span>
             </label>
 
             <FormControl
@@ -226,7 +241,7 @@ function HelpModal({
               componentClass='textarea'
               rows={5}
               value={description}
-              placeholder={t('forum-help.describe')}
+              placeholder={t($ => $['forum-help'].describe)}
               minLength={DESCRIPTION_MIN_CHARS}
               maxLength={DESCRIPTION_MAX_CHARS}
               required
@@ -236,13 +251,13 @@ function HelpModal({
 
             {description.length < DESCRIPTION_MIN_CHARS ? (
               <p>
-                {t('learn.minimum-characters', {
+                {t($ => $.learn['minimum-characters'], {
                   characters: DESCRIPTION_MIN_CHARS - description.length
                 })}
               </p>
             ) : (
               <p>
-                {t('learn.characters-left', {
+                {t($ => $.learn['characters-left'], {
                   characters: DESCRIPTION_MAX_CHARS - description.length
                 })}
               </p>
@@ -257,7 +272,7 @@ function HelpModal({
               type='submit'
               disabled={!canSubmitForm}
             >
-              {t('buttons.submit')}
+              {t($ => $.buttons.submit)}
             </Button>
             <Spacer size='xxs' />
             <Button
@@ -266,7 +281,7 @@ function HelpModal({
               variant='primary'
               onClick={handleClose}
             >
-              {t('buttons.cancel')}
+              {t($ => $.buttons.cancel)}
             </Button>
           </form>
         ) : (
@@ -305,7 +320,7 @@ function HelpModal({
               rel='noopener noreferrer'
               data-playwright-test-label='get-hint-modal-button'
             >
-              {t('buttons.get-hint')}
+              {t($ => $.buttons['get-hint'])}
             </Button>
             <Spacer size='xxs' />
             {videoUrl && (
@@ -317,7 +332,7 @@ function HelpModal({
                   onClick={handleOpenVideo}
                   data-playwright-test-label='watch-a-video-modal-button'
                 >
-                  {t('buttons.watch-video')}
+                  {t($ => $.buttons['watch-video'])}
                 </Button>
                 <Spacer size='xxs' />
               </>
@@ -329,7 +344,7 @@ function HelpModal({
               onClick={() => setShowHelpForm(true)}
               data-playwright-test-label='create-post-modal-button'
             >
-              {t('buttons.create-post')}
+              {t($ => $.buttons['create-post'])}
             </Button>
             <Spacer size='xxs' />
             <Button
@@ -338,7 +353,7 @@ function HelpModal({
               variant='primary'
               onClick={handleClose}
             >
-              {t('buttons.cancel')}
+              {t($ => $.buttons.cancel)}
             </Button>
           </>
         )}

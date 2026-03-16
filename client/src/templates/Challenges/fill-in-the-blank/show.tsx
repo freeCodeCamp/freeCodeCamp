@@ -37,6 +37,7 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
+import { getIntroBlockTitle } from '../../../utils/type-guards';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
@@ -247,10 +248,12 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
-  // TODO: convert to selector #61969
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title` as never
-  )} - ${title}`;
+  const introData = t($ => $, {
+    ns: 'intro',
+    returnObjects: true
+  });
+  const blockTitle = getIntroBlockTitle(introData, superBlock, block);
+  const blockNameTitle = `${blockTitle} - ${title}`;
 
   const sceneSubject = new SceneSubject();
 

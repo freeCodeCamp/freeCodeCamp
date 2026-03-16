@@ -28,7 +28,7 @@ interface ProfileCompletenessProps {
 
 interface CompletionItem {
   key: string;
-  translationKey: string;
+  label: string;
   isComplete: boolean;
   weight: number;
 }
@@ -68,31 +68,31 @@ export const ProfileCompleteness = ({
   const completionItems: CompletionItem[] = [
     {
       key: 'name',
-      translationKey: 'profile.completeness.name',
+      label: t($ => $.profile.completeness.name),
       isComplete: hasValue(name),
       weight: 20
     },
     {
       key: 'location',
-      translationKey: 'profile.completeness.location',
+      label: t($ => $.profile.completeness.location),
       isComplete: hasValue(location),
       weight: 5
     },
     {
       key: 'picture',
-      translationKey: 'profile.completeness.picture',
+      label: t($ => $.profile.completeness.picture),
       isComplete: isValidPicture(picture),
       weight: 20
     },
     {
       key: 'about',
-      translationKey: 'profile.completeness.about',
+      label: t($ => $.profile.completeness.about),
       isComplete: hasValue(about),
       weight: 20
     },
     {
       key: 'social',
-      translationKey: 'profile.completeness.social',
+      label: t($ => $.profile.completeness.social),
       isComplete:
         hasValue(githubProfile) ||
         hasValue(linkedin) ||
@@ -103,13 +103,13 @@ export const ProfileCompleteness = ({
     },
     {
       key: 'portfolio',
-      translationKey: 'profile.completeness.portfolio',
+      label: t($ => $.profile.completeness.portfolio),
       isComplete: portfolio.length > 0,
       weight: 15
     },
     {
       key: 'experience',
-      translationKey: 'profile.completeness.experience',
+      label: t($ => $.profile.completeness.experience),
       isComplete: experience.length > 0,
       weight: 10
     }
@@ -154,7 +154,9 @@ export const ProfileCompleteness = ({
             />
           </div>
           <span className='profile-completeness-text'>
-            {t('profile.completeness.heading', { percentage })}
+            {t($ => $.profile.completeness.heading, {
+              percentage: percentage
+            })}
           </span>
         </button>
         {isExpanded && (
@@ -175,7 +177,7 @@ export const ProfileCompleteness = ({
                     <GreenNotCompleted hushScreenReaderText />
                   )}
                 </span>
-                {t(item.translationKey)}
+                {item.label}
               </li>
             ))}
           </ul>

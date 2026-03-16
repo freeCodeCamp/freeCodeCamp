@@ -239,25 +239,23 @@ function DailyCodingChallengeCalendar({
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Callout variant='note' label={t('misc.note')}>
-              {t('daily-coding-challenges.release-note')}
+            <Callout variant='note' label={t($ => $.misc.note)}>
+              {t($ => $['daily-coding-challenges']['release-note'])}
             </Callout>
 
             <Button
               block={true}
               href={`/learn/daily-coding-challenge/${todayUsCentral}`}
             >
-              {t('buttons.go-to-dcc-today')}
+              {t($ => $.buttons['go-to-dcc-today'])}
             </Button>
           </Col>
         </Row>
       </Container>
-
       <Spacer size='l' />
-
       <div className='calendar-head'>
         <Button
-          aria-label={t('aria.previous-month')}
+          aria-label={t($ => $.aria['previous-month'])}
           disabled={!showPrevButton}
           onClick={prevMonth}
         >
@@ -268,49 +266,47 @@ function DailyCodingChallengeCalendar({
           {monthInfo.name} {monthInfo.year}
         </h2>
         <Button
-          aria-label={t('aria.next-month')}
+          aria-label={t($ => $.aria['next-month'])}
           disabled={!showNextButton}
           onClick={nextMonth}
         >
           &gt;
         </Button>
       </div>
-
       <Spacer size='m' />
-
       <div className='calendar-weekday-labels'>
-        <div aria-label={t('weekdays.long.sunday')}>
-          {t('weekdays.short.sunday')}
+        <div aria-label={t($ => $.weekdays.long.sunday)}>
+          {t($ => $.weekdays.short.sunday)}
         </div>
-        <div aria-label={t('weekdays.long.monday')}>
-          {t('weekdays.short.monday')}
+        <div aria-label={t($ => $.weekdays.long.monday)}>
+          {t($ => $.weekdays.short.monday)}
         </div>
-        <div aria-label={t('weekdays.long.tuesday')}>
-          {t('weekdays.short.tuesday')}
+        <div aria-label={t($ => $.weekdays.long.tuesday)}>
+          {t($ => $.weekdays.short.tuesday)}
         </div>
-        <div aria-label={t('weekdays.long.wednesday')}>
-          {t('weekdays.short.wednesday')}
+        <div aria-label={t($ => $.weekdays.long.wednesday)}>
+          {t($ => $.weekdays.short.wednesday)}
         </div>
-        <div aria-label={t('weekdays.long.thursday')}>
-          {t('weekdays.short.thursday')}
+        <div aria-label={t($ => $.weekdays.long.thursday)}>
+          {t($ => $.weekdays.short.thursday)}
         </div>
-        <div aria-label={t('weekdays.long.friday')}>
-          {t('weekdays.short.friday')}
+        <div aria-label={t($ => $.weekdays.long.friday)}>
+          {t($ => $.weekdays.short.friday)}
         </div>
-        <div aria-label={t('weekdays.long.saturday')}>
-          {t('weekdays.short.saturday')}
+        <div aria-label={t($ => $.weekdays.long.saturday)}>
+          {t($ => $.weekdays.short.saturday)}
         </div>
       </div>
-
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
       <Spacer size='l' />
-
       {!isSignedIn && (
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='m' />
           <div className='completion-modal-login-btn'>
-            <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+            <Login block={true}>
+              {t($ => $.buttons['logged-out-cta-btn'])}
+            </Login>
           </div>
         </Col>
       )}

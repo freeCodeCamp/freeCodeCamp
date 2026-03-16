@@ -6,9 +6,9 @@ import { useFeature } from '@growthbook/growthbook-react';
 const Down = () => {
   const { t } = useTranslation();
   return (
-    <Callout variant='caution' label={t('misc.caution')}>
+    <Callout variant='caution' label={t($ => $.misc.caution)}>
       <p>
-        <Trans i18nKey='intro:misc-text.course-maintenance'>
+        <Trans i18nKey='misc-text.course-maintenance' ns='intro'>
           <a
             href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
             rel='noreferrer'
@@ -19,7 +19,11 @@ const Down = () => {
         </Trans>
       </p>
       <Spacer size='xs' />
-      <p>{t('intro:misc-text.progress-wont-save')}</p>
+      <p>
+        {t($ => $['misc-text']['progress-wont-save'], {
+          ns: 'intro'
+        })}
+      </p>
     </Callout>
   );
 };
@@ -27,9 +31,9 @@ const Down = () => {
 const Disabled = () => {
   const { t } = useTranslation();
   return (
-    <Callout variant='caution' label={t('misc.caution')}>
+    <Callout variant='caution' label={t($ => $.misc.caution)}>
       <p>
-        <Trans i18nKey='intro:misc-text.course-disabled'>
+        <Trans i18nKey='misc-text.course-disabled' ns='intro'>
           <a
             href='https://www.freecodecamp.org/news/how-to-run-freecodecamps-relational-databases-curriculum-using-docker-vscode-and-coderoad'
             rel='noreferrer'
@@ -40,7 +44,11 @@ const Disabled = () => {
         </Trans>
       </p>
       <Spacer size='xs' />
-      <p>{t('intro:misc-text.progress-wont-save')}</p>
+      <p>
+        {t($ => $['misc-text']['progress-wont-save'], {
+          ns: 'intro'
+        })}
+      </p>
     </Callout>
   );
 };

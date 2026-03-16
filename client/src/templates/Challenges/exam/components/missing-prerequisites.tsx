@@ -36,8 +36,8 @@ function MissingPrerequisites({
     });
 
   return (
-    <Callout variant='caution' label={t('misc.caution')}>
-      <p>{t('learn.exam.not-qualified')}</p>
+    <Callout variant='caution' label={t($ => $.misc.caution)}>
+      <p>{t($ => $.learn.exam['not-qualified'])}</p>
       <Spacer size='xs' />
       <ul>
         {newMissingPrerequisites.map(({ title, id, slug }) =>

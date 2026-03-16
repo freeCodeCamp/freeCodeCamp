@@ -151,9 +151,13 @@ function ShowCodeAlly({
     }
   } = data;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const superBlockData = t($ => $[superBlock as keyof typeof $], {
+    ns: 'intro',
+    returnObjects: true
+  }) as {
+    blocks: Record<string, { title: string }>;
+  };
+  const blockNameTitle = `${superBlockData.blocks[block]?.title ?? ''}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
   const isPartiallyCompleted = partiallyCompletedChallenges.some(
@@ -267,17 +271,17 @@ function ShowCodeAlly({
 
   const setups = [
     {
-      name: t('learn.codespaces.summary'),
+      name: t($ => $.learn.codespaces.summary),
       component: CodespacesInstructions,
       on: rdbCodespacesInstructions.on
     },
     {
-      name: t('learn.local.summary'),
+      name: t($ => $.learn.local.summary),
       component: LocalInstructions,
       on: rdbLocalInstructions.on
     },
     {
-      name: t('learn.ona.summary'),
+      name: t($ => $.learn.ona.summary),
       component: OnaInstructions,
       on: rdbOnaInstructions.on
     }
@@ -335,7 +339,7 @@ function ShowCodeAlly({
               {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
                 <>
                   <div className='ca-description'>
-                    {t('learn.complete-both-steps')}
+                    {t($ => $.learn['complete-both-steps'])}
                   </div>
                   <hr />
                   <Spacer size='m' />

@@ -96,7 +96,9 @@ function BlueskyIcon({ href, username }: IconProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <a
-      aria-label={t('aria.bluesky', { username })}
+      aria-label={t($ => $.aria.bluesky, {
+        username: username
+      })}
       href={href}
       rel='noopener noreferrer'
       target='_blank'

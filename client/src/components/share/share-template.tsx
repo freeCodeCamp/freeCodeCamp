@@ -25,8 +25,8 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faXTwitter} size='1x' aria-hidden='true' />
-        {!minified && t('buttons.share-on-x')}
-        <span className='sr-only'>{t('aria.opens-new-window')}</span>
+        {!minified && t($ => $.buttons['share-on-x'])}
+        <span className='sr-only'>{t($ => $.aria['opens-new-window'])}</span>
       </a>
       <a
         data-testid='share-on-bluesky'
@@ -36,8 +36,8 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faBluesky} size='1x' aria-hidden='true' />
-        {!minified && t('buttons.share-on-bluesky')}
-        <span className='sr-only'>{t('aria.opens-new-window')}</span>
+        {!minified && t($ => $.buttons['share-on-bluesky'])}
+        <span className='sr-only'>{t($ => $.aria['opens-new-window'])}</span>
       </a>
       <a
         data-testid='share-on-threads'
@@ -47,8 +47,8 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
-        {!minified && t('buttons.share-on-threads')}
-        <span className='sr-only'>{t('aria.opens-new-window')}</span>
+        {!minified && t($ => $.buttons['share-on-threads'])}
+        <span className='sr-only'>{t($ => $.aria['opens-new-window'])}</span>
       </a>
     </>
   );

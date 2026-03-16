@@ -7,8 +7,38 @@ import { describe, it, vi } from 'vitest';
 import { executeTests, updatePreviewSaga } from './execute-challenge-saga';
 
 vi.mock('i18next', async () => ({
+  keyFromSelector: selector => {
+    const p = [];
+    const proxy = new Proxy(
+      {},
+      {
+        get(_target, key) {
+          p.push(String(key));
+          return proxy;
+        }
+      }
+    );
+    selector(proxy);
+    return p.join('.');
+  },
   default: {
-    t: key => key
+    t: key => {
+      if (typeof key === 'function') {
+        const p = [];
+        const proxy = new Proxy(
+          {},
+          {
+            get(_target, prop) {
+              p.push(String(prop));
+              return proxy;
+            }
+          }
+        );
+        key(proxy);
+        return p.join('.');
+      }
+      return key;
+    }
   }
 }));
 

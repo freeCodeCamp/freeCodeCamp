@@ -21,7 +21,8 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const { title, summary } = t(`intro:${superBlock}`, {
+  const { title, summary } = t($ => $[superBlock as keyof typeof $], {
+    ns: 'intro',
     returnObjects: true
   }) as {
     title: string;
@@ -32,7 +33,12 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
     <Link to={`/learn/${superBlock}`} key={superBlock} className='catalog-item'>
       <div className='catalog-item-top'>
         <div className={`block-label block-label-${topic}`}>
-          {t(`curriculum.catalog.topic.${topic}`)}
+          {t(
+            $ =>
+              $.curriculum.catalog.topic[
+                topic as keyof typeof $.curriculum.catalog.topic
+              ]
+          )}
         </div>
         <h3>{title}</h3>
         {showAllSummaries ? (
@@ -44,13 +50,21 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
       <div className='catalog-item-bottom'>
         <div>
           <FontAwesomeIcon icon={faStairs} />
-          &nbsp; {t(`curriculum.catalog.levels.${level}`)}
+          &nbsp;{' '}
+          {t(
+            $ =>
+              $.curriculum.catalog.levels[
+                level as keyof typeof $.curriculum.catalog.levels
+              ]
+          )}
         </div>
         <div>
           <FontAwesomeIcon icon={faClock} />
           &nbsp;{' '}
           {showAllSummaries
-            ? t('curriculum.catalog.duration', { duration: hours })
+            ? t($ => $.curriculum.catalog.duration, {
+                duration: hours
+              })
             : `${hours} hours`}
         </div>
       </div>

@@ -34,7 +34,7 @@ export function LocalInstructions({
           </Link>
         </li>
         <li>
-          <Trans i18nKey={$ => $.learn.local['download-vscode']}>
+          <Trans i18nKey='learn.local.download-vscode'>
             <Link external={true} to='https://code.visualstudio.com/download'>
               placeholder
             </Link>
@@ -56,12 +56,12 @@ export function LocalInstructions({
       <p>{t($ => $.learn.local.heading)}</p>
       <ol>
         <li>
-          <Trans i18nKey={$ => $.learn.local['step-1']}>
+          <Trans i18nKey='learn.local.step-1'>
             <code>placeholder</code>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey={$ => $.learn.local['step-2']}>
+          <Trans i18nKey='learn.local.step-2'>
             <code>placeholder</code>
             <code>placeholder</code>
             <code>placeholder</code>
@@ -93,7 +93,7 @@ export function LocalInstructions({
               </Button>
               <Spacer size='xs' />
               <li>
-                <Trans i18nKey={$ => $.learn.local['sub-step-3']}>
+                <Trans i18nKey='learn.local.sub-step-3'>
                   <code>placeholder</code>
                   <code>placeholder</code>
                   <code>placeholder</code>
@@ -106,13 +106,13 @@ export function LocalInstructions({
           </>
         )}
         <li>
-          <Trans i18nKey={$ => $.learn.local['step-3']}>
+          <Trans i18nKey='learn.local.step-3'>
             <code>placeholder</code>
           </Trans>
         </li>
         <li>{t($ => $.learn.local['step-4'])}</li>
         <li>
-          <Trans i18nKey={$ => $.learn.local['step-5']}>
+          <Trans i18nKey='learn.local.step-5'>
             <code>placeholder</code>
           </Trans>
         </li>

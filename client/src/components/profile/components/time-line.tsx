@@ -19,6 +19,7 @@ import type {
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
+import { getIntroBlockTitle, getTitleByKey } from '../../../utils/type-guards';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
@@ -181,20 +182,20 @@ function TimelineInner({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.timeline')}</h2>
+        <h2>{t($ => $.profile.timeline)}</h2>
         <Spacer size='s' />
         {completedMap.length === 0 ? (
           <p className='text-center'>
-            {t('profile.none-completed')}&nbsp;
-            <Link to='/learn'>{t('profile.get-started')}</Link>
+            {t($ => $.profile['none-completed'])}&nbsp;
+            <Link to='/learn'>{t($ => $.profile['get-started'])}</Link>
           </p>
         ) : (
           <Table condensed={true} striped={true}>
             <thead>
               <tr>
-                <th>{t('profile.challenge')}</th>
-                <th>{t('settings.labels.solution')}</th>
-                <th className='text-center'>{t('profile.completed')}</th>
+                <th>{t($ => $.profile.challenge)}</th>
+                <th>{t($ => $.settings.labels.solution)}</th>
+                <th className='text-center'>{t($ => $.profile.completed)}</th>
               </tr>
             </thead>
             <tbody>
@@ -216,7 +217,7 @@ function TimelineInner({
               />
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={closeSolution}>{t('buttons.close')}</Button>
+              <Button onClick={closeSolution}>{t($ => $.buttons.close)}</Button>
             </Modal.Footer>
           </Modal>
         )}
@@ -232,7 +233,7 @@ function TimelineInner({
         )}
         <ProjectPreviewModal
           challengeData={challengeData}
-          closeText={t('buttons.close')}
+          closeText={t($ => $.buttons.close)}
           previewTitle={projectTitle}
         />
         <ExamResultsModal
@@ -246,9 +247,7 @@ function TimelineInner({
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(t: TFunction): Map<string, NameMap> {
-  const {
-    allChallengeNode: { edges }
-  } = useStaticQuery(graphql`
+  const queryData = useStaticQuery(graphql`
     query challengeNodes {
       allChallengeNode {
         edges {
@@ -268,10 +267,20 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }
   `);
+  const edges = queryData?.allChallengeNode?.edges ?? [];
   const idToNameMap = new Map();
+  const certificationTitles = t($ => $.certification.title, {
+    returnObjects: true
+  });
+  const introData = t($ => $, {
+    ns: 'intro',
+    returnObjects: true
+  });
+  const a2EnglishSuperBlock = String(SuperBlocks.A2English);
+
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
-    const certName = t(`certification.title.${certPath}-cert`);
+    const certName = getTitleByKey(certificationTitles, `${certPath}-cert`);
     idToNameMap.set(id, {
       challengeTitle: certName,
       certPath: certPath
@@ -296,9 +305,16 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         }
       }
     }) => {
-      const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+      const safeSuperBlock = typeof superBlock === 'string' ? superBlock : '';
+      const safeBlock = typeof block === 'string' ? block : '';
+      const blockNameTitle = getIntroBlockTitle(
+        introData,
+        safeSuperBlock,
+        safeBlock,
+        safeBlock
+      );
       const shouldAppendBlockNameToTitle =
-        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
+        hasEditableBoundaries || safeSuperBlock === a2EnglishSuperBlock;
       idToNameMap.set(id, {
         challengeTitle: `${
           shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''

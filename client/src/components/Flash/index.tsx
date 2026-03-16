@@ -15,6 +15,9 @@ type FlashProps = {
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
   const { t } = useTranslation();
+  const flashTranslations = t($ => $.flash, {
+    returnObjects: true
+  }) as Record<string, unknown>;
 
   // Some APIs are returning 'error' as a flash type, and it needs to be mapped to 'danger'.
   // TODO: Standardize the value of `type`.
@@ -25,6 +28,34 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   function handleClose() {
     removeFlashMessage();
   }
+
+  const getTranslatedFlashMessage = () => {
+    if (!message) {
+      return '';
+    }
+
+    const path = message.replace(/^flash\./, '').split('.');
+    let template: unknown = flashTranslations;
+    for (const segment of path) {
+      if (typeof template !== 'object' || template === null) {
+        return message;
+      }
+      template = (template as Record<string, unknown>)[segment];
+    }
+
+    if (typeof template !== 'string') {
+      return message;
+    }
+
+    return template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_match, key: string) => {
+      const value = variables[key];
+      return typeof value === 'string' ||
+        typeof value === 'number' ||
+        typeof value === 'boolean'
+        ? String(value)
+        : '';
+    });
+  };
 
   return (
     <Alert
@@ -44,10 +75,10 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
             className='flash-message'
             data-testid='flash-message-content'
           >
-            {t(message, variables)}
+            {getTranslatedFlashMessage()}
             <CloseButton
               onClick={handleClose}
-              label={t('buttons.close')}
+              label={t($ => $.buttons.close)}
               className='close'
             />
           </Col>

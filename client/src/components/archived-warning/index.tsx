@@ -9,7 +9,7 @@ import './index.css';
 const ArchivedWarning = () => {
   const { t } = useTranslation();
   return (
-    <Callout variant='note' label={t('misc.note')}>
+    <Callout variant='note' label={t($ => $.misc.note)}>
       <p className='archived-warning'>
         <Trans i18nKey='learn.archive.content-not-updated'>
           <Link to={'/learn'}>placeholder</Link>

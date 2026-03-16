@@ -45,11 +45,11 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
       <Panel variant='danger' id='danger-zone'>
         <Panel.Heading>
           <h2 className='settings-danger-zone-heading'>
-            {t('settings.danger.heading')}
+            {t($ => $.settings.danger.heading)}
           </h2>
         </Panel.Heading>
         <Spacer size='m' />
-        <p>{t('settings.danger.be-careful')}</p>
+        <p>{t($ => $.settings.danger['be-careful'])}</p>
         <FullWidthRow>
           <Button
             block={true}
@@ -58,7 +58,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
             onClick={toggleResetModal}
             type='button'
           >
-            {t('settings.danger.reset')}
+            {t($ => $.settings.danger.reset)}
           </Button>
           <Spacer size='xs' />
           <Button
@@ -68,7 +68,7 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
             onClick={toggleDeleteModal}
             type='button'
           >
-            {t('settings.danger.delete')}
+            {t($ => $.settings.danger.delete)}
           </Button>
           <Spacer size='m' />
         </FullWidthRow>

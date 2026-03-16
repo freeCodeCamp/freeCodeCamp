@@ -36,7 +36,7 @@ const LandingCatalog = (): JSX.Element => {
         <Row>
           <Col xs={12}>
             <h2 className='big-heading text-center'>
-              {t('landing.catalog.heading')}
+              {t($ => $.landing.catalog.heading)}
             </h2>
           </Col>
         </Row>
@@ -59,7 +59,7 @@ const LandingCatalog = (): JSX.Element => {
               );
             })}
             <Link to='/catalog' className='catalog-item catalog-item-see-all'>
-              <h3>{t('landing.catalog.seeAll')}</h3>
+              <h3>{t($ => $.landing.catalog.seeAll)}</h3>
               <LinkButton />
             </Link>
           </section>

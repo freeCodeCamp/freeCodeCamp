@@ -97,13 +97,17 @@ const PartialMatchFeedback = ({
 
         {misplacedWords && (
           <p>
-            {t('speaking-modal.misplaced-words', { words: misplacedWords })}
+            {t($ => $['speaking-modal']['misplaced-words'], {
+              words: misplacedWords
+            })}
           </p>
         )}
 
         {incorrectWords && (
           <p>
-            {t('speaking-modal.incorrect-words', { words: incorrectWords })}
+            {t($ => $['speaking-modal']['incorrect-words'], {
+              words: incorrectWords
+            })}
           </p>
         )}
 
@@ -122,7 +126,6 @@ const PartialMatchFeedback = ({
           ))}
         <span aria-hidden='true'>{punctuationMark}</span>
       </div>
-
       <p className='speaking-modal-feedback-message'>{feedback}</p>
     </>
   );
@@ -216,15 +219,15 @@ const SpeakingModal = ({
         setComparisonResult(result);
 
         if (result.status === 'correct') {
-          setFeedback(t('speaking-modal.correct-congratulations'));
+          setFeedback(t($ => $['speaking-modal']['correct-congratulations']));
         } else if (result.status === 'partially-correct') {
-          setFeedback(`${t('speaking-modal.very-good')}`);
+          setFeedback(`${t($ => $['speaking-modal']['very-good'])}`);
         } else {
-          setFeedback(`${t('speaking-modal.try-again')}`);
+          setFeedback(`${t($ => $['speaking-modal']['try-again'])}`);
         }
       } else {
         // No transcript and we were recording, this means no speech detected
-        setFeedback(t('speaking-modal.no-speech-detected'));
+        setFeedback(t($ => $['speaking-modal']['no-speech-detected']));
         setComparisonResult(null);
       }
 
@@ -243,7 +246,7 @@ const SpeakingModal = ({
 
   const handlePlay = async () => {
     if (!audioUrl) {
-      setFeedback(t('speaking-modal.no-audio-available'));
+      setFeedback(t($ => $['speaking-modal']['no-audio-available']));
       return;
     }
 
@@ -271,12 +274,14 @@ const SpeakingModal = ({
 
   const handleStartRecording = () => {
     if (!browserSupportsSpeechRecognition) {
-      setFeedback(t('speaking-modal.speech-recognition-not-supported'));
+      setFeedback(
+        t($ => $['speaking-modal']['speech-recognition-not-supported'])
+      );
       return;
     }
 
     try {
-      setFeedback(t('speaking-modal.recording-speak-now'));
+      setFeedback(t($ => $['speaking-modal']['recording-speak-now']));
       setHasStartedRecording(true);
       resetTranscript();
       setComparisonResult(null);
@@ -291,7 +296,7 @@ const SpeakingModal = ({
       }, 30000);
     } catch (error) {
       console.error('Error starting recording:', error);
-      setFeedback(t('speaking-modal.microphone-access-error'));
+      setFeedback(t($ => $['speaking-modal']['microphone-access-error']));
     }
   };
 
@@ -299,7 +304,7 @@ const SpeakingModal = ({
     void SpeechRecognition.stopListening();
     clearTimeout(stopListeningTimeoutRef.current);
 
-    setFeedback(t('speaking-modal.recording-stopped-processing'));
+    setFeedback(t($ => $['speaking-modal']['recording-stopped-processing']));
   };
 
   const handleRecord = () => {
@@ -313,10 +318,10 @@ const SpeakingModal = ({
   return (
     <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
       <Modal.Header closeButtonClassNames='close'>
-        {t('speaking-modal.heading')}
+        {t($ => $['speaking-modal'].heading)}
       </Modal.Header>
       <Modal.Body alignment='center' className='speaking-modal-body'>
-        <p>{t('speaking-modal.repeat-sentence')}</p>
+        <p>{t($ => $['speaking-modal']['repeat-sentence'])}</p>
 
         <div className='speaking-modal-sentence-container'>
           <p id='speaking-sentence' className='speaking-modal-sentence'>
@@ -328,7 +333,9 @@ const SpeakingModal = ({
             aria-describedby='speaking-sentence'
             disabled={isPlaying || listening}
             aria-label={
-              isPlaying ? t('speaking-modal.playing') : t('speaking-modal.play')
+              isPlaying
+                ? t($ => $['speaking-modal'].playing)
+                : t($ => $['speaking-modal'].play)
             }
           >
             <FontAwesomeIcon
@@ -351,12 +358,12 @@ const SpeakingModal = ({
                 className='speaking-modal-record-icon'
               />
               {listening
-                ? t('speaking-modal.stop')
-                : t('speaking-modal.record')}
+                ? t($ => $['speaking-modal'].stop)
+                : t($ => $['speaking-modal'].record)}
             </Button>
           ) : (
             <p className='speaking-modal-not-supported'>
-              {t('speaking-modal.speech-recognition-not-supported')}
+              {t($ => $['speaking-modal']['speech-recognition-not-supported'])}
             </p>
           )}
         </div>

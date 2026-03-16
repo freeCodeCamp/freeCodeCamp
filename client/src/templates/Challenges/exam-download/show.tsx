@@ -69,7 +69,7 @@ function PrerequisitesCallout({
 
   if (!isHonest) {
     return (
-      <Callout variant='caution' label={t('misc.caution')}>
+      <Callout variant='caution' label={t($ => $.misc.caution)}>
         <p>
           <Trans i18nKey={'learn.exam.not-honest'}>
             <Link to={'/settings#honesty'}>settings</Link>
@@ -146,8 +146,12 @@ function ExamPrerequisites({
 
   if (missingPrerequisites.length < 1) {
     return (
-      <Callout className='exam-qualified' variant='note' label={t('misc.note')}>
-        <p>{t('learn.exam.qualified')}</p>
+      <Callout
+        className='exam-qualified'
+        variant='note'
+        label={t($ => $.misc.note)}
+      >
+        <p>{t($ => $.learn.exam.qualified)}</p>
       </Callout>
     );
   }
@@ -356,38 +360,40 @@ function ShowExamDownload({
               completedChallenges={completedChallenges}
               examSuperBlock={examSuperBlock}
             />
-            <h2>{t('exam.download-header')}</h2>
-            <p>{t('exam.explanation')}</p>
+            <h2>{t($ => $.exam['download-header'])}</h2>
+            <p>{t($ => $.exam.explanation)}</p>
             <Spacer size='l' />
             {isSignedIn && (
               <>
-                <h2>{t('exam.attempts')}</h2>
+                <h2>{t($ => $.exam.attempts)}</h2>
                 <Attempts examChallengeId={id} />
                 <Spacer size='l' />
                 <ExamTokenControls email={user!.email} />
               </>
             )}
             <p>
-              {t('exam.version', {
+              {t($ => $.exam.version, {
                 version: latestVersion || '...'
               })}
             </p>
             <Button href={'exam-environment://'}>
-              {t('exam.open-exam-application')}
+              {t($ => $.exam['open-exam-application'])}
             </Button>
             <Spacer size='s' />
             <div className='exam-download-buttons'>
               {downloadLink ? (
                 <Button href={downloadLink} download={downloadLink}>
-                  {t('buttons.download-latest-version')}
+                  {t($ => $.buttons['download-latest-version'])}
                 </Button>
               ) : (
-                <strong>{t('exam.unable-to-detect-os')}</strong>
+                <strong>{t($ => $.exam['unable-to-detect-os'])}</strong>
               )}
             </div>
             <Spacer size='xs' />
             <Dropdown block={true} dropup>
-              <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
+              <Dropdown.Toggle>
+                {t($ => $.exam['download-details'])}
+              </Dropdown.Toggle>
               <Dropdown.Menu>
                 {downloadLinks
                   .filter(link => !link.match(/\.sig|\.json/))
@@ -415,7 +421,7 @@ function ShowExamDownload({
               </Dropdown.Menu>
             </Dropdown>
             <Spacer size='l' />
-            <strong>{t('exam.download-trouble')}</strong>{' '}
+            <strong>{t($ => $.exam['download-trouble'])}</strong>{' '}
             <a href='mailto: support@freecodecamp.org'>
               support@freecodecamp.org
             </a>

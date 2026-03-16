@@ -28,19 +28,6 @@ const linkSpacingStyle = {
   gap: '15px'
 };
 
-const superBlockHeadings: { [key in SuperBlockStage]: string } = {
-  [SuperBlockStage.Core]: 'landing.core-certs-heading',
-  [SuperBlockStage.English]: 'landing.learn-english-heading',
-  [SuperBlockStage.Spanish]: 'landing.learn-spanish-heading',
-  [SuperBlockStage.Chinese]: 'landing.learn-chinese-heading',
-  [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
-  [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
-  [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
-  [SuperBlockStage.Next]: 'landing.next-heading',
-  [SuperBlockStage.Upcoming]: 'landing.upcoming-heading',
-  [SuperBlockStage.Catalog]: 'landing.catalog-heading'
-};
-
 function MapLi({
   superBlock,
   landing = false
@@ -48,7 +35,7 @@ function MapLi({
   superBlock: SuperBlocks;
   landing: boolean;
 }) {
-  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+  const i18nTitle = i18next.t($ => $[superBlock].title, { ns: 'intro' });
 
   return (
     <li
@@ -87,6 +74,32 @@ export function ArchiveMap() {
 // used on /learn and landing page
 function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
+  const getSuperBlockHeading = (stage: SuperBlockStage) => {
+    switch (stage) {
+      case SuperBlockStage.Core:
+        return t($ => $.landing['core-certs-heading']);
+      case SuperBlockStage.English:
+        return t($ => $.landing['learn-english-heading']);
+      case SuperBlockStage.Spanish:
+        return t($ => $.landing['learn-spanish-heading']);
+      case SuperBlockStage.Chinese:
+        return t($ => $.landing['learn-chinese-heading']);
+      case SuperBlockStage.Professional:
+        return t($ => $.landing['professional-certs-heading']);
+      case SuperBlockStage.Extra:
+        return t($ => $.landing['interview-prep-heading']);
+      case SuperBlockStage.Legacy:
+        return t($ => $.landing['legacy-curriculum-heading']);
+      case SuperBlockStage.Next:
+        return t($ => $.landing['next-heading']);
+      case SuperBlockStage.Upcoming:
+        return t($ => $.landing['upcoming-heading']);
+      case SuperBlockStage.Catalog:
+        return t($ => $.landing['catalog-heading']);
+      default:
+        return '';
+    }
+  };
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
@@ -117,7 +130,7 @@ function Map({ forLanding = false }: MapProps) {
                 )
               }
               <h2 className={forLanding ? 'big-heading' : ''}>
-                {t(superBlockHeadings[stage])}
+                {getSuperBlockHeading(stage)}
               </h2>
               <ul key={stage}>
                 {superblocks.map(superblock => (

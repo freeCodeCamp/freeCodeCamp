@@ -29,7 +29,7 @@ const MiscSettings = ({
 
   return (
     <div className='account-settings'>
-      <SectionHeader>{t('settings.headings.account')}</SectionHeader>
+      <SectionHeader>{t($ => $.settings.headings.account)}</SectionHeader>
       <FullWidthRow>
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings

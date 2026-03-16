@@ -63,7 +63,15 @@ vi.mock('./components/super-block-accordion', () => ({
   SuperBlockAccordion: () => null
 }));
 
-const translationMap: Record<string, unknown> = {
+type IntroTranslation = {
+  title: string;
+  intro: string[];
+  note: string;
+};
+
+type TranslationMap = Record<string, string | IntroTranslation>;
+
+const translationMap: TranslationMap = {
   'intro:full-stack-developer': {
     title: 'Full-Stack Developer',
     intro: ['<strong>Build</strong> and deploy full-stack apps.'],
@@ -86,14 +94,72 @@ const translationMap: Record<string, unknown> = {
   'misc.continue-learning': 'Continue Learning'
 };
 
-const mockT = vi.fn((key: string, options?: { returnObjects?: boolean }) => {
+const introTranslations: Record<string, IntroTranslation> = {
+  'full-stack-developer': {
+    title: 'Full-Stack Developer',
+    intro: ['<strong>Build</strong> and deploy full-stack apps.'],
+    note: 'Stay curious.'
+  },
+  'full-stack-developer-v9': {
+    title: 'Certified Full-Stack Developer Curriculum',
+    intro: [
+      'This certification represents the culmination of your full-stack developer journey.',
+      'Pass the exam to earn your Full-Stack Developer Certification.'
+    ],
+    note: 'Coming soon.'
+  },
+  'responsive-web-design': {
+    title: 'Responsive Web Design',
+    intro: ['Create responsive layouts across devices.'],
+    note: ''
+  }
+};
+
+type KeyFromSelector = <S, T>(selector: ($: S) => T) => unknown;
+const isKeyFromSelector = (value: unknown): value is KeyFromSelector =>
+  typeof value === 'function';
+
+const selectorToKey = <S, T>(selector: ($: S) => T) =>
+  (() => {
+    const keyResolver: unknown = Reflect.get(i18next, 'keyFromSelector');
+    if (isKeyFromSelector(keyResolver)) {
+      const key = String(keyResolver(selector));
+      if (key) return key;
+    }
+
+    const path: string[] = [];
+    const proxy = new Proxy<Record<string, unknown>>(
+      {},
+      {
+        get(_target, prop) {
+          path.push(String(prop));
+          return proxy;
+        }
+      }
+    );
+    Reflect.apply(selector, undefined, [proxy]);
+    return path.join('.');
+  })();
+
+const getTranslationText = (key: string) => {
   const value = translationMap[key];
+  return typeof value === 'string' ? value : key;
+};
+
+const mockT = vi.fn(function <S, T>(
+  key: ($: S) => T,
+  options?: { returnObjects?: boolean; ns?: string }
+) {
+  const resolvedKey = options?.ns
+    ? `${options.ns}:${selectorToKey(key)}`
+    : selectorToKey(key);
+  const value = translationMap[resolvedKey];
 
   if (options?.returnObjects && typeof value === 'object') {
     return value;
   }
 
-  return value ?? key;
+  return value ?? resolvedKey;
 });
 
 vi.mock('react-i18next', () => ({
@@ -146,7 +212,10 @@ vi.mock('../../components/helpers', () => ({
 
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import SuperBlockIntroductionPage from './super-block-intro';
+import {
+  SuperBlockIntroductionPage,
+  type SuperBlockProps
+} from './super-block-intro';
 
 type ChallengeNode = {
   challenge: {
@@ -176,7 +245,7 @@ type TestSetup = {
       modules: Array<{
         dashedName: string;
         comingSoon: boolean;
-        moduleType: string;
+        moduleType: BlockLabel;
         blocks: string[];
       }>;
     }>;
@@ -222,7 +291,7 @@ const createSetup = (superBlock: SuperBlocks): TestSetup => {
             {
               dashedName: 'module-one',
               comingSoon: false,
-              moduleType: 'core',
+              moduleType: BlockLabel.learn,
               blocks: ['block-one']
             }
           ]
@@ -232,20 +301,22 @@ const createSetup = (superBlock: SuperBlocks): TestSetup => {
   };
 };
 
-const createLocation = () =>
-  ({
+const createLocation = (): WindowLocation<{ breadcrumbBlockClick: string }> => {
+  return {
+    ...window.location,
     hash: '',
     pathname: '/learn/super-block',
     search: '',
-    state: undefined
-  }) as unknown as WindowLocation<{ breadcrumbBlockClick: string }>;
+    state: { breadcrumbBlockClick: 'block-one' }
+  };
+};
 
 const createPageProps = (
   setup: TestSetup,
   superBlock: SuperBlocks,
-  overrides: Record<string, unknown> = {}
-) =>
-  ({
+  overrides: Partial<SuperBlockProps> = {}
+): SuperBlockProps => {
+  return {
     currentChallengeId: setup.challengeNodes[0].challenge.id,
     data: {
       allChallengeNode: { nodes: setup.challengeNodes.slice() },
@@ -267,41 +338,28 @@ const createPageProps = (
       isDonating: false
     },
     ...overrides
-  }) as unknown as React.ComponentProps<typeof SuperBlockIntroductionPage>;
+  };
+};
 
 const consoleSpy = vi.spyOn(console, 'log').mockImplementation(() => undefined);
 
 const i18nSpy = vi.spyOn(i18next, 't');
 
-i18nSpy.mockImplementation(((
-  key: unknown,
-  options?: { returnObjects?: boolean }
-) => {
-  if (typeof key !== 'string') return '';
-
+i18nSpy.mockImplementation((key, options) => {
   if (options?.returnObjects) {
-    const value = translationMap[key];
-    if (typeof value === 'object') {
-      return value;
-    }
+    return introTranslations;
   }
 
-  const titleKeySuffix = '.title';
-  if (key.endsWith(titleKeySuffix)) {
-    const baseKey = key.slice(0, -titleKeySuffix.length);
-    const entry = translationMap[baseKey];
-    if (
-      entry &&
-      typeof entry === 'object' &&
-      'title' in (entry as Record<string, unknown>)
-    ) {
-      return (entry as { title: string }).title;
-    }
-  }
-
-  const value = translationMap[key];
-  return typeof value === 'string' ? value : key;
-}) as unknown as typeof i18next.t);
+  const resolvedSelectorKey =
+    typeof key === 'function' ? selectorToKey(key) : String(key);
+  const namespace =
+    typeof options?.ns === 'string' ? options.ns : String(options?.ns ?? '');
+  const resolvedKey = namespace
+    ? namespace + ':' + String(resolvedSelectorKey)
+    : String(resolvedSelectorKey);
+  const value = translationMap[resolvedKey];
+  return typeof value === 'string' ? value : resolvedKey;
+});
 
 afterAll(() => {
   consoleSpy.mockRestore();
@@ -405,7 +463,8 @@ describe('SuperBlockIntroductionPage', () => {
 
       return {
         id: challenge.id,
-        completedDate: order * 100
+        completedDate: order * 100,
+        challengeFiles: null
       };
     });
 
@@ -419,7 +478,7 @@ describe('SuperBlockIntroductionPage', () => {
     render(<SuperBlockIntroductionPage {...props} />);
 
     if (expected.labelKey) {
-      const expectedText = translationMap[expected.labelKey] as string;
+      const expectedText = getTranslationText(expected.labelKey);
       const cta = await screen.findByRole('link', {
         name: expectedText
       });
@@ -433,14 +492,14 @@ describe('SuperBlockIntroductionPage', () => {
       await waitFor(() =>
         expect(
           screen.queryByRole('link', {
-            name: translationMap['misc.fsd-b-cta'] as string
+            name: getTranslationText('misc.fsd-b-cta')
           })
         ).toBeNull()
       );
 
       expect(
         screen.queryByRole('link', {
-          name: translationMap['misc.continue-learning'] as string
+          name: getTranslationText('misc.continue-learning')
         })
       ).toBeNull();
     }

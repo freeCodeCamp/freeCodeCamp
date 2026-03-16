@@ -38,14 +38,22 @@ function IndexPage(): JSX.Element {
     growthbook.getFeatureValue('landing-aa-test', false);
     return (
       <>
-        <SEO title={t('metaTags:title')} />
+        <SEO
+          title={t($ => $.title, {
+            ns: 'metaTags'
+          })}
+        />
         <Landing />
       </>
     );
   } else {
     return (
       <>
-        <SEO title={t('metaTags:title')} />
+        <SEO
+          title={t($ => $.title, {
+            ns: 'metaTags'
+          })}
+        />
         <Loader fullScreen={true} />
       </>
     );

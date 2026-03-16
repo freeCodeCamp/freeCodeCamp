@@ -1,5 +1,4 @@
 import { renderHook } from '@testing-library/react';
-import { useTranslation } from 'react-i18next';
 import { describe, test, expect } from 'vitest';
 import {
   hastag,
@@ -13,11 +12,8 @@ import {
 
 describe('useShare', () => {
   test('useShare hook returns correct social media URLs', () => {
-    const superBlock = 'testSuperBlock';
-    const block = 'testBlock';
-
-    const { result: translationResult } = renderHook(() => useTranslation());
-    const { t } = translationResult.current;
+    const superBlock = 'responsive-web-design';
+    const block = 'basic-html-and-html5';
 
     // Test useShare hook
     const { result: shareResult } = renderHook(() =>
@@ -28,7 +24,7 @@ describe('useShare', () => {
     );
 
     const freecodecampLearnDomain = 'www.freecodecamp.org/learn';
-    const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
+    const i18nSupportedBlock = `intro:${superBlock}.blocks.${block}.title`;
     const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
     const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${hastag}${block}`;
 

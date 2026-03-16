@@ -10,6 +10,7 @@ import {
   upcomingCertifications
 } from '@freecodecamp/shared/config/certification-settings';
 import env from '../../../config/env.json';
+import { getTitleByKey } from '../../utils/type-guards';
 
 type SettingsSidebarNavProps = {
   userToken: string | null;
@@ -21,6 +22,11 @@ function SettingsSidebarNav({
   userToken
 }: SettingsSidebarNavProps): JSX.Element {
   const { t } = useTranslation();
+  const certificationTitles = t($ => $.certification.title, {
+    returnObjects: true
+  });
+  const certificationTitle = (slug: string) =>
+    getTitleByKey(certificationTitles, slug);
   const scrollOffset = useStickyScrollOffset(['--header-height']);
   const allLegacyCertifications = [
     ...legacyFullStackCertification,
@@ -42,7 +48,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.headings.account')}
+            {t($ => $.settings.headings.account)}
           </ScrollLink>
         </SidebarPanel.Item>
         <SidebarPanel.Item>
@@ -57,7 +63,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.headings.privacy')}
+            {t($ => $.settings.headings.privacy)}
           </ScrollLink>
         </SidebarPanel.Item>
         <SidebarPanel.Item>
@@ -72,7 +78,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.email.heading')}
+            {t($ => $.settings.email.heading)}
           </ScrollLink>
         </SidebarPanel.Item>
         <SidebarPanel.Item>
@@ -87,7 +93,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.headings.honesty')}
+            {t($ => $.settings.headings.honesty)}
           </ScrollLink>
         </SidebarPanel.Item>
         <SidebarPanel.Item>
@@ -102,7 +108,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('exam-token.exam-token')}
+            {t($ => $['exam-token']['exam-token'])}
           </ScrollLink>
         </SidebarPanel.Item>
         <SidebarPanel.Item>
@@ -117,7 +123,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.headings.certs')}
+            {t($ => $.settings.headings.certs)}
           </ScrollLink>
           <ul>
             {currentCertifications.map(slug => (
@@ -133,7 +139,7 @@ function SettingsSidebarNav({
                   hashSpy={true}
                   activeClass='active'
                 >
-                  {t(`certification.title.${slug}`, slug)}
+                  {certificationTitle(slug)}
                 </ScrollLink>
               </SidebarPanel.Item>
             ))}
@@ -151,7 +157,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.headings.legacy-certs')}
+            {t($ => $.settings.headings['legacy-certs'])}
           </ScrollLink>
           <ul>
             {allLegacyCertifications.map(slug => (
@@ -167,7 +173,7 @@ function SettingsSidebarNav({
                   hashSpy={true}
                   activeClass='active'
                 >
-                  {t(`certification.title.${slug}`, slug)}
+                  {certificationTitle(slug)}
                 </ScrollLink>
               </SidebarPanel.Item>
             ))}
@@ -187,7 +193,7 @@ function SettingsSidebarNav({
                     hashSpy={true}
                     activeClass='active'
                   >
-                    {t(`certification.title.${slug}`, slug)}
+                    {certificationTitle(slug)}
                   </ScrollLink>
                 </SidebarPanel.Item>
               ))}
@@ -206,7 +212,7 @@ function SettingsSidebarNav({
               hashSpy={true}
               activeClass='active'
             >
-              {t('user-token.title')}
+              {t($ => $['user-token'].title)}
             </ScrollLink>
           </SidebarPanel.Item>
         )}
@@ -222,7 +228,7 @@ function SettingsSidebarNav({
             hashSpy={true}
             activeClass='active'
           >
-            {t('settings.danger.heading')}
+            {t($ => $.settings.danger.heading)}
           </ScrollLink>
         </SidebarPanel.Item>
       </ul>

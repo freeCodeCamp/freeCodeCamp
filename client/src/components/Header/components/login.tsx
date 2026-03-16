@@ -47,7 +47,9 @@ const Login = ({
       <span className='login-btn-icon' aria-hidden='true'>
         <FontAwesomeIcon icon={faRightToBracket} />
       </span>
-      <span className='login-btn-text'>{children || t('buttons.sign-in')}</span>
+      <span className='login-btn-text'>
+        {children || t($ => $.buttons['sign-in'])}
+      </span>
     </a>
   );
 };

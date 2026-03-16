@@ -72,7 +72,7 @@ const CatalogPage = () => {
   return showUpcomingChanges ? (
     <main>
       <Spacer size='l' />
-      <h1 className='text-center'>{t('curriculum.catalog.title')}</h1>
+      <h1 className='text-center'>{t($ => $.curriculum.catalog.title)}</h1>
       <Spacer size='l' />
 
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -102,7 +102,7 @@ const CatalogPage = () => {
                     onChange={() => {}}
                     className='filter-checkbox'
                   />
-                  {t(`curriculum.catalog.levels.${level}`)}
+                  {t($ => $.curriculum.catalog.levels[level])}
                 </MenuItem>
               ))}
             </Dropdown.Menu>
@@ -132,7 +132,7 @@ const CatalogPage = () => {
                     onChange={() => {}}
                     className='filter-checkbox'
                   />
-                  {t(`curriculum.catalog.topic.${topic}`)}
+                  {t($ => $.curriculum.catalog.topic[topic])}
                 </MenuItem>
               ))}
             </Dropdown.Menu>
@@ -142,7 +142,9 @@ const CatalogPage = () => {
       <Spacer size='m' />
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         {filteredCatalog.length === 0 ? (
-          <Alert variant='info'>{t('curriculum.catalog.no-results')}</Alert>
+          <Alert variant='info'>
+            {t($ => $.curriculum.catalog['no-results'])}
+          </Alert>
         ) : (
           <section className='catalog-wrap'>
             {filteredCatalog.map(course => {

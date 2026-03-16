@@ -117,7 +117,7 @@ function LinkMsUser({
       <p>{t($ => $.learn.ms.unlinked)}</p>
       <ol className='link-ms-user-ol'>
         <li>
-          <Trans i18nKey={$ => $.learn.ms['link-li-1']}>
+          <Trans i18nKey='learn.ms.link-li-1'>
             <a
               href='https://learn.microsoft.com/users/me/transcript'
               rel='noreferrer'
@@ -131,7 +131,7 @@ function LinkMsUser({
         <li>{t($ => $.learn.ms['link-li-3'])}</li>
         <li>{t($ => $.learn.ms['link-li-4'])}</li>
         <li>
-          <Trans i18nKey={$ => $.learn.ms['link-li-5']}>
+          <Trans i18nKey='learn.ms.link-li-5'>
             <pre className='language-html'>placeholder</pre>
           </Trans>
         </li>
@@ -161,7 +161,7 @@ function LinkMsUser({
         </Button>
         {showWarning && (
           <HelpBlock>
-            <Trans i18nKey={$ => $.learn.ms['invalid-transcript']}>
+            <Trans i18nKey='learn.ms.invalid-transcript'>
               placeholder <code>placeholder</code> placeholder
             </Trans>
           </HelpBlock>

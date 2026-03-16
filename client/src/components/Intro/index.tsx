@@ -72,7 +72,7 @@ const Intro = ({
           <div className='intro-description'>
             <Spacer size='m' />
             <p>
-              <Trans i18nKey={$ => $.learn['start-at-beginning']}>
+              <Trans i18nKey='learn.start-at-beginning'>
                 <Link to={slug} />
               </Trans>
             </p>
