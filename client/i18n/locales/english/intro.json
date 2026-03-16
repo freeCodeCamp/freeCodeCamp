@@ -1467,6 +1467,563 @@
         "title": "Advanced OOP Concepts",
         "intro": [
           "In these videos, learn about advanced OOP concepts including getters, setters and other important OOP principles."
+          ]
+      }
+    }
+  },
+  "introduction-to-python-basics": {
+    "title": "Introduction to Python Basics",
+    "summary": ["Learn the fundamentals of Python programming."],
+    "intro": [
+      "In this interactive course, you will learn the basic syntax, data types, and control structures of Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-introduction-to-python": {
+        "title": "Introduction to Python",
+        "intro": [
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "workshop-report-card-printer": {
+        "title": "Build a Report Card Printer",
+        "intro": [
+          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "workshop-employee-profile-generator": {
+        "title": "Build an Employee Profile Generator",
+        "intro": [
+          "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
+        ]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "workshop-bill-splitter": {
+        "title": "Build a Bill Splitter",
+        "intro": [
+          "In this workshop, you will build a bill splitter to practice working with numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
+      "lab-travel-weather-planner": {
+        "title": "Build a Travel Weather Planner",
+        "intro": [
+          "In this lab, you will build a travel weather planner using conditionals."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
+        ]
+      },
+      "lab-discount-calculator": {
+        "title": "Build an Apply Discount Function",
+        "intro": [
+          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
+        ]
+      },
+      "workshop-caesar-cipher": {
+        "title": "Build a Caesar Cipher",
+        "intro": [
+          "In this workshop, you'll build a Caesar cipher using basic Python concepts such as strings, conditionals, functions, and more."
+        ]
+      },
+      "lab-rpg-character": {
+        "title": "Build an RPG Character",
+        "intro": [
+          "In this lab you will practice basic Python by building an RPG character."
+        ]
+      },
+      "review-python-basics": {
+        "title": "Python Basics Review",
+        "intro": [
+          "Before you're quizzed on Python basics, you should review what you've learned about it.",
+          "In this review page, you will review working with strings, functions, comparison operators and more."
+        ]
+      },
+      "quiz-python-basics": {
+        "title": "Python Basics Quiz",
+        "intro": [
+          "Test what you've learned about Python basics with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-python-loops-and-sequences": {
+    "title": "Learn Python Loops and Sequences",
+    "summary": ["Learn how to work with loops and sequences in Python."],
+    "intro": [
+      "In this interactive course, you will learn how to work with loops and sequences in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-loops-and-sequences": {
+        "title": "Working with Loops and Sequences",
+        "intro": [
+          "Learn about Working with Loops and Sequences in these lessons."
+        ]
+      },
+      "workshop-pin-extractor": {
+        "title": "Build a Pin Extractor",
+        "intro": [
+          "In this workshop you will build a function to extract secret pins hidden in poems."
+        ]
+      },
+      "lab-number-pattern-generator": {
+        "title": "Build a Number Pattern Generator",
+        "intro": ["In this lab you will build a number pattern generator."]
+      },
+      "review-loops-and-sequences": {
+        "title": "Loops and Sequences Review",
+        "intro": [
+          "Before you're quizzed on loops and sequences, you should review what you've learned about them.",
+          "Open up this page to review concepts around loops, lists, tuples and some of their common methods."
+        ]
+      },
+      "quiz-loops-and-sequences": {
+        "title": "Loops and Sequences Quiz",
+        "intro": [
+          "Test what you've learned about loops and sequences in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-python-dictionaries-and-sets": {
+    "title": "Learn Python Dictionaries and Sets",
+    "summary": ["Learn how to work with dictionaries and sets in Python."],
+    "intro": [
+      "In this interactive course, you will learn how to work with dictionaries and sets in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-dictionaries-and-sets": {
+        "title": "Working with Dictionaries and Sets",
+        "intro": [
+          "Learn about working with dictionaries and sets in these lessons."
+        ]
+      },
+      "lecture-working-with-modules": {
+        "title": "Working with Modules",
+        "intro": ["Learn about working with modules in these lessons."]
+      },
+      "workshop-medical-data-validator": {
+        "title": "Build a Medical Data Validator",
+        "intro": [
+          "In this workshop, you'll practice working with dictionaries and sets while validating a collection of medical data."
+        ]
+      },
+      "lab-user-configuration-manager": {
+        "title": "Build a User Configuration Manager",
+        "intro": [
+          "In this lab, you will practice working with dictionaries in Python."
+        ]
+      },
+      "review-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Review",
+        "intro": [
+          "Before you're quizzed on dictionaries and sets, you should review what you've learned about them.",
+          "Open up this page to review concepts around dictionaries, sets, and how to import modules."
+        ]
+      },
+      "quiz-dictionaries-and-sets": {
+        "title": "Dictionaries and Sets Quiz",
+        "intro": [
+          "Test what you've learned about dictionaries and sets in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-error-handling-in-python": {
+    "title": "Learn Error Handling in Python",
+    "summary": ["Learn how to handle errors and exceptions in Python."],
+    "intro": [
+      "In this interactive course, you will learn how to handle errors and exceptions in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-error-handling": {
+        "title": "Understanding Error Handling",
+        "intro": [
+          "In these lessons, you will learn about error handling in Python. You will learn about the different types of errors, some good debugging practices, what exceptions are, and how to handle them."
+        ]
+      },
+      "lab-isbn-validator": {
+        "title": "Debug an ISBN Validator",
+        "intro": [
+          "In this lab, you will start with a bugged app, and you will need to debug and fix the bugs until it is working properly."
+        ]
+      },
+      "review-error-handling": {
+        "title": "Error Handling Review",
+        "intro": [
+          "Before you're quizzed on error handling, you should review what you've learned about it."
+        ]
+      },
+      "quiz-error-handling": {
+        "title": "Error Handling Quiz",
+        "intro": [
+          "Test what you've learned about Error Handling in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-python-classes-and-objects": {
+    "title": "Learn Python Classes and Objects",
+    "summary": ["Learn how to work with classes and objects in Python."],
+    "intro": [
+      "In this interactive course, you will learn how to work with classes and objects in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-classes-and-objects": {
+        "title": "Classes and Objects",
+        "intro": ["Learn about Classes and Objects in these lessons."]
+      },
+      "workshop-musical-instrument-inventory": {
+        "title": "Build a Musical Instrument Inventory",
+        "intro": [
+          "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
+        ]
+      },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
+      "workshop-email-simulator": {
+        "title": "Build an Email Simulator",
+        "intro": [
+          "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
+        ]
+      },
+      "lab-budget-app": {
+        "title": "Build a Budget App",
+        "intro": [
+          "In this lab you will build a budget app and practice creating a class and methods for that class."
+        ]
+      },
+      "review-classes-and-objects": {
+        "title": "Classes and Objects Review",
+        "intro": [
+          "Before you're quizzed on classes and objects, you should review what you've learned about them.",
+          "Open up this page to review concepts like how classes work, what are objects, methods, attributes, special methods and more."
+        ]
+      },
+      "quiz-classes-and-objects": {
+        "title": "Classes and Objects Quiz",
+        "intro": [
+          "Test what you've learned about classes and objects in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "introduction-to-oop-in-python": {
+    "title": "Introduction to OOP in Python",
+    "summary": [
+      "Learn the basics of Object-Oriented Programming (OOP) in Python."
+    ],
+    "intro": [
+      "In this interactive course, you will learn the basics of Object-Oriented Programming (OOP) in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-object-oriented-programming-and-encapsulation": {
+        "title": "Understanding Object Oriented Programming and Encapsulation",
+        "intro": [
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lessons."
+        ]
+      },
+      "workshop-salary-tracker": {
+        "title": "Build a Salary Tracker",
+        "intro": [
+          "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
+        ]
+      },
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
+      },
+      "lecture-understanding-inheritance-and-polymorphism": {
+        "title": "Understanding Inheritance and Polymorphism",
+        "intro": [
+          "Learn about Understanding Inheritance and Polymorphism in these lessons."
+        ]
+      },
+      "workshop-media-catalogue": {
+        "title": "Build a Media Catalogue",
+        "intro": [
+          "In this workshop, you will create a media catalogue application using object-oriented programming principles."
+        ]
+      },
+      "lecture-understanding-abstraction": {
+        "title": "Understanding Abstraction",
+        "intro": ["Learn about Understanding Abstraction in these lessons."]
+      },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
+      "lab-player-interface": {
+        "title": "Build a Player Interface",
+        "intro": [
+          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+        ]
+      },
+      "lab-polygon-area-calculator": {
+        "title": "Build a Polygon Area Calculator",
+        "intro": [
+          "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
+      "review-object-oriented-programming": {
+        "title": "Object Oriented Programming Review",
+        "intro": [
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
+        ]
+      },
+      "quiz-object-oriented-programming": {
+        "title": "Object Oriented Programming Quiz",
+        "intro": [
+          "Test what you've learned about object oriented programming in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "introduction-to-linear-data-structures-in-python": {
+    "title": "Introduction to Linear Data Structures in Python",
+    "summary": ["Learn the basics of linear data structures in Python."],
+    "intro": [
+      "In this interactive course, you will learn the basics of linear data structures in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about Working with Common Data Structures in these lessons."
+        ]
+      },
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List",
+        "intro": [
+          "In this workshop, you'll practice working with data structures by building a linked list."
+        ]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
+        ]
+      },
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-algorithms-in-python": {
+    "title": "Learn Algorithms in Python",
+    "summary": ["Learn the basics of algorithms in Python."],
+    "intro": [
+      "In this interactive course, you will learn the basics of algorithms in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
+      "workshop-binary-search": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "lab-bisection-method": {
+        "title": "Implement the Bisection Method",
+        "intro": [
+          "In this lab, you will implement the bisection method to find the square root of a number."
+        ]
+      },
+      "workshop-merge-sort": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
+      },
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
+      "lab-selection-sort": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "lab-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
+        ]
+      },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
+        ]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
+        ]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-graphs-and-trees-in-python": {
+    "title": "Learn Graphs and Trees in Python",
+    "summary": ["Learn the basics of graphs and trees in Python."],
+    "intro": [
+      "In this interactive course, you will learn the basics of graphs and trees in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [
+          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
+        ]
+      },
+      "lab-adjacency-list-to-matrix-converter": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
+        ]
+      },
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement the Depth-First Search Algorithm."
+        ]
+      },
+      "lab-n-queens-problem": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
+        ]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      }
+    }
+  },
+  "learn-dynamic-programming-in-python": {
+    "title": "Learn Dynamic Programming in Python",
+    "summary": ["Learn the basics of dynamic programming in Python."],
+    "intro": [
+      "In this interactive course, you will learn the basics of dynamic programming in Python."
+    ],
+    "note": "",
+    "blocks": {
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [
+          "In this lab you will implement a Fibonacci sequence calculator using a dynamic programming approach."
+        ]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
+        ]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in Python with this quiz."
         ]
       }
     }
@@ -2951,6 +3508,12 @@
         "title": "Build a Sentence Analyzer",
         "intro": [
           "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
+        ]
+      },
+      "workshop-space-mission-roster": {
+        "title": "Build a Space Mission Roster",
+        "intro": [
+          "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
         ]
       },
       "lab-longest-word-in-a-string": {

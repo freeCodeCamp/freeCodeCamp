@@ -67,7 +67,17 @@ const superblocks = [
   'learn-sql-and-bash',
   'introduction-to-nano',
   'introduction-to-git-and-github',
-  'learn-prompting-fundamentals'
+  'learn-prompting-fundamentals',
+  'introduction-to-python-basics',
+  'learn-python-loops-and-sequences',
+  'learn-python-dictionaries-and-sets',
+  'learn-error-handling-in-python',
+  'learn-python-classes-and-objects',
+  'introduction-to-oop-in-python',
+  'introduction-to-linear-data-structures-in-python',
+  'learn-algorithms-in-python',
+  'learn-graphs-and-trees-in-python',
+  'learn-dynamic-programming-in-python'
 ];
 
 const schema = Joi.object().keys(

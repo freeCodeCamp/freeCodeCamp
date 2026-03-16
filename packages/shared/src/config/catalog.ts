@@ -262,5 +262,65 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 3,
     topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPythonBasics,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonLoopsAndSequences,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonDictionariesAndSets,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnErrorHandlingInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonClassesAndObjects,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToOOPInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToLinearDataStructuresInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnAlgorithmsInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnGraphsAndTreesInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnDynamicProgrammingInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
   }
 ];
