@@ -18,7 +18,7 @@ What is inheritance?
 
 ## --answers--
 
-This is where a child class can acquire the properties and methods of another parent class.
+The ability of a child class to acquire the properties and methods of a parent class.
 
 ---
 
