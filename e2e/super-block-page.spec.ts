@@ -277,3 +277,73 @@ test.describe('Super Block Page - Unauthenticated User', () => {
     });
   });
 });
+
+test.describe('Super Block Page - Search Lessons', () => {
+  test('should filter and restore blocks on a block-based superblock', async ({
+    page
+  }) => {
+    const searchTerm = '401';
+
+    await page.goto('/learn/project-euler/');
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).toBeVisible();
+
+    await page
+      .getByRole('searchbox', { name: /Search lessons/i })
+      .fill(searchTerm);
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 401 to 480' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(
+        new RegExp(`showing .+ matching lessons for "${searchTerm}"`, 'i')
+      )
+    ).toBeVisible();
+
+    await page.getByRole('button', { name: 'Clear search terms' }).click();
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).toBeVisible();
+  });
+
+  test('should filter blocks and auto-expand matching modules on a chapter-based superblock', async ({
+    page
+  }) => {
+    const searchTerm = 'Greeting Bot';
+
+    await page.goto('/learn/javascript-v9/');
+
+    await expect(
+      page.getByRole('button', { name: 'Booleans and Numbers' })
+    ).toBeVisible();
+
+    await page
+      .getByRole('searchbox', { name: /Search lessons/i })
+      .fill(searchTerm);
+
+    await expect(
+      page.getByRole('heading', { name: 'Build a Greeting Bot' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: 'Booleans and Numbers' })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(
+        new RegExp(`showing .+ matching lessons for "${searchTerm}"`, 'i')
+      )
+    ).toBeVisible();
+
+    await page.getByRole('button', { name: 'Clear search terms' }).click();
+
+    await expect(
+      page.getByRole('button', { name: 'Booleans and Numbers' })
+    ).toBeVisible();
+  });
+});

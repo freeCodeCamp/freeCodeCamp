@@ -80,6 +80,11 @@ interface SuperBlockAccordionProps {
   structure: ChapterBasedSuperBlockStructure;
   chosenBlock: string;
   completedChallengeIds: string[];
+  /**
+   * When true, expands all chapters and modules and hides those with no matching challenges.
+   * Used during search/filter.
+   */
+  expandAll?: boolean;
 }
 
 const Chapter = ({
@@ -218,12 +223,14 @@ const LinkModule = ({
   superBlock,
   challenges,
   accordion,
-  moduleType
+  moduleType,
+  expandAll
 }: {
   superBlock: SuperBlocks;
   challenges?: Challenge[];
   accordion: boolean;
   moduleType?: Module['moduleType'];
+  expandAll?: boolean;
 }) => {
   if (!challenges?.length) return null;
 
@@ -237,6 +244,7 @@ const LinkModule = ({
         challenges={challenges}
         superBlock={superBlock}
         accordion={accordion}
+        expandAll={expandAll}
       />
     </li>
   );
@@ -247,7 +255,8 @@ export const SuperBlockAccordion = ({
   superBlock,
   structure,
   chosenBlock,
-  completedChallengeIds
+  completedChallengeIds,
+  expandAll = false
 }: SuperBlockAccordionProps) => {
   const superBlockStructure = structure;
 
@@ -334,6 +343,8 @@ export const SuperBlockAccordion = ({
           );
         });
 
+        if (expandAll && chapterStepIds.length === 0) return null;
+
         const chapterStepIdsSet = new Set(chapterStepIds);
 
         const completedStepsInChapter = new Set(
@@ -359,7 +370,9 @@ export const SuperBlockAccordion = ({
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={
-              expandedChapter === chapter.name || allChapters.length === 1
+              expandAll ||
+              expandedChapter === chapter.name ||
+              allChapters.length === 1
             }
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
@@ -383,6 +396,7 @@ export const SuperBlockAccordion = ({
                     moduleType={module.moduleType}
                     challenges={module.blocks[0]?.challenges}
                     accordion={accordion}
+                    expandAll={expandAll}
                   />
                 );
               }
@@ -391,6 +405,8 @@ export const SuperBlockAccordion = ({
               module.blocks.forEach(block =>
                 moduleStepIds.push(...block.challenges.map(c => c.id))
               );
+
+              if (expandAll && moduleStepIds.length === 0) return null;
 
               const moduleStepIdsSet = new Set(moduleStepIds);
               const completedStepsInModule = new Set(
@@ -401,7 +417,7 @@ export const SuperBlockAccordion = ({
                 <Module
                   key={module.name}
                   dashedName={module.name}
-                  isExpanded={expandedModule === module.name}
+                  isExpanded={expandAll || expandedModule === module.name}
                   totalSteps={moduleStepIds.length}
                   completedSteps={completedStepsInModule}
                   superBlock={superBlock}
@@ -416,6 +432,7 @@ export const SuperBlockAccordion = ({
                         challenges={block.challenges}
                         superBlock={superBlock}
                         accordion={accordion}
+                        expandAll={expandAll}
                       />
                     </li>
                   ))}
