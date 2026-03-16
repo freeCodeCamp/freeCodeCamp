@@ -378,7 +378,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnSQLAndBash]: null,
   [SuperBlocks.IntroductionToNano]: null,
   [SuperBlocks.IntroductionToGitAndGithub]: null,
-  [SuperBlocks.IntroductionToGitAndGithub]: null,
   [SuperBlocks.LearnPromptingFundamentals]: null,
   [SuperBlocks.IntroductionToPythonBasics]: null,
   [SuperBlocks.LearnPythonLoopsAndSequences]: null,
