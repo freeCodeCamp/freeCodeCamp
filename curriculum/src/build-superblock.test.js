@@ -68,7 +68,6 @@ const dummyUnfinishedSuperBlock = {
 };
 
 const dummyBlockMeta = {
-  name: 'Test Block',
   blockLayout: 'challenge-list',
   blockLabel: 'workshop',
   isUpcomingChange: false,
@@ -327,7 +326,6 @@ describe('buildSuperblock pure functions', () => {
       ];
 
       const meta = {
-        name: 'Test Block',
         dashedName: 'test-block',
         challengeOrder: [
           { id: '1', title: 'Challenge 1' },
@@ -346,7 +344,6 @@ describe('buildSuperblock pure functions', () => {
       const foundChallenges = [{ id: '2', title: 'Challenge 2' }];
 
       const meta = {
-        name: 'Test Block',
         dashedName: 'test-block',
         challengeOrder: [
           { id: '1', title: 'Challenge 1' }, // Missing
@@ -363,7 +360,6 @@ describe('buildSuperblock pure functions', () => {
       const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
-        name: 'Test Block',
         dashedName: 'test-block',
         challengeOrder: [{ id: '1', title: 'Challenge 1' }]
       };
