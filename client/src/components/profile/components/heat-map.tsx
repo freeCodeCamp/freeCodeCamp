@@ -130,6 +130,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
                       ? $.profile.points_one
                       : $.profile.points_other,
                   {
+                    count: value.count,
                     date: dateFormatted
                   }
                 )

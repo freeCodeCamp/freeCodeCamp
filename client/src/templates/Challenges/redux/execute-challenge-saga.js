@@ -234,7 +234,7 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
           type === 'IndentationError'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
-        newTest.message = `<p>${i18next.t($ => $[msgKey])}</p>`;
+        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
       }
 
       const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);

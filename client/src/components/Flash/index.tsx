@@ -9,7 +9,6 @@ import {
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlashState } from '../../redux/types';
-import { getNamespaceResource } from '../../utils/type-guards';
 import { removeFlashMessage } from './redux';
 
 import './flash.css';
@@ -21,8 +20,7 @@ type FlashProps = {
 
 function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   const { type, message, id, variables = {} } = flashMessage;
-  const { t, i18n } = useTranslation();
-  const translationData = getNamespaceResource(i18n, 'translations');
+  const { t } = useTranslation();
 
   // Some APIs are returning 'error' as a flash type, and it needs to be mapped to 'danger'.
   // TODO: Standardize the value of `type`.
@@ -46,26 +44,10 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
       return message;
     }
 
-    const path = key.split('.');
-    let template: unknown = translationData;
-    for (const segment of path) {
-      if (typeof template !== 'object' || template === null) {
-        return message;
-      }
-      template = (template as Record<string, unknown>)[segment];
-    }
-
-    if (typeof template !== 'string') {
-      return message;
-    }
-
-    return template.replace(/\{\{\s*(\w+)\s*\}\}/g, (_match, key: string) => {
-      const value = variables[key];
-      return typeof value === 'string' ||
-        typeof value === 'number' ||
-        typeof value === 'boolean'
-        ? String(value)
-        : '';
+    return t(key as never, {
+      ns: namespace,
+      ...variables,
+      defaultValue: message
     });
   };
 
