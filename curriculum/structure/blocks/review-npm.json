@@ -1,0 +1,14 @@
+{
+  "name": "NPM Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-npm",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69a99035edde234d544d003f",
+      "title": "NPM Review"
+    }
+  ],
+  "blockLabel": "review"
+}
