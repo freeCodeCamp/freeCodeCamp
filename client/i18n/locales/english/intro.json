@@ -3159,7 +3159,7 @@
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
-          "In these lectures, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexDB, and much more."
+          "In these lectures, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexedDB, and much more."
         ]
       },
       "workshop-todo-app": {
@@ -3259,7 +3259,7 @@
       "workshop-countup": {
         "title": "Build a Countup",
         "intro": [
-          "In this workshop you will build a countdown function that returns an array of numbers counting up from 1 to a given number."
+          "In this workshop you will build a countup function that returns an array of numbers counting up from 1 to a given number."
         ]
       },
       "lab-countdown": {
