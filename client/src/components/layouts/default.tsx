@@ -201,7 +201,10 @@ function DefaultLayout({
                 ns: 'metaTags'
               })
             },
-            // TODO: fix this type assertion
+            // keywords is string[] in the JSON; i18next coerces it to a
+            // comma-joined string via Array.toString(), which is the correct
+            // format for <meta name="keywords">. The `as never` bypasses the
+            // typed selector's string-only constraint.
             {
               name: 'keywords',
               content: t($ => $.keywords as never, {
