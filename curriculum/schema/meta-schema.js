@@ -4,7 +4,6 @@ const slugRE = new RegExp('^[a-z0-9-]+$');
 
 const schema = Joi.object()
   .keys({
-    name: Joi.string().required(),
     blockLayout: Joi.valid(
       'challenge-list',
       'challenge-grid',
