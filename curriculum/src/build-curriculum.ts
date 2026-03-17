@@ -241,6 +241,39 @@ export const superBlockNames = {
   'introduction-to-nano': SuperBlocks.IntroductionToNano,
   'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
   'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals,
+  'introduction-to-variables-and-strings-in-javascript':
+    SuperBlocks.IntroductionToVariablesAndStringsInJS,
+  'introduction-to-booleans-and-numbers-in-javascript':
+    SuperBlocks.IntroductionToBooleansAndNumbersInJS,
+  'introduction-functions-in-javascript':
+    SuperBlocks.IntroductionToFunctionsInJS,
+  'introduction-to-arrays-in-javascript': SuperBlocks.IntroductionToArraysInJS,
+  'introduction-to-objects-in-javascript':
+    SuperBlocks.IntroductionToObjectsInJS,
+  'introduction-to-loops-in-javascript': SuperBlocks.IntroductionToLoopsInJS,
+  'javascript-fundamentals-review': SuperBlocks.JavascriptFundamentalsReview,
+  'introduction-to-higher-order-functions-and-callbacks-in-javascript':
+    SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS,
+  'learn-dom-manipulation-and-events-with-javascript':
+    SuperBlocks.LearnDomManipulationAndEventsWithJS,
+  'introduction-to-javascript-and-accessibility':
+    SuperBlocks.IntroductionToJavascriptAndAccessibility,
+  'learn-javascript-debugging': SuperBlocks.LearnJavascriptDebugging,
+  'learn-basic-regex-with-javascript': SuperBlocks.LearnBasicRegexWithJS,
+  'introduction-to-dates-in-javascript': SuperBlocks.IntroductionToDatesInJS,
+  'learn-audio-and-video-events-with-javascript':
+    SuperBlocks.LearnAudioAndVideoEventsWithJS,
+  'introduction-to-maps-and-sets-in-javascript':
+    SuperBlocks.IntroductionToMapsAndSetsInJS,
+  'learn-localstorage-and-crud-operations-with-javascript':
+    SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS,
+  'introduction-to-javascript-classes':
+    SuperBlocks.IntroductionToJavascriptClasses,
+  'learn-recursion-with-javascript': SuperBlocks.LearnRecursionWithJS,
+  'introduction-to-functional-programming-with-javascript':
+    SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
+  'introduction-to-asynchronous-javascript':
+    SuperBlocks.IntroductionToAsynchronousJS,
   'introduction-to-python-basics': SuperBlocks.IntroductionToPythonBasics,
   'learn-python-loops-and-sequences': SuperBlocks.LearnPythonLoopsAndSequences,
   'learn-python-dictionaries-and-sets':
