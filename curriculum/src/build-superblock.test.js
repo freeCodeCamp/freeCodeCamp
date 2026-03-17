@@ -100,19 +100,14 @@ const dummyChallenge = {
       name: 'file1',
       ext: 'js',
       history: [],
-      contents: 'console.log("Hello")',
-      // head and tail should not be required, but they currently are
-      head: '',
-      tail: ''
+      contents: 'console.log("Hello")'
     },
     {
       spuriousProp: '2',
       name: 'file2',
       ext: 'css',
       history: [],
-      contents: 'body { background: red; }',
-      head: '',
-      tail: ''
+      contents: 'body { background: red; }'
     }
   ]
 };
