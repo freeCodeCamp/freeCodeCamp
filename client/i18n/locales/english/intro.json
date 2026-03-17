@@ -952,50 +952,50 @@
     ],
     "note": "",
     "blocks": {
-      "learn-python-setup-first-steps": {
-        "title": "Setup & First Steps",
+      "python-setup-first-steps": {
+        "title": "Python Setup & First Steps",
         "intro": [
           "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
         ]
       },
-      "learn-python-core-primitives": {
-        "title": "Core Primitives: Variables, Types, Basic I/O",
+      "core-primitives-in-python": {
+        "title": "Core Primitives in Python",
         "intro": [
           "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
         ]
       },
-      "learn-python-small-projects-basics": {
-        "title": "Small Projects: Using Basics",
+      "small-python-projects": {
+        "title": "Small Python Projects",
         "intro": [
           "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
         ]
       },
-      "learn-python-data-structures": {
-        "title": "Data Structures: Lists and Tuples",
+      "lists-and-tuples": {
+        "title": "Lists and Tuples",
         "intro": [
           "In these videos, you will learn about lists, tuples and common operations."
         ]
       },
-      "learn-python-control-flow-functions": {
+      "control-flow-and-functions-in-python": {
         "title": "Control Flow and Functions",
         "intro": [
           "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
         ]
       },
-      "learn-python-projects-loops": {
+      "dictionaries-and-loops": {
         "title": "Dictionaries and Loops",
         "intro": [
           "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
         ]
       },
-      "learn-python-practical-errors-files": {
-        "title": "Practical Python: Errors, Files and Modules",
+      "error-handling-files-and-modules-in-python": {
+        "title": "Error Handling, Files, and Modules",
         "intro": [
           "In these videos, you will learn how to handle errors gracefully, read and write to files, and organize your code with modules and external packages."
         ]
       },
-      "learn-python-oop": {
-        "title": "Object Oriented Programming",
+      "object-oriented-programming-with-python": {
+        "title": "Object-Oriented Programming with Python",
         "intro": [
           "In these videos, you will learn about object-oriented programming by creating classes and objects. You will practice these skills by building a multiple choice quiz application."
         ]
