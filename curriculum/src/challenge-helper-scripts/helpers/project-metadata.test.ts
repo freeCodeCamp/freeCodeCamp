@@ -1,10 +1,10 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import { join } from 'path';
 import { describe, it, expect, vi } from 'vitest';
-import { getBlockStructure } from '@freecodecamp/curriculum/file-handler';
+import { getBlockStructure } from '../../file-handler.js';
 import { getMetaData } from './project-metadata.js';
 
-vi.mock('@freecodecamp/curriculum/file-handler');
+vi.mock('../../file-handler.js');
 
 const commonPath = join('curriculum', 'challenges', 'blocks');
 const block = 'block-name';

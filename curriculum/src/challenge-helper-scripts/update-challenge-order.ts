@@ -13,7 +13,7 @@ const updateChallengeOrder = async () => {
     const nextChallengeId = await select<string>({
       message: newChallengeOrder.length
         ? `What challenge comes after ${
-            newChallengeOrder[newChallengeOrder.length - 1].title
+            newChallengeOrder[newChallengeOrder.length - 1]!.title
           }?`
         : 'What is the first challenge?',
       choices: oldChallengeOrder.map(({ id, title }) => ({
@@ -24,7 +24,7 @@ const updateChallengeOrder = async () => {
     const nextChallengeIndex = oldChallengeOrder.findIndex(
       ({ id }) => id === nextChallengeId
     );
-    const targetChallenge = oldChallengeOrder[nextChallengeIndex];
+    const targetChallenge = oldChallengeOrder[nextChallengeIndex]!;
     oldChallengeOrder.splice(nextChallengeIndex, 1);
     newChallengeOrder.push(targetChallenge);
   }

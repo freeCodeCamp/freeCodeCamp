@@ -11,9 +11,10 @@ import {
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   createBlockFolder,
+  getSuperblockStructure,
   writeBlockStructure
-} from '@freecodecamp/curriculum/file-handler';
-import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
+} from '../file-handler.js';
+import { superBlockToFilename } from '../build-curriculum.js';
 import {
   createQuizFile,
   createStepFile,
@@ -23,7 +24,6 @@ import {
 import { getBaseMeta } from './helpers/get-base-meta.js';
 import { IntroJson, parseJson } from './helpers/parse-json.js';
 import {
-  ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './helpers/create-project.js';
@@ -150,7 +150,7 @@ async function updateIntroJson(
 ) {
   const introJsonPath = path.resolve(
     __dirname,
-    '../../client/i18n/locales/english/intro.json'
+    '../../../client/i18n/locales/english/intro.json'
   );
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {
@@ -243,25 +243,13 @@ async function createQuizChallenge({
 }
 
 async function getChapters(superBlock: string) {
-  const blockMetaFile = await fs.readFile(
-    '../../curriculum/structure/superblocks/' + superBlock + '.json',
-    { encoding: 'utf8' }
-  );
-  const blockMetaData = JSON.parse(
-    blockMetaFile
-  ) as ChapterModuleSuperblockStructure;
+  const blockMetaData = getSuperblockStructure(superBlock);
   return blockMetaData.chapters;
 }
 
 async function getModules(superBlock: string, chapterName: string) {
-  const blockMetaFile = await fs.readFile(
-    '../../curriculum/structure/superblocks/' + superBlock + '.json',
-    { encoding: 'utf8' }
-  );
-  const blockMetaData = JSON.parse(
-    blockMetaFile
-  ) as ChapterModuleSuperblockStructure;
-  const modifiedChapter = blockMetaData.chapters.find(
+  const blockMetaData = getSuperblockStructure(superBlock);
+  const modifiedChapter = blockMetaData.chapters?.find(
     x => x.dashedName === chapterName
   );
   return modifiedChapter?.modules;
@@ -341,6 +329,11 @@ void getAllBlocks()
       }
 
       const chapters = await getChapters(superBlock);
+      if (!chapters) {
+        throw new Error(
+          `Superblock ${superBlock} does not have any chapters in the meta data.`
+        );
+      }
       chapter = await select({
         message: 'What chapter should this project go in?',
         choices: chapters.map(x => ({
@@ -398,6 +391,6 @@ void getAllBlocks()
   .catch((err: unknown) =>
     console.error(
       'Error creating project:',
-      err instanceof Error ? err.message : String(err)
+      err instanceof Error ? err : String(err)
     )
   );

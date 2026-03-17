@@ -5,7 +5,7 @@ import { join } from 'path';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { getFileName } from './get-file-name.js';
 
-const basePath = join(process.cwd(), '__fixtures__');
+const basePath = join(process.cwd(), '__fixtures__', 'get-file-name');
 const commonPath = join(basePath, 'curriculum', 'challenges');
 
 const block = 'project-get-file-name';

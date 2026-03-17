@@ -22,7 +22,7 @@ async function deleteStep(stepNum: number): Promise<void> {
       `Step # ${stepNum} not deleted. Largest step number is ${challengeOrder.length}.`
     );
 
-  const stepId = challengeOrder[stepNum - 1].id;
+  const stepId = challengeOrder[stepNum - 1]!.id;
 
   fs.unlinkSync(`${getProjectPath()}${stepId}.md`);
   await deleteStepFromMeta({ stepNum });
@@ -45,10 +45,10 @@ async function insertStep(stepNum: number): Promise<void> {
     );
 
   const previousChallenge =
-    stepNum > 1 ? getChallenge(challengeOrder[stepNum - 2].id) : null;
+    stepNum > 1 ? getChallenge(challengeOrder[stepNum - 2]!.id) : null;
   const nextChallenge =
     stepNum <= challengeOrder.length
-      ? getChallenge(challengeOrder[stepNum - 1].id)
+      ? getChallenge(challengeOrder[stepNum - 1]!.id)
       : null;
 
   const challengeSeeds = previousChallenge?.challengeFiles ?? [];

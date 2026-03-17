@@ -40,7 +40,6 @@ COPY --chown=node:node client/package.json client/turbo.json client/
 COPY --chown=node:node curriculum/package.json curriculum/turbo.json curriculum/
 COPY --chown=node:node e2e/package.json e2e/
 
-COPY --chown=node:node tools/challenge-helper-scripts/package.json tools/challenge-helper-scripts/
 COPY --chown=node:node tools/challenge-parser/package.json tools/challenge-parser/
 COPY --chown=node:node tools/client-plugins/browser-scripts/package.json tools/client-plugins/browser-scripts/
 COPY --chown=node:node tools/client-plugins/gatsby-source-challenges/package.json tools/client-plugins/gatsby-source-challenges/

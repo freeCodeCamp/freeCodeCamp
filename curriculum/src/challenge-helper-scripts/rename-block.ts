@@ -14,7 +14,7 @@ import {
   writeSuperblockStructure,
   getContentConfig,
   getCurriculumStructure
-} from '@freecodecamp/curriculum/file-handler';
+} from '../file-handler.js';
 
 interface RenameBlockArgs {
   newBlock: string;
@@ -64,7 +64,7 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
           );
           introBlocks[blockIntroIndex] = [
             newBlock,
-            { ...introBlocks[blockIntroIndex][1], title: newName }
+            { ...introBlocks[blockIntroIndex]![1], title: newName }
           ];
           newIntro[superblock].blocks = Object.fromEntries(introBlocks);
 

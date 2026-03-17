@@ -4,5 +4,5 @@ export function getProjectPath(): string {
 }
 
 export function getProjectName(): string {
-  return getProjectPath().split('/').slice(-2)[0];
+  return getProjectPath().split('/').slice(-2)[0]!;
 }

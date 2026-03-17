@@ -29,9 +29,6 @@
     "shared": {
       "ignore": ["{config,utils}/*.ts"] // Using the same dir for src + outDir files with tsc confuses Knip
     },
-    "tools/challenge-helper-scripts": {
-      "ignoreBinaries": ["mocha"] // Test setup in this workspace seems to be in need of a checkup
-    },
     "tools/challenge-parser": {
       "entry": ["parser/tools/*.js"] // Files not referenced/documented?
     },

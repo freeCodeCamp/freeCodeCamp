@@ -6,8 +6,8 @@ import { uniq } from 'lodash';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
-import { parseCurriculumStructure } from '@freecodecamp/curriculum/build-curriculum';
-import { parseMDSync } from '../challenge-parser/parser/index.js';
+import { parseCurriculumStructure } from '../build-curriculum.js';
+import { parseMDSync } from '@freecodecamp/challenge-parser/parser/index.js';
 import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
 import { getProjectPath } from './helpers/get-project-info.js';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template.js';

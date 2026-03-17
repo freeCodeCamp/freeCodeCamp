@@ -5,11 +5,8 @@ import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
-import {
-  createBlockFolder,
-  writeBlockStructure
-} from '@freecodecamp/curriculum/file-handler';
-import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
+import { createBlockFolder, writeBlockStructure } from '../file-handler.js';
+import { superBlockToFilename } from '../build-curriculum.js';
 import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
 import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
@@ -60,7 +57,7 @@ async function updateIntroJson(
 ) {
   const introJsonPath = path.resolve(
     __dirname,
-    '../../client/i18n/locales/english/intro.json'
+    '../../../client/i18n/locales/english/intro.json'
   );
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {

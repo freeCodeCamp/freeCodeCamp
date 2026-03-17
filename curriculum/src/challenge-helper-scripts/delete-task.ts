@@ -37,7 +37,7 @@ const deleteTask = async () => {
   await deleteChallengeFromMeta(indexToDelete);
   console.log(`Finished removing challenge from 'meta.json'.`);
 
-  if (isTaskChallenge(challenges[indexToDelete].title)) {
+  if (isTaskChallenge(challenges[indexToDelete]!.title)) {
     await updateTaskMeta();
     console.log("Finished updating tasks in 'meta.json'.");
 
