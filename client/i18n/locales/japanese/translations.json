@@ -518,7 +518,7 @@
     "ms-link": "Microsoft のリンク",
     "submit-and-go": "提出して次のチャレンジに進む",
     "congratulations": "おめでとうございます、合格です。次に進むにはコードを提出してください。",
-    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
+    "congratulations-code-passes": "Congratulations. Your code passes.",
     "i-completed": "このチャレンジを完了しました",
     "example-code": "コード例",
     "test-output": "テストの結果はこちらに表示されます",
@@ -556,7 +556,7 @@
     "contact-support-mistake": "ご不明な点がございましたら、donors@freecodecamp.org までお問い合わせください。",
     "editor-tabs": {
       "code": "コード",
-      "tests": "テスト",
+      "tests": "Tests:",
       "restart": "リスタート",
       "restart-step": "ステップをリスタート",
       "console": "コンソール",
@@ -1276,6 +1276,9 @@
       "foundational-c-sharp-with-microsoft-cert": "Microsoft 連携・基礎 C# 認定証",
       "learn-python-for-beginners": "Learn Python for Beginners",
       "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
+      "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
+      "introduction-to-precalculus": "Introduction to Precalculus",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "開発者のための A2 レベル英語",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開発者のための B1 レベル英語",
@@ -1311,7 +1314,13 @@
       "information-security-and-quality-assurance": "旧情報セキュリティと品質保証",
       "information-security-and-quality-assurance-cert": "旧情報セキュリティと品質保証認定証",
       "full-stack": "Legacy Full-Stack",
-      "full-stack-cert": "Legacy Full-Stack Certification"
+      "full-stack-cert": "Legacy Full-Stack Certification",
+      "introduction-to-bash": "Introduction to Bash",
+      "introduction-to-sql-and-postgresql": "Introduction to SQL and PostgreSQL",
+      "learn-bash-scripting": "Learn Bash Scripting",
+      "learn-sql-and-bash": "Learn SQL and Bash",
+      "introduction-to-nano": "Introduction to Nano",
+      "introduction-to-git-and-github": "Introduction to Git and GitHub"
     }
   },
   "certification-card": {
@@ -1463,7 +1472,13 @@
         "api": "APIs",
         "information-security": "Information Security",
         "computer-fundamentals": "Computer Fundamentals",
-        "computer-science": "Computer Science"
+        "computer-science": "Computer Science",
+        "math": "Math",
+        "databases": "Databases",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editors",
+        "ai": "AI"
       }
     }
   }

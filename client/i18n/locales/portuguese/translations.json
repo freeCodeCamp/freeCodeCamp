@@ -518,7 +518,7 @@
     "ms-link": "Link da Microsoft",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
     "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
-    "congratulations-code-passes": "✔ Parabéns. Seu código passou.",
+    "congratulations-code-passes": "Congratulations. Your code passes.",
     "i-completed": "Já completei este desafio",
     "example-code": "Exemplo de código",
     "test-output": "O resultado do seu código vai aparecer aqui",
@@ -556,7 +556,7 @@
     "contact-support-mistake": "Se você acha que houve um erro, entre em contato conosco pelo e-mail donors@freecodecamp.org",
     "editor-tabs": {
       "code": "Código",
-      "tests": "Testes",
+      "tests": "Tests:",
       "restart": "Reiniciar",
       "restart-step": "Reiniciar etapa",
       "console": "Console",
@@ -1276,6 +1276,9 @@
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
       "learn-python-for-beginners": "Aprenda Python para iniciantes",
       "introduction-to-algorithms-and-data-structures": "Introdução a Algoritmos e Estruturas de Dados",
+      "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
+      "introduction-to-precalculus": "Introduction to Precalculus",
+      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
@@ -1311,7 +1314,13 @@
       "information-security-and-quality-assurance": "Segurança da informação e garantia da qualidade edição antiga",
       "information-security-and-quality-assurance-cert": "Certificação de segurança da informação e garantia da qualidade edição antiga",
       "full-stack": "Full Stack edição antiga",
-      "full-stack-cert": "Certificação Full Stack edição antiga"
+      "full-stack-cert": "Certificação Full Stack edição antiga",
+      "introduction-to-bash": "Introduction to Bash",
+      "introduction-to-sql-and-postgresql": "Introduction to SQL and PostgreSQL",
+      "learn-bash-scripting": "Learn Bash Scripting",
+      "learn-sql-and-bash": "Learn SQL and Bash",
+      "introduction-to-nano": "Introduction to Nano",
+      "introduction-to-git-and-github": "Introduction to Git and GitHub"
     }
   },
   "certification-card": {
@@ -1463,7 +1472,13 @@
         "api": "APIs",
         "information-security": "Segurança da Informação",
         "computer-fundamentals": "Fundamentos de Computação",
-        "computer-science": "Ciência da Computação"
+        "computer-science": "Ciência da Computação",
+        "math": "Math",
+        "databases": "Databases",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editors",
+        "ai": "AI"
       }
     }
   }

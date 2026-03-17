@@ -8,7 +8,7 @@ import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks,
-  type ChallengeLang
+  ChallengeLang
 } from '@freecodecamp/shared/config/curriculum';
 
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
@@ -32,11 +32,11 @@ import {
 } from './helpers/create-project.js';
 import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock.js';
 
-const helpCategories = [
-  'English',
-  'Chinese Curriculum',
-  'Spanish Curriculum'
-] as const;
+const langToHelpCategory: Record<ChallengeLang, string> = {
+  [ChallengeLang.English]: 'English',
+  [ChallengeLang.Chinese]: 'Chinese Curriculum',
+  [ChallengeLang.Spanish]: 'Spanish Curriculum'
+};
 
 type BlockInfo = {
   title: string;
@@ -391,14 +391,7 @@ void getAllBlocks()
       default: block
     });
 
-    const helpCategory = await select<string>({
-      message: 'Choose a help category',
-      default: 'English',
-      choices: helpCategories.map(value => ({
-        name: value,
-        value
-      }))
-    });
+    const helpCategory = langToHelpCategory[getLangFromSuperBlock(superBlock)];
 
     let blockLayout: string | undefined;
 
