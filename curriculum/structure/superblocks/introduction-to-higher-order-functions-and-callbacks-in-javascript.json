@@ -1,0 +1,17 @@
+{
+  "blocks": [
+    "lecture-working-with-higher-order-functions-and-callbacks",
+    "workshop-library-manager",
+    "lab-book-organizer",
+    "lab-sorted-index-finder",
+    "lab-symmetric-difference",
+    "lab-value-remover-function",
+    "lab-matching-object-filter",
+    "lab-prime-number-sum-calculator",
+    "lab-range-based-lcm-calculator",
+    "lab-deep-flattening-tool",
+    "lab-all-true-property-validator",
+    "review-javascript-higher-order-functions",
+    "quiz-javascript-higher-order-functions"
+  ]
+}
