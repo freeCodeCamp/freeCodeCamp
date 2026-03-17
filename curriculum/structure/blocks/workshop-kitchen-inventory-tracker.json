@@ -1,0 +1,11 @@
+{
+  "name": "Build a Kitchen Inventory Tracker",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-kitchen-inventory-tracker",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69b8882f70547883d0e8f82d", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
