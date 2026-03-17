@@ -335,8 +335,11 @@ describe('socratesRoutes', () => {
             text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
           });
 
-          let response;
-          for (let i = 0; i < 10; i++) {
+          let response =
+            await superPut('/socrates/get-hint').send(validPayload);
+          expect(response.status).toBe(200);
+
+          for (let i = 1; i < 10; i++) {
             response = await superPut('/socrates/get-hint').send(validPayload);
             expect(response.status).toBe(200);
           }

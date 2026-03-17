@@ -171,6 +171,7 @@ export function IndependentLowerJaw({
   const askSocratesAttempt = () => {
     setShowSocratesResults(true);
     setShowHint(false);
+    setShowSubmissionHint(false);
     if (socratesHintState.isLoading) return;
     askSocrates();
   };

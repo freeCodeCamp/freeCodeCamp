@@ -26,6 +26,27 @@ function* askSocratesSaga() {
     const tests = yield select(challengeTestsSelector);
     const { description } = yield select(challengeMetaSelector);
 
+    const hasCheckedCode = tests.some(test => test.pass || test.err);
+    if (!hasCheckedCode) {
+      yield put(
+        askSocratesError({
+          error: 'Check your code before asking Socrates for a hint.'
+        })
+      );
+      return;
+    }
+
+    const allTestsPass = tests.every(test => test.pass);
+    if (allTestsPass) {
+      yield put(
+        askSocratesError({
+          error:
+            'Congratulations, your code passes! Press submit and continue to the next challenge.'
+        })
+      );
+      return;
+    }
+
     const fileWithEditableRegion = challengeData.challengeFiles.find(
       file => file.editableRegionBoundaries.length > 0
     );
