@@ -3,7 +3,7 @@ id: 69a769365a27934b29e1eac5
 title: Prompt Engineering Mindset
 challengeType: 11
 videoId: vzwYXMiXH9A
-dashedName: prompt-engineering-mindset-learn-prompting-fundamentals
+dashedName: prompt-engineering-mindset
 ---
 
 # --description--

@@ -3,7 +3,7 @@ id: 69a765395a27934b29e1eac2
 title: Why is Prompt Engineering Useful?
 challengeType: 11
 videoId: kUfSMBysZE4
-dashedName: why-is-prompt-engineering-useful-useful-learn-prompting-fundamentals
+dashedName: why-is-prompt-engineering-useful-useful
 ---
 
 # --description--
