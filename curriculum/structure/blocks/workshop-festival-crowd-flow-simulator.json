@@ -1,0 +1,27 @@
+{
+  "name": "Build a Festival Crowd Flow Simulator",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-festival-crowd-flow-simulator",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69b8b0d3657d5bdb915c8e64", "title": "Step 1" },
+    { "id": "69b8bc87a268f79a50f84976", "title": "Step 2" },
+    { "id": "69b8cbbaceefcb687a8d8027", "title": "Step 3" },
+    { "id": "69b8d6d25423c7f93d4ff6a9", "title": "Step 4" },
+    { "id": "69b8daa9027957e55bfe279d", "title": "Step 5" },
+    { "id": "69b8dd89f0d686a0809d9b00", "title": "Step 6" },
+    { "id": "69b8e147cce306aa07789df6", "title": "Step 7" },
+    { "id": "69b8e457ec802e23ccdeec7b", "title": "Step 8" },
+    { "id": "69b906d1fcdc8ea8d10a9fe6", "title": "Step 9" },
+    { "id": "69b910b17c078ebe3badd0ae", "title": "Step 10" },
+    { "id": "69b91afe63d788c427777228", "title": "Step 11" },
+    { "id": "69b91f72789b822070fb286d", "title": "Step 12" },
+    { "id": "69b920d0a7591125fb6c581e", "title": "Step 13" },
+    { "id": "69b92684da859cbfc7f127dc", "title": "Step 14" },
+    { "id": "69b928f469ab62ba66880e81", "title": "Step 15" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
