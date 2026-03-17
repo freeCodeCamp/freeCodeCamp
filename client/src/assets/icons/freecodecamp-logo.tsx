@@ -6,7 +6,6 @@ function FreeCodeCampLogo(
   return (
     <svg
       height={24}
-      version='1.1'
       viewBox='0 0 210 24'
       width={210}
       xmlns='http://www.w3.org/2000/svg'

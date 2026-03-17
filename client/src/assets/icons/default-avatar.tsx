@@ -9,7 +9,6 @@ function DefaultAvatar(
   return (
     <svg
       height='500px'
-      version='1.1'
       viewBox='0 0 500 500'
       width='500px'
       xmlns='http://www.w3.org/2000/svg'

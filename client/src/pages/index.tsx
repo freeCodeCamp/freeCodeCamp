@@ -45,8 +45,11 @@ function IndexPage(): JSX.Element {
   } else {
     return (
       <>
-        <SEO title={t('metaTags:title')} />
-        <Loader fullScreen={true} />
+        <SEO title={t('metaTags:title', 'Learn to Code — For Free')} />
+        <main id='landing-content'>
+          <h1 className='sr-only'>{t('landing.big-heading-1', 'Learn to code — for free.')}</h1>
+          <Loader fullScreen={true} />
+        </main>
       </>
     );
   }

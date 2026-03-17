@@ -9,7 +9,6 @@ function Graduation(
       xmlns='http://www.w3.org/2000/svg'
       height='60'
       width='60'
-      version='1.1'
       viewBox='0 0 245.827 245.827'
       {...props}
     >

@@ -6,7 +6,7 @@
   background: var(--tertiary-background);
   line-height: 1.6;
   padding: 40px 15px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .footer-top {
@@ -28,8 +28,8 @@
 
 .site-footer p {
   margin: 0 0 1.45rem;
-  line-height: 30px;
-  font-size: 16px;
+  line-height: 1.875;
+  font-size: 1rem;
 }
 
 .site-footer a {
@@ -46,7 +46,7 @@
 .trending-guides .col-header {
   text-align: center;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   padding: 0 15px 15px;
   margin-bottom: 0;
 }
@@ -91,7 +91,7 @@
 
 p.footer-donation {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 p.footer-donation a:hover {

@@ -50,7 +50,7 @@ figcaption.caption {
 .landing-page .big-heading {
   height: 100%;
   margin-bottom: 40px;
-  line-height: 1.1;
+  line-height: 1.5;
   font-weight: 700;
 }
 
@@ -165,7 +165,7 @@ figcaption.caption {
   display: flex;
   flex-direction: column;
   padding: 25px;
-  text-align: justify;
+  text-align: left;
   justify-content: center;
 }
 

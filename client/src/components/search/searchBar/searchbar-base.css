@@ -653,3 +653,6 @@ a[class^='ais-'] {
 strong.ais-Highlight-highlighted {
   background-color: transparent;
 }
+
+.ais-SearchBox-input:focus-visible { outline: 2px solid #0096db; }
+.ais-SearchBox-input:focus { outline: 2px solid #0096db; }
