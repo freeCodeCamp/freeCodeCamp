@@ -1444,7 +1444,7 @@
   "learn-oop-with-python": {
     "title": "Learn OOP with Python",
     "summary": [
-      "In this video course, you learn about object-oriented programming using Python."
+      "In this video course, you will learn about object-oriented programming using Python."
     ],
     "intro": [
       "Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and code to manipulate that data. This course introduces the key principles of OOP, including classes, objects, inheritance, and shows how to apply them in practice."
@@ -1482,7 +1482,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn what Python is, how to set up your development environment."
+          "In these lessons, you will learn what Python is and how to set up your development environment."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -1587,7 +1587,7 @@
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
         "intro": [
-          "Learn about Working with Loops and Sequences in these lessons."
+          "Learn about working with loops and sequences in these lessons."
         ]
       },
       "workshop-pin-extractor": {
@@ -1704,7 +1704,7 @@
     "blocks": {
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": ["Learn about Classes and Objects in these lessons."]
+        "intro": ["Learn about classes and objects in these lessons."]
       },
       "workshop-musical-instrument-inventory": {
         "title": "Build a Musical Instrument Inventory",
@@ -1758,7 +1758,7 @@
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
         "intro": [
-          "Learn about Understanding Object Oriented Programming and Encapsulation in these lessons."
+          "Learn about understanding object oriented programming and encapsulation in these lessons."
         ]
       },
       "workshop-salary-tracker": {
@@ -1776,7 +1776,7 @@
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about Understanding Inheritance and Polymorphism in these lessons."
+          "Learn about understanding inheritance and polymorphism in these lessons."
         ]
       },
       "workshop-media-catalogue": {
@@ -1787,7 +1787,7 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about Understanding Abstraction in these lessons."]
+        "intro": ["Learn about understanding abstraction in these lessons."]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -1832,7 +1832,7 @@
       "lecture-working-with-common-data-structures": {
         "title": "Working with Common Data Structures",
         "intro": [
-          "Learn about Working with Common Data Structures in these lessons."
+          "Learn about working with common data structures in these lessons."
         ]
       },
       "workshop-linked-list-class": {
@@ -6219,7 +6219,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn what Python is, how to set up your development environment."
+          "In these lessons, you will learn what Python is and how to set up your development environment."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -6314,7 +6314,7 @@
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
         "intro": [
-          "Learn about Working with Loops and Sequences in these lessons."
+          "Learn about working with loops and sequences in these lessons."
         ]
       },
       "workshop-pin-extractor": {
@@ -6401,7 +6401,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": ["Learn about Classes and Objects in these lessons."]
+        "intro": ["Learn about classes and objects in these lessons."]
       },
       "workshop-musical-instrument-inventory": {
         "title": "Build a Musical Instrument Inventory",
@@ -6443,7 +6443,7 @@
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
         "intro": [
-          "Learn about Understanding Object Oriented Programming and Encapsulation in these lessons."
+          "Learn about understanding object oriented programming and encapsulation in these lessons."
         ]
       },
       "workshop-salary-tracker": {
@@ -6461,7 +6461,7 @@
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about Understanding Inheritance and Polymorphism in these lessons."
+          "Learn about understanding inheritance and polymorphism in these lessons."
         ]
       },
       "workshop-media-catalogue": {
@@ -6472,7 +6472,7 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about Understanding Abstraction in these lessons."]
+        "intro": ["Learn about understanding abstraction in these lessons."]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -6507,7 +6507,7 @@
       "lecture-working-with-common-data-structures": {
         "title": "Working with Common Data Structures",
         "intro": [
-          "Learn about Working with Common Data Structures in these lessons."
+          "Learn about working with common data structures in these lessons."
         ]
       },
       "workshop-linked-list-class": {
