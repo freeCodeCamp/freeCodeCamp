@@ -228,25 +228,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
     return (
       <>
-        {isDailyCodingChallenge && (
-          <div className='tabs-row'>
-            <div
-              className='tabs-row-middle'
-              style={{
-                position: 'static',
-                transform: 'none',
-                padding: '10px',
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '5px',
-                width: '100%'
-              }}
-            >
+        <div className='mobile-daily-challenge-wrapper'>
+          {isDailyCodingChallenge && (
+            <div className='mobile-daily-lang-selector'>
               <button
                 aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
                 disabled={dailyCodingChallengeLanguage === 'javascript'}
                 onClick={() => this.handleLanguageChange('javascript')}
-                style={{ flex: 1 }}
               >
                 JavaScript
               </button>
@@ -254,14 +242,12 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 aria-expanded={dailyCodingChallengeLanguage === 'python'}
                 disabled={dailyCodingChallengeLanguage === 'python'}
                 onClick={() => this.handleLanguageChange('python')}
-                style={{ flex: 1 }}
               >
                 Python
               </button>
             </div>
-          </div>
-        )}
-        <Tabs
+          )}
+          <Tabs
           id='mobile-layout'
           className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
           onKeyDown={this.handleKeyDown}
@@ -370,7 +356,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               </button>
             </div>
           )}
-        </Tabs>
+          </Tabs>
+        </div>
         {displayPreviewPortal && (
           <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
             {preview}

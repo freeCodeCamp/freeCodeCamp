@@ -133,6 +133,51 @@
   height: 100%;
 }
 
+.mobile-daily-challenge-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* When the language selector is present, let the Tabs take remaining space */
+.mobile-daily-challenge-wrapper #mobile-layout {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+
+.mobile-daily-lang-selector {
+  display: flex;
+  flex-shrink: 0;
+  gap: 5px;
+  padding: 10px;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.mobile-daily-lang-selector button {
+  flex: 1;
+  padding: 6px 12px;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.mobile-daily-lang-selector button[aria-expanded='true'] {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-background);
+}
+
+.mobile-daily-lang-selector button:hover {
+  color: var(--secondary-color);
+  background-color: var(--primary-background);
+}
+
+.mobile-daily-lang-selector button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
+
+
 #mobile-layout .nav-lists {
   margin: 0;
   padding: 0;
