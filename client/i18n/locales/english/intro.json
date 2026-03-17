@@ -2872,7 +2872,7 @@
       "lab-cargo-manifest-validator": {
         "title": "Build a Cargo Manifest Validator",
         "intro": [
-          "In this lab, you will leverage JavaScript to normalize and validate cargo manifests."
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
         ]
       },
       "lecture-working-with-json": {
