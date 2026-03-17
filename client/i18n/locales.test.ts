@@ -14,6 +14,8 @@ import {
   superBlockStages,
   SuperBlockStage
 } from '@freecodecamp/shared/config/curriculum';
+import { getCurriculumStructure } from '@freecodecamp/curriculum/file-handler';
+import { addSuperblockStructure } from '@freecodecamp/curriculum/build-curriculum';
 import intro from './locales/english/intro.json';
 
 interface Intro {
@@ -109,4 +111,26 @@ describe('Intro file structure tests:', () => {
       });
     });
   }
+});
+
+describe('Curriculum validation', () => {
+  const { superblocks } = getCurriculumStructure();
+  const structuredSuperBlocks = addSuperblockStructure(superblocks, true);
+
+  structuredSuperBlocks.forEach(superblock => {
+    describe(`${superblock.name}`, () => {
+      test('should have titles for each block in intro.json', () => {
+        const blocks = superblock.blocks.map(({ dashedName }) => dashedName);
+
+        blocks.forEach(block => {
+          const blockFromIntro = (intro as unknown as Intro)[superblock.name]
+            .blocks[block];
+          expect(
+            blockFromIntro.title,
+            `block ${block} needs a non-empty title`
+          ).toBeTruthy();
+        });
+      });
+    });
+  });
 });
