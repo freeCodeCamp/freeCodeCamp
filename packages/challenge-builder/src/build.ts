@@ -277,12 +277,7 @@ async function buildJSChallenge(
     challengeType,
     build: toBuild
       .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
+        (body, challengeFile) => [...body, challengeFile.contents],
         [] as string[]
       )
       .join('\n'),

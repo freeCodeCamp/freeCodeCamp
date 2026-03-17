@@ -1,17 +1,5 @@
 # --seed--
 
-## --before-user-code--
-
-```css
-body {
-  etc: ''
-}
-```
-
-```html
-<!-- comment -->
-```
-
 ## --seed-contents--
 
 ```html
@@ -29,20 +17,6 @@ body {
 
 ```js
 var x = 'y';
-```
-
-## --after-user-code--
-
-```css
-body {
-  background: blue;
-}
-```
-
-```js
-function teardown(params) {
-  // after
-}
 ```
 
 
