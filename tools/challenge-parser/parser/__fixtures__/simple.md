@@ -58,6 +58,14 @@ body {
 var x = 'y';
 ```
 
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020"
+  }
+}
+```
+
 
 # --solutions--
 
