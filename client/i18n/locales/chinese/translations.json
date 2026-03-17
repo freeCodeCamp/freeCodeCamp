@@ -518,7 +518,7 @@
     "ms-link": "微软的链接",
     "submit-and-go": "提交并访问下一个挑战",
     "congratulations": "恭喜，你的代码已通过。请提交你的代码以继续。",
-    "congratulations-code-passes": "✔ 恭喜。你的代码通过了。",
+    "congratulations-code-passes": "Congratulations. Your code passes.",
     "i-completed": "我已经完成这个挑战",
     "example-code": "示例代码",
     "test-output": "你的测试输出将在这里显示",
@@ -556,7 +556,7 @@
     "contact-support-mistake": "如果你觉得有错误，请发邮件至 donors@freecodecamp.org 联系我们",
     "editor-tabs": {
       "code": "编程",
-      "tests": "测试",
+      "tests": "Tests:",
       "restart": "重启",
       "restart-step": "重启步骤",
       "console": "控制台",
@@ -1276,6 +1276,8 @@
       "foundational-c-sharp-with-microsoft-cert": "微软基础 C# 认证",
       "learn-python-for-beginners": "学习 Python 基础",
       "introduction-to-algorithms-and-data-structures": "算法和数据结构",
+      "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
+      "introduction-to-precalculus": "Introduction to Precalculus",
       "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "a2-english-for-developers": "开发者 A2 英语",
       "a2-english-for-developers-cert": "A2 开发者英语认证（测试版）",
@@ -1312,7 +1314,13 @@
       "information-security-and-quality-assurance": "旧版信息安全和质量保证",
       "information-security-and-quality-assurance-cert": "旧版信息安全和质量保证认证",
       "full-stack": "旧版全栈",
-      "full-stack-cert": "旧版全栈认证"
+      "full-stack-cert": "旧版全栈认证",
+      "introduction-to-bash": "Introduction to Bash",
+      "introduction-to-sql-and-postgresql": "Introduction to SQL and PostgreSQL",
+      "learn-bash-scripting": "Learn Bash Scripting",
+      "learn-sql-and-bash": "Learn SQL and Bash",
+      "introduction-to-nano": "Introduction to Nano",
+      "introduction-to-git-and-github": "Introduction to Git and GitHub"
     }
   },
   "certification-card": {
@@ -1465,6 +1473,11 @@
         "information-security": "信息安全",
         "computer-fundamentals": "计算机基础",
         "computer-science": "计算机科学",
+        "math": "Math",
+        "databases": "Databases",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editors",
         "ai": "AI"
       }
     }
