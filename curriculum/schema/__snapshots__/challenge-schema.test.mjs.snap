@@ -242,12 +242,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
             "fileKey": {
               "type": "string",
             },
-            "head": {
-              "allow": [
-                "",
-              ],
-              "type": "string",
-            },
             "history": {
               "items": [
                 {
@@ -272,12 +266,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "type": "string",
             },
             "seed": {
-              "allow": [
-                "",
-              ],
-              "type": "string",
-            },
-            "tail": {
               "allow": [
                 "",
               ],
@@ -2050,12 +2038,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                 "fileKey": {
                   "type": "string",
                 },
-                "head": {
-                  "allow": [
-                    "",
-                  ],
-                  "type": "string",
-                },
                 "history": {
                   "items": [
                     {
@@ -2080,12 +2062,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                   "type": "string",
                 },
                 "seed": {
-                  "allow": [
-                    "",
-                  ],
-                  "type": "string",
-                },
-                "tail": {
                   "allow": [
                     "",
                   ],
