@@ -271,6 +271,8 @@ interface SocratesHintResponse {
   hint?: string;
   error?: string;
   type?: string;
+  attempts?: number;
+  limit?: number;
 }
 // TODO: Verify if the body has and needs this Donation type. The api seems to
 // just need the body to exist, but doesn't seem to use the properties.

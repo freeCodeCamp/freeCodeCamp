@@ -48,7 +48,9 @@ describe('socratesRoutes', () => {
         expect(response.status).toBe(403);
         expect(response.body).toStrictEqual({
           error: 'You do not have access to Socrates.',
-          type: 'danger'
+          type: 'danger',
+          attempts: 0,
+          limit: 0
         });
         expect(mockedFetch).not.toHaveBeenCalled();
       });
@@ -58,6 +60,9 @@ describe('socratesRoutes', () => {
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },
             data: { socrates: true }
+          });
+          await fastifyTestInstance.prisma.socratesUsage.deleteMany({
+            where: { userId: defaultUserId }
           });
         });
 
@@ -76,7 +81,9 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(200);
           expect(response.body).toStrictEqual({
-            hint: 'Try adding a closing tag.'
+            hint: 'Try adding a closing tag.',
+            attempts: 1,
+            limit: 3
           });
         });
 
@@ -132,7 +139,9 @@ describe('socratesRoutes', () => {
           expect(response.body).toStrictEqual({
             error:
               'You have reached the hint limit. Please wait a moment before trying again.',
-            type: 'info'
+            type: 'info',
+            attempts: 0,
+            limit: 3
           });
         });
 
@@ -152,7 +161,9 @@ describe('socratesRoutes', () => {
           expect(response.status).toBe(400);
           expect(response.body).toStrictEqual({
             error: 'Input too short for analysis.',
-            type: 'info'
+            type: 'info',
+            attempts: 0,
+            limit: 3
           });
         });
 
@@ -169,7 +180,9 @@ describe('socratesRoutes', () => {
           expect(response.status).toBe(400);
           expect(response.body).toStrictEqual({
             error: 'Socrates was unable to generate a hint. Please try again.',
-            type: 'info'
+            type: 'info',
+            attempts: 0,
+            limit: 3
           });
         });
 
@@ -187,7 +200,9 @@ describe('socratesRoutes', () => {
           expect(response.body).toStrictEqual({
             error:
               'Socrates is temporarily unavailable. Please try again later.',
-            type: 'danger'
+            type: 'danger',
+            attempts: 0,
+            limit: 3
           });
         });
 
@@ -203,6 +218,8 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(500);
           expect(response.body.type).toBe('danger');
+          expect(response.body.attempts).toBe(0);
+          expect(response.body.limit).toBe(3);
         });
 
         test('should return 500 when Socrates API returns no hint', async () => {
@@ -217,6 +234,8 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(500);
           expect(response.body.type).toBe('danger');
+          expect(response.body.attempts).toBe(0);
+          expect(response.body.limit).toBe(3);
         });
 
         test('should return 500 when fetch throws', async () => {
@@ -229,8 +248,141 @@ describe('socratesRoutes', () => {
           expect(response.body).toStrictEqual({
             error:
               'Socrates is temporarily unavailable. Please try again later.',
-            type: 'danger'
+            type: 'danger',
+            attempts: 0,
+            limit: 3
           });
+        });
+      });
+
+      describe('daily usage entitlements', () => {
+        beforeEach(async () => {
+          await fastifyTestInstance.prisma.user.update({
+            where: { id: defaultUserId },
+            data: { socrates: true, isDonating: false }
+          });
+          await fastifyTestInstance.prisma.socratesUsage.deleteMany({
+            where: { userId: defaultUserId }
+          });
+        });
+
+        afterEach(() => {
+          vi.clearAllMocks();
+        });
+
+        test('should return attempts=1 and limit=3 on first hint for non-donor', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(200);
+          expect(response.body.attempts).toBe(1);
+          expect(response.body.limit).toBe(3);
+        });
+
+        test('should increment attempts on each request', async () => {
+          mockedFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          await superPut('/socrates/get-hint').send(validPayload);
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(200);
+          expect(response.body.attempts).toBe(2);
+        });
+
+        test('should return 429 when non-donor exceeds 3 hints/day', async () => {
+          mockedFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          for (let i = 0; i < 3; i++) {
+            await superPut('/socrates/get-hint').send(validPayload);
+          }
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(429);
+          expect(response.body.attempts).toBe(3);
+          expect(response.body.limit).toBe(3);
+          expect(response.body.error).toBe(
+            'You have reached the daily hint limit. Please try again tomorrow.'
+          );
+          expect(mockedFetch).toHaveBeenCalledTimes(3);
+        });
+
+        test('should allow 10 hints/day for donors', async () => {
+          await fastifyTestInstance.prisma.user.update({
+            where: { id: defaultUserId },
+            data: { isDonating: true }
+          });
+
+          mockedFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          let response;
+          for (let i = 0; i < 10; i++) {
+            response = await superPut('/socrates/get-hint').send(validPayload);
+            expect(response.status).toBe(200);
+          }
+
+          expect(response.body.attempts).toBe(10);
+          expect(response.body.limit).toBe(10);
+
+          response = await superPut('/socrates/get-hint').send(validPayload);
+          expect(response.status).toBe(429);
+        });
+
+        test('should not consume an attempt on upstream API error', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: false,
+            status: 500,
+            text: () => Promise.resolve('Server Error')
+          });
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(response.body.attempts).toBe(0);
+          expect(response.body.limit).toBe(3);
+        });
+
+        test('should not count yesterday usage against today limit', async () => {
+          const yesterday = new Date();
+          yesterday.setUTCDate(yesterday.getUTCDate() - 1);
+          const yesterdayStr = yesterday.toISOString().slice(0, 10);
+
+          await fastifyTestInstance.prisma.socratesUsage.create({
+            data: { userId: defaultUserId, date: yesterdayStr, count: 3 }
+          });
+
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(200);
+          expect(response.body.attempts).toBe(1);
         });
       });
 
@@ -251,7 +403,9 @@ describe('socratesRoutes', () => {
           expect(response.status).toBe(400);
           expect(response.body).toStrictEqual({
             error: 'Please write some code before asking Socrates for a hint.',
-            type: 'info'
+            type: 'info',
+            attempts: 0,
+            limit: 0
           });
           expect(mockedFetch).not.toHaveBeenCalled();
         });

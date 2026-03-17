@@ -42,6 +42,8 @@ type SocratesHintState = {
   hint: null | string;
   isLoading: boolean;
   error: null | string;
+  attempts: null | number;
+  limit: null | number;
 };
 
 const mapStateToProps = createSelector(
@@ -236,6 +238,13 @@ export function IndependentLowerJaw({
               }}
             />
           )}
+          {socratesHintState.attempts !== null &&
+            socratesHintState.limit !== null && (
+              <div className='socrates-usage-info'>
+                {socratesHintState.attempts}/{socratesHintState.limit}{' '}
+                {t('learn.hints-used-today')}
+              </div>
+            )}
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (

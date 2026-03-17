@@ -3,6 +3,12 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import * as schemas from '../../schemas.js';
 import { SOCRATES_API_KEY, SOCRATES_ENDPOINT } from '../../utils/env.js';
 
+const DAILY_LIMITS = { donor: 10, nonDonor: 3 } as const;
+
+function getDailyLimit(isDonating: boolean): number {
+  return isDonating ? DAILY_LIMITS.donor : DAILY_LIMITS.nonDonor;
+}
+
 /**
  *
  * @param fastify The Fastify instance.
@@ -23,7 +29,9 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         if (error.validation) {
           void reply.status(400).send({
             error: 'Please write some code before asking Socrates for a hint.',
-            type: 'info'
+            type: 'info',
+            attempts: 0,
+            limit: 0
           });
         } else {
           fastify.errorHandler(error, req, reply);
@@ -34,9 +42,49 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       if (!req.user?.socrates) {
         return reply.status(403).send({
           error: 'You do not have access to Socrates.',
-          type: 'danger'
+          type: 'danger',
+          attempts: 0,
+          limit: 0
         });
       }
+
+      const limit = getDailyLimit(req.user.isDonating);
+      const todayUTC = new Date().toISOString().slice(0, 10);
+
+      const usage = await fastify.prisma.socratesUsage.upsert({
+        where: {
+          userId_date: { userId: req.user.id, date: todayUTC }
+        },
+        create: {
+          userId: req.user.id,
+          date: todayUTC,
+          count: 1
+        },
+        update: {
+          count: { increment: 1 }
+        }
+      });
+
+      const attempts = usage.count;
+
+      if (attempts > limit) {
+        return reply.status(429).send({
+          error:
+            'You have reached the daily hint limit. Please try again tomorrow.',
+          type: 'info',
+          attempts: limit,
+          limit
+        });
+      }
+
+      const rollbackUsage = async () => {
+        await fastify.prisma.socratesUsage.update({
+          where: {
+            userId_date: { userId: req.user!.id, date: todayUTC }
+          },
+          data: { count: { decrement: 1 } }
+        });
+      };
 
       try {
         const response = await fetch(SOCRATES_ENDPOINT, {
@@ -65,11 +113,15 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
             'Socrates API returned an error response.'
           );
 
+          await rollbackUsage();
+
           if (response.status === 429) {
             return reply.status(429).send({
               error:
                 'You have reached the hint limit. Please wait a moment before trying again.',
-              type: 'info'
+              type: 'info',
+              attempts: attempts - 1,
+              limit
             });
           }
 
@@ -87,14 +139,18 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
               error:
                 upstreamMessage ||
                 'Socrates was unable to generate a hint. Please try again.',
-              type: 'info'
+              type: 'info',
+              attempts: attempts - 1,
+              limit
             });
           }
 
           return reply.status(500).send({
             error:
               'Socrates is temporarily unavailable. Please try again later.',
-            type: 'danger'
+            type: 'danger',
+            attempts: attempts - 1,
+            limit
           });
         }
 
@@ -106,10 +162,13 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
             err: error,
             response: responseText || undefined
           });
+          await rollbackUsage();
           return reply.status(500).send({
             error:
               'Socrates is temporarily unavailable. Please try again later.',
-            type: 'danger'
+            type: 'danger',
+            attempts: attempts - 1,
+            limit
           });
         }
 
@@ -124,24 +183,30 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
             },
             'Socrates API did not return a hint.'
           );
+          await rollbackUsage();
           return reply.status(500).send({
             error:
               'Socrates is temporarily unavailable. Please try again later.',
-            type: 'danger'
+            type: 'danger',
+            attempts: attempts - 1,
+            limit
           });
         }
 
         const { hint } = payload as { hint: string };
 
-        return { hint } as const;
+        return { hint, attempts, limit } as const;
       } catch (error) {
         req.log.error(
           { err: error },
           'Failed to fetch hint from Socrates API.'
         );
+        await rollbackUsage();
         return reply.status(500).send({
           error: 'Socrates is temporarily unavailable. Please try again later.',
-          type: 'danger'
+          type: 'danger',
+          attempts: attempts - 1,
+          limit
         });
       }
     }

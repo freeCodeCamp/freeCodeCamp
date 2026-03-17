@@ -13,7 +13,11 @@ import { askSocratesError, askSocratesComplete } from './actions';
 function* askSocratesSaga() {
   const isSocratesOn = yield select(isSocratesOnSelector);
   if (!isSocratesOn) {
-    yield put(askSocratesError('Socrates is not enabled for your account.'));
+    yield put(
+      askSocratesError({
+        error: 'Socrates is not enabled for your account.'
+      })
+    );
     return;
   }
 
@@ -28,7 +32,9 @@ function* askSocratesSaga() {
 
     if (!fileWithEditableRegion) {
       yield put(
-        askSocratesError('Socrates is not available for this challenge.')
+        askSocratesError({
+          error: 'Socrates is not available for this challenge.'
+        })
       );
       return;
     }
@@ -38,9 +44,9 @@ function* askSocratesSaga() {
 
     if (!userInput || !seed) {
       yield put(
-        askSocratesError(
-          'Please write some code before asking Socrates for a hint.'
-        )
+        askSocratesError({
+          error: 'Please write some code before asking Socrates for a hint.'
+        })
       );
       return;
     }
@@ -61,18 +67,30 @@ function* askSocratesSaga() {
     };
 
     const response = yield call(getSocratesHint, optimizedPayload);
-    const error = response?.data?.error;
+    const responseData = response?.data;
+    const error = responseData?.error;
     if (error) {
-      yield put(askSocratesError(error));
+      yield put(
+        askSocratesError({
+          error,
+          attempts: responseData?.attempts,
+          limit: responseData?.limit
+        })
+      );
     } else {
-      const { hint } = response.data;
-      yield put(askSocratesComplete(hint));
+      yield put(
+        askSocratesComplete({
+          hint: responseData.hint,
+          attempts: responseData.attempts,
+          limit: responseData.limit
+        })
+      );
     }
   } catch {
     yield put(
-      askSocratesError(
-        'Something went wrong while asking Socrates. Please try again.'
-      )
+      askSocratesError({
+        error: 'Something went wrong while asking Socrates. Please try again.'
+      })
     );
   }
 }

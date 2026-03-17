@@ -229,6 +229,17 @@ model Donation {
   @@index([userId], map: "userId_1")
 }
 
+model SocratesUsage {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  /// UTC date string in YYYY-MM-DD format representing the day of usage.
+  date   String
+  /// Number of hints used on this day.
+  count  Int    @default(0)
+
+  @@unique([userId, date])
+}
+
 model UserToken {
   id      String   @id @map("_id")
   created DateTime @db.Date

@@ -5,6 +5,11 @@ const socratesHint = Type.Object({
   failed: Type.Optional(Type.Boolean())
 });
 
+const usageFields = {
+  attempts: Type.Integer(),
+  limit: Type.Integer()
+};
+
 export const askSocrates = {
   body: Type.Object(
     {
@@ -17,23 +22,28 @@ export const askSocrates = {
   ),
   response: {
     200: Type.Object({
-      hint: Type.String()
+      hint: Type.String(),
+      ...usageFields
     }),
     400: Type.Object({
       error: Type.String(),
-      type: Type.Literal('info')
+      type: Type.Literal('info'),
+      ...usageFields
     }),
     403: Type.Object({
       error: Type.String(),
-      type: Type.Literal('danger')
+      type: Type.Literal('danger'),
+      ...usageFields
     }),
     429: Type.Object({
       error: Type.String(),
-      type: Type.Literal('info')
+      type: Type.Literal('info'),
+      ...usageFields
     }),
     500: Type.Object({
       error: Type.String(),
-      type: Type.Literal('danger')
+      type: Type.Literal('danger'),
+      ...usageFields
     })
   }
 };

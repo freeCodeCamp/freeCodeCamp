@@ -40,7 +40,13 @@ const baseProps = {
   completedChallengeIds: ['id-1', 'test-challenge-id'],
   currentBlockIds: ['id-1', 'test-challenge-id'],
   hasSocratesAccess: false,
-  socratesHintState: { hint: null, isLoading: false, error: null }
+  socratesHintState: {
+    hint: null,
+    isLoading: false,
+    error: null,
+    attempts: null,
+    limit: null
+  }
 };
 
 vi.mock('../../../utils/get-words');

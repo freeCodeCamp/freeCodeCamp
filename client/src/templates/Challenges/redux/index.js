@@ -64,7 +64,9 @@ const initialState = {
   socratesHintState: {
     hint: null,
     isLoading: false,
-    error: null
+    error: null,
+    attempts: null,
+    limit: null
   }
 };
 
@@ -290,15 +292,19 @@ export const reducer = handleActions(
       socratesHintState: {
         hint: null,
         isLoading: true,
-        error: null
+        error: null,
+        attempts: state.socratesHintState.attempts,
+        limit: state.socratesHintState.limit
       }
     }),
     [actionTypes.askSocratesComplete]: (state, { payload }) => ({
       ...state,
       socratesHintState: {
-        hint: payload,
+        hint: payload.hint,
         isLoading: false,
-        error: null
+        error: null,
+        attempts: payload.attempts,
+        limit: payload.limit
       }
     }),
     [actionTypes.askSocratesError]: (state, { payload }) => ({
@@ -306,7 +312,9 @@ export const reducer = handleActions(
       socratesHintState: {
         hint: null,
         isLoading: false,
-        error: payload
+        error: payload.error,
+        attempts: payload.attempts ?? state.socratesHintState.attempts,
+        limit: payload.limit ?? state.socratesHintState.limit
       }
     }),
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
