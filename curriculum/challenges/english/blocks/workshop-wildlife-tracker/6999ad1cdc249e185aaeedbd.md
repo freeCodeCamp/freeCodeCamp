@@ -30,13 +30,9 @@ console.log(addColor(cat, "White"));
 
 In this example, the `color` property is added to the `cat` object.
 
-Now create a function called `addHabitat`.
+Now create a function called `addHabitat`. The function should take two parameters: `animal` and `habitat`.
 
-The function should take two parameters: `animal` and `habitat`.
-
-Inside the function, add a new property called `habitat` to the `animal` object.
-
-Set its value equal to the `habitat` parameter.
+Inside the function, add a new property called `habitat` to the `animal` object. Set its value equal to the `habitat` parameter.
 
 Return the updated `animal` object.
 
@@ -50,11 +46,8 @@ You should create a function named `addHabitat`.
 assert.isFunction(addHabitat);
 ```
 
-The `addHabitat` function should have two parameters.
+The `addHabitat` function should have two parameters: `animal` and `habitat`.
 
-```js
-assert.lengthOf(addHabitat, 2);
-```
 
 `addHabitat` should use dot notation to add the `habitat` property.
 
