@@ -270,7 +270,7 @@ export const catalog: Catalog[] = [
     topic: Topic.Js
   },
   {
-    superBlock: SuperBlocks.IntroductionFunctionsInJS,
+    superBlock: SuperBlocks.IntroductionToFunctionsInJS,
     level: Levels.Intermediate,
     hours: 40,
     topic: Topic.Js

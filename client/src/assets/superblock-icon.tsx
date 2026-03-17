@@ -101,7 +101,7 @@ const iconMap = {
   [SuperBlocks.LearnPromptingFundamentals]: Clipboard,
   [SuperBlocks.IntroductionToVariablesAndStringsInJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: JavaScriptIcon,
-  [SuperBlocks.IntroductionFunctionsInJS]: JavaScriptIcon,
+  [SuperBlocks.IntroductionToFunctionsInJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToArraysInJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToObjectsInJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToLoopsInJS]: JavaScriptIcon,

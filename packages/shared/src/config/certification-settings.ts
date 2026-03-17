@@ -380,7 +380,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnPromptingFundamentals]: null,
   [SuperBlocks.IntroductionToVariablesAndStringsInJS]: null,
   [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: null,
-  [SuperBlocks.IntroductionFunctionsInJS]: null,
+  [SuperBlocks.IntroductionToFunctionsInJS]: null,
   [SuperBlocks.IntroductionToArraysInJS]: null,
   [SuperBlocks.IntroductionToObjectsInJS]: null,
   [SuperBlocks.IntroductionToLoopsInJS]: null,

@@ -245,7 +245,8 @@ export const superBlockNames = {
     SuperBlocks.IntroductionToVariablesAndStringsInJS,
   'introduction-to-booleans-and-numbers-in-javascript':
     SuperBlocks.IntroductionToBooleansAndNumbersInJS,
-  'introduction-functions-in-javascript': SuperBlocks.IntroductionFunctionsInJS,
+  'introduction-functions-in-javascript':
+    SuperBlocks.IntroductionToFunctionsInJS,
   'introduction-to-arrays-in-javascript': SuperBlocks.IntroductionToArraysInJS,
   'introduction-to-objects-in-javascript':
     SuperBlocks.IntroductionToObjectsInJS,
