@@ -31,7 +31,7 @@ export function CodeAllyButton({
       block={true}
     >
       <span className='sr-only'>, {t($ => $.aria['opens-new-window'])}</span>
-      {text}
+      {text}&nbsp;&nbsp;
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );
