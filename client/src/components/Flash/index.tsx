@@ -32,25 +32,6 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
     removeFlashMessage();
   }
 
-  const getTranslatedFlashMessage = () => {
-    if (!message) {
-      return '';
-    }
-
-    const [namespace, key] = message.includes(':')
-      ? message.split(':', 2)
-      : ['translations', message];
-    if (namespace !== 'translations') {
-      return message;
-    }
-
-    return t(key as never, {
-      ns: namespace,
-      ...variables,
-      defaultValue: message
-    });
-  };
-
   return (
     <Alert
       key={id}
@@ -69,7 +50,8 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
             className='flash-message'
             data-testid='flash-message-content'
           >
-            {getTranslatedFlashMessage()}
+            {/* message is a dynamic enum value, so a typed selector is not possible here */}
+            {t(message as never, variables)}
             <CloseButton
               onClick={handleClose}
               label={t($ => $.buttons.close)}
