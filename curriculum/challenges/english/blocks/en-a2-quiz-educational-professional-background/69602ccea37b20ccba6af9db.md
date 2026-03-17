@@ -34,7 +34,7 @@ The action will happen soon.
 
 ---
 
-The action happens every day
+The action happens every day.
 
 #### --answer--
 
@@ -88,7 +88,25 @@ A formal meeting with questions
 
 #### --text--
 
-What is the best answer to this question: `Can you tell me about your previous job position?`
+Listen to the audio. What is the best answer to this question? <!-- (quiz audio) Anna: Can you tell me about your previous job experiences? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "3.1-1.mp3",
+    "startTimestamp": 2.75,
+    "finishTimestamp": 5.3
+  },
+  "transcript": [
+    {
+      "character": "Anna",
+      "text": "Can you tell me about your previous job experiences?"
+    }
+  ]
+}
+```
 
 #### --distractors--
 
@@ -286,7 +304,25 @@ What is the correct question form of this sentence: `She worked with them for fi
 
 #### --text--
 
-How do you answer this question: `Did you work on any projects last year?`
+Listen to the audio. How would you answer this question? <!-- (quiz audio) Tom: Did you work on any projects during your self-study? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "3.1-4.mp3",
+    "startTimestamp": 32.9,
+    "finishTimestamp": 36.1
+  },
+  "transcript": [
+    {
+      "character": "Tom",
+      "text": "Did you work on any projects during your self-study?"
+    }
+  ]
+}
+```
 
 #### --distractors--
 

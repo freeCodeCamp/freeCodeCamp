@@ -46,6 +46,15 @@
 .progress-bar-wrap {
   width: 100%;
   position: relative;
+  border: 1px solid var(--quaternary-color);
+}
+
+.progress-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.9rem;
 }
 
 .progress-bar-background {
@@ -57,6 +66,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
+
   top: 0;
   left: 0;
 }

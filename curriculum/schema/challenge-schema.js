@@ -205,7 +205,7 @@ export const schema = Joi.object().keys({
   nodules: Joi.array().items(
     Joi.object().keys({
       type: Joi.valid('paragraph', 'interactiveEditor').required(),
-      data: Joi.when('type', {
+      files: Joi.when('type', {
         is: ['interactiveEditor'],
         then: Joi.array().items(
           Joi.object().keys({
@@ -215,7 +215,12 @@ export const schema = Joi.object().keys({
             contentsHtml: Joi.string().required()
           })
         ),
-        otherwise: Joi.string().required()
+        otherwise: Joi.forbidden()
+      }),
+      contents: Joi.when('type', {
+        is: ['paragraph'],
+        then: Joi.string().required(),
+        otherwise: Joi.forbidden()
       })
     })
   ),
@@ -231,7 +236,8 @@ export const schema = Joi.object().keys({
     'Euler',
     'Rosetta',
     'Chinese Curriculum',
-    'Spanish Curriculum'
+    'Spanish Curriculum',
+    'General'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
@@ -353,7 +359,6 @@ export const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
-  showSpeakingButton: Joi.bool(),
   // This is only to be used for dynamic client updates.
   sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),

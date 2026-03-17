@@ -2,16 +2,16 @@ import { createSelector } from 'reselect';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   completedChallengesSelector,
-  allChallengesInfoSelector,
   isSignedInSelector,
   completionStateSelector,
   completedChallengesIdsSelector,
   completedDailyCodingChallengesIdsSelector
 } from '../../../redux/selectors';
+import { curriculumData } from '../../../services/curriculum-data';
 import {
-  getCurrentBlockIds,
   getCompletedChallengesInBlock,
-  getCompletedPercentage
+  getCompletedPercentage,
+  getCurrentBlockIds
 } from '../../../utils/get-completion-percentage';
 import { ns } from './action-types';
 
@@ -120,9 +120,12 @@ export const challengeDataSelector = state => {
 
 export const currentBlockIdsSelector = createSelector(
   challengeMetaSelector,
-  allChallengesInfoSelector,
-  (challengeMeta, allChallengesInfo) => {
+  challengeMeta => {
     const { block, certification, challengeType } = challengeMeta;
+    const allChallengesInfo = {
+      challengeNodes: curriculumData.challengeNodes,
+      certificateNodes: curriculumData.certificateNodes
+    };
 
     return getCurrentBlockIds(
       allChallengesInfo,

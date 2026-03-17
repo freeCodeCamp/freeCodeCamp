@@ -527,6 +527,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
         "Rosetta",
         "Chinese Curriculum",
         "Spanish Curriculum",
+        "General",
       ],
       "flags": {
         "only": true,
@@ -834,7 +835,44 @@ exports[`challenge schema > should not be changed without informing the mobile t
       "items": [
         {
           "keys": {
-            "data": {
+            "contents": {
+              "type": "any",
+              "whens": [
+                {
+                  "is": {
+                    "allow": [
+                      {
+                        "override": true,
+                      },
+                      "paragraph",
+                    ],
+                    "flags": {
+                      "only": true,
+                      "presence": "required",
+                    },
+                    "type": "any",
+                  },
+                  "otherwise": {
+                    "flags": {
+                      "presence": "forbidden",
+                    },
+                    "type": "any",
+                  },
+                  "ref": {
+                    "path": [
+                      "type",
+                    ],
+                  },
+                  "then": {
+                    "flags": {
+                      "presence": "required",
+                    },
+                    "type": "string",
+                  },
+                },
+              ],
+            },
+            "files": {
               "type": "any",
               "whens": [
                 {
@@ -853,9 +891,9 @@ exports[`challenge schema > should not be changed without informing the mobile t
                   },
                   "otherwise": {
                     "flags": {
-                      "presence": "required",
+                      "presence": "forbidden",
                     },
-                    "type": "string",
+                    "type": "any",
                   },
                   "ref": {
                     "path": [
@@ -1761,6 +1799,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "ES_A1_vowels_oiu.mp3",
                     "ES_A1_vowels_uae.mp3",
                     "ES_A1_warm_up_describing_people_at_work.mp3",
+                    "ES_A1_what_each_department_does.mp3",
                     "ES_A1_what_the_company_does.mp3",
                     "ZH_A1_greetings_and_introductions_wanghua.mp3",
                     "ZH_A1_greetings_and_introductions_liuming.mp3",
@@ -1774,6 +1813,9 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "ZH_A1_pinyin_nasal_finals.mp3",
                     "ZH_A1_pinyin_special_spelling_rules.mp3",
                     "ZH_A1_pinyin_practice.mp3",
+                    "ZH_A1_numbers_and_personal_information_numbers_0_10.mp3",
+                    "ZH_A1_numbers_and_personal_information_numbers_11_19.mp3",
+                    "ZH_A1_numbers_and_personal_information_numbers_20_99.mp3",
                   ],
                   "flags": {
                     "only": true,
@@ -1972,9 +2014,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
         },
       },
       "type": "object",
-    },
-    "showSpeakingButton": {
-      "type": "boolean",
     },
     "solutions": {
       "items": [
