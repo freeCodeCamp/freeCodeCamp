@@ -7062,6 +7062,10 @@
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
+      "review-npm": {
+        "title": "NPM Review",
+        "intro": ["Review npm concepts to prepare for the upcoming quiz."]
+      },
       "quiz-npm": {
         "title": "NPM Quiz",
         "intro": ["Test what you have learned about npm in this quiz."]

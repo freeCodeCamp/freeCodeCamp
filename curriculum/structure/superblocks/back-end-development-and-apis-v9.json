@@ -28,6 +28,7 @@
           "blocks": [
             "lecture-introduction-to-npm",
             "lecture-working-with-npm-scripts",
+            "review-npm",
             "quiz-npm"
           ]
         },
