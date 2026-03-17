@@ -232,7 +232,8 @@ const modeMap = {
   ts: 'typescript',
   tsx: 'typescript',
   py: 'python',
-  python: 'python'
+  python: 'python',
+  json: 'json'
 };
 
 let monacoThemesDefined = false;
@@ -411,6 +412,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
       jsx: monaco.languages.typescript.JsxEmit.Preserve,
       allowUmdGlobalAccess: true
+    });
+
+    // support JSONC:
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+      allowComments: true
     });
 
     defineMonacoThemes(monaco, { usesMultifileEditor });

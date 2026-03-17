@@ -1,4 +1,4 @@
-const exts = ['js', 'html', 'css', 'jsx', 'ts', 'tsx', 'py'] as const;
+const exts = ['js', 'html', 'css', 'jsx', 'ts', 'tsx', 'py', 'json'] as const;
 export type Ext = (typeof exts)[number];
 
 export interface IncompleteChallengeFile {

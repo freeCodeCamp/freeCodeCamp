@@ -1062,8 +1062,99 @@
       }
     }
   },
+  "learn-rag-mcp-fundamentals": {
+    "title": "Learn RAG and MCP Fundamentals",
+    "summary": [
+      "Learn the fundamentals of RAG and MCP in this comprehensive video course."
+    ],
+    "intro": [
+      "RAG stands for Retrieval-Augmented Generation. MCP stands for Model Context Protocol. These are powerful frameworks for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
+      "In this course, you'll learn the fundamentals of RAG and MCP and how to implement them in your own projects. You'll explore the components of RAG and MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG and MCP work and how to use them to build intelligent agents."
+    ],
+    "note": "",
+    "blocks": {
+      "understanding-rag": {
+        "title": "Understanding RAG",
+        "intro": [
+          "Learn the fundamentals of Retrieval-Augmented Generation (RAG), including what it is, when to use it, and core concepts."
+        ]
+      },
+      "retrieval-engine-internals": {
+        "title": "Retrieval Engine Internals",
+        "intro": [
+          "Dive into semantic search, embedding models, vector databases, and chunking to understand how retrieval works under the hood."
+        ]
+      },
+      "designing-reliable-rag-systems": {
+        "title": "Designing Reliable RAG Systems",
+        "intro": [
+          "Explore RAG architecture, monitoring, error handling, and how to deploy RAG systems in production."
+        ]
+      },
+      "mcp-ecosystem-and-tooling": {
+        "title": "MCP Ecosystem & Tooling",
+        "intro": [
+          "Learn why MCP exists, its architecture, JSON-RPC, and how to build and use MCP servers and clients effectively."
+        ]
+      }
+    }
+  },
+  "introduction-to-precalculus": {
+    "title": "Introduction to Precalculus",
+    "summary": [
+      "Learn the fundamentals of precalculus, including functions, and trigonometry."
+    ],
+    "intro": [
+      "Precalculus is a branch of mathematics that prepares you for calculus. It covers a wide range of topics including functions, and trigonometry."
+    ],
+    "note": "",
+    "blocks": {
+      "function-basics": {
+        "title": "Function Basics",
+        "intro": [
+          "In these videos, you will learn about functions and how to work with them."
+        ]
+      },
+      "angles-and-circular-motion": {
+        "title": "Angles and Circular Motion",
+        "intro": [
+          "In these videos, you will learn about angles and circular motion."
+        ]
+      },
+      "right-triangle-trigonometry": {
+        "title": "Right Triangle Trigonometry",
+        "intro": [
+          "In these videos, you will learn about right triangle trigonometry and how to work with it."
+        ]
+      },
+      "trig-graphs-inverses": {
+        "title": "Trigonometric Graphs and Inverses",
+        "intro": [
+          "In these videos, you will learn about trigonometric graphs and inverse functions."
+        ]
+      },
+      "solving-trig-equations": {
+        "title": "Solving Trigonometric Equations",
+        "intro": [
+          "In these videos, you will learn how to solve trigonometric equations."
+        ]
+      },
+      "trig-identities-formulas": {
+        "title": "Trigonometric Identities and Formulas",
+        "intro": [
+          "In these videos, you will learn about trigonometric identities and formulas."
+        ]
+      },
+      "advanced-trig-conics": {
+        "title": "Advanced Trigonometry and Conics",
+        "intro": [
+          "In these videos, you will learn about advanced trigonometry and conic sections."
+        ]
+      }
+    }
+  },
   "introduction-to-bash": {
-    "title": "Introduction to Bash",
+    "title": "Вступ до Bash",
     "summary": [
       "Learn how to use the terminal and write Bash scripts to automate tasks and manage files and processes."
     ],
@@ -1074,32 +1165,32 @@
     "note": "",
     "blocks": {
       "lecture-understanding-the-command-line-and-working-with-bash": {
-        "title": "Understanding the Command Line and Working with Bash",
+        "title": "Знайомство з командним рядком та робота з Bash",
         "intro": [
-          "Learn about the Command Line and Working with Bash in these lessons."
+          "У цих лекціях ви дізнаєтесь про командний рядок і роботу з Bash."
         ]
       },
       "workshop-bash-boilerplate": {
-        "title": "Build a Boilerplate",
+        "title": "Створіть шаблонний код",
         "intro": [
-          "The terminal allows you to send text commands to your computer that can manipulate the file system, run programs, automate tasks, and much more.",
-          "In this 170-lesson workshop, you will learn terminal commands by creating a website boilerplate using only the command line."
+          "Термінал дозволяє надсилати на комп’ютер текстові команди, які можуть маніпулювати файловою системою, запускати програми, автоматизувати завдання та багато іншого.",
+          "У цьому практичному занятті зі 170 уроків ви вивчите команди терміналу, створивши шаблонний код вебсайту, використовуючи лише командний рядок."
         ]
       },
       "review-bash-commands": {
-        "title": "Bash Commands Review",
+        "title": "Повторення команд Bash",
         "intro": [
-          "Review the Bash Commands concepts to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Команди Bash», щоб підготуватись до тесту."
         ]
       },
       "quiz-bash-commands": {
-        "title": "Bash Commands Quiz",
-        "intro": ["Test what you've learned bash commands with this quiz."]
+        "title": "Тест «Команди Bash»",
+        "intro": ["Перевірте, що ви дізнались про команди bash."]
       }
     }
   },
   "introduction-to-sql-and-postgresql": {
-    "title": "Introduction to SQL and PostgreSQL",
+    "title": "Вступ до SQL та PostgreSQL",
     "summary": [
       "Learn how to use SQL and PostgreSQL to create and manage relational databases."
     ],
@@ -1110,74 +1201,72 @@
     "note": "",
     "blocks": {
       "lecture-working-with-relational-databases": {
-        "title": "Working with Relational Databases",
+        "title": "Робота з реляційними базами даних",
         "intro": [
-          "Learn how to work with Relational Databases in these lessons."
+          "У цих лекціях ви навчитесь працювати з реляційними базами даних."
         ]
       },
       "workshop-database-of-video-game-characters": {
-        "title": "Build a Database of Video Game Characters",
+        "title": "Створіть базу даних з ігровими персонажами",
         "intro": [
-          "A relational database organizes data into tables that are linked together through relationships.",
-          "In this 165-lesson workshop, you will learn the basics of a relational database by creating a PostgreSQL database filled with video game characters."
+          "Реляційна база даних організовує дані в таблиці, які пов’язані між собою через спорідненість.",
+          "У цьому практичному занятті зі 165 уроків ви вивчите основи реляційної бази даних, створивши базу даних PostgreSQL, наповнену персонажами з відеоігор."
         ]
       },
       "lab-celestial-bodies-database": {
-        "title": "Build a Celestial Bodies Database",
+        "title": "Створіть базу даних «Небесні тіла»",
         "intro": [
-          "For this project, you will build a database of celestial bodies using PostgreSQL."
+          "У цьому проєкті ви побудуєте базу даних з небесними тілами, використовуючи PostgreSQL."
         ]
       },
       "review-sql-and-postgresql": {
-        "title": "SQL and PostgreSQL Review",
+        "title": "Повторення SQL та PostgreSQL",
         "intro": [
-          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «SQL та PostgreSQL», щоб підготуватись до тесту."
         ]
       },
       "quiz-sql-and-postgresql": {
-        "title": "SQL and PostgreSQL Quiz",
-        "intro": [
-          "Test what you've learned about SQL and PostgreSQL with this quiz."
-        ]
+        "title": "Тест «SQL та PostgreSQL»",
+        "intro": ["Перевірте, що ви дізнались про SQL та PostgreSQL."]
       }
     }
   },
   "learn-bash-scripting": {
-    "title": "Learn Bash Scripting",
+    "title": "Вивчення скриптів Bash",
     "summary": [
       "Learn how to write Bash scripts to automate tasks and manage files and processes."
     ],
     "intro": [
-      "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
+      "Скрипти Bash поєднують команди терміналу і логіку в програми, які можуть виконувати або автоматизувати завдання та багато іншого.",
       "In this course, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
     ],
     "note": "",
     "blocks": {
       "lecture-understanding-bash-scripting": {
-        "title": "Understanding Bash Scripting",
-        "intro": ["Learn about Bash Scripting in these lessons."]
+        "title": "Знайомство зі скриптами Bash",
+        "intro": ["У цих лекціях ви дізнаєтесь про скрипти Bash."]
       },
       "workshop-bash-five-programs": {
-        "title": "Build Five Programs",
+        "title": "Створіть п’ять програм",
         "intro": [
-          "Bash scripts combine terminal commands and logic into programs that can execute or automate tasks, and much more.",
-          "In this 220-lesson workshop, you will learn more terminal commands and how to use them within Bash scripts by creating five small programs."
+          "Скрипти Bash поєднують команди терміналу і логіку в програми, які можуть виконувати або автоматизувати завдання та багато іншого.",
+          "У цьому практичному занятті з 220 уроків ви детальніше вивчите команди терміналу та як їх використовувати в скриптах Bash, створивши п’ять невеликих програм."
         ]
       },
       "review-bash-scripting": {
-        "title": "Bash Scripting Review",
+        "title": "Повторення скриптів Bash",
         "intro": [
-          "Review the bash scripting concepts you've learned to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Скрипти Bash», щоб підготуватись до тесту."
         ]
       },
       "quiz-bash-scripting": {
-        "title": "Bash Scripting Quiz",
-        "intro": ["Test what you've learned on bash scripting in this quiz."]
+        "title": "Тест «Скрипти Bash»",
+        "intro": ["Перевірте, що ви дізнались про скрипти bash."]
       }
     }
   },
   "learn-sql-and-bash": {
-    "title": "Learn SQL and Bash",
+    "title": "Вивчення SQL та Bash",
     "summary": [
       "Learn how to use SQL and Bash together to manage and manipulate relational databases."
     ],
@@ -1188,64 +1277,64 @@
     "note": "",
     "blocks": {
       "lecture-working-with-sql": {
-        "title": "Working With SQL",
+        "title": "Робота з SQL",
         "intro": [
-          "In these lessons, you will learn about SQL injection, normalization, and the N+1 problem."
+          "У цих лекціях ви дізнаєтесь про SQL-ін’єкції, нормалізацію та проблему N+1."
         ]
       },
       "workshop-sql-student-database-part-1": {
-        "title": "Build a Student Database: Part 1",
+        "title": "Створіть базу даних студентів: частина 1",
         "intro": [
-          "SQL, or Structured Query Language, is the language for communicating with a relational database.",
-          "In this 140-lesson workshop, you will create a Bash script that uses SQL to enter information about your computer science students into PostgreSQL."
+          "SQL, або Structured Query Language (мова структурованих запитів) — це мова спілкування з реляційною базою даних.",
+          "У цьому практичному занятті зі 140 уроків ви створите скрипт Bash, який використовує SQL, щоб ввести інформацію про студентів з інформатики в PostgreSQL."
         ]
       },
       "workshop-sql-student-database-part-2": {
-        "title": "Build a Student Database: Part 2",
+        "title": "Створіть базу даних студентів: частина 2",
         "intro": [
-          "SQL join commands are used to combine information from multiple tables in a relational database",
-          "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
+          "У SQL використовують команди join, щоб об’єднати інформацію з декількох таблиць у реляційну базу даних.",
+          "У цьому практичному занятті зі 140 уроків ви завершите свою базу даних студентів, глибше занурившись в команди SQL."
         ]
       },
       "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
+        "title": "Створіть базу даних «Чемпіонат світу»",
         "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
+          "У цьому проєкті ви створите скрипт Bash, який вводить інформацію з ігор чемпіонату світу в PostgreSQL, а потім запитує базу даних для отримання статистики."
         ]
       },
       "workshop-kitty-ipsum-translator": {
-        "title": "Build a Kitty Ipsum Translator",
+        "title": "Створіть перекладача Kitty Ipsum",
         "intro": [
-          "There's more to Bash commands than you might think.",
-          "In this 140-lesson workshop, you will learn some more complex commands, and the details of how commands work."
+          "Команди Bash можуть більше, ніж ви могли собі уявити.",
+          "У цьому практичному занятті зі 140 уроків ви вивчите деякі складніші команди, а також дізнаєтесь про деталі їхньої роботи."
         ]
       },
       "workshop-bike-rental-shop": {
-        "title": "Build a Bike Rental Shop",
+        "title": "Створіть магазин прокату велосипедів",
         "intro": [
-          "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+          "У цьому практичному занятті з 210 уроків ви створите інтерактивну програму Bash, яка зберігатиме інформацію про магазин прокату велосипедів, використовуючи PostgreSQL."
         ]
       },
       "lab-salon-appointment-scheduler": {
-        "title": "Build a Salon Appointment Scheduler",
+        "title": "Створіть планер записів у салоні",
         "intro": [
-          "For this lab, you will create an interactive Bash program that uses PostgreSQL to track the customers and appointments for your salon."
+          "У цій лабораторній роботі ви створите інтерактивну програму Bash, яка використовує PostgreSQL, щоб відстежувати клієнтів і записи в салоні."
         ]
       },
       "review-bash-and-sql": {
-        "title": "Bash and SQL Review",
+        "title": "Повторення Bash та SQL",
         "intro": [
-          "Review the Bash and SQL concepts to prepare for the upcoming quiz."
+          "Пригадайте поняття з теми «Bash та SQL», щоб підготуватись до тесту."
         ]
       },
       "quiz-bash-and-sql": {
-        "title": "Bash and SQL Quiz",
-        "intro": ["Test what you've learned in this quiz on Bash and SQL."]
+        "title": "Тест «Bash та SQL»",
+        "intro": ["Перевірте, що ви дізнались про Bash та SQL."]
       }
     }
   },
   "introduction-to-nano": {
-    "title": "Introduction to Nano",
+    "title": "Вступ до Nano",
     "summary": [
       "Learn how to use the Nano text editor to create and edit files in the terminal."
     ],
@@ -1256,20 +1345,20 @@
     "note": "",
     "blocks": {
       "lecture-working-with-nano": {
-        "title": "Working With Nano",
-        "intro": ["Learn about Nano in this lesson."]
+        "title": "Робота з Nano",
+        "intro": ["У цій лекції ви дізнаєтесь про Nano."]
       },
       "workshop-castle": {
-        "title": "Build a Castle",
+        "title": "Створіть замок",
         "intro": [
-          "Nano is a program that allows you to edit files right in the terminal.",
-          "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
+          "Nano — це програма, яка дозволяє редагувати файли одразу в терміналі.",
+          "У цьому практичному занятті з 40 уроків ви дізнаєтесь, як редагувати файли в терміналі за допомогою Nano, створивши замок."
         ]
       }
     }
   },
   "introduction-to-git-and-github": {
-    "title": "Introduction to Git and GitHub",
+    "title": "Вступ до Git та GitHub",
     "summary": [
       "Learn how to use Git and GitHub to manage and collaborate on software projects."
     ],
@@ -1280,29 +1369,31 @@
     "note": "",
     "blocks": {
       "lecture-introduction-to-git-and-github": {
-        "title": "Introduction to Git and GitHub",
-        "intro": ["Learn how to work with Git and GitHub in these lessons."]
+        "title": "Вступ до Git та GitHub",
+        "intro": ["У цих лекціях ви дізнаєтесь, як працювати з Git і GitHub."]
       },
       "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
-        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "title": "Робота з переглядом коду, гілками, розгортанням та CI/CD",
         "intro": [
-          "Learn about code reviews, branching, deployment, and CI/CD in these lessons."
+          "У цих лекціях ви дізнаєтесь про перегляд коду, гілки, розгортання та CI/CD."
         ]
       },
       "workshop-sql-reference-object": {
-        "title": "Build an SQL Reference Object",
+        "title": "Створіть референсний об’єкт SQL",
         "intro": [
-          "Git is a version control system that keeps track of all the changes you make to your codebase.",
-          "In this 240-lesson workshop, you will learn how Git keeps track of your code by creating an object containing commonly used SQL commands."
+          "Git — це система контролю версій, яка відстежує усі зміни, внесені вами до кодової бази.",
+          "У цьому практичному занятті з 240 уроків ви дізнаєтесь, як Git відстежує код, створивши об’єкт, що містить часто використовувані команди SQL."
         ]
       },
       "review-git": {
-        "title": "Git Review",
-        "intro": ["Review Git concepts to prepare for the upcoming quiz."]
+        "title": "Повторення Git",
+        "intro": [
+          "Пригадайте поняття з теми «Git», щоб підготуватись до тесту."
+        ]
       },
       "quiz-git": {
-        "title": "Git Quiz",
-        "intro": ["Test what you've learned on Git with this quiz."]
+        "title": "Тест «Git»",
+        "intro": ["Перевірте, що ви дізнались про Git."]
       }
     }
   },
@@ -2820,6 +2911,12 @@
           "У цьому практичному занятті ви пригадаєте, як працювати з циклами в JavaScript, створивши аналізатор речень."
         ]
       },
+      "workshop-space-mission-roster": {
+        "title": "Build a Space Mission Roster",
+        "intro": [
+          "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Створіть пошук найдовшого слова",
         "intro": [
@@ -3559,16 +3656,16 @@
         ]
       },
       "lab-implement-a-queue": {
-        "title": "Implement a Queue",
+        "title": "Імплементуйте чергу",
         "intro": [
-          "In this lab, you will implement a queue data structure using functions."
+          "У цій лабораторній роботі ви імплементуєте структуру даних «черга», використовуючи функції."
         ]
       },
       "review-data-structures-js": {
-        "title": "Data Structures Review",
+        "title": "Повторення структур даних",
         "intro": [
-          "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
+          "Перш ніж перейти до тесту «Структури даних», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати про різні структури даних, алгоритми, часову і просторову складність, а також нотацію Ландау."
         ]
       },
       "quiz-data-structures-js": {
@@ -3608,6 +3705,12 @@
           "У цій лабораторній роботі ви імплементуєте алгоритм швидкого сортування, щоб відсортувати масив цілих чисел."
         ]
       },
+      "review-searching-and-sorting-algorithms-js": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you are quizzed on Algorithms, you should review what you've learned about searching and sorting algorithms."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Знайомство з графами та деревами",
         "intro": [
@@ -3620,10 +3723,23 @@
           "У цій лабораторній роботі ви створите функію, яка перетворює представлення графу у вигляді списку суміжності в матрицю."
         ]
       },
+      "lab-depth-first-search-js": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement a solution for the depth-first search algorithm."
+        ]
+      },
       "lab-n-queens-problem-js": {
         "title": "Імплементуйте задачу про n-ферзів",
         "intro": [
           "У цій лабораторній роботі ви імплементуєте розв’язок для задачі про n-ферзів."
+        ]
+      },
+      "review-graphs-and-trees-js": {
+        "title": "Graphs and Trees Review",
+        "intro": [
+          "Graphs and Trees Review",
+          "Before you are quizzed on graphs and trees, you should review what you've learned."
         ]
       },
       "lecture-understanding-dynamic-programming-js": {
@@ -4947,10 +5063,8 @@
         ]
       },
       "quiz-node-js-core-modules": {
-        "title": "NodeJS Core Modules Quiz",
-        "intro": [
-          "Test what you've learned about Node.js core modules with this quiz."
-        ]
+        "title": "Тест «Основні модулі NodeJS»",
+        "intro": ["Перевірте, що ви дізнались про основні модулі Node.js."]
       },
       "lecture-introduction-to-npm": {
         "title": "Вступ до npm",
@@ -4963,6 +5077,10 @@
         "intro": [
           "Дізнайтесь про скрипти npm, публікацію пакетів у реєстрі npm та роботу з модулями CommonJS і ES. Ці лекції охоплюють основні інструменти розробки та системи модулів Node.js."
         ]
+      },
+      "quiz-npm": {
+        "title": "NPM Quiz",
+        "intro": ["Test what you have learned about npm in this quiz."]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
         "title": "Як працюють HTTP, DNS та TCP/IP?",
@@ -5020,7 +5138,7 @@
     }
   },
   "html-forms-and-tables": {
-    "title": "Learn HTML Forms and Tables",
+    "title": "Ознайомтесь з таблицями та формами в HTML",
     "summary": [
       "Навчіться створювати доступні форми та таблиці за допомогою семантичного HTML."
     ],
@@ -5477,10 +5595,10 @@
         ]
       },
       "workshop-html-music-player": {
-        "title": "Build an HTML Music Player",
+        "title": "Створіть MP3-плеєр",
         "intro": [
-          "In this workshop, you'll use HTML to create a basic music player.",
-          "This project will cover the <code>audio</code> element, the audio player setup, and more."
+          "У цьому практичному занятті ви будете використовувати HTML, щоб створити звичайний MP3-плеєр.",
+          "Ви будете працювати з елементом <code>audio</code>, налаштуванням MP3-плеєра та багато іншим."
         ]
       },
       "workshop-html-video-player": {
@@ -6633,12 +6751,12 @@
     }
   },
   "basic-html": {
-    "title": "Learn Basic HTML",
+    "title": "Ознайомтесь з основами HTML",
     "summary": [
       "Навчіться створювати прості вебсторінки з текстом, зображеннями і посиланнями, доданими за допомогою HTML-тегів."
     ],
     "intro": [
-      "HTML stands for HyperText Markup Language and represents the content and structure for a web page. In this course, you will learn the basics of writing HTML."
+      "HTML — це мова розмітки гіпертексту, яка відповідає за вміст і структуру вебсторінки. У цьому курсі ви ознайомитесь з основами написання HTML."
     ],
     "blocks": {
       "workshop-curriculum-outline": {
@@ -6784,12 +6902,12 @@
     }
   },
   "semantic-html": {
-    "title": "Learn Semantic HTML",
+    "title": "Ознайомтесь з семантичним HTML",
     "summary": [
       "Дізнайтесь, як писати чистіший і змістовніший HTML завдяки семантичним тегам, які покращують структуру, доступність та SEO."
     ],
     "intro": [
-      "In this interactive course, you will practice writing semantic HTML."
+      "У цьому інтерактивному курсі ви будете писати семантичний HTML."
     ],
     "blocks": {
       "lecture-importance-of-semantic-html": {
@@ -6875,7 +6993,7 @@
     }
   },
   "html-and-accessibility": {
-    "title": "Learn HTML and Accessibility",
+    "title": "Ознайомтесь з HTML та доступністю",
     "summary": [
       "Навчіться писати інклюзивний HTML з використанням найкращих практик доступності й ARIA."
     ],
@@ -6965,7 +7083,7 @@
     }
   },
   "computer-basics": {
-    "title": "Learn Computer Basics",
+    "title": "Ознайомтесь з основами комп’ютера",
     "summary": [
       "Отримайте базові знання про комп’ютери, інтернет та інструменти для розробки вебзастосунків."
     ],
@@ -7005,7 +7123,7 @@
     }
   },
   "basic-css": {
-    "title": "Learn Basic CSS",
+    "title": "Ознайомтесь з основами CSS",
     "summary": [
       "Вивчіть ключові поняття в CSS і почніть стилізувати реальні макети."
     ],
@@ -7088,7 +7206,7 @@
     }
   },
   "design-for-developers": {
-    "title": "Introduction to UI/UX Design",
+    "title": "Вступ до UI/UX дизайну",
     "summary": [
       "Ознайомтесь із основами UI‑дизайну та принципами дизайну, орієнтованого на користувача."
     ],
@@ -7128,7 +7246,7 @@
     }
   },
   "absolute-and-relative-units": {
-    "title": "Learn Absolute and Relative Units in CSS",
+    "title": "Ознайомтесь з абсолютними та відносними одиницями в CSS",
     "summary": [
       "Зрозумійте, коли використовувати відносні й абсолютні одиниці для створення гнучких макетів."
     ],
@@ -7165,7 +7283,7 @@
     }
   },
   "pseudo-classes-and-elements": {
-    "title": "Learn CSS Pseudo Classes and Elements",
+    "title": "Ознайомтесь з псевдокласами та псевдоелементами в CSS",
     "summary": [
       "Використовуйте псевдокласи й псевдоелементи для створення багатших і більш інтерактивних стилів."
     ],
@@ -7214,7 +7332,7 @@
     }
   },
   "css-colors": {
-    "title": "Learn CSS Colors",
+    "title": "Ознайомтесь з кольорами в CSS",
     "summary": [
       "Працюйте з форматами кольорів у CSS та створюйте цілісні палітри кольорів."
     ],
@@ -7254,7 +7372,7 @@
     }
   },
   "styling-forms": {
-    "title": "Learn How to Style Forms Using CSS",
+    "title": "Навчіться стилізувати форми за допомогою CSS",
     "summary": [
       "Застосовуйте техніки CSS для створення чистих і зручних макетів."
     ],
@@ -7307,7 +7425,7 @@
     }
   },
   "css-box-model": {
-    "title": "Learn the CSS Box Model",
+    "title": "Ознайомтесь з блоковою моделлю в CSS",
     "summary": [
       "Опануйте блокову модель, простір і ефекти для точного дизайну."
     ],
@@ -7348,7 +7466,7 @@
     }
   },
   "css-flexbox": {
-    "title": "Learn CSS Flexbox",
+    "title": "Ознайомтесь з flexbox в CSS",
     "summary": [
       "Створюйте адаптивні макети за допомогою моделі Flexbox та інструментів вирівнювання."
     ],
@@ -7407,7 +7525,7 @@
     }
   },
   "css-typography": {
-    "title": "Learn CSS Typography",
+    "title": "Ознайомтесь з типографією в CSS",
     "summary": [
       "Дізнайтесь, як стилізувати текст для читабельності, ієрархії та візуального балансу."
     ],
@@ -7449,7 +7567,7 @@
     }
   },
   "css-and-accessibility": {
-    "title": "Learn CSS and Accessibility",
+    "title": "Ознайомтесь з CSS та доступністю",
     "summary": [
       "Застосовуйте техніки CSS, які підтримують доступні й інклюзивні інтерфейси."
     ],
@@ -7490,7 +7608,7 @@
     }
   },
   "css-positioning": {
-    "title": "Learn CSS Positioning",
+    "title": "Ознайомтесь з позиціюванням в CSS",
     "summary": [
       "Використовуйте позиціювання та обтікання для контролю макету і потоку елементів."
     ],
@@ -7532,7 +7650,7 @@
     }
   },
   "attribute-selectors": {
-    "title": "Learn CSS Attribute Selectors",
+    "title": "Ознайомтесь з селекторами атрибутів у CSS",
     "summary": [
       "Націлюйтесь на елементи за допомогою селекторів атрибутів CSS."
     ],
@@ -7580,7 +7698,7 @@
     }
   },
   "responsive-design": {
-    "title": "Learn Responsive Design",
+    "title": "Ознайомтесь з адаптивним дизайном",
     "summary": [
       "Вивчіть принципи адаптивного дизайну і створюйте макети, що підлаштовуються під будь‑який екран."
     ],
@@ -7633,7 +7751,7 @@
     }
   },
   "css-variables": {
-    "title": "Learn CSS Variables",
+    "title": "Ознайомтесь зі змінними в CSS",
     "summary": [
       "Використовуйте змінні для створення стилів, які можна використовувати повторно."
     ],
@@ -7675,7 +7793,7 @@
     }
   },
   "css-grid": {
-    "title": "Learn CSS Grid",
+    "title": "Ознайомтесь з сіткою в CSS",
     "summary": ["Проєктуйте складні макети з використанням сітки."],
     "intro": ["Будуйте багатовимірні макети за допомогою сітки."],
     "blocks": {
@@ -7735,7 +7853,7 @@
     }
   },
   "css-animations": {
-    "title": "Learn CSS Animations",
+    "title": "Ознайомтесь з анімаціями в CSS",
     "summary": ["Створюйте захопливий інтерфейс з доступними анімаціями."],
     "intro": [
       "Додавайте рух за допомогою анімацій, враховуючи зручність використання."

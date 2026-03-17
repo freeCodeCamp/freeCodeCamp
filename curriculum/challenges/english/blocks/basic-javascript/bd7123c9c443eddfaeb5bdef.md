@@ -41,12 +41,6 @@ assert(/var\s+myName\s*;/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-if(typeof myName !== "undefined"){(function(v){return v;})(myName);}
-```
-
 ## --seed-contents--
 
 ```js

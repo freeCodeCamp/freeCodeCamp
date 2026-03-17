@@ -18,19 +18,19 @@ What is the cosine of 45° for a right triangle with the hypotenuse of length 5?
 
 ## --answers--
 
-`sqrt(3)/2`
+$\frac{\sqrt{3}}{2}$
 
 ---
 
-`sqrt(5)/5`
+$\frac{\sqrt{5}}{5}$
 
 ---
 
-`1/sqrt(2)`
+$\frac{1}{\sqrt{2}}$
 
 ---
 
-`sqrt(2)/2`
+$\frac{\sqrt{2}}{2}$
 
 ## --video-solution--
 
