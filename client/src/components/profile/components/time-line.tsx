@@ -251,7 +251,9 @@ function TimelineInner({
 
 /* eslint-disable @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(t: TFunction): Map<string, NameMap> {
-  const queryData = useStaticQuery(graphql`
+  const {
+    allChallengeNode: { edges }
+  } = useStaticQuery(graphql`
     query challengeNodes {
       allChallengeNode {
         edges {
@@ -271,14 +273,11 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }
   `);
-  const edges = queryData?.allChallengeNode?.edges ?? [];
   const idToNameMap = new Map();
   const certificationTitles = t($ => $.certification.title, {
     returnObjects: true
   });
   const introData = getNamespaceResource(i18next, 'intro');
-  const a2EnglishSuperBlock = String(SuperBlocks.A2English);
-
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
     const certName = getTitleByKey(certificationTitles, `${certPath}-cert`);
@@ -306,16 +305,13 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         }
       }
     }) => {
-      const safeSuperBlock = typeof superBlock === 'string' ? superBlock : '';
-      const safeBlock = typeof block === 'string' ? block : '';
       const blockNameTitle = getIntroBlockTitle(
         introData,
-        safeSuperBlock,
-        safeBlock,
-        safeBlock
+        String(superBlock),
+        String(block)
       );
       const shouldAppendBlockNameToTitle =
-        hasEditableBoundaries || safeSuperBlock === a2EnglishSuperBlock;
+        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
           shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
