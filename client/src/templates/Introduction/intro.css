@@ -13,7 +13,6 @@
 }
 
 .block-label {
-  align-self: start;
   height: fit-content;
   width: fit-content;
   padding: 1px 6px 2px;
@@ -41,34 +40,41 @@
 }
 
 .block-label-python,
-.block-label-lab {
+.block-label-lab,
+.block-label-databases {
   border-color: var(--success-color);
   color: var(--success-color);
 }
 
 .block-label-javascript,
+.block-label-computer-science,
 .block-label-review {
   border-color: var(--purple-color);
   color: var(--purple-color);
 }
 
 .block-label-computer-fundamentals,
+.block-label-git,
 .block-label-quiz {
   border-color: var(--danger-color);
   color: var(--danger-color);
 }
 
-.block-label-exam {
+.block-label-exam,
+.block-label-math,
+.block-label-editors {
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
 }
 
-.block-label-cert-project {
+.block-label-cert-project,
+.block-label-bash {
   border-color: var(--love-color);
   color: var(--love-color);
 }
 
-.block-label-warm-up {
+.block-label-warm-up,
+.block-label-ai {
   border-color: var(--yellow-color);
   color: var(--yellow-color);
 }

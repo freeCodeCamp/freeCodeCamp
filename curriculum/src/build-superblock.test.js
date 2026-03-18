@@ -68,7 +68,6 @@ const dummyUnfinishedSuperBlock = {
 };
 
 const dummyBlockMeta = {
-  name: 'Test Block',
   blockLayout: 'challenge-list',
   blockLabel: 'workshop',
   isUpcomingChange: false,
@@ -101,19 +100,14 @@ const dummyChallenge = {
       name: 'file1',
       ext: 'js',
       history: [],
-      contents: 'console.log("Hello")',
-      // head and tail should not be required, but they currently are
-      head: '',
-      tail: ''
+      contents: 'console.log("Hello")'
     },
     {
       spuriousProp: '2',
       name: 'file2',
       ext: 'css',
       history: [],
-      contents: 'body { background: red; }',
-      head: '',
-      tail: ''
+      contents: 'body { background: red; }'
     }
   ]
 };
@@ -327,7 +321,6 @@ describe('buildSuperblock pure functions', () => {
       ];
 
       const meta = {
-        name: 'Test Block',
         dashedName: 'test-block',
         challengeOrder: [
           { id: '1', title: 'Challenge 1' },
@@ -346,7 +339,6 @@ describe('buildSuperblock pure functions', () => {
       const foundChallenges = [{ id: '2', title: 'Challenge 2' }];
 
       const meta = {
-        name: 'Test Block',
         dashedName: 'test-block',
         challengeOrder: [
           { id: '1', title: 'Challenge 1' }, // Missing
@@ -363,7 +355,6 @@ describe('buildSuperblock pure functions', () => {
       const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
-        name: 'Test Block',
         dashedName: 'test-block',
         challengeOrder: [{ id: '1', title: 'Challenge 1' }]
       };
@@ -378,9 +369,18 @@ describe('buildSuperblock pure functions', () => {
     test('should add meta properties to challenge', () => {
       const challenge = { id: '1' };
 
+      const updatedChallenge = addMetaToChallenge(challenge, dummyBlockMeta);
+
+      expect(updatedChallenge).toEqual(expectedChallengeProperties);
+    });
+
+    test('should not mutate the original challenge', () => {
+      const challenge = { id: '1' };
+      const challengeCopy = { ...challenge };
+
       addMetaToChallenge(challenge, dummyBlockMeta);
 
-      expect(challenge).toEqual(expectedChallengeProperties);
+      expect(challenge).toEqual(challengeCopy);
     });
 
     test('should add chapter and module properties when present in meta', () => {
@@ -391,9 +391,12 @@ describe('buildSuperblock pure functions', () => {
         module: 'module-1'
       };
 
-      addMetaToChallenge(challenge, metaWithChapterAndModule);
+      const updatedChallenge = addMetaToChallenge(
+        challenge,
+        metaWithChapterAndModule
+      );
 
-      expect(challenge).toMatchObject({
+      expect(updatedChallenge).toMatchObject({
         ...expectedChallengeProperties,
         chapter: 'chapter-1',
         module: 'module-1'

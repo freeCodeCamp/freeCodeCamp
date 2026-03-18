@@ -9,8 +9,6 @@ const { pathPrefix } = require('./utils/gatsby/path-prefix');
 
 const { curriculumLocale, homeLocation } = envData;
 
-const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
-
 module.exports = {
   flags: {
     DEV_SSR: false
@@ -54,16 +52,6 @@ module.exports = {
         onSourceChange: replaceChallengeNodes(curriculumLocale),
         curriculumPath: localeChallengesRootDir
       }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'introductions',
-        path: curriculumIntroRoot
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-remark'
     },
     'gatsby-plugin-remove-serviceworker',
     {

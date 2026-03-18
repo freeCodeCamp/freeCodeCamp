@@ -17,7 +17,10 @@ const createNextTask = async () => {
 
   const prevChallengeId =
     meta.challengeOrder[meta.challengeOrder.length - 1]?.id;
-  const challengeLang = prevChallengeId && getChallenge(prevChallengeId)?.lang;
+
+  const challengeLang = prevChallengeId
+    ? getChallenge(prevChallengeId)?.lang
+    : undefined;
 
   const inputType = await getInputType(challengeType, challengeLang);
 

@@ -1,9 +1,19 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
+import { screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { useStaticQuery } from 'gatsby';
+
 import type { ChallengeMeta, Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { IndependentLowerJaw } from './independent-lower-jaw';
+import { createStore } from '../../../redux/create-store';
+import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
+import { render } from '../../../../utils/test-utils';
+
+vi.mock('../../../components/Progress');
+vi.mock('../utils/fetch-all-curriculum-data', () => ({
+  useSubmit: () => vi.fn()
+}));
 
 const baseChallengeMeta: ChallengeMeta = {
   block: 'test-block',
@@ -16,12 +26,11 @@ const baseChallengeMeta: ChallengeMeta = {
 };
 
 const passingTests: Test[] = [{ pass: true, text: 'test', testString: 'test' }];
-
 const baseProps = {
   openHelpModal: vi.fn(),
   openResetModal: vi.fn(),
   executeChallenge: vi.fn(),
-  submitChallenge: vi.fn(),
+  saveChallenge: vi.fn(),
   tests: passingTests,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
@@ -30,9 +39,19 @@ const baseProps = {
   currentBlockIds: ['id-1', 'test-challenge-id']
 };
 
+vi.mock('../../../utils/get-words');
+
 describe('<IndependentLowerJaw />', () => {
+  beforeEach(() => {
+    vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
+  });
+
+  afterEach(() => {
+    vi.resetAllMocks();
+  });
+
   it('shows share buttons when the block is completed on the last step', () => {
-    render(<IndependentLowerJaw {...baseProps} />);
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
 
     expect(screen.getByTestId('share-on-x')).toBeInTheDocument();
     expect(screen.getByTestId('share-on-bluesky')).toBeInTheDocument();
@@ -45,7 +64,8 @@ describe('<IndependentLowerJaw />', () => {
         {...baseProps}
         completedPercent={50}
         completedChallengeIds={['id-1']}
-      />
+      />,
+      createStore()
     );
 
     expect(screen.queryByTestId('share-on-x')).not.toBeInTheDocument();
@@ -57,7 +77,8 @@ describe('<IndependentLowerJaw />', () => {
         {...baseProps}
         currentBlockIds={[baseChallengeMeta.id, 'id-2']}
         completedChallengeIds={[baseChallengeMeta.id, 'id-2']}
-      />
+      />,
+      createStore()
     );
 
     expect(screen.queryByTestId('share-on-x')).not.toBeInTheDocument();
