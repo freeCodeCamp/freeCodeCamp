@@ -14,23 +14,23 @@ In this video, you will learn about the double angle formulas.
 
 ## --text--
 
-What is the double angle formula for `sin(2θ)`?
+What is the double angle formula for $\sin(2\theta)$?
 
 ## --answers--
 
-`sin(2θ) = 2 cos²(θ)`
+$\sin(2\theta) = 2\cos^2(\theta)$
 
 ---
 
-`sin(2θ) = cos(2θ)`
+$\sin(2\theta) = \cos(2\theta)$
 
 ---
 
-`sin(2θ) = 2sin(θ)cos(θ)`
+$\sin(2\theta) = 2\sin(\theta)\cos(\theta)$
 
 ---
 
-`sin(2θ) = sin²(θ) - cos²(θ)`
+$\sin(2\theta) = \sin^2(\theta) - \cos^2(\theta)$
 
 ## --video-solution--
 
