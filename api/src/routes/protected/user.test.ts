@@ -318,7 +318,7 @@ const publicUserData = {
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
-  socrates: false,
+  socrates: true,
   twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   sendQuincyEmail: testUserData.sendQuincyEmail,
@@ -1051,7 +1051,7 @@ describe('userRoutes', () => {
           keyboardShortcuts: false,
           location: '',
           name: '',
-          socrates: false,
+          socrates: true,
           theme: 'default'
         };
 

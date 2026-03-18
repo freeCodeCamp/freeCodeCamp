@@ -11,7 +11,7 @@ import { getSocratesHint } from '../../../utils/ajax';
 import { isSocratesOnSelector } from '../../../redux/selectors';
 import { askSocratesError, askSocratesComplete } from './actions';
 
-function* askSocratesSaga() {
+export function* askSocratesSaga() {
   const isSocratesOn = yield select(isSocratesOnSelector);
   if (!isSocratesOn) {
     yield put(
