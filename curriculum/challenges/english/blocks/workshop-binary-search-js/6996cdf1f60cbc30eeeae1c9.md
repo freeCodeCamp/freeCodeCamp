@@ -1,7 +1,7 @@
 ---
 id: 6996cdf1f60cbc30eeeae1c9
 title: Step 12
-challengeType: 0
+challengeType: 1
 dashedName: step-12
 ---
 
