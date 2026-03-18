@@ -493,7 +493,7 @@ export const characterAssets = {
   Diego: characterImages.diego,
   Valeria: characterImages.valeria,
 
-  //Chinese
+  // Chinese
   'Chen Na': characterImages.chenNa,
   'Huang Jingyi': characterImages.huangJingyi,
   'Li Hong': characterImages.liHong,
