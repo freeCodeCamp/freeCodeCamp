@@ -24,9 +24,17 @@ How could Linda praise Jake's idea?
 
 `That's an excellent suggestion.`
 
+### --audio-id--
+
+EN02a86d00
+
 ---
 
 `Are you sure that would work?`
+
+### --audio-id--
+
+EN13416258
 
 ### --feedback--
 
