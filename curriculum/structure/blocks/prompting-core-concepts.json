@@ -1,0 +1,17 @@
+{
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "prompting-core-concepts",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "69a769365a27934b29e1eac5",
+      "title": "Prompt Engineering Mindset"
+    },
+    {
+      "id": "69a76a395a27934b29e1eac6",
+      "title": "Using ChatGPT"
+    }
+  ]
+}

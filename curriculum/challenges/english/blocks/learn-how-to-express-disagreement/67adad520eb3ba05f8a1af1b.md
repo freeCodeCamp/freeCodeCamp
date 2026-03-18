@@ -3,7 +3,6 @@ id: 67adad520eb3ba05f8a1af1b
 title: Task 33
 challengeType: 19
 dashedName: task-33
-showSpeakingButton: true
 lang: en-US
 ---
 
