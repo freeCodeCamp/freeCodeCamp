@@ -28,8 +28,8 @@ module.exports = async ({ github, context, isAllowListed }) => {
   const body = (context.payload.pull_request.body || '').toLowerCase();
 
   // The template must be present and the first 3 checkboxes must be
-  // ticked ([x] or [X]). The last checkbox (tested locally) is
-  // acceptable to leave unticked.
+  // ticked. The last checkbox (tested locally) is acceptable to leave
+  // unticked.
   const templatePresent = body.includes('checklist:');
   const requiredTicked = [
     'i have read and followed the contribution guidelines',
@@ -39,7 +39,7 @@ module.exports = async ({ github, context, isAllowListed }) => {
   // Strip markdown links ([text](url) → text) before matching so contributors
   // who omit the link syntax (e.g. type plain text) still pass the check.
   const normalizedBody = body
-    .replace(/\[\s*[xX]\s*\]/g, '[x]')
+    .replace(/\[\s*x\s*\]/g, '[x]')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
   const allRequiredTicked = requiredTicked.every(item =>
     normalizedBody.includes(`[x] ${item}`)
