@@ -3,7 +3,7 @@ id: 69a774515a27934b29e1eac9
 title: AI Hallucinations
 challengeType: 11
 videoId: LbeAbfCszLg
-dashedName: ai-hallucinations-learn-prompting-fundamentals
+dashedName: ai-hallucinations
 ---
 
 # --description--

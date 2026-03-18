@@ -3,7 +3,7 @@ id: 69a76a395a27934b29e1eac6
 title: Using ChatGPT
 challengeType: 11
 videoId: JFY9xLY2AXU
-dashedName: using-chatgpt-learn-prompting-fundamentals
+dashedName: using-chatgpt
 ---
 
 # --description--
