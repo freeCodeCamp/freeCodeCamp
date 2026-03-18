@@ -48,6 +48,10 @@ assert.isFunction(addHabitat);
 
 The `addHabitat` function should have two parameters: `animal` and `habitat`.
 
+```js
+const regex = __helpers.functionRegex('addHabitat', ['animal', 'habitat']);
+assert.match(__helpers.removeJSComments(code), regex);
+```
 
 `addHabitat` should use dot notation to add the `habitat` property.
 
