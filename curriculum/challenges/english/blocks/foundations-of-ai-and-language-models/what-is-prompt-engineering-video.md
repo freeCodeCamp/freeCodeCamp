@@ -3,7 +3,7 @@ id: 69a7633b5a27934b29e1eac0
 title: What is Prompt Engineering?
 challengeType: 11
 videoId: 2Q-GMmhXP-k
-dashedName: what-is-prompt-engineering-learn-prompting-fundamentals
+dashedName: what-is-prompt-engineering
 ---
 
 # --description--

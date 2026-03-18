@@ -3,7 +3,7 @@ id: 69a772165a27934b29e1eac7
 title: Best Practices
 challengeType: 11
 videoId: z_4Esan2kus
-dashedName: best-practices-learn-prompting-fundamentals
+dashedName: best-practices
 ---
 
 # --description--

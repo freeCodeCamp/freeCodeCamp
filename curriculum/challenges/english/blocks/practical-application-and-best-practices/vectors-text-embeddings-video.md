@@ -3,7 +3,7 @@ id: 69a774ec5a27934b29e1eaca
 title: Vectors / Text Embeddings
 challengeType: 11
 videoId: 3tBOmjve79Y
-dashedName: vectors-text-embeddings-learn-prompting-fundamentals
+dashedName: vectors-text-embeddings
 ---
 
 # --description--

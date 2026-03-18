@@ -3,7 +3,7 @@ id: 69a761d55a27934b29e1eabf
 title: Introduction
 challengeType: 11
 videoId: tb0HeceXvZY
-dashedName: introduction-learn-prompting-fundamentals
+dashedName: introduction
 ---
 
 # --description--

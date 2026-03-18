@@ -3,7 +3,7 @@ id: 69a773545a27934b29e1eac8
 title: Zero Shot and Few Shot Prompts
 challengeType: 11
 videoId: 9SQRxWk4Myc
-dashedName: zero-shot-and-few-shot-prompts-learn-prompting-fundamentals
+dashedName: zero-shot-and-few-shot-prompts
 ---
 
 # --description--
