@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import { takeEvery, select, call, put } from 'redux-saga/effects';
 import {
   challengeDataSelector,
@@ -11,12 +12,27 @@ import { getSocratesHint } from '../../../utils/ajax';
 import { isSocratesOnSelector } from '../../../redux/selectors';
 import { askSocratesError, askSocratesComplete } from './actions';
 
+// Maps server-side error keys to client-side translation keys.
+const serverErrorKeyMap = {
+  'socrates-no-access': 'learn.socrates-no-access',
+  'socrates-daily-limit': 'learn.socrates-daily-limit',
+  'socrates-rate-limit': 'learn.socrates-rate-limit',
+  'socrates-unable-to-generate': 'learn.socrates-unable-to-generate',
+  'socrates-unavailable': 'learn.socrates-unavailable',
+  'socrates-write-code-first': 'learn.socrates-write-code-first'
+};
+
+function translateServerError(errorKey) {
+  const translationKey = serverErrorKeyMap[errorKey];
+  return translationKey ? i18next.t(translationKey) : errorKey;
+}
+
 export function* askSocratesSaga() {
   const isSocratesOn = yield select(isSocratesOnSelector);
   if (!isSocratesOn) {
     yield put(
       askSocratesError({
-        error: 'Socrates is not enabled for your account.'
+        error: i18next.t('learn.socrates-not-enabled')
       })
     );
     return;
@@ -31,7 +47,7 @@ export function* askSocratesSaga() {
     if (!hasCheckedCode) {
       yield put(
         askSocratesError({
-          error: 'Check your code before asking Socrates for a hint.'
+          error: i18next.t('learn.socrates-check-code-first')
         })
       );
       return;
@@ -41,8 +57,7 @@ export function* askSocratesSaga() {
     if (allTestsPass) {
       yield put(
         askSocratesError({
-          error:
-            'Congratulations, your code passes! Press submit and continue to the next challenge.'
+          error: i18next.t('learn.socrates-code-passes')
         })
       );
       return;
@@ -56,7 +71,7 @@ export function* askSocratesSaga() {
     if (!userInput || !seed) {
       yield put(
         askSocratesError({
-          error: 'Please write some code before asking Socrates for a hint.'
+          error: i18next.t('learn.socrates-write-code-first')
         })
       );
       return;
@@ -83,7 +98,7 @@ export function* askSocratesSaga() {
     if (error) {
       yield put(
         askSocratesError({
-          error,
+          error: translateServerError(error),
           attempts: responseData?.attempts,
           limit: responseData?.limit
         })
@@ -100,7 +115,7 @@ export function* askSocratesSaga() {
   } catch {
     yield put(
       askSocratesError({
-        error: 'Something went wrong while asking Socrates. Please try again.'
+        error: i18next.t('learn.socrates-generic-error')
       })
     );
   }

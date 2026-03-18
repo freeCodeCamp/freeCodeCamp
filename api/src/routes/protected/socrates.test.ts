@@ -47,7 +47,7 @@ describe('socratesRoutes', () => {
 
         expect(response.status).toBe(403);
         expect(response.body).toStrictEqual({
-          error: 'You do not have access to Socrates.',
+          error: 'socrates-no-access',
           type: 'danger',
           attempts: 0,
           limit: 0
@@ -137,8 +137,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(429);
           expect(response.body).toStrictEqual({
-            error:
-              'You have reached the hint limit. Please wait a moment before trying again.',
+            error: 'socrates-rate-limit',
             type: 'info',
             attempts: 0,
             limit: 3
@@ -179,7 +178,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(400);
           expect(response.body).toStrictEqual({
-            error: 'Socrates was unable to generate a hint. Please try again.',
+            error: 'socrates-unable-to-generate',
             type: 'info',
             attempts: 0,
             limit: 3
@@ -198,8 +197,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(500);
           expect(response.body).toStrictEqual({
-            error:
-              'Socrates is temporarily unavailable. Please try again later.',
+            error: 'socrates-unavailable',
             type: 'danger',
             attempts: 0,
             limit: 3
@@ -246,8 +244,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(500);
           expect(response.body).toStrictEqual({
-            error:
-              'Socrates is temporarily unavailable. Please try again later.',
+            error: 'socrates-unavailable',
             type: 'danger',
             attempts: 0,
             limit: 3
@@ -317,9 +314,7 @@ describe('socratesRoutes', () => {
           expect(response.status).toBe(429);
           expect(response.body.attempts).toBe(3);
           expect(response.body.limit).toBe(3);
-          expect(response.body.error).toBe(
-            'You have reached the daily hint limit. Please try again tomorrow.'
-          );
+          expect(response.body.error).toBe('socrates-daily-limit');
           expect(mockedFetch).toHaveBeenCalledTimes(3);
         });
 
@@ -405,7 +400,7 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(400);
           expect(response.body).toStrictEqual({
-            error: 'Please write some code before asking Socrates for a hint.',
+            error: 'socrates-write-code-first',
             type: 'info',
             attempts: 0,
             limit: 0

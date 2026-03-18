@@ -6,6 +6,12 @@ import { describe, it, vi } from 'vitest';
 
 import { askSocratesSaga } from './ask-socrates-saga';
 
+vi.mock('i18next', async () => ({
+  default: {
+    t: key => key
+  }
+}));
+
 vi.mock('@freecodecamp/challenge-builder/build', () => ({
   buildChallenge: vi.fn()
 }));
@@ -60,7 +66,7 @@ describe('askSocratesSaga', () => {
       .withReducer(reducer, state)
       .put({
         type: 'challenge.askSocratesError',
-        payload: { error: 'Socrates is not enabled for your account.' }
+        payload: { error: 'learn.socrates-not-enabled' }
       })
       .silentRun();
   });
@@ -82,7 +88,7 @@ describe('askSocratesSaga', () => {
       .put({
         type: 'challenge.askSocratesError',
         payload: {
-          error: 'Check your code before asking Socrates for a hint.'
+          error: 'learn.socrates-check-code-first'
         }
       })
       .silentRun();
@@ -105,8 +111,7 @@ describe('askSocratesSaga', () => {
       .put({
         type: 'challenge.askSocratesError',
         payload: {
-          error:
-            'Congratulations, your code passes! Press submit and continue to the next challenge.'
+          error: 'learn.socrates-code-passes'
         }
       })
       .silentRun();
@@ -128,7 +133,7 @@ describe('askSocratesSaga', () => {
       .put({
         type: 'challenge.askSocratesError',
         payload: {
-          error: 'Please write some code before asking Socrates for a hint.'
+          error: 'learn.socrates-write-code-first'
         }
       })
       .silentRun();
@@ -219,7 +224,7 @@ describe('askSocratesSaga', () => {
       .put({
         type: 'challenge.askSocratesError',
         payload: {
-          error: 'Something went wrong while asking Socrates. Please try again.'
+          error: 'learn.socrates-generic-error'
         }
       })
       .silentRun();

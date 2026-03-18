@@ -28,7 +28,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, req, reply) {
         if (error.validation) {
           void reply.status(400).send({
-            error: 'Please write some code before asking Socrates for a hint.',
+            error: 'socrates-write-code-first',
             type: 'info',
             attempts: 0,
             limit: 0
@@ -41,7 +41,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       if (!req.user?.socrates) {
         return reply.status(403).send({
-          error: 'You do not have access to Socrates.',
+          error: 'socrates-no-access',
           type: 'danger',
           attempts: 0,
           limit: 0
@@ -69,8 +69,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
 
       if (attempts > limit) {
         return reply.status(429).send({
-          error:
-            'You have reached the daily hint limit. Please try again tomorrow.',
+          error: 'socrates-daily-limit',
           type: 'info',
           attempts: limit,
           limit
@@ -117,8 +116,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
 
           if (response.status === 429) {
             return reply.status(429).send({
-              error:
-                'You have reached the hint limit. Please wait a moment before trying again.',
+              error: 'socrates-rate-limit',
               type: 'info',
               attempts: attempts - 1,
               limit
@@ -136,9 +134,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
               // ignore parse errors
             }
             return reply.status(400).send({
-              error:
-                upstreamMessage ||
-                'Socrates was unable to generate a hint. Please try again.',
+              error: upstreamMessage || 'socrates-unable-to-generate',
               type: 'info',
               attempts: attempts - 1,
               limit
@@ -146,8 +142,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           }
 
           return reply.status(500).send({
-            error:
-              'Socrates is temporarily unavailable. Please try again later.',
+            error: 'socrates-unavailable',
             type: 'danger',
             attempts: attempts - 1,
             limit
@@ -164,8 +159,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           });
           await rollbackUsage();
           return reply.status(500).send({
-            error:
-              'Socrates is temporarily unavailable. Please try again later.',
+            error: 'socrates-unavailable',
             type: 'danger',
             attempts: attempts - 1,
             limit
@@ -185,8 +179,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           );
           await rollbackUsage();
           return reply.status(500).send({
-            error:
-              'Socrates is temporarily unavailable. Please try again later.',
+            error: 'socrates-unavailable',
             type: 'danger',
             attempts: attempts - 1,
             limit
@@ -203,7 +196,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         );
         await rollbackUsage();
         return reply.status(500).send({
-          error: 'Socrates is temporarily unavailable. Please try again later.',
+          error: 'socrates-unavailable',
           type: 'danger',
           attempts: attempts - 1,
           limit
