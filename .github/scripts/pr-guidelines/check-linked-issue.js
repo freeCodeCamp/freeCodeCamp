@@ -32,6 +32,7 @@ module.exports = async ({ github, context, isAllowListed }) => {
             nodes {
               number
               labels(first: 10) { nodes { name } }
+              assignees(first: 10) { nodes { login } }
             }
           }
         }
@@ -85,6 +86,14 @@ module.exports = async ({ github, context, isAllowListed }) => {
     );
     return;
   }
+
+  const prAuthor = context.payload.pull_request.user.login;
+  const isNaomiSprintAssignee = linkedIssues.some(
+    issue =>
+      issue.labels.nodes.some(l => l.name === "Naomi's Sprint") &&
+      issue.assignees.nodes.some(a => a.login === prAuthor)
+  );
+  if (isNaomiSprintAssignee) return;
 
   const isOpenForContribution = linkedIssues.some(issue =>
     issue.labels.nodes.some(
