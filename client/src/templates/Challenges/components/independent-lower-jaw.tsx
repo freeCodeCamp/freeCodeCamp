@@ -4,6 +4,7 @@ import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import sanitizeHtml from 'sanitize-html';
 import { Button, Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLightbulb,
@@ -115,6 +116,7 @@ export function IndependentLowerJaw({
   hasSocratesAccess
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const showSocratesFlag = useFeature('show-socrates').on;
   const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
@@ -335,7 +337,7 @@ export function IndependentLowerJaw({
           )}
         </div>
         <div className='action-row-right'>
-          {hasSocratesAccess && (
+          {hasSocratesAccess && showSocratesFlag && (
             <button
               type='button'
               className='icon-button tooltip socrates-button'

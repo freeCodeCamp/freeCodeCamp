@@ -11,6 +11,9 @@ import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { render } from '../../../../utils/test-utils';
 
 vi.mock('../../../components/Progress');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: true })
+}));
 vi.mock('../utils/fetch-all-curriculum-data', () => ({
   useSubmit: () => vi.fn()
 }));

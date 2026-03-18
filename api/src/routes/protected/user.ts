@@ -832,7 +832,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               completedSurveys: normalizeSurveys(completedSurveys),
               experience: experience.map(removeNulls),
               msUsername: msUsername?.msUsername,
-              socrates: socrates ?? false
+              socrates: socrates ?? true
             }
           },
           result: user.username

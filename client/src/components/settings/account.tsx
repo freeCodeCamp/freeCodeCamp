@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow } from '../helpers';
 
@@ -29,12 +30,13 @@ const MiscSettings = ({
   socrates
 }: MiscSettingsProps) => {
   const { t } = useTranslation();
+  const showSocratesFlag = useFeature('show-socrates').on;
 
   return (
     <div className='account-settings'>
       <SectionHeader>{t('settings.headings.account')}</SectionHeader>
       <FullWidthRow>
-        <SocratesSettings socrates={socrates} />
+        {showSocratesFlag && <SocratesSettings socrates={socrates} />}
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}
