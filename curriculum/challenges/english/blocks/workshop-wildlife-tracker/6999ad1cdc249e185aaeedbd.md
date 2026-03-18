@@ -1,8 +1,8 @@
 ---
 id: 6999ad1cdc249e185aaeedbd
-title: Step 7
+title: Step 8
 challengeType: 1
-dashedName: step-7
+dashedName: step-8
 ---
 
 # --description--
@@ -106,6 +106,12 @@ assert.strictEqual(updatedLion.habitat, "Savanna");
 const tiger = {
   species: "Tiger",
   age: 5,
+  isEndangered: true
+};
+
+const elephant = {
+  species: "Elephant",
+  age: 10,
   isEndangered: true
 };
 
