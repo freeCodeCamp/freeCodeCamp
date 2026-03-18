@@ -7,28 +7,28 @@ dashedName: step-3
 
 # --description--
 
-As a partial refresher, during each tick:
+During each simulation tick:
 
 - A certain number of attendees arrive at the gate (from its `queue`).
 - The gate processes attendees based on its `capacity`.
 - If more attendees arrive than the gate can handle, some will remain (overflow).
 
-To handle this logic, you will build a function that processes one tick at a time for a single gate.
+You will now build a function that handles this logic for one gate at a single tick.
 
-Create an empty function named `processTick` that accepts two parameters:
+Create an empty function named `processGateFlow` that accepts two parameters:
 
 - `gate`: The gate object being processed.
-- `tickIndex`: The current position in the `queue` array.
+- `tickIndex`: The current tick position in the `queue` array.
 
 # --hints--
 
-You should create a function named `processTick`.
+You should create a function named `processGateFlow`.
 
 ```js
 
 ```
 
-Your function `processTick` should have parameters `gate` and `tickIndex`.
+Your function `processGateFlow` should have parameters `gate` and `tickIndex`.
 
 ```js
 
@@ -53,7 +53,7 @@ const nightGates = [
   { id: "West", capacity: 3, queue: [5, 2, 1, 4] },
 ];
 
-function createThroughputSummary(gates) {
+function initializeThroughput(gates) {
   const summary = {};
   for (const gate of gates) {
     summary[gate.id] = 0;

@@ -2969,7 +2969,7 @@
       "workshop-festival-crowd-flow-simulator": {
         "title": "Build a Festival Crowd Flow Simulator",
         "intro": [
-          "In this workshop, you will use JavaScript to manage and simulate the flow of attendants at a music festival."
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
         ]
       },
       "lab-missing-letter-detector": {
