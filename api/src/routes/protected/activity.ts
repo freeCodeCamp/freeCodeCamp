@@ -23,8 +23,8 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
       const { url } = req.body;
 
       try {
-        await fastify.prisma.user.update({
-          where: { id: req.user!.id },
+        await fastify.prisma.user.updateMany({
+          where: { id: req.user?.id },
           data: {
             lastActivityUrl: url,
             lastActivityTimestamp: Date.now()
