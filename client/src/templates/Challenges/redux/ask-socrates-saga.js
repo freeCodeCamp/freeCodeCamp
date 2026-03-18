@@ -5,6 +5,7 @@ import {
   challengeMetaSelector
 } from './selectors';
 
+import { buildChallenge } from '@freecodecamp/challenge-builder/build';
 import { getSocratesHint } from '../../../utils/ajax';
 
 import { isSocratesOnSelector } from '../../../redux/selectors';
@@ -47,21 +48,10 @@ function* askSocratesSaga() {
       return;
     }
 
-    const fileWithEditableRegion = challengeData.challengeFiles.find(
-      file => file.editableRegionBoundaries.length > 0
-    );
-
-    if (!fileWithEditableRegion) {
-      yield put(
-        askSocratesError({
-          error: 'Socrates is not available for this challenge.'
-        })
-      );
-      return;
-    }
-
-    const { contents: seed, editableContents: userInput } =
-      fileWithEditableRegion;
+    const buildData = yield call(buildChallenge, challengeData);
+    const { sources, build } = buildData;
+    const seed = build;
+    const userInput = sources?.editableContents;
 
     if (!userInput || !seed) {
       yield put(
