@@ -21,6 +21,23 @@ function saveToLocalStorage(url: string): void {
   }
 }
 
+function sendBeacon(url: string): void {
+  if (typeof navigator === 'undefined' || !navigator.sendBeacon) return;
+  const blob = new Blob([JSON.stringify({ url })], {
+    type: 'application/json'
+  });
+  navigator.sendBeacon('/activity', blob);
+}
+
+function handleBeforeUnload(): void {
+  if (typeof window === 'undefined') return;
+  const currentUrl = window.location.pathname;
+  if (!isLearnPage(currentUrl)) return;
+  if (currentUrl === lastSentUrl) return;
+  saveToLocalStorage(currentUrl);
+  sendBeacon(currentUrl);
+}
+
 async function checkAndSendActivity(): Promise<void> {
   if (typeof window === 'undefined') return;
 
@@ -29,11 +46,10 @@ async function checkAndSendActivity(): Promise<void> {
   if (!isLearnPage(currentUrl)) return;
   if (currentUrl === lastSentUrl) return;
 
-  saveToLocalStorage(currentUrl);
-
   try {
     await post('/activity', { url: currentUrl });
     lastSentUrl = currentUrl;
+    saveToLocalStorage(currentUrl);
   } catch {
     // Silently fail — activity tracking is non-critical
   }
@@ -48,6 +64,10 @@ export function startActivityTracking(): void {
   intervalId = setInterval(() => {
     void checkAndSendActivity();
   }, POLL_INTERVAL_MS);
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('beforeunload', handleBeforeUnload);
+  }
 }
 
 export function stopActivityTracking(): void {
@@ -56,4 +76,7 @@ export function stopActivityTracking(): void {
     intervalId = null;
   }
   lastSentUrl = null;
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('beforeunload', handleBeforeUnload);
+  }
 }

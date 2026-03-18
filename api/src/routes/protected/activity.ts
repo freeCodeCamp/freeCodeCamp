@@ -22,13 +22,22 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const { url } = req.body;
 
-      await fastify.prisma.user.updateMany({
-        where: { id: req.user?.id },
-        data: {
-          lastActivityUrl: url,
-          lastActivityTimestamp: Date.now()
-        }
-      });
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.user!.id },
+          data: {
+            lastActivityUrl: url,
+            lastActivityTimestamp: Date.now()
+          }
+        });
+      } catch (err) {
+        fastify.log.error(err);
+        void reply.code(500);
+        return reply.send({
+          message: 'flash.generic-error',
+          type: 'danger'
+        } as const);
+      }
 
       return reply.send({
         message: 'flash.activity-updated' as const,

@@ -3,7 +3,7 @@ import { genericError } from '../types.js';
 
 export const updateActivity = {
   body: Type.Object({
-    url: Type.String({ minLength: 1, pattern: '^/learn/' })
+    url: Type.String({ minLength: 1, maxLength: 1024, pattern: '^/learn/' })
   }),
   response: {
     200: Type.Object({

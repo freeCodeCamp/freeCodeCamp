@@ -36,7 +36,7 @@ describe('activity-tracker', () => {
 
   test('sends activity on start when on a learn page', async () => {
     startActivityTracking();
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
 
     expect(mockedPost).toHaveBeenCalledWith('/activity', {
       url: '/learn/javascript/basic-javascript/step-1'
@@ -50,14 +50,14 @@ describe('activity-tracker', () => {
     });
 
     startActivityTracking();
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
 
     expect(mockedPost).not.toHaveBeenCalled();
   });
 
   test('does not send duplicate activity for same URL', async () => {
     startActivityTracking();
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
 
     mockedPost.mockClear();
 
@@ -69,7 +69,7 @@ describe('activity-tracker', () => {
 
   test('sends new activity when URL changes', async () => {
     startActivityTracking();
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
 
     mockedPost.mockClear();
 
@@ -88,7 +88,7 @@ describe('activity-tracker', () => {
 
   test('stopActivityTracking clears the interval', async () => {
     startActivityTracking();
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
 
     mockedPost.mockClear();
     stopActivityTracking();
@@ -105,7 +105,7 @@ describe('activity-tracker', () => {
 
   test('saves activity to localStorage', async () => {
     startActivityTracking();
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
 
     const stored = localStorage.getItem('fcc:lastActivity');
     expect(stored).not.toBeNull();
@@ -122,6 +122,6 @@ describe('activity-tracker', () => {
       startActivityTracking();
     }).not.toThrow();
 
-    await vi.runAllTimersAsync();
+    await vi.advanceTimersByTimeAsync(5000);
   });
 });
