@@ -90,10 +90,18 @@ module.exports = async ({ github, context, isAllowListed }) => {
   const prAuthor = context.payload.pull_request.user.login;
   const isNaomiSprintAssignee = linkedIssues.some(
     issue =>
-      issue.labels.nodes.some(l => l.name === "Naomi's Sprint") &&
+      issue.labels.nodes.some(l => l.name === "Naomi's Sprints") &&
       issue.assignees.nodes.some(a => a.login === prAuthor)
   );
-  if (isNaomiSprintAssignee) return;
+  if (isNaomiSprintAssignee) {
+    await github.rest.issues.addLabels({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: context.payload.pull_request.number,
+      labels: ["Naomi's Sprints"]
+    });
+    return;
+  }
 
   const isOpenForContribution = linkedIssues.some(issue =>
     issue.labels.nodes.some(
