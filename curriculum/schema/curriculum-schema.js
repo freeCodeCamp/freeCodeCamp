@@ -67,7 +67,6 @@ const superblocks = [
   'learn-sql-and-bash',
   'introduction-to-nano',
   'introduction-to-git-and-github',
-  'learn-prompting-fundamentals',
   'introduction-to-variables-and-strings-in-javascript',
   'introduction-to-booleans-and-numbers-in-javascript',
   'introduction-functions-in-javascript',

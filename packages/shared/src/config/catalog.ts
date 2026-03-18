@@ -252,12 +252,6 @@ export const catalog: Catalog[] = [
     topic: Topic.Git
   },
   {
-    superBlock: SuperBlocks.LearnPromptingFundamentals,
-    level: Levels.Beginner,
-    hours: 1,
-    topic: Topic.AI
-  },
-  {
     superBlock: SuperBlocks.IntroductionToVariablesAndStringsInJS,
     level: Levels.Intermediate,
     hours: 40,
