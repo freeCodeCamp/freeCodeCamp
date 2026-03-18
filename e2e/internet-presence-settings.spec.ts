@@ -9,8 +9,7 @@ const settingsPageElement = {
   twitterCheckmark: 'internet-twitter-check',
   blueskyCheckmark: 'internet-bluesky-check',
   personalWebsiteCheckmark: 'internet-website-check',
-  flashMessageAlert: 'flash-message',
-  internetPresenceForm: 'internet-presence'
+  flashMessageAlert: 'flash-message'
 } as const;
 
 test.beforeEach(async ({ page }) => {
@@ -19,7 +18,11 @@ test.beforeEach(async ({ page }) => {
 
   await page.goto('/certifieduser');
 
-  await page.getByRole('button', { name: 'Edit my profile' }).click();
+  await page
+    .getByRole('button', {
+      name: translations.profile['edit-personal-info']
+    })
+    .click();
 });
 
 test.describe('Your Internet Presence', () => {
@@ -30,13 +33,13 @@ test.describe('Your Internet Presence', () => {
     await expect(
       page.getByRole('heading', {
         level: 2,
-        name: translations.settings.headings.internet
+        name: translations.profile['edit-personal-info']
       })
     ).toBeVisible();
 
     await expect(
       page
-        .getByTestId(settingsPageElement.internetPresenceForm)
+        .getByTestId('camper-identity')
         .getByRole('button', { name: translations.buttons.save })
     ).toBeVisible();
   });
@@ -89,7 +92,7 @@ test.describe('Your Internet Presence', () => {
       await expect(socialCheckmark).toBeVisible();
 
       const saveButton = page
-        .getByTestId(settingsPageElement.internetPresenceForm)
+        .getByTestId('camper-identity')
         .getByRole('button', { name: translations.buttons.save });
 
       await expect(saveButton).toBeVisible();

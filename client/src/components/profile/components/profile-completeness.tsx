@@ -9,7 +9,7 @@ import type {
 import { FullWidthRow } from '../../helpers';
 import GreenPass from '../../../assets/icons/green-pass';
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
-import DropDown from '../../../assets/icons/dropdown';
+import { WidgetHeader } from './widget-header';
 import './profile-completeness.css';
 
 interface ProfileCompletenessProps {
@@ -17,6 +17,7 @@ interface ProfileCompletenessProps {
   about: string;
   picture: string;
   location: string;
+  isProfilePublic: boolean;
   githubProfile: string;
   linkedin: string;
   twitter: string;
@@ -50,6 +51,7 @@ export const ProfileCompleteness = ({
   about,
   picture,
   location,
+  isProfilePublic,
   githubProfile,
   linkedin,
   twitter,
@@ -105,13 +107,19 @@ export const ProfileCompleteness = ({
       key: 'portfolio',
       translationKey: 'profile.completeness.portfolio',
       isComplete: portfolio.length > 0,
-      weight: 15
+      weight: 10
     },
     {
       key: 'experience',
       translationKey: 'profile.completeness.experience',
       isComplete: experience.length > 0,
       weight: 10
+    },
+    {
+      key: 'privacy',
+      translationKey: 'profile.completeness.privacy',
+      isComplete: isProfilePublic,
+      weight: 5
     }
   ];
 
@@ -134,29 +142,20 @@ export const ProfileCompleteness = ({
   return (
     <FullWidthRow>
       <div className='profile-completeness'>
-        <button
-          className='profile-completeness-header'
-          onClick={toggleExpanded}
-          aria-expanded={isExpanded}
-          type='button'
-        >
-          <span
-            className={`profile-completeness-chevron ${isExpanded ? 'expanded' : ''}`}
-            aria-hidden='true'
-          >
-            <DropDown />
-          </span>
-          <div className='profile-completeness-bar-container'>
-            <div
-              className='profile-completeness-bar-fill'
-              data-testid='profile-completeness-progress'
-              style={{ width: `${percentage}%` }}
-            />
-          </div>
-          <span className='profile-completeness-text'>
-            {t('profile.completeness.heading', { percentage })}
-          </span>
-        </button>
+        <WidgetHeader
+          title={t('profile.completeness.title')}
+          isSessionUser={true}
+          onCollapseToggle={toggleExpanded}
+          isExpanded={isExpanded}
+          collapseLabel={t('profile.completeness.heading', { percentage })}
+        />
+        <div className='profile-completeness-bar-container'>
+          <div
+            className='profile-completeness-bar-fill'
+            data-testid='profile-completeness-progress'
+            style={{ width: `${percentage}%` }}
+          />
+        </div>
         {isExpanded && (
           <ul className='profile-completeness-checklist'>
             {completionItems.map(item => (

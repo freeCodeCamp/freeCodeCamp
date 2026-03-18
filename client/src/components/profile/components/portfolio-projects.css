@@ -1,3 +1,8 @@
+.portfolio-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
 /* Base styles for mobile devices */
 .portfolio-card {
   display: flex;
@@ -5,6 +10,13 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+
+.portfolio-item-shell {
+  position: relative;
+  background: var(--tertiary-background);
+  border: 1px solid var(--quaternary-background);
+  padding: 0.8rem;
 }
 
 .portfolio-image {
@@ -15,9 +27,15 @@
 }
 
 .portfolio-card-description {
-  margin: 1rem 0rem;
+  margin: 0.85rem 0rem 0.25rem;
   width: auto;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-card-text h3,
+.portfolio-card-text p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 #link-icon {
@@ -47,6 +65,11 @@ a.portfolio-card:focus img {
   opacity: 0.8;
 }
 
+.portfolio-item-shell .profile-item-action-row--top-right {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
 /* Adjust styles for desktop screens */
 @media (min-width: 769px) {
   .portfolio-card {
@@ -62,7 +85,7 @@ a.portfolio-card:focus img {
   }
 
   .portfolio-card-description {
-    margin: 0rem 1rem 1rem;
+    margin: 0rem 1rem 0.25rem;
     width: 100%;
   }
 }

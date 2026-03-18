@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -7,9 +8,12 @@ test.beforeEach(async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.goto('/settings');
 
-  // Wait for the main heading to appear
+  // Wait for the settings page content to appear
   await expect(
-    page.getByRole('heading', { level: 1, name: 'Settings for certifieduser' })
+    page.getByRole('heading', {
+      level: 2,
+      name: translations.settings.headings.privacy
+    })
   ).toBeVisible();
 });
 

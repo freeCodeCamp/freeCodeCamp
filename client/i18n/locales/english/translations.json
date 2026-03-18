@@ -282,7 +282,7 @@
   },
   "settings": {
     "share-projects": "Share your non-freeCodeCamp projects, articles or accepted pull requests.",
-    "privacy": "The settings in this section enable you to control what is shown on your freeCodeCamp public portfolio. Press save to save your changes.",
+    "privacy": "Use these settings to control what appears on your freeCodeCamp public portfolio. Press Save to apply your changes.",
     "data": "To see what data we hold on your account, click the \"Download your data\" button below",
     "disabled": "Your certifications will be disabled, if set to private.",
     "private-name": "Your name will not appear on your certifications, if this is set to private.",
@@ -459,7 +459,23 @@
       "date-format-error": "Please enter the date in MM/YYYY format.",
       "date-invalid": "Please enter a valid date."
     },
+    "private-badge": "Private",
+    "edit-personal-info": "Edit personal info",
+    "edit-internet-presence": "Edit internet presence",
+    "edit-portfolio": "Edit portfolio",
+    "edit-experience": "Edit experience",
+    "no-social-links": "No social links added yet.",
+    "no-portfolio": "No portfolio projects yet.",
+    "no-experience": "No experience added yet.",
+    "certified": "Certified",
+    "add-new-social-link": "Add new social link",
+    "add-new-project": "Add new project",
+    "add-new-experience": "Add new experience",
+    "privacy-title": "Profile privacy",
+    "edit-privacy-settings": "Edit profile privacy settings here",
+    "internet-presence": "Internet Presence",
     "completeness": {
+      "title": "Profile completion",
       "heading": "Profile {{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",
@@ -467,7 +483,8 @@
       "about": "Write an about section",
       "social": "Add a social link",
       "portfolio": "Add a portfolio project",
-      "experience": "Add your experience"
+      "experience": "Add your experience",
+      "privacy": "Update your privacy settings"
     }
   },
   "footer": {
@@ -997,6 +1014,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "make-public": "Make {{section}} public",
+    "make-private": "Make {{section}} private",
+    "edit-section": "Edit {{section}}",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",

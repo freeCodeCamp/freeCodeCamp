@@ -15,7 +15,6 @@ import './heatmap.css';
 import envData from '../../../../config/env.json';
 import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import { User } from '../../../redux/prop-types';
-import FullWidthRow from '../../helpers/full-width-row';
 
 const { clientLocale } = envData;
 
@@ -91,79 +90,75 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
     );
 
     return (
-      <FullWidthRow>
-        <section className='card'>
-          <h2>{t('profile.activity')}</h2>
-          <Spacer size='m' />
-
-          <CalendarHeatMap
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            classForValue={(value: any) => {
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              if (!value || value.count < 1) return 'color-empty';
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              if (value.count < 4) return 'color-scale-1';
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              if (value.count < 8) return 'color-scale-2';
-              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-              if (value.count >= 8) return 'color-scale-a-lot';
-              return 'color-empty';
-            }}
-            endDate={endOfCalendar}
-            startDate={startOfCalendar}
-            tooltipDataAttrs={(value: { count: number; date: Date }) => {
-              const dateFormatted: string =
-                value && value.date
-                  ? value.date.toLocaleDateString([localeCode, 'en-US'], {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
-                    })
-                  : '';
-              if (!value || value.count < 0) {
-                return { 'data-tip': '' };
-              }
-              return {
-                'data-tip': t('profile.points', {
-                  count: value.count,
-                  date: dateFormatted
-                })
-              };
-            }}
-            values={dataToDisplay}
-          />
-          <ReactTooltip className='react-tooltip' effect='solid' html={true} />
-          <Row className='text-center'>
-            <Spacer size='xs' />
-            <button
-              className='heatmap-nav-btn'
-              disabled={!pages[this.state.pageIndex - 1]}
-              // eslint-disable-next-line @typescript-eslint/unbound-method
-              onClick={this.prevPage}
-              style={{
-                visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
-              }}
-              aria-label={t('aria.previous-page')}
-            >
-              &lt;
-            </button>
-            <span>{title}</span>
-            <button
-              className='heatmap-nav-btn'
-              disabled={!pages[this.state.pageIndex + 1]}
-              // eslint-disable-next-line @typescript-eslint/unbound-method
-              onClick={this.nextPage}
-              style={{
-                visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
-              }}
-              aria-label={t('aria.next-page')}
-            >
-              &gt;
-            </button>
-          </Row>
+      <>
+        <Spacer size='m' />
+        <CalendarHeatMap
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          classForValue={(value: any) => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            if (!value || value.count < 1) return 'color-empty';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            if (value.count < 4) return 'color-scale-1';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            if (value.count < 8) return 'color-scale-2';
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            if (value.count >= 8) return 'color-scale-a-lot';
+            return 'color-empty';
+          }}
+          endDate={endOfCalendar}
+          startDate={startOfCalendar}
+          tooltipDataAttrs={(value: { count: number; date: Date }) => {
+            const dateFormatted: string =
+              value && value.date
+                ? value.date.toLocaleDateString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                  })
+                : '';
+            if (!value || value.count < 0) {
+              return { 'data-tip': '' };
+            }
+            return {
+              'data-tip': t('profile.points', {
+                count: value.count,
+                date: dateFormatted
+              })
+            };
+          }}
+          values={dataToDisplay}
+        />
+        <ReactTooltip className='react-tooltip' effect='solid' html={true} />
+        <Row className='text-center'>
           <Spacer size='xs' />
-        </section>
-      </FullWidthRow>
+          <button
+            className='heatmap-nav-btn'
+            disabled={!pages[this.state.pageIndex - 1]}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            onClick={this.prevPage}
+            style={{
+              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
+            }}
+            aria-label={t('aria.previous-page')}
+          >
+            &lt;
+          </button>
+          <span>{title}</span>
+          <button
+            className='heatmap-nav-btn'
+            disabled={!pages[this.state.pageIndex + 1]}
+            // eslint-disable-next-line @typescript-eslint/unbound-method
+            onClick={this.nextPage}
+            style={{
+              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
+            }}
+            aria-label={t('aria.next-page')}
+          >
+            &gt;
+          </button>
+        </Row>
+        <Spacer size='xs' />
+      </>
     );
   }
 }

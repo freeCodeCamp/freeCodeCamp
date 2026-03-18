@@ -174,14 +174,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
         <main className='settings-main'>
           <Spacer size='l' />
           <ScrollElement name='username'>
-            <h1
-              id='content-start'
-              className='text-center'
-              style={{ overflowWrap: 'break-word' }}
-              data-playwright-test-label='settings-heading'
-            >
-              {t('settings.for', { username: username })}
-            </h1>
+            <div id='content-start' />
           </ScrollElement>
           <FullWidthRow>
             <Callout variant='note' label={t('misc.note')}>

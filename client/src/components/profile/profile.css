@@ -1,18 +1,174 @@
-.button-fit {
-  width: 30px;
-  height: fit-content;
-  padding: 0 !important;
-}
-
 .card {
   margin: 0;
-  padding: 1em;
-  box-shadow: none;
-  background: var(--primary-background);
-  border: 1px solid var(--quaternary-background);
+  padding: clamp(0.9rem, 1.1vw, 1.2rem);
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.008) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--primary-background);
+  border: none;
+  border-radius: 0;
   margin-bottom: 1em;
+}
+
+.card--private {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    var(--primary-background);
 }
 
 .card-header {
   position: relative;
+}
+
+.card .text-center {
+  margin: 0;
+  color: var(--quaternary-color);
+}
+
+.profile-visibility-note {
+  margin: 0;
+  color: var(--quaternary-color);
+}
+
+.profile-toggle-list {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.profile-privacy-save-btn {
+  margin-top: 0.75rem;
+}
+
+.profile-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.profile-add-action-row {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-top: 1px solid var(--quaternary-background);
+  padding-top: 0.75rem;
+}
+
+.profile-item-action-row {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.profile-item-action-row--top-right {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  margin-top: 0;
+  z-index: 1;
+}
+
+.profile-item-edit-action {
+  appearance: none;
+  border: 1px solid var(--primary-color);
+  background: var(--tertiary-background);
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  min-height: 34px;
+  padding: 0.45rem 0.8rem;
+  border-radius: 0;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.profile-item-edit-action:hover,
+.profile-item-edit-action:focus-visible {
+  background: var(--secondary-background);
+  color: var(--foreground-color);
+  border-color: var(--foreground-color);
+}
+
+.profile-item-edit-action:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
+.profile-item-edit-action--icon {
+  min-width: 36px;
+  min-height: 36px;
+  width: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--gray-45);
+  background: var(--primary-background);
+}
+
+.profile-item-edit-action--icon svg {
+  font-size: 0.8rem;
+}
+
+.profile-add-action {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--quaternary-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  min-height: 36px;
+  padding: 0.35rem 0.45rem;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.profile-add-action::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex: 0 0 20px;
+  position: relative;
+  top: 1px;
+  box-sizing: border-box;
+  border: 1px solid var(--quaternary-background);
+  border-radius: 0;
+  background:
+    linear-gradient(var(--primary-color), var(--primary-color)) center / 10px
+      2px no-repeat,
+    linear-gradient(var(--primary-color), var(--primary-color)) center / 2px
+      10px no-repeat;
+}
+
+.profile-add-action--no-icon::before {
+  content: none;
+}
+
+.profile-add-action:hover,
+.profile-add-action:focus-visible {
+  color: var(--primary-color);
+  background: var(--tertiary-background);
+}
+
+.profile-add-action:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
 }
