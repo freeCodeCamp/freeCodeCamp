@@ -25,16 +25,16 @@ const TEMPLATE_BLOCK = [
 module.exports = async ({ github, context, isAllowListed }) => {
   if (isAllowListed === 'true') return;
 
-  const body = context.payload.pull_request.body || '';
+  const body = (context.payload.pull_request.body || '').toLowerCase();
 
   // The template must be present and the first 3 checkboxes must be
   // ticked ([x] or [X]). The last checkbox (tested locally) is
   // acceptable to leave unticked.
-  const templatePresent = /checklist:/i.test(body);
+  const templatePresent = body.includes('checklist:');
   const requiredTicked = [
-    'I have read and followed the contribution guidelines',
-    'I have read and followed the how to open a pull request guide',
-    'My pull request targets the'
+    'i have read and followed the contribution guidelines',
+    'i have read and followed the how to open a pull request guide',
+    'my pull request targets the'
   ];
   // Strip markdown links ([text](url) → text) before matching so contributors
   // who omit the link syntax (e.g. type plain text) still pass the check.
