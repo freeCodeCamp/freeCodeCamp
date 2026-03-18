@@ -71,6 +71,9 @@ function addSeeds() {
 
     const challengeFiles = Object.values(seeds).map(data => {
       const seed = { ...data };
+      // Per-file check: ensures no single seed file has more than 2 markers.
+      // This is distinct from the workshop-level check below, which enforces
+      // exactly 2 total markers across all seed files combined.
       const editRegionMarkers = findRegionMarkers(seed);
       if (editRegionMarkers) {
         seed.contents = removeLines(seed.contents, editRegionMarkers);
