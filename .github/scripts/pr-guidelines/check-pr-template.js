@@ -30,7 +30,7 @@ module.exports = async ({ github, context, isAllowListed }) => {
   // The template must be present and the first 3 checkboxes must be
   // ticked ([x] or [X]). The last checkbox (tested locally) is
   // acceptable to leave unticked.
-  const templatePresent = body.includes('Checklist:');
+  const templatePresent = /checklist:/i.test(body);
   const requiredTicked = [
     'I have read and followed the contribution guidelines',
     'I have read and followed the how to open a pull request guide',
