@@ -121,7 +121,8 @@
     "more-ways-to-sign-in": "Mais maneiras de fazer login",
     "sign-in-with-google": "Faça login com o Google",
     "go-to-dcc-today": "Vá para o desafio diário",
-    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário"
+    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário",
+    "outline": "Resumo"
   },
   "daily-coding-challenges": {
     "title": "Desafios de código diário",
@@ -204,8 +205,12 @@
       ],
       "cta": "Comece a aprender agora (é grátis)"
     },
+    "catalog": {
+      "heading": "Explore o catálogo de cursos.",
+      "seeAll": "Ver todos os cursos"
+    },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
-    "core-certs-heading": "Currículo recomendado (ainda em beta):",
+    "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
     "learn-spanish-heading": "Aprenda Espanhol Profissional:",
     "learn-chinese-heading": "Aprenda chinês profissional:",
@@ -215,7 +220,6 @@
     "next-heading": "Experimente nosso currículo beta:",
     "upcoming-heading": "Próximo currículo:",
     "catalog-heading": "Explore nosso catálogo:",
-    "fsd-restructure-note": "Se você estava trabalhando anteriormente em nosso currículo de Desenvolvedor Full Stack Certificado, não se preocupe - o progresso foi salvo. Dividimos em certificações menores que você pode alcançar ao longo de sua jornada.",
     "archive-link": "Procurando por um curso mais antigo? Confira <0>nossa página de arquivos</0>.",
     "faq": "Perguntas frequentes:",
     "faqs": [
@@ -284,6 +288,7 @@
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
     "for": "Configurações para {{username}}",
+    "profile-note": "Você pode acessar <0>o perfil</0> para atualizar as informações pessoais.",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
@@ -291,7 +296,7 @@
     "reset-editor-layout": "Redefinir Layout do Editor",
     "shortcuts-explained": "Dentro de um desafio, aperte ESC seguido pelo ponto de interrogação para mostrar uma lista de atalhos disponíveis.",
     "username": {
-      "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
+      "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos. Use apenas valores alfanuméricos como 'camperbot' ou 'camperbot123'.",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
       "is a reserved error code": "O nome de usuário \"{{username}}\" é um código de erro reservado",
       "must be lowercase": "O nome do usuário \"{{username}}\" deve estar em letras minúsculas",
@@ -323,6 +328,7 @@
       "my-heatmap": "Meu progresso",
       "my-certs": "Minhas certificações",
       "my-portfolio": "Meu portfólio",
+      "my-experience": "Minha experiência",
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
@@ -435,7 +441,34 @@
     "page-number": "{{pageNumber}} de {{totalPages}}",
     "edit-my-profile": "Editar meu perfil",
     "add-bluesky": "Compartilhar esta certificação no BlueSky",
-    "add-threads": "Compartilhar esta certificação no Threads"
+    "add-threads": "Compartilhar esta certificação no Threads",
+    "experience": {
+      "heading": "Experiência",
+      "share-experience": "Compartilhe a experiência profissional",
+      "add": "Adicionar experiência",
+      "save": "Salvar experiência",
+      "remove": "Remover experiência",
+      "job-title": "Cargo",
+      "company": "Empresa",
+      "location": "Localização",
+      "start-date": "Data de início",
+      "end-date": "Data de término",
+      "end-date-helper": "Deixe em branco se for o cargo atual",
+      "description": "Descrição",
+      "present": "Presente",
+      "date-format-error": "Por favor, insira a data no formato MM/AAAA.",
+      "date-invalid": "Por favor, insira uma data válida."
+    },
+    "completeness": {
+      "heading": "Perfil {{percentage}}% completo",
+      "name": "Adicione o nome",
+      "location": "Adicione a localização",
+      "picture": "Envie uma foto de perfil",
+      "about": "Escreva uma seção 'Sobre'",
+      "social": "Adicione um link social",
+      "portfolio": "Adicione um projeto ao portfólio",
+      "experience": "Adicione experiência"
+    }
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
@@ -486,7 +519,7 @@
     "ms-link": "Link da Microsoft",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
     "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
-    "congratulations-code-passes": "✔ Parabéns. Seu código passou.",
+    "congratulations-code-passes": "Parabéns. Seu código passou.",
     "i-completed": "Já completei este desafio",
     "example-code": "Exemplo de código",
     "test-output": "O resultado do seu código vai aparecer aqui",
@@ -524,7 +557,7 @@
     "contact-support-mistake": "Se você acha que houve um erro, entre em contato conosco pelo e-mail donors@freecodecamp.org",
     "editor-tabs": {
       "code": "Código",
-      "tests": "Testes",
+      "tests": "Testes:",
       "restart": "Reiniciar",
       "restart-step": "Reiniciar etapa",
       "console": "Console",
@@ -547,7 +580,7 @@
     "codespaces": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o GitHub Codespaces. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
+      "step-2": "Clique no botão Iniciar abaixo desta lista",
       "step-3": "Naquela página, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VSCode,",
@@ -567,7 +600,7 @@
     "ona": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no Ona</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
+      "step-2": "Clique no botão Iniciar abaixo desta lista",
       "step-3": "No modal que aparece para cima, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VScode,",
@@ -667,7 +700,8 @@
       "exit-header": "Sair do exame",
       "exit": "Tem certeza de que deseja sair do exame? Você perderá todo o progresso que já fez.",
       "exit-yes": "Sim, quero sair do exame",
-      "exit-no": "Não, quero continuar no exame"
+      "exit-no": "Não, quero continuar no exame",
+      "not-honest": "Você precisa <0>aceitar a Política de Honestidade Acadêmica</0> para fazer este exame"
     },
     "ms": {
       "link-header": "Vincule sua conta da Microsoft",
@@ -693,11 +727,12 @@
       "exam": "Teste",
       "warm-up": "Aquecimento",
       "learn": "Aprender",
-      "practice": "Praticar"
+      "practice": "Praticar",
+      "video": "Vídeo"
     },
     "archive": {
       "title": "Nossos cursos arquivados",
-      "content-not-updated": "<0>Aviso:</0> o conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <1>nosso currículo atual</1>."
+      "content-not-updated": "O conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <0>nosso currículo atual</0>."
     }
   },
   "donate": {
@@ -897,7 +932,7 @@
     "document-notfound": "documento não encontrado",
     "slow-load-msg": "Parece que está demorando mais do que o normal. Tente atualizar a página.",
     "navigation-warning": "Se sair desta página, perderá o seu progresso. Tem certeza?",
-    "fsd-b-description": "Este abrangente curso prepara você para se tornar um Desenvolvedor Full Stack Certificado. Você aprenderá a construir aplicações web completas usando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, e mais.",
+    "fsd-b-description": "Este curso abrangente prepara você para se tornar um Desenvolvedor Full Stack Certificado. Você aprenderá a construir aplicações web completas usando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, e mais.",
     "fsd-b-cta": "Comece a aprender",
     "continue-learning": "Continuar aprendendo",
     "fsd-b-benefit-1-title": "Mais de 100 mil alunos",
@@ -990,6 +1025,7 @@
     "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
     "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
     "portfolio-item-updated": "Atualizamos seu portfólio",
+    "experience-updated": "Atualizamos a experiência",
     "email-invalid": "Formato de e-mail inválido",
     "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
@@ -1090,12 +1126,17 @@
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
+    "max-characters-500": "Há um limite máximo de 500 caracteres, você tem {{charsLeft}} restante(s)",
     "same-email": "Este e-mail é igual ao seu e-mail atual",
     "invalid-email": "Não foi possível validar seu e-mail, verifique se ele está correto",
     "email-mismatch": "Os dois novos endereços de e-mail devem ser iguais",
     "title-required": "O título é obrigatório",
     "title-short": "O título é muito curto",
     "title-long": "O título é muito longo",
+    "company-required": "Empresa é obrigatória",
+    "company-short": "O nome da empresa é muito curto",
+    "company-long": "O nome da empresa é muito longo",
+    "start-date-required": "A data de início é obrigatória",
     "invalid-url": "Não foi possível validar seu URL corretamente. Certifique-se de que está correto",
     "invalid-protocol": "O URL deve começar com http ou https",
     "url-not-image": "O URL deve estar vinculado diretamente a um arquivo de imagem",
@@ -1120,7 +1161,7 @@
     "quincy-larson-signature": "Assinatura do Quincy Larson",
     "julia-liuson-signature": "Assinatura da Julia Liuson",
     "project": {
-      "heading-legacy-full-stack": "Como parte desta certificação de full-stack legada, {{user}} completou as seguintes certificações:",
+      "heading-legacy-full-stack": "Como parte desta edição antiga da certificação de full-stack, {{user}} completou as seguintes certificações:",
       "heading-exam": "Como parte desta certificação, {{user}} passou no seguinte exame: ",
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "Solução",
@@ -1234,6 +1275,12 @@
       "college-algebra-with-python-v8-cert": "Certificação de Álgebra universitária com Python",
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
+      "learn-python-for-beginners": "Aprenda Python para iniciantes",
+      "introduction-to-algorithms-and-data-structures": "Introdução a Algoritmos e Estruturas de Dados",
+      "learn-rag-mcp-fundamentals": "Aprenda os Fundamentos de RAG e MCP",
+      "introduction-to-precalculus": "Introdução ao Pré-cálculo",
+      "learn-prompting-fundamentals": "Aprenda os Fundamentos de Prompting",
+      "learn-oop-with-python": "Aprenda POO com Python",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
@@ -1250,8 +1297,8 @@
       "relational-databases-v9-cert": "Certificação de Banco de dados Relacionais",
       "back-end-development-and-apis-v9": "Desenvolvimento Back-End e APIs",
       "back-end-development-and-apis-v9-cert": "Certificação de Desenvolvimento Back-End e APIs",
-      "full-stack-developer-v9": "Desenvolvimento Full Stack",
-      "full-stack-developer-v9-cert": "Certificação de desenvolvimento Full Stack",
+      "full-stack-developer-v9": "Desenvolvedor Full Stack",
+      "full-stack-developer-v9-cert": "Certificação de Desenvolvedor Full Stack",
       "a1-professional-spanish": "Espanhol Profissional A1",
       "a1-professional-spanish-cert": "Certificação de Espanhol Profissional A1",
       "a2-professional-spanish": "Espanhol Profissional A2",
@@ -1269,7 +1316,43 @@
       "information-security-and-quality-assurance": "Segurança da informação e garantia da qualidade edição antiga",
       "information-security-and-quality-assurance-cert": "Certificação de segurança da informação e garantia da qualidade edição antiga",
       "full-stack": "Full Stack edição antiga",
-      "full-stack-cert": "Certificação Full Stack edição antiga"
+      "full-stack-cert": "Certificação Full Stack edição antiga",
+      "introduction-to-bash": "Introdução ao Bash",
+      "introduction-to-sql-and-postgresql": "Introdução ao SQL e PostgreSQL",
+      "learn-bash-scripting": "Aprenda Scripts Bash",
+      "learn-sql-and-bash": "Aprenda SQL e Bash",
+      "introduction-to-nano": "Introdução ao Nano",
+      "introduction-to-git-and-github": "Introdução ao Git e GitHub",
+      "introduction-to-variables-and-strings-in-javascript": "Introdução a Variáveis e Strings em JavaScript",
+      "introduction-to-booleans-and-numbers-in-javascript": "Introdução a Booleanos e Números em JavaScript",
+      "introduction-functions-in-javascript": "Introdução a Funções em JavaScript",
+      "introduction-to-arrays-in-javascript": "Introdução a Arrays em JavaScript",
+      "introduction-to-objects-in-javascript": "Introdução a Objetos em JavaScript",
+      "introduction-to-loops-in-javascript": "Introdução a Laços em JavaScript",
+      "javascript-fundamentals-review": "Revisão dos Fundamentos do JavaScript",
+      "introduction-to-higher-order-functions-and-callbacks-in-javascript": "Introdução a Funções de Ordem Superior e Callbacks em JavaScript",
+      "learn-dom-manipulation-and-events-with-javascript": "Aprenda Manipulação do DOM e Eventos com JavaScript",
+      "introduction-to-javascript-and-accessibility": "Introdução ao JavaScript e Acessibilidade",
+      "learn-javascript-debugging": "Aprenda Depuração em JavaScript",
+      "learn-basic-regex-with-javascript": "Aprenda Expressões Regulares Básicas com JavaScript",
+      "introduction-to-dates-in-javascript": "Introdução a Datas em JavaScript",
+      "learn-audio-and-video-events-with-javascript": "Aprenda Eventos de Áudio e Vídeo com JavaScript",
+      "introduction-to-maps-and-sets-in-javascript": "Introdução a Mapas e Conjuntos em JavaScript",
+      "learn-localstorage-and-crud-operations-with-javascript": "Aprenda localStorage e Operações CRUD com JavaScript",
+      "introduction-to-javascript-classes": "Introdução às Classes em JavaScript",
+      "learn-recursion-with-javascript": "Aprenda Recursão com JavaScript",
+      "introduction-to-functional-programming-with-javascript": "Introdução à Programação Funcional com JavaScript",
+      "introduction-to-asynchronous-javascript": "Introdução ao JavaScript Assíncrono",
+      "introduction-to-python-basics": "Introdução aos Conceitos Básicos de Python",
+      "learn-python-loops-and-sequences": "Aprenda Laços e Sequências em Python",
+      "learn-python-dictionaries-and-sets": "Aprenda Dicionários e Conjuntos em Python",
+      "learn-error-handling-in-python": "Aprenda Tratamento de Erros em Python",
+      "learn-python-classes-and-objects": "Aprenda Classes e Objetos em Python",
+      "introduction-to-oop-in-python": "Introdução à POO em Python",
+      "introduction-to-linear-data-structures-in-python": "Introdução a Estruturas de Dados Lineares em Python",
+      "learn-algorithms-in-python": "Aprenda Algoritmos em Python",
+      "learn-graphs-and-trees-in-python": "Aprenda Grafos e Árvores em Python",
+      "learn-dynamic-programming-in-python": "Aprenda Programação Dinâmica em Python"
     }
   },
   "certification-card": {
@@ -1406,6 +1489,28 @@
         "beginner": "Iniciante",
         "intermediate": "Intermediário",
         "advanced": "Avançado"
+      },
+      "duration": "{{duration}} horas",
+      "no-results": "Nenhum curso encontrado. Tente ajustar os filtros para ver mais resultados.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Análise de Dados",
+        "machine-learning": "Aprendizado de Máquina",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Segurança da Informação",
+        "computer-fundamentals": "Fundamentos de Computação",
+        "computer-science": "Ciência da Computação",
+        "math": "Math",
+        "databases": "Bancos de dados",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editores",
+        "ai": "IA"
       }
     }
   }

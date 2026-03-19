@@ -39,7 +39,6 @@ const defaultProps = {
       fields: {} as Fields,
       forumTopicId: 12345,
       guideUrl: 'https://mockurl.com',
-      head: ['mockHead'],
       hasEditableBoundaries: false,
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
@@ -69,8 +68,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.FullStackDeveloper,
-      tail: ['mockTail'],
+      superBlock: SuperBlocks.FullStackDeveloperV9,
       template: 'mockTemplate',
       tests: [] as Test[],
       title: 'mockTitle',
@@ -86,7 +84,7 @@ const defaultProps = {
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
   t: vi.fn((key: string) => [key]) as unknown as TFunction,
-  superBlock: SuperBlocks.FullStackDeveloper,
+  superBlock: SuperBlocks.FullStackDeveloperV9,
   toggleBlock: vi.fn()
 };
 

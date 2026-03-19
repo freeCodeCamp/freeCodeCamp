@@ -77,8 +77,8 @@ assert.equal(blockquoteEl?.getAttribute('cite'), 'https://www.freecodecamp.org/n
         <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
           Can you imagine what it would be like to be a successful developer? To have built software systems that people rely upon?
         </blockquote>
-        <p cite="https://www.freecodecamp.org/news/learn-to-code-book/">
-          —Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book]</cite>
+        <p>
+          &mdash;Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book]</cite>
         </p>
       </section>
       <section>

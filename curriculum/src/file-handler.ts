@@ -26,7 +26,7 @@ if (typeof __dirname !== 'undefined') {
   __dirnameCompat = dirname(fileURLToPath(metaUrl));
 }
 
-const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
+export const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
 const I18N_CURRICULUM_DIR = resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',
@@ -161,7 +161,6 @@ export type Challenge = {
 };
 
 export interface BlockStructure {
-  name: string;
   hasEditableBoundaries?: boolean;
   required?: string[];
   template?: string;

@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input } from '@inquirer/prompts';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
@@ -8,12 +8,13 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
+import { parseIntroJson } from './helpers/parse-json.js';
+import { withTrace } from './helpers/utils.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -21,25 +22,6 @@ const helpCategories = [
   'Backend Development',
   'Python'
 ] as const;
-
-type BlockInfo = {
-  title: string;
-  intro: string[];
-};
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
-
-interface CreateQuizArgs {
-  superBlock: SuperBlocks;
-  block: string;
-  helpCategory: string;
-  title?: string;
-  questionCount: number;
-}
 
 async function createQuiz(
   superBlock: SuperBlocks,
@@ -53,19 +35,13 @@ async function createQuiz(
   }
   await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createQuizChallenge(
-    superBlock,
-    block,
-    title,
-    questionCount
-  );
+  const challengeId = new ObjectId();
   await createMetaJson(block, title, helpCategory, challengeId);
+  await createQuizChallenge({ challengeId, block, title, questionCount });
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
   void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -77,7 +53,7 @@ async function updateIntroJson(
     __dirname,
     '../../client/i18n/locales/english/intro.json'
   );
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
+  const newIntro = await parseIntroJson(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
     intro: ['', '']
@@ -96,7 +72,6 @@ async function createMetaJson(
   challengeId: ObjectId
 ) {
   const newMeta = getBaseMeta('Quiz');
-  newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
 
@@ -105,89 +80,72 @@ async function createMetaJson(
   await writeBlockStructure(block, newMeta);
 }
 
-async function createQuizChallenge(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  questionCount: number
-): Promise<ObjectId> {
-  return createQuizFile({
+async function createQuizChallenge({
+  block,
+  challengeId,
+  title,
+  questionCount
+}: {
+  block: string;
+  challengeId: ObjectId;
+  title: string;
+  questionCount: number;
+}) {
+  createQuizFile({
+    challengeId,
     projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount
   });
 }
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
-}
-
-// fs Promise functions return errors, but no stack trace.  This adds back in
-// the stack trace.
-function withTrace<Args extends unknown[], Result>(
-  fn: (...x: Args) => Promise<Result>,
-  ...args: Args
-): Promise<Result> {
-  return fn(...args).catch((reason: Error) => {
-    throw Error(reason.message);
+void getAllBlocks().then(async existingBlocks => {
+  const superBlock = await select<SuperBlocks>({
+    message: 'Which certification does this belong to?',
+    default: SuperBlocks.RespWebDesignV9,
+    choices: Object.values(SuperBlocks).map(value => ({
+      name: value,
+      value
+    }))
   });
-}
 
-void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
-        type: 'list',
-        choices: Object.values(SuperBlocks)
-      },
-      {
-        name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this quiz?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
-        }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'HTML-CSS',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'questionCount',
-        message: 'Should this quiz have either ten or twenty questions?',
-        default: 20,
-        type: 'list',
-        choices: [20, 10]
-      }
-    ])
-  )
-  .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      questionCount
-    }: CreateQuizArgs) =>
-      await createQuiz(superBlock, block, helpCategory, questionCount, title)
-  )
-  .then(() =>
-    console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
+  const block = await input({
+    message: 'What is the dashed name (in kebab-case) for this quiz?',
+    validate: (block: string) => validateBlockName(block, existingBlocks)
+  });
+
+  const transformedBlock = block.toLowerCase().trim();
+
+  const title = await input({
+    message: 'What is the new name?',
+    default: transformedBlock
+  });
+
+  const helpCategory = await select<string>({
+    message: 'Choose a help category',
+    default: 'HTML-CSS',
+    choices: helpCategories.map(value => ({
+      name: value,
+      value
+    }))
+  });
+
+  const questionCount = await select<number>({
+    message: 'Should this quiz have either ten or twenty questions?',
+    default: 20,
+    choices: [
+      { name: '20 questions', value: 20 },
+      { name: '10 questions', value: 10 }
+    ]
+  });
+
+  await createQuiz(
+    superBlock,
+    transformedBlock,
+    helpCategory,
+    questionCount,
+    title
   );
+
+  console.log('All set.  Refresh the page to see the changes.');
+});

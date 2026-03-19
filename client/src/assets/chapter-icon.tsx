@@ -15,6 +15,7 @@ import NodeIcon from './icons/node';
 import Python from './icons/python';
 import Graduation from './icons/graduation';
 import {
+  faBuilding,
   faComments,
   faCubes,
   faDoorOpen,
@@ -51,7 +52,8 @@ const iconMap = {
   [A1SpanishChapters.esA1Welcome]: faDoorOpen,
   [A1SpanishChapters.esA1Fundamentals]: faCubes,
   [A1SpanishChapters.esA1Greetings]: faComments,
-  [A1SpanishChapters.esA1Details]: faIdCard
+  [A1SpanishChapters.esA1Details]: faIdCard,
+  [A1SpanishChapters.esA1Describing]: faBuilding
 };
 
 type ChapterIconProps = {

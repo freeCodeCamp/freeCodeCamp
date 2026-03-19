@@ -106,15 +106,27 @@ else:
     print('You are not an adult yet') # You are not an adult yet
 ```
 
+Note that you cannot place any statements between the `if` block and the `else` clause. The following code would raise a `SyntaxError`:
+
+```python
+age = 12
+
+if age >= 18:
+    print('You are an adult')
+print('Almost there!')
+else: # SyntaxError: invalid syntax
+    print('You are not an adult yet')
+```
+
 There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your if statement with the `elif` (else if) keyword.
 
 Here's the syntax:
 
 ```python
-if condition:
-   pass # Code to execute if condition is True
+if condition1:
+   pass # Code to execute if condition1 is True
 elif condition2:
-   pass # Code to execute if condition2 is True
+   pass # Code to execute if condition1 is False and condition2 is True
 else:
    pass # Code to execute if all conditions are False
 ```

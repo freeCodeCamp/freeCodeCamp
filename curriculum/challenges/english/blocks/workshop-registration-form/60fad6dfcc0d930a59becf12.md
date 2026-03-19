@@ -86,16 +86,16 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
 ```
 
 ```css
---fcc-editable-region--
 body {
   width: 100%;
   height: 100vh;
   margin: 0;
   background-color: #1b1b32;
   color: #f5f6f7;
-
-}
 --fcc-editable-region--
+  
+--fcc-editable-region--
+}
 
 label {
   display: block;
@@ -103,4 +103,3 @@ label {
 }
 
 ```
-
