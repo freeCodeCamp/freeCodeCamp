@@ -5,7 +5,10 @@
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "69b1f12e7941b5947294426c", "title": "Step 1" },
-    { "id": "69baa985f829ef676ddb3e8e", "title": "Step 2" }
+    { "id": "69baa985f829ef676ddb3e8e", "title": "Step 2" },
+    { "id": "69bba2f81c07d5d804cc4399", "title": "Step 3" },
+    { "id": "69bbd3f66dfa39e277252772", "title": "Step 4" },
+    { "id": "69bbe55e7a490ec46081ab51", "title": "Step 5" }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
