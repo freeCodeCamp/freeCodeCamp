@@ -82,6 +82,7 @@
           "dashedName": "javascript-objects",
           "blocks": [
             "lecture-introduction-to-javascript-objects-and-their-properties",
+            "lab-cargo-manifest-validator",
             "lecture-working-with-json",
             "lecture-working-with-optional-chaining-and-object-destructuring",
             "workshop-recipe-tracker",
@@ -316,7 +317,8 @@
             "lab-selection-sort-js",
             "lab-insertion-sort",
             "lab-quicksort-js",
-            "review-searching-and-sorting-algorithms-js"
+            "review-searching-and-sorting-algorithms-js",
+            "quiz-searching-and-sorting-algorithms-js"
           ]
         },
         {
