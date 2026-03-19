@@ -65,12 +65,6 @@ assert(
 
 # --seed--
 
-## --before-user-code--
-
-```js
-  // this runs before the user's code is evaluated.
-```
-
 ## --seed-contents--
 
 ::id{#html-key}

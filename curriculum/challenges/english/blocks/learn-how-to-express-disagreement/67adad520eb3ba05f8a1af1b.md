@@ -24,6 +24,10 @@ What should Anna say to agree with Bob?
 
 `I don't understand.`
 
+### --audio-id--
+
+ENd6da13d0
+
 ### --feedback--
 
 This phrase suggests confusion, but Anna needs to show agreement with Bob's idea.
@@ -31,6 +35,10 @@ This phrase suggests confusion, but Anna needs to show agreement with Bob's idea
 ---
 
 `That makes sense.`
+
+### --audio-id--
+
+ENc50c4990
 
 ## --video-solution--
 
