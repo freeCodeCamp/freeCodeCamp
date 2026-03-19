@@ -10,7 +10,7 @@ lang: es
 
 # --description--
 
-In this task, you will hear Basti share his full phone number, including the country code. The number is spoken clearly in grouped digits. 
+In this task, you will hear Basti share his full phone number, including the country code. The number is spoken in grouped digits.
 
 # --instructions--
 

@@ -10,11 +10,11 @@ lang: es
 
 # --description--
 
-The verb `escribir` means to write. When Spanish speakers want to explain how a word is written or spelled, they often use the expression `se escribe`.
+The verb `escribir` means "to write". When Spanish speakers want to explain how a word is written or spelled, they often use the expression `se escribe`.
 
 This form comes from the verb `escribir` and is commonly used before spelling names, emails, or other words letter by letter. For example:
 
-- `Carlos se escribe c-a-r-l-o-s.` – Carlos is spelled c-a-r-l-o-s.  
+- `Carlos se escribe C-a-r-l-o-s.` – Carlos is spelled C-a-r-l-o-s.  
 
 - `Mi apellido se escribe con z.` – My last name is spelled with z.
 
@@ -30,7 +30,7 @@ Listen to the audio and complete the sentence below.
 
 `Me llamo Sebastián Ávila Gómez.`
 
-`Sebastián BLANK BLANK s-e-b-a-s-t-i-á-n, con acento en la última a.`
+`Sebastián BLANK BLANK S-e-b-a-s-t-i-á-n, con acento en la última a.`
 
 ## --blanks--
 

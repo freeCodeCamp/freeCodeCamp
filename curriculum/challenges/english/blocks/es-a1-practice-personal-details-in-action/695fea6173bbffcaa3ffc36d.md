@@ -58,14 +58,14 @@ This asks if someone has a nickname.
 
 # --explanation--
 
-The audio says `¿Cómo te llamas?`. This is one of the most common ways to ask for someone's name in Spanish. Another very common question with the same meaning is:
+Esteban says `¿Cómo te llamas?`. This is one of the most common ways to ask for someone's name in Spanish. Another very common question with the same meaning is:
 
 `¿Cuál es tu nombre?`
 
 Both questions are used in everyday Spanish to ask for a person's name. They are simply structured differently:
 
-- `¿Cómo te llamas?` uses the verb `llamarse` (to be called)  
-- `¿Cuál es tu nombre?` asks directly for the name as a noun
+- `¿Cómo te llamas?` uses the verb `llamarse` (to be called).
+- `¿Cuál es tu nombre?` asks directly for the name as a noun.
 
 In this task, the correct answer is the option that asks for someone's name.
 

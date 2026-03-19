@@ -1,6 +1,6 @@
 {
   "name": "@freecodecamp/browser-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,
@@ -52,7 +52,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^7.2.0",
+    "@freecodecamp/curriculum-helpers": "^9.0.0",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1"
   }

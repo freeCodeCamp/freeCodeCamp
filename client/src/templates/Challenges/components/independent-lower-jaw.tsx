@@ -2,7 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLightbulb,
+  faClose,
+  faZap,
+  faSave,
+  faClockRotateLeft,
+  faRotateLeft
+} from '@fortawesome/free-solid-svg-icons';
+import Progress from '../../../components/Progress';
 import {
   completedChallengesIdsSelector,
   isSignedInSelector
@@ -15,13 +25,14 @@ import {
   currentBlockIdsSelector
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import { openModal, executeChallenge } from '../redux/actions';
+import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
-import Reset from '../../../assets/icons/reset';
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -51,14 +62,14 @@ const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
   executeChallenge,
-  submitChallenge
+  saveChallenge
 };
 
 interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
-  submitChallenge: () => void;
+  saveChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
   challengeMeta: ChallengeMeta;
@@ -70,7 +81,7 @@ export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
   executeChallenge,
-  submitChallenge,
+  saveChallenge,
   tests,
   isSignedIn,
   challengeMeta,
@@ -79,6 +90,7 @@ export function IndependentLowerJaw({
   currentBlockIds
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
@@ -124,6 +136,7 @@ export function IndependentLowerJaw({
   };
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
+  const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
@@ -139,14 +152,19 @@ export function IndependentLowerJaw({
           className='hint-container'
           data-playwright-test-label='independentLowerJaw-failing-hint'
         >
+          <div className='hint-header'>
+            <FontAwesomeIcon icon={faLightbulb} />
+            <button
+              className={'tooltip'}
+              data-playwright-test-label='independentLowerJaw-hint-close-button'
+              onClick={() => setShowHint(false)}
+              aria-label={t('buttons.close')}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
           <div dangerouslySetInnerHTML={{ __html: hint }} />
-          <button
-            className={'tooltip'}
-            data-playwright-test-label='independentLowerJaw-hint-close-button'
-            onClick={() => setShowHint(false)}
-          >
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
-          </button>
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (
@@ -154,18 +172,37 @@ export function IndependentLowerJaw({
           className='hint-container'
           data-playwright-test-label='independentLowerJaw-submission-hint'
         >
-          <div>
-            <p>{t('learn.congratulations-code-passes')}</p>
-            {isSignedIn && showShareButton && (
-              <div className='share-button-wrapper'>
-                <Share
-                  superBlock={challengeMeta.superBlock}
-                  block={challengeMeta.block}
-                  minified={true}
-                />
-              </div>
-            )}
-            {!isSignedIn && (
+          <div className='hint-header'>
+            <FontAwesomeIcon icon={faZap} />
+            <button
+              className={'tooltip'}
+              aria-label={t('buttons.close')}
+              data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
+              onClick={() => setShowSubmissionHint(false)}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
+          <b>{t('learn.congratulations-code-passes')}</b>
+          <div className='progress-bar-container'>
+            <Progress minified={true} />
+          </div>
+          {isSignedIn && showShareButton && (
+            <div
+              className='share-button-wrapper'
+              data-testid='share-button-wrapper'
+            >
+              <Share
+                superBlock={challengeMeta.superBlock}
+                block={challengeMeta.block}
+                minified={true}
+              />
+            </div>
+          )}
+          {!isSignedIn && (
+            <>
+              <Spacer size='xxs' />
               <a
                 href={`${apiLocation}/signin`}
                 className='btn-cta btn btn-block'
@@ -179,15 +216,8 @@ export function IndependentLowerJaw({
               >
                 {t('learn.sign-in-save')}
               </a>
-            )}
-          </div>
-          <button
-            className={'tooltip'}
-            data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
-            onClick={() => setShowSubmissionHint(false)}
-          >
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
-          </button>
+            </>
+          )}
         </div>
       )}
 
@@ -199,6 +229,7 @@ export function IndependentLowerJaw({
               className={`${isSignedIn && 'btn-cta'} tooltip`}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
+              aria-label={t('buttons.submit-continue')}
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
@@ -212,6 +243,7 @@ export function IndependentLowerJaw({
               type='button'
               className='btn-cta tooltip'
               data-playwright-test-label='independentLowerJaw-check-button'
+              aria-label={t('buttons.check-code')}
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
@@ -222,19 +254,46 @@ export function IndependentLowerJaw({
           )}
         </div>
         <div className='action-row-right'>
-          <button
-            type='button'
-            className='icon-botton tooltip'
-            data-playwright-test-label='independentLowerJaw-reset-button'
-            onClick={openResetModal}
-          >
-            <Reset />
-            <span className='tooltiptext'> {t('buttons.reset')}</span>
-          </button>
+          {showRevertButton ? (
+            <>
+              <button
+                type='button'
+                className='icon-botton tooltip'
+                data-playwright-test-label='independentLowerJaw-save-button'
+                aria-label={t('buttons.save')}
+                onClick={() => saveChallenge()}
+              >
+                <FontAwesomeIcon icon={faSave} />
+                <span className='tooltiptext'> {t('buttons.save')}</span>
+              </button>
+              <button
+                type='button'
+                className='icon-botton tooltip'
+                data-playwright-test-label='independentLowerJaw-revert-button'
+                aria-label={t('buttons.revert')}
+                onClick={openResetModal}
+              >
+                <FontAwesomeIcon icon={faClockRotateLeft} />
+                <span className='tooltiptext'> {t('buttons.revert')}</span>
+              </button>
+            </>
+          ) : (
+            <button
+              type='button'
+              className='icon-botton tooltip'
+              data-playwright-test-label='independentLowerJaw-reset-button'
+              aria-label={t('buttons.reset')}
+              onClick={openResetModal}
+            >
+              <FontAwesomeIcon icon={faRotateLeft} />
+              <span className='tooltiptext'> {t('buttons.reset')}</span>
+            </button>
+          )}
           <button
             type='button'
             className='icon-botton tooltip'
             data-playwright-test-label='independentLowerJaw-help-button'
+            aria-label={t('buttons.help')}
             onClick={openHelpModal}
           >
             <Help />
