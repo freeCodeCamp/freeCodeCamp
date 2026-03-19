@@ -44,6 +44,8 @@
   font-size: 18px;
   display: inline-block;
   height: var(--header-element-size);
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .ais-SearchBox-submit,

@@ -18,19 +18,19 @@ Which of the following is an example of a Pythagorean identity?
 
 ## --answers--
 
-`sec^2(x) + tan^2(x) = 1`
+$\sec^2(x) + \tan^2(x) = 1$
 
 ---
 
-`tan^2(x) + 1 = sec^2(x)`
+$\tan^2(x) + 1 = \sec^2(x)$
 
 ---
 
-`csc^2(x) + cot^2(x) = 1`
+$\csc^2(x) + \cot^2(x) = 1$
 
 ---
 
-`cot^2(x) - 1 = csc^2(x)`
+$\cot^2(x) - 1 = \csc^2(x)$
 
 ## --video-solution--
 
