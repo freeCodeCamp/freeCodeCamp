@@ -1179,7 +1179,7 @@ d3.json(url)
         return y(d.Time);
       })
       .attr('data-xvalue', function (d) {
-        return d.Year;
+        return d.Year + '-01-02';
       })
       .attr('data-yvalue', function (d) {
         return d.Time.toISOString();
