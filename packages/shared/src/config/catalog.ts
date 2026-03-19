@@ -252,10 +252,130 @@ export const catalog: Catalog[] = [
     topic: Topic.Git
   },
   {
-    superBlock: SuperBlocks.LearnPromptingFundamentals,
-    level: Levels.Beginner,
-    hours: 1,
-    topic: Topic.AI
+    superBlock: SuperBlocks.IntroductionToVariablesAndStringsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToBooleansAndNumbersInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToFunctionsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToArraysInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToObjectsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToLoopsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.JavascriptFundamentalsReview,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnDomManipulationAndEventsWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToJavascriptAndAccessibility,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnJavascriptDebugging,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnBasicRegexWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToDatesInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnAudioAndVideoEventsWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToMapsAndSetsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToJavascriptClasses,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnRecursionWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToAsynchronousJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnOOPWithPython,
+    level: Levels.Intermediate,
+    hours: 3,
+    topic: Topic.Python
   },
   {
     superBlock: SuperBlocks.IntroductionToPythonBasics,

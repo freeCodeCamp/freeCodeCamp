@@ -32,6 +32,7 @@ module.exports = async ({ github, context, isAllowListed }) => {
             nodes {
               number
               labels(first: 10) { nodes { name } }
+              assignees(first: 10) { nodes { login } }
             }
           }
         }
@@ -83,6 +84,22 @@ module.exports = async ({ github, context, isAllowListed }) => {
         'The linked issue has not been triaged yet, and a solution has not been agreed upon. Once the issue is open for contribution, you are welcome to update this pull request to reflect the issue consensus. Until then, we will not be able to review your pull request.'
       ].join('\n') + FOOTER
     );
+    return;
+  }
+
+  const prAuthor = context.payload.pull_request.user.login;
+  const isNaomiSprintAssignee = linkedIssues.some(
+    issue =>
+      issue.labels.nodes.some(l => l.name === "Naomi's Sprints") &&
+      issue.assignees.nodes.some(a => a.login === prAuthor)
+  );
+  if (isNaomiSprintAssignee) {
+    await github.rest.issues.addLabels({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      issue_number: context.payload.pull_request.number,
+      labels: ["Naomi's Sprints"]
+    });
     return;
   }
 
