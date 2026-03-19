@@ -240,7 +240,6 @@ export const superBlockNames = {
   'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
   'introduction-to-nano': SuperBlocks.IntroductionToNano,
   'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
-  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals,
   'introduction-to-variables-and-strings-in-javascript':
     SuperBlocks.IntroductionToVariablesAndStringsInJS,
   'introduction-to-booleans-and-numbers-in-javascript':

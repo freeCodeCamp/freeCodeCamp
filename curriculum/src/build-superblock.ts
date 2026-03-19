@@ -117,7 +117,7 @@ export function validateChallenges(
 /**
  * Builds a block object from challenges and meta data
  * @param {Array<object>} foundChallenges - Array of challenge objects
- * @param {object} meta - Meta object with name, dashedName, and challengeOrder
+ * @param {object} meta - Meta object with dashedName and challengeOrder
  * @returns {object} Block object with ordered challenges
  */
 export function buildBlock(foundChallenges: Challenge[], meta: Meta) {
@@ -415,7 +415,7 @@ export class BlockCreator {
     const blockResult = buildBlock(foundChallenges, meta);
 
     log(
-      `Completed block "${meta.name}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} built successfully)`
+      `Completed block "${meta.dashedName}" with ${blockResult.challenges.length} challenges (${blockResult.challenges.filter(c => !c.missing).length} built successfully)`
     );
 
     return blockResult;

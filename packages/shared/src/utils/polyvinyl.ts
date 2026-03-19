@@ -6,8 +6,6 @@ export interface IncompleteChallengeFile {
   ext: Ext;
   name: string;
   contents: string;
-  head?: string;
-  tail?: string;
 }
 
 export interface ChallengeFile extends IncompleteChallengeFile {
@@ -15,8 +13,6 @@ export interface ChallengeFile extends IncompleteChallengeFile {
   editableContents?: string;
   usesMultifileEditor?: boolean;
   error?: unknown;
-  head: string;
-  tail: string;
   seed?: string;
   source?: string;
   path: string;
@@ -71,8 +67,6 @@ export function isPoly(poly: unknown): poly is ChallengeFile {
       'name' in poly &&
       'ext' in poly &&
       'fileKey' in poly &&
-      'head' in poly &&
-      'tail' in poly &&
       'history' in poly
     );
   }
@@ -82,8 +76,6 @@ export function isPoly(poly: unknown): poly is ChallengeFile {
     typeof poly.name === 'string' &&
     exts.includes(poly.ext as Ext) &&
     typeof poly.fileKey === 'string' &&
-    typeof poly.head === 'string' &&
-    typeof poly.tail === 'string' &&
     Array.isArray(poly.history);
 
   return hasProperties(poly) && hasCorrectTypes(poly);
@@ -111,33 +103,11 @@ export function setContent(
 // database.
 export function regenerateMissingProperties(file: IncompleteChallengeFile) {
   const newPath = file.name + '.' + file.ext;
-  const newFile = {
+  return {
     ...file,
     path: newPath,
-    history: [newPath],
-    head: file.head ?? '',
-    tail: file.tail ?? ''
+    history: [newPath]
   };
-  return newFile;
-}
-
-async function clearHeadTail(polyP: Promise<ChallengeFile>) {
-  const poly = await polyP;
-  checkPoly(poly);
-  return {
-    ...poly,
-    head: '',
-    tail: ''
-  };
-}
-
-export async function compileHeadTail(padding = '', poly: ChallengeFile) {
-  return clearHeadTail(
-    transformContents(
-      () => [poly.head, poly.contents, poly.tail].join(padding),
-      poly
-    )
-  );
 }
 
 type Wrapper = (x: string) => Promise<string> | string;
@@ -152,21 +122,6 @@ export async function transformContents(
   const poly = await polyP;
   const newPoly = setContent(await wrap(poly.contents), poly, poly.source);
   return newPoly;
-}
-
-export async function transformHeadTailAndContents(
-  wrap: Wrapper,
-  polyP: ChallengeFile | Promise<ChallengeFile>
-) {
-  const poly = await polyP;
-  const contents = await transformContents(wrap, poly);
-  const head = await wrap(poly.head);
-  const tail = await wrap(poly.tail);
-  return {
-    ...contents,
-    head,
-    tail
-  };
 }
 
 // createSource(poly: PolyVinyl) => PolyVinyl

@@ -299,8 +299,6 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
                 name
                 ext
                 contents
-                head
-                tail
                 history
                 fileKey
               }

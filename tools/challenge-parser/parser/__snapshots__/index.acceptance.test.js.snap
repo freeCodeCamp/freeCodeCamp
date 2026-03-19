@@ -11,10 +11,8 @@ exports[`challenge parser > should import md from other files 1`] = `
 </html>",
       "editableRegionBoundaries": [],
       "ext": "html",
-      "head": "",
       "id": "",
       "name": "index",
-      "tail": "",
     },
     {
       "contents": "body {
@@ -22,10 +20,8 @@ exports[`challenge parser > should import md from other files 1`] = `
 }",
       "editableRegionBoundaries": [],
       "ext": "css",
-      "head": "",
       "id": "",
       "name": "styles",
-      "tail": "",
     },
     {
       "contents": "var x = 'y';
@@ -35,10 +31,8 @@ for (let index = 0; index < array.length; index++) {
 }",
       "editableRegionBoundaries": [],
       "ext": "js",
-      "head": "",
       "id": "custom-name",
       "name": "script",
-      "tail": "",
     },
   ],
   "description": "<section id="description">
@@ -76,10 +70,8 @@ exports[`challenge parser > should not mix other YAML with the frontmatter 1`] =
 </html>",
       "editableRegionBoundaries": [],
       "ext": "html",
-      "head": "",
       "id": "",
       "name": "index",
-      "tail": "",
     },
     {
       "contents": "body {
@@ -87,19 +79,15 @@ exports[`challenge parser > should not mix other YAML with the frontmatter 1`] =
 }",
       "editableRegionBoundaries": [],
       "ext": "css",
-      "head": "",
       "id": "",
       "name": "styles",
-      "tail": "",
     },
     {
       "contents": "var x = 'y';",
       "editableRegionBoundaries": [],
       "ext": "js",
-      "head": "",
       "id": "",
       "name": "script",
-      "tail": "",
     },
   ],
   "description": "<section id="description">
@@ -183,10 +171,8 @@ exports[`challenge parser > should parse a more realistic md file 1`] = `
         23,
       ],
       "ext": "html",
-      "head": "",
       "id": "html-key",
       "name": "index",
-      "tail": "",
     },
     {
       "contents": "body {
@@ -206,19 +192,15 @@ a {
         9,
       ],
       "ext": "css",
-      "head": "",
       "id": "",
       "name": "styles",
-      "tail": "",
     },
     {
       "contents": "var x = 'y';",
       "editableRegionBoundaries": [],
       "ext": "js",
-      "head": "  // this runs before the user's code is evaluated.",
       "id": "final-key",
       "name": "script",
-      "tail": "",
     },
   ],
   "description": "<section id="description">
@@ -265,10 +247,8 @@ a {
   </body>
 </html>",
         "ext": "html",
-        "head": "",
         "id": "html-key",
         "name": "index",
-        "tail": "",
       },
       {
         "contents": "body {
@@ -284,18 +264,14 @@ a {
   color: green;
 }",
         "ext": "css",
-        "head": "",
         "id": "",
         "name": "styles",
-        "tail": "",
       },
       {
         "contents": "var x = 'y';",
         "ext": "js",
-        "head": "",
         "id": "final-key",
         "name": "script",
-        "tail": "",
       },
     ],
   ],
@@ -349,10 +325,8 @@ exports[`challenge parser > should parse a simple md file 1`] = `
 </html>",
       "editableRegionBoundaries": [],
       "ext": "html",
-      "head": "",
       "id": "",
       "name": "index",
-      "tail": "",
     },
     {
       "contents": "body {
@@ -360,19 +334,15 @@ exports[`challenge parser > should parse a simple md file 1`] = `
 }",
       "editableRegionBoundaries": [],
       "ext": "css",
-      "head": "",
       "id": "",
       "name": "styles",
-      "tail": "",
     },
     {
       "contents": "var x = 'y';",
       "editableRegionBoundaries": [],
       "ext": "js",
-      "head": "",
       "id": "",
       "name": "script",
-      "tail": "",
     },
     {
       "contents": "{
@@ -382,10 +352,8 @@ exports[`challenge parser > should parse a simple md file 1`] = `
 }",
       "editableRegionBoundaries": [],
       "ext": "json",
-      "head": "",
       "id": "",
       "name": "tsconfig",
-      "tail": "",
     },
   ],
   "description": "<section id="description">
@@ -406,28 +374,22 @@ exports[`challenge parser > should parse a simple md file 1`] = `
   </body>
 </html>",
         "ext": "html",
-        "head": "",
         "id": "html-key",
         "name": "index",
-        "tail": "",
       },
       {
         "contents": "body {
   background: white;
 }",
         "ext": "css",
-        "head": "",
         "id": "",
         "name": "styles",
-        "tail": "",
       },
       {
         "contents": "var x = 'y';",
         "ext": "js",
-        "head": "",
         "id": "",
         "name": "script",
-        "tail": "",
       },
     ],
   ],
@@ -462,10 +424,8 @@ exports[`challenge parser > should parse frontmatter 1`] = `
 </html>",
       "editableRegionBoundaries": [],
       "ext": "html",
-      "head": "",
       "id": "",
       "name": "index",
-      "tail": "",
     },
     {
       "contents": "body {
@@ -473,19 +433,15 @@ exports[`challenge parser > should parse frontmatter 1`] = `
 }",
       "editableRegionBoundaries": [],
       "ext": "css",
-      "head": "",
       "id": "",
       "name": "styles",
-      "tail": "",
     },
     {
       "contents": "var x = 'y';",
       "editableRegionBoundaries": [],
       "ext": "js",
-      "head": "",
       "id": "",
       "name": "script",
-      "tail": "",
     },
   ],
   "challengeType": 0,
@@ -524,10 +480,8 @@ exports[`challenge parser > should parse gfm strikethrough and frontmatter 1`] =
 </html>",
       "editableRegionBoundaries": [],
       "ext": "html",
-      "head": "",
       "id": "",
       "name": "index",
-      "tail": "",
     },
     {
       "contents": "body {
@@ -535,19 +489,15 @@ exports[`challenge parser > should parse gfm strikethrough and frontmatter 1`] =
 }",
       "editableRegionBoundaries": [],
       "ext": "css",
-      "head": "",
       "id": "",
       "name": "styles",
-      "tail": "",
     },
     {
       "contents": "var x = 'y';",
       "editableRegionBoundaries": [],
       "ext": "js",
-      "head": "",
       "id": "",
       "name": "script",
-      "tail": "",
     },
   ],
   "description": "<section id="description">
@@ -582,28 +532,22 @@ exports[`challenge parser > should parse gfm strikethrough and frontmatter 1`] =
   </body>
 </html>",
         "ext": "html",
-        "head": "",
         "id": "html-key",
         "name": "index",
-        "tail": "",
       },
       {
         "contents": "body {
   background: white;
 }",
         "ext": "css",
-        "head": "",
         "id": "",
         "name": "styles",
-        "tail": "",
       },
       {
         "contents": "var x = 'y';",
         "ext": "js",
-        "head": "",
         "id": "",
         "name": "script",
-        "tail": "",
       },
     ],
   ],
