@@ -231,5 +231,7 @@ test('Ctrl+Enter should not open completion modal in multifile editor (uses lowe
 
   await expect(page.getByRole('dialog')).toHaveCount(0);
 
-  await expect(page.locator('#editor-lower-jaw')).toBeVisible();
+  await expect(
+    page.locator('[data-playwright-test-label="independentLowerJaw-container"]')
+  ).toBeVisible();
 });

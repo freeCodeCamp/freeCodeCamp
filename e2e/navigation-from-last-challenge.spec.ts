@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import solution from './fixtures/build-a-personal-portfolio-webpage.json';
 import { clearEditor, focusEditor } from './utils/editor';
 import { isMacOS } from './utils/user-agent';
@@ -81,9 +81,11 @@ test.describe('Should take you to the next superblock (with editor solution)', (
 
     await page.keyboard.press('Control+Enter');
 
-    await page
-      .getByRole('button', { name: 'Submit and go to next challenge' })
-      .click();
+    const submitButton = page.locator(
+      '[data-playwright-test-label="independentLowerJaw-submit-button"]'
+    );
+    await expect(submitButton).toBeVisible();
+    await submitButton.click();
     await page.waitForURL(rwdChallenge.nextUrl);
   });
 });
