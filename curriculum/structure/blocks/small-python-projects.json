@@ -1,0 +1,17 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "small-python-projects",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6ec8578710ffa3471b74888e",
+      "title": "Building a Basic Calculator"
+    },
+    {
+      "id": "024ffa91a50a44335be33ee7",
+      "title": "Mad Libs Game"
+    }
+  ]
+}
