@@ -25,7 +25,8 @@ const links = {
   multipleChoiceQuestion:
     '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-7',
   assignment:
-    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
+    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html',
+  lab: 'learn/javascript-v9/lab-javascript-trivia-bot/lab-javascript-trivia-bot'
 };
 
 const titles = {
@@ -214,4 +215,40 @@ test('User can use Cmd+Enter to submit their answer in an assignment-type challe
 
   // Completion modal shows up
   await expect(page.getByRole('dialog')).toBeVisible();
+});
+
+test('Ctrl+Enter should only show independent lower jaw in lab', async ({
+  page
+}) => {
+  await page.goto(links.lab);
+
+  await expect(page.locator('#editor-layout')).toBeVisible();
+
+  await page.keyboard.press('Control+Enter');
+
+  // Completion modal should not show up
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+
+  // Independent lower jaw shows up
+  await expect(
+    page.locator('[data-playwright-test-label="independentLowerJaw-container"]')
+  ).toBeVisible();
+});
+
+test('Cmd+Enter should only show independent lower jaw in lab', async ({
+  page
+}) => {
+  await page.goto(links.lab);
+
+  await expect(page.locator('#editor-layout')).toBeVisible();
+
+  await page.keyboard.press('Meta+Enter');
+
+  // Completion modal should not show up
+  await expect(page.getByRole('dialog')).not.toBeVisible();
+
+  // Independent lower jaw shows up
+  await expect(
+    page.locator('[data-playwright-test-label="independentLowerJaw-container"]')
+  ).toBeVisible();
 });
