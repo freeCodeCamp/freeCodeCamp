@@ -4804,6 +4804,8 @@
         "intro": [
           "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
           "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
       "lab-cargo-manifest-validator": {
         "title": "Build a Cargo Manifest Validator",
         "intro": [
