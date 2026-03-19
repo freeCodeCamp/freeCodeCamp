@@ -13,7 +13,8 @@ const superBlocksWithMathJax = [
   SuperBlocks.ProjectEuler,
   SuperBlocks.RosettaCode,
   SuperBlocks.SciCompPy,
-  SuperBlocks.PythonV9
+  SuperBlocks.PythonV9,
+  SuperBlocks.IntroductionToPrecalculus
 ];
 
 const configure = () => {
@@ -29,11 +30,9 @@ const configure = () => {
       processClass: 'mathjax-support'
     }
   });
-  MathJax.Hub.Queue([
-    'Typeset',
-    MathJax.Hub,
-    document.querySelector('.mathjax-support')
-  ]);
+  document.querySelectorAll('.mathjax-support').forEach(el => {
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub, el]);
+  });
 };
 
 export const initializeMathJax = (mathJaxChallenge = true) => {
