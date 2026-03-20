@@ -117,7 +117,6 @@ export type Characters =
   | 'Tom'
 
   // Spanish
-  | 'Alex'
   | 'Ángela'
   | 'Camila'
   | 'Carlos'
@@ -137,12 +136,14 @@ export type Characters =
 
   // Chinese
   | 'Chen Na'
+  | 'Huang Jingyi'
   | 'Li Hong'
   | 'Li Ping'
   | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
   | 'Zhang Wei'
+  | 'Zhou Jia'
   | 'Zhou Yongjie';
 
 interface SetupCharacter {
@@ -211,7 +212,6 @@ export type ChallengeNode = {
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: Hooks;
@@ -245,7 +245,6 @@ export type ChallengeNode = {
     sourceInstanceName: string;
     superOrder: number;
     superBlock: SuperBlocks;
-    tail: string[];
     template: string;
     tests: Test[];
     title: string;
@@ -548,11 +547,9 @@ export type ExperienceData = {
 export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
-  head: string;
   id: string;
   key: string;
   name: string;
-  tail: string;
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

@@ -3,7 +3,6 @@ id: 6856ddea73ea5fafe4d65cfc
 title: Task 95
 challengeType: 19
 dashedName: task-95
-showSpeakingButton: true
 lang: en-US
 ---
 
