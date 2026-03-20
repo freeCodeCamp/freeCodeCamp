@@ -38,6 +38,12 @@ assert.deepEqual(purgeMostFrequent(["red", "blue", "green", "red", "blue", "gree
 assert.deepEqual(purgeMostFrequent([5, 5, 5, 5]), []);
 ```
 
+`purgeMostFrequent([10, 12, 7, 3, 7, 7, 12, 12])` should return `[10, 3]`.
+
+```js
+assert.deepEqual(purgeMostFrequent([10, 12, 7, 3, 7, 7, 12, 12]), [10, 3]);
+```
+
 # --seed--
 
 ## --seed-contents--

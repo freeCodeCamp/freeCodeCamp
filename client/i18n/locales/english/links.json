@@ -33,8 +33,11 @@
     "Backend Development": "Backend Development",
     "C-Sharp": "C-Sharp",
     "English": "English",
+    "Spanish Curriculum": "Spanish Curriculum",
+    "Chinese Curriculum": "Chinese Curriculum",
     "Odin": "The Odin Project",
     "Euler": "Project Euler",
-    "Rosetta": "Rosetta Code"
+    "Rosetta": "Rosetta Code",
+    "General": "General"
   }
 }

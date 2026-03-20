@@ -5,9 +5,13 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
-import type { Chapter } from '../../shared-dist/config/chapters.js';
-import type { SuperBlocks } from '../../shared-dist/config/curriculum.js';
-import type { Certification } from '../../shared-dist/config/certification-settings.js';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import type { BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type {
+  SuperBlocks,
+  ChallengeLang
+} from '@freecodecamp/shared/config/curriculum';
+import type { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 const log = debug('fcc:file-handler');
 
@@ -22,7 +26,7 @@ if (typeof __dirname !== 'undefined') {
   __dirnameCompat = dirname(fileURLToPath(metaUrl));
 }
 
-const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
+export const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
 const I18N_CURRICULUM_DIR = resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',
@@ -153,10 +157,10 @@ export type Challenge = {
   missing?: boolean;
   challengeFiles?: ChallengeFile[];
   solutions?: ChallengeFile[][];
+  lang?: ChallengeLang;
 };
 
 export interface BlockStructure {
-  name: string;
   hasEditableBoundaries?: boolean;
   required?: string[];
   template?: string;
@@ -165,7 +169,7 @@ export interface BlockStructure {
   disableLoopProtectTests?: boolean;
   disableLoopProtectPreview?: boolean;
   blockLayout: string;
-  blockLabel: string;
+  blockLabel?: BlockLabel;
   challengeOrder: Challenge[];
   dashedName: string;
   isUpcomingChange?: boolean;

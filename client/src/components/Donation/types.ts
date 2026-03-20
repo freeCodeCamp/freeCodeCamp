@@ -1,5 +1,5 @@
 import type { PaymentIntentResult } from '@stripe/stripe-js';
-import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 export type PaymentContext = 'modal' | 'donate page' | 'certificate';
 export type PaymentProvider = 'patreon' | 'paypal' | 'stripe' | 'stripe card';

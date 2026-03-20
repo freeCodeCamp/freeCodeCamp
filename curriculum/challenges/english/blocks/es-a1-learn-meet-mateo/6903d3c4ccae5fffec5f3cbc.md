@@ -52,17 +52,17 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
 
 # --explanation--
 
-`Soy` (I am) comes from the verb `ser` and is used to express identity, nationality, or profession. For example:
+`Soy` ("I am") comes from the verb `ser` and is used to express identity, nationality, or profession. For example:
 
-- `Soy chilena.` – I am Chilean. (feminine)
+- `Soy chilena.` – I'm Chilean. (feminine)
 
-- `Soy puertorriqueña` - I am Puerto Rican. (feminine)
+- `Soy chileno.` – I'm Chilean. (masculine)
 
-- `Soy chileno.` – I am Chilean. (masculine)
+- `Soy puertorriqueña` - I'm Puerto Rican. (feminine)
 
-- `Soy puertorriqueño` - I am Puerto Rican. (masculine)
+- `Soy puertorriqueño` - I'm Puerto Rican. (masculine)
 
-- `Soy canadiense.` – I am Canadian. (neutral)
+- `Soy canadiense.` – I'm Canadian. (neutral)
 
 # --scene--
 

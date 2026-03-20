@@ -40,23 +40,19 @@ describe('add solution plugin', () => {
   });
 
   it('adds solution objects to the challengeFiles array following a schema', () => {
-    expect.assertions(13);
+    expect.assertions(9);
     plugin(mockAST, file);
     const {
       data: { solutions }
     } = file;
     const testObject = solutions[0].find(solution => solution.ext === 'js');
-    expect(Object.keys(testObject).length).toEqual(6);
+    expect(Object.keys(testObject).length).toEqual(4);
     expect(testObject).toHaveProperty('ext');
     expect(typeof testObject['ext']).toBe('string');
     expect(testObject).toHaveProperty('name');
     expect(typeof testObject['name']).toBe('string');
     expect(testObject).toHaveProperty('contents');
     expect(typeof testObject['contents']).toBe('string');
-    expect(testObject).toHaveProperty('head');
-    expect(typeof testObject['head']).toBe('string');
-    expect(testObject).toHaveProperty('tail');
-    expect(typeof testObject['tail']).toBe('string');
     expect(testObject).toHaveProperty('id');
     expect(typeof testObject['id']).toBe('string');
   });

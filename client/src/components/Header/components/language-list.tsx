@@ -8,7 +8,7 @@ import {
   LangNames,
   LangCodes,
   hiddenLangs
-} from '../../../../../shared-dist/config/i18n';
+} from '@freecodecamp/shared/config/i18n';
 import { hardGoTo as navigate } from '../../../redux/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import LanguageGlobe from '../../../assets/icons/language-globe';
@@ -30,12 +30,9 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   const [showList, setShowList] = useState(false);
   const listButtonRef = useRef<HTMLButtonElement>(null);
 
-  const handleClick = (): void => {
-    if (showList) {
-      setShowList(false);
-      return;
-    }
-    setShowList(true);
+  const handleClick = (event: React.MouseEvent): void => {
+    event.stopPropagation();
+    setShowList(prev => !prev);
   };
 
   const handleClickOutside = () => {

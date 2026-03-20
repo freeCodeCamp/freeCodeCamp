@@ -1,9 +1,11 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor } from './utils/editor';
+
 test.describe('multifileCertProjects', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(
       'learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
     );
@@ -25,9 +27,7 @@ test.describe('multifileCertProjects', () => {
     await page.keyboard.type('save1text');
     await expect(page.getByText('save1text')).toBeVisible();
 
-    await page
-      .getByRole('button', { name: !isMobile ? 'Save your Code' : 'Save' })
-      .click();
+    await page.getByRole('button', { name: translations.buttons.save }).click();
 
     await expect(page.getByTestId('flash-message')).toContainText(success);
 

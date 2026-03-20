@@ -8,11 +8,12 @@ import {
   vi
 } from 'vitest';
 
-import { Certification } from '../../../../shared/config/certification-settings.js';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import {
   defaultUserEmail,
   defaultUserId,
   devLogin,
+  resetDefaultUser,
   setupServer,
   superRequest
 } from '../../../vitest.utils.js';
@@ -35,30 +36,13 @@ describe('certificate routes', () => {
 
     describe('PUT /certificate/verify', () => {
       beforeEach(async () => {
+        await resetDefaultUser();
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
-            completedChallenges: [],
-            is2018DataVisCert: false,
-            isA2EnglishCert: false,
-            isApisMicroservicesCert: false,
-            isCollegeAlgebraPyCertV8: false,
-            isDataAnalysisPyCertV7: false,
-            isFoundationalCSharpCertV8: false,
-            isFrontEndLibsCert: false,
-            isInfosecCertV7: false,
-            isJsAlgoDataStructCert: false,
-            isJavascriptCertV9: false,
-            isMachineLearningPyCertV7: false,
-            isPythonCertV9: false,
-            isQaCertV7: false,
-            isRelationalDatabaseCertV8: false,
-            isRelationalDatabaseCertV9: false,
-            isRespWebDesignCert: false,
-            isRespWebDesignCertV9: false,
-            isSciCompPyCertV7: false,
             name: 'fcc',
-            username: 'fcc'
+            username: 'fcc',
+            completedChallenges: []
           }
         });
       });
@@ -143,6 +127,7 @@ describe('certificate routes', () => {
           isCertMap: {
             is2018DataVisCert: false,
             isA2EnglishCert: false,
+            isB1EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
             isCollegeAlgebraPyCertV8: false,
@@ -174,7 +159,6 @@ describe('certificate routes', () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
-            completedChallenges: [],
             isRespWebDesignCert: true
           }
         });
@@ -227,7 +211,7 @@ describe('certificate routes', () => {
       });
 
       // Note: Email does not actually send (work) in development, but status should still be 200.
-      test('should send the certified email, if all current certifications are met', async () => {
+      test('should send the certified email when full stack developer v9 is claimed', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
@@ -238,24 +222,7 @@ describe('certificate routes', () => {
               { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
               { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
             ],
-            is2018DataVisCert: true,
-            isA2EnglishCert: true,
-            isApisMicroservicesCert: true,
-            isCollegeAlgebraPyCertV8: true,
-            isDataAnalysisPyCertV7: true,
-            isFoundationalCSharpCertV8: true,
-            isFrontEndLibsCert: true,
-            isInfosecCertV7: true,
-            isJavascriptCertV9: true,
-            isJsAlgoDataStructCertV8: true,
-            isMachineLearningPyCertV7: true,
-            isPythonCertV9: true,
-            isQaCertV7: true,
-            isRelationalDatabaseCertV8: true,
-            isRelationalDatabaseCertV9: true,
-            isRespWebDesignCert: false,
-            isRespWebDesignCertV9: true,
-            isSciCompPyCertV7: true
+            isFullStackDeveloperCertV9: true
           }
         });
 
@@ -309,29 +276,37 @@ describe('certificate routes', () => {
             }
           },
           isCertMap: {
+            is2018DataVisCert: false,
+            isA1ChineseCert: false,
+            isA2ChineseCert: false,
             isA2EnglishCert: false,
-            isRespWebDesignCert: true,
-            isRespWebDesignCertV9: false,
+            isA2SpanishCert: false,
+            isApisMicroservicesCert: false,
+            isB1EnglishCert: false,
+            isBackEndCert: false,
+            isBackEndDevApisCertV9: false,
+            isCollegeAlgebraPyCertV8: false,
+            isDataAnalysisPyCertV7: false,
+            isDataVisCert: false,
+            isFoundationalCSharpCertV8: false,
+            isFrontEndCert: false,
+            isFrontEndLibsCert: false,
+            isFrontEndLibsCertV9: false,
+            isFullStackCert: false,
+            isFullStackDeveloperCertV9: false,
+            isInfosecCertV7: false,
+            isInfosecQaCert: false,
             isJavascriptCertV9: false,
             isJsAlgoDataStructCert: false,
-            isFrontEndLibsCert: false,
-            is2018DataVisCert: false,
-            isApisMicroservicesCert: false,
-            isInfosecQaCert: false,
-            isQaCertV7: false,
-            isInfosecCertV7: false,
-            isFrontEndCert: false,
-            isBackEndCert: false,
-            isDataVisCert: false,
-            isFullStackCert: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
+            isJsAlgoDataStructCertV8: false,
             isMachineLearningPyCertV7: false,
-            isRelationalDatabaseCertV8: false,
-            isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false,
             isPythonCertV9: false,
-            isRelationalDatabaseCertV9: false
+            isQaCertV7: false,
+            isRelationalDatabaseCertV8: false,
+            isRelationalDatabaseCertV9: false,
+            isRespWebDesignCert: true,
+            isRespWebDesignCertV9: false,
+            isSciCompPyCertV7: false
           },
           completedChallenges: [
             {
@@ -449,11 +424,10 @@ describe('certificate routes', () => {
           }
         });
 
-        vi.spyOn(fastifyTestInstance.prisma.user, 'update').mockImplementation(
-          () => {
-            throw new Error('test');
-          }
-        );
+        vi.spyOn(fastifyTestInstance.prisma, 'user', 'get').mockReturnValue({
+          ...fastifyTestInstance.prisma.user,
+          update: vi.fn().mockRejectedValueOnce(new Error('test'))
+        });
 
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',

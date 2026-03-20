@@ -167,7 +167,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
       reply.clearOurCookies();
 
-      return reply.code(204).send();
+      return reply.code(204).send(null);
     }
   );
 
@@ -661,13 +661,21 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       // This is one of the most requested routes. To avoid spamming the logs
       // with this route, we'll log requests at the debug level.
       logger.debug({ userId: req.user?.id });
+
+      // Handle unauthenticated users - this is not an error, it's how the client
+      // determines if they are signed in or not
+      if (!req.user?.id) {
+        logger.debug('Unauthenticated user requested session');
+        return { user: {}, result: '' };
+      }
+
       try {
         const userTokenP = fastify.prisma.userToken.findFirst({
-          where: { userId: req.user!.id }
+          where: { userId: req.user.id }
         });
 
         const userP = fastify.prisma.user.findUnique({
-          where: { id: req.user!.id },
+          where: { id: req.user.id },
           select: {
             about: true,
             acceptedPrivacyTerms: true,
@@ -708,6 +716,13 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true,
+            isFrontEndLibsCertV9: true,
+            isBackEndDevApisCertV9: true,
+            isFullStackDeveloperCertV9: true,
+            isB1EnglishCert: true,
+            isA2SpanishCert: true,
+            isA2ChineseCert: true,
+            isA1ChineseCert: true,
             keyboardShortcuts: true,
             linkedin: true,
             location: true,
@@ -715,6 +730,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             partiallyCompletedChallenges: true,
             picture: true,
             portfolio: true,
+            experience: true,
             profileUI: true,
             progressTimestamps: true,
             savedChallenges: true,
@@ -730,11 +746,11 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const completedSurveysP = fastify.prisma.survey.findMany({
-          where: { userId: req.user!.id }
+          where: { userId: req.user.id }
         });
 
         const msUsernameP = fastify.prisma.msUsername.findFirst({
-          where: { userId: req.user?.id }
+          where: { userId: req.user.id }
         });
 
         const [userToken, user, completedSurveys, msUsername] =
@@ -774,6 +790,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           location,
           name,
           theme,
+          experience,
           ...publicUser
         } = rest;
 
@@ -811,6 +828,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
+              experience: experience.map(removeNulls),
               msUsername: msUsername?.msUsername
             }
           },

@@ -4,7 +4,7 @@ import React from 'react';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
-import { challengeTypes } from '../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 interface CodeAllyButtonProps {
   challengeType: number;

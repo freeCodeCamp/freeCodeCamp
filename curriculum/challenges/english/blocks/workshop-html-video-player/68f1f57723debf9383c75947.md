@@ -1,0 +1,45 @@
+---
+id: 68f1f57723debf9383c75947
+title: Step 4
+challengeType: 0
+dashedName: step-4
+---
+
+# --description--
+
+The `loop` attribute will restart the video once playback is completed. Think of an internet meme that repeats playback. Omitting the `loop` attribute will make the video playback once.
+
+The `loop` attribute is a boolean attribute and does not need a value.
+
+Add the `loop` attribute to the `video` element.
+
+# --hints--
+
+Your `video` element should have the `loop` attribute.
+
+```js
+const video = document.querySelector('video');
+assert.isTrue(video?.hasAttribute('loop'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with the HTML Video Element</title>
+</head>
+<body>
+  <h1>Working with the HTML Video Element</h1>
+--fcc-editable-region--
+  <video width="640">
+--fcc-editable-region--
+  </video>
+</body>
+</html>
+```

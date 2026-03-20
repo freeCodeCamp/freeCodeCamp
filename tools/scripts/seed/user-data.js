@@ -53,6 +53,7 @@ module.exports.blankUser = {
   isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
+  experience: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -66,6 +67,7 @@ module.exports.blankUser = {
     showName: false,
     showPoints: false,
     showPortfolio: false,
+    showExperience: false,
     showTimeLine: false
   },
   badges: {
@@ -115,6 +117,7 @@ module.exports.publicUser = {
   isFoundationalCSharpCertV8: false,
   completedChallenges: [],
   portfolio: [],
+  experience: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -128,6 +131,7 @@ module.exports.publicUser = {
     showName: true,
     showPoints: true,
     showPortfolio: true,
+    showExperience: true,
     showTimeLine: true
   },
   badges: {
@@ -178,6 +182,7 @@ module.exports.demoUser = {
   isJsAlgoDataStructCertV8: false,
   completedChallenges: [],
   portfolio: [],
+  experience: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -191,6 +196,7 @@ module.exports.demoUser = {
     showName: false,
     showPoints: false,
     showPortfolio: false,
+    showExperience: false,
     showTimeLine: false
   },
   badges: {
@@ -221,6 +227,7 @@ module.exports.fullyCertifiedUser = {
   currentChallengeId: '',
   isHonest: true,
   isA2EnglishCert: true,
+  isB1EnglishCert: true,
   isFrontEndCert: true,
   isDataVisCert: true,
   isBackEndCert: true,
@@ -12309,6 +12316,7 @@ module.exports.fullyCertifiedUser = {
     }
   ],
   portfolio: [],
+  experience: [],
   yearsTopContributor: ['2019'],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -12323,6 +12331,7 @@ module.exports.fullyCertifiedUser = {
     showName: true,
     showPoints: true,
     showPortfolio: true,
+    showExperience: true,
     showTimeLine: true
   },
   badges: {

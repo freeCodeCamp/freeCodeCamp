@@ -1,0 +1,513 @@
+---
+id: 696044a24dc926aaa99e35c6
+title: Expressing Agreement Quiz
+challengeType: 8
+dashedName: en-b1-quiz-express-agreement
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of how to express agreement.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What do you describe as `reasonable`?
+
+#### --distractors--
+
+Something confusing or impossible to accept
+
+---
+
+Something unexpected that causes problems for a team
+
+---
+
+Something that changes very frequently
+
+#### --answer--
+
+Something fair or logical in a given situation
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does Bob propose to do? <!-- (quiz audio) Bob: We need to start planning our new mobile app project. Let's discuss the timeline. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_10-1.mp3",
+    "startTimestamp": 0,
+    "finishTimestamp": 4.1
+  },
+  "transcript": [
+    {
+      "character": "Bob",
+      "text": "We need to start planning our new mobile app project. Let's discuss the timeline."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+He suggests canceling the project because the plan is unclear.
+
+---
+
+He suggests finishing development before creating any schedule.
+
+---
+
+He suggests assigning tasks without discussing deadlines first.
+
+#### --answer--
+
+He suggests discussing the project schedule and planning tasks over time.
+
+### --question--
+
+#### --text--
+
+Does the phrase `I think that's doable` show agreement?
+
+#### --distractors--
+
+No, it shows the speaker completely disagrees with the plan.
+
+---
+
+Yes, but the speaker does not understand the proposal completely.
+
+---
+
+No, it shows the speaker wants to change the entire plan.
+
+#### --answer--
+
+Yes, it shows the speaker believes the plan is realistic and achievable.
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`To implement` means to put a plan or decision into action.
+
+---
+
+`To allocate` means to distribute tasks, time, or resources among people.
+
+---
+
+`To lead` means to take responsibility for guiding a task or project.
+
+#### --answer--
+
+`To catch` means to officially approve a plan before starting work.
+
+### --question--
+
+#### --text--
+
+Which of the following does NOT show agreement?
+
+#### --distractors--
+
+`That's a good plan.`
+
+---
+
+`Absolutely.`
+
+---
+
+`Good idea.`
+
+#### --answer--
+
+`I'm not sure about that.`
+
+### --question--
+
+#### --text--
+
+You want to smoothly introduce a related topic in conversation, so you say: `BLANK, we should also review the client feedback`.
+
+#### --distractors--
+
+`At the end`
+
+---
+
+`In contrast`
+
+---
+
+`On purpose`
+
+#### --answer--
+
+`By the way`
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to talk about working together?
+
+#### --distractors--
+
+`I need to coordinate at the design team on this feature.`
+
+---
+
+`I need to coordinate for the design team on this feature.`
+
+---
+
+`I need to coordinate into the design team on this feature.`
+
+#### --answer--
+
+`I need to coordinate with the design team on this feature.`
+
+### --question--
+
+#### --text--
+
+What does `to keep someone updated` mean?
+
+#### --distractors--
+
+To stop communication until the task is finished
+
+---
+
+To assign new responsibilities to another person
+
+---
+
+To review past information without adding anything new
+
+#### --answer--
+
+To continue sharing the latest information about progress or changes
+
+### --question--
+
+#### --text--
+
+What's the difference between `timeline` and `schedule`?
+
+#### --distractors--
+
+A `timeline` lists team members, while a `schedule` lists project goals.
+
+---
+
+A `timeline` focuses on deadlines only, while a `schedule` explains project objectives.
+
+---
+
+A `timeline` presents past events, while a `schedule` focuses on future plans.
+
+#### --answer--
+
+A `timeline` shows tasks in time order, while a `schedule` sets specific times.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. How would you answer to show agreement? <!-- (quiz audio) Bob: Let's set a weekly meeting to review our progress. Would Friday morning work for you? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_10-1.mp3",
+    "startTimestamp": 42.9,
+    "finishTimestamp": 46.8
+  },
+  "transcript": [
+    {
+      "character": "Bob",
+      "text": "Let's set a weekly meeting to review our progress. Would Friday morning work for you?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+`I'm glad you think so.`
+
+---
+
+`I understand your point.`
+
+---
+
+`That's a valid point.`
+
+#### --answer--
+
+`Sure, Friday mornings are great.`
+
+### --question--
+
+#### --text--
+
+What does `to make sure` mean?
+
+#### --distractors--
+
+To guess what might happen in the future
+
+---
+
+To delay a task until more information arrives
+
+---
+
+To explain why a problem happened earlier
+
+#### --answer--
+
+To ensure something happens correctly
+
+### --question--
+
+#### --text--
+
+When is it appropriate to say `I think so`?
+
+#### --distractors--
+
+When you strongly reject someone's suggestion immediately.
+
+---
+
+When you want to change the subject in a meeting.
+
+---
+
+When you are giving detailed technical instructions.
+
+#### --answer--
+
+When you politely agree or confirm something you believe is true.
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`I look forward to work with the new team.`
+
+---
+
+`I look forward working with the new team.`
+
+---
+
+`I look forward to worked with the new team.`
+
+#### --answer--
+
+`I look forward to working with the new team.`
+
+### --question--
+
+#### --text--
+
+What would you describe as `reliable`?
+
+#### --distractors--
+
+A service that gives different results each time you use it
+
+---
+
+A tool that works only when special settings are enabled
+
+---
+
+A system that needs someone watching it all the time
+
+#### --answer--
+
+An app that works correctly every day without crashing
+
+### --question--
+
+#### --text--
+
+What does `overall` mean in this sentence: `Overall, the project went smoothly despite minor issues`?
+
+#### --distractors--
+
+The speaker focuses on one small problem only.
+
+---
+
+The speaker talks about something that will happen later.
+
+---
+
+The speaker explains one step of the project.
+
+#### --answer--
+
+Most parts of the project went well despite small problems.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. When would you say this? <!-- (quiz audio) Maria: I see where you're coming from. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_10-3.mp3",
+    "startTimestamp": 34.2,
+    "finishTimestamp": 35.8
+  },
+  "transcript": [
+    {
+      "character": "Maria",
+      "text": "I see where you're coming from."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+When you strongly disagree and want to argue further.
+
+---
+
+When you want to end the conversation immediately.
+
+---
+
+When you are giving technical instructions to a team.
+
+#### --answer--
+
+When you want to show you understand someone's perspective.
+
+### --question--
+
+#### --text--
+
+What does this sentence express: `We are aware of the issue and working to address it`?
+
+#### --distractors--
+
+The team discovered a problem but decided to ignore it.
+
+---
+
+The team finished solving the problem in the past.
+
+---
+
+The team plans to create a completely new system.
+
+#### --answer--
+
+The team knows about the problem and is trying to solve it.
+
+### --question--
+
+#### --text--
+
+Who are `returning users`?
+
+#### --distractors--
+
+Users who are using a system for the first time
+
+---
+
+Users who permanently stopped using the platform
+
+---
+
+Users who only test the system during development
+
+#### --answer--
+
+Users who come back to use a product or service again
+
+### --question--
+
+#### --text--
+
+Which of the following expresses gratitude for feedback?
+
+#### --distractors--
+
+`Feel free to ask questions anytime.`
+
+---
+
+`Got it. I'll start working on that.`
+
+---
+
+`Will do. Thanks.`
+
+#### --answer--
+
+`We appreciate your insights.`
+
+### --question--
+
+#### --text--
+
+When would you say `Keep up the good work` to someone?
+
+#### --distractors--
+
+When a teammate makes repeated mistakes during testing.
+
+---
+
+When a meeting is canceled due to technical problems.
+
+---
+
+When a new task is assigned at the beginning of a project.
+
+#### --answer--
+
+When a teammate consistently delivers high-quality work.

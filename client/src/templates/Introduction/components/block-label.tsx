@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
+import { BlockLabel as BlockLabelType } from '@freecodecamp/shared/config/blocks';
 
 interface BlockLabelProps {
   blockLabel: BlockLabelType;

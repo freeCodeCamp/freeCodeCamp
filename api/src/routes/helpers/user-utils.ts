@@ -34,6 +34,13 @@ const nullableFlags = [
   'isRespWebDesignCertV9',
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',
+  'isFrontEndLibsCertV9',
+  'isBackEndDevApisCertV9',
+  'isFullStackDeveloperCertV9',
+  'isB1EnglishCert',
+  'isA2SpanishCert',
+  'isA2ChineseCert',
+  'isA1ChineseCert',
   // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server
   // TODO(Post-MVP): delete it from the db?
   'keyboardShortcuts'

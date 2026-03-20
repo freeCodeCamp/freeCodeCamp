@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,10 +7,13 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { Question } from '../../../redux/prop-types';
 import { openModal } from '../redux/actions';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
+import { stripHtmlTags } from './speaking-modal-helpers';
+import { sounds } from './scene/scene-assets';
 
 type MultipleChoiceQuestionsProps = {
   questions: Question[];
@@ -37,29 +40,29 @@ function MultipleChoiceQuestions({
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
 
+  useEffect(() => {
+    if (isMathJaxAllowed(superBlock)) {
+      initializeMathJax();
+    }
+  }, [superBlock]);
+
   const [modalText, setModalText] = useState('');
   const [modalAnswerIndex, setModalAnswerIndex] = useState<number>(0);
   const [modalQuestionIndex, setModalQuestionIndex] = useState<number>(0);
-
-  function stripCodeTags(text: string): string {
-    return text.replace(/<code>(.*?)<\/code>/g, '$1');
-  }
 
   const handleSpeakingButtonClick = (
     answer: string,
     answerIndex: number,
     questionIndex: number
   ) => {
-    setModalText(stripCodeTags(removeParagraphTags(answer)));
+    setModalText(stripHtmlTags(answer));
     setModalAnswerIndex(answerIndex);
     setModalQuestionIndex(questionIndex);
     openSpeakingModal();
   };
 
   const constructAudioUrl = (audioId?: string): string | undefined =>
-    audioId
-      ? `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${audioId}`
-      : undefined;
+    audioId ? `${sounds}/${audioId}` : undefined;
 
   const getAudioUrl = (
     questionIndex: number,
@@ -71,7 +74,9 @@ function MultipleChoiceQuestions({
   };
 
   return (
-    <>
+    <div
+      className={isMathJaxAllowed(superBlock) ? 'mathjax-support' : undefined}
+    >
       <ChallengeHeading
         heading={
           questions.length > 1 ? t('learn.questions') : t('learn.question')
@@ -195,7 +200,7 @@ function MultipleChoiceQuestions({
         answerIndex={modalAnswerIndex}
         superBlock={superBlock}
       />
-    </>
+    </div>
   );
 }
 

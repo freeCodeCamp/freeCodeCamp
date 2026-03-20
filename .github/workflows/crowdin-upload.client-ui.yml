@@ -11,6 +11,9 @@ env:
   CROWDIN_API_URL: 'https://freecodecamp.crowdin.com/api/v2/'
   CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID_ClIENT }}
 
+permissions:
+  contents: read
+
 jobs:
   i18n-upload-client-ui-files:
     name: Client
@@ -18,16 +21,18 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
       - name: Generate Crowdin Config
-        uses: freecodecamp/crowdin-action@main
+        uses: freecodecamp/crowdin-action@36a78cbf92f5a6c05a3a32dc8bf434a19a7c59e2 # main
         env:
           PLUGIN: 'generate-config'
           PROJECT_NAME: 'client'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@master
+        uses: crowdin/github-action@d649adabd0daa7ea2ceeb232f66c30224575bb7e # v2.15.1
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads

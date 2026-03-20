@@ -1,8 +1,8 @@
 import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash-es';
-import { challengeTypes } from '../../../shared/config/challenge-types.js';
-import { getChallenges } from './get-challenges.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import { challenges, savableChallenges } from './get-challenges.js';
 import { normalizeDate } from './normalize.js';
 
 export const jsCertProjectIds = [
@@ -13,15 +13,15 @@ export const jsCertProjectIds = [
   'aa2e6f85cab2ab736c9a9b24'
 ];
 
-export const multifileCertProjectIds = getChallenges()
+export const multifileCertProjectIds = challenges
   .filter(c => c.challengeType === challengeTypes.multifileCertProject)
   .map(c => c.id);
 
-export const multifilePythonCertProjectIds = getChallenges()
+export const multifilePythonCertProjectIds = challenges
   .filter(c => c.challengeType === challengeTypes.multifilePythonCertProject)
   .map(c => c.id);
 
-export const msTrophyChallenges = getChallenges()
+export const msTrophyChallenges = challenges
   .filter(challenge => challenge.challengeType === challengeTypes.msTrophy)
   .map(({ id, msTrophyId }) => ({ id, msTrophyId }));
 
@@ -133,11 +133,7 @@ export async function updateUserChallengeData(
     _completedChallenge;
   let completedChallenge: CompletedChallenge;
 
-  if (
-    jsCertProjectIds.includes(challengeId) ||
-    multifileCertProjectIds.includes(challengeId) ||
-    multifilePythonCertProjectIds.includes(challengeId)
-  ) {
+  if (savableChallenges.has(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
       files: files?.map(
@@ -198,10 +194,7 @@ export async function updateUserChallengeData(
       ? [...progressTimestamps, newProgressTimeStamp]
       : progressTimestamps;
 
-  if (
-    multifileCertProjectIds.includes(challengeId) ||
-    multifilePythonCertProjectIds.includes(challengeId)
-  ) {
+  if (savableChallenges.has(challengeId)) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,

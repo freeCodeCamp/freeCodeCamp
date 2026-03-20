@@ -1,12 +1,15 @@
 import { HandlerProps } from 'react-reflex';
-import {
+import type {
   ChallengeLang,
   SuperBlocks
-} from '../../../shared-dist/config/curriculum';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
-import { type CertTitle } from '../../config/cert-and-project-map';
+} from '@freecodecamp/shared/config/curriculum';
+import type {
+  Certification,
+  CertificationFlags
+} from '@freecodecamp/shared/config/certification-settings';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
 import { UserThemes } from './types';
 
 export type { ChallengeFile, Ext };
@@ -23,18 +26,6 @@ export type CurrentCert = {
   show: boolean;
   title: string;
   certSlug: string;
-};
-
-export type MarkdownRemark = {
-  frontmatter: {
-    block: string;
-    superBlock: SuperBlocks;
-    // TODO: make enum like superBlock
-    certification: string;
-    title: CertTitle;
-  };
-  html: string;
-  id: string;
 };
 
 type MultipleChoiceAnswer = {
@@ -126,7 +117,6 @@ export type Characters =
   | 'Tom'
 
   // Spanish
-  | 'Alex'
   | 'Ángela'
   | 'Camila'
   | 'Carlos'
@@ -146,12 +136,14 @@ export type Characters =
 
   // Chinese
   | 'Chen Na'
+  | 'Huang Jingyi'
   | 'Li Hong'
   | 'Li Ping'
   | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
   | 'Zhang Wei'
+  | 'Zhou Jia'
   | 'Zhou Yongjie';
 
 interface SetupCharacter {
@@ -190,12 +182,12 @@ type Nodule = ParagraphNodule | InteractiveEditorNodule;
 
 type ParagraphNodule = {
   type: 'paragraph';
-  data: string;
+  contents: string;
 };
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: {
+  files: {
     ext: Ext;
     name: string;
     contents: string;
@@ -206,9 +198,9 @@ type InteractiveEditorNodule = {
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
-    certification: string;
+    certification: Certification;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
@@ -220,7 +212,6 @@ export type ChallengeNode = {
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: Hooks;
@@ -246,6 +237,7 @@ export type ChallengeNode = {
     quizzes: Quiz[];
     assignments: string[];
     required: Required[];
+    saveSubmissionToDB?: boolean;
     scene: FullScene;
     solutions: {
       [T: string]: FileKeyChallenge;
@@ -253,7 +245,6 @@ export type ChallengeNode = {
     sourceInstanceName: string;
     superOrder: number;
     superBlock: SuperBlocks;
-    tail: string[];
     template: string;
     tests: Test[];
     title: string;
@@ -309,6 +300,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    saveSubmissionToDB?: boolean;
   };
 };
 
@@ -318,6 +310,7 @@ export type DailyCodingChallengePageContext = {
     id: string;
     superBlock: 'daily-coding-challenge';
     disableLoopProtectTests: boolean;
+    dashedName: string;
 
     // props to satisfy the show classic component
     isFirstStep: boolean;
@@ -344,16 +337,32 @@ type Quiz = {
   questions: QuizQuestion[];
 };
 
+type QuizAudio = {
+  filename: string;
+  startTimestamp?: number | null;
+  finishTimestamp?: number | null;
+};
+
+type QuizTranscriptLine = {
+  character: string;
+  text: string;
+};
+
+type QuizAudioData = {
+  audio: QuizAudio;
+  transcript: QuizTranscriptLine[];
+};
+
 type QuizQuestion = {
   text: string;
   distractors: string[];
   answer: string;
+  audioData?: QuizAudioData | null;
 };
 
 export type CertificateNode = {
   challenge: {
-    // TODO: use enum
-    certification: string;
+    certification: Certification;
     tests: { id: string }[];
   };
 };
@@ -422,6 +431,7 @@ export type User = {
   email: string;
   emailVerified: boolean;
   githubProfile: string;
+  isEmailVerified: boolean;
   isBanned: boolean;
   isCheater: boolean;
   isDonating: boolean;
@@ -433,6 +443,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
+  experience?: ExperienceData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -445,7 +456,7 @@ export type User = {
   username: string;
   website: string;
   yearsTopContributor: string[];
-} & ClaimedCertifications;
+} & CertificationFlags;
 
 export type ProfileUI = {
   isLocked: boolean;
@@ -457,35 +468,8 @@ export type ProfileUI = {
   showName: boolean;
   showPoints: boolean;
   showPortfolio: boolean;
+  showExperience: boolean;
   showTimeLine: boolean;
-};
-
-export type ClaimedCertifications = {
-  is2018DataVisCert: boolean;
-  isA2EnglishCert: boolean;
-  isApisMicroservicesCert: boolean;
-  isBackEndCert: boolean;
-  isDataVisCert: boolean;
-  isEmailVerified: boolean;
-  isCollegeAlgebraPyCertV8: boolean;
-  isFoundationalCSharpCertV8: boolean;
-  isFrontEndCert: boolean;
-  isFrontEndLibsCert: boolean;
-  isFullStackCert: boolean;
-  isInfosecQaCert: boolean;
-  isJavascriptCertV9: boolean;
-  isPythonCertV9: boolean;
-  isQaCertV7: boolean;
-  isInfosecCertV7: boolean;
-  isJsAlgoDataStructCert: boolean;
-  isRelationalDatabaseCertV8: boolean;
-  isRelationalDatabaseCertV9: boolean;
-  isRespWebDesignCert: boolean;
-  isRespWebDesignCertV9: boolean;
-  isSciCompPyCertV7: boolean;
-  isDataAnalysisPyCertV7: boolean;
-  isMachineLearningPyCertV7: boolean;
-  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
@@ -534,6 +518,7 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  saveSubmissionToDB?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
@@ -549,14 +534,22 @@ export type PortfolioProjectData = {
   description: string;
 };
 
+export type ExperienceData = {
+  id: string;
+  title: string;
+  company: string;
+  location?: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+};
+
 export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
-  head: string;
   id: string;
   key: string;
   name: string;
-  tail: string;
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

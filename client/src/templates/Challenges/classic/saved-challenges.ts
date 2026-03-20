@@ -8,10 +8,10 @@ export function mergeChallengeFiles(
   if (!savedFiles) return files;
   if (files.length !== savedFiles.length) return files;
 
-  const sortedChallengeFiles = files.sort((a, b) =>
+  const sortedChallengeFiles = files.toSorted((a, b) =>
     a.fileKey.localeCompare(b.fileKey)
   );
-  const sortedSavedChallengeFiles = savedFiles.sort((a, b) =>
+  const sortedSavedChallengeFiles = savedFiles.toSorted((a, b) =>
     a.fileKey.localeCompare(b.fileKey)
   );
 
