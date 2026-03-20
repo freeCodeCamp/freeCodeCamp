@@ -48,9 +48,9 @@ This sounds doubtful, not supportive.
 
 `That's an excellent suggestion.` is a polite and positive way to praise someone's idea by showing strong agreement and approval. For example:
 
-- Person 1: `Let's add more visuals to the report.` – The first person suggests that they incorporate more graphics and images to the report to make it more vivid.
+- **Graphic designer:** `Let's add more visuals to the report.` – The first person suggests that they incorporate more graphics and images to the report to make it more vivid.
 
-- Person 2: `That's an excellent suggestion.` – This means the person thinks the idea is very good and helpful.
+- **Project manager:** `That's an excellent suggestion.` – This means the person thinks the idea is very good and helpful.
 
 # --scene--
 

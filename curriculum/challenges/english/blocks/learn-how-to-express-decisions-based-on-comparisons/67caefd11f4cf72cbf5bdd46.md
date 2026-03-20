@@ -30,11 +30,9 @@ This two-word phrase is a casual way of saying "no" or "not exactly". It's often
 
 `Not really` is commonly used to give a negative answer, but in a softer tone. It's more casual than simply saying `No`. For example:
 
-Person 1: `Do you think this software is user-friendly?`
+- **Team lead:** `Do you think this software is user-friendly?`
 
-Person 2: `Not really.`
-
-This means it's not very user-friendly, but the speaker might not be completely certain.
+- **Intern:** `Not really.` - This means it's not very user-friendly, but the speaker might not be completely certain.
 
 # --scene--
 
