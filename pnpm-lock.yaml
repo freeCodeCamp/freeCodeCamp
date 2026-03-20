@@ -289,8 +289,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/challenge-builder
       '@freecodecamp/ui':
-        specifier: 5.3.0
-        version: 5.3.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 6.0.0
+        version: 6.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@gatsbyjs/reach-router':
         specifier: 1.3.9
         version: 1.3.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -3272,16 +3272,16 @@ packages:
     resolution: {integrity: sha512-gbDz3TwRrIPT3i0cDfujhshnXO9z03IT1UKRIVi/VEjpNHtSBIP2o5XSm+e816FzzCFEzAxPw09Z13n20PaQJQ==}
     engines: {node: '>=6'}
 
-  '@fortawesome/fontawesome-common-types@7.1.0':
-    resolution: {integrity: sha512-l/BQM7fYntsCI//du+6sEnHOP6a74UixFyOYUyz2DLMXKx+6DEhfR3F2NYGE45XH1JJuIamacb4IZs9S0ZOWLA==}
+  '@fortawesome/fontawesome-common-types@7.2.0':
+    resolution: {integrity: sha512-IpR0bER9FY25p+e7BmFH25MZKEwFHTfRAfhOyJubgiDnoJNsSvJ7nigLraHtp4VOG/cy8D7uiV0dLkHOne5Fhw==}
     engines: {node: '>=6'}
 
   '@fortawesome/fontawesome-svg-core@6.7.1':
     resolution: {integrity: sha512-8dBIHbfsKlCk2jHQ9PoRBg2Z+4TwyE3vZICSnoDlnsHA6SiMlTwfmW6yX0lHsRmWJugkeb92sA0hZdkXJhuz+g==}
     engines: {node: '>=6'}
 
-  '@fortawesome/fontawesome-svg-core@7.1.0':
-    resolution: {integrity: sha512-fNxRUk1KhjSbnbuBxlWSnBLKLBNun52ZBTcs22H/xEEzM6Ap81ZFTQ4bZBxVQGQgVY0xugKGoRcCbaKjLQ3XZA==}
+  '@fortawesome/fontawesome-svg-core@7.2.0':
+    resolution: {integrity: sha512-6639htZMjEkwskf3J+e6/iar+4cTNM9qhoWuRfj9F3eJD6r7iCzV1SWnQr2Mdv0QT0suuqU8BoJCZUyCtP9R4Q==}
     engines: {node: '>=6'}
 
   '@fortawesome/free-brands-svg-icons@6.7.1':
@@ -3292,8 +3292,8 @@ packages:
     resolution: {integrity: sha512-BTKc0b0mgjWZ2UDKVgmwaE0qt0cZs6ITcDgjrti5f/ki7aF5zs+N91V6hitGo3TItCFtnKg6cUVGdTmBFICFRg==}
     engines: {node: '>=6'}
 
-  '@fortawesome/free-solid-svg-icons@7.1.0':
-    resolution: {integrity: sha512-Udu3K7SzAo9N013qt7qmm22/wo2hADdheXtBfxFTecp+ogsc0caQNRKEb7pkvvagUGOpG9wJC1ViH6WXs8oXIA==}
+  '@fortawesome/free-solid-svg-icons@7.2.0':
+    resolution: {integrity: sha512-YTVITFGN0/24PxzXrwqCgnyd7njDuzp5ZvaCx5nq/jg55kUYd94Nj8UTchBdBofi/L0nwRfjGOg0E41d2u9T1w==}
     engines: {node: '>=6'}
 
   '@fortawesome/react-fontawesome@0.2.2':
@@ -3303,12 +3303,12 @@ packages:
       '@fortawesome/fontawesome-svg-core': ~1 || ~6
       react: '>=16.3'
 
-  '@fortawesome/react-fontawesome@0.2.6':
-    resolution: {integrity: sha512-mtBFIi1UsYQo7rYonYFkjgYKGoL8T+fEH6NGUpvuqtY3ytMsAoDaPo5rk25KuMtKDipY4bGYM/CkmCHA1N3FUg==}
-    deprecated: v0.2.x is no longer supported. Unless you are still using FontAwesome 5, please update to v3.1.1 or greater.
+  '@fortawesome/react-fontawesome@3.3.0':
+    resolution: {integrity: sha512-EHmHeTf8WgO29sdY3iX/7ekE3gNUdlc2RW6mm/FzELlHFKfTrA9S4MlyquRR+RRCRCn8+jXfLFpLGB2l7wCWyw==}
+    engines: {node: '>=20'}
     peerDependencies:
-      '@fortawesome/fontawesome-svg-core': ~1 || ~6 || ~7
-      react: ^16.3 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      '@fortawesome/fontawesome-svg-core': ~6 || ~7
+      react: ^18.0.0 || ^19.0.0
 
   '@freecodecamp/curriculum-helpers@8.0.0':
     resolution: {integrity: sha512-7AUPwVjm1LVUUMC8WypTbH9ufTRWuk+7+upbQnC10/zB+KmzCKtoZYm9tf8S2HJljq2kbhLrlzDAnPln8kQLSg==}
@@ -3317,12 +3317,12 @@ packages:
   '@freecodecamp/loop-protect@3.0.0':
     resolution: {integrity: sha512-5zIULL5pm7Ylkk2dPq1f/4KJTAV5KQZEAFQg/qFj0t18EBSNO3fjn3HdfE1sPocXhXom3DVvZO3Rl2sqifMFYQ==}
 
-  '@freecodecamp/ui@5.3.0':
-    resolution: {integrity: sha512-38k0UA+CXnG4LfY6UE5E+/fvJc6zJiMJuYqnn0TlhRl+x9jbJ8Rz0U5m8z6YgE1wGf72Mm5MoZasbP/ddKVg6A==}
+  '@freecodecamp/ui@6.0.0':
+    resolution: {integrity: sha512-j/Kv7HwoV9ZlvlZoDreTiUTOcQf1E4FLCSZhNqKZY3muGE2eD1g9hwN2QH/p+p8Esenj6MWILedxbjK2RbQATQ==}
     engines: {node: '>=24', pnpm: '>=10'}
     peerDependencies:
-      react: ^16.14.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
 
   '@gatsbyjs/parcel-namer-relative-to-cwd@2.16.0':
     resolution: {integrity: sha512-E05myRVDUgUXS41wWxBOc0wPub1WAty3M6bO2vGctToXO11Lw9tci9banlSQojBB12ExsmRqNW90FxtVNTbfQA==}
@@ -17838,15 +17838,15 @@ snapshots:
 
   '@fortawesome/fontawesome-common-types@6.7.1': {}
 
-  '@fortawesome/fontawesome-common-types@7.1.0': {}
+  '@fortawesome/fontawesome-common-types@7.2.0': {}
 
   '@fortawesome/fontawesome-svg-core@6.7.1':
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.7.1
 
-  '@fortawesome/fontawesome-svg-core@7.1.0':
+  '@fortawesome/fontawesome-svg-core@7.2.0':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 7.1.0
+      '@fortawesome/fontawesome-common-types': 7.2.0
 
   '@fortawesome/free-brands-svg-icons@6.7.1':
     dependencies:
@@ -17856,9 +17856,9 @@ snapshots:
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.7.1
 
-  '@fortawesome/free-solid-svg-icons@7.1.0':
+  '@fortawesome/free-solid-svg-icons@7.2.0':
     dependencies:
-      '@fortawesome/fontawesome-common-types': 7.1.0
+      '@fortawesome/fontawesome-common-types': 7.2.0
 
   '@fortawesome/react-fontawesome@0.2.2(@fortawesome/fontawesome-svg-core@6.7.1)(react@18.2.0)':
     dependencies:
@@ -17866,10 +17866,9 @@ snapshots:
       prop-types: 15.8.1
       react: 18.2.0
 
-  '@fortawesome/react-fontawesome@0.2.6(@fortawesome/fontawesome-svg-core@7.1.0)(react@18.2.0)':
+  '@fortawesome/react-fontawesome@3.3.0(@fortawesome/fontawesome-svg-core@7.2.0)(react@18.2.0)':
     dependencies:
-      '@fortawesome/fontawesome-svg-core': 7.1.0
-      prop-types: 15.8.1
+      '@fortawesome/fontawesome-svg-core': 7.2.0
       react: 18.2.0
 
   '@freecodecamp/curriculum-helpers@8.0.0(debug@4.3.4)(typescript@5.9.3)':
@@ -17900,11 +17899,11 @@ snapshots:
 
   '@freecodecamp/loop-protect@3.0.0': {}
 
-  '@freecodecamp/ui@5.3.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@freecodecamp/ui@6.0.0(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@fortawesome/fontawesome-svg-core': 7.1.0
-      '@fortawesome/free-solid-svg-icons': 7.1.0
-      '@fortawesome/react-fontawesome': 0.2.6(@fortawesome/fontawesome-svg-core@7.1.0)(react@18.2.0)
+      '@fortawesome/fontawesome-svg-core': 7.2.0
+      '@fortawesome/free-solid-svg-icons': 7.2.0
+      '@fortawesome/react-fontawesome': 3.3.0(@fortawesome/fontawesome-svg-core@7.2.0)(react@18.2.0)
       '@headlessui/react': 1.7.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@radix-ui/react-tabs': 1.1.13(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       babel-plugin-prismjs: 2.1.0(prismjs@1.30.0)
@@ -21164,7 +21163,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.11.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@24.11.0)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.3.5)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.3.5)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -23664,7 +23663,7 @@ snapshots:
       confusing-browser-globals: 1.0.11
       eslint: 7.32.0
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-react: 7.37.4(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-react-hooks: 4.6.0(eslint@9.39.3(jiti@2.6.1))
@@ -23682,8 +23681,8 @@ snapshots:
       confusing-browser-globals: 1.0.11
       eslint: 9.39.3(jiti@2.6.1)
       eslint-plugin-flowtype: 8.0.3(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.28.5))(@babel/plugin-transform-react-jsx@7.28.6(@babel/core@7.28.5))(eslint@9.39.3(jiti@2.6.1))
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
-      eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
+      eslint-plugin-jest: 25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-react: 7.37.4(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-react-hooks: 4.6.0(eslint@9.39.3(jiti@2.6.1))
@@ -23721,7 +23720,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.3(jiti@2.6.1)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.3(jiti@2.6.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -23761,7 +23760,7 @@ snapshots:
       lodash: 4.17.23
       string-natural-compare: 3.0.1
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1)):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -23772,7 +23771,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.3(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.3(jiti@2.6.1))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint@9.39.3(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -23819,7 +23818,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-jest@25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3):
+  eslint-plugin-jest@25.7.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/experimental-utils': 5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
       eslint: 9.39.3(jiti@2.6.1)
@@ -24917,7 +24916,7 @@ snapshots:
       eslint: 7.32.0
       eslint-config-react-app: 6.0.0(@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@7.32.0)(typescript@5.9.3))(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(babel-eslint@10.1.0(eslint@9.39.3(jiti@2.6.1)))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.37.4(eslint@7.32.0))(eslint@7.32.0)(typescript@5.9.3)
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@5.62.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-react: 7.37.4(eslint@9.39.3(jiti@2.6.1))
       eslint-plugin-react-hooks: 4.6.0(eslint@9.39.3(jiti@2.6.1))
