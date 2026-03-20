@@ -249,8 +249,14 @@ test.describe('Certification page - Microsoft', () => {
 test.describe('Certification page - Current Certifications', () => {
   const currentCertifications = [
     { slug: 'python-v9', title: 'Python' },
-    { slug: 'a2-english-for-developers', title: 'A2 English for Developers' },
-    { slug: 'b1-english-for-developers', title: 'B1 English for Developers' },
+    {
+      slug: 'a2-english-for-developers',
+      title: 'A2 English for Developers (Beta)'
+    },
+    {
+      slug: 'b1-english-for-developers',
+      title: 'B1 English for Developers (Beta)'
+    },
     { slug: 'javascript-v9', title: 'JavaScript' },
     { slug: 'relational-databases-v9', title: 'Relational Database' },
     { slug: 'responsive-web-design-v9', title: 'Responsive Web Design' },
@@ -261,6 +267,9 @@ test.describe('Certification page - Current Certifications', () => {
       page
     }) => {
       await page.goto(`/certification/certifieduser/${cert.slug}`);
+      await expect(
+        page.getByRole('heading', { level: 1, name: cert.title })
+      ).toBeVisible();
       await expect(page.getByTestId('project-links')).toContainText(
         'As part of this certification, Full Stack User passed the following exam: '
       );

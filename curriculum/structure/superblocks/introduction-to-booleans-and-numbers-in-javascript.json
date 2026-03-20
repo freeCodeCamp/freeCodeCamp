@@ -1,0 +1,20 @@
+{
+  "blocks": [
+    "lecture-working-with-numbers-and-arithmetic-operators",
+    "lab-debug-type-coercion-errors",
+    "lecture-working-with-operator-behavior",
+    "lab-debug-increment-and-decrement-operator-errors",
+    "lecture-working-with-comparison-and-boolean-operators",
+    "workshop-logic-checker-app",
+    "lecture-working-with-unary-and-bitwise-operators",
+    "lecture-working-with-conditional-logic-and-math-methods",
+    "workshop-mathbot",
+    "lab-fortune-teller",
+    "lecture-working-with-numbers-and-common-number-methods",
+    "review-javascript-math",
+    "quiz-javascript-math",
+    "lecture-understanding-comparisons-and-conditionals",
+    "review-javascript-comparisons-and-conditionals",
+    "quiz-javascript-comparisons-and-conditionals"
+  ]
+}

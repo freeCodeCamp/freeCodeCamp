@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-implement-a-queue",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "69aaafeaa4037197c75587cd",
+      "title": "Implement a Queue"
+    }
+  ]
+}
