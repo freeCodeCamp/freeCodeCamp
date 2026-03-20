@@ -76,5 +76,6 @@ export enum FlashMessages {
   UserTokenGenerateError = 'flash.user-token-generate-error',
   WrongName = 'flash.wrong-name',
   WrongUpdating = 'flash.wrong-updating',
-  WentWrong = 'flash.went-wrong'
+  WentWrong = 'flash.went-wrong',
+  SignoutSuccess = 'flash.signout-success'
 }
