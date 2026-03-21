@@ -2489,12 +2489,6 @@
           "In this lab, you will implement loops to repeat a string a specified number of times."
         ]
       },
-      "festival-crowd-flow-simulator": {
-        "title": "Build a Festival Crowd Flow Simulator",
-        "intro": [
-          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
-        ]
-      },
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
@@ -4906,6 +4900,12 @@
         "title": "Build a String Repeating Function",
         "intro": [
           "In this lab, you will implement loops to repeat a string a specified number of times."
+        ]
+      },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
         ]
       },
       "lab-missing-letter-detector": {
