@@ -98,7 +98,6 @@ const iconMap = {
   [SuperBlocks.LearnSQLAndBash]: DatabaseIcon,
   [SuperBlocks.IntroductionToNano]: Code,
   [SuperBlocks.IntroductionToGitAndGithub]: Code,
-  [SuperBlocks.LearnPromptingFundamentals]: Clipboard,
   [SuperBlocks.IntroductionToVariablesAndStringsInJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToFunctionsInJS]: JavaScriptIcon,
