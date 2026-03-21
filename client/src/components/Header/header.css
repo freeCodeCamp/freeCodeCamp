@@ -12,6 +12,10 @@
   padding-block: 1em;
   padding-inline: 1.5em;
   left: -1000px;
+  transition: left 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 @media screen and (min-width: 980px) {
