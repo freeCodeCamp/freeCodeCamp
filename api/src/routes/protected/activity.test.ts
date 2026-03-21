@@ -28,8 +28,13 @@ describe('Activity Routes', () => {
 
   describe('POST /activity', () => {
     test('returns 401 for unauthenticated requests', async () => {
+      // Get CSRF cookies from an unprotected route
+      const res = await superRequest('/status/ping', { method: 'GET' });
+      const csrfCookies = res.get('Set-Cookie');
+
       const response = await superRequest('/activity', {
-        method: 'POST'
+        method: 'POST',
+        setCookies: csrfCookies
       }).send({ url: '/learn/javascript' });
 
       expect(response.status).toBe(401);
