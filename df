@@ -1,0 +1,224 @@
+[33mcommit 761be49d1df03a9bdd0b1d973822a8a8f1d7b1fd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mRudro4038/feat[m[33m)[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Sat Mar 21 15:00:05 2026 +0600
+
+    added description for step-11 and seed code for step-12
+
+[33mcommit 2b2e70c11ac1152a70485e95a3154705e338bc12[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Sat Mar 21 14:39:54 2026 +0600
+
+    added description for step-10 and seed code for step-11
+
+[33mcommit a7a66265c31c95c66aae7481c761243fc874f838[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Sat Mar 21 01:25:48 2026 +0600
+
+    added description for step-9 and seed code for step-10
+
+[33mcommit 2ac38ed47ca7682851189bb0930070bada2fb736[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Fri Mar 20 22:31:01 2026 +0600
+
+    feat: modified step-5,6,7 added description for step-8 and seed code for step-9
+
+[33mcommit d41e5bcfdc12079504f2bcfcc8377a573f9be50b[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Fri Mar 20 06:33:24 2026 +0600
+
+    feat: added description for step-7 and seed code for step-8
+
+[33mcommit c47fa65999606dc6e77f9633fb11d4b9c54e53e6[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Fri Mar 20 05:16:58 2026 +0600
+
+    feat: added description for step-6 and seed code for step-7
+
+[33mcommit 6b0e927188923115e1520303ba8727a153e64e4c[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Fri Mar 20 03:41:21 2026 +0600
+
+    chore: commited modified block/workshop-build-a-zoo-animal-scatterplot.json
+
+[33mcommit b0c66de849715f83d970f39b2fbf4b517f03d1b6[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Fri Mar 20 01:36:04 2026 +0600
+
+    feat: added description for step-5 and seed code for step-6
+
+[33mcommit ff9d0221b2229df4d80ce084a6a18b0cd02581ac[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Thu Mar 19 18:16:03 2026 +0600
+
+    chore: changed right margin 20 to 60
+
+[33mcommit 6f4c438526a21ac3a66a440fdafd9502904121ab[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Thu Mar 19 18:02:35 2026 +0600
+
+    feat: added description for step-4 and seed code for step-5
+
+[33mcommit ab16c554e20dd964f609673aaa706a62d21bf265[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Thu Mar 19 16:59:17 2026 +0600
+
+    chore: added a endline and removed '.' from title
+
+[33mcommit dfd5be486eb4752ee59afab353392389a4d50a2e[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Thu Mar 19 16:51:05 2026 +0600
+
+    feat: added description for step-3 and seed code for step-4
+
+[33mcommit afeaae9bfe3a87f9ab1032945436c14ecfa4f41e[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Thu Mar 19 13:20:34 2026 +0600
+
+    feat: added description for step-2 and seed code for step-3
+
+[33mcommit 5255ef3ee6aa2b574780200a49a2e5131c00758d[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Thu Mar 19 00:07:15 2026 +0600
+
+    fix(curriculam): updated the branch to pass CI failure and step 2 seed code
+
+[33mcommit 7a68813a444082ddbeafaf03d661e1e55f05d876[m
+Merge: 221b434651 85c29457af
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Wed Mar 18 23:55:33 2026 +0600
+
+    Merge remote-tracking branch 'upstream/main' into Rudro4038/feat
+    Updated branch to avoid CI failure for name deprication from block/.json
+
+[33mcommit 85c29457afda09be5fb54e7c00e0f7a39d045bfd[m[33m ([m[1;31mupstream/main[m[33m)[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Wed Mar 18 09:37:47 2026 -0700
+
+    fix(client, curriculum): prompting course URL names (#66528)
+
+[33mcommit 1a505276945e3c3985599e8b3123fd714ab50eca[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Wed Mar 18 18:49:23 2026 +0530
+
+    chore(i18n,client): processed translations (#66548)
+
+[33mcommit 32f20a1ba99f49c8fb158a3aef0e2ca813c59ccb[m
+Author: Luis <97080941+LGH831@users.noreply.github.com>
+Date:   Wed Mar 18 06:16:53 2026 -0700
+
+    feat(curriculum): add Cargo Manifest Validator Lab to JavaScript v9 (#66197)
+    
+    Co-authored-by: LGH831 <luishernandez1@csumb.edu>
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+
+[33mcommit 221b43465193625213a7490180ba572d874e70ea[m
+Author: Robin Dey <robindey408@gmail.com>
+Date:   Wed Mar 18 19:16:13 2026 +0600
+
+    feat: step-1 added
+
+[33mcommit 64697945303cd264a0d4946a32f61a09848087bf[m
+Author: majestic-owl448 <26656284+majestic-owl448@users.noreply.github.com>
+Date:   Wed Mar 18 11:41:30 2026 +0100
+
+    fix: skip 'help wanted' on linked issue check for Naomi's Sprints assignees (#66542)
+
+[33mcommit 3baf4610121bd17a85fc72e6c929696d9878b04d[m
+Author: majestic-owl448 <26656284+majestic-owl448@users.noreply.github.com>
+Date:   Wed Mar 18 11:40:37 2026 +0100
+
+    fix: make PR template checklist header check case-insensitive (#66543)
+
+[33mcommit a74e55ee4b209b8cdc55ccd40af21c6f94b0a65b[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Tue Mar 17 14:14:32 2026 -0500
+
+    feat(curriculum): daily challenges 230-245 (#66511)
+    
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit e66bf09dce6de0275750dbdc6d82a6e8253efcf2[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Tue Mar 17 17:59:16 2026 +0100
+
+    refactor(tools,client): remove head and tail logic (#66524)
+
+[33mcommit 1990ba67948d789b852fbf28a5917f1cba761946[m
+Author: KadamPrasad01 <kadamprasad1015@gmail.com>
+Date:   Tue Mar 17 22:02:06 2026 +0530
+
+    fix: incorrect answer in quiz-graphs-and-trees question (#66526)
+    
+    Co-authored-by: Prasad Kadam <prasad.kadam1015@gmail.com>
+
+[33mcommit 7c3c64bf8d5c014154abbe16aba55a70ff41af2f[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Tue Mar 17 16:43:14 2026 +0100
+
+    refactor(curriculum): remove block name metadata and source titles from intro (#66415)
+    
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit 776ce24c8e6b54ba65ed374431cfcecaabb85d55[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Tue Mar 17 05:16:49 2026 -0700
+
+    fix: URL names for learn python course (#66513)
+
+[33mcommit 29028bbefa8f22f4aa5af180d81366e3284860a3[m
+Author: DanielRosa74 <58576743+DanielRosa74@users.noreply.github.com>
+Date:   Tue Mar 17 08:07:13 2026 -0300
+
+    feat(i18n, learn): remove Italian and Ukrainian from NotAuditedSuperBlocks (#66518)
+
+[33mcommit 843d98bd421552a73992903fd0c5e02962f6a8ab[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Tue Mar 17 17:53:29 2026 +0700
+
+    fix(curriculum): minor adjustments to catalog courses' intro (#66523)
+
+[33mcommit f8927961559c11f614ac0e95be137d29ed0c7d3a[m
+Author: majestic-owl448 <26656284+majestic-owl448@users.noreply.github.com>
+Date:   Tue Mar 17 11:09:51 2026 +0100
+
+    fix(curriculum): clarify where to write code in string formatter workshop (#66435)
+
+[33mcommit 7cd97506c3bce046574c096878317b41547d6197[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Tue Mar 17 15:39:30 2026 +0530
+
+    chore(i18n,learn): update i18n-curriculum submodule (#66517)
+
+[33mcommit 2c4f0023edaf768063fc250859f1b4c14c8bfed3[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Tue Mar 17 15:04:05 2026 +0500
+
+    feat(curriculum): add searching and sorting quiz JSV9 (#66007)
+    
+    Co-authored-by: majestic-owl448 <26656284+majestic-owl448@users.noreply.github.com>
+
+[33mcommit 6a29f37ee714a43b20d742294dd2b141372ba8a0[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Tue Mar 17 10:59:07 2026 +0100
+
+    chore(curriculum): remove before/after user code (batch 10) (#66505)
+
+[33mcommit 63f605de9c7087318277c5f677b45383461b9ec4[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Tue Mar 17 10:59:03 2026 +0100
+
+    chore(curriculum): remove before/after user code (batch 08-09) (#66504)
+
+[33mcommit d0dd831fb927cec20fcb34cb0b8f4e41635e212f[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Tue Mar 17 10:59:00 2026 +0100
+
+    chore(curriculum): remove before/after user code (batch 06-07) (#66503)
+
+[33mcommit 2c2405b1c8a301c8550c632d63663d05f05e054c[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Tue Mar 17 10:58:57 2026 +0100
+
+    chore(curriculum): remove before/after user code (batch 05) (#66499)
+
+
