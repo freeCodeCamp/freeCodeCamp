@@ -25,6 +25,10 @@ const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
 const MODULE_TRANSFORM_PLUGIN = 'transform-modules-umd';
+const BABEL_ENV_OPTIONS = {
+  targets: '> 0.4%, not dead',
+  exclude: ['transform-spread']
+};
 
 function loopProtectCB(line) {
   console.log(
@@ -66,7 +70,7 @@ async function loadPresetEnv() {
     );
 
   presetsJS = {
-    presets: [[presetEnv, { exclude: ['transform-spread'] }]]
+    presets: [[presetEnv, BABEL_ENV_OPTIONS]]
   };
 }
 
@@ -81,7 +85,7 @@ async function loadPresetReact() {
     );
 
   presetsJSX = {
-    presets: [[presetEnv, { exclude: ['transform-spread'] }], presetReact]
+    presets: [[presetEnv, BABEL_ENV_OPTIONS], presetReact]
   };
 }
 
