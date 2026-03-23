@@ -41,7 +41,12 @@ describe('socratesRoutes', () => {
     });
 
     describe('PUT /socrates/get-hint', () => {
-      test('should return 403 when user does not have socrates enabled', async () => {
+      test('should return 403 when user has socrates explicitly disabled', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { socrates: false }
+        });
+
         const response =
           await superPut('/socrates/get-hint').send(validPayload);
 
@@ -53,6 +58,28 @@ describe('socratesRoutes', () => {
           limit: 0
         });
         expect(mockedFetch).not.toHaveBeenCalled();
+      });
+
+      test('should allow access when socrates is null (default)', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { socrates: null }
+        });
+
+        mockedFetch.mockResolvedValueOnce({
+          ok: true,
+          status: 200,
+          text: () =>
+            Promise.resolve(
+              JSON.stringify({ hint: 'Try adding a closing tag.' })
+            )
+        });
+
+        const response =
+          await superPut('/socrates/get-hint').send(validPayload);
+
+        expect(response.status).toBe(200);
+        expect(response.body).toHaveProperty('hint');
       });
 
       describe('with socrates enabled', () => {

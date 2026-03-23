@@ -39,7 +39,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      if (!req.user?.socrates) {
+      if (!req.user || req.user.socrates === false) {
         return reply.status(403).send({
           error: 'socrates-no-access',
           type: 'danger',
