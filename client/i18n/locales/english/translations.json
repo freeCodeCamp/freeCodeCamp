@@ -943,6 +943,14 @@
     "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
     "or": "OR"
   },
+  "mobile-app-modal": {
+    "heading": "We see you are on mobile!",
+    "body": "This course is available in our app for a better experience.",
+    "ios": "Download on the App Store",
+    "android": "Get it on Google Play",
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
+  },
   "icons": {
     "gold-cup": "Gold Cup",
     "avatar": "Default Avatar",
