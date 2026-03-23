@@ -32,6 +32,7 @@ import {
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
+import SpeakingSection from '../components/speaking-section';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
@@ -126,6 +127,7 @@ const ShowGeneric = ({
         transcript,
         translationPending,
         scene,
+        speakingSection,
         superBlock,
         videoId,
         videoLocaleIds
@@ -423,6 +425,127 @@ const ShowGeneric = ({
               <Row>{challengeBody}</Row>
             </Container>
           )}
+
+          <Container>
+            <Row>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+
+              <Spacer size='m' />
+
+              {description && (
+                <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                  <ChallengeDescription
+                    description={description}
+                    superBlock={superBlock}
+                  />
+                  <Spacer size='m' />
+                </Col>
+              )}
+
+              {nodules?.map((nodule, i) => {
+                return (
+                  <React.Fragment key={i}>
+                    {renderNodule(nodule, showInteractiveEditor)}
+                  </React.Fragment>
+                );
+              })}
+
+              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                {videoId && (
+                  <>
+                    <VideoPlayer
+                      bilibiliIds={bilibiliIds}
+                      onVideoLoad={handleVideoIsLoaded}
+                      title={title}
+                      videoId={videoId}
+                      videoIsLoaded={videoIsLoaded}
+                      videoLocaleIds={videoLocaleIds}
+                    />
+                    <Spacer size='m' />
+                  </>
+                )}
+              </Col>
+
+              {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {transcript && <ChallengeTranscript transcript={transcript} />}
+
+                {instructions && (
+                  <>
+                    <ChallengeDescription
+                      instructions={instructions}
+                      superBlock={superBlock}
+                    />
+                    <Spacer size='m' />
+                  </>
+                )}
+
+                {speakingSection && (
+                  <SpeakingSection
+                    sentence={speakingSection.sentence}
+                    audio={speakingSection.audio}
+                    superBlock={superBlock}
+                  />
+                )}
+
+                {assignments.length > 0 && (
+                  <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                    <Assignments
+                      assignments={assignments}
+                      allAssignmentsCompleted={allAssignmentsCompleted}
+                      handleAssignmentChange={handleAssignmentChange}
+                    />
+                  </ObserveKeys>
+                )}
+
+                {questions.length > 0 && (
+                  <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                    <MultipleChoiceQuestions
+                      questions={questions}
+                      selectedOptions={selectedMcqOptions}
+                      handleOptionChange={handleMcqOptionChange}
+                      submittedMcqAnswers={submittedMcqAnswers}
+                      showFeedback={showFeedback}
+                      superBlock={superBlock}
+                    />
+                  </ObserveKeys>
+                )}
+
+                {explanation ? (
+                  <ChallengeExplanation explanation={explanation} />
+                ) : null}
+
+                {!hasAnsweredMcqCorrectly && (
+                  <p className='text-center'>{t('learn.answered-mcq')}</p>
+                )}
+
+                <Button block={true} variant='primary' onClick={handleSubmit}>
+                  {questions.length == 0
+                    ? t('buttons.submit')
+                    : t('buttons.check-answer')}
+                </Button>
+                <Spacer size='xxs' />
+                <Button block={true} variant='primary' onClick={openHelpModal}>
+                  {t('buttons.ask-for-help')}
+                </Button>
+
+                <Spacer size='l' />
+              </Col>
+              <CompletionModal />
+              <HelpModal
+                challengeTitle={title}
+                challengeBlock={block}
+                superBlock={superBlock}
+              />
+            </Row>
+          </Container>
         </Container>
       </LearnLayout>
     </Hotkeys>
@@ -506,6 +629,14 @@ export const query = graphql`
               text
               align
             }
+          }
+        }
+        speakingSection {
+          sentence
+          audio {
+            filename
+            startTimestamp
+            finishTimestamp
           }
         }
         superBlock

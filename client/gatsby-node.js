@@ -113,6 +113,18 @@ exports.createSchemaCustomization = ({ actions }) => {
     type ChallengeNodeChallengeHooks {
       afterEach: String
     }
+    type ChallengeNodeChallengeSpeakingSectionAudio {
+      filename: String!
+      startTimestamp: Float!
+      finishTimestamp: Float!
+    }
+    type ChallengeNodeChallengeSpeakingSection {
+      sentence: String!
+      audio: ChallengeNodeChallengeSpeakingSectionAudio!
+    }
+    type ChallengeNodeChallenge {
+      speakingSection: ChallengeNodeChallengeSpeakingSection
+    }
   `;
   createTypes(typeDefs);
 };

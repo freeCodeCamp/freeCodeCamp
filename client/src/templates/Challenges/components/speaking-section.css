@@ -1,0 +1,15 @@
+.speaking-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 1rem;
+  padding: 1.5rem;
+  border: 1px solid var(--gray-15);
+  border-radius: 4px;
+}
+
+.speaking-section-correct-text {
+  color: var(--quaternary-color);
+  font-weight: 600;
+  margin-block-end: 0.5rem;
+}
