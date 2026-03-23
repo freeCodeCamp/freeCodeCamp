@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+import type { GatsbySSR } from 'gatsby';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
@@ -18,7 +18,7 @@ import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper
 
 const store = createStore();
 
-export const wrapRootElement = ({ element }) => {
+export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => {
   return (
     <Provider store={store}>
       <I18nextProvider i18n={i18n}>
@@ -30,13 +30,9 @@ export const wrapRootElement = ({ element }) => {
   );
 };
 
-wrapRootElement.propTypes = {
-  element: PropTypes.any
-};
+export const wrapPageElement: GatsbySSR['wrapPageElement'] = layoutSelector;
 
-export const wrapPageElement = layoutSelector;
-
-export const onRenderBody = ({
+export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   pathname,
   setHeadComponents,
   setPreBodyComponents,
@@ -47,15 +43,21 @@ export const onRenderBody = ({
   setPostBodyComponents(getPostBodyComponents(pathname));
 };
 
-export const onPreRenderHTML = ({
+export const onPreRenderHTML: GatsbySSR['onPreRenderHTML'] = ({
   getHeadComponents,
   replaceHeadComponents
 }) => {
+  const isBootstrapScript = (key: React.Key | null) =>
+    key === 'bootstrap-min-preload' || key === 'bootstrap-min';
+
   const headComponents = getHeadComponents();
   headComponents.sort((x, y) => {
-    if (x.key === 'bootstrap-min-preload' || x.key === 'bootstrap-min') {
+    const xKey = React.isValidElement(x) ? x.key : null;
+    const yKey = React.isValidElement(y) ? y.key : null;
+
+    if (isBootstrapScript(xKey)) {
       return -1;
-    } else if (y.key === 'bootstrap-min-preload' || y.key === 'bootstrap-min') {
+    } else if (isBootstrapScript(yKey)) {
       return 1;
     }
     return 0;
