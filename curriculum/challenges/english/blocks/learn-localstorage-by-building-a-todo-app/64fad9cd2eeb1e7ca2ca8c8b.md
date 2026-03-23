@@ -11,24 +11,17 @@ Use arrow syntax to create an `updateTaskContainer` function. Then move the `tas
 
 # --hints--
 
-`updateTaskContainer` should be a function.
+You should use `const` and arrow syntax to create a `updateTaskContainer` function.
 
 ```js
-assert.isFunction(updateTaskContainer);
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\s*\)\s*=>\s*\{/)
 ```
 
-After calling `updateTaskContainer()`, `tasksContainer` should display the tasks in `taskData`.
+You should move `taskData.forEach()` and its content into the `updateTaskContainer()` function.
 
 ```js
-tasksContainer.innerHTML = "";
-taskData.length = 0;
-taskData.push({ id: "test-1", title: "Test Task", date: "2024-01-01", description: "A description" });
-updateTaskContainer();
-assert.isTrue(tasksContainer.innerHTML.includes("Test Task"));
-assert.isTrue(tasksContainer.innerHTML.includes("<strong>Title:</strong>"));
-taskData.length = 0; tasksContainer.innerHTML = "";
+assert.match(code, /const\s+updateTaskContainer\s*=\s*\(\s*\)\s*=>\s*\{\s*taskData\.forEach\(\s*\(\s*\{\s*id\s*,\s*title\s*,\s*date\s*,\s*description\s*\}\s*\)\s*=>\s*{\s*tasksContainer\.innerHTML\s*\+=\s*`\s*<div\s+class\s*=\s*('|")task\1\s*id\s*=\s*('|")\$\{id\}\2>\s*<p><strong>Title:<\/strong>\s*\$\{title\}<\/p>\s*<p><strong>Date:<\/strong>\s*\$\{date\}<\/p>\s*<p><strong>Description:<\/strong>\s*\$\{description\}<\/p>\s*<button\s+type\s*=\s*('|")button\3\s*class\s*=\s*('|")btn\4>Edit<\/button>\s*<button\s+type\s*=\s*('|")button\5\s*class\s*=\s*('|")btn\6>Delete<\/button>\s*<\/div>\s*`;?\s*}\s*\)\s*;?\s*\}\s*;?/)
 ```
-
 
 # --seed--
 

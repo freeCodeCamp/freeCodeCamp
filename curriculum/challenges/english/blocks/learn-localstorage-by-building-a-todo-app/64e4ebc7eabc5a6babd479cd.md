@@ -13,21 +13,34 @@ Add a click event listener to `discardBtn`, then use the `close()` method on the
 
 # --hints--
 
-Clicking `discardBtn` should close the confirmation dialog.
+You should call the `addEventListener()` method on your `discardBtn` variable.
 
 ```js
-confirmCloseDialog.showModal();
-discardBtn.click();
-assert.isFalse(confirmCloseDialog.open);
+assert.match(code, /discardBtn\.addEventListener\(/)
 ```
 
-Clicking `discardBtn` should also hide the task form.
+Your event listener should listen for a `click` event.
 
 ```js
-taskForm.classList.remove('hidden');
-confirmCloseDialog.showModal();
-discardBtn.click();
-assert.isTrue(taskForm.classList.contains('hidden'));
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1/)
+```
+
+You should use arrow syntax to set your event listener to an empty pair of curly braces.
+
+```js
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{/)
+```
+
+Your event listener should use the `close()` method on `confirmCloseDialog`.
+
+```js
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\s*\)\s*;?/)
+```
+
+Your event listener should use `classList` to toggle the class `hidden` on `taskForm`.
+
+```js
+assert.match(code, /discardBtn\.addEventListener\(\s*('|"|`)click\1\s*,\s*\(\s*\)\s*=>\s*\{\s*confirmCloseDialog\.close\(\s*\)\s*;?\s*taskForm\.classList\.toggle\(\s*('|"|`)hidden\2\s*\)\s*;?\s*\}\s*\)\s*;?/)
 ```
 
 # --seed--
