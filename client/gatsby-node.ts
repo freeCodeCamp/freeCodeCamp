@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
@@ -8,7 +9,7 @@ exports.createPages = async function createPages({
   actions,
   graphql,
   reporter
-}) {
+}: any) {
   if (!env.algoliaAPIKey || !env.algoliaAppId) {
     if (process.env.FREECODECAMP_NODE_ENV === 'production') {
       throw new Error(
@@ -45,13 +46,15 @@ exports.createPages = async function createPages({
     }
   `);
 
-  const superBlocks = allSuperBlockStructure.nodes.map(node => node.superBlock);
-  superBlocks.forEach(superBlock => {
+  const superBlocks = allSuperBlockStructure.nodes.map(
+    (node: { superBlock: string }) => node.superBlock
+  );
+  superBlocks.forEach((superBlock: string) => {
     createSuperBlockIntroPages(createPage)({ superBlock });
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
   const newPlugins = [
     // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({
@@ -73,18 +76,18 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     resolve: {
       fallback: {
         fs: false,
-        path: require.resolve('path-browserify'),
-        assert: require.resolve('assert'),
-        crypto: require.resolve('crypto-browserify'),
-        util: require.resolve('util/util'),
-        buffer: require.resolve('buffer'),
-        stream: require.resolve('stream-browserify'),
-        process: require.resolve('process/browser')
+        path: 'path-browserify',
+        assert: 'assert',
+        crypto: 'crypto-browserify',
+        util: 'util/util',
+        buffer: 'buffer',
+        stream: 'stream-browserify',
+        process: 'process/browser'
       }
     },
     plugins: newPlugins,
     ignoreWarnings: [
-      warning => {
+      (warning: Error) => {
         if (warning instanceof Error) {
           if (warning.message.includes('mini-css-extract-plugin')) {
             return true;
@@ -96,7 +99,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   });
 };
 
-exports.onCreateBabelConfig = ({ actions }) => {
+exports.onCreateBabelConfig = ({ actions }: any) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-function-bind'
   });
@@ -105,7 +108,7 @@ exports.onCreateBabelConfig = ({ actions }) => {
   });
 };
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }: any) => {
   const { createTypes } = actions;
   // This hook is supported by the test runner, but is not currently used by the
   // client, so we have to tell Gatsby that it exists.
@@ -116,3 +119,5 @@ exports.createSchemaCustomization = ({ actions }) => {
   `;
   createTypes(typeDefs);
 };
+
+export {};
