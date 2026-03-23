@@ -1411,36 +1411,6 @@
       }
     }
   },
-  "learn-prompting-fundamentals": {
-    "title": "Learn Prompting Fundamentals",
-    "summary": [
-      "Learn the fundamentals of writing good prompts in this video course."
-    ],
-    "intro": [
-      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
-    ],
-    "note": "",
-    "blocks": {
-      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
-        "title": "Foundations of AI & Language Models",
-        "intro": [
-          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
-        ]
-      },
-      "learn-prompting-fundamentals-core-concepts": {
-        "title": "Core Concepts",
-        "intro": [
-          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
-        ]
-      },
-      "learn-prompting-fundamentals-practical-application-and-best-practices": {
-        "title": "Practical Application & Best Practices",
-        "intro": [
-          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
-        ]
-      }
-    }
-  },
   "learn-oop-with-python": {
     "title": "Learn OOP with Python",
     "summary": [
@@ -4833,6 +4803,12 @@
           "Nestas lições, você aprenderá os fundamentos dos objetos JavaScript, incluindo como criá-los, acessar suas propriedades e entender a diferença entre tipos de dados primitivos e não primitivos."
         ]
       },
+      "lab-cargo-manifest-validator": {
+        "title": "Build a Cargo Manifest Validator",
+        "intro": [
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
+        ]
+      },
       "lecture-working-with-json": {
         "title": "Trabalhando com JSON",
         "intro": [
@@ -7132,6 +7108,12 @@
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
         ]
       },
+      "lecture-working-with-express": {
+        "title": "Working with Express",
+        "intro": [
+          "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
@@ -8616,7 +8598,7 @@
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Bem-vindo ao Chinês Profissional A1",
       "zh-a1-chapter-pinyin": "Pinyin",
       "zh-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
-      "zh-a1-chapter-introducing-colleagues-and-family": "Apresentando Colegas e Família",
+      "zh-a1-chapter-numbers-and-personal-information": "Numbers and Personal Information",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressando o que você pode e não pode fazer"
     },
     "modules": {
@@ -8624,8 +8606,8 @@
       "zh-a1-module-initials-and-finals": "Iniciais e Finais",
       "zh-a1-module-greetings-and-basic-introductions": "Saudações e Introduções Básicas",
       "zh-a1-module-asking-and-giving-basic-information": "Perguntando e Dando Informações Básicas",
-      "zh-a1-module-introducing-others": "Apresentando Outros",
-      "zh-a1-module-getting-to-know-the-team": "Conhecendo a Equipe",
+      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Falando sobre Habilidades Pessoais",
       "zh-a1-module-discussing-team-skills": "Discutindo Habilidades da Equipe"
     },
@@ -8814,6 +8796,38 @@
       },
       "zh-a1-practice-pinyin": {
         "title": "Prática de Pinyin",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-0-to-10": {
+        "title": "Numbers 0 to 10",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-0-to-10": {
+        "title": "Numbers 0 to 10 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-11-to-19": {
+        "title": "Numbers 11 to 19",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-11-to-19": {
+        "title": "Numbers 11 to 19 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-20-to-99": {
+        "title": "Numbers 20 to 99",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-20-to-99": {
+        "title": "Numbers 20 to 99 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-numbers-below-100": {
+        "title": "Numbers below 100 Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-numbers-below-100": {
+        "title": "Numbers below 100 Quiz",
         "intro": ["", ""]
       }
     }
