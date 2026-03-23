@@ -49,7 +49,10 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const limit = getDailyLimit(req.user.isDonating);
-      const todayUTC = new Date().toISOString().slice(0, 10);
+      const now = new Date();
+      const todayUTC = new Date(
+        Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
+      );
 
       const existing = await fastify.prisma.socratesUsage.findUnique({
         where: {

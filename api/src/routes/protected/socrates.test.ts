@@ -423,10 +423,16 @@ describe('socratesRoutes', () => {
         test('should not count yesterday usage against today limit', async () => {
           const yesterday = new Date();
           yesterday.setUTCDate(yesterday.getUTCDate() - 1);
-          const yesterdayStr = yesterday.toISOString().slice(0, 10);
+          const yesterdayUTC = new Date(
+            Date.UTC(
+              yesterday.getUTCFullYear(),
+              yesterday.getUTCMonth(),
+              yesterday.getUTCDate()
+            )
+          );
 
           await fastifyTestInstance.prisma.socratesUsage.create({
-            data: { userId: defaultUserId, date: yesterdayStr, count: 3 }
+            data: { userId: defaultUserId, date: yesterdayUTC, count: 3 }
           });
 
           mockedFetch.mockResolvedValueOnce({

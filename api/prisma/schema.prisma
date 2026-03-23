@@ -230,12 +230,12 @@ model Donation {
 }
 
 model SocratesUsage {
-  id     String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @db.ObjectId
-  /// UTC date string in YYYY-MM-DD format representing the day of usage.
-  date   String
+  id     String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId String   @db.ObjectId
+  /// UTC date representing the day of usage (midnight).
+  date   DateTime @db.Date
   /// Number of hints used on this day.
-  count  Int    @default(0)
+  count  Int      @default(0)
 
   @@unique([userId, date])
 }
