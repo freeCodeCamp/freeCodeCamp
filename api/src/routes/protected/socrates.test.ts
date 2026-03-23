@@ -345,6 +345,38 @@ describe('socratesRoutes', () => {
           expect(mockedFetch).toHaveBeenCalledTimes(3);
         });
 
+        test('should not inflate count beyond limit on repeated 429s', async () => {
+          mockedFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          // Exhaust the non-donor limit
+          for (let i = 0; i < 3; i++) {
+            await superPut('/socrates/get-hint').send(validPayload);
+          }
+
+          // Make extra requests that should all be 429
+          for (let i = 0; i < 5; i++) {
+            const res = await superPut('/socrates/get-hint').send(validPayload);
+            expect(res.status).toBe(429);
+          }
+
+          // Upgrade to donor (limit: 10) and verify access is restored
+          await fastifyTestInstance.prisma.user.update({
+            where: { id: defaultUserId },
+            data: { isDonating: true }
+          });
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(200);
+          expect(response.body.attempts).toBe(4);
+          expect(response.body.limit).toBe(10);
+        });
+
         test('should allow 10 hints/day for donors', async () => {
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },

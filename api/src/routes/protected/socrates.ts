@@ -51,6 +51,21 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       const limit = getDailyLimit(req.user.isDonating);
       const todayUTC = new Date().toISOString().slice(0, 10);
 
+      const existing = await fastify.prisma.socratesUsage.findUnique({
+        where: {
+          userId_date: { userId: req.user.id, date: todayUTC }
+        }
+      });
+
+      if (existing && existing.count >= limit) {
+        return reply.status(429).send({
+          error: 'socrates-daily-limit',
+          type: 'info',
+          attempts: limit,
+          limit
+        });
+      }
+
       const usage = await fastify.prisma.socratesUsage.upsert({
         where: {
           userId_date: { userId: req.user.id, date: todayUTC }
@@ -66,15 +81,6 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       });
 
       const attempts = usage.count;
-
-      if (attempts > limit) {
-        return reply.status(429).send({
-          error: 'socrates-daily-limit',
-          type: 'info',
-          attempts: limit,
-          limit
-        });
-      }
 
       const rollbackUsage = async () => {
         await fastify.prisma.socratesUsage.update({
