@@ -943,6 +943,14 @@
     "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
     "or": "OR"
   },
+  "mobile-app-modal": {
+    "heading": "We see you are on mobile!",
+    "body": "This course is available in our app for a better experience.",
+    "ios": "Download on the App Store",
+    "android": "Get it on Google Play",
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
+  },
   "icons": {
     "gold-cup": "Kombe la dhahabu",
     "avatar": "Avatar Chaguomsingi",
@@ -970,6 +978,7 @@
     "github": "Kiungo cha GitHub cha {{username}}",
     "website": "Kiungo cha tovuti cha {{username}}",
     "twitter": "Link to {{username}}'s X",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Nenda kwenye ukurasa wa kwanza",
@@ -1279,12 +1288,11 @@
       "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
       "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
       "introduction-to-precalculus": "Introduction to Precalculus",
-      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "learn-oop-with-python": "Learn OOP with Python",
-      "a2-english-for-developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers (Beta)",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
-      "b1-english-for-developers": "B1 English for Developers",
-      "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "b1-english-for-developers": "B1 English for Developers (Beta)",
+      "b1-english-for-developers-cert": "B1 English for Developers Certification (Beta)",
       "responsive-web-design-v9": "Responsive Web Design",
       "responsive-web-design-v9-cert": "Responsive Web Design Certification",
       "javascript-v9": "JavaScript",
