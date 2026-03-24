@@ -216,12 +216,6 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
-    superBlock: SuperBlocks.LabProductLandingPage,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.CSS
-  },
-  {
     superBlock: SuperBlocks.CssAnimations,
     level: Levels.Advanced,
     hours: 2,

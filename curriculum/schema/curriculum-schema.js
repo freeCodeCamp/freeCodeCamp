@@ -53,7 +53,6 @@ const superblocks = [
   'responsive-design',
   'css-variables',
   'css-grid',
-  'lab-product-landing-page',
   'css-animations',
   'learn-oop-with-python',
   'learn-rag-mcp-fundamentals',

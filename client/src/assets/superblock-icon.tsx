@@ -74,7 +74,6 @@ const iconMap = {
   [SuperBlocks.ResponsiveDesign]: ResponsiveDesign,
   [SuperBlocks.CssVariables]: Code,
   [SuperBlocks.CssGrid]: Code,
-  [SuperBlocks.LabProductLandingPage]: Code,
   [SuperBlocks.CssAnimations]: Code,
   [SuperBlocks.LearnPythonForBeginners]: PythonIcon,
   [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: Code,

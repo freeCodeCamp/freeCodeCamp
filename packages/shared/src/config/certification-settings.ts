@@ -360,7 +360,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.ResponsiveDesign]: null,
   [SuperBlocks.CssVariables]: null,
   [SuperBlocks.CssGrid]: null,
-  [SuperBlocks.LabProductLandingPage]: null,
   [SuperBlocks.CssAnimations]: null,
   [SuperBlocks.LearnPythonForBeginners]: null,
   [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: null,
