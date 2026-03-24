@@ -222,7 +222,6 @@ export const superBlockNames = {
   'css-and-accessibility': SuperBlocks.CssAndAccessibility,
   'css-positioning': SuperBlocks.CssPositioning,
   'attribute-selectors': SuperBlocks.AttributeSelectors,
-  'lab-book-inventory-app': SuperBlocks.LabBookInventoryApp,
   'responsive-design': SuperBlocks.ResponsiveDesign,
   'lab-technical-documentation-page': SuperBlocks.LabTechnicalDocumentationPage,
   'css-variables': SuperBlocks.CssVariables,

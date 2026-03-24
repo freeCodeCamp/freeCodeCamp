@@ -50,7 +50,6 @@ const superblocks = [
   'css-and-accessibility',
   'css-positioning',
   'attribute-selectors',
-  'lab-book-inventory-app',
   'responsive-design',
   'lab-technical-documentation-page',
   'css-variables',

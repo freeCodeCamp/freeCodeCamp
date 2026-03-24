@@ -9650,6 +9650,13 @@
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      },
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
@@ -9661,20 +9668,6 @@
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
           "Test your knowledge of CSS attribute selectors with this quiz."
-        ]
-      }
-    }
-  },
-  "lab-book-inventory-app": {
-    "title": "Build a Book Inventory App",
-    "summary": ["Build a structured layout for managing a book inventory."],
-    "intro": ["Create a structured UI for a book inventory layout."],
-    "blocks": {
-      "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
-        "intro": [
-          "In this lab, you'll create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
         ]
       }
     }

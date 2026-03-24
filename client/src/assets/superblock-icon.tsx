@@ -71,7 +71,6 @@ const iconMap = {
   [SuperBlocks.CssAndAccessibility]: ResponsiveDesign,
   [SuperBlocks.CssPositioning]: Code,
   [SuperBlocks.AttributeSelectors]: Code,
-  [SuperBlocks.LabBookInventoryApp]: Code,
   [SuperBlocks.ResponsiveDesign]: ResponsiveDesign,
   [SuperBlocks.LabTechnicalDocumentationPage]: Code,
   [SuperBlocks.CssVariables]: Code,

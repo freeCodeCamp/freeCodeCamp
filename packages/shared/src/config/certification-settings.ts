@@ -357,7 +357,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.CssAndAccessibility]: null,
   [SuperBlocks.CssPositioning]: null,
   [SuperBlocks.AttributeSelectors]: null,
-  [SuperBlocks.LabBookInventoryApp]: null,
   [SuperBlocks.ResponsiveDesign]: null,
   [SuperBlocks.LabTechnicalDocumentationPage]: null,
   [SuperBlocks.CssVariables]: null,
