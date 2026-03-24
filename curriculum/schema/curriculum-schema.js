@@ -51,7 +51,6 @@ const superblocks = [
   'css-positioning',
   'attribute-selectors',
   'responsive-design',
-  'lab-technical-documentation-page',
   'css-variables',
   'css-grid',
   'lab-product-landing-page',

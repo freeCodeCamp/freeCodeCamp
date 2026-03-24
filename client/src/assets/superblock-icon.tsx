@@ -72,7 +72,6 @@ const iconMap = {
   [SuperBlocks.CssPositioning]: Code,
   [SuperBlocks.AttributeSelectors]: Code,
   [SuperBlocks.ResponsiveDesign]: ResponsiveDesign,
-  [SuperBlocks.LabTechnicalDocumentationPage]: Code,
   [SuperBlocks.CssVariables]: Code,
   [SuperBlocks.CssGrid]: Code,
   [SuperBlocks.LabProductLandingPage]: Code,

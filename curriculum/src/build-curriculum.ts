@@ -223,7 +223,6 @@ export const superBlockNames = {
   'css-positioning': SuperBlocks.CssPositioning,
   'attribute-selectors': SuperBlocks.AttributeSelectors,
   'responsive-design': SuperBlocks.ResponsiveDesign,
-  'lab-technical-documentation-page': SuperBlocks.LabTechnicalDocumentationPage,
   'css-variables': SuperBlocks.CssVariables,
   'css-grid': SuperBlocks.CssGrid,
   'lab-product-landing-page': SuperBlocks.LabProductLandingPage,

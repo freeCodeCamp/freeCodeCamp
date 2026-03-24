@@ -358,7 +358,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.CssPositioning]: null,
   [SuperBlocks.AttributeSelectors]: null,
   [SuperBlocks.ResponsiveDesign]: null,
-  [SuperBlocks.LabTechnicalDocumentationPage]: null,
   [SuperBlocks.CssVariables]: null,
   [SuperBlocks.CssGrid]: null,
   [SuperBlocks.LabProductLandingPage]: null,
