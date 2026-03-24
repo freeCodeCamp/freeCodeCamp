@@ -84,12 +84,6 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
-    superBlock: SuperBlocks.LabSurveyForm,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.Html
-  },
-  {
     superBlock: SuperBlocks.HtmlAndAccessibility,
     level: Levels.Beginner,
     hours: 2,

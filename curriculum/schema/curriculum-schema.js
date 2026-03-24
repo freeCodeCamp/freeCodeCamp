@@ -36,7 +36,6 @@ const superblocks = [
   'the-odin-project',
   'introduction-to-algorithms-and-data-structures',
   'introduction-to-precalculus',
-  'lab-survey-form',
   'html-and-accessibility',
   'computer-basics',
   'basic-css',

@@ -343,7 +343,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.DevPlayground]: null,
   [SuperBlocks.FullStackOpen]: null,
   [SuperBlocks.HtmlFormsAndTables]: null,
-  [SuperBlocks.LabSurveyForm]: null,
   [SuperBlocks.HtmlAndAccessibility]: null,
   [SuperBlocks.ComputerBasics]: null,
   [SuperBlocks.BasicCss]: null,

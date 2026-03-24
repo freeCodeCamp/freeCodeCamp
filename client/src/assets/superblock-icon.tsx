@@ -57,7 +57,6 @@ const iconMap = {
   [SuperBlocks.FullStackOpen]: Code,
   [SuperBlocks.DevPlayground]: Code,
   [SuperBlocks.HtmlFormsAndTables]: ResponsiveDesign,
-  [SuperBlocks.LabSurveyForm]: Code,
   [SuperBlocks.HtmlAndAccessibility]: ResponsiveDesign,
   [SuperBlocks.ComputerBasics]: Code,
   [SuperBlocks.BasicCss]: Code,
