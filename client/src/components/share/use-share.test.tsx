@@ -45,7 +45,7 @@ describe('useShare', () => {
     );
 
     expect(shareResult.current.facebookUrl).toBe(
-      `https://www.facebook.com/sharer/sharer.php?u=${redirectFreeCodeCampLearnURL}`
+      `https://www.facebook.com/sharer/sharer.php?u=${redirectFreeCodeCampLearnURL}&quote=${tweetMessage}`
     );
   });
 });
