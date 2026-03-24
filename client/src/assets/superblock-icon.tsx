@@ -67,7 +67,6 @@ const iconMap = {
   [SuperBlocks.StylingForms]: Code,
   [SuperBlocks.CssBoxModel]: Code,
   [SuperBlocks.CssFlexbox]: Code,
-  [SuperBlocks.LabPageOfPlayingCards]: Code,
   [SuperBlocks.CssTypography]: Code,
   [SuperBlocks.CssAndAccessibility]: ResponsiveDesign,
   [SuperBlocks.CssPositioning]: Code,

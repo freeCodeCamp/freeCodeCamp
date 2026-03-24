@@ -353,7 +353,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.StylingForms]: null,
   [SuperBlocks.CssBoxModel]: null,
   [SuperBlocks.CssFlexbox]: null,
-  [SuperBlocks.LabPageOfPlayingCards]: null,
   [SuperBlocks.CssTypography]: null,
   [SuperBlocks.CssAndAccessibility]: null,
   [SuperBlocks.CssPositioning]: null,

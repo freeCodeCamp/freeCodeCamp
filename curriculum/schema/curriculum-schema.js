@@ -46,7 +46,6 @@ const superblocks = [
   'styling-forms',
   'css-box-model',
   'css-flexbox',
-  'lab-page-of-playing-cards',
   'css-typography',
   'css-and-accessibility',
   'css-positioning',

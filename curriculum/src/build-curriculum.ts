@@ -218,7 +218,6 @@ export const superBlockNames = {
   'styling-forms': SuperBlocks.StylingForms,
   'css-box-model': SuperBlocks.CssBoxModel,
   'css-flexbox': SuperBlocks.CssFlexbox,
-  'lab-page-of-playing-cards': SuperBlocks.LabPageOfPlayingCards,
   'css-typography': SuperBlocks.CssTypography,
   'css-and-accessibility': SuperBlocks.CssAndAccessibility,
   'css-positioning': SuperBlocks.CssPositioning,

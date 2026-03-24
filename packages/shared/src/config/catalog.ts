@@ -174,12 +174,6 @@ export const catalog: Catalog[] = [
     topic: Topic.Python
   },
   {
-    superBlock: SuperBlocks.LabPageOfPlayingCards,
-    level: Levels.Intermediate,
-    hours: 2,
-    topic: Topic.CSS
-  },
-  {
     superBlock: SuperBlocks.CssTypography,
     level: Levels.Intermediate,
     hours: 1,
