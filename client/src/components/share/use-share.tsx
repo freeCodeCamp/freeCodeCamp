@@ -49,7 +49,7 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
 
   const threadRedirectURL = `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
-  const facebookRedirectURL = `https://${facebookData.domain}/${facebookData.action}?u=${redirectFreeCodeCampLearnURL}`;
+  const facebookRedirectURL = `https://${facebookData.domain}/${facebookData.action}?u=${redirectFreeCodeCampLearnURL}&quote=${tweetMessage}`;
 
   return {
     xUrl: xRedirectURL,
