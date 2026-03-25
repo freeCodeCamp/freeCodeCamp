@@ -4787,6 +4787,13 @@
           "У цих лекціях ви ознайомитесь з об’єктами в JavaScript: як їх створювати і як отримати доступ до властивостей, а також дізнаєтесь ключові відмінності між примітивними та непримітивними типами даних."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
       "lab-cargo-manifest-validator": {
         "title": "Створіть валідатор вантажного маніфесту",
         "intro": [
@@ -7145,6 +7152,13 @@
           "У цих лекціях ви дізнаєтесь про інструменти HTML, які допомагають писати кращий код. До цих інструментів належать валідатори HTML, інспектор DOM та інструменти розробника браузера."
         ]
       },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "Повторення таблиць та форм в HTML",
         "intro": [
@@ -8966,24 +8980,6 @@
       }
     }
   },
-  "lab-survey-form": {
-    "title": "Створіть форму для опитування",
-    "summary": [
-      "Створіть форму для опитування, практикуючи HTML‑структуру та доступні елементи керування формою."
-    ],
-    "intro": [
-      "Створіть форму для опитування з семантичним HTML та доступними полями."
-    ],
-    "blocks": {
-      "lab-survey-form": {
-        "title": "Створіть форму для опитування",
-        "intro": [
-          "У цій лабораторній роботі ви пригадаєте HTML-форми, створивши форму для опитування.",
-          "Ви будете працювати з елементом <code>label</code>, різними елементами <code>input</code>, атрибутом <code>required</code> та багато іншим."
-        ]
-      }
-    }
-  },
   "html-and-accessibility": {
     "title": "Ознайомтесь з HTML та доступністю",
     "summary": [
@@ -9485,6 +9481,13 @@
           "Ви будете вирівнювати елементи за допомогою різних властивостей, серед яких <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> та багато інших."
         ]
       },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      },
       "review-css-flexbox": {
         "title": "Повторення Flexbox в CSS",
         "intro": [
@@ -9495,24 +9498,6 @@
       "quiz-css-flexbox": {
         "title": "Тест «Flexbox в CSS»",
         "intro": ["Перевірте, що ви дізнались про flexbox в CSS."]
-      }
-    }
-  },
-  "lab-page-of-playing-cards": {
-    "title": "Створіть сторінку з гральними картами",
-    "summary": [
-      "Створіть багатокартковий макет, щоб попрактикувати гнучку композицію в CSS."
-    ],
-    "intro": [
-      "Створіть макет карток і попрактикуйтесь у повторному використанні стилів."
-    ],
-    "blocks": {
-      "lab-page-of-playing-cards": {
-        "title": "Створіть сторінку з гральними картами",
-        "intro": [
-          "У цій лабораторній роботі ви будете використовувати гнучку модель, щоб створити вебсторінку з гральними картами.",
-          "Ви будете вирівнювати елементи за допомогою різних властивостей, серед яких <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> та багато інших."
-        ]
       }
     }
   },
@@ -9662,6 +9647,13 @@
           "У цьому практичному занятті ви побудуєте фінансовий облік за допомогою псевдоселекторів. Ви дізнаєтеся, як змінити стиль елемента, коли наводите на нього курсор, та запускати інші події на вебсторінці."
         ]
       },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      },
       "review-css-attribute-selectors": {
         "title": "Повторення селекторів атрибутів у CSS",
         "intro": [
@@ -9672,20 +9664,6 @@
       "quiz-css-attribute-selectors": {
         "title": "Тест «Селектори атрибутів у CSS»",
         "intro": ["Перевірте, що ви дізнались про селектори атрибутів у CSS."]
-      }
-    }
-  },
-  "lab-book-inventory-app": {
-    "title": "Створіть застосунок з книгами",
-    "summary": ["Створіть структурований макет для керування книгами."],
-    "intro": ["Створіть структурований UI для книг."],
-    "blocks": {
-      "lab-book-inventory-app": {
-        "title": "Створіть застосунок з книгами",
-        "intro": [
-          "У цій лабораторній роботі ви створите застосунок для інвентаризації книг.",
-          "Ви будете використовувати селектори атрибутів у CSS, серед яких <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> та багато інших."
-        ]
       }
     }
   },
@@ -9711,6 +9689,13 @@
           "У цьому практичному занятті ви використовуватимете CSS та адаптивний дизайн, щоб створити піаніно. До того ж ви більше дізнаєтесь про медіазапити та псевдоселектори."
         ]
       },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
+        ]
+      },
       "review-responsive-web-design": {
         "title": "Повторення адаптивного вебдизайну",
         "intro": [
@@ -9721,24 +9706,6 @@
       "quiz-responsive-web-design": {
         "title": "Тест «Адаптивний вебдизайн»",
         "intro": ["Перевірте, що ви дізнались про адаптивність вебсторінок."]
-      }
-    }
-  },
-  "lab-technical-documentation-page": {
-    "title": "Створіть сторінку технічної документації",
-    "summary": [
-      "Створіть сторінку документації, практикуючись в адаптивній структурі та макеті."
-    ],
-    "intro": [
-      "Створіть сторінку документації з чіткою структурою й навігацією."
-    ],
-    "blocks": {
-      "lab-technical-documentation-page": {
-        "title": "Створіть сторінку технічної документації",
-        "intro": [
-          "У цій лабораторній роботі ви створите сторінку технічної документації, яка служитиме інструкцією або довідником.",
-          "Ви також попрактикуєте роботу з медіазапитами для створення адаптивного дизайну."
-        ]
       }
     }
   },
@@ -9814,6 +9781,12 @@
           "У цьому уроці ви навчитесь налагоджувати CSS за допомогою інструментів розробника свого браузера та валідаторів CSS."
         ]
       },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
+      },
       "review-css-grid": {
         "title": "Повторення сітки в CSS",
         "intro": [
@@ -9824,23 +9797,6 @@
       "quiz-css-grid": {
         "title": "Тест «Сітка в CSS»",
         "intro": ["Перевірте, що ви дізнались про сітку в CSS."]
-      }
-    }
-  },
-  "lab-product-landing-page": {
-    "title": "Створіть посадкову сторінку продукту",
-    "summary": [
-      "Створіть посадкову сторінку, застосувавши макет, типографію та адаптивний дизайн."
-    ],
-    "intro": [
-      "Створіть посадкову сторінку продукту з цілісним макетом і стилем."
-    ],
-    "blocks": {
-      "lab-product-landing-page": {
-        "title": "Створіть посадкову сторінку продукту",
-        "intro": [
-          "У цьому проєкті ви створите посадкову сторінку продукту, щоб прорекламувати продукт за власним вибором."
-        ]
       }
     }
   },
