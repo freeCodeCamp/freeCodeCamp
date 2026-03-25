@@ -51,10 +51,6 @@ export const toggleTheme = createAction(actionTypes.toggleTheme);
 export const setTheme = createAction(actionTypes.setTheme);
 export const initializeTheme = createAction(actionTypes.initializeTheme);
 
-export const updateAllChallengesInfo = createAction(
-  actionTypes.updateAllChallengesInfo
-);
-
 export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(
   actionTypes.postChargeProcessing

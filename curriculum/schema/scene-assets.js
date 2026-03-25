@@ -25,7 +25,6 @@ const availableCharacters = [
   'Tom',
 
   // Spanish
-  'Alex',
   'Ángela',
   'Camila',
   'Carlos',
@@ -45,12 +44,14 @@ const availableCharacters = [
 
   // Chinese
   'Chen Na',
+  'Huang Jingyi',
   'Li Hong',
   'Li Ping',
   'Lin Yating',
   'Liu Ming',
   'Wang Hua',
   'Zhang Wei',
+  'Zhou Jia',
   'Zhou Yongjie'
 ];
 
@@ -324,6 +325,7 @@ const availableAudios = [
   'ES_A1_vowels_oiu.mp3',
   'ES_A1_vowels_uae.mp3',
   'ES_A1_warm_up_describing_people_at_work.mp3',
+  'ES_A1_what_each_department_does.mp3',
   'ES_A1_what_the_company_does.mp3',
   'ZH_A1_greetings_and_introductions_wanghua.mp3',
   'ZH_A1_greetings_and_introductions_liuming.mp3',
@@ -336,7 +338,10 @@ const availableAudios = [
   'ZH_A1_pinyin_compound_finals.mp3',
   'ZH_A1_pinyin_nasal_finals.mp3',
   'ZH_A1_pinyin_special_spelling_rules.mp3',
-  'ZH_A1_pinyin_practice.mp3'
+  'ZH_A1_pinyin_practice.mp3',
+  'ZH_A1_numbers_and_personal_information_numbers_0_10.mp3',
+  'ZH_A1_numbers_and_personal_information_numbers_11_19.mp3',
+  'ZH_A1_numbers_and_personal_information_numbers_20_99.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];

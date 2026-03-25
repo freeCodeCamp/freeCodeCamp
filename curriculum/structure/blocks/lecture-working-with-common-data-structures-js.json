@@ -1,0 +1,29 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-common-data-structures-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "699bf504558ca3acf83b4732",
+      "title": "What Is an Algorithm and How Does Big O Notation Work?"
+    },
+    {
+      "id": "699bf563af9132c9e3807638",
+      "title": "What Are Good Problem-Solving Techniques and Ways to Approach Algorithmic Challenges?"
+    },
+    {
+      "id": "699bf563af9132c9e3807639",
+      "title": "How Do Dynamic Arrays Differ From Static Arrays?"
+    },
+    {
+      "id": "699bf563af9132c9e380763a",
+      "title": "How Do Stacks and Queues Work?"
+    },
+    {
+      "id": "699bf563af9132c9e380763b",
+      "title": "How Do Singly Linked Lists Work and How Do They Differ From Doubly Linked Lists?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

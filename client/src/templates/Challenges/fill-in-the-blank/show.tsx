@@ -15,6 +15,7 @@ import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 // Local Utilities
 import ShortcutsModal from '../components/shortcuts-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -107,7 +108,6 @@ const ShowFillInTheBlank = ({
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
   const emptyArray = fillInTheBlank.blanks.map(() => null);
-
   const [showWrong, setShowWrong] = useState(false);
   const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
   const [answersCorrect, setAnswersCorrect] =
@@ -338,6 +338,7 @@ const ShowFillInTheBlank = ({
           </Row>
         </Container>
         <ShortcutsModal />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );

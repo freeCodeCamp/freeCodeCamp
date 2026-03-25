@@ -121,7 +121,8 @@
     "more-ways-to-sign-in": "More ways to sign in",
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
-    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "outline": "Outline"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
@@ -518,7 +519,7 @@
     "ms-link": "Microsoft Link",
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
-    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
+    "congratulations-code-passes": "Congratulations. Your code passes.",
     "i-completed": "I've completed this challenge",
     "example-code": "Example Code",
     "test-output": "Your test output will go here",
@@ -556,7 +557,7 @@
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
     "editor-tabs": {
       "code": "Code",
-      "tests": "Tests",
+      "tests": "Tests:",
       "restart": "Restart",
       "restart-step": "Restart Step",
       "console": "Console",
@@ -699,7 +700,8 @@
       "exit-header": "Exit Exam",
       "exit": "Are you sure you want to leave the exam? You will lose any progress you have made.",
       "exit-yes": "Yes, I want to leave the exam",
-      "exit-no": "No, I would like to continue the exam"
+      "exit-no": "No, I would like to continue the exam",
+      "not-honest": "You need to <0>accept the Academic Honesty Policy</0> to take this exam"
     },
     "ms": {
       "link-header": "Link your Microsoft account",
@@ -941,6 +943,14 @@
     "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
     "or": "OR"
   },
+  "mobile-app-modal": {
+    "heading": "We see you are on mobile!",
+    "body": "This course is available in our app for a better experience.",
+    "ios": "Download on the App Store",
+    "android": "Get it on Google Play",
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
+  },
   "icons": {
     "gold-cup": "Gold Cup",
     "avatar": "Default Avatar",
@@ -968,6 +978,7 @@
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
     "twitter": "Link to {{username}}'s X",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Go to first page",
@@ -1274,10 +1285,14 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "learn-python-for-beginners": "Learn Python for Beginners",
-      "a2-english-for-developers": "A2 English for Developers",
+      "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
+      "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
+      "introduction-to-precalculus": "Introduction to Precalculus",
+      "learn-oop-with-python": "Learn OOP with Python",
+      "a2-english-for-developers": "A2 English for Developers (Beta)",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
-      "b1-english-for-developers": "B1 English for Developers",
-      "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "b1-english-for-developers": "B1 English for Developers (Beta)",
+      "b1-english-for-developers-cert": "B1 English for Developers Certification (Beta)",
       "responsive-web-design-v9": "Responsive Web Design",
       "responsive-web-design-v9-cert": "Responsive Web Design Certification",
       "javascript-v9": "JavaScript",
@@ -1309,7 +1324,43 @@
       "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance",
       "information-security-and-quality-assurance-cert": "Legacy Information Security and Quality Assurance Certification",
       "full-stack": "Legacy Full-Stack",
-      "full-stack-cert": "Legacy Full-Stack Certification"
+      "full-stack-cert": "Legacy Full-Stack Certification",
+      "introduction-to-bash": "Introduction to Bash",
+      "introduction-to-sql-and-postgresql": "Introduction to SQL and PostgreSQL",
+      "learn-bash-scripting": "Learn Bash Scripting",
+      "learn-sql-and-bash": "Learn SQL and Bash",
+      "introduction-to-nano": "Introduction to Nano",
+      "introduction-to-git-and-github": "Introduction to Git and GitHub",
+      "introduction-to-variables-and-strings-in-javascript": "Introduction to Variables and Strings in JavaScript",
+      "introduction-to-booleans-and-numbers-in-javascript": "Introduction to Booleans and Numbers in JavaScript",
+      "introduction-functions-in-javascript": "Introduction to Functions in JavaScript",
+      "introduction-to-arrays-in-javascript": "Introduction to Arrays in JavaScript",
+      "introduction-to-objects-in-javascript": "Introduction to Objects in JavaScript",
+      "introduction-to-loops-in-javascript": "Introduction to Loops in JavaScript",
+      "javascript-fundamentals-review": "JavaScript Fundamentals Review",
+      "introduction-to-higher-order-functions-and-callbacks-in-javascript": "Introduction to Higher-Order Functions and Callbacks in JavaScript",
+      "learn-dom-manipulation-and-events-with-javascript": "Learn DOM Manipulation and Events with JavaScript",
+      "introduction-to-javascript-and-accessibility": "Introduction to JavaScript and Accessibility",
+      "learn-javascript-debugging": "Learn JavaScript Debugging",
+      "learn-basic-regex-with-javascript": "Learn Basic Regex with JavaScript",
+      "introduction-to-dates-in-javascript": "Introduction to Dates in JavaScript",
+      "learn-audio-and-video-events-with-javascript": "Learn Audio and Video Events with JavaScript",
+      "introduction-to-maps-and-sets-in-javascript": "Introduction to Maps and Sets in JavaScript",
+      "learn-localstorage-and-crud-operations-with-javascript": "Learn localStorage and CRUD Operations with JavaScript",
+      "introduction-to-javascript-classes": "Introduction to JavaScript Classes",
+      "learn-recursion-with-javascript": "Learn Recursion with JavaScript",
+      "introduction-to-functional-programming-with-javascript": "Introduction to Functional Programming with JavaScript",
+      "introduction-to-asynchronous-javascript": "Introduction to Asynchronous JavaScript",
+      "introduction-to-python-basics": "Introduction to Python Basics",
+      "learn-python-loops-and-sequences": "Learn Python Loops and Sequences",
+      "learn-python-dictionaries-and-sets": "Learn Python Dictionaries and Sets",
+      "learn-error-handling-in-python": "Learn Error Handling in Python",
+      "learn-python-classes-and-objects": "Learn Python Classes and Objects",
+      "introduction-to-oop-in-python": "Introduction to OOP in Python",
+      "introduction-to-linear-data-structures-in-python": "Introduction to Linear Data Structures in Python",
+      "learn-algorithms-in-python": "Learn Algorithms in Python",
+      "learn-graphs-and-trees-in-python": "Learn Graphs and Trees in Python",
+      "learn-dynamic-programming-in-python": "Learn Dynamic Programming in Python"
     }
   },
   "certification-card": {
@@ -1460,7 +1511,14 @@
         "d3": "D3",
         "api": "APIs",
         "information-security": "Information Security",
-        "computer-fundamentals": "Computer Fundamentals"
+        "computer-fundamentals": "Computer Fundamentals",
+        "computer-science": "Computer Science",
+        "math": "Math",
+        "databases": "Databases",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editors",
+        "ai": "AI"
       }
     }
   }

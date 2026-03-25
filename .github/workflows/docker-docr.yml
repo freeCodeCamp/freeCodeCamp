@@ -36,6 +36,13 @@ on:
         type: string
         description: 'Input: Show upcoming changes flag (true/false)'
         default: 'false'
+    secrets:
+      DIGITALOCEAN_ACCESS_TOKEN:
+        required: true
+        description: 'DigitalOcean API token for registry authentication'
+      DOCR_NAME:
+        required: true
+        description: 'DigitalOcean Container Registry name'
     outputs:
       tagname:
         description: 'Output: The tagname for the image built'

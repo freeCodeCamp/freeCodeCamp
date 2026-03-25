@@ -1,5 +1,4 @@
 interface Meta {
-  name: string;
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;
@@ -15,7 +14,6 @@ interface Meta {
 }
 
 const baseMeta: Meta = {
-  name: '',
   isUpcomingChange: true,
   dashedName: '',
   helpCategory: '',

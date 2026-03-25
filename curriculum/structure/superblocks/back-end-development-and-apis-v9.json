@@ -27,7 +27,9 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-npm",
-            "lecture-working-with-npm-scripts"
+            "lecture-working-with-npm-scripts",
+            "review-npm",
+            "quiz-npm"
           ]
         },
         {
@@ -46,7 +48,10 @@
         {
           "dashedName": "introduction-to-express",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-understanding-rest-api-and-web-services",
+            "lecture-working-with-express"
+          ]
         },
         {
           "dashedName": "express-middleware",
