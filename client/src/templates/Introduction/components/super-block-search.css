@@ -10,6 +10,10 @@
   width: 100%;
 }
 
+#super-block-search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
 .super-block-search-magnifier {
   position: absolute;
   left: 10px;
