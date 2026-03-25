@@ -26,7 +26,7 @@ const SuperBlockSearch = ({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setSearchTerm(value);
-    debouncedOnSearch(value);
+    debouncedOnSearch(value.trim().toLowerCase());
   };
 
   const handleReset = () => {
