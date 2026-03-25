@@ -190,7 +190,7 @@ export const SuperBlockMap = ({
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <SuperBlockSearch
               onSearch={setSearchTerm}
-              filteredCount={filteredChallenges.length}
+              resultCount={filteredChallenges.length}
               isSearching={isSearching}
             />
           </Col>
@@ -227,7 +227,7 @@ export const SuperBlockMap = ({
         <Col sm={10} smOffset={1} xs={12}>
           <SuperBlockSearch
             onSearch={setSearchTerm}
-            filteredCount={filteredChallenges.length}
+            resultCount={filteredChallenges.length}
             isSearching={isSearching}
           />
         </Col>

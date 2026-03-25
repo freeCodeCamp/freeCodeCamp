@@ -9,13 +9,13 @@ import './super-block-search.css';
 
 interface SuperBlockSearchProps {
   onSearch: (term: string) => void;
-  filteredCount: number;
+  resultCount: number;
   isSearching: boolean;
 }
 
 const SuperBlockSearch = ({
   onSearch,
-  filteredCount,
+  resultCount,
   isSearching
 }: SuperBlockSearchProps): JSX.Element => {
   const { t } = useTranslation();
@@ -36,9 +36,9 @@ const SuperBlockSearch = ({
   };
 
   const statusMessage = isSearching
-    ? filteredCount > 0
+    ? resultCount > 0
       ? t('learn.search.search-challenges-results', {
-          resultCount: filteredCount,
+          resultCount,
           term: searchTerm
         })
       : t('learn.search.search-challenges-no-results', { term: searchTerm })
