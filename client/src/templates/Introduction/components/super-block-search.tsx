@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { debounce } from 'lodash-es';
 import { FormControl } from '@freecodecamp/ui';
@@ -22,10 +22,6 @@ const SuperBlockSearch = ({
   const [searchTerm, setSearchTerm] = useState('');
 
   const debouncedOnSearch = useMemo(() => debounce(onSearch, 300), [onSearch]);
-
-  useEffect(() => {
-    return () => debouncedOnSearch.cancel();
-  }, [debouncedOnSearch]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
