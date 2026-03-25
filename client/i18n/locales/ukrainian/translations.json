@@ -403,7 +403,7 @@
     "download-header": "Завантажте застосунок для екзаменів freeCodeCamp",
     "explanation": "Щоб отримати сертифікацію, потрібно скласти екзамен з метою перевірки отриманих знань. Екзамен абсолютно безоплатний.",
     "version": "Найновіша версія застосунку: {{version}}.",
-    "download-details": "Завантажте застосунок самостійно",
+    "download-details": "Завантажити застосунок самостійно",
     "unable-to-detect-os": "Не вдалося виявити вашу операційну систему. Будь ласка, завантажте застосунок нижче самостійно.",
     "download-trouble": "Якщо виникли проблеми із завантаженням потрібної версії, зверніться до служби підтримки:",
     "open-exam-application": "Відкрити застосунок для екзаменів"
@@ -944,12 +944,12 @@
     "or": "АБО"
   },
   "mobile-app-modal": {
-    "heading": "We see you are on mobile!",
-    "body": "This course is available in our app for a better experience.",
-    "ios": "Download on the App Store",
-    "android": "Get it on Google Play",
-    "open-app": "Open in App",
-    "do-not-show": "Do not show me again"
+    "heading": "До зустрічі в мобільному застосунку!",
+    "body": "Цей курс доступний в мобільному застосунку.",
+    "ios": "Завантажити з App Store",
+    "android": "Завантажити з Google Play",
+    "open-app": "Відкрити в застосунку",
+    "do-not-show": "Більше не показувати"
   },
   "icons": {
     "gold-cup": "Золотий кубок",

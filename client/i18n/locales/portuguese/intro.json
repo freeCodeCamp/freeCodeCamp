@@ -4803,6 +4803,13 @@
           "Nestas lições, você aprenderá os fundamentos dos objetos JavaScript, incluindo como criá-los, acessar suas propriedades e entender a diferença entre tipos de dados primitivos e não primitivos."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
       "lab-cargo-manifest-validator": {
         "title": "Build a Cargo Manifest Validator",
         "intro": [
@@ -7199,6 +7206,13 @@
           "Nestas lições, você aprenderá sobre ferramentas de HTML e como elas permitem que você escreva um código melhor. Estas ferramentas incluem validadores HTML, DOM Inspector e as ferramentas de desenvolvimento dos navegadores."
         ]
       },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "Revisão sobre Tabelas e Formulários em HTML",
         "intro": [
@@ -9056,24 +9070,6 @@
       }
     }
   },
-  "lab-survey-form": {
-    "title": "Crie um formulário de pesquisa ",
-    "summary": [
-      "Crie um formulário de pesquisa completo enquanto pratica a estrutura HTML e controles de formulário acessíveis."
-    ],
-    "intro": [
-      "Crie um formulário de pesquisa completo com HTML semântico e inputs acessíveis."
-    ],
-    "blocks": {
-      "lab-survey-form": {
-        "title": "Crie um Formulário de Pesquisa",
-        "intro": [
-          "Neste laboratório, você revisará formulários HTML criando um formulário de pesquisa.",
-          "Você praticará o trabalho com o elemento <code>label</code>, os diferentes elementos <code>input</code>, o atributo <code>required</code> e mais. "
-        ]
-      }
-    }
-  },
   "html-and-accessibility": {
     "title": "Learn HTML and Accessibility",
     "summary": [
@@ -9591,6 +9587,13 @@
           "Você praticará o alinhamento de elementos usando propriedades de flexbox como <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> e mais."
         ]
       },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      },
       "review-css-flexbox": {
         "title": "Revisão sobre o Flexbox do CSS ",
         "intro": [
@@ -9602,24 +9605,6 @@
         "title": "Questionário sobre o Flexbox do CSS ",
         "intro": [
           "Teste o que você aprendeu sobre Flexbox do CSS com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-page-of-playing-cards": {
-    "title": "Construa uma página de jogos de cartas ",
-    "summary": [
-      "Crie um layout multi-cartão para praticar composição flexível em CSS."
-    ],
-    "intro": [
-      "Crie um layout baseado em cartões e pratique estilização reutilizável."
-    ],
-    "blocks": {
-      "lab-page-of-playing-cards": {
-        "title": "Crie uma página de jogos de cartas",
-        "intro": [
-          "Neste laboratório, você usará flexbox para criar uma página da web de cartas de baralho.",
-          "Você praticará o alinhamento de elementos usando propriedades de flexbox como <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> e mais."
         ]
       }
     }
@@ -9772,6 +9757,13 @@
           "Neste workshop, você criará uma folha de balanço usando pseudosseletores. Você aprenderá como alterar o estilo de um elemento quando passar o mouse sobre ele e acionar outros eventos na sua página da web."
         ]
       },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      },
       "review-css-attribute-selectors": {
         "title": "Revisão sobre Seletores de Atributos em CSS",
         "intro": [
@@ -9783,24 +9775,6 @@
         "title": "Questionário sobre Seletores de Atributos em CSS",
         "intro": [
           "Teste seu conhecimento sobre seletores de atributos CSS com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-book-inventory-app": {
-    "title": "Crie uma aplicação de inventário de livros",
-    "summary": [
-      "Crie um layout estruturado para gerenciar um inventário de livros."
-    ],
-    "intro": [
-      "Crie uma interface estruturada para um layout de inventário de livros."
-    ],
-    "blocks": {
-      "lab-book-inventory-app": {
-        "title": "Crie uma aplicação de inventário de livros",
-        "intro": [
-          "Neste laboratório, você criará uma aplicação de inventário de livros.",
-          "Você praticará seletores de atributo CSS como <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> e mais."
         ]
       }
     }
@@ -9827,6 +9801,13 @@
           "Neste workshop, você usará CSS e design responsivo para codar um piano. Você também praticará media queries e pseudo selectores."
         ]
       },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
+        ]
+      },
       "review-responsive-web-design": {
         "title": "Revisão sobre Design Responsivo na Web",
         "intro": [
@@ -9838,24 +9819,6 @@
         "title": "Questionário sobre Design Responsivo na Web",
         "intro": [
           "Teste o que você aprendeu sobre tornar suas páginas da web responsivas com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-technical-documentation-page": {
-    "title": "Crie uma página de documentação técnica ",
-    "summary": [
-      "Crie uma página de documentação e pratique estrutura e layout responsivos."
-    ],
-    "intro": [
-      "Crie uma página de documentação com estrutura e navegação claras."
-    ],
-    "blocks": {
-      "lab-technical-documentation-page": {
-        "title": "Crie uma página de documentação técnica",
-        "intro": [
-          "Neste laboratório, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico.",
-          "Você também praticará media queries para criar um design responsivo."
         ]
       }
     }
@@ -9934,6 +9897,12 @@
           "Nesta lição, você aprenderá a depurar CSS usando as ferramentas do desenvolvedor do seu navegador e validadores de CSS."
         ]
       },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
+      },
       "review-css-grid": {
         "title": "Revisão do CSS Grid",
         "intro": [
@@ -9945,21 +9914,6 @@
         "title": "Questionário de CSS Grid",
         "intro": [
           "Teste seu conhecimento sobre CSS Grid com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-product-landing-page": {
-    "title": "Crie uma Página de Produto",
-    "summary": [
-      "Crie uma página inicial completa e aplique layout, tipografia e design responsivo."
-    ],
-    "intro": ["Crie uma página de produto com layout e estilo coesos."],
-    "blocks": {
-      "lab-product-landing-page": {
-        "title": "Crie uma Página de Produto",
-        "intro": [
-          "Neste projeto, você criará uma página de produto para comercializar um produto de sua escolha."
         ]
       }
     }
