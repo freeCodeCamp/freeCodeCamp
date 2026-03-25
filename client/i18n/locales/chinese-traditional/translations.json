@@ -943,6 +943,14 @@
     "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。",
     "or": "或"
   },
+  "mobile-app-modal": {
+    "heading": "We see you are on mobile!",
+    "body": "This course is available in our app for a better experience.",
+    "ios": "Download on the App Store",
+    "android": "Get it on Google Play",
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
+  },
   "icons": {
     "gold-cup": "金獎盃",
     "avatar": "默認頭像",
@@ -970,6 +978,7 @@
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
     "twitter": "鏈接到 {{username}} 的 X",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "next-month": "訪問下個月",
     "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
@@ -1279,12 +1288,11 @@
       "introduction-to-algorithms-and-data-structures": "算法和數據結構",
       "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
       "introduction-to-precalculus": "Introduction to Precalculus",
-      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "learn-oop-with-python": "Learn OOP with Python",
-      "a2-english-for-developers": "開發者 A2 英語",
+      "a2-english-for-developers": "A2 English for Developers (Beta)",
       "a2-english-for-developers-cert": "A2 開發者英語認證（測試版）",
-      "b1-english-for-developers": "開發者 B1 英語",
-      "b1-english-for-developers-cert": "開發者 B1 英語認證",
+      "b1-english-for-developers": "B1 English for Developers (Beta)",
+      "b1-english-for-developers-cert": "B1 English for Developers Certification (Beta)",
       "responsive-web-design-v9": "響應式 Web 設計",
       "responsive-web-design-v9-cert": "響應式 Web 設計認證",
       "javascript-v9": "JavaScript",
