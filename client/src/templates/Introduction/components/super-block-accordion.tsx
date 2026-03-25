@@ -1,7 +1,5 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-// TODO: Add this component to freecodecamp/ui and remove this dependency
-import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
@@ -99,6 +97,14 @@ const Chapter = ({
   examSlug
 }: ChapterProps) => {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(isExpanded);
+
+  useEffect(() => {
+    setOpen(isExpanded);
+  }, [isExpanded]);
+
+  const panelId = `chapter-panel-${dashedName}`;
+
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
 
@@ -143,19 +149,23 @@ const Chapter = ({
   }
 
   return (
-    <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
-      <Disclosure.Button
+    <li className='chapter'>
+      <button
+        aria-controls={panelId}
+        aria-expanded={open}
         className='chapter-button'
         data-playwright-test-label='chapter-button'
+        onClick={() => setOpen(o => !o)}
+        type='button'
       >
         {chapterButtonContent}
-      </Disclosure.Button>
-      {!isLinkChapter && !examSlug && (
-        <Disclosure.Panel as='ul' className='chapter-panel'>
+      </button>
+      {open && (
+        <ul className='chapter-panel' id={panelId}>
           {children}
-        </Disclosure.Panel>
+        </ul>
       )}
-    </Disclosure>
+    </li>
   );
 };
 
@@ -179,9 +189,23 @@ const Module = ({
 
   const showModuleContent = !(comingSoon && !showUpcomingChanges);
 
+  const [open, setOpen] = useState(isExpanded);
+
+  useEffect(() => {
+    setOpen(isExpanded);
+  }, [isExpanded]);
+
+  const panelId = `module-panel-${dashedName}`;
+
   return (
-    <Disclosure as='li' defaultOpen={isExpanded}>
-      <Disclosure.Button className='module-button'>
+    <li>
+      <button
+        aria-controls={panelId}
+        aria-expanded={open}
+        className='module-button'
+        onClick={() => setOpen(o => !o)}
+        type='button'
+      >
         <div className='module-button-left'>
           <span className='dropdown-wrap'>
             <DropDown />
@@ -201,21 +225,23 @@ const Module = ({
             </span>
           )}
         </div>
-      </Disclosure.Button>
-      <Disclosure.Panel as='ul' className='module-panel'>
-        {comingSoon && (
-          <div className='module-intro'>
-            {note && (
-              <p>
-                <b>{note}</b>
-              </p>
-            )}
-            {intro?.length && intro.map(ntro => <p key={ntro}>{ntro}</p>)}
-          </div>
-        )}
-        {showModuleContent && children}
-      </Disclosure.Panel>
-    </Disclosure>
+      </button>
+      {open && (
+        <ul className='module-panel' id={panelId}>
+          {comingSoon && (
+            <div className='module-intro'>
+              {note && (
+                <p>
+                  <b>{note}</b>
+                </p>
+              )}
+              {intro?.length && intro.map(ntro => <p key={ntro}>{ntro}</p>)}
+            </div>
+          )}
+          {showModuleContent && children}
+        </ul>
+      )}
+    </li>
   );
 };
 
