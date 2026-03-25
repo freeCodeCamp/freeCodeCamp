@@ -9,7 +9,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={() => {}}
-        filteredCount={0}
+        resultCount={0}
         isSearching={false}
       />
     );
@@ -20,7 +20,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={() => {}}
-        filteredCount={0}
+        resultCount={0}
         isSearching={false}
       />
     );
@@ -34,7 +34,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={() => {}}
-        filteredCount={0}
+        resultCount={0}
         isSearching={false}
       />
     );
@@ -50,7 +50,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={onSearch}
-        filteredCount={0}
+        resultCount={0}
         isSearching={false}
       />
     );
@@ -66,7 +66,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={() => {}}
-        filteredCount={5}
+        resultCount={5}
         isSearching={true}
       />
     );
@@ -79,7 +79,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={() => {}}
-        filteredCount={0}
+        resultCount={0}
         isSearching={true}
       />
     );
@@ -92,7 +92,7 @@ describe('SuperBlockSearch', () => {
     render(
       <SuperBlockSearch
         onSearch={() => {}}
-        filteredCount={0}
+        resultCount={0}
         isSearching={false}
       />
     );
