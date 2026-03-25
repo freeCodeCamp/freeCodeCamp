@@ -7172,6 +7172,13 @@
           "In these lectures, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
         ]
       },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
+      },
       "review-html-tables-and-forms": {
         "title": "HTML Tables and Forms Review",
         "intro": [
@@ -8991,24 +8998,6 @@
       }
     }
   },
-  "lab-survey-form": {
-    "title": "Build a Survey Form",
-    "summary": [
-      "Create a complete survey form while practicing HTML structure and accessible form controls."
-    ],
-    "intro": [
-      "Build a complete survey form with semantic HTML and accessible inputs."
-    ],
-    "blocks": {
-      "lab-survey-form": {
-        "title": "Build a Survey Form",
-        "intro": [
-          "In this lab, you'll review HTML forms by creating a survey form.",
-          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
-        ]
-      }
-    }
-  },
   "html-and-accessibility": {
     "title": "Learn HTML and Accessibility",
     "summary": [
@@ -9516,6 +9505,13 @@
           "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
         ]
       },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      },
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
@@ -9526,22 +9522,6 @@
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
         "intro": ["Test what you've learned on CSS flexbox with this quiz."]
-      }
-    }
-  },
-  "lab-page-of-playing-cards": {
-    "title": "Build a Page of Playing Cards",
-    "summary": [
-      "Create a multi-card layout to practice flexible CSS composition."
-    ],
-    "intro": ["Build a card-based layout and practice reusable styling."],
-    "blocks": {
-      "lab-page-of-playing-cards": {
-        "title": "Build a Page of Playing Cards",
-        "intro": [
-          "In this lab, you'll use flexbox to create a webpage of playing cards.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
-        ]
       }
     }
   },
@@ -9683,6 +9663,13 @@
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      },
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
@@ -9694,20 +9681,6 @@
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
           "Test your knowledge of CSS attribute selectors with this quiz."
-        ]
-      }
-    }
-  },
-  "lab-book-inventory-app": {
-    "title": "Build a Book Inventory App",
-    "summary": ["Build a structured layout for managing a book inventory."],
-    "intro": ["Create a structured UI for a book inventory layout."],
-    "blocks": {
-      "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
-        "intro": [
-          "In this lab, you'll create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
         ]
       }
     }
@@ -9732,6 +9705,13 @@
           "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
+        ]
+      },
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
@@ -9743,24 +9723,6 @@
         "title": "Responsive Web Design Quiz",
         "intro": [
           "Test what you've learned about making your webpages responsive with this quiz."
-        ]
-      }
-    }
-  },
-  "lab-technical-documentation-page": {
-    "title": "Build a Technical Documentation Page",
-    "summary": [
-      "Create a documentation page and practice responsive structure and layout."
-    ],
-    "intro": [
-      "Build a documentation page with clear structure and navigation."
-    ],
-    "blocks": {
-      "lab-technical-documentation-page": {
-        "title": "Build a Technical Documentation Page",
-        "intro": [
-          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
-          "You'll also practice media queries to create a responsive design."
         ]
       }
     }
@@ -9833,6 +9795,12 @@
           "In this lesson, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
         ]
       },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
+      },
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
@@ -9843,23 +9811,6 @@
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
         "intro": ["Test your knowledge of CSS Grid with this quiz."]
-      }
-    }
-  },
-  "lab-product-landing-page": {
-    "title": "Build a Product Landing Page",
-    "summary": [
-      "Build a complete landing page and apply layout, typography, and responsive design."
-    ],
-    "intro": [
-      "Create a product landing page with cohesive layout and styling."
-    ],
-    "blocks": {
-      "lab-product-landing-page": {
-        "title": "Build a Product Landing Page",
-        "intro": [
-          "In this project, you'll build a product landing page to market a product of your choice."
-        ]
       }
     }
   },
