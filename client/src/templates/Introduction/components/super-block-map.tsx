@@ -119,7 +119,7 @@ export const SuperBlockMap = ({
 }: SuperBlockMapProps) => {
   const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
-  const isSearching = searchTerm.trim().length > 0;
+  const isSearching = searchTerm.length > 0;
 
   const filteredChallenges = useMemo(() => {
     if (!isSearching) return superBlockChallenges;
