@@ -134,6 +134,9 @@ export const SuperBlockMap = ({
     });
   }, [isSearching, searchTerm, superBlockChallenges, superBlock, t]);
 
+  // Disclosure from headlessui uses defaultOpen (uncontrolled) which is only
+  // read at mount. Changing the key forces a remount so chapters re-evaluate
+  // their expanded state when search starts or stops.
   const accordionKey = isSearching
     ? Array.from(new Set(filteredChallenges.map(c => c.chapter)))
         .sort()
