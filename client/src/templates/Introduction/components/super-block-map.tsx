@@ -123,13 +123,14 @@ export const SuperBlockMap = ({
 
   const filteredChallenges = useMemo(() => {
     if (!isSearching) return superBlockChallenges;
-    const term = searchTerm.trim().toLowerCase();
     return superBlockChallenges.filter(challenge => {
       const challengeTitle = challenge.title.toLowerCase();
       const blockTitle = t(
         `intro:${superBlock}.blocks.${challenge.block}.title`
       ).toLowerCase();
-      return challengeTitle.includes(term) || blockTitle.includes(term);
+      return (
+        challengeTitle.includes(searchTerm) || blockTitle.includes(searchTerm)
+      );
     });
   }, [isSearching, searchTerm, superBlockChallenges, superBlock, t]);
 
