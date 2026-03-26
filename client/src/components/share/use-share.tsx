@@ -24,10 +24,16 @@ export const threadsData = {
   developerDomainURL: 'https://developers.facebook.com'
 };
 
+export const facebookData = {
+  action: 'sharer/sharer.php',
+  domain: 'www.facebook.com'
+};
+
 interface ShareUrls {
   xUrl: string;
   blueSkyUrl: string;
   threadsURL: string;
+  facebookUrl: string;
 }
 
 export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
@@ -43,9 +49,12 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
 
   const threadRedirectURL = `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
+  const facebookRedirectURL = `https://${facebookData.domain}/${facebookData.action}?u=${redirectFreeCodeCampLearnURL}&hashtag=${hastag}freecodecamp`;
+
   return {
     xUrl: xRedirectURL,
     blueSkyUrl: blueSkyRedirectURL,
-    threadsURL: threadRedirectURL
+    threadsURL: threadRedirectURL,
+    facebookUrl: facebookRedirectURL
   };
 };
