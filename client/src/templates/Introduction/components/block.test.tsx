@@ -87,7 +87,7 @@ const defaultProps = {
   superBlock: SuperBlocks.FullStackDeveloperV9,
   toggleBlock: vi.fn(),
   resetModule: vi.fn(),
-  fetchUser: vi.fn()
+  removeModuleChallenges: vi.fn()
 };
 
 describe('<Block />', () => {

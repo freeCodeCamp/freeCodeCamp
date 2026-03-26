@@ -881,13 +881,18 @@ describe('userRoutes', () => {
         expect(response.status).toBe(400);
       });
 
-      test('DELETE returns 204 status code', async () => {
+      test('DELETE returns 200 with removedChallengeIds', async () => {
         const response = await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
-        expect(response.body).toStrictEqual({});
-        expect(response.status).toBe(204);
+        expect(response.status).toBe(200);
+        expect(response.body).toStrictEqual({
+          removedChallengeIds: expect.arrayContaining([
+            'block-one-challenge-1',
+            'block-one-challenge-2'
+          ])
+        });
       });
 
       test('DELETE removes only challenges from the specified block', async () => {

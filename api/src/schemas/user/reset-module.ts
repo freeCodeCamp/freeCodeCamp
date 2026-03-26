@@ -6,7 +6,9 @@ export const resetModule = {
     blockId: Type.String({ minLength: 1 })
   }),
   response: {
-    204: Type.Object({}),
+    200: Type.Object({
+      removedChallengeIds: Type.Array(Type.String())
+    }),
     400: Type.Object({
       message: Type.String(),
       type: Type.String()

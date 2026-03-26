@@ -15,7 +15,7 @@ import { FsdChapters } from '@freecodecamp/shared/config/chapters';
 import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';
 import { useDispatch } from 'react-redux';
-import { fetchUser } from '../../../redux/actions';
+import { removeModuleChallenges } from '../../../redux/actions';
 import Block from './block';
 import CheckMark from './check-mark';
 import { default as BlockLabelComponent } from './block-label';
@@ -36,7 +36,7 @@ interface ChapterProps {
   isLinkChapter?: boolean;
   examSlug?: string;
   blockDashedNames: string[];
-  onResetComplete: () => void;
+  onResetComplete: (removedChallengeIds: string[]) => void;
 }
 
 interface ModuleProps {
@@ -48,7 +48,7 @@ interface ModuleProps {
   superBlock: SuperBlocks;
   comingSoon: boolean;
   blockDashedNames: string[];
-  onResetComplete: () => void;
+  onResetComplete: (removedChallengeIds: string[]) => void;
 }
 
 interface Challenge {
@@ -119,8 +119,8 @@ const Chapter = ({
     setShowResetModal(false);
   };
 
-  const handleResetComplete = () => {
-    onResetComplete();
+  const handleResetComplete = (removedChallengeIds: string[]) => {
+    onResetComplete(removedChallengeIds);
   };
 
   const resetButton = showResetButton ? (
@@ -245,8 +245,8 @@ const Module = ({
     setShowResetModal(false);
   };
 
-  const handleResetComplete = () => {
-    onResetComplete();
+  const handleResetComplete = (removedChallengeIds: string[]) => {
+    onResetComplete(removedChallengeIds);
   };
 
   const resetButton = showResetButton ? (
@@ -427,8 +427,8 @@ export const SuperBlockAccordion = ({
   const accordion = true;
   const dispatch = useDispatch();
 
-  const handleResetComplete = () => {
-    dispatch(fetchUser());
+  const handleResetComplete = (removedChallengeIds: string[]) => {
+    dispatch(removeModuleChallenges({ removedChallengeIds }));
   };
 
   return (

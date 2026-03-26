@@ -643,7 +643,7 @@ async function deleteResetModule(
     }
   });
 
-  return reply.code(204).send({});
+  return { removedChallengeIds: challengeIdsToReset };
 }
 
 /**

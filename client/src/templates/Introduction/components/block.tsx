@@ -20,7 +20,7 @@ import { completedChallengesSelector } from '../../../redux/selectors';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
-import { fetchUser } from '../../../redux/actions';
+import { removeModuleChallenges } from '../../../redux/actions';
 import {
   BlockLayouts,
   BlockLabel as BlockLabelType
@@ -54,7 +54,7 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ toggleBlock, fetchUser }, dispatch);
+  bindActionCreators({ toggleBlock, removeModuleChallenges }, dispatch);
 
 interface ChallengeInfo {
   id: string;
@@ -75,7 +75,7 @@ interface BlockProps {
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
-  fetchUser: typeof fetchUser;
+  removeModuleChallenges: typeof removeModuleChallenges;
   accordion?: boolean;
 }
 
@@ -117,9 +117,9 @@ export class Block extends Component<BlockProps, BlockState> {
     this.setState({ showResetModal: true });
   };
 
-  handleResetConfirm = (): void => {
-    const { fetchUser } = this.props;
-    fetchUser();
+  handleResetConfirm = (removedChallengeIds: string[]): void => {
+    const { removeModuleChallenges } = this.props;
+    removeModuleChallenges({ removedChallengeIds });
   };
 
   handleResetModalClose = (): void => {

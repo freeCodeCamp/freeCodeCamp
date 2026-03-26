@@ -332,7 +332,7 @@ export function postResetProgress(): Promise<ResponseWithData<void>> {
 
 export function deleteResetModule(body: {
   blockId: string;
-}): Promise<ResponseWithData<void>> {
+}): Promise<ResponseWithData<{ removedChallengeIds: string[] }>> {
   return deleteRequest('/account/reset-module', body);
 }
 

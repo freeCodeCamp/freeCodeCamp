@@ -21,7 +21,7 @@ type ResetProgressModalProps = {
   blockDashedName: string | string[];
   superBlock: SuperBlocks;
   onHide: () => void;
-  onResetComplete: () => void;
+  onResetComplete: (removedChallengeIds: string[]) => void;
   show: boolean;
 };
 
@@ -67,6 +67,7 @@ function ResetProgressModal({
     });
 
     const completedBlocks: string[] = [];
+    const allRemovedIds: string[] = [];
 
     try {
       for (let i = 0; i < blockIds.length; i++) {
@@ -78,13 +79,16 @@ function ResetProgressModal({
             `intro:${superBlock}.blocks.${currentBlock}.title`
           )
         });
-        const { response } = await deleteResetModule({ blockId: currentBlock });
+        const { response, data } = await deleteResetModule({
+          blockId: currentBlock
+        });
         if (!response.ok) {
           throw new Error(
             `HTTP Error: ${response.status} ${response.statusText}`
           );
         }
         completedBlocks.push(currentBlock);
+        allRemovedIds.push(...(data.removedChallengeIds ?? []));
         if (i < blockIds.length - 1) {
           await delay(RATE_LIMIT_DELAY_MS);
         }
@@ -92,8 +96,8 @@ function ResetProgressModal({
       setIsResetting(false);
       setResetProgress({ current: 0, total: 0, currentBlockName: '' });
       setVerifyText('');
+      onResetComplete(allRemovedIds);
       onHide();
-      onResetComplete();
     } catch (err) {
       console.error('Failed to reset module:', err);
       setIsResetting(false);
@@ -102,8 +106,8 @@ function ResetProgressModal({
         message: t('learn.reset-progress-error'),
         completedBlocks
       });
-      if (completedBlocks.length > 0) {
-        onResetComplete();
+      if (allRemovedIds.length > 0) {
+        onResetComplete(allRemovedIds);
       }
     }
   };

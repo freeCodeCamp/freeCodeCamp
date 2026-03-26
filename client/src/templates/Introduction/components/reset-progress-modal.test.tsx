@@ -43,8 +43,8 @@ vi.mock('react-i18next', () => ({
 
 vi.mock('../../../utils/ajax', () => ({
   deleteResetModule: vi.fn().mockResolvedValue({
-    response: { ok: true, status: 204, statusText: 'No Content' },
-    data: {}
+    response: { ok: true, status: 200, statusText: 'OK' },
+    data: { removedChallengeIds: ['challenge-1', 'challenge-2'] }
   })
 }));
 
@@ -115,7 +115,10 @@ describe('ResetProgressModal', () => {
     fireEvent.click(resetButton);
 
     await waitFor(() => {
-      expect(mockOnResetComplete).toHaveBeenCalled();
+      expect(mockOnResetComplete).toHaveBeenCalledWith([
+        'challenge-1',
+        'challenge-2'
+      ]);
     });
     await waitFor(() => {
       expect(mockOnHide).toHaveBeenCalled();
