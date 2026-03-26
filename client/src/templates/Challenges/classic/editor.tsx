@@ -655,12 +655,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
-      run:
+      run: () =>
         props.saveSubmissionToDB && props.isSignedIn
           ? // save to database
-            props.saveChallenge
+            props.saveChallenge()
           : // save to local storage
-            props.saveEditorContent
+            props.saveEditorContent()
     });
     editor.addAction({
       id: 'toggle-accessibility',
