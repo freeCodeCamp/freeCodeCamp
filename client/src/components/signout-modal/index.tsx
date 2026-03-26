@@ -55,7 +55,6 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
     closeSignoutModal();
   };
 
-  // AFTER
   const handleSignout = () => {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
