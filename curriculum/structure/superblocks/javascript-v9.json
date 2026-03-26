@@ -300,7 +300,6 @@
         },
         {
           "dashedName": "data-structures",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures-js",
             "workshop-linked-list-js",
