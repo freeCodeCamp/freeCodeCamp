@@ -117,7 +117,7 @@ describe('askSocratesSaga', () => {
       .silentRun();
   });
 
-  it('dispatches error when buildChallenge returns no user input', async () => {
+  it('dispatches error when buildChallenge returns no seed', async () => {
     const { buildChallenge } = await import(
       '@freecodecamp/challenge-builder/build'
     );
@@ -127,7 +127,7 @@ describe('askSocratesSaga', () => {
       .provide([
         [
           matchers.call.fn(buildChallenge),
-          { sources: { editableContents: '' }, build: '<h1></h1>' }
+          { sources: { editableContents: 'Hello world' }, build: '' }
         ]
       ])
       .put({
@@ -135,6 +135,36 @@ describe('askSocratesSaga', () => {
         payload: {
           error: 'learn.socrates-write-code-first'
         }
+      })
+      .silentRun();
+  });
+
+  it('dispatches complete without userInput when editableContents is empty', async () => {
+    const { buildChallenge } = await import(
+      '@freecodecamp/challenge-builder/build'
+    );
+    const { getSocratesHint } = await import('../../../utils/ajax');
+
+    return expectSaga(askSocratesSaga)
+      .withReducer(reducer)
+      .provide([
+        [
+          matchers.call.fn(buildChallenge),
+          {
+            sources: { editableContents: '', contents: '' },
+            build: '<h1>Hello</h1>'
+          }
+        ],
+        [
+          matchers.call.fn(getSocratesHint),
+          {
+            data: { hint: 'A hint.', attempts: 1, limit: 3 }
+          }
+        ]
+      ])
+      .put({
+        type: 'challenge.askSocratesComplete',
+        payload: { hint: 'A hint.', attempts: 1, limit: 3 }
       })
       .silentRun();
   });

@@ -19,7 +19,7 @@ const serverErrorKeyMap = {
   'socrates-rate-limit': 'learn.socrates-rate-limit',
   'socrates-unable-to-generate': 'learn.socrates-unable-to-generate',
   'socrates-unavailable': 'learn.socrates-unavailable',
-  'socrates-write-code-first': 'learn.socrates-write-code-first'
+  'socrates-invalid-request': 'learn.socrates-invalid-request'
 };
 
 function translateServerError(errorKey) {
@@ -68,7 +68,7 @@ export function* askSocratesSaga() {
     const seed = build;
     const userInput = sources?.editableContents;
 
-    if (!userInput || !seed) {
+    if (!seed) {
       yield put(
         askSocratesError({
           error: i18next.t('learn.socrates-write-code-first')
@@ -86,11 +86,14 @@ export function* askSocratesSaga() {
       : [];
 
     const optimizedPayload = {
-      userInput,
       seed,
       description,
       hints
     };
+
+    if (userInput) {
+      optimizedPayload.userInput = userInput;
+    }
 
     const response = yield call(getSocratesHint, optimizedPayload);
     const responseData = response?.data;

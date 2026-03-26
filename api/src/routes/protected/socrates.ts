@@ -28,7 +28,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       errorHandler(error, req, reply) {
         if (error.validation) {
           void reply.status(400).send({
-            error: 'socrates-write-code-first',
+            error: 'socrates-invalid-request',
             type: 'info',
             attempts: 0,
             limit: 0

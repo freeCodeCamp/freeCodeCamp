@@ -545,6 +545,7 @@
     "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
     "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
     "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "Download my solution",
     "download-results": "Download my results",
     "percent-complete": "{{percent}}% complete",

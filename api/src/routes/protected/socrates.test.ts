@@ -457,7 +457,7 @@ describe('socratesRoutes', () => {
           });
         });
 
-        test('should return 400 when userInput is empty', async () => {
+        test('should return 400 when userInput is empty string', async () => {
           const response = await superPut('/socrates/get-hint').send({
             ...validPayload,
             userInput: ''
@@ -465,12 +465,33 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(400);
           expect(response.body).toStrictEqual({
-            error: 'socrates-write-code-first',
+            error: 'socrates-invalid-request',
             type: 'info',
             attempts: 0,
             limit: 0
           });
           expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should accept request without userInput', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () =>
+              Promise.resolve(
+                JSON.stringify({ hint: 'Try adding a closing tag.' })
+              )
+          });
+
+          const { userInput: _unused, ...payloadWithoutUserInput } =
+            validPayload;
+          const response = await superPut('/socrates/get-hint').send(
+            payloadWithoutUserInput
+          );
+
+          expect(response.status).toBe(200);
+          expect(response.body).toHaveProperty('hint');
+          expect(mockedFetch).toHaveBeenCalledTimes(1);
         });
 
         test('should return 400 when seed is empty', async () => {
