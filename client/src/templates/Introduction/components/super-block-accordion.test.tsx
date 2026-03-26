@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 import { Provider } from 'react-redux';
@@ -7,6 +7,23 @@ import { configureStore } from '@reduxjs/toolkit';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockAccordion } from './super-block-accordion';
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
+
+vi.mock('./reset-progress-modal', () => ({
+  default: ({
+    show,
+    blockTitle
+  }: {
+    show: boolean;
+    blockTitle: string;
+    onHide: () => void;
+    onResetComplete: (ids: string[]) => void;
+  }) =>
+    show ? (
+      <div role='dialog' aria-label={`Reset ${blockTitle}`}>
+        Mock Reset Modal
+      </div>
+    ) : null
+}));
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -417,6 +434,82 @@ describe('SuperBlockAccordion', () => {
         name: /reset progress for.*test-module/i
       });
       expect(resetButton).not.toBeInTheDocument();
+    });
+
+    it('opens reset modal when chapter reset button is clicked', () => {
+      const structureWithProgress = {
+        superBlock: SuperBlocks.RespWebDesign,
+        chapters: [
+          {
+            dashedName: 'test-chapter',
+            comingSoon: false,
+            modules: [
+              {
+                dashedName: 'test-module',
+                blocks: ['test-block'],
+                comingSoon: false,
+                totalSteps: 10,
+                completedSteps: 5
+              }
+            ]
+          }
+        ]
+      };
+
+      renderWithProvider(
+        <SuperBlockAccordion
+          challenges={[mockChallenge]}
+          superBlock={SuperBlocks.RespWebDesign}
+          structure={structureWithProgress}
+          chosenBlock={''}
+          completedChallengeIds={['test-challenge-id']}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for.*test-chapter/i
+      });
+      fireEvent.click(resetButton);
+
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
+    });
+
+    it('opens reset modal when module reset button is clicked', () => {
+      const structureWithProgress = {
+        superBlock: SuperBlocks.RespWebDesign,
+        chapters: [
+          {
+            dashedName: 'test-chapter',
+            comingSoon: false,
+            modules: [
+              {
+                dashedName: 'test-module',
+                blocks: ['test-block'],
+                comingSoon: false,
+                totalSteps: 10,
+                completedSteps: 5
+              }
+            ]
+          }
+        ]
+      };
+
+      renderWithProvider(
+        <SuperBlockAccordion
+          challenges={[mockChallenge]}
+          superBlock={SuperBlocks.RespWebDesign}
+          structure={structureWithProgress}
+          chosenBlock={''}
+          completedChallengeIds={['test-challenge-id']}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for.*test-module/i
+      });
+      fireEvent.click(resetButton);
+
+      expect(screen.getByRole('dialog')).toBeInTheDocument();
     });
   });
 });

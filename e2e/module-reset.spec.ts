@@ -118,6 +118,39 @@ test.describe('Module reset - Block level (v8 grid layout)', () => {
   });
 });
 
+test.describe('Module reset - Full reset flow', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/learn/2022/responsive-web-design');
+  });
+
+  test('should reset block progress when confirmed', async ({ page }) => {
+    // Find a block with an enabled reset button (has progress)
+    const blockHeader = page
+      .locator('.block-header-wrapper')
+      .filter({ has: page.locator('.block-reset-button:not(:disabled)') })
+      .first();
+
+    // Open the reset modal
+    await blockHeader.hover();
+    await blockHeader.locator('.block-reset-button').click();
+    await expect(page.getByRole('dialog')).toBeVisible();
+
+    // Enter verification phrase
+    const verifyInput = page.getByRole('textbox');
+    await verifyInput.fill(translations.learn['reset-progress-verify']);
+
+    // Click confirm
+    const confirmButton = page.getByRole('button', {
+      name: translations.learn['reset-progress-confirm']
+    });
+    await confirmButton.click();
+
+    // Modal should close after successful reset — this proves the API
+    // call returned 200 and onResetComplete was called
+    await expect(page.getByRole('dialog')).toBeHidden();
+  });
+});
+
 // Skip: full-stack-developer page is not built in dev environment
 test.describe.skip('Module reset - Chapter level (v9 accordion layout)', () => {
   test.beforeEach(async ({ page }) => {
