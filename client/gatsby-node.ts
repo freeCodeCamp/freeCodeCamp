@@ -34,17 +34,24 @@ exports.createPages = async function createPages({
 
   const { createPage } = actions;
 
-  const {
-    data: { allSuperBlockStructure }
-  } = await graphql(`
-    {
-      allSuperBlockStructure {
-        nodes {
-          superBlock
-        }
+const result = await graphql(`
+  {
+    allSuperBlockStructure {
+      nodes {
+        superBlock
       }
     }
-  `);
+  }
+`)
+
+if (result.errors) {
+  reporter.panic('createPages GraphQL query failed', result.errors)
+  return
+}
+
+const {
+  data: { allSuperBlockStructure }
+} = result
 
   const superBlocks = allSuperBlockStructure.nodes.map(
     (node: { superBlock: string }) => node.superBlock
