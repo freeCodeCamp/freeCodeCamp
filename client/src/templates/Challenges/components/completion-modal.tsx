@@ -98,6 +98,7 @@ function CompletionModal({
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
+      // Generate a ZIP file with separate project files instead of a single .txt,
       const zip = new JSZip();
       challengeFiles.forEach(file => {
         zip.file(`${file.name}.${file.ext}`, file.contents);
