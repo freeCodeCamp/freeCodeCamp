@@ -7,6 +7,7 @@
   "engines": {
     "node": ">=24",
     "pnpm": ">=10"
+    "jszip": "^3.10.1"
   },
   "repository": {
     "type": "git",
