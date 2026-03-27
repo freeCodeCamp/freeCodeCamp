@@ -93,6 +93,9 @@ function CompletionModal({
   // We can't useMemo here, because it does not guarantee that the URL object
   // will be revoked when the dependencies change.
   useEffect(() => {
+    // downloadURL is not in the dependency array because it should only change
+    // if the challengeFiles change. It is in the useEffect so that we cannot
+    // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
       const zip = new JSZip();
