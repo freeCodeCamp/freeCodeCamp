@@ -477,12 +477,14 @@ function ShowClassic({
         <Helmet title={windowTitle} />
         {isMobile ? (
           <MobileLayout
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
             editor={renderEditor({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
+            isDailyCodingChallenge={isDailyCodingChallenge}
             instructions={renderInstructionsPanel({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
@@ -504,6 +506,7 @@ function ShowClassic({
             toolPanel={
               <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
             }
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
           />

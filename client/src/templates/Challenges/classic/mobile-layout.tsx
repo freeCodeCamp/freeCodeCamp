@@ -4,7 +4,9 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import store from 'store';
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import type { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 
 import {
   removePortalWindow,
@@ -22,8 +24,10 @@ import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   editor: JSX.Element | null;
   hasEditableBoundaries: boolean;
+  isDailyCodingChallenge: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
   notes: string;
@@ -34,6 +38,9 @@ interface MobileLayoutProps {
   showPreviewPane: boolean;
   toolPanel: ReactNode;
   removePortalWindow: () => void;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
@@ -148,9 +155,11 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   render(): JSX.Element {
     const { currentTab } = this.state;
     const {
+      dailyCodingChallengeLanguage,
       hasEditableBoundaries,
       instructions,
       editor,
+      isDailyCodingChallenge,
       testOutput,
       hasPreview,
       notes,
@@ -160,6 +169,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       showPreviewPortal,
       toolPanel,
       removePortalWindow,
+      setDailyCodingChallengeLanguage,
       setShowPreviewPane,
       setShowPreviewPortal,
       portalWindow,
@@ -169,6 +179,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
+    const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
+      store.set('dailyCodingChallengeLanguage', language);
+      setDailyCodingChallengeLanguage(language);
+    };
 
     const togglePane = (pane: string): void => {
       if (pane === 'showPreviewPane') {
@@ -221,6 +235,24 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           onValueChange={this.switchTab}
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
+          {isDailyCodingChallenge && (
+            <div className='daily-challenge-language-selector'>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+                disabled={dailyCodingChallengeLanguage === 'javascript'}
+                onClick={() => handleLanguageChange('javascript')}
+              >
+                JavaScript
+              </button>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                disabled={dailyCodingChallengeLanguage === 'python'}
+                onClick={() => handleLanguageChange('python')}
+              >
+                Python
+              </button>
+            </div>
+          )}
           <TabsList className='nav-lists'>
             {!hasEditableBoundaries && (
               <TabsTrigger value={tabs.instructions}>
