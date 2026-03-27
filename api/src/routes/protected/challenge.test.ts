@@ -2222,7 +2222,7 @@ describe('challengeRoutes', () => {
             (typeof getSessionUser)['response']['200']
           >['user'];
 
-          const res = (await superGet('/user/get-session-user')).body as {
+          const res = (await superGet('/user/session-user')).body as {
             user: GetSessionUserResponseBody;
           };
 
