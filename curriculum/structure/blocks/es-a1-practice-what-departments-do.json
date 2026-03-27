@@ -1,0 +1,18 @@
+{
+  "name": "What Departments Do",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-what-departments-do",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69b072832f17186d250f7590", "title": "Task 1" },
+    { "id": "69b072f0bed87c587d6862e1", "title": "Task 2" },
+    { "id": "69b0740bb4be5a221f55baa6", "title": "Task 3" },
+    { "id": "69b07427c6ccd9ddf6b9e7bc", "title": "Task 4" },
+    { "id": "69b0744215a12d12716f8bfd", "title": "Task 5" },
+    { "id": "69b07481d1ba25a3a3a877ac", "title": "Task 6" },
+    { "id": "69b074a3bea5a340a0331739", "title": "Task 7" },
+    { "id": "69b074d9ebbfed102b1cb3b6", "title": "Task 8" }
+  ],
+  "blockLabel": "practice"
+}

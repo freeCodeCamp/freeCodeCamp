@@ -1,0 +1,349 @@
+
+> @freecodecamp/freecodecamp@0.0.1 clean-and-develop /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> pnpm run clean && pnpm install && pnpm run develop
+
+
+> @freecodecamp/freecodecamp@0.0.1 clean /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> npm-run-all -p clean:client clean:api clean:curriculum --serial clean:packages
+
+
+> @freecodecamp/freecodecamp@0.0.1 clean:api /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> cd api && pnpm clean
+
+
+> @freecodecamp/freecodecamp@0.0.1 clean:client /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> cd ./client && pnpm run clean
+
+
+> @freecodecamp/freecodecamp@0.0.1 clean:curriculum /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> rm -rf ./curriculum/generated/curriculum.json
+
+
+> @freecodecamp/client@0.0.1 clean /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/client
+> gatsby clean
+
+
+> @freecodecamp/api@0.0.1 clean /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/api
+> rm -rf dist
+
+info Deleting .cache, public, /Users/mac/Documents/Documents-Pro/ContributionRep
+os/freeCodeCamp/client/node_modules/.cache/babel-loader,
+/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/client/node_mo
+dules/.cache/terser-webpack-plugin
+
+[2K[1A[2K[Ginfo Successfully deleted directories
+
+
+> @freecodecamp/freecodecamp@0.0.1 clean:packages /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+
+Scope: all 16 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +2969
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 2969, reused 2851, downloaded 0, added 10
+Progress: resolved 2969, reused 2851, downloaded 0, added 171
+Progress: resolved 2969, reused 2851, downloaded 0, added 239
+Progress: resolved 2969, reused 2851, downloaded 0, added 328
+Progress: resolved 2969, reused 2851, downloaded 0, added 545
+Progress: resolved 2969, reused 2851, downloaded 0, added 1093
+Progress: resolved 2969, reused 2851, downloaded 0, added 1403
+Progress: resolved 2969, reused 2851, downloaded 0, added 1723
+Progress: resolved 2969, reused 2851, downloaded 0, added 1981
+Progress: resolved 2969, reused 2851, downloaded 0, added 2348
+Progress: resolved 2969, reused 2851, downloaded 0, added 2407
+Progress: resolved 2969, reused 2851, downloaded 0, added 2481
+Progress: resolved 2969, reused 2851, downloaded 0, added 2805
+Progress: resolved 2969, reused 2851, downloaded 0, added 2966
+Progress: resolved 2969, reused 2851, downloaded 0, added 2969, done
+
+dependencies:
++ dotenv 16.4.5
++ eslint 9.39.2
+
+devDependencies:
++ @freecodecamp/eslint-config 1.0.0 <- packages/eslint-config
++ @freecodecamp/shared 0.0.1 <- packages/shared
++ @playwright/test 1.52.0
++ @testing-library/dom 10.4.0
++ @testing-library/jest-dom 6.6.3
++ @types/lodash 4.14.202
++ @types/node 24.10.13
++ debug 4.3.4
++ globals 15.15.0
++ husky 9.0.11
++ identity-obj-proxy 3.0.0
++ js-yaml 3.14.1
++ lint-staged 16.2.7
++ lodash 4.17.21
++ npm-run-all2 5.0.2
++ prettier 3.2.5
++ stylelint 16.14.1
++ tsx 4.19.1
++ turbo 2.8.7
++ typescript 5.9.3
++ webpack-bundle-analyzer 4.10.1
++ yargs 17.7.2
+
+. prepare$ husky
+. prepare: Done
+api postinstall$ prisma generate
+api postinstall: Loaded Prisma config from prisma.config.ts.
+api postinstall: Prisma config detected, skipping environment variable loading.
+api postinstall: Prisma schema loaded from prisma
+api postinstall: ✔ Generated Prisma Client (v6.19.2) to ./../node_modules/.pnpm/@prisma+client@6.19.2_prisma@6.19.2_typescript@5.9.3__typescript@5.9.3/node_modules/@prisma/client in 69ms
+api postinstall: Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+api postinstall: Tip: Want to turn off tips and other hints? https://pris.ly/tip-4-nohints
+api postinstall: Done
+╭ Warning ───────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                            │
+│   Ignored build scripts: @parcel/watcher@2.5.6, core-js-pure@3.48.0, sharp@0.32.6.         │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.   │
+│                                                                                            │
+╰────────────────────────────────────────────────────────────────────────────────────────────╯
+Done in 17.4s using pnpm v10.28.1
+
+> @freecodecamp/freecodecamp@0.0.1 develop /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp
+> turbo develop
+
+• Packages in scope: @freecodecamp/api, @freecodecamp/browser-scripts, @freecodecamp/challenge-builder, @freecodecamp/challenge-linter, @freecodecamp/challenge-parser, @freecodecamp/client, @freecodecamp/curriculum, @freecodecamp/curriculum-helper-scripts, @freecodecamp/e2e, @freecodecamp/eslint-config, @freecodecamp/gatsby-source-challenges, @freecodecamp/scripts-seed, @freecodecamp/seed-exams, @freecodecamp/shared, daily-challenges
+• Running develop in 15 packages
+• Remote caching disabled
+@freecodecamp/challenge-linter:build: cache hit, replaying logs 429eea6ccef7ce5e
+@freecodecamp/challenge-linter:build: 
+@freecodecamp/challenge-linter:build: 
+@freecodecamp/challenge-linter:build: > @freecodecamp/challenge-linter@0.0.1 build /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/packages/challenge-linter
+@freecodecamp/challenge-linter:build: > tsc
+@freecodecamp/challenge-linter:build: 
+@freecodecamp/browser-scripts:build: cache hit, replaying logs 64c8f2b068019b45
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: > @freecodecamp/browser-scripts@1.0.0 build /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/tools/client-plugins/browser-scripts
+@freecodecamp/browser-scripts:build: > pnpm copy-scripts && pnpm bundle
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: > @freecodecamp/browser-scripts@1.0.0 copy-scripts /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/tools/client-plugins/browser-scripts
+@freecodecamp/browser-scripts:build: > tsx ./copy-scripts.ts
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: > @freecodecamp/browser-scripts@1.0.0 bundle /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/tools/client-plugins/browser-scripts
+@freecodecamp/browser-scripts:build: > NODE_OPTIONS="--max-old-space-size=7168" webpack -c webpack.config.cjs --env production
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: assets by info 1.47 KiB [1m[32m[immutable][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m480-4578fda90c40aadc89a0.js[39m[22m 497 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m 1 related asset
+@freecodecamp/browser-scripts:build:   asset [1m[32m109-fda0469852eaff76c698.js[39m[22m 127 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m283-bc799c6bdc285c3f54ef.js[39m[22m 127 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m313-ec1aabf776c7062c5d61.js[39m[22m 127 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m354-12baffc151597e3f2749.js[39m[22m 127 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m437-055aef8574e5b0476c4b.js[39m[22m 127 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m687-7341109c7718c3734323.js[39m[22m 127 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m40-cadb04c1fa85bc22890c.js[39m[22m 125 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build:   asset [1m[32m48-e34cb28d0fc6d280e8eb.js[39m[22m 125 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[minimized][39m[22m
+@freecodecamp/browser-scripts:build: asset [1m[32mtypescript-worker.js[39m[22m 203 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: typescript-worker) 1 related asset
+@freecodecamp/browser-scripts:build: asset [1m[32mpython-worker.js[39m[22m 48.1 KiB [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: python-worker) 1 related asset
+@freecodecamp/browser-scripts:build: asset [1m[32msass-compile.js[39m[22m 439 bytes [1m[32m[emitted][39m[22m [1m[32m[minimized][39m[22m (name: sass-compile) 1 related asset
+@freecodecamp/browser-scripts:build: runtime modules 8.18 KiB 10 modules
+@freecodecamp/browser-scripts:build: orphan modules 235 KiB [1m[33m[orphan][39m[22m 5 modules
+@freecodecamp/browser-scripts:build: cacheable modules 272 KiB
+@freecodecamp/browser-scripts:build:   modules by path [1m./*.ts[39m[22m 245 KiB
+@freecodecamp/browser-scripts:build:     [1m./sass-compile.ts + 1 modules[39m[22m 2.21 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+@freecodecamp/browser-scripts:build:     [1m./python-worker.ts + 2 modules[39m[22m 42 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mModuleConcatenation bailout: Cannot concat with ../../../node_modules/.pnpm/pyodide@0.23.4/node_modules/pyodide/pyodide.js: Module is not an ECMAScript module[39m[22m
+@freecodecamp/browser-scripts:build:     [1m./typescript-worker.ts + 2 modules[39m[22m 201 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+@freecodecamp/browser-scripts:build:   modules by path [1m../../../node_modules/.pnpm/[39m[22m 26.7 KiB
+@freecodecamp/browser-scripts:build:     [1m../../../node_modules/.pnpm/pyodide@0.23.4/node_modules/pyodide/pyodide.js[39m[22m 20.6 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mCommonJS bailout: this is used directly at 1:251-255[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mCommonJS bailout: exports is used directly at 1:87-94[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mStatement (ExpressionStatement) with side effects in source code at 1:0-21092[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mModuleConcatenation bailout: Module is not an ECMAScript module[39m[22m
+@freecodecamp/browser-scripts:build:     [1m../../../node_modules/.pnpm/process@0.11.10/node_modules/process/browser.js[39m[22m 5.29 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mCommonJS bailout: module.exports is used directly at 2:14-28[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mStatement (VariableDeclaration) with side effects in source code at 2:0-34[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mModuleConcatenation bailout: Module is not an ECMAScript module[39m[22m
+@freecodecamp/browser-scripts:build:     [1m../../../node_modules/.pnpm/node-fetch@2.7.0/node_modules/node-fetch/browser.js[39m[22m 781 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mCommonJS bailout: exports is used directly at 16:17-24[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mCommonJS bailout: module.exports is used directly at 16:0-14[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mStatement (VariableDeclaration) with side effects in source code at 14:0-31[39m[22m
+@freecodecamp/browser-scripts:build:       [1m[33mModuleConcatenation bailout: Module is not an ECMAScript module[39m[22m
+@freecodecamp/browser-scripts:build:   + 8 modules
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: [1m[33mWARNING[39m[22m in [1m./sass-compile.ts[39m[22m [1m[32m16:33-40[39m[22m
+@freecodecamp/browser-scripts:build: [1mShould not import the named export 'version' (imported as 'version') from default-exporting module (only default export is available soon)[39m[22m
+@freecodecamp/browser-scripts:build: 
+@freecodecamp/browser-scripts:build: webpack 5.90.3 compiled with [1m[33m1 warning[39m[22m in 934 ms
+@freecodecamp/shared:build: cache hit, replaying logs c1325b205516b2ab
+@freecodecamp/shared:build: 
+@freecodecamp/shared:build: 
+@freecodecamp/shared:build: > @freecodecamp/shared@0.0.1 build /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/packages/shared
+@freecodecamp/shared:build: > tsdown --format cjs --format esm
+@freecodecamp/shared:build: 
+@freecodecamp/shared:build: [34mℹ[39m tsdown [2mv0.16.8[22m powered by rolldown [2mv1.0.0-beta.52[22m
+@freecodecamp/shared:build: [34mℹ[39m Using tsdown config: [4m/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/packages/shared/tsdown.config.js[24m
+@freecodecamp/shared:build: [34mℹ[39m entry: [34msrc/config/blocks.ts, src/config/catalog.ts, src/config/certification-settings.ts, src/config/challenge-types.ts, src/config/chapters.ts, src/config/constants.ts, src/config/curriculum.ts, src/config/donation-settings.ts, src/config/i18n.ts, src/config/modules.ts, src/utils/get-lines.ts, src/utils/is-audited.ts, src/utils/polyvinyl.ts, src/utils/shuffle-array.ts, src/utils/validate.ts[39m
+@freecodecamp/shared:build: [34mℹ[39m target: [34mnode24.0.0[39m
+@freecodecamp/shared:build: [34mℹ[39m tsconfig: [34mtsconfig.json[39m
+@freecodecamp/shared:build: [34mℹ[39m Build start
+@freecodecamp/shared:build: 
+@freecodecamp/shared:build: [43m WARN [49m We recommend using the ESM format instead of CommonJS.
+@freecodecamp/shared:build: The ESM format is compatible with modern platforms and runtimes, and most new libraries are now distributed only in ESM format.
+@freecodecamp/shared:build: Learn more at https://nodejs.org/en/learn/modules/publishing-a-package#how-did-we-get-here
+@freecodecamp/shared:build: 
+@freecodecamp/shared:build: [34mℹ[39m Cleaning 234 files
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/certification-settings.cjs[22m  [2m17.27 kB[22m [2m│ gzip: 3.47 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/constants.cjs[22m               [2m 8.03 kB[22m [2m│ gzip: 2.69 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/catalog.cjs[22m                 [2m 4.38 kB[22m [2m│ gzip: 0.86 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/donation-settings.cjs[22m       [2m 4.20 kB[22m [2m│ gzip: 1.46 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/challenge-types.cjs[22m         [2m 3.94 kB[22m [2m│ gzip: 1.03 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mutils/polyvinyl.cjs[22m                [2m 2.78 kB[22m [2m│ gzip: 0.89 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/chapters.cjs[22m                [2m 2.26 kB[22m [2m│ gzip: 0.65 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/blocks.cjs[22m                  [2m 2.19 kB[22m [2m│ gzip: 0.75 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mutils/validate.cjs[22m                 [2m 1.51 kB[22m [2m│ gzip: 0.60 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/curriculum.cjs[22m              [2m 1.01 kB[22m [2m│ gzip: 0.28 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/i18n.cjs[22m                    [2m 0.43 kB[22m [2m│ gzip: 0.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mutils/shuffle-array.cjs[22m            [2m 0.38 kB[22m [2m│ gzip: 0.26 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mutils/is-audited.cjs[22m               [2m 0.34 kB[22m [2m│ gzip: 0.22 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mutils/get-lines.cjs[22m                [2m 0.26 kB[22m [2m│ gzip: 0.19 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[1mconfig/modules.cjs[22m                 [2m 0.00 kB[22m [2m│ gzip: 0.02 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mcurriculum-ZuzLyTjw.cjs            [2m15.74 kB[22m [2m│ gzip: 2.73 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mi18n-BKddMRHA.cjs                  [2m 3.70 kB[22m [2m│ gzip: 0.98 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m 17 files, total: 68.40 kB
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/certification-settings.mjs[22m        [2m15.61 kB[22m [2m│ gzip: 3.42 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/constants.mjs[22m                     [2m 8.02 kB[22m [2m│ gzip: 2.72 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/catalog.mjs[22m                       [2m 3.89 kB[22m [2m│ gzip: 0.87 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/challenge-types.mjs[22m               [2m 3.82 kB[22m [2m│ gzip: 1.04 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/donation-settings.mjs[22m             [2m 3.82 kB[22m [2m│ gzip: 1.45 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mutils/polyvinyl.mjs[22m                      [2m 2.61 kB[22m [2m│ gzip: 0.88 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/chapters.mjs[22m                      [2m 2.23 kB[22m [2m│ gzip: 0.66 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/blocks.mjs[22m                        [2m 2.19 kB[22m [2m│ gzip: 0.77 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mutils/validate.mjs[22m                       [2m 1.35 kB[22m [2m│ gzip: 0.61 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/curriculum.mjs[22m                    [2m 0.70 kB[22m [2m│ gzip: 0.28 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mutils/shuffle-array.mjs[22m                  [2m 0.41 kB[22m [2m│ gzip: 0.28 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mutils/is-audited.mjs[22m                     [2m 0.34 kB[22m [2m│ gzip: 0.23 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mutils/get-lines.mjs[22m                      [2m 0.29 kB[22m [2m│ gzip: 0.22 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/i18n.mjs[22m                          [2m 0.29 kB[22m [2m│ gzip: 0.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[1mconfig/modules.mjs[22m                       [2m 0.01 kB[22m [2m│ gzip: 0.03 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/certification-settings.mjs.map    [2m22.92 kB[22m [2m│ gzip: 4.62 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mcurriculum-CESnivxM.mjs.map              [2m18.81 kB[22m [2m│ gzip: 3.69 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mcurriculum-CESnivxM.mjs                  [2m14.21 kB[22m [2m│ gzip: 2.66 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/constants.mjs.map                 [2m12.81 kB[22m [2m│ gzip: 3.01 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/constants.d.mts.map               [2m 6.66 kB[22m [2m│ gzip: 0.78 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/donation-settings.mjs.map         [2m 6.54 kB[22m [2m│ gzip: 2.09 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/polyvinyl.mjs.map                  [2m 6.46 kB[22m [2m│ gzip: 2.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/challenge-types.mjs.map           [2m 6.31 kB[22m [2m│ gzip: 1.69 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/catalog.mjs.map                   [2m 6.10 kB[22m [2m│ gzip: 0.94 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mi18n-0iWkYce4.mjs.map                    [2m 5.31 kB[22m [2m│ gzip: 1.76 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mi18n-0iWkYce4.mjs                        [2m 2.94 kB[22m [2m│ gzip: 0.94 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/certification-settings.d.mts.map  [2m 2.87 kB[22m [2m│ gzip: 0.94 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/validate.mjs.map                   [2m 2.48 kB[22m [2m│ gzip: 1.01 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/blocks.mjs.map                    [2m 2.12 kB[22m [2m│ gzip: 0.81 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/chapters.mjs.map                  [2m 2.03 kB[22m [2m│ gzip: 0.79 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/polyvinyl.d.mts.map                [2m 1.73 kB[22m [2m│ gzip: 0.70 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mcurriculum-DFRVeIJk.d.mts.map            [2m 1.00 kB[22m [2m│ gzip: 0.50 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/donation-settings.d.mts.map       [2m 0.89 kB[22m [2m│ gzip: 0.45 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/shuffle-array.mjs.map              [2m 0.85 kB[22m [2m│ gzip: 0.53 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/get-lines.mjs.map                  [2m 0.59 kB[22m [2m│ gzip: 0.36 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/is-audited.mjs.map                 [2m 0.51 kB[22m [2m│ gzip: 0.32 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mi18n-UDyEMuxh.d.mts.map                  [2m 0.41 kB[22m [2m│ gzip: 0.26 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/validate.d.mts.map                 [2m 0.41 kB[22m [2m│ gzip: 0.27 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/challenge-types.d.mts.map         [2m 0.39 kB[22m [2m│ gzip: 0.20 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/catalog.d.mts.map                 [2m 0.32 kB[22m [2m│ gzip: 0.22 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mconfig/chapters.d.mts.map                [2m 0.29 kB[22m [2m│ gzip: 0.20 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/shuffle-array.d.mts.map            [2m 0.23 kB[22m [2m│ gzip: 0.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mblocks-BlZtU_R4.d.mts.map                [2m 0.20 kB[22m [2m│ gzip: 0.16 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mmodules-DN7HQSPA.d.mts.map               [2m 0.17 kB[22m [2m│ gzip: 0.16 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/is-audited.d.mts.map               [2m 0.15 kB[22m [2m│ gzip: 0.14 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22mutils/get-lines.d.mts.map                [2m 0.14 kB[22m [2m│ gzip: 0.13 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/constants.d.mts[22m[39m                   [2m 7.70 kB[22m [2m│ gzip: 2.69 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/certification-settings.d.mts[22m[39m      [2m 6.42 kB[22m [2m│ gzip: 1.72 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/donation-settings.d.mts[22m[39m           [2m 3.09 kB[22m [2m│ gzip: 0.75 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mutils/polyvinyl.d.mts[22m[39m                    [2m 2.64 kB[22m [2m│ gzip: 0.73 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/challenge-types.d.mts[22m[39m             [2m 2.11 kB[22m [2m│ gzip: 0.55 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/chapters.d.mts[22m[39m                    [2m 1.75 kB[22m [2m│ gzip: 0.70 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/catalog.d.mts[22m[39m                     [2m 0.75 kB[22m [2m│ gzip: 0.43 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mutils/validate.d.mts[22m[39m                     [2m 0.73 kB[22m [2m│ gzip: 0.30 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/curriculum.d.mts[22m[39m                  [2m 0.73 kB[22m [2m│ gzip: 0.29 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mutils/is-audited.d.mts[22m[39m                   [2m 0.31 kB[22m [2m│ gzip: 0.22 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/i18n.d.mts[22m[39m                        [2m 0.29 kB[22m [2m│ gzip: 0.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mutils/shuffle-array.d.mts[22m[39m                [2m 0.25 kB[22m [2m│ gzip: 0.20 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mutils/get-lines.d.mts[22m[39m                    [2m 0.18 kB[22m [2m│ gzip: 0.15 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/blocks.d.mts[22m[39m                      [2m 0.11 kB[22m [2m│ gzip: 0.10 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32m[1mconfig/modules.d.mts[22m[39m                     [2m 0.11 kB[22m [2m│ gzip: 0.10 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32mcurriculum-DFRVeIJk.d.mts[39m                [2m 4.40 kB[22m [2m│ gzip: 1.65 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32mblocks-BlZtU_R4.d.mts[39m                    [2m 1.85 kB[22m [2m│ gzip: 0.72 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32mi18n-UDyEMuxh.d.mts[39m                      [2m 1.50 kB[22m [2m│ gzip: 0.53 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m [2mdist/[22m[32mmodules-DN7HQSPA.d.mts[39m                   [2m 0.29 kB[22m [2m│ gzip: 0.23 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [34m[ESM][39m 65 files, total: 207.63 kB
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mconfig/constants.d.cts.map               [2m6.66 kB[22m [2m│ gzip: 0.78 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mconfig/certification-settings.d.cts.map  [2m2.87 kB[22m [2m│ gzip: 0.94 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mutils/polyvinyl.d.cts.map                [2m1.73 kB[22m [2m│ gzip: 0.70 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mcurriculum-DvA5wyf7.d.cts.map            [2m1.00 kB[22m [2m│ gzip: 0.50 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mconfig/donation-settings.d.cts.map       [2m0.89 kB[22m [2m│ gzip: 0.45 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mi18n-kX6N-QBg.d.cts.map                  [2m0.41 kB[22m [2m│ gzip: 0.26 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mutils/validate.d.cts.map                 [2m0.41 kB[22m [2m│ gzip: 0.27 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mconfig/challenge-types.d.cts.map         [2m0.39 kB[22m [2m│ gzip: 0.20 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mconfig/catalog.d.cts.map                 [2m0.32 kB[22m [2m│ gzip: 0.22 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mconfig/chapters.d.cts.map                [2m0.29 kB[22m [2m│ gzip: 0.20 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mutils/shuffle-array.d.cts.map            [2m0.23 kB[22m [2m│ gzip: 0.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mblocks-DSYgZXuc.d.cts.map                [2m0.20 kB[22m [2m│ gzip: 0.16 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mmodules-CD6qR9J9.d.cts.map               [2m0.17 kB[22m [2m│ gzip: 0.16 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mutils/is-audited.d.cts.map               [2m0.15 kB[22m [2m│ gzip: 0.14 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22mutils/get-lines.d.cts.map                [2m0.14 kB[22m [2m│ gzip: 0.13 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/constants.d.cts[22m[39m                   [2m7.70 kB[22m [2m│ gzip: 2.69 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/certification-settings.d.cts[22m[39m      [2m6.42 kB[22m [2m│ gzip: 1.72 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/donation-settings.d.cts[22m[39m           [2m3.09 kB[22m [2m│ gzip: 0.75 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mutils/polyvinyl.d.cts[22m[39m                    [2m2.64 kB[22m [2m│ gzip: 0.73 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/challenge-types.d.cts[22m[39m             [2m2.11 kB[22m [2m│ gzip: 0.55 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/chapters.d.cts[22m[39m                    [2m1.75 kB[22m [2m│ gzip: 0.70 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/catalog.d.cts[22m[39m                     [2m0.75 kB[22m [2m│ gzip: 0.43 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mutils/validate.d.cts[22m[39m                     [2m0.73 kB[22m [2m│ gzip: 0.30 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/curriculum.d.cts[22m[39m                  [2m0.73 kB[22m [2m│ gzip: 0.29 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mutils/is-audited.d.cts[22m[39m                   [2m0.31 kB[22m [2m│ gzip: 0.23 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/i18n.d.cts[22m[39m                        [2m0.29 kB[22m [2m│ gzip: 0.17 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mutils/shuffle-array.d.cts[22m[39m                [2m0.25 kB[22m [2m│ gzip: 0.20 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mutils/get-lines.d.cts[22m[39m                    [2m0.18 kB[22m [2m│ gzip: 0.15 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/blocks.d.cts[22m[39m                      [2m0.11 kB[22m [2m│ gzip: 0.10 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32m[1mconfig/modules.d.cts[22m[39m                     [2m0.11 kB[22m [2m│ gzip: 0.10 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32mcurriculum-DvA5wyf7.d.cts[39m                [2m4.40 kB[22m [2m│ gzip: 1.65 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32mblocks-DSYgZXuc.d.cts[39m                    [2m1.85 kB[22m [2m│ gzip: 0.72 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32mi18n-kX6N-QBg.d.cts[39m                      [2m1.50 kB[22m [2m│ gzip: 0.53 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m [2mdist/[22m[32mmodules-CD6qR9J9.d.cts[39m                   [2m0.29 kB[22m [2m│ gzip: 0.23 kB[22m
+@freecodecamp/shared:build: [34mℹ[39m [33m[CJS][39m 34 files, total: 51.05 kB
+@freecodecamp/shared:build: [32m✔[39m Build complete in [32m742ms[39m
+@freecodecamp/challenge-builder:build: cache hit, replaying logs 6c2bf7173528e5d4
+@freecodecamp/challenge-builder:build: 
+@freecodecamp/challenge-builder:build: 
+@freecodecamp/challenge-builder:build: > @freecodecamp/challenge-builder@0.0.1 build /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/packages/challenge-builder
+@freecodecamp/challenge-builder:build: > tsc
+@freecodecamp/challenge-builder:build: 
+@freecodecamp/curriculum:build: cache miss, executing 3d883535c5457bba
+@freecodecamp/curriculum:build: 
+@freecodecamp/curriculum:build: > @freecodecamp/curriculum@0.0.0-next.4 build /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/curriculum
+@freecodecamp/curriculum:build: > tsc && tsx ./src/generate/build-curriculum
+@freecodecamp/curriculum:build: 
+@freecodecamp/curriculum:build: /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/tools/challenge-parser/parser/plugins/validate-sections.js:122
+@freecodecamp/curriculum:build:       throw new Error(errors.join('\n'));
+@freecodecamp/curriculum:build:             ^
+@freecodecamp/curriculum:build: 
+@freecodecamp/curriculum:build: Error: Invalid heading levels: "# --question--" should be "### --question--". in file /Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/curriculum/challenges/english/blocks/es-a1-learn-basic-personal-information/6936e5165618fcda6627ec3b.md
+@freecodecamp/curriculum:build:     at transformer (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/tools/challenge-parser/parser/plugins/validate-sections.js:122:13)
+@freecodecamp/curriculum:build:     at wrapped (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/wrap.js:25:19)
+@freecodecamp/curriculum:build:     at next (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/index.js:57:24)
+@freecodecamp/curriculum:build:     at done (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/wrap.js:55:16)
+@freecodecamp/curriculum:build:     at then (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/wrap.js:62:5)
+@freecodecamp/curriculum:build:     at wrapped (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/wrap.js:45:9)
+@freecodecamp/curriculum:build:     at next (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/index.js:57:24)
+@freecodecamp/curriculum:build:     at Object.run (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/trough@1.0.5/node_modules/trough/index.js:31:10)
+@freecodecamp/curriculum:build:     at executor (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/unified@7.1.0/node_modules/unified/index.js:295:20)
+@freecodecamp/curriculum:build:     at processor.run (/Users/mac/Documents/Documents-Pro/ContributionRepos/freeCodeCamp/node_modules/.pnpm/unified@7.1.0/node_modules/unified/index.js:292:5)
+@freecodecamp/curriculum:build: 
+@freecodecamp/curriculum:build: Node.js v24.11.1
+@freecodecamp/curriculum:build:  ELIFECYCLE  Command failed with exit code 1.
+
+ Tasks:    4 successful, 5 total
+Cached:    4 cached, 5 total
+  Time:    13.348s 
+Failed:    @freecodecamp/curriculum#build
+
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.
