@@ -16,7 +16,7 @@ This will extend the search to the right half of the current search areas in the
 You should update the `low` variable to `mid + 1`.
 
 ```js
-assert.match(String(binarySearch), /low\s*=\s*mid\s*\+\s*1/);
+assert.match(__helpers.removeJSComments(String(binarySearch)), /low\s*=\s*mid\s*\+\s*1/);
 ```
 
 # --seed--
