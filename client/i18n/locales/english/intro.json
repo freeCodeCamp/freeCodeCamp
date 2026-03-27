@@ -5652,6 +5652,13 @@
           "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
         ]
       },
+      "workshop-merge-sort-js": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
+      },
       "lab-bubble-sort-algorithm": {
         "title": "Implement the Bubble Sort Algorithm",
         "intro": [
