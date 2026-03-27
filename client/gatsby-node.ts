@@ -120,11 +120,12 @@ exports.onCreateBabelConfig = ({ actions }: any) => {
 exports.createSchemaCustomization = ({ actions }: any) => {
   const { createTypes } = actions;
 
-  const typeDefs = `
-    type ChallengeNodeChallengeHooks {
-      afterEach: String
-    }
-  `;
+// This hook is supported by the test runner, but is not currently used by the
+// client, so we have to tell Gatsby that it exists.
+const typeDefs = `
+  type ChallengeNodeChallengeHooks {
+    afterEach: String
+  }
 
   createTypes(typeDefs);
 };
