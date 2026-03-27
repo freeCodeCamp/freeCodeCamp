@@ -1,3 +1,5 @@
+// NEW: used to create ZIP file for better solution download format
+import JSZip from 'jszip';
 import React, { useEffect, useCallback, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -97,10 +99,33 @@ function CompletionModal({
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
-      setDownloadURL(URL.createObjectURL(blob));
-    }
+  // const allFileContents = combineFileData(challengeFiles);
+  // const blob = new Blob([allFileContents], { type: 'text/json' });
+  // setDownloadURL(URL.createObjectURL(blob));
+
+  // NEW LOGIC: create ZIP file with separate files
+  const zip = new JSZip();
+
+  challengeFiles.forEach(file => {
+    let fileName = `${file.name}.${file.ext}`;
+
+    // Normalize only when necessary (avoid overwriting multiple files)
+    if (file.ext === 'html' && !zip.file('index.html')) fileName = 'index.html';
+    if (file.ext === 'css' && !zip.file('styles.css')) fileName = 'styles.css';
+    if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
+    
+    zip.file(fileName, file.contents);
+  });
+
+  // Generate ZIP and convert to downloadable URL (same pattern as before)
+  zip.generateAsync({ type: 'blob' })
+  .then(content => {
+    setDownloadURL(URL.createObjectURL(content));
+  })
+  .catch(err => {
+    console.error('ZIP generation failed:', err);
+  });
+}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeFiles]);
 
@@ -194,7 +219,8 @@ function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            // Changed from .txt to .zip as we now export proper project structure
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
