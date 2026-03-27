@@ -42,16 +42,16 @@ const result = await graphql(`
       }
     }
   }
-`)
+`);
 
 if (result.errors) {
-  reporter.panic('createPages GraphQL query failed', result.errors)
-  return
+  reporter.panic('createPages GraphQL query failed', result.errors);
+  return;
 }
 
 const {
   data: { allSuperBlockStructure }
-} = result
+} = result;
 
   const superBlocks = allSuperBlockStructure.nodes.map(
     (node: { superBlock: string }) => node.superBlock
