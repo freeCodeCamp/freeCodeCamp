@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
+
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
@@ -35,26 +36,27 @@ exports.createPages = async function createPages({
   const { createPage } = actions;
 
   const result = await graphql(`
-  {
-    allSuperBlockStructure {
-      nodes {
-        superBlock
+    {
+      allSuperBlockStructure {
+        nodes {
+          superBlock
+        }
       }
     }
-  }
-`);
+  `);
 
   if (result.errors) {
-  reporter.panic('createPages GraphQL query failed', result.errors);
-}
+    reporter.panic('createPages GraphQL query failed', result.errors);
+  }
 
   const {
-  data: { allSuperBlockStructure }
-} = result;
+    data: { allSuperBlockStructure }
+  } = result;
 
   const superBlocks = allSuperBlockStructure.nodes.map(
     (node: { superBlock: string }) => node.superBlock
   );
+
   superBlocks.forEach((superBlock: string) => {
     createSuperBlockIntroPages(createPage)({ superBlock });
   });
@@ -62,7 +64,6 @@ exports.createPages = async function createPages({
 
 exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
   const newPlugins = [
-    // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({
       Buffer: ['buffer', 'Buffer']
     }),
@@ -70,14 +71,15 @@ exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
       process: 'process/browser'
     })
   ];
-  // The monaco editor relies on some browser only globals so should not be
-  // involved in SSR. Also, if the plugin is used during the 'build-html' or
-  // 'develop-html' stage it overwrites the minfied files with ordinary ones.
+
   if (stage !== 'build-html' && stage !== 'develop-html') {
     newPlugins.push(
-      new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
+      new MonacoWebpackPlugin({
+        filename: '[name].worker-[contenthash].js'
+      })
     );
   }
+
   actions.setWebpackConfig({
     resolve: {
       fallback: {
@@ -109,6 +111,7 @@ exports.onCreateBabelConfig = ({ actions }: any) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-function-bind'
   });
+
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
@@ -116,14 +119,12 @@ exports.onCreateBabelConfig = ({ actions }: any) => {
 
 exports.createSchemaCustomization = ({ actions }: any) => {
   const { createTypes } = actions;
-  // This hook is supported by the test runner, but is not currently used by the
-  // client, so we have to tell Gatsby that it exists.
+
   const typeDefs = `
     type ChallengeNodeChallengeHooks {
       afterEach: String
     }
   `;
+
   createTypes(typeDefs);
 };
-
-export {};
