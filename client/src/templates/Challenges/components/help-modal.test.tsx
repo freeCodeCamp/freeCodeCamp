@@ -21,12 +21,12 @@ describe('generateSearchLink', () => {
   it("should return a link with search query containing block name and challenge title if the title includes 'task'", () => {
     const link = generateSearchLink(
       'Task 10',
-      'en-a2-learn-welcome-to-your-new-workspace',
+      'learn-greetings-in-your-first-day-at-the-office',
       'a2-english-for-developers'
     );
 
     expect(link).toBe(
-      'https://forum.freecodecamp.org/search?q=a2-english-for-developers.blocks.en-a2-learn-welcome-to-your-new-workspace.title%20-%20Task%2010%20in%3Atitle'
+      'https://forum.freecodecamp.org/search?q=a2-english-for-developers.blocks.learn-greetings-in-your-first-day-at-the-office.title%20-%20Task%2010%20in%3Atitle'
     );
   });
 

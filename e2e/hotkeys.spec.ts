@@ -23,7 +23,7 @@ const links = {
   video2:
     '/learn/python-for-everybody/python-for-everybody/introduction-hardware-architecture',
   multipleChoiceQuestion:
-    '/learn/a2-english-for-developers/en-a2-learn-welcome-to-your-new-workspace/task-7',
+    '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-7',
   assignment:
     '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
 };

@@ -308,7 +308,7 @@ export class Block extends Component<BlockProps> {
     /**
      * TaskGridBlock displays tasks in a grid and dialogues separately.
      * This layout is used for task-based blocks.
-     * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#en-a2-learn-welcome-to-your-new-workspace
+     * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#learn-greetings-in-your-first-day-at-the-office
      */
     const TaskGridBlock = (
       <Element name={block}>
