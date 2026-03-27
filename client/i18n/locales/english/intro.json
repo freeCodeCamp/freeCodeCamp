@@ -5726,6 +5726,13 @@
           "Before you are quizzed on graphs and trees, you should review what you've learned."
         ]
       },
+      "quiz-graph-and-trees-js": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Graphs and Trees Quiz",
+          "Test what you've learned about graphs and trees with this quiz."
+        ]
+      },
       "lecture-understanding-dynamic-programming-js": {
         "title": "Understanding Dynamic Programming",
         "intro": [
