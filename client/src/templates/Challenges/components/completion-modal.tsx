@@ -1,3 +1,5 @@
+// NEW: used to create ZIP file for better solution download format
+import JSZip from 'jszip';
 import React, { useEffect, useCallback, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -89,18 +91,35 @@ function CompletionModal({
 }: CompletionModalProps): JSX.Element {
   const [downloadURL, setDownloadURL] = useState<string>();
   const submitChallenge = useSubmit();
-  // We can't useMemo here, because it does not guarantee that the URL object
-  // will be revoked when the dependencies change.
+
   useEffect(() => {
-    // downloadURL is not in the dependency array because it should only change
-    // if the challengeFiles change. It is in the useEffect so that we cannot
-    // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
+
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
-      setDownloadURL(URL.createObjectURL(blob));
+      // NEW LOGIC: create ZIP file with separate files
+      const zip = new JSZip();
+
+      challengeFiles.forEach(file => {
+        let fileName = `${file.name}.${file.ext}`;
+
+        if (file.ext === 'html' && !zip.file('index.html')) fileName = 'index.html';
+        if (file.ext === 'css' && !zip.file('styles.css')) fileName = 'styles.css';
+        if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
+
+        zip.file(fileName, file.contents);
+      });
+
+      // Generate ZIP and convert to downloadable URL (same pattern as before)
+      zip
+        .generateAsync({ type: 'blob' })
+        .then((content: Blob) => {
+          setDownloadURL(URL.createObjectURL(content));
+        })
+        .catch((err: unknown) => {
+          console.error('ZIP generation failed:', err);
+        });
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeFiles]);
 
@@ -124,8 +143,6 @@ function CompletionModal({
       }
       if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
-        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
-        // getting to it.
         e.stopPropagation();
         submitChallenge();
       }
@@ -134,7 +151,6 @@ function CompletionModal({
   );
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
-
   const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
 
   let buttonText;
@@ -194,7 +210,7 @@ function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
