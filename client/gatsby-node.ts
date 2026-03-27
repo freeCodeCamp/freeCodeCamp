@@ -64,6 +64,7 @@ exports.createPages = async function createPages({
 
 exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
   const newPlugins = [
+    // We add the shims of the node globals to the global scope
     new webpack.ProvidePlugin({
       Buffer: ['buffer', 'Buffer']
     }),
@@ -71,6 +72,10 @@ exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
       process: 'process/browser'
     })
   ];
+
+  // The monaco editor relies on some browser only globals so should not be
+  // involved in SSR. Also, if the plugin is used during the 'build-html' or
+  // 'develop-html' stage it overwrites the minfied files with ordinary ones.
 
   if (stage !== 'build-html' && stage !== 'develop-html') {
     newPlugins.push(
