@@ -1,12 +1,12 @@
 {
   "isUpcomingChange": true,
-  "dashedName": "en-a2-quiz-introductions-online-team-meeting",
+  "dashedName": "en-a2-quiz-meeting-introductions-at-work",
   "helpCategory": "English",
   "blockLayout": "link",
   "challengeOrder": [
     {
       "id": "696021f490b26a3fd15ce114",
-      "title": "Online Team Introductions Quiz"
+      "title": "Meeting Introductions at Work Quiz"
     }
   ],
   "blockLabel": "quiz"
