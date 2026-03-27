@@ -4,6 +4,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
+import JSZip from 'jszip';
 
 import Login from '../../../components/Header/components/login';
 import {
@@ -92,14 +93,21 @@ function CompletionModal({
   // We can't useMemo here, because it does not guarantee that the URL object
   // will be revoked when the dependencies change.
   useEffect(() => {
-    // downloadURL is not in the dependency array because it should only change
-    // if the challengeFiles change. It is in the useEffect so that we cannot
-    // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
-      setDownloadURL(URL.createObjectURL(blob));
+      const zip = new JSZip();
+      challengeFiles.forEach(file => {
+        zip.file(`${file.name}.${file.ext}`, file.contents);
+      });
+
+      zip
+        .generateAsync({ type: 'blob' })
+        .then(blob => {
+          setDownloadURL(URL.createObjectURL(blob));
+        })
+        .catch(err => {
+          console.error('ZIP generation failed', err);
+        });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeFiles]);
@@ -194,7 +202,7 @@ function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
