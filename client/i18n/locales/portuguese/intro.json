@@ -1411,36 +1411,6 @@
       }
     }
   },
-  "learn-prompting-fundamentals": {
-    "title": "Learn Prompting Fundamentals",
-    "summary": [
-      "Learn the fundamentals of writing good prompts in this video course."
-    ],
-    "intro": [
-      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
-    ],
-    "note": "",
-    "blocks": {
-      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
-        "title": "Foundations of AI & Language Models",
-        "intro": [
-          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
-        ]
-      },
-      "learn-prompting-fundamentals-core-concepts": {
-        "title": "Core Concepts",
-        "intro": [
-          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
-        ]
-      },
-      "learn-prompting-fundamentals-practical-application-and-best-practices": {
-        "title": "Practical Application & Best Practices",
-        "intro": [
-          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
-        ]
-      }
-    }
-  },
   "learn-oop-with-python": {
     "title": "Learn OOP with Python",
     "summary": [
@@ -4833,6 +4803,19 @@
           "Nestas lições, você aprenderá os fundamentos dos objetos JavaScript, incluindo como criá-los, acessar suas propriedades e entender a diferença entre tipos de dados primitivos e não primitivos."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
+      "lab-cargo-manifest-validator": {
+        "title": "Build a Cargo Manifest Validator",
+        "intro": [
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
+        ]
+      },
       "lecture-working-with-json": {
         "title": "Trabalhando com JSON",
         "intro": [
@@ -7132,6 +7115,12 @@
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
         ]
       },
+      "lecture-working-with-express": {
+        "title": "Working with Express",
+        "intro": [
+          "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
@@ -7215,6 +7204,13 @@
         "title": "Trabalhando com Ferramentas de HTML",
         "intro": [
           "Nestas lições, você aprenderá sobre ferramentas de HTML e como elas permitem que você escreva um código melhor. Estas ferramentas incluem validadores HTML, DOM Inspector e as ferramentas de desenvolvimento dos navegadores."
+        ]
+      },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
       "review-html-tables-and-forms": {
@@ -8616,7 +8612,7 @@
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Bem-vindo ao Chinês Profissional A1",
       "zh-a1-chapter-pinyin": "Pinyin",
       "zh-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
-      "zh-a1-chapter-introducing-colleagues-and-family": "Apresentando Colegas e Família",
+      "zh-a1-chapter-numbers-and-personal-information": "Numbers and Personal Information",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressando o que você pode e não pode fazer"
     },
     "modules": {
@@ -8624,8 +8620,8 @@
       "zh-a1-module-initials-and-finals": "Iniciais e Finais",
       "zh-a1-module-greetings-and-basic-introductions": "Saudações e Introduções Básicas",
       "zh-a1-module-asking-and-giving-basic-information": "Perguntando e Dando Informações Básicas",
-      "zh-a1-module-introducing-others": "Apresentando Outros",
-      "zh-a1-module-getting-to-know-the-team": "Conhecendo a Equipe",
+      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Falando sobre Habilidades Pessoais",
       "zh-a1-module-discussing-team-skills": "Discutindo Habilidades da Equipe"
     },
@@ -8814,6 +8810,38 @@
       },
       "zh-a1-practice-pinyin": {
         "title": "Prática de Pinyin",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-0-to-10": {
+        "title": "Numbers 0 to 10",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-0-to-10": {
+        "title": "Numbers 0 to 10 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-11-to-19": {
+        "title": "Numbers 11 to 19",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-11-to-19": {
+        "title": "Numbers 11 to 19 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-20-to-99": {
+        "title": "Numbers 20 to 99",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-20-to-99": {
+        "title": "Numbers 20 to 99 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-numbers-below-100": {
+        "title": "Numbers below 100 Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-numbers-below-100": {
+        "title": "Numbers below 100 Quiz",
         "intro": ["", ""]
       }
     }
@@ -9038,24 +9066,6 @@
         "intro": [
           "O questionário a seguir testará seu conhecimento sobre os conceitos de HTML semântico que você aprendeu até agora.",
           "Se você está se preparando para o exame, existem vários conjuntos de questionários disponíveis para prática. Após concluir um questionário, você pode revisitar esta página para acessar um novo conjunto de perguntas."
-        ]
-      }
-    }
-  },
-  "lab-survey-form": {
-    "title": "Crie um formulário de pesquisa ",
-    "summary": [
-      "Crie um formulário de pesquisa completo enquanto pratica a estrutura HTML e controles de formulário acessíveis."
-    ],
-    "intro": [
-      "Crie um formulário de pesquisa completo com HTML semântico e inputs acessíveis."
-    ],
-    "blocks": {
-      "lab-survey-form": {
-        "title": "Crie um Formulário de Pesquisa",
-        "intro": [
-          "Neste laboratório, você revisará formulários HTML criando um formulário de pesquisa.",
-          "Você praticará o trabalho com o elemento <code>label</code>, os diferentes elementos <code>input</code>, o atributo <code>required</code> e mais. "
         ]
       }
     }
@@ -9577,6 +9587,13 @@
           "Você praticará o alinhamento de elementos usando propriedades de flexbox como <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> e mais."
         ]
       },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      },
       "review-css-flexbox": {
         "title": "Revisão sobre o Flexbox do CSS ",
         "intro": [
@@ -9588,24 +9605,6 @@
         "title": "Questionário sobre o Flexbox do CSS ",
         "intro": [
           "Teste o que você aprendeu sobre Flexbox do CSS com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-page-of-playing-cards": {
-    "title": "Construa uma página de jogos de cartas ",
-    "summary": [
-      "Crie um layout multi-cartão para praticar composição flexível em CSS."
-    ],
-    "intro": [
-      "Crie um layout baseado em cartões e pratique estilização reutilizável."
-    ],
-    "blocks": {
-      "lab-page-of-playing-cards": {
-        "title": "Crie uma página de jogos de cartas",
-        "intro": [
-          "Neste laboratório, você usará flexbox para criar uma página da web de cartas de baralho.",
-          "Você praticará o alinhamento de elementos usando propriedades de flexbox como <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> e mais."
         ]
       }
     }
@@ -9758,6 +9757,13 @@
           "Neste workshop, você criará uma folha de balanço usando pseudosseletores. Você aprenderá como alterar o estilo de um elemento quando passar o mouse sobre ele e acionar outros eventos na sua página da web."
         ]
       },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      },
       "review-css-attribute-selectors": {
         "title": "Revisão sobre Seletores de Atributos em CSS",
         "intro": [
@@ -9769,24 +9775,6 @@
         "title": "Questionário sobre Seletores de Atributos em CSS",
         "intro": [
           "Teste seu conhecimento sobre seletores de atributos CSS com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-book-inventory-app": {
-    "title": "Crie uma aplicação de inventário de livros",
-    "summary": [
-      "Crie um layout estruturado para gerenciar um inventário de livros."
-    ],
-    "intro": [
-      "Crie uma interface estruturada para um layout de inventário de livros."
-    ],
-    "blocks": {
-      "lab-book-inventory-app": {
-        "title": "Crie uma aplicação de inventário de livros",
-        "intro": [
-          "Neste laboratório, você criará uma aplicação de inventário de livros.",
-          "Você praticará seletores de atributo CSS como <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> e mais."
         ]
       }
     }
@@ -9813,6 +9801,13 @@
           "Neste workshop, você usará CSS e design responsivo para codar um piano. Você também praticará media queries e pseudo selectores."
         ]
       },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
+        ]
+      },
       "review-responsive-web-design": {
         "title": "Revisão sobre Design Responsivo na Web",
         "intro": [
@@ -9824,24 +9819,6 @@
         "title": "Questionário sobre Design Responsivo na Web",
         "intro": [
           "Teste o que você aprendeu sobre tornar suas páginas da web responsivas com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-technical-documentation-page": {
-    "title": "Crie uma página de documentação técnica ",
-    "summary": [
-      "Crie uma página de documentação e pratique estrutura e layout responsivos."
-    ],
-    "intro": [
-      "Crie uma página de documentação com estrutura e navegação claras."
-    ],
-    "blocks": {
-      "lab-technical-documentation-page": {
-        "title": "Crie uma página de documentação técnica",
-        "intro": [
-          "Neste laboratório, você criará uma página de documentação técnica para servir como instrução ou referência para um tópico.",
-          "Você também praticará media queries para criar um design responsivo."
         ]
       }
     }
@@ -9920,6 +9897,12 @@
           "Nesta lição, você aprenderá a depurar CSS usando as ferramentas do desenvolvedor do seu navegador e validadores de CSS."
         ]
       },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
+      },
       "review-css-grid": {
         "title": "Revisão do CSS Grid",
         "intro": [
@@ -9931,21 +9914,6 @@
         "title": "Questionário de CSS Grid",
         "intro": [
           "Teste seu conhecimento sobre CSS Grid com este questionário."
-        ]
-      }
-    }
-  },
-  "lab-product-landing-page": {
-    "title": "Crie uma Página de Produto",
-    "summary": [
-      "Crie uma página inicial completa e aplique layout, tipografia e design responsivo."
-    ],
-    "intro": ["Crie uma página de produto com layout e estilo coesos."],
-    "blocks": {
-      "lab-product-landing-page": {
-        "title": "Crie uma Página de Produto",
-        "intro": [
-          "Neste projeto, você criará uma página de produto para comercializar um produto de sua escolha."
         ]
       }
     }

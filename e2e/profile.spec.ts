@@ -9,6 +9,17 @@ const certs = [
   }
 ];
 
+const betaCerts = [
+  {
+    name: 'A2 English for Developers',
+    url: '/certification/certifieduser/a2-english-for-developers'
+  },
+  {
+    name: 'B1 English for Developers',
+    url: '/certification/certifieduser/b1-english-for-developers'
+  }
+];
+
 const legacyCerts = [
   {
     name: 'Legacy Responsive Web Design V8',
@@ -128,6 +139,16 @@ test.describe('Profile component', () => {
         const link = page
           .getByRole('link', {
             name: `View ${cert.name} Certification`
+          })
+          .first();
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAttribute('href', cert.url);
+      }
+
+      for (const cert of betaCerts) {
+        const link = page
+          .getByRole('link', {
+            name: `View ${cert.name} Certification (Beta)`
           })
           .first();
         await expect(link).toBeVisible();
