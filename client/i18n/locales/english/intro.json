@@ -3838,8 +3838,8 @@
           "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
         ]
       },
-      "en-a2-quiz-greetings-first-day-office": {
-        "title": "First Day at The Office Greetings Quiz",
+      "en-a2-quiz-first-day-conversations-at-work": {
+        "title": "First Day Conversations at Work Quiz",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -3848,8 +3848,8 @@
           "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
         ]
       },
-      "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Online Team Introductions Quiz",
+      "en-a2-quiz-meeting-introductions-at-work": {
+        "title": "Meeting Introductions at Work Quiz",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -3858,7 +3858,7 @@
           "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
         ]
       },
-      "en-a2-quiz-conversation-starters-break-room": {
+      "en-a2-quiz-conversation-starters-at-work": {
         "title": "Break Room Conversations Quiz",
         "intro": ["", ""]
       },
@@ -3868,7 +3868,7 @@
           "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
         ]
       },
-      "en-a2-quiz-talk-about-typical-workday-tasks": {
+      "en-a2-quiz-work-routines-and-tasks": {
         "title": "Talking About Your Workday Quiz",
         "intro": ["", ""]
       },
@@ -3878,7 +3878,7 @@
           "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
         ]
       },
-      "en-a2-quiz-discuss-morning-evening-routine": {
+      "en-a2-quiz-daily-life-routines": {
         "title": "Daily Routines at Work Quiz",
         "intro": ["", ""]
       },
@@ -3888,7 +3888,7 @@
           "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
         ]
       },
-      "en-a2-quiz-describe-current-project": {
+      "en-a2-quiz-what-are-you-working-on": {
         "title": "Describing Your Current Project Quiz",
         "intro": ["", ""]
       },
@@ -3898,7 +3898,7 @@
           "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
         ]
       },
-      "en-a2-quiz-educational-professional-background": {
+      "en-a2-quiz-educational-and-professional-background": {
         "title": "Educational and Professional Background Quiz",
         "intro": ["", ""]
       },
@@ -3908,7 +3908,7 @@
           "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
         ]
       },
-      "en-a2-quiz-talk-about-hobbies-interests": {
+      "en-a2-quiz-hobbies-and-interests": {
         "title": "Talking About Hobbies and Interests Quiz",
         "intro": ["", ""]
       },
@@ -3928,7 +3928,7 @@
           "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
         ]
       },
-      "en-a2-quiz-preferences-motivations": {
+      "en-a2-quiz-preferences-and-motivations": {
         "title": "Preferences and Motivations Quiz",
         "intro": ["", ""]
       },
@@ -3938,7 +3938,7 @@
           "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
         ]
       },
-      "en-a2-quiz-popular-technology-trends": {
+      "en-a2-quiz-sharing-opinions": {
         "title": "Technology Trends Quiz",
         "intro": ["", ""]
       },
@@ -3948,7 +3948,7 @@
           "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
         ]
       },
-      "en-a2-quiz-clarify-information-interactions": {
+      "en-a2-quiz-getting-the-details-right": {
         "title": "Clarifying Information Quiz",
         "intro": ["", ""]
       },
@@ -3968,7 +3968,7 @@
           "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
         ]
       },
-      "en-a2-quiz-code-related-concepts-terms": {
+      "en-a2-quiz-key-programming-terms": {
         "title": "Code Concepts and Terms Quiz",
         "intro": ["", ""]
       },
@@ -3978,7 +3978,7 @@
           "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
         ]
       },
-      "en-a2-quiz-tech-trends-updates": {
+      "en-a2-quiz-discussing-new-ideas": {
         "title": "Tech Updates and Trends Quiz",
         "intro": ["", ""]
       },
@@ -3988,7 +3988,7 @@
           "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
         ]
       },
-      "en-a2-quiz-help-coworker-github-troubleshooting": {
+      "en-a2-quiz-discussing-problems-and-solutions": {
         "title": "Helping a Coworker on GitHub Quiz",
         "intro": ["", ""]
       },
@@ -3998,7 +3998,7 @@
           "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
         ]
       },
-      "en-a2-quiz-share-progress-weekly-meeting": {
+      "en-a2-quiz-collaborating-in-meetings": {
         "title": "Weekly Meeting Progress Quiz",
         "intro": ["", ""]
       },
@@ -4008,7 +4008,7 @@
           "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
         ]
       },
-      "en-a2-quiz-ask-for-code-clarification": {
+      "en-a2-quiz-understanding-problems": {
         "title": "Asking for Code Clarification Quiz",
         "intro": ["", ""]
       },
@@ -4038,7 +4038,7 @@
           "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
         ]
       },
-      "en-a2-quiz-analyze-code-documentation": {
+      "en-a2-quiz-analyzing-documentation": {
         "title": "Analyzing Code Documentation Quiz",
         "intro": ["", ""]
       },
@@ -4048,7 +4048,7 @@
           "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
         ]
       },
-      "en-a2-quiz-share-progress-accomplishments": {
+      "en-a2-quiz-discussing-progress-and-results": {
         "title": "Sharing Progress and Achievements Quiz",
         "intro": ["", ""]
       },
@@ -4078,7 +4078,7 @@
           "In this course, you will see ways of offering some help in terms of technical specifics to another person."
         ]
       },
-      "en-a2-quiz-offer-technical-support-guidance": {
+      "en-a2-quiz-following-best-practices": {
         "title": "Offering Technical Support Quiz",
         "intro": ["", ""]
       },
@@ -4088,7 +4088,7 @@
           "This course will show you how to ask for assistance from a coworker when you need it."
         ]
       },
-      "en-a2-quiz-request-receive-guidance": {
+      "en-a2-quiz-asking-for-help": {
         "title": "Requesting and Receiving Guidance Quiz",
         "intro": ["", ""]
       },
@@ -4098,7 +4098,7 @@
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
       },
-      "en-a2-quiz-provide-explanations-helping-others": {
+      "en-a2-quiz-giving-adivice-and-suggestions": {
         "title": "Explaining Things to Others Quiz",
         "intro": ["", ""]
       },
@@ -5649,6 +5649,20 @@
         "intro": [
           "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
+      "workshop-binary-search-js": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "workshop-merge-sort-js": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
       "lab-bubble-sort-algorithm": {
