@@ -17,7 +17,7 @@ forumTopicId: 18276
 
 ## Instructions
 <section id='instructions'>
-To pass the test on this challenge, change your <code>h1</code> element's text to say "Hello World".
+To pass the test for this challenge, change your <code>h1</code> element's text to "Hello World".
 </section>
 
 ## Tests
