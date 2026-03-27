@@ -3832,7 +3832,7 @@
       "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
     "blocks": {
-      "learn-greetings-in-your-first-day-at-the-office": {
+      "en-a2-learn-welcome-to-your-new-workspace": {
         "title": "Learn Greetings in your First Day at the Office",
         "intro": [
           "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
@@ -3842,7 +3842,7 @@
         "title": "First Day Conversations at Work Quiz",
         "intro": ["", ""]
       },
-      "learn-introductions-in-an-online-team-meeting": {
+      "en-a2-learn-a-self-introduction-at-work": {
         "title": "Learn Introductions in an Online Team Meeting",
         "intro": [
           "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
@@ -3852,7 +3852,7 @@
         "title": "Meeting Introductions at Work Quiz",
         "intro": ["", ""]
       },
-      "learn-conversation-starters-in-the-break-room": {
+      "en-a2-learn-talking-about-team-activities": {
         "title": "Learn Conversation Starters in the Break Room",
         "intro": [
           "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
@@ -3862,7 +3862,7 @@
         "title": "Break Room Conversations Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-talk-about-a-typical-workday-and-tasks": {
+      "en-a2-learn-my-daily-work-routine": {
         "title": "Learn How to Talk About a Typical Workday and Tasks",
         "intro": [
           "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
@@ -3872,7 +3872,7 @@
         "title": "Talking About Your Workday Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-discuss-your-morning-or-evening-routine": {
+      "en-a2-learn-morning-habits": {
         "title": "Learn How to Discuss Your Morning or Evening Routine",
         "intro": [
           "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
@@ -3882,7 +3882,7 @@
         "title": "Daily Routines at Work Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-describe-your-current-project": {
+      "en-a2-learn-whats-your-project-about": {
         "title": "Learn How to Describe Your Current Project",
         "intro": [
           "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
@@ -3892,7 +3892,7 @@
         "title": "Describing Your Current Project Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-ask-and-share-about-educational-and-professional-background": {
+      "en-a2-learn-at-my-last-job": {
         "title": "Learn How to Ask and Share About Educational and Professional Background",
         "intro": [
           "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
@@ -3902,7 +3902,7 @@
         "title": "Educational and Professional Background Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-talk-about-hobbies-and-interests": {
+      "en-a2-learn-a-hobby-over-time": {
         "title": "Learn How to Talk About Hobbies and Interests",
         "intro": [
           "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
@@ -3912,7 +3912,7 @@
         "title": "Talking About Hobbies and Interests Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-discuss-roles-and-responsibilities": {
+      "en-a2-learn-have-you-met-her": {
         "title": "Learn How to Discuss Roles and Responsibilities",
         "intro": [
           "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
@@ -3922,7 +3922,7 @@
         "title": "Roles and Responsibilities Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
+      "en-a2-learn-what-motivates-you": {
         "title": "Learn How to Have a Conversation About Preferences and Motivations",
         "intro": [
           "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
@@ -3932,7 +3932,7 @@
         "title": "Preferences and Motivations Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-discuss-popular-trends-in-technology": {
+      "en-a2-learn-have-you-heard-about-it": {
         "title": "Learn How to Discuss Popular Trends in Technology",
         "intro": [
           "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
@@ -3942,7 +3942,7 @@
         "title": "Technology Trends Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-clarify-information-in-different-interactions": {
+      "en-a2-learn-when-details-dont-match": {
         "title": "Learn How to Clarify Information in Different Interactions",
         "intro": [
           "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
@@ -3952,7 +3952,7 @@
         "title": "Clarifying Information Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
+      "en-a2-learn-talking-about-programming-basics": {
         "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
         "intro": [
           "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
@@ -3962,7 +3962,7 @@
         "title": "Basic Programming Vocabulary Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-use-code-related-concepts-and-terms": {
+      "en-a2-learn-asking-about-data-types": {
         "title": "Learn How to Use Code-related Concepts and Terms",
         "intro": [
           "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
@@ -3972,7 +3972,7 @@
         "title": "Code Concepts and Terms Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-discuss-tech-trends-and-updates": {
+      "en-a2-learn-showing-curiosity": {
         "title": "Learn How to Discuss Tech Trends and Updates",
         "intro": [
           "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
@@ -3982,7 +3982,7 @@
         "title": "Tech Updates and Trends Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-help-a-coworker-troubleshoot-on-github": {
+      "en-a2-learn-reporting-a-problem": {
         "title": "Learn How to Help a Coworker Troubleshoot on GitHub",
         "intro": [
           "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
@@ -3992,7 +3992,7 @@
         "title": "Helping a Coworker on GitHub Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
+      "en-a2-learn-requesting-support": {
         "title": "Learn How to Share Your Progress in Weekly Stand-up Meetings",
         "intro": [
           "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
@@ -4002,7 +4002,7 @@
         "title": "Weekly Meeting Progress Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-ask-for-clarification-on-code-understanding": {
+      "en-a2-learn-asking-for-explanation": {
         "title": "Learn How to Ask for Clarification on Code Understanding",
         "intro": [
           "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
@@ -4012,7 +4012,7 @@
         "title": "Asking for Code Clarification Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-document-code-for-a-project": {
+      "en-a2-learn-understanding-what-to-document": {
         "title": "Learn How to Document Code for a Project",
         "intro": [
           "This course will show you expressions related to what to do when documenting code."
@@ -4022,7 +4022,7 @@
         "title": "Documenting Code Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-read-and-understand-code-documentation": {
+      "en-a2-learn-finding-information": {
         "title": "Learn How to Read and Understand Code Documentation",
         "intro": [
           "This course will present more expressions related to code documentation and bring tips on how to understand it."
@@ -4032,7 +4032,7 @@
         "title": "Understanding Code Documentation Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-analyze-code-documentation": {
+      "en-a2-learn-identifying-whats-available": {
         "title": "Learn How to Analyze Code Documentation",
         "intro": [
           "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
@@ -4042,7 +4042,7 @@
         "title": "Analyzing Code Documentation Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-share-progress-and-accomplishments": {
+      "en-a2-learn-giving-a-project-update": {
         "title": "Learn How to Share Progress and Accomplishments",
         "intro": [
           "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
@@ -4052,7 +4052,7 @@
         "title": "Sharing Progress and Achievements Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
+      "en-a2-learn-planning-a-project": {
         "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": [
           "This course will show you how to speak about the most recent advancements in your projects and about your plans."
@@ -4062,7 +4062,7 @@
         "title": "Task and Project Updates Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-express-agreement-or-disagreement": {
+      "en-a2-learn-disagreeing-politely": {
         "title": "Learn How to Express Agreement or Disagreement",
         "intro": [
           "This course will introduce how to say that you agree with what another person says and to tell them politely that you do not agree with them."
@@ -4072,7 +4072,7 @@
         "title": "Expressing Agreement and Disagreement Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-offer-technical-support-and-guidance": {
+      "en-a2-learn-receiving-feedback": {
         "title": "Learn How to Offer Technical Support and Guidance",
         "intro": [
           "In this course, you will see ways of offering some help in terms of technical specifics to another person."
@@ -4082,7 +4082,7 @@
         "title": "Offering Technical Support Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-request-and-receive-guidance": {
+      "en-a2-learn-getting-a-fresh-perspective": {
         "title": "Learn How to Request and Receive Guidance",
         "intro": [
           "This course will show you how to ask for assistance from a coworker when you need it."
@@ -4092,7 +4092,7 @@
         "title": "Requesting and Receiving Guidance Quiz",
         "intro": ["", ""]
       },
-      "learn-how-to-provide-explanations-when-helping-others": {
+      "en-a2-learn-giving-basic-advice": {
         "title": "Learn How to Provide Explanations When Helping Others",
         "intro": [
           "This course will provide you with ways to explain things to other people while assisting them."
