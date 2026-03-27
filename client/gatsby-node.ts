@@ -34,7 +34,7 @@ exports.createPages = async function createPages({
 
   const { createPage } = actions;
 
-const result = await graphql(`
+  const result = await graphql(`
   {
     allSuperBlockStructure {
       nodes {
@@ -44,12 +44,11 @@ const result = await graphql(`
   }
 `);
 
-if (result.errors) {
+  if (result.errors) {
   reporter.panic('createPages GraphQL query failed', result.errors);
-  return;
 }
 
-const {
+  const {
   data: { allSuperBlockStructure }
 } = result;
 
