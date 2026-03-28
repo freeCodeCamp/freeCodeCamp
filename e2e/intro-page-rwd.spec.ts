@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Certification intro page', () => {
   test('Should render and toggle correctly', async ({ page }) => {
     const firstBlockToggle = page.getByRole('button', {
-      name: 'Learn HTML by Building a Cat Photo App'
+      name: /^Learn HTML by Building a Cat Photo App/
     });
 
     const firstBlockText = page.getByText(
