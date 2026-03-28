@@ -1052,6 +1052,7 @@
     "oops-not-right": "Oops, something is not right, please request a fresh link to sign in / sign up",
     "expired-link": "Looks like the link you clicked has expired, please request a fresh link, to sign in",
     "signin-success": "Success! You have signed in to your account. Happy Coding!",
+    "signout-success": "You have successfully signed out of your account.",
     "social-auth-gone": "We are moving away from social authentication for privacy reasons. Next time we recommend using your email address: {{email}} to sign in instead.",
     "name-needed": "We need your name to put it on your certification. Please add your name in your profile and click save. Then we can issue your certification.",
     "incomplete-steps": "It looks like you have not completed the necessary steps. Please complete the required projects to claim the {{name}} Certification.",

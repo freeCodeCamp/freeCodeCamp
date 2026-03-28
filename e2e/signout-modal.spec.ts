@@ -51,6 +51,9 @@ test.describe('Signout Modal component', () => {
       page.getByRole('dialog', { name: translations.signout.heading })
     ).not.toBeVisible();
     await expect(page).toHaveURL(allowTrailingSlash(''));
+    await expect(
+      page.getByText(translations.flash['signout-success'])
+    ).toBeVisible();
   });
 
   test('closes modal after user cancels signing out', async ({ page }) => {
