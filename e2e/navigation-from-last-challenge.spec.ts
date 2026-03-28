@@ -82,7 +82,9 @@ test.describe('Should take you to the next superblock (with editor solution)', (
     await page.keyboard.press('Control+Enter');
 
     await page
-      .getByRole('button', { name: 'Submit and go to next challenge' })
+      .locator(
+        '[data-playwright-test-label="independentLowerJaw-submit-button"]'
+      )
       .click();
     await page.waitForURL(rwdChallenge.nextUrl);
   });

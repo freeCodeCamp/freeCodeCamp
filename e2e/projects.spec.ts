@@ -243,13 +243,13 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
   });
 });
 
-test.describe('Completion modal should be shown after submitting a project', () => {
+test.describe('Independent Lower Jaw should be shown after submitting a project', () => {
   test.skip(
     ({ browserName }) => browserName !== 'chromium',
     'Only chromium allows us to use the clipboard API.'
   );
 
-  test('Ctrl + enter triggers the completion modal on multifile projects', async ({
+  test('Ctrl + enter triggers the independent lower jaw on multifile projects', async ({
     page,
     context,
     isMobile
@@ -280,7 +280,9 @@ test.describe('Completion modal should be shown after submitting a project', () 
 
     await page.keyboard.press('Control+Enter');
     await page
-      .getByRole('button', { name: 'Go to next challenge', exact: false })
+      .locator(
+        '[data-playwright-test-label="independentLowerJaw-submit-button"]'
+      )
       .click();
   });
 });

@@ -62,7 +62,6 @@ import {
 } from '../utils/index';
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 // Direct from npm, license in react-types-licence
@@ -628,7 +627,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
+        const hasIndependentLowerJaw = props.showIndependentLowerJaw;
+        if (hasIndependentLowerJaw) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
