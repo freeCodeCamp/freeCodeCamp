@@ -25,7 +25,7 @@ export function getReturnTo(
     params = jwt.verify(encryptedParams, secret);
   } catch (e) {
     // TODO: report to Sentry? Probably not. Remove entirely?
-    console.log(e);
+    
     // something went wrong, use default params
     params = {
       returnTo: `${_homeLocation}/learn`,
@@ -45,7 +45,7 @@ type RedirectParams = {
 };
 
 /**
- * Normalize the parameters, making they're valid.
+ * Normalize the parameters, making sure they're valid.
  *
  * @param arg - The parameters to normalize.
  * @param arg.returnTo - The returnTo value.
