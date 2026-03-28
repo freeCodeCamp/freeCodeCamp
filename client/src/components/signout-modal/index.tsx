@@ -9,6 +9,7 @@ import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
+import { removeFlashMessage } from '../Flash/redux';
 
 const mapStateToProps = createSelector(
   isSignoutModalOpenSelector,
@@ -20,13 +21,15 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
-      closeSignoutModal
+      closeSignoutModal,
+      removeFlashMessage
     },
     dispatch
   );
 
 type SignoutModalProps = {
   closeSignoutModal: () => void;
+  removeFlashMessage: () => void;
   show: boolean;
 };
 
@@ -44,7 +47,7 @@ export const pathAfterSignout = (currentPath: string): string => {
 };
 
 function SignoutModal(props: SignoutModalProps): JSX.Element {
-  const { show, closeSignoutModal } = props;
+  const { show, closeSignoutModal, removeFlashMessage } = props;
   const { t } = useTranslation();
 
   const handleModalHide = () => {
@@ -53,9 +56,16 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
 
   const handleSignout = () => {
     closeSignoutModal();
+    // Clear any existing flash messages (e.g., "logged in" success message)
+    // to prevent it from persisting after logout
+    removeFlashMessage();
+
     callGA({ event: 'sign_out', user_id: undefined });
     const redirect = () => {
+      // Clear the query string to remove any flash message parameters
+      // (e.g., ?success=signin) before redirecting
       window.location.pathname = pathAfterSignout(window.location.pathname);
+      window.location.search = '';
     };
     void fetch(`${apiLocation}/signout`, {
       method: 'GET',
