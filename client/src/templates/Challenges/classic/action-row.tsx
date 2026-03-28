@@ -111,33 +111,49 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     challengeType
   } = props;
 
-  // sets screen reader text for the two preview buttons
-  function getPreviewBtnsSrText() {
-    // no preview open
-    const previewBtnsSrText = {
-      pane: t('aria.show-preview'),
-      portal: t('aria.open-preview-in-new-window')
-    };
-
-    // preview open in main window
-    if (showPreviewPane && !showPreviewPortal) {
-      previewBtnsSrText.pane = t('aria.hide-preview');
-      previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
-
-      // preview open in external window
-    } else if (showPreviewPortal && !showPreviewPane) {
-      previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-preview-window');
-    }
-
-    return previewBtnsSrText;
-  }
-
   const isPythonChallenge =
     challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.pyLab ||
     challengeType === challengeTypes.dailyChallengePy;
+
+  // sets screen reader text for the two preview buttons
+  function getPreviewBtnsSrText() {
+    // Default (no pane/portal open)
+    const paneLabel = isPythonChallenge
+      ? t('aria.show-terminal')
+      : t('aria.show-preview');
+    const portalLabel = isPythonChallenge
+      ? t('aria.open-terminal-in-new-window')
+      : t('aria.open-preview-in-new-window');
+
+    const previewBtnsSrText = {
+      pane: paneLabel,
+      portal: portalLabel
+    };
+
+    // pane open in main window
+    if (showPreviewPane && !showPreviewPortal) {
+      if (isPythonChallenge) {
+        previewBtnsSrText.pane = t('aria.hide-terminal');
+        previewBtnsSrText.portal = t('aria.move-terminal-to-new-window');
+      } else {
+        previewBtnsSrText.pane = t('aria.hide-preview');
+        previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
+      }
+      // portal open in external window
+    } else if (showPreviewPortal && !showPreviewPane) {
+      if (isPythonChallenge) {
+        previewBtnsSrText.pane = t('aria.move-terminal-to-main-window');
+        previewBtnsSrText.portal = t('aria.close-external-terminal-window');
+      } else {
+        previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
+        previewBtnsSrText.portal = t('aria.close-external-preview-window');
+      }
+    }
+
+    return previewBtnsSrText;
+  }
 
   const previewButtonText = isPythonChallenge
     ? t('learn.editor-tabs.terminal')
