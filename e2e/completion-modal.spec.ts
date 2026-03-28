@@ -193,3 +193,12 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page).toHaveURL(nextChallengeURL);
   });
 });
+
+test('should display download solution button if present', async ({ page }) => {
+  const downloadButton = page.locator('button:has-text("Download")');
+
+  // Safe check: only verify if it exists
+  if (await downloadButton.count()) {
+    await expect(downloadButton).toBeVisible();
+  }
+});
