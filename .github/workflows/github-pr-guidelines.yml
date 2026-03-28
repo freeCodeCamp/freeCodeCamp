@@ -34,10 +34,11 @@ jobs:
         if: steps.pr_author.outputs.is_allow_listed == 'false' && github.event.action != 'edited'
         env:
           HEAD_REF: ${{ github.head_ref }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           COMMITS_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits"
-          HAS_GITHUB_SIGNED_COMMIT=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$COMMITS_URL" | jq '[.[] | select(.commit.committer.name == "GitHub") | select(.commit.message | test("revert"; "i") | not)] | length > 0')
+          HAS_GITHUB_SIGNED_COMMIT=$(curl --header "Authorization: Bearer ${GITHUB_TOKEN}" "$COMMITS_URL" | jq '[.[] | select(.commit.committer.name == "GitHub") | select(.commit.message | test("revert"; "i") | not)] | length > 0')
           # GitHub Codespaces also produces GitHub-signed commits, but Codespaces users
           # work on descriptively named branches. The web editor defaults to patch-N branches.
           IS_PATCH_BRANCH=false
