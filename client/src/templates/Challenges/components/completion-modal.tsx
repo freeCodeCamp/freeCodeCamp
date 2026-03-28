@@ -102,8 +102,10 @@ function CompletionModal({
       challengeFiles.forEach(file => {
         let fileName = `${file.name}.${file.ext}`;
 
-        if (file.ext === 'html' && !zip.file('index.html')) fileName = 'index.html';
-        if (file.ext === 'css' && !zip.file('styles.css')) fileName = 'styles.css';
+        if (file.ext === 'html' && !zip.file('index.html'))
+          fileName = 'index.html';
+        if (file.ext === 'css' && !zip.file('styles.css'))
+          fileName = 'styles.css';
         if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
 
         zip.file(fileName, file.contents);
