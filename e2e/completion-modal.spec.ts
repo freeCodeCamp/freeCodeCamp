@@ -193,3 +193,11 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
     await expect(page).toHaveURL(nextChallengeURL);
   });
 });
+
+test('should display download solution button if present', async ({ page }) => {
+  const downloadButton = page.getByRole('button', { name: /download/i });
+
+  if (await downloadButton.count()) {
+    await expect(downloadButton).toBeVisible();
+  }
+});

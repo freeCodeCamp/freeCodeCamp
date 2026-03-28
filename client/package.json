@@ -84,6 +84,7 @@
     "gatsby-transformer-remark": "6.16.0",
     "i18next": "25.2.1",
     "instantsearch.js": "4.75.3",
+    "jszip": "^3.10.1",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
     "micromark": "4.0.0",
