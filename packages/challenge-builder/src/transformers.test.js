@@ -55,6 +55,66 @@ describe('embedFilesInHtml', () => {
     expect(script?.parentElement?.tagName).toBe('HEAD');
     expect(doc.body.lastElementChild?.id).toBe('app');
   });
+
+  const warningTestCases = [
+    {
+      name: 'should inject a warning for incorrect css file links',
+      files: [
+        {
+          fileKey: 'indexhtml',
+          contents:
+            '<!DOCTYPE html><html><head><link href="style.css" rel="stylesheet"></head><body></body></html>'
+        }
+      ],
+      expected:
+        'console.warn("You have tried to source style.css, but that does not exist. The only file that can be sourced is styles.css.");'
+    },
+    {
+      name: 'should inject a warning for incorrect js file scripts',
+      files: [
+        {
+          fileKey: 'indexhtml',
+          contents:
+            '<html><head></head><body><script src="scripts.js"></script></body></html>'
+        }
+      ],
+      expected:
+        'console.warn("You have tried to source scripts.js, but that does not exist. The only file that can be sourced is script.js.");'
+    },
+    {
+      name: 'should not inject a warning for correct file links',
+      files: [
+        {
+          fileKey: 'indexhtml',
+          contents:
+            '<html><head><link href="styles.css" rel="stylesheet"></head><body><script src="script.js"></script></body></html>'
+        },
+        { fileKey: 'stylescss', contents: 'body { color: red; }' },
+        { fileKey: 'scriptjs', contents: 'console.log("hello");' }
+      ],
+      notExpected: 'console.warn'
+    },
+    {
+      name: 'should not inject a warning for external links',
+      files: [
+        {
+          fileKey: 'indexhtml',
+          contents:
+            '<html><head><link href="https://example.com/styles.css"></head><body><script src="https://example.com/script.js"></script></body></html>'
+        }
+      ],
+      notExpected: 'console.warn'
+    }
+  ];
+
+  it.each(warningTestCases)(
+    '$name',
+    async ({ files, expected, notExpected }) => {
+      const result = await embedFilesInHtml(files);
+      if (expected) expect(result).toContain(expected);
+      if (notExpected) expect(result).not.toContain(notExpected);
+    }
+  );
 });
 
 describe('embedScript', () => {

@@ -337,6 +337,47 @@ export const embedFilesInHtml = async function (challengeFiles) {
       tsxScript.removeAttribute('type');
       tsxScript.setAttribute('data-type', 'text/babel');
     }
+    // Check for invalid link and script sources
+    const validLinks = ['styles.css', './styles.css'];
+    const validScripts = [
+      'script.js',
+      './script.js',
+      'index.ts',
+      './index.ts',
+      'index.jsx',
+      './index.jsx',
+      'index.tsx',
+      './index.tsx'
+    ];
+
+    documentElement.querySelectorAll('link[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (
+        href &&
+        href.endsWith('.css') &&
+        !href.startsWith('http') &&
+        !validLinks.includes(href)
+      ) {
+        const warning = contentDocument.createElement('script');
+        warning.innerHTML = `console.warn("You have tried to source ${href}, but that does not exist. The only file that can be sourced is styles.css.");`;
+        documentElement.appendChild(warning);
+      }
+    });
+
+    documentElement.querySelectorAll('script[src]').forEach(script => {
+      const src = script.getAttribute('src');
+      if (
+        src &&
+        src.endsWith('.js') &&
+        !src.startsWith('http') &&
+        !validScripts.includes(src)
+      ) {
+        const warning = contentDocument.createElement('script');
+        warning.innerHTML = `console.warn("You have tried to source ${src}, but that does not exist. The only file that can be sourced is script.js.");`;
+        documentElement.appendChild(warning);
+      }
+    });
+
     return documentElement.innerHTML;
   };
 
