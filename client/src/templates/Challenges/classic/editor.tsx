@@ -628,6 +628,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
+        const shouldShowCompletionModal = !props.showIndependentLowerJaw;
         if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
@@ -635,7 +636,9 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({ showCompletionModal: true });
+          props.executeChallenge({
+            showCompletionModal: shouldShowCompletionModal
+          });
         }
       }
     });
