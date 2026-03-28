@@ -9,7 +9,7 @@ import { getRedirectParams } from '../../utils/redirection.js';
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done The callback to signal that the plugin is ready.
  */
-export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
+export const emailSubscriptionRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
   done
