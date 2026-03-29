@@ -25,7 +25,7 @@ export const createLintStagedConfig = cwd => {
       files.map(filename => `prettier --write --ignore-unknown '${filename}'`),
 
     '*.css': files => [
-      ...files.map(filename => `stylelint --fix '${filename}'`),
+      ...files.map(filename => `gale --fix '${filename}'`),
       ...files.map(filename => `prettier --write '${filename}'`)
     ]
   };
