@@ -6139,6 +6139,10 @@
           "In these lessons, you will learn about basic data visualization concepts."
         ]
       },
+      "workshop-build-a-zoo-animal-scatterplot": {
+        "title": "Build a Zoo Animal Scatterplot",
+        "intro": ["Build a Zoo Animal Scatterplot", ""]
+      },
       "lab-scatterplot-graph": {
         "title": "Build a Scatterplot Graph",
         "intro": [

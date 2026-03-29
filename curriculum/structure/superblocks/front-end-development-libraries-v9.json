@@ -82,6 +82,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-data-visualization",
+            "workshop-build-a-zoo-animal-scatterplot",
             "lab-scatterplot-graph"
           ]
         },
