@@ -17,7 +17,7 @@ export const Share = ({
     <ShareTemplate
       xRedirectURL={redirectURLs.xUrl}
       blueSkyRedirectURL={redirectURLs.blueSkyUrl}
-      threadsRedirectURL={redirectURLs.threadsURL}
+      threadsRedirectURL={redirectURLs.threadsUrl}
       facebookRedirectURL={redirectURLs.facebookUrl}
       minified={minified}
     />

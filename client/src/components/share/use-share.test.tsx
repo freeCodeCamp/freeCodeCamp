@@ -40,7 +40,7 @@ describe('useShare', () => {
       `https://${blueSkyData.domain}/${blueSkyData.action}?original_referer=${blueSkyData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
     );
 
-    expect(shareResult.current.threadsURL).toBe(
+    expect(shareResult.current.threadsUrl).toBe(
       `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
     );
 

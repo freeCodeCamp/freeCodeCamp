@@ -32,7 +32,7 @@ export const facebookData = {
 interface ShareUrls {
   xUrl: string;
   blueSkyUrl: string;
-  threadsURL: string;
+  threadsUrl: string;
   facebookUrl: string;
 }
 
@@ -54,7 +54,7 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
   return {
     xUrl: xRedirectURL,
     blueSkyUrl: blueSkyRedirectURL,
-    threadsURL: threadRedirectURL,
+    threadsUrl: threadRedirectURL,
     facebookUrl: facebookRedirectURL
   };
 };
