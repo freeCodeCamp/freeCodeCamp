@@ -1,0 +1,11 @@
+{
+  "name": "Debugging a Registration Form",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-debugging-registration-form",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69ca6cdf705389fc09fc5ba4", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
