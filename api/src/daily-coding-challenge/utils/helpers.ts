@@ -36,5 +36,16 @@ export function dateStringToUtcMidnight(dateStr: string): Date | null {
     number
   ];
 
-  return new Date(Date.UTC(year, month - 1, day));
+  const parsedDate = new Date(Date.UTC(year, month - 1, day));
+
+  // Reject overflowed dates (e.g. 2026-02-31 -> 2026-03-03).
+  if (
+    parsedDate.getUTCFullYear() !== year ||
+    parsedDate.getUTCMonth() !== month - 1 ||
+    parsedDate.getUTCDate() !== day
+  ) {
+    return null;
+  }
+
+  return parsedDate;
 }
