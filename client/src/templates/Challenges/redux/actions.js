@@ -49,6 +49,9 @@ export const previewMounted = createAction(actionTypes.previewMounted);
 export const projectPreviewMounted = createAction(
   actionTypes.projectPreviewMounted
 );
+export const setProjectPreviewLoading = createAction(
+  actionTypes.setProjectPreviewLoading
+);
 
 export const storePortalWindow = createAction(actionTypes.storePortalWindow);
 export const removePortalWindow = createAction(actionTypes.removePortalWindow);
