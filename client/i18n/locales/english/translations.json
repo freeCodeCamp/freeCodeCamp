@@ -1457,6 +1457,7 @@
         "intermediate": "Intermediate",
         "advanced": "Advanced"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} hours",
       "no-results": "No courses found. Try adjusting your filters to see more results.",
       "topic": {
