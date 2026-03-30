@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -75,6 +75,7 @@ import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 import { mergeChallengeFiles } from './saved-challenges';
+import { usePageLeave } from '../hooks';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -261,6 +262,47 @@ function ShowClassic({
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
+  const isCertificationProjectChallenge =
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject;
+  const exitConfirmed = useRef(false);
+
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
+      if (!isCertificationProjectChallenge || exitConfirmed.current) {
+        return;
+      }
+
+      event.preventDefault();
+      event.returnValue = '';
+    },
+    [isCertificationProjectChallenge]
+  );
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string): boolean => {
+      if (!isCertificationProjectChallenge || exitConfirmed.current) {
+        return false;
+      }
+
+      const shouldLeave = window.confirm(t('misc.navigation-warning'));
+
+      if (!shouldLeave) {
+        return true;
+      }
+
+      exitConfirmed.current = true;
+      void navigate(targetPathname || '/learn');
+      return false;
+    },
+    [isCertificationProjectChallenge, t]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange
+  });
+
   const getLayoutState = () => {
     const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
 
