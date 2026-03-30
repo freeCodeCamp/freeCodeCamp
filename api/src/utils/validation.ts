@@ -18,7 +18,8 @@ export const isObjectID = (id?: string): boolean =>
  * @param value A string to sanitize.
  * @returns A string with HTML tags removed.
  */
-export const trimTags = (value: string): string => {
+export const trimTags = (value?: string): string => {
+  if (typeof value !== 'string') return '';
   const tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
   const tagOrComment = new RegExp(
     '<(?:' +

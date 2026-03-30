@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isObjectID } from './validation.js';
+import { isObjectID, trimTags } from './validation.js';
 
 describe('Validation', () => {
   describe('isObjectID', () => {
@@ -12,6 +12,21 @@ describe('Validation', () => {
       expect(isObjectID('5f1e0f3b5d2c12b0b8f7a6b99')).toBe(false);
       expect(isObjectID('5f1e0f3b5d2c12b0b8f7a6b-')).toBe(false);
       expect(isObjectID(undefined)).toBe(false);
+    });
+  });
+  describe('trimTags', () => {
+    it('should not throw when input is undefined', () => {
+      expect(() => trimTags(undefined)).not.toThrow();
+      expect(trimTags(undefined)).toBe('');
+    });
+
+    it('should not throw when input is null', () => {
+      expect(() => trimTags(null as unknown as string)).not.toThrow();
+      expect(trimTags(null as unknown as string)).toBe('');
+    });
+
+    it('should remove HTML tags from string', () => {
+      expect(trimTags('<p>Hello</p>')).toBe('Hello');
     });
   });
 });
