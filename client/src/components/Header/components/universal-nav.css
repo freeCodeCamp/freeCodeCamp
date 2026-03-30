@@ -61,6 +61,36 @@
   flex: 1 0 33%;
 }
 
+.donate-nav-btn {
+  align-items: center;
+  background-color: var(--yellow-color);
+  border: 1px solid var(--yellow-color);
+  color: var(--gray-00);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: var(--header-element-size);
+  justify-content: center;
+  min-width: var(--header-element-size);
+  padding: 0 8px;
+  white-space: nowrap;
+}
+
+.donate-nav-btn:hover,
+.donate-nav-btn:focus,
+.donate-nav-btn:focus-visible {
+  background-color: var(--yellow-light);
+  border-color: var(--yellow-light);
+  color: var(--gray-90);
+  text-decoration: none;
+}
+
+@media (min-width: 601px) {
+  .donate-nav-btn {
+    padding-inline: 12px;
+  }
+}
+
 /**
  * Site header menu list
  */

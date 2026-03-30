@@ -79,6 +79,13 @@ const UniversalNav = ({
           </div>
         ) : (
           <>
+            <Link
+              className='donate-nav-btn'
+              to='/donate'
+              data-playwright-test-label='header-donate-button'
+            >
+              {t('buttons.donate')}
+            </Link>
             <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
