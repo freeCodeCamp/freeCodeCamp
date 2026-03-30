@@ -5704,6 +5704,7 @@
       "workshop-shortest-path-algorithm-js": {
         "title": "Implement the Shortest Path Algorithm",
         "intro": [
+          "The shortest path algorithm finds the minimum distance between nodes in a weighted graph.",
           "In this workshop, you'll implement the shortest path algorithm in JavaScript and return both the shortest distances and the paths taken."
         ]
       },
