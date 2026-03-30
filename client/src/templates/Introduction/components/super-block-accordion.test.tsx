@@ -1,10 +1,15 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockAccordion } from './super-block-accordion';
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
+
+vi.mock('./block', () => ({
+  default: ({ block }: { block: string }) =>
+    React.createElement('div', { 'data-testid': `block-${block}` })
+}));
 
 const mockStructure = {
   superBlock: SuperBlocks.RespWebDesign,
@@ -175,5 +180,74 @@ describe('SuperBlockAccordion', () => {
 
     const moduleRight = within(moduleButton).getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+  });
+
+  it('should expand all chapters when expandAll is true', () => {
+    const multiChapterStructure = {
+      superBlock: SuperBlocks.RespWebDesign,
+      chapters: [
+        {
+          dashedName: 'chapter-one',
+          modules: [{ dashedName: 'mod-one', blocks: ['block-one'] }]
+        },
+        {
+          dashedName: 'chapter-two',
+          modules: [{ dashedName: 'mod-two', blocks: ['block-two'] }]
+        }
+      ]
+    };
+
+    render(
+      <SuperBlockAccordion
+        challenges={[
+          { ...mockChallenge, block: 'block-one', id: 'id-1' },
+          { ...mockChallenge, block: 'block-two', id: 'id-2' }
+        ]}
+        superBlock={SuperBlocks.RespWebDesign}
+        structure={multiChapterStructure}
+        chosenBlock={''}
+        completedChallengeIds={[]}
+        expandAll={true}
+      />
+    );
+
+    // When expandAll=true, both chapters are open so their module buttons are visible
+    const moduleButtons = screen.getAllByRole('button', { name: /mod/i });
+    expect(moduleButtons).toHaveLength(2);
+  });
+
+  it('should not render a module when all its challenges are filtered out', () => {
+    render(
+      <SuperBlockAccordion
+        // Only challenges for block-one are passed; mod-two has no challenges
+        challenges={[{ ...mockChallenge, block: 'block-one', id: 'id-1' }]}
+        superBlock={SuperBlocks.RespWebDesign}
+        structure={{
+          superBlock: SuperBlocks.RespWebDesign,
+          chapters: [
+            {
+              dashedName: 'test-chapter',
+              modules: [
+                { dashedName: 'mod-one', blocks: ['block-one'] },
+                { dashedName: 'mod-two', blocks: ['block-two'] }
+              ]
+            }
+          ]
+        }}
+        chosenBlock={'block-one'}
+        completedChallengeIds={[]}
+        expandAll={true}
+      />
+    );
+
+    // mod-one has a challenge — its button should render
+    expect(
+      screen.getByRole('button', { name: /mod-one/i })
+    ).toBeInTheDocument();
+
+    // mod-two has no challenges — its button should not render
+    expect(
+      screen.queryByRole('button', { name: /mod-two/i })
+    ).not.toBeInTheDocument();
   });
 });
