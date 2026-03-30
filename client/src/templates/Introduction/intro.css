@@ -123,6 +123,20 @@ a.cert-tag:active {
   overflow-wrap: break-word;
 }
 
+.block-title-anchor {
+  color: var(--tertiary-color);
+  font-weight: 700;
+  margin-inline-start: 8px;
+  opacity: 0;
+  text-decoration: none;
+}
+
+.block-grid-title:hover .block-title-anchor,
+.block-grid-title:focus-within .block-title-anchor,
+.block-title-anchor:focus {
+  opacity: 1;
+}
+
 .block-grid .challenge-jump-link {
   margin: 0 25px 25px;
 }

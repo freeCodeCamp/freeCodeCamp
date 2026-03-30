@@ -92,6 +92,15 @@ function BlockHeader({
             <InnerBlockHeader />
           </Button>
         )}
+        <a
+          className='block-title-anchor'
+          href={`#${blockDashed}`}
+          aria-label={`Link to ${blockTitle}`}
+          title={`Link to ${blockTitle}`}
+          onClick={event => event.stopPropagation()}
+        >
+          #
+        </a>
       </h3>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />
