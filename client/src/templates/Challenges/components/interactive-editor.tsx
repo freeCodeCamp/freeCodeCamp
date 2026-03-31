@@ -31,6 +31,25 @@ const InteractiveEditor = ({ files }: Props) => {
       string,
       { code: string; active?: boolean; hidden?: boolean }
     >;
+
+    const consoleOverride = `\n
+const __originalLog = console.log;
+
+console.log = (...args) => {
+  const safeArgs = args.map(arg => {
+    if (typeof arg === "object" && arg !== null) {
+      try {
+        return structuredClone(arg);
+      } catch {
+        return JSON.parse(JSON.stringify(arg));
+      }
+    }
+    return arg;
+  });
+
+  __originalLog(...safeArgs);
+};`;
+
     files.forEach(file => {
       const ext = file.ext;
       let path = '';
@@ -42,8 +61,18 @@ const InteractiveEditor = ({ files }: Props) => {
       else if (ext === 'jsx') path = '/App.jsx';
       else if (ext === 'tsx') path = '/App.tsx';
       else path = `/index.${ext}`;
-      // TODO: Consider making active file first file in markdown
-      obj[path] = { code: file.contents, active: path === '/index.html' };
+
+      const isScriptFile =
+        ext === 'js' || ext === 'ts' || ext === 'jsx' || ext === 'tsx';
+
+      // Inject console override into script files to ensure console.log
+      // captures snapshots instead of live references (fixes Sandpack behavior)
+      obj[path] = {
+        code: isScriptFile
+          ? consoleOverride + '\n' + file.contents
+          : file.contents,
+        active: path === '/index.html'
+      };
     });
     return obj;
   }, [files]);
