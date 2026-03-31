@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -94,6 +96,7 @@ const UniversalNav = ({
                 data-playwright-test-label='header-donate-button'
               >
                 <span className='menu-btn-icon'>
+                  <FontAwesomeIcon icon={faHeart} />
                   <span className='sr-only'>{t('buttons.donate')}</span>
                 </span>
                 <span className='menu-btn-text'>{t('buttons.donate')}</span>

@@ -57,7 +57,7 @@ test.describe('Header', () => {
     isMobile
   }) => {
     const donateButton = page.getByTestId('header-donate-button');
-    const donateText = donateButton.getByText(translations.buttons.donate);
+    const donateText = donateButton.locator('.menu-btn-text');
 
     if (isMobile) {
       await expect(donateText).toBeHidden();

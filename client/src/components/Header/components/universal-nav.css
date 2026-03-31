@@ -267,6 +267,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 .nav-donate-btn:hover {
   background-color: var(--gray-00);
   color: var(--theme-color);
+  border-color: var(--yellow-gold);
 }
 
 .nav-donate-btn .menu-btn-icon {
@@ -285,6 +286,15 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   .nav-donate-btn .menu-btn-text {
     display: inline-block;
   }
+}
+
+.nav-donate-btn .fa-heart {
+  color: #ff5e5e;
+  transition: transform 0.2s ease;
+}
+
+.nav-donate-btn:hover .fa-heart {
+  transform: scale(1.2);
 }
 
 /**
