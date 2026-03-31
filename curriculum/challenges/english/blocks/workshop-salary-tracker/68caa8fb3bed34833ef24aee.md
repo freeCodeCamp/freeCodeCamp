@@ -17,9 +17,9 @@ You should set `self._salary` to the base salary for the new level.
 
 ```js
 ({ test: () => runPython(`
-  emp = Employee('Frank', 'trainee')
-  new_levels = ['junior', 'mid-level', 'senior']
-  for new_level in new_levels:
+emp = Employee('Frank', 'trainee')
+new_levels = ['junior', 'mid-level', 'senior']
+for new_level in new_levels:
     emp.level = new_level
     assert emp.salary == Employee._base_salaries.get(new_level)
 `) })
@@ -78,6 +78,7 @@ class Employee:
         
 --fcc-editable-region--
         self._level = new_level
+
     @property
     def salary(self):
         return self._salary
