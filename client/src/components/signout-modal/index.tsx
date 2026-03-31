@@ -40,7 +40,25 @@ export const pathAfterSignout = (currentPath: string): string => {
     ...redirectedPaths.map(path => `${path}/`)
   ];
 
-  return allPaths.some(path => currentPath === path) ? '/learn' : currentPath;
+  const basePath = currentPath.split('?')[0];
+
+  return allPaths.some(path => basePath === path)
+    ? '/learn'
+    : currentPath;
+};
+
+export const removeQueryParam = (
+  url: string,
+  param: string
+): string => {
+  const [path, queryString] = url.split('?');
+  if (!queryString) return url;
+
+  const params = new URLSearchParams(queryString);
+  params.delete(param);
+
+  const newQuery = params.toString();
+  return newQuery ? `${path}?${newQuery}` : path;
 };
 
 function SignoutModal(props: SignoutModalProps): JSX.Element {
@@ -55,7 +73,13 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
     const redirect = () => {
-      window.location.pathname = pathAfterSignout(window.location.pathname);
+      const fullPath =
+        window.location.pathname + window.location.search;
+      const redirected = pathAfterSignout(fullPath);
+
+     // Remove the 'messages' query parameter while preserving other query params
+      const cleaned = removeQueryParam(redirected, 'messages');
+      window.location.href = cleaned;
     };
     void fetch(`${apiLocation}/signout`, {
       method: 'GET',
