@@ -66,7 +66,7 @@ export const newUser = (email: string) => ({
   isA1ChineseCert: false,
   keyboardShortcuts: false,
   lastActivityUrl: null,
-  lastActivityTimestamp: null,
+  activityTimestamps: [],
   linkedin: null,
   location: '',
   name: '',

@@ -49,6 +49,8 @@ export const createResetProperties = () => ({
   isA1ChineseCert: false,
   needsModeration: false,
   partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
+  activityTimestamps: [],
+  lastActivityUrl: null,
   progressTimestamps: [Date.now()], // TODO(Post-MVP): This may need normalising before we can omit it. Also, does it need to start with a timestamp?
   savedChallenges: [] // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
 });

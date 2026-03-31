@@ -1,4 +1,5 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { startOfDay } from 'date-fns';
 
 import * as schemas from '../../schemas.js';
 
@@ -20,18 +21,39 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.updateActivity
     },
     async (req, reply) => {
-      const { url } = req.body;
+      const logger = fastify.log.child({ req, res: reply });
+      const { challengeId, url } = req.body;
 
       try {
+        const user = await fastify.prisma.user.findFirst({
+          where: { id: req.user?.id },
+          select: { activityTimestamps: true }
+        });
+
+        const todayStart = startOfDay(new Date()).getTime();
+        const existingTimestamps = (user?.activityTimestamps as number[]) ?? [];
+        const alreadyRecordedToday = existingTimestamps.includes(todayStart);
+
+        const updateData: {
+          currentChallengeId: string;
+          lastActivityUrl: string;
+          activityTimestamps?: number[];
+        } = {
+          currentChallengeId: challengeId,
+          lastActivityUrl: url
+        };
+
+        if (!alreadyRecordedToday) {
+          updateData.activityTimestamps = [...existingTimestamps, todayStart];
+        }
+
         await fastify.prisma.user.updateMany({
           where: { id: req.user?.id },
-          data: {
-            lastActivityUrl: url,
-            lastActivityTimestamp: Date.now()
-          }
+          data: updateData
         });
       } catch (err) {
-        fastify.log.error(err);
+        logger.error(err);
+        fastify.Sentry.captureException(err);
         void reply.code(500);
         return reply.send({
           message: 'flash.generic-error',

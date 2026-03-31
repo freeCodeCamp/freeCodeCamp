@@ -4,14 +4,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
 import { tryToShowDonationModal } from '../../redux/actions';
-import {
-  isSignedInSelector,
-  userFetchStateSelector
-} from '../../redux/selectors';
-import {
-  startActivityTracking,
-  stopActivityTracking
-} from '../../utils/activity-tracker';
+import { userFetchStateSelector } from '../../redux/selectors';
 import DonateModal from '../Donation/donation-modal';
 
 import './prism.css';
@@ -27,10 +20,8 @@ type FetchState = {
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
-  isSignedInSelector,
-  (fetchState: FetchState, isSignedIn: boolean) => ({
-    fetchState,
-    isSignedIn
+  (fetchState: FetchState) => ({
+    fetchState
   })
 );
 
@@ -40,14 +31,12 @@ const mapDispatchToProps = {
 
 type LearnLayoutProps = {
   fetchState: FetchState;
-  isSignedIn: boolean;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
 };
 
 function LearnLayout({
   fetchState,
-  isSignedIn,
   tryToShowDonationModal,
   children
 }: LearnLayoutProps): JSX.Element {
@@ -55,15 +44,6 @@ function LearnLayout({
     tryToShowDonationModal();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (isSignedIn) {
-      startActivityTracking();
-    }
-    return () => {
-      stopActivityTracking();
-    };
-  }, [isSignedIn]);
 
   useEffect(() => {
     return () => {
