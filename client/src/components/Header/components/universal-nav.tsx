@@ -86,6 +86,19 @@ const UniversalNav = ({
               innerRef={menuButtonRef}
               showMenu={showMenu}
             />
+            {!user?.isDonating && (
+              <Link
+                className='exposed-button-nav nav-donate-btn'
+                sameTab={false}
+                to='/donate'
+                data-playwright-test-label='header-donate-button'
+              >
+                <span className='menu-btn-icon'>
+                  <span className='sr-only'>{t('buttons.donate')}</span>
+                </span>
+                <span className='menu-btn-text'>{t('buttons.donate')}</span>
+              </Link>
+            )}
             {!isSearchExposedWidth && search}
             <NavLinks
               displayMenu={displayMenu}

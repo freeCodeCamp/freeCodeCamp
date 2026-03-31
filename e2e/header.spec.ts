@@ -46,6 +46,26 @@ test.describe('Header', () => {
     await expect(skipContent).toHaveAttribute('href', '#content-start');
   });
 
+  test('Should display universal nav Donate button', async ({ page }) => {
+    const donateButton = page.getByTestId('header-donate-button');
+    await expect(donateButton).toBeVisible();
+    await expect(donateButton).toHaveAttribute('href', '/donate');
+  });
+
+  test('Should show "Donate" text on desktop and Heart icon on mobile in the header', async ({
+    page,
+    isMobile
+  }) => {
+    const donateButton = page.getByTestId('header-donate-button');
+    const donateText = donateButton.getByText(translations.buttons.donate);
+
+    if (isMobile) {
+      await expect(donateText).toBeHidden();
+    } else {
+      await expect(donateText).toBeVisible();
+    }
+  });
+
   test('Renders universal nav by default', async ({ page }) => {
     const universalNavigation = page.getByTestId(
       headerComponentElements.universalNav

@@ -258,6 +258,35 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   border: 1px solid var(--gray-00);
 }
 
+.nav-donate-btn {
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-donate-btn:hover {
+  background-color: var(--gray-00);
+  color: var(--theme-color);
+}
+
+.nav-donate-btn .menu-btn-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-donate-btn .menu-btn-text {
+  display: none;
+}
+
+@media (min-width: 601px) {
+  .nav-donate-btn .menu-btn-icon {
+    display: none;
+  }
+  .nav-donate-btn .menu-btn-text {
+    display: inline-block;
+  }
+}
+
 /**
  * User thumbnail
  */
