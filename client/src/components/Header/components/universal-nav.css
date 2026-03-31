@@ -84,8 +84,9 @@
 
 /**
  * Site header language list
+ * Using ~ so it still works if more items are added between the button and list.
  */
-.lang-button-nav[aria-expanded='true'] + .nav-list {
+.lang-button-nav[aria-expanded='true'] ~ .nav-list {
   -ms-overflow-style: none;
   display: block;
   max-height: calc(100vh - var(--header-height));
@@ -94,7 +95,7 @@
   top: calc(var(--header-height));
 }
 
-.lang-button-nav[aria-expanded='true'] + .nav-list::-webkit-scrollbar {
+.lang-button-nav[aria-expanded='true'] ~ .nav-list::-webkit-scrollbar {
   display: none;
 }
 
@@ -394,7 +395,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
    menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']
-  + .fcc_searchBar {
+  ~ .fcc_searchBar {
   display: none;
 }
 
@@ -402,7 +403,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
     menu is collapsed. */
 .universal-nav-right
   #toggle-button-nav[aria-expanded='false']
-  + .fcc_searchBar
+  ~ .fcc_searchBar
   .ais-Hits {
   display: none;
 }
@@ -450,12 +451,17 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
 /**
  * Handle submenu containers collapsed and expanded states
+ 
+ * We use ~ because the Donate button is now between the toggle button 
+ * and the menu/search elements, so they are no longer right next to each other.
  */
-#universal-nav button[aria-expanded='false'] + div {
+#universal-nav button[aria-expanded='false'] ~ .nav-list,
+#universal-nav button[aria-expanded='false'] ~ .fcc_searchBar {
   display: none;
 }
 
-#universal-nav button[aria-expanded='true'] + div {
+#universal-nav button[aria-expanded='true'] ~ .nav-list,
+#universal-nav button[aria-expanded='true'] ~ .fcc_searchBar {
   display: block;
 }
 
