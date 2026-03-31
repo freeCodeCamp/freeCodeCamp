@@ -1,17 +1,17 @@
 ---
-id: 69cb589c3b9dafbc0c162d22
-title: Step 8
+id: 69cc1a8ddaa61c4ebd2b6d4e
+title: Step 12
 challengeType: 0
-dashedName: step-8
+dashedName: step-12
 ---
 
 # --description--
 
-Try submitting only spaces again. This time, you should see an `UncaughtError` in the console.
+Now that all the input data has been validated, you can store it for further use.
 
-This happens because the error you threw is not being handled, which causes the program to stop running.
+In JavaScript, objects are used to group related data together. In this case, the user's name and age both belong to the same user, so it makes sense to store them in a single object.
 
-In the previous lesson, you learned about the `try...catch` block that allows you to catch the error and handle it gracefully instead of breaking the program. You should wrap your `if` statements in the `try` block and leave the `catch` block empty for now.
+Declare an object called `user` with `name` and `age` as its properties.
 
 # --hints--
 
@@ -47,13 +47,24 @@ function registerUser() {
   console.log("Name:", name);
   console.log("Age:", age);
 
+  try {
+    if (name.trim() === "") {
+      throw new Error("Name is required");
+    }
+    if (age.trim() === "") {
+      throw new Error("Age is required");
+    }
+    if (!Number.isInteger(age)) {
+      throw new Error("Invalid value for age");
+    }
+    result.textContent = "Registration successful";
+  } catch (error) {
+    console.error(error.message);
+    result.textContent = error.message;
+  }
+
 --fcc-editable-region--
-  if (name.trim() === "") {
-    throw new Error("Name is required");
-  }
-  if (age.trim() === "") {
-    throw new Error("Age is required");
-  }
+
 --fcc-editable-region--
 }
 ```
