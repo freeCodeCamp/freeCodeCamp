@@ -13,6 +13,7 @@ const TEMPLATE_BLOCK = [
   '- [ ] I have read and followed the [how to open a pull request guide](https://contribute.freecodecamp.org/how-to-open-a-pull-request/).',
   "- [ ] My pull request targets the `main` branch of freeCodeCamp.",
   '- [ ] I have tested these changes either locally on my machine, or GitHub Codespaces.',
+  '- [ ] If this PR includes externally generated content, I have disclosed it and validated every change myself.',
   '',
   '<!--If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.-->',
   '',
