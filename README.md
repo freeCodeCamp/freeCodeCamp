@@ -54,7 +54,7 @@ A free, professional Foundational C# with Microsoft Certification is also availa
 
 This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
-Our community also has:
+Our community also includes:
 
 - A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
@@ -67,7 +67,7 @@ Our community also has:
 
 If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+If you're confident it is a new bug and have confirmed that others are facing the same issue, go ahead and create a new GitHub issue. Please include as much information as possible so we can reproduce the bug.
 
 ### Reporting Security Issues and Responsible Disclosure
 
@@ -77,7 +77,7 @@ We appreciate responsible disclosure of vulnerabilities that might impact the in
 
 ### Contributing
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to have you on board.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
