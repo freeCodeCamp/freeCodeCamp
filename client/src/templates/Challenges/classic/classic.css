@@ -1,5 +1,5 @@
-.reflex-element {
-  overflow: hidden !important;
+.container .reflex-element {
+  overflow: hidden;
 }
 
 .monaco-menu .action-label {
