@@ -332,7 +332,8 @@
             "lab-adjacency-list-to-matrix-converter-js",
             "lab-depth-first-search-js",
             "lab-n-queens-problem-js",
-            "review-graphs-and-trees-js"
+            "review-graphs-and-trees-js",
+            "quiz-graph-and-trees-js"
           ]
         },
         {
