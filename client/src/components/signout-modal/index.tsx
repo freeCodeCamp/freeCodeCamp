@@ -48,7 +48,7 @@ export const pathAfterSignout = (currentPath: string): string => {
 };
 
 function SignoutModal(props: SignoutModalProps): JSX.Element {
-  const { show, closeSignoutModal, createFlashMessage} = props;
+  const { show, closeSignoutModal, createFlashMessage } = props;
   const { t } = useTranslation();
 
   const handleModalHide = () => {
