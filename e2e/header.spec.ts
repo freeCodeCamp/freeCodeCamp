@@ -149,7 +149,9 @@ test.describe('Header', () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
 
-    const link = menu.getByRole('link', { name: translations.buttons.donate });
+    const link = menu.getByRole('link', {
+      name: translations.buttons.curriculum
+    });
     await link.focus();
 
     await page.keyboard.press('Escape');
@@ -158,7 +160,7 @@ test.describe('Header', () => {
     await expect(menuButton).toBeFocused();
   });
 
-  test('The menu should contain links to: donate, curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
+  test('The menu should contain links to: curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
     page
   }) => {
     const menuButton = page.getByTestId(headerComponentElements.menuButton);
@@ -168,11 +170,6 @@ test.describe('Header', () => {
     await expect(menu).toBeVisible();
 
     const menuLinks = [
-      { name: translations.buttons.profile, href: '/developmentuser' },
-      {
-        name: translations.buttons.donate,
-        href: '/donate'
-      },
       {
         name: translations.buttons.curriculum,
         href: '/learn'
