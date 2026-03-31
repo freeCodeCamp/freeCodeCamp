@@ -1,6 +1,6 @@
 import { existsSync, readdirSync } from 'fs';
-import { join, resolve, basename } from 'path';
-import { isEmpty } from 'lodash';
+import { resolve } from 'path';
+import { isEmpty, cloneDeep } from 'lodash';
 import debug from 'debug';
 
 import { parseMD } from '../../tools/challenge-parser/parser';
@@ -145,9 +145,11 @@ export function buildBlock(foundChallenges: Challenge[], meta: Meta) {
  * @returns {object} The challenge object with added meta information
  */
 export function addMetaToChallenge(
-  challenge: Partial<Challenge>,
+  challengeIn: Partial<Challenge>,
   meta: Meta
 ): Challenge {
+  const challenge = cloneDeep(challengeIn);
+
   const challengeOrderIndex = meta.challengeOrder.findIndex(
     ({ id }) => id === challenge.id
   );
@@ -336,13 +338,6 @@ export class BlockCreator {
     );
 
     challenge.translationPending = this.lang !== 'english' && !isAudited;
-    // Add source location to allow tracing back to original file (necessary to
-    // update the client when files change)
-    challenge.sourceLocation = join(
-      basename(this.blockContentDir),
-      block,
-      filename
-    );
 
     return finalizeChallenge(challenge, meta);
   }

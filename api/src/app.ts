@@ -41,6 +41,7 @@ import {
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
+  FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
@@ -86,7 +87,11 @@ export const buildOptions: FastifyHttpOptions<
   loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   // disabled so we can customise the request/response logging
-  disableRequestLogging: true
+  disableRequestLogging: true,
+  // destroy all connections on close to avoid EADDRINUSE
+  // on restart, in development. Leave default in production.
+  forceCloseConnections:
+    FREECODECAMP_NODE_ENV === 'production' ? ('idle' as const) : true
 };
 
 /**

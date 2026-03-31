@@ -205,6 +205,25 @@ const mapDispatchToProps = {
   openResetModal: () => openModal('reset')
 };
 
+const setupTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  monaco.editor.createModel(reactTypes['react-18'], 'typescript', reactFile);
+
+  const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+  return monaco.editor.createModel('', 'typescript', file);
+};
+
+const teardownTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  const tsxFile = monaco.Uri.file(monacoModelFileMap.tsxFile);
+
+  const reactModel = monaco.editor.getModel(reactFile);
+  const tsxModel = monaco.editor.getModel(tsxFile);
+
+  reactModel?.dispose();
+  tsxModel?.dispose();
+};
+
 const modeMap = {
   css: 'css',
   html: 'html',
@@ -400,19 +419,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
-    const setupTSModels = (monaco: typeof monacoEditor) => {
-      const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-      monaco.editor.createModel(
-        reactTypes['react-18'],
-        'typescript',
-        reactFile
-      );
-
-      const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
-      return monaco.editor.createModel('', 'typescript', file);
-    };
-
-    // TODO: make sure these aren't getting created over and over
     function createModel(contents: string, language: string) {
       if (language !== 'typescript') {
         return monaco.editor.createModel(contents, language);
@@ -1109,10 +1115,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
-      editor.focus();
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
-      editor.focus();
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     }
   }
@@ -1403,13 +1411,14 @@ const Editor = (props: EditorProps): JSX.Element => {
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
           editorWillUnmount={(editor, monaco) => {
-            const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-            const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
             // Any model we've created has to be manually disposed of to prevent
             // memory leaks.
-            editor.getModel()?.dispose();
-            monaco.editor.getModel(reactFile)?.dispose();
-            monaco.editor.getModel(file)?.dispose();
+            const language = modeMap[challengeFile?.ext ?? 'html'];
+            if (language === 'typescript') {
+              teardownTSModels(monaco);
+            } else {
+              editor.getModel()?.dispose();
+            }
           }}
           onChange={onChange}
           options={{ ...options, folding: !hasEditableRegion() }}

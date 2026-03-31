@@ -20,7 +20,7 @@ import { version } from '@freecodecamp/browser-scripts/package.json';
 import { WorkerExecutor } from './worker-executor';
 import {
   compileTypeScriptCode,
-  checkTSServiceIsReady
+  setupTSCompiler
 } from './typescript-worker-handler';
 
 const protectTimeout = 100;
@@ -69,7 +69,7 @@ async function loadPresetEnv() {
     );
 
   presetsJS = {
-    presets: [presetEnv]
+    presets: [[presetEnv, { exclude: ['transform-spread'] }]]
   };
 }
 
@@ -84,7 +84,7 @@ async function loadPresetReact() {
     );
 
   presetsJSX = {
-    presets: [presetEnv, presetReact]
+    presets: [[presetEnv, { exclude: ['transform-spread'] }], presetReact]
   };
 }
 
@@ -148,7 +148,7 @@ const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
 
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await checkTSServiceIsReady();
+  await setupTSCompiler();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return flow(
     partial(transformHeadTailAndContents, compileTypeScriptCode),
@@ -159,7 +159,7 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
-  await checkTSServiceIsReady();
+  await setupTSCompiler();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
