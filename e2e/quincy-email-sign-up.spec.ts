@@ -26,10 +26,9 @@ test.describe('Email sign-up page when user is not signed in', () => {
       page.getByText(translations.misc['email-blast'])
     ).toBeVisible();
     await expect(
-      page.getByRole('link', {
-        name: translations.buttons['sign-up-email-list']
-      })
+      page.getByText(translations.misc['email-signup-not-signed-in'])
     ).toBeVisible();
+    await expect(page.getByTestId('email-signup-sign-in-btn')).toBeVisible();
   });
 
   test("should not enable Quincy's weekly newsletter when the user clicks the sign up button", async ({
@@ -40,9 +39,7 @@ test.describe('Email sign-up page when user is not signed in', () => {
       page.getByText(translations.misc['email-blast'])
     ).toBeVisible();
 
-    const signupLink = page.getByRole('link', {
-      name: translations.buttons['sign-up-email-list']
-    });
+    const signupLink = page.getByTestId('email-signup-sign-in-btn');
 
     await expect(signupLink).toBeVisible();
     await expect(signupLink).toHaveAttribute('href', `${apiLocation}/signin`);
