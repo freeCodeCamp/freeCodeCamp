@@ -36,7 +36,13 @@ const mapStateToProps = createSelector(
   isSubmittingSelector,
   (
     challengeFiles: ChallengeFiles,
-    { dashedName, id }: { dashedName: string; id: string },
+    {
+      dashedName,
+      id
+    }: {
+      dashedName: string;
+      id: string;
+    },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,

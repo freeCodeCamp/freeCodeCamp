@@ -38,22 +38,17 @@ function addSeeds() {
     // processing in these cases.
     if (isEmpty(seedTree.children)) return;
     const contentsTree = root(getSection(seedTree, `--seed-contents--`));
-    const headTree = root(getSection(seedTree, `--before-user-code--`));
-    const tailTree = root(getSection(seedTree, `--after-user-code--`));
     const seeds = {};
 
-    // While before and after code are optional, the contents are not
+    // Seed contents are required.
     if (isEmpty(contentsTree.children))
       throw Error('## --seed-contents-- must appear in # --seed-- sections');
 
     const visitForContents = visitChildren(
       getFileVisitor(seeds, 'contents', validateEditableMarkers)
     );
-    const visitForHead = visitChildren(getFileVisitor(seeds, 'head'));
-    const visitForTail = visitChildren(getFileVisitor(seeds, 'tail'));
     visitForContents(contentsTree);
-    visitForHead(headTree);
-    visitForTail(tailTree);
+
     const seedVals = Object.values(seeds);
     file.data = {
       ...file.data,

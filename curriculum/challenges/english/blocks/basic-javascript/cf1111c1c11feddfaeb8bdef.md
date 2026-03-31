@@ -62,12 +62,6 @@ assert(
 
 # --seed--
 
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
-
 ## --seed-contents--
 
 ```js
