@@ -242,12 +242,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
             "fileKey": {
               "type": "string",
             },
-            "head": {
-              "allow": [
-                "",
-              ],
-              "type": "string",
-            },
             "history": {
               "items": [
                 {
@@ -272,12 +266,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "type": "string",
             },
             "seed": {
-              "allow": [
-                "",
-              ],
-              "type": "string",
-            },
-            "tail": {
               "allow": [
                 "",
               ],
@@ -1426,7 +1414,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "Second Candidate",
                     "Sophie",
                     "Tom",
-                    "Alex",
                     "Ángela",
                     "Camila",
                     "Carlos",
@@ -1444,12 +1431,14 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "Diego",
                     "Valeria",
                     "Chen Na",
+                    "Huang Jingyi",
                     "Li Hong",
                     "Li Ping",
                     "Lin Yating",
                     "Liu Ming",
                     "Wang Hua",
                     "Zhang Wei",
+                    "Zhou Jia",
                     "Zhou Yongjie",
                   ],
                   "flags": {
@@ -1922,7 +1911,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                         "Second Candidate",
                         "Sophie",
                         "Tom",
-                        "Alex",
                         "Ángela",
                         "Camila",
                         "Carlos",
@@ -1940,12 +1928,14 @@ exports[`challenge schema > should not be changed without informing the mobile t
                         "Diego",
                         "Valeria",
                         "Chen Na",
+                        "Huang Jingyi",
                         "Li Hong",
                         "Li Ping",
                         "Lin Yating",
                         "Liu Ming",
                         "Wang Hua",
                         "Zhang Wei",
+                        "Zhou Jia",
                         "Zhou Yongjie",
                       ],
                       "flags": {
@@ -2015,9 +2005,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
       },
       "type": "object",
     },
-    "showSpeakingButton": {
-      "type": "boolean",
-    },
     "solutions": {
       "items": [
         {
@@ -2053,12 +2040,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                 "fileKey": {
                   "type": "string",
                 },
-                "head": {
-                  "allow": [
-                    "",
-                  ],
-                  "type": "string",
-                },
                 "history": {
                   "items": [
                     {
@@ -2083,12 +2064,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                   "type": "string",
                 },
                 "seed": {
-                  "allow": [
-                    "",
-                  ],
-                  "type": "string",
-                },
-                "tail": {
                   "allow": [
                     "",
                   ],

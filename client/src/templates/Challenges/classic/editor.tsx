@@ -232,7 +232,8 @@ const modeMap = {
   ts: 'typescript',
   tsx: 'typescript',
   py: 'python',
-  python: 'python'
+  python: 'python',
+  json: 'json'
 };
 
 let monacoThemesDefined = false;
@@ -411,6 +412,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
       jsx: monaco.languages.typescript.JsxEmit.Preserve,
       allowUmdGlobalAccess: true
+    });
+
+    // support JSONC:
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+      allowComments: true
     });
 
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -649,12 +655,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
-      run:
+      run: () =>
         props.saveSubmissionToDB && props.isSignedIn
           ? // save to database
-            props.saveChallenge
+            props.saveChallenge()
           : // save to local storage
-            props.saveEditorContent
+            props.saveEditorContent()
     });
     editor.addAction({
       id: 'toggle-accessibility',

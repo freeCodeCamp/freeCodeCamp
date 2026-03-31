@@ -1,0 +1,56 @@
+---
+id: 6989f3632f8b8bdf168aa321
+title: Step 7
+challengeType: 1
+dashedName: step-7
+---
+
+# --description--
+
+Inside your `while` loop, use `queue.shift()` to remove and get the first element from the queue. This implements the first-in-first-out (FIFO) behavior characteristic of BFS.
+
+Destructure this array into three variables: `current`, `opensUsed`, and `closesUsed`.
+
+# --hints--
+
+You should use `queue.shift()` to get the first element from the queue.
+
+```js
+assert.match(genParentheses.toString(), /queue\.shift\s*\(\s*\)/);
+```
+
+You should destructure the result into three variables: `current`, `opensUsed`, and `closesUsed`.
+
+```js
+assert.match(genParentheses.toString(), /opensUsed/);
+assert.match(genParentheses.toString(), /closesUsed/);
+assert.match(genParentheses.toString(), /current/);
+assert.match(genParentheses.toString(), /queue\.shift\s*\(\s*\)/);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function genParentheses(pairs) {
+  if (!Number.isInteger(pairs)) {
+    return 'The number of pairs should be an integer';
+  }
+  if (pairs < 1) {
+    return 'The number of pairs should be at least 1';
+  }
+
+  let queue = [['', 0, 0]];
+  let result = [];
+
+  while (queue.length > 0) {
+    console.log(queue);
+--fcc-editable-region--
+    
+--fcc-editable-region--
+  }
+
+  return result;
+}
+```
