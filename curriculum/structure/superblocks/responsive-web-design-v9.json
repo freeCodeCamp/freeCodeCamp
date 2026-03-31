@@ -95,6 +95,7 @@
         {
           "dashedName": "computer-basics",
           "blocks": [
+            "lecture-using-ai-and-llms-effectively",
             "lecture-understanding-computer-internet-and-tooling-basics",
             "lecture-working-with-file-systems",
             "lecture-browsing-the-web-effectively",
