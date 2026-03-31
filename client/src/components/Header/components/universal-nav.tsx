@@ -90,7 +90,7 @@ const UniversalNav = ({
             />
             {!user?.isDonating && (
               <Link
-                className='exposed-button-nav nav-donate-btn'
+                className='nav-donate-btn signup-btn btn-cta'
                 sameTab={false}
                 to='/donate'
                 data-playwright-test-label='header-donate-button'
