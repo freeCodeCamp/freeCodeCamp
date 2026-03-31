@@ -50,9 +50,9 @@ Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to sh
 
 `Sure, Jessica` is a way to show that you're open to discussing the issue. Another example:
 
-- Person 1: `Do you have any ideas how to fix it?` - This person is asking for suggestions or solutions.
+- **Noah:** `Do you have any ideas how to fix it?` - This person is asking for suggestions or solutions.
 
-- Person 2: `Sure. We could check the server logs and see what's wrong.` - This person is saying yes, and is ready to share a suggestion.
+- **David:** `Sure. We could check the server logs and see what's wrong.` - This person is saying yes, and is ready to share a suggestion.
 
 # --scene--
 

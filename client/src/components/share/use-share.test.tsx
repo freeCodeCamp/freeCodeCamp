@@ -43,5 +43,9 @@ describe('useShare', () => {
     expect(shareResult.current.threadsURL).toBe(
       `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`
     );
+
+    expect(shareResult.current.facebookUrl).toBe(
+      `https://www.facebook.com/sharer/sharer.php?u=${redirectFreeCodeCampLearnURL}&hashtag=${hastag}freecodecamp`
+    );
   });
 });

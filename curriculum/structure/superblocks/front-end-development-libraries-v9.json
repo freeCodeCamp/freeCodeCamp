@@ -83,6 +83,7 @@
           "blocks": [
             "lecture-introduction-to-data-visualization",
             "workshop-build-a-zoo-animal-scatterplot",
+            "lab-bar-chart",
             "lab-scatterplot-graph"
           ]
         },

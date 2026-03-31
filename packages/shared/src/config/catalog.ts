@@ -36,37 +36,25 @@ interface Catalog {
 
 export const catalog: Catalog[] = [
   {
-    superBlock: SuperBlocks.HtmlFormsAndTables,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.Html
-  },
-  {
-    superBlock: SuperBlocks.SemanticHtml,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.Html
-  },
-  {
-    superBlock: SuperBlocks.BasicHtml,
-    level: Levels.Beginner,
-    hours: 3,
-    topic: Topic.Html
-  },
-  {
     superBlock: SuperBlocks.LearnPythonForBeginners,
     level: Levels.Beginner,
     hours: 5,
     topic: Topic.Python
   },
   {
-    superBlock: SuperBlocks.LabSurveyForm,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.Html
+    superBlock: SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.ComputerScience
   },
   {
-    superBlock: SuperBlocks.HtmlAndAccessibility,
+    superBlock: SuperBlocks.LearnRAGAndMCPFundamentals,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.AI
+  },
+  {
+    superBlock: SuperBlocks.SemanticHtml,
     level: Levels.Beginner,
     hours: 2,
     topic: Topic.Html
@@ -84,10 +72,46 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
+    superBlock: SuperBlocks.BasicHtml,
+    level: Levels.Beginner,
+    hours: 3,
+    topic: Topic.Html
+  },
+  {
     superBlock: SuperBlocks.DesignForDevelopers,
     level: Levels.Beginner,
     hours: 2,
     topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.HtmlAndAccessibility,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.CssFlexbox,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPrecalculus,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.Math
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToGitAndGithub,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Git
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPythonBasics,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
   },
   {
     superBlock: SuperBlocks.AbsoluteAndRelativeUnits,
@@ -102,10 +126,22 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
+    superBlock: SuperBlocks.HtmlFormsAndTables,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
     superBlock: SuperBlocks.CssColors,
     level: Levels.Intermediate,
     hours: 2,
     topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.JavascriptFundamentalsReview,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
   },
   {
     superBlock: SuperBlocks.StylingForms,
@@ -120,16 +156,22 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
-    superBlock: SuperBlocks.CssFlexbox,
+    superBlock: SuperBlocks.IntroductionToBash,
     level: Levels.Intermediate,
-    hours: 2,
-    topic: Topic.CSS
+    hours: 20,
+    topic: Topic.Bash
   },
   {
-    superBlock: SuperBlocks.LabPageOfPlayingCards,
+    superBlock: SuperBlocks.IntroductionToLinearDataStructuresInPython,
     level: Levels.Intermediate,
-    hours: 2,
-    topic: Topic.CSS
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnAlgorithmsInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
   },
   {
     superBlock: SuperBlocks.CssTypography,
@@ -156,21 +198,9 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
-    superBlock: SuperBlocks.LabBookInventoryApp,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.CSS
-  },
-  {
     superBlock: SuperBlocks.ResponsiveDesign,
     level: Levels.Intermediate,
     hours: 2,
-    topic: Topic.CSS
-  },
-  {
-    superBlock: SuperBlocks.LabTechnicalDocumentationPage,
-    level: Levels.Advanced,
-    hours: 1,
     topic: Topic.CSS
   },
   {
@@ -186,40 +216,10 @@ export const catalog: Catalog[] = [
     topic: Topic.CSS
   },
   {
-    superBlock: SuperBlocks.LabProductLandingPage,
-    level: Levels.Beginner,
-    hours: 2,
-    topic: Topic.CSS
-  },
-  {
     superBlock: SuperBlocks.CssAnimations,
     level: Levels.Advanced,
     hours: 2,
     topic: Topic.CSS
-  },
-  {
-    superBlock: SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
-    level: Levels.Intermediate,
-    hours: 6,
-    topic: Topic.ComputerScience
-  },
-  {
-    superBlock: SuperBlocks.LearnRAGAndMCPFundamentals,
-    level: Levels.Intermediate,
-    hours: 2,
-    topic: Topic.AI
-  },
-  {
-    superBlock: SuperBlocks.IntroductionToPrecalculus,
-    level: Levels.Intermediate,
-    hours: 6,
-    topic: Topic.Math
-  },
-  {
-    superBlock: SuperBlocks.IntroductionToBash,
-    level: Levels.Intermediate,
-    hours: 20,
-    topic: Topic.Bash
   },
   {
     superBlock: SuperBlocks.IntroductionToSQLAndPostgreSQL,
@@ -244,18 +244,6 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 10,
     topic: Topic.Editors
-  },
-  {
-    superBlock: SuperBlocks.IntroductionToGitAndGithub,
-    level: Levels.Intermediate,
-    hours: 20,
-    topic: Topic.Git
-  },
-  {
-    superBlock: SuperBlocks.LearnPromptingFundamentals,
-    level: Levels.Beginner,
-    hours: 1,
-    topic: Topic.AI
   },
   {
     superBlock: SuperBlocks.IntroductionToVariablesAndStringsInJS,
@@ -289,12 +277,6 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.IntroductionToLoopsInJS,
-    level: Levels.Intermediate,
-    hours: 40,
-    topic: Topic.Js
-  },
-  {
-    superBlock: SuperBlocks.JavascriptFundamentalsReview,
     level: Levels.Intermediate,
     hours: 40,
     topic: Topic.Js
@@ -384,12 +366,6 @@ export const catalog: Catalog[] = [
     topic: Topic.Python
   },
   {
-    superBlock: SuperBlocks.IntroductionToPythonBasics,
-    level: Levels.Intermediate,
-    hours: 40,
-    topic: Topic.Python
-  },
-  {
     superBlock: SuperBlocks.LearnPythonLoopsAndSequences,
     level: Levels.Intermediate,
     hours: 40,
@@ -415,18 +391,6 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.IntroductionToOOPInPython,
-    level: Levels.Intermediate,
-    hours: 40,
-    topic: Topic.Python
-  },
-  {
-    superBlock: SuperBlocks.IntroductionToLinearDataStructuresInPython,
-    level: Levels.Intermediate,
-    hours: 40,
-    topic: Topic.Python
-  },
-  {
-    superBlock: SuperBlocks.LearnAlgorithmsInPython,
     level: Levels.Intermediate,
     hours: 40,
     topic: Topic.Python

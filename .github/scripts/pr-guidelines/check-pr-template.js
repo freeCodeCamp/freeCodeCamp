@@ -26,6 +26,7 @@ module.exports = async ({ github, context, isAllowListed }) => {
   if (isAllowListed === 'true') return;
 
   const body = (context.payload.pull_request.body || '').toLowerCase();
+  const action = context.payload.action;
 
   // The template must be present and the first 3 checkboxes must be
   // ticked. The last checkbox (tested locally) is acceptable to leave
@@ -45,7 +46,25 @@ module.exports = async ({ github, context, isAllowListed }) => {
     normalizedBody.includes(`[x] ${item}`)
   );
 
-  if (templatePresent && allRequiredTicked) return;
+  if (templatePresent && allRequiredTicked) {
+    // On edit, remove the deprioritized label if the check now passes.
+    if (action === 'edited') {
+      try {
+        await github.rest.issues.removeLabel({
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          issue_number: context.payload.pull_request.number,
+          name: 'deprioritized'
+        });
+      } catch {
+        // Label may not exist — ignore.
+      }
+    }
+    return;
+  }
+
+  // On edit, don't re-comment — the original comment is already there.
+  if (action === 'edited') return;
 
   await github.rest.issues.addLabels({
     owner: context.repo.owner,
@@ -64,7 +83,13 @@ module.exports = async ({ github, context, isAllowListed }) => {
         '',
         'Thank you for the contribution.',
         '',
-        "Please add back the following template to the PR description and complete the checklist items. We won't be able to review this PR until then.",
+        'The automated checks found a few issues with the PR. Currently the PR description is missing the required checklist or some of its items are not completed:',
+        '',
+        '1. The `Checklist:` heading is present in the PR description.',
+        '2. The checkbox items are ticked (changed from `[ ]` to `[x]`).',
+        '3. You have actually completed the items in the checklist.',
+        '',
+        'Please edit your PR description to include the following template with the checklist items completed.',
         '',
         TEMPLATE_BLOCK
       ].join('\n') + FOOTER

@@ -117,7 +117,6 @@ export type Characters =
   | 'Tom'
 
   // Spanish
-  | 'Alex'
   | 'Ángela'
   | 'Camila'
   | 'Carlos'
@@ -137,12 +136,14 @@ export type Characters =
 
   // Chinese
   | 'Chen Na'
+  | 'Huang Jingyi'
   | 'Li Hong'
   | 'Li Ping'
   | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
   | 'Zhang Wei'
+  | 'Zhou Jia'
   | 'Zhou Yongjie';
 
 interface SetupCharacter {
