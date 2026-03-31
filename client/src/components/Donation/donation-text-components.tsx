@@ -268,25 +268,25 @@ export const CommunityAchievementsText = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <>
-      <h2>{t('donate.community-achivements-title')}</h2>
+      <h2>{t('donate.community-achievements-title')}</h2>
       <ul>
         <li>
-          <Trans i18nKey='donate.community-achivements-1'>
+          <Trans i18nKey='donate.community-achievements-1'>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey='donate.community-achivements-2'>
+          <Trans i18nKey='donate.community-achievements-2'>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey='donate.community-achivements-3'>
+          <Trans i18nKey='donate.community-achievements-3'>
             <b>placeholder</b>
           </Trans>
         </li>
         <li>
-          <Trans i18nKey='donate.community-achivements-4'>
+          <Trans i18nKey='donate.community-achievements-4'>
             <b>placeholder</b>
           </Trans>
         </li>
