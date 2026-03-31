@@ -39,10 +39,10 @@ export const CtaText = (): JSX.Element => {
 
 export const ThankYouMessage = ({
   askForDonation,
-  thankContributon
+  thankContribution
 }: {
   askForDonation: boolean;
-  thankContributon?: boolean;
+  thankContribution?: boolean;
 }): JSX.Element => {
   const { t } = useTranslation();
   return (
@@ -50,7 +50,7 @@ export const ThankYouMessage = ({
       <h1 data-playwright-test-label='main-head'>
         {t('donate.thank-you-continued')}
       </h1>
-      {(askForDonation || thankContributon) && (
+      {(askForDonation || thankContribution) && (
         <>
           <Spacer size='m' />
           <p>{t('donate.crucial-contribution')}</p>
