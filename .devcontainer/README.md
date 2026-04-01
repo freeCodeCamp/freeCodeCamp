@@ -13,6 +13,16 @@ pnpm run develop
 
 ## Optional setup
 
+> ** macOS users:** After installing Homebrew during setup, if you see
+> `brew: command not found`, you need to add Homebrew to your PATH first.
+> Run this in your terminal:
+>
+> ```bash
+> eval "$(/usr/local/bin/brew shellenv zsh)"
+> ```
+>
+> To make this permanent, add it to your `~/.zprofile` file.
+
 For E2E tests:
 
 ```bash
