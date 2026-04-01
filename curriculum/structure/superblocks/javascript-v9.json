@@ -343,6 +343,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming-js",
+            "lab-nth-fibonacci-number-js",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]

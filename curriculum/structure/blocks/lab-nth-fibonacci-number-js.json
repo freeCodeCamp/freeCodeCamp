@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-nth-fibonacci-number-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "7a97b79c096ecb000d03bd36",
+      "title": "Build an Nth Fibonacci Number Calculator"
+    }
+  ]
+}
