@@ -339,7 +339,6 @@
         },
         {
           "dashedName": "dynamic-programming",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming-js",
             "lab-nth-fibonacci-number-js",
