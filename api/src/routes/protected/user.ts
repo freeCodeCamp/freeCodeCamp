@@ -735,6 +735,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             progressTimestamps: true,
             savedChallenges: true,
             sendQuincyEmail: true,
+            socrates: true,
             theme: true,
             twitter: true,
             bluesky: true,
@@ -791,6 +792,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           name,
           theme,
           experience,
+          socrates,
           ...publicUser
         } = rest;
 
@@ -829,7 +831,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
               experience: experience.map(removeNulls),
-              msUsername: msUsername?.msUsername
+              msUsername: msUsername?.msUsername,
+              socrates: socrates ?? true
             }
           },
           result: user.username
