@@ -128,7 +128,7 @@ const Chapter = ({
         });
       });
     }
-  }, []);
+  }, [dashedName]);
   const chapterButtonContent = (
     <>
       <div className='chapter-button-left'>
