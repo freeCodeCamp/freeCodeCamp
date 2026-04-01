@@ -29,6 +29,7 @@
     "sign-in": "登录",
     "sign-up-email-list": "订阅 Quincy 每周的电子邮件",
     "sign-out": "退出",
+    "catalog": "Catalog",
     "curriculum": "课程",
     "contribute": "贡献",
     "podcast": "播客",
@@ -116,6 +117,7 @@
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
     "share-on-threads": "分享到 Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "按播放键",
     "download-latest-version": "下载最新版本",
     "more-ways-to-sign-in": "更多登录方式",
@@ -442,6 +444,7 @@
     "edit-my-profile": "编辑我的个人资料",
     "add-bluesky": "将此认证分享到 BlueSky",
     "add-threads": "将此认证分享到 Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "经历",
       "share-experience": "分享你的职业经历",
@@ -913,6 +916,7 @@
     "unsubscribed": "你已成功取消订阅",
     "keep-coding": "无论你做什么，都要继续编程！",
     "email-signup": "邮件注册",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "欢迎来到你全新的 freeCodeCamp 账户。让我们开始吧。",
     "duplicate-account-warning": "如果你想登录一个现有的账户，而不是创建这个账户，<0>点击这里删除这个账户</0>并尝试另一个电子邮件地址。",
     "quincy": "- Quincy Larson，freeCodeCamp.org 创始人、老师",
@@ -1498,6 +1502,7 @@
         "intermediate": "中级",
         "advanced": "高级"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} 小时",
       "no-results": "未找到课程。尝试调整筛选以查看更多结果。",
       "topic": {

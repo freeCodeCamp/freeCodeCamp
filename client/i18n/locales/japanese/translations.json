@@ -29,6 +29,7 @@
     "sign-in": "サインイン",
     "sign-up-email-list": "Quincy のウィークリーメールを受け取る",
     "sign-out": "サインアウト",
+    "catalog": "Catalog",
     "curriculum": "カリキュラム",
     "contribute": "コントリビューション",
     "podcast": "ポッドキャスト",
@@ -116,6 +117,7 @@
     "share-on-x": "X でシェア",
     "share-on-bluesky": "Bluesky でシェア",
     "share-on-threads": "Threads でシェア",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
     "more-ways-to-sign-in": "More ways to sign in",
@@ -442,6 +444,7 @@
     "edit-my-profile": "プロフィールを編集",
     "add-bluesky": "この認定証を Bluesky で共有",
     "add-threads": "この認定証を Threads で共有",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "Experience",
       "share-experience": "Share your professional experience",
@@ -913,6 +916,7 @@
     "unsubscribed": "購読解除が完了しました",
     "keep-coding": "どこへ行っても、コーディングを続けてください！",
     "email-signup": "E メールでサインアップ",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "freeCodeCamp アカウントを新規登録しました。",
     "duplicate-account-warning": "新規登録ではなく既存のアカウントにサインインする場合には、<0>こちらをクリックしてこのアカウントを削除し</0>、他のメールアドレスをお試しください。",
     "quincy": "- freeCodeCamp.org を設立した教師、Quincy Larson",
@@ -1498,6 +1502,7 @@
         "intermediate": "Intermediate",
         "advanced": "Advanced"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} hours",
       "no-results": "No courses found. Try adjusting your filters to see more results.",
       "topic": {

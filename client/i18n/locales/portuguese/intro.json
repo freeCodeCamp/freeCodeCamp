@@ -3838,8 +3838,8 @@
           "Neste primeiro curso, você aprenderá expressões comuns para situações que você pode encontrar no seu primeiro dia no trabalho. Você vai aprender sobre apresentações, conhecer pessoas, pedir recomendações para almoço e obter um cartão de acesso com o pessoal da segurança."
         ]
       },
-      "en-a2-quiz-greetings-first-day-office": {
-        "title": "Questionário de Cumprimentos no Primeiro Dia no Escritório",
+      "en-a2-quiz-first-day-conversations-at-work": {
+        "title": "First Day Conversations at Work Quiz",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -3848,8 +3848,8 @@
           "Neste curso, você aprenderá a fazer uma apresentação pessoal. Você também aprenderá a declarar sua profissão e a compartilhar seus objetivos nas reuniões em grupo."
         ]
       },
-      "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Questionário de Apresentações da Equipe Online",
+      "en-a2-quiz-meeting-introductions-at-work": {
+        "title": "Meeting Introductions at Work Quiz",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -3858,8 +3858,8 @@
           "Neste curso, você aprenderá a iniciar uma conversa em ambientes casuais. Você também aprenderá a falar sobre seus passatempos e características de sua personalidade. Você também aprenderá a perguntar sobre lugares na cidade."
         ]
       },
-      "en-a2-quiz-conversation-starters-break-room": {
-        "title": "Questionário sobre Conversas na Sala de Descanso",
+      "en-a2-quiz-conversation-starters-at-work": {
+        "title": "Break Room Conversations Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
@@ -3868,8 +3868,8 @@
           "Neste curso, você aprenderá a falar sobre seu dia de trabalho e sobre as tarefas que você executa no local de trabalho, além de como compartilhar isso com os outros. O foco principal está nas estruturas usadas para descrever suas atividades e no vocabulário relacionado a tarefas."
         ]
       },
-      "en-a2-quiz-talk-about-typical-workday-tasks": {
-        "title": "Questionário sobre Como Falar do Dia de Trabalho",
+      "en-a2-quiz-work-routines-and-tasks": {
+        "title": "Talking About Your Workday Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
@@ -3878,8 +3878,8 @@
           "Neste curso, você aprenderá a falar sobre detalhes de sua rotina e a compartilhá-los com alguém. O foco principal está nas estruturas utilizadas para declarar ações de rotina e no vocabulário relacionado."
         ]
       },
-      "en-a2-quiz-discuss-morning-evening-routine": {
-        "title": "Questionário sobre Rotinas Diárias no Trabalho",
+      "en-a2-quiz-daily-life-routines": {
+        "title": "Daily Routines at Work Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-describe-your-current-project": {
@@ -3888,8 +3888,8 @@
           "Neste curso, você aprenderá a falar sobre os projetos nos quais você está envolvido e a informar aos outros sobre o que você está fazendo nesses projetos. O foco principal está nas estruturas utilizadas para dar essas informações e no vocabulário relacionado."
         ]
       },
-      "en-a2-quiz-describe-current-project": {
-        "title": "Questionário sobre Como Descrever o Projeto Atual",
+      "en-a2-quiz-what-are-you-working-on": {
+        "title": "Describing Your Current Project Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
@@ -3898,8 +3898,8 @@
           "Neste curso, você aprenderá a perguntar sobre o histórico educacional e profissional de outra pessoa e a compartilhar informações sobre seu próprio histórico."
         ]
       },
-      "en-a2-quiz-educational-professional-background": {
-        "title": "Questionário sobre Formação Educacional e Profissional",
+      "en-a2-quiz-educational-and-professional-background": {
+        "title": "Educational and Professional Background Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
@@ -3908,8 +3908,8 @@
           "Neste curso, você aprenderá diferentes maneiras de falar sobre passatempos e coisas que interessam a você. Você também aprenderá a perguntar sobre os passatempos de outras pessoas e a convidá-los a se juntar a você nessas atividades."
         ]
       },
-      "en-a2-quiz-talk-about-hobbies-interests": {
-        "title": "Questionário sobre Falar de Hobbies e Interesses",
+      "en-a2-quiz-hobbies-and-interests": {
+        "title": "Talking About Hobbies and Interests Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
@@ -3928,8 +3928,8 @@
           "Neste curso, você aprenderá a perguntar sobre o que motiva as pessoas em suas vidas pessoais e profissionais, a responder perguntas relacionadas às suas motivações, e a conversar sobre as preferências das pessoas."
         ]
       },
-      "en-a2-quiz-preferences-motivations": {
-        "title": "Questionário sobre Preferências e Motivações",
+      "en-a2-quiz-preferences-and-motivations": {
+        "title": "Preferences and Motivations Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
@@ -3938,8 +3938,8 @@
           "Neste curso, você aprenderá a conversar sobre assuntos em tecnologia a respeito dos quais todos estão falando nos dias de hoje."
         ]
       },
-      "en-a2-quiz-popular-technology-trends": {
-        "title": "Questionário sobre Tendências Tecnológicas",
+      "en-a2-quiz-sharing-opinions": {
+        "title": "Technology Trends Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
@@ -3948,8 +3948,8 @@
           "Neste curso, você aprenderá a verificar se as informações que você tinha estão corretas e a pedir esclarecimentos quando algo não estiver claro para você."
         ]
       },
-      "en-a2-quiz-clarify-information-interactions": {
-        "title": "Questionário sobre Esclarecimento de Informações",
+      "en-a2-quiz-getting-the-details-right": {
+        "title": "Clarifying Information Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
@@ -3968,8 +3968,8 @@
           "Neste curso, você verá termos relacionados à programação e aprenderá a usá-los em uma conversa."
         ]
       },
-      "en-a2-quiz-code-related-concepts-terms": {
-        "title": "Questionário sobre Conceitos e Termos de Código",
+      "en-a2-quiz-key-programming-terms": {
+        "title": "Code Concepts and Terms Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
@@ -3978,8 +3978,8 @@
           "Neste curso, você verá algumas tendências recentes no mundo da tecnologia e aprenderá a discuti-las em inglês."
         ]
       },
-      "en-a2-quiz-tech-trends-updates": {
-        "title": "Questionário sobre Atualizações e Tendências Tecnológicas",
+      "en-a2-quiz-discussing-new-ideas": {
+        "title": "Tech Updates and Trends Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
@@ -3988,8 +3988,8 @@
           "Neste curso, você verá expressões relacionadas a como pedir ajuda a um colega e a como oferecer ajuda a eles."
         ]
       },
-      "en-a2-quiz-help-coworker-github-troubleshooting": {
-        "title": "Questionário sobre Ajudar um Colega no GitHub",
+      "en-a2-quiz-discussing-problems-and-solutions": {
+        "title": "Helping a Coworker on GitHub Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
@@ -3998,8 +3998,8 @@
           "Este curso mostrará como falar sobre seus projetos em termos do que você já fez e do que está fazendo neles neste momento."
         ]
       },
-      "en-a2-quiz-share-progress-weekly-meeting": {
-        "title": "Questionário sobre Compartilhar Progresso na Reunião Semanal",
+      "en-a2-quiz-collaborating-in-meetings": {
+        "title": "Weekly Meeting Progress Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
@@ -4008,8 +4008,8 @@
           "Neste curso, você verá como pode fazer perguntas para esclarecer coisas que não estão muito claras para você em um código."
         ]
       },
-      "en-a2-quiz-ask-for-code-clarification": {
-        "title": "Questionário sobre Pedir Esclarecimentos de Código",
+      "en-a2-quiz-understanding-problems": {
+        "title": "Asking for Code Clarification Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
@@ -4038,8 +4038,8 @@
           "Neste curso, você verá algumas ideias para ajudá-lo a lidar com a documentação e a analisá-la em termos simples."
         ]
       },
-      "en-a2-quiz-analyze-code-documentation": {
-        "title": "Questionário sobre Análise de Documentação de Código",
+      "en-a2-quiz-analyzing-documentation": {
+        "title": "Analyzing Code Documentation Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
@@ -4048,8 +4048,8 @@
           "Neste curso, você aprenderá a compartilhar seu progresso com os colegas de trabalho e a falar sobre os sucessos que teve em seus projetos."
         ]
       },
-      "en-a2-quiz-share-progress-accomplishments": {
-        "title": "Questionário sobre Compartilhar Progresso e Conquistas",
+      "en-a2-quiz-discussing-progress-and-results": {
+        "title": "Sharing Progress and Achievements Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
@@ -4078,8 +4078,8 @@
           "Nesse curso, você verá maneiras de oferecer alguma ajuda em termos de especificações técnicas a outra pessoa."
         ]
       },
-      "en-a2-quiz-offer-technical-support-guidance": {
-        "title": "Questionário sobre Oferecer Suporte Técnico",
+      "en-a2-quiz-following-best-practices": {
+        "title": "Offering Technical Support Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-request-and-receive-guidance": {
@@ -4088,8 +4088,8 @@
           "Este curso mostrará como pedir ajuda a um colega de trabalho quando você precisar."
         ]
       },
-      "en-a2-quiz-request-receive-guidance": {
-        "title": "Questionário sobre Solicitar e Receber Orientação",
+      "en-a2-quiz-asking-for-help": {
+        "title": "Requesting and Receiving Guidance Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
@@ -4098,8 +4098,8 @@
           "Este curso mostrará maneiras de explicar algo a outras pessoas enquanto as ajuda."
         ]
       },
-      "en-a2-quiz-provide-explanations-helping-others": {
-        "title": "Questionário sobre Explicar Coisas a Outros",
+      "en-a2-quiz-giving-adivice-and-suggestions": {
+        "title": "Explaining Things to Others Quiz",
         "intro": ["", ""]
       },
       "en-a2-certification-exam": {
@@ -5614,10 +5614,23 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "workshop-linked-list-js": {
+        "title": "Build a Linked List",
+        "intro": [
+          "In the previous lessons, you learned about some common data structures.",
+          "In this workshop, you will build a linked list using JavaScript."
+        ]
+      },
       "lab-linked-list-operations": {
         "title": "Implement Linked List Operations",
         "intro": [
           "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
+      "lab-implement-a-stack": {
+        "title": "Implement a Stack",
+        "intro": [
+          "In this lab, you will implement a stack data structure using functions."
         ]
       },
       "lab-implement-a-queue": {
@@ -5644,6 +5657,20 @@
         "intro": [
           "Aprenda sobre algoritmos fundamentais de busca e ordenação, incluindo busca linear, busca binária e ordenação por fusão.",
           "Estas lições abrangem implementações de algoritmos, análise de complexidade de tempo e espaço e o paradigma de programação de dividir e conquistar."
+        ]
+      },
+      "workshop-binary-search-js": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "workshop-merge-sort-js": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
       "lab-bubble-sort-algorithm": {
@@ -5688,10 +5715,23 @@
           "Nesta lição, você aprenderá sobre estruturas de dados fundamentais como grafos, árvores e suas aplicações práticas em ciência da computação."
         ]
       },
+      "workshop-shortest-path-algorithm-js": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "The shortest path algorithm finds the minimum distance between nodes in a weighted graph.",
+          "In this workshop, you'll implement the shortest path algorithm in JavaScript and return both the shortest distances and the paths taken."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter-js": {
         "title": "Crie um Conversor de Lista de Adjacência para Matriz",
         "intro": [
           "Neste laboratório, você implementará uma função que converte uma representação em lista de adjacência de um grafo para uma representação em matriz de adjacência."
+        ]
+      },
+      "workshop-breadth-first-search-js": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
         ]
       },
       "lab-depth-first-search-js": {
@@ -5713,10 +5753,23 @@
           "Before you are quizzed on graphs and trees, you should review what you've learned."
         ]
       },
+      "quiz-graph-and-trees-js": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Graphs and Trees Quiz",
+          "Test what you've learned about graphs and trees with this quiz."
+        ]
+      },
       "lecture-understanding-dynamic-programming-js": {
         "title": "Understanding Dynamic Programming",
         "intro": [
           "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "lab-nth-fibonacci-number-js": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [
+          "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
       "review-dynamic-programming-js": {
@@ -6133,6 +6186,10 @@
         "intro": [
           "Nestas aulas, você aprenderá sobre conceitos básicos de visualização de dados."
         ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
       },
       "lab-scatterplot-graph": {
         "title": "Build a Scatterplot Graph",
