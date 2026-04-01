@@ -103,15 +103,21 @@
   "packageManager": "pnpm@10.30.3",
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@parcel/watcher",
       "@prisma/client",
       "@prisma/engines",
+      "core-js",
+      "core-js-pure",
+      "es5-ext",
       "esbuild",
       "gatsby",
+      "gatsby-cli",
       "lmdb",
       "msgpackr-extract",
       "msw",
       "prisma",
       "puppeteer",
+      "sharp",
       "unrs-resolver"
     ]
   }
