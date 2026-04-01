@@ -2906,6 +2906,10 @@
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
+      "workshop-debugging-registration-form": {
+        "title": "Debugging a Registration Form",
+        "intro": ["Debugging a Registration Form", ""]
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -5856,10 +5860,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "workshop-debugging-registration-form": {
-        "title": "Debugging a Registration Form",
-        "intro": ["Debugging a Registration Form", ""]
       }
     }
   },
