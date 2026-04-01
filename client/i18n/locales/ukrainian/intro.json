@@ -3826,8 +3826,8 @@
           "У цьому курсі ви навчитеся поширених висловів для ситуацій, з якими можете зіткнутись у перший робочий день. Ви дізнаєтесь про представлення, знайомство з іншими людьми, спілкування під час перерви та отримання картки доступу."
         ]
       },
-      "en-a2-quiz-greetings-first-day-office": {
-        "title": "Тест «Перший робочий день»",
+      "en-a2-quiz-first-day-conversations-at-work": {
+        "title": "Тест «Розмова в перший робочий день»",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -3836,8 +3836,8 @@
           "У цьому курсі ви навчитеся представляти себе, а також вказувати свою професію та ділитися цілями на групових зустрічах."
         ]
       },
-      "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Тест «Знайомство на онлайн-зустрічі»",
+      "en-a2-quiz-meeting-introductions-at-work": {
+        "title": "Тест «Знайомство на роботі»",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -3846,7 +3846,7 @@
           "У цьому курсі ви навчитеся розпочинати розмову в неформальних обставинах. Ви також дізнаєтеся, як говорити про свої хобі та особисті риси, і навіть навчитеся запитувати про місця у місті."
         ]
       },
-      "en-a2-quiz-conversation-starters-break-room": {
+      "en-a2-quiz-conversation-starters-at-work": {
         "title": "Тест «Розмова в кімнаті відпочинку»",
         "intro": ["", ""]
       },
@@ -3856,7 +3856,7 @@
           "У цьому курсі ви навчитесь розповідати про свій робочий день і завдання, які виконуєте на роботі, а також як ділитися ними з іншими. Основний акцент зроблено на структурах, які використовують для опису діяльності, а також на словниковому запасі, пов’язаному з завданнями."
         ]
       },
-      "en-a2-quiz-talk-about-typical-workday-tasks": {
+      "en-a2-quiz-work-routines-and-tasks": {
         "title": "Тест «Типовий робочий день»",
         "intro": ["", ""]
       },
@@ -3866,7 +3866,7 @@
           "У цьому курсі ви навчитесь розповідати про свою щоденну рутину та ділитися нею з іншими. Основний акцент зроблено на структурах, які використовують для опису рутини, а також на словниковому запасі, пов’язаному з щоденними завданнями."
         ]
       },
-      "en-a2-quiz-discuss-morning-evening-routine": {
+      "en-a2-quiz-daily-life-routines": {
         "title": "Тест «Щоденна робоча рутина»",
         "intro": ["", ""]
       },
@@ -3876,7 +3876,7 @@
           "У цьому курсі ви навчитесь розповідати про проєкти, в яких ви берете участь, та як інформувати інших про свою участь. Основний акцент зроблено на структурах, які використовують для інформування, а також на пов’язаному словниковому запасі."
         ]
       },
-      "en-a2-quiz-describe-current-project": {
+      "en-a2-quiz-what-are-you-working-on": {
         "title": "Тест «Опис поточного проєкту»",
         "intro": ["", ""]
       },
@@ -3886,7 +3886,7 @@
           "У цьому курсі ви дізнаєтесь, як запитувати про освіту та досвід роботи іншої людини, а також навчитесь ділитися інформацією про власний досвід."
         ]
       },
-      "en-a2-quiz-educational-professional-background": {
+      "en-a2-quiz-educational-and-professional-background": {
         "title": "Тест «Освіта і досвід роботи»",
         "intro": ["", ""]
       },
@@ -3896,7 +3896,7 @@
           "У цьому курсі ви навчитесь говорити про хобі та речі, які вас цікавлять. Ви також дізнаєтесь, як запитувати про захоплення інших людей та як запропонувати їм скласти компанію."
         ]
       },
-      "en-a2-quiz-talk-about-hobbies-interests": {
+      "en-a2-quiz-hobbies-and-interests": {
         "title": "Тест «Хобі та захоплення»",
         "intro": ["", ""]
       },
@@ -3916,7 +3916,7 @@
           "У цьому курсі ви дізнаєтесь, як запитувати про мотивацію в особистому і професійному житті, як відповідати на такі запитання та як обговорювати вподобання."
         ]
       },
-      "en-a2-quiz-preferences-motivations": {
+      "en-a2-quiz-preferences-and-motivations": {
         "title": "Тест «Вподобання та вмотивованість»",
         "intro": ["", ""]
       },
@@ -3926,7 +3926,7 @@
           "У цьому курсі ви навчитеся обговорювати технології, про які зараз всі говорять."
         ]
       },
-      "en-a2-quiz-popular-technology-trends": {
+      "en-a2-quiz-sharing-opinions": {
         "title": "Тест «Технологічні тренди»",
         "intro": ["", ""]
       },
@@ -3936,7 +3936,7 @@
           "У цьому курсі ви навчитеся перевіряти інформацію та правильно просити уточнення, якщо щось не зрозуміло."
         ]
       },
-      "en-a2-quiz-clarify-information-interactions": {
+      "en-a2-quiz-getting-the-details-right": {
         "title": "Тест «Уточнення інформації»",
         "intro": ["", ""]
       },
@@ -3956,7 +3956,7 @@
           "У цьому курсі ви ознайомитесь з термінами, пов’язаними з програмуванням, і навчитесь використовувати їх у розмові."
         ]
       },
-      "en-a2-quiz-code-related-concepts-terms": {
+      "en-a2-quiz-key-programming-terms": {
         "title": "Тест «Поняття та терміни з програмування»",
         "intro": ["", ""]
       },
@@ -3966,7 +3966,7 @@
           "У цьому курсі ви ознайомитесь з деякими останніми трендами у світі технологій і навчитесь обговорювати їх англійською мовою."
         ]
       },
-      "en-a2-quiz-tech-trends-updates": {
+      "en-a2-quiz-discussing-new-ideas": {
         "title": "Тест «Технологічні тренди та оновлення»",
         "intro": ["", ""]
       },
@@ -3976,7 +3976,7 @@
           "У цьому курсі ви вивчите вирази, пов’язані із проханням про допомогу у колеги, а також тим, як запропонувати свою допомогу."
         ]
       },
-      "en-a2-quiz-help-coworker-github-troubleshooting": {
+      "en-a2-quiz-discussing-problems-and-solutions": {
         "title": "Тест «Допомога колезі на GitHub»",
         "intro": ["", ""]
       },
@@ -3986,7 +3986,7 @@
           "Цей курс покаже, як говорити про свої проєкти в контексті того, що ви вже зробили та що виконуєте зараз."
         ]
       },
-      "en-a2-quiz-share-progress-weekly-meeting": {
+      "en-a2-quiz-collaborating-in-meetings": {
         "title": "Тест «Прогрес на щотижневій зустрічі»",
         "intro": ["", ""]
       },
@@ -3996,7 +3996,7 @@
           "У цьому курсі ви дізнаєтесь, як ставити запитання, щоб уточнити те, що не зовсім зрозуміле у коді."
         ]
       },
-      "en-a2-quiz-ask-for-code-clarification": {
+      "en-a2-quiz-understanding-problems": {
         "title": "Тест «Прохання пояснити код»",
         "intro": ["", ""]
       },
@@ -4026,7 +4026,7 @@
           "У цьому курсі ви дізнаєтесь, як правильно читати документацію та аналізувати її."
         ]
       },
-      "en-a2-quiz-analyze-code-documentation": {
+      "en-a2-quiz-analyzing-documentation": {
         "title": "Тест «Аналіз документації коду»",
         "intro": ["", ""]
       },
@@ -4036,7 +4036,7 @@
           "У цьому курсі ви навчитесь ділитись прогресом та досягненнями зі своїми колегами."
         ]
       },
-      "en-a2-quiz-share-progress-accomplishments": {
+      "en-a2-quiz-discussing-progress-and-results": {
         "title": "Тест «Прогрес та досягнення»",
         "intro": ["", ""]
       },
@@ -4066,7 +4066,7 @@
           "У цьому курсі ви дізнаєтесь, як пропонувати свою допомогу по технічних питаннях."
         ]
       },
-      "en-a2-quiz-offer-technical-support-guidance": {
+      "en-a2-quiz-following-best-practices": {
         "title": "Тест «Надання технічної підтримки»",
         "intro": ["", ""]
       },
@@ -4076,7 +4076,7 @@
           "Цей курс роз’яснить, як просити допомоги від колеги, коли це потрібно."
         ]
       },
-      "en-a2-quiz-request-receive-guidance": {
+      "en-a2-quiz-asking-for-help": {
         "title": "Тест «Прохання і отримання порад»",
         "intro": ["", ""]
       },
@@ -4086,7 +4086,7 @@
           "Цей курс ознайомить з тим, як правильно надавати пояснення іншим людям."
         ]
       },
-      "en-a2-quiz-provide-explanations-helping-others": {
+      "en-a2-quiz-giving-adivice-and-suggestions": {
         "title": "Тест «Пояснення іншим людям»",
         "intro": ["", ""]
       },
@@ -4788,10 +4788,10 @@
         ]
       },
       "workshop-wildlife-tracker": {
-        "title": "Build a Wildlife Tracker",
+        "title": "Створіть трекер дикої природи",
         "intro": [
-          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
-          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+          "У цьому практичному занятті ви створите звичайний трекер дикої природи за допомогою об’єктів.",
+          "Ви будете створювати об’єкти, працювати з властивостями і перевіряти їхнє існування, а також працювати з дужковою нотацією."
         ]
       },
       "lab-cargo-manifest-validator": {
@@ -5594,10 +5594,23 @@
           "Дізнайтеся про поширені структури даних і як працювати з ними в JavaScript."
         ]
       },
+      "workshop-linked-list-js": {
+        "title": "Створіть зв’язаний список",
+        "intro": [
+          "У попередніх уроках ви дізнались про деякі поширені структури даних.",
+          "У цьому практичному занятті ви створите зв’язаний список за допомогою JavaScript."
+        ]
+      },
       "lab-linked-list-operations": {
         "title": "Імплементуйте операції над пов’язаними списками",
         "intro": [
           "У цій лабораторній роботі ви імплементуєте поширені операції над пов’язаними списками: вставка, видалення і обхід."
+        ]
+      },
+      "lab-implement-a-stack": {
+        "title": "Імплементуйте стек",
+        "intro": [
+          "У цій лабораторній роботі ви імплементуєте структуру даних «стек», використовуючи функції."
         ]
       },
       "lab-implement-a-queue": {
@@ -5624,6 +5637,20 @@
         "intro": [
           "Дізнайтесь про базові алгоритми пошуку й сортування, включно з лінійним пошуком, бінарним пошуком і сортуванням злиттям.",
           "Ці лекції охоплюють імплементацію алгоритмів, аналіз часової та просторової складності, а також парадигму «розділяй і володарюй»."
+        ]
+      },
+      "workshop-binary-search-js": {
+        "title": "Імплементуйте алгоритм бінарного пошуку",
+        "intro": [
+          "Алгоритм бінарного пошуку — це алгоритм пошуку, який використовують для пошуку конкретного елемента у відсортованому списку.",
+          "У цьому практичному занятті ви імплементуєте алгоритм бінарного пошуку і повернете шлях до потрібного елемента або рядок 'Value not found'."
+        ]
+      },
+      "workshop-merge-sort-js": {
+        "title": "Імплементуйте алгоритм сортування злиттям",
+        "intro": [
+          "Алгоритм сортування злиттям — це алгоритм сортування, заснований на принципі «розділяй і володарюй».",
+          "У цьому практичному занятті ви імплементуєте алгоритм сортування злиттям, щоб відсортувати список випадкових чисел."
         ]
       },
       "lab-bubble-sort-algorithm": {
@@ -5668,10 +5695,23 @@
           "У цій лекції ви дізнаєтесь про базові структури даних (зокрема, про графи та дерева), а також їхнє практичне застосування в комп’ютерних науках."
         ]
       },
+      "workshop-shortest-path-algorithm-js": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "The shortest path algorithm finds the minimum distance between nodes in a weighted graph.",
+          "In this workshop, you'll implement the shortest path algorithm in JavaScript and return both the shortest distances and the paths taken."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter-js": {
         "title": "Створіть конвертер зі списку суміжності в матрицю",
         "intro": [
           "У цій лабораторній роботі ви створите функію, яка перетворює представлення графу у вигляді списку суміжності в матрицю."
+        ]
+      },
+      "workshop-breadth-first-search-js": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
         ]
       },
       "lab-depth-first-search-js": {
@@ -5693,10 +5733,23 @@
           "Перш ніж перейти до тесту «Графи та дерева», повторіть основні поняття."
         ]
       },
+      "quiz-graph-and-trees-js": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Graphs and Trees Quiz",
+          "Test what you've learned about graphs and trees with this quiz."
+        ]
+      },
       "lecture-understanding-dynamic-programming-js": {
         "title": "Знайомство з динамічним програмуванням",
         "intro": [
           "У цій лекції ви дізнаєтесь про динамічне програмування — алгоритмічну техніку, яка дозволяє ефективно розв’язувати складні задачі, розбиваючи їх на простіші."
+        ]
+      },
+      "lab-nth-fibonacci-number-js": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [
+          "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
       "review-dynamic-programming-js": {
@@ -6102,6 +6155,12 @@
         "title": "Вступ до візуалізації даних",
         "intro": [
           "У цих лекціях ви дізнаєтесь про базові поняття у візуалізації даних."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Створіть стовпчикову діаграму",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати d3, щоб створити стовпчикову діаграму."
         ]
       },
       "lab-scatterplot-graph": {
@@ -7153,10 +7212,10 @@
         ]
       },
       "lab-survey-form": {
-        "title": "Build a Survey Form",
+        "title": "Створіть форму для опитування",
         "intro": [
-          "In this lab, you'll review HTML forms by creating a survey form.",
-          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+          "У цій лабораторній роботі ви пригадаєте HTML-форми, створивши форму для опитування.",
+          "Ви будете працювати з елементом <code>label</code>, різними елементами <code>input</code>, атрибутом <code>required</code> та багато іншим."
         ]
       },
       "review-html-tables-and-forms": {
@@ -9482,10 +9541,10 @@
         ]
       },
       "lab-page-of-playing-cards": {
-        "title": "Build a Page of Playing Cards",
+        "title": "Створіть сторінку з гральними картами",
         "intro": [
-          "In this lab, you'll use flexbox to create a webpage of playing cards.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+          "У цій лабораторній роботі ви будете використовувати гнучку модель, щоб створити вебсторінку з гральними картами.",
+          "Ви будете вирівнювати елементи за допомогою різних властивостей, серед яких <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code> та багато інших."
         ]
       },
       "review-css-flexbox": {
@@ -9648,10 +9707,10 @@
         ]
       },
       "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
+        "title": "Створіть застосунок з книгами",
         "intro": [
-          "In this lab, you'll create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+          "У цій лабораторній роботі ви створите застосунок для інвентаризації книг.",
+          "Ви будете використовувати селектори атрибутів у CSS, серед яких <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> та багато інших."
         ]
       },
       "review-css-attribute-selectors": {
@@ -9690,10 +9749,10 @@
         ]
       },
       "lab-technical-documentation-page": {
-        "title": "Build a Technical Documentation Page",
+        "title": "Створіть сторінку технічної документації",
         "intro": [
-          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
-          "You'll also practice media queries to create a responsive design."
+          "У цій лабораторній роботі ви створите сторінку технічної документації, яка служитиме інструкцією або довідником.",
+          "Ви також попрактикуєте роботу з медіазапитами для створення адаптивного дизайну."
         ]
       },
       "review-responsive-web-design": {
@@ -9782,9 +9841,9 @@
         ]
       },
       "lab-product-landing-page": {
-        "title": "Build a Product Landing Page",
+        "title": "Створіть посадкову сторінку продукту",
         "intro": [
-          "In this project, you'll build a product landing page to market a product of your choice."
+          "У цьому проєкті ви створите посадкову сторінку продукту, щоб прорекламувати продукт за власним вибором."
         ]
       },
       "review-css-grid": {

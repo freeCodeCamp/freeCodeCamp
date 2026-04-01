@@ -46,6 +46,26 @@ test.describe('Header', () => {
     await expect(skipContent).toHaveAttribute('href', '#content-start');
   });
 
+  test('Should display universal nav Donate button', async ({ page }) => {
+    const donateButton = page.getByTestId('header-donate-button');
+    await expect(donateButton).toBeVisible();
+    await expect(donateButton).toHaveAttribute('href', '/donate');
+  });
+
+  test('Should show "Donate" text on desktop and Heart icon on mobile in the header', async ({
+    page,
+    isMobile
+  }) => {
+    const donateButton = page.getByTestId('header-donate-button');
+    const donateText = donateButton.locator('.menu-btn-text');
+
+    if (isMobile) {
+      await expect(donateText).toBeHidden();
+    } else {
+      await expect(donateText).toBeVisible();
+    }
+  });
+
   test('Renders universal nav by default', async ({ page }) => {
     const universalNavigation = page.getByTestId(
       headerComponentElements.universalNav
@@ -129,7 +149,9 @@ test.describe('Header', () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
 
-    const link = menu.getByRole('link', { name: translations.buttons.donate });
+    const link = menu.getByRole('link', {
+      name: translations.buttons.curriculum
+    });
     await link.focus();
 
     await page.keyboard.press('Escape');
@@ -138,7 +160,7 @@ test.describe('Header', () => {
     await expect(menuButton).toBeFocused();
   });
 
-  test('The menu should contain links to: donate, curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
+  test('The menu should contain links to: curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
     page
   }) => {
     const menuButton = page.getByTestId(headerComponentElements.menuButton);
@@ -148,11 +170,6 @@ test.describe('Header', () => {
     await expect(menu).toBeVisible();
 
     const menuLinks = [
-      { name: translations.buttons.profile, href: '/developmentuser' },
-      {
-        name: translations.buttons.donate,
-        href: '/donate'
-      },
       {
         name: translations.buttons.curriculum,
         href: '/learn'
