@@ -2906,12 +2906,6 @@
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
-      "workshop-debugging-registration-form": {
-        "title": "Debugging a Registration Form",
-        "intro": [
-          "In this workshop, you will explore the browser console to debug a user registration form."
-        ]
-      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -5302,6 +5296,12 @@
         "title": "Debugging Techniques",
         "intro": [
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
+        ]
+      },
+      "workshop-debugging-registration-form": {
+        "title": "Debugging a Registration Form",
+        "intro": [
+          "In this workshop, you will explore the browser console to debug a user registration form."
         ]
       },
       "lab-random-background-color-changer": {
