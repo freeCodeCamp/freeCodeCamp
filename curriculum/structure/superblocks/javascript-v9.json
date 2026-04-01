@@ -330,6 +330,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
+            "workshop-shortest-path-algorithm-js",
             "lab-adjacency-list-to-matrix-converter-js",
             "workshop-breadth-first-search-js",
             "lab-depth-first-search-js",
