@@ -29,6 +29,7 @@
     "sign-in": "Ingia",
     "sign-up-email-list": "Jisajili kwa barua pepe za kila wiki za Quincy",
     "sign-out": "Ondoka",
+    "catalog": "Catalog",
     "curriculum": "Mtaala",
     "contribute": "Changia",
     "podcast": "Podcast",
@@ -116,6 +117,7 @@
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
     "share-on-threads": "Share on Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
     "more-ways-to-sign-in": "More ways to sign in",
@@ -442,6 +444,7 @@
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
     "add-threads": "Share this certification on Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "Experience",
       "share-experience": "Share your professional experience",
@@ -913,6 +916,7 @@
     "unsubscribed": "Umefanikiwa kujiondoa",
     "keep-coding": "Chochote unachoendelea nacho, endelea kuandika msimbo!",
     "email-signup": "Jisajili kwa Barua Pepe",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "Karibu kwenye akaunti yako mpya kabisa ya freeCodeCamp. Tuanze.",
     "duplicate-account-warning": "Ikiwa ulitaka kuingia katika akaunti iliyopo badala ya kufungua akaunti hii, <0>bofya hapa ili kufuta akaunti hii</0> na ujaribu anwani nyingine ya barua pepe.",
     "quincy": "- Quincy Larson, mwalimu aliyeanzisha freeCodeCamp.org",
@@ -1498,6 +1502,7 @@
         "intermediate": "Intermediate",
         "advanced": "Advanced"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} hours",
       "no-results": "No courses found. Try adjusting your filters to see more results.",
       "topic": {

@@ -29,6 +29,7 @@
     "sign-in": "Iniciar sessão",
     "sign-up-email-list": "Inscreva-se para receber o e-mail semanal do Quincy",
     "sign-out": "Encerrar sessão",
+    "catalog": "Catalog",
     "curriculum": "Currículo",
     "contribute": "Contribua",
     "podcast": "Podcast",
@@ -116,6 +117,7 @@
     "share-on-x": "Compartilhar no X",
     "share-on-bluesky": "Compartilhar no BlueSky",
     "share-on-threads": "Compartilhe no Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "Aperte para começar",
     "download-latest-version": "Baixe a versão mais recente",
     "more-ways-to-sign-in": "Mais maneiras de fazer login",
@@ -442,6 +444,7 @@
     "edit-my-profile": "Editar meu perfil",
     "add-bluesky": "Compartilhar esta certificação no BlueSky",
     "add-threads": "Compartilhar esta certificação no Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "Experiência",
       "share-experience": "Compartilhe a experiência profissional",
@@ -913,6 +916,7 @@
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "Boas-vindas à sua nova conta freeCodeCamp. Vamos começar.",
     "duplicate-account-warning": "Se você pretende entrar em uma conta existente ao invés de criar esta conta, <0>clique aqui para excluir esta conta</0> e tente outro endereço de e-mail.",
     "quincy": "- Quincy Larson, o professor que fundou o freeCodeCamp.org",
@@ -1498,6 +1502,7 @@
         "intermediate": "Intermediário",
         "advanced": "Avançado"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} horas",
       "no-results": "Nenhum curso encontrado. Tente ajustar os filtros para ver mais resultados.",
       "topic": {
