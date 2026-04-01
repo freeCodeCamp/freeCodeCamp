@@ -2908,7 +2908,9 @@
       },
       "workshop-debugging-registration-form": {
         "title": "Debugging a Registration Form",
-        "intro": ["Debugging a Registration Form", ""]
+        "intro": [
+          "In this workshop, you will explore the browser console to debug a user registration form."
+        ]
       },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
