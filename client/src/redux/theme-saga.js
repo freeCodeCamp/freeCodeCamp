@@ -3,7 +3,7 @@ import { createFlashMessage } from '../components/Flash/redux';
 import { setTheme } from './actions';
 import { actionTypes } from './action-types';
 import { userThemeSelector } from './selectors';
-
+import { playTone } from '../utils/tone';
 function* toggleThemeSaga() {
   const data = { type: 'success', message: 'flash.updated-themes' };
   const currentTheme = localStorage.getItem('theme');
@@ -11,6 +11,7 @@ function* toggleThemeSaga() {
   localStorage.setItem('theme', invertedTheme);
   yield put(setTheme(invertedTheme));
   yield put(createFlashMessage({ ...data }));
+  void playTone(invertedTheme);
 }
 
 export function* initializeThemeSaga() {
