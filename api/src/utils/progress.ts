@@ -7,7 +7,8 @@ export type Calendar = Record<number, 1>;
  * @returns The object with keys based on the timestamps.
  */
 export const getCalendar = (
-  progressTimestamps: ProgressTimestamp[] | null
+  progressTimestamps: ProgressTimestamp[] | null,
+  activityTimestamps?: number[] | null
 ): Calendar => {
   const calendar: Calendar = {};
 
@@ -18,6 +19,10 @@ export const getCalendar = (
     } else {
       calendar[Math.floor(progress.timestamp / 1000)] = 1;
     }
+  });
+
+  activityTimestamps?.forEach(ts => {
+    calendar[Math.floor(ts / 1000)] = 1;
   });
 
   return calendar;

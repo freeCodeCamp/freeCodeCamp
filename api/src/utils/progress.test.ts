@@ -27,6 +27,34 @@ describe('utils/progress', () => {
         1113: 1
       });
     });
+
+    test('should merge activityTimestamps into the calendar', () => {
+      const progressTimestamps = [1000000, 2000000];
+      const activityTimestamps = [3000000, 4000000];
+
+      expect(getCalendar(progressTimestamps, activityTimestamps)).toEqual({
+        1000: 1,
+        2000: 1,
+        3000: 1,
+        4000: 1
+      });
+    });
+
+    test('should handle overlapping timestamps from both arrays', () => {
+      const progressTimestamps = [1000000];
+      const activityTimestamps = [1000000];
+
+      expect(getCalendar(progressTimestamps, activityTimestamps)).toEqual({
+        1000: 1
+      });
+    });
+
+    test('should work with null or undefined activityTimestamps', () => {
+      const progressTimestamps = [1000000];
+
+      expect(getCalendar(progressTimestamps, null)).toEqual({ 1000: 1 });
+      expect(getCalendar(progressTimestamps, undefined)).toEqual({ 1000: 1 });
+    });
   });
 
   describe('getPoints', () => {
