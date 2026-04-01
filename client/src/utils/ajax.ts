@@ -153,7 +153,7 @@ export function getSessionUser(
   signal?: AbortSignal
 ): Promise<ResponseWithData<User | null>> {
   const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
-    '/user/session-user',
+    '/user/get-session-user',
     signal
   );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
