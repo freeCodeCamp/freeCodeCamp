@@ -1,4 +1,4 @@
-import React, { Component, ReactNode, createRef } from 'react';
+import React, { Component, ReactNode } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -37,6 +37,8 @@ import '../intro.css';
 import './block.css';
 
 const { curriculumLocale } = envData;
+
+let lastScrollSpyHash = '';
 
 const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.block);
@@ -79,7 +81,6 @@ interface BlockProps {
 export class Block extends Component<BlockProps> {
   static displayName: string;
   private observer: IntersectionObserver | null = null;
-  private blockRef = createRef<HTMLElement>();
 
   constructor(props: BlockProps) {
     super(props);
@@ -108,12 +109,21 @@ export class Block extends Component<BlockProps> {
       .toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
+    if (lastScrollSpyHash === '' && window.location.hash) {
+      lastScrollSpyHash = window.location.hash;
+    }
+    const el = document.getElementById(dashedBlock);
+    if (!el) return;
 
     this.observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            if (window.location.hash !== `#${dashedBlock}`) {
+            const currentHash = window.location.hash;
+            const observerOwnsHash =
+              currentHash === '' || currentHash === lastScrollSpyHash;
+            if (observerOwnsHash) {
+              lastScrollSpyHash = `#${dashedBlock}`;
               window.history.replaceState(null, '', `#${dashedBlock}`);
             }
           }
@@ -121,10 +131,7 @@ export class Block extends Component<BlockProps> {
       },
       { rootMargin: '-20% 0px -50% 0px' }
     );
-
-    if (this.blockRef.current) {
-      this.observer.observe(this.blockRef.current);
-    }
+    this.observer.observe(el);
   };
 
   handleBlockClick = (): void => {
@@ -200,6 +207,10 @@ export class Block extends Component<BlockProps> {
     const isGridBlock = blockLayout === BlockLayouts.ChallengeGrid;
 
     const isEmptyBlock = !challenges.length;
+    const dashedBlock = block
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
@@ -217,7 +228,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
      */
     const LegacyChallengeListBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className={`block ${isExpanded ? 'open' : ''}`}>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
@@ -273,7 +284,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
      */
     const ProjectListBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className='block'>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
@@ -303,7 +314,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game
      */
     const LegacyChallengeGridBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
@@ -353,7 +364,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#learn-greetings-in-your-first-day-at-the-office
      */
     const TaskGridBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
@@ -402,7 +413,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
      */
     const LegacyLinkBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
@@ -593,12 +604,16 @@ export class Block extends Component<BlockProps> {
       [BlockLayouts.DialogueGrid]: TaskGridBlock
     };
 
-    return !isEmptyBlock ? (
-      <section ref={this.blockRef} className='block-scrollspy-wrapper'>
-        {layoutToComponent[blockLayout]}
-        {!chapterBasedSuperBlocks.includes(superBlock) && <Spacer size='xs' />}
-      </section>
-    ) : null;
+    return (
+      !isEmptyBlock && (
+        <>
+          {layoutToComponent[blockLayout]}
+          {!chapterBasedSuperBlocks.includes(superBlock) && (
+            <Spacer size='xs' />
+          )}
+        </>
+      )
+    );
   }
 }
 
