@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -96,7 +96,39 @@ const Chapter = ({
   const { t } = useTranslation();
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window))
+      return;
+    const el = document.getElementById(dashedName);
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (window.location.hash !== `#${dashedName}`) {
+              window.history.replaceState(null, '', `#${dashedName}`);
+            }
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -50% 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [dashedName]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash.replace(/^#/, '');
+    if (hash === dashedName) {
+      requestAnimationFrame(() => {
+        document.getElementById(dashedName)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    }
+  }, []);
   const chapterButtonContent = (
     <>
       <div className='chapter-button-left'>
@@ -125,7 +157,7 @@ const Chapter = ({
 
   if (isLinkChapter && examSlug) {
     return (
-      <li className='chapter'>
+      <li className='chapter' id={dashedName}>
         <Link
           className='chapter-button'
           data-playwright-test-label='chapter-button'
@@ -138,7 +170,12 @@ const Chapter = ({
   }
 
   return (
-    <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
+    <Disclosure
+      as='li'
+      className='chapter'
+      id={dashedName}
+      defaultOpen={isExpanded}
+    >
       <Disclosure.Button
         className='chapter-button'
         data-playwright-test-label='chapter-button'

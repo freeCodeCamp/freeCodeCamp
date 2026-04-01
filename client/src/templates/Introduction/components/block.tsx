@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react';
+import React, { Component, ReactNode, createRef } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -78,12 +78,54 @@ interface BlockProps {
 
 export class Block extends Component<BlockProps> {
   static displayName: string;
+  private observer: IntersectionObserver | null = null;
+  private blockRef = createRef<HTMLElement>();
+
   constructor(props: BlockProps) {
     super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
     this.handleChallengeClick = this.handleChallengeClick.bind(this);
   }
+
+  componentDidMount() {
+    this.setupObserver();
+  }
+
+  componentWillUnmount() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  setupObserver = () => {
+    if (this.props.accordion) return;
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window))
+      return;
+
+    const { block } = this.props;
+    const dashedBlock = block
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+
+    this.observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (window.location.hash !== `#${dashedBlock}`) {
+              window.history.replaceState(null, '', `#${dashedBlock}`);
+            }
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -50% 0px' }
+    );
+
+    if (this.blockRef.current) {
+      this.observer.observe(this.blockRef.current);
+    }
+  };
 
   handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
@@ -551,16 +593,12 @@ export class Block extends Component<BlockProps> {
       [BlockLayouts.DialogueGrid]: TaskGridBlock
     };
 
-    return (
-      !isEmptyBlock && (
-        <>
-          {layoutToComponent[blockLayout]}
-          {!chapterBasedSuperBlocks.includes(superBlock) && (
-            <Spacer size='xs' />
-          )}
-        </>
-      )
-    );
+    return !isEmptyBlock ? (
+      <section ref={this.blockRef} className='block-scrollspy-wrapper'>
+        {layoutToComponent[blockLayout]}
+        {!chapterBasedSuperBlocks.includes(superBlock) && <Spacer size='xs' />}
+      </section>
+    ) : null;
   }
 }
 
