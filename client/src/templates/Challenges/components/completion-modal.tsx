@@ -119,6 +119,7 @@ function CompletionModal({
         })
         .catch((err: unknown) => {
           console.error('ZIP generation failed:', err);
+          throw err;
         });
     }
 
