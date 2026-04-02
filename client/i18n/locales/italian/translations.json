@@ -29,6 +29,7 @@
     "sign-in": "Accedi",
     "sign-up-email-list": "Iscriviti alle email settimanali di Quincy",
     "sign-out": "Esci",
+    "catalog": "Catalog",
     "curriculum": "Curriculum",
     "contribute": "Contribuisci",
     "podcast": "Podcast",
@@ -116,6 +117,7 @@
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
     "share-on-threads": "Share on Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
     "more-ways-to-sign-in": "More ways to sign in",
@@ -442,6 +444,7 @@
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
     "add-threads": "Share this certification on Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "Experience",
       "share-experience": "Share your professional experience",
@@ -913,6 +916,7 @@
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
     "keep-coding": "Qualsiasi cosa tu abbia intenzione di fare, continua a programmare!",
     "email-signup": "Registrazione con email",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "Welcome to your brand new freeCodeCamp account. Let's get started.",
     "duplicate-account-warning": "If you meant to sign into an existing account instead of creating this account, <0>click here to delete this account</0> and try another email address.",
     "quincy": "- Quincy Larson, l'insegnante che ha fondato freeCodeCamp.org",
@@ -1498,6 +1502,7 @@
         "intermediate": "Intermediate",
         "advanced": "Advanced"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} hours",
       "no-results": "No courses found. Try adjusting your filters to see more results.",
       "topic": {

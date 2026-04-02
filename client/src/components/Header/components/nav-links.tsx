@@ -13,7 +13,6 @@ import { openSignoutModal, toggleTheme } from '../../../redux/actions';
 import { Link } from '../../helpers';
 import { LocalStorageThemes } from '../../../redux/types';
 import { themeSelector } from '../../../redux/selectors';
-import SupporterBadge from '../../../assets/icons/supporter-badge';
 
 export interface NavLinksProps {
   displayMenu: boolean;
@@ -36,42 +35,6 @@ const mapStateToProps = createSelector(
   (theme: LocalStorageThemes) => ({ theme })
 );
 
-interface DonateButtonProps {
-  isUserDonating: boolean | undefined;
-  handleMenuKeyDown: (event: React.KeyboardEvent<HTMLAnchorElement>) => void;
-}
-
-const DonateButton = ({
-  isUserDonating,
-  handleMenuKeyDown
-}: DonateButtonProps) => {
-  const { t } = useTranslation();
-  return (
-    <li key={isUserDonating ? 'supporter' : 'donate'}>
-      <Link
-        className={`nav-link nav-link-flex nav-link-header ${
-          isUserDonating && 'nav-link-supporter'
-        }`}
-        onKeyDown={handleMenuKeyDown}
-        sameTab={false}
-        to={isUserDonating ? '/supporters' : '/donate'}
-        data-test-label={
-          isUserDonating ? 'dropdown-support-button' : 'dropdown-donate-button'
-        }
-      >
-        {isUserDonating ? (
-          <>
-            {t('buttons.supporters')}
-            <SupporterBadge />
-          </>
-        ) : (
-          <>{t('buttons.donate')}</>
-        )}
-      </Link>
-    </li>
-  );
-};
-
 function NavLinks({
   menuButtonRef,
   openSignoutModal,
@@ -82,7 +45,7 @@ function NavLinks({
   toggleTheme
 }: NavLinksProps) {
   const { t } = useTranslation();
-  const { isDonating: isUserDonating, username: currentUserName } = user || {};
+  const { username: currentUserName } = user || {};
 
   // the accessibility tree just needs a little more time to pick up the change.
   // This function allows us to set aria-expanded to false and then delay just a bit before setting focus on the button
@@ -143,13 +106,14 @@ function NavLinks({
       data-playwright-test-label='header-menu'
       className={`nav-list${displayMenu ? ' display-menu' : ''}`}
     >
-      <DonateButton
-        isUserDonating={isUserDonating}
-        handleMenuKeyDown={handleMenuKeyDown}
-      />
       <li key='learn'>
         <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/learn'>
           {t('buttons.curriculum')}
+        </Link>
+      </li>
+      <li key='catalog'>
+        <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/catalog'>
+          {t('buttons.catalog')}
         </Link>
       </li>
       {currentUserName && (
