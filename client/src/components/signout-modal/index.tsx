@@ -70,7 +70,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
           type: 'success',
           message: FlashMessages.SignoutSuccess
         });
-        redirect();
+        setTimeout(redirect, 100);
       })
       .catch(redirect);
   };
