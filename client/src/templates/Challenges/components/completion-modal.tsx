@@ -93,37 +93,39 @@ function CompletionModal({
   const submitChallenge = useSubmit();
 
   useEffect(() => {
-    if (downloadURL) URL.revokeObjectURL(downloadURL);
+    if (!challengeFiles?.length) return;
+    // NEW LOGIC: create ZIP file with separate files
 
-    if (challengeFiles?.length) {
-      // NEW LOGIC: create ZIP file with separate files
-      const zip = new JSZip();
+    const zip = new JSZip();
 
-      challengeFiles.forEach(file => {
-        let fileName = `${file.name}.${file.ext}`;
+    challengeFiles.forEach(file => {
+      let fileName = `${file.name}.${file.ext}`;
 
-        if (file.ext === 'html' && !zip.file('index.html'))
-          fileName = 'index.html';
-        if (file.ext === 'css' && !zip.file('styles.css'))
-          fileName = 'styles.css';
-        if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
-
-        zip.file(fileName, file.contents);
-      });
+      if (file.ext === 'html' && !zip.file('index.html'))
+        fileName = 'index.html';
+      if (file.ext === 'css' && !zip.file('styles.css'))
+        fileName = 'styles.css';
+      if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
 
       // Generate ZIP and convert to downloadable URL (same pattern as before)
-      zip
-        .generateAsync({ type: 'blob' })
-        .then((content: Blob) => {
-          setDownloadURL(URL.createObjectURL(content));
-        })
-        .catch((err: unknown) => {
-          console.error('ZIP generation failed:', err);
-          throw err;
-        });
-    }
+      zip.file(fileName, file.contents);
+    });
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    let url: string;
+
+    zip
+      .generateAsync({ type: 'blob' })
+      .then((content: Blob) => {
+        url = URL.createObjectURL(content);
+        setDownloadURL(url);
+      })
+      .catch((err: unknown) => {
+        console.error('ZIP generation failed:', err);
+      });
+
+    return () => {
+      if (url) URL.revokeObjectURL(url);
+    };
   }, [challengeFiles]);
 
   useEffect(() => {
