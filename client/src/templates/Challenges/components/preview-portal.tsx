@@ -102,15 +102,15 @@ class PreviewPortal extends Component<PreviewPortalProps> {
       );
       this.props.setChapterSlug(getChapterSlug(this.mainWindow));
     } else {
-      this.externalWindow.document.head.innerHTML = '';
-      this.externalWindow.document.body.innerHTML = '';
+      this.externalWindow.document.head.replaceChildren();
+      this.externalWindow.document.body.replaceChildren();
     }
 
     this.titleEl.innerText = `${t(
       'learn.editor-tabs.preview'
     )} | ${windowTitle}`;
 
-    this.styleEl.innerHTML = `
+    this.styleEl.textContent = `
       #fcc-main-frame {
         width: 100%;
         height: 100%;

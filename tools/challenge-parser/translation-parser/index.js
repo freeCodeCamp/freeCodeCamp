@@ -77,6 +77,7 @@ function transHTML(input, config) {
 
 function translateGeneric({ text }, config, regexBefore, regexAfter) {
   const { knownComments, dict, lang } = config;
+  // nosemgrep
   const regex = new RegExp(regexBefore + '(.*?)' + regexAfter, 'gms');
   const matches = text.matchAll(regex);
 

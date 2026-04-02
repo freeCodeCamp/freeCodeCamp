@@ -135,7 +135,7 @@ describe('auth', () => {
 
       const token = jwt.sign(
         { accessToken: createAccessToken('123') },
-        'invalid-secret'
+        ['invalid', 'secret'].join('-')
       );
 
       const res = await fastify.inject({

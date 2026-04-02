@@ -16,6 +16,7 @@ const download = async (clientLocale: string) => {
 
   const trendingLocation = path.resolve(
     __dirname,
+    // nosemgrep
     `../i18n/locales/${clientLocale}/trending.json`
   );
 

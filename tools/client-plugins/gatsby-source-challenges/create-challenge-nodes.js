@@ -40,21 +40,14 @@ function createChallengeNode(
   createdIds.add(id);
 
   return JSON.parse(
-    JSON.stringify(
-      Object.assign(
-        {},
-        {
-          children: [],
-          parent: null,
-          internal,
-          sourceInstanceName: 'challenge'
-        },
-        { challenge },
-        {
-          id
-        }
-      )
-    )
+    JSON.stringify({
+      children: [],
+      parent: null,
+      internal,
+      sourceInstanceName: 'challenge',
+      challenge,
+      id
+    })
   );
 }
 

@@ -18,6 +18,7 @@ import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
 import { buildTranscript } from './scene-helpers';
+import sanitizeHtml from 'sanitize-html';
 
 import './scene.css';
 
@@ -28,6 +29,18 @@ const loadImage = (src: string | null) => {
 };
 
 const initDialogue = { label: '', text: '', align: 'left' };
+
+const sanitizeSceneHtml = (html: string) =>
+  sanitizeHtml(html, {
+    allowedTags: ['a', 'b', 'br', 'code', 'em', 'i', 'p', 'pre', 'span', 'strong', 'ul', 'ol', 'li'],
+    allowedAttributes: {
+      a: ['href', 'rel', 'target'],
+      span: ['class'],
+      pre: ['class'],
+      code: ['class']
+    },
+    allowedSchemes: ['http', 'https', 'mailto']
+  });
 
 export function Scene({
   scene,
@@ -395,7 +408,7 @@ export function Scene({
                 <div className='scene-dialogue-label'>{dialogue.label}</div>
                 <div
                   className='scene-dialogue-text'
-                  dangerouslySetInnerHTML={{ __html: dialogue.text }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeSceneHtml(dialogue.text) }}
                 />
               </div>
             )}

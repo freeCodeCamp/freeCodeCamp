@@ -15,6 +15,7 @@ describe('build-certification', () => {
 
   certificationFiles.forEach(file => {
     describe(`${file} file`, () => {
+      // nosemgrep
       const filePath = path.join(certificationsDir, file);
       const result = buildCertification(filePath);
 

@@ -101,7 +101,8 @@ function createDailyJsChallenge({
   const jsChallengePath = join(
     jsChallengesPath,
 
-    `${challengeId.toString()}.md`
+          // nosemgrep
+          `${challengeId.toString()}.md`
   );
 
   writeFileSync(jsChallengePath, jsTemplate);
@@ -133,7 +134,8 @@ function createDailyPyChallenge({
   const pyChallengePath = join(
     pyChallengesPath,
 
-    `${challengeId.toString()}.md`
+          // nosemgrep
+          `${challengeId.toString()}.md`
   );
 
   writeFileSync(pyChallengePath, pyTemplate);

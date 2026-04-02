@@ -55,7 +55,11 @@ test.describe('Settings SideNav Component', () => {
       // Playwright performs click very fast, which could lead to URL check before scroll ends
       await page.waitForTimeout(300);
 
-      await expect(page).toHaveURL(new RegExp(href + '$'));
+      if (!href) {
+        throw new Error('Expected link to have an href');
+      }
+
+      await expect(page.url().endsWith(href)).toBe(true);
     }
   });
 });

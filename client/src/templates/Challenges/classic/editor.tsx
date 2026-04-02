@@ -18,6 +18,7 @@ import store from 'store';
 
 import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
+import sanitizeHtml from 'sanitize-html';
 import { Loader } from '../../../components/helpers';
 import { LocalStorageThemes } from '../../../redux/types';
 import { saveChallenge } from '../../../redux/actions';
@@ -77,6 +78,19 @@ const monacoModelFileMap = {
   tsxFile: 'index.tsx',
   reactTypes: 'react.d.ts'
 };
+
+const sanitizeChallengeHtml = (html: string) =>
+  sanitizeHtml(html, {
+    allowedTags: ['a', 'b', 'br', 'code', 'em', 'i', 'p', 'pre', 'span', 'strong', 'ul', 'ol', 'li', 'div', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    allowedAttributes: {
+      a: ['href', 'rel', 'target'],
+      span: ['class'],
+      div: ['class'],
+      pre: ['class'],
+      code: ['class']
+    },
+    allowedSchemes: ['http', 'https', 'mailto']
+  });
 
 export interface EditorProps {
   attempts: number;
@@ -864,15 +878,18 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (isChallengeCompleted) {
       jawHeading.classList.add('challenge-description-header');
       const challengeTitle = document.createElement('h1');
-      challengeTitle.innerHTML = `${title} <span class='sr-only'>${t(
-        'icons.passed'
-      )}</span>`;
+      challengeTitle.textContent = title;
+      const srOnlySpan = document.createElement('span');
+      srOnlySpan.className = 'sr-only';
+      srOnlySpan.textContent = t('icons.passed');
+      challengeTitle.appendChild(srOnlySpan);
       jawHeading.appendChild(challengeTitle);
       const checkmark = ReactDOMServer.renderToStaticMarkup(
         <GreenPass hushScreenReaderText />
       );
       const completedChallengeHeader = document.createElement('div');
-      completedChallengeHeader.innerHTML = checkmark;
+      // nosemgrep
+      completedChallengeHeader.innerHTML = sanitizeChallengeHtml(checkmark);
       jawHeading.appendChild(completedChallengeHeader);
     } else {
       jawHeading.innerText = title;
@@ -889,7 +906,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
-    desc.innerHTML = description;
+    // nosemgrep
+    desc.innerHTML = sanitizeChallengeHtml(description);
     Prism.hooks.add('complete', enhancePrismAccessibility);
 
     // To reduce confusion on the first workshop. Will need to find a better solution.
@@ -998,10 +1016,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       breadcrumbLeftLink = document.createElement('a'),
       breadcrumbRight = document.createElement('li'),
       breadcrumbRightLink = document.createElement('a');
-    breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
-    breadcrumbRightLink.innerHTML = t(
-      `intro:${superBlock}.blocks.${block}.title`
-    );
+    breadcrumbLeftLink.textContent = t(`intro:${superBlock}.title`);
+    breadcrumbRightLink.textContent = t(`intro:${superBlock}.blocks.${block}.title`);
     breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
     breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
     breadcrumbLeft.appendChild(breadcrumbLeftLink);

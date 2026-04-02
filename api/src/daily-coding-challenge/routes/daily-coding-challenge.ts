@@ -176,7 +176,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           date: challenge.date.toISOString()
         }));
 
-        return reply.send(response);
+        return response;
       } catch (error) {
         logger.error(error, 'Failed to get monthly daily coding challenges.');
         await reply

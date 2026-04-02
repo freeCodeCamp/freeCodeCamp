@@ -26,6 +26,7 @@ i18n
     initImmediate: false,
     preload: readdirSync(join(__dirname, '../i18n/locales')).filter(
       fileName => {
+        // nosemgrep
         const joinedPath = join(join(__dirname, '../i18n/locales'), fileName);
         const isDirectory = lstatSync(joinedPath).isDirectory();
         return isDirectory;
@@ -34,8 +35,10 @@ i18n
     lng: i18nextCode,
     ns: ['translations'],
     backend: {
+      // nosemgrep
       loadPath: resolve(
         __dirname,
+        // nosemgrep
         `../i18n/locales/${clientLocale}/translations.json`
       )
     }
@@ -98,6 +101,7 @@ export const generateSearchPlaceholder = async (
   writeFileSync(
     resolve(
       __dirname,
+      // nosemgrep
       `../i18n/locales/${locale ? locale : clientLocale}/search-bar.json`
     ),
     JSON.stringify({

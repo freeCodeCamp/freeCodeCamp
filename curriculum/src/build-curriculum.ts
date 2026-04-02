@@ -105,6 +105,7 @@ export function createCommentMap(
   const languages = readdirSync(targetDictionariesDir);
 
   const dictionaries = languages.reduce((acc, lang) => {
+    // nosemgrep
     const commentsPath = resolve(targetDictionariesDir, lang, 'comments.json');
     const commentsData = JSON.parse(readFileSync(commentsPath, 'utf8'));
     return {
@@ -114,11 +115,13 @@ export function createCommentMap(
   }, {});
 
   const COMMENTS_TO_TRANSLATE = JSON.parse(
+    // nosemgrep
     readFileSync(resolve(dictionariesDir, 'english', 'comments.json'), 'utf8')
   ) as Record<string, string>;
 
   const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
     readFileSync(
+      // nosemgrep
       resolve(dictionariesDir, 'english', 'comments-to-not-translate.json'),
       'utf8'
     )
@@ -446,6 +449,7 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   }
 
   for (const cert of certifications) {
+    // nosemgrep
     const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
     if (!existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);

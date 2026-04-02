@@ -17,6 +17,7 @@ import { Share } from '../../../components/share';
 import { ShareProps } from '../../../components/share/types';
 import Progress from '../../../components/Progress';
 import Quote from '../../../assets/icons/quote';
+import sanitizeHtml from 'sanitize-html';
 import {
   challengeMetaSelector,
   completedPercentageSelector
@@ -133,6 +134,16 @@ const LowerJawTips = ({
   showFeedback,
   htmlDescription
 }: LowerJawTipsProps) => {
+  const sanitizedHtmlDescription = sanitizeHtml(htmlDescription, {
+    allowedTags: ['a', 'b', 'br', 'code', 'em', 'i', 'p', 'pre', 'span', 'strong', 'ul', 'ol', 'li'],
+    allowedAttributes: {
+      a: ['href', 'rel', 'target'],
+      span: ['class'],
+      pre: ['class'],
+      code: ['class']
+    },
+    allowedSchemes: ['http', 'https', 'mailto']
+  });
   return (
     <>
       <div
@@ -149,10 +160,7 @@ const LowerJawTips = ({
         aria-hidden={showFeedback}
       >
         <LightBulb aria-hidden='true' />
-        <div
-          className='hint-description'
-          dangerouslySetInnerHTML={{ __html: htmlDescription }}
-        />
+        <div className='hint-description' dangerouslySetInnerHTML={{ __html: sanitizedHtmlDescription }} />
       </div>
     </>
   );

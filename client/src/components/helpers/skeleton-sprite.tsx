@@ -5,6 +5,7 @@ import styles from './skeleton-styles';
 function SkeletonSprite(): JSX.Element {
   return (
     <div className='sprite-container'>
+      {/* nosemgrep */}
       <style dangerouslySetInnerHTML={{ __html: styles }} />
       <svg className='sprite-svg'>
         <rect

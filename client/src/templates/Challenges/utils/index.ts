@@ -103,7 +103,7 @@ export function makePrismCollapsible(
 
   const summary = document.createElement('summary');
   summary.classList.add('code-details-summary');
-  summary.innerHTML = i18next.t('learn.example-code');
+  summary.textContent = i18next.t('learn.example-code');
 
   details.appendChild(summary);
   details.appendChild(preElem.cloneNode(true));

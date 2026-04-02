@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
+import sanitizeHtml from 'sanitize-html';
 import store from 'store';
 
 import PrismFormatted from './prism-formatted';
@@ -25,6 +26,16 @@ function ChallengeTranscript({
       ? (store.get('fcc-transcript-expanded') as boolean | null) ?? false
       : false
   );
+  const sanitizedTranscript = sanitizeHtml(transcript, {
+    allowedTags: ['a', 'b', 'br', 'code', 'em', 'i', 'p', 'pre', 'span', 'strong', 'ul', 'ol', 'li'],
+    allowedAttributes: {
+      a: ['href', 'rel', 'target'],
+      span: ['class'],
+      pre: ['class'],
+      code: ['class']
+    },
+    allowedSchemes: ['http', 'https', 'mailto']
+  });
 
   function toggleExpandedState(e: React.MouseEvent<HTMLDetailsElement>) {
     e.preventDefault();
@@ -52,7 +63,7 @@ function ChallengeTranscript({
         {isDialogue ? (
           <div
             className='transcript-dialogue'
-            dangerouslySetInnerHTML={{ __html: transcript }}
+            dangerouslySetInnerHTML={{ __html: sanitizedTranscript }}
           />
         ) : (
           <PrismFormatted className='line-numbers' text={transcript} />

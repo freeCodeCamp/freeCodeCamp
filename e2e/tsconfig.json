@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "paths": {
+      "@freecodecamp/shared/*": ["../packages/shared/src/*"]
+    },
+    "target": "es2020",
+    "ignoreDeprecations": "5.0",
     "lib": ["es5", "dom", "ES2017"],
-    "module": "node16",
-    "moduleResolution": "node16"
+    "module": "esnext",
+    "moduleResolution": "bundler"
   },
   "extends": "../tsconfig-base.json"
 }

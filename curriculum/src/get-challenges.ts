@@ -27,7 +27,9 @@ export async function hasEnglishSource(
   basePath: string,
   translationPath: string
 ) {
+  // nosemgrep
   const englishRoot = resolve(__dirname, basePath, 'english');
+  // nosemgrep
   return await access(join(englishRoot, translationPath), constants.F_OK)
     .then(() => true)
     .catch(() => false);

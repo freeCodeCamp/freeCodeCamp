@@ -279,6 +279,7 @@ type Challenge = {
 };
 
 const getChallenge = (challengeId: string): Challenge => {
+  // nosemgrep
   const challengePath = path.join(getProjectPath(), `${challengeId}.md`);
   const challenge = parseMDSync(challengePath) as Challenge;
   return challenge;

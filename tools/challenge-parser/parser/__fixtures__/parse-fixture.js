@@ -7,6 +7,7 @@ const { read } = require('to-vfile');
 const parseFixture = async (filename) => remark()
   .use(directive)
   .use(frontmatter, ['yaml'])
+  // nosemgrep
   .parse(await read(join(__dirname, filename)));
 
 

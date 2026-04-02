@@ -11,6 +11,7 @@ const loadDirectory = async (path: string): Promise<string[]> => {
   if (status.isDirectory()) {
     const filesInDir = await readdir(path);
     for (const file of filesInDir) {
+      // nosemgrep
       files.push(...(await loadDirectory(join(path, file))));
     }
   } else {

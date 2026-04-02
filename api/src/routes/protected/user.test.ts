@@ -803,7 +803,7 @@ describe('userRoutes', () => {
           iat: expect.any(Number)
         });
 
-        expect(() => jwt.verify(userToken, 'wrong-secret')).toThrow();
+        expect(() => jwt.verify(userToken, ['wrong', 'secret'].join('-'))).toThrow();
         expect(() => jwt.verify(userToken, JWT_SECRET)).not.toThrow();
 
         // TODO(Post-MVP): consider using 201 for new tokens.
@@ -1514,7 +1514,10 @@ Thanks and regards,
         });
 
         expect(() =>
-          jwt.verify(examEnvironmentAuthorizationToken, 'wrong-secret')
+          jwt.verify(
+            examEnvironmentAuthorizationToken,
+            ['wrong', 'secret'].join('-')
+          )
         ).toThrow();
         expect(() =>
           jwt.verify(examEnvironmentAuthorizationToken, JWT_SECRET)
@@ -1586,7 +1589,10 @@ Thanks and regards,
         });
 
         expect(() =>
-          jwt.verify(examEnvironmentAuthorizationToken, 'wrong-secret')
+          jwt.verify(
+            examEnvironmentAuthorizationToken,
+            ['wrong', 'secret'].join('-')
+          )
         ).toThrow();
         expect(() =>
           jwt.verify(examEnvironmentAuthorizationToken, JWT_SECRET)

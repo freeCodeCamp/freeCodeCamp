@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
+import sanitizeHtml from 'sanitize-html';
 import {
   archivedSuperBlocks,
   SuperBlocks
@@ -29,6 +30,18 @@ export const ConditionalDonationAlert = ({
   isDonating
 }: ConditionalDonationAlertProps): JSX.Element | null => {
   const { t } = useTranslation();
+  const sanitizedIntroText = superBlockIntroText.map(text =>
+    sanitizeHtml(text, {
+      allowedTags: ['a', 'b', 'br', 'code', 'em', 'i', 'p', 'pre', 'span', 'strong', 'ul', 'ol', 'li'],
+      allowedAttributes: {
+        a: ['href', 'rel', 'target'],
+        span: ['class'],
+        pre: ['class'],
+        code: ['class']
+      },
+      allowedSchemes: ['http', 'https', 'mailto']
+    })
+  );
 
   const betaCertifications: SuperBlocks[] = [SuperBlocks.A2English];
 
@@ -173,7 +186,7 @@ function SuperBlockIntro({
         </Link>
       )}
       <Spacer size='l' />
-      {superBlockIntroText.map((str, i) => (
+      {sanitizedIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
       {superBlockNoteText && (

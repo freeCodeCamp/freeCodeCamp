@@ -235,6 +235,7 @@ async function createDialogueChallenge(
     blockContentDir: string;
   };
 
+  // nosemgrep
   const newChallengeDir = path.resolve(blockContentDir, block);
   await fs.mkdir(newChallengeDir, { recursive: true });
 

@@ -6,6 +6,7 @@
     "declarationMap": true,
     "module": "es2020",
     "moduleResolution": "bundler",
+    "rootDir": "src",
     "outDir": "dist",
     "noEmit": false
   }

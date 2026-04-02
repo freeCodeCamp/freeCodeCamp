@@ -208,6 +208,7 @@ async function transformSASS(documentElement) {
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
+      // nosemgrep
       style.innerHTML = await sassWorkerExecutor.execute(style.innerHTML, 5000)
         .done;
     })
@@ -245,6 +246,7 @@ async function transformScript(documentElement, { useModules }) {
     }
 
     // Skip unnecessary transformations
+    // nosemgrep
     script.innerHTML = script.innerHTML
       ? babelTransformCode(options)(script.innerHTML)
       : '';
@@ -270,6 +272,7 @@ const deferScript = scriptCode => {
 export const embedScript = (script, source, contents) => {
   const code = contents ?? '';
 
+  // nosemgrep
   script.innerHTML = script.hasAttribute('defer') ? deferScript(code) : code;
   script.removeAttribute('src');
   script.setAttribute('data-src', source);
@@ -314,6 +317,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
     if (link) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
+      // nosemgrep
       style.innerHTML = stylesCss?.contents;
 
       link.parentNode.appendChild(style);

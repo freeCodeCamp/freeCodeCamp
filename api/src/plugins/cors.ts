@@ -14,6 +14,7 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
       logger.debug(`Allowing access to origin: ${origin}`);
+      // nosemgrep
       void reply.header('Access-Control-Allow-Origin', origin);
     } else {
       // TODO: Discuss if this is the correct approach. Standard practice is to

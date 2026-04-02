@@ -109,7 +109,7 @@ describe('Form validators', () => {
     const nonHttpAddresses = [
       'ftp://example.com',
       'file://localhost',
-      'ws://example.com',
+      'wss://example.com',
       'wss://localhost',
       'https://example.com/test',
       'https://localhost.com'

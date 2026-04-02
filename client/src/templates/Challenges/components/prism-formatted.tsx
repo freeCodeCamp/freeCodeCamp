@@ -1,5 +1,6 @@
 import Prism from 'prismjs';
 import React, { useRef, useEffect } from 'react';
+import sanitizeHtml from 'sanitize-html';
 import { enhancePrismAccessibility } from '../utils';
 
 interface PrismFormattedProps {
@@ -22,6 +23,15 @@ function PrismFormatted({
     text = text.replace(/<pre( [^>]+)?>/, '<pre$1 data-no-aria="true">');
   }
 
+  const sanitizedText = sanitizeHtml(text, {
+    allowedTags: ['span', 'pre', 'code', 'br'],
+    allowedAttributes: {
+      span: ['class'],
+      pre: ['class', 'data-no-aria', 'tabindex'],
+      code: ['class']
+    }
+  });
+
   useEffect(() => {
     // Just in case 'current' has not been created, though it should have been.
     if (instructionsRef.current) {
@@ -42,7 +52,7 @@ function PrismFormatted({
   return (
     <ElementName
       className={className}
-      dangerouslySetInnerHTML={{ __html: text }}
+      dangerouslySetInnerHTML={{ __html: sanitizedText }}
       ref={instructionsRef}
     />
   );

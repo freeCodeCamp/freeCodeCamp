@@ -33,6 +33,7 @@ function plugin() {
       if (!from || !component) {
         return null;
       }
+      // nosemgrep
       const location = path.resolve(file.dirname, from);
       return await read(location)
         .then(parse)

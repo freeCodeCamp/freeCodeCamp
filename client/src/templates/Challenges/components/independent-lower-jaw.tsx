@@ -31,6 +31,7 @@ import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
+import sanitizeHtml from 'sanitize-html';
 
 import './independent-lower-jaw.css';
 
@@ -93,6 +94,18 @@ export function IndependentLowerJaw({
   const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
+  const sanitizedHint = hint
+    ? sanitizeHtml(hint, {
+        allowedTags: ['a', 'b', 'br', 'code', 'em', 'i', 'p', 'pre', 'span', 'strong', 'ul', 'ol', 'li'],
+        allowedAttributes: {
+          a: ['href', 'rel', 'target'],
+          span: ['class'],
+          pre: ['class'],
+          code: ['class']
+        },
+        allowedSchemes: ['http', 'https', 'mailto']
+      })
+    : '';
   const [showHint, setShowHint] = React.useState(false);
   const [showSubmissionHint, setShowSubmissionHint] = React.useState(true);
   const signInLinkRef = React.useRef<HTMLAnchorElement>(null);
@@ -164,7 +177,7 @@ export function IndependentLowerJaw({
               <span className='tooltiptext'> {t('buttons.close')}</span>
             </button>
           </div>
-          <div dangerouslySetInnerHTML={{ __html: hint }} />
+          <div dangerouslySetInnerHTML={{ __html: sanitizedHint }} />
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (

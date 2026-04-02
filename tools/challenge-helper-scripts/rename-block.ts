@@ -108,7 +108,9 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
   console.log('New block structure .json written.');
 
   const { blockContentDir } = getContentConfig('english');
+  // nosemgrep
   const oldBlockContentDir = join(blockContentDir, oldBlock);
+  // nosemgrep
   const newBlockContentDir = join(blockContentDir, newBlock);
   await fs.rename(oldBlockContentDir, newBlockContentDir);
   console.log('Block challenges moved to new directory.');

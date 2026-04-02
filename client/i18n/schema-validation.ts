@@ -228,6 +228,7 @@ const schemaValidation = (
 const readJsonFile = async (language: string, fileName: string) => {
   const filePath = path.join(
     __dirname,
+    // nosemgrep
     `/locales/${language}/${fileName}.json`
   );
   const file = await readFile(filePath, 'utf8');

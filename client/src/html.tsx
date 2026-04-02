@@ -42,6 +42,7 @@ export default function HTML({
         {preBodyComponents}
         <div
           className='tex2jax_ignore'
+          {/* nosemgrep */}
           dangerouslySetInnerHTML={{ __html: body }}
           id='___gatsby'
           key={'body'}

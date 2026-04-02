@@ -22,9 +22,6 @@ export class NodemailerProvider implements MailProvider {
       auth: {
         user: 'test',
         pass: 'test'
-      },
-      tls: {
-        rejectUnauthorized: false
       }
     });
   }
