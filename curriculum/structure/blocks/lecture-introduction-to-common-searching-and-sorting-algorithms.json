@@ -1,6 +1,5 @@
 {
-  "name": "Introduction to Common Searching and Sorting Algorithms",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-common-searching-and-sorting-algorithms",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",

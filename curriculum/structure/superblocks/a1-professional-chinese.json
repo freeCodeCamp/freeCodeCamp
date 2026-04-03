@@ -51,32 +51,27 @@
       ]
     },
     {
-      "dashedName": "zh-a1-chapter-introducing-colleagues-and-family",
+      "dashedName": "zh-a1-chapter-numbers-and-personal-information",
       "comingSoon": true,
       "modules": [
         {
-          "dashedName": "zh-a1-module-introducing-others",
+          "dashedName": "zh-a1-module-numbers-below-100",
           "comingSoon": true,
           "blocks": [
-            "zh-a1-warm-up-introducing-others-basics",
-            "zh-a1-learn-meeting-the-team",
-            "zh-a1-learn-a-new-colleague",
-            "zh-a1-learn-my-family",
-            "zh-a1-practice-introducing-others",
-            "zh-a1-review-introducing-others",
-            "zh-a1-quiz-check-your-introduction"
+            "zh-a1-learn-numbers-0-to-10",
+            "zh-a1-practice-numbers-0-to-10",
+            "zh-a1-learn-numbers-11-to-19",
+            "zh-a1-practice-numbers-11-to-19",
+            "zh-a1-learn-numbers-20-to-99",
+            "zh-a1-practice-numbers-20-to-99",
+            "zh-a1-review-numbers-below-100",
+            "zh-a1-quiz-numbers-below-100"
           ]
         },
         {
-          "dashedName": "zh-a1-module-getting-to-know-the-team",
+          "dashedName": "zh-a1-module-communicating-personal-information",
           "comingSoon": true,
-          "blocks": [
-            "zh-a1-warm-up-knowing-the-team-basics",
-            "zh-a1-learn-asking-about-the-team",
-            "zh-a1-practice-talking-about-others",
-            "zh-a1-review-team-introduction",
-            "zh-a1-quiz-team-introduction"
-          ]
+          "blocks": []
         }
       ]
     },

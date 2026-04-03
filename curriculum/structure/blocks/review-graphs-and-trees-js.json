@@ -1,6 +1,5 @@
 {
-  "name": "Graphs and Trees Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-graphs-and-trees-js",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
