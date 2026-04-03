@@ -111,33 +111,35 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     challengeType
   } = props;
 
-  // sets screen reader text for the two preview buttons
-  function getPreviewBtnsSrText() {
-    // no preview open
-    const previewBtnsSrText = {
-      pane: t('aria.show-preview'),
-      portal: t('aria.open-preview-in-new-window')
-    };
-
-    // preview open in main window
-    if (showPreviewPane && !showPreviewPortal) {
-      previewBtnsSrText.pane = t('aria.hide-preview');
-      previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
-
-      // preview open in external window
-    } else if (showPreviewPortal && !showPreviewPane) {
-      previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-preview-window');
-    }
-
-    return previewBtnsSrText;
-  }
-
   const isPythonChallenge =
     challengeType === challengeTypes.python ||
     challengeType === challengeTypes.multifilePythonCertProject ||
     challengeType === challengeTypes.pyLab ||
     challengeType === challengeTypes.dailyChallengePy;
+
+  // sets screen reader text for the two preview/terminal buttons
+  function getPreviewBtnsSrText() {
+    const prefix = isPythonChallenge ? 'terminal' : 'preview';
+    
+    // no preview/terminal open
+    const previewBtnsSrText = {
+      pane: t(`aria.show-${prefix}`),
+      portal: t(`aria.open-${prefix}-in-new-window`)
+    };
+
+    // preview/terminal open in main window
+    if (showPreviewPane && !showPreviewPortal) {
+      previewBtnsSrText.pane = t(`aria.hide-${prefix}`);
+      previewBtnsSrText.portal = t(`aria.move-${prefix}-to-new-window`);
+
+      // preview/terminal open in external window
+    } else if (showPreviewPortal && !showPreviewPane) {
+      previewBtnsSrText.pane = t(`aria.move-${prefix}-to-main-window`);
+      previewBtnsSrText.portal = t(`aria.close-external-${prefix}-window`);
+    }
+
+    return previewBtnsSrText;
+  }
 
   const previewButtonText = isPythonChallenge
     ? t('learn.editor-tabs.terminal')
