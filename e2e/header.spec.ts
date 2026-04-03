@@ -14,7 +14,7 @@ const headerComponentElements = {
   examNavLogo: 'header-exam-nav-microsoft-logo',
   universalNav: 'header-universal-nav',
   universalNavLogo: 'header-universal-nav-logo',
-  toggleLangButton: 'header-toggle-lang-button',
+  langButton: 'header-toggle-lang-button',
   languageList: 'header-lang-list',
   languageButton: 'header-lang-list-option',
   menuButton: 'header-menu-button',
@@ -94,16 +94,22 @@ test.describe('Header', () => {
     }
   });
 
-  test('Clicking the "Change Language" button should open the language list', async ({
+  test('Clicking the language and menu buttons should hide the menu and language list respectively', async ({
     page
   }) => {
-    const toggleLangButton = page.getByTestId(
-      headerComponentElements.toggleLangButton
-    );
-    await expect(toggleLangButton).toBeVisible();
-    await toggleLangButton.click();
+    const langButton = page.getByTestId(headerComponentElements.langButton);
+    const menuButton = page.getByTestId(headerComponentElements.menuButton);
     const langList = page.getByTestId(headerComponentElements.languageList);
+    const menuList = page.getByTestId(headerComponentElements.menu);
+
+    await langButton.click();
     await expect(langList).toBeVisible();
+    await expect(menuList).not.toBeVisible();
+
+    // and back again
+    await menuButton.click();
+    await expect(menuList).toBeVisible();
+    await expect(langList).not.toBeVisible();
   });
 
   test('The language list should contain a button for each available language', async ({
@@ -114,9 +120,8 @@ test.describe('Header', () => {
     );
 
     const toggleLangButton = page.getByTestId(
-      headerComponentElements.toggleLangButton
+      headerComponentElements.langButton
     );
-    await expect(toggleLangButton).toBeVisible();
     await toggleLangButton.click();
     const langList = page.getByTestId(headerComponentElements.languageList);
     await expect(langList).toBeVisible();
@@ -129,6 +134,7 @@ test.describe('Header', () => {
     for (let i = 0; i < locales.length; i++) {
       const btn = langButtons.nth(i);
       await expect(btn).toContainText(LangNames[locales[i]]);
+      await expect(btn).toBeVisible();
     }
   });
 
