@@ -16,6 +16,18 @@ const JS_FENCE_LANGUAGES = new Set(['js', 'javascript', 'jsx']);
 const SEED_HEADING_NAME = 'seed';
 const EDITABLE_REGION_MARKER = '--fcc-editable-region--';
 const EDITABLE_REGION_PLACEHOLDER = '/* __FCC_EDITABLE_REGION__ */';
+const SEMICOLON_EXCEPTION_CHALLENGE_IDS = new Set([
+  '641da3c6b6fbd742bff6ee40',
+  '641da42481d90c4314c99e94',
+  '641da465273051435d332b15',
+  '641da4b16937be43ba24c63d',
+  '646d0a022da7bcabf3e3aca3',
+  '646d0d20108440acc95a6b32',
+  '646d0db5175974ad8633b71c',
+  '646d0e4636e14eae2bb3b992',
+  '646d1980018efaaec2b1c28b',
+  '69a012c6224fac85832247dd'
+]);
 
 type FileUpdate = {
   content: string;
@@ -47,8 +59,14 @@ async function main() {
   let changedFiles = 0;
   let changedBlocks = 0;
   let skippedBlocks = 0;
+  let skippedExceptionFiles = 0;
 
   for (const filePath of filePaths) {
+    if (isSemicolonExceptionFile(filePath)) {
+      skippedExceptionFiles += 1;
+      continue;
+    }
+
     const original = readFileSync(filePath, 'utf8');
     const result = fixSeedSemicolons(original);
 
@@ -83,6 +101,12 @@ async function main() {
       `Skipped ${skippedBlocks} code block(s) with parse errors (left unchanged).`
     );
   }
+
+  if (skippedExceptionFiles > 0) {
+    console.warn(
+      `Skipped ${skippedExceptionFiles} exception file(s) where semicolons are optional.`
+    );
+  }
 }
 
 async function getFilePaths(positionals: string[]): Promise<string[]> {
@@ -114,6 +138,11 @@ function resolveInputPath(filePath: string): string {
   }
 
   return path.resolve(process.cwd(), filePath);
+}
+
+function isSemicolonExceptionFile(filePath: string): boolean {
+  const challengeId = path.basename(filePath, '.md');
+  return SEMICOLON_EXCEPTION_CHALLENGE_IDS.has(challengeId);
 }
 
 function getMarkdownFiles(dirPath: string): string[] {
