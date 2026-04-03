@@ -1,6 +1,6 @@
 // NEW: used to create ZIP file for better solution download format
 import JSZip from 'jszip';
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -89,44 +89,40 @@ function CompletionModal({
   message,
   t
 }: CompletionModalProps): JSX.Element {
-  const [downloadURL, setDownloadURL] = useState<string>();
   const submitChallenge = useSubmit();
 
-  useEffect(() => {
+  // NEW: handle ZIP download only on user action (fix for E2E failure)
+  const handleDownload = async () => {
     if (!challengeFiles?.length) return;
-    // NEW LOGIC: create ZIP file with separate files
 
-    const zip = new JSZip();
+    try {
+      const zip = new JSZip();
 
-    challengeFiles.forEach(file => {
-      let fileName = `${file.name}.${file.ext}`;
+      challengeFiles.forEach(file => {
+        let fileName = `${file.name}.${file.ext}`;
 
-      if (file.ext === 'html' && !zip.file('index.html'))
-        fileName = 'index.html';
-      if (file.ext === 'css' && !zip.file('styles.css'))
-        fileName = 'styles.css';
-      if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
+        if (file.ext === 'html' && !zip.file('index.html'))
+          fileName = 'index.html';
+        if (file.ext === 'css' && !zip.file('styles.css'))
+          fileName = 'styles.css';
+        if (file.ext === 'js' && !zip.file('script.js')) fileName = 'script.js';
 
-      // Generate ZIP and convert to downloadable URL (same pattern as before)
-      zip.file(fileName, file.contents);
-    });
-
-    let url: string;
-
-    zip
-      .generateAsync({ type: 'blob' })
-      .then((content: Blob) => {
-        url = URL.createObjectURL(content);
-        setDownloadURL(url);
-      })
-      .catch((err: unknown) => {
-        console.error('ZIP generation failed:', err);
+        zip.file(fileName, file.contents);
       });
 
-    return () => {
-      if (url) URL.revokeObjectURL(url);
-    };
-  }, [challengeFiles]);
+      const content = await zip.generateAsync({ type: 'blob' });
+      const url = URL.createObjectURL(content);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${dashedName}.zip`;
+      a.click();
+
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('ZIP generation failed:', err);
+    }
+  };
 
   useEffect(() => {
     return () => {
@@ -210,13 +206,15 @@ function CompletionModal({
           {buttonText}
         </Button>
         <Spacer size='xxs' />
-        {downloadURL ? (
+        {challengeFiles?.length ? (
           <Button
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.zip`}
-            href={downloadURL}
+            onClick={e => {
+              e.preventDefault();
+              void handleDownload();
+            }}
           >
             {t('learn.download-solution')}
           </Button>
