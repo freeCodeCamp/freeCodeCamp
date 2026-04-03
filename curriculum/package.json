@@ -43,6 +43,8 @@
     "delete-task": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-task",
     "lint": "eslint --max-warnings 0 && pnpm lint-challenges",
     "lint-challenges": "NODE_OPTIONS='--max-old-space-size=7168' tsx src/lint-localized",
+    "fix-seed-semicolons": "tsx src/fix-seed-semicolons.ts",
+    "check-seed-semicolons": "tsx src/fix-seed-semicolons.ts --check",
     "reorder-tasks": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
