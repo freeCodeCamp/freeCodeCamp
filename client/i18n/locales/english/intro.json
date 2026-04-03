@@ -6148,7 +6148,9 @@
       },
       "workshop-build-a-zoo-animal-scatterplot": {
         "title": "Build a Zoo Animal Scatterplot",
-        "intro": ["Build a Zoo Animal Scatterplot", ""]
+        "intro": [
+          "In this workshop, you will build a scatterplot using d3 library."
+        ]
       },
       "lab-bar-chart": {
         "title": "Build a Bar Chart",
