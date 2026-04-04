@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 import {
   removePortalWindow,
@@ -22,6 +23,7 @@ import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
+  challengeType: number;
   editor: JSX.Element | null;
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
@@ -240,7 +242,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </TabsTrigger>
             {hasPreview && (
               <TabsTrigger value={tabs.preview}>
-                {i18next.t('learn.editor-tabs.preview')}
+                {this.props.challengeType === challengeTypes.python ||
+                this.props.challengeType ===
+                  challengeTypes.multifilePythonCertProject ||
+                this.props.challengeType === challengeTypes.pyLab ||
+                this.props.challengeType === challengeTypes.dailyChallengePy
+                  ? i18next.t('learn.editor-tabs.terminal')
+                  : i18next.t('learn.editor-tabs.preview')}
               </TabsTrigger>
             )}
           </TabsList>
