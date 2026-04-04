@@ -145,10 +145,16 @@ input:focus-visible + .video-quiz-input-visible {
 }
 
 .mcq-option-label {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
   margin: 0;
   flex: 1;
+  min-height: 48px;
+}
+
+.mcq-option-label > span {
+  display: inline-flex;
+  align-items: center;
 }
 
 .mcq-correct {

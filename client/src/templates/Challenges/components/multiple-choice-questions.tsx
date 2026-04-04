@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 
 import { Button, Spacer } from '@freecodecamp/ui';
-import { Question } from '../../../redux/prop-types';
 import { openModal } from '../redux/actions';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
@@ -15,8 +14,23 @@ import PrismFormatted from './prism-formatted';
 import { stripHtmlTags } from './speaking-modal-helpers';
 import { sounds } from './scene/scene-assets';
 
+export interface PolymorphicAnswer {
+  answer?: string;
+  label?: string | React.ReactNode;
+  feedback?: string | React.ReactNode;
+  audioId?: string;
+}
+
+export interface PolymorphicQuestion {
+  text?: string;
+  question?: string | React.ReactNode;
+  answers: PolymorphicAnswer[];
+  solution?: number;
+  correctAnswer?: number;
+}
+
 type MultipleChoiceQuestionsProps = {
-  questions: Question[];
+  questions: PolymorphicQuestion[];
   selectedOptions: (number | null)[];
   handleOptionChange: (questionIndex: number, answerIndex: number) => void;
   submittedMcqAnswers: (number | null)[];
@@ -85,22 +99,31 @@ function MultipleChoiceQuestions({
       {questions.map((question, questionIndex) => (
         <fieldset key={questionIndex}>
           <legend className='mcq-question-text'>
-            <PrismFormatted className={'line-numbers'} text={question.text} />
+            {(() => {
+              const questionContent = question.text || question.question;
+              return typeof questionContent === 'string' ? (
+                <PrismFormatted
+                  className={'line-numbers'}
+                  text={questionContent}
+                />
+              ) : (
+                questionContent
+              );
+            })()}
           </legend>
           <div className='video-quiz-options'>
-            {question.answers.map(({ answer }, answerIndex) => {
+            {question.answers.map((answerObj, answerIndex) => {
+              const answer = answerObj.answer || answerObj.label;
               const isSubmittedAnswer =
                 submittedMcqAnswers[questionIndex] === answerIndex;
-              const feedback =
-                questions[questionIndex].answers[answerIndex].feedback;
+              const feedback = answerObj.feedback;
+              const solution = question.solution || question.correctAnswer;
               const isCorrect =
-                submittedMcqAnswers[questionIndex] ===
-                // -1 because the solution is 1-indexed
-                questions[questionIndex].solution - 1;
+                solution !== undefined &&
+                submittedMcqAnswers[questionIndex] === solution - 1;
 
               const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
-              const hasAudio =
-                questions[questionIndex]?.answers[answerIndex]?.audioId;
+              const hasAudio = answerObj.audioId;
 
               return (
                 <div key={answerIndex} className='mcq-option-row'>
@@ -131,12 +154,16 @@ function MultipleChoiceQuestions({
                             <span className='video-quiz-selected-input' />
                           ) : null}
                         </span>
-                        <PrismFormatted
-                          className={'video-quiz-option'}
-                          text={removeParagraphTags(answer)}
-                          useSpan
-                          noAria
-                        />
+                        {typeof answer === 'string' ? (
+                          <PrismFormatted
+                            className={'video-quiz-option'}
+                            text={removeParagraphTags(answer)}
+                            useSpan
+                            noAria
+                          />
+                        ) : (
+                          answer
+                        )}
                       </label>
                     </div>
                     {showFeedback && isSubmittedAnswer && (
@@ -150,16 +177,20 @@ function MultipleChoiceQuestions({
                         </p>
                         {feedback && (
                           <p>
-                            <PrismFormatted
-                              className={
-                                isCorrect
-                                  ? 'mcq-prism-correct'
-                                  : 'mcq-prism-incorrect'
-                              }
-                              text={removeParagraphTags(feedback)}
-                              useSpan
-                              noAria
-                            />
+                            {typeof feedback === 'string' ? (
+                              <PrismFormatted
+                                className={
+                                  isCorrect
+                                    ? 'mcq-prism-correct'
+                                    : 'mcq-prism-incorrect'
+                                }
+                                text={removeParagraphTags(feedback)}
+                                useSpan
+                                noAria
+                              />
+                            ) : (
+                              feedback
+                            )}
                           </p>
                         )}
                       </div>
@@ -170,13 +201,15 @@ function MultipleChoiceQuestions({
                     <div className='mcq-speaking-button-wrapper'>
                       <Button
                         size='medium'
-                        onClick={() =>
-                          handleSpeakingButtonClick(
-                            answer,
-                            answerIndex,
-                            questionIndex
-                          )
-                        }
+                        onClick={() => {
+                          if (typeof answer === 'string') {
+                            handleSpeakingButtonClick(
+                              answer,
+                              answerIndex,
+                              questionIndex
+                            );
+                          }
+                        }}
                         className='mcq-speaking-button'
                         aria-describedby={labelId}
                         aria-label={t('speaking-modal.speaking-button')}

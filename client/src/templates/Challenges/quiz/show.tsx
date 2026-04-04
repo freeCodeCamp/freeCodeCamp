@@ -7,17 +7,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import {
-  Container,
-  Col,
-  Row,
-  Button,
-  Quiz,
-  useQuiz,
-  Spacer
-} from '@freecodecamp/ui';
+import { Container, Col, Row, Button, useQuiz, Spacer } from '@freecodecamp/ui';
 
 // Local Utilities
+import MultipleChoiceQuestions, {
+  PolymorphicQuestion
+} from '../components/multiple-choice-questions';
 import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
@@ -357,8 +352,21 @@ const ShowQuiz = ({
                 superBlock={superBlock}
               />
               <Spacer size='l' />
-              <ObserveKeys>
-                <Quiz questions={quizData} disabled={hasSubmitted} />
+              <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                <MultipleChoiceQuestions
+                  questions={quizData as unknown as PolymorphicQuestion[]}
+                  selectedOptions={quizData.map(q => q.selectedAnswer ?? null)}
+                  handleOptionChange={(questionIndex, answerIndex) =>
+                    quizData[questionIndex].onChange(answerIndex)
+                  }
+                  submittedMcqAnswers={
+                    hasSubmitted
+                      ? quizData.map(q => q.selectedAnswer ?? null)
+                      : quizData.map(() => null)
+                  }
+                  showFeedback={hasSubmitted}
+                  superBlock={superBlock}
+                />
               </ObserveKeys>
               <Spacer size='m' />
               <div aria-live='polite' aria-atomic='true'>
