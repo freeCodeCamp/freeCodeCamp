@@ -32,7 +32,7 @@ jobs:
           PROJECT_NAME: 'curriculum'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@ce33ce793a5cbc401d9cd748716e03fc90c001f1 # v2.15.2
+        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
