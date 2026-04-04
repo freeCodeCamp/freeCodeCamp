@@ -2,7 +2,7 @@ name: GitHub - PR Contribution Guidelines
 
 on:
   pull_request_target:
-    types: [opened, reopened]
+    types: [opened, reopened, edited]
 
 jobs:
   # Ensures PR commits were not added via the GitHub Web UI, which typically indicates
@@ -31,7 +31,7 @@ jobs:
 
       - name: Check if commits are made on GitHub Web UI
         id: check-commits
-        if: steps.pr_author.outputs.is_allow_listed == 'false'
+        if: steps.pr_author.outputs.is_allow_listed == 'false' && github.event.action != 'edited'
         env:
           HEAD_REF: ${{ github.head_ref }}
         run: |
@@ -50,7 +50,7 @@ jobs:
 
       - name: Add comment on PR if commits are made on GitHub Web UI
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
-        if: steps.pr_author.outputs.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true'
+        if: steps.pr_author.outputs.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true' && github.event.action != 'edited'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -81,7 +81,7 @@ jobs:
     name: Fix PR Title
     runs-on: ubuntu-24.04
     needs: no-web-commits
-    if: needs.no-web-commits.result == 'success'
+    if: needs.no-web-commits.result == 'success' && github.event.action != 'edited'
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
@@ -122,7 +122,7 @@ jobs:
     name: Check Linked Issue
     runs-on: ubuntu-24.04
     needs: no-web-commits
-    if: needs.no-web-commits.result == 'success'
+    if: needs.no-web-commits.result == 'success' && github.event.action != 'edited'
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
