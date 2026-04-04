@@ -4,7 +4,8 @@ import {
   faXTwitter,
   faBluesky,
   faInstagram,
-  faFacebook
+  faFacebook,
+  faThreads
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShareRedirectProps } from './types';
@@ -13,6 +14,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   xRedirectURL,
   blueSkyRedirectURL,
   threadsRedirectURL,
+  instagramRedirectURL,
   facebookRedirectURL,
   minified
 }) => {
@@ -42,13 +44,24 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
+        data-testid='share-on-instagram'
+        className='btn fade-in'
+        href={instagramRedirectURL}
+        target='_blank'
+        rel='noreferrer'
+      >
+        <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
+        {!minified && t('buttons.share-on-instagram')}
+        <span className='sr-only'>{t('aria.opens-new-window')}</span>
+      </a>
+      <a
         data-testid='share-on-threads'
         className='btn fade-in'
         href={threadsRedirectURL}
         target='_blank'
         rel='noreferrer'
       >
-        <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
+        <FontAwesomeIcon icon={faThreads} size='1x' aria-hidden='true' />
         {!minified && t('buttons.share-on-threads')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>

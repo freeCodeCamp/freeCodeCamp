@@ -18,6 +18,7 @@ export const Share = ({
       xRedirectURL={redirectURLs.xUrl}
       blueSkyRedirectURL={redirectURLs.blueSkyUrl}
       threadsRedirectURL={redirectURLs.threadsURL}
+      instagramRedirectURL={redirectURLs.instagramUrl}
       facebookRedirectURL={redirectURLs.facebookUrl}
       minified={minified}
     />

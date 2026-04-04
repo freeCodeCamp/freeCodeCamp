@@ -33,6 +33,7 @@ interface ShareUrls {
   xUrl: string;
   blueSkyUrl: string;
   threadsURL: string;
+  instagramUrl: string;
   facebookUrl: string;
 }
 
@@ -45,6 +46,7 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hashtag}freecodecamp`;
   const xRedirectURL = `https://${twitterData.domain}/${twitterData.action}?original_referer=${twitterData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
+  const instagramRedirectURL = 'https://www.instagram.com/';
   const blueSkyRedirectURL = `https://${blueSkyData.domain}/${blueSkyData.action}?original_referer=${blueSkyData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
   const threadRedirectURL = `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
@@ -55,6 +57,7 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
     xUrl: xRedirectURL,
     blueSkyUrl: blueSkyRedirectURL,
     threadsURL: threadRedirectURL,
+    instagramUrl: instagramRedirectURL,
     facebookUrl: facebookRedirectURL
   };
 };
