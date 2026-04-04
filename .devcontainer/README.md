@@ -27,5 +27,5 @@ pnpm -F=curriculum install-puppeteer
 
 ## More information
 
-For detailed setup instructions and contribution guidelines, visit:
+For detailed setup instructions and contribution guidelines, you can visit:
 https://contribute.freecodecamp.org/how-to-setup-freecodecamp-locally
