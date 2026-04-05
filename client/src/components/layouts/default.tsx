@@ -60,6 +60,7 @@ import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
 import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
+import CampfireManager from '../CampfireManager';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -316,6 +317,7 @@ function DefaultLayout({
           {fetchState.complete && children}
         </div>
         {showFooter && <Footer />}
+        <CampfireManager />
       </div>
     );
   }

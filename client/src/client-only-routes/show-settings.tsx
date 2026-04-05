@@ -31,6 +31,7 @@ import {
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
+  updateMyAmbientSound,
   updateMyKeyboardShortcuts,
   verifyCert,
   resetMyEditorLayout
@@ -46,6 +47,7 @@ type ShowSettingsProps = {
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
+  toggleAmbientSoundMode: (ambientSound: boolean) => void;
   resetEditorLayout: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   updateIsHonest: () => void;
@@ -72,6 +74,8 @@ const mapDispatchToProps = {
   navigate,
   submitNewAbout,
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
+  toggleAmbientSoundMode: (ambientSound: boolean) =>
+    updateMyAmbientSound({ ambientSound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
   updateIsHonest: updateMyHonesty,
@@ -86,6 +90,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const {
     createFlashMessage,
     toggleSoundMode,
+    toggleAmbientSoundMode,
     toggleKeyboardShortcuts,
     resetEditorLayout,
     user,
@@ -165,6 +170,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = user;
 
   const sound = (store.get('fcc-sound') as boolean) ?? false;
+  const ambientSound = (store.get('fcc-ambient-sound') as boolean) ?? false;
   const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
     <>
@@ -195,10 +201,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             <Account
               keyboardShortcuts={keyboardShortcuts}
               sound={sound}
+              ambientSound={ambientSound}
               editorLayout={editorLayout}
               resetEditorLayout={resetEditorLayout}
               toggleKeyboardShortcuts={toggleKeyboardShortcuts}
               toggleSoundMode={toggleSoundMode}
+              toggleAmbientSoundMode={toggleAmbientSoundMode}
             />
           </ScrollElement>
           <Spacer size='m' />
