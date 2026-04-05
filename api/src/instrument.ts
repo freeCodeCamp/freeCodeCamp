@@ -1,22 +1,20 @@
+import { FastifyInstance } from 'fastify';
 import * as Sentry from '@sentry/node';
-import type { FastifyError } from 'fastify';
 
-import {
-  DEPLOYMENT_VERSION,
-  SENTRY_DSN,
-  SENTRY_ENVIRONMENT
-} from './utils/env.js';
+export const registerSentry = (app: FastifyInstance) => {
+  app.addHook('onRequest', async (req) => {
+    Sentry.setContext('request', {
+      method: req.method,
+      url: req.url,
+      headers: req.headers
+    });
+  });
 
-const shouldIgnoreError = (error: FastifyError): boolean => {
-  return !!error.statusCode && error.statusCode < 500;
+  app.setErrorHandler((error, request, reply) => {
+    Sentry.captureException(error);
+
+    reply.status(error.statusCode || 500).send({
+      message: 'Internal Server Error'
+    });
+  });
 };
-
-// Ensure to call this before importing any other modules!
-Sentry.init({
-  dsn: SENTRY_DSN,
-  environment: SENTRY_ENVIRONMENT,
-  maxValueLength: 8192, // the default is 250, which is too small.
-  release: DEPLOYMENT_VERSION,
-  beforeSend: (event, hint) =>
-    shouldIgnoreError(hint.originalException as FastifyError) ? null : event
-});
