@@ -25,7 +25,9 @@ const links = {
   multipleChoiceQuestion:
     '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-7',
   assignment:
-    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
+    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html',
+  multifileLab:
+    '/learn/responsive-web-design-v9/lab-debug-camperbots-profile-page/lab-debug-camperbots-profile-page'
 };
 
 const titles = {
@@ -214,4 +216,22 @@ test('User can use Cmd+Enter to submit their answer in an assignment-type challe
 
   // Completion modal shows up
   await expect(page.getByRole('dialog')).toBeVisible();
+});
+
+test('Ctrl+Enter should not open completion modal in multifile editor (uses lower jaw)', async ({
+  page
+}) => {
+  await page.goto(links.multifileLab);
+
+  const editorLayout = page.locator('#editor-layout');
+  await expect(editorLayout).toBeVisible();
+  await editorLayout.click();
+
+  await page.keyboard.press('Control+Enter');
+
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+
+  await expect(
+    page.locator('[data-playwright-test-label="independentLowerJaw-container"]')
+  ).toBeVisible();
 });
