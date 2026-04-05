@@ -6165,6 +6165,10 @@
           "In these lessons, you will learn about basic data visualization concepts."
         ]
       },
+      "workshop-build-a-zoo-animal-scatterplot": {
+        "title": "Build a Zoo Animal Scatterplot",
+        "intro": ["Build a Zoo Animal Scatterplot", ""]
+      },
       "lab-bar-chart": {
         "title": "Build a Bar Chart",
         "intro": ["In this lab you will use d3 to build a bar chart."]
