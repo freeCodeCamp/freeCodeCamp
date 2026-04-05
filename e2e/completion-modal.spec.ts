@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
+import { getEditors } from './utils/editor';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -191,5 +192,39 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   }) => {
     await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
+  });
+});
+
+test.describe('Challenge Completion Modal Download Solution', () => {
+  test('should be able to download the solution in zip format', async ({
+    page
+  }) => {
+    await page.goto(
+      '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
+    );
+    const solution = `<h1>Hello World</h1>`;
+    await getEditors(page).fill(solution);
+    const editorTextLocator = page
+      .getByTestId('editor-container-indexhtml')
+      .getByText(solution);
+    await expect(editorTextLocator).toBeVisible();
+
+    await page.keyboard.press('Control+Enter');
+
+    await expect(
+      page.getByText(translations.learn['congratulations-code-passes'])
+    ).toBeVisible();
+
+    const downloadButton = page.getByText(
+      translations.learn['download-solution']
+    );
+    await expect(downloadButton).toBeVisible();
+
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      downloadButton.click()
+    ]);
+
+    expect(download.suggestedFilename()).toBe('say-hello-to-html-elements.zip');
   });
 });
