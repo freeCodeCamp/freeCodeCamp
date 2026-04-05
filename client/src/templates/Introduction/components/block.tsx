@@ -38,6 +38,8 @@ import './block.css';
 
 const { curriculumLocale } = envData;
 
+let lastScrollSpyHash = '';
+
 const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.block);
 
@@ -78,12 +80,59 @@ interface BlockProps {
 
 export class Block extends Component<BlockProps> {
   static displayName: string;
+  private observer: IntersectionObserver | null = null;
+
   constructor(props: BlockProps) {
     super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
     this.handleChallengeClick = this.handleChallengeClick.bind(this);
   }
+
+  componentDidMount() {
+    this.setupObserver();
+  }
+
+  componentWillUnmount() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+  }
+
+  setupObserver = () => {
+    if (this.props.accordion) return;
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window))
+      return;
+
+    const { block } = this.props;
+    const dashedBlock = block
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+    if (lastScrollSpyHash === '' && window.location.hash) {
+      lastScrollSpyHash = window.location.hash;
+    }
+    const el = document.getElementById(dashedBlock);
+    if (!el) return;
+
+    this.observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentHash = window.location.hash;
+            const observerOwnsHash =
+              currentHash === '' || currentHash === lastScrollSpyHash;
+            if (observerOwnsHash) {
+              lastScrollSpyHash = `#${dashedBlock}`;
+              window.history.replaceState(null, '', `#${dashedBlock}`);
+            }
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -50% 0px' }
+    );
+    this.observer.observe(el);
+  };
 
   handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
@@ -158,6 +207,10 @@ export class Block extends Component<BlockProps> {
     const isGridBlock = blockLayout === BlockLayouts.ChallengeGrid;
 
     const isEmptyBlock = !challenges.length;
+    const dashedBlock = block
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
@@ -175,7 +228,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
      */
     const LegacyChallengeListBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className={`block ${isExpanded ? 'open' : ''}`}>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
@@ -231,7 +284,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
      */
     const ProjectListBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className='block'>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
@@ -261,7 +314,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game
      */
     const LegacyChallengeGridBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
@@ -311,7 +364,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#learn-greetings-in-your-first-day-at-the-office
      */
     const TaskGridBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
@@ -360,7 +413,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
      */
     const LegacyLinkBlock = (
-      <Element name={block}>
+      <Element name={block} id={dashedBlock}>
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
