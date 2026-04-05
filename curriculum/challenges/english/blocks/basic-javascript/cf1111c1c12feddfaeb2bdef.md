@@ -8,7 +8,7 @@ dashedName: generate-random-whole-numbers-within-a-range
 
 # --description--
 
-You can generate a random whole number in the range from zero to a given number. You can also pick a different lower number for this range.
+You can generate a random whole number in a range from zero to a given number. You can also specify a different lower bound for this range.
 
 You'll call your minimum number `min` and your maximum number `max`.
 
