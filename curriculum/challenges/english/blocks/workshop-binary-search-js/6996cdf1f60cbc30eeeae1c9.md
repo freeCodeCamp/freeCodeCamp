@@ -38,7 +38,7 @@ function binarySearch(searchList, value) {
     } else if (value > valueAtMiddle) {
 --fcc-editable-region--
         
---fcc-editable-region--     
+--fcc-editable-region--
     }
     
     break;
