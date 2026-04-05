@@ -1,4 +1,10 @@
+# Docker Compose for local development
+# Usage: docker compose -f docker/docker-compose.yml up -d
+# This sets up MongoDB (with replica set) and Mailpit for local email testing.
+
 services:
+  # MongoDB database service with replica set enabled
+  # (required by freeCodeCamp API)
   db:
     image: mongo:8.0
     container_name: mongodb
@@ -6,21 +12,23 @@ services:
     restart: unless-stopped
     hostname: mongodb
     ports:
-      - 27017:27017
+      - 27017:27017 # Default MongoDB port
     volumes:
-      - db-data:/data/db
+      - db-data:/data/db # Persist database data between restarts
     healthcheck:
       test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 2s
       retries: 5
 
+  # One-time setup service that initializes the MongoDB replica set
   setup:
     image: mongo:8.0
     depends_on:
       db:
         condition: service_healthy
     restart: on-failure
-    # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+    # This will try to initiate the replica set, until it succeeds twice
+    # (i.e. until the replica set is already initialized)
     command: >
       mongosh --host mongodb:27017 --eval '
         var cfg = {
@@ -36,13 +44,15 @@ services:
         }
       '
 
+  # Mailpit - local email testing tool
+  # Access the web UI at http://localhost:8025 to view sent emails
   mailpit:
     restart: unless-stopped
     image: axllent/mailpit
     ports:
-      - '1025:1025'
-      - '8025:8025'
+      - '1025:1025' # SMTP port for sending emails
+      - '8025:8025' # Web UI port for viewing emails
 
 volumes:
   db-data:
-    driver: local
+    driver: local # Local volume to persist MongoDB data
