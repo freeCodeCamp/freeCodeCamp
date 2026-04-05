@@ -54,6 +54,7 @@ const initialState = {
   portalWindow: null,
   showPreviewPortal: false,
   showPreviewPane: true,
+  isProjectPreviewLoading: false,
   projectFormValues: {},
   successMessage: 'Happy Coding!',
   isAdvancing: false,
@@ -260,12 +261,23 @@ export const reducer = handleActions(
         [payload]: false
       }
     }),
-    [actionTypes.openModal]: (state, { payload }) => ({
+    [actionTypes.openModal]: (state, { payload }) => {
+      const isProjectPreviewModal = payload === 'projectPreview';
+
+      return {
+        ...state,
+        modal: {
+          ...state.modal,
+          [payload]: true
+        },
+        isProjectPreviewLoading: isProjectPreviewModal
+          ? true
+          : state.isProjectPreviewLoading
+      };
+    },
+    [actionTypes.setProjectPreviewLoading]: (state, { payload }) => ({
       ...state,
-      modal: {
-        ...state.modal,
-        [payload]: true
-      }
+      isProjectPreviewLoading: payload
     }),
     [actionTypes.executeChallenge]: state => ({
       ...state,
