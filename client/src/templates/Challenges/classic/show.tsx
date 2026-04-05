@@ -156,9 +156,16 @@ const BASE_LAYOUT = {
   testsPane: { flex: 0.3 }
 };
 
+const isTouchDevice = (): boolean =>
+  typeof window !== 'undefined' && 'ontouchstart' in window;
+
 // Used to prevent monaco from stealing mouse/touch events on the upper jaw
 // content widget so they can trigger their default actions. (Issue #46166)
 const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
+  if (e.type === 'touchmove' && isTouchDevice()) {
+    return;
+  }
+
   const target = e.target as HTMLElement;
   if (target?.closest('.editor-upper-jaw')) {
     e.stopPropagation();
