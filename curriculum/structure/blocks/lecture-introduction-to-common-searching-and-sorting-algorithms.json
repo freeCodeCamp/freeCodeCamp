@@ -2,7 +2,7 @@
   "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-common-searching-and-sorting-algorithms",
   "helpCategory": "JavaScript",
-  "blockLayout": "challenge-grid",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
       "id": "69691f96a3a2f3f6c220ab52",
