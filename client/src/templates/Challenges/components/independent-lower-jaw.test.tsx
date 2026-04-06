@@ -56,6 +56,7 @@ describe('<IndependentLowerJaw />', () => {
     expect(screen.getByTestId('share-on-x')).toBeInTheDocument();
     expect(screen.getByTestId('share-on-bluesky')).toBeInTheDocument();
     expect(screen.getByTestId('share-on-threads')).toBeInTheDocument();
+    expect(screen.getByTestId('share-on-linkedin')).toBeInTheDocument();
   });
 
   it('does not show share buttons when the block is not completed', () => {

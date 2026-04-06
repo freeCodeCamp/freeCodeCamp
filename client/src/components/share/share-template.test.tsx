@@ -12,6 +12,7 @@ describe('Share Template Testing', () => {
       blueSkyRedirectURL={redirectURL}
       threadsRedirectURL={redirectURL}
       facebookRedirectURL={redirectURL}
+      linkedInRedirectURL={redirectURL}
     />
   );
   test('Testing share template Click Redirect Event', () => {
@@ -42,5 +43,12 @@ describe('Share Template Testing', () => {
 
     expect(facebookLink).toBeInTheDocument();
     expect(facebookLink).toHaveAttribute('href', 'string');
+
+    const linkedInLink = screen.queryByRole('link', {
+      name: 'buttons.share-on-linkedin aria.opens-new-window'
+    });
+
+    expect(linkedInLink).toBeInTheDocument();
+    expect(linkedInLink).toHaveAttribute('href', 'string');
   });
 });

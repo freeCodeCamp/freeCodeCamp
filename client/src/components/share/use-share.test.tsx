@@ -8,7 +8,8 @@ import {
   useShare,
   twitterData,
   blueSkyData,
-  threadsData
+  threadsData,
+  linkedInData
 } from './use-share';
 
 describe('useShare', () => {
@@ -46,6 +47,10 @@ describe('useShare', () => {
 
     expect(shareResult.current.facebookUrl).toBe(
       `https://www.facebook.com/sharer/sharer.php?u=${redirectFreeCodeCampLearnURL}&hashtag=${hashtag}freecodecamp`
+    );
+
+    expect(shareResult.current.linkedInUrl).toBe(
+      `https://${linkedInData.domain}/${linkedInData.action}?mini=true&url=${redirectFreeCodeCampLearnURL}&title=${tweetMessage}&summary=${tweetMessage}`
     );
   });
 });

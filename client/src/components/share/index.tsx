@@ -19,6 +19,7 @@ export const Share = ({
       blueSkyRedirectURL={redirectURLs.blueSkyUrl}
       threadsRedirectURL={redirectURLs.threadsURL}
       facebookRedirectURL={redirectURLs.facebookUrl}
+      linkedInRedirectURL={redirectURLs.linkedInUrl}
       minified={minified}
     />
   );

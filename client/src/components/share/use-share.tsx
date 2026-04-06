@@ -29,11 +29,17 @@ export const facebookData = {
   domain: 'www.facebook.com'
 };
 
+export const linkedInData = {
+  action: 'shareArticle',
+  domain: 'www.linkedin.com'
+};
+
 interface ShareUrls {
   xUrl: string;
   blueSkyUrl: string;
   threadsURL: string;
   facebookUrl: string;
+  linkedInUrl: string;
 }
 
 export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
@@ -51,10 +57,13 @@ export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
 
   const facebookRedirectURL = `https://${facebookData.domain}/${facebookData.action}?u=${redirectFreeCodeCampLearnURL}&hashtag=${hashtag}freecodecamp`;
 
+  const linkedInRedirectURL = `https://${linkedInData.domain}/${linkedInData.action}?mini=true&url=${redirectFreeCodeCampLearnURL}&title=${tweetMessage}&summary=${tweetMessage}`;
+
   return {
     xUrl: xRedirectURL,
     blueSkyUrl: blueSkyRedirectURL,
     threadsURL: threadRedirectURL,
-    facebookUrl: facebookRedirectURL
+    facebookUrl: facebookRedirectURL,
+    linkedInUrl: linkedInRedirectURL
   };
 };

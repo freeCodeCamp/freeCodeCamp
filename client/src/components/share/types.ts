@@ -9,5 +9,6 @@ export interface ShareRedirectProps {
   blueSkyRedirectURL: string;
   threadsRedirectURL: string;
   facebookRedirectURL: string;
+  linkedInRedirectURL: string;
   minified?: boolean;
 }
