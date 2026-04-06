@@ -30,9 +30,11 @@ import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
 import shadowCapture from './plugins/shadow-capture.js';
 import growthBook from './plugins/growth-book.js';
+import serviceBearerAuth from './plugins/service-bearer-auth.js';
 
 import * as publicRoutes from './routes/public/index.js';
 import * as protectedRoutes from './routes/protected/index.js';
+import { classroomRoutes } from './routes/apps/classroom.js';
 
 import {
   API_LOCATION,
@@ -176,6 +178,7 @@ export const build = async (
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
+  await fastify.register(serviceBearerAuth);
 
   // Routes requiring authentication:
   void fastify.register(async function (fastify, _opts) {
@@ -236,6 +239,12 @@ export const build = async (
     done();
   });
   void fastify.register(examEnvironmentOpenRoutes);
+
+  // Service-to-service app routes (API key auth):
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.validateBearerToken);
+    await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
+  });
 
   if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);
