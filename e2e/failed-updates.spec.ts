@@ -35,7 +35,7 @@ test.describe('failed update flushing', () => {
   }) => {
     // Initially, the user has no completed challenges.
     const userRes = await request.get(
-      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
+      new URL('/user/session-user', process.env.API_LOCATION).toString()
     );
     const completedChallenges = (await userRes.json()).user.developmentuser
       .completedChallenges;
@@ -74,7 +74,7 @@ test.describe('failed update flushing', () => {
     await submitRes;
 
     const updatedUserRes = await request.get(
-      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
+      new URL('/user/session-user', process.env.API_LOCATION).toString()
     );
 
     // Now the user should have both completed challenges.

@@ -45,12 +45,6 @@ assert(__helpers.removeJSComments(code).match(/firstLetterOfLastName\s*=\s*lastN
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(v){return v;})(firstLetterOfLastName);
-```
-
 ## --seed-contents--
 
 ```js

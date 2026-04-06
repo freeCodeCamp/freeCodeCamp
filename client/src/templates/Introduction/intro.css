@@ -61,6 +61,7 @@
 }
 
 .block-label-exam,
+.block-label-math,
 .block-label-editors {
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
@@ -494,6 +495,7 @@ a.map-grid-item.challenge-completed {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: var(--primary-color);
 }
 
 .block-grid .block-header .block-link {
