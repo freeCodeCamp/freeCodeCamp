@@ -5696,10 +5696,10 @@
         ]
       },
       "workshop-shortest-path-algorithm-js": {
-        "title": "Implement the Shortest Path Algorithm",
+        "title": "Імплементуйте алгоритм найкоротшого шляху",
         "intro": [
-          "The shortest path algorithm finds the minimum distance between nodes in a weighted graph.",
-          "In this workshop, you'll implement the shortest path algorithm in JavaScript and return both the shortest distances and the paths taken."
+          "Алгоритм найкоротшого шляху знаходить мінімальну відстань між вузлами зваженого графа.",
+          "У цьому практичному занятті ви імплементуєте алгоритм найкоротшого шляху в JavaScript та повернете як найкоротшу відстань, так і шляхи."
         ]
       },
       "lab-adjacency-list-to-matrix-converter-js": {
@@ -5709,9 +5709,9 @@
         ]
       },
       "workshop-breadth-first-search-js": {
-        "title": "Implement the Breadth-First Search Algorithm",
+        "title": "Імплементуйте алгоритм пошуку в ширину",
         "intro": [
-          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
+          "У цьому практичному занятті ви застосуєте алгоритм пошуку в ширину, щоб згенерувати всі допустимі комбінації дужок."
         ]
       },
       "lab-depth-first-search-js": {
@@ -5734,10 +5734,10 @@
         ]
       },
       "quiz-graph-and-trees-js": {
-        "title": "Graphs and Trees Quiz",
+        "title": "Тест «Графи та дерева»",
         "intro": [
-          "Graphs and Trees Quiz",
-          "Test what you've learned about graphs and trees with this quiz."
+          "Тест «Графи та дерева»",
+          "Перевірте, що ви дізнались про графи та дерева."
         ]
       },
       "lecture-understanding-dynamic-programming-js": {
@@ -5747,9 +5747,9 @@
         ]
       },
       "lab-nth-fibonacci-number-js": {
-        "title": "Build an Nth Fibonacci Number Calculator",
+        "title": "Створіть калькулятор n-го числа Фібоначчі",
         "intro": [
-          "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
+          "У цій лабораторній роботі ви застосуєте динамічне програмування на практиці, імплементувавши калькулятор послідовності Фібоначчі в JavaScript."
         ]
       },
       "review-dynamic-programming-js": {
