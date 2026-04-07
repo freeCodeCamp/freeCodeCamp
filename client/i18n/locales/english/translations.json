@@ -916,8 +916,8 @@
   "search": {
     "label": "Search",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "See all results for {{searchQuery}}",
     "try": "Looking for something? Try the search bar on this page.",
