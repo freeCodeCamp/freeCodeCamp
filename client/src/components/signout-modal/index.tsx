@@ -3,10 +3,12 @@ import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import qs from 'query-string';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
+import { FlashMessages } from '../Flash/redux/flash-messages';
 import { apiLocation } from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
 
@@ -43,6 +45,17 @@ export const pathAfterSignout = (currentPath: string): string => {
   return allPaths.some(path => currentPath === path) ? '/learn' : currentPath;
 };
 
+export const redirectPathWithSignoutMessage = (currentPath: string): string =>
+  `${pathAfterSignout(currentPath)}?${qs.stringify(
+    {
+      messages: qs.stringify(
+        { success: [FlashMessages.SignoutSuccess] },
+        { arrayFormat: 'index' }
+      )
+    },
+    { arrayFormat: 'index' }
+  )}`;
+
 function SignoutModal(props: SignoutModalProps): JSX.Element {
   const { show, closeSignoutModal } = props;
   const { t } = useTranslation();
@@ -55,7 +68,9 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
     const redirect = () => {
-      window.location.pathname = pathAfterSignout(window.location.pathname);
+      window.location.assign(
+        redirectPathWithSignoutMessage(window.location.pathname)
+      );
     };
     void fetch(`${apiLocation}/signout`, {
       method: 'GET',
