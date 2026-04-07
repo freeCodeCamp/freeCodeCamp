@@ -40,7 +40,8 @@
 }
 
 .block-label-python,
-.block-label-lab {
+.block-label-lab,
+.block-label-databases {
   border-color: var(--success-color);
   color: var(--success-color);
 }
@@ -53,17 +54,21 @@
 }
 
 .block-label-computer-fundamentals,
+.block-label-git,
 .block-label-quiz {
   border-color: var(--danger-color);
   color: var(--danger-color);
 }
 
-.block-label-exam {
+.block-label-exam,
+.block-label-math,
+.block-label-editors {
   border-color: var(--quaternary-color);
   color: var(--quaternary-color);
 }
 
-.block-label-cert-project {
+.block-label-cert-project,
+.block-label-bash {
   border-color: var(--love-color);
   color: var(--love-color);
 }
@@ -490,6 +495,7 @@ a.map-grid-item.challenge-completed {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  color: var(--primary-color);
 }
 
 .block-grid .block-header .block-link {

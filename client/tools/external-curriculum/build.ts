@@ -1,13 +1,4 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-
-const CURRICULUM_PATH = '../../../curriculum/generated/curriculum.json';
-// const __dirname = dirname(fileURLToPath(import.meta.url));
-// Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
-const curriculum = JSON.parse(
-  readFileSync(join(__dirname, CURRICULUM_PATH), 'utf-8')
-);
-
+import { getCurriculum } from '../get-curriculum';
 import {
   buildExtCurriculumDataV2,
   Curriculum as CurriculumV2,
@@ -24,5 +15,5 @@ if (isSelectiveBuild) {
     'Skipping external curriculum build (selective build mode active)'
   );
 } else {
-  buildExtCurriculumDataV2(curriculum as CurriculumV2<CurriculumPropsV2>);
+  buildExtCurriculumDataV2(getCurriculum() as CurriculumV2<CurriculumPropsV2>);
 }
