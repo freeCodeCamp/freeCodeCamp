@@ -50,7 +50,7 @@ This country is the largest in South America and starts with a capital letter.
 
 ### --feedback--
 
-This country is known for its famous canal. Remember to include an accent mark on the last letter `a`.
+This country is known for its famous canal. Remember to include an accent mark on the last letter `a` and to capitalize the first letter.
 
 # --explanation--
 

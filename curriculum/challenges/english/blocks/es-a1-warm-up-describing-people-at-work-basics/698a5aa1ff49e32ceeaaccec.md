@@ -30,7 +30,7 @@ Listen to the audio and write the word below.
 
 ### --feedback--
 
-This word literally means "number" in Spanish. Remember to write the accent mark in the letter `u`.
+This word literally means "number" in Spanish. Remember to write the accent mark in the letter `u` and to capitalize the first letter.
 
 ---
 
