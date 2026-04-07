@@ -94,3 +94,38 @@ The content of this repository is bound by the following licenses:
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
 
+
+---
+
+## 🚀 Project Overview
+Enhanced README documentation for clarity, badges, and contribution guidance.
+
+## ✨ Features
+- Improved documentation structure
+- Repository metadata and badges
+- Automated activity insights
+- Contribution guidance
+
+## 🤝 Contributing
+Contributions are welcome.  
+Feel free to open issues or submit pull requests.
+
+## 📊 Repository Statistics
+![Stars](https://img.shields.io/github/stars/freeCodeCamp/freeCodeCamp)
+![Forks](https://img.shields.io/github/forks/freeCodeCamp/freeCodeCamp)
+![Issues](https://img.shields.io/github/issues/freeCodeCamp/freeCodeCamp)
+![License](https://img.shields.io/github/license/freeCodeCamp/freeCodeCamp)
+
+## 📜 Recent Repository Activity
+- 13c6563ed9 Improve README formatting (Dippp10, 2026-04-07)
+- 2906599bef feat: add socrates (#65430) (Ahmad Abdolsaheb, 2026-04-07)
+- 2ad6e448fa feat(curriculum): Add type safe user profile to typescript module (#66005) (Jessica Wilkins, 2026-04-07)
+- 0e8da837be fix(.github): correct affected page help text in issue forms (#66816) (Karthiya Yash Kiranbhai, 2026-04-07)
+- e60a299ced fix(curriculum): update block layout from challenge-grid to challenge-list (#66833) (Oliver Martínez, 2026-04-07)
+
+## 🕒 Last Updated
+Wed Apr  8 02:38:38 +04 2026
+
+---
+
+### 🤖 Automated Documentation Update
