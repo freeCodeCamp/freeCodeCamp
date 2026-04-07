@@ -86,7 +86,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, title, challengeType, helpCategory, description }
+          challenge: { tests, title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -102,7 +102,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       title,
       challengeType,
       helpCategory,
-      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

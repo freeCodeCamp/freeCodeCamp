@@ -11,9 +11,6 @@ import { initialState } from '../redux';
 const testUsername = 'testuser';
 
 vi.mock('../utils/get-words');
-vi.mock('@growthbook/growthbook-react', () => ({
-  useFeature: () => ({ on: false })
-}));
 
 const { apiLocation } = envData;
 

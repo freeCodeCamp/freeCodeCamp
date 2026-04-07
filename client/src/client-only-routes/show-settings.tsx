@@ -161,8 +161,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isHonest,
     sendQuincyEmail,
     username,
-    keyboardShortcuts,
-    socrates
+    keyboardShortcuts
   } = user;
 
   const sound = (store.get('fcc-sound') as boolean) ?? false;
@@ -200,7 +199,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               resetEditorLayout={resetEditorLayout}
               toggleKeyboardShortcuts={toggleKeyboardShortcuts}
               toggleSoundMode={toggleSoundMode}
-              socrates={socrates}
             />
           </ScrollElement>
           <Spacer size='m' />

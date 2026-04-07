@@ -73,13 +73,6 @@ export const updateMyQuincyEmailError = createAction(
   types.updateMyQuincyEmailError
 );
 
-export const updateMySocrates = createAction(types.updateMySocrates);
-export const updateMySocratesComplete = createAction(
-  types.updateMySocratesComplete,
-  checkForSuccessPayload
-);
-export const updateMySocratesError = createAction(types.updateMySocratesError);
-
 export const updateMyPortfolio = createAction(types.updateMyPortfolio);
 export const updateMyPortfolioComplete = createAction(
   types.updateMyPortfolioComplete,

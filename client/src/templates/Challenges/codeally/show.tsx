@@ -150,6 +150,7 @@ function ShowCodeAlly({
       }
     }
   } = data;
+
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
@@ -173,7 +174,6 @@ function ShowCodeAlly({
       title,
       challengeType,
       helpCategory,
-      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

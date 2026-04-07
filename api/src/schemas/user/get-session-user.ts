@@ -126,7 +126,6 @@ export const getSessionUser = {
           experience: Type.Optional(Type.Array(experience)),
           profileUI,
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
-          socrates: Type.Optional(Type.Boolean()),
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
           bluesky: Type.Optional(Type.String()),

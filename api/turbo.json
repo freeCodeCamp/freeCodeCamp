@@ -35,8 +35,6 @@
         "SES_REGION",
         "SES_SECRET",
         "SHOW_UPCOMING_CHANGES",
-        "SOCRATES_API_KEY",
-        "SOCRATES_ENDPOINT",
         "STRIPE_SECRET_KEY"
       ]
     },
@@ -74,8 +72,6 @@
         "SES_REGION",
         "SES_SECRET",
         "SHOW_UPCOMING_CHANGES",
-        "SOCRATES_API_KEY",
-        "SOCRATES_ENDPOINT",
         "STRIPE_SECRET_KEY"
       ]
     }

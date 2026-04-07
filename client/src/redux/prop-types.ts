@@ -451,7 +451,6 @@ export type User = {
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;
-  socrates: boolean;
   twitter: string;
   bluesky: string;
   username: string;
@@ -517,7 +516,6 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
-  description?: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
   saveSubmissionToDB?: boolean;

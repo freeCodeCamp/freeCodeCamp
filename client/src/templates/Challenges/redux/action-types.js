@@ -44,8 +44,7 @@ export const actionTypes = createTypes(
     'setEditorFocusability',
     'toggleVisibleEditor',
     ...createAsyncTypes('submitChallenge'),
-    ...createAsyncTypes('executeChallenge'),
-    ...createAsyncTypes('askSocrates')
+    ...createAsyncTypes('executeChallenge')
   ],
   ns
 );
