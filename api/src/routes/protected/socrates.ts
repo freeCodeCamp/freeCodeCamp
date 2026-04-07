@@ -95,7 +95,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       };
 
       try {
-        const response = await fetch(SOCRATES_ENDPOINT, {
+        const response = await fetch(`${SOCRATES_ENDPOINT}/hint`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
