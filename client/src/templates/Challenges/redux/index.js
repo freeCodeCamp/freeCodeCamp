@@ -8,6 +8,7 @@ import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
 import createQuestionEpic from './create-question-epic';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
+import { createAskSocratesSaga } from './ask-socrates-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 
 export { ns };
@@ -26,7 +27,8 @@ const initialState = {
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1,
-    saveSubmissionToDB: false
+    saveSubmissionToDB: false,
+    description: ''
   },
   challengeTests: [],
   consoleOut: [],
@@ -58,14 +60,22 @@ const initialState = {
   successMessage: 'Happy Coding!',
   isAdvancing: false,
   chapterSlug: '',
-  isSubmitting: false
+  isSubmitting: false,
+  socratesHintState: {
+    hint: null,
+    isLoading: false,
+    error: null,
+    attempts: null,
+    limit: null
+  }
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
 
 export const sagas = [
   ...createExecuteChallengeSaga(actionTypes),
-  ...createCurrentChallengeSaga(actionTypes)
+  ...createCurrentChallengeSaga(actionTypes),
+  ...createAskSocratesSaga(actionTypes)
 ];
 
 export const reducer = handleActions(
@@ -276,6 +286,36 @@ export const reducer = handleActions(
     [actionTypes.executeChallengeComplete]: state => ({
       ...state,
       isExecuting: false
+    }),
+    [actionTypes.askSocrates]: state => ({
+      ...state,
+      socratesHintState: {
+        hint: null,
+        isLoading: true,
+        error: null,
+        attempts: state.socratesHintState.attempts,
+        limit: state.socratesHintState.limit
+      }
+    }),
+    [actionTypes.askSocratesComplete]: (state, { payload }) => ({
+      ...state,
+      socratesHintState: {
+        hint: payload.hint,
+        isLoading: false,
+        error: null,
+        attempts: payload.attempts,
+        limit: payload.limit
+      }
+    }),
+    [actionTypes.askSocratesError]: (state, { payload }) => ({
+      ...state,
+      socratesHintState: {
+        hint: null,
+        isLoading: false,
+        error: payload.error,
+        attempts: payload.attempts ?? state.socratesHintState.attempts,
+        limit: payload.limit ?? state.socratesHintState.limit
+      }
     }),
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,
