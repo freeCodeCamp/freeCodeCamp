@@ -200,7 +200,6 @@ function ShowClassic({
         challengeFiles: seedChallengeFiles,
         block,
         demoType,
-        id,
         title,
         description,
         instructions,
@@ -554,7 +553,6 @@ function ShowClassic({
           superBlock={superBlock}
           guideUrl={guideUrl}
           videoUrl={videoUrl}
-          challengeId={id}
         />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal

@@ -119,7 +119,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
         challenge: {
           challengeType,
           forumTopicId,
-          id,
           title,
           description,
           instructions,
@@ -177,7 +176,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
-              challengeId={id}
             />
           </Row>
         </Container>

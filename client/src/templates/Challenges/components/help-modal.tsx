@@ -11,7 +11,6 @@ import { isHelpModalOpenSelector } from '../redux/selectors';
 
 import './help-modal.css';
 import callGA from '../../../analytics/call-ga';
-import { generateGithubLink } from '../../../components/create-github-link';
 
 interface HelpModalProps {
   closeHelpModal: () => void;
@@ -19,7 +18,6 @@ interface HelpModalProps {
   isOpen?: boolean;
   challengeTitle: string;
   challengeBlock: string;
-  challengeId: string;
   superBlock: string;
   guideUrl?: string;
   videoUrl?: string;
@@ -64,7 +62,6 @@ interface CheckboxProps {
   href: string;
   label: string;
 }
-
 
 function Checkbox({
   name,
@@ -111,8 +108,7 @@ function HelpModal({
   challengeTitle,
   guideUrl,
   videoUrl,
-  openVideoModal,
-  challengeId,
+  openVideoModal
 }: HelpModalProps): JSX.Element {
   const { t } = useTranslation();
   const [showHelpForm, setShowHelpForm] = useState(false);

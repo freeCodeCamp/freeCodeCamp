@@ -144,7 +144,6 @@ const ShowBackEnd = (props: BackEndProps) => {
           challengeType,
           forumTopicId,
           title,
-          id,
           description,
           instructions,
           translationPending,
@@ -212,7 +211,6 @@ const ShowBackEnd = (props: BackEndProps) => {
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
-              challengeId={id}
             />
           </Row>
         </Container>
