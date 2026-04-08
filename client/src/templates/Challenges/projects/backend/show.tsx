@@ -112,7 +112,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, tests, title }
+          challenge: { challengeType, helpCategory, description, tests, title }
         }
       },
       pageContext: { challengeMeta }
@@ -127,6 +127,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

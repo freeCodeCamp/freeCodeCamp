@@ -98,7 +98,7 @@ function MsTrophy(props: MsTrophyProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, title, challengeType, helpCategory }
+          challenge: { tests, title, challengeType, helpCategory, description }
         }
       },
       pageContext: { challengeMeta },
@@ -114,6 +114,7 @@ function MsTrophy(props: MsTrophyProps) {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

@@ -129,6 +129,7 @@ const ShowFillInTheBlank = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
