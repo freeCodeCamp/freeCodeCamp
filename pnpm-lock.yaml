@@ -106,7 +106,7 @@ importers:
         version: 5.2.5
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
-        version: 6.1.0(typebox@1.1.12)
+        version: 6.1.0(typebox@1.1.13)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -180,8 +180,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       typebox:
-        specifier: 1.1.12
-        version: 1.1.12
+        specifier: 1.1.13
+        version: 1.1.13
       validator:
         specifier: 13.15.26
         version: 13.15.26
@@ -6196,7 +6196,7 @@ packages:
   basic-ftp@5.0.5:
     resolution: {integrity: sha512-4Bcg1P8xhUuqcii/S0Z9wiHIrQVPMermM1any+MX5GeGD7faD3/msQUDGLol9wOcz4/jbg/WJnGqoJF6LiBdtg==}
     engines: {node: '>=10.0.0'}
-    deprecated: Security vulnerability fixed in 5.2.0, please upgrade
+    deprecated: Security vulnerability fixed in 5.2.1, please upgrade
 
   better-opn@2.1.1:
     resolution: {integrity: sha512-kIPXZS5qwyKiX/HcRvDYfmBQUa8XP17I0mYZZ0y4UhpYOSvtsLHDYqmomS+Mj20aDvD3knEiQ0ecQy2nhio3yA==}
@@ -12879,8 +12879,8 @@ packages:
   type@2.7.2:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
 
-  typebox@1.1.12:
-    resolution: {integrity: sha512-ii1pIdnBanGeH1QsEMiwn0QDYJKg1szf/EXMvYou90ZmiJ5clGQ81KSHtom6TSeE2s6iQTXzaFkyOpg+4nDQkQ==}
+  typebox@1.1.13:
+    resolution: {integrity: sha512-v20YJLaD27Ae3C94o3WvlyZC5OyhTA9JpCn3fe/WwFBQLo35Wz/T6C8i5+7h0CO7l7iI1CPo9GPEMF56wl07yQ==}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -16844,9 +16844,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.12)':
+  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.13)':
     dependencies:
-      typebox: 1.1.12
+      typebox: 1.1.13
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 
@@ -29012,7 +29012,7 @@ snapshots:
 
   type@2.7.2: {}
 
-  typebox@1.1.12: {}
+  typebox@1.1.13: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
