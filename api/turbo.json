@@ -34,7 +34,12 @@
         "SES_ID",
         "SES_REGION",
         "SES_SECRET",
+        "SES_SMTP_HOST",
+        "SES_SMTP_PASSWORD",
+        "SES_SMTP_USERNAME",
         "SHOW_UPCOMING_CHANGES",
+        "SOCRATES_API_KEY",
+        "SOCRATES_ENDPOINT",
         "STRIPE_SECRET_KEY"
       ]
     },
@@ -71,7 +76,12 @@
         "SES_ID",
         "SES_REGION",
         "SES_SECRET",
+        "SES_SMTP_HOST",
+        "SES_SMTP_PASSWORD",
+        "SES_SMTP_USERNAME",
         "SHOW_UPCOMING_CHANGES",
+        "SOCRATES_API_KEY",
+        "SOCRATES_ENDPOINT",
         "STRIPE_SECRET_KEY"
       ]
     }
