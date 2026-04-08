@@ -50,12 +50,6 @@ assert.deepEqual(myArray, [9, 7, 5, 3, 1]);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-if(typeof myArray !== "undefined"){(function(){return myArray;})();}
-```
-
 ## --seed-contents--
 
 ```js

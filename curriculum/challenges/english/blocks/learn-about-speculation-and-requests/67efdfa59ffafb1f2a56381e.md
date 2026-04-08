@@ -24,9 +24,17 @@ Jake doesn't mind discussing an issue with Jessica. What can he say?
 
 `Sure, Jessica.`
 
+### --audio-id--
+
+EN54080a3b
+
 ---
 
 `I'm too busy right now.`
+
+### --audio-id--
+
+EN9d00ecb9
 
 ### --feedback--
 
@@ -42,9 +50,9 @@ Jessica asks, `Do you have any ideas?`, which is a way of inviting someone to sh
 
 `Sure, Jessica` is a way to show that you're open to discussing the issue. Another example:
 
-- Person 1: `Do you have any ideas how to fix it?` - This person is asking for suggestions or solutions.
+- **Noah:** `Do you have any ideas how to fix it?` - This person is asking for suggestions or solutions.
 
-- Person 2: `Sure. We could check the server logs and see what's wrong.` - This person is saying yes, and is ready to share a suggestion.
+- **David:** `Sure. We could check the server logs and see what's wrong.` - This person is saying yes, and is ready to share a suggestion.
 
 # --scene--
 
