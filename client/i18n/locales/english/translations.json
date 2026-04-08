@@ -754,9 +754,7 @@
     "archive": {
       "title": "Archived Coursework",
       "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
-    },
-    "source-warning": "The source code should be used to support debugging and filing of issues when a challenge is broken.",
-    "open-github": "Be warned that the source code may contain spoilers and should not be used to complete the challenge."
+    }
   },
   "donate": {
     "title": "Support our charity",
