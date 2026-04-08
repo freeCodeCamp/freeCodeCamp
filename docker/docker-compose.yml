@@ -1,3 +1,5 @@
+name: freecodecamp-local
+
 services:
   db:
     image: mongo:8.0

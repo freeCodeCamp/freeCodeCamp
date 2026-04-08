@@ -82,6 +82,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-data-visualization",
+            "lab-bar-chart",
             "lab-scatterplot-graph"
           ]
         },
@@ -90,6 +91,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
+            "workshop-type-safe-user-profile",
             "lecture-understanding-type-composition",
             "workshop-shape-manager",
             "lecture-working-with-generics-and-type-narrowing",
