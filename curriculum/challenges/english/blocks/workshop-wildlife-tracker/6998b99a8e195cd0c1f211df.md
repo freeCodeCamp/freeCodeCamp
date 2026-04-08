@@ -1,0 +1,44 @@
+---
+id: 6998b99a8e195cd0c1f211df
+title: Step 1
+challengeType: 1
+dashedName: step-1
+---
+
+# --description--
+
+In this workshop, you will build a simple wildlife tracker using JavaScript objects.
+
+Here is an example of an object:
+
+```js
+const animal = {}; // empty object
+```
+
+This creates an empty object.
+
+Now create a variable named `tiger` and assign it an empty object.
+
+# --hints--
+
+You should create a variable named `tiger`.
+
+```js
+assert.exists(tiger);
+```
+
+The `tiger` variable should be assigned an empty object.
+
+```js
+assert.deepEqual(tiger, {});
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

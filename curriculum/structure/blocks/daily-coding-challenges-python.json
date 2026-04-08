@@ -1,5 +1,4 @@
 {
-  "name": "Daily Coding Challenges Python",
   "isUpcomingChange": true,
   "dashedName": "daily-coding-challenges-python",
   "usesMultifileEditor": true,
@@ -893,6 +892,170 @@
     {
       "id": "699c8e045ee7cb94ed2322dd",
       "title": "Challenge 222: Equinox Shadows"
+    },
+    {
+      "id": "69a890af247de743333bd4cc",
+      "title": "Challenge 223: QR Decoder"
+    },
+    {
+      "id": "69a890af247de743333bd4cd",
+      "title": "Challenge 224: Coffee Roast Detector"
+    },
+    {
+      "id": "69a890af247de743333bd4ce",
+      "title": "Challenge 225: No Consecutive Repeats"
+    },
+    {
+      "id": "69a890af247de743333bd4cf",
+      "title": "Challenge 226: Passing Exam Count"
+    },
+    {
+      "id": "69a890af247de743333bd4d0",
+      "title": "Challenge 227: Cooldown Time"
+    },
+    {
+      "id": "69a890af247de743333bd4d1",
+      "title": "Challenge 228: Movie Night"
+    },
+    {
+      "id": "69a890af247de743333bd4d2",
+      "title": "Challenge 229: Truncate the Text 2"
+    },
+    {
+      "id": "69b1028d6e265413d0198a29",
+      "title": "Challenge 230: Pascal's Triangle Row"
+    },
+    {
+      "id": "69b1028d6e265413d0198a2a",
+      "title": "Challenge 231: ISBN-10 Validator"
+    },
+    {
+      "id": "69b1028d6e265413d0198a2b",
+      "title": "Challenge 232: Due Date"
+    },
+    {
+      "id": "69b1028d6e265413d0198a2c",
+      "title": "Challenge 233: Wake-Up Alarm"
+    },
+    {
+      "id": "69b1028d6e265413d0198a2d",
+      "title": "Challenge 234: Prank Number"
+    },
+    {
+      "id": "69b1028d6e265413d0198a2e",
+      "title": "Challenge 235: Capitalized Fibonacci"
+    },
+    {
+      "id": "69b1028d6e265413d0198a2f",
+      "title": "Challenge 236: Browser History"
+    },
+    {
+      "id": "69b559d2903b9e4afe9075f7",
+      "title": "Challenge 237: Equation Validation"
+    },
+    {
+      "id": "69b559d2903b9e4afe9075f8",
+      "title": "Challenge 238: Digit Rotation Escape"
+    },
+    {
+      "id": "69b559d2903b9e4afe9075f9",
+      "title": "Challenge 239: What Day Is It?"
+    },
+    {
+      "id": "69b58ce40693f140c84c8559",
+      "title": "Challenge 240: Palindrome Characters"
+    },
+    {
+      "id": "69b58ce40693f140c84c855a",
+      "title": "Challenge 241: FizzBuzz Validator"
+    },
+    {
+      "id": "69b58ce40693f140c84c855b",
+      "title": "Challenge 242: Next Bingo Number"
+    },
+    {
+      "id": "69b58ce40693f140c84c855c",
+      "title": "Challenge 243: Rook Attack"
+    },
+    {
+      "id": "69b5b2be76ec8135a7fbe973",
+      "title": "Challenge 244: Rook and Bishop Attack"
+    },
+    {
+      "id": "69b5b2be76ec8135a7fbe974",
+      "title": "Challenge 245: Spiral Matrix"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a03",
+      "title": "Challenge 246: Name Initials"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a04",
+      "title": "Challenge 247: Last Letter"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a05",
+      "title": "Challenge 248: Sorted Array Swap"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a06",
+      "title": "Challenge 249: String Math"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a07",
+      "title": "Challenge 250: Hidden Key"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a08",
+      "title": "Challenge 251: Array Sum Finder"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a09",
+      "title": "Challenge 252: Unique Stair Climber"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8b7",
+      "title": "Challenge 253: Acronym Finder"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8b8",
+      "title": "Challenge 254: Odd Words"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8b9",
+      "title": "Challenge 255: Earth Day Cleanup Crew"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8ba",
+      "title": "Challenge 256: Closest Time Direction"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8bb",
+      "title": "Challenge 257: Word Compressor"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8bc",
+      "title": "Challenge 258: Word Decompressor"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8bd",
+      "title": "Challenge 259: FizzBuzz Explosion"
+    },
+    {
+      "id": "69c6ff713a52713463aa7926",
+      "title": "Challenge 260: Word Score"
+    },
+    {
+      "id": "69c6ff713a52713463aa7927",
+      "title": "Challenge 261: Number Words"
+    },
+    {
+      "id": "69c6ff713a52713463aa7928",
+      "title": "Challenge 262: URL Query Parser"
+    },
+    {
+      "id": "69c6ff713a52713463aa7929",
+      "title": "Challenge 263: Binary Crossword"
     }
   ]
 }
