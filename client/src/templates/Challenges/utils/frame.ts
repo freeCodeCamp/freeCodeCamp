@@ -393,7 +393,16 @@ function handleDocumentNotFound(err: string) {
   }
 }
 
-const initPreviewFrame = () => (frameContext: Context) => frameContext;
+const initProjectPreviewFrame =
+  (frameReady?: () => void) => (frameContext: Context) => {
+    waitForFrame(frameContext)
+      .then(() => {
+        if (frameReady) frameReady();
+      })
+      .catch(handleDocumentNotFound);
+
+    return frameContext;
+  };
 
 const waitForFrame = (frameContext: Context) => {
   return new Promise<void>((resolve, reject) => {
@@ -445,12 +454,14 @@ export const createMainPreviewFramer = (
 
 export const createProjectPreviewFramer = (
   document: Document,
-  frameTitle: string
+  frameTitle: string,
+  frameReady?: () => void
 ): ((args: Context) => void) =>
   createFramer({
     document,
     id: projectPreviewId,
-    init: initPreviewFrame,
+    init: initProjectPreviewFrame,
+    frameReady,
     frameTitle
   });
 
