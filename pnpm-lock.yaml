@@ -106,7 +106,7 @@ importers:
         version: 5.2.5
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
-        version: 6.1.0(typebox@1.1.11)
+        version: 6.1.0(typebox@1.1.12)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -180,8 +180,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       typebox:
-        specifier: 1.1.11
-        version: 1.1.11
+        specifier: 1.1.12
+        version: 1.1.12
       validator:
         specifier: 13.15.26
         version: 13.15.26
@@ -13161,8 +13161,8 @@ packages:
   type@2.7.2:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
 
-  typebox@1.1.11:
-    resolution: {integrity: sha512-QLrq6oFaC1CKoABSO6sL9Ya6UGoiEEhjm5KlSrnuIO2CtHaBw1/45k7pEeEFGvw9eF0RBjhYBp7U3VnLydIsFA==}
+  typebox@1.1.12:
+    resolution: {integrity: sha512-ii1pIdnBanGeH1QsEMiwn0QDYJKg1szf/EXMvYou90ZmiJ5clGQ81KSHtom6TSeE2s6iQTXzaFkyOpg+4nDQkQ==}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -17237,9 +17237,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.11)':
+  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.12)':
     dependencies:
-      typebox: 1.1.11
+      typebox: 1.1.12
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 
@@ -29430,7 +29430,7 @@ snapshots:
 
   type@2.7.2: {}
 
-  typebox@1.1.11: {}
+  typebox@1.1.12: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
