@@ -66,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Restablecer",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "Restablecer este paso",
     "help": "Ayuda",
     "get-help": "Obtener ayuda",
@@ -381,6 +382,10 @@
       "confirm": "Confirmar nuevo correo electrónico",
       "weekly": "Envíame el correo electrónico semanal de Quincy"
     },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+    },
     "honesty": {
       "p1": "Antes de que puedas solicitar una certificación verificada, debes aceptar nuestro Compromiso de Honestidad Académica, que dice:",
       "p2": "\"Entiendo que el plagio significa copiar el trabajo de otra persona y presentar el trabajo como si fuera el mío, sin atribuir claramente al autor original.\"",
@@ -533,6 +538,18 @@
     "syntax-error": "Tu código provocó un error antes de que se pudieran ejecutar las pruebas. Por favor, corrígelo y vuelve a intentarlo.",
     "indentation-error": "Tu código tiene un error de identación. Puede que necesites añadir <code>pass</code> en una nueva línea para formar un bloque de código válido.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "Descargar mi solución",
     "download-results": "Descargar mis resultados",
     "percent-complete": "{{percent}}% completo",
@@ -899,8 +916,8 @@
   "search": {
     "label": "Buscar",
     "placeholder": {
-      "default": "Busca en nuestros artículos de noticias, tutoriales y libros",
-      "numbered": "Busca en más de {{ roundedTotalRecords }} artículos de noticias, tutoriales y libros"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -1037,6 +1054,7 @@
     "updated-themes": "Hemos actualizado su tema",
     "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "Hemos actualizado tu suscripción al correo electrónico de Quincy",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "Hemos actualizado tu portafolio",
     "experience-updated": "Hemos actualizado tu experiencia",
     "email-invalid": "El formato del correo electrónico no es válido",
