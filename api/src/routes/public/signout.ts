@@ -1,6 +1,7 @@
 import type { FastifyPluginCallback } from 'fastify';
 
 import { signout } from '../../schemas.js';
+import { HOME_LOCATION } from '../../utils/env.js';
 
 /**
  * Route handler for signing out.
@@ -26,7 +27,10 @@ export const signoutRoute: FastifyPluginCallback = (
       void reply.clearOurCookies();
       logger.info('User signed out');
 
-      await reply.send({});
+      void reply.redirectWithMessage(`${HOME_LOCATION}/`, {
+        type: 'success',
+        content: 'flash.signout-success'
+      });
     }
   );
   done();

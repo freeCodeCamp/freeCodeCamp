@@ -6,8 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import { closeSignoutModal } from '../../redux/actions';
-import { createFlashMessage } from '../Flash/redux';
-import { FlashMessages } from '../Flash/redux/flash-messages';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
@@ -22,15 +20,13 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
-      closeSignoutModal,
-      createFlashMessage
+      closeSignoutModal
     },
     dispatch
   );
 
 type SignoutModalProps = {
   closeSignoutModal: () => void;
-  createFlashMessage: typeof createFlashMessage;
   show: boolean;
 };
 
@@ -48,7 +44,7 @@ export const pathAfterSignout = (currentPath: string): string => {
 };
 
 function SignoutModal(props: SignoutModalProps): JSX.Element {
-  const { show, closeSignoutModal, createFlashMessage } = props;
+  const { show, closeSignoutModal } = props;
   const { t } = useTranslation();
 
   const handleModalHide = () => {
@@ -66,11 +62,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
       credentials: 'include'
     })
       .then(() => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.SignoutSuccess
-        });
-        setTimeout(redirect, 100);
+        redirect();
       })
       .catch(redirect);
   };
