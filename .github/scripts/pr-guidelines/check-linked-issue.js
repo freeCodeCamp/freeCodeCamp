@@ -1,8 +1,5 @@
 'use strict';
 
-const FOOTER =
-  '\n\n---\nJoin us in our [chat room](https://discord.gg/PRyKn3Vbay) or our [forum](https://forum.freecodecamp.org/c/contributors/3) if you have any questions or need help with contributing.';
-
 async function addDeprioritizedLabel(github, context) {
   await github.rest.issues.addLabels({
     owner: context.repo.owner,
@@ -12,19 +9,8 @@ async function addDeprioritizedLabel(github, context) {
   });
 }
 
-async function addComment(github, context, body) {
-  await github.rest.issues.createComment({
-    owner: context.repo.owner,
-    repo: context.repo.repo,
-    issue_number: context.payload.pull_request.number,
-    body
-  });
-}
-
 module.exports = async ({ github, context, core, isAllowListed }) => {
   if (isAllowListed === 'true') return;
-
-  const action = context.payload.action;
 
   const result = await github.graphql(
     `query($owner: String!, $repo: String!, $number: Int!) {
@@ -53,23 +39,9 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
   const linkedIssues = pr.closingIssuesReferences.nodes;
 
   if (linkedIssues.length === 0) {
+    core.setOutput('failure_reason', 'no_linked_issue');
     core.setFailed('No linked issue found.');
     await addDeprioritizedLabel(github, context);
-    if (action !== 'edited') {
-      await addComment(
-        github,
-        context,
-        [
-          'Hi there,',
-          '',
-          'Thanks for opening this pull request.',
-          '',
-          'We kindly ask that contributors open an issue before submitting a PR so the change can be discussed and approved before work begins. This helps avoid situations where significant effort goes into something we ultimately cannot merge.',
-          '',
-          'Please open an issue first and allow it to be triaged. Once the issue is open for contribution, you are welcome to update this pull request to reflect the issue consensus. Until then, we will not be able to review your pull request.'
-        ].join('\n') + FOOTER
-      );
-    }
     return;
   }
 
@@ -77,21 +49,9 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
     issue.labels.nodes.some(l => l.name === 'status: waiting triage')
   );
   if (hasWaitingTriage) {
+    core.setOutput('failure_reason', 'waiting_triage');
     core.setFailed('Linked issue has not been triaged yet.');
     await addDeprioritizedLabel(github, context);
-    if (action !== 'edited') {
-      await addComment(
-        github,
-        context,
-        [
-          'Hi there,',
-          '',
-          'Thanks for opening this pull request.',
-          '',
-          'The linked issue has not been triaged yet, and a solution has not been agreed upon. Once the issue is open for contribution, you are welcome to update this pull request to reflect the issue consensus. Until then, we will not be able to review your pull request.'
-        ].join('\n') + FOOTER
-      );
-    }
     return;
   }
 
@@ -117,20 +77,8 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
     )
   );
   if (!isOpenForContribution) {
+    core.setOutput('failure_reason', 'not_open_for_contribution');
     core.setFailed('Linked issue is not open for contribution.');
     await addDeprioritizedLabel(github, context);
-    if (action !== 'edited') {
-      await addComment(
-        github,
-        context,
-        [
-          'Hi there,',
-          '',
-          'Thanks for opening this pull request.',
-          '',
-          'The linked issue is not open for contribution. If you are looking for issues to contribute to, please check out issues labeled [`help wanted`](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) or [`first timers only`](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aissue+is%3Aopen+label%3A%22first+timers+only%22).'
-        ].join('\n') + FOOTER
-      );
-    }
   }
 };
