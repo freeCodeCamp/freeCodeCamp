@@ -9,7 +9,6 @@ import type {
   // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
-import { Gesture } from 'monaco-editor/esm/vs/base/browser/touch.js';
 import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import { createPortal } from 'react-dom';
@@ -79,10 +78,12 @@ const monacoModelFileMap = {
   reactTypes: 'react.d.ts'
 };
 
-type TouchGestureApi = {
-  ignoreTarget: (element: HTMLElement) => { dispose: () => void };
+type IgnoreTouchTarget = (element: HTMLElement) => { dispose: () => void };
+type MonacoTouchModule = {
+  Gesture: {
+    ignoreTarget: IgnoreTouchTarget;
+  };
 };
-const touchGesture = Gesture as unknown as TouchGestureApi;
 
 export interface EditorProps {
   attempts: number;
@@ -317,6 +318,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorState>(createInitialEditorState());
+  const ignoreTouchTargetRef = useRef<IgnoreTouchTarget | null>(null);
   const descriptionIgnoredTouchTargetsRef = useRef<
     Array<{ dispose: () => void }>
   >([]);
@@ -834,6 +836,8 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function registerDescriptionIgnoredTouchTargets(root: HTMLElement) {
     clearDescriptionIgnoredTouchTargets();
+    const ignoreTouchTarget = ignoreTouchTargetRef.current;
+    if (!ignoreTouchTarget) return;
 
     const interactiveElements = root.querySelectorAll<HTMLElement>(
       'a, summary.code-details-summary, pre[role="region"]'
@@ -841,7 +845,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     interactiveElements.forEach(element => {
       descriptionIgnoredTouchTargetsRef.current.push(
-        touchGesture.ignoreTarget(element)
+        ignoreTouchTarget(element)
       );
     });
   }
@@ -1339,6 +1343,48 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     initTests(props.initialTests);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let isDisposed = false;
+
+    void import('monaco-editor/esm/vs/base/browser/touch.js')
+      .then(module => {
+        if (isDisposed) return;
+
+        const touchModule = module as MonacoTouchModule;
+        ignoreTouchTargetRef.current = touchModule.Gesture.ignoreTarget;
+
+        const descriptionNode = dataRef.current.descriptionZone.node;
+        const ignoreTouchTarget = ignoreTouchTargetRef.current;
+        if (descriptionNode) {
+          descriptionIgnoredTouchTargetsRef.current.forEach(disposable =>
+            disposable.dispose()
+          );
+          descriptionIgnoredTouchTargetsRef.current = [];
+          if (ignoreTouchTarget) {
+            const interactiveElements =
+              descriptionNode.querySelectorAll<HTMLElement>(
+                'a, summary.code-details-summary, pre[role="region"]'
+              );
+            interactiveElements.forEach(element => {
+              descriptionIgnoredTouchTargetsRef.current.push(
+                ignoreTouchTarget(element)
+              );
+            });
+          }
+        }
+      })
+      .catch(() => {
+        ignoreTouchTargetRef.current = null;
+      });
+
+    return () => {
+      isDisposed = true;
+      ignoreTouchTargetRef.current = null;
+    };
   }, []);
 
   useEffect(() => {
