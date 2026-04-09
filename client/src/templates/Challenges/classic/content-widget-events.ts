@@ -1,6 +1,7 @@
 type TouchGestureMode = 'pending' | 'vertical' | 'horizontal';
 
 interface TouchGestureState {
+  pointerId: number;
   mode: TouchGestureMode;
   startX: number;
   startY: number;
@@ -49,25 +50,31 @@ export const attachContentWidgetEvents = (
     e.stopPropagation();
   };
 
-  const onTouchStart = (e: TouchEvent): void => {
-    const touch = e.changedTouches.item(0);
-    if (!touch) return;
+  const onPointerDown = (e: PointerEvent): void => {
+    if (e.pointerType !== 'touch') return;
+
     touchState = {
+      pointerId: e.pointerId,
       mode: 'pending',
-      startX: touch.clientX,
-      startY: touch.clientY,
-      lastY: touch.clientY,
+      startX: e.clientX,
+      startY: e.clientY,
+      lastY: e.clientY,
       horizontalScroller: findHorizontalScroller(e.target)
     };
     e.stopPropagation();
   };
 
-  const onTouchMove = (e: TouchEvent): void => {
-    const touch = e.changedTouches.item(0);
-    if (!touch || !touchState) return;
+  const onPointerMove = (e: PointerEvent): void => {
+    if (
+      e.pointerType !== 'touch' ||
+      !touchState ||
+      e.pointerId !== touchState.pointerId
+    ) {
+      return;
+    }
 
-    const deltaX = touch.clientX - touchState.startX;
-    const deltaY = touch.clientY - touchState.startY;
+    const deltaX = e.clientX - touchState.startX;
+    const deltaY = e.clientY - touchState.startY;
 
     if (
       touchState.mode === 'pending' &&
@@ -85,30 +92,37 @@ export const attachContentWidgetEvents = (
       }
       dispatchVerticalScrollWheel(
         upperJawNode,
-        (touch.clientY - touchState.lastY) * TOUCH_VERTICAL_SCROLL_MULTIPLIER
+        (e.clientY - touchState.lastY) * TOUCH_VERTICAL_SCROLL_MULTIPLIER
       );
-      touchState.lastY = touch.clientY;
+      touchState.lastY = e.clientY;
     }
 
     e.stopPropagation();
   };
 
-  const onTouchEnd = (e: TouchEvent): void => {
+  const onPointerUp = (e: PointerEvent): void => {
+    if (!touchState || e.pointerId !== touchState.pointerId) return;
     touchState = null;
     e.stopPropagation();
   };
 
   upperJawNode.addEventListener('contextmenu', onContextMenu);
-  upperJawNode.addEventListener('touchstart', onTouchStart, { passive: true });
-  upperJawNode.addEventListener('touchmove', onTouchMove, { passive: false });
-  upperJawNode.addEventListener('touchend', onTouchEnd, { passive: true });
-  upperJawNode.addEventListener('touchcancel', onTouchEnd, { passive: true });
+  upperJawNode.addEventListener('pointerdown', onPointerDown, {
+    passive: true
+  });
+  upperJawNode.addEventListener('pointermove', onPointerMove, {
+    passive: false
+  });
+  upperJawNode.addEventListener('pointerup', onPointerUp, { passive: true });
+  upperJawNode.addEventListener('pointercancel', onPointerUp, {
+    passive: true
+  });
 
   return () => {
     upperJawNode.removeEventListener('contextmenu', onContextMenu);
-    upperJawNode.removeEventListener('touchstart', onTouchStart);
-    upperJawNode.removeEventListener('touchmove', onTouchMove);
-    upperJawNode.removeEventListener('touchend', onTouchEnd);
-    upperJawNode.removeEventListener('touchcancel', onTouchEnd);
+    upperJawNode.removeEventListener('pointerdown', onPointerDown);
+    upperJawNode.removeEventListener('pointermove', onPointerMove);
+    upperJawNode.removeEventListener('pointerup', onPointerUp);
+    upperJawNode.removeEventListener('pointercancel', onPointerUp);
   };
 };

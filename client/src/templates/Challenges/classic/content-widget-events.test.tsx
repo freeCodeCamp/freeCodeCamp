@@ -2,42 +2,83 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { attachContentWidgetEvents } from './content-widget-events';
 
-const createTouchEvent = (
-  type: 'touchstart' | 'touchmove' | 'touchend' | 'touchcancel',
+const createPointerEvent = (
+  type: 'pointerdown' | 'pointermove' | 'pointerup' | 'pointercancel',
   x: number,
-  y: number
-): TouchEvent => {
+  y: number,
+  options?: {
+    pointerId?: number;
+    pointerType?: 'touch' | 'mouse' | 'pen';
+  }
+): PointerEvent => {
+  const pointerId = options?.pointerId ?? 1;
+  const pointerType = options?.pointerType ?? 'touch';
+
+  if (typeof PointerEvent === 'function') {
+    return new PointerEvent(type, {
+      bubbles: true,
+      cancelable: true,
+      pointerId,
+      pointerType,
+      clientX: x,
+      clientY: y
+    });
+  }
+
   const event = new Event(type, {
     bubbles: true,
     cancelable: true
   });
-  Object.defineProperty(event, 'changedTouches', {
-    value: {
-      item: () => ({
-        clientX: x,
-        clientY: y
-      })
-    }
+
+  Object.defineProperties(event, {
+    pointerId: { value: pointerId },
+    pointerType: { value: pointerType },
+    clientX: { value: x },
+    clientY: { value: y }
   });
-  return event as TouchEvent;
+
+  return event as PointerEvent;
 };
 
 const createDomTree = () => {
-  const monacoEditor = document.createElement('div');
-  monacoEditor.className = 'monaco-editor';
-  const scrollable = document.createElement('div');
-  scrollable.className = 'monaco-scrollable-element editor-scrollable';
-  const upperJaw = document.createElement('div');
-  upperJaw.className = 'editor-upper-jaw';
-  const paragraph = document.createElement('p');
-  paragraph.textContent = 'paragraph';
-  const pre = document.createElement('pre');
-  pre.textContent = 'example code';
+  document.body.innerHTML = `
+    <div class="monaco-editor">
+      <div class="monaco-scrollable-element editor-scrollable"></div>
+      <div class="editor-upper-jaw">
+        <div class="description-container">
+          <p>paragraph</p>
+          <details class="code-details" open>
+            <summary class="code-details-summary">Example Code</summary>
+            <pre>example code</pre>
+          </details>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const monacoEditor = document.querySelector('.monaco-editor');
+  const scrollable = document.querySelector(
+    '.monaco-scrollable-element.editor-scrollable'
+  );
+  const upperJaw = document.querySelector('.editor-upper-jaw');
+  const paragraph = document.querySelector('.description-container p');
+  const pre = document.querySelector(
+    '.editor-upper-jaw details.code-details pre'
+  );
+
+  if (
+    !(monacoEditor instanceof HTMLElement) ||
+    !(scrollable instanceof HTMLElement) ||
+    !(upperJaw instanceof HTMLElement) ||
+    !(paragraph instanceof HTMLElement) ||
+    !(pre instanceof HTMLElement)
+  ) {
+    throw new Error('Failed to construct test DOM');
+  }
+
   Object.defineProperty(pre, 'scrollWidth', { value: 500, configurable: true });
   Object.defineProperty(pre, 'clientWidth', { value: 200, configurable: true });
-  upperJaw.append(paragraph, pre);
-  monacoEditor.append(scrollable, upperJaw);
-  document.body.append(monacoEditor);
+
   return { monacoEditor, scrollable, upperJaw, paragraph, pre };
 };
 
@@ -65,39 +106,43 @@ describe('content widget event handling', () => {
 
   it('dispatches wheel scroll for vertical touch drags and stops propagation', () => {
     const { monacoEditor, scrollable, upperJaw, paragraph } = createDomTree();
-    const dispatchWheel = vi.spyOn(scrollable, 'dispatchEvent');
-    const onParentTouchMove = vi.fn();
-    monacoEditor.addEventListener('touchmove', onParentTouchMove);
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
     const detachListeners = attachContentWidgetEvents(upperJaw);
 
-    paragraph.dispatchEvent(createTouchEvent('touchstart', 100, 100));
-    const touchMove = createTouchEvent('touchmove', 100, 140);
-    paragraph.dispatchEvent(touchMove);
+    paragraph.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    const pointerMove = createPointerEvent('pointermove', 100, 140);
+    paragraph.dispatchEvent(pointerMove);
 
-    expect(dispatchWheel).toHaveBeenCalledTimes(1);
-    const wheelEvent = dispatchWheel.mock.calls[0]?.[0];
-    expect(wheelEvent).toBeInstanceOf(WheelEvent);
-    expect((wheelEvent as WheelEvent).deltaY).toBe(100);
-    expect(touchMove.defaultPrevented).toBe(true);
-    expect(onParentTouchMove).not.toHaveBeenCalled();
+    expect(wheelEvents).toHaveLength(1);
+    expect(wheelEvents[0]?.deltaY).toBe(100);
+    expect(pointerMove.defaultPrevented).toBe(true);
+    expect(onParentPointerMove).not.toHaveBeenCalled();
 
     detachListeners();
   });
 
   it('allows horizontal pre scrolling without forcing vertical wheel scroll', () => {
     const { monacoEditor, scrollable, upperJaw, pre } = createDomTree();
-    const dispatchWheel = vi.spyOn(scrollable, 'dispatchEvent');
-    const onParentTouchMove = vi.fn();
-    monacoEditor.addEventListener('touchmove', onParentTouchMove);
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
     const detachListeners = attachContentWidgetEvents(upperJaw);
 
-    pre.dispatchEvent(createTouchEvent('touchstart', 100, 100));
-    const touchMove = createTouchEvent('touchmove', 160, 112);
-    pre.dispatchEvent(touchMove);
+    pre.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    const pointerMove = createPointerEvent('pointermove', 160, 112);
+    pre.dispatchEvent(pointerMove);
 
-    expect(dispatchWheel).not.toHaveBeenCalled();
-    expect(touchMove.defaultPrevented).toBe(false);
-    expect(onParentTouchMove).not.toHaveBeenCalled();
+    expect(wheelEvents).toHaveLength(0);
+    expect(pointerMove.defaultPrevented).toBe(false);
+    expect(onParentPointerMove).not.toHaveBeenCalled();
 
     detachListeners();
   });
@@ -112,73 +157,105 @@ describe('content widget event handling', () => {
       value: 200,
       configurable: true
     });
-    const dispatchWheel = vi.spyOn(scrollable, 'dispatchEvent');
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
     const detachListeners = attachContentWidgetEvents(upperJaw);
 
-    pre.dispatchEvent(createTouchEvent('touchstart', 100, 100));
-    const touchMove = createTouchEvent('touchmove', 160, 130);
-    pre.dispatchEvent(touchMove);
+    pre.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    const pointerMove = createPointerEvent('pointermove', 160, 130);
+    pre.dispatchEvent(pointerMove);
 
-    expect(dispatchWheel).toHaveBeenCalledTimes(1);
-    expect(touchMove.defaultPrevented).toBe(true);
+    expect(wheelEvents).toHaveLength(1);
+    expect(pointerMove.defaultPrevented).toBe(true);
 
     detachListeners();
   });
 
   it('does not dispatch wheel for tiny movements below threshold', () => {
     const { monacoEditor, scrollable, upperJaw, paragraph } = createDomTree();
-    const dispatchWheel = vi.spyOn(scrollable, 'dispatchEvent');
-    const onParentTouchMove = vi.fn();
-    monacoEditor.addEventListener('touchmove', onParentTouchMove);
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
     const detachListeners = attachContentWidgetEvents(upperJaw);
 
-    paragraph.dispatchEvent(createTouchEvent('touchstart', 100, 100));
-    const touchMove = createTouchEvent('touchmove', 103, 104);
-    paragraph.dispatchEvent(touchMove);
+    paragraph.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    const pointerMove = createPointerEvent('pointermove', 103, 104);
+    paragraph.dispatchEvent(pointerMove);
 
-    expect(dispatchWheel).not.toHaveBeenCalled();
-    expect(touchMove.defaultPrevented).toBe(false);
-    expect(onParentTouchMove).not.toHaveBeenCalled();
+    expect(wheelEvents).toHaveLength(0);
+    expect(pointerMove.defaultPrevented).toBe(false);
+    expect(onParentPointerMove).not.toHaveBeenCalled();
 
     detachListeners();
   });
 
-  it('resets touch state on touchend', () => {
+  it('resets touch state on pointerup', () => {
     const { monacoEditor, scrollable, upperJaw, paragraph } = createDomTree();
-    const dispatchWheel = vi.spyOn(scrollable, 'dispatchEvent');
-    const onParentTouchMove = vi.fn();
-    monacoEditor.addEventListener('touchmove', onParentTouchMove);
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
     const detachListeners = attachContentWidgetEvents(upperJaw);
 
-    paragraph.dispatchEvent(createTouchEvent('touchstart', 100, 100));
-    paragraph.dispatchEvent(createTouchEvent('touchmove', 100, 140));
-    paragraph.dispatchEvent(createTouchEvent('touchend', 100, 140));
-    paragraph.dispatchEvent(createTouchEvent('touchmove', 100, 180));
+    paragraph.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    paragraph.dispatchEvent(createPointerEvent('pointermove', 100, 140));
+    paragraph.dispatchEvent(createPointerEvent('pointerup', 100, 140));
+    paragraph.dispatchEvent(createPointerEvent('pointermove', 100, 180));
 
-    expect(dispatchWheel).toHaveBeenCalledTimes(1);
-    expect(onParentTouchMove).toHaveBeenCalledTimes(1);
+    expect(wheelEvents).toHaveLength(1);
+    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
 
     detachListeners();
   });
 
   it('detaches all listeners cleanly', () => {
     const { monacoEditor, scrollable, upperJaw, paragraph } = createDomTree();
-    const dispatchWheel = vi.spyOn(scrollable, 'dispatchEvent');
-    const onParentTouchMove = vi.fn();
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
     const onParentContextMenu = vi.fn();
-    monacoEditor.addEventListener('touchmove', onParentTouchMove);
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
     monacoEditor.addEventListener('contextmenu', onParentContextMenu);
     const detachListeners = attachContentWidgetEvents(upperJaw);
     detachListeners();
 
-    paragraph.dispatchEvent(createTouchEvent('touchstart', 100, 100));
-    paragraph.dispatchEvent(createTouchEvent('touchmove', 100, 140));
+    paragraph.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    paragraph.dispatchEvent(createPointerEvent('pointermove', 100, 140));
     paragraph.dispatchEvent(
       new MouseEvent('contextmenu', { bubbles: true, cancelable: true })
     );
 
-    expect(dispatchWheel).not.toHaveBeenCalled();
-    expect(onParentTouchMove).toHaveBeenCalledTimes(1);
+    expect(wheelEvents).toHaveLength(0);
+    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
     expect(onParentContextMenu).toHaveBeenCalledTimes(1);
+  });
+
+  it('ignores non-touch pointer events', () => {
+    const { scrollable, upperJaw, paragraph } = createDomTree();
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const detachListeners = attachContentWidgetEvents(upperJaw);
+
+    paragraph.dispatchEvent(
+      createPointerEvent('pointerdown', 100, 100, { pointerType: 'mouse' })
+    );
+    paragraph.dispatchEvent(
+      createPointerEvent('pointermove', 100, 160, { pointerType: 'mouse' })
+    );
+
+    expect(wheelEvents).toHaveLength(0);
+
+    detachListeners();
   });
 });
