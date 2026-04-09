@@ -3,7 +3,7 @@ import { describe, it, expect, vi, afterEach } from 'vitest';
 describe('generateGitHubLink', () => {
   afterEach(() => vi.resetModules());
   it('should return a link to a challenge for an english block', async () => {
-    vi.doMock('../../../../config/env.json', () => ({
+    vi.doMock('../../config/env.json', () => ({
       default: {
         curriculumLocale: 'english',
         githubLocation: 'https://github.com/freeCodeCamp'
@@ -21,7 +21,7 @@ describe('generateGitHubLink', () => {
   });
 
   it('should return a link for a challenge in the Spanish curriculum', async () => {
-    vi.doMock('../../../../config/env.json', () => ({
+    vi.doMock('../../config/env.json', () => ({
       default: {
         curriculumLocale: 'espanol',
         githubLocation: 'https://github.com/freeCodeCamp'
