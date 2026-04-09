@@ -101,6 +101,29 @@ const expectScrollWhileHolding = async (page: Page) => {
   expect(topDuringDrag).toBeLessThan(topBefore - 20);
 };
 
+const expectUpperJawDragScroll = async (page: Page) => {
+  const upperJaw = page.locator(upperJawSelector);
+  const firstParagraph = page.locator('#description p').first();
+
+  await expect(upperJaw).toBeVisible();
+  await expect(firstParagraph).toBeVisible();
+
+  const getTop = async () =>
+    await firstParagraph.evaluate(el => el.getBoundingClientRect().top);
+
+  const topBefore = await getTop();
+
+  await dragWithHeldTouch(page, upperJaw, {
+    startXRatio: 0.25,
+    startYRatio: 0.55,
+    moveByY: -140
+  });
+
+  const topAfterDrag = await getTop();
+
+  expect(topAfterDrag).toBeLessThan(topBefore - 20);
+};
+
 test.use({
   viewport: { width: 393, height: 851 },
   isMobile: true,
@@ -125,6 +148,14 @@ test('upper jaw scrolls while touch is held on long challenge content', async ({
   await expect(page.locator('#description p')).toHaveCount(4);
 
   await expectScrollWhileHolding(page);
+});
+
+test('upper jaw drag gesture scrolls when drag starts on upper jaw container', async ({
+  page
+}) => {
+  await openChallenge(page, challengeWithLongContentUrl);
+
+  await expectUpperJawDragScroll(page);
 });
 
 test('breadcrumb links and example code dropdown are interactive on mobile', async ({
