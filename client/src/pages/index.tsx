@@ -10,6 +10,7 @@ import LandingCatalog from '../components/landing/components/landing-catalog';
 import Faq from '../components/landing/components/faq';
 import Benefits from '../components/landing/components/benefits';
 import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
+import AnimationTest from '../components/landing/components/animation-test';
 
 import '../components/landing/landing.css';
 
@@ -20,6 +21,7 @@ const Landing = () => (
     className={`landing-page`}
   >
     <LandingTop />
+    <AnimationTest />
     <Benefits />
     <Testimonials />
     <Certifications />
