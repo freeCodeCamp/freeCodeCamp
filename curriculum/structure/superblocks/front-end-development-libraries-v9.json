@@ -82,6 +82,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-data-visualization",
+            "workshop-music-industry-revenue-bar-chart",
             "lab-bar-chart",
             "lab-scatterplot-graph"
           ]
