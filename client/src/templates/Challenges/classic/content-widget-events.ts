@@ -1,6 +1,8 @@
 type TouchGestureMode = 'pending' | 'vertical' | 'horizontal';
+type TouchSource = 'pointer' | 'touch';
 
 interface TouchGestureState {
+  source: TouchSource;
   pointerId: number;
   mode: TouchGestureMode;
   startX: number;
@@ -41,6 +43,44 @@ const dispatchVerticalScrollWheel = (
   );
 };
 
+const updateGestureMode = (
+  touchState: TouchGestureState,
+  clientX: number,
+  clientY: number
+): void => {
+  const deltaX = clientX - touchState.startX;
+  const deltaY = clientY - touchState.startY;
+
+  if (
+    touchState.mode === 'pending' &&
+    Math.max(Math.abs(deltaX), Math.abs(deltaY)) >= MOVE_THRESHOLD
+  ) {
+    touchState.mode =
+      touchState.horizontalScroller && Math.abs(deltaX) > Math.abs(deltaY)
+        ? 'horizontal'
+        : 'vertical';
+  }
+};
+
+const handleVerticalScroll = (
+  e: Event,
+  upperJawNode: HTMLElement,
+  touchState: TouchGestureState,
+  clientY: number
+): void => {
+  if (touchState.mode !== 'vertical') return;
+
+  if (e.cancelable) {
+    e.preventDefault();
+  }
+
+  dispatchVerticalScrollWheel(
+    upperJawNode,
+    (clientY - touchState.lastY) * TOUCH_VERTICAL_SCROLL_MULTIPLIER
+  );
+  touchState.lastY = clientY;
+};
+
 export const attachContentWidgetEvents = (
   upperJawNode: HTMLElement
 ): (() => void) => {
@@ -54,6 +94,7 @@ export const attachContentWidgetEvents = (
     if (e.pointerType !== 'touch') return;
 
     touchState = {
+      source: 'pointer',
       pointerId: e.pointerId,
       mode: 'pending',
       startX: e.clientX,
@@ -68,40 +109,65 @@ export const attachContentWidgetEvents = (
     if (
       e.pointerType !== 'touch' ||
       !touchState ||
+      touchState.source !== 'pointer' ||
       e.pointerId !== touchState.pointerId
     ) {
       return;
     }
 
-    const deltaX = e.clientX - touchState.startX;
-    const deltaY = e.clientY - touchState.startY;
-
-    if (
-      touchState.mode === 'pending' &&
-      Math.max(Math.abs(deltaX), Math.abs(deltaY)) >= MOVE_THRESHOLD
-    ) {
-      touchState.mode =
-        touchState.horizontalScroller && Math.abs(deltaX) > Math.abs(deltaY)
-          ? 'horizontal'
-          : 'vertical';
-    }
-
-    if (touchState.mode === 'vertical') {
-      if (e.cancelable) {
-        e.preventDefault();
-      }
-      dispatchVerticalScrollWheel(
-        upperJawNode,
-        (e.clientY - touchState.lastY) * TOUCH_VERTICAL_SCROLL_MULTIPLIER
-      );
-      touchState.lastY = e.clientY;
-    }
-
+    updateGestureMode(touchState, e.clientX, e.clientY);
+    handleVerticalScroll(e, upperJawNode, touchState, e.clientY);
     e.stopPropagation();
   };
 
   const onPointerUp = (e: PointerEvent): void => {
-    if (!touchState || e.pointerId !== touchState.pointerId) return;
+    if (
+      !touchState ||
+      touchState.source !== 'pointer' ||
+      e.pointerId !== touchState.pointerId
+    ) {
+      return;
+    }
+
+    touchState = null;
+    e.stopPropagation();
+  };
+
+  const onTouchStart = (e: TouchEvent): void => {
+    if (touchState?.source === 'pointer') return;
+
+    const touch = e.changedTouches.item(0);
+    if (!touch) return;
+
+    touchState = {
+      source: 'touch',
+      pointerId: touch.identifier,
+      mode: 'pending',
+      startX: touch.clientX,
+      startY: touch.clientY,
+      lastY: touch.clientY,
+      horizontalScroller: findHorizontalScroller(e.target)
+    };
+    e.stopPropagation();
+  };
+
+  const onTouchMove = (e: TouchEvent): void => {
+    if (!touchState || touchState.source !== 'touch') return;
+
+    const touch = e.changedTouches.item(0);
+    if (!touch || touch.identifier !== touchState.pointerId) return;
+
+    updateGestureMode(touchState, touch.clientX, touch.clientY);
+    handleVerticalScroll(e, upperJawNode, touchState, touch.clientY);
+    e.stopPropagation();
+  };
+
+  const onTouchEnd = (e: TouchEvent): void => {
+    if (!touchState || touchState.source !== 'touch') return;
+
+    const touch = e.changedTouches.item(0);
+    if (!touch || touch.identifier !== touchState.pointerId) return;
+
     touchState = null;
     e.stopPropagation();
   };
@@ -117,6 +183,10 @@ export const attachContentWidgetEvents = (
   upperJawNode.addEventListener('pointercancel', onPointerUp, {
     passive: true
   });
+  upperJawNode.addEventListener('touchstart', onTouchStart, { passive: true });
+  upperJawNode.addEventListener('touchmove', onTouchMove, { passive: false });
+  upperJawNode.addEventListener('touchend', onTouchEnd, { passive: true });
+  upperJawNode.addEventListener('touchcancel', onTouchEnd, { passive: true });
 
   return () => {
     upperJawNode.removeEventListener('contextmenu', onContextMenu);
@@ -124,5 +194,9 @@ export const attachContentWidgetEvents = (
     upperJawNode.removeEventListener('pointermove', onPointerMove);
     upperJawNode.removeEventListener('pointerup', onPointerUp);
     upperJawNode.removeEventListener('pointercancel', onPointerUp);
+    upperJawNode.removeEventListener('touchstart', onTouchStart);
+    upperJawNode.removeEventListener('touchmove', onTouchMove);
+    upperJawNode.removeEventListener('touchend', onTouchEnd);
+    upperJawNode.removeEventListener('touchcancel', onTouchEnd);
   };
 };
