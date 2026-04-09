@@ -22,7 +22,7 @@ const TEMPLATE_BLOCK = [
   '```'
 ].join('\n');
 
-module.exports = async ({ github, context, isAllowListed }) => {
+module.exports = async ({ github, context, core, isAllowListed }) => {
   if (isAllowListed === 'true') return;
 
   const body = (context.payload.pull_request.body || '').toLowerCase();
@@ -46,25 +46,9 @@ module.exports = async ({ github, context, isAllowListed }) => {
     normalizedBody.includes(`[x] ${item}`)
   );
 
-  if (templatePresent && allRequiredTicked) {
-    // On edit, remove the deprioritized label if the check now passes.
-    if (action === 'edited') {
-      try {
-        await github.rest.issues.removeLabel({
-          owner: context.repo.owner,
-          repo: context.repo.repo,
-          issue_number: context.payload.pull_request.number,
-          name: 'deprioritized'
-        });
-      } catch {
-        // Label may not exist — ignore.
-      }
-    }
-    return;
-  }
+  if (templatePresent && allRequiredTicked) return;
 
-  // On edit, don't re-comment — the original comment is already there.
-  if (action === 'edited') return;
+  core.setFailed('PR description is missing the required checklist or some items are incomplete.');
 
   await github.rest.issues.addLabels({
     owner: context.repo.owner,
@@ -72,6 +56,9 @@ module.exports = async ({ github, context, isAllowListed }) => {
     issue_number: context.payload.pull_request.number,
     labels: ['deprioritized']
   });
+
+  // On edit, don't re-comment — the original comment is already there.
+  if (action === 'edited') return;
 
   await github.rest.issues.createComment({
     owner: context.repo.owner,

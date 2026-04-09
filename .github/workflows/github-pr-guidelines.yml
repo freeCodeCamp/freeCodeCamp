@@ -115,14 +115,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fn = require('./.github/scripts/pr-guidelines/check-pr-template.js');
-            await fn({ github, context, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
+            await fn({ github, context, core, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
 
   # Verifies that each PR references a linked, triaged issue before it can be reviewed.
   check-linked-issue:
     name: Check Linked Issue
     runs-on: ubuntu-24.04
     needs: no-web-commits
-    if: needs.no-web-commits.result == 'success' && github.event.action != 'edited'
+    if: needs.no-web-commits.result == 'success'
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
@@ -134,4 +134,33 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fn = require('./.github/scripts/pr-guidelines/check-linked-issue.js');
-            await fn({ github, context, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
+            await fn({ github, context, core, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
+
+  # Removes the deprioritized label only when all checks pass.
+  # Individual checks add the label on failure but never remove it,
+  # so this single coordination point prevents one passing check
+  # from removing a label that another failing check requires.
+  update-label:
+    name: Update Label
+    runs-on: ubuntu-24.04
+    needs: [no-web-commits, check-pr-template, check-linked-issue]
+    if: >-
+      always() &&
+      needs.no-web-commits.result == 'success' &&
+      needs.check-pr-template.result == 'success' &&
+      needs.check-linked-issue.result == 'success'
+    steps:
+      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                name: 'deprioritized'
+              });
+            } catch {
+              // Label may not exist — ignore.
+            }
