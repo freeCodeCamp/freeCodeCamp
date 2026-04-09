@@ -66,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "重置此步驟",
     "help": "幫助",
     "get-help": "獲得幫助",
@@ -381,6 +382,10 @@
       "confirm": "確認新郵箱",
       "weekly": "給我發 Quincy 的每週訂閱郵件"
     },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+    },
     "honesty": {
       "p1": "申請認證前，你必須先接受我們的《學術誠信條例》，即：",
       "p2": "\"我理解剽竊意味着抄襲他人的作品，將其作爲自己的作品來提交，且不明確註明原作者。\"",
@@ -533,6 +538,18 @@
     "syntax-error": "你的代碼在任何測試運行之前就出現了錯誤。請修復後重試。",
     "indentation-error": "你的代碼存在縮進錯誤。你可能需要在新行中添加 <code>pass</code> 以形成一個有效的代碼塊。",
     "sign-in-save": "登錄以保存你的學習進度",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "下載我的解決方案",
     "download-results": "下載我的結果",
     "percent-complete": "完成 {{percent}}%",
@@ -899,8 +916,8 @@
   "search": {
     "label": "搜索",
     "placeholder": {
-      "default": "搜索我們的文章、教程和書籍",
-      "numbered": "搜索 {{ roundedTotalRecords }}+ 文章、教程和書籍"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -1037,6 +1054,7 @@
     "updated-themes": "我們已更新你的主題",
     "keyboard-shortcut-updated": "我們已更新你的鍵盤快捷鍵設置",
     "subscribe-to-quincy-updated": "我們已更新你對 Quincy 的電子郵件的訂閱",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "我們已更新你的作品集",
     "experience-updated": "我們已更新你的經歷",
     "email-invalid": "郵箱格式無效",
