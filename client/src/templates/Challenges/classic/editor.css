@@ -59,11 +59,18 @@ textarea.inputarea {
 
 .editor-upper-jaw {
   max-width: unset !important;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .editor-upper-jaw code,
 .editor-lower-jaw code {
   white-space: pre-wrap;
+}
+
+.editor-upper-jaw pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .editor-file-name {
