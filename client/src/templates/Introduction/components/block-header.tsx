@@ -92,6 +92,13 @@ function BlockHeader({
             <InnerBlockHeader />
           </Button>
         )}
+        <a
+          href={`#${blockDashed}`}
+          className='block-anchor-link'
+          aria-label={`Direct link to ${blockTitle}`}
+        >
+          <span aria-hidden='true'>#</span>
+        </a>
       </h3>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />
