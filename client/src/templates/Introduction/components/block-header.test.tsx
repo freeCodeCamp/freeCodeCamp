@@ -38,11 +38,31 @@ describe('<BlockHeader />', () => {
       />
     );
 
-    const link = screen.getByRole('link');
+    const links = screen.getAllByRole('link', { name: /test block title/i });
+    const link = links.find(el => el.classList.contains('block-header'));
+
+    expect(link).toBeDefined();
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', '/learn/test-block');
     expect(link).not.toHaveAttribute('aria-expanded');
     expect(link).not.toHaveAttribute('aria-controls');
+  });
+
+  it('should render an anchor link for direct navigation when blockUrl is provided in accordion mode', () => {
+    render(
+      <BlockHeader
+        {...defaultProps}
+        accordion={true}
+        blockUrl='/learn/test-block'
+        onLinkClick={() => {}}
+      />
+    );
+
+    const anchorLink = screen.getByRole('link', {
+      name: 'Direct link to Test Block Title'
+    });
+    expect(anchorLink).toBeInTheDocument();
+    expect(anchorLink).toHaveAttribute('href', '#test-block');
   });
 
   it('should set aria-expanded to true when isExpanded is true', () => {
