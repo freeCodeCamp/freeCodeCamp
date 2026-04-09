@@ -6200,8 +6200,10 @@
         ]
       },
       "workshop-bug-emoji-picker": {
-        "title": "Build a Bug Emoji Picker ",
-        "intro": ["Build a Bug Emoji Picker ", ""]
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
       },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
