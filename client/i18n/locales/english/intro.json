@@ -6187,6 +6187,12 @@
           "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
         ]
       },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
+        ]
+      },
       "lecture-understanding-type-composition": {
         "title": "Understanding Type Composition",
         "intro": [
