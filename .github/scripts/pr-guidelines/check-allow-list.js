@@ -7,7 +7,7 @@ module.exports = async ({ github, context, core }) => {
   const membershipChecks = teamSlugs.map(team_slug =>
     github.rest.teams
       .getMembershipForUserInOrg({
-        org: 'freeCodeCap',
+        org: 'freeCodeCamp',
         team_slug,
         username: prAuthor
       })
