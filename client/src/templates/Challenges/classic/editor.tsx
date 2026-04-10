@@ -65,6 +65,7 @@ import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
+import { attachContentWidgetEvents } from './content-widget-events';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
 
@@ -76,13 +77,6 @@ const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 const monacoModelFileMap = {
   tsxFile: 'index.tsx',
   reactTypes: 'react.d.ts'
-};
-
-type IgnoreTouchTarget = (element: HTMLElement) => { dispose: () => void };
-type MonacoTouchModule = {
-  Gesture: {
-    ignoreTarget: IgnoreTouchTarget;
-  };
 };
 
 export interface EditorProps {
@@ -318,10 +312,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorState>(createInitialEditorState());
-  const ignoreTouchTargetRef = useRef<IgnoreTouchTarget | null>(null);
-  const descriptionIgnoredTouchTargetsRef = useRef<
-    Array<{ dispose: () => void }>
-  >([]);
   const [lowerJawContainer, setLowerJawContainer] =
     React.useState<HTMLDivElement | null>(null);
 
@@ -330,6 +320,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   const submitChallengeDebounceRef = useRef(
     debounce(submitChallenge, 1000, { leading: true, trailing: false })
   );
+  const detachUpperJawEventsRef = useRef<(() => void) | null>(null);
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -348,6 +339,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   testRef.current = props.tests;
   const attemptsRef = useRef<number>(0);
   attemptsRef.current = props.attempts;
+
+  useEffect(() => {
+    return () => {
+      detachUpperJawEventsRef.current?.();
+      detachUpperJawEventsRef.current = null;
+    };
+  }, []);
 
   const challengeFile = challengeFiles?.find(
     challengeFile => challengeFile.fileKey === fileKey
@@ -827,29 +825,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.descriptionZone.zoneId = changeAccessor.addZone(viewZone);
   };
 
-  function clearDescriptionIgnoredTouchTargets() {
-    descriptionIgnoredTouchTargetsRef.current.forEach(disposable =>
-      disposable.dispose()
-    );
-    descriptionIgnoredTouchTargetsRef.current = [];
-  }
-
-  function registerDescriptionIgnoredTouchTargets(root: HTMLElement) {
-    clearDescriptionIgnoredTouchTargets();
-    const ignoreTouchTarget = ignoreTouchTargetRef.current;
-    if (!ignoreTouchTarget) return;
-
-    const interactiveElements = root.querySelectorAll<HTMLElement>(
-      'a, summary.code-details-summary, pre[role="region"]'
-    );
-
-    interactiveElements.forEach(element => {
-      descriptionIgnoredTouchTargetsRef.current.push(
-        ignoreTouchTarget(element)
-      );
-    });
-  }
-
   function tryToExecuteChallenge() {
     props.executeChallenge();
   }
@@ -919,6 +894,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       descContainer.classList.add('mathjax-support');
     }
     domNode.classList.add('editor-upper-jaw');
+    detachUpperJawEventsRef.current?.();
+    detachUpperJawEventsRef.current = attachContentWidgetEvents(domNode);
     domNode.appendChild(descContainer);
     if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
@@ -931,7 +908,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       Prism.hooks.add('complete', makePrismCollapsible);
     }
     Prism.highlightAllUnder(desc);
-    registerDescriptionIgnoredTouchTargets(domNode);
 
     // Since the description can be resized without React knowing about it, the
     // zone needs updating in response.
@@ -1343,60 +1319,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     initTests(props.initialTests);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    // Monaco's touch helpers rely on browser globals, so skip SSR.
-    if (typeof window === 'undefined') return;
-
-    let isDisposed = false;
-
-    // Load touch helpers lazily to avoid pulling this browser-only module into
-    // static rendering / type-check paths.
-    void import('monaco-editor/esm/vs/base/browser/touch.js')
-      .then(module => {
-        if (isDisposed) return;
-
-        const touchModule = module as MonacoTouchModule;
-        ignoreTouchTargetRef.current = touchModule.Gesture.ignoreTarget;
-
-        const descriptionNode = dataRef.current.descriptionZone.node;
-        const ignoreTouchTarget = ignoreTouchTargetRef.current;
-        if (descriptionNode) {
-          // Re-register targets for an already-mounted description node so
-          // breadcrumb links, code details toggles, and code-region drag
-          // remain interactive once touch helpers are available.
-          descriptionIgnoredTouchTargetsRef.current.forEach(disposable =>
-            disposable.dispose()
-          );
-          descriptionIgnoredTouchTargetsRef.current = [];
-          if (ignoreTouchTarget) {
-            const interactiveElements =
-              descriptionNode.querySelectorAll<HTMLElement>(
-                'a, summary.code-details-summary, pre[role="region"]'
-              );
-            interactiveElements.forEach(element => {
-              descriptionIgnoredTouchTargetsRef.current.push(
-                ignoreTouchTarget(element)
-              );
-            });
-          }
-        }
-      })
-      .catch(() => {
-        ignoreTouchTargetRef.current = null;
-      });
-
-    return () => {
-      isDisposed = true;
-      ignoreTouchTargetRef.current = null;
-    };
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      clearDescriptionIgnoredTouchTargets();
-    };
   }, []);
 
   // runs every update to the editor and when the challenge is reset

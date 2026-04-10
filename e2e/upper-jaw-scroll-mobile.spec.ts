@@ -44,7 +44,7 @@ const getTouchPoint = async (
   return { x, y };
 };
 
-const dragWithHeldTouch = async (
+const dragWithTouchPointerEvents = async (
   page: Page,
   locator: Locator,
   options: {
@@ -65,21 +65,28 @@ const dragWithHeldTouch = async (
     yRatio: startYRatio
   });
 
-  const cdpSession = await page.context().newCDPSession(page);
-  await cdpSession.send('Input.dispatchTouchEvent', {
-    type: 'touchStart',
-    touchPoints: [{ x, y, id: 1 }]
+  await locator.dispatchEvent('pointerdown', {
+    pointerId: 1,
+    pointerType: 'touch',
+    isPrimary: true,
+    clientX: x,
+    clientY: y
   });
-  await cdpSession.send('Input.dispatchTouchEvent', {
-    type: 'touchMove',
-    touchPoints: [{ x: x + moveByX, y: y + moveByY, id: 1 }]
+  await locator.dispatchEvent('pointermove', {
+    pointerId: 1,
+    pointerType: 'touch',
+    isPrimary: true,
+    clientX: x + moveByX,
+    clientY: y + moveByY
   });
   await page.waitForTimeout(50);
-  await cdpSession.send('Input.dispatchTouchEvent', {
-    type: 'touchEnd',
-    touchPoints: []
+  await locator.dispatchEvent('pointerup', {
+    pointerId: 1,
+    pointerType: 'touch',
+    isPrimary: true,
+    clientX: x + moveByX,
+    clientY: y + moveByY
   });
-  await cdpSession.detach();
 };
 
 const expectScrollWhileHolding = async (page: Page) => {
@@ -94,7 +101,7 @@ const expectScrollWhileHolding = async (page: Page) => {
 
   const topBefore = await getTop();
 
-  await dragWithHeldTouch(page, firstParagraph, { moveByY: -120 });
+  await dragWithTouchPointerEvents(page, firstParagraph, { moveByY: -120 });
 
   const topDuringDrag = await getTop();
 
@@ -113,7 +120,7 @@ const expectUpperJawDragScroll = async (page: Page) => {
 
   const topBefore = await getTop();
 
-  await dragWithHeldTouch(page, upperJaw, {
+  await dragWithTouchPointerEvents(page, upperJaw, {
     startXRatio: 0.25,
     startYRatio: 0.55,
     moveByY: -140
@@ -186,9 +193,12 @@ test('breadcrumb links and example code dropdown are interactive on mobile', asy
   await expect(page).toHaveURL('/learn/responsive-web-design-v9');
 });
 
-test('example code can be dragged horizontally on mobile', async ({ page }) => {
+test('example code horizontal touch drag does not trigger vertical jaw scroll', async ({
+  page
+}) => {
   await openChallenge(page, challengeWithHorizontalExampleCodeUrl);
 
+  const firstParagraph = page.locator('#description p').first();
   const details = page.locator('#description details.code-details').first();
   const summary = details.locator('summary.code-details-summary');
   await expect(details).toBeVisible();
@@ -209,14 +219,18 @@ test('example code can be dragged horizontally on mobile', async ({ page }) => {
     overflowMetrics.clientWidth
   );
 
-  const scrollLeftBefore = await codeRegion.evaluate(el => el.scrollLeft);
-  await dragWithHeldTouch(page, codeRegion, {
+  const topBefore = await firstParagraph.evaluate(
+    el => el.getBoundingClientRect().top
+  );
+  await dragWithTouchPointerEvents(page, codeRegion, {
     startXRatio: 0.8,
     startYRatio: 0.5,
     moveByX: -120,
     moveByY: 0
   });
-  const scrollLeftAfter = await codeRegion.evaluate(el => el.scrollLeft);
+  const topAfter = await firstParagraph.evaluate(
+    el => el.getBoundingClientRect().top
+  );
 
-  expect(scrollLeftAfter).toBeGreaterThan(scrollLeftBefore + 10);
+  expect(Math.abs(topAfter - topBefore)).toBeLessThan(10);
 });
