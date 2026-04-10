@@ -4,9 +4,6 @@ import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
-import Portfolio from './components/portfolio';
-import Experience from './components/experience';
-
 import UsernameSettings from './components/username';
 import About from './components/about';
 import Internet from './components/internet';
@@ -51,7 +48,7 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
 };
 
 const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
-  const { portfolio, experience, username } = user;
+  const { username } = user;
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
@@ -62,10 +59,6 @@ const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
         <About user={user} setIsEditing={setIsEditing} />
         <Spacer size='m' />
         <Internet user={user} setIsEditing={setIsEditing} />
-        <Spacer size='m' />
-        <Portfolio portfolio={portfolio} />
-        <Spacer size='m' />
-        <Experience experience={experience || []} />
       </Modal.Body>
     </Modal>
   );
@@ -165,12 +158,14 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
         <PortfolioProjects
           portfolioProjects={portfolio}
           isPrivate={isSessionUser && !showPortfolio}
+          isSessionUser={isSessionUser}
         />
       ) : null}
       {showExperience || isSessionUser ? (
         <ExperienceDisplay
           experience={experience || []}
           isPrivate={isSessionUser && !showExperience}
+          isSessionUser={isSessionUser}
         />
       ) : null}
       {showCerts || isSessionUser ? (

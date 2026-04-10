@@ -24,6 +24,8 @@ import SectionHeader from '../../settings/section-header';
 import { updateMyPortfolio } from '../../../redux/settings/actions';
 
 type PortfolioProps = {
+  autoAdd?: boolean;
+  editItemId?: string | null;
   portfolio: PortfolioProjectData[];
   t: TFunction;
   updateMyPortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
@@ -54,9 +56,31 @@ const byId = (id: string) => (p: PortfolioProjectData) => p.id === id;
 const notById = (id: string) => (p: PortfolioProjectData) => p.id !== id;
 
 const PortfolioSettings = (props: PortfolioProps) => {
-  const { t, portfolio: initialPortfolio = [], updateMyPortfolio } = props;
-  const [portfolio, setPortfolio] = useState(initialPortfolio);
-  const [unsavedItemId, setUnsavedItemId] = useState<string | null>(null);
+  const {
+    t,
+    portfolio: initialPortfolio = [],
+    updateMyPortfolio,
+    autoAdd,
+    editItemId
+  } = props;
+  const isSingleItemMode = autoAdd || editItemId != null;
+
+  const getInitialState = () => {
+    if (autoAdd) {
+      const newItem = createEmptyPortfolioItem();
+      return {
+        portfolio: [newItem, ...initialPortfolio],
+        unsavedItemId: newItem.id
+      };
+    }
+    return { portfolio: initialPortfolio, unsavedItemId: null };
+  };
+  const initial = getInitialState();
+
+  const [portfolio, setPortfolio] = useState(initial.portfolio);
+  const [unsavedItemId, setUnsavedItemId] = useState<string | null>(
+    initial.unsavedItemId
+  );
   const [imageValidation, setImageValid] = useState<ProfileValidation>({
     state: 'success',
     message: ''
@@ -344,25 +368,35 @@ const PortfolioSettings = (props: PortfolioProps) => {
     );
   };
 
+  const itemsToRender = autoAdd
+    ? portfolio.filter(item => item.id === unsavedItemId)
+    : editItemId != null
+      ? portfolio.filter(item => item.id === editItemId)
+      : portfolio;
+
   return (
     <section id='portfolio-settings'>
-      <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
-      <FullWidthRow>
-        <p>{t('settings.share-projects')}</p>
-        <Spacer size='xs' />
-        <Button
-          block
-          size='large'
-          variant='primary'
-          disabled={unsavedItemId !== null}
-          onClick={handleAdd}
-          type='button'
-        >
-          {t('buttons.add-portfolio')}
-        </Button>
-      </FullWidthRow>
-      <Spacer size='l' />
-      {interleave(portfolio.map(renderPortfolio), () => (
+      {!isSingleItemMode && (
+        <>
+          <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
+          <FullWidthRow>
+            <p>{t('settings.share-projects')}</p>
+            <Spacer size='xs' />
+            <Button
+              block
+              size='large'
+              variant='primary'
+              disabled={unsavedItemId !== null}
+              onClick={handleAdd}
+              type='button'
+            >
+              {t('buttons.add-portfolio')}
+            </Button>
+          </FullWidthRow>
+          <Spacer size='l' />
+        </>
+      )}
+      {interleave(itemsToRender.map(renderPortfolio), () => (
         <>
           <Spacer size='m' />
           <hr />
