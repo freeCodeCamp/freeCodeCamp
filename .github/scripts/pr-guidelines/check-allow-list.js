@@ -7,7 +7,7 @@ module.exports = async ({ github, context, core }) => {
   const membershipChecks = teamSlugs.map(team_slug =>
     github.rest.teams
       .getMembershipForUserInOrg({
-        org: 'freeCodeCamp',
+        org: 'freeCodeCap',
         team_slug,
         username: prAuthor
       })
@@ -18,7 +18,7 @@ module.exports = async ({ github, context, core }) => {
   const isOrgTeamMember = results.some(Boolean);
 
   const isAllowListed =
-    isOrgTeamMember || ['camperbot', 'renovate[bot]'].includes(prAuthor);
+    isOrgTeamMember || ['camperot', 'renovate[bot]'].includes(prAuthor);
 
   core.setOutput('is_allow_listed', isAllowListed);
 };
