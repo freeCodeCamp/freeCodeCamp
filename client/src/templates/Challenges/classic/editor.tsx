@@ -79,6 +79,13 @@ const monacoModelFileMap = {
   reactTypes: 'react.d.ts'
 };
 
+type IgnoreTouchTarget = (element: HTMLElement) => { dispose: () => void };
+type MonacoTouchModule = {
+  Gesture: {
+    ignoreTarget: IgnoreTouchTarget;
+  };
+};
+
 export interface EditorProps {
   attempts: number;
   canFocus: boolean;
@@ -312,6 +319,10 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorState>(createInitialEditorState());
+  const ignoreTouchTargetRef = useRef<IgnoreTouchTarget | null>(null);
+  const descriptionIgnoredTouchTargetsRef = useRef<
+    Array<{ dispose: () => void }>
+  >([]);
   const [lowerJawContainer, setLowerJawContainer] =
     React.useState<HTMLDivElement | null>(null);
 
@@ -825,6 +836,30 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.descriptionZone.zoneId = changeAccessor.addZone(viewZone);
   };
 
+  function clearDescriptionIgnoredTouchTargets() {
+    descriptionIgnoredTouchTargetsRef.current.forEach(disposable =>
+      disposable.dispose()
+    );
+    descriptionIgnoredTouchTargetsRef.current = [];
+  }
+
+  function registerDescriptionIgnoredTouchTargets(root: HTMLElement) {
+    clearDescriptionIgnoredTouchTargets();
+
+    const ignoreTouchTarget = ignoreTouchTargetRef.current;
+    if (!ignoreTouchTarget) return;
+
+    const interactiveElements = root.querySelectorAll<HTMLElement>(
+      'a, summary.code-details-summary, pre[role="region"]'
+    );
+
+    interactiveElements.forEach(element => {
+      descriptionIgnoredTouchTargetsRef.current.push(
+        ignoreTouchTarget(element)
+      );
+    });
+  }
+
   function tryToExecuteChallenge() {
     props.executeChallenge();
   }
@@ -908,6 +943,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       Prism.hooks.add('complete', makePrismCollapsible);
     }
     Prism.highlightAllUnder(desc);
+    registerDescriptionIgnoredTouchTargets(domNode);
 
     // Since the description can be resized without React knowing about it, the
     // zone needs updating in response.
@@ -1319,6 +1355,45 @@ const Editor = (props: EditorProps): JSX.Element => {
   useEffect(() => {
     initTests(props.initialTests);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    // Monaco touch helpers are browser-only. Load lazily so SSR/type-check
+    // paths do not import this module.
+    if (typeof window === 'undefined') return;
+
+    let isDisposed = false;
+
+    void import('monaco-editor/esm/vs/base/browser/touch.js')
+      .then(module => {
+        if (isDisposed) return;
+
+        const touchModule = module as MonacoTouchModule;
+        ignoreTouchTargetRef.current = touchModule.Gesture.ignoreTarget;
+
+        const descriptionNode = dataRef.current.descriptionZone.node;
+        if (descriptionNode) {
+          // If the upper jaw already exists, register the interactive nodes now.
+          registerDescriptionIgnoredTouchTargets(descriptionNode);
+        }
+      })
+      .catch(() => {
+        ignoreTouchTargetRef.current = null;
+      });
+
+    return () => {
+      isDisposed = true;
+      ignoreTouchTargetRef.current = null;
+    };
+    // registerDescriptionIgnoredTouchTargets only uses refs, and this effect
+    // should run once on mount.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      clearDescriptionIgnoredTouchTargets();
+    };
   }, []);
 
   // runs every update to the editor and when the challenge is reset

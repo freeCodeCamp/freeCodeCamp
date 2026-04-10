@@ -44,7 +44,7 @@ const getTouchPoint = async (
   return { x, y };
 };
 
-const dragWithTouchPointerEvents = async (
+const dragWithHeldTouch = async (
   page: Page,
   locator: Locator,
   options: {
@@ -72,14 +72,19 @@ const dragWithTouchPointerEvents = async (
     clientX: x,
     clientY: y
   });
-  await locator.dispatchEvent('pointermove', {
-    pointerId: 1,
-    pointerType: 'touch',
-    isPrimary: true,
-    clientX: x + moveByX,
-    clientY: y + moveByY
-  });
-  await page.waitForTimeout(50);
+
+  const dragSteps = 6;
+  for (let step = 1; step <= dragSteps; step++) {
+    await locator.dispatchEvent('pointermove', {
+      pointerId: 1,
+      pointerType: 'touch',
+      isPrimary: true,
+      clientX: x + (moveByX * step) / dragSteps,
+      clientY: y + (moveByY * step) / dragSteps
+    });
+    await page.waitForTimeout(16);
+  }
+
   await locator.dispatchEvent('pointerup', {
     pointerId: 1,
     pointerType: 'touch',
@@ -101,7 +106,7 @@ const expectScrollWhileHolding = async (page: Page) => {
 
   const topBefore = await getTop();
 
-  await dragWithTouchPointerEvents(page, firstParagraph, { moveByY: -120 });
+  await dragWithHeldTouch(page, firstParagraph, { moveByY: -120 });
 
   const topDuringDrag = await getTop();
 
@@ -120,7 +125,7 @@ const expectUpperJawDragScroll = async (page: Page) => {
 
   const topBefore = await getTop();
 
-  await dragWithTouchPointerEvents(page, upperJaw, {
+  await dragWithHeldTouch(page, upperJaw, {
     startXRatio: 0.25,
     startYRatio: 0.55,
     moveByY: -140
@@ -193,7 +198,7 @@ test('breadcrumb links and example code dropdown are interactive on mobile', asy
   await expect(page).toHaveURL('/learn/responsive-web-design-v9');
 });
 
-test('example code horizontal touch drag does not trigger vertical jaw scroll', async ({
+test('example code horizontal gesture does not vertically scroll the upper jaw', async ({
   page
 }) => {
   await openChallenge(page, challengeWithHorizontalExampleCodeUrl);
@@ -222,7 +227,7 @@ test('example code horizontal touch drag does not trigger vertical jaw scroll', 
   const topBefore = await firstParagraph.evaluate(
     el => el.getBoundingClientRect().top
   );
-  await dragWithTouchPointerEvents(page, codeRegion, {
+  await dragWithHeldTouch(page, codeRegion, {
     startXRatio: 0.8,
     startYRatio: 0.5,
     moveByX: -120,

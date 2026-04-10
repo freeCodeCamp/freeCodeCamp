@@ -69,10 +69,13 @@ const createDomTree = () => {
       <div class="monaco-scrollable-element editor-scrollable"></div>
       <div class="editor-upper-jaw">
         <div class="description-container">
+          <nav>
+            <a href="/learn/responsive-web-design-v9">Responsive Web Design</a>
+          </nav>
           <p>paragraph</p>
           <details class="code-details" open>
             <summary class="code-details-summary">Example Code</summary>
-            <pre>example code</pre>
+            <pre role="region">example code</pre>
           </details>
         </div>
       </div>
@@ -85,6 +88,10 @@ const createDomTree = () => {
   );
   const upperJaw = document.querySelector('.editor-upper-jaw');
   const paragraph = document.querySelector('.description-container p');
+  const breadcrumbLink = document.querySelector('.description-container a');
+  const summary = document.querySelector(
+    '.editor-upper-jaw details.code-details summary.code-details-summary'
+  );
   const pre = document.querySelector(
     '.editor-upper-jaw details.code-details pre'
   );
@@ -94,6 +101,8 @@ const createDomTree = () => {
     !(scrollable instanceof HTMLElement) ||
     !(upperJaw instanceof HTMLElement) ||
     !(paragraph instanceof HTMLElement) ||
+    !(breadcrumbLink instanceof HTMLAnchorElement) ||
+    !(summary instanceof HTMLElement) ||
     !(pre instanceof HTMLElement)
   ) {
     throw new Error('Failed to construct test DOM');
@@ -102,7 +111,15 @@ const createDomTree = () => {
   Object.defineProperty(pre, 'scrollWidth', { value: 500, configurable: true });
   Object.defineProperty(pre, 'clientWidth', { value: 200, configurable: true });
 
-  return { monacoEditor, scrollable, upperJaw, paragraph, pre };
+  return {
+    monacoEditor,
+    scrollable,
+    upperJaw,
+    paragraph,
+    breadcrumbLink,
+    summary,
+    pre
+  };
 };
 
 describe('content widget event handling', () => {
@@ -149,7 +166,7 @@ describe('content widget event handling', () => {
     detachListeners();
   });
 
-  it('allows horizontal pre scrolling without forcing vertical wheel scroll', () => {
+  it('does not intercept gestures that begin in horizontal code regions', () => {
     const { monacoEditor, scrollable, upperJaw, pre } = createDomTree();
     const wheelEvents: WheelEvent[] = [];
     scrollable.addEventListener('wheel', e => {
@@ -165,13 +182,14 @@ describe('content widget event handling', () => {
 
     expect(wheelEvents).toHaveLength(0);
     expect(pointerMove.defaultPrevented).toBe(false);
-    expect(onParentPointerMove).not.toHaveBeenCalled();
+    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
 
     detachListeners();
   });
 
   it('treats non-scrollable pre drags as vertical gestures', () => {
     const { scrollable, upperJaw, pre } = createDomTree();
+    pre.removeAttribute('role');
     Object.defineProperty(pre, 'scrollWidth', {
       value: 200,
       configurable: true
@@ -192,6 +210,49 @@ describe('content widget event handling', () => {
 
     expect(wheelEvents).toHaveLength(1);
     expect(pointerMove.defaultPrevented).toBe(true);
+
+    detachListeners();
+  });
+
+  it('does not intercept breadcrumb taps', () => {
+    const { monacoEditor, scrollable, upperJaw, breadcrumbLink } =
+      createDomTree();
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
+    const detachListeners = attachContentWidgetEvents(upperJaw);
+
+    breadcrumbLink.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    const pointerMove = createPointerEvent('pointermove', 100, 140);
+    breadcrumbLink.dispatchEvent(pointerMove);
+
+    expect(wheelEvents).toHaveLength(0);
+    expect(pointerMove.defaultPrevented).toBe(false);
+    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
+
+    detachListeners();
+  });
+
+  it('does not intercept example-code summary taps', () => {
+    const { monacoEditor, scrollable, upperJaw, summary } = createDomTree();
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentPointerMove = vi.fn();
+    monacoEditor.addEventListener('pointermove', onParentPointerMove);
+    const detachListeners = attachContentWidgetEvents(upperJaw);
+
+    summary.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    const pointerMove = createPointerEvent('pointermove', 100, 140);
+    summary.dispatchEvent(pointerMove);
+
+    expect(wheelEvents).toHaveLength(0);
+    expect(pointerMove.defaultPrevented).toBe(false);
+    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
 
     detachListeners();
   });

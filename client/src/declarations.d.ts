@@ -37,3 +37,9 @@ declare var MathJax: {
 };
 
 declare module 'monaco-editor/esm/vs/base/common/platform.js';
+
+declare module 'monaco-editor/esm/vs/base/browser/touch.js' {
+  export const Gesture: {
+    ignoreTarget: (element: HTMLElement) => { dispose: () => void };
+  };
+}

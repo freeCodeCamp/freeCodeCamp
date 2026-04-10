@@ -13,6 +13,11 @@ interface TouchGestureState {
 
 const MOVE_THRESHOLD = 8;
 const TOUCH_VERTICAL_SCROLL_MULTIPLIER = 2.5;
+const INTERACTIVE_JAW_SELECTOR =
+  'a, summary.code-details-summary, pre[role="region"]';
+
+const isInteractiveTarget = (target: EventTarget | null): boolean =>
+  target instanceof Element && !!target.closest(INTERACTIVE_JAW_SELECTOR);
 
 const findHorizontalScroller = (
   target: EventTarget | null
@@ -87,11 +92,13 @@ export const attachContentWidgetEvents = (
   let touchState: TouchGestureState | null = null;
 
   const onContextMenu = (e: MouseEvent): void => {
+    if (isInteractiveTarget(e.target)) return;
     e.stopPropagation();
   };
 
   const onPointerDown = (e: PointerEvent): void => {
     if (e.pointerType !== 'touch') return;
+    if (isInteractiveTarget(e.target)) return;
 
     touchState = {
       source: 'pointer',
@@ -135,6 +142,7 @@ export const attachContentWidgetEvents = (
 
   const onTouchStart = (e: TouchEvent): void => {
     if (touchState?.source === 'pointer') return;
+    if (isInteractiveTarget(e.target)) return;
 
     const touch = e.changedTouches.item(0);
     if (!touch) return;
