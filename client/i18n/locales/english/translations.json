@@ -339,6 +339,7 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
