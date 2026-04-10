@@ -40,6 +40,29 @@ const createPointerEvent = (
   return event as PointerEvent;
 };
 
+const createTouchEvent = (
+  type: 'touchstart' | 'touchmove' | 'touchend' | 'touchcancel',
+  x: number,
+  y: number,
+  identifier = 7
+): TouchEvent => {
+  const touch = {
+    identifier,
+    clientX: x,
+    clientY: y
+  };
+  const event = new Event(type, {
+    bubbles: true,
+    cancelable: true
+  });
+  Object.defineProperty(event, 'changedTouches', {
+    value: {
+      item: () => touch
+    }
+  });
+  return event as TouchEvent;
+};
+
 const createDomTree = () => {
   document.body.innerHTML = `
     <div class="monaco-editor">
@@ -255,6 +278,47 @@ describe('content widget event handling', () => {
     );
 
     expect(wheelEvents).toHaveLength(0);
+
+    detachListeners();
+  });
+
+  it('supports touch events when pointer events are not emitted', () => {
+    const { monacoEditor, scrollable, upperJaw, paragraph } = createDomTree();
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const onParentTouchMove = vi.fn();
+    monacoEditor.addEventListener('touchmove', onParentTouchMove);
+    const detachListeners = attachContentWidgetEvents(upperJaw);
+
+    paragraph.dispatchEvent(createTouchEvent('touchstart', 100, 100, 11));
+    const touchMove = createTouchEvent('touchmove', 100, 140, 11);
+    paragraph.dispatchEvent(touchMove);
+    paragraph.dispatchEvent(createTouchEvent('touchend', 100, 140, 11));
+
+    expect(wheelEvents).toHaveLength(1);
+    expect(wheelEvents[0]?.deltaY).toBe(100);
+    expect(touchMove.defaultPrevented).toBe(true);
+    expect(onParentTouchMove).not.toHaveBeenCalled();
+
+    detachListeners();
+  });
+
+  it('keeps pointer gesture state when compatibility touch events also fire', () => {
+    const { scrollable, upperJaw, paragraph } = createDomTree();
+    const wheelEvents: WheelEvent[] = [];
+    scrollable.addEventListener('wheel', e => {
+      wheelEvents.push(e);
+    });
+    const detachListeners = attachContentWidgetEvents(upperJaw);
+
+    paragraph.dispatchEvent(createPointerEvent('pointerdown', 100, 100));
+    paragraph.dispatchEvent(createTouchEvent('touchstart', 95, 95, 22));
+    paragraph.dispatchEvent(createPointerEvent('pointermove', 100, 140));
+
+    expect(wheelEvents).toHaveLength(1);
+    expect(wheelEvents[0]?.deltaY).toBe(100);
 
     detachListeners();
   });
