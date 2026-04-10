@@ -1346,10 +1346,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   }, []);
 
   useEffect(() => {
+    // Monaco's touch helpers rely on browser globals, so skip SSR.
     if (typeof window === 'undefined') return;
 
     let isDisposed = false;
 
+    // Load touch helpers lazily to avoid pulling this browser-only module into
+    // static rendering / type-check paths.
     void import('monaco-editor/esm/vs/base/browser/touch.js')
       .then(module => {
         if (isDisposed) return;
@@ -1360,6 +1363,9 @@ const Editor = (props: EditorProps): JSX.Element => {
         const descriptionNode = dataRef.current.descriptionZone.node;
         const ignoreTouchTarget = ignoreTouchTargetRef.current;
         if (descriptionNode) {
+          // Re-register targets for an already-mounted description node so
+          // breadcrumb links, code details toggles, and code-region drag
+          // remain interactive once touch helpers are available.
           descriptionIgnoredTouchTargetsRef.current.forEach(disposable =>
             disposable.dispose()
           );
