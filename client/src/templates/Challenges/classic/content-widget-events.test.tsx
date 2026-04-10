@@ -166,7 +166,7 @@ describe('content widget event handling', () => {
     detachListeners();
   });
 
-  it('does not intercept gestures that begin in horizontal code regions', () => {
+  it('does not force vertical wheel scroll for horizontal code-region drags', () => {
     const { monacoEditor, scrollable, upperJaw, pre } = createDomTree();
     const wheelEvents: WheelEvent[] = [];
     scrollable.addEventListener('wheel', e => {
@@ -182,7 +182,7 @@ describe('content widget event handling', () => {
 
     expect(wheelEvents).toHaveLength(0);
     expect(pointerMove.defaultPrevented).toBe(false);
-    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
+    expect(onParentPointerMove).not.toHaveBeenCalled();
 
     detachListeners();
   });
@@ -214,7 +214,7 @@ describe('content widget event handling', () => {
     detachListeners();
   });
 
-  it('does not intercept breadcrumb taps', () => {
+  it('keeps breadcrumb touches from bubbling to parent handlers', () => {
     const { monacoEditor, scrollable, upperJaw, breadcrumbLink } =
       createDomTree();
     const wheelEvents: WheelEvent[] = [];
@@ -231,12 +231,12 @@ describe('content widget event handling', () => {
 
     expect(wheelEvents).toHaveLength(0);
     expect(pointerMove.defaultPrevented).toBe(false);
-    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
+    expect(onParentPointerMove).not.toHaveBeenCalled();
 
     detachListeners();
   });
 
-  it('does not intercept example-code summary taps', () => {
+  it('keeps example-code summary touches from bubbling to parent handlers', () => {
     const { monacoEditor, scrollable, upperJaw, summary } = createDomTree();
     const wheelEvents: WheelEvent[] = [];
     scrollable.addEventListener('wheel', e => {
@@ -252,7 +252,7 @@ describe('content widget event handling', () => {
 
     expect(wheelEvents).toHaveLength(0);
     expect(pointerMove.defaultPrevented).toBe(false);
-    expect(onParentPointerMove).toHaveBeenCalledTimes(1);
+    expect(onParentPointerMove).not.toHaveBeenCalled();
 
     detachListeners();
   });

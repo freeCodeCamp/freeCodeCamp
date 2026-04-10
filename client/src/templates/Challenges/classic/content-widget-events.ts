@@ -11,6 +11,11 @@ interface TouchGestureState {
   horizontalScroller: HTMLElement | null;
 }
 
+interface InteractiveTouchState {
+  source: TouchSource;
+  pointerId: number;
+}
+
 const MOVE_THRESHOLD = 8;
 const TOUCH_VERTICAL_SCROLL_MULTIPLIER = 2.5;
 const INTERACTIVE_JAW_SELECTOR =
@@ -90,6 +95,7 @@ export const attachContentWidgetEvents = (
   upperJawNode: HTMLElement
 ): (() => void) => {
   let touchState: TouchGestureState | null = null;
+  let interactiveTouchState: InteractiveTouchState | null = null;
 
   const onContextMenu = (e: MouseEvent): void => {
     if (isInteractiveTarget(e.target)) return;
@@ -98,7 +104,14 @@ export const attachContentWidgetEvents = (
 
   const onPointerDown = (e: PointerEvent): void => {
     if (e.pointerType !== 'touch') return;
-    if (isInteractiveTarget(e.target)) return;
+    if (isInteractiveTarget(e.target)) {
+      interactiveTouchState = {
+        source: 'pointer',
+        pointerId: e.pointerId
+      };
+      e.stopPropagation();
+      return;
+    }
 
     touchState = {
       source: 'pointer',
@@ -113,6 +126,15 @@ export const attachContentWidgetEvents = (
   };
 
   const onPointerMove = (e: PointerEvent): void => {
+    if (
+      interactiveTouchState &&
+      interactiveTouchState.source === 'pointer' &&
+      e.pointerId === interactiveTouchState.pointerId
+    ) {
+      e.stopPropagation();
+      return;
+    }
+
     if (
       e.pointerType !== 'touch' ||
       !touchState ||
@@ -129,6 +151,16 @@ export const attachContentWidgetEvents = (
 
   const onPointerUp = (e: PointerEvent): void => {
     if (
+      interactiveTouchState &&
+      interactiveTouchState.source === 'pointer' &&
+      e.pointerId === interactiveTouchState.pointerId
+    ) {
+      interactiveTouchState = null;
+      e.stopPropagation();
+      return;
+    }
+
+    if (
       !touchState ||
       touchState.source !== 'pointer' ||
       e.pointerId !== touchState.pointerId
@@ -142,10 +174,18 @@ export const attachContentWidgetEvents = (
 
   const onTouchStart = (e: TouchEvent): void => {
     if (touchState?.source === 'pointer') return;
-    if (isInteractiveTarget(e.target)) return;
 
     const touch = e.changedTouches.item(0);
     if (!touch) return;
+
+    if (isInteractiveTarget(e.target)) {
+      interactiveTouchState = {
+        source: 'touch',
+        pointerId: touch.identifier
+      };
+      e.stopPropagation();
+      return;
+    }
 
     touchState = {
       source: 'touch',
@@ -160,6 +200,17 @@ export const attachContentWidgetEvents = (
   };
 
   const onTouchMove = (e: TouchEvent): void => {
+    if (interactiveTouchState?.source === 'touch') {
+      const interactiveTouch = e.changedTouches.item(0);
+      if (
+        interactiveTouch &&
+        interactiveTouch.identifier === interactiveTouchState.pointerId
+      ) {
+        e.stopPropagation();
+        return;
+      }
+    }
+
     if (!touchState || touchState.source !== 'touch') return;
 
     const touch = e.changedTouches.item(0);
@@ -171,6 +222,18 @@ export const attachContentWidgetEvents = (
   };
 
   const onTouchEnd = (e: TouchEvent): void => {
+    if (interactiveTouchState?.source === 'touch') {
+      const interactiveTouch = e.changedTouches.item(0);
+      if (
+        interactiveTouch &&
+        interactiveTouch.identifier === interactiveTouchState.pointerId
+      ) {
+        interactiveTouchState = null;
+        e.stopPropagation();
+        return;
+      }
+    }
+
     if (!touchState || touchState.source !== 'touch') return;
 
     const touch = e.changedTouches.item(0);
