@@ -20,6 +20,7 @@ import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
 import { ProfileCompleteness } from './components/profile-completeness';
+import { ProfilePrivacy } from './components/profile-privacy';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -96,6 +97,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
   const {
     profileUI: {
+      isLocked,
       showCerts,
       showHeatMap,
       showPoints,
@@ -137,24 +139,49 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
           website={user.website}
           portfolio={portfolio}
           experience={experience || []}
+          isLocked={isLocked}
         />
       )}
+      {isSessionUser && <ProfilePrivacy />}
       <Camper
         user={user}
         isSessionUser={isSessionUser}
         setIsEditing={setIsEditing}
       />
-      {showPoints ? <Stats points={points} calendar={calendar} /> : null}
-      {showHeatMap ? <HeatMap calendar={calendar} /> : null}
-      {showPortfolio ? (
-        <PortfolioProjects portfolioProjects={portfolio} />
+      {showPoints || isSessionUser ? (
+        <Stats
+          points={points}
+          calendar={calendar}
+          isPrivate={isSessionUser && !showPoints}
+        />
       ) : null}
-      {showExperience ? (
-        <ExperienceDisplay experience={experience || []} />
+      {showHeatMap || isSessionUser ? (
+        <HeatMap
+          calendar={calendar}
+          isPrivate={isSessionUser && !showHeatMap}
+        />
       ) : null}
-      {showCerts ? <Certifications user={user} /> : null}
-      {showTimeLine ? (
-        <Timeline completedMap={completedChallenges} username={username} />
+      {showPortfolio || isSessionUser ? (
+        <PortfolioProjects
+          portfolioProjects={portfolio}
+          isPrivate={isSessionUser && !showPortfolio}
+        />
+      ) : null}
+      {showExperience || isSessionUser ? (
+        <ExperienceDisplay
+          experience={experience || []}
+          isPrivate={isSessionUser && !showExperience}
+        />
+      ) : null}
+      {showCerts || isSessionUser ? (
+        <Certifications user={user} isPrivate={isSessionUser && !showCerts} />
+      ) : null}
+      {showTimeLine || isSessionUser ? (
+        <Timeline
+          completedMap={completedChallenges}
+          username={username}
+          isPrivate={isSessionUser && !showTimeLine}
+        />
       ) : null}
       <Spacer size='m' />
     </>

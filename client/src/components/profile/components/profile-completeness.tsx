@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '@freecodecamp/ui';
 import isURL from 'validator/lib/isURL';
 import type {
   PortfolioProjectData,
@@ -24,6 +23,7 @@ interface ProfileCompletenessProps {
   website: string;
   portfolio: PortfolioProjectData[];
   experience: ExperienceData[];
+  isLocked: boolean;
 }
 
 interface CompletionItem {
@@ -56,14 +56,10 @@ export const ProfileCompleteness = ({
   bluesky,
   website,
   portfolio,
-  experience
+  experience,
+  isLocked
 }: ProfileCompletenessProps): JSX.Element | null => {
   const { t } = useTranslation();
-
-  // Collapse by default if core profile items (name, picture, about) are complete
-  const coreItemsComplete =
-    hasValue(name) && isValidPicture(picture) && hasValue(about);
-  const [isExpanded, setIsExpanded] = useState(!coreItemsComplete);
 
   const completionItems: CompletionItem[] = [
     {
@@ -112,6 +108,12 @@ export const ProfileCompleteness = ({
       translationKey: 'profile.completeness.experience',
       isComplete: experience.length > 0,
       weight: 10
+    },
+    {
+      key: 'privacy',
+      translationKey: 'profile.completeness.privacy',
+      isComplete: !isLocked,
+      weight: 10
     }
   ];
 
@@ -123,6 +125,8 @@ export const ProfileCompleteness = ({
     .filter(item => item.isComplete)
     .reduce((sum, item) => sum + item.weight, 0);
   const percentage = Math.round((completedWeight / totalWeight) * 100);
+
+  const [isExpanded, setIsExpanded] = useState(percentage < 100);
 
   // Don't render if profile is complete
   if (percentage === 100) {
@@ -140,48 +144,59 @@ export const ProfileCompleteness = ({
           aria-expanded={isExpanded}
           type='button'
         >
+          <h2 className='profile-completeness-title'>
+            {t('profile.completeness.title')}
+          </h2>
+          {!isExpanded && (
+            <span className='profile-completeness-percentage'>
+              {percentage}%
+            </span>
+          )}
           <span
             className={`profile-completeness-chevron ${isExpanded ? 'expanded' : ''}`}
             aria-hidden='true'
           >
             <DropDown />
           </span>
-          <div className='profile-completeness-bar-container'>
-            <div
-              className='profile-completeness-bar-fill'
-              data-testid='profile-completeness-progress'
-              style={{ width: `${percentage}%` }}
-            />
-          </div>
-          <span className='profile-completeness-text'>
-            {t('profile.completeness.heading', { percentage })}
-          </span>
         </button>
         {isExpanded && (
-          <ul className='profile-completeness-checklist'>
-            {completionItems.map(item => (
-              <li
-                key={item.key}
-                className={
-                  item.isComplete
-                    ? 'completeness-item-complete'
-                    : 'completeness-item-incomplete'
-                }
-              >
-                <span className='completeness-checkbox' aria-hidden='true'>
-                  {item.isComplete ? (
-                    <GreenPass hushScreenReaderText />
-                  ) : (
-                    <GreenNotCompleted hushScreenReaderText />
-                  )}
-                </span>
-                {t(item.translationKey)}
-              </li>
-            ))}
-          </ul>
+          <div className='profile-completeness-expanded'>
+            <div className='profile-completeness-bar-row'>
+              <div className='profile-completeness-bar-container'>
+                <div
+                  className='profile-completeness-bar-fill'
+                  data-testid='profile-completeness-progress'
+                  style={{ width: `${percentage}%` }}
+                />
+              </div>
+              <span className='profile-completeness-progress-text'>
+                {t('profile.completeness.progress', { percentage })}
+              </span>
+            </div>
+            <ul className='profile-completeness-checklist'>
+              {completionItems.map(item => (
+                <li
+                  key={item.key}
+                  className={
+                    item.isComplete
+                      ? 'completeness-item-complete'
+                      : 'completeness-item-incomplete'
+                  }
+                >
+                  <span className='completeness-checkbox' aria-hidden='true'>
+                    {item.isComplete ? (
+                      <GreenPass hushScreenReaderText />
+                    ) : (
+                      <GreenNotCompleted hushScreenReaderText />
+                    )}
+                  </span>
+                  {t(item.translationKey)}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
-      <Spacer size='m' />
     </FullWidthRow>
   );
 };

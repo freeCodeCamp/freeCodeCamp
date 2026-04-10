@@ -8,6 +8,7 @@ import './experience-display.css';
 
 interface ExperienceDisplayProps {
   experience: ExperienceData[];
+  isPrivate?: boolean;
 }
 
 const formatDate = (dateString: string): string => {
@@ -18,7 +19,8 @@ const formatDate = (dateString: string): string => {
 };
 
 export const ExperienceDisplay = ({
-  experience
+  experience,
+  isPrivate
 }: ExperienceDisplayProps): JSX.Element | null => {
   const { t } = useTranslation();
 
@@ -49,7 +51,14 @@ export const ExperienceDisplay = ({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.experience.heading')}</h2>
+        <div className='profile-section-heading'>
+          <h2>{t('profile.experience.heading')}</h2>
+          {isPrivate && (
+            <span className='profile-private-badge'>
+              {t('buttons.private')}
+            </span>
+          )}
+        </div>
         <Spacer size='s' />
         {interleave(experienceItems, index => (
           <hr key={`separator-${index}`} />

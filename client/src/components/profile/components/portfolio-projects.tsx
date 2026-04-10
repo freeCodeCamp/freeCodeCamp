@@ -7,10 +7,12 @@ import { FullWidthRow } from '../../helpers';
 
 interface PortfolioProjectsProps {
   portfolioProjects: PortfolioProjectData[];
+  isPrivate?: boolean;
 }
 
 export const PortfolioProjects = ({
-  portfolioProjects
+  portfolioProjects,
+  isPrivate
 }: PortfolioProjectsProps): JSX.Element | null => {
   const { t } = useTranslation();
   if (!portfolioProjects.length) {
@@ -19,7 +21,14 @@ export const PortfolioProjects = ({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.projects')}</h2>
+        <div className='profile-section-heading'>
+          <h2>{t('profile.projects')}</h2>
+          {isPrivate && (
+            <span className='profile-private-badge'>
+              {t('buttons.private')}
+            </span>
+          )}
+        </div>
         <Spacer size='s' />
         {portfolioProjects.map(
           ({ title, url, image, description, id }, index) => (
