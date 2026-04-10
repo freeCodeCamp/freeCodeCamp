@@ -66,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "リセット",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "ステップをリセット",
     "help": "ヘルプ",
     "get-help": "助けを求める",
@@ -381,6 +382,10 @@
       "confirm": "新しいメールアドレスの確認",
       "weekly": "Quincy からのメールを毎週受け取る"
     },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+    },
     "honesty": {
       "p1": "検証機能付き認定証を取得する前に、以下の学問的誠実性誓約に同意する必要があります:",
       "p2": "「私は、盗作とは他人の作品をコピーして、原作者を明示することなくまるで自分の作品であるかのように提示することであると理解しています。」",
@@ -533,6 +538,18 @@
     "syntax-error": "コードにエラーがあるためテストを実行できない状態です。コードを修正して再度お試しください。",
     "indentation-error": "コードにインデントエラーがあります。場合によっては、有効なコードブロックを形成するため新しい行に <code>pass</code> キーワードを追加する必要があるかもしれません。",
     "sign-in-save": "サインインして進行状況を保存",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "回答をダウンロード",
     "download-results": "結果をダウンロード",
     "percent-complete": "{{percent}}% 完了",
@@ -899,8 +916,8 @@
   "search": {
     "label": "検索",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "{{searchQuery}} のすべての結果を見る",
     "try": "何かお探しですか？このページの検索バーを試してみてください。",
@@ -1037,6 +1054,7 @@
     "updated-themes": "テーマを更新しました",
     "keyboard-shortcut-updated": "キーボードショートカット設定を更新しました",
     "subscribe-to-quincy-updated": "Quincy からのメールの購読設定を更新しました",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "ポートフォリオを更新しました",
     "experience-updated": "We have updated your experience",
     "email-invalid": "メールアドレスの形式が無効です",
