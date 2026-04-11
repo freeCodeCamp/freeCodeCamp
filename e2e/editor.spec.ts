@@ -168,11 +168,15 @@ test.describe('Editor theme if the system theme is light', () => {
     }) => {
       await setTheme(request, 'default');
       await page.goto(testPage);
-      // Open the nav menu and toggle the theme
+      // Open the nav menu and toggle the theme. We use a toPass block to retry
+      // clicking the menu button since it might be unresponsive prior to hydration.
       const menuButton = page.getByRole('button', { name: 'Menu' });
-      await menuButton.click();
       const menu = page.getByRole('list', { name: 'Menu' });
-      await expect(menu).toBeVisible();
+
+      await expect(async () => {
+        await menuButton.click();
+        await expect(menu).toBeVisible();
+      }).toPass();
 
       const toggle = page.getByRole('button', { name: 'Night Mode' });
       await expect(toggle).toBeVisible();
