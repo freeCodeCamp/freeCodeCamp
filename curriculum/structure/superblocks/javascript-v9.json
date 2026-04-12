@@ -362,6 +362,7 @@
           "blocks": [
             "lecture-understanding-asynchronous-programming",
             "workshop-fcc-authors-page",
+            "workshop-refactor-fcc-authors-page",
             "lab-fcc-forum-leaderboard",
             "review-asynchronous-javascript",
             "quiz-asynchronous-javascript"

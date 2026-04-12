@@ -5856,6 +5856,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-refactor-fcc-authors-page": {
+        "title": "Refactor the fCC Authors Page",
+        "intro": ["Refactor the fCC Authors Page", ""]
       }
     }
   },
