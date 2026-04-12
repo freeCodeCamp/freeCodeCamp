@@ -60,6 +60,7 @@ import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
 import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
+import LearnAssistant from '../learn-assistant';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -250,7 +251,6 @@ function DefaultLayout({
               type='font/woff'
             />
           )}
-
           <link
             as='font'
             crossOrigin='anonymous'
@@ -315,6 +315,7 @@ function DefaultLayout({
           )}
           {fetchState.complete && children}
         </div>
+        <LearnAssistant />
         {showFooter && <Footer />}
       </div>
     );
