@@ -392,7 +392,6 @@ figcaption.caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   gap: 20px;
 }
 
@@ -406,12 +405,17 @@ figcaption.caption {
   .landing-top-two-column {
     flex-direction: row;
     align-items: center;
+    width: min(100%, 1300px);
+    margin-inline: auto;
   }
 
   .landing-top-two-column .landing-top-left {
     flex: 0 0 50%;
     max-width: 50%;
     z-index: 1;
+    padding-left: 0px;
+    padding-right: 15px;
+    margin-left: -15px;
   }
 
   .landing-top-two-column .landing-top-right {
@@ -419,11 +423,17 @@ figcaption.caption {
     min-width: 0;
     overflow: visible;
   }
+
+  .certification-section,
+  .faq-section {
+    width: min(100%, 1300px);
+    margin-inline: auto;
+  }
 }
 
 .landing-top .landing-top-two-column figure,
 .landing-top .landing-top-two-column figure img {
-  margin-left: -100px;
+  margin-left: -120px;
   margin-top: 0px;
   height: 550px;
   width: 850px;
@@ -444,4 +454,29 @@ figcaption.caption {
   color: var(--quaternary-color);
   font-weight: normal;
   text-align: center;
+}
+
+/* Landing Catalog Styles */
+.landing-catalog-container {
+  background-color: var(--primary-background);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.landing-catalog-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  gap: 2rem;
+}
+
+.landing-catalog .catalog-item.catalog-item-see-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  text-align: center;
+  fill: var(--secondary-color);
+  flex-direction: row;
+  gap: 10px;
 }

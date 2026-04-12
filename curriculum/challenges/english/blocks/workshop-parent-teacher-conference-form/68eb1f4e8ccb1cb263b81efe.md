@@ -68,7 +68,7 @@ assert.strictEqual(style?.fontSize, '1.2rem')
 
       <fieldset>
         <legend>Parent/Guardian Information</legend>
-        <label for="parent-name">Parent/Guardian Information: </label>
+        <label for="parent-name">Parent/Guardian Name: </label>
         <input
             type="text"
             name="parent-name"
@@ -136,7 +136,6 @@ body {
 }
 
 --fcc-editable-region--
-
 
 --fcc-editable-region--
 ```

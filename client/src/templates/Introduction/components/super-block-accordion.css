@@ -98,6 +98,7 @@ button .block-header-button-text {
   justify-content: space-between;
   font-weight: normal;
   gap: 10px;
+  color: var(--primary-text);
 }
 
 .super-block-accordion .module-button-left,
@@ -348,5 +349,15 @@ button .block-header-button-text {
   }
   .super-block-benefits svg {
     margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .super-block-accordion .block-label {
+    margin-inline-start: auto;
+    margin-inline-end: 10px;
+  }
+  .super-block-accordion .block-header:has(.block-label-cert-project) {
+    padding-inline-end: 0;
   }
 }

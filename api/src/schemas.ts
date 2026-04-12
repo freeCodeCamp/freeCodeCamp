@@ -24,12 +24,14 @@ export { updateMyAbout } from './schemas/settings/update-my-about.js';
 export { confirmEmail } from './schemas/settings/confirm-email.js';
 export { updateMyClassroomMode } from './schemas/settings/update-my-classroom-mode.js';
 export { updateMyEmail } from './schemas/settings/update-my-email.js';
+export { updateMyExperience } from './schemas/settings/update-my-experience.js';
 export { updateMyHonesty } from './schemas/settings/update-my-honesty.js';
 export { updateMyKeyboardShortcuts } from './schemas/settings/update-my-keyboard-shortcuts.js';
 export { updateMyPortfolio } from './schemas/settings/update-my-portfolio.js';
 export { updateMyPrivacyTerms } from './schemas/settings/update-my-privacy-terms.js';
 export { updateMyProfileUI } from './schemas/settings/update-my-profile-ui.js';
 export { updateMyQuincyEmail } from './schemas/settings/update-my-quincy-email.js';
+export { updateSocrates } from './schemas/settings/update-socrates.js';
 export { updateMySocials } from './schemas/settings/update-my-socials.js';
 export { updateMyTheme } from './schemas/settings/update-my-theme.js';
 export { updateMyUsername } from './schemas/settings/update-my-username.js';
@@ -38,6 +40,7 @@ export {
   deleteMyAccount,
   deleteUser
 } from './schemas/user/delete-my-account.js';
+export { askSocrates } from './schemas/socrates/ask-socrates.js';
 export { deleteUserToken } from './schemas/user/delete-user-token.js';
 export { getSessionUser } from './schemas/user/get-session-user.js';
 export { postMsUsername } from './schemas/user/post-ms-username.js';
@@ -49,3 +52,4 @@ export {
   getUserExamEnvironmentToken
 } from './schemas/user/exam-environment-token.js';
 export { sentryPostEvent } from './schemas/sentry/event.js';
+export { signout } from './schemas/signout/signout.js';

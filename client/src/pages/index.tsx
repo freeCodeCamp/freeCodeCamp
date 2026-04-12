@@ -6,6 +6,7 @@ import { Loader } from '../components/helpers';
 import LandingTop from '../components/landing/components/landing-top';
 import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
+import LandingCatalog from '../components/landing/components/landing-catalog';
 import Faq from '../components/landing/components/faq';
 import Benefits from '../components/landing/components/benefits';
 import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
@@ -22,6 +23,7 @@ const Landing = () => (
     <Benefits />
     <Testimonials />
     <Certifications />
+    <LandingCatalog />
     <Faq />
   </main>
 );

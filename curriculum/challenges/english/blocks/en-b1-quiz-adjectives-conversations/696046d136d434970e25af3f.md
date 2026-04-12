@@ -1,0 +1,513 @@
+---
+id: 696046d136d434970e25af3f
+title: Using Adjectives in Conversations Quiz
+challengeType: 8
+dashedName: en-b1-quiz-adjectives-conversations
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of adjectives, demonstratives, comparisons, and descriptive language.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which of the following means to finish or complete something?
+
+#### --distractors--
+
+`To wrap down`
+
+---
+
+`To wrap with`
+
+---
+
+`To wrap off`
+
+#### --answer--
+
+`To wrap up`
+
+### --question--
+
+#### --text--
+
+What do you describe as `existing`?
+
+#### --distractors--
+
+Something planned for the future
+
+---
+
+Something recently deleted
+
+---
+
+Something temporary
+
+#### --answer--
+
+Something that already exists
+
+### --question--
+
+#### --text--
+
+You want to refer to specific items that are not close, so you say: `Bring BLANK boxes into the office`.
+
+#### --distractors--
+
+`this`
+
+---
+
+`that`
+
+---
+
+`these`
+
+#### --answer--
+
+`those`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. How many components does Sarah need this time? <!-- (quiz audio) Sarah: We're actually looking for quite a few of those. They're crucial for our new design. Last time, we ordered twenty. This time we might need double that. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_19-1.mp3",
+    "startTimestamp": 13.5,
+    "finishTimestamp": 21.2
+  },
+  "transcript": [
+    {
+      "character": "Sarah",
+      "text": "We're actually looking for quite a few of those. They're crucial for our new design. Last time, we ordered twenty. This time we might need double that."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She doesn't mention this
+
+---
+
+10
+
+---
+
+20
+
+#### --answer--
+
+40
+
+### --question--
+
+#### --text--
+
+What's the difference between `quite a few` and `many`?
+
+#### --distractors--
+
+They have exactly the same meaning.
+
+---
+
+`Quite a few` refers to people only, while `many` refers to objects only.
+
+---
+
+`Quite a few` means almost none, while `many` means only a small number.
+
+#### --answer--
+
+`Quite a few` suggests a surprisingly large number, while `many` is more neutral.
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to mean something is very important or essential for success?
+
+#### --distractors--
+
+`This feature is crucial on performance.`
+
+---
+
+`This feature is crucial at performance.`
+
+---
+
+`This feature is crucial with performance.`
+
+#### --answer--
+
+`This feature is crucial for performance.`
+
+### --question--
+
+#### --text--
+
+What is the correct direct comparison?
+
+#### --distractors--
+
+`Twice long than`
+
+---
+
+`Twice longer as`
+
+---
+
+`Double long than`
+
+#### --answer--
+
+`Twice as long as`
+
+### --question--
+
+#### --text--
+
+What does `in stock` mean?
+
+#### --distractors--
+
+Something is reserved for testing
+
+---
+
+Something is no longer produced
+
+---
+
+Something is damaged
+
+#### --answer--
+
+Something is currently available
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`Sufficient` means enough to meet a need.
+
+---
+
+`Cost-effective` means giving good results without high cost.
+
+---
+
+`Fast-evolving` means changing quickly.
+
+#### --answer--
+
+`Robust` means weak and easily broken.
+
+### --question--
+
+#### --text--
+
+What does `to draft` mean?
+
+#### --distractors--
+
+To delete a document
+
+---
+
+To publish a final version
+
+---
+
+To translate a text
+
+#### --answer--
+
+To create an early version
+
+### --question--
+
+#### --text--
+
+Which of the following means introducing original and creative ideas that improve how things are done?
+
+#### --distractors--
+
+`Flexible`
+
+---
+
+`Sustainable`
+
+---
+
+`Adaptable`
+
+#### --answer--
+
+`Innovative`
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`Think about these features are how effective.`
+
+---
+
+`Think about how are these features effective.`
+
+---
+
+`Think about these features how effective are.`
+
+#### --answer--
+
+`Think about how effective these features are.`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. How does Jake describe GuardianTech? <!-- (quiz audio) Jake: GuardianTech isn't just helpful. It's essential for protecting against the wide array of digital threats facing startups today. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_19-2.mp3",
+    "startTimestamp": 33.1,
+    "finishTimestamp": 41.1
+  },
+  "transcript": [
+    {
+      "character": "Jake",
+      "text": "GuardianTech isn't just helpful. It's essential for protecting against the wide array of digital threats facing startups today."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+It is a bit helpful, but not really necessary for most companies.
+
+---
+
+It is somewhat useful, although startups could easily manage without it.
+
+---
+
+It is not helpful at all.
+
+#### --answer--
+
+It is absolutely necessary for protection.
+
+### --question--
+
+#### --text--
+
+What does a `wide array` mean?
+
+#### --distractors--
+
+A small collection
+
+---
+
+A limited option
+
+---
+
+A random choice
+
+#### --answer--
+
+A broad selection
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT an example of a `user-friendly app`?
+
+#### --distractors--
+
+An app with clear navigation
+
+---
+
+An app that is easy to understand
+
+---
+
+An app with simple instructions
+
+#### --answer--
+
+An app that confuses users
+
+### --question--
+
+#### --text--
+
+What do you describe as `long-term`?
+
+#### --distractors--
+
+Something temporary
+
+---
+
+Something that lasts only one day
+
+---
+
+Something completed immediately
+
+#### --answer--
+
+Something that continues over a long period of time
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does James mention about the new version? <!-- (quiz audio) James: The new version not only looks better but also works better. It's faster and responds quicker when we do things on it. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_19-3.mp3",
+    "startTimestamp": 10.6,
+    "finishTimestamp": 17
+  },
+  "transcript": [
+    {
+      "character": "James",
+      "text": "The new version not only looks better but also works better. It's faster and responds quicker when we do things on it."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+Only the design improved
+
+---
+
+Only performance improved
+
+---
+
+Nothing changed significantly
+
+#### --answer--
+
+Both appearance and performance improved
+
+### --question--
+
+#### --text--
+
+What does `by itself` mean?
+
+#### --distractors--
+
+With team support
+
+---
+
+With extra instructions
+
+---
+
+After approval
+
+#### --answer--
+
+Automatically, without anyone needing to act
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to mean being reasonably or fairly good?
+
+#### --distractors--
+
+`She is quite good in coding.`
+
+---
+
+`She is quite good on coding.`
+
+---
+
+`She is quite good for coding.`
+
+#### --answer--
+
+`She is quite good at coding.`
+
+### --question--
+
+#### --text--
+
+What do you describe as `much more stable`?
+
+#### --distractors--
+
+Something only a little different from how it worked before
+
+---
+
+Something newer that may still cause unexpected problems
+
+---
+
+Something slower in performance but easier to afford
+
+#### --answer--
+
+Something significantly steadier and more reliable than before

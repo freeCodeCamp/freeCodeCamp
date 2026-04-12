@@ -1,0 +1,495 @@
+---
+id: 69604712c9b07a9222096400
+title: Determiners and Articles Quiz
+challengeType: 8
+dashedName: en-b1-quiz-determiners-articles
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of determiners, articles, quantity expressions, and advanced article usage.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which of the following shows that something belongs to a group that includes the speaker?
+
+#### --distractors--
+
+`Their`
+
+---
+
+`His`
+
+---
+
+`Us`
+
+#### --answer--
+
+`Our`
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`Each developer` refers to every single member separately.
+
+---
+
+`A few developers` refers to a small number of developers.
+
+---
+
+`Those developers` refers to specific developers already known.
+
+#### --answer--
+
+`Any developer` refers to one specific developer already chosen.
+
+### --question--
+
+#### --text--
+
+Which of the following phrases is grammatically incorrect?
+
+#### --distractors--
+
+`A few tasks`
+
+---
+
+`Many ideas`
+
+---
+
+`Some information`
+
+#### --answer--
+
+All phrases are correct.
+
+### --question--
+
+#### --text--
+
+Which of the following does NOT use the correct particle?
+
+#### --distractors--
+
+`To narrow down` (meaning to reduce the number of something)
+
+---
+
+`To try out` (meaning to test something for a short time)
+
+---
+
+`Half of` (meaning 50% of something)
+
+#### --answer--
+
+`To arrange on` (meaning to plan or organize something)
+
+### --question--
+
+#### --text--
+
+Listen to the audio. Why is it important to use the article `the` here? <!-- (quiz audio) Maria: Since our data is sensitive, choosing the right location is crucial, especially with the strict rules in Europe. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_20-1.mp3",
+    "startTimestamp": 12.6,
+    "finishTimestamp": 17.8
+  },
+  "transcript": [
+    {
+      "character": "Maria",
+      "text": "Since our data is sensitive, choosing the right location is crucial, especially with the strict rules in Europe."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+Because it refers to any location.
+
+---
+
+Because location is uncountable.
+
+---
+
+Because articles are optional here.
+
+#### --answer--
+
+Because it refers to one specific location.
+
+### --question--
+
+#### --text--
+
+What article do you use with uncountable or abstract nouns when talking about them in general?
+
+#### --distractors--
+
+`A`
+
+---
+
+`An`
+
+---
+
+`The`
+
+#### --answer--
+
+No article
+
+### --question--
+
+#### --text--
+
+You want to refer to the method you just described, so you say: `BLANK, it's more effective`.
+
+#### --distractors--
+
+`Some way`
+
+---
+
+`Any way`
+
+---
+
+`That way`
+
+#### --answer--
+
+`This way`
+
+### --question--
+
+#### --text--
+
+Which of the following shows that something belongs to a thing (not a person)?
+
+#### --distractors--
+
+`Our performance`
+
+---
+
+`Their performance`
+
+---
+
+`It's performance`
+
+#### --answer--
+
+`Its performance`
+
+### --question--
+
+#### --text--
+
+What's the difference between `the team` and `team`?
+
+#### --distractors--
+
+Both always mean the same thing.
+
+---
+
+`The team` always means several teams together; `team` means only one person.
+
+---
+
+`The team` refers to the idea of a group in general; `team` refers to a specific known group.
+
+#### --answer--
+
+`The team` refers to a specific team; `team` is used more generally or as a concept.
+
+### --question--
+
+#### --text--
+
+Which of the following is correct?
+
+#### --distractors--
+
+`The Europe`, `Italy`, `the Netherlands`
+
+---
+
+`Europe`, `Asia`, `Philippines`
+
+---
+
+`Europe`, `United States`, `France`
+
+#### --answer--
+
+`The Philippines`, `Asia`, `the Netherlands`
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`What nice thing to say!`
+
+---
+
+`What a nice thing to say?`
+
+---
+
+`What the nice thing to say!`
+
+#### --answer--
+
+`What a nice thing to say!`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. Why is Sarah responsible for user authentication? <!-- (quiz audio) Bob: Sarah will take care of user authentication because she has the most experience there. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_20-2.mp3",
+    "startTimestamp": 17.8,
+    "finishTimestamp": 22.1
+  },
+  "transcript": [
+    {
+      "character": "Bob",
+      "text": "Sarah will take care of user authentication because she has the most experience there."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+Because she is the team manager.
+
+---
+
+Because she volunteered first.
+
+---
+
+Because she has the lowest level of experience.
+
+#### --answer--
+
+Because she has the highest level of experience.
+
+### --question--
+
+#### --text--
+
+Which of the following talks about a particular feature?
+
+#### --distractors--
+
+`A feature`
+
+---
+
+`An feature`
+
+---
+
+`Feature`
+
+#### --answer--
+
+`The feature`
+
+### --question--
+
+#### --text--
+
+What's the difference between `each project` and `every project`?
+
+#### --distractors--
+
+They mean exactly the same thing.
+
+---
+
+`Each project` refers to general ideas, while `every project` refers to specific examples.
+
+---
+
+`Each project` is used only for two projects, while `every project` is used for unlimited numbers.
+
+#### --answer--
+
+`Each project` considers projects individually, while `every project` refers to all projects as a complete group.
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct article and preposition to mean not having quite enough of something?
+
+#### --distractors--
+
+`We are little short on time.`
+
+---
+
+`We are a little short at time.`
+
+---
+
+`We are the little short in time.`
+
+#### --answer--
+
+`We are a little short on time.`
+
+### --question--
+
+#### --text--
+
+What does `a couple more` mean?
+
+#### --distractors--
+
+A large increase
+
+---
+
+Exactly ten more items
+
+---
+
+No increase at all
+
+#### --answer--
+
+A small additional number
+
+### --question--
+
+#### --text--
+
+Which of the following means that a certain amount of care, focus, or work is needed?
+
+#### --distractors--
+
+`Any attention`
+
+---
+
+`Much attention`
+
+---
+
+`A few attention`
+
+#### --answer--
+
+`Some attention`
+
+### --question--
+
+#### --text--
+
+What does `another three` mean in this sentence: `We need another three months to complete the project`?
+
+#### --distractors--
+
+Three months will replace the time already planned.
+
+---
+
+The project will take only three months in total.
+
+---
+
+About three months are estimated without a clear plan.
+
+#### --answer--
+
+Three additional months will be added to the current timeline.
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT correct?
+
+#### --distractors--
+
+`A` is used when mentioning something for the first time, as in `I bought a laptop yesterday`.
+
+---
+
+`An` is used before vowel sounds, as in `She is an engineer`.
+
+---
+
+`The` is used for specific known things, as in `The meeting starts at noon`.
+
+#### --answer--
+
+`A` and `an` can be used with uncountable nouns, as in `He gave me an advice`.
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`Neither the designer or the developer is available.`
+
+---
+
+`Either the designer nor the developer is available.`
+
+---
+
+`Either the designer nor developer are available.`
+
+#### --answer--
+
+`Neither the designer nor the developer is available.`

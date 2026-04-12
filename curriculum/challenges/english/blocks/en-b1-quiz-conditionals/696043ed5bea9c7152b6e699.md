@@ -1,0 +1,513 @@
+---
+id: 696043ed5bea9c7152b6e699
+title: Using Conditionals Quiz
+challengeType: 8
+dashedName: en-b1-quiz-conditionals
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of how to use conditionals to talk about results, possibilities, facts, and hypothetical situations.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which of the following is true about this sentence: `If the server goes down, we will restart it immediately`?
+
+#### --distractors--
+
+It describes a past habit.
+
+---
+
+It describes something happening now.
+
+---
+
+It describes a repeated action in the past.
+
+#### --answer--
+
+It describes a possible future situation.
+
+### --question--
+
+#### --text--
+
+Which of the following is an incorrect match?
+
+#### --distractors--
+
+`Properly`: The device is installed in the correct way.
+
+---
+
+`Securely`: The cable is attached so it cannot move or fall out.
+
+---
+
+`Regularly`: The team checks the system every week.
+
+#### --answer--
+
+`Daily`: The server works in a strong and reliable way.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does Mark express? <!-- (quiz audio) Mark: If the power cable isn't connected securely, the computer won't turn on. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_7-1.mp3",
+    "startTimestamp": 4.8,
+    "finishTimestamp": 7.95
+  },
+  "transcript": [
+    {
+      "character": "Mark",
+      "text": "If the power cable isn't connected securely, the computer won't turn on."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+A past problem that already happened
+
+---
+
+A confirmed plan for the future
+
+---
+
+A description of a finished task
+
+#### --answer--
+
+A possible result if a condition is not met
+
+### --question--
+
+#### --text--
+
+Which of the following questions asks if someone verified or confirmed something?
+
+#### --distractors--
+
+`What do you think?`
+
+---
+
+`Have you seen anything similar?`
+
+---
+
+`Why did you ask?`
+
+#### --answer--
+
+`Did you check that?`
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`To boot` means to start a computer by loading its operating system.
+
+---
+
+`To fail` means to stop working or not function as expected.
+
+---
+
+`To load` means to start a program or bring data into a system.
+
+#### --answer--
+
+`To automate` means to complete a process manually step by step.
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`If the system will overheat, it shuts down automatically.`
+
+---
+
+`If the system overheated, it will shut down automatically.`
+
+---
+
+`If the system overheats, it shut down automatically.`
+
+#### --answer--
+
+`If the system overheats, it shuts down automatically.`
+
+### --question--
+
+#### --text--
+
+What is `data backup`?
+
+#### --distractors--
+
+Deleting old files from a system
+
+---
+
+Moving files to another folder
+
+---
+
+Compressing files to save space
+
+#### --answer--
+
+Creating copies of important data
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does Mark say about the possibility of crashes? <!-- (quiz audio) Mark: If the application has memory leaks, it can lead to crashes. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_7-1.mp3",
+    "startTimestamp": 43.6,
+    "finishTimestamp": 46.8
+  },
+  "transcript": [
+    {
+      "character": "Mark",
+      "text": "If the application has memory leaks, it can lead to crashes."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+The crashes will happen for sure if there are memory leaks.
+
+---
+
+The crashes will not happen even if there are memory leaks.
+
+---
+
+Mark does not mention crashes caused by memory leaks.
+
+#### --answer--
+
+The crashes may happen if the application has memory leaks.
+
+### --question--
+
+#### --text--
+
+What do you describe as `solid`?
+
+#### --distractors--
+
+Something weak and unreliable
+
+---
+
+Something temporary or unfinished
+
+---
+
+Something difficult to understand
+
+#### --answer--
+
+Something strong, stable, and dependable
+
+### --question--
+
+#### --text--
+
+What do you call something that helps you not forget a task or event?
+
+#### --distractors--
+
+`Disaster`
+
+---
+
+`Power cable`
+
+---
+
+`BIOS`
+
+#### --answer--
+
+`Reminder`
+
+### --question--
+
+#### --text--
+
+What's the difference between a `stakeholder` and an `investor`?
+
+#### --distractors--
+
+A `stakeholder` runs the company, while an `investor` handles paperwork.
+
+---
+
+A `stakeholder` works on operations, while an `investor` tests processes.
+
+---
+
+A `stakeholder` creates strategies, while an `investor` designs solutions.
+
+#### --answer--
+
+A `stakeholder` is affected by a project, while an `investor` provides money.
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to connect two ideas?
+
+#### --distractors--
+
+`The update includes bug fixes along by security improvements.`
+
+---
+
+`The update includes bug fixes along for security improvements.`
+
+---
+
+`The update includes bug fixes along to security improvements.`
+
+#### --answer--
+
+`The update includes bug fixes along with security improvements.`
+
+### --question--
+
+#### --text--
+
+What is `critical data`?
+
+#### --distractors--
+
+Data that is not important to the team
+
+---
+
+Data stored in old systems only
+
+---
+
+Data used only for testing
+
+#### --answer--
+
+Data that the team needs to continue working
+
+### --question--
+
+#### --text--
+
+What does `to set back` mean?
+
+#### --distractors--
+
+To finish a task early
+
+---
+
+To cancel a project completely
+
+---
+
+To organize tasks better
+
+#### --answer--
+
+To delay progress
+
+### --question--
+
+#### --text--
+
+Listen to the audio. How would you answer? <!-- (quiz audio) Lisa: If they closed, it would affect a lot of tech companies, wouldn't it? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_7-3.mp3",
+    "startTimestamp": 12.5,
+    "finishTimestamp": 15.2
+  },
+  "transcript": [
+    {
+      "character": "Lisa",
+      "text": "If they closed, it would affect a lot of tech companies, wouldn't it?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+`Yes, it does.` / `No, it doesn't.`
+
+---
+
+`Yes, it would affected.` / `No, it wouldn't affected.`
+
+---
+
+`Yes, they would.` / `No, they wouldn't.`
+
+#### --answer--
+
+`Yes, it would.` / `No, it wouldn't.`
+
+### --question--
+
+#### --text--
+
+Which pair is incorrect?
+
+#### --distractors--
+
+Real future possibility: `If the server crashes, we will restart it.`
+
+---
+
+General fact: `If the system overheats, it shuts down automatically.`
+
+---
+
+Hypothetical situation: `If the server crashed, we would restart it.`
+
+#### --answer--
+
+Past result that did not happen: `If the server crashes, we would restart it.`
+
+### --question--
+
+#### --text--
+
+What additional information does `besides` introduce in this sentence: `We have finished the report. Besides, we have already sent it to the manager`?
+
+#### --distractors--
+
+It shows that the report shouldn't be sent at all.
+
+---
+
+It shows that the report will be sent later.
+
+---
+
+It shows that sending the report was not important.
+
+#### --answer--
+
+It shows that the report was already sent earlier.
+
+### --question--
+
+#### --text--
+
+What does this sentence suggest: `If we had more developers, we would finish the project faster`?
+
+#### --distractors--
+
+The team already hired more developers.
+
+---
+
+The project finished faster last week.
+
+---
+
+The team will hire more developers tomorrow.
+
+#### --answer--
+
+The speaker imagines a different situation now.
+
+### --question--
+
+#### --text--
+
+You want to highlight a part of something, so you say: `I've got BLANK urgent tasks to handle today`.
+
+#### --distractors--
+
+`any`
+
+---
+
+`each`
+
+---
+
+`both`
+
+#### --answer--
+
+`some`
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct tag question?
+
+#### --distractors--
+
+`They would like to attend, don't they?`
+
+---
+
+`They would like to attend, would they?`
+
+---
+
+`They would like to attend, are they?`
+
+#### --answer--
+
+`They would like to attend, wouldn't they?`

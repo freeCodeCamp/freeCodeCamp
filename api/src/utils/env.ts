@@ -8,7 +8,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
-if (error && process.env.FREECODECAMP_NODE_ENV !== 'production') {
+if (
+  error &&
+  process.env.FREECODECAMP_NODE_ENV == 'production' &&
+  process.env.NODE_ENV !== 'test'
+) {
   console.warn(`
   ----------------------------------------------------
   Warning: .env file not found.
@@ -59,6 +63,8 @@ assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
+assert.ok(process.env.SOCRATES_API_KEY);
+assert.ok(process.env.SOCRATES_ENDPOINT);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -88,12 +94,18 @@ assert.ok(
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
-  assert.ok(process.env.SES_ID);
-  assert.ok(process.env.SES_SECRET);
+  assert.ok(
+    process.env.SES_SMTP_USERNAME,
+    'SES_SMTP_USERNAME is required in production.'
+  );
+  assert.ok(
+    process.env.SES_SMTP_PASSWORD,
+    'SES_SMTP_PASSWORD is required in production.'
+  );
   assert.notEqual(
-    process.env.SES_SECRET,
-    'ses_secret_from_aws',
-    'The SES secret should be changed from the default value.'
+    process.env.SES_SMTP_PASSWORD,
+    'ses_smtp_password_from_aws',
+    'The SES SMTP password should be changed from the default value.'
   );
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
@@ -159,12 +171,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 // Mailpit is used in development and test environments, hence the localhost
 // default.
-// TODO: Remove MAILHOG_HOST in a few months
-// We renamed MailHog to MailPit, but kept the same port and API
-// This is to keep backward compatibility with existing setups
-// that might still use MAILHOG_HOST environment variable
-export const MAILPIT_HOST =
-  process.env.MAILPIT_HOST ?? process.env.MAILHOG_HOST ?? 'localhost';
+export const MAILPIT_HOST = process.env.MAILPIT_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
@@ -208,9 +215,10 @@ export const SENTRY_ENVIRONMENT =
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
-export const SES_ID = process.env.SES_ID;
-export const SES_SECRET = process.env.SES_SECRET;
-export const SES_REGION = process.env.SES_REGION || 'us-east-1';
+export const SES_SMTP_USERNAME = process.env.SES_SMTP_USERNAME;
+export const SES_SMTP_PASSWORD = process.env.SES_SMTP_PASSWORD;
+export const SES_SMTP_HOST =
+  process.env.SES_SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
@@ -218,6 +226,8 @@ export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
 export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
   process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
+export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
+export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
 
 function undefinedOrBool(val: string | undefined): undefined | boolean {
   if (!val) {

@@ -1,0 +1,513 @@
+---
+id: 696045ab020bf0b70b5cb03d
+title: Using Modal Verbs Quiz
+challengeType: 8
+dashedName: en-b1-quiz-modal-verbs
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of modal verbs, including obligation, necessity, possibility, permission, and polite requests.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What do you call rules and measures designed to protect data, systems, and networks from threats?
+
+#### --distractors--
+
+`Software tools`
+
+---
+
+`High traffic`
+
+---
+
+`Sensitive data`
+
+#### --answer--
+
+`Security protocols`
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`You must to update the password regularly.`
+
+---
+
+`You must updating the password regularly.`
+
+---
+
+`You must updated the password regularly.`
+
+#### --answer--
+
+`You must update the password regularly.`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is Jessica communicating? <!-- (quiz audio) Jessica: Hi, Mark. We need to talk about security protocols for the new project. There are a few things you must do to ensure compliance. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_14-1.mp3",
+    "startTimestamp": 0,
+    "finishTimestamp": 6.65
+  },
+  "transcript": [
+    {
+      "character": "Jessica",
+      "text": "Hi, Mark. We need to talk about security protocols for the new project. There are a few things you must do to ensure compliance."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She is making optional suggestions the team may follow later.
+
+---
+
+She is discussing problems that already happened before.
+
+---
+
+She is postponing the discussion about the project.
+
+#### --answer--
+
+She is explaining necessary actions and strong obligations.
+
+### --question--
+
+#### --text--
+
+Which pair is incorrect?
+
+#### --distractors--
+
+Necessity: `You need to update the system regularly.`
+
+---
+
+Obligation: `You must follow the security policy.`
+
+---
+
+Possibility: `The system can experience downtime.`
+
+#### --answer--
+
+Recommendation: `You have to submit a report today.`
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to mean having knowledge of something?
+
+#### --distractors--
+
+`I am aware on the issue.`
+
+---
+
+`I am aware for the issue.`
+
+---
+
+`I am aware with the issue.`
+
+#### --answer--
+
+`I am aware of the issue.`
+
+### --question--
+
+#### --text--
+
+What's the difference between `mandatory` and `crucial`?
+
+#### --distractors--
+
+`Mandatory` means optional, while `crucial` means legally required in every case.
+
+---
+
+`Mandatory` refers to people, while `crucial` refers only to technology.
+
+---
+
+`Mandatory` and `crucial` have the same meaning.
+
+#### --answer--
+
+`Mandatory` means required by rules, while `crucial` means very important but not always required.
+
+### --question--
+
+#### --text--
+
+Which statement is false?
+
+#### --distractors--
+
+`Must` is used to express necessity or obligation.
+
+---
+
+`Should` is mainly used to give suggestions or recommendations.
+
+---
+
+`May` can be used to express permission or possibility.
+
+#### --answer--
+
+`Can` is only used to describe past ability.
+
+### --question--
+
+#### --text--
+
+You want to bring up additional information or ask a related question, so you say: `BLANK, I wanted to ask about the security update`. 
+
+#### --distractors--
+
+`As a result`
+
+---
+
+`For example`
+
+---
+
+`In contrast`
+
+#### --answer--
+
+`By the way`
+
+### --question--
+
+#### --text--
+
+Which sentence talks about a logical guess about something in the past?
+
+#### --distractors--
+
+`The server crashed overnight.`
+
+---
+
+`The server must crash overnight.`
+
+---
+
+`The server crashes overnight.`
+
+#### --answer--
+
+`The server must have crashed overnight.`
+
+### --question--
+
+#### --text--
+
+True or false: `Must` usually expresses strong or internal obligation, while `have to` often refers to external rules or circumstances.
+
+#### --distractors--
+
+That's false.
+
+---
+
+It depends on the context.
+
+---
+
+They have the same meaning.
+
+#### --answer--
+
+That's true.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is Sophie saying? <!-- Sophie: Well, I'm concerned about the deployment process. It could go smoothly, or we might face some bugs. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_14-2.mp3",
+    "startTimestamp": 12,
+    "finishTimestamp": 17
+  },
+  "transcript": [
+    {
+      "character": "Sophie",
+      "text": "Well, I'm concerned about the deployment process. It could go smoothly, or we might face some bugs."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She believes the deployment will definitely fail.
+
+---
+
+She confirms the deployment has already succeeded.
+
+---
+
+She gives the team a strict technical instruction.
+
+#### --answer--
+
+She mentions both positive and negative possibilities.
+
+### --question--
+
+#### --text--
+
+When would you use modal verbs like `might`, `could`, or `may`?
+
+#### --distractors--
+
+To describe past habits only
+
+---
+
+To give strong commands only
+
+---
+
+To describe completed actions
+
+#### --answer--
+
+To express possibility or uncertainty
+
+### --question--
+
+#### --text--
+
+What does `most likely` mean?
+
+#### --distractors--
+
+Something has no chance of happening at all
+
+---
+
+Something is guaranteed to happen without doubt
+
+---
+
+Something only happened in the distant past
+
+#### --answer--
+
+Something has the highest chance of happening
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`Must we to restart the system?`
+
+---
+
+`Do we must restart the system?`
+
+---
+
+`We must restart the system?`
+
+#### --answer--
+
+`Must we restart the system?`
+
+### --question--
+
+#### --text--
+
+What does `to scale up` mean?
+
+#### --distractors--
+
+To reduce system capacity
+
+---
+
+To delete unnecessary data
+
+---
+
+To pause development work
+
+#### --answer--
+
+To increase resources or capacity
+
+### --question--
+
+#### --text--
+
+Which sentence using `can` is incorrect?
+
+#### --distractors--
+
+`Can you help me with this issue?`
+
+---
+
+`He can't solve these issues.`
+
+---
+
+`Can I leave early today?`
+
+#### --answer--
+
+`I can accessed the database.`
+
+### --question--
+
+#### --text--
+
+What group of modal verbs has a similar meaning?
+
+#### --distractors--
+
+`Should`, `need`, `may`
+
+---
+
+`Must`, `can`, `should`
+
+---
+
+`Might`, `may`, `must`
+
+#### --answer--
+
+`Must`, `have to`, `need`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is Jake asking for? <!-- (quiz audio) Jake: Lisa, we've had a security breach on our internal network. We need to find out how this happened. Can you help me investigate this? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_14-3.mp3",
+    "startTimestamp": 0,
+    "finishTimestamp": 6.4
+  },
+  "transcript": [
+    {
+      "character": "Jake",
+      "text": "Lisa, we've had a security breach on our internal network. We need to find out how this happened. Can you help me investigate this?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+He is asking for a report about past events.
+
+---
+
+He is asking for permission to leave work.
+
+---
+
+He is asking for confirmation of a schedule.
+
+#### --answer--
+
+He is asking for assistance with an investigation.
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`You must not to share passwords.`
+
+---
+
+`You must to not share passwords.`
+
+---
+
+`You don't must share passwords.`
+
+#### --answer--
+
+`You must not share passwords.`
+
+### --question--
+
+#### --text--
+
+When would you say `It can't be true` to someone?
+
+#### --distractors--
+
+When a manager explains a normal update during a meeting.
+
+---
+
+When a colleague asks you to confirm correct information.
+
+---
+
+When a teammate shares information you already expected to hear.
+
+#### --answer--
+
+When a coworker tells you news that sounds hard to believe.

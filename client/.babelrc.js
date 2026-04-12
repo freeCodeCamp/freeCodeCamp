@@ -8,7 +8,7 @@ const config = {
         loose: true,
         modules: false,
         useBuiltIns: 'usage',
-        corejs: 2,
+        corejs: 3,
         shippedProposals: true,
         targets: {
           browsers: ['>0.25%', 'not dead']
@@ -40,8 +40,11 @@ const config = {
       {
         languages: [
           'bash',
+          'c',
           'clike',
+          'cpp',
           'css',
+          'csharp',
           'html',
           'javascript',
           'json',

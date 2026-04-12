@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    "python-setup-first-steps",
+    "core-primitives-in-python",
+    "small-python-projects",
+    "lists-and-tuples",
+    "control-flow-and-functions-in-python",
+    "dictionaries-and-loops",
+    "error-handling-files-and-modules-in-python",
+    "object-oriented-programming-with-python"
+  ]
+}

@@ -1,5 +1,5 @@
 // TODO: get domain from env
-const domain =
+export const domain =
   'https://cdn.freecodecamp.org/curriculum/english/animation-assets';
 
 export const sounds = `${domain}/sounds`;
@@ -27,21 +27,31 @@ const character = {
   // Spanish:
   angela: `${characters}/angela`,
   camila: `${characters}/camila`,
+  carlos: `${characters}/carlos`,
+  diego: `${characters}/diego`,
   elena: `${characters}/elena`,
   esteban: `${characters}/esteban`,
+  joaquin: `${characters}/joaquin`,
   julieta: `${characters}/julieta`,
+  luis: `${characters}/luis`,
   luna: `${characters}/luna`,
+  marisol: `${characters}/marisol`,
   mateo: `${characters}/mateo`,
+  noelia: `${characters}/noelia`,
+  rene: `${characters}/rene`,
   sebastian: `${characters}/sebastian`,
+  valeria: `${characters}/valeria`,
 
   // Chinese
   chenNa: `${characters}/chen-na`,
+  huangJingyi: `${characters}/huang-jingyi`,
   liHong: `${characters}/li-hong`,
   liPing: `${characters}/li-ping`,
   linYating: `${characters}/lin-yating`,
   liuMing: `${characters}/liu-ming`,
   wangHua: `${characters}/wang-hua`,
   zhangWei: `${characters}/zhang-wei`,
+  zhouJia: `${characters}/zhou-jia`,
   zhouYongjie: `${characters}/zhou-yongjie`
 };
 
@@ -219,6 +229,24 @@ const characterImages = {
     mouthClosed: `${character.camila}/mouth-smile.png`,
     mouthOpen: `${character.camila}/mouth-open.png`
   },
+  carlos: {
+    base: `${character.carlos}/base.png`,
+    brows: `${character.carlos}/brows-neutral.png`,
+    eyesClosed: `${character.carlos}/eyes-closed.png`,
+    eyesOpen: `${character.carlos}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.carlos}/mouth-smile.png`,
+    mouthOpen: `${character.carlos}/mouth-open.png`
+  },
+  diego: {
+    base: `${character.diego}/base.png`,
+    brows: `${character.diego}/brows-neutral.png`,
+    eyesClosed: `${character.diego}/eyes-closed.png`,
+    eyesOpen: `${character.diego}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.diego}/mouth-smile.png`,
+    mouthOpen: `${character.diego}/mouth-open.png`
+  },
   elena: {
     base: `${character.elena}/base.png`,
     brows: `${character.elena}/brows-neutral.png`,
@@ -236,6 +264,15 @@ const characterImages = {
     glasses: null,
     mouthClosed: `${character.esteban}/mouth-smile.png`,
     mouthOpen: `${character.esteban}/mouth-open.png`
+  },
+  joaquin: {
+    base: `${character.joaquin}/base.png`,
+    brows: `${character.joaquin}/brows-neutral.png`,
+    eyesClosed: `${character.joaquin}/eyes-closed.png`,
+    eyesOpen: `${character.joaquin}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.joaquin}/mouth-smile.png`,
+    mouthOpen: `${character.joaquin}/mouth-open.png`
   },
   julieta: {
     base: `${character.julieta}/base.png`,
@@ -255,6 +292,24 @@ const characterImages = {
     mouthClosed: `${character.luna}/mouth-smile.png`,
     mouthOpen: `${character.luna}/mouth-open.png`
   },
+  luis: {
+    base: `${character.luis}/base.png`,
+    brows: `${character.luis}/brows-neutral.png`,
+    eyesClosed: `${character.luis}/eyes-closed.png`,
+    eyesOpen: `${character.luis}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.luis}/mouth-smile.png`,
+    mouthOpen: `${character.luis}/mouth-open.png`
+  },
+  marisol: {
+    base: `${character.marisol}/base.png`,
+    brows: `${character.marisol}/brows-neutral.png`,
+    eyesClosed: `${character.marisol}/eyes-closed.png`,
+    eyesOpen: `${character.marisol}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.marisol}/mouth-smile.png`,
+    mouthOpen: `${character.marisol}/mouth-open.png`
+  },
   mateo: {
     base: `${character.mateo}/base.png`,
     brows: `${character.mateo}/brows-neutral.png`,
@@ -263,6 +318,24 @@ const characterImages = {
     glasses: null,
     mouthClosed: `${character.mateo}/mouth-smile.png`,
     mouthOpen: `${character.mateo}/mouth-open.png`
+  },
+  noelia: {
+    base: `${character.noelia}/base.png`,
+    brows: `${character.noelia}/brows-neutral.png`,
+    eyesClosed: `${character.noelia}/eyes-closed.png`,
+    eyesOpen: `${character.noelia}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.noelia}/mouth-smile.png`,
+    mouthOpen: `${character.noelia}/mouth-open.png`
+  },
+  rene: {
+    base: `${character.rene}/base.png`,
+    brows: `${character.rene}/brows-neutral.png`,
+    eyesClosed: `${character.rene}/eyes-closed.png`,
+    eyesOpen: `${character.rene}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.rene}/mouth-smile.png`,
+    mouthOpen: `${character.rene}/mouth-open.png`
   },
   sebastian: {
     base: `${character.sebastian}/base.png`,
@@ -273,6 +346,15 @@ const characterImages = {
     mouthClosed: `${character.sebastian}/mouth-smile.png`,
     mouthOpen: `${character.sebastian}/mouth-open.png`
   },
+  valeria: {
+    base: `${character.valeria}/base.png`,
+    brows: `${character.valeria}/brows-neutral.png`,
+    eyesClosed: `${character.valeria}/eyes-closed.png`,
+    eyesOpen: `${character.valeria}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.valeria}/mouth-smile.png`,
+    mouthOpen: `${character.valeria}/mouth-open.png`
+  },
   // Chinese
   chenNa: {
     base: `${character.chenNa}/base.png`,
@@ -282,6 +364,15 @@ const characterImages = {
     glasses: null,
     mouthClosed: `${character.chenNa}/mouth-smile.png`,
     mouthOpen: `${character.chenNa}/mouth-open.png`
+  },
+  huangJingyi: {
+    base: `${character.huangJingyi}/base.png`,
+    brows: `${character.huangJingyi}/brows-neutral.png`,
+    eyesClosed: `${character.huangJingyi}/eyes-closed.png`,
+    eyesOpen: `${character.huangJingyi}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.huangJingyi}/mouth-smile.png`,
+    mouthOpen: `${character.huangJingyi}/mouth-open.png`
   },
   liHong: {
     base: `${character.liHong}/base.png`,
@@ -337,6 +428,15 @@ const characterImages = {
     mouthClosed: `${character.zhangWei}/mouth-smile.png`,
     mouthOpen: `${character.zhangWei}/mouth-open.png`
   },
+  zhouJia: {
+    base: `${character.zhouJia}/base.png`,
+    brows: `${character.zhouJia}/brows-neutral.png`,
+    eyesClosed: `${character.zhouJia}/eyes-closed.png`,
+    eyesOpen: `${character.zhouJia}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.zhouJia}/mouth-smile.png`,
+    mouthOpen: `${character.zhouJia}/mouth-open.png`
+  },
   zhouYongjie: {
     base: `${character.zhouYongjie}/base.png`,
     brows: `${character.zhouYongjie}/brows-neutral.png`,
@@ -376,31 +476,32 @@ export const characterAssets = {
   Tom: characterImages.tom,
 
   // Spanish
-  Alex: characterImages.npcGirl,
   Ángela: characterImages.angela,
   Camila: characterImages.camila,
-  Carlos: characterImages.brian,
+  Carlos: characterImages.carlos,
   Elena: characterImages.elena,
   Esteban: characterImages.esteban,
-  Joaquín: characterImages.jake,
+  Joaquín: characterImages.joaquin,
   Julieta: characterImages.julieta,
-  Luis: characterImages.bob,
+  Luis: characterImages.luis,
   Luna: characterImages.luna,
-  Marisol: characterImages.linda,
+  Marisol: characterImages.marisol,
   Mateo: characterImages.mateo,
-  Noelia: characterImages.npcWoman,
-  René: characterImages.npcMan,
+  Noelia: characterImages.noelia,
+  René: characterImages.rene,
   Sebastián: characterImages.sebastian,
-  Diego: characterImages.tom,
-  Valeria: characterImages.alice,
+  Diego: characterImages.diego,
+  Valeria: characterImages.valeria,
 
-  //Chinese
+  // Chinese
   'Chen Na': characterImages.chenNa,
+  'Huang Jingyi': characterImages.huangJingyi,
   'Li Hong': characterImages.liHong,
   'Li Ping': characterImages.liPing,
   'Lin Yating': characterImages.linYating,
   'Liu Ming': characterImages.liuMing,
   'Wang Hua': characterImages.wangHua,
   'Zhang Wei': characterImages.zhangWei,
+  'Zhou Jia': characterImages.zhouJia,
   'Zhou Yongjie': characterImages.zhouYongjie
 };

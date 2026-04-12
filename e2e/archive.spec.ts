@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const archivedSuperBlocks = [
   intro[SuperBlocks.RespWebDesignNew].title,
@@ -25,9 +25,9 @@ test.describe('Archive Page', () => {
     await page.goto('/learn/archive');
   });
 
-  test('Links to new curriculum', async ({ page }) => {
+  test('Links to /learn', async ({ page }) => {
     const newCurriculumLink = page.locator(
-      'a[href="/learn/full-stack-developer"]'
+      '.archived-warning a[href="/learn"]'
     );
     await expect(newCurriculumLink).toBeVisible();
   });

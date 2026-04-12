@@ -8,7 +8,7 @@ import {
   certToIdMap,
   completionHours,
   oldDataVizId
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 import {
   getFallbackFullStackDate,
   isKnownCertSlug
@@ -84,6 +84,13 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isRelationalDatabaseCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isFoundationalCSharpCertV8: true,
+          isFrontEndLibsCertV9: true,
+          isBackEndDevApisCertV9: true,
+          isFullStackDeveloperCertV9: true,
+          isB1EnglishCert: true,
+          isA2SpanishCert: true,
+          isA2ChineseCert: true,
+          isA1ChineseCert: true,
           isHonest: true,
           username: true,
           name: true,

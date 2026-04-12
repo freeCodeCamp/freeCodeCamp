@@ -1,0 +1,513 @@
+---
+id: 696043202e8e8cbd72c2de1b
+title: Present Perfect and Accessibility Quiz
+challengeType: 8
+dashedName: en-b1-quiz-present-perfect-accessibility
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of the `Present Perfect` and `Present Perfect Continuous` by talking about accessibility features and improvements.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is a `screen reader`?
+
+#### --distractors--
+
+A tool that changes the screen brightness automatically
+
+---
+
+A program that blocks ads on websites
+
+---
+
+A device used to scan printed documents
+
+#### --answer--
+
+A software tool that reads text aloud on a device
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does this question ask about? <!-- (quiz audio) Tom: Hey, Sophie. Have you been working on the screen reader updates recently? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_4-1.mp3",
+    "startTimestamp": 0,
+    "finishTimestamp": 4.1
+  },
+  "transcript": [
+    {
+      "character": "Tom",
+      "text": "Hey, Sophie. Have you been working on the screen reader updates recently?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+It asks about a finished task in the past.
+
+---
+
+It asks about a future plan.
+
+---
+
+It asks about a regular daily routine.
+
+#### --answer--
+
+It asks about an action that started in the past and is still happening.
+
+### --question--
+
+#### --text--
+
+What is the correct question form of this sentence: `They have been testing the accessibility features`?
+
+#### --distractors--
+
+`Have been they testing the accessibility features?`
+
+---
+
+`They have been testing the accessibility features?`
+
+---
+
+`Been they have testing the accessibility features?`
+
+#### --answer--
+
+`Have they been testing the accessibility features?`
+
+### --question--
+
+#### --text--
+
+What does `to address` mean?
+
+#### --distractors--
+
+To ignore a problem
+
+---
+
+To send a message to someone
+
+---
+
+To describe a location
+
+#### --answer--
+
+To take action to resolve an issue
+
+### --question--
+
+#### --text--
+
+What's the difference between these two sentences: `He has worked on the project` and `He has been working on the project`?
+
+#### --distractors--
+
+Both sentences mean exactly the same thing.
+
+---
+
+The first describes a future action.
+
+---
+
+The second describes a single finished action.
+
+#### --answer--
+
+The first focuses on the result; the second emphasizes the ongoing activity.
+
+### --question--
+
+#### --text--
+
+When would you say `That's a relief` to someone?
+
+#### --distractors--
+
+When the accessibility feature fails again.
+
+---
+
+When you start a new difficult task.
+
+---
+
+When you give instructions to your team.
+
+#### --answer--
+
+When you hear that the critical bug has been fixed.
+
+### --question--
+
+#### --text--
+
+What do you describe as `accessible`?
+
+#### --distractors--
+
+Something that is expensive to maintain
+
+---
+
+Something that is very advanced and complex
+
+---
+
+Something that is private and restricted
+
+#### --answer--
+
+Something that is easy to use or reach
+
+### --question--
+
+#### --text--
+
+What's the difference between `misaligned` and `out of sync`?
+
+#### --distractors--
+
+`Misaligned` refers to time; `out of sync` refers to position.
+
+---
+
+Both mean exactly the same thing.
+
+---
+
+Both refer only to sound problems.
+
+#### --answer--
+
+`Misaligned` means not positioned correctly; `out of sync` means not timed correctly.
+
+### --question--
+
+#### --text--
+
+What is the correct negative form of this sentence: `We have been improving the captions`?
+
+#### --distractors--
+
+`We haven't been improve the captions.`
+
+---
+
+`We haven't improving the captions.`
+
+---
+
+`We have been not improving the captions.`
+
+#### --answer--
+
+`We haven't been improving the captions.`
+
+### --question--
+
+#### --text--
+
+What is `closed captioning`?
+
+#### --distractors--
+
+A tool that translates text into another language
+
+---
+
+A feature that blocks background noise
+
+---
+
+A type of screen brightness setting
+
+#### --answer--
+
+A text version of spoken words and sounds in a video
+
+### --question--
+
+#### --text--
+
+Which sentence indicates when an action began and continues up to the present?
+
+#### --distractors--
+
+`We improved accessibility in January.`
+
+---
+
+`We are improving accessibility tomorrow.`
+
+---
+
+`We improve accessibility every January.`
+
+#### --answer--
+
+`We have been improving accessibility since January.`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. Are issues still present? <!-- (quiz audio) Linda: It's had issues connecting with our older devices, but we're working on it. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_4-3.mp3",
+    "startTimestamp": 32.7,
+    "finishTimestamp": 35.6
+  },
+  "transcript": [
+    {
+      "character": "Linda",
+      "text": "It's had issues connecting with our older devices, but we're working on it."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+No, the issues were solved completely.
+
+---
+
+Yes, but nobody is doing anything about them.
+
+---
+
+No, but the team is still investigating the cause.
+
+#### --answer--
+
+Yes, but the team is trying to fix them.
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`To finalize` means to complete something.
+
+---
+
+`To progress` means to improve over time.
+
+---
+
+`To tweak` means to make a small adjustment.
+
+#### --answer--
+
+`To affect` means to expect something in the future.
+
+### --question--
+
+#### --text--
+
+What is `for` used for in the `Present Perfect Continuous`?
+
+#### --distractors--
+
+To show a starting point in time
+
+---
+
+To describe a future plan
+
+---
+
+To compare two actions
+
+#### --answer--
+
+To specify the duration of an action
+
+### --question--
+
+#### --text--
+
+What is an example of using `voice recognition`?
+
+#### --distractors--
+
+Typing a password into a login form
+
+---
+
+Clicking a button with a mouse
+
+---
+
+Reading instructions on a screen
+
+#### --answer--
+
+The phone responding to your voice
+
+### --question--
+
+#### --text--
+
+Which sentence asks about directing attention or effort towards a task?
+
+#### --distractors--
+
+`How long have you been focusing at this project?`
+
+---
+
+`How long have you been focusing with this project?`
+
+---
+
+`How long have you been focusing for this project?`
+
+#### --answer--
+
+`How long have you been focusing on this project?`
+
+### --question--
+
+#### --text--
+
+What do you call rules or principles that provide direction?
+
+#### --distractors--
+
+`Feedback`
+
+---
+
+`Survey`
+
+---
+
+`Layouts`
+
+#### --answer--
+
+`Guidelines`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does it suggest about the results? <!-- (quiz audio) James: The interactive activities haven't been as effective as we thought. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_4-4.mp3",
+    "startTimestamp": 28.7,
+    "finishTimestamp": 32.5
+  },
+  "transcript": [
+    {
+      "character": "James",
+      "text": "The interactive activities haven't been as effective as we thought."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+They were more effective than expected.
+
+---
+
+They were canceled immediately.
+
+---
+
+They have improved significantly.
+
+#### --answer--
+
+They are not as successful as expected.
+
+### --question--
+
+#### --text--
+
+What does `to narrow down` mean?
+
+#### --distractors--
+
+To expand the number of options
+
+---
+
+To delay a decision
+
+---
+
+To cancel a project completely
+
+#### --answer--
+
+To reduce the number of options
+
+### --question--
+
+#### --text--
+
+What does this sentence express: `The accessibility improvements have really come along`?
+
+#### --distractors--
+
+The improvements have been canceled.
+
+---
+
+The improvements have caused problems.
+
+---
+
+The improvements were completed in one day.
+
+#### --answer--
+
+The improvements have shown good progress over time.

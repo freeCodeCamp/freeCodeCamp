@@ -1,0 +1,495 @@
+---
+id: 6960474c35aa1ff8c15297b8
+title: Using Reported Speech Quiz
+challengeType: 8
+dashedName: en-b1-quiz-reported-speech
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of reported speech, passive and active voice, and meaning in context.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What do you describe as `outdated`?
+
+#### --distractors--
+
+Something modern that was recently improved
+
+---
+
+Something expensive but popular today
+
+---
+
+Something unfinished but still developing
+
+#### --answer--
+
+Something no longer useful because better options exist
+
+### --question--
+
+#### --text--
+
+Which sentence uses correct prepositions to mean having a conversation?
+
+#### --distractors--
+
+`I spoke about her with the issue.`
+
+---
+
+`I spoke with her to the issue.`
+
+---
+
+`I spoke for her about the issue.`
+
+#### --answer--
+
+`I spoke with her about the issue.`
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`To target` means to aim at or direct something toward someone or something.
+
+---
+
+`To isolate` means to separate affected systems to stop damage spreading.
+
+---
+
+`To prevent` means to take action so something does not happen.
+
+#### --answer--
+
+`To maintain` means to completely replace something that is broken.
+
+### --question--
+
+#### --text--
+
+Brian said to you: `The attack is serious`. How would you report what he said?
+
+#### --distractors--
+
+`Brian said the attack is serious.`
+
+---
+
+`Brian said the attack had been serious.`
+
+---
+
+`Brian said the attack were serious.`
+
+#### --answer--
+
+`Brian said the attack was serious.`
+
+### --question--
+
+#### --text--
+
+You want to mention that a project takes less than a certain time, so you say: `The project takes BLANK three weeks`.
+
+#### --distractors--
+
+`during`
+
+---
+
+`along`
+
+---
+
+`through`
+
+#### --answer--
+
+`within`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is the most appropriate positive answer? <!-- (quiz audio) Brian: Did Jake give any feedback on how we can prevent similar incidents in the future? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_21-1.mp3",
+    "startTimestamp": 21.4,
+    "finishTimestamp": 25.9
+  },
+  "transcript": [
+    {
+      "character": "Brian",
+      "text": "Did Jake give any feedback on how we can prevent similar incidents in the future?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+`That sounds serious.`
+
+---
+
+`It was quite insightful.`
+
+---
+
+`Of course, I'll get that done.`
+
+#### --answer--
+
+`Yes, he suggested several steps.`
+
+### --question--
+
+#### --text--
+
+What does `to give feedback` mean?
+
+#### --distractors--
+
+To complain about something without offering solutions
+
+---
+
+To officially approve a final decision
+
+---
+
+To repeat information without changing it
+
+#### --answer--
+
+To share opinions or advice to help improve something
+
+### --question--
+
+#### --text--
+
+Lisa said to you: `We reviewed the logs`. How would you report what she said?
+
+#### --distractors--
+
+`Lisa mentioned that they reviewed the logs.`
+
+---
+
+`Lisa mentioned that we reviewed the logs.`
+
+---
+
+`Lisa mentioned that we had reviewed the logs.`
+
+#### --answer--
+
+`Lisa mentioned that they had reviewed the logs.`
+
+### --question--
+
+#### --text--
+
+True or false: The word `that` is optional and often left out in reported speech.
+
+#### --distractors--
+
+That's false because `that` must always be included in reported speech.
+
+---
+
+That's true but only when reporting questions instead of statements.
+
+---
+
+That's false because removing `that` makes the sentence incorrect.
+
+#### --answer--
+
+That's true because speakers often omit `that` without changing the meaning.
+
+### --question--
+
+#### --text--
+
+What is a `summary`?
+
+#### --distractors--
+
+A detailed explanation including all minor information
+
+---
+
+A personal opinion about an event
+
+---
+
+A list of unrelated facts
+
+#### --answer--
+
+A brief statement presenting the most important information
+
+### --question--
+
+#### --text--
+
+What does `then` express in this sentence: `We should cooperate with them then`?
+
+#### --distractors--
+
+It refers to something they did regularly in the past.
+
+---
+
+It compares cooperation with another possible action.
+
+---
+
+It asks whether cooperation will happen in the future.
+
+#### --answer--
+
+It shows a decision based on what was just discussed.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What did users mention about the color scheme? <!-- (quiz audio) Linda: Yes, the color scheme was brought up a few times. It seems it was found to be a bit overwhelming by some users. They suggested it could be toned down a bit. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_21-2.mp3",
+    "startTimestamp": 21.4,
+    "finishTimestamp": 28.9
+  },
+  "transcript": [
+    {
+      "character": "Linda",
+      "text": "Yes, the color scheme was brought up a few times. It seems it was found to be a bit overwhelming by some users. They suggested it could be toned down a bit."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+Users said the color scheme looked simple but slightly unfinished.
+
+---
+
+Users requested completely different colors for the entire interface.
+
+---
+
+Users mentioned the color scheme briefly but had no strong opinion.
+
+#### --answer--
+
+Users found the color scheme somewhat overwhelming and suggested reducing it.
+
+### --question--
+
+#### --text--
+
+Sophie said to you: `I think we should change the design`. How would you report what she said?
+
+#### --distractors--
+
+`Sophie suggests change the design.`
+
+---
+
+`Sophie suggested to change the design.`
+
+---
+
+`Sophie suggested change the design.`
+
+#### --answer--
+
+`Sophie suggested changing the design.`
+
+### --question--
+
+#### --text--
+
+What does `to address a point` mean?
+
+#### --distractors--
+
+To ignore a topic completely
+
+---
+
+To postpone a discussion permanently
+
+---
+
+To summarize a whole project
+
+#### --answer--
+
+To talk about a specific issue
+
+### --question--
+
+#### --text--
+
+What's the difference between these two sentences: `It was mentioned that some bugs were fixed` and `Tom and Linda fixed some bugs`?
+
+#### --distractors--
+
+The first describes a planned action, while the second describes a completed action.
+
+---
+
+The first sounds informal, while the second is used only in formal reports.
+
+---
+
+Both sentences describe exactly the same focus.
+
+#### --answer--
+
+The first highlights the action, while the second clearly states who did it.
+
+### --question--
+
+#### --text--
+
+James said: `Lisa mentioned the issue was brought up by Mark`. Who mentioned the issue first?
+
+#### --distractors--
+
+Nobody mentioned it
+
+---
+
+Lisa
+
+---
+
+James
+
+#### --answer--
+
+Mark
+
+### --question--
+
+#### --text--
+
+What is an example of an `overload`?
+
+#### --distractors--
+
+A system working faster than expected
+
+---
+
+A device turning off normally after use
+
+---
+
+A program updating automatically
+
+#### --answer--
+
+A system receiving more data than it can handle
+
+### --question--
+
+#### --text--
+
+What does `to incorporate` mean?
+
+#### --distractors--
+
+To remove something from a system
+
+---
+
+To delay a project until later
+
+---
+
+To test something temporarily
+
+#### --answer--
+
+To include something
+
+### --question--
+
+#### --text--
+
+James said to you: `The server went down because of a power issue`. How would you report what he said?
+
+#### --distractors--
+
+`James explained that the server is down because of a power issue.`
+
+---
+
+`James explained that the server goes down because of a power issue.`
+
+---
+
+`James explained that the server is going down because of a power issue.`
+
+#### --answer--
+
+`James explained that the server went down because of a power issue.`
+
+### --question--
+
+#### --text--
+
+What does `in a while` mean?
+
+#### --distractors--
+
+Immediately
+
+---
+
+A long time ago
+
+---
+
+At the same moment
+
+#### --answer--
+
+After some time has passed

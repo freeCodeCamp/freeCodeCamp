@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import {
   faXTwitter,
   faBluesky,
-  faInstagram
+  faThreads,
+  faFacebook
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShareRedirectProps } from './types';
@@ -11,42 +12,55 @@ import { ShareRedirectProps } from './types';
 export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   xRedirectURL,
   blueSkyRedirectURL,
-  threadsRedirectURL
+  threadsRedirectURL,
+  facebookRedirectURL,
+  minified
 }) => {
   const { t } = useTranslation();
   return (
     <>
       <a
-        data-testid='ShareTemplateWrapperTestID'
+        data-testid='share-on-x'
         className='btn fade-in'
         href={xRedirectURL}
         target='_blank'
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faXTwitter} size='1x' aria-hidden='true' />
-        {t('buttons.share-on-x')}
+        {!minified && t('buttons.share-on-x')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
-        data-testid='ShareTemplateWrapperTestID'
+        data-testid='share-on-bluesky'
         className='btn fade-in'
         href={blueSkyRedirectURL}
         target='_blank'
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faBluesky} size='1x' aria-hidden='true' />
-        {t('buttons.share-on-bluesky')}
+        {!minified && t('buttons.share-on-bluesky')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
-        data-testid='ShareTemplateWrapperTestID'
+        data-testid='share-on-threads'
         className='btn fade-in'
         href={threadsRedirectURL}
         target='_blank'
         rel='noreferrer'
       >
-        <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
-        {t('buttons.share-on-threads')}
+        <FontAwesomeIcon icon={faThreads} size='1x' aria-hidden='true' />
+        {!minified && t('buttons.share-on-threads')}
+        <span className='sr-only'>{t('aria.opens-new-window')}</span>
+      </a>
+      <a
+        data-testid='share-on-facebook'
+        className='btn fade-in'
+        href={facebookRedirectURL}
+        target='_blank'
+        rel='noreferrer'
+      >
+        <FontAwesomeIcon icon={faFacebook} size='1x' aria-hidden='true' />
+        {!minified && t('buttons.share-on-facebook')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
     </>

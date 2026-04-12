@@ -39,8 +39,17 @@ blockquote .small:before {
   content: '\2014 \00A0';
 }
 
+p:has(ruby),
+li:has(> ruby) {
+  padding: 0.5rem 0;
+}
+
+ruby {
+  font-size: 1.3rem;
+}
+
 rt {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 #___gatsby {

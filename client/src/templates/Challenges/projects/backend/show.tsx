@@ -112,7 +112,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, tests, title }
+          challenge: { challengeType, helpCategory, description, tests, title }
         }
       },
       pageContext: { challengeMeta }
@@ -127,10 +127,13 @@ const ShowBackEnd = (props: BackEndProps) => {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

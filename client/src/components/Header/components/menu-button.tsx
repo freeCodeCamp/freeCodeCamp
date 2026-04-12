@@ -31,7 +31,8 @@ const MenuButton = ({
     }
   };
 
-  const handleClick = (): void => {
+  const handleClick = (event: React.MouseEvent): void => {
+    event.stopPropagation();
     if (displayMenu) {
       hideMenu();
       return;

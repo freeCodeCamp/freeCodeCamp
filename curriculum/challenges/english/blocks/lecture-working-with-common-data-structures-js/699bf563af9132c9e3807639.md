@@ -1,0 +1,240 @@
+---
+id: 699bf563af9132c9e3807639
+title: How Do Dynamic Arrays Differ From Static Arrays?
+challengeType: 19
+dashedName: how-do-dynamic-arrays-differ-from-static-arrays
+---
+
+# --description--
+
+Arrays are a fundamental data structure in computer science. All arrays store ordered collections of data, but depending on their type, they may work differently behind the scenes.
+
+Their underlying behavior can have an important effect in the program's efficiency, so let's learn about dynamic and static arrays and their differences, so you can choose the most efficient one for your program.
+
+We'll start with static arrays.
+
+**Static arrays** have a fixed size. They store elements in adjacent memory locations.
+
+The size of a static array is determined when the array is initialized. Once that specific block of memory is allocated, it's fixed, and cannot be changed while the program is running. This is a key characteristic of static arrays.
+
+Storing elements in adjacent memory locations makes the data retrieval process more efficient because the program can store the location of the first element and then use indices to make simple calculations and find the other elements in memory.
+
+Thanks to this, accessing the values of a static array takes constant time `O(1)`, which is very efficient.
+
+You can use a static array when you know the number of elements that will be stored in advance. It's also helpful when the values will be accessed very frequently, since the access operation is very efficient.
+
+However, this data structure cannot grow or shrink, so if the number of elements that will be stored can vary, you should use a dynamic array instead.
+
+Trying to increase the size of a static array would involve creating a new array and copying all the elements from the old array to a new one, which is inefficient. In that case, a dynamic array would be much better because it handles this process automatically.
+
+JavaScript does not have traditional low-level static arrays like C or Java, but you can simulate a fixed-size array using the built-in `Array` object:
+
+```js
+let numbers = new Array(3); // fixed size of 3
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+```
+
+While JavaScript allows resizing, conceptually this represents a fixed-length array.
+
+Arrays in JavaScript are dynamic by default, so let's take a look at those.
+
+**Dynamic arrays** are more flexible because they can grow or shrink automatically while the program is running.
+
+They work through an automatic resizing mechanism that copies the elements into a new array when the original array is full. The process is done efficiently because the size of the new array is chosen in an efficient way that makes these computationally expensive operations less frequent.
+
+Accessing the elements of a dynamic array takes constant time `O(1)`, so this operation is very efficient.
+
+Inserting an element in the middle of the array takes linear time `O(n)` because the elements after it need to be relocated.
+
+Inserting an element at the end of the array takes constant time `O(1)` if there is still space available in the dynamic array, but if the array is full and needs resizing, this operation has a `O(n)` complexity.
+
+You should use dynamic arrays when you don't know in advance the number of values that you will need to store in the array. They are also helpful when you will be frequently inserting and deleting elements.
+
+To create an array in JavaScript, you write the elements inside square brackets, separated by commas:
+
+```js
+let numbers = [3, 4, 5, 6];
+```
+
+This creates a dynamic array with four elements.
+
+You can access an element in the array by writing the variable name, followed by square brackets containing the index.
+
+Indices start at 0 for the first element and increase by 1 for each next element.
+
+```js
+numbers[0]; // 3
+numbers[1]; // 4
+numbers[2]; // 5
+numbers[3]; // 6
+```
+
+To update a value, you just need to reassign it:
+
+```js
+numbers[2] = 16
+```
+
+Now, the array becomes `[3, 4, 16, 6]`.
+
+To add an element to the end of the array, use the `.push()` method:
+
+```js
+numbers.push(7)
+```
+
+Now the array becomes `[3, 4, 16, 6, 7]`:
+
+To insert elements at a specific index, JavaScript does not have `.insert()` like Python, but you can use the `.splice()` method. The syntax looks like this:
+
+```js
+array.splice(index, deleteCount, newElement)
+```
+
+Here's an example:
+
+```js
+numbers.splice(3, 0, 15);
+```
+
+This example means:
+
+- Start at index 3
+- Remove 0 elements
+- Insert 15
+
+If the array was `[3, 4, 16, 6, 7]`, it now becomes `[3, 4, 16, 15, 6, 7]`.
+
+You can remove an element at a specific index with the same `.splice` method:
+
+```js
+numbers.splice(2, 1);
+```
+
+This means start at index 2 and remove 1 element.
+
+To remove the last element, use the `.pop()` method:
+
+```js
+numbers.pop();
+```
+
+There are tons of other built-in array methods that you can check in the documentation for working with arrays in JavaScript.
+
+That's the power of dynamic arrays.
+
+In general, you should use static arrays when you know the number of elements in advance and you need to access them frequently, and use dynamic arrays when the number of elements is unknown or variable over time.
+
+You should always consider the tradeoff between the simplicity of static arrays and the flexibility of dynamic arrays. They are both helpful for specific use cases and scenarios. Being able to choose the best one for a given problem is part of the problem-solving skills that you will gradually develop with practice.
+
+# --questions--
+
+## --text--
+
+What is the main difference in size between a static array and a dynamic array?
+
+## --answers--
+
+Static arrays can change their size after being created, while dynamic arrays cannot.
+
+### --feedback--
+
+Think about how much space each type of array will require.
+
+---
+
+Static arrays have a fixed size, while dynamic arrays can change size during runtime.
+
+---
+
+There is no practical difference in how their sizes are handled.
+
+### --feedback--
+
+Think about how much space each type of array will require.
+
+---
+
+Dynamic arrays are always larger than static arrays.
+
+### --feedback--
+
+Think about how much space each type of array will require.
+
+## --video-solution--
+
+2
+
+## --text--
+
+If you need to add more elements to a static array that is already full, what is the typical process involved?
+
+## --answers--
+
+The static array automatically expands its memory to fit the new elements.
+
+### --feedback--
+
+Think about what is necessary when a container with a fixed capacity runs out of space.
+
+---
+
+You must create a new, larger array and copy all existing elements to it.
+
+---
+
+The array automatically converts itself into a dynamic array.
+
+### --feedback--
+
+Think about what is necessary when a container with a fixed capacity runs out of space.
+
+---
+
+New elements are simply discarded if the array is full.
+
+### --feedback--
+
+Think about what is necessary when a container with a fixed capacity runs out of space.
+
+## --video-solution--
+
+2
+
+## --text--
+
+In which scenario would a static array typically be a more suitable choice than a dynamic array?
+
+## --answers--
+
+When the exact number of elements is unknown and changes frequently.
+
+### --feedback--
+
+Think about the main advantage of a static array related to its size and resource usage.
+
+---
+
+When you need to store a very large dataset that might grow indefinitely.
+
+### --feedback--
+
+Think about the main advantage of a static array related to its size and resource usage.
+
+---
+
+When you require frequent insertions and deletions at arbitrary positions within the collection.
+
+### --feedback--
+
+Think about the main advantage of a static array related to its size and resource usage.
+
+---
+
+When the data size is fixed and known at the time the program is written.
+
+## --video-solution--
+
+4

@@ -1,0 +1,495 @@
+---
+id: 6960415647143b144f20b94d
+title: Talking About Past Experiences Quiz
+challengeType: 8
+dashedName: en-b1-quiz-past-experiences
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of how to describe past events, problems, and situations at work.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is the correct question form of this sentence: `We found the document we needed`?
+
+#### --distractors--
+
+`Found we the document we needed?`
+
+---
+
+`Did we found the document we needed?`
+
+---
+
+`Do we find the document we needed?`
+
+#### --answer--
+
+`Did we find the document we needed?`
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to describe being trapped on a task?
+
+#### --distractors--
+
+`I'm stuck in this task and can't move forward.`
+
+---
+
+`I'm stuck for this task and can't move forward.`
+
+---
+
+`I'm stuck by this task and can't move forward.`
+
+#### --answer--
+
+`I'm stuck on this task and can't move forward.`
+
+### --question--
+
+#### --text--
+
+Listen to the audio. How would you answer this question? <!-- (quiz audio) Lisa: Hey, James. Did you find that bug we were stuck on yesterday? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_2-1.mp3",
+    "startTimestamp": 0.2,
+    "finishTimestamp": 3
+  },
+  "transcript": [
+    {
+      "character": "Lisa",
+      "text": "Hey, James. Did you find that bug we were stuck on yesterday?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+`Yes, I was.` / `No, I wasn't.`
+
+---
+
+`Yes, I found.` / `No, I didn't find.`
+
+---
+
+`Yes, I have.` / `No, I haven't.`
+
+#### --answer--
+
+`Yes, I did.` / `No, I didn't.`
+
+### --question--
+
+#### --text--
+
+What does this sentence express: `It was quite a hunt to find those bugs`?
+
+#### --distractors--
+
+It was easy to find the bugs.
+
+---
+
+Someone was hunting animals.
+
+---
+
+The bugs disappeared quickly.
+
+#### --answer--
+
+It took a lot of effort to find the bugs.
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`First` is used to describe the initial action.
+
+---
+
+`Then` refers to the next immediate step.
+
+---
+
+`Finally` marks the last step in a sequence.
+
+#### --answer--
+
+`Once` means everything happened many times.
+
+### --question--
+
+#### --text--
+
+Which of the following past forms is incorrect?
+
+#### --distractors--
+
+`To check` → `checked`
+
+---
+
+`To be` → `was` / `were`
+
+---
+
+`Work` → `worked`
+
+#### --answer--
+
+`To make` → `maked`
+
+### --question--
+
+#### --text--
+
+What are `error logs` used for?
+
+#### --distractors--
+
+To design a new interface
+
+---
+
+To store employee contact details
+
+---
+
+To schedule meetings
+
+#### --answer--
+
+To record and identify system problems
+
+### --question--
+
+#### --text--
+
+You want to refer to an unspecified thing, so you say: `BLANK is wrong with the code`.
+
+#### --distractors--
+
+`Everything`
+
+---
+
+`Nothing`
+
+---
+
+`Anything`
+
+#### --answer--
+
+`Something`
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT an example of `credentials`?
+
+#### --distractors--
+
+Username
+
+---
+
+Password
+
+---
+
+Access key
+
+#### --answer--
+
+Monitor screen
+
+### --question--
+
+#### --text--
+
+What does `to handle` mean?
+
+#### --distractors--
+
+To ignore a task
+
+---
+
+To delete a file
+
+---
+
+To complain about a problem
+
+#### --answer--
+
+To manage something
+
+### --question--
+
+#### --text--
+
+Which of the following is true about this sentence: `I was thinking we could do a project overview`?
+
+#### --distractors--
+
+It describes a single finished action in the past.
+
+---
+
+It shows a permanent fact about the project.
+
+---
+
+It describes a repeated habit in the past.
+
+#### --answer--
+
+It describes a continuous action that was happening in the past.
+
+### --question--
+
+#### --text--
+
+What is a `learning curve`?
+
+#### --distractors--
+
+A graph that shows company profits
+
+---
+
+A mistake in a training program
+
+---
+
+A short meeting about progress
+
+#### --answer--
+
+The time and effort needed to learn something new
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is asked with this question? <!-- (quiz audio) Jake: What's on your mind? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_2-2.mp3",
+    "startTimestamp": 8.6,
+    "finishTimestamp": 9.7
+  },
+  "transcript": [
+    {
+      "character": "Jake",
+      "text": "What's on your mind?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+Jake is asking what time it is.
+
+---
+
+Jake is asking about your schedule.
+
+---
+
+Jake is asking about your past experience.
+
+#### --answer--
+
+Jake is asking what you are thinking about.
+
+### --question--
+
+#### --text--
+
+True or false: `Closely` describes something that happens continuously or very frequently.
+
+#### --distractors--
+
+That's true.
+
+---
+
+It depends on the speaker.
+
+---
+
+It depends on the context.
+
+#### --answer--
+
+That's false.
+
+### --question--
+
+#### --text--
+
+Which sentence refers to something that was true in the past but is not true now?
+
+#### --distractors--
+
+`I am currently working remotely from my home office three days a week.`
+
+---
+
+`I will work remotely once the new policy is approved next month.`
+
+---
+
+`I was working remotely yesterday because the office was closed.`
+
+#### --answer--
+
+`I used to work remotely when the company allowed flexible schedules.`
+
+### --question--
+
+#### --text--
+
+What does `in real time` mean?
+
+#### --distractors--
+
+After a long delay
+
+---
+
+At the end of the day
+
+---
+
+Before something starts
+
+#### --answer--
+
+Immediately as it happens
+
+### --question--
+
+#### --text--
+
+Which of the following means to review or examine something in detail?
+
+#### --distractors--
+
+`To go up`
+
+---
+
+`To go out`
+
+---
+
+`To go back`
+
+#### --answer--
+
+`To go through`
+
+### --question--
+
+#### --text--
+
+What's the difference between `would` and `used to`?
+
+#### --distractors--
+
+They are always used in exactly the same way.
+
+---
+
+`Used to` is only for future plans.
+
+---
+
+`Would` describes present situations.
+
+#### --answer--
+
+`Would` describes past habits only, while `used to` can describe past habits and states.
+
+### --question--
+
+#### --text--
+
+What does `so that` mean in this sentence: `We updated the system so that it would run faster`?
+
+#### --distractors--
+
+It shows a contrast between the old system and the new one.
+
+---
+
+It introduces the result that happened by accident.
+
+---
+
+It describes a habit the system had in the past.
+
+#### --answer--
+
+It explains the purpose of updating the system.
+
+### --question--
+
+#### --text--
+
+When would you say `What a surprise` to someone?
+
+#### --distractors--
+
+Your colleague submits the report exactly on time, as expected.
+
+---
+
+Your manager explains the project requirements step by step.
+
+---
+
+You ask a coworker to help you fix a bug.
+
+#### --answer--
+
+A teammate who is usually late arrives early to the meeting. 

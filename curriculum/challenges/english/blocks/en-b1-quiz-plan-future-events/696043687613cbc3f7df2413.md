@@ -1,0 +1,495 @@
+---
+id: 696043687613cbc3f7df2413
+title: Planning Future Events Quiz
+challengeType: 8
+dashedName: en-b1-quiz-plan-future-events
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of how to plan future events.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which sentence correctly talks about a planned event?
+
+#### --distractors--
+
+`The project is schedule for next week.`
+
+---
+
+`The project has scheduled for next week.`
+
+---
+
+`The project will schedule for next week.`
+
+#### --answer--
+
+`The project is scheduled for next week.`
+
+### --question--
+
+#### --text--
+
+What's the difference between `this` and `next` when talking about time?
+
+#### --distractors--
+
+Both always refer to the same time period.
+
+---
+
+`This` refers to the past; `next` refers to the present.
+
+---
+
+`Next` refers to the past; `this` refers to the future.
+
+#### --answer--
+
+`This` refers to the current period; `next` refers to the following one.
+
+### --question--
+
+#### --text--
+
+Which of the following situations is an incorrect match?
+
+#### --distractors--
+
+`DoS attack`: Hackers overload a website with traffic so users cannot access it.
+
+---
+
+`Phishing`: A scam email asks users to share their passwords.
+
+---
+
+`Hidden malware`: Harmful software hidden inside the system.
+
+#### --answer--
+
+`SQL injection attack`: Hackers send infected files to users via email.
+
+### --question--
+
+#### --text--
+
+What do you call a schedule that outlines times and dates of planned events?
+
+#### --distractors--
+
+`Activity`
+
+---
+
+`Patch`
+
+---
+
+`Deadline`
+
+#### --answer--
+
+`Timetable`
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`The meeting should lasts for two hours.`
+
+---
+
+`The meeting should lasting for two hours.`
+
+---
+
+`The meeting should last during two hours.`
+
+#### --answer--
+
+`The meeting should last for two hours.`
+
+### --question--
+
+#### --text--
+
+What do you describe as `upcoming`?
+
+#### --distractors--
+
+Something that already finished
+
+---
+
+Something happening right now
+
+---
+
+Something that happened last week
+
+#### --answer--
+
+Something that will happen soon
+
+### --question--
+
+#### --text--
+
+What does `to be on call` mean?
+
+#### --distractors--
+
+To make a phone call
+
+---
+
+To attend a meeting in person
+
+---
+
+To cancel an appointment
+
+#### --answer--
+
+To be available to provide help if needed
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does Jake express? <!-- (quiz audio) Jake: The entire technical support team will be on duty. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_5-1.mp3",
+    "startTimestamp": 31.8,
+    "finishTimestamp": 34.3
+  },
+  "transcript": [
+    {
+      "character": "Jake",
+      "text": "The entire technical support team will be on duty."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+The team was on duty earlier today or yesterday.
+
+---
+
+The team might be on duty, but it's uncertain.
+
+---
+
+The team refuses or will not be on duty.
+
+#### --answer--
+
+The team is expected to be on duty in the future.
+
+### --question--
+
+#### --text--
+
+Which sentence describes a fixed plan?
+
+#### --distractors--
+
+`The deadline might be set for Friday.`
+
+---
+
+`The deadline is going to be set for Friday.`
+
+---
+
+`The deadline is probably set for Friday.`
+
+#### --answer--
+
+`The deadline is set for Friday.`
+
+### --question--
+
+#### --text--
+
+What is the contraction for `will not`?
+
+#### --distractors--
+
+`Willn't`
+
+---
+
+`Wont`
+
+---
+
+There is no contraction
+
+#### --answer--
+
+`Won't`
+
+### --question--
+
+#### --text--
+
+True or false: A `project manager` oversees the progress of a project and ensures tasks are completed on time.
+
+#### --distractors--
+
+That's false.
+
+---
+
+It depends on the team.
+
+---
+
+It depends on the project.
+
+#### --answer--
+
+That's true.
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to describe the source or starting point of something?
+
+#### --distractors--
+
+`The issue came with a recent system update.`
+
+---
+
+`The issue came by a recent system update.`
+
+---
+
+`The issue came at a recent system update.`
+
+#### --answer--
+
+`The issue came from a recent system update.`
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`To coordinate` means to organize or collaborate to achieve a goal.
+
+---
+
+`To reassure` means to reduce someone's anxiety.
+
+---
+
+`To implement` means to put a plan into action.
+
+#### --answer--
+
+`To monitor` means to predict the future with certainty.
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct modal verb to talk about a definite future action?
+
+#### --distractors--
+
+`The update needs to improve security.`
+
+---
+
+`The update should improve security.`
+
+---
+
+`The update might improve security.`
+
+#### --answer--
+
+`The update will improve security.`
+
+### --question--
+
+#### --text--
+
+What is the phrase `Let's meet later` used for?
+
+#### --distractors--
+
+To give an order
+
+---
+
+To cancel a plan
+
+---
+
+To describe a past event
+
+#### --answer--
+
+To make a suggestion
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does Maria ask about? <!-- (quiz audio) Maria: What are you going to recommend to improve security? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_5-3.mp3",
+    "startTimestamp": 10.4,
+    "finishTimestamp": 12.7
+  },
+  "transcript": [
+    {
+      "character": "Maria",
+      "text": "What are you going to recommend to improve security?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She asks about decisions that were made in the past.
+
+---
+
+She asks only about a problem that is happening right now.
+
+---
+
+She asks about a task that has already been finished.
+
+#### --answer--
+
+She asks about actions or plans that will happen in the future.
+
+### --question--
+
+#### --text--
+
+What is an example of `unauthorized access`?
+
+#### --distractors--
+
+A user logging in with their own password
+
+---
+
+An employee checking their email
+
+---
+
+A manager updating a schedule
+
+#### --answer--
+
+A hacker entering a system without permission
+
+### --question--
+
+#### --text--
+
+Which phrase means the week following the current one?
+
+#### --distractors--
+
+`This week`
+
+---
+
+`Last week`
+
+---
+
+`The previous week`
+
+#### --answer--
+
+`Next week`
+
+### --question--
+
+#### --text--
+
+What are `best practices`?
+
+#### --distractors--
+
+Random ideas that might work
+
+---
+
+A list of company holidays
+
+---
+
+Emergency procedures only
+
+#### --answer--
+
+The most effective ways to do something
+
+### --question--
+
+#### --text--
+
+Does the phrase `That sounds like a solid plan` show support?
+
+#### --distractors--
+
+No, it shows disagreement.
+
+---
+
+Yes, but it asks for more details.
+
+---
+
+No, it cancels the plan.
+
+#### --answer--
+
+Yes, it shows agreement and approval.

@@ -1,0 +1,513 @@
+---
+id: 696046224a96c603346ba15f
+title: Clarifying Misunderstandings Quiz
+challengeType: 8
+dashedName: en-b1-quiz-clarify-misunderstandings
+lang: en-US
+---
+
+# --description--
+
+This quiz checks your understanding of language used to clarify ideas, avoid confusion, verify information, and explain technical concepts.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What do you call the practice of using existing code in new parts of a program?
+
+#### --distractors--
+
+`Code review`
+
+---
+
+`Code structure`
+
+---
+
+`Code submission`
+
+#### --answer--
+
+`Code reuse`
+
+### --question--
+
+#### --text--
+
+Which sentence uses the correct preposition to explain or point to a specific concept or idea?
+
+#### --distractors--
+
+`I will refer about the documentation later.`
+
+---
+
+`I will refer for the documentation later.`
+
+---
+
+`I will refer with the documentation later.`
+
+#### --answer--
+
+`I will refer to the documentation later.`
+
+### --question--
+
+#### --text--
+
+Which of the following is incorrect?
+
+#### --distractors--
+
+You want to verify details with someone, so you say: `Can we go over it?`
+
+---
+
+You want to ask what someone is thinking about, so you say: `What's on your mind?`
+
+---
+
+You want someone to check something quickly, so you say: `Can you take a look?`
+
+#### --answer--
+
+You want to schedule a meeting with the team, so you say: `Can I ask you about that?`
+
+### --question--
+
+#### --text--
+
+Which definition is incorrect?
+
+#### --distractors--
+
+`To mention` means to briefly refer to something.
+
+---
+
+`To simplify` means to reduce complexity.
+
+---
+
+`To operate` means how something works or functions.
+
+#### --answer--
+
+`To extend` means to remove features from something.
+
+### --question--
+
+#### --text--
+
+What does someone mean if they answer your question with `kind of`?
+
+#### --distractors--
+
+They completely agree with you.
+
+---
+
+They strongly disagree with you.
+
+---
+
+They want to change the topic.
+
+#### --answer--
+
+They partially agree but are uncertain.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is the most appropriate answer if Mark isn't completely correct? <!-- (quiz audio) Mark: I also heard "encapsulation." Does that mean breaking code into smaller parts, like encapsulating it? -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_16-1.mp3",
+    "startTimestamp": 30.9,
+    "finishTimestamp": 37.1
+  },
+  "transcript": [
+    {
+      "character": "Mark",
+      "text": "I also heard 'encapsulation.' Does that mean breaking code into smaller parts, like encapsulating it?"
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+`Sure, Mark.`
+
+---
+
+`I think so.`
+
+---
+
+`Not that I know of.`
+
+#### --answer--
+
+`Not quite.`
+
+### --question--
+
+#### --text--
+
+What does this sentence express: `Think of it as a toolbox that stores reusable components`?
+
+#### --distractors--
+
+It gives a strict technical definition.
+
+---
+
+It describes a past development process.
+
+---
+
+It rejects a previous explanation.
+
+#### --answer--
+
+It compares a concept to something familiar to help understanding.
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`I wonder what do this function does.`
+
+---
+
+`I wonder does this function work.`
+
+---
+
+`I wonder this function does what.`
+
+#### --answer--
+
+`I wonder what this function does.`
+
+### --question--
+
+#### --text--
+
+What does `to clarify` mean?
+
+#### --distractors--
+
+To repeat information without changes
+
+---
+
+To cancel a discussion
+
+---
+
+To delay a decision
+
+#### --answer--
+
+To remove confusion by explaining something
+
+### --question--
+
+#### --text--
+
+What do you describe as `unnecessary`?
+
+#### --distractors--
+
+Something essential for success
+
+---
+
+Something optional but useful
+
+---
+
+Something required by rules
+
+#### --answer--
+
+Something not needed in the situation
+
+### --question--
+
+#### --text--
+
+What does this question ask about: `Does that make sense?`
+
+#### --distractors--
+
+Whether the task is finished
+
+---
+
+Whether someone agrees completely
+
+---
+
+Whether the project is approved
+
+#### --answer--
+
+Whether the explanation was understood
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What does Lisa say about the issue? <!-- (quiz audio) Lisa: It could be a JavaScript issue. Maybe there's a problem with the event handling. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_16-2.mp3",
+    "startTimestamp": 30.9,
+    "finishTimestamp": 35
+  },
+  "transcript": [
+    {
+      "character": "Lisa",
+      "text": "It could be a JavaScript issue. Maybe there's a problem with the event handling."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She is certain JavaScript caused the issue.
+
+---
+
+She confirms event handling is definitely broken.
+
+---
+
+She says the issue has already been fixed.
+
+#### --answer--
+
+She suggests possible causes but is not sure.
+
+### --question--
+
+#### --text--
+
+What's the difference between `to work fine` and `to act weird`?
+
+#### --distractors--
+
+`To work fine` means something is crashed; `to act weird` means it runs normally.
+
+---
+
+Both describe serious technical failures.
+
+---
+
+They mean almost the same thing, but `to act weird` is used only for technology, not people.
+
+#### --answer--
+
+`To work fine` means functioning correctly; `to act weird` means behaving unexpectedly.
+
+### --question--
+
+#### --text--
+
+What does `to happen enough to be annoying` mean?
+
+#### --distractors--
+
+Something happens rarely but leaves a strong emotional impression.
+
+---
+
+Something happens deliberately because someone planned it that way.
+
+---
+
+Something happens smoothly and produces a positive result.
+
+#### --answer--
+
+Something happens often enough that it starts to frustrate people.
+
+### --question--
+
+#### --text--
+
+You want to bring up an additional issue that hasn't been mentioned yet, so you say: `BLANK I'd like to mention before we finish discussing this`.
+
+#### --distractors--
+
+`As a result`
+
+---
+
+`On the contrary`
+
+---
+
+`In conclusion`
+
+#### --answer--
+
+`There's another thing`
+
+### --question--
+
+#### --text--
+
+Choose the grammatically correct sentence:
+
+#### --distractors--
+
+`Did you checked the logs recently?`
+
+---
+
+`Have you check the logs recently?`
+
+---
+
+`You have checked the logs recently?`
+
+#### --answer--
+
+`Have you checked the logs recently?`
+
+### --question--
+
+#### --text--
+
+When would you ask someone `What's the story?`
+
+#### --distractors--
+
+You distribute responsibilities to team members at the start of work.
+
+---
+
+You officially approve financial documents during a formal meeting.
+
+---
+
+You verify that a completed report has been submitted successfully.
+
+#### --answer--
+
+A teammate looks stressed and you want to understand what is happening.
+
+### --question--
+
+#### --text--
+
+True or false: `To be on track` and `to be on schedule` mean the same thing.
+
+#### --distractors--
+
+That's true as they both mean a task has already been fully completed.
+
+---
+
+That's false as one refers to timing, while the other only describes location.
+
+---
+
+It depends on the context.
+
+#### --answer--
+
+That's true as they both mean progress is happening according to the planned timeline. 
+
+### --question--
+
+#### --text--
+
+What is an example of a `mix-up`?
+
+#### --distractors--
+
+A team finishes work earlier than expected.
+
+---
+
+A manager approves a proposal successfully.
+
+---
+
+A system update installs automatically.
+
+#### --answer--
+
+Two developers receive each other's task assignments.
+
+### --question--
+
+#### --text--
+
+Listen to the audio. What is Jessica communicating? <!-- (quiz audio) Jessica: The budget tracking feature is planned for the next update, not this one. Let me double-check and get back to you. -->
+
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "B1_16-3.mp3",
+    "startTimestamp": 62.2,
+    "finishTimestamp": 67.5
+  },
+  "transcript": [
+    {
+      "character": "Jessica",
+      "text": "The budget tracking feature is planned for the next update, not this one. Let me double-check and get back to you."
+    }
+  ]
+}
+```
+
+#### --distractors--
+
+She will verify the information but won't respond later.
+
+---
+
+She already confirmed everything.
+
+---
+
+She refuses to answer the question.
+
+#### --answer--
+
+She will verify the information and respond later.
