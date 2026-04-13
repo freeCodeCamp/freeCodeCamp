@@ -24,6 +24,8 @@ dashedName: build-a-tribute-page
 1. Your `img` element should be centered within its parent element
 
 Fulfill the user stories and pass all the tests below to complete this project. Give it your own personal style. Happy Coding!
+**Note:** Your code is not automatically saved. Be sure 
+to click the "Save your Code" button to save your progress.
 
 **Note:** Be sure to add `<link rel="stylesheet" href="styles.css">` in your HTML to link your stylesheet and apply your CSS
 
