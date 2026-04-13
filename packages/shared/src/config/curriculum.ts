@@ -159,7 +159,8 @@ const defaultStageOrder = [
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
-  SuperBlockStage.Next
+  SuperBlockStage.Next,
+  SuperBlockStage.Catalog
 ];
 
 export function getStageOrder({
@@ -168,7 +169,7 @@ export function getStageOrder({
   const stageOrder = [...defaultStageOrder];
 
   if (showUpcomingChanges) {
-    stageOrder.push(SuperBlockStage.Upcoming, SuperBlockStage.Catalog);
+    stageOrder.push(SuperBlockStage.Upcoming);
   }
   return stageOrder;
 }
