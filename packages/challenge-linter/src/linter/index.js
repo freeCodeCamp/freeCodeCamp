@@ -5,25 +5,14 @@ import * as lintYAML from './markdown-yaml.js';
 import * as fencedCodeBlock from './fenced-code-block.js';
 
 export function linter(rules) {
-  const lint = (file, next) => {
+  const lint = async files => {
     const options = {
-      files: [file.path],
+      files,
       config: rules,
       customRules: [lintYAML, lintPrism, fencedCodeBlock]
     };
 
-    markdownlint(options, function callback(err, result) {
-      const resultString = (result || '').toString();
-      if (resultString) {
-        process.exitCode = 1;
-        console.log(resultString);
-      }
-      if (err) {
-        process.exitCode = 1;
-        console.error(err);
-      }
-      if (next) next(err, file);
-    });
+    return await markdownlint.promises.markdownlint(options);
   };
   return lint;
 }

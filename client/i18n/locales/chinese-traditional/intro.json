@@ -3816,8 +3816,8 @@
           "在第一節課程中，你將學習第一天上班可能遇到的情境中的常用表達方式。你將學習自我介紹、認識別人、詢問午餐推薦以及從安保處領取門禁卡。"
         ]
       },
-      "en-a2-quiz-greetings-first-day-office": {
-        "title": "上班第一天問候測驗",
+      "en-a2-quiz-first-day-conversations-at-work": {
+        "title": "First Day Conversations at Work Quiz",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -3826,8 +3826,8 @@
           "在本課程中，你將學習如何進行個人介紹。你還將學習如何在小組會議中陳述自己的職業和分享自己的目標。"
         ]
       },
-      "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "在線團隊介紹測驗",
+      "en-a2-quiz-meeting-introductions-at-work": {
+        "title": "Meeting Introductions at Work Quiz",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -3836,8 +3836,8 @@
           "在本課程中，你將學習如何在休閒場合開始對話。你還將學習如何談論自己的愛好和個性特徵。你甚至還將學習如何詢問城市周邊的情況。"
         ]
       },
-      "en-a2-quiz-conversation-starters-break-room": {
-        "title": "茶水間對話測驗",
+      "en-a2-quiz-conversation-starters-at-work": {
+        "title": "Break Room Conversations Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
@@ -3846,8 +3846,8 @@
           "在本課程中，你將學習如何談論你的工作日和你在工作場所執行的任務，以及如何與別人分享這些內容。課程主要關注用於描述你的活動的結構以及與任務相關的詞彙。"
         ]
       },
-      "en-a2-quiz-talk-about-typical-workday-tasks": {
-        "title": "談論你的工作測驗",
+      "en-a2-quiz-work-routines-and-tasks": {
+        "title": "Talking About Your Workday Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
@@ -3856,8 +3856,8 @@
           "在本課程中，你將學習如何談論並與別人分享你的例行活動細節。課程的重點是用於談論例行活動的結構和相關詞彙。"
         ]
       },
-      "en-a2-quiz-discuss-morning-evening-routine": {
-        "title": "工作中的日常作息測驗",
+      "en-a2-quiz-daily-life-routines": {
+        "title": "Daily Routines at Work Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-describe-your-current-project": {
@@ -3866,8 +3866,8 @@
           "在本課程中，你將學習如何談論自己參與的項目，以及如何告知別人自己在這些項目中的工作。課程的重點是用於告知別人的結構和相關詞彙。"
         ]
       },
-      "en-a2-quiz-describe-current-project": {
-        "title": "描述你當前的項目測驗",
+      "en-a2-quiz-what-are-you-working-on": {
+        "title": "Describing Your Current Project Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
@@ -3876,8 +3876,8 @@
           "在本課程中，你將學習如何詢問別人的教育和職業背景，並學習如何分享有關你的背景信息。"
         ]
       },
-      "en-a2-quiz-educational-professional-background": {
-        "title": "教育與職業背景測驗",
+      "en-a2-quiz-educational-and-professional-background": {
+        "title": "Educational and Professional Background Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
@@ -3886,8 +3886,8 @@
           "在本課程中，你將學習用不同的方式談論自己的愛好和感興趣的事物。你還將學習如何詢問別人的愛好，以及如何邀請別人參加這些活動。"
         ]
       },
-      "en-a2-quiz-talk-about-hobbies-interests": {
-        "title": "談論愛好與興趣測驗",
+      "en-a2-quiz-hobbies-and-interests": {
+        "title": "Talking About Hobbies and Interests Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
@@ -3906,8 +3906,8 @@
           "在本課程中，你將學習如何詢問人們在個人和職業生活中受到哪些因素驅動，如何回答與自身動機相關的問題，以及如何探討人們的偏好。"
         ]
       },
-      "en-a2-quiz-preferences-motivations": {
-        "title": "偏好與動機測驗",
+      "en-a2-quiz-preferences-and-motivations": {
+        "title": "Preferences and Motivations Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
@@ -3916,8 +3916,8 @@
           "在本課程中，你將學習如何討論當今科技領域大家都在談論的話題。"
         ]
       },
-      "en-a2-quiz-popular-technology-trends": {
-        "title": "技術趨勢測驗",
+      "en-a2-quiz-sharing-opinions": {
+        "title": "Technology Trends Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
@@ -3926,8 +3926,8 @@
           "在本課程中，你將學習如何覈查現有信息的正確性，以及在遇到不明確的情況時如何提出澄清請求。"
         ]
       },
-      "en-a2-quiz-clarify-information-interactions": {
-        "title": "澄清信息測驗",
+      "en-a2-quiz-getting-the-details-right": {
+        "title": "Clarifying Information Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
@@ -3946,8 +3946,8 @@
           "在本課程中，你將學習與編程相關的術語，並學習如何在對話中使用它們。"
         ]
       },
-      "en-a2-quiz-code-related-concepts-terms": {
-        "title": "編程概念與術語測驗",
+      "en-a2-quiz-key-programming-terms": {
+        "title": "Code Concepts and Terms Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
@@ -3956,8 +3956,8 @@
           "在本課程中，你將瞭解科技領域的一些最新趨勢，並學習如何用英語討論這些話題。"
         ]
       },
-      "en-a2-quiz-tech-trends-updates": {
-        "title": "技術更新與趨勢測驗",
+      "en-a2-quiz-discussing-new-ideas": {
+        "title": "Tech Updates and Trends Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
@@ -3966,8 +3966,8 @@
           "在本課程中，你將學習如何向同事尋求幫助以及如何向同事提供幫助的相關表達。"
         ]
       },
-      "en-a2-quiz-help-coworker-github-troubleshooting": {
-        "title": "在 GitHub 上幫助同事測驗",
+      "en-a2-quiz-discussing-problems-and-solutions": {
+        "title": "Helping a Coworker on GitHub Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
@@ -3976,16 +3976,16 @@
           "本課程將指導你如何圍繞項目進展展開討論，包括已完成的工作內容以及當前正在推進的任務。"
         ]
       },
-      "en-a2-quiz-share-progress-weekly-meeting": {
-        "title": "每週會議進度測驗",
+      "en-a2-quiz-collaborating-in-meetings": {
+        "title": "Weekly Meeting Progress Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "學習如何要求澄清對代碼的理解",
         "intro": ["在本課程中，你將學習如何對代碼中你不清楚的地方提問。"]
       },
-      "en-a2-quiz-ask-for-code-clarification": {
-        "title": "代碼澄清問答測驗",
+      "en-a2-quiz-understanding-problems": {
+        "title": "Asking for Code Clarification Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
@@ -4010,8 +4010,8 @@
           "在本課程中，你將瞭解一些有助於你以簡單方式理解文檔並進行分析的方法。"
         ]
       },
-      "en-a2-quiz-analyze-code-documentation": {
-        "title": "分析代碼文檔測驗",
+      "en-a2-quiz-analyzing-documentation": {
+        "title": "Analyzing Code Documentation Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
@@ -4020,8 +4020,8 @@
           "在本課程中，你將學習如何與同事分享你的進展，以及如何講述你在項目中取得的成果。"
         ]
       },
-      "en-a2-quiz-share-progress-accomplishments": {
-        "title": "分享進度與成就測驗",
+      "en-a2-quiz-discussing-progress-and-results": {
+        "title": "Sharing Progress and Achievements Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
@@ -4046,24 +4046,24 @@
         "title": "學習如何提供技術支持和指導",
         "intro": ["在本課程中，你將瞭解如何在技術細節方面爲他人提供幫助。"]
       },
-      "en-a2-quiz-offer-technical-support-guidance": {
-        "title": "提供技術支持測驗",
+      "en-a2-quiz-following-best-practices": {
+        "title": "Offering Technical Support Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-request-and-receive-guidance": {
         "title": "學習如何請求和接受指導",
         "intro": ["本課程將教你如何在需要時向同事尋求幫助。"]
       },
-      "en-a2-quiz-request-receive-guidance": {
-        "title": "請求與接受指導測驗",
+      "en-a2-quiz-asking-for-help": {
+        "title": "Requesting and Receiving Guidance Quiz",
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "學習如何在幫助別人時提供解釋",
         "intro": ["本課程將指導你如何在需要時向同事尋求幫助。"]
       },
-      "en-a2-quiz-provide-explanations-helping-others": {
-        "title": "向他人解釋事物測驗",
+      "en-a2-quiz-giving-adivice-and-suggestions": {
+        "title": "Explaining Things to Others Quiz",
         "intro": ["", ""]
       },
       "en-a2-certification-exam": {
@@ -5492,10 +5492,23 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "workshop-linked-list-js": {
+        "title": "Build a Linked List",
+        "intro": [
+          "In the previous lessons, you learned about some common data structures.",
+          "In this workshop, you will build a linked list using JavaScript."
+        ]
+      },
       "lab-linked-list-operations": {
         "title": "Implement Linked List Operations",
         "intro": [
           "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
+      "lab-implement-a-stack": {
+        "title": "Implement a Stack",
+        "intro": [
+          "In this lab, you will implement a stack data structure using functions."
         ]
       },
       "lab-implement-a-queue": {
@@ -5522,6 +5535,20 @@
         "intro": [
           "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
+      "workshop-binary-search-js": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "workshop-merge-sort-js": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
       "lab-bubble-sort-algorithm": {
@@ -5566,10 +5593,23 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "workshop-shortest-path-algorithm-js": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "The shortest path algorithm finds the minimum distance between nodes in a weighted graph.",
+          "In this workshop, you'll implement the shortest path algorithm in JavaScript and return both the shortest distances and the paths taken."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter-js": {
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "workshop-breadth-first-search-js": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
         ]
       },
       "lab-depth-first-search-js": {
@@ -5591,10 +5631,23 @@
           "Before you are quizzed on graphs and trees, you should review what you've learned."
         ]
       },
+      "quiz-graph-and-trees-js": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Graphs and Trees Quiz",
+          "Test what you've learned about graphs and trees with this quiz."
+        ]
+      },
       "lecture-understanding-dynamic-programming-js": {
         "title": "Understanding Dynamic Programming",
         "intro": [
           "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "lab-nth-fibonacci-number-js": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [
+          "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
       "review-dynamic-programming-js": {
@@ -6004,6 +6057,10 @@
           "In these lessons, you will learn about basic data visualization concepts."
         ]
       },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
+      },
       "lab-scatterplot-graph": {
         "title": "Build a Scatterplot Graph",
         "intro": [
@@ -6014,6 +6071,12 @@
         "title": "Introduction to TypeScript",
         "intro": [
           "In these lessons, you will learn what TypeScript is and how to use it."
+        ]
+      },
+      "workshop-type-safe-user-profile": {
+        "title": "Build a Type Safe User Profile",
+        "intro": [
+          "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
         ]
       },
       "lecture-understanding-type-composition": {
