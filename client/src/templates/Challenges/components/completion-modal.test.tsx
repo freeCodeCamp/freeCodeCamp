@@ -18,7 +18,7 @@ import {
 import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { curriculumData } from '../../../services/curriculum-data';
 import { getTestRunner } from '../utils/build';
-import CompletionModal, { combineFileData } from './completion-modal';
+import CompletionModal, { combineFileData, createZipBlob } from './completion-modal';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { useStaticQuery } from 'gatsby';
 import { ChallengeNode, SuperBlockStructure } from '../../../redux/prop-types';
@@ -236,6 +236,48 @@ describe('<CompletionModal />', () => {
       expect(result).toContain('** end of styles.css **');
       expect(result).toContain('** start of script.js **');
       expect(result).toContain('** end of script.js **');
+    });
+  });
+
+  describe('ZIP Download Content', () => {
+    it('should add each challenge file to the zip with the correct filename', async () => {
+      const mockFile = vi.fn();
+      const mockGenerateAsync = vi.fn().mockResolvedValue(new Blob(['zip'], { type: 'application/zip' }));
+      vi.doMock('jszip', () => ({
+        default: vi.fn().mockReturnValue({
+          file: mockFile,
+          generateAsync: mockGenerateAsync
+        })
+      }));
+
+      const files = [
+        { name: 'index', ext: 'html', contents: '<h1>Hello</h1>' },
+        { name: 'styles', ext: 'css', contents: 'body { color: red; }' },
+        { name: 'script', ext: 'js', contents: 'console.log("hi")' }
+      ];
+
+      await createZipBlob(files);
+
+      expect(mockFile).toHaveBeenCalledWith('index.html', '<h1>Hello</h1>');
+      expect(mockFile).toHaveBeenCalledWith('styles.css', 'body { color: red; }');
+      expect(mockFile).toHaveBeenCalledWith('script.js', 'console.log("hi")');
+      expect(mockGenerateAsync).toHaveBeenCalledWith({ type: 'blob' });
+    });
+
+    it('should return a Blob from generateAsync', async () => {
+      const expectedBlob = new Blob(['zip content'], { type: 'application/zip' });
+      vi.doMock('jszip', () => ({
+        default: vi.fn().mockReturnValue({
+          file: vi.fn(),
+          generateAsync: vi.fn().mockResolvedValue(expectedBlob)
+        })
+      }));
+
+      const result = await createZipBlob([
+        { name: 'index', ext: 'html', contents: '<p>test</p>' }
+      ]);
+
+      expect(result).toBeInstanceOf(Blob);
     });
   });
 });

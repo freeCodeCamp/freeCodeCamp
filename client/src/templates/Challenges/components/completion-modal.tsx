@@ -96,11 +96,16 @@ function CompletionModal({
     // if the challengeFiles change. It is in the useEffect so that we cannot
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
+    // Guard against stale state updates after unmount or challengeFiles change.
+    let cancelled = false;
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
-      setDownloadURL(URL.createObjectURL(blob));
+      createZipBlob(challengeFiles).then(blob => {
+        if (!cancelled) setDownloadURL(URL.createObjectURL(blob));
+      });
     }
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeFiles]);
 
@@ -194,7 +199,7 @@ function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
@@ -225,4 +230,20 @@ export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
         : currentFile.contents;
     return allFiles;
   }, '');
+}
+
+/**
+ * Creates a ZIP blob from an array of challenge files.
+ * Each file becomes a separate entry in the archive (e.g. index.html, styles.css, script.js),
+ * making the downloaded project immediately runnable.
+ */
+export async function createZipBlob(
+  challengeFiles: DownloadableChallengeFile[]
+): Promise<Blob> {
+  const JSZip = (await import('jszip')).default;
+  const zip = new JSZip();
+  for (const file of challengeFiles) {
+    zip.file(`${file.name}.${file.ext}`, file.contents);
+  }
+  return zip.generateAsync({ type: 'blob' });
 }
