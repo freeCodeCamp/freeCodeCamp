@@ -123,7 +123,7 @@ const InternetSettings = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormPristine() && isFormValid()) {
-      // Only submit the form if is has changed, and if it is valid
+      // Only submit the form if it has changed, and if it is valid
       updateMySocials({ ...formValues });
     }
     setIsEditing(false);
