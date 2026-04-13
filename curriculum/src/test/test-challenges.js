@@ -38,10 +38,22 @@ vi.mock(
       '@freecodecamp/browser-scripts/ts-compiler'
     );
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
-    await compiler.setup({ useNodeModules: true });
+    let previousTsconfig;
+    let hasConfiguredCompiler = false;
+
+    const mustSetup = tsconfig =>
+      !hasConfiguredCompiler ||
+      JSON.stringify(tsconfig) !== JSON.stringify(previousTsconfig);
+
     return {
       ...actual,
-      setupTSCompiler: () => Promise.resolve(true),
+      setupTSCompiler: tsconfig => {
+        if (mustSetup(tsconfig)) {
+          compiler.setup({ useNodeModules: true, tsconfig });
+          previousTsconfig = lodash.cloneDeep(tsconfig);
+          hasConfiguredCompiler = true;
+        }
+      },
       compileTypeScriptCode: code => {
         const { result, error } = compiler.compile(code, 'index.tsx');
         if (error) throw error;
