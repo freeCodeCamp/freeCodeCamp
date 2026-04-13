@@ -26,8 +26,6 @@ const fileJoi = Joi.object().keys({
   editableRegionBoundaries: [Joi.array().items(Joi.number())],
   path: Joi.string(),
   error: Joi.valid(null),
-  head: Joi.string().allow(''),
-  tail: Joi.string().allow(''),
   seed: Joi.string().allow(''),
   contents: Joi.string().allow(''),
   id: Joi.string().allow(''),
@@ -236,7 +234,8 @@ export const schema = Joi.object().keys({
     'Euler',
     'Rosetta',
     'Chinese Curriculum',
-    'Spanish Curriculum'
+    'Spanish Curriculum',
+    'General'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
@@ -358,7 +357,6 @@ export const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
-  showSpeakingButton: Joi.bool(),
   // This is only to be used for dynamic client updates.
   sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),

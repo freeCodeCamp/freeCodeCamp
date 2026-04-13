@@ -125,6 +125,15 @@ const indexData: IndexData[] = [
     indexes: [{ key: { userId: 1, id: 1 }, name: 'userId_1__id_1' }]
   },
   {
+    collection: 'SocratesUsage',
+    indexes: [
+      {
+        key: { userId: 1, date: 1 },
+        name: 'userId_date_unique'
+      }
+    ]
+  },
+  {
     collection: 'Survey',
     indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
   },

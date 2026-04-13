@@ -11,17 +11,12 @@ import {
 
 import {
   transformContents,
-  transformHeadTailAndContents,
-  compileHeadTail,
   createSource
 } from '@freecodecamp/shared/utils/polyvinyl';
 import { version } from '@freecodecamp/browser-scripts/package.json';
 
 import { WorkerExecutor } from './worker-executor';
-import {
-  compileTypeScriptCode,
-  setupTSCompiler
-} from './typescript-worker-handler';
+import { compileTypeScriptCode } from './typescript-worker-handler';
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;
@@ -69,7 +64,7 @@ async function loadPresetEnv() {
     );
 
   presetsJS = {
-    presets: [presetEnv]
+    presets: [[presetEnv, { exclude: ['transform-spread'] }]]
   };
 }
 
@@ -84,7 +79,7 @@ async function loadPresetReact() {
     );
 
   presetsJSX = {
-    presets: [presetEnv, presetReact]
+    presets: [[presetEnv, { exclude: ['transform-spread'] }], presetReact]
   };
 }
 
@@ -118,20 +113,14 @@ const getJSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetEnv();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-  return transformHeadTailAndContents(
-    babelTransformCode(babelOptions),
-    challengeFile
-  );
+  return transformContents(babelTransformCode(babelOptions), challengeFile);
 };
 
 const getJSXTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
   const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
-  return transformHeadTailAndContents(
-    babelTransformCode(babelOptions),
-    challengeFile
-  );
+  return transformContents(babelTransformCode(babelOptions), challengeFile);
 };
 
 const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
@@ -148,18 +137,16 @@ const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
 
 const getTSTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
-  await setupTSCompiler();
   const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
   return flow(
-    partial(transformHeadTailAndContents, compileTypeScriptCode),
-    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+    partial(transformContents, compileTypeScriptCode),
+    partial(transformContents, babelTransformCode(babelOptions))
   )(challengeFile);
 };
 
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
-  await setupTSCompiler();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
@@ -167,8 +154,8 @@ const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
     moduleId: 'index' // TODO: this should be dynamic
   };
   return flow(
-    partial(transformHeadTailAndContents, compileTypeScriptCode),
-    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+    partial(transformContents, compileTypeScriptCode),
+    partial(transformContents, babelTransformCode(babelOptions))
   )(challengeFile);
 };
 
@@ -264,6 +251,30 @@ async function transformScript(documentElement, { useModules }) {
   });
 }
 
+const deferScript = scriptCode => {
+  // Mimic the behavior of a defer script by waiting until the DOM is loaded
+  // before executing the script.
+  return `
+(() => {
+  const run = (() => {
+    if (document.readyState === "interactive") {
+      ${scriptCode}
+    }
+  });
+
+  document.addEventListener('readystatechange', run, { once: true });
+})();
+`;
+};
+
+export const embedScript = (script, source, contents) => {
+  const code = contents ?? '';
+
+  script.innerHTML = script.hasAttribute('defer') ? deferScript(code) : code;
+  script.removeAttribute('src');
+  script.setAttribute('data-src', source);
+};
+
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
@@ -272,6 +283,7 @@ export const embedFilesInHtml = async function (challengeFiles) {
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
+
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
@@ -310,27 +322,19 @@ export const embedFilesInHtml = async function (challengeFiles) {
       link.dataset.href = 'styles.css';
     }
     if (script) {
-      script.innerHTML = scriptJs?.contents;
-      script.removeAttribute('src');
-      script.setAttribute('data-src', 'script.js');
+      embedScript(script, 'script.js', scriptJs?.contents);
     }
     if (tsScript) {
-      tsScript.innerHTML = indexTs?.contents;
-      tsScript.removeAttribute('src');
-      tsScript.setAttribute('data-src', 'index.ts');
+      embedScript(tsScript, 'index.ts', indexTs?.contents);
     }
     if (jsxScript) {
-      jsxScript.innerHTML = indexJsx?.contents;
-      jsxScript.removeAttribute('src');
+      embedScript(jsxScript, 'index.jsx', indexJsx?.contents);
       jsxScript.removeAttribute('type');
-      jsxScript.setAttribute('data-src', 'index.jsx');
       jsxScript.setAttribute('data-type', 'text/babel');
     }
     if (tsxScript) {
-      tsxScript.innerHTML = indexTsx?.contents;
-      tsxScript.removeAttribute('src');
+      embedScript(tsxScript, 'index.tsx', indexTsx?.contents);
       tsxScript.removeAttribute('type');
-      tsxScript.setAttribute('data-src', 'index.tsx');
       tsxScript.setAttribute('data-type', 'text/babel');
     }
     return documentElement.innerHTML;
@@ -362,7 +366,18 @@ function challengeFilesToObject(challengeFiles) {
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
   const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
   const indexTsx = challengeFiles.find(file => file.fileKey === 'indextsx');
-  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs, indexTsx };
+  const tsconfigJson = challengeFiles.find(
+    file => file.fileKey === 'tsconfigjson'
+  );
+  return {
+    indexHtml,
+    indexJsx,
+    stylesCss,
+    scriptJs,
+    indexTs,
+    indexTsx,
+    tsconfigJson
+  };
 }
 
 const parseAndTransform = async function (transform, contents) {
@@ -390,8 +405,7 @@ const getHtmlTranspiler = scriptOptions =>
 export const getTransformers = loopProtectOptions => [
   createSource,
   replaceNBSP,
-  createTranspiler(loopProtectOptions),
-  partial(compileHeadTail, '')
+  createTranspiler(loopProtectOptions)
 ];
 
 export const getMultifileJSXTransformers = loopProtectOptions => [
@@ -400,8 +414,4 @@ export const getMultifileJSXTransformers = loopProtectOptions => [
   createModuleTransformer(loopProtectOptions)
 ];
 
-export const getPythonTransformers = () => [
-  createSource,
-  replaceNBSP,
-  partial(compileHeadTail, '')
-];
+export const getPythonTransformers = () => [createSource, replaceNBSP];

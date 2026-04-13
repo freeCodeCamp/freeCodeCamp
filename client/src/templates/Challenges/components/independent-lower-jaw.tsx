@@ -2,27 +2,50 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
-import { Button } from '@freecodecamp/ui';
+import sanitizeHtml from 'sanitize-html';
+import { Button, Spacer } from '@freecodecamp/ui';
+import { useFeature } from '@growthbook/growthbook-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLightbulb,
+  faClose,
+  faZap,
+  faSave,
+  faClockRotateLeft,
+  faRotateLeft
+} from '@fortawesome/free-solid-svg-icons';
+import Progress from '../../../components/Progress';
 import {
   completedChallengesIdsSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  isSocratesOnSelector
 } from '../../../redux/selectors';
 import { ChallengeMeta, Test } from '../../../redux/prop-types';
 import {
   challengeMetaSelector,
   challengeTestsSelector,
   completedPercentageSelector,
-  currentBlockIdsSelector
+  currentBlockIdsSelector,
+  socratesHintStateSelector
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, executeChallenge } from '../redux/actions';
+import { openModal, executeChallenge, askSocrates } from '../redux/actions';
+import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
-import Reset from '../../../assets/icons/reset';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
+import Stars from '../../../assets/icons/stars';
+
+type SocratesHintState = {
+  hint: null | string;
+  isLoading: boolean;
+  error: null | string;
+  attempts: null | number;
+  limit: null | number;
+};
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
@@ -31,56 +54,74 @@ const mapStateToProps = createSelector(
   completedPercentageSelector,
   completedChallengesIdsSelector,
   currentBlockIdsSelector,
+  socratesHintStateSelector,
+  isSocratesOnSelector,
   (
     tests: Test[],
     isSignedIn: boolean,
     challengeMeta: ChallengeMeta,
     completedPercent: number,
     completedChallengeIds: string[],
-    currentBlockIds: string[]
+    currentBlockIds: string[],
+    socratesHintState: SocratesHintState,
+    hasSocratesAccess: boolean
   ) => ({
     tests,
     isSignedIn,
     challengeMeta,
     completedPercent,
     completedChallengeIds,
-    currentBlockIds
+    currentBlockIds,
+    socratesHintState,
+    hasSocratesAccess
   })
 );
 
 const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
-  executeChallenge
+  askSocrates: () => askSocrates(),
+  executeChallenge,
+  saveChallenge
 };
 
 interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
+  askSocrates: () => void;
+  saveChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
   challengeMeta: ChallengeMeta;
   completedPercent: number;
   completedChallengeIds: string[];
   currentBlockIds: string[];
+  socratesHintState: SocratesHintState;
+  hasSocratesAccess: boolean;
 }
 export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
+  askSocrates,
   executeChallenge,
+  saveChallenge,
   tests,
   isSignedIn,
   challengeMeta,
   completedPercent,
   completedChallengeIds,
-  currentBlockIds
+  currentBlockIds,
+  socratesHintState,
+  hasSocratesAccess
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const showSocratesFlag = useFeature('show-socrates').on;
   const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
+  const [showSocratesResults, setShowSocratesResults] = React.useState(false);
   const [showSubmissionHint, setShowSubmissionHint] = React.useState(true);
   const signInLinkRef = React.useRef<HTMLAnchorElement>(null);
   const submitButtonRef = React.useRef<HTMLButtonElement>(null);
@@ -119,13 +160,23 @@ export function IndependentLowerJaw({
 
   const handleCheckButtonClick = () => {
     setWasCheckButtonClicked(true);
+    setShowSocratesResults(false);
     executeChallenge();
   };
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
+  const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
+
+  const askSocratesAttempt = () => {
+    setShowSocratesResults(true);
+    setShowHint(false);
+    setShowSubmissionHint(false);
+    if (socratesHintState.isLoading) return;
+    askSocrates();
+  };
 
   return (
     <div
@@ -138,14 +189,65 @@ export function IndependentLowerJaw({
           className='hint-container'
           data-playwright-test-label='independentLowerJaw-failing-hint'
         >
-          <div dangerouslySetInnerHTML={{ __html: hint }} />
-          <button
-            className={'tooltip'}
-            data-playwright-test-label='independentLowerJaw-hint-close-button'
-            onClick={() => setShowHint(false)}
-          >
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
-          </button>
+          <div className='hint-header'>
+            <FontAwesomeIcon icon={faLightbulb} />
+            <button
+              className={'tooltip'}
+              data-playwright-test-label='independentLowerJaw-hint-close-button'
+              onClick={() => setShowHint(false)}
+              aria-label={t('buttons.close')}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
+          <div
+            className='hint-body'
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(hint, {
+                allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+              })
+            }}
+          />
+        </div>
+      )}
+      {showSocratesResults && (
+        <div className='hint-container'>
+          <div className='hint-header'>
+            <Stars />
+            <button
+              className={'tooltip'}
+              onClick={() => setShowSocratesResults(false)}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
+          {socratesHintState.isLoading ? (
+            <div className='socrates-skeleton'>
+              <div className='skeleton-line skeleton-line-1' />
+              <div className='skeleton-line skeleton-line-2' />
+            </div>
+          ) : (
+            <div
+              className='hint-body'
+              dangerouslySetInnerHTML={{
+                __html: sanitizeHtml(
+                  socratesHintState.hint || socratesHintState.error || '',
+                  {
+                    allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+                  }
+                )
+              }}
+            />
+          )}
+          {socratesHintState.attempts !== null &&
+            socratesHintState.limit !== null && (
+              <div className='socrates-usage-info'>
+                {socratesHintState.attempts}/{socratesHintState.limit}{' '}
+                {t('learn.hints-used-today')}
+              </div>
+            )}
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (
@@ -153,18 +255,37 @@ export function IndependentLowerJaw({
           className='hint-container'
           data-playwright-test-label='independentLowerJaw-submission-hint'
         >
-          <div>
-            <p>{t('learn.congratulations-code-passes')}</p>
-            {isSignedIn && showShareButton && (
-              <div className='share-button-wrapper'>
-                <Share
-                  superBlock={challengeMeta.superBlock}
-                  block={challengeMeta.block}
-                  minified={true}
-                />
-              </div>
-            )}
-            {!isSignedIn && (
+          <div className='hint-header'>
+            <FontAwesomeIcon icon={faZap} />
+            <button
+              className={'tooltip'}
+              aria-label={t('buttons.close')}
+              data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
+              onClick={() => setShowSubmissionHint(false)}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
+          <b>{t('learn.congratulations-code-passes')}</b>
+          <div className='progress-bar-container'>
+            <Progress minified={true} />
+          </div>
+          {isSignedIn && showShareButton && (
+            <div
+              className='share-button-wrapper'
+              data-testid='share-button-wrapper'
+            >
+              <Share
+                superBlock={challengeMeta.superBlock}
+                block={challengeMeta.block}
+                minified={true}
+              />
+            </div>
+          )}
+          {!isSignedIn && (
+            <>
+              <Spacer size='xxs' />
               <a
                 href={`${apiLocation}/signin`}
                 className='btn-cta btn btn-block'
@@ -178,15 +299,8 @@ export function IndependentLowerJaw({
               >
                 {t('learn.sign-in-save')}
               </a>
-            )}
-          </div>
-          <button
-            className={'tooltip'}
-            data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
-            onClick={() => setShowSubmissionHint(false)}
-          >
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
-          </button>
+            </>
+          )}
         </div>
       )}
 
@@ -198,6 +312,7 @@ export function IndependentLowerJaw({
               className={`${isSignedIn && 'btn-cta'} tooltip`}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
+              aria-label={t('buttons.submit-continue')}
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
@@ -211,6 +326,7 @@ export function IndependentLowerJaw({
               type='button'
               className='btn-cta tooltip'
               data-playwright-test-label='independentLowerJaw-check-button'
+              aria-label={t('buttons.check-code')}
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
@@ -221,19 +337,56 @@ export function IndependentLowerJaw({
           )}
         </div>
         <div className='action-row-right'>
+          {hasSocratesAccess && showSocratesFlag && (
+            <button
+              type='button'
+              className='icon-button tooltip socrates-button'
+              onClick={askSocratesAttempt}
+            >
+              <Stars />
+              <span className='tooltiptext'>{t('buttons.ask-socrates')}</span>
+            </button>
+          )}
+          {showRevertButton ? (
+            <>
+              <button
+                type='button'
+                className='icon-botton tooltip'
+                data-playwright-test-label='independentLowerJaw-save-button'
+                aria-label={t('buttons.save')}
+                onClick={() => saveChallenge()}
+              >
+                <FontAwesomeIcon icon={faSave} />
+                <span className='tooltiptext'> {t('buttons.save')}</span>
+              </button>
+              <button
+                type='button'
+                className='icon-botton tooltip'
+                data-playwright-test-label='independentLowerJaw-revert-button'
+                aria-label={t('buttons.revert')}
+                onClick={openResetModal}
+              >
+                <FontAwesomeIcon icon={faClockRotateLeft} />
+                <span className='tooltiptext'> {t('buttons.revert')}</span>
+              </button>
+            </>
+          ) : (
+            <button
+              type='button'
+              className='icon-botton tooltip'
+              data-playwright-test-label='independentLowerJaw-reset-button'
+              aria-label={t('buttons.reset')}
+              onClick={openResetModal}
+            >
+              <FontAwesomeIcon icon={faRotateLeft} />
+              <span className='tooltiptext'> {t('buttons.reset')}</span>
+            </button>
+          )}
           <button
             type='button'
-            className='icon-botton tooltip'
-            data-playwright-test-label='independentLowerJaw-reset-button'
-            onClick={openResetModal}
-          >
-            <Reset />
-            <span className='tooltiptext'> {t('buttons.reset')}</span>
-          </button>
-          <button
-            type='button'
-            className='icon-botton tooltip'
+            className='icon-button tooltip'
             data-playwright-test-label='independentLowerJaw-help-button'
+            aria-label={t('buttons.help')}
             onClick={openHelpModal}
           >
             <Help />

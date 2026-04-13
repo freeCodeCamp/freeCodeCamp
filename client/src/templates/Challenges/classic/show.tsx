@@ -37,6 +37,7 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import Output from '../components/output';
 import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
@@ -315,8 +316,12 @@ function ShowClassic({
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
 
-  // Independent lower jaw is only enabled for desktop workshops.
-  const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
+  // Independent lower jaw is only enabled for desktop.
+  const showIndependentLowerJaw = !isMobile;
+
+  const showSidePanelTests = isMobile || !hasEditableBoundaries;
+
+  // Show test
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
@@ -395,6 +400,7 @@ function ShowClassic({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -428,7 +434,7 @@ function ShowClassic({
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
         hasDemo={hasDemo}
-        showIndependentLowerJaw={showIndependentLowerJaw}
+        showSidePanelTests={showSidePanelTests}
       />
     );
   };
@@ -459,6 +465,12 @@ function ShowClassic({
     );
   };
 
+  const usesTerminal =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
   return (
     <Hotkeys
       challengeType={challengeType}
@@ -470,7 +482,7 @@ function ShowClassic({
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
-        {isMobile && (
+        {isMobile ? (
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
@@ -501,9 +513,9 @@ function ShowClassic({
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
+            usesTerminal={usesTerminal}
           />
-        )}
-        {!isMobile && (
+        ) : (
           <DesktopLayout
             challengeFiles={challengeFiles}
             challengeType={challengeType}
@@ -514,7 +526,7 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             isDailyCodingChallenge={isDailyCodingChallenge}
@@ -546,6 +558,8 @@ function ShowClassic({
           challengeTitle={title}
           challengeBlock={block}
           superBlock={superBlock}
+          guideUrl={guideUrl}
+          videoUrl={videoUrl}
         />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal
@@ -562,6 +576,7 @@ function ShowClassic({
           }
         />
         <ShortcutsModal />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );
