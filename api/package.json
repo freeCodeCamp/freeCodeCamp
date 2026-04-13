@@ -36,7 +36,7 @@
     "query-string": "7.1.3",
     "stripe": "16.12.0",
     "typebox": "1.1.14",
-    "validator": "13.15.26"
+    "validator": "13.15.35"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
