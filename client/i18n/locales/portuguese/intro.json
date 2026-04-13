@@ -6238,9 +6238,15 @@
         ]
       },
       "workshop-type-safe-user-profile": {
-        "title": "Build a Type Safe User Profile",
+        "title": "Crie um perfil de usuário com tipagem segura",
         "intro": [
-          "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
+          "Neste workshop, você praticará o uso de anotações de tipo, tipos de array, tipos de objeto e mais, construindo um perfil de usuário."
+        ]
+      },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
         ]
       },
       "lecture-understanding-type-composition": {
