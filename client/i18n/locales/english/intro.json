@@ -4922,6 +4922,13 @@
           "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
         ]
       },
+      "lab-proofreading-tool-js": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that scans binary signal sequences for patterns, symmetry, and gaps.",
+          "You will practice nested loops, early exit flags, two-pointer techniques, and sliding window comparisons."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
