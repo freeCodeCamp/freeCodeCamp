@@ -95,6 +95,8 @@
             "workshop-type-safe-math-toolkit",
             "lecture-understanding-type-composition",
             "lecture-working-with-generics-and-type-narrowing",
+            "lab-product-showcase",
+            "workshop-bug-emoji-picker",
             "lecture-working-with-typescript-configuration-files",
             "review-typescript",
             "quiz-typescript"

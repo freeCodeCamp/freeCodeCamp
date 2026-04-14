@@ -6181,6 +6181,12 @@
           "У цьому практичному занятті ви будете працювати з анотаціями типів, типами масивів і типами об’єктів, щоб створити профіль користувача."
         ]
       },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
+        ]
+      },
       "lecture-understanding-type-composition": {
         "title": "Знайомство з композицією",
         "intro": [
