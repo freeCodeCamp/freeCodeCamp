@@ -6749,6 +6749,10 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
+      },
+      "workshop-string-method": {
+        "title": "workshop-string-method",
+        "intro": ["workshop-string-method", ""]
       }
     }
   },

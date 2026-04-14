@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-string-method",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69de4308e652aaeb5ccdb03e", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
