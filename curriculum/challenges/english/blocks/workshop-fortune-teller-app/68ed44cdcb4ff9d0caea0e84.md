@@ -14,13 +14,20 @@ Since you're calling the `fetchCardsData` method inside the constructor, you now
 You should have a `private` method named `fetchCardsData`.
 
 ```js
-assert.match(code, /private\s+async\s*fetchCardsData\s*\(/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.classes.Game.methods.fetchCardsData);
+```
+
+Your `fetchCardsData` method should be `private`.
+
+```js
+assert.match(__helpers.removeJSComments(code), /private\s+(?:async\s+)?fetchCardsData\s*\(/);
 ```
 
 Your `fetchCardsData` method should be `asynchronous`.
 
 ```js
-assert.match(code, /async\s+fetchCardsData\s*\(/);
+assert.match(__helpers.removeJSComments(code), /async\s+fetchCardsData\s*\(/);
 ```
 
 # --seed--
