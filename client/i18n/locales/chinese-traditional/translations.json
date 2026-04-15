@@ -584,9 +584,9 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "terminal": "終端",
       "editor": "編輯器",
-      "interactive-editor": "交互式編輯器"
+      "interactive-editor": "交互式編輯器",
+      "terminal": "終端"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -1034,6 +1034,10 @@
     "terminal-output": "終端輸出",
     "not-available": "不可用",
     "interactive-editor-desc": "將靜態代碼示例轉爲交互式編輯器。這允許你直接在頁面上編輯並運行代碼。",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "這個任務使用 Pinyin-to-Hanzi 輸入。輸入帶聲調數字（1 到 5）的拼音。當你輸入正確的音節時，它將轉換爲漢字。如果你在一個漢字後按退格鍵，它會變回拼音並刪除你最後輸入的內容：如果是聲調數字，則刪除聲調；如果是字母，則刪除字母。",
     "pinyin-tone-input-desc": "這個任務使用 Pinyin Tone 輸入。輸入帶聲調數字（1 到 5）的拼音。當你輸入聲調數字時，它會被轉換爲聲調符號。如果你按退格鍵，最後輸入的內容會被刪除：如果是聲調數字，則刪除聲調；如果是字母，則刪除字母。"
   },

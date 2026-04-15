@@ -584,9 +584,9 @@
       "instructions": "Instrucciones",
       "notes": "Notas",
       "preview": "Vista",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Editor Interactivo"
+      "interactive-editor": "Editor Interactivo",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Presionando la pestaña insertará el carácter de la pestaña",
@@ -1034,6 +1034,10 @@
     "terminal-output": "Salida del terminal",
     "not-available": "No disponible",
     "interactive-editor-desc": "Convierte ejemplos de código estático en editores interactivos. Esto te permite editar y ejecutar el código directamente en la página.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "Esta tarea usa entradas de Pinyin a Hanzi. Escribe pinyin con números de tono (1 a 5). Cuando ingresas una sílaba correcta, se convertirá en una letra china. Si presionas retroceso después de una letra china, se cambiará de nuevo a pinyin y eliminará lo último que escribiste: si es un número de tono, se eliminará el tono; si es una letra, se eliminará la letra.",
     "pinyin-tone-input-desc": "Esta tarea usa entradas de Pinyin con tono. Escribe pinyin con números de tono (1 a 5). Cuando ingresas un número de tono, se convertirán en una marca de tono. Si presionas retroceso, se eliminará lo último que escribiste: si es un número de tono, se eliminará el tono; si es una letra, se eliminará la letra."
   },
