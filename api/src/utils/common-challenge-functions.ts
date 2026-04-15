@@ -108,9 +108,15 @@ export function saveUserChallengeData(
 /**
  * Helper function to update a user's challenge data. Used in challenge
  * submission endpoints.
+ *
+ * Uses optimistic concurrency control (OCC) via the `updateCount` field to
+ * prevent lost updates when concurrent requests race to write the same user
+ * document. If a concurrent modification is detected the operation re-reads
+ * fresh data and retries, up to MAX_RETRIES times.
+ *
  * TODO: Keep refactoring. This function does too much.
  * @param fastify The Fastify instance.
- * @param user The existing user record.
+ * @param user The existing user record (must include `updateCount` for OCC).
  * @param challengeId The id of the submitted challenge.
  * @param _completedChallenge The challenge submission.
  * @returns Information about the update.
@@ -125,99 +131,117 @@ export async function updateUserChallengeData(
     | 'savedChallenges'
     | 'progressTimestamps'
     | 'partiallyCompletedChallenges'
+    | 'updateCount'
   >,
   challengeId: string,
   _completedChallenge: CompletedChallenge
 ) {
-  const { files, completedDate: newProgressTimeStamp = Date.now() } =
-    _completedChallenge;
-  let completedChallenge: CompletedChallenge;
+  const MAX_RETRIES = 3;
+  let currentUser = user;
 
-  if (savableChallenges.has(challengeId)) {
-    completedChallenge = {
-      ..._completedChallenge,
-      files: files?.map(
-        file =>
-          pick(file, [
-            'contents',
-            'key',
-            'index',
-            'name',
-            'path',
-            'ext'
-          ]) as CompletedChallengeFile
-      ),
-      completedDate: normalizeDate(_completedChallenge.completedDate)
-    };
-  } else {
-    completedChallenge = omit(_completedChallenge, ['files']);
-  }
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    const { files, completedDate: newProgressTimeStamp = Date.now() } =
+      _completedChallenge;
+    let completedChallenge: CompletedChallenge;
 
-  const {
-    completedChallenges = [],
-    needsModeration = false,
-    savedChallenges = [],
-    progressTimestamps = [],
-    partiallyCompletedChallenges = []
-  } = user;
+    if (savableChallenges.has(challengeId)) {
+      completedChallenge = {
+        ..._completedChallenge,
+        files: files?.map(
+          file =>
+            pick(file, [
+              'contents',
+              'key',
+              'index',
+              'name',
+              'path',
+              'ext'
+            ]) as CompletedChallengeFile
+        ),
+        completedDate: normalizeDate(_completedChallenge.completedDate)
+      };
+    } else {
+      completedChallenge = omit(_completedChallenge, ['files']);
+    }
 
-  let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
+    const {
+      completedChallenges = [],
+      needsModeration = false,
+      savedChallenges = [],
+      progressTimestamps = [],
+      partiallyCompletedChallenges = []
+    } = currentUser;
 
-  const oldChallenge = completedChallenges.find(({ id }) => challengeId === id);
-  const alreadyCompleted = !!oldChallenge;
+    let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
 
-  const finalChallenge = alreadyCompleted
-    ? {
-        ...completedChallenge,
-        completedDate: normalizeDate(oldChallenge.completedDate)
-      }
-    : completedChallenge;
+    const oldChallenge = completedChallenges.find(
+      ({ id }) => challengeId === id
+    );
+    const alreadyCompleted = !!oldChallenge;
 
-  // TODO(Post-MVP): prevent concurrent completions of the same challenge by
-  // using optimistic concurrency control. i.e. the update should simultaneously
-  // check and update some property of the user record such that the same update
-  // can't be applied twice.
-  const userCompletedChallenges = alreadyCompleted
-    ? completedChallenges.map(x =>
-        x.id === challengeId
-          ? finalChallenge
-          : { ...x, completedDate: normalizeDate(x.completedDate) }
-      )
-    : { push: finalChallenge };
+    const finalChallenge = alreadyCompleted
+      ? {
+          ...completedChallenge,
+          completedDate: normalizeDate(oldChallenge.completedDate)
+        }
+      : completedChallenge;
 
-  // We can't use push, because progressTimestamps is a JSON blob and, until
-  // we convert it to an array, push is not available. Since this could result
-  // in the completedChallenges and progressTimestamps arrays being out of sync,
-  // we should prioritize normalizing the data structure.
-  const userProgressTimestamps =
-    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
-      ? [...progressTimestamps, newProgressTimeStamp]
-      : progressTimestamps;
+    const userCompletedChallenges = alreadyCompleted
+      ? completedChallenges.map(x =>
+          x.id === challengeId
+            ? finalChallenge
+            : { ...x, completedDate: normalizeDate(x.completedDate) }
+        )
+      : { push: finalChallenge };
 
-  if (savableChallenges.has(challengeId)) {
-    const challengeToSave: SavedChallenge = {
-      id: challengeId,
-      lastSavedDate: newProgressTimeStamp,
-      files: files?.map(file =>
-        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-      ) as SavedChallengeFile[]
-    };
+    // We can't use push, because progressTimestamps is a JSON blob and, until
+    // we convert it to an array, push is not available. Since this could result
+    // in the completedChallenges and progressTimestamps arrays being out of sync,
+    // we should prioritize normalizing the data structure.
+    // The OCC retry loop ensures each attempt operates on a fresh snapshot of
+    // the document, preventing lost updates for this field across concurrent
+    // requests.
+    const userProgressTimestamps =
+      !alreadyCompleted &&
+      progressTimestamps &&
+      Array.isArray(progressTimestamps)
+        ? [...progressTimestamps, newProgressTimeStamp]
+        : progressTimestamps;
 
-    const isSaved = savedChallenges.some(({ id }) => challengeId === id);
+    if (savableChallenges.has(challengeId)) {
+      const challengeToSave: SavedChallenge = {
+        id: challengeId,
+        lastSavedDate: newProgressTimeStamp,
+        files: files?.map(file =>
+          pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+        ) as SavedChallengeFile[]
+      };
 
-    savedChallengesUpdate = isSaved
-      ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
-      : { push: challengeToSave };
-  }
+      const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
-  // remove from partiallyCompleted on submit
-  const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
-    challenge => challenge.id !== challengeId
-  );
+      savedChallengesUpdate = isSaved
+        ? savedChallenges.map(x =>
+            x.id === challengeId ? challengeToSave : x
+          )
+        : { push: challengeToSave };
+    }
 
-  const { savedChallenges: userSavedChallenges } =
-    await fastify.prisma.user.update({
-      where: { id: user.id },
+    // remove from partiallyCompleted on submit
+    const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
+      challenge => challenge.id !== challengeId
+    );
+
+    // Use optimistic concurrency control (OCC) to prevent lost updates when
+    // two requests race to modify the same user document. The conditional
+    // `updateCount` check ensures the update only applies to the exact
+    // snapshot we read. If a concurrent request has already written, the
+    // count will not match, `updateMany` will affect 0 documents, and we
+    // retry with fresh data.
+    const result = await fastify.prisma.user.updateMany({
+      where: {
+        id: currentUser.id,
+        updateCount: { equals: currentUser.updateCount }
+      },
       data: {
         completedChallenges: userCompletedChallenges,
         // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
@@ -225,16 +249,46 @@ export async function updateUserChallengeData(
         needsModeration: needsModeration || undefined,
         savedChallenges: savedChallengesUpdate,
         progressTimestamps: userProgressTimestamps,
-        partiallyCompletedChallenges: userPartiallyCompletedChallenges
-      },
-      select: {
-        savedChallenges: true
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges,
+        updateCount: { increment: 1 }
       }
     });
 
-  return {
-    alreadyCompleted,
-    completedDate: finalChallenge.completedDate,
-    userSavedChallenges
-  };
+    if (result.count > 0) {
+      // Update succeeded. Fetch the post-write savedChallenges value since
+      // updateMany does not support a select clause.
+      const { savedChallenges: userSavedChallenges } =
+        await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: currentUser.id },
+          select: { savedChallenges: true }
+        });
+
+      return {
+        alreadyCompleted,
+        completedDate: finalChallenge.completedDate,
+        userSavedChallenges
+      };
+    }
+
+    // Another request wrote to this document between our read and this write.
+    // Re-fetch a fresh snapshot and retry.
+    currentUser = await fastify.prisma.user.findUniqueOrThrow({
+      where: { id: user.id },
+      select: {
+        id: true,
+        completedChallenges: true,
+        partiallyCompletedChallenges: true,
+        progressTimestamps: true,
+        needsModeration: true,
+        savedChallenges: true,
+        updateCount: true
+      }
+    });
+  }
+
+  throw new Error(
+    `Failed to update challenge data for user ${
+      user.id
+    } after ${MAX_RETRIES} attempts due to concurrent modifications.`
+  );
 }

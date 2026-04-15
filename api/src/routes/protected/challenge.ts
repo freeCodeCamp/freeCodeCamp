@@ -58,7 +58,9 @@ const userChallengeSelect = {
   partiallyCompletedChallenges: true,
   progressTimestamps: true,
   needsModeration: true,
-  savedChallenges: true
+  savedChallenges: true,
+  // Required for optimistic concurrency control in updateUserChallengeData.
+  updateCount: true
 };
 
 /**
@@ -1025,13 +1027,22 @@ async function postCoderoadChallengeCompleted(
         completedDate
       };
 
+      const alreadyPartial = partiallyCompletedChallenges.some(
+        c => c.id === challengeId
+      );
+
       await this.prisma.user.update({
         where: { id: userId },
         data: {
-          partiallyCompletedChallenges: uniqBy(
-            [finalChallenge, ...partiallyCompletedChallenges],
-            'id'
-          )
+          partiallyCompletedChallenges: alreadyPartial
+            // Challenge already tracked as partial: update its entry in-place.
+            // (Array length unchanged, so this full rewrite is safe.)
+            ? partiallyCompletedChallenges.map(c =>
+                c.id === challengeId ? finalChallenge : c
+              )
+            // Challenge is new: use an atomic push to prevent a concurrent
+            // codeRoad completion from overwriting this write.
+            : { push: finalChallenge }
         }
       });
     } else {
@@ -1140,27 +1151,27 @@ async function postDailyCodingChallengeCompleted(
       languages: [language]
     };
 
-    const newCompletedChallenges = [
-      ...completedDailyCodingChallenges,
-      newCompletedChallenge
-    ];
+    // Use Prisma's typed-array push so MongoDB appends atomically,
+    // preventing a lost update if two requests race concurrently.
+    // progressTimestamps is a Json? blob and cannot use the typed push
+    // operator until the field is migrated to a typed array.
+    const { completedDailyCodingChallenges: freshChallenges } =
+      await this.prisma.user.update({
+        where: { id: req.user?.id },
+        data: {
+          completedDailyCodingChallenges: { push: newCompletedChallenge },
+          progressTimestamps: Array.isArray(progressTimestamps)
+            ? [...progressTimestamps, newCompletedDate]
+            : [newCompletedDate]
+        },
+        select: { completedDailyCodingChallenges: true }
+      });
 
-    const newProgressTimestamps = Array.isArray(progressTimestamps)
-      ? [...progressTimestamps, newCompletedDate]
-      : [newCompletedDate];
-
-    await this.prisma.user.update({
-      where: { id: req.user?.id },
-      data: {
-        completedDailyCodingChallenges: newCompletedChallenges,
-        progressTimestamps: newProgressTimestamps
-      }
-    });
     return reply.send({
       alreadyCompleted,
       points: points + 1,
       completedDate: newCompletedDate,
-      completedDailyCodingChallenges: newCompletedChallenges
+      completedDailyCodingChallenges: freshChallenges
     });
   }
 }
