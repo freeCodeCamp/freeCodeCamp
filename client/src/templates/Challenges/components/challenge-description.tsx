@@ -25,7 +25,7 @@ const ChallengeDescription = ({
     }
   }, [superBlock]);
 
-  const githubLink = generateGithubLink(challengeId,block);
+  const githubLink = generateGithubLink(challengeId, block);
   return (
     <div
       className={'challenge-instructions mathjax-support'}
