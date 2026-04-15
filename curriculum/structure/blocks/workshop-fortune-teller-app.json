@@ -1,5 +1,4 @@
 {
-  "name": "Build a Fortune Telling App",
   "isUpcomingChange": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-fortune-teller-app",
@@ -59,8 +58,7 @@
     { "id": "68f1eb2bb413b893f8661ff2", "title": "Step 51" },
     { "id": "68f1ebc05a602f99d49d701d", "title": "Step 52" },
     { "id": "68f1ec48c0e7969eddbef24c", "title": "Step 53" },
-    { "id": "68f1ee5e2a1142b0aa64b941", "title": "Step 54" },
-    { "id": "68f1eeb928a209b4ebd79688", "title": "Step 55" }
+    { "id": "68f1ee5e2a1142b0aa64b941", "title": "Step 54" }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true
