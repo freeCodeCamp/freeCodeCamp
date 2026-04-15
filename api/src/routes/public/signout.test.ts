@@ -28,9 +28,12 @@ describe('GET /signout', () => {
     expect(setCookie).toHaveLength(3);
   });
 
-  it('should respond with an empty object', async () => {
+  it('should redirect with a success flash message', async () => {
     const res = await superRequest('/signout', { method: 'GET' });
-    expect(res.body).toEqual({});
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(302);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    expect(res.headers['location']).toContain('success');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    expect(res.headers['location']).toContain('signout-success');
   });
 });
