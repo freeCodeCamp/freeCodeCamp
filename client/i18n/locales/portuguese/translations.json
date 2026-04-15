@@ -66,7 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Redefinir",
-    "ask-socrates": "Ask Socrates (beta)",
+    "ask-socrates": "Pergunte ao Socrates (beta)",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
     "get-help": "Obter ajuda",
@@ -383,8 +383,8 @@
       "weekly": "Envie-me o e-mail semanal do Quincy"
     },
     "socrates": {
-      "p1": "Socrates",
-      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+      "p1": "Sócrates",
+      "p2": "Oferece dicas personalizadas com base nas informações inseridas nas oficinas. É possível desativar isso a qualquer momento."
     },
     "honesty": {
       "p1": "Antes de poder reivindicar uma certificação verificada, você deve aceitar o nosso Juramento de Honestidade Acadêmica, que diz o seguinte:",
@@ -538,18 +538,18 @@
     "syntax-error": "Seu código gerou um erro antes que qualquer teste possa ser executado. Corrija-o e tente novamente.",
     "indentation-error": "Seu código tem um erro de indentação. Você pode precisar adicionar <code>pass</code> em uma nova linha para formar um bloco de código válido.",
     "sign-in-save": "Faça o login para salvar seu progresso",
-    "hints-used-today": "hints used today",
-    "socrates-not-enabled": "Socrates is not enabled for your account.",
-    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
-    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
-    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
-    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
-    "socrates-no-access": "You do not have access to Socrates.",
-    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
-    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
-    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
-    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
-    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
+    "hints-used-today": "dicas usadas hoje",
+    "socrates-not-enabled": "Socrates não está habilitado para esta conta.",
+    "socrates-check-code-first": "Verifique o código antes de pedir uma dica ao Socrates.",
+    "socrates-code-passes": "Parabéns, o código foi aprovado! Pressione Enviar e continue para o próximo desafio.",
+    "socrates-write-code-first": "Por favor, escreva algum código antes de pedir uma dica ao Socrates.",
+    "socrates-generic-error": "Algo deu errado ao pedir ao Socrates. Por favor, tente novamente.",
+    "socrates-no-access": "Não tem acesso ao Socrates.",
+    "socrates-daily-limit": "Atingiu o limite diário de dicas. Por favor, tente novamente amanhã.",
+    "socrates-rate-limit": "Atingiu o limite de dicas. Aguarde um momento antes de tentar novamente.",
+    "socrates-unable-to-generate": "Socrates não conseguiu gerar uma dica. Por favor, tente novamente.",
+    "socrates-unavailable": "Socrates está temporariamente indisponível. Por favor, tente novamente mais tarde.",
+    "socrates-invalid-request": "Algo deu errado com a solicitação. Por favor, tente novamente.",
     "download-solution": "Baixar minha solução",
     "download-results": "Baixar meus resultados",
     "percent-complete": "{{percent}}% completo",
@@ -916,8 +916,8 @@
   "search": {
     "label": "Pesquisar",
     "placeholder": {
-      "default": "Search our books and courses",
-      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
+      "default": "Pesquisar nossos livros e cursos",
+      "numbered": "Pesquisar em mais de {{ roundedTotalRecords }} dos nossos livros e cursos"
     },
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -1054,7 +1054,7 @@
     "updated-themes": "Atualizamos seu tema",
     "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
     "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
-    "socrates-updated": "We have updated your Socrates settings",
+    "socrates-updated": "Atualizamos as configurações do Socrates",
     "portfolio-item-updated": "Atualizamos seu portfólio",
     "experience-updated": "Atualizamos a experiência",
     "email-invalid": "Formato de e-mail inválido",
