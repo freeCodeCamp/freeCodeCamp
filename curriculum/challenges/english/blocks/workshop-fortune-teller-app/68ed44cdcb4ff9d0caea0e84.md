@@ -21,13 +21,15 @@ assert.exists(explorer.classes.Game.methods.fetchCardsData);
 Your `fetchCardsData` method should be `private`.
 
 ```js
-assert.match(__helpers.removeJSComments(code), /private\s+(?:async\s+)?fetchCardsData\s*\(/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(explorer.classes.Game.methods.fetchCardsData.isPrivate());
 ```
 
-Your `fetchCardsData` method should be `asynchronous`.
+Your `fetchCardsData` method should be `async`.
 
 ```js
-assert.match(__helpers.removeJSComments(code), /async\s+fetchCardsData\s*\(/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(explorer.classes.Game.methods.fetchCardsData.isAsync());
 ```
 
 # --seed--
