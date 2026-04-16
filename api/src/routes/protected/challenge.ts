@@ -1231,15 +1231,34 @@ async function postModernChallengeCompleted(
     where: { id: userId },
     select: userChallengeSelect
   });
-  const RawProgressTimestamp = user.progressTimestamps as
+
+  const rawProgressTimestamp = user.progressTimestamps as
     | ProgressTimestamp[]
     | null;
-  const points = getPoints(RawProgressTimestamp);
+  const points = getPoints(rawProgressTimestamp);
+
+  // Prevent duplicate submissions from rapid repeated requests.
+  const existingChallenge = user.completedChallenges?.find(c => c.id === id);
+  const duplicateSubmissionWindowMs = 10_000;
+  const now = Date.now();
+
+  if (
+    existingChallenge &&
+    typeof existingChallenge.completedDate === 'number' &&
+    now - existingChallenge.completedDate < duplicateSubmissionWindowMs
+  ) {
+    return {
+      alreadyCompleted: true,
+      points,
+      completedDate: existingChallenge.completedDate,
+      savedChallenges: user.savedChallenges
+    };
+  }
 
   const completedChallenge: CompletedChallenge = {
     id,
     files,
-    completedDate: Date.now()
+    completedDate: now
   };
 
   if (challengeType === challengeTypes.multifileCertProject) {
