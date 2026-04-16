@@ -1,6 +1,6 @@
-import type { ExamResults, user, Prisma } from '@prisma/client';
+import type { ExamResults, user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { omit, pick } from 'lodash-es';
+import { omit, pick, uniqBy } from 'lodash-es';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { challenges, savableChallenges } from './get-challenges.js';
 import { normalizeDate } from './normalize.js';
@@ -125,116 +125,133 @@ export async function updateUserChallengeData(
     | 'savedChallenges'
     | 'progressTimestamps'
     | 'partiallyCompletedChallenges'
+    | 'updateCount'
   >,
   challengeId: string,
   _completedChallenge: CompletedChallenge
 ) {
-  const { files, completedDate: newProgressTimeStamp = Date.now() } =
-    _completedChallenge;
-  let completedChallenge: CompletedChallenge;
+  let currentUser = user;
+  let retryCount = 0;
 
-  if (savableChallenges.has(challengeId)) {
-    completedChallenge = {
-      ..._completedChallenge,
-      files: files?.map(
-        file =>
-          pick(file, [
-            'contents',
-            'key',
-            'index',
-            'name',
-            'path',
-            'ext'
-          ]) as CompletedChallengeFile
-      ),
-      completedDate: normalizeDate(_completedChallenge.completedDate)
-    };
-  } else {
-    completedChallenge = omit(_completedChallenge, ['files']);
-  }
+  while (retryCount < 5) {
+    const { files, completedDate: newProgressTimeStamp = Date.now() } =
+      _completedChallenge;
+    let completedChallenge: CompletedChallenge;
 
-  const {
-    completedChallenges = [],
-    needsModeration = false,
-    savedChallenges = [],
-    progressTimestamps = [],
-    partiallyCompletedChallenges = []
-  } = user;
+    if (savableChallenges.has(challengeId)) {
+      completedChallenge = {
+        ..._completedChallenge,
+        files: files?.map(
+          file =>
+            pick(file, [
+              'contents',
+              'key',
+              'index',
+              'name',
+              'path',
+              'ext'
+            ]) as CompletedChallengeFile
+        ),
+        completedDate: normalizeDate(_completedChallenge.completedDate)
+      };
+    } else {
+      completedChallenge = omit(_completedChallenge, ['files']);
+    }
 
-  let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
+    const {
+      completedChallenges = [],
+      needsModeration = false,
+      savedChallenges = [],
+      progressTimestamps = [],
+      partiallyCompletedChallenges = [],
+      updateCount = 0
+    } = currentUser;
 
-  const oldChallenge = completedChallenges.find(({ id }) => challengeId === id);
-  const alreadyCompleted = !!oldChallenge;
+    const oldChallenge = completedChallenges.find(
+      ({ id }) => challengeId === id
+    );
+    const alreadyCompleted = !!oldChallenge;
 
-  const finalChallenge = alreadyCompleted
-    ? {
-        ...completedChallenge,
-        completedDate: normalizeDate(oldChallenge.completedDate)
-      }
-    : completedChallenge;
+    const finalChallenge = alreadyCompleted
+      ? {
+          ...completedChallenge,
+          completedDate: normalizeDate(oldChallenge.completedDate)
+        }
+      : completedChallenge;
 
-  // TODO(Post-MVP): prevent concurrent completions of the same challenge by
-  // using optimistic concurrency control. i.e. the update should simultaneously
-  // check and update some property of the user record such that the same update
-  // can't be applied twice.
-  const userCompletedChallenges = alreadyCompleted
-    ? completedChallenges.map(x =>
-        x.id === challengeId
-          ? finalChallenge
-          : { ...x, completedDate: normalizeDate(x.completedDate) }
-      )
-    : { push: finalChallenge };
+    const uniqueCompletedChallenges = uniqBy(completedChallenges, 'id');
+    const userCompletedChallenges = alreadyCompleted
+      ? uniqueCompletedChallenges.map(x =>
+          x.id === challengeId
+            ? finalChallenge
+            : { ...x, completedDate: normalizeDate(x.completedDate) }
+        )
+      : [...uniqueCompletedChallenges, finalChallenge];
 
-  // We can't use push, because progressTimestamps is a JSON blob and, until
-  // we convert it to an array, push is not available. Since this could result
-  // in the completedChallenges and progressTimestamps arrays being out of sync,
-  // we should prioritize normalizing the data structure.
-  const userProgressTimestamps =
-    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
-      ? [...progressTimestamps, newProgressTimeStamp]
-      : progressTimestamps;
+    const userProgressTimestamps =
+      !alreadyCompleted &&
+      progressTimestamps &&
+      Array.isArray(progressTimestamps)
+        ? [...progressTimestamps, newProgressTimeStamp]
+        : progressTimestamps;
 
-  if (savableChallenges.has(challengeId)) {
-    const challengeToSave: SavedChallenge = {
-      id: challengeId,
-      lastSavedDate: newProgressTimeStamp,
-      files: files?.map(file =>
-        pick(file, ['contents', 'key', 'name', 'ext', 'history'])
-      ) as SavedChallengeFile[]
-    };
+    let updatedSavedChallenges = savedChallenges;
+    if (savableChallenges.has(challengeId)) {
+      const challengeToSave: SavedChallenge = {
+        id: challengeId,
+        lastSavedDate: newProgressTimeStamp,
+        files: files?.map(file =>
+          pick(file, ['contents', 'key', 'name', 'ext', 'history'])
+        ) as SavedChallengeFile[]
+      };
 
-    const isSaved = savedChallenges.some(({ id }) => challengeId === id);
+      const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
-    savedChallengesUpdate = isSaved
-      ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
-      : { push: challengeToSave };
-  }
+      updatedSavedChallenges = isSaved
+        ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
+        : [...savedChallenges, challengeToSave];
+    }
 
-  // remove from partiallyCompleted on submit
-  const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
-    challenge => challenge.id !== challengeId
-  );
+    // remove from partiallyCompleted on submit
+    const userPartiallyCompletedChallenges =
+      partiallyCompletedChallenges.filter(
+        challenge => challenge.id !== challengeId
+      );
 
-  const { savedChallenges: userSavedChallenges } =
-    await fastify.prisma.user.update({
-      where: { id: user.id },
+    const { count } = await fastify.prisma.user.updateMany({
+      where: { id: currentUser.id, updateCount },
       data: {
         completedChallenges: userCompletedChallenges,
-        // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
-        //       `undefined` in Prisma is a no-op
         needsModeration: needsModeration || undefined,
-        savedChallenges: savedChallengesUpdate,
+        savedChallenges: updatedSavedChallenges,
         progressTimestamps: userProgressTimestamps,
-        partiallyCompletedChallenges: userPartiallyCompletedChallenges
-      },
-      select: {
-        savedChallenges: true
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges,
+        updateCount: { increment: 1 }
       }
     });
 
-  return {
-    alreadyCompleted,
-    completedDate: finalChallenge.completedDate,
-    userSavedChallenges
-  };
+    if (count === 1) {
+      return {
+        alreadyCompleted,
+        completedDate: finalChallenge.completedDate,
+        userSavedChallenges: updatedSavedChallenges
+      };
+    }
+
+    currentUser = await fastify.prisma.user.findUniqueOrThrow({
+      where: { id: currentUser.id },
+      select: {
+        id: true,
+        completedChallenges: true,
+        needsModeration: true,
+        savedChallenges: true,
+        progressTimestamps: true,
+        partiallyCompletedChallenges: true,
+        updateCount: true
+      }
+    });
+    retryCount++;
+  }
+
+  throw new Error('Concurrent update error');
 }
