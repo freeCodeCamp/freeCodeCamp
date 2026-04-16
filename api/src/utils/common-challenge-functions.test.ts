@@ -89,4 +89,52 @@ describe('updateUserChallengeData', () => {
     // Called twice: once after first lock miss to fetch fresh state, once after successful lock to get updated saved challenges
     expect(findUniqueOrThrow).toHaveBeenCalledTimes(2);
   });
+
+  it('returns latest persisted state when all OCC retries are exhausted', async () => {
+    const completedChallenge = {
+      id: 'challenge-1',
+      completedDate: 1713225600000
+    };
+
+    const user = {
+      id: 'user-1',
+      completedChallenges: [],
+      needsModeration: false,
+      savedChallenges: [],
+      progressTimestamps: [],
+      partiallyCompletedChallenges: [],
+      updateCount: 0
+    };
+
+    const persistedUser = {
+      ...user,
+      completedChallenges: [completedChallenge]
+    };
+
+    const updateMany = vi.fn().mockResolvedValue({ count: 0 });
+    const findUniqueOrThrow = vi.fn().mockResolvedValue(persistedUser);
+
+    const fastify = {
+      prisma: {
+        user: {
+          updateMany,
+          findUniqueOrThrow
+        }
+      }
+    } as const;
+
+    const result = await updateUserChallengeData(
+      fastify as never,
+      user,
+      completedChallenge.id,
+      completedChallenge
+    );
+
+    expect(result).toEqual({
+      alreadyCompleted: true,
+      completedDate: completedChallenge.completedDate,
+      userSavedChallenges: []
+    });
+    expect(updateMany).toHaveBeenCalledTimes(10);
+  });
 });

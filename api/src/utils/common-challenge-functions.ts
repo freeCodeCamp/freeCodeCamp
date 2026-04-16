@@ -130,10 +130,12 @@ export async function updateUserChallengeData(
   challengeId: string,
   _completedChallenge: CompletedChallenge
 ) {
+  const maxOccRetries = 10;
+
   // Atomic optimistic locking with retry loop to prevent race conditions
   let currentUser = user;
 
-  for (let retryCount = 0; retryCount < 5; retryCount++) {
+  for (let retryCount = 0; retryCount < maxOccRetries; retryCount++) {
     const {
       completedChallenges = [],
       needsModeration = false,
@@ -272,7 +274,25 @@ export async function updateUserChallengeData(
     });
   }
 
-  throw new Error(
-    'Concurrent update error: Failed to acquire lock after 5 retries'
+  // Final fallback: return the latest persisted state instead of failing the request.
+  const { completedChallenges = [], savedChallenges: userSavedChallenges } =
+    await fastify.prisma.user.findUniqueOrThrow({
+      where: { id: currentUser.id },
+      select: {
+        completedChallenges: true,
+        savedChallenges: true
+      }
+    });
+
+  const existingChallenge = completedChallenges.find(
+    ({ id }) => id === challengeId
   );
+
+  return {
+    alreadyCompleted: !!existingChallenge,
+    completedDate: existingChallenge
+      ? normalizeDate(existingChallenge.completedDate)
+      : normalizeDate(_completedChallenge.completedDate),
+    userSavedChallenges
+  };
 }

@@ -1000,7 +1000,8 @@ async function postCoderoadChallengeCompleted(
     const { userId } = tokenInfo;
 
     const user = await this.prisma.user.findFirstOrThrow({
-      where: { id: userId }
+      where: { id: userId },
+      select: userChallengeSelect
     });
 
     if (!user) {
