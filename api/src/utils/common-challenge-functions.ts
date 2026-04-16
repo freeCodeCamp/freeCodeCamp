@@ -130,10 +130,19 @@ export async function updateUserChallengeData(
   challengeId: string,
   _completedChallenge: CompletedChallenge
 ) {
+  // Atomic optimistic locking with retry loop to prevent race conditions
   let currentUser = user;
-  let retryCount = 0;
 
-  while (retryCount < 5) {
+  for (let retryCount = 0; retryCount < 5; retryCount++) {
+    const {
+      completedChallenges = [],
+      needsModeration = false,
+      savedChallenges = [],
+      progressTimestamps = [],
+      partiallyCompletedChallenges = [],
+      updateCount = 0
+    } = currentUser;
+
     const { files, completedDate: newProgressTimeStamp = Date.now() } =
       _completedChallenge;
     let completedChallenge: CompletedChallenge;
@@ -158,44 +167,27 @@ export async function updateUserChallengeData(
       completedChallenge = omit(_completedChallenge, ['files']);
     }
 
-    const {
-      completedChallenges = [],
-      needsModeration = false,
-      savedChallenges = [],
-      progressTimestamps = [],
-      partiallyCompletedChallenges = [],
-      updateCount = 0
-    } = currentUser;
-
-    const oldChallenge = completedChallenges.find(
+    const existingChallenge = completedChallenges.find(
       ({ id }) => challengeId === id
     );
-    const alreadyCompleted = !!oldChallenge;
+    const alreadyCompleted = !!existingChallenge;
 
     const finalChallenge = alreadyCompleted
       ? {
           ...completedChallenge,
-          completedDate: normalizeDate(oldChallenge.completedDate)
+          completedDate: normalizeDate(existingChallenge.completedDate)
         }
       : completedChallenge;
 
+    // Deduplicate on the fly to fix existing duplicate entries
     const uniqueCompletedChallenges = uniqBy(completedChallenges, 'id');
-    const userCompletedChallenges = alreadyCompleted
-      ? uniqueCompletedChallenges.map(x =>
-          x.id === challengeId
-            ? finalChallenge
-            : { ...x, completedDate: normalizeDate(x.completedDate) }
-        )
-      : [...uniqueCompletedChallenges, finalChallenge];
 
     const userProgressTimestamps =
-      !alreadyCompleted &&
-      progressTimestamps &&
-      Array.isArray(progressTimestamps)
+      !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
         ? [...progressTimestamps, newProgressTimeStamp]
         : progressTimestamps;
 
-    let updatedSavedChallenges = savedChallenges;
+    let savedChallengesUpdate = savedChallenges;
     if (savableChallenges.has(challengeId)) {
       const challengeToSave: SavedChallenge = {
         id: challengeId,
@@ -207,37 +199,74 @@ export async function updateUserChallengeData(
 
       const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
-      updatedSavedChallenges = isSaved
+      savedChallengesUpdate = isSaved
         ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
         : [...savedChallenges, challengeToSave];
     }
 
     // remove from partiallyCompleted on submit
-    const userPartiallyCompletedChallenges =
-      partiallyCompletedChallenges.filter(
-        challenge => challenge.id !== challengeId
-      );
+    const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
+      challenge => challenge.id !== challengeId
+    );
 
-    const { count } = await fastify.prisma.user.updateMany({
-      where: { id: currentUser.id, updateCount },
-      data: {
-        completedChallenges: userCompletedChallenges,
-        needsModeration: needsModeration || undefined,
-        savedChallenges: updatedSavedChallenges,
-        progressTimestamps: userProgressTimestamps,
-        partiallyCompletedChallenges: userPartiallyCompletedChallenges,
-        updateCount: { increment: 1 }
+    // Build the update data for nested list fields
+    const completedChallengesUpdate = alreadyCompleted
+      ? uniqueCompletedChallenges.map(x =>
+          x.id === challengeId
+            ? finalChallenge
+            : { ...x, completedDate: normalizeDate(x.completedDate as number) }
+        )
+      : [...uniqueCompletedChallenges, finalChallenge];
+
+    // Atomic transaction: lock-check then write
+    const { count } = await fastify.prisma.$transaction(async transaction => {
+      // Try to acquire lock by incrementing updateCount if it matches
+      const lockResult = await transaction.user.updateMany({
+        where: { id: currentUser.id, updateCount },
+        data: { updateCount: { increment: 1 } }
+      });
+
+      // If lock acquired (count === 1), proceed with data write
+      if (lockResult.count === 1) {
+        // Build update data with explicit type handling for JSON fields
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const updateData: any = {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+          completedChallenges: completedChallengesUpdate as any,
+          needsModeration: needsModeration || undefined,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+          savedChallenges: savedChallengesUpdate as any,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+          progressTimestamps: userProgressTimestamps as any,
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+          partiallyCompletedChallenges: userPartiallyCompletedChallenges as any
+        };
+        await transaction.user.update({
+          where: { id: currentUser.id },
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          data: updateData
+        });
       }
+
+      return lockResult;
     });
 
+    // If lock was acquired, return success
     if (count === 1) {
+      const { savedChallenges: userSavedChallenges } =
+        await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: currentUser.id },
+          select: { savedChallenges: true }
+        });
+
       return {
         alreadyCompleted,
         completedDate: finalChallenge.completedDate,
-        userSavedChallenges: updatedSavedChallenges
+        userSavedChallenges
       };
     }
 
+    // Lock miss: fetch fresh user state and retry
     currentUser = await fastify.prisma.user.findUniqueOrThrow({
       where: { id: currentUser.id },
       select: {
@@ -250,8 +279,7 @@ export async function updateUserChallengeData(
         updateCount: true
       }
     });
-    retryCount++;
   }
 
-  throw new Error('Concurrent update error');
+  throw new Error('Concurrent update error: Failed to acquire lock after 5 retries');
 }
