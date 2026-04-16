@@ -4910,6 +4910,13 @@
           "Neste workshop, você usará laços em JavaScript para criar uma lista de missões espaciais."
         ]
       },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Crie um Aplicativo de Pesquisa da Palavra Mais Longa",
         "intro": [
@@ -6255,10 +6262,28 @@
           "Nestas lições, você aprenderá a trabalhar com tipos de união, interfaces, tipos void e mais."
         ]
       },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Trabalhando com Generics e Redução de Tipos",
         "intro": [
           "Nestes ensinamentos, você aprenderá sobre genéricos e redução de tipo em TypeScript."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {

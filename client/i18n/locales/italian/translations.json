@@ -29,7 +29,7 @@
     "sign-in": "Accedi",
     "sign-up-email-list": "Iscriviti alle email settimanali di Quincy",
     "sign-out": "Esci",
-    "catalog": "Catalog",
+    "catalog": "Catalogo",
     "curriculum": "Curriculum",
     "contribute": "Contribuisci",
     "podcast": "Podcast",
@@ -123,34 +123,34 @@
     "download-latest-version": "Download the Latest Version",
     "more-ways-to-sign-in": "More ways to sign in",
     "sign-in-with-google": "Sign in with Google",
-    "go-to-dcc-today": "Go to Today's Challenge",
-    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "go-to-dcc-today": "Vai alla sfida del giorno",
+    "go-to-dcc-archive": "Vai all'archivio delle sfide giornaliere",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
-    "title": "Daily Coding Challenges",
-    "map-title": "Try the coding challenge of the day:",
-    "not-found": "Daily Coding Challenge Not Found.",
-    "release-note": "New challenges are released at midnight US Central time."
+    "title": "Sfide di programmazione giornaliere",
+    "map-title": "Prova la sfida di programmazione del giorno:",
+    "not-found": "Sfida di programmazione giornaliera non trovata.",
+    "release-note": "Nuove sfide sono pubblicate a mezzanotte (fuso orario centrale US)."
   },
   "weekdays": {
     "short": {
-      "sunday": "S",
-      "monday": "M",
-      "tuesday": "T",
-      "wednesday": "W",
-      "thursday": "T",
-      "friday": "F",
+      "sunday": "D",
+      "monday": "L",
+      "tuesday": "M",
+      "wednesday": "M",
+      "thursday": "G",
+      "friday": "V",
       "saturday": "S"
     },
     "long": {
-      "sunday": "Sunday",
-      "monday": "Monday",
-      "tuesday": "Tuesday",
-      "wednesday": "Wednesday",
-      "thursday": "Thursday",
-      "friday": "Friday",
-      "saturday": "Saturday"
+      "sunday": "Domenica",
+      "monday": "Lunedì",
+      "tuesday": "Martedì",
+      "wednesday": "Mercoledì",
+      "thursday": "Giovedì",
+      "friday": "Venerdì",
+      "saturday": "Sabato"
     }
   },
   "landing": {
@@ -584,9 +584,9 @@
       "instructions": "Istruzioni",
       "notes": "Note",
       "preview": "Anteprima",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Premendo tab ora potrai inserire il carattere tab",
@@ -1034,6 +1034,10 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
     "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
