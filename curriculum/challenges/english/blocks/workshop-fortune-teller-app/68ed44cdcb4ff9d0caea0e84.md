@@ -7,18 +7,11 @@ dashedName: step-22
 
 # --description--
 
-Since you're calling the `fetchCardsData` method inside the constructor, you now need to define it inside the class. Create a private method named `fetchCardsData`. Don't forget to make it asynchronous.
+Since you're calling `fetchCardsData` and `initializeEventListeners` inside the constructor, you now need to define them inside the class. Create both as `private` methods. Make sure `fetchCardsData` is asynchronous since it will handle API calls.
 
 # --hints--
 
 You should have a `private` method named `fetchCardsData`.
-
-```js
-const explorer = await __helpers.Explorer(code);
-assert.exists(explorer.classes.Game.methods.fetchCardsData);
-```
-
-Your `fetchCardsData` method should be `private`.
 
 ```js
 const explorer = await __helpers.Explorer(code);
@@ -29,7 +22,15 @@ Your `fetchCardsData` method should be `async`.
 
 ```js
 const explorer = await __helpers.Explorer(code);
-assert.isTrue(explorer.classes.Game.methods.fetchCardsData.isAsync());
+const method = explorer.classes.Game.methods.fetchCardsData.toString();
+assert.match(method, /async/);
+```
+
+You should have a `private` method named `initializeEventListeners`.
+
+```js
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(explorer.classes.Game.methods.initializeEventListeners.isPrivate());
 ```
 
 # --seed--
@@ -428,26 +429,25 @@ return items[index];
 
 const renderCard = (drawingType: string,isReversed: boolean,shortName: string, img: string): string => `
   <div>
-  <h2>${drawingType}</h2>
-    <figure class="card_container ${isReversed ? "reversed-card" : ""}" data-id="${shortName}">
+    <h2>${drawingType}</h2>
+      <figure class="card_container ${isReversed ? "reversed-card" : ""}" data-id="${shortName}">
         <div class="img-loader"></div>
-     <img
-        src="${img ? `${CDN_URL}/${img}` : LOCAL_DEFAULT_IMG}"
-        class="card-img hidden"
-        onload="this.classList.remove('hidden');this.previousElementSibling.style.display='none';"
-        onerror="
-          if (!this.dataset.failed) {
-            this.dataset.failed = '1';
-            this.src='${LOCAL_DEFAULT_IMG}';
-          } else {
-            this.classList.remove('hidden');
-            this.previousElementSibling.style.display='none';
-          }
-        "
-      />
-
-</figure>
- </div>
+        <img
+          src="${img ? `${CDN_URL}/${img}` : LOCAL_DEFAULT_IMG}"
+          class="card-img hidden"
+          onload="this.classList.remove('hidden');this.previousElementSibling.style.display='none';"
+          onerror="
+            if (!this.dataset.failed) {
+              this.dataset.failed = '1';
+              this.src='${LOCAL_DEFAULT_IMG}';
+            } else {
+              this.classList.remove('hidden');
+              this.previousElementSibling.style.display='none';
+            }
+          "
+        />
+    </figure>
+</div>
 `
 
 enum DrawingType {
@@ -475,10 +475,7 @@ class Game {
     text: HTMLElement;
   }
 
-
-
-    constructor() {
-
+  constructor() {
     this.elements = {
       singleCardBtn: getElement("#btn-single-card"),
       singleCard: getElement(".single_card"),
@@ -494,19 +491,12 @@ class Game {
       description: getElement(".description"),
       text: getElement(".text"),
     }
-
-    this.fetchCardsData();
-    this.initializeEventListeners();
-
-
-    }
+      this.fetchCardsData();
+      this.initializeEventListeners();
+  }
 
 --fcc-editable-region--
 
 --fcc-editable-region--
-
-
 }
-
-
 ```
