@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front-End Development Libraries V8",
+    "title": "Librerie di Sviluppo Front-End V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front-end libraries in the industry.",
-      "In the Front-End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "Ora che hai acquisito familiarità con HTML, CSS e JavaScript, fai un salto di qualità e apprendi le librerie front-end più popolari del settore.",
+      "Nella Certificazione in Librerie di Sviluppo Front-End, impara a stilizzare i tuoi siti rapidamente con Bootstrap. Scopri inoltre come aggiungere logica ai tuoi fogli di stile CSS ed estendine le potenzialità con Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front-end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap è un framework front-end utilizzato per progettare pagine web e applicazioni responsive. Adotta un approccio mobile-first nello sviluppo web e include stili e classi CSS predefiniti, oltre a diverse funzionalità JavaScript.",
           "In questo corso, imparerai come costruire siti web responsivi con Bootstrap, e a utilizzare le sue classi per stilizzare pulsanti, immagini, moduli, navigazione e altri elementi comuni."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Front-End Development Libraries Projects",
+        "title": "Progetti della Certificazione Front-End Development Libraries",
         "intro": [
-          "It's time to put your front-end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front-End Development Libraries certification."
+          "È il momento di mettere alla prova le tue competenze con le librerie di sviluppo front-end. Utilizza Bootstrap, jQuery, Sass, React e Redux per realizzare 5 progetti che testeranno tutto ciò che hai appreso finora.",
+          "Completa tutti i 5 progetti e ottieni la certificazione Front-End Development Libraries."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back-End Development and APIs V8",
+    "title": "Sviluppo Back-End e API V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the front-end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back-end, or server, to build entire web applications.",
+      "Fino a questo momento, l'utilizzo di JavaScript è stato limitato al front-end per aggiungere interattività alle pagine, risolvere sfide algoritmiche o realizzare SPA. È importante però considerare che JavaScript può essere impiegato anche nel back-end, ovvero lato server, per sviluppare intere applicazioni web.",
       "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che sono piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
-      "In the Back-End Development and APIs Certification, you'll learn how to write back-end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Nella Certificazione in Sviluppo Back-End e API, impara a scrivere applicazioni back-end con Node.js e npm. Sviluppa inoltre applicazioni web con il framework Express e realizza un microservizio 'People Finder' utilizzando MongoDB e la libreria Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -714,7 +714,7 @@
       "basic-node-and-express": {
         "title": "Node e Express Base",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write back-end (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "Node.js è un runtime JavaScript che permette di scrivere programmi back-end (lato server) in JavaScript. Node.js include una serie di moduli integrati (piccoli programmi indipendenti) progettati per questo scopo. Tra i moduli principali figurano HTTP, che opera come un server, e File System, un modulo dedicato alla lettura e alla modifica dei file.",
           "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che sono collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
           "Express è un framework per applicazioni web leggero ed è uno dei pacchetti più popolari su npm. Express rende molto più facile creare un server e gestire l'instradamento (routing) per l'applicazione, che gestisce cose come dirigere le persone alla pagina corretta quando visitano un determinato endpoint come <pre>/blog</pre>.",
           "In questo corso, imparerai le basi di Node e Express, incluso come creare un server, servire file diversi, e gestire richieste diverse dal browser."
@@ -732,7 +732,7 @@
         "title": "Back-End Development and APIs Projects",
         "intro": [
           "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back-End Development and APIs Certification, too."
+          "Al termine di questo percorso, avrai a disposizione 5 fantastici microservizi API da mostrare ad amici, familiari e potenziali datori di lavoro. Inoltre, otterrai la tua nuova Certificazione in Sviluppo Back-End e API."
         ]
       }
     }
@@ -765,7 +765,7 @@
       "quality-assurance-projects": {
         "title": "Progetti di Garanzia di Qualità",
         "intro": [
-          "Now that you're well versed in both the front-end and back-end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Ora che hai acquisito una solida padronanza sia del front-end che del back-end, è il momento di applicare tutte le competenze e i concetti appresi finora. Sviluppa 5 diverse applicazioni web e scrivi dei test per ognuna di esse, così da garantirne il corretto funzionamento e la gestione dei diversi casi limite.",
           "Dopo aver completato questi progetti di Garanzia di Qualità, avrai altri 5 progetti al tuo attivo e una nuova certificazione da mostrare nel tuo portfolio."
         ]
       }
@@ -944,18 +944,18 @@
   "learn-python-for-beginners": {
     "title": "Learn Python for Beginners",
     "summary": [
-      "Learn the fundamentals of Python programming from the ground up by practicing foundational concepts and building small projects."
+      "Apprendi i fondamenti della programmazione Python partendo da zero, esercitandoti sui concetti base e realizzando piccoli progetti."
     ],
     "intro": [
-      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
-      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
+      "Python è oggi uno dei linguaggi di programmazione più diffusi al mondo. Si distingue per la facilità di apprendimento, la leggibilità del codice e la notevole versatilità.",
+      "In questo corso completo, apprenderai i fondamenti della programmazione Python partendo da zero. Inizierai con i concetti base come variabili e tipi di dati, proseguirai attraverso il flusso di controllo e le funzioni, per poi realizzare progetti pratici utili a consolidare le competenze acquisite."
     ],
     "note": "",
     "blocks": {
       "python-setup-first-steps": {
         "title": "Python Setup & First Steps",
         "intro": [
-          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+          "In questi video, il noto istruttore di programmazione Mike Dane ti introdurrà a Python e ti mostrerà come configurare il tuo ambiente di sviluppo locale."
         ]
       },
       "core-primitives-in-python": {
@@ -1083,7 +1083,7 @@
     ],
     "intro": [
       "RAG stands for Retrieval-Augmented Generation. MCP stands for Model Context Protocol. These are powerful frameworks for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
-      "In this course, you'll learn the fundamentals of RAG and MCP and how to implement them in your own projects. You'll explore the components of RAG and MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG and MCP work and how to use them to build intelligent agents."
+      "In questo corso, apprendi i fondamenti di RAG e MCP e scopri come implementarli nei tuoi progetti. Esplora i componenti chiave di RAG e MCP, tra cui il recupero delle informazioni (retrieval), la generazione, la memoria, il contesto e la pianificazione. Al termine del percorso, avrai acquisito una solida comprensione del funzionamento di RAG e MCP e di come utilizzarli per costruire agenti intelligenti."
     ],
     "note": "",
     "blocks": {
@@ -4872,6 +4872,13 @@
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
         ]
       },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Build a Longest Word Finder App",
         "intro": [
@@ -6187,16 +6194,40 @@
           "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
         ]
       },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
+        ]
+      },
       "lecture-understanding-type-composition": {
         "title": "Understanding Type Composition",
         "intro": [
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
         ]
       },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {

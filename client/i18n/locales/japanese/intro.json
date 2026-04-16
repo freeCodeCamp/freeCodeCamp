@@ -4872,6 +4872,13 @@
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
         ]
       },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Build a Longest Word Finder App",
         "intro": [
@@ -6187,16 +6194,40 @@
           "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
         ]
       },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
+        ]
+      },
       "lecture-understanding-type-composition": {
         "title": "Understanding Type Composition",
         "intro": [
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
         ]
       },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
