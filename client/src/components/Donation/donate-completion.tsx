@@ -1,65 +1,57 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Spinner from 'react-spinkit';
-import { Alert, Spacer } from '@freecodecamp/ui';
+import React, { useEffect } from 'react'; import { useTranslation } from 'react-i18next'; import Spinner from 'react-spinkit'; import { Alert, Spacer } from '@freecodecamp/ui';
 
 import { Link } from '../helpers';
 
-type DonateCompletionProps = {
-  error: string | null;
-  processing: boolean;
-  redirecting: boolean;
-  reset: () => unknown;
-  success: boolean;
-  isSignedIn: boolean;
-};
+type DonateCompletionProps = { error: string | null; processing: boolean; redirecting: boolean; reset: () => unknown; success: boolean; isSignedIn: boolean; };
 
-function DonateCompletion({
-  processing,
-  reset,
-  success,
-  redirecting,
-  isSignedIn,
-  error = null
-}: DonateCompletionProps): JSX.Element {
-  const { t } = useTranslation();
-  const style =
-    processing || redirecting ? 'info' : success ? 'success' : 'danger';
+export default function DonateCompletion({ processing, reset, success, redirecting, isSignedIn, error = null }: DonateCompletionProps): JSX.Element { const { t } = useTranslation();
 
-  const heading = redirecting
-    ? `${t('donate.redirecting')}`
-    : processing
-      ? `${t('donate.processing')}`
-      : success
-        ? `${t('donate.thank-you')}`
-        : `${t('donate.error')}`;
+const style = processing || redirecting ? 'info' : success ? 'success' : 'danger';
 
-  return (
-    <Alert variant={style} className='donation-completion'>
-      <b>{heading}</b>
-      <Spacer size='m' />
-      <div className='donation-completion-body'>
-        {(processing || redirecting) && (
-          <Spinner
-            className='user-state-spinner'
-            color='#0a0a23'
-            fadeIn='none'
-            name='line-scale'
-          />
-        )}
-        {success && (
+const heading = redirecting ? t('donate.redirecting') : processing ? t('donate.processing') : success ? t('donate.thank-you') : t('donate.error');
+
+// Auto reset after success
+   useEffect(() => { if (success) { const timer = setTimeout(() => reset(), 5000); return () => clearTimeout(timer); } }, [success, reset]);
+// Debug logging    
+  useEffect(() => { if (error) { console.error('Donation Error:', error); } }, [error]);
+                                                                                                                                                     
+return ( <div aria-live="polite" role="status"> <Alert type={style}> <h3>{heading}</h3>
+
+{(processing || redirecting) && (
+      <>
+        <Spacer size='small' />
+        <Spinner name="circle" fadeIn="none" />
+      </>
+    )}
+
+    {success && (
+      <>
+        <Spacer size='small' />
+        <p>{t('donate.success-message')}</p>
+
+        {isSignedIn && (
           <>
-            <p>{t('donate.free-tech')}</p>
-            {isSignedIn && (
-              <>
-                <p>{t('donate.visit-supporters')}</p>
+            <Spacer size='small' />
+            <Link to="/settings/donation-history">
+              {t('donate.view-history')}
+            </Link>
+          </>
+        )}
+      </>
+    )}
 
-                <Link
-                  className='btn complete-button'
-                  key='supporters'
-                  sameTab={false}
-                  to='/supporters'
-                >
+    {error && !processing && !redirecting && (
+      <>
+        <Spacer size='small' />
+        <pre style={{ whiteSpace: 'pre-wrap' }}>{error}</pre>
+        <Spacer size='small' />
+        <button onClick={reset}>{t('donate.try-again')}</button>
+      </>
+    )}
+  </Alert>
+</div>
+
+); }                >
                   {t('buttons.go-to-supporters')}
                 </Link>
               </>
