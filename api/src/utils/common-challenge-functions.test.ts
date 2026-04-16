@@ -29,32 +29,12 @@ describe('updateUserChallengeData', () => {
       .fn()
       .mockResolvedValueOnce({ count: 0 })
       .mockResolvedValueOnce({ count: 1 });
-    const update = vi.fn();
     const findUniqueOrThrow = vi.fn().mockResolvedValue(secondUser);
-    const transaction = vi.fn(
-      (
-        callback: (transaction: {
-          user: {
-            updateMany: typeof updateMany;
-            update: typeof update;
-          };
-        }) => Promise<{ count: number }>
-      ) => {
-        return callback({
-          user: {
-            updateMany,
-            update
-          }
-        });
-      }
-    );
 
     const fastify = {
       prisma: {
-        $transaction: transaction,
         user: {
           updateMany,
-          update,
           findUniqueOrThrow
         }
       }
@@ -76,28 +56,33 @@ describe('updateUserChallengeData', () => {
     expect(updateMany).toHaveBeenCalledTimes(2);
     expect(updateMany).toHaveBeenNthCalledWith(1, {
       where: { id: 'user-1', updateCount: 0 },
-      data: { updateCount: { increment: 1 } }
+      data: {
+        completedChallenges: [
+          {
+            completedDate: 1713225600000,
+            id: 'challenge-1'
+          }
+        ],
+        needsModeration: undefined,
+        partiallyCompletedChallenges: [],
+        progressTimestamps: [1713225600000],
+        savedChallenges: []
+      }
     });
 
     expect(updateMany).toHaveBeenNthCalledWith(2, {
       where: { id: 'user-1', updateCount: 1 },
-      data: { updateCount: { increment: 1 } }
-    });
-
-    expect(update).toHaveBeenCalledTimes(1);
-    expect(update).toHaveBeenCalledWith({
-      where: { id: 'user-1' },
       data: {
-        completedChallenges: expect.arrayContaining([
-          expect.objectContaining({
-            id: 'challenge-1',
-            completedDate: 1713225600000
-          })
-        ]),
+        completedChallenges: [
+          {
+            completedDate: 1713225600000,
+            id: 'challenge-1'
+          }
+        ],
         needsModeration: undefined,
-        savedChallenges: [],
+        partiallyCompletedChallenges: [],
         progressTimestamps: [],
-        partiallyCompletedChallenges: []
+        savedChallenges: []
       }
     });
 

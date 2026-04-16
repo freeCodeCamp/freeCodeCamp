@@ -183,7 +183,9 @@ export async function updateUserChallengeData(
     const uniqueCompletedChallenges = uniqBy(completedChallenges, 'id');
 
     const userProgressTimestamps =
-      !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
+      !alreadyCompleted &&
+      progressTimestamps &&
+      Array.isArray(progressTimestamps)
         ? [...progressTimestamps, newProgressTimeStamp]
         : progressTimestamps;
 
@@ -205,9 +207,10 @@ export async function updateUserChallengeData(
     }
 
     // remove from partiallyCompleted on submit
-    const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
-      challenge => challenge.id !== challengeId
-    );
+    const userPartiallyCompletedChallenges =
+      partiallyCompletedChallenges.filter(
+        challenge => challenge.id !== challengeId
+      );
 
     // Build the update data for nested list fields
     const completedChallengesUpdate = alreadyCompleted
@@ -218,37 +221,25 @@ export async function updateUserChallengeData(
         )
       : [...uniqueCompletedChallenges, finalChallenge];
 
-    // Atomic transaction: lock-check then write
-    const { count } = await fastify.prisma.$transaction(async transaction => {
-      // Try to acquire lock by incrementing updateCount if it matches
-      const lockResult = await transaction.user.updateMany({
-        where: { id: currentUser.id, updateCount },
-        data: { updateCount: { increment: 1 } }
-      });
+    // Build update data with explicit type handling for JSON fields
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const updateData: any = {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+      completedChallenges: completedChallengesUpdate as any,
+      needsModeration: needsModeration || undefined,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+      savedChallenges: savedChallengesUpdate as any,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+      progressTimestamps: userProgressTimestamps as any,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+      partiallyCompletedChallenges: userPartiallyCompletedChallenges as any
+    };
 
-      // If lock acquired (count === 1), proceed with data write
-      if (lockResult.count === 1) {
-        // Build update data with explicit type handling for JSON fields
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const updateData: any = {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-          completedChallenges: completedChallengesUpdate as any,
-          needsModeration: needsModeration || undefined,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-          savedChallenges: savedChallengesUpdate as any,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-          progressTimestamps: userProgressTimestamps as any,
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
-          partiallyCompletedChallenges: userPartiallyCompletedChallenges as any
-        };
-        await transaction.user.update({
-          where: { id: currentUser.id },
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          data: updateData
-        });
-      }
-
-      return lockResult;
+    // Atomic optimistic write: only update if the record version is unchanged.
+    const { count } = await fastify.prisma.user.updateMany({
+      where: { id: currentUser.id, updateCount },
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      data: updateData
     });
 
     // If lock was acquired, return success
@@ -281,5 +272,7 @@ export async function updateUserChallengeData(
     });
   }
 
-  throw new Error('Concurrent update error: Failed to acquire lock after 5 retries');
+  throw new Error(
+    'Concurrent update error: Failed to acquire lock after 5 retries'
+  );
 }

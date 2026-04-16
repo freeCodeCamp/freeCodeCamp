@@ -2,7 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import jwt from 'jsonwebtoken';
 import { CompletedExam, ExamResults, SavedChallengeFile } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance, FastifyReply } from 'fastify';
-import { uniqBy, matches } from 'lodash-es';
+import { matches } from 'lodash-es';
 
 import validator from 'validator';
 
@@ -1013,8 +1013,7 @@ async function postCoderoadChallengeCompleted(
     }
 
     const completedDate = Date.now();
-    const { completedChallenges = [], partiallyCompletedChallenges = [] } =
-      user;
+    const { completedChallenges = [] } = user;
 
     const isCompleted = completedChallenges.some(
       challenge => challenge.id === challengeId
@@ -1026,13 +1025,13 @@ async function postCoderoadChallengeCompleted(
         completedDate
       };
 
-      await this.prisma.user.update({
-        where: { id: userId },
+      await this.prisma.user.updateMany({
+        where: {
+          id: userId,
+          partiallyCompletedChallenges: { none: { id: challengeId } }
+        },
         data: {
-          partiallyCompletedChallenges: uniqBy(
-            [finalChallenge, ...partiallyCompletedChallenges],
-            'id'
-          )
+          partiallyCompletedChallenges: { push: finalChallenge }
         }
       });
     } else {
@@ -1141,27 +1140,28 @@ async function postDailyCodingChallengeCompleted(
       languages: [language]
     };
 
-    const newCompletedChallenges = [
-      ...completedDailyCodingChallenges,
-      newCompletedChallenge
-    ];
-
     const newProgressTimestamps = Array.isArray(progressTimestamps)
       ? [...progressTimestamps, newCompletedDate]
       : [newCompletedDate];
 
-    await this.prisma.user.update({
-      where: { id: req.user?.id },
-      data: {
-        completedDailyCodingChallenges: newCompletedChallenges,
-        progressTimestamps: newProgressTimestamps
-      }
-    });
+    const { completedDailyCodingChallenges: updatedChallenges } =
+      await this.prisma.user.update({
+        where: { id: req.user?.id },
+        select: {
+          completedDailyCodingChallenges: true
+        },
+        data: {
+          completedDailyCodingChallenges: {
+            push: newCompletedChallenge
+          },
+          progressTimestamps: newProgressTimestamps
+        }
+      });
     return reply.send({
       alreadyCompleted,
       points: points + 1,
       completedDate: newCompletedDate,
-      completedDailyCodingChallenges: newCompletedChallenges
+      completedDailyCodingChallenges: updatedChallenges
     });
   }
 }
