@@ -723,8 +723,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       '@typescript/vfs-1.6.1':
-        specifier: npm:@typescript/vfs@1.6.1
-        version: '@typescript/vfs@1.6.1(typescript@5.9.3)'
+        specifier: npm:@typescript/vfs@1.6.4
+        version: '@typescript/vfs@1.6.4(typescript@5.9.3)'
       '@vitest/ui':
         specifier: 4.0.15
         version: 4.0.15(vitest@4.0.15)
