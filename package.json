@@ -97,7 +97,7 @@
     "tsx": "4.19.1",
     "turbo": "^2.8.7",
     "typescript": "5.9.3",
-    "webpack-bundle-analyzer": "4.10.1",
+    "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
   "packageManager": "pnpm@10.30.3",
