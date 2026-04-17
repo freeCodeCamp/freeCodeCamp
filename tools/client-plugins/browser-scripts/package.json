@@ -41,7 +41,7 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@typescript/vfs": "1.6.1",
+    "@typescript/vfs": "1.6.4",
     "babel-loader": "8.3.0",
     "eslint": "^9.39.1",
     "process": "0.11.10",
@@ -52,7 +52,7 @@
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^8.0.0",
+    "@freecodecamp/curriculum-helpers": "^9.0.0",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1"
   }

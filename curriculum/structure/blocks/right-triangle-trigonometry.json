@@ -1,0 +1,29 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "right-triangle-trigonometry",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "699e5b998f18cf77dfce5c0d",
+      "title": "Right Angle Trigonometry"
+    },
+    {
+      "id": "699e5b9e8f18cf77dfce5c0e",
+      "title": "Sine and Cosine of Special Angles"
+    },
+    {
+      "id": "699e5ba28f18cf77dfce5c0f",
+      "title": "Unit Circle Definition of Sine and Cosine"
+    },
+    {
+      "id": "699e5ba78f18cf77dfce5c10",
+      "title": "Properties of Trig Functions"
+    },
+    {
+      "id": "699e5bab8f18cf77dfce5c11",
+      "title": "Graphs of Sine and Cosine"
+    }
+  ]
+}
