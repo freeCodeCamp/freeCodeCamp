@@ -6,6 +6,5 @@
   "challengeOrder": [
     { "id": "694175528a794a090ea0ba74", "title": "Build a Motorcycle Shop" }
   ],
-  "blockLabel": "lab",
-  "usesMultifileEditor": true
+  "blockLabel": "lab"
 }
