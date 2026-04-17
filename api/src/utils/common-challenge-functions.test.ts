@@ -137,4 +137,63 @@ describe('updateUserChallengeData', () => {
     });
     expect(updateMany).toHaveBeenCalledTimes(10);
   });
+
+  it('does not throw when existing completions contain legacy date shapes', async () => {
+    const legacyChallenge = {
+      id: 'legacy-challenge',
+      completedDate: { $date: { $numberLong: '1713225600000' } }
+    };
+
+    const completedChallenge = {
+      id: 'challenge-1',
+      completedDate: 1713225600000
+    };
+
+    const user = {
+      id: 'user-1',
+      completedChallenges: [legacyChallenge],
+      needsModeration: false,
+      savedChallenges: [],
+      progressTimestamps: [],
+      partiallyCompletedChallenges: [],
+      updateCount: 0
+    };
+
+    const updateMany = vi.fn().mockResolvedValue({ count: 1 });
+    const findUniqueOrThrow = vi
+      .fn()
+      .mockResolvedValue({ savedChallenges: [] });
+
+    const fastify = {
+      prisma: {
+        user: {
+          updateMany,
+          findUniqueOrThrow
+        }
+      }
+    } as const;
+
+    await expect(
+      updateUserChallengeData(
+        fastify as never,
+        user as never,
+        completedChallenge.id,
+        completedChallenge
+      )
+    ).resolves.toMatchObject({
+      alreadyCompleted: false,
+      userSavedChallenges: []
+    });
+
+    expect(updateMany).toHaveBeenCalledWith({
+      where: { id: 'user-1', updateCount: 0 },
+      data: {
+        completedChallenges: [legacyChallenge, completedChallenge],
+        needsModeration: undefined,
+        partiallyCompletedChallenges: [],
+        progressTimestamps: [1713225600000],
+        savedChallenges: []
+      }
+    });
+  });
 });

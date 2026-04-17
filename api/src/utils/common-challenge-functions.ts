@@ -130,6 +130,18 @@ export async function updateUserChallengeData(
   challengeId: string,
   _completedChallenge: CompletedChallenge
 ) {
+  const toTimestamp = (value: unknown, fallback: number) => {
+    if (typeof value === 'number') {
+      return value;
+    }
+
+    try {
+      return normalizeDate(value as Parameters<typeof normalizeDate>[0]);
+    } catch {
+      return fallback;
+    }
+  };
+
   const maxOccRetries = 10;
 
   // Atomic optimistic locking with retry loop to prevent race conditions
@@ -177,7 +189,8 @@ export async function updateUserChallengeData(
     const finalChallenge = alreadyCompleted
       ? {
           ...completedChallenge,
-          completedDate: normalizeDate(existingChallenge.completedDate)
+          // Keep legacy stored format as-is to avoid runtime conversion errors.
+          completedDate: existingChallenge.completedDate as number
         }
       : completedChallenge;
 
@@ -217,9 +230,7 @@ export async function updateUserChallengeData(
     // Build the update data for nested list fields
     const completedChallengesUpdate = alreadyCompleted
       ? uniqueCompletedChallenges.map(x =>
-          x.id === challengeId
-            ? finalChallenge
-            : { ...x, completedDate: normalizeDate(x.completedDate as number) }
+          x.id === challengeId ? finalChallenge : x
         )
       : [...uniqueCompletedChallenges, finalChallenge];
 
@@ -291,8 +302,8 @@ export async function updateUserChallengeData(
   return {
     alreadyCompleted: !!existingChallenge,
     completedDate: existingChallenge
-      ? normalizeDate(existingChallenge.completedDate)
-      : normalizeDate(_completedChallenge.completedDate),
+      ? toTimestamp(existingChallenge.completedDate, Date.now())
+      : toTimestamp(_completedChallenge.completedDate, Date.now()),
     userSavedChallenges
   };
 }
