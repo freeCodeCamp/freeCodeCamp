@@ -584,9 +584,9 @@
       "instructions": "지침",
       "notes": "Notes",
       "preview": "미리 보기",
-      "terminal": "터미널",
       "editor": "편집기",
-      "interactive-editor": "인터랙티브 에디터"
+      "interactive-editor": "인터랙티브 에디터",
+      "terminal": "터미널"
     },
     "editor-alerts": {
       "tab-trapped": "탭을 누르면 이제 탭 문자가 삽입됩니다",
@@ -1034,6 +1034,10 @@
     "terminal-output": "터미널 출력",
     "not-available": "사용 불가",
     "interactive-editor-desc": "정적 코드 예제를 인터랙티브 편집기로 전환하세요. 이를 통해 페이지에서 코드를 바로 편집하고 실행할 수 있습니다.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "이 작업은 병음-한자 입력을 사용합니다. 성조 번호(1~5)로 병음을 입력하세요. 올바른 음절을 입력하면 한자로 변환됩니다. 한자 뒤에 백스페이스를 누르면 다시 병음으로 바뀌고 마지막으로 입력한 항목이 삭제됩니다: 성조 번호이면 성조가 삭제되고, 문자이면 문자가 삭제됩니다.",
     "pinyin-tone-input-desc": "이 과제는 병음 성조 입력을 사용합니다. 성조 번호(1~5)로 병음을 입력하세요. 성조 번호를 입력하면 성조 표기로 변환됩니다. 백스페이스를 누르면 마지막으로 입력한 항목이 삭제됩니다: 성조 번호이면 성조가 삭제되고, 문자이면 문자가 삭제됩니다."
   },

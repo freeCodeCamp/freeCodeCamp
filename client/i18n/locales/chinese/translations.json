@@ -584,9 +584,9 @@
       "instructions": "说明",
       "notes": "注意",
       "preview": "预览",
-      "terminal": "终端",
       "editor": "编辑器",
-      "interactive-editor": "交互式编辑器"
+      "interactive-editor": "交互式编辑器",
+      "terminal": "终端"
     },
     "editor-alerts": {
       "tab-trapped": "按下选项卡将插入选项卡字符",
@@ -1034,6 +1034,10 @@
     "terminal-output": "终端输出",
     "not-available": "不可用",
     "interactive-editor-desc": "将静态代码示例转为交互式编辑器。这允许你直接在页面上编辑并运行代码。",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "这个任务使用 Pinyin-to-Hanzi 输入。输入带声调数字（1 到 5）的拼音。当你输入正确的音节时，它将转换为汉字。如果你在一个汉字后按退格键，它会变回拼音并删除你最后输入的内容：如果是声调数字，则删除声调；如果是字母，则删除字母。",
     "pinyin-tone-input-desc": "这个任务使用 Pinyin Tone 输入。输入带声调数字（1 到 5）的拼音。当你输入声调数字时，它会被转换为声调符号。如果你按退格键，最后输入的内容会被删除：如果是声调数字，则删除声调；如果是字母，则删除字母。"
   },
