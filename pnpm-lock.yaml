@@ -78,8 +78,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       webpack-bundle-analyzer:
-        specifier: 4.10.1
-        version: 4.10.1
+        specifier: 4.10.2
+        version: 4.10.2
       yargs:
         specifier: 17.7.2
         version: 17.7.2
@@ -1156,7 +1156,7 @@ importers:
         version: 5.90.3(webpack-cli@4.10.0)
       webpack-cli:
         specifier: 4.10.0
-        version: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
+        version: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.90.3)
 
   tools/client-plugins/gatsby-source-challenges:
     dependencies:
@@ -12890,8 +12890,8 @@ packages:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
 
-  webpack-bundle-analyzer@4.10.1:
-    resolution: {integrity: sha512-s3P7pgexgT/HTUSYgxJyn28A+99mmLq4HsJepMPzu0R8ImJc52QNqaFYW1Z2z2uIb1/J3eYgaAWVpaC+v/1aAQ==}
+  webpack-bundle-analyzer@4.10.2:
+    resolution: {integrity: sha512-vJptkMm9pk5si4Bv922ZbKLV8UTT4zib4FPgXMhgzUny0bfDDkLXAVQs3ly3fS4/TN9ROFtb0NFrm04UXFE/Vw==}
     engines: {node: '>= 10.13.0'}
     hasBin: true
 
@@ -19067,16 +19067,16 @@ snapshots:
   '@webpack-cli/configtest@1.2.0(webpack-cli@4.10.0)(webpack@5.90.3)':
     dependencies:
       webpack: 5.90.3(webpack-cli@4.10.0)
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.90.3)
 
   '@webpack-cli/info@1.5.0(webpack-cli@4.10.0)':
     dependencies:
       envinfo: 7.10.0
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.90.3)
 
   '@webpack-cli/serve@1.7.0(webpack-cli@4.10.0)':
     dependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.90.3)
 
   '@xtuc/ieee754@1.2.0': {}
 
@@ -22458,7 +22458,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.27.3
       gatsby: 5.16.0(babel-eslint@10.1.0(eslint@9.39.1(jiti@2.6.1)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(type-fest@2.19.0)(typescript@5.9.3)
-      webpack-bundle-analyzer: 4.10.1
+      webpack-bundle-analyzer: 4.10.2
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -28569,7 +28569,7 @@ snapshots:
 
   webidl-conversions@7.0.0: {}
 
-  webpack-bundle-analyzer@4.10.1:
+  webpack-bundle-analyzer@4.10.2:
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
       acorn: 8.16.0
@@ -28579,7 +28579,6 @@ snapshots:
       escape-string-regexp: 4.0.0
       gzip-size: 6.0.0
       html-escaper: 2.0.2
-      is-plain-object: 5.0.0
       opener: 1.5.2
       picocolors: 1.1.1
       sirv: 2.0.3
@@ -28588,7 +28587,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3):
+  webpack-cli@4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.90.3):
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
       '@webpack-cli/configtest': 1.2.0(webpack-cli@4.10.0)(webpack@5.90.3)
@@ -28604,7 +28603,7 @@ snapshots:
       webpack: 5.90.3(webpack-cli@4.10.0)
       webpack-merge: 5.9.0
     optionalDependencies:
-      webpack-bundle-analyzer: 4.10.1
+      webpack-bundle-analyzer: 4.10.2
 
   webpack-dev-middleware@5.3.4(webpack@5.98.0):
     dependencies:
@@ -28658,7 +28657,7 @@ snapshots:
       watchpack: 2.5.1
       webpack-sources: 3.2.3
     optionalDependencies:
-      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
+      webpack-cli: 4.10.0(webpack-bundle-analyzer@4.10.2)(webpack@5.90.3)
     transitivePeerDependencies:
       - '@swc/core'
       - esbuild
