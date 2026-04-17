@@ -166,7 +166,7 @@
     "@types/store": "^2.0.2",
     "@types/validator": "^13.7.12",
     "@vitest/ui": "^4.0.15",
-    "autoprefixer": "10.4.17",
+    "autoprefixer": "10.4.27",
     "babel-plugin-macros": "3.1.0",
     "core-js": "3.37.1",
     "dotenv": "16.4.5",
