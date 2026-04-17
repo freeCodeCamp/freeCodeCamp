@@ -6236,6 +6236,12 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
