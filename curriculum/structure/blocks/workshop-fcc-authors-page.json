@@ -32,7 +32,9 @@
     { "id": "641dab13c1b6f14b9828e6b1", "title": "Step 24" },
     { "id": "69df434b56d2e0faf1a7424c", "title": "Step 25" },
     { "id": "69e14a2fd8ecf9210c0739ee", "title": "Step 26" },
-    { "id": "69e16a610b33e847d85be16e", "title": "Step 27" }
+    { "id": "69e16a610b33e847d85be16e", "title": "Step 27" },
+    { "id": "69e1e83ac6424325f77331e8", "title": "Step 28" },
+    { "id": "69e1f5fa037cd7c2c4d6b8eb", "title": "Step 29" }
   ],
   "helpCategory": "JavaScript"
 }
