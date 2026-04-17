@@ -59,6 +59,7 @@ export const PortfolioProjects = ({
             portfolio={portfolioProjects}
             autoAdd={autoAdd}
             editItemId={editingId}
+            onSave={() => setIsModalOpen(false)}
           />
         </Modal.Body>
       </Modal>

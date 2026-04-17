@@ -25,6 +25,7 @@ type ExperienceProps = {
   autoAdd?: boolean;
   editItemId?: string | null;
   experience: ExperienceData[];
+  onSave?: () => void;
   t: TFunction;
   updateMyExperience: (obj: { experience: ExperienceData[] }) => void;
 };
@@ -156,6 +157,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           ? props.experience.map(item => (byId(id)(item) ? itemToSave : item))
           : [itemToSave, ...props.experience];
       updateMyExperience({ experience: updatedExperience });
+      props.onSave?.();
     }
   };
 
@@ -172,6 +174,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     }
     const filteredExperience = props.experience.filter(notById(id));
     updateMyExperience({ experience: filteredExperience });
+    props.onSave?.();
   };
 
   const isFormPristine = (id: string) => {

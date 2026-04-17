@@ -100,6 +100,7 @@ export const ExperienceDisplay = ({
             experience={experience}
             autoAdd={autoAdd}
             editItemId={editingId}
+            onSave={() => setIsModalOpen(false)}
           />
         </Modal.Body>
       </Modal>

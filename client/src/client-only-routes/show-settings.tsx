@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -184,6 +184,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             >
               {t('settings.for', { username: username })}
             </h1>
+            <Trans i18nKey='settings.profile-note'>
+              <a href={`/${username}`}>your profile</a>
+            </Trans>
           </ScrollElement>
           <Spacer size='l' />
           <ScrollElement name='personal'>

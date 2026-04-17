@@ -26,6 +26,7 @@ import { updateMyPortfolio } from '../../../redux/settings/actions';
 type PortfolioProps = {
   autoAdd?: boolean;
   editItemId?: string | null;
+  onSave?: () => void;
   portfolio: PortfolioProjectData[];
   t: TFunction;
   updateMyPortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
@@ -127,6 +128,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
           ? props.portfolio.map(item => (byId(id)(item) ? itemToSave : item))
           : [itemToSave, ...props.portfolio];
       updateMyPortfolio({ portfolio: updatedPortfolio });
+      props.onSave?.();
     }
   };
 
@@ -142,6 +144,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
       setUnsavedItemId(null);
     }
     updateMyPortfolio({ portfolio: props.portfolio.filter(notById(id)) });
+    props.onSave?.();
   };
 
   const isFormPristine = (id: string) => {

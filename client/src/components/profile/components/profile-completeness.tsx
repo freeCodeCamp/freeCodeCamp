@@ -126,7 +126,9 @@ export const ProfileCompleteness = ({
     .reduce((sum, item) => sum + item.weight, 0);
   const percentage = Math.round((completedWeight / totalWeight) * 100);
 
-  const [isExpanded, setIsExpanded] = useState(percentage < 100);
+  const coreComplete =
+    hasValue(name) && isValidPicture(picture) && hasValue(about);
+  const [isExpanded, setIsExpanded] = useState(!coreComplete);
 
   // Don't render if profile is complete
   if (percentage === 100) {
