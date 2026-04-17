@@ -10,9 +10,13 @@ exports[`Timeline buttons test > should check certification page consistency 1`]
     <section
       className="card"
     >
-      <h2>
-        profile.timeline
-      </h2>
+      <div
+        className="profile-section-heading"
+      >
+        <h2>
+          profile.timeline
+        </h2>
+      </div>
       <div
         className="h-[20px]"
       />
