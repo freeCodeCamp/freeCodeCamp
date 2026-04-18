@@ -75,7 +75,7 @@
     "date-fns-tz": "3.2.0",
     "eslint-config-react-app": "^7.0.1",
     "final-form": "4.20.10",
-    "gatsby": "5.16.0",
+    "gatsby": "5.16.1",
     "gatsby-cli": "5.16.0",
     "gatsby-plugin-postcss": "6.16.0",
     "gatsby-plugin-react-helmet": "6.16.0",
