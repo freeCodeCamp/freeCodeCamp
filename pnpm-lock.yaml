@@ -298,8 +298,8 @@ importers:
         specifier: 1.7.19
         version: 1.7.19(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@loadable/component':
-        specifier: 5.16.3
-        version: 5.16.3(react@18.2.0)
+        specifier: 5.16.7
+        version: 5.16.7(react@18.2.0)
       '@redux-devtools/extension':
         specifier: 3.3.0
         version: 3.3.0(redux@4.2.1)
@@ -3225,11 +3225,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@loadable/component@5.16.3':
-    resolution: {integrity: sha512-2mVvHs2988oVX2/zM0y6nYhJ4rTVHhkhRnpupBA0Rjl5tS8op9uSR4u5SLVfMLxzpspr2UiIBQD+wEuMsuq4Dg==}
+  '@loadable/component@5.16.7':
+    resolution: {integrity: sha512-XvkFixLUOTEaj8lI7uwc4nf8Wmq3IulYG7SZHCWcPm/Li5gjJDFfIkgWOLPnD7jqPJVtAG9bEz4SCek+SpHYYg==}
     engines: {node: '>=8'}
     peerDependencies:
-      react: ^16.3.0 || ^17.0.0 || ^18.0.0
+      react: ^16.3.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@lukeed/ms@2.0.2':
     resolution: {integrity: sha512-9I2Zn6+NJLfaGoz9jN3lpwDgAYvfGeNYdbAIjJOqzs4Tpc+VU3Jqq4IofSUBKajiDS8k9fZIg18/z13mpk1bsA==}
@@ -16599,7 +16599,7 @@ snapshots:
   '@lmdb/lmdb-win32-x64@2.5.3':
     optional: true
 
-  '@loadable/component@5.16.3(react@18.2.0)':
+  '@loadable/component@5.16.7(react@18.2.0)':
     dependencies:
       '@babel/runtime': 7.27.3
       hoist-non-react-statics: 3.3.2
