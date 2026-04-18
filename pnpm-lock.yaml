@@ -160,7 +160,7 @@ importers:
         version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.3)
       nanoid:
         specifier: '3'
-        version: 3.3.7
+        version: 3.3.11
       no-profanity:
         specifier: 1.5.1
         version: 1.5.1
@@ -394,8 +394,8 @@ importers:
         specifier: 0.33.0
         version: 0.33.0
       nanoid:
-        specifier: 3.3.7
-        version: 3.3.7
+        specifier: 3.3.11
+        version: 3.3.11
       normalize-url:
         specifier: 6.1.0
         version: 6.1.0
@@ -4362,6 +4362,7 @@ packages:
 
   '@sigmacomputing/babel-plugin-lodash@3.3.5':
     resolution: {integrity: sha512-VFhaHjlNzWyBtBm3YdqOwP8GbQHK7sWzXKpSUBTLjl2Zz6/9PwCK4qXZXI5CHpDjmvbouHUDbjrZP2KU5h6VQg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   '@sindresorhus/is@4.6.0':
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
@@ -9780,11 +9781,6 @@ packages:
 
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
-  nanoid@3.3.7:
-    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -24806,8 +24802,6 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@3.3.7: {}
-
   nanoid@4.0.2: {}
 
   napi-build-utils@2.0.0: {}
@@ -25598,7 +25592,7 @@ snapshots:
 
   postcss@8.4.35:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.11
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
