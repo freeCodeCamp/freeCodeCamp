@@ -1,4 +1,50 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>freecodecamp/renovate-config"],
-  "includePaths": ["**/Dockerfile", "**/.github/workflows/*.yml", "api/**"]
+  "lockFileMaintenance": {
+    "enabled": true,
+    "extends": ["schedule:weekly"],
+    "automerge": true
+  },
+  "postUpdateOptions": ["pnpmDedupe"],
+  "packageRules": [
+    {
+      "groupName": "types",
+      "matchPackageNames": ["@types/**"]
+    },
+    {
+      "groupName": "eslint",
+      "matchPackageNames": [
+        "eslint",
+        "eslint-**",
+        "@eslint/**",
+        "@typescript-eslint/**",
+        "typescript-eslint"
+      ]
+    },
+    {
+      "groupName": "playwright",
+      "matchPackageNames": ["@playwright/**", "playwright", "playwright-**"]
+    },
+    {
+      "groupName": "gatsby",
+      "matchPackageNames": ["gatsby", "gatsby-**"]
+    },
+    {
+      "groupName": "vitest",
+      "matchPackageNames": ["vitest", "@vitest/**"]
+    },
+    {
+      "groupName": "testing-library",
+      "matchPackageNames": ["@testing-library/**"]
+    },
+    {
+      "groupName": "fastify",
+      "matchPackageNames": ["fastify", "@fastify/**"]
+    },
+    {
+      "matchPackageNames": ["node", "pnpm", "typescript"],
+      "dependencyDashboardApproval": true
+    }
+  ]
 }

@@ -41,7 +41,7 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@typescript/vfs": "1.6.1",
+    "@typescript/vfs": "1.6.4",
     "babel-loader": "8.3.0",
     "eslint": "^9.39.1",
     "process": "0.11.10",

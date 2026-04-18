@@ -4734,6 +4734,13 @@
           "이 워크숍에서는 자바스크립트 반복문을 활용해 우주 미션 명단을 만드세요."
         ]
       },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "가장 긴 단어 찾기 앱 만들기",
         "intro": [
@@ -6023,10 +6030,28 @@
           "이 강의들에서는 유니언 타입, 인터페이스, void 타입 등 타입 관련 작업 방법을 배우게 됩니다."
         ]
       },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "제네릭과 타입 좁히기 다루기",
         "intro": [
           "이 레슨들에서는 TypeScript의 제네릭과 타입 좁히기를 배우세요."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
