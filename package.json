@@ -93,7 +93,7 @@
     "lodash": "4.17.21",
     "npm-run-all2": "5.0.2",
     "prettier": "3.2.5",
-    "stylelint": "16.14.1",
+    "stylelint": "16.24.0",
     "tsx": "4.21.0",
     "turbo": "^2.8.7",
     "typescript": "5.9.3",

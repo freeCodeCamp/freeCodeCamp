@@ -167,7 +167,7 @@
     "@vitest/ui": "^4.0.15",
     "autoprefixer": "10.4.27",
     "babel-plugin-macros": "3.1.0",
-    "core-js": "3.37.1",
+    "core-js": "3.49.0",
     "dotenv": "16.4.5",
     "eslint": "^9.39.1",
     "eslint-plugin-flowtype": "^8.0.3",
@@ -183,6 +183,6 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "vitest": "^4.0.15",
-    "webpack": "5.90.3"
+    "webpack": "5.106.0"
   }
 }
