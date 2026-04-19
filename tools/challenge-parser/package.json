@@ -45,7 +45,7 @@
     "remark-stringify": "9.0.1",
     "to-vfile": "5.0.3",
     "unified": "7.1.0",
-    "unist-util-find": "1.0.2",
+    "unist-util-find": "1.0.4",
     "unist-util-find-after": "3.0.0",
     "unist-util-find-all-after": "3.0.2",
     "unist-util-find-all-before": "3.0.1",
