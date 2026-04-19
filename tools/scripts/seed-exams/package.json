@@ -24,7 +24,7 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "debug": "4.4.3",
-    "dotenv": "16.4.5",
+    "dotenv": "16.6.1",
     "eslint": "^9.39.1",
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",

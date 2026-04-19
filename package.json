@@ -73,7 +73,7 @@
     "playwright:watch": "pnpm -F e2e run playwright:watch"
   },
   "dependencies": {
-    "dotenv": "16.4.5",
+    "dotenv": "16.6.1",
     "eslint": "^9.39.1"
   },
   "devDependencies": {

@@ -12,7 +12,7 @@
   "description": "",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "dotenv": "16.4.5",
+    "dotenv": "16.6.1",
     "eslint": "^9.39.1",
     "mongodb": "6.10.0",
     "tsx": "4.21.0",
