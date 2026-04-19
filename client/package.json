@@ -63,6 +63,8 @@
     "@stripe/react-stripe-js": "1.16.5",
     "@stripe/stripe-js": "1.54.2",
     "@types/react-speech-recognition": "3.9.6",
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/xterm": "6.0.0",
     "algoliasearch": "4.22.1",
     "assert": "2.0.0",
     "babel-plugin-preval": "5.1.0",
@@ -131,9 +133,7 @@
     "typescript": "5.9.3",
     "util": "0.12.5",
     "uuid": "8.3.2",
-    "validator": "13.15.26",
-    "xterm": "^5.2.1",
-    "xterm-addon-fit": "^0.8.0"
+    "validator": "13.15.26"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
