@@ -35,7 +35,7 @@
     "pino-pretty": "10.3.1",
     "query-string": "7.1.3",
     "stripe": "16.12.0",
-    "typebox": "1.1.19",
+    "typebox": "1.1.23",
     "validator": "13.15.35"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
