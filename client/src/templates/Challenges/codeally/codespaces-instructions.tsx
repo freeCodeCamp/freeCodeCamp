@@ -102,7 +102,15 @@ export function CodespacesInstructions({
             <Spacer size='s' />
           </>
         )}
-        <li>{t('learn.codespaces.step-2')}</li>
+        <li>
+          {t('learn.codespaces.step-2')}
+          <Spacer size='xxs' />
+          <CodeAllyButton
+            challengeType={challengeType}
+            onClick={openCodespaces}
+          />
+          <Spacer size='xs' />
+        </li>
         <li>{t('learn.codespaces.step-3')}</li>
         <li>
           {t('learn.codespaces.step-4')}
@@ -138,7 +146,6 @@ export function CodespacesInstructions({
       <Spacer size='m' />
       <CodespacesContinueAlert title={title} />
       {isSignedIn && <CodespacesLogoutAlert course={title} />}
-      <CodeAllyButton challengeType={challengeType} onClick={openCodespaces} />
     </div>
   );
 }
