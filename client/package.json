@@ -156,7 +156,6 @@
     "@types/react-gtm-module": "2.0.3",
     "@types/react-helmet": "6.1.11",
     "@types/react-redux": "7.1.33",
-    "@types/react-responsive": "8.0.8",
     "@types/react-scroll": "1.8.10",
     "@types/react-spinkit": "3.0.10",
     "@types/react-test-renderer": "16.9.12",

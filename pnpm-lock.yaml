@@ -592,9 +592,6 @@ importers:
       '@types/react-redux':
         specifier: 7.1.33
         version: 7.1.33
-      '@types/react-responsive':
-        specifier: 8.0.8
-        version: 8.0.8
       '@types/react-scroll':
         specifier: 1.8.10
         version: 1.8.10
@@ -966,9 +963,6 @@ importers:
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
-      '@types/glob':
-        specifier: ^8.0.1
-        version: 8.1.0
       '@vitest/ui':
         specifier: ^4.0.15
         version: 4.0.15(vitest@4.0.15)
@@ -978,9 +972,6 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
-      glob:
-        specifier: ^8.1.0
-        version: 8.1.0
       gray-matter:
         specifier: 4.0.3
         version: 4.0.3
@@ -4738,9 +4729,6 @@ packages:
   '@types/gatsbyjs__reach-router@1.3.0':
     resolution: {integrity: sha512-7dfI9peaJk7TuIIaW8r6r8UaobvR+zqyc/x8pQpqwOFHCiLXl49TUxMoapFv1BQFAbT9UKrvlsijJk7X5r18lQ==}
 
-  '@types/glob@8.1.0':
-    resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
-
   '@types/google.maps@3.58.1':
     resolution: {integrity: sha512-X9QTSvGJ0nCfMzYOnaVs/k6/4L+7F5uCS+4iUmkLEls6J9S/Phv+m/i3mDeyc49ZBgwab3EFO1HEoBY7k98EGQ==}
 
@@ -4797,9 +4785,6 @@ packages:
 
   '@types/mime@3.0.2':
     resolution: {integrity: sha512-Wj+fqpTLtTbG7c0tH47dkahefpLKEbB+xAZuLq7b4/IDHPl/n6VoXcyUQ2bypFlbSwvCr0y+bD4euTTqTJsPxQ==}
-
-  '@types/minimatch@5.1.2':
-    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
   '@types/ms@0.7.32':
     resolution: {integrity: sha512-xPSg0jm4mqgEkNhowKgZFBNtwoEwF6gJ4Dhww+GFpm3IgtNseHQZ5IqdNwnquZEoANxyDAKDRAdVo4Z72VvD/g==}
@@ -4865,9 +4850,6 @@ packages:
 
   '@types/react-redux@7.1.33':
     resolution: {integrity: sha512-NF8m5AjWCkert+fosDsN3hAlHzpjSiXlVy9EgQEmLoBhaNXbmyeGs/aj5dQzKuF+/q+S7JQagorGDW8pJ28Hmg==}
-
-  '@types/react-responsive@8.0.8':
-    resolution: {integrity: sha512-HDUZtoeFRHrShCGaND23HmXAB9evOOTjkghd2wAasLkuorYYitm5A1XLeKkhXKZppcMBxqB/8V4Snl6hRUTA8g==}
 
   '@types/react-scroll@1.8.10':
     resolution: {integrity: sha512-RD4Z7grbdNGOKwKnUBKar6zNxqaW3n8m9QSrfvljW+gmkj1GArb8AFBomVr6xMOgHPD3v1uV3BrIf01py57daQ==}
@@ -18145,7 +18127,7 @@ snapshots:
       dom-accessibility-api: 0.6.3
       picocolors: 1.1.1
       redent: 3.0.0
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.5.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.13.2(@types/node@25.5.0)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.8)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1)
 
   '@testing-library/react@14.3.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
@@ -18298,11 +18280,6 @@ snapshots:
     dependencies:
       '@types/reach__router': 1.3.15
 
-  '@types/glob@8.1.0':
-    dependencies:
-      '@types/minimatch': 5.1.2
-      '@types/node': 24.10.8
-
   '@types/google.maps@3.58.1': {}
 
   '@types/hast@2.3.6':
@@ -18359,8 +18336,6 @@ snapshots:
   '@types/mime@1.3.3': {}
 
   '@types/mime@3.0.2': {}
-
-  '@types/minimatch@5.1.2': {}
 
   '@types/ms@0.7.32': {}
 
@@ -18436,10 +18411,6 @@ snapshots:
       '@types/react': 18.2.79
       hoist-non-react-statics: 3.3.2
       redux: 4.2.1
-
-  '@types/react-responsive@8.0.8':
-    dependencies:
-      '@types/react': 18.2.79
 
   '@types/react-scroll@1.8.10':
     dependencies:
@@ -18853,6 +18824,15 @@ snapshots:
       msw: 2.13.2(@types/node@25.5.0)(typescript@5.9.3)
       vite: 7.3.1(@types/node@25.5.0)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
+  '@vitest/mocker@4.0.15(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(vite@7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1))':
+    dependencies:
+      '@vitest/spy': 4.0.15
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+    optionalDependencies:
+      msw: 2.13.2(@types/node@24.10.8)(typescript@5.9.3)
+      vite: 7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1)
+
   '@vitest/mocker@4.0.15(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(vite@7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1))':
     dependencies:
       '@vitest/spy': 4.0.15
@@ -18928,7 +18908,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.8)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.5.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.13.2(@types/node@25.5.0)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -28182,6 +28162,22 @@ snapshots:
       - tsx
       - yaml
 
+  vite@7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1):
+    dependencies:
+      esbuild: 0.27.2
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
+      postcss: 8.5.6
+      rollup: 4.54.0
+      tinyglobby: 0.2.15
+    optionalDependencies:
+      '@types/node': 24.10.8
+      fsevents: 2.3.3
+      jiti: 2.6.1
+      terser: 5.46.0
+      tsx: 4.19.1
+      yaml: 2.8.1
+
   vite@7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1):
     dependencies:
       esbuild: 0.27.2
@@ -28307,6 +28303,46 @@ snapshots:
       '@types/node': 24.10.8
       '@vitest/ui': 4.0.15(vitest@4.0.15)
       jsdom: 16.7.0
+    transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - terser
+      - tsx
+      - yaml
+
+  vitest@4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.8)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1):
+    dependencies:
+      '@vitest/expect': 4.0.15
+      '@vitest/mocker': 4.0.15(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(vite@7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1))
+      '@vitest/pretty-format': 4.0.15
+      '@vitest/runner': 4.0.15
+      '@vitest/snapshot': 4.0.15
+      '@vitest/spy': 4.0.15
+      '@vitest/utils': 4.0.15
+      es-module-lexer: 1.7.0
+      expect-type: 1.3.0
+      magic-string: 0.30.21
+      obug: 2.1.1
+      pathe: 2.0.3
+      picomatch: 4.0.3
+      std-env: 3.10.0
+      tinybench: 2.9.0
+      tinyexec: 1.0.2
+      tinyglobby: 0.2.15
+      tinyrainbow: 3.0.3
+      vite: 7.3.1(@types/node@24.10.8)(jiti@2.6.1)(terser@5.46.0)(tsx@4.19.1)(yaml@2.8.1)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@opentelemetry/api': 1.9.0
+      '@types/node': 24.10.8
+      '@vitest/ui': 4.0.15(vitest@4.0.15)
+      jsdom: 26.1.0
     transitivePeerDependencies:
       - jiti
       - less
