@@ -106,7 +106,7 @@ importers:
         version: 5.2.5
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
-        version: 6.1.0(typebox@1.1.19)
+        version: 6.1.0(typebox@1.1.23)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -160,7 +160,7 @@ importers:
         version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.3)
       nanoid:
         specifier: '3'
-        version: 3.3.7
+        version: 3.3.11
       no-profanity:
         specifier: 1.5.1
         version: 1.5.1
@@ -180,8 +180,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       typebox:
-        specifier: 1.1.19
-        version: 1.1.19
+        specifier: 1.1.23
+        version: 1.1.23
       validator:
         specifier: 13.15.35
         version: 13.15.35
@@ -388,14 +388,14 @@ importers:
         specifier: 4.17.21
         version: 4.17.21
       micromark:
-        specifier: 4.0.0
-        version: 4.0.0
+        specifier: 4.0.2
+        version: 4.0.2
       monaco-editor:
         specifier: 0.33.0
         version: 0.33.0
       nanoid:
-        specifier: 3.3.7
-        version: 3.3.7
+        specifier: 3.3.11
+        version: 3.3.11
       normalize-url:
         specifier: 6.1.0
         version: 6.1.0
@@ -466,8 +466,8 @@ importers:
         specifier: 9.0.2
         version: 9.0.2(react@18.2.0)
       react-scroll:
-        specifier: 1.9.0
-        version: 1.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 1.9.3
+        version: 1.9.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-speech-recognition:
         specifier: 4.0.1
         version: 4.0.1(react@18.2.0)
@@ -1054,8 +1054,8 @@ importers:
         specifier: 7.1.0
         version: 7.1.0
       unist-util-find:
-        specifier: 1.0.2
-        version: 1.0.2
+        specifier: 1.0.4
+        version: 1.0.4
       unist-util-find-after:
         specifier: 3.0.0
         version: 3.0.0
@@ -9508,8 +9508,8 @@ packages:
   micromark@2.11.4:
     resolution: {integrity: sha512-+WoovN/ppKolQOFIAajxi7Lu9kInbPxFuTBVEavFcL8eAfVstoc5MocPmqBeAdBOJV00uaVjegzH4+MA0DN/uA==}
 
-  micromark@4.0.0:
-    resolution: {integrity: sha512-o/sd0nMof8kYff+TqcDx3VSrgBTcZpSvYcAHIfHhv5VAuNmisCxjhx6YmxS8PFEpb9z5WKWKPdzf0jM23ro3RQ==}
+  micromark@4.0.2:
+    resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -9781,11 +9781,6 @@ packages:
 
   nanoid@3.3.11:
     resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
-  nanoid@3.3.7:
-    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -10995,11 +10990,11 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
 
-  react-scroll@1.9.0:
-    resolution: {integrity: sha512-mamNcaX9Ng+JeSbBu97nWwRhYvL2oba+xR2GxvyXsbDeGP+gkYIKZ+aDMMj/n20TbV9SCWm/H7nyuNTSiXA6yA==}
+  react-scroll@1.9.3:
+    resolution: {integrity: sha512-xv7FXqF3k63aSLNu4/NjFvRNI0ge7DmmmsbeGarP7LZVAlJMSjUuW3dTtLxp1Afijyv0lS2qwC0GiFHvx1KBHQ==}
     peerDependencies:
-      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825:
     resolution: {integrity: sha512-JyCjbp6ZvkH/T0EuVPdceYlC8u5WqWDSJr2KxDvc81H2eJ+7zYUN++IcEycnR2F+HmER8QVgxfotnIx352zi+w==}
@@ -12360,8 +12355,8 @@ packages:
   type@2.7.2:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
 
-  typebox@1.1.19:
-    resolution: {integrity: sha512-w4m14nMOFEugDrcYeqmTXZZk7WUJKeh7NBZW+6sxhqIgspAg2DEmvubONp9DGVlaUZ28N6W7LUd0JcFKowGP4Q==}
+  typebox@1.1.23:
+    resolution: {integrity: sha512-LOGT/+DLfGsFzAVoYAYzLWT3iV5LfAHebW1pg336lwZg5fkaL3uBKqNXsA7aGb9rkOsVu9QohSkImHwwfHDC0A==}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -12501,14 +12496,11 @@ packages:
     resolution: {integrity: sha512-OCCUtDD8UHKeODw3TPXyFDxPCbpgBzbGTTaDpR68nvxkwiVcawBqMVrokfBMvUi7ij2F5q7S4s4Jq5dvkcBt+w==}
     engines: {node: '>=10'}
 
-  unist-util-find@1.0.2:
-    resolution: {integrity: sha512-ft06UDYzqi9o9RmGP0sZWI/zvLLQiBW2/MD+rW6mDqbOWDcmknGX9orQPspfuGRYWr8eSJAmfsBcvOpfGRJseA==}
+  unist-util-find@1.0.4:
+    resolution: {integrity: sha512-T5vI7IkhroDj7KxAIy057VbIeGnCXfso4d4GoUsjbAmDLQUkzAeszlBtzx1+KHgdsYYBygaqUBvrbYCfePedZw==}
 
   unist-util-generated@1.1.6:
     resolution: {integrity: sha512-cln2Mm1/CZzN5ttGK7vkoGw+RZ8VcUH6BtGbq98DDtRGquAAOXig1mrBQYelOwMXYS8rK+vZDyyojSjp7JX+Lg==}
-
-  unist-util-is@3.0.0:
-    resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
 
   unist-util-is@4.1.0:
     resolution: {integrity: sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg==}
@@ -12540,14 +12532,8 @@ packages:
   unist-util-visit-children@1.1.4:
     resolution: {integrity: sha512-sA/nXwYRCQVRwZU2/tQWUqJ9JSFM1X3x7JIOsIgSzrFHcfVt6NkzDtKzyxg2cZWkCwGF9CO8x4QNZRJRMK8FeQ==}
 
-  unist-util-visit-parents@2.1.2:
-    resolution: {integrity: sha512-DyN5vD4NE3aSeB+PXYNKxzGsfocxp6asDc2XXE3b0ekO2BaRUpBicbbUygfSvYfUz1IkmjFR1YF7dPklraMZ2g==}
-
   unist-util-visit-parents@3.1.1:
     resolution: {integrity: sha512-1KROIZWo6bcMrZEwiH2UrXDyalAa0uqzWCxCJj6lPOvTve2WkfgCytoDTPaMnodXh1WrXOq0haVYHj99ynJlsg==}
-
-  unist-util-visit@1.4.1:
-    resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
 
   unist-util-visit@2.0.3:
     resolution: {integrity: sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==}
@@ -15978,9 +15964,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.19)':
+  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.23)':
     dependencies:
-      typebox: 1.1.19
+      typebox: 1.1.23
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 
@@ -24510,7 +24496,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  micromark@4.0.0:
+  micromark@4.0.2:
     dependencies:
       '@types/debug': 4.1.12
       debug: 4.3.4(supports-color@8.1.1)
@@ -24806,8 +24792,6 @@ snapshots:
   nano-spawn@2.0.0: {}
 
   nanoid@3.3.11: {}
-
-  nanoid@3.3.7: {}
 
   nanoid@4.0.2: {}
 
@@ -25599,7 +25583,7 @@ snapshots:
 
   postcss@8.4.35:
     dependencies:
-      nanoid: 3.3.7
+      nanoid: 3.3.11
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -26092,7 +26076,7 @@ snapshots:
       react: 18.2.0
       shallow-equal: 1.2.1
 
-  react-scroll@1.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-scroll@1.9.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       lodash.throttle: 4.1.1
       prop-types: 15.8.1
@@ -27786,7 +27770,7 @@ snapshots:
 
   type@2.7.2: {}
 
-  typebox@1.1.19: {}
+  typebox@1.1.23: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
@@ -27958,17 +27942,15 @@ snapshots:
 
   unist-util-find-all-between@2.1.0:
     dependencies:
-      unist-util-find: 1.0.2
+      unist-util-find: 1.0.4
       unist-util-is: 4.1.0
 
-  unist-util-find@1.0.2:
+  unist-util-find@1.0.4:
     dependencies:
       lodash.iteratee: 4.7.0
-      unist-util-visit: 1.4.1
+      unist-util-visit: 2.0.3
 
   unist-util-generated@1.1.6: {}
-
-  unist-util-is@3.0.0: {}
 
   unist-util-is@4.1.0: {}
 
@@ -28006,18 +27988,10 @@ snapshots:
 
   unist-util-visit-children@1.1.4: {}
 
-  unist-util-visit-parents@2.1.2:
-    dependencies:
-      unist-util-is: 3.0.0
-
   unist-util-visit-parents@3.1.1:
     dependencies:
       '@types/unist': 2.0.8
       unist-util-is: 4.1.0
-
-  unist-util-visit@1.4.1:
-    dependencies:
-      unist-util-visit-parents: 2.1.2
 
   unist-util-visit@2.0.3:
     dependencies:
