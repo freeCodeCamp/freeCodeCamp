@@ -466,8 +466,8 @@ importers:
         specifier: 9.0.2
         version: 9.0.2(react@18.2.0)
       react-scroll:
-        specifier: 1.9.0
-        version: 1.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 1.9.3
+        version: 1.9.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-speech-recognition:
         specifier: 4.0.1
         version: 4.0.1(react@18.2.0)
@@ -10990,11 +10990,11 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
 
-  react-scroll@1.9.0:
-    resolution: {integrity: sha512-mamNcaX9Ng+JeSbBu97nWwRhYvL2oba+xR2GxvyXsbDeGP+gkYIKZ+aDMMj/n20TbV9SCWm/H7nyuNTSiXA6yA==}
+  react-scroll@1.9.3:
+    resolution: {integrity: sha512-xv7FXqF3k63aSLNu4/NjFvRNI0ge7DmmmsbeGarP7LZVAlJMSjUuW3dTtLxp1Afijyv0lS2qwC0GiFHvx1KBHQ==}
     peerDependencies:
-      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825:
     resolution: {integrity: sha512-JyCjbp6ZvkH/T0EuVPdceYlC8u5WqWDSJr2KxDvc81H2eJ+7zYUN++IcEycnR2F+HmER8QVgxfotnIx352zi+w==}
@@ -26076,7 +26076,7 @@ snapshots:
       react: 18.2.0
       shallow-equal: 1.2.1
 
-  react-scroll@1.9.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  react-scroll@1.9.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       lodash.throttle: 4.1.1
       prop-types: 15.8.1
