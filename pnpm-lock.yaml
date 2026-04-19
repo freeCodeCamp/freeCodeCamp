@@ -716,9 +716,6 @@ importers:
       '@types/polka':
         specifier: 0.5.7
         version: 0.5.7
-      '@types/string-similarity':
-        specifier: 4.0.2
-        version: 4.0.2
       '@typescript/vfs-1.6.1':
         specifier: npm:@typescript/vfs@1.6.4
         version: '@typescript/vfs@1.6.4(typescript@5.9.3)'
@@ -764,9 +761,6 @@ importers:
       sirv:
         specifier: 3.0.2
         version: 3.0.2
-      string-similarity:
-        specifier: 4.0.4
-        version: 4.0.4
       typescript-5.9.2:
         specifier: npm:typescript@5.9.2
         version: typescript@5.9.2
@@ -4910,9 +4904,6 @@ packages:
 
   '@types/store@2.0.5':
     resolution: {integrity: sha512-5NmTKe3GWdOaykzq7no+Ahf6mafJu0oLc9JNhJ3E26+0oFvd6GnksnZQpMXcH526mfG4xDYjFiKzyDL51PzeWQ==}
-
-  '@types/string-similarity@4.0.2':
-    resolution: {integrity: sha512-LkJQ/jsXtCVMK+sKYAmX/8zEq+/46f1PTQw7YtmQwb74jemS1SlNLmARM2Zml9DgdDTWKAtc5L13WorpHPDjDA==}
 
   '@types/superagent@4.1.19':
     resolution: {integrity: sha512-McM1mlc7PBZpCaw0fw/36uFqo0YeA6m8JqoyE4OfqXsZCIg0hPP2xdE6FM7r6fdprDZHlJwDpydUj1R++93hCA==}
@@ -11819,10 +11810,6 @@ packages:
     resolution: {integrity: sha512-IoHUjcw3Srl8nsPlW04U3qwWPk3oG2ffLM0tN853d/E/JlIvcmZmDY2Kz5HzKp4lEi2T7QD7Zuvjq/1rDw+XcQ==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
-  string-similarity@4.0.4:
-    resolution: {integrity: sha512-/q/8Q4Bl4ZKAPjj8WerIBJWALKkaPRfrvhfF8k/B23i4nzrlRj2/go1m90In7nG/3XDSbOo0+pu6RvCTM9RGMQ==}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-
   string-width@4.2.3:
     resolution: {integrity: sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==}
     engines: {node: '>=8'}
@@ -18482,8 +18469,6 @@ snapshots:
 
   '@types/store@2.0.5': {}
 
-  '@types/string-similarity@4.0.2': {}
-
   '@types/superagent@4.1.19':
     dependencies:
       '@types/cookiejar': 2.1.2
@@ -18908,7 +18893,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.5.0)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.13.2(@types/node@25.5.0)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.8)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@16.7.0)(msw@2.13.2(@types/node@24.10.8)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -27132,8 +27117,6 @@ snapshots:
       lodash.foreach: 4.5.0
       lodash.map: 4.6.0
       lodash.maxby: 4.6.0
-
-  string-similarity@4.0.4: {}
 
   string-width@4.2.3:
     dependencies:
