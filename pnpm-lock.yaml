@@ -66,8 +66,8 @@ importers:
         specifier: 5.0.2
         version: 5.0.2
       prettier:
-        specifier: 3.2.5
-        version: 3.2.5
+        specifier: 3.8.2
+        version: 3.8.2
       stylelint:
         specifier: 16.24.0
         version: 16.24.0(typescript@5.9.3)
@@ -973,8 +973,8 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
       prettier:
-        specifier: 3.2.5
-        version: 3.2.5
+        specifier: 3.8.2
+        version: 3.8.2
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -10434,8 +10434,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+  prettier@3.8.2:
+    resolution: {integrity: sha512-8c3mgTe0ASwWAJK+78dpviD+A8EqhndQPUBpNUIPt6+xWlIigCwfN01lWr9MAede4uqXGTEKeQWTvzb3vjia0Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -25234,7 +25234,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier@3.2.5: {}
+  prettier@3.8.2: {}
 
   pretty-bytes@5.6.0: {}
 
