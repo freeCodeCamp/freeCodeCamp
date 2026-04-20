@@ -35,6 +35,11 @@
       "matchPackageNames": ["vitest", "@vitest/**"]
     },
     {
+      "groupName": "transitive-pins",
+      "matchFileNames": ["pnpm-workspace.yaml"],
+      "matchDepTypes": ["pnpm-workspace.overrides"]
+    },
+    {
       "groupName": "testing-library",
       "matchPackageNames": ["@testing-library/**"]
     },
