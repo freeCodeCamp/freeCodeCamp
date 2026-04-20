@@ -1,9 +1,14 @@
 {
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-string-method",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "69de4308e652aaeb5ccdb03e", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "69de4308e652aaeb5ccdb03e", "title": "Step 1" },
+    { "id": "69de54575ee98e22b24527e8", "title": "Step 2" },
+    { "id": "69e20876baed33de636b989a", "title": "Step 3" },
+    { "id": "69e20a0451c7a3ef189514d3", "title": "Step 4" }
+  ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
