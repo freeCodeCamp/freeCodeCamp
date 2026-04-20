@@ -238,6 +238,147 @@ describe('auth', () => {
     });
   });
 
+  describe('req.getAuthedUser', () => {
+    test('returns message when access token is missing', async () => {
+      fastify.get('/test', async req => {
+        return req.getAuthedUser();
+      });
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test'
+      });
+
+      expect(res.json()).toEqual({
+        message: 'Access token is required for this request'
+      });
+    });
+
+    test('returns message when access token is not signed', async () => {
+      fastify.get('/test', async req => {
+        return req.getAuthedUser();
+      });
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: token
+        }
+      });
+
+      expect(res.json()).toEqual({
+        message: 'Access token is required for this request'
+      });
+    });
+
+    test('returns message when access token is invalid', async () => {
+      fastify.get('/test', async req => {
+        return req.getAuthedUser();
+      });
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        'invalid-secret'
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        message: 'Your access token is invalid'
+      });
+    });
+
+    test('returns message when access token has expired', async () => {
+      fastify.get('/test', async req => {
+        return req.getAuthedUser();
+      });
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123', -1) },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        message: 'Access token is no longer valid'
+      });
+    });
+
+    test('returns message when user is not found', async () => {
+      // @ts-expect-error prisma isn't defined, since we're not building the
+      // full application here.
+      fastify.prisma = { user: { findUnique: () => null } };
+
+      fastify.get('/test', async req => {
+        return req.getAuthedUser();
+      });
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        message: 'Your access token is invalid'
+      });
+    });
+
+    test('returns user when token is valid', async () => {
+      const fakeUser = { id: '123', username: 'test-user' };
+      // @ts-expect-error prisma isn't defined, since we're not building the
+      // full application here.
+      fastify.prisma = { user: { findUnique: () => fakeUser } };
+
+      fastify.get('/test', async req => {
+        return req.getAuthedUser();
+      });
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(res.json()).toEqual({
+        user: fakeUser
+      });
+    });
+  });
+
   describe('onRequest Hook', () => {
     test('should update the jwt_access_token to httpOnly and secure', async () => {
       const rawValue = 'should-not-change';

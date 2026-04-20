@@ -29,6 +29,7 @@
     "sign-in": "登錄",
     "sign-up-email-list": "訂閱 Quincy 每週的電子郵件",
     "sign-out": "退出",
+    "catalog": "Catalog",
     "curriculum": "課程",
     "contribute": "貢獻",
     "podcast": "播客",
@@ -65,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "重置此步驟",
     "help": "幫助",
     "get-help": "獲得幫助",
@@ -116,6 +118,7 @@
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
     "share-on-threads": "分享到 Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "按播放鍵",
     "download-latest-version": "下載最新版本",
     "more-ways-to-sign-in": "更多登錄方式",
@@ -379,6 +382,10 @@
       "confirm": "確認新郵箱",
       "weekly": "給我發 Quincy 的每週訂閱郵件"
     },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+    },
     "honesty": {
       "p1": "申請認證前，你必須先接受我們的《學術誠信條例》，即：",
       "p2": "\"我理解剽竊意味着抄襲他人的作品，將其作爲自己的作品來提交，且不明確註明原作者。\"",
@@ -442,6 +449,7 @@
     "edit-my-profile": "編輯我的個人資料",
     "add-bluesky": "將此認證分享到 BlueSky",
     "add-threads": "將此認證分享到 Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "經歷",
       "share-experience": "分享你的職業經歷",
@@ -530,6 +538,18 @@
     "syntax-error": "你的代碼在任何測試運行之前就出現了錯誤。請修復後重試。",
     "indentation-error": "你的代碼存在縮進錯誤。你可能需要在新行中添加 <code>pass</code> 以形成一個有效的代碼塊。",
     "sign-in-save": "登錄以保存你的學習進度",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "下載我的解決方案",
     "download-results": "下載我的結果",
     "percent-complete": "完成 {{percent}}%",
@@ -564,9 +584,9 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "terminal": "終端",
       "editor": "編輯器",
-      "interactive-editor": "交互式編輯器"
+      "interactive-editor": "交互式編輯器",
+      "terminal": "終端"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -860,11 +880,11 @@
     "current-initiatives-2": "創建英語和數學課程",
     "current-initiatives-3": "將我們的課程和教程翻譯成 32 種語言",
     "current-initiatives-4": "創建免費認證的計算機科學學士學位課程",
-    "community-achivements-title": "我們社區今年的成就：",
-    "community-achivements-1": "在 YouTube 上發佈了<0>193</0> 個完整課程。",
-    "community-achivements-2": "在 freeCodeCamp 出版社發表了 <0>850</0> 篇文本編程教程和 <0>5</0> 本免費書籍。",
-    "community-achivements-3": "在 GitHub 上我們的開源倉庫中合併了 <0>2,455 </0> 個代碼貢獻",
-    "community-achivements-4": "翻譯了 <0>150</0> 萬個字，使世界上使用不同語言的人更容易訪問我們的課程和教程",
+    "community-achievements-title": "Our Community Achievements This Year:",
+    "community-achievements-1": "Published <0>193</0> full-length courses on YouTube.",
+    "community-achievements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
+    "community-achievements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
+    "community-achievements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "正如你所看到的，我們正在完成大量事情。所以你可以放心，我們會很好地使用你的捐款。",
     "get-benefits": "獲得相應權益，並感受到你在幫助我們的慈善組織爲教育帶來積極改變。今天就成爲支持者。",
     "modal-benefits-title": "支持我們",
@@ -896,8 +916,8 @@
   "search": {
     "label": "搜索",
     "placeholder": {
-      "default": "搜索我們的文章、教程和書籍",
-      "numbered": "搜索 {{ roundedTotalRecords }}+ 文章、教程和書籍"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "查看 {{searchQuery}} 的所有結果",
     "try": "想要搜索信息？試試使用頁面上的搜索框。",
@@ -913,6 +933,7 @@
     "unsubscribed": "你已成功取消訂閱",
     "keep-coding": "無論你做什麼，都要繼續編程！",
     "email-signup": "郵件註冊",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "歡迎來到你全新的 freeCodeCamp 賬戶。讓我們開始吧。",
     "duplicate-account-warning": "如果你想登錄一個現有的賬戶，而不是創建這個賬戶，<0>點擊這裏刪除這個賬戶</0>並嘗試另一個電子郵件地址。",
     "quincy": "- Quincy Larson，freeCodeCamp.org 創始人、老師",
@@ -943,6 +964,14 @@
     "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。",
     "or": "或"
   },
+  "mobile-app-modal": {
+    "heading": "We see you are on mobile!",
+    "body": "This course is available in our app for a better experience.",
+    "ios": "Download on the App Store",
+    "android": "Get it on Google Play",
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
+  },
   "icons": {
     "gold-cup": "金獎盃",
     "avatar": "默認頭像",
@@ -970,6 +999,7 @@
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
     "twitter": "鏈接到 {{username}} 的 X",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "next-month": "訪問下個月",
     "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
@@ -1004,6 +1034,10 @@
     "terminal-output": "終端輸出",
     "not-available": "不可用",
     "interactive-editor-desc": "將靜態代碼示例轉爲交互式編輯器。這允許你直接在頁面上編輯並運行代碼。",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "這個任務使用 Pinyin-to-Hanzi 輸入。輸入帶聲調數字（1 到 5）的拼音。當你輸入正確的音節時，它將轉換爲漢字。如果你在一個漢字後按退格鍵，它會變回拼音並刪除你最後輸入的內容：如果是聲調數字，則刪除聲調；如果是字母，則刪除字母。",
     "pinyin-tone-input-desc": "這個任務使用 Pinyin Tone 輸入。輸入帶聲調數字（1 到 5）的拼音。當你輸入聲調數字時，它會被轉換爲聲調符號。如果你按退格鍵，最後輸入的內容會被刪除：如果是聲調數字，則刪除聲調；如果是字母，則刪除字母。"
   },
@@ -1024,6 +1058,7 @@
     "updated-themes": "我們已更新你的主題",
     "keyboard-shortcut-updated": "我們已更新你的鍵盤快捷鍵設置",
     "subscribe-to-quincy-updated": "我們已更新你對 Quincy 的電子郵件的訂閱",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "我們已更新你的作品集",
     "experience-updated": "我們已更新你的經歷",
     "email-invalid": "郵箱格式無效",
@@ -1279,12 +1314,11 @@
       "introduction-to-algorithms-and-data-structures": "算法和數據結構",
       "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
       "introduction-to-precalculus": "Introduction to Precalculus",
-      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "learn-oop-with-python": "Learn OOP with Python",
-      "a2-english-for-developers": "開發者 A2 英語",
+      "a2-english-for-developers": "A2 English for Developers (Beta)",
       "a2-english-for-developers-cert": "A2 開發者英語認證（測試版）",
-      "b1-english-for-developers": "開發者 B1 英語",
-      "b1-english-for-developers-cert": "開發者 B1 英語認證",
+      "b1-english-for-developers": "B1 English for Developers (Beta)",
+      "b1-english-for-developers-cert": "B1 English for Developers Certification (Beta)",
       "responsive-web-design-v9": "響應式 Web 設計",
       "responsive-web-design-v9-cert": "響應式 Web 設計認證",
       "javascript-v9": "JavaScript",
@@ -1490,6 +1524,7 @@
         "intermediate": "中級",
         "advanced": "高級"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} 小時",
       "no-results": "未找到課程。嘗試調整篩選以查看更多結果。",
       "topic": {

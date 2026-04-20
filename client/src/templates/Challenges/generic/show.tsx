@@ -36,6 +36,7 @@ import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
 import ContentOutline from './content-outline';
 
@@ -156,6 +157,7 @@ const ShowGeneric = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -424,6 +426,7 @@ const ShowGeneric = ({
             </Container>
           )}
         </Container>
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );
