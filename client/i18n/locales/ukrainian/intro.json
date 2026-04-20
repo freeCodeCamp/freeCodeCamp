@@ -4862,6 +4862,13 @@
           "У цьому практичному занятті ви будете використовувати цикли, щоб створити список особового складу для космічного польоту."
         ]
       },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+        ]
+      },
       "lab-longest-word-in-a-string": {
         "title": "Створіть пошук найдовшого слова",
         "intro": [
@@ -6182,9 +6189,9 @@
         ]
       },
       "workshop-type-safe-math-toolkit": {
-        "title": "Build a Type Safe Math Toolkit",
+        "title": "Створіть типобезпечний математичний інструмент",
         "intro": [
-          "In this workshop, you will practice typing functions by building a math toolkit project."
+          "У цьому практичному занятті ви будете працювати з різними типами функцій, створивши математичний інструмент."
         ]
       },
       "lecture-understanding-type-composition": {
@@ -6193,10 +6200,28 @@
           "У цих лекціях ви дізнаєтесь, як працювати з об’єднанням, інтерфейсом та багато іншим."
         ]
       },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Робота з дженериками та звуженням типів",
         "intro": [
           "У цих лекціях ви дізнаєтесь про дженерики та звуження типів у TypeScript."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Створіть вибирача комах",
+        "intro": [
+          "У цьому практичному занятті ви дізнаєтесь про абстрактні класи і дженерики в TypeScript, створивши селектор комах, який відтворює різні емоджі з ними."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {

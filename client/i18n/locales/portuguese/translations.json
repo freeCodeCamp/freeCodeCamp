@@ -584,9 +584,9 @@
       "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Editor Interativo"
+      "interactive-editor": "Editor Interativo",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
@@ -1034,6 +1034,10 @@
     "terminal-output": "Saída do terminal",
     "not-available": "Não disponível",
     "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "Esta tarefa usa entradas de Pinyin para Hanzi. Digite o pinyin com os números do tonalidade (de 1 a 5). Quando você inserir uma sílaba correta, ela se tornará um caractere chinês. Se você pressionar backspace após um caractere chinês, mudará de volta para pinyin e removerá a última coisa que você digitou: se for um número de tonalidade, a tonalidade será removida; se for uma letra, ela será removida.",
     "pinyin-tone-input-desc": "Esta tarefa usa entradas de tonalidade do Pinyin. Digite o pinyin com números de tonalidade (de 1 a 5). Quando você inserir um número, ele será convertido em uma marca tonal. Se você pressionar backspace, a última coisa que digitou será removida: se for uma tonalidade de número, ela será removida; se for uma letra, a letra será removida."
   },
