@@ -41,7 +41,7 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
       if (reply.statusCode >= 500) {
         logger.error(error, 'Error in request');
       } else {
-        logger.warn(error, 'CSRF error in request');
+        logger.warn(error, 'Error in request');
       }
     }
 
