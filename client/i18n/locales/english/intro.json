@@ -6248,6 +6248,12 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
