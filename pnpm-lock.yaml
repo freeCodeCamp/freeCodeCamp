@@ -1122,8 +1122,8 @@ importers:
         specifier: 1.6.4
         version: 1.6.4(typescript@5.9.3)
       babel-loader:
-        specifier: 8.3.0
-        version: 8.3.0(@babel/core@7.28.5)(webpack@5.106.1)
+        specifier: 8.4.1
+        version: 8.4.1(@babel/core@7.28.5)(webpack@5.106.1)
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -5572,8 +5572,8 @@ packages:
   babel-jsx-utils@1.1.0:
     resolution: {integrity: sha512-Mh1j/rw4xM9T3YICkw22aBQ78FhsHdsmlb9NEk4uVAFBOg+Ez9ZgXXHugoBPCZui3XLomk/7/JBBH4daJqTkQQ==}
 
-  babel-loader@8.3.0:
-    resolution: {integrity: sha512-H8SvsMF+m9t15HNLMipppzkC+Y2Yq+v3SonZyU70RBL/h1gxPkH08Ot8pEE9Z4Kd+czyWJClmFS8qzIP9OZ04Q==}
+  babel-loader@8.4.1:
+    resolution: {integrity: sha512-nXzRChX+Z1GoE6yWavBQg6jDslyFF3SDjl2paADuoQtQW10JqShJt62R6eJQ5m/pjJFDT8xgKIWSP85OY8eXeA==}
     engines: {node: '>= 8.9'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -19082,7 +19082,7 @@ snapshots:
 
   babel-jsx-utils@1.1.0: {}
 
-  babel-loader@8.3.0(@babel/core@7.23.7)(webpack@5.98.0):
+  babel-loader@8.4.1(@babel/core@7.23.7)(webpack@5.98.0):
     dependencies:
       '@babel/core': 7.23.7
       find-cache-dir: 3.3.2
@@ -19091,7 +19091,7 @@ snapshots:
       schema-utils: 2.7.1
       webpack: 5.98.0
 
-  babel-loader@8.3.0(@babel/core@7.28.5)(webpack@5.106.1):
+  babel-loader@8.4.1(@babel/core@7.28.5)(webpack@5.106.1):
     dependencies:
       '@babel/core': 7.28.5
       find-cache-dir: 3.3.2
@@ -22144,7 +22144,7 @@ snapshots:
       autoprefixer: 10.4.27(postcss@8.4.35)
       axios: 1.9.0(debug@4.4.3)
       babel-jsx-utils: 1.1.0
-      babel-loader: 8.3.0(@babel/core@7.23.7)(webpack@5.98.0)
+      babel-loader: 8.4.1(@babel/core@7.23.7)(webpack@5.98.0)
       babel-plugin-add-module-exports: 1.0.4
       babel-plugin-dynamic-import-node: 2.3.3
       babel-plugin-remove-graphql-queries: 5.16.0(@babel/core@7.23.7)(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.1(jiti@2.6.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.9.3))
