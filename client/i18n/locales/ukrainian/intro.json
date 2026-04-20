@@ -4863,10 +4863,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "Створіть каталог для бібліотеки спадщини",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "У цьому практичному занятті ви оцифруєте історичні записи для бібліотеки спадщини.",
+          "Ви будете користуватись циклами, об’єктами і рядками, щоб аналізувати необроблені текстові дані, шукати й групувати записи, відтворювати відформатовані дані, а також експортувати JSON та CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -6201,9 +6201,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "Створіть менеджера фігур",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "У цьому практичному занятті ви будете працювати з базовими функціями в TypeScript, серед яких типи й інтерфейси, створивши менеджера фігур."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6219,15 +6225,21 @@
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "Створіть перегляд товару",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "У цій лабораторній роботі ви будете працювати з дженериками та звуженням типів у TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Робота з конфігураційними файлами в TypeScript",
         "intro": [
           "У цій лекції ви дізнаєтесь про конфігураційні файли TypeScript і як ними користуватися."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
       "review-typescript": {

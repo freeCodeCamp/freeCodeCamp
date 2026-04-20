@@ -23,8 +23,8 @@
   "main": "none",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "debug": "4.3.4",
-    "dotenv": "16.4.5",
+    "debug": "4.4.3",
+    "dotenv": "16.6.1",
     "eslint": "^9.39.1",
     "mongodb": "6.10.0"
   }
