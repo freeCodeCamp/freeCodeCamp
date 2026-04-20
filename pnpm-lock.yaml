@@ -965,7 +965,7 @@ importers:
         version: 4.0.15(vitest@4.0.15)
       bson:
         specifier: ^7.0.0
-        version: 7.0.0
+        version: 7.2.0
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -5838,8 +5838,8 @@ packages:
     resolution: {integrity: sha512-WIsKqkSC0ABoBJuT1LEX+2HEvNmNKKgnTAyd0fL8qzK4SH2i9NXg+t08YtdZp/V9IZ33cxe3iV4yM0qg8lMQng==}
     engines: {node: '>=16.20.1'}
 
-  bson@7.0.0:
-    resolution: {integrity: sha512-Kwc6Wh4lQ5OmkqqKhYGKIuELXl+EPYSCObVE6bWsp1T/cGkOCBN0I8wF/T44BiuhHyNi1mmKVPXk60d41xZ7kw==}
+  bson@7.2.0:
+    resolution: {integrity: sha512-YCEo7KjMlbNlyHhz7zAZNDpIpQbd+wOEHJYezv0nMYTn4x31eIUM2yomNNubclAt63dObUzKHWsBLJ9QcZNSnQ==}
     engines: {node: '>=20.19.0'}
 
   buffer-crc32@0.2.13:
@@ -19536,7 +19536,7 @@ snapshots:
 
   bson@6.10.4: {}
 
-  bson@7.0.0: {}
+  bson@7.2.0: {}
 
   buffer-crc32@0.2.13: {}
 
