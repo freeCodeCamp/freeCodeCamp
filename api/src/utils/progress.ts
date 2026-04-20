@@ -32,5 +32,5 @@ export const getCalendar = (
 export const getPoints = (
   progressTimestamps: ProgressTimestamp[] | null
 ): number => {
-  return progressTimestamps?.length ?? 1;
+  return progressTimestamps?.length || 1;
 };
