@@ -49,6 +49,7 @@ export interface DonateFormState {
   processing: boolean;
   redirecting: boolean;
   success: boolean;
+  successMessage: string;
   error: string;
   loading: {
     stripe: boolean;

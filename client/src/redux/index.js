@@ -42,6 +42,7 @@ export const defaultDonationFormState = {
   redirecting: false,
   processing: false,
   success: false,
+  successMessage: '',
   error: '',
   loading: {
     stripe: true,
@@ -148,7 +149,7 @@ export const reducer = handleActions(
       ...state,
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
-    [actionTypes.postChargeComplete]: state => {
+    [actionTypes.postChargeComplete]: (state, { payload }) => {
       const sessionUser = state.user.sessionUser
         ? { ...state.user.sessionUser, isDonating: true }
         : null;
@@ -158,7 +159,11 @@ export const reducer = handleActions(
           ...state.user,
           sessionUser
         },
-        donationFormState: { ...defaultDonationFormState, success: true }
+        donationFormState: {
+          ...defaultDonationFormState,
+          success: true,
+          successMessage: payload || ''
+        }
       };
     },
     [actionTypes.postChargeError]: (state, { payload }) => ({

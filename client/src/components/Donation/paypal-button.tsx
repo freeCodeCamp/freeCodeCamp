@@ -11,16 +11,21 @@ import {
   type DonationAmount
 } from '@freecodecamp/shared/config/donation-settings';
 import envData from '../../../config/env.json';
-import { userSelector, signInLoadingSelector } from '../../redux/selectors';
+import {
+  userSelector,
+  userIdSelector,
+  signInLoadingSelector
+} from '../../redux/selectors';
 import { LocalStorageThemes } from '../../redux/types';
 import type { User } from '../../redux/prop-types';
-import { DonationApprovalData, PostPayment } from './types';
+import { PostPayment, PayPalApprovalData } from './types';
 import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
   donationAmount: DonationAmount;
   donationDuration: DonationDuration;
   isDonating: boolean;
+  userId: string | null;
   onDonationStateChange: ({
     redirecting,
     processing,
@@ -90,7 +95,7 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
 
   render(): JSX.Element | null {
     const { duration, planId, amount } = this.state;
-    const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
+    const { t, theme, isPaypalLoading, isMinimalForm, userId } = this.props;
     const isSubscription = duration !== 'one-time';
     const buttonColor = theme === LocalStorageThemes.Dark ? 'white' : 'gold';
     if (!paypalClientId) {
@@ -128,21 +133,25 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
             data: unknown,
             actions: {
               subscription: {
-                create: (arg0: { plan_id: string | null }) => unknown;
+                create: (arg0: {
+                  plan_id: string | null;
+                  custom_id?: string;
+                }) => unknown;
               };
             }
           ) => {
             return actions.subscription.create({
-              plan_id: planId
+              plan_id: planId,
+              ...(userId && { custom_id: userId })
             });
           }}
           isMinimalForm={isMinimalForm}
           isPaypalLoading={isPaypalLoading}
           isSubscription={isSubscription}
-          onApprove={(data: DonationApprovalData) => {
+          onApprove={(data: PayPalApprovalData) => {
             this.props.postPayment({
               paymentProvider: PaymentProvider.Paypal,
-              data
+              subscriptionId: data.subscriptionID
             });
           }}
           onCancel={() => {
@@ -177,9 +186,11 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
 
 const mapStateToProps = createSelector(
   userSelector,
+  userIdSelector,
   signInLoadingSelector,
-  (user: User | null, showLoading: boolean) => ({
+  (user: User | null, userId: string | undefined, showLoading: boolean) => ({
     isDonating: !!user?.isDonating,
+    userId: userId ?? null,
     showLoading
   })
 );

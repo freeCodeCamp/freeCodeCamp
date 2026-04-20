@@ -30,6 +30,13 @@ export interface DonationApprovalData {
   };
 }
 
+export interface PayPalApprovalData {
+  subscriptionID: string;
+  orderID: string;
+  payerID: string;
+  facilitatorAccessToken: string;
+}
+
 export type DonatableSectionRecentlyCompleted = null | {
   section: string;
   title: string;

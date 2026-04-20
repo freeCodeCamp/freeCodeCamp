@@ -11,6 +11,7 @@ import {
 import callGA from '../analytics/call-ga';
 import {
   addDonation,
+  confirmPaypalSubscription,
   postChargeStripe,
   postChargeStripeCard,
   updateStripeCard
@@ -88,6 +89,7 @@ export function* postChargeSaga({
 }) {
   try {
     const isSignedIn = yield select(isSignedInSelector);
+    let pendingMessage;
     if (paymentProvider !== PaymentProvider.Patreon) {
       yield put(postChargeProcessing());
     }
@@ -115,11 +117,32 @@ export function* postChargeSaga({
         yield call(addDonation, { amount, duration });
       }
     } else if (paymentProvider === PaymentProvider.Paypal) {
-      // If the user is signed in and the payment goes through call api
-      // look into skip add donation
-      // what to do with "data" that comes through
+      const { subscriptionId } = payload;
+      if (!subscriptionId) throw new Error('PayPal subscriptionId is missing');
 
-      if (isSignedIn) yield call(addDonation, { amount, duration });
+      const MAX_ATTEMPTS = 3;
+      const POLL_DELAY_MS = 5000;
+      let status = 'pending';
+
+      for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+        const response = yield call(confirmPaypalSubscription, {
+          subscriptionId,
+          amount,
+          duration
+        });
+        const error = response?.data?.error;
+        if (error) throw new Error(error);
+
+        status = response?.data?.status;
+        if (status === 'active') break;
+        if (attempt < MAX_ATTEMPTS - 1) yield delay(POLL_DELAY_MS);
+      }
+
+      if (status === 'pending') {
+        pendingMessage = i18next.t('donate.paypal-subscription-pending');
+      } else if (status !== 'active') {
+        throw new Error(defaultDonationErrorMessage);
+      }
     }
     if (
       [
@@ -128,7 +151,7 @@ export function* postChargeSaga({
         PaymentProvider.StripeCard
       ].includes(paymentProvider)
     ) {
-      yield put(postChargeComplete());
+      yield put(postChargeComplete(pendingMessage));
       yield call(setDonationCookie);
     }
     if (paymentProvider === PaymentProvider.Patreon) {

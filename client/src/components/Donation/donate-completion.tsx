@@ -11,6 +11,7 @@ type DonateCompletionProps = {
   redirecting: boolean;
   reset: () => unknown;
   success: boolean;
+  successMessage?: string;
   isSignedIn: boolean;
 };
 
@@ -18,6 +19,7 @@ function DonateCompletion({
   processing,
   reset,
   success,
+  successMessage,
   redirecting,
   isSignedIn,
   error = null
@@ -49,7 +51,7 @@ function DonateCompletion({
         )}
         {success && (
           <>
-            <p>{t('donate.free-tech')}</p>
+            <p>{successMessage || t('donate.free-tech')}</p>
             {isSignedIn && (
               <>
                 <p>{t('donate.visit-supporters')}</p>

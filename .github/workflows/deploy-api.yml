@@ -189,6 +189,8 @@ jobs:
           # SOCRATES_API_KEY
           # SOCRATES_ENDPOINT
           # STRIPE_SECRET_KEY
+          # PAYPAL_CLIENT_ID
+          # PAYPAL_SECRET
           # LOKI_URL
           # Variables set from SetupJob
           DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
@@ -260,6 +262,8 @@ jobs:
               \"SOCRATES_API_KEY\"
               \"SOCRATES_ENDPOINT\"
               \"STRIPE_SECRET_KEY\"
+              \"PAYPAL_CLIENT_ID\"
+              \"PAYPAL_SECRET\"
               \"LOKI_URL\"
               \"DEPLOYMENT_VERSION\"
               \"DEPLOYMENT_TLD\"

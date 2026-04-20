@@ -1,5 +1,19 @@
-import { describe, test, expect, beforeAll, vi } from 'vitest';
-import { setupServer, superRequest } from '../../../vitest.utils.js';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  vi
+} from 'vitest';
+import {
+  setupServer,
+  superRequest,
+  devLogin,
+  createSuperRequest,
+  defaultUserEmail
+} from '../../../vitest.utils.js';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
@@ -133,6 +147,198 @@ describe('Donate', () => {
         setCookies
       }).send(chargeStripeReqBody);
       expect(response.status).toBe(200);
+    });
+  });
+
+  describe('POST /donate/confirm-paypal-subscription', () => {
+    // Staging plan ID for 500/month from donation-settings
+    const stagingPlanId500 = 'P-37N14480BW163382FLZYPVMA';
+    const paypalReqBody = {
+      subscriptionId: 'I-PAYPALTEST123',
+      amount: 500,
+      duration: 'month'
+    };
+
+    let mockFetch: ReturnType<typeof vi.fn>;
+
+    const buildPaypalSubscription = (
+      status: string,
+      overrides: Record<string, unknown> = {}
+    ) => ({
+      id: 'I-PAYPALTEST123',
+      status,
+      plan_id: stagingPlanId500,
+      create_time: new Date().toISOString(),
+      subscriber: { email_address: 'donor@test.com', payer_id: 'PAYER123' },
+      ...overrides
+    });
+
+    const setupFetchMocks = (
+      status: string,
+      overrides: Record<string, unknown> = {}
+    ) => {
+      mockFetch
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () => Promise.resolve({ access_token: 'test-token' })
+        })
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () =>
+            Promise.resolve(buildPaypalSubscription(status, overrides))
+        });
+    };
+
+    beforeEach(() => {
+      mockFetch = vi.fn();
+      vi.stubGlobal('fetch', mockFetch);
+    });
+
+    afterEach(() => {
+      vi.unstubAllGlobals();
+    });
+
+    describe('Unauthenticated user', () => {
+      let setCookies: string[];
+
+      beforeAll(async () => {
+        const res = await superRequest('/status/ping', { method: 'GET' });
+        setCookies = res.get('Set-Cookie');
+      });
+
+      test('returns 200 with status active for ACTIVE subscription', async () => {
+        setupFetchMocks('ACTIVE');
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send(paypalReqBody);
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toMatchObject({
+          subscriptionId: 'I-PAYPALTEST123',
+          status: 'active'
+        });
+      });
+
+      test('returns 200 with status pending for APPROVED subscription', async () => {
+        setupFetchMocks('APPROVED');
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send(paypalReqBody);
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toMatchObject({
+          subscriptionId: 'I-PAYPALTEST123',
+          status: 'pending'
+        });
+      });
+
+      test('returns 400 for invalid donation amount', async () => {
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send({ ...paypalReqBody, amount: 999 });
+
+        expect(res.statusCode).toBe(400);
+        expect((res.body as { error: string }).error).toBe(
+          'The donation form had invalid values for this submission.'
+        );
+      });
+
+      test('returns 400 for unexpected PayPal subscription status', async () => {
+        setupFetchMocks('SUSPENDED');
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send(paypalReqBody);
+
+        expect(res.statusCode).toBe(400);
+        expect((res.body as { error: string }).error).toContain('SUSPENDED');
+      });
+
+      test('returns 400 when subscription was not created recently', async () => {
+        setupFetchMocks('ACTIVE', {
+          create_time: new Date(Date.now() - 10 * 60 * 1000).toISOString()
+        });
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send(paypalReqBody);
+
+        expect(res.statusCode).toBe(400);
+        expect((res.body as { error: string }).error).toContain('not recent');
+      });
+
+      test('returns 400 when PayPal plan ID does not match', async () => {
+        setupFetchMocks('ACTIVE', { plan_id: 'P-WRONGPLANID' });
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send(paypalReqBody);
+
+        expect(res.statusCode).toBe(400);
+        expect((res.body as { error: string }).error).toBe(
+          'PayPal subscription plan does not match.'
+        );
+      });
+
+      test('returns 500 when PayPal token request fails', async () => {
+        mockFetch.mockResolvedValueOnce({ ok: false, status: 401 });
+        const res = await superRequest('/donate/confirm-paypal-subscription', {
+          method: 'POST',
+          setCookies
+        }).send(paypalReqBody);
+
+        expect(res.statusCode).toBe(500);
+      });
+    });
+
+    describe('Authenticated user', () => {
+      let authCookies: string[];
+      let superPost: ReturnType<typeof createSuperRequest>;
+
+      beforeEach(async () => {
+        authCookies = await devLogin();
+        superPost = createSuperRequest({
+          method: 'POST',
+          setCookies: authCookies
+        });
+      });
+
+      test('sets isDonating to true for an ACTIVE subscription', async () => {
+        setupFetchMocks('ACTIVE');
+        const res = await superPost('/donate/confirm-paypal-subscription').send(
+          paypalReqBody
+        );
+
+        expect(res.statusCode).toBe(200);
+        expect(res.body).toMatchObject({
+          subscriptionId: 'I-PAYPALTEST123',
+          status: 'active'
+        });
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: defaultUserEmail }
+        });
+        expect(user?.isDonating).toBe(true);
+      });
+
+      test('does not error when user is already donating', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: { isDonating: true }
+        });
+        setupFetchMocks('ACTIVE');
+        const res = await superPost('/donate/confirm-paypal-subscription').send(
+          paypalReqBody
+        );
+
+        expect(res.statusCode).toBe(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: defaultUserEmail }
+        });
+        expect(user?.isDonating).toBe(true);
+      });
     });
   });
 });

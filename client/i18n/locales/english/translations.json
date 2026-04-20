@@ -770,6 +770,7 @@
     "error-2": "Something is not right. Please contact donors@freecodecamp.org",
     "error-3": "Please try again or contact donors@freecodecamp.org",
     "free-tech": "Your donations will support free technology education for people all over the world.",
+    "paypal-subscription-pending": "Thank you for your donation! Your PayPal subscription is still being processed. You will receive a confirmation email once the payment has been successful.",
     "visit-supporters": "Visit supporters page to learn about your supporter benefits.",
     "gift-frequency": "Select gift frequency:",
     "gift-amount": "Select gift amount:",

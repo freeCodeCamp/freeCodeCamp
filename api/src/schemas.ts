@@ -14,6 +14,7 @@ export { saveChallenge } from './schemas/challenge/save-challenge.js';
 export { submitQuizAttempt } from './schemas/challenge/submit-quiz-attempt.js';
 export { deprecatedEndpoints } from './schemas/deprecated/index.js';
 export { addDonation } from './schemas/donate/add-donation.js';
+export { confirmPaypalSubscription } from './schemas/donate/confirm-paypal-subscription.js';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card.js';
 export { chargeStripe } from './schemas/donate/charge-stripe.js';
 export { createStripePaymentIntent } from './schemas/donate/create-stripe-payment-intent.js';

@@ -284,6 +284,16 @@ export function updateStripeCard() {
   return put('/donate/update-stripe-card', {});
 }
 
+export function confirmPaypalSubscription(body: {
+  subscriptionId: string;
+  amount: number;
+  duration: string;
+}): Promise<
+  ResponseWithData<{ subscriptionId: string; status: 'active' | 'pending' }>
+> {
+  return post('/donate/confirm-paypal-subscription', body);
+}
+
 export function postChargeStripe(
   body: Donation
 ): Promise<ResponseWithData<void>> {
