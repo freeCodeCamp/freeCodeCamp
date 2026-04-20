@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "@types/js-yaml": "4.0.5",
+    "@types/js-yaml": "4.0.9",
     "@types/yargs": "17.0.35",
     "@vitest/ui": "3.2.4",
     "eslint": "9.39.1",
