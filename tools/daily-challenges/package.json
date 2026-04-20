@@ -14,7 +14,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "dotenv": "16.6.1",
     "eslint": "^9.39.1",
-    "mongodb": "6.10.0",
+    "mongodb": "6.21.0",
     "tsx": "4.21.0",
     "typescript": "5.9.3"
   },
