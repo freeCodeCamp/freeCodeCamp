@@ -42,10 +42,7 @@ test.describe('Flash Message component E2E test', () => {
   });
 
   test('should be visible when a network error occurs', async ({ page }) => {
-    const sessionUserEndpointPattern =
-      /\/user\/(?:get-)?session-user\/?(?:\?.*)?$/;
-
-    await page.route(sessionUserEndpointPattern, async route => {
+    await page.route('*/**/user/session-user', async route => {
       await route.fulfill({
         status: 500,
         contentType: 'application/json',
