@@ -48,7 +48,7 @@
     "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "util": "0.12.5",
-    "webpack": "5.106.0",
+    "webpack": "5.106.1",
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
