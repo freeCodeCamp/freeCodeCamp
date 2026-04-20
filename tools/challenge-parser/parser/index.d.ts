@@ -6,8 +6,6 @@ type ChallengeFile = {
   contents: string;
   ext: string;
   editableRegionBoundaries: number[];
-  head?: string;
-  tail?: string;
 };
 export interface ParsedChallenge {
   id: string;

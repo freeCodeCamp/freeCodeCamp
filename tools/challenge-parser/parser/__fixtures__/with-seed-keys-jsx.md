@@ -27,17 +27,3 @@ const Button = () => {
   return <button> {/* another comment! */} text </button>;
 };
 ```
-
-## --before-user-code--
-
-```jsx
-function setup() {}
-```
-
-## --after-user-code--
-
-```jsx
-function teardown(params) {
-  // after
-}
-```

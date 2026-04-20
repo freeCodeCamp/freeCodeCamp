@@ -42,12 +42,6 @@ assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number');
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return z;})(myArray);
-```
-
 ## --seed-contents--
 
 ```js
