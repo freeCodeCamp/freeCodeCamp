@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useEffect, useRef } from 'react';
-import type { IDisposable, Terminal } from 'xterm';
-import type { FitAddon } from 'xterm-addon-fit';
+import type { FitAddon } from '@xterm/addon-fit';
+import type { IDisposable, Terminal } from '@xterm/xterm';
 import { useTranslation } from 'react-i18next';
 
 import { registerTerminal } from '../utils/python-worker-handler';
@@ -35,8 +35,8 @@ export const XtermTerminal = ({
 
     async function createTerminal() {
       const disposables: IDisposable[] = [];
-      const { Terminal } = await import('xterm');
-      const { FitAddon } = await import('xterm-addon-fit');
+      const { Terminal } = await import('@xterm/xterm');
+      const { FitAddon } = await import('@xterm/addon-fit');
 
       // Setting convertEol so that \n is converted to \r\n. Otherwise the terminal
       // will interpret \n as line feed and just move the cursor to the next line.
