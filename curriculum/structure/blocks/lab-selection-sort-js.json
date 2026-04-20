@@ -1,6 +1,5 @@
 {
-  "name": "Implement the Selection Sort Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-selection-sort-js",
   "helpCategory": "JavaScript",
   "blockLayout": "link",

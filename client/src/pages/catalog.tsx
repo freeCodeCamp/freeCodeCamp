@@ -2,8 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer, Dropdown, MenuItem, Alert } from '@freecodecamp/ui';
 import { catalog } from '@freecodecamp/shared/config/catalog';
-import { showUpcomingChanges } from '../../config/env.json';
-import FourOhFour from '../components/FourOhFour';
 import CatalogItem from '../components/catalog-item';
 
 import './catalog.css';
@@ -69,7 +67,7 @@ const CatalogPage = () => {
     });
   }, [selectedLevels, selectedTopics]);
 
-  return showUpcomingChanges ? (
+  return (
     <main>
       <Spacer size='l' />
       <h1 className='text-center'>{t('curriculum.catalog.title')}</h1>
@@ -164,8 +162,6 @@ const CatalogPage = () => {
       </Col>
       <Spacer size='l' />
     </main>
-  ) : (
-    <FourOhFour />
   );
 };
 

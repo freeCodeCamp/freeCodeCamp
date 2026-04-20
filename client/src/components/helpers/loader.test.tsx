@@ -21,15 +21,17 @@ describe('<Loader />', () => {
    * there is nothing much to test except snapshots
    */
 
-  it('matches to the default render snapshot', () => {
+  it('shows spinner in default state', () => {
     render(<Loader />);
     const fccLoader = screen.getByTestId('fcc-loader');
-    expect(fccLoader).toMatchSnapshot();
+    expect(fccLoader).not.toHaveClass('full-screen-wrapper');
+    expect(screen.getByText('Spinner')).toBeInTheDocument();
   });
 
-  it('matches the fullScreen render snapshot', () => {
+  it('shows spinner in fullScreen state', () => {
     render(<Loader fullScreen={true} />);
     const fccLoader = screen.getByTestId('fcc-loader');
-    expect(fccLoader).toMatchSnapshot();
+    expect(fccLoader).toHaveClass('full-screen-wrapper');
+    expect(screen.getByText('Spinner')).toBeInTheDocument();
   });
 });

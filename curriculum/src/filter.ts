@@ -1,5 +1,3 @@
-import comparison from 'string-similarity';
-
 /**
  * Filters the superblocks array to include any superblocks with the specified block.
  * If no block is provided, returns the original superblocks array.
@@ -125,8 +123,74 @@ export const applyFilters: GenericFilterFunction = createFilterPipeline([
   filterByChallengeId
 ]);
 
+function normalizeForComparison(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
+function createBigrams(value: string): Map<string, number> {
+  const bigrams = new Map<string, number>();
+
+  for (let i = 0; i < value.length - 1; i++) {
+    const bigram = value.slice(i, i + 2);
+    bigrams.set(bigram, (bigrams.get(bigram) ?? 0) + 1);
+  }
+
+  return bigrams;
+}
+
+function getSimilarityScore(a: string, b: string): number {
+  if (a === b) {
+    return 1;
+  }
+
+  if (a.length < 2 || b.length < 2) {
+    return 0;
+  }
+
+  const aBigrams = createBigrams(a);
+  let intersection = 0;
+
+  for (let i = 0; i < b.length - 1; i++) {
+    const bigram = b.slice(i, i + 2);
+    const count = aBigrams.get(bigram);
+
+    if (count) {
+      intersection += 1;
+      aBigrams.set(bigram, count - 1);
+    }
+  }
+
+  return (2 * intersection) / (a.length + b.length - 2);
+}
+
 export function closestMatch(target: string, xs: string[]): string {
-  return comparison.findBestMatch(target.toLowerCase(), xs).bestMatch.target;
+  const [firstCandidate, ...rest] = xs;
+
+  if (!firstCandidate) {
+    return target;
+  }
+
+  const normalizedTarget = normalizeForComparison(target);
+
+  let closest = firstCandidate;
+  let closestScore = getSimilarityScore(
+    normalizedTarget,
+    normalizeForComparison(closest)
+  );
+
+  for (const candidate of rest) {
+    const score = getSimilarityScore(
+      normalizedTarget,
+      normalizeForComparison(candidate)
+    );
+
+    if (score > closestScore) {
+      closest = candidate;
+      closestScore = score;
+    }
+  }
+
+  return closest;
 }
 
 export function closestFilters(

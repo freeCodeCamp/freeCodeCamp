@@ -10,7 +10,6 @@ import type {
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
-import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
 export type { ChallengeFile, Ext };
@@ -27,17 +26,6 @@ export type CurrentCert = {
   show: boolean;
   title: string;
   certSlug: string;
-};
-
-export type MarkdownRemark = {
-  frontmatter: {
-    block: string;
-    superBlock: SuperBlocks;
-    certification: Certification;
-    title: CertTitle;
-  };
-  html: string;
-  id: string;
 };
 
 type MultipleChoiceAnswer = {
@@ -129,7 +117,6 @@ export type Characters =
   | 'Tom'
 
   // Spanish
-  | 'Alex'
   | 'Ángela'
   | 'Camila'
   | 'Carlos'
@@ -149,12 +136,14 @@ export type Characters =
 
   // Chinese
   | 'Chen Na'
+  | 'Huang Jingyi'
   | 'Li Hong'
   | 'Li Ping'
   | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
   | 'Zhang Wei'
+  | 'Zhou Jia'
   | 'Zhou Yongjie';
 
 interface SetupCharacter {
@@ -223,7 +212,6 @@ export type ChallengeNode = {
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: Hooks;
@@ -257,7 +245,6 @@ export type ChallengeNode = {
     sourceInstanceName: string;
     superOrder: number;
     superBlock: SuperBlocks;
-    tail: string[];
     template: string;
     tests: Test[];
     title: string;
@@ -464,6 +451,7 @@ export type User = {
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;
+  socrates: boolean;
   twitter: string;
   bluesky: string;
   username: string;
@@ -529,6 +517,7 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  description?: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
   saveSubmissionToDB?: boolean;
@@ -560,11 +549,9 @@ export type ExperienceData = {
 export type FileKeyChallenge = {
   contents: string;
   ext: Ext;
-  head: string;
   id: string;
   key: string;
   name: string;
-  tail: string;
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;

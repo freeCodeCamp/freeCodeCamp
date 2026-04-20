@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       api_log_lvl:
-        description: 'Log level for the API'
+        description: "Log level for the API"
         type: choice
         options:
           - debug
@@ -12,7 +12,7 @@ on:
           - warn
         default: info
       show_upcoming_changes:
-        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
+        description: "Show upcoming changes (enables upcoming certifications and challenges)"
         type: boolean
         default: false
 
@@ -88,7 +88,7 @@ jobs:
 
     steps:
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@53acf823325fe9ca47f4cdaa951f90b4b0de5bb9 # v4
+        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
@@ -128,10 +128,10 @@ jobs:
             local machine_name=$1
             local max_retries=3
             local retry_delay=5
-            
+
             for attempt in $(seq 1 $max_retries); do
               echo "Connection attempt $attempt/$max_retries to $machine_name"
-              
+
               if ! tailscale status | grep -q "$machine_name"; then
                 echo "Machine $machine_name not found in Tailscale network"
                 if [ $attempt -eq $max_retries ]; then
@@ -140,19 +140,19 @@ jobs:
                 sleep $retry_delay
                 continue
               fi
-              
+
               MACHINE_IP=$(tailscale ip -4 $machine_name)
               if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
                 echo "Successfully validated connection to $machine_name"
                 return 0
               fi
-              
+
               echo "SSH validation failed for $machine_name"
               if [ $attempt -lt $max_retries ]; then
                 sleep $retry_delay
               fi
             done
-            
+
             echo "Failed to establish connection to $machine_name after $max_retries attempts"
             return 1
           }
@@ -180,10 +180,14 @@ jobs:
           # COOKIE_DOMAIN
           # SES_ID
           # SES_SECRET
+          # SES_SMTP_USERNAME
+          # SES_SMTP_PASSWORD
           # GROWTHBOOK_FASTIFY_API_HOST
           # GROWTHBOOK_FASTIFY_CLIENT_KEY
           # HOME_LOCATION
           # API_LOCATION
+          # SOCRATES_API_KEY
+          # SOCRATES_ENDPOINT
           # STRIPE_SECRET_KEY
           # LOKI_URL
           # Variables set from SetupJob
@@ -247,10 +251,14 @@ jobs:
               \"COOKIE_DOMAIN\"
               \"SES_ID\"
               \"SES_SECRET\"
+              \"SES_SMTP_USERNAME\"
+              \"SES_SMTP_PASSWORD\"
               \"GROWTHBOOK_FASTIFY_API_HOST\"
               \"GROWTHBOOK_FASTIFY_CLIENT_KEY\"
               \"HOME_LOCATION\"
               \"API_LOCATION\"
+              \"SOCRATES_API_KEY\"
+              \"SOCRATES_ENDPOINT\"
               \"STRIPE_SECRET_KEY\"
               \"LOKI_URL\"
               \"DEPLOYMENT_VERSION\"
