@@ -6268,6 +6268,12 @@
           "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
         ]
       },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Trabalhando com Generics e Redução de Tipos",
         "intro": [
@@ -6290,6 +6296,12 @@
         "title": "Trabalhando com Arquivos de Configuração do TypeScript",
         "intro": [
           "Nesta lição, você aprenderá sobre arquivos de configuração do TypeScript e como usá-los."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
       "review-typescript": {
