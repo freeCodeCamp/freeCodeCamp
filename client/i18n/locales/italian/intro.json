@@ -759,7 +759,7 @@
         "intro": [
           "Ora è il momento di approfondire Node.js e Express.js costruendo un'applicazione di chat con un sistema di accesso.",
           "Per implementare il sistema di accesso in modo sicuro, è necessario conoscere l'autenticazione. Questo è l'atto di verificare l'identità di una persona o di un processo.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front-end, and web sockets for real-time communication between the clients and server."
+          "In questo corso, impara a utilizzare Passport per gestire l'autenticazione, Pug per creare template riutilizzabili con cui sviluppare rapidamente il front-end e i web socket per la comunicazione in tempo reale tra client e server."
         ]
       },
       "quality-assurance-projects": {
@@ -961,31 +961,31 @@
       "core-primitives-in-python": {
         "title": "Core Primitives in Python",
         "intro": [
-          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
+          "In questi video, scopri le variabili, i tipi di dati, le stringhe, i numeri e come ricevere input dall'utente."
         ]
       },
       "small-python-projects": {
         "title": "Small Python Projects",
         "intro": [
-          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
+          "In questi video, metti in pratica quanto appreso finora realizzando una semplice app calcolatrice e un gioco 'Mad Libs'."
         ]
       },
       "lists-and-tuples": {
         "title": "Lists and Tuples",
         "intro": [
-          "In these videos, you will learn about lists, tuples and common operations."
+          "In questi video, esplora le liste, le tuple e le operazioni comuni su queste strutture dati."
         ]
       },
       "control-flow-and-functions-in-python": {
         "title": "Control Flow and Functions",
         "intro": [
-          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
+          "In questi video, impara a controllare il flusso dei tuoi programmi con le istruzioni if. Scopri inoltre come scrivere codice riutilizzabile grazie alle funzioni."
         ]
       },
       "dictionaries-and-loops": {
-        "title": "Dictionaries and Loops",
+        "title": "Dizionari e Cicli",
         "intro": [
-          "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
+          "In questi video, impara a lavorare con i dizionari e con i diversi tipi di cicli, inclusi i cicli while e for."
         ]
       },
       "error-handling-files-and-modules-in-python": {
@@ -6212,6 +6212,12 @@
           "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
         ]
       },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
@@ -6234,6 +6240,12 @@
         "title": "Working with TypeScript Configuration Files",
         "intro": [
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
       "review-typescript": {
