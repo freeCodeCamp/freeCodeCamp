@@ -66,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Eingabe\n",
     "reset": "Zurücksetzen",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "Diesen Schritt zurücksetzen",
     "help": "Hilfe",
     "get-help": "Hilfe bekommen",
@@ -381,6 +382,10 @@
       "confirm": "Neue E-Mail bestätigen",
       "weekly": "Sende mir die wöchentliche E-Mail von Quincy (Gründer)"
     },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+    },
     "honesty": {
       "p1": "Bevor du ein bestätigtes Zertifikat beanspruchen kannst, musst du unsere akademische Ehrlichkeitserklärung akzeptieren. Sie lautet:",
       "p2": "\"Ich verstehe, dass Plagiarismus bedeutet, das Werk eines anderen zu kopieren und das Werk so zu präsentieren, als wäre es mein eigenes, ohne den Originalautor eindeutig anzugeben.\"",
@@ -533,6 +538,18 @@
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Melde dich an, um deinen Fortschritt zu speichern",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "Meine Lösung herunterladen",
     "download-results": "Download my results",
     "percent-complete": "{{percent}}% abgeschlossen",
@@ -567,9 +584,9 @@
       "instructions": "Anweisungen",
       "notes": "Hinweise",
       "preview": "Vorschau",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -899,8 +916,8 @@
   "search": {
     "label": "Suchen",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "Alle Ergebnisse für {{searchQuery}} ansehen",
     "try": "Suchst du nach etwas? Versuche es mit der Suchleiste auf dieser Seite.",
@@ -1017,6 +1034,10 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
     "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
@@ -1037,6 +1058,7 @@
     "updated-themes": "We have updated your theme",
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "We have updated your portfolio",
     "experience-updated": "We have updated your experience",
     "email-invalid": "E-Mail-Format ist ungültig",

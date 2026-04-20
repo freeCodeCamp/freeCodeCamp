@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { describe, it, expect, vi } from 'vitest';
 
@@ -37,19 +37,28 @@ vi.mock('gatsby', async () => {
 });
 
 describe('Timeline buttons test', () => {
-  it('should check certification page consistency', () => {
-    const tree = renderer
-      .create(
-        <Provider store={createStore()}>
-          <Timeline
-            completedMap={completedChallenges}
-            username='CeritifedUser'
-            onPress={() => {}}
-          />
-        </Provider>
-      )
-      .toJSON();
+  it('renders first page of timeline entries', () => {
+    render(
+      <Provider store={createStore()}>
+        <Timeline
+          completedMap={completedChallenges}
+          username='CeritifedUser'
+          onPress={() => {}}
+        />
+      </Provider>
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(
+      screen.getByRole('heading', { name: 'profile.timeline' })
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole('row')).toHaveLength(16);
+    expect(
+      screen.getByRole('columnheader', { name: 'settings.labels.solution' })
+    ).toBeInTheDocument();
+    expect(screen.getAllByText('Dec 29, 2022')).toHaveLength(15);
+    expect(screen.getByRole('link', { name: 'Step 41' })).toHaveAttribute(
+      'href',
+      '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-41'
+    );
   });
 });
