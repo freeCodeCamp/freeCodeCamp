@@ -91,7 +91,7 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toStrictEqual({
           code: 'FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
-          // NOTE: message may not necessarily be a part of the api compatability guarantee.
+          // NOTE: message may not necessarily be a part of the api compatibility guarantee.
           //       That is, it could be changed without requiring a major version bump, because it is just
           //       a human-readable/debug message.
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
