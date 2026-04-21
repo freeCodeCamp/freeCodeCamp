@@ -19,6 +19,10 @@ strictPeerDependencies: false
 enablePrePostScripts: true
 minimumReleaseAge: 10080
 
+overrides:
+  # Pin transitive deps to mature releases so Renovate can refresh lockfiles.
+  caniuse-lite: 1.0.30001787
+
 packageExtensions:
   '@testing-library/jest-dom':
     peerDependencies:
