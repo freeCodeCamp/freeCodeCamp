@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { submitChallenge } from '../redux/actions';
 import { curriculumData } from '../../../services/curriculum-data';
@@ -11,8 +11,6 @@ import type {
 } from '../../../redux/prop-types';
 
 const SUBMIT_DEBOUNCE_MS = 1000;
-
-let isSubmitLocked = false;
 
 interface AllCurriculumData {
   allChallengeNode: { nodes: ChallengeNode[] };
@@ -90,15 +88,29 @@ export function useSubmit() {
   // Ensure curriculum data is loaded before challenge submission
   useFetchAllCurriculumData();
   const dispatch = useDispatch();
+  const isSubmitLockedRef = useRef(false);
+  const submitLockTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
+
+  useEffect(
+    () => () => {
+      if (submitLockTimeoutRef.current !== null) {
+        clearTimeout(submitLockTimeoutRef.current);
+      }
+    },
+    []
+  );
 
   return () => {
-    if (isSubmitLocked) {
+    if (isSubmitLockedRef.current) {
       return;
     }
 
-    isSubmitLocked = true;
-    setTimeout(() => {
-      isSubmitLocked = false;
+    isSubmitLockedRef.current = true;
+    submitLockTimeoutRef.current = setTimeout(() => {
+      isSubmitLockedRef.current = false;
+      submitLockTimeoutRef.current = null;
     }, SUBMIT_DEBOUNCE_MS);
 
     return dispatch(submitChallenge());

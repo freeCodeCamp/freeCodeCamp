@@ -50,7 +50,7 @@ describe('useSubmit', () => {
     expect(mockDispatch).toHaveBeenCalledTimes(2);
   });
 
-  it('should share the submit lock across hook instances', () => {
+  it('should debounce per hook instance', () => {
     const { result: first } = renderHook(() => useSubmit());
     const { result: second } = renderHook(() => useSubmit());
 
@@ -59,13 +59,14 @@ describe('useSubmit', () => {
       second.current();
     });
 
-    expect(mockDispatch).toHaveBeenCalledTimes(1);
+    expect(mockDispatch).toHaveBeenCalledTimes(2);
 
     act(() => {
       vi.advanceTimersByTime(1001);
+      first.current();
       second.current();
     });
 
-    expect(mockDispatch).toHaveBeenCalledTimes(2);
+    expect(mockDispatch).toHaveBeenCalledTimes(4);
   });
 });
