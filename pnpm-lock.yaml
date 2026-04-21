@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  caniuse-lite: 1.0.30001787
+  caniuse-lite: 1.0.30001788
 
 packageExtensionsChecksum: sha256-pFEExG4o57joHucsVi/dgGpp9BfdxYD7y4blLQUpCqI=
 
@@ -5960,8 +5960,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001787:
-    resolution: {integrity: sha512-mNcrMN9KeI68u7muanUpEejSLghOKlVhRqS/Za2IeyGllJ9I9otGpR9g3nsw7n4W378TE/LyIteA0+/FOZm4Kg==}
+  caniuse-lite@1.0.30001788:
+    resolution: {integrity: sha512-6q8HFp+lOQtcf7wBK+uEenxymVWkGKkjFpCvw5W25cmMwEDU45p1xQFBQv8JDlMMry7eNxyBaR+qxgmTUZkIRQ==}
 
   canvas-confetti@1.9.4:
     resolution: {integrity: sha512-yxQbJkAVrFXWNbTUjPqjF7G+g6pDotOUHGbkZq2NELZUMDpiJ85rIEazVb8GTaAptNW2miJAXbs1BtioA251Pw==}
@@ -19105,7 +19105,7 @@ snapshots:
   autoprefixer@10.4.27(postcss@8.4.35):
     dependencies:
       browserslist: 4.28.2
-      caniuse-lite: 1.0.30001787
+      caniuse-lite: 1.0.30001788
       fraction.js: 5.3.4
       picocolors: 1.1.1
       postcss: 8.4.35
@@ -19591,7 +19591,7 @@ snapshots:
   browserslist@4.28.2:
     dependencies:
       baseline-browser-mapping: 2.10.18
-      caniuse-lite: 1.0.30001787
+      caniuse-lite: 1.0.30001788
       electron-to-chromium: 1.5.335
       node-releases: 2.0.37
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
@@ -19727,11 +19727,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.28.2
-      caniuse-lite: 1.0.30001787
+      caniuse-lite: 1.0.30001788
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001787: {}
+  caniuse-lite@1.0.30001788: {}
 
   canvas-confetti@1.9.4: {}
 
