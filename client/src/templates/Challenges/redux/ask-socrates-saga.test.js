@@ -118,9 +118,8 @@ describe('askSocratesSaga', () => {
   });
 
   it('dispatches error when buildChallenge returns no seed', async () => {
-    const { buildChallenge } = await import(
-      '@freecodecamp/challenge-builder/build'
-    );
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
 
     return expectSaga(askSocratesSaga)
       .withReducer(reducer)
@@ -140,9 +139,8 @@ describe('askSocratesSaga', () => {
   });
 
   it('dispatches complete without userInput when editableContents is empty', async () => {
-    const { buildChallenge } = await import(
-      '@freecodecamp/challenge-builder/build'
-    );
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
     const { getSocratesHint } = await import('../../../utils/ajax');
 
     return expectSaga(askSocratesSaga)
@@ -170,9 +168,8 @@ describe('askSocratesSaga', () => {
   });
 
   it('dispatches complete with hint on successful API response', async () => {
-    const { buildChallenge } = await import(
-      '@freecodecamp/challenge-builder/build'
-    );
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
     const { getSocratesHint } = await import('../../../utils/ajax');
 
     return expectSaga(askSocratesSaga)
@@ -200,9 +197,8 @@ describe('askSocratesSaga', () => {
   });
 
   it('dispatches error with attempts/limit on API error response', async () => {
-    const { buildChallenge } = await import(
-      '@freecodecamp/challenge-builder/build'
-    );
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
     const { getSocratesHint } = await import('../../../utils/ajax');
 
     return expectSaga(askSocratesSaga)
@@ -234,9 +230,8 @@ describe('askSocratesSaga', () => {
   });
 
   it('dispatches generic error when API call throws', async () => {
-    const { buildChallenge } = await import(
-      '@freecodecamp/challenge-builder/build'
-    );
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
     const { getSocratesHint } = await import('../../../utils/ajax');
 
     return expectSaga(askSocratesSaga)
