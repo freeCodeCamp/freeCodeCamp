@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-data-sanitizer",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "27dbeadb5c09d8735941a8ea",
+      "title": "Build a Data Sanitizer"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-express-by-building-a-random-joke-app",
+  "challengeOrder": [
+    {
+      "id": "3f9cf3e0706e5b0d679acbd2",
+      "title": "Learn Express by Building a Random Joke App"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}
