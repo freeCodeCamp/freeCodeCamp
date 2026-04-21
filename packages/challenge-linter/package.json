@@ -35,7 +35,7 @@
     "@types/yargs": "17.0.35",
     "@vitest/ui": "3.2.4",
     "eslint": "9.39.1",
-    "markdownlint": "0.33.0",
+    "markdownlint": "0.40.0",
     "prismjs": "1.30.0",
     "typescript": "5.9.3",
     "vitest": "3.2.4",
