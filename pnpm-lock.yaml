@@ -1181,8 +1181,8 @@ importers:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
       mongodb:
-        specifier: 6.10.0
-        version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
+        specifier: 6.21.0
+        version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
       tsx:
         specifier: 4.21.0
         version: 4.21.0
@@ -1205,8 +1205,8 @@ importers:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
       mongodb:
-        specifier: 6.10.0
-        version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
+        specifier: 6.21.0
+        version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
 
   tools/scripts/seed-exams:
     devDependencies:
@@ -1232,8 +1232,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       mongodb:
-        specifier: 6.10.0
-        version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
+        specifier: 6.21.0
+        version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
       nanoid:
         specifier: 4.0.2
         version: 4.0.2
@@ -9545,33 +9545,6 @@ packages:
 
   mongodb-connection-string-url@3.0.2:
     resolution: {integrity: sha512-rMO7CGo/9BFwyZABcKAWL8UJwH/Kc2x0g72uhDWzG48URRax5TCIcJ7Rc3RZqffZzO/Gwff/jyKwCU9TN8gehA==}
-
-  mongodb@6.10.0:
-    resolution: {integrity: sha512-gP9vduuYWb9ZkDM546M+MP2qKVk5ZG2wPF63OvSRuUbqCR+11ZCAE1mOfllhlAG0wcoJY5yDL/rV3OmYEwXIzg==}
-    engines: {node: '>=16.20.1'}
-    peerDependencies:
-      '@aws-sdk/credential-providers': ^3.188.0
-      '@mongodb-js/zstd': ^1.1.0
-      gcp-metadata: ^5.2.0
-      kerberos: ^2.0.1
-      mongodb-client-encryption: '>=6.0.0 <7'
-      snappy: ^7.2.2
-      socks: ^2.7.1
-    peerDependenciesMeta:
-      '@aws-sdk/credential-providers':
-        optional: true
-      '@mongodb-js/zstd':
-        optional: true
-      gcp-metadata:
-        optional: true
-      kerberos:
-        optional: true
-      mongodb-client-encryption:
-        optional: true
-      snappy:
-        optional: true
-      socks:
-        optional: true
 
   mongodb@6.21.0:
     resolution: {integrity: sha512-URyb/VXMjJ4da46OeSXg+puO39XH9DeQpWCslifrRn9JWugy0D+DvvBvkm2WxmHe61O/H19JM66p1z7RHVkZ6A==}
@@ -24446,15 +24419,6 @@ snapshots:
     dependencies:
       '@types/whatwg-url': 11.0.5
       whatwg-url: 14.2.0
-
-  mongodb@6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7):
-    dependencies:
-      '@mongodb-js/saslprep': 1.4.4
-      bson: 6.10.4
-      mongodb-connection-string-url: 3.0.2
-    optionalDependencies:
-      '@aws-sdk/credential-providers': 3.521.0
-      socks: 2.8.7
 
   mongodb@6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7):
     dependencies:
