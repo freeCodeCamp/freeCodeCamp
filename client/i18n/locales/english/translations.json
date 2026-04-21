@@ -339,6 +339,7 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
@@ -469,13 +470,16 @@
     },
     "completeness": {
       "heading": "Profile {{percentage}}% complete",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",
       "picture": "Upload a profile picture",
       "about": "Write an about section",
       "social": "Add a social link",
       "portfolio": "Add a portfolio project",
-      "experience": "Add your experience"
+      "experience": "Add your experience",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -1027,6 +1031,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
