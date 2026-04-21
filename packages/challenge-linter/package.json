@@ -31,14 +31,17 @@
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "@types/js-yaml": "4.0.5",
+    "@types/js-yaml": "4.0.9",
     "@types/yargs": "17.0.35",
     "@vitest/ui": "3.2.4",
     "eslint": "9.39.1",
-    "markdownlint": "0.33.0",
+    "markdownlint": "0.40.0",
     "prismjs": "1.30.0",
     "typescript": "5.9.3",
     "vitest": "3.2.4",
     "yargs": "17.7.2"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.1"
   }
 }
