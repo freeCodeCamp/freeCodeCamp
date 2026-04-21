@@ -253,7 +253,10 @@ function ShowClassic({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
 
-  const guideUrl = getGuideUrl({ forumTopicId, title });
+  const guideUrl = getGuideUrl({
+    forumTopicId,
+    title: `${t(`intro:${superBlock}.blocks.${block}.title`)} - ${title}`
+  });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`

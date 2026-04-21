@@ -162,6 +162,7 @@ const ShowBackEnd = (props: BackEndProps) => {
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
+  const guideTitle = `${t(`intro:${superBlock}.blocks.${block}.title`)} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>
@@ -191,7 +192,7 @@ const ShowBackEnd = (props: BackEndProps) => {
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title })}
+                guideUrl={getGuideUrl({ forumTopicId, title: guideTitle })}
               />
               <br />
               <Output
