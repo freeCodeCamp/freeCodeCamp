@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useEffect } from 'react';
 
 import { submitChallenge } from '../redux/actions';
 import { curriculumData } from '../../../services/curriculum-data';
@@ -8,7 +9,10 @@ import type {
   ChallengeNode,
   SuperBlockStructure
 } from '../../../redux/prop-types';
-import { useEffect } from 'react';
+
+const SUBMIT_DEBOUNCE_MS = 1000;
+
+let isSubmitLocked = false;
 
 interface AllCurriculumData {
   allChallengeNode: { nodes: ChallengeNode[] };
@@ -87,5 +91,16 @@ export function useSubmit() {
   useFetchAllCurriculumData();
   const dispatch = useDispatch();
 
-  return () => dispatch(submitChallenge());
+  return () => {
+    if (isSubmitLocked) {
+      return;
+    }
+
+    isSubmitLocked = true;
+    setTimeout(() => {
+      isSubmitLocked = false;
+    }, SUBMIT_DEBOUNCE_MS);
+
+    return dispatch(submitChallenge());
+  };
 }
