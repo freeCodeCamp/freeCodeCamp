@@ -40,5 +40,8 @@
     "typescript": "5.9.3",
     "vitest": "3.2.4",
     "yargs": "17.7.2"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.1"
   }
 }
