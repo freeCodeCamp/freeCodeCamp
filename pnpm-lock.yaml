@@ -623,8 +623,8 @@ importers:
         specifier: ^4.0.15
         version: 4.0.15(vitest@4.0.15)
       autoprefixer:
-        specifier: 10.4.27
-        version: 10.4.27(postcss@8.4.35)
+        specifier: 10.5.0
+        version: 10.5.0(postcss@8.4.35)
       babel-plugin-macros:
         specifier: 3.1.0
         version: 3.1.0
@@ -5548,8 +5548,8 @@ packages:
     resolution: {integrity: sha512-nP2k70tZ4+GrDUeW+77c/ZOJD3KMXZlW5A07YHNw6+RcggdHwXPIdhYT3Nhzufbfon4UHY8CvYuQllD3Em2rtQ==}
     engines: {node: '>=16.1.0'}
 
-  autoprefixer@10.4.27:
-    resolution: {integrity: sha512-NP9APE+tO+LuJGn7/9+cohklunJsXWiaWEfV3si4Gi/XHDwVNgkwr1J3RQYFIvPy76GmJ9/bW8vyoU1LcxwKHA==}
+  autoprefixer@10.5.0:
+    resolution: {integrity: sha512-FMhOoZV4+qR6aTUALKX2rEqGG+oyATvwBt9IIzVR5rMa2HRWPkxf+P+PAJLD1I/H5/II+HuZcBJYEFBpq39ong==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -19087,7 +19087,7 @@ snapshots:
       '@babel/runtime': 7.29.2
       tslib: 2.8.1
 
-  autoprefixer@10.4.27(postcss@8.4.35):
+  autoprefixer@10.5.0(postcss@8.4.35):
     dependencies:
       browserslist: 4.28.2
       caniuse-lite: 1.0.30001787
@@ -22200,7 +22200,7 @@ snapshots:
       acorn-walk: 8.2.0
       address: 1.2.2
       anser: 2.1.1
-      autoprefixer: 10.4.27(postcss@8.4.35)
+      autoprefixer: 10.5.0(postcss@8.4.35)
       axios: 1.9.0(debug@4.4.3)
       babel-jsx-utils: 1.1.0
       babel-loader: 8.4.1(@babel/core@7.23.7)(webpack@5.98.0)
