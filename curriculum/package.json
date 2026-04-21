@@ -67,7 +67,7 @@
     "@types/polka": "0.5.8",
     "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.4",
     "@vitest/ui": "4.0.15",
-    "eslint": "9.39.1",
+    "eslint": "9.39.4",
     "glob": "13.0.6",
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",
