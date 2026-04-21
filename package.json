@@ -92,7 +92,7 @@
     "lint-staged": "^16.4.0",
     "lodash": "4.17.21",
     "npm-run-all2": "5.0.2",
-    "prettier": "3.8.2",
+    "prettier": "3.8.3",
     "stylelint": "16.26.1",
     "tsx": "4.21.0",
     "turbo": "^2.8.7",

@@ -40,7 +40,7 @@
     "bson": "^7.0.0",
     "eslint": "^9.39.1",
     "gray-matter": "4.0.3",
-    "prettier": "3.8.2",
+    "prettier": "3.8.3",
     "typescript": "5.9.3",
     "vitest": "^4.0.15"
   }
