@@ -385,8 +385,8 @@ importers:
         specifier: 6.16.0
         version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.4(jiti@2.6.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.9.3))
       i18next:
-        specifier: 25.2.1
-        version: 25.2.1(typescript@5.9.3)
+        specifier: 25.10.10
+        version: 25.10.10(typescript@5.9.3)
       instantsearch.js:
         specifier: 4.75.3
         version: 4.75.3(algoliasearch@4.27.0)
@@ -455,7 +455,7 @@ importers:
         version: 2.0.0(react@18.3.1)
       react-i18next:
         specifier: 15.5.2
-        version: 15.5.2(i18next@25.2.1(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
+        version: 15.5.2(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
       react-instantsearch:
         specifier: 7.13.6
         version: 7.13.6(algoliasearch@4.27.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8174,10 +8174,10 @@ packages:
   i18next-fs-backend@2.6.3:
     resolution: {integrity: sha512-/5aW996nbolGh/qVU9urjAJ2QiXpiyGuhG8x/ZvvZQ3bMlrK+ouUdD6whS4e+sU9CCdUIzl7x/heEjsBh/3xtw==}
 
-  i18next@25.2.1:
-    resolution: {integrity: sha512-+UoXK5wh+VlE1Zy5p6MjcvctHXAhRwQKCxiJD8noKZzIXmnAX8gdHX5fLPA3MEVxEN4vbZkQFy8N0LyD9tUqPw==}
+  i18next@25.10.10:
+    resolution: {integrity: sha512-cqUW2Z3EkRx7NqSyywjkgCLK7KLCL6IFVFcONG7nVYIJ3ekZ1/N5jUsihHV6Bq37NfhgtczxJcxduELtjTwkuQ==}
     peerDependencies:
-      typescript: ^5
+      typescript: ^5 || ^6
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -22790,7 +22790,7 @@ snapshots:
 
   i18next-fs-backend@2.6.3: {}
 
-  i18next@25.2.1(typescript@5.9.3):
+  i18next@25.10.10(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.29.2
     optionalDependencies:
@@ -25603,11 +25603,11 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
 
-  react-i18next@15.5.2(i18next@25.2.1(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3):
+  react-i18next@15.5.2(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.29.2
       html-parse-stringify: 3.0.1
-      i18next: 25.2.1(typescript@5.9.3)
+      i18next: 25.10.10(typescript@5.9.3)
       react: 18.3.1
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
