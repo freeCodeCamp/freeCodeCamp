@@ -4850,6 +4850,12 @@
           "Цикли — це важлива частина JavaScript. Тому наступні лекції підготовлено для того, щоб ви дізналися про різні типи циклів, як вони працюють, а також про те, як працює ітерація."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Створіть лічильник слів",
+        "intro": [
+          "У цьому практичному занятті ви будете використовувати цикли <code>for...of</code> для створення функції, яка рахує скільки разів зустрічається рядок в масиві."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Створіть аналізатор речень",
         "intro": [
@@ -5056,6 +5062,13 @@
         "title": "Імплементуйте пропуск елементів",
         "intro": [
           "У цій лабораторній роботі ви створите функцію, яка пропускає елементи в масиві на основі вказаного значення."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6207,9 +6220,9 @@
         ]
       },
       "lab-motorcycle-shop": {
-        "title": "Build a Motorcycle Shop",
+        "title": "Створіть магазин мотоциклів",
         "intro": [
-          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+          "У цій лабораторній роботі ви будете використовувати TypeScript, щоб створити магазин мотоциклів."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6237,9 +6250,15 @@
         ]
       },
       "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App",
+        "title": "Створіть генератор передбачень",
         "intro": [
-          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+          "У цьому практичному занятті ви продовжите працювати з TypeScript, створивши застосунок з передбаченнями."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Створіть програму з вікториною",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати TypeScript, щоб створити вікторину з картками."
         ]
       },
       "review-typescript": {
@@ -7549,6 +7568,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Тест «Опис колег»",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Як говорити про колег?",
         "intro": ["", ""]
       }
     }

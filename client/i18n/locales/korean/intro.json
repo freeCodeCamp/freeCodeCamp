@@ -4722,6 +4722,12 @@
           "루프는 자바스크립트의 필수 요소입니다. 다음 강의에서 다양한 루프 유형과 작동 방식 및 반복이 어떻게 이루어지는지 배우세요."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "문장 분석기 만들기",
         "intro": [
@@ -4922,6 +4928,13 @@
         "title": "요소 스키퍼 구현하기",
         "intro": [
           "이 실습에서는 지정된 스텝값에 따라 배열에서 요소를 건너뛰는 함수를 작성하세요."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6068,6 +6081,12 @@
         "title": "Build a Fortune Telling App",
         "intro": [
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
       "review-typescript": {
@@ -7311,6 +7330,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "직장 사람 설명하기",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
         "intro": ["", ""]
       }
     }
