@@ -29,6 +29,7 @@
     "sign-in": "登录",
     "sign-up-email-list": "订阅 Quincy 每周的电子邮件",
     "sign-out": "退出",
+    "catalog": "Catalog",
     "curriculum": "课程",
     "contribute": "贡献",
     "podcast": "播客",
@@ -65,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "重置",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "重置此步骤",
     "help": "帮助",
     "get-help": "获得帮助",
@@ -116,6 +118,7 @@
     "share-on-x": "分享到 X",
     "share-on-bluesky": "分享到 BlueSky",
     "share-on-threads": "分享到 Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "按播放键",
     "download-latest-version": "下载最新版本",
     "more-ways-to-sign-in": "更多登录方式",
@@ -379,6 +382,10 @@
       "confirm": "确认新邮箱",
       "weekly": "给我发 Quincy 的每周订阅邮件"
     },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
+    },
     "honesty": {
       "p1": "申请认证前，你必须先接受我们的《学术诚信条例》，即：",
       "p2": "\"我理解剽窃意味着抄袭他人的作品，将其作为自己的作品来提交，且不明确注明原作者。\"",
@@ -442,6 +449,7 @@
     "edit-my-profile": "编辑我的个人资料",
     "add-bluesky": "将此认证分享到 BlueSky",
     "add-threads": "将此认证分享到 Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "经历",
       "share-experience": "分享你的职业经历",
@@ -530,6 +538,18 @@
     "syntax-error": "你的代码在任何测试运行之前就出现了错误。请修复后重试。",
     "indentation-error": "你的代码存在缩进错误。你可能需要在新行中添加 <code>pass</code> 以形成一个有效的代码块。",
     "sign-in-save": "登录以保存你的学习进度",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "下载我的解决方案",
     "download-results": "下载我的结果",
     "percent-complete": "完成 {{percent}}%",
@@ -564,9 +584,9 @@
       "instructions": "说明",
       "notes": "注意",
       "preview": "预览",
-      "terminal": "终端",
       "editor": "编辑器",
-      "interactive-editor": "交互式编辑器"
+      "interactive-editor": "交互式编辑器",
+      "terminal": "终端"
     },
     "editor-alerts": {
       "tab-trapped": "按下选项卡将插入选项卡字符",
@@ -860,11 +880,11 @@
     "current-initiatives-2": "创建英语和数学课程",
     "current-initiatives-3": "将我们的课程和教程翻译成 32 种语言",
     "current-initiatives-4": "创建免费认证的计算机科学学士学位课程",
-    "community-achivements-title": "我们社区今年的成就：",
-    "community-achivements-1": "在 YouTube 上发布了<0>193</0> 个完整课程。",
-    "community-achivements-2": "在 freeCodeCamp 出版社发表了 <0>850</0> 篇文本编程教程和 <0>5</0> 本免费书籍。",
-    "community-achivements-3": "在 GitHub 上我们的开源仓库中合并了 <0>2,455 </0> 个代码贡献",
-    "community-achivements-4": "翻译了 <0>150</0> 万个字，使世界上使用不同语言的人更容易访问我们的课程和教程",
+    "community-achievements-title": "Our Community Achievements This Year:",
+    "community-achievements-1": "Published <0>193</0> full-length courses on YouTube.",
+    "community-achievements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
+    "community-achievements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
+    "community-achievements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "正如你所看到的，我们正在完成大量事情。所以你可以放心，我们会很好地使用你的捐款。",
     "get-benefits": "获得相应权益，并感受到你在帮助我们的慈善组织为教育带来积极改变。今天就成为支持者。",
     "modal-benefits-title": "支持我们",
@@ -896,8 +916,8 @@
   "search": {
     "label": "搜索",
     "placeholder": {
-      "default": "搜索我们的文章、教程和书籍",
-      "numbered": "搜索 {{ roundedTotalRecords }}+ 文章、教程和书籍"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "查看 {{searchQuery}} 的所有结果",
     "try": "想要搜索信息？试试使用页面上的搜索框。",
@@ -913,6 +933,7 @@
     "unsubscribed": "你已成功取消订阅",
     "keep-coding": "无论你做什么，都要继续编程！",
     "email-signup": "邮件注册",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "欢迎来到你全新的 freeCodeCamp 账户。让我们开始吧。",
     "duplicate-account-warning": "如果你想登录一个现有的账户，而不是创建这个账户，<0>点击这里删除这个账户</0>并尝试另一个电子邮件地址。",
     "quincy": "- Quincy Larson，freeCodeCamp.org 创始人、老师",
@@ -1013,6 +1034,10 @@
     "terminal-output": "终端输出",
     "not-available": "不可用",
     "interactive-editor-desc": "将静态代码示例转为交互式编辑器。这允许你直接在页面上编辑并运行代码。",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "这个任务使用 Pinyin-to-Hanzi 输入。输入带声调数字（1 到 5）的拼音。当你输入正确的音节时，它将转换为汉字。如果你在一个汉字后按退格键，它会变回拼音并删除你最后输入的内容：如果是声调数字，则删除声调；如果是字母，则删除字母。",
     "pinyin-tone-input-desc": "这个任务使用 Pinyin Tone 输入。输入带声调数字（1 到 5）的拼音。当你输入声调数字时，它会被转换为声调符号。如果你按退格键，最后输入的内容会被删除：如果是声调数字，则删除声调；如果是字母，则删除字母。"
   },
@@ -1033,6 +1058,7 @@
     "updated-themes": "我们已更新你的主题",
     "keyboard-shortcut-updated": "我们已更新你的键盘快捷键设置",
     "subscribe-to-quincy-updated": "我们已更新你对 Quincy 的电子邮件的订阅",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "我们已更新你的作品集",
     "experience-updated": "我们已更新你的经历",
     "email-invalid": "邮箱格式无效",
@@ -1498,6 +1524,7 @@
         "intermediate": "中级",
         "advanced": "高级"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} 小时",
       "no-results": "未找到课程。尝试调整筛选以查看更多结果。",
       "topic": {

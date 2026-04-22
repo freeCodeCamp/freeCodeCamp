@@ -104,25 +104,51 @@ jobs:
     runs-on: ubuntu-24.04
     needs: no-web-commits
     if: needs.no-web-commits.result == 'success'
+    outputs:
+      failure_reason: ${{ steps.check.outputs.failure_reason }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
 
-      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+      - id: check
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fn = require('./.github/scripts/pr-guidelines/check-pr-template.js');
-            await fn({ github, context, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
+            await fn({ github, context, core, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
 
   # Verifies that each PR references a linked, triaged issue before it can be reviewed.
   check-linked-issue:
     name: Check Linked Issue
     runs-on: ubuntu-24.04
     needs: no-web-commits
-    if: needs.no-web-commits.result == 'success' && github.event.action != 'edited'
+    if: needs.no-web-commits.result == 'success'
+    outputs:
+      failure_reason: ${{ steps.check.outputs.failure_reason }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          sparse-checkout: .github/scripts/pr-guidelines
+          sparse-checkout-cone-mode: false
+
+      - id: check
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fn = require('./.github/scripts/pr-guidelines/check-linked-issue.js');
+            await fn({ github, context, core, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
+
+  # Coordinates reporting: posts a single combined comment when checks fail,
+  # or removes the deprioritized label when all checks pass.
+  report:
+    name: Report
+    runs-on: ubuntu-24.04
+    needs: [no-web-commits, check-pr-template, check-linked-issue]
+    if: always() && needs.no-web-commits.result == 'success'
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
@@ -133,5 +159,12 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fn = require('./.github/scripts/pr-guidelines/check-linked-issue.js');
-            await fn({ github, context, isAllowListed: '${{ needs.no-web-commits.outputs.is_allow_listed }}' });
+            const fn = require('./.github/scripts/pr-guidelines/report-results.js');
+            await fn({
+              github,
+              context,
+              templateResult: '${{ needs.check-pr-template.result }}',
+              templateReason: '${{ needs.check-pr-template.outputs.failure_reason }}',
+              linkedIssueResult: '${{ needs.check-linked-issue.result }}',
+              linkedIssueReason: '${{ needs.check-linked-issue.outputs.failure_reason }}'
+            });

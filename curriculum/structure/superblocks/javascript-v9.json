@@ -97,8 +97,10 @@
           "dashedName": "javascript-loops",
           "blocks": [
             "lecture-working-with-loops",
+            "workshop-word-counter",
             "workshop-sentence-analyzer",
             "workshop-space-mission-roster",
+            "workshop-heritage-library-catalog",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
@@ -135,6 +137,7 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
+            "lab-playlist-remix-engine",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -326,10 +329,11 @@
         },
         {
           "dashedName": "graphs-and-trees",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
+            "workshop-shortest-path-algorithm-js",
             "lab-adjacency-list-to-matrix-converter-js",
+            "workshop-breadth-first-search-js",
             "lab-depth-first-search-js",
             "lab-n-queens-problem-js",
             "review-graphs-and-trees-js",
@@ -338,9 +342,9 @@
         },
         {
           "dashedName": "dynamic-programming",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming-js",
+            "lab-nth-fibonacci-number-js",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]

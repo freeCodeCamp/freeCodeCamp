@@ -159,7 +159,8 @@ const defaultStageOrder = [
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
-  SuperBlockStage.Next
+  SuperBlockStage.Next,
+  SuperBlockStage.Catalog
 ];
 
 export function getStageOrder({
@@ -168,7 +169,7 @@ export function getStageOrder({
   const stageOrder = [...defaultStageOrder];
 
   if (showUpcomingChanges) {
-    stageOrder.push(SuperBlockStage.Upcoming, SuperBlockStage.Catalog);
+    stageOrder.push(SuperBlockStage.Upcoming);
   }
   return stageOrder;
 }
@@ -393,43 +394,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BackEndDevApisV9,
     SuperBlocks.FullStackDeveloperV9
   ],
-  [Languages.Korean]: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.DataVis,
-    SuperBlocks.RelationalDb,
-    SuperBlocks.RosettaCode,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ]
+  [Languages.Korean]: []
 };
 
 Object.freeze(notAuditedSuperBlocks);

@@ -92,9 +92,18 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
+            "workshop-type-safe-user-profile",
+            "workshop-type-safe-math-toolkit",
             "lecture-understanding-type-composition",
+            "workshop-shape-manager",
+            "lab-motorcycle-shop",
             "lecture-working-with-generics-and-type-narrowing",
+            "workshop-bug-emoji-picker",
+            "lab-product-showcase",
             "lecture-working-with-typescript-configuration-files",
+            "workshop-fortune-teller-app",
+            "lab-flashcard-quiz-app",
+            "lab-digital-pet-game",
             "review-typescript",
             "quiz-typescript"
           ]

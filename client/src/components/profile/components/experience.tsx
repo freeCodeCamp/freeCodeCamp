@@ -22,7 +22,10 @@ import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
 
 type ExperienceProps = {
+  autoAdd?: boolean;
+  editItemId?: string | null;
   experience: ExperienceData[];
+  onSave?: () => void;
   t: TFunction;
   updateMyExperience: (obj: { experience: ExperienceData[] }) => void;
 };
@@ -96,9 +99,29 @@ const byId = (id: string) => (exp: ExperienceData) => exp.id === id;
 const notById = (id: string) => (exp: ExperienceData) => exp.id !== id;
 
 const ExperienceSettings = (props: ExperienceProps) => {
-  const { t, experience: initialExperience = [], updateMyExperience } = props;
-  const [experience, setExperience] = useState(initialExperience);
-  const [newItemId, setNewItemId] = useState<string | null>(null);
+  const {
+    t,
+    experience: initialExperience = [],
+    updateMyExperience,
+    autoAdd,
+    editItemId
+  } = props;
+  const isSingleItemMode = autoAdd || editItemId != null;
+
+  const getInitialState = () => {
+    if (autoAdd) {
+      const newItem = createEmptyExperienceItem();
+      return {
+        experience: [newItem, ...initialExperience],
+        newItemId: newItem.id
+      };
+    }
+    return { experience: initialExperience, newItemId: null };
+  };
+  const initial = getInitialState();
+
+  const [experience, setExperience] = useState(initial.experience);
+  const [newItemId, setNewItemId] = useState<string | null>(initial.newItemId);
 
   const createOnChangeHandler =
     (
@@ -134,6 +157,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           ? props.experience.map(item => (byId(id)(item) ? itemToSave : item))
           : [itemToSave, ...props.experience];
       updateMyExperience({ experience: updatedExperience });
+      props.onSave?.();
     }
   };
 
@@ -150,6 +174,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     }
     const filteredExperience = props.experience.filter(notById(id));
     updateMyExperience({ experience: filteredExperience });
+    props.onSave?.();
   };
 
   const isFormPristine = (id: string) => {
@@ -446,25 +471,35 @@ const ExperienceSettings = (props: ExperienceProps) => {
     );
   };
 
+  const itemsToRender = autoAdd
+    ? experience.filter(item => item.id === newItemId)
+    : editItemId != null
+      ? experience.filter(item => item.id === editItemId)
+      : experience;
+
   return (
     <section id='experience-settings'>
-      <SectionHeader>{t('profile.experience.heading')}</SectionHeader>
-      <FullWidthRow>
-        <p>{t('profile.experience.share-experience')}</p>
-        <Spacer size='xs' />
-        <Button
-          block
-          size='large'
-          variant='primary'
-          disabled={newItemId !== null}
-          onClick={handleAdd}
-          type='button'
-        >
-          {t('profile.experience.add')}
-        </Button>
-      </FullWidthRow>
-      <Spacer size='l' />
-      {interleave(experience.map(renderExperience), () => (
+      {!isSingleItemMode && (
+        <>
+          <SectionHeader>{t('profile.experience.heading')}</SectionHeader>
+          <FullWidthRow>
+            <p>{t('profile.experience.share-experience')}</p>
+            <Spacer size='xs' />
+            <Button
+              block
+              size='large'
+              variant='primary'
+              disabled={newItemId !== null}
+              onClick={handleAdd}
+              type='button'
+            >
+              {t('profile.experience.add')}
+            </Button>
+          </FullWidthRow>
+          <Spacer size='l' />
+        </>
+      )}
+      {interleave(itemsToRender.map(renderExperience), () => (
         <>
           <Spacer size='m' />
           <hr />
