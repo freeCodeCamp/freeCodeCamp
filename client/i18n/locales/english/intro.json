@@ -6267,6 +6267,12 @@
           "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+        ]
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
