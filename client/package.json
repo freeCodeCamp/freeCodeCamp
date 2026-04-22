@@ -183,6 +183,6 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "vitest": "^4.0.15",
-    "webpack": "5.106.1"
+    "webpack": "5.106.2"
   }
 }
