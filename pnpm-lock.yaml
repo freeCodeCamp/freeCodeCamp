@@ -653,8 +653,8 @@ importers:
         specifier: 2.6.3
         version: 2.6.3
       joi:
-        specifier: 18.0.2
-        version: 18.0.2
+        specifier: 18.1.2
+        version: 18.1.2
       js-yaml:
         specifier: 4.1.0
         version: 4.1.0
@@ -732,8 +732,8 @@ importers:
         specifier: 13.0.6
         version: 13.0.6
       joi:
-        specifier: 17.12.2
-        version: 17.12.2
+        specifier: 17.13.3
+        version: 17.13.3
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -1223,8 +1223,8 @@ importers:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
       joi:
-        specifier: 17.12.2
-        version: 17.12.2
+        specifier: 17.13.3
+        version: 17.13.3
       joi-objectid:
         specifier: 3.0.1
         version: 3.0.1
@@ -8683,14 +8683,11 @@ packages:
   joi-objectid@3.0.1:
     resolution: {integrity: sha512-V/3hbTlGpvJ03Me6DJbdBI08hBTasFOmipsauOsxOSnsF1blxV537WTl1zPwbfcKle4AK0Ma4OPnzMH4LlvTpQ==}
 
-  joi@17.12.2:
-    resolution: {integrity: sha512-RonXAIzCiHLc8ss3Ibuz45u28GOsWE1UpfDXLbN/9NKbL4tCJf8TWYVKsoYuuh+sAUt7fsSNpA+r2+TBA6Wjmw==}
-
   joi@17.13.3:
     resolution: {integrity: sha512-otDA4ldcIx+ZXsKHWmp0YizCweVRZG96J10b0FevjfuncLO1oX59THoAmHkNubYJ+9gWsYsp5k8v4ib6oDv1fA==}
 
-  joi@18.0.2:
-    resolution: {integrity: sha512-RuCOQMIt78LWnktPoeBL0GErkNaJPTBGcYuyaBvUOQSpcpcLfWrHPPihYdOGbV5pam9VTWbeoF7TsGiHugcjGA==}
+  joi@18.1.2:
+    resolution: {integrity: sha512-rF5MAmps5esSlhCA+N1b6IYHDw9j/btzGaqfgie522jS02Ju/HXBxamlXVlKEHAxoMKQL77HWI8jlqWsFuekZA==}
     engines: {node: '>= 20'}
 
   joycon@3.1.1:
@@ -23285,14 +23282,6 @@ snapshots:
 
   joi-objectid@3.0.1: {}
 
-  joi@17.12.2:
-    dependencies:
-      '@hapi/hoek': 9.3.0
-      '@hapi/topo': 5.1.0
-      '@sideway/address': 4.1.5
-      '@sideway/formula': 3.0.1
-      '@sideway/pinpoint': 2.0.0
-
   joi@17.13.3:
     dependencies:
       '@hapi/hoek': 9.3.0
@@ -23301,7 +23290,7 @@ snapshots:
       '@sideway/formula': 3.0.1
       '@sideway/pinpoint': 2.0.0
 
-  joi@18.0.2:
+  joi@18.1.2:
     dependencies:
       '@hapi/address': 5.1.1
       '@hapi/formula': 3.0.2
