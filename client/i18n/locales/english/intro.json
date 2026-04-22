@@ -6270,7 +6270,7 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "For this lab, you will use TypeScript and React to build a digital pet game."
+          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
         ]
       },
       "review-typescript": {
