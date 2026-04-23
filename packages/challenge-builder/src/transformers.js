@@ -64,7 +64,9 @@ async function loadPresetEnv() {
     );
 
   presetsJS = {
-    presets: [[presetEnv, { exclude: ['transform-spread'] }]]
+    presets: [
+      [presetEnv, { exclude: ['transform-spread', 'transform-function-name'] }]
+    ]
   };
 }
 
@@ -79,7 +81,10 @@ async function loadPresetReact() {
     );
 
   presetsJSX = {
-    presets: [[presetEnv, { exclude: ['transform-spread'] }], presetReact]
+    presets: [
+      [presetEnv, { exclude: ['transform-spread', 'transform-function-name'] }],
+      presetReact
+    ]
   };
 }
 
