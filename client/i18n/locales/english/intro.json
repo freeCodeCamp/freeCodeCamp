@@ -6295,6 +6295,12 @@
         "intro": [
           "Pass this exam to earn your Front-End Development Libraries Certification"
         ]
+      },
+      "workshop-build-a-football-player-card": {
+        "title": "Build a Football Team Player Card",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in Typescript by building a football team player card."
+        ]
       }
     }
   },
