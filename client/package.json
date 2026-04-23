@@ -84,7 +84,7 @@
     "gatsby-plugin-remove-serviceworker": "1.0.0",
     "gatsby-source-filesystem": "5.16.0",
     "gatsby-transformer-remark": "6.16.0",
-    "i18next": "25.2.1",
+    "i18next": "25.10.10",
     "instantsearch.js": "4.75.3",
     "lodash": "4.17.21",
     "lodash-es": "4.17.21",
