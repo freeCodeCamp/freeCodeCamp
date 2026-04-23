@@ -34,7 +34,7 @@
     "@types/js-yaml": "4.0.9",
     "@types/yargs": "17.0.35",
     "@vitest/ui": "3.2.4",
-    "eslint": "9.39.1",
+    "eslint": "9.39.4",
     "markdownlint": "0.40.0",
     "prismjs": "1.30.0",
     "typescript": "5.9.3",
