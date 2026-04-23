@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-sensor-burst-analyzer",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69e988bb2c32e9211dfbb590", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

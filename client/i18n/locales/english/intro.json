@@ -5876,6 +5876,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-sensor-burst-analyzer": {
+        "title": "Analyze nested arrays of sensor bursts",
+        "intro": ["Analyze nested arrays of sensor bursts", ""]
       }
     }
   },
