@@ -4780,6 +4780,12 @@
           "循环是 JavaScript 的核心部分。因此以下讲座将帮助你学习不同类型的循环及其工作原理，以及迭代的运作方式。"
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "创建一个句子分析程序",
         "intro": [
@@ -4968,6 +4974,13 @@
         "title": "实现元素跳过函数",
         "intro": [
           "在本实验中，你将创建一个函数，根据指定的步长值跳过数组中的元素。"
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6104,6 +6117,12 @@
           "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
         ]
       },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
@@ -6126,6 +6145,18 @@
         "title": "Working with TypeScript Configuration Files",
         "intro": [
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
       "review-typescript": {
@@ -7441,6 +7472,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
         "intro": ["", ""]
       }
     }

@@ -4898,6 +4898,12 @@
           "Laços são uma parte essencial do JavaScript. Por isso, as seguintes lições foram preparadas para que você aprenda sobre os diferentes tipos de laços, como eles funcionam e também como a iteração funciona."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Crie um Analisador de Frases",
         "intro": [
@@ -5106,6 +5112,13 @@
         "title": "Implemente um Pula-Elementos",
         "intro": [
           "Neste laboratório, você criará uma função que pula elementos em um array com base em um valor de passo especificado."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6268,6 +6281,12 @@
           "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
         ]
       },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Trabalhando com Generics e Redução de Tipos",
         "intro": [
@@ -6290,6 +6309,18 @@
         "title": "Trabalhando com Arquivos de Configuração do TypeScript",
         "intro": [
           "Nesta lição, você aprenderá sobre arquivos de configuração do TypeScript e como usá-los."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
       "review-typescript": {
@@ -7625,6 +7656,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Descrevendo Pessoas no Trabalho",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
         "intro": ["", ""]
       }
     }

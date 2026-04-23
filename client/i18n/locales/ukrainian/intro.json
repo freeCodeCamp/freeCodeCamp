@@ -4850,6 +4850,12 @@
           "Цикли — це важлива частина JavaScript. Тому наступні лекції підготовлено для того, щоб ви дізналися про різні типи циклів, як вони працюють, а також про те, як працює ітерація."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Створіть лічильник слів",
+        "intro": [
+          "У цьому практичному занятті ви будете використовувати цикли <code>for...of</code> для створення функції, яка рахує скільки разів зустрічається рядок в масиві."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Створіть аналізатор речень",
         "intro": [
@@ -4863,10 +4869,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "Створіть каталог для бібліотеки спадщини",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "У цьому практичному занятті ви оцифруєте історичні записи для бібліотеки спадщини.",
+          "Ви будете користуватись циклами, об’єктами і рядками, щоб аналізувати необроблені текстові дані, шукати й групувати записи, відтворювати відформатовані дані, а також експортувати JSON та CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -5056,6 +5062,13 @@
         "title": "Імплементуйте пропуск елементів",
         "intro": [
           "У цій лабораторній роботі ви створите функцію, яка пропускає елементи в масиві на основі вказаного значення."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6201,9 +6214,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "Створіть менеджера фігур",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "У цьому практичному занятті ви будете працювати з базовими функціями в TypeScript, серед яких типи й інтерфейси, створивши менеджера фігур."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Створіть магазин мотоциклів",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати TypeScript, щоб створити магазин мотоциклів."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6219,15 +6238,27 @@
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "Створіть перегляд товару",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "У цій лабораторній роботі ви будете працювати з дженериками та звуженням типів у TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Робота з конфігураційними файлами в TypeScript",
         "intro": [
           "У цій лекції ви дізнаєтесь про конфігураційні файли TypeScript і як ними користуватися."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Створіть генератор передбачень",
+        "intro": [
+          "У цьому практичному занятті ви продовжите працювати з TypeScript, створивши застосунок з передбаченнями."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Створіть програму з вікториною",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати TypeScript, щоб створити вікторину з картками."
         ]
       },
       "review-typescript": {
@@ -7537,6 +7568,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Тест «Опис колег»",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Як говорити про колег?",
         "intro": ["", ""]
       }
     }

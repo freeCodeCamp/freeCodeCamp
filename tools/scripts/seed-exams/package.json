@@ -26,10 +26,10 @@
     "debug": "4.4.3",
     "dotenv": "16.6.1",
     "eslint": "^9.39.1",
-    "joi": "17.12.2",
+    "joi": "17.13.3",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",
-    "mongodb": "6.10.0",
+    "mongodb": "6.21.0",
     "nanoid": "4.0.2"
   },
   "type": "module"
