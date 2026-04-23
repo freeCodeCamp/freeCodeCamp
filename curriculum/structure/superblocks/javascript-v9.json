@@ -97,8 +97,10 @@
           "dashedName": "javascript-loops",
           "blocks": [
             "lecture-working-with-loops",
+            "workshop-word-counter",
             "workshop-sentence-analyzer",
             "workshop-space-mission-roster",
+            "workshop-heritage-library-catalog",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
@@ -136,6 +138,7 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
+            "lab-playlist-remix-engine",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]

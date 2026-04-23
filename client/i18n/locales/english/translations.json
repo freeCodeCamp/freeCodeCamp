@@ -339,6 +339,7 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
@@ -469,13 +470,16 @@
     },
     "completeness": {
       "heading": "Profile {{percentage}}% complete",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",
       "picture": "Upload a profile picture",
       "about": "Write an about section",
       "social": "Add a social link",
       "portfolio": "Add a portfolio project",
-      "experience": "Add your experience"
+      "experience": "Add your experience",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -584,9 +588,9 @@
       "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Preview",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -1027,6 +1031,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
@@ -1034,6 +1042,10 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
     "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
