@@ -98,13 +98,10 @@ function CompletionModal({
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const zipEntries: Record<string, Uint8Array> = {};
-      for (const file of challengeFiles) {
-        zipEntries[`${file.name}.${file.ext}`] = strToU8(file.contents);
-      }
-      const blob = new Blob([zipSync(zipEntries).buffer as ArrayBuffer], {
-        type: 'application/zip'
-      });
+      const blob = new Blob(
+        [zipSync(buildZipEntries(challengeFiles)).buffer as ArrayBuffer],
+        { type: 'application/zip' }
+      );
       setDownloadURL(URL.createObjectURL(blob));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -218,17 +215,12 @@ export default connect(
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
 
-export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
-  return challengeFiles.reduce<string>(function (
-    allFiles: string,
-    currentFile: DownloadableChallengeFile
-  ) {
-    const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    allFiles +=
-      challengeFiles.length > 0
-        ? `${beforeText}${currentFile.contents}${afterText}`
-        : currentFile.contents;
-    return allFiles;
-  }, '');
+export function buildZipEntries(
+  challengeFiles: DownloadableChallengeFile[]
+): Record<string, Uint8Array> {
+  const entries: Record<string, Uint8Array> = {};
+  for (const file of challengeFiles) {
+    entries[`${file.name}.${file.ext}`] = strToU8(file.contents);
+  }
+  return entries;
 }

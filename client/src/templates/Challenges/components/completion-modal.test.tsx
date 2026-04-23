@@ -18,7 +18,8 @@ import {
 import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { curriculumData } from '../../../services/curriculum-data';
 import { getTestRunner } from '../utils/build';
-import CompletionModal, { combineFileData } from './completion-modal';
+import CompletionModal, { buildZipEntries } from './completion-modal';
+import { strFromU8 } from 'fflate';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { useStaticQuery } from 'gatsby';
 import { ChallengeNode, SuperBlockStructure } from '../../../redux/prop-types';
@@ -212,30 +213,38 @@ describe('<CompletionModal />', () => {
     });
   });
 
-  describe('File Download Content', () => {
-    it('Should label each section appropriately', () => {
-      const indexHtml = {
-        name: 'index',
-        ext: 'html',
-        contents: 'some html elements'
-      };
-      const stylesCSS = {
-        name: 'styles',
-        ext: 'css',
-        contents: 'some css styles'
-      };
-      const scriptJS = {
-        name: 'script',
-        ext: 'js',
-        contents: 'some javascript'
-      };
-      const result = combineFileData([indexHtml, stylesCSS, scriptJS]);
-      expect(result).toContain('** start of index.html **');
-      expect(result).toContain('** end of index.html **');
-      expect(result).toContain('** start of styles.css **');
-      expect(result).toContain('** end of styles.css **');
-      expect(result).toContain('** start of script.js **');
-      expect(result).toContain('** end of script.js **');
+  describe('buildZipEntries', () => {
+    it('uses name.ext as the filename for each entry', () => {
+      const files = [
+        { name: 'index', ext: 'html', contents: 'some html elements' },
+        { name: 'styles', ext: 'css', contents: 'some css styles' },
+        { name: 'script', ext: 'js', contents: 'some javascript' }
+      ];
+      const entries = buildZipEntries(files);
+      expect(Object.keys(entries)).toEqual([
+        'index.html',
+        'styles.css',
+        'script.js'
+      ]);
+    });
+
+    it('preserves file contents in each entry', () => {
+      const files = [
+        { name: 'index', ext: 'html', contents: 'some html elements' },
+        { name: 'styles', ext: 'css', contents: 'some css styles' },
+        { name: 'script', ext: 'js', contents: 'some javascript' }
+      ];
+      const entries = buildZipEntries(files);
+      expect(strFromU8(entries['index.html'])).toBe('some html elements');
+      expect(strFromU8(entries['styles.css'])).toBe('some css styles');
+      expect(strFromU8(entries['script.js'])).toBe('some javascript');
+    });
+
+    it('works for a single-file challenge', () => {
+      const files = [{ name: 'main', ext: 'py', contents: 'print("hello")' }];
+      const entries = buildZipEntries(files);
+      expect(Object.keys(entries)).toEqual(['main.py']);
+      expect(strFromU8(entries['main.py'])).toBe('print("hello")');
     });
   });
 });
