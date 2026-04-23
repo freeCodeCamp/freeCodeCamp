@@ -1,13 +1,15 @@
 ---
-id: 69ea0349f8305a99324465ff
-title: Step 56
+id: 69ea1bb4a66dd6debb999c7f
+title: Step 40
 challengeType: 0
-dashedName: step-56
+dashedName: step-40
 ---
 
 # --description--
 
-In the `try` block, create a `saved` variable. For the value, use the `getItem()` method to retrieve `STORAGE_KEY`. Right under that variable, create an `if` statement with the condition `saved`. Leave the `if` block empty for now.
+Now you will handle the player position selection. You have to refactor the input to a select, then map over an array of valid football positions as the value of the select options.
+
+To start, create a `POSITIONS` array with the string values of `GK`, `CB`, `LB`, `RB`, `CDM`, `CM`, `CAM`, `LW`, `RW`, `ST`, and `CF`. Add `as const` right after the closing square brackets so Typescript narrows the type from a general `string[]` to a readonly tuple of those exact literal values. This means TypeScript knows precisely what strings are valid, rather than just knowing it's some array of strings.
 
 # --hints--
 
@@ -378,21 +380,9 @@ body {
 ```tsx
 const { useState } = React;
 
-const POSITIONS = [
-  "GK",
-  "CB",
-  "LB",
-  "RB",
-  "CDM",
-  "CM",
-  "CAM",
-  "LW",
-  "RW",
-  "ST",
-  "CF"
-] as const;
+--fcc-editable-region--
 
-type Position = typeof POSITIONS[number];
+--fcc-editable-region--
 
 interface PlayerData {
   name: string;
@@ -407,8 +397,6 @@ interface PlayerData {
   def: number;
   phy: number;
 }
-
-const STORAGE_KEY = "football_player_card";
 
 function getPlayerTier(rating: number): string {
   if (rating >= 92) return "elite";
@@ -489,16 +477,6 @@ const defaultPlayer: PlayerData = {
   phy: 75,
 };
 
-function loadPlayer(): PlayerData {
-  try {
-  --fcc-editable-region--
-  
-  --fcc-editable-region--  
-  } catch (error) {
-    
-  }
-}
-
 export const FootballPlayerCard = () => {
   const [player, setPlayer] = useState<PlayerData>(defaultPlayer);
   return (
@@ -518,82 +496,33 @@ export const FootballPlayerCard = () => {
                 <label className="label" htmlFor="name">
                   Name
                 </label>
-                <input
-                  id="name"
-                  className="input"
-                  type="text"
-                  value={player.name}
-                  onChange={(e) =>
-                    setPlayer({ ...player, name: e.target.value })
-                  }
-                />
+                <input id="name" className="input" type="text" />
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label className="label" htmlFor="position">
                     Position
                   </label>
-                  <select
-                    id="position"
-                    className="input"
-                    value={player.position}
-                    onChange={(e) => 
-                      setPlayer({ ...player, position: e.target.value as Position })}
-                  >
-                    {POSITIONS.map(
-                      (pos) => (
-                        <option key={pos} value={pos}>
-                          {pos}
-                        </option>
-                      )
-                    )}
-                  </select>
+                  <input id="position" className="input" type="text" />
                 </div>
                 <div className="form-group">
                   <label className="label" htmlFor="overallRating">
                     Overall
                   </label>
-                  <input
-                    id="overallRating"
-                    className="input"
-                    type="number"
-                    value={player.overallRating}
-                    onChange={(e) =>
-                      setPlayer({
-                        ...player,
-                        overallRating: Number(e.target.value),
-                      })
-                    }
-                  />
+                  <input id="overallRating" className="input" type="number" />
                 </div>
               </div>
               <div className="form-group">
                 <label className="label" htmlFor="club">
                   Club
                 </label>
-                <input
-                  id="club"
-                  className="input"
-                  type="text"
-                  value={player.club}
-                  onChange={(e) =>
-                    setPlayer({ ...player, club: e.target.value })
-                  }
-                />
+                <input id="club" className="input" type="text" />
               </div>
               <div className="form-group">
                 <label className="label" htmlFor="imageUrl">
                   Image URL
                 </label>
-                <input
-                  id="imageUrl"
-                  className="input"
-                  type="text"
-                  value={player.imageUrl}
-                  onChange={(e) =>
-                    setPlayer({ ...player, imageUrl: e.target.value })
-                  }
-                />
+                <input id="imageUrl" className="input" type="text" />
               </div>
             </div>
             <div>
@@ -603,85 +532,37 @@ export const FootballPlayerCard = () => {
                   <label className="label" htmlFor="pac">
                     PAC
                   </label>
-                  <input
-                    id="pac"
-                    className="input"
-                    type="number"
-                    value={player.pac}
-                    onChange={(e) =>
-                      setPlayer({ ...player, pac: Number(e.target.value) })
-                    }
-                  />
+                  <input id="pac" className="input" type="number" />
                 </div>
                 <div className="form-group">
                   <label className="label" htmlFor="sho">
                     SHO
                   </label>
-                  <input
-                    id="sho"
-                    className="input"
-                    type="number"
-                    value={player.sho}
-                    onChange={(e) =>
-                      setPlayer({ ...player, sho: Number(e.target.value) })
-                    }
-                  />
+                  <input id="sho" className="input" type="number" />
                 </div>
                 <div className="form-group">
                   <label className="label" htmlFor="pas">
                     PAS
                   </label>
-                  <input
-                    id="pas"
-                    className="input"
-                    type="number"
-                    value={player.pas}
-                    onChange={(e) =>
-                      setPlayer({ ...player, pas: Number(e.target.value) })
-                    }
-                  />
+                  <input id="pas" className="input" type="number" />
                 </div>
                 <div className="form-group">
                   <label className="label" htmlFor="dri">
                     DRI
                   </label>
-                  <input
-                    id="dri"
-                    className="input"
-                    type="number"
-                    value={player.dri}
-                    onChange={(e) =>
-                      setPlayer({ ...player, dri: Number(e.target.value) })
-                    }
-                  />
+                  <input id="dri" className="input" type="number" />
                 </div>
                 <div className="form-group">
                   <label className="label" htmlFor="def">
                     DEF
                   </label>
-                  <input
-                    id="def"
-                    className="input"
-                    type="number"
-                    value={player.def}
-                    onChange={(e) =>
-                      setPlayer({ ...player, def: Number(e.target.value) })
-                    }
-                  />
+                  <input id="def" className="input" type="number" />
                 </div>
                 <div className="form-group">
                   <label className="label" htmlFor="phy">
                     PHY
                   </label>
-                  <input
-                    id="phy"
-                    className="input"
-                    type="number"
-                    value={player.phy}
-                    onChange={(e) =>
-                      setPlayer({ ...player, phy: Number(e.target.value) })
-                    }
-                  />
+                  <input id="phy" className="input" type="number" />
                 </div>
               </div>
             </div>
