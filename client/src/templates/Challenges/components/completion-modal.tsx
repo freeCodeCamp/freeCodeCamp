@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useState } from 'react';
+import { zipSync, strToU8 } from 'fflate';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -97,8 +98,13 @@ function CompletionModal({
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
+      const zipEntries: Record<string, Uint8Array> = {};
+      for (const file of challengeFiles) {
+        zipEntries[`${file.name}.${file.ext}`] = strToU8(file.contents);
+      }
+      const blob = new Blob([zipSync(zipEntries).buffer as ArrayBuffer], {
+        type: 'application/zip'
+      });
       setDownloadURL(URL.createObjectURL(blob));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -194,7 +200,7 @@ function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
