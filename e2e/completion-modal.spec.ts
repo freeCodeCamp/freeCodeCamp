@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -191,5 +192,43 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   }) => {
     await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
+  });
+});
+
+test.describe('Solution Download', () => {
+  test.beforeEach(async ({ page, browserName, isMobile }) => {
+    await page.goto(
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    );
+    const editor = getEditors(page);
+    const checkButton = page.getByRole('button', { name: 'Check Your Code' });
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    await editor.fill(
+      '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
+    );
+    await checkButton.click();
+    await page.getByRole('dialog').waitFor({ state: 'visible' });
+  });
+
+  test('download link has a .zip filename', async ({ page }) => {
+    const downloadLink = page.getByRole('link', {
+      name: translations.learn['download-solution']
+    });
+    await expect(downloadLink).toBeVisible();
+    const downloadAttr = await downloadLink.getAttribute('download');
+    expect(downloadAttr).toMatch(/\.zip$/);
+  });
+
+  test('clicking the download link triggers a zip file download', async ({
+    page
+  }) => {
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      page
+        .getByRole('link', { name: translations.learn['download-solution'] })
+        .click()
+    ]);
+    expect(download.suggestedFilename()).toMatch(/\.zip$/);
   });
 });
