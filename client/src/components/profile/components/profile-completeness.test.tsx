@@ -19,7 +19,8 @@ const baseProps = {
   bluesky: '',
   website: '',
   portfolio: [],
-  experience: []
+  experience: [],
+  isLocked: false
 };
 
 describe('hasValue', () => {
@@ -119,9 +120,9 @@ describe('<ProfileCompleteness />', () => {
   it('should display all checklist items when expanded', () => {
     render(<ProfileCompleteness {...baseProps} />);
 
-    // Should show all 7 items
+    // Should show all 8 items (name, location, picture, about, social, portfolio, experience, privacy)
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems).toHaveLength(7);
+    expect(listItems).toHaveLength(8);
   });
 
   it('should start expanded when core items (name, picture, about) are incomplete', () => {
@@ -159,7 +160,7 @@ describe('<ProfileCompleteness />', () => {
   });
 
   it('should calculate weighted percentage correctly', () => {
-    // Name (20) + About (20) = 40% complete
+    // Name (20) + About (20) + Privacy (10, isLocked=false) = 50/110 = 45% complete
     const propsWithNameAndAbout = {
       ...baseProps,
       name: 'John Doe',
@@ -167,9 +168,9 @@ describe('<ProfileCompleteness />', () => {
     };
     render(<ProfileCompleteness {...propsWithNameAndAbout} />);
 
-    // Check the progress bar width reflects 40%
+    // Check the progress bar width reflects 45%
     const progressBar = screen.getByTestId('profile-completeness-progress');
-    expect(progressBar).toHaveStyle({ width: '40%' });
+    expect(progressBar).toHaveStyle({ width: '45%' });
   });
 
   it('should mark social as complete if any social link is provided', () => {
@@ -179,9 +180,9 @@ describe('<ProfileCompleteness />', () => {
     };
     render(<ProfileCompleteness {...propsWithGithub} />);
 
-    // Social (10%) should be complete - check progress bar
+    // Social (10) + Privacy (10, isLocked=false) = 20/110 = 18%
     const progressBar = screen.getByTestId('profile-completeness-progress');
-    expect(progressBar).toHaveStyle({ width: '10%' });
+    expect(progressBar).toHaveStyle({ width: '18%' });
   });
 
   it('should mark social as complete with linkedin only', () => {
@@ -191,8 +192,9 @@ describe('<ProfileCompleteness />', () => {
     };
     render(<ProfileCompleteness {...propsWithLinkedin} />);
 
+    // Social (10) + Privacy (10, isLocked=false) = 20/110 = 18%
     const progressBar = screen.getByTestId('profile-completeness-progress');
-    expect(progressBar).toHaveStyle({ width: '10%' });
+    expect(progressBar).toHaveStyle({ width: '18%' });
   });
 
   it('should mark social as complete with website only', () => {
@@ -202,8 +204,9 @@ describe('<ProfileCompleteness />', () => {
     };
     render(<ProfileCompleteness {...propsWithWebsite} />);
 
+    // Social (10) + Privacy (10, isLocked=false) = 20/110 = 18%
     const progressBar = screen.getByTestId('profile-completeness-progress');
-    expect(progressBar).toHaveStyle({ width: '10%' });
+    expect(progressBar).toHaveStyle({ width: '18%' });
   });
 
   it('should show correct icons for complete and incomplete items', () => {
@@ -213,8 +216,8 @@ describe('<ProfileCompleteness />', () => {
     };
     render(<ProfileCompleteness {...propsWithName} />);
 
-    // Should have 1 green-pass (name complete) and 6 green-not-completed
-    expect(screen.getAllByTestId('green-pass')).toHaveLength(1);
+    // name + privacy (isLocked=false) are complete → 2 green-pass, 6 green-not-completed
+    expect(screen.getAllByTestId('green-pass')).toHaveLength(2);
     expect(screen.getAllByTestId('green-not-completed')).toHaveLength(6);
   });
 });

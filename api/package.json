@@ -4,7 +4,6 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "dependencies": {
-    "@aws-sdk/client-ses": "3.1000.0",
     "@fastify/accepts": "5.0.4",
     "@fastify/cookie": "11.0.2",
     "@fastify/csrf-protection": "7.1.0",
@@ -14,7 +13,7 @@
     "@fastify/type-provider-typebox": "6.1.0",
     "@freecodecamp/shared": "workspace:*",
     "@growthbook/growthbook": "1.6.5",
-    "@prisma/client": "6.19.2",
+    "@prisma/client": "6.19.3",
     "@sentry/node": "9.47.1",
     "ajv": "8.18.0",
     "ajv-formats": "3.0.1",
@@ -22,12 +21,12 @@
     "date-fns-tz": "3.2.0",
     "dotenv": "16.6.1",
     "fast-uri": "2.4.0",
-    "fastify": "5.7.4",
+    "fastify": "5.8.5",
     "fastify-plugin": "5.1.0",
     "joi": "17.13.3",
     "jsonwebtoken": "9.0.3",
-    "lodash": "4.17.23",
-    "lodash-es": "4.17.23",
+    "lodash": "4.18.1",
+    "lodash-es": "4.18.1",
     "mongodb": "6.21.0",
     "nanoid": "3",
     "no-profanity": "1.5.1",
@@ -36,8 +35,8 @@
     "pino-pretty": "10.3.1",
     "query-string": "7.1.3",
     "stripe": "16.12.0",
-    "typebox": "1.1.5",
-    "validator": "13.15.26"
+    "typebox": "1.1.23",
+    "validator": "13.15.35"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
@@ -56,7 +55,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "48.11.0",
     "msw": "^2.12.10",
-    "prisma": "6.19.2",
+    "prisma": "6.19.3",
     "supertest": "6.3.4",
     "tsx": "4.21.0",
     "typescript": "5.9.3",

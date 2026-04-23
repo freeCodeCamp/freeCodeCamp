@@ -50,6 +50,7 @@ import {
   initLogs,
   logsToConsole,
   openModal,
+  setProjectPreviewLoading,
   updateConsole,
   updateLogs,
   updateTests
@@ -246,22 +247,22 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
   return testResults;
 }
 
-// updates preview frame and the fcc console.
-export function* previewChallengeSaga(action) {
-  const flushLogs = action?.type !== actionTypes.previewMounted;
+function* flush() {
+  yield put(initLogs());
+  yield put(initConsole(''));
+}
+
+function* previewChallengeSaga() {
   const isBuildEnabled = yield select(isBuildEnabledSelector);
   if (!isBuildEnabled) {
     return;
   }
 
-  const isExecuting = yield select(isExecutingSelector);
-  // executeChallengeSaga flushes the logs, so there's no need to if that's
-  // just happened.
-  if (flushLogs && !isExecuting) {
-    yield put(initLogs());
-    yield put(initConsole(''));
+  // the challenge execution will update the preview, so this saga doesn't
+  // need to do anything.
+  if (yield select(isExecutingSelector)) {
+    return;
   }
-  yield delay(700);
 
   const logProxy = yield channel();
   const proxyLogger = args => {
@@ -317,7 +318,9 @@ export function* previewChallengeSaga(action) {
           const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
-          yield put(updateConsole(logs?.map(log => log.msg).join('\n')));
+          const output = logs?.map(log => log.msg).join('\n');
+
+          yield put(updateConsole(output));
         }
       }
     }
@@ -333,10 +336,11 @@ export function* previewChallengeSaga(action) {
   }
 }
 
-// TODO: refactor this so that we can use a single saga for all challenge
-// updates (then they can all go in the same `takeLatest` call and be cancelled
-// appropriately)
-function* updatePreviewSaga(action) {
+export function* updatePreviewSaga(action) {
+  yield flush();
+  if (action.type === actionTypes.updateFile) {
+    yield delay(700);
+  }
   const challengeData = yield select(challengeDataSelector);
   if (
     challengeData.challengeType === challengeTypes.python ||
@@ -366,10 +370,11 @@ function* updatePython(challengeData) {
 }
 
 function* previewProjectSolutionSaga({ payload }) {
-  if (!payload?.challengeData) return;
-  const { challengeData } = payload;
-
+  yield put(setProjectPreviewLoading(true));
   try {
+    if (!payload?.challengeData) return;
+    const { challengeData } = payload;
+
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
       if (buildData.error) throw Error(buildData.error);
@@ -384,16 +389,22 @@ function* previewProjectSolutionSaga({ payload }) {
   } catch (err) {
     console.error('Unable to show project preview');
     console.error(err);
+  } finally {
+    yield put(setProjectPreviewLoading(false));
   }
 }
 
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
-    takeLatest(types.updateFile, updatePreviewSaga),
     takeLatest(
-      [types.challengeMounted, types.resetChallenge, types.previewMounted],
-      previewChallengeSaga
+      [
+        types.updateFile,
+        types.challengeMounted,
+        types.resetChallenge,
+        types.previewMounted
+      ],
+      updatePreviewSaga
     ),
     takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
   ];
