@@ -33,6 +33,7 @@ export function useFetchAllCurriculumData(): void {
         nodes {
           challenge {
             block
+            certification
             id
           }
         }
