@@ -339,6 +339,7 @@
       "keyboard-shortcuts": "Abilita le scorciatoie da tastiera"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Certificazioni",
       "legacy-certs": "Vecchie certificazioni",
@@ -469,13 +470,16 @@
     },
     "completeness": {
       "heading": "Profilo completato al {{percentage}}%",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Aggiungi il tuo nome",
       "location": "Aggiungi la tua località",
       "picture": "Carica un'immagine del profilo",
       "about": "Scrivi una breve biografia",
       "social": "Aggiungi un profilo social",
       "portfolio": "Aggiungi un progetto al portfolio",
-      "experience": "Aggiungi la tua esperienza lavorativa"
+      "experience": "Aggiungi la tua esperienza lavorativa",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -1027,6 +1031,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "Contenuto dell'editor {{editorName}}. Premi Opzione+F1 per le opzioni di accessibilità.",
     "editor-a11y-off-non-macos": "Contenuto dell'editor {{editorName}}. Premi Alt+F1 per le opzioni di accessibilità.",
     "editor-a11y-on-macos": "Contenuto dell'editor {{editorName}}. Modalità accessibilità impostata su 'on'. Premi Comando+E per disattivarla o premi Opzione+F1 per altre opzioni.",
