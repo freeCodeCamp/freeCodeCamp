@@ -186,5 +186,5 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: playwright-report-${{ matrix.browsers }}
-          path: playwright/reporter
+          path: e2e/playwright/reporter
           retention-days: 7
