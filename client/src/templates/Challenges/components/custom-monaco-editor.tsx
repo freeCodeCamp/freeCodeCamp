@@ -89,10 +89,7 @@ const CustomMonacoEditor = () => {
           lineNumbersMinChars: 2,
           minimap: { enabled: false },
           scrollBeyondLastLine: false,
-          automaticLayout: true,
-          scrollbar: {
-            alwaysConsumeMouseWheel: false
-          }
+          automaticLayout: true
         }}
       />
     </div>
