@@ -275,6 +275,102 @@ export const embedScript = (script, source, contents) => {
   script.setAttribute('data-src', source);
 };
 
+const allowedLocalStylesheets = stylesCss =>
+  stylesCss ? new Set(['styles.css']) : new Set();
+
+const allowedLocalScripts = scriptJs =>
+  scriptJs ? new Set(['script.js']) : new Set();
+
+const hasScheme = source => /^[a-zA-Z][a-zA-Z\d+.-]*:/.test(source);
+
+const isLocalResource = source => {
+  if (!source || source.startsWith('#') || source.startsWith('//')) {
+    return false;
+  }
+  if (hasScheme(source)) {
+    return false;
+  }
+  return true;
+};
+
+const normalizeSource = source =>
+  source
+    .trim()
+    .split(/[?#]/, 1)[0]
+    .replace(/^\.\/+/, '')
+    .replace(/^\/+/, '');
+
+const buildAllowedSourceMessage = sources => {
+  return [...sources];
+};
+
+const createUnexpectedSourceWarning = ({ tagName, source, allowedSources }) => {
+  const resourceType = tagName === 'LINK' ? 'stylesheet' : 'script';
+  return {
+    type: 'unavailable-local-resource',
+    source,
+    resourceType,
+    allowedSources: buildAllowedSourceMessage(allowedSources)
+  };
+};
+
+export const getLocalSourceWarnings = challengeFiles => {
+  const { indexHtml, stylesCss, scriptJs } =
+    challengeFilesToObject(challengeFiles);
+
+  if (!indexHtml) {
+    return [];
+  }
+
+  const warnings = new Map();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(indexHtml.contents, 'text/html');
+  const stylesheetSources = doc.querySelectorAll(
+    'link[rel~="stylesheet"][href]'
+  );
+  const scriptSources = doc.querySelectorAll('script[src]');
+
+  const allowedStylesheets = allowedLocalStylesheets(stylesCss);
+  const allowedScripts = allowedLocalScripts(scriptJs);
+
+  stylesheetSources.forEach(node => {
+    const source = node.getAttribute('href') ?? '';
+    if (!isLocalResource(source)) {
+      return;
+    }
+    const normalized = normalizeSource(source);
+    if (!allowedStylesheets.has(normalized)) {
+      const warning = createUnexpectedSourceWarning({
+        tagName: node.tagName,
+        source,
+        allowedSources: allowedStylesheets
+      });
+      warnings.set(JSON.stringify(warning), warning);
+    }
+  });
+
+  scriptSources.forEach(node => {
+    if (allowedScripts.size === 0) {
+      return;
+    }
+    const source = node.getAttribute('src') ?? '';
+    if (!isLocalResource(source)) {
+      return;
+    }
+    const normalized = normalizeSource(source);
+    if (!allowedScripts.has(normalized)) {
+      const warning = createUnexpectedSourceWarning({
+        tagName: node.tagName,
+        source,
+        allowedSources: allowedScripts
+      });
+      warnings.set(JSON.stringify(warning), warning);
+    }
+  });
+
+  return [...warnings.values()];
+};
+
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
