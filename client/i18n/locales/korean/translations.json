@@ -339,6 +339,7 @@
       "keyboard-shortcuts": "키보드 단축키 활성화"
     },
     "headings": {
+      "personal": "Personal",
       "account": "계정",
       "certs": "자격증",
       "legacy-certs": "구버전 자격증",
@@ -469,13 +470,16 @@
     },
     "completeness": {
       "heading": "프로필 {{percentage}}% 완료",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "이름 추가",
       "location": "위치 추가",
       "picture": "프로필 사진 업로드",
       "about": "소개 섹션 작성",
       "social": "소셜 링크 추가",
       "portfolio": "포트폴리오 프로젝트 추가",
-      "experience": "경력 추가"
+      "experience": "경력 추가",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -1027,6 +1031,10 @@
     "rsa-checkbox": "Read-Search-Ask 방법을 시도했습니다",
     "similar-questions-checkbox": "포럼에서 이미 답변된 유사 질문을 검색했습니다",
     "edit-my-profile": "내 프로필 편집",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} 편집기 내용입니다. 접근성 옵션은 Option+F1을 누르세요.",
     "editor-a11y-off-non-macos": "{{editorName}} 편집기 내용입니다. 접근성 옵션은 Alt+F1을 누르세요.",
     "editor-a11y-on-macos": "{{editorName}} 편집기 내용입니다. 접근성 모드가 “켜짐”으로 설정되어 있습니다. 비활성화하려면 Command+E를 누르거나 추가 옵션은 Option+F1을 누르세요.",
