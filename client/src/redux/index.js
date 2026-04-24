@@ -264,6 +264,33 @@ export const reducer = handleActions(
       ...state,
       isRandomCompletionThreshold: payload
     }),
+    [actionTypes.removeModuleChallenges]: (
+      state,
+      { payload: { removedChallengeIds } }
+    ) => {
+      const removedSet = new Set(removedChallengeIds);
+      const sessionUser = state.user.sessionUser;
+      if (!sessionUser) return state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: {
+            ...sessionUser,
+            completedChallenges: sessionUser.completedChallenges.filter(
+              c => !removedSet.has(c.id)
+            ),
+            savedChallenges: sessionUser.savedChallenges.filter(
+              c => !removedSet.has(c.id)
+            ),
+            partiallyCompletedChallenges:
+              sessionUser.partiallyCompletedChallenges.filter(
+                c => !removedSet.has(c.id)
+              )
+          }
+        }
+      };
+    },
     [actionTypes.resetUserData]: state => ({
       ...state,
       user: { ...state.user, sessionUser: null }

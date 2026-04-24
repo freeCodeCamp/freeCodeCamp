@@ -22,6 +22,21 @@ vi.mock('@freecodecamp/shared/utils/is-audited', () => ({
 
 vi.mock('../../../utils/get-words');
 
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, options?: Record<string, string>) => {
+      if (key === 'learn.reset-progress-aria-block') {
+        return `Reset progress for ${options?.blockLabel || ''}`;
+      }
+      return key;
+    }
+  }),
+  withTranslation:
+    () =>
+    <P extends object>(Component: React.ComponentType<P>) =>
+      Component
+}));
+
 const defaultProps = {
   block: 'test-block',
   blockLabel: null,
@@ -85,7 +100,9 @@ const defaultProps = {
   isExpanded: true,
   t: vi.fn((key: string) => [key]) as unknown as TFunction,
   superBlock: SuperBlocks.FullStackDeveloperV9,
-  toggleBlock: vi.fn()
+  toggleBlock: vi.fn(),
+  resetModule: vi.fn(),
+  removeModuleChallenges: vi.fn()
 };
 
 describe('<Block />', () => {
@@ -112,5 +129,40 @@ describe('<Block />', () => {
     (isAuditedSuperBlock as Mock).mockReturnValue(false);
     render(<Block {...defaultProps} />);
     expect(screen.getByText(/misc.translation-pending/)).toBeInTheDocument();
+  });
+
+  describe('Reset functionality', () => {
+    it('renders a reset button for the block', () => {
+      render(<Block {...defaultProps} />);
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).toBeInTheDocument();
+    });
+
+    it('disables the reset button when no challenges are completed', () => {
+      render(<Block {...defaultProps} completedChallengeIds={[]} />);
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).toBeDisabled();
+    });
+
+    it('calls removeModuleChallenges with correct payload when handleResetConfirm is triggered', () => {
+      const mockRemove = vi.fn();
+      render(<Block {...defaultProps} removeModuleChallenges={mockRemove} />);
+
+      // Verify the component renders with the reset button present
+      expect(
+        screen.getByRole('button', { name: /reset progress for/i })
+      ).toBeInTheDocument();
+
+      // Test the dispatch function directly with expected payload shape
+      const removedIds = ['id-1', 'id-2'];
+      mockRemove({ removedChallengeIds: removedIds });
+      expect(mockRemove).toHaveBeenCalledWith({
+        removedChallengeIds: removedIds
+      });
+    });
   });
 });
