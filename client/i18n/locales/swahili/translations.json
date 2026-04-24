@@ -29,6 +29,7 @@
     "sign-in": "Ingia",
     "sign-up-email-list": "Jisajili kwa barua pepe za kila wiki za Quincy",
     "sign-out": "Ondoka",
+    "catalog": "Catalog",
     "curriculum": "Mtaala",
     "contribute": "Changia",
     "podcast": "Podcast",
@@ -65,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Anzisha Upya",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "Weka Upya Hatua Hii",
     "help": "Msaada",
     "get-help": "Pata msaada",
@@ -116,6 +118,7 @@
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
     "share-on-threads": "Share on Threads",
+    "share-on-facebook": "Share on Facebook",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
     "more-ways-to-sign-in": "More ways to sign in",
@@ -336,6 +339,7 @@
       "keyboard-shortcuts": "Wezesha Njia za Mkato za Kibodi"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Vyeti",
       "legacy-certs": "Vyeti vya Legacy",
@@ -378,6 +382,10 @@
       "new": "Barua pepe Mpya",
       "confirm": "Thibitisha Barua pepe Mpya",
       "weekly": "Nitumie barua pepe ya kila wiki ya Quincy"
+    },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
     },
     "honesty": {
       "p1": "Kabla ya kudai cheti kilichothibitishwa, ni lazima ukubali Ahadi yetu ya Uaminifu ya Kiakademia, ambayo inasomeka:",
@@ -442,6 +450,7 @@
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
     "add-threads": "Share this certification on Threads",
+    "add-facebook": "Share this certification on Facebook",
     "experience": {
       "heading": "Experience",
       "share-experience": "Share your professional experience",
@@ -461,13 +470,16 @@
     },
     "completeness": {
       "heading": "Profile {{percentage}}% complete",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",
       "picture": "Upload a profile picture",
       "about": "Write an about section",
       "social": "Add a social link",
       "portfolio": "Add a portfolio project",
-      "experience": "Add your experience"
+      "experience": "Add your experience",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -530,6 +542,18 @@
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Ingia katika akaunti ili kuhifadhi maendeleo yako",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "Pakua suluhisho langu",
     "download-results": "Pakua matokeo yangu",
     "percent-complete": "Imekamilika {{percent}}%",
@@ -564,9 +588,9 @@
       "instructions": "Maagizo",
       "notes": "Vidokezo",
       "preview": "Onyesho",
-      "terminal": "Terminal",
       "editor": "Kihariri",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Kubonyeza tab kutaingiza herufi ya tab",
@@ -860,11 +884,11 @@
     "current-initiatives-2": "Creating English and math curricula",
     "current-initiatives-3": "Translating our curriculum and tutorials into 32 languages",
     "current-initiatives-4": "Creating a free accredited computer science bachelor's degree",
-    "community-achivements-title": "Our Community Achievements This Year:",
-    "community-achivements-1": "Published <0>193</0> full-length courses on YouTube.",
-    "community-achivements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
-    "community-achivements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
-    "community-achivements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
+    "community-achievements-title": "Our Community Achievements This Year:",
+    "community-achievements-1": "Published <0>193</0> full-length courses on YouTube.",
+    "community-achievements-2": "Published <0>850</0> text-based coding tutorials and <0>5</0> free books through freeCodeCamp Press.",
+    "community-achievements-3": "Merged <0>2,455</0> code contributions into our open source repositories on GitHub",
+    "community-achievements-4": "Translated <0>1.5</0> million words to make our curriculum and tutorials more accessible to speakers of many world languages",
     "as-you-see": "As you can see, we're getting things done. So you can rest assured that we'll put your donations to good use.",
     "get-benefits": "Get the benefits and the knowledge that you’re helping our charity change education for the better. Become a supporter today.",
     "modal-benefits-title": "Support us",
@@ -896,8 +920,8 @@
   "search": {
     "label": "Tafuta",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "Tazama matokeo yote ya {{searchQuery}}",
     "try": "Unatafuta kitu? Jaribu upau wa kutafutia kwenye ukurasa huu.",
@@ -913,6 +937,7 @@
     "unsubscribed": "Umefanikiwa kujiondoa",
     "keep-coding": "Chochote unachoendelea nacho, endelea kuandika msimbo!",
     "email-signup": "Jisajili kwa Barua Pepe",
+    "email-signup-not-signed-in": "Sign in to adjust your newsletter preferences.",
     "brand-new-account": "Karibu kwenye akaunti yako mpya kabisa ya freeCodeCamp. Tuanze.",
     "duplicate-account-warning": "Ikiwa ulitaka kuingia katika akaunti iliyopo badala ya kufungua akaunti hii, <0>bofya hapa ili kufuta akaunti hii</0> na ujaribu anwani nyingine ya barua pepe.",
     "quincy": "- Quincy Larson, mwalimu aliyeanzisha freeCodeCamp.org",
@@ -943,6 +968,14 @@
     "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
     "or": "OR"
   },
+  "mobile-app-modal": {
+    "heading": "We see you are on mobile!",
+    "body": "This course is available in our app for a better experience.",
+    "ios": "Download on the App Store",
+    "android": "Get it on Google Play",
+    "open-app": "Open in App",
+    "do-not-show": "Do not show me again"
+  },
   "icons": {
     "gold-cup": "Kombe la dhahabu",
     "avatar": "Avatar Chaguomsingi",
@@ -970,6 +1003,7 @@
     "github": "Kiungo cha GitHub cha {{username}}",
     "website": "Kiungo cha tovuti cha {{username}}",
     "twitter": "Link to {{username}}'s X",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Nenda kwenye ukurasa wa kwanza",
@@ -997,6 +1031,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
@@ -1004,6 +1042,10 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
     "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
@@ -1024,6 +1066,7 @@
     "updated-themes": "Tumesasisha mandhari yako",
     "keyboard-shortcut-updated": "Tumesasisha mipangilio yako ya mikato ya kibodi",
     "subscribe-to-quincy-updated": "Tumesasisha usajili wako kwa barua pepe ya Quincy",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "Tumesasisha portfolio yako",
     "experience-updated": "We have updated your experience",
     "email-invalid": "Umbizo la barua pepe si sahihi",
@@ -1279,12 +1322,11 @@
       "introduction-to-algorithms-and-data-structures": "Introduction to Algorithms and Data Structures",
       "learn-rag-mcp-fundamentals": "Learn RAG and MCP Fundamentals",
       "introduction-to-precalculus": "Introduction to Precalculus",
-      "learn-prompting-fundamentals": "Learn Prompting Fundamentals",
       "learn-oop-with-python": "Learn OOP with Python",
-      "a2-english-for-developers": "A2 English for Developers",
+      "a2-english-for-developers": "A2 English for Developers (Beta)",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
-      "b1-english-for-developers": "B1 English for Developers",
-      "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "b1-english-for-developers": "B1 English for Developers (Beta)",
+      "b1-english-for-developers-cert": "B1 English for Developers Certification (Beta)",
       "responsive-web-design-v9": "Responsive Web Design",
       "responsive-web-design-v9-cert": "Responsive Web Design Certification",
       "javascript-v9": "JavaScript",
@@ -1490,6 +1532,7 @@
         "intermediate": "Intermediate",
         "advanced": "Advanced"
       },
+      "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} hours",
       "no-results": "No courses found. Try adjusting your filters to see more results.",
       "topic": {

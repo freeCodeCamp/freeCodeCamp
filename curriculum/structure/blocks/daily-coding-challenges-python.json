@@ -984,6 +984,78 @@
     {
       "id": "69b5b2be76ec8135a7fbe974",
       "title": "Challenge 245: Spiral Matrix"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a03",
+      "title": "Challenge 246: Name Initials"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a04",
+      "title": "Challenge 247: Last Letter"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a05",
+      "title": "Challenge 248: Sorted Array Swap"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a06",
+      "title": "Challenge 249: String Math"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a07",
+      "title": "Challenge 250: Hidden Key"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a08",
+      "title": "Challenge 251: Array Sum Finder"
+    },
+    {
+      "id": "69bc6cb30c1d112a2e110a09",
+      "title": "Challenge 252: Unique Stair Climber"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8b7",
+      "title": "Challenge 253: Acronym Finder"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8b8",
+      "title": "Challenge 254: Odd Words"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8b9",
+      "title": "Challenge 255: Earth Day Cleanup Crew"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8ba",
+      "title": "Challenge 256: Closest Time Direction"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8bb",
+      "title": "Challenge 257: Word Compressor"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8bc",
+      "title": "Challenge 258: Word Decompressor"
+    },
+    {
+      "id": "69c5f3d787b1725d5f00c8bd",
+      "title": "Challenge 259: FizzBuzz Explosion"
+    },
+    {
+      "id": "69c6ff713a52713463aa7926",
+      "title": "Challenge 260: Word Score"
+    },
+    {
+      "id": "69c6ff713a52713463aa7927",
+      "title": "Challenge 261: Number Words"
+    },
+    {
+      "id": "69c6ff713a52713463aa7928",
+      "title": "Challenge 262: URL Query Parser"
+    },
+    {
+      "id": "69c6ff713a52713463aa7929",
+      "title": "Challenge 263: Binary Crossword"
     }
   ]
 }

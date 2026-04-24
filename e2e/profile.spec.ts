@@ -9,6 +9,17 @@ const certs = [
   }
 ];
 
+const betaCerts = [
+  {
+    name: 'A2 English for Developers',
+    url: '/certification/certifieduser/a2-english-for-developers'
+  },
+  {
+    name: 'B1 English for Developers',
+    url: '/certification/certifieduser/b1-english-for-developers'
+  }
+];
+
 const legacyCerts = [
   {
     name: 'Legacy Responsive Web Design V8',
@@ -134,6 +145,16 @@ test.describe('Profile component', () => {
         await expect(link).toHaveAttribute('href', cert.url);
       }
 
+      for (const cert of betaCerts) {
+        const link = page
+          .getByRole('link', {
+            name: `View ${cert.name} Certification (Beta)`
+          })
+          .first();
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAttribute('href', cert.url);
+      }
+
       for (const cert of legacyCerts) {
         const link = page
           .getByRole('link', {
@@ -145,11 +166,15 @@ test.describe('Profile component', () => {
       }
     });
 
-    test('should not show portfolio when empty', async ({ page }) => {
-      // @certifieduser doesn't have portfolio information
+    test('should show portfolio section with add button when empty', async ({
+      page
+    }) => {
+      // @certifieduser doesn't have portfolio information, but session users
+      // always see the section so they can add projects
+      await expect(page.getByText(translations.profile.projects)).toBeVisible();
       await expect(
-        page.getByText(translations.profile.projects)
-      ).not.toBeVisible();
+        page.getByRole('button', { name: translations.aria['add-portfolio'] })
+      ).toBeVisible();
     });
 
     test('displays the timeline correctly', async ({ page }) => {

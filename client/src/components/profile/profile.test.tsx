@@ -107,10 +107,24 @@ describe('<Profile/>', () => {
     expect(reportButton).toHaveAttribute('href', '/user/string/report-user');
   });
 
-  it('renders correctly', () => {
+  it('renders profile heading and social links', () => {
     // @ts-expect-error - quick hack to mollify TS.
-    const { container } = renderWithRedux(<Profile {...notMyProfileProps} />);
+    renderWithRedux(<Profile {...notMyProfileProps} />);
 
-    expect(container).toMatchSnapshot();
+    expect(
+      screen.getByRole('heading', { name: '@string' })
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText('aria.linkedin')).toHaveAttribute(
+      'href',
+      'string'
+    );
+    expect(screen.getByLabelText('aria.github')).toHaveAttribute(
+      'href',
+      'string'
+    );
+    expect(screen.getByLabelText('aria.website')).toHaveAttribute(
+      'href',
+      'string'
+    );
   });
 });

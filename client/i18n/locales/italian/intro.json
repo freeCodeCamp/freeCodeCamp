@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front-End Development Libraries V8",
+    "title": "Librerie di Sviluppo Front-End V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front-end libraries in the industry.",
-      "In the Front-End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "Ora che hai acquisito familiarità con HTML, CSS e JavaScript, fai un salto di qualità e apprendi le librerie front-end più popolari del settore.",
+      "Nella Certificazione in Librerie di Sviluppo Front-End, impara a stilizzare i tuoi siti rapidamente con Bootstrap. Scopri inoltre come aggiungere logica ai tuoi fogli di stile CSS ed estendine le potenzialità con Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front-end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap è un framework front-end utilizzato per progettare pagine web e applicazioni responsive. Adotta un approccio mobile-first nello sviluppo web e include stili e classi CSS predefiniti, oltre a diverse funzionalità JavaScript.",
           "In questo corso, imparerai come costruire siti web responsivi con Bootstrap, e a utilizzare le sue classi per stilizzare pulsanti, immagini, moduli, navigazione e altri elementi comuni."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Front-End Development Libraries Projects",
+        "title": "Progetti della Certificazione Front-End Development Libraries",
         "intro": [
-          "It's time to put your front-end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front-End Development Libraries certification."
+          "È il momento di mettere alla prova le tue competenze con le librerie di sviluppo front-end. Utilizza Bootstrap, jQuery, Sass, React e Redux per realizzare 5 progetti che testeranno tutto ciò che hai appreso finora.",
+          "Completa tutti i 5 progetti e ottieni la certificazione Front-End Development Libraries."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back-End Development and APIs V8",
+    "title": "Sviluppo Back-End e API V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the front-end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back-end, or server, to build entire web applications.",
+      "Fino a questo momento, l'utilizzo di JavaScript è stato limitato al front-end per aggiungere interattività alle pagine, risolvere sfide algoritmiche o realizzare SPA. È importante però considerare che JavaScript può essere impiegato anche nel back-end, ovvero lato server, per sviluppare intere applicazioni web.",
       "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che sono piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
-      "In the Back-End Development and APIs Certification, you'll learn how to write back-end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Nella Certificazione in Sviluppo Back-End e API, impara a scrivere applicazioni back-end con Node.js e npm. Sviluppa inoltre applicazioni web con il framework Express e realizza un microservizio 'People Finder' utilizzando MongoDB e la libreria Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -714,7 +714,7 @@
       "basic-node-and-express": {
         "title": "Node e Express Base",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write back-end (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "Node.js è un runtime JavaScript che permette di scrivere programmi back-end (lato server) in JavaScript. Node.js include una serie di moduli integrati (piccoli programmi indipendenti) progettati per questo scopo. Tra i moduli principali figurano HTTP, che opera come un server, e File System, un modulo dedicato alla lettura e alla modifica dei file.",
           "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che sono collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
           "Express è un framework per applicazioni web leggero ed è uno dei pacchetti più popolari su npm. Express rende molto più facile creare un server e gestire l'instradamento (routing) per l'applicazione, che gestisce cose come dirigere le persone alla pagina corretta quando visitano un determinato endpoint come <pre>/blog</pre>.",
           "In questo corso, imparerai le basi di Node e Express, incluso come creare un server, servire file diversi, e gestire richieste diverse dal browser."
@@ -732,7 +732,7 @@
         "title": "Back-End Development and APIs Projects",
         "intro": [
           "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back-End Development and APIs Certification, too."
+          "Al termine di questo percorso, avrai a disposizione 5 fantastici microservizi API da mostrare ad amici, familiari e potenziali datori di lavoro. Inoltre, otterrai la tua nuova Certificazione in Sviluppo Back-End e API."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "Ora è il momento di approfondire Node.js e Express.js costruendo un'applicazione di chat con un sistema di accesso.",
           "Per implementare il sistema di accesso in modo sicuro, è necessario conoscere l'autenticazione. Questo è l'atto di verificare l'identità di una persona o di un processo.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front-end, and web sockets for real-time communication between the clients and server."
+          "In questo corso, impara a utilizzare Passport per gestire l'autenticazione, Pug per creare template riutilizzabili con cui sviluppare rapidamente il front-end e i web socket per la comunicazione in tempo reale tra client e server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Progetti di Garanzia di Qualità",
         "intro": [
-          "Now that you're well versed in both the front-end and back-end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Ora che hai acquisito una solida padronanza sia del front-end che del back-end, è il momento di applicare tutte le competenze e i concetti appresi finora. Sviluppa 5 diverse applicazioni web e scrivi dei test per ognuna di esse, così da garantirne il corretto funzionamento e la gestione dei diversi casi limite.",
           "Dopo aver completato questi progetti di Garanzia di Qualità, avrai altri 5 progetti al tuo attivo e una nuova certificazione da mostrare nel tuo portfolio."
         ]
       }
@@ -944,48 +944,48 @@
   "learn-python-for-beginners": {
     "title": "Learn Python for Beginners",
     "summary": [
-      "Learn the fundamentals of Python programming from the ground up by practicing foundational concepts and building small projects."
+      "Apprendi i fondamenti della programmazione Python partendo da zero, esercitandoti sui concetti base e realizzando piccoli progetti."
     ],
     "intro": [
-      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
-      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
+      "Python è oggi uno dei linguaggi di programmazione più diffusi al mondo. Si distingue per la facilità di apprendimento, la leggibilità del codice e la notevole versatilità.",
+      "In questo corso completo, apprenderai i fondamenti della programmazione Python partendo da zero. Inizierai con i concetti base come variabili e tipi di dati, proseguirai attraverso il flusso di controllo e le funzioni, per poi realizzare progetti pratici utili a consolidare le competenze acquisite."
     ],
     "note": "",
     "blocks": {
       "python-setup-first-steps": {
         "title": "Python Setup & First Steps",
         "intro": [
-          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+          "In questi video, il noto istruttore di programmazione Mike Dane ti introdurrà a Python e ti mostrerà come configurare il tuo ambiente di sviluppo locale."
         ]
       },
       "core-primitives-in-python": {
         "title": "Core Primitives in Python",
         "intro": [
-          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
+          "In questi video, scopri le variabili, i tipi di dati, le stringhe, i numeri e come ricevere input dall'utente."
         ]
       },
       "small-python-projects": {
         "title": "Small Python Projects",
         "intro": [
-          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
+          "In questi video, metti in pratica quanto appreso finora realizzando una semplice app calcolatrice e un gioco 'Mad Libs'."
         ]
       },
       "lists-and-tuples": {
         "title": "Lists and Tuples",
         "intro": [
-          "In these videos, you will learn about lists, tuples and common operations."
+          "In questi video, esplora le liste, le tuple e le operazioni comuni su queste strutture dati."
         ]
       },
       "control-flow-and-functions-in-python": {
         "title": "Control Flow and Functions",
         "intro": [
-          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
+          "In questi video, impara a controllare il flusso dei tuoi programmi con le istruzioni if. Scopri inoltre come scrivere codice riutilizzabile grazie alle funzioni."
         ]
       },
       "dictionaries-and-loops": {
-        "title": "Dictionaries and Loops",
+        "title": "Dizionari e Cicli",
         "intro": [
-          "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
+          "In questi video, impara a lavorare con i dizionari e con i diversi tipi di cicli, inclusi i cicli while e for."
         ]
       },
       "error-handling-files-and-modules-in-python": {
@@ -1083,7 +1083,7 @@
     ],
     "intro": [
       "RAG stands for Retrieval-Augmented Generation. MCP stands for Model Context Protocol. These are powerful frameworks for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
-      "In this course, you'll learn the fundamentals of RAG and MCP and how to implement them in your own projects. You'll explore the components of RAG and MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG and MCP work and how to use them to build intelligent agents."
+      "In questo corso, apprendi i fondamenti di RAG e MCP e scopri come implementarli nei tuoi progetti. Esplora i componenti chiave di RAG e MCP, tra cui il recupero delle informazioni (retrieval), la generazione, la memoria, il contesto e la pianificazione. Al termine del percorso, avrai acquisito una solida comprensione del funzionamento di RAG e MCP e di come utilizzarli per costruire agenti intelligenti."
     ],
     "note": "",
     "blocks": {
@@ -1408,36 +1408,6 @@
       "quiz-git": {
         "title": "Git Quiz",
         "intro": ["Test what you've learned on Git with this quiz."]
-      }
-    }
-  },
-  "learn-prompting-fundamentals": {
-    "title": "Learn Prompting Fundamentals",
-    "summary": [
-      "Learn the fundamentals of writing good prompts in this video course."
-    ],
-    "intro": [
-      "This course will guide you through the essentials of AI and language models, teach you core prompting strategies, and show best practices for practical use."
-    ],
-    "note": "",
-    "blocks": {
-      "learn-prompting-fundamentals-foundations-of-ai-and-language-models": {
-        "title": "Foundations of AI & Language Models",
-        "intro": [
-          "Explore the basics of AI, machine learning, linguistics, and language models to build a solid foundation for effective prompting."
-        ]
-      },
-      "learn-prompting-fundamentals-core-concepts": {
-        "title": "Core Concepts",
-        "intro": [
-          "Learn key prompting techniques, and understand how to use ChatGPT effectively."
-        ]
-      },
-      "learn-prompting-fundamentals-practical-application-and-best-practices": {
-        "title": "Practical Application & Best Practices",
-        "intro": [
-          "Discover best practices for effective prompts, explore vectors and text embeddings, and review key takeaways."
-        ]
       }
     }
   },
@@ -3868,8 +3838,8 @@
           "In this first course, you'll learn common expressions for situations you may encounter on your first day at work. You'll learn about introductions, getting to know people, asking for lunch recommendations, and getting an access card from security."
         ]
       },
-      "en-a2-quiz-greetings-first-day-office": {
-        "title": "First Day at The Office Greetings Quiz",
+      "en-a2-quiz-first-day-conversations-at-work": {
+        "title": "First Day Conversations at Work Quiz",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -3878,8 +3848,8 @@
           "In this course, you'll learn how to give a personal introduction. You'll also learn how to state your profession, and share your goals in group meetings."
         ]
       },
-      "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Online Team Introductions Quiz",
+      "en-a2-quiz-meeting-introductions-at-work": {
+        "title": "Meeting Introductions at Work Quiz",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -3888,7 +3858,7 @@
           "In this course, you'll learn how to start a conversation in casual settings. You'll also learn how to talk about your hobbies and personality traits. You'll even learn how to ask about places around the town."
         ]
       },
-      "en-a2-quiz-conversation-starters-break-room": {
+      "en-a2-quiz-conversation-starters-at-work": {
         "title": "Break Room Conversations Quiz",
         "intro": ["", ""]
       },
@@ -3898,7 +3868,7 @@
           "In this course, you'll learn how to talk about your workday and the tasks that you perform in the workplace and how to share them with others. It mainly focuses on the structures used for describing your activities and task-related vocabulary."
         ]
       },
-      "en-a2-quiz-talk-about-typical-workday-tasks": {
+      "en-a2-quiz-work-routines-and-tasks": {
         "title": "Talking About Your Workday Quiz",
         "intro": ["", ""]
       },
@@ -3908,7 +3878,7 @@
           "In this course, you'll learn how to talk about details of your routine and share them with someone else. It mainly focuses on the structures used for declaring routine actions and related vocabulary."
         ]
       },
-      "en-a2-quiz-discuss-morning-evening-routine": {
+      "en-a2-quiz-daily-life-routines": {
         "title": "Daily Routines at Work Quiz",
         "intro": ["", ""]
       },
@@ -3918,7 +3888,7 @@
           "In this course, you'll learn how to talk about the projects that you are involved in and how to inform others of what you are doing in these projects. It mainly focuses on the structures used for informing it and on the related vocabulary."
         ]
       },
-      "en-a2-quiz-describe-current-project": {
+      "en-a2-quiz-what-are-you-working-on": {
         "title": "Describing Your Current Project Quiz",
         "intro": ["", ""]
       },
@@ -3928,7 +3898,7 @@
           "In this course, you'll learn how to ask about another person's educational and professional backgrounds and you'll learn how to share information about your background as well."
         ]
       },
-      "en-a2-quiz-educational-professional-background": {
+      "en-a2-quiz-educational-and-professional-background": {
         "title": "Educational and Professional Background Quiz",
         "intro": ["", ""]
       },
@@ -3938,7 +3908,7 @@
           "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
         ]
       },
-      "en-a2-quiz-talk-about-hobbies-interests": {
+      "en-a2-quiz-hobbies-and-interests": {
         "title": "Talking About Hobbies and Interests Quiz",
         "intro": ["", ""]
       },
@@ -3958,7 +3928,7 @@
           "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
         ]
       },
-      "en-a2-quiz-preferences-motivations": {
+      "en-a2-quiz-preferences-and-motivations": {
         "title": "Preferences and Motivations Quiz",
         "intro": ["", ""]
       },
@@ -3968,7 +3938,7 @@
           "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
         ]
       },
-      "en-a2-quiz-popular-technology-trends": {
+      "en-a2-quiz-sharing-opinions": {
         "title": "Technology Trends Quiz",
         "intro": ["", ""]
       },
@@ -3978,7 +3948,7 @@
           "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
         ]
       },
-      "en-a2-quiz-clarify-information-interactions": {
+      "en-a2-quiz-getting-the-details-right": {
         "title": "Clarifying Information Quiz",
         "intro": ["", ""]
       },
@@ -3998,7 +3968,7 @@
           "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
         ]
       },
-      "en-a2-quiz-code-related-concepts-terms": {
+      "en-a2-quiz-key-programming-terms": {
         "title": "Code Concepts and Terms Quiz",
         "intro": ["", ""]
       },
@@ -4008,7 +3978,7 @@
           "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
         ]
       },
-      "en-a2-quiz-tech-trends-updates": {
+      "en-a2-quiz-discussing-new-ideas": {
         "title": "Tech Updates and Trends Quiz",
         "intro": ["", ""]
       },
@@ -4018,7 +3988,7 @@
           "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
         ]
       },
-      "en-a2-quiz-help-coworker-github-troubleshooting": {
+      "en-a2-quiz-discussing-problems-and-solutions": {
         "title": "Helping a Coworker on GitHub Quiz",
         "intro": ["", ""]
       },
@@ -4028,7 +3998,7 @@
           "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
         ]
       },
-      "en-a2-quiz-share-progress-weekly-meeting": {
+      "en-a2-quiz-collaborating-in-meetings": {
         "title": "Weekly Meeting Progress Quiz",
         "intro": ["", ""]
       },
@@ -4038,7 +4008,7 @@
           "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
         ]
       },
-      "en-a2-quiz-ask-for-code-clarification": {
+      "en-a2-quiz-understanding-problems": {
         "title": "Asking for Code Clarification Quiz",
         "intro": ["", ""]
       },
@@ -4068,7 +4038,7 @@
           "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
         ]
       },
-      "en-a2-quiz-analyze-code-documentation": {
+      "en-a2-quiz-analyzing-documentation": {
         "title": "Analyzing Code Documentation Quiz",
         "intro": ["", ""]
       },
@@ -4078,7 +4048,7 @@
           "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
         ]
       },
-      "en-a2-quiz-share-progress-accomplishments": {
+      "en-a2-quiz-discussing-progress-and-results": {
         "title": "Sharing Progress and Achievements Quiz",
         "intro": ["", ""]
       },
@@ -4108,7 +4078,7 @@
           "In this course, you will see ways of offering some help in terms of technical specifics to another person."
         ]
       },
-      "en-a2-quiz-offer-technical-support-guidance": {
+      "en-a2-quiz-following-best-practices": {
         "title": "Offering Technical Support Quiz",
         "intro": ["", ""]
       },
@@ -4118,7 +4088,7 @@
           "This course will show you how to ask for assistance from a coworker when you need it."
         ]
       },
-      "en-a2-quiz-request-receive-guidance": {
+      "en-a2-quiz-asking-for-help": {
         "title": "Requesting and Receiving Guidance Quiz",
         "intro": ["", ""]
       },
@@ -4128,7 +4098,7 @@
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
       },
-      "en-a2-quiz-provide-explanations-helping-others": {
+      "en-a2-quiz-giving-adivice-and-suggestions": {
         "title": "Explaining Things to Others Quiz",
         "intro": ["", ""]
       },
@@ -4829,6 +4799,19 @@
           "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
+      "lab-cargo-manifest-validator": {
+        "title": "Build a Cargo Manifest Validator",
+        "intro": [
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
+        ]
+      },
       "lecture-working-with-json": {
         "title": "Working with JSON",
         "intro": [
@@ -4877,6 +4860,12 @@
           "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
@@ -4887,6 +4876,13 @@
         "title": "Build a Space Mission Roster",
         "intro": [
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -5076,6 +5072,13 @@
         "title": "Implement an Element Skipper",
         "intro": [
           "In this lab you will create a function that skips elements in an array based on a specified step value."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -5617,10 +5620,23 @@
           "Learn about common data structures and how to work with them in JavaScript."
         ]
       },
+      "workshop-linked-list-js": {
+        "title": "Build a Linked List",
+        "intro": [
+          "In the previous lessons, you learned about some common data structures.",
+          "In this workshop, you will build a linked list using JavaScript."
+        ]
+      },
       "lab-linked-list-operations": {
         "title": "Implement Linked List Operations",
         "intro": [
           "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
+      "lab-implement-a-stack": {
+        "title": "Implement a Stack",
+        "intro": [
+          "In this lab, you will implement a stack data structure using functions."
         ]
       },
       "lab-implement-a-queue": {
@@ -5647,6 +5663,20 @@
         "intro": [
           "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
+      "workshop-binary-search-js": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "workshop-merge-sort-js": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
         ]
       },
       "lab-bubble-sort-algorithm": {
@@ -5691,10 +5721,23 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "workshop-shortest-path-algorithm-js": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "The shortest path algorithm finds the minimum distance between nodes in a weighted graph.",
+          "In this workshop, you'll implement the shortest path algorithm in JavaScript and return both the shortest distances and the paths taken."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter-js": {
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "workshop-breadth-first-search-js": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the breadth-first search algorithm to generate all valid combinations of parentheses."
         ]
       },
       "lab-depth-first-search-js": {
@@ -5716,10 +5759,23 @@
           "Before you are quizzed on graphs and trees, you should review what you've learned."
         ]
       },
+      "quiz-graph-and-trees-js": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Graphs and Trees Quiz",
+          "Test what you've learned about graphs and trees with this quiz."
+        ]
+      },
       "lecture-understanding-dynamic-programming-js": {
         "title": "Understanding Dynamic Programming",
         "intro": [
           "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "lab-nth-fibonacci-number-js": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [
+          "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
       "review-dynamic-programming-js": {
@@ -6129,6 +6185,10 @@
           "In these lessons, you will learn about basic data visualization concepts."
         ]
       },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
+      },
       "lab-scatterplot-graph": {
         "title": "Build a Scatterplot Graph",
         "intro": [
@@ -6141,10 +6201,34 @@
           "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
+      "workshop-type-safe-user-profile": {
+        "title": "Build a Type Safe User Profile",
+        "intro": [
+          "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
+        ]
+      },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
+        ]
+      },
       "lecture-understanding-type-composition": {
         "title": "Understanding Type Composition",
         "intro": [
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
+        ]
+      },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6153,10 +6237,34 @@
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
         ]
       },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
+        ]
+      },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
         "intro": [
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
       "review-typescript": {
@@ -7094,6 +7202,12 @@
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
         ]
       },
+      "lecture-working-with-express": {
+        "title": "Working with Express",
+        "intro": [
+          "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
@@ -7175,6 +7289,13 @@
         "title": "Working with HTML Tools",
         "intro": [
           "In these lectures, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
+        ]
+      },
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       },
       "review-html-tables-and-forms": {
@@ -7459,6 +7580,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
         "intro": ["", ""]
       }
     }
@@ -8560,7 +8685,7 @@
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
       "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
-      "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
+      "zh-a1-chapter-numbers-and-personal-information": "Numbers and Personal Information",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
     },
     "modules": {
@@ -8568,8 +8693,8 @@
       "zh-a1-module-initials-and-finals": "Initials and Finals",
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
       "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-introducing-others": "Introducing Others",
-      "zh-a1-module-getting-to-know-the-team": "Getting to Know the Team",
+      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
     },
@@ -8754,6 +8879,38 @@
       },
       "zh-a1-practice-pinyin": {
         "title": "Pinyin Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-0-to-10": {
+        "title": "Numbers 0 to 10",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-0-to-10": {
+        "title": "Numbers 0 to 10 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-11-to-19": {
+        "title": "Numbers 11 to 19",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-11-to-19": {
+        "title": "Numbers 11 to 19 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-20-to-99": {
+        "title": "Numbers 20 to 99",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-20-to-99": {
+        "title": "Numbers 20 to 99 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-numbers-below-100": {
+        "title": "Numbers below 100 Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-numbers-below-100": {
+        "title": "Numbers below 100 Quiz",
         "intro": ["", ""]
       }
     }
@@ -8978,24 +9135,6 @@
         "intro": [
           "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
           "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
-        ]
-      }
-    }
-  },
-  "lab-survey-form": {
-    "title": "Build a Survey Form",
-    "summary": [
-      "Create a complete survey form while practicing HTML structure and accessible form controls."
-    ],
-    "intro": [
-      "Build a complete survey form with semantic HTML and accessible inputs."
-    ],
-    "blocks": {
-      "lab-survey-form": {
-        "title": "Build a Survey Form",
-        "intro": [
-          "In this lab, you'll review HTML forms by creating a survey form.",
-          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
         ]
       }
     }
@@ -9507,6 +9646,13 @@
           "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
         ]
       },
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      },
       "review-css-flexbox": {
         "title": "CSS Flexbox Review",
         "intro": [
@@ -9517,22 +9663,6 @@
       "quiz-css-flexbox": {
         "title": "CSS Flexbox Quiz",
         "intro": ["Test what you've learned on CSS flexbox with this quiz."]
-      }
-    }
-  },
-  "lab-page-of-playing-cards": {
-    "title": "Build a Page of Playing Cards",
-    "summary": [
-      "Create a multi-card layout to practice flexible CSS composition."
-    ],
-    "intro": ["Build a card-based layout and practice reusable styling."],
-    "blocks": {
-      "lab-page-of-playing-cards": {
-        "title": "Build a Page of Playing Cards",
-        "intro": [
-          "In this lab, you'll use flexbox to create a webpage of playing cards.",
-          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
-        ]
       }
     }
   },
@@ -9674,6 +9804,13 @@
           "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
         ]
       },
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      },
       "review-css-attribute-selectors": {
         "title": "CSS Attribute Selectors Review",
         "intro": [
@@ -9685,20 +9822,6 @@
         "title": "CSS Attribute Selectors Quiz",
         "intro": [
           "Test your knowledge of CSS attribute selectors with this quiz."
-        ]
-      }
-    }
-  },
-  "lab-book-inventory-app": {
-    "title": "Build a Book Inventory App",
-    "summary": ["Build a structured layout for managing a book inventory."],
-    "intro": ["Create a structured UI for a book inventory layout."],
-    "blocks": {
-      "lab-book-inventory-app": {
-        "title": "Build a Book Inventory App",
-        "intro": [
-          "In this lab, you'll create a book inventory app.",
-          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
         ]
       }
     }
@@ -9723,6 +9846,13 @@
           "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
         ]
       },
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
+        ]
+      },
       "review-responsive-web-design": {
         "title": "Responsive Web Design Review",
         "intro": [
@@ -9734,24 +9864,6 @@
         "title": "Responsive Web Design Quiz",
         "intro": [
           "Test what you've learned about making your webpages responsive with this quiz."
-        ]
-      }
-    }
-  },
-  "lab-technical-documentation-page": {
-    "title": "Build a Technical Documentation Page",
-    "summary": [
-      "Create a documentation page and practice responsive structure and layout."
-    ],
-    "intro": [
-      "Build a documentation page with clear structure and navigation."
-    ],
-    "blocks": {
-      "lab-technical-documentation-page": {
-        "title": "Build a Technical Documentation Page",
-        "intro": [
-          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
-          "You'll also practice media queries to create a responsive design."
         ]
       }
     }
@@ -9824,6 +9936,12 @@
           "In this lesson, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
         ]
       },
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
+      },
       "review-css-grid": {
         "title": "CSS Grid Review",
         "intro": [
@@ -9834,23 +9952,6 @@
       "quiz-css-grid": {
         "title": "CSS Grid Quiz",
         "intro": ["Test your knowledge of CSS Grid with this quiz."]
-      }
-    }
-  },
-  "lab-product-landing-page": {
-    "title": "Build a Product Landing Page",
-    "summary": [
-      "Build a complete landing page and apply layout, typography, and responsive design."
-    ],
-    "intro": [
-      "Create a product landing page with cohesive layout and styling."
-    ],
-    "blocks": {
-      "lab-product-landing-page": {
-        "title": "Build a Product Landing Page",
-        "intro": [
-          "In this project, you'll build a product landing page to market a product of your choice."
-        ]
       }
     }
   },

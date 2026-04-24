@@ -98,6 +98,7 @@ button .block-header-button-text {
   justify-content: space-between;
   font-weight: normal;
   gap: 10px;
+  color: var(--primary-text);
 }
 
 .super-block-accordion .module-button-left,

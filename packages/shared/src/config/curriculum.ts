@@ -42,7 +42,6 @@ export enum SuperBlocks {
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
   HtmlFormsAndTables = 'html-forms-and-tables',
-  LabSurveyForm = 'lab-survey-form',
   HtmlAndAccessibility = 'html-and-accessibility',
   ComputerBasics = 'computer-basics',
   BasicCss = 'basic-css',
@@ -53,17 +52,13 @@ export enum SuperBlocks {
   StylingForms = 'styling-forms',
   CssBoxModel = 'css-box-model',
   CssFlexbox = 'css-flexbox',
-  LabPageOfPlayingCards = 'lab-page-of-playing-cards',
   CssTypography = 'css-typography',
   CssAndAccessibility = 'css-and-accessibility',
   CssPositioning = 'css-positioning',
   AttributeSelectors = 'attribute-selectors',
-  LabBookInventoryApp = 'lab-book-inventory-app',
   ResponsiveDesign = 'responsive-design',
-  LabTechnicalDocumentationPage = 'lab-technical-documentation-page',
   CssVariables = 'css-variables',
   CssGrid = 'css-grid',
-  LabProductLandingPage = 'lab-product-landing-page',
   CssAnimations = 'css-animations',
   LearnPythonForBeginners = 'learn-python-for-beginners',
   IntroductionToAlgorithmsAndDataStructures = 'introduction-to-algorithms-and-data-structures',
@@ -164,7 +159,8 @@ const defaultStageOrder = [
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
-  SuperBlockStage.Next
+  SuperBlockStage.Next,
+  SuperBlockStage.Catalog
 ];
 
 export function getStageOrder({
@@ -173,7 +169,7 @@ export function getStageOrder({
   const stageOrder = [...defaultStageOrder];
 
   if (showUpcomingChanges) {
-    stageOrder.push(SuperBlockStage.Upcoming, SuperBlockStage.Catalog);
+    stageOrder.push(SuperBlockStage.Upcoming);
   }
   return stageOrder;
 }
@@ -233,7 +229,6 @@ export const superBlockStages: StageMap = {
     SuperBlocks.HtmlFormsAndTables,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.LabSurveyForm,
     SuperBlocks.HtmlAndAccessibility,
     SuperBlocks.ComputerBasics,
     SuperBlocks.BasicCss,
@@ -244,17 +239,13 @@ export const superBlockStages: StageMap = {
     SuperBlocks.StylingForms,
     SuperBlocks.CssBoxModel,
     SuperBlocks.CssFlexbox,
-    SuperBlocks.LabPageOfPlayingCards,
     SuperBlocks.CssTypography,
     SuperBlocks.CssAndAccessibility,
     SuperBlocks.CssPositioning,
     SuperBlocks.AttributeSelectors,
-    SuperBlocks.LabBookInventoryApp,
     SuperBlocks.ResponsiveDesign,
-    SuperBlocks.LabTechnicalDocumentationPage,
     SuperBlocks.CssVariables,
     SuperBlocks.CssGrid,
-    SuperBlocks.LabProductLandingPage,
     SuperBlocks.CssAnimations,
     SuperBlocks.LearnPythonForBeginners,
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
@@ -318,26 +309,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Italian]: [],
   [Languages.Portuguese]: [],
   [Languages.Ukrainian]: [],
-  [Languages.Japanese]: [
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
+  [Languages.Japanese]: [],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
     SuperBlocks.QualityAssurance,
@@ -403,43 +375,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BackEndDevApisV9,
     SuperBlocks.FullStackDeveloperV9
   ],
-  [Languages.Korean]: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.DataVis,
-    SuperBlocks.RelationalDb,
-    SuperBlocks.RosettaCode,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ]
+  [Languages.Korean]: []
 };
 
 Object.freeze(notAuditedSuperBlocks);
