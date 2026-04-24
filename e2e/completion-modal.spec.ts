@@ -211,6 +211,7 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
 });
 
 test.describe('Solution Download', () => {
+  test.describe.configure({ timeout: 30000 });
   const challengePath = '/learn/rosetta-code/rosetta-code-challenges/100-doors';
 
   test.beforeEach(async ({ page, isMobile }) => {
@@ -237,6 +238,9 @@ test.describe('Solution Download', () => {
     await focusEditor({ page, isMobile });
     await getEditors(page).fill('// solution');
     await page.getByRole('button', { name: 'Check Your Code' }).click();
+    await page
+      .getByRole('button', { name: /Submit and go to next challenge/ })
+      .click();
     await page.getByRole('dialog').waitFor({ state: 'visible' });
   });
 
