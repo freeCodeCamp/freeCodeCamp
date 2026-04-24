@@ -43,6 +43,13 @@ function isLastStep(file) {
 
   try {
     const blockData = JSON.parse(fs.readFileSync(blockJsonPath, 'utf8'));
+
+    // Upcoming blocks may still contain transitional content that does not yet
+    // follow this invariant.
+    if (blockData.isUpcomingChange) {
+      return true;
+    }
+
     const challengeOrder = blockData.challengeOrder;
 
     if (!Array.isArray(challengeOrder) || challengeOrder.length === 0) {

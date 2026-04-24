@@ -1,3 +1,4 @@
+import path from 'path';
 import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
 import { isObject } from 'lodash';
 import parseFixture from '../__fixtures__/parse-fixture';
@@ -103,7 +104,7 @@ describe('add solution plugin', () => {
     const workshopNonLastAST = await parseFixture('with-multiple-solns.md');
     const workshopFile = {
       data: {},
-      path: require('path').join(
+      path: path.join(
         __dirname,
         '../__fixtures__/workshop-test-steps/step-1.md'
       )
@@ -111,5 +112,20 @@ describe('add solution plugin', () => {
     expect(() => plugin(workshopNonLastAST, workshopFile)).toThrow(
       'has solutions but is not the last step'
     );
+  });
+
+  it('should allow solutions in non-last steps for upcoming workshop blocks', async () => {
+    expect.assertions(1);
+    const workshopNonLastAST = await parseFixture('with-multiple-solns.md');
+    const upcomingWorkshopFile = {
+      data: {},
+      path: path.join(
+        __dirname,
+        '../__fixtures__/workshop-upcoming-test-steps/step-1.md'
+      )
+    };
+    expect(() =>
+      plugin(workshopNonLastAST, upcomingWorkshopFile)
+    ).not.toThrow();
   });
 });
