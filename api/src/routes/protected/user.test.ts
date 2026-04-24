@@ -34,7 +34,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/exam-environment-exam.js';
+} from '../../../__fixtures__/exam-environment-exam.js';
 import { getMsTranscriptApiUrl } from './user.js';
 
 const mockedFetch = vi.fn();
