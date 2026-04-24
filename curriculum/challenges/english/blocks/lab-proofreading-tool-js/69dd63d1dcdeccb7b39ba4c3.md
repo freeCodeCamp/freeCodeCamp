@@ -7,114 +7,132 @@ dashedName: build-a-proofreading-tool
 
 # --description--
 
-In this lab, you will build a proofreading tool that scans binary signal sequences for patterns, symmetry, and gaps.
+In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.
 
-A binary signal sequence is an array of `0`s and `1`s, for example: `[1, 0, 1, 0, 1, 0]`.
+A palindrome is a word that reads the same forwards and backwards. For example, `"racecar"` and `"level"` are palindromes, but `"hello"` is not.
+
+A phrase is a sequence of consecutive words. For example, in `["the", "cat", "sat", "the", "cat"]`, the phrase `"the cat"` (a sequence of 2 words) appears at positions 0 and 3.
 
 **Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 
-1. You should define a function named `findMotif` that takes a `sequence` array and a `motifLength` number as arguments.
-2. `findMotif` should use nested loops with an early exit flag to find all positions where the motif (the first `motifLength` elements of `sequence`) repeats. It should return an array of start indices where the motif is found.
-3. You should define a function named `detectMirror` that takes a `sequence` array as its argument.
-4. `detectMirror` should compare mirrored indices and return an array of `[i, j]` pairs where `sequence[i] !== sequence[j]` (i.e. where the sequence is not symmetrical).
-5. You should define a function named `findMissingFrames` that takes a `sequence` array and a `pattern` array as arguments.
-6. `findMissingFrames` should scan the sequence in sliding windows of `pattern.length` and return an array of start indices where the window does not match the pattern.
-7. You should define a function named `analyzeSequences` that takes an array of sequences as its argument.
-8. `analyzeSequences` should call `findMotif` (with `motifLength` of `2`), `detectMirror`, and `findMissingFrames` (with `pattern` of `[1, 0]`) for each sequence, and return an array of objects each with `motifPositions`, `mirrorsBroken`, and `missingFrames` properties.
+1. You should define a function named `isPalindrome` that takes a `word` string as its argument. It should return `true` if the word reads the same forwards and backwards (case-insensitive), and `false` otherwise.
+
+2. You should define a function named `findPalindromeBreaks` that takes a `words` array as its argument. It should return an array of indices of words that are not palindromes. It should return an empty array if the input is empty.
+
+3. You should define a function named `findRepeatedPhrases` that takes a `words` array and a `phraseLength` number as arguments. It should return an array of all start indices where a sequence of `phraseLength` consecutive words appears more than once in the array — including the index of the first occurrence. It should return an empty array if `phraseLength` is greater than or equal to the length of `words`.
+
+4. You should define a function named `analyzeTexts` that takes a `texts` array and a `phraseLength` number as arguments. It should process each element of `texts` (each an array of words) and return an array of objects, each with `repeatedPhrases` and `palindromeBreaks` properties. It should return an empty array if `texts` is empty.
 
 # --hints--
 
-You should define a function named `findMotif`.
+`isPalindrome` should be a function.
 
 ```js
-assert.isFunction(findMotif);
+assert.isFunction(isPalindrome);
 ```
 
-`findMotif` should accept two parameters.
+`isPalindrome` should return `true` for a palindrome.
 
 ```js
-assert.lengthOf(findMotif, 2);
+assert.isTrue(isPalindrome("racecar"));
 ```
 
-`findMotif` should return an array.
+`isPalindrome` should return `true` regardless of case.
 
 ```js
-assert.isArray(findMotif([1, 0, 1, 0], 2));
+assert.isTrue(isPalindrome("Level"));
 ```
 
-`findMotif` should return all start indices where the motif repeats.
+`isPalindrome` should return `false` for a non-palindrome.
 
 ```js
-assert.sameDeepOrderedMembers(findMotif([1, 0, 1, 0, 1, 0], 2), [0, 2, 4]);
+assert.isFalse(isPalindrome("hello"));
 ```
 
-`findMotif` should return `[0]` when the motif does not repeat beyond its starting position.
+`findPalindromeBreaks` should be a function.
 
 ```js
-assert.sameDeepOrderedMembers(findMotif([1, 1, 0, 0, 1, 1], 3), [0]);
+assert.isFunction(findPalindromeBreaks);
 ```
 
-You should define a function named `detectMirror`.
+`findPalindromeBreaks` should return an empty array for empty input.
 
 ```js
-assert.isFunction(detectMirror);
+assert.sameDeepOrderedMembers(findPalindromeBreaks([]), []);
 ```
 
-`detectMirror` should return an empty array for a perfectly symmetrical sequence.
+`findPalindromeBreaks` should return the indices of non-palindromes.
 
 ```js
-assert.sameDeepOrderedMembers(detectMirror([1, 0, 1, 0, 1]), []);
+assert.sameDeepOrderedMembers(findPalindromeBreaks(["racecar", "hello", "level"]), [1]);
 ```
 
-`detectMirror` should return the mismatched index pairs for a non-symmetrical sequence.
+`findPalindromeBreaks` should return an empty array when all words are palindromes.
 
 ```js
-assert.sameDeepOrderedMembers(detectMirror([1, 0, 1, 1, 0]), [[0, 4], [1, 3]]);
+assert.sameDeepOrderedMembers(findPalindromeBreaks(["racecar", "level", "aba"]), []);
 ```
 
-You should define a function named `findMissingFrames`.
+`findRepeatedPhrases` should be a function.
 
 ```js
-assert.isFunction(findMissingFrames);
+assert.isFunction(findRepeatedPhrases);
 ```
 
-`findMissingFrames` should return an empty array when all windows match the pattern.
+`findRepeatedPhrases` should return an empty array when `phraseLength` is greater than or equal to the length of `words`.
 
 ```js
-assert.sameDeepOrderedMembers(findMissingFrames([1, 0], [1, 0]), []);
+assert.sameDeepOrderedMembers(findRepeatedPhrases(["the", "cat"], 2), []);
 ```
 
-`findMissingFrames` should return the start indices of windows that do not match the pattern.
+`findRepeatedPhrases` should return an empty array when `phraseLength` is greater than the length of `words`.
 
 ```js
-assert.sameDeepOrderedMembers(findMissingFrames([0, 1, 0, 1, 0], [1, 0]), [0, 2]);
+assert.sameDeepOrderedMembers(findRepeatedPhrases(["the"], 2), []);
 ```
 
-You should define a function named `analyzeSequences`.
+`findRepeatedPhrases` should return all start indices where the phrase repeats, including the first occurrence.
 
 ```js
-assert.isFunction(analyzeSequences);
+assert.sameDeepOrderedMembers(findRepeatedPhrases(["the", "cat", "sat", "the", "cat"], 2), [0, 3]);
 ```
 
-`analyzeSequences` should return an array of result objects each with `motifPositions`, `mirrorsBroken`, and `missingFrames` properties.
+`analyzeTexts` should be a function.
 
 ```js
-const result = analyzeSequences([[1, 0, 1, 0, 1, 0]]);
-assert.isArray(result);
-assert.property(result[0], 'motifPositions');
-assert.property(result[0], 'mirrorsBroken');
-assert.property(result[0], 'missingFrames');
+assert.isFunction(analyzeTexts);
 ```
 
-`analyzeSequences` should correctly aggregate results for each sequence.
+`analyzeTexts` should return an empty array for empty input.
 
 ```js
-const result = analyzeSequences([[1, 0, 1, 0, 1, 0]]);
-assert.sameDeepOrderedMembers(result[0].motifPositions, [0, 2, 4]);
-assert.sameDeepOrderedMembers(result[0].mirrorsBroken, [[0, 5], [1, 4], [2, 3]]);
-assert.sameDeepOrderedMembers(result[0].missingFrames, [1, 3]);
+assert.sameDeepOrderedMembers(analyzeTexts([], 2), []);
+```
+
+`analyzeTexts` result objects should have `repeatedPhrases` and `palindromeBreaks` properties.
+
+```js
+const result = analyzeTexts([["racecar", "hello"]], 2);
+assert.property(result[0], "repeatedPhrases");
+assert.property(result[0], "palindromeBreaks");
+```
+
+`analyzeTexts` should correctly aggregate results for each text.
+
+```js
+const result = analyzeTexts([["racecar", "hello", "level", "hello"]], 1);
+assert.sameDeepOrderedMembers(result[0].repeatedPhrases, [1, 3]);
+assert.sameDeepOrderedMembers(result[0].palindromeBreaks, [1, 3]);
+```
+
+`analyzeTexts` should process multiple texts and return a result for each.
+
+```js
+const result = analyzeTexts([["racecar", "hello"], ["level", "world", "level"]], 1);
+assert.lengthOf(result, 2);
+assert.sameDeepOrderedMembers(result[1].palindromeBreaks, [1]);
 ```
 
 # --seed--
@@ -122,65 +140,65 @@ assert.sameDeepOrderedMembers(result[0].missingFrames, [1, 3]);
 ## --seed-contents--
 
 ```js
-
 ```
 
 # --solutions--
 
 ```js
-function findMotif(sequence, motifLength) {
-  const motif = sequence.slice(0, motifLength);
-  const positions = [];
+function isPalindrome(word) {
+  const lower = word.toLowerCase();
+  for (let i = 0; i < Math.floor(lower.length / 2); i++) {
+    if (lower[i] !== lower[lower.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
 
-  for (let i = 0; i <= sequence.length - motifLength; i++) {
-    let match = true;
-    for (let j = 0; j < motifLength; j++) {
-      if (sequence[i + j] !== motif[j]) {
-        match = false;
+function findPalindromeBreaks(words) {
+  const breaks = [];
+  if (words.length === 0) return breaks;
+  for (let i = 0; i < words.length; i++) {
+    if (!isPalindrome(words[i])) {
+      breaks.push(i);
+    }
+  }
+  return breaks;
+}
+
+function findRepeatedPhrases(words, phraseLength) {
+  const result = [];
+  if (phraseLength >= words.length) return result;
+
+  for (let i = 0; i <= words.length - phraseLength; i++) {
+    const phrase = words.slice(i, i + phraseLength).join(" ");
+    let found = false;
+
+    for (let j = 0; j <= words.length - phraseLength; j++) {
+      if (i === j) continue;
+      if (words.slice(j, j + phraseLength).join(" ") === phrase) {
+        found = true;
         break;
       }
     }
-    if (match) positions.push(i);
+
+    if (found) result.push(i);
   }
 
-  return positions;
+  return result;
 }
 
-function detectMirror(sequence) {
-  const mismatches = [];
+function analyzeTexts(texts, phraseLength) {
+  const results = [];
+  if (texts.length === 0) return results;
 
-  for (let i = 0; i < Math.floor(sequence.length / 2); i++) {
-    const j = sequence.length - 1 - i;
-    if (sequence[i] !== sequence[j]) {
-      mismatches.push([i, j]);
-    }
+  for (let i = 0; i < texts.length; i++) {
+    results.push({
+      repeatedPhrases: findRepeatedPhrases(texts[i], phraseLength),
+      palindromeBreaks: findPalindromeBreaks(texts[i])
+    });
   }
 
-  return mismatches;
-}
-
-function findMissingFrames(sequence, pattern) {
-  const missing = [];
-
-  for (let i = 0; i <= sequence.length - pattern.length; i++) {
-    let match = true;
-    for (let j = 0; j < pattern.length; j++) {
-      if (sequence[i + j] !== pattern[j]) {
-        match = false;
-        break;
-      }
-    }
-    if (!match) missing.push(i);
-  }
-
-  return missing;
-}
-
-function analyzeSequences(sequences) {
-  return sequences.map(seq => ({
-    motifPositions: findMotif(seq, 2),
-    mirrorsBroken: detectMirror(seq),
-    missingFrames: findMissingFrames(seq, [1, 0]),
-  }));
+  return results;
 }
 ```
