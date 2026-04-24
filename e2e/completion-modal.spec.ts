@@ -4,22 +4,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
-import { focusEditor, getEditors } from './utils/editor';
-
-interface ChallengeTest {
-  text: string;
-  testString: string;
-}
-
-interface PageData {
-  result: {
-    data: {
-      challengeNode: {
-        challenge: { tests: ChallengeTest[] };
-      };
-    };
-  };
-}
+import { clearEditor, focusEditor } from './utils/editor';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -211,36 +196,27 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
 });
 
 test.describe('Solution Download', () => {
-  test.describe.configure({ timeout: 30000 });
-  const challengePath = '/learn/rosetta-code/rosetta-code-challenges/100-doors';
+  test.skip(
+    ({ browserName }) => browserName !== 'chromium',
+    'Only chromium allows us to use the clipboard API.'
+  );
 
-  test.beforeEach(async ({ page, isMobile }) => {
-    await page.route(
-      `**/page-data${challengePath}/page-data.json`,
-      async route => {
-        const response = await route.fetch();
-        const body = await response.text();
-        const pageData = JSON.parse(body) as PageData;
-        pageData.result.data.challengeNode.challenge.tests = [
-          {
-            text: 'Mock test',
-            testString: 'assert(true)'
-          }
-        ];
-        await route.fulfill({
-          contentType: 'application/json',
-          body: JSON.stringify(pageData)
-        });
-      }
-    );
+  const challenge = {
+    url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword',
+    solution: `const FCC = "freeCodeCamp";\n// Change this line\nlet fact = "is cool!";\n// Change this line\nfact = "is awesome!";\nconsole.log(FCC, fact);\n// Change this line`
+  };
 
-    await page.goto(challengePath);
+  test.beforeEach(async ({ page, isMobile, browserName, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.goto(challenge.url);
     await focusEditor({ page, isMobile });
-    await getEditors(page).fill('// solution');
+    await clearEditor({ page, browserName });
+    await page.evaluate(
+      async contents => await navigator.clipboard.writeText(contents),
+      challenge.solution
+    );
+    await page.keyboard.press('ControlOrMeta+V');
     await page.getByRole('button', { name: 'Check Your Code' }).click();
-    await page
-      .getByRole('button', { name: /Submit and go to next challenge/ })
-      .click();
     await page.getByRole('dialog').waitFor({ state: 'visible' });
   });
 
