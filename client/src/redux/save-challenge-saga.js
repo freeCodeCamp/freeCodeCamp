@@ -26,7 +26,7 @@ function* saveChallengeSaga() {
   const savedChallenge = savedChallenges.find(challenge => challenge.id === id);
 
   // don't let users save more than once every 5 seconds
-  if (Date.now() - savedChallenge?.lastSavedDate < 5000) {
+  if (savedChallenge && savedChallenge.lastSavedDate && Date.now() - savedChallenge.lastSavedDate < 5000) {
     return yield put(
       createFlashMessage({
         type: 'danger',
