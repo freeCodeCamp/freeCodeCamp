@@ -339,6 +339,7 @@
       "keyboard-shortcuts": "启用键盘快捷键"
     },
     "headings": {
+      "personal": "Personal",
       "account": "账户",
       "certs": "认证",
       "legacy-certs": "旧版认证",
@@ -469,13 +470,16 @@
     },
     "completeness": {
       "heading": "个人资料完成 {{percentage}}%",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "添加你的姓名",
       "location": "添加你的地点",
       "picture": "上传头像",
       "about": "填写个人简介",
       "social": "添加社交链接",
       "portfolio": "添加作品集项目",
-      "experience": "添加你的经历"
+      "experience": "添加你的经历",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -1027,6 +1031,10 @@
     "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
     "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案",
     "edit-my-profile": "编辑我的个人资料",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} 编辑器内容。按 Option+F1 设置无障碍选项。",
     "editor-a11y-off-non-macos": "{{editorName}} 编辑器内容。按 Alt+F1 设置无障碍选项。",
     "editor-a11y-on-macos": "{{editorName}} 编辑器模式。无障碍模式被设置为 “on”。按 Command+E 关闭或按 Option+F1 查看更多选项。",

@@ -251,7 +251,7 @@ describe('errorHandling', () => {
         });
       });
 
-    test.skip('should capture the error with Sentry', async () => {
+    test.todo('should capture the error with Sentry', async () => {
       const receivedRequest = createRequestListener();
 
       await fastify.inject({
