@@ -392,8 +392,27 @@ const scenarios: Scenario[] = [
   }
 ];
 
+const scenariosWithCta = scenarios.filter(
+  (
+    scenario
+  ): scenario is Scenario & {
+    expected: {
+      labelKey: string;
+      dataLabel: 'start-learning' | 'continue-learning';
+      nextOrder: number;
+    };
+  } =>
+    scenario.expected.labelKey !== null &&
+    scenario.expected.dataLabel !== null &&
+    scenario.expected.nextOrder !== null
+);
+
+const scenariosWithoutCta = scenarios.filter(
+  scenario => scenario.expected.labelKey === null
+);
+
 describe('SuperBlockIntroductionPage', () => {
-  it.each(scenarios)('%s', async scenario => {
+  it.each(scenariosWithCta)('$description', async scenario => {
     const { superBlock, completedOrders, expected } = scenario;
     const setup = createSetup(superBlock);
 
@@ -418,31 +437,56 @@ describe('SuperBlockIntroductionPage', () => {
 
     render(<SuperBlockIntroductionPage {...props} />);
 
-    if (expected.labelKey) {
-      const expectedText = translationMap[expected.labelKey] as string;
-      const cta = await screen.findByRole('link', {
-        name: expectedText
-      });
+    const expectedText = translationMap[expected.labelKey] as string;
+    const cta = await screen.findByRole('link', {
+      name: expectedText
+    });
 
-      expect(cta).toHaveAttribute('data-test-label', expected.dataLabel);
+    expect(cta).toHaveAttribute('data-test-label', expected.dataLabel);
 
-      const nextChallenge = setup.challengeByOrder.get(expected.nextOrder!);
-      expect(nextChallenge).toBeDefined();
-      expect(cta).toHaveAttribute('href', nextChallenge?.fields.slug ?? '');
-    } else {
-      await waitFor(() =>
-        expect(
-          screen.queryByRole('link', {
-            name: translationMap['misc.fsd-b-cta'] as string
-          })
-        ).toBeNull()
-      );
+    const nextChallenge = setup.challengeByOrder.get(expected.nextOrder);
+    if (!nextChallenge) {
+      throw new Error(`Missing challenge for order ${expected.nextOrder}`);
+    }
+    expect(cta).toHaveAttribute('href', nextChallenge.fields.slug);
+  });
 
+  it.each(scenariosWithoutCta)('$description', async scenario => {
+    const { superBlock, completedOrders } = scenario;
+    const setup = createSetup(superBlock);
+
+    const completedChallenges = completedOrders.map(order => {
+      const challenge = setup.challengeByOrder.get(order);
+      if (!challenge) {
+        throw new Error(`Missing challenge for order ${order}`);
+      }
+
+      return {
+        id: challenge.id,
+        completedDate: order * 100
+      };
+    });
+
+    const props = createPageProps(setup, superBlock, {
+      user: {
+        completedChallenges,
+        isDonating: false
+      }
+    });
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('link', {
+          name: translationMap['misc.fsd-b-cta'] as string
+        })
+      ).toBeNull();
       expect(
         screen.queryByRole('link', {
           name: translationMap['misc.continue-learning'] as string
         })
       ).toBeNull();
-    }
+    });
   });
 });

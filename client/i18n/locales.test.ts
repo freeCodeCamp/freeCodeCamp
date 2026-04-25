@@ -93,9 +93,10 @@ describe('Intro file structure tests:', () => {
       expect(typeof typedIntro[superBlock].title).toBe('string');
 
       // catalog superblocks should have a summary
-      if (catalogSuperBlocks.includes(superBlock)) {
-        expect(typedIntro[superBlock].summary).toBeInstanceOf(Array);
-      }
+      expect(
+        !catalogSuperBlocks.includes(superBlock) ||
+          Array.isArray(typedIntro[superBlock].summary)
+      ).toBe(true);
 
       expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
       expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
