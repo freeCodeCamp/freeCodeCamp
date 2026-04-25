@@ -1101,8 +1101,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0(debug@4.4.3)(typescript@5.9.3)
       pyodide:
-        specifier: ^0.23.3
-        version: 0.23.4
+        specifier: ^0.29.0
+        version: 0.29.3
       sass.js:
         specifier: 0.11.1
         version: 0.11.1
@@ -4566,6 +4566,9 @@ packages:
 
   '@types/dom-speech-recognition@0.0.1':
     resolution: {integrity: sha512-udCxb8DvjcDKfk1WTBzDsxFbLgYxmQGKrE/ricoMqHRNjSlSUCcamVTA5lIQqzY10mY5qCY0QDwBfFEwhfoDPw==}
+
+  '@types/emscripten@1.41.5':
+    resolution: {integrity: sha512-cMQm7pxu6BxtHyqJ7mQZ2kXWV5SLmugybFdHCBbJ5eHzOo6VhBckEgAT3//rP5FwPHNPeEiq4SmQ5ucBwsOo4Q==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -10610,8 +10613,9 @@ packages:
   pyodide@0.23.3:
     resolution: {integrity: sha512-t95Nu73ENjwoRhThmxvZIHMD7GXTJ3uOt/E0sJ1TxjBvoU/qPys4SV08FtZBMEnpMRKFzE4uecvx2c0qybSZhw==}
 
-  pyodide@0.23.4:
-    resolution: {integrity: sha512-WpQUHaIXQ1xede5BMqPAjBcmopxN22s5hEsYOR8T7/UW/fkNLFUn07SaemUgthbtvedD5JGymMMj4VpD9sGMTg==}
+  pyodide@0.29.3:
+    resolution: {integrity: sha512-22UBuhOJawj7vKUnS7/F3xK+515LJdjiMAHoCfuS6/PbHiOrSQVnYwDe+2sbVwiOZ3sMMexdXICew6NqOMQGgA==}
+    engines: {node: '>=18.0.0'}
 
   qified@0.9.1:
     resolution: {integrity: sha512-n7mar4T0xQ+39dE2vGTAlbxUEpndwPANH0kDef1/MYsB8Bba9wshkybIRx74qgcvKQPEWErf9AqAdYjhzY2Ilg==}
@@ -18036,6 +18040,8 @@ snapshots:
   '@types/deep-eql@4.0.2': {}
 
   '@types/dom-speech-recognition@0.0.1': {}
+
+  '@types/emscripten@1.41.5': {}
 
   '@types/eslint-scope@3.7.7':
     dependencies:
@@ -25608,14 +25614,12 @@ snapshots:
       - encoding
       - utf-8-validate
 
-  pyodide@0.23.4:
+  pyodide@0.29.3:
     dependencies:
-      base-64: 1.0.0
-      node-fetch: 2.7.0
+      '@types/emscripten': 1.41.5
       ws: 8.20.0
     transitivePeerDependencies:
       - bufferutil
-      - encoding
       - utf-8-validate
 
   qified@0.9.1:

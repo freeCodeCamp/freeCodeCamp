@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "@freecodecamp/curriculum-helpers": "^9.0.0",
-    "pyodide": "^0.23.3",
+    "pyodide": "^0.29.0",
     "sass.js": "0.11.1"
   }
 }
