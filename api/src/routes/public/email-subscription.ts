@@ -32,8 +32,8 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
+      const { origin } = getRedirectParams(req);
       try {
-        const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
         const log = fastify.log.child({ req, unsubscribeId });
 
@@ -104,8 +104,8 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
+      const { origin } = getRedirectParams(req);
       try {
-        const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
         const log = fastify.log.child({ req, unsubscribeId });
 
