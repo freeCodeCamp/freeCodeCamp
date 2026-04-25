@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlessDja — Motivational Speaker</title>
+    <meta
+      name="description"
+      content="A cinematic one-page concept for BlessDja, inspired by modern Awwwards smooth-scrolling storytelling websites."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0a10;
+        --bg-alt: #12121d;
+        --text: #f2f1f6;
+        --muted: #b1afc2;
+        --line: rgba(255, 255, 255, 0.08);
+        --primary: #ac7cff;
+        --secondary: #5af5d2;
+        --card: rgba(255, 255, 255, 0.04);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(
+            circle at 20% 20%,
+            #1f1538 0%,
+            var(--bg) 40%
+          ),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+          sans-serif;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.04) 0.5px,
+          transparent 0.5px
+        );
+        background-size: 2px 2px;
+        opacity: 0.25;
+        z-index: 1;
+      }
+
+      .nav {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 20;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          to bottom,
+          rgba(10, 10, 16, 0.85),
+          rgba(10, 10, 16, 0.15)
+        );
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        font-family: Syne, sans-serif;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+      }
+
+      section {
+        position: relative;
+        z-index: 2;
+        min-height: 100vh;
+        padding: 6rem 1.25rem 3rem;
+        display: grid;
+        align-items: center;
+      }
+
+      .container {
+        width: min(1100px, 100%);
+        margin: 0 auto;
+      }
+
+      .eyebrow {
+        color: var(--secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.74rem;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: Syne, sans-serif;
+        line-height: 0.95;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 9vw, 7rem);
+        margin-top: 0.8rem;
+      }
+
+      h2 {
+        font-size: clamp(1.7rem, 4.5vw, 4rem);
+      }
+
+      p {
+        color: var(--muted);
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        line-height: 1.6;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .hero-card {
+        width: fit-content;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.55rem 1rem;
+        font-size: 0.84rem;
+        color: #d8d6e8;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .hero-cta {
+        margin-top: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #09090e;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--secondary), #84ffe5);
+        padding: 0.8rem 1.2rem;
+        border-radius: 999px;
+      }
+
+      .quote-strip {
+        min-height: 55vh;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(
+          120deg,
+          rgba(172, 124, 255, 0.1),
+          rgba(90, 245, 210, 0.03)
+        );
+      }
+
+      .quote {
+        max-width: 900px;
+        font-size: clamp(1.35rem, 3.5vw, 3rem);
+        line-height: 1.2;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .service {
+        padding: 1.2rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--card);
+      }
+
+      .service h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .numbers {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.9rem;
+        margin-top: 1.5rem;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .stat .value {
+        font-size: 2rem;
+        font-family: Syne, sans-serif;
+      }
+
+      .timeline {
+        margin-top: 1.8rem;
+        border-left: 1px solid var(--line);
+      }
+
+      .timeline-item {
+        padding: 1rem 0 1rem 1rem;
+        position: relative;
+      }
+
+      .timeline-item::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+        position: absolute;
+        left: -5px;
+        top: 1.4rem;
+      }
+
+      .contact {
+        min-height: 80vh;
+      }
+
+      .contact-box {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 1.4rem;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.01)
+        );
+      }
+
+      .contact-list {
+        list-style: none;
+        margin: 1rem 0 0;
+        padding: 0;
+        color: var(--muted);
+      }
+
+      .contact-list li {
+        margin-bottom: 0.55rem;
+      }
+
+      .pill {
+        display: inline-block;
+        font-size: 0.8rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        margin-bottom: 0.6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+
+    <nav class="nav">
+      <div class="brand">BLESSDJA</div>
+      <div class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#story">Story</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <span class="eyebrow reveal"
+          >Motivational Speaker · Ervaringsdeskundige</span
+        >
+        <h1 class="reveal">Doorbreek de stilte.<br />Vind jouw kracht.</h1>
+        <p class="reveal">
+          Barbara Deekman shares a deeply personal, empowering message around
+          healing, consciousness, and growth. This one-page concept is crafted
+          to feel cinematic and modern, inspired by smooth-scroll storytelling
+          seen on Awwwards.
+        </p>
+        <div class="hero-card reveal">
+          For victims, professionals, schools & organizations
+        </div>
+        <a class="hero-cta reveal" href="#contact">Book a talk ↓</a>
+      </div>
+    </section>
+
+    <section id="mission" class="quote-strip">
+      <div class="container">
+        <p class="quote reveal">
+          “Huiselijk geweld mag geen verborgen verhaal blijven. Door het
+          bespreekbaar te maken, doorbreken we patronen en geven we ruimte aan
+          herstel.”
+        </p>
+      </div>
+    </section>
+
+    <section id="programs">
+      <div class="container">
+        <span class="eyebrow reveal">What she offers</span>
+        <h2 class="reveal">Programs that spark transformation</h2>
+        <div class="services">
+          <article class="service reveal">
+            <h3>Life coaching</h3>
+            <p>Personal growth and mindset shifts with practical guidance.</p>
+          </article>
+          <article class="service reveal">
+            <h3>Domestic violence speaking</h3>
+            <p>
+              Awareness sessions with lived experience and healing perspectives.
+            </p>
+          </article>
+          <article class="service reveal">
+            <h3>Team sessions</h3>
+            <p>
+              Interactive workshops for schools, care teams, and social
+              organizations.
+            </p>
+          </article>
+          <article class="service reveal">
+            <h3>Family tree work</h3>
+            <p>
+              Systemic exploration with family constellation-inspired methods.
+            </p>
+          </article>
+        </div>
+
+        <div class="numbers">
+          <div class="stat reveal">
+            <div class="value">21+</div>
+            <div>Years in help & services</div>
+          </div>
+          <div class="stat reveal">
+            <div class="value">5+</div>
+            <div>Programs and trainings</div>
+          </div>
+          <div class="stat reveal">
+            <div class="value">100+</div>
+            <div>Happy clients</div>
+          </div>
+          <div class="stat reveal">
+            <div class="value">4+</div>
+            <div>Daily coaching rhythm</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="container">
+        <span class="eyebrow reveal">Story-led flow</span>
+        <h2 class="reveal">How a session unfolds</h2>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <strong>01 — Confront reality</strong>
+            <p>Name what happened. Break silence safely.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <strong>02 — Rebuild identity</strong>
+            <p>Work on self-image, boundaries, and trust.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <strong>03 — Activate growth</strong>
+            <p>Translate insight into choices, action, and support systems.</p>
+          </div>
+          <div class="timeline-item reveal">
+            <strong>04 — Empower others</strong>
+            <p>Turn healing into leadership at home, school, and work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-box reveal">
+        <span class="pill">Book BlessDja</span>
+        <h2>Impactful talk or workshop</h2>
+        <p>
+          Ready to create awareness and empowerment in your organization or
+          community? Reach out for speaking engagements, team sessions, or
+          coaching trajectories.
+        </p>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> info@blessdja.nl</li>
+          <li><strong>Phone:</strong> +31 6 577 589 07</li>
+          <li><strong>Address:</strong> Jaagweg 12C, 1452 PB, Ilpendam</li>
+          <li><strong>KvK:</strong> 68186533</li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.15,
+        smoothWheel: true,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      gsap.registerPlugin(ScrollTrigger);
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.utils.toArray('.reveal').forEach((item, index) => {
+        gsap.from(item, {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          delay: index % 4 === 0 ? 0.05 : 0,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 88%'
+          }
+        });
+      });
+
+      gsap.to('.quote', {
+        backgroundPositionX: '100%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.quote-strip',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+
+      gsap.from('.hero h1', {
+        scale: 1.04,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power2.out'
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+          const targetId = anchor.getAttribute('href');
+          const target = document.querySelector(targetId);
+          if (!target) return;
+          e.preventDefault();
+          lenis.scrollTo(target, { offset: -70, duration: 1.1 });
+        });
+      });
+    </script>
+  </body>
+</html>
