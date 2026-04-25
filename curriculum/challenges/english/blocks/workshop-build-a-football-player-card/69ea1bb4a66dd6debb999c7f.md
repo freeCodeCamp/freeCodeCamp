@@ -1,8 +1,8 @@
 ---
 id: 69ea1bb4a66dd6debb999c7f
-title: Step 43
+title: Step 44
 challengeType: 0
-dashedName: step-43
+dashedName: step-44
 ---
 
 # --description--
@@ -398,7 +398,7 @@ interface PlayerData {
   phy: number;
 }
 
-function getPlayerTier(rating: number): string {
+export function getPlayerTier(rating: number): string {
   if (rating >= 92) return "elite";
   if (rating >= 85) return "gold";
   if (rating >= 75) return "silver";
@@ -463,7 +463,7 @@ function PlayerCard({ player }: { player: PlayerData }) {
   );
 }
 
-const defaultPlayer: PlayerData = {
+export const defaultPlayer: PlayerData = {
   name: "PELE",
   overallRating: 98,
   position: "ST",
