@@ -1,11 +1,12 @@
 import envData from '../../config/env.json';
+import { GITHUB_LOCATION } from '../../config/misc';
 
-const { curriculumLocale, githubLocation } = envData;
+const { curriculumLocale } = envData;
 
 export const generateGithubLink = (challengeId: string, block: string) => {
   const repository =
     curriculumLocale === 'english' ? '/freeCodeCamp' : '/i18n-curriculum';
-  const gitURL = new URL(githubLocation);
+  const gitURL = new URL(GITHUB_LOCATION);
 
   gitURL.pathname =
     gitURL.pathname +

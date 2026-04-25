@@ -33,8 +33,7 @@ const {
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges,
   GROWTHBOOK_URI: growthbookUri,
-  DEPLOYMENT_VERSION: deploymentVersion,
-  GITHUB_LOCATION: githubLocation
+  DEPLOYMENT_VERSION: deploymentVersion
 } = process.env;
 
 const locations = {
@@ -42,7 +41,6 @@ const locations = {
   apiLocation,
   forumLocation,
   newsLocation,
-  githubLocation,
   radioLocation: !radioLocation
     ? 'https://coderadio.freecodecamp.org'
     : radioLocation
