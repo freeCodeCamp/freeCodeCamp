@@ -16,7 +16,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { LocalStorageThemes } from '../../../redux/types';
@@ -315,10 +314,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     React.useState<HTMLDivElement | null>(null);
 
   const submitChallenge = useSubmit();
-
-  const submitChallengeDebounceRef = useRef(
-    debounce(submitChallenge, 1000, { leading: true, trailing: false })
-  );
 
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -820,7 +815,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     props.executeChallenge();
   }
 
-  const tryToSubmitChallenge = submitChallengeDebounceRef.current;
+  const tryToSubmitChallenge = submitChallenge;
 
   // TODO: there's a potential performance gain to be had by only updating when
   // the outputViewZone has actually changed.
