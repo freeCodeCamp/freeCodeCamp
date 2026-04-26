@@ -6,6 +6,7 @@ import {
   getCompletedChallengesInBlock,
   getCurrentBlockIds
 } from './get-completion-percentage';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 describe('get-completion-percentage', () => {
   describe('getCompletedPercentage', () => {
@@ -156,21 +157,21 @@ describe('get-completion-percentage', () => {
             challenge: {
               id: 'block-challenge-1',
               block: 'basic-html',
-              certification: 'responsive-web-design'
+              certification: Certification.RespWebDesignV9
             }
           } as Partial<ChallengeNode> as ChallengeNode,
           {
             challenge: {
               id: 'block-challenge-2',
               block: 'basic-html',
-              certification: 'responsive-web-design'
+              certification: Certification.RespWebDesignV9
             }
           } as Partial<ChallengeNode> as ChallengeNode,
           {
             challenge: {
               id: 'other-block-challenge',
               block: 'basic-css',
-              certification: 'responsive-web-design'
+              certification: Certification.RespWebDesignV9
             }
           } as Partial<ChallengeNode> as ChallengeNode
         ],
@@ -180,7 +181,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'basic-html',
-        'responsive-web-design',
+        Certification.RespWebDesignV9,
         challengeTypes.step
       );
 
@@ -193,7 +194,7 @@ describe('get-completion-percentage', () => {
         certificateNodes: [
           {
             challenge: {
-              certification: 'responsive-web-design',
+              certification: Certification.RespWebDesignV9,
               tests: [
                 { id: 'cert-project-1' },
                 { id: 'cert-project-2' },
@@ -207,7 +208,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'responsive-web-design-projects',
-        'responsive-web-design',
+        Certification.RespWebDesignV9,
         challengeTypes.frontEndProject
       );
 
@@ -226,14 +227,14 @@ describe('get-completion-percentage', () => {
             challenge: {
               id: 'project-1',
               block: 'back-end-projects',
-              certification: 'back-end-development'
+              certification: Certification.BackEndDevApisV9
             }
           } as Partial<ChallengeNode> as ChallengeNode,
           {
             challenge: {
               id: 'project-2',
               block: 'back-end-projects',
-              certification: 'back-end-development'
+              certification: Certification.BackEndDevApisV9
             }
           } as Partial<ChallengeNode> as ChallengeNode
         ],
@@ -243,7 +244,7 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'back-end-projects',
-        'back-end-development',
+        Certification.BackEndDevApisV9,
         challengeTypes.backEndProject
       );
 
@@ -267,11 +268,62 @@ describe('get-completion-percentage', () => {
       const result = getCurrentBlockIds(
         allChallengesInfo,
         'non-existent-block',
-        'responsive-web-design',
+        Certification.RespWebDesignV9,
         challengeTypes.step
       );
 
       expect(result).toEqual([]);
+    });
+
+    it('only counts challenges from the current superblock when a block is shared across superblocks', () => {
+      // This tests the fix for the bug where blocks shared between superblocks
+      // (e.g. javascript-v9 and introduction-to-variables-and-strings-in-javascript)
+      // caused currentBlockIds.length to be doubled, making the progress bar
+      // show 7% instead of 14% for 1/7 challenges.
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          // Challenges from the current superblock (javascript-v9)
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          // Same block, but from a different superblock — should be excluded
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'workshop-greeting-bot',
+        Certification.JsV9,
+        challengeTypes.step
+      );
+
+      expect(result).toEqual(['challenge-1', 'challenge-2']);
     });
   });
 });

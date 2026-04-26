@@ -1,0 +1,102 @@
+---
+id: 699a00de9f564bb0effaa14d
+title: Step 7
+challengeType: 1
+dashedName: step-7
+---
+
+# --description--
+
+In this step, you will create a function to access the `age` property of an object.
+
+Here is an example:
+
+```js
+const cat = {
+  age: 3
+};
+
+const getAnimalAge = (pet) => {
+  return pet.age; // access age using dot notation
+}
+
+console.log(getAnimalAge(cat)); // 3
+```
+
+In this example, the function takes an object as a parameter and returns its `age` property.
+
+Now create a function called `getAge`.
+
+The function should take one parameter named `animal`.
+
+Return the `age` property of the `animal` using dot notation.
+
+After creating the function, use `console.log` to call `getAge(tiger)` so you can see the result in the console.
+
+# --hints--
+
+You should create a function named `getAge`.
+
+```js
+assert.isFunction(getAge);
+```
+
+The `getAge` function should have a single parameter, `animal`.
+
+```js
+const regex = __helpers.functionRegex('getAge', ['animal']);
+assert.match(__helpers.removeJSComments(code), regex);
+```
+
+`getAge` should access the `age` property using dot notation.
+
+```js
+assert.match(code, /animal\.age/);
+```
+
+You should log `getAge(tiger)` to the console.
+
+```js
+assert.match(code, /console\s*\.\s*log\s*\(\s*getAge\s*\(\s*tiger\s*\)\s*\)/);
+```
+
+Calling `getAge(tiger)` should return `5`.
+
+```js
+assert.strictEqual(getAge(tiger), 5);
+```
+
+`getAge` should use the function parameter and work with any object.
+
+```js
+const lion = { age: 8 };
+assert.strictEqual(getAge(lion), 8);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const tiger = {
+  species: "Tiger",
+  age: 5,
+  isEndangered: true
+};
+
+const elephant = {
+  species: "Elephant",
+  age: 10,
+  isEndangered: true
+};
+
+const getSpecies = (animal) => {
+  return animal.species;
+};
+
+console.log(getSpecies(tiger));
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

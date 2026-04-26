@@ -10,8 +10,6 @@ const jsChallenge = {
   fileKey: 'jsFileKey',
   name: 'name',
   ext: 'js' as const,
-  head: 'head',
-  tail: 'tail',
   history: [],
   seed: 'original js contents',
   path: 'index.js'
@@ -22,8 +20,6 @@ const cssChallenge = {
   fileKey: 'cssFileKey',
   name: 'name',
   ext: 'css' as const,
-  head: 'head',
-  tail: 'tail',
   history: [],
   seed: 'original css contents',
   path: 'styles.css'
@@ -34,8 +30,6 @@ const htmlChallenge = {
   fileKey: 'htmlFileKey',
   name: 'name',
   ext: 'html' as const,
-  head: 'head',
-  tail: 'tail',
   history: [],
   seed: 'original html contents',
   path: 'index.html'
@@ -129,5 +123,21 @@ describe('mergeChallengeFiles', () => {
         contents: savedJsChallenge.contents
       }
     ]);
+  });
+
+  it('should not mutate the original files and savedChallengeFiles arrays', () => {
+    const files: ChallengeFile[] = [jsChallenge, cssChallenge];
+    const savedChallengeFiles: SavedChallengeFile[] = [
+      savedJsChallenge,
+      savedCssChallenge
+    ];
+
+    const filesCopy = JSON.parse(JSON.stringify(files));
+    const savedFilesCopy = JSON.parse(JSON.stringify(savedChallengeFiles));
+
+    mergeChallengeFiles(files, savedChallengeFiles);
+
+    expect(files).toEqual(filesCopy);
+    expect(savedChallengeFiles).toEqual(savedFilesCopy);
   });
 });

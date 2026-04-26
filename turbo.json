@@ -1,5 +1,6 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "https://v2-8-7.turborepo.dev/schema.json",
+  "globalPassThroughEnv": ["MONGOHQ_URL"],
   "tasks": {
     "build": { "dependsOn": ["setup"], "outputs": ["dist/**"] },
     "develop": { "dependsOn": ["setup"], "cache": false, "persistent": true },
@@ -11,5 +12,6 @@
     "//#lint-root": {
       "dependsOn": ["@freecodecamp/shared#build"]
     }
-  }
+  },
+  "remoteCache": { "signature": true }
 }

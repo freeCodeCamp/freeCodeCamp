@@ -1,4 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
+import type { MockInstance } from 'vitest';
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentQuestionType
@@ -9,7 +10,7 @@ import {
   examAttempt,
   generatedExam,
   oid
-} from '../../../__mocks__/exam-environment-exam.js';
+} from '../../../__fixtures__/exam-environment-exam.js';
 import * as schemas from '../schemas/index.js';
 import { setupServer } from '../../../vitest.utils.js';
 import {
@@ -29,7 +30,7 @@ import {
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
 describe('Exam Environment mocked Math.random', () => {
-  let spy: ReturnType<typeof vi.spyOn>;
+  let spy: MockInstance;
   beforeAll(() => {
     spy = vi.spyOn(Math, 'random').mockReturnValue(0.123456789);
   });

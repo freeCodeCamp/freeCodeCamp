@@ -53,7 +53,7 @@ import {
   examWithTwoCorrect,
   examWithAllCorrect,
   type ExamSubmission
-} from '../../../__mocks__/exam.js';
+} from '../../../__fixtures__/exam.js';
 import { Answer } from '../../utils/exam-types.js';
 import type { getSessionUser } from '../../schemas/user/get-session-user.js';
 import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
@@ -378,11 +378,17 @@ describe('challengeRoutes', () => {
       // function with undefined when restoring a prisma function (for some
       // reason)
       test('Should return an error response if something goes wrong', async () => {
+        const originalUserToken = fastifyTestInstance.prisma.userToken;
+
         vi.spyOn(
-          fastifyTestInstance.prisma.userToken,
-          'findUnique'
-        ).mockImplementationOnce(() => {
-          throw new Error('Database error');
+          fastifyTestInstance.prisma,
+          'userToken',
+          'get'
+        ).mockReturnValue({
+          ...originalUserToken,
+          findUnique: vi.fn().mockImplementationOnce(() => {
+            throw new Error('Database error');
+          })
         });
         const tokenResponse = await superPost('/user/user-token');
         const token = (tokenResponse.body as { userToken: string }).userToken;
@@ -2216,7 +2222,7 @@ describe('challengeRoutes', () => {
             (typeof getSessionUser)['response']['200']
           >['user'];
 
-          const res = (await superGet('/user/get-session-user')).body as {
+          const res = (await superGet('/user/session-user')).body as {
             user: GetSessionUserResponseBody;
           };
 

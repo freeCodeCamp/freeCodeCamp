@@ -6,21 +6,405 @@ enum Levels {
   Advanced = 'advanced'
 }
 
+enum Topic {
+  Html = 'html',
+  CSS = 'css',
+  Js = 'js',
+  React = 'react',
+  Python = 'python',
+  DataAnalysis = 'data-analysis',
+  MachineLearning = 'machine-learning',
+  D3 = 'd3',
+  Api = 'api',
+  InformationSecurity = 'information-security',
+  ComputerFundamentals = 'computer-fundamentals',
+  ComputerScience = 'computer-science',
+  Math = 'math',
+  Databases = 'databases',
+  Bash = 'bash',
+  Git = 'git',
+  Editors = 'editors',
+  AI = 'ai'
+}
+
 interface Catalog {
   superBlock: SuperBlocks;
   level: Levels;
   hours: number;
+  topic: Topic;
 }
 
 export const catalog: Catalog[] = [
   {
-    superBlock: SuperBlocks.BasicHtml,
+    superBlock: SuperBlocks.LearnPythonForBeginners,
     level: Levels.Beginner,
-    hours: 2
+    hours: 5,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.ComputerScience
+  },
+  {
+    superBlock: SuperBlocks.LearnRAGAndMCPFundamentals,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.AI
   },
   {
     superBlock: SuperBlocks.SemanticHtml,
     level: Levels.Beginner,
-    hours: 2
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.ComputerBasics,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.ComputerFundamentals
+  },
+  {
+    superBlock: SuperBlocks.BasicCss,
+    level: Levels.Beginner,
+    hours: 3,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.BasicHtml,
+    level: Levels.Beginner,
+    hours: 3,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.DesignForDevelopers,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.HtmlAndAccessibility,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.CssFlexbox,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPrecalculus,
+    level: Levels.Intermediate,
+    hours: 6,
+    topic: Topic.Math
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToGitAndGithub,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Git
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToPythonBasics,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.AbsoluteAndRelativeUnits,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.PseudoClassesAndElements,
+    level: Levels.Intermediate,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.HtmlFormsAndTables,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.CssColors,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.JavascriptFundamentalsReview,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.StylingForms,
+    level: Levels.Intermediate,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssBoxModel,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToBash,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Bash
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToLinearDataStructuresInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnAlgorithmsInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.CssTypography,
+    level: Levels.Intermediate,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssAndAccessibility,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssPositioning,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.AttributeSelectors,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.ResponsiveDesign,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssVariables,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssGrid,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssAnimations,
+    level: Levels.Advanced,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToSQLAndPostgreSQL,
+    level: Levels.Intermediate,
+    hours: 30,
+    topic: Topic.Databases
+  },
+  {
+    superBlock: SuperBlocks.LearnBashScripting,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.Bash
+  },
+  {
+    superBlock: SuperBlocks.LearnSQLAndBash,
+    level: Levels.Intermediate,
+    hours: 30,
+    topic: Topic.Databases
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToNano,
+    level: Levels.Intermediate,
+    hours: 10,
+    topic: Topic.Editors
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToVariablesAndStringsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToBooleansAndNumbersInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToFunctionsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToArraysInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToObjectsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToLoopsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToHigherOrderFunctionsAndCallbacksInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnDomManipulationAndEventsWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToJavascriptAndAccessibility,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnJavascriptDebugging,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnBasicRegexWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToDatesInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnAudioAndVideoEventsWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToMapsAndSetsInJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnLocalstorageAndCrudOperationsWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToJavascriptClasses,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnRecursionWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToAsynchronousJS,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnOOPWithPython,
+    level: Levels.Intermediate,
+    hours: 3,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonLoopsAndSequences,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonDictionariesAndSets,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnErrorHandlingInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnPythonClassesAndObjects,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.IntroductionToOOPInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnGraphsAndTreesInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LearnDynamicProgrammingInPython,
+    level: Levels.Intermediate,
+    hours: 40,
+    topic: Topic.Python
   }
 ];

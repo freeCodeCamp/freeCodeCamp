@@ -16,23 +16,14 @@ test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certifieduser');
 
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
+    // The 'Add portfolio project' icon button is on the profile page directly.
+    // Click it to open the portfolio modal.
+    await page.getByRole('button', { name: 'Add portfolio project' }).click();
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
-
-    // Will check if the portfolio button is hydrated correctly with different intervals.
-    await expect(async () => {
-      const addPortfolioItemButton = page.getByRole('button', {
-        name: 'Add a new portfolio Item'
-      });
-      await addPortfolioItemButton.click();
-
-      await expect(addPortfolioItemButton).toBeDisabled({ timeout: 1 });
-    }).toPass();
+    // Wait for the portfolio form to be visible inside the modal.
+    await expect(
+      page.getByLabel(translations.settings.labels.title)
+    ).toBeVisible();
   });
 
   test('The title has validation', async ({ page }) => {
@@ -121,7 +112,10 @@ test.describe('Add Portfolio Item', () => {
       .getByRole('button', { name: 'Remove this portfolio item' })
       .click();
 
-    await expect(page.getByTestId('portfolio-items')).toBeHidden();
+    // Modal closes automatically after removal
+    await expect(page.getByRole('alert').first()).toContainText(
+      /We have updated your portfolio/
+    );
   });
 
   test('The save button should be disabled when the form is pristine', async ({
@@ -133,10 +127,6 @@ test.describe('Add Portfolio Item', () => {
   });
 
   test('It should be possible to add a portfolio item', async ({ page }) => {
-    await expect(
-      page.getByRole('button', { name: 'Add a new portfolio Item' })
-    ).toBeDisabled();
-
     await page
       .getByLabel(translations.settings.labels.title)
       .fill('My portfolio');
@@ -160,38 +150,8 @@ test.describe('Add Portfolio Item', () => {
     await page
       .getByRole('button', { name: 'Save this portfolio item' })
       .click();
-    await page.getByRole('button', { name: 'Close' }).click();
-    await expect(page.getByRole('alert').first()).toContainText(
-      /We have updated your portfolio/
-    );
-  });
 
-  test('The edit modal should stay open after saving a portfolio item', async ({
-    page
-  }) => {
-    await page
-      .getByLabel(translations.settings.labels.title)
-      .first()
-      .fill('My portfolio');
-    await page
-      .getByLabel(translations.settings.labels.url)
-      .first()
-      .fill('https://my-portfolio.com');
-
-    // Wait for form validation to complete
-    await expect(
-      page.getByRole('button', { name: 'Save this portfolio item' }).first()
-    ).toBeEnabled();
-
-    await page
-      .getByRole('button', { name: 'Save this portfolio item' })
-      .first()
-      .click();
-
-    // Modal should still be open and portfolio form should be visible
-    await expect(page.getByTestId('portfolio-items').first()).toBeVisible();
-
-    await page.getByRole('button', { name: 'Close' }).click();
+    // Modal closes automatically after a successful save
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your portfolio/
     );

@@ -23,6 +23,12 @@ test.use({
   viewport: { width: 1080, height: 720 }
 });
 
+test('Editor is focused on load', async ({ page }) => {
+  await page.goto(workshopChallengeUrl);
+
+  await expect(getEditors(page)).toBeFocused();
+});
+
 test('Clicking "Check Your Code" reveals failing feedback', async ({
   page
 }) => {
