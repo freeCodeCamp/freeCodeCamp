@@ -502,8 +502,8 @@ importers:
         specifier: 1.2.0
         version: 1.2.0(redux@4.2.1)(rxjs@6.6.7)
       redux-saga:
-        specifier: 1.2.3
-        version: 1.2.3
+        specifier: 1.4.2
+        version: 1.4.2
       reselect:
         specifier: 4.1.8
         version: 4.1.8
@@ -669,7 +669,7 @@ importers:
         version: 3.6.0
       redux-saga-test-plan:
         specifier: 4.0.6
-        version: 4.0.6(@redux-saga/is@1.2.1)(@redux-saga/symbols@1.2.1)(redux-saga@1.2.3)
+        version: 4.0.6(@redux-saga/is@1.2.1)(@redux-saga/symbols@1.2.1)(redux-saga@1.4.2)
       serve:
         specifier: 13.0.4
         version: 13.0.4
@@ -10963,8 +10963,8 @@ packages:
       '@redux-saga/symbols': ^1.0.1
       redux-saga: ^1.0.1
 
-  redux-saga@1.2.3:
-    resolution: {integrity: sha512-HDe0wTR5nhd8Xr5xjGzoyTbdAw6rjy1GDplFt3JKtKN8/MnkQSRqK/n6aQQhpw5NI4ekDVOaW+w4sdxPBaCoTQ==}
+  redux-saga@1.4.2:
+    resolution: {integrity: sha512-QLIn/q+7MX/B+MkGJ/K6R3//60eJ4QNy65eqPsJrfGezbxdh1Jx+37VRKE2K4PsJnNET5JufJtgWdT30WBa+6w==}
 
   redux-thunk@2.4.2:
     resolution: {integrity: sha512-+P3TjtnP0k/FEjcBL5FZpoovtvrTNT/UXd4/sluaSyrURlSlhLSzEdfsTBW7WsKB6yPvgd7q/iZPICFjW4o57Q==}
@@ -26029,16 +26029,16 @@ snapshots:
       redux: 4.2.1
       rxjs: 6.6.7
 
-  redux-saga-test-plan@4.0.6(@redux-saga/is@1.2.1)(@redux-saga/symbols@1.2.1)(redux-saga@1.2.3):
+  redux-saga-test-plan@4.0.6(@redux-saga/is@1.2.1)(@redux-saga/symbols@1.2.1)(redux-saga@1.4.2):
     dependencies:
       '@redux-saga/is': 1.2.1
       '@redux-saga/symbols': 1.2.1
       fsm-iterator: 1.1.0
       lodash.isequal: 4.5.0
       lodash.ismatch: 4.4.0
-      redux-saga: 1.2.3
+      redux-saga: 1.4.2
 
-  redux-saga@1.2.3:
+  redux-saga@1.4.2:
     dependencies:
       '@redux-saga/core': 1.4.2
 
