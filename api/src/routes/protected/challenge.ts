@@ -998,6 +998,12 @@ async function postCoderoadChallengeCompleted(
 
     const { userId } = tokenInfo;
 
+    if (userId !== req.user?.id) {
+      logger.warn('User token does not match authenticated user');
+      void reply.code(403);
+      return reply.send({ type: 'error', msg: 'User token does not match authenticated user' });
+    }
+
     const user = await this.prisma.user.findFirstOrThrow({
       where: { id: userId }
     });
