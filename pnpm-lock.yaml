@@ -454,8 +454,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0(react@18.3.1)
       react-i18next:
-        specifier: 15.5.2
-        version: 15.5.2(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
+        specifier: 15.7.4
+        version: 15.7.4(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
       react-instantsearch:
         specifier: 7.29.0
         version: 7.29.0(algoliasearch@4.27.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10745,10 +10745,10 @@ packages:
     peerDependencies:
       react: '>= 0.14.0'
 
-  react-i18next@15.5.2:
-    resolution: {integrity: sha512-ePODyXgmZQAOYTbZXQn5rRsSBu3Gszo69jxW6aKmlSgxKAI1fOhDwSu6bT4EKHciWPKQ7v7lPrjeiadR6Gi+1A==}
+  react-i18next@15.7.4:
+    resolution: {integrity: sha512-nyU8iKNrI5uDJch0z9+Y5XEr34b0wkyYj3Rp+tfbahxtlswxSCjcUL9H0nqXo9IR3/t5Y5PKIA3fx3MfUyR9Xw==}
     peerDependencies:
-      i18next: '>= 23.2.3'
+      i18next: '>= 23.4.0'
       react: '>= 16.8.0'
       react-dom: '*'
       react-native: '*'
@@ -25787,7 +25787,7 @@ snapshots:
       prop-types: 15.8.1
       react: 18.3.1
 
-  react-i18next@15.5.2(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3):
+  react-i18next@15.7.4(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.29.2
       html-parse-stringify: 3.0.1
