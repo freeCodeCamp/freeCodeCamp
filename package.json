@@ -74,7 +74,8 @@
   },
   "dependencies": {
     "dotenv": "16.6.1",
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.1",
+    "fast-xml-parser": "5.3.5"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",

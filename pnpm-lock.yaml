@@ -19,6 +19,9 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.4(jiti@2.6.1)
+      fast-xml-parser:
+        specifier: 5.3.5
+        version: 5.3.5
     devDependencies:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
@@ -7434,6 +7437,10 @@ packages:
     resolution: {integrity: sha512-B9/wizE4WngqQftFPmdaMYlXoJlJOYxGQOanC77fq9k8+Z0v5dDSVh+3glErdIROP//s/jgb7ZuxKfB8nVyo0g==}
     hasBin: true
 
+  fast-xml-parser@5.3.5:
+    resolution: {integrity: sha512-JeaA2Vm9ffQKp9VjvfzObuMCjUYAp5WDYhRYL5LrBPY/jUDlUtOvDfot0vKSkB9tuX885BDHjtw4fZadD95wnA==}
+    hasBin: true
+
   fastest-levenshtein@1.0.16:
     resolution: {integrity: sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==}
     engines: {node: '>= 4.9.1'}
@@ -11780,6 +11787,9 @@ packages:
 
   strnum@1.1.2:
     resolution: {integrity: sha512-vrN+B7DBIoTTZjnPNewwhx6cBA/H+IS7rfW68n7XxC1y7uoiGQBxaKzqucGUgavX15dJgiGztLJ8vxuEzwqBdA==}
+
+  strnum@2.2.3:
+    resolution: {integrity: sha512-oKx6RUCuHfT3oyVjtnrmn19H1SiCqgJSg+54XqURKp5aCMbrXrhLjRN9TjuwMjiYstZ0MzDrHqkGZ5dFTKd+zg==}
 
   strtok3@6.3.0:
     resolution: {integrity: sha512-fZtbhtvI9I48xDSywd/somNqgUHl2L2cstmXCCif0itOf96jeW18MBSyrLuNicYQVkvpOxkZtkzujiTJ9LW5Jw==}
@@ -21660,6 +21670,10 @@ snapshots:
       strnum: 1.1.2
     optional: true
 
+  fast-xml-parser@5.3.5:
+    dependencies:
+      strnum: 2.2.3
+
   fastest-levenshtein@1.0.16: {}
 
   fastify-plugin@5.1.0: {}
@@ -27075,6 +27089,8 @@ snapshots:
 
   strnum@1.1.2:
     optional: true
+
+  strnum@2.2.3: {}
 
   strtok3@6.3.0:
     dependencies:
