@@ -4782,6 +4782,12 @@
           "이 실습에서는 루프를 구현해 문자열을 지정한 횟수만큼 반복하세요."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "빠진 문자 감지기 만들기",
         "intro": [
@@ -6089,6 +6095,12 @@
           "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+        ]
+      },
       "review-typescript": {
         "title": "TypeScript 복습",
         "intro": [
@@ -6958,6 +6970,13 @@
         "title": "Express 다루기",
         "intro": [
           "이 강의들에서 Express.js가 무엇인지, 웹 서버와 API를 구축할 때 개발자가 왜 사용하는지, 라우트 및 요청 처리로 기본 Express 애플리케이션을 설정하는 방법을 배우세요."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -8423,7 +8442,7 @@
       "zh-a1-module-initials-and-finals": "초성 및 운모",
       "zh-a1-module-greetings-and-basic-introductions": "인사 및 기본 소개",
       "zh-a1-module-asking-and-giving-basic-information": "기본 정보 묻기 및 제공하기",
-      "zh-a1-module-numbers-below-100": "100 미만 숫자들",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "개인정보 전달하기",
       "zh-a1-module-talking-about-personal-skills": "개인 기술에 대해 말하기",
       "zh-a1-module-discussing-team-skills": "팀 기술 논의하기"
@@ -8439,6 +8458,12 @@
         "note": "2026년 예정",
         "intro": [
           "이 모듈에서는 동료에 대해 간단한 질문을 주고받는 짧은 대화를 이해하는 연습을 하세요."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8636,11 +8661,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "100 미만 숫자 복습",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "100 미만 숫자 퀴즈",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }
