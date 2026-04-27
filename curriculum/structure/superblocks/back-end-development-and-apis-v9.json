@@ -117,9 +117,7 @@
         {
           "comingSoon": true,
           "dashedName": "back-end-development-and-apis-certification-exam",
-          "blocks": [
-            "exam-back-end-development-and-apis-certification"
-          ]
+          "blocks": ["exam-back-end-development-and-apis-certification"]
         }
       ]
     }
