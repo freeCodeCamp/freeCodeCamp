@@ -93,3 +93,161 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+
+
+
+
+freeCodeCamp can be enhanced and improved using these suggestions!!!
+
+### freeCodeCamp — Simple Audit Report  
+**Only Main Problems and Fixes (No Technical Terms)**
+
+#### SECTION 1 — SECURITY PROBLEMS (Most Important)
+
+**1.1 Website Security Instruction is Too Weak**  
+**Problem**: The website tells browsers to stay secure for only 5 minutes. After that, the protection stops working.  
+**Why it matters**: Hackers can more easily spy on or change information between the user and the website.  
+**What to do**:  
+- Change it to last for 1 full year right away.  
+- After it works well for one month, make it last for 2 years and add extra protection.  
+- Register the website with a special security list.
+
+**1.2 Protection Cookie is Not Properly Secured**  
+**Problem**: A special cookie used to stop fake requests does not clearly say “only use on secure connections” when the site is live.  
+**Why it matters**: It could be sent in an unsafe way in some situations.  
+**What to do**:  
+- Make sure the cookie is only sent on secure connections in the live version.  
+- Think about adding extra protection to this cookie.  
+- Add a test to check it works correctly.
+
+**1.3 Rules for Other Websites are Confusing and Risky**  
+**Problem**: When a request comes from an unknown website, the server sometimes sends a confusing message back. The team even left a note saying they were unsure about this.  
+**Why it matters**: It can lead to mistakes and is not the safest way.  
+**What to do**:  
+- Stop sending permission messages to websites that are not allowed.  
+- Use a standard and simpler method to handle these rules.
+
+**1.4 Protection Against Malicious Code is Very Weak**  
+**Problem**: Only one small protection against harmful pop-ups is turned on. Almost nothing stops dangerous code from running.  
+**Why it matters**: This is one of the best ways to protect users from hacked accounts and bad code.  
+**What to do**:  
+- First turn on a mode that only reports problems (don’t block yet).  
+- Watch the reports for a few weeks, then make the protection stronger step by step.
+
+---
+
+#### SECTION 2 — APP STRUCTURE PROBLEMS
+
+**2.1 No Limit on How Many Times People Can Use Public Pages**  
+**Problem**: Anyone can keep calling public parts of the site (like daily challenges or status) as many times as they want.  
+**Why it matters**: Bad actors can overload the server and make the site slow or unavailable for everyone.  
+**What to do**:  
+- Add a limit on how many requests one person can make in a short time.  
+- Allow higher limits only where really needed.
+
+**2.2 No Clear Limit on How Much Information Can Be Sent**  
+**Problem**: The server does not clearly control how much data people can send in one request (for example, when submitting code).  
+**Why it matters**: Someone could send very large amounts of data to slow down or crash the server.  
+**What to do**:  
+- Set a reasonable maximum size for all requests.  
+- Allow bigger sizes only on specific parts that actually need it.
+
+**2.3 Database Check is Missing at Start**  
+**Problem**: The website starts running even if the database is not working or cannot be reached. Problems only appear later when people try to use the site.  
+**Why it matters**: This makes it hard to know if everything is ready before users see the site.  
+**What to do**:  
+- Check the database connection as soon as the app starts. If it fails, stop and show a clear error.  
+- Add a simple health check page so monitoring tools can see if the database is working.
+
+**2.4 Error Messages Show Internal Codes**  
+**Problem**: When something goes wrong, the response sometimes shows internal message codes instead of a normal clear message.  
+**Why it matters**: It looks unprofessional and can confuse users or other developers.  
+**What to do**:  
+- Show a simple, clear message like “Something went wrong, please try again” for most cases.  
+- Keep special codes only for internal web pages.
+
+---
+
+#### SECTION 3 — PERFORMANCE PROBLEMS
+
+**3.1 Building the Website Uses Too Much Memory**  
+**Problem**: Creating the main website requires a very large amount of computer memory (7 GB).  
+**Why it matters**: It is expensive to run, hard for normal developers to build on their computers, and suggests the site is not built efficiently.  
+**What to do**:  
+- Find out which parts use the most memory.  
+- Make the website smaller and more efficient (better image handling, load things only when needed).  
+- Try to reduce memory use to 4 GB or less.
+
+**3.2 Public Pages Are Not Allowed to Be Saved**  
+**Problem**: Even pages that everyone can see (like daily challenges) are told “do not save or reuse this information”.  
+**Why it matters**: Every visitor must go to the server every time, making the site slower and putting more load on it.  
+**What to do**:  
+- Allow safe, short-term saving for public read-only pages.  
+- Keep strong “do not save” rules only for private or sensitive user information.
+
+---
+
+#### SECTION 4 — MAINTAINER AND PROCESS PROBLEMS
+
+**4.1 Settings Are Not Checked When Starting**  
+**Problem**: There are more than 30 important settings needed to run the site. If any is missing or wrong, the app starts but crashes later.  
+**Why it matters**: New people working on the project waste a lot of time fixing mysterious problems.  
+**What to do**:  
+- Add a check at the very beginning that clearly tells what is missing or wrong.
+
+**4.2 Many Helper Tools Have Poor Instructions**  
+**Problem**: There are many internal tools and scripts, but almost no clear explanation of what they do or when to use them.  
+**Why it matters**: New contributors feel lost and don’t know how to help maintain the project.  
+**What to do**:  
+- Create simple documentation that lists every tool and explains its purpose.  
+- Add short guides inside each tool folder.
+
+**4.3 Code Quality Checks Don’t Cover Everything**  
+**Problem**: Checks for clean and correct code do not run properly on all parts of the project when changes are made.  
+**Why it matters**: Poor quality changes can get added without anyone noticing.  
+**What to do**:  
+- Set up better checks that run automatically before changes are accepted.
+
+**4.4 Many Important Decisions Are Left Unresolved**  
+**Problem**: Several key security and design questions are marked with old notes saying “to be decided later”.  
+**Why it matters**: Important choices keep getting delayed, and new people don’t know what the plan is.  
+**What to do**:  
+- Turn each important note into a proper task with a responsible person and deadline.
+
+**4.5 Not All Parts of the Project Have Clear Owners**  
+**Problem**: Some files and folders do not have anyone responsible for reviewing changes.  
+**Why it matters**: Risky changes can be added without proper checking.  
+**What to do**:  
+- Add a rule so every change needs at least one reviewer from the main team.
+
+**4.6 No Plan for Future Changes to the Backend**  
+**Problem**: The backend services have no clear version number. Future updates could break things for everyone at the same time.  
+**What to do**:  
+- Decide on a clear way to handle future versions.  
+- Document the decision so everyone understands the plan.
+
+---
+
+### Priority Summary (Easy Version)
+
+**Do Right Away (Security Risks)**:  
+- Fix the weak security instruction (1.1)  
+- Secure the protection cookie (1.2)  
+- Improve rules for other websites (1.3)  
+- Add limits on public page usage (2.1)
+
+**Do Soon**:  
+- Check all important settings at startup (4.1)  
+- Check database when starting (2.3)
+
+**Do in Next Few Months**:  
+- Strengthen protection against bad code (1.4)  
+- Fix unclear error messages (2.4)  
+- Reduce memory used when building the site (3.1)  
+- Allow safe saving of public pages (3.2)  
+- Improve instructions for all helper tools (4.2)
+
+---
+
+
+Disclaimer - I am not responsible for any unfortuante mishaps!!
