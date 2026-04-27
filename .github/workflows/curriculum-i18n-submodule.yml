@@ -26,6 +26,7 @@ jobs:
           - 'japanese'
           - 'german'
           - 'swahili'
+          - 'korean'
 
     steps:
       - name: Checkout
