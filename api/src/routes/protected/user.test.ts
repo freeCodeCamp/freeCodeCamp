@@ -34,7 +34,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/exam-environment-exam.js';
+} from '../../../__fixtures__/exam-environment-exam.js';
 import { getMsTranscriptApiUrl } from './user.js';
 
 const mockedFetch = vi.fn();
@@ -187,7 +187,7 @@ const lockedProfileUI = {
 };
 
 // These are not part of the schema, but are added to the user object by
-// get-session-user's handler
+// session-user's handler
 const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
@@ -198,7 +198,7 @@ const computedProperties = {
   profileUI: lockedProfileUI
 };
 
-// The following appears in get-session-user responses, but not
+// The following appears in session-user responses, but not
 // get-public-profile
 const sessionOnlyData = {
   currentChallengeId: testUserData.currentChallengeId,
@@ -318,6 +318,7 @@ const publicUserData = {
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
+  socrates: true,
   twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   sendQuincyEmail: testUserData.sendQuincyEmail,
@@ -530,9 +531,11 @@ describe('userRoutes', () => {
         const userCount = await fastifyTestInstance.prisma.user.count({
           where: { email: testUserData.email }
         });
+        // Both requests race: one deletes the user and returns 200. The other
+        // may get a 401 if the auth middleware queries the DB after the user has
+        // already been deleted by the first request.
         responses.forEach(response => {
-          expect(response.status).toBe(200);
-          expect(response.body).toStrictEqual({});
+          expect([200, 401]).toContain(response.status);
         });
         expect(userCount).toBe(0);
       });
@@ -891,7 +894,7 @@ describe('userRoutes', () => {
           data: { username: '' }
         });
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         expect(response.body).toStrictEqual({ user: {}, result: '' });
         expect(response.statusCode).toBe(500);
@@ -900,13 +903,13 @@ describe('userRoutes', () => {
       // This should help debugging, since this the route returns this if
       // anything throws in the handler.
       test('GET does not return the error response if the request is valid', async () => {
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         expect(response.body).not.toEqual({ user: {}, result: '' });
       });
 
       test('GET returns username as the result property', async () => {
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         expect(response.body).toMatchObject({
           result: testUserData.username
@@ -926,7 +929,7 @@ describe('userRoutes', () => {
           joinDate: new ObjectId(testUser?.id).getTimestamp().toISOString()
         };
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
         const {
           user: { foobar }
         } = response.body as unknown as {
@@ -953,7 +956,7 @@ describe('userRoutes', () => {
         const tokens = await fastifyTestInstance.prisma.userToken.count();
         expect(tokens).toBe(1);
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         const { userToken } = jwt.decode(
           response.body.user.foobar.userToken
@@ -970,7 +973,7 @@ describe('userRoutes', () => {
         const msUsernames = await fastifyTestInstance.prisma.msUsername.count();
         expect(msUsernames).toBe(1);
 
-        const response = await superGet('/user/get-session-user');
+        const response = await superGet('/user/session-user');
 
         const { msUsername } = response.body.user.foobar;
 
@@ -1050,10 +1053,11 @@ describe('userRoutes', () => {
           keyboardShortcuts: false,
           location: '',
           name: '',
+          socrates: true,
           theme: 'default'
         };
 
-        const response = await superRequest('/user/get-session-user', {
+        const response = await superRequest('/user/session-user', {
           method: 'GET',
           setCookies
         });
@@ -1607,7 +1611,6 @@ Thanks and regards,
       { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
-      { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
       { path: '/user/ms-username', method: 'DELETE' },
@@ -1623,6 +1626,18 @@ Thanks and regards,
           setCookies
         });
         expect(response.statusCode).toBe(401);
+      });
+    });
+
+    describe('/user/session-user', () => {
+      test('GET returns 200 with empty user object for unauthenticated users', async () => {
+        const response = await superRequest('/user/session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({ user: {}, result: '' });
       });
     });
   });

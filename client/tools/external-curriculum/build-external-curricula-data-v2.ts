@@ -9,7 +9,6 @@ import {
 } from '@freecodecamp/shared/config/curriculum';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
-import { patchBlock } from './patches';
 import {
   availableBackgrounds,
   availableAudios
@@ -377,11 +376,15 @@ export function buildExtCurriculumDataV2(
                   .filter(block => blocksWithData[block])
                   .map(block => {
                     const blockData = blocksWithData[block];
+                    const blockIntro = superBlockIntros.blocks[block];
                     return {
-                      intro: superBlockIntros.blocks[block].intro,
-                      meta: patchBlock(
-                        omit(blockData.meta, ['chapter', 'module'])
-                      )
+                      intro: blockIntro.intro,
+                      // Keep `meta.name` for backward compatibility with
+                      // consumers that have not migrated to intro-based titles.
+                      meta: {
+                        ...omit(blockData.meta, ['chapter', 'module']),
+                        name: blockIntro.title
+                      }
                     };
                   })
           }))
@@ -401,10 +404,13 @@ export function buildExtCurriculumDataV2(
     const blockNames = Object.keys(curriculum[superBlockKey].blocks);
     const blocks = blockNames.map(blockName => {
       const blockData = curriculum[superBlockKey].blocks[blockName];
+      const blockIntro = intros[superBlockKey].blocks[blockName];
 
       return {
-        intro: intros[superBlockKey].blocks[blockName].intro,
-        meta: patchBlock(blockData.meta)
+        intro: blockIntro.intro,
+        // Keep `meta.name` for backward compatibility with
+        // consumers that have not migrated to intro-based titles.
+        meta: { ...blockData.meta, name: blockIntro.title }
       };
     });
 

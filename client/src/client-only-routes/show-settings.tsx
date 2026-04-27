@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -19,6 +19,7 @@ import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
 import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
+import About from '../components/profile/components/about';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -161,7 +162,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isHonest,
     sendQuincyEmail,
     username,
-    keyboardShortcuts
+    keyboardShortcuts,
+    socrates
   } = user;
 
   const sound = (store.get('fcc-sound') as boolean) ?? false;
@@ -182,8 +184,19 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             >
               {t('settings.for', { username: username })}
             </h1>
+            <Trans i18nKey='settings.profile-note'>
+              <a href={`/${username}`}>your profile</a>
+            </Trans>
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
+          <ScrollElement name='personal'>
+            <About
+              user={user}
+              setIsEditing={() => {}}
+              sectionTitle={t('settings.headings.personal')}
+            />
+          </ScrollElement>
+          <Spacer size='l' />
           <ScrollElement name='account'>
             <Account
               keyboardShortcuts={keyboardShortcuts}
@@ -192,13 +205,14 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               resetEditorLayout={resetEditorLayout}
               toggleKeyboardShortcuts={toggleKeyboardShortcuts}
               toggleSoundMode={toggleSoundMode}
+              socrates={socrates}
             />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='privacy'>
             <Privacy />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='email'>
             <Email
               email={email}
@@ -207,15 +221,15 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               updateQuincyEmail={updateQuincyEmail}
             />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='honesty'>
             <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='exam-token'>
             <ExamToken email={email} />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='certifications'>
             <Certification
               completedChallenges={completedChallenges}
@@ -255,14 +269,14 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               username={username}
               verifyCert={verifyCert}
             />
-            <Spacer size='m' />
+            <Spacer size='l' />
           </ScrollElement>
           {userToken && (
             <>
               <ScrollElement name='user-token'>
                 <UserToken />
               </ScrollElement>
-              <Spacer size='m' />
+              <Spacer size='l' />
             </>
           )}
           <ScrollElement name='danger-zone'>

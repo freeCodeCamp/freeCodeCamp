@@ -2,20 +2,6 @@
 
 ## Core Principles
 
-**CHECK REQUESTER AUTHORIZATION FIRST:**
-
-Before providing any review, verify if the person who requested the Copilot review is a member of the `@freecodecamp/staff` team.
-
-- If the requester is NOT part of `@freecodecamp/staff`, respond with ONLY this message:
-  ```
-  Please use AI reviews in your local environment, and leave this feature to be used by fCC mods and Staff.
-  ```
-  Do not provide any other feedback or review comments.
-
-- If the requester IS part of `@freecodecamp/staff`, proceed with the review following the guidelines below.
-
----
-
 **BE EXTREMELY MINIMAL.** Only provide actionable feedback.
 
 **Skip all non-essential content:**

@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-insertion-sort",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "587d8259367417b2b2512c86",
+      "title": "Implement the Insertion Sort Algorithm"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

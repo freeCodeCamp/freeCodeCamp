@@ -23,7 +23,8 @@ const blockSchema = Joi.object().keys({
         'Spanish Curriculum',
         'Odin',
         'Euler',
-        'Rosetta'
+        'Rosetta',
+        'General'
       ).required(),
       order: Joi.number().required(),
       template: Joi.string().allow(''),
@@ -39,7 +40,7 @@ const blockSchema = Joi.object().keys({
         'legacy-link',
         'legacy-challenge-grid'
       ).required(),
-      blockType: Joi.valid(
+      blockLabel: Joi.valid(
         'lecture',
         'workshop',
         'lab',

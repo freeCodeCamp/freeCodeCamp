@@ -27,13 +27,13 @@ function plugin() {
           ) {
             return {
               type: 'interactiveEditor',
-              data: getFiles(node.children)
+              files: getFiles(node.children)
             };
           } else {
             const paragraph = mdastToHTML([node]);
             return {
               type: 'paragraph',
-              data: paragraph
+              contents: paragraph
             };
           }
         }) ?? [];

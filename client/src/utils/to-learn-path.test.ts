@@ -1,10 +1,9 @@
-import { withPrefix } from 'gatsby';
 import { describe, it, expect } from 'vitest';
 
 import toLearnPath from './to-learn-path';
 
 describe('To learn path utility (toLearnPath)', () => {
-  const learn = withPrefix('/learn');
+  const learn = '/learn';
 
   it('should include /learn', () => {
     expect(toLearnPath({})).toMatch(`${learn}`);

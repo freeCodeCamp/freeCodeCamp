@@ -65,15 +65,15 @@ vi.mock('./components/super-block-accordion', () => ({
 
 const translationMap: Record<string, unknown> = {
   'intro:full-stack-developer': {
-    title: 'Full Stack Developer',
-    intro: ['<strong>Build</strong> and deploy full stack apps.'],
+    title: 'Full-Stack Developer',
+    intro: ['<strong>Build</strong> and deploy full-stack apps.'],
     note: 'Stay curious.'
   },
   'intro:full-stack-developer-v9': {
-    title: 'Certified Full Stack Developer Curriculum',
+    title: 'Certified Full-Stack Developer Curriculum',
     intro: [
-      'This certification represents the culmination of your full stack developer journey.',
-      'Pass the exam to earn your Full Stack Developer Certification.'
+      'This certification represents the culmination of your full-stack developer journey.',
+      'Pass the exam to earn your Full-Stack Developer Certification.'
     ],
     note: 'Coming soon.'
   },
@@ -257,9 +257,7 @@ const createPageProps = (
     signInLoading: false,
     location: createLocation(),
     pageContext: {
-      superBlock,
-      title: `${superBlock} certification`,
-      certification: superBlock
+      superBlock
     },
     resetExpansion: vi.fn(),
     toggleBlock: vi.fn(),
@@ -328,7 +326,7 @@ type Scenario = {
 const scenarios: Scenario[] = [
   {
     description:
-      'For a non full stack certification with progress it should render the continue button and slug.',
+      'For a non full-stack certification with progress it should render the continue button and slug.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [1],
     expected: {
@@ -339,7 +337,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For a non full stack certification without progress it should render the start button and slug.',
+      'For a non full-stack certification without progress it should render the start button and slug.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [],
     expected: {
@@ -350,7 +348,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For a non full stack certification with full progress it should not render the button.',
+      'For a non full-stack certification with full progress it should not render the button.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [1, 2, 3],
     expected: {
@@ -361,7 +359,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For the full stack certification with progress it should not render the start or continue button.',
+      'For the full-stack certification with progress it should not render the start or continue button.',
     superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [1],
     expected: {
@@ -372,7 +370,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For the full stack certification without progress it should not render the start or continue button.',
+      'For the full-stack certification without progress it should not render the start or continue button.',
     superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [],
     expected: {
@@ -383,7 +381,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For the full stack certification with full progress it should not render the button.',
+      'For the full-stack certification with full progress it should not render the button.',
     superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [1, 2, 3],
     expected: {
@@ -394,8 +392,27 @@ const scenarios: Scenario[] = [
   }
 ];
 
+const scenariosWithCta = scenarios.filter(
+  (
+    scenario
+  ): scenario is Scenario & {
+    expected: {
+      labelKey: string;
+      dataLabel: 'start-learning' | 'continue-learning';
+      nextOrder: number;
+    };
+  } =>
+    scenario.expected.labelKey !== null &&
+    scenario.expected.dataLabel !== null &&
+    scenario.expected.nextOrder !== null
+);
+
+const scenariosWithoutCta = scenarios.filter(
+  scenario => scenario.expected.labelKey === null
+);
+
 describe('SuperBlockIntroductionPage', () => {
-  it.each(scenarios)('%s', async scenario => {
+  it.each(scenariosWithCta)('$description', async scenario => {
     const { superBlock, completedOrders, expected } = scenario;
     const setup = createSetup(superBlock);
 
@@ -420,31 +437,56 @@ describe('SuperBlockIntroductionPage', () => {
 
     render(<SuperBlockIntroductionPage {...props} />);
 
-    if (expected.labelKey) {
-      const expectedText = translationMap[expected.labelKey] as string;
-      const cta = await screen.findByRole('link', {
-        name: expectedText
-      });
+    const expectedText = translationMap[expected.labelKey] as string;
+    const cta = await screen.findByRole('link', {
+      name: expectedText
+    });
 
-      expect(cta).toHaveAttribute('data-test-label', expected.dataLabel);
+    expect(cta).toHaveAttribute('data-test-label', expected.dataLabel);
 
-      const nextChallenge = setup.challengeByOrder.get(expected.nextOrder!);
-      expect(nextChallenge).toBeDefined();
-      expect(cta).toHaveAttribute('href', nextChallenge?.fields.slug ?? '');
-    } else {
-      await waitFor(() =>
-        expect(
-          screen.queryByRole('link', {
-            name: translationMap['misc.fsd-b-cta'] as string
-          })
-        ).toBeNull()
-      );
+    const nextChallenge = setup.challengeByOrder.get(expected.nextOrder);
+    if (!nextChallenge) {
+      throw new Error(`Missing challenge for order ${expected.nextOrder}`);
+    }
+    expect(cta).toHaveAttribute('href', nextChallenge.fields.slug);
+  });
 
+  it.each(scenariosWithoutCta)('$description', async scenario => {
+    const { superBlock, completedOrders } = scenario;
+    const setup = createSetup(superBlock);
+
+    const completedChallenges = completedOrders.map(order => {
+      const challenge = setup.challengeByOrder.get(order);
+      if (!challenge) {
+        throw new Error(`Missing challenge for order ${order}`);
+      }
+
+      return {
+        id: challenge.id,
+        completedDate: order * 100
+      };
+    });
+
+    const props = createPageProps(setup, superBlock, {
+      user: {
+        completedChallenges,
+        isDonating: false
+      }
+    });
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('link', {
+          name: translationMap['misc.fsd-b-cta'] as string
+        })
+      ).toBeNull();
       expect(
         screen.queryByRole('link', {
           name: translationMap['misc.continue-learning'] as string
         })
       ).toBeNull();
-    }
+    });
   });
 });

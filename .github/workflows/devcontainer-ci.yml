@@ -1,0 +1,63 @@
+name: CI - Devcontainer
+
+on:
+  pull_request:
+    paths:
+      - '.devcontainer/**'
+      - 'docker/devcontainer/**'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Login to GHCR
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install devcontainer CLI
+        # renovate: datasource=npm depName=@devcontainers/cli
+        run: npm install -g @devcontainers/cli@0.83.0
+
+      - name: Build devcontainer
+        run: devcontainer build --workspace-folder .
+
+      - name: Start devcontainer
+        run: devcontainer up --workspace-folder .
+
+      - name: Validate required tools
+        run: |
+          devcontainer exec --workspace-folder . pnpm --version
+          devcontainer exec --workspace-folder . rsync --version
+          devcontainer exec --workspace-folder . mongosh --version
+          devcontainer exec --workspace-folder . node --version
+          devcontainer exec --workspace-folder . git --version
+
+      - name: Validate MongoDB replica set
+        run: |
+          for i in $(seq 1 30); do
+            if devcontainer exec --workspace-folder . mongosh --eval "rs.status().ok" 2>/dev/null; then
+              echo "Replica set is ready"
+              exit 0
+            fi
+            echo "Waiting for replica set... (attempt $i/30)"
+            sleep 2
+          done
+          echo "Replica set failed to initialize"
+          exit 1

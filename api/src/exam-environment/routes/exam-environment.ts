@@ -535,7 +535,7 @@ async function postExamGeneratedExamHandler(
  * TODO: Consider validating req.user.id == lastAttempt.user_id?
  *
  * NOTE: Currently, questions can be _unanswered_ - taken away from a previous attempt submission.
- * Theorectically, this is fine. Practically, it is unclear when that would be useful.
+ * Theoretically, this is fine. Practically, it is unclear when that would be useful.
  */
 async function postExamAttemptHandler(
   this: FastifyInstance,
@@ -687,7 +687,7 @@ async function postExamAttemptHandler(
         : 'Unknown attempt validation error';
     logger.warn({ validExamAttemptError: message }, 'Invalid exam attempt.');
     // As attempt is invalid, create moderation record to investigate or update existing record
-    await this.prisma.examEnvironmentExamModeration.upsert({
+    const moderation = await this.prisma.examEnvironmentExamModeration.upsert({
       where: { examAttemptId: latestAttempt.id },
       create: {
         examAttemptId: latestAttempt.id,
@@ -696,6 +696,17 @@ async function postExamAttemptHandler(
       },
       update: {
         feedback: message
+      }
+    });
+
+    // Link attempt with moderation id if it has not already been done
+    await this.prisma.examEnvironmentExamAttempt.update({
+      where: {
+        id: latestAttempt.id,
+        examModerationId: null
+      },
+      data: {
+        examModerationId: moderation.id
       }
     });
 
