@@ -193,6 +193,7 @@ const ShowBackEnd = (props: BackEndProps) => {
               />
               <ProjectToolPanel
                 guideUrl={getGuideUrl({ forumTopicId, title: guideTitle })}
+                forumTopicId={forumTopicId}
               />
               <br />
               <Output

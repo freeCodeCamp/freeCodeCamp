@@ -54,6 +54,9 @@ export const generateSearchLink = (
   return search;
 };
 
+export const hasForumTopicGuide = (guideUrl?: string): boolean =>
+  /\/t\/\d+$/.test(guideUrl ?? '');
+
 interface CheckboxProps {
   name: string;
   i18nKey: string;
@@ -166,6 +169,9 @@ function HelpModal({
   const hintUrl = guideUrl
     ? guideUrl
     : generateSearchLink(challengeTitle, challengeBlock, superBlock);
+  const hintText = hasForumTopicGuide(guideUrl)
+    ? t('buttons.get-hint')
+    : t('buttons.search-the-forum');
 
   if (isOpen) {
     callGA({ event: 'pageview', pagePath: '/help-modal' });
@@ -305,7 +311,7 @@ function HelpModal({
               rel='noopener noreferrer'
               data-playwright-test-label='get-hint-modal-button'
             >
-              {t('buttons.get-hint')}
+              {hintText}
             </Button>
             <Spacer size='xxs' />
             {videoUrl && (

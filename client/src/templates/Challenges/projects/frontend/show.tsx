@@ -168,6 +168,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
               />
               <ProjectToolPanel
                 guideUrl={getGuideUrl({ forumTopicId, title: guideTitle })}
+                forumTopicId={forumTopicId}
               />
               <br />
               <Spacer size='m' />
