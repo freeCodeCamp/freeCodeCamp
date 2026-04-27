@@ -9,14 +9,28 @@ dashedName: step-44
 
 Now you will handle the player position selection. You have to refactor the input to a select, then map over an array of valid football positions as the value of the select options.
 
-To start, create a `POSITIONS` array with the string values of `GK`, `CB`, `LB`, `RB`, `CDM`, `CM`, `CAM`, `LW`, `RW`, `ST`, and `CF`. Add `as const` right after the closing square brackets so Typescript narrows the type from a general `string[]` to a readonly tuple of those exact literal values. This means TypeScript knows precisely what strings are valid, rather than just knowing it's some array of strings.
+To start, create a `POSITIONS` array with the string values of `GK`, `CB`, `LB`, `RB`, `CDM`, `CM`, `CAM`, `LW`, `RW`, `ST`, and `CF`. Add `as const` right after the closing square brackets so Typescript narrows the type from a general `string[]` to a readonly tuple of those exact literal values.
+
+This means TypeScript knows precisely what strings are valid, rather than just knowing it's some array of strings.
 
 # --hints--
 
-Test 1
+You should declare a `POSITIONS` constant.
 
 ```js
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.variables.POSITIONS);
+```
 
+Your `POSITIONS` array should contain all the required football position strings use `as const` to narrow its type to readonly string literals.
+
+```js
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.POSITIONS.value.matches(
+    '["GK", "CB", "LB", "RB", "CDM", "CM", "CAM", "LW", "RW", "ST", "CF"] as const'
+  )
+);
 ```
 
 # --seed--
@@ -463,7 +477,7 @@ function PlayerCard({ player }: { player: PlayerData }) {
   );
 }
 
-export const defaultPlayer: PlayerData = {
+const defaultPlayer: PlayerData = {
   name: "PELE",
   overallRating: 98,
   position: "ST",
@@ -496,7 +510,15 @@ export const FootballPlayerCard = () => {
                 <label className="label" htmlFor="name">
                   Name
                 </label>
-                <input id="name" className="input" type="text" />
+                <input
+                  id="name"
+                  className="input"
+                  type="text"
+                  value={player.name}
+                  onChange={(e) =>
+                    setPlayer({ ...player, name: e.target.value })
+                  }
+                />
               </div>
               <div className="form-row">
                 <div className="form-group">
