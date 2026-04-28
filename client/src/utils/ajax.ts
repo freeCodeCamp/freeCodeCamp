@@ -52,6 +52,10 @@ async function get<T>(
 }
 
 async function combineDataWithResponse<T>(response: Response) {
+  if (response.status === 204 || response.status === 205) {
+    return { response, data: undefined as T };
+  }
+
   const data = (await response.json()) as T;
   return { response, data };
 }
