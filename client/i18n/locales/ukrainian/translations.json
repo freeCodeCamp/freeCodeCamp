@@ -339,7 +339,7 @@
       "keyboard-shortcuts": "Дозволити клавіатурні скорочення"
     },
     "headings": {
-      "personal": "Personal",
+      "personal": "Особиста інформація",
       "account": "Обліковий запис",
       "certs": "Сертифікації",
       "legacy-certs": "Застарілі сертифікації",
@@ -470,8 +470,8 @@
     },
     "completeness": {
       "heading": "Профіль заповнено на {{percentage}}%",
-      "title": "Profile Completion",
-      "progress": "{{percentage}}% complete",
+      "title": "Заповнення профілю",
+      "progress": "заповнено на {{percentage}}%",
       "name": "Додайте ім’я",
       "location": "Додайте місцеперебування",
       "picture": "Завантажте фото",
@@ -479,7 +479,7 @@
       "social": "Додайте посилання на соцмережі",
       "portfolio": "Додайте портфоліо",
       "experience": "Додайте досвід",
-      "privacy": "Make your profile public"
+      "privacy": "Зробіть профіль загальнодоступним"
     }
   },
   "footer": {
@@ -1031,10 +1031,10 @@
     "rsa-checkbox": "Я спробував(-ла) метод читати-шукати-питати",
     "similar-questions-checkbox": "Я шукав(-ла) схожі запитання на форумі, на які вже є відповідь",
     "edit-my-profile": "Редагувати профіль",
-    "add-portfolio": "Add portfolio project",
-    "edit-portfolio": "Edit portfolio project",
-    "add-experience": "Add experience",
-    "edit-experience": "Edit experience",
+    "add-portfolio": "Додайте проєкт до портфоліо",
+    "edit-portfolio": "Відредагуйте проєкт з портфоліо",
+    "add-experience": "Додайте досвід",
+    "edit-experience": "Відредагуйте досвід",
     "editor-a11y-off-macos": "Вміст редактора {{editorName}}. Щоб перейти до функцій доступності, натисніть Option+F1.",
     "editor-a11y-off-non-macos": "Вміст редактора {{editorName}}. Щоб перейти до функцій доступності, натисніть Alt+F1.",
     "editor-a11y-on-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Command+E, щоб вимкнути його, або Option+F1, щоб переглянути більше функцій.",
