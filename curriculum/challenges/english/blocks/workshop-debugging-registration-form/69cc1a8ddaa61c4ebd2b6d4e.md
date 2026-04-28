@@ -15,10 +15,26 @@ Declare an object called `user` with `name` and `age` as its properties.
 
 # --hints--
 
-Test 1
+You should create a `user` object inside the `registerUser` function.
 
 ```js
+const match = code.match(
+  __helpers.functionRegex('registerUser', [], { capture: true })
+);
+assert.exists(match);
+assert.match(match[1], /const\s+user\s*=\s*\{/);
+```
 
+The `user` object should include a `"name"` property with the value of the `name` variable.
+
+```js
+assert.match(code, /const\s+user\s*=\s*\{[\s\S]*?name\s*:\s*name/);
+```
+
+The `user` object should include an `"age"` property with the value of the `age` variable.
+
+```js
+assert.match(code, /const\s+user\s*=\s*\{[\s\S]*?age\s*:\s*age/);
 ```
 
 # --seed--
@@ -54,7 +70,7 @@ function registerUser() {
     if (age.trim() === "") {
       throw new Error("Age is required");
     }
-    if (!Number.isInteger(age)) {
+    if (!Number.isInteger(Number(age))) {
       throw new Error("Invalid value for age");
     }
     result.textContent = "Registration successful";
