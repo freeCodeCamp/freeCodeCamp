@@ -140,6 +140,7 @@ assert.sameDeepOrderedMembers(result[1].palindromeBreaks, [1]);
 ## --seed-contents--
 
 ```js
+
 ```
 
 # --solutions--
