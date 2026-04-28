@@ -9,7 +9,7 @@
     "@fastify/csrf-protection": "7.1.0",
     "@fastify/oauth2": "8.2.0",
     "@fastify/swagger": "9.7.0",
-    "@fastify/swagger-ui": "5.2.5",
+    "@fastify/swagger-ui": "5.2.6",
     "@fastify/type-provider-typebox": "6.1.0",
     "@freecodecamp/shared": "workspace:*",
     "@growthbook/growthbook": "1.6.5",
