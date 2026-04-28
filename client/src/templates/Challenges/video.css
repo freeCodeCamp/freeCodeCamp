@@ -200,4 +200,10 @@ input:focus-visible + .video-quiz-input-visible {
   border: none;
   color: var(--primary-color);
   margin: 0;
+  max-width: 100%;
+}
+
+.mcq-question-text pre {
+  max-width: 100%;
+  overflow-x: auto;
 }
