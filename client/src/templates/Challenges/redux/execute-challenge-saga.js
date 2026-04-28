@@ -221,15 +221,16 @@ function getBuildWarningMessage(warning) {
 }
 
 function* outputBuildWarnings(warnings) {
+  for (const warningMessage of getBuildWarningMessages(warnings)) {
+    yield put(updateConsole(escape(warningMessage)));
+  }
+}
+
+function getBuildWarningMessages(warnings) {
   if (!Array.isArray(warnings) || warnings.length === 0) {
-    return;
+    return [];
   }
-  for (const warning of warnings) {
-    const warningMessage = getBuildWarningMessage(warning);
-    if (warningMessage) {
-      yield put(updateConsole(escape(warningMessage)));
-    }
-  }
+  return warnings.map(getBuildWarningMessage).filter(Boolean);
 }
 
 export function* executeTests(testRunner, tests, testTimeout = 5000) {
@@ -330,11 +331,10 @@ function* previewChallengeSaga() {
       // If there's an error building the challenge then throwing it here will
       // let the user know there's a problem.
       if (buildData.error) throw buildData.error;
-      for (const warning of buildData?.warnings ?? []) {
-        const warningMessage = getBuildWarningMessage(warning);
-        if (warningMessage) {
-          logProxy.put(warningMessage);
-        }
+      for (const warningMessage of getBuildWarningMessages(
+        buildData?.warnings
+      )) {
+        logProxy.put(warningMessage);
       }
 
       // evaluate the user code in the preview frame or in the worker

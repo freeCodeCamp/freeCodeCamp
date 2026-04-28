@@ -275,11 +275,27 @@ export const embedScript = (script, source, contents) => {
   script.setAttribute('data-src', source);
 };
 
-const allowedLocalStylesheets = stylesCss =>
-  stylesCss ? new Set(['styles.css']) : new Set();
+const localResourceConfigs = [
+  {
+    selector: 'link[rel~="stylesheet"][href]',
+    sourceAttribute: 'href',
+    fileKey: 'stylesCss',
+    resourceType: 'stylesheet',
+    allowedSource: 'styles.css',
+    warnWhenNoSourceFile: true
+  },
+  {
+    selector: 'script[src]',
+    sourceAttribute: 'src',
+    fileKey: 'scriptJs',
+    resourceType: 'script',
+    allowedSource: 'script.js',
+    warnWhenNoSourceFile: false
+  }
+];
 
-const allowedLocalScripts = scriptJs =>
-  scriptJs ? new Set(['script.js']) : new Set();
+const getAllowedSources = (challengeFile, allowedSource) =>
+  challengeFile ? new Set([allowedSource]) : new Set();
 
 const hasScheme = source => /^[a-zA-Z][a-zA-Z\d+.-]*:/.test(source);
 
@@ -300,19 +316,16 @@ const normalizeSource = source =>
     .replace(/^\.\/+/, '')
     .replace(/^\/+/, '');
 
-const buildAllowedSourceMessage = sources => {
-  return [...sources];
-};
-
-const createUnexpectedSourceWarning = ({ tagName, source, allowedSources }) => {
-  const resourceType = tagName === 'LINK' ? 'stylesheet' : 'script';
-  return {
-    type: 'unavailable-local-resource',
-    source,
-    resourceType,
-    allowedSources: buildAllowedSourceMessage(allowedSources)
-  };
-};
+const createUnexpectedSourceWarning = ({
+  resourceType,
+  source,
+  allowedSources
+}) => ({
+  type: 'unavailable-local-resource',
+  source,
+  resourceType,
+  allowedSources: [...allowedSources]
+});
 
 export const getLocalSourceWarnings = challengeFiles => {
   const { indexHtml, stylesCss, scriptJs } =
@@ -325,48 +338,46 @@ export const getLocalSourceWarnings = challengeFiles => {
   const warnings = new Map();
   const parser = new DOMParser();
   const doc = parser.parseFromString(indexHtml.contents, 'text/html');
-  const stylesheetSources = doc.querySelectorAll(
-    'link[rel~="stylesheet"][href]'
+  const challengeFilesByKey = { stylesCss, scriptJs };
+
+  localResourceConfigs.forEach(
+    ({
+      selector,
+      sourceAttribute,
+      fileKey,
+      resourceType,
+      allowedSource,
+      warnWhenNoSourceFile
+    }) => {
+      const allowedSources = getAllowedSources(
+        challengeFilesByKey[fileKey],
+        allowedSource
+      );
+
+      if (allowedSources.size === 0 && !warnWhenNoSourceFile) {
+        return;
+      }
+
+      doc.querySelectorAll(selector).forEach(node => {
+        const source = node.getAttribute(sourceAttribute) ?? '';
+
+        if (!isLocalResource(source)) {
+          return;
+        }
+
+        if (allowedSources.has(normalizeSource(source))) {
+          return;
+        }
+
+        const warning = createUnexpectedSourceWarning({
+          resourceType,
+          source,
+          allowedSources
+        });
+        warnings.set(JSON.stringify(warning), warning);
+      });
+    }
   );
-  const scriptSources = doc.querySelectorAll('script[src]');
-
-  const allowedStylesheets = allowedLocalStylesheets(stylesCss);
-  const allowedScripts = allowedLocalScripts(scriptJs);
-
-  stylesheetSources.forEach(node => {
-    const source = node.getAttribute('href') ?? '';
-    if (!isLocalResource(source)) {
-      return;
-    }
-    const normalized = normalizeSource(source);
-    if (!allowedStylesheets.has(normalized)) {
-      const warning = createUnexpectedSourceWarning({
-        tagName: node.tagName,
-        source,
-        allowedSources: allowedStylesheets
-      });
-      warnings.set(JSON.stringify(warning), warning);
-    }
-  });
-
-  scriptSources.forEach(node => {
-    if (allowedScripts.size === 0) {
-      return;
-    }
-    const source = node.getAttribute('src') ?? '';
-    if (!isLocalResource(source)) {
-      return;
-    }
-    const normalized = normalizeSource(source);
-    if (!allowedScripts.has(normalized)) {
-      const warning = createUnexpectedSourceWarning({
-        tagName: node.tagName,
-        source,
-        allowedSources: allowedScripts
-      });
-      warnings.set(JSON.stringify(warning), warning);
-    }
-  });
 
   return [...warnings.values()];
 };
