@@ -158,10 +158,15 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     await pasteContent(page);
 
-    await page.getByRole('button', { name: 'Run' }).click();
+    await page
+      .getByRole('button', { name: translations.buttons['check-code'] })
+      .click();
 
     await page
-      .getByRole('button', { name: 'Go to next challenge', exact: false })
+      .getByRole('button', {
+        name: translations.buttons['submit-continue'],
+        exact: false
+      })
       .click();
 
     // Submit the rest with the API.

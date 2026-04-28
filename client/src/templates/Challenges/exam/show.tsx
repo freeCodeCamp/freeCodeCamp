@@ -185,7 +185,7 @@ function ShowExam(props: ShowExamProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, challengeType, helpCategory, title }
+          challenge: { tests, challengeType, helpCategory, description, title }
         }
       },
       pageContext: { challengeMeta },
@@ -201,6 +201,7 @@ function ShowExam(props: ShowExamProps) {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

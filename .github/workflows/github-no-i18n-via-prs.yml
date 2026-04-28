@@ -23,7 +23,7 @@ jobs:
             }).catch(() => ({status: 404}));
             if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
               core.setFailed('This PR appears to touch translated curriculum files.')
-              github.rest.issues.createComment({
+              await github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
                 repo: context.repo.repo,

@@ -1,22 +1,16 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useEffect, useRef } from 'react';
 
-import { updateAllChallengesInfo } from '../../../redux/actions';
 import { submitChallenge } from '../redux/actions';
-import {
-  updateSuperBlockStructures,
-  superBlockStructuresSelector
-} from '../../../templates/Introduction/redux';
-import {
-  allChallengesInfoSelector,
-  needsCurriculumDataSelector
-} from '../../../redux/selectors';
+import { curriculumData } from '../../../services/curriculum-data';
 import type {
   CertificateNode,
   ChallengeNode,
   SuperBlockStructure
 } from '../../../redux/prop-types';
+
+const SUBMIT_DEBOUNCE_MS = 1000;
 
 interface AllCurriculumData {
   allChallengeNode: { nodes: ChallengeNode[] };
@@ -25,15 +19,6 @@ interface AllCurriculumData {
 }
 
 export function useFetchAllCurriculumData(): void {
-  const dispatch = useDispatch();
-  const needsCurriculumData = useSelector(needsCurriculumDataSelector);
-  const allChallengesInfo = useSelector(allChallengesInfoSelector) as {
-    challengeNodes?: Array<{ challenge: { id: string } }>;
-  } | null;
-  const superBlockStructures = useSelector(
-    superBlockStructuresSelector
-  ) as Record<string, SuperBlockStructure>;
-
   const {
     allChallengeNode: { nodes: challengeNodes },
     allCertificateNode: { nodes: certificateNodes },
@@ -50,6 +35,7 @@ export function useFetchAllCurriculumData(): void {
         nodes {
           challenge {
             block
+            certification
             id
           }
         }
@@ -82,44 +68,52 @@ export function useFetchAllCurriculumData(): void {
     }
   `);
 
+  // Initialize curriculum data if necessary. The useEffect slightly improves
+  // hot-reloading, since, in principle, the data can change without a full page
+  // refresh. However, it's still Gatsby, so hot-reloading is not guaranteed.
   useEffect(() => {
-    // Only dispatch if curriculum data is needed
-    if (!needsCurriculumData) return;
+    const structuresMap: Record<string, SuperBlockStructure> = {};
+    superBlockStructureNodes.forEach(node => {
+      structuresMap[node.superBlock] = node;
+    });
 
-    // Update allChallengesInfo if not already loaded
-    if (!allChallengesInfo?.challengeNodes?.length) {
-      dispatch(
-        updateAllChallengesInfo({
-          challengeNodes,
-          certificateNodes
-        })
-      );
-    }
-
-    // Update superBlockStructures if not already loaded
-    if (Object.keys(superBlockStructures || {}).length === 0) {
-      const structuresMap: Record<string, SuperBlockStructure> = {};
-      superBlockStructureNodes.forEach(node => {
-        structuresMap[node.superBlock] = node;
-      });
-      dispatch(updateSuperBlockStructures(structuresMap));
-    }
-  }, [
-    dispatch,
-    needsCurriculumData,
-    challengeNodes,
-    certificateNodes,
-    superBlockStructureNodes,
-    allChallengesInfo,
-    superBlockStructures
-  ]);
+    curriculumData.initialize({
+      challengeNodes,
+      certificateNodes,
+      superBlockStructures: structuresMap
+    });
+  }, [challengeNodes, certificateNodes, superBlockStructureNodes]);
 }
 
 export function useSubmit() {
-  // The submitChallenge epic needs the curriculum data to be loaded, so this
-  // useFetchAllCurriculumData call must happen first.
+  // Ensure curriculum data is loaded before challenge submission
   useFetchAllCurriculumData();
   const dispatch = useDispatch();
+  const isSubmitLockedRef = useRef(false);
+  const submitLockTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
-  return () => dispatch(submitChallenge());
+  useEffect(
+    () => () => {
+      if (submitLockTimeoutRef.current !== null) {
+        clearTimeout(submitLockTimeoutRef.current);
+      }
+    },
+    []
+  );
+
+  return () => {
+    if (isSubmitLockedRef.current) {
+      return;
+    }
+
+    isSubmitLockedRef.current = true;
+    submitLockTimeoutRef.current = setTimeout(() => {
+      isSubmitLockedRef.current = false;
+      submitLockTimeoutRef.current = null;
+    }, SUBMIT_DEBOUNCE_MS);
+
+    return dispatch(submitChallenge());
+  };
 }

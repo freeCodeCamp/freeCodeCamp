@@ -1,6 +1,6 @@
 {
   "name": "@freecodecamp/browser-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,
@@ -41,18 +41,18 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@typescript/vfs": "1.6.1",
-    "babel-loader": "8.3.0",
+    "@typescript/vfs": "1.6.4",
+    "babel-loader": "8.4.1",
     "eslint": "^9.39.1",
     "process": "0.11.10",
     "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "util": "0.12.5",
-    "webpack": "5.90.3",
+    "webpack": "5.106.2",
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^7.2.0",
+    "@freecodecamp/curriculum-helpers": "^9.0.0",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1"
   }

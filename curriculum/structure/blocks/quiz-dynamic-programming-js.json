@@ -1,6 +1,5 @@
 {
-  "name": "Dynamic Programming Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "blockLabel": "quiz",
   "blockLayout": "link",
   "dashedName": "quiz-dynamic-programming-js",

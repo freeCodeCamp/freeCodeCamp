@@ -18,8 +18,7 @@ import addFormats from 'ajv-formats';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
-import { NodemailerProvider } from './plugins/mail-providers/nodemailer.js';
-import { SESProvider } from './plugins/mail-providers/ses.js';
+import { createMailProvider } from './plugins/mail-providers/nodemailer.js';
 import mailer from './plugins/mailer.js';
 import redirectWithMessage from './plugins/redirect-with-message.js';
 import security from './plugins/security.js';
@@ -36,11 +35,11 @@ import * as protectedRoutes from './routes/protected/index.js';
 
 import {
   API_LOCATION,
-  EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
+  FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
@@ -86,7 +85,11 @@ export const buildOptions: FastifyHttpOptions<
   loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   // disabled so we can customise the request/response logging
-  disableRequestLogging: true
+  disableRequestLogging: true,
+  // destroy all connections on close to avoid EADDRINUSE
+  // on restart, in development. Leave default in production.
+  forceCloseConnections:
+    FREECODECAMP_NODE_ENV === 'production' ? ('idle' as const) : true
 };
 
 /**
@@ -130,9 +133,7 @@ export const build = async (
     clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
   });
 
-  const provider =
-    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
-  void fastify.register(mailer, { provider });
+  void fastify.register(mailer, { provider: createMailProvider() });
 
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI ?? fastify.gb.isOn('swagger-ui')) {
@@ -186,6 +187,7 @@ export const build = async (
 
       await fastify.register(protectedRoutes.challengeRoutes);
       await fastify.register(protectedRoutes.donateRoutes);
+      await fastify.register(protectedRoutes.socratesRoutes);
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
       await fastify.register(protectedRoutes.settingRoutes);
       await fastify.register(protectedRoutes.userRoutes);

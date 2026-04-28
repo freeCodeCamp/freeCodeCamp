@@ -29,6 +29,7 @@
     "sign-in": "Iniciar sessão",
     "sign-up-email-list": "Inscreva-se para receber o e-mail semanal do Quincy",
     "sign-out": "Encerrar sessão",
+    "catalog": "Catálogo",
     "curriculum": "Currículo",
     "contribute": "Contribua",
     "podcast": "Podcast",
@@ -65,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Redefinir",
+    "ask-socrates": "Pergunte ao Socrates (beta)",
     "reset-step": "Reiniciar este passo",
     "help": "Ajuda",
     "get-help": "Obter ajuda",
@@ -116,12 +118,14 @@
     "share-on-x": "Compartilhar no X",
     "share-on-bluesky": "Compartilhar no BlueSky",
     "share-on-threads": "Compartilhe no Threads",
+    "share-on-facebook": "Compartilhar no Facebook",
     "play-scene": "Aperte para começar",
     "download-latest-version": "Baixe a versão mais recente",
     "more-ways-to-sign-in": "Mais maneiras de fazer login",
     "sign-in-with-google": "Faça login com o Google",
     "go-to-dcc-today": "Vá para o desafio diário",
-    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário"
+    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário",
+    "outline": "Resumo"
   },
   "daily-coding-challenges": {
     "title": "Desafios de código diário",
@@ -335,6 +339,7 @@
       "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Conta",
       "certs": "Certificações",
       "legacy-certs": "Certificações legadas",
@@ -377,6 +382,10 @@
       "new": "Novo e-mail",
       "confirm": "Confirmar novo e-mail",
       "weekly": "Envie-me o e-mail semanal do Quincy"
+    },
+    "socrates": {
+      "p1": "Sócrates",
+      "p2": "Oferece dicas personalizadas com base nas informações inseridas nas oficinas. É possível desativar isso a qualquer momento."
     },
     "honesty": {
       "p1": "Antes de poder reivindicar uma certificação verificada, você deve aceitar o nosso Juramento de Honestidade Acadêmica, que diz o seguinte:",
@@ -441,6 +450,7 @@
     "edit-my-profile": "Editar meu perfil",
     "add-bluesky": "Compartilhar esta certificação no BlueSky",
     "add-threads": "Compartilhar esta certificação no Threads",
+    "add-facebook": "Compartilhar esta certificação no Facebook",
     "experience": {
       "heading": "Experiência",
       "share-experience": "Compartilhe a experiência profissional",
@@ -460,13 +470,16 @@
     },
     "completeness": {
       "heading": "Perfil {{percentage}}% completo",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Adicione o nome",
       "location": "Adicione a localização",
       "picture": "Envie uma foto de perfil",
       "about": "Escreva uma seção 'Sobre'",
       "social": "Adicione um link social",
       "portfolio": "Adicione um projeto ao portfólio",
-      "experience": "Adicione experiência"
+      "experience": "Adicione experiência",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -518,7 +531,7 @@
     "ms-link": "Link da Microsoft",
     "submit-and-go": "Enviar e ir para o meu próximo desafio",
     "congratulations": "Parabéns, o código passou. Envie o código para continuar.",
-    "congratulations-code-passes": "✔ Parabéns. Seu código passou.",
+    "congratulations-code-passes": "Parabéns. Seu código passou.",
     "i-completed": "Já completei este desafio",
     "example-code": "Exemplo de código",
     "test-output": "O resultado do seu código vai aparecer aqui",
@@ -529,6 +542,18 @@
     "syntax-error": "Seu código gerou um erro antes que qualquer teste possa ser executado. Corrija-o e tente novamente.",
     "indentation-error": "Seu código tem um erro de indentação. Você pode precisar adicionar <code>pass</code> em uma nova linha para formar um bloco de código válido.",
     "sign-in-save": "Faça o login para salvar seu progresso",
+    "hints-used-today": "dicas usadas hoje",
+    "socrates-not-enabled": "Socrates não está habilitado para esta conta.",
+    "socrates-check-code-first": "Verifique o código antes de pedir uma dica ao Socrates.",
+    "socrates-code-passes": "Parabéns, o código foi aprovado! Pressione Enviar e continue para o próximo desafio.",
+    "socrates-write-code-first": "Por favor, escreva algum código antes de pedir uma dica ao Socrates.",
+    "socrates-generic-error": "Algo deu errado ao pedir ao Socrates. Por favor, tente novamente.",
+    "socrates-no-access": "Não tem acesso ao Socrates.",
+    "socrates-daily-limit": "Atingiu o limite diário de dicas. Por favor, tente novamente amanhã.",
+    "socrates-rate-limit": "Atingiu o limite de dicas. Aguarde um momento antes de tentar novamente.",
+    "socrates-unable-to-generate": "Socrates não conseguiu gerar uma dica. Por favor, tente novamente.",
+    "socrates-unavailable": "Socrates está temporariamente indisponível. Por favor, tente novamente mais tarde.",
+    "socrates-invalid-request": "Algo deu errado com a solicitação. Por favor, tente novamente.",
     "download-solution": "Baixar minha solução",
     "download-results": "Baixar meus resultados",
     "percent-complete": "{{percent}}% completo",
@@ -556,16 +581,16 @@
     "contact-support-mistake": "Se você acha que houve um erro, entre em contato conosco pelo e-mail donors@freecodecamp.org",
     "editor-tabs": {
       "code": "Código",
-      "tests": "Testes",
+      "tests": "Testes:",
       "restart": "Reiniciar",
       "restart-step": "Reiniciar etapa",
       "console": "Console",
       "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Editor Interativo"
+      "interactive-editor": "Editor Interativo",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
@@ -859,11 +884,11 @@
     "current-initiatives-2": "Criar currículo de inglês e de matemática",
     "current-initiatives-3": "Traduzir nosso currículo e tutoriais para 32 idiomas",
     "current-initiatives-4": "Criar uma graduação em ciência da computação reconhecida e gratuita",
-    "community-achivements-title": "Conquistas da nossa comunidade neste ano:",
-    "community-achivements-1": "Publicado <0>193</0> cursos completos no YouTube.",
-    "community-achivements-2": "Publicamos <0>850</0> tutoriais de programação baseados em texto e <0>5</0> livros gratuitos através do editorial do freeCodeCamp.",
-    "community-achivements-3": "Mesclamos <0>2,455</0> de contribuições ao código em nossos repositórios de código aberto no GitHub",
-    "community-achivements-4": "Traduzimos <0>1.5</0> milhões de palavras para tornar nosso currículo e tutoriais mais acessíveis aos falantes de muitos idiomas do mundo",
+    "community-achievements-title": "Conquistas da nossa comunidade neste ano:",
+    "community-achievements-1": "Publicamos <0>193</0> cursos completos no YouTube.",
+    "community-achievements-2": "Publicamos <0>850</0> tutoriais de programação baseados em texto e <0>5</0> livros gratuitos através do editorial do freeCodeCamp.",
+    "community-achievements-3": "Mesclamos <0>2.455</0> contribuições de código em nossos repositórios de código aberto no GitHub",
+    "community-achievements-4": "Traduzimos <0>1,5</0> milhão de palavras para tornar nosso currículo e tutoriais mais acessíveis aos falantes de muitos idiomas do mundo",
     "as-you-see": "Como você pode ver, estamos fazendo acontecer. Então, você pode ter a certeza de que usaremos suas doações de maneira correta.",
     "get-benefits": "Obtenha os benefícios e o conhecimento de que você está ajudando a nossa instituição beneficente a mudar a educação para melhor. Torne-se um apoiador hoje.",
     "modal-benefits-title": "Apoie-nos",
@@ -895,8 +920,8 @@
   "search": {
     "label": "Pesquisar",
     "placeholder": {
-      "default": "Pesquisar em nossos artigos de notícias, tutoriais e livros",
-      "numbered": "Pesquise {{ roundedTotalRecords }}+ artigos de notícias, tutoriais e livros"
+      "default": "Pesquisar nossos livros e cursos",
+      "numbered": "Pesquisar em mais de {{ roundedTotalRecords }} dos nossos livros e cursos"
     },
     "see-results": "Ver todos os resultados para {{searchQuery}}",
     "try": "Procurando algo? Tente a barra de pesquisa nesta página.",
@@ -912,6 +937,7 @@
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
     "keep-coding": "Seja o que for, continue programando!",
     "email-signup": "Inscrição via e-mail",
+    "email-signup-not-signed-in": "Faça login para ajustar as preferências da newsletter.",
     "brand-new-account": "Boas-vindas à sua nova conta freeCodeCamp. Vamos começar.",
     "duplicate-account-warning": "Se você pretende entrar em uma conta existente ao invés de criar esta conta, <0>clique aqui para excluir esta conta</0> e tente outro endereço de e-mail.",
     "quincy": "- Quincy Larson, o professor que fundou o freeCodeCamp.org",
@@ -942,6 +968,14 @@
     "fsd-b-benefit-3-description": "Solifique o seu conhecimento com muita prática.",
     "or": "OU"
   },
+  "mobile-app-modal": {
+    "heading": "Detectamos que você está em um dispositivo móvel!",
+    "body": "Este curso está disponível em nosso aplicativo para uma experiência melhor.",
+    "ios": "Baixar na App Store",
+    "android": "Obter no Google Play",
+    "open-app": "Abrir no aplicativo",
+    "do-not-show": "Não mostrar novamente"
+  },
   "icons": {
     "gold-cup": "Taça de ouro",
     "avatar": "Avatar padrão",
@@ -969,6 +1003,7 @@
     "github": "Link para o GitHub de {{username}}",
     "website": "Link para o site de {{username}}",
     "twitter": "Link para o X de {{username}}",
+    "bluesky": "Link para o Bluesky de {{username}}",
     "next-month": "Ir ao próximo mês",
     "previous-month": "Ir ao mês anterior",
     "first-page": "Ir para a primeira página",
@@ -996,6 +1031,10 @@
     "rsa-checkbox": "Eu tentei o método Ler-Pesquisar-Perguntar",
     "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum",
     "edit-my-profile": "Editar meu perfil",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "Conteúdo do editor {{editorName}} . Pressione Alt+F1 para opções de acessibilidade.",
     "editor-a11y-off-non-macos": "Conteúdo do editor {{editorName}} . Pressione Alt+F1 para opções de acessibilidade.",
     "editor-a11y-on-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Command+E para desativar ou pressione Option+F1 para mais opções.",
@@ -1003,6 +1042,10 @@
     "terminal-output": "Saída do terminal",
     "not-available": "Não disponível",
     "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "Esta tarefa usa entradas de Pinyin para Hanzi. Digite o pinyin com os números do tonalidade (de 1 a 5). Quando você inserir uma sílaba correta, ela se tornará um caractere chinês. Se você pressionar backspace após um caractere chinês, mudará de volta para pinyin e removerá a última coisa que você digitou: se for um número de tonalidade, a tonalidade será removida; se for uma letra, ela será removida.",
     "pinyin-tone-input-desc": "Esta tarefa usa entradas de tonalidade do Pinyin. Digite o pinyin com números de tonalidade (de 1 a 5). Quando você inserir um número, ele será convertido em uma marca tonal. Se você pressionar backspace, a última coisa que digitou será removida: se for uma tonalidade de número, ela será removida; se for uma letra, a letra será removida."
   },
@@ -1023,6 +1066,7 @@
     "updated-themes": "Atualizamos seu tema",
     "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
     "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
+    "socrates-updated": "Atualizamos as configurações do Socrates",
     "portfolio-item-updated": "Atualizamos seu portfólio",
     "experience-updated": "Atualizamos a experiência",
     "email-invalid": "Formato de e-mail inválido",
@@ -1276,10 +1320,13 @@
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
       "learn-python-for-beginners": "Aprenda Python para iniciantes",
       "introduction-to-algorithms-and-data-structures": "Introdução a Algoritmos e Estruturas de Dados",
-      "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
+      "learn-rag-mcp-fundamentals": "Aprenda os Fundamentos de RAG e MCP",
+      "introduction-to-precalculus": "Introdução ao Pré-cálculo",
+      "learn-oop-with-python": "Aprenda POO com Python",
+      "a2-english-for-developers": "A2 Inglês para Desenvolvedores (Beta)",
       "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
-      "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
-      "b1-english-for-developers-cert": "Certificação B1 Inglês para Desenvolvedores",
+      "b1-english-for-developers": "B1 Inglês para Desenvolvedores (Beta)",
+      "b1-english-for-developers-cert": "Certificação B1 de Inglês para Desenvolvedores (Beta)",
       "responsive-web-design-v9": "Design responsivo para a web",
       "responsive-web-design-v9-cert": "Certificação de Design responsivo para a web",
       "javascript-v9": "JavaScript",
@@ -1311,7 +1358,43 @@
       "information-security-and-quality-assurance": "Segurança da informação e garantia da qualidade edição antiga",
       "information-security-and-quality-assurance-cert": "Certificação de segurança da informação e garantia da qualidade edição antiga",
       "full-stack": "Full Stack edição antiga",
-      "full-stack-cert": "Certificação Full Stack edição antiga"
+      "full-stack-cert": "Certificação Full Stack edição antiga",
+      "introduction-to-bash": "Introdução ao Bash",
+      "introduction-to-sql-and-postgresql": "Introdução ao SQL e PostgreSQL",
+      "learn-bash-scripting": "Aprenda Scripts Bash",
+      "learn-sql-and-bash": "Aprenda SQL e Bash",
+      "introduction-to-nano": "Introdução ao Nano",
+      "introduction-to-git-and-github": "Introdução ao Git e GitHub",
+      "introduction-to-variables-and-strings-in-javascript": "Introdução a Variáveis e Strings em JavaScript",
+      "introduction-to-booleans-and-numbers-in-javascript": "Introdução a Booleanos e Números em JavaScript",
+      "introduction-functions-in-javascript": "Introdução a Funções em JavaScript",
+      "introduction-to-arrays-in-javascript": "Introdução a Arrays em JavaScript",
+      "introduction-to-objects-in-javascript": "Introdução a Objetos em JavaScript",
+      "introduction-to-loops-in-javascript": "Introdução a Laços em JavaScript",
+      "javascript-fundamentals-review": "Revisão dos Fundamentos do JavaScript",
+      "introduction-to-higher-order-functions-and-callbacks-in-javascript": "Introdução a Funções de Ordem Superior e Callbacks em JavaScript",
+      "learn-dom-manipulation-and-events-with-javascript": "Aprenda Manipulação do DOM e Eventos com JavaScript",
+      "introduction-to-javascript-and-accessibility": "Introdução ao JavaScript e Acessibilidade",
+      "learn-javascript-debugging": "Aprenda Depuração em JavaScript",
+      "learn-basic-regex-with-javascript": "Aprenda Expressões Regulares Básicas com JavaScript",
+      "introduction-to-dates-in-javascript": "Introdução a Datas em JavaScript",
+      "learn-audio-and-video-events-with-javascript": "Aprenda Eventos de Áudio e Vídeo com JavaScript",
+      "introduction-to-maps-and-sets-in-javascript": "Introdução a Mapas e Conjuntos em JavaScript",
+      "learn-localstorage-and-crud-operations-with-javascript": "Aprenda localStorage e Operações CRUD com JavaScript",
+      "introduction-to-javascript-classes": "Introdução às Classes em JavaScript",
+      "learn-recursion-with-javascript": "Aprenda Recursão com JavaScript",
+      "introduction-to-functional-programming-with-javascript": "Introdução à Programação Funcional com JavaScript",
+      "introduction-to-asynchronous-javascript": "Introdução ao JavaScript Assíncrono",
+      "introduction-to-python-basics": "Introdução aos Conceitos Básicos de Python",
+      "learn-python-loops-and-sequences": "Aprenda Laços e Sequências em Python",
+      "learn-python-dictionaries-and-sets": "Aprenda Dicionários e Conjuntos em Python",
+      "learn-error-handling-in-python": "Aprenda Tratamento de Erros em Python",
+      "learn-python-classes-and-objects": "Aprenda Classes e Objetos em Python",
+      "introduction-to-oop-in-python": "Introdução à POO em Python",
+      "introduction-to-linear-data-structures-in-python": "Introdução a Estruturas de Dados Lineares em Python",
+      "learn-algorithms-in-python": "Aprenda Algoritmos em Python",
+      "learn-graphs-and-trees-in-python": "Aprenda Grafos e Árvores em Python",
+      "learn-dynamic-programming-in-python": "Aprenda Programação Dinâmica em Python"
     }
   },
   "certification-card": {
@@ -1449,6 +1532,7 @@
         "intermediate": "Intermediário",
         "advanced": "Avançado"
       },
+      "duration-singular": "{{duration}} hora",
       "duration": "{{duration}} horas",
       "no-results": "Nenhum curso encontrado. Tente ajustar os filtros para ver mais resultados.",
       "topic": {
@@ -1463,7 +1547,13 @@
         "api": "APIs",
         "information-security": "Segurança da Informação",
         "computer-fundamentals": "Fundamentos de Computação",
-        "computer-science": "Ciência da Computação"
+        "computer-science": "Ciência da Computação",
+        "math": "Math",
+        "databases": "Bancos de dados",
+        "bash": "Bash",
+        "git": "Git",
+        "editors": "Editores",
+        "ai": "IA"
       }
     }
   }

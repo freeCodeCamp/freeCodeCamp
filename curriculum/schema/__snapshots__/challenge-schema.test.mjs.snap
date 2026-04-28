@@ -242,12 +242,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
             "fileKey": {
               "type": "string",
             },
-            "head": {
-              "allow": [
-                "",
-              ],
-              "type": "string",
-            },
             "history": {
               "items": [
                 {
@@ -272,12 +266,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "type": "string",
             },
             "seed": {
-              "allow": [
-                "",
-              ],
-              "type": "string",
-            },
-            "tail": {
               "allow": [
                 "",
               ],
@@ -527,6 +515,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
         "Rosetta",
         "Chinese Curriculum",
         "Spanish Curriculum",
+        "General",
       ],
       "flags": {
         "only": true,
@@ -1425,7 +1414,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "Second Candidate",
                     "Sophie",
                     "Tom",
-                    "Alex",
                     "Ángela",
                     "Camila",
                     "Carlos",
@@ -1443,12 +1431,14 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "Diego",
                     "Valeria",
                     "Chen Na",
+                    "Huang Jingyi",
                     "Li Hong",
                     "Li Ping",
                     "Lin Yating",
                     "Liu Ming",
                     "Wang Hua",
                     "Zhang Wei",
+                    "Zhou Jia",
                     "Zhou Yongjie",
                   ],
                   "flags": {
@@ -1798,6 +1788,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "ES_A1_vowels_oiu.mp3",
                     "ES_A1_vowels_uae.mp3",
                     "ES_A1_warm_up_describing_people_at_work.mp3",
+                    "ES_A1_what_each_department_does.mp3",
                     "ES_A1_what_the_company_does.mp3",
                     "ZH_A1_greetings_and_introductions_wanghua.mp3",
                     "ZH_A1_greetings_and_introductions_liuming.mp3",
@@ -1920,7 +1911,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                         "Second Candidate",
                         "Sophie",
                         "Tom",
-                        "Alex",
                         "Ángela",
                         "Camila",
                         "Carlos",
@@ -1938,12 +1928,14 @@ exports[`challenge schema > should not be changed without informing the mobile t
                         "Diego",
                         "Valeria",
                         "Chen Na",
+                        "Huang Jingyi",
                         "Li Hong",
                         "Li Ping",
                         "Lin Yating",
                         "Liu Ming",
                         "Wang Hua",
                         "Zhang Wei",
+                        "Zhou Jia",
                         "Zhou Yongjie",
                       ],
                       "flags": {
@@ -2013,9 +2005,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
       },
       "type": "object",
     },
-    "showSpeakingButton": {
-      "type": "boolean",
-    },
     "solutions": {
       "items": [
         {
@@ -2051,12 +2040,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                 "fileKey": {
                   "type": "string",
                 },
-                "head": {
-                  "allow": [
-                    "",
-                  ],
-                  "type": "string",
-                },
                 "history": {
                   "items": [
                     {
@@ -2081,12 +2064,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                   "type": "string",
                 },
                 "seed": {
-                  "allow": [
-                    "",
-                  ],
-                  "type": "string",
-                },
-                "tail": {
                   "allow": [
                     "",
                   ],

@@ -16,7 +16,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { LocalStorageThemes } from '../../../redux/types';
@@ -205,6 +204,25 @@ const mapDispatchToProps = {
   openResetModal: () => openModal('reset')
 };
 
+const setupTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  monaco.editor.createModel(reactTypes['react-18'], 'typescript', reactFile);
+
+  const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+  return monaco.editor.createModel('', 'typescript', file);
+};
+
+const teardownTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  const tsxFile = monaco.Uri.file(monacoModelFileMap.tsxFile);
+
+  const reactModel = monaco.editor.getModel(reactFile);
+  const tsxModel = monaco.editor.getModel(tsxFile);
+
+  reactModel?.dispose();
+  tsxModel?.dispose();
+};
+
 const modeMap = {
   css: 'css',
   html: 'html',
@@ -213,7 +231,8 @@ const modeMap = {
   ts: 'typescript',
   tsx: 'typescript',
   py: 'python',
-  python: 'python'
+  python: 'python',
+  json: 'json'
 };
 
 let monacoThemesDefined = false;
@@ -296,10 +315,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const submitChallenge = useSubmit();
 
-  const submitChallengeDebounceRef = useRef(
-    debounce(submitChallenge, 1000, { leading: true, trailing: false })
-  );
-
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -366,7 +381,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         : 4,
     dragAndDrop: true,
     lightbulb: {
-      enabled: false
+      enabled: 'off' as editor.ShowLightbulbIconMode
     },
     hover: {
       enabled: false
@@ -394,25 +409,17 @@ const Editor = (props: EditorProps): JSX.Element => {
       allowUmdGlobalAccess: true
     });
 
+    // support JSONC:
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+      allowComments: true
+    });
+
     defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
-    const setupTSModels = (monaco: typeof monacoEditor) => {
-      const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-      monaco.editor.createModel(
-        reactTypes['react-18'],
-        'typescript',
-        reactFile
-      );
-
-      const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
-      return monaco.editor.createModel('', 'typescript', file);
-    };
-
-    // TODO: make sure these aren't getting created over and over
     function createModel(contents: string, language: string) {
       if (language !== 'typescript') {
         return monaco.editor.createModel(contents, language);
@@ -570,14 +577,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
-      null,
+      0,
       () => {}
     );
     const newLine = editor.getAction('editor.action.insertLineAfter');
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.insertLineAfter',
-      null,
+      0,
       () => {}
     );
     // @ts-ignore
@@ -585,13 +592,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       'editor.action.insertLineAfter',
       monaco.KeyMod.Alt | monaco.KeyCode.Enter,
       () => {
-        newLine.run();
+        void newLine?.run();
       }
     );
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-actions.find',
-      null,
+      0,
       () => {}
     );
     // Make toggle tab setting in editor permanent
@@ -643,12 +650,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
-      run:
+      run: () =>
         props.saveSubmissionToDB && props.isSignedIn
           ? // save to database
-            props.saveChallenge
+            props.saveChallenge()
           : // save to local storage
-            props.saveEditorContent
+            props.saveEditorContent()
     });
     editor.addAction({
       id: 'toggle-accessibility',
@@ -808,7 +815,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     props.executeChallenge();
   }
 
-  const tryToSubmitChallenge = submitChallengeDebounceRef.current;
+  const tryToSubmitChallenge = submitChallenge;
 
   // TODO: there's a potential performance gain to be had by only updating when
   // the outputViewZone has actually changed.
@@ -1109,10 +1116,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
-      editor.focus();
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
-      editor.focus();
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     }
   }
@@ -1403,15 +1412,17 @@ const Editor = (props: EditorProps): JSX.Element => {
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
           editorWillUnmount={(editor, monaco) => {
-            const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-            const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
             // Any model we've created has to be manually disposed of to prevent
             // memory leaks.
-            editor.getModel()?.dispose();
-            monaco.editor.getModel(reactFile)?.dispose();
-            monaco.editor.getModel(file)?.dispose();
+            const language = modeMap[challengeFile?.ext ?? 'html'];
+            if (language === 'typescript') {
+              teardownTSModels(monaco);
+            } else {
+              editor.getModel()?.dispose();
+            }
           }}
           onChange={onChange}
+          language={modeMap[challengeFile?.ext ?? 'html']}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
         />
