@@ -98,10 +98,10 @@ function CompletionModal({
     // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const blob = new Blob(
-        [zipSync(buildZipEntries(challengeFiles)).buffer as ArrayBuffer],
-        { type: 'application/zip' }
-      );
+      const zipped = zipSync(buildZipEntries(challengeFiles));
+      const buffer = new ArrayBuffer(zipped.byteLength);
+      new Uint8Array(buffer).set(zipped);
+      const blob = new Blob([buffer], { type: 'application/zip' });
       setDownloadURL(URL.createObjectURL(blob));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
