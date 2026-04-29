@@ -6751,8 +6751,10 @@
         "intro": ["Pass this exam to earn your Python Certification"]
       },
       "workshop-string-method": {
-        "title": "workshop-string-method",
-        "intro": ["workshop-string-method", ""]
+        "title": "Build an Employee Data Formatter",
+        "intro": [
+          "In this workshop, you will use Python string methods such as find(), strip(), replace(), split(), join(), startswith(), endswith(), and count() to clean and format employee data."
+        ]
       }
     }
   },
