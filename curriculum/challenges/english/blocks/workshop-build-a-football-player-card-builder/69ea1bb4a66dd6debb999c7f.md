@@ -480,7 +480,7 @@ const defaultPlayer: PlayerData = {
   overallRating: 98,
   position: "ST",
   club: "Santos FC",
-  imageUrl: "https://i.ibb.co/996kyTM0/Pele.jpg",
+  imageUrl: "https://cdn.freecodecamp.org/curriculum/typescript/tsx-workshop/pele.jpg",
   pac: 97,
   sho: 98,
   pas: 83,
