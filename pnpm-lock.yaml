@@ -60,8 +60,8 @@ importers:
         specifier: ^16.4.0
         version: 16.4.0
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       npm-run-all2:
         specifier: 5.0.2
         version: 5.0.2
@@ -391,11 +391,11 @@ importers:
         specifier: 4.94.0
         version: 4.94.0(algoliasearch@4.27.0)
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       micromark:
         specifier: 4.0.2
         version: 4.0.2
@@ -744,8 +744,8 @@ importers:
         specifier: 16.7.0
         version: 16.7.0
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       mocha:
         specifier: 10.8.2
         version: 10.8.2
@@ -807,8 +807,8 @@ importers:
         specifier: workspace:*
         version: link:../shared
       lodash-es:
-        specifier: 4.17.23
-        version: 4.17.23
+        specifier: 4.18.1
+        version: 4.18.1
     devDependencies:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
@@ -995,8 +995,8 @@ importers:
         specifier: 3.14.2
         version: 3.14.2
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       mdast-builder:
         specifier: 1.1.1
         version: 1.1.1
@@ -8979,12 +8979,6 @@ packages:
 
   lock@1.1.0:
     resolution: {integrity: sha512-NZQIJJL5Rb9lMJ0Yl1JoVr9GSdo4HTPsUEWsSFzB8dE8DSoiLCVavWZPi7Rnlv/o73u6I24S/XYc/NmG4l8EKA==}
-
-  lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-
-  lodash-es@4.17.23:
-    resolution: {integrity: sha512-kVI48u3PZr38HdYz98UmfPnXl2DXrpdctLrFLCd3kOx1xUkOmpFPx7gCWWM5MPkL/fD8zb+Ph0QzjGFs4+hHWg==}
 
   lodash-es@4.18.1:
     resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
@@ -23749,10 +23743,6 @@ snapshots:
       p-locate: 5.0.0
 
   lock@1.1.0: {}
-
-  lodash-es@4.17.21: {}
-
-  lodash-es@4.17.23: {}
 
   lodash-es@4.18.1: {}
 

@@ -73,7 +73,7 @@
     "joi-objectid": "3.0.1",
     "js-yaml": "4.0.0",
     "jsdom": "16.7.0",
-    "lodash": "4.17.21",
+    "lodash": "4.18.1",
     "mocha": "10.8.2",
     "mock-require": "3.0.3",
     "ora": "5.4.1",

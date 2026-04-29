@@ -90,7 +90,7 @@
     "identity-obj-proxy": "^3.0.0",
     "js-yaml": "3.14.2",
     "lint-staged": "^16.4.0",
-    "lodash": "4.17.21",
+    "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
     "prettier": "3.8.2",
     "stylelint": "16.26.1",
