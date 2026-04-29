@@ -6298,11 +6298,11 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
         ]
       },
       "review-typescript": {
-        "title": "Revisión de TypeScript",
+        "title": "TypeScript Review",
         "intro": [
           "Antes de que realices el cuestionario de TypeScript, debes repasar todo lo que has aprendido hasta ahora.",
           "Abre esta página para repasar todos los conceptos enseñados, incluidos los tipos de datos en TypeScript, genéricos, estrechamiento de tipo y más."
@@ -6310,9 +6310,7 @@
       },
       "quiz-typescript": {
         "title": "Cuestionario de TypeScript",
-        "intro": [
-          "Pon a prueba lo que has aprendido sobre TypeScript con este cuestionario."
-        ]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",

@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  caniuse-lite: 1.0.30001788
+  caniuse-lite: 1.0.30001790
 
 packageExtensionsChecksum: sha256-pFEExG4o57joHucsVi/dgGpp9BfdxYD7y4blLQUpCqI=
 
@@ -60,8 +60,8 @@ importers:
         specifier: ^16.4.0
         version: 16.4.0
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       npm-run-all2:
         specifier: 5.0.2
         version: 5.0.2
@@ -109,7 +109,7 @@ importers:
         version: 5.2.6
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
-        version: 6.1.0(typebox@1.1.29)
+        version: 6.1.0(typebox@1.1.31)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -183,8 +183,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       typebox:
-        specifier: 1.1.29
-        version: 1.1.29
+        specifier: 1.1.31
+        version: 1.1.31
       validator:
         specifier: 13.15.35
         version: 13.15.35
@@ -391,14 +391,14 @@ importers:
         specifier: 25.10.10
         version: 25.10.10(typescript@5.9.3)
       instantsearch.js:
-        specifier: 4.93.0
-        version: 4.93.0(algoliasearch@4.27.0)
+        specifier: 4.94.0
+        version: 4.94.0(algoliasearch@4.27.0)
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       micromark:
         specifier: 4.0.2
         version: 4.0.2
@@ -460,11 +460,11 @@ importers:
         specifier: 15.7.4
         version: 15.7.4(i18next@25.10.10(typescript@5.9.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)
       react-instantsearch:
-        specifier: 7.29.0
-        version: 7.29.0(algoliasearch@4.27.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 7.30.0
+        version: 7.30.0(algoliasearch@4.27.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-instantsearch-core:
-        specifier: 7.29.0
-        version: 7.29.0(algoliasearch@4.27.0)(react@18.3.1)
+        specifier: 7.30.0
+        version: 7.30.0(algoliasearch@4.27.0)(react@18.3.1)
       react-monaco-editor:
         specifier: 0.59.0
         version: 0.59.0(monaco-editor@0.52.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -747,8 +747,8 @@ importers:
         specifier: 16.7.0
         version: 16.7.0
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       mocha:
         specifier: 10.8.2
         version: 10.8.2
@@ -810,8 +810,8 @@ importers:
         specifier: workspace:*
         version: link:../shared
       lodash-es:
-        specifier: 4.17.23
-        version: 4.17.23
+        specifier: 4.18.1
+        version: 4.18.1
     devDependencies:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
@@ -998,8 +998,8 @@ importers:
         specifier: 3.14.2
         version: 3.14.2
       lodash:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.18.1
+        version: 4.18.1
       mdast-builder:
         specifier: 1.1.1
         version: 1.1.1
@@ -5984,8 +5984,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001788:
-    resolution: {integrity: sha512-6q8HFp+lOQtcf7wBK+uEenxymVWkGKkjFpCvw5W25cmMwEDU45p1xQFBQv8JDlMMry7eNxyBaR+qxgmTUZkIRQ==}
+  caniuse-lite@1.0.30001790:
+    resolution: {integrity: sha512-bOoxfJPyYo+ds6W0YfptaCWbFnJYjh2Y1Eow5lRv+vI2u8ganPZqNm1JwNh0t2ELQCqIWg4B3dWEusgAmsoyOw==}
 
   canvas-confetti@1.9.4:
     resolution: {integrity: sha512-yxQbJkAVrFXWNbTUjPqjF7G+g6pDotOUHGbkZq2NELZUMDpiJ85rIEazVb8GTaAptNW2miJAXbs1BtioA251Pw==}
@@ -8376,11 +8376,11 @@ packages:
     resolution: {integrity: sha512-ufS5Qq9RZN+Bu899eA9QCAYThY+gGW7oRkmb0vC93Vlyu/CFGcH0OYPEjVkDXA5FEbTt1+VWzdoOD3Ny9N+8tg==}
     hasBin: true
 
-  instantsearch-ui-components@0.23.0:
-    resolution: {integrity: sha512-ILqp/RAm0mBrsFuGozTk09tPpQMiODtcLVHQRudXBC23YcaTpt9qTB30nWy5yHODb15dBH5DoUw7gqyUo/PPkw==}
+  instantsearch-ui-components@0.24.0:
+    resolution: {integrity: sha512-3fAP827UAcwwSdICDtSdJzB3T8GBkEYGAhwoftAwMm2W6u8XmEpp1CgYehQiG+w1cVdEDZZsLCtVGE6eYAJkRQ==}
 
-  instantsearch.js@4.93.0:
-    resolution: {integrity: sha512-pTJN2ZPpySSpnTxbPo0f/l7IDjgvC/IoxRXgnQV2TT423uGXviEkzQuU2KcdfG9kio6nqcgBU3kQTe07OoHzkw==}
+  instantsearch.js@4.94.0:
+    resolution: {integrity: sha512-o3bbTYtdKvGbInUP2ut7Yayvs2wPOn/C9gDFiKDoxdA5g79s803M2+IondNnkJUJA0bvlRBAdSMXKA2aENUk6Q==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
 
@@ -8982,12 +8982,6 @@ packages:
 
   lock@1.1.0:
     resolution: {integrity: sha512-NZQIJJL5Rb9lMJ0Yl1JoVr9GSdo4HTPsUEWsSFzB8dE8DSoiLCVavWZPi7Rnlv/o73u6I24S/XYc/NmG4l8EKA==}
-
-  lodash-es@4.17.21:
-    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-
-  lodash-es@4.17.23:
-    resolution: {integrity: sha512-kVI48u3PZr38HdYz98UmfPnXl2DXrpdctLrFLCd3kOx1xUkOmpFPx7gCWWM5MPkL/fD8zb+Ph0QzjGFs4+hHWg==}
 
   lodash-es@4.18.1:
     resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
@@ -10771,14 +10765,14 @@ packages:
       typescript:
         optional: true
 
-  react-instantsearch-core@7.29.0:
-    resolution: {integrity: sha512-iE7mciz4bE1qHjWzSirPSxQMCnEuCxVL0KSZ63mlB0esDv1ALlY8B9zJMYVWny73RKCnWgi2HXcwandFWvJPRg==}
+  react-instantsearch-core@7.30.0:
+    resolution: {integrity: sha512-omJvOU60RG/2xcZCWhGkFzg8mymFSZI6wKguvZqLLNmiJfLmH0JhFUM27RSCp6XMGq+0cPuGIrK+KPJEujwqJA==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
       react: '>= 16.8.0 < 20'
 
-  react-instantsearch@7.29.0:
-    resolution: {integrity: sha512-+foJJVVsSLNY3K5rkB2dGEUoOyLMGTZsl9I8Zwwf/nZQqwoqH0QIvkenlJh7deyAq1/u19bq+H5EVX2d+EjRJQ==}
+  react-instantsearch@7.30.0:
+    resolution: {integrity: sha512-vjoDUz8PAF3pkh4K5az4ySJQuBdg63fi7x85RSzJiY2mP9EEITlEG+PCTKOhXfwKLFo0X+zNIrKNjPUVHup6ww==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
       react: '>= 16.8.0 < 20'
@@ -12201,8 +12195,8 @@ packages:
   type@2.7.2:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
 
-  typebox@1.1.29:
-    resolution: {integrity: sha512-zPwgxCka1v976Zn2Hg0THUHY6JFPzbBkz12ZOZeyc/vcoeqLyeFEsXw5zGg/nMhbNE/rOEALVKRTlHIEDR3Jhw==}
+  typebox@1.1.31:
+    resolution: {integrity: sha512-bFTa/YRd11e9a+C+hBlUSmD3DnDRnkcHqaUWX4zoq3q4u5WLnuLPc7yLpO5dRO7Z9VPXcm/GzFkvrH5FkDobeg==}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -15786,9 +15780,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.29)':
+  '@fastify/type-provider-typebox@6.1.0(typebox@1.1.31)':
     dependencies:
-      typebox: 1.1.29
+      typebox: 1.1.31
 
   '@fortawesome/fontawesome-common-types@7.2.0': {}
 
@@ -19164,7 +19158,7 @@ snapshots:
   autoprefixer@10.4.27(postcss@8.5.10):
     dependencies:
       browserslist: 4.28.2
-      caniuse-lite: 1.0.30001788
+      caniuse-lite: 1.0.30001790
       fraction.js: 5.3.4
       picocolors: 1.1.1
       postcss: 8.5.10
@@ -19650,7 +19644,7 @@ snapshots:
   browserslist@4.28.2:
     dependencies:
       baseline-browser-mapping: 2.10.18
-      caniuse-lite: 1.0.30001788
+      caniuse-lite: 1.0.30001790
       electron-to-chromium: 1.5.335
       node-releases: 2.0.37
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
@@ -19786,11 +19780,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.28.2
-      caniuse-lite: 1.0.30001788
+      caniuse-lite: 1.0.30001790
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001788: {}
+  caniuse-lite@1.0.30001790: {}
 
   canvas-confetti@1.9.4: {}
 
@@ -23095,7 +23089,7 @@ snapshots:
       undeclared-identifiers: 1.1.3
       xtend: 4.0.2
 
-  instantsearch-ui-components@0.23.0(react@18.3.1):
+  instantsearch-ui-components@0.24.0(react@18.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       markdown-to-jsx: 7.7.17(react@18.3.1)
@@ -23104,7 +23098,7 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  instantsearch.js@4.93.0(algoliasearch@4.27.0):
+  instantsearch.js@4.94.0(algoliasearch@4.27.0):
     dependencies:
       '@algolia/events': 4.0.1
       '@swc/helpers': 0.5.18
@@ -23116,7 +23110,7 @@ snapshots:
       algoliasearch-helper: 3.28.1(algoliasearch@4.27.0)
       hogan.js: 3.0.2
       htm: 3.1.1
-      instantsearch-ui-components: 0.23.0(react@18.3.1)
+      instantsearch-ui-components: 0.24.0(react@18.3.1)
       preact: 10.24.3
       qs: 6.14.1
       react: 18.3.1
@@ -23752,10 +23746,6 @@ snapshots:
       p-locate: 5.0.0
 
   lock@1.1.0: {}
-
-  lodash-es@4.17.21: {}
-
-  lodash-es@4.17.23: {}
 
   lodash-es@4.18.1: {}
 
@@ -25812,26 +25802,26 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       typescript: 5.9.3
 
-  react-instantsearch-core@7.29.0(algoliasearch@4.27.0)(react@18.3.1):
+  react-instantsearch-core@7.30.0(algoliasearch@4.27.0)(react@18.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 4.27.0
       algoliasearch-helper: 3.28.1(algoliasearch@4.27.0)
-      instantsearch.js: 4.93.0(algoliasearch@4.27.0)
+      instantsearch.js: 4.94.0(algoliasearch@4.27.0)
       react: 18.3.1
       use-sync-external-store: 1.2.2(react@18.3.1)
       zod: 3.25.76
       zod-to-json-schema: 3.24.6(zod@3.25.76)
 
-  react-instantsearch@7.29.0(algoliasearch@4.27.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-instantsearch@7.30.0(algoliasearch@4.27.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@swc/helpers': 0.5.18
       algoliasearch: 4.27.0
-      instantsearch-ui-components: 0.23.0(react@18.3.1)
-      instantsearch.js: 4.93.0(algoliasearch@4.27.0)
+      instantsearch-ui-components: 0.24.0(react@18.3.1)
+      instantsearch.js: 4.94.0(algoliasearch@4.27.0)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-instantsearch-core: 7.29.0(algoliasearch@4.27.0)(react@18.3.1)
+      react-instantsearch-core: 7.30.0(algoliasearch@4.27.0)(react@18.3.1)
 
   react-is@16.13.1: {}
 
@@ -27577,7 +27567,7 @@ snapshots:
 
   type@2.7.2: {}
 
-  typebox@1.1.29: {}
+  typebox@1.1.31: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
