@@ -58,7 +58,8 @@ const userChallengeSelect = {
   partiallyCompletedChallenges: true,
   progressTimestamps: true,
   needsModeration: true,
-  savedChallenges: true
+  savedChallenges: true,
+  updateCount: true
 };
 
 /**

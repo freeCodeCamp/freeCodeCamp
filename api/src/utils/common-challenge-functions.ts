@@ -125,6 +125,7 @@ export async function updateUserChallengeData(
     | 'savedChallenges'
     | 'progressTimestamps'
     | 'partiallyCompletedChallenges'
+    | 'updateCount'
   >,
   challengeId: string,
   _completedChallenge: CompletedChallenge
@@ -215,22 +216,42 @@ export async function updateUserChallengeData(
     challenge => challenge.id !== challengeId
   );
 
-  const { savedChallenges: userSavedChallenges } =
-    await fastify.prisma.user.update({
+  const updateResult = await fastify.prisma.user.updateMany({
+    where: { id: user.id, updateCount: user.updateCount },
+    data: {
+      completedChallenges: userCompletedChallenges,
+      // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
+      //       `undefined` in Prisma is a no-op
+      needsModeration: needsModeration || undefined,
+      savedChallenges: savedChallengesUpdate,
+      progressTimestamps: userProgressTimestamps,
+      partiallyCompletedChallenges: userPartiallyCompletedChallenges,
+      updateCount: { increment: 1 }
+    }
+  });
+
+  let userSavedChallenges;
+  if (updateResult.count === 0) {
+    // A concurrent request updated the user record first.
+    // Silently succeed as the challenge should have already been recorded.
+    const updatedUser = await fastify.prisma.user.findUniqueOrThrow({
       where: { id: user.id },
-      data: {
-        completedChallenges: userCompletedChallenges,
-        // TODO: `needsModeration` should be handled closer to source, because it exists in 3 states: true, false, undefined/null
-        //       `undefined` in Prisma is a no-op
-        needsModeration: needsModeration || undefined,
-        savedChallenges: savedChallengesUpdate,
-        progressTimestamps: userProgressTimestamps,
-        partiallyCompletedChallenges: userPartiallyCompletedChallenges
-      },
-      select: {
-        savedChallenges: true
-      }
+      select: { savedChallenges: true }
     });
+    userSavedChallenges = updatedUser.savedChallenges;
+  } else {
+    // If we succeeded in the updateMany, fetch the updated savedChallenges
+    // since updateMany doesn't return the updated record.
+    if (savableChallenges.has(challengeId)) {
+      const updatedUser = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: user.id },
+        select: { savedChallenges: true }
+      });
+      userSavedChallenges = updatedUser.savedChallenges;
+    } else {
+      userSavedChallenges = savedChallenges;
+    }
+  }
 
   return {
     alreadyCompleted,

@@ -8,7 +8,8 @@ import {
   retry,
   switchMap,
   tap,
-  mergeMap
+  mergeMap,
+  exhaustMap
 } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
@@ -247,7 +248,7 @@ function submitMsTrophy(type, state) {
 export default function completionEpic(action$, state$) {
   return action$.pipe(
     ofType(actionTypes.submitChallenge),
-    switchMap(({ type }) => {
+    exhaustMap(({ type }) => {
       const state = state$.value;
 
       const {
