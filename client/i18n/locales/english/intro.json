@@ -6273,6 +6273,12 @@
           "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
         ]
       },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Build a Football Player Card Builder",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in Typescript by building a football player card builder."
+        ]
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -6294,12 +6300,6 @@
         "title": "Front-End Development Libraries Certification Exam",
         "intro": [
           "Pass this exam to earn your Front-End Development Libraries Certification"
-        ]
-      },
-      "workshop-build-a-football-player-card-builder": {
-        "title": "Build a Football Player Card Builder",
-        "intro": [
-          "In this workshop, you'll learn how to work with React in Typescript by building a football player card builder."
         ]
       }
     }
