@@ -6098,11 +6098,11 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
         ]
       },
       "review-typescript": {
-        "title": "TypeScript 복습",
+        "title": "TypeScript Review",
         "intro": [
           "TypeScript 퀴즈를 보기 전에 지금까지 배운 내용을 복습하세요.",
           "이 페이지를 열어 TypeScript의 데이터 타입, 제네릭, 타입 좁히기 등 가르친 개념을 모두 복습하세요."
@@ -6110,7 +6110,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
-        "intro": ["이 퀴즈로 TypeScript 학습 내용을 확인하세요."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "프론트엔드 라이브러리 복습",
