@@ -142,6 +142,7 @@ input:focus-visible + .video-quiz-input-visible {
   display: block;
   grid-column: 1;
   grid-row: 1;
+  overflow-x: auto;
 }
 
 .mcq-option-label {
