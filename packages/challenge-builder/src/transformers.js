@@ -26,8 +26,7 @@ const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
 const MODULE_TRANSFORM_PLUGIN = 'transform-modules-umd';
 const BABEL_ENV_OPTIONS = {
-  targets: '> 0.4%, not dead',
-  exclude: ['transform-spread']
+  targets: '> 0.4%, not dead'
 };
 
 function loopProtectCB(line) {
