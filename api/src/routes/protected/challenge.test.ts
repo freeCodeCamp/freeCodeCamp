@@ -825,6 +825,31 @@ describe('challengeRoutes', () => {
           });
           expect(resUpdated.statusCode).toBe(200);
         });
+
+        test('POST concurrently handles multiple different challenge requests safely without dropping writes', async () => {
+          const req1 = superPost('/backend-challenge-completed').send({
+            id: '587d7fb1367417b2b2512bf1'
+          });
+          const req2 = superPost('/backend-challenge-completed').send({
+            id: '587d7fb1367417b2b2512bf2'
+          });
+          const req3 = superPost('/backend-challenge-completed').send({
+            id: '587d7fb1367417b2b2512bf3'
+          });
+
+          const results = await Promise.all([req1, req2, req3]);
+
+          for (const res of results) {
+            expect(res.statusCode).toBe(200);
+          }
+
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: 'foo@bar.com' }
+          });
+
+          // The user should have 3 completed challenges from the concurrent requests.
+          expect(user?.completedChallenges.length).toBe(3);
+        });
       });
     });
 

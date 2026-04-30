@@ -1,6 +1,11 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
-import { CompletedExam, ExamResults, SavedChallengeFile } from '@prisma/client';
+import {
+  CompletedExam,
+  ExamResults,
+  SavedChallengeFile,
+  Prisma
+} from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance, FastifyReply } from 'fastify';
 import { uniqBy, matches } from 'lodash-es';
 
@@ -52,7 +57,7 @@ interface JwtPayload {
 
 // TODO(Post-MVP): This could be narrowed down to only the fields needed by
 // specific endpoints, but that means complicating the update helper.
-const userChallengeSelect = {
+export const userChallengeSelect = {
   id: true,
   completedChallenges: true,
   partiallyCompletedChallenges: true,
@@ -648,15 +653,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        const { completedChallenges, completedExams, progressTimestamps } =
-          await fastify.prisma.user.findUniqueOrThrow({
-            where: { id: userId },
-            select: {
-              completedChallenges: true,
-              completedExams: true,
-              progressTimestamps: true
-            }
-          });
+        let user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: userId },
+          select: {
+            completedChallenges: true,
+            completedExams: true,
+            progressTimestamps: true,
+            updateCount: true
+          }
+        });
 
         const examFromDb = await fastify.prisma.exam.findUnique({
           where: { id }
@@ -689,7 +694,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const { prerequisites, numberOfQuestionsInExam, title } = examFromDb;
 
         const prerequisiteIds = prerequisites.map(p => p.id);
-        const completedPrerequisites = completedChallenges.filter(c =>
+        const completedPrerequisites = user.completedChallenges.filter(c =>
           prerequisiteIds.includes(c.id)
         );
 
@@ -727,113 +732,142 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        const newCompletedChallenges: CompletedChallenge[] =
-          completedChallenges.map(c => {
-            const { completedDate, challengeType, ...rest } = c;
-
-            return {
-              completedDate: normalizeDate(completedDate),
-              challengeType: normalizeChallengeType(challengeType),
-              ...rest
-            };
-          });
-        const newCompletedExams: CompletedExam[] = completedExams;
-        const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
         const completedDate = Date.now();
-
-        const newCompletedChallenge = {
-          id,
-          challengeType,
-          completedDate,
-          examResults
-        };
-
-        // Always push to completedExams[] to keep a record of all exams taken.
-        newCompletedExams.push(newCompletedChallenge);
-
+        const MAX_RETRIES = 5;
         let addPoint = false;
+        let alreadyCompleted = false;
 
-        const alreadyCompletedIndex = completedChallenges.findIndex(
-          c => c.id === id
-        );
+        for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+          const {
+            completedChallenges,
+            completedExams,
+            progressTimestamps,
+            updateCount
+          } = user;
 
-        const alreadyCompleted = alreadyCompletedIndex >= 0;
+          const newCompletedChallenges: CompletedChallenge[] =
+            completedChallenges.map(c => {
+              const { completedDate, challengeType, ...rest } = c;
 
-        if (examResults.passed) {
-          if (alreadyCompleted) {
-            const { percentCorrect } = examResults;
-            const oldChallenge = completedChallenges[
-              alreadyCompletedIndex
-            ] as CompletedChallenge;
-            const oldResults = oldChallenge?.examResults as ExamResults;
-
-            // only update if it's a better result
-            if (percentCorrect > oldResults.percentCorrect) {
-              const updatedChallenge = {
-                id,
-                challengeType: oldChallenge.challengeType,
-                completedDate: oldChallenge.completedDate,
-                examResults
+              return {
+                completedDate: normalizeDate(completedDate),
+                challengeType: normalizeChallengeType(challengeType),
+                ...rest
               };
-
-              newCompletedChallenges[alreadyCompletedIndex] = updatedChallenge;
-
-              // TODO(Post-MVP): Try to DRY the updates.
-              // updateUserChallengeData, for all its faults, handles the
-              // update/insert logic well.
-              await fastify.prisma.user.update({
-                where: { id: userId },
-                data: {
-                  completedExams: newCompletedExams,
-                  completedChallenges: newCompletedChallenges
-                }
-              });
-            } else {
-              await fastify.prisma.user.update({
-                where: { id: userId },
-                data: {
-                  completedExams: newCompletedExams
-                }
-              });
-            }
-
-            // not already completed, push to completedChallenges
-          } else {
-            addPoint = true;
-            newCompletedChallenges.push(newCompletedChallenge);
-
-            await fastify.prisma.user.update({
-              where: { id: userId },
-              data: {
-                completedExams: newCompletedExams,
-                completedChallenges: newCompletedChallenges,
-                progressTimestamps: [
-                  ...newProgressTimeStamps,
-                  newCompletedChallenge.completedDate
-                ]
-              }
             });
+
+          const newCompletedExams: CompletedExam[] = [
+            ...(completedExams || [])
+          ];
+          const newProgressTimeStamps = (progressTimestamps ||
+            []) as ProgressTimestamp[];
+
+          const newCompletedChallenge = {
+            id,
+            challengeType,
+            completedDate,
+            examResults
+          };
+
+          // Always push to completedExams[] to keep a record of all exams taken.
+          newCompletedExams.push(newCompletedChallenge);
+
+          const alreadyCompletedIndex = completedChallenges.findIndex(
+            c => c.id === id
+          );
+
+          alreadyCompleted = alreadyCompletedIndex >= 0;
+          const dataToUpdate: {
+            completedExams: Prisma.InputJsonValue;
+            updateCount: { increment: number };
+            completedChallenges?: Prisma.InputJsonValue;
+            progressTimestamps?: ProgressTimestamp[];
+          } = {
+            completedExams: newCompletedExams,
+            updateCount: { increment: 1 }
+          };
+
+          if (examResults.passed) {
+            if (alreadyCompleted) {
+              const { percentCorrect } = examResults;
+              const oldChallenge = completedChallenges[
+                alreadyCompletedIndex
+              ] as CompletedChallenge;
+              const oldResults = oldChallenge?.examResults as ExamResults;
+
+              if (percentCorrect > (oldResults?.percentCorrect ?? -1)) {
+                const updatedChallenge = {
+                  id,
+                  challengeType: oldChallenge.challengeType,
+                  completedDate: oldChallenge.completedDate,
+                  examResults
+                };
+                newCompletedChallenges[alreadyCompletedIndex] =
+                  updatedChallenge;
+                dataToUpdate.completedChallenges = newCompletedChallenges;
+              }
+            } else {
+              addPoint = true;
+              newCompletedChallenges.push(newCompletedChallenge);
+              dataToUpdate.completedChallenges = newCompletedChallenges;
+              dataToUpdate.progressTimestamps = [
+                ...newProgressTimeStamps,
+                newCompletedChallenge.completedDate
+              ];
+            }
           }
 
-          // exam not passed
-        } else {
-          await fastify.prisma.user.update({
-            where: { id: userId },
-            data: {
-              completedExams: newCompletedExams
-            }
+          const updateResult = await fastify.prisma.user.updateMany({
+            where: { id: userId, updateCount },
+            data: dataToUpdate
           });
+
+          if (updateResult.count > 0) {
+            const points = getPoints(
+              (dataToUpdate.progressTimestamps as ProgressTimestamp[]) ||
+                newProgressTimeStamps
+            );
+            return {
+              alreadyCompleted,
+              points: addPoint ? points + 1 : points,
+              completedDate,
+              examResults
+            };
+          }
+
+          if (attempt < MAX_RETRIES - 1) {
+            await new Promise(resolve =>
+              setTimeout(resolve, Math.random() * 50 * (attempt + 1))
+            );
+            user = await fastify.prisma.user.findUniqueOrThrow({
+              where: { id: userId },
+              select: {
+                completedChallenges: true,
+                completedExams: true,
+                progressTimestamps: true,
+                updateCount: true
+              }
+            });
+            addPoint = false;
+          }
         }
 
-        const points = getPoints(newProgressTimeStamps);
-
-        return {
-          alreadyCompleted,
-          points: addPoint ? points + 1 : points,
-          completedDate,
-          examResults
-        };
+        const error = new Error(
+          'Failed to update user exam data due to concurrent requests'
+        ) as Error & { statusCode: number };
+        error.statusCode = 409;
+        throw error;
       } catch (error) {
+        if ((error as Error & { statusCode?: number }).statusCode === 409) {
+          logger.warn(
+            error,
+            'Concurrency conflict while submitting exam challenge'
+          );
+          void reply.code(409);
+          return {
+            error: 'Failed to update user exam data due to concurrent requests'
+          };
+        }
         logger.error(error, 'Error submitting exam challenge');
         fastify.Sentry.captureException(error);
         void reply.code(500);

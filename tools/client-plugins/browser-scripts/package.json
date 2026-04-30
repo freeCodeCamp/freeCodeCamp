@@ -30,7 +30,7 @@
   "scripts": {
     "lint": "eslint --max-warnings 0",
     "build": "pnpm copy-scripts && pnpm bundle",
-    "bundle": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production",
+    "bundle": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production",
     "copy-scripts": "tsx ./copy-scripts.ts"
   },
   "type": "module",
@@ -43,6 +43,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@typescript/vfs": "1.6.4",
     "babel-loader": "8.4.1",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "process": "0.11.10",
     "tsx": "^4.21.0",

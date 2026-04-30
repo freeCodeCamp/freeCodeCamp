@@ -1,6 +1,6 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
 import fs from 'fs';
-import path, { join } from 'path';
+import { join } from 'path';
 import matter from 'gray-matter';
 import { ObjectId } from 'bson';
 import { vi, describe, it, expect, afterEach } from 'vitest';
@@ -172,11 +172,11 @@ describe('Challenge utils helper scripts', () => {
 
       expect(fs.readdirSync).toHaveBeenCalledWith(projectPath + '/');
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        path.join(projectPath, 'name.md'),
+        `${projectPath}/name.md`,
         undefined
       );
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        path.join(projectPath, 'another-name.md'),
+        `${projectPath}/another-name.md`,
         undefined
       );
       expect(matter.stringify).toHaveBeenCalledWith('goes here', {
