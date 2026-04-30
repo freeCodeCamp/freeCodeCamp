@@ -185,7 +185,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               >
                 {t('settings.for', { username: username })}
               </h1>
-              <Trans i18nKey='settings.profile-note'>
+              <Trans
+                i18nKey='settings.profile-note'
+                parent='p'
+                className='text-center'
+              >
                 <a href={`/${username}`}>your profile</a>
               </Trans>
             </ScrollElement>
