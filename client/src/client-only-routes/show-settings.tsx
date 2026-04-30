@@ -9,7 +9,7 @@ import store from 'store';
 import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader } from '../components/helpers';
+import { FullWidthRow, Loader } from '../components/helpers';
 import Certification from '../components/settings/certification';
 import Account from '../components/settings/account';
 import DangerZone from '../components/settings/danger-zone';
@@ -175,19 +175,21 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
         <SettingsSidebarNav userToken={userToken} />
         <main className='settings-main'>
           <Spacer size='l' />
-          <ScrollElement name='username'>
-            <h1
-              id='content-start'
-              className='text-center'
-              style={{ overflowWrap: 'break-word' }}
-              data-playwright-test-label='settings-heading'
-            >
-              {t('settings.for', { username: username })}
-            </h1>
-            <Trans i18nKey='settings.profile-note'>
-              <a href={`/${username}`}>your profile</a>
-            </Trans>
-          </ScrollElement>
+          <FullWidthRow>
+            <ScrollElement name='username'>
+              <h1
+                id='content-start'
+                className='text-center'
+                style={{ overflowWrap: 'break-word' }}
+                data-playwright-test-label='settings-heading'
+              >
+                {t('settings.for', { username: username })}
+              </h1>
+              <Trans i18nKey='settings.profile-note'>
+                <a href={`/${username}`}>your profile</a>
+              </Trans>
+            </ScrollElement>
+          </FullWidthRow>
           <Spacer size='l' />
           <ScrollElement name='personal'>
             <About
