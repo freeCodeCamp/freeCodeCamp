@@ -7232,6 +7232,10 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
+      },
+      "lecture-express-middleware": {
+        "title": "Express Middleware",
+        "intro": ["Express Middleware", ""]
       }
     }
   },
