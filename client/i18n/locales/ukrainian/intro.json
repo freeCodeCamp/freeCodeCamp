@@ -4850,6 +4850,12 @@
           "Цикли — це важлива частина JavaScript. Тому наступні лекції підготовлено для того, щоб ви дізналися про різні типи циклів, як вони працюють, а також про те, як працює ітерація."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Створіть лічильник слів",
+        "intro": [
+          "У цьому практичному занятті ви будете використовувати цикли <code>for...of</code> для створення функції, яка рахує скільки разів зустрічається рядок в масиві."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Створіть аналізатор речень",
         "intro": [
@@ -4863,10 +4869,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "Створіть каталог для бібліотеки спадщини",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "У цьому практичному занятті ви оцифруєте історичні записи для бібліотеки спадщини.",
+          "Ви будете користуватись циклами, об’єктами і рядками, щоб аналізувати необроблені текстові дані, шукати й групувати записи, відтворювати відформатовані дані, а також експортувати JSON та CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4904,6 +4910,12 @@
         "title": "Створіть функцію для повтору рядка",
         "intro": [
           "У цій лабораторній роботі ви імплементуєте масиви, щоб повторити рядок задану кількість разів."
+        ]
+      },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Створіть симулятор натовпу на фестивалі",
+        "intro": [
+          "У цьому практичному занятті ви будете використовувати JavaScript, щоб створити симуляцію потоку відвідувачів на музичному фестивалі."
         ]
       },
       "lab-missing-letter-detector": {
@@ -5056,6 +5068,13 @@
         "title": "Імплементуйте пропуск елементів",
         "intro": [
           "У цій лабораторній роботі ви створите функцію, яка пропускає елементи в масиві на основі вказаного значення."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Створіть програму для реміксів",
+        "intro": [
+          "У цій лабораторній роботі ви створите програму для реміксів на основі плейлиста, використовуючи масиви.",
+          "Ви будете застосовувати методи і логіку масивів, щоб працювати з даними і згенерувати кінцевий ремікс."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6201,9 +6220,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "Створіть менеджера фігур",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "У цьому практичному занятті ви будете працювати з базовими функціями в TypeScript, серед яких типи й інтерфейси, створивши менеджера фігур."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Створіть магазин мотоциклів",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати TypeScript, щоб створити магазин мотоциклів."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6219,9 +6244,9 @@
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "Створіть перегляд товару",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "У цій лабораторній роботі ви будете працювати з дженериками та звуженням типів у TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
@@ -6230,8 +6255,26 @@
           "У цій лекції ви дізнаєтесь про конфігураційні файли TypeScript і як ними користуватися."
         ]
       },
+      "workshop-fortune-teller-app": {
+        "title": "Створіть генератор передбачень",
+        "intro": [
+          "У цьому практичному занятті ви продовжите працювати з TypeScript, створивши застосунок з передбаченнями."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Створіть програму з вікториною",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати TypeScript, щоб створити вікторину з картками."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Створіть гру з домашнім улюбленцем",
+        "intro": [
+          "У цій лабораторній роботі ви застосуєте знання про TypeScript та React на практиці, створивши гру з домашнім улюбленцем."
+        ]
+      },
       "review-typescript": {
-        "title": "Повторення Typescript",
+        "title": "Повторення TypeScript",
         "intro": [
           "Перш ніж перейти до тесту «TypeScript», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати типи даних у TypeScript, дженерики, звуження типів та багато іншого."
@@ -6239,7 +6282,7 @@
       },
       "quiz-typescript": {
         "title": "Тест «TypeScript»",
-        "intro": ["Перевірте, що ви дізнались про Typescript."]
+        "intro": ["Перевірте, що ви дізнались про TypeScript."]
       },
       "review-front-end-libraries": {
         "title": "Повторення бібліотек Front End",
@@ -7163,6 +7206,13 @@
           "У цих лекціях ви дізнаєтесь, що таке Express.js, чому розробники використовують його для створення вебсерверів і API, а також як налаштувати базовий Express-застосунок з маршрутами та обробкою запитів."
         ]
       },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Знайомство з маршрутизацією в ExpressJS",
+        "intro": [
+          "Знайомство з маршрутизацією в ExpressJS",
+          "У цих уроках ви ознайомитесь з маршрутизацією в ExpressJS. Ви навчитесь визначати різні кінцеві точки вебзастосунку, а також дізнаєтесь як вони реагують на запити клієнта."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Екзамен з сертифікації «Back End та API»",
         "intro": [
@@ -7537,6 +7587,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Тест «Опис колег»",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Як говорити про колег?",
         "intro": ["", ""]
       }
     }
@@ -8644,6 +8698,12 @@
         "note": "Очікуйте у 2026",
         "intro": [
           "У цьому модулі ви будете працювати з короткими розмовами, де запитується і надається відповідь на запитання про колег."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Очікуйте у 2026",
+        "intro": [
+          "У цьому модулі ви будете практикувати розмову, яка містить особисту інформацію (зокрема, вік і мобільний номер)."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {

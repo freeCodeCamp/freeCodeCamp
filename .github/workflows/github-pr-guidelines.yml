@@ -20,7 +20,7 @@ jobs:
 
       - name: Check if PR author is allow-listed
         id: pr_author
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           # GITHUB_TOKEN does not have the read:org permission needed for this call
           # while CAMPERBOT_NO_TRANSLATE does, since it is a PAT for the camperbot account with read:org scope
@@ -49,7 +49,7 @@ jobs:
           fi
 
       - name: Add comment on PR if commits are made on GitHub Web UI
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         if: steps.pr_author.outputs.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true' && github.event.action != 'edited'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
 
       - name: Add deprioritized label
         if: failure()
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -88,7 +88,7 @@ jobs:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
 
-      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -113,7 +113,7 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - id: check
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -135,7 +135,7 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - id: check
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -155,7 +155,7 @@ jobs:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
 
-      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

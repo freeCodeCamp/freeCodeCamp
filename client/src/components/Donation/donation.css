@@ -668,7 +668,8 @@ a.patreon-button:hover {
 
 .dark-palette .gradient-container {
   position: relative;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       -10deg,
       rgb(7 40 94) 35%,
       rgba(237, 202, 216, 0) 75%,
@@ -679,7 +680,8 @@ a.patreon-button:hover {
 
 .light-palette .gradient-container {
   position: relative;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       -10deg,
       rgb(223 243 255) 35%,
       rgba(237, 202, 216, 0) 75%,
@@ -693,7 +695,8 @@ a.patreon-button:hover {
 }
 
 .light-palette .gradient-foreground {
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       -10deg,
       rgb(0, 51, 133) 35%,
       rgba(237, 202, 216, 0) 75%,
@@ -705,7 +708,8 @@ a.patreon-button:hover {
 }
 
 .dark-palette .gradient-foreground {
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       -10deg,
       rgb(223 243 255) 35%,
       rgba(237, 202, 216, 0) 75%,

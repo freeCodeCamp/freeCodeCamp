@@ -97,6 +97,7 @@
           "dashedName": "javascript-loops",
           "blocks": [
             "lecture-working-with-loops",
+            "workshop-word-counter",
             "workshop-sentence-analyzer",
             "workshop-space-mission-roster",
             "workshop-heritage-library-catalog",
@@ -106,6 +107,7 @@
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "workshop-festival-crowd-flow-simulator",
             "lab-missing-letter-detector",
             "review-javascript-loops",
             "quiz-javascript-loops"
@@ -136,6 +138,7 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
+            "lab-playlist-remix-engine",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
