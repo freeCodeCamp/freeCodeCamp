@@ -10,7 +10,7 @@ import {
   examAttempt,
   generatedExam,
   oid
-} from '../../../__mocks__/exam-environment-exam.js';
+} from '../../../__fixtures__/exam-environment-exam.js';
 import * as schemas from '../schemas/index.js';
 import { setupServer } from '../../../vitest.utils.js';
 import {

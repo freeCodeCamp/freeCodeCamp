@@ -1,0 +1,21 @@
+name: GitHub - Lock Closed PRs
+
+on:
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  lock:
+    name: Lock Closed PR
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.issues.lock({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              lock_reason: 'resolved'
+            });

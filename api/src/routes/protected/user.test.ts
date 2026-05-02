@@ -34,7 +34,7 @@ import {
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/exam-environment-exam.js';
+} from '../../../__fixtures__/exam-environment-exam.js';
 import { getMsTranscriptApiUrl } from './user.js';
 
 const mockedFetch = vi.fn();
@@ -187,7 +187,7 @@ const lockedProfileUI = {
 };
 
 // These are not part of the schema, but are added to the user object by
-// get-session-user's handler
+// session-user's handler
 const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
@@ -198,7 +198,7 @@ const computedProperties = {
   profileUI: lockedProfileUI
 };
 
-// The following appears in get-session-user responses, but not
+// The following appears in session-user responses, but not
 // get-public-profile
 const sessionOnlyData = {
   currentChallengeId: testUserData.currentChallengeId,
@@ -318,6 +318,7 @@ const publicUserData = {
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
+  socrates: true,
   twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   sendQuincyEmail: testUserData.sendQuincyEmail,
@@ -1052,6 +1053,7 @@ describe('userRoutes', () => {
           keyboardShortcuts: false,
           location: '',
           name: '',
+          socrates: true,
           theme: 'default'
         };
 
@@ -1630,16 +1632,6 @@ Thanks and regards,
     describe('/user/session-user', () => {
       test('GET returns 200 with empty user object for unauthenticated users', async () => {
         const response = await superRequest('/user/session-user', {
-          method: 'GET',
-          setCookies
-        });
-
-        expect(response.statusCode).toBe(200);
-        expect(response.body).toStrictEqual({ user: {}, result: '' });
-      });
-
-      test('GET legacy endpoint returns 200 with empty user object for unauthenticated users', async () => {
-        const response = await superRequest('/user/get-session-user', {
           method: 'GET',
           setCookies
         });

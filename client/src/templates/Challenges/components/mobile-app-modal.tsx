@@ -58,6 +58,20 @@ function MobileAppModal({
   const os = detectOS();
   const [dismissed, setDismissed] = useState(isDismissedFor30Days);
 
+  // Defer rendering until after the first browser paint. On a direct page
+  // load the component hydrates before the browser has computed layout, so
+  // document.documentElement.clientWidth is 0. The Modal's scroll-lock
+  // utility calculates the scrollbar compensation as
+  // window.innerWidth - clientWidth, which produces window.innerWidth when
+  // clientWidth is 0, and stamps that value as padding-right on <html>,
+  // breaking the layout. Waiting for useEffect guarantees that layout has
+  // been computed before the modal (and its scroll-lock) opens.
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     if (isProjectPreviewOpen) setDismissed(true);
   }, [isProjectPreviewOpen]);
@@ -73,7 +87,13 @@ function MobileAppModal({
   const storeName =
     os === 'ios' ? t('mobile-app-modal.ios') : t('mobile-app-modal.android');
 
-  if (os === 'other' || !isAvailable || isProjectPreviewOpen || dismissed)
+  if (
+    !mounted ||
+    os === 'other' ||
+    !isAvailable ||
+    isProjectPreviewOpen ||
+    dismissed
+  )
     return null;
 
   return (

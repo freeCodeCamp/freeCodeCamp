@@ -66,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Reset",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "Reset This Step",
     "help": "Help",
     "get-help": "Get Help",
@@ -338,6 +339,7 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
@@ -380,6 +382,10 @@
       "new": "New Email",
       "confirm": "Confirm New Email",
       "weekly": "Send me Quincy's weekly email"
+    },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
     },
     "honesty": {
       "p1": "Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:",
@@ -464,13 +470,16 @@
     },
     "completeness": {
       "heading": "Profile {{percentage}}% complete",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",
       "picture": "Upload a profile picture",
       "about": "Write an about section",
       "social": "Add a social link",
       "portfolio": "Add a portfolio project",
-      "experience": "Add your experience"
+      "experience": "Add your experience",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -533,6 +542,18 @@
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
     "sign-in-save": "Sign in to save your progress",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "Download my solution",
     "download-results": "Download my results",
     "percent-complete": "{{percent}}% complete",
@@ -567,9 +588,9 @@
       "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Preview",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -899,8 +920,8 @@
   "search": {
     "label": "Search",
     "placeholder": {
-      "default": "Search our news articles, tutorials, and books",
-      "numbered": "Search {{ roundedTotalRecords }}+ news articles, tutorials, and books"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "See all results for {{searchQuery}}",
     "try": "Looking for something? Try the search bar on this page.",
@@ -1010,6 +1031,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
@@ -1017,6 +1042,10 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
     "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
@@ -1037,6 +1066,7 @@
     "updated-themes": "We have updated your theme",
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "We have updated your portfolio",
     "experience-updated": "We have updated your experience",
     "email-invalid": "Email format is invalid",

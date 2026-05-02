@@ -32,7 +32,7 @@ jobs:
           PROJECT_NAME: 'client'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@ce33ce793a5cbc401d9cd748716e03fc90c001f1 # v2.15.2
+        uses: crowdin/github-action@c4603c03221bf738306d907d28d4942da99a0afa # v2.16.1
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads

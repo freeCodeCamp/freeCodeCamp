@@ -25,12 +25,12 @@ jobs:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6
         id: pnpm-install
         with:
           run_install: false
@@ -49,11 +49,11 @@ jobs:
       - name: Create Comment
         # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
         if: ${{ failure() && steps.validate.conclusion == 'failure' }}
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |
-            github.rest.issues.createComment({
+            await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,

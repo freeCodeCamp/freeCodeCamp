@@ -4780,6 +4780,12 @@
           "循环是 JavaScript 的核心部分。因此以下讲座将帮助你学习不同类型的循环及其工作原理，以及迭代的运作方式。"
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "创建一个句子分析程序",
         "intro": [
@@ -4790,6 +4796,13 @@
         "title": "Build a Space Mission Roster",
         "intro": [
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4822,6 +4835,12 @@
       "lab-repeat-a-string": {
         "title": "实现字符串重复函数",
         "intro": ["在本实验中，你将使用循环结构，将一个字符串重复指定的次数。"]
+      },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
       },
       "lab-missing-letter-detector": {
         "title": "实现缺失字母检测函数",
@@ -4961,6 +4980,13 @@
         "title": "实现元素跳过函数",
         "intro": [
           "在本实验中，你将创建一个函数，根据指定的步长值跳过数组中的元素。"
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6073,10 +6099,34 @@
           "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
+      "workshop-type-safe-user-profile": {
+        "title": "Build a Type Safe User Profile",
+        "intro": [
+          "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
+        ]
+      },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
+        ]
+      },
       "lecture-understanding-type-composition": {
         "title": "Understanding Type Composition",
         "intro": [
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
+        ]
+      },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6085,14 +6135,44 @@
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
         ]
       },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
+        ]
+      },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
         "intro": [
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
       "review-typescript": {
-        "title": "Typescript Review",
+        "title": "TypeScript Review",
         "intro": [
           "Before you take the TypeScript quiz, you should review everything you've learned so far.",
           "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
@@ -6100,7 +6180,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7032,6 +7112,13 @@
           "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
         ]
       },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
@@ -7404,6 +7491,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
         "intro": ["", ""]
       }
     }
@@ -8513,7 +8604,7 @@
       "zh-a1-module-initials-and-finals": "Initials and Finals",
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
       "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
@@ -8529,6 +8620,12 @@
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8726,11 +8823,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers below 100 Review",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers below 100 Quiz",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }

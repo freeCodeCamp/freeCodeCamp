@@ -13,6 +13,16 @@ packages:
   - 'tools/scripts/seed-exams'
   - 'packages/*'
 
+# Disable until we can enable this again.
+strictPeerDependencies: false
+# A lot of our scripts rely on pre and post scripts.
+enablePrePostScripts: true
+minimumReleaseAge: 10080
+
+overrides:
+  # Pin transitive deps to mature releases so Renovate can refresh lockfiles.
+  caniuse-lite: 1.0.30001790
+
 packageExtensions:
   '@testing-library/jest-dom':
     peerDependencies:

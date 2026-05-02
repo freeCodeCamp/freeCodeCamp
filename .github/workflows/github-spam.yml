@@ -8,16 +8,19 @@ jobs:
   is-spam:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |
-            const isSpam = context.payload.pull_request.labels.find(label => label.name === "spam");
-            if (isSpam) {
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: "We are marking this pull request as spam. Please note that if you are participating in Hacktoberfest, two or more PRs marked as spam will result in your permanent disqualification.\n\nIf you are interested in making quality and genuine contributions to our projects, check out our [contributing guidelines](https://contribute.freecodecamp.org)."
-              })
+            if (context.payload.label.name === "spam") {
+              try {
+                await github.rest.issues.createComment({
+                  issue_number: context.issue.number,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  body: "We are marking this pull request as spam. Please note that if you are participating in Hacktoberfest, two or more PRs marked as spam will result in your permanent disqualification.\n\nIf you are interested in making quality and genuine contributions to our projects, check out our [contributing guidelines](https://contribute.freecodecamp.org)."
+                });
+              } catch {
+                // Conversation may already be locked — ignore.
+              }
             }
