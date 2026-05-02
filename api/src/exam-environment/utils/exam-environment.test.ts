@@ -103,6 +103,126 @@ describe('Exam Environment mocked Math.random', () => {
       expect(() => generateExam(exam)).not.toThrow();
     });
 
+    it('should keep unused question sets available after tagging', () => {
+      const taggedExam = structuredClone(exam);
+      taggedExam.id = oid();
+      taggedExam.config = {
+        ...exam.config,
+        tags: [
+          {
+            group: ['tag-1'],
+            numberOfQuestions: 2
+          }
+        ],
+        questionSets: [
+          {
+            type: ExamEnvironmentQuestionType.MultipleChoice,
+            numberOfSet: 2,
+            numberOfQuestions: 2,
+            numberOfCorrectAnswers: 1,
+            numberOfIncorrectAnswers: 1
+          }
+        ]
+      };
+
+      taggedExam.questionSets = [
+        {
+          id: oid(),
+          type: ExamEnvironmentQuestionType.MultipleChoice,
+          context: null,
+          questions: [
+            {
+              id: oid(),
+              tags: ['tag-1'],
+              text: 'Tagged question 1',
+              deprecated: false,
+              audio: null,
+              answers: [
+                {
+                  id: oid(),
+                  text: 'Answer 1',
+                  isCorrect: true
+                },
+                {
+                  id: oid(),
+                  text: 'Answer 2',
+                  isCorrect: false
+                }
+              ]
+            },
+            {
+              id: oid(),
+              tags: ['tag-1'],
+              text: 'Tagged question 2',
+              deprecated: false,
+              audio: null,
+              answers: [
+                {
+                  id: oid(),
+                  text: 'Answer 1',
+                  isCorrect: true
+                },
+                {
+                  id: oid(),
+                  text: 'Answer 2',
+                  isCorrect: false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: oid(),
+          type: ExamEnvironmentQuestionType.MultipleChoice,
+          context: null,
+          questions: [
+            {
+              id: oid(),
+              tags: [],
+              text: 'Untagged question 1',
+              deprecated: false,
+              audio: null,
+              answers: [
+                {
+                  id: oid(),
+                  text: 'Answer 1',
+                  isCorrect: true
+                },
+                {
+                  id: oid(),
+                  text: 'Answer 2',
+                  isCorrect: false
+                }
+              ]
+            },
+            {
+              id: oid(),
+              tags: [],
+              text: 'Untagged question 2',
+              deprecated: false,
+              audio: null,
+              answers: [
+                {
+                  id: oid(),
+                  text: 'Answer 1',
+                  isCorrect: true
+                },
+                {
+                  id: oid(),
+                  text: 'Answer 2',
+                  isCorrect: false
+                }
+              ]
+            }
+          ]
+        }
+      ];
+
+      const generatedExam = generateExam(taggedExam);
+
+      expect(generatedExam.questionSets).toHaveLength(2);
+    });
+
     it('should generate an exam matching with the correct number of question sets', () => {
       const generatedExam = generateExam(exam);
 

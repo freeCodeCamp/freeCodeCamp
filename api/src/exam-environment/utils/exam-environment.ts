@@ -443,10 +443,12 @@ export function generateExam(
 
             // TODO: Issue is question set is not being removed. So, one question set is used multiple times to fulfill config.
             // Just remove question set once used? Evaluate:
-            shuffledQuestionSets.splice(
-              shuffledQuestionSets.findIndex(qs => qs.id === questionSet.id),
-              1
+            const questionSetIndex = shuffledQuestionSets.findIndex(
+              qs => qs.id === questionSet.id
             );
+            if (questionSetIndex >= 0) {
+              shuffledQuestionSets.splice(questionSetIndex, 1);
+            }
             // New issue: Once the set is removed, tag config might not be able to be fulfilled.
 
             // Remove question from questionSet, decrement tagConfig.numberOfQuestions and `questionSetConfig.numberOfQuestions`
