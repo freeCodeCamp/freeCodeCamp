@@ -32,12 +32,14 @@ function ProfilePrivacyComponent({
 }: ProfilePrivacyProps): JSX.Element {
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(user.profileUI.isLocked);
-  const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
-  const [madeChanges, setMadeChanges] = useState(false);
+  // Snapshot of the original values to detect unsaved changes
+const [initialPrivacyValues, setInitialPrivacyValues] = useState({ ...user.profileUI });
+const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
+const madeChanges = JSON.stringify(privacyValues) !== JSON.stringify(initialPrivacyValues);
 
   function toggleFlag(flag: keyof ProfileUI): () => void {
     return () => {
-      setMadeChanges(true);
+      
       setPrivacyValues({ ...privacyValues, [flag]: !privacyValues[flag] });
     };
   }
@@ -46,7 +48,7 @@ function ProfilePrivacyComponent({
     e.preventDefault();
     if (!madeChanges) return;
     submitProfileUI(privacyValues);
-    setMadeChanges(false);
+    setInitialPrivacyValues({ ...privacyValues }); // reset baseline after saving
   }
 
   return (
@@ -188,6 +190,7 @@ function ProfilePrivacyComponent({
     </FullWidthRow>
   );
 }
+
 
 ProfilePrivacyComponent.displayName = 'ProfilePrivacy';
 
