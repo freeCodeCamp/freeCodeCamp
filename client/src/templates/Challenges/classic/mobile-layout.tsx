@@ -102,13 +102,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     this.setState({
       currentTab: tab as Tab
     });
-    if(tab == tabs.python)
-    {
-      this.props.setDailyCodingChallengeLanguage("python")
-    }
-    else if(tab == tabs.javascript)
-    {
-      this.props.setDailyCodingChallengeLanguage("javascript")
+    if (tab == tabs.python) {
+      this.props.setDailyCodingChallengeLanguage('python');
+    } else if (tab == tabs.javascript) {
+      this.props.setDailyCodingChallengeLanguage('javascript');
     }
   };
 
@@ -250,17 +247,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 {i18next.t('learn.editor-tabs.instructions')}
               </TabsTrigger>
             )}
-            {isDailyCodingChallenge && ( <TabsTrigger value={tabs.javascript}>
-              JavaScript
-            </TabsTrigger>
+            {isDailyCodingChallenge && (
+              <TabsTrigger value={tabs.javascript}>JavaScript</TabsTrigger>
             )}
-            {isDailyCodingChallenge && ( <TabsTrigger value={tabs.python}>
-              Python
-            </TabsTrigger>
+            {isDailyCodingChallenge && (
+              <TabsTrigger value={tabs.python}>Python</TabsTrigger>
             )}
-             {!isDailyCodingChallenge && ( <TabsTrigger value={tabs.editor}>
-              {i18next.t('learn.editor-tabs.code')}
-            </TabsTrigger>
+            {!isDailyCodingChallenge && (
+              <TabsTrigger value={tabs.editor}>
+                {i18next.t('learn.editor-tabs.code')}
+              </TabsTrigger>
             )}
             {!!notes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>
@@ -277,34 +273,37 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             )}
           </TabsList>
 
-          {!isDailyCodingChallenge && (<TabsContent
-            tabIndex={-1}
-            className='tab-content'
-            value={tabs.editor}
-          >
-            {usesMultifileEditor && <EditorTabs />}
-            {editor}
-          </TabsContent>
+          {!isDailyCodingChallenge && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.editor}
+            >
+              {usesMultifileEditor && <EditorTabs />}
+              {editor}
+            </TabsContent>
           )}
 
-          {isDailyCodingChallenge && <TabsContent
-            tabIndex={-1}
-            className='tab-content'
-            value={tabs.javascript}
-          >
-            {usesMultifileEditor && <EditorTabs />}
-            {editor}
-          </TabsContent>
-          }
-           {isDailyCodingChallenge && <TabsContent
-            tabIndex={-1}
-            className='tab-content'
-            value={tabs.python}
-          >
-            {usesMultifileEditor && <EditorTabs />}
-            {editor}
-          </TabsContent>
-          }
+          {isDailyCodingChallenge && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.javascript}
+            >
+              {usesMultifileEditor && <EditorTabs />}
+              {editor}
+            </TabsContent>
+          )}
+          {isDailyCodingChallenge && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.python}
+            >
+              {usesMultifileEditor && <EditorTabs />}
+              {editor}
+            </TabsContent>
+          )}
 
           {!hasEditableBoundaries && (
             <TabsContent
