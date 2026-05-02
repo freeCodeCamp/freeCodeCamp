@@ -4,7 +4,9 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import store from 'store';
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 
 import {
   removePortalWindow,
@@ -26,6 +28,11 @@ interface MobileLayoutProps {
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
+  isDailyCodingChallenge?: boolean;
+  dailyCodingChallengeLanguage?: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage?: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   notes: string;
   preview: JSX.Element;
   onPreviewResize: () => void;
@@ -166,8 +173,20 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       portalWindow,
       windowTitle,
       usesMultifileEditor,
-      usesTerminal
+      usesTerminal,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage,
+      setDailyCodingChallengeLanguage
     } = this.props;
+
+    const handleLanguageChange = (
+      language: DailyCodingChallengeLanguages
+    ): void => {
+      store.set('dailyCodingChallengeLanguage', language);
+      if (setDailyCodingChallengeLanguage) {
+        setDailyCodingChallengeLanguage(language);
+      }
+    };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -256,6 +275,26 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             className='tab-content'
             value={tabs.editor}
           >
+            {isDailyCodingChallenge && (
+              <div className='mobile-language-selector'>
+                <button
+                  aria-expanded={
+                    dailyCodingChallengeLanguage === 'javascript'
+                  }
+                  disabled={dailyCodingChallengeLanguage === 'javascript'}
+                  onClick={() => handleLanguageChange('javascript')}
+                >
+                  JavaScript
+                </button>
+                <button
+                  aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                  disabled={dailyCodingChallengeLanguage === 'python'}
+                  onClick={() => handleLanguageChange('python')}
+                >
+                  Python
+                </button>
+              </div>
+            )}
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>

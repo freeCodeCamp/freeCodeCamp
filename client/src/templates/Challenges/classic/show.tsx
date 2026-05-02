@@ -490,6 +490,9 @@ function ShowClassic({
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             instructions={renderInstructionsPanel({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
