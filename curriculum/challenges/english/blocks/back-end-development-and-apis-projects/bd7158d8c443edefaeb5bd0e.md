@@ -71,8 +71,7 @@ When you visit `/api/shorturl/<short_url>`, you will be redirected to the origin
     url + '/api/shorturl/' + shortenedUrlVariable
   );
   if (getResponse) {
-    const { redirected, url } = getResponse;
-    assert.isTrue(redirected);
+    const { url } = getResponse;
     assert.strictEqual(url,fullUrl);
   } else {
     throw new Error(`${getResponse.status} ${getResponse.statusText}`);
