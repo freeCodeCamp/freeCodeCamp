@@ -484,6 +484,9 @@ function ShowClassic({
         <Helmet title={windowTitle} />
         {isMobile ? (
           <MobileLayout
+          dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+          isDailyCodingChallenge={isDailyCodingChallenge}
+          setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             editor={renderEditor({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist

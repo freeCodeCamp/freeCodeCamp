@@ -20,6 +20,7 @@ import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
@@ -41,6 +42,11 @@ interface MobileLayoutProps {
   testOutput: JSX.Element;
   usesMultifileEditor: boolean;
   usesTerminal: boolean;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
 }
 
 const tabs = {
@@ -48,7 +54,9 @@ const tabs = {
   preview: 'preview',
   console: 'console',
   notes: 'notes',
-  instructions: 'instructions'
+  instructions: 'instructions',
+  python: 'python',
+  javascript: 'javascript'
 } as const;
 
 type Tab = keyof typeof tabs;
@@ -94,6 +102,14 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     this.setState({
       currentTab: tab as Tab
     });
+    if(tab == tabs.python)
+    {
+      this.props.setDailyCodingChallengeLanguage("python")
+    }
+    else if(tab == tabs.javascript)
+    {
+      this.props.setDailyCodingChallengeLanguage("javascript")
+    }
   };
 
   // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
@@ -166,7 +182,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       portalWindow,
       windowTitle,
       usesMultifileEditor,
-      usesTerminal
+      usesTerminal,
+      isDailyCodingChallenge
     } = this.props;
 
     const displayPreviewPane = hasPreview && showPreviewPane;
@@ -233,9 +250,18 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
                 {i18next.t('learn.editor-tabs.instructions')}
               </TabsTrigger>
             )}
-            <TabsTrigger value={tabs.editor}>
+            {isDailyCodingChallenge && ( <TabsTrigger value={tabs.javascript}>
+              JavaScript
+            </TabsTrigger>
+            )}
+            {isDailyCodingChallenge && ( <TabsTrigger value={tabs.python}>
+              Python
+            </TabsTrigger>
+            )}
+             {!isDailyCodingChallenge && ( <TabsTrigger value={tabs.editor}>
               {i18next.t('learn.editor-tabs.code')}
             </TabsTrigger>
+            )}
             {!!notes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>
                 {i18next.t('learn.editor-tabs.notes')}
@@ -251,7 +277,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             )}
           </TabsList>
 
-          <TabsContent
+          {!isDailyCodingChallenge && (<TabsContent
             tabIndex={-1}
             className='tab-content'
             value={tabs.editor}
@@ -259,6 +285,27 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
+          )}
+
+          {isDailyCodingChallenge && <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.javascript}
+          >
+            {usesMultifileEditor && <EditorTabs />}
+            {editor}
+          </TabsContent>
+          }
+           {isDailyCodingChallenge && <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.python}
+          >
+            {usesMultifileEditor && <EditorTabs />}
+            {editor}
+          </TabsContent>
+          }
+
           {!hasEditableBoundaries && (
             <TabsContent
               tabIndex={-1}
