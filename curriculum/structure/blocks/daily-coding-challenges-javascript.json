@@ -1117,6 +1117,34 @@
     {
       "id": "69e2383af7832c8032603b94",
       "title": "Challenge 278: Coffee Order Parser"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cb8",
+      "title": "Challenge 279: Longest Domino Chain"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cb9",
+      "title": "Challenge 280: Mongo ID Date"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cba",
+      "title": "Challenge 281: Bingo Range"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbb",
+      "title": "Challenge 282: Sleep Debt"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbc",
+      "title": "Challenge 283: String Zipper"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbd",
+      "title": "Challenge 284: I Before E"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbe",
+      "title": "Challenge 285: Meeting Start Time"
     }
   ]
 }
