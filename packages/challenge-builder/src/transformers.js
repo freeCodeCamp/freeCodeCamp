@@ -275,6 +275,113 @@ export const embedScript = (script, source, contents) => {
   script.setAttribute('data-src', source);
 };
 
+const localResourceConfigs = [
+  {
+    selector: 'link[rel~="stylesheet"][href]',
+    sourceAttribute: 'href',
+    fileKey: 'stylesCss',
+    resourceType: 'stylesheet',
+    allowedSource: 'styles.css',
+    warnWhenNoSourceFile: true
+  },
+  {
+    selector: 'script[src]',
+    sourceAttribute: 'src',
+    fileKey: 'scriptJs',
+    resourceType: 'script',
+    allowedSource: 'script.js',
+    warnWhenNoSourceFile: false
+  }
+];
+
+const getAllowedSources = (challengeFile, allowedSource) =>
+  challengeFile ? new Set([allowedSource]) : new Set();
+
+const hasScheme = source => /^[a-zA-Z][a-zA-Z\d+.-]*:/.test(source);
+
+const isLocalResource = source => {
+  if (!source || source.startsWith('#') || source.startsWith('//')) {
+    return false;
+  }
+  if (hasScheme(source)) {
+    return false;
+  }
+  return true;
+};
+
+const normalizeSource = source =>
+  source
+    .trim()
+    .split(/[?#]/, 1)[0]
+    .replace(/^\.\/+/, '')
+    .replace(/^\/+/, '');
+
+const createUnexpectedSourceWarning = ({
+  resourceType,
+  source,
+  allowedSources
+}) => ({
+  type: 'unavailable-local-resource',
+  source,
+  resourceType,
+  allowedSources: [...allowedSources]
+});
+
+export const getLocalSourceWarnings = challengeFiles => {
+  const { indexHtml, stylesCss, scriptJs } =
+    challengeFilesToObject(challengeFiles);
+
+  if (!indexHtml) {
+    return [];
+  }
+
+  const warnings = new Map();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(indexHtml.contents, 'text/html');
+  const challengeFilesByKey = { stylesCss, scriptJs };
+
+  localResourceConfigs.forEach(
+    ({
+      selector,
+      sourceAttribute,
+      fileKey,
+      resourceType,
+      allowedSource,
+      warnWhenNoSourceFile
+    }) => {
+      const allowedSources = getAllowedSources(
+        challengeFilesByKey[fileKey],
+        allowedSource
+      );
+
+      if (allowedSources.size === 0 && !warnWhenNoSourceFile) {
+        return;
+      }
+
+      doc.querySelectorAll(selector).forEach(node => {
+        const source = node.getAttribute(sourceAttribute) ?? '';
+
+        if (!isLocalResource(source)) {
+          return;
+        }
+
+        if (allowedSources.has(normalizeSource(source))) {
+          return;
+        }
+
+        const warning = createUnexpectedSourceWarning({
+          resourceType,
+          source,
+          allowedSources
+        });
+        warnings.set(JSON.stringify(warning), warning);
+      });
+    }
+  );
+
+  return [...warnings.values()];
+};
+
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {

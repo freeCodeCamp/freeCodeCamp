@@ -538,6 +538,12 @@
     "running-tests": "// running tests",
     "tests-completed": "// tests completed",
     "console-output": "// console output",
+    "unavailable-local-resource": "Failed to load resource: \"{{source}}\" is not an available local {{resourceType}} file. Use: {{allowedSources}}.",
+    "unavailable-local-resource-no-allowed": "Failed to load resource: \"{{source}}\" is not an available local {{resourceType}} file in this challenge.",
+    "local-resource-type": {
+      "stylesheet": "stylesheet",
+      "script": "script"
+    },
     "example-app": "Build an app that is functionally similar to <0>this example project</0>. Try not to copy the example project, give it your own personal style.",
     "syntax-error": "Your code raised an error before any tests could run. Please fix it and try again.",
     "indentation-error": "Your code has an indentation error. You may need to add <code>pass</code> on a new line to form a valid block of code.",
