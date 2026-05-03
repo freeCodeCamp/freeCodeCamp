@@ -1,0 +1,9 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-device-loan-ledger",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [{ "id": "69f0a37c3bf194a7c9c62492", "title": "Step 1" }],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

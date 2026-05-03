@@ -5882,6 +5882,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lab-device-loan-ledger": {
+        "title": "Build a Device Loan Ledger",
+        "intro": ["Build a Device Loan Ledger", ""]
       }
     }
   },
