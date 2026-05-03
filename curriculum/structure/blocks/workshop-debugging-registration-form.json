@@ -1,0 +1,25 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-debugging-registration-form",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69ca6cdf705389fc09fc5ba4", "title": "Step 1" },
+    { "id": "69ca8ef06031d0065893012b", "title": "Step 2" },
+    { "id": "69ca924351f65a7e170fcdc0", "title": "Step 3" },
+    { "id": "69ca964162b3bcd254c70377", "title": "Step 4" },
+    { "id": "69ca98662e58b4c4bec7f70b", "title": "Step 5" },
+    { "id": "69cb4ed056cc734c4e25303d", "title": "Step 6" },
+    { "id": "69cb549522eb75299f5caddb", "title": "Step 7" },
+    { "id": "69cb589c3b9dafbc0c162d22", "title": "Step 8" },
+    { "id": "69cc076991c3b321ba675685", "title": "Step 9" },
+    { "id": "69cc1111552849efed9b313b", "title": "Step 10" },
+    { "id": "69cc18d75298e698dcaef9b9", "title": "Step 11" },
+    { "id": "69cc1a8ddaa61c4ebd2b6d4e", "title": "Step 12" },
+    { "id": "69cc1d102cf6b0684ccbd1f4", "title": "Step 13" },
+    { "id": "69cc1fa5d38fdf308398f910", "title": "Step 14" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
