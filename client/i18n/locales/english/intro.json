@@ -4869,7 +4869,7 @@
       "lab-traffic-light-sequencer": {
         "title": "Build a Traffic Light Sequencer",
         "intro": [
-          "In this lab, you will use Javascript loops to build a traffic light sequencer"
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
         ]
       },
       "workshop-space-mission-roster": {
