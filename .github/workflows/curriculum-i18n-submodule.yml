@@ -26,6 +26,7 @@ jobs:
           - 'japanese'
           - 'german'
           - 'swahili'
+          - 'korean'
 
     steps:
       - name: Checkout
@@ -34,12 +35,12 @@ jobs:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@26f6d4f2c533a43e6b5da0b4a5dd983f98f7b49a # v6
         id: pnpm-install
         with:
           run_install: false

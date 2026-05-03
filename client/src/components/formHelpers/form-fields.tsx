@@ -116,16 +116,11 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
                     required={required.includes(name)}
                     rows={4}
                     type={types[name] || 'text'}
-                    value={value as string}
+                    value={value}
                     aria-describedby={`${name}-message`}
                     data-playwright-test-label={`${name}-form-control`}
                   />
-                  {nullOrWarning(
-                    value as string,
-                    !pristine && error,
-                    isURL,
-                    name
-                  )}
+                  {nullOrWarning(value, !pristine && error, isURL, name)}
                 </FormGroup>
               );
             }}
