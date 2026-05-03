@@ -190,7 +190,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
       void reply.redirectWithMessage(returnURL, {
         type: 'success',
-        content: 'flash.signin-success'
+        content: 'flash.signout-success'
       });
     });
 
