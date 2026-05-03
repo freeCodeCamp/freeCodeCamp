@@ -1,3 +1,8 @@
+.certification-settings table {
+  display: table;
+  width: 100%;
+}
+
 .certification-settings tr {
   height: 57px;
 }
