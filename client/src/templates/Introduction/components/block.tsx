@@ -48,7 +48,7 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
       isExpanded,
       completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
-  )(state as Record<string, unknown>);
+  )(state);
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>

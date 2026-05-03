@@ -4898,6 +4898,12 @@
           "Laços são uma parte essencial do JavaScript. Por isso, as seguintes lições foram preparadas para que você aprenda sobre os diferentes tipos de laços, como eles funcionam e também como a iteração funciona."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Crie um Analisador de Frases",
         "intro": [
@@ -4952,6 +4958,12 @@
         "title": "Crie uma Função de Repetição de Strings",
         "intro": [
           "Neste laboratório, você implementará laços para repetir uma string um número específico de vezes."
+        ]
+      },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
         ]
       },
       "lab-missing-letter-detector": {
@@ -5106,6 +5118,13 @@
         "title": "Implemente um Pula-Elementos",
         "intro": [
           "Neste laboratório, você criará uma função que pula elementos em um array com base em um valor de passo especificado."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6304,8 +6323,20 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
       "review-typescript": {
-        "title": "Revisão sobre TypeScript",
+        "title": "TypeScript Review",
         "intro": [
           "Antes de fazer o questionário de TypeScript, você deve revisar tudo o que aprendeu até agora.",
           "Abra esta página para revisar todos os conceitos ensinados, incluindo tipos de dados em TypeScript, genéricos, estreitamento de tipos e mais."
@@ -6313,9 +6344,7 @@
       },
       "quiz-typescript": {
         "title": "Questionário sobre TypeScript",
-        "intro": [
-          "Teste o que você aprendeu sobre TypeScript com este questionário."
-        ]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Revisão sobre Bibliotecas Front-end",
@@ -7263,6 +7292,13 @@
           "Nestas aulas, você aprenderá o que é Express.js, por que desenvolvedores o usam para construir servidores web e APIs, e como configurar uma aplicação Express básica com rotas e tratamento de requisições."
         ]
       },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
@@ -7637,6 +7673,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Descrevendo Pessoas no Trabalho",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
         "intro": ["", ""]
       }
     }
@@ -8762,7 +8802,7 @@
       "zh-a1-module-initials-and-finals": "Iniciais e Finais",
       "zh-a1-module-greetings-and-basic-introductions": "Saudações e Introduções Básicas",
       "zh-a1-module-asking-and-giving-basic-information": "Perguntando e Dando Informações Básicas",
-      "zh-a1-module-numbers-below-100": "Números abaixo de 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Comunicando Informações Pessoais",
       "zh-a1-module-talking-about-personal-skills": "Falando sobre Habilidades Pessoais",
       "zh-a1-module-discussing-team-skills": "Discutindo Habilidades da Equipe"
@@ -8778,6 +8818,12 @@
         "note": "Próximo Lançamento: 2026",
         "intro": [
           "Neste módulo, você praticará a compreensão de uma curta conversa que pergunta e responde a perguntas simples sobre colegas."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8979,11 +9025,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Revisão de Números abaixo de 100",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Quiz de Números abaixo de 100",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }

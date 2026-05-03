@@ -35,41 +35,43 @@ describe('certifications', () => {
       ).toHaveProperty('projects');
 
       // skip legacy-full-stack as it has no projects
-      if (filename !== 'legacy-full-stack.yml') {
-        expect(
-          Array.isArray(matchingCert?.projects),
-          `Matching cert 'projects' is not an array`
-        ).toBe(true);
-
-        const certProjects = matchingCert?.projects;
-
-        expect(
-          certProjects?.length,
-          `Project count mismatch: allCerts has ${certProjects?.length} projects, YAML has ${certTests.length} tests`
-        ).toBe(certTests.length);
-
-        certTests.forEach((test, i) => {
-          expect(
-            test,
-            `Test at index ${i} in missing id property`
-          ).toHaveProperty('id');
-          expect(
-            test,
-            `Test at index ${i} missing title property`
-          ).toHaveProperty('title');
-
-          const matchingProject = certProjects?.[i];
-
-          expect(
-            matchingProject,
-            `No project found at index ${i} for test ${test.id}`
-          ).toBeDefined();
-          expect(
-            matchingProject?.id,
-            `Project ID mismatch at index ${i}: allCerts has "${matchingProject?.id}", YAML has "${test.id}"`
-          ).toBe(test.id);
-        });
+      if (filename === 'legacy-full-stack.yml') {
+        return;
       }
+
+      expect(
+        Array.isArray(matchingCert?.projects),
+        `Matching cert 'projects' is not an array`
+      ).toBe(true);
+
+      const certProjects = matchingCert?.projects;
+
+      expect(
+        certProjects?.length,
+        `Project count mismatch: allCerts has ${certProjects?.length} projects, YAML has ${certTests.length} tests`
+      ).toBe(certTests.length);
+
+      certTests.forEach((test, i) => {
+        expect(
+          test,
+          `Test at index ${i} in missing id property`
+        ).toHaveProperty('id');
+        expect(
+          test,
+          `Test at index ${i} missing title property`
+        ).toHaveProperty('title');
+
+        const matchingProject = certProjects?.[i];
+
+        expect(
+          matchingProject,
+          `No project found at index ${i} for test ${test.id}`
+        ).toBeDefined();
+        expect(
+          matchingProject?.id,
+          `Project ID mismatch at index ${i}: allCerts has "${matchingProject?.id}", YAML has "${test.id}"`
+        ).toBe(test.id);
+      });
     });
   });
 });

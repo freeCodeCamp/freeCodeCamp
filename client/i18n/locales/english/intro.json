@@ -4924,6 +4924,12 @@
           "In this lab, you will implement loops to repeat a string a specified number of times."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
@@ -6273,11 +6279,11 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
         ]
       },
       "review-typescript": {
-        "title": "Typescript Review",
+        "title": "TypeScript Review",
         "intro": [
           "Before you take the TypeScript quiz, you should review everything you've learned so far.",
           "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
@@ -6285,7 +6291,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7216,6 +7222,13 @@
         "title": "Working with Express",
         "intro": [
           "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -8692,7 +8705,7 @@
       "zh-a1-module-initials-and-finals": "Initials and Finals",
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
       "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
@@ -8708,6 +8721,12 @@
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8899,11 +8918,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers below 100 Review",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers below 100 Quiz",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }

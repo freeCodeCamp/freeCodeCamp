@@ -1,4 +1,4 @@
-import React, { FormEvent } from 'react';
+import React from 'react';
 import { Form } from 'react-final-form';
 import normalizeUrl from 'normalize-url';
 
@@ -126,13 +126,15 @@ export const StrictSolutionForm = ({
       {({ handleSubmit, pristine, error }) => (
         <form
           id={`dynamic-${id}`}
-          onSubmit={handleSubmit as (e: FormEvent) => void}
+          onSubmit={event => {
+            void handleSubmit(event);
+          }}
           style={{ width: '100%' }}
           data-playwright-test-label='form-helper-form'
         >
           <FormFields formFields={formFields} options={options} />
           <BlockSaveButton
-            disabled={(pristine && !enableSubmit) || (error as boolean)}
+            disabled={(pristine && !enableSubmit) || Boolean(error)}
           >
             {buttonText}
           </BlockSaveButton>

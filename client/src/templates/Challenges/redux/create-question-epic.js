@@ -12,6 +12,7 @@ import {
   challengeMetaSelector,
   projectFormValuesSelector
 } from './selectors';
+import { generateGithubLink } from '../../../components/create-github-link';
 
 const { forumLocation } = envData;
 
@@ -131,7 +132,8 @@ function createQuestionEpic(action$, state$, { window }) {
         superBlock,
         block,
         helpCategory,
-        challengeType
+        challengeType,
+        id
       } = challengeMetaSelector(state);
 
       challengeFiles = insertEditableRegions(challengeFiles);
@@ -156,13 +158,18 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValuesSelector(state)
       );
 
+      const gitLink = generateGithubLink(id, block);
+      const gitInfo = i18next.t('forum-help.git-info', {
+        gitLink
+      });
+
       const browserInfoHeading = i18next.t('forum-help.browser-info');
       const userAgentHeading = i18next.t('forum-help.user-agent', {
         userAgent
       });
       const challengeHeading = i18next.t('forum-help.challenge');
       const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
-      const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
+      const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}\n${gitInfo}`;
 
       const camperCodeHeading = nonCodeChallenges.includes(challengeType)
         ? ''
