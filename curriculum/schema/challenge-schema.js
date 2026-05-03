@@ -248,8 +248,7 @@ export const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required(),
-    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
+      .required()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
@@ -262,7 +261,7 @@ export const schema = Joi.object().keys({
     is: challengeTypes.fillInTheBlank,
     then: Joi.when('superBlock', {
       is: Joi.valid(SuperBlocks.A1Chinese, SuperBlocks.A2Chinese),
-      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional(),
+      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').required(),
       otherwise: Joi.forbidden()
     }),
     otherwise: Joi.forbidden()
