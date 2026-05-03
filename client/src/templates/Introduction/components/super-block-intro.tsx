@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import {
   archivedSuperBlocks,
@@ -122,15 +122,23 @@ function SuperBlockIntro({
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
-      {superBlockNoteText && (
+      {(superBlockNoteText ||
+        donateButtonCertifications.includes(superBlock)) && (
         <>
           <Spacer size='m' />
           <Callout variant='note' label={t('misc.note')}>
-            <p>{superBlockNoteText}</p>
+            {superBlockNoteText && <p>{superBlockNoteText}</p>}
             {!isDonating && donateButtonCertifications.includes(superBlock) && (
               <>
+                <p>
+                  <Trans i18nKey='donate.consider-donating-2'>
+                    <Link className='inline' to='/donate'>
+                      placeholder
+                    </Link>
+                  </Trans>
+                </p>
                 <hr />
-                <p className='btn-container mb-0'>
+                <p className='btn-container'>
                   <Link
                     className='btn donate-button'
                     key='donate'
