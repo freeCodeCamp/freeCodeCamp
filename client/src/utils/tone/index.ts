@@ -100,6 +100,13 @@ export async function playTone(state: ToneStates): Promise<void> {
   if (playSound && toneUrls[state]) {
     const Tone = await import('tone');
 
+    // Resume the AudioContext if it is suspended (browsers suspend it by
+    // default due to autoplay policies and it must be resumed from within
+    // a user-gesture handler before any sound can be played).
+    if (Tone.getContext().state !== 'running') {
+      await Tone.start();
+    }
+
     const player = new Tone.Player(toneUrls[state]).toDestination();
 
     const storedVolume = (store.get('soundVolume') as number) ?? 50;

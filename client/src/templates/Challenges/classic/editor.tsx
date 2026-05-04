@@ -434,7 +434,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       dataRef.current.monaco.model ||
       createModel(
         challengeFile?.contents ?? '',
-        modeMap[challengeFile?.ext ?? 'html']
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        modeMap[(challengeFile?.ext as keyof typeof modeMap) ?? 'html']
       );
     dataRef.current.monaco.model = model;
 
@@ -967,19 +968,33 @@ const Editor = (props: EditorProps): JSX.Element => {
       ? [coveringRange.startLineNumber - 1, coveringRange.endLineNumber + 1]
       : [];
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (player.current.sampler?.loaded && player.current.shouldPlay) {
-      void import('tone').then(tone => {
-        if (tone.context.state !== 'running') void tone.context.resume();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-        player.current.sampler?.triggerAttack(
-          editorNotes[player.current.noteIndex]
-        );
-        player.current.noteIndex++;
-        if (player.current.noteIndex >= editorNotes.length) {
-          player.current.noteIndex = 0;
-        }
-      });
+    if (store.get('fcc-sound')) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      if (!player.current.sampler) {
+        // Lazily initialize the sampler if sound was enabled after mount.
+        void import('tone').then(tone => {
+          const newSound = new tone.Sampler(editorToneOptions).toDestination();
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          player.current.sampler = newSound;
+
+          const storedVolume = (store.get('soundVolume') as number) ?? 50;
+          const calculateDecibel = -60 * (1 - storedVolume / 100);
+          newSound.volume.value = calculateDecibel;
+        });
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      } else if (player.current.sampler?.loaded) {
+        void import('tone').then(tone => {
+          if (tone.context.state !== 'running') void tone.context.resume();
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+          player.current.sampler?.triggerAttack(
+            editorNotes[player.current.noteIndex]
+          );
+          player.current.noteIndex++;
+          if (player.current.noteIndex >= editorNotes.length) {
+            player.current.noteIndex = 0;
+          }
+        });
+      }
     }
     updateFile({ fileKey, contents, editableRegionBoundaries });
   };
@@ -1414,7 +1429,9 @@ const Editor = (props: EditorProps): JSX.Element => {
           editorWillUnmount={(editor, monaco) => {
             // Any model we've created has to be manually disposed of to prevent
             // memory leaks.
-            const language = modeMap[challengeFile?.ext ?? 'html'];
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+            const language =
+              modeMap[(challengeFile?.ext as keyof typeof modeMap) ?? 'html'];
             if (language === 'typescript') {
               teardownTSModels(monaco);
             } else {
@@ -1422,7 +1439,10 @@ const Editor = (props: EditorProps): JSX.Element => {
             }
           }}
           onChange={onChange}
-          language={modeMap[challengeFile?.ext ?? 'html']}
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          language={
+            modeMap[(challengeFile?.ext as keyof typeof modeMap) ?? 'html']
+          }
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
         />
