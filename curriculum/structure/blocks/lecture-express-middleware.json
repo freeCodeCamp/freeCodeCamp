@@ -1,7 +1,7 @@
 {
   "isUpcomingChange": true,
   "dashedName": "lecture-express-middleware",
-  "helpCategory": "JavaScript",
+  "helpCategory": "Backend Development",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {
@@ -25,6 +25,5 @@
       "title": "what-are-examples-of-built-in-and-3rd-party-middleware"
     }
   ],
-  "blockLabel": "lecture",
-  "usesMultifileEditor": true
+  "blockLabel": "lecture"
 }

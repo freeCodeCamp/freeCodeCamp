@@ -7235,7 +7235,9 @@
       },
       "lecture-express-middleware": {
         "title": "Express Middleware",
-        "intro": ["Express Middleware", ""]
+        "intro": [
+          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
       }
     }
   },
