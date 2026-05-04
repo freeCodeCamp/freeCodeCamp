@@ -77,7 +77,8 @@ test.describe('Block Navigation - Hash Updates', () => {
 
     // Click on the certification project link
     const projectLink = page.getByRole('link', {
-      name: 'Build a Markdown to HTML Converter'
+      name: 'Build a Markdown to HTML Converter , Not started Certification Project',
+      exact: true
     });
     await expect(projectLink).toBeVisible();
     await projectLink.click();

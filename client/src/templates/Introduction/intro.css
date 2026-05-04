@@ -121,6 +121,28 @@ a.cert-tag:active {
   font-size: 1rem;
   margin: 0;
   overflow-wrap: break-word;
+  position: relative;
+}
+
+.block-anchor-link {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  color: var(--quaternary-color);
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 4px 6px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.block-grid-title:hover .block-anchor-link,
+.block-anchor-link:focus {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .block-grid .challenge-jump-link {

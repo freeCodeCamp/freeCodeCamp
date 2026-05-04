@@ -406,7 +406,7 @@ export class Block extends Component<BlockProps> {
     const AccordionBlock = accordion ? (
       <>
         <Element name={block}>
-          <span className='hide-scrollable-anchor'></span>
+          <span className='hide-scrollable-anchor' id={block}></span>
         </Element>
         <div
           className={`block block-grid block-grid-no-border challenge-grid-block ${isExpanded ? 'open' : ''}`}
@@ -462,7 +462,7 @@ export class Block extends Component<BlockProps> {
     ) : (
       <>
         <Element name={block}>
-          <span className='hide-scrollable-anchor'></span>
+          <span className='hide-scrollable-anchor' id={block}></span>
         </Element>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
@@ -521,7 +521,7 @@ export class Block extends Component<BlockProps> {
     const LinkBlock = (
       <>
         <Element name={block}>
-          <span className='hide-scrollable-anchor'></span>
+          <span className='hide-scrollable-anchor' id={block}></span>
         </Element>
         <BlockHeader
           blockDashed={block}
