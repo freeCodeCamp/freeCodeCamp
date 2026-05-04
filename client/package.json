@@ -76,6 +76,7 @@
     "date-fns": "4.1.0",
     "date-fns-tz": "3.2.0",
     "eslint-config-react-app": "^7.0.1",
+    "fflate": "^0.8.2",
     "final-form": "4.20.10",
     "gatsby": "5.16.1",
     "gatsby-cli": "5.16.0",

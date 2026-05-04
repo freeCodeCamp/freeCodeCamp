@@ -4,6 +4,22 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
+import { focusEditor, getEditors } from './utils/editor';
+
+interface ChallengeTest {
+  text: string;
+  testString: string;
+}
+
+interface PageData {
+  result: {
+    data: {
+      challengeNode: {
+        challenge: { tests: ChallengeTest[] };
+      };
+    };
+  };
+}
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -191,5 +207,57 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   }) => {
     await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
+  });
+});
+
+test.describe('Solution Download', () => {
+  const challengePath = '/learn/rosetta-code/rosetta-code-challenges/100-doors';
+
+  test.beforeEach(async ({ page, isMobile }) => {
+    await page.route(
+      `**/page-data${challengePath}/page-data.json`,
+      async route => {
+        const response = await route.fetch();
+        const body = await response.text();
+        const pageData = JSON.parse(body) as PageData;
+        pageData.result.data.challengeNode.challenge.tests = [
+          {
+            text: 'Mock test',
+            testString: 'assert(true)'
+          }
+        ];
+        await route.fulfill({
+          contentType: 'application/json',
+          body: JSON.stringify(pageData)
+        });
+      }
+    );
+
+    await page.goto(challengePath);
+    await focusEditor({ page, isMobile });
+    await getEditors(page).fill('// solution');
+    await page.getByRole('button', { name: 'Check Your Code' }).click();
+    await page.getByRole('dialog').waitFor({ state: 'visible' });
+  });
+
+  test('download link has a .zip filename', async ({ page }) => {
+    const downloadLink = page.getByRole('link', {
+      name: translations.learn['download-solution']
+    });
+    await expect(downloadLink).toBeVisible();
+    const downloadAttr = await downloadLink.getAttribute('download');
+    expect(downloadAttr).toMatch(/\.zip$/);
+  });
+
+  test('clicking the download link triggers a zip file download', async ({
+    page
+  }) => {
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      page
+        .getByRole('link', { name: translations.learn['download-solution'] })
+        .click()
+    ]);
+    expect(download.suggestedFilename()).toMatch(/\.zip$/);
   });
 });

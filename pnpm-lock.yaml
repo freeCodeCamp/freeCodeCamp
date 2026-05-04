@@ -360,6 +360,9 @@ importers:
       eslint-config-react-app:
         specifier: ^7.0.1
         version: 7.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.28.5))(@babel/plugin-transform-react-jsx@7.28.6(@babel/core@7.28.5))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+      fflate:
+        specifier: ^0.8.2
+        version: 0.8.2
       final-form:
         specifier: 4.20.10
         version: 4.20.10
