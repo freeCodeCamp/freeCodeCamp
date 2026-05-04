@@ -52,6 +52,10 @@ async function get<T>(
 }
 
 async function combineDataWithResponse<T>(response: Response) {
+  if (response.status === 204 || response.status === 205) {
+    return { response, data: undefined as T };
+  }
+
   const data = (await response.json()) as T;
   return { response, data };
 }
@@ -340,10 +344,11 @@ export function postReportUser(body: Report): Promise<ResponseWithData<void>> {
 }
 
 // Both are called without a payload in danger-zone-saga,
-// which suggests both are sent without any body
-// TODO: Convert to DELETE
-export function postDeleteAccount(): Promise<ResponseWithData<void>> {
-  return post('/account/delete', {});
+// which suggests both are sent without any body.
+export function postDeleteAccount(
+  userId: string
+): Promise<ResponseWithData<void>> {
+  return deleteRequest(`/users/${userId}`, {});
 }
 
 export function postResetProgress(): Promise<ResponseWithData<void>> {
