@@ -9,6 +9,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-nodejs-and-event-driven-architecture",
+            "workshop-nodejs-repl",
             "review-node-js-intro",
             "quiz-node-js-intro"
           ]
@@ -18,6 +19,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-node-core-modules",
+            "workshop-nodejs-common-modules",
             "review-node-js-core-modules",
             "quiz-node-js-core-modules"
           ]
@@ -28,6 +30,8 @@
           "blocks": [
             "lecture-introduction-to-npm",
             "lecture-working-with-npm-scripts",
+            "workshop-how-to-build-an-npm-module",
+            "lab-prime-number-checker-module",
             "review-npm",
             "quiz-npm"
           ]
@@ -37,13 +41,17 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-how-http-dns-tcpip-work",
-            "lecture-understanding-the-http-request-response-model"
+            "lecture-understanding-the-http-request-response-model",
+            "workshop-nodejs-by-building-a-web-server"
           ]
         },
         {
           "dashedName": "rest-api-and-web-services",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "workshop-express-by-building-a-weather-service-api",
+            "lab-timestamp-microservice"
+          ]
         },
         {
           "dashedName": "introduction-to-express",
@@ -51,27 +59,49 @@
           "blocks": [
             "lecture-understanding-rest-api-and-web-services",
             "lecture-working-with-express",
-            "lecture-understanding-routing-in-express-js"
+            "lecture-understanding-routing-in-express-js",
+            "workshop-express-by-building-a-random-joke-app",
+            "lab-personal-profile-app"
           ]
         },
         {
           "dashedName": "express-middleware",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "workshop-express-middleware-by-building-a-submission-form",
+            "lab-data-sanitizer"
+          ]
         },
         {
           "dashedName": "error-handling-in-express",
           "comingSoon": true,
+          "blocks": [
+            "workshop-error-handling-in-express-by-building-a-bank-api"
+          ]
+        },
+        {
+          "dashedName": "websockets",
+          "comingSoon": true,
+          "blocks": [
+            "workshop-websockets-by-building-a-resource-monitor",
+            "lab-chat-app"
+          ]
+        },
+        {
+          "dashedName": "node-and-sql",
+          "comingSoon": true,
           "blocks": []
         },
-        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
-        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "authentication",
+          "comingSoon": true,
+          "blocks": []
+        },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,

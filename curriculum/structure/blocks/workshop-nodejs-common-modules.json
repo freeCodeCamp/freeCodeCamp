@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-nodejs-common-modules",
+  "challengeOrder": [
+    {
+      "id": "6449710ece9a4dcdcf44f6e7",
+      "title": "Learn Node.js Common Modules"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}
