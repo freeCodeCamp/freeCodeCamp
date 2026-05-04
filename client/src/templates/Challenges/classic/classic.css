@@ -308,3 +308,35 @@
     padding: 2px 12px;
   }
 }
+
+.mobile-language-selector {
+  display: flex;
+  gap: 3px;
+  padding: 4px 8px;
+  background-color: var(--secondary-background);
+  border-bottom: 1px solid var(--quaternary-color);
+  flex-shrink: 0;
+}
+
+.mobile-language-selector button {
+  padding: 4px 12px;
+  border-width: 3px;
+  border-style: solid;
+  font-size: 0.85em;
+}
+
+.mobile-language-selector button[aria-expanded='true'] {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-background);
+}
+
+.mobile-language-selector button:hover:not(:disabled) {
+  color: var(--secondary-color);
+  background-color: var(--primary-background);
+}
+
+.mobile-language-selector button[aria-expanded='true']:hover {
+  background-color: var(--quaternary-color);
+  color: var(--secondary-background);
+}
