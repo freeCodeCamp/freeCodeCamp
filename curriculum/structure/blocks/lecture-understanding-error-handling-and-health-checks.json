@@ -22,6 +22,5 @@
     }
   ],
 
-  "blockLabel": "lecture",
-  "usesMultifileEditor": true
+  "blockLabel": "lecture"
 }
