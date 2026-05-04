@@ -57,7 +57,7 @@
         {
           "dashedName": "express-middleware",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-express-middleware"]
         },
         {
           "dashedName": "error-handling-in-express",
