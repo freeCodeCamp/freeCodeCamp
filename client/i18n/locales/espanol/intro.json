@@ -4930,6 +4930,12 @@
           "En este laboratorio, implementarás bucles para repetir una cadena un número especificado de veces."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Construir un Detector de Letras Faltantes",
         "intro": [
@@ -6289,8 +6295,14 @@
           "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
       "review-typescript": {
-        "title": "Revisión de TypeScript",
+        "title": "TypeScript Review",
         "intro": [
           "Antes de que realices el cuestionario de TypeScript, debes repasar todo lo que has aprendido hasta ahora.",
           "Abre esta página para repasar todos los conceptos enseñados, incluidos los tipos de datos en TypeScript, genéricos, estrechamiento de tipo y más."
@@ -6298,9 +6310,7 @@
       },
       "quiz-typescript": {
         "title": "Cuestionario de TypeScript",
-        "intro": [
-          "Pon a prueba lo que has aprendido sobre TypeScript con este cuestionario."
-        ]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7246,6 +7256,13 @@
         "title": "Working with Express",
         "intro": [
           "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -8749,7 +8766,7 @@
       "zh-a1-module-initials-and-finals": "Consonantes y Vocales",
       "zh-a1-module-greetings-and-basic-introductions": "Saludos e Introducciones Básicas",
       "zh-a1-module-asking-and-giving-basic-information": "Preguntando y dando información básica.",
-      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Hablando sobre habilidades personales.",
       "zh-a1-module-discussing-team-skills": "Hablando sobre habilidades del equipo."
@@ -8765,6 +8782,12 @@
         "note": "Próximamente en 2026.",
         "intro": [
           "En este módulo, practicarás la comprensión de una conversación corta que hace y responde preguntas simples sobre colegas."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8966,11 +8989,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers below 100 Review",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers below 100 Quiz",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }

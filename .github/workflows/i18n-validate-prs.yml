@@ -30,7 +30,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@26f6d4f2c533a43e6b5da0b4a5dd983f98f7b49a # v6
         id: pnpm-install
         with:
           run_install: false
@@ -49,7 +49,7 @@ jobs:
       - name: Create Comment
         # Run if the validate challenge files step fails, specifically. Note that we need the failure() call for this step to trigger if the action fails.
         if: ${{ failure() && steps.validate.conclusion == 'failure' }}
-        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         with:
           github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |

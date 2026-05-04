@@ -9,7 +9,7 @@
     "@fastify/csrf-protection": "7.1.0",
     "@fastify/oauth2": "8.2.0",
     "@fastify/swagger": "9.7.0",
-    "@fastify/swagger-ui": "5.2.5",
+    "@fastify/swagger-ui": "5.2.6",
     "@fastify/type-provider-typebox": "6.1.0",
     "@freecodecamp/shared": "workspace:*",
     "@growthbook/growthbook": "1.6.5",
@@ -35,7 +35,7 @@
     "pino-pretty": "10.3.1",
     "query-string": "7.1.3",
     "stripe": "16.12.0",
-    "typebox": "1.1.23",
+    "typebox": "1.1.33",
     "validator": "13.15.35"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",

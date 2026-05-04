@@ -26,6 +26,7 @@ jobs:
           - 'japanese'
           - 'german'
           - 'swahili'
+          - 'korean'
 
     steps:
       - name: Checkout
@@ -39,7 +40,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        uses: pnpm/action-setup@26f6d4f2c533a43e6b5da0b4a5dd983f98f7b49a # v6
         id: pnpm-install
         with:
           run_install: false
