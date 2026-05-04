@@ -3,7 +3,7 @@ import { genericError } from '../types.js';
 
 export const signout = {
   response: {
-    200: Type.Object({}),
+    302: Type.Object({}),
     default: genericError
   }
 };

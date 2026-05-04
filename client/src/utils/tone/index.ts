@@ -63,6 +63,7 @@ const toneUrls = {
   [FlashMessages.ReallyWeird]: TRY_AGAIN,
   [FlashMessages.ReportSent]: CHAL_COMP,
   [FlashMessages.SigninSuccess]: CHAL_COMP,
+  [FlashMessages.SignoutSuccess]: CHAL_COMP,
   [FlashMessages.StartProjectErr]: TRY_AGAIN,
   [FlashMessages.SurveyErr1]: TRY_AGAIN,
   [FlashMessages.SurveyErr2]: TRY_AGAIN,
