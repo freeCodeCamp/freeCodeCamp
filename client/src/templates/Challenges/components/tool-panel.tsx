@@ -45,6 +45,7 @@ interface ToolPanelProps {
   openResetModal: () => void;
   guideUrl: string;
   videoUrl?: string;
+  forumTopicId?: number;
 }
 
 function ToolPanel({
@@ -57,12 +58,17 @@ function ToolPanel({
   openVideoModal,
   openResetModal,
   guideUrl,
-  videoUrl
+  videoUrl,
+  forumTopicId
 }: ToolPanelProps) {
   const handleRunTests = () => {
     executeChallenge({ showCompletionModal: true });
   };
   const { t } = useTranslation();
+  const hintText = forumTopicId
+    ? t('buttons.get-hint')
+    : t('buttons.search-the-forum');
+
   return (
     <div
       className={`tool-panel-group ${
@@ -99,17 +105,16 @@ function ToolPanel({
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {guideUrl ? (
+          {guideUrl && (
             <MenuItem
               href={guideUrl}
               target='_blank'
               data-playwright-test-label='get-hint'
             >
-              {t('buttons.get-hint')}{' '}
-              <FontAwesomeIcon icon={faExternalLinkAlt} />
+              {hintText} <FontAwesomeIcon icon={faExternalLinkAlt} />
               <span className='sr-only'>, {t('aria.opens-new-window')}</span>
             </MenuItem>
-          ) : null}
+          )}
           {videoUrl ? (
             <MenuItem
               onClick={openVideoModal}

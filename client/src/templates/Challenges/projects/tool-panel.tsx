@@ -19,15 +19,21 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 interface ToolPanelProps {
   guideUrl?: string;
+  forumTopicId?: number;
   openHelpModal: () => void;
   t: TFunction;
 }
 
 function ToolPanel({
   guideUrl,
+  forumTopicId,
   openHelpModal,
   t
 }: ToolPanelProps): JSX.Element {
+  const hintText = forumTopicId
+    ? t('buttons.get-hint')
+    : t('buttons.search-the-forum');
+
   return (
     <div>
       {guideUrl && (
@@ -38,7 +44,7 @@ function ToolPanel({
             href={guideUrl}
             target='_blank'
           >
-            {t('buttons.get-hint')}
+            {hintText}
           </Button>
           <Spacer size='xxs' />
         </>

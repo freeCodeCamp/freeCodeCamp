@@ -254,7 +254,10 @@ function ShowClassic({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
 
-  const guideUrl = getGuideUrl({ forumTopicId, title });
+  const guideUrl = getGuideUrl({
+    forumTopicId,
+    title: `${t(`intro:${superBlock}.blocks.${block}.title`)} - ${title}`
+  });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -512,7 +515,12 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             toolPanel={
-              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+              <ToolPanel
+                guideUrl={guideUrl}
+                forumTopicId={forumTopicId}
+                isMobile
+                videoUrl={videoUrl}
+              />
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}

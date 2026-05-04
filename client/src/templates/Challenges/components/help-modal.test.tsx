@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import i18n from '../../../../i18n/config-for-tests';
-import { generateSearchLink } from './help-modal';
+import { generateSearchLink, hasForumTopicGuide } from './help-modal';
 
 vi.unmock('react-i18next');
 
@@ -40,5 +40,21 @@ describe('generateSearchLink', () => {
     expect(link).toBe(
       'https://forum.freecodecamp.org/search?q=foundational-c-sharp-with-microsoft.blocks.write-your-first-code-using-c-sharp.title%20-%20Perform%20Basic%20String%20Formatting%20in%20C%23%20in%3Atitle'
     );
+  });
+});
+
+describe('hasForumTopicGuide', () => {
+  it('returns true for a forum topic url', () => {
+    expect(hasForumTopicGuide('https://forum.freecodecamp.org/t/301139')).toBe(
+      true
+    );
+  });
+
+  it('returns false for a forum search url', () => {
+    expect(
+      hasForumTopicGuide(
+        'https://forum.freecodecamp.org/search?q=Step%2019%20in%3Atitle%20order%3Aviews'
+      )
+    ).toBe(false);
   });
 });
