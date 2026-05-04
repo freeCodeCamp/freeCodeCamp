@@ -7227,16 +7227,16 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
-      "exam-back-end-development-and-apis-certification": {
-        "title": "Back-End Development and APIs Certification Exam",
-        "intro": [
-          "Pass this exam to earn your Back-End Development and APIs Certification"
-        ]
-      },
       "lecture-express-middleware": {
         "title": "Express Middleware",
         "intro": [
           "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back-End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
       }
     }
