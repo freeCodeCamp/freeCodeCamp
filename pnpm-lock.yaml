@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  caniuse-lite: 1.0.30001790
+  caniuse-lite: 1.0.30001791
 
 packageExtensionsChecksum: sha256-pFEExG4o57joHucsVi/dgGpp9BfdxYD7y4blLQUpCqI=
 
@@ -123,11 +123,11 @@ importers:
         specifier: 9.47.1
         version: 9.47.1
       ajv:
-        specifier: 8.18.0
-        version: 8.18.0
+        specifier: 8.20.0
+        version: 8.20.0
       ajv-formats:
         specifier: 3.0.1
-        version: 3.0.1(ajv@8.18.0)
+        version: 3.0.1(ajv@8.20.0)
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
@@ -650,8 +650,8 @@ importers:
         specifier: 1.1.32
         version: 1.1.32(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.4(jiti@2.6.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.9.3))
       i18next-fs-backend:
-        specifier: 2.6.4
-        version: 2.6.4
+        specifier: 2.6.5
+        version: 2.6.5
       joi:
         specifier: 18.1.2
         version: 18.1.2
@@ -5348,8 +5348,8 @@ packages:
   ajv@6.14.0:
     resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
 
-  ajv@8.18.0:
-    resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
+  ajv@8.20.0:
+    resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
   algoliasearch-helper@3.28.1:
     resolution: {integrity: sha512-6iXpbkkrAI5HFpCWXlNmIDSBuoN/U1XnEvb2yJAoWfqrZ+DrybI7MQ5P5mthFaprmocq+zbi6HxnR28xnZAYBw==}
@@ -5981,8 +5981,8 @@ packages:
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
 
-  caniuse-lite@1.0.30001790:
-    resolution: {integrity: sha512-bOoxfJPyYo+ds6W0YfptaCWbFnJYjh2Y1Eow5lRv+vI2u8ganPZqNm1JwNh0t2ELQCqIWg4B3dWEusgAmsoyOw==}
+  caniuse-lite@1.0.30001791:
+    resolution: {integrity: sha512-yk0l/YSrOnFZk3UROpDLQD9+kC1l4meK/wed583AXrzoarMGJcbRi2Q4RaUYbKxYAsZ8sWmaSa/DsLmdBeI1vQ==}
 
   canvas-confetti@1.9.4:
     resolution: {integrity: sha512-yxQbJkAVrFXWNbTUjPqjF7G+g6pDotOUHGbkZq2NELZUMDpiJ85rIEazVb8GTaAptNW2miJAXbs1BtioA251Pw==}
@@ -8257,8 +8257,8 @@ packages:
   hyphenate-style-name@1.0.4:
     resolution: {integrity: sha512-ygGZLjmXfPHj+ZWh6LwbC37l43MhfztxetbFCoYTM2VjkIUpeHgSNn7QIyVFj7YQ1Wl9Cbw5sholVJPzWvC2MQ==}
 
-  i18next-fs-backend@2.6.4:
-    resolution: {integrity: sha512-lzbUnowXYd5RFO8flpQhd9khYWNgrzwtxHw1kktJCiTRBaAEiLB2t9EPSXRj8qlC7WcEgFDIsmBUixyludcznw==}
+  i18next-fs-backend@2.6.5:
+    resolution: {integrity: sha512-+7HBrlaj3UFnNC9HqiXaIlNkwNINYkgQ2PS4h7qW/WGHC9/+OU9Xi0/tdvjjXATw3YCcpmNV7S3zDD9e10pTWg==}
 
   i18next@25.10.10:
     resolution: {integrity: sha512-cqUW2Z3EkRx7NqSyywjkgCLK7KLCL6IFVFcONG7nVYIJ3ekZ1/N5jUsihHV6Bq37NfhgtczxJcxduELtjTwkuQ==}
@@ -15703,8 +15703,8 @@ snapshots:
 
   '@fastify/ajv-compiler@4.0.5':
     dependencies:
-      ajv: 8.18.0
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      ajv: 8.20.0
+      ajv-formats: 3.0.1(ajv@8.20.0)
       fast-uri: 3.0.6
 
   '@fastify/cookie@11.0.2':
@@ -18893,21 +18893,21 @@ snapshots:
 
   agent-base@7.1.4: {}
 
-  ajv-formats@2.1.1(ajv@8.18.0):
+  ajv-formats@2.1.1(ajv@8.20.0):
     optionalDependencies:
-      ajv: 8.18.0
+      ajv: 8.20.0
 
-  ajv-formats@3.0.1(ajv@8.18.0):
+  ajv-formats@3.0.1(ajv@8.20.0):
     optionalDependencies:
-      ajv: 8.18.0
+      ajv: 8.20.0
 
   ajv-keywords@3.5.2(ajv@6.14.0):
     dependencies:
       ajv: 6.14.0
 
-  ajv-keywords@5.1.0(ajv@8.18.0):
+  ajv-keywords@5.1.0(ajv@8.20.0):
     dependencies:
-      ajv: 8.18.0
+      ajv: 8.20.0
       fast-deep-equal: 3.1.3
 
   ajv@6.12.6:
@@ -18924,7 +18924,7 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  ajv@8.18.0:
+  ajv@8.20.0:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-uri: 3.0.6
@@ -19158,7 +19158,7 @@ snapshots:
   autoprefixer@10.4.27(postcss@8.5.10):
     dependencies:
       browserslist: 4.28.2
-      caniuse-lite: 1.0.30001790
+      caniuse-lite: 1.0.30001791
       fraction.js: 5.3.4
       picocolors: 1.1.1
       postcss: 8.5.10
@@ -19644,7 +19644,7 @@ snapshots:
   browserslist@4.28.2:
     dependencies:
       baseline-browser-mapping: 2.10.18
-      caniuse-lite: 1.0.30001790
+      caniuse-lite: 1.0.30001791
       electron-to-chromium: 1.5.335
       node-releases: 2.0.37
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
@@ -19780,11 +19780,11 @@ snapshots:
   caniuse-api@3.0.0:
     dependencies:
       browserslist: 4.28.2
-      caniuse-lite: 1.0.30001790
+      caniuse-lite: 1.0.30001791
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  caniuse-lite@1.0.30001790: {}
+  caniuse-lite@1.0.30001791: {}
 
   canvas-confetti@1.9.4: {}
 
@@ -21632,8 +21632,8 @@ snapshots:
   fast-json-stringify@6.0.1:
     dependencies:
       '@fastify/merge-json-schemas': 0.2.1
-      ajv: 8.18.0
-      ajv-formats: 3.0.1(ajv@8.18.0)
+      ajv: 8.20.0
+      ajv-formats: 3.0.1(ajv@8.20.0)
       fast-uri: 3.0.6
       json-schema-ref-resolver: 2.0.1
       rfdc: 1.4.1
@@ -22974,7 +22974,7 @@ snapshots:
 
   hyphenate-style-name@1.0.4: {}
 
-  i18next-fs-backend@2.6.4: {}
+  i18next-fs-backend@2.6.5: {}
 
   i18next@25.10.10(typescript@5.9.3):
     dependencies:
@@ -26468,9 +26468,9 @@ snapshots:
   schema-utils@4.3.3:
     dependencies:
       '@types/json-schema': 7.0.15
-      ajv: 8.18.0
-      ajv-formats: 2.1.1(ajv@8.18.0)
-      ajv-keywords: 5.1.0(ajv@8.18.0)
+      ajv: 8.20.0
+      ajv-formats: 2.1.1(ajv@8.20.0)
+      ajv-keywords: 5.1.0(ajv@8.20.0)
 
   search-insights@2.17.2: {}
 
@@ -27228,7 +27228,7 @@ snapshots:
 
   table@6.9.0:
     dependencies:
-      ajv: 8.18.0
+      ajv: 8.20.0
       lodash.truncate: 4.4.2
       slice-ansi: 4.0.0
       string-width: 4.2.3

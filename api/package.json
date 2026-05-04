@@ -15,7 +15,7 @@
     "@growthbook/growthbook": "1.6.5",
     "@prisma/client": "6.19.3",
     "@sentry/node": "9.47.1",
-    "ajv": "8.18.0",
+    "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
     "date-fns": "4.1.0",
     "date-fns-tz": "3.2.0",
