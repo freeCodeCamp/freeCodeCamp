@@ -1,4 +1,4 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
@@ -138,7 +138,7 @@ const Chapter = ({
   }
 
   return (
-    <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
+    <Disclosure as='li' className='chapter' defaultOpen={isExpanded} id={dashedName}>
       <Disclosure.Button
         className='chapter-button'
         data-playwright-test-label='chapter-button'
@@ -175,7 +175,7 @@ const Module = ({
   const showModuleContent = !(comingSoon && !showUpcomingChanges);
 
   return (
-    <Disclosure as='li' defaultOpen={isExpanded}>
+    <Disclosure as='li' defaultOpen={isExpanded} id={dashedName}>
       <Disclosure.Button className='module-button'>
         <div className='module-button-left'>
           <span className='dropdown-wrap'>
@@ -322,6 +322,17 @@ export const SuperBlockAccordion = ({
   const expandedChapter = blockToChapterMap.get(chosenBlock);
   const expandedModule = blockToModuleMap.get(chosenBlock);
   const accordion = true;
+
+  // Scroll to the element matching the URL hash on mount
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
 
   return (
     <ul className='super-block-accordion'>
