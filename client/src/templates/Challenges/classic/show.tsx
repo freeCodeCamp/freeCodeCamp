@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -43,6 +43,7 @@ import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
+import { usePageLeave } from '../hooks';
 import {
   cancelTests,
   challengeMounted,
@@ -55,6 +56,7 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   setEditorFocusability,
   setIsAdvancing
 } from '../redux/actions';
@@ -70,6 +72,7 @@ import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import ExitProjectModal from './exit-project-modal';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -100,6 +103,9 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       cancelTests,
       previewMounted,
       openModal,
+      closeModal,
+      openExitProjectModal: () => openModal('exitProject'),
+      closeExitProjectModal: () => closeModal('exitProject'),
       setEditorFocusability,
       setIsAdvancing
     },
@@ -124,6 +130,9 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  closeModal: (modal: string) => void;
+  openExitProjectModal: () => void;
+  closeExitProjectModal: () => void;
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
   ) => void;
@@ -236,6 +245,8 @@ function ShowClassic({
   setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
+  openExitProjectModal,
+  closeExitProjectModal,
   setIsAdvancing,
   savedChallenges,
   isChallengeCompleted,
@@ -252,6 +263,49 @@ function ShowClassic({
   const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
+  });
+
+  // Exit project modal state (only used for cert projects with saveSubmissionToDB)
+  const exitConfirmed = useRef(false);
+  const [exitPathname, setExitPathname] = useState('');
+
+  const handleExitProjectModalBtnClick = () => {
+    exitConfirmed.current = true;
+    void navigate(
+      exitPathname || challengeMeta.blockHashSlug || '/learn',
+      { replace: true }
+    );
+    closeExitProjectModal();
+  };
+
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      window.confirm(t('misc.navigation-warning'));
+    },
+    [t]
+  );
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string): boolean => {
+      if (exitConfirmed.current) {
+        return false;
+      }
+
+      if (targetPathname) {
+        setExitPathname(targetPathname);
+      }
+
+      openExitProjectModal();
+      return true;
+    },
+    [openExitProjectModal]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange,
+    enabled: !!saveSubmissionToDB
   });
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
@@ -580,6 +634,9 @@ function ShowClassic({
         />
         <ShortcutsModal />
         <MobileAppModal superBlock={superBlock} />
+        {saveSubmissionToDB && (
+          <ExitProjectModal onExit={handleExitProjectModalBtnClick} />
+        )}
       </LearnLayout>
     </Hotkeys>
   );
