@@ -1,0 +1,25 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-error-handling-and-health-checks",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "69f303a6812a8627022f9592",
+      "title": "What are HTTP Response Status Codes?"
+    },
+    {
+      "id": "69f3046f4c0e76cbdd24858e",
+      "title": "how-does-error-handling-work-in-express"
+    },
+    {
+      "id": "69f3046f4c0e76cbdd24858f",
+      "title": "how-does-debugging-and-logging-work-in-express"
+    },
+    {
+      "id": "69f3046f4c0e76cbdd248590",
+      "title": "how-do-health-checks-and-graceful-shutdowns-work-in-express"
+    }
+  ],
+  "blockLabel": "lecture"
+}
