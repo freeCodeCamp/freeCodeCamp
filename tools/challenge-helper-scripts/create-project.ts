@@ -176,12 +176,19 @@ async function createMetaJson(
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
-    newMeta = getBaseMeta('FullStack');
-    newMeta.blockLabel = blockLabel;
+    const blockTypeToMetaType: Record<
+      string,
+      'Lab' | 'Workshop' | 'Lecture' | 'FullStack'
+    > = {
+      [BlockLabel.lab]: 'Lab',
+      [BlockLabel.workshop]: 'Workshop',
+      [BlockLabel.lecture]: 'Lecture'
+    };
+
+    const metaType = blockTypeToMetaType[blockLabel ?? ''] ?? 'FullStack';
+    newMeta = getBaseMeta(metaType);
+    newMeta.blockLabel = blockLabel as BlockLabel;
     newMeta.blockLayout = blockLayout;
-    if (blockLabel === BlockLabel.workshop) {
-      newMeta.hasEditableBoundaries = true;
-    }
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
