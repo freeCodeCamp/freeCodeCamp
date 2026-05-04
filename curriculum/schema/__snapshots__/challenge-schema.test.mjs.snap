@@ -476,17 +476,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
           ],
           "type": "array",
         },
-        "inputType": {
-          "allow": [
-            "pinyin-tone",
-            "pinyin-to-hanzi",
-          ],
-          "flags": {
-            "only": true,
-            "presence": "optional",
-          },
-          "type": "string",
-        },
         "sentence": {
           "flags": {
             "presence": "required",
@@ -629,7 +618,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
                   ],
                   "flags": {
                     "only": true,
-                    "presence": "optional",
+                    "presence": "required",
                   },
                   "type": "string",
                 },

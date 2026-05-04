@@ -198,7 +198,7 @@ Example of good formatting:
     plugin(mockChineseFillInTheBlankAST, file);
     const testObject = file.data.fillInTheBlank;
 
-    expect(testObject.inputType).toBe('pinyin-to-hanzi');
+    expect(file.data.inputType).toBe('pinyin-to-hanzi');
 
     expect(testObject.sentence).toBe(
       '<p>BLANK BLANK，BLANK <ruby>是王华<rp>(</rp><rt>shì Wang Hua</rt><rp>)</rp></ruby>，<ruby>请问你<rp>(</rp><rt>qǐng wèn nǐ</rt><rp>)</rp></ruby> BLANK <ruby>什么名字<rp>(</rp><rt>shén me míng zi</rt><rp>)</rp></ruby>？</p>'
