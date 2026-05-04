@@ -6276,7 +6276,7 @@
       "workshop-build-a-football-player-card-builder": {
         "title": "Build a Football Player Card Builder",
         "intro": [
-          "In this workshop, you'll learn how to work with React in Typescript by building a football player card builder."
+          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
         ]
       },
       "review-typescript": {
