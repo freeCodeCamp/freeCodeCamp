@@ -226,7 +226,7 @@ test('Ctrl+Enter should not open completion modal in multifile editor (uses lowe
   const editorLayout = page.locator('#editor-layout');
   await expect(editorLayout).toBeVisible();
 
-  await page.getByRole('button', { name: /run the tests/i }).click();
+  await page.getByTestId('independentLowerJaw-check-button').click();
 
   const lowerJaw = page.locator(
     '[data-playwright-test-label="independentLowerJaw-container"]'
@@ -247,7 +247,7 @@ test('Cmd+Enter should not open completion modal in multifile editor (uses lower
   const editorLayout = page.locator('#editor-layout');
   await expect(editorLayout).toBeVisible();
 
-  await page.getByRole('button', { name: /run the tests/i }).click();
+  await page.getByTestId('independentLowerJaw-check-button').click();
 
   const lowerJaw = page.locator(
     '[data-playwright-test-label="independentLowerJaw-container"]'
