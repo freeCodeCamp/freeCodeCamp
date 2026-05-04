@@ -240,6 +240,25 @@ model SocratesUsage {
   @@unique([userId, date])
 }
 
+// New Donations collection — single source of truth for all donation data updated through webhook handler
+model DonationRecord {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String?  @db.ObjectId
+  provider       String   // "stripe" | "paypal"
+  payerId        String   // Stripe cus_xxx or PayPal payer_id
+  subscriptionId String?  // Provider subscription ID (Stripe sub_xxx)
+  amount         Int      @db.Int
+  duration       String   // e.g. "month"
+  email          String
+  status         String   @default("pending") // "pending" | "active" | "cancelled" | "expired"
+  source         String   @default("") // populated later to track donation origin
+  createdAt      DateTime @default(now()) @db.Date
+  updatedAt      DateTime @updatedAt @db.Date
+
+  @@index([payerId], map: "donationRecord_payerId_1")
+  @@index([userId], map: "donationRecord_userId_1")
+}
+
 model UserToken {
   id      String   @id @map("_id")
   created DateTime @db.Date

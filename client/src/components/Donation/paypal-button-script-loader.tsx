@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { scriptLoader, scriptRemover } from '../../utils/script-loaders';
 
-import type { DonationApprovalData } from './types';
+import type { PayPalApprovalData } from './types';
 
 type PayPalButtonScriptLoaderProps = {
   isMinimalForm: boolean | undefined;
@@ -28,7 +28,7 @@ type PayPalButtonScriptLoaderProps = {
   ) => unknown;
   isSubscription: boolean;
   onApprove: (
-    data: DonationApprovalData,
+    data: PayPalApprovalData,
     actions?: { order: { capture: () => Promise<unknown> } }
   ) => unknown;
   isPaypalLoading: boolean;
@@ -184,7 +184,7 @@ export default class PayPalButtonScriptLoader extends Component<
         onApprove={
           isSubscription
             ? (
-                data: DonationApprovalData,
+                data: PayPalApprovalData,
                 actions: { order: { capture: () => Promise<unknown> } }
               ) => onApprove(data, actions)
             : (

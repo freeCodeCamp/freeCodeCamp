@@ -1,11 +1,14 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 
-import { STRIPE_SECRET_KEY } from '../../utils/env.js';
+import { STRIPE_SECRET_KEY, DEPLOYMENT_ENV } from '../../utils/env.js';
+import { PAYPAL_BASE_URL, getPayPalAccessToken } from '../../utils/paypal.js';
 import {
   donationSubscriptionConfig,
-  allStripeProductIdsArray
+  allStripeProductIdsArray,
+  paypalConfigTypes
 } from '@freecodecamp/shared/config/donation-settings';
+import type { DonationAmount } from '@freecodecamp/shared/config/donation-settings';
 import * as schemas from '../../schemas.js';
 import { inLastFiveMinutes } from '../../utils/validate-donation.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';
@@ -190,6 +193,110 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         return {
           error: 'Donation failed due to a server error.'
         } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/donate/confirm-paypal-subscription',
+    { schema: schemas.confirmPaypalSubscription },
+    async (req, reply) => {
+      const { subscriptionId, amount, duration } = req.body;
+      const log = fastify.log.child({ req, subscriptionId, amount, duration });
+      log.debug('Confirming PayPal subscription');
+
+      if (!donationSubscriptionConfig.plans[duration].includes(amount)) {
+        void reply.code(400);
+        return {
+          error: 'The donation form had invalid values for this submission.'
+        };
+      }
+
+      try {
+        const accessToken = await getPayPalAccessToken();
+
+        const subRes = await fetch(
+          `${PAYPAL_BASE_URL}/v1/billing/subscriptions/${subscriptionId}`,
+          { headers: { Authorization: `Bearer ${accessToken}` } }
+        );
+
+        if (!subRes.ok) {
+          throw new Error(
+            `PayPal subscription retrieval failed with status ${subRes.status}`
+          );
+        }
+
+        const subscription = (await subRes.json()) as {
+          id: string;
+          status: string;
+          plan_id: string;
+          create_time: string; // ISO 8601
+          subscriber: { email_address: string; payer_id: string };
+        };
+
+        const validStatuses = ['APPROVED', 'ACTIVE'];
+        if (!validStatuses.includes(subscription.status)) {
+          log.warn(
+            { status: subscription.status },
+            'PayPal subscription has invalid status'
+          );
+          void reply.code(400);
+          return {
+            error: `PayPal subscription has unexpected status: ${subscription.status}`
+          };
+        }
+
+        // create_time is ISO 8601; inLastFiveMinutes expects Unix seconds
+        const createTimeUnix = Math.floor(
+          new Date(subscription.create_time).getTime() / 1000
+        );
+        if (!inLastFiveMinutes(createTimeUnix)) {
+          log.warn(
+            { createTime: subscription.create_time },
+            'PayPal subscription was not created recently'
+          );
+          void reply.code(400);
+          return {
+            error: `PayPal subscription is not recent: ${subscriptionId}`
+          };
+        }
+
+        const env = DEPLOYMENT_ENV === 'production' ? 'production' : 'staging';
+        const expectedPlanId =
+          paypalConfigTypes[env].month[amount as DonationAmount]?.planId;
+
+        if (!expectedPlanId || subscription.plan_id !== expectedPlanId) {
+          log.warn(
+            { planId: subscription.plan_id, expectedPlanId },
+            'PayPal plan ID does not match expected value'
+          );
+          void reply.code(400);
+          return { error: 'PayPal subscription plan does not match.' };
+        }
+
+        const status = subscription.status === 'ACTIVE' ? 'active' : 'pending';
+
+        const { user } = await req.getAuthedUser();
+        if (user && !user.isDonating) {
+          await fastify.prisma.user.update({
+            where: { id: user.id },
+            data: { isDonating: true }
+          });
+        }
+
+        log.info(
+          { subscriptionId, userId: user?.id, status },
+          'PayPal subscription confirmed'
+        );
+
+        return reply.send({ subscriptionId, status });
+      } catch (error) {
+        log.error(error, 'Failed to confirm PayPal subscription');
+        fastify.Sentry.captureException(error);
+        void reply.code(500);
+        return reply.send({
+          error: 'Donation failed due to a server error.'
+        });
       }
     }
   );

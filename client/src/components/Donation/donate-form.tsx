@@ -303,7 +303,13 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
 
   render() {
     const {
-      donationFormState: { processing, success, error, redirecting },
+      donationFormState: {
+        processing,
+        success,
+        successMessage,
+        error,
+        redirecting
+      },
       isMinimalForm,
       isSignedIn
     } = this.props;
@@ -314,6 +320,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           processing={processing}
           redirecting={redirecting}
           success={success}
+          successMessage={successMessage}
           error={error}
           isSignedIn={isSignedIn}
           reset={this.resetDonation}
@@ -329,6 +336,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             processing={processing}
             redirecting={redirecting}
             success={success}
+            successMessage={successMessage}
             error={error}
             isSignedIn={isSignedIn}
             reset={this.resetDonation}

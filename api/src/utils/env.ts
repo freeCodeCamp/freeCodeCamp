@@ -222,6 +222,8 @@ export const SES_SMTP_HOST =
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+export const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
+export const PAYPAL_SECRET = process.env.PAYPAL_SECRET;
 export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
 export const GROWTHBOOK_FASTIFY_CLIENT_KEY =

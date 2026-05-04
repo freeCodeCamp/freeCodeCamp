@@ -2,12 +2,14 @@
 // recognize
 /* eslint-disable vitest/expect-expect */
 // @vitest-environment jsdom
-import { expectSaga } from 'redux-saga-test-plan';
+import { expectSaga, matchers } from 'redux-saga-test-plan';
+import { delay } from 'redux-saga/effects';
 import { describe, it, vi } from 'vitest';
 import {
   postChargeStripe,
   postChargeStripeCard,
   addDonation,
+  confirmPaypalSubscription,
   updateStripeCard
 } from '../utils/ajax';
 import callGA from '../analytics/call-ga';
@@ -18,10 +20,15 @@ import {
 } from './donation-saga.js';
 import {
   postChargeComplete,
+  postChargeError,
   postChargeProcessing,
   updateCardRedirecting,
   updateCardError
 } from './actions';
+
+// Internal delayP function reference used to skip delays in tests
+const delayFn = delay(0).payload.fn;
+const skipDelays = [[matchers.call.fn(delayFn), undefined]];
 
 vi.mock('../utils/ajax');
 vi.mock('../analytics/call-ga');
@@ -127,55 +134,153 @@ describe('donation-saga', () => {
       .run();
   });
 
-  it('calls addDonate for Paypal if user signed in', () => {
+  it('dispatches postChargeComplete for an active PayPal subscription', () => {
     const paypalDataMock = {
-      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'paypal',
+        subscriptionId: 'I-PAYPALTEST123'
+      }
     };
 
-    const paypalAnalyticsDataMock = analyticsDataMock;
-    paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
+    confirmPaypalSubscription.mockResolvedValueOnce({
+      data: { subscriptionId: 'I-PAYPALTEST123', status: 'active' }
+    });
 
-    const { amount, duration } = paypalDataMock.payload;
+    const paypalAnalyticsDataMock = {
+      ...analyticsDataMock,
+      action: 'Donate Page Paypal Payment Submission'
+    };
+
     return expectSaga(postChargeSaga, paypalDataMock)
       .withState(signedInStoreMock)
+      .provide(skipDelays)
       .put(postChargeProcessing())
-      .call(addDonation, { amount, duration })
+      .call(confirmPaypalSubscription, {
+        subscriptionId: 'I-PAYPALTEST123',
+        amount: postChargeDataMock.payload.amount,
+        duration: postChargeDataMock.payload.duration
+      })
       .put(postChargeComplete())
       .call(setDonationCookie)
       .call(callGA, paypalAnalyticsDataMock)
       .run();
   });
 
-  it('does not call addDonate for Paypal if user not signed in', () => {
+  it('polls until the subscription becomes active', () => {
     const paypalDataMock = {
-      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'paypal',
+        subscriptionId: 'I-PAYPALTEST123'
+      }
     };
 
-    sessionStorage.setItem('session-completed-challenges', '0');
+    confirmPaypalSubscription
+      .mockResolvedValueOnce({
+        data: { subscriptionId: 'I-PAYPALTEST123', status: 'pending' }
+      })
+      .mockResolvedValueOnce({
+        data: { subscriptionId: 'I-PAYPALTEST123', status: 'active' }
+      });
+
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(signedInStoreMock)
+      .provide(skipDelays)
+      .put(postChargeProcessing())
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .run();
+  });
+
+  it('dispatches postChargeComplete with pending message after all retries remain pending', () => {
+    const paypalDataMock = {
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'paypal',
+        subscriptionId: 'I-PAYPALTEST123'
+      }
+    };
+
+    confirmPaypalSubscription.mockResolvedValue({
+      data: { subscriptionId: 'I-PAYPALTEST123', status: 'pending' }
+    });
 
     const paypalAnalyticsDataMock = {
       ...analyticsDataMock,
-      action: 'Donate Page Paypal Payment Submission',
-      isSignedIn: false,
-      completed_challenges: 0,
-      completed_challenges_session: 0
+      action: 'Donate Page Paypal Payment Submission'
     };
 
-    const signedOutStoreMock = {
-      app: {
-        user: {
-          sessionUser: null
-        }
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(signedInStoreMock)
+      .provide(skipDelays)
+      .put(postChargeProcessing())
+      .put(postChargeComplete())
+      .call(setDonationCookie)
+      .call(callGA, paypalAnalyticsDataMock)
+      .run();
+  });
+
+  it('dispatches postChargeError for an unexpected PayPal subscription status', () => {
+    const paypalDataMock = {
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'paypal',
+        subscriptionId: 'I-PAYPALTEST123'
+      }
+    };
+
+    confirmPaypalSubscription.mockResolvedValue({
+      data: { subscriptionId: 'I-PAYPALTEST123', status: 'cancelled' }
+    });
+
+    // defaultDonationErrorMessage = i18next.t('donate.error-2') returns
+    // undefined in tests, so the payload is dropped.
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(signedInStoreMock)
+      .provide(skipDelays)
+      .put(postChargeProcessing())
+      .put(postChargeError())
+      .not.put(postChargeComplete())
+      .run();
+  });
+
+  it('dispatches postChargeError when the API returns an error body', () => {
+    const paypalDataMock = {
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'paypal',
+        subscriptionId: 'I-PAYPALTEST123'
+      }
+    };
+
+    confirmPaypalSubscription.mockResolvedValueOnce({
+      data: { error: 'PayPal subscription has unexpected status: SUSPENDED' }
+    });
+
+    return expectSaga(postChargeSaga, paypalDataMock)
+      .withState(signedInStoreMock)
+      .provide(skipDelays)
+      .put(postChargeProcessing())
+      .put(postChargeError())
+      .not.put(postChargeComplete())
+      .run();
+  });
+
+  it('dispatches postChargeError when PayPal subscriptionId is missing', () => {
+    const paypalDataMock = {
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'paypal'
+        // no subscriptionId
       }
     };
 
     return expectSaga(postChargeSaga, paypalDataMock)
-      .withState(signedOutStoreMock)
+      .withState(signedInStoreMock)
+      .provide(skipDelays)
       .put(postChargeProcessing())
-      .not.call.fn(addDonation)
-      .put(postChargeComplete())
-      .call(setDonationCookie)
-      .call(callGA, paypalAnalyticsDataMock)
+      .put(postChargeError())
       .run();
   });
 
