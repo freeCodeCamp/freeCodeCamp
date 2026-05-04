@@ -40,9 +40,9 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
-    "@babel/preset-env": "7.23.7",
+    "@babel/preset-env": "7.29.2",
     "@babel/preset-react": "7.28.5",
-    "@babel/standalone": "7.23.7",
+    "@babel/standalone": "7.29.2",
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/loop-protect": "3.0.0",
     "@freecodecamp/shared": "workspace:*",
