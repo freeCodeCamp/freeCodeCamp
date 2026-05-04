@@ -225,13 +225,37 @@ test('Ctrl+Enter should not open completion modal in multifile editor (uses lowe
 
   const editorLayout = page.locator('#editor-layout');
   await expect(editorLayout).toBeVisible();
-  await editorLayout.click();
+
+  await page.getByRole('button', { name: /run the tests/i }).click();
+
+  const lowerJaw = page.locator(
+    '[data-playwright-test-label="independentLowerJaw-container"]'
+  );
+  await expect(lowerJaw).toBeVisible();
 
   await page.keyboard.press('Control+Enter');
 
   await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(lowerJaw).toBeVisible();
+});
 
-  await expect(
-    page.locator('[data-playwright-test-label="independentLowerJaw-container"]')
-  ).toBeVisible();
+test('Cmd+Enter should not open completion modal in multifile editor (uses lower jaw)', async ({
+  page
+}) => {
+  await page.goto(links.multifileLab);
+
+  const editorLayout = page.locator('#editor-layout');
+  await expect(editorLayout).toBeVisible();
+
+  await page.getByRole('button', { name: /run the tests/i }).click();
+
+  const lowerJaw = page.locator(
+    '[data-playwright-test-label="independentLowerJaw-container"]'
+  );
+  await expect(lowerJaw).toBeVisible();
+
+  await page.keyboard.press('Meta+Enter');
+
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(lowerJaw).toBeVisible();
 });
