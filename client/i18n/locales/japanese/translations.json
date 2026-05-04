@@ -125,6 +125,7 @@
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -1421,7 +1422,8 @@
     "too-long-three": "リンク元のチャレンジの、エディター内に表示されているすべてのコードをコピーして、貼り付けてください。",
     "add-code-one": "この 2 つの文を、コピーしたコードに置き換えてください。",
     "add-code-two": "投稿内でコードが適切にフォーマットされるようにするため、",
-    "add-code-three": "上の ``` と下の ``` の行は残しておいてください。"
+    "add-code-three": "上の ``` と下の ``` の行は残しておいてください。",
+    "git-info": "Github Link: {{gitLink}}"
   },
   "user-token": {
     "title": "ユーザートークン",
