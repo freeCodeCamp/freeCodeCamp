@@ -33,13 +33,15 @@ function ProfilePrivacyComponent({
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(user.profileUI.isLocked);
   // Snapshot of the original values to detect unsaved changes
-const [initialPrivacyValues, setInitialPrivacyValues] = useState({ ...user.profileUI });
-const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
-const madeChanges = JSON.stringify(privacyValues) !== JSON.stringify(initialPrivacyValues);
+  const [initialPrivacyValues, setInitialPrivacyValues] = useState({
+    ...user.profileUI
+  });
+  const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
+  const madeChanges =
+    JSON.stringify(privacyValues) !== JSON.stringify(initialPrivacyValues);
 
   function toggleFlag(flag: keyof ProfileUI): () => void {
     return () => {
-      
       setPrivacyValues({ ...privacyValues, [flag]: !privacyValues[flag] });
     };
   }
@@ -190,7 +192,6 @@ const madeChanges = JSON.stringify(privacyValues) !== JSON.stringify(initialPriv
     </FullWidthRow>
   );
 }
-
 
 ProfilePrivacyComponent.displayName = 'ProfilePrivacy';
 

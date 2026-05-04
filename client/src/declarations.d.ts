@@ -17,6 +17,11 @@ declare module '*.png' {
   export default content;
 }
 
+declare module '*.css' {
+  const content: string;
+  export default content;
+}
+
 declare module 'sha-1' {
   export default function sha1(str: string): string;
 }
