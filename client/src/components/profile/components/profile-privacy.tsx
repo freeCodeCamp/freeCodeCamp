@@ -1,3 +1,4 @@
+import isEqual from 'lodash/isEqual';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -37,8 +38,7 @@ function ProfilePrivacyComponent({
     ...user.profileUI
   });
   const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
-  const madeChanges =
-    JSON.stringify(privacyValues) !== JSON.stringify(initialPrivacyValues);
+  const madeChanges = !isEqual(privacyValues, initialPrivacyValues);
 
   function toggleFlag(flag: keyof ProfileUI): () => void {
     return () => {
