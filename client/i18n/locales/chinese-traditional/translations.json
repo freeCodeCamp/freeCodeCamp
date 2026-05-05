@@ -125,6 +125,7 @@
     "sign-in-with-google": "使用 Google 登錄",
     "go-to-dcc-today": "訪問今天的編程挑戰",
     "go-to-dcc-archive": "訪問每日編程挑戰存檔",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -1421,7 +1422,8 @@
     "too-long-three": "請複製/粘貼所有在挑戰中編輯器所顯示的代碼。",
     "add-code-one": "用你的複製代碼替換這兩句。",
     "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
-    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
+    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。",
+    "git-info": "Github Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用戶令牌",

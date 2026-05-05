@@ -125,6 +125,7 @@
     "sign-in-with-google": "Accedi con Google",
     "go-to-dcc-today": "Vai alla sfida del giorno",
     "go-to-dcc-archive": "Vai all'archivio delle sfide giornaliere",
+    "challenge-source": "View Challenge Source",
     "outline": "Sommario"
   },
   "daily-coding-challenges": {
@@ -1421,7 +1422,8 @@
     "too-long-three": "Copia/incolla tutto il codice mostrato nell'editor della sfida da dove ti sei appena collegato.",
     "add-code-one": "Sostituisci queste due frasi con il codice copiato.",
     "add-code-two": "Si prega di lasciare la linea ``` sopra e la linea ``` sotto,",
-    "add-code-three": "perché consentono al codice di disporsi correttamente nel post."
+    "add-code-three": "perché consentono al codice di disporsi correttamente nel post.",
+    "git-info": "Github Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token Utente",
