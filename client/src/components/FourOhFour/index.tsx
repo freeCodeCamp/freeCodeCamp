@@ -48,6 +48,7 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
       <Link
         className='btn btn-cta'
         to='/learn'
+        aria-label={t('404.view-curriculum-aria')}
         data-playwright-test-label='view-curriculum-btn'
       >
         {t('buttons.view-curriculum')}

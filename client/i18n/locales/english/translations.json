@@ -916,7 +916,8 @@
   "404": {
     "page-not-found": "Page not found",
     "not-found": "404 Not Found:",
-    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:"
+    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:",
+    "view-curriculum-aria": "Go back to the freeCodeCamp curriculum"
   },
   "search": {
     "label": "Search",
