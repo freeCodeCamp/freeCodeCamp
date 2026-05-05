@@ -194,8 +194,7 @@
 
 .amount-values > label:focus,
 .amount-values > label:active:hover {
-  outline-style: auto;
-  outline-width: 5px;
+  outline: 5px solid #0a0a23;
   outline-offset: -2px;
 }
 
