@@ -381,7 +381,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         : 4,
     dragAndDrop: true,
     lightbulb: {
-      enabled: false
+      enabled: 'off' as editor.ShowLightbulbIconMode
     },
     hover: {
       enabled: false
@@ -577,14 +577,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
-      null,
+      0,
       () => {}
     );
     const newLine = editor.getAction('editor.action.insertLineAfter');
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.insertLineAfter',
-      null,
+      0,
       () => {}
     );
     // @ts-ignore
@@ -592,13 +592,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       'editor.action.insertLineAfter',
       monaco.KeyMod.Alt | monaco.KeyCode.Enter,
       () => {
-        newLine.run();
+        void newLine?.run();
       }
     );
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-actions.find',
-      null,
+      0,
       () => {}
     );
     // Make toggle tab setting in editor permanent
@@ -1422,6 +1422,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             }
           }}
           onChange={onChange}
+          language={modeMap[challengeFile?.ext ?? 'html']}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
         />

@@ -23,8 +23,7 @@ interface BuildChallengeData extends Context {
 export async function getTestRunner(buildData: BuildChallengeData) {
   const { challengeType } = buildData;
   // TODO: Fully type BuildChallengeData
-  const type =
-    runnerTypes[challengeType as unknown as keyof typeof runnerTypes];
+  const type = runnerTypes[challengeType];
   if (!type) {
     throw new Error(
       `Cannot get test runner for challenge type ${challengeType}`

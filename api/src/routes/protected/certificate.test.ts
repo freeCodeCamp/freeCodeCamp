@@ -80,7 +80,7 @@ describe('certificate routes', () => {
 
       // TODO: Revisit this test after deciding if we need/want to fetch the
       // entire user during authorization or just the user id.
-      test.skip('should return 500 if user not found in db', async () => {
+      test.todo('should return 500 if user not found in db', async () => {
         vi.spyOn(
           fastifyTestInstance.prisma.user,
           'findUnique'

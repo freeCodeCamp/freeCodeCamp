@@ -1,4 +1,5 @@
 import React from 'react';
+import { renderToString } from 'react-dom/server';
 import { render, screen, fireEvent } from '@testing-library/react';
 import {
   describe,
@@ -73,6 +74,14 @@ describe('MobileAppModal', () => {
   it('renders the modal on mobile for a public superblock', () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+
+  it('does not render before mount', () => {
+    // useEffect does not run during server-side rendering, so the 'mounted'
+    // flag stays false and the component should produce no output.
+    expect(
+      renderToString(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />)
+    ).toBe('');
   });
 
   it('does not render on a desktop OS', () => {

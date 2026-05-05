@@ -168,20 +168,20 @@ test.describe('Editor theme if the system theme is light', () => {
     }) => {
       await setTheme(request, 'default');
       await page.goto(testPage);
+      const editorContent = getEditors(page);
+      // Wait for the editor's mount-time autofocus
+      // so it cannot steal focus from the menu after we open it.
+      await expect(editorContent).toBeFocused();
+
       // Open the nav menu and toggle the theme
       const menuButton = page.getByRole('button', { name: 'Menu' });
       await menuButton.click();
       const menu = page.getByRole('list', { name: 'Menu' });
       await expect(menu).toBeVisible();
 
-      const toggle = page.getByRole('button', { name: 'Night Mode' });
+      const toggle = menu.getByRole('button', { name: 'Night Mode' });
       await expect(toggle).toBeVisible();
-
-      const listItem = page.getByRole('listitem').filter({ has: toggle });
-
-      // The button's click event is intercepted by the `li`,
-      // so we need to click on the `li` to trigger the theme change action.
-      await listItem.click();
+      await toggle.click();
 
       // Ensure that the action is completed before checking the editor.
       await expect(page.getByText('We have updated your theme')).toBeVisible();

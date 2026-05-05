@@ -38,7 +38,7 @@ const mapStateToProps = (state: unknown) => {
       fetchState,
       isSignedIn
     })
-  )(state as Record<string, unknown>);
+  )(state);
 };
 
 const CertChallenge = ({

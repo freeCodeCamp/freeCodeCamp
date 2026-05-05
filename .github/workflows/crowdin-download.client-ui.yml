@@ -33,7 +33,7 @@ jobs:
 
       ##### Download Chinese #####
       - name: Crowdin Download Chinese Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -69,7 +69,7 @@ jobs:
 
       ##### Download Espanol #####
       - name: Crowdin Download Espanol Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -98,7 +98,7 @@ jobs:
 
       ##### Download Italian #####
       - name: Crowdin Download Italian Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -127,7 +127,7 @@ jobs:
 
       ##### Download Brazilian Portuguese #####
       - name: Crowdin Download Portuguese (Brazilian) Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -156,7 +156,7 @@ jobs:
 
           ##### Download Ukrainian #####
       - name: Crowdin Download Ukrainian Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -185,7 +185,7 @@ jobs:
 
       ##### Download Japanese #####
       - name: Crowdin Download Japanese Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -214,7 +214,7 @@ jobs:
 
       ##### Download German #####
       - name: Crowdin Download German Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -243,7 +243,7 @@ jobs:
 
       ##### Download Swahili #####
       - name: Crowdin Download Swahili Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads
@@ -272,7 +272,7 @@ jobs:
 
       ##### Download Korean #####
       - name: Crowdin Download Korean Translations
-        uses: crowdin/github-action@7ca9c452bfe9197d3bb7fa83a4d7e2b0c9ae835d # v2.16.0
+        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads

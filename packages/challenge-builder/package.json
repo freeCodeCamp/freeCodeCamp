@@ -46,6 +46,6 @@
     "@freecodecamp/browser-scripts": "workspace:*",
     "@freecodecamp/loop-protect": "3.0.0",
     "@freecodecamp/shared": "workspace:*",
-    "lodash-es": "4.17.23"
+    "lodash-es": "4.18.1"
   }
 }

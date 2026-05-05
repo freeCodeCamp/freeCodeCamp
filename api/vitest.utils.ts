@@ -4,7 +4,7 @@ import request from 'supertest';
 
 import { build, buildOptions } from './src/app.js';
 import { createUserInput } from './src/utils/create-user.js';
-import { examJson } from './__mocks__/exam.js';
+import { examJson } from './__fixtures__/exam.js';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;

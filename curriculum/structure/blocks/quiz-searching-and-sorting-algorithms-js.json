@@ -2,12 +2,12 @@
   "isUpcomingChange": false,
   "dashedName": "quiz-searching-and-sorting-algorithms-js",
   "helpCategory": "JavaScript",
-  "blockLayout": "challenge-list",
+  "blockLayout": "link",
   "challengeOrder": [
     {
       "id": "699c047c797138ec61f44d54",
       "title": "Searching and Sorting Algorithms Quiz"
     }
   ],
-  "blockLabel": "review"
+  "blockLabel": "quiz"
 }

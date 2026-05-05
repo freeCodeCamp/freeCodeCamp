@@ -203,6 +203,7 @@ function ShowClassic({
         title,
         description,
         instructions,
+        id,
         hooks,
         tests,
         challengeType,
@@ -421,6 +422,8 @@ function ShowClassic({
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            challengeId={id}
+            block={block}
           />
         }
         challengeTitle={

@@ -10,7 +10,7 @@ import {
   mockResultsOneCorrect,
   mockResultsTwoCorrect,
   mockResultsAllCorrect
-} from '../../__mocks__/exam.js';
+} from '../../__fixtures__/exam.js';
 import { generateRandomExam, createExamResults } from './exam.js';
 import { GeneratedExam } from './exam-types.js';
 
