@@ -18,7 +18,7 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/labeler@634933edcd8ababfe52f92936142cc22ac488b1b # v6
+      - uses: actions/labeler@f27b608878404679385c85cfa523b85ccb86e213 # v6
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           sync-labels: true
