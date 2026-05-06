@@ -125,7 +125,7 @@
     "sign-in-with-google": "Увійти через Google",
     "go-to-dcc-today": "Перейти до сьогоднішнього завдання",
     "go-to-dcc-archive": "Перейти до архіву завдань з програмування",
-    "challenge-source": "View Challenge Source",
+    "challenge-source": "Переглянути джерело завдання",
     "outline": "План"
   },
   "daily-coding-challenges": {
@@ -1423,7 +1423,7 @@
     "add-code-one": "Замініть ці два речення своїм скопійованим кодом.",
     "add-code-two": "Будь ласка, залиште рядок над ``` та рядок під ```,",
     "add-code-three": "тому що вони дозволяють вашому коду бути правильно відформатованим у повідомленні.",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "Посилання на Github: {{gitLink}}"
   },
   "user-token": {
     "title": "Токен користувача",
