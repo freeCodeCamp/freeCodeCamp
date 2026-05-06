@@ -151,4 +151,54 @@ describe('<ProfilePrivacy />', () => {
     await user.click(saveButton);
     expect(saveButton).toHaveAttribute('aria-disabled', 'true');
   });
+
+  it('save button becomes aria-disabled when a toggle is reverted to its original value', async () => {
+    const user = userEvent.setup();
+    render(
+      <Provider store={makeStore({ isLocked: true })}>
+        <ProfilePrivacy />
+      </Provider>
+    );
+    const saveButton = screen.getByRole('button', { name: SAVE_BTN_NAME });
+    const radioById = (id: string): HTMLElement => {
+      const found = screen.getAllByRole('radio').find(r => r.id === id);
+      if (!found) throw new Error(`radio ${id} not found`);
+      return found;
+    };
+
+    // isLocked starts as `true` (private radio checked).
+    await user.click(radioById('radioBisLocked'));
+    expect(saveButton).not.toHaveAttribute('aria-disabled', 'true');
+
+    await user.click(radioById('radioAisLocked'));
+    expect(saveButton).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  it('save button stays enabled while any change differs from the original', async () => {
+    const user = userEvent.setup();
+    render(
+      <Provider store={makeStore({ isLocked: true })}>
+        <ProfilePrivacy />
+      </Provider>
+    );
+    const saveButton = screen.getByRole('button', { name: SAVE_BTN_NAME });
+    const radioById = (id: string): HTMLElement => {
+      const found = screen.getAllByRole('radio').find(r => r.id === id);
+      if (!found) throw new Error(`radio ${id} not found`);
+      return found;
+    };
+
+    // Flip both isLocked (true -> false) and showName (true -> false).
+    await user.click(radioById('radioBisLocked'));
+    await user.click(radioById('radioAname'));
+    expect(saveButton).not.toHaveAttribute('aria-disabled', 'true');
+
+    // Revert showName only; isLocked is still off.
+    await user.click(radioById('radioBname'));
+    expect(saveButton).not.toHaveAttribute('aria-disabled', 'true');
+
+    // Revert isLocked too; now both match the original.
+    await user.click(radioById('radioAisLocked'));
+    expect(saveButton).toHaveAttribute('aria-disabled', 'true');
+  });
 });

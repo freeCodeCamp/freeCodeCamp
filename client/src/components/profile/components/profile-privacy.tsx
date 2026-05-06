@@ -33,20 +33,23 @@ function ProfilePrivacyComponent({
   const { t } = useTranslation();
   const [isExpanded, setIsExpanded] = useState(user.profileUI.isLocked);
   const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
-  const [madeChanges, setMadeChanges] = useState(false);
+  const [savedValues, setSavedValues] = useState({ ...user.profileUI });
+
+  const hasChanges = (Object.keys(privacyValues) as (keyof ProfileUI)[]).some(
+    key => privacyValues[key] !== savedValues[key]
+  );
 
   function toggleFlag(flag: keyof ProfileUI): () => void {
     return () => {
-      setMadeChanges(true);
       setPrivacyValues({ ...privacyValues, [flag]: !privacyValues[flag] });
     };
   }
 
   function submitNewProfileSettings(e: React.FormEvent) {
     e.preventDefault();
-    if (!madeChanges) return;
+    if (!hasChanges) return;
     submitProfileUI(privacyValues);
-    setMadeChanges(false);
+    setSavedValues(privacyValues);
   }
 
   return (
@@ -172,8 +175,8 @@ function ProfilePrivacyComponent({
                 size='large'
                 variant='primary'
                 block={true}
-                disabled={!madeChanges}
-                {...(!madeChanges && { tabIndex: -1 })}
+                disabled={!hasChanges}
+                {...(!hasChanges && { tabIndex: -1 })}
               >
                 {t('buttons.save')}{' '}
                 <span className='sr-only'>
