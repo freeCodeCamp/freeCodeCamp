@@ -103,6 +103,13 @@ export function CodespacesInstructions({
           </>
         )}
         <li>{t('learn.codespaces.step-2')}</li>
+      </ol>
+      <Spacer size='m' />
+      <CodespacesContinueAlert title={title} />
+      {isSignedIn && <CodespacesLogoutAlert course={title} />}
+      <CodeAllyButton challengeType={challengeType} onClick={openCodespaces} />
+      <Spacer size='m' />
+      <ol start={3}>
         <li>{t('learn.codespaces.step-3')}</li>
         <li>
           {t('learn.codespaces.step-4')}
@@ -135,10 +142,6 @@ export function CodespacesInstructions({
         </li>
         <li>{t('learn.codespaces.step-9')}</li>
       </ol>
-      <Spacer size='m' />
-      <CodespacesContinueAlert title={title} />
-      {isSignedIn && <CodespacesLogoutAlert course={title} />}
-      <CodeAllyButton challengeType={challengeType} onClick={openCodespaces} />
     </div>
   );
 }

@@ -102,6 +102,13 @@ export function OnaInstructions({
           </>
         )}
         <li>{t('learn.ona.step-2')}</li>
+      </ol>
+      <Spacer size='m' />
+      <RdbOnaContinueAlert course={title} />
+      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
+      <CodeAllyButton challengeType={challengeType} onClick={openOna} />
+      <Spacer size='m' />
+      <ol start={3}>
         <li>{t('learn.ona.step-3')}</li>
         <li>
           {t('learn.ona.step-4')}
@@ -134,10 +141,6 @@ export function OnaInstructions({
         </li>
         <li>{t('learn.ona.step-9')}</li>
       </ol>
-      <Spacer size='m' />
-      <RdbOnaContinueAlert course={title} />
-      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
-      <CodeAllyButton challengeType={challengeType} onClick={openOna} />
     </div>
   );
 }
