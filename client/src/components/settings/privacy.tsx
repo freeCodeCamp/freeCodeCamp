@@ -36,21 +36,24 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
     ...user.profileUI
   });
 
-  const [madeChanges, setMadeChanges] = useState(false);
-
   function toggleFlag(flag: keyof ProfileUI): () => void {
     return () => {
-      setMadeChanges(true);
-      setPrivacyValues({ ...privacyValues, [flag]: !privacyValues[flag] });
+      const newValues = { ...privacyValues, [flag]: !privacyValues[flag] };
+      setPrivacyValues(newValues);
     };
   }
 
   function submitNewProfileSettings(e: React.FormEvent) {
     e.preventDefault();
-    if (!madeChanges) return;
+    if (!hasChanges) return;
     submitProfileUI(privacyValues);
-    setMadeChanges(false);
   }
+
+  const hasChanges = Object.keys(privacyValues).some(
+    key =>
+      privacyValues[key as keyof ProfileUI] !==
+      user.profileUI[key as keyof ProfileUI]
+  );
 
   return (
     <div className='privacy-settings' id='privacy-settings'>
@@ -157,8 +160,8 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
             size='large'
             variant='primary'
             block={true}
-            disabled={!madeChanges}
-            {...(!madeChanges && { tabIndex: -1 })}
+            disabled={!hasChanges}
+            {...(!hasChanges && { tabIndex: -1 })}
           >
             {t('buttons.save')}{' '}
             <span className='sr-only'>{t('settings.headings.privacy')}</span>
