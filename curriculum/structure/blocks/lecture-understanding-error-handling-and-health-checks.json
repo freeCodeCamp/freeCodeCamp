@@ -10,15 +10,15 @@
     },
     {
       "id": "69f3046f4c0e76cbdd24858e",
-      "title": "how-does-error-handling-work-in-express"
+      "title": "How Does Error Handling Work In Express?"
     },
     {
       "id": "69f3046f4c0e76cbdd24858f",
-      "title": "how-does-debugging-and-logging-work-in-express"
+      "title": "How Does Debugging and Logging Work in Express?"
     },
     {
       "id": "69f3046f4c0e76cbdd248590",
-      "title": "how-do-health-checks-and-graceful-shutdowns-work-in-express"
+      "title": "How do Health Checks and Graceful Shutdowns Work in Express?"
     }
   ],
   "blockLabel": "lecture"
