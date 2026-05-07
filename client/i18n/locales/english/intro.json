@@ -7238,6 +7238,12 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
+      },
+      "lecture-understanding-the-web-standards-model": {
+        "title": "Understanding the Web Standards Model",
+        "intro": [
+          "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
+        ]
       }
     }
   },
