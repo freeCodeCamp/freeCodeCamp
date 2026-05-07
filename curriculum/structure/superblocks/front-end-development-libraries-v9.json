@@ -78,15 +78,6 @@
           ]
         },
         {
-          "dashedName": "data-visualization",
-          "comingSoon": true,
-          "blocks": [
-            "lecture-introduction-to-data-visualization",
-            "lab-bar-chart",
-            "lab-scatterplot-graph"
-          ]
-        },
-        {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
           "blocks": [
@@ -106,6 +97,15 @@
             "lab-digital-pet-game",
             "review-typescript",
             "quiz-typescript"
+          ]
+        },
+        {
+          "dashedName": "data-visualization",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-data-visualization",
+            "lab-bar-chart",
+            "lab-scatterplot-graph"
           ]
         },
         {
