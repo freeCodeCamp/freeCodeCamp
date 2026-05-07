@@ -10,8 +10,8 @@
   "license": "BSD-3-Clause",
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
-    "@babel/eslint-parser": "7.26.5",
-    "@babel/preset-react": "7.26.3",
+    "@babel/eslint-parser": "7.28.6",
+    "@babel/preset-react": "7.28.5",
     "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
