@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-loading-tiled-json-into-phaser",
+  "challengeOrder": [
+    {
+      "id": "66faa50000000000000000a4",
+      "title": "Loading the JSON and the Tileset Image"
+    },
+    {
+      "id": "66faa50000000000000000a5",
+      "title": "Building the Tilemap in create"
+    },
+    {
+      "id": "66faa50000000000000000a6",
+      "title": "Rendering Multiple Layers in Order"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

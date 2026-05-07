@@ -64,6 +64,7 @@ export const newUser = (email: string) => ({
   isA2SpanishCert: false,
   isA2ChineseCert: false,
   isA1ChineseCert: false,
+  isCertifiedGameDeveloperWithPhaserCert: false,
   keyboardShortcuts: false,
   linkedin: null,
   location: '',

@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-arcade-physics-deep-dive",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faac0000000000000000a3",
+      "title": "Arcade Physics Deep Dive Quiz"
+    }
+  ]
+}

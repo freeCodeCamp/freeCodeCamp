@@ -1,0 +1,12 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-what-is-a-tilemap",
+  "challengeOrder": [
+    { "id": "66faa50000000000000000a1", "title": "Tile Grids and Tilesets" },
+    { "id": "66faa50000000000000000a2", "title": "Layers" },
+    { "id": "66faa50000000000000000a3", "title": "Object Layers" }
+  ],
+  "helpCategory": "JavaScript"
+}

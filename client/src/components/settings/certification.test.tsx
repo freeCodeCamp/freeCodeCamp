@@ -293,6 +293,7 @@ const defaultTestProps = {
   isA2SpanishCert: false,
   isA2ChineseCert: false,
   isA1ChineseCert: false,
+  isCertifiedGameDeveloperWithPhaserCert: false,
   username: 'developmentuser',
   verifyCert: verifyCert,
   isEmailVerified: false

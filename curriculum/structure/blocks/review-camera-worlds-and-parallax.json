@@ -1,0 +1,13 @@
+{
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-camera-worlds-and-parallax",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faad0000000000000000a5",
+      "title": "Cameras, Worlds, and Parallax Review"
+    }
+  ]
+}

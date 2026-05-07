@@ -1,0 +1,16 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
+  "dashedName": "lab-sprite-sheet-debugger",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa20000000000000000da",
+      "title": "Debug a Broken Sprite Sheet"
+    }
+  ]
+}

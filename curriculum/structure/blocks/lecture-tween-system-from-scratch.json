@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-tween-system-from-scratch",
+  "challengeOrder": [
+    {
+      "id": "66faa80000000000000000a1",
+      "title": "Anatomy of a Tween"
+    },
+    {
+      "id": "66faa80000000000000000a2",
+      "title": "Chained and Sequenced Tweens"
+    },
+    {
+      "id": "66faa80000000000000000a3",
+      "title": "Easing Curves Visualized"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

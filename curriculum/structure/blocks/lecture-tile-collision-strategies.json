@@ -1,0 +1,18 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-tile-collision-strategies",
+  "challengeOrder": [
+    {
+      "id": "66faa50000000000000000c5",
+      "title": "Index-based vs Property-based Tile Collision"
+    },
+    {
+      "id": "66faa50000000000000000c6",
+      "title": "Per-Tile Rectangle Overrides"
+    },
+    { "id": "66faa50000000000000000c7", "title": "Performance Tips" }
+  ],
+  "helpCategory": "JavaScript"
+}

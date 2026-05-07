@@ -105,6 +105,7 @@ export const getSessionUser = {
           isA2SpanishCert: Type.Boolean(),
           isA2ChineseCert: Type.Boolean(),
           isA1ChineseCert: Type.Boolean(),
+          isCertifiedGameDeveloperWithPhaserCert: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
           linkedin: Type.Optional(Type.String()),
           location: Type.String(),

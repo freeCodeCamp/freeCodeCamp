@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-depth-and-blend-modes",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa20000000000000000db",
+      "title": "Why Depth Matters: Painter's Algorithm in 2D"
+    },
+    {
+      "id": "66faa20000000000000000dc",
+      "title": "Blend Modes in Phaser"
+    },
+    {
+      "id": "66faa20000000000000000dd",
+      "title": "Common Layering Recipes"
+    }
+  ]
+}

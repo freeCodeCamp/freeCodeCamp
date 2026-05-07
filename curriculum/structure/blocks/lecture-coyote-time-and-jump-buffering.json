@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-coyote-time-and-jump-buffering",
+  "challengeOrder": [
+    {
+      "id": "66faa40000000000000000c1",
+      "title": "Why Naive Jumping Feels Bad"
+    },
+    {
+      "id": "66faa40000000000000000c2",
+      "title": "Coyote Time"
+    },
+    {
+      "id": "66faa40000000000000000c3",
+      "title": "Jump Buffering"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

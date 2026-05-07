@@ -91,6 +91,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isA2SpanishCert: true,
           isA2ChineseCert: true,
           isA1ChineseCert: true,
+          isCertifiedGameDeveloperWithPhaserCert: true,
           isHonest: true,
           username: true,
           name: true,

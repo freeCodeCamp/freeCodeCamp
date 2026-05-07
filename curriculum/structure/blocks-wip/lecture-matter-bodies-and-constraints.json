@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-matter-bodies-and-constraints",
+  "challengeOrder": [
+    {
+      "id": "66faa80000000000000000dc",
+      "title": "Matter Body Shapes"
+    },
+    {
+      "id": "66faa80000000000000000dd",
+      "title": "Constraints"
+    },
+    {
+      "id": "66faa80000000000000000de",
+      "title": "Sleeping and Performance"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

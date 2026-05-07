@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-virtual-on-screen-controls",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa30000000000000000c3",
+      "title": "Designing for Touch and Keyboard at Once"
+    },
+    {
+      "id": "66faa30000000000000000c4",
+      "title": "Building a UI Scene for On-Screen Buttons"
+    },
+    {
+      "id": "66faa30000000000000000c5",
+      "title": "Routing Virtual Input to Gameplay via Events"
+    }
+  ]
+}

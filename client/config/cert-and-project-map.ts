@@ -45,6 +45,7 @@ const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
 const a2ChineseBase = '/learn/a2-professional-chinese';
 const a1ChineseBase = '/learn/a1-professional-chinese';
+const phaserGameDevBase = '/learn/certified-game-developer-with-phaser';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -963,6 +964,19 @@ const allStandardCerts = [
         link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
 /text-1`,
         certSlug: Certification.A1Chinese
+      }
+    ]
+  },
+  {
+    id: '69fb103a9bec08b2350cabc0',
+    title: 'Certified Game Developer with Phaser',
+    certSlug: Certification.PhaserGameDev,
+    projects: [
+      {
+        id: '66faa20000000000000000ab',
+        title: 'Build a Space Shooter with Phaser',
+        link: `${phaserGameDevBase}/lab-space-shooter-with-phaser/lab-space-shooter-with-phaser`,
+        certSlug: Certification.PhaserGameDev
       }
     ]
   }

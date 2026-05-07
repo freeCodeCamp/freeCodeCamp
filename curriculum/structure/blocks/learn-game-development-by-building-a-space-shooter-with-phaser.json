@@ -1,0 +1,274 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "learn-game-development-by-building-a-space-shooter-with-phaser",
+  "helpCategory": "JavaScript",
+  "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
+  "challengeOrder": [
+    {
+      "id": "66faa1000000000000000001",
+      "title": "Step 1"
+    },
+    {
+      "id": "66faa1000000000000000002",
+      "title": "Step 2"
+    },
+    {
+      "id": "66faa1000000000000000003",
+      "title": "Step 3"
+    },
+    {
+      "id": "66faa1000000000000000004",
+      "title": "Step 4"
+    },
+    {
+      "id": "66faa1000000000000000005",
+      "title": "Step 5"
+    },
+    {
+      "id": "66faa1000000000000000006",
+      "title": "Step 6"
+    },
+    {
+      "id": "66faa1000000000000000007",
+      "title": "Step 7"
+    },
+    {
+      "id": "66faa1000000000000000008",
+      "title": "Step 8"
+    },
+    {
+      "id": "66faa1000000000000000009",
+      "title": "Step 9"
+    },
+    {
+      "id": "66faa100000000000000000a",
+      "title": "Step 10"
+    },
+    {
+      "id": "66faa100000000000000000b",
+      "title": "Step 11"
+    },
+    {
+      "id": "66faa100000000000000000c",
+      "title": "Step 12"
+    },
+    {
+      "id": "66faa100000000000000000d",
+      "title": "Step 13"
+    },
+    {
+      "id": "66faa100000000000000000e",
+      "title": "Step 14"
+    },
+    {
+      "id": "66faa100000000000000000f",
+      "title": "Step 15"
+    },
+    {
+      "id": "66faa1000000000000000010",
+      "title": "Step 16"
+    },
+    {
+      "id": "66faa1000000000000000011",
+      "title": "Step 17"
+    },
+    {
+      "id": "66faa1000000000000000012",
+      "title": "Step 18"
+    },
+    {
+      "id": "66faa1000000000000000013",
+      "title": "Step 19"
+    },
+    {
+      "id": "66faa1000000000000000014",
+      "title": "Step 20"
+    },
+    {
+      "id": "66faa1000000000000000015",
+      "title": "Step 21"
+    },
+    {
+      "id": "66faa1000000000000000016",
+      "title": "Step 22"
+    },
+    {
+      "id": "66faa1000000000000000017",
+      "title": "Step 23"
+    },
+    {
+      "id": "66faa1000000000000000018",
+      "title": "Step 24"
+    },
+    {
+      "id": "66faa1000000000000000019",
+      "title": "Step 25"
+    },
+    {
+      "id": "66faa100000000000000001a",
+      "title": "Step 26"
+    },
+    {
+      "id": "66faa100000000000000001b",
+      "title": "Step 27"
+    },
+    {
+      "id": "66faa100000000000000001c",
+      "title": "Step 28"
+    },
+    {
+      "id": "66faa100000000000000001d",
+      "title": "Step 29"
+    },
+    {
+      "id": "66faa100000000000000001e",
+      "title": "Step 30"
+    },
+    {
+      "id": "66faa100000000000000001f",
+      "title": "Step 31"
+    },
+    {
+      "id": "66faa1000000000000000020",
+      "title": "Step 32"
+    },
+    {
+      "id": "66faa1000000000000000021",
+      "title": "Step 33"
+    },
+    {
+      "id": "66faa1000000000000000022",
+      "title": "Step 34"
+    },
+    {
+      "id": "66faa1000000000000000023",
+      "title": "Step 35"
+    },
+    {
+      "id": "66faa1000000000000000024",
+      "title": "Step 36"
+    },
+    {
+      "id": "66faa1000000000000000025",
+      "title": "Step 37"
+    },
+    {
+      "id": "66faa1000000000000000026",
+      "title": "Step 38"
+    },
+    {
+      "id": "66faa1000000000000000027",
+      "title": "Step 39"
+    },
+    {
+      "id": "66faa1000000000000000028",
+      "title": "Step 40"
+    },
+    {
+      "id": "66faa1000000000000000029",
+      "title": "Step 41"
+    },
+    {
+      "id": "66faa100000000000000002a",
+      "title": "Step 42"
+    },
+    {
+      "id": "66faa100000000000000002b",
+      "title": "Step 43"
+    },
+    {
+      "id": "66faa100000000000000002c",
+      "title": "Step 44"
+    },
+    {
+      "id": "66faa100000000000000002d",
+      "title": "Step 45"
+    },
+    {
+      "id": "66faa100000000000000002e",
+      "title": "Step 46"
+    },
+    {
+      "id": "66faa100000000000000002f",
+      "title": "Step 47"
+    },
+    {
+      "id": "66faa1000000000000000030",
+      "title": "Step 48"
+    },
+    {
+      "id": "66faa1000000000000000031",
+      "title": "Step 49"
+    },
+    {
+      "id": "66faa1000000000000000032",
+      "title": "Step 50"
+    },
+    {
+      "id": "66faa1000000000000000033",
+      "title": "Step 51"
+    },
+    {
+      "id": "66faa1000000000000000034",
+      "title": "Step 52"
+    },
+    {
+      "id": "66faa1000000000000000035",
+      "title": "Step 53"
+    },
+    {
+      "id": "66faa1000000000000000036",
+      "title": "Step 54"
+    },
+    {
+      "id": "66faa1000000000000000037",
+      "title": "Step 55"
+    },
+    {
+      "id": "66faa1000000000000000038",
+      "title": "Step 56"
+    },
+    {
+      "id": "66faa1000000000000000039",
+      "title": "Step 57"
+    },
+    {
+      "id": "66faa100000000000000003a",
+      "title": "Step 58"
+    },
+    {
+      "id": "66faa100000000000000003b",
+      "title": "Step 59"
+    },
+    {
+      "id": "66faa100000000000000003c",
+      "title": "Step 60"
+    },
+    {
+      "id": "66faa100000000000000003d",
+      "title": "Step 61"
+    },
+    {
+      "id": "66faa100000000000000003e",
+      "title": "Step 62"
+    },
+    {
+      "id": "66faa100000000000000003f",
+      "title": "Step 63"
+    },
+    {
+      "id": "66faa1000000000000000040",
+      "title": "Step 64"
+    },
+    {
+      "id": "66faa1000000000000000041",
+      "title": "Step 65"
+    }
+  ],
+  "blockLayout": "legacy-challenge-grid"
+}

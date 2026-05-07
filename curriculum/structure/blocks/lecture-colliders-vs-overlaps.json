@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-colliders-vs-overlaps",
+  "challengeOrder": [
+    {
+      "id": "66faa40000000000000000a4",
+      "title": "When to Use a Collider vs an Overlap"
+    },
+    {
+      "id": "66faa40000000000000000a5",
+      "title": "The Process Callback"
+    },
+    {
+      "id": "66faa40000000000000000a6",
+      "title": "Multiple Colliders on the Same Body"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

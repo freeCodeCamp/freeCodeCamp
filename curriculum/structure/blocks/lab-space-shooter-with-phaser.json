@@ -1,0 +1,14 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-space-shooter-with-phaser",
+  "challengeOrder": [
+    {
+      "id": "66faa20000000000000000ab",
+      "title": "Build a Space Shooter with Phaser"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

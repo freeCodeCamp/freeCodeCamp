@@ -1,0 +1,33 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
+  "dashedName": "workshop-particle-pickup-effect",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    { "id": "66faa20000000000000000e1", "title": "Step 1" },
+    { "id": "66faa20000000000000000e2", "title": "Step 2" },
+    { "id": "66faa20000000000000000e3", "title": "Step 3" },
+    { "id": "66faa20000000000000000e4", "title": "Step 4" },
+    { "id": "66faa20000000000000000e5", "title": "Step 5" },
+    { "id": "66faa20000000000000000e6", "title": "Step 6" },
+    { "id": "66faa20000000000000000e7", "title": "Step 7" },
+    { "id": "66faa20000000000000000e8", "title": "Step 8" },
+    { "id": "66faa20000000000000000e9", "title": "Step 9" },
+    { "id": "66faa20000000000000000ea", "title": "Step 10" },
+    { "id": "66faa20000000000000000eb", "title": "Step 11" },
+    { "id": "66faa20000000000000000ec", "title": "Step 12" },
+    { "id": "66faa20000000000000000ed", "title": "Step 13" },
+    { "id": "66faa20000000000000000ee", "title": "Step 14" },
+    { "id": "66faa20000000000000000ef", "title": "Step 15" },
+    { "id": "66faa20000000000000000f0", "title": "Step 16" },
+    { "id": "66faa20000000000000000f1", "title": "Step 17" },
+    { "id": "66faa20000000000000000f2", "title": "Step 18" },
+    { "id": "66faa20000000000000000f3", "title": "Step 19" },
+    { "id": "66faa20000000000000000f4", "title": "Step 20" }
+  ]
+}

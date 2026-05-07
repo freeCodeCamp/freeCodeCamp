@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-tinting-and-the-graphics-api",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa20000000000000000de",
+      "title": "Tinting Sprites at Runtime"
+    },
+    {
+      "id": "66faa20000000000000000df",
+      "title": "Drawing Shapes with Graphics"
+    },
+    {
+      "id": "66faa20000000000000000e0",
+      "title": "Combining Sprites and Graphics for Effects"
+    }
+  ]
+}

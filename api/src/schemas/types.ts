@@ -36,7 +36,8 @@ export const isCertMap = Type.Object({
   isB1EnglishCert: Type.Boolean(),
   isBackEndDevApisCertV9: Type.Boolean(),
   isFullStackDeveloperCertV9: Type.Boolean(),
-  isFrontEndLibsCertV9: Type.Boolean()
+  isFrontEndLibsCertV9: Type.Boolean(),
+  isCertifiedGameDeveloperWithPhaserCert: Type.Boolean()
 });
 
 export const file = Type.Object({

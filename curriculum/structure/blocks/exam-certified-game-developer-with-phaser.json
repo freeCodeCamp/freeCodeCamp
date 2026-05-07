@@ -1,0 +1,13 @@
+{
+  "blockLabel": "exam",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "exam-certified-game-developer-with-phaser",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66fab10000000000000000ee",
+      "title": "Certified Game Developer with Phaser Exam"
+    }
+  ]
+}

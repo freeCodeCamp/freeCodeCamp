@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-post-processing-pipelines",
+  "challengeOrder": [
+    {
+      "id": "66faa80000000000000000a4",
+      "title": "What a Pipeline Is"
+    },
+    {
+      "id": "66faa80000000000000000a5",
+      "title": "Built-in Pipelines"
+    },
+    {
+      "id": "66faa80000000000000000a6",
+      "title": "Performance Cost on Mobile"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

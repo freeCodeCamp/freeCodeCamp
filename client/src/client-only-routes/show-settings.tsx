@@ -158,6 +158,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isA2SpanishCert,
     isA2ChineseCert,
     isA1ChineseCert,
+    isCertifiedGameDeveloperWithPhaserCert,
     isEmailVerified,
     isHonest,
     sendQuincyEmail,
@@ -272,6 +273,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isA2SpanishCert={isA2SpanishCert}
               isA2ChineseCert={isA2ChineseCert}
               isA1ChineseCert={isA1ChineseCert}
+              isCertifiedGameDeveloperWithPhaserCert={
+                isCertifiedGameDeveloperWithPhaserCert
+              }
               username={username}
               verifyCert={verifyCert}
             />

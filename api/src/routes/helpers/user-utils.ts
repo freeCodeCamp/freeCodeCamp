@@ -41,6 +41,7 @@ const nullableFlags = [
   'isA2SpanishCert',
   'isA2ChineseCert',
   'isA1ChineseCert',
+  'isCertifiedGameDeveloperWithPhaserCert',
   // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server
   // TODO(Post-MVP): delete it from the db?
   'keyboardShortcuts'

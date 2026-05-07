@@ -1,0 +1,13 @@
+{
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-sprites-and-animation",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faad0000000000000000a1",
+      "title": "Sprites and Animation Review"
+    }
+  ]
+}

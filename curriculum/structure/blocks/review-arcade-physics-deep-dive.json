@@ -1,0 +1,13 @@
+{
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-arcade-physics-deep-dive",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faad0000000000000000a3",
+      "title": "Arcade Physics Deep Dive Review"
+    }
+  ]
+}

@@ -38,6 +38,7 @@ export enum Certification {
   A2Spanish = 'a2-professional-spanish',
   A2Chinese = 'a2-professional-chinese',
   A1Chinese = 'a1-professional-chinese',
+  PhaserGameDev = 'certified-game-developer-with-phaser',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
@@ -99,7 +100,8 @@ export const upcomingCertifications = [
   Certification.FullStackDeveloperV9,
   Certification.A2Spanish,
   Certification.A2Chinese,
-  Certification.A1Chinese
+  Certification.A1Chinese,
+  Certification.PhaserGameDev
 ] as const;
 
 export const certToIdMap: Record<Certification, string> = {
@@ -138,7 +140,8 @@ export const certToIdMap: Record<Certification, string> = {
   [Certification.B1English]: '66607e53317411dd5e8aae21',
   [Certification.A2Spanish]: '681a6b22e5a782fe3459984a',
   [Certification.A2Chinese]: '682c3153086dd7cabe7f48bc',
-  [Certification.A1Chinese]: '68f1268149f045a650d4229e'
+  [Certification.A1Chinese]: '68f1268149f045a650d4229e',
+  [Certification.PhaserGameDev]: '69fb103a9bec08b2350cabc0'
 };
 
 export const completionHours: Record<Certification, number> = {
@@ -172,7 +175,8 @@ export const completionHours: Record<Certification, number> = {
   [Certification.B1English]: 300,
   [Certification.A2Spanish]: 300,
   [Certification.A2Chinese]: 300,
-  [Certification.A1Chinese]: 300
+  [Certification.A1Chinese]: 300,
+  [Certification.PhaserGameDev]: 300
 };
 
 type UserCertFlag =
@@ -206,7 +210,8 @@ type UserCertFlag =
   | 'isB1EnglishCert'
   | 'isA2SpanishCert'
   | 'isA2ChineseCert'
-  | 'isA1ChineseCert';
+  | 'isA1ChineseCert'
+  | 'isCertifiedGameDeveloperWithPhaserCert';
 
 export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   // legacy
@@ -244,7 +249,8 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.B1English]: 'isB1EnglishCert',
   [Certification.A2Spanish]: 'isA2SpanishCert',
   [Certification.A2Chinese]: 'isA2ChineseCert',
-  [Certification.A1Chinese]: 'isA1ChineseCert'
+  [Certification.A1Chinese]: 'isA1ChineseCert',
+  [Certification.PhaserGameDev]: 'isCertifiedGameDeveloperWithPhaserCert'
 };
 
 export type CertificationFlags = {
@@ -299,7 +305,8 @@ export const certToTitleMap: Record<Certification, string> = {
   [Certification.B1English]: 'B1 English for Developers',
   [Certification.A2Spanish]: 'A2 Professional Spanish',
   [Certification.A2Chinese]: 'A2 Professional Chinese',
-  [Certification.A1Chinese]: 'A1 Professional Chinese'
+  [Certification.A1Chinese]: 'A1 Professional Chinese',
+  [Certification.PhaserGameDev]: 'Certified Game Developer with Phaser'
 };
 
 export const superBlockToCertMap: {
@@ -401,7 +408,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.IntroductionToLinearDataStructuresInPython]: null,
   [SuperBlocks.LearnAlgorithmsInPython]: null,
   [SuperBlocks.LearnGraphsAndTreesInPython]: null,
-  [SuperBlocks.LearnDynamicProgrammingInPython]: null
+  [SuperBlocks.LearnDynamicProgrammingInPython]: null,
+  [SuperBlocks.PhaserGameDev]: Certification.PhaserGameDev
 };
 
 export const certificationRequirements: Partial<
@@ -450,7 +458,8 @@ export const linkedInCredentialIds = {
   [Certification.B1English]: 'b1efd',
   [Certification.A2Spanish]: 'a2ps',
   [Certification.A2Chinese]: 'a2pc',
-  [Certification.A1Chinese]: 'a1pc'
+  [Certification.A1Chinese]: 'a1pc',
+  [Certification.PhaserGameDev]: 'cgdwp'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

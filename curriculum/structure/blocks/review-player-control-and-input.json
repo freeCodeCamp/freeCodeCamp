@@ -1,0 +1,13 @@
+{
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-player-control-and-input",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faad0000000000000000a2",
+      "title": "Player Control and Input Review"
+    }
+  ]
+}

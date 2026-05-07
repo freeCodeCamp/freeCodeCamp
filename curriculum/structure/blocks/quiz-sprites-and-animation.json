@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-sprites-and-animation",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faac0000000000000000a1",
+      "title": "Sprites and Animation Quiz"
+    }
+  ]
+}

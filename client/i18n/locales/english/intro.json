@@ -10072,6 +10072,458 @@
       }
     }
   },
+  "certified-game-developer-with-phaser": {
+    "title": "Certified Game Developer with Phaser",
+    "intro": [
+      "Phaser is the most popular open-source 2D game framework on the web. This certification takes you from your first scene to shipping a polished, mobile-ready game.",
+      "You will build a portfolio of complete games — top-down shooter, brick breaker, side-scrolling platformer, dungeon explorer, endless runner, match-3 puzzle, top-down RPG, roguelike, and a 2-player party game — while learning every major Phaser system: scenes, sprites, animation, input, arcade physics, tilemaps, cameras, audio, tweens, Matter physics, AI, procedural generation, multiplayer, and deployment."
+    ],
+    "chapters": {
+      "phaser-foundations": "Foundations of Phaser Game Development",
+      "sprites-and-animation": "Sprites and Animation",
+      "player-control-and-input": "Player Control and Input",
+      "arcade-physics-deep-dive": "Arcade Physics Deep Dive",
+      "tilemaps-and-level-design": "Tilemaps and Level Design",
+      "camera-worlds-and-parallax": "Cameras, Worlds, and Parallax",
+      "audio-and-game-feel": "Audio and Game Feel",
+      "tweens-fx-and-matter-physics": "Tweens, FX, and Matter Physics",
+      "ai-state-machines-and-game-systems": "AI, State Machines, and Game Systems",
+      "procgen-multiplayer-and-deployment": "Procedural Generation, Multiplayer, and Deployment",
+      "certified-game-developer-with-phaser-exam": "Certified Game Developer with Phaser Exam"
+    },
+    "modules": {
+      "phaser-game-loop-and-scenes": "The Phaser Game Loop and Scenes",
+      "arcade-physics-and-input-basics": "Arcade Physics and Input Basics",
+      "lab-space-shooter-with-phaser": "Build a Space Shooter with Phaser",
+      "loading-sprite-sheets-and-atlases": "Loading Sprite Sheets and Atlases",
+      "depth-tinting-and-graphics": "Depth, Tinting, and Graphics",
+      "pointer-and-touch-input": "Pointer and Touch Input",
+      "keyboard-maps-and-virtual-controls": "Keyboard Maps and Virtual Controls",
+      "lab-brick-breaker": "Build a Brick Breaker",
+      "gravity-drag-and-bouncy-bodies": "Gravity, Drag, and Bouncy Bodies",
+      "static-groups-and-platformer-physics": "Static Groups and Platformer Physics",
+      "lab-platformer-level-1-1": "Build a Platformer Level 1-1",
+      "tilemap-fundamentals": "Tilemap Fundamentals",
+      "collision-layers-and-object-layers": "Collision Layers and Object Layers",
+      "camera-fundamentals": "Camera Fundamentals",
+      "multi-camera-ui-and-parallax": "Multi-Camera UI and Parallax",
+      "lab-endless-runner": "Build an Endless Runner",
+      "audio-foundations": "Audio Foundations",
+      "game-feel-and-juice": "Game Feel and Juice",
+      "tween-mastery-and-post-fx": "Tween Mastery and Post-FX",
+      "certified-game-developer-with-phaser-exam": "Certified Game Developer with Phaser Exam"
+    },
+    "blocks": {
+      "learn-game-development-by-building-a-space-shooter-with-phaser": {
+        "title": "Learn Game Development by Building a Space Shooter with Phaser",
+        "intro": [
+          "Phaser is one of the most popular JavaScript game frameworks. It gives you a render loop, sprite management, physics, input handling, and scene transitions out of the box, so you can focus on building the game itself.",
+          "In this project, you'll build a top-down space shooter from scratch. You'll learn how to configure a Phaser game, structure code into scenes, load assets, drive sprites with arcade physics, handle keyboard input, manage groups of bullets and enemies, detect collisions, track score and lives, and transition between a main scene and a game over scene."
+        ]
+      },
+      "lab-space-shooter-with-phaser": {
+        "title": "Build a Space Shooter with Phaser",
+        "intro": [
+          "Now it's your turn. Rebuild the space shooter from scratch and prove you can wire up a Phaser game on your own."
+        ]
+      },
+      "lecture-asset-pipeline-overview": {
+        "title": "Asset Pipeline Overview",
+        "intro": [
+          "Before you load anything in Phaser, you need to know what you're loading and why. Sprite sheets, texture atlases, and individual images each have tradeoffs around performance, packing, and authoring.",
+          "These short lectures introduce the asset pipeline you'll use for the rest of the certification: how a sprite sheet is laid out, when an atlas is the better choice, and how to budget your assets for fast loads on mobile."
+        ]
+      },
+      "lecture-loading-sprite-sheets": {
+        "title": "Loading Sprite Sheets",
+        "intro": [
+          "Phaser exposes loading and animation as two separate steps. You stage a sprite sheet during `preload`, define an animation in `create`, and then play it on a sprite during `update`.",
+          "These lectures walk through the three calls you'll lean on for every animated sprite: `this.load.spritesheet`, `this.anims.create`, and `sprite.anims.play`."
+        ]
+      },
+      "workshop-animated-character-explorer": {
+        "title": "Animated Character Explorer",
+        "intro": [
+          "Build a small top-down scene where a hero walks in four directions, coins spin in place, and a slime patrols the floor. You'll use sprite sheets, define five hero animations, drive the player with cursor keys, and wire physics overlaps for coin collection and slime hits.",
+          "By the end you'll have a complete sprite-sheet-driven game loop — load, animate, move, react — that becomes the foundation for everything in the next chapters."
+        ]
+      },
+      "lab-sprite-sheet-debugger": {
+        "title": "Debug a Broken Sprite Sheet",
+        "intro": [
+          "A teammate shipped a sprite-sheet game that almost works. Frames render at the wrong size, animations skip, and coins won't disappear. Find every bug and fix it so the game satisfies all the user stories."
+        ]
+      },
+      "lecture-depth-and-blend-modes": {
+        "title": "Depth and Blend Modes",
+        "intro": [
+          "Phaser paints game objects in the order you create them, but you almost never want raw creation order to decide what's on top. Depth and blend modes let you control layering and visual mixing without rearranging your code.",
+          "These lectures cover the painter's algorithm, `setDepth`, the blend modes Phaser supports, and a layering recipe you'll reuse for every game from here on."
+        ]
+      },
+      "lecture-tinting-and-the-graphics-api": {
+        "title": "Tinting and the Graphics API",
+        "intro": [
+          "Tinting recolors textured sprites at runtime — perfect for hit flashes, team colors, and damage feedback. The `Graphics` API draws shapes from code, so you can render rings, bars, and overlays without shipping extra art.",
+          "These lectures introduce `setTint`, `setTintFill`, and the core `Graphics` calls you'll combine with sprites to build expressive in-game effects."
+        ]
+      },
+      "workshop-particle-pickup-effect": {
+        "title": "Particle Pickup Effect",
+        "intro": [
+          "Build a small scene where the hero walks into coins and triggers a layered pickup effect: the coin tints red, scales to nothing, a `+10` floater rises, a glowing additive ring follows the player, and a HUD on its own camera tracks the score.",
+          "By the end you'll have wired together depth layering, tweens, tinting, multi-camera rendering, and `Graphics`-driven effects — the same toolkit every polished arcade pickup uses."
+        ]
+      },
+      "review-sprites-and-animation": {
+        "title": "Sprites and Animation Review",
+        "intro": [
+          "Recap the core concepts of Chapter 2 in one place: sprite sheets and atlases, animation playback, depth and blend modes, and the tinting and `Graphics` APIs.",
+          "Each section ships with a working `:::interactive_editor` example you can read, run, and tinker with before taking the chapter quiz."
+        ]
+      },
+      "quiz-sprites-and-animation": {
+        "title": "Sprites and Animation Quiz",
+        "intro": [
+          "A 20-question quiz covering everything in Chapter 2 — from frame indexing on a sprite sheet to depth recipes and the difference between `setTint` and `setTintFill`.",
+          "Answer 18 of 20 correctly to pass and unlock the next chapter."
+        ]
+      },
+      "lecture-pointer-events": {
+        "title": "Pointer Events",
+        "intro": [
+          "Phaser papers over the historical mess of `mousedown`/`touchstart`/`MSPointerDown` with one pointer API. The same listener fires on a desktop click, a mobile tap, and a stylus press — no branching needed.",
+          "These lectures cover scene-level pointer events, per-object input via `setInteractive`, and how to opt in to multi-touch when one finger is not enough."
+        ]
+      },
+      "lecture-drag-swipe-and-gestures": {
+        "title": "Drag, Swipe, and Gestures",
+        "intro": [
+          "Drag and swipe are the gestural primitives of touch UI. Phaser ships drag as a flag on `setInteractive`; swipe is something you measure yourself from `pointerdown`/`pointerup` deltas.",
+          "These lectures wire up draggable sprites, a small swipe detector with distance and time thresholds, and the smoothing techniques that hide input latency on mobile."
+        ]
+      },
+      "workshop-touch-paddle-prototype": {
+        "title": "Touch Paddle Prototype",
+        "intro": [
+          "Build a paddle that responds the same way to keyboard arrows, mouse drags, finger drags, on-screen virtual buttons, and quick swipes — then layer a falling-target catch game on top.",
+          "By the end you'll have a multi-input control rig that runs identically on desktop and mobile, a debounced virtual button pair, and a difficulty-ramping catch loop. This same harness powers the brick-breaker workshop in the next sprint."
+        ]
+      },
+      "lecture-keyboard-mapping-patterns": {
+        "title": "Keyboard Mapping Patterns",
+        "intro": [
+          "The action-map abstraction — `actions = { left: ['LEFT', 'A'], right: ['RIGHT', 'D'] }` — is the load-bearing pattern behind every game that ships with both arrows and WASD, both keyboard and gamepad, both default and remapped controls.",
+          "These lectures cover mapping actions to keys (not keys to actions), supporting both arrows and WASD without a single `if`-tree, and exposing the bindings to the player as a remappable UI persisted to `localStorage`."
+        ]
+      },
+      "lecture-virtual-on-screen-controls": {
+        "title": "Virtual On-Screen Controls",
+        "intro": [
+          "Virtual buttons turn a multi-touch screen into a viable control surface. Done well, the same gameplay code drives keyboard, mouse, and on-screen buttons; done badly, you ship two parallel input pipelines that drift apart over time.",
+          "These lectures walk the design constraints, the parallel UI scene that owns the buttons, and the cross-scene event bridge that keeps gameplay and controls decoupled."
+        ]
+      },
+      "workshop-mobile-first-brick-breaker": {
+        "title": "Mobile-First Brick Breaker",
+        "intro": [
+          "Build a complete brick breaker that runs identically on keyboard, mouse, and touch — five levels of bricks (with multi-hit and indestructible variants), lives, score, persistent high score, pause, particle bursts, screen shake, level overlays, an attached-launch model, and a parallel virtual-controls scene that's invisible on desktop and fully usable on phones.",
+          "The 50 steps build the game one focused concept at a time, layering colliders, multi-scene composition, and `localStorage` on top of the input contract from the touch-paddle workshop. The cert lab in the next sprint reuses the same architecture verbatim."
+        ]
+      },
+      "review-player-control-and-input": {
+        "title": "Player Control and Input Review",
+        "intro": [
+          "Recap the core concepts of Chapter 3 in one place: pointer events, drag and swipe gestures, the action-map pattern for keyboard input, and the parallel virtual-controls scene.",
+          "Each section ships with a working `:::interactive_editor` example you can read, run, and tinker with before taking the chapter quiz."
+        ]
+      },
+      "quiz-player-control-and-input": {
+        "title": "Player Control and Input Quiz",
+        "intro": [
+          "A 20-question quiz covering everything in Chapter 3 — from pointer-event semantics and `setInteractive` to action maps, multi-touch, and the parallel virtual-controls scene that sits next to gameplay.",
+          "Answer 18 of 20 correctly to pass and unlock the cert project."
+        ]
+      },
+      "lab-brick-breaker": {
+        "title": "Build a Brick Breaker",
+        "intro": [
+          "Now it's your turn. Rebuild the brick breaker from scratch and prove you can wire up the paddle, ball, multi-hit bricks, lives, persistent high score, and the parallel on-screen controls scene on your own."
+        ]
+      },
+      "lecture-gravity-velocity-and-drag": {
+        "title": "Gravity, Velocity, and Drag",
+        "intro": [
+          "Three short lectures on the dials arcade physics gives you for body motion: world gravity vs body gravity, how velocity, acceleration, and drag compose, and how the bounce coefficient (restitution) shapes collision response.",
+          "These set up the bouncing-ball sandbox where you'll get to feel each dial in real time."
+        ]
+      },
+      "lecture-colliders-vs-overlaps": {
+        "title": "Colliders vs Overlaps",
+        "intro": [
+          "Three short lectures that draw the line between solid contact and trigger zones: when to reach for `physics.add.collider` vs `physics.add.overlap`, what the process callback unlocks (one-way platforms, directional triggers), and how to stack multiple colliders on a single body without writing filter spaghetti."
+        ]
+      },
+      "workshop-bouncing-ball-lab": {
+        "title": "Bouncing Ball Lab",
+        "intro": [
+          "Build a small physics sandbox in 20 steps: a ball with bounce and drag, click-and-drag launch with a clamped distance scale, five floor segments plus a tilted teaching-moment ramp, a ceiling, a directional trampoline that uses a process callback, a wind zone overlap, a live HUD, a reset button, runtime-tunable gravity, and velocity clamping so the simulation never runs away.",
+          "By the end you can feel every dial in arcade physics, from `setGravityY` to `physics.world.gravity.y` to overlap-with-process-callback, and the platformer workshop in the next sprint will reuse all of it."
+        ]
+      },
+      "lecture-static-groups-and-terrain": {
+        "title": "Static Groups and Terrain",
+        "intro": [
+          "Three short lectures on building solid ground in arcade physics: what a static group is and why immovable bodies are cheap, how to lay out platforms at a fixed tile resolution, and when a hand-built static group is the right call vs reaching for a tilemap."
+        ]
+      },
+      "lecture-body-offsets-and-collision-sides": {
+        "title": "Body Offsets and Collision Sides",
+        "intro": [
+          "Three short lectures on tuning hitboxes and reading collisions: why the physics body doesn't have to match the sprite (`setSize` and `setOffset`), how to read `body.touching` vs `body.blocked` to know which side just hit, and how a process callback turns a regular collider into a one-way platform."
+        ]
+      },
+      "lecture-coyote-time-and-jump-buffering": {
+        "title": "Coyote Time and Jump Buffering",
+        "intro": [
+          "Three short lectures on the input forgiveness that makes jumps feel right: why naive frame-perfect jumps feel bad, how a coyote-time grace window keeps the jump alive a few frames after leaving a ledge, and how a jump buffer lets a press just before landing fire the moment you touch ground."
+        ]
+      },
+      "workshop-side-scrolling-platformer": {
+        "title": "Side-Scrolling Platformer",
+        "intro": [
+          "Build a polished side-scrolling platformer in 55 steps: variable jump height, coyote time, jump buffer, and double jump; coins, HP, and a HUD; moving platforms, spike hazards, and invincibility frames; patrolling and flying enemies with stomp logic; one-way platforms, checkpoints, a key-gated goal, and persistent best-time tracking; landing shake, dust particles, wall slide and wall jump, a pause menu, level select, and a debug toggle.",
+          "By the end you have a complete game-feel feature set you can drop into any platformer, and a level you can beat from spawn to flag."
+        ]
+      },
+      "review-arcade-physics-deep-dive": {
+        "title": "Arcade Physics Deep Dive Review",
+        "intro": [
+          "Recap the core concepts of Chapter 4 in one place: gravity, drag, and bounce; colliders vs overlaps and the process callback; static groups and platformer terrain; body offsets and collision sides; and the coyote-time / jump-buffer / variable-jump-height triad that makes a platformer jump feel right.",
+          "Each section ships with a working `:::interactive_editor` example you can read, run, and tinker with before taking the chapter quiz."
+        ]
+      },
+      "quiz-arcade-physics-deep-dive": {
+        "title": "Arcade Physics Deep Dive Quiz",
+        "intro": [
+          "A 20-question quiz covering everything in Chapter 4 — from `setDrag` and `body.bounce` semantics through static groups and process callbacks to coyote time, jump buffering, and variable jump height.",
+          "Answer 18 of 20 correctly to pass and unlock the cert project."
+        ]
+      },
+      "lab-platformer-level-1-1": {
+        "title": "Build a Platformer Level 1-1",
+        "intro": [
+          "Now it's your turn. Rebuild Level 1-1 from scratch and prove you can wire up a polished platformer — variable-height jumps with coyote time and a jump buffer, double jump, two enemy types with stomp/side-hit handling, moving platforms the player rides, a key-gated goal that triggers a level-complete scene, and a persistent best time — on your own."
+        ]
+      },
+      "lecture-what-is-a-tilemap": {
+        "title": "What Is a Tilemap?",
+        "intro": [
+          "A tilemap is a 2D grid of small repeating images — tiles — pulled from a single tileset image. It's how nearly every 2D game from the NES era through modern indie hits builds rooms, levels, and worlds without shipping one giant background per scene.",
+          "These three lectures cover the data model: tile grids and tilesets with their global tile IDs, the layer stack that lets floor, walls, and decorations live in separate grids, and the object layer that holds non-grid data like spawn points, doors, and pickups."
+        ]
+      },
+      "lecture-loading-tiled-json-into-phaser": {
+        "title": "Loading Tiled JSON into Phaser",
+        "intro": [
+          "Phaser's tilemap pipeline expects two assets: the tileset image and the Tiled JSON map. You stage both in `preload`, build the map in `create` with `this.make.tilemap`, attach the tileset image to the JSON's tileset name, and create one Phaser layer per Tiled tile layer.",
+          "These three lectures cover the exact `preload` → `make.tilemap` → `addTilesetImage` → `createLayer` pipeline, plus the depth-and-scroll-factor recipe that controls which layer paints on top and how each layer parallaxes."
+        ]
+      },
+      "workshop-first-tile-room": {
+        "title": "First Tile Room",
+        "intro": [
+          "Build a complete top-down dungeon room from a Tiled JSON map in 30 steps: load the tileset and JSON, paint the floor and wall layers, set up wall collision, drop the player at the spawn-point object, wire arrow-key movement with collision against walls, follow the player with a bounded camera, parse coin objects into a physics group, collect coins on overlap, parse the door object, gate it with a key, light a torch with a flicker tween, and ship a HUD that tracks coins.",
+          "By the end you have a working tilemap-driven game loop — load, build, collide, navigate, interact — that becomes the foundation for the multi-room dungeon, autotiling, and procedural generation in the rest of Chapter 5."
+        ]
+      },
+      "lecture-tile-collision-strategies": {
+        "title": "Tile Collision Strategies",
+        "intro": [
+          "Index-based collision (`setCollision([1, 4, 7])`) is the fast path — and the fragile one. The robust pattern marks wall tiles with a `collides: true` custom property in Tiled and reads it with `setCollisionByProperty`, so re-arranging the tileset can never silently break a level.",
+          "These three lectures cover index-based vs property-based collision and their trade-offs, per-tile rectangle overrides for irregular shapes like pillars or pits, and the performance tips that keep tilemap collision cheap even on giant maps."
+        ]
+      },
+      "lecture-object-layers-for-game-logic": {
+        "title": "Object Layers for Game Logic",
+        "intro": [
+          "Tile layers describe terrain. Object layers describe everything else — spawn points, NPCs, pickups, doors, triggers, and patrol paths — as positioned objects with custom properties. They're the bridge between level designer and programmer: the level file decides what exists where, your code decides how each one behaves.",
+          "These three lectures cover object layers as game data, reading custom properties to configure behaviour without touching JavaScript, and the door + room-transition pattern that ties it all together."
+        ]
+      },
+      "workshop-top-down-dungeon-explorer": {
+        "title": "Top-Down Dungeon Explorer",
+        "intro": [
+          "Build a four-room top-down dungeon explorer in 50 steps: load a multi-room Tiled map, walk a player around with arcade physics and 8-direction input, talk to an NPC who tells you where to find a key, pick up the key, unlock a door, fight a patrolling slime with knockback combat and i-frames, open a chest, save and load to `localStorage`, transition between rooms with a camera fade, watch the action on a minimap, and trigger a victory screen at the goal.",
+          "The 50 steps practise every Chapter 5 idea — property-based collision, object layers, custom properties, polyline patrols, multi-scene UI, and persistence — by composing them into one complete game loop."
+        ]
+      },
+      "review-tilemaps-and-level-design": {
+        "title": "Tilemaps and Level Design Review",
+        "intro": [
+          "Walk through every Chapter 5 topic — tilesets and tilemaps, layer architecture, index-based vs property-based collision, per-tile rectangles, object layers, custom properties, polyline patrols, doors with `removeTileAt`, multi-camera minimaps, multi-scene HUDs, event bridges, shutdown cleanup, and `localStorage` save/load — with runnable snippets for each.",
+          "Use this as a refresher before the chapter quiz, or as a reference while you author your own dungeons."
+        ]
+      },
+      "quiz-tilemaps-and-level-design": {
+        "title": "Tilemaps and Level Design Quiz",
+        "intro": [
+          "A 20-question quiz covering everything in Chapter 5 — from `addTilesetImage` and `setCollisionByProperty` through object-layer custom properties and polyline patrols to multi-camera minimaps, multi-scene HUDs, and `localStorage` persistence.",
+          "Answer 18 of 20 correctly to pass and finish Chapter 5."
+        ]
+      },
+      "lecture-camera-follow-lerp-and-deadzone": {
+        "title": "Camera Follow, Lerp, and Deadzone",
+        "intro": [
+          "A camera that snaps onto the player feels rigid; a camera that ignores the player feels broken. The middle ground is `startFollow` plus lerp plus a deadzone — three knobs that turn raw position-tracking into cinematic motion.",
+          "These lectures walk through `cameras.main.startFollow`, the `lerpX`/`lerpY` smoothing factors, and `setDeadzone` — the rectangle in which the player can move freely without nudging the camera."
+        ]
+      },
+      "lecture-world-bounds-and-camera-bounds": {
+        "title": "World Bounds and Camera Bounds",
+        "intro": [
+          "World bounds tell physics how big the simulation is; camera bounds tell the camera where it's allowed to scroll. They're independent, and you almost always need both — forgetting either one produces a different player-visible bug.",
+          "These lectures explain when to call `physics.world.setBounds`, when to call `cameras.main.setBounds`, and why the standard cinematic camera setup pairs them with a `startFollow` and a `setDeadzone`."
+        ]
+      },
+      "lecture-camera-shake-and-flash": {
+        "title": "Camera Shake, Flash, and Fade",
+        "intro": [
+          "Juice is the small, optional polish that makes hits feel weighty and pickups feel rewarded. Camera juice is the cheapest kind — `shake`, `flash`, and `fade` are one-line APIs that immediately tighten the moment-to-moment feel.",
+          "These lectures cover when juice helps and when it hurts, the parameters of `shake(duration, intensity)`, the difference between `flash` and `fade`, and the events you use to chain them."
+        ]
+      },
+      "workshop-camera-playground": {
+        "title": "Camera Playground",
+        "intro": [
+          "Build a 4000-pixel-wide world with a movable player and a row of UI buttons that flip every Phaser camera knob: smooth follow, deadzone, shake (with intensity steps), flash, fade, smooth zoom, and a minimap with its own player marker.",
+          "By the end you'll have a camera lab — and a `prefers-reduced-motion`-aware accessibility toggle that disables shakes both in-session and across reloads via `localStorage`."
+        ]
+      },
+      "lecture-multi-camera-ui-overlays": {
+        "title": "Multi-Camera UI Overlays",
+        "intro": [
+          "`setScrollFactor(0)` glues a HUD element to the screen, but it doesn't shield it from camera effects like shake, flash, or zoom — so a UI label still rattles when the world rattles.",
+          "These lectures show how to add a second camera dedicated to UI, use `Camera#ignore` to carve the world from the overlay, and rely on render order so the HUD always draws cleanly on top."
+        ]
+      },
+      "lecture-parallax-with-tilesprite": {
+        "title": "Parallax with tileSprite",
+        "intro": [
+          "`tileSprite` repeats a texture across an arbitrary box — the easiest way to fake an infinite scrolling background. Layer multiple `tileSprite`s with different `tilePositionX` advance rates and you get parallax: distant layers drift slowly, near layers race past, and the world feels three-dimensional from a 2-D scene.",
+          "These lectures cover what `tileSprite` does under the hood, how `setScrollFactor` carves perceived depth without moving the camera, and how to advance four parallax layers in a single `update` step."
+        ]
+      },
+      "workshop-side-scrolling-endless-runner": {
+        "title": "Side-Scrolling Endless Runner",
+        "intro": [
+          "A complete endless runner in 45 small steps: a four-layer parallax world, a player with coyote-time and buffered jumps, ducking under flying enemies, double-jump pickups, ramping difficulty, persistent best distance and run counter, multi-camera HUD overlay with new-best banner and restart loop, plus pointer + keyboard input and `prefers-reduced-motion` accessibility.",
+          "This is the capstone for the Camera, Worlds, and Parallax chapter — every concept from the last two modules wired together into one shippable game."
+        ]
+      },
+      "review-camera-worlds-and-parallax": {
+        "title": "Cameras, Worlds, and Parallax Review",
+        "intro": [
+          "Recap the core concepts of Chapter 6 in one place: camera follow with lerp and deadzone, world and camera bounds, camera shake/flash/fade juice, multi-camera UI overlays with `ignore`, parallax with `tileSprite` and `setScrollFactor`, and the `prefers-reduced-motion` accessibility contract.",
+          "Each section ships with a working `:::interactive_editor` example you can read, run, and tinker with before taking the chapter quiz."
+        ]
+      },
+      "quiz-camera-worlds-and-parallax": {
+        "title": "Cameras, Worlds, and Parallax Quiz",
+        "intro": [
+          "A 20-question quiz covering everything in Chapter 6 — from `startFollow` lerp factors and deadzones through world/camera bounds and shake/flash/fade juice to multi-camera UI overlays, `tileSprite` parallax, and the `prefers-reduced-motion` accessibility contract.",
+          "Answer 18 of 20 correctly to pass and unlock the cert project."
+        ]
+      },
+      "lab-endless-runner": {
+        "title": "Build an Endless Runner",
+        "intro": [
+          "Now it's your turn. Rebuild the endless runner from scratch and prove you can wire up a polished side-scroller — three-layer `tileSprite` parallax, coyote-time jumps with a buffer, ramping difficulty, persistent best distance, multi-camera HUD overlay with shake-suppressed-by-reduced-motion, ground and airborne obstacles with a duck mechanic, and a tap-to-jump input on top of SPACE — on your own."
+        ]
+      },
+      "lecture-loading-and-playing-audio": {
+        "title": "Loading and Playing Audio",
+        "intro": [
+          "Audio is loaded asynchronously like every other Phaser asset, but it carries two extra constraints no other asset has: every browser ships a different codec mix, and every browser blocks audio playback until the user has interacted with the page.",
+          "These lectures cover `this.load.audio` with multi-format fallbacks, the difference between fire-and-forget `this.sound.play` and the long-lived `this.sound.add` instance, and the autoplay unlock contract that turns silence into sound on iOS, Android, and Safari."
+        ]
+      },
+      "lecture-volume-pan-and-music-fades": {
+        "title": "Volume, Pan, and Music Fades",
+        "intro": [
+          "Once a sound is playing, the moment-to-moment dials — volume, detune, rate, pan, and fade — are what separate a playable game from a polished one. Every triple-A audio engine boils down to per-instance modulation of these five values.",
+          "These lectures cover `setVolume`, `setDetune`, `setRate`, `setPan`, and the tween-driven crossfade pattern that swaps music tracks without a hard cut."
+        ]
+      },
+      "workshop-soundboard": {
+        "title": "Soundboard",
+        "intro": [
+          "Build a 20-step interactive soundboard: six tappable SFX buttons, looping ambient music with play/pause/resume, master mute, SFX and music volume sliders that persist to `localStorage`, a stereo pan slider tied to a ping SFX, a rate slider that pitch-shifts the same ping, a music crossfade button, a HUD list of currently playing sounds, a tap-to-enable audio overlay for mobile, a `prefers-reduced-motion`-aware default-mute, and an anti-double-play guard that gates rapid SFX presses.",
+          "By the end you'll have a complete audio control surface — and the same primitives carry forward into the game-feel workshop in the next sprint."
+        ]
+      },
+      "lecture-anatomy-of-a-juicy-hit": {
+        "title": "Anatomy of a Juicy Hit",
+        "intro": [
+          "Game feel — \"juice\" — is the layer of audio, motion, and feedback that lives on top of mechanics. The mechanics decide whether a punch lands; juice decides whether the punch feels like it lands. The cheap version is one tween; the cinematic version stacks six effects on the same impact frame.",
+          "These lectures break down the six-stack juice recipe — squash/stretch, tint flash, screen shake, hit-pause, particle burst, audio cue — show how to implement hit-pause cleanly with `physics.world.pause()`, and explain why scaling juice by impact magnitude is the difference between a satisfying hit and a hit that fights the gameplay."
+        ]
+      },
+      "lecture-particles-with-emitters": {
+        "title": "Particles with Emitters",
+        "intro": [
+          "Phaser 3.60 rewrote the particle pipeline — emitters are now first-class game objects with a unified `add.particles(x, y, key, config)` factory, fluent property tweens (`{ start, end }`), random ranges (`{ min, max }`), and an `explode(count, x, y)` API for one-shot bursts.",
+          "These lectures cover the full property surface — `speed`, `lifespan`, `scale`, `rotate`, `alpha`, `angle`, `gravityY`, `tint` — and the architectural choice between burst emitters (pre-created, fired with `.explode()`) and continuous emitters (streamed at a `frequency`). You'll leave with the recipes you'll reach for in every juicy hit, pickup, and explosion you build for the rest of the certification."
+        ]
+      },
+      "workshop-arcade-brawler-with-juice": {
+        "title": "Arcade Brawler with Juice",
+        "intro": [
+          "Build a 40-step single-screen arcade brawler that stacks the full juice toolkit on every hit: WASD movement and a J-key punch, hitbox overlap detection, audio SFX, squash/stretch yoyo tweens, white tint flash, camera shake scaled by impact, 40ms hit-pause via `physics.world.pause/resume`, particle bursts fired from a pre-created emitter, recoil tween chains, enemy HP and a destroy-with-explode flow, score and combo tracking with a UIScene HUD, ramped enemy spawning, a swung sword with a Graphics swing trail, heavy attacks that scale every juice multiplier, slow-mo on heavy hits, a 20% crit chance, player damage with full juice, a GameOverScene, a multi-stage boss with a defeat cinematic, persistent best score in `localStorage`, a `prefers-reduced-motion` damping path, mute toggle, virtual touch controls, attack-spam cooldown, enemy-vs-enemy collision, a clamped combo HUD, scene shutdown cleanup, and a 60-second round timer.",
+          "By the end you'll have shipped a vertical-slice brawler that hits every game-feel beat from the chapter — the same patterns you'll lean on for every action game you build after this."
+        ]
+      },
+      "review-audio-and-game-feel": {
+        "title": "Review: Audio and Game Feel",
+        "intro": [
+          "Review the chapter 7 toolkit — multi-format audio loading, the unlock contract, fire-and-forget vs reusable sound instances, two-volume buses, music crossfades, the six-stack juice recipe, hit-pause, particle emitters, the impact-scaled juice multiplier, and the `prefers-reduced-motion` damping path."
+        ]
+      },
+      "quiz-audio-and-game-feel": {
+        "title": "Quiz: Audio and Game Feel",
+        "intro": [
+          "Take a 20-question quiz covering everything from chapter 7 — audio loading and unlock, music vs SFX volume buses, the juice recipe, hit-pause timing, particle emitter APIs, the impact multiplier pattern, and the reduced-motion damping path."
+        ]
+      },
+      "lecture-tween-system-from-scratch": {
+        "title": "The Tween System from Scratch",
+        "intro": [
+          "Phaser's tween system is a dedicated animation engine that mutates any property on any object over time, with eases, delays, repeats, yoyos, and fluent chaining. Once you stop hand-rolling lerps in `update`, you start treating motion as data.",
+          "These lectures break down the anatomy of a tween config (`targets`, props, `duration`, `ease`, `yoyo`, `repeat`, `delay`), how `tweens.chain` sequences multi-stage animations, and how to read every easing curve at a glance — `Linear`, `Sine`, `Cubic`, `Back`, `Elastic`, `Bounce` — so you pick the right one without guessing."
+        ]
+      },
+      "lecture-post-processing-pipelines": {
+        "title": "Post-Processing Pipelines",
+        "intro": [
+          "Post-processing pipelines are GPU shaders that run on the rendered frame, not on game objects. Phaser ships built-in pipelines — bloom, blur, vignette, pixelate, glow, shine, color matrix, gradient, barrel, displacement — that you attach via `gameObject.postFX` or `camera.postFX` and tune at runtime by tweening the controller properties.",
+          "These lectures cover what a pipeline is (a fragment shader the renderer applies after the main pass), how to choose between per-game-object FX and camera-wide FX, the full `addX` catalog, and the mobile cost story — including the `prefers-reduced-motion` shortcut that lets users opt out of expensive GPU work."
+        ]
+      },
+      "workshop-match-3-puzzle": {
+        "title": "Match-3 Puzzle",
+        "intro": [
+          "Build a complete tween-driven match-3 in 50 small steps: 8x8 gem grid generated at runtime via the `Graphics` API, swap-and-cascade mechanics with combo bonuses, three special-gem rules (stripe, color-bomb, wrapped) with bloom flashes on creation, scoring with floating popups, levels with persistent best scores, time-attack mode with a countdown timer, idle-hint pulses, dead-board reshuffles, post-FX vignette, audio cues, mute toggle, pause menu, mobile drag input, tutorial overlay, mode-aware game-over screen, and a 5-level classic campaign.",
+          "By the end you'll have wired tweens to nearly every game-state transition, used `tweens.chain` for multi-stage feedback, and seen first-hand why `gameObject.postFX.addBloom` plus a strength tween is the canonical 'this gem is special' visual."
+        ]
+      },
+      "exam-certified-game-developer-with-phaser": {
+        "title": "Certified Game Developer with Phaser Exam",
+        "intro": [
+          "This certification exam is in development. The cert ships without it; the exam will land in a follow-up sprint."
+        ]
+      }
+    }
+  },
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {

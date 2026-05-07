@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-drag-swipe-and-gestures",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa30000000000000000a4",
+      "title": "Dragging Sprites"
+    },
+    {
+      "id": "66faa30000000000000000a5",
+      "title": "Detecting a Swipe"
+    },
+    {
+      "id": "66faa30000000000000000a6",
+      "title": "Latency and Input Smoothing"
+    }
+  ]
+}

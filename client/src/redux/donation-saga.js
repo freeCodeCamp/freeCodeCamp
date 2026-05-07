@@ -44,7 +44,18 @@ import {
 const defaultDonationErrorMessage = i18next.t('donate.error-2');
 const updateCardErrorMessage = i18next.t('donate.error-3');
 
-function* showDonateModalSaga() {
+export function* showDonateModalSaga() {
+  const donatableSectionRecentlyCompleted = yield select(
+    donatableSectionRecentlyCompletedSelector
+  );
+
+  if (process.env.NODE_ENV === 'development') {
+    if (donatableSectionRecentlyCompleted) {
+      yield put(preventSectionDonationRequests());
+    }
+    return;
+  }
+
   let shouldRequestDonation = yield select(shouldRequestDonationSelector);
   const MODAL_SHOWN_KEY = 'modalShownTimestamp';
   const modalShownTimestamp = sessionStorage.getItem(MODAL_SHOWN_KEY);
@@ -52,9 +63,6 @@ function* showDonateModalSaga() {
   // still be running:
   const isAnimationRunning = Date.now() - modalShownTimestamp < 20000;
   const shouldShowModal = shouldRequestDonation || isAnimationRunning;
-  const donatableSectionRecentlyCompleted = yield select(
-    donatableSectionRecentlyCompletedSelector
-  );
 
   if (shouldShowModal) {
     yield delay(200);

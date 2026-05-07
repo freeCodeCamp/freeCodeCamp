@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-asset-pipeline-overview",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa20000000000000000ac",
+      "title": "What Is a Sprite Sheet?"
+    },
+    {
+      "id": "66faa20000000000000000ad",
+      "title": "Sprite Sheets vs Texture Atlases"
+    },
+    {
+      "id": "66faa20000000000000000ae",
+      "title": "Loading Strategies and Asset Budgets"
+    }
+  ]
+}

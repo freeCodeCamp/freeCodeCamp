@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-tilemaps-and-level-design",
+  "challengeOrder": [
+    {
+      "id": "66faac0000000000000000a4",
+      "title": "Tilemaps and Level Design Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-camera-worlds-and-parallax",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faac0000000000000000a5",
+      "title": "Cameras, Worlds, and Parallax Quiz"
+    }
+  ]
+}

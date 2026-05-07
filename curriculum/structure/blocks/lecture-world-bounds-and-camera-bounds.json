@@ -1,0 +1,12 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-world-bounds-and-camera-bounds",
+  "challengeOrder": [
+    { "id": "66faa60000000000000000a4", "title": "World Bounds" },
+    { "id": "66faa60000000000000000a5", "title": "Camera Bounds" },
+    { "id": "66faa60000000000000000a6", "title": "Why Both Matter" }
+  ],
+  "helpCategory": "JavaScript"
+}

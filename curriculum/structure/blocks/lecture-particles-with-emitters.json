@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-particles-with-emitters",
+  "challengeOrder": [
+    {
+      "id": "66faa70000000000000000be",
+      "title": "The 3.60+ Particles API"
+    },
+    {
+      "id": "66faa70000000000000000bf",
+      "title": "Emitter Properties: speed, lifespan, scale, rotate, alpha"
+    },
+    {
+      "id": "66faa70000000000000000c0",
+      "title": "Bursts vs Continuous Emitters"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

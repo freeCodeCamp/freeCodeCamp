@@ -142,6 +142,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
               "a1-professional-chinese",
+              "certified-game-developer-with-phaser",
             ],
             "flags": {
               "only": true,
@@ -319,6 +320,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
               "a1-professional-chinese",
+              "certified-game-developer-with-phaser",
             ],
             "flags": {
               "only": true,
@@ -761,6 +763,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
               "a1-professional-chinese",
+              "certified-game-developer-with-phaser",
             ],
             "flags": {
               "only": true,

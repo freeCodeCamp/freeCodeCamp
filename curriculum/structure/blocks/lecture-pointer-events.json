@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-pointer-events",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa30000000000000000a1",
+      "title": "Pointer Events: One API for Mouse and Touch"
+    },
+    {
+      "id": "66faa30000000000000000a2",
+      "title": "Per-Object Input with setInteractive"
+    },
+    {
+      "id": "66faa30000000000000000a3",
+      "title": "Multi-Touch Basics"
+    }
+  ]
+}

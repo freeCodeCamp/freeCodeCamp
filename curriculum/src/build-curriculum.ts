@@ -280,7 +280,8 @@ export const superBlockNames = {
   'learn-algorithms-in-python': SuperBlocks.LearnAlgorithmsInPython,
   'learn-graphs-and-trees-in-python': SuperBlocks.LearnGraphsAndTreesInPython,
   'learn-dynamic-programming-in-python':
-    SuperBlocks.LearnDynamicProgrammingInPython
+    SuperBlocks.LearnDynamicProgrammingInPython,
+  'certified-game-developer-with-phaser': SuperBlocks.PhaserGameDev
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

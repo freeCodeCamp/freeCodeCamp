@@ -309,6 +309,8 @@ const publicUserData = {
   isA2SpanishCert: testUserData.isA2SpanishCert,
   isA2ChineseCert: testUserData.isA2ChineseCert,
   isA1ChineseCert: testUserData.isA1ChineseCert,
+  isCertifiedGameDeveloperWithPhaserCert:
+    testUserData.isCertifiedGameDeveloperWithPhaserCert,
   linkedin: testUserData.linkedin,
   location: testUserData.location,
   name: testUserData.name,
@@ -1050,6 +1052,7 @@ describe('userRoutes', () => {
           isA2SpanishCert: false,
           isA2ChineseCert: false,
           isA1ChineseCert: false,
+          isCertifiedGameDeveloperWithPhaserCert: false,
           keyboardShortcuts: false,
           location: '',
           name: '',

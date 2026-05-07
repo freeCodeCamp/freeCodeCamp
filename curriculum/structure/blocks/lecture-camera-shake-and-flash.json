@@ -1,0 +1,15 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-camera-shake-and-flash",
+  "challengeOrder": [
+    {
+      "id": "66faa60000000000000000a7",
+      "title": "When Juice Helps and When It Hurts"
+    },
+    { "id": "66faa60000000000000000a8", "title": "shake(duration, intensity)" },
+    { "id": "66faa60000000000000000a9", "title": "flash and fade" }
+  ],
+  "helpCategory": "JavaScript"
+}

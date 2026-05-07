@@ -1,0 +1,113 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "disableLoopProtectTests": true,
+  "disableLoopProtectPreview": true,
+  "dashedName": "workshop-camera-playground",
+  "challengeOrder": [
+    {
+      "id": "66faa60000000000000000aa",
+      "title": "Step 1"
+    },
+    {
+      "id": "66faa60000000000000000ab",
+      "title": "Step 2"
+    },
+    {
+      "id": "66faa60000000000000000ac",
+      "title": "Step 3"
+    },
+    {
+      "id": "66faa60000000000000000ad",
+      "title": "Step 4"
+    },
+    {
+      "id": "66faa60000000000000000ae",
+      "title": "Step 5"
+    },
+    {
+      "id": "66faa60000000000000000af",
+      "title": "Step 6"
+    },
+    {
+      "id": "66faa60000000000000000b0",
+      "title": "Step 7"
+    },
+    {
+      "id": "66faa60000000000000000b1",
+      "title": "Step 8"
+    },
+    {
+      "id": "66faa60000000000000000b2",
+      "title": "Step 9"
+    },
+    {
+      "id": "66faa60000000000000000b3",
+      "title": "Step 10"
+    },
+    {
+      "id": "66faa60000000000000000b4",
+      "title": "Step 11"
+    },
+    {
+      "id": "66faa60000000000000000b5",
+      "title": "Step 12"
+    },
+    {
+      "id": "66faa60000000000000000b6",
+      "title": "Step 13"
+    },
+    {
+      "id": "66faa60000000000000000b7",
+      "title": "Step 14"
+    },
+    {
+      "id": "66faa60000000000000000b8",
+      "title": "Step 15"
+    },
+    {
+      "id": "66faa60000000000000000b9",
+      "title": "Step 16"
+    },
+    {
+      "id": "66faa60000000000000000ba",
+      "title": "Step 17"
+    },
+    {
+      "id": "66faa60000000000000000bb",
+      "title": "Step 18"
+    },
+    {
+      "id": "66faa60000000000000000bc",
+      "title": "Step 19"
+    },
+    {
+      "id": "66faa60000000000000000bd",
+      "title": "Step 20"
+    },
+    {
+      "id": "66faa60000000000000000be",
+      "title": "Step 21"
+    },
+    {
+      "id": "66faa60000000000000000bf",
+      "title": "Step 22"
+    },
+    {
+      "id": "66faa60000000000000000c0",
+      "title": "Step 23"
+    },
+    {
+      "id": "66faa60000000000000000c1",
+      "title": "Step 24"
+    },
+    {
+      "id": "66faa60000000000000000c2",
+      "title": "Step 25"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

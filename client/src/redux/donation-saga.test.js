@@ -3,7 +3,7 @@
 /* eslint-disable vitest/expect-expect */
 // @vitest-environment jsdom
 import { expectSaga } from 'redux-saga-test-plan';
-import { describe, it, vi } from 'vitest';
+import { afterEach, describe, it, vi } from 'vitest';
 import {
   postChargeStripe,
   postChargeStripeCard,
@@ -11,14 +11,18 @@ import {
   updateStripeCard
 } from '../utils/ajax';
 import callGA from '../analytics/call-ga';
+import { CURRENT_COUNT_KEY } from '../utils/session-storage';
 import {
   postChargeSaga,
   setDonationCookie,
+  showDonateModalSaga,
   updateCardSaga
 } from './donation-saga.js';
 import {
+  openDonationModal,
   postChargeComplete,
   postChargeProcessing,
+  preventSectionDonationRequests,
   updateCardRedirecting,
   updateCardError
 } from './actions';
@@ -87,6 +91,32 @@ const signedOutStoreMock = {
   app: {
     user: {
       sessionUser: null
+    }
+  }
+};
+
+const donationRequestStoreMock = {
+  app: {
+    isRandomCompletionThreshold: false,
+    user: {
+      sessionUser: {
+        completedChallenges: Array.from({ length: 10 }, (_, index) => ({
+          id: `${index}`,
+          completedDate: '1475094716730',
+          challengeFiles: []
+        }))
+      }
+    }
+  }
+};
+
+const sectionDonationRequestStoreMock = {
+  app: {
+    ...donationRequestStoreMock.app,
+    donatableSectionRecentlyCompleted: {
+      block: 'basic-javascript',
+      module: null,
+      superBlock: 'javascript-algorithms-and-data-structures'
     }
   }
 };
@@ -218,6 +248,33 @@ describe('donation-saga', () => {
       .put(updateCardRedirecting())
       .call(updateStripeCard)
       .put(updateCardError())
+      .run();
+  });
+});
+
+describe('showDonateModalSaga', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    sessionStorage.clear();
+  });
+
+  it('does not open the donation modal in local development', () => {
+    vi.stubEnv('NODE_ENV', 'development');
+    sessionStorage.setItem(CURRENT_COUNT_KEY, '3');
+
+    return expectSaga(showDonateModalSaga)
+      .withState(donationRequestStoreMock)
+      .not.put(openDonationModal())
+      .run();
+  });
+
+  it('clears section donation requests in local development', () => {
+    vi.stubEnv('NODE_ENV', 'development');
+
+    return expectSaga(showDonateModalSaga)
+      .withState(sectionDonationRequestStoreMock)
+      .not.put(openDonationModal())
+      .put(preventSectionDonationRequests())
       .run();
   });
 });

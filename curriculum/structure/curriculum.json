@@ -96,7 +96,8 @@
     "introduction-to-linear-data-structures-in-python",
     "learn-algorithms-in-python",
     "learn-graphs-and-trees-in-python",
-    "learn-dynamic-programming-in-python"
+    "learn-dynamic-programming-in-python",
+    "certified-game-developer-with-phaser"
   ],
   "certifications": [
     "a2-english-for-developers",
@@ -129,6 +130,7 @@
     "python-v9",
     "relational-databases-v9",
     "back-end-development-and-apis-v9",
-    "full-stack-developer-v9"
+    "full-stack-developer-v9",
+    "certified-game-developer-with-phaser"
   ]
 }

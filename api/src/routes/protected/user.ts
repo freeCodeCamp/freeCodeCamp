@@ -721,6 +721,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           isA2SpanishCert: true,
           isA2ChineseCert: true,
           isA1ChineseCert: true,
+          isCertifiedGameDeveloperWithPhaserCert: true,
           keyboardShortcuts: true,
           linkedin: true,
           location: true,

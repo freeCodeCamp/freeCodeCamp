@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-loading-and-playing-audio",
+  "challengeOrder": [
+    {
+      "id": "66faa70000000000000000a1",
+      "title": "Loading Audio in Phaser"
+    },
+    {
+      "id": "66faa70000000000000000a2",
+      "title": "sound.add vs sound.play"
+    },
+    {
+      "id": "66faa70000000000000000a3",
+      "title": "Mobile Autoplay Restrictions"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

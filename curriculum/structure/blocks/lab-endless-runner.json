@@ -1,0 +1,14 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-endless-runner",
+  "challengeOrder": [
+    {
+      "id": "66faab00000000000000000c",
+      "title": "Build an Endless Runner"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

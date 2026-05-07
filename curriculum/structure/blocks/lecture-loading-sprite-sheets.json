@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-loading-sprite-sheets",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa20000000000000000af",
+      "title": "Loading a Sprite Sheet with this.load.spritesheet"
+    },
+    {
+      "id": "66faa20000000000000000b0",
+      "title": "Defining an Animation with this.anims.create"
+    },
+    {
+      "id": "66faa20000000000000000b1",
+      "title": "Playing and Controlling Animations on a Sprite"
+    }
+  ]
+}

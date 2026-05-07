@@ -1,0 +1,12 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-camera-follow-lerp-and-deadzone",
+  "challengeOrder": [
+    { "id": "66faa60000000000000000a1", "title": "Following a Target" },
+    { "id": "66faa60000000000000000a2", "title": "Lerp for Smoothing" },
+    { "id": "66faa60000000000000000a3", "title": "Deadzones" }
+  ],
+  "helpCategory": "JavaScript"
+}

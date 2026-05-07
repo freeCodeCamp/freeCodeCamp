@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-parallax-with-tilesprite",
+  "challengeOrder": [
+    {
+      "id": "66faa60000000000000000c7",
+      "title": "What tileSprite Does"
+    },
+    {
+      "id": "66faa60000000000000000c8",
+      "title": "Scroll Factors"
+    },
+    {
+      "id": "66faa60000000000000000c9",
+      "title": "Building a Layered Parallax Background"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

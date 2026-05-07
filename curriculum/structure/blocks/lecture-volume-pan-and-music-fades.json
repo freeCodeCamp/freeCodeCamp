@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-volume-pan-and-music-fades",
+  "challengeOrder": [
+    {
+      "id": "66faa70000000000000000a4",
+      "title": "Volume, Detune, and Rate"
+    },
+    {
+      "id": "66faa70000000000000000a5",
+      "title": "Stereo Pan with setPan"
+    },
+    {
+      "id": "66faa70000000000000000a6",
+      "title": "Crossfading Music"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

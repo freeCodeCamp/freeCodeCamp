@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-anatomy-of-a-juicy-hit",
+  "challengeOrder": [
+    {
+      "id": "66faa70000000000000000bb",
+      "title": "The Six-Stack Recipe"
+    },
+    {
+      "id": "66faa70000000000000000bc",
+      "title": "Hit-Pause Implementation"
+    },
+    {
+      "id": "66faa70000000000000000bd",
+      "title": "Building Restraint Into Juice"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

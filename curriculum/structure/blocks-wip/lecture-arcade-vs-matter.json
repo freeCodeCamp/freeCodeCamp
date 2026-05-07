@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-arcade-vs-matter",
+  "challengeOrder": [
+    {
+      "id": "66faa80000000000000000d9",
+      "title": "Arcade Physics vs Matter Physics"
+    },
+    {
+      "id": "66faa80000000000000000da",
+      "title": "When Each Is the Right Choice"
+    },
+    {
+      "id": "66faa80000000000000000db",
+      "title": "Switching Physics Per Scene"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

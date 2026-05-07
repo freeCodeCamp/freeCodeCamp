@@ -1,0 +1,14 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-brick-breaker",
+  "challengeOrder": [
+    {
+      "id": "66faab00000000000000000a",
+      "title": "Build a Brick Breaker"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

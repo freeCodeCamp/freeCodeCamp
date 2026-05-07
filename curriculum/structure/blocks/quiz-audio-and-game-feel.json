@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-audio-and-game-feel",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faac0000000000000000a6",
+      "title": "Audio and Game Feel Quiz"
+    }
+  ]
+}

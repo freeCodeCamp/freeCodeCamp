@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-static-groups-and-terrain",
+  "challengeOrder": [
+    {
+      "id": "66faa40000000000000000bb",
+      "title": "Static Groups Explained"
+    },
+    {
+      "id": "66faa40000000000000000bc",
+      "title": "Tile-Sized Platforms"
+    },
+    {
+      "id": "66faa40000000000000000bd",
+      "title": "When to Use a Static Group vs a Tilemap"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

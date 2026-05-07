@@ -100,7 +100,8 @@ export enum SuperBlocks {
   IntroductionToLinearDataStructuresInPython = 'introduction-to-linear-data-structures-in-python',
   LearnAlgorithmsInPython = 'learn-algorithms-in-python',
   LearnGraphsAndTreesInPython = 'learn-graphs-and-trees-in-python',
-  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python'
+  LearnDynamicProgrammingInPython = 'learn-dynamic-programming-in-python',
+  PhaserGameDev = 'certified-game-developer-with-phaser'
 }
 
 export const languageSuperBlocks = [
@@ -221,7 +222,8 @@ export const superBlockStages: StageMap = {
     SuperBlocks.FullStackOpen,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.PhaserGameDev
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -337,7 +339,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
     SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
+    SuperBlocks.FullStackDeveloperV9,
+    SuperBlocks.PhaserGameDev
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -373,7 +376,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
     SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
+    SuperBlocks.FullStackDeveloperV9,
+    SuperBlocks.PhaserGameDev
   ],
   [Languages.Korean]: []
 };
@@ -390,7 +394,8 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,
-  SuperBlocks.A1Chinese
+  SuperBlocks.A1Chinese,
+  SuperBlocks.PhaserGameDev
 ];
 Object.freeze(chapterBasedSuperBlocks);
 

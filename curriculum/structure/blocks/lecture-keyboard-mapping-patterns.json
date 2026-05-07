@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-keyboard-mapping-patterns",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faa30000000000000000c0",
+      "title": "Mapping Actions to Keys, Not Keys to Actions"
+    },
+    {
+      "id": "66faa30000000000000000c1",
+      "title": "Supporting Both Arrows and WASD"
+    },
+    {
+      "id": "66faa30000000000000000c2",
+      "title": "Remappable Controls"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-gravity-velocity-and-drag",
+  "challengeOrder": [
+    {
+      "id": "66faa40000000000000000a1",
+      "title": "World Gravity vs Body Gravity"
+    },
+    {
+      "id": "66faa40000000000000000a2",
+      "title": "Velocity, Acceleration, and Drag"
+    },
+    {
+      "id": "66faa40000000000000000a3",
+      "title": "Bounce, Friction, and Restitution"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

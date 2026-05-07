@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-player-control-and-input",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "66faac0000000000000000a2",
+      "title": "Player Control and Input Quiz"
+    }
+  ]
+}

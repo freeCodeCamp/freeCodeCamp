@@ -285,6 +285,7 @@ describe('certificate routes', () => {
             isB1EnglishCert: false,
             isBackEndCert: false,
             isBackEndDevApisCertV9: false,
+            isCertifiedGameDeveloperWithPhaserCert: false,
             isCollegeAlgebraPyCertV8: false,
             isDataAnalysisPyCertV7: false,
             isDataVisCert: false,

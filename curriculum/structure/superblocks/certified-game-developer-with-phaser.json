@@ -1,0 +1,218 @@
+{
+  "chapters": [
+    {
+      "dashedName": "phaser-foundations",
+      "modules": [
+        {
+          "dashedName": "phaser-game-loop-and-scenes",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "arcade-physics-and-input-basics",
+          "blocks": [
+            "learn-game-development-by-building-a-space-shooter-with-phaser"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-space-shooter-with-phaser",
+          "blocks": ["lab-space-shooter-with-phaser"]
+        }
+      ]
+    },
+    {
+      "dashedName": "sprites-and-animation",
+      "modules": [
+        {
+          "dashedName": "loading-sprite-sheets-and-atlases",
+          "blocks": [
+            "lecture-asset-pipeline-overview",
+            "lecture-loading-sprite-sheets",
+            "workshop-animated-character-explorer",
+            "lab-sprite-sheet-debugger"
+          ]
+        },
+        {
+          "dashedName": "depth-tinting-and-graphics",
+          "blocks": [
+            "lecture-depth-and-blend-modes",
+            "lecture-tinting-and-the-graphics-api",
+            "workshop-particle-pickup-effect",
+            "review-sprites-and-animation",
+            "quiz-sprites-and-animation"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "player-control-and-input",
+      "modules": [
+        {
+          "dashedName": "pointer-and-touch-input",
+          "blocks": [
+            "lecture-pointer-events",
+            "lecture-drag-swipe-and-gestures",
+            "workshop-touch-paddle-prototype"
+          ]
+        },
+        {
+          "dashedName": "keyboard-maps-and-virtual-controls",
+          "blocks": [
+            "lecture-keyboard-mapping-patterns",
+            "lecture-virtual-on-screen-controls",
+            "workshop-mobile-first-brick-breaker",
+            "review-player-control-and-input",
+            "quiz-player-control-and-input"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-brick-breaker",
+          "blocks": ["lab-brick-breaker"]
+        }
+      ]
+    },
+    {
+      "dashedName": "arcade-physics-deep-dive",
+      "modules": [
+        {
+          "dashedName": "gravity-drag-and-bouncy-bodies",
+          "blocks": [
+            "lecture-gravity-velocity-and-drag",
+            "lecture-colliders-vs-overlaps",
+            "workshop-bouncing-ball-lab"
+          ]
+        },
+        {
+          "dashedName": "static-groups-and-platformer-physics",
+          "blocks": [
+            "lecture-static-groups-and-terrain",
+            "lecture-body-offsets-and-collision-sides",
+            "lecture-coyote-time-and-jump-buffering",
+            "workshop-side-scrolling-platformer",
+            "review-arcade-physics-deep-dive",
+            "quiz-arcade-physics-deep-dive"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-platformer-level-1-1",
+          "blocks": ["lab-platformer-level-1-1"]
+        }
+      ]
+    },
+    {
+      "dashedName": "tilemaps-and-level-design",
+      "modules": [
+        {
+          "dashedName": "tilemap-fundamentals",
+          "blocks": [
+            "lecture-what-is-a-tilemap",
+            "lecture-loading-tiled-json-into-phaser",
+            "workshop-first-tile-room"
+          ]
+        },
+        {
+          "dashedName": "collision-layers-and-object-layers",
+          "blocks": [
+            "lecture-tile-collision-strategies",
+            "lecture-object-layers-for-game-logic",
+            "workshop-top-down-dungeon-explorer",
+            "review-tilemaps-and-level-design",
+            "quiz-tilemaps-and-level-design"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "camera-worlds-and-parallax",
+      "modules": [
+        {
+          "dashedName": "camera-fundamentals",
+          "blocks": [
+            "lecture-camera-follow-lerp-and-deadzone",
+            "lecture-world-bounds-and-camera-bounds",
+            "lecture-camera-shake-and-flash",
+            "workshop-camera-playground"
+          ]
+        },
+        {
+          "dashedName": "multi-camera-ui-and-parallax",
+          "blocks": [
+            "lecture-multi-camera-ui-overlays",
+            "lecture-parallax-with-tilesprite",
+            "workshop-side-scrolling-endless-runner",
+            "review-camera-worlds-and-parallax",
+            "quiz-camera-worlds-and-parallax"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-endless-runner",
+          "blocks": ["lab-endless-runner"]
+        }
+      ]
+    },
+    {
+      "dashedName": "audio-and-game-feel",
+      "modules": [
+        {
+          "dashedName": "audio-foundations",
+          "blocks": [
+            "lecture-loading-and-playing-audio",
+            "lecture-volume-pan-and-music-fades",
+            "workshop-soundboard"
+          ]
+        },
+        {
+          "dashedName": "game-feel-and-juice",
+          "blocks": [
+            "lecture-anatomy-of-a-juicy-hit",
+            "lecture-particles-with-emitters",
+            "workshop-arcade-brawler-with-juice",
+            "review-audio-and-game-feel",
+            "quiz-audio-and-game-feel"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "tweens-fx-and-matter-physics",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "tween-mastery-and-post-fx",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-tween-system-from-scratch",
+            "lecture-post-processing-pipelines",
+            "workshop-match-3-puzzle"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "ai-state-machines-and-game-systems",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "dashedName": "procgen-multiplayer-and-deployment",
+      "comingSoon": true,
+      "modules": []
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "certified-game-developer-with-phaser-exam",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "certified-game-developer-with-phaser-exam",
+          "comingSoon": true,
+          "blocks": ["exam-certified-game-developer-with-phaser"]
+        }
+      ]
+    }
+  ]
+}

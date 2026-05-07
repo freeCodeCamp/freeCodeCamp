@@ -1,0 +1,15 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-object-layers-for-game-logic",
+  "challengeOrder": [
+    { "id": "66faa50000000000000000c8", "title": "Object Layers as Game Data" },
+    { "id": "66faa50000000000000000c9", "title": "Reading Custom Properties" },
+    {
+      "id": "66faa50000000000000000ca",
+      "title": "Doors and Room Transitions"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

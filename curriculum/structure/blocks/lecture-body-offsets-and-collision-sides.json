@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-body-offsets-and-collision-sides",
+  "challengeOrder": [
+    {
+      "id": "66faa40000000000000000be",
+      "title": "Bodies Don't Have to Match Sprites"
+    },
+    {
+      "id": "66faa40000000000000000bf",
+      "title": "Reading body.touching and body.blocked"
+    },
+    {
+      "id": "66faa40000000000000000c0",
+      "title": "One-Way Platforms"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

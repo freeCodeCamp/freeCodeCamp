@@ -1,0 +1,21 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-multi-camera-ui-overlays",
+  "challengeOrder": [
+    {
+      "id": "66faa60000000000000000c4",
+      "title": "Why a Second Camera for UI"
+    },
+    {
+      "id": "66faa60000000000000000c5",
+      "title": "Excluding Game Objects from a Camera"
+    },
+    {
+      "id": "66faa60000000000000000c6",
+      "title": "Layering: Game Camera + UI Camera"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
