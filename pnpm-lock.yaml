@@ -881,8 +881,8 @@ importers:
         specifier: ^9.19.0
         version: 9.39.4
       '@html-eslint/eslint-plugin-react':
-        specifier: ^0.59.0
-        version: 0.59.0(eslint@9.39.4(jiti@2.6.1))
+        specifier: ^0.60.0
+        version: 0.60.0(eslint@9.39.4(jiti@2.6.1))
       '@vitest/eslint-plugin':
         specifier: ^1.4.3
         version: 1.6.16(@typescript-eslint/eslint-plugin@8.59.1(@typescript-eslint/parser@8.59.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)(vitest@4.1.5)
@@ -2819,18 +2819,18 @@ packages:
       react: ^16 || ^17 || ^18
       react-dom: ^16 || ^17 || ^18
 
-  '@html-eslint/core@0.59.0':
-    resolution: {integrity: sha512-/s5W9Iivmf2RXVzQlFboXQRqK62JQdKvcIdFMP5K1kxbVEJxha/VUo1Rafn1GKgLQsP5QIbUjoZbzGlN7fVxog==}
+  '@html-eslint/core@0.60.0':
+    resolution: {integrity: sha512-P2+ymEBt7EZ8sh1xc4XNA1/zSyDhSA1ppWyBBwPvGfY8VnDfmtd5UKr6AD24htABwzNJ6WcBIV3lAx5crtozfg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@html-eslint/eslint-plugin-react@0.59.0':
-    resolution: {integrity: sha512-ZfG0Bkmo+cExnB4wBBO805iRXZ06N752AGuf4pWYiqKobbV7M2PHbpjW8xIMQhkdT9YG+sO63IPK984qjVLxHA==}
+  '@html-eslint/eslint-plugin-react@0.60.0':
+    resolution: {integrity: sha512-iZ0pg/1mzX/mVYpGaUUtl1ZfAov5CFgst10uZKVamtOMNhKs5sr7wlA2QEoFyet+FC1x/485vnfYeV/Jil4ZPQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.0.0 || ^10.0.0-0'
 
-  '@html-eslint/types@0.59.0':
-    resolution: {integrity: sha512-YwNaTUQW5ObFFUohbGe1X0az2biDOH/6e6GR9VympbFUObUoWlXasGqRRMKi7IbxGPOZ8ucZK89ZWeAFm56Pwg==}
+  '@html-eslint/types@0.60.0':
+    resolution: {integrity: sha512-3PJaoNKK/xSTnRLPMz/6ZEr0Snr4GRjYIQJrw+nDMek1K0HstQ7KIqI7XswzT/S1kXT7B16gwXanCTjIPybjmw==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -16076,17 +16076,17 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@html-eslint/core@0.59.0':
+  '@html-eslint/core@0.60.0':
     dependencies:
-      '@html-eslint/types': 0.59.0
+      '@html-eslint/types': 0.60.0
       html-standard: 0.0.13
 
-  '@html-eslint/eslint-plugin-react@0.59.0(eslint@9.39.4(jiti@2.6.1))':
+  '@html-eslint/eslint-plugin-react@0.60.0(eslint@9.39.4(jiti@2.6.1))':
     dependencies:
-      '@html-eslint/core': 0.59.0
+      '@html-eslint/core': 0.60.0
       eslint: 9.39.4(jiti@2.6.1)
 
-  '@html-eslint/types@0.59.0':
+  '@html-eslint/types@0.60.0':
     dependencies:
       '@types/css-tree': 2.3.11
       '@types/estree': 1.0.8
