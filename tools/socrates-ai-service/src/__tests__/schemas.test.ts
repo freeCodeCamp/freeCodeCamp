@@ -1,10 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import {
-  requestSchema,
-  structuredOutputSchema,
-  errorResponseSchema,
-  successResponseSchema
-} from '../schemas.js';
+import { requestSchema, structuredOutputSchema } from '../schemas.js';
 import { loadEnv } from '../env.js';
 
 const validRequest = {
@@ -16,8 +11,12 @@ const validRequest = {
 };
 
 describe('requestSchema', () => {
-  test('accepts a fully populated valid payload', () => {
-    expect(requestSchema.safeParse(validRequest).success).toBe(true);
+  test('parses a valid payload into the expected shape', () => {
+    const parsed = requestSchema.safeParse(validRequest);
+    expect(parsed.success).toBe(true);
+    if (parsed.success) {
+      expect(parsed.data).toStrictEqual(validRequest);
+    }
   });
 
   test('rejects empty description', () => {
@@ -41,12 +40,11 @@ describe('requestSchema', () => {
 
 describe('structuredOutputSchema', () => {
   test('accepts a clean encouragement+question pair', () => {
-    expect(
-      structuredOutputSchema.safeParse({
-        encouragement: 'You named the heading correctly.',
-        question: 'What wraps the page name in the browser tab?'
-      }).success
-    ).toBe(true);
+    const parsed = structuredOutputSchema.safeParse({
+      encouragement: 'You named the heading correctly.',
+      question: 'What wraps the page name in the browser tab?'
+    });
+    expect(parsed.success).toBe(true);
   });
 
   test('rejects empty question', () => {
@@ -57,27 +55,13 @@ describe('structuredOutputSchema', () => {
     expect(result.success).toBe(false);
   });
 
-  test('rejects question longer than 400 chars (≤ 2 sentence cap)', () => {
+  test('rejects question longer than 400 chars', () => {
     const long = 'a'.repeat(401);
     const result = structuredOutputSchema.safeParse({
       encouragement: 'Nice.',
       question: long
     });
     expect(result.success).toBe(false);
-  });
-});
-
-describe('response schemas', () => {
-  test('successResponseSchema accepts a hint string', () => {
-    expect(
-      successResponseSchema.safeParse({ hint: 'Try again.' }).success
-    ).toBe(true);
-  });
-
-  test('errorResponseSchema accepts an error string', () => {
-    expect(
-      errorResponseSchema.safeParse({ error: 'no-attempt' }).success
-    ).toBe(true);
   });
 });
 
@@ -88,17 +72,21 @@ describe('loadEnv', () => {
       SOCRATES_API_KEY: 'something'
     });
     expect(env.PORT).toBe(4000);
-    expect(env.HOST).toBe('0.0.0.0');
+    expect(env.HOST).toBe('127.0.0.1');
     expect(env.MODEL_ID).toBe('claude-haiku-4-5-20251001');
+    expect(env.MODEL_TIMEOUT_MS).toBe(15_000);
+    expect(env.BODY_LIMIT_BYTES).toBe(256 * 1024);
   });
 
-  test('coerces PORT from string', () => {
+  test('coerces PORT and MODEL_TIMEOUT_MS from string', () => {
     const env = loadEnv({
       ANTHROPIC_API_KEY: 'k',
       SOCRATES_API_KEY: 's',
-      PORT: '4100'
+      PORT: '4100',
+      MODEL_TIMEOUT_MS: '8000'
     });
     expect(env.PORT).toBe(4100);
+    expect(env.MODEL_TIMEOUT_MS).toBe(8000);
   });
 
   test('throws when ANTHROPIC_API_KEY is missing', () => {

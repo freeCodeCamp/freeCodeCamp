@@ -5,6 +5,7 @@ import type { GenerateFn } from './hint.js';
 export type AnthropicConfig = {
   readonly apiKey: string;
   readonly modelId: string;
+  readonly timeoutMs: number;
 };
 
 export const createAnthropicGenerator = (config: AnthropicConfig): GenerateFn => {
@@ -16,7 +17,8 @@ export const createAnthropicGenerator = (config: AnthropicConfig): GenerateFn =>
       model,
       system,
       prompt,
-      output: Output.object({ schema })
+      output: Output.object({ schema }),
+      abortSignal: AbortSignal.timeout(config.timeoutMs)
     });
     return result.output;
   };

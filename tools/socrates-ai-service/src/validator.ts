@@ -12,20 +12,29 @@ export type SafetyResult =
   | { readonly ok: false; readonly reason: Violation };
 
 const CODE_FENCE = /```/;
+const INLINE_CODE = /`[^`\n]+`/;
+const INDENTED_CODE = /(^|\n) {4,}\S/;
 const HTML_TAG_RE = /<\/?[a-zA-Z][a-zA-Z0-9-]*/g;
 const SEED_TAG_RE = /<\/?([a-zA-Z][a-zA-Z0-9-]*)/g;
+const ENTITY_LT = /&lt;/gi;
+const ENTITY_GT = /&gt;/gi;
+
+const decodeEntities = (text: string): string =>
+  text.replace(ENTITY_LT, '<').replace(ENTITY_GT, '>');
 
 export const containsCodeBlock = (text: string): boolean =>
-  CODE_FENCE.test(text);
+  CODE_FENCE.test(text) ||
+  INLINE_CODE.test(text) ||
+  INDENTED_CODE.test(text);
 
 export const countHtmlOpeners = (text: string): number => {
-  const m = text.match(HTML_TAG_RE);
+  const m = decodeEntities(text).match(HTML_TAG_RE);
   return m === null ? 0 : m.length;
 };
 
 const extractTagNames = (source: string): ReadonlySet<string> => {
   const out = new Set<string>();
-  for (const m of source.matchAll(SEED_TAG_RE)) {
+  for (const m of decodeEntities(source).matchAll(SEED_TAG_RE)) {
     const name = m[1]?.toLowerCase();
     if (name !== undefined) out.add(name);
   }
@@ -42,7 +51,7 @@ export const echoesSeedAnswer = (
   for (const t of seedTags) if (!userTags.has(t)) missing.add(t);
   if (missing.size === 0) return false;
 
-  const lower = output.toLowerCase();
+  const lower = decodeEntities(output).toLowerCase();
   for (const tag of missing) {
     if (lower.includes(`<${tag}`) || lower.includes(`</${tag}`)) {
       return true;
@@ -61,10 +70,9 @@ export const isPedagogySafe = (
   const combined = `${output.encouragement}\n${output.question}`;
 
   if (containsCodeBlock(combined)) return { ok: false, reason: 'code-block' };
-  if (countHtmlOpeners(output.question) >= 2)
+  if (countHtmlOpeners(combined) >= 2)
     return { ok: false, reason: 'multi-tag' };
-  if (sentenceCount(output.question) > 2)
-    return { ok: false, reason: 'too-long' };
+  if (sentenceCount(combined) > 3) return { ok: false, reason: 'too-long' };
   if (echoesSeedAnswer(combined, payload))
     return { ok: false, reason: 'answer-echo' };
 

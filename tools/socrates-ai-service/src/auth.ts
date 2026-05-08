@@ -23,7 +23,7 @@ export const requireApiKey = (expected: string): preHandlerHookHandler => {
   return async (req: FastifyRequest, reply: FastifyReply): Promise<void> => {
     const provided = headerToString(req.headers[HEADER]);
     if (!provided || !equalsConstantTime(provided, expected)) {
-      await reply.code(401).send({ error: 'unauthorized' });
+      return reply.code(401).send({ error: 'unauthorized' });
     }
   };
 };

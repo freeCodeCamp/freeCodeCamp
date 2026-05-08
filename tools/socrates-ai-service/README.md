@@ -58,11 +58,23 @@ cp .env.sample .env
 pnpm dev
 ```
 
-Defaults bind `127.0.0.1:4000`, so it does not collide with the api on
-:3000 or the client on :8000. The repo-root `sample.env` has
+Defaults bind `127.0.0.1:4000`, so the service does not collide with the api
+on :3000 or the client on :8000. The repo-root `sample.env` has
 `SOCRATES_ENDPOINT=https://localhost:4000` — for local dev set your repo-root
 `.env` to `SOCRATES_ENDPOINT=http://localhost:4000` (plain http) so the api
 proxy can reach the service.
+
+### Environment variables
+
+| Var | Default | Purpose |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | — | Anthropic key. Required. |
+| `SOCRATES_API_KEY` | — | Shared secret with the api proxy. Required. |
+| `MODEL_ID` | `claude-haiku-4-5-20251001` | The Anthropic model. |
+| `MODEL_TIMEOUT_MS` | `15000` | Per-call timeout for `generateText`. |
+| `BODY_LIMIT_BYTES` | `262144` | Hard cap on request bodies. |
+| `HOST` | `127.0.0.1` | Bind address. |
+| `PORT` | `4000` | Bind port. |
 
 ### Smoke test (no live model)
 

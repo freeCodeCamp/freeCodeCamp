@@ -13,7 +13,7 @@ export class PedagogyViolationError extends Error {
   }
 }
 
-export type GenerateArgs = {
+type GenerateArgs = {
   readonly system: string;
   readonly prompt: string;
   readonly schema: ZodType<StructuredOutput>;

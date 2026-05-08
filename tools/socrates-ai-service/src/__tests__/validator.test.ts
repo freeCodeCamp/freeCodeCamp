@@ -22,7 +22,7 @@ describe('isPedagogySafe', () => {
     expect(result).toStrictEqual({ ok: true });
   });
 
-  test('rejects fenced code blocks', () => {
+  test('rejects fenced code blocks anywhere in the output', () => {
     const result = isPedagogySafe(
       {
         encouragement: 'You started with `<h1>` correctly.',
@@ -33,11 +33,33 @@ describe('isPedagogySafe', () => {
     expect(result).toStrictEqual({ ok: false, reason: 'code-block' });
   });
 
-  test('rejects multi-tag spans in the question', () => {
+  test('rejects single-backtick inline code', () => {
     const result = isPedagogySafe(
       {
-        encouragement: 'Nice heading.',
-        question: 'Have you tried <title>Cat Photo App</title>?'
+        encouragement: 'Nice work.',
+        question: 'What goes between `<head>` and `</head>`?'
+      },
+      baseRequest
+    );
+    expect(result).toStrictEqual({ ok: false, reason: 'code-block' });
+  });
+
+  test('rejects 4-space-indented code blocks', () => {
+    const result = isPedagogySafe(
+      {
+        encouragement: 'Nice.',
+        question: 'Try:\n    <title>Cat Photo App</title>\nin the head.'
+      },
+      baseRequest
+    );
+    expect(result).toStrictEqual({ ok: false, reason: 'code-block' });
+  });
+
+  test('rejects multi-tag spans even when only encouragement carries them', () => {
+    const result = isPedagogySafe(
+      {
+        encouragement: 'Mirror the head with <title>Cat Photo App</title>.',
+        question: 'What labels the browser tab?'
       },
       baseRequest
     );
@@ -55,6 +77,17 @@ describe('isPedagogySafe', () => {
     expect(result).toStrictEqual({ ok: false, reason: 'answer-echo' });
   });
 
+  test('rejects HTML-entity-encoded echo of a missing seed tag', () => {
+    const result = isPedagogySafe(
+      {
+        encouragement: 'Nice h1.',
+        question: 'Did you forget the &lt;title&gt; element?'
+      },
+      baseRequest
+    );
+    expect(result.ok).toBe(false);
+  });
+
   test('allows naming a tag the learner already wrote', () => {
     const result = isPedagogySafe(
       {
@@ -70,7 +103,7 @@ describe('isPedagogySafe', () => {
     expect(result).toStrictEqual({ ok: true });
   });
 
-  test('rejects question with more than 2 sentences', () => {
+  test('rejects output with more than 3 sentences total', () => {
     const result = isPedagogySafe(
       {
         encouragement: 'Good start.',

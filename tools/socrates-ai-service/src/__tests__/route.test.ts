@@ -60,6 +60,22 @@ describe('POST /hint', () => {
     await app.close();
   });
 
+  test('401 when x-api-key is present but wrong, model never called', async () => {
+    const generate = vi.fn();
+    const app = buildApp(generate);
+    const res = await app.inject({
+      method: 'POST',
+      url: '/hint',
+      headers: { 'x-api-key': 'nope!!', 'content-type': 'application/json' },
+      payload: JSON.stringify(validBody)
+    });
+
+    expect(res.statusCode).toBe(401);
+    expect(res.json()).toStrictEqual({ error: 'unauthorized' });
+    expect(generate).not.toHaveBeenCalled();
+    await app.close();
+  });
+
   test('400 no-attempt when userInput is empty', async () => {
     const generate = vi.fn();
     const app = buildApp(generate);

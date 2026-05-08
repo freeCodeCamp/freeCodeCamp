@@ -49,16 +49,24 @@ describe('generateHint', () => {
     expect(generate.mock.calls[1]?.[0]?.system).toBe(STRICTER_SYSTEM_PROMPT);
   });
 
-  test('throws PedagogyViolationError when both calls violate', async () => {
+  test('throws PedagogyViolationError carrying the violator reason when both calls fail', async () => {
     const generate = vi
       .fn()
       .mockResolvedValueOnce(violatingOutput)
       .mockResolvedValueOnce(violatingOutput);
 
-    await expect(generateHint(payload, { generate })).rejects.toBeInstanceOf(
-      PedagogyViolationError
-    );
+    await expect(generateHint(payload, { generate })).rejects.toMatchObject({
+      name: 'PedagogyViolationError',
+      reason: 'code-block'
+    });
     expect(generate).toHaveBeenCalledTimes(2);
+  });
+
+  test('propagates non-pedagogy errors unchanged', async () => {
+    const boom = new Error('upstream-down');
+    const generate = vi.fn().mockRejectedValueOnce(boom);
+    await expect(generateHint(payload, { generate })).rejects.toBe(boom);
+    expect(PedagogyViolationError).toBeDefined();
   });
 
   test('concat collapses internal whitespace and trims edges', async () => {

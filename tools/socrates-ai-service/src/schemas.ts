@@ -14,7 +14,6 @@ export const requestSchema = z.object({
 });
 
 export type HintRequest = z.infer<typeof requestSchema>;
-export type FailingHint = z.infer<typeof hintSchema>;
 
 export const structuredOutputSchema = z.object({
   encouragement: z
@@ -28,14 +27,3 @@ export const structuredOutputSchema = z.object({
 });
 
 export type StructuredOutput = z.infer<typeof structuredOutputSchema>;
-
-export const successResponseSchema = z.object({
-  hint: z.string().min(1)
-});
-
-export const errorResponseSchema = z.object({
-  error: z.string().min(1)
-});
-
-export type SuccessResponse = z.infer<typeof successResponseSchema>;
-export type ErrorResponse = z.infer<typeof errorResponseSchema>;
