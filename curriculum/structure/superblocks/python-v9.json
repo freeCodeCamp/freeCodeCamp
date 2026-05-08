@@ -26,7 +26,10 @@
         },
         {
           "dashedName": "python-installation",
-          "blocks": ["lecture-python-installation"]
+          "blocks": [
+            "lecture-python-installation",
+            "review-python-installation"
+          ]
         },
         {
           "dashedName": "python-loops-and-sequences",
