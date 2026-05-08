@@ -6444,6 +6444,18 @@
           "In these lessons, you will learn how to install Python on your local device and run code locally."
         ]
       },
+      "review-python-installation": {
+        "title": "Python Installation Review",
+        "intro": [
+          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+        ]
+      },
+      "quiz-python-installation": {
+        "title": "Python Installation Quiz",
+        "intro": [
+          "Test what you've learned about installing Python locally with this quiz."
+        ]
+      },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
         "intro": [
@@ -6811,12 +6823,6 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
-      },
-      "review-python-installation": {
-        "title": "Python Installation Review",
-        "intro": [
-          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
-        ]
       }
     }
   },

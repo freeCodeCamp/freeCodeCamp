@@ -28,7 +28,8 @@
           "dashedName": "python-installation",
           "blocks": [
             "lecture-python-installation",
-            "review-python-installation"
+            "review-python-installation",
+            "quiz-python-installation"
           ]
         },
         {
