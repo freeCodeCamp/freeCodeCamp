@@ -7,7 +7,7 @@ test.describe('Tool Panel', () => {
       '/learn/responsive-web-design/responsive-web-design-principles/create-a-media-query'
     );
   });
-  test('should display "//running tests" in console after clicking "Run the Tests (Ctrl+Enter)" button', async ({
+  test('should display "//running tests" in console after clicking "Check Your Code (Ctrl+Enter)" button', async ({
     page,
     isMobile
   }) => {
