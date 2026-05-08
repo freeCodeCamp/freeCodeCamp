@@ -11,6 +11,7 @@ packages:
   - 'tools/daily-challenges'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
+  - 'tools/socrates-ai-service'
   - 'packages/*'
 
 # Disable until we can enable this again.

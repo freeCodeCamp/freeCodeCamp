@@ -1,0 +1,30 @@
+{
+  "name": "@freecodecamp/socrates-ai-service",
+  "version": "0.0.1",
+  "description": "The AI hint service the freeCodeCamp api proxies to at SOCRATES_ENDPOINT/hint. Generates Socratic, no-spoiler hints via Anthropic + the Vercel AI SDK.",
+  "private": true,
+  "type": "module",
+  "main": "dist/server.js",
+  "license": "BSD-3-Clause",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "*",
+    "ai": "*",
+    "dotenv": "16.6.1",
+    "fastify": "5.8.5",
+    "zod": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.8",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "vitest": "^4.0.15"
+  }
+}
