@@ -6324,6 +6324,7 @@
     },
     "modules": {
       "python-basics": "Python Basics",
+      "python-installation": "Install Python",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
