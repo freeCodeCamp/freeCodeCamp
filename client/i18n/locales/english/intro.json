@@ -6438,6 +6438,12 @@
           "Test what you've learned about Python basics with this quiz."
         ]
       },
+      "lecture-python-installation": {
+        "title": "Installing Python and Running Code Locally",
+        "intro": [
+          "In these lessons, you will learn how to install Python on your local device and run code locally."
+        ]
+      },
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
         "intro": [
