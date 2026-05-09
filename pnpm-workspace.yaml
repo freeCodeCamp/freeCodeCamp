@@ -21,7 +21,7 @@ minimumReleaseAge: 10080
 
 overrides:
   # Pin transitive deps to mature releases so Renovate can refresh lockfiles.
-  caniuse-lite: 1.0.30001790
+  caniuse-lite: 1.0.30001791
 
 packageExtensions:
   '@testing-library/jest-dom':

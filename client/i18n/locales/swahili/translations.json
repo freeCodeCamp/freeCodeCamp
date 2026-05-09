@@ -125,6 +125,7 @@
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -1421,7 +1422,8 @@
     "too-long-three": "Tafadhali nakili/ubandike msimbo wote wa kihariri unaoonyeshwa kwenye shindano ambapo umeunganisha.",
     "add-code-one": "Badilisha sentensi hizi mbili na msimbo wako ulionakiliwa.",
     "add-code-two": "Tafadhali acha mstari wa ``` hapo juu na mstari wa ``` chini,",
-    "add-code-three": "kwa sababu zinaruhusu msimbo wako kufomati vizuri kwenye chapisho."
+    "add-code-three": "kwa sababu zinaruhusu msimbo wako kufomati vizuri kwenye chapisho.",
+    "git-info": "Github Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Tokeni ya Mtumiaji",

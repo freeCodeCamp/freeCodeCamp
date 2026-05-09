@@ -9,6 +9,16 @@
   "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
+      "matchCurrentVersion": "/^0\\./",
+      "matchUpdateTypes": ["minor", "patch"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "groupName": "weekly-cadence",
+      "matchPackageNames": ["typebox"],
+      "extends": ["schedule:weekly"]
+    },
+    {
       "groupName": "types",
       "matchPackageNames": ["@types/**"]
     },

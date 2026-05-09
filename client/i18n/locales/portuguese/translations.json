@@ -125,6 +125,7 @@
     "sign-in-with-google": "Faça login com o Google",
     "go-to-dcc-today": "Vá para o desafio diário",
     "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário",
+    "challenge-source": "View Challenge Source",
     "outline": "Resumo"
   },
   "daily-coding-challenges": {
@@ -1421,7 +1422,8 @@
     "too-long-three": "Copie e cole todo o código do editor mostrado no desafio de onde você acaba de fazer o link.",
     "add-code-one": "Substitua essas duas frases pelo código que você copiou.",
     "add-code-two": "Deixe as linhas com ``` acima e ``` abaixo de seu código,",
-    "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação."
+    "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação.",
+    "git-info": "Github Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuário",
