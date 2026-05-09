@@ -113,6 +113,10 @@
       "prisma",
       "puppeteer",
       "unrs-resolver"
-    ]
+    ],
+    "patchedDependencies": {
+      "@codesandbox/sandpack-react@2.20.0": "patches/@codesandbox__sandpack-react@2.20.0.patch",
+      "@codesandbox/sandpack-client@2.19.8": "patches/@codesandbox__sandpack-client@2.19.8.patch"
+    }
   }
 }

@@ -9,6 +9,14 @@ overrides:
 
 packageExtensionsChecksum: sha256-pFEExG4o57joHucsVi/dgGpp9BfdxYD7y4blLQUpCqI=
 
+patchedDependencies:
+  '@codesandbox/sandpack-client@2.19.8':
+    hash: 4f74559f47f05a5784e4719d64beef186ecad37659fbab444846a9e915e170d2
+    path: patches/@codesandbox__sandpack-client@2.19.8.patch
+  '@codesandbox/sandpack-react@2.20.0':
+    hash: a5e9960df35107f9ff9137f4895e50d3cb0d1abf1e7925085173ff73412bef60
+    path: patches/@codesandbox__sandpack-react@2.20.0.patch
+
 importers:
 
   .:
@@ -269,7 +277,7 @@ importers:
         version: 7.23.3(@babel/core@7.28.5)
       '@codesandbox/sandpack-react':
         specifier: 2.20.0
-        version: 2.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 2.20.0(patch_hash=a5e9960df35107f9ff9137f4895e50d3cb0d1abf1e7925085173ff73412bef60)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@codesandbox/sandpack-themes':
         specifier: 2.0.21
         version: 2.0.21
@@ -15427,7 +15435,7 @@ snapshots:
       outvariant: 1.4.3
       strict-event-emitter: 0.4.6
 
-  '@codesandbox/sandpack-client@2.19.8':
+  '@codesandbox/sandpack-client@2.19.8(patch_hash=4f74559f47f05a5784e4719d64beef186ecad37659fbab444846a9e915e170d2)':
     dependencies:
       '@codesandbox/nodebox': 0.1.8
       buffer: 6.0.3
@@ -15436,7 +15444,7 @@ snapshots:
       outvariant: 1.4.0
       static-browser-server: 1.0.3
 
-  '@codesandbox/sandpack-react@2.20.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@codesandbox/sandpack-react@2.20.0(patch_hash=a5e9960df35107f9ff9137f4895e50d3cb0d1abf1e7925085173ff73412bef60)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@codemirror/autocomplete': 6.19.0
       '@codemirror/commands': 6.8.1
@@ -15446,7 +15454,7 @@ snapshots:
       '@codemirror/language': 6.11.3
       '@codemirror/state': 6.5.2
       '@codemirror/view': 6.38.4
-      '@codesandbox/sandpack-client': 2.19.8
+      '@codesandbox/sandpack-client': 2.19.8(patch_hash=4f74559f47f05a5784e4719d64beef186ecad37659fbab444846a9e915e170d2)
       '@lezer/highlight': 1.2.1
       '@react-hook/intersection-observer': 3.1.2(react@18.3.1)
       '@stitches/core': 1.2.8

@@ -1,0 +1,60 @@
+diff --git a/dist/index.js b/dist/index.js
+index 9e421177457a32af477c692fa4aa5a3ad6ebcab3..d7a06515e3ef108386749c7eeaa03772d9cca80e 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -5201,8 +5201,8 @@ var objectToString = function (output, references, level) {
+     if (level > MAX_NEST_LEVEL) {
+         return constructorName;
+     }
+-    var entries = Object.entries(output);
+-    var formattedObject = Object.entries(output).reduce(function (acc, _a, index) {
++    var entries = Object.entries(output).filter(function(e){return e[0]!=="constructor";});
++    var formattedObject = entries.reduce(function (acc, _a, index) {
+         var key = _a[0], value = _a[1];
+         var comma = index === 0 ? "" : ", ";
+         var breakLine = entries.length > 10 ? "\n  " : "";
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 62e2cb8c1af02e97084ac178ef81e72ffdec3f7c..833cd6ffbb67a4baaacbd37efefa527823f90e63 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -5174,8 +5174,8 @@ var objectToString = function (output, references, level) {
+     if (level > MAX_NEST_LEVEL) {
+         return constructorName;
+     }
+-    var entries = Object.entries(output);
+-    var formattedObject = Object.entries(output).reduce(function (acc, _a, index) {
++    var entries = Object.entries(output).filter(function(e){return e[0]!=="constructor";});
++    var formattedObject = entries.reduce(function (acc, _a, index) {
+         var key = _a[0], value = _a[1];
+         var comma = index === 0 ? "" : ", ";
+         var breakLine = entries.length > 10 ? "\n  " : "";
+diff --git a/dist/unstyled/index.js b/dist/unstyled/index.js
+index 016ec52514e40356da9286c4f0f13a3cf2b1c51d..967b64d4a99fcb34811a64fdc5fcd0fb229102c2 100644
+--- a/dist/unstyled/index.js
++++ b/dist/unstyled/index.js
+@@ -5304,8 +5304,8 @@ var objectToString = function (output, references, level) {
+   if (level > MAX_NEST_LEVEL) {
+     return constructorName;
+   }
+-  var entries = Object.entries(output);
+-  var formattedObject = Object.entries(output).reduce(function (acc, _a, index) {
++  var entries = Object.entries(output).filter(function(e){return e[0]!=="constructor";});
++  var formattedObject = entries.reduce(function (acc, _a, index) {
+     var key = _a[0], value = _a[1];
+     var comma = index === 0 ? "" : ", ";
+     var breakLine = entries.length > 10 ? "\n  " : "";
+diff --git a/dist/unstyled/index.mjs b/dist/unstyled/index.mjs
+index 0f8ae52f4a713a7e3c9061d7c0cf45756e4faf76..f96bd04d8d3b8eeff364f1723f57548211510c93 100644
+--- a/dist/unstyled/index.mjs
++++ b/dist/unstyled/index.mjs
+@@ -5277,8 +5277,8 @@ var objectToString = function (output, references, level) {
+   if (level > MAX_NEST_LEVEL) {
+     return constructorName;
+   }
+-  var entries = Object.entries(output);
+-  var formattedObject = Object.entries(output).reduce(function (acc, _a, index) {
++  var entries = Object.entries(output).filter(function(e){return e[0]!=="constructor";});
++  var formattedObject = entries.reduce(function (acc, _a, index) {
+     var key = _a[0], value = _a[1];
+     var comma = index === 0 ? "" : ", ";
+     var breakLine = entries.length > 10 ? "\n  " : "";
