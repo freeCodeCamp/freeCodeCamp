@@ -1,29 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>freecodecamp/renovate-config"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "extends": ["schedule:weekly"],
-    "automerge": true
-  },
-  "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
-    {
-      "description": "Hold 0.x minor/patch updates for manual review (semver pre-1.0 instability).",
-      "matchCurrentVersion": "/^0\\./",
-      "matchUpdateTypes": ["minor", "patch"],
-      "dependencyDashboardApproval": true
-    },
     {
       "description": "Keep typebox on a weekly cadence to avoid noisy daily PRs.",
       "groupName": "weekly-cadence",
       "matchPackageNames": ["typebox"],
       "extends": ["schedule:weekly"]
-    },
-    {
-      "description": "Generic types bucket. More-specific framework groups below override this for overlapping packages (last-match-wins).",
-      "groupName": "types",
-      "matchPackageNames": ["@types/**"]
     },
     {
       "description": "ESLint core, plugins, and TS-ESLint move together because plugin/parser versions are tightly bound to the ESLint major.",
@@ -196,10 +179,6 @@
         "webpack-bundle-analyzer",
         "babel-loader"
       ]
-    },
-    {
-      "matchPackageNames": ["node", "pnpm", "typescript"],
-      "dependencyDashboardApproval": true
     }
   ]
 }
