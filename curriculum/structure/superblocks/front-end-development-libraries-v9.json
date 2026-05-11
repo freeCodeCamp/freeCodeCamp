@@ -79,7 +79,6 @@
         },
         {
           "dashedName": "typescript-fundamentals",
-          "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
             "workshop-type-safe-user-profile",
