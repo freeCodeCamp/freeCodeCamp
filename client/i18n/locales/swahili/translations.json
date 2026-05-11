@@ -1423,7 +1423,7 @@
     "add-code-one": "Badilisha sentensi hizi mbili na msimbo wako ulionakiliwa.",
     "add-code-two": "Tafadhali acha mstari wa ``` hapo juu na mstari wa ``` chini,",
     "add-code-three": "kwa sababu zinaruhusu msimbo wako kufomati vizuri kwenye chapisho.",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Tokeni ya Mtumiaji",

@@ -5743,22 +5743,21 @@
       "performance": "성능",
       "testing": "테스팅",
       "css-libraries-and-frameworks": "CSS 라이브러리와 프레임워크",
-      "data-visualization": "데이터 시각화와 D3",
       "typescript-fundamentals": "TypeScript 기초",
+      "data-visualization": "데이터 시각화와 D3",
       "review-front-end-libraries": "프론트엔드 라이브러리 복습",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
+        ]
+      },
       "data-visualization": {
         "note": "2026년 예정",
         "intro": [
           "이 모듈에서는 데이터 시각화를 소개하고 D3 라이브러리를 다루는 방법을 배우세요."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "2026년 예정",
-        "intro": [
-          "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6011,20 +6010,6 @@
           "이 퀴즈로 CSS 라이브러리와 프레임워크에 대해 배운 내용을 확인하세요."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "데이터 시각화 소개",
-        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
-      },
-      "lab-bar-chart": {
-        "title": "막대 그래프 만들기",
-        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "산점도 그래프 만들기",
-        "intro": [
-          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "TypeScript 소개",
         "intro": [
@@ -6117,6 +6102,20 @@
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "데이터 시각화 소개",
+        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
+      },
+      "lab-bar-chart": {
+        "title": "막대 그래프 만들기",
+        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "산점도 그래프 만들기",
+        "intro": [
+          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
+        ]
       },
       "review-front-end-libraries": {
         "title": "프론트엔드 라이브러리 복습",

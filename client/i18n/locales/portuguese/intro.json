@@ -5953,22 +5953,21 @@
       "performance": "Desempenho",
       "testing": "Testes",
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
-      "data-visualization": "Visualização de dados e D3",
       "typescript-fundamentals": "Fundamentos do TypeScript",
+      "data-visualization": "Visualização de dados e D3",
       "review-front-end-libraries": "Revisão sobre bibliotecas Front-end",
       "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
+        ]
+      },
       "data-visualization": {
         "note": "Próximo Lançamento: 2026",
         "intro": [
           "Neste módulo, você conhecerá a visualização de dados e aprenderá a trabalhar com a biblioteca D3."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Próximo Lançamento: 2026",
-        "intro": [
-          "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6239,24 +6238,6 @@
           "Teste o que você aprendeu sobre Bibliotecas e Frameworks CSS com este questionário."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introdução à visualização de dados",
-        "intro": [
-          "Nestas aulas, você aprenderá sobre conceitos básicos de visualização de dados."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Crie um Gráfico de Barras",
-        "intro": [
-          "Neste laboratório, você usará d3 para criar um gráfico de barras."
-        ]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Crie um gráfico de dispersão",
-        "intro": [
-          "Neste laboratório você criará um gráfico de dispersão em d3 usando um conjunto de dados fornecido."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Introdução ao TypeScript",
         "intro": [
@@ -6351,6 +6332,24 @@
       "quiz-typescript": {
         "title": "Questionário sobre TypeScript",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introdução à visualização de dados",
+        "intro": [
+          "Nestas aulas, você aprenderá sobre conceitos básicos de visualização de dados."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Crie um Gráfico de Barras",
+        "intro": [
+          "Neste laboratório, você usará d3 para criar um gráfico de barras."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Crie um gráfico de dispersão",
+        "intro": [
+          "Neste laboratório você criará um gráfico de dispersão em d3 usando um conjunto de dados fornecido."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Revisão sobre Bibliotecas Front-end",
