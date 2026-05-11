@@ -5,7 +5,9 @@ const runChallengeTest = async (page: Page, isMobile: boolean) => {
   if (isMobile) {
     await page.getByText('Run').click();
   } else {
-    await page.getByText('Run the Tests (Ctrl + Enter)').click();
+    await page
+      .getByRole('button', { name: translations.buttons['check-code'] })
+      .click();
   }
 };
 

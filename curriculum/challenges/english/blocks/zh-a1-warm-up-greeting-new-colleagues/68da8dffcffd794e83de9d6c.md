@@ -44,7 +44,7 @@ This form is not standard in Chinese.
 
 ### --feedback--
 
-This also means "Hello, everyone.", but Chen Na uses a different phrase.
+This also means "Hello, everyone", but Chen Na uses a different phrase.
 
 ## --video-solution--
 

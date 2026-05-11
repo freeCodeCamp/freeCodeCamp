@@ -51,10 +51,6 @@ export const toggleTheme = createAction(actionTypes.toggleTheme);
 export const setTheme = createAction(actionTypes.setTheme);
 export const initializeTheme = createAction(actionTypes.initializeTheme);
 
-export const updateAllChallengesInfo = createAction(
-  actionTypes.updateAllChallengesInfo
-);
-
 export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(
   actionTypes.postChargeProcessing
@@ -84,6 +80,7 @@ export const reportUserComplete = createAction(actionTypes.reportUserComplete);
 export const reportUserError = createAction(actionTypes.reportUserError);
 
 export const resetUserData = createAction(actionTypes.resetUserData);
+export const routeUpdated = createAction(actionTypes.routeUpdated);
 
 export const showCert = createAction(actionTypes.showCert);
 export const showCertComplete = createAction(actionTypes.showCertComplete);

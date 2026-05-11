@@ -4,11 +4,16 @@ const position = require('unist-util-position');
 
 const getId = require('./get-id');
 
-const keyToSection = {
-  head: 'before-user-code',
-  tail: 'after-user-code'
-};
-const supportedLanguages = ['js', 'css', 'html', 'jsx', 'py', 'ts', 'tsx'];
+const supportedLanguages = [
+  'js',
+  'css',
+  'html',
+  'jsx',
+  'py',
+  'ts',
+  'tsx',
+  'json'
+];
 const longToShortLanguages = {
   javascript: 'js',
   typescript: 'ts',
@@ -20,8 +25,6 @@ function defaultFile(lang, id) {
     ext: lang,
     name: getFilenames(lang),
     contents: '',
-    head: '',
-    tail: '',
     id
   };
 }
@@ -30,7 +33,8 @@ function getFilenames(lang) {
   const langToFilename = {
     js: 'script',
     css: 'styles',
-    py: 'main'
+    py: 'main',
+    json: 'tsconfig'
   };
   return langToFilename[lang] ?? 'index';
 }
@@ -64,11 +68,6 @@ function codeToData(node, seeds, seedKey, validate) {
   if (!seeds[fileId]) {
     seeds[fileId] = defaultFile(shortLang, id);
   }
-  if (isEmpty(node.value) && seedKey !== 'contents') {
-    const section = keyToSection[seedKey];
-    throw Error(`Empty code block in --${section}-- section`);
-  }
-
   seeds[fileId][seedKey] = isEmpty(seeds[fileId][seedKey])
     ? node.value
     : seeds[fileId][seedKey] + '\n' + node.value;

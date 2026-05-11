@@ -54,9 +54,9 @@ No, but it should still be fixed.
 
 `It's not a big deal` means the problem is not serious. For example:
 
-- Person 1: `I can't join the meeting today.`
+- **Monica:** `I can't join the meeting today.`
 
-- Person 2: `It's not a big deal. I'll take notes for you.` - Missing the meeting is okay, and this person can help.
+- **Eva:** `It's not a big deal. I'll take notes for you.` - Missing the meeting is okay, and this person can help.
 
 Sophie also says `we should fix it before it causes problems`, meaning it's better to fix it now before it becomes serious.
 

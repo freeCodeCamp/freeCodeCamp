@@ -5,11 +5,11 @@ test.describe('Super Block Page - Authenticated User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test.describe('Super Block in List View', () => {

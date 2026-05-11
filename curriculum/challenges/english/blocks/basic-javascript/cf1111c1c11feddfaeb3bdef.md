@@ -42,12 +42,6 @@ assert(/\+/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return 'sum = '+z;})(sum);
-```
-
 ## --seed-contents--
 
 ```js

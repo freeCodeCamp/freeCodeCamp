@@ -1,7 +1,7 @@
-// TODO: This might be cleaner as a class.
-import pythonWorkerData from '../../../../config/browser-scripts/python-worker.json';
+import { version } from '@freecodecamp/browser-scripts/package.json';
 
-const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
+// TODO: This might be cleaner as a class.
+const pythonWorkerSrc = `/js/workers/${version}/python-worker.js`;
 
 let worker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;

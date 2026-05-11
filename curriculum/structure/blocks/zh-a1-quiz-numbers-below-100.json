@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-quiz-numbers-below-100",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "697adc426b8d5ed66d1e8b97",
+      "title": "Numbers below 100 Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

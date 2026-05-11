@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
+  // Prevent the mobile app modal from appearing and interfering with the test
+  await page.addInitScript(() => {
+    localStorage.setItem('hideMobileAppModal', 'true');
+  });
   await page.goto(
     '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-2'
   );

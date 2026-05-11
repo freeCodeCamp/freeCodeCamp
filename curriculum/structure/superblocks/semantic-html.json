@@ -1,3 +1,14 @@
 {
-  "blocks": ["cat-blog-page", "event-hub"]
+  "blocks": [
+    "lecture-importance-of-semantic-html",
+    "lecture-understanding-nuanced-semantic-elements",
+    "workshop-major-browsers-list",
+    "lecture-working-with-text-and-time-semantic-elements",
+    "workshop-quincys-job-tips",
+    "lecture-working-with-specialized-semantic-elements",
+    "workshop-blog-page",
+    "lab-event-hub",
+    "review-semantic-html",
+    "quiz-semantic-html"
+  ]
 }

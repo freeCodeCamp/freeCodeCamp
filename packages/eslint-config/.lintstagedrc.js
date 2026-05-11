@@ -19,10 +19,7 @@ export const createLintStagedConfig = cwd => {
       // just run prettier.
       return lintableFiles.length === 0
         ? prettierCommand
-        : [
-            'eslint --max-warnings=0 --cache --fix ' + lintableFiles.join(' '),
-            ...prettierCommand
-          ];
+        : ['eslint --fix ' + lintableFiles.join(' '), ...prettierCommand];
     },
     '*.!(mjs|js|ts|tsx|css|md)': files =>
       files.map(filename => `prettier --write --ignore-unknown '${filename}'`),

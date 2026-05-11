@@ -65,12 +65,6 @@ assert(__helpers.removeJSComments(code).match(/Math.floor/g).length >= 1);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(){return randomWholeNum();})();
-```
-
 ## --seed-contents--
 
 ```js

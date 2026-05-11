@@ -1,0 +1,454 @@
+---
+id: 699c6f4d4e468a10d3ae25ff
+title: Data Structures Quiz
+challengeType: 8
+dashedName: quiz-data-structures-js
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What does Big O notation describe in algorithm analysis?
+
+#### --distractors--
+
+The exact runtime in seconds for a specific computer.
+
+---
+
+The percentage of code lines executed during a run.
+
+---
+
+How readable the code is to other developers.
+
+#### --answer--
+
+How the time or space grows relative to input size (an upper bound).
+
+### --question--
+
+#### --text--
+
+When starting an algorithmic challenge, what is the best first step?
+
+#### --distractors--
+
+Begin coding immediately to gain momentum.
+
+---
+
+Optimize for performance before you understand the problem.
+
+---
+
+Write unit tests only after finishing the solution.
+
+#### --answer--
+
+Clarify the problem and constraints with examples and edge cases.
+
+### --question--
+
+#### --text--
+
+What is the key difference between dynamic arrays and static arrays?
+
+#### --distractors--
+
+Dynamic arrays store values of different types; static arrays cannot.
+
+---
+
+Static arrays allow duplicate values; dynamic arrays do not.
+
+---
+
+Dynamic arrays are faster than static arrays for every operation.
+
+#### --answer--
+
+Dynamic arrays can grow or shrink by resizing; static arrays have a fixed size.
+
+### --question--
+
+#### --text--
+
+What is the amortized time complexity of appending an element to the end of a dynamic array?
+
+#### --distractors--
+
+`O(n)`
+
+---
+
+`O(log n)`
+
+---
+
+`O(n log n)`
+
+#### --answer--
+
+`O(1)` amortized
+
+### --question--
+
+#### --text--
+
+Why does accessing the k-th element by index in a singly linked list take `O(n)` time?
+
+#### --distractors--
+
+The list must be resized before any access.
+
+---
+
+The index is hashed and looked up in a table.
+
+---
+
+Nodes are stored contiguously, so shifting is required.
+
+#### --answer--
+
+You must traverse from the head node to the k-th node one by one.
+
+### --question--
+
+#### --text--
+
+Which feature does a doubly linked list have that a singly linked list does not?
+
+#### --distractors--
+
+Random access to any index in `O(1)` time.
+
+---
+
+A built-in array buffer for faster iteration.
+
+---
+
+Automatic maintenance of the list length as a constant.
+
+#### --answer--
+
+Pointers to both next and previous nodes enabling backward traversal.
+
+### --question--
+
+#### --text--
+
+Which of the following best describes a stack?
+
+#### --distractors--
+
+First In, First Out (`FIFO`) with removals at the front.
+
+---
+
+A structure where any element can be removed in `O(1)` time.
+
+---
+
+A circular buffer with constant-time random access.
+
+#### --answer--
+
+Last In, First Out (`LIFO`) with `push` and `pop` at the top.
+
+### --question--
+
+#### --text--
+
+Which operation removes the element at the front of a queue?
+
+#### --distractors--
+
+`push`
+
+---
+
+`pop`
+
+---
+
+`peek`
+
+#### --answer--
+
+`dequeue`
+
+### --question--
+
+#### --text--
+
+What is the typical average-case time complexity to look up a value by key in a hash map?
+
+#### --distractors--
+
+`O(n)` because all keys must be scanned sequentially.
+
+---
+
+`O(log n)` due to binary search within buckets.
+
+---
+
+`O(n log n)` because keys are sorted during insertion.
+
+#### --answer--
+
+`O(1)` on average with a good hash function and low load factor.
+
+### --question--
+
+#### --text--
+
+Which guarantee is provided by a set data structure?
+
+#### --distractors--
+
+Elements are stored in sorted order by default.
+
+---
+
+Duplicate values are allowed and kept together.
+
+---
+
+Elements are indexed by their insertion position.
+
+#### --answer--
+
+It stores only unique elements (no duplicates).
+
+### --question--
+
+#### --text--
+
+In a dynamic array, what is the worst-case time complexity of inserting an element at index i (not at the end)?
+
+#### --distractors--
+
+`O(1)`
+
+---
+
+`O(log n)`
+
+---
+
+`O(1)` amortized
+
+#### --answer--
+
+`O(n)`
+
+### --question--
+
+#### --text--
+
+What is the time complexity of inserting a new node at the head of a singly linked list?
+
+#### --distractors--
+
+`O(n)`
+
+---
+
+`O(log n)`
+
+---
+
+`O(n log n)`
+
+#### --answer--
+
+`O(1)`
+
+### --question--
+
+#### --text--
+
+Which operation returns the top element of a stack without removing it?
+
+#### --distractors--
+
+`push`
+
+---
+
+`pop`
+
+---
+
+Insert at bottom.
+
+#### --answer--
+
+`peek`
+
+### --question--
+
+#### --text--
+
+Which of the following best describes a queue?
+
+#### --distractors--
+
+Last In, First Out (`LIFO`) with removals at the top.
+
+---
+
+Random access to any index in `O(1)` time.
+
+---
+
+Elements are always kept in sorted order automatically.
+
+#### --answer--
+
+First In, First Out (`FIFO`) with `enqueue` at the back and `dequeue` at the front.
+
+### --question--
+
+#### --text--
+
+What is a high-level description of algorithm logic that is language-independent called?
+
+#### --distractors--
+
+Syntax
+
+---
+
+Machine code
+
+---
+
+Debugger
+
+#### --answer--
+
+Pseudocode
+
+### --question--
+
+#### --text--
+
+What is one of the things you should do to understand a problem?
+
+#### --distractors--
+
+Start coding immediately.
+
+---
+
+Ignore edge cases.
+
+---
+
+Skip directly to optimization.
+
+#### --answer--
+
+Read the problem statement multiple times.
+
+### --question--
+
+#### --text--
+
+Which two components should you identify when solving a problem?
+
+#### --distractors--
+
+The programming language and the IDE.
+
+---
+
+The variable names and other identifiers.
+
+---
+
+The color scheme and code formatting.
+
+#### --answer--
+
+The input and the expected output.
+
+### --question--
+
+#### --text--
+
+Which time complexity grows faster than `O(n log n)` as n becomes large?
+
+#### --distractors--
+
+`O(n)`
+
+---
+
+`O(log n)`
+
+---
+
+`O(1)`
+
+#### --answer--
+
+`O(n^2)`
+
+### --question--
+
+#### --text--
+
+After implementing a brute-force solution, what is a good next step?
+
+#### --distractors--
+
+Micro-optimize constant factors before measuring.
+
+---
+
+Discard tests and rewrite the solution from scratch.
+
+---
+
+Avoid considering edge cases to keep the code simple.
+
+#### --answer--
+
+Analyze its time/space complexity and optimize identified bottlenecks.
+
+### --question--
+
+#### --text--
+
+What does space complexity measure?
+
+#### --distractors--
+
+How many CPU cores a program uses.
+
+---
+
+The length of a program in lines of code.
+
+---
+
+How long a program takes to compile.
+
+#### --answer--
+
+How memory usage grows relative to input size.

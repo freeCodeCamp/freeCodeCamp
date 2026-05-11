@@ -11,7 +11,7 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import HeatMap from './heat-map';
 
 const { clientLocale } = envData;

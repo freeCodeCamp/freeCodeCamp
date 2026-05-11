@@ -40,12 +40,6 @@ assert(/\*/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return 'product = '+z;})(product);
-```
-
 ## --seed-contents--
 
 ```js

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { Provider } from 'react-redux';
 import envData from '../../config/env.json';
@@ -8,7 +8,12 @@ import ShowSettings from './show-settings';
 import { createStore } from '../redux/create-store';
 import { initialState } from '../redux';
 
+const testUsername = 'testuser';
+
 vi.mock('../utils/get-words');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: false })
+}));
 
 const { apiLocation } = envData;
 
@@ -51,5 +56,86 @@ describe('<ShowSettings />', () => {
     );
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(`${apiLocation}/signin`);
+  });
+
+  it('renders profile note with link to user profile', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // Trans component renders the interpolated link - find it by href
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const profileLink = container.querySelector(`a[href="/${testUsername}"]`);
+    expect(profileLink).toBeInTheDocument();
+  });
+
+  it('renders the Personal section with About form', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // The About component renders a heading using the sectionTitle prop
+    expect(
+      screen.getByRole('heading', { name: 'settings.headings.personal' })
+    ).toBeInTheDocument();
+  });
+
+  it('renders a Personal link in the settings sidebar navigation', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // SettingsSidebarNav renders a ScrollLink with href="#personal"
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const personalLink = container.querySelector('a[href="#personal"]');
+    expect(personalLink).toBeInTheDocument();
   });
 });

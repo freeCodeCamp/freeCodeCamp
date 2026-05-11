@@ -32,11 +32,11 @@ assert.exists(path);
     <title>Heart Icon</title>
   </head>
   <body>
-    --fcc-editable-region--
     <svg>
-      
-    </svg>
     --fcc-editable-region--
+      
+    --fcc-editable-region--
+    </svg>
   </body>
 </html>
 ```

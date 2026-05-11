@@ -455,3 +455,28 @@ figcaption.caption {
   font-weight: normal;
   text-align: center;
 }
+
+/* Landing Catalog Styles */
+.landing-catalog-container {
+  background-color: var(--primary-background);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.landing-catalog-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  gap: 2rem;
+}
+
+.landing-catalog .catalog-item.catalog-item-see-all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  text-align: center;
+  fill: var(--secondary-color);
+  flex-direction: row;
+  gap: 10px;
+}

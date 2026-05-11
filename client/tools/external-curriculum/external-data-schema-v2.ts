@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { chapterBasedSuperBlocks } from '../../../shared-dist/config/curriculum';
+import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
@@ -23,7 +23,8 @@ const blockSchema = Joi.object().keys({
         'Spanish Curriculum',
         'Odin',
         'Euler',
-        'Rosetta'
+        'Rosetta',
+        'General'
       ).required(),
       order: Joi.number().required(),
       template: Joi.string().allow(''),
@@ -39,7 +40,7 @@ const blockSchema = Joi.object().keys({
         'legacy-link',
         'legacy-challenge-grid'
       ).required(),
-      blockType: Joi.valid(
+      blockLabel: Joi.valid(
         'lecture',
         'workshop',
         'lab',

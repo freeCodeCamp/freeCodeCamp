@@ -8,6 +8,7 @@ import {
   insertStepIntoMeta,
   updateStepTitles
 } from './utils.js';
+import { ObjectId } from 'bson';
 
 async function deleteStep(stepNum: number): Promise<void> {
   if (stepNum < 1) {
@@ -54,13 +55,16 @@ async function insertStep(stepNum: number): Promise<void> {
   const challengeType =
     previousChallenge?.challengeType ?? nextChallenge?.challengeType;
 
-  const stepId = createStepFile({
+  const challengeId = new ObjectId();
+
+  createStepFile({
+    challengeId,
     stepNum,
     challengeType,
     challengeSeeds
   });
 
-  await insertStepIntoMeta({ stepNum, stepId });
+  await insertStepIntoMeta({ stepNum, stepId: challengeId });
   updateStepTitles();
   console.log(`Successfully inserted new step #${stepNum}`);
 }
@@ -74,8 +78,9 @@ async function createEmptySteps(num: number): Promise<void> {
 
   const nextStepNum = getMetaData().challengeOrder.length + 1;
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
-    const stepId = createStepFile({ stepNum });
-    await insertStepIntoMeta({ stepNum, stepId });
+    const challengeId = new ObjectId();
+    createStepFile({ stepNum, challengeId });
+    await insertStepIntoMeta({ stepNum, stepId: challengeId });
   }
   console.log(`Successfully added ${num} steps`);
 }

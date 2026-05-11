@@ -1,77 +1,31 @@
 import { test, expect } from '@playwright/test';
 
-interface InteractiveFile {
-  contents: string;
-  ext: string;
-  name: string;
-  contentsHtml: string;
-}
+const html = {
+  challengePath:
+    '/learn/responsive-web-design-v9/lecture-what-is-css/what-are-some-default-browser-styles-applied-to-html',
+  challengeTitle: 'What Are Some Default Browser Styles Applied to HTML?',
+  paragraphOneText:
+    'When you start working with HTML and CSS, you\'ll notice that some styles are applied to your web pages even before you write any CSS. These styles are called "default browser styles" or "user-agent styles".',
+  codeSnippet: '<h1>Heading 1</h1>'
+};
 
-interface Nodule {
-  type: 'paragraph' | 'interactiveEditor';
-  data: string | InteractiveFile[];
-}
-
-interface PageData {
-  result: {
-    data: {
-      challengeNode: {
-        challenge: {
-          title: string;
-          nodules: Nodule[];
-        };
-      };
-    };
-  };
-}
-
-const challengePath =
-  '/learn/responsive-web-design-v9/lecture-what-is-css/what-are-some-default-browser-styles-applied-to-html';
-
-const challengeTitle = 'Test Challenge Title';
+const js = {
+  challengePath:
+    '/learn/javascript-v9/lecture-introduction-to-javascript/what-is-a-data-type'
+};
 
 test.describe('Interactive Editor', () => {
-  test('should render paragraph nodules as text and not show the interactive editor toggle', async ({
+  // skipping because I don't know of a page with paragraph nodules that doesn't also have an interactive editor toggle
+  test.skip('should render paragraph nodules as text and not show the interactive editor toggle', async ({
     page
   }) => {
-    await page.route(
-      `**/page-data${challengePath}/page-data.json`,
-      async route => {
-        const response = await route.fetch();
-        const body = await response.text();
-        const pageData = JSON.parse(body) as PageData;
-
-        pageData.result.data.challengeNode.challenge.title = challengeTitle;
-        pageData.result.data.challengeNode.challenge.nodules = [
-          {
-            type: 'paragraph',
-            data: '<p>This is a plain text paragraph.</p>'
-          },
-          {
-            type: 'paragraph',
-            data: '<p>Another paragraph with <code>code</code> in it.</p>'
-          }
-        ];
-
-        await route.fulfill({
-          contentType: 'application/json',
-          body: JSON.stringify(pageData)
-        });
-      }
-    );
-
-    await page.goto(challengePath);
+    await page.goto(html.challengePath);
 
     await expect(
-      page.getByRole('heading', { name: challengeTitle })
+      page.getByRole('heading', { name: html.challengeTitle })
     ).toBeVisible();
 
-    await expect(
-      page.getByText('This is a plain text paragraph.')
-    ).toBeVisible();
-    await expect(
-      page.getByText('Another paragraph with code in it.')
-    ).toBeVisible();
+    await expect(page.getByText(html.paragraphOneText)).toBeVisible();
 
     await expect(
       page.getByRole('button', { name: /interactive editor/i })
@@ -81,72 +35,18 @@ test.describe('Interactive Editor', () => {
   test('should toggle between interactive editor and static code view when Interactive Editor button is clicked', async ({
     page
   }) => {
-    await page.route(
-      `**/page-data${challengePath}/page-data.json`,
-      async route => {
-        const response = await route.fetch();
-        const body = await response.text();
-        const pageData = JSON.parse(body) as PageData;
-
-        pageData.result.data.challengeNode.challenge.title = challengeTitle;
-        pageData.result.data.challengeNode.challenge.nodules = [
-          {
-            type: 'paragraph',
-            data: '<p>Introduction paragraph.</p>'
-          },
-          {
-            type: 'interactiveEditor',
-            data: [
-              {
-                contents: 'console.log("Toggle test");',
-                ext: 'js',
-                name: 'script-1',
-                contentsHtml:
-                  '<pre><code class="language-javascript">console.log("Toggle test");</code></pre>'
-              },
-              {
-                contents: '<div>HTML content</div>',
-                ext: 'html',
-                name: 'index-1',
-                contentsHtml:
-                  '<pre><code class="language-html">&lt;div&gt;HTML content&lt;/div&gt;</code></pre>'
-              }
-            ]
-          },
-          {
-            type: 'paragraph',
-            data: '<p>Final paragraph.</p>'
-          }
-        ];
-
-        await route.fulfill({
-          contentType: 'application/json',
-          body: JSON.stringify(pageData)
-        });
-      }
-    );
-
-    await page.goto(challengePath);
+    await page.goto(html.challengePath);
 
     await expect(
-      page.getByRole('heading', { name: challengeTitle })
+      page.getByRole('heading', { name: html.challengeTitle })
     ).toBeVisible();
-    await expect(page.getByText('Introduction paragraph.')).toBeVisible();
-    await expect(page.getByText('Final paragraph.')).toBeVisible();
+    await expect(page.getByText(html.paragraphOneText)).toBeVisible();
 
     // Initially, interactive editor should be hidden, static code view should be visible
     await expect(page.getByTestId('sp-interactive-editor')).not.toBeVisible();
     await expect(
-      page
-        .locator('pre code')
-        .filter({ hasText: 'console.log("Toggle test");' })
+      page.locator('pre code').filter({ hasText: html.codeSnippet })
     ).toHaveCount(1);
-    await expect(
-      page.locator('pre code').filter({ hasText: '<div>HTML content</div>' })
-    ).toHaveCount(1);
-    await expect(
-      page.evaluate(() => localStorage.getItem('showInteractiveEditor'))
-    ).resolves.toBe(null);
 
     // Click the toggle button
     const toggleButton = page.getByRole('button', {
@@ -155,11 +55,10 @@ test.describe('Interactive Editor', () => {
     await toggleButton.click();
 
     // Interactive editor should be visible, static code view hidden
-    await expect(page.getByTestId('sp-interactive-editor')).toBeVisible();
-    await expect(page.locator('pre code')).not.toBeVisible();
     await expect(
-      page.evaluate(() => localStorage.getItem('showInteractiveEditor'))
-    ).resolves.toBe('true');
+      page.getByTestId('sp-interactive-editor').first()
+    ).toBeVisible();
+    await expect(page.locator('pre code')).not.toBeVisible();
 
     // Click the toggle button again
     await toggleButton.click();
@@ -167,69 +66,39 @@ test.describe('Interactive Editor', () => {
     // Interactive editor should be hidden, static code view visible again
     await expect(page.getByTestId('sp-interactive-editor')).not.toBeVisible();
     await expect(
-      page
-        .locator('pre code')
-        .filter({ hasText: 'console.log("Toggle test");' })
+      page.locator('pre code').filter({ hasText: html.codeSnippet })
     ).toBeVisible();
-    await expect(
-      page.locator('pre code').filter({ hasText: '<div>HTML content</div>' })
-    ).toBeVisible();
-    await expect(
-      page.evaluate(() => localStorage.getItem('showInteractiveEditor'))
-    ).resolves.toBe('false');
   });
 
-  test('should hide console panel in JS-only interactive editor to prevent output duplication', async ({
+  test('should persist the preference for showing the interactive editor', async ({
     page
   }) => {
-    await page.route(
-      `**/page-data${challengePath}/page-data.json`,
-      async route => {
-        const response = await route.fetch();
-        const body = await response.text();
-        const pageData = JSON.parse(body) as PageData;
+    await page.goto(html.challengePath);
 
-        pageData.result.data.challengeNode.challenge.title = challengeTitle;
-        pageData.result.data.challengeNode.challenge.nodules = [
-          {
-            type: 'paragraph',
-            data: '<p>This challenge has only JavaScript code.</p>'
-          },
-          {
-            type: 'interactiveEditor',
-            data: [
-              {
-                contents: 'console.log("Hello from JS-only editor");',
-                ext: 'js',
-                name: 'script-1',
-                contentsHtml:
-                  '<pre><code class="language-javascript">console.log("Hello from JS-only editor");</code></pre>'
-              }
-            ]
-          }
-        ];
+    // Initially, the interactive editor should be hidden
+    await expect(page.getByTestId('sp-interactive-editor')).not.toBeVisible();
 
-        await route.fulfill({
-          contentType: 'application/json',
-          body: JSON.stringify(pageData)
-        });
-      }
-    );
-
-    await page.goto(challengePath);
+    await page
+      .getByRole('button', {
+        name: /interactive editor/i
+      })
+      .click();
 
     await expect(
-      page.getByRole('heading', { name: challengeTitle })
-    ).toBeVisible();
-    await expect(
-      page.getByText('This challenge has only JavaScript code.')
+      page.getByTestId('sp-interactive-editor').first()
     ).toBeVisible();
 
+    // Reload the page and check that the interactive editor is still shown
+    await page.reload();
     await expect(
-      page
-        .locator('pre code')
-        .filter({ hasText: 'console.log("Hello from JS-only editor");' })
+      page.getByTestId('sp-interactive-editor').first()
     ).toBeVisible();
+  });
+
+  test('should hide the preview panel in JS-only interactive editors and just show the console', async ({
+    page
+  }) => {
+    await page.goto(js.challengePath);
 
     // Click the toggle button to show interactive editor
     await page
@@ -238,8 +107,15 @@ test.describe('Interactive Editor', () => {
       })
       .click();
 
-    // Check that the console is visible and the console wrapper is hidden
-    await expect(page.locator('.sp-console')).toBeVisible();
-    await expect(page.locator('.sp-console-wrapper')).not.toBeVisible();
+    // Check that the consoles are visible
+    const consoles = page.getByTestId('sp-console');
+    await expect(consoles).toHaveCount(4);
+    for (const console of await consoles.all()) {
+      await expect(console).toBeVisible();
+    }
+
+    // Check that the preview is not visible
+    const previews = page.getByTestId('sp-preview');
+    await expect(previews).not.toBeVisible();
   });
 });

@@ -22,6 +22,7 @@ type AboutProps = {
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
   setIsEditing: (isEditing: boolean) => void;
+  sectionTitle?: string;
 };
 
 type FormValues = {
@@ -53,7 +54,8 @@ const AboutSettings = ({
   user,
   t,
   submitNewAbout,
-  setIsEditing
+  setIsEditing,
+  sectionTitle
 }: AboutProps) => {
   const { name = '', location = '', picture = '', about = '' } = user;
 
@@ -163,7 +165,9 @@ const AboutSettings = ({
 
   return (
     <>
-      <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
+      <SectionHeader>
+        {sectionTitle ?? t('settings.headings.personal-info')}
+      </SectionHeader>
       <FullWidthRow>
         <form
           id='camper-identity'
@@ -180,6 +184,7 @@ const AboutSettings = ({
                 type='text'
                 value={formValues.name}
                 id='about-name-input'
+                placeholder='Camper Bot'
               />
             </FormGroup>
             <FormGroup controlId='about-location'>
@@ -191,6 +196,7 @@ const AboutSettings = ({
                 type='text'
                 value={formValues.location}
                 id='about-location-input'
+                placeholder='San Francisco, CA'
               />
             </FormGroup>
             <FormGroup controlId='about-picture'>
@@ -202,6 +208,7 @@ const AboutSettings = ({
                 type='url'
                 value={formValues.picture}
                 id='about-picture-input'
+                placeholder='https://github.com/ghost.png'
               />
               {!isPictureUrlValid && (
                 <ShowImageValidationWarning
@@ -218,6 +225,7 @@ const AboutSettings = ({
                 onChange={handleAboutChange}
                 value={formValues.about}
                 id='about-about-input'
+                placeholder='A short bio about yourself'
               />
             </FormGroup>
           </div>

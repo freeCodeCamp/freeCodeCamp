@@ -1,0 +1,50 @@
+---
+id: 698c4fe24f1f1a17be74a23e
+title: Step 3
+challengeType: 0
+dashedName: step-3
+---
+
+# --description--
+
+Next, create an `audio` element below the `p` element. Over the next few steps, you will add the necessary attributes to make the audio element play music. 
+
+# --hints--
+
+You should have an `audio` element.
+
+```js
+assert.exists(document.querySelector('audio'));
+```
+
+The new `audio` element should be below the `p` element.
+
+```js
+assert.exists(document.querySelector('p + audio'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with the HTML Audio Element</title>
+</head>
+<body>
+  <h1>freeCodeCamp Tunes</h1>
+
+  <h2>Can't Stay Down</h2>
+  <p>Artist: Quincy Larson</p>
+  
+--fcc-editable-region--
+  
+--fcc-editable-region--
+
+</body>
+</html>
+```

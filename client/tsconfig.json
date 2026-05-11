@@ -16,6 +16,8 @@
     "skipLibCheck": true
   },
   "include": [
+    "gatsby-*.ts",
+    "gatsby-*.tsx",
     "i18n/**/*",
     "plugins/**/*",
     "src/**/*",

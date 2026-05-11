@@ -46,11 +46,13 @@ assert.strictEqual(
     <title>Heart Icon</title>
   </head>
   <body>
-    --fcc-editable-region--
     <svg>
-      <path></path>
+      <path
+      --fcc-editable-region--
+        
+      --fcc-editable-region--
+      ></path>
     </svg>
-    --fcc-editable-region--
   </body>
 </html>
 ```

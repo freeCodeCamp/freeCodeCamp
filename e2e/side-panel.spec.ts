@@ -9,10 +9,8 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Challenge Side Panel Component', () => {
   test('should render correctly', async ({ page, isMobile }) => {
-    const toolPanelItem = page.getByText(translations.buttons['get-help']);
     if (isMobile) {
-      await expect(toolPanelItem).not.toBeVisible();
-    } else {
+      const toolPanelItem = page.getByText(translations.buttons['get-help']);
       await expect(toolPanelItem).toBeVisible();
     }
     await expect(page.getByTestId('challenge-title')).toBeVisible();

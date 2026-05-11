@@ -1,0 +1,478 @@
+---
+id: 69708d59833ceded7d00541f
+title: Implement Linked List Operations
+challengeType: 26
+dashedName: implement-linked-list-operations
+---
+
+# --description--
+
+In this lab, you will implement additional operations for a linked list data structure, building on the basic functionality of adding and removing nodes.
+
+**Objective**: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories**
+
+1. You should have a `contains` function that accepts a linked list and an element. It should return `true` if the specified element exists in the linked list, and `false` otherwise.
+1. You should have a `getAt` function that accepts a linked list and an index. It should return the element at the given index in the linked list. If the index is out of bounds, it should return `undefined`.
+1. You should have a `insertAt` function that accepts a linked list, an index, and an element. It should insert the given element at the specified position in the linked list. If the index is out of bounds, it should not modify the list.
+1. You should have a `removeAt` function that accepts a linked list and an index. It should remove the node at the given index in the linked list. If the index is out of bounds, it should not modify the list.
+1. You should have a `clear` function that accepts a linked list. It should remove all elements from the linked list, effectively resetting it to an empty state.
+
+**Note:** Some later tests rely on earlier methods. For example, if `getAt` is not implemented correctly, tests for functions like `insertAt` and `removeAt` may fail even when those functions are close to correct.
+
+# --hints--
+
+`initList` should return an object with `head` set to `null` and `length` set to `0`.
+
+```js
+const list = initList();
+assert.isNull(list.head);
+assert.strictEqual(list.length, 0);
+```
+
+`add` should increase the list length by one.
+
+```js
+const list = initList();
+add(list, 'apple');
+assert.strictEqual(list.length, 1);
+```
+
+`remove` should decrease the list length by one.
+
+```js
+const list = initList();  
+add(list, 'apple');  
+add(list, 'banana');  
+remove(list, 'apple');  
+assert.strictEqual(list.length, 1);  
+assert.strictEqual(list.head.element, 'banana');  
+assert.isNull(list.head.next);
+```
+
+You should have a `contains` function.
+
+```js
+assert.isFunction(contains);
+```
+
+`contains` should return `true` if the element exists in the list.
+
+```js
+const list = initList();
+add(list, 'apple');
+add(list, 'banana');
+add(list, 'cherry');
+assert.isTrue(contains(list, 'banana'));
+```
+
+`contains` should return `false` if the element does not exist in the list.
+
+```js
+const list = initList();
+add(list, 'apple');
+add(list, 'banana');
+assert.isFalse(contains(list, 'cherry'));
+```
+
+`contains` should return `false` for an empty list.
+
+```js
+const list = initList();
+assert.isFalse(contains(list, 'apple'));
+```
+
+You should have a `getAt` function.
+
+```js
+assert.isFunction(getAt);
+```
+
+`getAt` should return the element at a given index.
+
+```js
+const list = initList();
+add(list, 'first');
+add(list, 'second');
+add(list, 'third');
+assert.strictEqual(getAt(list, 0), 'first');
+assert.strictEqual(getAt(list, 1), 'second');
+assert.strictEqual(getAt(list, 2), 'third');
+```
+
+`getAt` should return `undefined` for invalid indices.
+
+```js
+const list = initList();  
+add(list, 'apple');  
+assert.isUndefined(getAt(list, -1));  
+assert.isUndefined(getAt(list, 1));  
+assert.isUndefined(getAt(list, 5));
+```
+
+`getAt` should return `undefined` for an empty list.
+
+```js
+const list = initList();  
+assert.isUndefined(getAt(list, 0));
+```
+
+You should have an `insertAt` function.
+
+```js
+assert.isFunction(insertAt);
+```
+
+`insertAt` should insert an element at the beginning of the list.
+
+```js
+const list = initList();  
+add(list, 'second');  
+add(list, 'third');  
+insertAt(list, 0, 'first');  
+assert.strictEqual(getAt(list, 0), 'first');  
+assert.strictEqual(getAt(list, 1), 'second');  
+assert.strictEqual(getAt(list, 2), 'third');  
+assert.strictEqual(list.length, 3);
+```
+
+`insertAt` should insert an element at the middle of the list.
+
+```js
+const list = initList();  
+add(list, 'first');  
+add(list, 'third');  
+insertAt(list, 1, 'second');  
+assert.strictEqual(getAt(list, 0), 'first');  
+assert.strictEqual(getAt(list, 1), 'second');  
+assert.strictEqual(getAt(list, 2), 'third');  
+assert.strictEqual(list.length, 3);
+```
+
+`insertAt` should insert an element at the end of the list.
+
+```js
+const list = initList();
+add(list, 'first');
+add(list, 'second');
+insertAt(list, 2, 'third');
+assert.strictEqual(getAt(list, 0), 'first');
+assert.strictEqual(getAt(list, 1), 'second');
+assert.strictEqual(getAt(list, 2), 'third');
+assert.strictEqual(list.length, 3);
+```
+
+`insertAt` should insert into an empty list at index `0`.  
+
+```js  
+const list = initList();  
+insertAt(list, 0, 'first');  
+assert.strictEqual(list.length, 1);  
+assert.strictEqual(getAt(list, 0), 'first');  
+assert.isNull(list.head.next); 
+```
+
+`insertAt` should not modify the list for invalid indices.
+
+```js
+const list = initList();  
+add(list, 'apple');  
+insertAt(list, -1, 'invalid');  
+insertAt(list, 10, 'invalid');  
+assert.strictEqual(list.length, 1);  
+assert.strictEqual(getAt(list, 0), 'apple');  
+assert.isUndefined(getAt(list, 1));
+```
+
+You should have a `removeAt` function.
+
+```js
+assert.isFunction(removeAt);
+```
+
+`removeAt` should remove the element at a specified index.
+
+```js
+const list = initList();  
+add(list, 'first');  
+add(list, 'second');  
+add(list, 'third');  
+removeAt(list, 1);  
+assert.strictEqual(getAt(list, 0), 'first');  
+assert.strictEqual(getAt(list, 1), 'third');  
+assert.isUndefined(getAt(list, 2));  
+assert.strictEqual(list.length, 2);
+```
+
+`removeAt` should remove the first element correctly.
+
+```js
+const list = initList();
+add(list, 'first');
+add(list, 'second');
+removeAt(list, 0);
+assert.strictEqual(getAt(list, 0), 'second');
+assert.strictEqual(list.length, 1);
+assert.isNull(list.head.next);
+```
+
+`removeAt` should remove the last element correctly.  
+
+```js  
+const list = initList();  
+add(list, 'first');  
+add(list, 'second');  
+add(list, 'third');  
+removeAt(list, 2);  
+assert.strictEqual(getAt(list, 0), 'first');  
+assert.strictEqual(getAt(list, 1), 'second');  
+assert.isUndefined(getAt(list, 2));  
+assert.strictEqual(list.length, 2);
+```
+
+`removeAt` should reset the list when removing the only element.
+
+```js
+const list = initList();  
+add(list, 'only');  
+removeAt(list, 0);  
+assert.strictEqual(list.length, 0);  
+assert.isNull(list.head);  
+assert.isTrue(isEmpty(list));
+```
+
+`removeAt` should not modify the list for invalid indices.
+
+```js
+const list = initList();  
+add(list, 'apple');  
+removeAt(list, -1);  
+removeAt(list, 10);  
+assert.strictEqual(list.length, 1);  
+assert.strictEqual(getAt(list, 0), 'apple');  
+```
+
+You should have a `clear` function.
+
+```js
+assert.isFunction(clear);
+```
+
+`clear` should remove all elements from the list.
+
+```js
+const list = initList();
+add(list, 'first');
+add(list, 'second');
+add(list, 'third');
+clear(list);
+assert.strictEqual(list.length, 0);
+assert.isNull(list.head);
+assert.isTrue(isEmpty(list));
+```
+
+`clear` should allow the list to be reused.  
+
+```js  
+const list = initList();  
+add(list, 'first');  
+clear(list);  
+clear(list);  
+add(list, 'second');  
+assert.strictEqual(list.length, 1);  
+assert.strictEqual(getAt(list, 0), 'second');  
+assert.isNull(list.head.next); 
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function initList() {
+  return {
+    head: null,
+    length: 0
+  };
+}
+
+function isEmpty(list) {
+  return list.length === 0;
+}
+
+function add(list, element) {
+  const node = { element, next: null };
+
+  if (isEmpty(list)) {
+    list.head = node;
+  } else {
+    let current = list.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = node;
+  }
+
+  list.length++;
+}
+
+function remove(list, element) {
+  let previous = null;
+  let current = list.head;
+
+  while (current !== null && current.element !== element) {
+    previous = current;
+    current = current.next;
+  }
+
+  if (current === null) return;
+
+  if (previous !== null) {
+    previous.next = current.next;
+  } else {
+    list.head = current.next;
+  }
+
+  list.length--;
+}
+
+function contains(list, element) {
+  
+}
+
+function getAt(list, index) {
+ 
+}
+
+function insertAt(list, index, element) {
+  
+}
+
+function removeAt(list, index) {
+ 
+}
+
+function clear(list) {
+
+}
+```
+
+# --solutions--
+
+```js
+function initList() {
+  return {
+    head: null,
+    length: 0
+  };
+}
+
+function isEmpty(list) {
+  return list.length === 0;
+}
+
+function add(list, element) {
+  const node = { element, next: null };
+
+  if (isEmpty(list)) {
+    list.head = node;
+  } else {
+    let current = list.head;
+    while (current.next !== null) {
+      current = current.next;
+    }
+    current.next = node;
+  }
+
+  list.length++;
+}
+
+function remove(list, element) {
+  let previous = null;
+  let current = list.head;
+
+  while (current !== null && current.element !== element) {
+    previous = current;
+    current = current.next;
+  }
+
+  if (current === null) return;
+
+  if (previous !== null) {
+    previous.next = current.next;
+  } else {
+    list.head = current.next;
+  }
+
+  list.length--;
+}
+
+function contains(list, element) {
+  let current = list.head;
+  while (current !== null) {
+    if (current.element === element) {
+      return true;
+    }
+    current = current.next;
+  }
+  return false;
+}
+
+function getAt(list, index) {
+  if (index < 0 || index >= list.length) return undefined;
+  let current = list.head;
+  let i = 0;
+  while (i < index) {
+    current = current.next;
+    i++;
+  }
+  return current.element;
+}
+
+function insertAt(list, index, element) {
+  if (index < 0 || index > list.length) return;
+  const node = { element, next: null };
+  if (index === 0) {
+    node.next = list.head;
+    list.head = node;
+    list.length++;
+    return;
+  }
+  let current = list.head;
+  let previous = null;
+  let i = 0;
+  while (i < index) {
+    previous = current;
+    current = current.next;
+    i++;
+  }
+  previous.next = node;
+  node.next = current;
+  list.length++;
+}
+
+function removeAt(list, index) {
+  if (index < 0 || index >= list.length) return;
+  if (index === 0) {
+    list.head = list.head.next;
+    list.length--;
+    return;
+  }
+  let current = list.head;
+  let previous = null;
+  let i = 0;
+  while (i < index) {
+    previous = current;
+    current = current.next;
+    i++;
+  }
+  previous.next = current.next;
+  list.length--;
+}
+
+function clear(list) {
+  list.head = null;
+  list.length = 0;
+}
+```

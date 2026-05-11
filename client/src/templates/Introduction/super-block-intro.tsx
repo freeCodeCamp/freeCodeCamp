@@ -15,7 +15,7 @@ import { useFeatureValue } from '@growthbook/growthbook-react';
 import {
   SuperBlocks,
   certificationCollectionSuperBlocks
-} from '../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -33,12 +33,9 @@ import type {
   User,
   ChapterBasedSuperBlockStructure
 } from '../../redux/prop-types';
-import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
-import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '../../../../shared-dist/config/blocks';
+import { liveCerts } from '../../../config/cert-and-project-map';
+import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
@@ -58,7 +55,7 @@ type ChallengeNode = {
     fields: { slug: string };
     id: string;
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     challengeType: number;
     title: string;
     order: number;
@@ -85,8 +82,6 @@ type SuperBlockProps = {
   location: WindowLocation<{ breadcrumbBlockClick: string }>;
   pageContext: {
     superBlock: SuperBlocks;
-    title: CertTitle;
-    certification: string;
   };
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
@@ -164,7 +159,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     currentChallengeId,
     signInLoading,
     user,
-    pageContext: { superBlock, title, certification },
+    pageContext: { superBlock },
     location
   } = props;
 
@@ -313,7 +308,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               </h2>
               <Spacer size='m' />
               <SuperBlockMap
-                certification={certification}
                 completedChallengeIds={completedChallenges.map(c => c.id)}
                 disabledBlocks={disabledBlocksFeature}
                 initialExpandedBlock={initialExpandedBlock}
@@ -323,7 +317,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 }
                 superBlock={superBlock}
                 superBlockChallenges={superBlockChallenges}
-                title={title}
                 user={user}
               />
               {!isSignedIn && !signInLoading && (
@@ -361,13 +354,11 @@ export default connect(
 export const query = graphql`
   query SuperBlockIntroPageQuery {
     allChallengeNode(
-      sort: {
-        fields: [
-          challenge___superOrder
-          challenge___order
-          challenge___challengeOrder
-        ]
-      }
+      sort: [
+        { challenge: { superOrder: ASC } }
+        { challenge: { order: ASC } }
+        { challenge: { challengeOrder: ASC } }
+      ]
     ) {
       nodes {
         challenge {

@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "quiz-npm",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "69a98755ee5508d58e91dccc",
+      "title": "NPM Quiz"
+    }
+  ],
+  "blockLabel": "quiz",
+  "blockLayout": "link"
+}

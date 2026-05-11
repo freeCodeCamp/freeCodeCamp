@@ -1,7 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 import path from 'path';
 
-import fetch from 'node-fetch';
 import yaml from 'js-yaml';
 import { config } from 'dotenv';
 

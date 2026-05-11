@@ -17,22 +17,21 @@ declare const module: {
   };
 };
 
-const clientSide = isBrowser();
-
-const sagaMiddleware = createSagaMiddleware({
-  context: {
-    document: clientSide ? document : {}
-  }
-});
-const epicMiddleware = createEpicMiddleware({
-  dependencies: {
-    window: clientSide ? window : {},
-    location: clientSide ? window.location : {},
-    document: clientSide ? document : {}
-  }
-});
-
 export const createStore = (preloadedState = {}) => {
+  const clientSide = isBrowser();
+  const sagaMiddleware = createSagaMiddleware({
+    context: {
+      document: clientSide ? document : {}
+    }
+  });
+  const epicMiddleware = createEpicMiddleware({
+    dependencies: {
+      window: clientSide ? window : {},
+      location: clientSide ? window.location : {},
+      document: clientSide ? document : {}
+    }
+  });
+
   const store = configureStore({
     // @ts-expect-error RTK uses unknown, Redux uses any
     reducer: rootReducer,

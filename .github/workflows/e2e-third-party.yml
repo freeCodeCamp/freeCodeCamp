@@ -10,30 +10,35 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
   cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
+permissions:
+  contents: read
+
 jobs:
   build-client:
     name: Build Client
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [22]
+        node-version: [24]
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          persist-credentials: false
           submodules: 'recursive'
 
       - name: Checkout client-config
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          persist-credentials: false
           repository: freeCodeCamp/client-config
           path: client-config
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -56,7 +61,7 @@ jobs:
         run: tar -cf client-artifact.tar client/public
 
       - name: Upload Client Artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: client-artifact
           path: client-artifact.tar
@@ -66,8 +71,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
+          persist-credentials: false
           submodules: 'recursive'
 
       - name: Create Image
@@ -80,7 +86,7 @@ jobs:
         run: docker save fcc-api > api-artifact.tar
 
       - name: Upload API Artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: api-artifact
           path: api-artifact.tar
@@ -93,16 +99,18 @@ jobs:
       fail-fast: false
       matrix:
         browsers: [chromium]
-        node-version: [22]
+        node-version: [24]
     steps:
       - name: Set Action Environment Variables
         run: |
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
 
-      - uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
 
       - name: Unpack Client Artifact
         run: |
@@ -115,10 +123,10 @@ jobs:
           rm api-artifact/api-artifact.tar
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -135,11 +143,8 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm compile:ts
-          pnpm run build:curriculum
+      - name: Install
+        run: pnpm install
 
       - name: Start apps
         run: |
@@ -151,11 +156,11 @@ jobs:
         run: pnpm run seed:certified-user
 
       - name: Run playwright tests
-        run: npx playwright test third-party-donation.spec.ts --project=${{ matrix.browsers }}
+        run: pnpm run playwright:run third-party-donation.spec.ts --project=${{ matrix.browsers }}
 
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: ${{ !cancelled() }}
         with:
           name: playwright-report-${{ matrix.browsers }}
-          path: playwright/reporter
+          path: e2e/playwright/reporter
           retention-days: 7

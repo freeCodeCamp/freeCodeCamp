@@ -1,4 +1,4 @@
-import { Portfolio } from '@prisma/client';
+import { Experience, Portfolio } from '@prisma/client';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import { omit } from 'lodash-es';
@@ -8,12 +8,13 @@ import * as schemas from '../../schemas.js';
 import { splitUser } from '../helpers/user-utils.js';
 import {
   normalizeChallenges,
-  NormalizedChallenge,
+  type NormalizedChallenge,
   normalizeFlags,
   normalizeProfileUI,
   normalizeTwitter,
   normalizeBluesky,
-  removeNulls
+  removeNulls,
+  type NoNullProperties
 } from '../../utils/normalize.js';
 import {
   Calendar,
@@ -21,7 +22,7 @@ import {
   getPoints,
   ProgressTimestamp
 } from '../../utils/progress.js';
-import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 type ProfileUI = Partial<{
   isLocked: boolean;
@@ -33,6 +34,7 @@ type ProfileUI = Partial<{
   showName: boolean;
   showPoints: boolean;
   showPortfolio: boolean;
+  showExperience: boolean;
   showTimeLine: boolean;
 }>;
 
@@ -47,6 +49,7 @@ type RawUser = {
   name: string;
   points: number;
   portfolio: Portfolio[];
+  experience: NoNullProperties<Experience>[];
   profileUI: ProfileUI;
 };
 
@@ -65,6 +68,7 @@ export const replacePrivateData = (user: RawUser) => {
     showName,
     showPoints,
     showPortfolio,
+    showExperience,
     showTimeLine
   } = user.profileUI;
 
@@ -83,7 +87,8 @@ export const replacePrivateData = (user: RawUser) => {
     location: showLocation ? user.location : '',
     name: showName ? user.name : '',
     points: showPoints ? user.points : null,
-    portfolio: showPortfolio ? user.portfolio : []
+    portfolio: showPortfolio ? user.portfolio : [],
+    experience: showExperience ? user.experience : []
   };
 };
 
@@ -185,7 +190,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
           name: user.name ?? '',
           points: getPoints(progressTimestamps),
-          profileUI: normalizedProfileUI
+          profileUI: normalizedProfileUI,
+          experience: user.experience.map(removeNulls) ?? []
         });
 
         const returnedUser = {

@@ -40,6 +40,7 @@ interface MobileLayoutProps {
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   usesMultifileEditor: boolean;
+  usesTerminal: boolean;
 }
 
 const tabs = {
@@ -164,7 +165,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
-      usesMultifileEditor
+      usesMultifileEditor,
+      usesTerminal
     } = this.props;
 
     const displayPreviewPane = hasPreview && showPreviewPane;
@@ -206,9 +208,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       return portalBtnSrText;
     }
 
+    const previewTriggerText =
+      usesTerminal == false
+        ? 'learn.editor-tabs.preview'
+        : 'learn.editor-tabs.terminal';
+
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
-
     return (
       <>
         <Tabs
@@ -240,7 +246,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </TabsTrigger>
             {hasPreview && (
               <TabsTrigger value={tabs.preview}>
-                {i18next.t('learn.editor-tabs.preview')}
+                {i18next.t(previewTriggerText)}
               </TabsTrigger>
             )}
           </TabsList>

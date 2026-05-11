@@ -1,19 +1,10 @@
 import { Type } from '@fastify/type-provider-typebox';
 
+import { profileUI } from '../types.js';
+
 export const updateMyProfileUI = {
   body: Type.Object({
-    profileUI: Type.Object({
-      isLocked: Type.Boolean(),
-      showAbout: Type.Boolean(),
-      showCerts: Type.Boolean(),
-      showDonation: Type.Boolean(),
-      showHeatMap: Type.Boolean(),
-      showLocation: Type.Boolean(),
-      showName: Type.Boolean(),
-      showPoints: Type.Boolean(),
-      showPortfolio: Type.Boolean(),
-      showTimeLine: Type.Boolean()
-    })
+    profileUI
   }),
   response: {
     200: Type.Object({
