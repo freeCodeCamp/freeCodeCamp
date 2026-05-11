@@ -4,6 +4,7 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import store from 'store';
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
 
 import {
@@ -17,6 +18,7 @@ import {
   showPreviewPaneSelector
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
@@ -26,6 +28,11 @@ interface MobileLayoutProps {
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
+  isDailyCodingChallenge?: boolean;
+  dailyCodingChallengeLanguage?: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage?: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   notes: string;
   preview: JSX.Element;
   onPreviewResize: () => void;
@@ -154,6 +161,9 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       editor,
       testOutput,
       hasPreview,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage,
+      setDailyCodingChallengeLanguage,
       notes,
       preview,
       onPreviewResize,
@@ -213,10 +223,38 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
         ? 'learn.editor-tabs.preview'
         : 'learn.editor-tabs.terminal';
 
+    const handleLanguageChange = (
+      language: DailyCodingChallengeLanguages
+    ): void => {
+      store.set('dailyCodingChallengeLanguage', language);
+      setDailyCodingChallengeLanguage?.(language);
+    };
+
+    const showLanguageSelector =
+      isDailyCodingChallenge && !!setDailyCodingChallengeLanguage;
+
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
     return (
       <>
+        {showLanguageSelector && (
+          <div className='mobile-language-selector'>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+              disabled={dailyCodingChallengeLanguage === 'javascript'}
+              onClick={() => handleLanguageChange('javascript')}
+            >
+              JavaScript
+            </button>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'python'}
+              disabled={dailyCodingChallengeLanguage === 'python'}
+              onClick={() => handleLanguageChange('python')}
+            >
+              Python
+            </button>
+          </div>
+        )}
         <Tabs
           id='mobile-layout'
           className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
