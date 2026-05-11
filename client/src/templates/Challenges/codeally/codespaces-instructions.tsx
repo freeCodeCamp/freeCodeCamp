@@ -34,6 +34,7 @@ export function CodespacesInstructions({
   return (
     <div className='ca-description'>
       <p>{t('learn.codespaces.intro')}</p>
+      <CodespacesContinueAlert title={title} />
       <ol>
         <li>
           <Trans i18nKey='learn.codespaces.step-1'>
@@ -48,7 +49,7 @@ export function CodespacesInstructions({
         </li>
         {isSignedIn && (
           <>
-            <Spacer size='s' />
+            <Spacer size='xs' />
             <p>{t('learn.local.sub-step-heading')}</p>
             <ol>
               <li>{t('learn.local.sub-step-1')}</li>
@@ -92,6 +93,9 @@ export function CodespacesInstructions({
                   <code>placeholder</code>
                 </Trans>
               </li>
+              <Spacer size='xxs' />
+              <CodespacesLogoutAlert course={title} />
+              <Spacer size='xxs' />
               <li>
                 <Trans i18nKey='learn.codespaces.sub-step-6'>
                   <code>placeholder</code>
@@ -103,12 +107,14 @@ export function CodespacesInstructions({
           </>
         )}
         <li>{t('learn.codespaces.step-2')}</li>
+        <li style={{ listStyle: 'none' }}>
+          <Spacer size='xxs' />
+          <CodeAllyButton
+            challengeType={challengeType}
+            onClick={openCodespaces}
+          />
+        </li>
       </ol>
-      <Spacer size='m' />
-      <CodespacesContinueAlert title={title} />
-      {isSignedIn && <CodespacesLogoutAlert course={title} />}
-      <CodeAllyButton challengeType={challengeType} onClick={openCodespaces} />
-      <Spacer size='m' />
       <ol start={3}>
         <li>{t('learn.codespaces.step-3')}</li>
         <li>

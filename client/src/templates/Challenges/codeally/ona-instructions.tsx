@@ -39,6 +39,7 @@ export function OnaInstructions({
   return (
     <div className='ca-description'>
       <p>{t('learn.ona.intro')}</p>
+      <RdbOnaContinueAlert course={title} />
       <ol>
         <li>
           <Trans i18nKey='learn.ona.step-1'>
@@ -53,7 +54,7 @@ export function OnaInstructions({
         </li>
         {isSignedIn && (
           <>
-            <Spacer size='s' />
+            <Spacer size='xs' />
             <p>{t('learn.local.sub-step-heading')}</p>
             <ol>
               <li>{t('learn.local.sub-step-1')}</li>
@@ -97,17 +98,18 @@ export function OnaInstructions({
                   <code>placeholder</code>
                 </Trans>
               </li>
+              <Spacer size='xxs' />
+              <RdbOnaLogoutAlert course={title} />
             </ol>
             <Spacer size='s' />
           </>
         )}
         <li>{t('learn.ona.step-2')}</li>
+        <li style={{ listStyle: 'none' }}>
+          <Spacer size='xxs' />
+          <CodeAllyButton challengeType={challengeType} onClick={openOna} />
+        </li>
       </ol>
-      <Spacer size='m' />
-      <RdbOnaContinueAlert course={title} />
-      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
-      <CodeAllyButton challengeType={challengeType} onClick={openOna} />
-      <Spacer size='m' />
       <ol start={3}>
         <li>{t('learn.ona.step-3')}</li>
         <li>
