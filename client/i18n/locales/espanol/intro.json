@@ -5921,22 +5921,21 @@
       "performance": "Rendimiento",
       "testing": "Pruebas",
       "css-libraries-and-frameworks": "Bibliotecas y Frameworks CSS",
-      "data-visualization": "Visualización de Datos y D3",
       "typescript-fundamentals": "Fundamentos de TypeScript ",
+      "data-visualization": "Visualización de Datos y D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "En este módulo, serás introducido a TypeScript, que es un superconjunto de JavaScript que te permite agregar tipado estático a tu código JavaScript. Construirás varios talleres y laboratorios que te darán práctica en trabajar con genéricos, estrechamiento de tipos, TSX, y más. Luego pondrás a prueba tus conocimientos de los fundamentos de TypeScript con un breve cuestionario."
+        ]
+      },
       "data-visualization": {
         "note": "Próximamente en 2026.",
         "intro": [
           "En este módulo, serás introducido a la visualización de datos y aprenderás a trabajar con la biblioteca D3."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Próximamente en 2026.",
-        "intro": [
-          "En este módulo, serás introducido a TypeScript, que es un superconjunto de JavaScript que te permite agregar tipado estático a tu código JavaScript. Construirás varios talleres y laboratorios que te darán práctica en trabajar con genéricos, estrechamiento de tipos, TSX, y más. Luego pondrás a prueba tus conocimientos de los fundamentos de TypeScript con un breve cuestionario."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6207,22 +6206,6 @@
           "Pon a prueba lo que has aprendido sobre librerías y marcos CSS con este cuestionario."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introducción a la visualización de datos",
-        "intro": [
-          "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab you will use d3 to build a bar chart."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Introducción a TypeScript",
         "intro": [
@@ -6317,6 +6300,22 @@
       "quiz-typescript": {
         "title": "Cuestionario de TypeScript",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introducción a la visualización de datos",
+        "intro": [
+          "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",

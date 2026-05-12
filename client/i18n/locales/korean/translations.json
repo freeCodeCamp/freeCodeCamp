@@ -1423,7 +1423,7 @@
     "add-code-one": "이 두 문장을 복사한 코드로 바꾸십시오.",
     "add-code-two": "위의 ``` 라인과 아래의 ``` 라인을 남겨두십시오,",
     "add-code-three": "이들은 게시물에 코드가 올바르게 포맷되도록 합니다.",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "사용자 토큰",
