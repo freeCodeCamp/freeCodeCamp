@@ -4,7 +4,7 @@ import request from 'supertest';
 
 import { build, buildOptions } from './src/app.js';
 import { createUserInput } from './src/utils/create-user.js';
-import { examJson } from './__mocks__/exam.js';
+import { examJson } from './__fixtures__/exam.js';
 import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
@@ -123,6 +123,15 @@ const indexData: IndexData[] = [
   {
     collection: 'MsUsername',
     indexes: [{ key: { userId: 1, id: 1 }, name: 'userId_1__id_1' }]
+  },
+  {
+    collection: 'SocratesUsage',
+    indexes: [
+      {
+        key: { userId: 1, date: 1 },
+        name: 'userId_date_unique'
+      }
+    ]
   },
   {
     collection: 'Survey',

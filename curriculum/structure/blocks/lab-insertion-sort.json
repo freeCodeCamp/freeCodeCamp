@@ -1,6 +1,5 @@
 {
-  "name": "Implement the Insertion Sort Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-insertion-sort",
   "helpCategory": "JavaScript",
   "blockLayout": "link",

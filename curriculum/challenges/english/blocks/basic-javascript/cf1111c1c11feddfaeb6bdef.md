@@ -39,12 +39,6 @@ assert(/\d+\s*\/\s*\d+/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return 'quotient = '+z;})(quotient);
-```
-
 ## --seed-contents--
 
 ```js

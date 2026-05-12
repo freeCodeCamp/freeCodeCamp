@@ -1,6 +1,5 @@
 {
-  "name": "Sharing Feedback Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "en-b1-quiz-share-feedback",
   "helpCategory": "English",
   "blockLayout": "link",

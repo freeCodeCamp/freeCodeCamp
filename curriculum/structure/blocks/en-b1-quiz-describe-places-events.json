@@ -1,6 +1,5 @@
 {
-  "name": "Describing Places and Events Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "en-b1-quiz-describe-places-events",
   "helpCategory": "English",
   "blockLayout": "link",

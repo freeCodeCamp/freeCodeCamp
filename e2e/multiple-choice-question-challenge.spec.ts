@@ -47,11 +47,11 @@ test.describe('Multiple Choice Question Challenge - With Speaking Modal', () => 
 
     await expect(page.getByRole('dialog')).toBeVisible();
 
-    await expect(
-      page.getByRole('button', {
-        name: translations['speaking-modal']['play']
-      })
-    ).toBeVisible();
+    const playButton = page.getByRole('button', {
+      name: translations['speaking-modal']['play']
+    });
+    await expect(playButton).toBeVisible();
+    await expect(playButton).toBeFocused(); // The button is focused by default
     await expect(
       page.getByRole('button', {
         name: translations['speaking-modal']['record']

@@ -112,7 +112,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, tests, title }
+          challenge: { challengeType, helpCategory, description, tests, title }
         }
       },
       pageContext: { challengeMeta }
@@ -127,6 +127,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -143,6 +144,7 @@ const ShowBackEnd = (props: BackEndProps) => {
           challengeType,
           forumTopicId,
           title,
+          id,
           description,
           instructions,
           translationPending,
@@ -182,6 +184,8 @@ const ShowBackEnd = (props: BackEndProps) => {
                 superBlock={superBlock}
                 description={description}
                 instructions={instructions}
+                block={block}
+                challengeId={id}
               />
               <Spacer size='m' />
               <SolutionForm

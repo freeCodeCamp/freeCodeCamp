@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 10px;
+  padding: 0 10px 10px;
   border-bottom: 1px solid var(--quaternary-background);
   background-color: var(--secondary-background);
 }

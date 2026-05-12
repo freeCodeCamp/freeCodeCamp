@@ -8,6 +8,7 @@ import {
   getPythonTransformers,
   getMultifileJSXTransformers
 } from './transformers.js';
+import { setupTSCompiler } from './typescript-worker-handler.js';
 
 interface Source {
   index: string;
@@ -165,6 +166,39 @@ type BuildResult = {
   error?: unknown;
 };
 
+function hasTS(challengeFiles: ChallengeFile[]) {
+  return challengeFiles.some(
+    challengeFile => challengeFile.ext === 'ts' || challengeFile.ext === 'tsx'
+  );
+}
+
+const isTSConfig = (f: { name: string; ext: string }) =>
+  f.name === 'tsconfig' && f.ext === 'json';
+
+export function getTSConfig(challengeFiles: ChallengeFile[]) {
+  const tsConfigFiles = challengeFiles.filter(isTSConfig);
+
+  if (tsConfigFiles.length > 1) {
+    throw new Error(
+      'TypeScript challenge must include only one tsconfig.json file'
+    );
+  }
+
+  return tsConfigFiles.length === 1 ? tsConfigFiles[0].contents : null;
+}
+
+async function configureTSCompiler(challengeFiles: ChallengeFile[]) {
+  if (hasTS(challengeFiles)) {
+    const tsConfig = getTSConfig(challengeFiles);
+
+    if (tsConfig) {
+      await setupTSCompiler(tsConfig);
+    } else {
+      await setupTSCompiler();
+    }
+  }
+}
+
 // TODO: All the buildXChallenge files have a similar structure, so make that
 // abstraction (function, class, whatever) and then create the various functions
 // out of it.
@@ -182,12 +216,10 @@ async function buildDOMChallenge(
   const hasJsx = challengeFiles.some(
     challengeFile => challengeFile.ext === 'jsx' || challengeFile.ext === 'tsx'
   );
-  const isMultifile = challengeFiles.length > 1;
 
-  const requiresReact16 = required.some(({ src }) =>
-    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
-  );
-
+  await configureTSCompiler(challengeFiles);
+  const sourceFiles = challengeFiles.filter(file => !isTSConfig(file));
+  const isMultifile = sourceFiles.length > 1;
   // I'm reasonably sure this is fine, but we need to migrate transformers to
   // TypeScript to be sure.
   const transformers: ApplyFunctionProps[] = (isMultifile && hasJsx
@@ -195,7 +227,7 @@ async function buildDOMChallenge(
     : getTransformers(options)) as unknown as ApplyFunctionProps[];
 
   const pipeLine = composeFunctions(...transformers);
-  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
   const contents = (await embedFilesInHtml(finalFiles)) as string;
 
@@ -208,6 +240,10 @@ async function buildDOMChallenge(
         template,
         contents
       };
+
+  const requiresReact16 = required.some(({ src }) =>
+    src?.includes('https://cdnjs.cloudflare.com/ajax/libs/react/16.')
+  );
 
   return {
     challengeType,
@@ -230,7 +266,9 @@ async function buildJSChallenge(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
-  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
+  await configureTSCompiler(challengeFiles);
+  const sourceFiles = challengeFiles.filter(file => !isTSConfig(file));
+  const finalFiles = await Promise.all(sourceFiles?.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 
   const toBuild = error ? [] : finalFiles;
@@ -239,12 +277,7 @@ async function buildJSChallenge(
     challengeType,
     build: toBuild
       .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
+        (body, challengeFile) => [...body, challengeFile.contents],
         [] as string[]
       )
       .join('\n'),

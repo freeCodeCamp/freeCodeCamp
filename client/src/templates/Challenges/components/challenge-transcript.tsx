@@ -22,7 +22,7 @@ function ChallengeTranscript({
   // default to collapsed
   const [isOpen, setIsOpen] = useState(() =>
     shouldPersistExpanded
-      ? (store.get('fcc-transcript-expanded') as boolean | null) ?? false
+      ? ((store.get('fcc-transcript-expanded') as boolean | null) ?? false)
       : false
   );
 

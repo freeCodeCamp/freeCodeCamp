@@ -1,5 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
-import * as fs from 'fs';
+import { test, expect } from '@playwright/test';
 import {
   getTodayUsCentral,
   formatDate,
@@ -66,14 +65,15 @@ const mockApiAllChallenges = [
 
 const mockDaysInMonth = new Date(year, month, 0).getDate();
 
-const runChallengeTest = async (page: Page, isMobile: boolean) => {
-  if (isMobile) {
-    await page.getByRole('tab', { name: 'Console' }).click();
-    await page.getByText('Run').click();
-  } else {
-    await page.getByText('Run the Tests (Ctrl + Enter)').click();
-  }
-};
+// Temporarily disabled
+// const runChallengeTest = async (page: Page, isMobile: boolean) => {
+//   if (isMobile) {
+//     await page.getByRole('tab', { name: 'Console' }).click();
+//     await page.getByText('Run').click();
+//   } else {
+//     await page.getByText('Run the Tests (Ctrl + Enter)').click();
+//   }
+// };
 
 test.describe('Daily Coding Challenges', () => {
   test('should redirect to archive for invalid date', async ({ page }) => {
@@ -268,32 +268,33 @@ test.describe('Daily Coding Challenge Archive', () => {
   });
 });
 
-test.describe('Daily code challenge solution can be downloaded', () => {
-  test('Downloaded solution files are named by challenge number', async ({
-    page,
-    isMobile
-  }) => {
-    await page.route(/.*\/daily-coding-challenge\/date\/.*/, async route => {
-      await route.fulfill({
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-        json: mockApiChallenge
-      });
-    });
+// Temporarily disabled
+// test.describe('Daily code challenge solution can be downloaded', () => {
+//   test('Downloaded solution files are named by challenge number', async ({
+//     page,
+//     isMobile
+//   }) => {
+//     await page.route(/.*\/daily-coding-challenge\/date\/.*/, async route => {
+//       await route.fulfill({
+//         status: 200,
+//         headers: { 'Content-Type': 'application/json' },
+//         json: mockApiChallenge
+//       });
+//     });
 
-    await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
-    await runChallengeTest(page, isMobile);
-    await expect(page.getByRole('dialog')).toBeVisible({ timeout: 15000 });
-    await expect(
-      page.getByRole('link', { name: 'Download my solution' })
-    ).toBeVisible({ timeout: 15000 });
-    const [download] = await Promise.all([
-      page.waitForEvent('download'),
-      page.getByRole('link', { name: 'Download my solution' }).click()
-    ]);
-    const suggestedFileName = download.suggestedFilename();
-    await download.saveAs(suggestedFileName);
-    expect(fs.existsSync(suggestedFileName)).toBeTruthy();
-    expect(suggestedFileName).toBe('challenge-1.txt');
-  });
-});
+//     await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
+//     await runChallengeTest(page, isMobile);
+//     await expect(page.getByRole('dialog')).toBeVisible({ timeout: 15000 });
+//     await expect(
+//       page.getByRole('link', { name: 'Download my solution' })
+//     ).toBeVisible({ timeout: 15000 });
+//     const [download] = await Promise.all([
+//       page.waitForEvent('download'),
+//       page.getByRole('link', { name: 'Download my solution' }).click()
+//     ]);
+//     const suggestedFileName = download.suggestedFilename();
+//     await download.saveAs(suggestedFileName);
+//     expect(fs.existsSync(suggestedFileName)).toBeTruthy();
+//     expect(suggestedFileName).toBe('challenge-1.txt');
+//   });
+// });

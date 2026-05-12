@@ -14,6 +14,7 @@ import {
   superBlockStages,
   SuperBlockStage
 } from '@freecodecamp/shared/config/curriculum';
+import { getCurriculum } from '../tools/get-curriculum';
 import intro from './locales/english/intro.json';
 
 interface Intro {
@@ -92,9 +93,10 @@ describe('Intro file structure tests:', () => {
       expect(typeof typedIntro[superBlock].title).toBe('string');
 
       // catalog superblocks should have a summary
-      if (catalogSuperBlocks.includes(superBlock)) {
-        expect(typedIntro[superBlock].summary).toBeInstanceOf(Array);
-      }
+      expect(
+        !catalogSuperBlocks.includes(superBlock) ||
+          Array.isArray(typedIntro[superBlock].summary)
+      ).toBe(true);
 
       expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
       expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
@@ -109,4 +111,39 @@ describe('Intro file structure tests:', () => {
       });
     });
   }
+});
+
+type SuperBlockInfo = {
+  blocks: Record<string, unknown>;
+};
+
+describe('Curriculum validation', () => {
+  const curriculum = getCurriculum() as Record<string, SuperBlockInfo>;
+  // certifications are not superblocks, they're just mixed in with them.
+  const superblocks = Object.entries(curriculum).filter(
+    ([key]) => key !== 'certifications'
+  );
+
+  // It's important that we check that each block in the curriculum has a title
+  // in the intro, rather than the other way around, because the intro must
+  // include upcoming changes. The curriculum only does if SHOW_UPCOMING_CHANGES
+  // is true.
+  superblocks.forEach(superblock => {
+    const [name, superBlockInfo] = superblock;
+    const blockObject = superBlockInfo.blocks;
+    describe(`${name}`, () => {
+      test('should have titles for each block in intro.json', () => {
+        const blocks = Object.keys(blockObject);
+
+        blocks.forEach(block => {
+          const blockFromIntro = (intro as unknown as Intro)[superblock[0]]
+            .blocks[block];
+          expect(
+            blockFromIntro.title,
+            `block ${block} needs a non-empty title`
+          ).toBeTruthy();
+        });
+      });
+    });
+  });
 });

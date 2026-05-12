@@ -97,8 +97,6 @@ function formatChallengeData({
                 name: 'script',
                 ext: 'js',
                 contents: javascript.challengeFiles[0].contents,
-                head: '',
-                tail: '',
                 path: '',
                 history: ['script.js'],
                 fileKey: 'scriptjs'
@@ -123,9 +121,7 @@ function formatChallengeData({
                 ext: 'py',
                 name: 'main',
                 contents: python.challengeFiles[0].contents,
-                head: '',
                 path: '',
-                tail: '',
                 editableRegionBoundaries: [],
                 history: ['main.py']
               }

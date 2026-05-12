@@ -1,8 +1,7 @@
 {
-  "name": "Introduction to TypeScript",
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-typescript",
   "challengeOrder": [
     {

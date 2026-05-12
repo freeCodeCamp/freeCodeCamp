@@ -53,7 +53,7 @@ import {
   examWithTwoCorrect,
   examWithAllCorrect,
   type ExamSubmission
-} from '../../../__mocks__/exam.js';
+} from '../../../__fixtures__/exam.js';
 import { Answer } from '../../utils/exam-types.js';
 import type { getSessionUser } from '../../schemas/user/get-session-user.js';
 import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
@@ -2222,7 +2222,7 @@ describe('challengeRoutes', () => {
             (typeof getSessionUser)['response']['200']
           >['user'];
 
-          const res = (await superGet('/user/get-session-user')).body as {
+          const res = (await superGet('/user/session-user')).body as {
             user: GetSessionUserResponseBody;
           };
 

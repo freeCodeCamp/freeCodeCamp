@@ -119,14 +119,15 @@ describe('Challenge utils helper scripts', () => {
   });
 
   describe('createChallengeFile util', () => {
-    it('should create the challenge', () => {
+    it('should create the challenge using an ObjectId string as the filename', () => {
       process.env.INIT_CWD = projectPath;
       const template = 'pretend this is a template';
+      const challengeId = new ObjectId();
 
-      createChallengeFile('hi', template);
-      // - Should write a file with a given name and template
+      createChallengeFile(challengeId.toString(), template);
+      // - Should write a file named after the ObjectId with the given template
       expect(fs.writeFileSync).toHaveBeenCalledWith(
-        `${projectPath}/hi.md`,
+        `${projectPath}/${challengeId.toString()}.md`,
         template
       );
     });

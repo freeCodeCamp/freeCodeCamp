@@ -10,8 +10,6 @@ const jsChallenge = {
   fileKey: 'jsFileKey',
   name: 'name',
   ext: 'js' as const,
-  head: 'head',
-  tail: 'tail',
   history: [],
   seed: 'original js contents',
   path: 'index.js'
@@ -22,8 +20,6 @@ const cssChallenge = {
   fileKey: 'cssFileKey',
   name: 'name',
   ext: 'css' as const,
-  head: 'head',
-  tail: 'tail',
   history: [],
   seed: 'original css contents',
   path: 'styles.css'
@@ -34,8 +30,6 @@ const htmlChallenge = {
   fileKey: 'htmlFileKey',
   name: 'name',
   ext: 'html' as const,
-  head: 'head',
-  tail: 'tail',
   history: [],
   seed: 'original html contents',
   path: 'index.html'

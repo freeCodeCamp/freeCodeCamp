@@ -16,7 +16,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
 
-import { debounce } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 import { Loader } from '../../../components/helpers';
 import { LocalStorageThemes } from '../../../redux/types';
@@ -232,7 +231,8 @@ const modeMap = {
   ts: 'typescript',
   tsx: 'typescript',
   py: 'python',
-  python: 'python'
+  python: 'python',
+  json: 'json'
 };
 
 let monacoThemesDefined = false;
@@ -315,10 +315,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const submitChallenge = useSubmit();
 
-  const submitChallengeDebounceRef = useRef(
-    debounce(submitChallenge, 1000, { leading: true, trailing: false })
-  );
-
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -385,7 +381,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         : 4,
     dragAndDrop: true,
     lightbulb: {
-      enabled: false
+      enabled: 'off' as editor.ShowLightbulbIconMode
     },
     hover: {
       enabled: false
@@ -411,6 +407,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
       jsx: monaco.languages.typescript.JsxEmit.Preserve,
       allowUmdGlobalAccess: true
+    });
+
+    // support JSONC:
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+      allowComments: true
     });
 
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -576,14 +577,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.triggerSuggest',
-      null,
+      0,
       () => {}
     );
     const newLine = editor.getAction('editor.action.insertLineAfter');
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-editor.action.insertLineAfter',
-      null,
+      0,
       () => {}
     );
     // @ts-ignore
@@ -591,13 +592,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       'editor.action.insertLineAfter',
       monaco.KeyMod.Alt | monaco.KeyCode.Enter,
       () => {
-        newLine.run();
+        void newLine?.run();
       }
     );
     // @ts-ignore
     editor._standaloneKeybindingService.addDynamicKeybinding(
       '-actions.find',
-      null,
+      0,
       () => {}
     );
     // Make toggle tab setting in editor permanent
@@ -649,12 +650,12 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
-      run:
+      run: () =>
         props.saveSubmissionToDB && props.isSignedIn
           ? // save to database
-            props.saveChallenge
+            props.saveChallenge()
           : // save to local storage
-            props.saveEditorContent
+            props.saveEditorContent()
     });
     editor.addAction({
       id: 'toggle-accessibility',
@@ -814,7 +815,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     props.executeChallenge();
   }
 
-  const tryToSubmitChallenge = submitChallengeDebounceRef.current;
+  const tryToSubmitChallenge = submitChallenge;
 
   // TODO: there's a potential performance gain to be had by only updating when
   // the outputViewZone has actually changed.
@@ -1115,10 +1116,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!editor || !canFocusOnMountRef.current) return;
     if (!props.usesMultifileEditor) {
       // Only one editor? Focus it.
-      editor.focus();
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
-      editor.focus();
+      requestAnimationFrame(() => editor.focus());
       canFocusOnMountRef.current = false;
     }
   }
@@ -1419,6 +1422,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             }
           }}
           onChange={onChange}
+          language={modeMap[challengeFile?.ext ?? 'html']}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
         />

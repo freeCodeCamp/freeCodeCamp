@@ -60,12 +60,6 @@ assert(/let myVar = 11;/.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return 'myVar = ' + z;})(myVar);
-```
-
 ## --seed-contents--
 
 ```js

@@ -34,7 +34,6 @@ describe('generateSuperBlockList', () => {
     });
     const tempSuperBlockMap = { ...superBlockStages };
     tempSuperBlockMap[SuperBlockStage.Upcoming] = [];
-    tempSuperBlockMap[SuperBlockStage.Catalog] = [];
     expect(result).toHaveLength(Object.values(tempSuperBlockMap).flat().length);
   });
 });

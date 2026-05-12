@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import type { FitAddon } from 'xterm-addon-fit';
+import type { FitAddon } from '@xterm/addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
@@ -37,6 +37,7 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import Output from '../components/output';
 import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
@@ -202,6 +203,7 @@ function ShowClassic({
         title,
         description,
         instructions,
+        id,
         hooks,
         tests,
         challengeType,
@@ -399,6 +401,7 @@ function ShowClassic({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -419,6 +422,8 @@ function ShowClassic({
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            challengeId={id}
+            block={block}
           />
         }
         challengeTitle={
@@ -463,6 +468,12 @@ function ShowClassic({
     );
   };
 
+  const usesTerminal =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
   return (
     <Hotkeys
       challengeType={challengeType}
@@ -505,6 +516,7 @@ function ShowClassic({
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
+            usesTerminal={usesTerminal}
           />
         ) : (
           <DesktopLayout
@@ -567,6 +579,7 @@ function ShowClassic({
           }
         />
         <ShortcutsModal />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );

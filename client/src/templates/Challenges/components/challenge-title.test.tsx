@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 
 import ChallengeTitle from './challenge-title';
@@ -11,8 +11,12 @@ const baseProps = {
 };
 
 describe('<ChallengeTitle/>', () => {
-  it('renders correctly', () => {
-    const tree = renderer.create(<ChallengeTitle {...baseProps} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('renders heading and completion icon', () => {
+    render(<ChallengeTitle {...baseProps} />);
+
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'title text' })
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('green-pass')).toBeInTheDocument();
   });
 });

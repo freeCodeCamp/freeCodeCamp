@@ -1,0 +1,41 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "function-basics",
+  "helpCategory": "General",
+  "challengeOrder": [
+    {
+      "id": "699dfa14138be64fa3131389",
+      "title": "Functions"
+    },
+    {
+      "id": "699e0333138be64fa313138a",
+      "title": "Increasing and Decreasing Functions"
+    },
+    {
+      "id": "699e033c138be64fa313138b",
+      "title": "Maximums and Minimums on Graphs"
+    },
+    {
+      "id": "699e0342138be64fa313138c",
+      "title": "Even and Odd Functions"
+    },
+    {
+      "id": "699e0347138be64fa313138d",
+      "title": "Toolkit Functions"
+    },
+    {
+      "id": "699e034d138be64fa313138e",
+      "title": "Transformations of Functions"
+    },
+    {
+      "id": "699e0353138be64fa313138f",
+      "title": "Piecewise Functions"
+    },
+    {
+      "id": "699e0359138be64fa3131390",
+      "title": "Inverse Functions"
+    }
+  ]
+}

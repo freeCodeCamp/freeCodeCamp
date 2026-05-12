@@ -1,8 +1,7 @@
 {
-  "name": "Working with TypeScript Configuration Files",
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-typescript-configuration-files",
   "challengeOrder": [
     {

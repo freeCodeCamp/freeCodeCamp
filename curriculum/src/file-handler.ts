@@ -161,7 +161,6 @@ export type Challenge = {
 };
 
 export interface BlockStructure {
-  name: string;
   hasEditableBoundaries?: boolean;
   required?: string[];
   template?: string;

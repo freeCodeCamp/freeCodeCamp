@@ -1,12 +1,12 @@
 {
   "blocks": [
-    "learn-python-setup-first-steps",
-    "learn-python-core-primitives",
-    "learn-python-small-projects-basics",
-    "learn-python-data-structures",
-    "learn-python-control-flow-functions",
-    "learn-python-projects-loops",
-    "learn-python-practical-errors-files",
-    "learn-python-oop"
+    "python-setup-first-steps",
+    "core-primitives-in-python",
+    "small-python-projects",
+    "lists-and-tuples",
+    "control-flow-and-functions-in-python",
+    "dictionaries-and-loops",
+    "error-handling-files-and-modules-in-python",
+    "object-oriented-programming-with-python"
   ]
 }

@@ -1,7 +1,6 @@
 {
-  "name": "Understanding Type Composition",
   "blockLabel": "lecture",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-type-composition",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-list",

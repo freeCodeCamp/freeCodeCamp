@@ -1,8 +1,7 @@
 {
-  "name": "Data Structures Quiz",
+  "isUpcomingChange": false,
   "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
   "dashedName": "quiz-data-structures-js",
   "helpCategory": "JavaScript",
   "challengeOrder": [

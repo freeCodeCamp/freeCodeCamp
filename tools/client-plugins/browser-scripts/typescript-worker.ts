@@ -1,4 +1,3 @@
-import type { CompilerOptions } from 'typescript';
 import { Compiler } from './modules/typescript-compiler';
 
 // Most of the ts types are only a guideline. This is because we're not bundling
@@ -27,7 +26,7 @@ interface TSCompiledMessage {
 interface SetupEvent extends MessageEvent {
   data: {
     type: 'setup';
-    compilerOptions?: CompilerOptions;
+    tsconfig?: string;
   };
 }
 
@@ -83,7 +82,7 @@ function handleCancelRequest({ value }: { value: number }) {
 
 async function handleSetupRequest(data: SetupEvent['data'], port: MessagePort) {
   await compiler.setup({
-    compilerOptions: data.compilerOptions
+    tsconfig: data.tsconfig
   });
   // We freeze this to prevent learners from getting the worker into a weird
   // state.

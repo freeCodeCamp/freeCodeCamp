@@ -1,8 +1,7 @@
 {
-  "name": "Working with Generics and Type Narrowing",
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-generics-and-type-narrowing",
   "challengeOrder": [
     {

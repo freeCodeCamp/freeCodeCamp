@@ -8,7 +8,7 @@ import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks,
-  type ChallengeLang
+  ChallengeLang
 } from '@freecodecamp/shared/config/curriculum';
 
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
@@ -31,26 +31,14 @@ import {
   updateChapterModuleSuperblockStructure
 } from './helpers/create-project.js';
 import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock.js';
+import { parseIntroJson } from './helpers/parse-json.js';
+import { withTrace } from './helpers/utils.js';
 
-const helpCategories = [
-  'English',
-  'Chinese Curriculum',
-  'Spanish Curriculum'
-] as const;
-
-type BlockInfo = {
-  title: string;
-  intro: string[];
+const langToHelpCategory: Record<ChallengeLang, string> = {
+  [ChallengeLang.English]: 'English',
+  [ChallengeLang.Chinese]: 'Chinese Curriculum',
+  [ChallengeLang.Spanish]: 'Spanish Curriculum'
 };
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-  chapters?: Record<string, string>;
-  modules?: Record<string, string>;
-  'module-intros'?: Record<string, { intro: string[]; note: string }>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
 interface CreateBlockArgs {
   superBlock: SuperBlocks;
@@ -164,7 +152,7 @@ async function updateIntroJson({
     __dirname,
     '../../client/i18n/locales/english/intro.json'
   );
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
+  const newIntro = await parseIntroJson(introJsonPath);
 
   newIntro[superBlock].blocks[block] = {
     title,
@@ -215,7 +203,6 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
-  newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
 
@@ -272,26 +259,6 @@ async function createQuizChallenge(
     dashedName: block,
     questionCount: questionCount,
     challengeLang
-  });
-}
-
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
-}
-
-// fs Promise functions return errors, but no stack trace.  This adds back in
-// the stack trace.
-function withTrace<Args extends unknown[], Result>(
-  fn: (...x: Args) => Promise<Result>,
-  ...args: Args
-): Promise<Result> {
-  return fn(...args).catch((reason: Error) => {
-    throw Error(reason.message);
   });
 }
 
@@ -391,14 +358,7 @@ void getAllBlocks()
       default: block
     });
 
-    const helpCategory = await select<string>({
-      message: 'Choose a help category',
-      default: 'English',
-      choices: helpCategories.map(value => ({
-        name: value,
-        value
-      }))
-    });
+    const helpCategory = langToHelpCategory[getLangFromSuperBlock(superBlock)];
 
     let blockLayout: string | undefined;
 

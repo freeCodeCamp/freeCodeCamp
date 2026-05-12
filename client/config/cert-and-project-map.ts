@@ -1028,8 +1028,4 @@ const certsToProjects = allStandardCerts.reduce((acc, curr) => {
   };
 }, {} as CertsToProjects);
 
-export type CertTitle =
-  | (typeof liveCerts)[number]['title']
-  | 'Legacy Full-Stack';
-
 export { liveCerts, certsToProjects, allCerts };

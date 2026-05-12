@@ -1,0 +1,47 @@
+---
+id: 6989f46b6e9366b0e6ad32fe
+title: Step 8
+challengeType: 1
+dashedName: step-8
+---
+
+# --description--
+
+Before you keep working on the BFS logic, call `genParentheses(1)` and log the result to the console.
+
+# --hints--
+
+You should log `genParentheses(1)` to the console.
+
+```js
+assert.match(__helpers.removeJSComments(code), /console\.log\s*\(\s*genParentheses\s*\(\s*1\s*\)\s*\)/);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+function genParentheses(pairs) {
+  if (!Number.isInteger(pairs)) {
+    return 'The number of pairs should be an integer';
+  }
+  if (pairs < 1) {
+    return 'The number of pairs should be at least 1';
+  }
+
+  let queue = [['', 0, 0]];
+  let result = [];
+
+  while (queue.length > 0) {
+    console.log(queue);
+    let [current, opensUsed, closesUsed] = queue.shift();
+  }
+
+  return result;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

@@ -44,8 +44,14 @@ export function EmailListOptIn({
       <Row>
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='xs' />
-          <Button block={true} variant='primary' href={`${apiLocation}/signin`}>
-            {t('buttons.sign-up-email-list')}
+          <p className='text-center'>{t('misc.email-signup-not-signed-in')}</p>
+          <Button
+            block={true}
+            variant='primary'
+            href={`${apiLocation}/signin`}
+            data-playwright-test-label='email-signup-sign-in-btn'
+          >
+            {t('buttons.sign-in')}
           </Button>
           <Spacer size='xs' />
         </Col>

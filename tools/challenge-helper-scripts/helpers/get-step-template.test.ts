@@ -10,11 +10,9 @@ const props = {
       contents: '',
       editableRegionBoundaries: [0, 2],
       ext: 'html',
-      head: '',
       id: '',
       key: 'indexhtml',
-      name: 'index',
-      tail: ''
+      name: 'index'
     }
   ],
   stepNum: 5,

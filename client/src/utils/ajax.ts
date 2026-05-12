@@ -106,7 +106,7 @@ type SavedChallengeFromApi = {
   files: Array<Omit<SavedChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<SavedChallenge, 'challengeFiles'>;
 
-type ApiUser = Omit<User, 'completedChallenges' & 'savedChallenges'> & {
+type ApiUser = Omit<User, 'completedChallenges' | 'savedChallenges'> & {
   completedChallenges?: CompleteChallengeFromApi[];
   savedChallenges?: SavedChallengeFromApi[];
 };
@@ -153,7 +153,7 @@ export function getSessionUser(
   signal?: AbortSignal
 ): Promise<ResponseWithData<User | null>> {
   const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
-    '/user/get-session-user',
+    '/user/session-user',
     signal
   );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
@@ -259,6 +259,21 @@ interface Donation {
   customerId: string;
   startDate: Date;
 }
+
+interface SocratesHintPayload {
+  userInput: string;
+  seed: string;
+  description: string;
+  hints: Array<{ text: string; failed?: boolean }>;
+}
+
+interface SocratesHintResponse {
+  hint?: string;
+  error?: string;
+  type?: string;
+  attempts?: number;
+  limit?: number;
+}
 // TODO: Verify if the body has and needs this Donation type. The api seems to
 // just need the body to exist, but doesn't seem to use the properties.
 export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
@@ -285,6 +300,11 @@ export function generateExamToken(): Promise<
   ResponseWithData<ExamTokenResponse>
 > {
   return post('/user/exam-environment/token', {});
+}
+export function getSocratesHint(
+  body: SocratesHintPayload
+): Promise<ResponseWithData<SocratesHintResponse>> {
+  return put('/socrates/get-hint', body);
 }
 
 type PaymentIntentResponse = Promise<
@@ -401,6 +421,12 @@ export function putUpdateMyQuincyEmail(update: {
   sendQuincyEmail: boolean;
 }): Promise<ResponseWithData<void>> {
   return put('/update-my-quincy-email', update);
+}
+
+export function putUpdateMySocrates(update: {
+  socrates: boolean;
+}): Promise<ResponseWithData<void>> {
+  return put('/update-socrates', { socrates: update.socrates });
 }
 
 export function putUpdateMyPortfolio(

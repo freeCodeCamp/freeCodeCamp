@@ -23,7 +23,7 @@ import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGeneratedExam
 } from '../schemas/index.js';
-import * as mock from '../../../__mocks__/exam-environment-exam.js';
+import * as mock from '../../../__fixtures__/exam-environment-exam.js';
 import { constructUserExam } from '../utils/exam-environment.js';
 import { JWT_SECRET } from '../../utils/env.js';
 import { ExamAttemptStatus } from '../schemas/exam-environment-exam-attempt.js';
@@ -50,7 +50,11 @@ describe('/exam-environment/', () => {
       superGet = createSuperRequest({ method: 'GET', setCookies });
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
-      expect(res.status).toBe(201);
+      if (res.status !== 201) {
+        throw new Error(
+          `Expected exam environment token request to return 201, got ${res.status}`
+        );
+      }
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       examEnvironmentAuthorizationToken =
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -289,6 +293,8 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
+        // Verifies cascading cleanup of moderation records when attempt data is removed in teardown.
+        // eslint-disable-next-line vitest/no-standalone-expect
         expect(a).toHaveLength(0);
       });
 
@@ -920,6 +926,7 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
+        // eslint-disable-next-line vitest/no-standalone-expect
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -996,15 +1003,17 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
 
-      it.skip('TODO: (once serialization is serializable) should return 400 if no attempt id is given', async () => {
-        const res = await superGet('/exam-environment/exam/attempt/').set(
-          'exam-environment-authorization-token',
-          examEnvironmentAuthorizationToken
-        );
+      it.todo(
+        '(once serialization is serializable) should return 400 if no attempt id is given',
+        async () => {
+          const res = await superGet('/exam-environment/exam/attempt/').set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
 
-        expect(res.status).toBe(400);
-      });
-
+          expect(res.status).toBe(400);
+        }
+      );
       it('should return the attempt without results, if the attempt has not been moderated', async () => {
         const startTime = new Date(
           Date.now() - mock.exam.config.totalTimeInS * 1000
@@ -1093,6 +1102,7 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
+        // eslint-disable-next-line vitest/no-standalone-expect
         expect(moderationRecords).toHaveLength(0);
       });
 
