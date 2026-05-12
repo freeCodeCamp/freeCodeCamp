@@ -6,6 +6,10 @@
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {
+      "id": "d75b39f84092281dcae9d175",
+      "title": "How Do You Set Up Your Keyboard Language for the RDB Course?"
+    },
+    {
       "id": "687ea6c021dd5913cf8fd8dd",
       "title": "What Are Relational Databases, and How Do They Differ from Non-Relational Databases?"
     },
@@ -39,3 +43,4 @@
     }
   ]
 }
+
