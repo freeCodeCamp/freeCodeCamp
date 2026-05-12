@@ -37,7 +37,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-how-http-dns-tcpip-work",
-            "lecture-understanding-the-http-request-response-model"
+            "lecture-understanding-the-http-request-response-model",
+            "quiz-http-and-the-web-standards-model"
           ]
         },
         {
