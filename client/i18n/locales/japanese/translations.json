@@ -1423,7 +1423,7 @@
     "add-code-one": "この 2 つの文を、コピーしたコードに置き換えてください。",
     "add-code-two": "投稿内でコードが適切にフォーマットされるようにするため、",
     "add-code-three": "上の ``` と下の ``` の行は残しておいてください。",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "ユーザートークン",

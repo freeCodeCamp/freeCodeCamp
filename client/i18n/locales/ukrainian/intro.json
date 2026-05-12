@@ -5901,22 +5901,21 @@
       "performance": "Продуктивність",
       "testing": "Тестування",
       "css-libraries-and-frameworks": "Бібліотеки та фреймворки CSS",
-      "data-visualization": "Візуалізація даних та D3",
       "typescript-fundamentals": "Основи TypeScript",
+      "data-visualization": "Візуалізація даних та D3",
       "review-front-end-libraries": "Повторення бібліотек Front End",
       "front-end-development-libraries-certification-exam": "Екзамен з сертифікації «Бібліотеки Front End»"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "У цьому модулі ви ознайомитесь з TypeScript — розширеною версією JavaScript, яка дозволяє додавати статичну типізацію до JavaScript-коду. Ви виконаєте декілька практичних занять і лабораторних робіт, де застосуєте узагальнення, звуження типів, TSX і багато іншого. А потім перевірите отримані знання з основ TypeScript, пройшовши короткий тест."
+        ]
+      },
       "data-visualization": {
         "note": "Очікуйте у 2026",
         "intro": [
           "У цьому модулі ви ознайомитесь з візуалізацією даних і навчитесь працювати з бібліотекою D3."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Очікуйте у 2026",
-        "intro": [
-          "У цьому модулі ви ознайомитесь з TypeScript — розширеною версією JavaScript, яка дозволяє додавати статичну типізацію до JavaScript-коду. Ви виконаєте декілька практичних занять і лабораторних робіт, де застосуєте узагальнення, звуження типів, TSX і багато іншого. А потім перевірите отримані знання з основ TypeScript, пройшовши короткий тест."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6177,24 +6176,6 @@
           "Перевірте, що ви дізнались про бібліотеки та фреймворки в CSS."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Вступ до візуалізації даних",
-        "intro": [
-          "У цих лекціях ви дізнаєтесь про базові поняття у візуалізації даних."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Створіть стовпчикову діаграму",
-        "intro": [
-          "У цій лабораторній роботі ви будете використовувати d3, щоб створити стовпчикову діаграму."
-        ]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Створіть діаграму розсіювання",
-        "intro": [
-          "У цій лабораторній роботі ви створите діаграму розсіювання d3, використовуючи наданий набір даних."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Вступ до TypeScript",
         "intro": [
@@ -6274,9 +6255,9 @@
         ]
       },
       "workshop-build-a-football-player-card-builder": {
-        "title": "Build a Football Player Card Builder",
+        "title": "Створіть картки футбольних гравців",
         "intro": [
-          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+          "У цьому практичному занятті ви навчитесь працювати з React у TypeScript, побудувавши програму для створення карток футбольних гравців."
         ]
       },
       "review-typescript": {
@@ -6289,6 +6270,24 @@
       "quiz-typescript": {
         "title": "Тест «TypeScript»",
         "intro": ["Перевірте, що ви дізнались про TypeScript."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Вступ до візуалізації даних",
+        "intro": [
+          "У цих лекціях ви дізнаєтесь про базові поняття у візуалізації даних."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Створіть стовпчикову діаграму",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати d3, щоб створити стовпчикову діаграму."
+        ]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Створіть діаграму розсіювання",
+        "intro": [
+          "У цій лабораторній роботі ви створите діаграму розсіювання d3, використовуючи наданий набір даних."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Повторення бібліотек Front End",
