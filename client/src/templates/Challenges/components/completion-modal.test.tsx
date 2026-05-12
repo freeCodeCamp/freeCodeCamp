@@ -2,6 +2,7 @@ import React from 'react';
 import { runSaga } from 'redux-saga';
 import { describe, test, it, expect, beforeEach, vi, type Mock } from 'vitest';
 import { render } from '../../../../utils/test-utils';
+import { screen, fireEvent } from '@testing-library/react';
 
 import { getCompletedPercentage } from '../../../utils/get-completion-percentage';
 import { fireConfetti } from '../../../utils/fire-confetti';
@@ -22,6 +23,8 @@ import CompletionModal, { combineFileData } from './completion-modal';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { useStaticQuery } from 'gatsby';
 import { ChallengeNode, SuperBlockStructure } from '../../../redux/prop-types';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
+
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
 vi.mock('../../../components/Progress');
@@ -30,6 +33,25 @@ vi.mock('../../../redux/selectors');
 vi.mock('../utils/build');
 vi.mock('../../../utils/get-words');
 vi.mock('@freecodecamp/challenge-builder/build');
+vi.mock('../utils/fetch-all-curriculum-data');
+
+vi.mock('@freecodecamp/ui', async () => {
+  const actual = await vi.importActual('@freecodecamp/ui');
+  return {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ...(actual as any),
+    // eslint-disable-next-line react/prop-types, @typescript-eslint/no-explicit-any
+    Modal: Object.assign(({ children }: any) => <div>{children}</div>, {
+      // eslint-disable-next-line react/prop-types, @typescript-eslint/no-explicit-any
+      Header: ({ children }: any) => <div>{children}</div>,
+      // eslint-disable-next-line react/prop-types, @typescript-eslint/no-explicit-any
+      Body: ({ children }: any) => <div>{children}</div>,
+      // eslint-disable-next-line react/prop-types, @typescript-eslint/no-explicit-any
+      Footer: ({ children }: any) => <div>{children}</div>,
+    }),
+  };
+});
+
 const mockFireConfetti = fireConfetti as Mock;
 const mockTestRunner = vi.fn().mockReturnValue({ pass: true });
 const mockBuildEnabledSelector = isBuildEnabledSelector as Mock;
@@ -236,6 +258,37 @@ describe('<CompletionModal />', () => {
       expect(result).toContain('** end of styles.css **');
       expect(result).toContain('** start of script.js **');
       expect(result).toContain('** end of script.js **');
+    });
+  });
+
+  describe('Submit Bug Prevention', () => {
+    let mockSubmitChallenge: Mock;
+
+    beforeEach(() => {
+      mockSubmitChallenge = vi.fn();
+      vi.mocked(useSubmit).mockReturnValue(mockSubmitChallenge);
+    });
+
+    test('should prevent duplicate submission on double click', () => {
+      const store = createStore({
+        challenge: {
+          modal: { completion: true },
+          challengeMeta: {
+            id: 'mock-id'
+          }
+        }
+      });
+      render(<CompletionModal />, store);
+
+      const buttons = screen.getAllByRole('button');
+      // The submit button is the first primary button rendered
+      const submitBtn = buttons.find(btn => btn.className.includes('btn-primary')) || buttons[0];
+
+      // Simulate double click
+      fireEvent.click(submitBtn);
+      fireEvent.click(submitBtn);
+
+      expect(mockSubmitChallenge).toHaveBeenCalledTimes(1);
     });
   });
 });
