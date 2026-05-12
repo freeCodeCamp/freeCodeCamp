@@ -1423,7 +1423,7 @@
     "add-code-one": "Substitua essas duas frases pelo código que você copiou.",
     "add-code-two": "Deixe as linhas com ``` acima e ``` abaixo de seu código,",
     "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação.",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuário",
