@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useCallback, useState, useRef } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -77,6 +77,10 @@ interface DownloadableChallengeFile {
   contents: string;
 }
 
+// ------------------------------------------------------------------------------------
+// 🔴 BUGGY VERSION (ACTIVE)
+// Test this by rapidly double-clicking the Submit button and watching the console logs.
+// ------------------------------------------------------------------------------------
 function CompletionModal({
   challengeFiles,
   close,
@@ -88,13 +92,10 @@ function CompletionModal({
   t
 }: CompletionModalProps): JSX.Element {
   const [downloadURL, setDownloadURL] = useState<string>();
+  const [isClicked, setIsClicked] = useState(false);
   const submitChallenge = useSubmit();
-  // We can't useMemo here, because it does not guarantee that the URL object
-  // will be revoked when the dependencies change.
+
   useEffect(() => {
-    // downloadURL is not in the dependency array because it should only change
-    // if the challengeFiles change. It is in the useEffect so that we cannot
-    // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
       const allFileContents = combineFileData(challengeFiles);
@@ -112,9 +113,23 @@ function CompletionModal({
 
   useEffect(() => {
     if (isOpen) {
+      setIsClicked(false);
       callGA({ event: 'pageview', pagePath: '/completion-modal' });
     }
   }, [isOpen]);
+
+  const handleSubmit = useCallback(() => {
+    console.log("Button Clicked!");
+    console.log("Current 'isClicked' state is:", isClicked);
+
+    if (!isClicked) {
+      console.log("SUCCESS: isClicked was false. Submitting the challenge!");
+      setIsClicked(true);
+      submitChallenge();
+    } else {
+      console.log(" BLOCKED: isClicked was true. Preventing duplicate.");
+    }
+  }, [isClicked, submitChallenge]);
 
   const handleKeypress = useCallback(
     (e: React.KeyboardEvent) => {
@@ -124,17 +139,14 @@ function CompletionModal({
       }
       if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
         e.preventDefault();
-        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
-        // getting to it.
         e.stopPropagation();
-        submitChallenge();
+        handleSubmit();
       }
     },
-    [close, submitChallenge]
+    [close, handleSubmit]
   );
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
-
   const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
 
   let buttonText;
@@ -183,8 +195,8 @@ function CompletionModal({
           block={true}
           size='large'
           variant='primary'
-          disabled={isSubmitting}
-          onClick={() => submitChallenge()}
+          disabled={isSubmitting || isClicked}
+          onClick={handleSubmit}
         >
           {buttonText}
         </Button>
