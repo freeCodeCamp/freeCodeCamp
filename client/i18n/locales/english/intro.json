@@ -7237,6 +7237,12 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
+      },
+      "review-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Review",
+        "intro": [
+          "Review HTTP, DNS, TCP/IP, the request-response model, and web standards before you take the quiz."
+        ]
       }
     }
   },
