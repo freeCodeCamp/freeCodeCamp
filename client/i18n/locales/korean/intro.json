@@ -5743,22 +5743,21 @@
       "performance": "성능",
       "testing": "테스팅",
       "css-libraries-and-frameworks": "CSS 라이브러리와 프레임워크",
-      "data-visualization": "데이터 시각화와 D3",
       "typescript-fundamentals": "TypeScript 기초",
+      "data-visualization": "데이터 시각화와 D3",
       "review-front-end-libraries": "프론트엔드 라이브러리 복습",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
+        ]
+      },
       "data-visualization": {
         "note": "2026년 예정",
         "intro": [
           "이 모듈에서는 데이터 시각화를 소개하고 D3 라이브러리를 다루는 방법을 배우세요."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "2026년 예정",
-        "intro": [
-          "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6011,20 +6010,6 @@
           "이 퀴즈로 CSS 라이브러리와 프레임워크에 대해 배운 내용을 확인하세요."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "데이터 시각화 소개",
-        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
-      },
-      "lab-bar-chart": {
-        "title": "막대 그래프 만들기",
-        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "산점도 그래프 만들기",
-        "intro": [
-          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "TypeScript 소개",
         "intro": [
@@ -6098,11 +6083,17 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Build a Football Player Card Builder",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
         ]
       },
       "review-typescript": {
-        "title": "TypeScript 복습",
+        "title": "TypeScript Review",
         "intro": [
           "TypeScript 퀴즈를 보기 전에 지금까지 배운 내용을 복습하세요.",
           "이 페이지를 열어 TypeScript의 데이터 타입, 제네릭, 타입 좁히기 등 가르친 개념을 모두 복습하세요."
@@ -6110,7 +6101,21 @@
       },
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
-        "intro": ["이 퀴즈로 TypeScript 학습 내용을 확인하세요."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "데이터 시각화 소개",
+        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
+      },
+      "lab-bar-chart": {
+        "title": "막대 그래프 만들기",
+        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "산점도 그래프 만들기",
+        "intro": [
+          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
+        ]
       },
       "review-front-end-libraries": {
         "title": "프론트엔드 라이브러리 복습",
