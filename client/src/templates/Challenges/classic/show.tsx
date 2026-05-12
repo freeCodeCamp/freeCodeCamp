@@ -497,6 +497,9 @@ function ShowClassic({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
