@@ -4723,9 +4723,9 @@
         ]
       },
       "workshop-word-counter": {
-        "title": "Build a Word Counter",
+        "title": "단어 개수 계산기 만들기",
         "intro": [
-          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+          "이 워크숍에서는 <code>for...of</code> 반복문을 사용해 문자열 배열에서 특정 문자열의 발생 횟수를 세는 함수를 만들어 연습하세요."
         ]
       },
       "workshop-sentence-analyzer": {
@@ -4741,10 +4741,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "유산 도서관 카탈로그 만들기",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "이 워크숍에서는 유산 도서관의 역사적 카탈로그 카드를 디지털화하세요.",
+          "반복문과 객체, 문자열 메서드를 사용하여 원시 텍스트 데이터를 파싱하고 항목을 검색·그룹화하며 서식화된 출력을 렌더링하고 JSON과 CSV로 내보내는 연습을 하세요."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4783,9 +4783,9 @@
         ]
       },
       "workshop-festival-crowd-flow-simulator": {
-        "title": "Build a Festival Crowd Flow Simulator",
+        "title": "축제 관중 흐름 시뮬레이터 만들기",
         "intro": [
-          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+          "이 워크숍에서는 자바스크립트를 사용해 음악 축제의 관중 흐름을 시뮬레이션하세요."
         ]
       },
       "lab-missing-letter-detector": {
@@ -4937,10 +4937,10 @@
         ]
       },
       "lab-playlist-remix-engine": {
-        "title": "Build a Playlist Remix Engine",
+        "title": "재생목록 리믹스 엔진 만들기",
         "intro": [
-          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
-          "You will apply array methods and logic to transform data and generate a final remix schedule."
+          "이 실습에서는 자바스크립트 배열을 사용해 재생목록 리믹스 엔진을 만드세요.",
+          "배열 메서드와 논리를 적용해 데이터를 변환하고 최종 리믹스 일정표를 생성하세요."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6023,9 +6023,9 @@
         ]
       },
       "workshop-type-safe-math-toolkit": {
-        "title": "Build a Type Safe Math Toolkit",
+        "title": "타입 안전한 수학 툴킷 만들기",
         "intro": [
-          "In this workshop, you will practice typing functions by building a math toolkit project."
+          "이 워크숍에서는 함수에 타입을 지정하는 연습을 하며 수학 툴킷 프로젝트를 만드세요."
         ]
       },
       "lecture-understanding-type-composition": {
@@ -6035,15 +6035,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "도형 관리자 만들기",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "이 워크숍에서는 TypeScript의 타입과 인터페이스 같은 기본 기능을 연습하며 도형 관리 프로그램을 만드세요."
         ]
       },
       "lab-motorcycle-shop": {
-        "title": "Build a Motorcycle Shop",
+        "title": "오토바이 상점 만들기",
         "intro": [
-          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+          "이 실습에서는 TypeScript를 사용해 오토바이 상점을 만들어 보세요."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6053,15 +6053,15 @@
         ]
       },
       "workshop-bug-emoji-picker": {
-        "title": "Build a Bug Emoji Picker",
+        "title": "벌레 이모지 선택기 만들기",
         "intro": [
-          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+          "이 워크숍에서는 다양한 벌레 이모지를 표시하는 벌레 종 선택기를 만들며 TypeScript의 추상 클래스와 제네릭을 배우세요."
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "제품 쇼케이스 만들기",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "이 실습에서는 TypeScript의 제네릭과 타입 좁히기를 연습하세요."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
@@ -6069,31 +6069,31 @@
         "intro": ["이 레슨에서는 TypeScript 구성파일과 사용 방법을 배우세요."]
       },
       "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App",
+        "title": "운세 앱 만들기",
         "intro": [
-          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+          "이 워크숍에서는 TypeScript를 사용해 운세 앱을 만들어 연습을 계속하세요."
         ]
       },
       "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
+        "title": "플래시카드 퀴즈 앱 만들기",
         "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+          "이 실습에서는 TypeScript를 사용해 플래시카드 퀴즈 앱을 만들어 연습하세요."
         ]
       },
       "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
+        "title": "디지털 펫 게임 만들기",
         "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+          "이 실습에서는 TypeScript와 React를 사용해 배운 내용을 연습하기 위해 디지털 펫 게임을 만드세요."
         ]
       },
       "workshop-build-a-football-player-card-builder": {
-        "title": "Build a Football Player Card Builder",
+        "title": "축구 선수 카드 생성기 만들기",
         "intro": [
-          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+          "이 워크숍에서는 TypeScript에서 React를 사용하는 방법을 배우기 위해 축구 선수 카드 생성기를 만드세요."
         ]
       },
       "review-typescript": {
-        "title": "TypeScript Review",
+        "title": "TypeScript 복습",
         "intro": [
           "TypeScript 퀴즈를 보기 전에 지금까지 배운 내용을 복습하세요.",
           "이 페이지를 열어 TypeScript의 데이터 타입, 제네릭, 타입 좁히기 등 가르친 개념을 모두 복습하세요."
@@ -6101,7 +6101,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
-        "intro": ["Test what you've learned on TypeScript with this quiz."]
+        "intro": ["이 퀴즈로 TypeScript 학습 내용을 확인하세요."]
       },
       "lecture-introduction-to-data-visualization": {
         "title": "데이터 시각화 소개",
@@ -6978,10 +6978,10 @@
         ]
       },
       "lecture-understanding-routing-in-express-js": {
-        "title": "Understanding Routing in ExpressJS",
+        "title": "ExpressJS에서 라우팅 이해하기",
         "intro": [
-          "Understanding Routing in ExpressJS",
-          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+          "ExpressJS에서 라우팅 이해하기",
+          "이 강의들에서는 ExpressJS의 라우팅에 대해 배우며, 라우팅은 웹 애플리케이션의 서로 다른 엔드포인트를 정의하고 클라이언트 요청에 어떻게 응답하는지를 뜻합니다."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7357,7 +7357,7 @@
         "intro": ["", ""]
       },
       "es-a1-learn-talking-about-colleagues": {
-        "title": "Talking About Colleagues",
+        "title": "동료에 대해 말하기",
         "intro": ["", ""]
       }
     }
@@ -8447,7 +8447,7 @@
       "zh-a1-module-initials-and-finals": "초성 및 운모",
       "zh-a1-module-greetings-and-basic-introductions": "인사 및 기본 소개",
       "zh-a1-module-asking-and-giving-basic-information": "기본 정보 묻기 및 제공하기",
-      "zh-a1-module-numbers-below-100": "Numbers Below 100",
+      "zh-a1-module-numbers-below-100": "100 미만의 숫자",
       "zh-a1-module-communicating-personal-information": "개인정보 전달하기",
       "zh-a1-module-talking-about-personal-skills": "개인 기술에 대해 말하기",
       "zh-a1-module-discussing-team-skills": "팀 기술 논의하기"
@@ -8466,9 +8466,9 @@
         ]
       },
       "zh-a1-module-communicating-personal-information": {
-        "note": "Coming 2026",
+        "note": "2026년 예정",
         "intro": [
-          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
+          "이 모듈에서는 나이와 전화번호 같은 개인 정보를 전달하는 대화를 이해하는 연습을 하세요."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8666,11 +8666,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers Below 100 Review",
+        "title": "100 미만 숫자 복습",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers Below 100 Quiz",
+        "title": "100 미만 숫자 퀴즈",
         "intro": ["", ""]
       }
     }
