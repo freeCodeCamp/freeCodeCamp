@@ -7213,12 +7213,6 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
-      "review-introduction-to-express": {
-        "title": "Introduction to Express Review",
-        "intro": [
-          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
-        ]
-      },
       "lecture-understanding-rest-api-and-web-services": {
         "title": "Understanding the REST API and Web Services",
         "intro": [
@@ -7236,6 +7230,12 @@
         "intro": [
           "Understanding Routing in ExpressJS",
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
+      "review-introduction-to-express": {
+        "title": "Introduction to Express Review",
+        "intro": [
+          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
