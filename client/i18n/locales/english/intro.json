@@ -7232,6 +7232,12 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
