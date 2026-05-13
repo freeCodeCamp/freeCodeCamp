@@ -124,7 +124,7 @@ function ExpensiveSquare({ num }) {
 export default ExpensiveSquare;
 ```
 
-This caches the result of the `calculateSquare(num)` computation. Even though the `ExpensiveSquare` component still re-renders every time the parent's `timer` state updates, the `calculateSquare` computation only re-runs on the initial render and when `num` changes.
+This will make sure the function is memoized by caching the result. Even though the `ExpensiveSquare` component still re-renders every time the parent's `timer` state updates, the `calculateSquare` computation only re-runs on the initial render and when `num` changes.
 
 # --questions--
 
