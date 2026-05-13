@@ -5882,6 +5882,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-try-catch": {
+        "title": "Learn try...catch...finally and throw",
+        "intro": ["Learn try...catch...finally and throw", ""]
       }
     }
   },

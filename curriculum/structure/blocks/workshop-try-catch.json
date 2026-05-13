@@ -1,0 +1,15 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-try-catch",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6a036fa04efd843ffc4bf571", "title": "Step 1" },
+    { "id": "6a036fa04efd843ffc4bf572", "title": "Step 2" },
+    { "id": "6a036fa04efd843ffc4bf573", "title": "Step 3" },
+    { "id": "6a036fa04efd843ffc4bf574", "title": "Step 4" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

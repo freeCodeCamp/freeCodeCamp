@@ -1,0 +1,16 @@
+{
+  "name": "Workshop: Try/Catch/Finally",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-try-catch",
+  "order": 5,
+  "time": "30 minutes",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-v9",
+  "challengeOrder": [
+    ["6a036fa04efd843ffc4bf571", "Step 1"],
+    ["6a036fa04efd843ffc4bf572", "Step 2"],
+    ["6a036fa04efd843ffc4bf573", "Step 3"],
+    ["6a036fa04efd843ffc4bf574", "Step 4"]
+  ]
+}
