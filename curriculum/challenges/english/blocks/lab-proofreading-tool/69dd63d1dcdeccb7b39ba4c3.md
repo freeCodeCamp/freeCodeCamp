@@ -37,6 +37,7 @@ assert.isFunction(isPalindrome);
 
 ```js
 assert.isTrue(isPalindrome("racecar"));
+assert.isTrue(isPalindrome("a"));
 ```
 
 `isPalindrome` should return `true` regardless of case.
@@ -133,6 +134,7 @@ assert.sameDeepOrderedMembers(result[0].palindromeBreaks, [1, 3]);
 const result = analyzeTexts([["racecar", "hello"], ["level", "world", "level"]], 1);
 assert.lengthOf(result, 2);
 assert.sameDeepOrderedMembers(result[1].palindromeBreaks, [1]);
+assert.sameDeepOrderedMembers(result[1].repeatedPhrases, [0, 2]);
 ```
 
 # --seed--
