@@ -62,7 +62,7 @@
         {
           "dashedName": "error-handling-in-express",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["review-error-handling-in-express"]
         },
         { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
         { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
