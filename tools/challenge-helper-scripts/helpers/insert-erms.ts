@@ -1,6 +1,6 @@
 // Update given value with markers (labels)
 const insertErms = (seedCode: string, erms: number[]): string => {
-  if (!erms || erms.length <= 1) {
+  if (!erms) {
     throw Error('erms should be provided');
   }
 
