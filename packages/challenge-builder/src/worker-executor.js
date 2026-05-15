@@ -1,149 +1,255 @@
-export class WorkerExecutor {
-  constructor(
-    workerName,
-    { location = '/js/', maxWorkers = 2, terminateWorker = false } = {}
-  ) {
-    this._workerPool = [];
-    this._taskQueue = [];
-    this._workersInUse = 0;
-    this._maxWorkers = maxWorkers;
-    this._terminateWorker = terminateWorker;
-    this._scriptURL = `${location}${workerName}.js`;
-
-    this._getWorker = this._getWorker.bind(this);
+/**
+ * Simple event system used by WorkerTask.
+ * It lets us listen for events like "done" and "error".
+ */
+class EventEmitter {
+  constructor() {
+    // Stores events and their listeners
+    this._events = new Map();
   }
 
-  async _getWorker() {
-    return this._workerPool.length
-      ? this._workerPool.shift()
-      : this._createWorker();
-  }
-
-  _createWorker() {
-    return new Promise((resolve, reject) => {
-      const newWorker = new Worker(this._scriptURL);
-      newWorker.onmessage = e => {
-        if (e.data?.type === 'contentLoaded') {
-          resolve(newWorker);
-        }
-      };
-      newWorker.onerror = err => reject(err);
-    });
-  }
-
-  _handleTaskEnd(task) {
-    return () => {
-      this._workersInUse--;
-      const worker = task._worker;
-      if (worker) {
-        if (this._terminateWorker) {
-          worker.terminate();
-        } else {
-          worker.onmessage = null;
-          worker.onerror = null;
-          this._workerPool.push(worker);
-        }
-      }
-      this._processQueue();
-    };
-  }
-
-  _processQueue() {
-    while (this._workersInUse < this._maxWorkers && this._taskQueue.length) {
-      const task = this._taskQueue.shift();
-      const handleTaskEnd = this._handleTaskEnd(task);
-      task._execute(this._getWorker).done.then(handleTaskEnd, handleTaskEnd);
-      this._workersInUse++;
+  // Add a listener for an event
+  on(event, listener) {
+    if (!this._events.has(event)) {
+      this._events.set(event, new Set());
     }
+
+    this._events.get(event).add(listener);
+    return this;
   }
 
-  execute(data, timeout = 1000) {
-    const task = eventify({});
-    task._execute = function (getWorker) {
-      getWorker().then(
-        worker => {
-          task._worker = worker;
-          const timeoutId = setTimeout(() => {
-            task._worker.terminate();
-            task._worker = null;
-            this.emit('error', { message: 'timeout' });
-          }, timeout);
-
-          worker.onmessage = e => {
-            clearTimeout(timeoutId);
-            // data.type is undefined when the message has been processed
-            // successfully and defined when something else has happened (e.g.
-            // an error occurred)
-            if (e.data?.type) {
-              this.emit(e.data.type, e.data.data);
-            } else {
-              this.emit('done', e.data);
-            }
-          };
-
-          worker.onerror = e => {
-            clearTimeout(timeoutId);
-            this.emit('error', { message: e.message });
-          };
-
-          worker.postMessage(data);
-        },
-        err => this.emit('error', err)
-      );
-      return this;
+  // Add a listener that runs once then removes itself
+  once(event, listener) {
+    const wrapper = (...args) => {
+      this.removeListener(event, wrapper);
+      listener(...args);
     };
 
-    task.done = new Promise((resolve, reject) => {
-      task
-        .once('done', data => resolve(data))
-        .once('error', err => reject(err.message));
-    });
+    return this.on(event, wrapper);
+  }
 
-    this._taskQueue.push(task);
-    this._processQueue();
-    return task;
+  // Trigger an event and call all listeners
+  emit(event, ...args) {
+    const listeners = this._events.get(event);
+
+    if (!listeners) return false;
+
+    // Copy list in case listeners change during execution
+    for (const listener of [...listeners]) {
+      listener(...args);
+    }
+
+    return true;
+  }
+
+  // Remove a specific listener
+  removeListener(event, listener) {
+    const listeners = this._events.get(event);
+
+    if (!listeners) return this;
+
+    listeners.delete(listener);
+
+    // Clean up if no listeners left
+    if (listeners.size === 0) {
+      this._events.delete(event);
+    }
+
+    return this;
+  }
+
+  // Remove all listeners for one event or everything
+  removeAllListeners(event) {
+    if (event) {
+      this._events.delete(event);
+    } else {
+      this._events.clear();
+    }
+
+    return this;
   }
 }
 
-// Error and completion handling
-const eventify = self => {
-  self._events = {};
+/**
+ * Represents a single task that runs inside a worker.
+ */
+class WorkerTask extends EventEmitter {
+  constructor(data, timeout) {
+    super();
 
-  self.on = (event, listener) => {
-    if (typeof self._events[event] === 'undefined') {
-      self._events[event] = [];
-    }
-    self._events[event].push(listener);
-    return self;
-  };
+    this.data = data;
+    this.timeout = timeout;
 
-  self.removeListener = (event, listener) => {
-    if (typeof self._events[event] !== 'undefined') {
-      const index = self._events[event].indexOf(listener);
-      if (index !== -1) {
-        self._events[event].splice(index, 1);
-      }
-    }
-    return self;
-  };
+    // Worker assigned when task starts running
+    this.worker = null;
 
-  self.emit = (event, ...args) => {
-    if (typeof self._events[event] !== 'undefined') {
-      const listeners = self._events[event].slice();
-      for (let listener of listeners) {
-        listener.apply(self, args);
-      }
-    }
-    return self;
-  };
-
-  self.once = (event, listener) => {
-    self.on(event, function handler(...args) {
-      self.removeListener(event, handler);
-      listener.apply(self, args);
+    // Promise that resolves or rejects based on task result
+    this.done = new Promise((resolve, reject) => {
+      this.once('done', resolve);
+      this.once('error', reject);
     });
-    return self;
-  };
+  }
+}
 
-  return self;
-};
+/**
+ * Handles a pool of workers and runs tasks with a limit on concurrency.
+ */
+export class WorkerExecutor {
+  constructor(
+    workerName,
+    {
+      location = '/js/',
+      maxWorkers = 2,
+      terminateWorker = false,
+    } = {}
+  ) {
+    this._scriptURL = `${location}${workerName}.js`;
+
+    // Max number of workers running at the same time
+    this._maxWorkers = maxWorkers;
+
+    // If true workers are destroyed after each task
+    this._terminateWorker = terminateWorker;
+
+    // Idle workers we can reuse
+    this._workerPool = [];
+
+    // Waiting tasks
+    this._taskQueue = [];
+
+    // How many workers are currently running
+    this._workersInUse = 0;
+  }
+
+  // Creates a worker and waits until it signals it is ready
+  async _createWorker() {
+    return new Promise((resolve, reject) => {
+      const worker = new Worker(this._scriptURL);
+
+      const onMessage = e => {
+        if (e.data?.type !== 'contentLoaded') return;
+
+        worker.removeEventListener('message', onMessage);
+        worker.removeEventListener('error', onError);
+
+        resolve(worker);
+      };
+
+      const onError = err => {
+        worker.removeEventListener('message', onMessage);
+        worker.removeEventListener('error', onError);
+
+        reject(err);
+      };
+
+      worker.addEventListener('message', onMessage);
+      worker.addEventListener('error', onError);
+    });
+  }
+
+  // Get a worker from the pool or create a new one
+  async _acquireWorker() {
+    if (this._workerPool.length > 0) {
+      return this._workerPool.pop();
+    }
+
+    return this._createWorker();
+  }
+
+  // Return worker to pool or terminate it
+  _releaseWorker(worker) {
+    if (!worker) return;
+
+    worker.onmessage = null;
+    worker.onerror = null;
+
+    if (this._terminateWorker) {
+      worker.terminate();
+      return;
+    }
+
+    this._workerPool.push(worker);
+  }
+
+  // Clean up after a task finishes
+  _finalizeTask(task) {
+    this._workersInUse--;
+
+    this._releaseWorker(task.worker);
+    task.worker = null;
+
+    this._processQueue();
+  }
+
+  // Runs a single task
+  async _runTask(task) {
+    this._workersInUse++;
+
+    try {
+      const worker = await this._acquireWorker();
+      task.worker = worker;
+
+      const timeoutId = setTimeout(() => {
+        if (!task.worker) return;
+
+        task.worker.terminate();
+        task.worker = null;
+
+        task.emit('error', new Error('Worker timeout'));
+      }, task.timeout);
+
+      worker.onmessage = e => {
+        clearTimeout(timeoutId);
+
+        if (e.data?.type) {
+          task.emit(e.data.type, e.data.data);
+        } else {
+          task.emit('done', e.data);
+        }
+      };
+
+      worker.onerror = e => {
+        clearTimeout(timeoutId);
+        task.emit('error', new Error(e.message || 'Worker error'));
+      };
+
+      worker.postMessage(task.data);
+
+      await task.done;
+    } catch (err) {
+      task.emit('error', err);
+    } finally {
+      this._finalizeTask(task);
+    }
+  }
+
+  // Starts tasks while respecting max worker limit
+  _processQueue() {
+    while (
+      this._workersInUse < this._maxWorkers &&
+      this._taskQueue.length > 0
+    ) {
+      const task = this._taskQueue.shift();
+      this._runTask(task);
+    }
+  }
+
+  // Public API to run a task
+  execute(data, timeout = 1000) {
+    const task = new WorkerTask(data, timeout);
+
+    this._taskQueue.push(task);
+    this._processQueue();
+
+    return task;
+  }
+
+  // Stops and clears all idle workers
+  terminateAll() {
+    for (const worker of this._workerPool) {
+      worker.terminate();
+    }
+
+    this._workerPool = [];
+  }
+}
