@@ -1,28 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>freecodecamp/renovate-config"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "extends": ["schedule:weekly"],
-    "automerge": true
-  },
-  "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
-      "matchCurrentVersion": "/^0\\./",
-      "matchUpdateTypes": ["minor", "patch"],
-      "dependencyDashboardApproval": true
-    },
-    {
+      "description": "Keep typebox on a weekly cadence to avoid noisy daily PRs.",
       "groupName": "weekly-cadence",
       "matchPackageNames": ["typebox"],
       "extends": ["schedule:weekly"]
     },
     {
-      "groupName": "types",
-      "matchPackageNames": ["@types/**"]
-    },
-    {
+      "description": "ESLint core, plugins, and TS-ESLint move together because plugin/parser versions are tightly bound to the ESLint major.",
       "groupName": "eslint",
       "matchPackageNames": [
         "eslint",
@@ -33,14 +20,17 @@
       ]
     },
     {
+      "description": "Playwright runner + browsers must move in lockstep.",
       "groupName": "playwright",
       "matchPackageNames": ["@playwright/**", "playwright", "playwright-**"]
     },
     {
+      "description": "Gatsby core + plugins + scoped @gatsbyjs/* packages are version-coupled.",
       "groupName": "gatsby",
-      "matchPackageNames": ["gatsby", "gatsby-**"]
+      "matchPackageNames": ["gatsby", "gatsby-**", "@gatsbyjs/**"]
     },
     {
+      "description": "Vitest core + UI must match.",
       "groupName": "vitest",
       "matchPackageNames": ["vitest", "@vitest/**"]
     },
@@ -50,16 +40,145 @@
       "matchDepTypes": ["pnpm-workspace.overrides"]
     },
     {
+      "description": "Testing Library packages share peer-dep ranges and break together.",
       "groupName": "testing-library",
       "matchPackageNames": ["@testing-library/**"]
     },
     {
+      "description": "Fastify core + official plugins.",
       "groupName": "fastify",
       "matchPackageNames": ["fastify", "@fastify/**"]
     },
     {
-      "matchPackageNames": ["node", "pnpm", "typescript"],
-      "dependencyDashboardApproval": true
+      "description": "React + ReactDOM + react-test-renderer + their @types must ship together; v18→v19 is the canonical case.",
+      "groupName": "react",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "react-test-renderer",
+        "@types/react",
+        "@types/react-dom",
+        "@types/react-test-renderer"
+      ]
+    },
+    {
+      "description": "Redux core + React bindings + middleware/utilities. They aren't a true monorepo so Renovate doesn't auto-group them.",
+      "groupName": "redux",
+      "matchPackageNames": [
+        "redux",
+        "redux-actions",
+        "redux-observable",
+        "redux-saga",
+        "react-redux",
+        "reselect",
+        "@reduxjs/**",
+        "@redux-devtools/**",
+        "@redux-saga/**"
+      ]
+    },
+    {
+      "description": "unist-util-* live in many separate repos but the v3+ unist-util-is API change cascades through all of them. Group to avoid 12 PRs landing piecemeal.",
+      "groupName": "unist",
+      "matchPackageNames": ["unist-util-**"]
+    },
+    {
+      "description": "mdast-util-* migrate together with each major remark wave.",
+      "groupName": "mdast",
+      "matchPackageNames": ["mdast-util-**", "mdast-builder"]
+    },
+    {
+      "description": "micromark core + extensions move together.",
+      "groupName": "micromark",
+      "matchPackageNames": ["micromark", "micromark-**"]
+    },
+    {
+      "description": "hast utilities (HTML AST) — sibling to mdast/unist.",
+      "groupName": "hast",
+      "matchPackageNames": ["hast-util-**"]
+    },
+    {
+      "description": "Stripe server SDK + React bindings + JS SDK migrate together to keep the checkout flow consistent.",
+      "groupName": "stripe",
+      "matchPackageNames": ["stripe", "@stripe/**"]
+    },
+    {
+      "description": "i18next core + React bindings + backends.",
+      "groupName": "i18n",
+      "matchPackageNames": ["i18next", "i18next-**", "react-i18next"]
+    },
+    {
+      "description": "final-form + react-final-form have hard peer-dep coupling.",
+      "groupName": "final-form",
+      "matchPackageNames": ["final-form", "react-final-form"]
+    },
+    {
+      "description": "Monaco editor + React wrapper + webpack plugin move together (API surface drifts otherwise).",
+      "groupName": "monaco",
+      "matchPackageNames": [
+        "monaco-editor",
+        "react-monaco-editor",
+        "monaco-editor-webpack-plugin"
+      ]
+    },
+    {
+      "description": "dotenv + dotenv-cli share parser semantics.",
+      "groupName": "dotenv",
+      "matchPackageNames": ["dotenv", "dotenv-cli"]
+    },
+    {
+      "description": "Joi + ObjectId extension; ObjectId v4 requires Joi v17+.",
+      "groupName": "joi",
+      "matchPackageNames": ["joi", "joi-objectid"]
+    },
+    {
+      "description": "pino + pino-pretty + transports.",
+      "groupName": "pino",
+      "matchPackageNames": ["pino", "pino-**"]
+    },
+    {
+      "description": "nodemailer runtime + its types (overrides the generic types group via merge precedence).",
+      "groupName": "nodemailer",
+      "matchPackageNames": ["nodemailer", "@types/nodemailer"]
+    },
+    {
+      "description": "FontAwesome icon packs + React component must match major.",
+      "groupName": "fortawesome",
+      "matchPackageNames": ["@fortawesome/**"]
+    },
+    {
+      "description": "xterm.js core + addons.",
+      "groupName": "xterm",
+      "matchPackageNames": ["@xterm/**"]
+    },
+    {
+      "description": "Sandpack React + themes.",
+      "groupName": "sandpack",
+      "matchPackageNames": ["@codesandbox/**"]
+    },
+    {
+      "description": "GrowthBook SDK + React bindings.",
+      "groupName": "growthbook",
+      "matchPackageNames": ["@growthbook/**"]
+    },
+    {
+      "description": "Algolia client + InstantSearch.js + React InstantSearch. v5 of algoliasearch ships with the matching InstantSearch wave so they belong together.",
+      "groupName": "algolia",
+      "matchPackageNames": [
+        "algoliasearch",
+        "instantsearch.js",
+        "react-instantsearch",
+        "react-instantsearch-core"
+      ]
+    },
+    {
+      "description": "Build toolchain: webpack core + CLI + analyzer + babel-loader. Keeps a single bundler PR per cycle.",
+      "groupName": "webpack",
+      "matchPackageNames": [
+        "webpack",
+        "webpack-cli",
+        "webpack-bundle-analyzer",
+        "babel-loader"
+      ]
     }
   ]
 }

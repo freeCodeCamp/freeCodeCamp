@@ -1423,7 +1423,7 @@
     "add-code-one": "Sostituisci queste due frasi con il codice copiato.",
     "add-code-two": "Si prega di lasciare la linea ``` sopra e la linea ``` sotto,",
     "add-code-three": "perché consentono al codice di disporsi correttamente nel post.",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token Utente",
