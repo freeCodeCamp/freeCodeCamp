@@ -1423,7 +1423,7 @@
     "add-code-one": "用你的复制代码替换这两句。",
     "add-code-two": "请保留上方的 ``` 行和下方的 ``` 行",
     "add-code-three": "因为它们允许你的代码在帖子中被正确格式化。",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用户令牌",
