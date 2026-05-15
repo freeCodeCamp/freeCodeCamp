@@ -47,8 +47,18 @@ const seed = async () => {
   const dailyCodingChallenges = db.collection('DailyCodingChallenges');
 
   console.log('Fetching challenges...');
-  const jsChallenges = await fetchChallenges('javascript');
-  const pyChallenges = await fetchChallenges('python');
+  const [jsResult, pyResult] = await Promise.allSettled([
+    fetchChallenges('javascript'),
+    fetchChallenges('python')
+  ]);
+  if (jsResult.status === 'rejected') {
+    throw new Error(`Failed to fetch JavaScript challenges: ${jsResult.reason}`);
+  }
+  if (pyResult.status === 'rejected') {
+    throw new Error(`Failed to fetch Python challenges: ${pyResult.reason}`);
+  }
+  const jsChallenges = jsResult.value;
+  const pyChallenges = pyResult.value;
 
   if (jsChallenges.length !== pyChallenges.length) {
     throw new Error(
