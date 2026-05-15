@@ -4722,6 +4722,12 @@
           "루프는 자바스크립트의 필수 요소입니다. 다음 강의에서 다양한 루프 유형과 작동 방식 및 반복이 어떻게 이루어지는지 배우세요."
         ]
       },
+      "workshop-word-counter": {
+        "title": "단어 개수 계산기 만들기",
+        "intro": [
+          "이 워크숍에서는 <code>for...of</code> 반복문을 사용해 문자열 배열에서 특정 문자열의 발생 횟수를 세는 함수를 만들어 연습하세요."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "문장 분석기 만들기",
         "intro": [
@@ -4735,10 +4741,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "유산 도서관 카탈로그 만들기",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "이 워크숍에서는 유산 도서관의 역사적 카탈로그 카드를 디지털화하세요.",
+          "반복문과 객체, 문자열 메서드를 사용하여 원시 텍스트 데이터를 파싱하고 항목을 검색·그룹화하며 서식화된 출력을 렌더링하고 JSON과 CSV로 내보내는 연습을 하세요."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4774,6 +4780,12 @@
         "title": "문자열 반복 함수 만들기",
         "intro": [
           "이 실습에서는 루프를 구현해 문자열을 지정한 횟수만큼 반복하세요."
+        ]
+      },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "축제 관중 흐름 시뮬레이터 만들기",
+        "intro": [
+          "이 워크숍에서는 자바스크립트를 사용해 음악 축제의 관중 흐름을 시뮬레이션하세요."
         ]
       },
       "lab-missing-letter-detector": {
@@ -4922,6 +4934,13 @@
         "title": "요소 스키퍼 구현하기",
         "intro": [
           "이 실습에서는 지정된 스텝값에 따라 배열에서 요소를 건너뛰는 함수를 작성하세요."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "재생목록 리믹스 엔진 만들기",
+        "intro": [
+          "이 실습에서는 자바스크립트 배열을 사용해 재생목록 리믹스 엔진을 만드세요.",
+          "배열 메서드와 논리를 적용해 데이터를 변환하고 최종 리믹스 일정표를 생성하세요."
         ]
       },
       "review-javascript-fundamentals": {
@@ -5724,22 +5743,21 @@
       "performance": "성능",
       "testing": "테스팅",
       "css-libraries-and-frameworks": "CSS 라이브러리와 프레임워크",
-      "data-visualization": "데이터 시각화와 D3",
       "typescript-fundamentals": "TypeScript 기초",
+      "data-visualization": "데이터 시각화와 D3",
       "review-front-end-libraries": "프론트엔드 라이브러리 복습",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
+        ]
+      },
       "data-visualization": {
         "note": "2026년 예정",
         "intro": [
           "이 모듈에서는 데이터 시각화를 소개하고 D3 라이브러리를 다루는 방법을 배우세요."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "2026년 예정",
-        "intro": [
-          "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -5992,20 +6010,6 @@
           "이 퀴즈로 CSS 라이브러리와 프레임워크에 대해 배운 내용을 확인하세요."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "데이터 시각화 소개",
-        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
-      },
-      "lab-bar-chart": {
-        "title": "막대 그래프 만들기",
-        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "산점도 그래프 만들기",
-        "intro": [
-          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "TypeScript 소개",
         "intro": [
@@ -6019,9 +6023,9 @@
         ]
       },
       "workshop-type-safe-math-toolkit": {
-        "title": "Build a Type Safe Math Toolkit",
+        "title": "타입 안전한 수학 툴킷 만들기",
         "intro": [
-          "In this workshop, you will practice typing functions by building a math toolkit project."
+          "이 워크숍에서는 함수에 타입을 지정하는 연습을 하며 수학 툴킷 프로젝트를 만드세요."
         ]
       },
       "lecture-understanding-type-composition": {
@@ -6031,15 +6035,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "도형 관리자 만들기",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "이 워크숍에서는 TypeScript의 타입과 인터페이스 같은 기본 기능을 연습하며 도형 관리 프로그램을 만드세요."
         ]
       },
       "lab-motorcycle-shop": {
-        "title": "Build a Motorcycle Shop",
+        "title": "오토바이 상점 만들기",
         "intro": [
-          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+          "이 실습에서는 TypeScript를 사용해 오토바이 상점을 만들어 보세요."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6049,15 +6053,15 @@
         ]
       },
       "workshop-bug-emoji-picker": {
-        "title": "Build a Bug Emoji Picker",
+        "title": "벌레 이모지 선택기 만들기",
         "intro": [
-          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+          "이 워크숍에서는 다양한 벌레 이모지를 표시하는 벌레 종 선택기를 만들며 TypeScript의 추상 클래스와 제네릭을 배우세요."
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "제품 쇼케이스 만들기",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "이 실습에서는 TypeScript의 제네릭과 타입 좁히기를 연습하세요."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
@@ -6065,9 +6069,27 @@
         "intro": ["이 레슨에서는 TypeScript 구성파일과 사용 방법을 배우세요."]
       },
       "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App",
+        "title": "운세 앱 만들기",
         "intro": [
-          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+          "이 워크숍에서는 TypeScript를 사용해 운세 앱을 만들어 연습을 계속하세요."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "플래시카드 퀴즈 앱 만들기",
+        "intro": [
+          "이 실습에서는 TypeScript를 사용해 플래시카드 퀴즈 앱을 만들어 연습하세요."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "디지털 펫 게임 만들기",
+        "intro": [
+          "이 실습에서는 TypeScript와 React를 사용해 배운 내용을 연습하기 위해 디지털 펫 게임을 만드세요."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "축구 선수 카드 생성기 만들기",
+        "intro": [
+          "이 워크숍에서는 TypeScript에서 React를 사용하는 방법을 배우기 위해 축구 선수 카드 생성기를 만드세요."
         ]
       },
       "review-typescript": {
@@ -6080,6 +6102,20 @@
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
         "intro": ["이 퀴즈로 TypeScript 학습 내용을 확인하세요."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "데이터 시각화 소개",
+        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
+      },
+      "lab-bar-chart": {
+        "title": "막대 그래프 만들기",
+        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "산점도 그래프 만들기",
+        "intro": [
+          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
+        ]
       },
       "review-front-end-libraries": {
         "title": "프론트엔드 라이브러리 복습",
@@ -6941,6 +6977,13 @@
           "이 강의들에서 Express.js가 무엇인지, 웹 서버와 API를 구축할 때 개발자가 왜 사용하는지, 라우트 및 요청 처리로 기본 Express 애플리케이션을 설정하는 방법을 배우세요."
         ]
       },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "ExpressJS에서 라우팅 이해하기",
+        "intro": [
+          "ExpressJS에서 라우팅 이해하기",
+          "이 강의들에서는 ExpressJS의 라우팅에 대해 배우며, 라우팅은 웹 애플리케이션의 서로 다른 엔드포인트를 정의하고 클라이언트 요청에 어떻게 응답하는지를 뜻합니다."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "백엔드 개발 및 API 인증시험",
         "intro": ["이 시험에 합격해 백엔드 개발 및 API 인증을 받으세요"]
@@ -7311,6 +7354,10 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "직장 사람 설명하기",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "동료에 대해 말하기",
         "intro": ["", ""]
       }
     }
@@ -8400,7 +8447,7 @@
       "zh-a1-module-initials-and-finals": "초성 및 운모",
       "zh-a1-module-greetings-and-basic-introductions": "인사 및 기본 소개",
       "zh-a1-module-asking-and-giving-basic-information": "기본 정보 묻기 및 제공하기",
-      "zh-a1-module-numbers-below-100": "100 미만 숫자들",
+      "zh-a1-module-numbers-below-100": "100 미만의 숫자",
       "zh-a1-module-communicating-personal-information": "개인정보 전달하기",
       "zh-a1-module-talking-about-personal-skills": "개인 기술에 대해 말하기",
       "zh-a1-module-discussing-team-skills": "팀 기술 논의하기"
@@ -8416,6 +8463,12 @@
         "note": "2026년 예정",
         "intro": [
           "이 모듈에서는 동료에 대해 간단한 질문을 주고받는 짧은 대화를 이해하는 연습을 하세요."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "2026년 예정",
+        "intro": [
+          "이 모듈에서는 나이와 전화번호 같은 개인 정보를 전달하는 대화를 이해하는 연습을 하세요."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {

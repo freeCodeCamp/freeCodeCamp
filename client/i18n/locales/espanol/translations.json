@@ -125,6 +125,7 @@
     "sign-in-with-google": "Iniciar sesión con Google",
     "go-to-dcc-today": "Ir al desafío de hoy",
     "go-to-dcc-archive": "Ir al archivo de desafíos",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -339,6 +340,7 @@
       "keyboard-shortcuts": "Habilitar atajos de teclado"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Cuenta",
       "certs": "Certificaciones",
       "legacy-certs": "Certificaciones de legado",
@@ -469,13 +471,16 @@
     },
     "completeness": {
       "heading": "Perfil {{percentage}}% completo",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Agrega tu nombre",
       "location": "Agrega tu ubicación",
       "picture": "Sube una foto de perfil",
       "about": "Escribe una sección 'Acerca de'",
       "social": "Agrega un enlace social",
       "portfolio": "Agrega un proyecto al portafolio",
-      "experience": "Agrega tu experiencia"
+      "experience": "Agrega tu experiencia",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -1027,6 +1032,10 @@
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
     "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
     "edit-my-profile": "Editar mi perfil",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "Contenido del editor {{editorName}} . Presione Opción+F1 para opciones de accesibilidad.",
     "editor-a11y-off-non-macos": "Contenido del editor {{editorName}} . Presione Alt+F1 para opciones de accesibilidad.",
     "editor-a11y-on-macos": "Contenido del editor {{editorName}} . El modo de accesibilidad está en 'encendido'. Presiona Comando+E para desactivar o presiona Opción+F1 para más opciones.",
@@ -1413,7 +1422,8 @@
     "too-long-three": "Por favor, copia/pega todo el código del editor que se muestra en el desafío desde el que acabas de enlazar.",
     "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
-    "add-code-three": "porque permiten que tu código formatee correctamente en el post."
+    "add-code-three": "porque permiten que tu código formatee correctamente en el post.",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuario",
