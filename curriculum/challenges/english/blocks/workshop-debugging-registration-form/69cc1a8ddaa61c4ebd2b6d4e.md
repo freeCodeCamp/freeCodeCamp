@@ -18,23 +18,28 @@ Declare an object called `user` with `name` and `age` as its properties.
 You should create a `user` object inside the `registerUser` function.
 
 ```js
-const match = code.match(
-  __helpers.functionRegex('registerUser', [], { capture: true })
+assert.match(
+  code,
+  /function\s+registerUser\s*\(\)\s*\{[\s\S]*const\s+user\s*=\s*\{[\s\S]*?\}/
 );
-assert.exists(match);
-assert.match(match[1], /const\s+user\s*=\s*\{/);
 ```
 
 The `user` object should include a `"name"` property with the value of the `name` variable.
 
 ```js
-assert.match(code, /const\s+user\s*=\s*\{[\s\S]*?name\s*:\s*name/);
+assert.match(
+  code,
+  /const\s+user\s*=\s*\{[\s\S]*?name\s*:\s*name/
+);
 ```
 
 The `user` object should include an `"age"` property with the value of the `age` variable.
 
 ```js
-assert.match(code, /const\s+user\s*=\s*\{[\s\S]*?age\s*:\s*age/);
+assert.match(
+  code,
+  /const\s+user\s*=\s*\{[\s\S]*?age\s*:\s*age/
+);
 ```
 
 # --seed--
