@@ -93,3 +93,18 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+
+## Quick Start
+
+> For full contribution guidelines, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+### Prerequisites
+- Node.js 18+
+- pnpm 8+
+
+### Setup
+```bash
+git clone https://github.com/freeCodeCamp/freeCodeCamp.git
+cd freeCodeCamp
+pnpm install
+pnpm run develop
