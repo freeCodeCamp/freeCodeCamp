@@ -104,7 +104,6 @@
         },
         {
           "dashedName": "es-a1-module-describing-a-company",
-          "comingSoon": true,
           "blocks": [
             "es-a1-warm-up-describing-a-company-basics",
             "es-a1-learn-what-the-company-does",
@@ -117,7 +116,6 @@
         },
         {
           "dashedName": "es-a1-module-describing-people-at-work",
-          "comingSoon": true,
           "blocks": [
             "es-a1-warm-up-describing-people-at-work-basics",
             "es-a1-learn-mini-biographies",
