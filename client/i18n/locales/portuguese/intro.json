@@ -4899,9 +4899,9 @@
         ]
       },
       "workshop-word-counter": {
-        "title": "Build a Word Counter",
+        "title": "Crie um Contador de Palavras",
         "intro": [
-          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+          "Neste workshop, você praticará o uso de laços <code>for...of</code> criando uma função que conta as ocorrências de uma string em um array de strings."
         ]
       },
       "workshop-sentence-analyzer": {
@@ -4917,10 +4917,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "Crie um Catálogo para Biblioteca Patrimonial",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "Neste workshop, você digitalizará fichas de catálogo históricas para uma biblioteca patrimonial.",
+          "Você praticará o uso de laços, objetos e métodos de string para analisar dados de texto bruto, pesquisar e agrupar entradas, exibir saída formatada e exportar para JSON e CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4961,9 +4961,9 @@
         ]
       },
       "workshop-festival-crowd-flow-simulator": {
-        "title": "Build a Festival Crowd Flow Simulator",
+        "title": "Crie um Simulador de Fluxo de Público para Festival",
         "intro": [
-          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+          "Neste workshop, você usará JavaScript para simular o fluxo de participantes em um festival de música."
         ]
       },
       "lab-missing-letter-detector": {
@@ -5121,10 +5121,10 @@
         ]
       },
       "lab-playlist-remix-engine": {
-        "title": "Build a Playlist Remix Engine",
+        "title": "Crie um Motor de Remix de Playlist",
         "intro": [
-          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
-          "You will apply array methods and logic to transform data and generate a final remix schedule."
+          "Neste laboratório, você criará um motor de remix de playlist usando arrays em JavaScript.",
+          "Você aplicará métodos e lógica de arrays para transformar dados e gerar um cronograma final de remix."
         ]
       },
       "review-javascript-fundamentals": {
@@ -6251,9 +6251,9 @@
         ]
       },
       "workshop-type-safe-math-toolkit": {
-        "title": "Build a Type Safe Math Toolkit",
+        "title": "Crie um Kit de Ferramentas Matemáticas com Tipagem Segura",
         "intro": [
-          "In this workshop, you will practice typing functions by building a math toolkit project."
+          "Neste workshop, você praticará a tipagem de funções criando um projeto de kit de ferramentas matemáticas."
         ]
       },
       "lecture-understanding-type-composition": {
@@ -6263,15 +6263,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "Crie um Gerenciador de Formas",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "Neste workshop, você praticará recursos básicos do TypeScript, como tipos e interfaces, criando um programa gerenciador de formas."
         ]
       },
       "lab-motorcycle-shop": {
-        "title": "Build a Motorcycle Shop",
+        "title": "Crie uma Loja de Motocicletas",
         "intro": [
-          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+          "Para este laboratório, você usará TypeScript para criar uma loja de motocicletas."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6281,15 +6281,15 @@
         ]
       },
       "workshop-bug-emoji-picker": {
-        "title": "Build a Bug Emoji Picker",
+        "title": "Crie um Seletor de Emojis de Insetos",
         "intro": [
-          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+          "Neste workshop, você aprenderá sobre classes abstratas e genéricos em TypeScript criando um seletor de espécies de insetos que exibe diferentes emojis de insetos."
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "Crie uma Página de Produto",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "Neste laboratório, você praticará genéricos e redução de tipo em TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
@@ -6299,31 +6299,31 @@
         ]
       },
       "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App",
+        "title": "Crie um Aplicativo de Adivinhações",
         "intro": [
-          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+          "Neste workshop, você continuará praticando o uso de TypeScript criando um aplicativo de adivinhações."
         ]
       },
       "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
+        "title": "Crie um Aplicativo de Quiz com Flashcards",
         "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+          "Neste laboratório, você praticará o uso de TypeScript criando um aplicativo de quiz com flashcards."
         ]
       },
       "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
+        "title": "Crie um Jogo de Bichinho Digital",
         "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+          "Neste laboratório, você aplicará o que aprendeu sobre TypeScript e React ao criar um jogo de bichinho digital."
         ]
       },
       "workshop-build-a-football-player-card-builder": {
-        "title": "Build a Football Player Card Builder",
+        "title": "Crie um Gerador de Cartões de Jogador de Futebol",
         "intro": [
-          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+          "Neste workshop, você aprenderá a trabalhar com React em TypeScript criando um gerador de cartões de jogador de futebol."
         ]
       },
       "review-typescript": {
-        "title": "TypeScript Review",
+        "title": "Revisão de TypeScript",
         "intro": [
           "Antes de fazer o questionário de TypeScript, você deve revisar tudo o que aprendeu até agora.",
           "Abra esta página para revisar todos os conceitos ensinados, incluindo tipos de dados em TypeScript, genéricos, estreitamento de tipos e mais."
@@ -6331,7 +6331,9 @@
       },
       "quiz-typescript": {
         "title": "Questionário sobre TypeScript",
-        "intro": ["Test what you've learned on TypeScript with this quiz."]
+        "intro": [
+          "Teste o que você aprendeu sobre TypeScript com este questionário."
+        ]
       },
       "lecture-introduction-to-data-visualization": {
         "title": "Introdução à visualização de dados",
@@ -7298,10 +7300,10 @@
         ]
       },
       "lecture-understanding-routing-in-express-js": {
-        "title": "Understanding Routing in ExpressJS",
+        "title": "Compreendendo o Roteamento no ExpressJS",
         "intro": [
-          "Understanding Routing in ExpressJS",
-          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+          "Compreendendo o Roteamento no ExpressJS",
+          "Nestas aulas, você aprenderá sobre roteamento no ExpressJS, ou seja, como definir os diferentes endpoints da aplicação web e como eles respondem às solicitações do cliente."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7681,7 +7683,7 @@
         "intro": ["", ""]
       },
       "es-a1-learn-talking-about-colleagues": {
-        "title": "Talking About Colleagues",
+        "title": "Falando sobre Colegas",
         "intro": ["", ""]
       }
     }
@@ -8807,7 +8809,7 @@
       "zh-a1-module-initials-and-finals": "Iniciais e Finais",
       "zh-a1-module-greetings-and-basic-introductions": "Saudações e Introduções Básicas",
       "zh-a1-module-asking-and-giving-basic-information": "Perguntando e Dando Informações Básicas",
-      "zh-a1-module-numbers-below-100": "Numbers Below 100",
+      "zh-a1-module-numbers-below-100": "Números abaixo de 100",
       "zh-a1-module-communicating-personal-information": "Comunicando Informações Pessoais",
       "zh-a1-module-talking-about-personal-skills": "Falando sobre Habilidades Pessoais",
       "zh-a1-module-discussing-team-skills": "Discutindo Habilidades da Equipe"
@@ -8826,9 +8828,9 @@
         ]
       },
       "zh-a1-module-communicating-personal-information": {
-        "note": "Coming 2026",
+        "note": "Próximo Lançamento: 2026",
         "intro": [
-          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
+          "Neste módulo, você praticará a compreensão de conversas que comunicam informações pessoais, como idade e números de telefone."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -9030,11 +9032,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers Below 100 Review",
+        "title": "Revisão de Números abaixo de 100",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers Below 100 Quiz",
+        "title": "Quiz de Números abaixo de 100",
         "intro": ["", ""]
       }
     }
