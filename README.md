@@ -4,92 +4,92 @@
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
 [![LFX Active Contributors](https://insights.linuxfoundation.org/api/badge/active-contributors?project=freecodecamp&repos=https://github.com/freeCodeCamp/freeCodeCamp)](https://insights.linuxfoundation.org/project/freecodecamp/repository/freecodecamp-freecodecamp)
 
-## freeCodeCamp.org's open-source codebase and curriculum
+## Código fuente abierto y currículo de freeCodeCamp.org
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 100,000 people get their first developer job.
+[freeCodeCamp.org](https://www.freecodecamp.org) es una comunidad amigable donde puedes aprender a programar de forma gratuita. Es administrada por una [organización benéfica 501(c)(3) financiada por donantes](https://www.freecodecamp.org/donate) para ayudar a millones de adultos ocupados a hacer la transición hacia la tecnología. Nuestra comunidad ya ha ayudado a más de 100,000 personas a conseguir su primer empleo como desarrolladores.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Nuestro currículo de desarrollo web full-stack y aprendizaje automático es completamente gratuito y a tu propio ritmo. Tenemos miles de desafíos de programación interactivos para ayudarte a ampliar tus habilidades.
 
-## Table of Contents
+## Tabla de contenidos
 
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-- [License](#license)
+- [Certificaciones](#certificaciones)
+- [La plataforma de aprendizaje](#la-plataforma-de-aprendizaje)
+- [Reportar errores y problemas](#reportar-errores-y-problemas)
+- [Reportar problemas de seguridad y divulgación responsable](#reportar-problemas-de-seguridad-y-divulgación-responsable)
+- [Contribuir](#contribuir)
+- [Estado de la plataforma, compilación y despliegue](#estado-de-la-plataforma-compilación-y-despliegue)
+- [Licencia](#licencia)
 
-### Certifications
+### Certificaciones
 
-freeCodeCamp.org offers several free developer certifications that make up the [Full-Stack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
+freeCodeCamp.org ofrece varias certificaciones gratuitas para desarrolladores que conforman el [Currículo de Desarrollador Full-Stack](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
 
-- [Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design-v9/)
+- [Diseño Web Responsivo](https://www.freecodecamp.org/learn/responsive-web-design-v9/)
 - [JavaScript](https://www.freecodecamp.org/learn/javascript-v9/)
-- [Front-End Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
+- [Bibliotecas de Desarrollo Front-End](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
 - [Python](https://www.freecodecamp.org/learn/python-v9/)
-- [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
-- [Back-End Development and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
+- [Bases de Datos Relacionales](https://www.freecodecamp.org/learn/relational-databases-v9/)
+- [Desarrollo Back-End y APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
 
-Each of these certifications involves completing interactive lessons, workshops, labs, reviews, and quizzes. Throughout the certification, you'll need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
+Cada una de estas certificaciones implica completar lecciones interactivas, talleres, laboratorios, revisiones y cuestionarios. Durante la certificación, deberás completar 5 proyectos obligatorios para poder presentar el examen. Una vez que apruebes el examen, podrás reclamar tu certificación.
 
-freeCodeCamp.org also offers free language certifications designed around internationally recognized proficiency levels:
+freeCodeCamp.org también ofrece certificaciones de idiomas gratuitas diseñadas en torno a niveles de competencia reconocidos internacionalmente:
 
-- [A2 English for Developers (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
-- [B1 English for Developers (Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
-- [A1 Professional Spanish (Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
-- [A1 Professional Chinese (Beta)](https://www.freecodecamp.org/learn/a1-professional-chinese/)
+- [Inglés A2 para Desarrolladores (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
+- [Inglés B1 para Desarrolladores (Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
+- [Español Profesional A1 (Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
+- [Chino Profesional A1 (Beta)](https://www.freecodecamp.org/learn/a1-professional-chinese/)
 
-Each of these certifications is organized into modules, with sections for warm-ups, lessons, practice exercises, review pages, and quizzes to ensure you fully grasp the material before progressing to the next module. You'll need to complete all of the quizzes in order to qualify for the exam at the end of the certification.
+Cada una de estas certificaciones está organizada en módulos, con secciones de calentamiento, lecciones, ejercicios prácticos, páginas de repaso y cuestionarios para asegurarte de que dominas el material antes de pasar al siguiente módulo. Deberás completar todos los cuestionarios para poder presentar el examen al final de la certificación.
 
-Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
+Una vez que hayas obtenido una certificación, la tendrás para siempre. Siempre podrás enlazarla desde tu LinkedIn o currículum. Y cuando tus futuros empleadores o clientes freelance hagan clic en ese enlace, verán una certificación verificada específica para ti.
 
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+La única excepción es si detectamos violaciones de nuestra [Política de Honestidad Académica](https://www.freecodecamp.org/news/academic-honesty-policy/). Cuando detectamos a personas que plagian de forma inequívoca (presentando el código o proyectos de otros como propios sin citar la fuente), hacemos lo que toda institución educativa rigurosa debe hacer: revocamos sus certificaciones y les prohibimos el acceso.
 
-In addition, to help prepare for job interviews, freeCodeCamp.org includes The Odin Project (freeCodeCamp Remix), Coding Interview Prep, Project Euler, and Rosetta Code.
+Además, para ayudarte a prepararte para entrevistas de trabajo, freeCodeCamp.org incluye The Odin Project (freeCodeCamp Remix), Preparación para Entrevistas de Programación, Project Euler y Rosetta Code.
 
-A free, professional Foundational C# with Microsoft Certification is also available.
+También está disponible una Certificación Profesional Gratuita de C# Fundacional con Microsoft.
 
-### The Learning Platform
+### La plataforma de aprendizaje
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+Este código está en funcionamiento en [freeCodeCamp.org](https://www.freecodecamp.org).
 
-Our community also has:
+Nuestra comunidad también cuenta con:
 
-- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
-- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
-- A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
+- Un [foro](https://forum.freecodecamp.org) donde generalmente puedes obtener ayuda con programación o comentarios sobre proyectos en cuestión de horas.
+- Un [canal de YouTube](https://youtube.com/freecodecamp) con cursos gratuitos sobre Python, SQL, Android y muchas otras tecnologías.
+- Una [publicación técnica](https://www.freecodecamp.org/news) con miles de tutoriales de programación y artículos sobre matemáticas y ciencias de la computación.
+- Un [servidor de Discord](https://discord.gg/Z7Fm39aNtZ) donde puedes socializar y hablar con desarrolladores y personas que están aprendiendo a programar.
 
-> #### [Join the community here](https://www.freecodecamp.org/signin).
+> #### [Únete a la comunidad aquí](https://www.freecodecamp.org/signin).
 
-### Reporting Bugs and Issues
+### Reportar errores y problemas
 
-If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+Si crees que has encontrado un error, primero lee el artículo [cómo reportar un error](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue sus instrucciones.
 
-If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+Si estás seguro de que es un error nuevo y has confirmado que otra persona enfrenta el mismo problema, crea un nuevo issue en GitHub. Asegúrate de incluir toda la información posible para que podamos reproducir el error.
 
-### Reporting Security Issues and Responsible Disclosure
+### Reportar problemas de seguridad y divulgación responsable
 
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+Agradecemos la divulgación responsable de vulnerabilidades que puedan afectar la integridad de nuestras plataformas y usuarios.
 
-> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
+> #### [Lee nuestra política de seguridad y sigue estos pasos para reportar una vulnerabilidad](https://contribute.freecodecamp.org/#/security).
 
-### Contributing
+### Contribuir
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+La comunidad de freeCodeCamp.org es posible gracias a miles de voluntarios como tú. Damos la bienvenida a todas las contribuciones y estamos encantados de tenerte a bordo.
 
-> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+> #### [Por favor sigue estos pasos para contribuir](https://contribute.freecodecamp.org).
 
-Recent Contributions:
+Contribuciones recientes:
 
-![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
+![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Imagen de análisis de Repobeats')
 
-### License
+### Licencia
 
 Copyright © 2014 freeCodeCamp.org
 
-The content of this repository is bound by the following licenses:
+El contenido de este repositorio está sujeto a las siguientes licencias:
 
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+- El software informático está licenciado bajo la licencia [BSD-3-Clause](LICENSE.md).
+- Los recursos de aprendizaje en el directorio [`/curriculum`](/curriculum) incluyendo sus subdirectorios están protegidos por derechos de autor © 2014 freeCodeCamp.org
