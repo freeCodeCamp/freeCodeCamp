@@ -5890,7 +5890,7 @@
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
       },
-      "data-sanitizer-sweep": {
+      "lab-data-sanitizer-sweep": {
         "title": "Data Sanitizer Sweep",
         "intro": ["Data Sanitizer Sweep", ""]
       }
