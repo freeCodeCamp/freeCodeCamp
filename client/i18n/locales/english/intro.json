@@ -7604,6 +7604,10 @@
       "es-a1-learn-talking-about-colleagues": {
         "title": "Talking About Colleagues",
         "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
+        "intro": ["", ""]
       }
     }
   },
