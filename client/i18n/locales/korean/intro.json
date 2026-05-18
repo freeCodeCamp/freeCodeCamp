@@ -4794,6 +4794,13 @@
           "이 실습에서는 주어진 연속문자 범위에서 빠진 문자를 찾아 반환하는 함수를 만들어 보세요."
         ]
       },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript 루프 복습",
         "intro": [
@@ -6984,6 +6991,12 @@
           "이 강의들에서는 ExpressJS의 라우팅에 대해 배우며, 라우팅은 웹 애플리케이션의 서로 다른 엔드포인트를 정의하고 클라이언트 요청에 어떻게 응답하는지를 뜻합니다."
         ]
       },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "백엔드 개발 및 API 인증시험",
         "intro": ["이 시험에 합격해 백엔드 개발 및 API 인증을 받으세요"]
@@ -7358,6 +7371,10 @@
       },
       "es-a1-learn-talking-about-colleagues": {
         "title": "동료에 대해 말하기",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
