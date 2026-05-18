@@ -203,6 +203,7 @@ export function IndependentLowerJaw({
           </div>
           <div
             className='hint-body'
+            aria-live='polite'
             dangerouslySetInnerHTML={{
               __html: sanitizeHtml(hint, {
                 allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
@@ -267,7 +268,7 @@ export function IndependentLowerJaw({
               <span className='tooltiptext'> {t('buttons.close')}</span>
             </button>
           </div>
-          <b>{t('learn.congratulations-code-passes')}</b>
+          <b aria-live='polite'>{t('learn.congratulations-code-passes')}</b>
           <div className='progress-bar-container'>
             <Progress minified={true} />
           </div>
