@@ -37,7 +37,7 @@ export enum ExamAttemptStatus {
   Approved = 'Approved',
   // Attempt has been denied
   Denied = 'Denied',
-  /// Attmept has been approved, but challenges have not been awarded to `user.completedChallenges`
+  /// Attempt has been approved, but challenges have not been awarded to `user.completedChallenges`
   AwaitingChallenges = 'AwaitingChallenges'
 }
 
