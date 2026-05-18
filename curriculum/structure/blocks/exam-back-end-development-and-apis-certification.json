@@ -1,5 +1,4 @@
 {
-  "name": "Back End Development and APIs Certification Exam",
   "blockLabel": "exam",
   "blockLayout": "link",
   "isUpcomingChange": true,
@@ -8,7 +7,7 @@
   "challengeOrder": [
     {
       "id": "68e6bfa120effa1586e7985a",
-      "title": "Back End Development and APIs Certification Exam"
+      "title": "Back-End Development and APIs Certification Exam"
     }
   ]
 }

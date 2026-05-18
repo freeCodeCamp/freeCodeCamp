@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-cargo-manifest-validator",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69a56b5069ca99f7317e6e19",
+      "title": "Build a Cargo Manifest Validator"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

@@ -13,7 +13,6 @@ import type {
 import { userSelector } from '../../../redux/selectors';
 import {
   setEditorFocusability,
-  submitChallenge,
   openModal,
   setIsAdvancing
 } from '../redux/actions';
@@ -30,6 +29,7 @@ import {
 import './hotkeys.css';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 const mapStateToProps = createSelector(
   isHelpModalOpenSelector,
@@ -67,7 +67,6 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = {
   setEditorFocusability,
-  submitChallenge,
   openShortcutsModal: () => openModal('shortcuts'),
   setIsAdvancing
 };
@@ -84,11 +83,7 @@ export type HotkeysProps = Pick<
   > &
   Pick<
     EditorProps,
-    | 'containerRef'
-    | 'tests'
-    | 'challengeFiles'
-    | 'submitChallenge'
-    | 'setEditorFocusability'
+    'containerRef' | 'tests' | 'challengeFiles' | 'setEditorFocusability'
   > & {
     isHelpModalOpen?: boolean;
     isResetModalOpen?: boolean;
@@ -116,7 +111,6 @@ function Hotkeys({
   prevChallengePath,
   setEditorFocusability,
   setIsAdvancing,
-  submitChallenge,
   tests,
   usesMultifileEditor,
   openShortcutsModal,
@@ -127,6 +121,8 @@ function Hotkeys({
   isShortcutsModalOpen,
   isProjectPreviewModalOpen
 }: HotkeysProps): JSX.Element {
+  const submitChallenge = useSubmit();
+
   const isModalOpen = [
     isHelpModalOpen,
     isResetModalOpen,

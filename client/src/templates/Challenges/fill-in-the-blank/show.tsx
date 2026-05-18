@@ -10,9 +10,12 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import ShortcutsModal from '../components/shortcuts-modal';
+
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 // Local Utilities
+import ShortcutsModal from '../components/shortcuts-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -38,7 +41,6 @@ import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
-import { ChallengeLang } from '../../../../../shared-dist/config/curriculum';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -106,7 +108,6 @@ const ShowFillInTheBlank = ({
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
   const emptyArray = fillInTheBlank.blanks.map(() => null);
-
   const [showWrong, setShowWrong] = useState(false);
   const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
   const [answersCorrect, setAnswersCorrect] =
@@ -127,10 +128,13 @@ const ShowFillInTheBlank = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -279,7 +283,12 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
+              {transcript && (
+                <ChallengeTranscript
+                  transcript={transcript}
+                  isDialogue={true}
+                />
+              )}
 
               {instructions && (
                 <>
@@ -330,6 +339,7 @@ const ShowFillInTheBlank = ({
           </Row>
         </Container>
         <ShortcutsModal />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );

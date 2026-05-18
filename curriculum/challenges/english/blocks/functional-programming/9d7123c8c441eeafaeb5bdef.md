@@ -42,13 +42,25 @@ assert(!__helpers.removeJSComments(code).match(/\.?[\s\S]*?splice/g));
 You should not mutate the original array passed to the function.
 
 ```js
-assert.deepEqual(_inputCities, ["Chicago", "Delhi", "Islamabad", "London", "Berlin"]);
+assert(
+  (function () {
+    const _inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
+    nonMutatingSplice(_inputCities);
+    return (
+      JSON.stringify(_inputCities) ===
+      JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])
+    );
+  })()
+);
 ```
 
 `nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])` should return `["Chicago", "Delhi", "Islamabad"]`.
 
 ```js
-assert.deepEqual(nonMutatingSplice(_inputCities), ["Chicago", "Delhi", "Islamabad"]);
+assert.deepEqual(
+  nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]),
+  ["Chicago", "Delhi", "Islamabad"]
+);
 ```
 
 # --seed--
@@ -60,12 +72,6 @@ function nonMutatingSplice(cities) {
 
   return cities.splice(3);
 }
-```
-
-## --after-user-code--
-
-```js
-const _inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 ```
 
 # --solutions--

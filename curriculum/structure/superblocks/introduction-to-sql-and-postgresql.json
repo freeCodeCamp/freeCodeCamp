@@ -1,0 +1,9 @@
+{
+  "blocks": [
+    "lecture-working-with-relational-databases",
+    "workshop-database-of-video-game-characters",
+    "lab-celestial-bodies-database",
+    "review-sql-and-postgresql",
+    "quiz-sql-and-postgresql"
+  ]
+}

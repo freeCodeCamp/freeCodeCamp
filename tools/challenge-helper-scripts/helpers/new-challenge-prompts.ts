@@ -1,5 +1,5 @@
-import { prompt } from 'inquirer';
-import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
+import { input, select } from '@inquirer/prompts';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { getLastStep } from './get-last-step-file-number.js';
 
 export const newChallengePrompts = async (): Promise<{
@@ -7,13 +7,11 @@ export const newChallengePrompts = async (): Promise<{
   dashedName: string;
   challengeType: string;
 }> => {
-  const challengeType = await prompt<{ value: string }>({
-    name: 'value',
+  const challengeType = await select<string>({
     message: 'What type of challenge is this?',
-    type: 'list',
     choices: Object.entries(challengeTypes).map(([key, value]) => ({
       name: key,
-      value
+      value: value.toString()
     }))
   });
 
@@ -21,9 +19,9 @@ export const newChallengePrompts = async (): Promise<{
   const defaultTitle = `Step ${lastStep + 1}`;
   const defaultDashedName = `step-${lastStep + 1}`;
 
-  const dashedName = await prompt<{ value: string }>({
-    name: 'value',
+  const dashedName = await input({
     message: 'What is the dashed name (in kebab-case) for this challenge?',
+    default: defaultDashedName,
     validate: (block: string) => {
       if (!block.length) {
         return 'please enter a dashed name';
@@ -33,20 +31,16 @@ export const newChallengePrompts = async (): Promise<{
       }
       return true;
     },
-    filter: (block: string) => {
-      return block.toLowerCase();
-    },
-    default: defaultDashedName
+    transformer: (block: string) => block.toLowerCase()
   });
-  const title = await prompt<{ value: string }>({
-    name: 'value',
+  const title = await input({
     message: 'What is the title of this challenge?',
     default: defaultTitle
   });
 
   return {
-    title: title.value,
-    dashedName: dashedName.value,
-    challengeType: challengeType.value
+    title,
+    dashedName,
+    challengeType
   };
 };

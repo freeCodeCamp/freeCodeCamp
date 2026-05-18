@@ -4,7 +4,6 @@ const slugRE = new RegExp('^[a-z0-9-]+$');
 
 const schema = Joi.object()
   .keys({
-    name: Joi.string().required(),
     blockLayout: Joi.valid(
       'challenge-list',
       'challenge-grid',
@@ -65,7 +64,8 @@ const schema = Joi.object()
       'Euler',
       'Rosetta',
       'Chinese Curriculum',
-      'Spanish Curriculum'
+      'Spanish Curriculum',
+      'General'
     ).required()
   })
   // this makes sure there is no unknown key in the object

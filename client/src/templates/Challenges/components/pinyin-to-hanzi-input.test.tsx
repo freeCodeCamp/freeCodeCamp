@@ -137,12 +137,9 @@ describe('PinyinToHanziInput component', () => {
       );
 
       const input = screen.getByLabelText<HTMLInputElement>('blank');
-
-      if (expectedAriaInvalid) {
-        expect(input).toHaveAttribute('aria-invalid', 'true');
-      } else {
-        expect(input).not.toHaveAttribute('aria-invalid');
-      }
+      expect(input.getAttribute('aria-invalid')).toBe(
+        expectedAriaInvalid ? 'true' : null
+      );
     }
   );
 

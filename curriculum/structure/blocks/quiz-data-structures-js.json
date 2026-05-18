@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": false,
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "dashedName": "quiz-data-structures-js",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    { "id": "699c6f4d4e468a10d3ae25ff", "title": "Data Structures Quiz" }
+  ]
+}

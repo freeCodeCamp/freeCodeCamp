@@ -1,0 +1,133 @@
+---
+id: 68f27139bddf9f6bf2821acf
+title: Step 13
+challengeType: 0
+dashedName: step-13
+---
+
+# --description--
+
+The last `source` element you will add will be for the `video/quicktime` MIME type.
+
+QuickTime is an extensible multimedia architecture created by Apple, which supports playing, streaming, encoding, and transcoding a variety of digital media formats. Not as popular as the MP4 format, you may need it for legacy application support.
+
+Below your third `source` element, add a fourth `source` element and give it a `src` attribute with the value `https://cdn.freecodecamp.org/curriculum/labs/mapmethod.mov` and `type` attribute with the value `video/quicktime`.
+
+Congratulations! You completed the HTML Video Player Workshop.
+
+# --hints--
+
+You should have a fourth `source` element.
+
+```js
+assert.exists(document.querySelector('video > source:nth-of-type(4)'));
+```
+
+Your fourth `source` element should have a `src` attribute.
+
+```js
+const source = document.querySelector('source:nth-of-type(4)');
+assert.isTrue(source?.hasAttribute('src'));
+```
+
+Your fourth `source` element should have a `src` attribute with a value of `https://cdn.freecodecamp.org/curriculum/labs/mapmethod.mov`.
+
+```js
+const source = document.querySelector('source:nth-of-type(4)');
+assert.strictEqual(source?.getAttribute('src'), 'https://cdn.freecodecamp.org/curriculum/labs/mapmethod.mov');
+```
+
+Your fourth `source` element should have a `type` attribute.
+
+```js
+const source = document.querySelector('source:nth-of-type(4)');
+assert.isTrue(source?.hasAttribute('type'));
+```
+
+Your fourth `source` element should have a `type` attribute with a value of `video/quicktime`.
+
+```js
+const source = document.querySelector('source:nth-of-type(4)');
+assert.strictEqual(source?.getAttribute('type'), 'video/quicktime');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with the HTML Video Element</title>
+</head>
+<body>
+  <h1>Working with the HTML Video Element</h1>
+  <video
+    width="640"
+    loop
+    controls
+    muted
+    poster="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg"
+  >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4"
+      type="video/mp4"
+    >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/mapmethod.webm"
+      type="video/webm"
+    >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/mapmethod.ogg"
+      type="video/ogg"
+    >
+--fcc-editable-region--
+    
+--fcc-editable-region--
+  </video>
+</body>
+</html>
+```
+
+# --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with the HTML Video Element</title>
+</head>
+<body>
+  <h1>Working with the HTML Video Element</h1>
+  <video
+    width="640"
+    controls
+    loop
+    muted
+    poster="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg"
+  >
+    <source
+       src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4"
+      type="video/mp4"
+    >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/mapmethod.webm"
+      type="video/webm"
+    >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/mapmethod.ogg"
+      type="video/ogg"
+    >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/mapmethod.mov"
+      type="video/quicktime"
+    >
+  </video>
+</body>
+</html>
+```

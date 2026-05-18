@@ -43,7 +43,7 @@ test('Correct Ask for help button', async ({ page }) => {
   await checkAnswerButton.click();
   await expect(
     page.getByRole('heading', {
-      name: translations.buttons['ask-for-help'],
+      name: translations.buttons['get-help'],
       exact: true
     })
   ).toBeVisible();

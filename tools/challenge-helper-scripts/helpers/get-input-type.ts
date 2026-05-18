@@ -1,10 +1,10 @@
-import { prompt } from 'inquirer';
-import { ChallengeLang } from '../../../shared-dist/config/curriculum.js';
-import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
+import { select } from '@inquirer/prompts';
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 export const getInputType = async (
   challengeType: string,
-  challengeLang?: string
+  challengeLang?: ChallengeLang
 ): Promise<string | undefined> => {
   const isRequired =
     parseInt(challengeType) === challengeTypes.fillInTheBlank &&
@@ -14,12 +14,13 @@ export const getInputType = async (
     return;
   }
 
-  const inputType = await prompt<{ value: string }>({
-    name: 'value',
+  const inputType = await select<string>({
     message: 'What input type is challenge using?',
-    type: 'list',
-    choices: ['pinyin-tone', 'pinyin-to-hanzi']
+    choices: [
+      { name: 'pinyin-tone', value: 'pinyin-tone' },
+      { name: 'pinyin-to-hanzi', value: 'pinyin-to-hanzi' }
+    ]
   });
 
-  return inputType.value;
+  return inputType;
 };

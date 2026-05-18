@@ -252,6 +252,20 @@ describe('createMdastToHtml', () => {
     );
   });
 
+  // NOTE: The mobile app looks for the 'highlighted-text' class to apply highlighted styles.
+  // Notify the mobile team if the class name is changed or removed.
+  it("should include the 'highlighted-text' class when rendering as span", () => {
+    const toHtml = createMdastToHtml('en-US');
+    const nodes = [
+      {
+        type: 'paragraph',
+        children: [{ type: 'inlineCode', value: 'highlighted' }]
+      }
+    ];
+    const actual = toHtml(nodes);
+    expect(actual).toMatch(/class="highlighted-text"/);
+  });
+
   it('should render as regular code when lang is not zh-CN, en-US, or es', () => {
     const toHtml = createMdastToHtml('zh');
     const nodes = [

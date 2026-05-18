@@ -1,3 +1,4 @@
+import { type Certification } from '@freecodecamp/shared/config/certification-settings';
 import { AllChallengesInfo } from '../redux/prop-types';
 import { isProjectBased } from './curriculum-layout';
 
@@ -36,7 +37,7 @@ export function getCompletedChallengesInBlock(
 export const getCurrentBlockIds = (
   allChallengesInfo: AllChallengesInfo,
   block: string,
-  certification: string,
+  certification: Certification,
   challengeType: number
 ): string[] => {
   const { challengeNodes, certificateNodes } = allChallengesInfo;
@@ -45,7 +46,11 @@ export const getCurrentBlockIds = (
       .filter(node => node.challenge.certification === certification)[0]
       ?.challenge.tests.map(test => test.id) ?? [];
   const currentBlockIds = challengeNodes
-    .filter(node => node.challenge.block === block)
+    .filter(
+      node =>
+        node.challenge.block === block &&
+        node.challenge.certification === certification
+    )
     .map(node => node.challenge.id);
 
   if (isProjectBased(challengeType)) {

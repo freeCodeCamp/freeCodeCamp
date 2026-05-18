@@ -4,15 +4,7 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import { describe, it, vi } from 'vitest';
 
-import { previewChallengeSaga, executeTests } from './execute-challenge-saga';
-
-vi.mock('redux-saga/effects', async importOriginal => {
-  const actual = await importOriginal();
-  return {
-    ...actual,
-    delay: vi.fn()
-  };
-});
+import { executeTests, updatePreviewSaga } from './execute-challenge-saga';
 
 vi.mock('i18next', async () => ({
   default: {
@@ -33,9 +25,9 @@ const challengeMounted = { type: 'challenge.challengeMounted' };
 const previewMounted = { type: 'challenge.previewMounted' };
 const resetChallenge = { type: 'challenge.resetChallenge' };
 
-describe('previewChallengeSaga', () => {
+describe('updatePreviewSaga', () => {
   it('flushes logs on challengeMounted', () => {
-    return expectSaga(previewChallengeSaga, challengeMounted)
+    return expectSaga(updatePreviewSaga, challengeMounted)
       .withReducer(reducer)
       .put({ type: 'challenge.initLogs' })
       .silentRun();
@@ -43,15 +35,15 @@ describe('previewChallengeSaga', () => {
     // warnings. Increasing the timeout just makes the tests take longer.
   });
   it('flushes logs on reset', () => {
-    return expectSaga(previewChallengeSaga, resetChallenge)
+    return expectSaga(updatePreviewSaga, resetChallenge)
       .withReducer(reducer)
       .put({ type: 'challenge.initLogs' })
       .silentRun();
   });
-  it('does not flush logs on previewMounted', () => {
-    return expectSaga(previewChallengeSaga, previewMounted)
+  it('flushes logs on previewMounted', () => {
+    return expectSaga(updatePreviewSaga, previewMounted)
       .withReducer(reducer)
-      .not.put({ type: 'challenge.initLogs' })
+      .put({ type: 'challenge.initLogs' })
       .silentRun();
   });
 });

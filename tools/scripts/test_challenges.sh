@@ -10,5 +10,5 @@ IFS=',' challengeIDS=($input)
 for challengeID in "${challengeIDS[@]}";
 do
   challengeID="$(tr -d ' ' <<< "$challengeID")"
-  FCC_CHALLENGE_ID=$challengeID pnpm run test:curriculum
+  FCC_CHALLENGE_ID=$challengeID pnpm turbo -F=@freecodecamp/curriculum test
 done

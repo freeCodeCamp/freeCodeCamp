@@ -4,7 +4,7 @@ import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   ChallengeFiles,
   DailyCodingChallengeLanguages,
@@ -271,6 +271,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const editorPaneFlex =
     !displayPreviewConsole && !displayPreviewPane ? 1 : editorPane.flex;
 
+  const usesTerminal =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
       {isProjectStyle && (
@@ -287,7 +293,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
-          challengeType={challengeType}
+          usesTerminal={usesTerminal}
           data-playwright-test-label='action-row'
         />
       )}
@@ -314,9 +320,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
+          className='editor-pane'
         >
           {!isEmpty(challengeFiles) && (
-            <ReflexContainer key='codePane' orientation='horizontal'>
+            <ReflexContainer
+              key='codePane'
+              orientation='horizontal'
+              className='editor-pane-code'
+            >
               <ReflexElement
                 name='codePane'
                 {...(displayEditorConsole && { flex: codePane.flex })}

@@ -3,7 +3,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
+    '/learn/responsive-web-design-v9/lecture-understanding-html-attributes/what-is-html'
   );
 });
 
@@ -14,7 +14,9 @@ test.describe('Challenge Title Component (signed out)', () => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
 
     await expect(
-      page.getByRole('heading', { name: 'Developing a Port Scanner' })
+      page.getByRole('heading', {
+        name: 'What Role Does HTML Play on the Web?'
+      })
     ).toBeVisible();
   });
 
@@ -25,7 +27,19 @@ test.describe('Challenge Title Component (signed out)', () => {
     // as the radio is visually hidden and the click event is intercepted by the `span` element.
     await page
       .getByRole('radio', {
-        name: 'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
+        name: 'HyperText Markup Language'
+      })
+      .click({ force: true });
+
+    await page
+      .getByRole('radio', {
+        name: '</p>'
+      })
+      .click({ force: true });
+
+    await page
+      .getByRole('radio', {
+        name: 'src'
       })
       .click({ force: true });
 
@@ -41,12 +55,12 @@ test.describe('Challenge Title Component (signed out)', () => {
     // We need to wait for this navigation to be completed before navigating to the next
     // or Firefox will throw a NS_BINDING_ABORTED error.
     await page.waitForURL(
-      '/learn/information-security/#python-for-penetration-testing'
+      '/learn/responsive-web-design-v9/lecture-understanding-html-attributes/what-are-attributes'
     );
 
     // Returning back to the challenge, to verify that GreenPass is rendered on the challenge itself.
     await page.goto(
-      '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
+      '/learn/responsive-web-design-v9/lecture-understanding-html-attributes/what-is-html'
     );
 
     await page.waitForLoadState();
@@ -58,7 +72,7 @@ test.describe('Challenge Title Component (signed out)', () => {
     page
   }) => {
     const visibleEnglishTitle = await page
-      .getByRole('heading', { name: 'Developing a Port Scanner' })
+      .getByRole('heading', { name: 'What Role Does HTML Play on the Web?' })
       .isVisible();
 
     if (process.env.CURRICULUM_LOCALE != 'english' && visibleEnglishTitle) {
@@ -78,14 +92,28 @@ test.describe('Challenge Title Component (signed in)', () => {
     page
   }) => {
     await expect(
-      page.getByRole('heading', { name: 'Developing a Port Scanner' })
+      page.getByRole('heading', {
+        name: 'What Role Does HTML Play on the Web?'
+      })
     ).toBeVisible();
 
     // Set `force: true` to bypass Playwright's check
     // as the radio is visually hidden and the click event is intercepted by the `span` element.
     await page
       .getByRole('radio', {
-        name: 'If there is an error or if no host is found, .connect() raises an exception while .connect_ex() returns an error code.'
+        name: 'HyperText Markup Language'
+      })
+      .click({ force: true });
+
+    await page
+      .getByRole('radio', {
+        name: '</p>'
+      })
+      .click({ force: true });
+
+    await page
+      .getByRole('radio', {
+        name: 'src'
       })
       .click({ force: true });
 
@@ -101,12 +129,12 @@ test.describe('Challenge Title Component (signed in)', () => {
     // We need to wait for this navigation to be completed before navigating to the next
     // or Firefox will throw a NS_BINDING_ABORTED error.
     await page.waitForURL(
-      '/learn/information-security/#python-for-penetration-testing'
+      '/learn/responsive-web-design-v9/lecture-understanding-html-attributes/what-are-attributes'
     );
 
     // Returning back to the challenge, to verify that GreenPass is rendered on the challenge itself.
     await page.goto(
-      '/learn/information-security/python-for-penetration-testing/developing-a-port-scanner'
+      '/learn/responsive-web-design-v9/lecture-understanding-html-attributes/what-is-html'
     );
 
     await page.waitForLoadState();

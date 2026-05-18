@@ -120,6 +120,30 @@ describe('filterByBlock', () => {
     ]);
   });
 
+  it('returns all superblocks containing that block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'block-1' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-1' }]
+      }
+    ]);
+  });
+
   it('returns an empty array if no blocks match the specified block', () => {
     const superblocks = [
       {

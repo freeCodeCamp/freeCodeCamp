@@ -32,7 +32,9 @@ type PrivacyProps = {
 
 function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
   const { t } = useTranslation();
-  const [privacyValues, setPrivacyValues] = useState({ ...user.profileUI });
+  const [privacyValues, setPrivacyValues] = useState({
+    ...user.profileUI
+  });
 
   const [madeChanges, setMadeChanges] = useState(false);
 
@@ -123,6 +125,14 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               offLabel={t('buttons.public')}
               onLabel={t('buttons.private')}
               toggleFlag={toggleFlag('showPortfolio')}
+            />
+            <ToggleRadioSetting
+              action={t('settings.labels.my-experience')}
+              flag={!privacyValues['showExperience']}
+              flagName='showExperience'
+              offLabel={t('buttons.public')}
+              onLabel={t('buttons.private')}
+              toggleFlag={toggleFlag('showExperience')}
             />
             <ToggleRadioSetting
               action={t('settings.labels.my-timeline')}

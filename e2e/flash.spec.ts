@@ -42,10 +42,13 @@ test.describe('Flash Message component E2E test', () => {
   });
 
   test('should be visible when a network error occurs', async ({ page }) => {
-    await page.route(
-      '*/**/user/get-session-user',
-      async route => await route.fulfill({ status: 500 })
-    );
+    await page.route('*/**/user/session-user', async route => {
+      await route.fulfill({
+        status: 500,
+        contentType: 'application/json',
+        body: JSON.stringify({ user: {}, result: '' })
+      });
+    });
 
     await page.goto('/');
     await checkFlashMessageVisibility(

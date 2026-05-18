@@ -50,13 +50,14 @@ containerChildren.forEach(child => assert.isTrue(child.classList?.contains('mark
     <title>Colored Markers</title>
     <link rel="stylesheet" href="styles.css">
   </head>
---fcc-editable-region--
   <body>
     <h1>CSS Color Markers</h1>
     <div class="container">
+--fcc-editable-region--
+      
+--fcc-editable-region--
     </div>
   </body>
---fcc-editable-region--
 </html>
 ```
 

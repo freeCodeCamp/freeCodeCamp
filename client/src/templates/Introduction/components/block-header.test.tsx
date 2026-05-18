@@ -34,6 +34,7 @@ describe('<BlockHeader />', () => {
         {...defaultProps}
         accordion={true}
         blockUrl='/learn/test-block'
+        onLinkClick={() => {}}
       />
     );
 

@@ -16,9 +16,26 @@ export class Compiler {
     this.tsvfs = tsvfs;
   }
 
-  async setup(opts?: { useNodeModules: boolean }) {
+  async setup(opts?: { useNodeModules?: boolean; tsconfig?: string }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
+
+    // This just parses the JSON, it doesn't do any validation.
+    const parsedOptions = opts?.tsconfig
+      ? (ts.parseConfigFileTextToJson('', opts.tsconfig).config as {
+          compilerOptions?: unknown;
+        })
+      : undefined;
+
+    // For now we're only interested in the compilerOptions, so that's all we're
+    // extracting and validating.  For everything else, we could
+    // parseJsonConfigFileContent and create a host using createSystem and
+    // fsMap, but that needs compilerOptions... This is a bit of a chicken and
+    // egg problem, which we don't need to solve yet.
+    const validatedOptions = ts.convertCompilerOptionsFromJson(
+      parsedOptions?.compilerOptions ?? {},
+      './'
+    );
 
     const compilerOptions: CompilerOptions = {
       target: ts.ScriptTarget.ES2024,
@@ -28,7 +45,8 @@ export class Compiler {
       // sync with TypeScript over time. It was last synced with TypeScript
       // 3.8.0-rc."
       jsx: ts.JsxEmit.Preserve, // Babel will handle JSX,
-      allowUmdGlobalAccess: true // Necessary because React is loaded via a UMD script.
+      allowUmdGlobalAccess: true, // Necessary because React is loaded via a UMD script.
+      ...validatedOptions.options
     };
 
     const fsMap = opts?.useNodeModules

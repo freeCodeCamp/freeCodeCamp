@@ -59,12 +59,6 @@ assert(__helpers.removeJSComments(code).match(/"tails": 1/g).length > 0);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(z){return z;})(myDog);
-```
-
 ## --seed-contents--
 
 ```js

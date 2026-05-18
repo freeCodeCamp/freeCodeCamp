@@ -1,0 +1,91 @@
+---
+id: 698889b0d4adc30ad148b955
+title: Task 3
+challengeType: 19
+dashedName: task-3
+lang: zh-CN
+---
+
+<!-- (Audio) Chen Na: 四十一 (sì shí yī) -->
+
+# --description--
+
+Chen Na is pronouncing a number in the 40s.
+
+# --instructions--
+
+Listen to the audio and answer the question below.
+
+# --questions--
+
+## --text--
+
+Is it true or false: The number that you can hear in the audio is 47.
+
+## --answers--
+
+True
+
+### --feedback--
+
+47 in Chinese would be `四十七 (sì shí qī)`, which sounds different from what you hear in the audio.
+
+---
+
+False
+
+## --video-solution--
+
+2
+
+# --explanation--
+
+Chen Na says `四十一 (sì shí yī)`, which corresponds to the number 41.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company1-breakroom.png",
+    "characters": [
+      {
+        "character": "Chen Na",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ZH_A1_numbers_and_personal_information_numbers_20_99.mp3",
+      "startTime": 1,
+      "startTimestamp": 66.85,
+      "finishTimestamp": 68.26
+    }
+  },
+  "commands": [
+    {
+      "character": "Chen Na",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Chen Na",
+      "startTime": 1,
+      "finishTime": 2.21,
+      "dialogue": {
+        "text": "四十一 (sì shí yī)",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Chen Na",
+      "opacity": 0,
+      "startTime": 2.71
+    }
+  ]
+}
+```

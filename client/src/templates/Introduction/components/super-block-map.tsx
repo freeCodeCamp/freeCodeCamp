@@ -6,8 +6,7 @@ import {
   certificationCollectionSuperBlocks,
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared-dist/config/curriculum';
-import type { CertTitle } from '../../../../config/cert-and-project-map';
+} from '@freecodecamp/shared/config/curriculum';
 import type {
   ChapterBasedSuperBlockStructure,
   User
@@ -15,14 +14,14 @@ import type {
 import type {
   BlockLabel,
   BlockLayouts
-} from '../../../../../shared-dist/config/blocks';
+} from '@freecodecamp/shared/config/blocks';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import {
   certSlugTypeMap,
   certificationRequirements,
   superBlockToCertMap
-} from '../../../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import CheckMark from './check-mark';
 
 import Block from './block';
@@ -32,7 +31,7 @@ import './super-block-accordion.css';
 
 type Challenge = {
   block: string;
-  blockLabel: BlockLabel;
+  blockLabel?: BlockLabel;
   blockLayout: BlockLayouts;
   challengeType: number;
   dashedName: string;
@@ -45,7 +44,6 @@ type Challenge = {
 };
 
 type SuperBlockMapProps = {
-  certification: string;
   completedChallengeIds: string[];
   disabledBlocks: string[];
   initialExpandedBlock: string;
@@ -53,25 +51,20 @@ type SuperBlockMapProps = {
   structure?: ChapterBasedSuperBlockStructure;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
-  title: CertTitle;
   user: User | null;
 };
 
 const BlockList = ({
-  certification,
   disabledBlocks,
   showCertification,
   superBlock,
   superBlockChallenges,
-  title,
   user
 }: {
-  certification: string;
   disabledBlocks: string[];
   showCertification: boolean;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
-  title: CertTitle;
   user: User | null;
 }) => {
   const visibleBlocks = useMemo(() => {
@@ -103,19 +96,13 @@ const BlockList = ({
         );
       })}
       {showCertification && !!user && (
-        <CertChallenge
-          certification={certification}
-          superBlock={superBlock}
-          title={title}
-          user={user}
-        />
+        <CertChallenge superBlock={superBlock} user={user} />
       )}
     </div>
   );
 };
 
 export const SuperBlockMap = ({
-  certification,
   completedChallengeIds,
   disabledBlocks,
   initialExpandedBlock,
@@ -123,7 +110,6 @@ export const SuperBlockMap = ({
   structure,
   superBlock,
   superBlockChallenges,
-  title,
   user
 }: SuperBlockMapProps) => {
   const { t } = useTranslation();
@@ -200,12 +186,10 @@ export const SuperBlockMap = ({
 
   return (
     <BlockList
-      certification={certification}
       disabledBlocks={disabledBlocks}
       showCertification={showCertification}
       superBlock={superBlock}
       superBlockChallenges={superBlockChallenges}
-      title={title}
       user={user}
     />
   );

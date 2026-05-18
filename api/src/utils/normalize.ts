@@ -12,7 +12,7 @@ import { pickBy, mapValues } from 'lodash-es';
 type NullToUndefined<T> = T extends null ? undefined : T;
 type NullToFalse<T> = T extends null ? false : T;
 
-type NoNullProperties<T> = {
+export type NoNullProperties<T> = {
   [P in keyof T]: NullToUndefined<T[P]>;
 };
 
@@ -124,9 +124,9 @@ export const normalizeChallengeType = (
  */
 export const normalizeProfileUI = (
   maybeProfileUI: ProfileUI | null
-): NoNullProperties<ProfileUI> => {
+): DefaultToFalse<ProfileUI> => {
   return maybeProfileUI
-    ? removeNulls(maybeProfileUI)
+    ? normalizeFlags(maybeProfileUI)
     : {
         isLocked: true,
         showAbout: false,
@@ -137,7 +137,8 @@ export const normalizeProfileUI = (
         showName: false,
         showPoints: false,
         showPortfolio: false,
-        showTimeLine: false
+        showTimeLine: false,
+        showExperience: false
       };
 };
 

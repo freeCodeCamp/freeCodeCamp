@@ -10,7 +10,7 @@ import type {
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
-import { PaymentProvider } from '../../../../shared-dist/config/donation-settings';
+import { PaymentProvider } from '@freecodecamp/shared/config/donation-settings';
 import { LocalStorageThemes } from '../../redux/types';
 import { DonationApprovalData, PostPayment } from './types';
 

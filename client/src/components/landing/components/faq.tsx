@@ -22,6 +22,7 @@ const Faq = (): JSX.Element => {
       xs={12}
       className='faq-section'
     >
+      <Spacer size='l' />
       <h2 className='big-heading'>{t('landing.faq')}</h2>
       <Spacer size='xs' />
       {faqItems.map((faq, i) => (

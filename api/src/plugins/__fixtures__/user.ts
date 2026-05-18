@@ -21,6 +21,7 @@ export const newUser = (email: string) => ({
   emailAuthLinkTTL: null,
   emailVerified: true,
   emailVerifyTTL: null,
+  experience: [],
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   externalId: expect.stringMatching(uuidRe),
   githubProfile: null,
@@ -80,6 +81,7 @@ export const newUser = (email: string) => ({
     showAbout: false,
     showCerts: false,
     showDonation: false,
+    showExperience: false,
     showHeatMap: false,
     showLocation: false,
     showName: false,
@@ -91,6 +93,7 @@ export const newUser = (email: string) => ({
   rand: null, // TODO(Post-MVP): delete from schema (it's not used or required).
   savedChallenges: [],
   sendQuincyEmail: null,
+  socrates: null,
   theme: 'default',
   timezone: null,
   twitter: null,

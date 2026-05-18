@@ -1,0 +1,24 @@
+{
+  "blocks": [
+    "lecture-introduction-to-javascript",
+    "lecture-introduction-to-strings",
+    "lecture-understanding-code-clarity",
+    "workshop-greeting-bot",
+    "lab-javascript-trivia-bot",
+    "lab-sentence-maker",
+    "lecture-working-with-data-types",
+    "review-javascript-variables-and-data-types",
+    "quiz-javascript-variables-and-data-types",
+    "lecture-working-with-strings-in-javascript",
+    "workshop-teacher-chatbot",
+    "lecture-working-with-string-character-methods",
+    "lecture-working-with-string-search-and-slice-methods",
+    "workshop-string-inspector",
+    "lecture-working-with-string-formatting-methods",
+    "workshop-string-formatter",
+    "lecture-working-with-string-modification-methods",
+    "workshop-string-transformer",
+    "review-javascript-strings",
+    "quiz-javascript-strings"
+  ]
+}

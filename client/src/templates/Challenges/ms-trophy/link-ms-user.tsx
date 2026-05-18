@@ -13,7 +13,7 @@ import {
   Spacer
 } from '@freecodecamp/ui';
 
-import { isMicrosoftTranscriptLink } from '../../../../../shared-dist/utils/validate';
+import { isMicrosoftTranscriptLink } from '@freecodecamp/shared/utils/validate';
 import {
   linkMsUsername,
   unlinkMsUsername,

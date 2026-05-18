@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    "lecture-working-with-regular-expressions",
+    "workshop-spam-filter",
+    "lab-palindrome-checker",
+    "lab-regex-sandbox",
+    "lab-spinal-case-converter",
+    "lab-pig-latin",
+    "lab-smart-word-replacement",
+    "lab-markdown-to-html-converter",
+    "review-javascript-regular-expressions",
+    "quiz-javascript-regular-expressions"
+  ]
+}

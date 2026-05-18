@@ -8,6 +8,24 @@
 
 Quiz 1, question 1 with `中文 (zhōng wén)`
 
+#### --audio--
+
+```json
+{
+  "audio": {
+    "filename": "7.3-1.mp3",
+    "startTimestamp": 24.7,
+    "finishTimestamp": 26.2
+  },
+  "transcript": [
+    {
+      "character": "Wang Hua",
+      "text": "你好 (nǐ hǎo)。"
+    }
+  ]
+}
+```
+
 #### --distractors--
 
 Quiz 1, question 1, distractor 1 with `中文 (zhōng wén)`

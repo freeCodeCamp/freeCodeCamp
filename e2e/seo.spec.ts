@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
 
 interface StructuredData {

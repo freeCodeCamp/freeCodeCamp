@@ -1,0 +1,15 @@
+{
+  "blocks": [
+    "lecture-understanding-object-oriented-programming-and-encapsulation",
+    "workshop-salary-tracker",
+    "lab-game-character-stats",
+    "lecture-understanding-inheritance-and-polymorphism",
+    "workshop-media-catalogue",
+    "lecture-understanding-abstraction",
+    "workshop-discount-calculator",
+    "lab-player-interface",
+    "lab-polygon-area-calculator",
+    "review-object-oriented-programming",
+    "quiz-object-oriented-programming"
+  ]
+}

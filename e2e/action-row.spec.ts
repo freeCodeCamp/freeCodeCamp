@@ -9,7 +9,7 @@ test.describe('Desktop view', () => {
   test.describe('Pages with previews', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
+        '/learn/responsive-web-design-v9/lab-event-flyer-page/build-an-event-flyer-page'
       );
     });
 
@@ -28,6 +28,40 @@ test.describe('Desktop view', () => {
       await expect(previewPortalButton).toBeVisible();
     });
 
+    test('Preview button is visible during HTML/CSS/JS challenges', async ({
+      page
+    }) => {
+      const previewPaneButton = page.getByTestId('preview-pane-button');
+      const previewPortalButton = page.getByRole('button', {
+        name: translations.aria['move-preview-to-new-window']
+      });
+
+      expect(previewPortalButton).toBeDefined();
+
+      const hidePreviewText = translations.aria['hide-preview'];
+      const previewText = translations.learn['editor-tabs']['preview'];
+
+      await expect(previewPaneButton).toHaveText(hidePreviewText + previewText);
+    });
+
+    test('Terminal button is visible during Python challenges', async ({
+      page
+    }) => {
+      await page.goto('/learn/python-v9/workshop-caesar-cipher/step-1');
+      const terminalPaneButton = page.getByTestId('preview-pane-button');
+      const terminalPortalButton = page.getByRole('button', {
+        name: translations.aria['move-terminal-to-new-window']
+      });
+
+      const hideTerminalText = translations.aria['hide-terminal'];
+      const terminalText = translations.learn['editor-tabs']['terminal'];
+
+      await expect(terminalPaneButton).toHaveText(
+        hideTerminalText + terminalText
+      );
+      expect(terminalPortalButton).toBeDefined();
+    });
+
     test('Clicking instructions button hides instructions panel, but not any buttons', async ({
       page
     }) => {
@@ -42,7 +76,7 @@ test.describe('Desktop view', () => {
       }
 
       const instructionsPanelTitle = page.getByRole('heading', {
-        name: 'Build a Survey Form'
+        name: 'Build an Event Flyer Page'
       });
       await expect(instructionsPanelTitle).toBeHidden();
     });
@@ -90,9 +124,7 @@ test.describe('Desktop view', () => {
     test('Preview Buttons should not appear when preview is disabled', async ({
       page
     }) => {
-      await page.goto(
-        '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
-      );
+      await page.goto('/learn/javascript-v9/workshop-greeting-bot/step-1');
       const previewButton = page.getByTestId('preview-pane-button');
       await expect(previewButton).toHaveCount(0);
     });
@@ -104,7 +136,7 @@ test.describe('Mobile view', () => {
 
   test('Action row is hidden', async ({ page }) => {
     await page.goto(
-      '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
+      '/learn/responsive-web-design-v9/lab-survey-form/build-a-survey-form'
     );
     const actionRow = page.getByTestId('action-row');
     await expect(actionRow).toBeHidden();

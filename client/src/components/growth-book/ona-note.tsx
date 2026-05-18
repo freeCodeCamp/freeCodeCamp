@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Callout } from '@freecodecamp/ui';
 import { useFeatureValue } from '@growthbook/growthbook-react';
-import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { Link } from '../helpers';
 
 type OnaNoteProps = {

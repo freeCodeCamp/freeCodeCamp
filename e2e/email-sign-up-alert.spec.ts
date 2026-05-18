@@ -29,7 +29,7 @@ test.describe('Email sign-up page when user is signed in', () => {
     // It's necessary to seed with a user that has not accepted the privacy
     // terms, otherwise the user will be redirected away from the email sign-up
     // page.
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/learn');
   });
 
@@ -111,7 +111,7 @@ test.describe('Email sign-up page when the user is new', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
 
     await page.goto('/learn');
   });
@@ -134,7 +134,7 @@ test.describe('Email sign-up page when the user has made a selection', () => {
 
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false sendQuincyEmail'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false sendQuincyEmail'
     );
     await page.goto('/learn');
   });

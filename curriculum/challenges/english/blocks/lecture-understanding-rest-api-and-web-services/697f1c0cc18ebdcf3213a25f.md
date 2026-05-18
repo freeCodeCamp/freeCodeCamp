@@ -1,0 +1,138 @@
+---
+id: 697f1c0cc18ebdcf3213a25f
+title: What Are Microservices?
+challengeType: 19
+dashedName: what-are-microservices
+---
+
+# --description--
+
+In the past, most applications, whether large or small-scale, were built as monoliths. A monolith is one giant codebase that contains everything in the web app.
+
+This monolith system means the UI, database, and API all live in one codebase.
+
+Imagine an eCommerce store like Amazon, where the product pages, checkout system, payment processing, authentication and authorization, alongside the API and databases that power them all reside in the same codebase.
+
+The monolithic approach works well for small applications and early-stage startups. However, as an application grows and user demand increases, monoliths often become harder to maintain, slower to update, and difficult to scale. A small change in one area can require redeploying the entire system, and scaling one feature often means scaling the whole application.
+
+These challenges led to the rise of microservices, which is an architectural approach designed to address the limitations of monolithic systems.
+
+In a microservices architecture, a large application is broken into smaller, independent services. Each service is responsible for a specific business capability, such as products, orders, authentication, payments, and so on. These services often have their own codebases and may even manage their own databases, and can have entirely different teams working on them.
+
+The services communicate with each other through APIs or message-based systems, allowing them to work together as a single application.
+
+With this approach, both web and mobile applications are easier to maintain, update, and scale. For example, an e-commerce platform might have separate services for products, carts, users, orders, and payments. Each service can be built, deployed, and scaled independently without affecting the others.
+
+Microservices offer several advantages, including faster development, better fault isolation, and greater flexibility. Different services can use different programming languages or frameworks—for example, a search service might use Java, a product service might use Node.js, and an authentication service might use .NET.
+
+However, microservices also introduce new challenges. Debugging becomes more complex because issues can span multiple services. Deployment and infrastructure management are more complicated, and network overhead increases due to frequent communication between services.
+
+# --questions--
+
+## --text--
+
+What does **monolith** mean?
+
+## --answers--
+
+A system where UI, database, and API are split into separate services.
+
+### --feedback--
+
+Think of monolith as one big "all-in-one" application.
+
+---
+
+A single, large codebase containing the entire application.
+
+---
+
+A network of independent microservices working together.
+
+### --feedback--
+
+Think of monolith as one big "all-in-one" application.
+
+---
+
+A server dedicated to handling only database operations.
+
+### --feedback--
+
+Think of monolith as one big "all-in-one" application.
+
+## --video-solution--
+
+2
+
+## --text--
+
+What is a key characteristic of microservices?
+
+## --answers--
+
+All services share one codebase and one database.
+
+### --feedback--
+
+Think of microservices as small, independent apps that work together.
+
+---
+
+Services cannot be worked on by separate teams.
+
+### --feedback--
+
+Think of microservices as small, independent apps that work together.
+
+---
+
+The entire application is deployed as a single unit.
+
+### --feedback--
+
+Think of microservices as small, independent apps that work together.
+
+---
+
+Each service is independent, with its own codebase and sometimes its own database.
+
+## --video-solution--
+
+4
+
+## --text--
+
+Which of the following is a benefit of microservices?
+
+## --answers--
+
+All services must use the same programming language.
+
+### --feedback--
+
+Think of microservices as letting teams pick the right tools for each service.
+
+---
+
+A bug in one service brings down the entire system.  
+
+### --feedback--
+
+Think of microservices as letting teams pick the right tools for each service.
+
+---
+
+Different services can use different programming languages or frameworks.  
+
+---
+
+Development is slower because teams must work on one large codebase.
+
+### --feedback--
+
+Think of microservices as letting teams pick the right tools for each service.
+
+## --video-solution--
+
+3

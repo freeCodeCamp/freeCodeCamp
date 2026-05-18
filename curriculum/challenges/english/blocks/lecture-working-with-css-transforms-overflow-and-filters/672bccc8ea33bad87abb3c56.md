@@ -52,7 +52,7 @@ div {
 
 In this case, if `content-box` is used the content area will be 300px by 200px. The total rendered size includes padding and borders — for example, total width = 300px (content) + 40px (padding) + 8px (borders) = 348px; the total height is calculated in the same way.
 
-Great — now let's explore `border-box`. It's different because the width and height you set include the element's content, padding, and border (but not its margin). Use `border-box` when you want the element's total size to stay fixed even if padding or borders change — that's often helpful in responsive layouts.
+Great! Now let's explore `border-box`. It's different because the width and height you set include the element's content, padding, and border (but not its margin). Use `border-box` when you want the element's total size to stay fixed even if padding or borders change — that's often helpful in responsive layouts.
 
 With `border-box`, padding and borders are included inside the element's specified size. The `width` and `height` you set become the element's total dimensions: content + padding + border; margins remain excluded.
 
@@ -89,7 +89,7 @@ In the following example, there are two `div` elements with the same dimensions 
 
 :::
 
-You can see that they both have the same `width`, `height`, `padding`, `border` and `margin`. The only differences are the colors and the value of the `box-sizing` property. This small difference has a very important impact on the final dimensions. 
+You can see that they both have the same `width`, `height`, `padding`, `border` and `margin`. The only differences are in the colors and the value of the `box-sizing` property. This small difference has a very important impact on the final dimensions. 
 
 Choosing between `content-box` and `border-box` really depends on the specific needs of your project. While `border-box` is becoming increasingly popular for its simplicity and flexibility, understanding both models is important for implementing effective CSS layouts.
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
-import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import { Link } from '../../../components/helpers';
 
 import envData from '../../../../config/env.json';
