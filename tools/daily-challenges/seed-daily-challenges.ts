@@ -4,7 +4,6 @@
   The main client needs to be running with upcoming changes shown to get the info from GraphQL.
   Run the curriculum tests on the dev-playground superblock before seeding to make sure they pass.
 */
-
 import 'dotenv/config';
 import { MongoClient } from 'mongodb';
 import { combineChallenges, fetchChallenges, handleError } from './helpers';
@@ -18,7 +17,7 @@ const EXPECTED_CHALLENGE_COUNT = 294;
 // Date to set for the first challenge, second challenge will be one day later, etc...
 // **DO NOT CHANGE THIS AFTER RELEASE (if seeding production - okay for local dev)**
 const year = 2025;
-const monthIndex = 7; // 0-indexed -> 5 = June
+const monthIndex = 7; // 0-indexed -> 7 = August
 const day = 11;
 const START_DATE = new Date(Date.UTC(year, monthIndex, day));
 const ONE_DAY_IN_MS = 24 * 60 * 60 * 1000;
@@ -47,8 +46,24 @@ const seed = async () => {
   const dailyCodingChallenges = db.collection('DailyCodingChallenges');
 
   console.log('Fetching challenges...');
-  const jsChallenges = await fetchChallenges('javascript');
-  const pyChallenges = await fetchChallenges('python');
+
+  // FIX: Fetch JavaScript and Python challenges in parallel instead of sequentially.
+  // Previously: t1 = fetch JS, t2 = fetch PY, total = t1 + t2 (sequential)
+  // Now:        both fetches start simultaneously, total = max(t1, t2) (parallel)
+  const [jsResult, pyResult] = await Promise.allSettled([
+    fetchChallenges('javascript'),
+    fetchChallenges('python')
+  ]);
+
+  if (jsResult.status === 'rejected') {
+    throw new Error(`Failed to fetch JavaScript challenges: ${jsResult.reason}`);
+  }
+  if (pyResult.status === 'rejected') {
+    throw new Error(`Failed to fetch Python challenges: ${pyResult.reason}`);
+  }
+
+  const jsChallenges = jsResult.value;
+  const pyChallenges = pyResult.value;
 
   if (jsChallenges.length !== pyChallenges.length) {
     throw new Error(
@@ -64,19 +79,17 @@ const seed = async () => {
 
   console.log(`${jsChallenges.length} challenges found for each language`);
   console.log('Creating new challenges...');
-  const newChallenges = [];
 
+  const newChallenges = [];
   for (let i = 0; i < jsChallenges.length; i++) {
     const jsChallenge = jsChallenges[i];
     const pyChallenge = pyChallenges[i];
-
     const newChallenge = combineChallenges({
       jsChallenge,
       pyChallenge,
       challengeNumber: i + 1,
       date: new Date(START_DATE.getTime() + i * ONE_DAY_IN_MS)
     });
-
     newChallenges.push(newChallenge);
   }
 
@@ -93,11 +106,9 @@ const seed = async () => {
   }));
 
   await dailyCodingChallenges.bulkWrite(bulkOps);
-
   console.log(`Finished writing challenges to database`);
 
   const count = await dailyCodingChallenges.countDocuments();
-
   if (count !== EXPECTED_CHALLENGE_COUNT) {
     console.warn(
       '\n********** WARNING *********\n' +
