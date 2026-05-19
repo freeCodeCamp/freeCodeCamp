@@ -161,9 +161,56 @@ jobs:
             // Set output for GitHub Actions
             core.setOutput('matrix', JSON.stringify(matrix));
 
+  external-curriculum-v3:
+    name: External Curriculum V3
+    needs: setup-jobs
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          submodules: 'recursive'
+          persist-credentials: false
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 24
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set freeCodeCamp Environment Variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          echo "SHOW_UPCOMING_CHANGES=${{ needs.setup-jobs.outputs.show_upcoming_changes }}" >> $GITHUB_ENV
+
+      - name: Build External Curriculum V3
+        run: |
+          pnpm install
+          /usr/bin/time -p pnpm -F @freecodecamp/client create:external-curriculum:v3
+
+      - name: Archive External Curriculum V3
+        run: tar -czf external-curriculum-v3.tar.gz -C client/static/curriculum-data v3
+
+      - name: Upload External Curriculum V3
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: external-curriculum-v3
+          path: external-curriculum-v3.tar.gz
+
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
-    needs: [setup-jobs, setup-matrix]
+    needs: [setup-jobs, setup-matrix, external-curriculum-v3]
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
@@ -212,6 +259,16 @@ jobs:
           DEPLOYMENT_VERSION=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)
           echo "DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION" >> $GITHUB_ENV
           echo "DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Download External Curriculum V3
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: external-curriculum-v3
+
+      - name: Extract External Curriculum V3
+        run: |
+          mkdir -p client/static/curriculum-data
+          tar -xzf external-curriculum-v3.tar.gz -C client/static/curriculum-data
 
       - name: Install and Build
         env:

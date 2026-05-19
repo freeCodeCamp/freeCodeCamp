@@ -130,10 +130,11 @@ jobs:
         run: |
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm run build
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm run build
 
   test:
     name: Test

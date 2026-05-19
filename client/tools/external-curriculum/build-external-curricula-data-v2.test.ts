@@ -10,6 +10,7 @@ import {
   SuperBlockStage,
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
+import { Languages } from '@freecodecamp/shared/config/i18n';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -24,11 +25,18 @@ import {
   orderedSuperBlockInfo,
   OrderedSuperBlocks
 } from './build-external-curricula-data-v2';
+import { buildAvailableSuperBlockInfoForLang } from './build-external-curricula-data-v3';
 
 const VERSION = 'v2';
 const intros = JSON.parse(
   readFileSync(
     path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
+    'utf-8'
+  )
+) as CurriculumIntros;
+const spanishIntros = JSON.parse(
+  readFileSync(
+    path.resolve(__dirname, '../../../client/i18n/locales/espanol/intro.json'),
     'utf-8'
   )
 ) as CurriculumIntros;
@@ -305,5 +313,19 @@ describe('external curriculum data build', () => {
         `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
       ).length
     ).toBeGreaterThan(0);
+  });
+
+  test('v3 available superblocks should use localized titles', () => {
+    const spanishSuperBlocks = buildAvailableSuperBlockInfoForLang(
+      Languages.Espanol
+    );
+
+    expect(spanishSuperBlocks.core[0]).toMatchObject({
+      dashedName: SuperBlocks.RespWebDesignV9,
+      title: spanishIntros[SuperBlocks.RespWebDesignV9].title
+    });
+    expect(spanishSuperBlocks.core[0]?.title).not.toEqual(
+      orderedSuperBlockInfo.core[0]?.title
+    );
   });
 });

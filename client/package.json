@@ -24,6 +24,7 @@
     "copy:scripts": "tsx ./tools/copy-browser-scripts.ts",
     "create:env": "DEBUG=fcc:* tsx ./tools/create-env.ts",
     "create:external-curriculum": "tsx ./tools/external-curriculum/build",
+    "create:external-curriculum:v3": "pnpm turbo -F=@freecodecamp/curriculum... setup && tsx ./tools/external-curriculum/build-v3",
     "create:trending": "tsx ./tools/download-trending.ts",
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
     "develop": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby develop --inspect=9230",
