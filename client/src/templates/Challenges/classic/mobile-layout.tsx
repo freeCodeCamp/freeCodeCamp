@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import store from 'store';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 
 import {
   removePortalWindow,
@@ -41,6 +43,11 @@ interface MobileLayoutProps {
   testOutput: JSX.Element;
   usesMultifileEditor: boolean;
   usesTerminal: boolean;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
 }
 
 const tabs = {
@@ -166,8 +173,16 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       portalWindow,
       windowTitle,
       usesMultifileEditor,
-      usesTerminal
+      usesTerminal,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage,
+      setDailyCodingChallengeLanguage
     } = this.props;
+
+    const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
+      store.set('dailyCodingChallengeLanguage', language);
+      setDailyCodingChallengeLanguage(language);
+    };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -236,6 +251,26 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             <TabsTrigger value={tabs.editor}>
               {i18next.t('learn.editor-tabs.code')}
             </TabsTrigger>
+            {isDailyCodingChallenge && (
+              <>
+                <TabsTrigger
+                  value='javascript-lang'
+                  aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+                  disabled={dailyCodingChallengeLanguage === 'javascript'}
+                  onClick={() => handleLanguageChange('javascript')}
+                >
+                  JavaScript
+                </TabsTrigger>
+                <TabsTrigger
+                  value='python-lang'
+                  aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                  disabled={dailyCodingChallengeLanguage === 'python'}
+                  onClick={() => handleLanguageChange('python')}
+                >
+                  Python
+                </TabsTrigger>
+              </>
+            )}
             {!!notes && usesMultifileEditor && (
               <TabsTrigger value={tabs.notes}>
                 {i18next.t('learn.editor-tabs.notes')}

@@ -517,6 +517,9 @@ function ShowClassic({
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
             usesTerminal={usesTerminal}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
           />
         ) : (
           <DesktopLayout
