@@ -1,10 +1,11 @@
 import { ofType } from 'redux-observable';
-import { empty, merge } from 'rxjs';
+import { EMPTY, from } from 'rxjs';
 import {
   catchError,
   filter,
   ignoreElements,
   map,
+  mergeAll,
   switchMap,
   tap
 } from 'rxjs/operators';
@@ -20,7 +21,7 @@ import { isServerOnlineSelector, isSignedInSelector } from './selectors';
 
 const key = 'fcc-failed-updates';
 
-function delay(time = 0, fn) {
+function delay(fn, time = 0) {
   return setTimeout(fn, time);
 }
 
@@ -28,6 +29,32 @@ function delay(time = 0, fn) {
 const isSubmitable = failure =>
   failure.payload.challengeType !== challengeTypes.backEndProject ||
   failure.payload.solution;
+
+function handleUpdateSuccess(update) {
+  console.info(`${update.id} succeeded`);
+  const failures = store.get(key) || [];
+  const newFailures = failures.filter(x => x.id !== update.id);
+  store.set(key, newFailures);
+}
+
+function runUpdate(update) {
+  return new Promise((resolve, reject) => {
+    postUpdate$(update)
+      .pipe(
+        switchMap(({ response, data }) => {
+          if (data?.message || isGoodXHRStatus(response?.status)) {
+            handleUpdateSuccess(update);
+          }
+          return EMPTY;
+        }),
+        catchError(() => EMPTY)
+      )
+      .subscribe({
+        complete: resolve,
+        error: reject
+      });
+  });
+}
 
 function failedUpdateEpic(action$, state$) {
   const storeUpdates = action$.pipe(
@@ -70,23 +97,7 @@ function failedUpdateEpic(action$, state$) {
         // 6th: 1600ms delay
         // and so-on
         delayTime += 100 * i;
-        return delay(delayTime, () =>
-          postUpdate$(update)
-            .pipe(
-              switchMap(({ response, data }) => {
-                if (data?.message || isGoodXHRStatus(response?.status)) {
-                  console.info(`${update.id} succeeded`);
-                  // the request completed successfully
-                  const failures = store.get(key) || [];
-                  const newFailures = failures.filter(x => x.id !== update.id);
-                  store.set(key, newFailures);
-                }
-                return empty();
-              }),
-              catchError(() => empty())
-            )
-            .toPromise()
-        );
+        return delay(() => runUpdate(update), delayTime);
       });
       Promise.all(batch)
         .then(() => console.info('progress updates processed where possible'))
@@ -97,7 +108,7 @@ function failedUpdateEpic(action$, state$) {
     ignoreElements()
   );
 
-  return merge(storeUpdates, flushUpdates);
+  return from([storeUpdates, flushUpdates]).pipe(mergeAll());
 }
 
 export default failedUpdateEpic;

@@ -19,7 +19,9 @@ describe('failed-updates-epic', () => {
     const state$ = new StateObservable(new Subject(), initialState);
     const epic$ = failedUpdatesEpic(action$, state$);
 
-    await epic$.toPromise();
+    await new Promise(resolve => {
+      epic$.subscribe({ complete: resolve });
+    });
 
     expect(store.get(key)).toEqual(submitableChallenges);
   });

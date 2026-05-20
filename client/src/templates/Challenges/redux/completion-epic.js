@@ -1,15 +1,8 @@
 import { navigate } from 'gatsby';
 import { omit } from 'lodash-es';
 import { ofType } from 'redux-observable';
-import { empty, of } from 'rxjs';
-import {
-  catchError,
-  concat,
-  retry,
-  switchMap,
-  tap,
-  mergeMap
-} from 'rxjs/operators';
+import { EMPTY, of, concat } from 'rxjs';
+import { catchError, retry, switchMap, tap, mergeMap } from 'rxjs/operators';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import {
   standardErrorMessage,
@@ -157,12 +150,12 @@ function submitModern(type, state) {
       return postChallenge(update);
     }
   }
-  return empty();
+  return EMPTY;
 }
 
 function submitProject(type, state) {
   if (type === actionTypes.checkChallenge) {
-    return empty();
+    return EMPTY;
   }
 
   const { solution, githubLink } = projectFormValuesSelector(state);
@@ -177,8 +170,9 @@ function submitProject(type, state) {
     endpoint: '/project-completed',
     payload: challengeInfo
   };
-  return postChallenge(update, username).pipe(
-    concat(of(updateSolutionFormValues({})))
+  return concat(
+    postChallenge(update, username),
+    of(updateSolutionFormValues({}))
   );
 }
 
@@ -199,7 +193,7 @@ function submitBackendChallenge(type, state) {
       return postChallenge(update);
     }
   }
-  return empty();
+  return EMPTY;
 }
 
 const submitters = {
@@ -226,7 +220,7 @@ function submitExam(type, state) {
     };
     return postChallenge(update, username);
   }
-  return empty();
+  return EMPTY;
 }
 
 function submitMsTrophy(type, state) {
@@ -241,7 +235,7 @@ function submitMsTrophy(type, state) {
     };
     return postChallenge(update);
   }
-  return empty();
+  return EMPTY;
 }
 
 export default function completionEpic(action$, state$) {
@@ -303,25 +297,25 @@ export default function completionEpic(action$, state$) {
         return donationData ? allowSectionDonationRequests(donationData) : null;
       };
 
-      return submitter(type, state).pipe(
-        concat(
-          of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
-        ),
-        mergeMap(x => {
-          const donationAction = canAllowDonationRequest(state, x);
-          return donationAction ? of(x, donationAction) : of(x);
-        }),
-        mergeMap(x => of(x, setRenderStartTime(Date.now()))),
-        tap(res => {
-          if (res.type !== submitActionTypes.updateFailed) {
-            if (challengeType !== challengeTypes.exam) {
-              navigate(pathToNavigateTo);
+      return concat(
+        submitter(type, state).pipe(
+          mergeMap(x => {
+            const donationAction = canAllowDonationRequest(state, x);
+            return donationAction ? of(x, donationAction) : of(x);
+          }),
+          mergeMap(x => of(x, setRenderStartTime(Date.now()))),
+          tap(res => {
+            if (res.type !== submitActionTypes.updateFailed) {
+              if (challengeType !== challengeTypes.exam) {
+                navigate(pathToNavigateTo);
+              }
+            } else {
+              createFlashMessage(standardErrorMessage);
             }
-          } else {
-            createFlashMessage(standardErrorMessage);
-          }
-        }),
-        concat(of(closeModal('completion')))
+          })
+        ),
+        of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false)),
+        of(closeModal('completion'))
       );
     })
   );
