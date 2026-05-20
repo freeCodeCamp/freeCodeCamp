@@ -45,7 +45,7 @@ const BLOCK_STRUCTURE_DIR = resolve(STRUCTURE_DIR, 'blocks');
  * @returns {Object} Object containing all relevant directory paths for the language
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
-export function getContentConfig(
+export function getCurriculumPaths(
   lang: string,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
@@ -97,7 +97,7 @@ export function getContentConfig(
  * @returns {string} Path to the content directory for the specified language
  */
 export function getContentDir(lang: string) {
-  const { contentDir, i18nContentDir } = getContentConfig(lang);
+  const { contentDir, i18nContentDir } = getCurriculumPaths(lang);
 
   return lang === 'english' ? contentDir : i18nContentDir;
 }
@@ -178,7 +178,7 @@ export interface BlockStructure {
 }
 
 export async function createBlockFolder(block: string) {
-  const { blockContentDir } = getContentConfig('english') as {
+  const { blockContentDir } = getCurriculumPaths('english') as {
     blockContentDir: string;
   };
 
@@ -233,58 +233,58 @@ export function getSuperblockStructurePath(superblockFilename: string) {
   return resolve(STRUCTURE_DIR, 'superblocks', `${superblockFilename}.json`);
 }
 
-/**
- * Gets language-specific configuration paths for curriculum content
- * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
- * @param {Object} [options] - Optional configuration object with directory overrides
- * @param {string} [options.baseDir] - Base directory for curriculum content (defaults to CURRICULUM_DIR)
- * @param {string} [options.i18nBaseDir] - Base directory for i18n content (defaults to I18N_CURRICULUM_DIR)
- * @param {string} [options.structureDir] - Directory for curriculum structure (defaults to STRUCTURE_DIR)
- * @returns {Object} Object containing all relevant directory paths for the language
- * @throws {AssertionError} When required i18n directories don't exist for non-English languages
- */
-export function getLanguageConfig(
-  lang: string,
-  { baseDir, i18nBaseDir } = {
-    baseDir: CURRICULUM_DIR,
-    i18nBaseDir: I18N_CURRICULUM_DIR
-  }
-) {
-  const contentDir = resolve(baseDir, 'challenges', 'english');
-  const i18nContentDir = resolve(i18nBaseDir, 'challenges', lang);
-  const blockContentDir = resolve(contentDir, 'blocks');
-  const i18nBlockContentDir = resolve(i18nContentDir, 'blocks');
-  const dictionariesDir = resolve(baseDir, 'dictionaries');
-  const i18nDictionariesDir = resolve(i18nBaseDir, 'dictionaries');
+// /**
+//  * Gets language-specific configuration paths for curriculum content
+//  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
+//  * @param {Object} [options] - Optional configuration object with directory overrides
+//  * @param {string} [options.baseDir] - Base directory for curriculum content (defaults to CURRICULUM_DIR)
+//  * @param {string} [options.i18nBaseDir] - Base directory for i18n content (defaults to I18N_CURRICULUM_DIR)
+//  * @param {string} [options.structureDir] - Directory for curriculum structure (defaults to STRUCTURE_DIR)
+//  * @returns {Object} Object containing all relevant directory paths for the language
+//  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
+//  */
+// export function getCurriculumPaths(
+//   lang: string,
+//   { baseDir, i18nBaseDir } = {
+//     baseDir: CURRICULUM_DIR,
+//     i18nBaseDir: I18N_CURRICULUM_DIR
+//   }
+// ) {
+//   const contentDir = resolve(baseDir, 'challenges', 'english');
+//   const i18nContentDir = resolve(i18nBaseDir, 'challenges', lang);
+//   const blockContentDir = resolve(contentDir, 'blocks');
+//   const i18nBlockContentDir = resolve(i18nContentDir, 'blocks');
+//   const dictionariesDir = resolve(baseDir, 'dictionaries');
+//   const i18nDictionariesDir = resolve(i18nBaseDir, 'dictionaries');
 
-  if (lang !== 'english') {
-    assert(
-      existsSync(i18nContentDir),
-      `i18n content directory does not exist: ${i18nContentDir}`
-    );
-    assert(
-      existsSync(i18nBlockContentDir),
-      `i18n block content directory does not exist: ${i18nBlockContentDir}`
-    );
-    assert(
-      existsSync(i18nDictionariesDir),
-      `i18n dictionaries directory does not exist: ${i18nDictionariesDir}`
-    );
-  }
+//   if (lang !== 'english') {
+//     assert(
+//       existsSync(i18nContentDir),
+//       `i18n content directory does not exist: ${i18nContentDir}`
+//     );
+//     assert(
+//       existsSync(i18nBlockContentDir),
+//       `i18n block content directory does not exist: ${i18nBlockContentDir}`
+//     );
+//     assert(
+//       existsSync(i18nDictionariesDir),
+//       `i18n dictionaries directory does not exist: ${i18nDictionariesDir}`
+//     );
+//   }
 
-  log(`Using content directory: ${contentDir}`);
-  log(`Using i18n content directory: ${i18nContentDir}`);
-  log(`Using block content directory: ${blockContentDir}`);
-  log(`Using i18n block content directory: ${i18nBlockContentDir}`);
-  log(`Using dictionaries directory: ${dictionariesDir}`);
-  log(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
+//   log(`Using content directory: ${contentDir}`);
+//   log(`Using i18n content directory: ${i18nContentDir}`);
+//   log(`Using block content directory: ${blockContentDir}`);
+//   log(`Using i18n block content directory: ${i18nBlockContentDir}`);
+//   log(`Using dictionaries directory: ${dictionariesDir}`);
+//   log(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
 
-  return {
-    contentDir,
-    i18nContentDir,
-    blockContentDir,
-    i18nBlockContentDir,
-    dictionariesDir,
-    i18nDictionariesDir
-  };
-}
+//   return {
+//     contentDir,
+//     i18nContentDir,
+//     blockContentDir,
+//     i18nBlockContentDir,
+//     dictionariesDir,
+//     i18nDictionariesDir
+//   };
+// }

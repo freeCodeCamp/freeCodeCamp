@@ -13,11 +13,12 @@ import {
 
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
-  getContentConfig,
   writeBlockStructure,
   createBlockFolder,
-  getSuperblockStructure
+  getSuperblockStructure,
+  getCurriculumPaths
 } from '@freecodecamp/curriculum/file-handler';
+
 import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta.js';
 import {
@@ -231,7 +232,7 @@ async function createDialogueChallenge(
   block: string,
   challengeLang: ChallengeLang
 ): Promise<ObjectId> {
-  const { blockContentDir } = getContentConfig('english') as {
+  const { blockContentDir } = getCurriculumPaths('english') as {
     blockContentDir: string;
   };
 
