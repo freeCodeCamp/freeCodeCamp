@@ -14,6 +14,13 @@ import ArchivedWarning from '../../../components/archived-warning';
 
 import './super-block-intro.css';
 
+interface ConditionalDonationAlertProps {
+  superBlock: SuperBlocks;
+  superBlockNoteText: string;
+  onCertificationDonationAlertClick: () => void;
+  isDonating: boolean;
+}
+
 interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
   onCertificationDonationAlertClick: () => void;
@@ -21,6 +28,78 @@ interface SuperBlockIntroProps {
   hasNotstarted: boolean;
   nextChallengeSlug: string | null;
 }
+
+export const ConditionalDonationAlert = ({
+  superBlock,
+  superBlockNoteText,
+  onCertificationDonationAlertClick,
+  isDonating
+}: ConditionalDonationAlertProps): JSX.Element | null => {
+  const { t } = useTranslation();
+
+  const betaCertifications: SuperBlocks[] = [
+    SuperBlocks.A2English,
+    SuperBlocks.B1English
+  ];
+
+  const unfinishedCertifications: SuperBlocks[] = [
+    SuperBlocks.A1Spanish,
+    SuperBlocks.A2Spanish,
+    SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
+  ];
+
+  const isBetaCertification = betaCertifications.includes(superBlock);
+  const isUnfinishedCertification =
+    unfinishedCertifications.includes(superBlock);
+  const showDonationCopy =
+    !isDonating && (isBetaCertification || isUnfinishedCertification);
+
+  if (!superBlockNoteText && !showDonationCopy) return null;
+
+  return (
+    <>
+      <Spacer size='m' />
+      <Callout
+        variant='note'
+        label={t('misc.note')}
+        className='super-block-intro-callout'
+      >
+        {superBlockNoteText && <p>{superBlockNoteText}</p>}
+        {showDonationCopy && (
+          <>
+            <p>
+              {isBetaCertification ? (
+                t('donate.consider-donating')
+              ) : (
+                <Trans i18nKey='donate.consider-donating-2'>
+                  <Link className='inline' to='/donate'>
+                    placeholder
+                  </Link>
+                </Trans>
+              )}
+            </p>
+            <hr />
+            <p className='btn-container'>
+              <Link
+                className='btn donate-button'
+                key='donate'
+                sameTab={false}
+                to='/donate'
+                onClick={onCertificationDonationAlertClick}
+              >
+                {t('buttons.donate-now')}
+              </Link>
+            </p>
+          </>
+        )}
+      </Callout>
+    </>
+  );
+};
 
 function SuperBlockIntro({
   superBlock,
@@ -52,27 +131,6 @@ function SuperBlockIntro({
     : typeof introRaw === 'string'
       ? [introRaw]
       : [''];
-
-  const betaCertifications: SuperBlocks[] = [
-    SuperBlocks.A2English,
-    SuperBlocks.B1English
-  ];
-
-  const unfinishedCertifications: SuperBlocks[] = [
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ];
-
-  const isBetaCertification = betaCertifications.includes(superBlock);
-  const isUnfinishedCertification =
-    unfinishedCertifications.includes(superBlock);
-  const showDonationCopy =
-    !isDonating && (isBetaCertification || isUnfinishedCertification);
 
   const IntroTopDefault = ({ fsd }: { fsd: boolean }) => (
     <>
@@ -133,50 +191,19 @@ function SuperBlockIntro({
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
-      {(superBlockNoteText || showDonationCopy) && (
-        <>
-          <Spacer size='m' />
-          <Callout
-            variant='note'
-            label={t('misc.note')}
-            className='super-block-intro-callout'
-          >
-            {superBlockNoteText && <p>{superBlockNoteText}</p>}
-            {showDonationCopy && (
-              <>
-                <p>
-                  {isBetaCertification ? (
-                    t('donate.consider-donating')
-                  ) : (
-                    <Trans i18nKey='donate.consider-donating-2'>
-                      <Link className='inline' to='/donate'>
-                        placeholder
-                      </Link>
-                    </Trans>
-                  )}
-                </p>
-                <hr />
-                <p className='btn-container'>
-                  <Link
-                    className='btn donate-button'
-                    key='donate'
-                    sameTab={false}
-                    to='/donate'
-                    onClick={onCertificationDonationAlertClick}
-                  >
-                    {t('buttons.donate-now')}
-                  </Link>
-                </p>
-              </>
-            )}
-          </Callout>
-        </>
-      )}
     </>
   );
 
   return (
-    <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
+    <>
+      <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
+      <ConditionalDonationAlert
+        superBlock={superBlock}
+        superBlockNoteText={superBlockNoteText}
+        onCertificationDonationAlertClick={onCertificationDonationAlertClick}
+        isDonating={isDonating}
+      />
+    </>
   );
 }
 
