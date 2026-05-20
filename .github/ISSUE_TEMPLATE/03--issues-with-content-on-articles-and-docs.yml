@@ -17,7 +17,7 @@ body:
   - type: input
     attributes:
       label: Affected Page
-      description: Add a link to the coding challenge with the problem.
+      description: Add a link to the article or documentation page with the problem.
     validations:
       required: true
   - type: textarea

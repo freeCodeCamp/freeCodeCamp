@@ -28,6 +28,11 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
     summary: string[];
   };
 
+  const duration =
+    hours === 1
+      ? t('curriculum.catalog.duration-singular', { duration: hours })
+      : t('curriculum.catalog.duration', { duration: hours });
+
   return (
     <Link to={`/learn/${superBlock}`} key={superBlock} className='catalog-item'>
       <div className='catalog-item-top'>
@@ -48,10 +53,7 @@ const CatalogItem: React.FC<CatalogItemProps> = ({
         </div>
         <div>
           <FontAwesomeIcon icon={faClock} />
-          &nbsp;{' '}
-          {showAllSummaries
-            ? t('curriculum.catalog.duration', { duration: hours })
-            : `${hours} hours`}
+          &nbsp; {duration}
         </div>
       </div>
     </Link>

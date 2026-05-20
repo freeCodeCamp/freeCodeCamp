@@ -152,6 +152,11 @@ function NavLinks({
           {t('buttons.curriculum')}
         </Link>
       </li>
+      <li key='catalog'>
+        <Link className='nav-link' onKeyDown={handleMenuKeyDown} to='/catalog'>
+          {t('buttons.catalog')}
+        </Link>
+      </li>
       {currentUserName && (
         <>
           <li key='profile'>

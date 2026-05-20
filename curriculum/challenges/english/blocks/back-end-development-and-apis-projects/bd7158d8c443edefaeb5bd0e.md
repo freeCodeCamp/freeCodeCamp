@@ -67,16 +67,28 @@ When you visit `/api/shorturl/<short_url>`, you will be redirected to the origin
   } else {
     throw new Error(`${postResponse.status} ${postResponse.statusText}`);
   }
+  // Ensure a new URL is reached
   const getResponse = await fetch(
-    url + '/api/shorturl/' + shortenedUrlVariable
+    url + '/api/shorturl/' + shortenedUrlVariable, {redirect:'follow'}
   );
   if (getResponse) {
-    const { redirected, url } = getResponse;
-    assert.isTrue(redirected);
+    const { url } = getResponse; // status is always 200 for some reason
     assert.strictEqual(url,fullUrl);
   } else {
     throw new Error(`${getResponse.status} ${getResponse.statusText}`);
   }
+
+  // No more auto follow
+  const getManualResponse = await fetch(
+    url + '/api/shorturl/' + shortenedUrlVariable, {redirect:'manual'}
+  );
+  if (getManualResponse) {
+    const { status } = getManualResponse; // if a redirect happens, it won't reach the new resource
+    assert.strictEqual(status,0);
+  } else {
+    throw new Error(`${getManualResponse.status} ${getManualResponse.statusText}`);
+  }
+
 ```
 
 If you pass an invalid URL that doesn't follow the valid `http://www.example.com` format, the JSON response will contain `{ error: 'invalid url' }`

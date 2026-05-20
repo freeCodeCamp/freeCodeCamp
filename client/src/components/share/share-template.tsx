@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import {
   faXTwitter,
   faBluesky,
-  faInstagram
+  faThreads,
+  faFacebook
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ShareRedirectProps } from './types';
@@ -12,6 +13,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   xRedirectURL,
   blueSkyRedirectURL,
   threadsRedirectURL,
+  facebookRedirectURL,
   minified
 }) => {
   const { t } = useTranslation();
@@ -46,8 +48,19 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         target='_blank'
         rel='noreferrer'
       >
-        <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
+        <FontAwesomeIcon icon={faThreads} size='1x' aria-hidden='true' />
         {!minified && t('buttons.share-on-threads')}
+        <span className='sr-only'>{t('aria.opens-new-window')}</span>
+      </a>
+      <a
+        data-testid='share-on-facebook'
+        className='btn fade-in'
+        href={facebookRedirectURL}
+        target='_blank'
+        rel='noreferrer'
+      >
+        <FontAwesomeIcon icon={faFacebook} size='1x' aria-hidden='true' />
+        {!minified && t('buttons.share-on-facebook')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
     </>

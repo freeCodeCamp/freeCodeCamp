@@ -60,9 +60,12 @@ module.exports = async ({ github, context }) => {
     }
   }
 
+  // Fix 4: missing space after colon — "fix:desc" → "fix: desc"
+  newTitle = newTitle.replace(/^(\w+(?:\([^)]+\))?):(\S)/, '$1: $2');
+
   // Catch-all: prefix with "fix: " if still not a valid CC title
   if (!ccRegex.test(newTitle)) {
-    newTitle = `fix: ${title}`;
+    newTitle = `fix: ${newTitle}`;
   }
 
   if (newTitle !== title) {
