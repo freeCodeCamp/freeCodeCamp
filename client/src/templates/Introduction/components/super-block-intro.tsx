@@ -12,6 +12,8 @@ import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
 import ArchivedWarning from '../../../components/archived-warning';
 
+import './super-block-intro.css';
+
 interface SuperBlockIntroProps {
   superBlock: SuperBlocks;
   onCertificationDonationAlertClick: () => void;
@@ -51,7 +53,7 @@ function SuperBlockIntro({
       ? [introRaw]
       : [''];
 
-  const donateButtonCertifications = [
+  const donationCalloutCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -123,34 +125,39 @@ function SuperBlockIntro({
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
       {(superBlockNoteText ||
-        donateButtonCertifications.includes(superBlock)) && (
+        donationCalloutCertifications.includes(superBlock)) && (
         <>
           <Spacer size='m' />
-          <Callout variant='note' label={t('misc.note')}>
+          <Callout
+            variant='note'
+            label={t('misc.note')}
+            className='super-block-intro-callout'
+          >
             {superBlockNoteText && <p>{superBlockNoteText}</p>}
-            {!isDonating && donateButtonCertifications.includes(superBlock) && (
-              <>
-                <p>
-                  <Trans i18nKey='donate.consider-donating-2'>
-                    <Link className='inline' to='/donate'>
-                      placeholder
+            {!isDonating &&
+              donationCalloutCertifications.includes(superBlock) && (
+                <>
+                  <p>
+                    <Trans i18nKey='donate.consider-donating-2'>
+                      <Link className='inline' to='/donate'>
+                        placeholder
+                      </Link>
+                    </Trans>
+                  </p>
+                  <hr />
+                  <p className='btn-container'>
+                    <Link
+                      className='btn donate-button'
+                      key='donate'
+                      sameTab={false}
+                      to='/donate'
+                      onClick={onCertificationDonationAlertClick}
+                    >
+                      {t('buttons.donate-now')}
                     </Link>
-                  </Trans>
-                </p>
-                <hr />
-                <p className='btn-container'>
-                  <Link
-                    className='btn donate-button'
-                    key='donate'
-                    sameTab={false}
-                    to='/donate'
-                    onClick={onCertificationDonationAlertClick}
-                  >
-                    {t('buttons.donate-now')}
-                  </Link>
-                </p>
-              </>
-            )}
+                  </p>
+                </>
+              )}
           </Callout>
         </>
       )}
