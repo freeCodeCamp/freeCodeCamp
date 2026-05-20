@@ -1,5 +1,5 @@
 const directive = require('mdast-util-directive');
-var toMarkdown = require('mdast-util-to-markdown');
+const toMarkdown = require('mdast-util-to-markdown');
 const { matches } = require('unist-util-select');
 const visit = require('unist-util-visit');
 
