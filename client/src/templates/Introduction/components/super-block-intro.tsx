@@ -53,9 +53,12 @@ function SuperBlockIntro({
       ? [introRaw]
       : [''];
 
-  const donationCalloutCertifications = [
+  const betaCertifications: SuperBlocks[] = [
     SuperBlocks.A2English,
-    SuperBlocks.B1English,
+    SuperBlocks.B1English
+  ];
+
+  const unfinishedCertifications: SuperBlocks[] = [
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
@@ -64,6 +67,12 @@ function SuperBlockIntro({
     SuperBlocks.BackEndDevApisV9,
     SuperBlocks.FullStackDeveloperV9
   ];
+
+  const isBetaCertification = betaCertifications.includes(superBlock);
+  const isUnfinishedCertification =
+    unfinishedCertifications.includes(superBlock);
+  const showDonationCopy =
+    !isDonating && (isBetaCertification || isUnfinishedCertification);
 
   const IntroTopDefault = ({ fsd }: { fsd: boolean }) => (
     <>
@@ -124,8 +133,7 @@ function SuperBlockIntro({
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
-      {(superBlockNoteText ||
-        donationCalloutCertifications.includes(superBlock)) && (
+      {(superBlockNoteText || showDonationCopy) && (
         <>
           <Spacer size='m' />
           <Callout
@@ -134,30 +142,33 @@ function SuperBlockIntro({
             className='super-block-intro-callout'
           >
             {superBlockNoteText && <p>{superBlockNoteText}</p>}
-            {!isDonating &&
-              donationCalloutCertifications.includes(superBlock) && (
-                <>
-                  <p>
+            {showDonationCopy && (
+              <>
+                <p>
+                  {isBetaCertification ? (
+                    t('donate.consider-donating')
+                  ) : (
                     <Trans i18nKey='donate.consider-donating-2'>
                       <Link className='inline' to='/donate'>
                         placeholder
                       </Link>
                     </Trans>
-                  </p>
-                  <hr />
-                  <p className='btn-container'>
-                    <Link
-                      className='btn donate-button'
-                      key='donate'
-                      sameTab={false}
-                      to='/donate'
-                      onClick={onCertificationDonationAlertClick}
-                    >
-                      {t('buttons.donate-now')}
-                    </Link>
-                  </p>
-                </>
-              )}
+                  )}
+                </p>
+                <hr />
+                <p className='btn-container'>
+                  <Link
+                    className='btn donate-button'
+                    key='donate'
+                    sameTab={false}
+                    to='/donate'
+                    onClick={onCertificationDonationAlertClick}
+                  >
+                    {t('buttons.donate-now')}
+                  </Link>
+                </p>
+              </>
+            )}
           </Callout>
         </>
       )}
