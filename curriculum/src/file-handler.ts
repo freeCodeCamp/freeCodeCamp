@@ -45,7 +45,7 @@ const BLOCK_STRUCTURE_DIR = resolve(STRUCTURE_DIR, 'blocks');
  * @returns {Object} Object containing all relevant directory paths for the language
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
-export function getCurriculumConfig( // AQUI Repetido getCurriculumConfig
+export function getCurriculumConfig(
   lang: string,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
