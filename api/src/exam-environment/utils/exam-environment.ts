@@ -1,6 +1,6 @@
 /* eslint-disable jsdoc/require-description-complete-sentence */
 // TODO: enable this, since strings don't make good errors.
-/* eslint-disable @typescript-eslint/only-throw-error */
+
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentConfig,
@@ -330,7 +330,9 @@ export function generateExam(
   });
 
   if (examCopy.config.questionSets.length === 0) {
-    throw `${examCopy.id}: Invalid exam config - no question sets config.`;
+    throw new Error(
+      `${examCopy.id}: Invalid exam config - no question sets config.`
+    );
   }
 
   // Convert question set config by type: [[all question sets of type], [another type], ...]
@@ -463,7 +465,7 @@ export function generateExam(
     // Add questions to questionSetsConfigWithQuestions until fulfilled.
     while (!isQuestionSetConfigFulfilled(questionSetConfig)) {
       if (Date.now() - START_TIME > TIMEOUT_IN_MS) {
-        throw `Unable to generate exam within ${TIMEOUT_IN_MS}ms`;
+        throw new Error(`Unable to generate exam within ${TIMEOUT_IN_MS}ms`);
       }
       // Ensure all questionSets ARE FULL
       if (
@@ -496,7 +498,9 @@ export function generateExam(
         });
 
         if (!questionSet) {
-          throw `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`;
+          throw new Error(
+            `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`
+          );
         }
         // Remove questionSet from shuffledQuestionSets
         shuffledQuestionSets.splice(
@@ -543,7 +547,9 @@ export function generateExam(
               q => !questionSet.questions.find(qsq => qsq.id === q.id)
             );
           if (!questions) {
-            throw `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`;
+            throw new Error(
+              `Invalid Exam Configuration for ${examCopy.id}. Not enough questions for question type ${questionSetConfig.type}.`
+            );
           }
 
           const questionsWithEnoughAnswers = questions.filter(q => {
@@ -591,7 +597,9 @@ export function generateExam(
 
   for (const tagConfig of sortedTagConfig) {
     if (tagConfig.numberOfQuestions > 0) {
-      throw `Invalid Exam Configuration for exam "${examCopy.id}". Not enough questions for tag group "${tagConfig.group.join(',')}".`;
+      throw new Error(
+        `Invalid Exam Configuration for exam "${examCopy.id}". Not enough questions for tag group "${tagConfig.group.join(',')}".`
+      );
     }
   }
 
