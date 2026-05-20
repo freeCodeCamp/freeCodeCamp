@@ -12,7 +12,7 @@ import {
   getSuperblockStructure,
   writeBlockStructure,
   writeSuperblockStructure,
-  getContentConfig,
+  getCurriculumConfig,
   getCurriculumStructure
 } from '@freecodecamp/curriculum/file-handler';
 
@@ -107,7 +107,7 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
   await fs.rm(blockStructurePath);
   console.log('New block structure .json written.');
 
-  const { blockContentDir } = getContentConfig('english');
+  const { blockContentDir } = getCurriculumConfig('english');
   const oldBlockContentDir = join(blockContentDir, oldBlock);
   const newBlockContentDir = join(blockContentDir, newBlock);
   await fs.rename(oldBlockContentDir, newBlockContentDir);

@@ -18,7 +18,7 @@ import { getSuperOrder } from './super-order.js';
 import { applyFilters, closestFilters, type Filter } from './filter.js';
 import {
   getContentDir,
-  getLanguageConfig,
+  getCurriculumConfig,
   getCurriculumStructure,
   getBlockStructure,
   getSuperblockStructure,
@@ -49,7 +49,7 @@ export const getBlockCreator = (
     i18nBlockContentDir,
     dictionariesDir,
     i18nDictionariesDir
-  } = getLanguageConfig(lang, opts);
+  } = getCurriculumConfig(lang, opts);
 
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
