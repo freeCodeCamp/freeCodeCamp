@@ -84,11 +84,11 @@ function translateGeneric({ text }, config, regexBefore, regexAfter) {
     if (knownComments.includes(comment)) {
       text = text.replace(match, `${before}${dict[comment][lang]}${after}`);
     } else if (comment.trim()) {
-      throw `The comment
+      throw new Error(`The comment
 ${comment}
 does not appear in the comment dictionary.
 When updating or adding a comment it must have the same text in the English challenges and the comment dictionary.
-`;
+`);
     }
   }
 
