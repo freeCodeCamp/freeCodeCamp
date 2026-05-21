@@ -125,6 +125,7 @@
     "sign-in-with-google": "Iniciar sesión con Google",
     "go-to-dcc-today": "Ir al desafío de hoy",
     "go-to-dcc-archive": "Ir al archivo de desafíos",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -339,6 +340,7 @@
       "keyboard-shortcuts": "Habilitar atajos de teclado"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Cuenta",
       "certs": "Certificaciones",
       "legacy-certs": "Certificaciones de legado",
@@ -469,13 +471,16 @@
     },
     "completeness": {
       "heading": "Perfil {{percentage}}% completo",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Agrega tu nombre",
       "location": "Agrega tu ubicación",
       "picture": "Sube una foto de perfil",
       "about": "Escribe una sección 'Acerca de'",
       "social": "Agrega un enlace social",
       "portfolio": "Agrega un proyecto al portafolio",
-      "experience": "Agrega tu experiencia"
+      "experience": "Agrega tu experiencia",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -584,9 +589,9 @@
       "instructions": "Instrucciones",
       "notes": "Notas",
       "preview": "Vista",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Editor Interactivo"
+      "interactive-editor": "Editor Interactivo",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Presionando la pestaña insertará el carácter de la pestaña",
@@ -1027,6 +1032,10 @@
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
     "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
     "edit-my-profile": "Editar mi perfil",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "Contenido del editor {{editorName}} . Presione Opción+F1 para opciones de accesibilidad.",
     "editor-a11y-off-non-macos": "Contenido del editor {{editorName}} . Presione Alt+F1 para opciones de accesibilidad.",
     "editor-a11y-on-macos": "Contenido del editor {{editorName}} . El modo de accesibilidad está en 'encendido'. Presiona Comando+E para desactivar o presiona Opción+F1 para más opciones.",
@@ -1034,6 +1043,10 @@
     "terminal-output": "Salida del terminal",
     "not-available": "No disponible",
     "interactive-editor-desc": "Convierte ejemplos de código estático en editores interactivos. Esto te permite editar y ejecutar el código directamente en la página.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "Esta tarea usa entradas de Pinyin a Hanzi. Escribe pinyin con números de tono (1 a 5). Cuando ingresas una sílaba correcta, se convertirá en una letra china. Si presionas retroceso después de una letra china, se cambiará de nuevo a pinyin y eliminará lo último que escribiste: si es un número de tono, se eliminará el tono; si es una letra, se eliminará la letra.",
     "pinyin-tone-input-desc": "Esta tarea usa entradas de Pinyin con tono. Escribe pinyin con números de tono (1 a 5). Cuando ingresas un número de tono, se convertirán en una marca de tono. Si presionas retroceso, se eliminará lo último que escribiste: si es un número de tono, se eliminará el tono; si es una letra, se eliminará la letra."
   },
@@ -1409,7 +1422,8 @@
     "too-long-three": "Por favor, copia/pega todo el código del editor que se muestra en el desafío desde el que acabas de enlazar.",
     "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
-    "add-code-three": "porque permiten que tu código formatee correctamente en el post."
+    "add-code-three": "porque permiten que tu código formatee correctamente en el post.",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuario",

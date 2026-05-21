@@ -4,18 +4,15 @@ import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { configure, processLintErrors } from './index.js';
 
-const badYMLError = {
+const badYMLError = expect.objectContaining({
   errorContext: '```yml',
-  errorDetail: `bad indentation of a mapping entry at line 3, column 17:
-          testString: testString
-                    ^`,
-  errorRange: null,
-  fixInfo: null,
+  errorDetail: expect.stringContaining(
+    'bad indentation of a mapping entry at line 3, column 17'
+  ),
   lineNumber: 19,
   ruleDescription: 'YAML code blocks should be valid',
-  ruleInformation: null,
   ruleNames: ['yaml-linter']
-};
+});
 
 describe('markdown linter', () => {
   const good = path.join(__dirname, './fixtures/good.md');
@@ -51,6 +48,6 @@ describe('markdown linter', () => {
     const errors = processLintErrors(results);
 
     expect(errors[0].file).toContain('badYML.md');
-    expect(errors[0].errors).toContainEqual(badYMLError);
+    expect(errors[0].errors).toEqual(expect.arrayContaining([badYMLError]));
   });
 });

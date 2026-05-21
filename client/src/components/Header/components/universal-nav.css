@@ -99,27 +99,27 @@
 }
 
 .exposed-button-nav:is(
-    :hover,
-    :hover:focus,
-    [aria-expanded='true'],
-    [aria-expanded='true']:hover
-  ),
+  :hover,
+  :hover:focus,
+  [aria-expanded='true'],
+  [aria-expanded='true']:hover
+),
 .lang-button-nav:is(
-    :hover,
-    :hover:focus,
-    [aria-expanded='true'],
-    [aria-expanded='false'].force-show
-  ) {
+  :hover,
+  :hover:focus,
+  [aria-expanded='true'],
+  [aria-expanded='false'].force-show
+) {
   background-color: var(--gray-00);
   color: var(--theme-color);
 }
 
 .lang-button-nav:is(
-    :hover,
-    :hover:focus,
-    [aria-expanded='true'],
-    [aria-expanded='false'].force-show
-  ) {
+  :hover,
+  :hover:focus,
+  [aria-expanded='true'],
+  [aria-expanded='false'].force-show
+) {
   fill: var(--gray-00);
 }
 

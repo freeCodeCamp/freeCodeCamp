@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import type { FitAddon } from 'xterm-addon-fit';
+import type { FitAddon } from '@xterm/addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
@@ -194,6 +194,7 @@ function ShowClassic({
         title,
         description,
         instructions,
+        id,
         hooks,
         tests,
         challengeType,
@@ -384,6 +385,8 @@ function ShowClassic({
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            challengeId={id}
+            block={block}
           />
         }
         challengeTitle={
@@ -428,6 +431,12 @@ function ShowClassic({
     );
   };
 
+  const usesTerminal =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
   return (
     <Hotkeys
       challengeType={challengeType}
@@ -470,6 +479,7 @@ function ShowClassic({
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
+            usesTerminal={usesTerminal}
           />
         ) : (
           <DesktopLayout

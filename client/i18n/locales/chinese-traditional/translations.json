@@ -125,6 +125,7 @@
     "sign-in-with-google": "使用 Google 登錄",
     "go-to-dcc-today": "訪問今天的編程挑戰",
     "go-to-dcc-archive": "訪問每日編程挑戰存檔",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -339,6 +340,7 @@
       "keyboard-shortcuts": "啓用鍵盤快捷鍵"
     },
     "headings": {
+      "personal": "Personal",
       "account": "賬戶",
       "certs": "認證",
       "legacy-certs": "舊版認證",
@@ -469,13 +471,16 @@
     },
     "completeness": {
       "heading": "個人資料完成 {{percentage}}%",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "添加你的姓名",
       "location": "添加你的地點",
       "picture": "上傳頭像",
       "about": "填寫個人簡介",
       "social": "添加社交鏈接",
       "portfolio": "添加作品集項目",
-      "experience": "添加你的經歷"
+      "experience": "添加你的經歷",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -584,9 +589,9 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "terminal": "終端",
       "editor": "編輯器",
-      "interactive-editor": "交互式編輯器"
+      "interactive-editor": "交互式編輯器",
+      "terminal": "終端"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -1027,6 +1032,10 @@
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
     "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
     "edit-my-profile": "編輯我的個人資料",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} 編輯器內容。按 Option+F1 設置無障礙選項。",
     "editor-a11y-off-non-macos": "{{editorName}} 編輯器內容。按 Alt+F1 設置無障礙選項。",
     "editor-a11y-on-macos": "{{editorName}} 編輯器模式。無障礙模式被設置爲 “on”。按 Command+E 關閉或按 Option+F1 查看更多選項。",
@@ -1034,6 +1043,10 @@
     "terminal-output": "終端輸出",
     "not-available": "不可用",
     "interactive-editor-desc": "將靜態代碼示例轉爲交互式編輯器。這允許你直接在頁面上編輯並運行代碼。",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "這個任務使用 Pinyin-to-Hanzi 輸入。輸入帶聲調數字（1 到 5）的拼音。當你輸入正確的音節時，它將轉換爲漢字。如果你在一個漢字後按退格鍵，它會變回拼音並刪除你最後輸入的內容：如果是聲調數字，則刪除聲調；如果是字母，則刪除字母。",
     "pinyin-tone-input-desc": "這個任務使用 Pinyin Tone 輸入。輸入帶聲調數字（1 到 5）的拼音。當你輸入聲調數字時，它會被轉換爲聲調符號。如果你按退格鍵，最後輸入的內容會被刪除：如果是聲調數字，則刪除聲調；如果是字母，則刪除字母。"
   },
@@ -1409,7 +1422,8 @@
     "too-long-three": "請複製/粘貼所有在挑戰中編輯器所顯示的代碼。",
     "add-code-one": "用你的複製代碼替換這兩句。",
     "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
-    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
+    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用戶令牌",

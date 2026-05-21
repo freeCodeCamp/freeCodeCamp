@@ -153,7 +153,7 @@ export function getSessionUser(
   signal?: AbortSignal
 ): Promise<ResponseWithData<User | null>> {
   const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
-    '/user/get-session-user',
+    '/user/session-user',
     signal
   );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
@@ -229,7 +229,12 @@ export type Attempt = {
 } & (
   | {
       result: null;
-      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
+      status:
+        | 'InProgress'
+        | 'Expired'
+        | 'PendingModeration'
+        | 'Denied'
+        | 'AwaitingChallenges';
     }
   | {
       status: 'Approved';

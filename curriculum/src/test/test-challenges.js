@@ -34,9 +34,8 @@ vi.mock(
     const tsvfs = await import('@typescript/vfs-1.6.1');
     const ts = await import('typescript-5.9.2');
     // use the same TS compiler as the challenge-builder
-    const tsCompiler = await import(
-      '@freecodecamp/browser-scripts/ts-compiler'
-    );
+    const tsCompiler =
+      await import('@freecodecamp/browser-scripts/ts-compiler');
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
     let previousTsconfig;
     let hasConfiguredCompiler = false;
@@ -170,9 +169,8 @@ async function populateTestsForLang({ lang, challenges, meta }) {
   // We have to dynamically import this because otherwise it will not be mocked.
   // Presumably this is because we import from_this file in the generated block
   // test files and that happens before the mock is applied.
-  const { buildChallenge } = await import(
-    '@freecodecamp/challenge-builder/build'
-  );
+  const { buildChallenge } =
+    await import('@freecodecamp/challenge-builder/build');
   const validateChallenge = challengeSchemaValidator();
 
   describe(`Language: ${lang}`, function () {

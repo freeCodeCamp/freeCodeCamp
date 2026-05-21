@@ -838,14 +838,6 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   };
 
   fastify.get(
-    '/user/get-session-user',
-    {
-      schema: schemas.getSessionUser
-    },
-    getSessionUserHandler
-  );
-
-  fastify.get(
     '/user/session-user',
     {
       schema: schemas.getSessionUser
