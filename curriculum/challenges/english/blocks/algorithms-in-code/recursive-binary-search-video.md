@@ -19,18 +19,50 @@ What is a recursive function?
 ## --answers--
 
 A function that performs a calculation only once.
-
+```python
+def recursive_binary_search(arr, low, high, target):
+    if low > high:
+        return -1
+    mid = (low + high) // 2
+    if arr[mid] == target:
+        return mid
+    return recursive_binary_search(arr, mid+1, high, target)
+```
 ---
 
 A function that calls itself.
-
+```python
+def recursive_binary_search(arr, low, high, target):
+    if low >= high:
+        return -1
+    mid = (low + high) // 2
+    if arr[mid] == target:
+        return mid
+    return recursive_binary_search(arr, low, mid-1, target)
+```
 ---
 
 A function that never returns a value.
-
+```python
+def recursive_binary_search(arr, low, high, target):
+    mid = (low + high) // 2
+    if arr[mid] == target:
+        return mid
+    return recursive_binary_search(arr, low, high, target)
+```
 ---
 
 A function that can only run in a loop.
+```python
+def recursive_binary_search(arr, low, high, target):
+    if low > high:
+        return None
+    mid = (low + high) // 2
+    if arr[mid] == target:
+        return mid
+    return recursive_binary_search(arr, mid+1, high, target)
+```
+---
 
 ## --video-solution--
 
