@@ -445,6 +445,7 @@ function ShowClassic({
       instructionsPanelRef={instructionsPanelRef}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
+      showIndependentLowerJaw={showIndependentLowerJaw}
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
