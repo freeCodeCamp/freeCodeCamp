@@ -362,7 +362,7 @@ export const catalog: Catalog[] = [
   {
     superBlock: SuperBlocks.LearnDataVisualizationWithD3,
     level: Levels.Intermediate,
-    hours: 2,
+    hours: 20,
     topic: Topic.D3
   },
   {
