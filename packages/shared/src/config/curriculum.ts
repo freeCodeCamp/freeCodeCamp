@@ -329,6 +329,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,
+  SuperBlocks.LearnDataVisualizationWithD3,
   SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
