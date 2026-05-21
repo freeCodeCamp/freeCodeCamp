@@ -82,8 +82,23 @@ const translationMap: Record<string, unknown> = {
     intro: ['Create responsive layouts across devices.'],
     note: ''
   },
+  'intro:a2-english-for-developers': {
+    title: 'A2 English for Developers',
+    intro: ['Learn workplace English at the A2 level.'],
+    note: 'This certification is currently in beta.'
+  },
+  'intro:front-end-development-libraries-v9': {
+    title: 'Front-End Development Libraries Certification',
+    intro: ['Learn the libraries developers use to build webpages.'],
+    note: ''
+  },
   'misc.fsd-b-cta': 'Start Learning',
-  'misc.continue-learning': 'Continue Learning'
+  'misc.continue-learning': 'Continue Learning',
+  'donate.consider-donating':
+    'Please consider donating to support the completion of its development.',
+  'donate.consider-donating-2':
+    'If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.',
+  'buttons.donate-now': 'Donate Now'
 };
 
 const mockT = vi.fn((key: string, options?: { returnObjects?: boolean }) => {
@@ -449,6 +464,100 @@ describe('SuperBlockIntroductionPage', () => {
       throw new Error(`Missing challenge for order ${expected.nextOrder}`);
     }
     expect(cta).toHaveAttribute('href', nextChallenge.fields.slug);
+  });
+
+  describe('note and donation callout', () => {
+    const renderForSuperBlock = ({
+      superBlock,
+      isDonating
+    }: {
+      superBlock: SuperBlocks;
+      isDonating: boolean;
+    }) => {
+      const setup = createSetup(superBlock);
+      const props = createPageProps(setup, superBlock, {
+        user: {
+          completedChallenges: [],
+          isDonating
+        }
+      });
+      render(<SuperBlockIntroductionPage {...props} />);
+    };
+
+    it('should render the note text for a certification with a note', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.A2English,
+        isDonating: false
+      });
+
+      expect(
+        await screen.findByText('This certification is currently in beta.')
+      ).toBeInTheDocument();
+    });
+
+    it('should render the beta donation copy and Donate Now button for a non-donor on a beta certification', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.A2English,
+        isDonating: false
+      });
+
+      await screen.findByText('This certification is currently in beta.');
+      expect(
+        screen.getByText(
+          'Please consider donating to support the completion of its development.'
+        )
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole('link', { name: 'Donate Now' })
+      ).toBeInTheDocument();
+    });
+
+    it('should not render the donation copy or Donate Now button for a donor on a beta certification', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.A2English,
+        isDonating: true
+      });
+
+      await screen.findByText('This certification is currently in beta.');
+      expect(
+        screen.queryByText(
+          'Please consider donating to support the completion of its development.'
+        )
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('link', { name: 'Donate Now' })
+      ).not.toBeInTheDocument();
+    });
+
+    it('should render the unfinished-certification donation copy and Donate Now button for a non-donor on an unfinished certification', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.FrontEndDevLibsV9,
+        isDonating: false
+      });
+
+      expect(
+        await screen.findByRole('link', { name: 'Donate Now' })
+      ).toBeInTheDocument();
+      expect(screen.getByText('placeholder')).toBeInTheDocument();
+      expect(
+        screen.queryByText(
+          'Please consider donating to support the completion of its development.'
+        )
+      ).not.toBeInTheDocument();
+    });
+
+    it('should not render any callout when the certification has no note and is not eligible for the donation callout', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.RespWebDesign,
+        isDonating: false
+      });
+
+      await waitFor(() => {
+        expect(
+          screen.queryByRole('link', { name: 'Donate Now' })
+        ).not.toBeInTheDocument();
+      });
+    });
   });
 
   it.each(scenariosWithoutCta)('$description', async scenario => {
