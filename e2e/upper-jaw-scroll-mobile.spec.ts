@@ -195,7 +195,7 @@ test('breadcrumb links and example code dropdown are interactive on mobile', asy
   await mobileBreadcrumb
     .getByRole('link', { name: 'Responsive Web Design Certification' })
     .tap();
-  await expect(page).toHaveURL('/learn/responsive-web-design-v9');
+  await expect(page).toHaveURL('/learn/responsive-web-design-v9/');
 });
 
 test('example code horizontal gesture does not vertically scroll the upper jaw', async ({
