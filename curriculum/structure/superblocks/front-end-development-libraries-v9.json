@@ -72,10 +72,14 @@
             "workshop-tailwind-cta-component",
             "workshop-tailwind-pricing-component",
             "lab-music-shopping-cart-page",
-            "lab-photography-exhibit",
             "review-css-libraries-and-frameworks",
             "quiz-css-libraries-and-frameworks"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-photography-exhibit",
+          "blocks": ["lab-photography-exhibit"]
         },
         {
           "dashedName": "typescript-fundamentals",
@@ -91,12 +95,20 @@
             "lab-product-showcase",
             "lecture-working-with-typescript-configuration-files",
             "workshop-fortune-teller-app",
-            "lab-flashcard-quiz-app",
             "workshop-build-a-football-player-card-builder",
-            "lab-digital-pet-game",
             "review-typescript",
             "quiz-typescript"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-flashcard-quiz-app",
+          "blocks": ["lab-flashcard-quiz-app"]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-digital-pet-game",
+          "blocks": ["lab-digital-pet-game"]
         },
         {
           "dashedName": "data-visualization",

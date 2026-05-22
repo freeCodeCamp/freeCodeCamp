@@ -16,10 +16,10 @@ import {
   SuperBlocks,
   certificationCollectionSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
+import callGA from '../../analytics/call-ga';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
-import callGA from '../../analytics/call-ga';
 import { tryToShowDonationModal } from '../../redux/actions';
 import {
   isSignedInSelector,
