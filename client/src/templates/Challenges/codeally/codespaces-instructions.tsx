@@ -99,9 +99,7 @@ export function CodespacesInstructions({
                 </Trans>
               </li>
               <li>
-                <Trans i18nKey='learn.codespaces.sub-step-7'>
-                  <button>Add secret</button>
-                </Trans>
+                <Trans i18nKey='learn.codespaces.sub-step-7' />
               </li>
             </ol>
             <Spacer size='s' />
