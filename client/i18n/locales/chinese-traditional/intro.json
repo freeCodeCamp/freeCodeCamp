@@ -4848,6 +4848,13 @@
           "在本實驗中，你將實現一個函數，用於查找給定連續字母範圍中缺失的字母，並返回該字母。"
         ]
       },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript 循環複習",
         "intro": [
@@ -7124,6 +7131,12 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
@@ -7500,6 +7513,10 @@
       },
       "es-a1-learn-talking-about-colleagues": {
         "title": "Talking About Colleagues",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }

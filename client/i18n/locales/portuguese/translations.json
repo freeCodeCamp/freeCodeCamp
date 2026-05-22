@@ -125,7 +125,7 @@
     "sign-in-with-google": "Faça login com o Google",
     "go-to-dcc-today": "Vá para o desafio diário",
     "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário",
-    "challenge-source": "View Challenge Source",
+    "challenge-source": "Ver fonte do desafio",
     "outline": "Resumo"
   },
   "daily-coding-challenges": {
@@ -340,7 +340,7 @@
       "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
-      "personal": "Personal",
+      "personal": "Pessoal},{",
       "account": "Conta",
       "certs": "Certificações",
       "legacy-certs": "Certificações legadas",
@@ -471,8 +471,8 @@
     },
     "completeness": {
       "heading": "Perfil {{percentage}}% completo",
-      "title": "Profile Completion",
-      "progress": "{{percentage}}% complete",
+      "title": "Conclusão do perfil},{",
+      "progress": "{{percentage}}% completo",
       "name": "Adicione o nome",
       "location": "Adicione a localização",
       "picture": "Envie uma foto de perfil",
@@ -480,7 +480,7 @@
       "social": "Adicione um link social",
       "portfolio": "Adicione um projeto ao portfólio",
       "experience": "Adicione experiência",
-      "privacy": "Make your profile public"
+      "privacy": "Torne o perfil público"
     }
   },
   "footer": {
@@ -1032,10 +1032,10 @@
     "rsa-checkbox": "Eu tentei o método Ler-Pesquisar-Perguntar",
     "similar-questions-checkbox": "Eu pesquisei por perguntas semelhantes que já foram respondidas no fórum",
     "edit-my-profile": "Editar meu perfil",
-    "add-portfolio": "Add portfolio project",
-    "edit-portfolio": "Edit portfolio project",
-    "add-experience": "Add experience",
-    "edit-experience": "Edit experience",
+    "add-portfolio": "Adicione um projeto ao portfólio",
+    "edit-portfolio": "Editar projeto do portfólio",
+    "add-experience": "Adicionar experiência",
+    "edit-experience": "Editar experiência",
     "editor-a11y-off-macos": "Conteúdo do editor {{editorName}} . Pressione Alt+F1 para opções de acessibilidade.",
     "editor-a11y-off-non-macos": "Conteúdo do editor {{editorName}} . Pressione Alt+F1 para opções de acessibilidade.",
     "editor-a11y-on-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Command+E para desativar ou pressione Option+F1 para mais opções.",
@@ -1043,10 +1043,10 @@
     "terminal-output": "Saída do terminal",
     "not-available": "Não disponível",
     "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página.",
-    "hide-terminal": "Hide the terminal",
-    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
-    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
-    "close-external-terminal-window": "Close the external terminal window",
+    "hide-terminal": "Ocultar o terminal",
+    "move-terminal-to-new-window": "Mover o terminal para uma nova janela e focá-lo",
+    "move-terminal-to-main-window": "Mover o terminal para esta janela e fechar a janela externa do terminal",
+    "close-external-terminal-window": "Fechar a janela externa do terminal",
     "pinyin-to-hanzi-input-desc": "Esta tarefa usa entradas de Pinyin para Hanzi. Digite o pinyin com os números do tonalidade (de 1 a 5). Quando você inserir uma sílaba correta, ela se tornará um caractere chinês. Se você pressionar backspace após um caractere chinês, mudará de volta para pinyin e removerá a última coisa que você digitou: se for um número de tonalidade, a tonalidade será removida; se for uma letra, ela será removida.",
     "pinyin-tone-input-desc": "Esta tarefa usa entradas de tonalidade do Pinyin. Digite o pinyin com números de tonalidade (de 1 a 5). Quando você inserir um número, ele será convertido em uma marca tonal. Se você pressionar backspace, a última coisa que digitou será removida: se for uma tonalidade de número, ela será removida; se for uma letra, a letra será removida."
   },
@@ -1423,7 +1423,7 @@
     "add-code-one": "Substitua essas duas frases pelo código que você copiou.",
     "add-code-two": "Deixe as linhas com ``` acima e ``` abaixo de seu código,",
     "add-code-three": "pois elas permitirão a formatação adequada de seu código na publicação.",
-    "git-info": "GitHub Link: {{gitLink}}"
+    "git-info": "Link do GitHub: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuário",
