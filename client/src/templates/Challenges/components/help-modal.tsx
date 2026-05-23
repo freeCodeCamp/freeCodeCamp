@@ -49,7 +49,11 @@ export const generateSearchLink = (
 ) => {
   const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
   const selector = 'in:title';
-  const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
+  const searchTitle =
+    titleText === `intro:${superBlock}.blocks.${block}.title`
+      ? title
+      : `${titleText} - ${title}`;
+  const query = encodeURIComponent(`${searchTitle} ${selector}`);
   const search = `${forumLocation}/search?q=${query}`;
   return search;
 };
