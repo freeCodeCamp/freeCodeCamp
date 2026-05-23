@@ -100,6 +100,12 @@ assert.sameDeepOrderedMembers(findRepeatedPhrases(["the"], 2), []);
 assert.sameDeepOrderedMembers(findRepeatedPhrases(["the", "cat", "sat", "the", "cat"], 2), [0, 3]);
 ```
 
+`findRepeatedPhrases` should return all start indices for overlapping repeated phrases.
+
+```js
+assert.sameDeepOrderedMembers(findRepeatedPhrases(["ba", "ba", "ba"], 2), [0, 1]);
+```
+
 `analyzeTexts` should be a function.
 
 ```js
