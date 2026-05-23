@@ -62,7 +62,10 @@
         {
           "dashedName": "error-handling-in-express",
           "comingSoon": true,
-          "blocks": ["lecture-understanding-error-handling-and-health-checks"]
+          "blocks": [
+            "lecture-understanding-error-handling-and-health-checks",
+            "quiz-error-handling-in-express"
+          ]
         },
         { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
         { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
