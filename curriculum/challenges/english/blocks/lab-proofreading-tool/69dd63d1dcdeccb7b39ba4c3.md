@@ -137,6 +137,13 @@ assert.sameDeepOrderedMembers(result[1].palindromeBreaks, [1]);
 assert.sameDeepOrderedMembers(result[1].repeatedPhrases, [0, 2]);
 ```
 
+`analyzeTexts` should correctly handle overlapping repeated phrases.
+
+```js
+const input = [["apple", "banana", "banana", "banana", "cherry"]];
+const result = analyzeTexts(input, 2);
+assert.sameDeepOrderedMembers(result[0].repeatedPhrases, [1, 2]);
+
 # --seed--
 
 ## --seed-contents--
