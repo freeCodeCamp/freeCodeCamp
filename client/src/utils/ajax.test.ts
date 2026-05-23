@@ -13,16 +13,16 @@ describe('ajax utils', () => {
     vi.unstubAllGlobals();
   });
 
-  it('handles empty DELETE responses', async () => {
+  it('handles empty DELETE responses without relying on the status code', async () => {
     const fetch = vi
       .fn()
-      .mockResolvedValue(new Response(null, { status: 204 }));
+      .mockResolvedValue(new Response(null, { status: 202 }));
     vi.stubGlobal('fetch', fetch);
 
     const result = await postDeleteAccount('abc123');
 
     expect(result.data).toBeUndefined();
-    expect(result.response.status).toBe(204);
+    expect(result.response.status).toBe(202);
 
     expect(fetch).toHaveBeenCalledWith(
       'https://api.example.com/users/abc123',
