@@ -1,7 +1,5 @@
-import React, { ReactNode, useMemo } from 'react';
+import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-// TODO: Add this component to freecodecamp/ui and remove this dependency
-import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
@@ -80,6 +78,11 @@ interface SuperBlockAccordionProps {
   structure: ChapterBasedSuperBlockStructure;
   chosenBlock: string;
   completedChallengeIds: string[];
+  /**
+   * When true, expands all chapters and modules and hides those with no matching challenges.
+   * Used during search/filter.
+   */
+  expandAll?: boolean;
 }
 
 const Chapter = ({
@@ -94,6 +97,14 @@ const Chapter = ({
   examSlug
 }: ChapterProps) => {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(isExpanded);
+
+  useEffect(() => {
+    setOpen(isExpanded);
+  }, [isExpanded]);
+
+  const panelId = `chapter-panel-${dashedName}`;
+
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
 
@@ -138,19 +149,23 @@ const Chapter = ({
   }
 
   return (
-    <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
-      <Disclosure.Button
+    <li className='chapter'>
+      <button
+        aria-controls={panelId}
+        aria-expanded={open}
         className='chapter-button'
         data-playwright-test-label='chapter-button'
+        onClick={() => setOpen(o => !o)}
+        type='button'
       >
         {chapterButtonContent}
-      </Disclosure.Button>
-      {!isLinkChapter && !examSlug && (
-        <Disclosure.Panel as='ul' className='chapter-panel'>
+      </button>
+      {open && (
+        <ul className='chapter-panel' id={panelId}>
           {children}
-        </Disclosure.Panel>
+        </ul>
       )}
-    </Disclosure>
+    </li>
   );
 };
 
@@ -174,9 +189,23 @@ const Module = ({
 
   const showModuleContent = !(comingSoon && !showUpcomingChanges);
 
+  const [open, setOpen] = useState(isExpanded);
+
+  useEffect(() => {
+    setOpen(isExpanded);
+  }, [isExpanded]);
+
+  const panelId = `module-panel-${dashedName}`;
+
   return (
-    <Disclosure as='li' defaultOpen={isExpanded}>
-      <Disclosure.Button className='module-button'>
+    <li>
+      <button
+        aria-controls={panelId}
+        aria-expanded={open}
+        className='module-button'
+        onClick={() => setOpen(o => !o)}
+        type='button'
+      >
         <div className='module-button-left'>
           <span className='dropdown-wrap'>
             <DropDown />
@@ -196,21 +225,23 @@ const Module = ({
             </span>
           )}
         </div>
-      </Disclosure.Button>
-      <Disclosure.Panel as='ul' className='module-panel'>
-        {comingSoon && (
-          <div className='module-intro'>
-            {note && (
-              <p>
-                <b>{note}</b>
-              </p>
-            )}
-            {intro?.length && intro.map(ntro => <p key={ntro}>{ntro}</p>)}
-          </div>
-        )}
-        {showModuleContent && children}
-      </Disclosure.Panel>
-    </Disclosure>
+      </button>
+      {open && (
+        <ul className='module-panel' id={panelId}>
+          {comingSoon && (
+            <div className='module-intro'>
+              {note && (
+                <p>
+                  <b>{note}</b>
+                </p>
+              )}
+              {intro?.length && intro.map(ntro => <p key={ntro}>{ntro}</p>)}
+            </div>
+          )}
+          {showModuleContent && children}
+        </ul>
+      )}
+    </li>
   );
 };
 
@@ -218,12 +249,14 @@ const LinkModule = ({
   superBlock,
   challenges,
   accordion,
-  moduleType
+  moduleType,
+  expandAll
 }: {
   superBlock: SuperBlocks;
   challenges?: Challenge[];
   accordion: boolean;
   moduleType?: Module['moduleType'];
+  expandAll?: boolean;
 }) => {
   if (!challenges?.length) return null;
 
@@ -237,6 +270,7 @@ const LinkModule = ({
         challenges={challenges}
         superBlock={superBlock}
         accordion={accordion}
+        expandAll={expandAll}
       />
     </li>
   );
@@ -247,7 +281,8 @@ export const SuperBlockAccordion = ({
   superBlock,
   structure,
   chosenBlock,
-  completedChallengeIds
+  completedChallengeIds,
+  expandAll = false
 }: SuperBlockAccordionProps) => {
   const superBlockStructure = structure;
 
@@ -334,6 +369,8 @@ export const SuperBlockAccordion = ({
           );
         });
 
+        if (expandAll && chapterStepIds.length === 0) return null;
+
         const chapterStepIdsSet = new Set(chapterStepIds);
 
         const completedStepsInChapter = new Set(
@@ -359,7 +396,9 @@ export const SuperBlockAccordion = ({
             key={chapter.name}
             dashedName={chapter.name}
             isExpanded={
-              expandedChapter === chapter.name || allChapters.length === 1
+              expandAll ||
+              expandedChapter === chapter.name ||
+              allChapters.length === 1
             }
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
@@ -383,6 +422,7 @@ export const SuperBlockAccordion = ({
                     moduleType={module.moduleType}
                     challenges={module.blocks[0]?.challenges}
                     accordion={accordion}
+                    expandAll={expandAll}
                   />
                 );
               }
@@ -391,6 +431,8 @@ export const SuperBlockAccordion = ({
               module.blocks.forEach(block =>
                 moduleStepIds.push(...block.challenges.map(c => c.id))
               );
+
+              if (expandAll && moduleStepIds.length === 0) return null;
 
               const moduleStepIdsSet = new Set(moduleStepIds);
               const completedStepsInModule = new Set(
@@ -401,7 +443,7 @@ export const SuperBlockAccordion = ({
                 <Module
                   key={module.name}
                   dashedName={module.name}
-                  isExpanded={expandedModule === module.name}
+                  isExpanded={expandAll || expandedModule === module.name}
                   totalSteps={moduleStepIds.length}
                   completedSteps={completedStepsInModule}
                   superBlock={superBlock}
@@ -416,6 +458,7 @@ export const SuperBlockAccordion = ({
                         challenges={block.challenges}
                         superBlock={superBlock}
                         accordion={accordion}
+                        expandAll={expandAll}
                       />
                     </li>
                   ))}
