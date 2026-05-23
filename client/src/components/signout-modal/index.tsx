@@ -54,15 +54,9 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
   const handleSignout = () => {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
-    const redirect = () => {
-      window.location.pathname = pathAfterSignout(window.location.pathname);
-    };
-    void fetch(`${apiLocation}/signout`, {
-      method: 'GET',
-      credentials: 'include'
-    })
-      .then(redirect)
-      .catch(redirect);
+
+    // Let browser follow backend redirect naturally
+    window.location.href = `${apiLocation}/signout`;
   };
 
   return (

@@ -50,6 +50,7 @@ export enum FlashMessages {
   ReallyWeird = 'flash.really-weird',
   ReportSent = 'flash.report-sent',
   SigninSuccess = 'flash.signin-success',
+  SignoutSuccess = 'flash.signout-success',
   StartProjectErr = 'flash.start-project-err',
   SurveyErr1 = 'flash.survey.err-1',
   SurveyErr2 = 'flash.survey.err-2',

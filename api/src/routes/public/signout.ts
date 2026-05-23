@@ -4,11 +4,6 @@ import { signout } from '../../schemas.js';
 
 /**
  * Route handler for signing out.
- *
- * @param fastify The Fastify instance.
- * @param _options Options passed to the plugin via `fastify.register(plugin,
- * options)`.
- * @param done Callback to signal that the logic has completed.
  */
 export const signoutRoute: FastifyPluginCallback = (
   fastify,
@@ -23,11 +18,18 @@ export const signoutRoute: FastifyPluginCallback = (
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
 
+      // Clear auth/session cookies
       void reply.clearOurCookies();
+
       logger.info('User signed out');
 
-      await reply.send({});
+      // Redirect with proper logout flash message
+      return reply.redirectWithMessage('http://localhost:8000/', {
+        type: 'success',
+        content: 'flash.signout-success'
+      });
     }
   );
+
   done();
 };
