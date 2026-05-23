@@ -139,6 +139,7 @@ function MsTrophy(props: MsTrophyProps) {
           description,
           instructions,
           superBlock,
+          id,
           block,
           translationPending
         }
@@ -175,6 +176,8 @@ function MsTrophy(props: MsTrophyProps) {
                 superBlock={superBlock}
                 description={description}
                 instructions={instructions}
+                block={block}
+                challengeId={id}
               />
               <LinkMsUser />
               <hr />

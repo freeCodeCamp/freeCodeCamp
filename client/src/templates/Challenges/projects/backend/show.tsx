@@ -144,6 +144,7 @@ const ShowBackEnd = (props: BackEndProps) => {
           challengeType,
           forumTopicId,
           title,
+          id,
           description,
           instructions,
           translationPending,
@@ -183,6 +184,8 @@ const ShowBackEnd = (props: BackEndProps) => {
                 superBlock={superBlock}
                 description={description}
                 instructions={instructions}
+                block={block}
+                challengeId={id}
               />
               <Spacer size='m' />
               <SolutionForm

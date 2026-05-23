@@ -125,6 +125,7 @@
     "sign-in-with-google": "使用 Google 登錄",
     "go-to-dcc-today": "訪問今天的編程挑戰",
     "go-to-dcc-archive": "訪問每日編程挑戰存檔",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -339,6 +340,7 @@
       "keyboard-shortcuts": "啓用鍵盤快捷鍵"
     },
     "headings": {
+      "personal": "Personal",
       "account": "賬戶",
       "certs": "認證",
       "legacy-certs": "舊版認證",
@@ -469,13 +471,16 @@
     },
     "completeness": {
       "heading": "個人資料完成 {{percentage}}%",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "添加你的姓名",
       "location": "添加你的地點",
       "picture": "上傳頭像",
       "about": "填寫個人簡介",
       "social": "添加社交鏈接",
       "portfolio": "添加作品集項目",
-      "experience": "添加你的經歷"
+      "experience": "添加你的經歷",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -1027,6 +1032,10 @@
     "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
     "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
     "edit-my-profile": "編輯我的個人資料",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} 編輯器內容。按 Option+F1 設置無障礙選項。",
     "editor-a11y-off-non-macos": "{{editorName}} 編輯器內容。按 Alt+F1 設置無障礙選項。",
     "editor-a11y-on-macos": "{{editorName}} 編輯器模式。無障礙模式被設置爲 “on”。按 Command+E 關閉或按 Option+F1 查看更多選項。",
@@ -1413,7 +1422,8 @@
     "too-long-three": "請複製/粘貼所有在挑戰中編輯器所顯示的代碼。",
     "add-code-one": "用你的複製代碼替換這兩句。",
     "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
-    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。"
+    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用戶令牌",

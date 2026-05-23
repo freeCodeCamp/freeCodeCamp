@@ -73,21 +73,24 @@ describe('replace-imports', () => {
 
   it('should fail when the imported file cannot be found', async () => {
     expect.assertions(2);
-    console.error = vi.fn();
+    const consoleErrorSpy = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
     const plugin = addImports();
 
     await expect(
       new Promise((resolve, reject) => {
         plugin(importsAST, incorrectFile, err => {
           if (err) {
-            expect(console.error).toHaveBeenCalledTimes(2);
-            resolve();
+            reject(err);
           } else {
-            reject('An error should have been thrown by addImports');
+            resolve();
           }
         });
       })
-    ).resolves.toBeUndefined();
+    ).rejects.toBeTruthy();
+    expect(consoleErrorSpy).toHaveBeenCalledTimes(2);
+    consoleErrorSpy.mockRestore();
   });
 
   it('should modify the tree when there are imports', async () => {
@@ -219,22 +222,25 @@ describe('replace-imports', () => {
   });
 
   it('should reject imported files with editable region markers', async () => {
-    expect.assertions(2); // One inside the callback and one for the outer expect
-    console.error = vi.fn();
+    expect.assertions(2);
+    const consoleErrorSpy = vi
+      .spyOn(console, 'error')
+      .mockImplementation(() => {});
     const plugin = addImports();
 
     await expect(
       new Promise((resolve, reject) => {
         plugin(markerAST, correctFile, err => {
           if (err) {
-            expect(console.error).toHaveBeenCalledTimes(2);
+            reject(err);
           } else {
-            reject('An error should have been thrown by addImports');
+            resolve();
           }
-          resolve();
         });
       })
-    ).resolves.toBeUndefined();
+    ).rejects.toBeTruthy();
+    expect(consoleErrorSpy).toHaveBeenCalledTimes(2);
+    consoleErrorSpy.mockRestore();
   });
 
   it('should have an output to match the snapshot', async () => {

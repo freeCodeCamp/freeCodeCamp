@@ -48,7 +48,7 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
       isExpanded,
       completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
-  )(state as Record<string, unknown>);
+  )(state);
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -74,6 +74,11 @@ interface BlockProps {
   t: TFunction;
   toggleBlock: typeof toggleBlock;
   accordion?: boolean;
+  /**
+   * When true, expands all chapters and modules and hides those with no matching challenges.
+   * Used during search/filter.
+   */
+  expandAll?: boolean;
 }
 
 export class Block extends Component<BlockProps> {
@@ -106,11 +111,14 @@ export class Block extends Component<BlockProps> {
       blockLabel,
       completedChallengeIds,
       challenges,
-      isExpanded,
+      isExpanded: isExpandedProp,
       superBlock,
       t,
-      accordion = false
+      accordion = false,
+      expandAll = false
     } = this.props;
+
+    const isExpanded = expandAll || isExpandedProp;
 
     let completedCount = 0;
     let stepNumber = 0;

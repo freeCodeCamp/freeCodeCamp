@@ -93,6 +93,27 @@ describe('<Block />', () => {
     vi.clearAllMocks();
   });
 
+  it('should expand the block when isExpanded is true and expandAll is false', () => {
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} isExpanded={true} expandAll={false} />);
+    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('should expand the block when expandAll is true and isExpanded is false', () => {
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} isExpanded={false} expandAll={true} />);
+    expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('should not expand the block when both expandAll and isExpanded are false', () => {
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} isExpanded={false} expandAll={false} />);
+    expect(screen.getByRole('button')).toHaveAttribute(
+      'aria-expanded',
+      'false'
+    );
+  });
+
   it('The "Help us translate" badge does not appear on any English blocks', () => {
     render(<Block {...defaultProps} />);
     expect(

@@ -46,7 +46,11 @@ export const getCurrentBlockIds = (
       .filter(node => node.challenge.certification === certification)[0]
       ?.challenge.tests.map(test => test.id) ?? [];
   const currentBlockIds = challengeNodes
-    .filter(node => node.challenge.block === block)
+    .filter(
+      node =>
+        node.challenge.block === block &&
+        node.challenge.certification === certification
+    )
     .map(node => node.challenge.id);
 
   if (isProjectBased(challengeType)) {
