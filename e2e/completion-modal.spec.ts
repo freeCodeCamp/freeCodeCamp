@@ -196,13 +196,18 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
 });
 
 test.describe('Solution Download', () => {
+  test.use({
+    viewport: { width: 393, height: 851 },
+    isMobile: true
+  });
+
   const challengePath =
     '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables';
 
   test.beforeEach(async ({ page, isMobile, browserName }) => {
     await page.goto(challengePath);
     await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName });
+    await clearEditor({ page, browserName, isMobile });
     await page.keyboard.insertText('var myName;');
 
     const submitButton = isMobile
