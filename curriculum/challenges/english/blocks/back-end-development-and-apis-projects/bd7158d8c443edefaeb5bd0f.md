@@ -50,11 +50,19 @@ The form file input field has the `name` attribute set to `upfile`.
 When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
 
 ```js
-  const formData = new FormData();
-  const fileData = await fetch(
-    'https://cdn.freecodecamp.org/weather-icons/01d.png'
-  );
-  const file = await fileData.blob();
+const formData = new FormData();
+const fileData = await fetch(
+  'https://cdn.freecodecamp.org/weather-icons/01d.png'
+);
+
+  let file;
+  if (typeof fileData.blob === 'function') {
+    file = await fileData.blob();
+  } else {
+    const buf = await fileData.arrayBuffer();
+    file = new Blob([buf], { type: 'image/png' });
+  }
+
   formData.append('upfile', file, 'icon');
   const data = await fetch(code + '/api/fileanalyse', {
     method: 'POST',
