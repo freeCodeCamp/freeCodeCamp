@@ -12,8 +12,9 @@ const registerServiceWorker = async () => {
     try {
       await navigator.serviceWorker.register('/python-input-sw.js');
     } catch (error) {
-      console.error(`Registration failed`);
-      console.error(error);
+      console.error(
+        `Addon registration failed: ${error instanceof Error ? error.message : String(error)}`
+      );
     }
   }
 };
