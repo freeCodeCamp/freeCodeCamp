@@ -236,8 +236,17 @@ test.describe('Solution Download', () => {
     await page.goto(challengePath);
     await focusEditor({ page, isMobile });
     await getEditors(page).fill('// solution');
-    await page.getByRole('button', { name: 'Check Your Code' }).click();
-    await page.getByRole('dialog').waitFor({ state: 'visible' });
+
+    const submitButton = isMobile
+      ? page.getByRole('button', { name: translations.buttons.run })
+      : page.getByRole('button', { name: translations.buttons['check-code'] });
+
+    await submitButton.click();
+    await expect(
+      page.getByRole('link', {
+        name: translations.learn['download-solution']
+      })
+    ).toBeVisible();
   });
 
   test('download link has a .zip filename', async ({ page }) => {
