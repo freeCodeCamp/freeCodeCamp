@@ -1116,6 +1116,70 @@
     {
       "id": "69e2383af7832c8032603b94",
       "title": "Challenge 278: Coffee Order Parser"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cb8",
+      "title": "Challenge 279: Longest Domino Chain"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cb9",
+      "title": "Challenge 280: Mongo ID Date"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cba",
+      "title": "Challenge 281: Bingo Range"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbb",
+      "title": "Challenge 282: Sleep Debt"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbc",
+      "title": "Challenge 283: String Zipper"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbd",
+      "title": "Challenge 284: I Before E"
+    },
+    {
+      "id": "69f35a5bb823ed620fcb7cbe",
+      "title": "Challenge 285: Meeting Time"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713b9",
+      "title": "Challenge 286: Open Issues"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713ba",
+      "title": "Challenge 287: Roman Numeral Fixer"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713bb",
+      "title": "Challenge 288: Secret Number"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713bc",
+      "title": "Challenge 289: Sum of Differences"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713bd",
+      "title": "Challenge 290: Pizza Party"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713be",
+      "title": "Challenge 291: FizzBuzz Count"
+    },
+    {
+      "id": "69f8c998d78ad3171a0713bf",
+      "title": "Challenge 292: Wider Aspect Ratio"
+    },
+    {
+      "id": "69f90c1329a94b37e2a2086c",
+      "title": "Challenge 293: Best Hand"
+    },
+    {
+      "id": "69f90c1329a94b37e2a2086d",
+      "title": "Challenge 294: Parentheses Combinations"
     }
   ]
 }
