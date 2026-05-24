@@ -146,7 +146,7 @@ export default class PayPalButtonScriptLoader extends Component<
       // that, this will need to be changed.
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      return this.props.onApprove(details, data);
+      return this.props.onApprove(data, details);
     });
   }
 
