@@ -11,7 +11,7 @@ function Footer(): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <footer className='site-footer'>
+    <footer className='site-footer' aria-label={t('footer.site-footer')}>
       <div className='footer-top'>
         <div className='footer-desc-col'>
           <p>{t('footer.tax-exempt-status')}</p>
