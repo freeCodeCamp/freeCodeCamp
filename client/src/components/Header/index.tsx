@@ -91,6 +91,7 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
         <a
           href='#content-start'
           className='skip-to-content-button'
+          aria-label={skipButtonText}
           data-playwright-test-label='header-skip-content'
         >
           {skipButtonText}
