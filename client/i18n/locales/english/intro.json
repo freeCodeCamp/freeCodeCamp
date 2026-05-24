@@ -4936,6 +4936,12 @@
           "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
         ]
       },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
       "lab-proofreading-tool": {
         "title": "Build a Proofreading Tool",
         "intro": [
@@ -5915,7 +5921,10 @@
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "TypeScript Fundamentals",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
       "data-visualization": "Data Visualization and D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -7247,6 +7256,12 @@
         "title": "Understanding Error Handling and Health Checks",
         "intro": [
           "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
       "exam-back-end-development-and-apis-certification": {

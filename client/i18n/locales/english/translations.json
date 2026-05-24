@@ -620,6 +620,7 @@
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "In the <0>Value</0> field, paste your token",
       "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces Setup"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "Archived Coursework",
       "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
