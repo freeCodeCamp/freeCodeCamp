@@ -29,6 +29,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   return (
     <Alert
       key={id}
+      id={id}
       variant={flashStyle}
       className='flash-container'
       data-playwright-test-label='flash-message'
@@ -48,6 +49,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
             <CloseButton
               onClick={handleClose}
               label={t('buttons.close')}
+              aria-describedby={id}
               className='close'
             />
           </Col>
