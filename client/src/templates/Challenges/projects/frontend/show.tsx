@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { type TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -80,6 +80,32 @@ const ShowFrontEndProject = (props: ProjectProps) => {
   };
 
   const container = useRef<HTMLElement>(null);
+  const [hasChanges, setHasChanges] = useState(false);
+
+  // Detect when the user has made changes to the solution form
+  useEffect(() => {
+    const containerEl = container.current;
+    if (!containerEl) return;
+
+    const handleInput = () => {
+      setHasChanges(true);
+    };
+
+    containerEl.addEventListener('input', handleInput);
+    return () => containerEl.removeEventListener('input', handleInput);
+  }, []);
+
+  // Show a browser confirmation dialog when the user tries to leave with unsaved changes
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (hasChanges) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [hasChanges]);
 
   useEffect(() => {
     const {
