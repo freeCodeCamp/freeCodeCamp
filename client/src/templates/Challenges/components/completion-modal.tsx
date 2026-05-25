@@ -1,5 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
-import { zipSync, strToU8 } from 'fflate';
+import React, { useEffect, useCallback } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -26,6 +25,7 @@ import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
+import { useSolutionDownloadUrl } from './use-solution-download';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -72,12 +72,6 @@ interface CompletionModalProps extends StateProps {
   t: TFunction;
 }
 
-interface DownloadableChallengeFile {
-  name: string;
-  ext: string;
-  contents: string;
-}
-
 function CompletionModal({
   challengeFiles,
   close,
@@ -88,24 +82,8 @@ function CompletionModal({
   message,
   t
 }: CompletionModalProps): JSX.Element {
-  const [downloadURL, setDownloadURL] = useState<string>();
+  const downloadURL = useSolutionDownloadUrl(challengeFiles);
   const submitChallenge = useSubmit();
-  // We can't useMemo here, because it does not guarantee that the URL object
-  // will be revoked when the dependencies change.
-  useEffect(() => {
-    // downloadURL is not in the dependency array because it should only change
-    // if the challengeFiles change. It is in the useEffect so that we cannot
-    // leak URL objects.
-    if (downloadURL) URL.revokeObjectURL(downloadURL);
-    if (challengeFiles?.length) {
-      const zipped = zipSync(buildZipEntries(challengeFiles));
-      const buffer = new ArrayBuffer(zipped.byteLength);
-      new Uint8Array(buffer).set(zipped);
-      const blob = new Blob([buffer], { type: 'application/zip' });
-      setDownloadURL(URL.createObjectURL(blob));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeFiles]);
 
   useEffect(() => {
     return () => {
@@ -214,13 +192,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
-
-export function buildZipEntries(
-  challengeFiles: DownloadableChallengeFile[]
-): Record<string, Uint8Array> {
-  const entries: Record<string, Uint8Array> = {};
-  for (const file of challengeFiles) {
-    entries[`${file.name}.${file.ext}`] = strToU8(file.contents);
-  }
-  return entries;
-}

@@ -18,8 +18,9 @@ import {
 import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { curriculumData } from '../../../services/curriculum-data';
 import { getTestRunner } from '../utils/build';
-import CompletionModal, { buildZipEntries } from './completion-modal';
+import CompletionModal from './completion-modal';
 import { strFromU8 } from 'fflate';
+import { buildZipEntries } from './use-solution-download';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { useStaticQuery } from 'gatsby';
 import { ChallengeNode, SuperBlockStructure } from '../../../redux/prop-types';
