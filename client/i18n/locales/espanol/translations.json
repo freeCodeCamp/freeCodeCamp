@@ -620,6 +620,7 @@
       "sub-step-4": "Crea un nuevo secreto llamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "Pega tu token en el campo <0>Valor</0>",
       "sub-step-6": "En el campo <0>Acceso al repositorio</0>, selecciona el repositorio <1>freeCodeCamp/rdb-alpha</1>",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Configuración de Codespaces"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "Cursos archivados",
       "content-not-updated": "El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos probar <0>nuestro currículo actual</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "Esta certificación está actualmente en desarrollo. Aunque no hay una certificación disponible en este momento para esta sección, estará disponible pronto. Mientras tanto, a continuación. siéntete bienvenido a explorar los cursos que hemos creado.",
     "consider-donating": "Por favor, considere donar para apoyar la finalización de su desarrollo.",
     "unfinished-certification-2": "Completar esta certificación le llevará una cantidad considerable de tiempo y esfuerzo. Si comienza ahora, es posible que esté listo para tomar el examen final cuando la lancemos en los próximos meses.",
-    "consider-donating-2": "Si desea ayudarnos a acelerar el desarrollo de este plan de estudios, <0>considere convertirse en un partidario de nuestra organización benéfica.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "Ayúdenos a desarollar certificados de programación profesional gratis para todos.",
     "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",

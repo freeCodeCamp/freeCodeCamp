@@ -620,6 +620,7 @@
       "sub-step-4": "새 시크릿을 <0>CODEROAD_WEBHOOK_TOKEN</0>이라는 이름으로 만드세요.",
       "sub-step-5": "<0>Value</0> 필드에 토큰을 붙여넣으세요.",
       "sub-step-6": "<0>Repository access</0> 필드에서 <1>freeCodeCamp/rdb-alpha</1> 저장소를 선택하세요.",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces 설정"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "보관된 강좌",
       "content-not-updated": "이 섹션의 내용은 업데이트되지 않지만 학습을 이어가는 데는 계속 활용할 수 있습니다. <0>현재 커리큘럼</0>을 시도해보시길 권장합니다."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "이 자격증은 현재 활성 개발 중입니다. 현재 수령 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 생성된 과정을 탐색하세요.",
     "consider-donating": "개발 완료를 지원하기 위해 기부를 고려해 주세요.",
     "unfinished-certification-2": "이 자격증을 완료하려면 상당한 시간과 노력이 요구됩니다. 지금 시작하면, 몇 개월 안에 저희가 시험을 시작할 때 마칠 준비가 될 수 있습니다.",
-    "consider-donating-2": "이 커리큘럼의 개발을 가속화하는 데 도움을 주시고 싶다면, <0>저희 자선단체의 서포터가 되는 것을 고려해 주세요.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "모두를 위한 무료 전문 프로그래밍 인증을 개발하는 데 도움을 주십시오.",
     "nicely-done": "잘하셨습니다. {{block}}를 방금 완료하셨습니다.",
     "credit-card": "신용 카드",

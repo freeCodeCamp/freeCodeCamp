@@ -620,6 +620,7 @@
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "In the <0>Value</0> field, paste your token",
       "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces Setup"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "Archived Coursework",
       "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "こちらの認定講座は現在開発中です。認定証は後日追加予定となっており、現時点では取得できません。以下に公開済みのコースは先行してご利用いただけます。",
     "consider-donating": "開発をサポートするための寄付をご検討いただければ幸いです。",
     "unfinished-certification-2": "この認定講座は修了までにかなりの時間と努力が必要です。最終試験は数ヶ月後に公開予定ですが、公開後すぐ受験できるよう準備するには今取り組み始めても良いかもしれません。",
-    "consider-donating-2": "カリキュラムの開発をスピードアップするには、<0>当団体への寄付をご検討ください。</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",
