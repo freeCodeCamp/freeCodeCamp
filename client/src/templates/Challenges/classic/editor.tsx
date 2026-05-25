@@ -825,7 +825,9 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   function tryToExecuteChallenge() {
-    props.executeChallenge();
+    props.executeChallenge({
+      showCompletionModal: !props.showIndependentLowerJaw
+    });
   }
 
   const tryToSubmitChallenge = submitChallenge;
