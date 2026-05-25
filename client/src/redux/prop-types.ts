@@ -443,6 +443,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
+  education?: EducationData[];
   experience?: ExperienceData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
@@ -464,6 +465,7 @@ export type ProfileUI = {
   showAbout: boolean;
   showCerts: boolean;
   showDonation: boolean;
+  showEducation: boolean;
   showHeatMap: boolean;
   showLocation: boolean;
   showName: boolean;
@@ -540,6 +542,16 @@ export type ExperienceData = {
   id: string;
   title: string;
   company: string;
+  location?: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+};
+
+export type EducationData = {
+  id: string;
+  institution: string;
+  degree: string;
   location?: string;
   startDate: string;
   endDate?: string;

@@ -15,6 +15,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('updateMyQuincyEmail'),
     ...createAsyncTypes('updateMySocrates'),
     ...createAsyncTypes('updateMyPortfolio'),
+    ...createAsyncTypes('updateMyEducation'),
     ...createAsyncTypes('updateMyExperience'),
     ...createAsyncTypes('submitProfileUI'),
     ...createAsyncTypes('verifyCert'),
