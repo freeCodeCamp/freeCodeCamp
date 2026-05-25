@@ -1,6 +1,6 @@
 import { describe, beforeEach, afterEach, it, expect, vi } from 'vitest';
 import { ENGLISH_CHALLENGE_NO_FILES } from './__fixtures__/challenge-objects';
-import { SIMPLE_TRANSLATION } from './__mocks__/mock-comments';
+import { SIMPLE_TRANSLATION } from './__fixtures__/mock-comments';
 import {
   translateComments,
   translateCommentsInChallenge,

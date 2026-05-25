@@ -120,6 +120,7 @@ const ShowGeneric = ({
         explanation,
         challengeType,
         helpCategory,
+        id,
         instructions,
         questions,
         tests,
@@ -157,6 +158,7 @@ const ShowGeneric = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -296,6 +298,8 @@ const ShowGeneric = ({
           <ChallengeDescription
             description={description}
             superBlock={superBlock}
+            block={block}
+            challengeId={id}
           />
           <Spacer size='m' />
         </Col>
@@ -335,6 +339,8 @@ const ShowGeneric = ({
             <ChallengeDescription
               instructions={instructions}
               superBlock={superBlock}
+              block={block}
+              challengeId={id}
             />
             <Spacer size='m' />
           </>

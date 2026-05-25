@@ -10,6 +10,7 @@ import './certifications.css';
 
 interface CertificationProps {
   user: User;
+  isPrivate?: boolean;
 }
 
 interface CertButtonProps {
@@ -35,7 +36,7 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   );
 }
 
-function Certificates({ user }: CertificationProps): JSX.Element {
+function Certificates({ user, isPrivate }: CertificationProps): JSX.Element {
   const { username } = user;
 
   const { currentCerts, legacyCerts, hasLegacyCert, hasModernCert } =
@@ -45,7 +46,14 @@ function Certificates({ user }: CertificationProps): JSX.Element {
   return (
     <FullWidthRow className='profile-certifications'>
       <section className='card'>
-        <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+        <div className='profile-section-heading'>
+          <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+          {isPrivate && (
+            <span className='profile-private-badge'>
+              {t('buttons.private')}
+            </span>
+          )}
+        </div>
         <br />
         {hasModernCert && currentCerts ? (
           <ul aria-labelledby='fcc-certifications'>

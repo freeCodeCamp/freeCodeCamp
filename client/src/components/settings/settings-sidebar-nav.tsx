@@ -32,6 +32,21 @@ function SettingsSidebarNav({
       <ul>
         <SidebarPanel.Item>
           <ScrollLink
+            to='personal'
+            href='#personal'
+            className='sidebar-nav-section-heading'
+            smooth={true}
+            offset={scrollOffset}
+            duration={300}
+            spy={true}
+            hashSpy={true}
+            activeClass='active'
+          >
+            {t('settings.headings.personal')}
+          </ScrollLink>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
+          <ScrollLink
             to='account'
             href='#account'
             className='sidebar-nav-section-heading'
