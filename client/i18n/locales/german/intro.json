@@ -4922,10 +4922,23 @@
           "In this lab, you will implement loops to repeat a string a specified number of times."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
           "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -5899,22 +5912,21 @@
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
-      "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
+      "data-visualization": "Data Visualization and D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+        ]
+      },
       "data-visualization": {
         "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6179,22 +6191,6 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introduction to Data Visualization",
-        "intro": [
-          "In these lessons, you will learn about basic data visualization concepts."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab you will use d3 to build a bar chart."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -6267,8 +6263,20 @@
           "In this lab, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Build a Football Player Card Builder",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+        ]
+      },
       "review-typescript": {
-        "title": "Typescript Review",
+        "title": "TypeScript Review",
         "intro": [
           "Before you take the TypeScript quiz, you should review everything you've learned so far.",
           "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
@@ -6276,7 +6284,23 @@
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7208,6 +7232,19 @@
           "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
         ]
       },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
@@ -7584,6 +7621,10 @@
       },
       "es-a1-learn-talking-about-colleagues": {
         "title": "Talking About Colleagues",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -8693,7 +8734,7 @@
       "zh-a1-module-initials-and-finals": "Initials and Finals",
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
       "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
@@ -8709,6 +8750,12 @@
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8906,11 +8953,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers below 100 Review",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers below 100 Quiz",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }

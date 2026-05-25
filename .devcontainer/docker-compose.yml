@@ -10,7 +10,7 @@ services:
     command: sleep infinity
 
   db:
-    image: mongo:8.0
+    image: mongo:8.2
     command: mongod --replSet rs0
     restart: unless-stopped
     hostname: mongodb
@@ -23,7 +23,7 @@ services:
       start_period: 10s
 
   setup:
-    image: mongo:8.0
+    image: mongo:8.2
     depends_on:
       db:
         condition: service_healthy
