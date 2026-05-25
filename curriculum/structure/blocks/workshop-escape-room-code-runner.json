@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-escape-room-code-runner",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "fad43da5927d9e5a3079ee87", "title": "Step 1" },
+    { "id": "7d46ab547a36b668cb3ca12a", "title": "Step 2" },
+    { "id": "c7199cf412a0b40c35102419", "title": "Step 3" },
+    { "id": "178d9d193fae0e36c3d0a932", "title": "Step 4" },
+    { "id": "87b4c57502b3aae30fe06f4d", "title": "Step 5" },
+    { "id": "29dd9d1be7f4cdcf2015a322", "title": "Step 6" },
+    { "id": "49bd4e328738648e76bf2116", "title": "Step 7" },
+    { "id": "1e34744901a1eec0f5af186a", "title": "Step 8" },
+    { "id": "7a69bf16d9213280b093e0fb", "title": "Step 9" },
+    { "id": "a3e6f67e80752513c0625585", "title": "Step 10" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

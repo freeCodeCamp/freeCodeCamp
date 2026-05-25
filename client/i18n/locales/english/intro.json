@@ -4930,6 +4930,13 @@
           "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
         ]
       },
+      "workshop-escape-room-code-runner": {
+        "title": "Build an Escape Room Code Runner",
+        "intro": [
+          "In this workshop, you will solve loop-driven mini challenges to unlock an escape room door.",
+          "You will build three clue-solving modules using different loop constructs, track progress with a shared state object, and use labeled loops and manual flags to escape nested loops."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
