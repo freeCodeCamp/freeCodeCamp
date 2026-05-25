@@ -1,4 +1,4 @@
-import { Experience, Portfolio } from '@prisma/client';
+import { Education, Experience, Portfolio } from '@prisma/client';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
 import { omit } from 'lodash-es';
@@ -29,6 +29,7 @@ type ProfileUI = Partial<{
   showAbout: boolean;
   showCerts: boolean;
   showDonation: boolean;
+  showEducation: boolean;
   showHeatMap: boolean;
   showLocation: boolean;
   showName: boolean;
@@ -49,6 +50,7 @@ type RawUser = {
   name: string;
   points: number;
   portfolio: Portfolio[];
+  education: NoNullProperties<Education>[];
   experience: NoNullProperties<Experience>[];
   profileUI: ProfileUI;
 };
@@ -64,6 +66,7 @@ export const replacePrivateData = (user: RawUser) => {
     showHeatMap,
     showCerts,
     showDonation,
+    showEducation,
     showLocation,
     showName,
     showPoints,
@@ -88,6 +91,7 @@ export const replacePrivateData = (user: RawUser) => {
     name: showName ? user.name : '',
     points: showPoints ? user.points : null,
     portfolio: showPortfolio ? user.portfolio : [],
+    education: showEducation ? user.education : [],
     experience: showExperience ? user.experience : []
   };
 };
@@ -191,6 +195,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           name: user.name ?? '',
           points: getPoints(progressTimestamps),
           profileUI: normalizedProfileUI,
+          education: user.education.map(removeNulls) ?? [],
           experience: user.experience.map(removeNulls) ?? []
         });
 
