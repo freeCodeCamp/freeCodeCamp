@@ -1,95 +1,153 @@
 [![freeCodeCamp Social Banner](https://cdn.freecodecamp.org/platform/universal/fcc_banner_new.png)](https://www.freecodecamp.org/)
 
+<div align="center">
+
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://www.firsttimersonly.com/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
 [![LFX Active Contributors](https://insights.linuxfoundation.org/api/badge/active-contributors?project=freecodecamp&repos=https://github.com/freeCodeCamp/freeCodeCamp)](https://insights.linuxfoundation.org/project/freecodecamp/repository/freecodecamp-freecodecamp)
 
-## freeCodeCamp.org's open-source codebase and curriculum
+# freeCodeCamp.org — Open Source Codebase & Curriculum
 
-[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 100,000 people get their first developer job.
+**Learn to code for free. Build projects. Earn certifications. Get hired.**
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+[freeCodeCamp.org](https://www.freecodecamp.org) is a friendly, donor-supported nonprofit community helping millions of adults worldwide transition into tech careers — at no cost. More than **100,000 people** have already landed their first developer job through our platform.
 
-## Table of Contents
+[🌐 Website](https://www.freecodecamp.org) · [💬 Forum](https://forum.freecodecamp.org) · [🎥 YouTube](https://youtube.com/freecodecamp) · [🔒 Discord](https://discord.gg/Z7Fm39aNtZ) · [📰 News](https://www.freecodecamp.org/news)
 
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-- [License](#license)
+</div>
 
-### Certifications
+---
 
-freeCodeCamp.org offers several free developer certifications that make up the [Full-Stack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
+## 📋 Table of Contents
 
-- [Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design-v9/)
-- [JavaScript](https://www.freecodecamp.org/learn/javascript-v9/)
-- [Front-End Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
-- [Python](https://www.freecodecamp.org/learn/python-v9/)
-- [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
-- [Back-End Development and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
+- [📜 Certifications](#-certifications)
+  - [Developer Certifications](#developer-certifications)
+  - [Language Certifications](#language-certifications)
+- [🖥️ The Learning Platform](#%EF%B8%8F-the-learning-platform)
+- [🐛 Reporting Bugs and Issues](#-reporting-bugs-and-issues)
+- [🔐 Reporting Security Issues](#-reporting-security-issues)
+- [🤝 Contributing](#-contributing)
+- [⚙️ Platform Status](#%EF%B8%8F-platform-status)
+- [📄 License](#-license)
 
-Each of these certifications involves completing interactive lessons, workshops, labs, reviews, and quizzes. Throughout the certification, you'll need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
+---
 
-freeCodeCamp.org also offers free language certifications designed around internationally recognized proficiency levels:
+## 📜 Certifications
 
-- [A2 English for Developers (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
-- [B1 English for Developers (Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
-- [A1 Professional Spanish (Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
-- [A1 Professional Chinese (Beta)](https://www.freecodecamp.org/learn/a1-professional-chinese/)
+Our curriculum is organized under the [Full-Stack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/). Each certification is **completely free**, self-paced, and verifiable by employers.
 
-Each of these certifications is organized into modules, with sections for warm-ups, lessons, practice exercises, review pages, and quizzes to ensure you fully grasp the material before progressing to the next module. You'll need to complete all of the quizzes in order to qualify for the exam at the end of the certification.
+### Developer Certifications
 
-Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
+| Certification | Topics Covered |
+|---|---|
+| [Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design-v9/) | HTML, CSS, Flexbox, Grid, Accessibility |
+| [JavaScript](https://www.freecodecamp.org/learn/javascript-v9/) | ES6+, DOM, Algorithms, Data Structures |
+| [Front-End Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/) | React, Redux, Bootstrap, jQuery, Sass |
+| [Python](https://www.freecodecamp.org/learn/python-v9/) | Data Analysis, Automation, OOP |
+| [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/) | PostgreSQL, SQL, Bash |
+| [Back-End Development and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/) | Node.js, Express, MongoDB, REST APIs |
 
-The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+**How certifications work:**
 
-In addition, to help prepare for job interviews, freeCodeCamp.org includes The Odin Project (freeCodeCamp Remix), Coding Interview Prep, Project Euler, and Rosetta Code.
+Each certification requires you to complete a structured path of interactive lessons, workshops, labs, reviews, and quizzes — followed by **5 required projects** and a final exam. Pass the exam to claim your certification.
 
-A free, professional Foundational C# with Microsoft Certification is also available.
+> 🏅 Your certification is **permanent and publicly verifiable**. Employers and clients can confirm it via a direct link on your portfolio or LinkedIn profile.
 
-### The Learning Platform
+> ⚠️ Certifications may be revoked for violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). Submitting someone else's work as your own will result in a permanent ban.
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
+We also offer additional preparation resources:
 
-Our community also has:
+- **The Odin Project** (freeCodeCamp Remix)
+- **Coding Interview Prep**
+- **Project Euler** and **Rosetta Code**
+- **Foundational C# with Microsoft** (free, professional certification)
 
-- A [forum](https://forum.freecodecamp.org) where you can usually get programming help or project feedback within hours.
-- A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
-- A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
-- A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
+---
 
-> #### [Join the community here](https://www.freecodecamp.org/signin).
+### Language Certifications
 
-### Reporting Bugs and Issues
+freeCodeCamp offers language certifications aligned to internationally recognized proficiency standards (CEFR), designed for developers working in global environments.
 
-If you think you've found a bug, first read the [how to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+| Certification | Level | Status |
+|---|---|---|
+| [English for Developers](https://www.freecodecamp.org/learn/a2-english-for-developers/) | A2 | Beta |
+| [English for Developers](https://www.freecodecamp.org/learn/b1-english-for-developers/) | B1 | Beta |
+| [Professional Spanish](https://www.freecodecamp.org/learn/a1-professional-spanish/) | A1 | Beta |
+| [Professional Chinese](https://www.freecodecamp.org/learn/a1-professional-chinese/) | A1 | Beta |
 
-If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+Each course is structured into modules containing warm-ups, lessons, practice exercises, review pages, and quizzes. You must complete all quizzes to unlock the final certification exam.
 
-### Reporting Security Issues and Responsible Disclosure
+---
 
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+## 🖥️ The Learning Platform
 
-> #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
+The live platform is available at **[freeCodeCamp.org](https://www.freecodecamp.org)**.
 
-### Contributing
+Our community ecosystem includes:
 
-The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+| Resource | Description |
+|---|---|
+| 💬 [Forum](https://forum.freecodecamp.org) | Get programming help and project feedback, usually within hours |
+| 🎥 [YouTube Channel](https://youtube.com/freecodecamp) | Full free courses on Python, SQL, Android, and many more |
+| 📰 [Technical Publication](https://www.freecodecamp.org/news) | Thousands of tutorials covering programming, math, and computer science |
+| 🔒 [Discord Server](https://discord.gg/Z7Fm39aNtZ) | Connect with developers and learners from around the world |
 
-> #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
+> **[→ Join the community](https://www.freecodecamp.org/signin)**
 
-Recent Contributions:
+---
 
-![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
+## 🐛 Reporting Bugs and Issues
 
-### License
+Found something broken? Here's how to report it properly:
+
+1. Read the [How to Report a Bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) guide first.
+2. Check existing GitHub issues to see if it's already been reported.
+3. If it's a confirmed new bug, [open a new GitHub issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/new/choose) with full reproduction steps, your environment details, and screenshots if applicable.
+
+The more information you include, the faster we can fix it.
+
+---
+
+## 🔐 Reporting Security Issues
+
+We take security seriously. If you've discovered a vulnerability that could affect our platforms or users, please follow responsible disclosure practices.
+
+> **[→ Read our Security Policy and report a vulnerability](https://contribute.freecodecamp.org/#/security)**
+
+Please do **not** report security issues through public GitHub issues.
+
+---
+
+## 🤝 Contributing
+
+freeCodeCamp is built and maintained by thousands of volunteers. We welcome contributions of all kinds — code, curriculum, translations, documentation, and more.
+
+**Getting started:**
+
+> **[→ Follow the Contribution Guide](https://contribute.freecodecamp.org)**
+
+This project is [`first-timers-only` friendly](https://www.firsttimersonly.com/) — if this is your first open source contribution, you're in the right place. 🎉
+
+### Recent Contributions
+
+![Repobeats analytics](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
+
+---
+
+## ⚙️ Platform Status
+
+| Environment | Status |
+|---|---|
+| Main Platform | [![Production Status](https://img.shields.io/website?url=https%3A%2F%2Fwww.freecodecamp.org)](https://www.freecodecamp.org) |
+| Forum | [![Forum Status](https://img.shields.io/website?url=https%3A%2F%2Fforum.freecodecamp.org)](https://forum.freecodecamp.org) |
+
+---
+
+## 📄 License
 
 Copyright © 2014 freeCodeCamp.org
 
-The content of this repository is bound by the following licenses:
-
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+| Content | License |
+|---|---|
+| Computer software (this repository) | [BSD-3-Clause](LICENSE.md) |
+| Learning resources in [`/curriculum`](/curriculum) and subdirectories | Copyright © 2014 freeCodeCamp.org |
