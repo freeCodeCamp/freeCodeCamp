@@ -1,0 +1,58 @@
+diff --git a/packages/helpers/lib/index.ts b/packages/helpers/lib/index.ts
+index ef70840..0598f45 100644
+--- a/packages/helpers/lib/index.ts
++++ b/packages/helpers/lib/index.ts
+@@ -360,7 +360,7 @@ const getIsDeclaredAfter = (styleRule: CSSStyleRule) => (selector: string) => {
+     styleRule.parentStyleSheet?.cssRules || [],
+   )?.filter((ele) => ele.type === CSSRule.STYLE_RULE) as CSSStyleRule[];
+   const previousStyleRule = cssStyleRules.find(
+-    (ele) => ele?.selectorText === selector,
++    (ele) => selectorsMatch(ele?.selectorText ?? "", selector),
+   );
+   if (!previousStyleRule) return false;
+   const currPosition = Array.from(
+@@ -470,6 +470,19 @@ export const python = {
+   },
+ };
+ 
++function normalizeSelector(selector: string): string {
++  return selector.trim().replace(/\s+/g, " ");
++}
++
++function selectorsMatch(ruleSelectorText: string, targetSelector: string): boolean {
++  // Handle comma-separated selectors by splitting both sides
++  const ruleSelectors = ruleSelectorText
++    .split(",")
++    .map((s) => normalizeSelector(s));
++  const normalizedTarget = normalizeSelector(targetSelector);
++  return ruleSelectors.includes(normalizedTarget);
++}
++
+ export class CSSHelp {
+   doc: Document;
+ 
+@@ -486,13 +499,13 @@ export class CSSHelp {
+ 
+   getStyleDeclarations(selector: string): CSSStyleDeclaration[] {
+     return this._getStyleRules()
+-      ?.filter((ele) => ele?.selectorText === selector)
++      ?.filter((ele) => selectorsMatch(ele?.selectorText ?? "", selector))
+       .map((x) => x.style);
+   }
+ 
+   getStyle(selector: string): ExtendedStyleDeclaration | null {
+     const style = this._getStyleRules().find(
+-      (ele) => ele?.selectorText === selector,
++      (ele) => selectorsMatch(ele?.selectorText ?? "", selector),
+     )?.style as ExtendedStyleDeclaration | undefined;
+     if (!style) return null;
+     style.getPropVal = (prop: string, strip = false) =>
+@@ -518,7 +531,7 @@ export class CSSHelp {
+ 
+   getStyleRule(selector: string): ExtendedStyleRule | null {
+     const styleRule = this._getStyleRules()?.find(
+-      (ele) => ele?.selectorText === selector,
++      (ele) => selectorsMatch(ele?.selectorText ?? "", selector),
+     );
+     if (styleRule) {
+       return {
