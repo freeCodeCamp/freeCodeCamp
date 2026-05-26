@@ -52,11 +52,21 @@ async function get<T>(
 }
 
 async function combineDataWithResponse<T>(response: Response) {
-  if (!response.body) {
+  if (
+    !response.body ||
+    response.status === 204 ||
+    response.status === 205 ||
+    response.headers.get('content-length') === '0'
+  ) {
     return { response, data: undefined as T };
   }
 
-  const data = (await response.json()) as T;
+  const responseText = await response.text();
+  if (!responseText) {
+    return { response, data: undefined as T };
+  }
+
+  const data = JSON.parse(responseText) as T;
   return { response, data };
 }
 

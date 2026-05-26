@@ -32,4 +32,14 @@ describe('ajax utils', () => {
       })
     );
   });
+
+  it('handles empty responses with a readable body', async () => {
+    const fetch = vi.fn().mockResolvedValue(new Response('', { status: 200 }));
+    vi.stubGlobal('fetch', fetch);
+
+    const result = await postDeleteAccount('abc123');
+
+    expect(result.data).toBeUndefined();
+    expect(result.response.status).toBe(200);
+  });
 });
