@@ -620,6 +620,7 @@
       "sub-step-4": "創建一個名爲 <0>CODEROAD_WEBHOOK_TOKEN</0> 的新密碼",
       "sub-step-5": "在 <0>Value</0> 字段中，粘貼你的令牌",
       "sub-step-6": "在 <0>Repository access</0> 字段中，選擇 <1>freeCodeCamp/rdb-alpha</1> 倉庫",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces 設置"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "已存檔的課程",
       "content-not-updated": "本節內容將不再更新，但仍可供你繼續學習。我們推薦你嘗試<0>我們現在的課程</0>。"
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "該認證正在積極開發中。雖然目前無法領取認證，但很快將會推出。在此期間，歡迎你探索我們已創建的課程。",
     "consider-donating": "請考慮捐款以支持其開發完成",
     "unfinished-certification-2": "完成此認證將需要你投入大量時間和精力。如果你現在開始學習，可能會在我們幾個月後發佈最終考試時爲參加考試做好準備。",
-    "consider-donating-2": "如果你希望幫助我們加快該課程的開發，請<0>考慮成爲我們的慈善機構的支持者</0>。",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "幫助我們爲所有人開發免費的專業編程認證。",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",

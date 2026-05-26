@@ -3833,6 +3833,7 @@
       "En la segunda mitad, practicarás vocabulario específico para el desarrollo de software. Aprenderás a describir código, discutir tendencias tecnológicas y participar en reuniones de pie.",
       "Todo este plan de estudios de nivel A2 incluye 105 diálogos diferentes. Cada uno está diseñado para desarrollar su vocabulario y aumentar su confianza al hablar en un entorno tecnológico profesional."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Aprende saludos en tu primer día en la oficina",
@@ -4120,6 +4121,7 @@
       "También te concentrarás en aplicar estas habilidades en entornos profesionales y técnicos. Practicarás vocabulario y frases esenciales para los desarrolladores, como describir códigos, participar en reuniones de pie y analizar tendencias tecnológicas. Los temas avanzados incluyen condicionales, estructuras comparativas y gestión de conversaciones, para que puedas prepararte para interacciones del mundo real en la industria tecnológica.",
       "Este programa completo de nivel B1 incluye 73 diálogos diferentes. Cada uno está diseñado para ampliar tu vocabulario y aumentar tu confianza al hablar en un entorno tecnológico profesional."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Aprende a describir lugares y acontecimientos",
@@ -4940,6 +4942,12 @@
         "title": "Construir un Detector de Letras Faltantes",
         "intro": [
           "En este laboratorio, crearás una función que encuentre la letra que falta en un rango dado de letras consecutivas y la devuelva."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
         ]
       },
       "lab-proofreading-tool": {
@@ -5916,6 +5924,7 @@
       "- Completa los cinco proyectos requeridos para calificar para el examen de certificación.",
       "- Pass the Front-End Development Libraries Certification exam."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "Front-End Development Libraries",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -5928,7 +5937,10 @@
       "performance": "Rendimiento",
       "testing": "Pruebas",
       "css-libraries-and-frameworks": "Bibliotecas y Frameworks CSS",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "Fundamentos de TypeScript ",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
       "data-visualization": "Visualización de Datos y D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -7083,6 +7095,7 @@
       "- Completa los cinco proyectos requeridos para calificar para el examen de certificación.",
       "- Pass the Back-End Development and APIs Certification exam."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "Back-End Development and APIs",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
@@ -7283,6 +7296,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
@@ -7297,6 +7316,7 @@
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
@@ -7391,7 +7411,7 @@
   },
   "a1-professional-spanish": {
     "title": "Certificación de Español Profesional A1 (Beta)",
-    "note": "Esta certificación está actualmente en desarrollo activo. Actualmente estamos publicando los tres primeros capítulos, y futuros capítulos se lanzarán conforme los desarrolle nuestro equipo de diseño instruccional. Una vez que todos los capítulos estén disponibles, publicaremos el examen de certificación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "Este curso te enseña los fundamentos de español en el nivel A1 del Marco Común Europeo de Referencia (MCER), con lecciones enfocadas en entornos profesionales. Cada módulo está dividido en secciones:",
       "- Una sección de calentamiento para una revisión rápida.",
@@ -8732,7 +8752,7 @@
   },
   "a2-professional-spanish": {
     "title": "Certificación de Español Profesional A2 (Beta)",
-    "note": "Esta certificación está actualmente en desarrollo activo. Aunque por el momento no hay una certificación reclamable disponible para esta sección, pronto habrá una disponible. Mientras tanto, le invitamos a explorar los cursos que hemos creado a continuación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introducción con marcador de posición"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8751,7 +8771,7 @@
   },
   "a2-professional-chinese": {
     "title": "Certificación de Chino Profesional A2 (Beta)",
-    "note": "Esta certificación está actualmente en desarrollo activo. Aunque por el momento no hay una certificación reclamable disponible para esta sección, pronto habrá una disponible. Mientras tanto, le invitamos a explorar los cursos que hemos creado a continuación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introducción con marcador de posición"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8770,7 +8790,7 @@
   },
   "a1-professional-chinese": {
     "title": "Certificación Profesional de Chino A1 (Beta)",
-    "note": "Esta certificación está en desarrollo activo. Actualmente estamos publicando los capítulos introductorios, y los capítulos futuros se lanzarán a medida que sean desarrollados por nuestro equipo de diseño instruccional. Una vez que todos los capítulos estén disponibles, liberaremos el examen de certificación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "En este currículo de chino profesional A1, aprenderás los fundamentos del idioma chino. Seguirás el nivel A1 del Marco Común Europeo de Referencia (MCER). Y nos hemos centrado en el vocabulario que resulta especialmente útil para entornos profesionales.",
       "El currículo se divide en varios módulos que incluyen páginas de calentamiento, aprendizaje, práctica, revisión y cuestionarios para asegurarte de que entiendes realmente el material antes de pasar al siguiente módulo.",
