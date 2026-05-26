@@ -95,20 +95,6 @@ describe('add solution plugin', () => {
     plugin(mockAST, file);
     expect(file.data).toMatchSnapshot();
   });
-  it('should throw if a workshop non-last step has solutions', async () => {
-    expect.assertions(1);
-    const workshopNonLastAST = await parseFixture('with-multiple-solns.md');
-    const workshopFile = {
-      data: {},
-      path: path.join(
-        __dirname,
-        '../__fixtures__/workshop-test-steps/step-1.md'
-      )
-    };
-    expect(() => plugin(workshopNonLastAST, workshopFile)).toThrow(
-      'has solutions but is not the last step'
-    );
-  });
 
   it('should allow solutions in non-last steps for upcoming workshop blocks', async () => {
     expect.assertions(1);

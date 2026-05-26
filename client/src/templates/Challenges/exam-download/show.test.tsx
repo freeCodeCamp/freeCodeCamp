@@ -122,11 +122,25 @@ describe('handleDownloadLink', () => {
       expect(result).toBe('url_x64.exe');
     });
 
-    test('normalizes arm64 to arm', () => {
-      const links = ['url_fake.dmg', 'url_arm.dmg'];
+    test('normalizes aarch64 to arm64', () => {
+      const links = ['url_fake.dmg', 'url_aarch64.dmg'];
       const osState: UserOSState = { os: 'MAC', architecture: 'arm64' };
       const result = handleDownloadLink(osState, links);
-      expect(result).toBe('url_arm.dmg');
+      expect(result).toBe('url_aarch64.dmg');
+    });
+
+    test('normalizes arm64 to arm64', () => {
+      const links = ['url_fake.dmg', 'url_arm64.dmg'];
+      const osState: UserOSState = { os: 'MAC', architecture: 'arm64' };
+      const result = handleDownloadLink(osState, links);
+      expect(result).toBe('url_arm64.dmg');
+    });
+
+    test('does not normalize arm64 to arm', () => {
+      const links = ['url_arm.dmg', 'url_arm64.dmg'];
+      const osState: UserOSState = { os: 'MAC', architecture: 'arm64' };
+      const result = handleDownloadLink(osState, links);
+      expect(result).toBe('url_arm64.dmg');
     });
 
     test('normalizes i386 to x86', () => {
