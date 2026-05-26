@@ -54,10 +54,15 @@ export function insertEditableRegions(challengeFiles = []) {
           return '\n/* User Editable Region */\n';
         case 'py':
           return '\n# User Editable Region\n';
+
         case 'js':
+        case 'ts':
           return '\n// User Editable Region\n';
+
         case 'jsx':
+        case 'tsx':
           return '\n{/* User Editable Region */}\n';
+
         default:
           return '\nUser Editable Region\n';
       }
