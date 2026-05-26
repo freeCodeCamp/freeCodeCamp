@@ -3707,6 +3707,7 @@
       "후반부에서는 소프트웨어 개발에 특화된 어휘를 연습합니다. 코드를 설명하고 기술 동향을 논의하며, 스탠드업 회의에 참여하는 방법을 배울 것입니다.",
       "이 A2 수준의 전체 curriculum은 105개의 다양한 대화를 포함합니다. 각각은 어휘를 build하고 전문적인 기술 환경에서 말을 할 때 자신감을 높이도록 설계되었습니다."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "출근 첫날 인사 배우기",
@@ -3994,6 +3995,7 @@
       "또한 이러한 기술을 직업적이고 기술적인 환경에 적용하는 데 중점을 둘 것입니다. 코드 설명, 스탠드업 미팅 참여, 기술 동향 논의 등 개발자에게 필수적인 어휘와 구문을 연습하게 됩니다. 고급 주제로는 조건부, 비교 구조, 대화 관리 등이 포함되어 있어 기술 산업에서 실생활 상호 작용을 준비할 수 있습니다.",
       "이 B1 수준의 전체 커리큘럼에는 73개의 다양한 대화가 포함되어 있습니다. 각각은 전문 기술 환경에서 말할 때 어휘를 늘리고 자신감을 높이도록 설계되었습니다."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "장소와 이벤트 설명하는 법 배우기",
@@ -4723,9 +4725,9 @@
         ]
       },
       "workshop-word-counter": {
-        "title": "Build a Word Counter",
+        "title": "단어 개수 계산기 만들기",
         "intro": [
-          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+          "이 워크숍에서는 <code>for...of</code> 반복문을 사용해 문자열 배열에서 특정 문자열의 발생 횟수를 세는 함수를 만들어 연습하세요."
         ]
       },
       "workshop-sentence-analyzer": {
@@ -4741,10 +4743,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "유산 도서관 카탈로그 만들기",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "이 워크숍에서는 유산 도서관의 역사적 카탈로그 카드를 디지털화하세요.",
+          "반복문과 객체, 문자열 메서드를 사용하여 원시 텍스트 데이터를 파싱하고 항목을 검색·그룹화하며 서식화된 출력을 렌더링하고 JSON과 CSV로 내보내는 연습을 하세요."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4783,15 +4785,28 @@
         ]
       },
       "workshop-festival-crowd-flow-simulator": {
-        "title": "Build a Festival Crowd Flow Simulator",
+        "title": "축제 관중 흐름 시뮬레이터 만들기",
         "intro": [
-          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+          "이 워크숍에서는 자바스크립트를 사용해 음악 축제의 관중 흐름을 시뮬레이션하세요."
         ]
       },
       "lab-missing-letter-detector": {
         "title": "빠진 문자 감지기 만들기",
         "intro": [
           "이 실습에서는 주어진 연속문자 범위에서 빠진 문자를 찾아 반환하는 함수를 만들어 보세요."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -4937,10 +4952,10 @@
         ]
       },
       "lab-playlist-remix-engine": {
-        "title": "Build a Playlist Remix Engine",
+        "title": "재생목록 리믹스 엔진 만들기",
         "intro": [
-          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
-          "You will apply array methods and logic to transform data and generate a final remix schedule."
+          "이 실습에서는 자바스크립트 배열을 사용해 재생목록 리믹스 엔진을 만드세요.",
+          "배열 메서드와 논리를 적용해 데이터를 변환하고 최종 리믹스 일정표를 생성하세요."
         ]
       },
       "review-javascript-fundamentals": {
@@ -5731,6 +5746,7 @@
       "- 자격증 시험 응시 자격을 얻으려면 다섯 개의 필수 프로젝트를 완료하세요.",
       "- 프론트엔드 개발 라이브러리 인증 시험에 합격하세요."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "프론트엔드 개발 라이브러리",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
@@ -5743,7 +5759,10 @@
       "performance": "성능",
       "testing": "테스팅",
       "css-libraries-and-frameworks": "CSS 라이브러리와 프레임워크",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "TypeScript 기초",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
       "data-visualization": "데이터 시각화와 D3",
       "review-front-end-libraries": "프론트엔드 라이브러리 복습",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
@@ -6023,9 +6042,9 @@
         ]
       },
       "workshop-type-safe-math-toolkit": {
-        "title": "Build a Type Safe Math Toolkit",
+        "title": "타입 안전한 수학 툴킷 만들기",
         "intro": [
-          "In this workshop, you will practice typing functions by building a math toolkit project."
+          "이 워크숍에서는 함수에 타입을 지정하는 연습을 하며 수학 툴킷 프로젝트를 만드세요."
         ]
       },
       "lecture-understanding-type-composition": {
@@ -6035,15 +6054,15 @@
         ]
       },
       "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
+        "title": "도형 관리자 만들기",
         "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+          "이 워크숍에서는 TypeScript의 타입과 인터페이스 같은 기본 기능을 연습하며 도형 관리 프로그램을 만드세요."
         ]
       },
       "lab-motorcycle-shop": {
-        "title": "Build a Motorcycle Shop",
+        "title": "오토바이 상점 만들기",
         "intro": [
-          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+          "이 실습에서는 TypeScript를 사용해 오토바이 상점을 만들어 보세요."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
@@ -6053,15 +6072,15 @@
         ]
       },
       "workshop-bug-emoji-picker": {
-        "title": "Build a Bug Emoji Picker",
+        "title": "벌레 이모지 선택기 만들기",
         "intro": [
-          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+          "이 워크숍에서는 다양한 벌레 이모지를 표시하는 벌레 종 선택기를 만들며 TypeScript의 추상 클래스와 제네릭을 배우세요."
         ]
       },
       "lab-product-showcase": {
-        "title": "Build a Product Showcase",
+        "title": "제품 쇼케이스 만들기",
         "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
+          "이 실습에서는 TypeScript의 제네릭과 타입 좁히기를 연습하세요."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
@@ -6069,31 +6088,31 @@
         "intro": ["이 레슨에서는 TypeScript 구성파일과 사용 방법을 배우세요."]
       },
       "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App",
+        "title": "운세 앱 만들기",
         "intro": [
-          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+          "이 워크숍에서는 TypeScript를 사용해 운세 앱을 만들어 연습을 계속하세요."
         ]
       },
       "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
+        "title": "플래시카드 퀴즈 앱 만들기",
         "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+          "이 실습에서는 TypeScript를 사용해 플래시카드 퀴즈 앱을 만들어 연습하세요."
         ]
       },
       "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
+        "title": "디지털 펫 게임 만들기",
         "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+          "이 실습에서는 TypeScript와 React를 사용해 배운 내용을 연습하기 위해 디지털 펫 게임을 만드세요."
         ]
       },
       "workshop-build-a-football-player-card-builder": {
-        "title": "Build a Football Player Card Builder",
+        "title": "축구 선수 카드 생성기 만들기",
         "intro": [
-          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+          "이 워크숍에서는 TypeScript에서 React를 사용하는 방법을 배우기 위해 축구 선수 카드 생성기를 만드세요."
         ]
       },
       "review-typescript": {
-        "title": "TypeScript Review",
+        "title": "TypeScript 복습",
         "intro": [
           "TypeScript 퀴즈를 보기 전에 지금까지 배운 내용을 복습하세요.",
           "이 페이지를 열어 TypeScript의 데이터 타입, 제네릭, 타입 좁히기 등 가르친 개념을 모두 복습하세요."
@@ -6101,7 +6120,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
-        "intro": ["Test what you've learned on TypeScript with this quiz."]
+        "intro": ["이 퀴즈로 TypeScript 학습 내용을 확인하세요."]
       },
       "lecture-introduction-to-data-visualization": {
         "title": "데이터 시각화 소개",
@@ -6798,6 +6817,7 @@
       "- 자격증 시험 응시 자격을 얻으려면 다섯 개의 필수 프로젝트를 완료하세요.",
       "- 백엔드 개발 및 API 인증 시험에 합격하세요."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "백엔드 개발 및 API",
       "back-end-development-and-apis-certification-exam": "백엔드 개발 및 API 인증시험"
@@ -6978,10 +6998,22 @@
         ]
       },
       "lecture-understanding-routing-in-express-js": {
-        "title": "Understanding Routing in ExpressJS",
+        "title": "ExpressJS에서 라우팅 이해하기",
         "intro": [
-          "Understanding Routing in ExpressJS",
-          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+          "ExpressJS에서 라우팅 이해하기",
+          "이 강의들에서는 ExpressJS의 라우팅에 대해 배우며, 라우팅은 웹 애플리케이션의 서로 다른 엔드포인트를 정의하고 클라이언트 요청에 어떻게 응답하는지를 뜻합니다."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -6996,6 +7028,7 @@
       "이 인증은 풀스택 개발자 여정의 정점을 나타냅니다. 시작부터 끝까지 완전하고 현대적인 웹 애플리케이션을 구축할 수 있음을 보여줍니다.",
       "시험 응시 자격을 얻으려면 아래 인증을 취득해야 합니다. 시험에 합격해 풀스택 개발자 인증을 취득하세요."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "인증된 풀스택 개발자 시험"
     },
@@ -7090,7 +7123,7 @@
   },
   "a1-professional-spanish": {
     "title": "A1 전문 스페인어 자격증(베타)",
-    "note": "이 자격증은 현재 개발 중입니다. 현재 처음 세 장을 게시했으며, 이후 장은 교육설계팀이 개발하는 대로 순차적으로 공개됩니다. 모든 장이 제공되면 자격증 시험을 공개하겠습니다.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "이 과정은 Common European Framework of Reference (CEFR)의 A1 수준에 해당하는 스페인어 기초를 전문 환경 중심 수업으로 가르칩니다. 각 모듈은 다음 섹션으로 구성됩니다:",
       "- 빠른 복습을 위한 워밍업 섹션.",
@@ -7357,7 +7390,11 @@
         "intro": ["", ""]
       },
       "es-a1-learn-talking-about-colleagues": {
-        "title": "Talking About Colleagues",
+        "title": "동료에 대해 말하기",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -8391,7 +8428,7 @@
   },
   "a2-professional-spanish": {
     "title": "A2 전문 스페인어 자격증(베타)",
-    "note": "이 자격증은 현재 개발 중입니다. 현재 이 섹션에 대해 취득 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 마련된 강좌들을 자유롭게 탐색하세요.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["도입문(플레이스홀더)"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8410,7 +8447,7 @@
   },
   "a2-professional-chinese": {
     "title": "A2 전문 중국어 자격증(베타)",
-    "note": "이 자격증은 현재 개발 중입니다. 현재 이 섹션에 대해 취득 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 마련된 강좌들을 자유롭게 탐색하세요.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["도입문(플레이스홀더)"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8429,7 +8466,7 @@
   },
   "a1-professional-chinese": {
     "title": "A1 전문 중국어 자격증(베타)",
-    "note": "이 자격증은 개발 중입니다. 현재 도입 장을 게시했으며 이후 장은 교육설계팀의 개발에 따라 순차적으로 공개됩니다. 모든 장이 제공되면 자격증 시험을 공개하겠습니다.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "이 A1 Professional Chinese 교육과정에서 중국어의 기초 요소를 배우세요. 이는 Common European Framework of Reference (CEFR)의 A1 수준을 따르며 전문 환경에서 특히 유용한 어휘에 중점을 두었습니다.",
       "교육과정은 워밍업, Learn, Practice, Review 페이지와 퀴즈가 포함된 여러 모듈로 나뉘어 있어 다음 모듈로 넘어가기 전에 내용을 충분히 이해했는지 확인할 수 있습니다.",
@@ -8447,7 +8484,7 @@
       "zh-a1-module-initials-and-finals": "초성 및 운모",
       "zh-a1-module-greetings-and-basic-introductions": "인사 및 기본 소개",
       "zh-a1-module-asking-and-giving-basic-information": "기본 정보 묻기 및 제공하기",
-      "zh-a1-module-numbers-below-100": "Numbers Below 100",
+      "zh-a1-module-numbers-below-100": "100 미만의 숫자",
       "zh-a1-module-communicating-personal-information": "개인정보 전달하기",
       "zh-a1-module-talking-about-personal-skills": "개인 기술에 대해 말하기",
       "zh-a1-module-discussing-team-skills": "팀 기술 논의하기"
@@ -8466,9 +8503,9 @@
         ]
       },
       "zh-a1-module-communicating-personal-information": {
-        "note": "Coming 2026",
+        "note": "2026년 예정",
         "intro": [
-          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
+          "이 모듈에서는 나이와 전화번호 같은 개인 정보를 전달하는 대화를 이해하는 연습을 하세요."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8666,11 +8703,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers Below 100 Review",
+        "title": "100 미만 숫자 복습",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers Below 100 Quiz",
+        "title": "100 미만 숫자 퀴즈",
         "intro": ["", ""]
       }
     }
