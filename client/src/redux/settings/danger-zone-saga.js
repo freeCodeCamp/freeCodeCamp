@@ -3,9 +3,13 @@ import { call, put, select, take, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
+import {
+  getSignout,
+  postDeleteAccount,
+  postResetProgress
+} from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
-import { fetchUser, hardGoTo, resetUserData } from '../actions';
+import { fetchUser, hardGoTo } from '../actions';
 import { userIdSelector } from '../selectors';
 import { deleteAccountError, resetProgressError } from './actions';
 
@@ -16,6 +20,7 @@ export function* deleteAccountSaga() {
       throw new Error('Unable to delete account: no user id found');
     }
     yield call(postDeleteAccount, userId);
+    yield call(getSignout);
     yield put(
       createFlashMessage({
         type: 'info',
@@ -23,7 +28,6 @@ export function* deleteAccountSaga() {
       })
     );
     yield put(hardGoTo('/learn'));
-    yield put(resetUserData());
   } catch (e) {
     yield put(deleteAccountError(e));
   }
