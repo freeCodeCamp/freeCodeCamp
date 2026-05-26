@@ -52,12 +52,7 @@ async function get<T>(
 }
 
 async function combineDataWithResponse<T>(response: Response) {
-  if (
-    !response.body ||
-    response.status === 204 ||
-    response.status === 205 ||
-    response.headers.get('content-length') === '0'
-  ) {
+  if (!response.body) {
     return { response, data: undefined as T };
   }
 
