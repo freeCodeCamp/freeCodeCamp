@@ -1,11 +1,20 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
-import { test, expect } from '@playwright/test';
+import { test, expect, type APIRequestContext } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
 const execP = promisify(exec);
+const deletedUsername = 'certifieduser';
+
+async function userExists(request: APIRequestContext) {
+  const response = await request.get(
+    `${process.env.API_LOCATION}/users/exists?username=${deletedUsername}`
+  );
+  const body = (await response.json()) as { exists: boolean };
+  return body.exists;
+}
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
@@ -114,9 +123,12 @@ test.describe('Delete Modal component', () => {
     ).toBeDisabled();
   });
 
-  test('should close the modal and sign the user out after they fill in the verify input text and click delete', async ({
-    page
+  test('should delete the user and sign them out after they fill in the verify input text and click delete', async ({
+    page,
+    request
   }) => {
+    await expect.poll(() => userExists(request)).toBe(true);
+
     await page
       .getByRole('button', { name: translations.settings.danger.delete })
       .click();
@@ -153,5 +165,7 @@ test.describe('Delete Modal component', () => {
     await expect(
       page.getByRole('link', { name: 'Sign in' }).first()
     ).toBeVisible();
+
+    await expect.poll(() => userExists(request)).toBe(false);
   });
 });
