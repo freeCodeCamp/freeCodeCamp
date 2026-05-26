@@ -63,6 +63,10 @@ vi.mock('./components/super-block-accordion', () => ({
   SuperBlockAccordion: () => null
 }));
 
+vi.mock('./components/super-block-search', () => ({
+  default: () => null
+}));
+
 const translationMap: Record<string, unknown> = {
   'intro:full-stack-developer': {
     title: 'Full-Stack Developer',
