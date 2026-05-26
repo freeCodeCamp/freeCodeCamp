@@ -125,7 +125,7 @@
     "sign-in-with-google": "Google로 로그인",
     "go-to-dcc-today": "오늘의 챌린지로 이동",
     "go-to-dcc-archive": "일일 코딩 챌린지 보관함으로 이동",
-    "challenge-source": "View Challenge Source",
+    "challenge-source": "챌린지 소스를 보세요",
     "outline": "개요"
   },
   "daily-coding-challenges": {
@@ -340,7 +340,7 @@
       "keyboard-shortcuts": "키보드 단축키 활성화"
     },
     "headings": {
-      "personal": "Personal",
+      "personal": "개인",
       "account": "계정",
       "certs": "자격증",
       "legacy-certs": "구버전 자격증",
@@ -471,8 +471,8 @@
     },
     "completeness": {
       "heading": "프로필 {{percentage}}% 완료",
-      "title": "Profile Completion",
-      "progress": "{{percentage}}% complete",
+      "title": "프로필 완료",
+      "progress": "{{percentage}}% 완료",
       "name": "이름 추가",
       "location": "위치 추가",
       "picture": "프로필 사진 업로드",
@@ -480,7 +480,7 @@
       "social": "소셜 링크 추가",
       "portfolio": "포트폴리오 프로젝트 추가",
       "experience": "경력 추가",
-      "privacy": "Make your profile public"
+      "privacy": "프로필을 공개하세요"
     }
   },
   "footer": {
@@ -620,6 +620,7 @@
       "sub-step-4": "새 시크릿을 <0>CODEROAD_WEBHOOK_TOKEN</0>이라는 이름으로 만드세요.",
       "sub-step-5": "<0>Value</0> 필드에 토큰을 붙여넣으세요.",
       "sub-step-6": "<0>Repository access</0> 필드에서 <1>freeCodeCamp/rdb-alpha</1> 저장소를 선택하세요.",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces 설정"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "보관된 강좌",
       "content-not-updated": "이 섹션의 내용은 업데이트되지 않지만 학습을 이어가는 데는 계속 활용할 수 있습니다. <0>현재 커리큘럼</0>을 시도해보시길 권장합니다."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "이 자격증은 현재 활성 개발 중입니다. 현재 수령 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 생성된 과정을 탐색하세요.",
     "consider-donating": "개발 완료를 지원하기 위해 기부를 고려해 주세요.",
     "unfinished-certification-2": "이 자격증을 완료하려면 상당한 시간과 노력이 요구됩니다. 지금 시작하면, 몇 개월 안에 저희가 시험을 시작할 때 마칠 준비가 될 수 있습니다.",
-    "consider-donating-2": "이 커리큘럼의 개발을 가속화하는 데 도움을 주시고 싶다면, <0>저희 자선단체의 서포터가 되는 것을 고려해 주세요.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "모두를 위한 무료 전문 프로그래밍 인증을 개발하는 데 도움을 주십시오.",
     "nicely-done": "잘하셨습니다. {{block}}를 방금 완료하셨습니다.",
     "credit-card": "신용 카드",
@@ -1032,10 +1038,10 @@
     "rsa-checkbox": "Read-Search-Ask 방법을 시도했습니다",
     "similar-questions-checkbox": "포럼에서 이미 답변된 유사 질문을 검색했습니다",
     "edit-my-profile": "내 프로필 편집",
-    "add-portfolio": "Add portfolio project",
-    "edit-portfolio": "Edit portfolio project",
-    "add-experience": "Add experience",
-    "edit-experience": "Edit experience",
+    "add-portfolio": "포트폴리오 프로젝트를 추가하세요",
+    "edit-portfolio": "포트폴리오 프로젝트를 편집하세요",
+    "add-experience": "경력을 추가하세요",
+    "edit-experience": "경력을 편집하세요",
     "editor-a11y-off-macos": "{{editorName}} 편집기 내용입니다. 접근성 옵션은 Option+F1을 누르세요.",
     "editor-a11y-off-non-macos": "{{editorName}} 편집기 내용입니다. 접근성 옵션은 Alt+F1을 누르세요.",
     "editor-a11y-on-macos": "{{editorName}} 편집기 내용입니다. 접근성 모드가 “켜짐”으로 설정되어 있습니다. 비활성화하려면 Command+E를 누르거나 추가 옵션은 Option+F1을 누르세요.",
@@ -1043,10 +1049,10 @@
     "terminal-output": "터미널 출력",
     "not-available": "사용 불가",
     "interactive-editor-desc": "정적 코드 예제를 인터랙티브 편집기로 전환하세요. 이를 통해 페이지에서 코드를 바로 편집하고 실행할 수 있습니다.",
-    "hide-terminal": "Hide the terminal",
-    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
-    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
-    "close-external-terminal-window": "Close the external terminal window",
+    "hide-terminal": "터미널을 숨기세요",
+    "move-terminal-to-new-window": "터미널을 새 창으로 이동하고 초점을 맞추세요",
+    "move-terminal-to-main-window": "터미널을 이 창으로 이동하고 외부 터미널 창을 닫으세요",
+    "close-external-terminal-window": "외부 터미널 창을 닫으세요",
     "pinyin-to-hanzi-input-desc": "이 작업은 병음-한자 입력을 사용합니다. 성조 번호(1~5)로 병음을 입력하세요. 올바른 음절을 입력하면 한자로 변환됩니다. 한자 뒤에 백스페이스를 누르면 다시 병음으로 바뀌고 마지막으로 입력한 항목이 삭제됩니다: 성조 번호이면 성조가 삭제되고, 문자이면 문자가 삭제됩니다.",
     "pinyin-tone-input-desc": "이 과제는 병음 성조 입력을 사용합니다. 성조 번호(1~5)로 병음을 입력하세요. 성조 번호를 입력하면 성조 표기로 변환됩니다. 백스페이스를 누르면 마지막으로 입력한 항목이 삭제됩니다: 성조 번호이면 성조가 삭제되고, 문자이면 문자가 삭제됩니다."
   },
@@ -1423,7 +1429,7 @@
     "add-code-one": "이 두 문장을 복사한 코드로 바꾸십시오.",
     "add-code-two": "위의 ``` 라인과 아래의 ``` 라인을 남겨두십시오,",
     "add-code-three": "이들은 게시물에 코드가 올바르게 포맷되도록 합니다.",
-    "git-info": "Github Link: {{gitLink}}"
+    "git-info": "GitHub 링크: {{gitLink}}"
   },
   "user-token": {
     "title": "사용자 토큰",
