@@ -90,17 +90,17 @@
     "identity-obj-proxy": "^3.0.0",
     "js-yaml": "3.14.2",
     "lint-staged": "^16.4.0",
-    "lodash": "4.17.21",
+    "lodash": "4.18.1",
     "npm-run-all2": "5.0.2",
     "prettier": "3.8.2",
-    "stylelint": "16.24.0",
+    "stylelint": "16.26.1",
     "tsx": "4.21.0",
     "turbo": "^2.8.7",
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.30.3",
+  "packageManager": "pnpm@10.33.3",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@prisma/client",

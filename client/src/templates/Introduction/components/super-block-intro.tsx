@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import {
   archivedSuperBlocks,
@@ -12,28 +12,37 @@ import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
 import ArchivedWarning from '../../../components/archived-warning';
 
+import './super-block-intro.css';
+
 interface ConditionalDonationAlertProps {
   superBlock: SuperBlocks;
+  superBlockNoteText: string;
   onCertificationDonationAlertClick: () => void;
   isDonating: boolean;
 }
 
-interface SuperBlockIntroProps extends ConditionalDonationAlertProps {
+interface SuperBlockIntroProps {
+  superBlock: SuperBlocks;
+  onCertificationDonationAlertClick: () => void;
+  isDonating: boolean;
   hasNotstarted: boolean;
   nextChallengeSlug: string | null;
 }
 
 export const ConditionalDonationAlert = ({
   superBlock,
+  superBlockNoteText,
   onCertificationDonationAlertClick,
   isDonating
 }: ConditionalDonationAlertProps): JSX.Element | null => {
   const { t } = useTranslation();
 
-  const betaCertifications: SuperBlocks[] = [SuperBlocks.A2English];
+  const betaCertifications: SuperBlocks[] = [
+    SuperBlocks.A2English,
+    SuperBlocks.B1English
+  ];
 
-  const unfinishedCertifications = [
-    SuperBlocks.B1English,
+  const unfinishedCertifications: SuperBlocks[] = [
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
@@ -43,47 +52,53 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.FullStackDeveloperV9
   ];
 
-  if (!isDonating && betaCertifications.includes(superBlock))
-    return (
+  const isBetaCertification = betaCertifications.includes(superBlock);
+  const isUnfinishedCertification =
+    unfinishedCertifications.includes(superBlock);
+  const showDonationCopy =
+    !isDonating && (isBetaCertification || isUnfinishedCertification);
+
+  if (!superBlockNoteText && !showDonationCopy) return null;
+
+  return (
+    <>
+      <Spacer size='m' />
       <Callout
         variant='note'
         label={t('misc.note')}
-        className='annual-donation-alert'
+        className='super-block-intro-callout'
       >
-        <p>{t('donate.beta-certification')}</p>
-        <hr />
-        <p className='btn-container'>
-          <Link
-            className='btn donate-button'
-            key='donate'
-            sameTab={false}
-            to='/donate'
-            onClick={onCertificationDonationAlertClick}
-          >
-            {t('buttons.donate-now')}
-          </Link>
-        </p>
+        {superBlockNoteText && <p>{superBlockNoteText}</p>}
+        {showDonationCopy && (
+          <>
+            <p>
+              {isBetaCertification ? (
+                t('donate.consider-donating')
+              ) : (
+                <Trans i18nKey='donate.consider-donating-2'>
+                  <Link className='inline' to='/donate'>
+                    placeholder
+                  </Link>
+                </Trans>
+              )}
+            </p>
+            <hr />
+            <p className='btn-container'>
+              <Link
+                className='btn donate-button'
+                key='donate'
+                sameTab={false}
+                to='/donate'
+                onClick={onCertificationDonationAlertClick}
+              >
+                {t('buttons.donate-now')}
+              </Link>
+            </p>
+          </>
+        )}
       </Callout>
-    );
-
-  if (!isDonating && unfinishedCertifications.includes(superBlock))
-    return (
-      <Callout
-        variant='note'
-        label={t('misc.note')}
-        className='annual-donation-alert'
-      >
-        <p>
-          <Trans i18nKey='donate.consider-donating-2'>
-            <Link className='inline' to='/donate'>
-              placeholder
-            </Link>
-          </Trans>
-        </p>
-      </Callout>
-    );
-
-  return null;
+    </>
+  );
 };
 
 function SuperBlockIntro({
@@ -176,14 +191,6 @@ function SuperBlockIntro({
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
-      {superBlockNoteText && (
-        <>
-          <Spacer size='m' />
-          <Callout variant='note' label={t('misc.note')}>
-            {superBlockNoteText}
-          </Callout>
-        </>
-      )}
     </>
   );
 
@@ -192,6 +199,7 @@ function SuperBlockIntro({
       <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
       <ConditionalDonationAlert
         superBlock={superBlock}
+        superBlockNoteText={superBlockNoteText}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}
         isDonating={isDonating}
       />
