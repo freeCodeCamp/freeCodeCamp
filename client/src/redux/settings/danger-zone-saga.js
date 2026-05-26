@@ -5,11 +5,11 @@ import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
 import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
-import { fetchUser, resetUserData } from '../actions';
+import { fetchUser, hardGoTo, resetUserData } from '../actions';
 import { userIdSelector } from '../selectors';
 import { deleteAccountError, resetProgressError } from './actions';
 
-function* deleteAccountSaga() {
+export function* deleteAccountSaga() {
   try {
     const userId = yield select(userIdSelector);
     if (!userId) {
@@ -22,9 +22,7 @@ function* deleteAccountSaga() {
         message: FlashMessages.AccountDeleted
       })
     );
-    // Navigate before signing out, since /settings will attempt to sign users
-    // back in if resetUserData fires while still on /settings.
-    yield call(navigate, '/learn');
+    yield put(hardGoTo('/learn'));
     yield put(resetUserData());
   } catch (e) {
     yield put(deleteAccountError(e));
