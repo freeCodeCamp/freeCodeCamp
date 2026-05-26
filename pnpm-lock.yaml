@@ -297,9 +297,6 @@ importers:
       '@growthbook/growthbook-react':
         specifier: 1.6.5
         version: 1.6.5(react@18.3.1)
-      '@headlessui/react':
-        specifier: 1.7.19
-        version: 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@loadable/component':
         specifier: 5.16.7
         version: 5.16.7(react@18.3.1)

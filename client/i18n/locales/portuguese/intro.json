@@ -3863,6 +3863,7 @@
       "Na segunda metade, você praticará vocabulário específico para o desenvolvimento de software. Você aprenderá como descrever código, como discutir tendências em tecnologia e como participar de reuniões de equipe.",
       "O currículo inteiro do nível A2 inclui 105 diálogos diferentes. Cada um é projetado para construir seu vocabulário e aumentar sua confiança ao falar em um ambiente profissional da área de tecnologia."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Aprenda saudações em seu primeiro dia no escritório",
@@ -4150,6 +4151,7 @@
       "Você também se concentrará em aplicar essas habilidades em contextos profissionais e técnicos. Você praticará vocabulário e frases essenciais para desenvolvedores, como descrever código, participar de reuniões stand-up e discutir tendências tecnológicas. Tópicos avançados incluem condicionais, estruturas comparativas e gerenciamento de conversas, para que você possa se preparar para interações no mundo real na indústria de tecnologia.",
       "Todo este currículo de nível B1 inclui 73 diálogos diferentes. Cada um é projetado para construir seu vocabulário e aumentar sua confiança ao falar em um ambiente profissional de tecnologia."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Aprenda a descrever locais e eventos",
@@ -4970,6 +4972,12 @@
         "title": "Crie um Detector de Letras Faltantes",
         "intro": [
           "Neste laboratório, você construirá uma função que encontra a letra faltante em um intervalo dado de letras consecutivas e a retorna."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
         ]
       },
       "lab-proofreading-tool": {
@@ -5948,6 +5956,7 @@
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
       "- Passe no exame de Certificação de Bibliotecas de Desenvolvimento Front-End."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End",
       "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
@@ -5960,7 +5969,10 @@
       "performance": "Desempenho",
       "testing": "Testes",
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "Fundamentos do TypeScript",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
       "data-visualization": "Visualização de dados e D3",
       "review-front-end-libraries": "Revisão sobre bibliotecas Front-end",
       "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
@@ -7119,6 +7131,7 @@
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
       "- Passe no exame de Certificação de Desenvolvimento Back-End e APIs."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "Desenvolvimento Back-End e APIs",
       "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
@@ -7319,6 +7332,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
@@ -7333,6 +7352,7 @@
       "Esta certificação representa o culminar da sua jornada como desenvolvedor full stack. Demonstra sua capacidade de construir aplicações web completas e modernas do início ao fim.",
       "Para se qualificar para o exame, você deve obter as certificações abaixo. Passe no exame para conquistar sua Certificação de Desenvolvedor Full Stack."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
@@ -7429,7 +7449,7 @@
   },
   "a1-professional-spanish": {
     "title": "Certificação de Espanhol Profissional A1 (Beta)",
-    "note": "Esta certificação encontra-se atualmente em desenvolvimento ativo. No momento, estamos publicando os três primeiros capítulos, e futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "Este curso ensina os fundamentos do espanhol ao nível A1 do Quadro Comum de Referência (CEFR), com lições focadas em configurações profissionais. Cada módulo é dividido em seções:",
       "- Uma seção de Aquecimento para uma revisão rápida.",
@@ -8770,7 +8790,7 @@
   },
   "a2-professional-spanish": {
     "title": "Certificação de Espanhol Profissional A2 (Beta)",
-    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível para esta seção no momento, uma estará disponível em breve. Enquanto isso, sinta-se à vontade para explorar os cursos que criamos abaixo.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introdução ao Modelo"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8789,7 +8809,7 @@
   },
   "a2-professional-chinese": {
     "title": "Certificação de Chinês Profissional A2 (Beta)",
-    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível nesta seção no momento, haverá uma disponível em breve. Enquanto isso, você está convidado a explorar os cursos que criamos abaixo.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introdução ao Modelo"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8808,7 +8828,7 @@
   },
   "a1-professional-chinese": {
     "title": "Certificação de Chinês Profissional A1 (Beta)",
-    "note": "Esta certificação encontra-se em desenvolvimento ativo. No momento, estamos publicando os capítulos introdutórios. Futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "Neste currículo de Chinês Profissional A1, você aprenderá o essencial da comunicação em chinês. Ele seguirá o nível A1 do Quadro Europeu Comum de Referência (CEFR). Nosso foco será o vocabulário que é particularmente útil para ambientes profissionais.",
       "O currículo é dividido em vários módulos que incluem páginas de aquecimento, aprendizado, prática, revisão e questionários para garantir que você realmente entenda o material antes de passar para o próximo módulo.",

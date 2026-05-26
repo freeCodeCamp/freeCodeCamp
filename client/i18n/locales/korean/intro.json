@@ -3707,6 +3707,7 @@
       "후반부에서는 소프트웨어 개발에 특화된 어휘를 연습합니다. 코드를 설명하고 기술 동향을 논의하며, 스탠드업 회의에 참여하는 방법을 배울 것입니다.",
       "이 A2 수준의 전체 curriculum은 105개의 다양한 대화를 포함합니다. 각각은 어휘를 build하고 전문적인 기술 환경에서 말을 할 때 자신감을 높이도록 설계되었습니다."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "출근 첫날 인사 배우기",
@@ -3994,6 +3995,7 @@
       "또한 이러한 기술을 직업적이고 기술적인 환경에 적용하는 데 중점을 둘 것입니다. 코드 설명, 스탠드업 미팅 참여, 기술 동향 논의 등 개발자에게 필수적인 어휘와 구문을 연습하게 됩니다. 고급 주제로는 조건부, 비교 구조, 대화 관리 등이 포함되어 있어 기술 산업에서 실생활 상호 작용을 준비할 수 있습니다.",
       "이 B1 수준의 전체 커리큘럼에는 73개의 다양한 대화가 포함되어 있습니다. 각각은 전문 기술 환경에서 말할 때 어휘를 늘리고 자신감을 높이도록 설계되었습니다."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "장소와 이벤트 설명하는 법 배우기",
@@ -4792,6 +4794,12 @@
         "title": "빠진 문자 감지기 만들기",
         "intro": [
           "이 실습에서는 주어진 연속문자 범위에서 빠진 문자를 찾아 반환하는 함수를 만들어 보세요."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
         ]
       },
       "lab-proofreading-tool": {
@@ -5738,6 +5746,7 @@
       "- 자격증 시험 응시 자격을 얻으려면 다섯 개의 필수 프로젝트를 완료하세요.",
       "- 프론트엔드 개발 라이브러리 인증 시험에 합격하세요."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "프론트엔드 개발 라이브러리",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
@@ -5750,7 +5759,10 @@
       "performance": "성능",
       "testing": "테스팅",
       "css-libraries-and-frameworks": "CSS 라이브러리와 프레임워크",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "TypeScript 기초",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
       "data-visualization": "데이터 시각화와 D3",
       "review-front-end-libraries": "프론트엔드 라이브러리 복습",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
@@ -6805,6 +6817,7 @@
       "- 자격증 시험 응시 자격을 얻으려면 다섯 개의 필수 프로젝트를 완료하세요.",
       "- 백엔드 개발 및 API 인증 시험에 합격하세요."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "백엔드 개발 및 API",
       "back-end-development-and-apis-certification-exam": "백엔드 개발 및 API 인증시험"
@@ -6997,6 +7010,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "백엔드 개발 및 API 인증시험",
         "intro": ["이 시험에 합격해 백엔드 개발 및 API 인증을 받으세요"]
@@ -7009,6 +7028,7 @@
       "이 인증은 풀스택 개발자 여정의 정점을 나타냅니다. 시작부터 끝까지 완전하고 현대적인 웹 애플리케이션을 구축할 수 있음을 보여줍니다.",
       "시험 응시 자격을 얻으려면 아래 인증을 취득해야 합니다. 시험에 합격해 풀스택 개발자 인증을 취득하세요."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "인증된 풀스택 개발자 시험"
     },
@@ -7103,7 +7123,7 @@
   },
   "a1-professional-spanish": {
     "title": "A1 전문 스페인어 자격증(베타)",
-    "note": "이 자격증은 현재 개발 중입니다. 현재 처음 세 장을 게시했으며, 이후 장은 교육설계팀이 개발하는 대로 순차적으로 공개됩니다. 모든 장이 제공되면 자격증 시험을 공개하겠습니다.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "이 과정은 Common European Framework of Reference (CEFR)의 A1 수준에 해당하는 스페인어 기초를 전문 환경 중심 수업으로 가르칩니다. 각 모듈은 다음 섹션으로 구성됩니다:",
       "- 빠른 복습을 위한 워밍업 섹션.",
@@ -8408,7 +8428,7 @@
   },
   "a2-professional-spanish": {
     "title": "A2 전문 스페인어 자격증(베타)",
-    "note": "이 자격증은 현재 개발 중입니다. 현재 이 섹션에 대해 취득 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 마련된 강좌들을 자유롭게 탐색하세요.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["도입문(플레이스홀더)"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8427,7 +8447,7 @@
   },
   "a2-professional-chinese": {
     "title": "A2 전문 중국어 자격증(베타)",
-    "note": "이 자격증은 현재 개발 중입니다. 현재 이 섹션에 대해 취득 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 마련된 강좌들을 자유롭게 탐색하세요.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["도입문(플레이스홀더)"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8446,7 +8466,7 @@
   },
   "a1-professional-chinese": {
     "title": "A1 전문 중국어 자격증(베타)",
-    "note": "이 자격증은 개발 중입니다. 현재 도입 장을 게시했으며 이후 장은 교육설계팀의 개발에 따라 순차적으로 공개됩니다. 모든 장이 제공되면 자격증 시험을 공개하겠습니다.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "이 A1 Professional Chinese 교육과정에서 중국어의 기초 요소를 배우세요. 이는 Common European Framework of Reference (CEFR)의 A1 수준을 따르며 전문 환경에서 특히 유용한 어휘에 중점을 두었습니다.",
       "교육과정은 워밍업, Learn, Practice, Review 페이지와 퀴즈가 포함된 여러 모듈로 나뉘어 있어 다음 모듈로 넘어가기 전에 내용을 충분히 이해했는지 확인할 수 있습니다.",

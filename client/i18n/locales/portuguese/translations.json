@@ -620,6 +620,7 @@
       "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "No campo <0>Valor</0>, cole seu token",
       "sub-step-6": "No campo <0>Acesso ao Repositório</0>, selecione o repositório <1>freeCodeCamp/rdb-alpha</1>",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Configuração do Codespaces"
     },
     "ona": {
@@ -758,6 +759,11 @@
     "archive": {
       "title": "Nossos cursos arquivados",
       "content-not-updated": "O conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <0>nosso currículo atual</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, uma estará disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
     "consider-donating": "Considere doar para apoiar a conclusão do desenvolvimento da certificação.",
     "unfinished-certification-2": "Essa certificação levará um tempo e esforço substanciais para ser concluída. Se você começar agora, você precisa estar pronto para fazer o exame final quando o lançarmos nos próximos meses.",
-    "consider-donating-2": "Se você quiser nos ajudar a acelerar o desenvolvimento deste currículo, por favor <0>considere tornar-se um apoiador da nossa comunidade.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",
