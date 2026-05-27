@@ -139,14 +139,24 @@ test.describe('Module reset - Full reset flow', () => {
     const verifyInput = page.getByRole('textbox');
     await verifyInput.fill(translations.learn['reset-progress-verify']);
 
-    // Click confirm
     const confirmButton = page.getByRole('button', {
       name: translations.learn['reset-progress-confirm']
     });
     await confirmButton.click();
 
-    // Modal should close after successful reset — this proves the API
-    // call returned 200 and onResetComplete was called
+    await expect(
+      page.getByText(
+        translations.learn['reset-progress-success'].split("'")[0],
+        { exact: false }
+      )
+    ).toBeVisible();
+
+    await page
+      .getByRole('button', {
+        name: translations.learn['reset-progress-dismiss']
+      })
+      .click();
+
     await expect(page.getByRole('dialog')).toBeHidden();
   });
 });
