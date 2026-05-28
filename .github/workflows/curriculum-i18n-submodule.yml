@@ -56,8 +56,6 @@ jobs:
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: pnpm install
 
       # DONT REMOVE THIS STEP.
@@ -70,13 +68,10 @@ jobs:
           pnpm run build
 
       - name: Install Chrome for Puppeteer
-        env:
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum test-content

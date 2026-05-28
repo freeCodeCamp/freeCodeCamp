@@ -178,20 +178,14 @@ jobs:
         run: docker compose -f docker/docker-compose.yml up -d
 
       - name: Install Dependencies
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
 
       - name: Install Chrome for Puppeteer
-        env:
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        env:
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm test
 
   test-upcoming:
@@ -237,20 +231,14 @@ jobs:
         run: docker compose -f docker/docker-compose.yml up -d
 
       - name: Install Dependencies
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
 
       - name: Install Chrome for Puppeteer
-        env:
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        env:
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm test
 
   test-localization:
@@ -305,7 +293,6 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
@@ -320,13 +307,10 @@ jobs:
           pnpm run build
 
       - name: Install Chrome for Puppeteer
-        env:
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm test
