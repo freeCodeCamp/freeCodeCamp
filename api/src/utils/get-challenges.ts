@@ -3,15 +3,23 @@
 // redirectToCurrentChallenge and, instead, only report the current challenge id
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
-import { readFileSync } from 'fs';
+import { existsSync, readFileSync } from 'fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'path';
 
 const CURRICULUM_PATH = '../../../curriculum/generated/curriculum.json';
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const curriculumPath = join(__dirname, CURRICULUM_PATH);
+
+if (!existsSync(curriculumPath)) {
+  throw new Error(
+    'Missing curriculum/generated/curriculum.json. Generate the curriculum before starting the API.'
+  );
+}
+
 // Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
 const curriculum = JSON.parse(
-  readFileSync(join(__dirname, CURRICULUM_PATH), 'utf-8')
+  readFileSync(curriculumPath, 'utf-8')
 ) as Curriculum;
 
 interface Challenge {
