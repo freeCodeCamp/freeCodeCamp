@@ -163,9 +163,16 @@ function HelpModal({
     closeHelpModal();
   };
 
-  const hintUrl = guideUrl
-    ? guideUrl
-    : generateSearchLink(challengeTitle, challengeBlock, superBlock);
+  // const hintUrl = guideUrl
+  //   ? guideUrl
+  //   : generateSearchLink(challengeTitle, challengeBlock, superBlock);
+
+  const isForumSearchLink = guideUrl?.includes('/search?q=');
+
+  const hintUrl =
+    !guideUrl || isForumSearchLink
+      ? generateSearchLink(challengeTitle, challengeBlock, superBlock)
+      : guideUrl;
 
   if (isOpen) {
     callGA({ event: 'pageview', pagePath: '/help-modal' });
