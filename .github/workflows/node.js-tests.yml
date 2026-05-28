@@ -181,6 +181,13 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+      - name: Setup cache for puppeteer browsers
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: ~/.cache/puppeteer/
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('curriculum/package.json') }}
 
       - name: Install Chrome for Puppeteer
         run: pnpm -F=curriculum install-puppeteer
@@ -234,6 +241,14 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: true
+
+      - name: Setup cache for puppeteer browsers
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: ~/.cache/puppeteer/
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('curriculum/package.json') }}
 
       - name: Install Chrome for Puppeteer
         run: pnpm -F=curriculum install-puppeteer
@@ -293,9 +308,15 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
+          PUPPETEER_SKIP_DOWNLOAD: true
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
+      - name: Setup cache for puppeteer browsers
+        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: ~/.cache/puppeteer/
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('curriculum/package.json') }}
 
       # DONT REMOVE THIS STEP.
       # TODO: Refactor and use re-usable workflow and shared artifacts
