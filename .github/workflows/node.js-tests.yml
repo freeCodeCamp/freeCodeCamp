@@ -185,9 +185,13 @@ jobs:
           pnpm install
 
       - name: Install Chrome for Puppeteer
+        env:
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
+        env:
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm test
 
   test-upcoming:
@@ -240,9 +244,13 @@ jobs:
           pnpm install
 
       - name: Install Chrome for Puppeteer
+        env:
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
+        env:
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm test
 
   test-localization:
@@ -312,10 +320,13 @@ jobs:
           pnpm run build
 
       - name: Install Chrome for Puppeteer
+        env:
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm test

@@ -70,10 +70,13 @@ jobs:
           pnpm run build
 
       - name: Install Chrome for Puppeteer
+        env:
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
+          PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
         run: pnpm -F=curriculum test-content
