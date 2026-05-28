@@ -37,7 +37,7 @@
     "insert-challenge": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/insert-challenge",
     "insert-step": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/insert-step",
     "insert-task": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/insert-task",
-    "install-puppeteer": "node node_modules/puppeteer/install.mjs",
+    "install-puppeteer": "node --input-type=module --eval \"import {downloadBrowsers} from 'puppeteer/internal/node/install.js'; await downloadBrowsers();\"",
     "delete-step": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "delete-challenge": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/delete-task",
