@@ -42,7 +42,8 @@
           "blocks": [
             "lecture-understanding-how-http-dns-tcpip-work",
             "lecture-understanding-the-http-request-response-model",
-            "workshop-nodejs-by-building-a-web-server"
+            "workshop-nodejs-by-building-a-web-server",
+            "quiz-http-and-the-web-standards-model"
           ]
         },
         {
@@ -76,7 +77,9 @@
           "dashedName": "error-handling-in-express",
           "comingSoon": true,
           "blocks": [
-            "workshop-error-handling-in-express-by-building-a-bank-api"
+            "lecture-understanding-error-handling-and-health-checks",
+            "workshop-error-handling-in-express-by-building-a-bank-api",
+            "quiz-error-handling-in-express"
           ]
         },
         {

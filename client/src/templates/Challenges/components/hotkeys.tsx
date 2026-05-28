@@ -97,6 +97,7 @@ export type HotkeysProps = Pick<
     openShortcutsModal: () => void;
     playScene?: () => void;
     keyboardShortcuts: boolean;
+    showIndependentLowerJaw?: boolean;
   };
 
 function Hotkeys({
@@ -119,7 +120,8 @@ function Hotkeys({
   isHelpModalOpen,
   isResetModalOpen,
   isShortcutsModalOpen,
-  isProjectPreviewModalOpen
+  isProjectPreviewModalOpen,
+  showIndependentLowerJaw
 }: HotkeysProps): JSX.Element {
   const submitChallenge = useSubmit();
 
@@ -167,7 +169,7 @@ function Hotkeys({
           executeChallenge();
         }
       } else {
-        executeChallenge({ showCompletionModal: true });
+        executeChallenge({ showCompletionModal: !showIndependentLowerJaw });
       }
     },
     ...(keyboardShortcuts
