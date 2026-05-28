@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
+import Reset from '../../../assets/icons/reset';
 import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '@freecodecamp/shared/config/chapters';
@@ -11,9 +12,12 @@ import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { FsdChapters } from '@freecodecamp/shared/config/chapters';
 import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';
+import { useDispatch } from 'react-redux';
+import { removeModuleChallenges } from '../../../redux/actions';
 import Block from './block';
 import CheckMark from './check-mark';
 import { default as BlockLabelComponent } from './block-label';
+import ResetProgressModal from './reset-progress-modal';
 
 import './super-block-accordion.css';
 
@@ -29,6 +33,8 @@ interface ChapterProps {
   superBlock: SuperBlocks;
   isLinkChapter?: boolean;
   examSlug?: string;
+  blockDashedNames: string[];
+  onResetComplete: (removedChallengeIds: string[]) => void;
 }
 
 interface ModuleProps {
@@ -39,6 +45,8 @@ interface ModuleProps {
   completedSteps: number;
   superBlock: SuperBlocks;
   comingSoon: boolean;
+  blockDashedNames: string[];
+  onResetComplete: (removedChallengeIds: string[]) => void;
 }
 
 interface Challenge {
@@ -94,55 +102,89 @@ const Chapter = ({
   completedSteps,
   superBlock,
   isLinkChapter,
-  examSlug
+  examSlug,
+  blockDashedNames,
+  onResetComplete
 }: ChapterProps) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(isExpanded);
+  const [showResetModal, setShowResetModal] = useState(false);
 
   useEffect(() => {
     setOpen(isExpanded);
   }, [isExpanded]);
 
   const panelId = `chapter-panel-${dashedName}`;
-
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
+  const toggleLabel = open
+    ? t('intro:misc-text.collapse')
+    : t('intro:misc-text.expand');
+  const showResetButton = !comingSoon && !isLinkChapter;
+  const isResetDisabled = completedSteps === 0;
 
-  const chapterButtonContent = (
-    <>
-      <div className='chapter-button-left'>
-        <span className='checkmark-wrap chapter-checkmark-wrap'>
-          <CheckMark isCompleted={isComplete} />
+  const handleResetClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowResetModal(true);
+  };
+
+  const handleResetModalClose = () => {
+    setShowResetModal(false);
+  };
+
+  const toggleOpen = () => setOpen(o => !o);
+
+  const resetButton = showResetButton ? (
+    <button
+      className='block-reset-button'
+      onClick={handleResetClick}
+      aria-label={t('learn.reset-progress-aria-chapter', {
+        chapterLabel
+      })}
+      type='button'
+      disabled={isResetDisabled}
+    >
+      <Reset />
+    </button>
+  ) : null;
+
+  const chapterButtonLeftContent = (
+    <div className='chapter-button-left'>
+      <span className='checkmark-wrap chapter-checkmark-wrap'>
+        <CheckMark isCompleted={isComplete} />
+      </span>
+      <ChapterIcon className='map-icon' chapter={dashedName as FsdChapters} />
+      {chapterLabel}
+      {isLinkChapter && examSlug && (
+        <BlockLabelComponent blockLabel={BlockLabel.exam} />
+      )}
+    </div>
+  );
+
+  const chapterButtonRightContent = (
+    <div className='chapter-button-right'>
+      {!comingSoon && !isLinkChapter && (
+        <span className='chapter-steps'>
+          {t('learn.steps-completed', {
+            totalSteps,
+            completedSteps
+          })}
         </span>
-        <ChapterIcon className='map-icon' chapter={dashedName as FsdChapters} />
-        {chapterLabel}
-        {isLinkChapter && examSlug && (
-          <BlockLabelComponent blockLabel={BlockLabel.exam} />
-        )}
-      </div>
-      <div className='chapter-button-right'>
-        {!comingSoon && !isLinkChapter && (
-          <span className='chapter-steps'>
-            {t('learn.steps-completed', {
-              totalSteps,
-              completedSteps
-            })}
-          </span>
-        )}
-        <span className='dropdown-wrap'>{!isLinkChapter && <DropDown />}</span>
-      </div>
-    </>
+      )}
+      <span className='dropdown-wrap'>{!isLinkChapter && <DropDown />}</span>
+    </div>
   );
 
   if (isLinkChapter && examSlug) {
     return (
       <li className='chapter'>
         <Link
-          className='chapter-button'
+          className='chapter-header-wrapper chapter-link'
           data-playwright-test-label='chapter-button'
           to={examSlug}
         >
-          {chapterButtonContent}
+          {chapterButtonLeftContent}
+          {chapterButtonRightContent}
         </Link>
       </li>
     );
@@ -150,21 +192,43 @@ const Chapter = ({
 
   return (
     <li className='chapter'>
-      <button
-        aria-controls={panelId}
-        aria-expanded={open}
-        className='chapter-button'
-        data-playwright-test-label='chapter-button'
-        onClick={() => setOpen(o => !o)}
-        type='button'
-      >
-        {chapterButtonContent}
-      </button>
+      <div className='chapter-header-wrapper'>
+        <button
+          aria-controls={panelId}
+          aria-expanded={open}
+          className='chapter-button chapter-button-main'
+          data-playwright-test-label='chapter-button'
+          onClick={toggleOpen}
+          type='button'
+        >
+          {chapterButtonLeftContent}
+        </button>
+        {resetButton}
+        <button
+          aria-controls={panelId}
+          aria-expanded={open}
+          aria-label={`${toggleLabel} ${chapterLabel}`}
+          className='chapter-button chapter-button-toggle'
+          data-playwright-test-label='chapter-button-toggle'
+          onClick={toggleOpen}
+          type='button'
+        >
+          {chapterButtonRightContent}
+        </button>
+      </div>
       {open && (
         <ul className='chapter-panel' id={panelId}>
           {children}
         </ul>
       )}
+      <ResetProgressModal
+        blockTitle={chapterLabel}
+        blockDashedName={blockDashedNames}
+        superBlock={superBlock}
+        show={showResetModal}
+        onHide={handleResetModalClose}
+        onResetComplete={onResetComplete}
+      />
     </li>
   );
 };
@@ -176,10 +240,24 @@ const Module = ({
   totalSteps,
   completedSteps,
   superBlock,
-  comingSoon
+  comingSoon,
+  blockDashedNames,
+  onResetComplete
 }: ModuleProps) => {
   const { t } = useTranslation();
+  const [open, setOpen] = useState(isExpanded);
+  const [showResetModal, setShowResetModal] = useState(false);
+
+  useEffect(() => {
+    setOpen(isExpanded);
+  }, [isExpanded]);
+
+  const panelId = `module-panel-${dashedName}`;
   const isComplete = totalSteps === 0 ? false : completedSteps === totalSteps;
+  const moduleLabel = t(`intro:${superBlock}.modules.${dashedName}`);
+  const toggleLabel = open
+    ? t('intro:misc-text.collapse')
+    : t('intro:misc-text.expand');
   const { note, intro } = t(`intro:${superBlock}.module-intros.${dashedName}`, {
     returnObjects: true
   }) as {
@@ -188,44 +266,74 @@ const Module = ({
   };
 
   const showModuleContent = !(comingSoon && !showUpcomingChanges);
+  const showResetButton = !comingSoon;
+  const isResetDisabled = completedSteps === 0;
 
-  const [open, setOpen] = useState(isExpanded);
+  const handleResetClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowResetModal(true);
+  };
 
-  useEffect(() => {
-    setOpen(isExpanded);
-  }, [isExpanded]);
+  const handleResetModalClose = () => {
+    setShowResetModal(false);
+  };
 
-  const panelId = `module-panel-${dashedName}`;
+  const toggleOpen = () => setOpen(o => !o);
+
+  const resetButton = showResetButton ? (
+    <button
+      className='block-reset-button'
+      onClick={handleResetClick}
+      aria-label={t('learn.reset-progress-aria-module', { moduleLabel })}
+      type='button'
+      disabled={isResetDisabled}
+    >
+      <Reset />
+    </button>
+  ) : null;
 
   return (
     <li>
-      <button
-        aria-controls={panelId}
-        aria-expanded={open}
-        className='module-button'
-        onClick={() => setOpen(o => !o)}
-        type='button'
-      >
-        <div className='module-button-left'>
-          <span className='dropdown-wrap'>
-            <DropDown />
-          </span>
-          <span className='checkmark-wrap'>
-            <CheckMark isCompleted={isComplete} />
-          </span>
-          {t(`intro:${superBlock}.modules.${dashedName}`)}
-        </div>
-        <div className='module-button-right' data-testid='module-button-right'>
-          {!comingSoon && !!totalSteps && (
-            <span className='module-steps'>
-              {t('learn.steps-completed', {
-                totalSteps,
-                completedSteps
-              })}
+      <div className='module-header-wrapper'>
+        <button
+          aria-controls={panelId}
+          aria-expanded={open}
+          className='module-button module-button-main'
+          onClick={toggleOpen}
+          type='button'
+        >
+          <div className='module-button-left'>
+            <span className='dropdown-wrap'>
+              <DropDown />
             </span>
-          )}
-        </div>
-      </button>
+            <span className='checkmark-wrap'>
+              <CheckMark isCompleted={isComplete} />
+            </span>
+            {moduleLabel}
+          </div>
+        </button>
+        {resetButton}
+        <button
+          aria-controls={panelId}
+          aria-expanded={open}
+          aria-label={`${toggleLabel} ${moduleLabel}`}
+          className='module-button module-button-toggle'
+          data-testid='module-button-right'
+          onClick={toggleOpen}
+          type='button'
+        >
+          <div className='module-button-right'>
+            {!comingSoon && !!totalSteps && (
+              <span className='module-steps'>
+                {t('learn.steps-completed', {
+                  totalSteps,
+                  completedSteps
+                })}
+              </span>
+            )}
+          </div>
+        </button>
+      </div>
       {open && (
         <ul className='module-panel' id={panelId}>
           {comingSoon && (
@@ -241,6 +349,14 @@ const Module = ({
           {showModuleContent && children}
         </ul>
       )}
+      <ResetProgressModal
+        blockTitle={moduleLabel}
+        blockDashedName={blockDashedNames}
+        superBlock={superBlock}
+        show={showResetModal}
+        onHide={handleResetModalClose}
+        onResetComplete={onResetComplete}
+      />
     </li>
   );
 };
@@ -357,6 +473,11 @@ export const SuperBlockAccordion = ({
   const expandedChapter = blockToChapterMap.get(chosenBlock);
   const expandedModule = blockToModuleMap.get(chosenBlock);
   const accordion = true;
+  const dispatch = useDispatch();
+
+  const handleResetComplete = (removedChallengeIds: string[]) => {
+    dispatch(removeModuleChallenges({ removedChallengeIds }));
+  };
 
   return (
     <ul className='super-block-accordion'>
@@ -391,6 +512,10 @@ export const SuperBlockAccordion = ({
           ? firstModuleBlock?.challenges[0]?.fields.slug
           : undefined;
 
+        const chapterBlockDashedNames = chapter.modules.flatMap(module =>
+          module.blocks.map(block => block.name)
+        );
+
         return (
           <Chapter
             key={chapter.name}
@@ -406,6 +531,8 @@ export const SuperBlockAccordion = ({
             superBlock={superBlock}
             isLinkChapter={isLinkChapter}
             examSlug={examSlug}
+            blockDashedNames={chapterBlockDashedNames}
+            onResetComplete={handleResetComplete}
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
@@ -439,6 +566,10 @@ export const SuperBlockAccordion = ({
                 completedChallengeIds.filter(id => moduleStepIdsSet.has(id))
               ).size;
 
+              const moduleBlockDashedNames = module.blocks.map(
+                block => block.name
+              );
+
               return (
                 <Module
                   key={module.name}
@@ -448,6 +579,8 @@ export const SuperBlockAccordion = ({
                   completedSteps={completedStepsInModule}
                   superBlock={superBlock}
                   comingSoon={!!module.comingSoon}
+                  blockDashedNames={moduleBlockDashedNames}
+                  onResetComplete={handleResetComplete}
                 >
                   {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"
