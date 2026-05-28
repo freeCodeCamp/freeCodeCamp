@@ -3,7 +3,7 @@
 /* eslint-disable vitest/expect-expect */
 // @vitest-environment jsdom
 import { expectSaga } from 'redux-saga-test-plan';
-import { describe, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import {
   postChargeStripe,
   postChargeStripeCard,
@@ -219,5 +219,75 @@ describe('donation-saga', () => {
       .call(updateStripeCard)
       .put(updateCardError())
       .run();
+  });
+
+  it('calls handleAuthentication with clientSecret and paymentMethodId on UserActionRequired error', () => {
+    const handleAuthentication = vi.fn().mockResolvedValue({
+      paymentIntent: { status: 'succeeded' }
+    });
+
+    const stripeCardDataMock = {
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'stripe card',
+        handleAuthentication
+      }
+    };
+
+    const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
+    const optimizedPayload = { paymentMethodId, amount, duration };
+
+    postChargeStripeCard.mockResolvedValue({
+      data: {
+        error: {
+          type: 'UserActionRequired',
+          client_secret: 'sec_test_123'
+        }
+      }
+    });
+
+    return expectSaga(postChargeSaga, stripeCardDataMock)
+      .withState(signedInStoreMock)
+      .call(postChargeStripeCard, optimizedPayload)
+      .run()
+      .then(() => {
+        expect(handleAuthentication).toHaveBeenCalledTimes(1);
+        expect(handleAuthentication).toHaveBeenCalledWith(
+          'sec_test_123',
+          '123456'
+        );
+      });
+  });
+
+  it('does not call handleAuthentication when error type is not UserActionRequired', () => {
+    const handleAuthentication = vi.fn();
+
+    const stripeCardDataMock = {
+      payload: {
+        ...postChargeDataMock.payload,
+        paymentProvider: 'stripe card',
+        handleAuthentication
+      }
+    };
+
+    const { paymentMethodId, amount, duration } = stripeCardDataMock.payload;
+    const optimizedPayload = { paymentMethodId, amount, duration };
+
+    postChargeStripeCard.mockResolvedValue({
+      data: {
+        error: {
+          type: 'card_declined',
+          client_secret: null
+        }
+      }
+    });
+
+    return expectSaga(postChargeSaga, stripeCardDataMock)
+      .withState(signedInStoreMock)
+      .call(postChargeStripeCard, optimizedPayload)
+      .run()
+      .then(() => {
+        expect(handleAuthentication).not.toHaveBeenCalled();
+      });
   });
 });
