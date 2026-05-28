@@ -7,6 +7,7 @@ import {
   SuperBlocks,
   chapterBasedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
 import {
@@ -117,13 +118,24 @@ const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
 const dataPath = `${staticFolderPath}/curriculum-data/`;
-const blockIntroPath = resolve(
-  __dirname,
-  '../../../client/i18n/locales/english/intro.json'
-);
-const intros = JSON.parse(
-  readFileSync(blockIntroPath, 'utf-8')
-) as CurriculumIntros;
+const intros = readCurriculumIntros(getCurriculumLocale());
+
+export function getCurriculumLocale(): Languages {
+  const { CURRICULUM_LOCALE } = process.env;
+
+  return availableLangs.curriculum.includes(CURRICULUM_LOCALE as Languages)
+    ? (CURRICULUM_LOCALE as Languages)
+    : Languages.English;
+}
+
+export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+  const blockIntroPath = resolve(
+    __dirname,
+    `../../../client/i18n/locales/${lang}/intro.json`
+  );
+
+  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as CurriculumIntros;
+}
 
 export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [

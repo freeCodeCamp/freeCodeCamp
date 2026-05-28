@@ -2,7 +2,7 @@ import path from 'path';
 import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
@@ -10,6 +10,7 @@ import {
   SuperBlockStage,
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
+import { Languages } from '@freecodecamp/shared/config/i18n';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -22,7 +23,8 @@ import {
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo,
-  OrderedSuperBlocks
+  OrderedSuperBlocks,
+  readCurriculumIntros
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
@@ -305,5 +307,33 @@ describe('external curriculum data build', () => {
         `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
       ).length
     ).toBeGreaterThan(0);
+  });
+
+  test('available superblocks should use the configured curriculum locale', async () => {
+    const originalCurriculumLocale = process.env.CURRICULUM_LOCALE;
+    process.env.CURRICULUM_LOCALE = Languages.Espanol;
+
+    try {
+      vi.resetModules();
+      const { orderedSuperBlockInfo: spanishOrderedSuperBlockInfo } =
+        await import('./build-external-curricula-data-v2');
+      const spanishIntros = readCurriculumIntros(Languages.Espanol);
+      const englishIntros = readCurriculumIntros(Languages.English);
+
+      expect(spanishOrderedSuperBlockInfo.core[0]).toMatchObject({
+        dashedName: SuperBlocks.RespWebDesignV9,
+        title: spanishIntros[SuperBlocks.RespWebDesignV9].title
+      });
+      expect(spanishOrderedSuperBlockInfo.core[0]?.title).not.toEqual(
+        englishIntros[SuperBlocks.RespWebDesignV9].title
+      );
+    } finally {
+      if (originalCurriculumLocale) {
+        process.env.CURRICULUM_LOCALE = originalCurriculumLocale;
+      } else {
+        delete process.env.CURRICULUM_LOCALE;
+      }
+      vi.resetModules();
+    }
   });
 });
