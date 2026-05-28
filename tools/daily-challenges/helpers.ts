@@ -13,7 +13,26 @@ export async function queryGraphQL(query: string) {
     body: JSON.stringify({ query })
   });
 
-  const json = (await response.json()) as QueryResult;
+  // response.ok is false for any non-2xx status (4xx client errors, 5xx server errors).
+  // Note: network-level failures (unreachable host) throw before reaching this point.
+  if (!response.ok) {
+    const errorBody = await response.text();
+    throw new Error(
+      `GraphQL HTTP error ${response.status} ${response.statusText}: ${errorBody}`
+    );
+  }
+
+  const json = (await response.json()) as QueryResult & {
+    errors?: Array<{ message: string }>;
+  };
+
+  // GraphQL can return HTTP 200 with errors in the response body.
+  // This check catches query validation errors, resolver failures, etc.
+  // without being masked by misleading parsing errors downstream.
+  if (json.errors) {
+    const errorMessages = json.errors.map(e => e.message).join('; ');
+    throw new Error(`GraphQL error: ${errorMessages}`);
+  }
 
   if (!json?.data?.allChallengeNode?.edges?.length) {
     throw new Error(
