@@ -198,6 +198,71 @@ describe('Exam Environment mocked Math.random', () => {
       };
       expect(() => generateExam(invalidExam)).toThrow();
     });
+
+    it('should throw when no question set config exists', () => {
+      const invalidExam = {
+        ...exam,
+        config: {
+          ...exam.config,
+          questionSets: []
+        }
+      };
+
+      expect(() => generateExam(invalidExam)).toThrow(
+        'Invalid exam config - no question sets config.'
+      );
+    });
+
+    it('should throw when there are not enough questions for a question type', () => {
+      const invalidExam = structuredClone(exam);
+
+      invalidExam.config.questionSets[0]!.numberOfQuestions = 999;
+
+      expect(() => generateExam(invalidExam)).toThrow(
+        'Not enough questions for question type'
+      );
+    });
+
+    it('should generate questions with the configured number of answers', () => {
+      const generated = generateExam(exam);
+
+      generated.questionSets.forEach(gqs => {
+        const originalQuestionSet = exam.questionSets.find(
+          qs => qs.id === gqs.id
+        );
+
+        expect(originalQuestionSet).toBeDefined();
+
+        const config = exam.config.questionSets.find(
+          c => c.type === originalQuestionSet!.type
+        );
+
+        expect(config).toBeDefined();
+
+        gqs.questions.forEach(gq => {
+          const originalQuestion = originalQuestionSet!.questions.find(
+            q => q.id === gq.id
+          );
+
+          expect(originalQuestion).toBeDefined();
+
+          const generatedAnswers = originalQuestion!.answers.filter(a =>
+            gq.answers.includes(a.id)
+          );
+
+          const correctAnswers = generatedAnswers.filter(a => a.isCorrect);
+          const incorrectAnswers = generatedAnswers.filter(a => !a.isCorrect);
+
+          expect(correctAnswers.length).toBeGreaterThanOrEqual(
+            config!.numberOfCorrectAnswers
+          );
+
+          expect(incorrectAnswers.length).toBeGreaterThanOrEqual(
+            config!.numberOfIncorrectAnswers
+          );
+        });
+      });
+    });
   });
 
   describe('validateAttempt()', () => {
