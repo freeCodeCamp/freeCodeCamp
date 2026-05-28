@@ -192,7 +192,9 @@ jobs:
       - name: Run Tests
         env:
           PUPPETEER_CACHE_DIR: /home/runner/.cache/puppeteer
-        run: pnpm test
+        run: |
+          ls /home/runner/.cache/puppeteer/chrome/ 2>&1 || echo "puppeteer/chrome dir missing"
+          pnpm test
 
   test-upcoming:
     name: Test - Upcoming Changes
