@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": false,
+  "blockLayout": "link",
+  "blockLabel": "quiz",
+  "dashedName": "quiz-python-installation",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    { "id": "69fd84e01123960e15bb8455", "title": "Python Installation Quiz" }
+  ]
+}
