@@ -1,65 +1,42 @@
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, rmSync } from 'node:fs';
+import { existsSync, rmSync } from 'node:fs';
 import path from 'node:path';
 
 import puppeteer from 'puppeteer';
 
-const getPlatform = () => {
-  if (process.platform === 'linux' && process.arch === 'x64') {
-    return { archive: 'linux64', cache: 'linux' };
-  }
-
-  if (process.platform === 'darwin' && process.arch === 'arm64') {
-    return { archive: 'mac-arm64', cache: 'mac_arm' };
-  }
-
-  if (process.platform === 'darwin' && process.arch === 'x64') {
-    return { archive: 'mac-x64', cache: 'mac' };
-  }
-
-  if (process.platform === 'win32' && process.arch === 'x64') {
-    return { archive: 'win64', cache: 'win64' };
-  }
-
-  if (process.platform === 'win32' && process.arch === 'ia32') {
-    return { archive: 'win32', cache: 'win32' };
-  }
-
-  throw new Error(
-    `Unsupported platform for Chrome download: ${process.platform}/${process.arch}`
-  );
+const PLATFORMS = {
+  'linux-x64': ['linux64', 'linux'],
+  'darwin-arm64': ['mac-arm64', 'mac_arm'],
+  'darwin-x64': ['mac-x64', 'mac'],
+  'win32-x64': ['win64', 'win64'],
+  'win32-ia32': ['win32', 'win32']
 };
 
-const run = (command, args) => {
-  const result = spawnSync(command, args, {
-    encoding: 'utf8',
-    stdio: 'inherit'
-  });
-
-  if (result.error) throw result.error;
-  if (result.status !== 0) {
-    throw new Error(`${command} ${args.join(' ')} failed`);
-  }
-};
+const key = `${process.platform}-${process.arch}`;
+const [archive, cache] =
+  PLATFORMS[key] ??
+  (() => {
+    throw new Error(`Unsupported: ${key}`);
+  })();
 
 const buildId = puppeteer.browserVersion;
 const cacheDir = puppeteer.configuration.cacheDirectory;
-const { archive, cache } = getPlatform();
+const execPath = puppeteer.executablePath();
+
+if (existsSync(execPath)) process.exit(0);
 
 const browserRoot = path.join(cacheDir, 'chrome');
 const installDir = path.join(browserRoot, `${cache}-${buildId}`);
-const archiveName = `chrome-${archive}.zip`;
-const archivePath = path.join(browserRoot, `${buildId}-${archiveName}`);
-const executablePath = puppeteer.executablePath();
-const downloadUrl = `https://storage.googleapis.com/chrome-for-testing-public/${buildId}/${archive}/${archiveName}`;
+const archivePath = path.join(browserRoot, `${buildId}-chrome-${archive}.zip`);
+const url = `https://storage.googleapis.com/chrome-for-testing-public/${buildId}/${archive}/chrome-${archive}.zip`;
 
-if (existsSync(executablePath)) {
-  console.log(`chrome@${buildId} ${executablePath}`);
-  process.exit(0);
-}
+rmSync(installDir, { recursive: true, force: true });
 
-rmSync(installDir, { force: true, recursive: true, maxRetries: 3 });
-mkdirSync(browserRoot, { recursive: true });
+const run = (cmd, args) => {
+  const { status, error } = spawnSync(cmd, args, { stdio: 'inherit' });
+  if (error) throw error;
+  if (status !== 0) throw new Error(`${cmd} exited ${status}`);
+};
 
 try {
   run('curl', [
@@ -67,17 +44,15 @@ try {
     '--location',
     '--retry',
     '3',
+    '--create-dirs',
     '--output',
     archivePath,
-    downloadUrl
+    url
   ]);
   run('unzip', ['-q', archivePath, '-d', installDir]);
 } finally {
   rmSync(archivePath, { force: true });
 }
 
-if (!existsSync(executablePath)) {
-  throw new Error(`Chrome executable was not installed: ${executablePath}`);
-}
-
-console.log(`chrome@${buildId} ${executablePath}`);
+if (!existsSync(execPath)) throw new Error(`Chrome not installed: ${execPath}`);
+console.log(`chrome@${buildId} ${execPath}`);
