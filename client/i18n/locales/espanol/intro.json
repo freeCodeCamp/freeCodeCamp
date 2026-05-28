@@ -3833,6 +3833,7 @@
       "En la segunda mitad, practicarás vocabulario específico para el desarrollo de software. Aprenderás a describir código, discutir tendencias tecnológicas y participar en reuniones de pie.",
       "Todo este plan de estudios de nivel A2 incluye 105 diálogos diferentes. Cada uno está diseñado para desarrollar su vocabulario y aumentar su confianza al hablar en un entorno tecnológico profesional."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Aprende saludos en tu primer día en la oficina",
@@ -4120,6 +4121,7 @@
       "También te concentrarás en aplicar estas habilidades en entornos profesionales y técnicos. Practicarás vocabulario y frases esenciales para los desarrolladores, como describir códigos, participar en reuniones de pie y analizar tendencias tecnológicas. Los temas avanzados incluyen condicionales, estructuras comparativas y gestión de conversaciones, para que puedas prepararte para interacciones del mundo real en la industria tecnológica.",
       "Este programa completo de nivel B1 incluye 73 diálogos diferentes. Cada uno está diseñado para ampliar tu vocabulario y aumentar tu confianza al hablar en un entorno tecnológico profesional."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Aprende a describir lugares y acontecimientos",
@@ -4940,6 +4942,19 @@
         "title": "Construir un Detector de Letras Faltantes",
         "intro": [
           "En este laboratorio, crearás una función que encuentre la letra que falta en un rango dado de letras consecutivas y la devuelva."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -5909,6 +5924,7 @@
       "- Completa los cinco proyectos requeridos para calificar para el examen de certificación.",
       "- Pass the Front-End Development Libraries Certification exam."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "Front-End Development Libraries",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -5921,22 +5937,24 @@
       "performance": "Rendimiento",
       "testing": "Pruebas",
       "css-libraries-and-frameworks": "Bibliotecas y Frameworks CSS",
-      "data-visualization": "Visualización de Datos y D3",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "Fundamentos de TypeScript ",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
+      "data-visualization": "Visualización de Datos y D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "En este módulo, serás introducido a TypeScript, que es un superconjunto de JavaScript que te permite agregar tipado estático a tu código JavaScript. Construirás varios talleres y laboratorios que te darán práctica en trabajar con genéricos, estrechamiento de tipos, TSX, y más. Luego pondrás a prueba tus conocimientos de los fundamentos de TypeScript con un breve cuestionario."
+        ]
+      },
       "data-visualization": {
         "note": "Próximamente en 2026.",
         "intro": [
           "En este módulo, serás introducido a la visualización de datos y aprenderás a trabajar con la biblioteca D3."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Próximamente en 2026.",
-        "intro": [
-          "En este módulo, serás introducido a TypeScript, que es un superconjunto de JavaScript que te permite agregar tipado estático a tu código JavaScript. Construirás varios talleres y laboratorios que te darán práctica en trabajar con genéricos, estrechamiento de tipos, TSX, y más. Luego pondrás a prueba tus conocimientos de los fundamentos de TypeScript con un breve cuestionario."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6207,22 +6225,6 @@
           "Pon a prueba lo que has aprendido sobre librerías y marcos CSS con este cuestionario."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introducción a la visualización de datos",
-        "intro": [
-          "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab you will use d3 to build a bar chart."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Introducción a TypeScript",
         "intro": [
@@ -6298,11 +6300,17 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "In this lab, you'll practice what you learned about Typescript and React by building a digital pet game."
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Build a Football Player Card Builder",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
         ]
       },
       "review-typescript": {
-        "title": "Revisión de TypeScript",
+        "title": "TypeScript Review",
         "intro": [
           "Antes de que realices el cuestionario de TypeScript, debes repasar todo lo que has aprendido hasta ahora.",
           "Abre esta página para repasar todos los conceptos enseñados, incluidos los tipos de datos en TypeScript, genéricos, estrechamiento de tipo y más."
@@ -6310,8 +6318,22 @@
       },
       "quiz-typescript": {
         "title": "Cuestionario de TypeScript",
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introducción a la visualización de datos",
         "intro": [
-          "Pon a prueba lo que has aprendido sobre TypeScript con este cuestionario."
+          "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
         ]
       },
       "review-front-end-libraries": {
@@ -6342,6 +6364,7 @@
     },
     "modules": {
       "python-basics": "Fundamentos de Python",
+      "python-installation": "Install Python",
       "python-loops-and-sequences": "Bucles y Secuencias",
       "python-dictionaries-and-sets": "Diccionarios y Conjuntos",
       "lab-user-configuration-manager": "Construir un Gestor de Configuración de Usuarios.",
@@ -6363,7 +6386,7 @@
       "lecture-introduction-to-python": {
         "title": "Introducción a Python",
         "intro": [
-          "In these lessons, you will learn what Python is and how to set up your development environment."
+          "In these lessons, you will learn what Python is and common uses in the industry."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -6453,6 +6476,24 @@
         "title": "Cuestionario de Fundamentos de Python",
         "intro": [
           "Pon a prueba lo que has aprendido sobre fundamentos de Python con este cuestionario."
+        ]
+      },
+      "lecture-python-installation": {
+        "title": "Installing Python and Running Code Locally",
+        "intro": [
+          "In these lessons, you will learn how to install Python on your local device and run code locally."
+        ]
+      },
+      "review-python-installation": {
+        "title": "Python Installation Review",
+        "intro": [
+          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+        ]
+      },
+      "quiz-python-installation": {
+        "title": "Python Installation Quiz",
+        "intro": [
+          "Test what you've learned about installing Python locally with this quiz."
         ]
       },
       "lecture-working-with-loops-and-sequences": {
@@ -7073,6 +7114,7 @@
       "- Completa los cinco proyectos requeridos para calificar para el examen de certificación.",
       "- Pass the Back-End Development and APIs Certification exam."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "Back-End Development and APIs",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
@@ -7248,6 +7290,13 @@
           "Aprende los fundamentos de cómo funciona la comunicación web a través del modelo de solicitud-respuesta HTTP, explora diferentes tipos de recursos web y respuestas, y comprende cómo los formularios manejan el envío de datos utilizando varios métodos HTTP."
         ]
       },
+      "quiz-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Quiz",
+        "intro": [
+          "Test your knowledge of HTTP, DNS, TCP/IP, the request-response model, and web standards.",
+          ""
+        ]
+      },
       "lecture-understanding-rest-api-and-web-services": {
         "title": "Understanding the REST API and Web Services",
         "intro": [
@@ -7267,6 +7316,18 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
@@ -7281,6 +7342,7 @@
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
@@ -7375,7 +7437,7 @@
   },
   "a1-professional-spanish": {
     "title": "Certificación de Español Profesional A1 (Beta)",
-    "note": "Esta certificación está actualmente en desarrollo activo. Actualmente estamos publicando los tres primeros capítulos, y futuros capítulos se lanzarán conforme los desarrolle nuestro equipo de diseño instruccional. Una vez que todos los capítulos estén disponibles, publicaremos el examen de certificación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "Este curso te enseña los fundamentos de español en el nivel A1 del Marco Común Europeo de Referencia (MCER), con lecciones enfocadas en entornos profesionales. Cada módulo está dividido en secciones:",
       "- Una sección de calentamiento para una revisión rápida.",
@@ -7643,6 +7705,10 @@
       },
       "es-a1-learn-talking-about-colleagues": {
         "title": "Talking About Colleagues",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -8712,7 +8778,7 @@
   },
   "a2-professional-spanish": {
     "title": "Certificación de Español Profesional A2 (Beta)",
-    "note": "Esta certificación está actualmente en desarrollo activo. Aunque por el momento no hay una certificación reclamable disponible para esta sección, pronto habrá una disponible. Mientras tanto, le invitamos a explorar los cursos que hemos creado a continuación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introducción con marcador de posición"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8731,7 +8797,7 @@
   },
   "a2-professional-chinese": {
     "title": "Certificación de Chino Profesional A2 (Beta)",
-    "note": "Esta certificación está actualmente en desarrollo activo. Aunque por el momento no hay una certificación reclamable disponible para esta sección, pronto habrá una disponible. Mientras tanto, le invitamos a explorar los cursos que hemos creado a continuación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introducción con marcador de posición"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8750,7 +8816,7 @@
   },
   "a1-professional-chinese": {
     "title": "Certificación Profesional de Chino A1 (Beta)",
-    "note": "Esta certificación está en desarrollo activo. Actualmente estamos publicando los capítulos introductorios, y los capítulos futuros se lanzarán a medida que sean desarrollados por nuestro equipo de diseño instruccional. Una vez que todos los capítulos estén disponibles, liberaremos el examen de certificación.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "En este currículo de chino profesional A1, aprenderás los fundamentos del idioma chino. Seguirás el nivel A1 del Marco Común Europeo de Referencia (MCER). Y nos hemos centrado en el vocabulario que resulta especialmente útil para entornos profesionales.",
       "El currículo se divide en varios módulos que incluyen páginas de calentamiento, aprendizaje, práctica, revisión y cuestionarios para asegurarte de que entiendes realmente el material antes de pasar al siguiente módulo.",

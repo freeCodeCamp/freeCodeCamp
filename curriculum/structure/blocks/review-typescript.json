@@ -1,10 +1,10 @@
 {
   "blockLabel": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-typescript",
   "challengeOrder": [
-    { "id": "6724e296dceca21b82426229", "title": "Typescript Review" }
+    { "id": "6724e296dceca21b82426229", "title": "TypeScript Review" }
   ],
   "helpCategory": "JavaScript"
 }

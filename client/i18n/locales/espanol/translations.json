@@ -125,6 +125,7 @@
     "sign-in-with-google": "Iniciar sesión con Google",
     "go-to-dcc-today": "Ir al desafío de hoy",
     "go-to-dcc-archive": "Ir al archivo de desafíos",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -603,8 +604,8 @@
     "github-required": "<0>Crea una cuenta en GitHub</0> si no tienes una. Lo necesitará al crear la máquina virtual de servidores Linux, que puede tardar unos minutos.",
     "codespaces": {
       "intro": "Este curso se ejecuta en una máquina virtual Linux usando GitHub Codespaces. Sigue estas instrucciones para iniciar el curso:",
-      "step-1": "<0>Crea una cuenta de GitHub</0> si no tienes una",
-      "step-2": "Haz clic en el botón de inicio debajo de esta lista",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "En esa página, haz clic en el botón de crear",
       "step-4": "Una vez que la máquina virtual Linux haya terminado de cargar, inicia la extensión CodeRoad mediante:",
       "step-5": "Haciendo clic en el menú “hamburguesa” cerca de la parte superior izquierda de la ventana de VSCode,",
@@ -612,19 +613,20 @@
       "step-7": "Haz clic en la opción <0>Paleta de comandos</0>,",
       "step-8": "y ejecuta el comando <0>CodeRoad: Start</0>",
       "step-9": "Sigue las instrucciones en CodeRoad para completar el curso",
-      "continue-project": "Haciendo clic abajo empezarás un nuevo proyecto. Si ya has comenzado el curso {{title}}, ve a la <0>página del repositorio</0> para reabrir un espacio de trabajo anterior.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "Aprende más sobre los <0>espacios de trabajo de Codespace</0>.",
       "logout-warning": "Si cierras sesión en freeCodeCamp antes de terminar el curso {{course}}, tu progreso no se guardará en tu cuenta de freeCodeCamp.",
       "sub-step-3": "Navega a tu <0>página de secretos de Codespaces</0>",
       "sub-step-4": "Crea un nuevo secreto llamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "Pega tu token en el campo <0>Valor</0>",
       "sub-step-6": "En el campo <0>Acceso al repositorio</0>, selecciona el repositorio <1>freeCodeCamp/rdb-alpha</1>",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Configuración de Codespaces"
     },
     "ona": {
       "intro": "Este curso se ejecuta en una máquina virtual de Linux con Ona. Sigue estas instrucciones para comenzar:",
       "step-1": "<0>Crea una cuenta Ona</0> si no tienes una",
-      "step-2": "Haz clic en el botón de inicio debajo de esta lista",
+      "step-2": "Click the start button below",
       "step-3": "En el modal que aparece de repente, haz clic en el botón de crear",
       "step-4": "Una vez el sistema linux virtual ha terminado de cargar, inicia la extensión CodeRoad mediante:",
       "step-5": "Haciendo clic en el menú “hamburguesa” cerca de la parte superior izquierda de la ventana de VSCode",
@@ -632,7 +634,7 @@
       "step-7": "Haz clic en la opción <0> Paleta de comandos</0>,",
       "step-8": "y ejecuta el comando <0>CodeRoad: Start</0>",
       "step-9": "Sigue las instrucciones en CodeRoad para completar el curso",
-      "continue-project": "Haciendo clic abajo empezarás un nuevo proyecto. Si ya has comenzado el curso {{course}}, accede a <0>tu panel de Ona</0> para continuar.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "Aprende más sobre <0>áreas de trabajo Ona.</0>",
       "logout-warning": "Si cierras sesión en freeCodeCamp antes de terminar el curso {{course}}, tu progreso no se guardará en tu cuenta.",
       "sub-step-3": "Navega a tu <0>página secreta Ona</0>",
@@ -757,6 +759,11 @@
     "archive": {
       "title": "Cursos archivados",
       "content-not-updated": "El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos probar <0>nuestro currículo actual</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -804,7 +811,7 @@
     "unfinished-certification": "Esta certificación está actualmente en desarrollo. Aunque no hay una certificación disponible en este momento para esta sección, estará disponible pronto. Mientras tanto, a continuación. siéntete bienvenido a explorar los cursos que hemos creado.",
     "consider-donating": "Por favor, considere donar para apoyar la finalización de su desarrollo.",
     "unfinished-certification-2": "Completar esta certificación le llevará una cantidad considerable de tiempo y esfuerzo. Si comienza ahora, es posible que esté listo para tomar el examen final cuando la lancemos en los próximos meses.",
-    "consider-donating-2": "Si desea ayudarnos a acelerar el desarrollo de este plan de estudios, <0>considere convertirse en un partidario de nuestra organización benéfica.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "Ayúdenos a desarollar certificados de programación profesional gratis para todos.",
     "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",
@@ -1421,7 +1428,8 @@
     "too-long-three": "Por favor, copia/pega todo el código del editor que se muestra en el desafío desde el que acabas de enlazar.",
     "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
-    "add-code-three": "porque permiten que tu código formatee correctamente en el post."
+    "add-code-three": "porque permiten que tu código formatee correctamente en el post.",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuario",

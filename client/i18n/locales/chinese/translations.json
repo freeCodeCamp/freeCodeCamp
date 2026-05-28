@@ -125,6 +125,7 @@
     "sign-in-with-google": "使用 Google 登录",
     "go-to-dcc-today": "访问今天的编程挑战",
     "go-to-dcc-archive": "访问每日编程挑战存档",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -603,8 +604,8 @@
     "github-required": "如果你没有 GitHub 账户，你需要 <0>创建 GitHub</0> 账户。 你需要创建虚拟 Linux 服务器，这个过程可能需要几分钟。",
     "codespaces": {
       "intro": "本课程使用 GitHub Codespaces 在虚拟的 Linux 机器中运行。按照这些说明开始学习课程：",
-      "step-1": "如果你没有 GitHub 账户，<0>创建一个</0>",
-      "step-2": "点击此列表下方的开始按钮",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "在该页面，点击创建按钮",
       "step-4": "虚拟 Linux 机器加载完成后，启动 CodeRoad 扩展：",
       "step-5": "点击 VSCode 窗口左上角的菜单，",
@@ -612,19 +613,20 @@
       "step-7": "点击 <0>命令面板</0> 选项，",
       "step-8": "并运行 <0>CodeRoad: Start</0> 命令",
       "step-9": "按照 CodeRoad 中的说明完成课程",
-      "continue-project": "点击下面的按钮将启动一个新项目。如果你之前已经开始了 {{title}} 课程，请前往 <0>仓库页面</0> 重新打开之前的工作区。",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "了解更多关于 <0>Codespace 工作区</0> 的信息。",
       "logout-warning": "如果你在完成整个 {{course}} 课程之前退出 freeCodeCamp，你的进度将不会被保存到你的 freeCodeCamp 账户中。",
       "sub-step-3": "前往你的 <0>Codespaces secrets 页面</0>",
       "sub-step-4": "创建一个名为 <0>CODEROAD_WEBHOOK_TOKEN</0> 的新密码",
       "sub-step-5": "在 <0>Value</0> 字段中，粘贴你的令牌",
       "sub-step-6": "在 <0>Repository access</0> 字段中，选择 <1>freeCodeCamp/rdb-alpha</1> 仓库",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces 设置"
     },
     "ona": {
       "intro": "本课程使用 Ona 在虚拟的 Linux 机器中运行。按照这些说明开始学习课程：",
       "step-1": "如果你没有 Ona 账户，<0>创建一个</0>",
-      "step-2": "点击此列表下方的开始按钮",
+      "step-2": "Click the start button below",
       "step-3": "在弹出的模态框中，点击创建按钮",
       "step-4": "虚拟 Linux 机器加载完成后，启动 CodeRoad 扩展：",
       "step-5": "点击 VSCode 窗口左上角的 “hamburger” 菜单，",
@@ -632,7 +634,7 @@
       "step-7": "点击<0>命令面板</0>选项，",
       "step-8": "并运行 <0>CodeRoad: Start</0> 命令",
       "step-9": "按照 CodeRoad 中的说明完成课程",
-      "continue-project": "点击下面的按钮将启动一个新项目。如果你已经开始了 {{course}} 课程，请进入 <0>你的 Ona 面板</0> 继续。",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "了解更多关于 <0>Ona 工作区</0> 的信息",
       "logout-warning": "如果你在完成整个 {{course}} 课程之前退出 freeCodeCamp，你的进度将不会被保存到你的 freeCodeCamp 账户中。",
       "sub-step-3": "前往你的 <0>Ona secrets 页面</0>",
@@ -757,6 +759,11 @@
     "archive": {
       "title": "已存档的课程",
       "content-not-updated": "本节内容将不再更新，但仍可供你继续学习。我们推荐你尝试<0>我们现在的课程</0>。"
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -804,7 +811,7 @@
     "unfinished-certification": "该认证正在积极开发中。虽然目前无法领取认证，但很快将会推出。在此期间，欢迎你探索我们已创建的课程。",
     "consider-donating": "请考虑捐款以支持其开发完成",
     "unfinished-certification-2": "完成此认证将需要你投入大量时间和精力。如果你现在开始学习，可能会在我们几个月后发布最终考试时为参加考试做好准备。",
-    "consider-donating-2": "如果你希望帮助我们加快该课程的开发，请<0>考虑成为我们的慈善机构的支持者</0>。",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "帮助我们为所有人开发免费的专业编程认证。",
     "nicely-done": "很棒，你已完成 {{block}}。",
     "credit-card": "信用卡",
@@ -1421,7 +1428,8 @@
     "too-long-three": "请复制/粘贴所有在挑战中编辑器所显示的代码。",
     "add-code-one": "用你的复制代码替换这两句。",
     "add-code-two": "请保留上方的 ``` 行和下方的 ``` 行",
-    "add-code-three": "因为它们允许你的代码在帖子中被正确格式化。"
+    "add-code-three": "因为它们允许你的代码在帖子中被正确格式化。",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用户令牌",
