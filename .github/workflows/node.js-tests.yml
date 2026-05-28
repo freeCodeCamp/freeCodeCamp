@@ -178,8 +178,6 @@ jobs:
         run: docker compose -f docker/docker-compose.yml up -d
 
       - name: Install Dependencies
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
@@ -233,8 +231,6 @@ jobs:
         run: docker compose -f docker/docker-compose.yml up -d
 
       - name: Install Dependencies
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
@@ -297,7 +293,6 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install

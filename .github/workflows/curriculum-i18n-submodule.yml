@@ -56,8 +56,6 @@ jobs:
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
         run: pnpm install
 
       # DONT REMOVE THIS STEP.
