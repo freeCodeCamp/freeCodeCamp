@@ -92,6 +92,7 @@ const ShowFillInTheBlank = ({
         translationPending,
         challengeType,
         fillInTheBlank,
+        inputType,
         helpCategory,
         scene,
         tests,
@@ -181,7 +182,7 @@ const ShowFillInTheBlank = ({
       const answer = blankAnswers[i];
       const normalizedUserAnswer = userAnswer.trim().toLowerCase();
 
-      if (fillInTheBlank.inputType === 'pinyin-to-hanzi') {
+      if (inputType === 'pinyin-to-hanzi') {
         const pairs = parseHanziPinyinPairs(answer);
         if (pairs.length === 1) {
           const hanziPinyin = pairs[0];
@@ -191,7 +192,7 @@ const ShowFillInTheBlank = ({
             hanzi.replace(/\s+/g, '')
           );
         }
-      } else if (fillInTheBlank.inputType === 'pinyin-tone') {
+      } else if (inputType === 'pinyin-tone') {
         // Ignore spaces to allow both syllable formats:
         // spaced (e.g., 'nǐ hǎo') and unspaced (e.g., 'nǐhǎo').
         return (
@@ -302,6 +303,7 @@ const ShowFillInTheBlank = ({
               <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                 <FillInTheBlanks
                   fillInTheBlank={fillInTheBlank}
+                  inputType={inputType}
                   answersCorrect={answersCorrect}
                   showFeedback={showFeedback}
                   feedback={feedback}
@@ -371,8 +373,8 @@ export const query = graphql`
             answer
             feedback
           }
-          inputType
         }
+        inputType
         tests {
           text
           testString
