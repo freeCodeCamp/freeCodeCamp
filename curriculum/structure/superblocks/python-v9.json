@@ -25,6 +25,14 @@
           ]
         },
         {
+          "dashedName": "python-installation",
+          "blocks": [
+            "lecture-python-installation",
+            "review-python-installation",
+            "quiz-python-installation"
+          ]
+        },
+        {
           "dashedName": "python-loops-and-sequences",
           "blocks": [
             "lecture-working-with-loops-and-sequences",
