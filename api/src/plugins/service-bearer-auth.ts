@@ -38,9 +38,11 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
       }
 
       const token = authHeader.slice(7);
+      const tokenBuf = Buffer.from(token);
+      const secretBuf = Buffer.from(secret);
       if (
-        token.length !== secret.length ||
-        !crypto.timingSafeEqual(Buffer.from(token), Buffer.from(secret))
+        tokenBuf.length !== secretBuf.length ||
+        !crypto.timingSafeEqual(tokenBuf, secretBuf)
       ) {
         await reply.status(401).send({ error: 'Invalid bearer token' });
         return;
