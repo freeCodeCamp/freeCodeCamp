@@ -88,6 +88,34 @@ describe('<ShowSettings />', () => {
     expect(profileLink).toBeInTheDocument();
   });
 
+  it('does not render the Classroom Mode section when the feature flag is off', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // classroom-mode is gated behind IfFeatureEnabled('classroom-mode'), and the
+    // flag defaults to off, so the section must be fully absent from the DOM.
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const classroomSection = container.querySelector('#classroom-mode-policy');
+    expect(classroomSection).not.toBeInTheDocument();
+  });
+
   it('renders the Personal section with About form', () => {
     const store = createStore({
       app: {
