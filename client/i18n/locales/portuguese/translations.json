@@ -604,8 +604,8 @@
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
     "codespaces": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o GitHub Codespaces. Siga estas instruções para iniciar o curso:",
-      "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
-      "step-2": "Clique no botão Iniciar abaixo desta lista",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "Naquela página, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VSCode,",
@@ -613,19 +613,20 @@
       "step-7": "Clicando na opção <0>Paleta de comando</0>,",
       "step-8": "e executando o comando <0>CodeRoad: Start</0>",
       "step-9": "Siga as instruções no CodeRoad para concluir o curso",
-      "continue-project": "Clicar no botão abaixo iniciará um novo projeto. Se você já iniciou o curso {{title}}, vá para a <0>página do repositório</0> para reabrir um espaço de trabalho anterior.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "Saiba mais sobre <0>Espaços de trabalho Codespace</0>.",
       "logout-warning": "Se você sair do freeCodeCamp antes de completar todo o curso {{course}}, seu progresso não será salvo na sua conta do freeCodeCamp.",
       "sub-step-3": "Navegue para a sua <0>Página de segredos do Codespaces</0>",
       "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "No campo <0>Valor</0>, cole seu token",
       "sub-step-6": "No campo <0>Acesso ao Repositório</0>, selecione o repositório <1>freeCodeCamp/rdb-alpha</1>",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Configuração do Codespaces"
     },
     "ona": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no Ona</0> se você não tiver uma",
-      "step-2": "Clique no botão Iniciar abaixo desta lista",
+      "step-2": "Click the start button below",
       "step-3": "No modal que aparece para cima, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VScode,",
@@ -633,7 +634,7 @@
       "step-7": "Clicando na opção <0>Paleta de comando</0>,",
       "step-8": "e executando o comando <0>CodeRoad: Start</0>",
       "step-9": "Siga as instruções no CodeRoad para concluir o curso",
-      "continue-project": "Clicar no botão abaixo iniciará um novo projeto. Se você já iniciou o curso {{course}}, vá para <0>seu painel no Ona</0> para continuar.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "Saiba mais sobre <0>Ona workspaces.</0>",
       "logout-warning": "Se você sair do FreeCodeCamp antes de completar todo o curso {{course}}, seu progresso não será salvo na sua conta do freeCodeCamp.",
       "sub-step-3": "Navegue para a sua <0>Página de segredos do Ona</0>",
@@ -758,6 +759,11 @@
     "archive": {
       "title": "Nossos cursos arquivados",
       "content-not-updated": "O conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <0>nosso currículo atual</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -805,7 +811,7 @@
     "unfinished-certification": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, uma estará disponível em breve. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
     "consider-donating": "Considere doar para apoiar a conclusão do desenvolvimento da certificação.",
     "unfinished-certification-2": "Essa certificação levará um tempo e esforço substanciais para ser concluída. Se você começar agora, você precisa estar pronto para fazer o exame final quando o lançarmos nos próximos meses.",
-    "consider-donating-2": "Se você quiser nos ajudar a acelerar o desenvolvimento deste currículo, por favor <0>considere tornar-se um apoiador da nossa comunidade.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "Ajude-nos a desenvolver certificações de programação profissional gratuitas para todos.",
     "nicely-done": "Bom trabalho. Você acabou de completar {{block}}.",
     "credit-card": "Cartão de crédito",

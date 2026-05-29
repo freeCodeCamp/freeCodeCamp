@@ -229,7 +229,12 @@ export type Attempt = {
 } & (
   | {
       result: null;
-      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
+      status:
+        | 'InProgress'
+        | 'Expired'
+        | 'PendingModeration'
+        | 'Denied'
+        | 'AwaitingChallenges';
     }
   | {
       status: 'Approved';
@@ -348,6 +353,12 @@ export function postDeleteAccount(): Promise<ResponseWithData<void>> {
 
 export function postResetProgress(): Promise<ResponseWithData<void>> {
   return post('/account/reset-progress', {});
+}
+
+export function deleteResetModule(body: {
+  blockIds: string[];
+}): Promise<ResponseWithData<{ removedChallengeIds: string[] }>> {
+  return deleteRequest('/account/reset-module', body);
 }
 
 export function postUserToken(): Promise<ResponseWithData<void>> {
