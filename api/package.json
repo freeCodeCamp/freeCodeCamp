@@ -87,9 +87,6 @@
     "type-check": "tsc --noEmit",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
-    "exam-env:generate": "tsx tools/exam-environment/generate/index.ts",
-    "exam-env:generate:deprecate": "tsx tools/exam-environment/generate/deprecate.ts",
-    "exam-env:generate:insert": "tsx tools/exam-environment/generate/insert.ts",
     "exam-env:seed": "tsx tools/exam-environment/seed/index.ts",
     "exam-env:test": "tsx tools/exam-environment/test/index.ts"
   },
