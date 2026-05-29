@@ -4,7 +4,8 @@ vi.mock('../../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../../utils/env.js')>();
   return {
     ...actual,
-    TPA_API_BEARER_TOKEN: 'test-classroom-api-secret'
+    TPA_API_BEARER_TOKEN: 'test-classroom-api-secret',
+    FCC_ENABLE_CLASSROOM: true
   };
 });
 

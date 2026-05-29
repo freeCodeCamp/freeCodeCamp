@@ -41,6 +41,7 @@ import {
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
+  FCC_ENABLE_CLASSROOM,
   FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
@@ -237,11 +238,13 @@ export const build = async (
   });
   void fastify.register(examEnvironmentOpenRoutes);
 
-  // Service-to-service app routes (API key auth):
-  void fastify.register(async function (fastify) {
-    fastify.addHook('onRequest', fastify.validateBearerToken);
-    await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
-  });
+  // Service-to-service app routes (API key auth), gated by the classroom flag:
+  if (FCC_ENABLE_CLASSROOM ?? fastify.gb.isOn('classroom-mode')) {
+    void fastify.register(async function (fastify) {
+      fastify.addHook('onRequest', fastify.validateBearerToken);
+      await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
+    });
+  }
 
   if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);

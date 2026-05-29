@@ -166,15 +166,17 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'fastify_api_sdk_client_key_from_growthbook_dashboard',
     'The GROWTHBOOK_FASTIFY_CLIENT_KEY env should be changed from the default value.'
   );
-  assert.ok(
-    process.env.TPA_API_BEARER_TOKEN,
-    'TPA_API_BEARER_TOKEN should be set.'
-  );
-  assert.notEqual(
-    process.env.TPA_API_BEARER_TOKEN,
-    'tpa_api_bearer_token_from_dashboard',
-    'The TPA_API_BEARER_TOKEN env should be changed from the default value.'
-  );
+  if (process.env.FCC_ENABLE_CLASSROOM === 'true') {
+    assert.ok(
+      process.env.TPA_API_BEARER_TOKEN,
+      'TPA_API_BEARER_TOKEN should be set.'
+    );
+    assert.notEqual(
+      process.env.TPA_API_BEARER_TOKEN,
+      'tpa_api_bearer_token_from_dashboard',
+      'The TPA_API_BEARER_TOKEN env should be changed from the default value.'
+    );
+  }
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
@@ -210,6 +212,9 @@ export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
 );
 export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES
+);
+export const FCC_ENABLE_CLASSROOM = undefinedOrBool(
+  process.env.FCC_ENABLE_CLASSROOM
 );
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
 export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
