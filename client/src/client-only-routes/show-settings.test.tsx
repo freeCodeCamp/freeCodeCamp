@@ -11,14 +11,12 @@ const testUsername = 'testuser';
 
 vi.mock('../analytics');
 vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: false }),
   useFeatureIsOn: () => false,
   IfFeatureEnabled: ({ children: _children }: { children: React.ReactNode }) =>
     null
 }));
 vi.mock('../utils/get-words');
-vi.mock('@growthbook/growthbook-react', () => ({
-  useFeature: () => ({ on: false })
-}));
 
 const { apiLocation } = envData;
 
