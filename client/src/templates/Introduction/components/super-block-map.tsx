@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '@freecodecamp/ui';
+import { Col, Row, Spacer } from '@freecodecamp/ui';
 
 import {
   certificationCollectionSuperBlocks,
@@ -28,11 +28,13 @@ import Block from './block';
 import CertChallenge from './cert-challenge';
 import { SuperBlockAccordion } from './super-block-accordion';
 import './super-block-accordion.css';
+import SuperBlockSearch from './super-block-search';
 
 type Challenge = {
   block: string;
   blockLabel?: BlockLabel;
   blockLayout: BlockLayouts;
+  chapter: string;
   challengeType: number;
   dashedName: string;
   fields: { slug: string };
@@ -59,13 +61,15 @@ const BlockList = ({
   showCertification,
   superBlock,
   superBlockChallenges,
-  user
+  user,
+  expandAll = false
 }: {
   disabledBlocks: string[];
   showCertification: boolean;
   superBlock: SuperBlocks;
   superBlockChallenges: Challenge[];
   user: User | null;
+  expandAll?: boolean;
 }) => {
   const visibleBlocks = useMemo(() => {
     const uniqueBlocks = Array.from(
@@ -92,6 +96,7 @@ const BlockList = ({
             blockLabel={blockLabel}
             challenges={blockChallenges}
             superBlock={superBlock}
+            expandAll={expandAll}
           />
         );
       })}
@@ -113,6 +118,22 @@ export const SuperBlockMap = ({
   user
 }: SuperBlockMapProps) => {
   const { t } = useTranslation();
+  const [searchTerm, setSearchTerm] = useState('');
+  const isSearching = searchTerm.length > 0;
+
+  const filteredChallenges = useMemo(() => {
+    if (!isSearching) return superBlockChallenges;
+    return superBlockChallenges.filter(challenge => {
+      const challengeTitle = challenge.title.toLowerCase();
+      const blockTitle = t(
+        `intro:${superBlock}.blocks.${challenge.block}.title`
+      ).toLowerCase();
+      return (
+        challengeTitle.includes(searchTerm) || blockTitle.includes(searchTerm)
+      );
+    });
+  }, [isSearching, searchTerm, superBlockChallenges, superBlock, t]);
+
   if (chapterBasedSuperBlocks.includes(superBlock)) {
     if (!structure) return null;
 
@@ -160,6 +181,15 @@ export const SuperBlockMap = ({
 
     return (
       <>
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <SuperBlockSearch
+              onSearch={setSearchTerm}
+              resultCount={filteredChallenges.length}
+              isSearching={isSearching}
+            />
+          </Col>
+        </Row>
         {certificationCollectionSuperBlocks.includes(superBlock) && (
           <>
             <ul className='super-block-accordion requirement-list'>
@@ -174,24 +204,37 @@ export const SuperBlockMap = ({
         )}
 
         <SuperBlockAccordion
-          challenges={superBlockChallenges}
+          challenges={filteredChallenges}
           superBlock={superBlock}
           structure={structure}
           chosenBlock={initialExpandedBlock}
           completedChallengeIds={completedChallengeIds}
+          expandAll={isSearching}
         />
       </>
     );
   }
 
   return (
-    <BlockList
-      disabledBlocks={disabledBlocks}
-      showCertification={showCertification}
-      superBlock={superBlock}
-      superBlockChallenges={superBlockChallenges}
-      user={user}
-    />
+    <>
+      <Row>
+        <Col sm={10} smOffset={1} xs={12}>
+          <SuperBlockSearch
+            onSearch={setSearchTerm}
+            resultCount={filteredChallenges.length}
+            isSearching={isSearching}
+          />
+        </Col>
+      </Row>
+      <BlockList
+        disabledBlocks={disabledBlocks}
+        showCertification={showCertification}
+        superBlock={superBlock}
+        superBlockChallenges={filteredChallenges}
+        user={user}
+        expandAll={isSearching}
+      />
+    </>
   );
 };
 
