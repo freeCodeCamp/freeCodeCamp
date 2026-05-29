@@ -540,7 +540,6 @@ type ChallengeNodeChallengeSceneCommandsPosition {
 type ChallengeNodeChallengeFillInTheBlank @derivedTypes {
   sentence: String
   blanks: [ChallengeNodeChallengeFillInTheBlankBlanks]
-  inputType: String
 }
 
 type ChallengeNodeChallengeFillInTheBlankBlanks {

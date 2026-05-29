@@ -35,6 +35,7 @@ import {
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
 } from '../../../__fixtures__/exam-environment-exam.js';
+import * as getChallengesModule from '../../utils/get-challenges.js';
 import { getMsTranscriptApiUrl } from './user.js';
 
 const mockedFetch = vi.fn();
@@ -769,6 +770,345 @@ describe('userRoutes', () => {
       });
 
       test.todo('POST resets the user to the default state');
+    });
+
+    describe('/account/reset-module', () => {
+      const testChallengesBlockOne = [
+        {
+          id: 'block-one-challenge-1',
+          completedDate: 1520002973119,
+          solution: null,
+          challengeType: 5,
+          files: []
+        },
+        {
+          id: 'block-one-challenge-2',
+          completedDate: 1520002973120,
+          solution: null,
+          challengeType: 5,
+          files: []
+        }
+      ];
+
+      const testChallengesBlockTwo = [
+        {
+          id: 'block-two-challenge-1',
+          completedDate: 1520002973121,
+          solution: null,
+          challengeType: 5,
+          files: []
+        },
+        {
+          id: 'block-two-challenge-2',
+          completedDate: 1520002973122,
+          solution: null,
+          challengeType: 5,
+          files: []
+        }
+      ];
+
+      const savedChallengesBlockOne = [
+        {
+          id: 'block-one-challenge-1',
+          lastSavedDate: 123,
+          files: [
+            {
+              contents: 'test-contents',
+              ext: 'js',
+              history: ['indexjs'],
+              key: 'indexjs',
+              name: 'test-name'
+            }
+          ]
+        }
+      ];
+
+      const partiallyCompletedChallengesBlockOne = [
+        {
+          id: 'block-one-challenge-1',
+          completedDate: 1520002973119
+        },
+        {
+          id: 'block-one-challenge-2',
+          completedDate: 1520002973120
+        }
+      ];
+
+      let getChallengeIdsByBlockSpy: MockInstance;
+
+      beforeEach(async () => {
+        // Mock getChallengeIdsByBlock to return test challenge IDs
+        getChallengeIdsByBlockSpy = vi
+          .spyOn(getChallengesModule, 'getChallengeIdsByBlock')
+          .mockImplementation((blockId: string) => {
+            if (blockId === 'block-one') {
+              return ['block-one-challenge-1', 'block-one-challenge-2'];
+            }
+            if (blockId === 'block-two') {
+              return ['block-two-challenge-1', 'block-two-challenge-2'];
+            }
+            return [];
+          });
+
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: {
+            completedChallenges: [
+              ...testChallengesBlockOne,
+              ...testChallengesBlockTwo
+            ],
+            savedChallenges: savedChallengesBlockOne,
+            partiallyCompletedChallenges: partiallyCompletedChallengesBlockOne,
+            isRespWebDesignCert: true
+          }
+        });
+      });
+
+      afterEach(() => {
+        getChallengeIdsByBlockSpy.mockRestore();
+      });
+
+      test('DELETE returns 400 for missing blockIds', async () => {
+        const response = await superDelete('/account/reset-module').send({});
+
+        expect(response.status).toBe(400);
+      });
+
+      test('DELETE returns 400 for empty blockIds array', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: []
+        });
+
+        expect(response.status).toBe(400);
+      });
+
+      test('DELETE returns 400 for blockIds containing an empty string', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: ['']
+        });
+
+        expect(response.status).toBe(400);
+      });
+
+      test('DELETE returns 400 when blockIds exceeds maxItems', async () => {
+        const tooMany = Array.from({ length: 501 }, (_, i) => `block-${i}`);
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: tooMany
+        });
+
+        expect(response.status).toBe(400);
+      });
+
+      test('DELETE returns 200 with removedChallengeIds', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        expect(response.status).toBe(200);
+        expect(response.body).toStrictEqual({
+          removedChallengeIds: expect.arrayContaining([
+            'block-one-challenge-1',
+            'block-one-challenge-2'
+          ])
+        });
+      });
+
+      test('DELETE removes only challenges from the specified block', async () => {
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(user?.completedChallenges).toHaveLength(2);
+        const challengeIds = (
+          user?.completedChallenges as { id: string }[]
+        ).map(c => c.id);
+        expect(challengeIds).toContain('block-two-challenge-1');
+        expect(challengeIds).toContain('block-two-challenge-2');
+        expect(challengeIds).not.toContain('block-one-challenge-1');
+        expect(challengeIds).not.toContain('block-one-challenge-2');
+      });
+
+      test('DELETE removes saved challenges from the specified block', async () => {
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(user?.savedChallenges).toHaveLength(0);
+      });
+
+      test('DELETE removes partially completed challenges from the specified block', async () => {
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(user?.partiallyCompletedChallenges).toHaveLength(0);
+      });
+
+      test('DELETE keeps certifications intact', async () => {
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(user?.isRespWebDesignCert).toBe(true);
+      });
+
+      test('DELETE keeps progress timestamps intact', async () => {
+        const userBefore = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        const userAfter = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(userAfter?.progressTimestamps).toEqual(
+          userBefore?.progressTimestamps
+        );
+      });
+
+      test('DELETE does not delete userTokens', async () => {
+        await fastifyTestInstance.prisma.userToken.create({
+          data: {
+            created: new Date(),
+            id: '123',
+            ttl: 1000,
+            userId: defaultUserId
+          }
+        });
+
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        expect(await fastifyTestInstance.prisma.userToken.count()).toBe(1);
+
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { userId: defaultUserId }
+        });
+      });
+
+      test('DELETE does not delete surveys', async () => {
+        await fastifyTestInstance.prisma.survey.create({
+          data: {
+            userId: defaultUserId,
+            title: 'Test Survey',
+            responses: []
+          }
+        });
+
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        expect(await fastifyTestInstance.prisma.survey.count()).toBe(1);
+
+        await fastifyTestInstance.prisma.survey.deleteMany({
+          where: { userId: defaultUserId }
+        });
+      });
+
+      test('DELETE handles multiple blocks in a single call', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: ['block-one', 'block-two']
+        });
+
+        expect(response.status).toBe(200);
+        expect(response.body.removedChallengeIds).toEqual(
+          expect.arrayContaining([
+            'block-one-challenge-1',
+            'block-one-challenge-2',
+            'block-two-challenge-1',
+            'block-two-challenge-2'
+          ])
+        );
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(user?.completedChallenges).toHaveLength(0);
+      });
+
+      test('DELETE dedupes overlapping blockIds', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: ['block-one', 'block-one']
+        });
+
+        expect(response.status).toBe(200);
+        expect(response.body.removedChallengeIds).toHaveLength(2);
+      });
+
+      test('DELETE proceeds when only some blockIds are valid', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: ['block-one', 'non-existent-block']
+        });
+
+        expect(response.status).toBe(200);
+        expect(response.body.removedChallengeIds).toEqual(
+          expect.arrayContaining([
+            'block-one-challenge-1',
+            'block-one-challenge-2'
+          ])
+        );
+      });
+
+      test('DELETE only affects the authenticated user', async () => {
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...testUserData,
+            email: 'another@user.com',
+            completedChallenges: testChallengesBlockOne
+          }
+        });
+
+        await superDelete('/account/reset-module').send({
+          blockIds: ['block-one']
+        });
+
+        const otherUser = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: 'another@user.com' }
+        });
+
+        expect(otherUser?.completedChallenges).toHaveLength(2);
+
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: { email: 'another@user.com' }
+        });
+      });
+
+      test('DELETE returns 400 for non-existent blockId', async () => {
+        const response = await superDelete('/account/reset-module').send({
+          blockIds: ['non-existent-block']
+        });
+
+        expect(response.status).toBe(400);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: testUserData.email }
+        });
+
+        expect(user?.completedChallenges).toHaveLength(4);
+      });
     });
 
     describe('/user/user-token', () => {
@@ -1611,6 +1951,7 @@ Thanks and regards,
       { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
+      { path: '/account/reset-module', method: 'DELETE' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
       { path: '/user/ms-username', method: 'DELETE' },
