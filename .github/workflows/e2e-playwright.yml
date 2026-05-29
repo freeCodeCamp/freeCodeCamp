@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [24]
+        node-version: [24.15.0]
 
     steps:
       - name: Checkout
@@ -116,7 +116,7 @@ jobs:
       matrix:
         # Extend this to include firefox and webkit once chromium is working.
         browsers: [chromium]
-        node-version: [24]
+        node-version: [24.15.0]
 
     steps:
       - name: Set Action Environment Variables
