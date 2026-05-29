@@ -593,7 +593,7 @@ It has the highest specificity because it can style all the elements on a page.
 
 ---
 
-It contributes 1 to all parts of the specificity value. 
+It contributes 1 to all parts of the specificity value.
 
 ---
 
@@ -827,7 +827,7 @@ They are written within the `style` section within the `head` element.
 
 #### --text--
 
-What is the order for applying the `padding` property when using the shorthand syntax? 
+What is the order for applying the `padding` property when using the shorthand syntax?
 
 #### --distractors--
 
@@ -849,7 +849,7 @@ What is the order for applying the `padding` property when using the shorthand s
 
 #### --text--
 
-What is the order for applying the `margin` property when using the shorthand syntax? 
+What is the order for applying the `margin` property when using the shorthand syntax?
 
 #### --distractors--
 
