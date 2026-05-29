@@ -40,7 +40,8 @@
         "SHOW_UPCOMING_CHANGES",
         "SOCRATES_API_KEY",
         "SOCRATES_ENDPOINT",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     },
     "test": {
@@ -82,7 +83,8 @@
         "SHOW_UPCOMING_CHANGES",
         "SOCRATES_API_KEY",
         "SOCRATES_ENDPOINT",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     }
   }
