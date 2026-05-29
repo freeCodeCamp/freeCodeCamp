@@ -78,7 +78,7 @@
     "mock-require": "3.0.3",
     "ora": "5.4.1",
     "polka": "0.5.2",
-    "puppeteer": "22.15.0",
+    "puppeteer": "25.0.4",
     "sirv": "3.0.2",
     "typescript-5.9.2": "npm:typescript@5.9.2",
     "vitest": "4.1.5"
