@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useStaticQuery } from 'gatsby';
@@ -39,6 +39,7 @@ const baseProps = {
   submitChallenge: vi.fn(),
   askSocrates: vi.fn(),
   saveChallenge: vi.fn(),
+  attempts: 0,
   tests: passingTests,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
@@ -56,6 +57,13 @@ const baseProps = {
 };
 
 vi.mock('../../../utils/get-words');
+
+const getLiveRegion = () => {
+  const region = screen.getByTestId('independent-lower-jaw-live-region');
+  expect(region).toHaveAttribute('aria-live', 'polite');
+  expect(region).toHaveAttribute('aria-atomic', 'true');
+  return region;
+};
 
 describe('<IndependentLowerJaw />', () => {
   beforeEach(() => {
@@ -156,5 +164,135 @@ describe('<IndependentLowerJaw />', () => {
 
     expect(screen.getByText(/2\/3/)).toBeInTheDocument();
     expect(screen.getByText(/learn\.hints-used-today/)).toBeInTheDocument();
+  });
+
+  it('announces hint text through a live region', async () => {
+    const failingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+
+    render(
+      <IndependentLowerJaw {...baseProps} tests={failingTests} />,
+      createStore()
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+  });
+
+  it('re-announces the same hint after each check attempt', async () => {
+    const firstFailingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+    const thirdFailingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+    const secondFailingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+
+    const { rerender } = render(
+      <IndependentLowerJaw {...baseProps} tests={firstFailingTests} />,
+      createStore()
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+
+    rerender(
+      <IndependentLowerJaw
+        {...baseProps}
+        attempts={1}
+        tests={secondFailingTests}
+      />
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+
+    rerender(
+      <IndependentLowerJaw
+        {...baseProps}
+        attempts={2}
+        tests={thirdFailingTests}
+      />
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+  });
+
+  it('announces completion text through a hidden live region', async () => {
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent(
+        /learn\.congratulations-code-passes .* learn\.percent-complete/
+      )
+    );
+  });
+
+  it('does not reset the completion live region on passing rerenders', async () => {
+    const firstPassingTests: Test[] = [
+      { pass: true, text: 'test', testString: 'test' }
+    ];
+    const secondPassingTests: Test[] = [
+      { pass: true, text: 'test', testString: 'test' }
+    ];
+
+    const { rerender } = render(
+      <IndependentLowerJaw {...baseProps} tests={firstPassingTests} />,
+      createStore()
+    );
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent(
+        /learn\.congratulations-code-passes .* learn\.percent-complete/
+      )
+    );
+
+    rerender(<IndependentLowerJaw {...baseProps} tests={secondPassingTests} />);
+
+    expect(getLiveRegion()).toHaveTextContent(
+      /learn\.congratulations-code-passes .* learn\.percent-complete/
+    );
   });
 });
