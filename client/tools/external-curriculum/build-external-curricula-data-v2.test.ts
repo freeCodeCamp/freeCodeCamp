@@ -2,7 +2,7 @@ import path from 'path';
 import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
-import { describe, test, expect, vi } from 'vitest';
+import { afterEach, describe, test, expect, vi } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
@@ -36,6 +36,9 @@ const intros = JSON.parse(
 ) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
 
   const validateSuperBlock = superblockSchemaValidator();
@@ -276,13 +279,14 @@ describe('external curriculum data build', () => {
       next: SuperBlockStage.Next
     };
 
-    const stages = Object.keys(orderedSuperBlockInfo);
+    const info = orderedSuperBlockInfo();
+    const stages = Object.keys(info);
 
     expect(stages).not.toContain('next');
     expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
-      const superBlockDashedNames = orderedSuperBlockInfo[stage]?.map(
+      const superBlockDashedNames = info[stage]?.map(
         superBlock => superBlock.dashedName
       );
 
@@ -309,31 +313,19 @@ describe('external curriculum data build', () => {
     ).toBeGreaterThan(0);
   });
 
-  test('available superblocks should use the configured curriculum locale', async () => {
-    const originalCurriculumLocale = process.env.CURRICULUM_LOCALE;
-    process.env.CURRICULUM_LOCALE = Languages.Espanol;
+  test('available superblocks should use the configured curriculum locale', () => {
+    vi.stubEnv('CURRICULUM_LOCALE', Languages.Espanol);
 
-    try {
-      vi.resetModules();
-      const { orderedSuperBlockInfo: spanishOrderedSuperBlockInfo } =
-        await import('./build-external-curricula-data-v2');
-      const spanishIntros = readCurriculumIntros(Languages.Espanol);
-      const englishIntros = readCurriculumIntros(Languages.English);
+    const spanishOrderedSuperBlockInfo = orderedSuperBlockInfo();
+    const spanishIntros = readCurriculumIntros(Languages.Espanol);
+    const englishIntros = readCurriculumIntros(Languages.English);
 
-      expect(spanishOrderedSuperBlockInfo.core[0]).toMatchObject({
-        dashedName: SuperBlocks.RespWebDesignV9,
-        title: spanishIntros[SuperBlocks.RespWebDesignV9].title
-      });
-      expect(spanishOrderedSuperBlockInfo.core[0]?.title).not.toEqual(
-        englishIntros[SuperBlocks.RespWebDesignV9].title
-      );
-    } finally {
-      if (originalCurriculumLocale) {
-        process.env.CURRICULUM_LOCALE = originalCurriculumLocale;
-      } else {
-        delete process.env.CURRICULUM_LOCALE;
-      }
-      vi.resetModules();
-    }
+    expect(spanishOrderedSuperBlockInfo.core[0]).toMatchObject({
+      dashedName: SuperBlocks.RespWebDesignV9,
+      title: spanishIntros[SuperBlocks.RespWebDesignV9].title
+    });
+    expect(spanishOrderedSuperBlockInfo.core[0]?.title).not.toEqual(
+      englishIntros[SuperBlocks.RespWebDesignV9].title
+    );
   });
 });
