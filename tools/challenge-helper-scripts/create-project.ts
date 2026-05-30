@@ -134,8 +134,8 @@ async function createProject(projectArgs: CreateProjectArgs) {
   }
 
   if (
-    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
-      projectArgs.blockLabel) == null
+    chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
+    projectArgs.blockLabel == null
   ) {
     throw new Error(
       'Missing argument: blockLabel when updating intro markdown'
