@@ -138,6 +138,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
   const guideTitle = `${t(`intro:${superBlock}.blocks.${block}.title`)} - ${title}`;
+  const guideUrl = getGuideUrl({ forumTopicId, title: guideTitle });
 
   return (
     <Hotkeys containerRef={container}>
@@ -170,7 +171,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title: guideTitle })}
+                guideUrl={guideUrl}
                 forumTopicId={forumTopicId}
               />
               <br />
@@ -181,6 +182,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
               challengeTitle={title}
               challengeBlock={block}
               superBlock={superBlock}
+              guideUrl={guideUrl}
             />
           </Row>
         </Container>
