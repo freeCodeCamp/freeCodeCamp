@@ -180,8 +180,7 @@ To define the character encoding of the document.
 To set the language of an element based on its parent element.
 
 #### --answer--
-
-To apply styles to elements based on this custom data attribute.
+To store custom data on an HTML element that CSS or JavaScript can then use.
 
 ### --question--
 
