@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "review-python-installation",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockLabel": "review",
+  "challengeOrder": [
+    { "id": "69fd80a1798f22441459a70f", "title": "Python Installation Review" }
+  ]
+}
