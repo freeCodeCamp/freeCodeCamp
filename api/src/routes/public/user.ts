@@ -1,6 +1,6 @@
 import { Experience, Portfolio } from '@prisma/client';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { omit } from 'lodash-es';
 
 import { isRestricted } from '../helpers/is-restricted.js';
