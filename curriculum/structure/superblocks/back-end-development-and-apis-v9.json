@@ -52,7 +52,8 @@
           "blocks": [
             "lecture-understanding-rest-api-and-web-services",
             "lecture-working-with-express",
-            "lecture-understanding-routing-in-express-js"
+            "lecture-understanding-routing-in-express-js",
+            "quiz-introduction-to-express"
           ]
         },
         {
