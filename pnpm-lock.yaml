@@ -128,6 +128,9 @@ importers:
       ajv-formats:
         specifier: 3.0.1
         version: 3.0.1(ajv@8.20.0)
+      bson:
+        specifier: 7.2.0
+        version: 7.2.0
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
@@ -158,9 +161,6 @@ importers:
       lodash-es:
         specifier: 4.18.1
         version: 4.18.1
-      mongodb:
-        specifier: 6.21.0
-        version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
       nanoid:
         specifier: '3'
         version: 3.3.12
