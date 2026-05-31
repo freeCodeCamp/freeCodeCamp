@@ -15,3 +15,79 @@
 .accordion-block-expanded .map-challenges-grid {
   margin: 0 15px 18px;
 }
+
+.block-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.block-header-wrapper .block-grid-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.block-reset-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: var(--foreground-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    color 0.2s,
+    background-color 0.2s;
+}
+
+.block-header-wrapper:hover .block-reset-button,
+.chapter-header-wrapper:hover .block-reset-button,
+.module-header-wrapper:hover .block-reset-button {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.block-reset-button:focus-visible {
+  opacity: 1;
+  color: var(--primary-color);
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
+.block-header-wrapper .block-reset-button:hover,
+.chapter-header-wrapper .block-reset-button:hover,
+.module-header-wrapper .block-reset-button:hover {
+  color: var(--danger-color);
+  background-color: var(--quaternary-background);
+}
+
+.block-reset-button:disabled {
+  opacity: 0;
+  cursor: not-allowed;
+}
+
+.block-header-wrapper:hover .block-reset-button:disabled,
+.chapter-header-wrapper:hover .block-reset-button:disabled,
+.module-header-wrapper:hover .block-reset-button:disabled,
+.block-reset-button:disabled:focus-visible {
+  opacity: 0.3;
+  color: var(--primary-color);
+}
+
+.block-reset-button:disabled:hover {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .block-reset-button {
+    display: none;
+  }
+}
