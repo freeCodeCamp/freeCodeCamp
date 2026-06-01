@@ -7284,6 +7284,12 @@
           "Review web services, REST, microservices, and Express.js routing before you take the quiz."
         ]
       },
+      "quiz-introduction-to-express": {
+        "title": "Introduction to Express Quiz",
+        "intro": [
+          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+        ]
+      },
       "lecture-understanding-error-handling-and-health-checks": {
         "title": "Understanding Error Handling and Health Checks",
         "intro": [
