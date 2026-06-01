@@ -179,7 +179,7 @@ Putting an underscore or hyphen between words.
 
 ---
 
-Use a casing style such as camelCase and sticking with it.
+Using a consistent casing style such as camelCase.
 
 ---
 
@@ -237,7 +237,7 @@ Right-click on it and select the Delete/Move to trash option.
 
 #### --text--
 
-What is a RAM?
+What is RAM?
 
 #### --distractors--
 
@@ -503,7 +503,7 @@ A mouse or touchpad
 
 #### --text--
 
-What is a type of ISP provider?
+What is a type of ISP?
 
 #### --distractors--
 
@@ -515,7 +515,7 @@ Fiber optic
 
 ---
 
-Dial up
+Dial-up
 
 #### --answer--
 
@@ -621,7 +621,7 @@ Linux
 
 ---
 
-MacOS
+macOS
 
 ---
 
@@ -651,7 +651,7 @@ A tool for finding web components.
 
 #### --answer--
 
-A web based tool for searching information on the internet.
+A web-based tool for searching information on the internet.
 
 ### --question--
 
@@ -691,7 +691,7 @@ GitLab
 
 ---
 
-BitBucket
+Bitbucket
 
 #### --answer--
 
@@ -701,7 +701,7 @@ Ona
 
 #### --text--
 
-Which of the following is not primarily a part of an integrated development environment?
+Which of the following is NOT primarily a part of an integrated development environment?
 
 #### --distractors--
 
