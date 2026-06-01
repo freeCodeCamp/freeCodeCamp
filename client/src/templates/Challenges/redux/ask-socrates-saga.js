@@ -3,13 +3,18 @@ import { takeEvery, select, call, put } from 'redux-saga/effects';
 import {
   challengeDataSelector,
   challengeTestsSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  socratesHintStateSelector
 } from './selectors';
 
 import { buildChallenge } from '@freecodecamp/challenge-builder/build';
 import { getSocratesHint } from '../../../utils/ajax';
+import callGA from '../../../analytics/call-ga';
 
-import { isSocratesOnSelector } from '../../../redux/selectors';
+import {
+  isDonatingSelector,
+  isSocratesOnSelector
+} from '../../../redux/selectors';
 import { askSocratesError, askSocratesComplete } from './actions';
 
 // Maps server-side error keys to client-side translation keys.
@@ -42,6 +47,9 @@ export function* askSocratesSaga() {
     const challengeData = yield select(challengeDataSelector);
     const tests = yield select(challengeTestsSelector);
     const { description } = yield select(challengeMetaSelector);
+    const isDonating = !!(yield select(isDonatingSelector));
+    const socratesHintState = (yield select(socratesHintStateSelector)) || {};
+    const { attempts = null, limit = null } = socratesHintState;
 
     const hasCheckedCode = tests.some(test => test.pass || test.err);
     if (!hasCheckedCode) {
@@ -94,6 +102,15 @@ export function* askSocratesSaga() {
     if (userInput) {
       optimizedPayload.userInput = userInput;
     }
+
+    callGA({
+      event: 'CallSocrates',
+      action: 'Socrates Request Sent',
+      isDonating,
+      attempts,
+      limit,
+      optimizedRequest: optimizedPayload
+    });
 
     const response = yield call(getSocratesHint, optimizedPayload);
     const responseData = response?.data;
