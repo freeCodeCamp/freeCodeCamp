@@ -1,4 +1,4 @@
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 
 // This is trivial, but makes it simple to refactor if we swap monogodb for
 // bson, say.
