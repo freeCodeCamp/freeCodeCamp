@@ -78,6 +78,8 @@ import { useSubmit } from '../utils/fetch-all-curriculum-data';
 let monacoJson: typeof monacoJsonApi | null = null;
 let monacoTypescript: typeof monacoTypescriptApi | null = null;
 
+// Monaco 0.55 exposes JSON and TypeScript defaults from their contribution
+// modules, so load those modules before react-monaco-editor mounts.
 const loadMonacoJson = async (): Promise<typeof monacoJsonApi> =>
   (await import('monaco-editor/esm/vs/language/json/monaco.contribution.js')) as unknown as typeof monacoJsonApi;
 
