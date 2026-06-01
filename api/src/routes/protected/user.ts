@@ -1,5 +1,5 @@
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { FastifyInstance, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library.js';

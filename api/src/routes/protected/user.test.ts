@@ -14,7 +14,7 @@ import {
 } from 'vitest';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { omit } from 'lodash-es';
 
 import { createUserInput } from '../../utils/create-user.js';
