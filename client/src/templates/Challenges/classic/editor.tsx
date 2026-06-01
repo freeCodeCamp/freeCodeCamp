@@ -68,6 +68,7 @@ import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
+import { attachContentWidgetEvents } from './content-widget-events';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
 
@@ -340,6 +341,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const submitChallenge = useSubmit();
 
+  const detachUpperJawEventsRef = useRef<(() => void) | null>(null);
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -358,6 +360,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   testRef.current = props.tests;
   const attemptsRef = useRef<number>(0);
   attemptsRef.current = props.attempts;
+
+  useEffect(() => {
+    return () => {
+      detachUpperJawEventsRef.current?.();
+      detachUpperJawEventsRef.current = null;
+    };
+  }, []);
 
   const challengeFile = challengeFiles?.find(
     challengeFile => challengeFile.fileKey === fileKey
@@ -392,7 +401,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       verticalScrollbarSize: getScrollbarWidth(),
       // this helps the scroll bar fit properly between the arrows,
       // but doesn't do anything for the arrows themselves
-      arrowSize: getScrollbarWidth()
+      arrowSize: getScrollbarWidth(),
+      alwaysConsumeMouseWheel: false
     },
     parameterHints: {
       enabled: false
@@ -648,6 +658,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
+        const shouldShowCompletionModal = !props.showIndependentLowerJaw;
         if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
@@ -655,7 +666,9 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({ showCompletionModal: true });
+          props.executeChallenge({
+            showCompletionModal: shouldShowCompletionModal
+          });
         }
       }
     });
@@ -905,6 +918,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       descContainer.classList.add('mathjax-support');
     }
     domNode.classList.add('editor-upper-jaw');
+    detachUpperJawEventsRef.current?.();
+    detachUpperJawEventsRef.current = attachContentWidgetEvents(domNode);
     domNode.appendChild(descContainer);
     if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
@@ -924,6 +939,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     obs.observe(domNode);
 
     domNode.style.userSelect = 'text';
+    domNode.style.webkitUserSelect = 'text';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${getEditorContentWidth(editor)}px`;
@@ -1176,7 +1192,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode: HTMLDivElement,
     // If getTop function is not provided then no positioning will be done here.
     // This allows scroll gutter to do its positioning elsewhere.
-    getTop?: () => string
+    getTop?: () => string,
+    suppressMouseDown = false
   ) => {
     const getId = () => id;
     const getDomNode = () => domNode;
@@ -1200,7 +1217,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       getId,
       getDomNode,
       getPosition,
-      afterRender
+      afterRender,
+      suppressMouseDown
     };
   };
 
@@ -1217,7 +1235,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         editor,
         'description.widget',
         descriptionNode,
-        getDescriptionZoneTop
+        getDescriptionZoneTop,
+        true
       );
       // this order (add widget, change zone) is necessary, since the zone
       // relies on the domnode being in the DOM to calculate its height - that
