@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-how-to-build-an-npm-module",
+  "challengeOrder": [
+    {
+      "id": "8172c795e4486122416ef613",
+      "title": "Learn How to Build an NPM Module"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

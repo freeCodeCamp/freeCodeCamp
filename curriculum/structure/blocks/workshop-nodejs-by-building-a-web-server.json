@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-nodejs-by-building-a-web-server",
+  "challengeOrder": [
+    {
+      "id": "e050e8ccbfc80e1a3561f787",
+      "title": "Learn Node.js by Building a Web Server"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}
