@@ -381,6 +381,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
+    editContext: false,
     guides: {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
