@@ -7278,6 +7278,12 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
+      "quiz-introduction-to-express": {
+        "title": "Introduction to Express Quiz",
+        "intro": [
+          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+        ]
+      },
       "lecture-understanding-error-handling-and-health-checks": {
         "title": "Understanding Error Handling and Health Checks",
         "intro": [
