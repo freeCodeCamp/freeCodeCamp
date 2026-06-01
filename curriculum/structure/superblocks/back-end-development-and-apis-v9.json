@@ -60,10 +60,7 @@
         {
           "dashedName": "express-middleware",
           "comingSoon": true,
-          "blocks": [
-            "review-express-middleware",
-            "quiz-express-middleware"
-          ]
+          "blocks": ["review-express-middleware", "quiz-express-middleware"]
         },
         {
           "dashedName": "error-handling-in-express",
