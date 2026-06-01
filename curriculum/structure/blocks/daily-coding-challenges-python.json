@@ -1180,6 +1180,74 @@
     {
       "id": "69f90c1329a94b37e2a2086d",
       "title": "Challenge 294: Parentheses Combinations"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0bf",
+      "title": "Challenge 295: Schema Validator Part 1"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0c0",
+      "title": "Challenge 296: Schema Validator Part 2"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0c1",
+      "title": "Challenge 297: Schema Validator Part 3"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0c2",
+      "title": "Challenge 298: Schema Validator Part 4"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0c3",
+      "title": "Challenge 299: Schema Validator Part 5"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0c4",
+      "title": "Challenge 300: Schema Validator Part 6"
+    },
+    {
+      "id": "6a0dcc730cb92a616f86f0c5",
+      "title": "Challenge 301: Last Load"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef66",
+      "title": "Challenge 302: Jet Lagged"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef67",
+      "title": "Challenge 303: Roommates"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef68",
+      "title": "Challenge 304: Itinerary Arrangements"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef69",
+      "title": "Challenge 305: Idea Rankings"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef6a",
+      "title": "Challenge 306: HTML Content Extractor"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef6b",
+      "title": "Challenge 307: Zoning Regulations"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef6c",
+      "title": "Challenge 308: Credit Card Validator"
+    },
+    {
+      "id": "6a0dcd03ee4e68698080ef6d",
+      "title": "Challenge 309: Number Sort"
+    },
+    {
+      "id": "6a151d32d772271dd2448c2c",
+      "title": "Challenge 310: British to American"
+    },
+    {
+      "id": "6a151d32d772271dd2448c2d",
+      "title": "Challenge 311: Spellcaster"
     }
   ]
 }

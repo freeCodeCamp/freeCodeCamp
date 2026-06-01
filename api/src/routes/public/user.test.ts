@@ -1,5 +1,5 @@
 import type { Prisma } from '@prisma/client';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { omit } from 'lodash-es';
 import {
   describe,
