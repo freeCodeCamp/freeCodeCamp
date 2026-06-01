@@ -5889,6 +5889,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-debugging-library-search": {
+        "title": "Design a Library Book Search",
+        "intro": ["Design a Library Book Search", ""]
       }
     }
   },

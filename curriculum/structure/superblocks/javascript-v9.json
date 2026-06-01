@@ -194,6 +194,7 @@
           "dashedName": "debugging-javascript",
           "blocks": [
             "lecture-debugging-techniques",
+            "workshop-debugging-library-search",
             "lab-random-background-color-changer",
             "review-debugging-javascript",
             "quiz-debugging-javascript"
