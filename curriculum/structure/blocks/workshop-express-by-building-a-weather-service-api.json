@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-express-by-building-a-weather-service-api",
+  "challengeOrder": [
+    {
+      "id": "2ee4f38aa806d51f077d96cc",
+      "title": "Learn Express by Building a Weather Service API"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}
