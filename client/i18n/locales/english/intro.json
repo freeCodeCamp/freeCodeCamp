@@ -7296,6 +7296,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
       "quiz-error-handling-in-express": {
         "title": "Error Handling in Express Quiz",
         "intro": [
