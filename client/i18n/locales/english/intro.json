@@ -6805,7 +6805,7 @@
         "intro": ["Pass this exam to earn your Python Certification"]
       },
       "workshop-string-method": {
-        "title": "Build an Employee Data Formatter",
+        "title": "Build an Employee Profile Validator",
         "intro": [
           "In this workshop, you will use Python string methods to validate and format data from an employee profile."
         ]
