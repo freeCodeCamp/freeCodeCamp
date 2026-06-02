@@ -125,6 +125,7 @@
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -339,6 +340,7 @@
       "keyboard-shortcuts": "Tastaturkurzbefehle aktivieren"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Account",
       "certs": "Zertifikate",
       "legacy-certs": "Alte Zertifikate",
@@ -469,13 +471,16 @@
     },
     "completeness": {
       "heading": "Profile {{percentage}}% complete",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Add your name",
       "location": "Add your location",
       "picture": "Upload a profile picture",
       "about": "Write an about section",
       "social": "Add a social link",
       "portfolio": "Add a portfolio project",
-      "experience": "Add your experience"
+      "experience": "Add your experience",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -599,8 +604,8 @@
     "github-required": "<0>Erstelle ein GitHub</0>-Konto, wenn du noch keines hast. Du benötigst es, wenn du die virtuelle Linux-Server-Maschine erstellst. Dieser Vorgang kann ein paar Minuten dauern.",
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
-      "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below this list",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -608,19 +613,20 @@
       "step-7": "Clicking on the <0>Command Palette</0> option,",
       "step-8": "and running the <0>CodeRoad: Start</0> command",
       "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "Learn more about <0>Codespace workspaces</0>.",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "In the <0>Value</0> field, paste your token",
       "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces Setup"
     },
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below this list",
+      "step-2": "Click the start button below",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -628,7 +634,7 @@
       "step-7": "Clicking on the <0>Command Palette</0> option,",
       "step-8": "and running the <0>CodeRoad: Start</0> command",
       "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "Learn more about <0>Ona workspaces.</0>",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
@@ -753,6 +759,11 @@
     "archive": {
       "title": "Archived Coursework",
       "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -800,7 +811,7 @@
     "unfinished-certification": "This certification is currently in active development. While there isn't a claimable certification available at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "consider-donating": "Please consider donating to support the completion of its development.",
     "unfinished-certification-2": "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to take the final exam when we launch it in the coming months.",
-    "consider-donating-2": "If you want to help us speed up development of this curriculum, please <0>consider becoming a supporter of our charity.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "Help us develop free professional programming certifications for all.",
     "nicely-done": "Großartig. Du hast soeben {{block}} abgeschlossen.",
     "credit-card": "Kreditkarte",
@@ -1027,6 +1038,10 @@
     "rsa-checkbox": "I have tried the Read-Search-Ask method",
     "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "{{editorName}} editor content. Press Option+F1 for accessibility options.",
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
@@ -1413,7 +1428,8 @@
     "too-long-three": "Bitte kopiere/und füge den gesamten Editor-Code ein, der in der Herausforderung angezeigt wird, von wo aus du gerade verlinkt hast.",
     "add-code-one": "Ersetze diese beiden Sätze durch deinen kopierten Code.",
     "add-code-two": "Bitte lass die ``` Zeile oben und die ``` Zeile unten stehen,",
-    "add-code-three": "weil sie die korrekte Formatierung deines Codes im Beitrag ermöglichen."
+    "add-code-three": "weil sie die korrekte Formatierung deines Codes im Beitrag ermöglichen.",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Benutzer-Token",

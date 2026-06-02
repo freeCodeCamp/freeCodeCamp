@@ -274,5 +274,56 @@ describe('get-completion-percentage', () => {
 
       expect(result).toEqual([]);
     });
+
+    it('only counts challenges from the current superblock when a block is shared across superblocks', () => {
+      // This tests the fix for the bug where blocks shared between superblocks
+      // (e.g. javascript-v9 and introduction-to-variables-and-strings-in-javascript)
+      // caused currentBlockIds.length to be doubled, making the progress bar
+      // show 7% instead of 14% for 1/7 challenges.
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          // Challenges from the current superblock (javascript-v9)
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          // Same block, but from a different superblock — should be excluded
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'workshop-greeting-bot',
+        Certification.JsV9,
+        challengeTypes.step
+      );
+
+      expect(result).toEqual(['challenge-1', 'challenge-2']);
+    });
   });
 });

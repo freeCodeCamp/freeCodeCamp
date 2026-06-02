@@ -142,6 +142,7 @@ input:focus-visible + .video-quiz-input-visible {
   display: block;
   grid-column: 1;
   grid-row: 1;
+  overflow-x: auto;
 }
 
 .mcq-option-label {
@@ -191,9 +192,19 @@ input:focus-visible + .video-quiz-input-visible {
   color: var(--danger-color);
 }
 
+.mcq-fieldset {
+  min-width: 0;
+}
+
 /* Override the default styles of `legend` element */
 .mcq-question-text {
   border: none;
   color: var(--primary-color);
   margin: 0;
+  max-width: 100%;
+}
+
+.mcq-question-text pre {
+  max-width: 100%;
+  overflow-x: auto;
 }

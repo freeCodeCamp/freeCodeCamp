@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-error-handling-in-express-by-building-a-bank-api",
+  "challengeOrder": [
+    {
+      "id": "6c7ecaaa60c9a0918c1af380",
+      "title": "Learn Error Handling in Express by Building a Bank API"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

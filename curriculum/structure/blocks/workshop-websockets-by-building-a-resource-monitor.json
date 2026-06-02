@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-websockets-by-building-a-resource-monitor",
+  "challengeOrder": [
+    {
+      "id": "a9f9d584b5593f84276f19fb",
+      "title": "Learn WebSockets by Building a Resource Monitor"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

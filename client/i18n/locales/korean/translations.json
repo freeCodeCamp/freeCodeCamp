@@ -125,6 +125,7 @@
     "sign-in-with-google": "Google로 로그인",
     "go-to-dcc-today": "오늘의 챌린지로 이동",
     "go-to-dcc-archive": "일일 코딩 챌린지 보관함으로 이동",
+    "challenge-source": "챌린지 소스를 보세요",
     "outline": "개요"
   },
   "daily-coding-challenges": {
@@ -339,6 +340,7 @@
       "keyboard-shortcuts": "키보드 단축키 활성화"
     },
     "headings": {
+      "personal": "개인",
       "account": "계정",
       "certs": "자격증",
       "legacy-certs": "구버전 자격증",
@@ -469,13 +471,16 @@
     },
     "completeness": {
       "heading": "프로필 {{percentage}}% 완료",
+      "title": "프로필 완료",
+      "progress": "{{percentage}}% 완료",
       "name": "이름 추가",
       "location": "위치 추가",
       "picture": "프로필 사진 업로드",
       "about": "소개 섹션 작성",
       "social": "소셜 링크 추가",
       "portfolio": "포트폴리오 프로젝트 추가",
-      "experience": "경력 추가"
+      "experience": "경력 추가",
+      "privacy": "프로필을 공개하세요"
     }
   },
   "footer": {
@@ -599,8 +604,8 @@
     "github-required": "<0>GitHub 계정 만들기</0> 계정이 없으면 만드세요. 가상 리눅스 서버 머신을 만들 때 필요합니다. 이 과정에는 몇 분이 걸릴 수 있습니다.",
     "codespaces": {
       "intro": "이 강좌는 GitHub Codespaces를 사용해 가상 Linux 머신에서 실행됩니다. 강좌를 시작하려면 다음 지침을 따르세요:",
-      "step-1": "<0>GitHub 계정을 만드세요</0> (계정이 없으면).",
-      "step-2": "이 목록 아래의 시작 버튼을 클릭하세요",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "해당 페이지에서 생성 버튼을 클릭하세요",
       "step-4": "가상 Linux 머신 로드가 완료되면 CodeRoad 확장 기능을 다음과 같이 시작하세요:",
       "step-5": "VSCode 창 왼쪽 상단 근처에 있는 '햄버거' 메뉴를 클릭하면,",
@@ -608,19 +613,20 @@
       "step-7": "<0>Command Palette</0> 옵션을 클릭하세요,",
       "step-8": "그리고 <0>CodeRoad: Start</0> 명령을 실행하세요.",
       "step-9": "CodeRoad의 지침을 따라 과정을 완료하세요",
-      "continue-project": "아래 버튼을 클릭하면 새 프로젝트가 시작됩니다. 이전에 {{title}} 과정을 시작한 경우 이전 워크스페이스를 다시 열려면 <0>저장소 페이지</0>로 이동하세요.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "<0>Codespace 워크스페이스</0>에 대해 자세히 알아보세요.",
       "logout-warning": "전체 {{course}} 과정을 완료하기 전에 freeCodeCamp에서 로그아웃하면 진행 상황이 freeCodeCamp 계정에 저장되지 않습니다.",
       "sub-step-3": "<0>Codespaces Secrets 페이지</0>로 이동하세요.",
       "sub-step-4": "새 시크릿을 <0>CODEROAD_WEBHOOK_TOKEN</0>이라는 이름으로 만드세요.",
       "sub-step-5": "<0>Value</0> 필드에 토큰을 붙여넣으세요.",
       "sub-step-6": "<0>Repository access</0> 필드에서 <1>freeCodeCamp/rdb-alpha</1> 저장소를 선택하세요.",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces 설정"
     },
     "ona": {
       "intro": "이 강좌는 Ona를 사용해 가상 Linux 머신에서 실행됩니다. 강좌를 시작하려면 다음 지침을 따르세요:",
       "step-1": "<0>Ona 계정을 만드세요</0> (계정이 없으면).",
-      "step-2": "이 목록 아래의 시작 버튼을 클릭하세요",
+      "step-2": "Click the start button below",
       "step-3": "팝업되는 모달에서 생성 버튼을 클릭하세요",
       "step-4": "가상 Linux 머신 로드가 완료되면 CodeRoad 확장 기능을 다음과 같이 시작하세요:",
       "step-5": "VSCode 창 왼쪽 상단 근처에 있는 '햄버거' 메뉴를 클릭하면,",
@@ -628,7 +634,7 @@
       "step-7": "<0>Command Palette</0> 옵션을 클릭하세요,",
       "step-8": "그리고 <0>CodeRoad: Start</0> 명령을 실행하세요.",
       "step-9": "CodeRoad의 지침을 따라 과정을 완료하세요",
-      "continue-project": "아래 버튼을 클릭하면 새 프로젝트가 시작됩니다. 이전에 {{course}} 과정을 시작한 경우 계속하려면 <0>Ona 대시보드</0>로 이동하세요.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "<0>Ona 워크스페이스</0>에 대해 자세히 알아보세요.",
       "logout-warning": "전체 {{course}} 과정을 완료하기 전에 freeCodeCamp에서 로그아웃하면 진행 상황이 freeCodeCamp 계정에 저장되지 않습니다.",
       "sub-step-3": "<0>Ona Secrets 페이지</0>로 이동하세요.",
@@ -753,6 +759,11 @@
     "archive": {
       "title": "보관된 강좌",
       "content-not-updated": "이 섹션의 내용은 업데이트되지 않지만 학습을 이어가는 데는 계속 활용할 수 있습니다. <0>현재 커리큘럼</0>을 시도해보시길 권장합니다."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -800,7 +811,7 @@
     "unfinished-certification": "이 자격증은 현재 활성 개발 중입니다. 현재 수령 가능한 자격증은 없지만 곧 제공될 예정입니다. 그동안 아래에 생성된 과정을 탐색하세요.",
     "consider-donating": "개발 완료를 지원하기 위해 기부를 고려해 주세요.",
     "unfinished-certification-2": "이 자격증을 완료하려면 상당한 시간과 노력이 요구됩니다. 지금 시작하면, 몇 개월 안에 저희가 시험을 시작할 때 마칠 준비가 될 수 있습니다.",
-    "consider-donating-2": "이 커리큘럼의 개발을 가속화하는 데 도움을 주시고 싶다면, <0>저희 자선단체의 서포터가 되는 것을 고려해 주세요.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "모두를 위한 무료 전문 프로그래밍 인증을 개발하는 데 도움을 주십시오.",
     "nicely-done": "잘하셨습니다. {{block}}를 방금 완료하셨습니다.",
     "credit-card": "신용 카드",
@@ -1027,6 +1038,10 @@
     "rsa-checkbox": "Read-Search-Ask 방법을 시도했습니다",
     "similar-questions-checkbox": "포럼에서 이미 답변된 유사 질문을 검색했습니다",
     "edit-my-profile": "내 프로필 편집",
+    "add-portfolio": "포트폴리오 프로젝트를 추가하세요",
+    "edit-portfolio": "포트폴리오 프로젝트를 편집하세요",
+    "add-experience": "경력을 추가하세요",
+    "edit-experience": "경력을 편집하세요",
     "editor-a11y-off-macos": "{{editorName}} 편집기 내용입니다. 접근성 옵션은 Option+F1을 누르세요.",
     "editor-a11y-off-non-macos": "{{editorName}} 편집기 내용입니다. 접근성 옵션은 Alt+F1을 누르세요.",
     "editor-a11y-on-macos": "{{editorName}} 편집기 내용입니다. 접근성 모드가 “켜짐”으로 설정되어 있습니다. 비활성화하려면 Command+E를 누르거나 추가 옵션은 Option+F1을 누르세요.",
@@ -1034,10 +1049,10 @@
     "terminal-output": "터미널 출력",
     "not-available": "사용 불가",
     "interactive-editor-desc": "정적 코드 예제를 인터랙티브 편집기로 전환하세요. 이를 통해 페이지에서 코드를 바로 편집하고 실행할 수 있습니다.",
-    "hide-terminal": "Hide the terminal",
-    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
-    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
-    "close-external-terminal-window": "Close the external terminal window",
+    "hide-terminal": "터미널을 숨기세요",
+    "move-terminal-to-new-window": "터미널을 새 창으로 이동하고 초점을 맞추세요",
+    "move-terminal-to-main-window": "터미널을 이 창으로 이동하고 외부 터미널 창을 닫으세요",
+    "close-external-terminal-window": "외부 터미널 창을 닫으세요",
     "pinyin-to-hanzi-input-desc": "이 작업은 병음-한자 입력을 사용합니다. 성조 번호(1~5)로 병음을 입력하세요. 올바른 음절을 입력하면 한자로 변환됩니다. 한자 뒤에 백스페이스를 누르면 다시 병음으로 바뀌고 마지막으로 입력한 항목이 삭제됩니다: 성조 번호이면 성조가 삭제되고, 문자이면 문자가 삭제됩니다.",
     "pinyin-tone-input-desc": "이 과제는 병음 성조 입력을 사용합니다. 성조 번호(1~5)로 병음을 입력하세요. 성조 번호를 입력하면 성조 표기로 변환됩니다. 백스페이스를 누르면 마지막으로 입력한 항목이 삭제됩니다: 성조 번호이면 성조가 삭제되고, 문자이면 문자가 삭제됩니다."
   },
@@ -1413,7 +1428,8 @@
     "too-long-three": "방금 연결한 챌린지에서 에디터 코드 전체를 복사/붙여넣기 하십시오.",
     "add-code-one": "이 두 문장을 복사한 코드로 바꾸십시오.",
     "add-code-two": "위의 ``` 라인과 아래의 ``` 라인을 남겨두십시오,",
-    "add-code-three": "이들은 게시물에 코드가 올바르게 포맷되도록 합니다."
+    "add-code-three": "이들은 게시물에 코드가 올바르게 포맷되도록 합니다.",
+    "git-info": "GitHub 링크: {{gitLink}}"
   },
   "user-token": {
     "title": "사용자 토큰",
