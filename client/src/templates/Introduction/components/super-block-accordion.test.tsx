@@ -145,9 +145,9 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    const moduleSteps = within(moduleRight).getByText(
+    // The module-button now contains the progress steps inline
+    const moduleButton = screen.getByTestId('module-button');
+    const moduleSteps = within(moduleButton).getByText(
       /learn\.steps-completed/i
     );
     expect(moduleSteps).toBeInTheDocument();
@@ -184,9 +184,9 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+    // The module-button now contains the progress steps inline
+    const moduleButton = screen.getByTestId('module-button');
+    expect(within(moduleButton).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
   // Modules with zero total steps should not display any progress text.
@@ -219,9 +219,9 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+    // The module-button now contains the progress steps inline
+    const moduleButton = screen.getByTestId('module-button');
+    expect(within(moduleButton).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
   describe('Reset Button', () => {
