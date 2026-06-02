@@ -1,5 +1,5 @@
 import type { Prisma } from '@prisma/client';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { omit } from 'lodash-es';
 import {
   describe,
@@ -391,7 +391,7 @@ describe('userRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
         // TODO: create a list of public properties like the api-server and use that
-        // to restrict the output of this and get-session-user.
+        // to restrict the output of this and session-user.
         test('returns 200 status code with public user object', async () => {
           const testUser =
             await fastifyTestInstance.prisma.user.findFirstOrThrow({

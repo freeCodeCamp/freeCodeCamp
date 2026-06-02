@@ -3863,6 +3863,7 @@
       "Na segunda metade, você praticará vocabulário específico para o desenvolvimento de software. Você aprenderá como descrever código, como discutir tendências em tecnologia e como participar de reuniões de equipe.",
       "O currículo inteiro do nível A2 inclui 105 diálogos diferentes. Cada um é projetado para construir seu vocabulário e aumentar sua confiança ao falar em um ambiente profissional da área de tecnologia."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Aprenda saudações em seu primeiro dia no escritório",
@@ -4150,6 +4151,7 @@
       "Você também se concentrará em aplicar essas habilidades em contextos profissionais e técnicos. Você praticará vocabulário e frases essenciais para desenvolvedores, como descrever código, participar de reuniões stand-up e discutir tendências tecnológicas. Tópicos avançados incluem condicionais, estruturas comparativas e gerenciamento de conversas, para que você possa se preparar para interações no mundo real na indústria de tecnologia.",
       "Todo este currículo de nível B1 inclui 73 diálogos diferentes. Cada um é projetado para construir seu vocabulário e aumentar sua confiança ao falar em um ambiente profissional de tecnologia."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Aprenda a descrever locais e eventos",
@@ -4898,6 +4900,12 @@
           "Laços são uma parte essencial do JavaScript. Por isso, as seguintes lições foram preparadas para que você aprenda sobre os diferentes tipos de laços, como eles funcionam e também como a iteração funciona."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Crie um Contador de Palavras",
+        "intro": [
+          "Neste workshop, você praticará o uso de laços <code>for...of</code> criando uma função que conta as ocorrências de uma string em um array de strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Crie um Analisador de Frases",
         "intro": [
@@ -4911,10 +4919,10 @@
         ]
       },
       "workshop-heritage-library-catalog": {
-        "title": "Build a Heritage Library Catalog",
+        "title": "Crie um Catálogo para Biblioteca Patrimonial",
         "intro": [
-          "In this workshop, you will digitize historical catalog cards for a heritage library.",
-          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
+          "Neste workshop, você digitalizará fichas de catálogo históricas para uma biblioteca patrimonial.",
+          "Você praticará o uso de laços, objetos e métodos de string para analisar dados de texto bruto, pesquisar e agrupar entradas, exibir saída formatada e exportar para JSON e CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4954,10 +4962,29 @@
           "Neste laboratório, você implementará laços para repetir uma string um número específico de vezes."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Crie um Simulador de Fluxo de Público para Festival",
+        "intro": [
+          "Neste workshop, você usará JavaScript para simular o fluxo de participantes em um festival de música."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Crie um Detector de Letras Faltantes",
         "intro": [
           "Neste laboratório, você construirá uma função que encontra a letra faltante em um intervalo dado de letras consecutivas e a retorna."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -5106,6 +5133,13 @@
         "title": "Implemente um Pula-Elementos",
         "intro": [
           "Neste laboratório, você criará uma função que pula elementos em um array com base em um valor de passo especificado."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Crie um Motor de Remix de Playlist",
+        "intro": [
+          "Neste laboratório, você criará um motor de remix de playlist usando arrays em JavaScript.",
+          "Você aplicará métodos e lógica de arrays para transformar dados e gerar um cronograma final de remix."
         ]
       },
       "review-javascript-fundamentals": {
@@ -5922,6 +5956,7 @@
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
       "- Passe no exame de Certificação de Bibliotecas de Desenvolvimento Front-End."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End",
       "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
@@ -5934,22 +5969,24 @@
       "performance": "Desempenho",
       "testing": "Testes",
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
-      "data-visualization": "Visualização de dados e D3",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "Fundamentos do TypeScript",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
+      "data-visualization": "Visualização de dados e D3",
       "review-front-end-libraries": "Revisão sobre bibliotecas Front-end",
       "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
+        ]
+      },
       "data-visualization": {
         "note": "Próximo Lançamento: 2026",
         "intro": [
           "Neste módulo, você conhecerá a visualização de dados e aprenderá a trabalhar com a biblioteca D3."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Próximo Lançamento: 2026",
-        "intro": [
-          "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6220,6 +6257,103 @@
           "Teste o que você aprendeu sobre Bibliotecas e Frameworks CSS com este questionário."
         ]
       },
+      "lecture-introduction-to-typescript": {
+        "title": "Introdução ao TypeScript",
+        "intro": [
+          "Nestes cursos, você aprenderá o que é TypeScript e como usá-lo."
+        ]
+      },
+      "workshop-type-safe-user-profile": {
+        "title": "Crie um perfil de usuário com tipagem segura",
+        "intro": [
+          "Neste workshop, você praticará o uso de anotações de tipo, tipos de array, tipos de objeto e mais, construindo um perfil de usuário."
+        ]
+      },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Crie um Kit de Ferramentas Matemáticas com Tipagem Segura",
+        "intro": [
+          "Neste workshop, você praticará a tipagem de funções criando um projeto de kit de ferramentas matemáticas."
+        ]
+      },
+      "lecture-understanding-type-composition": {
+        "title": "Compreendendo Composição de Tipos",
+        "intro": [
+          "Nestas lições, você aprenderá a trabalhar com tipos de união, interfaces, tipos void e mais."
+        ]
+      },
+      "workshop-shape-manager": {
+        "title": "Crie um Gerenciador de Formas",
+        "intro": [
+          "Neste workshop, você praticará recursos básicos do TypeScript, como tipos e interfaces, criando um programa gerenciador de formas."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Crie uma Loja de Motocicletas",
+        "intro": [
+          "Para este laboratório, você usará TypeScript para criar uma loja de motocicletas."
+        ]
+      },
+      "lecture-working-with-generics-and-type-narrowing": {
+        "title": "Trabalhando com Generics e Redução de Tipos",
+        "intro": [
+          "Nestes ensinamentos, você aprenderá sobre genéricos e redução de tipo em TypeScript."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Crie um Seletor de Emojis de Insetos",
+        "intro": [
+          "Neste workshop, você aprenderá sobre classes abstratas e genéricos em TypeScript criando um seletor de espécies de insetos que exibe diferentes emojis de insetos."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Crie uma Página de Produto",
+        "intro": [
+          "Neste laboratório, você praticará genéricos e redução de tipo em TypeScript."
+        ]
+      },
+      "lecture-working-with-typescript-configuration-files": {
+        "title": "Trabalhando com Arquivos de Configuração do TypeScript",
+        "intro": [
+          "Nesta lição, você aprenderá sobre arquivos de configuração do TypeScript e como usá-los."
+        ]
+      },
+      "workshop-fortune-teller-app": {
+        "title": "Crie um Aplicativo de Adivinhações",
+        "intro": [
+          "Neste workshop, você continuará praticando o uso de TypeScript criando um aplicativo de adivinhações."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Crie um Aplicativo de Quiz com Flashcards",
+        "intro": [
+          "Neste laboratório, você praticará o uso de TypeScript criando um aplicativo de quiz com flashcards."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Crie um Jogo de Bichinho Digital",
+        "intro": [
+          "Neste laboratório, você aplicará o que aprendeu sobre TypeScript e React ao criar um jogo de bichinho digital."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Crie um Gerador de Cartões de Jogador de Futebol",
+        "intro": [
+          "Neste workshop, você aprenderá a trabalhar com React em TypeScript criando um gerador de cartões de jogador de futebol."
+        ]
+      },
+      "review-typescript": {
+        "title": "Revisão de TypeScript",
+        "intro": [
+          "Antes de fazer o questionário de TypeScript, você deve revisar tudo o que aprendeu até agora.",
+          "Abra esta página para revisar todos os conceitos ensinados, incluindo tipos de dados em TypeScript, genéricos, estreitamento de tipos e mais."
+        ]
+      },
+      "quiz-typescript": {
+        "title": "Questionário sobre TypeScript",
+        "intro": [
+          "Teste o que você aprendeu sobre TypeScript com este questionário."
+        ]
+      },
       "lecture-introduction-to-data-visualization": {
         "title": "Introdução à visualização de dados",
         "intro": [
@@ -6236,85 +6370,6 @@
         "title": "Crie um gráfico de dispersão",
         "intro": [
           "Neste laboratório você criará um gráfico de dispersão em d3 usando um conjunto de dados fornecido."
-        ]
-      },
-      "lecture-introduction-to-typescript": {
-        "title": "Introdução ao TypeScript",
-        "intro": [
-          "Nestes cursos, você aprenderá o que é TypeScript e como usá-lo."
-        ]
-      },
-      "workshop-type-safe-user-profile": {
-        "title": "Crie um perfil de usuário com tipagem segura",
-        "intro": [
-          "Neste workshop, você praticará o uso de anotações de tipo, tipos de array, tipos de objeto e mais, construindo um perfil de usuário."
-        ]
-      },
-      "workshop-type-safe-math-toolkit": {
-        "title": "Build a Type Safe Math Toolkit",
-        "intro": [
-          "In this workshop, you will practice typing functions by building a math toolkit project."
-        ]
-      },
-      "lecture-understanding-type-composition": {
-        "title": "Compreendendo Composição de Tipos",
-        "intro": [
-          "Nestas lições, você aprenderá a trabalhar com tipos de união, interfaces, tipos void e mais."
-        ]
-      },
-      "workshop-shape-manager": {
-        "title": "Build a Shape Manager",
-        "intro": [
-          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
-        ]
-      },
-      "lab-motorcycle-shop": {
-        "title": "Build a Motorcycle Shop",
-        "intro": [
-          "For this lab, you will use TypeScript to build a Motorcycle Shop."
-        ]
-      },
-      "lecture-working-with-generics-and-type-narrowing": {
-        "title": "Trabalhando com Generics e Redução de Tipos",
-        "intro": [
-          "Nestes ensinamentos, você aprenderá sobre genéricos e redução de tipo em TypeScript."
-        ]
-      },
-      "workshop-bug-emoji-picker": {
-        "title": "Build a Bug Emoji Picker",
-        "intro": [
-          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
-        ]
-      },
-      "lab-product-showcase": {
-        "title": "Build a Product Showcase",
-        "intro": [
-          "In this lab, you will practice generics and type narrowing in TypeScript."
-        ]
-      },
-      "lecture-working-with-typescript-configuration-files": {
-        "title": "Trabalhando com Arquivos de Configuração do TypeScript",
-        "intro": [
-          "Nesta lição, você aprenderá sobre arquivos de configuração do TypeScript e como usá-los."
-        ]
-      },
-      "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App",
-        "intro": [
-          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
-        ]
-      },
-      "review-typescript": {
-        "title": "Revisão sobre TypeScript",
-        "intro": [
-          "Antes de fazer o questionário de TypeScript, você deve revisar tudo o que aprendeu até agora.",
-          "Abra esta página para revisar todos os conceitos ensinados, incluindo tipos de dados em TypeScript, genéricos, estreitamento de tipos e mais."
-        ]
-      },
-      "quiz-typescript": {
-        "title": "Questionário sobre TypeScript",
-        "intro": [
-          "Teste o que você aprendeu sobre TypeScript com este questionário."
         ]
       },
       "review-front-end-libraries": {
@@ -6345,6 +6400,7 @@
     },
     "modules": {
       "python-basics": "Noções básicas de Python",
+      "python-installation": "Install Python",
       "python-loops-and-sequences": "Laços e Sequências",
       "python-dictionaries-and-sets": "Dicionários e Conjuntos",
       "lab-user-configuration-manager": "Crie um Gerenciador de Configurações de Usuário",
@@ -6366,7 +6422,7 @@
       "lecture-introduction-to-python": {
         "title": "Introdução ao Python",
         "intro": [
-          "Nestas aulas, você aprenderá o que é Python e como configurar o ambiente de Desenvolvimento."
+          "In these lessons, you will learn what Python is and common uses in the industry."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -6456,6 +6512,24 @@
         "title": "Questionário de Noções Básicas de Python",
         "intro": [
           "Teste o que você aprendeu sobre noções básicas de Python com este questionário."
+        ]
+      },
+      "lecture-python-installation": {
+        "title": "Installing Python and Running Code Locally",
+        "intro": [
+          "In these lessons, you will learn how to install Python on your local device and run code locally."
+        ]
+      },
+      "review-python-installation": {
+        "title": "Python Installation Review",
+        "intro": [
+          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+        ]
+      },
+      "quiz-python-installation": {
+        "title": "Python Installation Quiz",
+        "intro": [
+          "Test what you've learned about installing Python locally with this quiz."
         ]
       },
       "lecture-working-with-loops-and-sequences": {
@@ -7076,6 +7150,7 @@
       "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
       "- Passe no exame de Certificação de Desenvolvimento Back-End e APIs."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "Desenvolvimento Back-End e APIs",
       "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
@@ -7251,6 +7326,13 @@
           "Aprenda os fundamentos de como a comunicação web funciona através do modelo de requisição-resposta HTTP, explore diferentes tipos de ativos e respostas web e entenda como os formulários lidam com o envio de dados usando vários métodos HTTP."
         ]
       },
+      "quiz-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Quiz",
+        "intro": [
+          "Test your knowledge of HTTP, DNS, TCP/IP, the request-response model, and web standards.",
+          ""
+        ]
+      },
       "lecture-understanding-rest-api-and-web-services": {
         "title": "Compreendendo REST APIs e Web Services",
         "intro": [
@@ -7261,6 +7343,25 @@
         "title": "Trabalhando com Express",
         "intro": [
           "Nestas aulas, você aprenderá o que é Express.js, por que desenvolvedores o usam para construir servidores web e APIs, e como configurar uma aplicação Express básica com rotas e tratamento de requisições."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Compreendendo o Roteamento no ExpressJS",
+        "intro": [
+          "Compreendendo o Roteamento no ExpressJS",
+          "Nestas aulas, você aprenderá sobre roteamento no ExpressJS, ou seja, como definir os diferentes endpoints da aplicação web e como eles respondem às solicitações do cliente."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7277,6 +7378,7 @@
       "Esta certificação representa o culminar da sua jornada como desenvolvedor full stack. Demonstra sua capacidade de construir aplicações web completas e modernas do início ao fim.",
       "Para se qualificar para o exame, você deve obter as certificações abaixo. Passe no exame para conquistar sua Certificação de Desenvolvedor Full Stack."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
@@ -7373,7 +7475,7 @@
   },
   "a1-professional-spanish": {
     "title": "Certificação de Espanhol Profissional A1 (Beta)",
-    "note": "Esta certificação encontra-se atualmente em desenvolvimento ativo. No momento, estamos publicando os três primeiros capítulos, e futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "Este curso ensina os fundamentos do espanhol ao nível A1 do Quadro Comum de Referência (CEFR), com lições focadas em configurações profissionais. Cada módulo é dividido em seções:",
       "- Uma seção de Aquecimento para uma revisão rápida.",
@@ -7637,6 +7739,14 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Descrevendo Pessoas no Trabalho",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Falando sobre Colegas",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -8706,7 +8816,7 @@
   },
   "a2-professional-spanish": {
     "title": "Certificação de Espanhol Profissional A2 (Beta)",
-    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível para esta seção no momento, uma estará disponível em breve. Enquanto isso, sinta-se à vontade para explorar os cursos que criamos abaixo.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introdução ao Modelo"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8725,7 +8835,7 @@
   },
   "a2-professional-chinese": {
     "title": "Certificação de Chinês Profissional A2 (Beta)",
-    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível nesta seção no momento, haverá uma disponível em breve. Enquanto isso, você está convidado a explorar os cursos que criamos abaixo.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Introdução ao Modelo"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8744,7 +8854,7 @@
   },
   "a1-professional-chinese": {
     "title": "Certificação de Chinês Profissional A1 (Beta)",
-    "note": "Esta certificação encontra-se em desenvolvimento ativo. No momento, estamos publicando os capítulos introdutórios. Futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "Neste currículo de Chinês Profissional A1, você aprenderá o essencial da comunicação em chinês. Ele seguirá o nível A1 do Quadro Europeu Comum de Referência (CEFR). Nosso foco será o vocabulário que é particularmente útil para ambientes profissionais.",
       "O currículo é dividido em vários módulos que incluem páginas de aquecimento, aprendizado, prática, revisão e questionários para garantir que você realmente entenda o material antes de passar para o próximo módulo.",
@@ -8778,6 +8888,12 @@
         "note": "Próximo Lançamento: 2026",
         "intro": [
           "Neste módulo, você praticará a compreensão de uma curta conversa que pergunta e responde a perguntas simples sobre colegas."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Próximo Lançamento: 2026",
+        "intro": [
+          "Neste módulo, você praticará a compreensão de conversas que comunicam informações pessoais, como idade e números de telefone."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {

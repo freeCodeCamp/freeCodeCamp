@@ -3831,6 +3831,7 @@
       "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
       "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
@@ -4118,6 +4119,7 @@
       "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
       "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Learn How to Describe Places and Events",
@@ -4860,6 +4862,12 @@
           "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
@@ -4916,10 +4924,29 @@
           "In this lab, you will implement loops to repeat a string a specified number of times."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
           "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -5066,6 +5093,13 @@
         "title": "Implement an Element Skipper",
         "intro": [
           "In this lab you will create a function that skips elements in an array based on a specified step value."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {
@@ -5874,6 +5908,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Front-End Development Libraries Certification exam."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "Front-End Development Libraries",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -5886,22 +5921,24 @@
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
-      "data-visualization": "Data Visualization and D3",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "TypeScript Fundamentals",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
+      "data-visualization": "Data Visualization and D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
+      "typescript-fundamentals": {
+        "intro": [
+          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+        ]
+      },
       "data-visualization": {
         "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
-        ]
-      },
-      "typescript-fundamentals": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6166,22 +6203,6 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introduction to Data Visualization",
-        "intro": [
-          "In these lessons, you will learn about basic data visualization concepts."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab you will use d3 to build a bar chart."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -6248,8 +6269,26 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Build a Football Player Card Builder",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+        ]
+      },
       "review-typescript": {
-        "title": "Typescript Review",
+        "title": "TypeScript Review",
         "intro": [
           "Before you take the TypeScript quiz, you should review everything you've learned so far.",
           "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
@@ -6257,7 +6296,23 @@
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab you will use d3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -6287,6 +6342,7 @@
     },
     "modules": {
       "python-basics": "Python Basics",
+      "python-installation": "Install Python",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
@@ -6308,7 +6364,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn what Python is and how to set up your development environment."
+          "In these lessons, you will learn what Python is and common uses in the industry."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -6398,6 +6454,24 @@
         "title": "Python Basics Quiz",
         "intro": [
           "Test what you've learned about Python basics with this quiz."
+        ]
+      },
+      "lecture-python-installation": {
+        "title": "Installing Python and Running Code Locally",
+        "intro": [
+          "In these lessons, you will learn how to install Python on your local device and run code locally."
+        ]
+      },
+      "review-python-installation": {
+        "title": "Python Installation Review",
+        "intro": [
+          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+        ]
+      },
+      "quiz-python-installation": {
+        "title": "Python Installation Quiz",
+        "intro": [
+          "Test what you've learned about installing Python locally with this quiz."
         ]
       },
       "lecture-working-with-loops-and-sequences": {
@@ -7004,6 +7078,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Back-End Development and APIs Certification exam."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "Back-End Development and APIs",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
@@ -7177,6 +7252,13 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "quiz-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Quiz",
+        "intro": [
+          "Test your knowledge of HTTP, DNS, TCP/IP, the request-response model, and web standards.",
+          ""
+        ]
+      },
       "lecture-understanding-rest-api-and-web-services": {
         "title": "Understanding the REST API and Web Services",
         "intro": [
@@ -7187,6 +7269,25 @@
         "title": "Working with Express",
         "intro": [
           "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7203,6 +7304,7 @@
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
@@ -7297,7 +7399,7 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
       "- A Warm-up section for quick review.",
@@ -7561,6 +7663,14 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -8614,7 +8724,7 @@
   },
   "a2-professional-spanish": {
     "title": "A2 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Placeholder intro"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8633,7 +8743,7 @@
   },
   "a2-professional-chinese": {
     "title": "A2 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Placeholder intro"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8652,7 +8762,7 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
       "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
@@ -8670,7 +8780,7 @@
       "zh-a1-module-initials-and-finals": "Initials and Finals",
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
       "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
@@ -8686,6 +8796,12 @@
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8883,11 +8999,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers below 100 Review",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers below 100 Quiz",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }
