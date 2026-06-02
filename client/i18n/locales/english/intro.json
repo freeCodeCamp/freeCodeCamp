@@ -7252,6 +7252,12 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "lecture-understanding-the-web-standards-model": {
+        "title": "Understanding the Web Standards Model",
+        "intro": [
+          "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
+        ]
+      },
       "review-http-and-the-web-standards-model": {
         "title": "HTTP and the Web Standards Model Review",
         "intro": [
@@ -7284,6 +7290,12 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
+      "review-introduction-to-express": {
+        "title": "Introduction to Express Review",
+        "intro": [
+          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+        ]
+      },
       "quiz-introduction-to-express": {
         "title": "Introduction to Express Quiz",
         "intro": [
@@ -7296,6 +7308,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
       "quiz-error-handling-in-express": {
         "title": "Error Handling in Express Quiz",
         "intro": [
@@ -7306,6 +7324,12 @@
         "title": "Express Middleware",
         "intro": [
           "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
+      "review-express-middleware": {
+        "title": "Express Middleware Review",
+        "intro": [
+          "Review middleware concepts in Express, including application-level, router-level, error-handling, and built-in and third-party middleware before you take the quiz."
         ]
       },
       "quiz-express-middleware": {
