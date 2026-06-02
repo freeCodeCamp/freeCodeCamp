@@ -75,6 +75,7 @@
           "blocks": [
             "workshop-express-middleware-by-building-a-submission-form",
             "lab-data-sanitizer",
+            "review-express-middleware",
             "quiz-express-middleware"
           ]
         },

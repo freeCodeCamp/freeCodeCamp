@@ -7320,6 +7320,12 @@
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
+      "review-express-middleware": {
+        "title": "Express Middleware Review",
+        "intro": [
+          "Review middleware concepts in Express, including application-level, router-level, error-handling, and built-in and third-party middleware before you take the quiz."
+        ]
+      },
       "quiz-express-middleware": {
         "title": "Express Middleware Quiz",
         "intro": [
