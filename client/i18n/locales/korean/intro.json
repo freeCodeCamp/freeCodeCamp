@@ -7004,6 +7004,12 @@
           "HTTP 요청-응답 모델을 통해 웹 통신의 기본 원리를 배우고, 다양한 웹 자산과 응답 유형을 살펴보며, 여러 HTTP 메서드를 사용해 폼이 데이터 제출을 처리하는 방식을 이해합니다."
         ]
       },
+      "review-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Review",
+        "intro": [
+          "Review HTTP, DNS, TCP/IP, the request-response model, and web standards before you take the quiz."
+        ]
+      },
       "quiz-http-and-the-web-standards-model": {
         "title": "HTTP and the Web Standards Model Quiz",
         "intro": [
@@ -7030,6 +7036,12 @@
           "이 강의들에서는 ExpressJS의 라우팅에 대해 배우며, 라우팅은 웹 애플리케이션의 서로 다른 엔드포인트를 정의하고 클라이언트 요청에 어떻게 응답하는지를 뜻합니다."
         ]
       },
+      "quiz-introduction-to-express": {
+        "title": "Introduction to Express Quiz",
+        "intro": [
+          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+        ]
+      },
       "lecture-understanding-error-handling-and-health-checks": {
         "title": "Understanding Error Handling and Health Checks",
         "intro": [
@@ -7040,6 +7052,12 @@
         "title": "Error Handling in Express Quiz",
         "intro": [
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
+      "quiz-express-middleware": {
+        "title": "Express Middleware Quiz",
+        "intro": [
+          "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
         ]
       },
       "exam-back-end-development-and-apis-certification": {

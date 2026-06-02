@@ -7238,6 +7238,12 @@
           "Дізнайтесь про основи роботи вебкомунікації на прикладі моделі запиту-відповіді HTTP, ознайомтеся з різними типами вебресурсів і відповідей, а також зрозумійте, як форми обробляють надсилання даних за допомогою різних методів HTTP."
         ]
       },
+      "review-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Review",
+        "intro": [
+          "Review HTTP, DNS, TCP/IP, the request-response model, and web standards before you take the quiz."
+        ]
+      },
       "quiz-http-and-the-web-standards-model": {
         "title": "HTTP and the Web Standards Model Quiz",
         "intro": [
@@ -7264,6 +7270,12 @@
           "У цих уроках ви ознайомитесь з маршрутизацією в ExpressJS. Ви навчитесь визначати різні кінцеві точки вебзастосунку, а також дізнаєтесь як вони реагують на запити клієнта."
         ]
       },
+      "quiz-introduction-to-express": {
+        "title": "Introduction to Express Quiz",
+        "intro": [
+          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+        ]
+      },
       "lecture-understanding-error-handling-and-health-checks": {
         "title": "Знайомство з обробкою помилок і перевіркою",
         "intro": [
@@ -7274,6 +7286,12 @@
         "title": "Error Handling in Express Quiz",
         "intro": [
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
+      "quiz-express-middleware": {
+        "title": "Express Middleware Quiz",
+        "intro": [
+          "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
