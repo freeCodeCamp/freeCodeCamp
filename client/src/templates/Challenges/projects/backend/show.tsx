@@ -162,8 +162,11 @@ const ShowBackEnd = (props: BackEndProps) => {
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
-  const guideUrl = getGuideUrl({ forumTopicId, title: blockNameTitle });
+  )}: ${title}`;
+  const guideUrl = getGuideUrl({
+    forumTopicId,
+    title: `${t(`intro:${superBlock}.blocks.${block}.title`)} - ${title}`
+  });
 
   return (
     <Hotkeys containerRef={container}>
