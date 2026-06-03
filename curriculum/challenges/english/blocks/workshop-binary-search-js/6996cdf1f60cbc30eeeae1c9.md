@@ -36,8 +36,7 @@ function binarySearch(searchList, value) {
     
     if (value === valueAtMiddle) {
       return pathToTarget;
-    } 
-    else if (value > valueAtMiddle) {
+    } else if (value > valueAtMiddle) {
 --fcc-editable-region--
       
 --fcc-editable-region--     
