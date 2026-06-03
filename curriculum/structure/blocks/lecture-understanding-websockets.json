@@ -1,0 +1,17 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-websockets",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6a1fefb066d06ad567fbeb43",
+      "title": "What are WebSockets and How do They Differ from HTTP?"
+    },
+    {
+      "id": "6a1ff130175dfa251ad1e1ca",
+      "title": "What is the Pub/Sub Architecture?"
+    }
+  ],
+  "blockLabel": "lecture"
+}
