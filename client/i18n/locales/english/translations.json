@@ -626,7 +626,7 @@
       "step-7": "Clicking on the <0>Command Palette</0> option,",
       "step-8": "and running the <0>CodeRoad: Start</0> command",
       "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to <0>your codespaces</0> to re-open a previous workspace. Warning: Do not bookmark the Start button link or reuse old tabs, as this will create multiple duplicate workspaces.",
       "learn-more": "Learn more about <0>Codespace workspaces</0>.",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",

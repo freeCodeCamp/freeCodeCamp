@@ -167,7 +167,7 @@ function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
     <Callout variant='note' label={t('misc.note')}>
       <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
         <a
-          href='https://github.com/freeCodeCamp/rdb-alpha'
+          href='https://github.com/codespaces'
           rel='noopener noreferrer'
           target='_blank'
         >
