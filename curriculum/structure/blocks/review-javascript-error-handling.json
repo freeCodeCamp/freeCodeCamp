@@ -1,0 +1,10 @@
+{
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-error-handling",
+  "challengeOrder": [
+    { "id": "6a202f39453c840520c40802", "title": "Error Handling JavaScript Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

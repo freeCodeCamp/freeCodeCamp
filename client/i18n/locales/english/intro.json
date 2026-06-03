@@ -5319,6 +5319,13 @@
           "In this lab, you'll debug a random background color changer and fix the errors to make it work properly."
         ]
       },
+      "review-javascript-error-handling": {
+        "title": "Error Handling JavaScript Review",
+        "intro": [
+          "Before you continue, you should review what you've learned about error handling.",
+          "Open up this page to review concepts including custom error classes, error propagation, <code>error.cause</code> and handling errors in asynchronous code."
+        ]
+      },
       "review-debugging-javascript": {
         "title": "Debugging JavaScript Review",
         "intro": [

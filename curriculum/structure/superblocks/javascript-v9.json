@@ -196,6 +196,7 @@
           "blocks": [
             "lecture-debugging-techniques",
             "lab-random-background-color-changer",
+            "review-javascript-error-handling",
             "review-debugging-javascript",
             "quiz-debugging-javascript"
           ]
