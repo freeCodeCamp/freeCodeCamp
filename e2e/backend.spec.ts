@@ -16,7 +16,7 @@ test.describe('Backend challenge', () => {
   test('renders', async ({ page }) => {
     await page.goto(locations.index);
     await expect(page).toHaveTitle(
-      'Managing Packages with NPM - How to Use package.json, the Core of Any Node.js Project or npm Package | Learn | freeCodeCamp.org'
+      'Managing Packages with NPM: How to Use package.json, the Core of Any Node.js Project or npm Package | Learn | freeCodeCamp.org'
     );
   });
 
