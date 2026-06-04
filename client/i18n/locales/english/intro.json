@@ -7339,6 +7339,12 @@
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
+      "lecture-express-middleware": {
+        "title": "Express Middleware",
+        "intro": [
+          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
       "review-express-middleware": {
         "title": "Express Middleware Review",
         "intro": [
