@@ -45,16 +45,8 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
     return;
   }
 
-  const hasWaitingTriage = linkedIssues.some(issue =>
-    issue.labels.nodes.some(l => l.name === 'status: waiting triage')
-  );
-  if (hasWaitingTriage) {
-    core.setOutput('failure_reason', 'waiting_triage');
-    core.setFailed('Linked issue has not been triaged yet.');
-    await addDeprioritizedLabel(github, context);
-    return;
-  }
-
+  // Naomi's Sprints assignees are exempt from the triage and open-for-contribution
+  // gates below, so this check must run before them.
   const prAuthor = context.payload.pull_request.user.login;
   const isNaomiSprintAssignee = linkedIssues.some(
     issue =>
@@ -68,6 +60,16 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
       issue_number: context.payload.pull_request.number,
       labels: ["Naomi's Sprints"]
     });
+    return;
+  }
+
+  const hasWaitingTriage = linkedIssues.some(issue =>
+    issue.labels.nodes.some(l => l.name === 'status: waiting triage')
+  );
+  if (hasWaitingTriage) {
+    core.setOutput('failure_reason', 'waiting_triage');
+    core.setFailed('Linked issue has not been triaged yet.');
+    await addDeprioritizedLabel(github, context);
     return;
   }
 
