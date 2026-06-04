@@ -45,8 +45,8 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
     return;
   }
 
-  // Naomi's Sprints assignees are exempt from the triage and open-for-contribution
-  // gates below, so this check must run before them.
+  // Naomi's Sprints assignees are exempt from the triage and open-for-contribution gates
+  // so this check must run before them.
   const prAuthor = context.payload.pull_request.user.login;
   const isNaomiSprintAssignee = linkedIssues.some(
     issue =>
@@ -62,6 +62,12 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
     });
     return;
   }
+
+  // Assignees of a linked issue are also exempt from the triage and open-for-contribution gates.
+  const isLinkedIssueAssignee = linkedIssues.some(issue =>
+    issue.assignees.nodes.some(a => a.login === prAuthor)
+  );
+  if (isLinkedIssueAssignee) return;
 
   const hasWaitingTriage = linkedIssues.some(issue =>
     issue.labels.nodes.some(l => l.name === 'status: waiting triage')
