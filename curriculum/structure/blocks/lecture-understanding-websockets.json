@@ -11,6 +11,10 @@
     {
       "id": "6a1ff130175dfa251ad1e1ca",
       "title": "What is the Pub/Sub Architecture?"
+    },
+    {
+      "id": "6a215ebeb5896b637d7c3dc4",
+      "title": "Working with WebSockets in Node.js"
     }
   ],
   "blockLabel": "lecture"
