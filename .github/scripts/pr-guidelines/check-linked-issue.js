@@ -45,29 +45,27 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
     return;
   }
 
-  // Naomi's Sprints assignees are exempt from the triage and open-for-contribution gates
-  // so this check must run before them.
+  // Assignees of a linked issue are exempt from the triage and open-for-contribution gates
+  // below, so this check must run before them. Naomi's Sprints assignees additionally get
+  // the label applied.
   const prAuthor = context.payload.pull_request.user.login;
-  const isNaomiSprintAssignee = linkedIssues.some(
-    issue =>
-      issue.labels.nodes.some(l => l.name === "Naomi's Sprints") &&
-      issue.assignees.nodes.some(a => a.login === prAuthor)
-  );
-  if (isNaomiSprintAssignee) {
-    await github.rest.issues.addLabels({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
-      issue_number: context.payload.pull_request.number,
-      labels: ["Naomi's Sprints"]
-    });
-    return;
-  }
-
-  // Assignees of a linked issue are also exempt from the triage and open-for-contribution gates.
-  const isLinkedIssueAssignee = linkedIssues.some(issue =>
+  const assignedIssues = linkedIssues.filter(issue =>
     issue.assignees.nodes.some(a => a.login === prAuthor)
   );
-  if (isLinkedIssueAssignee) return;
+  if (assignedIssues.length > 0) {
+    const isNaomiSprintAssignee = assignedIssues.some(issue =>
+      issue.labels.nodes.some(l => l.name === "Naomi's Sprints")
+    );
+    if (isNaomiSprintAssignee) {
+      await github.rest.issues.addLabels({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: context.payload.pull_request.number,
+        labels: ["Naomi's Sprints"]
+      });
+    }
+    return;
+  }
 
   const hasWaitingTriage = linkedIssues.some(issue =>
     issue.labels.nodes.some(l => l.name === 'status: waiting triage')
