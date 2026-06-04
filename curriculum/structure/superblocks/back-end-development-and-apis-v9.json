@@ -95,7 +95,8 @@
           "comingSoon": true,
           "blocks": [
             "workshop-websockets-by-building-a-resource-monitor",
-            "lab-chat-app"
+            "lab-chat-app",
+            "review-websockets"
           ]
         },
         {
