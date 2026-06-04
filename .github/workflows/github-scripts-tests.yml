@@ -1,0 +1,50 @@
+name: GitHub - Scripts Tests
+
+# Unit tests for the scripts that backs our GHA workflows
+# These scripts are not part of the pnpm workspace, so they are not
+# covered by the repository-wide `turbo test` run. This workflow runs them
+# only when the scripts or this workflow change, so it stays off unrelated PRs.
+
+on:
+  pull_request:
+    paths:
+      - ".github/scripts/**"
+      - ".github/workflows/github-scripts-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+      fail-fast: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        with:
+          run_install: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run tests
+        # --dir scopes test discovery to .github/scripts while keeping the root
+        # (and module resolution) at the repo level, so `vitest` resolves even
+        # though .github/scripts is not a pnpm workspace package.
+        run: pnpm exec vitest run --dir .github/scripts
