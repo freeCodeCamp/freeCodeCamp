@@ -38,13 +38,8 @@ jobs:
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
 
       - name: Run tests
-        # --dir scopes test discovery to .github/scripts while keeping the root
-        # (and module resolution) at the repo level, so `vitest` resolves even
-        # though .github/scripts is not a pnpm workspace package.
-        run: pnpm exec vitest run --dir .github/scripts
+        # Fetch vitest on demand as the scripts under .github/scripts
+        # are not part of the pnpm workspace and have no runtime dependencies.
+        run: pnpm dlx vitest@4 run --dir .github/scripts
