@@ -100,7 +100,7 @@
       100vh - var(--header-height) - var(--breadcrumbs-height) -
         var(--action-row-height)
     );
-    left: 0;
+    inset-inline-start: 0;
     position: fixed;
     top: calc(
       var(--header-height) + var(--breadcrumbs-height) +

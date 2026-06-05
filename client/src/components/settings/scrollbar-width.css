@@ -116,28 +116,24 @@ input.scrollbar-width[type='range']:focus-visible::-moz-range-thumb {
   z-index: -1;
 }
 
-.scrollbar-width-ticks .tick:nth-child(1),
-[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(5) {
-  left: 3px;
+.scrollbar-width-ticks .tick:nth-child(1) {
+  inset-inline-start: 3px;
 }
 
-.scrollbar-width-ticks .tick:nth-child(2),
-[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(4) {
-  left: calc(25% - 0.25rem + 2px);
+.scrollbar-width-ticks .tick:nth-child(2) {
+  inset-inline-start: calc(25% - 0.25rem + 2px);
 }
 
 .scrollbar-width-ticks .tick:nth-child(3) {
-  left: calc(50% - 0.5rem + 0.5px);
+  inset-inline-start: calc(50% - 0.5rem + 0.5px);
 }
 
-.scrollbar-width-ticks .tick:nth-child(4),
-[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(2) {
-  left: calc(75% - 0.5rem - 5px);
+.scrollbar-width-ticks .tick:nth-child(4) {
+  inset-inline-start: calc(75% - 0.5rem - 5px);
 }
 
-.scrollbar-width-ticks .tick:nth-child(5),
-[dir='rtl'] .scrollbar-width-ticks .tick:nth-child(1) {
-  left: calc(100% - 1rem - 2px);
+.scrollbar-width-ticks .tick:nth-child(5) {
+  inset-inline-start: calc(100% - 1rem - 2px);
 }
 
 .scrollbar-width-ticks .tick:hover,

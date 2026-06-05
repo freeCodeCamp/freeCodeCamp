@@ -15,7 +15,7 @@
   position: absolute;
   bottom: 100%;
   width: 97%;
-  left: 50%;
+  inset-inline-start: 50%;
   transform: translateX(-50%);
   margin-bottom: 12px;
   border: 1px solid var(--background-secondary);
@@ -82,7 +82,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-  margin-left: 10px;
+  margin-inline-start: 10px;
 }
 
 .independent-lower-jaw .tooltip {
@@ -126,7 +126,7 @@
   border-color: var(--color-border-primary);
   transform: rotate(45deg);
   bottom: -5px;
-  left: calc(50% - 0.25rem);
+  inset-inline-start: calc(50% - 0.25rem);
   background-image: linear-gradient(
     to top left,
     var(--background-quaternary) 55%,
@@ -135,7 +135,7 @@
 }
 
 .independent-lower-jaw .tooltip .tooltiptext.left-tooltip {
-  left: 0;
+  inset-inline-start: 0;
 }
 
 .share-button-wrapper {

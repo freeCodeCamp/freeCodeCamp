@@ -47,19 +47,13 @@
 
 .toggle-button-group button > span > svg {
   position: absolute;
-  right: -1.5rem;
+  inset-inline-end: -1.5rem;
   margin-top: 0.1rem;
 }
 
-.toggle-button-group button:first-of-type > span > svg,
-[dir='rtl'] .toggle-button-group button > span > svg {
-  right: unset;
-  left: -1.25rem;
-}
-
-[dir='rtl'] .toggle-button-group button:first-of-type > span > svg {
-  left: unset;
-  right: -1.5rem;
+.toggle-button-group button:first-of-type > span > svg {
+  inset-inline-end: auto;
+  inset-inline-start: -1.25rem;
 }
 
 .toggle-button-group button[aria-pressed='true']:hover {
@@ -81,7 +75,7 @@
 
 .toggle-radio-group input {
   position: absolute;
-  left: -9999px;
+  inset-inline-start: -9999px;
 }
 
 .custom-circle {
@@ -107,7 +101,7 @@
   height: 0.556rem;
   position: absolute;
   top: 50%;
-  left: 50%;
+  inset-inline-start: 50%;
   background-color: var(--primary-color);
   border-radius: 50%;
   transform: translate(-50%, -50%);

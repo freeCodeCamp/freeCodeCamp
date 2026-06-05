@@ -28,8 +28,8 @@
 .breadcrumbs-demo {
   position: fixed;
   top: var(--header-height);
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
   z-index: var(--z-index-breadcrumbs);
   font-size: 16px;
   margin: 0;
@@ -71,7 +71,7 @@
   font-size: 18px;
   font-weight: bold;
   border-bottom: 1px solid var(--quaternary-background);
-  padding-left: 11px;
+  padding-inline-start: 11px;
   overflow: hidden;
 }
 
@@ -116,7 +116,7 @@
   font-size: 17px;
   position: absolute;
   top: 0;
-  right: -0.7rem;
+  inset-inline-end: -0.7rem;
 }
 
 .description-container .breadcrumbs li:nth-child(2) {
