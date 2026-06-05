@@ -838,7 +838,7 @@
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
-          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
           "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
         ]
@@ -7378,13 +7378,13 @@
       "workshop-nodejs-common-modules": {
         "title": "Learn Node.js Common Modules",
         "intro": [
-          "You will learn Node.js built-in modules like `fs`, `path`, and `crypto` by using them for file operations and data processing."
+          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
       },
       "workshop-nodejs-by-building-a-web-server": {
         "title": "Learn Node.js by Building a Web Server",
         "intro": [
-          "You will learn the Node.js `http` module by building a web server to serve a multi-page client application."
+          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
         ]
       },
       "workshop-express-by-building-a-random-joke-app": {
@@ -7402,7 +7402,7 @@
       "workshop-express-by-building-a-weather-service-api": {
         "title": "Learn Express by Building a Weather Service API",
         "intro": [
-          "You will learn route parameters and modular routing with `express.Router` by building a weather service API."
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
         ]
       },
       "workshop-error-handling-in-express-by-building-a-bank-api": {
