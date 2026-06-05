@@ -1389,6 +1389,46 @@
     {
       "id": "6a2037a68a0bc2aef0006008",
       "title": "Challenge 346: Piggy Bank"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d54",
+      "title": "Challenge 347: Game Theory"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d55",
+      "title": "Challenge 348: Loan Calculator"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d56",
+      "title": "Challenge 349: Nonogram Validator"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d57",
+      "title": "Challenge 350: Letter Distance"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d58",
+      "title": "Challenge 351: Pronic Number"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d59",
+      "title": "Challenge 352: Contrast Ratio 1"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5a",
+      "title": "Challenge 353: Contrast Ratio 2"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5b",
+      "title": "Challenge 354: Contrast Ratio 3"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5c",
+      "title": "Challenge 355: Morse Code"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5d",
+      "title": "Challenge 356: Magic Square Solver"
     }
   ]
 }
