@@ -359,7 +359,11 @@ function ShowCodeAlly({
                 </>
               )}
 
-              <ProjectToolPanel />
+              <ProjectToolPanel
+                challengeTitle={title}
+                challengeBlock={block}
+                superBlock={superBlock}
+              />
               <br />
               <Spacer size='m' />
             </Col>

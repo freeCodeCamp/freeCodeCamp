@@ -11,6 +11,7 @@ import { openModal, executeChallenge } from '../redux/actions';
 import { challengeMetaSelector } from '../redux/selectors';
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
+import { generateSearchLink } from './help-modal';
 
 import './tool-panel.css';
 
@@ -45,6 +46,9 @@ interface ToolPanelProps {
   openResetModal: () => void;
   guideUrl: string;
   videoUrl?: string;
+  challengeTitle?: string;
+  challengeBlock?: string;
+  superBlock?: string;
 }
 
 function ToolPanel({
@@ -57,12 +61,20 @@ function ToolPanel({
   openVideoModal,
   openResetModal,
   guideUrl,
-  videoUrl
+  videoUrl,
+  challengeTitle,
+  challengeBlock,
+  superBlock
 }: ToolPanelProps) {
   const handleRunTests = () => {
     executeChallenge({ showCompletionModal: true });
   };
   const { t } = useTranslation();
+  const hintUrl = guideUrl
+    ? guideUrl
+    : challengeTitle && challengeBlock && superBlock
+      ? generateSearchLink(challengeTitle, challengeBlock, superBlock)
+      : '';
   return (
     <div
       className={`tool-panel-group ${
@@ -99,9 +111,9 @@ function ToolPanel({
           {isMobile ? t('buttons.help') : t('buttons.get-help')}
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          {guideUrl ? (
+          {hintUrl ? (
             <MenuItem
-              href={guideUrl}
+              href={hintUrl}
               target='_blank'
               data-playwright-test-label='get-hint'
             >

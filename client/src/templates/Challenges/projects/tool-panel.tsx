@@ -6,6 +6,7 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { Button, Spacer } from '@freecodecamp/ui';
 
 import { openModal } from '../redux/actions';
+import { generateSearchLink } from '../components/help-modal';
 
 const mapStateToProps = () => ({});
 
@@ -19,23 +20,34 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 interface ToolPanelProps {
   guideUrl?: string;
+  challengeTitle?: string;
+  challengeBlock?: string;
+  superBlock?: string;
   openHelpModal: () => void;
   t: TFunction;
 }
 
 function ToolPanel({
   guideUrl,
+  challengeTitle,
+  challengeBlock,
+  superBlock,
   openHelpModal,
   t
 }: ToolPanelProps): JSX.Element {
+  const hintUrl = guideUrl
+    ? guideUrl
+    : challengeTitle && challengeBlock && superBlock
+      ? generateSearchLink(challengeTitle, challengeBlock, superBlock)
+      : '';
   return (
     <div>
-      {guideUrl && (
+      {hintUrl && (
         <>
           <Button
             block={true}
             variant='primary'
-            href={guideUrl}
+            href={hintUrl}
             target='_blank'
           >
             {t('buttons.get-hint')}

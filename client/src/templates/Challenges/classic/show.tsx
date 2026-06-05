@@ -476,7 +476,14 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             toolPanel={
-              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+              <ToolPanel
+                guideUrl={guideUrl}
+                isMobile
+                videoUrl={videoUrl}
+                challengeTitle={title}
+                challengeBlock={block}
+                superBlock={superBlock}
+              />
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}

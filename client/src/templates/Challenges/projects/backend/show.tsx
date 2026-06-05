@@ -195,6 +195,9 @@ const ShowBackEnd = (props: BackEndProps) => {
               />
               <ProjectToolPanel
                 guideUrl={getGuideUrl({ forumTopicId, title })}
+                challengeTitle={title}
+                challengeBlock={block}
+                superBlock={superBlock}
               />
               <br />
               <Output

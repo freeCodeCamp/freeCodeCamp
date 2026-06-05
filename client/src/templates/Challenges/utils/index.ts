@@ -8,11 +8,10 @@ interface GuideData {
   title?: string;
 }
 
-export function getGuideUrl({ forumTopicId, title = '' }: GuideData): string {
-  title = encodeURIComponent(title);
+export function getGuideUrl({ forumTopicId }: GuideData): string {
   return forumTopicId
     ? `https://forum.freecodecamp.org/t/${forumTopicId}`
-    : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
+    : '';
 }
 
 export function isGoodXHRStatus(status?: string): boolean {
