@@ -615,7 +615,7 @@ a.patreon-button:hover {
   border: none;
   margin-bottom: 0;
   padding: 0 4px;
-  left: 0;
+  inset-inline-start: 0;
   margin-inline-start: -2px;
 }
 

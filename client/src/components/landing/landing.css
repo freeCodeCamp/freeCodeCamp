@@ -413,9 +413,9 @@ figcaption.caption {
     flex: 0 0 50%;
     max-width: 50%;
     z-index: 1;
-    padding-left: 0px;
-    padding-right: 15px;
-    margin-left: -15px;
+    padding-inline-start: 0px;
+    padding-inline-end: 15px;
+    margin-inline-start: -15px;
   }
 
   .landing-top-two-column .landing-top-right {
@@ -433,7 +433,7 @@ figcaption.caption {
 
 .landing-top .landing-top-two-column figure,
 .landing-top .landing-top-two-column figure img {
-  margin-left: -120px;
+  margin-inline-start: -120px;
   margin-top: 0px;
   height: 550px;
   width: 850px;

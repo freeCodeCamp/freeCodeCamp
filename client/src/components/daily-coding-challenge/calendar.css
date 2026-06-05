@@ -39,14 +39,14 @@
   position: absolute;
   font-size: 0.8em;
   top: 0;
-  right: 5px;
+  inset-inline-end: 5px;
   color: var(--gray-45);
 }
 
 .dc-number {
   position: absolute;
   top: 0;
-  left: 5px;
+  inset-inline-start: 5px;
   font-size: 0.8em;
   font-style: italic;
   color: var(--gray-45);
@@ -89,7 +89,7 @@
 .dc-languages {
   position: absolute;
   bottom: 0;
-  left: 0;
+  inset-inline-start: 0;
   display: flex;
   gap: 2px;
 }

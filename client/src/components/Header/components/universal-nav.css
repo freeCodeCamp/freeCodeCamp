@@ -71,7 +71,7 @@
   list-style: none;
   padding: 0;
   position: absolute;
-  right: 0;
+  inset-inline-end: 0;
   width: 100%;
   z-index: var(--z-index-site-header);
 }
@@ -358,7 +358,7 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 .universal-nav-right .fcc_searchBar {
   background-color: var(--theme-color);
   height: var(--header-sub-element-size);
-  left: 0;
+  inset-inline-start: 0;
   position: absolute;
   top: var(--header-height);
 }
