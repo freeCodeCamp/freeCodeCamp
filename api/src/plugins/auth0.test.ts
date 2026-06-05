@@ -40,6 +40,9 @@ describe('auth0 plugin', () => {
   beforeAll(async () => {
     fastify = Fastify();
 
+    // @ts-expect-error - Only mocks part of the Sentry object.
+    fastify.Sentry = { captureException: () => '' };
+
     await fastify.register(cookies);
     await fastify.register(redirectWithMessage);
     await fastify.register(auth);
@@ -185,6 +188,7 @@ describe('auth0 plugin', () => {
       });
 
       expect(fastify.log.error).toHaveBeenCalledWith(
+        expect.any(Error),
         'Auth failed: invalid state'
       );
       expect(res.statusCode).toBe(302);

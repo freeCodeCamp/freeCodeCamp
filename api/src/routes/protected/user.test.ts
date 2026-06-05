@@ -575,11 +575,12 @@ describe('userRoutes', () => {
           superPost('/account/delete')
         );
         await Promise.all(deletePromises);
-        const messages: string[] = spy.mock.calls.map(call =>
-          call.map(part => String(part)).join(' ')
-        );
-        const found = messages.some(m =>
-          m.includes(`User with id ${defaultUserId} not found for deletion.`)
+        const found = spy.mock.calls.some(
+          ([fields, message]) =>
+            message === 'User not found for deletion' &&
+            typeof fields === 'object' &&
+            fields !== null &&
+            (fields as { userId?: string }).userId === defaultUserId
         );
         expect(found).toBe(true);
       });
@@ -705,12 +706,14 @@ describe('userRoutes', () => {
 
         await Promise.all(deletePromises);
 
-        const messages = spy.mock.calls.flat().map(String);
-        expect(
-          messages.some(m =>
-            m.includes(`User with id ${defaultUserId} not found for deletion.`)
-          )
-        ).toBe(true);
+        const found = spy.mock.calls.some(
+          ([fields, message]) =>
+            message === 'User not found for deletion' &&
+            typeof fields === 'object' &&
+            fields !== null &&
+            (fields as { userId?: string }).userId === defaultUserId
+        );
+        expect(found).toBe(true);
       });
 
       test('returns 403 if attempting to delete a different user', async () => {

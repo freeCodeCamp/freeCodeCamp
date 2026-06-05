@@ -198,7 +198,7 @@ describe('errorHandling', () => {
       expect.objectContaining({
         message: 'a very bad thing happened'
       }),
-      'CSRF error in request'
+      'Client error in request'
     );
   });
 

@@ -22,7 +22,10 @@ const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
     })
   );
 
-  await prisma.$connect();
+  await prisma.$connect().catch((err: unknown) => {
+    server.log.error(err, 'Prisma connection failed');
+    throw err;
+  });
 
   server.decorate('prisma', prisma);
 
