@@ -73,6 +73,7 @@
           "dashedName": "express-middleware",
           "comingSoon": true,
           "blocks": [
+            "lecture-express-middleware",
             "workshop-express-middleware-by-building-a-submission-form",
             "lab-data-sanitizer",
             "review-express-middleware",

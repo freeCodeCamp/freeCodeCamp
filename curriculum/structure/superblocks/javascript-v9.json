@@ -155,7 +155,6 @@
             "lab-symmetric-difference",
             "lab-value-remover-function",
             "lab-matching-object-filter",
-            "lab-prime-number-sum-calculator",
             "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
             "lab-all-true-property-validator",
@@ -348,6 +347,7 @@
           "blocks": [
             "lecture-understanding-dynamic-programming-js",
             "lab-nth-fibonacci-number-js",
+            "lab-prime-number-sum-calculator",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]
