@@ -5199,12 +5199,6 @@
           "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
         ]
       },
-      "lab-prime-number-sum-calculator": {
-        "title": "Build a Prime Number Sum Calculator",
-        "intro": [
-          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
-        ]
-      },
       "lab-range-based-lcm-calculator": {
         "title": "Implement a Range-Based LCM Calculator",
         "intro": [
@@ -5839,6 +5833,12 @@
         "title": "Build an Nth Fibonacci Number Calculator",
         "intro": [
           "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
+        ]
+      },
+      "lab-prime-number-sum-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "review-dynamic-programming-js": {
