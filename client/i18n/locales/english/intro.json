@@ -7462,7 +7462,7 @@
         "intro": [
           "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
         ]
-      },
+      }
     }
   },
   "full-stack-developer-v9": {
