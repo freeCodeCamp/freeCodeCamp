@@ -35,6 +35,11 @@
   width: 1.4rem;
 }
 
+.independent-lower-jaw .hint-container .hint-body {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 .independent-lower-jaw .hint-container .hint-body p:last-child {
   margin-bottom: 0;
 }
