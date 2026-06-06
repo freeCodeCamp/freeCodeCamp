@@ -4964,7 +4964,7 @@
         "title": "Implement Data Sanitizer Sweep Process",
         "intro": [
           "In this lab, you will build two functions that will replace certain characters in a log string and entire log files.",
-          "You will practice string manipulation to change individual strings and loops to repeat the same process across multiple strings (ie. An entire log file"
+          "You will practice string manipulation to change individual strings and loops to repeat the same process across multiple strings (i.e., an entire log file)."
         ]
       },
       "lab-repeat-a-string": {
