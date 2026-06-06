@@ -97,7 +97,8 @@
             "lecture-understanding-websockets",
             "workshop-websockets-by-building-a-resource-monitor",
             "lab-chat-app",
-            "review-websockets"
+            "review-websockets",
+            "quiz-websockets"
           ]
         },
         { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },

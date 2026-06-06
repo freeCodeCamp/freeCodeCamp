@@ -599,9 +599,7 @@
     "chapters": {
       "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
     },
-    "modules": {
-      "introduction-to-d3": "Introduction to D3"
-    },
+    "modules": { "introduction-to-d3": "Introduction to D3" },
     "module-intros": {
       "introduction-to-d3": {
         "note": "Coming Late 2026",
@@ -7423,6 +7421,24 @@
           "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
         ]
       },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
+      },
+      "quiz-websockets": {
+        "title": "WebSockets Quiz",
+        "intro": [
+          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
+        ]
+      },
       "lab-prime-number-checker-module": {
         "title": "Build a Prime Number Checker Module",
         "intro": [
@@ -7445,18 +7461,6 @@
         "title": "Build a Timestamp Microservice",
         "intro": [
           "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
-      "lab-chat-app": {
-        "title": "Build a Chat App",
-        "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
-        ]
-      },
-      "review-websockets": {
-        "title": "WebSockets Review",
-        "intro": [
-          "Review WebSockets and Pub/Sub concepts before taking the quiz."
         ]
       }
     }
