@@ -94,8 +94,10 @@
           "dashedName": "websockets",
           "comingSoon": true,
           "blocks": [
+            "lecture-understanding-websockets",
             "workshop-websockets-by-building-a-resource-monitor",
             "lab-chat-app",
+            "review-websockets",
             "quiz-websockets"
           ]
         },

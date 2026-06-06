@@ -5197,12 +5197,6 @@
           "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
         ]
       },
-      "lab-prime-number-sum-calculator": {
-        "title": "Build a Prime Number Sum Calculator",
-        "intro": [
-          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
-        ]
-      },
       "lab-range-based-lcm-calculator": {
         "title": "Implement a Range-Based LCM Calculator",
         "intro": [
@@ -5837,6 +5831,12 @@
         "title": "Build an Nth Fibonacci Number Calculator",
         "intro": [
           "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
+        ]
+      },
+      "lab-prime-number-sum-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "review-dynamic-programming-js": {
@@ -7409,10 +7409,34 @@
           "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
         ]
       },
+      "lecture-understanding-websockets": {
+        "title": "Understanding WebSockets",
+        "intro": [
+          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
+        ]
+      },
       "workshop-websockets-by-building-a-resource-monitor": {
         "title": "Learn WebSockets by Building a Resource Monitor",
         "intro": [
           "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
+        ]
+      },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
+      },
+      "quiz-websockets": {
+        "title": "WebSockets Quiz",
+        "intro": [
+          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
       "lab-prime-number-checker-module": {
@@ -7439,18 +7463,6 @@
           "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
         ]
       },
-      "lab-chat-app": {
-        "title": "Build a Chat App",
-        "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
-        ]
-      },
-      "quiz-websockets": {
-        "title": "WebSockets Quiz",
-        "intro": [
-          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
-        ]
-      }
     }
   },
   "full-stack-developer-v9": {
