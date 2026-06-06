@@ -29,6 +29,18 @@
   gap: 0.75rem;
 }
 
+/* Prevent sponsor/ad containers from creating blank vertical space when
+   the ad network (e.g. Auth0 banner) reserves height before content loads.
+   Fixes: https://github.com/freeCodeCamp/freeCodeCamp/issues/59735 */
+.content-sidebar-column .sidebar-ad-container,
+.content-sidebar-column ins.carbon-ad,
+.content-sidebar-column #carbonads,
+.content-sidebar-column iframe[src*='carbonads'],
+.content-sidebar-column iframe[src*='auth0'] {
+  max-height: 300px;
+  overflow: hidden;
+}
+
 .content-outline-panel {
   height: calc(
     100vh - var(--header-height) - var(--breadcrumbs-height) -
