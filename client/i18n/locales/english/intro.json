@@ -7411,6 +7411,12 @@
           "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
         ]
       },
+      "lecture-understanding-websockets": {
+        "title": "Understanding WebSockets",
+        "intro": [
+          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
+        ]
+      },
       "workshop-websockets-by-building-a-resource-monitor": {
         "title": "Learn WebSockets by Building a Resource Monitor",
         "intro": [
