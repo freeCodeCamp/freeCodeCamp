@@ -45,6 +45,7 @@ function ProgressInner({
   const progressInnerWrap = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<number | null>(null);
   const isProgressInViewport = useIsInViewport(progressInnerWrap);
+  const accessibleLabel = `${title}. ${meta}`;
 
   const animateProgressInner = (completedPercent: number) => {
     // Clear any existing interval
@@ -105,7 +106,12 @@ function ProgressInner({
         </div>
         <div
           className='progress-bar-wrap'
-          aria-hidden='true'
+          role='progressbar'
+          aria-label={accessibleLabel}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(completedPercent)}
+          aria-valuetext={meta}
           ref={progressInnerWrap}
         >
           <ProgressBar now={shownPercent} />
@@ -119,7 +125,12 @@ function ProgressInner({
       <div className='completion-block-name'>{title}</div>
       <div
         className='progress-bar-wrap'
-        aria-hidden='true'
+        role='progressbar'
+        aria-label={accessibleLabel}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(completedPercent)}
+        aria-valuetext={meta}
         ref={progressInnerWrap}
       >
         <ProgressBar now={shownPercent} />
