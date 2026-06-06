@@ -7446,6 +7446,12 @@
         "intro": [
           "Practice building a real-time multi-client chat server using Node.js WebSockets."
         ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
       }
     }
   },
