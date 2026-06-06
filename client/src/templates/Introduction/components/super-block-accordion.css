@@ -34,11 +34,6 @@
   min-width: 0;
 }
 
-.super-block-accordion .chapter-header-wrapper .chapter-button-toggle,
-.super-block-accordion .module-header-wrapper .module-button-toggle {
-  flex-shrink: 0;
-}
-
 .super-block-accordion .chapter-header-wrapper {
   background-color: var(--primary-background);
 }
@@ -49,10 +44,8 @@
   padding: 16px;
   display: flex;
   align-items: center;
-}
-
-.super-block-accordion .chapter-button-toggle {
-  padding-left: 0;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .super-block-accordion .chapter-link {
@@ -131,15 +124,8 @@ button .block-header-button-text {
   font-weight: normal;
   gap: 10px;
   color: var(--primary-color);
-}
-
-.super-block-accordion .module-button-toggle {
-  padding-left: 0;
-}
-
-.super-block-accordion .block-header {
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
 }
 
 .super-block-accordion .module-button-left,

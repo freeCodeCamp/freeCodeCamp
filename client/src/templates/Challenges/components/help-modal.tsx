@@ -1,3 +1,4 @@
+/// <reference path="../../../../global-jsx.d.ts" />
 import React, { useMemo, useState, useRef, useEffect } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -163,9 +164,10 @@ function HelpModal({
     closeHelpModal();
   };
 
-  const hintUrl = guideUrl
-    ? guideUrl
-    : generateSearchLink(challengeTitle, challengeBlock, superBlock);
+  const hintUrl =
+    guideUrl && !guideUrl.includes('/search?q=')
+      ? guideUrl
+      : generateSearchLink(challengeTitle, challengeBlock, superBlock);
 
   if (isOpen) {
     callGA({ event: 'pageview', pagePath: '/help-modal' });

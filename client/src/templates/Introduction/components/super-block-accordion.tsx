@@ -1,3 +1,4 @@
+/// <reference path="../../../../global-jsx.d.ts" />
 import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +26,7 @@ const { showUpcomingChanges } = envData;
 
 interface ChapterProps {
   dashedName: string;
-  children: ReactNode;
+  children?: ReactNode;
   comingSoon?: boolean;
   isExpanded: boolean;
   totalSteps: number;
@@ -39,7 +40,7 @@ interface ChapterProps {
 
 interface ModuleProps {
   dashedName: string;
-  children: ReactNode;
+  children?: ReactNode;
   isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
@@ -117,9 +118,6 @@ const Chapter = ({
   const panelId = `chapter-panel-${dashedName}`;
   const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
-  const toggleLabel = open
-    ? t('intro:misc-text.collapse')
-    : t('intro:misc-text.expand');
   const showResetButton = !comingSoon && !isLinkChapter;
   const isResetDisabled = completedSteps === 0;
 
@@ -132,7 +130,7 @@ const Chapter = ({
     setShowResetModal(false);
   };
 
-  const toggleOpen = () => setOpen(o => !o);
+  const toggleOpen = () => setOpen(!open);
 
   const resetButton = showResetButton ? (
     <button
@@ -202,19 +200,9 @@ const Chapter = ({
           type='button'
         >
           {chapterButtonLeftContent}
-        </button>
-        {resetButton}
-        <button
-          aria-controls={panelId}
-          aria-expanded={open}
-          aria-label={`${toggleLabel} ${chapterLabel}`}
-          className='chapter-button chapter-button-toggle'
-          data-playwright-test-label='chapter-button-toggle'
-          onClick={toggleOpen}
-          type='button'
-        >
           {chapterButtonRightContent}
         </button>
+        {resetButton}
       </div>
       {open && (
         <ul className='chapter-panel' id={panelId}>
@@ -255,9 +243,6 @@ const Module = ({
   const panelId = `module-panel-${dashedName}`;
   const isComplete = totalSteps === 0 ? false : completedSteps === totalSteps;
   const moduleLabel = t(`intro:${superBlock}.modules.${dashedName}`);
-  const toggleLabel = open
-    ? t('intro:misc-text.collapse')
-    : t('intro:misc-text.expand');
   const { note, intro } = t(`intro:${superBlock}.module-intros.${dashedName}`, {
     returnObjects: true
   }) as {
@@ -278,7 +263,7 @@ const Module = ({
     setShowResetModal(false);
   };
 
-  const toggleOpen = () => setOpen(o => !o);
+  const toggleOpen = () => setOpen(!open);
 
   const resetButton = showResetButton ? (
     <button
@@ -311,18 +296,7 @@ const Module = ({
             </span>
             {moduleLabel}
           </div>
-        </button>
-        {resetButton}
-        <button
-          aria-controls={panelId}
-          aria-expanded={open}
-          aria-label={`${toggleLabel} ${moduleLabel}`}
-          className='module-button module-button-toggle'
-          data-testid='module-button-right'
-          onClick={toggleOpen}
-          type='button'
-        >
-          <div className='module-button-right'>
+          <div className='module-button-right' data-testid='module-button-right'>
             {!comingSoon && !!totalSteps && (
               <span className='module-steps'>
                 {t('learn.steps-completed', {
@@ -333,6 +307,7 @@ const Module = ({
             )}
           </div>
         </button>
+        {resetButton}
       </div>
       {open && (
         <ul className='module-panel' id={panelId}>
@@ -419,9 +394,9 @@ export const SuperBlockAccordion = ({
 
   const getBlockToChapterMap = () => {
     const blockToChapterMap = new Map<string, string>();
-    superBlockStructure.chapters.forEach(chapter => {
-      chapter.modules.forEach(module => {
-        module.blocks.forEach(block => {
+    superBlockStructure.chapters.forEach((chapter: any) => {
+      chapter.modules.forEach((module: any) => {
+        module.blocks.forEach((block: string) => {
           blockToChapterMap.set(block, chapter.dashedName);
         });
       });
@@ -432,8 +407,8 @@ export const SuperBlockAccordion = ({
 
   const getBlockToModuleMap = () => {
     const blockToModuleMap = new Map<string, string>();
-    modules.forEach(module => {
-      module.blocks.forEach(block => {
+    modules.forEach((module: any) => {
+      module.blocks.forEach((block: string) => {
         blockToModuleMap.set(block, module.dashedName);
       });
     });
@@ -481,7 +456,7 @@ export const SuperBlockAccordion = ({
 
   return (
     <ul className='super-block-accordion'>
-      {allChapters.map(chapter => {
+      {allChapters.map((chapter: PopulatedChapter) => {
         const chapterStepIds: string[] = [];
         chapter.modules.forEach(module => {
           const { blocks } = module;
@@ -567,7 +542,7 @@ export const SuperBlockAccordion = ({
               ).size;
 
               const moduleBlockDashedNames = module.blocks.map(
-                block => block.name
+                (block: PopulatedBlock) => block.name
               );
 
               return (
@@ -582,7 +557,7 @@ export const SuperBlockAccordion = ({
                   blockDashedNames={moduleBlockDashedNames}
                   onResetComplete={handleResetComplete}
                 >
-                  {module.blocks.map(block => (
+                  {module.blocks.map((block: PopulatedBlock) => (
                     // maybe TODO: allow blocks to be "coming soon"
                     <li key={block.name}>
                       <Block
