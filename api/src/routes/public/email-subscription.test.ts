@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { Prisma } from '@prisma/client';
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 import { setupServer, superRequest } from '../../../vitest.utils.js';
 import { HOME_LOCATION } from '../../utils/env.js';
 import { createUserInput } from '../../utils/create-user.js';
@@ -15,6 +15,10 @@ const urlEncodedSuccessMessage1 =
   '?messages=success%5B0%5D%3DWe%2527ve%2520successfully%2520updated%2520your%2520email%2520preferences.';
 const urlEncodedSuccessMessage2 =
   '?messages=success%5B0%5D%3DWe%2527ve%2520successfully%2520updated%2520your%2520email%2520preferences.%2520Thank%2520you%2520for%2520resubscribing.';
+const urlEncodedDangerMessage1 =
+  '?messages=danger%5B0%5D%3DFailed%2520to%2520unsubscribe%2520user%252C%2520please%2520contact%2520support%2520at%2520support%2540freecodecamp.org';
+const urlEncodedDangerMessage2 =
+  '?messages=danger%5B0%5D%3DSomething%2520went%2520wrong.';
 
 const unsubscribeId1 = 'abcde';
 const unsubscribeId2 = 'abcdef';
@@ -193,6 +197,22 @@ describe('Email Subscription endpoints', () => {
         }
       });
     });
+
+    test('should 302 redirect with danger message if unsubscribing fails', async () => {
+      vi.spyOn(
+        fastifyTestInstance.prisma.user,
+        'findMany'
+      ).mockRejectedValueOnce(new Error('Database unavailable'));
+
+      const response = await superRequest(`/ue/${unsubscribeId1}`, {
+        method: 'GET'
+      });
+
+      expect(response.headers.location).toStrictEqual(
+        `${HOME_LOCATION}${urlEncodedDangerMessage1}`
+      );
+      expect(response.status).toBe(302);
+    });
   });
 
   describe('GET /resubscribe/:unsubscribeId', () => {
@@ -314,6 +334,22 @@ describe('Email Subscription endpoints', () => {
           ]
         }
       });
+    });
+
+    test('should 302 redirect with danger message if resubscribing fails', async () => {
+      vi.spyOn(
+        fastifyTestInstance.prisma.user,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('Database unavailable'));
+
+      const response = await superRequest(`/resubscribe/${unsubscribeId1}`, {
+        method: 'GET'
+      });
+
+      expect(response.headers.location).toStrictEqual(
+        `${HOME_LOCATION}${urlEncodedDangerMessage2}`
+      );
+      expect(response.status).toBe(302);
     });
   });
 });
