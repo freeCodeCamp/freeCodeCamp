@@ -1400,7 +1400,7 @@
     },
     {
       "id": "6a22d77ddf034bc4e35b1d56",
-      "title": "Challenge 349: Nonogram Validator"
+      "title": "Challenge 349: Cell Signal"
     },
     {
       "id": "6a22d77ddf034bc4e35b1d57",
@@ -1429,6 +1429,42 @@
     {
       "id": "6a22d77ddf034bc4e35b1d5d",
       "title": "Challenge 356: Magic Square Solver"
+    },
+    {
+      "id": "6a26df3e2988bcdded204893",
+      "title": "Challenge 357: Food Chain"
+    },
+    {
+      "id": "6a26df3e2988bcdded204894",
+      "title": "Challenge 358: Emoji Translator"
+    },
+    {
+      "id": "6a26df3e2988bcdded204895",
+      "title": "Challenge 359: Golf Handicap Calculator"
+    },
+    {
+      "id": "6a26df3e2988bcdded204896",
+      "title": "Challenge 360: Spoken Duration"
+    },
+    {
+      "id": "6a26df3e2988bcdded204897",
+      "title": "Challenge 361: Spoken Time"
+    },
+    {
+      "id": "6a26df95efa55a2524399743",
+      "title": "Challenge 362: Nonogram Validator"
+    },
+    {
+      "id": "6a26df95efa55a2524399744",
+      "title": "Challenge 363: Bucket Fill 2"
+    },
+    {
+      "id": "6a26df95efa55a2524399745",
+      "title": "Challenge 364: Placeholder"
+    },
+    {
+      "id": "6a26df95efa55a2524399746",
+      "title": "Challenge 365: The Last Challenge"
     }
   ]
 }
