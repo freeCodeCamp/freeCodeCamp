@@ -52,6 +52,7 @@
           "dashedName": "rest-api-and-web-services",
           "comingSoon": true,
           "blocks": [
+            "lecture-understanding-rest-api-and-web-services",
             "workshop-express-by-building-a-weather-service-api",
             "lab-timestamp-microservice"
           ]
@@ -60,13 +61,22 @@
           "dashedName": "introduction-to-express",
           "comingSoon": true,
           "blocks": [
-            "lecture-understanding-rest-api-and-web-services",
             "lecture-working-with-express",
             "lecture-understanding-routing-in-express-js",
             "workshop-express-by-building-a-random-joke-app",
             "lab-personal-profile-app",
             "review-introduction-to-express",
             "quiz-introduction-to-express"
+          ]
+        },
+        {
+          "dashedName": "error-handling-in-express",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-error-handling-and-health-checks",
+            "workshop-error-handling-in-express-by-building-a-bank-api",
+            "review-error-handling-in-express",
+            "quiz-error-handling-in-express"
           ]
         },
         {
@@ -78,16 +88,6 @@
             "lab-data-sanitizer",
             "review-express-middleware",
             "quiz-express-middleware"
-          ]
-        },
-        {
-          "dashedName": "error-handling-in-express",
-          "comingSoon": true,
-          "blocks": [
-            "lecture-understanding-error-handling-and-health-checks",
-            "workshop-error-handling-in-express-by-building-a-bank-api",
-            "review-error-handling-in-express",
-            "quiz-error-handling-in-express"
           ]
         },
         {
