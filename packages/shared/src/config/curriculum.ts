@@ -91,6 +91,7 @@ export enum SuperBlocks {
   LearnRecursionWithJS = 'learn-recursion-with-javascript',
   IntroductionToFunctionalProgrammingWithJS = 'introduction-to-functional-programming-with-javascript',
   IntroductionToAsynchronousJS = 'introduction-to-asynchronous-javascript',
+  LearnDataVisualizationWithD3 = 'learn-data-visualization-with-d3',
   IntroductionToPythonBasics = 'introduction-to-python-basics',
   LearnPythonLoopsAndSequences = 'learn-python-loops-and-sequences',
   LearnPythonDictionariesAndSets = 'learn-python-dictionaries-and-sets',
@@ -278,6 +279,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.LearnRecursionWithJS,
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
     SuperBlocks.IntroductionToAsynchronousJS,
+    SuperBlocks.LearnDataVisualizationWithD3,
     SuperBlocks.IntroductionToPythonBasics,
     SuperBlocks.LearnPythonLoopsAndSequences,
     SuperBlocks.LearnPythonDictionariesAndSets,
@@ -327,6 +329,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,
+  SuperBlocks.LearnDataVisualizationWithD3,
   SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
