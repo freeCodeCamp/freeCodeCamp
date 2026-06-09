@@ -587,6 +587,48 @@
       }
     }
   },
+  "learn-data-visualization-with-d3": {
+    "title": "Learn Data Visualization with D3",
+    "summary": [
+      "Learn how to use D3 to turn data into interactive bar charts and scatterplots."
+    ],
+    "intro": [
+      "In this course, you'll learn core data visualization concepts and practice using the D3 library to build charts from datasets."
+    ],
+    "note": "",
+    "chapters": {
+      "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
+    },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
+    "module-intros": {
+      "introduction-to-d3": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn the basics of working with D3."
+        ]
+      }
+    },
+    "blocks": {
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab, you will use D3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab, you will create a D3 scatterplot graph using a provided dataset."
+        ]
+      }
+    }
+  },
   "relational-database": {
     "title": "Реляційні бази даних V8",
     "intro": [
@@ -796,7 +838,7 @@
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Вивчіть спискові вирази Python, створивши програму для зміни регістру",
         "intro": [
-          "Спискові вирази — це спосіб створення нового списку Python з ітерабельних типів (списків, кортежів і рядків) без використання циклу for або методу списку .append().",
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "У цьому проєкті ви напишете програму, яка приймає рядок у верхньому або нижньому верблюдячому регістрі, а потім перетворює його у зміїний регістр.",
           "Проєкт складається з двох етапів: спочатку ви використаєте цикл for, щоб імплементувати програму. Потім ви дізнаєтесь, як використовувати спискові вирази замість циклу, щоб отримати ті ж результати."
         ]
@@ -5147,12 +5189,6 @@
           "У цій лабораторній роботі ви створите функцію, яка переглядає масив об’єктів і повертає масив всіх об’єктів з відповідними парами властивість-значення."
         ]
       },
-      "lab-prime-number-sum-calculator": {
-        "title": "Створіть калькулятор суми простих чисел",
-        "intro": [
-          "У цій лабораторній роботі ви створите калькулятор простих чисел, який приймає число і повертає суму всіх чисел, які менші або дорівнюють заданому числу."
-        ]
-      },
       "lab-range-based-lcm-calculator": {
         "title": "Створіть калькулятор НСК",
         "intro": [
@@ -5793,6 +5829,12 @@
           "У цій лабораторній роботі ви застосуєте динамічне програмування на практиці, імплементувавши калькулятор послідовності Фібоначчі в JavaScript."
         ]
       },
+      "lab-prime-number-sum-calculator": {
+        "title": "Створіть калькулятор суми простих чисел",
+        "intro": [
+          "У цій лабораторній роботі ви створите калькулятор простих чисел, який приймає число і повертає суму всіх чисел, які менші або дорівнюють заданому числу."
+        ]
+      },
       "review-dynamic-programming-js": {
         "title": "Повторення динамічного програмування",
         "intro": [
@@ -5921,7 +5963,6 @@
       "typescript-fundamentals": "Основи TypeScript",
       "lab-flashcard-quiz-app": "Створіть програму з вікториною",
       "lab-digital-pet-game": "Створіть гру з домашнім улюбленцем",
-      "data-visualization": "Візуалізація даних та D3",
       "review-front-end-libraries": "Повторення бібліотек Front End",
       "front-end-development-libraries-certification-exam": "Екзамен з сертифікації «Бібліотеки Front End»"
     },
@@ -5929,12 +5970,6 @@
       "typescript-fundamentals": {
         "intro": [
           "У цьому модулі ви ознайомитесь з TypeScript — розширеною версією JavaScript, яка дозволяє додавати статичну типізацію до JavaScript-коду. Ви виконаєте декілька практичних занять і лабораторних робіт, де застосуєте узагальнення, звуження типів, TSX і багато іншого. А потім перевірите отримані знання з основ TypeScript, пройшовши короткий тест."
-        ]
-      },
-      "data-visualization": {
-        "note": "Очікуйте у 2026",
-        "intro": [
-          "У цьому модулі ви ознайомитесь з візуалізацією даних і навчитесь працювати з бібліотекою D3."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6289,24 +6324,6 @@
       "quiz-typescript": {
         "title": "Тест «TypeScript»",
         "intro": ["Перевірте, що ви дізнались про TypeScript."]
-      },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Вступ до візуалізації даних",
-        "intro": [
-          "У цих лекціях ви дізнаєтесь про базові поняття у візуалізації даних."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Створіть стовпчикову діаграму",
-        "intro": [
-          "У цій лабораторній роботі ви будете використовувати d3, щоб створити стовпчикову діаграму."
-        ]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Створіть діаграму розсіювання",
-        "intro": [
-          "У цій лабораторній роботі ви створите діаграму розсіювання d3, використовуючи наданий набір даних."
-        ]
       },
       "review-front-end-libraries": {
         "title": "Повторення бібліотек Front End",
@@ -7306,6 +7323,12 @@
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
+      "lecture-express-middleware": {
+        "title": "Express Middleware",
+        "intro": [
+          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
       "review-express-middleware": {
         "title": "Express Middleware Review",
         "intro": [
@@ -7339,13 +7362,13 @@
       "workshop-nodejs-common-modules": {
         "title": "Learn Node.js Common Modules",
         "intro": [
-          "You will learn Node.js built-in modules like `fs`, `path`, and `crypto` by using them for file operations and data processing."
+          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
       },
       "workshop-nodejs-by-building-a-web-server": {
         "title": "Learn Node.js by Building a Web Server",
         "intro": [
-          "You will learn the Node.js `http` module by building a web server to serve a multi-page client application."
+          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
         ]
       },
       "workshop-express-by-building-a-random-joke-app": {
@@ -7363,7 +7386,7 @@
       "workshop-express-by-building-a-weather-service-api": {
         "title": "Learn Express by Building a Weather Service API",
         "intro": [
-          "You will learn route parameters and modular routing with `express.Router` by building a weather service API."
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
         ]
       },
       "workshop-error-handling-in-express-by-building-a-bank-api": {
@@ -7372,10 +7395,34 @@
           "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
         ]
       },
+      "lecture-understanding-websockets": {
+        "title": "Understanding WebSockets",
+        "intro": [
+          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
+        ]
+      },
       "workshop-websockets-by-building-a-resource-monitor": {
         "title": "Learn WebSockets by Building a Resource Monitor",
         "intro": [
           "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
+        ]
+      },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
+      },
+      "quiz-websockets": {
+        "title": "WebSockets Quiz",
+        "intro": [
+          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
       "lab-prime-number-checker-module": {
@@ -7400,12 +7447,6 @@
         "title": "Build a Timestamp Microservice",
         "intro": [
           "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
-      "lab-chat-app": {
-        "title": "Build a Chat App",
-        "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
         ]
       }
     }
