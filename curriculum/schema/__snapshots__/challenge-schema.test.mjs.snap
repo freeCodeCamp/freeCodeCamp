@@ -141,6 +141,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "relational-databases-v9",
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
+              "learn-data-visualization-with-d3",
               "a1-professional-chinese",
             ],
             "flags": {
@@ -318,6 +319,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "relational-databases-v9",
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
+              "learn-data-visualization-with-d3",
               "a1-professional-chinese",
             ],
             "flags": {
@@ -749,6 +751,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "relational-databases-v9",
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
+              "learn-data-visualization-with-d3",
               "a1-professional-chinese",
             ],
             "flags": {
