@@ -7179,13 +7179,11 @@
       "http-and-the-web-standards-model": "HTTP e o Modelo de Padrões da Web",
       "rest-api-and-web-services": "API REST e Serviços Web",
       "introduction-to-express": "Introdução ao Express",
-      "express-middleware": "Middleware do Express",
       "error-handling-in-express": "Tratamento de Erros no Express",
+      "express-middleware": "Middleware do Express",
       "websockets": "WebSockets",
-      "node-and-sql": "Node e SQL",
       "security-and-privacy": "Segurança e Privacidade",
       "authentication": "Autenticação",
-      "tooling-and-deployment": "Ferramentas e Implantação",
       "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "module-intros": {
@@ -7225,28 +7223,22 @@
           "Neste módulo, você será apresentado ao Express.js, que é um framework usado para criar APIs RESTful. Em seguida, você praticará suas habilidades através de workshops e laboratórios e testará seu conhecimento com um breve questionário."
         ]
       },
-      "express-middleware": {
-        "note": "Próximo Lançamento: Final de 2026",
-        "intro": [
-          "Neste módulo, você aprenderá sobre middleware no Express.js, que é usado para lidar com requisições e respostas entre o cliente e o servidor. Em seguida, você praticará suas habilidades em um workshop e laboratório e testará seus conhecimentos com um breve questionário."
-        ]
-      },
       "error-handling-in-express": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
           "Neste módulo, você aprenderá sobre como o tratamento de erros, depuração e verificações de saúde funcionam no Express.js. Em seguida, você praticará o que aprendeu em um laboratório e testará seus conhecimentos com um breve questionário."
         ]
       },
+      "express-middleware": {
+        "note": "Próximo Lançamento: Final de 2026",
+        "intro": [
+          "Neste módulo, você aprenderá sobre middleware no Express.js, que é usado para lidar com requisições e respostas entre o cliente e o servidor. Em seguida, você praticará suas habilidades em um workshop e laboratório e testará seus conhecimentos com um breve questionário."
+        ]
+      },
       "websockets": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
           "Neste módulo, você conhecerá os WebSockets, que são um protocolo utilizado para comunicação em tempo real entre o cliente e o servidor. Em seguida, você praticará o que aprendeu em laboratórios e workshops e testará seus conhecimentos com um breve questionário."
-        ]
-      },
-      "node-and-sql": {
-        "note": "Próximo Lançamento: Final de 2026",
-        "intro": [
-          "Neste módulo, você praticará criando aplicações com Node e SQL. Em seguida, você fará um breve questionário para testar seus conhecimentos."
         ]
       },
       "security-and-privacy": {
@@ -7259,12 +7251,6 @@
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
           "Neste módulo, você aprenderá como funciona a autenticação em aplicações web e outros conceitos importantes, incluindo JWTs, CSRFs, Passport, Helmet, criptografia e encriptação, e mais. Em seguida, você praticará o que aprendeu em laboratórios e workshops e testará seus conhecimentos com um breve questionário."
-        ]
-      },
-      "tooling-and-deployment": {
-        "note": "Próximo Lançamento: Final de 2026",
-        "intro": [
-          "Neste módulo, você aprenderá sobre ferramentas comuns usadas na indústria para a implantação de suas aplicações full-stack. Em seguida, fará um breve questionário para testar seu conhecimento."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
@@ -7281,6 +7267,12 @@
           "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no computador, e as vantagens e desvantagens de usar o Node.js no back-end."
         ]
       },
+      "workshop-nodejs-repl": {
+        "title": "Learn Node.js REPL",
+        "intro": [
+          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
+        ]
+      },
       "review-node-js-intro": {
         "title": "Revisão introdutória de NodeJS",
         "intro": [
@@ -7295,6 +7287,12 @@
         "title": "Trabalhando com Módulos Core do Node",
         "intro": [
           "Aprenda sobre os módulos core do Node.js, como fs, buffer, stream e path, e outros, para entender o que o Node oferece por padrão para criar aplicações eficientes sem depender de bibliotecas de terceiros."
+        ]
+      },
+      "workshop-nodejs-common-modules": {
+        "title": "Learn Node.js Common Modules",
+        "intro": [
+          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
       },
       "review-node-js-core-modules": {
@@ -7319,6 +7317,18 @@
         "title": "Trabalhando com scripts do npm",
         "intro": [
           "Aprenda sobre scripts do npm, publicando pacotes no registro do npm e trabalhando com os módulos CommonJS e ES. Essas lições cobrem ferramentas essenciais de desenvolvimento de Node.js e os sistemas de módulos."
+        ]
+      },
+      "workshop-how-to-build-an-npm-module": {
+        "title": "Learn How to Build an NPM Module",
+        "intro": [
+          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
+        ]
+      },
+      "lab-prime-number-checker-module": {
+        "title": "Build a Prime Number Checker Module",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
         ]
       },
       "review-npm": {
@@ -7349,6 +7359,12 @@
           "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
         ]
       },
+      "workshop-nodejs-by-building-a-web-server": {
+        "title": "Learn Node.js by Building a Web Server",
+        "intro": [
+          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
+        ]
+      },
       "review-http-and-the-web-standards-model": {
         "title": "HTTP and the Web Standards Model Review",
         "intro": [
@@ -7368,6 +7384,18 @@
           "Nessas aulas, você aprenderá sobre REST APIs e web services, e como eles permitem que diferentes aplicações se comuniquem entre si através da internet."
         ]
       },
+      "workshop-express-by-building-a-weather-service-api": {
+        "title": "Learn Express by Building a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
       "lecture-working-with-express": {
         "title": "Trabalhando com Express",
         "intro": [
@@ -7379,6 +7407,18 @@
         "intro": [
           "Compreendendo o Roteamento no ExpressJS",
           "Nestas aulas, você aprenderá sobre roteamento no ExpressJS, ou seja, como definir os diferentes endpoints da aplicação web e como eles respondem às solicitações do cliente."
+        ]
+      },
+      "workshop-express-by-building-a-random-joke-app": {
+        "title": "Learn Express by Building a Random Joke App",
+        "intro": [
+          "You will learn basic Express routing and response methods by building a random joke app."
+        ]
+      },
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
+        "intro": [
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "review-introduction-to-express": {
@@ -7399,6 +7439,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "workshop-error-handling-in-express-by-building-a-bank-api": {
+        "title": "Learn Error Handling in Express by Building a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
       "review-error-handling-in-express": {
         "title": "Error Handling in Express Review",
         "intro": [
@@ -7417,6 +7463,18 @@
           "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
         ]
       },
+      "workshop-express-middleware-by-building-a-submission-form": {
+        "title": "Learn Express Middleware by Building a Submission Form",
+        "intro": [
+          "You will learn application-level and router-level middleware by building a structured submission form."
+        ]
+      },
+      "lab-data-sanitizer": {
+        "title": "Build a Data Sanitizer",
+        "intro": [
+          "Practice creating custom Express middleware by building a data sanitizer and validator."
+        ]
+      },
       "review-express-middleware": {
         "title": "Express Middleware Review",
         "intro": [
@@ -7427,60 +7485,6 @@
         "title": "Express Middleware Quiz",
         "intro": [
           "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
-        ]
-      },
-      "exam-back-end-development-and-apis-certification": {
-        "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
-        "intro": [
-          "Passe neste exame para ganhar sua Certificação de Desenvolvimento Back End e APIs"
-        ]
-      },
-      "workshop-nodejs-repl": {
-        "title": "Learn Node.js REPL",
-        "intro": [
-          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
-        ]
-      },
-      "workshop-how-to-build-an-npm-module": {
-        "title": "Learn How to Build an NPM Module",
-        "intro": [
-          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
-        ]
-      },
-      "workshop-nodejs-common-modules": {
-        "title": "Learn Node.js Common Modules",
-        "intro": [
-          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
-        ]
-      },
-      "workshop-nodejs-by-building-a-web-server": {
-        "title": "Learn Node.js by Building a Web Server",
-        "intro": [
-          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
-        ]
-      },
-      "workshop-express-by-building-a-random-joke-app": {
-        "title": "Learn Express by Building a Random Joke App",
-        "intro": [
-          "You will learn basic Express routing and response methods by building a random joke app."
-        ]
-      },
-      "workshop-express-middleware-by-building-a-submission-form": {
-        "title": "Learn Express Middleware by Building a Submission Form",
-        "intro": [
-          "You will learn application-level and router-level middleware by building a structured submission form."
-        ]
-      },
-      "workshop-express-by-building-a-weather-service-api": {
-        "title": "Learn Express by Building a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
-        ]
-      },
-      "workshop-error-handling-in-express-by-building-a-bank-api": {
-        "title": "Learn Error Handling in Express by Building a Bank API",
-        "intro": [
-          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
         ]
       },
       "lecture-understanding-websockets": {
@@ -7513,28 +7517,10 @@
           "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
-      "lab-prime-number-checker-module": {
-        "title": "Build a Prime Number Checker Module",
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
-          "Practice building and exporting an NPM module by creating a prime number checker."
-        ]
-      },
-      "lab-personal-profile-app": {
-        "title": "Build a Personal Profile App",
-        "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
-        ]
-      },
-      "lab-data-sanitizer": {
-        "title": "Build a Data Sanitizer",
-        "intro": [
-          "Practice creating custom Express middleware by building a data sanitizer and validator."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+          "Passe neste exame para ganhar sua Certificação de Desenvolvimento Back End e APIs"
         ]
       }
     }
