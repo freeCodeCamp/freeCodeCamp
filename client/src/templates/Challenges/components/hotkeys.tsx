@@ -27,7 +27,10 @@ import {
   isShortcutsModalOpenSelector
 } from '../redux/selectors';
 import './hotkeys.css';
-import { isProjectBased } from '../../../utils/curriculum-layout';
+import {
+  isLabChallenge,
+  isProjectBased
+} from '../../../utils/curriculum-layout';
 import type { EditorProps } from '../classic/editor';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
@@ -158,15 +161,15 @@ function Hotkeys({
 
       const testsArePassing = tests.every(test => test.pass && !test.err);
 
-      if (
-        usesMultifileEditor &&
-        typeof challengeType == 'number' &&
-        !isProjectBased(challengeType)
-      ) {
-        if (testsArePassing) {
-          submitChallenge();
+      if (usesMultifileEditor && typeof challengeType == 'number') {
+        if (!isProjectBased(challengeType) || isLabChallenge(challengeType)) {
+          if (testsArePassing) {
+            submitChallenge();
+          } else {
+            executeChallenge();
+          }
         } else {
-          executeChallenge();
+          executeChallenge({ showCompletionModal: !showIndependentLowerJaw });
         }
       } else {
         executeChallenge({ showCompletionModal: !showIndependentLowerJaw });

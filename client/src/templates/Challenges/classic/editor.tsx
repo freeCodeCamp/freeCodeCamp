@@ -61,7 +61,10 @@ import {
 } from '../utils/index';
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
-import { isProjectBased } from '../../../utils/curriculum-layout';
+import {
+  isLabChallenge,
+  isProjectBased
+} from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 import { attachContentWidgetEvents } from './content-widget-events';
@@ -634,7 +637,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       ],
       run: () => {
         const shouldShowCompletionModal = !props.showIndependentLowerJaw;
-        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
+        if (
+          props.usesMultifileEditor &&
+          (!isProjectBased(props.challengeType) ||
+            isLabChallenge(props.challengeType))
+        ) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {

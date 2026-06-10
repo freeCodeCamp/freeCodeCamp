@@ -19,6 +19,14 @@ const projectBasedChallengeTypes = [
   challengeTypes.dailyChallengePy
 ];
 
+export function isLabChallenge(challengeType: number): boolean {
+  return (
+    challengeType === challengeTypes.lab ||
+    challengeType === challengeTypes.jsLab ||
+    challengeType === challengeTypes.pyLab
+  );
+}
+
 export const isProjectBased = (
   challengeType: number,
   blockDashedName: unknown = null
