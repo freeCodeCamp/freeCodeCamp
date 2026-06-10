@@ -1,5 +1,26 @@
 # GitHub Copilot Code Review Instructions
 
+
+## Table of Contents
+
+- [Core Principles](#core-principles)
+- [Pull request overview](#pull-request-overview)
+  - [Reviewed changes](#reviewed-changes)
+- [Focus Areas](#focus-areas)
+- [Focus Area 1: Test Coverage](#focus-area-1-test-coverage)
+  - [Quick Reference](#quick-reference)
+  - [When to Comment](#when-to-comment)
+  - [When NOT to Comment](#when-not-to-comment)
+  - [Comment Style](#comment-style)
+- [Focus Area 2: Pull Request Guidelines](#focus-area-2-pull-request-guidelines)
+  - [PR Title Format](#pr-title-format)
+  - [PR Description & Issue Linking](#pr-description-issue-linking)
+  - [Checklist Completion](#checklist-completion)
+  - [Comment Style](#comment-style)
+- [General Guidelines](#general-guidelines)
+  - [Strict Rules](#strict-rules)
+  - [Prioritization](#prioritization)
+
 ## Core Principles
 
 **BE EXTREMELY MINIMAL.** Only provide actionable feedback.
