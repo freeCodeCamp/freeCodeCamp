@@ -273,3 +273,49 @@ test('Cmd+Enter should not open completion modal in multifile editor (uses lower
     page
   });
 });
+
+test('Ctrl+Enter should redirect to next challenge after tests pass in multifile lab', async ({
+  page,
+  browserName
+}) => {
+  await page.goto(links.multifileLab);
+
+  const editor = getEditors(page);
+  await editor.focus();
+  await expect(editor).toBeFocused();
+  await clearEditor({ page, browserName });
+  await editor.fill(multifileLabSolution);
+
+  await page.keyboard.press('Control+Enter');
+
+  await expect(
+    page.getByTestId('independentLowerJaw-submit-button')
+  ).toBeVisible();
+
+  await page.keyboard.press('Control+Enter');
+
+  await expect(page).not.toHaveURL(links.multifileLab);
+});
+
+test('Cmd+Enter should redirect to next challenge after tests pass in multifile lab', async ({
+  page,
+  browserName
+}) => {
+  await page.goto(links.multifileLab);
+
+  const editor = getEditors(page);
+  await editor.focus();
+  await expect(editor).toBeFocused();
+  await clearEditor({ page, browserName });
+  await editor.fill(multifileLabSolution);
+
+  await page.keyboard.press('Meta+Enter');
+
+  await expect(
+    page.getByTestId('independentLowerJaw-submit-button')
+  ).toBeVisible();
+
+  await page.keyboard.press('Meta+Enter');
+
+  await expect(page).not.toHaveURL(links.multifileLab);
+});
