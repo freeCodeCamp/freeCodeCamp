@@ -5,6 +5,7 @@ import { concatHtml } from './builders.js';
 import {
   getTransformers,
   embedFilesInHtml,
+  getLocalSourceWarnings,
   getPythonTransformers,
   getMultifileJSXTransformers
 } from './transformers.js';
@@ -173,6 +174,12 @@ type BuildResult = {
   sources: Source | undefined;
   loadEnzyme?: boolean;
   error?: unknown;
+  warnings?: {
+    type: 'unavailable-local-resource';
+    source: string;
+    resourceType: 'stylesheet' | 'script';
+    allowedSources: string[];
+  }[];
 };
 
 function hasTS(challengeFiles: ChallengeFile[]) {
@@ -238,6 +245,7 @@ async function buildDOMChallenge(
   const pipeLine = composeFunctions(...transformers);
   const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
+  const warnings = getLocalSourceWarnings(finalFiles);
   const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
@@ -259,7 +267,8 @@ async function buildDOMChallenge(
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
-    error
+    error,
+    warnings
   };
 }
 
