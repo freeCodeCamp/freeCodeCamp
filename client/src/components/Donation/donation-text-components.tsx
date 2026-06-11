@@ -108,9 +108,9 @@ export const DonationFaqText = (): JSX.Element => {
       Q: t('donate.offer-refunds'),
       A: (
         <>
-          <p>{t('donate.donations-are-voluntary-1')}</p>
-          <p>{t('donate.donations-are-voluntary-2')}</p>
-          <p>{t('donate.donations-are-voluntary-3')}</p>
+          <p>{t('donate.donations-are-voluntary')}</p>
+          <p>{t('donate.cancel-future-donations')}</p>
+          <p>{t('donate.without-your-authorization')}</p>
         </>
       )
     },
