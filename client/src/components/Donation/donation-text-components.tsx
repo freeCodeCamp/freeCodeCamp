@@ -105,6 +105,16 @@ export const DonationFaqText = (): JSX.Element => {
   const faqItems = [
     { Q: t('donate.get-help'), A: <p>{t('donate.forward-receipt')}</p> },
     {
+      Q: t('donate.offer-refunds'),
+      A: (
+        <>
+          <p>{t('donate.donations-are-voluntary-1')}</p>
+          <p>{t('donate.donations-are-voluntary-2')}</p>
+          <p>{t('donate.donations-are-voluntary-3')}</p>
+        </>
+      )
+    },
+    {
       Q: t('donate.how-transparent'),
       A: (
         <>
