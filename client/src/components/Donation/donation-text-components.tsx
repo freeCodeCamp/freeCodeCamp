@@ -124,6 +124,15 @@ export const DonationFaqText = (): JSX.Element => {
       )
     },
     {
+      Q: t('donate.how-will-donation-appear'),
+      A: (
+        <>
+          <p>{t('donate.as-freecodecamp-inc')}</p>
+          <p>{t('donate.do-not-recognize')}</p>
+        </>
+      )
+    },
+    {
       Q: t('donate.how-transparent'),
       A: (
         <>
