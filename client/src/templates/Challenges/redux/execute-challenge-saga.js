@@ -351,7 +351,7 @@ export function* updatePreviewSaga(action) {
     yield updatePython(challengeData);
   } else {
     // all other challenges have to recreate the preview
-    yield previewChallengeSaga(action);
+    yield previewChallengeSaga();
   }
 }
 
