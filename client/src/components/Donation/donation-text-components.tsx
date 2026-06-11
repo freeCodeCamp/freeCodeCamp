@@ -133,6 +133,15 @@ export const DonationFaqText = (): JSX.Element => {
       )
     },
     {
+      Q: t('donate.are-benefits-a-product'),
+      A: (
+        <>
+          <p>{t('donate.benefits-are-thanks')}</p>
+          <p>{t('donate.benefits-not-sold-separately')}</p>
+        </>
+      )
+    },
+    {
       Q: t('donate.how-transparent'),
       A: (
         <>
