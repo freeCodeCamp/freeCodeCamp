@@ -808,6 +808,7 @@
     "your-donation": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world.",
     "your-donation-2": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each month.",
     "your-donation-3": "Your ${{usd}} donation will provide {{hours}} hours of learning to people around the world each year.",
+    "donation-policy-disclaimer": "Donations to freeCodeCamp are voluntary charitable contributions and are non-refundable. Monthly donations continue until canceled, and you can cancel future donations at any time by contacting donors@freecodecamp.org.",
     "become-supporter": "Become a Supporter",
     "progress-modal-cta-1": "Donate now to help our charity build a free accredited Computer Science degree for all.",
     "progress-modal-cta-2": "Donate now to sponsor 53 hours of server time for our charity's website.",

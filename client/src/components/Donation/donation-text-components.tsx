@@ -310,6 +310,18 @@ export const GetSupporterBenefitsText = ({
   );
 };
 
+export const DonationPolicyDisclaimer = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <p
+      className='donation-policy-disclaimer'
+      data-playwright-test-label='donation-policy-disclaimer'
+    >
+      {t('donate.donation-policy-disclaimer')}
+    </p>
+  );
+};
+
 export const ModalBenefitList = () => {
   const { t } = useTranslation();
   const isA11yFeatureEnabled = useFeature('a11y-donation-modal').on;
