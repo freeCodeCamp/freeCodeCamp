@@ -115,6 +115,15 @@ export const DonationFaqText = (): JSX.Element => {
       )
     },
     {
+      Q: t('donate.how-update'),
+      A: (
+        <>
+          <p>{t('donate.take-care-of-this')}</p>
+          <p>{t('donate.help-update-change-cancel')}</p>
+        </>
+      )
+    },
+    {
       Q: t('donate.how-transparent'),
       A: (
         <>
@@ -193,7 +202,6 @@ export const DonationFaqText = (): JSX.Element => {
       )
     },
     { Q: t('donate.how-stock'), A: <p>{t('donate.welcome-stock')}</p> },
-    { Q: t('donate.how-update'), A: <p>{t('donate.forward-receipt')}</p> },
     {
       Q: t('donate.anything-else'),
       A: <p>{t('donate.other-support')}</p>
