@@ -306,7 +306,7 @@ export const GetSupporterBenefitsText = ({
   return (
     <>
       <Spacer size='l' />
-      <p>{t('donate.as-you-see')}</p>
+      <p>{t('donate.careful-with-every-donation')}</p>
       {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
     </>
   );
