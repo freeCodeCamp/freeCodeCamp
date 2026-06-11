@@ -213,6 +213,9 @@ export const SupportBenefitsText = ({
           : t('donate.support-benefits-title')}
       </h2>
       <BenefitsList />
+      <p className='support-benefits-disclaimer'>
+        {t('donate.support-benefits-disclaimer')}
+      </p>
     </>
   );
 };
@@ -236,7 +239,6 @@ const BenefitsList = (): JSX.Element => {
           <code>placeholder</code>
         </Trans>
       </li>
-      <li>{t('donate.support-benefits-5')}</li>
     </ul>
   );
 };
