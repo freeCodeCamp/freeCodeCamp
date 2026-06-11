@@ -10,6 +10,8 @@ import { API_LOCATION } from '../../utils/env.js';
 import { getRedirectParams } from '../../utils/redirection.js';
 import { isRestricted } from '../helpers/is-restricted.js';
 
+const AUTH_LINK_WAIT_MINUTES = 5;
+
 type WaitMesssageArgs = {
   sentAt: Date | null;
   now?: Date;
@@ -34,7 +36,7 @@ export function getWaitMessage({ sentAt, now = new Date() }: WaitMesssageArgs) {
 
 function getWaitPeriod({ sentAt, now }: Required<WaitMesssageArgs>) {
   if (sentAt == null) return 0;
-  return 5 - differenceInMinutes(now, sentAt);
+  return AUTH_LINK_WAIT_MINUTES - differenceInMinutes(now, sentAt);
 }
 
 /**
