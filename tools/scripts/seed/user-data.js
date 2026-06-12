@@ -219,6 +219,19 @@ const {
   completedDailyCodingChallenges: certifiedDailyCodingChallenges
 } = buildCertifiedChallengeData(pregeneratedCompletedChallenges);
 
+const {
+  certSlugTypeMap
+} = require('@freecodecamp/shared/config/certification-settings');
+
+// Claim every certification. Each Certification maps to a user flag in
+// certSlugTypeMap; is2018FullStackCert is a legacy flag that predates that map.
+const claimedCertifications = {
+  ...Object.fromEntries(
+    Object.values(certSlugTypeMap).map(flag => [flag, true])
+  ),
+  is2018FullStackCert: true
+};
+
 module.exports.fullyCertifiedUser = {
   _id: fullyCertifiedUserId,
   email: 'foo@bar.com',
@@ -235,38 +248,7 @@ module.exports.fullyCertifiedUser = {
   sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: true,
-  isA2EnglishCert: true,
-  isB1EnglishCert: true,
-  isFrontEndCert: true,
-  isDataVisCert: true,
-  isBackEndCert: true,
-  isFullStackCert: true,
-  isRespWebDesignCert: true,
-  isRespWebDesignCertV9: true,
-  is2018DataVisCert: true,
-  isFrontEndLibsCert: true,
-  isJavascriptCertV9: true,
-  isJsAlgoDataStructCert: true,
-  isJsAlgoDataStructCertV8: true,
-  isApisMicroservicesCert: true,
-  isInfosecQaCert: true,
-  isPythonCertV9: true,
-  isQaCertV7: true,
-  isInfosecCertV7: true,
-  is2018FullStackCert: true,
-  isSciCompPyCertV7: true,
-  isDataAnalysisPyCertV7: true,
-  isMachineLearningPyCertV7: true,
-  isRelationalDatabaseCertV8: true,
-  isRelationalDatabaseCertV9: true,
-  isCollegeAlgebraPyCertV8: true,
-  isFoundationalCSharpCertV8: true,
-  isFrontEndLibsCertV9: true,
-  isBackEndDevApisCertV9: true,
-  isFullStackDeveloperCertV9: true,
-  isA2SpanishCert: true,
-  isA2ChineseCert: true,
-  isA1ChineseCert: true,
+  ...claimedCertifications,
   completedChallenges: certifiedCompletedChallenges,
   completedDailyCodingChallenges: certifiedDailyCodingChallenges,
   completedExams: [
