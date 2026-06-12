@@ -21,7 +21,19 @@ const GENERATED_COMPLETED_DATE = 1700000000000;
 const DAILY_CHALLENGE_JS = 28;
 const DAILY_CHALLENGE_PY = 29;
 
-const ID_RE = /^([0-9a-f]{24})\.md$/;
+// The challenge id is authoritative in the frontmatter `id:` field, not the
+// filename: some challenges (e.g. video lectures) use a slug filename.
+const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---/;
+
+function frontmatter(text) {
+  const match = text.match(FRONTMATTER_RE);
+  return match ? match[1] : '';
+}
+
+function readFrontmatterId(fm) {
+  const match = fm.match(/^id:\s*([0-9a-f]{24})\s*$/m);
+  return match ? match[1] : undefined;
+}
 
 // Mirrors tools/challenge-parser get-file-visitor.js so generated files match
 // what the platform stores when a saveSubmissionToDB challenge is submitted.
@@ -104,11 +116,12 @@ function buildCertifiedChallengeData(pregenerated) {
     if (!fs.statSync(blockDir).isDirectory()) continue;
 
     for (const file of fs.readdirSync(blockDir)) {
-      const idMatch = file.match(ID_RE);
-      if (!idMatch) continue;
-      const id = idMatch[1];
+      if (!file.endsWith('.md')) continue;
       const text = fs.readFileSync(path.join(blockDir, file), 'utf8');
-      const challengeType = readFrontmatterNumber(text, 'challengeType');
+      const fm = frontmatter(text);
+      const id = readFrontmatterId(fm);
+      if (!id) continue;
+      const challengeType = readFrontmatterNumber(fm, 'challengeType');
 
       if (
         challengeType === DAILY_CHALLENGE_JS ||
@@ -127,7 +140,7 @@ function buildCertifiedChallengeData(pregenerated) {
       completedChallenges.push({
         id,
         completedDate: GENERATED_COMPLETED_DATE,
-        files: hasSaveSubmissionToDB(text) ? solutionFiles(text) : []
+        files: hasSaveSubmissionToDB(fm) ? solutionFiles(text) : []
       });
     }
   }
