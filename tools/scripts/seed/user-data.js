@@ -261,6 +261,12 @@ module.exports.fullyCertifiedUser = {
   isRelationalDatabaseCertV9: true,
   isCollegeAlgebraPyCertV8: true,
   isFoundationalCSharpCertV8: true,
+  isFrontEndLibsCertV9: true,
+  isBackEndDevApisCertV9: true,
+  isFullStackDeveloperCertV9: true,
+  isA2SpanishCert: true,
+  isA2ChineseCert: true,
+  isA1ChineseCert: true,
   completedChallenges: certifiedCompletedChallenges,
   completedDailyCodingChallenges: certifiedDailyCodingChallenges,
   completedExams: [
