@@ -145,7 +145,7 @@ export const DonationFaqText = (): JSX.Element => {
       Q: t('donate.is-donation-tax-deductible'),
       A: (
         <>
-          <p>{t('donate.freecodecamp-is-a-charity')}</p>
+          <p>{t('donate.freecodecamp-is-a-charitable-organization')}</p>
           <p>{t('donate.donations-may-be-deductible')}</p>
           <p>{t('donate.annual-donation-receipt')}</p>
         </>
