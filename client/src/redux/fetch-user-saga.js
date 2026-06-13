@@ -1,4 +1,5 @@
 import { call, cancel, delay, fork, put, takeEvery } from 'redux-saga/effects';
+import store from 'store';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import { wrapHandledError } from '../utils/handled-error';
 import { UserFetchErrorMessage } from '../utils/error-messages';
@@ -25,6 +26,7 @@ function* fetchSessionUser() {
     const res = yield call(getSessionUser, AbortSignal.timeout(10000));
 
     const isSignedOut = res.response.status === 401;
+
     if (!res.response.ok && !isSignedOut) {
       throw new Error(
         `HTTP Error: ${res.response.status} ${res.response.statusText}`
@@ -32,11 +34,21 @@ function* fetchSessionUser() {
     }
 
     const { data: user } = res;
+
+    if (user !== null) {
+      store.set('fcc-is-logged-in', true);
+    } else {
+      store.remove('fcc-is-logged-in');
+    }
     yield put(fetchUserComplete({ user }));
   } catch (e) {
     console.log('failed to fetch user', e);
-    const handledError = wrapHandledError(e, UserFetchErrorMessage);
-    yield put(fetchUserError(handledError));
+    if (store.get('fcc-is-logged-in')) {
+      const handledError = wrapHandledError(e, UserFetchErrorMessage);
+      yield put(fetchUserError(handledError));
+    } else {
+      yield put(fetchUserError(''));
+    }
   } finally {
     yield cancel(timeoutTask);
   }

@@ -4,6 +4,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
+import store from 'store';
 
 import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
@@ -54,6 +55,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
   const handleSignout = () => {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
+    store.remove('fcc-is-logged-in');
     const redirect = () => {
       window.location.pathname = pathAfterSignout(window.location.pathname);
     };

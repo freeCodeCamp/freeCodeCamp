@@ -26,6 +26,6 @@ export const msTrophyVerified = {
 };
 
 export const UserFetchErrorMessage = {
-  type: 'danger',
+  type: 'info',
   message: FlashMessages.UserFetchError
 };
