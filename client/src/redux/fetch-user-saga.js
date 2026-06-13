@@ -10,7 +10,7 @@ import {
   fetchUserTimeout
 } from './actions';
 
-function* fetchSessionUser() {
+export function* fetchSessionUser() {
   const timeoutTask = yield fork(function* () {
     // The server should not take anywhere near 2 seconds to respond. If it
     // does, we assume the request has failed and dispatch a timeout action to
@@ -35,8 +35,15 @@ function* fetchSessionUser() {
     yield put(fetchUserComplete({ user }));
   } catch (e) {
     console.log('failed to fetch user', e);
-    const handledError = wrapHandledError(e, UserFetchErrorMessage);
-    yield put(fetchUserError(handledError));
+    const isNetworkOrTimeoutError =
+      e instanceof DOMException ||
+      e instanceof TypeError ||
+      e.name === 'TimeoutError' ||
+      e.name === 'AbortError';
+    const payload = isNetworkOrTimeoutError
+      ? { message: e.message }
+      : wrapHandledError(e, UserFetchErrorMessage);
+    yield put(fetchUserError(payload));
   } finally {
     yield cancel(timeoutTask);
   }
