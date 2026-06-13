@@ -306,8 +306,13 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+      const normalizedBlockTitle = blockNameTitle.trim();
+      const normalizedTitle = title.trim();
       const shouldAppendBlockNameToTitle =
-        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
+        hasEditableBoundaries ||
+        (superBlock === SuperBlocks.A2English &&
+          normalizedBlockTitle !== normalizedTitle);
+
       idToNameMap.set(id, {
         challengeTitle: `${
           shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
