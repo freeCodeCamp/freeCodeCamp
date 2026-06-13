@@ -43,6 +43,7 @@ const MenuButton = ({
   return (
     <button
       aria-expanded={displayMenu}
+      aria-controls='header-menu'
       className='exposed-button-nav'
       id='toggle-button-nav'
       data-playwright-test-label='header-menu-button'
