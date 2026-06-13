@@ -267,6 +267,8 @@ function NavLinks({
           <button
             className='nav-link nav-link-signout'
             data-value='sign-out-button'
+            aria-haspopup='dialog'
+            aria-controls='signout-modal'
             onClick={handleSignOutClick}
             onKeyDown={handleSignOutKeys}
           >
