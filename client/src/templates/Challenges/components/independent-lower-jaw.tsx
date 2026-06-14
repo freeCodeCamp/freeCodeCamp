@@ -251,11 +251,16 @@ export function IndependentLowerJaw({
     executeChallenge();
   };
 
-  const isMacOS = navigator.userAgent.includes('Mac OS');
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
-  const checkButtonText = isMacOS
-    ? t('buttons.command-enter')
-    : t('buttons.ctrl-enter');
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  const isMacOS = /Mac/i.test(navigator.platform);
+
+  const shortcutHint = isMobile
+    ? null
+    : isMacOS
+      ? t('buttons.command-enter')
+      : t('buttons.ctrl-enter');
 
   const askSocratesAttempt = () => {
     setShowSocratesResults(true);
@@ -406,9 +411,9 @@ export function IndependentLowerJaw({
               ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              {shortcutHint && (
+                <span className='tooltiptext left-tooltip'>{shortcutHint}</span>
+              )}
             </Button>
           ) : (
             <button
@@ -419,9 +424,9 @@ export function IndependentLowerJaw({
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              {shortcutHint && (
+                <span className='tooltiptext left-tooltip'>{shortcutHint}</span>
+              )}
             </button>
           )}
         </div>
