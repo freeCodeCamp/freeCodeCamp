@@ -587,6 +587,48 @@
       }
     }
   },
+  "learn-data-visualization-with-d3": {
+    "title": "Learn Data Visualization with D3",
+    "summary": [
+      "Learn how to use D3 to turn data into interactive bar charts and scatterplots."
+    ],
+    "intro": [
+      "In this course, you'll learn core data visualization concepts and practice using the D3 library to build charts from datasets."
+    ],
+    "note": "",
+    "chapters": {
+      "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
+    },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
+    "module-intros": {
+      "introduction-to-d3": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn the basics of working with D3."
+        ]
+      }
+    },
+    "blocks": {
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab, you will use D3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab, you will create a D3 scatterplot graph using a provided dataset."
+        ]
+      }
+    }
+  },
   "relational-database": {
     "title": "关系数据库 V8",
     "intro": [
@@ -796,7 +838,7 @@
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "通过创建大小写转换器程序学习 Python 列表推导",
         "intro": [
-          "列表推导是一种从可迭代类型（列表、元组和字符串）构建新的 Python 列表的方法。所有这些都无需使用 for 循环或 `.append()` 列表方法。",
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "在这个项目中，你将编写一个程序，接收驼峰或帕斯卡命名格式的字符串，然后将其转换为蛇形命名格式。",
           "该项目分为两个阶段：首先，你将使用 for 循环来执行程序。然后，你将学习如何使用列表推导代替循环来实现相同的结果。"
         ]
@@ -5055,12 +5097,6 @@
           "在本实验中，你将实现一个函数，从对象数组中筛选出所有包含匹配属性和值对的对象。"
         ]
       },
-      "lab-prime-number-sum-calculator": {
-        "title": "创建质数求和计算器",
-        "intro": [
-          "在本实验中，你将创建一个质数求和计算器，计算并返回小于或等于指定数字的所有质数之和。"
-        ]
-      },
       "lab-range-based-lcm-calculator": {
         "title": "实现区间最小公倍数计算器",
         "intro": [
@@ -5691,6 +5727,12 @@
           "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
+      "lab-prime-number-sum-calculator": {
+        "title": "创建质数求和计算器",
+        "intro": [
+          "在本实验中，你将创建一个质数求和计算器，计算并返回小于或等于指定数字的所有质数之和。"
+        ]
+      },
       "review-dynamic-programming-js": {
         "title": "Dynamic Programming Review",
         "intro": [
@@ -5817,7 +5859,6 @@
       "typescript-fundamentals": "TypeScript Fundamentals",
       "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
       "lab-digital-pet-game": "Build a Digital Pet Game",
-      "data-visualization": "Data Visualization and D3",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
@@ -5825,12 +5866,6 @@
       "typescript-fundamentals": {
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
-        ]
-      },
-      "data-visualization": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6189,22 +6224,6 @@
       "quiz-typescript": {
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
-      },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introduction to Data Visualization",
-        "intro": [
-          "In these lessons, you will learn about basic data visualization concepts."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab you will use d3 to build a bar chart."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
-        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -6982,13 +7001,11 @@
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
       "introduction-to-express": "Introduction to Express",
-      "express-middleware": "Express Middleware",
       "error-handling-in-express": "Error Handling in Express",
+      "express-middleware": "Express Middleware",
       "websockets": "WebSockets",
-      "node-and-sql": "Node and SQL",
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
-      "tooling-and-deployment": "Tooling and Deployment",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "module-intros": {
@@ -7028,28 +7045,22 @@
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
         ]
       },
-      "express-middleware": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
-        ]
-      },
       "error-handling-in-express": {
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
+      "express-middleware": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+        ]
+      },
       "websockets": {
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
-        ]
-      },
-      "node-and-sql": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
         ]
       },
       "security-and-privacy": {
@@ -7062,12 +7073,6 @@
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
-        ]
-      },
-      "tooling-and-deployment": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
@@ -7084,6 +7089,12 @@
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
       },
+      "workshop-nodejs-repl": {
+        "title": "Learn Node.js REPL",
+        "intro": [
+          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
+        ]
+      },
       "review-node-js-intro": {
         "title": "NodeJS Intro Review",
         "intro": [
@@ -7098,6 +7109,12 @@
         "title": "Working with Node Core Modules",
         "intro": [
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "workshop-nodejs-common-modules": {
+        "title": "Learn Node.js Common Modules",
+        "intro": [
+          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
       },
       "review-node-js-core-modules": {
@@ -7122,6 +7139,18 @@
         "title": "Working with npm Scripts",
         "intro": [
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
+        ]
+      },
+      "workshop-how-to-build-an-npm-module": {
+        "title": "Learn How to Build an NPM Module",
+        "intro": [
+          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
+        ]
+      },
+      "lab-prime-number-checker-module": {
+        "title": "Build a Prime Number Checker Module",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
         ]
       },
       "review-npm": {
@@ -7150,6 +7179,12 @@
           "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
         ]
       },
+      "workshop-nodejs-by-building-a-web-server": {
+        "title": "Learn Node.js by Building a Web Server",
+        "intro": [
+          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
+        ]
+      },
       "review-http-and-the-web-standards-model": {
         "title": "HTTP and the Web Standards Model Review",
         "intro": [
@@ -7169,6 +7204,18 @@
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
         ]
       },
+      "workshop-express-by-building-a-weather-service-api": {
+        "title": "Learn Express by Building a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
       "lecture-working-with-express": {
         "title": "Working with Express",
         "intro": [
@@ -7180,6 +7227,18 @@
         "intro": [
           "Understanding Routing in ExpressJS",
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
+      "workshop-express-by-building-a-random-joke-app": {
+        "title": "Learn Express by Building a Random Joke App",
+        "intro": [
+          "You will learn basic Express routing and response methods by building a random joke app."
+        ]
+      },
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
+        "intro": [
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "review-introduction-to-express": {
@@ -7200,6 +7259,12 @@
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "workshop-error-handling-in-express-by-building-a-bank-api": {
+        "title": "Learn Error Handling in Express by Building a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
       "review-error-handling-in-express": {
         "title": "Error Handling in Express Review",
         "intro": [
@@ -7210,6 +7275,24 @@
         "title": "Error Handling in Express Quiz",
         "intro": [
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
+      "lecture-express-middleware": {
+        "title": "Express Middleware",
+        "intro": [
+          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
+      "workshop-express-middleware-by-building-a-submission-form": {
+        "title": "Learn Express Middleware by Building a Submission Form",
+        "intro": [
+          "You will learn application-level and router-level middleware by building a structured submission form."
+        ]
+      },
+      "lab-data-sanitizer": {
+        "title": "Build a Data Sanitizer",
+        "intro": [
+          "Practice creating custom Express middleware by building a data sanitizer and validator."
         ]
       },
       "review-express-middleware": {
@@ -7224,58 +7307,10 @@
           "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
         ]
       },
-      "exam-back-end-development-and-apis-certification": {
-        "title": "Back-End Development and APIs Certification Exam",
+      "lecture-understanding-websockets": {
+        "title": "Understanding WebSockets",
         "intro": [
-          "Pass this exam to earn your Back-End Development and APIs Certification"
-        ]
-      },
-      "workshop-nodejs-repl": {
-        "title": "Learn Node.js REPL",
-        "intro": [
-          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
-        ]
-      },
-      "workshop-how-to-build-an-npm-module": {
-        "title": "Learn How to Build an NPM Module",
-        "intro": [
-          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
-        ]
-      },
-      "workshop-nodejs-common-modules": {
-        "title": "Learn Node.js Common Modules",
-        "intro": [
-          "You will learn Node.js built-in modules like `fs`, `path`, and `crypto` by using them for file operations and data processing."
-        ]
-      },
-      "workshop-nodejs-by-building-a-web-server": {
-        "title": "Learn Node.js by Building a Web Server",
-        "intro": [
-          "You will learn the Node.js `http` module by building a web server to serve a multi-page client application."
-        ]
-      },
-      "workshop-express-by-building-a-random-joke-app": {
-        "title": "Learn Express by Building a Random Joke App",
-        "intro": [
-          "You will learn basic Express routing and response methods by building a random joke app."
-        ]
-      },
-      "workshop-express-middleware-by-building-a-submission-form": {
-        "title": "Learn Express Middleware by Building a Submission Form",
-        "intro": [
-          "You will learn application-level and router-level middleware by building a structured submission form."
-        ]
-      },
-      "workshop-express-by-building-a-weather-service-api": {
-        "title": "Learn Express by Building a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with `express.Router` by building a weather service API."
-        ]
-      },
-      "workshop-error-handling-in-express-by-building-a-bank-api": {
-        "title": "Learn Error Handling in Express by Building a Bank API",
-        "intro": [
-          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
         ]
       },
       "workshop-websockets-by-building-a-resource-monitor": {
@@ -7284,34 +7319,28 @@
           "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
         ]
       },
-      "lab-prime-number-checker-module": {
-        "title": "Build a Prime Number Checker Module",
-        "intro": [
-          "Practice building and exporting an NPM module by creating a prime number checker."
-        ]
-      },
-      "lab-personal-profile-app": {
-        "title": "Build a Personal Profile App",
-        "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
-        ]
-      },
-      "lab-data-sanitizer": {
-        "title": "Build a Data Sanitizer",
-        "intro": [
-          "Practice creating custom Express middleware by building a data sanitizer and validator."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
       "lab-chat-app": {
         "title": "Build a Chat App",
         "intro": [
           "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
+      },
+      "quiz-websockets": {
+        "title": "WebSockets Quiz",
+        "intro": [
+          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
+        ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back-End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
       }
     }
