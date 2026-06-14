@@ -251,11 +251,17 @@ export function IndependentLowerJaw({
     executeChallenge();
   };
 
-  const isMacOS = navigator.userAgent.includes('Mac OS');
+  const isMobile =
+    typeof navigator !== 'undefined' &&
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isMacOS =
+    typeof navigator !== 'undefined' &&
+    (/Mac/i.test(navigator.platform) || navigator.userAgent.includes('Mac OS'));
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
+  const shortcutHint = isMobile ? null : checkButtonText;
 
   const askSocratesAttempt = () => {
     setShowSocratesResults(true);
@@ -401,27 +407,63 @@ export function IndependentLowerJaw({
               className={`${isSignedIn && 'btn-cta'} tooltip`}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
-              aria-label={t('buttons.submit-continue')}
+              aria-label={
+                shortcutHint
+                  ? `${t('buttons.submit-continue')} (${shortcutHint})`
+                  : t('buttons.submit-continue')
+              }
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
-              {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  lineHeight: '1.2'
+                }}
+              >
+                <span>{t('buttons.submit-continue')}</span>
+                {shortcutHint && (
+                  <span style={{ fontSize: '0.8rem', opacity: 0.85 }}>
+                    ({shortcutHint})
+                  </span>
+                )}
+              </div>
+              {shortcutHint && (
+                <span className='tooltiptext left-tooltip'>{shortcutHint}</span>
+              )}
             </Button>
           ) : (
             <button
               type='button'
               className='btn-cta tooltip'
               data-playwright-test-label='independentLowerJaw-check-button'
-              aria-label={t('buttons.check-code')}
+              aria-label={
+                shortcutHint
+                  ? `${t('buttons.check-code')} (${shortcutHint})`
+                  : t('buttons.check-code')
+              }
               onClick={handleCheckButtonClick}
             >
-              {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  lineHeight: '1.2'
+                }}
+              >
+                <span>{t('buttons.check-code')}</span>
+                {shortcutHint && (
+                  <span style={{ fontSize: '0.8rem', opacity: 0.85 }}>
+                    ({shortcutHint})
+                  </span>
+                )}
+              </div>
+              {shortcutHint && (
+                <span className='tooltiptext left-tooltip'>{shortcutHint}</span>
+              )}
             </button>
           )}
         </div>
