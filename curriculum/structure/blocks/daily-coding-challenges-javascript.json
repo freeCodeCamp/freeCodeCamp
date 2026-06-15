@@ -1249,6 +1249,66 @@
     {
       "id": "6a151d32d772271dd2448c2d",
       "title": "Challenge 311: Spellcaster"
+    },
+    {
+      "id": "6a15cadf5f240d05a2649556",
+      "title": "Challenge 312: Streaming Cost"
+    },
+    {
+      "id": "6a15cadf5f240d05a2649557",
+      "title": "Challenge 313: Rental Cost"
+    },
+    {
+      "id": "6a15cadf5f240d05a2649558",
+      "title": "Challenge 314: Prime Factorization"
+    },
+    {
+      "id": "6a15cadf5f240d05a2649559",
+      "title": "Challenge 315: Summer Solstice"
+    },
+    {
+      "id": "6a15cadf5f240d05a264955a",
+      "title": "Challenge 316: 1337 Speak"
+    },
+    {
+      "id": "6a15cadf5f240d05a264955b",
+      "title": "Challenge 317: BMI Calculator"
+    },
+    {
+      "id": "6a15cadf5f240d05a264955c",
+      "title": "Challenge 318: DNA Mutations"
+    },
+    {
+      "id": "6a15cadf5f240d05a264955d",
+      "title": "Challenge 319: Frontmatter Parser"
+    },
+    {
+      "id": "6a15cadf5f240d05a264955e",
+      "title": "Challenge 320: Blood Bank"
+    },
+    {
+      "id": "6a15cadf5f240d05a264955f",
+      "title": "Challenge 321: Periodic Spelling"
+    },
+    {
+      "id": "6a19b1062d1b153d8ac76d70",
+      "title": "Challenge 322: Connect 3"
+    },
+    {
+      "id": "6a19b1062d1b153d8ac76d71",
+      "title": "Challenge 323: Song Mood Finder"
+    },
+    {
+      "id": "6a19b1062d1b153d8ac76d72",
+      "title": "Challenge 324: Duplicate Character Count"
+    },
+    {
+      "id": "6a19b1062d1b153d8ac76d73",
+      "title": "Challenge 325: Lucky Number"
+    },
+    {
+      "id": "6a19dd69388e5a6e59e4f2ef",
+      "title": "Challenge 326: Max Profit"
     }
   ]
 }

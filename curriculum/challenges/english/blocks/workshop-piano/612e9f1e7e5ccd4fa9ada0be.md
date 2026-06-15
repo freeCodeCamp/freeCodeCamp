@@ -92,12 +92,13 @@ html {
   padding-left: 2px;
 }
 
---fcc-editable-region--
 .key {
   background-color: #ffffff;
   position: relative;
   width: 41px;
   height: 175px;
-}
 --fcc-editable-region--
+  
+--fcc-editable-region--
+}
 ```
