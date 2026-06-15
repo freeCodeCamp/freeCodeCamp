@@ -24,7 +24,10 @@ interface HelpModalProps {
   openVideoModal: () => void;
 }
 
-const { forumLocation } = envData;
+const forumLocation =
+  'forumLocation' in (envData as Record<string, unknown>)
+    ? String((envData as Record<string, unknown>)['forumLocation'])
+    : '';
 const DESCRIPTION_MIN_CHARS = 50;
 const DESCRIPTION_MAX_CHARS = 500;
 const RSA = forumLocation + '/t/19514';
