@@ -6560,16 +6560,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '587d78b0367417b2b2512b05',
-      completedDate: 1533273771014,
-      files: []
-    },
-    {
-      id: '587d78af367417b2b2512b04',
-      completedDate: 1533265342064,
-      files: []
-    },
-    {
       id: 'bad87fee1348bd9aedc08830',
       completedDate: 1475096459663,
       files: []
@@ -6902,11 +6892,6 @@ module.exports.fullyCertifiedUser = {
     {
       id: '594810f028c0303b75339acb',
       completedDate: 1530015953369,
-      files: []
-    },
-    {
-      id: '587d78af367417b2b2512b03',
-      completedDate: 1529938009424,
       files: []
     },
     {
@@ -9005,11 +8990,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: 'bd7158d8c442eddfaeb5bd18',
-      completedDate: 1475164643824,
-      files: []
-    },
-    {
       id: 'bd7123c9c443eddfaeb5bdef',
       completedDate: 1475173197683,
       files: []
@@ -9767,11 +9747,6 @@ module.exports.fullyCertifiedUser = {
     {
       id: 'bd7158d8c442eddfaeb5bd17',
       completedDate: 1485289601534,
-      files: []
-    },
-    {
-      id: 'bd7158d8c242eddfaeb5bd13',
-      completedDate: 1485315439137,
       files: []
     },
     {
