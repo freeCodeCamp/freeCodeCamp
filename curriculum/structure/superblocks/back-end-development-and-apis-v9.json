@@ -109,7 +109,10 @@
         {
           "dashedName": "authentication",
           "comingSoon": true,
-          "blocks": ["quiz-authentication-and-authorization"]
+          "blocks": [
+            "lecture-introduction-to-authentication-and-authorization",
+            "quiz-authentication-and-authorization"
+          ]
         }
       ]
     },
