@@ -1,6 +1,5 @@
 import { describe, test, expect, beforeEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
-import qs from 'query-string';
 
 import redirectWithMessage from './redirect-with-message.js';
 
@@ -68,10 +67,10 @@ describe('redirectWithMessage plugin', () => {
         url: '/'
       });
 
-      expect(res.headers.location).toMatch(/^\/target\?messages=info/);
+      expect(res.headers.location).toMatch(/^\/target\?messages=/);
     });
 
-    test('should encode the message twice when creating the query string', async () => {
+    test('should encode the message when creating the query string', async () => {
       const expectedMessage = { danger: ['foo bar'] };
 
       fastify.get('/', (_req, reply) => {
@@ -87,16 +86,12 @@ describe('redirectWithMessage plugin', () => {
       });
       if (!isString(res.headers.location))
         throw new Error('Location is not a string');
-      const { search } = new URL(res.headers.location, 'http://localhost');
+      const { searchParams } = new URL(res.headers.location, 'http://localhost');
 
-      // The query string itself is encoded:
-      const { messages } = qs.parse(search, { arrayFormat: 'index' });
+      const messages = searchParams.get('messages');
       if (!isString(messages)) throw new Error('Messages is not a string');
 
-      // As is the message embedded in it:
-      expect(qs.parse(messages, { arrayFormat: 'index' })).toEqual(
-        expectedMessage
-      );
+      expect(JSON.parse(messages)).toEqual(expectedMessage);
     });
   });
 });

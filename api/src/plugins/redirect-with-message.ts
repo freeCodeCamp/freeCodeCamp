@@ -1,8 +1,6 @@
 import { FastifyPluginCallback, type FastifyReply } from 'fastify';
 import fp from 'fastify-plugin';
-// TODO: (POST MVP)use node's querystring and just JSON stringify the message.
 // No need for query-string on either side.
-import qs from 'query-string';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -41,14 +39,8 @@ function redirectWithMessage(
  * @returns The formatted message string.
  */
 export function formatMessage(message: Message): string {
-  return qs.stringify(
-    {
-      messages: qs.stringify(prepareMessage(message), {
-        arrayFormat: 'index'
-      })
-    },
-    { arrayFormat: 'index' }
-  );
+  const messagesObject = prepareMessage(message);
+  return `messages=${encodeURIComponent(JSON.stringify(messagesObject))}`;
 }
 
 const plugin: FastifyPluginCallback = (fastify, _options, done) => {

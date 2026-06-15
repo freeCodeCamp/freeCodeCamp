@@ -33,7 +33,6 @@
     "nodemailer": "6.10.1",
     "pino": "9.14.0",
     "pino-pretty": "10.3.1",
-    "query-string": "7.1.3",
     "stripe": "16.12.0",
     "typebox": "1.1.35",
     "validator": "13.15.35"
