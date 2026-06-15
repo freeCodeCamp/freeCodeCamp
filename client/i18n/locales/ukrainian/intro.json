@@ -588,43 +588,43 @@
     }
   },
   "learn-data-visualization-with-d3": {
-    "title": "Learn Data Visualization with D3",
+    "title": "Візуалізація даних з D3",
     "summary": [
-      "Learn how to use D3 to turn data into interactive bar charts and scatterplots."
+      "Дізнайтеся, як використовувати D3 для перетворення даних в інтерактивні діаграми."
     ],
     "intro": [
-      "In this course, you'll learn core data visualization concepts and practice using the D3 library to build charts from datasets."
+      "У цьому курсі ви ознайомитесь з основними поняттями візуалізації даних і застосуєте бібліотеку D3 на практиці, щоб побудувати графіки з даних."
     ],
     "note": "",
     "chapters": {
-      "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
+      "learn-data-visualization-with-d3": "Візуалізація даних з D3"
     },
     "modules": {
-      "introduction-to-d3": "Introduction to D3"
+      "introduction-to-d3": "Вступ до D3"
     },
     "module-intros": {
       "introduction-to-d3": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will learn the basics of working with D3."
-        ]
+        "note": "Очікуйте наприкінці року",
+        "intro": ["У цьому модулі ви дізнаєтесь про основи роботи з D3."]
       }
     },
     "blocks": {
       "lecture-introduction-to-data-visualization": {
-        "title": "Introduction to Data Visualization",
+        "title": "Вступ до візуалізації даних",
         "intro": [
-          "In these lessons, you will learn about basic data visualization concepts."
+          "У цих лекціях ви дізнаєтесь про базові поняття у візуалізації даних."
         ]
       },
       "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab, you will use D3 to build a bar chart."]
+        "title": "Створіть стовпчикову діаграму",
+        "intro": [
+          "У цій лабораторній роботі ви будете використовувати D3, щоб створити стовпчикову діаграму."
+        ]
       },
       "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
+        "title": "Створіть діаграму розсіювання",
         "intro": [
-          "In this lab, you will create a D3 scatterplot graph using a provided dataset."
+          "У цій лабораторній роботі ви створите діаграму розсіювання D3, використовуючи наданий набір даних."
         ]
       }
     }
@@ -838,7 +838,7 @@
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Вивчіть спискові вирази Python, створивши програму для зміни регістру",
         "intro": [
-          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
+          "Спискові вирази — це спосіб створення нового списку в Python з ітерабельних типів (списків, кортежів і рядків) без використання циклу for або методу <code>.append()</code>.",
           "У цьому проєкті ви напишете програму, яка приймає рядок у верхньому або нижньому верблюдячому регістрі, а потім перетворює його у зміїний регістр.",
           "Проєкт складається з двох етапів: спочатку ви використаєте цикл for, щоб імплементувати програму. Потім ви дізнаєтесь, як використовувати спискові вирази замість циклу, щоб отримати ті ж результати."
         ]
@@ -4969,9 +4969,9 @@
         ]
       },
       "lab-smart-pantry-restocker": {
-        "title": "Build a Smart Pantry Restocker",
+        "title": "Створіть програму для закупів",
         "intro": [
-          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+          "У цій лабораторній роботі ви створите програму для керування закупами, використовуючи базові поняття з JavaScript (серед яких масиви, об’єкти, цикли та умовні інструкції)."
         ]
       },
       "lab-proofreading-tool": {
@@ -6353,7 +6353,7 @@
     },
     "modules": {
       "python-basics": "Основи Python",
-      "python-installation": "Install Python",
+      "python-installation": "Встановлення Python",
       "python-loops-and-sequences": "Цикли та послідовності",
       "python-dictionaries-and-sets": "Словники та набори",
       "lab-user-configuration-manager": "Створіть менеджера для налаштувань користувача",
@@ -6375,7 +6375,7 @@
       "lecture-introduction-to-python": {
         "title": "Вступ до Python",
         "intro": [
-          "In these lessons, you will learn what Python is and common uses in the industry."
+          "У цих уроках ви дізнаєтесь про Python і поширені методи його використання."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -6466,22 +6466,20 @@
         "intro": ["Перевірте, що ви дізнались про основи Python."]
       },
       "lecture-python-installation": {
-        "title": "Installing Python and Running Code Locally",
+        "title": "Встановлення Python і локальний запуск коду",
         "intro": [
-          "In these lessons, you will learn how to install Python on your local device and run code locally."
+          "У цих уроках ви дізнаєтесь, як встановити Python на своєму пристрої і запустити код локально."
         ]
       },
       "review-python-installation": {
-        "title": "Python Installation Review",
+        "title": "Повторення встановлення Python",
         "intro": [
-          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+          "Перш ніж перейти до тесту «Встановлення Python», повторіть основні поняття."
         ]
       },
       "quiz-python-installation": {
-        "title": "Python Installation Quiz",
-        "intro": [
-          "Test what you've learned about installing Python locally with this quiz."
-        ]
+        "title": "Тест «Встановлення Python»",
+        "intro": ["Перевірте, що ви дізнались про встановлення Python."]
       },
       "lecture-working-with-loops-and-sequences": {
         "title": "Робота з циклами та послідовностями",
@@ -7182,9 +7180,9 @@
         ]
       },
       "workshop-nodejs-repl": {
-        "title": "Learn Node.js REPL",
+        "title": "Знайомство з REPL в Node.js",
         "intro": [
-          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
+          "Ви дізнаєтесь про Node.js REPL та інтерфейс командного рядка, досліджуючи середовище виконання з термінала."
         ]
       },
       "review-node-js-intro": {
@@ -7204,9 +7202,9 @@
         ]
       },
       "workshop-nodejs-common-modules": {
-        "title": "Learn Node.js Common Modules",
+        "title": "Знайомство з поширеними модулями Node.js",
         "intro": [
-          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
+          "Ви дізнаєтесь про вбудовані модулі Node.js (такі як <code>fs</code>, <code>path</code> і <code>crypto</code>), використовуючи їх для файлових операцій та обробки даних."
         ]
       },
       "review-node-js-core-modules": {
@@ -7232,15 +7230,15 @@
         ]
       },
       "workshop-how-to-build-an-npm-module": {
-        "title": "Learn How to Build an NPM Module",
+        "title": "Дізнайтеся, як створити NPM-модуль",
         "intro": [
-          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
+          "Ви дізнаєтесь, як ініціалізувати, налаштувати та опублікувати NPM-модуль, створивши конвертер регістру."
         ]
       },
       "lab-prime-number-checker-module": {
-        "title": "Build a Prime Number Checker Module",
+        "title": "Створіть модуль для перевірки простих чисел",
         "intro": [
-          "Practice building and exporting an NPM module by creating a prime number checker."
+          "Попрактикуйтесь у створенні та експорті NPM-модуля, розробивши програму для перевірки простих чисел."
         ]
       },
       "review-npm": {
@@ -7266,27 +7264,27 @@
         ]
       },
       "lecture-understanding-the-web-standards-model": {
-        "title": "Understanding the Web Standards Model",
+        "title": "Розуміння моделі вебстандартів",
         "intro": [
-          "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
+          "У цих лекціях ви дізнаєтесь про модель вебстандартів, стандартизацію, процес, життєвий цикл та принципи, що лежать в основі вебстандартів."
         ]
       },
       "workshop-nodejs-by-building-a-web-server": {
-        "title": "Learn Node.js by Building a Web Server",
+        "title": "Вивчіть Node.js, створивши вебсервер",
         "intro": [
-          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
+          "Ви дізнаєтесь про модуль <code>http</code> у Node.js, створивши вебсервер для обслуговування багатосторінкового клієнтського застосунку."
         ]
       },
       "review-http-and-the-web-standards-model": {
-        "title": "HTTP and the Web Standards Model Review",
+        "title": "Повторення HTTP та моделі вебстандартів",
         "intro": [
-          "Review HTTP, DNS, TCP/IP, the request-response model, and web standards before you take the quiz."
+          "Пригадайте, що ви дізнались про HTTP, DNS, TCP/IP, модель «запит-відповідь» та вебстандарти."
         ]
       },
       "quiz-http-and-the-web-standards-model": {
-        "title": "HTTP and the Web Standards Model Quiz",
+        "title": "Тест «HTTP та модель вебстандартів»",
         "intro": [
-          "Test your knowledge of HTTP, DNS, TCP/IP, the request-response model, and web standards.",
+          "Перевірте свої знання з HTTP, DNS, TCP/IP, моделі «запит-відповідь» та вебстандартів.",
           ""
         ]
       },
@@ -7297,15 +7295,15 @@
         ]
       },
       "workshop-express-by-building-a-weather-service-api": {
-        "title": "Learn Express by Building a Weather Service API",
+        "title": "Вивчіть Express, створивши API сервісу із погодою",
         "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+          "Ви дізнаєтесь про параметри маршрутів та модульну маршрутизацію за допомогою <code>express.Router</code>, побудувавши API сервісу із погодою."
         ]
       },
       "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
+        "title": "Створіть мікросервіс для роботи з часовими мітками",
         "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+          "Попрактикуйтесь у побудові REST API з логікою аналізу дат, створивши мікросервіс для роботи з часовими мітками."
         ]
       },
       "lecture-working-with-express": {
@@ -7322,27 +7320,27 @@
         ]
       },
       "workshop-express-by-building-a-random-joke-app": {
-        "title": "Learn Express by Building a Random Joke App",
+        "title": "Вивчіть Express, створивши застосунок з жартами",
         "intro": [
-          "You will learn basic Express routing and response methods by building a random joke app."
+          "Ви дізнаєтесь про основи маршрутизації Express та методи відповідей, створивши застосунок з жартами."
         ]
       },
       "lab-personal-profile-app": {
-        "title": "Build a Personal Profile App",
+        "title": "Створіть особистий профіль",
         "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
+          "Попрактикуйтесь у побудові сервера Express та JSON API, створивши особистий профіль."
         ]
       },
       "review-introduction-to-express": {
-        "title": "Introduction to Express Review",
+        "title": "Повторення Express",
         "intro": [
-          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+          "Пригадайте, що ви дізнались про вебслужби, REST, мікрослужби і маршрутизацію в Express.js."
         ]
       },
       "quiz-introduction-to-express": {
-        "title": "Introduction to Express Quiz",
+        "title": "Тест «Вступ до Express»",
         "intro": [
-          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+          "Перевірте свої знання з вебслужб, REST, мікрослужб і маршрутизації в Express.js."
         ]
       },
       "lecture-understanding-error-handling-and-health-checks": {
@@ -7352,81 +7350,85 @@
         ]
       },
       "workshop-error-handling-in-express-by-building-a-bank-api": {
-        "title": "Learn Error Handling in Express by Building a Bank API",
+        "title": "Дізнайтесь про обробку помилок в Express, створивши банківський API",
         "intro": [
-          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+          "Ви дізнаєтесь про обробку помилок в Express 5, перевірку працездатності та коректне завершення роботи, створивши банківський API."
         ]
       },
       "review-error-handling-in-express": {
-        "title": "Error Handling in Express Review",
+        "title": "Повторення обробки помилок в Express",
         "intro": [
-          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+          "Пригадайте, що ви дізнались про коди стану HTTP, обробку помилок, налагодження, журналювання, перевірку працездатності та коректне завершення роботи."
         ]
       },
       "quiz-error-handling-in-express": {
-        "title": "Error Handling in Express Quiz",
+        "title": "Тест «Обробка помилок в Express»",
         "intro": [
-          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+          "Перевірте свої знання про коди стану HTTP, обробку помилок, налагодження, журналювання, перевірку працездатності та коректне завершення роботи."
         ]
       },
       "lecture-express-middleware": {
-        "title": "Express Middleware",
+        "title": "Проміжне програмне забезпечення Express",
         "intro": [
-          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+          "У цих уроках ви дізнаєтесь про проміжне програмне забезпечення в Express, включно із забезпеченням на рівні застосунку чи маршрутизатора, обробкою помилок, а також вбудованим та стороннім забезпеченням."
         ]
       },
       "workshop-express-middleware-by-building-a-submission-form": {
-        "title": "Learn Express Middleware by Building a Submission Form",
+        "title": "Дізнайтесь про проміжне програмне забезпечення в Express, створивши форму надсилання",
         "intro": [
-          "You will learn application-level and router-level middleware by building a structured submission form."
+          "Ви дізнаєтесь про проміжне програмне забезпечення на рівні застосунку і маршрутизатора, створивши структуровану форму надсилання."
         ]
       },
       "lab-data-sanitizer": {
-        "title": "Build a Data Sanitizer",
+        "title": "Створіть санітайзер даних",
         "intro": [
-          "Practice creating custom Express middleware by building a data sanitizer and validator."
+          "Попрактикуйтесь у створенні власного проміжного програмного забезпечення, створивши санітайзер та валідатор даних."
         ]
       },
       "review-express-middleware": {
-        "title": "Express Middleware Review",
+        "title": "Повторення проміжного програмного забезпечення Express",
         "intro": [
-          "Review middleware concepts in Express, including application-level, router-level, error-handling, and built-in and third-party middleware before you take the quiz."
+          "Пригадайте, що ви дізнались про проміжне програмне забезпечення в Express, включно із забезпеченням на рівні застосунку чи маршрутизатора, обробкою помилок, а також вбудованим та стороннім забезпеченням."
         ]
       },
       "quiz-express-middleware": {
-        "title": "Express Middleware Quiz",
+        "title": "Тест «Проміжне програмне забезпечення Express»",
         "intro": [
-          "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
+          "Перевірте свої знання про проміжне програмне забезпечення в Express, включно із забезпеченням на рівні застосунку чи маршрутизатора, обробкою помилок, а також вбудованим та стороннім забезпеченням."
         ]
       },
       "lecture-understanding-websockets": {
-        "title": "Understanding WebSockets",
+        "title": "Розуміння WebSockets",
         "intro": [
-          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
+          "Дізнайтесь, як WebSockets забезпечує комунікацію в реальному часі між клієнтами та серверами, а також як архітектура обміну повідомленнями Pub/Sub маршрутизує повідомлення до відповідних підписників у застосунках реального часу."
         ]
       },
       "workshop-websockets-by-building-a-resource-monitor": {
-        "title": "Learn WebSockets by Building a Resource Monitor",
+        "title": "Вивчіть WebSockets, створивши монітор ресурсів",
         "intro": [
-          "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
+          "Ви дізнаєтесь про WebSockets у Node.js та потокову передачу даних у реальному часі, створивши монітор системних ресурсів."
         ]
       },
       "lab-chat-app": {
-        "title": "Build a Chat App",
+        "title": "Створіть застосунок для чатів",
         "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+          "Попрактикуйтесь у створенні багатоклієнтського сервера з чатами в реальному часі за допомогою WebSockets у Node.js."
         ]
       },
       "review-websockets": {
-        "title": "WebSockets Review",
+        "title": "Повторення WebSockets",
         "intro": [
-          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+          "Пригадайте поняття з теми «WebSockets та Pub/Sub», щоб підготуватись до тесту."
         ]
       },
       "quiz-websockets": {
-        "title": "WebSockets Quiz",
+        "title": "Тест «WebSockets»",
+        "intro": ["Перевірте, що ви дізнались про WebSockets та Pub/Sub."]
+      },
+      "lecture-introduction-to-authentication-and-authorization": {
+        "title": "Introduction to Authentication and Authorization",
         "intro": [
-          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
+          "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
