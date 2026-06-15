@@ -106,7 +106,11 @@
           "comingSoon": true,
           "blocks": []
         },
-        { "dashedName": "authentication", "comingSoon": true, "blocks": [] }
+        {
+          "dashedName": "authentication",
+          "comingSoon": true,
+          "blocks": ["lecture-introduction-to-authentication-and-authorization"]
+        }
       ]
     },
     {
