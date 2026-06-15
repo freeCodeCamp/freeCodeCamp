@@ -1395,18 +1395,8 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '587d8253367417b2b2512c6b',
-      completedDate: 1544016209200,
-      files: []
-    },
-    {
       id: '8d1323c8c441eddfaeb5bdef',
       completedDate: 1543963893788,
-      files: []
-    },
-    {
-      id: '8d1923c8c441eddfaeb5bdef',
-      completedDate: 1543842286217,
       files: []
     },
     {
@@ -1776,11 +1766,6 @@ module.exports.fullyCertifiedUser = {
     },
     {
       id: '6148e41c728f65138addf9cc',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '6148e5aeb102e3142de026a2',
       completedDate: 1689770484197,
       files: []
     },
@@ -2901,11 +2886,6 @@ module.exports.fullyCertifiedUser = {
     },
     {
       id: '6153897c27f6334716ee5abe',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '615389bd81347947ea7ba896',
       completedDate: 1689770484197,
       files: []
     },
@@ -4525,16 +4505,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '5dfa22d1b521be39a3de7be0',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '62dabe2ef403a12d5d295273',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
       id: '5dfa2407b521be39a3de7be1',
       completedDate: 1689770484197,
       files: []
@@ -5126,451 +5096,6 @@ module.exports.fullyCertifiedUser = {
     },
     {
       id: '60ffefd6479a3d084fb77cbc',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51578',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51579',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b80da8676fb3227967a731',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5157a',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5157b',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5157c',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5157d',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5157e',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5157f',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51580',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51581',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51582',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51583',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51584',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51585',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51586',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51587',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51588',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51589',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5158a',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5158b',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5158c',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5158d',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5158e',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5158f',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51590',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51591',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51592',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51593',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51594',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51595',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51596',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51597',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51598',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c51599',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5159a',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5159b',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5159c',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5159d',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5159e',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60bad32219ebcb4a8810ac6a',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c5159f',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a0',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a1',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a2',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a3',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a4',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a5',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a6',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a7',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a8',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515a9',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515aa',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515ab',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515ac',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515ad',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515ae',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515af',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b0',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b1',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b2',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b3',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b4',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b5',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b6',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b7',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b8',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515b9',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515ba',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515bc',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba8914bab51f0fb8228e9c',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba89146b25080f99ab54ad',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba8913f1704c0f7a8906b8',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba89123a445e0f5c9e4022',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba890832b4940f24d1936b',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba929345ab0714a3743655',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba9296d4d6b414c1b10995',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60ba92987c1e4914dfa7a0b9',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515bd',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515be',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515bf',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c0',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c1',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c2',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c3',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c4',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c5',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c6',
-      completedDate: 1689770484197,
-      files: []
-    },
-    {
-      id: '60b69a66b6ddb80858c515c7',
       completedDate: 1689770484197,
       files: []
     },
@@ -7490,11 +7015,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '5a24c314108439a4d403617f',
-      completedDate: 1528946192923,
-      files: []
-    },
-    {
       id: '5a24c314108439a4d403617e',
       completedDate: 1528945856282,
       files: []
@@ -9295,36 +8815,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '560add10cb82ac38a17513be',
-      completedDate: 1475104385115,
-      files: []
-    },
-    {
-      id: '560add37cb82ac38a17513bf',
-      completedDate: 1475105708678,
-      files: []
-    },
-    {
-      id: '560add56cb82ac38a17513c0',
-      completedDate: 1475105917537,
-      files: []
-    },
-    {
-      id: '560add71cb82ac38a17513c2',
-      completedDate: 1475105957457,
-      files: []
-    },
-    {
-      id: '560adf65cb82ac38a17513c2',
-      completedDate: 1475106219178,
-      files: []
-    },
-    {
-      id: '560add8ccb82ac38a17513c4',
-      completedDate: 1475106445148,
-      files: []
-    },
-    {
       id: 'bad87fee1348bd9aede08845',
       completedDate: 1475107618308,
       files: []
@@ -9425,26 +8915,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '573c96eac9a6be092d7830c1',
-      completedDate: 1475120191143,
-      files: []
-    },
-    {
-      id: '560ade65cb82ac38a17513c2',
-      completedDate: 1475120213223,
-      files: []
-    },
-    {
-      id: '570add8ccb82ac38a17513c3',
-      completedDate: 1475120317675,
-      files: []
-    },
-    {
-      id: '560add8ccb81ac38a17513c4',
-      completedDate: 1475120349142,
-      files: []
-    },
-    {
       id: 'bad87fee1348bd9acdd08826',
       completedDate: 1475120453111,
       files: []
@@ -9532,11 +9002,6 @@ module.exports.fullyCertifiedUser = {
     {
       id: 'bad87fee1348bd9aecb08826',
       completedDate: 1475122606323,
-      files: []
-    },
-    {
-      id: 'bd7158d8c442eddfbeb5bd1f',
-      completedDate: 1475123013392,
       files: []
     },
     {
@@ -10045,101 +9510,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: 'cf1111c1c12feddfaeb6bdef',
-      completedDate: 1475543695668,
-      files: []
-    },
-    {
-      id: 'bd7128d8c441eddfbeb5bddf',
-      completedDate: 1475544021850,
-      files: []
-    },
-    {
-      id: 'cf1111c1c12feddfaeb7bdef',
-      completedDate: 1475544296945,
-      files: []
-    },
-    {
-      id: 'cf1111c1c12feddfaeb8bdef',
-      completedDate: 1475544467549,
-      files: []
-    },
-    {
-      id: 'cf1111c1c13feddfaeb3bdef',
-      completedDate: 1475544513783,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb1bdef',
-      completedDate: 1475544570212,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb2bdef',
-      completedDate: 1475544847062,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb4bdef',
-      completedDate: 1475545110298,
-      files: []
-    },
-    {
-      id: '563cfb55594311ffcb333c70',
-      completedDate: 1475545212806,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb3bdef',
-      completedDate: 1475547779361,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb7bdef',
-      completedDate: 1475547932256,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb8bdef',
-      completedDate: 1475548117909,
-      files: []
-    },
-    {
-      id: 'cf1111c1c15feddfaeb9bdef',
-      completedDate: 1475548202572,
-      files: []
-    },
-    {
-      id: 'cf1111c1c16feddfaeb1bdef',
-      completedDate: 1475548720499,
-      files: []
-    },
-    {
-      id: 'cf1111c1c16feddfaeb2bdef',
-      completedDate: 1475548785961,
-      files: []
-    },
-    {
-      id: 'cf1111c1c16feddfaeb3bdef',
-      completedDate: 1475548816796,
-      files: []
-    },
-    {
-      id: 'cf1111c1c16feddfaeb4bdef',
-      completedDate: 1475548955141,
-      files: []
-    },
-    {
-      id: 'cf1111c1c16feddfaeb5bdef',
-      completedDate: 1475549004864,
-      files: []
-    },
-    {
-      id: 'bd7158d2c442eddfbeb5bd1f',
-      completedDate: 1475549039674,
-      files: []
-    },
-    {
       id: 'a202eed8fc186c8434cb6d61',
       completedDate: 1475549776986,
       files: []
@@ -10195,11 +9565,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: 'ab31c21b530c0dafa9e241ee',
-      completedDate: 1475628875890,
-      files: []
-    },
-    {
       id: 'adf08ec01beb4f99fc7a68f2',
       completedDate: 1475634954182,
       files: []
@@ -10220,41 +9585,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '56bbb991ad1ed5201cd392d4',
-      completedDate: 1476843806468,
-      files: []
-    },
-    {
-      id: '56bbb991ad1ed5201cd392d5',
-      completedDate: 1476844475068,
-      files: []
-    },
-    {
-      id: '56bbb991ad1ed5201cd392d6',
-      completedDate: 1476844663724,
-      files: []
-    },
-    {
-      id: '56bbb991ad1ed5201cd392d7',
-      completedDate: 1476844924658,
-      files: []
-    },
-    {
-      id: '56bbb991ad1ed5201cd392d8',
-      completedDate: 1476845007020,
-      files: []
-    },
-    {
-      id: '56bbb991ad1ed5201cd392d9',
-      completedDate: 1476889068031,
-      files: []
-    },
-    {
-      id: '56bbb991ad1ed5201cd392da',
-      completedDate: 1476889166120,
-      files: []
-    },
-    {
       id: 'bd7158d8c442eddfaeb5bd13',
       completedDate: 1476999500595,
       files: []
@@ -10267,11 +9597,6 @@ module.exports.fullyCertifiedUser = {
     {
       id: 'a5de63ebea8dbee56860f4f2',
       completedDate: 1477064980435,
-      files: []
-    },
-    {
-      id: 'bd7127d8c441eddfbeb5bddf',
-      completedDate: 1477109403800,
       files: []
     },
     {
@@ -10400,216 +9725,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '56b15f15632298c12f315184',
-      completedDate: 1481860652201,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315185',
-      completedDate: 1481860854284,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31518f',
-      completedDate: 1481861004554,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31518e',
-      completedDate: 1481862599572,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31518c',
-      completedDate: 1481862758623,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31518d',
-      completedDate: 1481862797677,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31518b',
-      completedDate: 1481862861505,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31518a',
-      completedDate: 1481862919212,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315189',
-      completedDate: 1481863139471,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315188',
-      completedDate: 1481863215509,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315187',
-      completedDate: 1481863487868,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315186',
-      completedDate: 1481863524852,
-      files: []
-    },
-    {
-      id: 'bd7129d8a441eddfbeb5bddf',
-      completedDate: 1481863610234,
-      files: []
-    },
-    {
-      id: 'bd7126d8c441eddfbeb5bddf',
-      completedDate: 1481863731854,
-      files: []
-    },
-    {
-      id: 'bd7125d8c441eddfbeb5bddf',
-      completedDate: 1481864211145,
-      files: []
-    },
-    {
-      id: 'bd7122d8c441eddfbeb5bddf',
-      completedDate: 1481864321324,
-      files: []
-    },
-    {
-      id: 'bd7124d8c441eddfbeb5bddf',
-      completedDate: 1481864475753,
-      files: []
-    },
-    {
-      id: 'bd7123d8c441eddfbeb5bddf',
-      completedDate: 1481864582256,
-      files: []
-    },
-    {
-      id: 'bd7121d8c441eddfbeb5bddf',
-      completedDate: 1481864696095,
-      files: []
-    },
-    {
-      id: 'bd7120d8c441eddfbeb5bddf',
-      completedDate: 1481864846892,
-      files: []
-    },
-    {
-      id: 'bd712fd8c441eddfbeb5bddf',
-      completedDate: 1481864954292,
-      files: []
-    },
-    {
-      id: 'bd712ed8c441eddfbeb5bddf',
-      completedDate: 1481865043747,
-      files: []
-    },
-    {
-      id: 'bd712dd8c441eddfbeb5bddf',
-      completedDate: 1481865144055,
-      files: []
-    },
-    {
-      id: 'bd712cd8c441eddfbeb5bddf',
-      completedDate: 1481865164967,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31510f',
-      completedDate: 1481865503851,
-      files: []
-    },
-    {
-      id: 'bd7129d80441eddfbeb5bddf',
-      completedDate: 1481865687477,
-      files: []
-    },
-    {
-      id: 'bd7129d8b441eddfbeb5bddf',
-      completedDate: 1481866381587,
-      files: []
-    },
-    {
-      id: 'bd7029d8c441eddfbeb5bddf',
-      completedDate: 1481868133911,
-      files: []
-    },
-    {
-      id: 'bd712ad8c441eddfbeb5bddf',
-      completedDate: 1481868315911,
-      files: []
-    },
-    {
-      id: 'bd7119d8c441eddfbeb5bddf',
-      completedDate: 1481868379586,
-      files: []
-    },
-    {
-      id: 'bd712bd8c441eddfbeb5bddf',
-      completedDate: 1481868532739,
-      files: []
-    },
-    {
-      id: 'bd7129d89441eddfbeb5bddf',
-      completedDate: 1481868862816,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315183',
-      completedDate: 1481897167093,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315182',
-      completedDate: 1481897290924,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315181',
-      completedDate: 1481897771281,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f315180',
-      completedDate: 1481898177819,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31517f',
-      completedDate: 1481898276836,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31517e',
-      completedDate: 1481898787535,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31517d',
-      completedDate: 1481898913196,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31517c',
-      completedDate: 1481899378324,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31517b',
-      completedDate: 1481899595427,
-      files: []
-    },
-    {
-      id: '56b15f15632298c12f31517a',
-      completedDate: 1481900212775,
-      files: []
-    },
-    {
       id: 'a2f1d72d9b908d0bd72bb9f6',
       completedDate: 1481903430810,
       files: []
@@ -10622,11 +9737,6 @@ module.exports.fullyCertifiedUser = {
     {
       id: 'a7bf700cd123b9a54eef01d5',
       completedDate: 1482185656510,
-      files: []
-    },
-    {
-      id: 'a19f0fbe1872186acd434d5a',
-      completedDate: 1482201811080,
       files: []
     },
     {
@@ -10670,16 +9780,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: 'cf1111c1c16feddfaeb6bdef',
-      completedDate: 1485467383567,
-      files: []
-    },
-    {
-      id: 'cf1111c1c16feddfaeb7bdef',
-      completedDate: 1485467595207,
-      files: []
-    },
-    {
       id: 'bd7154d8c242eddfaeb5bd13',
       completedDate: 1488664622012,
       files: []
@@ -10700,11 +9800,6 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '58d9cc820ce2197370032a13',
-      completedDate: 1490789539522,
-      files: []
-    },
-    {
       id: 'bd7198d8c242eddfaeb5bd13',
       completedDate: 1490790216213,
       files: []
@@ -10720,58 +9815,8 @@ module.exports.fullyCertifiedUser = {
       files: []
     },
     {
-      id: '561add10cb82ac38a17513b3',
-      completedDate: 1491530482152,
-      files: []
-    },
-    {
-      id: 'bd7353d8c341eddeaeb5bd0f',
-      completedDate: 1496195906794,
-      files: []
-    },
-    {
-      id: 'bd7153d8c441eddfaeb5bd0f',
-      completedDate: 1496235235066,
-      files: []
-    },
-    {
-      id: 'bd7153d8c441eddfaeb5bdff',
-      completedDate: 1496603882718,
-      files: []
-    },
-    {
-      id: 'bd7153d8c441eddfaeb5bdfe',
-      completedDate: 1496603911653,
-      files: []
-    },
-    {
-      id: 'bd7153d8c441eddfaeb5bdfd',
-      completedDate: 1496603991361,
-      files: []
-    },
-    {
-      id: 'bd7153d8c441eddfaeb5bd1f',
-      completedDate: 1496752318061,
-      files: []
-    },
-    {
-      id: 'bd7243d8c341eddeaeb5bd0f',
-      completedDate: 1497409186851,
-      files: []
-    },
-    {
-      id: '576d6e1b12fd92c4207a9cbd',
-      completedDate: 1497411084548,
-      files: []
-    },
-    {
       id: 'bd7158d8c443edefaeb5bdee',
       completedDate: 1500083078110,
-      files: []
-    },
-    {
-      id: 'bd7158d8c443eddfaeb5bcef',
-      completedDate: 1500911842686,
       files: []
     },
     {
@@ -11146,21 +10191,6 @@ module.exports.fullyCertifiedUser = {
     },
     {
       id: '671144cdcc01d73f7dd79dc9',
-      completedDate: 1729240849345,
-      files: []
-    },
-    {
-      id: '6734ddabad59e593a49afafe',
-      completedDate: 1729240849345,
-      files: []
-    },
-    {
-      id: '6734e2c5780912abd874e79c',
-      completedDate: 1729240849345,
-      files: []
-    },
-    {
-      id: '6763500bd5a85d5898cc21a9',
       completedDate: 1729240849345,
       files: []
     },
