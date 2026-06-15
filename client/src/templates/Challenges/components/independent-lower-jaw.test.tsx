@@ -10,6 +10,7 @@ import { IndependentLowerJaw } from './independent-lower-jaw';
 import { createStore } from '../../../redux/create-store';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { render } from '../../../../utils/test-utils';
+import { getShortcutHint } from './IndependentLowerJaw';
 
 vi.mock('../../../components/Progress');
 
