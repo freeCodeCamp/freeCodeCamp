@@ -7517,6 +7517,12 @@
           "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
+      "lecture-introduction-to-authentication-and-authorization": {
+        "title": "Introduction to Authentication and Authorization",
+        "intro": [
+          "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Exame de Certificação de Desenvolvimento Back-End e APIs",
         "intro": [
