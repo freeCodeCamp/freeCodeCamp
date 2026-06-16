@@ -404,7 +404,7 @@ export function IndependentLowerJaw({
           {isChallengeComplete ? (
             <Button
               block
-              className={isSignedIn && 'btn-cta'}
+              className={isSignedIn ? 'btn-cta' : undefined}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
               onClick={() => submitChallenge()}
