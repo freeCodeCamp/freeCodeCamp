@@ -1411,37 +1411,27 @@ module.exports.fullyCertifiedUser = {
     },
     {
       id: 'bd7158d8c242eddfaeb5bd13',
-      challengeType: 3,
-      completedDate: 1485315439137,
-      solution: 'http://codepen.io/moT01/pen/vgOaoJ',
+      completedDate: 1689770484197,
       files: []
     },
     {
       id: '587d78af367417b2b2512b04',
-      challengeType: 3,
-      completedDate: 1533265342064,
-      solution: 'https://codepen.io/moT01/full/qKyKYL/',
+      completedDate: 1689770484197,
       files: []
     },
     {
       id: '587d78af367417b2b2512b03',
-      challengeType: 3,
-      completedDate: 1529938009424,
-      solution: 'https://codepen.io/moT01/pen/LrrjGz?editors=1010',
+      completedDate: 1689770484197,
       files: []
     },
     {
       id: '587d78b0367417b2b2512b05',
-      challengeType: 3,
-      completedDate: 1533273771014,
-      solution: 'https://codepen.io/moT01/full/JBvzNL/',
+      completedDate: 1689770484197,
       files: []
     },
     {
       id: 'bd7158d8c442eddfaeb5bd18',
-      challengeType: 3,
-      completedDate: 1475164643824,
-      solution: 'https://codepen.io/moT01/pen/ZpJpKp',
+      completedDate: 1689770484197,
       files: []
     },
     {
