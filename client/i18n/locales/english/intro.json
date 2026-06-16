@@ -7460,6 +7460,12 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
+      },
+      "review-authentication-and-authorization": {
+        "title": "Authentication and Authorization Review",
+        "intro": [
+          "Review authentication and authorization concepts before you take the quiz."
+        ]
       }
     }
   },
