@@ -111,6 +111,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-authentication-and-authorization",
+            "review-authentication-and-authorization",
             "quiz-authentication-and-authorization"
           ]
         }

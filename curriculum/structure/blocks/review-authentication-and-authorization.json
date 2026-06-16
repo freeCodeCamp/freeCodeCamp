@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "review-authentication-and-authorization",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6a296deca18766d0076c4044",
+      "title": "Authentication and Authorization Review"
+    }
+  ],
+  "blockLabel": "review"
+}
