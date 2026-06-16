@@ -404,66 +404,24 @@ export function IndependentLowerJaw({
           {isChallengeComplete ? (
             <Button
               block
-              className={`${isSignedIn && 'btn-cta'} tooltip`}
+              className={isSignedIn && 'btn-cta'}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
-              aria-label={
-                shortcutHint
-                  ? `${t('buttons.submit-continue')} (${shortcutHint})`
-                  : t('buttons.submit-continue')
-              }
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  lineHeight: '1.2'
-                }}
-              >
-                <span>{t('buttons.submit-continue')}</span>
-                {shortcutHint && (
-                  <span style={{ fontSize: '0.8rem', opacity: 0.85 }}>
-                    ({shortcutHint})
-                  </span>
-                )}
-              </div>
-              {shortcutHint && (
-                <span className='tooltiptext left-tooltip'>{shortcutHint}</span>
-              )}
+              {t('buttons.submit-continue')}
+              {shortcutHint ? ` (${shortcutHint})` : ''}
             </Button>
           ) : (
             <button
               type='button'
-              className='btn-cta tooltip'
+              className='btn-cta'
               data-playwright-test-label='independentLowerJaw-check-button'
-              aria-label={
-                shortcutHint
-                  ? `${t('buttons.check-code')} (${shortcutHint})`
-                  : t('buttons.check-code')
-              }
               onClick={handleCheckButtonClick}
             >
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  lineHeight: '1.2'
-                }}
-              >
-                <span>{t('buttons.check-code')}</span>
-                {shortcutHint && (
-                  <span style={{ fontSize: '0.8rem', opacity: 0.85 }}>
-                    ({shortcutHint})
-                  </span>
-                )}
-              </div>
-              {shortcutHint && (
-                <span className='tooltiptext left-tooltip'>{shortcutHint}</span>
-              )}
+              {t('buttons.check-code')}
+              {shortcutHint ? ` (${shortcutHint})` : ''}
             </button>
           )}
         </div>
