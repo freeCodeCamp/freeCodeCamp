@@ -4836,6 +4836,12 @@
           "在本工作坊中，你将通过构建一个句子分析应用来复习如何使用 JavaScript 循环。"
         ]
       },
+      "lab-traffic-light-sequencer": {
+        "title": "Build a Traffic Light Sequencer",
+        "intro": [
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
@@ -7341,6 +7347,18 @@
         "title": "Introduction to Authentication and Authorization",
         "intro": [
           "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
+        ]
+      },
+      "review-authentication-and-authorization": {
+        "title": "Authentication and Authorization Review",
+        "intro": [
+          "Review authentication and authorization concepts before you take the quiz."
+        ]
+      },
+      "quiz-authentication-and-authorization": {
+        "title": "Authentication and Authorization Quiz",
+        "intro": [
+          "Test your knowledge of authentication and authorization concepts covered in this module."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
