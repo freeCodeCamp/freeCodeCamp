@@ -5,9 +5,21 @@ import { generateSearchLink } from './help-modal';
 vi.unmock('react-i18next');
 
 describe('generateSearchLink', () => {
-  it('should include the translated block title when it exists', async () => {
+  it('should only include the challenge title when the block title matches it', async () => {
     await i18n.reloadResources('en', 'intro');
 
+    const link = generateSearchLink(
+      'python-v9.blocks.workshop-shortest-path-algorithm.title',
+      'workshop-shortest-path-algorithm',
+      'python-v9'
+    );
+
+    expect(link).toBe(
+      'https://forum.freecodecamp.org/search?q=python-v9.blocks.workshop-shortest-path-algorithm.title%20in%3Atitle'
+    );
+  });
+
+  it('should include the block title for step-based challenges when it differs from the challenge title', () => {
     const link = generateSearchLink(
       'Step 10',
       'learn-basic-javascript-by-building-a-role-playing-game',
@@ -19,7 +31,7 @@ describe('generateSearchLink', () => {
     );
   });
 
-  it('should include the translated block title for task-based challenges when it exists', () => {
+  it('should include the block title for task-based challenges when it differs from the challenge title', () => {
     const link = generateSearchLink(
       'Task 10',
       'learn-greetings-in-your-first-day-at-the-office',
@@ -31,7 +43,7 @@ describe('generateSearchLink', () => {
     );
   });
 
-  it('should include the translated block title for non-step challenges when it exists', () => {
+  it('should include the block title for non-step challenges when it differs from the challenge title', () => {
     const link = generateSearchLink(
       'Perform Basic String Formatting in C#',
       'write-your-first-code-using-c-sharp',
