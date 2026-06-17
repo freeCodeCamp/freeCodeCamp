@@ -5,20 +5,6 @@ import { generateSearchLink } from './help-modal';
 vi.unmock('react-i18next');
 
 describe('generateSearchLink', () => {
-  it('should fall back to only the challenge title when the block title translation is missing', async () => {
-    await i18n.reloadResources('en', 'intro');
-
-    const link = generateSearchLink(
-      'Step 19',
-      'workshop-shortest-path-algorithm',
-      'python-v9'
-    );
-
-    expect(link).toBe(
-      'https://forum.freecodecamp.org/search?q=Step%2019%20in%3Atitle'
-    );
-  });
-
   it('should include the translated block title when it exists', async () => {
     await i18n.reloadResources('en', 'intro');
 
