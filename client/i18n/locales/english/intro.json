@@ -5307,9 +5307,10 @@
       },
       "workshop-debugging-library-search": {
         "title": "Design a Library Book Search",
-
         "intro": [
-          "In this workshop, you will learn how to handle errors gracefully in JavaScript. You will build a Library Book Search application and use `try...catch...finally` blocks, along with the `throw` statement, to catch and manage custom errors. By the end of this project, you will understand how to control the flow of your program when unexpected inputs occur, ensuring your application provides helpful feedback instead of crashing."
+          "In this workshop, you will learn how to handle errors gracefully in JavaScript.",
+          "You will build a Library Book Search application and use `try...catch...finally` blocks, along with the `throw` statement, to catch and manage custom errors.",
+          "By the end of this project, you will understand how to control the flow of your program when unexpected inputs occur, ensuring your application provides helpful feedback instead of crashing."
         ]
       },
       "lab-random-background-color-changer": {
