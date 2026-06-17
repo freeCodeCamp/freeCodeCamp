@@ -145,7 +145,7 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
+    // The module-button-right div is inside the main button and carries the testid
     const moduleRight = screen.getByTestId('module-button-right');
     const moduleSteps = within(moduleRight).getByText(
       /learn\.steps-completed/i
@@ -184,7 +184,7 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
+    // The module-button-right div is inside the main button and carries the testid
     const moduleRight = screen.getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
   });
@@ -219,7 +219,7 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
+    // The module-button-right div is inside the main button and carries the testid
     const moduleRight = screen.getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
   });
@@ -547,9 +547,11 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // When expandAll=true, both chapters are open so their module main buttons are visible
-    expect(screen.getByRole('button', { name: 'mod-one' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'mod-two' })).toBeInTheDocument();
+    // When expandAll=true, both chapters are open so their module buttons are visible.
+    // Each module renders both an accordion button and a reset button with the module name
+    // in its accessible name, so use getAllByRole to avoid an ambiguous match.
+    expect(screen.getAllByRole('button', { name: /mod-one/ })[0]).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /mod-two/ })[0]).toBeInTheDocument();
   });
 
   it('should not render a module when all its challenges are filtered out', () => {
@@ -576,12 +578,13 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // mod-one has a challenge — its main module button should render
-    expect(screen.getByRole('button', { name: 'mod-one' })).toBeInTheDocument();
+    // mod-one has a challenge — its module buttons (accordion + reset) should render.
+    // Use getAllByRole since both buttons include the module name in their accessible name.
+    expect(screen.getAllByRole('button', { name: /mod-one/ })[0]).toBeInTheDocument();
 
     // mod-two has no challenges — its main module button should not render
     expect(
-      screen.queryByRole('button', { name: 'mod-two' })
+      screen.queryByRole('button', { name: /mod-two/ })
     ).not.toBeInTheDocument();
   });
 });

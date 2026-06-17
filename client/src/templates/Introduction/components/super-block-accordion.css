@@ -32,11 +32,7 @@
 .super-block-accordion .module-header-wrapper .module-button-main {
   flex: 1;
   min-width: 0;
-}
-
-.super-block-accordion .chapter-header-wrapper .chapter-button-toggle,
-.super-block-accordion .module-header-wrapper .module-button-toggle {
-  flex-shrink: 0;
+  justify-content: space-between;
 }
 
 .super-block-accordion .chapter-header-wrapper {
@@ -51,9 +47,6 @@
   align-items: center;
 }
 
-.super-block-accordion .chapter-button-toggle {
-  padding-left: 0;
-}
 
 .super-block-accordion .chapter-link {
   text-decoration: none;
@@ -133,9 +126,6 @@ button .block-header-button-text {
   color: var(--primary-color);
 }
 
-.super-block-accordion .module-button-toggle {
-  padding-left: 0;
-}
 
 .super-block-accordion .block-header {
   width: 100%;
