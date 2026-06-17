@@ -47,7 +47,6 @@
   align-items: center;
 }
 
-
 .super-block-accordion .chapter-link {
   text-decoration: none;
   display: flex;
@@ -125,7 +124,6 @@ button .block-header-button-text {
   gap: 10px;
   color: var(--primary-color);
 }
-
 
 .super-block-accordion .block-header {
   width: 100%;

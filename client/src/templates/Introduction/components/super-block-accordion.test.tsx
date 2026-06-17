@@ -550,8 +550,12 @@ describe('SuperBlockAccordion', () => {
     // When expandAll=true, both chapters are open so their module buttons are visible.
     // Each module renders both an accordion button and a reset button with the module name
     // in its accessible name, so use getAllByRole to avoid an ambiguous match.
-    expect(screen.getAllByRole('button', { name: /mod-one/ })[0]).toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: /mod-two/ })[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByRole('button', { name: /mod-one/ })[0]
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole('button', { name: /mod-two/ })[0]
+    ).toBeInTheDocument();
   });
 
   it('should not render a module when all its challenges are filtered out', () => {
@@ -580,7 +584,9 @@ describe('SuperBlockAccordion', () => {
 
     // mod-one has a challenge — its module buttons (accordion + reset) should render.
     // Use getAllByRole since both buttons include the module name in their accessible name.
-    expect(screen.getAllByRole('button', { name: /mod-one/ })[0]).toBeInTheDocument();
+    expect(
+      screen.getAllByRole('button', { name: /mod-one/ })[0]
+    ).toBeInTheDocument();
 
     // mod-two has no challenges — its main module button should not render
     expect(
