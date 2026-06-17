@@ -5833,12 +5833,6 @@
           "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
-      "lab-prime-number-sum-calculator": {
-        "title": "Build a Prime Number Sum Calculator",
-        "intro": [
-          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
-        ]
-      },
       "review-dynamic-programming-js": {
         "title": "Dynamic Programming Review",
         "intro": [
