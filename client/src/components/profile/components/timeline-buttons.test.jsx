@@ -60,5 +60,8 @@ describe('Timeline buttons test', () => {
       'href',
       '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-41'
     );
+    expect(
+      screen.getByRole('navigation', { name: 'aria.timeline-pagination-nav' })
+    ).toBeInTheDocument();
   });
 });
