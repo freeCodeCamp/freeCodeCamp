@@ -310,7 +310,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
-          shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
+          shouldAppendBlockNameToTitle && blockNameTitle !== title ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });
