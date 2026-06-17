@@ -56,7 +56,11 @@ describe('Timeline buttons test', () => {
       screen.getByRole('columnheader', { name: 'settings.labels.solution' })
     ).toBeInTheDocument();
     expect(screen.getAllByText('Dec 29, 2022')).toHaveLength(15);
-    expect(screen.getByRole('link', { name: 'Step 41' })).toHaveAttribute(
+    expect(
+      screen.getByRole('link', {
+        name: 'intro:2022/responsive-web-design.blocks.learn-accessibility-by-building-a-quiz.title - Step 41'
+      })
+    ).toHaveAttribute(
       'href',
       '/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-41'
     );
