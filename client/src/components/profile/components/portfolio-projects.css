@@ -117,3 +117,8 @@ a.portfolio-card:focus img {
   margin-inline-start: 10px;
   position: absolute;
 }
+
+.timeline-challenge {
+  vertical-align: middle !important;
+  width: 700px;
+}

@@ -138,7 +138,7 @@ function TimelineInner({
     const completedDate = new Date(completed.completedDate);
     return (
       <tr className='timeline-row' key={id}>
-        <td>
+        <td className='timeline-challenge'>
           {certPath ? (
             <Link
               className='timeline-cert-link'
