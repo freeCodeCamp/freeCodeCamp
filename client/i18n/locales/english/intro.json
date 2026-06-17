@@ -2906,6 +2906,13 @@
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
+      "workshop-debugging-library-search": {
+        "title": "Design a Library Book Search",
+        "intro": [
+          "Design a Library Book Search",
+          "In this workshop, you will learn how to handle errors gracefully in JavaScript."
+        ]
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -5305,6 +5312,13 @@
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
+      "workshop-debugging-library-search": {
+        "title": "Design a Library Book Search",
+
+        "intro": [
+          "In this workshop, you will learn how to handle errors gracefully in JavaScript. You will build a Library Book Search application and use `try...catch...finally` blocks, along with the `throw` statement, to catch and manage custom errors. By the end of this project, you will understand how to control the flow of your program when unexpected inputs occur, ensuring your application provides helpful feedback instead of crashing."
+        ]
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
@@ -5889,10 +5903,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "workshop-debugging-library-search": {
-        "title": "Design a Library Book Search",
-        "intro": ["Design a Library Book Search", ""]
       }
     }
   },
