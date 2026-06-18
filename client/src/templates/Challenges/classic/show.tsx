@@ -389,7 +389,11 @@ function ShowClassic({
             instructions={instructions}
             superBlock={superBlock}
             challengeId={id}
-            block={block}
+            block={
+              isDailyCodingChallenge
+                ? `daily-coding-challenges-${dailyCodingChallengeLanguage}`
+                : block
+            }
           />
         }
         challengeTitle={
