@@ -133,10 +133,6 @@ const ShowQuiz = ({
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
-
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
 
@@ -339,9 +335,7 @@ const ShowQuiz = ({
       containerRef={container}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
+        <Helmet title={`${title} | ${t('learn.learn')} | freeCodeCamp.org`} />
         <Container className='quiz-challenge-container'>
           <Row>
             <Spacer size='m' />
