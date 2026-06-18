@@ -49,22 +49,22 @@ export function insertEditableRegions(challengeFiles = []) {
     const editableRegionStrings = fileExtension => {
       switch (fileExtension) {
         case 'html':
-          return '\n<!-- User Editable Region -->\n';
+          return '<!-- User Editable Region -->';
         case 'css':
-          return '\n/* User Editable Region */\n';
+          return '/* User Editable Region */';
         case 'py':
-          return '\n# User Editable Region\n';
+          return '# User Editable Region';
 
         case 'js':
         case 'ts':
-          return '\n// User Editable Region\n';
+          return '// User Editable Region';
 
         case 'jsx':
         case 'tsx':
-          return '\n{/* User Editable Region */}\n';
+          return '{/* User Editable Region */}';
 
         default:
-          return '\nUser Editable Region\n';
+          return 'User Editable Region';
       }
     };
 
@@ -112,7 +112,7 @@ function editableRegionsToMarkdown(challengeFiles = []) {
 
     const [start, end] = challengeFile.editableRegionBoundaries;
     const lines = challengeFile.contents.split('\n');
-    const editableRegion = lines.slice(start + 1, end + 4).join('\n');
+    const editableRegion = lines.slice(start, end + 1).join('\n');
 
     return `${fileString}\`\`\`${fileExtension}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
   }, '\n');
