@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "quiz-authentication-and-authorization",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6a298d88d1606c0f1ef322a9",
+      "title": "Authentication and Authorization Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}
