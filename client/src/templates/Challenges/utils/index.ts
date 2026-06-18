@@ -1,11 +1,6 @@
 import i18next from 'i18next';
-import envData from '../../../../config/env.json';
-
-const { forumLocation } = envData;
-
 interface GuideData {
   forumTopicId?: number;
-  title?: string;
 }
 
 export function getGuideUrl({ forumTopicId }: GuideData): string {

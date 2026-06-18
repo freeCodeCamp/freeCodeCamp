@@ -194,7 +194,7 @@ const ShowBackEnd = (props: BackEndProps) => {
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title })}
+                guideUrl={getGuideUrl({ forumTopicId })}
                 challengeTitle={title}
                 challengeBlock={block}
                 superBlock={superBlock}
