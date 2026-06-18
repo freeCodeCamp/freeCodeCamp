@@ -268,6 +268,7 @@ export const superBlockNames = {
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
   'introduction-to-asynchronous-javascript':
     SuperBlocks.IntroductionToAsynchronousJS,
+  'learn-data-visualization-with-d3': SuperBlocks.LearnDataVisualizationWithD3,
   'introduction-to-python-basics': SuperBlocks.IntroductionToPythonBasics,
   'learn-python-loops-and-sequences': SuperBlocks.LearnPythonLoopsAndSequences,
   'learn-python-dictionaries-and-sets':

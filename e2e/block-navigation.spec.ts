@@ -55,7 +55,7 @@ test.describe('Block Navigation - Hash Updates', () => {
   }) => {
     await page.goto('/learn/javascript-v9');
 
-    await page.getByRole('button', { name: 'Build a Greeting Bot' }).click();
+    await page.getByRole('button', { name: /^Build a Greeting Bot/ }).click();
 
     // Click on step 1 in the accordion
     const step1Link = page.getByRole('link', { name: 'Step 1 Not Passed' });

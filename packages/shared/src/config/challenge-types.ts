@@ -178,6 +178,15 @@ const dailyCodingChallengeTypes = [
 export const getIsDailyCodingChallenge = (challengeType: number): boolean =>
   dailyCodingChallengeTypes.includes(challengeType);
 
+const labChallengeTypes = [
+  challengeTypes.lab,
+  challengeTypes.jsLab,
+  challengeTypes.pyLab
+];
+
+export const getIsLabChallenge = (challengeType: number): boolean =>
+  labChallengeTypes.includes(challengeType);
+
 const dailyCodingChallengeLanguages = {
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python'

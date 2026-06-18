@@ -125,6 +125,7 @@
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -570,6 +571,19 @@
     "reset": "このレッスンをリセットしますか？",
     "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "この操作は取り消すことが出来ません.",
+    "reset-progress-heading": "Reset Progress for {{label}}",
+    "reset-progress-description": "This will permanently delete and reset the '{{label}}' section. Your progress through each step/challenge, including any saved code will be lost, forever.",
+    "reset-progress-warning": "We won't be able to recover any of it for you later, even if you change your mind.",
+    "reset-progress-nevermind": "Nevermind, I don't want to reset my progress",
+    "reset-progress-confirm": "Reset my progress. I understand this cannot be undone",
+    "reset-progress-verify": "I agree to reset my progress",
+    "reset-progress-aria-chapter": "Reset progress for {{chapterLabel}}",
+    "reset-progress-aria-module": "Reset progress for {{moduleLabel}}",
+    "reset-progress-aria-block": "Reset progress for {{blockLabel}}",
+    "reset-progress-in-flight": "Resetting your progress, please wait...",
+    "reset-progress-success": "Your progress for '{{label}}' has been reset.",
+    "reset-progress-failure": "We could not reset your progress. Please try again, or contact support if the problem persists.",
+    "reset-progress-dismiss": "Dismiss",
     "revert-warn": "このレッスンを復元してよろしいですか？直近の変更を取り消し、最後に保存したバージョンのコードに戻します。",
     "scrimba-tip": "ヒント: ミニブラウザがコードを覆ってしまう場合は、クリックとドラッグで移動させてください。また、いつでも遠慮なくビデオを停止させてコードを編集してください。",
     "chal-preview": "チャレンジのプレビュー",
@@ -603,8 +617,8 @@
     "github-required": "<0>GitHub</0> アカウントをお持ちでない場合は作成してください。 仮想 Linux サーバーマシンを作成する際に必要です。この処理には数分かかることがあります。",
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
-      "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below this list",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -612,19 +626,20 @@
       "step-7": "Clicking on the <0>Command Palette</0> option,",
       "step-8": "and running the <0>CodeRoad: Start</0> command",
       "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "Learn more about <0>Codespace workspaces</0>.",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "In the <0>Value</0> field, paste your token",
       "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces Setup"
     },
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below this list",
+      "step-2": "Click the start button below",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -632,7 +647,7 @@
       "step-7": "Clicking on the <0>Command Palette</0> option,",
       "step-8": "and running the <0>CodeRoad: Start</0> command",
       "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "Learn more about <0>Ona workspaces.</0>",
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
@@ -757,6 +772,11 @@
     "archive": {
       "title": "Archived Coursework",
       "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -804,7 +824,7 @@
     "unfinished-certification": "こちらの認定講座は現在開発中です。認定証は後日追加予定となっており、現時点では取得できません。以下に公開済みのコースは先行してご利用いただけます。",
     "consider-donating": "開発をサポートするための寄付をご検討いただければ幸いです。",
     "unfinished-certification-2": "この認定講座は修了までにかなりの時間と努力が必要です。最終試験は数ヶ月後に公開予定ですが、公開後すぐ受験できるよう準備するには今取り組み始めても良いかもしれません。",
-    "consider-donating-2": "カリキュラムの開発をスピードアップするには、<0>当団体への寄付をご検討ください。</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "無料で誰もが利用できる、専門的なプログラミング認定証の開発をご支援ください。",
     "nicely-done": "おめでとうございます。「{{block}}」を完了しました。",
     "credit-card": "クレジットカード",
@@ -1057,6 +1077,7 @@
     "went-wrong": "問題が発生しました。ご確認の上もう一度お試しください。",
     "account-deleted": "アカウントが正常に削除されました",
     "progress-reset": "進行状況がリセットされました",
+    "module-reset": "Your module progress has been reset",
     "not-authorized": "このルートへのアクセス権限がありません",
     "could-not-find": "お探しのページが見つかりませんでした。ご確認の上もう一度お試しください。",
     "wrong-updating": "アカウント情報の更新中に問題が発生しました。ご確認の上もう一度お試しください。",
@@ -1385,6 +1406,7 @@
       "learn-recursion-with-javascript": "Learn Recursion with JavaScript",
       "introduction-to-functional-programming-with-javascript": "Introduction to Functional Programming with JavaScript",
       "introduction-to-asynchronous-javascript": "Introduction to Asynchronous JavaScript",
+      "learn-data-visualization-with-d3": "Learn Data Visualization with D3",
       "introduction-to-python-basics": "Introduction to Python Basics",
       "learn-python-loops-and-sequences": "Learn Python Loops and Sequences",
       "learn-python-dictionaries-and-sets": "Learn Python Dictionaries and Sets",
@@ -1421,7 +1443,8 @@
     "too-long-three": "リンク元のチャレンジの、エディター内に表示されているすべてのコードをコピーして、貼り付けてください。",
     "add-code-one": "この 2 つの文を、コピーしたコードに置き換えてください。",
     "add-code-two": "投稿内でコードが適切にフォーマットされるようにするため、",
-    "add-code-three": "上の ``` と下の ``` の行は残しておいてください。"
+    "add-code-three": "上の ``` と下の ``` の行は残しておいてください。",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "ユーザートークン",

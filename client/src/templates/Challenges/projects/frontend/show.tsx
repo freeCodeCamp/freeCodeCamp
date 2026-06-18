@@ -120,6 +120,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
           challengeType,
           forumTopicId,
           title,
+          id,
           description,
           instructions,
           superBlock,
@@ -157,6 +158,8 @@ const ShowFrontEndProject = (props: ProjectProps) => {
                 superBlock={superBlock}
                 description={description}
                 instructions={instructions}
+                block={block}
+                challengeId={id}
               />
               <Spacer size='m' />
               <SolutionForm

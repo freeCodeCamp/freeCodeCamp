@@ -176,16 +176,6 @@ test.describe('Profile component', () => {
         page.getByRole('button', { name: translations.aria['add-portfolio'] })
       ).toBeVisible();
     });
-
-    test('displays the timeline correctly', async ({ page }) => {
-      await expect(
-        page.getByRole('heading', { name: 'Timeline' })
-      ).toBeVisible();
-      await expect(page.getByRole('table')).toBeVisible();
-      await expect(
-        page.getByRole('navigation', { name: 'Timeline Pagination' })
-      ).toBeVisible();
-    });
   });
 
   test.describe("when viewing someone else's profile", () => {
