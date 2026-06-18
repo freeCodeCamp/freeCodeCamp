@@ -171,7 +171,12 @@ test.describe('Profile component', () => {
     }) => {
       // @certifieduser doesn't have portfolio information, but session users
       // always see the section so they can add projects
-      await expect(page.getByText(translations.profile.projects)).toBeVisible();
+      await expect(
+        page.getByRole('heading', {
+          name: translations.profile.projects,
+          exact: true
+        })
+      ).toBeVisible();
       await expect(
         page.getByRole('button', { name: translations.aria['add-portfolio'] })
       ).toBeVisible();

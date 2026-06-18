@@ -2174,9 +2174,9 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.body).toStrictEqual({
-            error: `An error occurred trying to submit your exam.`
+            error: `An error occurred validating the submitted exam.`
           });
-          expect(response.statusCode).toBe(500);
+          expect(response.statusCode).toBe(400);
         });
       });
 

@@ -24,7 +24,7 @@ jobs:
         with:
           # GITHUB_TOKEN does not have the read:org permission needed for this call
           # while CAMPERBOT_NO_TRANSLATE does, since it is a PAT for the camperbot account with read:org scope
-          github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE }}
+          github-token: ${{ secrets.CAMPERBOT_NO_TRANSLATE || github.token }}
           script: |
             const fn = require('./.github/scripts/pr-guidelines/check-allow-list.js');
             await fn({ github, context, core });

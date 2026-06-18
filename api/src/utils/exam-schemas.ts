@@ -161,11 +161,15 @@ export const validateUserCompletedExamSchema = (
   exam: UserExam,
   numberOfQuestionsInExam: number
 ) => {
-  // TODO: Validate that the properties exist
-  if (exam.userExamQuestions.length !== numberOfQuestionsInExam) {
-    throw new Error(
-      'The number of exam questions answered does not match the number of questions required.'
-    );
+  if (
+    !exam ||
+    !exam.userExamQuestions ||
+    exam.userExamQuestions.length !== numberOfQuestionsInExam
+  ) {
+    return {
+      error:
+        'The number of exam questions answered does not match the number of questions required.'
+    };
   }
 
   return userCompletedExamSchema.validate(exam);

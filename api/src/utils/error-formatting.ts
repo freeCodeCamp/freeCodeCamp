@@ -34,8 +34,6 @@ export const formatProjectCompletedValidation = (
 ): FormattedError => {
   const error = getError(errors);
 
-  // TODO: split this into two functions. There's no need for it to handle both
-  // /project-completed and /save-challenge
   return error.instancePath === '' &&
     error.params.missingProperty === 'solution'
     ? {
@@ -47,6 +45,23 @@ export const formatProjectCompletedValidation = (
         type: 'error',
         message: 'That does not appear to be a valid challenge submission.'
       };
+};
+
+/**
+ * Format validation errors for /save-challenge and other endpoints
+ * that do not require a solution URL.
+ *
+ * @param errors An array of validation errors.
+ * @returns Formatted errors that can be used in the response.
+ */
+export const formatChallengeValidation = (
+  errors: ErrorObject[]
+): FormattedError => {
+  getError(errors);
+  return {
+    type: 'error',
+    message: 'That does not appear to be a valid challenge submission.'
+  };
 };
 
 /**

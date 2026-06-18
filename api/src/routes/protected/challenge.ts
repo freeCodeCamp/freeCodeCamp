@@ -20,6 +20,7 @@ import {
 import { JWT_SECRET } from '../../utils/env.js';
 import {
   formatCoderoadChallengeCompletedValidation,
+  formatChallengeValidation,
   formatProjectCompletedValidation
 } from '../../utils/error-formatting.js';
 import {
@@ -183,7 +184,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
-          return formatProjectCompletedValidation(error.validation);
+          return formatChallengeValidation(error.validation);
         } else {
           fastify.errorHandler(error, request, reply);
         }
@@ -246,7 +247,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           // avoid excessive logging
           logger.debug({ validationError: error.validation });
           void reply.code(400);
-          return formatProjectCompletedValidation(error.validation);
+          return formatChallengeValidation(error.validation);
         } else {
           fastify.errorHandler(error, req, reply);
         }
@@ -292,7 +293,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           // avoid excessive logging
           logger.debug({ validationError: error.validation });
           void reply.code(400);
-          return formatProjectCompletedValidation(error.validation);
+          return formatChallengeValidation(error.validation);
         } else {
           fastify.errorHandler(error, req, reply);
         }
@@ -358,7 +359,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
-          return formatProjectCompletedValidation(error.validation);
+          return formatChallengeValidation(error.validation);
         } else {
           fastify.errorHandler(error, req, reply);
         }
@@ -387,7 +388,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         if (error.validation) {
           logger.warn({ validationError: error.validation });
           void reply.code(400);
-          return formatProjectCompletedValidation(error.validation);
+          return formatChallengeValidation(error.validation);
         } else {
           fastify.errorHandler(error, req, reply);
         }
