@@ -27,17 +27,17 @@
     "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
-    "HTML-CSS": "HTML-CSS",
-    "JavaScript": "JavaScript",
-    "Python": "Python",
-    "Backend Development": "Backend Development",
-    "C-Sharp": "C-Sharp",
-    "English": "English",
-    "Spanish Curriculum": "Spanish Curriculum",
-    "Chinese Curriculum": "Chinese Curriculum",
-    "Odin": "The Odin Project",
-    "Euler": "Project Euler",
-    "Rosetta": "Rosetta Code",
+    "HTML-CSS": "programming/html-css",
+    "JavaScript": "programming/javascript",
+    "Python": "programming/python",
+    "Backend Development": "programming/backend-development",
+    "C-Sharp": "programming/c-sharp",
+    "English": "world-languages/english",
+    "Spanish Curriculum": "world-languages/spanish-curriculum",
+    "Chinese Curriculum": "world-languages/chinese-curriculum",
+    "Odin": "programming/the-odin-project",
+    "Euler": "programming/project-euler",
+    "Rosetta": "programming/rosetta-code",
     "General": "General"
   }
 }

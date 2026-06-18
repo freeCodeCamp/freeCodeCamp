@@ -25,10 +25,17 @@
     "podcast": "open.spotify.com/show/3dIVV6XRRPMs75z2xDtsOg?si=Ugm6rwlcTgiEJ1Udw9WzVQ"
   },
   "help": {
-    "HTML-CSS": "chinese/html-css",
-    "JavaScript": "chinese/javascript",
-    "Python": "chinese/python",
-    "Backend Development": "chinese/programming-help",
-    "English": "English"
+    "HTML-CSS": "world-languages/chinese",
+    "JavaScript": "world-languages/chinese",
+    "Python": "world-languages/chinese",
+    "Backend Development": "world-languages/chinese",
+    "C-Sharp": "world-languages/chinese",
+    "English": "world-languages/chinese",
+    "Spanish Curriculum": "world-languages/chinese",
+    "Chinese Curriculum": "world-languages/chinese",
+    "Odin": "world-languages/chinese",
+    "Euler": "world-languages/chinese",
+    "Rosetta": "world-languages/chinese",
+    "General": "world-languages/chinese"
   }
 }
