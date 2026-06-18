@@ -72,31 +72,43 @@
             "workshop-tailwind-cta-component",
             "workshop-tailwind-pricing-component",
             "lab-music-shopping-cart-page",
-            "lab-photography-exhibit",
             "review-css-libraries-and-frameworks",
             "quiz-css-libraries-and-frameworks"
           ]
         },
         {
-          "dashedName": "data-visualization",
-          "comingSoon": true,
-          "blocks": [
-            "lecture-introduction-to-data-visualization",
-            "lab-bar-chart",
-            "lab-scatterplot-graph"
-          ]
+          "moduleType": "cert-project",
+          "dashedName": "lab-photography-exhibit",
+          "blocks": ["lab-photography-exhibit"]
         },
         {
           "dashedName": "typescript-fundamentals",
-          "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
+            "workshop-type-safe-user-profile",
+            "workshop-type-safe-math-toolkit",
             "lecture-understanding-type-composition",
+            "workshop-shape-manager",
+            "lab-motorcycle-shop",
             "lecture-working-with-generics-and-type-narrowing",
+            "workshop-bug-emoji-picker",
+            "lab-product-showcase",
             "lecture-working-with-typescript-configuration-files",
+            "workshop-fortune-teller-app",
+            "workshop-build-a-football-player-card-builder",
             "review-typescript",
             "quiz-typescript"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-flashcard-quiz-app",
+          "blocks": ["lab-flashcard-quiz-app"]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-digital-pet-game",
+          "blocks": ["lab-digital-pet-game"]
         },
         {
           "moduleType": "review",

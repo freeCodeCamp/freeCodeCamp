@@ -91,6 +91,7 @@ export enum SuperBlocks {
   LearnRecursionWithJS = 'learn-recursion-with-javascript',
   IntroductionToFunctionalProgrammingWithJS = 'introduction-to-functional-programming-with-javascript',
   IntroductionToAsynchronousJS = 'introduction-to-asynchronous-javascript',
+  LearnDataVisualizationWithD3 = 'learn-data-visualization-with-d3',
   IntroductionToPythonBasics = 'introduction-to-python-basics',
   LearnPythonLoopsAndSequences = 'learn-python-loops-and-sequences',
   LearnPythonDictionariesAndSets = 'learn-python-dictionaries-and-sets',
@@ -159,7 +160,8 @@ const defaultStageOrder = [
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
-  SuperBlockStage.Next
+  SuperBlockStage.Next,
+  SuperBlockStage.Catalog
 ];
 
 export function getStageOrder({
@@ -168,7 +170,7 @@ export function getStageOrder({
   const stageOrder = [...defaultStageOrder];
 
   if (showUpcomingChanges) {
-    stageOrder.push(SuperBlockStage.Upcoming, SuperBlockStage.Catalog);
+    stageOrder.push(SuperBlockStage.Upcoming);
   }
   return stageOrder;
 }
@@ -277,6 +279,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.LearnRecursionWithJS,
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
     SuperBlocks.IntroductionToAsynchronousJS,
+    SuperBlocks.LearnDataVisualizationWithD3,
     SuperBlocks.IntroductionToPythonBasics,
     SuperBlocks.LearnPythonLoopsAndSequences,
     SuperBlocks.LearnPythonDictionariesAndSets,
@@ -308,128 +311,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Italian]: [],
   [Languages.Portuguese]: [],
   [Languages.Ukrainian]: [],
-  [Languages.Japanese]: [
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
-  [Languages.German]: [
-    SuperBlocks.RelationalDb,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
-  [Languages.Swahili]: [
-    SuperBlocks.DataVis,
-    SuperBlocks.RelationalDb,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.RespWebDesign,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
-  [Languages.Korean]: [
-    SuperBlocks.RespWebDesignNew,
-    SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.BackEndDevApis,
-    SuperBlocks.QualityAssurance,
-    SuperBlocks.SciCompPy,
-    SuperBlocks.DataAnalysisPy,
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.FrontEndDevLibs,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.DataVis,
-    SuperBlocks.RelationalDb,
-    SuperBlocks.RosettaCode,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ]
+  [Languages.Japanese]: [],
+  [Languages.German]: [],
+  [Languages.Swahili]: [],
+  [Languages.Korean]: []
 };
 
 Object.freeze(notAuditedSuperBlocks);
@@ -444,6 +329,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,
+  SuperBlocks.LearnDataVisualizationWithD3,
   SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);

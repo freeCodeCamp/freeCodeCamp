@@ -76,7 +76,7 @@ if (FREECODECAMP_NODE_ENV !== 'development') {
     donationKeys,
     abTestingKeys
   );
-  const actualVariables = Object.keys(env as Record<string, unknown>);
+  const actualVariables = Object.keys(env);
   if (expectedVariables.length !== actualVariables.length) {
     const extraVariables = actualVariables
       .filter(x => !expectedVariables.includes(x))

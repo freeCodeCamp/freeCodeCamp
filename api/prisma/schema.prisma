@@ -173,6 +173,7 @@ model user {
   savedChallenges                SavedChallenge[] // Undefined | SavedChallenge[]
   // Nullable tri-state: null (likely new user), true (subscribed), false (unsubscribed)
   sendQuincyEmail                Boolean?
+  socrates                       Boolean?
   theme                          String? // Undefined
   timezone                       String? // Undefined
   twitter                        String? // Null | Undefined
@@ -226,6 +227,17 @@ model Donation {
 
   @@index([email], map: "email_1")
   @@index([userId], map: "userId_1")
+}
+
+model SocratesUsage {
+  id     String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId String   @db.ObjectId
+  /// UTC date representing the day of usage (midnight).
+  date   DateTime @db.Date
+  /// Number of hints used on this day.
+  count  Int      @default(0)
+
+  @@unique([userId, date])
 }
 
 model UserToken {

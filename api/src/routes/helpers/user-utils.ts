@@ -33,7 +33,6 @@ const nullableFlags = [
   'isRespWebDesignCert',
   'isRespWebDesignCertV9',
   'isSciCompPyCertV7',
-  'isDataAnalysisPyCertV7',
   'isFrontEndLibsCertV9',
   'isBackEndDevApisCertV9',
   'isFullStackDeveloperCertV9',

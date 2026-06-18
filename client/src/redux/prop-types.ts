@@ -43,8 +43,9 @@ export type Question = {
 export type FillInTheBlank = {
   sentence: string;
   blanks: MultipleChoiceAnswer[];
-  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi';
 };
+
+export type FillInTheBlankInputType = 'pinyin-tone' | 'pinyin-to-hanzi';
 
 export type Fields = {
   slug: string;
@@ -216,6 +217,7 @@ export type ChallengeNode = {
     helpCategory: string;
     hooks?: Hooks;
     id: string;
+    inputType?: FillInTheBlankInputType;
     lang?: ChallengeLang;
     instructions: string;
     internal?: {
@@ -451,6 +453,7 @@ export type User = {
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;
+  socrates: boolean;
   twitter: string;
   bluesky: string;
   username: string;
@@ -516,6 +519,7 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  description?: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
   saveSubmissionToDB?: boolean;

@@ -166,20 +166,14 @@ test.describe('Profile component', () => {
       }
     });
 
-    test('should not show portfolio when empty', async ({ page }) => {
-      // @certifieduser doesn't have portfolio information
+    test('should show portfolio section with add button when empty', async ({
+      page
+    }) => {
+      // @certifieduser doesn't have portfolio information, but session users
+      // always see the section so they can add projects
+      await expect(page.getByText(translations.profile.projects)).toBeVisible();
       await expect(
-        page.getByText(translations.profile.projects)
-      ).not.toBeVisible();
-    });
-
-    test('displays the timeline correctly', async ({ page }) => {
-      await expect(
-        page.getByRole('heading', { name: 'Timeline' })
-      ).toBeVisible();
-      await expect(page.getByRole('table')).toBeVisible();
-      await expect(
-        page.getByRole('navigation', { name: 'Timeline Pagination' })
+        page.getByRole('button', { name: translations.aria['add-portfolio'] })
       ).toBeVisible();
     });
   });
