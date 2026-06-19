@@ -347,10 +347,7 @@ function ShowExam(props: ShowExamProps) {
   const prerequisitesComplete = missingPrerequisites.length === 0;
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
-  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const windowTitle = `${title} | freeCodeCamp.org`;
 
   // TODO: If already taken exam, show different messages
 
