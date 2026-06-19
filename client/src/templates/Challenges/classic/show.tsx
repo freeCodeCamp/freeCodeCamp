@@ -247,10 +247,9 @@ function ShowClassic({
 
   const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
-  const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
+  const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  const shouldAppendBlockNameToTitle = blockNameTitle !== title;
+  const windowTitle = `${shouldAppendBlockNameToTitle ? blockNameTitle + ' : ' : ''}${title} | freeCodeCamp.org`;
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
   const getLayoutState = () => {
