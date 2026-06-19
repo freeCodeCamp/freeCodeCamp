@@ -27,10 +27,7 @@ type PayPalButtonScriptLoaderProps = {
     }
   ) => unknown;
   isSubscription: boolean;
-  onApprove: (
-    data: DonationApprovalData,
-    actions?: { order: { capture: () => Promise<unknown> } }
-  ) => unknown;
+  onApprove: (data: DonationApprovalData, actions?: unknown) => unknown;
   isPaypalLoading: boolean;
   onCancel: () => unknown;
   onError: () => unknown;
@@ -137,16 +134,11 @@ export default class PayPalButtonScriptLoader extends Component<
   };
 
   captureOneTimePayment(
-    data: unknown,
+    data: DonationApprovalData,
     actions: { order: { capture: () => Promise<unknown> } }
   ): unknown {
     return actions.order.capture().then((details: unknown) => {
-      // TODO: this looks like a bug (it probably should not be passing details)
-      // but the api does not care what data it gets (yet). If we start to use
-      // that, this will need to be changed.
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return this.props.onApprove(details, data);
+      return this.props.onApprove(data, details);
     });
   }
 
@@ -188,10 +180,7 @@ export default class PayPalButtonScriptLoader extends Component<
                 actions: { order: { capture: () => Promise<unknown> } }
               ) => onApprove(data, actions)
             : (
-                data: {
-                  [key: string]: unknown;
-                  error: string | null;
-                },
+                data: DonationApprovalData,
                 actions: { order: { capture: () => Promise<unknown> } }
               ) => this.captureOneTimePayment(data, actions)
         }
