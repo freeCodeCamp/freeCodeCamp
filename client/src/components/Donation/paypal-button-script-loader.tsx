@@ -141,12 +141,10 @@ export default class PayPalButtonScriptLoader extends Component<
     actions: { order: { capture: () => Promise<unknown> } }
   ): unknown {
     return actions.order.capture().then((details: unknown) => {
-      // TODO: this looks like a bug (it probably should not be passing details)
-      // but the api does not care what data it gets (yet). If we start to use
-      // that, this will need to be changed.
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      return this.props.onApprove(details, data);
+      return this.props.onApprove(
+        data as DonationApprovalData,
+        details as { order: { capture: () => Promise<unknown> } }
+      );
     });
   }
 
