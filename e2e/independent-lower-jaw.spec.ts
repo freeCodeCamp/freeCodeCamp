@@ -41,6 +41,18 @@ test('Clicking "Check Your Code" reveals failing feedback', async ({
   ).toBeVisible();
 });
 
+test('Displays the platform shortcut hint on the check button', async ({
+  page,
+  browserName
+}) => {
+  await page.goto(workshopChallengeUrl);
+
+  const shortcut = browserName === 'webkit' ? 'Command' : 'Ctrl';
+  await expect(
+    page.getByTestId('independentLowerJaw-check-button')
+  ).toHaveAccessibleName(`Check Your Code (${shortcut} + Enter)`);
+});
+
 test('Reset button opens and closes the reset modal', async ({ page }) => {
   await page.goto(workshopChallengeUrl);
 
@@ -147,8 +159,11 @@ test.describe('Authenticated user', () => {
     await page.getByTestId('independentLowerJaw-check-button').click();
 
     const submitButton = page.getByTestId('independentLowerJaw-submit-button');
+    const shortcut = browserName === 'webkit' ? '\u2318' : 'Ctrl';
     await expect(submitButton).toBeVisible();
-    await expect(submitButton).toContainText('Submit and continue');
+    await expect(submitButton).toHaveAccessibleName(
+      `Submit and continue (${shortcut} + Enter)`
+    );
     await expect(submitButton).toBeFocused();
     await expect(
       page.getByTestId('independentLowerJaw-signin-link')

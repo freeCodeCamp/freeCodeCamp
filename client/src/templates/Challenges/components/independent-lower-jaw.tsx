@@ -30,6 +30,7 @@ import {
   socratesHintStateSelector
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import { openModal, executeChallenge, askSocrates } from '../redux/actions';
 import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
@@ -252,10 +253,19 @@ export function IndependentLowerJaw({
   };
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
+  const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
-  const checkButtonText = isMacOS
+  const shortcutText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
+  const checkButtonText = isDesktop
+    ? isMacOS
+      ? t('buttons.check-code-cmd')
+      : t('buttons.check-code-ctrl')
+    : t('buttons.check-code');
+  const submitButtonText = isDesktop
+    ? `${t('buttons.submit-continue')} (${shortcutText})`
+    : t('buttons.submit-continue');
 
   const askSocratesAttempt = () => {
     setShowSocratesResults(true);
@@ -398,30 +408,24 @@ export function IndependentLowerJaw({
           {isChallengeComplete ? (
             <Button
               block
-              className={`${isSignedIn && 'btn-cta'} tooltip`}
+              className={isSignedIn ? 'btn-cta' : undefined}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
-              aria-label={t('buttons.submit-continue')}
+              aria-label={submitButtonText}
               onClick={() => submitChallenge()}
               ref={submitButtonRef}
             >
-              {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              {submitButtonText}
             </Button>
           ) : (
             <button
               type='button'
-              className='btn-cta tooltip'
+              className='btn-cta'
               data-playwright-test-label='independentLowerJaw-check-button'
-              aria-label={t('buttons.check-code')}
+              aria-label={checkButtonText}
               onClick={handleCheckButtonClick}
             >
-              {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              {checkButtonText}
             </button>
           )}
         </div>
