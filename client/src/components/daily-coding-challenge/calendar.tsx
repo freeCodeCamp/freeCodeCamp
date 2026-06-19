@@ -14,7 +14,12 @@ import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 import Login from '../Header/components/login';
 import CalendarDay from './calendar-day';
-import { getTodayUsCentral, formatDate } from './helpers';
+import {
+  getTodayUsCentral,
+  toMonthDay,
+  formatDate,
+  lastDailyChallengeIsReleased
+} from './helpers';
 
 import './calendar.css';
 import DailyCodingChallengeNotFound from './not-found';
@@ -60,11 +65,12 @@ interface MonthInfo {
 const getMonthInfo = (
   year: number,
   monthIndex: number,
-  dailyChallengesMap: DailyChallengesMap
+  dailyChallengesMap: DailyChallengesMap,
+  hideDaysAfter?: number,
+  hideDaysThrough?: number
 ) => {
   // Create date for first of the month (handles rollover automatically)
   const firstOfMonth = new Date(Date.UTC(year, monthIndex, 1));
-  const firstOfMonthWeekdayIndex = firstOfMonth.getUTCDay();
   const utcYear = firstOfMonth.getUTCFullYear();
   const utcMonthIndex = firstOfMonth.getUTCMonth();
 
@@ -75,11 +81,6 @@ const getMonthInfo = (
 
   const days: JSX.Element[] = [];
 
-  // push empty days to before the 1st of the month
-  for (let i = 0; i < firstOfMonthWeekdayIndex; i++) {
-    days.push(<CalendarDay key={`empty-${i}`} dayNumber={0} />);
-  }
-
   for (let day = 1; day <= numberOfDays; day++) {
     const formattedDate = formatDate({
       month: utcMonthIndex + 1, // Convert back to 1-indexed
@@ -87,10 +88,13 @@ const getMonthInfo = (
       year: utcYear
     });
 
-    const challengeData = dailyChallengesMap.get(formattedDate);
+    const challengeData = dailyChallengesMap.get(toMonthDay(formattedDate));
     const completedLanguages = challengeData?.completedLanguages || [];
     const title = challengeData?.title || '';
-    const isAvailable = challengeData !== undefined;
+    const isAvailable =
+      challengeData !== undefined &&
+      (hideDaysAfter === undefined || day <= hideDaysAfter) &&
+      (hideDaysThrough === undefined || day > hideDaysThrough);
     const challengeNumber = challengeData?.challengeNumber;
 
     days.push(
@@ -124,10 +128,21 @@ function DailyCodingChallengeCalendar({
   const { t } = useTranslation();
 
   const todayUsCentral = getTodayUsCentral();
+  const lastDailyChallengeReleased = lastDailyChallengeIsReleased();
+
+  const [todayYear, todayMonth, todayDay] = todayUsCentral
+    .split('-')
+    .map(Number);
+
+  const daysInCurrentMonth = new Date(
+    Date.UTC(todayYear, todayMonth, 0)
+  ).getUTCDate();
+  const minMonthOffset = todayDay === daysInCurrentMonth ? -11 : -12;
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
   const [monthInfo, setMonthInfo] = useState<MonthInfo | null>(null);
+  const [monthOffset, setMonthOffset] = useState(0);
   const [dailyChallengesMap, setDailyChallengesMap] = useState(
     () => new Map<string, DailyChallengeMap>()
   );
@@ -145,7 +160,7 @@ function DailyCodingChallengeCalendar({
         challenges.forEach(c => {
           const date = c.date.split('T')[0];
 
-          newDailyChallengesMap.set(date, {
+          newDailyChallengesMap.set(toMonthDay(date), {
             ...c,
             date,
             completedLanguages:
@@ -186,23 +201,31 @@ function DailyCodingChallengeCalendar({
   // we just need to change the month, the year can stay the same
   // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
   const nextMonth = () => {
-    setMonthInfo(
-      m => m && getMonthInfo(m.year, m.index + 1, dailyChallengesMap)
-    );
+    if (lastDailyChallengeReleased) {
+      setMonthOffset(offset => Math.min(0, offset + 1));
+    } else {
+      setMonthInfo(
+        m => m && getMonthInfo(m.year, m.index + 1, dailyChallengesMap)
+      );
+    }
   };
 
   const prevMonth = () => {
-    setMonthInfo(
-      m => m && getMonthInfo(m.year, m.index - 1, dailyChallengesMap)
-    );
+    if (lastDailyChallengeReleased) {
+      setMonthOffset(offset => Math.max(minMonthOffset, offset - 1));
+    } else {
+      setMonthInfo(
+        m => m && getMonthInfo(m.year, m.index - 1, dailyChallengesMap)
+      );
+    }
   };
 
   const hasOlderChallenges = (
     map: DailyChallengesMap,
     monthInfo: MonthInfo
   ): boolean => {
-    return Array.from(map.keys()).some(dateStr => {
-      const [year, month] = dateStr.split('-').map(Number);
+    return Array.from(map.values()).some(({ date }) => {
+      const [year, month] = date.split('-').map(Number);
       return (
         year < monthInfo.year ||
         (year === monthInfo.year && month - 1 < monthInfo.index)
@@ -214,8 +237,8 @@ function DailyCodingChallengeCalendar({
     map: DailyChallengesMap,
     monthInfo: MonthInfo
   ): boolean => {
-    return Array.from(map.keys()).some(dateStr => {
-      const [year, month] = dateStr.split('-').map(Number);
+    return Array.from(map.values()).some(({ date }) => {
+      const [year, month] = date.split('-').map(Number);
       return (
         year > monthInfo.year ||
         (year === monthInfo.year && month - 1 > monthInfo.index)
@@ -223,16 +246,38 @@ function DailyCodingChallengeCalendar({
     });
   };
 
-  const showPrevButton = monthInfo
-    ? hasOlderChallenges(dailyChallengesMap, monthInfo)
-    : false;
+  // The boundary month (the furthest back you can go) only shows the days
+  // still hidden in the current month - the rest is already visible there
+  const isBoundaryMonth = minMonthOffset === -12 && monthOffset === -12;
 
-  const showNextButton = monthInfo
-    ? hasNewerChallenges(dailyChallengesMap, monthInfo)
-    : false;
+  // After the last challenge is released, the current month only shows
+  // challenges through today
+  const evergreenMonthInfo = getMonthInfo(
+    todayYear,
+    todayMonth - 1 + monthOffset,
+    dailyChallengesMap,
+    monthOffset === 0 ? todayDay : undefined,
+    isBoundaryMonth ? todayDay : undefined
+  );
+
+  const displayedMonthInfo = lastDailyChallengeReleased
+    ? evergreenMonthInfo
+    : monthInfo;
+
+  const showPrevButton = lastDailyChallengeReleased
+    ? monthOffset > minMonthOffset
+    : monthInfo
+      ? hasOlderChallenges(dailyChallengesMap, monthInfo)
+      : false;
+
+  const showNextButton = lastDailyChallengeReleased
+    ? monthOffset < 0
+    : monthInfo
+      ? hasNewerChallenges(dailyChallengesMap, monthInfo)
+      : false;
 
   if (isLoading) return <Loader />;
-  if (error || !monthInfo) return <DailyCodingChallengeNotFound />;
+  if (error || !displayedMonthInfo) return <DailyCodingChallengeNotFound />;
 
   return (
     <>
@@ -245,7 +290,7 @@ function DailyCodingChallengeCalendar({
 
             <Button
               block={true}
-              href={`/learn/daily-coding-challenge/${todayUsCentral}`}
+              href={`/learn/daily-coding-challenge/${toMonthDay(todayUsCentral)}`}
             >
               {t('buttons.go-to-dcc-today')}
             </Button>
@@ -264,9 +309,7 @@ function DailyCodingChallengeCalendar({
           &lt;
         </Button>
 
-        <h2 className='text-center'>
-          {monthInfo.name} {monthInfo.year}
-        </h2>
+        <h2 className='text-center'>{displayedMonthInfo.name}</h2>
         <Button
           aria-label={t('aria.next-month')}
           disabled={!showNextButton}
@@ -277,33 +320,7 @@ function DailyCodingChallengeCalendar({
       </div>
 
       <Spacer size='m' />
-
-      <div className='calendar-weekday-labels'>
-        <div aria-label={t('weekdays.long.sunday')}>
-          {t('weekdays.short.sunday')}
-        </div>
-        <div aria-label={t('weekdays.long.monday')}>
-          {t('weekdays.short.monday')}
-        </div>
-        <div aria-label={t('weekdays.long.tuesday')}>
-          {t('weekdays.short.tuesday')}
-        </div>
-        <div aria-label={t('weekdays.long.wednesday')}>
-          {t('weekdays.short.wednesday')}
-        </div>
-        <div aria-label={t('weekdays.long.thursday')}>
-          {t('weekdays.short.thursday')}
-        </div>
-        <div aria-label={t('weekdays.long.friday')}>
-          {t('weekdays.short.friday')}
-        </div>
-        <div aria-label={t('weekdays.long.saturday')}>
-          {t('weekdays.short.saturday')}
-        </div>
-      </div>
-
-      <Spacer size='s' />
-      <div className='calendar-grid'>{monthInfo.days}</div>
+      <div className='calendar-grid'>{displayedMonthInfo.days}</div>
       <Spacer size='l' />
 
       {!isSignedIn && (

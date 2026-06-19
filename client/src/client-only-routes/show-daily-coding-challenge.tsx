@@ -9,7 +9,10 @@ import {
 } from '../redux/prop-types';
 import DailyCodingChallengeNotFound from '../components/daily-coding-challenge/not-found';
 import { apiLocation } from '../../config/env.json';
-import { isValidDateString } from '../components/daily-coding-challenge/helpers';
+import {
+  isValidDateOrMonthDayString,
+  toMonthDay
+} from '../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
   type DailyCodingChallengeFromDb
@@ -151,8 +154,9 @@ function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
 
   const fetchChallenge = async (date: string) => {
     try {
+      const monthDay = toMonthDay(date);
       const response = await fetch(
-        `${apiLocation}/daily-coding-challenge/date/${date}`
+        `${apiLocation}/daily-coding-challenge/day/${monthDay}`
       );
       const challengeData = await response.json();
 
@@ -186,7 +190,7 @@ function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
 
   useEffect(() => {
     // If date is invalid, stop loading/fetching and show the not found page
-    if (!date || !isValidDateString(date)) {
+    if (!date || !isValidDateOrMonthDayString(date)) {
       setIsLoading(false);
       setChallengeFound(false);
       return;

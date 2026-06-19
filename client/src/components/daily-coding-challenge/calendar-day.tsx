@@ -5,7 +5,7 @@ import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
 import JavaScriptIcon from '../../assets/icons/javascript';
 import PythonIcon from '../../assets/icons/python';
-import { formatDisplayDate, truncate } from './helpers';
+import { formatDisplayDate, toMonthDay, truncate } from './helpers';
 
 interface CalendarDayProps {
   dayNumber: number;
@@ -64,7 +64,7 @@ function DailyCodingChallengeCalendarDay({
   // isAvailable -> render link to challenge
   return (
     <Link
-      to={`/learn/daily-coding-challenge/${date}`}
+      to={`/learn/daily-coding-challenge/${date && toMonthDay(date)}`}
       className='calendar-day available'
       data-playwright-test-label='calendar-day'
       aria-label={`${date && formatDisplayDate(date)}`}
