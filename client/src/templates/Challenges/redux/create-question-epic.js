@@ -4,7 +4,10 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../config/env.json';
 import { transformEditorLink } from '../utils';
-import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  challengeTypes,
+  getDailyCodingChallengeLanguage
+} from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
@@ -126,6 +129,14 @@ function linksOrMarkdown(projectFormValues, markdown) {
   );
 }
 
+// Daily coding challenges share a synthetic `daily-coding-challenge` block that
+// has no curriculum directory, so the source link must resolve to the real,
+// language-specific block (`daily-coding-challenges-javascript` or `-python`).
+export function getGithubLinkBlock(block, challengeType) {
+  const language = getDailyCodingChallengeLanguage(challengeType);
+  return language ? `daily-coding-challenges-${language}` : block;
+}
+
 function createQuestionEpic(action$, state$, { window }) {
   return action$.pipe(
     ofType(actionTypes.createQuestion),
@@ -163,7 +174,10 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValuesSelector(state)
       );
 
-      const gitLink = generateGithubLink(id, block);
+      const gitLink = generateGithubLink(
+        id,
+        getGithubLinkBlock(block, challengeType)
+      );
       const gitInfo = i18next.t('forum-help.git-info', {
         gitLink
       });
