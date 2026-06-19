@@ -6,13 +6,26 @@ const { forumLocation } = envData;
 interface GuideData {
   forumTopicId?: number;
   title?: string;
+  block?: string;
+  superBlock?: string;
 }
 
-export function getGuideUrl({ forumTopicId, title = '' }: GuideData): string {
-  title = encodeURIComponent(title);
-  return forumTopicId
-    ? `https://forum.freecodecamp.org/t/${forumTopicId}`
-    : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
+export function getGuideUrl({
+  forumTopicId,
+  title = '',
+  block,
+  superBlock
+}: GuideData): string {
+  if (forumTopicId) {
+    return `https://forum.freecodecamp.org/t/${forumTopicId}`;
+  }
+  const blockTitle =
+    block && superBlock
+      ? i18next.t(`intro:${superBlock}.blocks.${block}.title`)
+      : '';
+  const searchTitle = blockTitle ? `${blockTitle} - ${title}` : title;
+  const query = encodeURIComponent(`${searchTitle} in:title order:views`);
+  return `${forumLocation}/search?q=${query}`;
 }
 
 export function isGoodXHRStatus(status?: string): boolean {
