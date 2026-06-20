@@ -25,10 +25,17 @@
     "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
-    "HTML-CSS": "Japanese/HTML-CSS",
-    "JavaScript": "Japanese/JavaScript",
-    "Python": "Japanese/Python",
-    "Backend Development": "Japanese/programming-help",
-    "English": "English"
+    "HTML-CSS": "world-languages/japanese",
+    "JavaScript": "world-languages/japanese",
+    "Python": "world-languages/japanese",
+    "Backend Development": "world-languages/japanese",
+    "C-Sharp": "world-languages/japanese",
+    "English": "world-languages/japanese",
+    "Spanish Curriculum": "world-languages/japanese",
+    "Chinese Curriculum": "world-languages/japanese",
+    "Odin": "world-languages/japanese",
+    "Euler": "world-languages/japanese",
+    "Rosetta": "world-languages/japanese",
+    "General": "world-languages/japanese"
   }
 }

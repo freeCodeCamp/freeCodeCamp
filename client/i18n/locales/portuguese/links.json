@@ -25,10 +25,17 @@
     "podcast": "https://open.spotify.com/show/70m92At5oht4zY4f87lLEE?si=6tozUAOBQFSVyaqixy6aCg"
   },
   "help": {
-    "HTML-CSS": "Portugues/HTML-CSS",
-    "JavaScript": "Portugues/JavaScript",
-    "Python": "Portugues/Python",
-    "Backend Development": "Portugues/ajuda-em-programacao",
-    "English": "English"
+    "HTML-CSS": "world-languages/portugues",
+    "JavaScript": "world-languages/portugues",
+    "Python": "world-languages/portugues",
+    "Backend Development": "world-languages/portugues",
+    "C-Sharp": "world-languages/portugues",
+    "English": "world-languages/portugues",
+    "Spanish Curriculum": "world-languages/portugues",
+    "Chinese Curriculum": "world-languages/portugues",
+    "Odin": "world-languages/portugues",
+    "Euler": "world-languages/portugues",
+    "Rosetta": "world-languages/portugues",
+    "General": "world-languages/portugues"
   }
 }
