@@ -4,7 +4,16 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import store from 'store';
+import {
+  Tabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList,
+  Dropdown,
+  MenuItem
+} from '@freecodecamp/ui';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 
 import {
   removePortalWindow,
@@ -26,6 +35,11 @@ interface MobileLayoutProps {
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
+  isDailyCodingChallenge?: boolean;
+  dailyCodingChallengeLanguage?: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage?: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   notes: string;
   preview: JSX.Element;
   onPreviewResize: () => void;
@@ -40,6 +54,7 @@ interface MobileLayoutProps {
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   usesMultifileEditor: boolean;
+  usesTerminal: boolean;
 }
 
 const tabs = {
@@ -78,7 +93,10 @@ const mapStateToProps = createSelector(
   })
 );
 
-class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
+export class MobileLayout extends Component<
+  MobileLayoutProps,
+  MobileLayoutState
+> {
   static displayName: string;
 
   #toolPanelGroup!: HTMLElement;
@@ -164,8 +182,21 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
-      usesMultifileEditor
+      usesMultifileEditor,
+      usesTerminal,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage,
+      setDailyCodingChallengeLanguage
     } = this.props;
+
+    const handleLanguageChange = (
+      language: DailyCodingChallengeLanguages
+    ): void => {
+      store.set('dailyCodingChallengeLanguage', language);
+      if (setDailyCodingChallengeLanguage) {
+        setDailyCodingChallengeLanguage(language);
+      }
+    };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -206,9 +237,13 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       return portalBtnSrText;
     }
 
+    const previewTriggerText =
+      usesTerminal == false
+        ? 'learn.editor-tabs.preview'
+        : 'learn.editor-tabs.terminal';
+
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
-
     return (
       <>
         <Tabs
@@ -222,6 +257,26 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList className='nav-lists'>
+            {isDailyCodingChallenge && (
+              <Dropdown>
+                <Dropdown.Toggle
+                  className='mobile-lang-selector-toggle'
+                  id='mobile-language-selector'
+                >
+                  {dailyCodingChallengeLanguage === 'javascript'
+                    ? 'JS'
+                    : 'PY'}{' '}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <MenuItem onClick={() => handleLanguageChange('javascript')}>
+                    JavaScript
+                  </MenuItem>
+                  <MenuItem onClick={() => handleLanguageChange('python')}>
+                    Python
+                  </MenuItem>
+                </Dropdown.Menu>
+              </Dropdown>
+            )}
             {!hasEditableBoundaries && (
               <TabsTrigger value={tabs.instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
@@ -240,7 +295,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </TabsTrigger>
             {hasPreview && (
               <TabsTrigger value={tabs.preview}>
-                {i18next.t('learn.editor-tabs.preview')}
+                {i18next.t(previewTriggerText)}
               </TabsTrigger>
             )}
           </TabsList>

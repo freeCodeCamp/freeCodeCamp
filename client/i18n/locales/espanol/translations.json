@@ -66,6 +66,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Restablecer",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "Restablecer este paso",
     "help": "Ayuda",
     "get-help": "Obtener ayuda",
@@ -124,6 +125,7 @@
     "sign-in-with-google": "Iniciar sesión con Google",
     "go-to-dcc-today": "Ir al desafío de hoy",
     "go-to-dcc-archive": "Ir al archivo de desafíos",
+    "challenge-source": "View Challenge Source",
     "outline": "Outline"
   },
   "daily-coding-challenges": {
@@ -338,6 +340,7 @@
       "keyboard-shortcuts": "Habilitar atajos de teclado"
     },
     "headings": {
+      "personal": "Personal",
       "account": "Cuenta",
       "certs": "Certificaciones",
       "legacy-certs": "Certificaciones de legado",
@@ -380,6 +383,10 @@
       "new": "Nuevo correo electrónico",
       "confirm": "Confirmar nuevo correo electrónico",
       "weekly": "Envíame el correo electrónico semanal de Quincy"
+    },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
     },
     "honesty": {
       "p1": "Antes de que puedas solicitar una certificación verificada, debes aceptar nuestro Compromiso de Honestidad Académica, que dice:",
@@ -464,13 +471,16 @@
     },
     "completeness": {
       "heading": "Perfil {{percentage}}% completo",
+      "title": "Profile Completion",
+      "progress": "{{percentage}}% complete",
       "name": "Agrega tu nombre",
       "location": "Agrega tu ubicación",
       "picture": "Sube una foto de perfil",
       "about": "Escribe una sección 'Acerca de'",
       "social": "Agrega un enlace social",
       "portfolio": "Agrega un proyecto al portafolio",
-      "experience": "Agrega tu experiencia"
+      "experience": "Agrega tu experiencia",
+      "privacy": "Make your profile public"
     }
   },
   "footer": {
@@ -533,6 +543,18 @@
     "syntax-error": "Tu código provocó un error antes de que se pudieran ejecutar las pruebas. Por favor, corrígelo y vuelve a intentarlo.",
     "indentation-error": "Tu código tiene un error de identación. Puede que necesites añadir <code>pass</code> en una nueva línea para formar un bloque de código válido.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
+    "hints-used-today": "hints used today",
+    "socrates-not-enabled": "Socrates is not enabled for your account.",
+    "socrates-check-code-first": "Check your code before asking Socrates for a hint.",
+    "socrates-code-passes": "Congratulations, your code passes! Press submit and continue to the next challenge.",
+    "socrates-write-code-first": "Please write some code before asking Socrates for a hint.",
+    "socrates-generic-error": "Something went wrong while asking Socrates. Please try again.",
+    "socrates-no-access": "You do not have access to Socrates.",
+    "socrates-daily-limit": "You have reached the daily hint limit. Please try again tomorrow.",
+    "socrates-rate-limit": "You have reached the hint limit. Please wait a moment before trying again.",
+    "socrates-unable-to-generate": "Socrates was unable to generate a hint. Please try again.",
+    "socrates-unavailable": "Socrates is temporarily unavailable. Please try again later.",
+    "socrates-invalid-request": "Something went wrong with your request. Please try again.",
     "download-solution": "Descargar mi solución",
     "download-results": "Descargar mis resultados",
     "percent-complete": "{{percent}}% completo",
@@ -549,6 +571,19 @@
     "reset": "¿Restablecer esta lección?",
     "reset-warn": "¿Estás seguro de que deseas reiniciar esta lección ({{title}})? Los editores de código y las pruebas se restablecerán.",
     "reset-warn-2": "Esto no se puede deshacer.",
+    "reset-progress-heading": "Reset Progress for {{label}}",
+    "reset-progress-description": "This will permanently delete and reset the '{{label}}' section. Your progress through each step/challenge, including any saved code will be lost, forever.",
+    "reset-progress-warning": "We won't be able to recover any of it for you later, even if you change your mind.",
+    "reset-progress-nevermind": "Nevermind, I don't want to reset my progress",
+    "reset-progress-confirm": "Reset my progress. I understand this cannot be undone",
+    "reset-progress-verify": "I agree to reset my progress",
+    "reset-progress-aria-chapter": "Reset progress for {{chapterLabel}}",
+    "reset-progress-aria-module": "Reset progress for {{moduleLabel}}",
+    "reset-progress-aria-block": "Reset progress for {{blockLabel}}",
+    "reset-progress-in-flight": "Resetting your progress, please wait...",
+    "reset-progress-success": "Your progress for '{{label}}' has been reset.",
+    "reset-progress-failure": "We could not reset your progress. Please try again, or contact support if the problem persists.",
+    "reset-progress-dismiss": "Dismiss",
     "revert-warn": "¿Estás seguro de que quieres revertir esta lección? Se desharán tus últimos cambios y se revertirá el código a la versión guardada más recientemente.",
     "scrimba-tip": "Sugerencia: Si el mini-navegador cubre el código, haz clic y arrastra para moverlo. Además, siéntete libre de detener y editar el código en el video en cualquier momento.",
     "chal-preview": "Vista previa del desafío",
@@ -567,9 +602,9 @@
       "instructions": "Instrucciones",
       "notes": "Notas",
       "preview": "Vista",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Editor Interactivo"
+      "interactive-editor": "Editor Interactivo",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Presionando la pestaña insertará el carácter de la pestaña",
@@ -582,8 +617,8 @@
     "github-required": "<0>Crea una cuenta en GitHub</0> si no tienes una. Lo necesitará al crear la máquina virtual de servidores Linux, que puede tardar unos minutos.",
     "codespaces": {
       "intro": "Este curso se ejecuta en una máquina virtual Linux usando GitHub Codespaces. Sigue estas instrucciones para iniciar el curso:",
-      "step-1": "<0>Crea una cuenta de GitHub</0> si no tienes una",
-      "step-2": "Haz clic en el botón de inicio debajo de esta lista",
+      "step-1": "<0>Create a GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
       "step-3": "En esa página, haz clic en el botón de crear",
       "step-4": "Una vez que la máquina virtual Linux haya terminado de cargar, inicia la extensión CodeRoad mediante:",
       "step-5": "Haciendo clic en el menú “hamburguesa” cerca de la parte superior izquierda de la ventana de VSCode,",
@@ -591,19 +626,20 @@
       "step-7": "Haz clic en la opción <0>Paleta de comandos</0>,",
       "step-8": "y ejecuta el comando <0>CodeRoad: Start</0>",
       "step-9": "Sigue las instrucciones en CodeRoad para completar el curso",
-      "continue-project": "Haciendo clic abajo empezarás un nuevo proyecto. Si ya has comenzado el curso {{title}}, ve a la <0>página del repositorio</0> para reabrir un espacio de trabajo anterior.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
       "learn-more": "Aprende más sobre los <0>espacios de trabajo de Codespace</0>.",
       "logout-warning": "Si cierras sesión en freeCodeCamp antes de terminar el curso {{course}}, tu progreso no se guardará en tu cuenta de freeCodeCamp.",
       "sub-step-3": "Navega a tu <0>página de secretos de Codespaces</0>",
       "sub-step-4": "Crea un nuevo secreto llamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "Pega tu token en el campo <0>Valor</0>",
       "sub-step-6": "En el campo <0>Acceso al repositorio</0>, selecciona el repositorio <1>freeCodeCamp/rdb-alpha</1>",
+      "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Configuración de Codespaces"
     },
     "ona": {
       "intro": "Este curso se ejecuta en una máquina virtual de Linux con Ona. Sigue estas instrucciones para comenzar:",
       "step-1": "<0>Crea una cuenta Ona</0> si no tienes una",
-      "step-2": "Haz clic en el botón de inicio debajo de esta lista",
+      "step-2": "Click the start button below",
       "step-3": "En el modal que aparece de repente, haz clic en el botón de crear",
       "step-4": "Una vez el sistema linux virtual ha terminado de cargar, inicia la extensión CodeRoad mediante:",
       "step-5": "Haciendo clic en el menú “hamburguesa” cerca de la parte superior izquierda de la ventana de VSCode",
@@ -611,7 +647,7 @@
       "step-7": "Haz clic en la opción <0> Paleta de comandos</0>,",
       "step-8": "y ejecuta el comando <0>CodeRoad: Start</0>",
       "step-9": "Sigue las instrucciones en CodeRoad para completar el curso",
-      "continue-project": "Haciendo clic abajo empezarás un nuevo proyecto. Si ya has comenzado el curso {{course}}, accede a <0>tu panel de Ona</0> para continuar.",
+      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
       "learn-more": "Aprende más sobre <0>áreas de trabajo Ona.</0>",
       "logout-warning": "Si cierras sesión en freeCodeCamp antes de terminar el curso {{course}}, tu progreso no se guardará en tu cuenta.",
       "sub-step-3": "Navega a tu <0>página secreta Ona</0>",
@@ -736,6 +772,11 @@
     "archive": {
       "title": "Cursos archivados",
       "content-not-updated": "El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos probar <0>nuestro currículo actual</0>."
+    },
+    "search": {
+      "search-challenges-in-curriculum": "Search lessons in the curriculum",
+      "search-challenges-results": "Showing {{resultCount}} matching lessons for \"{{term}}\".",
+      "search-challenges-no-results": "No results found for \"{{term}}\"."
     }
   },
   "donate": {
@@ -783,7 +824,7 @@
     "unfinished-certification": "Esta certificación está actualmente en desarrollo. Aunque no hay una certificación disponible en este momento para esta sección, estará disponible pronto. Mientras tanto, a continuación. siéntete bienvenido a explorar los cursos que hemos creado.",
     "consider-donating": "Por favor, considere donar para apoyar la finalización de su desarrollo.",
     "unfinished-certification-2": "Completar esta certificación le llevará una cantidad considerable de tiempo y esfuerzo. Si comienza ahora, es posible que esté listo para tomar el examen final cuando la lancemos en los próximos meses.",
-    "consider-donating-2": "Si desea ayudarnos a acelerar el desarrollo de este plan de estudios, <0>considere convertirse en un partidario de nuestra organización benéfica.</0>",
+    "consider-donating-2": "If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.",
     "help-us-develop": "Ayúdenos a desarollar certificados de programación profesional gratis para todos.",
     "nicely-done": "Bien hecho. Acabas de completar {{block}}.",
     "credit-card": "Tarjeta de crédito",
@@ -899,8 +940,8 @@
   "search": {
     "label": "Buscar",
     "placeholder": {
-      "default": "Busca en nuestros artículos de noticias, tutoriales y libros",
-      "numbered": "Busca en más de {{ roundedTotalRecords }} artículos de noticias, tutoriales y libros"
+      "default": "Search our books and courses",
+      "numbered": "Search {{ roundedTotalRecords }}+ of our books and courses"
     },
     "see-results": "Ver todos los resultados de {{searchQuery}}",
     "try": "¿Buscando algo? Prueba la barra de búsqueda en esta página.",
@@ -1010,6 +1051,10 @@
     "rsa-checkbox": "He probado el método Leer-Buscar-Preguntar",
     "similar-questions-checkbox": "He buscado por preguntas similares que ya han sido contestadas en el foro",
     "edit-my-profile": "Editar mi perfil",
+    "add-portfolio": "Add portfolio project",
+    "edit-portfolio": "Edit portfolio project",
+    "add-experience": "Add experience",
+    "edit-experience": "Edit experience",
     "editor-a11y-off-macos": "Contenido del editor {{editorName}} . Presione Opción+F1 para opciones de accesibilidad.",
     "editor-a11y-off-non-macos": "Contenido del editor {{editorName}} . Presione Alt+F1 para opciones de accesibilidad.",
     "editor-a11y-on-macos": "Contenido del editor {{editorName}} . El modo de accesibilidad está en 'encendido'. Presiona Comando+E para desactivar o presiona Opción+F1 para más opciones.",
@@ -1017,6 +1062,10 @@
     "terminal-output": "Salida del terminal",
     "not-available": "No disponible",
     "interactive-editor-desc": "Convierte ejemplos de código estático en editores interactivos. Esto te permite editar y ejecutar el código directamente en la página.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "Esta tarea usa entradas de Pinyin a Hanzi. Escribe pinyin con números de tono (1 a 5). Cuando ingresas una sílaba correcta, se convertirá en una letra china. Si presionas retroceso después de una letra china, se cambiará de nuevo a pinyin y eliminará lo último que escribiste: si es un número de tono, se eliminará el tono; si es una letra, se eliminará la letra.",
     "pinyin-tone-input-desc": "Esta tarea usa entradas de Pinyin con tono. Escribe pinyin con números de tono (1 a 5). Cuando ingresas un número de tono, se convertirán en una marca de tono. Si presionas retroceso, se eliminará lo último que escribiste: si es un número de tono, se eliminará el tono; si es una letra, se eliminará la letra."
   },
@@ -1028,6 +1077,7 @@
     "went-wrong": "Algo salió mal, verifica e intenta nuevamente",
     "account-deleted": "Tu cuenta ha sido eliminada con éxito",
     "progress-reset": "Tu progreso se ha restablecido",
+    "module-reset": "Your module progress has been reset",
     "not-authorized": "No estás autorizado para continuar en esta ruta",
     "could-not-find": "No pudimos encontrar lo que buscabas. Por favor revisa e intenta de nuevo",
     "wrong-updating": "Se produjo un error al actualizar tu cuenta. Por favor revisa e intenta de nuevo",
@@ -1037,6 +1087,7 @@
     "updated-themes": "Hemos actualizado su tema",
     "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "Hemos actualizado tu suscripción al correo electrónico de Quincy",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "Hemos actualizado tu portafolio",
     "experience-updated": "Hemos actualizado tu experiencia",
     "email-invalid": "El formato del correo electrónico no es válido",
@@ -1355,6 +1406,7 @@
       "learn-recursion-with-javascript": "Learn Recursion with JavaScript",
       "introduction-to-functional-programming-with-javascript": "Introduction to Functional Programming with JavaScript",
       "introduction-to-asynchronous-javascript": "Introduction to Asynchronous JavaScript",
+      "learn-data-visualization-with-d3": "Learn Data Visualization with D3",
       "introduction-to-python-basics": "Introduction to Python Basics",
       "learn-python-loops-and-sequences": "Learn Python Loops and Sequences",
       "learn-python-dictionaries-and-sets": "Learn Python Dictionaries and Sets",
@@ -1391,7 +1443,8 @@
     "too-long-three": "Por favor, copia/pega todo el código del editor que se muestra en el desafío desde el que acabas de enlazar.",
     "add-code-one": "Reemplaza estas dos oraciones con tu código copiado.",
     "add-code-two": "Por favor, deja la línea ``` arriba y la línea ``` abajo,",
-    "add-code-three": "porque permiten que tu código formatee correctamente en el post."
+    "add-code-three": "porque permiten que tu código formatee correctamente en el post.",
+    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token de usuario",

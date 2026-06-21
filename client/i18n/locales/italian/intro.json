@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front-End Development Libraries V8",
+    "title": "Librerie di Sviluppo Front-End V8",
     "intro": [
-      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular front-end libraries in the industry.",
-      "In the Front-End Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
+      "Ora che hai acquisito familiarità con HTML, CSS e JavaScript, fai un salto di qualità e apprendi le librerie front-end più popolari del settore.",
+      "Nella Certificazione in Librerie di Sviluppo Front-End, impara a stilizzare i tuoi siti rapidamente con Bootstrap. Scopri inoltre come aggiungere logica ai tuoi fogli di stile CSS ed estendine le potenzialità con Sass.",
       "Più tardi, costruirai un carrello e altre applicazioni per imparare a creare potenti applicazioni a pagina singola (Single Page Application, SPA) con React e Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap is a front-end framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
+          "Bootstrap è un framework front-end utilizzato per progettare pagine web e applicazioni responsive. Adotta un approccio mobile-first nello sviluppo web e include stili e classi CSS predefiniti, oltre a diverse funzionalità JavaScript.",
           "In questo corso, imparerai come costruire siti web responsivi con Bootstrap, e a utilizzare le sue classi per stilizzare pulsanti, immagini, moduli, navigazione e altri elementi comuni."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Front-End Development Libraries Projects",
+        "title": "Progetti della Certificazione Front-End Development Libraries",
         "intro": [
-          "It's time to put your front-end development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
-          "Complete all 5 projects, and you'll earn the Front-End Development Libraries certification."
+          "È il momento di mettere alla prova le tue competenze con le librerie di sviluppo front-end. Utilizza Bootstrap, jQuery, Sass, React e Redux per realizzare 5 progetti che testeranno tutto ciò che hai appreso finora.",
+          "Completa tutti i 5 progetti e ottieni la certificazione Front-End Development Libraries."
         ]
       }
     }
@@ -583,6 +583,48 @@
         "intro": [
           "Ora che hai imparato a lavorare con le tecnologie D3, API e AJAX, mettete alla prova le tue abilità con questi 5 progetti di visualizzazione dei dati.",
           "In questi progetti, è necessario recuperare i dati e analizzare un dataset, quindi utilizzare D3 per creare diverse visualizzazioni. Terminali tutti per ottenere la certificazione Visualizzazione dei Dati."
+        ]
+      }
+    }
+  },
+  "learn-data-visualization-with-d3": {
+    "title": "Learn Data Visualization with D3",
+    "summary": [
+      "Learn how to use D3 to turn data into interactive bar charts and scatterplots."
+    ],
+    "intro": [
+      "In this course, you'll learn core data visualization concepts and practice using the D3 library to build charts from datasets."
+    ],
+    "note": "",
+    "chapters": {
+      "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
+    },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
+    "module-intros": {
+      "introduction-to-d3": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn the basics of working with D3."
+        ]
+      }
+    },
+    "blocks": {
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab, you will use D3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab, you will create a D3 scatterplot graph using a provided dataset."
         ]
       }
     }
@@ -696,11 +738,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back-End Development and APIs V8",
+    "title": "Sviluppo Back-End e API V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the front-end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back-end, or server, to build entire web applications.",
+      "Fino a questo momento, l'utilizzo di JavaScript è stato limitato al front-end per aggiungere interattività alle pagine, risolvere sfide algoritmiche o realizzare SPA. È importante però considerare che JavaScript può essere impiegato anche nel back-end, ovvero lato server, per sviluppare intere applicazioni web.",
       "Oggi, uno dei modi più popolari per costruire applicazioni è attraverso i microservizi, che sono piccole applicazioni modulari che lavorano insieme per formare qualcosa di più grande.",
-      "In the Back-End Development and APIs Certification, you'll learn how to write back-end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "Nella Certificazione in Sviluppo Back-End e API, impara a scrivere applicazioni back-end con Node.js e npm. Sviluppa inoltre applicazioni web con il framework Express e realizza un microservizio 'People Finder' utilizzando MongoDB e la libreria Mongoose."
     ],
     "note": "",
     "blocks": {
@@ -714,7 +756,7 @@
       "basic-node-and-express": {
         "title": "Node e Express Base",
         "intro": [
-          "Node.js is a JavaScript runtime that allows developers to write back-end (server-side) programs in JavaScript. Node.js comes with a handful of built-in modules — small, independent programs — that help with this. Some of the core modules include HTTP, which acts like a server, and File System, a module to read and modify files.",
+          "Node.js è un runtime JavaScript che permette di scrivere programmi back-end (lato server) in JavaScript. Node.js include una serie di moduli integrati (piccoli programmi indipendenti) progettati per questo scopo. Tra i moduli principali figurano HTTP, che opera come un server, e File System, un modulo dedicato alla lettura e alla modifica dei file.",
           "Nell'ultimo gruppo di corsi hai imparato ad installare e gestire pacchetti da npm, che sono collezioni di moduli più piccoli. Questi pacchetti possono aiutarti a costruire applicazioni più grandi e complesse.",
           "Express è un framework per applicazioni web leggero ed è uno dei pacchetti più popolari su npm. Express rende molto più facile creare un server e gestire l'instradamento (routing) per l'applicazione, che gestisce cose come dirigere le persone alla pagina corretta quando visitano un determinato endpoint come <pre>/blog</pre>.",
           "In questo corso, imparerai le basi di Node e Express, incluso come creare un server, servire file diversi, e gestire richieste diverse dal browser."
@@ -732,7 +774,7 @@
         "title": "Back-End Development and APIs Projects",
         "intro": [
           "Hai già lavorato con le API prima, ma ora che conosci npm, Node, Express, MongoDB e Mongoose, è ora di costruirle. Costruisci su tutto quello che hai imparato fino a questo punto per creare 5 diversi microservizi, che sono applicazioni più piccole, con un ambito di applicazione ristretto.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back-End Development and APIs Certification, too."
+          "Al termine di questo percorso, avrai a disposizione 5 fantastici microservizi API da mostrare ad amici, familiari e potenziali datori di lavoro. Inoltre, otterrai la tua nuova Certificazione in Sviluppo Back-End e API."
         ]
       }
     }
@@ -759,13 +801,13 @@
         "intro": [
           "Ora è il momento di approfondire Node.js e Express.js costruendo un'applicazione di chat con un sistema di accesso.",
           "Per implementare il sistema di accesso in modo sicuro, è necessario conoscere l'autenticazione. Questo è l'atto di verificare l'identità di una persona o di un processo.",
-          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the front-end, and web sockets for real-time communication between the clients and server."
+          "In questo corso, impara a utilizzare Passport per gestire l'autenticazione, Pug per creare template riutilizzabili con cui sviluppare rapidamente il front-end e i web socket per la comunicazione in tempo reale tra client e server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Progetti di Garanzia di Qualità",
         "intro": [
-          "Now that you're well versed in both the front-end and back-end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Ora che hai acquisito una solida padronanza sia del front-end che del back-end, è il momento di applicare tutte le competenze e i concetti appresi finora. Sviluppa 5 diverse applicazioni web e scrivi dei test per ognuna di esse, così da garantirne il corretto funzionamento e la gestione dei diversi casi limite.",
           "Dopo aver completato questi progetti di Garanzia di Qualità, avrai altri 5 progetti al tuo attivo e una nuova certificazione da mostrare nel tuo portfolio."
         ]
       }
@@ -796,7 +838,7 @@
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
-          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the `.append()` list method.",
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
           "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
         ]
@@ -944,48 +986,48 @@
   "learn-python-for-beginners": {
     "title": "Learn Python for Beginners",
     "summary": [
-      "Learn the fundamentals of Python programming from the ground up by practicing foundational concepts and building small projects."
+      "Apprendi i fondamenti della programmazione Python partendo da zero, esercitandoti sui concetti base e realizzando piccoli progetti."
     ],
     "intro": [
-      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
-      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
+      "Python è oggi uno dei linguaggi di programmazione più diffusi al mondo. Si distingue per la facilità di apprendimento, la leggibilità del codice e la notevole versatilità.",
+      "In questo corso completo, apprenderai i fondamenti della programmazione Python partendo da zero. Inizierai con i concetti base come variabili e tipi di dati, proseguirai attraverso il flusso di controllo e le funzioni, per poi realizzare progetti pratici utili a consolidare le competenze acquisite."
     ],
     "note": "",
     "blocks": {
       "python-setup-first-steps": {
         "title": "Python Setup & First Steps",
         "intro": [
-          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+          "In questi video, il noto istruttore di programmazione Mike Dane ti introdurrà a Python e ti mostrerà come configurare il tuo ambiente di sviluppo locale."
         ]
       },
       "core-primitives-in-python": {
         "title": "Core Primitives in Python",
         "intro": [
-          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
+          "In questi video, scopri le variabili, i tipi di dati, le stringhe, i numeri e come ricevere input dall'utente."
         ]
       },
       "small-python-projects": {
         "title": "Small Python Projects",
         "intro": [
-          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
+          "In questi video, metti in pratica quanto appreso finora realizzando una semplice app calcolatrice e un gioco 'Mad Libs'."
         ]
       },
       "lists-and-tuples": {
         "title": "Lists and Tuples",
         "intro": [
-          "In these videos, you will learn about lists, tuples and common operations."
+          "In questi video, esplora le liste, le tuple e le operazioni comuni su queste strutture dati."
         ]
       },
       "control-flow-and-functions-in-python": {
         "title": "Control Flow and Functions",
         "intro": [
-          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
+          "In questi video, impara a controllare il flusso dei tuoi programmi con le istruzioni if. Scopri inoltre come scrivere codice riutilizzabile grazie alle funzioni."
         ]
       },
       "dictionaries-and-loops": {
-        "title": "Dictionaries and Loops",
+        "title": "Dizionari e Cicli",
         "intro": [
-          "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
+          "In questi video, impara a lavorare con i dizionari e con i diversi tipi di cicli, inclusi i cicli while e for."
         ]
       },
       "error-handling-files-and-modules-in-python": {
@@ -1083,7 +1125,7 @@
     ],
     "intro": [
       "RAG stands for Retrieval-Augmented Generation. MCP stands for Model Context Protocol. These are powerful frameworks for building AI agents that can retrieve information from a knowledge base, generate responses based on that information, and plan their actions accordingly.",
-      "In this course, you'll learn the fundamentals of RAG and MCP and how to implement them in your own projects. You'll explore the components of RAG and MCP, including retrieval, generation, memory, context, and planning. By the end of this course, you'll have a solid understanding of how RAG and MCP work and how to use them to build intelligent agents."
+      "In questo corso, apprendi i fondamenti di RAG e MCP e scopri come implementarli nei tuoi progetti. Esplora i componenti chiave di RAG e MCP, tra cui il recupero delle informazioni (retrieval), la generazione, la memoria, il contesto e la pianificazione. Al termine del percorso, avrai acquisito una solida comprensione del funzionamento di RAG e MCP e di come utilizzarli per costruire agenti intelligenti."
     ],
     "note": "",
     "blocks": {
@@ -3831,6 +3873,7 @@
       "In the second half, you'll practice vocabulary specific to software development. You'll learn how to describe code, discuss tech trends, and participate in stand-up meetings.",
       "This entire A2-level curriculum includes 105 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-greetings-in-your-first-day-at-the-office": {
         "title": "Learn Greetings in your First Day at the Office",
@@ -4118,6 +4161,7 @@
       "You'll also focus on applying these skills in professional and technical settings. You'll practice vocabulary and phrases essential for developers, such as describing code, participating in stand-up meetings, and discussing tech trends. Advanced topics include conditionals, comparative structures, and conversation management, so you can prepare for real-world interactions in the tech industry.",
       "This entire B1-level curriculum includes 73 different dialogues. Each is designed to build your vocabulary and boost your confidence when speaking in a professional tech setting."
     ],
+    "note": "This certification is currently in beta.",
     "blocks": {
       "learn-how-to-describe-places-and-events": {
         "title": "Learn How to Describe Places and Events",
@@ -4860,16 +4904,35 @@
           "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
           "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
         ]
       },
+      "lab-traffic-light-sequencer": {
+        "title": "Build a Traffic Light Sequencer",
+        "intro": [
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -4909,10 +4972,29 @@
           "In this lab, you will implement loops to repeat a string a specified number of times."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
           "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -5061,6 +5143,13 @@
           "In this lab you will create a function that skips elements in an array based on a specified step value."
         ]
       },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -5114,12 +5203,6 @@
         "title": "Implement a Matching Object Filter",
         "intro": [
           "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
-        ]
-      },
-      "lab-prime-number-sum-calculator": {
-        "title": "Build a Prime Number Sum Calculator",
-        "intro": [
-          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -5758,6 +5841,12 @@
           "In this lab, you'll practice dynamic programming by implementing a Fibonacci sequence calculator in JavaScript."
         ]
       },
+      "lab-prime-number-sum-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+        ]
+      },
       "review-dynamic-programming-js": {
         "title": "Dynamic Programming Review",
         "intro": [
@@ -5867,6 +5956,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Front-End Development Libraries Certification exam."
     ],
+    "note": "",
     "chapters": {
       "front-end-development-libraries": "Front-End Development Libraries",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
@@ -5879,20 +5969,15 @@
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
-      "data-visualization": "Data Visualization and D3",
+      "lab-photography-exhibit": "Design a Photography Exhibit",
       "typescript-fundamentals": "TypeScript Fundamentals",
+      "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
+      "lab-digital-pet-game": "Build a Digital Pet Game",
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
     "module-intros": {
-      "data-visualization": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
-        ]
-      },
       "typescript-fundamentals": {
-        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
@@ -6159,26 +6244,22 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
-      "lecture-introduction-to-data-visualization": {
-        "title": "Introduction to Data Visualization",
-        "intro": [
-          "In these lessons, you will learn about basic data visualization concepts."
-        ]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["In this lab you will use d3 to build a bar chart."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": [
-          "In this lab you will create a d3 scatterplot graph using a provided dataset."
-        ]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
           "In these lessons, you will learn what TypeScript is and how to use it."
+        ]
+      },
+      "workshop-type-safe-user-profile": {
+        "title": "Build a Type Safe User Profile",
+        "intro": [
+          "In this workshop, you will practice working with type annotations, array types, object types and more by building out a user profile."
+        ]
+      },
+      "workshop-type-safe-math-toolkit": {
+        "title": "Build a Type Safe Math Toolkit",
+        "intro": [
+          "In this workshop, you will practice typing functions by building a math toolkit project."
         ]
       },
       "lecture-understanding-type-composition": {
@@ -6187,10 +6268,34 @@
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
         ]
       },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": [
+          "In this workshop, you will practice basic TypeScript features like types and interfaces by building a shape manager program."
+        ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker",
+        "intro": [
+          "In this workshop, you will learn about TypeScript abstract classes and generics by building a bug species selector that displays different bug emojis."
+        ]
+      },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
@@ -6199,8 +6304,32 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
+        ]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
+      },
+      "workshop-build-a-football-player-card-builder": {
+        "title": "Build a Football Player Card Builder",
+        "intro": [
+          "In this workshop, you'll learn how to work with React in TypeScript by building a football player card builder."
+        ]
+      },
       "review-typescript": {
-        "title": "Typescript Review",
+        "title": "TypeScript Review",
         "intro": [
           "Before you take the TypeScript quiz, you should review everything you've learned so far.",
           "Open up this page to review all of the concepts taught including data types in TypeScript, generics, type narrowing and more."
@@ -6208,7 +6337,7 @@
       },
       "quiz-typescript": {
         "title": "TypeScript Quiz",
-        "intro": ["Test what you've learned on Typescript with this quiz."]
+        "intro": ["Test what you've learned on TypeScript with this quiz."]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -6238,6 +6367,7 @@
     },
     "modules": {
       "python-basics": "Python Basics",
+      "python-installation": "Install Python",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
       "lab-user-configuration-manager": "Build a User Configuration Manager",
@@ -6259,7 +6389,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn what Python is and how to set up your development environment."
+          "In these lessons, you will learn what Python is and common uses in the industry."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -6349,6 +6479,24 @@
         "title": "Python Basics Quiz",
         "intro": [
           "Test what you've learned about Python basics with this quiz."
+        ]
+      },
+      "lecture-python-installation": {
+        "title": "Installing Python and Running Code Locally",
+        "intro": [
+          "In these lessons, you will learn how to install Python on your local device and run code locally."
+        ]
+      },
+      "review-python-installation": {
+        "title": "Python Installation Review",
+        "intro": [
+          "Before you are quizzed on working with Python locally, you should review the concepts covered in the lessons."
+        ]
+      },
+      "quiz-python-installation": {
+        "title": "Python Installation Quiz",
+        "intro": [
+          "Test what you've learned about installing Python locally with this quiz."
         ]
       },
       "lecture-working-with-loops-and-sequences": {
@@ -6955,6 +7103,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Back-End Development and APIs Certification exam."
     ],
+    "note": "",
     "chapters": {
       "back-end-development-and-apis": "Back-End Development and APIs",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
@@ -6966,13 +7115,11 @@
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
       "introduction-to-express": "Introduction to Express",
-      "express-middleware": "Express Middleware",
       "error-handling-in-express": "Error Handling in Express",
+      "express-middleware": "Express Middleware",
       "websockets": "WebSockets",
-      "node-and-sql": "Node and SQL",
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
-      "tooling-and-deployment": "Tooling and Deployment",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "module-intros": {
@@ -7012,28 +7159,22 @@
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
         ]
       },
-      "express-middleware": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
-        ]
-      },
       "error-handling-in-express": {
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
+      "express-middleware": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+        ]
+      },
       "websockets": {
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
-        ]
-      },
-      "node-and-sql": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
         ]
       },
       "security-and-privacy": {
@@ -7046,12 +7187,6 @@
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
-        ]
-      },
-      "tooling-and-deployment": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
@@ -7068,6 +7203,12 @@
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
       },
+      "workshop-nodejs-repl": {
+        "title": "Learn Node.js REPL",
+        "intro": [
+          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
+        ]
+      },
       "review-node-js-intro": {
         "title": "NodeJS Intro Review",
         "intro": [
@@ -7082,6 +7223,12 @@
         "title": "Working with Node Core Modules",
         "intro": [
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "workshop-nodejs-common-modules": {
+        "title": "Learn Node.js Common Modules",
+        "intro": [
+          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
       },
       "review-node-js-core-modules": {
@@ -7108,6 +7255,18 @@
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
+      "workshop-how-to-build-an-npm-module": {
+        "title": "Learn How to Build an NPM Module",
+        "intro": [
+          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
+        ]
+      },
+      "lab-prime-number-checker-module": {
+        "title": "Build a Prime Number Checker Module",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
+        ]
+      },
       "review-npm": {
         "title": "NPM Review",
         "intro": ["Review npm concepts to prepare for the upcoming quiz."]
@@ -7128,16 +7287,186 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "lecture-understanding-the-web-standards-model": {
+        "title": "Understanding the Web Standards Model",
+        "intro": [
+          "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
+        ]
+      },
+      "workshop-nodejs-by-building-a-web-server": {
+        "title": "Learn Node.js by Building a Web Server",
+        "intro": [
+          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
+        ]
+      },
+      "review-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Review",
+        "intro": [
+          "Review HTTP, DNS, TCP/IP, the request-response model, and web standards before you take the quiz."
+        ]
+      },
+      "quiz-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Quiz",
+        "intro": [
+          "Test your knowledge of HTTP, DNS, TCP/IP, the request-response model, and web standards.",
+          ""
+        ]
+      },
       "lecture-understanding-rest-api-and-web-services": {
         "title": "Understanding the REST API and Web Services",
         "intro": [
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
         ]
       },
+      "workshop-express-by-building-a-weather-service-api": {
+        "title": "Learn Express by Building a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
       "lecture-working-with-express": {
         "title": "Working with Express",
         "intro": [
           "In these lessons, you will learn what Express.js is, why developers use it for building web servers and APIs, and how to set up a basic Express application with routes and request handling."
+        ]
+      },
+      "lecture-understanding-routing-in-express-js": {
+        "title": "Understanding Routing in ExpressJS",
+        "intro": [
+          "Understanding Routing in ExpressJS",
+          "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
+        ]
+      },
+      "workshop-express-by-building-a-random-joke-app": {
+        "title": "Learn Express by Building a Random Joke App",
+        "intro": [
+          "You will learn basic Express routing and response methods by building a random joke app."
+        ]
+      },
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
+        "intro": [
+          "Practice building an Express server and JSON API by creating a personal profile application."
+        ]
+      },
+      "review-introduction-to-express": {
+        "title": "Introduction to Express Review",
+        "intro": [
+          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+        ]
+      },
+      "quiz-introduction-to-express": {
+        "title": "Introduction to Express Quiz",
+        "intro": [
+          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "workshop-error-handling-in-express-by-building-a-bank-api": {
+        "title": "Learn Error Handling in Express by Building a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
+      "lecture-express-middleware": {
+        "title": "Express Middleware",
+        "intro": [
+          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
+      "workshop-express-middleware-by-building-a-submission-form": {
+        "title": "Learn Express Middleware by Building a Submission Form",
+        "intro": [
+          "You will learn application-level and router-level middleware by building a structured submission form."
+        ]
+      },
+      "lab-data-sanitizer": {
+        "title": "Build a Data Sanitizer",
+        "intro": [
+          "Practice creating custom Express middleware by building a data sanitizer and validator."
+        ]
+      },
+      "review-express-middleware": {
+        "title": "Express Middleware Review",
+        "intro": [
+          "Review middleware concepts in Express, including application-level, router-level, error-handling, and built-in and third-party middleware before you take the quiz."
+        ]
+      },
+      "quiz-express-middleware": {
+        "title": "Express Middleware Quiz",
+        "intro": [
+          "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
+        ]
+      },
+      "lecture-understanding-websockets": {
+        "title": "Understanding WebSockets",
+        "intro": [
+          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
+        ]
+      },
+      "workshop-websockets-by-building-a-resource-monitor": {
+        "title": "Learn WebSockets by Building a Resource Monitor",
+        "intro": [
+          "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
+        ]
+      },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
+      },
+      "quiz-websockets": {
+        "title": "WebSockets Quiz",
+        "intro": [
+          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
+        ]
+      },
+      "lecture-introduction-to-authentication-and-authorization": {
+        "title": "Introduction to Authentication and Authorization",
+        "intro": [
+          "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
+        ]
+      },
+      "review-authentication-and-authorization": {
+        "title": "Authentication and Authorization Review",
+        "intro": [
+          "Review authentication and authorization concepts before you take the quiz."
+        ]
+      },
+      "quiz-authentication-and-authorization": {
+        "title": "Authentication and Authorization Quiz",
+        "intro": [
+          "Test your knowledge of authentication and authorization concepts covered in this module."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7154,6 +7483,7 @@
       "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
+    "note": "",
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
@@ -7248,7 +7578,7 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
       "- A Warm-up section for quick review.",
@@ -7512,6 +7842,14 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -8565,7 +8903,7 @@
   },
   "a2-professional-spanish": {
     "title": "A2 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Placeholder intro"],
     "blocks": {
       "talk-about-who-you-are-by-using-key-verbs": {
@@ -8584,7 +8922,7 @@
   },
   "a2-professional-chinese": {
     "title": "A2 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": ["Placeholder intro"],
     "blocks": {
       "talk-about-what-you-do-by-using-key-verbs": {
@@ -8603,7 +8941,7 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "This certification is currently in active development. New content will be published as our instructional design team develops it. Once all content is available, we will release the certification exam.",
     "intro": [
       "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
       "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
@@ -8621,7 +8959,7 @@
       "zh-a1-module-initials-and-finals": "Initials and Finals",
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
       "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
-      "zh-a1-module-numbers-below-100": "Numbers below 100",
+      "zh-a1-module-numbers-below-100": "Numbers Below 100",
       "zh-a1-module-communicating-personal-information": "Communicating Personal Information",
       "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
@@ -8637,6 +8975,12 @@
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
+      },
+      "zh-a1-module-communicating-personal-information": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding conversations that communicate personal information, such as age and phone numbers."
         ]
       },
       "zh-a1-module-talking-about-personal-skills": {
@@ -8834,11 +9178,11 @@
         "intro": ["", ""]
       },
       "zh-a1-review-numbers-below-100": {
-        "title": "Numbers below 100 Review",
+        "title": "Numbers Below 100 Review",
         "intro": ["", ""]
       },
       "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers below 100 Quiz",
+        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }

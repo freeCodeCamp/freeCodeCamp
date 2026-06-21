@@ -107,7 +107,7 @@ export const LangCodes = {
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-export const hiddenLangs = [Languages.Korean];
+export const hiddenLangs: Languages[] = [];
 
 /**
  * This array contains languages that use the RTL layouts.

@@ -7,7 +7,9 @@ interface LintResults {
   [key: string]: unknown[];
 }
 
-const configure = (configPath: string) => {
+const configure = (
+  configPath: string
+): { lint: (files: string[]) => Promise<LintResults> } => {
   const lintRules = readFileSync(configPath, 'utf8');
   const lint = linter(YAML.load(lintRules));
 

@@ -12,7 +12,8 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Challenge Breadcrumb Tests', () => {
   test('should display correctly', async ({ page, isMobile }) => {
-    const breadcrumbTest = async (testId: string) => {
+    const mobileBreadcrumb = async () => {
+      const testId = 'breadcrumb-mobile';
       const superBlock = page.getByTestId(testId).getByRole('listitem').first();
       await expect(superBlock).toBeVisible();
 
@@ -40,7 +41,7 @@ test.describe('Challenge Breadcrumb Tests', () => {
 
     if (!isMobile) {
       await expect(page.getByTestId('breadcrumb-mobile')).toBeHidden();
-      await breadcrumbTest('breadcrumb-desktop');
+      await expect(page.getByTestId('breadcrumb-desktop')).toBeVisible();
 
       await page.setViewportSize({
         width: 766,
@@ -49,6 +50,6 @@ test.describe('Challenge Breadcrumb Tests', () => {
     }
 
     await expect(page.getByTestId('breadcrumb-desktop')).toBeHidden();
-    await breadcrumbTest('breadcrumb-mobile');
+    await mobileBreadcrumb();
   });
 });

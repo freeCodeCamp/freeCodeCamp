@@ -13,7 +13,7 @@ const usageFields = {
 export const askSocrates = {
   body: Type.Object(
     {
-      description: Type.String({ minLength: 1, maxLength: 2000 }),
+      description: Type.String({ minLength: 1, maxLength: 10000 }),
       userInput: Type.Optional(Type.String({ minLength: 1, maxLength: 50000 })),
       seed: Type.String({ minLength: 1, maxLength: 50000 }),
       hints: Type.Array(socratesHint, { maxItems: 200 })
