@@ -392,6 +392,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnRecursionWithJS]: null,
   [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: null,
   [SuperBlocks.IntroductionToAsynchronousJS]: null,
+  [SuperBlocks.LearnDataVisualizationWithD3]: null,
   [SuperBlocks.IntroductionToPythonBasics]: null,
   [SuperBlocks.LearnPythonLoopsAndSequences]: null,
   [SuperBlocks.LearnPythonDictionariesAndSets]: null,

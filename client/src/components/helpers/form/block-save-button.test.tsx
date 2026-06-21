@@ -5,10 +5,10 @@ import React from 'react';
 import BlockSaveButton from './block-save-button';
 
 describe('<BlockSaveButton />', () => {
-  test('<BlockSaveButton /> snapshot', () => {
-    const { container } = render(<BlockSaveButton />);
+  test('renders a submit button by default', () => {
+    render(<BlockSaveButton />);
 
-    expect(container).toMatchSnapshot();
+    expect(screen.getByRole('button')).toHaveAttribute('type', 'submit');
   });
 
   test('Button text should default to the correct translation key', () => {

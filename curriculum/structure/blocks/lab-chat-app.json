@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-chat-app",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "e88448ed3ffd9be6d0699fe7",
+      "title": "Build a Chat App"
+    }
+  ]
+}

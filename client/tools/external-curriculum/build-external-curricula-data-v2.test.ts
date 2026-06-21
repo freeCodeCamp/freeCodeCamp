@@ -1,8 +1,8 @@
 import path from 'path';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 import readdirp from 'readdirp';
-import { describe, test, expect } from 'vitest';
+import { afterEach, describe, test, expect, vi } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
@@ -10,30 +10,30 @@ import {
   SuperBlockStage,
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
+import { Languages } from '@freecodecamp/shared/config/i18n';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
 } from './external-data-schema-v2';
 import {
-  type CurriculumIntros,
   type Curriculum,
   type GeneratedCurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo,
-  OrderedSuperBlocks
+  OrderedSuperBlocks,
+  readCurriculumIntros,
+  getCurriculumLocale
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
-const intros = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
-    'utf-8'
-  )
-) as CurriculumIntros;
+const intros = readCurriculumIntros(getCurriculumLocale());
 
 describe('external curriculum data build', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
 
   const validateSuperBlock = superblockSchemaValidator();
@@ -274,13 +274,14 @@ describe('external curriculum data build', () => {
       next: SuperBlockStage.Next
     };
 
-    const stages = Object.keys(orderedSuperBlockInfo);
+    const info = orderedSuperBlockInfo();
+    const stages = Object.keys(info);
 
     expect(stages).not.toContain('next');
     expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
-      const superBlockDashedNames = orderedSuperBlockInfo[stage]?.map(
+      const superBlockDashedNames = info[stage]?.map(
         superBlock => superBlock.dashedName
       );
 
@@ -305,5 +306,21 @@ describe('external curriculum data build', () => {
         `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
       ).length
     ).toBeGreaterThan(0);
+  });
+
+  test('available superblocks should use the configured curriculum locale', () => {
+    vi.stubEnv('CURRICULUM_LOCALE', Languages.Espanol);
+
+    const spanishOrderedSuperBlockInfo = orderedSuperBlockInfo();
+    const spanishIntros = readCurriculumIntros(Languages.Espanol);
+    const englishIntros = readCurriculumIntros(Languages.English);
+
+    expect(spanishOrderedSuperBlockInfo.core[0]).toMatchObject({
+      dashedName: SuperBlocks.RespWebDesignV9,
+      title: spanishIntros[SuperBlocks.RespWebDesignV9].title
+    });
+    expect(spanishOrderedSuperBlockInfo.core[0]?.title).not.toEqual(
+      englishIntros[SuperBlocks.RespWebDesignV9].title
+    );
   });
 });

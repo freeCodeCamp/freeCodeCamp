@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-express-middleware-by-building-a-submission-form",
+  "challengeOrder": [
+    {
+      "id": "64d7d73f8932c4087d7c08f4",
+      "title": "Learn Express Middleware by Building a Submission Form"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

@@ -22,6 +22,7 @@ type AboutProps = {
   t: TFunction;
   submitNewAbout: (formValues: FormValues) => void;
   setIsEditing: (isEditing: boolean) => void;
+  sectionTitle?: string;
 };
 
 type FormValues = {
@@ -53,7 +54,8 @@ const AboutSettings = ({
   user,
   t,
   submitNewAbout,
-  setIsEditing
+  setIsEditing,
+  sectionTitle
 }: AboutProps) => {
   const { name = '', location = '', picture = '', about = '' } = user;
 
@@ -163,7 +165,9 @@ const AboutSettings = ({
 
   return (
     <>
-      <SectionHeader>{t('settings.headings.personal-info')}</SectionHeader>
+      <SectionHeader>
+        {sectionTitle ?? t('settings.headings.personal-info')}
+      </SectionHeader>
       <FullWidthRow>
         <form
           id='camper-identity'
