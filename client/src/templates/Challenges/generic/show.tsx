@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby';
+import { getGuideUrl } from '../utils';
 import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
@@ -123,6 +124,7 @@ const ShowGeneric = ({
         instructions,
         questions,
         tests,
+        forumTopicId,
         title,
         transcript,
         translationPending,
@@ -146,6 +148,8 @@ const ShowGeneric = ({
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
+  
+  const guideUrl = getGuideUrl({ forumTopicId, title });
 
   useEffect(() => {
     initTests(tests);
@@ -385,10 +389,12 @@ const ShowGeneric = ({
         <Spacer size='l' />
       </Col>
       <CompletionModal />
+      
       <HelpModal
         challengeTitle={title}
         challengeBlock={block}
         superBlock={superBlock}
+        guideUrl={guideUrl}
       />
     </>
   );
@@ -516,6 +522,7 @@ export const query = graphql`
           text
           testString
         }
+        forumTopicId
         title
         transcript
         translationPending
