@@ -1,4 +1,5 @@
 import React from 'react';
+import type { TFunction } from 'i18next';
 import { runSaga } from 'redux-saga';
 import { describe, test, it, expect, beforeEach, vi, type Mock } from 'vitest';
 import { fireEvent, render, screen } from '../../../../utils/test-utils';
@@ -71,7 +72,7 @@ const completedChallengesIds = ['1', '3', '5'];
 const currentBlockIds = ['1', '3', '5', '7'];
 const id = '7';
 const fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
-const t = (key: string) => key;
+const t = ((key: string) => key) as TFunction;
 
 function renderCompletionModal(
   props: Partial<React.ComponentProps<typeof CompletionModal>> = {}
