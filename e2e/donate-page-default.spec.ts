@@ -64,6 +64,13 @@ function donatePageTests() {
     await expect(faqHead).toHaveText(translations.donate.faq);
   });
 
+  test('should display the donation policy disclaimer', async ({ page }) => {
+    const disclaimer = page.getByTestId('donation-policy-disclaimer');
+    await expect(disclaimer).toHaveText(
+      translations.donate['donation-policy-disclaimer']
+    );
+  });
+
   test('should display the faq list with buttons', async ({ page }) => {
     const faq1 = page.getByRole('button', {
       name: translations.donate['get-help']
@@ -76,10 +83,83 @@ function donatePageTests() {
     await faq1.click();
 
     const faq2 = page.getByRole('button', {
-      name: translations.donate['how-transparent']
+      name: translations.donate['offer-refunds']
     });
     await expect(faq2).toBeVisible();
     await faq2.click();
+    await expect(
+      page.getByText(translations.donate['donations-are-voluntary'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['cancel-future-donations'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['without-your-authorization'])
+    ).toBeVisible();
+    await faq2.click();
+
+    const faq3 = page.getByRole('button', {
+      name: translations.donate['how-update']
+    });
+    await expect(faq3).toBeVisible();
+    await faq3.click();
+    await expect(
+      page.getByText(translations.donate['take-care-of-this'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['help-update-change-cancel'])
+    ).toBeVisible();
+    await faq3.click();
+
+    const faq4 = page.getByRole('button', {
+      name: translations.donate['how-will-donation-appear']
+    });
+    await expect(faq4).toBeVisible();
+    await faq4.click();
+    await expect(
+      page.getByText(translations.donate['as-freecodecamp-inc'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['do-not-recognize'])
+    ).toBeVisible();
+    await faq4.click();
+
+    const faq5 = page.getByRole('button', {
+      name: translations.donate['are-benefits-a-product']
+    });
+    await expect(faq5).toBeVisible();
+    await faq5.click();
+    await expect(
+      page.getByText(translations.donate['benefits-are-thanks'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['benefits-not-sold-separately'])
+    ).toBeVisible();
+    await faq5.click();
+
+    const faq6 = page.getByRole('button', {
+      name: translations.donate['is-donation-tax-deductible']
+    });
+    await expect(faq6).toBeVisible();
+    await faq6.click();
+    await expect(
+      page.getByText(
+        translations.donate['freecodecamp-is-a-charitable-organization']
+      )
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['donations-may-be-deductible'])
+    ).toBeVisible();
+    await expect(
+      page.getByText(translations.donate['annual-donation-receipt'])
+    ).toBeVisible();
+    await faq6.click();
+
+    const faq7 = page.getByRole('button', {
+      name: translations.donate['how-transparent']
+    });
+    await expect(faq7).toBeVisible();
+    await faq7.click();
     await expect(
       page.getByText(translations.donate['very-transparent'])
     ).toBeVisible();
@@ -91,51 +171,51 @@ function donatePageTests() {
         'You can download our most recent 990 (annual tax report) here.'
       )
     ).toBeVisible();
-    await faq2.click();
+    await faq7.click();
 
-    const faq3 = page.getByRole('button', {
+    const faq8 = page.getByRole('button', {
       name: translations.donate['how-efficient']
     });
-    await expect(faq3).toBeVisible();
-    await faq3.click();
+    await expect(faq8).toBeVisible();
+    await faq8.click();
     await expect(
       page.getByText(translations.donate['fcc-budget'])
     ).toBeVisible();
     await expect(
       page.getByText(translations.donate['help-millions'])
     ).toBeVisible();
-    await faq3.click();
+    await faq8.click();
 
-    const faq4 = page.getByRole('button', {
+    const faq9 = page.getByRole('button', {
       name: translations.donate['how-one-time']
     });
-    await expect(faq4).toBeVisible();
-    await faq4.click();
+    await expect(faq9).toBeVisible();
+    await faq9.click();
     await expect(
       page.getByText(
-        "If you'd prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use this link to donate whatever amount feels right through PayPal."
+        "If you prefer to make one-time donations, you can support freeCodeCamp's mission whenever you have cash to spare. You can use this link to donate any amount through PayPal."
       )
     ).toBeVisible();
     await expect(
       page.getByText(translations.donate['wire-transfer'])
     ).toBeVisible();
-    await faq4.click();
+    await faq9.click();
 
-    const faq5 = page.getByRole('button', {
+    const faq10 = page.getByRole('button', {
       name: translations.donate['does-crypto']
     });
-    await expect(faq5).toBeVisible();
-    await faq5.click();
+    await expect(faq10).toBeVisible();
+    await faq10.click();
     await expect(
       page.getByText(translations.donate['yes-cryptocurrency'])
     ).toBeVisible();
-    await faq5.click();
+    await faq10.click();
 
-    const faq6 = page.getByRole('button', {
+    const faq11 = page.getByRole('button', {
       name: translations.donate['can-check']
     });
-    await expect(faq6).toBeVisible();
-    await faq6.click();
+    await expect(faq11).toBeVisible();
+    await faq11.click();
     await expect(
       page.getByText(translations.donate['yes-check'])
     ).toBeVisible();
@@ -143,13 +223,13 @@ function donatePageTests() {
     await expect(page.getByText('3905 Hedgcoxe Rd')).toBeVisible();
     await expect(page.getByText('PO Box 250352')).toBeVisible();
     await expect(page.getByText('Plano, TX 75025')).toBeVisible();
-    await faq6.click();
+    await faq11.click();
 
-    const faq7 = page.getByRole('button', {
+    const faq12 = page.getByRole('button', {
       name: translations.donate['how-matching-gift']
     });
-    await expect(faq7).toBeVisible();
-    await faq7.click();
+    await expect(faq12).toBeVisible();
+    await faq12.click();
     await expect(
       page.getByText(translations.donate['employers-vary'])
     ).toBeVisible();
@@ -159,23 +239,23 @@ function donatePageTests() {
     await expect(
       page.getByText(translations.donate['help-matching-gift'])
     ).toBeVisible();
-    await faq7.click();
+    await faq12.click();
 
-    const faq8 = page.getByRole('button', {
+    const faq13 = page.getByRole('button', {
       name: translations.donate['how-endowment']
     });
-    await expect(faq8).toBeVisible();
-    await faq8.click();
+    await expect(faq13).toBeVisible();
+    await faq13.click();
     await expect(
       page.getByText(translations.donate['endowment'])
     ).toBeVisible();
-    await faq8.click();
+    await faq13.click();
 
-    const faq9 = page.getByRole('button', {
+    const faq14 = page.getByRole('button', {
       name: translations.donate['how-legacy']
     });
-    await expect(faq9).toBeVisible();
-    await faq9.click();
+    await expect(faq14).toBeVisible();
+    await faq14.click();
     await expect(
       page.getByText(translations.donate['we-honored'])
     ).toBeVisible();
@@ -188,37 +268,27 @@ function donatePageTests() {
     await expect(
       page.getByText(translations.donate['legacy-gift-questions'])
     ).toBeVisible();
-    await faq9.click();
+    await faq14.click();
 
-    const faq10 = page.getByRole('button', {
+    const faq15 = page.getByRole('button', {
       name: translations.donate['how-stock']
     });
-    await expect(faq10).toBeVisible();
-    await faq10.click();
+    await expect(faq15).toBeVisible();
+    await faq15.click();
     await expect(
       page.getByText(translations.donate['welcome-stock'])
     ).toBeVisible();
-    await faq10.click();
+    await faq15.click();
 
-    const faq11 = page.getByRole('button', {
-      name: translations.donate['how-update']
-    });
-    await expect(faq11).toBeVisible();
-    await faq11.click();
-    await expect(
-      page.getByText(translations.donate['forward-receipt'])
-    ).toBeVisible();
-    await faq11.click();
-
-    const faq12 = page.getByRole('button', {
+    const faq16 = page.getByRole('button', {
       name: translations.donate['anything-else']
     });
-    await expect(faq12).toBeVisible();
-    await faq12.click();
+    await expect(faq16).toBeVisible();
+    await faq16.click();
     await expect(
       page.getByText(translations.donate['other-support'])
     ).toBeVisible();
-    await faq12.click();
+    await faq16.click();
   });
 
   test('should make $5 tier selectable', async ({ page }) => {
