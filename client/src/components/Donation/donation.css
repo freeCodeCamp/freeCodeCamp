@@ -992,6 +992,12 @@ p.donation-animation-bullet-1-b {
   margin-top: 80px;
 }
 
+.donation-policy-disclaimer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .donation-animation-bullet-points p {
     font-size: 150%;

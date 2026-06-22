@@ -587,6 +587,48 @@
       }
     }
   },
+  "learn-data-visualization-with-d3": {
+    "title": "Learn Data Visualization with D3",
+    "summary": [
+      "Learn how to use D3 to turn data into interactive bar charts and scatterplots."
+    ],
+    "intro": [
+      "In this course, you'll learn core data visualization concepts and practice using the D3 library to build charts from datasets."
+    ],
+    "note": "",
+    "chapters": {
+      "learn-data-visualization-with-d3": "Learn Data Visualization with D3"
+    },
+    "modules": {
+      "introduction-to-d3": "Introduction to D3"
+    },
+    "module-intros": {
+      "introduction-to-d3": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn the basics of working with D3."
+        ]
+      }
+    },
+    "blocks": {
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["In this lab, you will use D3 to build a bar chart."]
+      },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab, you will create a D3 scatterplot graph using a provided dataset."
+        ]
+      }
+    }
+  },
   "relational-database": {
     "title": "관계형 데이터베이스 V8",
     "intro": [
@@ -796,7 +838,7 @@
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "케이스 변환 프로그램을 구축하며 Python 리스트 컴프리헨션 배우기",
         "intro": [
-          "리스트 컴프리헨션은 리스트, 튜플, 문자열과 같은 반복 가능한 타입에서 새로운 Python 리스트를 구성하는 방법입니다. 이는 for 루프나.append() 리스트 메서드를 사용하지 않고도 가능합니다.",
+          "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "이 프로젝트에서는 Camel Case나 Pascal Case 형식으로 된 문자열을 입력받아 Snake Case로 변환하는 프로그램을 작성하게 됩니다.",
           "이 프로젝트는 두 단계로 구성됩니다. 첫 번째 단계에서는 for 루프를 사용하여 프로그램을 구현합니다. 그런 다음 루프 대신 리스트 컴프리헨션을 사용하여 동일한 결과를 얻는 방법을 배우게 됩니다."
         ]
@@ -4736,6 +4778,12 @@
           "이 워크숍에서는 문장 분석기 앱을 만들어 JavaScript 루프에 대한 지식을 복습하세요."
         ]
       },
+      "lab-traffic-light-sequencer": {
+        "title": "Build a Traffic Light Sequencer",
+        "intro": [
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
       "workshop-space-mission-roster": {
         "title": "우주 미션 명단 만들기",
         "intro": [
@@ -5009,12 +5057,6 @@
         "title": "일치 객체 필터 구현하기",
         "intro": [
           "이 실습에서는 객체 배열을 검사하여 특정 프로퍼티와 값 쌍이 일치하는 모든 객체를 반환하는 함수를 만드세요."
-        ]
-      },
-      "lab-prime-number-sum-calculator": {
-        "title": "소수 합 계산기 만들기",
-        "intro": [
-          "이 실습에서는 숫자를 입력받아 그 숫자 이하인 모든 소수의 합을 반환하는 계산기를 만들어 보세요."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -5637,6 +5679,12 @@
           "이 실습에서 동적 프로그래밍을 연습하며 자바스크립트로 피보나치 수열 계산기를 구현하세요."
         ]
       },
+      "lab-prime-number-sum-calculator": {
+        "title": "소수 합 계산기 만들기",
+        "intro": [
+          "이 실습에서는 숫자를 입력받아 그 숫자 이하인 모든 소수의 합을 반환하는 계산기를 만들어 보세요."
+        ]
+      },
       "review-dynamic-programming-js": {
         "title": "동적 프로그래밍 복습",
         "intro": [
@@ -5763,7 +5811,6 @@
       "typescript-fundamentals": "TypeScript 기초",
       "lab-flashcard-quiz-app": "Build a Flashcard Quiz App",
       "lab-digital-pet-game": "Build a Digital Pet Game",
-      "data-visualization": "데이터 시각화와 D3",
       "review-front-end-libraries": "프론트엔드 라이브러리 복습",
       "front-end-development-libraries-certification-exam": "프론트엔드 개발 라이브러리 인증시험"
     },
@@ -5771,12 +5818,6 @@
       "typescript-fundamentals": {
         "intro": [
           "이 모듈에서는 TypeScript를 소개합니다. TypeScript는 JavaScript의 상위집합으로 JavaScript 코드에 정적 타이핑을 추가할 수 있게 해줍니다. 제네릭, 타입 좁히기, TSX 등을 연습할 수 있는 워크숍과 실습을 만들고, 짧은 퀴즈로 TypeScript 기초 지식을 확인하세요."
-        ]
-      },
-      "data-visualization": {
-        "note": "2026년 예정",
-        "intro": [
-          "이 모듈에서는 데이터 시각화를 소개하고 D3 라이브러리를 다루는 방법을 배우세요."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6121,20 +6162,6 @@
       "quiz-typescript": {
         "title": "TypeScript 퀴즈",
         "intro": ["이 퀴즈로 TypeScript 학습 내용을 확인하세요."]
-      },
-      "lecture-introduction-to-data-visualization": {
-        "title": "데이터 시각화 소개",
-        "intro": ["이 수업들에서 기본 데이터 시각화 개념을 배우세요."]
-      },
-      "lab-bar-chart": {
-        "title": "막대 그래프 만들기",
-        "intro": ["이 실습에서 d3를 사용해 막대 그래프를 만드세요."]
-      },
-      "lab-scatterplot-graph": {
-        "title": "산점도 그래프 만들기",
-        "intro": [
-          "이 실습에서는 제공된 데이터셋을 사용해 d3 산점도(scatterplot) 그래프를 만드세요."
-        ]
       },
       "review-front-end-libraries": {
         "title": "프론트엔드 라이브러리 복습",
@@ -6848,13 +6875,11 @@
       "http-and-the-web-standards-model": "HTTP 및 웹 표준 모델",
       "rest-api-and-web-services": "REST API 및 웹 서비스",
       "introduction-to-express": "Express 소개",
-      "express-middleware": "Express 미들웨어",
       "error-handling-in-express": "Express에서의 오류 처리",
+      "express-middleware": "Express 미들웨어",
       "websockets": "WebSockets",
-      "node-and-sql": "Node와 SQL",
       "security-and-privacy": "보안 및 개인정보",
       "authentication": "인증",
-      "tooling-and-deployment": "도구 및 배포",
       "back-end-development-and-apis-certification-exam": "백엔드 개발 및 API 인증시험"
     },
     "module-intros": {
@@ -6892,28 +6917,22 @@
           "이 모듈에서는 RESTful API를 구축하는 데 사용하는 프레임워크인 Express.js를 소개합니다. 그런 다음 워크숍과 실습을 통해 기술을 연습하고 짧은 퀴즈로 지식을 테스트합니다."
         ]
       },
-      "express-middleware": {
-        "note": "2026년 하반기 예정",
-        "intro": [
-          "이 모듈에서는 클라이언트와 서버 간의 요청과 응답을 처리하는 데 사용하는 Express.js의 미들웨어에 대해 배웁니다. 그런 다음 워크숍과 실습을 통해 기술을 연습하고 짧은 퀴즈로 지식을 테스트합니다."
-        ]
-      },
       "error-handling-in-express": {
         "note": "2026년 하반기 예정",
         "intro": [
           "이 모듈에서는 Express.js에서 오류 처리, 디버깅, 헬스체크가 어떻게 작동하는지 배웁니다. 그런 다음 실습에서 배운 내용을 연습하고 짧은 퀴즈로 지식을 테스트합니다."
         ]
       },
+      "express-middleware": {
+        "note": "2026년 하반기 예정",
+        "intro": [
+          "이 모듈에서는 클라이언트와 서버 간의 요청과 응답을 처리하는 데 사용하는 Express.js의 미들웨어에 대해 배웁니다. 그런 다음 워크숍과 실습을 통해 기술을 연습하고 짧은 퀴즈로 지식을 테스트합니다."
+        ]
+      },
       "websockets": {
         "note": "2026년 하반기 예정",
         "intro": [
           "이 모듈에서는 클라이언트와 서버 간 실시간 통신에 사용하는 WebSockets 프로토콜을 소개합니다. 그런 다음 실습과 워크숍을 통해 배운 내용을 연습하고 짧은 퀴즈로 지식을 테스트합니다."
-        ]
-      },
-      "node-and-sql": {
-        "note": "2026년 하반기 예정",
-        "intro": [
-          "이 모듈에서는 Node와 SQL로 애플리케이션을 구축하는 연습을 합니다. 그런 다음 짧은 퀴즈로 지식을 테스트합니다."
         ]
       },
       "security-and-privacy": {
@@ -6928,12 +6947,6 @@
           "이 모듈에서는 웹 애플리케이션에서 인증이 어떻게 작동하는지와 JWT, CSRF, Passport, Helmet, 암호학 및 암호화 등 기타 중요한 개념을 배웁니다. 그런 다음 실습과 워크숍에서 배운 내용을 연습하고 짧은 퀴즈로 지식을 테스트합니다."
         ]
       },
-      "tooling-and-deployment": {
-        "note": "2026년 하반기 예정",
-        "intro": [
-          "이 모듈에서는 전체 스택 애플리케이션 배포에 업계에서 사용하는 일반 도구를 배우고, 짧은 퀴즈로 지식을 테스트하세요."
-        ]
-      },
       "back-end-development-and-apis-certification-exam": {
         "note": "2026년 하반기 예정",
         "intro": ["이 시험에 합격해 백엔드 개발 및 API 인증을 받으세요."]
@@ -6944,6 +6957,12 @@
         "title": "NodeJS와 이벤트 기반 아키텍처 작업",
         "intro": [
           "Node.js 핵심 라이브러리, 컴퓨터에 Node.js 설치 방법, 백엔드에서 Node.js 사용의 장단점을 배우세요."
+        ]
+      },
+      "workshop-nodejs-repl": {
+        "title": "Learn Node.js REPL",
+        "intro": [
+          "You will learn the Node.js REPL and command-line interface by exploring the runtime from the terminal."
         ]
       },
       "review-node-js-intro": {
@@ -6958,6 +6977,12 @@
         "title": "Node 코어 모듈 작업",
         "intro": [
           "이 수업들에서는 fs, buffer, stream, path 모듈 등 node.js 코어 모듈을 배우고, 타사 라이브러리에 의존하지 않고도 효율적인 애플리케이션을 빌드할 수 있도록 Node가 제공하는 기능을 이해하세요."
+        ]
+      },
+      "workshop-nodejs-common-modules": {
+        "title": "Learn Node.js Common Modules",
+        "intro": [
+          "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
       },
       "review-node-js-core-modules": {
@@ -6984,6 +7009,18 @@
           "npm 스크립트, 패키지의 npm 레지스트리 배포, CommonJS와 ES 모듈 작업에 대해 배우세요. 이 수업들은 필수 Node.js 개발 도구와 모듈 시스템을 다룹니다."
         ]
       },
+      "workshop-how-to-build-an-npm-module": {
+        "title": "Learn How to Build an NPM Module",
+        "intro": [
+          "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
+        ]
+      },
+      "lab-prime-number-checker-module": {
+        "title": "Build a Prime Number Checker Module",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
+        ]
+      },
       "review-npm": {
         "title": "NPM 복습",
         "intro": ["다가오는 퀴즈에 대비해 npm 개념을 복습하세요."]
@@ -7004,6 +7041,24 @@
           "HTTP 요청-응답 모델을 통해 웹 통신의 기본 원리를 배우고, 다양한 웹 자산과 응답 유형을 살펴보며, 여러 HTTP 메서드를 사용해 폼이 데이터 제출을 처리하는 방식을 이해합니다."
         ]
       },
+      "lecture-understanding-the-web-standards-model": {
+        "title": "Understanding the Web Standards Model",
+        "intro": [
+          "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
+        ]
+      },
+      "workshop-nodejs-by-building-a-web-server": {
+        "title": "Learn Node.js by Building a Web Server",
+        "intro": [
+          "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
+        ]
+      },
+      "review-http-and-the-web-standards-model": {
+        "title": "HTTP and the Web Standards Model Review",
+        "intro": [
+          "Review HTTP, DNS, TCP/IP, the request-response model, and web standards before you take the quiz."
+        ]
+      },
       "quiz-http-and-the-web-standards-model": {
         "title": "HTTP and the Web Standards Model Quiz",
         "intro": [
@@ -7015,6 +7070,18 @@
         "title": "REST API와 웹 서비스 이해하기",
         "intro": [
           "이 강의들에서는 REST API와 웹 서비스가 무엇인지, 그리고 서로 다른 애플리케이션이 인터넷을 통해 서로 통신하도록 어떻게 허용하는지 배우게 됩니다."
+        ]
+      },
+      "workshop-express-by-building-a-weather-service-api": {
+        "title": "Learn Express by Building a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
         ]
       },
       "lecture-working-with-express": {
@@ -7030,16 +7097,130 @@
           "이 강의들에서는 ExpressJS의 라우팅에 대해 배우며, 라우팅은 웹 애플리케이션의 서로 다른 엔드포인트를 정의하고 클라이언트 요청에 어떻게 응답하는지를 뜻합니다."
         ]
       },
+      "workshop-express-by-building-a-random-joke-app": {
+        "title": "Learn Express by Building a Random Joke App",
+        "intro": [
+          "You will learn basic Express routing and response methods by building a random joke app."
+        ]
+      },
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
+        "intro": [
+          "Practice building an Express server and JSON API by creating a personal profile application."
+        ]
+      },
+      "review-introduction-to-express": {
+        "title": "Introduction to Express Review",
+        "intro": [
+          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+        ]
+      },
+      "quiz-introduction-to-express": {
+        "title": "Introduction to Express Quiz",
+        "intro": [
+          "Test your knowledge of web services, REST, microservices, Express.js, and routing."
+        ]
+      },
       "lecture-understanding-error-handling-and-health-checks": {
         "title": "Understanding Error Handling and Health Checks",
         "intro": [
           "In these lessons, you'll learn about error handling and health checks in Express."
         ]
       },
+      "workshop-error-handling-in-express-by-building-a-bank-api": {
+        "title": "Learn Error Handling in Express by Building a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
       "quiz-error-handling-in-express": {
         "title": "Error Handling in Express Quiz",
         "intro": [
           "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
+      "lecture-express-middleware": {
+        "title": "Express Middleware",
+        "intro": [
+          "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
+        ]
+      },
+      "workshop-express-middleware-by-building-a-submission-form": {
+        "title": "Learn Express Middleware by Building a Submission Form",
+        "intro": [
+          "You will learn application-level and router-level middleware by building a structured submission form."
+        ]
+      },
+      "lab-data-sanitizer": {
+        "title": "Build a Data Sanitizer",
+        "intro": [
+          "Practice creating custom Express middleware by building a data sanitizer and validator."
+        ]
+      },
+      "review-express-middleware": {
+        "title": "Express Middleware Review",
+        "intro": [
+          "Review middleware concepts in Express, including application-level, router-level, error-handling, and built-in and third-party middleware before you take the quiz."
+        ]
+      },
+      "quiz-express-middleware": {
+        "title": "Express Middleware Quiz",
+        "intro": [
+          "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
+        ]
+      },
+      "lecture-understanding-websockets": {
+        "title": "Understanding WebSockets",
+        "intro": [
+          "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
+        ]
+      },
+      "workshop-websockets-by-building-a-resource-monitor": {
+        "title": "Learn WebSockets by Building a Resource Monitor",
+        "intro": [
+          "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
+        ]
+      },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "review-websockets": {
+        "title": "WebSockets Review",
+        "intro": [
+          "Review WebSockets and Pub/Sub concepts before taking the quiz."
+        ]
+      },
+      "quiz-websockets": {
+        "title": "WebSockets Quiz",
+        "intro": [
+          "Test your knowledge of WebSockets and Pub/Sub with this quiz."
+        ]
+      },
+      "lecture-introduction-to-authentication-and-authorization": {
+        "title": "Introduction to Authentication and Authorization",
+        "intro": [
+          "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
+        ]
+      },
+      "review-authentication-and-authorization": {
+        "title": "Authentication and Authorization Review",
+        "intro": [
+          "Review authentication and authorization concepts before you take the quiz."
+        ]
+      },
+      "quiz-authentication-and-authorization": {
+        "title": "Authentication and Authorization Quiz",
+        "intro": [
+          "Test your knowledge of authentication and authorization concepts covered in this module."
         ]
       },
       "exam-back-end-development-and-apis-certification": {

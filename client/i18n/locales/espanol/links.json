@@ -25,10 +25,17 @@
     "podcast": "https://www.freecodecamp.org/espanol/news/el-podcast-de-freecodecamp-en-espanol/"
   },
   "help": {
-    "HTML-CSS": "Espanol/HTML-CSS",
-    "JavaScript": "Espanol/JavaScript",
-    "Python": "Espanol/Python",
-    "Backend Development": "espanol/ayuda-de-programacion",
-    "English": "English"
+    "HTML-CSS": "world-languages/espanol",
+    "JavaScript": "world-languages/espanol",
+    "Python": "world-languages/espanol",
+    "Backend Development": "world-languages/espanol",
+    "C-Sharp": "world-languages/espanol",
+    "English": "world-languages/espanol",
+    "Spanish Curriculum": "world-languages/espanol",
+    "Chinese Curriculum": "world-languages/espanol",
+    "Odin": "world-languages/espanol",
+    "Euler": "world-languages/espanol",
+    "Rosetta": "world-languages/espanol",
+    "General": "world-languages/espanol"
   }
 }

@@ -111,15 +111,6 @@
           "blocks": ["lab-digital-pet-game"]
         },
         {
-          "dashedName": "data-visualization",
-          "comingSoon": true,
-          "blocks": [
-            "lecture-introduction-to-data-visualization",
-            "lab-bar-chart",
-            "lab-scatterplot-graph"
-          ]
-        },
-        {
           "moduleType": "review",
           "comingSoon": true,
           "dashedName": "review-front-end-libraries",
