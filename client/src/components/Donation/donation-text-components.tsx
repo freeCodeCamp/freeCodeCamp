@@ -285,6 +285,7 @@ const BenefitsList = (): JSX.Element => {
           <code>placeholder</code>
         </Trans>
       </li>
+      <li>{t('donate.support-benefits-6')}</li>
     </ul>
   );
 };
