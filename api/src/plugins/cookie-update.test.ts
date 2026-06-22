@@ -91,7 +91,7 @@ describe('Cookie updates', () => {
     );
   });
 
-  test('should respect the default cookie config if not overriden', async () => {
+  test('should respect the default cookie config if not overridden', async () => {
     await setup({});
 
     const res = await fastify.inject({
