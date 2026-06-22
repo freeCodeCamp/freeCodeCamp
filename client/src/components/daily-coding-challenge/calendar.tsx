@@ -14,7 +14,11 @@ import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 import Login from '../Header/components/login';
 import CalendarDay from './calendar-day';
-import { getTodayUsCentral, formatDate } from './helpers';
+import {
+  getEffectiveTodayUsCentral,
+  dailyChallengesAreSunset,
+  formatDate
+} from './helpers';
 
 import './calendar.css';
 import DailyCodingChallengeNotFound from './not-found';
@@ -123,7 +127,7 @@ function DailyCodingChallengeCalendar({
 }: DailyCodingChallengeCalendarProps): JSX.Element {
   const { t } = useTranslation();
 
-  const todayUsCentral = getTodayUsCentral();
+  const todayUsCentral = getEffectiveTodayUsCentral();
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -236,24 +240,28 @@ function DailyCodingChallengeCalendar({
 
   return (
     <>
-      <Container>
-        <Row>
-          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Callout variant='note' label={t('misc.note')}>
-              {t('daily-coding-challenges.release-note')}
-            </Callout>
+      {!dailyChallengesAreSunset() && (
+        <>
+          <Container>
+            <Row>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Callout variant='note' label={t('misc.note')}>
+                  {t('daily-coding-challenges.release-note')}
+                </Callout>
 
-            <Button
-              block={true}
-              href={`/learn/daily-coding-challenge/${todayUsCentral}`}
-            >
-              {t('buttons.go-to-dcc-today')}
-            </Button>
-          </Col>
-        </Row>
-      </Container>
+                <Button
+                  block={true}
+                  href={`/learn/daily-coding-challenge/${todayUsCentral}`}
+                >
+                  {t('buttons.go-to-dcc-today')}
+                </Button>
+              </Col>
+            </Row>
+          </Container>
 
-      <Spacer size='l' />
+          <Spacer size='l' />
+        </>
+      )}
 
       <div className='calendar-head'>
         <Button
