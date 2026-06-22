@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 import {
-  getTodayUsCentral,
+  getEffectiveTodayUsCentral,
   formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
 
-const todayUsCentral = getTodayUsCentral();
+const todayUsCentral = getEffectiveTodayUsCentral();
 
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
 
