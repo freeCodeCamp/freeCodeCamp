@@ -105,6 +105,53 @@ export const DonationFaqText = (): JSX.Element => {
   const faqItems = [
     { Q: t('donate.get-help'), A: <p>{t('donate.forward-receipt')}</p> },
     {
+      Q: t('donate.offer-refunds'),
+      A: (
+        <>
+          <p>{t('donate.donations-are-voluntary')}</p>
+          <p>{t('donate.cancel-future-donations')}</p>
+          <p>{t('donate.without-your-authorization')}</p>
+        </>
+      )
+    },
+    {
+      Q: t('donate.how-update'),
+      A: (
+        <>
+          <p>{t('donate.take-care-of-this')}</p>
+          <p>{t('donate.help-update-change-cancel')}</p>
+        </>
+      )
+    },
+    {
+      Q: t('donate.how-will-donation-appear'),
+      A: (
+        <>
+          <p>{t('donate.as-freecodecamp-inc')}</p>
+          <p>{t('donate.do-not-recognize')}</p>
+        </>
+      )
+    },
+    {
+      Q: t('donate.are-benefits-a-product'),
+      A: (
+        <>
+          <p>{t('donate.benefits-are-thanks')}</p>
+          <p>{t('donate.benefits-not-sold-separately')}</p>
+        </>
+      )
+    },
+    {
+      Q: t('donate.is-donation-tax-deductible'),
+      A: (
+        <>
+          <p>{t('donate.freecodecamp-is-a-charitable-organization')}</p>
+          <p>{t('donate.donations-may-be-deductible')}</p>
+          <p>{t('donate.annual-donation-receipt')}</p>
+        </>
+      )
+    },
+    {
       Q: t('donate.how-transparent'),
       A: (
         <>
@@ -183,7 +230,6 @@ export const DonationFaqText = (): JSX.Element => {
       )
     },
     { Q: t('donate.how-stock'), A: <p>{t('donate.welcome-stock')}</p> },
-    { Q: t('donate.how-update'), A: <p>{t('donate.forward-receipt')}</p> },
     {
       Q: t('donate.anything-else'),
       A: <p>{t('donate.other-support')}</p>
@@ -213,6 +259,9 @@ export const SupportBenefitsText = ({
           : t('donate.support-benefits-title')}
       </h2>
       <BenefitsList />
+      <p className='support-benefits-disclaimer'>
+        {t('donate.support-benefits-disclaimer')}
+      </p>
     </>
   );
 };
@@ -236,7 +285,7 @@ const BenefitsList = (): JSX.Element => {
           <code>placeholder</code>
         </Trans>
       </li>
-      <li>{t('donate.support-benefits-5')}</li>
+      <li>{t('donate.support-benefits-6')}</li>
     </ul>
   );
 };
@@ -304,9 +353,21 @@ export const GetSupporterBenefitsText = ({
   return (
     <>
       <Spacer size='l' />
-      <p>{t('donate.as-you-see')}</p>
+      <p>{t('donate.careful-with-every-donation')}</p>
       {!isDonating ? <p>{t('donate.get-benefits')}</p> : null}
     </>
+  );
+};
+
+export const DonationPolicyDisclaimer = (): JSX.Element => {
+  const { t } = useTranslation();
+  return (
+    <p
+      className='donation-policy-disclaimer'
+      data-playwright-test-label='donation-policy-disclaimer'
+    >
+      {t('donate.donation-policy-disclaimer')}
+    </p>
   );
 };
 

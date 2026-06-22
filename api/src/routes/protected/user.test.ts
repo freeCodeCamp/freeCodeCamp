@@ -210,7 +210,8 @@ const sessionOnlyData = {
   theme: testUserData.theme,
   keyboardShortcuts: testUserData.keyboardShortcuts,
   completedChallengeCount: 3,
-  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms
+  acceptedPrivacyTerms: testUserData.acceptedPrivacyTerms,
+  isClassroomAccount: testUserData.isClassroomAccount ?? false
 };
 
 const publicUserData = {
@@ -1362,6 +1363,7 @@ describe('userRoutes', () => {
           isApisMicroservicesCert: false,
           isBackEndCert: false,
           isCheater: false,
+          isClassroomAccount: false,
           isCollegeAlgebraPyCertV8: false,
           isDataAnalysisPyCertV7: false,
           isDataVisCert: false,

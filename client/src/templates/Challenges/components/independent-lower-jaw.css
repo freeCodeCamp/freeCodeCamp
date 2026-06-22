@@ -195,3 +195,9 @@
   border: 1px solid var(--quaternary-color);
   padding: 2px 6px;
 }
+
+.socrates-donation-cta {
+  border-top: 1px solid var(--background-secondary);
+  margin-top: 8px;
+  padding-top: 10px;
+}
