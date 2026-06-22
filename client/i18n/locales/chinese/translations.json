@@ -396,6 +396,25 @@
       "p5": "\"我保证我提交给 freeCodeCamp 的作品都不是剽窃他人的。我理解 freeCodeCamp 团队将审核我提交的项目，以确认这一点。\"",
       "p6": "如果我们发现某学员的某部分课程项目有明显的剽窃现象，我们将不会发布该项目的认证，并注明“经过审核，该帐户已被标记为违反学术诚信条例。”",
       "p7": "作为一个基于成就发布认证的学术机构，我们非常重视学术诚信。如果你对此条例有任何疑问，或者怀疑有人违反了该条例，可以发送邮件至 <0>{{email}}</0>，我们将进行调查。"
+    },
+    "classroom-mode": {
+      "heading": "Classroom Mode",
+      "buttons": {
+        "agree": "I agree, share my learning data",
+        "accepted": "You have agreed to share your learning data."
+      },
+      "p1": "\"Classroom Mode\" enables syncing your learning progress with the Classroom app, making it accessible to educators and institutions with whom you're affiliated.",
+      "p2": "When you enable this feature, you authorize freeCodeCamp to share your learning data—including completed challenges, projects, and time tracking—with the Classroom app and your educator, regardless of your profile privacy settings.",
+      "p3": "If you have any questions or concerns about \"Classroom Mode\", please contact support at <0>{{email}}</0>.",
+      "p4": "Currently your data is <0>{{status}}</0> with the Classroom app. {{message}}",
+      "status": {
+        "shared": "being shared",
+        "not-shared": "not being shared"
+      },
+      "message": {
+        "shared": "Please contact support if you wish to revoke your consent.",
+        "not-shared": "You can give your consent below to allow data sharing."
+      }
     }
   },
   "exam": {
