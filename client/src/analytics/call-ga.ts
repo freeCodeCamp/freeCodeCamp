@@ -30,6 +30,7 @@ type DonationRelatedEventAction =
   | 'Learn Donation Alert Click'
   | 'Certification Donation Alert Click'
   | 'Modal Become Supporter Click'
+  | 'Socrates LowerJaw Become Supporter Click'
   | 'Donate Page Patreon Payment Redirection'
   | 'Modal Patreon Payment Redirection'
   | 'Amount Confirmation Clicked'
@@ -87,6 +88,19 @@ interface SignOut {
   user_id: undefined;
 }
 
+type CallSocratesAction =
+  | 'Socrates LowerJaw Button Click'
+  | 'Socrates Request Sent';
+
+interface CallSocratesEvent {
+  event: 'CallSocrates';
+  action: CallSocratesAction;
+  isDonating: boolean;
+  attempts: number | null;
+  limit: number | null;
+  optimizedRequest: Record<string, unknown> | null;
+}
+
 export type GAevent =
   | DonationViewEvent
   | DonationEvent
@@ -96,7 +110,8 @@ export type GAevent =
   | ChallengeFailedEvent
   | UserData
   | SignOut
-  | SignIn;
+  | SignIn
+  | CallSocratesEvent;
 
 export default function callGA(payload: GAevent) {
   TagManager.dataLayer({
