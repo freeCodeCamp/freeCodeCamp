@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -25,6 +25,7 @@ import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
+import { useSolutionDownloadUrl } from './use-solution-download';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -71,12 +72,6 @@ interface CompletionModalProps extends StateProps {
   t: TFunction;
 }
 
-interface DownloadableChallengeFile {
-  name: string;
-  ext: string;
-  contents: string;
-}
-
 function CompletionModal({
   challengeFiles,
   close,
@@ -87,22 +82,8 @@ function CompletionModal({
   message,
   t
 }: CompletionModalProps): JSX.Element {
-  const [downloadURL, setDownloadURL] = useState<string>();
+  const downloadURL = useSolutionDownloadUrl(challengeFiles);
   const submitChallenge = useSubmit();
-  // We can't useMemo here, because it does not guarantee that the URL object
-  // will be revoked when the dependencies change.
-  useEffect(() => {
-    // downloadURL is not in the dependency array because it should only change
-    // if the challengeFiles change. It is in the useEffect so that we cannot
-    // leak URL objects.
-    if (downloadURL) URL.revokeObjectURL(downloadURL);
-    if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
-      setDownloadURL(URL.createObjectURL(blob));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [challengeFiles]);
 
   useEffect(() => {
     return () => {
@@ -194,7 +175,7 @@ function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
@@ -211,18 +192,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
-
-export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
-  return challengeFiles.reduce<string>(function (
-    allFiles: string,
-    currentFile: DownloadableChallengeFile
-  ) {
-    const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    allFiles +=
-      challengeFiles.length > 0
-        ? `${beforeText}${currentFile.contents}${afterText}`
-        : currentFile.contents;
-    return allFiles;
-  }, '');
-}

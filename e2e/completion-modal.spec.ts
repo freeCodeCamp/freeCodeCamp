@@ -4,6 +4,7 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
+import { clearEditor, focusEditor } from './utils/editor';
 
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
@@ -191,5 +192,54 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   }) => {
     await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
+  });
+});
+
+test.describe('Solution Download', () => {
+  test.use({
+    viewport: { width: 393, height: 851 },
+    isMobile: true
+  });
+
+  const challengePath =
+    '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables';
+
+  test.beforeEach(async ({ page, isMobile, browserName }) => {
+    await page.goto(challengePath);
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    await page.keyboard.insertText('var myName;');
+
+    const submitButton = isMobile
+      ? page.getByRole('button', { name: translations.buttons.run })
+      : page.getByRole('button', { name: translations.buttons['check-code'] });
+
+    await submitButton.click();
+    await expect(
+      page.getByRole('link', {
+        name: translations.learn['download-solution']
+      })
+    ).toBeVisible();
+  });
+
+  test('download link has a .zip filename', async ({ page }) => {
+    const downloadLink = page.getByRole('link', {
+      name: translations.learn['download-solution']
+    });
+    await expect(downloadLink).toBeVisible();
+    const downloadAttr = await downloadLink.getAttribute('download');
+    expect(downloadAttr).toMatch(/\.zip$/);
+  });
+
+  test('clicking the download link triggers a zip file download', async ({
+    page
+  }) => {
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      page
+        .getByRole('link', { name: translations.learn['download-solution'] })
+        .click()
+    ]);
+    expect(download.suggestedFilename()).toMatch(/\.zip$/);
   });
 });
