@@ -6,6 +6,34 @@ import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import SolutionForm from './solution-form';
 
 describe('SolutionForm', () => {
+  test('submits valid CodeAlly project solution links', () => {
+    const onSubmit = vi.fn();
+    const updateSolutionForm = vi.fn();
+
+    render(
+      <SolutionForm
+        challengeType={challengeTypes.codeAllyCert}
+        onSubmit={onSubmit}
+        updateSolutionForm={updateSolutionForm}
+      />
+    );
+
+    const solutionInput = screen.getByLabelText('learn.solution-link');
+
+    fireEvent.change(solutionInput, {
+      target: { value: 'https://example.com' }
+    });
+
+    fireEvent.click(screen.getByRole('button', { name: 'learn.i-completed' }));
+
+    expect(updateSolutionForm).toHaveBeenNthCalledWith(1, {});
+    expect(updateSolutionForm).toHaveBeenLastCalledWith({
+      solution: 'https://example.com'
+    });
+    expect(updateSolutionForm).toHaveBeenCalledTimes(2);
+    expect(onSubmit).toHaveBeenCalledWith({ showCompletionModal: true });
+  });
+
   test('warns and prevents completion when backend project source code links are private', () => {
     const onSubmit = vi.fn();
     const updateSolutionForm = vi.fn();
