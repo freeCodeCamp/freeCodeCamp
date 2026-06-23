@@ -202,12 +202,12 @@ describe('askSocratesSaga', () => {
       .silentRun();
 
     expect(callGA).toHaveBeenCalledWith({
-      event: 'CallSocrates',
+      event: 'call_socrates',
       action: 'Socrates Request Sent',
-      isDonating: false,
+      is_donating: false,
       attempts: null,
       limit: null,
-      optimizedRequest: {
+      optimized_request: {
         seed: '<h1>Hello</h1>',
         description: 'Make the text say hello',
         hints: [{ text: 'Test 1', failed: true }, { text: 'Test 2' }],

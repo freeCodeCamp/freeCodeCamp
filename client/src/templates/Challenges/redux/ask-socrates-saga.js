@@ -104,12 +104,12 @@ export function* askSocratesSaga() {
     }
 
     callGA({
-      event: 'CallSocrates',
+      event: 'call_socrates',
       action: 'Socrates Request Sent',
-      isDonating,
+      is_donating: isDonating,
       attempts,
       limit,
-      optimizedRequest: optimizedPayload
+      optimized_request: optimizedPayload
     });
 
     const response = yield call(getSocratesHint, optimizedPayload);
