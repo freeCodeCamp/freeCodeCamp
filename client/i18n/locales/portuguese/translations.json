@@ -396,6 +396,25 @@
       "p5": "\"Eu declaro que não plagiei nenhum dos meus trabalho no freeCodeCamp.org. Eu entendo que o time do freeCodeCamp.org auditará meus projetos para confirmar isso.\"",
       "p6": "Nas situações em que descobrirmos casos de plágio inequívoco, substituiremos a certificação da pessoa em questão por uma mensagem de que \"Após análise, esta conta foi sinalizada por desonestidade acadêmica\"",
       "p7": "Como uma instituição acadêmica que concede certificações baseadas em conquistas, levamos a honestidade acadêmica muito a sério. Se você tiver alguma dúvida sobre esta política, ou suspeitar que alguém a tenha violado, você pode enviar um e-mail para <0>{{email}}</0> e vamos investigar."
+    },
+    "classroom-mode": {
+      "heading": "Classroom Mode",
+      "buttons": {
+        "agree": "I agree, share my learning data",
+        "accepted": "You have agreed to share your learning data."
+      },
+      "p1": "\"Classroom Mode\" enables syncing your learning progress with the Classroom app, making it accessible to educators and institutions with whom you're affiliated.",
+      "p2": "When you enable this feature, you authorize freeCodeCamp to share your learning data—including completed challenges, projects, and time tracking—with the Classroom app and your educator, regardless of your profile privacy settings.",
+      "p3": "If you have any questions or concerns about \"Classroom Mode\", please contact support at <0>{{email}}</0>.",
+      "p4": "Currently your data is <0>{{status}}</0> with the Classroom app. {{message}}",
+      "status": {
+        "shared": "being shared",
+        "not-shared": "not being shared"
+      },
+      "message": {
+        "shared": "Please contact support if you wish to revoke your consent.",
+        "not-shared": "You can give your consent below to allow data sharing."
+      }
     }
   },
   "exam": {
