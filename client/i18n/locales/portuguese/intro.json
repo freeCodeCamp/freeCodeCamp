@@ -2448,6 +2448,19 @@
           "Nestas aulas, você aprenderá os fundamentos dos objetos JavaScript, incluindo como criá-los, acessar suas propriedades e entender a diferença entre tipos de dados primitivos e não primitivos."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
+      "lab-cargo-manifest-validator": {
+        "title": "Build a Cargo Manifest Validator",
+        "intro": [
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
+        ]
+      },
       "lecture-working-with-json": {
         "title": "Trabalhando com JSON",
         "intro": [
@@ -2508,10 +2521,35 @@
           "Laços são uma parte essencial do JavaScript. Por isso, as seguintes lições foram preparadas para que você aprenda sobre os diferentes tipos de laços, como eles funcionam e também como a iteração funciona."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Crie um Analisador de Frases",
         "intro": [
           "Neste workshop, você revisará como trabalhar com laços em JavaScript desenvolvendo um aplicativo de análise de frases."
+        ]
+      },
+      "lab-traffic-light-sequencer": {
+        "title": "Build a Traffic Light Sequencer",
+        "intro": [
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
+      "workshop-space-mission-roster": {
+        "title": "Build a Space Mission Roster",
+        "intro": [
+          "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -2551,10 +2589,29 @@
           "Neste laboratório, você implementará laços para repetir uma string um número específico de vezes."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "Crie um Detector de Letras Faltantes",
         "intro": [
           "Neste laboratório, você construirá uma função que encontra a letra faltante em um intervalo dado de letras consecutivas e a retorna."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -2715,6 +2772,13 @@
           "Neste laboratório você criará uma função que pula elementos em um array com base em um valor de passo especificado."
         ]
       },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "Revisão dos Fundamentos do JavaScript",
         "intro": [
@@ -2780,12 +2844,6 @@
         "title": "Implemente um Filtro de Objeto por Correspondência",
         "intro": [
           "Neste laboratório, você criará uma função que percorre um array de objetos e retorna um array de todos os objetos que têm pares de propriedade e valor correspondentes."
-        ]
-      },
-      "lab-prime-number-sum-calculator": {
-        "title": "Crie uma Calculadora de Soma de Números Primos",
-        "intro": [
-          "Neste laboratório você criará uma calculadora de soma de números primos que recebe um número e retorna a soma de todos os números primos menores ou iguais a esse número."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -9367,6 +9425,13 @@
           "Nestas lições, você aprenderá como trabalhar com os elementos <code>audio</code> e <code>video</code>."
         ]
       },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
+        ]
+      },
       "workshop-html-video-player": {
         "title": "Crie um reprodutor de vídeo HTML",
         "intro": [
@@ -10013,6 +10078,12 @@
         "title": "Crie uma Galeria de Fotos com Flexbox",
         "intro": [
           "Neste workshop, você usará Flexbox para criar uma página da galeria de fotos responsiva."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {
