@@ -77,7 +77,7 @@ interface DownloadableChallengeFile {
   contents: string;
 }
 
-function CompletionModal({
+export function CompletionModal({
   challengeFiles,
   close,
   dashedName,
