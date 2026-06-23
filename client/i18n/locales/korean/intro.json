@@ -2336,6 +2336,19 @@
           "이 강의들에서는 자바스크립트 객체의 기본, 객체 생성법, 프로퍼티 접근법, 원시형과 비원시형 데이터 타입의 차이를 이해하는 방법을 배우게 됩니다."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
+      "lab-cargo-manifest-validator": {
+        "title": "Build a Cargo Manifest Validator",
+        "intro": [
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
+        ]
+      },
       "lecture-working-with-json": {
         "title": "JSON 다루기",
         "intro": [
@@ -2392,10 +2405,35 @@
           "반복문은 자바스크립트의 필수 요소입니다. 다음 강의들에서는 다양한 반복문 유형과 동작 방식, 그리고 반복(iteration)이 어떻게 작동하는지 배우실 수 있도록 준비했습니다."
         ]
       },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "문장 분석기 만들기",
         "intro": [
           "이 워크숍에서는 문장 분석기 앱을 만들어 자바스크립트 반복문 사용법을 복습합니다."
+        ]
+      },
+      "lab-traffic-light-sequencer": {
+        "title": "Build a Traffic Light Sequencer",
+        "intro": [
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+        ]
+      },
+      "workshop-space-mission-roster": {
+        "title": "Build a Space Mission Roster",
+        "intro": [
+          "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
+      "workshop-heritage-library-catalog": {
+        "title": "Build a Heritage Library Catalog",
+        "intro": [
+          "In this workshop, you will digitize historical catalog cards for a heritage library.",
+          "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
         ]
       },
       "lab-longest-word-in-a-string": {
@@ -2433,10 +2471,29 @@
           "이 실습에서는 문자열을 지정한 횟수만큼 반복하는 반복문을 구현합니다."
         ]
       },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Build a Festival Crowd Flow Simulator",
+        "intro": [
+          "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
+        ]
+      },
       "lab-missing-letter-detector": {
         "title": "누락된 문자 탐지기 만들기",
         "intro": [
           "이 실습에서는 연속된 문자 범위에서 누락된 문자를 찾아 반환하는 함수를 만듭니다."
+        ]
+      },
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
+        "intro": [
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+        ]
+      },
+      "lab-proofreading-tool": {
+        "title": "Build a Proofreading Tool",
+        "intro": [
+          "In this lab, you will build a proofreading tool that analyzes arrays of words for palindromes and repeated phrases.",
+          "You will practice for loops and nested loops to check palindromes and find repeated word sequences."
         ]
       },
       "review-javascript-loops": {
@@ -2591,6 +2648,13 @@
           "이 실습에서는 지정한 단계 값(step)에 따라 배열의 요소를 건너뛰는 함수를 만드세요."
         ]
       },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "자바스크립트 기초 복습",
         "intro": [
@@ -2652,12 +2716,6 @@
         "title": "일치 객체 필터 구현하기",
         "intro": [
           "이 실습에서는 객체 배열을 검사해 특정 프로퍼티와 값이 일치하는 모든 객체를 반환하는 함수를 만듭니다."
-        ]
-      },
-      "lab-prime-number-sum-calculator": {
-        "title": "소수 합 계산기 만들기",
-        "intro": [
-          "이 실습에서는 주어진 수보다 작거나 같고 소수인 모든 수의 합을 반환하는 소수 합 계산기를 만듭니다."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -9005,6 +9063,13 @@
           "이 강의들에서는 <code>audio</code>와 <code>video</code> 요소를 다루는 방법을 배우세요."
         ]
       },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
+        ]
+      },
       "workshop-html-video-player": {
         "title": "HTML 비디오 플레이어 만들기",
         "intro": [
@@ -9615,6 +9680,12 @@
         "title": "Flexbox 사진 갤러리 만들기",
         "intro": [
           "이 워크숍에서는 Flexbox를 사용해 반응형 사진 갤러리 웹페이지를 만드세요."
+        ]
+      },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "lab-pricing-plans-layout": {
