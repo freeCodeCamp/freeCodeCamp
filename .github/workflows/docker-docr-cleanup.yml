@@ -8,6 +8,7 @@ jobs:
   remove:
     name: Delete Old Images
     runs-on: ubuntu-latest
+    if: github.repository == 'freeCodeCamp/freeCodeCamp'
     strategy:
       fail-fast: false
       matrix:

@@ -18,6 +18,7 @@ jobs:
   i18n-upload-client-ui-files:
     name: Client
     runs-on: ubuntu-24.04
+    if: github.repository == 'freeCodeCamp/freeCodeCamp'
 
     steps:
       - name: Checkout Source Files
