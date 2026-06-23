@@ -3,7 +3,10 @@ import type {
   ChallengeFile,
   SavedChallengeFile
 } from '../../../redux/prop-types';
-import { mergeChallengeFiles } from './saved-challenges';
+import {
+  hasUnsavedChallengeFiles,
+  mergeChallengeFiles
+} from './saved-challenges';
 
 const jsChallenge = {
   contents: 'js contents',
@@ -55,6 +58,34 @@ const savedHtmlChallenge: SavedChallengeFile = {
   name: 'name',
   ext: 'html' as const
 };
+
+describe('hasUnsavedChallengeFiles', () => {
+  it('returns false when no challenge files have changed', () => {
+    expect(
+      hasUnsavedChallengeFiles([
+        { ...jsChallenge, contents: 'saved', seed: 'saved' }
+      ])
+    ).toBe(false);
+  });
+
+  it('returns true when a challenge file has changed', () => {
+    expect(
+      hasUnsavedChallengeFiles([
+        { ...jsChallenge, contents: 'changed', seed: 'saved' }
+      ])
+    ).toBe(true);
+  });
+
+  it('ignores files without an initialized seed', () => {
+    expect(
+      hasUnsavedChallengeFiles([{ ...jsChallenge, seed: undefined }])
+    ).toBe(false);
+  });
+
+  it('returns false when challenge files are unavailable', () => {
+    expect(hasUnsavedChallengeFiles(null)).toBe(false);
+  });
+});
 
 describe('mergeChallengeFiles', () => {
   it('should return files if savedChallengeFiles is undefined', () => {

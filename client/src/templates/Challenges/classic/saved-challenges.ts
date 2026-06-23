@@ -1,4 +1,15 @@
-import { ChallengeFile, SavedChallengeFile } from '../../../redux/prop-types';
+import type {
+  ChallengeFile,
+  ChallengeFiles,
+  SavedChallengeFile
+} from '../../../redux/prop-types';
+
+export const hasUnsavedChallengeFiles = (
+  challengeFiles: ChallengeFiles
+): boolean =>
+  challengeFiles?.some(
+    ({ contents, seed }) => typeof seed === 'string' && contents !== seed
+  ) ?? false;
 
 export function mergeChallengeFiles(
   files?: ChallengeFile[] | null,

@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -43,6 +43,7 @@ import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
 import SidePanel from '../components/side-panel';
 import VideoModal from '../components/video-modal';
+import { usePageLeave } from '../hooks';
 import {
   cancelTests,
   challengeMounted,
@@ -74,7 +75,11 @@ import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
-import { mergeChallengeFiles } from './saved-challenges';
+import { ExitProjectModal } from './exit-project-modal';
+import {
+  hasUnsavedChallengeFiles,
+  mergeChallengeFiles
+} from './saved-challenges';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -244,6 +249,41 @@ function ShowClassic({
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
+  const [isExitProjectModalOpen, setIsExitProjectModalOpen] = useState(false);
+  const [exitPathname, setExitPathname] = useState('');
+  const exitConfirmed = useRef(false);
+
+  const hasUnsavedChanges =
+    !!saveSubmissionToDB && hasUnsavedChallengeFiles(challengeFiles);
+
+  const onWindowClose = useCallback((event: BeforeUnloadEvent) => {
+    event.preventDefault();
+    event.returnValue = true;
+  }, []);
+
+  const onHistoryChange = useCallback((targetPathname: string): boolean => {
+    if (exitConfirmed.current) return false;
+
+    setExitPathname(targetPathname);
+    setIsExitProjectModalOpen(true);
+    return true;
+  }, []);
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange,
+    enabled: hasUnsavedChanges
+  });
+
+  const handleExitProject = () => {
+    exitConfirmed.current = true;
+    setIsExitProjectModalOpen(false);
+    if (exitPathname) {
+      void navigate(exitPathname, { replace: true });
+    } else {
+      window.history.back();
+    }
+  };
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
@@ -550,6 +590,13 @@ function ShowClassic({
         />
         <ShortcutsModal />
         <MobileAppModal superBlock={superBlock} />
+        {saveSubmissionToDB && (
+          <ExitProjectModal
+            isOpen={isExitProjectModalOpen}
+            onClose={() => setIsExitProjectModalOpen(false)}
+            onExit={handleExitProject}
+          />
+        )}
       </LearnLayout>
     </Hotkeys>
   );

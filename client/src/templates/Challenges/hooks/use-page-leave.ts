@@ -4,12 +4,19 @@ import { useLocation } from '@gatsbyjs/reach-router';
 interface Props {
   onWindowClose: (event: BeforeUnloadEvent) => void;
   onHistoryChange: (targetPathname: string) => boolean;
+  enabled?: boolean;
 }
 
-export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
+export const usePageLeave = ({
+  onWindowClose,
+  onHistoryChange,
+  enabled = true
+}: Props) => {
   const curLocation = useLocation();
 
   useEffect(() => {
+    if (!enabled) return;
+
     window.addEventListener('beforeunload', onWindowClose);
     // Push a dummy state so that navigating back will restore the current page,
     // allowing us to manually handle navigation.
@@ -45,5 +52,5 @@ export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
       window.removeEventListener('popstate', handlePopState);
       document.removeEventListener('click', handleLinkClick, true);
     };
-  }, [onWindowClose, onHistoryChange, curLocation]);
+  }, [onWindowClose, onHistoryChange, curLocation, enabled]);
 };
