@@ -396,6 +396,25 @@
       "p5": "\"내 프리코드캠프.org 작업에 대해 표절하지 않았음을 맹세합니다. 프리코드캠프.org 팀이 이를 확인하기 위해 내 프로젝트를 감사할 것입니다.\"",
       "p6": "명백한 표절 사례를 발견할 경우 해당 계정의 자격증을 \"검토 후, 이 계정은 학문적 부정직성으로 표시되었습니다.\"라는 메시지로 대체합니다.",
       "p7": "성과 기반 자격증을 수여하는 학문 기관으로서, 우리는 학문적 정직성을 매우 중시합니다. 이 정책에 대한 질문이나 위반을 의심하는 경우 이메일 <0>{{email}}</0>로 문의하시면 조사를 진행하겠습니다."
+    },
+    "classroom-mode": {
+      "heading": "Classroom Mode",
+      "buttons": {
+        "agree": "I agree, share my learning data",
+        "accepted": "You have agreed to share your learning data."
+      },
+      "p1": "\"Classroom Mode\" enables syncing your learning progress with the Classroom app, making it accessible to educators and institutions with whom you're affiliated.",
+      "p2": "When you enable this feature, you authorize freeCodeCamp to share your learning data—including completed challenges, projects, and time tracking—with the Classroom app and your educator, regardless of your profile privacy settings.",
+      "p3": "If you have any questions or concerns about \"Classroom Mode\", please contact support at <0>{{email}}</0>.",
+      "p4": "Currently your data is <0>{{status}}</0> with the Classroom app. {{message}}",
+      "status": {
+        "shared": "being shared",
+        "not-shared": "not being shared"
+      },
+      "message": {
+        "shared": "Please contact support if you wish to revoke your consent.",
+        "not-shared": "You can give your consent below to allow data sharing."
+      }
     }
   },
   "exam": {
