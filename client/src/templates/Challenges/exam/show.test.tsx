@@ -6,6 +6,8 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import { describe, expect, it, vi } from 'vitest';
 
+import introTranslations from '../../../../i18n/locales/english/intro.json';
+import translations from '../../../../i18n/locales/english/translations.json';
 import type { ChallengeMeta, ChallengeNode } from '../../../redux/prop-types';
 import ShowExam from './show';
 
@@ -49,19 +51,34 @@ vi.mock('../utils/fetch-all-curriculum-data', () => ({
   useSubmit: () => vi.fn()
 }));
 
-function t(key: string) {
-  const translations: Record<string, string> = {
-    'intro:foundational-c-sharp-with-microsoft.blocks.foundational-c-sharp-with-microsoft-certification-exam.title':
-      'Foundational C# with Microsoft Certification Exam',
-    'buttons.click-start-exam': 'Click here to start the exam',
-    'learn.exam.not-qualified':
-      'You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:'
-  };
+function getTranslation(source: unknown, key: string) {
+  const value = key
+    .split('.')
+    .reduce<unknown>(
+      (translation, path) =>
+        typeof translation === 'object' && translation !== null
+          ? (translation as Record<string, unknown>)[path]
+          : undefined,
+      source
+    );
 
-  return translations[key] ?? key;
+  return typeof value === 'string' ? value : key;
 }
 
-const examTitle = 'Foundational C# with Microsoft Certification Exam';
+function t(key: string) {
+  if (key.startsWith('intro:')) {
+    return getTranslation(introTranslations, key.replace('intro:', ''));
+  }
+
+  return getTranslation(translations, key);
+}
+
+const examBlock = 'foundational-c-sharp-with-microsoft-certification-exam';
+const examTitle = t(
+  `intro:${SuperBlocks.FoundationalCSharp}.blocks.${examBlock}.title`
+);
+const examDescription =
+  'Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:';
 const prerequisite = {
   id: '647f85d407d29547b3bee1bb',
   title: 'Write Your First C# Code',
@@ -73,11 +90,10 @@ const data: {
 } = {
   challengeNode: {
     challenge: {
-      block: 'foundational-c-sharp-with-microsoft-certification-exam',
+      block: examBlock,
       challengeType: 5,
-      dashedName: 'foundational-c-sharp-with-microsoft-certification-exam',
-      description:
-        'Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:',
+      dashedName: examBlock,
+      description: examDescription,
       fields: {
         blockHashSlug:
           '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/',
@@ -97,7 +113,7 @@ const data: {
 
 const pageContext: { challengeMeta: ChallengeMeta } = {
   challengeMeta: {
-    block: 'foundational-c-sharp-with-microsoft-certification-exam',
+    block: examBlock,
     challengeType: 5,
     id: '647e22d18acb466c97ccbef8',
     disableLoopProtectPreview: false,
@@ -112,7 +128,13 @@ const pageContext: { challengeMeta: ChallengeMeta } = {
   }
 };
 
-function renderShowExam() {
+function renderShowExam({
+  completedChallenges = [],
+  completedSurveys = []
+}: {
+  completedChallenges?: { id: string }[];
+  completedSurveys?: { title: string }[];
+} = {}) {
   vi.mocked(useStaticQuery).mockReturnValue({
     allChallengeNode: {
       edges: [
@@ -136,8 +158,8 @@ function renderShowExam() {
       examInProgress: false,
       user: {
         sessionUser: {
-          completedChallenges: [],
-          completedSurveys: [],
+          completedChallenges,
+          completedSurveys,
           examResults: null
         }
       }
@@ -171,18 +193,42 @@ describe('<ShowExam /> non-qualified state', () => {
     expect(
       screen.getByRole('heading', { level: 1, name: examTitle })
     ).toBeInTheDocument();
-    expect(screen.queryByText('learn.exam.qualified')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(t('learn.exam.qualified'))
+    ).not.toBeInTheDocument();
     expect(screen.getByText(t('learn.exam.not-qualified'))).toBeInTheDocument();
     expect(
       screen.getByRole('link', { name: prerequisite.title })
     ).toHaveAttribute('href', prerequisite.slug);
+    expect(screen.getByText(examDescription)).toBeInTheDocument();
     expect(
-      screen.getByText(
-        'Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:'
-      )
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'Click here to start the exam' })
+      screen.getByRole('button', { name: t('buttons.click-start-exam') })
     ).toHaveAttribute('aria-disabled', 'true');
+  });
+});
+
+describe('<ShowExam /> qualified state', () => {
+  it('renders the qualified exam page with an enabled start button', async () => {
+    renderShowExam({
+      completedChallenges: [{ id: prerequisite.id }],
+      completedSurveys: [{ title: t('survey.foundational-c-sharp.title') }]
+    });
+
+    await waitFor(() =>
+      expect(document.title).toBe(
+        `${examTitle}: ${examTitle} | freeCodeCamp.org`
+      )
+    );
+    expect(
+      screen.getByRole('heading', { level: 1, name: examTitle })
+    ).toBeInTheDocument();
+    expect(screen.getByText(t('learn.exam.qualified'))).toBeInTheDocument();
+    expect(
+      screen.queryByText(t('learn.exam.not-qualified'))
+    ).not.toBeInTheDocument();
+    expect(screen.getByText(examDescription)).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: t('buttons.click-start-exam') })
+    ).not.toHaveAttribute('aria-disabled', 'true');
   });
 });
