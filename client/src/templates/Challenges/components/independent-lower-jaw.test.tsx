@@ -18,6 +18,21 @@ vi.mock('../../../analytics/call-ga', () => ({
 }));
 
 let showSocratesFlag = true;
+const envMock = vi.hoisted(() => ({
+  clientLocale: 'english',
+  apiLocation: 'http://localhost:3000'
+}));
+vi.mock('../../../../config/env.json', () => ({
+  get clientLocale() {
+    return envMock.clientLocale;
+  },
+  get apiLocation() {
+    return envMock.apiLocation;
+  },
+  get default() {
+    return envMock;
+  }
+}));
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeature: () => ({ on: showSocratesFlag })
 }));
@@ -73,6 +88,7 @@ const getLiveRegion = () => {
 describe('<IndependentLowerJaw />', () => {
   beforeEach(() => {
     showSocratesFlag = true;
+    envMock.clientLocale = 'english';
     vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
   });
 
@@ -142,17 +158,28 @@ describe('<IndependentLowerJaw />', () => {
     await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
 
     expect(callGA).toHaveBeenCalledWith({
-      event: 'CallSocrates',
+      event: 'call_socrates',
       action: 'Socrates LowerJaw Button Click',
-      isDonating: false,
+      is_donating: false,
       attempts: 2,
       limit: 3,
-      optimizedRequest: null
+      optimized_request: null
     });
   });
 
   it('hides socrates button when show-socrates flag is off', () => {
     showSocratesFlag = false;
+
+    render(
+      <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
+      createStore()
+    );
+
+    expect(screen.queryByText('buttons.ask-socrates')).not.toBeInTheDocument();
+  });
+
+  it('hides socrates button when language is not english', () => {
+    envMock.clientLocale = 'espanol';
 
     render(
       <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,

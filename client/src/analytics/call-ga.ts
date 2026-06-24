@@ -93,12 +93,12 @@ type CallSocratesAction =
   | 'Socrates Request Sent';
 
 interface CallSocratesEvent {
-  event: 'CallSocrates';
+  event: 'call_socrates';
   action: CallSocratesAction;
-  isDonating: boolean;
+  is_donating: boolean;
   attempts: number | null;
   limit: number | null;
-  optimizedRequest: Record<string, unknown> | null;
+  optimized_request: Record<string, unknown> | null;
 }
 
 export type GAevent =
