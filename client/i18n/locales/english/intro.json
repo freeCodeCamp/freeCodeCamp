@@ -2428,6 +2428,19 @@
           "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
+      "lab-cargo-manifest-validator": {
+        "title": "Build a Cargo Manifest Validator",
+        "intro": [
+          "In this lab, you will use JavaScript to normalize and validate cargo manifests."
+        ]
+      },
       "lecture-working-with-json": {
         "title": "Working with JSON",
         "intro": [
@@ -2733,6 +2746,13 @@
         "title": "Implement an Element Skipper",
         "intro": [
           "In this lab you will create a function that skips elements in an array based on a specified step value."
+        ]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.",
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
         ]
       },
       "review-javascript-fundamentals": {

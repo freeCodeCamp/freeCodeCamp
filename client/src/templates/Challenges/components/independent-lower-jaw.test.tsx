@@ -6,14 +6,33 @@ import { useStaticQuery } from 'gatsby';
 
 import type { ChallengeMeta, Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import callGA from '../../../analytics/call-ga';
 import { IndependentLowerJaw } from './independent-lower-jaw';
 import { createStore } from '../../../redux/create-store';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { render } from '../../../../utils/test-utils';
 
 vi.mock('../../../components/Progress');
+vi.mock('../../../analytics/call-ga', () => ({
+  default: vi.fn()
+}));
 
 let showSocratesFlag = true;
+const envMock = vi.hoisted(() => ({
+  clientLocale: 'english',
+  apiLocation: 'http://localhost:3000'
+}));
+vi.mock('../../../../config/env.json', () => ({
+  get clientLocale() {
+    return envMock.clientLocale;
+  },
+  get apiLocation() {
+    return envMock.apiLocation;
+  },
+  get default() {
+    return envMock;
+  }
+}));
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeature: () => ({ on: showSocratesFlag })
 }));
@@ -41,6 +60,7 @@ const baseProps = {
   saveChallenge: vi.fn(),
   attempts: 0,
   tests: passingTests,
+  isDonating: false,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
   completedPercent: 100,
@@ -68,6 +88,7 @@ const getLiveRegion = () => {
 describe('<IndependentLowerJaw />', () => {
   beforeEach(() => {
     showSocratesFlag = true;
+    envMock.clientLocale = 'english';
     vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
   });
 
@@ -118,8 +139,47 @@ describe('<IndependentLowerJaw />', () => {
     expect(screen.getByText('buttons.ask-socrates')).toBeInTheDocument();
   });
 
+  it('tracks CallSocrates analytics when ask socrates button is clicked', async () => {
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: null,
+          attempts: 2,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'call_socrates',
+      action: 'Socrates LowerJaw Button Click',
+      is_donating: false,
+      attempts: 2,
+      limit: 3,
+      optimized_request: null
+    });
+  });
+
   it('hides socrates button when show-socrates flag is off', () => {
     showSocratesFlag = false;
+
+    render(
+      <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
+      createStore()
+    );
+
+    expect(screen.queryByText('buttons.ask-socrates')).not.toBeInTheDocument();
+  });
+
+  it('hides socrates button when language is not english', () => {
+    envMock.clientLocale = 'espanol';
 
     render(
       <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
@@ -164,6 +224,101 @@ describe('<IndependentLowerJaw />', () => {
 
     expect(screen.getByText(/2\/3/)).toBeInTheDocument();
     expect(screen.getByText(/learn\.hints-used-today/)).toBeInTheDocument();
+  });
+
+  it('shows Socrates donation CTA when the daily limit is reached', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: 'learn.socrates-daily-limit',
+          attempts: 3,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(screen.getByTestId('socrates-donation-cta')).toBeInTheDocument();
+    expect(
+      screen.getByText('learn.donor-socrates-benefit')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: /donate.become-supporter/ })
+    ).toHaveAttribute('href', '/donate');
+  });
+
+  it('tracks donation_related analytics when become supporter link is clicked', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    vi.mocked(callGA).mockClear();
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: 'learn.socrates-daily-limit',
+          attempts: 3,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+    await userEvent.click(
+      screen.getByRole('link', { name: /donate.become-supporter/ })
+    );
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'donation_related',
+      action: 'Socrates LowerJaw Become Supporter Click'
+    });
+  });
+
+  it('hides Socrates donation CTA for supporters even when the limit is reached', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        isDonating={true}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: 'learn.socrates-daily-limit',
+          attempts: 3,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(
+      screen.queryByTestId('socrates-donation-cta')
+    ).not.toBeInTheDocument();
   });
 
   it('announces hint text through a live region', async () => {
