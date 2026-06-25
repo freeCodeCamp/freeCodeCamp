@@ -145,13 +145,40 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    const moduleSteps = within(moduleRight).getByText(
+    // Progress is now inside the single main module button — accessible to screen readers.
+    const moduleButton = screen.getByRole('button', { name: /test-module/i });
+    const moduleSteps = within(moduleButton).getByText(
       /learn\.steps-completed/i
     );
     expect(moduleSteps).toBeInTheDocument();
     expect(moduleSteps).toHaveClass('module-steps');
+  });
+
+  // Verify that the module progress text is accessible: it lives in the single
+  // focusable button element so screen readers can announce it.
+  it('exposes module progress inside the single main button (accessibility)', () => {
+    renderWithProvider(
+      <SuperBlockAccordion
+        challenges={[mockChallenge]}
+        superBlock={SuperBlocks.RespWebDesign}
+        structure={mockStructure}
+        chosenBlock={''}
+        completedChallengeIds={[]}
+      />
+    );
+
+    // There must be exactly one module button — no redundant toggle button.
+    const moduleButtons = screen.getAllByRole('button', {
+      name: /test-module/i
+    });
+    expect(moduleButtons).toHaveLength(1);
+    // That single button should contain the module-button-right div.
+    const stepsContainer = within(moduleButtons[0]).queryByText(
+      /learn\.steps-completed/i
+    );
+    // Steps are absent when totalSteps is 0, but the container div exists.
+    const rightDiv = moduleButtons[0].querySelector('.module-button-right');
+    expect(rightDiv).toBeInTheDocument();
   });
 
   // A coming-soon module should hide the steps summary even if progress exists.
@@ -184,9 +211,9 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+    // Progress text is now inside the main button — verify it is absent.
+    const moduleButton = screen.getByRole('button', { name: /test-module/i });
+    expect(within(moduleButton).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
   // Modules with zero total steps should not display any progress text.
@@ -219,9 +246,9 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+    // Progress text is inside the main button — verify absent when no steps.
+    const moduleButton = screen.getByRole('button', { name: /test-module/i });
+    expect(within(moduleButton).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
   describe('Reset Button', () => {

@@ -298,6 +298,7 @@ const Module = ({
         <button
           aria-controls={panelId}
           aria-expanded={open}
+          aria-label={`${toggleLabel} ${moduleLabel}`}
           className='module-button module-button-main'
           onClick={toggleOpen}
           type='button'
@@ -311,17 +312,6 @@ const Module = ({
             </span>
             {moduleLabel}
           </div>
-        </button>
-        {resetButton}
-        <button
-          aria-controls={panelId}
-          aria-expanded={open}
-          aria-label={`${toggleLabel} ${moduleLabel}`}
-          className='module-button module-button-toggle'
-          data-testid='module-button-right'
-          onClick={toggleOpen}
-          type='button'
-        >
           <div className='module-button-right'>
             {!comingSoon && !!totalSteps && (
               <span className='module-steps'>
@@ -333,6 +323,7 @@ const Module = ({
             )}
           </div>
         </button>
+        {resetButton}
       </div>
       {open && (
         <ul className='module-panel' id={panelId}>
