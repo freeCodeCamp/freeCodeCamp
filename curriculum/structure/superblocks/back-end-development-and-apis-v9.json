@@ -104,7 +104,7 @@
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["quiz-security-and-privacy"]
         },
         {
           "dashedName": "authentication",
