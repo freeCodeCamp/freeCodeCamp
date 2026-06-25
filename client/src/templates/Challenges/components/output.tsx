@@ -1,5 +1,6 @@
 import { isEmpty } from 'lodash-es';
 import React from 'react';
+import sanitizeHtml from 'sanitize-html';
 import i18next from 'i18next';
 
 import './output.css';
@@ -9,20 +10,30 @@ interface OutputProps {
   output: string;
 }
 
+const htmlEntityRegex = /&(#\d+|#x[\da-f]+|[a-z][\da-z]+);/gi;
+
+function preserveHtmlEntities(message: string): string {
+  return message.replace(htmlEntityRegex, '&amp;$1;');
+}
+
 function Output({ defaultOutput, output }: OutputProps): JSX.Element {
-  const message = !isEmpty(output) ? output : defaultOutput;
+  const message = sanitizeHtml(
+    preserveHtmlEntities(!isEmpty(output) ? output : defaultOutput),
+    {
+      allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+    }
+  );
 
   return (
     <pre
       className='output-text'
       data-playwright-test-label='output-text'
+      dangerouslySetInnerHTML={{ __html: message }}
       role='region'
       aria-label={i18next.t('learn.editor-tabs.console')}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
-    >
-      {message}
-    </pre>
+    />
   );
 }
 
