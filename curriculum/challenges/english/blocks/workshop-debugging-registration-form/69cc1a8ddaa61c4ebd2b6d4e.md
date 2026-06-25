@@ -85,7 +85,7 @@ function registerUser() {
   }
 
 --fcc-editable-region--
-
+  
 --fcc-editable-region--
 }
 ```
