@@ -17,6 +17,7 @@ import {
 import Progress from '../../../components/Progress';
 import {
   completedChallengesIdsSelector,
+  isDonatingSelector,
   isSignedInSelector,
   isSocratesOnSelector
 } from '../../../redux/selectors';
@@ -29,7 +30,7 @@ import {
   currentBlockIdsSelector,
   socratesHintStateSelector
 } from '../redux/selectors';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation, clientLocale } from '../../../../config/env.json';
 import { openModal, executeChallenge, askSocrates } from '../redux/actions';
 import { saveChallenge } from '../../../redux/actions';
 import Help from '../../../assets/icons/help';
@@ -86,6 +87,7 @@ const StatusAnnouncement = ({
 const mapStateToProps = createSelector(
   attemptsSelector,
   challengeTestsSelector,
+  isDonatingSelector,
   isSignedInSelector,
   challengeMetaSelector,
   completedPercentageSelector,
@@ -96,6 +98,7 @@ const mapStateToProps = createSelector(
   (
     attempts: number,
     tests: Test[],
+    isDonating: boolean,
     isSignedIn: boolean,
     challengeMeta: ChallengeMeta,
     completedPercent: number,
@@ -106,6 +109,7 @@ const mapStateToProps = createSelector(
   ) => ({
     attempts,
     tests,
+    isDonating,
     isSignedIn,
     challengeMeta,
     completedPercent,
@@ -132,6 +136,7 @@ interface IndependentLowerJawProps {
   saveChallenge: () => void;
   attempts: number;
   tests: Test[];
+  isDonating: boolean;
   isSignedIn: boolean;
   challengeMeta: ChallengeMeta;
   completedPercent: number;
@@ -148,6 +153,7 @@ export function IndependentLowerJaw({
   saveChallenge,
   attempts,
   tests,
+  isDonating,
   isSignedIn,
   challengeMeta,
   completedPercent,
@@ -157,7 +163,8 @@ export function IndependentLowerJaw({
   hasSocratesAccess
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
-  const showSocratesFlag = useFeature('show-socrates').on;
+  const showSocratesFlag =
+    useFeature('show-socrates').on && clientLocale === 'english';
   const submitChallenge = useSubmit();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
@@ -253,11 +260,25 @@ export function IndependentLowerJaw({
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
+  const shouldShowSocratesDonateCta =
+    !isDonating &&
+    socratesHintState.attempts !== null &&
+    socratesHintState.limit !== null &&
+    socratesHintState.attempts >= socratesHintState.limit;
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
 
   const askSocratesAttempt = () => {
+    callGA({
+      event: 'call_socrates',
+      action: 'Socrates LowerJaw Button Click',
+      is_donating: isDonating,
+      attempts: socratesHintState.attempts,
+      limit: socratesHintState.limit,
+      optimized_request: null
+    });
+
     setShowSocratesResults(true);
     setShowHint(false);
     setShowSubmissionHint(false);
@@ -337,6 +358,26 @@ export function IndependentLowerJaw({
                 {t('learn.hints-used-today')}
               </div>
             )}
+          {shouldShowSocratesDonateCta && (
+            <div
+              className='socrates-donation-cta'
+              data-testid='socrates-donation-cta'
+            >
+              {t('learn.donor-socrates-benefit')}{' '}
+              <a
+                className=''
+                href='/donate'
+                onClick={() => {
+                  callGA({
+                    event: 'donation_related',
+                    action: 'Socrates LowerJaw Become Supporter Click'
+                  });
+                }}
+              >
+                {t('donate.become-supporter')}
+              </a>
+            </div>
+          )}
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (

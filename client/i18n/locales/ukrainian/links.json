@@ -25,10 +25,17 @@
     "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
-    "HTML-CSS": "Ukrainian/HTML-CSS",
-    "JavaScript": "Ukrainian/JavaScript",
-    "Python": "Ukrainian/Python",
-    "Backend Development": "Ukrainian/programming-help",
-    "English": "English"
+    "HTML-CSS": "world-languages/ukrainian",
+    "JavaScript": "world-languages/ukrainian",
+    "Python": "world-languages/ukrainian",
+    "Backend Development": "world-languages/ukrainian",
+    "C-Sharp": "world-languages/ukrainian",
+    "English": "world-languages/ukrainian",
+    "Spanish Curriculum": "world-languages/ukrainian",
+    "Chinese Curriculum": "world-languages/ukrainian",
+    "Odin": "world-languages/ukrainian",
+    "Euler": "world-languages/ukrainian",
+    "Rosetta": "world-languages/ukrainian",
+    "General": "world-languages/ukrainian"
   }
 }

@@ -154,7 +154,7 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
         </p>
       </section>
 --fcc-editable-region--
-
+      
 --fcc-editable-region--
     </main>
   </body>

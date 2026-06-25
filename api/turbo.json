@@ -15,6 +15,7 @@
         "EMAIL_PROVIDER",
         "FCC_API_LOG_LEVEL",
         "FCC_API_LOG_TRANSPORT",
+        "FCC_ENABLE_CLASSROOM",
         "FCC_ENABLE_DEV_LOGIN_MODE",
         "FCC_ENABLE_SENTRY_ROUTES",
         "FCC_ENABLE_SHADOW_CAPTURE",
@@ -40,7 +41,8 @@
         "SHOW_UPCOMING_CHANGES",
         "SOCRATES_API_KEY",
         "SOCRATES_ENDPOINT",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     },
     "test": {
@@ -57,6 +59,7 @@
         "EMAIL_PROVIDER",
         "FCC_API_LOG_LEVEL",
         "FCC_API_LOG_TRANSPORT",
+        "FCC_ENABLE_CLASSROOM",
         "FCC_ENABLE_DEV_LOGIN_MODE",
         "FCC_ENABLE_SENTRY_ROUTES",
         "FCC_ENABLE_SHADOW_CAPTURE",
@@ -82,7 +85,8 @@
         "SHOW_UPCOMING_CHANGES",
         "SOCRATES_API_KEY",
         "SOCRATES_ENDPOINT",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     }
   }
