@@ -74,6 +74,7 @@ export const profileUI = Type.Object({
   showAbout: Type.Boolean(),
   showCerts: Type.Boolean(),
   showDonation: Type.Boolean(),
+  showEducation: Type.Boolean(),
   showHeatMap: Type.Boolean(),
   showLocation: Type.Boolean(),
   showName: Type.Boolean(),
@@ -87,6 +88,16 @@ export const experience = Type.Object({
   id: Type.String(),
   title: Type.String(),
   company: Type.String(),
+  location: Type.Optional(Type.String()),
+  startDate: Type.String(),
+  endDate: Type.Optional(Type.String()),
+  description: Type.String()
+});
+
+export const education = Type.Object({
+  id: Type.String(),
+  institution: Type.String(),
+  degree: Type.String(),
   location: Type.Optional(Type.String()),
   startDate: Type.String(),
   endDate: Type.Optional(Type.String()),

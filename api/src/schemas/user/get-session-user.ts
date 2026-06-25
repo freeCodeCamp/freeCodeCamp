@@ -1,6 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
 import {
   examResults,
+  education,
   profileUI,
   savedChallenge,
   experience
@@ -124,6 +125,7 @@ export const getSessionUser = {
               url: Type.String()
             })
           ),
+          education: Type.Optional(Type.Array(education)),
           experience: Type.Optional(Type.Array(experience)),
           profileUI,
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)

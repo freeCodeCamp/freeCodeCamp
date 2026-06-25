@@ -796,6 +796,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           partiallyCompletedChallenges: true,
           picture: true,
           portfolio: true,
+          education: true,
           experience: true,
           profileUI: true,
           progressTimestamps: true,
@@ -853,6 +854,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         location,
         name,
         theme,
+        education,
         experience,
         socrates,
         ...publicUser
@@ -890,6 +892,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             usernameDisplay: usernameDisplay || username,
             userToken: encodedToken,
             completedSurveys: normalizeSurveys(completedSurveys),
+            education: education.map(removeNulls),
             experience: experience.map(removeNulls),
             msUsername: msUsername?.msUsername,
             socrates: socrates ?? true

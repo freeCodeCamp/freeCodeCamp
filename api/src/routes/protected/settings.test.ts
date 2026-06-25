@@ -32,6 +32,7 @@ const baseProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showEducation: false,
   showExperience: false,
   showHeatMap: false,
   showLocation: false,
@@ -1194,6 +1195,169 @@ Happy coding!
       });
     });
 
+    describe('/update-my-education', () => {
+      test('PUT returns 200 status code with "success" message and saves education', async () => {
+        const payload = {
+          education: [
+            {
+              id: '1',
+              institution: 'freeCodeCamp University',
+              degree: 'Web Development',
+              location: 'Remote',
+              startDate: '2020-01',
+              endDate: '2022-06',
+              description: 'Studied full stack web development'
+            }
+          ]
+        };
+
+        const response = await superPut('/update-my-education').send(payload);
+
+        expect(response.body).toEqual({
+          message: 'flash.education-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { education: true }
+        });
+
+        expect(user?.education).toEqual(payload.education);
+      });
+
+      test('supports current education (omitted endDate becomes null)', async () => {
+        const response = await superPut('/update-my-education').send({
+          education: [
+            {
+              id: 'cur',
+              institution: 'Now School',
+              degree: 'Computer Science',
+              startDate: '2023-01',
+              description: ''
+            }
+          ]
+        });
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { education: true }
+        });
+        expect(user?.education?.[0]).toEqual({
+          id: 'cur',
+          institution: 'Now School',
+          degree: 'Computer Science',
+          location: null,
+          startDate: '2023-01',
+          endDate: null,
+          description: ''
+        });
+      });
+
+      test('PUT accepts empty array and clears education', async () => {
+        await superPut('/update-my-education').send({
+          education: [
+            {
+              id: 'seed',
+              institution: 'Seed School',
+              degree: 'Seed Degree',
+              location: 'Seed City',
+              startDate: '2019-01',
+              endDate: '2019-12',
+              description: 'Seed desc'
+            }
+          ]
+        });
+
+        const response = await superPut('/update-my-education').send({
+          education: []
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.education-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { education: true }
+        });
+        expect(user?.education).toEqual([]);
+      });
+
+      test('PUT saves multiple education items and preserves order', async () => {
+        const payload = {
+          education: [
+            {
+              id: '1',
+              institution: 'A School',
+              degree: 'Certificate',
+              location: 'NY',
+              startDate: '2018-01',
+              endDate: '2019-01',
+              description: 'Learned basics'
+            },
+            {
+              id: '2',
+              institution: 'B University',
+              degree: 'Bachelor of Science',
+              location: 'SF',
+              startDate: '2019-02',
+              endDate: '2021-03',
+              description: 'Learned advanced topics'
+            }
+          ]
+        };
+
+        const response = await superPut('/update-my-education').send(payload);
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { education: true }
+        });
+        expect(user?.education).toEqual(payload.education);
+      });
+
+      test('PUT returns 400 status code when the education property is missing', async () => {
+        const response = await superPut('/update-my-education').send({});
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 status code when any data is the wrong type', async () => {
+        const response = await superPut('/update-my-education').send({
+          education: [
+            {
+              id: '',
+              institution: '',
+              degree: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
+            },
+            {
+              id: '',
+              institution: {},
+              degree: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
+            }
+          ]
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+    });
+
     describe('/update-my-experience', () => {
       test('PUT returns 200 status code with "success" message and saves experience', async () => {
         const payload = {
@@ -1504,6 +1668,7 @@ Happy coding!
       { path: '/update-my-honesty', method: 'PUT' },
       { path: '/update-privacy-terms', method: 'PUT' },
       { path: '/update-my-portfolio', method: 'PUT' },
+      { path: '/update-my-education', method: 'PUT' },
       { path: '/update-my-experience', method: 'PUT' }
     ];
 
