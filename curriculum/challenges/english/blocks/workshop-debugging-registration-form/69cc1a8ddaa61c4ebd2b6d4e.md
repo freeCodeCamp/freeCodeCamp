@@ -1,8 +1,8 @@
 ---
 id: 69cc1a8ddaa61c4ebd2b6d4e
-title: Step 12
+title: Step 13
 challengeType: 0
-dashedName: step-12
+dashedName: step-13
 ---
 
 # --description--
@@ -64,6 +64,7 @@ function registerUser() {
   
   const name = nameInput.value;
   const age = ageInput.value;
+  const ageNum = Number(age);
 
   console.log("Name:", name);
   console.log("Age:", age);
@@ -75,7 +76,7 @@ function registerUser() {
     if (age.trim() === "") {
       throw new Error("Age is required");
     }
-    if (!Number.isInteger(Number(age))) {
+    if (!Number.isInteger(ageNum) || ageNum < 13) {
       throw new Error("Invalid value for age");
     }
     result.textContent = "Registration successful";
