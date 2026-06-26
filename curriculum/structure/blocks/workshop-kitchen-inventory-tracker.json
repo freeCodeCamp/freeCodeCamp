@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-kitchen-inventory-tracker",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "6a3e2b9b7eeca084dd4fb857", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
