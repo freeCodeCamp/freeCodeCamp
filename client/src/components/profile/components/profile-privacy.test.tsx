@@ -15,6 +15,7 @@ const defaultProfileUI = {
   showHeatMap: true,
   showCerts: true,
   showPortfolio: true,
+  showEducation: true,
   showExperience: true,
   showTimeLine: true,
   showDonation: true

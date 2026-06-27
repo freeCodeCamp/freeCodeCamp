@@ -15,6 +15,7 @@ import Stats from './components/stats';
 import HeatMap from './components/heat-map';
 import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
+import { EducationDisplay } from './components/education-display';
 import { ExperienceDisplay } from './components/experience-display';
 import { ProfileCompleteness } from './components/profile-completeness';
 import { ProfilePrivacy } from './components/profile-privacy';
@@ -95,6 +96,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       showHeatMap,
       showPoints,
       showPortfolio,
+      showEducation,
       showExperience,
       showTimeLine
     },
@@ -105,6 +107,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
     picture,
     points,
     portfolio,
+    education,
     experience,
     username
   } = user;
@@ -131,6 +134,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
           bluesky={user.bluesky}
           website={user.website}
           portfolio={portfolio}
+          education={education || []}
           experience={experience || []}
           isLocked={isLocked}
         />
@@ -158,6 +162,13 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
         <PortfolioProjects
           portfolioProjects={portfolio}
           isPrivate={isSessionUser && !showPortfolio}
+          isSessionUser={isSessionUser}
+        />
+      ) : null}
+      {showEducation || isSessionUser ? (
+        <EducationDisplay
+          education={education || []}
+          isPrivate={isSessionUser && !showEducation}
           isSessionUser={isSessionUser}
         />
       ) : null}
