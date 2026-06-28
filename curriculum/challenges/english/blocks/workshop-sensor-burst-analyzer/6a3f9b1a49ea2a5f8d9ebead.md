@@ -7,7 +7,7 @@ dashedName: step-30
 
 # --description--
 
-Finally, before we move on to our last tool for combining the two sensor datasets into one, let's remove `console.log("Cleaned bursts:", cleanedBursts)`;
+Finally, before you move on to your last tool for combining the two sensor datasets into one, remove the `console.log("Cleaned bursts:", cleanedBursts);` statement.
 
 # --hints--
 
