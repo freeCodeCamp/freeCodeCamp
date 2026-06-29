@@ -1,5 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
+import { beforeEach, describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -7,6 +8,12 @@ import { UserThemes } from '../../redux/types';
 import Profile from './profile';
 
 vi.mock('../../analytics');
+vi.mock('./components/time-line', () => ({
+  default: () => <div>timeline</div>
+}));
+vi.mock('./components/username', () => ({
+  default: () => <div>username settings</div>
+}));
 //workaround to avoid some strange gatsby error:
 window.___loader = { enqueue: () => {}, hovering: () => {} };
 
@@ -95,6 +102,17 @@ function renderWithRedux(ui: JSX.Element) {
   return render(<Provider store={createStore(reducer)}>{ui}</Provider>);
 }
 describe('<Profile/>', () => {
+  beforeEach(() => {
+    vi.stubGlobal(
+      'ResizeObserver',
+      class ResizeObserver {
+        observe = vi.fn();
+        unobserve = vi.fn();
+        disconnect = vi.fn();
+      }
+    );
+  });
+
   it('renders the report button on another persons profile', () => {
     // TODO: Profile is a mess, it shouldn't depend on the entire user. Each
     // component Camper, Stats, HeatMap etc should be get the relevant data from
@@ -126,5 +144,63 @@ describe('<Profile/>', () => {
       'href',
       'string'
     );
+  });
+
+  it('renders the edit profile modal with default personal settings', async () => {
+    const user = userEvent.setup();
+    const profileUser = {
+      ...userProps.user,
+      about: '',
+      bluesky: '',
+      githubProfile: '',
+      linkedin: '',
+      location: '',
+      name: 'Full Stack User',
+      picture: '',
+      twitter: '',
+      website: ''
+    };
+
+    // @ts-expect-error - quick hack to mollify TS.
+    renderWithRedux(<Profile user={profileUser} isSessionUser={true} />);
+
+    await user.click(
+      screen.getByRole('button', { name: 'aria.edit-my-profile' })
+    );
+
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'profile.edit-my-profile' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('heading', { name: 'settings.headings.internet' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('group', { name: 'settings.headings.internet' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: /settings.headings.internet/
+      })
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(
+      screen.getByRole('heading', {
+        name: 'settings.headings.personal-info'
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('group', { name: 'settings.headings.personal-info' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', {
+        name: /settings.headings.personal-info/
+      })
+    ).toHaveAttribute('aria-disabled', 'true');
+    expect(screen.getByLabelText('settings.labels.name')).toHaveValue(
+      'Full Stack User'
+    );
+    expect(screen.getByLabelText('settings.labels.location')).toHaveValue('');
+    expect(screen.getByLabelText('settings.labels.picture')).toHaveValue('');
+    expect(screen.getByLabelText('settings.labels.about')).toHaveValue('');
   });
 });
