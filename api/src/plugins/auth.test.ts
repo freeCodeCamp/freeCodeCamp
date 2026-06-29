@@ -1,4 +1,4 @@
-import { describe, test, expect, beforeEach, afterEach } from 'vitest';
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
@@ -235,6 +235,34 @@ describe('auth', () => {
 
       expect(res.json()).toEqual({ ok: true });
       expect(res.statusCode).toEqual(200);
+    });
+
+    test('identifies the Sentry user by id only, never email', async () => {
+      const setUser = vi.fn();
+      // @ts-expect-error Sentry isn't decorated in this minimal test app.
+      fastify.Sentry = { setUser };
+      const fakeUser = {
+        id: '123',
+        username: 'test-user',
+        email: 'foo@bar.com'
+      };
+      // @ts-expect-error prisma isn't built in this minimal test app.
+      fastify.prisma = { user: { findUnique: () => fakeUser } };
+      fastify.get('/test-pii', () => ({ ok: true }));
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('123') },
+        JWT_SECRET
+      );
+      await fastify.inject({
+        method: 'GET',
+        url: '/test-pii',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+
+      expect(setUser).toHaveBeenLastCalledWith({ id: '123' });
     });
   });
 

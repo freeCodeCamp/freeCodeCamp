@@ -105,7 +105,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       where: { id: accessToken.userId }
     });
     if (user) {
-      fastify.Sentry?.setUser({ id: user.id, email: user.email ?? undefined });
+      fastify.Sentry?.setUser({ id: user.id });
     }
 
     return user ? { user } : { message: TOKEN_INVALID };
