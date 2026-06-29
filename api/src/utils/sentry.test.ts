@@ -1,7 +1,11 @@
 import type { Log } from '@sentry/node';
 import { describe, expect, it, vi } from 'vitest';
 
-import { makeTracesSampler, shouldSendLog } from './sentry.js';
+import {
+  makeTracesSampler,
+  scrubRedundantLogAttributes,
+  shouldSendLog
+} from './sentry.js';
 
 const makeLog = (overrides: Partial<Log> = {}): Log => ({
   level: 'info',
@@ -46,6 +50,38 @@ describe('shouldSendLog', () => {
     expect(
       shouldSendLog(makeLog({ attributes: { userId: 'abc' } }), 0.1, () => 0.99)
     ).toBe(false);
+  });
+});
+
+describe('scrubRedundantLogAttributes', () => {
+  it('drops pino bindings duplicated by Sentry-native fields', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({
+        attributes: {
+          msg: 'hello',
+          'pino.logger.level': 30,
+          message: 'hello',
+          trace_id: 'abc',
+          level: 'info',
+          severity_number: 9,
+          userId: 'user-42'
+        }
+      })
+    );
+
+    expect(result.attributes).toEqual({
+      message: 'hello',
+      trace_id: 'abc',
+      level: 'info',
+      severity_number: 9,
+      userId: 'user-42'
+    });
+  });
+
+  it('is a no-op when there are no attributes', () => {
+    expect(
+      scrubRedundantLogAttributes(makeLog({ attributes: undefined }))
+    ).toEqual(makeLog({ attributes: undefined }));
   });
 });
 

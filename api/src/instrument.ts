@@ -9,7 +9,11 @@ import {
   SENTRY_PROFILE_SESSION_SAMPLE_RATE,
   SENTRY_TRACES_SAMPLE_RATE
 } from './utils/env.js';
-import { makeTracesSampler, shouldSendLog } from './utils/sentry.js';
+import {
+  makeTracesSampler,
+  scrubRedundantLogAttributes,
+  shouldSendLog
+} from './utils/sentry.js';
 
 const hasClientErrorStatus = (error: unknown): boolean =>
   typeof error === 'object' &&
@@ -36,5 +40,7 @@ Sentry.init({
   beforeSend: (event, hint) =>
     hasClientErrorStatus(hint.originalException) ? null : event,
   beforeSendLog: log =>
-    shouldSendLog(log, SENTRY_LOGS_INFO_SAMPLE_RATE, Math.random) ? log : null
+    shouldSendLog(log, SENTRY_LOGS_INFO_SAMPLE_RATE, Math.random)
+      ? scrubRedundantLogAttributes(log)
+      : null
 });

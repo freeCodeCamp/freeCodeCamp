@@ -24,6 +24,22 @@ export const shouldSendLog = (
   return rng() < infoSampleRate;
 };
 
+const REDUNDANT_LOG_ATTRIBUTES = ['msg', 'pino.logger.level'] as const;
+
+/**
+ * Remove pino bindings that Sentry already records as native log fields.
+ *
+ * @param log The log entry from the SDK.
+ * @returns The same log with redundant attributes removed.
+ */
+export const scrubRedundantLogAttributes = (log: Log): Log => {
+  if (log.attributes == null) return log;
+  for (const key of REDUNDANT_LOG_ATTRIBUTES) {
+    delete log.attributes[key];
+  }
+  return log;
+};
+
 /**
  * Build a traces sampler that drops health check transactions.
  *
