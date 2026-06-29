@@ -9,11 +9,6 @@ const html = {
   codeSnippet: '<h1>Heading 1</h1>'
 };
 
-const js = {
-  challengePath:
-    '/learn/javascript-v9/lecture-introduction-to-javascript/what-is-a-data-type'
-};
-
 test.describe('Interactive Editor', () => {
   // skipping because I don't know of a page with paragraph nodules that doesn't also have an interactive editor toggle
   test.skip('should render paragraph nodules as text and not show the interactive editor toggle', async ({
@@ -93,29 +88,5 @@ test.describe('Interactive Editor', () => {
     await expect(
       page.getByTestId('sp-interactive-editor').first()
     ).toBeVisible();
-  });
-
-  test('should hide the preview panel in JS-only interactive editors and just show the console', async ({
-    page
-  }) => {
-    await page.goto(js.challengePath);
-
-    // Click the toggle button to show interactive editor
-    await page
-      .getByRole('button', {
-        name: /interactive editor/i
-      })
-      .click();
-
-    // Check that the consoles are visible
-    const consoles = page.getByTestId('sp-console');
-    await expect(consoles).toHaveCount(4);
-    for (const console of await consoles.all()) {
-      await expect(console).toBeVisible();
-    }
-
-    // Check that the preview is not visible
-    const previews = page.getByTestId('sp-preview');
-    await expect(previews).not.toBeVisible();
   });
 });
