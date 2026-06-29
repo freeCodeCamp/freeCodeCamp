@@ -1,8 +1,41 @@
 import { describe, it, expect } from 'vitest';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { transformEditorLink } from '../utils';
-import { insertEditableRegions } from './create-question-epic';
+import {
+  insertEditableRegions,
+  getGithubLinkBlock
+} from './create-question-epic';
 
 describe('create-question-epic', () => {
+  describe('getGithubLinkBlock', () => {
+    it('should map a JavaScript daily coding challenge to its language-specific block', () => {
+      expect(
+        getGithubLinkBlock(
+          'daily-coding-challenge',
+          challengeTypes.dailyChallengeJs
+        )
+      ).toBe('daily-coding-challenges-javascript');
+    });
+
+    it('should map a Python daily coding challenge to its language-specific block', () => {
+      expect(
+        getGithubLinkBlock(
+          'daily-coding-challenge',
+          challengeTypes.dailyChallengePy
+        )
+      ).toBe('daily-coding-challenges-python');
+    });
+
+    it('should leave a regular block unchanged', () => {
+      expect(
+        getGithubLinkBlock(
+          'learn-basic-javascript-by-building-a-role-playing-game',
+          challengeTypes.javascript
+        )
+      ).toBe('learn-basic-javascript-by-building-a-role-playing-game');
+    });
+  });
+
   describe('transformEditorLink', () => {
     const links = [
       {

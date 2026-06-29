@@ -316,7 +316,10 @@ function ShowClassic({
   // Show test
 
   useEffect(() => {
-    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+    if (
+      isPreFetchEnabled &&
+      (envData as { clientLocale: string }).clientLocale === 'espanol'
+    ) {
       preloadPage(nextChallengePath);
     }
   }, [nextChallengePath, isPreFetchEnabled]);
@@ -457,6 +460,9 @@ function ShowClassic({
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             instructions={renderInstructionsPanel({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
