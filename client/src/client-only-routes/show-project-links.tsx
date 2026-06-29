@@ -48,7 +48,7 @@ const mapDispatchToProps = {
   openModal
 };
 
-const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
+export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
