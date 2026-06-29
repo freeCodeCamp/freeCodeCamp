@@ -210,7 +210,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       where: { id: token.userId }
     });
     if (!user) return setAccessDenied(req, TOKEN_INVALID);
-    fastify.Sentry?.setUser({ id: user.id, email: user.email ?? undefined });
+    fastify.Sentry?.setUser({ id: user.id });
     req.user = user;
     req.log = reply.log = req.log.child({ userId: user.id });
   }
