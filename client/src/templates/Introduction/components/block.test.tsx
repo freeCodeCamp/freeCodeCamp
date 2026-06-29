@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, it, expect, afterEach, vi, Mock } from 'vitest';
 import type { TFunction } from 'i18next';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
@@ -105,6 +105,37 @@ const defaultProps = {
   removeModuleChallenges: vi.fn()
 };
 
+const rwdCatPhotoAppBlock = 'learn-html-by-building-a-cat-photo-app';
+
+const rwdCatPhotoAppTitle = 'Learn HTML by Building a Cat Photo App';
+
+const rwdCatPhotoAppIntro =
+  'HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.';
+
+const rwdT = vi.fn((key: string, options?: { returnObjects?: boolean }) => {
+  if (
+    key ===
+    `intro:${SuperBlocks.RespWebDesignNew}.blocks.${rwdCatPhotoAppBlock}.title`
+  ) {
+    return rwdCatPhotoAppTitle;
+  }
+
+  if (
+    key ===
+    `intro:${SuperBlocks.RespWebDesignNew}.blocks.${rwdCatPhotoAppBlock}.intro`
+  ) {
+    return options?.returnObjects ? [rwdCatPhotoAppIntro] : rwdCatPhotoAppIntro;
+  }
+
+  if (key === 'intro:misc-text.collapse') return 'Collapse';
+  if (key === 'intro:misc-text.expand') return 'Expand';
+  if (key === 'learn.not-started') return 'Not started';
+  if (key === 'learn.completed') return 'Completed';
+  if (key === 'learn.challenges-completed') return '0 of 1 complete';
+
+  return key;
+}) as unknown as TFunction;
+
 describe('<Block />', () => {
   afterEach(() => {
     vi.clearAllMocks();
@@ -156,6 +187,39 @@ describe('<Block />', () => {
     (isAuditedSuperBlock as Mock).mockReturnValue(false);
     render(<Block {...defaultProps} />);
     expect(screen.getByText(/misc.translation-pending/)).toBeInTheDocument();
+  });
+
+  it('renders Responsive Web Design block intro copy and delegates block toggling', () => {
+    const toggleBlock = vi.fn();
+
+    render(
+      <Block
+        {...defaultProps}
+        block={rwdCatPhotoAppBlock}
+        challenges={[
+          {
+            ...defaultProps.challenges[0],
+            blockLayout: BlockLayouts.ChallengeGrid,
+            id: 'rwd-cat-photo-app-step-1',
+            superBlock: SuperBlocks.RespWebDesignNew
+          }
+        ]}
+        completedChallengeIds={[]}
+        isExpanded={true}
+        superBlock={SuperBlocks.RespWebDesignNew}
+        t={rwdT}
+        toggleBlock={toggleBlock}
+      />
+    );
+
+    const toggleButton = screen.getByRole('button', { expanded: true });
+
+    expect(toggleButton).toHaveTextContent(rwdCatPhotoAppTitle);
+    expect(screen.getByText(rwdCatPhotoAppIntro)).toBeInTheDocument();
+
+    fireEvent.click(toggleButton);
+
+    expect(toggleBlock).toHaveBeenCalledWith(rwdCatPhotoAppBlock);
   });
 
   describe('Reset functionality', () => {
