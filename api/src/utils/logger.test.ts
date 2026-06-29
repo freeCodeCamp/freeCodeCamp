@@ -1,7 +1,7 @@
 import { Writable } from 'stream';
 import { pino, type Logger } from 'pino';
 import { describe, it, expect } from 'vitest';
-import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
+import { type FastifyReply, type FastifyRequest } from 'fastify';
 
 import { genReqId, getLoggerOptions, serializers } from './logger.js';
 
@@ -109,34 +109,6 @@ describe('serializers.res', () => {
     } as unknown as FastifyReply);
 
     expect(result).toEqual({ statusCode: 200 });
-  });
-});
-
-describe('request lifecycle logging integration', () => {
-  it('carries rebound child bindings on the request completed line', async () => {
-    const lines: string[] = [];
-    const sink = new Writable({
-      write(chunk: Buffer, _enc, cb) {
-        lines.push(chunk.toString());
-        cb();
-      }
-    });
-    const app = Fastify({
-      loggerInstance: pino(getLoggerOptions('info'), sink)
-    });
-    app.addHook('onRequest', (req, reply, done) => {
-      req.log = reply.log = req.log.child({ userId: 'user-42' });
-      done();
-    });
-    app.get('/me', () => ({ ok: true }));
-
-    await app.inject({ method: 'GET', url: '/me' });
-    await app.close();
-
-    const completed = lines
-      .map(line => JSON.parse(line) as Record<string, unknown>)
-      .find(entry => entry.msg === 'request completed');
-    expect(completed?.userId).toBe('user-42');
   });
 });
 

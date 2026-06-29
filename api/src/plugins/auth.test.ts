@@ -1,9 +1,12 @@
+import { Writable } from 'stream';
 import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
+import { pino } from 'pino';
 import jwt from 'jsonwebtoken';
 
 import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env.js';
 import { type Token, createAccessToken } from '../utils/tokens.js';
+import { getLoggerOptions } from '../utils/logger.js';
 import cookies, {
   sign as signCookie,
   unsign as unsignCookie
@@ -446,6 +449,46 @@ describe('auth', () => {
       expect(res.cookies).toHaveLength(0);
       expect(res.json()).toStrictEqual({ ok: true });
       expect(res.statusCode).toBe(200);
+    });
+  });
+
+  describe('request logging', () => {
+    test('binds the userId onto logs for authed requests', async () => {
+      const lines: string[] = [];
+      const sink = new Writable({
+        write(chunk: Buffer, _enc, cb) {
+          lines.push(chunk.toString());
+          cb();
+        }
+      });
+      const app = Fastify({
+        loggerInstance: pino(getLoggerOptions('info'), sink)
+      });
+      await app.register(cookies);
+      await app.register(auth);
+      const fakeUser = { id: 'user-42', username: 'test-user' };
+      // @ts-expect-error prisma isn't built in this minimal test app.
+      app.prisma = { user: { findUnique: () => fakeUser } };
+      app.addHook('onRequest', app.authorize);
+      app.get('/me', () => ({ ok: true }));
+
+      const token = jwt.sign(
+        { accessToken: createAccessToken('user-42') },
+        JWT_SECRET
+      );
+      await app.inject({
+        method: 'GET',
+        url: '/me',
+        cookies: {
+          jwt_access_token: signCookie(token)
+        }
+      });
+      await app.close();
+
+      const completed = lines
+        .map(line => JSON.parse(line) as Record<string, unknown>)
+        .find(entry => entry.msg === 'request completed');
+      expect(completed?.userId).toBe('user-42');
     });
   });
 });
