@@ -238,7 +238,7 @@ async function buildDOMChallenge(
   const pipeLine = composeFunctions(...transformers);
   const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
-  const contents = (await embedFilesInHtml(finalFiles)) as string;
+  const contents = (await embedFilesInHtml(finalFiles, options?.preview)) as string;
 
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.

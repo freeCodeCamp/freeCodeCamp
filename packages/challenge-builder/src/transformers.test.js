@@ -86,6 +86,32 @@ describe('embedFilesInHtml', () => {
     expect(script?.parentElement?.tagName).toBe('HEAD');
     expect(doc.body.lastElementChild?.id).toBe('app');
   });
+
+  it('emits preview warnings for invalid local stylesheet and script sources', async () => {
+    const result = await embedFilesInHtml(
+      [
+        {
+          fileKey: 'indexhtml',
+          contents:
+            '<!doctype html><html><head><link rel="stylesheet" href="style.css"></head><body><script src="app.js"></script></body></html>'
+        },
+        {
+          fileKey: 'stylescss',
+          contents: ''
+        },
+        {
+          fileKey: 'scriptjs',
+          contents: ''
+        }
+      ],
+      true
+    );
+
+    expect(result).toContain(
+      'console.warn("You have tried to source style.css'
+    );
+    expect(result).toContain('console.warn("You have tried to source app.js');
+  });
 });
 
 describe('embedScript', () => {

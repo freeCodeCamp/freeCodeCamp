@@ -280,12 +280,30 @@ export const embedScript = (script, source, contents) => {
 
 // This does the final transformations of the files needed to embed them into
 // HTML.
-export const embedFilesInHtml = async function (challengeFiles) {
+const validStylesheetSources = new Set(['styles.css', './styles.css']);
+const validScriptSources = new Set([
+  'script.js',
+  './script.js',
+  'index.ts',
+  './index.ts',
+  'index.jsx',
+  './index.jsx',
+  'index.tsx',
+  './index.tsx'
+]);
+
+const isRemoteSource = source => /^https?:\/\//i.test(source) || source.startsWith('//');
+const normalizeSource = source => source.replace(/^\.\//, '');
+const buildSourceWarning = source =>
+  `You have tried to source ${normalizeSource(source)}, but that does not exist. The only files that can be sourced are styles.css and script.js.`;
+
+export const embedFilesInHtml = async function (challengeFiles, preview = false) {
   const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs, indexTsx } =
     challengeFilesToObject(challengeFiles);
 
   const embedStylesAndScript = contentDocument => {
     const documentElement = contentDocument.documentElement;
+    const warnings = [];
 
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
@@ -314,6 +332,32 @@ export const embedFilesInHtml = async function (challengeFiles) {
         `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.tsx"]`
       );
 
+    if (preview && stylesCss) {
+      const invalidStylesheet = Array.from(
+        documentElement.querySelectorAll('link[rel="stylesheet"][href]')
+      ).find(candidate => {
+        const href = candidate.getAttribute('href') || '';
+        return !isRemoteSource(href) && !validStylesheetSources.has(href);
+      });
+
+      if (invalidStylesheet && !link) {
+        warnings.push(buildSourceWarning(invalidStylesheet.getAttribute('href')));
+      }
+    }
+
+    if (preview && scriptJs) {
+      const invalidScript = Array.from(
+        documentElement.querySelectorAll('script[src]')
+      ).find(candidate => {
+        const src = candidate.getAttribute('src') || '';
+        return !isRemoteSource(src) && !validScriptSources.has(src);
+      });
+
+      if (invalidScript && !script) {
+        warnings.push(buildSourceWarning(invalidScript.getAttribute('src')));
+      }
+    }
+
     if (link) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
@@ -340,6 +384,16 @@ export const embedFilesInHtml = async function (challengeFiles) {
       tsxScript.removeAttribute('type');
       tsxScript.setAttribute('data-type', 'text/babel');
     }
+
+    if (warnings.length) {
+      const warningScript = contentDocument.createElement('script');
+      warningScript.textContent = warnings
+        .map(message => `console.warn(${JSON.stringify(message)});`)
+        .join('\n');
+
+      documentElement.body?.appendChild(warningScript);
+    }
+
     return documentElement.innerHTML;
   };
 
