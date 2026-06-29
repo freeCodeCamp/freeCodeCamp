@@ -194,6 +194,9 @@ curriculum/dist
 curriculum/build
 curriculum/src/test/blocks-generated
 
+### Nested repo clone (should not be committed) ###
+freeCodeCamp/
+
 ### Playwright ###
 
 /playwright
