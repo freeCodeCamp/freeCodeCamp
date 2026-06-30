@@ -20,7 +20,7 @@ export const findOrCreateUser = async (
   });
   if (existingUser.length > 1) {
     const userIds = existingUser.map(user => user.id);
-    fastify.log.error({ userIds, email }, 'Multiple user records found');
+    fastify.log.error({ userIds }, 'Multiple user records found');
   }
 
   if (existingUser[0]) {

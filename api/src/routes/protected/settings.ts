@@ -206,7 +206,7 @@ Happy coding!
     },
     async (req, reply) => {
       if (req.validationError) {
-        req.log.warn({ email: req.body.email }, 'Invalid email format');
+        req.log.warn({ userId: req.user?.id }, 'Invalid email format');
         void reply.code(400);
         return { message: 'Email format is invalid', type: 'danger' } as const;
       }
@@ -854,7 +854,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
 
       const { origin } = getRedirectParams(req);
       if (!validator.default.isEmail(email)) {
-        req.log.warn({ email }, 'Invalid email format');
+        req.log.warn('Invalid email format');
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 

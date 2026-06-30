@@ -64,7 +64,7 @@ describe('findOrCreateUser', () => {
     await findOrCreateUser(fastify, email);
 
     expect(logError).toHaveBeenCalledWith(
-      { userIds, email },
+      { userIds },
       'Multiple user records found'
     );
   });
