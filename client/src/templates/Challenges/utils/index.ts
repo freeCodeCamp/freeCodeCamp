@@ -21,18 +21,6 @@ export function isGoodXHRStatus(status?: string): boolean {
   return (statusInt >= 200 && statusInt < 400) || statusInt === 402;
 }
 
-export function transformEditorLink(url: string): string {
-  return url
-    .replace(
-      /(\/\/)(?<projectname>[^.]+)\.(?<username>[^.]+)\.repl\.co\/?/,
-      '//replit.com/@$<username>/$<projectname>'
-    )
-    .replace(
-      /(\/\/)(?<projectname>[^.]+)\.glitch\.me\/?/,
-      '//glitch.com/edit/#!/$<projectname>'
-    );
-}
-
 // Adds region role and accessible name to PrismJS code blocks
 export function enhancePrismAccessibility(
   prismEnv: Prism.hooks.ElementHighlightedEnvironment

@@ -125,7 +125,6 @@ export interface EditorProps {
   isResetting: boolean;
   isSignedIn: boolean;
   isUsingKeyboardInTablist: boolean;
-  openHelpModal: () => void;
   openResetModal: () => void;
   resizeProps: ResizeProps;
   saveChallenge: () => void;
@@ -228,7 +227,6 @@ const mapDispatchToProps = {
   initTests,
   stopResetting,
   resetAttempts,
-  openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset')
 };
 
@@ -1482,7 +1480,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       {lowerJawContainer !== null &&
         createPortal(
           <LowerJaw
-            openHelpModal={props.openHelpModal}
             openResetModal={props.openResetModal}
             tryToExecuteChallenge={tryToExecuteChallenge}
             hint={firstFailedTest?.message}

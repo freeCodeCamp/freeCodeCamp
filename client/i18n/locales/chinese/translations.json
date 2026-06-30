@@ -1,4 +1,9 @@
 {
+  "404": {
+    "page-not-found": "未找到页面",
+    "not-found": "404 未找到：",
+    "heres-a-quote": "我们未找到你搜索的信息。这里分享一句名言："
+  },
   "buttons": {
     "logged-in-cta-btn": "开始学习（免费）",
     "get-started": "开始",
@@ -52,8 +57,6 @@
     "check-answer": "查看你的答案",
     "submit": "提交",
     "get-hint": "获得提示",
-    "ask-for-help": "请求帮助",
-    "create-post": "在论坛发帖请求帮助",
     "cancel": "取消",
     "reset-lesson": "重置课程",
     "revert": "恢复",
@@ -579,15 +582,6 @@
     "download-results": "下载我的结果",
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成",
-    "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
-    "read-search-ask-checkbox": "我已经尝试了 <0>Read-Search-Ask</0> 方法",
-    "similar-questions-checkbox": "我已经<0>在论坛上搜索了类似的问题和相应的答案</0>",
-    "minimum-characters": "请至少再用 {{characters}} 个字符进行描述",
-    "characters-left": "你可以在查询中再添加 {{characters}} 个字符",
-    "must-confirm-statements": "在向论坛提交帖子之前，你必须确认以下事项。",
-    "min-50-max-500": "最少 50 个字符，最多 500 个字符",
-    "rsa": "阅读，搜索，提问",
-    "rsa-forum": "<strong>在发布新帖子之前</strong> ，请<0>查看你的问题是否已经在论坛上被回答过</0>。",
     "reset": "重置这一节课程？",
     "reset-warn": "你确定要重置此课程（{{title}}）吗？代码编辑器和测试都将被重置。",
     "reset-warn-2": "这个操作不可撤销。",
@@ -969,11 +963,6 @@
     "what": "你想举报什么？",
     "submit": "提交举报"
   },
-  "404": {
-    "page-not-found": "未找到页面",
-    "not-found": "404 未找到：",
-    "heres-a-quote": "我们未找到你搜索的信息。这里分享一句名言："
-  },
   "search": {
     "label": "搜索",
     "placeholder": {
@@ -1085,8 +1074,6 @@
     "dialogues-and-tasks-for": "{{blockTitle}} 的对话和任务",
     "code-example": "{{codeName}} 代码示例",
     "opens-new-window": "在新窗口打开",
-    "rsa-checkbox": "我已经尝试了 Read-Search-Ask（阅读-搜索-提问）方法",
-    "similar-questions-checkbox": "我已经在论坛上搜索了类似的问题和相应的答案",
     "edit-my-profile": "编辑我的个人资料",
     "add-portfolio": "Add portfolio project",
     "edit-portfolio": "Edit portfolio project",
@@ -1465,23 +1452,6 @@
     "set-certs-public": "将你的认证设置为公开",
     "set-profile-public": "将你的个人资料设置为公开",
     "set-claim": "领取并查看你的认证"
-  },
-  "forum-help": {
-    "browser-info": "你的浏览器信息：",
-    "user-agent": "用户代理是： <code>{{userAgent}}</code>",
-    "challenge": "挑战信息：",
-    "whats-happening": "告诉我们发生了什么：",
-    "describe": "在此详细描述你的问题。例如：\n我的 h1 元素缺少一个开始标签。需要帮助检查我的代码。\n或者\n我的 for 循环无限运行。如何避免？",
-    "camper-project": "你的项目链接",
-    "camper-code": "到目前为止你的代码",
-    "warning": "警告",
-    "too-long-one": "挑战的种子代码和/或你的解决方案超过了我们从挑战传送的最大长度。",
-    "too-long-two": "你需要在此采取额外步骤，以确保你写的代码可以轻松地被阅读。",
-    "too-long-three": "请复制/粘贴所有在挑战中编辑器所显示的代码。",
-    "add-code-one": "用你的复制代码替换这两句。",
-    "add-code-two": "请保留上方的 ``` 行和下方的 ``` 行",
-    "add-code-three": "因为它们允许你的代码在帖子中被正确格式化。",
-    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用户令牌",

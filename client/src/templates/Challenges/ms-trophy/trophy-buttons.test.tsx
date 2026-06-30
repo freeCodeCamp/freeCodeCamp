@@ -5,14 +5,12 @@ import { describe, expect, test, vi } from 'vitest';
 import TrophyButtons from './trophy-buttons';
 
 describe('TrophyButtons', () => {
-  test('renders trophy verification and help buttons', () => {
-    const onAskForHelp = vi.fn();
+  test('renders trophy verification button', () => {
     const onVerifyTrophy = vi.fn();
 
     render(
       <TrophyButtons
         disabled={false}
-        onAskForHelp={onAskForHelp}
         onVerifyTrophy={onVerifyTrophy}
       />
     );
@@ -20,19 +18,14 @@ describe('TrophyButtons', () => {
     fireEvent.click(
       screen.getByRole('button', { name: 'buttons.verify-trophy' })
     );
-    fireEvent.click(
-      screen.getByRole('button', { name: 'buttons.ask-for-help' })
-    );
 
     expect(onVerifyTrophy).toHaveBeenCalledTimes(1);
-    expect(onAskForHelp).toHaveBeenCalledTimes(1);
   });
 
   test('disables trophy verification while unavailable', () => {
     render(
       <TrophyButtons
         disabled={true}
-        onAskForHelp={vi.fn()}
         onVerifyTrophy={vi.fn()}
       />
     );
@@ -40,8 +33,5 @@ describe('TrophyButtons', () => {
     expect(
       screen.getByRole('button', { name: 'buttons.verify-trophy' })
     ).toHaveAttribute('aria-disabled', 'true');
-    expect(
-      screen.getByRole('button', { name: 'buttons.ask-for-help' })
-    ).toBeEnabled();
   });
 });

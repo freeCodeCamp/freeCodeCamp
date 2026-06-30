@@ -8,7 +8,6 @@ import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
 import { randomCompliment } from '../../../../src/utils/get-words';
-import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import { apiLocation } from '../../../../config/env.json';
@@ -25,10 +24,7 @@ import callGA from '../../../analytics/call-ga';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
-  helpButtonText: string;
   resetButtonEvent: () => void;
-  helpButtonEvent: () => void;
-  hideHelpButton: boolean;
   showShareButton: boolean;
 }
 
@@ -51,7 +47,6 @@ interface LowerJawProps {
   completedPercent: number;
   hint?: string;
   challengeIsCompleted: boolean;
-  openHelpModal: () => void;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
   testsLength?: number;
@@ -84,10 +79,7 @@ const sentencePicker = (shownAttempts: number) => {
 
 const LowerButtonsPanel = ({
   resetButtonText,
-  helpButtonText,
   resetButtonEvent,
-  hideHelpButton,
-  helpButtonEvent,
   showShareButton,
   superBlock,
   block
@@ -111,17 +103,6 @@ const LowerButtonsPanel = ({
             <Reset />
             {resetButtonText}
           </Button>
-
-          {hideHelpButton && (
-            <Button
-              className='fade-in'
-              id='get-help-button'
-              onClick={helpButtonEvent}
-            >
-              <Help />
-              {helpButtonText}
-            </Button>
-          )}
         </div>
       </div>
     </>
@@ -188,7 +169,6 @@ const isBlockCompleted = 100;
 const LowerJaw = ({
   challengeMeta: { superBlock, block },
   completedPercent,
-  openHelpModal,
   challengeIsCompleted,
   hint,
   tryToExecuteChallenge,
@@ -403,12 +383,7 @@ const LowerJaw = ({
       )}
       <LowerButtonsPanel
         resetButtonText={t('buttons.reset')}
-        helpButtonText={t('buttons.help')}
         resetButtonEvent={openResetModal}
-        hideHelpButton={Boolean(
-          isAttemptsLargerThanTest && !challengeIsCompleted
-        )}
-        helpButtonEvent={openHelpModal}
         showShareButton={showShareButton}
         superBlock={superBlock}
         block={block}

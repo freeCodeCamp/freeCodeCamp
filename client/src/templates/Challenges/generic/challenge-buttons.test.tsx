@@ -6,13 +6,11 @@ import GenericChallengeButtons from './challenge-buttons';
 
 describe('GenericChallengeButtons', () => {
   test('renders check answer and help buttons for question challenges', () => {
-    const onHelp = vi.fn();
     const onSubmit = vi.fn();
 
     render(
       <GenericChallengeButtons
         hasQuestions={true}
-        onHelp={onHelp}
         onSubmit={onSubmit}
       />
     );
@@ -20,19 +18,14 @@ describe('GenericChallengeButtons', () => {
     fireEvent.click(
       screen.getByRole('button', { name: 'buttons.check-answer' })
     );
-    fireEvent.click(
-      screen.getByRole('button', { name: 'buttons.ask-for-help' })
-    );
 
     expect(onSubmit).toHaveBeenCalledTimes(1);
-    expect(onHelp).toHaveBeenCalledTimes(1);
   });
 
   test('renders submit for challenges without questions', () => {
     render(
       <GenericChallengeButtons
         hasQuestions={false}
-        onHelp={vi.fn()}
         onSubmit={vi.fn()}
       />
     );

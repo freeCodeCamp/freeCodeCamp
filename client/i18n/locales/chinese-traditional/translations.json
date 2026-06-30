@@ -1,4 +1,9 @@
 {
+  "404": {
+    "page-not-found": "未找到頁面",
+    "not-found": "404 未找到：",
+    "heres-a-quote": "我們未找到你搜索的信息。這裏分享一句名言："
+  },
   "buttons": {
     "logged-in-cta-btn": "開始學習（免費）",
     "get-started": "開始",
@@ -52,8 +57,6 @@
     "check-answer": "查看你的答案",
     "submit": "提交",
     "get-hint": "獲得提示",
-    "ask-for-help": "請求幫助",
-    "create-post": "在論壇發帖請求幫助",
     "cancel": "取消",
     "reset-lesson": "重置課程",
     "revert": "恢復",
@@ -579,15 +582,6 @@
     "download-results": "下載我的結果",
     "percent-complete": "完成 {{percent}}%",
     "project-complete": "已完成",
-    "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
-    "read-search-ask-checkbox": "我已經嘗試了 <0>Read-Search-Ask</0> 方法",
-    "similar-questions-checkbox": "我已經<0>在論壇上搜索了類似的問題和相應的答案</0>",
-    "minimum-characters": "請至少再用 {{characters}} 個字符進行描述",
-    "characters-left": "你可以在查詢中再添加 {{characters}} 個字符",
-    "must-confirm-statements": "在向論壇提交帖子之前，你必須確認以下事項。",
-    "min-50-max-500": "最少 50 個字符，最多 500 個字符",
-    "rsa": "閱讀，搜索，提問",
-    "rsa-forum": "<strong>在發佈新帖子之前</strong> ，請<0>查看你的問題是否已經在論壇上被回答過</0>。",
     "reset": "重置這一節課程？",
     "reset-warn": "你確定要重置此課程（{{title}}）嗎？代碼編輯器和測試都將被重置。",
     "reset-warn-2": "這個操作不可撤銷。",
@@ -969,11 +963,6 @@
     "what": "你想舉報什麼？",
     "submit": "提交舉報"
   },
-  "404": {
-    "page-not-found": "未找到頁面",
-    "not-found": "404 未找到：",
-    "heres-a-quote": "我們未找到你搜索的信息。這裏分享一句名言："
-  },
   "search": {
     "label": "搜索",
     "placeholder": {
@@ -1085,8 +1074,6 @@
     "dialogues-and-tasks-for": "{{blockTitle}} 的對話和任務",
     "code-example": "{{codeName}} 代碼示例",
     "opens-new-window": "在新窗口打開",
-    "rsa-checkbox": "我已經嘗試了 Read-Search-Ask（閱讀-搜索-提問）方法",
-    "similar-questions-checkbox": "我已經在論壇上搜索了類似的問題和相應的答案",
     "edit-my-profile": "編輯我的個人資料",
     "add-portfolio": "Add portfolio project",
     "edit-portfolio": "Edit portfolio project",
@@ -1465,23 +1452,6 @@
     "set-certs-public": "將你的認證設置爲公開",
     "set-profile-public": "將你的個人資料設置爲公開",
     "set-claim": "領取並查看你的認證"
-  },
-  "forum-help": {
-    "browser-info": "你的瀏覽器信息：",
-    "user-agent": "用戶代理是： <code>{{userAgent}}</code>",
-    "challenge": "挑戰信息：",
-    "whats-happening": "告訴我們發生了什麼：",
-    "describe": "在此詳細描述你的問題。例如：\n我的 h1 元素缺少一個開始標籤。需要幫助檢查我的代碼。\n或者\n我的 for 循環無限運行。如何避免？",
-    "camper-project": "你的項目鏈接",
-    "camper-code": "到目前爲止你的代碼",
-    "warning": "警告",
-    "too-long-one": "挑戰的種子代碼和/或你的解決方案超過了我們從挑戰傳送的最大長度。",
-    "too-long-two": "你需要在此採取額外步驟，以確保你寫的代碼可以輕鬆地被閱讀。",
-    "too-long-three": "請複製/粘貼所有在挑戰中編輯器所顯示的代碼。",
-    "add-code-one": "用你的複製代碼替換這兩句。",
-    "add-code-two": "請保留上方的 ``` 行和下方的 ``` 行",
-    "add-code-three": "因爲它們允許你的代碼在帖子中被正確格式化。",
-    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "用戶令牌",

@@ -38,7 +38,6 @@ export const isChallengeCompletedSelector = createSelector(
 export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
-export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isExitExamModalOpenSelector = state => state[ns].modal.exitExam;
