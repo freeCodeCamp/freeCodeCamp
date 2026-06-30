@@ -25,7 +25,6 @@ export const shouldSendLog = (
 ): boolean => {
   if (DROPPED_LOG_MESSAGES.has(log.message)) return false;
   if (log.level !== 'info') return true;
-  if (log.attributes?.email != null) return true;
   const route = routeOf(log);
   const rate =
     (route !== undefined ? ROUTE_LOG_SAMPLE_RATES[route] : undefined) ??

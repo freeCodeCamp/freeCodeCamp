@@ -47,16 +47,6 @@ describe('shouldSendLog', () => {
     ).toBe(true);
   });
 
-  it('keeps info logs carrying an email attribute', () => {
-    expect(
-      shouldSendLog(
-        makeLog({ attributes: { email: 'foo@bar.com' } }),
-        0,
-        () => 0.99
-      )
-    ).toBe(true);
-  });
-
   it('drops info logs from suppressed routes regardless of the global rate', () => {
     expect(
       shouldSendLog(
