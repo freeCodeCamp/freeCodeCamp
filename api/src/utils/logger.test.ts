@@ -1,9 +1,14 @@
 import { Writable } from 'stream';
 import { pino, type Logger } from 'pino';
 import { describe, it, expect } from 'vitest';
-import { type FastifyReply, type FastifyRequest } from 'fastify';
+import Fastify, { type FastifyReply, type FastifyRequest } from 'fastify';
 
-import { genReqId, getLoggerOptions, serializers } from './logger.js';
+import {
+  bindRouteToLogger,
+  genReqId,
+  getLoggerOptions,
+  serializers
+} from './logger.js';
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -109,6 +114,31 @@ describe('serializers.res', () => {
     } as unknown as FastifyReply);
 
     expect(result).toEqual({ statusCode: 200 });
+  });
+});
+
+describe('bindRouteToLogger', () => {
+  it('binds the matched route onto request logs', async () => {
+    const lines: string[] = [];
+    const sink = new Writable({
+      write(chunk: Buffer, _enc, cb) {
+        lines.push(chunk.toString());
+        cb();
+      }
+    });
+    const app = Fastify({
+      loggerInstance: pino(getLoggerOptions('info'), sink)
+    });
+    app.addHook('onRequest', bindRouteToLogger);
+    app.get('/widgets/:id', () => ({ ok: true }));
+
+    await app.inject({ method: 'GET', url: '/widgets/42' });
+    await app.close();
+
+    const completed = lines
+      .map(line => JSON.parse(line) as Record<string, unknown>)
+      .find(entry => entry.msg === 'request completed');
+    expect(completed?.route).toBe('/widgets/:id');
   });
 });
 

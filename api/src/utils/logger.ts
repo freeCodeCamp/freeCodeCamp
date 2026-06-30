@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
 import * as Sentry from '@sentry/node';
-import { FastifyRequest, FastifyReply } from 'fastify';
+import { FastifyRequest, FastifyReply, HookHandlerDoneFunction } from 'fastify';
 import { isEmpty } from 'lodash-es';
 import type { Logger, LoggerOptions } from 'pino';
 import { pino } from 'pino';
@@ -77,6 +77,25 @@ export const getLoggerOptions = (level: string): LoggerOptions => ({
     censor: '[REDACTED]'
   }
 });
+
+/**
+ * Bind the matched route onto the request logger so per-route policies apply.
+ *
+ * @param req The incoming request.
+ * @param reply The reply whose logger is rebound alongside the request logger.
+ * @param done The hook completion callback.
+ */
+export const bindRouteToLogger = (
+  req: FastifyRequest,
+  reply: FastifyReply,
+  done: HookHandlerDoneFunction
+): void => {
+  const route = req.routeOptions?.url;
+  if (route) {
+    req.log = reply.log = req.log.child({ route });
+  }
+  done();
+};
 
 /**
  * Get a logger instance.

@@ -46,7 +46,7 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
 import { isObjectID } from './utils/validation.js';
-import { genReqId, getLogger } from './utils/logger.js';
+import { bindRouteToLogger, genReqId, getLogger } from './utils/logger.js';
 import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
@@ -108,13 +108,7 @@ export const build = async (
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
-  fastify.addHook('onRequest', (req, reply, done) => {
-    const route = req.routeOptions?.url;
-    if (route) {
-      req.log = reply.log = req.log.child({ route });
-    }
-    done();
-  });
+  fastify.addHook('onRequest', bindRouteToLogger);
 
   void fastify.register(redirectWithMessage);
   void fastify.register(security);
