@@ -108,6 +108,14 @@ export const build = async (
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
 
+  fastify.addHook('onRequest', (req, reply, done) => {
+    const route = req.routeOptions?.url;
+    if (route) {
+      req.log = reply.log = req.log.child({ route });
+    }
+    done();
+  });
+
   void fastify.register(redirectWithMessage);
   void fastify.register(security);
   void fastify.register(fastifyAccepts);

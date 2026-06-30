@@ -1,9 +1,14 @@
 import type { Log } from '@sentry/node';
 
-export const REQUEST_LIFECYCLE_MESSAGES = new Set([
-  'incoming request',
-  'request completed'
-]);
+const DROPPED_LOG_MESSAGES = new Set(['incoming request']);
+
+const ROUTE_LOG_SAMPLE_RATES: Record<string, number> = {
+  '/user/session-user': 0,
+  '/status/ping': 0
+};
+
+const routeOf = (log: Log): string | undefined =>
+  typeof log.attributes?.route === 'string' ? log.attributes.route : undefined;
 
 /**
  * Decide whether a log should be forwarded to Sentry.
@@ -18,10 +23,14 @@ export const shouldSendLog = (
   infoSampleRate: number,
   rng: () => number
 ): boolean => {
-  if (REQUEST_LIFECYCLE_MESSAGES.has(log.message)) return false;
+  if (DROPPED_LOG_MESSAGES.has(log.message)) return false;
   if (log.level !== 'info') return true;
   if (log.attributes?.email != null) return true;
-  return rng() < infoSampleRate;
+  const route = routeOf(log);
+  const rate =
+    (route !== undefined ? ROUTE_LOG_SAMPLE_RATES[route] : undefined) ??
+    infoSampleRate;
+  return rng() < rate;
 };
 
 const REDUNDANT_LOG_ATTRIBUTES = ['msg', 'pino.logger.level'] as const;

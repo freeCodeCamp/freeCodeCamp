@@ -15,13 +15,13 @@ const makeLog = (overrides: Partial<Log> = {}): Log => ({
 });
 
 describe('shouldSendLog', () => {
-  it('drops request lifecycle messages regardless of level', () => {
+  it('drops the incoming request message regardless of level', () => {
     expect(
       shouldSendLog(makeLog({ message: 'incoming request' }), 1, () => 0)
     ).toBe(false);
     expect(
       shouldSendLog(
-        makeLog({ message: 'request completed', level: 'error' }),
+        makeLog({ message: 'incoming request', level: 'error' }),
         1,
         () => 0
       )
@@ -34,6 +34,19 @@ describe('shouldSendLog', () => {
     }
   });
 
+  it('keeps non-info levels even on a suppressed route', () => {
+    expect(
+      shouldSendLog(
+        makeLog({
+          level: 'error',
+          attributes: { route: '/user/session-user' }
+        }),
+        0,
+        () => 0.99
+      )
+    ).toBe(true);
+  });
+
   it('keeps info logs carrying an email attribute', () => {
     expect(
       shouldSendLog(
@@ -44,12 +57,36 @@ describe('shouldSendLog', () => {
     ).toBe(true);
   });
 
-  it('samples info logs without an email attribute', () => {
+  it('drops info logs from suppressed routes regardless of the global rate', () => {
+    expect(
+      shouldSendLog(
+        makeLog({ attributes: { route: '/user/session-user' } }),
+        1,
+        () => 0
+      )
+    ).toBe(false);
+  });
+
+  it('samples info logs from other routes at the global rate', () => {
+    expect(
+      shouldSendLog(
+        makeLog({ attributes: { route: '/some/route' } }),
+        0.1,
+        () => 0.05
+      )
+    ).toBe(true);
+    expect(
+      shouldSendLog(
+        makeLog({ attributes: { route: '/some/route' } }),
+        0.1,
+        () => 0.1
+      )
+    ).toBe(false);
+  });
+
+  it('samples info logs without a route at the global rate', () => {
     expect(shouldSendLog(makeLog(), 0.1, () => 0.05)).toBe(true);
     expect(shouldSendLog(makeLog(), 0.1, () => 0.1)).toBe(false);
-    expect(
-      shouldSendLog(makeLog({ attributes: { userId: 'abc' } }), 0.1, () => 0.99)
-    ).toBe(false);
   });
 });
 
