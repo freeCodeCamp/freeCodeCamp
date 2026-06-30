@@ -57,6 +57,7 @@ import {
 import { Answer } from '../../utils/exam-types.js';
 import type { getSessionUser } from '../../schemas/user/get-session-user.js';
 import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
+import { encodeUserToken } from '../../utils/tokens.js';
 
 const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
 
@@ -260,9 +261,45 @@ describe('challengeRoutes', () => {
         expect(response.status).toBe(400);
       });
 
-      test('should return 400 if invalid user token', async () => {
+      test('should return 400 if the token is valid, but has no userToken property', async () => {
+        // @ts-expect-error TS is trying to protect us, but we need to test this
+        // edge case.
+        const emptyToken = encodeUserToken(undefined);
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', emptyToken)
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+
+        expect(response.body).toEqual({
+          msg: 'invalid user token',
+          type: 'error'
+        });
+        expect(response.status).toBe(400);
+      });
+
+      test('should return 400 for invalid user tokens', async () => {
         const response = await superPost('/coderoad-challenge-completed')
           .set('coderoad-user-token', 'invalid')
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+        expect(response.body).toEqual({
+          msg: 'invalid user token',
+          type: 'error'
+        });
+        expect(response.status).toBe(400);
+      });
+
+      test('should return 400 for nonsensical user tokens', async () => {
+        // @ts-expect-error TS is trying to protect us, but we need to test this
+        // edge case.
+        const weirdToken = encodeUserToken({});
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', weirdToken)
           .send({
             tutorialId:
               'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
