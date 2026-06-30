@@ -2401,6 +2401,12 @@
           "In these lectures, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
         ]
       },
+      "workshop-sensor-burst-analyzer": {
+        "title": "Sensor Burst Analyzer",
+        "intro": [
+          "In this workshop, you will analyze nested arrays of sensor bursts using common array methods to extract windows of data, detect silence, locate readings, fix faulty data, and combine sensor datasets."
+        ]
+      },
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
