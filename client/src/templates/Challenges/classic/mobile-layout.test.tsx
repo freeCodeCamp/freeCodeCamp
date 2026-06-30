@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import { MobileLayout } from './mobile-layout';
 
@@ -44,10 +45,6 @@ vi.mock('../redux/selectors', () => ({
 
 vi.mock('../components/preview-portal', () => ({
   default: () => <div>Preview Portal</div>
-}));
-
-vi.mock('../components/notes', () => ({
-  default: () => <div>Notes</div>
 }));
 
 vi.mock('./editor-tabs', () => ({
@@ -112,5 +109,22 @@ describe('<MobileLayout />', () => {
     fireEvent.click(screen.getByText('Python'));
 
     expect(setDailyCodingChallengeLanguage).toHaveBeenCalledWith('python');
+  });
+
+  it('renders notes in the notes tab for multifile editor challenges', async () => {
+    const user = userEvent.setup();
+    render(
+      <MobileLayout
+        {...mockProps}
+        notes='<p>This is a test note</p>'
+        usesMultifileEditor={true}
+      />
+    );
+
+    await user.click(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.notes' })
+    );
+
+    expect(screen.getByText('This is a test note')).toBeVisible();
   });
 });
