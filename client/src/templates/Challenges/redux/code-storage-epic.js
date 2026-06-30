@@ -13,7 +13,7 @@ import {
   getDailyCodingChallengeLanguage
 } from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes } from './action-types';
-import { noStoredCodeFound, updateFile } from './actions';
+import { createFiles, noStoredCodeFound, updateFile } from './actions';
 import { challengeFilesSelector, challengeMetaSelector } from './selectors';
 
 const legacyPrefixes = [
@@ -94,7 +94,8 @@ function saveCodeEpic(action$, state$) {
     // do not save challenge if code is locked
     map(action => {
       const state = state$.value;
-      const { id, challengeType } = challengeMetaSelector(state);
+      const { id, challengeType, saveSubmissionToDB } =
+        challengeMetaSelector(state);
       const challengeFiles = challengeFilesSelector(state);
       try {
         const isDailyCodingChallenge = getIsDailyCodingChallenge(challengeType);
@@ -114,21 +115,27 @@ function saveCodeEpic(action$, state$) {
         ) {
           throw Error('Failed to save to localStorage');
         }
-        return action;
+        return { ...action, challengeFiles, saveSubmissionToDB };
       } catch {
         return { ...action, error: true };
       }
     }),
     ofType(actionTypes.saveEditorContent),
-    switchMap(({ error }) =>
-      of(
-        createFlashMessage({
-          type: error ? 'warning' : 'success',
-          message: error
-            ? FlashMessages.LocalCodeSaveError
-            : FlashMessages.LocalCodeSaved
-        })
-      )
+    switchMap(({ challengeFiles, error, saveSubmissionToDB }) =>
+      error
+        ? of(
+            createFlashMessage({
+              type: 'warning',
+              message: FlashMessages.LocalCodeSaveError
+            })
+          )
+        : of(
+            ...(saveSubmissionToDB ? [createFiles(challengeFiles)] : []),
+            createFlashMessage({
+              type: 'success',
+              message: FlashMessages.LocalCodeSaved
+            })
+          )
     )
   );
 }

@@ -44,6 +44,7 @@ const initialState = {
     video: false,
     reset: false,
     exitExam: false,
+    exitProject: false,
     finishExam: false,
     exitQuiz: false,
     finishQuiz: false,

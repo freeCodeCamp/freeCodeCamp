@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -54,6 +54,7 @@ import {
   initVisibleEditors,
   previewMounted,
   updateChallengeMeta,
+  closeModal,
   openModal,
   setEditorFocusability,
   setIsAdvancing
@@ -70,11 +71,13 @@ import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import { usePageLeave } from '../hooks';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
 import { mergeChallengeFiles } from './saved-challenges';
+import ExitProjectModal from './exit-project-modal';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -99,6 +102,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       executeChallenge,
       cancelTests,
       previewMounted,
+      closeExitProjectModal: () => closeModal('exitProject'),
       openModal,
       setEditorFocusability,
       setIsAdvancing
@@ -124,6 +128,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  closeExitProjectModal: () => void;
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
   ) => void;
@@ -145,6 +150,11 @@ interface RenderEditorArgs {
   isMobileLayout: boolean;
   isUsingKeyboardInTablist: boolean;
 }
+
+type ChallengeFileWithSeed = {
+  contents: string;
+  seed?: string;
+};
 
 const REFLEX_LAYOUT = 'challenge-layout';
 const BASE_LAYOUT = {
@@ -227,6 +237,7 @@ function ShowClassic({
   setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
+  closeExitProjectModal,
   setIsAdvancing,
   savedChallenges,
   isChallengeCompleted,
@@ -241,6 +252,10 @@ function ShowClassic({
   const editorRef = useRef<editor.IStandaloneCodeEditor>();
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
   const xtermFitRef = useRef<FitAddon | null>(null);
+  const exitProjectConfirmed = useRef(false);
+  const [exitProjectPathname, setExitProjectPathname] = useState(
+    challengeMeta.prevChallengePath || '/learn'
+  );
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
@@ -312,8 +327,51 @@ function ShowClassic({
   const showIndependentLowerJaw = !isMobile;
 
   const showSidePanelTests = isMobile || !hasEditableBoundaries;
+  const hasUnsavedProjectFiles =
+    !!saveSubmissionToDB &&
+    challengeFiles?.some(file => {
+      const { contents, seed } = file as ChallengeFileWithSeed;
+      return seed !== undefined && contents !== seed;
+    });
+
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
+      if (!hasUnsavedProjectFiles || exitProjectConfirmed.current) return;
+
+      event.preventDefault();
+      event.returnValue = t('misc.navigation-warning');
+    },
+    [hasUnsavedProjectFiles, t]
+  );
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string): boolean => {
+      if (!hasUnsavedProjectFiles || exitProjectConfirmed.current) {
+        return false;
+      }
+
+      setExitProjectPathname(
+        targetPathname || challengeMeta.prevChallengePath || '/learn'
+      );
+      openModal('exitProject');
+      return true;
+    },
+    [challengeMeta.prevChallengePath, hasUnsavedProjectFiles, openModal]
+  );
+
+  const exitProject = () => {
+    exitProjectConfirmed.current = true;
+    closeExitProjectModal();
+    void navigate(exitProjectPathname);
+  };
 
   // Show test
+
+  usePageLeave({
+    enabled: !!hasUnsavedProjectFiles,
+    onWindowClose,
+    onHistoryChange
+  });
 
   useEffect(() => {
     if (
@@ -548,6 +606,7 @@ function ShowClassic({
               : t('learn.project-preview-title')
           }
         />
+        <ExitProjectModal onExit={exitProject} />
         <ShortcutsModal />
         <MobileAppModal superBlock={superBlock} />
       </LearnLayout>

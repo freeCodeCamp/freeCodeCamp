@@ -737,6 +737,11 @@
       "exit-modal-yes": "Yes, I want to leave the quiz",
       "exit-modal-no": "No, I would like to continue the quiz"
     },
+    "project": {
+      "exit-modal-header": "Leave Project",
+      "exit-modal-yes": "Yes, leave the project",
+      "exit-modal-no": "No, continue coding"
+    },
     "exam": {
       "qualified": "Congratulations, you have completed all the requirements to qualify for the exam.",
       "not-qualified": "You have not met the requirements to be eligible for the exam. To qualify, please complete the following challenges:",
