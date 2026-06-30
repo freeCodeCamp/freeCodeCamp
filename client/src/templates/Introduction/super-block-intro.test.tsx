@@ -86,6 +86,13 @@ const translationMap: Record<string, unknown> = {
     intro: ['Create responsive layouts across devices.'],
     note: ''
   },
+  'intro:2022/responsive-web-design': {
+    title: 'Legacy Responsive Web Design V8',
+    intro: [
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
+    ],
+    note: ''
+  },
   'intro:a2-english-for-developers': {
     title: 'A2 English for Developers',
     intro: ['Learn workplace English at the A2 level.'],
@@ -451,6 +458,23 @@ describe('SuperBlockIntroductionPage', () => {
     expect(
       await screen.findByText(
         "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
+      )
+    ).toBeInTheDocument();
+  });
+
+  it('renders the Legacy Responsive Web Design V8 page title and intro copy', async () => {
+    const superBlock = SuperBlocks.RespWebDesignNew;
+    const setup = createSetup(superBlock);
+    const props = createPageProps(setup, superBlock);
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    expect(
+      screen.getByText('Legacy Responsive Web Design V8 | freeCodeCamp.org')
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText(
+        "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
       )
     ).toBeInTheDocument();
   });
