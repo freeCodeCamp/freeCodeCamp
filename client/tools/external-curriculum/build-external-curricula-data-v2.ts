@@ -129,10 +129,11 @@ export function getCurriculumLocale(): Languages {
 }
 
 export function readCurriculumIntros(lang: Languages): CurriculumIntros {
-  const blockIntroPath = resolve(
-    __dirname,
-    `../../../client/i18n/locales/${lang}/intro.json`
-  );
+  const path =
+    lang === Languages.English
+      ? `../../../client/i18n/locales/${lang}/intro.json`
+      : `../../../curriculum/i18n-curriculum/client/${lang}/intro.json`;
+  const blockIntroPath = resolve(__dirname, path);
 
   return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as CurriculumIntros;
 }

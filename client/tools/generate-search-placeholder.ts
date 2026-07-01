@@ -24,19 +24,22 @@ i18n
       escapeValue: false
     },
     initImmediate: false,
-    preload: readdirSync(join(__dirname, '../i18n/locales')).filter(
-      fileName => {
-        const joinedPath = join(join(__dirname, '../i18n/locales'), fileName);
-        const isDirectory = lstatSync(joinedPath).isDirectory();
-        return isDirectory;
-      }
-    ),
+    preload: readdirSync(
+      join(__dirname, '../../curriculum/i18n-curriculum/client')
+    ).filter(fileName => {
+      const joinedPath = join(
+        join(__dirname, '../../curriculum/i18n-curriculum/client'),
+        fileName
+      );
+      const isDirectory = lstatSync(joinedPath).isDirectory();
+      return isDirectory;
+    }),
     lng: i18nextCode,
     ns: ['translations'],
     backend: {
       loadPath: resolve(
         __dirname,
-        `../i18n/locales/${clientLocale}/translations.json`
+        `../../curriculum/i18n-curriculum/client/${clientLocale}/translations.json`
       )
     }
   })
