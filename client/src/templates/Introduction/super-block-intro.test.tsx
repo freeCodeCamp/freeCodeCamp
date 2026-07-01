@@ -96,6 +96,13 @@ const translationMap: Record<string, unknown> = {
     intro: ['Learn the libraries developers use to build webpages.'],
     note: ''
   },
+  'intro:coding-interview-prep': {
+    title: 'Coding Interview Prep',
+    intro: [
+      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
+    ],
+    note: ''
+  },
   'misc.fsd-b-cta': 'Start Learning',
   'misc.continue-learning': 'Continue Learning',
   'donate.consider-donating':
@@ -431,6 +438,23 @@ const scenariosWithoutCta = scenarios.filter(
 );
 
 describe('SuperBlockIntroductionPage', () => {
+  it('renders the Coding Interview Prep page title and intro copy', async () => {
+    const superBlock = SuperBlocks.CodingInterviewPrep;
+    const setup = createSetup(superBlock);
+    const props = createPageProps(setup, superBlock);
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    expect(
+      screen.getByText('Coding Interview Prep | freeCodeCamp.org')
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText(
+        "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
+      )
+    ).toBeInTheDocument();
+  });
+
   it.each(scenariosWithCta)('$description', async scenario => {
     const { superBlock, completedOrders, expected } = scenario;
     const setup = createSetup(superBlock);

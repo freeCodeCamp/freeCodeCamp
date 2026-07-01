@@ -1,5 +1,5 @@
 import path from 'path';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 import readdirp from 'readdirp';
 import { afterEach, describe, test, expect, vi } from 'vitest';
@@ -16,7 +16,6 @@ import {
   availableSuperBlocksValidator
 } from './external-data-schema-v2';
 import {
-  type CurriculumIntros,
   type Curriculum,
   type GeneratedCurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
@@ -24,16 +23,12 @@ import {
   type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo,
   OrderedSuperBlocks,
-  readCurriculumIntros
+  readCurriculumIntros,
+  getCurriculumLocale
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
-const intros = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
-    'utf-8'
-  )
-) as CurriculumIntros;
+const intros = readCurriculumIntros(getCurriculumLocale());
 
 describe('external curriculum data build', () => {
   afterEach(() => {

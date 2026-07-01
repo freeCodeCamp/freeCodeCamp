@@ -104,9 +104,21 @@
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-understanding-security-and-privacy-in-web-applications",
+            "review-security-and-privacy",
+            "quiz-security-and-privacy"
+          ]
         },
-        { "dashedName": "authentication", "comingSoon": true, "blocks": [] }
+        {
+          "dashedName": "authentication",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-authentication-and-authorization",
+            "review-authentication-and-authorization",
+            "quiz-authentication-and-authorization"
+          ]
+        }
       ]
     },
     {

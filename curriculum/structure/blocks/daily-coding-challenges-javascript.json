@@ -1309,6 +1309,162 @@
     {
       "id": "6a19dd69388e5a6e59e4f2ef",
       "title": "Challenge 326: Max Profit"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994d9",
+      "title": "Challenge 327: Database Migration"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994da",
+      "title": "Challenge 328: Kaprekar's Routine"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994db",
+      "title": "Challenge 329: Bucket Fill"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994dc",
+      "title": "Challenge 330: lowercase words"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994dd",
+      "title": "Challenge 331: Nearest Multiple"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994de",
+      "title": "Challenge 332: Issue Triage"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994df",
+      "title": "Challenge 333: Issue Triage 2"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994e0",
+      "title": "Challenge 334: Exact Change"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994e1",
+      "title": "Challenge 335: Five Dice"
+    },
+    {
+      "id": "6a1d9f98e819ed70a0e994e2",
+      "title": "Challenge 336: Horoscope Match"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0005fff",
+      "title": "Challenge 337: Tally Counter"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006000",
+      "title": "Challenge 338: Pet Age Calculator"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006001",
+      "title": "Challenge 339: Array Chunks"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006002",
+      "title": "Challenge 340: Pig Latin Converter"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006003",
+      "title": "Challenge 341: Birthday Countdown"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006004",
+      "title": "Challenge 342: Dice Odds"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006005",
+      "title": "Challenge 343: Elevator Stops"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006006",
+      "title": "Challenge 344: Golden Ratio"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006007",
+      "title": "Challenge 345: Word Blender"
+    },
+    {
+      "id": "6a2037a68a0bc2aef0006008",
+      "title": "Challenge 346: Piggy Bank"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d54",
+      "title": "Challenge 347: Game Theory"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d55",
+      "title": "Challenge 348: Loan Calculator"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d56",
+      "title": "Challenge 349: Cell Signal"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d57",
+      "title": "Challenge 350: Letter Distance"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d58",
+      "title": "Challenge 351: Pronic Number"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d59",
+      "title": "Challenge 352: Contrast Rating 1"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5a",
+      "title": "Challenge 353: Contrast Rating 2"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5b",
+      "title": "Challenge 354: Contrast Rating 3"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5c",
+      "title": "Challenge 355: Morse Code"
+    },
+    {
+      "id": "6a22d77ddf034bc4e35b1d5d",
+      "title": "Challenge 356: Magic Square Solver"
+    },
+    {
+      "id": "6a26df3e2988bcdded204893",
+      "title": "Challenge 357: Food Chain"
+    },
+    {
+      "id": "6a26df3e2988bcdded204894",
+      "title": "Challenge 358: Emoji Translator"
+    },
+    {
+      "id": "6a26df3e2988bcdded204895",
+      "title": "Challenge 359: Golf Handicap Calculator"
+    },
+    {
+      "id": "6a26df3e2988bcdded204896",
+      "title": "Challenge 360: Spoken Duration"
+    },
+    {
+      "id": "6a26df3e2988bcdded204897",
+      "title": "Challenge 361: Spoken Time"
+    },
+    {
+      "id": "6a26df95efa55a2524399743",
+      "title": "Challenge 362: Nonogram Validator"
+    },
+    {
+      "id": "6a26df95efa55a2524399744",
+      "title": "Challenge 363: Bucket Fill 2"
+    },
+    {
+      "id": "6a26df95efa55a2524399745",
+      "title": "Challenge 364: Between Two Buckets"
+    },
+    {
+      "id": "6a26df95efa55a2524399746",
+      "title": "Challenge 365: The Last Challenge: Bucket Fill 3"
     }
   ]
 }

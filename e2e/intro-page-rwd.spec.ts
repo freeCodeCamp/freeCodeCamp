@@ -1,6 +1,21 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
 
 test.describe('Certification intro page', () => {
+  // Use the development user so the certification blocks are incomplete and
+  // therefore rendered expanded. The fully certified user has completed every
+  // challenge, which collapses the blocks and hides their descriptions.
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+  test.beforeAll(() => {
+    execSync('node ../tools/scripts/seed/seed-demo-user');
+  });
+
+  test.afterAll(() => {
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
   test('Should render and toggle correctly', async ({ page }) => {
     const firstBlockToggle = page.getByRole('button', {
       name: /^Learn HTML by Building a Cat Photo App/

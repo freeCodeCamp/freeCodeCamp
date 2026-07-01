@@ -4,7 +4,10 @@ import { mapTo, tap } from 'rxjs/operators';
 
 import envData from '../../../../config/env.json';
 import { transformEditorLink } from '../utils';
-import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  challengeTypes,
+  getDailyCodingChallengeLanguage
+} from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes } from './action-types';
 import { closeModal } from './actions';
 import {
@@ -49,22 +52,22 @@ export function insertEditableRegions(challengeFiles = []) {
     const editableRegionStrings = fileExtension => {
       switch (fileExtension) {
         case 'html':
-          return '\n<!-- User Editable Region -->\n';
+          return '<!-- User Editable Region -->';
         case 'css':
-          return '\n/* User Editable Region */\n';
+          return '/* User Editable Region */';
         case 'py':
-          return '\n# User Editable Region\n';
+          return '# User Editable Region';
 
         case 'js':
         case 'ts':
-          return '\n// User Editable Region\n';
+          return '// User Editable Region';
 
         case 'jsx':
         case 'tsx':
-          return '\n{/* User Editable Region */}\n';
+          return '{/* User Editable Region */}';
 
         default:
-          return '\nUser Editable Region\n';
+          return 'User Editable Region';
       }
     };
 
@@ -112,7 +115,7 @@ function editableRegionsToMarkdown(challengeFiles = []) {
 
     const [start, end] = challengeFile.editableRegionBoundaries;
     const lines = challengeFile.contents.split('\n');
-    const editableRegion = lines.slice(start + 1, end + 4).join('\n');
+    const editableRegion = lines.slice(start, end + 1).join('\n');
 
     return `${fileString}\`\`\`${fileExtension}\n${fileDescription}${editableRegion}\n\`\`\`\n\n`;
   }, '\n');
@@ -124,6 +127,14 @@ function linksOrMarkdown(projectFormValues, markdown) {
       ?.map(([key, val]) => `${key}: ${transformEditorLink(val)}\n\n`)
       ?.join('') || markdown
   );
+}
+
+// Daily coding challenges share a synthetic `daily-coding-challenge` block that
+// has no curriculum directory, so the source link must resolve to the real,
+// language-specific block (`daily-coding-challenges-javascript` or `-python`).
+export function getGithubLinkBlock(block, challengeType) {
+  const language = getDailyCodingChallengeLanguage(challengeType);
+  return language ? `daily-coding-challenges-${language}` : block;
 }
 
 function createQuestionEpic(action$, state$, { window }) {
@@ -163,7 +174,10 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValuesSelector(state)
       );
 
-      const gitLink = generateGithubLink(id, block);
+      const gitLink = generateGithubLink(
+        id,
+        getGithubLinkBlock(block, challengeType)
+      );
       const gitInfo = i18next.t('forum-help.git-info', {
         gitLink
       });
