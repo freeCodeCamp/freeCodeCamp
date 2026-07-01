@@ -104,7 +104,10 @@
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
-          "blocks": ["quiz-security-and-privacy"]
+          "blocks": [
+            "lecture-understanding-security-and-privacy-in-web-applications",
+            "quiz-security-and-privacy"
+          ]
         },
         {
           "dashedName": "authentication",
