@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-data-sanitizer-sweep",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69eefea5a952ae85871df0dc",
+      "title": "Implement Data Sanitizer Sweep Process"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
