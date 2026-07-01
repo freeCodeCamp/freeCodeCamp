@@ -145,9 +145,9 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    const moduleSteps = within(moduleRight).getByText(
+    // The module-button now contains the progress steps inline
+    const moduleButton = screen.getByTestId('module-button');
+    const moduleSteps = within(moduleButton).getByText(
       /learn\.steps-completed/i
     );
     expect(moduleSteps).toBeInTheDocument();
@@ -185,8 +185,8 @@ describe('SuperBlockAccordion', () => {
     );
 
     // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+    const moduleButton = screen.getByTestId('module-button');
+    expect(within(moduleButton).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
   // Modules with zero total steps should not display any progress text.
@@ -220,8 +220,8 @@ describe('SuperBlockAccordion', () => {
     );
 
     // The module-button-right is now a separate toggle button with the testid
-    const moduleRight = screen.getByTestId('module-button-right');
-    expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
+    const moduleButton = screen.getByTestId('module-button');
+    expect(within(moduleButton).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
   describe('Reset Button', () => {
@@ -548,8 +548,12 @@ describe('SuperBlockAccordion', () => {
     );
 
     // When expandAll=true, both chapters are open so their module main buttons are visible
-    expect(screen.getByRole('button', { name: 'mod-one' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'mod-two' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^mod-one/i })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^mod-two/i })
+    ).toBeInTheDocument();
   });
 
   it('should not render a module when all its challenges are filtered out', () => {
@@ -577,11 +581,13 @@ describe('SuperBlockAccordion', () => {
     );
 
     // mod-one has a challenge — its main module button should render
-    expect(screen.getByRole('button', { name: 'mod-one' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^mod-one/i })
+    ).toBeInTheDocument();
 
     // mod-two has no challenges — its main module button should not render
     expect(
-      screen.queryByRole('button', { name: 'mod-two' })
+      screen.queryByRole('button', { name: /^mod-two/i })
     ).not.toBeInTheDocument();
   });
 });
