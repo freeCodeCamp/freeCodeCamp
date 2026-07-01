@@ -125,9 +125,10 @@ describe('external curriculum data build', () => {
 
   test('block-based super blocks and blocks should have the correct data', async () => {
     const superBlocks = Object.values(SuperBlocks);
+    const localeDataPath = getCurriculumDataPath(getCurriculumLocale());
 
     const superBlockFiles = (
-      await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
+      await readdirp.promise(localeDataPath, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
@@ -150,7 +151,7 @@ describe('external curriculum data build', () => {
 
     superBlockFiles.forEach(file => {
       const fileContentJson = fs.readFileSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/${file}`,
+        `${localeDataPath}/${file}`,
         'utf-8'
       );
 
@@ -179,9 +180,10 @@ describe('external curriculum data build', () => {
 
   test('chapter-based super blocks and blocks should have the correct data', async () => {
     const superBlocks = Object.values(SuperBlocks);
+    const localeDataPath = getCurriculumDataPath(getCurriculumLocale());
 
     const superBlockFiles = (
-      await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
+      await readdirp.promise(localeDataPath, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
@@ -204,7 +206,7 @@ describe('external curriculum data build', () => {
 
     superBlockFiles.forEach(file => {
       const fileContentJson = fs.readFileSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/${file}`,
+        `${localeDataPath}/${file}`,
         'utf-8'
       );
 
