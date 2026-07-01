@@ -799,6 +799,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           experience: true,
           profileUI: true,
           progressTimestamps: true,
+          activityTimestamps: true,
+          lastActivityUrl: true,
           savedChallenges: true,
           sendQuincyEmail: true,
           socrates: true,
@@ -846,6 +848,8 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         completedChallenges,
         completedDailyCodingChallenges,
         progressTimestamps,
+        activityTimestamps,
+        lastActivityUrl,
         twitter,
         bluesky,
         profileUI,
@@ -872,8 +876,10 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             completedDailyCodingChallenges,
             // This assertion is necessary until the database is normalized.
             calendar: getCalendar(
-              progressTimestamps as ProgressTimestamp[] | null
+              progressTimestamps as ProgressTimestamp[] | null,
+              activityTimestamps as number[] | null
             ),
+            lastActivityUrl: lastActivityUrl ?? undefined,
             emailVerified: !!emailVerified,
             // This assertion is necessary until the database is normalized.
             points: getPoints(progressTimestamps as ProgressTimestamp[] | null),

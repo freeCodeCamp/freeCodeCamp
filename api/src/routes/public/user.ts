@@ -182,9 +182,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         const progressTimestamps = user.progressTimestamps as
           | ProgressTimestamp[]
           | null;
+        const activityTimestamps = user.activityTimestamps as number[] | null;
         const sharedUser = replacePrivateData({
           ...user,
-          calendar: getCalendar(progressTimestamps),
+          calendar: getCalendar(progressTimestamps, activityTimestamps),
           completedChallenges: normalizeChallenges(user.completedChallenges),
           location: user.location ?? '',
           joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
