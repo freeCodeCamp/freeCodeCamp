@@ -1483,7 +1483,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             openResetModal={props.openResetModal}
             tryToExecuteChallenge={tryToExecuteChallenge}
             hint={firstFailedTest?.message}
-            testsLength={props.tests.length}
+
             attempts={attemptsRef.current}
             challengeIsCompleted={handleSubmitAndGoButtonBoolean()}
             tryToSubmitChallenge={tryToSubmitChallenge}

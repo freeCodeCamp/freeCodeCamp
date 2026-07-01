@@ -49,7 +49,6 @@ interface LowerJawProps {
   challengeIsCompleted: boolean;
   tryToExecuteChallenge: () => void;
   tryToSubmitChallenge: () => void;
-  testsLength?: number;
   attempts: number;
   openResetModal: () => void;
   isSignedIn: boolean;
@@ -174,7 +173,6 @@ const LowerJaw = ({
   tryToExecuteChallenge,
   tryToSubmitChallenge,
   attempts,
-  testsLength,
   openResetModal,
   isSignedIn,
   updateContainer
@@ -268,11 +266,6 @@ const LowerJaw = ({
     // monaco know it might need to resize
     updateContainer();
   });
-
-  const isAttemptsLargerThanTest =
-    shownAttempts &&
-    testsLength &&
-    (shownAttempts >= testsLength || shownAttempts >= 3);
 
   const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
   const isMacOS = navigator.userAgent.includes('Mac OS');
