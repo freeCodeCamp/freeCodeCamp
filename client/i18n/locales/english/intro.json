@@ -7513,6 +7513,12 @@
           "Review security and privacy concepts covered in the lectures before taking the quiz."
         ]
       },
+      "quiz-security-and-privacy": {
+        "title": "Security and Privacy Quiz",
+        "intro": [
+          "Test your knowledge of security and privacy concepts covered in this module."
+        ]
+      },
       "lecture-introduction-to-authentication-and-authorization": {
         "title": "Introduction to Authentication and Authorization",
         "intro": [
