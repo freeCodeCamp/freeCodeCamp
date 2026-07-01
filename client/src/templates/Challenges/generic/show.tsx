@@ -35,7 +35,6 @@ import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
-import HelpModal from '../components/help-modal';
 import MobileAppModal from '../components/mobile-app-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
 import GenericChallengeButtons from './challenge-buttons';
@@ -55,8 +54,7 @@ const mapDispatchToProps = {
   updateChallengeMeta,
   challengeMounted,
   updateSolutionFormValues,
-  openCompletionModal: () => openModal('completion'),
-  openHelpModal: () => openModal('help')
+  openCompletionModal: () => openModal('completion')
 };
 
 // Types
@@ -67,7 +65,6 @@ interface ShowQuizProps {
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
-  openHelpModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -139,7 +136,6 @@ const ShowGeneric = ({
   initTests,
   updateChallengeMeta,
   openCompletionModal,
-  openHelpModal,
   isChallengeCompleted
 }: ShowQuizProps) => {
   const { t } = useTranslation();
@@ -380,18 +376,12 @@ const ShowGeneric = ({
 
         <GenericChallengeButtons
           hasQuestions={questions.length > 0}
-          onHelp={openHelpModal}
           onSubmit={handleSubmit}
         />
 
         <Spacer size='l' />
       </Col>
       <CompletionModal />
-      <HelpModal
-        challengeTitle={title}
-        challengeBlock={block}
-        superBlock={superBlock}
-      />
     </>
   );
 

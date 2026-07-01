@@ -35,7 +35,6 @@ import Hotkeys from '../components/hotkeys';
 import ResetModal from '../components/reset-modal';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
-import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
 import MobileAppModal from '../components/mobile-app-modal';
 import Output from '../components/output';
@@ -527,13 +526,6 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
-        <HelpModal
-          challengeTitle={title}
-          challengeBlock={block}
-          superBlock={superBlock}
-          guideUrl={guideUrl}
-          videoUrl={videoUrl}
-        />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal
           saveSubmissionToDB={saveSubmissionToDB}

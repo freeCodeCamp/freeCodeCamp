@@ -32,10 +32,6 @@ test.describe('Odin challenges', () => {
       await expect(
         page.getByRole('button', { name: translations.buttons['check-answer'] })
       ).toBeVisible();
-
-      await expect(
-        page.getByRole('button', { name: translations.buttons['ask-for-help'] })
-      ).toBeVisible();
     });
   });
 
@@ -58,10 +54,6 @@ test.describe('Odin challenges', () => {
 
       await expect(
         page.getByRole('button', { name: translations.buttons['check-answer'] })
-      ).toBeVisible();
-
-      await expect(
-        page.getByRole('button', { name: translations.buttons['ask-for-help'] })
       ).toBeVisible();
     });
   });

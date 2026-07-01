@@ -1,4 +1,9 @@
 {
+  "404": {
+    "page-not-found": "Page not found",
+    "not-found": "404 Not Found:",
+    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:"
+  },
   "buttons": {
     "logged-in-cta-btn": "Get started (it's free)",
     "get-started": "Get Started",
@@ -52,8 +57,6 @@
     "check-answer": "Check your answer",
     "submit": "Submit",
     "get-hint": "Get a Hint",
-    "ask-for-help": "Ask for Help",
-    "create-post": "Create a help post on the forum",
     "cancel": "Cancel",
     "reset-lesson": "Reset this lesson",
     "revert": "Revert",
@@ -579,15 +582,6 @@
     "download-results": "Download my results",
     "percent-complete": "{{percent}}% complete",
     "project-complete": "Completed",
-    "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
-    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
-    "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
-    "minimum-characters": "Please describe in at least {{characters}} more characters",
-    "characters-left": "You can add {{characters}} more characters to your query",
-    "must-confirm-statements": "You must confirm the following statements before you can submit your post to the forum.",
-    "min-50-max-500": "50 character minimum, 500 character maximum",
-    "rsa": "Read, search, ask",
-    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Reset this lesson?",
     "reset-warn": "Are you sure you wish to reset this lesson ({{title}})? The code editors and tests will be reset.",
     "reset-warn-2": "This cannot be undone.",
@@ -969,11 +963,6 @@
     "what": "What would you like to report?",
     "submit": "Submit the report"
   },
-  "404": {
-    "page-not-found": "Page not found",
-    "not-found": "404 Not Found:",
-    "heres-a-quote": "We couldn't find what you were looking for, but here is a quote:"
-  },
   "search": {
     "label": "Search",
     "placeholder": {
@@ -1085,8 +1074,6 @@
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} code example",
     "opens-new-window": "Opens in new window",
-    "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
     "add-portfolio": "Add portfolio project",
     "edit-portfolio": "Edit portfolio project",
@@ -1465,23 +1452,6 @@
     "set-certs-public": "Set your certification settings to public",
     "set-profile-public": "Set your profile settings to public",
     "set-claim": "Claim and view your certification"
-  },
-  "forum-help": {
-    "browser-info": "Your browser information:",
-    "user-agent": "User Agent is: <code>{{userAgent}}</code>",
-    "challenge": "Challenge Information:",
-    "whats-happening": "Tell us what's happening:",
-    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
-    "camper-project": "Your project link(s)",
-    "camper-code": "Your code so far",
-    "warning": "WARNING",
-    "too-long-one": "The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.",
-    "too-long-two": "You will need to take an additional step here so the code you wrote presents in an easy to read format.",
-    "too-long-three": "Please copy/paste all the editor code showing in the challenge from where you just linked.",
-    "add-code-one": "Replace these two sentences with your copied code.",
-    "add-code-two": "Please leave the ``` line above and the ``` line below,",
-    "add-code-three": "because they allow your code to properly format in the post.",
-    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "User Token",

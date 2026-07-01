@@ -17,7 +17,6 @@ import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
-import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
 import { updateUserToken } from '../../../redux/actions';
 import {
@@ -363,11 +362,6 @@ function ShowCodeAlly({
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
           </Row>
         </Container>
       </LearnLayout>

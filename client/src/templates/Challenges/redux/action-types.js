@@ -7,7 +7,6 @@ export const ns = 'challenge';
 export const actionTypes = createTypes(
   [
     'createFiles',
-    'createQuestion',
     'initHooks',
     'initTests',
     'initConsole',

@@ -1,4 +1,9 @@
 {
+  "404": {
+    "page-not-found": "페이지를 찾을 수 없습니다",
+    "not-found": "404 찾을 수 없음:",
+    "heres-a-quote": "원하는 것을 찾을 수 없었지만, 다음과 같은 인용구는 있습니다:"
+  },
   "buttons": {
     "logged-in-cta-btn": "시작하기 (무료)",
     "get-started": "시작하기",
@@ -52,8 +57,6 @@
     "check-answer": "정답 확인하기",
     "submit": "제출하기",
     "get-hint": "힌트 얻기",
-    "ask-for-help": "도움 요청하기",
-    "create-post": "포럼에 도움 게시글 생성하기",
     "cancel": "취소",
     "reset-lesson": "현재 레슨 초기화",
     "revert": "복원",
@@ -579,15 +582,6 @@
     "download-results": "결과 다운로드하기",
     "percent-complete": "{{percent}}% 완료",
     "project-complete": "완료됨",
-    "tried-rsa": "이미 <0>읽기-검색-질문</0> 방법을 시도하셨다면, 프리코드캠프 포럼에서 도움을 요청할 수 있습니다.",
-    "read-search-ask-checkbox": "<0>Read-Search-Ask</0> 방법을 시도했습니다",
-    "similar-questions-checkbox": "포럼에서 이미 답변된 <0>유사 질문을 검색했습니다</0>",
-    "minimum-characters": "적어도 {{characters}} 이상의 문자를 설명해 주세요",
-    "characters-left": "쿼리에 문자를 추가할 수 있습니다: {{characters}}개 더",
-    "must-confirm-statements": "포럼에 게시물을 제출하기 전에 다음 진술을 확인해야 합니다.",
-    "min-50-max-500": "50자 최소, 500자 최대",
-    "rsa": "읽기, 검색, 질문",
-    "rsa-forum": "<strong>새 게시물 작성 전</strong> 포럼에서 <0>귀하의 질문이 이미 답변되었는지 확인</0>하세요.",
     "reset": "현재 레슨 초기화?",
     "reset-warn": "정말로 이 강의({{title}})를 재설정하시겠어요. 코드 편집기와 테스트가 재설정됩니다.",
     "reset-warn-2": "이 작업은 되돌릴 수 없습니다.",
@@ -969,11 +963,6 @@
     "what": "어떤 사항을 신고하시겠습니까?",
     "submit": "신고 제출"
   },
-  "404": {
-    "page-not-found": "페이지를 찾을 수 없습니다",
-    "not-found": "404 찾을 수 없음:",
-    "heres-a-quote": "원하는 것을 찾을 수 없었지만, 다음과 같은 인용구는 있습니다:"
-  },
   "search": {
     "label": "검색",
     "placeholder": {
@@ -1085,8 +1074,6 @@
     "dialogues-and-tasks-for": "{{blockTitle}}에 대한 대화와 작업",
     "code-example": "{{codeName}} 코드 예제",
     "opens-new-window": "새 창에서 열립니다",
-    "rsa-checkbox": "Read-Search-Ask 방법을 시도했습니다",
-    "similar-questions-checkbox": "포럼에서 이미 답변된 유사 질문을 검색했습니다",
     "edit-my-profile": "내 프로필 편집",
     "add-portfolio": "포트폴리오 프로젝트를 추가하세요",
     "edit-portfolio": "포트폴리오 프로젝트를 편집하세요",
@@ -1465,23 +1452,6 @@
     "set-certs-public": "인증 설정을 공개로 설정하십시오",
     "set-profile-public": "프로필 설정을 공개로 설정하십시오",
     "set-claim": "자격증을 요청하고 보십시오"
-  },
-  "forum-help": {
-    "browser-info": "브라우저 정보:",
-    "user-agent": "사용자 에이전트는: <code>{{userAgent}}</code>입니다.",
-    "challenge": "챌린지 정보:",
-    "whats-happening": "현재 상황을 설명해 주세요:",
-    "describe": "여기에서 문제를 자세히 설명하세요. 예: \n내 h1 요소에 시작 태그가 없습니다. 내 코드를 확인하는 데 도움이 필요합니다. \n또는 \n내 for 루프가 무한히 실행됩니다. 이를 방지하는 방법은 무엇인가요?",
-    "camper-project": "프로젝트 링크(s)",
-    "camper-code": "지금까지의 코드",
-    "warning": "WARNING",
-    "too-long-one": "챌린지 초기 코드 및/또는 솔루션이 챌린지에서 포트할 수 있는 최대 길이를 초과했습니다.",
-    "too-long-two": "여기서 추가 단계를 수행해야 하므로 작성한 코드가 읽기 쉬운 형식으로 표시됩니다.",
-    "too-long-three": "방금 연결한 챌린지에서 에디터 코드 전체를 복사/붙여넣기 하십시오.",
-    "add-code-one": "이 두 문장을 복사한 코드로 바꾸십시오.",
-    "add-code-two": "위의 ``` 라인과 아래의 ``` 라인을 남겨두십시오,",
-    "add-code-three": "이들은 게시물에 코드가 올바르게 포맷되도록 합니다.",
-    "git-info": "GitHub 링크: {{gitLink}}"
   },
   "user-token": {
     "title": "사용자 토큰",

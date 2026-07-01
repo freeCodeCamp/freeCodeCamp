@@ -17,7 +17,6 @@ import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
 import CompletionModal from '../components/completion-modal';
-import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
 import { clearExamResults, startExam, stopExam } from '../../../redux/actions';
 import {
@@ -525,11 +524,6 @@ function ShowExam(props: ShowExamProps) {
               </Button>
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
           </Row>
         </Container>
       </LearnLayout>
