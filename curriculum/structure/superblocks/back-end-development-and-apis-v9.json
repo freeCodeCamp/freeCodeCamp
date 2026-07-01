@@ -105,7 +105,8 @@
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": [
-            "lecture-understanding-security-and-privacy-in-web-applications"
+            "lecture-understanding-security-and-privacy-in-web-applications",
+            "review-security-and-privacy"
           ]
         },
         {
