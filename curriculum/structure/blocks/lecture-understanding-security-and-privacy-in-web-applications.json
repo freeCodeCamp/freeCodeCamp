@@ -1,0 +1,49 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-security-and-privacy-in-web-applications",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6a3b8679bc13e6abd907edbe",
+      "title": "What Is the Difference Between Security and Privacy?"
+    },
+    {
+      "id": "6a3b86e9f96f6bbcd0ed8c45",
+      "title": "What Is HTTPS and Why Is It Important?"
+    },
+    {
+      "id": "6a3b86e948d6d1555ddbfee3",
+      "title": "What Is Same-Origin Policy and How Does It Work with CORS?"
+    },
+    {
+      "id": "6a3b86eac73558aaa2679c15",
+      "title": "How Are Cookies Stored, and What Are the Security and Privacy Implications?"
+    },
+    {
+      "id": "6a3b86ea3bd6428715352fcd",
+      "title": "What Are Some Situations Where Security Issues Generally Occur?"
+    },
+    {
+      "id": "6a3b86eb689999b66965050a",
+      "title": "What Are Some Common Security Threats and How to Mitigate Them?"
+    },
+    {
+      "id": "6a3b86ebaa9894ac96346e44",
+      "title": "How Do CSPs and Permissions-Policies Work?"
+    },
+    {
+      "id": "6a3b86ecbf95e089028a7ce3",
+      "title": "What Are Some Fundamental Concepts Related to User Privacy?"
+    },
+    {
+      "id": "6a3b86edc460f000dc39652c",
+      "title": "What Are Some Examples of Regional Privacy Laws and How Can You Comply with Them?"
+    },
+    {
+      "id": "6a3b86ed25e4c9b0d18af568",
+      "title": "What Are the dotenv and .env Files Used For?"
+    }
+  ],
+  "blockLabel": "lecture"
+}
