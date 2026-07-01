@@ -120,8 +120,7 @@ config({ path: resolve(__dirname, '../../../.env') });
 const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
-const dataPath = `${staticFolderPath}/curriculum-data/`;
-const intros = readCurriculumIntros(getCurriculumLocale());
+const dataPath = `${staticFolderPath}/curriculum-data`;
 
 export function getCurriculumLocale(): Languages {
   const { CURRICULUM_LOCALE } = process.env;
@@ -129,6 +128,17 @@ export function getCurriculumLocale(): Languages {
   return availableLangs.curriculum.includes(CURRICULUM_LOCALE as Languages)
     ? (CURRICULUM_LOCALE as Languages)
     : Languages.English;
+}
+
+export function getCurriculumDataPath(
+  lang: Languages = getCurriculumLocale()
+): string {
+  return `${dataPath}/${ver}/${lang}`;
+}
+
+// TODO: Remove this once mobile has been updated to use the new curriculum data path.
+export function getLegacyCurriculumDataPath(): string {
+  return `${dataPath}/${ver}`;
 }
 
 export function readCurriculumIntros(lang: Languages): CurriculumIntros {
@@ -337,7 +347,11 @@ export const superBlockDashedNames = (() => {
 export function buildExtCurriculumDataV2(
   curriculum: Curriculum<CurriculumProps>
 ): void {
-  mkdirSync(dataPath, { recursive: true });
+  const curriculumLocale = getCurriculumLocale();
+  const localeDataPath = getCurriculumDataPath(curriculumLocale);
+  const intros = readCurriculumIntros(curriculumLocale);
+
+  mkdirSync(localeDataPath, { recursive: true });
 
   parseCurriculumData();
   getSubmitTypes();
@@ -459,16 +473,20 @@ export function buildExtCurriculumDataV2(
   }
 
   function writeToFile(fileName: string, data: Record<string, unknown>): void {
-    const filePath = `${dataPath}/${ver}/${fileName}.json`;
+    const filePath = `${localeDataPath}/${fileName}.json`;
     mkdirSync(dirname(filePath), { recursive: true });
     writeFileSync(filePath, JSON.stringify(data, null, 2));
+
+    // TODO: Remove this once mobile has been updated to use the new curriculum data path.
+    if (curriculumLocale === Languages.English) {
+      const legacyFilePath = `${dataPath}/${ver}/${fileName}.json`;
+      mkdirSync(dirname(legacyFilePath), { recursive: true });
+      writeFileSync(legacyFilePath, JSON.stringify(data, null, 2));
+    }
   }
 
   function getSubmitTypes() {
-    writeFileSync(
-      `${dataPath}/${ver}/submit-types.json`,
-      JSON.stringify(submitTypes, null, 2)
-    );
+    writeToFile('submit-types', submitTypes);
   }
 
   function getSceneAssets() {
@@ -481,9 +499,6 @@ export function buildExtCurriculumDataV2(
       characterAssets
     };
 
-    writeFileSync(
-      `${dataPath}/${ver}/scene-assets.json`,
-      JSON.stringify(sceneAssets, null, 2)
-    );
+    writeToFile('scene-assets', sceneAssets);
   }
 }

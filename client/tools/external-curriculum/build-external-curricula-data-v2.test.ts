@@ -10,7 +10,7 @@ import {
   SuperBlockStage,
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
-import { Languages } from '@freecodecamp/shared/config/i18n';
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -24,7 +24,9 @@ import {
   orderedSuperBlockInfo,
   OrderedSuperBlocks,
   readCurriculumIntros,
-  getCurriculumLocale
+  getCurriculumLocale,
+  getCurriculumDataPath,
+  getLegacyCurriculumDataPath
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
@@ -321,6 +323,18 @@ describe('external curriculum data build', () => {
     });
     expect(spanishOrderedSuperBlockInfo.core[0]?.title).not.toEqual(
       englishIntros[SuperBlocks.RespWebDesignV9].title
+    );
+  });
+
+  test('curriculum data path helpers should include lang segments and preserve legacy English path', () => {
+    availableLangs.curriculum.forEach(lang => {
+      expect(getCurriculumDataPath(lang)).toBe(
+        `${clientStaticPath}/curriculum-data/${VERSION}/${lang}`
+      );
+    });
+
+    expect(getLegacyCurriculumDataPath()).toBe(
+      `${clientStaticPath}/curriculum-data/${VERSION}`
     );
   });
 });
