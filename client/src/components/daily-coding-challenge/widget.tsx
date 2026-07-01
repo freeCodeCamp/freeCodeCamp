@@ -6,7 +6,7 @@ import { ButtonLink } from '../helpers';
 import DailyCodingChallengeIcon from '../../assets/icons/daily-coding-challenge';
 import LinkButton from '../../assets/icons/link-button';
 import CalendarIcon from '../../assets/icons/calendar';
-import { getTodayUsCentral } from './helpers';
+import { dailyChallengesAreSunset, getTodayUsCentral } from './helpers';
 
 import './widget.css';
 
@@ -19,7 +19,26 @@ function DailyCodingChallengeWidget({
 }: DailyCodingChallengeWidgetProps): JSX.Element {
   const { t } = useTranslation();
 
-  return (
+  return dailyChallengesAreSunset() ? (
+    <>
+      <h2 className={forLanding ? 'big-heading' : ''}>
+        {t('daily-coding-challenges.map-title-2')}
+      </h2>
+      <div className='daily-coding-challenge-wrap'>
+        <ButtonLink
+          block={true}
+          size='large'
+          className='map-superblock-link'
+          href='/learn/daily-coding-challenge/archive'
+        >
+          <div className='daily-coding-challenge-button'>
+            <CalendarIcon className='map-icon' />
+            {t(`buttons.go-to-dcc-archive`)}
+          </div>
+        </ButtonLink>
+      </div>
+    </>
+  ) : (
     <>
       <h2 className={forLanding ? 'big-heading' : ''}>
         {t('daily-coding-challenges.map-title')}

@@ -12,7 +12,7 @@ import {
 } from '../../../../utils/test-utils';
 import {
   formatDate,
-  getTodayUsCentral
+  getEffectiveTodayUsCentral
 } from '../../../components/daily-coding-challenge/helpers';
 import Archive from './archive';
 
@@ -23,7 +23,7 @@ vi.mock('../../../utils/get-words', () => ({
   randomQuote: () => ({ quote: 'Test quote', author: 'Test author' })
 }));
 
-const todayUsCentral = getTodayUsCentral();
+const todayUsCentral = getEffectiveTodayUsCentral();
 const [year, month, day] = todayUsCentral.split('-').map(Number);
 const todayMidnight = `${todayUsCentral}T00:00:00.000Z`;
 const adjacentDate = formatDate({

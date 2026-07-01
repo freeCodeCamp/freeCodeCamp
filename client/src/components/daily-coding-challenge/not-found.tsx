@@ -5,7 +5,7 @@ import { Button, Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import { Link } from '../helpers';
 import notFoundLogo from '../../assets/images/freeCodeCamp-404.svg';
-import { getTodayUsCentral } from './helpers';
+import { dailyChallengesAreSunset, getTodayUsCentral } from './helpers';
 
 import './not-found.css';
 
@@ -38,14 +38,20 @@ function DailyCodingChallengeNotFound(): JSX.Element {
             </blockquote>
           </div>
           <Spacer size='l' />
+
           <div className='button-wrapper'>
-            <Button
-              block={true}
-              href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
-            >
-              {t(`buttons.go-to-dcc-today`)}
-            </Button>
-            <Spacer size='xs' />
+            {!dailyChallengesAreSunset() && (
+              <>
+                {' '}
+                <Button
+                  block={true}
+                  href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
+                >
+                  {t(`buttons.go-to-dcc-today`)}
+                </Button>
+                <Spacer size='xs' />
+              </>
+            )}
             <Button block={true} href='/learn/daily-coding-challenge/archive'>
               {t(`buttons.go-to-dcc-archive`)}
             </Button>
