@@ -56,18 +56,23 @@ module.exports = async ({ github, context, core, isAllowListed }) => {
   }
 
   const prAuthor = context.payload.pull_request.user.login;
-  const isNaomiSprintAssignee = linkedIssues.some(
-    issue =>
-      issue.labels.nodes.some(l => l.name === "Naomi's Sprints") &&
-      issue.assignees.nodes.some(a => a.login === prAuthor)
+  const isAuthorAssignee = linkedIssues.some(issue =>
+    issue.assignees.nodes.some(a => a.login === prAuthor)
   );
-  if (isNaomiSprintAssignee) {
+  const hasNaomiSprintsLabel = linkedIssues.some(issue =>
+    issue.labels.nodes.some(l => l.name === "Naomi's Sprints")
+  );
+
+  if (hasNaomiSprintsLabel) {
     await github.rest.issues.addLabels({
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: context.payload.pull_request.number,
       labels: ["Naomi's Sprints"]
     });
+  }
+
+  if (isAuthorAssignee || hasNaomiSprintsLabel) {
     return;
   }
 
