@@ -316,7 +316,7 @@ const Module = ({
         <button
           aria-controls={panelId}
           aria-expanded={open}
-          aria-label={`${toggleLabel} ${moduleLabel}`}
+          aria-label={`${toggleLabel} ${moduleLabel}${!comingSoon && !!totalSteps ? `, ${t('learn.steps-completed', { totalSteps, completedSteps })}` : ''}`}
           className='module-button module-button-toggle'
           data-testid='module-button-right'
           onClick={toggleOpen}
