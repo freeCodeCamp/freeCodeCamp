@@ -106,6 +106,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-security-and-privacy-in-web-applications",
+            "review-security-and-privacy",
             "quiz-security-and-privacy"
           ]
         },
