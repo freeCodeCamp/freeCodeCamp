@@ -16,7 +16,9 @@ const projectBasedChallengeTypes = [
   challengeTypes.jsLab,
   challengeTypes.pyLab,
   challengeTypes.dailyChallengeJs,
-  challengeTypes.dailyChallengePy
+  challengeTypes.dailyChallengePy,
+  challengeTypes.freeCodeCampOsPractice,
+  challengeTypes.freeCodeCampOsCert
 ];
 
 export const isProjectBased = (
