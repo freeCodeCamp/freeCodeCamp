@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
+import { config } from 'dotenv';
 import { submitTypes } from '@freecodecamp/shared/config/challenge-types';
 import { type ChallengeNode } from '../../src/redux/prop-types';
 import {
@@ -113,6 +114,8 @@ export type OrderedSuperBlocks = Record<
   string,
   Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
 >;
+
+config({ path: resolve(__dirname, '../../../.env') });
 
 const ver = 'v2';
 
