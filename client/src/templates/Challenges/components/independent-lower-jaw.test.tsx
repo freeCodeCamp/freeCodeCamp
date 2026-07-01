@@ -514,4 +514,166 @@ describe('<IndependentLowerJaw />', () => {
       /learn\.congratulations-code-passes .* learn\.percent-complete/
     );
   });
+
+  describe('Keyboard shortcut hints', () => {
+    const originalUserAgent = navigator.userAgent;
+    const originalPlatform = navigator.platform;
+
+    afterEach(() => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: originalUserAgent,
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: originalPlatform,
+        configurable: true
+      });
+    });
+
+    it('renders Cmd + Enter tooltip on macOS desktop for check button', () => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: 'MacIntel',
+        configurable: true
+      });
+
+      render(
+        <IndependentLowerJaw
+          {...baseProps}
+          tests={[{ pass: false, text: 'test', testString: 'test' }]}
+        />,
+        createStore()
+      );
+
+      expect(
+        screen.getByRole('button', {
+          name: 'buttons.check-code (buttons.command-enter)'
+        })
+      ).toBeInTheDocument();
+    });
+
+    it('renders Cmd + Enter tooltip on macOS desktop for submit button', () => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: 'MacIntel',
+        configurable: true
+      });
+
+      render(
+        <IndependentLowerJaw
+          {...baseProps}
+          tests={[{ pass: true, text: 'test', testString: 'test' }]}
+        />,
+        createStore()
+      );
+
+      expect(
+        screen.getByRole('button', {
+          name: 'buttons.submit-continue (buttons.command-enter)'
+        })
+      ).toBeInTheDocument();
+    });
+
+    it('renders Ctrl + Enter tooltip on Windows desktop for check button', () => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: 'Win32',
+        configurable: true
+      });
+
+      render(
+        <IndependentLowerJaw
+          {...baseProps}
+          tests={[{ pass: false, text: 'test', testString: 'test' }]}
+        />,
+        createStore()
+      );
+
+      expect(
+        screen.getByRole('button', {
+          name: 'buttons.check-code (buttons.ctrl-enter)'
+        })
+      ).toBeInTheDocument();
+    });
+
+    it('renders Ctrl + Enter tooltip on Windows desktop for submit button', () => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: 'Win32',
+        configurable: true
+      });
+
+      render(
+        <IndependentLowerJaw
+          {...baseProps}
+          tests={[{ pass: true, text: 'test', testString: 'test' }]}
+        />,
+        createStore()
+      );
+
+      expect(
+        screen.getByRole('button', {
+          name: 'buttons.submit-continue (buttons.ctrl-enter)'
+        })
+      ).toBeInTheDocument();
+    });
+
+    it('renders no tooltip on mobile device for check button', () => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)',
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: 'iPhone',
+        configurable: true
+      });
+
+      render(
+        <IndependentLowerJaw
+          {...baseProps}
+          tests={[{ pass: false, text: 'test', testString: 'test' }]}
+        />,
+        createStore()
+      );
+
+      expect(
+        screen.getByRole('button', { name: 'buttons.check-code' })
+      ).toBeInTheDocument();
+    });
+
+    it('renders no tooltip on mobile device for submit button', () => {
+      Object.defineProperty(navigator, 'userAgent', {
+        value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X)',
+        configurable: true
+      });
+      Object.defineProperty(navigator, 'platform', {
+        value: 'iPhone',
+        configurable: true
+      });
+
+      render(
+        <IndependentLowerJaw
+          {...baseProps}
+          tests={[{ pass: true, text: 'test', testString: 'test' }]}
+        />,
+        createStore()
+      );
+
+      expect(
+        screen.getByRole('button', { name: 'buttons.submit-continue' })
+      ).toBeInTheDocument();
+    });
+  });
 });
