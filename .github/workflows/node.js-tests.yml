@@ -280,6 +280,8 @@ jobs:
       - name: Set Environment variables
         run: |
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          echo "CURRICULUM_LOCALE=${{ matrix.locale }}" >> $GITHUB_ENV
+          echo "CLIENT_LOCALE=${{ matrix.locale }}" >> $GITHUB_ENV
           cat sample.env
 
       - name: Start MongoDB
@@ -290,9 +292,6 @@ jobs:
           mongodb-port: 27017
 
       - name: Install Dependencies
-        env:
-          CURRICULUM_LOCALE: ${{ matrix.locale }}
-          CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
@@ -300,9 +299,6 @@ jobs:
       # DONT REMOVE THIS STEP.
       # TODO: Refactor and use re-usable workflow and shared artifacts
       - name: Build Client in ${{ matrix.locale }}
-        env:
-          CURRICULUM_LOCALE: ${{ matrix.locale }}
-          CLIENT_LOCALE: ${{ matrix.locale }}
         run: |
           pnpm run build
 
@@ -310,7 +306,4 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        env:
-          CURRICULUM_LOCALE: ${{ matrix.locale }}
-          CLIENT_LOCALE: ${{ matrix.locale }}
         run: pnpm test
