@@ -145,9 +145,8 @@ const ShowGeneric = ({
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  const shouldAppendBlockNameToTitle = blockNameTitle !== title;
 
   useEffect(() => {
     initTests(tests);
@@ -403,7 +402,7 @@ const ShowGeneric = ({
     >
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''}${title} | ${t('learn.learn')} | freeCodeCamp.org`}
         />
         <Container
           className={isReviewChallenge ? 'content-layout-fluid' : undefined}
