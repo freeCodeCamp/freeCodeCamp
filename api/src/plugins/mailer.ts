@@ -29,8 +29,7 @@ const plugin: FastifyPluginCallback<{ provider: MailProvider }> = (
   const { provider } = options;
 
   fastify.decorate('sendEmail', async (args: SendEmailArgs) => {
-    const logger = fastify.log.child({ args });
-    logger.info('Sending Email');
+    fastify.log.info({ subject: args.subject }, 'Sending email');
     return await provider.send(args);
   });
 

@@ -162,10 +162,10 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         try {
           payload = responseText ? JSON.parse(responseText) : null;
         } catch (error) {
-          req.log.error({
-            err: error,
-            response: responseText || undefined
-          });
+          req.log.error(
+            { err: error },
+            'Failed to parse Socrates API response.'
+          );
           await rollbackUsage();
           return reply.status(500).send({
             error: 'socrates-unavailable',

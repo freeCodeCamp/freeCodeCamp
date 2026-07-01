@@ -35,8 +35,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const { email, name, amount, duration } = req.body;
-      const log = fastify.log.child({ req, email, amount, duration });
-      log.debug('Creating Stripe payment intent');
+      req.log.debug({ amount, duration }, 'Creating Stripe payment intent');
 
       if (!donationSubscriptionConfig.plans[duration].includes(amount)) {
         void reply.code(400);
@@ -74,7 +73,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         ) {
           const clientSecret =
             stripeSubscription.latest_invoice.payment_intent.client_secret;
-          log.info('Successfully created payment intent');
+          req.log.info('Successfully created payment intent');
           return reply.send({
             subscriptionId: stripeSubscription.id,
             clientSecret
@@ -82,9 +81,11 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         } else {
           throw new Error('Stripe payment intent client secret is missing');
         }
-      } catch (error) {
-        log.error(error, 'Failed to create payment intent');
-        fastify.Sentry.captureException(error);
+      } catch (err) {
+        req.log.error(
+          { err, email: req.body.email },
+          'Failed to create payment intent'
+        );
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'
@@ -101,14 +102,10 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const { email, amount, duration, subscriptionId } = req.body;
-        const log = fastify.log.child({
-          req,
-          email,
-          amount,
-          duration,
-          subscriptionId
-        });
-        log.debug('Processing Stripe charge');
+        req.log.debug(
+          { amount, duration, subscriptionId },
+          'Processing Stripe charge'
+        );
 
         const subscription =
           await stripe.subscriptions.retrieve(subscriptionId);
@@ -123,7 +120,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const isValidCustomer = typeof subscription.customer === 'string';
 
         if (!isSubscriptionActive) {
-          log.warn(
+          req.log.warn(
             { status: subscription.status },
             'Invalid subscription status'
           );
@@ -132,18 +129,18 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           );
         }
         if (!isProductIdValid) {
-          log.warn({ productId }, 'Invalid product ID');
+          req.log.warn({ productId }, 'Invalid product ID');
           throw new Error(`Product ID is invalid: ${subscriptionId}`);
         }
         if (!isStartedRecently) {
-          log.warn(
+          req.log.warn(
             { startTime: subscription.current_period_start },
             'Subscription not recent'
           );
           throw new Error(`Subscription is not recent: ${subscriptionId}`);
         }
         if (!isValidCustomer) {
-          log.warn(
+          req.log.warn(
             { customerId: subscription.customer },
             'Invalid customer ID'
           );
@@ -151,7 +148,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         }
 
         const user = await findOrCreateUser(fastify, email);
-        log.debug({ userId: user.id }, 'Found or created user');
+        req.log.debug({ userId: user.id }, 'Found or created user');
 
         const donation = {
           userId: user.id,
@@ -178,14 +175,19 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             isDonating: true
           }
         });
-        log.info('Successfully processed donation');
+        req.log.info('Successfully processed donation');
+        fastify.Sentry?.metrics.count('donation.created', 1, {
+          attributes: { flow: 'charge-stripe' }
+        });
 
         return reply.send({
           isDonating: true
         });
-      } catch (error) {
-        fastify.log.error(error, 'Failed to process Stripe charge');
-        fastify.Sentry.captureException(error);
+      } catch (err) {
+        req.log.error(
+          { err, email: req.body.email },
+          'Failed to process Stripe charge'
+        );
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'
