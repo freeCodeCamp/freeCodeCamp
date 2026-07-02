@@ -20,8 +20,6 @@ vi.mock('@freecodecamp/shared/utils/is-audited', () => ({
   isAuditedSuperBlock: vi.fn().mockReturnValueOnce(true)
 }));
 
-vi.mock('../../../utils/get-words');
-
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
     t: (key: string, options?: Record<string, string>) => {

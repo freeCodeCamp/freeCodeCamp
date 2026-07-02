@@ -17,26 +17,12 @@ vi.mock('react-helmet', () => ({
   )
 }));
 
-vi.mock('gatsby', () => ({
-  graphql: vi.fn()
-}));
-
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeatureValue: () => []
 }));
 
-vi.mock('react-scroll', () => ({
-  scroller: { scrollTo: vi.fn() }
-}));
-
 vi.mock('../../components/Donation/donation-modal', () => ({
   default: () => null
-}));
-
-vi.mock('../../components/Header/components/login', () => ({
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <span>{children}</span>
-  )
 }));
 
 vi.mock('../../components/Map', () => ({
@@ -51,19 +37,7 @@ vi.mock('./components/cert-challenge', () => ({
   default: () => null
 }));
 
-vi.mock('./components/help-translate', () => ({
-  default: () => null
-}));
-
 vi.mock('./components/legacy-links', () => ({
-  default: () => null
-}));
-
-vi.mock('./components/super-block-accordion', () => ({
-  SuperBlockAccordion: () => null
-}));
-
-vi.mock('./components/super-block-search', () => ({
   default: () => null
 }));
 
@@ -137,44 +111,6 @@ vi.mock('react-i18next', () => ({
     <span>{children}</span>
   ),
   withTranslation: () => (Component: React.ComponentType<unknown>) => Component
-}));
-
-vi.mock('@freecodecamp/ui', () => ({
-  Callout: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Spacer: () => null,
-  Container: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Row: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Col: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
-}));
-
-vi.mock('../../assets/superblock-icon', () => ({
-  SuperBlockIcon: () => <div />
-}));
-
-vi.mock('../../assets/icons/cap', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/dumbbell', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/community', () => ({ default: () => <div /> }));
-vi.mock('../../components/archived-warning', () => ({
-  default: () => <div />
-}));
-
-vi.mock('../../components/helpers', () => ({
-  Link: ({
-    children,
-    to,
-    ...rest
-  }: {
-    children: React.ReactNode;
-    to: string;
-  }) => (
-    <a href={to} {...rest}>
-      {children}
-    </a>
-  )
 }));
 
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
