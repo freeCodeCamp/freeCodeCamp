@@ -1,34 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
 import { describe, expect, it, vi } from 'vitest';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
+import i18nTestConfig from '../../../../i18n/config-for-tests';
+import introTranslations from '../../../../i18n/locales/english/intro.json';
 import SuperBlockMap from './super-block-map';
 
-vi.mock('react-i18next', () => {
-  const translations: Record<string, string> = {
-    'intro:responsive-web-design-v9.title':
-      'Responsive Web Design Certification',
-    'intro:javascript-v9.title': 'JavaScript Certification',
-    'intro:front-end-development-libraries-v9.title':
-      'Front-End Development Libraries Certification',
-    'intro:python-v9.title': 'Python Certification',
-    'intro:relational-databases-v9.title': 'Relational Databases Certification',
-    'intro:back-end-development-and-apis-v9.title':
-      'Back-End Development and APIs Certification',
-    'intro:misc-text.courses': 'Courses'
-  };
+vi.unmock('react-i18next');
 
-  return {
-    useTranslation: () => ({
-      t: (key: string) => translations[key] ?? key
-    }),
-    withTranslation:
-      () =>
-      <P extends object>(Component: React.ComponentType<P>) =>
-        Component
-  };
-});
+i18nTestConfig.addResourceBundle('en', 'intro', introTranslations, true, true);
 
 vi.mock('./super-block-accordion', () => ({
   SuperBlockAccordion: () => null
@@ -82,16 +64,18 @@ const requiredCerts = [
 describe('SuperBlockMap', () => {
   it('lists and links to the full-stack certification requirements', () => {
     render(
-      <SuperBlockMap
-        completedChallengeIds={[]}
-        disabledBlocks={[]}
-        initialExpandedBlock=''
-        showCertification={false}
-        structure={fullStackStructure}
-        superBlock={SuperBlocks.FullStackDeveloperV9}
-        superBlockChallenges={[]}
-        user={null}
-      />
+      <I18nextProvider i18n={i18nTestConfig}>
+        <SuperBlockMap
+          completedChallengeIds={[]}
+          disabledBlocks={[]}
+          initialExpandedBlock=''
+          showCertification={false}
+          structure={fullStackStructure}
+          superBlock={SuperBlocks.FullStackDeveloperV9}
+          superBlockChallenges={[]}
+          user={null}
+        />
+      </I18nextProvider>
     );
 
     const requirementLinks = screen.getAllByRole('link');
