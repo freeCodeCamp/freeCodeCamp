@@ -4,15 +4,6 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import ResetModal from './reset-modal';
 
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (
-      key: string,
-      options: { verifyText?: string } | undefined = undefined
-    ) => (options?.verifyText ? `${key} ${options.verifyText}` : key)
-  })
-}));
-
 const verifyResetText = 'settings.danger.verify-reset-text';
 
 function renderResetModal(
