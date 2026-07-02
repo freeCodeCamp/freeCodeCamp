@@ -1,66 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import InteractiveEditor, { type InteractiveFile } from './interactive-editor';
-
-vi.mock('@codesandbox/sandpack-react', async () => {
-  const React = await import('react');
-
-  const Panel = ({
-    children,
-    fallbackTestId
-  }: {
-    children?: React.ReactNode;
-    fallbackTestId: string;
-  }) => React.createElement('div', { 'data-testid': fallbackTestId }, children);
-
-  return {
-    FileTabs: () => React.createElement('div', { 'data-testid': 'file-tabs' }),
-    SandpackConsole: ({
-      children,
-      ...props
-    }: {
-      children?: React.ReactNode;
-      'data-playwright-test-label'?: string;
-    }) =>
-      React.createElement(
-        Panel,
-        { fallbackTestId: props['data-playwright-test-label'] ?? 'sp-console' },
-        children
-      ),
-    SandpackLayout: ({ children }: { children?: React.ReactNode }) =>
-      React.createElement(
-        Panel,
-        { fallbackTestId: 'sandpack-layout' },
-        children
-      ),
-    SandpackPreview: ({
-      children,
-      ...props
-    }: {
-      children?: React.ReactNode;
-      'data-playwright-test-label'?: string;
-    }) =>
-      React.createElement(
-        Panel,
-        { fallbackTestId: props['data-playwright-test-label'] ?? 'sp-preview' },
-        children
-      ),
-    SandpackProvider: ({ children }: { children?: React.ReactNode }) =>
-      React.createElement(
-        Panel,
-        { fallbackTestId: 'sandpack-provider' },
-        children
-      ),
-    SandpackStack: ({ children }: { children?: React.ReactNode }) =>
-      React.createElement(React.Fragment, null, children)
-  };
-});
-
-vi.mock('./custom-monaco-editor', () => ({
-  default: () => <div data-testid='custom-monaco-editor' />
-}));
 
 const htmlFile: InteractiveFile = {
   ext: 'html',
