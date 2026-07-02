@@ -33,16 +33,18 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const { origin } = getRedirectParams(req);
-      try {
-        const { unsubscribeId } = req.params;
-        const log = fastify.log.child({ req, unsubscribeId });
+      const { unsubscribeId } = req.params;
 
+      try {
         const unsubUsers = await fastify.prisma.user.findMany({
           where: { unsubscribeId }
         });
 
         if (!unsubUsers.length) {
-          log.warn('No users found for unsubscribe request');
+          req.log.warn('No users found for unsubscribe request');
+          fastify.Sentry?.metrics?.count('email_subscription.unsubscribed', 1, {
+            attributes: { result: 'not_found' }
+          });
           void reply.code(302);
           return reply.redirectWithMessage(origin, {
             type: 'info',
@@ -50,7 +52,6 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        log.info(`Found ${unsubUsers.length} user(s) to unsubscribe`);
         const userUpdatePromises = unsubUsers.map(user =>
           fastify.prisma.user.updateMany({
             where: { email: user.email },
@@ -61,10 +62,13 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         );
 
         await Promise.all(userUpdatePromises);
-        log.info(
-          { emails: unsubUsers.map(u => u.email) },
-          'Successfully unsubscribed users from email.'
+        req.log.info(
+          { matchedUsers: unsubUsers.length, audit: true },
+          'Successfully unsubscribed users from email'
         );
+        fastify.Sentry?.metrics?.count('email_subscription.unsubscribed', 1, {
+          attributes: { result: 'success' }
+        });
 
         return reply.redirectWithMessage(
           `${origin}/unsubscribed/${unsubscribeId}`,
@@ -73,9 +77,12 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
             content: "We've successfully updated your email preferences."
           }
         );
-      } catch (error) {
-        fastify.log.error(error, 'Failed to unsubscribe user from email');
-        fastify.Sentry.captureException(error);
+      } catch (err) {
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Failed to unsubscribe user from email');
+        fastify.Sentry?.metrics?.count('email_subscription.unsubscribed', 1, {
+          attributes: { result: 'error' }
+        });
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
           type: 'danger',
@@ -105,16 +112,18 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const { origin } = getRedirectParams(req);
-      try {
-        const { unsubscribeId } = req.params;
-        const log = fastify.log.child({ req, unsubscribeId });
+      const { unsubscribeId } = req.params;
 
+      try {
         const user = await fastify.prisma.user.findFirst({
           where: { unsubscribeId }
         });
 
         if (!user) {
-          log.warn('No user found for resubscribe request');
+          req.log.warn('No user found for resubscribe request');
+          fastify.Sentry?.metrics?.count('email_subscription.resubscribed', 1, {
+            attributes: { result: 'not_found' }
+          });
           void reply.code(302);
           return reply.redirectWithMessage(origin, {
             type: 'info',
@@ -122,25 +131,32 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        log.info(`Found user ${user.id} to resubscribe`);
+        req.log.debug({ userId: user.id }, 'Found user to resubscribe');
         await fastify.prisma.user.update({
           where: { id: user.id },
           data: {
             sendQuincyEmail: true
           }
         });
-        log.info(
-          `Successfully resubscribed user ${user.id} to email: ${user.email}`
+        req.log.info(
+          { userId: user.id, audit: true },
+          'Successfully resubscribed user'
         );
+        fastify.Sentry?.metrics?.count('email_subscription.resubscribed', 1, {
+          attributes: { result: 'success' }
+        });
 
         return reply.redirectWithMessage(origin, {
           type: 'success',
           content:
             "We've successfully updated your email preferences. Thank you for resubscribing."
         });
-      } catch (error) {
-        fastify.log.error(error, 'Failed to resubscribe user to email');
-        fastify.Sentry.captureException(error);
+      } catch (err) {
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Failed to resubscribe user to email');
+        fastify.Sentry?.metrics?.count('email_subscription.resubscribed', 1, {
+          attributes: { result: 'error' }
+        });
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
           type: 'danger',

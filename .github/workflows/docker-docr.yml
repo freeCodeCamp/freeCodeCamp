@@ -43,6 +43,9 @@ on:
       DOCR_NAME:
         required: true
         description: 'DigitalOcean Container Registry name'
+      SENTRY_AUTH_TOKEN:
+        required: false
+        description: 'Sentry auth token for source map upload (api app only)'
     outputs:
       tagname:
         description: 'Output: The tagname for the image built'
@@ -65,8 +68,8 @@ jobs:
         id: tagname
         run: |
           tagname=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)
-          echo "tagname=$tagname" >> $GITHUB_ENV
-          echo "tagname=$tagname" >> $GITHUB_OUTPUT
+          echo "tagname=$tagname" >> "$GITHUB_ENV"
+          echo "tagname=$tagname" >> "$GITHUB_OUTPUT"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@4d04d5d9486b7bd6fa91e7baf45bbb4f8b9deedd # v4
@@ -92,3 +95,27 @@ jobs:
             registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      # Extract the compiled dist (with source maps) from the image we just
+      # pushed, so the maps match the exact artifact that ships. The release is
+      # uploaded here but left UNFINALIZED — deploy-api.yml finalizes it only
+      # after the rollout is verified live.
+      - name: Extract API dist for Sentry source maps
+        if: inputs.app == 'api'
+        run: |
+          IMAGE="registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}"
+          docker pull "$IMAGE"
+          container_id=$(docker create "$IMAGE")
+          mkdir -p sentry-dist
+          docker cp "$container_id:/home/node/fcc/api" sentry-dist/
+          docker rm "$container_id"
+
+      - name: Upload source maps to Sentry (unfinalized)
+        if: inputs.app == 'api'
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: freecodecamp
+          SENTRY_PROJECT: api-fastify
+        run: |
+          npx --yes @sentry/cli@3.6.0 releases new "${{ env.tagname }}"
+          npx --yes @sentry/cli@3.6.0 sourcemaps upload --release "${{ env.tagname }}" sentry-dist/api/dist
