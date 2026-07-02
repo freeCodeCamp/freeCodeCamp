@@ -151,9 +151,9 @@ function ShowCodeAlly({
       }
     }
   } = data;
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  const blockNameTitle =
+    blockTitle === title ? title : `${blockTitle}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
   const isPartiallyCompleted = partiallyCompletedChallenges.some(
