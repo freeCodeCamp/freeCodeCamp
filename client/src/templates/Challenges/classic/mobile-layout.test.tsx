@@ -3,55 +3,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import { MobileLayout } from './mobile-layout';
 
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key: string) => key }),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return
-  withTranslation: () => (Component: any) => Component
-}));
-
 vi.mock('i18next', () => ({
   default: {
     t: (key: string) => key
   }
-}));
-
-vi.mock('@freecodecamp/shared/config/challenge-types', () => ({
-  challengeTypes: {
-    python: 1,
-    javascript: 2,
-    multifileCertProject: 3,
-    multifilePythonCertProject: 4,
-    lab: 5,
-    jsLab: 6,
-    pyLab: 7,
-    dailyChallengeJs: 8,
-    dailyChallengePy: 9
-  }
-}));
-
-vi.mock('../redux/actions', () => ({
-  removePortalWindow: vi.fn(),
-  setShowPreviewPortal: vi.fn(),
-  setShowPreviewPane: vi.fn(),
-  storePortalWindow: vi.fn()
-}));
-
-vi.mock('../redux/selectors', () => ({
-  portalWindowSelector: vi.fn(),
-  showPreviewPortalSelector: vi.fn(),
-  showPreviewPaneSelector: vi.fn()
-}));
-
-vi.mock('../components/preview-portal', () => ({
-  default: () => <div>Preview Portal</div>
-}));
-
-vi.mock('../components/notes', () => ({
-  default: () => <div>Notes</div>
-}));
-
-vi.mock('./editor-tabs', () => ({
-  default: () => <div>Editor Tabs</div>
 }));
 
 const mockProps = {
