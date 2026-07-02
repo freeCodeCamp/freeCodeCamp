@@ -71,7 +71,9 @@ test.describe('Map Component', () => {
     await expect(
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
-    const curriculumBtns = page.getByTestId('curriculum-map-button');
+    const curriculumBtns = page.locator(
+      '[data-testid="curriculum-map-button"]'
+    );
     await expect(curriculumBtns).toHaveCount(16);
 
     for (const { name, slug } of LANDING_PAGE_LINKS) {
