@@ -22,3 +22,27 @@
     padding-inline-start: 0;
   }
 }
+
+.map-heading-anchor {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-heading-anchor__link {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0;
+  text-decoration: none;
+}
+
+.map-heading-anchor:hover .map-heading-anchor__link,
+.map-heading-anchor:focus-within .map-heading-anchor__link {
+  opacity: 1;
+}
+
+.map-heading-anchor__icon {
+  height: 18px;
+  width: 18px;
+  fill: currentColor;
+}

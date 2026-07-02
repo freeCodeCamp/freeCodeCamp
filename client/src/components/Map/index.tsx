@@ -16,7 +16,9 @@ import { ButtonLink, Link } from '../helpers';
 import { showUpcomingChanges } from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
+import HeadingAnchor from './HeadingAnchor';
 import './map.css';
+
 interface MapProps {
   forLanding?: boolean;
 }
@@ -107,18 +109,22 @@ function Map({ forLanding = false }: MapProps) {
 
           return (
             <Fragment key={stage}>
-              {
-                /* Show the daily coding challenge before the "English" curriculum */
-                stage === SuperBlockStage.English && (
-                  <>
-                    <DailyCodingChallengeWidget forLanding={forLanding} />
-                    <Spacer size='m' />
-                  </>
-                )
-              }
-              <h2 className={forLanding ? 'big-heading' : ''}>
+              {/* Show the daily coding challenge before the "English" curriculum */}
+              {stage === SuperBlockStage.English && (
+                <>
+                  <DailyCodingChallengeWidget forLanding={forLanding} />
+                  <Spacer size='m' />
+                </>
+              )}
+
+              <HeadingAnchor
+                as='h2'
+                className={forLanding ? 'big-heading' : ''}
+                id={`stage-${stage.toLowerCase()}`}
+              >
                 {t(superBlockHeadings[stage])}
-              </h2>
+              </HeadingAnchor>
+
               <ul key={stage}>
                 {superblocks.map(superblock => (
                   <MapLi
