@@ -1,17 +1,8 @@
 import React from 'react';
-import { configure, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import i18next from 'i18next';
-import {
-  afterAll,
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi
-} from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   getStageOrder,
   SuperBlockStage,
@@ -134,10 +125,6 @@ function renderLanding({
 describe('IndexPage', () => {
   let restoreI18nextT = () => {};
 
-  beforeAll(() => {
-    configure({ testIdAttribute: 'data-playwright-test-label' });
-  });
-
   beforeEach(() => {
     growthBookMocks.getFeatureValue.mockReset();
     growthBookMocks.useFeature.mockReset();
@@ -151,10 +138,6 @@ describe('IndexPage', () => {
 
   afterEach(() => {
     restoreI18nextT();
-  });
-
-  afterAll(() => {
-    configure({ testIdAttribute: 'data-testid' });
   });
 
   it('renders landing page copy and static sections', () => {
