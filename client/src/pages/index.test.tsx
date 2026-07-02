@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
-import i18next from 'i18next';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   getStageOrder,
   SuperBlockStage,
@@ -10,9 +10,23 @@ import {
 } from '@freecodecamp/shared/config/curriculum';
 
 import envData from '../../config/env.json';
+import i18nTestConfig from '../../i18n/config-for-tests';
+import introTranslations from '../../i18n/locales/english/intro.json';
+import translations from '../../i18n/locales/english/translations.json';
 import { createStore } from '../redux/create-store';
 import { initialState } from '../redux';
 import IndexPage from './index';
+
+vi.unmock('react-i18next');
+
+i18nTestConfig.addResourceBundle(
+  'en',
+  'translations',
+  translations,
+  true,
+  true
+);
+i18nTestConfig.addResourceBundle('en', 'intro', introTranslations, true, true);
 
 const growthBookMocks = vi.hoisted(() => {
   const getFeatureValue = vi.fn();
@@ -42,35 +56,6 @@ vi.mock('../analytics/call-ga', () => ({
 
 vi.mock('../components/seo', () => ({
   default: ({ children }: { children?: React.ReactNode }) => children
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string, options?: { returnObjects?: boolean }) => {
-      if (options?.returnObjects && key === 'landing.benefits.list') {
-        return [
-          { title: 'Benefit 1', description: 'Benefit description 1' },
-          { title: 'Benefit 2', description: 'Benefit description 2' },
-          { title: 'Benefit 3', description: 'Benefit description 3' },
-          { title: 'Benefit 4', description: 'Benefit description 4' }
-        ];
-      }
-
-      if (options?.returnObjects && key === 'landing.faqs') {
-        return Array.from({ length: 9 }, (_, index) => ({
-          question: `Question ${index + 1}`,
-          answer: [`Answer ${index + 1}`]
-        }));
-      }
-
-      return key;
-    },
-    i18n: {
-      changeLanguage: () => Promise.resolve()
-    }
-  }),
-  Trans: ({ children }: { children: React.ReactNode }) => children,
-  withTranslation: () => (Component: React.ComponentType<unknown>) => Component
 }));
 
 vi.mock('../utils/get-words');
@@ -117,27 +102,18 @@ function renderLanding({
 
   return render(
     <Provider store={store}>
-      <IndexPage />
+      <I18nextProvider i18n={i18nTestConfig}>
+        <IndexPage />
+      </I18nextProvider>
     </Provider>
   );
 }
 
 describe('IndexPage', () => {
-  let restoreI18nextT = () => {};
-
   beforeEach(() => {
     growthBookMocks.getFeatureValue.mockReset();
     growthBookMocks.useFeature.mockReset();
     growthBookMocks.useGrowthBook.mockReset();
-
-    const spy = vi.spyOn(i18next, 't');
-    spy.mockImplementation(((key: string | string[]) =>
-      Array.isArray(key) ? key[0] : key) as unknown as typeof i18next.t);
-    restoreI18nextT = () => spy.mockRestore();
-  });
-
-  afterEach(() => {
-    restoreI18nextT();
   });
 
   it('renders landing page copy and static sections', () => {
@@ -146,16 +122,22 @@ describe('IndexPage', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: 'landing.big-heading-1-b'
+        name: translations.landing['big-heading-1-b']
       })
     ).toBeInTheDocument();
-    expect(screen.getByText('landing.advance-career')).toBeInTheDocument();
-    expect(screen.getByText('landing.graduates-work')).toBeInTheDocument();
-    expect(screen.getByAltText('landing.hero-img-alt')).toBeInTheDocument();
+    expect(
+      screen.getByText(translations.landing['advance-career'])
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/freeCodeCamp graduates work in companies such as/)
+    ).toBeInTheDocument();
+    expect(
+      screen.getByAltText(translations.landing['hero-img-alt'])
+    ).toBeInTheDocument();
     expect(
       screen.getByRole('heading', {
         level: 2,
-        name: 'landing.benefits.heading'
+        name: translations.landing.benefits.heading
       })
     ).toBeInTheDocument();
     expect(screen.getAllByTestId('landing-page-description')).toHaveLength(4);
@@ -167,7 +149,7 @@ describe('IndexPage', () => {
     /* eslint-enable testing-library/no-node-access */
 
     expect(screen.getByTestId('testimonials-section-header')).toHaveTextContent(
-      'landing.testimonials.heading'
+      translations.landing.testimonials.heading
     );
     expect(screen.getAllByTestId('testimonial-card')).toHaveLength(3);
     expect(
@@ -193,20 +175,24 @@ describe('IndexPage', () => {
       expectedLandingSuperBlocks.length
     );
 
+    const introTitles = introTranslations as unknown as Record<
+      string,
+      { title: string }
+    >;
+
     for (const superBlock of expectedLandingSuperBlocks) {
       expect(
         screen.getByRole('link', {
-          name: `intro:${superBlock}.title`
+          name: introTitles[superBlock].title
         })
       ).toHaveAttribute('href', `/learn/${superBlock}/`);
     }
 
-    expect(screen.getByRole('link', { name: 'placeholder' })).toHaveAttribute(
-      'href',
-      '/learn/archive'
-    );
     expect(
-      screen.getByRole('link', { name: 'landing.catalog.seeAll' })
+      screen.getByRole('link', { name: 'our archive page' })
+    ).toHaveAttribute('href', '/learn/archive');
+    expect(
+      screen.getByRole('link', { name: translations.landing.catalog.seeAll })
     ).toHaveAttribute('href', '/catalog');
   });
 
@@ -218,13 +204,15 @@ describe('IndexPage', () => {
       false
     );
     expect(screen.getByTestId('landing-top-big-cta')).toHaveTextContent(
-      'buttons.logged-in-cta-btn'
+      translations.buttons['logged-in-cta-btn']
     );
     expect(
-      screen.getAllByRole('link', { name: 'buttons.logged-in-cta-btn' })
+      screen.getAllByRole('link', {
+        name: translations.buttons['logged-in-cta-btn']
+      })
     ).toHaveLength(4);
     expect(
-      screen.getByRole('link', { name: 'landing.benefits.cta' })
+      screen.getByRole('link', { name: translations.landing.benefits.cta })
     ).toBeInTheDocument();
     expect(screen.queryByTestId('landing-google-cta')).not.toBeInTheDocument();
     expect(
@@ -237,13 +225,15 @@ describe('IndexPage', () => {
 
     expect(screen.queryByTestId('landing-top-big-cta')).not.toBeInTheDocument();
     expect(screen.getByTestId('landing-google-cta')).toHaveTextContent(
-      'buttons.sign-in-with-google'
+      translations.buttons['sign-in-with-google']
     );
     expect(screen.getByTestId('landing-more-ways-cta')).toHaveTextContent(
-      'buttons.more-ways-to-sign-in'
+      translations.buttons['more-ways-to-sign-in']
     );
     expect(
-      screen.getAllByRole('link', { name: 'buttons.logged-in-cta-btn' })
+      screen.getAllByRole('link', {
+        name: translations.buttons['logged-in-cta-btn']
+      })
     ).toHaveLength(3);
   });
 });
