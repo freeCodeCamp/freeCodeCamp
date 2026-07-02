@@ -4,16 +4,6 @@ import { describe, it, expect, vi } from 'vitest';
 
 import EmailOptions from './email-options';
 
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string) => key
-  })
-}));
-
-vi.mock('../../config/env.json', () => ({
-  apiLocation: 'http://localhost:3000'
-}));
-
 function renderEmailOptions(isSignedIn: boolean) {
   return render(
     <EmailOptions
