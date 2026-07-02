@@ -106,17 +106,15 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
     // TODO: use a schema to validate the query params.
     fastify.get('/auth/auth0/callback', async function (req, reply) {
-      const logger = fastify.log.child({ req, res: reply });
-
       const { error, error_description } = req.query as Record<string, string>;
       if (error === 'access_denied') {
         const blockedByLaw =
           error_description === 'Access denied from your location';
         if (blockedByLaw) {
-          logger.info('Access denied due to user location');
+          req.log.info('Access denied due to user location');
           return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
-          logger.info('Authentication failed for user:' + error_description);
+          req.log.info('Authentication failed for user');
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
             content: error_description ?? 'Authentication failed'
@@ -136,13 +134,12 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         // have to update the test or write custom state create/verify
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
-          logger.error('Auth failed: invalid state');
+          req.log.error(error, 'Auth failed: invalid state');
         } else if (Value.Check(Auth0ErrorSchema, error)) {
           const errorType = error.data.payload.error;
-          logger.error(error, 'Auth failed: ' + errorType);
+          req.log.error(error, 'Auth failed: ' + errorType);
         } else {
-          logger.error(error, 'Failed to get access token from Auth0');
-          fastify.Sentry.captureException(error);
+          req.log.error(error, 'Failed to get access token from Auth0');
         }
         // It's important _not_ to redirect to /signin here, as that could
         // create an infinite loop.
@@ -157,7 +154,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         const userinfo = (await fastify.auth0OAuth.userinfo(token)) as {
           email: string;
         };
-        logger.info(`Auth0 userinfo: ${JSON.stringify(userinfo)}`);
+        req.log.info({ hasEmail: !!userinfo.email }, 'Received Auth0 userinfo');
         email = userinfo.email;
         if (typeof email !== 'string') {
           return reply.redirectWithMessage(returnTo, {
@@ -166,14 +163,13 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           });
         }
       } catch (error) {
-        logger.error(error, 'Failed to get userinfo from Auth0');
         if (isError(error) && 'innerError' in error) {
           // This is a specific error from the @fastify/oauth2 plugin.
           const innerError = error.innerError as Error;
           innerError.message = `Auth0 userinfo error: ${innerError.message}`;
-          fastify.Sentry.captureException(error.innerError);
+          req.log.error(innerError, 'Failed to get userinfo from Auth0');
         } else {
-          fastify.Sentry.captureException(error);
+          req.log.error(error, 'Failed to get userinfo from Auth0');
         }
         return reply.redirectWithMessage(returnTo, {
           type: 'danger',

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       api_log_lvl:
-        description: "Log level for the API"
+        description: 'Log level for the API'
         type: choice
         options:
           - debug
@@ -12,7 +12,7 @@ on:
           - warn
         default: info
       show_upcoming_changes:
-        description: "Show upcoming changes (enables upcoming certifications and challenges)"
+        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
         type: boolean
         default: false
 
@@ -42,23 +42,23 @@ jobs:
 
           # Convert boolean input to string 'true' or 'false'
           if [[ "$SHOW_UPCOMING_CHANGES" == "true" ]]; then
-            echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
+            echo "show_upcoming_changes=true" >> "$GITHUB_OUTPUT"
           else
-            echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
+            echo "show_upcoming_changes=false" >> "$GITHUB_OUTPUT"
           fi
 
           case "$BRANCH" in
             "prod-current")
-              echo "site_tld=org" >> $GITHUB_OUTPUT
-              echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
-              echo "tgt_env_long=production" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=$API_LOG_LVL" >> $GITHUB_OUTPUT
+              echo "site_tld=org" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_short=prd" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_long=production" >> "$GITHUB_OUTPUT"
+              echo "api_log_lvl=$API_LOG_LVL" >> "$GITHUB_OUTPUT"
               ;;
             *)
-              echo "site_tld=dev" >> $GITHUB_OUTPUT
-              echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
-              echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=$API_LOG_LVL" >> $GITHUB_OUTPUT
+              echo "site_tld=dev" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_short=stg" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_long=staging" >> "$GITHUB_OUTPUT"
+              echo "api_log_lvl=$API_LOG_LVL" >> "$GITHUB_OUTPUT"
               ;;
           esac
 
@@ -134,22 +134,22 @@ jobs:
 
               if ! tailscale status | grep -q "$machine_name"; then
                 echo "Machine $machine_name not found in Tailscale network"
-                if [ $attempt -eq $max_retries ]; then
+                if [ "$attempt" -eq "$max_retries" ]; then
                   return 1
                 fi
-                sleep $retry_delay
+                sleep "$retry_delay"
                 continue
               fi
 
-              MACHINE_IP=$(tailscale ip -4 $machine_name)
-              if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
+              MACHINE_IP=$(tailscale ip -4 "$machine_name")
+              if ssh -o ConnectTimeout=10 -o BatchMode=yes "$TS_USERNAME@$MACHINE_IP" "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
                 echo "Successfully validated connection to $machine_name"
                 return 0
               fi
 
               echo "SSH validation failed for $machine_name"
-              if [ $attempt -lt $max_retries ]; then
-                sleep $retry_delay
+              if [ "$attempt" -lt "$max_retries" ]; then
+                sleep "$retry_delay"
               fi
             done
 
@@ -311,5 +311,35 @@ jobs:
 
             echo -e '\nLOG:Finished deployment.'
           "
-          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-          ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
+          MACHINE_IP=$(tailscale ip -4 "$TS_MACHINE_NAME")
+          # shellcheck disable=SC2029 # client-side expansion of REMOTE_SCRIPT is intended
+          ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"
+
+      # docker stack deploy exits 0 even after a healthcheck-triggered
+      # rollback, so the live version is probed through the public edge.
+      # Failing here also keeps the Sentry release step from running.
+      - name: Verify rollout
+        env:
+          DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
+          VERSION_URL: https://api.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}/status/version
+        run: |
+          for probe in 1 2 3 4 5; do
+            LIVE_VERSION=$(curl -fsS --max-time 10 "$VERSION_URL" | jq -r '.version')
+            echo "probe $probe: $LIVE_VERSION"
+            if [ "$LIVE_VERSION" != "$DEPLOYMENT_VERSION" ]; then
+              echo "live version is not $DEPLOYMENT_VERSION (rolled back?)"
+              exit 1
+            fi
+            sleep 3
+          done
+
+      - name: Sentry release
+        uses: getsentry/action-release@ff07929a6537bac57790c3451cf4d364aca38528 # v3.7.0
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: freecodecamp
+          SENTRY_PROJECT: api-fastify
+        with:
+          release: ${{ needs.build.outputs.tagname }}
+          set_commits: skip
+          environment: ${{ needs.setup-jobs.outputs.tgt_env_long }}
