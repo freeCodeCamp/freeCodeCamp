@@ -5,12 +5,6 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import SuperBlockMap from './super-block-map';
 
-vi.mock('@freecodecamp/ui', () => ({
-  Col: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Row: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Spacer: () => null
-}));
-
 vi.mock('react-i18next', () => {
   const translations: Record<string, string> = {
     'intro:responsive-web-design-v9.title':
@@ -35,14 +29,6 @@ vi.mock('react-i18next', () => {
         Component
   };
 });
-
-vi.mock('../../../assets/superblock-icon', () => ({
-  SuperBlockIcon: () => <span />
-}));
-
-vi.mock('./super-block-search', () => ({
-  default: () => null
-}));
 
 vi.mock('./super-block-accordion', () => ({
   SuperBlockAccordion: () => null
