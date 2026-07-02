@@ -1,12 +1,12 @@
 import React from 'react';
-import { configure, render, screen, within } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import {
   getStageOrder,
   superBlockStages,
   SuperBlockStage
 } from '@freecodecamp/shared/config/curriculum';
-import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import introTranslations from '../../../i18n/locales/english/intro.json';
 import i18nTestConfig from '../../../i18n/config-for-tests';
@@ -49,14 +49,6 @@ const visibleStages = getStageOrder({ showUpcomingChanges }).filter(
 const visibleSuperBlocks = visibleStages.flatMap(
   stage => superBlockStages[stage]
 );
-
-beforeAll(() => {
-  configure({ testIdAttribute: 'data-playwright-test-label' });
-});
-
-afterAll(() => {
-  configure({ testIdAttribute: 'data-testid' });
-});
 
 function renderMap() {
   return render(
