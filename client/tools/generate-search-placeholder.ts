@@ -37,10 +37,13 @@ i18n
     lng: i18nextCode,
     ns: ['translations'],
     backend: {
-      loadPath: resolve(
-        __dirname,
-        `../../curriculum/i18n-curriculum/client/${clientLocale}/translations.json`
-      )
+      loadPath:
+        clientLocale === 'english'
+          ? resolve(__dirname, `../i18n/locales/english/translations.json`)
+          : resolve(
+              __dirname,
+              `../../curriculum/i18n-curriculum/client/${clientLocale}/translations.json`
+            )
     }
   })
   .catch((error: Error) => {
