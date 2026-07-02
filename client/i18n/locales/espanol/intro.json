@@ -7570,6 +7570,12 @@
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
         ]
+      },
+      "lecture-understanding-security-and-privacy-in-web-applications": {
+        "title": "Understanding Security and Privacy in Web Applications",
+        "intro": [
+          "Learn how security and privacy work in web applications, covering HTTPS, cookies, CSP, common threats, privacy laws, and more."
+        ]
       }
     }
   },
