@@ -192,7 +192,7 @@ async function postExamGeneratedExamHandler(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info({ userId: user.id }, 'Generating exam for user.');
+  req.log.info('Generating exam for user.');
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
@@ -532,7 +532,7 @@ async function postExamAttemptHandler(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info({ userId: user.id }, 'Updating exam attempt for user.');
+  req.log.info('Updating exam attempt for user.');
 
   const { attempt } = req.body;
 
@@ -736,7 +736,7 @@ export async function getExams(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info({ userId: user.id }, 'Fetching available exams for user.');
+  req.log.info('Fetching available exams for user.');
 
   const maybeExams = await mapErr(
     this.prisma.examEnvironmentExam.findMany({
@@ -914,7 +914,7 @@ export async function getExamAttemptsHandler(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info({ userId: user.id }, 'Fetching exam attempts for user.');
+  req.log.info('Fetching exam attempts for user.');
 
   // Send all relevant exam attempts
   const envExamAttempts = [];
@@ -937,7 +937,7 @@ export async function getExamAttemptsHandler(
   const attempts = maybeAttempts.data;
 
   if (!attempts.length) {
-    req.log.warn({ userId: user.id }, 'No exam attempts found.');
+    req.log.warn('No exam attempts found.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT('No exam attempt found.')
@@ -977,7 +977,7 @@ export async function getExamAttemptHandler(
     void reply.code(500);
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
-  req.log.info({ userId: user.id }, 'Fetching exam attempt for user.');
+  req.log.info('Fetching exam attempt for user.');
 
   const { attemptId } = req.params;
 
@@ -1043,10 +1043,7 @@ export async function getExamAttemptsByExamIdHandler(
 
   const { examId } = req.params;
 
-  req.log.info(
-    { examId, userId: user.id },
-    'Fetching exam attempts by exam id.'
-  );
+  req.log.info({ examId }, 'Fetching exam attempts by exam id.');
 
   // If attempt id is given, only return that attempt
   const maybeAttempts = await mapErr(

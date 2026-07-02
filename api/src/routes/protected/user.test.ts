@@ -575,12 +575,9 @@ describe('userRoutes', () => {
           superPost('/account/delete')
         );
         await Promise.all(deletePromises);
+        // userId is auto-bound onto req.log by the auth plugin, not passed explicitly.
         const found = spy.mock.calls.some(
-          ([fields, message]) =>
-            message === 'User not found for deletion' &&
-            typeof fields === 'object' &&
-            fields !== null &&
-            (fields as { userId?: string }).userId === defaultUserId
+          ([firstArg]) => firstArg === 'User not found for deletion'
         );
         expect(found).toBe(true);
       });
@@ -706,12 +703,9 @@ describe('userRoutes', () => {
 
         await Promise.all(deletePromises);
 
+        // userId is auto-bound onto req.log by the auth plugin, not passed explicitly.
         const found = spy.mock.calls.some(
-          ([fields, message]) =>
-            message === 'User not found for deletion' &&
-            typeof fields === 'object' &&
-            fields !== null &&
-            (fields as { userId?: string }).userId === defaultUserId
+          ([firstArg]) => firstArg === 'User not found for deletion'
         );
         expect(found).toBe(true);
       });

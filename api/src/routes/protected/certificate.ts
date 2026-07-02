@@ -249,7 +249,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       if (!user) {
         void reply.code(500);
-        req.log.error({ userId: req.user?.id }, 'User not found');
+        req.log.error('User not found');
         return {
           type: 'danger',
           // message: 'User not found'
@@ -261,7 +261,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       // TODO: Discuss if this is a requirement still
       if (!user.name) {
-        req.log.warn({ userId: user.id }, 'User does not have a name property');
+        req.log.warn('User does not have a name property');
         void reply.code(400);
         return {
           response: {
@@ -274,10 +274,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user[certType]) {
-        req.log.info(
-          { userId: user.id, certName },
-          'User has already claimed certificate'
-        );
+        req.log.info({ certName }, 'User has already claimed certificate');
         void reply.code(200);
         return {
           response: {
@@ -300,7 +297,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       if (!hasCompletedTestRequirements) {
         req.log.info(
-          { userId: user.id, certName },
+          { certName },
           'User has not completed the tests for certificate'
         );
         void reply.code(400);
@@ -394,7 +391,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
         // Failed email should not prevent successful response.
         try {
-          req.log.info({ userId: user.id }, 'Sending congratulations email');
+          req.log.info('Sending congratulations email');
           // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
           await fastify.sendEmail(notifyUser);
         } catch (e) {
@@ -402,10 +399,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         }
       }
 
-      req.log.info(
-        { userId: user.id, certName },
-        'User has claimed certificate'
-      );
+      req.log.info({ certName }, 'User has claimed certificate');
       void reply.code(200);
       return {
         response: {

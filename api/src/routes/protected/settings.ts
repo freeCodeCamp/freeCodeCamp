@@ -206,7 +206,7 @@ Happy coding!
     },
     async (req, reply) => {
       if (req.validationError) {
-        req.log.warn({ userId: req.user?.id }, 'Invalid email format');
+        req.log.warn('Invalid email format');
         void reply.code(400);
         return { message: 'Email format is invalid', type: 'danger' } as const;
       }
@@ -330,7 +330,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'info'
         });
       } catch (err) {
-        req.log.error({ err, userId: user.id }, 'Error updating email address');
+        req.log.error(err, 'Error updating email address');
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
@@ -356,7 +356,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        req.log.error({ err, userId: req.user?.id }, 'Error updating theme');
+        req.log.error(err, 'Error updating theme');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -407,7 +407,7 @@ ${isLinkSentWithinLimitTTL}`
           type: 'success'
         } as const;
       } catch (err) {
-        req.log.error({ err, userId: req.user?.id }, 'Error updating socials');
+        req.log.error(err, 'Error updating socials');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }

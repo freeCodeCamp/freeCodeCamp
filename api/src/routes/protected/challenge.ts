@@ -91,7 +91,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info({ userId: req.user?.id }, 'User submitted a project');
+      req.log.info('User submitted a project');
       // TODO: considering validation is determined by `challengeType`, it should not come from the client
       //       Determine `challengeType` by `id`
       const { id: projectId, challengeType, solution, githubLink } = req.body;
@@ -138,7 +138,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         !canSubmitCodeRoadCertProject(projectId, user)
       ) {
         req.log.warn(
-          { userId: user.id, projectId },
+          { projectId },
           'User tried to submit a codeRoad cert project before completing the required challenges'
         );
         void reply.code(403);
@@ -193,10 +193,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info(
-        { userId: req.user?.id },
-        'User submitted a backend challenge'
-      );
+      req.log.info('User submitted a backend challenge');
 
       if (isExamId(req.body.id)) {
         req.log.warn('User attempted to submit an exam');
@@ -259,10 +256,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       // This is another highly used route, so debug log level is used to
       // avoid excessive logging
-      req.log.debug(
-        { userId: req.user?.id },
-        'User submitted a modern challenge'
-      );
+      req.log.debug('User submitted a modern challenge');
 
       const { id, files, challengeType } = req.body;
 
@@ -306,10 +300,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       // This is another highly used route, so debug log level is used to
       // avoid excessive logging
-      req.log.debug(
-        { userId: req.user?.id },
-        'User submitted a modern challenge'
-      );
+      req.log.debug('User submitted a modern challenge');
 
       const { id, files: encodedFiles, challengeType } = req.body;
 
@@ -373,7 +364,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info({ userId: req.user?.id }, 'User saved a challenge');
+      req.log.info('User saved a challenge');
 
       const { files, id: challengeId } = req.body;
       await postSaveChallenge(
@@ -403,7 +394,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info({ userId: req.user?.id }, 'User saved a challenge');
+      req.log.info('User saved a challenge');
 
       const { files: encodedFiles, id: challengeId } = req.body;
       const files = decodeFiles(encodedFiles);
@@ -434,10 +425,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info(
-        { userId: req.user?.id, examId: req.params.id },
-        'User requested an exam'
-      );
+      req.log.info({ examId: req.params.id }, 'User requested an exam');
 
       const { id } = req.params;
 
@@ -534,10 +522,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info(
-        { userId: req.user?.id },
-        'User submitted a Microsoft trophy challenge'
-      );
+      req.log.info('User submitted a Microsoft trophy challenge');
       try {
         const challengeId = req.body.id;
         const challenge = msTrophyChallenges.find(
@@ -641,10 +626,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info(
-        { userId: req.user?.id },
-        'User submitted an exam challenge'
-      );
+      req.log.info('User submitted an exam challenge');
 
       try {
         const userId = req.user?.id;
@@ -957,7 +939,7 @@ async function postCoderoadChallengeCompleted(
   req: UpdateReqType<typeof schemas.coderoadChallengeCompleted>,
   reply: UpdateReplyType<typeof schemas.coderoadChallengeCompleted>
 ) {
-  req.log.info({ userId: req.user?.id }, 'User submitted a coderoad challenge');
+  req.log.info('User submitted a coderoad challenge');
 
   const { 'coderoad-user-token': encodedUserToken } = req.headers;
   const { tutorialId } = req.body;
@@ -1079,10 +1061,7 @@ async function postDailyCodingChallengeCompleted(
   req: UpdateReqType<typeof schemas.dailyCodingChallengeCompleted>,
   reply: UpdateReplyType<typeof schemas.dailyCodingChallengeCompleted>
 ) {
-  req.log.info(
-    { userId: req.user?.id },
-    'User submitted a daily coding challenge'
-  );
+  req.log.info('User submitted a daily coding challenge');
 
   const { id, language } = req.body;
 

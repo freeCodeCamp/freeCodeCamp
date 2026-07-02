@@ -87,7 +87,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
-      req.log.info({ userId: req.user?.id }, 'User requested account deletion');
+      req.log.info('User requested account deletion');
       await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user!.id }
       });
@@ -106,7 +106,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           err instanceof PrismaClientKnownRequestError &&
           err.code === 'P2025'
         ) {
-          req.log.warn({ userId: req.user?.id }, 'User not found for deletion');
+          req.log.warn('User not found for deletion');
         } else {
           req.log.error(err, 'Error deleting user account');
           throw err;
@@ -135,7 +135,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         return { type: 'error', message: 'forbidden' } as const;
       }
 
-      req.log.info({ userId: req.user.id }, 'User requested account deletion');
+      req.log.info('User requested account deletion');
       try {
         await fastify.prisma.userToken.deleteMany({
           where: { userId: req.user.id }
@@ -155,7 +155,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           err instanceof PrismaClientKnownRequestError &&
           err.code === 'P2025'
         ) {
-          req.log.warn({ userId: req.user?.id }, 'User not found for deletion');
+          req.log.warn('User not found for deletion');
           return reply.code(404).send({ type: 'error', message: 'not found' });
         } else {
           req.log.error(err, 'Error deleting user account');
@@ -174,7 +174,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.resetMyProgress
     },
     async (req, _reply) => {
-      req.log.info({ userId: req.user?.id }, 'User requested progress reset');
+      req.log.info('User requested progress reset');
       await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user!.id }
       });
@@ -202,7 +202,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async (req, _reply) => {
-    req.log.info({ userId: req.user?.id }, 'User requested a new user token');
+    req.log.info('User requested a new user token');
 
     await fastify.prisma.userToken.deleteMany({
       where: { userId: req.user?.id }
@@ -229,7 +229,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteUserToken
     },
     async (req, reply) => {
-      req.log.info({ userId: req.user?.id }, 'User requested token deletion');
+      req.log.info('User requested token deletion');
 
       const { count } = await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user?.id }
@@ -258,7 +258,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       req.log.info(
-        { userId: req.user?.id, reportedUsername: req.body.username },
+        { reportedUsername: req.body.username },
         'User reported another user'
       );
 
@@ -331,10 +331,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMsUsername
     },
     async (req, reply) => {
-      req.log.info(
-        { userId: req.user?.id },
-        'User requested unlinking of msUsername'
-      );
+      req.log.info('User requested unlinking of msUsername');
 
       try {
         await fastify.prisma.msUsername.deleteMany({
@@ -374,10 +371,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info(
-        { userId: req.user?.id },
-        'User requested linking of msUsername'
-      );
+      req.log.info('User requested linking of msUsername');
 
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -482,7 +476,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info({ userId: req.user?.id }, 'User submitted a survey');
+      req.log.info('User submitted a survey');
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
           where: { id: req.user?.id }
@@ -583,10 +577,7 @@ async function deleteResetModule(
   reply: UpdateReplyType<typeof schemas.resetModule>
 ) {
   const { blockIds } = req.body;
-  req.log.info(
-    { userId: req.user?.id, blockIds },
-    'User requested module reset for blocks'
-  );
+  req.log.info({ blockIds }, 'User requested module reset for blocks');
 
   const resetSet = new Set(blockIds.flatMap(getChallengeIdsByBlock));
 
@@ -640,10 +631,7 @@ async function examEnvironmentTokenHandler(
   req: UpdateReqType<typeof schemas.userExamEnvironmentToken>,
   reply: FastifyReply
 ) {
-  req.log.info(
-    { userId: req.user?.id },
-    'User requested a new exam environment token'
-  );
+  req.log.info('User requested a new exam environment token');
   const userId = req.user?.id;
   if (!userId) {
     throw new Error('Unreachable. User should be authenticated.');
@@ -713,7 +701,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   ) => {
     // This is one of the most requested routes. To avoid spamming the logs
     // with this route, we'll log requests at the debug level.
-    req.log.debug({ userId: req.user?.id }, 'User requested session');
+    req.log.debug('User requested session');
 
     // Handle unauthenticated users - this is not an error, it's how the client
     // determines if they are signed in or not
@@ -813,7 +801,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (!user?.username) {
-        req.log.error({ userId: req.user?.id }, 'User has no username');
+        req.log.error('User has no username');
         void res.code(500);
         return { user: {}, result: '' };
       }
@@ -908,10 +896,7 @@ async function getExamEnvironmentToken(
   req: UpdateReqType<typeof schemas.getUserExamEnvironmentToken>,
   reply: FastifyReply
 ) {
-  req.log.info(
-    { userId: req.user?.id },
-    'User requested their exam environment token'
-  );
+  req.log.info('User requested their exam environment token');
   const userId = req.user?.id;
   if (!userId) {
     throw new Error('Unreachable. User should be authenticated.');

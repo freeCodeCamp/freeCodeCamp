@@ -24,12 +24,13 @@ export const shouldSendLog = (
   rng: () => number
 ): boolean => {
   if (DROPPED_LOG_MESSAGES.has(log.message)) return false;
-  if (log.level !== 'info') return true;
+  if (log.level !== 'info' && log.level !== 'debug') return true;
   const route = routeOf(log);
-  const rate =
-    (route !== undefined ? ROUTE_LOG_SAMPLE_RATES[route] : undefined) ??
-    infoSampleRate;
-  return rng() < rate;
+  const routeRate =
+    route !== undefined ? ROUTE_LOG_SAMPLE_RATES[route] : undefined;
+  if (routeRate !== undefined) return rng() < routeRate;
+  // debug is verbose but low-volume off the suppressed routes; keep it.
+  return log.level === 'debug' ? true : rng() < infoSampleRate;
 };
 
 const REDUNDANT_LOG_ATTRIBUTES = ['msg', 'pino.logger.level'] as const;

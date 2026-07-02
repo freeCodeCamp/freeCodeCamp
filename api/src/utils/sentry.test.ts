@@ -28,6 +28,41 @@ describe('shouldSendLog', () => {
     ).toBe(false);
   });
 
+  it('drops debug logs from suppressed routes', () => {
+    expect(
+      shouldSendLog(
+        makeLog({
+          level: 'debug',
+          attributes: { route: '/user/session-user' }
+        }),
+        1,
+        () => 0
+      )
+    ).toBe(false);
+  });
+
+  it('keeps debug logs on other routes without sampling', () => {
+    expect(
+      shouldSendLog(
+        makeLog({ level: 'debug', attributes: { route: '/some/route' } }),
+        0,
+        () => 0.99
+      )
+    ).toBe(true);
+  });
+
+  it('keeps debug logs without a route without sampling', () => {
+    expect(shouldSendLog(makeLog({ level: 'debug' }), 0, () => 0.99)).toBe(
+      true
+    );
+  });
+
+  it('keeps the request completed message so response telemetry is retained', () => {
+    expect(
+      shouldSendLog(makeLog({ message: 'request completed' }), 1, () => 0)
+    ).toBe(true);
+  });
+
   it('keeps non-info levels without sampling', () => {
     for (const level of ['warn', 'error', 'fatal'] as const) {
       expect(shouldSendLog(makeLog({ level }), 0, () => 0.99)).toBe(true);
