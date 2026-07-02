@@ -47,10 +47,6 @@ vi.mock('../analytics/call-ga', () => ({
   default: vi.fn()
 }));
 
-vi.mock('../components/Donation/donation-modal', () => ({
-  default: () => null
-}));
-
 vi.mock('../utils/get-words');
 
 const pageData = {
