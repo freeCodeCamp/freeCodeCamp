@@ -19,6 +19,11 @@ window.___loader = { enqueue: () => {}, hovering: () => {} };
 
 const userProps = {
   user: {
+    acceptedPrivacyTerms: true,
+    completedChallengeCount: 0,
+    completedSurveys: [],
+    isClassroomAccount: false,
+    socrates: false,
     currentChallengeId: 'string',
     email: 'string',
     emailVerified: true,
@@ -30,6 +35,7 @@ const userProps = {
       showLocation: false,
       showName: false,
       showPoints: false,
+      showExperience: false,
       showPortfolio: false,
       showTimeLine: false,
       showDonation: false
@@ -84,9 +90,15 @@ const userProps = {
     isRelationalDatabaseCertV8: true,
     isRelationalDatabaseCertV9: true,
     isCollegeAlgebraPyCertV8: true,
-    isFoundationalCSharpVertV8: true
-  },
-  navigate: () => {}
+    isFoundationalCSharpCertV8: true,
+    isJsAlgoDataStructCertV8: true,
+    isFrontEndLibsCertV9: true,
+    isBackEndDevApisCertV9: true,
+    isFullStackDeveloperCertV9: true,
+    isA2SpanishCert: true,
+    isA2ChineseCert: true,
+    isA1ChineseCert: true
+  }
 };
 
 const notMyProfileProps = {
@@ -118,7 +130,6 @@ describe('<Profile/>', () => {
     // component Camper, Stats, HeatMap etc should be get the relevant data from
     // the store themselves.
 
-    // @ts-expect-error - quick hack to mollify TS.
     renderWithRedux(<Profile {...notMyProfileProps} />);
 
     const reportButton: HTMLElement = screen.getByText('buttons.flag-user');
@@ -126,7 +137,6 @@ describe('<Profile/>', () => {
   });
 
   it('renders profile heading and social links', () => {
-    // @ts-expect-error - quick hack to mollify TS.
     renderWithRedux(<Profile {...notMyProfileProps} />);
 
     expect(
@@ -161,7 +171,6 @@ describe('<Profile/>', () => {
       website: ''
     };
 
-    // @ts-expect-error - quick hack to mollify TS.
     renderWithRedux(<Profile user={profileUser} isSessionUser={true} />);
 
     await user.click(
