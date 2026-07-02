@@ -4,7 +4,7 @@ import { createSelector } from 'reselect';
 
 import i18next from 'i18next';
 import { sortChallengeFiles } from '../../../../utils/sort-challengefiles';
-import { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
+import type { ChallengeFile, ChallengeFiles } from '../../../redux/prop-types';
 import { toggleVisibleEditor } from '../redux/actions';
 import {
   visibleEditorsSelector,
@@ -35,7 +35,6 @@ const mapDispatchToProps = {
 
 class EditorTabs extends Component<EditorTabsProps> {
   static displayName: string;
-  isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
   render() {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
     const isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
@@ -44,15 +43,10 @@ class EditorTabs extends Component<EditorTabsProps> {
     return (
       showTabs && (
         <div className='monaco-editor-tabs'>
+          {/* eslint-disable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */}
           {sortedFiles.map((challengeFile: ChallengeFile) => (
             <button
-              aria-expanded={
-                // @ts-expect-error TODO: validate challengeFile on io-boundary,
-                // then we won't need to ignore this error and we can drop the
-                // nullish handling.
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-                visibleEditors[challengeFile.fileKey] ?? 'false'
-              }
+              aria-expanded={visibleEditors[challengeFile.fileKey] ?? false}
               key={challengeFile.fileKey}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
@@ -62,6 +56,7 @@ class EditorTabs extends Component<EditorTabsProps> {
               </span>
             </button>
           ))}
+          {/* eslint-enable @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment */}
         </div>
       )
     );

@@ -20,6 +20,7 @@ export type VisibleEditors = {
   indextsx?: boolean;
   mainpy?: boolean;
   tsconfigjson?: boolean;
+  [key: string]: boolean | undefined;
 };
 type MultifileEditorProps = Pick<
   EditorProps,
