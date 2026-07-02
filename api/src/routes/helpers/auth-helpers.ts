@@ -19,11 +19,8 @@ export const findOrCreateUser = async (
     select: { id: true, acceptedPrivacyTerms: true }
   });
   if (existingUser.length > 1) {
-    fastify.Sentry.captureException(
-      new Error(
-        `Multiple user records found for: ${existingUser.map(user => user.id).join(', ')}`
-      )
-    );
+    const userIds = existingUser.map(user => user.id);
+    fastify.log.error({ userIds }, 'Multiple user records found');
   }
 
   if (existingUser[0]) {
@@ -48,15 +45,14 @@ export const findOrCreateUser = async (
         }
       });
       fastify.log.info(
-        `Drip campaign record created for user ${newUser.id} with variant ${variant}`
+        { userId: newUser.id, variant },
+        'Drip campaign record created for user'
       );
-    } catch (error) {
-      // Log the error but don't fail user creation
+    } catch (err) {
       fastify.log.error(
-        error,
-        `Failed to create drip campaign record for user ${newUser.id}`
+        { err, userId: newUser.id },
+        'Failed to create drip campaign record for user'
       );
-      fastify.Sentry.captureException(error);
     }
   }
 

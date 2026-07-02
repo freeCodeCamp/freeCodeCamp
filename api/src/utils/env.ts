@@ -226,6 +226,32 @@ export const SENTRY_ENVIRONMENT =
   process.env.SENTRY_ENVIRONMENT === 'development'
     ? ''
     : process.env.SENTRY_ENVIRONMENT;
+const _SENTRY_TRACES_SAMPLE_RATE = Number(
+  process.env.SENTRY_TRACES_SAMPLE_RATE ?? '0.1'
+);
+assert.ok(
+  _SENTRY_TRACES_SAMPLE_RATE >= 0 && _SENTRY_TRACES_SAMPLE_RATE <= 1,
+  `SENTRY_TRACES_SAMPLE_RATE must be a number between 0 and 1. Found ${process.env.SENTRY_TRACES_SAMPLE_RATE}`
+);
+export const SENTRY_TRACES_SAMPLE_RATE = _SENTRY_TRACES_SAMPLE_RATE;
+const _SENTRY_PROFILE_SESSION_SAMPLE_RATE = Number(
+  process.env.SENTRY_PROFILE_SESSION_SAMPLE_RATE ?? '1'
+);
+assert.ok(
+  _SENTRY_PROFILE_SESSION_SAMPLE_RATE >= 0 &&
+    _SENTRY_PROFILE_SESSION_SAMPLE_RATE <= 1,
+  `SENTRY_PROFILE_SESSION_SAMPLE_RATE must be a number between 0 and 1. Found ${process.env.SENTRY_PROFILE_SESSION_SAMPLE_RATE}`
+);
+export const SENTRY_PROFILE_SESSION_SAMPLE_RATE =
+  _SENTRY_PROFILE_SESSION_SAMPLE_RATE;
+const _SENTRY_LOGS_INFO_SAMPLE_RATE = Number(
+  process.env.SENTRY_LOGS_INFO_SAMPLE_RATE ?? '0.1'
+);
+assert.ok(
+  _SENTRY_LOGS_INFO_SAMPLE_RATE >= 0 && _SENTRY_LOGS_INFO_SAMPLE_RATE <= 1,
+  `SENTRY_LOGS_INFO_SAMPLE_RATE must be a number between 0 and 1. Found ${process.env.SENTRY_LOGS_INFO_SAMPLE_RATE}`
+);
+export const SENTRY_LOGS_INFO_SAMPLE_RATE = _SENTRY_LOGS_INFO_SAMPLE_RATE;
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;

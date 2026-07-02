@@ -1,4 +1,3 @@
-import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -47,7 +46,7 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
 import { isObjectID } from './utils/validation.js';
-import { getLogger } from './utils/logger.js';
+import { bindRouteToLogger, genReqId, getLogger } from './utils/logger.js';
 import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
@@ -86,9 +85,7 @@ export const buildOptions: FastifyHttpOptions<
   FastifyBaseLogger
 > = {
   loggerInstance: getLogger(),
-  genReqId: () => randomBytes(8).toString('hex'),
-  // disabled so we can customise the request/response logging
-  disableRequestLogging: true,
+  genReqId,
   // destroy all connections on close to avoid EADDRINUSE
   // on restart, in development. Leave default in production.
   forceCloseConnections:
@@ -110,17 +107,8 @@ export const build = async (
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
-  fastify.addHook('onRequest', (req, _reply, done) => {
-    const logger = fastify.log.child({ req });
-    logger.debug({ req }, 'received request');
-    done();
-  });
 
-  fastify.addHook('onResponse', (req, reply, done) => {
-    const logger = fastify.log.child({ res: reply });
-    logger.debug({ req, res: reply }, 'responding to request');
-    done();
-  });
+  fastify.addHook('onRequest', bindRouteToLogger);
 
   void fastify.register(redirectWithMessage);
   void fastify.register(security);

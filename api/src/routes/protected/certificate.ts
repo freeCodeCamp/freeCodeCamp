@@ -225,11 +225,10 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       const { certSlug } = req.body;
 
       if (!isKnownCertSlug(certSlug) || !isCertAllowed(certSlug)) {
-        logger.warn(`Unknown certificate slug "${certSlug}"`);
+        req.log.warn({ certSlug }, 'Unknown certificate slug');
         void reply.code(400);
         return {
           response: {
@@ -250,8 +249,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       if (!user) {
         void reply.code(500);
-        logger.error(`User with id ${req.user?.id} not found`);
-        fastify.Sentry.captureException(Error('User not found'));
+        req.log.error('User not found');
         return {
           type: 'danger',
           // message: 'User not found'
@@ -263,7 +261,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       // TODO: Discuss if this is a requirement still
       if (!user.name) {
-        logger.warn(`${user.id} does not have a name property`);
+        req.log.warn('User does not have a name property');
         void reply.code(400);
         return {
           response: {
@@ -276,7 +274,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user[certType]) {
-        logger.info(`${user.id} has already claimed ${certName}`);
+        req.log.info({ certName }, 'User has already claimed certificate');
         void reply.code(200);
         return {
           response: {
@@ -298,7 +296,10 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (!hasCompletedTestRequirements) {
-        logger.info(`${user.id} has not completed the tests for ${certName}`);
+        req.log.info(
+          { certName },
+          'User has not completed the tests for certificate'
+        );
         void reply.code(400);
         return {
           response: {
@@ -390,16 +391,15 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
         // Failed email should not prevent successful response.
         try {
-          logger.info(`Sending congratulations email to ${user.id}`);
+          req.log.info('Sending congratulations email');
           // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
           await fastify.sendEmail(notifyUser);
         } catch (e) {
-          logger.error(e);
-          fastify.Sentry.captureException(e);
+          req.log.error(e, 'Failed to send congratulations email');
         }
       }
 
-      logger.info(`${user.id} has claimed ${certName}`);
+      req.log.info({ certName }, 'User has claimed certificate');
       void reply.code(200);
       return {
         response: {

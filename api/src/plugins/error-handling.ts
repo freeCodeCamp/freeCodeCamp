@@ -23,7 +23,6 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.decorate('Sentry', Sentry);
 
   fastify.setErrorHandler((error: FastifyError, request, reply) => {
-    const logger = fastify.log.child({ req: request });
     const accepts = request.accepts().type(['json', 'html']);
     const { returnTo } = getRedirectParams(request);
 
@@ -39,9 +38,9 @@ const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
 
     if (!isCSRFError) {
       if (reply.statusCode >= 500) {
-        logger.error(error, 'Error in request');
+        request.log.error(error, 'Error in request');
       } else {
-        logger.warn(error, 'CSRF error in request');
+        request.log.warn(error, 'Client error in request');
       }
     }
 

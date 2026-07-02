@@ -7,7 +7,7 @@ const start = async () => {
   const fastify = await build(buildOptions);
 
   const stop = async (signal: NodeJS.Signals) => {
-    fastify.log.info(`Received ${signal}, shutting down.`);
+    fastify.log.info({ signal }, 'Received signal, shutting down');
 
     fastify.server.closeAllConnections();
     await new Promise<void>(resolve => {
@@ -28,7 +28,7 @@ const start = async () => {
   try {
     await fastify.listen({ port: Number(PORT), host: HOST });
   } catch (err) {
-    fastify.log.error(err);
+    fastify.log.error(err, 'Failed to start server');
     process.exit(1);
   }
 };

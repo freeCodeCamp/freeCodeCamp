@@ -68,8 +68,12 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
   const TOKEN_INVALID = 'Your access token is invalid';
   const TOKEN_EXPIRED = 'Access token is no longer valid';
 
-  const setAccessDenied = (req: FastifyRequest, content: string) =>
-    (req.accessDeniedMessage = { type: 'info', content });
+  const setAccessDenied = (req: FastifyRequest, content: string) => {
+    fastify.Sentry?.metrics.count('auth.access_denied', 1, {
+      attributes: { reason: content }
+    });
+    req.accessDeniedMessage = { type: 'info', content };
+  };
 
   async function getAuthedUser(this: FastifyRequest): Promise<AuthResult> {
     const tokenCookie = this.cookies.jwt_access_token;
@@ -100,18 +104,26 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     const user = await fastify.prisma.user.findUnique({
       where: { id: accessToken.userId }
     });
+    if (user) {
+      fastify.Sentry?.setUser({ id: user.id });
+    }
 
     return user ? { user } : { message: TOKEN_INVALID };
   }
 
   fastify.decorateRequest('getAuthedUser', getAuthedUser);
 
-  const handleAuth = async (req: FastifyRequest): Promise<void> => {
+  const handleAuth = async (
+    req: FastifyRequest,
+    reply: FastifyReply
+  ): Promise<void> => {
     const { message, user } = await req.getAuthedUser();
 
     if (user) {
       req.user = user;
+      req.log = reply.log = req.log.child({ userId: user.id });
     } else {
+      req.log.debug({ reason: message }, 'Request not authenticated');
       setAccessDenied(req, message);
     }
   };
@@ -135,6 +147,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     try {
       jwt.verify(encodedToken, JWT_SECRET);
     } catch (e) {
+      req.log.warn({ err: e }, 'Exam environment token verification failed');
       void reply.code(403);
       return reply.send(
         ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
@@ -197,7 +210,9 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       where: { id: token.userId }
     });
     if (!user) return setAccessDenied(req, TOKEN_INVALID);
+    fastify.Sentry?.setUser({ id: user.id });
     req.user = user;
+    req.log = reply.log = req.log.child({ userId: user.id });
   }
 
   fastify.decorate('authorize', handleAuth);
