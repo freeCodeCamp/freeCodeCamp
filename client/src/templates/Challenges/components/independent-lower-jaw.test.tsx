@@ -36,10 +36,6 @@ vi.mock('../../../../config/env.json', () => ({
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeature: () => ({ on: showSocratesFlag })
 }));
-vi.mock('../utils/fetch-all-curriculum-data', () => ({
-  useSubmit: () => vi.fn()
-}));
-
 const baseChallengeMeta: ChallengeMeta = {
   block: 'test-block',
   id: 'test-challenge-id',

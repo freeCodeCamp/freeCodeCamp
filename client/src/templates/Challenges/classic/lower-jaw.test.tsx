@@ -11,14 +11,6 @@ vi.mock('../../../utils/get-words', () => ({
   randomCompliment: () => 'Keep going.'
 }));
 
-vi.mock('../../../components/Progress', () => ({
-  default: () => <div data-testid='progress' />
-}));
-
-vi.mock('../../../components/share', () => ({
-  Share: () => <div data-testid='share' />
-}));
-
 const challengeMeta: ChallengeMeta = {
   block: 'basic-html-and-html5',
   id: 'test-challenge-id',
