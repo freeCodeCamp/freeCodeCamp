@@ -1,5 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { create, ReactTestRendererJSON } from 'react-test-renderer';
 import { describe, expect, it, vi } from 'vitest';
@@ -9,6 +10,9 @@ import {
   LangNames
 } from '@freecodecamp/shared/config/i18n';
 
+import i18nTestConfig from '../../../i18n/config-for-tests';
+import linksTranslations from '../../../i18n/locales/english/links.json';
+import translations from '../../../i18n/locales/english/translations.json';
 import { LocalStorageThemes } from '../../redux/types';
 import { toggleTheme } from '../../redux/actions';
 import { createStore } from '../../redux/create-store';
@@ -19,38 +23,16 @@ import LanguageList from './components/language-list';
 import NavLinks from './components/nav-links';
 import UniversalNav from './components/universal-nav';
 
-const mockTranslations = vi.hoisted(() => {
-  const translations: Record<string, string> = {
-    'aria.fcc-curriculum': 'freeCodeCamp Curriculum',
-    'aria.opens-new-window': 'Opens in new window',
-    'aria.primary-nav': 'primary',
-    'buttons.catalog': 'Catalog',
-    'buttons.change-language': 'Change Language',
-    'buttons.contribute': 'Contribute',
-    'buttons.curriculum': 'Curriculum',
-    'buttons.donate': 'Donate',
-    'buttons.forum': 'Forum',
-    'buttons.menu': 'Menu',
-    'buttons.news': 'News',
-    'buttons.podcast': 'Podcast',
-    'buttons.profile': 'Profile',
-    'buttons.radio': 'Radio',
-    'buttons.settings': 'Settings',
-    'buttons.sign-in': 'Sign in',
-    'buttons.sign-out': 'Sign out',
-    'icons.avatar': 'Default Avatar',
-    'icons.avatar-2': 'An avatar coding with a laptop',
-    'links:nav.contribute': 'https://contribute.freecodecamp.org/#/',
-    'links:nav.forum': 'https://forum.freecodecamp.org/',
-    'links:nav.news': 'https://freecodecamp.org/news/',
-    'links:nav.podcast': 'https://freecodecamp.libsyn.com/',
-    'settings.labels.night-mode': 'Night Mode'
-  };
+vi.unmock('react-i18next');
 
-  return {
-    t: (key: string) => translations[key] ?? key
-  };
-});
+i18nTestConfig.addResourceBundle(
+  'en',
+  'translations',
+  translations,
+  true,
+  true
+);
+i18nTestConfig.addResourceBundle('en', 'links', linksTranslations, true, true);
 
 const mockUseMediaQuery = vi.hoisted(() => vi.fn(() => true));
 
@@ -60,25 +42,6 @@ vi.mock('@loadable/component', () => ({
     ({ innerRef }: { innerRef?: React.RefObject<HTMLDivElement> }) => (
       <div ref={innerRef} data-testid='header-search' />
     )
-}));
-
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: mockTranslations.t
-  }),
-  withTranslation:
-    () =>
-    <P extends object>(Component: React.ComponentType<P>) => {
-      const WrappedComponent = (props: P) => (
-        <Component {...props} t={mockTranslations.t} />
-      );
-
-      WrappedComponent.displayName = `withTranslation(${
-        Component.displayName || Component.name || 'Component'
-      })`;
-
-      return WrappedComponent;
-    }
 }));
 
 vi.mock('../../analytics/call-ga', () => ({
@@ -120,7 +83,11 @@ const createTestStore = ({
   });
 
 const renderWithStore = (ui: React.ReactElement, store = createTestStore()) =>
-  render(<Provider store={store}>{ui}</Provider>);
+  render(
+    <Provider store={store}>
+      <I18nextProvider i18n={i18nTestConfig}>{ui}</I18nextProvider>
+    </Provider>
+  );
 
 const renderHeader = (store = createTestStore()) =>
   renderWithStore(
