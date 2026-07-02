@@ -43,4 +43,16 @@ describe('format', () => {
   it(`outputs NaN as 'NaN'`, () => {
     expect(format(NaN)).toBe('NaN');
   });
+  it('formats Set correctly', () => {
+    expect(format(new Set([1, 2, 3]))).toBe('Set(3) {1, 2, 3}');
+    expect(format(new Set())).toBe('Set(0) {}');
+  });
+  it('formats Map correctly', () => {
+    const map = new Map([
+      ['a', 1],
+      ['b', 2]
+    ]);
+    expect(format(map)).toBe('Map(2) {a => 1, b => 2}');
+    expect(format(new Map())).toBe('Map(0) {}');
+  });
 });
