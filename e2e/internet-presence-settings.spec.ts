@@ -35,7 +35,7 @@ test.describe('Your Internet Presence', () => {
     await socialInput.fill(githubUrl);
 
     const saveButton = page
-      .getByTestId(settingsPageElement.internetPresenceForm)
+      .locator(`[data-testid="${settingsPageElement.internetPresenceForm}"]`)
       .getByRole('button', { name: translations.buttons.save });
 
     await expect(saveButton).toBeVisible();

@@ -63,13 +63,9 @@ function renderInternet(userOverrides: Partial<User> = {}) {
   );
 }
 
-function queryCheckmark(container: HTMLElement, testId: string) {
-  return container.querySelector(`[data-playwright-test-label="${testId}"]`);
-}
-
 describe('<Internet />', () => {
   it('renders the internet presence form with a disabled save button', () => {
-    const { container } = renderInternet();
+    renderInternet();
 
     expect(
       screen.getByRole('heading', { name: 'settings.headings.internet' })
@@ -82,18 +78,18 @@ describe('<Internet />', () => {
     ).toHaveAttribute('aria-disabled', 'true');
 
     socialFields.forEach(({ checkTestId }) => {
-      expect(queryCheckmark(container, checkTestId)).not.toBeInTheDocument();
+      expect(screen.queryByTestId(checkTestId)).not.toBeInTheDocument();
     });
   });
 
   it('shows a checkmark for each valid social URL', async () => {
     const user = userEvent.setup();
-    const { container } = renderInternet();
+    renderInternet();
 
     for (const { label, url, checkTestId } of socialFields) {
       await user.type(screen.getByRole('textbox', { name: label }), url);
 
-      expect(queryCheckmark(container, checkTestId)).toBeInTheDocument();
+      expect(screen.getByTestId(checkTestId)).toBeInTheDocument();
     }
 
     expect(
