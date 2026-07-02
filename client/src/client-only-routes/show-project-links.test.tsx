@@ -1,11 +1,23 @@
-/* eslint-disable testing-library/no-node-access */
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
 import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { describe, expect, test, vi } from 'vitest';
 
+import i18nTestConfig from '../../i18n/config-for-tests';
+import translations from '../../i18n/locales/english/translations.json';
 import type { User } from '../redux/prop-types';
 import { ShowProjectLinks } from './show-project-links';
+
+vi.unmock('react-i18next');
+
+i18nTestConfig.addResourceBundle(
+  'en',
+  'translations',
+  translations,
+  true,
+  true
+);
 
 vi.mock('../components/SolutionViewer/exam-results-modal', () => ({
   default: () => null
@@ -15,55 +27,17 @@ vi.mock('../templates/Challenges/components/project-preview-modal', () => ({
   default: () => null
 }));
 
-vi.mock('react-i18next', async () => {
-  const React = await import('react');
-
-  const renderNodes = (nodes: React.ReactNode): React.ReactNode =>
-    React.Children.map(nodes, node => {
-      if (!React.isValidElement<{ children?: React.ReactNode }>(node)) {
-        return node;
-      }
-
-      return React.cloneElement(node, {
-        ...node.props,
-        children: renderNodes(node.props.children)
-      });
-    });
-
-  const t = (
-    key: string,
-    options?: string | Record<string, string | number>
-  ) => {
-    if (typeof options === 'string') {
-      return options;
-    }
-
-    if (key === 'certification.project.heading-exam') {
-      return `As part of this certification, ${options?.user} passed the following exam: `;
-    }
-
-    if (key === 'certification.project.heading') {
-      return `${options?.user} completed the following projects: `;
-    }
-
-    return key;
-  };
-
-  return {
-    Trans: ({ children }: { children: React.ReactNode }) =>
-      renderNodes(children),
-    useTranslation: () => ({ t })
-  };
-});
-
 const user = {
   completedChallenges: [],
   username: 'certifieduser'
 } as unknown as User;
 
+const renderWithI18n = (ui: React.ReactElement) =>
+  render(<I18nextProvider i18n={i18nTestConfig}>{ui}</I18nextProvider>);
+
 describe('<ShowProjectLinks />', () => {
   test('renders responsive web design project and policy links', () => {
-    render(
+    renderWithI18n(
       <ShowProjectLinks
         certSlug={Certification.RespWebDesign}
         name='Full Stack User'
@@ -118,7 +92,7 @@ describe('<ShowProjectLinks />', () => {
   });
 
   test('renders Microsoft certification exam link without the policy footnote', () => {
-    render(
+    renderWithI18n(
       <ShowProjectLinks
         certSlug={Certification.FoundationalCSharp}
         name='Full Stack User'

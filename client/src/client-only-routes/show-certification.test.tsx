@@ -1,79 +1,41 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
+import { I18nextProvider } from 'react-i18next';
 import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { describe, expect, test, vi } from 'vitest';
 
+import i18nTestConfig from '../../i18n/config-for-tests';
+import translations from '../../i18n/locales/english/translations.json';
 import {
   CertificateDisplay,
   DonationSection,
   ShareCertBtns
 } from './show-certification';
 
+vi.unmock('react-i18next');
+
+i18nTestConfig.addResourceBundle(
+  'en',
+  'translations',
+  translations,
+  true,
+  true
+);
+
 vi.mock('../components/Donation/multi-tier-donation-form', () => ({
   default: () => <div data-testid='donation-tier-selector' />
 }));
-
-vi.mock('react-i18next', async () => {
-  const React = await import('react');
-
-  const replaceInterpolation = (
-    text: string,
-    values: Record<string, string | number> = {}
-  ) =>
-    text.replace(/{{(.*?)}}/g, (_, key: string) =>
-      String(values[key.trim()] ?? '')
-    );
-
-  const renderNodes = (
-    nodes: React.ReactNode,
-    values: Record<string, string | number> = {}
-  ): React.ReactNode =>
-    React.Children.map(nodes, node => {
-      if (typeof node === 'string') {
-        return replaceInterpolation(node, values);
-      }
-
-      if (!React.isValidElement<{ children?: React.ReactNode }>(node)) {
-        return node;
-      }
-
-      return React.cloneElement(node, {
-        ...node.props,
-        // eslint-disable-next-line testing-library/no-node-access
-        children: renderNodes(node.props.children, values)
-      });
-    });
-
-  const t = (
-    key: string,
-    options?: string | Record<string, string | number>
-  ) => {
-    if (key === 'profile.tweet' && typeof options === 'object') {
-      return `I just earned the ${options.certTitle} certification @freeCodeCamp! Check it out here: ${options.certURL}`;
-    }
-
-    return typeof options === 'string' ? options : key;
-  };
-
-  return {
-    Trans: ({
-      children,
-      values
-    }: {
-      children: React.ReactNode;
-      values?: Record<string, string | number>;
-    }) => renderNodes(children, values),
-    useTranslation: () => ({ t })
-  };
-});
 
 const certDate = new Date(2018, 7, 1);
 const certURL =
   'https://freecodecamp.org/certification/certifieduser/responsive-web-design';
 
+const renderWithI18n = (ui: React.ReactElement) =>
+  render(<I18nextProvider i18n={i18nTestConfig}>{ui}</I18nextProvider>);
+
 describe('<CertificateDisplay />', () => {
   test('renders a non-Microsoft certificate', () => {
-    const { container } = render(
+    const { container } = renderWithI18n(
       <CertificateDisplay
         certDate={certDate}
         certSlug={Certification.RespWebDesign}
@@ -88,16 +50,16 @@ describe('<CertificateDisplay />', () => {
     expect(screen.getByTestId('cert-fcc-logo')).toBeInTheDocument();
     expect(screen.queryByTestId('cert-microsoft-logo')).not.toBeInTheDocument();
     expect(
-      screen.getByAltText('certification.quincy-larson-signature')
+      screen.getByAltText("Quincy Larson's Signature")
     ).toBeInTheDocument();
     expect(
-      screen.queryByAltText('certification.julia-liuson-signature')
+      screen.queryByAltText("Julia Liuson's Signature")
     ).not.toBeInTheDocument();
     expect(container).toHaveTextContent(certURL);
   });
 
   test('renders a Microsoft certificate', () => {
-    render(
+    renderWithI18n(
       <CertificateDisplay
         certDate={certDate}
         certSlug={Certification.FoundationalCSharp}
@@ -112,11 +74,9 @@ describe('<CertificateDisplay />', () => {
     expect(screen.getByTestId('cert-fcc-logo')).toBeInTheDocument();
     expect(screen.getByTestId('cert-microsoft-logo')).toBeInTheDocument();
     expect(
-      screen.getByAltText('certification.quincy-larson-signature')
+      screen.getByAltText("Quincy Larson's Signature")
     ).toBeInTheDocument();
-    expect(
-      screen.getByAltText('certification.julia-liuson-signature')
-    ).toBeInTheDocument();
+    expect(screen.getByAltText("Julia Liuson's Signature")).toBeInTheDocument();
   });
 
   test.each([
@@ -126,9 +86,9 @@ describe('<CertificateDisplay />', () => {
     [Certification.JsV9, 'JavaScript'],
     [Certification.RelationalDbV9, 'Relational Database'],
     [Certification.RespWebDesignV9, 'Responsive Web Design'],
-    [Certification.FoundationalCSharp, 'Foundational C#']
+    [Certification.FoundationalCSharp, 'Foundational C# with Microsoft']
   ])('renders the %s certificate title', (certSlug, certTitle) => {
-    render(
+    renderWithI18n(
       <CertificateDisplay
         certDate={certDate}
         certSlug={certSlug}
@@ -145,7 +105,7 @@ describe('<CertificateDisplay />', () => {
 
 describe('<DonationSection />', () => {
   test('renders donation copy and form', () => {
-    render(
+    renderWithI18n(
       <DonationSection
         handleProcessing={vi.fn()}
         hideDonationSection={vi.fn()}
@@ -153,14 +113,16 @@ describe('<DonationSection />', () => {
       />
     );
 
-    expect(screen.getByText('donate.only-you')).toBeInTheDocument();
+    expect(
+      screen.getByText(translations.donate['only-you'])
+    ).toBeInTheDocument();
     expect(screen.getByTestId('donation-tier-selector')).toBeInTheDocument();
   });
 
   test('renders close button after donation submission', () => {
     const hideDonationSection = vi.fn();
 
-    render(
+    renderWithI18n(
       <DonationSection
         handleProcessing={vi.fn()}
         hideDonationSection={hideDonationSection}
@@ -168,7 +130,9 @@ describe('<DonationSection />', () => {
       />
     );
 
-    fireEvent.click(screen.getByRole('button', { name: 'buttons.close' }));
+    fireEvent.click(
+      screen.getByRole('button', { name: translations.buttons.close })
+    );
 
     expect(hideDonationSection).toHaveBeenCalledTimes(1);
   });
@@ -176,7 +140,7 @@ describe('<DonationSection />', () => {
 
 describe('<ShareCertBtns />', () => {
   test('renders LinkedIn and Twitter share links', () => {
-    render(
+    renderWithI18n(
       <ShareCertBtns
         certDate={certDate}
         certSlug={Certification.RespWebDesign}
@@ -187,13 +151,13 @@ describe('<ShareCertBtns />', () => {
     );
 
     expect(
-      screen.getByRole('link', { name: 'profile.add-linkedin' })
+      screen.getByRole('link', { name: translations.profile['add-linkedin'] })
     ).toHaveAttribute(
       'href',
       `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Legacy%20Responsive%20Web%20Design%20V8&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=${certURL}&certId=certifieduser-rwd`
     );
     expect(
-      screen.getByRole('link', { name: 'profile.add-twitter' })
+      screen.getByRole('link', { name: translations.profile['add-twitter'] })
     ).toHaveAttribute(
       'href',
       `https://x.com/intent/post?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: ${certURL}`
