@@ -1,57 +1,13 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 import { MobileLayout } from './mobile-layout';
-
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({ t: (key: string) => key }),
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-return
-  withTranslation: () => (Component: any) => Component
-}));
 
 vi.mock('i18next', () => ({
   default: {
     t: (key: string) => key
   }
-}));
-
-vi.mock('@freecodecamp/shared/config/challenge-types', () => ({
-  challengeTypes: {
-    python: 1,
-    javascript: 2,
-    multifileCertProject: 3,
-    multifilePythonCertProject: 4,
-    lab: 5,
-    jsLab: 6,
-    pyLab: 7,
-    dailyChallengeJs: 8,
-    dailyChallengePy: 9
-  }
-}));
-
-vi.mock('../redux/actions', () => ({
-  removePortalWindow: vi.fn(),
-  setShowPreviewPortal: vi.fn(),
-  setShowPreviewPane: vi.fn(),
-  storePortalWindow: vi.fn()
-}));
-
-vi.mock('../redux/selectors', () => ({
-  portalWindowSelector: vi.fn(),
-  showPreviewPortalSelector: vi.fn(),
-  showPreviewPaneSelector: vi.fn()
-}));
-
-vi.mock('../components/preview-portal', () => ({
-  default: () => <div>Preview Portal</div>
-}));
-
-vi.mock('../components/notes', () => ({
-  default: () => <div>Notes</div>
-}));
-
-vi.mock('./editor-tabs', () => ({
-  default: () => <div>Editor Tabs</div>
 }));
 
 const mockProps = {
@@ -112,5 +68,22 @@ describe('<MobileLayout />', () => {
     fireEvent.click(screen.getByText('Python'));
 
     expect(setDailyCodingChallengeLanguage).toHaveBeenCalledWith('python');
+  });
+
+  it('renders notes in the notes tab for multifile editor challenges', async () => {
+    const user = userEvent.setup();
+    render(
+      <MobileLayout
+        {...mockProps}
+        notes='<p>This is a test note</p>'
+        usesMultifileEditor={true}
+      />
+    );
+
+    await user.click(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.notes' })
+    );
+
+    expect(screen.getByText('This is a test note')).toBeVisible();
   });
 });
