@@ -7,10 +7,6 @@ import { describe, expect, test, vi } from 'vitest';
 import type { User } from '../redux/prop-types';
 import { ShowProjectLinks } from './show-project-links';
 
-vi.mock('../components/SolutionViewer/project-modal', () => ({
-  default: () => null
-}));
-
 vi.mock('../components/SolutionViewer/exam-results-modal', () => ({
   default: () => null
 }));

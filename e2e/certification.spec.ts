@@ -6,10 +6,12 @@ test.describe('Certification page', () => {
   test('renders a non-Microsoft certification route', async ({ page }) => {
     await page.goto('/certification/certifieduser/responsive-web-design');
 
-    await expect(page.getByTestId('cert-wrapper')).toBeVisible();
-    await expect(page.getByTestId('cert-links')).toBeVisible();
-    await expect(page.getByTestId('donation-section')).toBeVisible();
-    await expect(page.getByTestId('project-links')).toBeVisible();
+    await expect(page.locator('[data-testid="cert-wrapper"]')).toBeVisible();
+    await expect(page.locator('[data-testid="cert-links"]')).toBeVisible();
+    await expect(
+      page.locator('[data-testid="donation-section"]')
+    ).toBeVisible();
+    await expect(page.locator('[data-testid="project-links"]')).toBeVisible();
   });
 
   test('renders a Microsoft certification route', async ({ page }) => {
@@ -17,10 +19,12 @@ test.describe('Certification page', () => {
       '/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
-    await expect(page.getByTestId('cert-wrapper')).toBeVisible();
-    await expect(page.getByTestId('cert-links')).toBeVisible();
-    await expect(page.getByTestId('donation-section')).toBeVisible();
-    await expect(page.getByTestId('project-links')).toBeVisible();
+    await expect(page.locator('[data-testid="cert-wrapper"]')).toBeVisible();
+    await expect(page.locator('[data-testid="cert-links"]')).toBeVisible();
+    await expect(
+      page.locator('[data-testid="donation-section"]')
+    ).toBeVisible();
+    await expect(page.locator('[data-testid="project-links"]')).toBeVisible();
   });
 });
 

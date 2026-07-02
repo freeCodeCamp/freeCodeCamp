@@ -183,7 +183,7 @@ export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     : null;
 
   return (
-    <div data-playwright-test-label='project-links'>
+    <div data-testid='project-links'>
       {t(getCertHeading(certSlug), { user: name })}
       <Spacer size='m' />
       <Table striped>

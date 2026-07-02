@@ -156,17 +156,12 @@ export const DonationSection = ({
   const { t } = useTranslation();
 
   return (
-    <div
-      className='donation-section'
-      data-playwright-test-label='donation-section'
-    >
+    <div className='donation-section' data-testid='donation-section'>
       <Spacer size='l' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p data-playwright-test-label='donation-text'>
-              {t('donate.only-you')}
-            </p>
+            <p data-testid='donation-text'>{t('donate.only-you')}</p>
           </Col>
         </Row>
       )}
@@ -177,7 +172,7 @@ export const DonationSection = ({
           sm={10}
           smOffset={1}
           xs={12}
-          data-playwright-test-label='donation-form'
+          data-testid='donation-form'
         >
           <MultiTierDonationForm
             defaultTheme={LocalStorageThemes.Light}
@@ -231,7 +226,7 @@ export const ShareCertBtns = ({
             certMonth + 1
           }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
           target='_blank'
-          data-playwright-test-label='linkedin-share-btn'
+          data-testid='linkedin-share-btn'
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -245,7 +240,7 @@ export const ShareCertBtns = ({
             certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='twitter-share-btn'
+          data-testid='twitter-share-btn'
         >
           {t('profile.add-twitter')}
         </Button>
@@ -259,7 +254,7 @@ export const ShareCertBtns = ({
             certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='bluesky-share-btn'
+          data-testid='bluesky-share-btn'
         >
           {t('profile.add-bluesky')}
         </Button>
@@ -273,7 +268,7 @@ export const ShareCertBtns = ({
             certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='thread-share-btn'
+          data-testid='thread-share-btn'
         >
           {t('profile.add-threads')}
         </Button>
@@ -311,30 +306,24 @@ export function CertificateDisplay({
   ].includes(certSlug);
 
   return (
-    <div
-      className='certificate-wrapper'
-      data-playwright-test-label='cert-wrapper'
-    >
+    <div className='certificate-wrapper' data-testid='cert-wrapper'>
       <div className='certification-namespace'>
-        <header data-playwright-test-label='cert-header'>
+        <header data-testid='cert-header'>
           <Col sm={12}>
             {isMicrosoftCert ? (
               <>
-                <div
-                  className='dual-logo fcc-logo'
-                  data-playwright-test-label='cert-fcc-logo'
-                >
+                <div className='dual-logo fcc-logo' data-testid='cert-fcc-logo'>
                   <FreeCodeCampLogo aria-hidden='true' />
                 </div>
                 <div
                   className='dual-logo ms-logo'
-                  data-playwright-test-label='cert-microsoft-logo'
+                  data-testid='cert-microsoft-logo'
                 >
                   <MicrosoftLogo aria-hidden='true' />
                 </div>
               </>
             ) : (
-              <div className='logo' data-playwright-test-label='cert-fcc-logo'>
+              <div className='logo' data-testid='cert-fcc-logo'>
                 <FreeCodeCampLogo aria-hidden='true' />
               </div>
             )}
@@ -343,7 +332,7 @@ export function CertificateDisplay({
         <main className='information'>
           <div
             className='information-container'
-            data-playwright-test-label='cert-info-container'
+            data-testid='cert-info-container'
           >
             <Trans
               i18nKey={
@@ -369,24 +358,22 @@ export function CertificateDisplay({
               <h1>
                 <strong>{'{{user}}'}</strong>
               </h1>
-              <h3 data-playwright-test-label='successful-completion'>
-                placeholder
-              </h3>
-              <h1 data-playwright-test-label='certification-title'>
+              <h3 data-testid='successful-completion'>placeholder</h3>
+              <h1 data-testid='certification-title'>
                 <strong>{'{{title}}'}</strong>
               </h1>
-              <h4 data-playwright-test-label='issue-date'>{'{{time}}'}</h4>
+              <h4 data-testid='issue-date'>{'{{time}}'}</h4>
               <h5 style={{ marginTop: '15px' }}>{'{{completionTime}}'}</h5>
             </Trans>
           </div>
         </main>
-        <footer data-playwright-test-label='cert-footer'>
+        <footer data-testid='cert-footer'>
           <div className='signatures'>
             {isMicrosoftCert ? (
               <>
                 <div>
                   <Image
-                    data-playwright-test-label='quincy-signature'
+                    data-testid='quincy-signature'
                     alt={t('certification.quincy-larson-signature')}
                     src={
                       'https://cdn.freecodecamp.org' +
@@ -400,7 +387,7 @@ export function CertificateDisplay({
                 </div>
                 <div className='microsoft-signature'>
                   <Image
-                    data-playwright-test-label='microsoft-signature'
+                    data-testid='microsoft-signature'
                     alt={t('certification.julia-liuson-signature')}
                     src={
                       'https://cdn.freecodecamp.org' +
@@ -419,7 +406,7 @@ export function CertificateDisplay({
             ) : (
               <div>
                 <Image
-                  data-playwright-test-label='quincy-signature'
+                  data-testid='quincy-signature'
                   alt={t('certification.quincy-larson-signature')}
                   src={
                     'https://cdn.freecodecamp.org' +
@@ -578,10 +565,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         completionTime={completionTime}
         displayName={displayName}
       />
-      <div
-        className='row certificate-links'
-        data-playwright-test-label='cert-links'
-      >
+      <div className='row certificate-links' data-testid='cert-links'>
         <Spacer size='l' />
         {signedInUserName === username ? (
           <ShareCertBtns

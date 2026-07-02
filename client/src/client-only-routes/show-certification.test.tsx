@@ -1,4 +1,3 @@
-/* eslint-disable testing-library/no-container, testing-library/no-node-access */
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Certification } from '@freecodecamp/shared/config/certification-settings';
@@ -40,6 +39,7 @@ vi.mock('react-i18next', async () => {
 
       return React.cloneElement(node, {
         ...node.props,
+        // eslint-disable-next-line testing-library/no-node-access
         children: renderNodes(node.props.children, values)
       });
     });
@@ -85,14 +85,8 @@ describe('<CertificateDisplay />', () => {
     );
 
     expect(screen.getByText('Legacy Responsive Web Design V8')).toBeVisible();
-    expect(
-      container.querySelector('[data-playwright-test-label="cert-fcc-logo"]')
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector(
-        '[data-playwright-test-label="cert-microsoft-logo"]'
-      )
-    ).not.toBeInTheDocument();
+    expect(screen.getByTestId('cert-fcc-logo')).toBeInTheDocument();
+    expect(screen.queryByTestId('cert-microsoft-logo')).not.toBeInTheDocument();
     expect(
       screen.getByAltText('certification.quincy-larson-signature')
     ).toBeInTheDocument();
@@ -103,7 +97,7 @@ describe('<CertificateDisplay />', () => {
   });
 
   test('renders a Microsoft certificate', () => {
-    const { container } = render(
+    render(
       <CertificateDisplay
         certDate={certDate}
         certSlug={Certification.FoundationalCSharp}
@@ -115,14 +109,8 @@ describe('<CertificateDisplay />', () => {
     );
 
     expect(screen.getByText('Foundational C# with Microsoft')).toBeVisible();
-    expect(
-      container.querySelector('[data-playwright-test-label="cert-fcc-logo"]')
-    ).toBeInTheDocument();
-    expect(
-      container.querySelector(
-        '[data-playwright-test-label="cert-microsoft-logo"]'
-      )
-    ).toBeInTheDocument();
+    expect(screen.getByTestId('cert-fcc-logo')).toBeInTheDocument();
+    expect(screen.getByTestId('cert-microsoft-logo')).toBeInTheDocument();
     expect(
       screen.getByAltText('certification.quincy-larson-signature')
     ).toBeInTheDocument();
