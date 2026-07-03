@@ -1,8 +1,16 @@
+import os from 'os';
 import path from 'path';
 import fs from 'fs';
 
-import readdirp from 'readdirp';
-import { afterEach, describe, test, expect, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  test,
+  expect,
+  vi
+} from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
@@ -11,256 +19,308 @@ import {
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
 import {
-  superblockSchemaValidator,
-  availableSuperBlocksValidator
+  availableSuperBlocksValidator,
+  superblockSchemaValidator
 } from './external-data-schema-v2';
 import {
   type Curriculum,
-  type GeneratedCurriculumProps,
+  type CurriculumIntros,
+  type CurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
-  type ChapterBasedCurriculumIntros,
+  type OrderedSuperBlocks,
+  buildExtCurriculumDataV2,
   orderedSuperBlockInfo,
-  OrderedSuperBlocks,
-  readCurriculumIntros,
-  getCurriculumLocale,
-  CurriculumIntros
 } from './build-external-curricula-data-v2';
+import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
+
+vi.mock('@freecodecamp/curriculum/file-handler');
 
 const VERSION = 'v2';
-const intros = readCurriculumIntros(getCurriculumLocale());
+const BLOCK_BASED_SB = SuperBlocks.CodingInterviewPrep;
+const CHAPTER_BASED_SB = SuperBlocks.RespWebDesignV9;
 
 const dummyIntro = Object.values(SuperBlocks)
   .map(s => ({ [s]: { title: s } }))
   .reduce((prev, curr) => ({ ...prev, ...curr }), {}) as CurriculumIntros;
 
-describe('external curriculum data build', () => {
-  afterEach(() => {
-    vi.unstubAllEnvs();
+function buildFixtureIntros(): CurriculumIntros {
+  const stub: Record<string, unknown> = {};
+  for (const sb of Object.values(SuperBlocks)) {
+    if (chapterBasedSuperBlocks.includes(sb)) {
+      stub[sb] = {
+        title: sb,
+        intro: ['stub intro'],
+        chapters: {},
+        modules: {},
+        blocks: {}
+      };
+    } else {
+      stub[sb] = { title: sb, intro: ['stub intro'], blocks: {} };
+    }
+  }
+
+  stub[BLOCK_BASED_SB] = {
+    title: 'Coding Interview Prep',
+    intro: ['Prepare for coding interviews.'],
+    blocks: {
+      'test-block': {
+        title: 'Test Block Title',
+        intro: ['Block intro paragraph.']
+      }
+    }
+  };
+
+  stub[CHAPTER_BASED_SB] = {
+    title: 'Responsive Web Design V9',
+    intro: ['Learn responsive web design.'],
+    chapters: {
+      'test-chapter': 'Test Chapter Name',
+      'coming-soon-chapter': 'Coming Soon Chapter'
+    },
+    modules: { 'test-module': 'Test Module Name' },
+    blocks: {
+      'test-chapter-block': {
+        title: 'Chapter Block Title',
+        intro: ['Chapter block intro.']
+      }
+    }
+  };
+
+  return stub as CurriculumIntros;
+}
+
+function buildFixtureCurriculum(): Curriculum<CurriculumProps> {
+  const stub: Record<string, unknown> = {};
+  for (const sb of Object.values(SuperBlocks)) {
+    stub[sb] = { intro: ['stub'], blocks: {} };
+  }
+
+  stub[BLOCK_BASED_SB] = {
+    intro: ['unused'],
+    blocks: {
+      'test-block': {
+        desc: ['desc'],
+        intro: ['unused'],
+        challenges: [{ id: 'challenge-1', title: 'Test Challenge' }],
+        meta: {
+          name: 'Original Name',
+          isUpcomingChange: false,
+          dashedName: 'test-block',
+          helpCategory: 'JavaScript',
+          order: 0,
+          superBlock: BLOCK_BASED_SB,
+          blockLayout: 'challenge-list',
+          challengeOrder: [{ id: 'challenge-1', title: 'Test Challenge' }]
+        }
+      }
+    }
+  };
+
+  stub[CHAPTER_BASED_SB] = {
+    intro: ['unused'],
+    blocks: {
+      'test-chapter-block': {
+        desc: ['desc'],
+        intro: ['unused'],
+        challenges: [{ id: 'chapter-challenge-1', title: 'Chapter Challenge' }],
+        meta: {
+          name: 'Original',
+          isUpcomingChange: false,
+          dashedName: 'test-chapter-block',
+          helpCategory: 'HTML-CSS',
+          order: 0,
+          superBlock: CHAPTER_BASED_SB,
+          blockLayout: 'challenge-list',
+          blockLabel: 'lecture',
+          chapter: 'test-chapter',
+          module: 'test-module',
+          challengeOrder: [
+            { id: 'chapter-challenge-1', title: 'Chapter Challenge' }
+          ]
+        }
+      }
+    }
+  };
+
+  return stub as unknown as Curriculum<CurriculumProps>;
+}
+
+describe('buildExtCurriculumDataV2', () => {
+  let tmpDir: string;
+
+  beforeAll(() => {
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ext-curriculum-test-'));
+
+    vi.mocked(getSuperblockStructure).mockImplementation(key => {
+      if (key === (CHAPTER_BASED_SB as string)) {
+        return {
+          chapters: [
+            {
+              dashedName: 'test-chapter',
+              modules: [
+                {
+                  dashedName: 'test-module',
+                  blocks: ['test-chapter-block']
+                }
+              ]
+            },
+            {
+              dashedName: 'coming-soon-chapter',
+              comingSoon: true,
+              modules: []
+            }
+          ]
+        };
+      }
+      return { chapters: [] };
+    });
+
+    buildExtCurriculumDataV2(buildFixtureCurriculum(), {
+      dataPath: tmpDir,
+      intros: buildFixtureIntros()
+    });
   });
-  const clientStaticPath = path.resolve(__dirname, '../../../client/static');
 
-  const validateSuperBlock = superblockSchemaValidator();
-
-  test("the external curriculum data should be in the client's static directory", () => {
-    expect(
-      fs.existsSync(`${clientStaticPath}/curriculum-data/${VERSION}`)
-    ).toBe(true);
-
-    expect(
-      fs.readdirSync(`${clientStaticPath}/curriculum-data/${VERSION}`).length
-    ).toBeGreaterThan(0);
+  afterAll(() => {
+    fs.rmSync(tmpDir, { recursive: true, force: true });
+    vi.restoreAllMocks();
   });
 
-  test('there should be an endpoint to request submit types from', () => {
-    expect(
-      fs.existsSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
-      )
-    ).toBe(true);
-  });
+  test('available-superblocks.json passes schema validation', () => {
+    const filePath = path.join(tmpDir, VERSION, 'available-superblocks.json');
+    expect(fs.existsSync(filePath)).toBe(true);
 
-  test('the available-superblocks file should have the correct structure', async () => {
-    const filteredSuperBlockStages: string[] = Object.keys(SuperBlockStage)
-      .filter(key => isNaN(Number(key))) // Filter out numeric keys to get only the names
-      .filter(
-        name => name !== 'Upcoming' && name !== 'Next' && name !== 'Catalog'
-      ) // Filter out 'Upcoming', 'Next', and 'Catalog'
-      .map(name => name.toLowerCase());
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as {
+      superblocks: OrderedSuperBlocks;
+    };
+    const validate = availableSuperBlocksValidator();
+    const result = validate(data);
 
-    const validateAvailableSuperBlocks = availableSuperBlocksValidator();
-    const availableSuperblocks = JSON.parse(
-      await fs.promises.readFile(
-        `${clientStaticPath}/curriculum-data/${VERSION}/available-superblocks.json`,
-        'utf-8'
-      )
-    ) as { superblocks: OrderedSuperBlocks };
-
-    const result = validateAvailableSuperBlocks(availableSuperblocks);
-
-    expect(Object.keys(availableSuperblocks.superblocks)).toHaveLength(
-      filteredSuperBlockStages.length
-    );
-
-    expect(Object.keys(availableSuperblocks.superblocks)).toEqual(
-      expect.arrayContaining(filteredSuperBlockStages)
-    );
-
-    expect(result.error?.details).toBeUndefined();
     expect(result.error).toBeFalsy();
   });
 
-  test('the super block files generated should have the correct schema', async () => {
-    const superBlocks = Object.values(SuperBlocks);
+  test('superblock files pass schema validation', () => {
+    const validateSuperBlock = superblockSchemaValidator();
 
-    const fileArray = (
-      await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
-        directoryFilter: ['!challenges'],
-        fileFilter: entry => {
-          // The directory contains super block files and other curriculum-related files.
-          // We're only interested in super block ones.
-          const isSuperBlock = superBlocks.some(superBlock =>
-            entry.basename.includes(superBlock)
-          );
-
-          return isSuperBlock;
-        }
-      })
-    ).map(file => file.path);
-
-    expect(fileArray.length).toBeGreaterThan(0);
-
-    fileArray.forEach(fileInArray => {
-      const fileContent = fs.readFileSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/${fileInArray}`,
-        'utf-8'
-      );
-
-      const result = validateSuperBlock(
-        JSON.parse(fileContent) as Record<string, unknown>
-      );
+    for (const sb of [BLOCK_BASED_SB, CHAPTER_BASED_SB]) {
+      const filePath = path.join(tmpDir, VERSION, `${sb}.json`);
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Record<
+        string,
+        unknown
+      >;
+      const result = validateSuperBlock(data);
 
       expect(result.error?.details).toBeUndefined();
       expect(result.error).toBeFalsy();
+    }
+  });
+
+  test('block-based superblock file has correct intro and meta.name', () => {
+    const filePath = path.join(tmpDir, VERSION, `${BLOCK_BASED_SB}.json`);
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Record<
+      string,
+      GeneratedBlockBasedCurriculumProps
+    >;
+
+    expect(data[BLOCK_BASED_SB]).toMatchObject({
+      intro: ['Prepare for coding interviews.'],
+      blocks: [
+        {
+          intro: ['Block intro paragraph.'],
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          meta: expect.objectContaining({
+            name: 'Test Block Title',
+            dashedName: 'test-block'
+          })
+        }
+      ]
     });
   });
 
-  test('block-based super blocks and blocks should have the correct data', async () => {
-    const superBlocks = Object.values(SuperBlocks);
+  test('chapter-based superblock file has correct structure with comingSoon filtered', () => {
+    const filePath = path.join(tmpDir, VERSION, `${CHAPTER_BASED_SB}.json`);
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Record<
+      string,
+      GeneratedChapterBasedCurriculumProps
+    >;
 
-    const superBlockFiles = (
-      await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
-        directoryFilter: ['!challenges'],
-        fileFilter: entry => {
-          // The directory contains super block files and other curriculum-related files.
-          // We're only interested in super block ones.
-          const isSuperBlock = superBlocks.some(superBlock =>
-            entry.basename.includes(superBlock)
-          );
-
-          const isChapterBasedSuperBlock = chapterBasedSuperBlocks.some(
-            chapterBasedSuperBlock =>
-              entry.basename.includes(chapterBasedSuperBlock)
-          );
-
-          return isSuperBlock && !isChapterBasedSuperBlock;
-        }
-      })
-    ).map(file => file.path);
-
-    expect(superBlockFiles.length).toBeGreaterThan(0);
-
-    superBlockFiles.forEach(file => {
-      const fileContentJson = fs.readFileSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/${file}`,
-        'utf-8'
-      );
-
-      const fileContent = JSON.parse(
-        fileContentJson
-      ) as Curriculum<GeneratedCurriculumProps>;
-
-      const superBlock = Object.keys(fileContent)[0] as SuperBlocks;
-      const superBlockData = fileContent[
-        superBlock
-      ] as GeneratedBlockBasedCurriculumProps;
-
-      expect(superBlockData.intro).toEqual(intros[superBlock].intro);
-      const blocks = superBlockData.blocks;
-
-      for (const block of blocks) {
-        expect(block.intro).toEqual(
-          intros[superBlock].blocks[block.meta.dashedName as string].intro
-        );
-        expect(block.meta.name).toEqual(
-          intros[superBlock].blocks[block.meta.dashedName as string].title
-        );
-      }
+    expect(data[CHAPTER_BASED_SB]).toMatchObject({
+      intro: ['Learn responsive web design.'],
+      chapters: [
+        {
+          name: 'Test Chapter Name',
+          modules: [
+            {
+              name: 'Test Module Name',
+              blocks: [
+                {
+                  intro: ['Chapter block intro.'],
+                  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+                  meta: expect.objectContaining({
+                    name: 'Chapter Block Title',
+                    dashedName: 'test-chapter-block'
+                  })
+                }
+              ]
+            }
+          ]
+        },
+        { comingSoon: true, modules: [] }
+      ]
     });
+
+    // chapter and module fields should be omitted from block meta
+    const blockMeta =
+      data[CHAPTER_BASED_SB].chapters[0].modules[0].blocks[0].meta;
+    expect(blockMeta).not.toHaveProperty('chapter');
+    expect(blockMeta).not.toHaveProperty('module');
   });
 
-  test('chapter-based super blocks and blocks should have the correct data', async () => {
-    const superBlocks = Object.values(SuperBlocks);
+  test('challenge files are written at the correct paths', () => {
+    expect(
+      fs.existsSync(
+        path.join(
+          tmpDir,
+          VERSION,
+          'challenges',
+          BLOCK_BASED_SB,
+          'test-block',
+          'challenge-1.json'
+        )
+      )
+    ).toBe(true);
 
-    const superBlockFiles = (
-      await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
-        directoryFilter: ['!challenges'],
-        fileFilter: entry => {
-          // The directory contains super block files and other curriculum-related files.
-          // We're only interested in super block ones.
-          const isSuperBlock = superBlocks.some(superBlock =>
-            entry.basename.includes(superBlock)
-          );
+    expect(
+      fs.existsSync(
+        path.join(
+          tmpDir,
+          VERSION,
+          'challenges',
+          CHAPTER_BASED_SB,
+          'test-chapter-block',
+          'chapter-challenge-1.json'
+        )
+      )
+    ).toBe(true);
+  });
 
-          const isChapterBasedSuperBlock = chapterBasedSuperBlocks.some(
-            chapterBasedSuperBlock =>
-              entry.basename.includes(chapterBasedSuperBlock)
-          );
+  test('submit-types.json is written', () => {
+    expect(fs.existsSync(path.join(tmpDir, VERSION, 'submit-types.json'))).toBe(
+      true
+    );
+  });
 
-          return isSuperBlock && isChapterBasedSuperBlock;
-        }
-      })
-    ).map(file => file.path);
+  test('scene-assets.json is written', () => {
+    expect(fs.existsSync(path.join(tmpDir, VERSION, 'scene-assets.json'))).toBe(
+      true
+    );
+  });
+});
 
-    expect(superBlockFiles.length).toBeGreaterThan(0);
-
-    superBlockFiles.forEach(file => {
-      const fileContentJson = fs.readFileSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/${file}`,
-        'utf-8'
-      );
-
-      const fileContent = JSON.parse(
-        fileContentJson
-      ) as Curriculum<GeneratedCurriculumProps>;
-
-      const superBlock = Object.keys(fileContent)[0] as SuperBlocks;
-      const superBlockData = fileContent[
-        superBlock
-      ] as GeneratedChapterBasedCurriculumProps;
-
-      const superBlockIntros = intros[
-        superBlock
-      ] as ChapterBasedCurriculumIntros[SuperBlocks];
-
-      // Check super block data
-      expect(superBlockData.intro).toEqual(superBlockIntros.intro);
-
-      // Loop through all chapters
-      superBlockData.chapters
-        .filter(({ comingSoon }) => !comingSoon)
-        .forEach(chapter => {
-          expect(chapter.name).toEqual(
-            superBlockIntros.chapters[chapter.dashedName]
-          );
-
-          // Loop through all modules in the chapter
-          chapter.modules
-            .filter(({ comingSoon }) => !comingSoon)
-            .forEach(module => {
-              expect(module.name).toEqual(
-                superBlockIntros.modules[module.dashedName]
-              );
-            });
-        });
-
-      for (const chapter of superBlockData.chapters) {
-        if (chapter.comingSoon) continue;
-
-        for (const module of chapter.modules) {
-          if (module.comingSoon) continue;
-
-          for (const block of module.blocks) {
-            expect(block.intro).toEqual(
-              superBlockIntros.blocks[block.meta.dashedName as string].intro
-            );
-            expect(block.meta.name).toEqual(
-              superBlockIntros.blocks[block.meta.dashedName as string].title
-            );
-          }
-        }
-      }
-    });
+describe('orderedSuperBlockInfo', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   test('All public SuperBlocks should be present in the SuperBlock object', () => {
@@ -298,18 +358,6 @@ describe('external curriculum data build', () => {
         superBlockStages[stageValueInNum].length
       );
     }
-  });
-
-  test('challenge files should be created and in the correct directory', () => {
-    expect(
-      fs.existsSync(`${clientStaticPath}/curriculum-data/${VERSION}/challenges`)
-    ).toBe(true);
-
-    expect(
-      fs.readdirSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
-      ).length
-    ).toBeGreaterThan(0);
   });
 
   test('orderedSuperBlockInfo should use intro argument', () => {
