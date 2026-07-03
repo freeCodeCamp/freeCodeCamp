@@ -195,12 +195,12 @@ h2 {
 ```
 
 ```js
---fcc-editable-region--
 const callStack = [
+  --fcc-editable-region--
   'a(): returns "freeCodeCamp " + b()',
   'b(): returns "is " + "awesome!"'
-];
 --fcc-editable-region--
+];
 
 const a = () => {
   return "freeCodeCamp " + b();
