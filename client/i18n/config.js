@@ -30,7 +30,7 @@ i18n.use(initReactI18next).init({
       const envData = require('../config/env.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
-        module.exports = require('./locales/' + clientLocale + '/translations.json');
+        module.exports = require('./../../curriculum/i18n-curriculum/client/' + clientLocale + '/translations.json');
       }
     `,
       trending: preval`
@@ -44,14 +44,14 @@ i18n.use(initReactI18next).init({
       const envData = require('../config/env.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
-        module.exports = require('./locales/' + clientLocale + '/intro.json');
+        module.exports = require('./../../curriculum/i18n-curriculum/client/' + clientLocale + '/intro.json');
       }
     `,
       metaTags: preval`
       const envData = require('../config/env.json');
       const { clientLocale } = envData;
       if (clientLocale !== 'english') {
-        module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
+        module.exports = require('./../../curriculum/i18n-curriculum/client/' + clientLocale + '/meta-tags.json');
       }
     `,
       links: preval`
