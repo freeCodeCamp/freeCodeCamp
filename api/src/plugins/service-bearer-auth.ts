@@ -23,7 +23,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
     async function (req: FastifyRequest, reply: FastifyReply) {
       const secret = TPA_API_BEARER_TOKEN ?? '';
       if (secret.length === 0) {
-        fastify.log.error('TPA_API_BEARER_TOKEN is not configured');
+        req.log.error('TPA_API_BEARER_TOKEN is not configured');
         await reply
           .status(500)
           .send({ error: 'Service authentication not configured' });

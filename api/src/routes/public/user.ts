@@ -126,7 +126,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info({ username: req.query.username }, 'Fetching public profile');
+      req.log.debug(
+        { username: req.query.username },
+        'Fetching public profile'
+      );
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
         where: { username: req.query.username }
@@ -240,7 +243,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       const username = req.query.username.toLowerCase();
 
       if (isRestricted(username)) {
-        req.log.info({ username }, 'Restricted username');
+        req.log.debug({ username }, 'Restricted username');
         return await reply.send({ exists: true });
       }
 
@@ -250,9 +253,9 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         })) > 0;
 
       if (exists) {
-        req.log.info({ username }, 'User exists for username');
+        req.log.debug({ username }, 'User exists for username');
       } else {
-        req.log.info({ username }, 'User does not exist for username');
+        req.log.debug({ username }, 'User does not exist for username');
       }
       await reply.send({ exists });
     }

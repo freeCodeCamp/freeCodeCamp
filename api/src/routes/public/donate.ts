@@ -9,6 +9,7 @@ import {
 import * as schemas from '../../schemas.js';
 import { inLastFiveMinutes } from '../../utils/validate-donation.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';
+import { clientNetInfo } from '../../utils/logger.js';
 
 /**
  * Plugin for public donation endpoints.
@@ -73,7 +74,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         ) {
           const clientSecret =
             stripeSubscription.latest_invoice.payment_intent.client_secret;
-          req.log.info('Successfully created payment intent');
+          req.log.debug('Successfully created payment intent');
           return reply.send({
             subscriptionId: stripeSubscription.id,
             clientSecret
@@ -83,7 +84,13 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         }
       } catch (err) {
         req.log.error(
-          { err, email: req.body.email },
+          {
+            err,
+            email: req.body.email,
+            amount,
+            duration,
+            ...clientNetInfo(req)
+          },
           'Failed to create payment intent'
         );
         void reply.code(500);
@@ -175,7 +182,18 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             isDonating: true
           }
         });
-        req.log.info('Successfully processed donation');
+        req.log.info(
+          {
+            audit: true,
+            userId: user.id,
+            email,
+            amount,
+            duration,
+            subscriptionId,
+            ...clientNetInfo(req)
+          },
+          'Successfully processed donation'
+        );
         fastify.Sentry?.metrics.count('donation.created', 1, {
           attributes: { flow: 'charge-stripe' }
         });
@@ -185,7 +203,12 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         });
       } catch (err) {
         req.log.error(
-          { err, email: req.body.email },
+          {
+            err,
+            email: req.body.email,
+            subscriptionId: req.body.subscriptionId,
+            ...clientNetInfo(req)
+          },
           'Failed to process Stripe charge'
         );
         void reply.code(500);

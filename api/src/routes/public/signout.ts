@@ -22,7 +22,7 @@ export const signoutRoute: FastifyPluginCallback = (
     },
     async (req, reply) => {
       void reply.clearOurCookies();
-      req.log.info('User signed out');
+      req.log.info({ audit: true }, 'User signed out');
 
       await reply.send({});
     }

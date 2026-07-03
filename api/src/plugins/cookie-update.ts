@@ -31,7 +31,7 @@ export const cookieUpdate: FastifyPluginCallback<Options> = (
       void reply.setCookie(cookie, raw, options.attributes);
     }
 
-    request.log.trace({ userId: request.user?.id }, 'Updated cookies');
+    request.log.trace('Updated cookies');
 
     next();
   });

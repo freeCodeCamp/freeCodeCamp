@@ -370,13 +370,13 @@ describe('Donate', () => {
         expect(response.body).toEqual({ sessionId: 'checkout_session_id' });
         expect(response.status).toBe(200);
       });
-      test('should return 500 if there is no donation record', async () => {
+      test('should return 404 if there is no donation record', async () => {
         const response = await superPut('/donate/update-stripe-card').send({});
         expect(response.body).toEqual({
           message: 'flash.generic-error',
           type: 'danger'
         });
-        expect(response.status).toBe(500);
+        expect(response.status).toBe(404);
       });
     });
 
