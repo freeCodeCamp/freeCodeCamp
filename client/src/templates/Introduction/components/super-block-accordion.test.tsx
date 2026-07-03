@@ -584,4 +584,52 @@ describe('SuperBlockAccordion', () => {
       screen.queryByRole('button', { name: 'mod-two' })
     ).not.toBeInTheDocument();
   });
+
+  it('should expand only the chapter and module containing the chosen block', () => {
+    const multiChapterStructure = {
+      superBlock: SuperBlocks.RespWebDesign,
+      chapters: [
+        {
+          dashedName: 'chapter-one',
+          modules: [{ dashedName: 'mod-one', blocks: ['block-one'] }]
+        },
+        {
+          dashedName: 'chapter-two',
+          modules: [{ dashedName: 'mod-two', blocks: ['block-two'] }]
+        }
+      ]
+    };
+
+    renderWithProvider(
+      <SuperBlockAccordion
+        challenges={[
+          { ...mockChallenge, block: 'block-one', id: 'id-1' },
+          { ...mockChallenge, block: 'block-two', id: 'id-2' }
+        ]}
+        superBlock={SuperBlocks.RespWebDesign}
+        structure={multiChapterStructure}
+        chosenBlock={'block-two'}
+        completedChallengeIds={[]}
+      />
+    );
+
+    expect(screen.getByRole('button', { name: 'chapter-one' })).toHaveAttribute(
+      'aria-expanded',
+      'false'
+    );
+    expect(screen.getByRole('button', { name: 'chapter-two' })).toHaveAttribute(
+      'aria-expanded',
+      'true'
+    );
+
+    // The collapsed chapter's module is not rendered; the expanded chapter
+    // reveals its module, which is expanded as well
+    expect(
+      screen.queryByRole('button', { name: 'mod-one' })
+    ).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'mod-two' })).toHaveAttribute(
+      'aria-expanded',
+      'true'
+    );
+  });
 });

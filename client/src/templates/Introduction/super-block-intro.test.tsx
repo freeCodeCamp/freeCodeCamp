@@ -626,4 +626,96 @@ describe('SuperBlockIntroductionPage', () => {
       ).toBeNull();
     });
   });
+
+  describe('initial block expansion', () => {
+    const superBlock = SuperBlocks.RespWebDesign;
+
+    // The page dispatches toggleBlock with the initially expanded block on
+    // mount, so the expansion decision is observable through that call.
+    const createMultiBlockSetup = () => {
+      const setup = createSetup(superBlock);
+      // Move the last challenge into its own block so the priority chain has
+      // two blocks to choose between.
+      setup.challengeNodes[2].challenge.block = 'block-two';
+      return setup;
+    };
+
+    it('expands the block from the breadcrumb click, taking priority over the URL hash', () => {
+      const setup = createMultiBlockSetup();
+      const toggleBlock = vi.fn();
+      const props = createPageProps(setup, superBlock, {
+        toggleBlock,
+        location: {
+          ...createLocation(),
+          hash: '#block-one',
+          state: { breadcrumbBlockClick: 'block-two' }
+        }
+      });
+
+      render(<SuperBlockIntroductionPage {...props} />);
+
+      expect(toggleBlock).toHaveBeenCalledWith('block-two');
+    });
+
+    it('expands the block from the URL hash', () => {
+      const setup = createMultiBlockSetup();
+      const toggleBlock = vi.fn();
+      const props = createPageProps(setup, superBlock, {
+        toggleBlock,
+        location: { ...createLocation(), hash: '#block-two' }
+      });
+
+      render(<SuperBlockIntroductionPage {...props} />);
+
+      expect(toggleBlock).toHaveBeenCalledWith('block-two');
+    });
+
+    it('expands the block of the current challenge for a signed-in user', () => {
+      const setup = createMultiBlockSetup();
+      const toggleBlock = vi.fn();
+      const props = createPageProps(setup, superBlock, {
+        toggleBlock,
+        currentChallengeId: setup.challengeNodes[2].challenge.id
+      });
+
+      render(<SuperBlockIntroductionPage {...props} />);
+
+      expect(toggleBlock).toHaveBeenCalledWith('block-two');
+    });
+
+    it('expands the block of the most recently completed challenge when the current challenge is in another super block', () => {
+      const setup = createMultiBlockSetup();
+      const toggleBlock = vi.fn();
+      const props = createPageProps(setup, superBlock, {
+        toggleBlock,
+        currentChallengeId: 'challenge-in-another-super-block',
+        user: {
+          completedChallenges: [
+            { id: setup.challengeNodes[0].challenge.id, completedDate: 100 },
+            { id: setup.challengeNodes[2].challenge.id, completedDate: 200 }
+          ],
+          isDonating: false
+        }
+      });
+
+      render(<SuperBlockIntroductionPage {...props} />);
+
+      expect(toggleBlock).toHaveBeenCalledWith('block-two');
+    });
+
+    it('expands the first block for a signed-out user', () => {
+      const setup = createMultiBlockSetup();
+      const toggleBlock = vi.fn();
+      const props = createPageProps(setup, superBlock, {
+        toggleBlock,
+        isSignedIn: false,
+        currentChallengeId: setup.challengeNodes[2].challenge.id,
+        user: null
+      });
+
+      render(<SuperBlockIntroductionPage {...props} />);
+
+      expect(toggleBlock).toHaveBeenCalledWith('block-one');
+    });
+  });
 });
