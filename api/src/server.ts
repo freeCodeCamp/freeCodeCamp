@@ -19,6 +19,7 @@ const start = async () => {
     await new Promise<void>(resolve => setImmediate(resolve));
 
     await fastify.close();
+    await fastify.Sentry.close(2000);
     process.exit(0);
   };
 

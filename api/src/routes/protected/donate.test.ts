@@ -1,4 +1,5 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest';
+import Stripe from 'stripe';
 import {
   createSuperRequest,
   devLogin,
@@ -126,6 +127,8 @@ const defaultError = () =>
 
 vi.mock('stripe', () => ({
   default: class {
+    static errors = { StripeError: class StripeError extends Error {} };
+
     constructor() {}
 
     customers = {
@@ -291,6 +294,13 @@ describe('Donate', () => {
       });
 
       test('should return 500 if Stripe encountes an error', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
         mockSubCreate.mockImplementationOnce(defaultError);
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
@@ -300,6 +310,33 @@ describe('Donate', () => {
         expect(response.body).toEqual({
           error: 'Donation failed due to a server error.'
         });
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('should not capture Stripe upstream errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const StripeError = Stripe.errors.StripeError as unknown as new (
+          m?: string
+        ) => Error;
+        mockSubCreate.mockImplementationOnce(() =>
+          Promise.reject(new StripeError('card_declined'))
+        );
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+
+        expect(response.status).toBe(500);
+        expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return 400 if user has not completed challenges', async () => {
@@ -344,6 +381,26 @@ describe('Donate', () => {
         expect(successResponse.status).toBe(200);
         const failResponse = await superPost('/donate/add-donation').send({});
         expect(failResponse.status).toBe(400);
+      });
+
+      test('should capture unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const updateSpy = vi
+          .spyOn(fastifyTestInstance.prisma.user, 'update')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superPost('/donate/add-donation').send({});
+
+        expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        updateSpy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
 

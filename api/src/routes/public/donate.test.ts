@@ -1,4 +1,5 @@
 import { describe, test, expect, beforeAll, vi } from 'vitest';
+import Stripe from 'stripe';
 import { setupServer, superRequest } from '../../../vitest.utils.js';
 
 const testEWalletEmail = 'baz@bar.com';
@@ -68,6 +69,7 @@ const generateMockSubCreate = (status: string) => () =>
   });
 vi.mock('stripe', () => ({
   default: class {
+    static errors = { StripeError: class StripeError extends Error {} };
     constructor() {}
     customers = {
       create: mockCustomerCreate,
@@ -133,6 +135,114 @@ describe('Donate', () => {
         setCookies
       }).send(chargeStripeReqBody);
       expect(response.status).toBe(200);
+    });
+
+    describe('Sentry Issue reporting', () => {
+      test('create-stripe-payment-intent captures unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        mockCustomerCreate.mockImplementationOnce(() =>
+          Promise.reject(new Error('Stripe unavailable'))
+        );
+        const response = await superRequest(
+          '/donate/create-stripe-payment-intent',
+          {
+            method: 'POST',
+            setCookies
+          }
+        ).send(createStripePaymentIntentReqBody);
+
+        expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('charge-stripe does not capture any subscription-validation failure', async () => {
+        const invalidSubscriptions: unknown[] = [
+          { ...mockSubRetrieveObj, status: 'incomplete' },
+          {
+            ...mockSubRetrieveObj,
+            items: { data: [{ plan: { product: 'not_a_real_product' } }] }
+          },
+          { ...mockSubRetrieveObj, current_period_start: 0 },
+          { ...mockSubRetrieveObj, customer: 12345 }
+        ];
+
+        for (const sub of invalidSubscriptions) {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          mockSubRetrieve.mockImplementationOnce(() =>
+            Promise.resolve(sub as typeof mockSubRetrieveObj)
+          );
+          const response = await superRequest('/donate/charge-stripe', {
+            method: 'POST',
+            setCookies
+          }).send(chargeStripeReqBody);
+
+          expect(response.status).toBe(500);
+          expect(captureException).not.toHaveBeenCalled();
+
+          fastifyTestInstance.Sentry = originalSentry;
+        }
+      });
+
+      test('charge-stripe captures unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.reject(new Error('Stripe unavailable'))
+        );
+        const response = await superRequest('/donate/charge-stripe', {
+          method: 'POST',
+          setCookies
+        }).send(chargeStripeReqBody);
+
+        expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('charge-stripe does not capture Stripe upstream errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const StripeError = Stripe.errors.StripeError as unknown as new (
+          m?: string
+        ) => Error;
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.reject(new StripeError('card_declined'))
+        );
+        const response = await superRequest('/donate/charge-stripe', {
+          method: 'POST',
+          setCookies
+        }).send(chargeStripeReqBody);
+
+        expect(response.status).toBe(500);
+        expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
     });
   });
 });

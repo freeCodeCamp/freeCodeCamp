@@ -117,6 +117,52 @@ describe('serializers.res', () => {
   });
 });
 
+describe('serializers.err', () => {
+  it('whitelists safe fields and drops secret/payment payloads', () => {
+    const stripeErr = Object.assign(new Error('Your card was declined.'), {
+      code: 'card_declined',
+      statusCode: 402,
+      requestId: 'req_123',
+      raw: { payment_intent: { client_secret: 'pi_secret_LEAK' } },
+      headers: { authorization: 'Bearer sk_live_LEAK' },
+      payment_method: { card: { number: '4242424242424242' } }
+    });
+
+    const result = serializers.err(stripeErr);
+
+    expect(result).toMatchObject({
+      type: 'Error',
+      message: 'Your card was declined.',
+      code: 'card_declined',
+      statusCode: 402,
+      requestId: 'req_123'
+    });
+    expect(result).not.toHaveProperty('raw');
+    expect(result).not.toHaveProperty('headers');
+    expect(result).not.toHaveProperty('payment_method');
+    const serialized = JSON.stringify(result);
+    expect(serialized).not.toContain('pi_secret_LEAK');
+    expect(serialized).not.toContain('sk_live_LEAK');
+    expect(serialized).not.toContain('4242424242424242');
+  });
+
+  it('recursively whitelists the cause chain', () => {
+    const cause = Object.assign(new Error('inner'), {
+      raw: { client_secret: 'cause_LEAK' }
+    });
+    const err = Object.assign(new Error('outer'), { cause });
+
+    const result = serializers.err(err);
+
+    expect(JSON.stringify(result)).not.toContain('cause_LEAK');
+    expect((result.cause as { message: string }).message).toBe('inner');
+  });
+
+  it('handles non-object errors', () => {
+    expect(serializers.err('boom')).toEqual({ message: 'boom' });
+  });
+});
+
 describe('bindRouteToLogger', () => {
   it('binds the matched route onto request logs', async () => {
     const lines: string[] = [];

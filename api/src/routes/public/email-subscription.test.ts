@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { Prisma } from '@prisma/client';
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 import { setupServer, superRequest } from '../../../vitest.utils.js';
 import { HOME_LOCATION } from '../../utils/env.js';
 import { createUserInput } from '../../utils/create-user.js';
@@ -314,6 +314,52 @@ describe('Email Subscription endpoints', () => {
           ]
         }
       });
+    });
+  });
+
+  describe('Sentry Issue reporting', () => {
+    test('unsubscribe captures unexpected errors', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException
+      };
+      const spy = vi
+        .spyOn(fastifyTestInstance.prisma.user, 'findMany')
+        .mockRejectedValueOnce(new Error('DB error'));
+
+      const response = await superRequest(`/ue/${unsubscribeId1}`, {
+        method: 'GET'
+      });
+
+      expect(response.status).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      spy.mockRestore();
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    test('resubscribe captures unexpected errors', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException
+      };
+      const spy = vi
+        .spyOn(fastifyTestInstance.prisma.user, 'findFirst')
+        .mockRejectedValueOnce(new Error('DB error'));
+
+      const response = await superRequest(`/resubscribe/${unsubscribeId1}`, {
+        method: 'GET'
+      });
+
+      expect(response.status).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      spy.mockRestore();
+      fastifyTestInstance.Sentry = originalSentry;
     });
   });
 });

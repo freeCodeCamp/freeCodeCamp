@@ -49,6 +49,7 @@ export const findOrCreateUser = async (
         'Drip campaign record created for user'
       );
     } catch (err) {
+      fastify.Sentry?.captureException(err);
       fastify.log.error(
         { err, userId: newUser.id },
         'Failed to create drip campaign record for user'

@@ -24,6 +24,7 @@ import security from './plugins/security.js';
 import auth from './plugins/auth.js';
 import bouncer from './plugins/bouncer.js';
 import errorHandling from './plugins/error-handling.js';
+import runtimeMetrics from './plugins/runtime-metrics.js';
 import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
 import shadowCapture from './plugins/shadow-capture.js';
@@ -114,6 +115,7 @@ export const build = async (
   void fastify.register(security);
   void fastify.register(fastifyAccepts);
   void fastify.register(errorHandling);
+  void fastify.register(runtimeMetrics);
 
   await fastify.register(cors);
   await fastify.register(cookies);

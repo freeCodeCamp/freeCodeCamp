@@ -341,6 +341,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         // TODO(Post-MVP): return a generic success message.
         return { msUsername: null };
       } catch (err) {
+        fastify.Sentry?.captureException(err);
         req.log.error(err, 'Error unlinking msUsername');
         void reply.code(500);
         void reply.send({
@@ -451,6 +452,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
         return { msUsername: userName };
       } catch (err) {
+        fastify.Sentry?.captureException(err);
         req.log.error(err, 'Error linking msUsername');
         return reply.code(500).send({
           type: 'error',
@@ -513,6 +515,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           message: 'flash.survey.success'
         } as const;
       } catch (err) {
+        fastify.Sentry?.captureException(err);
         req.log.error(err, 'Error submitting survey');
         void reply.code(500);
         return {
@@ -877,6 +880,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         result: user.username
       });
     } catch (err) {
+      fastify.Sentry?.captureException(err);
       req.log.error(err, 'Error fetching session user');
       void res.code(500);
       return { user: {}, result: '' };

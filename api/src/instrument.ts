@@ -5,6 +5,7 @@ import {
   DEPLOYMENT_VERSION,
   SENTRY_DSN,
   SENTRY_ENVIRONMENT,
+  SENTRY_SERVER_NAME,
   SENTRY_LOGS_DEBUG_SAMPLE_RATE,
   SENTRY_PROFILE_SESSION_SAMPLE_RATE,
   SENTRY_TRACES_SAMPLE_RATE
@@ -27,6 +28,7 @@ const hasClientErrorStatus = (error: unknown): boolean =>
 Sentry.init({
   dsn: SENTRY_DSN,
   environment: SENTRY_ENVIRONMENT,
+  serverName: SENTRY_SERVER_NAME,
   maxValueLength: 8192, // the default is 250, which is too small.
   release: DEPLOYMENT_VERSION,
   tracesSampler: makeTracesSampler(SENTRY_TRACES_SAMPLE_RATE),

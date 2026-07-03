@@ -171,6 +171,60 @@ describe('scrubRedundantLogAttributes', () => {
       scrubRedundantLogAttributes(makeLog({ attributes: undefined }))
     ).toEqual(makeLog({ attributes: undefined }));
   });
+
+  it('redacts secret- and payment-credential-shaped attribute keys', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({
+        attributes: {
+          userId: 'user-42',
+          email: 'a@b.com',
+          client_secret: 'pi_secret_LEAK',
+          authorization: 'Bearer sk_live_LEAK',
+          password: 'hunter2',
+          api_key: 'key_LEAK',
+          token: 'tok_LEAK',
+          'err.raw.client_secret': 'nested_LEAK'
+        }
+      })
+    );
+
+    expect(result.attributes).toEqual({
+      userId: 'user-42',
+      email: 'a@b.com',
+      client_secret: '[REDACTED]',
+      authorization: '[REDACTED]',
+      password: '[REDACTED]',
+      api_key: '[REDACTED]',
+      token: '[REDACTED]',
+      'err.raw.client_secret': '[REDACTED]'
+    });
+  });
+
+  it('redacts secrets nested inside object attribute values', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({
+        attributes: {
+          err: { message: 'boom', raw: { client_secret: 'LEAK' } }
+        }
+      })
+    );
+
+    expect(JSON.stringify(result.attributes)).not.toContain('LEAK');
+  });
+
+  it('keeps intentional PII (email, ip, country) unredacted', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({
+        attributes: { email: 'a@b.com', ip: '1.2.3.4', country: 'US' }
+      })
+    );
+
+    expect(result.attributes).toEqual({
+      email: 'a@b.com',
+      ip: '1.2.3.4',
+      country: 'US'
+    });
+  });
 });
 
 describe('makeTracesSampler', () => {
@@ -181,6 +235,7 @@ describe('makeTracesSampler', () => {
 
   it('drops health check transactions', () => {
     expect(makeTracesSampler(0.1)(context('GET /status/ping'))).toBe(0);
+    expect(makeTracesSampler(0.1)(context('GET /status/ready'))).toBe(0);
   });
 
   it('samples other transactions with the configured rate', () => {

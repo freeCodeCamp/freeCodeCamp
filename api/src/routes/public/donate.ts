@@ -36,6 +36,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const { email, name, amount, duration } = req.body;
+      fastify.Sentry?.setUser({ email });
       req.log.debug({ amount, duration }, 'Creating Stripe payment intent');
 
       if (!donationSubscriptionConfig.plans[duration].includes(amount)) {
@@ -83,16 +84,19 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           throw new Error('Stripe payment intent client secret is missing');
         }
       } catch (err) {
-        req.log.error(
-          {
-            err,
-            email: req.body.email,
-            amount,
-            duration,
-            ...clientNetInfo(req)
-          },
-          'Failed to create payment intent'
-        );
+        const ctx = {
+          err,
+          email: req.body.email,
+          amount,
+          duration,
+          ...clientNetInfo(req)
+        };
+        if (err instanceof Stripe.errors.StripeError) {
+          req.log.warn(ctx, 'Stripe upstream error creating payment intent');
+        } else {
+          fastify.Sentry?.captureException(err);
+          req.log.error(ctx, 'Failed to create payment intent');
+        }
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'
@@ -109,6 +113,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const { email, amount, duration, subscriptionId } = req.body;
+        fastify.Sentry?.setUser({ email });
         req.log.debug(
           { amount, duration, subscriptionId },
           'Processing Stripe charge'
@@ -131,27 +136,37 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             { status: subscription.status },
             'Invalid subscription status'
           );
-          throw new Error(
-            `Stripe subscription information is invalid: ${subscriptionId}`
-          );
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
         if (!isProductIdValid) {
           req.log.warn({ productId }, 'Invalid product ID');
-          throw new Error(`Product ID is invalid: ${subscriptionId}`);
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
         if (!isStartedRecently) {
           req.log.warn(
             { startTime: subscription.current_period_start },
             'Subscription not recent'
           );
-          throw new Error(`Subscription is not recent: ${subscriptionId}`);
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
         if (!isValidCustomer) {
           req.log.warn(
             { customerId: subscription.customer },
             'Invalid customer ID'
           );
-          throw new Error(`Customer ID is invalid: ${subscriptionId}`);
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
 
         const user = await findOrCreateUser(fastify, email);
@@ -202,15 +217,18 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           isDonating: true
         });
       } catch (err) {
-        req.log.error(
-          {
-            err,
-            email: req.body.email,
-            subscriptionId: req.body.subscriptionId,
-            ...clientNetInfo(req)
-          },
-          'Failed to process Stripe charge'
-        );
+        const ctx = {
+          err,
+          email: req.body.email,
+          subscriptionId: req.body.subscriptionId,
+          ...clientNetInfo(req)
+        };
+        if (err instanceof Stripe.errors.StripeError) {
+          req.log.warn(ctx, 'Stripe upstream error processing charge');
+        } else {
+          fastify.Sentry?.captureException(err);
+          req.log.error(ctx, 'Failed to process Stripe charge');
+        }
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'

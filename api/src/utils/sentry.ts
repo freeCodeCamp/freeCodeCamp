@@ -9,7 +9,11 @@ const DROPPED_LOG_MESSAGES = new Set([
 // Hot / health routes whose routine info+debug chatter is filtered out of
 // Sentry entirely (replaces the old per-route sample rates). warn/error/fatal
 // on these routes is still forwarded.
-const DROPPED_LOG_ROUTES = new Set(['/user/session-user', '/status/ping']);
+const DROPPED_LOG_ROUTES = new Set([
+  '/user/session-user',
+  '/status/ping',
+  '/status/ready'
+]);
 
 const routeOf = (log: Log): string | undefined =>
   typeof log.attributes?.route === 'string' ? log.attributes.route : undefined;
@@ -62,17 +66,35 @@ export const makeShouldSendLog =
 
 const REDUNDANT_LOG_ATTRIBUTES = ['msg', 'pino.logger.level'] as const;
 
+const SECRET_KEY_PATTERN =
+  /(client_?secret|secret|passwd|password|authorization|cookie|api[-_]?key|access[-_]?token|refresh[-_]?token|card[-_]?number|\bcvc\b|\bcvv\b|\btoken\b)/i;
+
+const scrubSecretsDeep = (value: unknown, depth = 0): unknown => {
+  if (depth > 6 || value === null || typeof value !== 'object') return value;
+  if (Array.isArray(value))
+    return value.map(entry => scrubSecretsDeep(entry, depth + 1));
+  const out: Record<string, unknown> = {};
+  for (const [key, entry] of Object.entries(value as Record<string, unknown>)) {
+    out[key] = SECRET_KEY_PATTERN.test(key)
+      ? '[REDACTED]'
+      : scrubSecretsDeep(entry, depth + 1);
+  }
+  return out;
+};
+
 /**
- * Remove pino bindings that Sentry already records as native log fields.
+ * Remove pino bindings that Sentry already records as native log fields, then
+ * redact any secret- or payment-credential-shaped attribute value.
  *
  * @param log The log entry from the SDK.
- * @returns The same log with redundant attributes removed.
+ * @returns The same log with redundant attributes removed and secrets redacted.
  */
 export const scrubRedundantLogAttributes = (log: Log): Log => {
   if (log.attributes == null) return log;
   for (const key of REDUNDANT_LOG_ATTRIBUTES) {
     delete log.attributes[key];
   }
+  log.attributes = scrubSecretsDeep(log.attributes) as typeof log.attributes;
   return log;
 };
 
@@ -88,6 +110,7 @@ export const makeTracesSampler =
     name: string;
     inheritOrSampleWith: (fallbackSampleRate: number) => number;
   }): number =>
-    context.name.includes('/status/ping')
+    context.name.includes('/status/ping') ||
+    context.name.includes('/status/ready')
       ? 0
       : context.inheritOrSampleWith(rate);

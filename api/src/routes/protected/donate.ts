@@ -93,6 +93,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         } as const;
       } catch (error) {
+        fastify.Sentry?.captureException(error);
         req.log.error(
           { err: error, userId: req.user?.id, ...clientNetInfo(req) },
           'User failed to donate'
@@ -198,6 +199,9 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           });
         } else if (status === 'requires_source') {
           req.log.warn('User payment declined');
+          fastify.Sentry?.metrics?.count('donation.declined', 1, {
+            attributes: { flow: 'charge-stripe-card' }
+          });
           void reply.code(402);
           return reply.send({
             error: {
@@ -255,10 +259,17 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           isDonating: true
         });
       } catch (error) {
-        req.log.error(
-          { err: error, userId: req.user?.id, ...clientNetInfo(req) },
-          'User failed to donate'
-        );
+        const ctx = {
+          err: error,
+          userId: req.user?.id,
+          ...clientNetInfo(req)
+        };
+        if (error instanceof Stripe.errors.StripeError) {
+          req.log.warn(ctx, 'Stripe upstream error charging card');
+        } else {
+          fastify.Sentry?.captureException(error);
+          req.log.error(ctx, 'User failed to donate');
+        }
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'

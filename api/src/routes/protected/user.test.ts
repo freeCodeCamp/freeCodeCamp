@@ -1238,6 +1238,26 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(500);
       });
 
+      test('GET captures unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.survey, 'findMany')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superGet('/user/session-user');
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        spy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       // This should help debugging, since this the route returns this if
       // anything throws in the handler.
       test('GET does not return the error response if the request is valid', async () => {
@@ -1568,6 +1588,26 @@ Thanks and regards,
 
           expect(msUsernames).toBe(1);
         });
+
+        test('captures unexpected errors', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+          const spy = vi
+            .spyOn(fastifyTestInstance.prisma.msUsername, 'deleteMany')
+            .mockRejectedValueOnce(new Error('DB error'));
+
+          const response = await superDelete('/user/ms-username');
+
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          spy.mockRestore();
+          fastifyTestInstance.Sentry = originalSentry;
+        });
       });
 
       describe('POST', () => {
@@ -1771,6 +1811,35 @@ Thanks and regards,
 
           expect(mockedFetch).toHaveBeenCalledWith(msTranscriptApiUrl);
         });
+
+        test('captures unexpected errors', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () => Promise.resolve({ userName: 'super-user' })
+            })
+          );
+          const spy = vi
+            .spyOn(fastifyTestInstance.prisma.msUsername, 'create')
+            .mockRejectedValueOnce(new Error('DB error'));
+
+          const response = await superPost('/user/ms-username').send({
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/12345'
+          });
+
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          spy.mockRestore();
+          fastifyTestInstance.Sentry = originalSentry;
+        });
       });
     });
 
@@ -1821,6 +1890,28 @@ Thanks and regards,
           type: 'success',
           message: 'flash.survey.success'
         });
+      });
+
+      test('POST captures unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.survey, 'create')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        spy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
 

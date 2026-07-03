@@ -72,6 +72,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           }
         );
       } catch (err) {
+        fastify.Sentry?.captureException(err);
         req.log.error(err, 'Failed to unsubscribe user from email');
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
@@ -136,6 +137,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
             "We've successfully updated your email preferences. Thank you for resubscribing."
         });
       } catch (err) {
+        fastify.Sentry?.captureException(err);
         req.log.error(err, 'Failed to resubscribe user to email');
         void reply.code(302);
         return reply.redirectWithMessage(origin, {
