@@ -159,6 +159,9 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     const payload = jwt.decode(encodedToken);
 
     if (typeof payload !== 'object' || payload === null) {
+      req.log.error(
+        'Unreachable: exam-environment token verified but decoded payload is not an object'
+      );
       void reply.code(500);
       return reply.send(
         ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(

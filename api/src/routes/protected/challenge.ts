@@ -364,7 +364,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info('User saved a challenge');
+      req.log.debug('User saved a challenge');
 
       const { files, id: challengeId } = req.body;
       await postSaveChallenge(
@@ -394,7 +394,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info('User saved a challenge');
+      req.log.debug('User saved a challenge');
 
       const { files: encodedFiles, id: challengeId } = req.body;
       const files = decodeFiles(encodedFiles);
@@ -453,7 +453,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
 
       if ('error' in validExamFromDbSchema) {
-        req.log.warn(
+        req.log.error(
           { examId: id, validationError: validExamFromDbSchema.error },
           'Error validating exam from database'
         );
@@ -667,7 +667,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         const validExamFromDbSchema = validateExamFromDbSchema(examFromDb);
         if ('error' in validExamFromDbSchema) {
-          req.log.warn(
+          req.log.error(
             { examId: id, validationError: validExamFromDbSchema.error },
             'Error validating exam from database'
           );
@@ -701,8 +701,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           numberOfQuestionsInExam
         );
         if ('error' in validUserCompletedExam) {
-          req.log.error(
-            validUserCompletedExam.error,
+          req.log.warn(
+            { validationError: validUserCompletedExam.error },
             'Error validating submitted exam'
           );
           void reply.code(400);

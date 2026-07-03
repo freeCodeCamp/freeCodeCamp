@@ -60,7 +60,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
 
         await Promise.all(userUpdatePromises);
         req.log.info(
-          { matchedUsers: unsubUsers.length },
+          { matchedUsers: unsubUsers.length, audit: true },
           'Successfully unsubscribed users from email'
         );
 
@@ -118,14 +118,17 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        req.log.info({ userId: user.id }, 'Found user to resubscribe');
+        req.log.debug({ userId: user.id }, 'Found user to resubscribe');
         await fastify.prisma.user.update({
           where: { id: user.id },
           data: {
             sendQuincyEmail: true
           }
         });
-        req.log.info({ userId: user.id }, 'Successfully resubscribed user');
+        req.log.info(
+          { userId: user.id, audit: true },
+          'Successfully resubscribed user'
+        );
 
         return reply.redirectWithMessage(origin, {
           type: 'success',

@@ -180,14 +180,14 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    test('should log an error if the state is invalid', async () => {
-      vi.spyOn(fastify.log, 'error');
+    test('should log a warning if the state is invalid', async () => {
+      vi.spyOn(fastify.log, 'warn');
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
       });
 
-      expect(fastify.log.error).toHaveBeenCalledWith(
+      expect(fastify.log.warn).toHaveBeenCalledWith(
         expect.any(Error),
         'Auth failed: invalid state'
       );

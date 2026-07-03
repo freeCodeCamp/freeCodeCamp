@@ -54,10 +54,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
       if (req.user) {
         const { returnTo } = getRedirectParams(req);
 
-        req.log.trace(
-          { userId: req.user.id, returnTo },
-          'Signed-in user redirected'
-        );
+        req.log.trace({ returnTo }, 'Signed-in user redirected');
 
         await reply.redirect(returnTo);
       }

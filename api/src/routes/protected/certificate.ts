@@ -274,7 +274,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user[certType]) {
-        req.log.info({ certName }, 'User has already claimed certificate');
+        req.log.debug({ certName }, 'User has already claimed certificate');
         void reply.code(200);
         return {
           response: {
@@ -296,7 +296,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (!hasCompletedTestRequirements) {
-        req.log.info(
+        req.log.warn(
           { certName },
           'User has not completed the tests for certificate'
         );
@@ -391,7 +391,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
         // Failed email should not prevent successful response.
         try {
-          req.log.info('Sending congratulations email');
+          req.log.debug('Sending congratulations email');
           // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
           await fastify.sendEmail(notifyUser);
         } catch (e) {
@@ -399,7 +399,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         }
       }
 
-      req.log.info({ certName }, 'User has claimed certificate');
+      req.log.info({ certName, audit: true }, 'User has claimed certificate');
       void reply.code(200);
       return {
         response: {

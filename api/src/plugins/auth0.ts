@@ -16,6 +16,7 @@ import {
 import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
 import { createAccessToken } from '../utils/tokens.js';
 import { getLoginRedirectParams } from '../utils/redirection.js';
+import { clientNetInfo } from '../utils/logger.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -114,7 +115,10 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           req.log.info('Access denied due to user location');
           return reply.redirect(`${HOME_LOCATION}/blocked`);
         } else {
-          req.log.info('Authentication failed for user');
+          req.log.info(
+            { errorDescription: error_description, ...clientNetInfo(req) },
+            'Authentication failed for user'
+          );
           return reply.redirectWithMessage(`${HOME_LOCATION}/learn`, {
             type: 'info',
             content: error_description ?? 'Authentication failed'
@@ -134,7 +138,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         // have to update the test or write custom state create/verify
         // functions.
         if (error instanceof Error && error.message === 'Invalid state') {
-          req.log.error(error, 'Auth failed: invalid state');
+          req.log.warn(error, 'Auth failed: invalid state');
         } else if (Value.Check(Auth0ErrorSchema, error)) {
           const errorType = error.data.payload.error;
           req.log.error(error, 'Auth failed: ' + errorType);
@@ -154,9 +158,13 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         const userinfo = (await fastify.auth0OAuth.userinfo(token)) as {
           email: string;
         };
-        req.log.info({ hasEmail: !!userinfo.email }, 'Received Auth0 userinfo');
+        req.log.debug(
+          { hasEmail: !!userinfo.email },
+          'Received Auth0 userinfo'
+        );
         email = userinfo.email;
         if (typeof email !== 'string') {
+          req.log.warn('Auth0 userinfo missing email');
           return reply.redirectWithMessage(returnTo, {
             type: 'danger',
             content: 'flash.no-email-in-userinfo'

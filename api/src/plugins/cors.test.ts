@@ -63,14 +63,14 @@ describe('cors', () => {
     expect(debugSpy).toHaveBeenCalled();
   });
 
-  test('should info log a request from a disallowed origin', async () => {
-    const infoSpy = vi.spyOn(fastify.log, 'info');
+  test('should warn on a request from a disallowed origin', async () => {
+    const warnSpy = vi.spyOn(fastify.log, 'warn');
     await fastify.inject({
       url: '/api/some-endpoint',
       headers: { origin: 'https://disallowed.example.com' }
     });
 
-    expect(infoSpy).toHaveBeenCalledWith(
+    expect(warnSpy).toHaveBeenCalledWith(
       { origin: 'https://disallowed.example.com' },
       'Received request from disallowed origin'
     );

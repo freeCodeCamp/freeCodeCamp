@@ -99,7 +99,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (user === null) {
-        req.log.info({ username }, 'User not found');
+        req.log.debug({ username }, 'User not found');
         return reply.send({
           messages: [
             {
@@ -112,7 +112,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user.isCheater || user.isBanned) {
-        req.log.info({ username }, 'User is banned or a cheater');
+        req.log.debug({ username }, 'User is banned or a cheater');
         return reply.send({
           messages: [
             {
@@ -124,7 +124,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.isHonest) {
-        req.log.info({ username }, 'User has not accepted honesty policy');
+        req.log.debug({ username }, 'User has not accepted honesty policy');
         return reply.send({
           messages: [
             {
@@ -137,7 +137,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user.profileUI?.isLocked) {
-        req.log.info({ username }, 'User has a locked profile');
+        req.log.debug({ username }, 'User has a locked profile');
         return reply.send({
           messages: [
             {
@@ -150,7 +150,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.name) {
-        req.log.info({ username }, 'User has not added a name');
+        req.log.debug({ username }, 'User has not added a name');
         return reply.send({
           messages: [
             {
@@ -162,7 +162,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.profileUI?.showCerts) {
-        req.log.info({ username }, 'User has private certs');
+        req.log.debug({ username }, 'User has private certs');
         return reply.send({
           messages: [
             {
@@ -175,7 +175,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.profileUI?.showTimeLine) {
-        req.log.info({ username }, 'User has private timeline');
+        req.log.debug({ username }, 'User has private timeline');
         return reply.send({
           messages: [
             {
@@ -188,7 +188,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user[certType]) {
-        req.log.info(
+        req.log.debug(
           { username, certTitle },
           'User has not completed the certification'
         );
@@ -234,7 +234,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const { name } = user;
 
       if (!user.profileUI.showName) {
-        req.log.info({ username }, 'User has private name');
+        req.log.debug({ username }, 'User has private name');
         void reply.code(200);
         return reply.send({
           certSlug,
