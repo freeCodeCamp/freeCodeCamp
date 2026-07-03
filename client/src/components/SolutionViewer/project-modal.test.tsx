@@ -5,21 +5,6 @@ import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import ProjectModal from './project-modal';
 
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string, options?: { projectTitle?: string }) => {
-      switch (key) {
-        case 'settings.labels.solution-for':
-          return `Solution for ${options?.projectTitle}`;
-        case 'buttons.close':
-          return 'Close';
-        default:
-          return key;
-      }
-    }
-  })
-}));
-
 const projectTitle = 'Palindrome Checker';
 
 const originalResizeObserver = globalThis.ResizeObserver;
@@ -60,7 +45,7 @@ describe('<ProjectModal />', () => {
     renderProjectModal();
 
     expect(
-      screen.getByRole('dialog', { name: `Solution for ${projectTitle}` })
+      screen.getByRole('dialog', { name: 'settings.labels.solution-for' })
     ).toBeInTheDocument();
     expect(screen.getByText('JS')).toBeInTheDocument();
     // Prism splits the solution across multiple syntax-highlighting nodes,
@@ -72,7 +57,12 @@ describe('<ProjectModal />', () => {
           element.textContent === 'function palindrome(str) { return true; }'
       )
     ).toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: 'Close' })).toHaveLength(2);
+    // The header close button label comes from the ui library, the footer
+    // button from the buttons.close translation
+    expect(screen.getByRole('button', { name: 'Close' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'buttons.close' })
+    ).toBeInTheDocument();
   });
 
   it('renders one panel per challenge file', () => {
@@ -109,7 +99,7 @@ describe('<ProjectModal />', () => {
     const handleSolutionModalHide = vi.fn();
     renderProjectModal({ handleSolutionModalHide });
 
-    await user.click(screen.getAllByRole('button', { name: 'Close' })[0]);
+    await user.click(screen.getByRole('button', { name: 'Close' }));
 
     expect(handleSolutionModalHide).toHaveBeenCalledTimes(1);
   });
@@ -119,7 +109,7 @@ describe('<ProjectModal />', () => {
     const handleSolutionModalHide = vi.fn();
     renderProjectModal({ handleSolutionModalHide });
 
-    await user.click(screen.getAllByRole('button', { name: 'Close' })[1]);
+    await user.click(screen.getByRole('button', { name: 'buttons.close' }));
 
     expect(handleSolutionModalHide).toHaveBeenCalledTimes(1);
   });

@@ -6,27 +6,6 @@ import { describe, expect, it, vi } from 'vitest';
 import type { CompletedChallenge } from '../../redux/prop-types';
 import { SolutionDisplayWidget } from '.';
 
-vi.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: (key: string, options?: { projectTitle?: string }) => {
-      switch (key) {
-        case 'buttons.view':
-          return 'View';
-        case 'settings.labels.solution-for':
-          return `Solution for ${options?.projectTitle}`;
-        case 'certification.project.solution':
-          return 'Solution';
-        case 'certification.project.source':
-          return 'Source';
-        case 'aria.opens-new-window':
-          return 'Opens in new window';
-        default:
-          return key;
-      }
-    }
-  })
-}));
-
 const projectTitle = 'Palindrome Checker';
 
 function renderWidget({
@@ -62,7 +41,7 @@ describe('<SolutionDisplayWidget />', () => {
 
     await user.click(
       screen.getByRole('button', {
-        name: `View Solution for ${projectTitle}`
+        name: 'buttons.view settings.labels.solution-for'
       })
     );
 
@@ -80,7 +59,7 @@ describe('<SolutionDisplayWidget />', () => {
     });
 
     const link = screen.getByRole('link', {
-      name: `View Solution for ${projectTitle} (Opens in new window)`
+      name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
     });
     expect(link).toHaveAttribute(
       'href',
@@ -103,12 +82,12 @@ describe('<SolutionDisplayWidget />', () => {
 
     await user.click(
       screen.getByRole('button', {
-        name: `View Solution for ${projectTitle}`
+        name: 'buttons.view settings.labels.solution-for'
       })
     );
 
     const solutionLink = screen.getByRole('menuitem', {
-      name: 'Solution (Opens in new window)'
+      name: 'certification.project.solution (aria.opens-new-window)'
     });
     expect(solutionLink).toHaveAttribute(
       'href',
@@ -117,7 +96,7 @@ describe('<SolutionDisplayWidget />', () => {
     expect(solutionLink).toHaveAttribute('target', '_blank');
 
     const sourceLink = screen.getByRole('menuitem', {
-      name: 'Source (Opens in new window)'
+      name: 'certification.project.source (aria.opens-new-window)'
     });
     expect(sourceLink).toHaveAttribute(
       'href',
