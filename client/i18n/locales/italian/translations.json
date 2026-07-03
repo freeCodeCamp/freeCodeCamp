@@ -1,4 +1,9 @@
 {
+  "404": {
+    "page-not-found": "Pagina non trovata",
+    "not-found": "404 Non Trovato:",
+    "heres-a-quote": "Non siamo riusciti a trovare quello che cercavi, ma ecco una citazione:"
+  },
   "buttons": {
     "logged-in-cta-btn": "Inizia ora (è gratuito)",
     "get-started": "Get Started",
@@ -52,8 +57,6 @@
     "check-answer": "Verifica la tua risposta",
     "submit": "Submit",
     "get-hint": "Ottieni un suggerimento",
-    "ask-for-help": "Chiedi aiuto",
-    "create-post": "Crea un post di aiuto sul forum",
     "cancel": "Annulla",
     "reset-lesson": "Resetta questa lezione",
     "revert": "Revert",
@@ -579,15 +582,6 @@
     "download-results": "Scarica i miei risultati",
     "percent-complete": "{{percent}}% completato",
     "project-complete": "Completato",
-    "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
-    "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
-    "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
-    "minimum-characters": "Per favore descrivi in almeno altri {{characters}} caratteri",
-    "characters-left": "Puoi aggiungere altri {{characters}} caratteri alla tua richiesta",
-    "must-confirm-statements": "Devi confermare le seguenti dichiarazioni prima di poter inviare il tuo post al forum.",
-    "min-50-max-500": "minimo 50 caratteri, massimo 500 caratteri",
-    "rsa": "Leggi, cerca, chiedi",
-    "rsa-forum": "<strong>Before making a new post</strong> please <0>check if your question has already been answered on the forum</0>.",
     "reset": "Vuoi resettare questa lezione?",
     "reset-warn": "Sei sicuro di voler ripristinare questa lezione ({{title}})? Gli editor di codice e i test verranno resettati.",
     "reset-warn-2": "This cannot be undone.",
@@ -969,11 +963,6 @@
     "what": "Che cosa vorresti segnalare?",
     "submit": "Invia il rapporto"
   },
-  "404": {
-    "page-not-found": "Pagina non trovata",
-    "not-found": "404 Non Trovato:",
-    "heres-a-quote": "Non siamo riusciti a trovare quello che cercavi, ma ecco una citazione:"
-  },
   "search": {
     "label": "Cerca",
     "placeholder": {
@@ -1085,8 +1074,6 @@
     "dialogues-and-tasks-for": "Dialogues and tasks for {{blockTitle}}",
     "code-example": "{{codeName}} esempio di codice",
     "opens-new-window": "Apri in una nuova finestra",
-    "rsa-checkbox": "I have tried the Read-Search-Ask method",
-    "similar-questions-checkbox": "I have searched for similar questions that have already been answered on the forum",
     "edit-my-profile": "Edit my profile",
     "add-portfolio": "Add portfolio project",
     "edit-portfolio": "Edit portfolio project",
@@ -1465,23 +1452,6 @@
     "set-certs-public": "Setta le tue impostazioni di certificazione a: pubblico",
     "set-profile-public": "Setta le tue impostazioni del profilo a: pubblico",
     "set-claim": "Richiedi e visualizza la tua certificazione"
-  },
-  "forum-help": {
-    "browser-info": "Your browser information:",
-    "user-agent": "Lo user agent è: <code>{{userAgent}}</code>",
-    "challenge": "Challenge Information:",
-    "whats-happening": "Tell us what's happening:",
-    "describe": "Describe your issue in detail here. Example: \nMy h1 element is missing an opening tag. Need help checking my code. \nOR \nMy for loop runs infinitely. How to prevent this?",
-    "camper-project": "Your project link(s)",
-    "camper-code": "Your code so far",
-    "warning": "ATTENZIONE",
-    "too-long-one": "Il codice seed della sfida e/o la tua soluzione hanno superato la lunghezza massiama che possiamo importare dalla sfida.",
-    "too-long-two": "Dovrai fare un passo in più in modo che il codice che hai scritto abbia un formato semplice da leggere.",
-    "too-long-three": "Copia/incolla tutto il codice mostrato nell'editor della sfida da dove ti sei appena collegato.",
-    "add-code-one": "Sostituisci queste due frasi con il codice copiato.",
-    "add-code-two": "Si prega di lasciare la linea ``` sopra e la linea ``` sotto,",
-    "add-code-three": "perché consentono al codice di disporsi correttamente nel post.",
-    "git-info": "GitHub Link: {{gitLink}}"
   },
   "user-token": {
     "title": "Token Utente",

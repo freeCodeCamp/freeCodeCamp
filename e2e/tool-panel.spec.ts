@@ -59,15 +59,13 @@ test.describe('Tool Panel', () => {
     test.skip(!isMobile, 'Help dropdown only available on mobile');
     const expectedHelpLinks = [
       `${translations.buttons['get-hint']} , ${translations.aria['opens-new-window']}`,
-      translations.buttons['watch-video'],
-      translations.buttons['ask-for-help']
+      translations.buttons['watch-video']
     ];
     const helpLinks = [];
 
     await page.getByTestId('get-help-dropdown').click();
     helpLinks.push(await page.getByTestId('get-hint').textContent());
     helpLinks.push(await page.getByTestId('watch-a-video').textContent());
-    helpLinks.push(await page.getByTestId('ask-for-help').textContent());
 
     expect(helpLinks).toEqual(expectedHelpLinks);
 
@@ -77,14 +75,6 @@ test.describe('Tool Panel', () => {
       'https://forum.freecodecamp.org/t/301139'
     );
     await expect(hintLink).toHaveAttribute('target', '_blank');
-
-    await page.getByRole('menuitem', { name: 'Ask for Help' }).click();
-    await expect(
-      page.getByRole('heading', {
-        name: translations.buttons['ask-for-help'],
-        exact: true
-      })
-    ).toBeVisible();
 
     // "Watch a Video" is done by "video-modal.spec.ts"
   });

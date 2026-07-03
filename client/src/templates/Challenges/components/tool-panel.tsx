@@ -26,7 +26,6 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       executeChallenge,
-      openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
       openResetModal: () => openModal('reset'),
       saveChallenge
@@ -40,7 +39,6 @@ interface ToolPanelProps {
   saveChallenge: () => void;
   isMobile?: boolean;
   isSignedIn: boolean;
-  openHelpModal: () => void;
   openVideoModal: () => void;
   openResetModal: () => void;
   guideUrl: string;
@@ -53,7 +51,6 @@ function ToolPanel({
   saveChallenge,
   isMobile,
   isSignedIn,
-  openHelpModal,
   openVideoModal,
   openResetModal,
   guideUrl,
@@ -118,12 +115,6 @@ function ToolPanel({
               {t('buttons.watch-video')}
             </MenuItem>
           ) : null}
-          <MenuItem
-            onClick={openHelpModal}
-            data-playwright-test-label='ask-for-help'
-          >
-            {t('buttons.ask-for-help')}
-          </MenuItem>
         </Dropdown.Menu>
       </Dropdown>
     </div>

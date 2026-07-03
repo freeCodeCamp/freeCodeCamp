@@ -18,7 +18,6 @@ import ChallengeDescription from '../../components/challenge-description';
 import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
 import CompletionModal from '../../components/completion-modal';
-import HelpModal from '../../components/help-modal';
 import Output from '../../components/output';
 import TestSuite from '../../components/test-suite';
 import {
@@ -210,11 +209,6 @@ const ShowBackEnd = (props: BackEndProps) => {
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
           </Row>
         </Container>
       </LearnLayout>

@@ -21,7 +21,6 @@ import {
   challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
-  isHelpModalOpenSelector,
   isProjectPreviewModalOpenSelector,
   isResetModalOpenSelector,
   isShortcutsModalOpenSelector
@@ -32,7 +31,6 @@ import type { EditorProps } from '../classic/editor';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 const mapStateToProps = createSelector(
-  isHelpModalOpenSelector,
   isResetModalOpenSelector,
   isShortcutsModalOpenSelector,
   isProjectPreviewModalOpenSelector,
@@ -42,7 +40,6 @@ const mapStateToProps = createSelector(
   userSelector,
   challengeMetaSelector,
   (
-    isHelpModalOpen: boolean,
     isResetModalOpen: boolean,
     isShortcutsModalOpen: boolean,
     isProjectPreviewModalOpen: boolean,
@@ -52,7 +49,6 @@ const mapStateToProps = createSelector(
     user: User | null,
     { nextChallengePath, prevChallengePath }: ChallengeMeta
   ) => ({
-    isHelpModalOpen,
     isResetModalOpen,
     isShortcutsModalOpen,
     isProjectPreviewModalOpen,
@@ -85,7 +81,6 @@ export type HotkeysProps = Pick<
     EditorProps,
     'containerRef' | 'tests' | 'challengeFiles' | 'setEditorFocusability'
   > & {
-    isHelpModalOpen?: boolean;
     isResetModalOpen?: boolean;
     isShortcutsModalOpen?: boolean;
     isProjectPreviewModalOpen?: boolean;
@@ -117,7 +112,6 @@ function Hotkeys({
   openShortcutsModal,
   playScene,
   keyboardShortcuts,
-  isHelpModalOpen,
   isResetModalOpen,
   isShortcutsModalOpen,
   isProjectPreviewModalOpen,
@@ -126,7 +120,6 @@ function Hotkeys({
   const submitChallenge = useSubmit();
 
   const isModalOpen = [
-    isHelpModalOpen,
     isResetModalOpen,
     isShortcutsModalOpen,
     isProjectPreviewModalOpen

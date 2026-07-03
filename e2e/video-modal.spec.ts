@@ -53,10 +53,8 @@ test.describe('Exit Video Modal E2E Test Suite - Mobile', () => {
 test.describe('Exit Video Modal E2E Test Suite - Desktop', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(currentUrlPath);
-    // Open help modal via independent lower jaw
-    await page.getByRole('button', { name: translations.buttons.help }).click();
-    // Click watch video link from help modal
-    await page.getByTestId('watch-a-video-modal-button').click();
+    await page.getByTestId('get-help-dropdown').click();
+    await page.getByTestId('watch-a-video').click();
   });
 
   test('Verifies the Correct Rendering of the Video Modal on Desktop', async ({

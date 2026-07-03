@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const verifyTrophyButtonText = translations.buttons['verify-trophy'];
-const askForHelpButtonText = translations.buttons['ask-for-help'];
 test.use({ storageState: { cookies: [], origins: [] } });
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -33,18 +32,4 @@ test('Correct Verify Trophy button', async ({ page }) => {
   await expect(askHelpButton).toBeDisabled();
 });
 
-test('Correct Ask for help button', async ({ page }) => {
-  const checkAnswerButton = page.getByRole('button', {
-    name: askForHelpButtonText
-  });
-  await expect(checkAnswerButton).toBeVisible();
-  await expect(checkAnswerButton).toContainText(askForHelpButtonText);
 
-  await checkAnswerButton.click();
-  await expect(
-    page.getByRole('heading', {
-      name: translations.buttons['get-help'],
-      exact: true
-    })
-  ).toBeVisible();
-});

@@ -32,7 +32,6 @@ import {
 import { apiLocation, clientLocale } from '../../../../config/env.json';
 import { openModal, executeChallenge, askSocrates } from '../redux/actions';
 import { saveChallenge } from '../../../redux/actions';
-import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
@@ -123,7 +122,6 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = {
-  openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
   askSocrates: () => askSocrates(),
   executeChallenge,
@@ -131,7 +129,6 @@ const mapDispatchToProps = {
 };
 
 interface IndependentLowerJawProps {
-  openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
   askSocrates: () => void;
@@ -148,7 +145,6 @@ interface IndependentLowerJawProps {
   hasSocratesAccess: boolean;
 }
 export function IndependentLowerJaw({
-  openHelpModal,
   openResetModal,
   askSocrates,
   executeChallenge,
@@ -543,16 +539,6 @@ export function IndependentLowerJaw({
               <span className='tooltiptext'> {t('buttons.reset')}</span>
             </button>
           )}
-          <button
-            type='button'
-            className='icon-button tooltip'
-            data-playwright-test-label='independentLowerJaw-help-button'
-            aria-label={t('buttons.help')}
-            onClick={openHelpModal}
-          >
-            <Help />
-            <span className='tooltiptext'> {t('buttons.help')}</span>
-          </button>
         </div>
       </div>
     </div>

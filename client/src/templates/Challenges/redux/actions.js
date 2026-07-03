@@ -4,7 +4,6 @@ import { actionTypes } from './action-types';
 
 export const createFiles = createAction(actionTypes.createFiles);
 
-export const createQuestion = createAction(actionTypes.createQuestion);
 export const initTests = createAction(actionTypes.initTests);
 export const initHooks = createAction(actionTypes.initHooks);
 export const updateTests = createAction(actionTypes.updateTests);
