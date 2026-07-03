@@ -134,6 +134,9 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           await this.auth0OAuth.getAccessTokenFromAuthorizationCodeFlow(req)
         ).token;
       } catch (error) {
+        fastify.Sentry?.metrics?.count('auth.failed', 1, {
+          attributes: { stage: 'token' }
+        });
         // This is the plugin's error message. If it changes, we will either
         // have to update the test or write custom state create/verify
         // functions.
@@ -143,6 +146,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           const errorType = error.data.payload.error;
           req.log.error(error, 'Auth failed: ' + errorType);
         } else {
+          fastify.Sentry?.captureException(error);
           req.log.error(error, 'Failed to get access token from Auth0');
         }
         // It's important _not_ to redirect to /signin here, as that could
@@ -171,12 +175,16 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           });
         }
       } catch (error) {
+        fastify.Sentry?.metrics?.count('auth.failed', 1, {
+          attributes: { stage: 'userinfo' }
+        });
         if (isError(error) && 'innerError' in error) {
           // This is a specific error from the @fastify/oauth2 plugin.
           const innerError = error.innerError as Error;
           innerError.message = `Auth0 userinfo error: ${innerError.message}`;
           req.log.error(innerError, 'Failed to get userinfo from Auth0');
         } else {
+          fastify.Sentry?.captureException(error);
           req.log.error(error, 'Failed to get userinfo from Auth0');
         }
         return reply.redirectWithMessage(returnTo, {

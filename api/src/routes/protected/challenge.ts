@@ -457,6 +457,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           { examId: id, validationError: validExamFromDbSchema.error },
           'Error validating exam from database'
         );
+        fastify.Sentry?.captureException(
+          new Error(`Exam ${id} failed database schema validation`)
+        );
         void reply.code(500);
         return {
           error:
@@ -596,6 +599,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           completedDate: normalizeDate(completedDate)
         });
       } catch (error) {
+        fastify.Sentry?.captureException(error);
         req.log.error(error, 'Error submitting Microsoft trophy challenge');
         void reply.code(500);
         return {
@@ -832,6 +836,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           examResults
         };
       } catch (error) {
+        fastify.Sentry?.captureException(error);
         req.log.error(error, 'Error submitting exam challenge');
         void reply.code(500);
         return {
@@ -1043,7 +1048,7 @@ async function postCoderoadChallengeCompleted(
       });
     }
   } catch (error) {
-    // TODO(Post-MVP): don't catch, just let Sentry handle this.
+    this.Sentry?.captureException(error);
     req.log.error(error, 'Error submitting coderoad challenge');
     void reply.code(500);
     return reply.send({

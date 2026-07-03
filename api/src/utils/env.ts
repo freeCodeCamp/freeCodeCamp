@@ -226,6 +226,7 @@ export const SENTRY_ENVIRONMENT =
   process.env.SENTRY_ENVIRONMENT === 'development'
     ? ''
     : process.env.SENTRY_ENVIRONMENT;
+export const SENTRY_SERVER_NAME = process.env.SENTRY_SERVER_NAME;
 const _SENTRY_TRACES_SAMPLE_RATE = Number(
   process.env.SENTRY_TRACES_SAMPLE_RATE ?? '0.1'
 );

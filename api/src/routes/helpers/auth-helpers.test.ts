@@ -131,6 +131,10 @@ describe('findOrCreateUser', () => {
     test('should not prevent user creation if drip campaign record creation fails', async () => {
       vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
+      const captureException = vi.fn();
+      // @ts-expect-error - Only mocks part of the Sentry object.
+      fastify.Sentry = { captureException };
+
       const originalCreate = fastify.prisma.dripCampaign.create;
 
       fastify.prisma.dripCampaign.create = vi
@@ -151,6 +155,7 @@ describe('findOrCreateUser', () => {
         { err: dbError, userId: user.id },
         'Failed to create drip campaign record for user'
       );
+      expect(captureException).toHaveBeenCalledOnce();
 
       fastify.prisma.dripCampaign.create = originalCreate;
     });

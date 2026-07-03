@@ -129,6 +129,7 @@ describe('auth0 plugin', () => {
     const email = 'new@user.com';
     let getAccessTokenFromAuthorizationCodeFlowSpy: MockInstance;
     let userinfoSpy: MockInstance;
+    let captureException: ReturnType<typeof vi.fn>;
 
     const mockAuthSuccess = () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
@@ -143,8 +144,9 @@ describe('auth0 plugin', () => {
         'getAccessTokenFromAuthorizationCodeFlow'
       );
       userinfoSpy = vi.spyOn(fastify.auth0OAuth, 'userinfo');
+      captureException = vi.fn();
       // @ts-expect-error - Only mocks part of the Sentry object.
-      fastify.Sentry = { captureException: () => '' };
+      fastify.Sentry = { captureException };
     });
 
     afterEach(async () => {
@@ -166,6 +168,7 @@ describe('auth0 plugin', () => {
         `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
     });
 
     test('should redirect to the client if the state is invalid', async () => {
@@ -192,6 +195,7 @@ describe('auth0 plugin', () => {
         'Auth failed: invalid state'
       );
       expect(res.statusCode).toBe(302);
+      expect(captureException).not.toHaveBeenCalled();
     });
 
     test('should log expected Auth0 errors', async () => {
@@ -219,6 +223,7 @@ describe('auth0 plugin', () => {
       );
 
       expect(res.statusCode).toBe(302);
+      expect(captureException).not.toHaveBeenCalled();
     });
 
     test('should not create a user if the state is invalid', async () => {
@@ -279,6 +284,26 @@ describe('auth0 plugin', () => {
       );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
+      expect(captureException).toHaveBeenCalledOnce();
+    });
+
+    test('does not capture userinfo errors carrying innerError', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockRejectedValueOnce(
+        Object.assign(new Error('upstream'), { innerError: new Error('inner') })
+      );
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
+      });
+
+      expect(res.statusCode).toBe(302);
+      expect(captureException).not.toHaveBeenCalled();
     });
 
     test('handles invalid userinfo responses', async () => {

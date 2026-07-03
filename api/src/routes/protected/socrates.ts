@@ -200,6 +200,9 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
 
         return { hint, attempts, limit } as const;
       } catch (error) {
+        if (!(error instanceof TypeError)) {
+          fastify.Sentry?.captureException(error);
+        }
         req.log.error(
           { err: error },
           'Failed to fetch hint from Socrates API.'

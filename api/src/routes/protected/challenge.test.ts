@@ -416,6 +416,12 @@ describe('challengeRoutes', () => {
       // reason)
       test('Should return an error response if something goes wrong', async () => {
         const originalUserToken = fastifyTestInstance.prisma.userToken;
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
 
         vi.spyOn(
           fastifyTestInstance.prisma,
@@ -441,6 +447,9 @@ describe('challengeRoutes', () => {
           type: 'error'
         });
         expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       afterAll(async () => {
@@ -1878,6 +1887,13 @@ describe('challengeRoutes', () => {
           });
 
           test('POST handles unexpected errors', async () => {
+            const originalSentry = fastifyTestInstance.Sentry;
+            const captureException = vi.fn();
+            fastifyTestInstance.Sentry = {
+              ...originalSentry,
+              captureException
+            };
+
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() => {
               throw new Error('Network error');
             });
@@ -1890,6 +1906,9 @@ describe('challengeRoutes', () => {
 
             expect(res.body).toStrictEqual(unexpectedError);
             expect(res.statusCode).toBe(500);
+            expect(captureException).toHaveBeenCalledOnce();
+
+            fastifyTestInstance.Sentry = originalSentry;
           });
 
           test('POST updates the user record with a new completed challenge', async () => {
@@ -2182,6 +2201,13 @@ describe('challengeRoutes', () => {
         });
 
         test('POST rejects requests with invalid userCompletedExam values', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
@@ -2214,6 +2240,9 @@ describe('challengeRoutes', () => {
             error: `An error occurred trying to submit your exam.`
           });
           expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
       });
 

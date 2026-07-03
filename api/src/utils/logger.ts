@@ -40,6 +40,22 @@ type SerializedRequest = {
   query?: unknown;
 };
 
+const errSerializer = (err: unknown, depth = 0): Record<string, unknown> => {
+  if (typeof err !== 'object' || err === null) return { message: String(err) };
+  const e = err as Record<string, unknown>;
+  const safe: Record<string, unknown> = {
+    type: (e.constructor as { name?: string } | undefined)?.name ?? e.name,
+    message: e.message,
+    stack: e.stack
+  };
+  for (const key of ['code', 'statusCode', 'requestId'] as const) {
+    if (e[key] !== undefined) safe[key] = e[key];
+  }
+  if (depth < 3 && e.cause != null)
+    safe.cause = errSerializer(e.cause, depth + 1);
+  return safe;
+};
+
 export const serializers = {
   req: (req: FastifyRequest): SerializedRequest => ({
     method: req.method,
@@ -52,7 +68,8 @@ export const serializers = {
   }),
   res: (reply: FastifyReply): { statusCode: number } => ({
     statusCode: reply.statusCode
-  })
+  }),
+  err: errSerializer
 };
 
 const REQUEST_ID_PATTERN = /^[\w-]{1,64}$/;
