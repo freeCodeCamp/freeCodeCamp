@@ -87,7 +87,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMyAccount
     },
     async (req, reply) => {
-      req.log.info('User requested account deletion');
+      req.log.info({ audit: true }, 'User requested account deletion');
       await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user!.id }
       });
@@ -128,14 +128,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
       if (userId !== req.user?.id) {
         req.log.warn(
-          { requestedUserId: userId, authUserId: req.user?.id },
+          { requestedUserId: userId },
           'User attempted to delete an account they do not have authorization to.'
         );
         void reply.code(403);
         return { type: 'error', message: 'forbidden' } as const;
       }
 
-      req.log.info('User requested account deletion');
+      req.log.info({ audit: true }, 'User requested account deletion');
       try {
         await fastify.prisma.userToken.deleteMany({
           where: { userId: req.user.id }
@@ -174,7 +174,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.resetMyProgress
     },
     async (req, _reply) => {
-      req.log.info('User requested progress reset');
+      req.log.info({ audit: true }, 'User requested progress reset');
       await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user!.id }
       });
@@ -202,7 +202,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async (req, _reply) => {
-    req.log.info('User requested a new user token');
+    req.log.info({ audit: true }, 'User requested a new user token');
 
     await fastify.prisma.userToken.deleteMany({
       where: { userId: req.user?.id }
@@ -229,7 +229,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteUserToken
     },
     async (req, reply) => {
-      req.log.info('User requested token deletion');
+      req.log.info({ audit: true }, 'User requested token deletion');
 
       const { count } = await fastify.prisma.userToken.deleteMany({
         where: { userId: req.user?.id }
@@ -331,7 +331,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.deleteMsUsername
     },
     async (req, reply) => {
-      req.log.info('User requested unlinking of msUsername');
+      req.log.info({ audit: true }, 'User requested unlinking of msUsername');
 
       try {
         await fastify.prisma.msUsername.deleteMany({
@@ -371,7 +371,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      req.log.info('User requested linking of msUsername');
+      req.log.info({ audit: true }, 'User requested linking of msUsername');
 
       try {
         const user = await fastify.prisma.user.findUniqueOrThrow({
@@ -406,7 +406,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         const { userName } = (await msApiRes.json()) as { userName: string };
 
         if (!userName) {
-          req.log.warn('No userName found in msApiRes');
+          req.log.error('No userName found in Microsoft transcript response');
           return reply.status(500).send({
             type: 'error',
             message: 'flash.ms.transcript.link-err-3'
@@ -577,7 +577,10 @@ async function deleteResetModule(
   reply: UpdateReplyType<typeof schemas.resetModule>
 ) {
   const { blockIds } = req.body;
-  req.log.info({ blockIds }, 'User requested module reset for blocks');
+  req.log.info(
+    { audit: true, blockIds },
+    'User requested module reset for blocks'
+  );
 
   const resetSet = new Set(blockIds.flatMap(getChallengeIdsByBlock));
 
@@ -631,7 +634,7 @@ async function examEnvironmentTokenHandler(
   req: UpdateReqType<typeof schemas.userExamEnvironmentToken>,
   reply: FastifyReply
 ) {
-  req.log.info('User requested a new exam environment token');
+  req.log.info({ audit: true }, 'User requested a new exam environment token');
   const userId = req.user?.id;
   if (!userId) {
     throw new Error('Unreachable. User should be authenticated.');
@@ -643,7 +646,7 @@ async function examEnvironmentTokenHandler(
     (!req.user?.email?.endsWith('@freecodecamp.org') ||
       !req.user?.emailVerified)
   ) {
-    req.log.info(
+    req.log.warn(
       { deploymentEnv: DEPLOYMENT_ENV },
       'User not allowed to generate authorization token'
     );

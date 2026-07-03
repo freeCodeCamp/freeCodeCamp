@@ -854,7 +854,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
 
       const { origin } = getRedirectParams(req);
       if (!validator.default.isEmail(email)) {
-        req.log.warn('Invalid email format');
+        req.log.warn({ email }, 'Invalid email format');
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
@@ -869,7 +869,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
 
       // TODO(Post-MVP): clean up expired auth tokens.
       if (isExpired(authToken)) {
-        req.log.info('Token expired');
+        req.log.warn('Token expired');
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 

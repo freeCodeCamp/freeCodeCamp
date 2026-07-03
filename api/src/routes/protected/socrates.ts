@@ -116,7 +116,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           req.log.error(
             {
               status: response.status,
-              response: responseText || undefined
+              upstreamBody: responseText.slice(0, 500)
             },
             'Socrates API returned an error response.'
           );
@@ -182,7 +182,8 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         ) {
           req.log.error(
             {
-              response: payload
+              payloadType: payload === null ? 'null' : typeof payload,
+              hintType: typeof (payload as { hint?: unknown } | null)?.hint
             },
             'Socrates API did not return a hint.'
           );

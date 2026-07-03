@@ -17,6 +17,19 @@ const clientIp = (req: FastifyRequest): string | undefined =>
   firstValue(req.headers['x-real-ip']) ??
   req.ip;
 
+/**
+ * Extract the client IP and country from proxy headers for fraud triage.
+ *
+ * @param req The incoming request.
+ * @returns The client IP and ISO country code, when present.
+ */
+export const clientNetInfo = (
+  req: FastifyRequest
+): { ip: string | undefined; country: string | undefined } => ({
+  ip: clientIp(req),
+  country: firstValue(req.headers['cf-ipcountry'])
+});
+
 type SerializedRequest = {
   method: string;
   url: string;
@@ -70,7 +83,11 @@ export const getLoggerOptions = (level: string): LoggerOptions => ({
   serializers,
   mixin: () => {
     const spanContext = Sentry.getActiveSpan()?.spanContext();
-    return spanContext ? { traceId: spanContext.traceId } : {};
+    if (!spanContext) return {};
+    return {
+      traceId: spanContext.traceId,
+      traceSampled: (spanContext.traceFlags & 0x1) === 1
+    };
   },
   redact: {
     paths: SENSITIVE_QUERY_PARAMS.map(param => `req.query.${param}`),

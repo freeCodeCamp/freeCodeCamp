@@ -127,7 +127,7 @@ async function tokenMetaHandler(
   reply: FastifyReply
 ) {
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
-  req.log.info('Received exam environment token meta request.');
+  req.log.debug('Received exam environment token meta request.');
 
   let payload: JwtPayload;
   try {
@@ -192,7 +192,7 @@ async function postExamGeneratedExamHandler(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info('Generating exam for user.');
+  req.log.debug('Generating exam for user.');
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
@@ -411,10 +411,9 @@ async function postExamGeneratedExamHandler(
   );
   let randomGeneratedExamId: string;
   if (untakenGeneratedExams.length === 0) {
-    req.log.info(
-      { examId: exam.id },
-      'User has taken all generated exams. Reusing previously taken generated exams.'
-    );
+    this.Sentry?.metrics.count('exam.generated_exam_reused', 1, {
+      attributes: { examId: exam.id }
+    });
     randomGeneratedExamId =
       generatedExams[Math.floor(Math.random() * generatedExams.length)]!.id;
   } else {
@@ -532,7 +531,7 @@ async function postExamAttemptHandler(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info('Updating exam attempt for user.');
+  req.log.debug('Updating exam attempt for user.');
 
   const { attempt } = req.body;
 
@@ -736,7 +735,7 @@ export async function getExams(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info('Fetching available exams for user.');
+  req.log.debug('Fetching available exams for user.');
 
   const maybeExams = await mapErr(
     this.prisma.examEnvironmentExam.findMany({
@@ -801,7 +800,7 @@ export async function getExams(
     };
 
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
-    req.log.info(
+    req.log.debug(
       { examId: exam.id, isExamPrerequisitesMet },
       'Evaluated exam prerequisites.'
     );
@@ -825,7 +824,7 @@ export async function getExams(
       : null;
 
     if (!lastAttempt) {
-      req.log.info({ examId: exam.id }, 'No prior attempts for exam.');
+      req.log.debug({ examId: exam.id }, 'No prior attempts for exam.');
       availableExam.canTake = true;
       availableExams.push(availableExam);
       continue;
@@ -840,7 +839,7 @@ export async function getExams(
     const lastAttemptExpired =
       Date.now() > lastAttemptStartTime + examTotalTimeInMS;
     if (!lastAttemptExpired) {
-      req.log.info({ examId: exam.id }, 'Exam in progress.');
+      req.log.debug({ examId: exam.id }, 'Exam in progress.');
       availableExam.canTake = true;
       availableExams.push(availableExam);
       continue;
@@ -848,7 +847,7 @@ export async function getExams(
 
     const isRetakeTimePassed = Date.now() > retakeDateInMS;
     if (!isRetakeTimePassed) {
-      req.log.info(
+      req.log.debug(
         { examId: exam.id, retakeInMs: retakeDateInMS - Date.now() },
         'Exam retake time has not yet passed.'
       );
@@ -880,7 +879,7 @@ export async function getExams(
     const moderations = maybeModerations.data;
 
     if (moderations.length > 0) {
-      req.log.info(
+      req.log.debug(
         { examId: exam.id, count: moderations.length },
         'Exam moderation records found.'
       );
@@ -914,7 +913,7 @@ export async function getExamAttemptsHandler(
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
 
-  req.log.info('Fetching exam attempts for user.');
+  req.log.debug('Fetching exam attempts for user.');
 
   // Send all relevant exam attempts
   const envExamAttempts = [];
@@ -977,7 +976,7 @@ export async function getExamAttemptHandler(
     void reply.code(500);
     return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
   }
-  req.log.info('Fetching exam attempt for user.');
+  req.log.debug('Fetching exam attempt for user.');
 
   const { attemptId } = req.params;
 
@@ -1043,7 +1042,7 @@ export async function getExamAttemptsByExamIdHandler(
 
   const { examId } = req.params;
 
-  req.log.info({ examId }, 'Fetching exam attempts by exam id.');
+  req.log.debug({ examId }, 'Fetching exam attempts by exam id.');
 
   // If attempt id is given, only return that attempt
   const maybeAttempts = await mapErr(
@@ -1094,7 +1093,7 @@ export async function getExamChallenge(
 ) {
   const { challengeId, examId } = req.query;
 
-  req.log.info({ challengeId, examId }, 'Fetching exam challenge relations.');
+  req.log.debug({ challengeId, examId }, 'Fetching exam challenge relations.');
 
   if (!challengeId && !examId) {
     req.log.warn('No challenge or exam id provided.');
