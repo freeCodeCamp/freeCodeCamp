@@ -3,7 +3,6 @@ import type {
   CertificateNode,
   SuperBlockStructure
 } from '../redux/prop-types';
-
 /**
  * CurriculumDataService manages static curriculum data.
  *
