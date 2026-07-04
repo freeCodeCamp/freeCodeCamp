@@ -139,7 +139,7 @@ What is the shorthand for the `column-gap` and `row-gap` properties?
 
 ---
 
-`grid-gap`
+`grid-space`
 
 #### --answer--
 
