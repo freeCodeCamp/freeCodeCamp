@@ -28,6 +28,9 @@
     "develop": {
       "env": ["FCC_*"]
     },
+    "test": {
+      "env": ["FCC_*", "CLIENT_LOCALE", "CURRICULUM_LOCALE"]
+    },
     "setup": {
       "env": [
         "FCC_*",
