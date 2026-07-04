@@ -7,7 +7,6 @@ import { Button, Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faLightbulb,
   faClose,
   faZap,
   faSave,
@@ -39,7 +38,10 @@ import { Share } from '../../../components/share';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 import './independent-lower-jaw.css';
-import Stars from '../../../assets/icons/stars';
+import Socrates from '../../../assets/icons/socrates';
+import OutlineLightbulb from '../../../assets/icons/outline-lightbulb';
+
+const SOCRATES_DISCOVERED_KEY = 'fcc-socrates-discovered';
 
 type SocratesHintState = {
   hint: null | string;
@@ -192,8 +194,17 @@ export function IndependentLowerJaw({
   const submitButtonRef = React.useRef<HTMLButtonElement>(null);
   const [wasCheckButtonClicked, setWasCheckButtonClicked] =
     React.useState(false);
+  const [socratesDiscovered, setSocratesDiscovered] = React.useState(false);
 
   const isChallengeComplete = tests.every(test => test.pass);
+  // Feature-discovery nudge: after two failed checks on a challenge, flash a dot
+  // on the Socrates button until the learner clicks it for the first time.
+  const showSocratesDot =
+    hasSocratesAccess &&
+    showSocratesFlag &&
+    !socratesDiscovered &&
+    attempts >= 2 &&
+    !isChallengeComplete;
   const hasBlockIds = currentBlockIds.length > 0;
   const isLastStepInBlock =
     hasBlockIds &&
@@ -242,6 +253,14 @@ export function IndependentLowerJaw({
     setShowHint(!!hint);
   }, [hint, attempts]);
 
+  // Read the feature-discovery flag client-side only to avoid an SSR/hydration
+  // mismatch. The dot can only appear after two client-side checks anyway.
+  React.useEffect(() => {
+    setSocratesDiscovered(
+      localStorage.getItem(SOCRATES_DISCOVERED_KEY) === 'true'
+    );
+  }, []);
+
   React.useEffect(() => {
     if (!isChallengeComplete || !wasCheckButtonClicked) return;
 
@@ -270,6 +289,11 @@ export function IndependentLowerJaw({
     : t('buttons.ctrl-enter');
 
   const askSocratesAttempt = () => {
+    if (!socratesDiscovered) {
+      localStorage.setItem(SOCRATES_DISCOVERED_KEY, 'true');
+      setSocratesDiscovered(true);
+    }
+
     callGA({
       event: 'call_socrates',
       action: 'Socrates LowerJaw Button Click',
@@ -302,7 +326,7 @@ export function IndependentLowerJaw({
           data-playwright-test-label='independentLowerJaw-failing-hint'
         >
           <div className='hint-header'>
-            <FontAwesomeIcon icon={faLightbulb} />
+            <OutlineLightbulb />
             <button
               className={'tooltip'}
               data-playwright-test-label='independentLowerJaw-hint-close-button'
@@ -324,7 +348,7 @@ export function IndependentLowerJaw({
       {showSocratesResults && (
         <div className='hint-container'>
           <div className='hint-header'>
-            <Stars />
+            <Socrates />
             <button
               className={'tooltip'}
               onClick={() => setShowSocratesResults(false)}
@@ -473,7 +497,14 @@ export function IndependentLowerJaw({
               className='icon-button tooltip socrates-button'
               onClick={askSocratesAttempt}
             >
-              <Stars />
+              {showSocratesDot && (
+                <span
+                  className='socrates-feature-dot'
+                  data-testid='socrates-feature-dot'
+                  aria-hidden='true'
+                />
+              )}
+              <Socrates />
               <span className='tooltiptext'>{t('buttons.ask-socrates')}</span>
             </button>
           )}

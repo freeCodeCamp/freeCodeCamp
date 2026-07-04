@@ -7507,6 +7507,18 @@
           "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
+      "review-security-and-privacy": {
+        "title": "Security and Privacy Review",
+        "intro": [
+          "Review security and privacy concepts covered in the lectures before taking the quiz."
+        ]
+      },
+      "quiz-security-and-privacy": {
+        "title": "Security and Privacy Quiz",
+        "intro": [
+          "Test your knowledge of security and privacy concepts covered in this module."
+        ]
+      },
       "lecture-introduction-to-authentication-and-authorization": {
         "title": "Introduction to Authentication and Authorization",
         "intro": [
@@ -7529,6 +7541,12 @@
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
+        ]
+      },
+      "lecture-understanding-security-and-privacy-in-web-applications": {
+        "title": "Understanding Security and Privacy in Web Applications",
+        "intro": [
+          "Learn how security and privacy work in web applications, covering HTTPS, cookies, CSP, common threats, privacy laws, and more."
         ]
       }
     }
