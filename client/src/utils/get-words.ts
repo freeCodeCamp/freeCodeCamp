@@ -16,7 +16,8 @@ declare const preval: (s: TemplateStringsArray) => Motivation;
 const words = preval`
   const config = require('../../config/env.json');
   const { clientLocale } = config;
-  const target = '../../i18n/locales/' + clientLocale + '/motivation.json';
+  const path = clientLocale === 'english' ? '../../i18n/locales/' : '../../../curriculum/i18n-curriculum/client/';
+  const target = path + clientLocale + '/motivation.json';
   const words = require(target);
   module.exports = words;
 `;

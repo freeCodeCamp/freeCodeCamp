@@ -89,6 +89,7 @@ describe('<IndependentLowerJaw />', () => {
   beforeEach(() => {
     showSocratesFlag = true;
     envMock.clientLocale = 'english';
+    localStorage.clear();
     vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
   });
 
@@ -318,6 +319,69 @@ describe('<IndependentLowerJaw />', () => {
 
     expect(
       screen.queryByTestId('socrates-donation-cta')
+    ).not.toBeInTheDocument();
+  });
+
+  const twoFailedAttemptsProps = {
+    ...baseProps,
+    hasSocratesAccess: true,
+    attempts: 2,
+    tests: [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ] as Test[],
+    completedPercent: 50,
+    completedChallengeIds: ['id-1']
+  };
+
+  it('shows the Socrates feature-discovery dot after two failed checks', () => {
+    render(<IndependentLowerJaw {...twoFailedAttemptsProps} />, createStore());
+
+    expect(screen.getByTestId('socrates-feature-dot')).toBeInTheDocument();
+  });
+
+  it('does not show the dot before two failed checks', () => {
+    render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} attempts={1} />,
+      createStore()
+    );
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('does not show the dot when the challenge is complete', () => {
+    render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} tests={passingTests} />,
+      createStore()
+    );
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('hides the dot once the Socrates button is clicked and remembers it', async () => {
+    const { unmount } = render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} />,
+      createStore()
+    );
+
+    expect(screen.getByTestId('socrates-feature-dot')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+    expect(localStorage.getItem('fcc-socrates-discovered')).toBe('true');
+
+    // The dismissal persists across remounts (e.g. other challenges).
+    unmount();
+    render(<IndependentLowerJaw {...twoFailedAttemptsProps} />, createStore());
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
     ).not.toBeInTheDocument();
   });
 
