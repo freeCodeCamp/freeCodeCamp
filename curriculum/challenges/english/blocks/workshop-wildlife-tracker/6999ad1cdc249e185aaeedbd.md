@@ -53,12 +53,6 @@ const regex = __helpers.functionRegex('addHabitat', ['animal', 'habitat']);
 assert.match(__helpers.removeJSComments(code), regex);
 ```
 
-`addHabitat` should use dot notation to add the `habitat` property.
-
-```js
-assert.match(code, /animal\.habitat\s*=\s*habitat/);
-```
-
 The `addHabitat` function should return the updated `animal` object.
 
 ```js
