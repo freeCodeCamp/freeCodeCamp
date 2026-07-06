@@ -267,6 +267,30 @@ describe('Donate', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
+      test('charge-stripe does not capture Stripe invalid request errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const InvalidRequestError = Stripe.errors
+          .StripeInvalidRequestError as unknown as new (m?: string) => Error;
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.reject(new InvalidRequestError('invalid_request'))
+        );
+        const response = await superRequest('/donate/charge-stripe', {
+          method: 'POST',
+          setCookies
+        }).send(chargeStripeReqBody);
+
+        expect(response.status).toBe(500);
+        expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       test('charge-stripe captures Stripe infra errors', async () => {
         const originalSentry = fastifyTestInstance.Sentry;
         const captureException = vi.fn();
