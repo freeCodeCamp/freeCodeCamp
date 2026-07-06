@@ -339,13 +339,12 @@ jobs:
       # and record the deploy so Sentry tracking only reflects a successful
       # deploy (builds and deploys are decoupled).
       - name: Finalize Sentry release
-        uses: getsentry/action-release@ff07929a6537bac57790c3451cf4d364aca38528 # v3.7.0
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: freecodecamp
           SENTRY_PROJECT: api-fastify
-        with:
-          release: ${{ needs.build.outputs.tagname }}
-          set_commits: skip
-          finalize: true
-          environment: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+          RELEASE: ${{ needs.build.outputs.tagname }}
+          DEPLOY_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+        run: |
+          npx --yes @sentry/cli@3.6.0 releases finalize "$RELEASE"
+          npx --yes @sentry/cli@3.6.0 releases deploys "$RELEASE" new -e "$DEPLOY_ENV"

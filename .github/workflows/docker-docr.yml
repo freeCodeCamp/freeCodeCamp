@@ -112,13 +112,10 @@ jobs:
 
       - name: Upload source maps to Sentry (unfinalized)
         if: inputs.app == 'api'
-        uses: getsentry/action-release@ff07929a6537bac57790c3451cf4d364aca38528 # v3.7.0
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: freecodecamp
           SENTRY_PROJECT: api-fastify
-        with:
-          release: ${{ env.tagname }}
-          set_commits: skip
-          finalize: false
-          sourcemaps: sentry-dist
+        run: |
+          npx --yes @sentry/cli@3.6.0 releases new "${{ env.tagname }}"
+          npx --yes @sentry/cli@3.6.0 sourcemaps upload --release "${{ env.tagname }}" sentry-dist
