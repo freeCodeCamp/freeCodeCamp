@@ -73,6 +73,7 @@ jobs:
     secrets:
       DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       DOCR_NAME: ${{ secrets.DOCR_NAME }}
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
@@ -333,7 +334,11 @@ jobs:
             sleep 3
           done
 
-      - name: Sentry release
+      # Source maps for this release were uploaded (unfinalized) during the
+      # build job. Now that the rollout is verified live, finalize the release
+      # and record the deploy so Sentry tracking only reflects a successful
+      # deploy (builds and deploys are decoupled).
+      - name: Finalize Sentry release
         uses: getsentry/action-release@ff07929a6537bac57790c3451cf4d364aca38528 # v3.7.0
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
@@ -342,4 +347,5 @@ jobs:
         with:
           release: ${{ needs.build.outputs.tagname }}
           set_commits: skip
+          finalize: true
           environment: ${{ needs.setup-jobs.outputs.tgt_env_long }}

@@ -43,6 +43,9 @@ on:
       DOCR_NAME:
         required: true
         description: 'DigitalOcean Container Registry name'
+      SENTRY_AUTH_TOKEN:
+        required: false
+        description: 'Sentry auth token for source map upload (api app only)'
     outputs:
       tagname:
         description: 'Output: The tagname for the image built'
@@ -92,3 +95,30 @@ jobs:
             registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      # Extract the compiled dist (with source maps) from the image we just
+      # pushed, so the maps match the exact artifact that ships. The release is
+      # uploaded here but left UNFINALIZED — deploy-api.yml finalizes it only
+      # after the rollout is verified live.
+      - name: Extract API dist for Sentry source maps
+        if: inputs.app == 'api'
+        run: |
+          IMAGE="registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}"
+          docker pull "$IMAGE"
+          container_id=$(docker create "$IMAGE")
+          mkdir -p sentry-dist
+          docker cp "$container_id:/home/node/fcc/api" sentry-dist/
+          docker rm "$container_id"
+
+      - name: Upload source maps to Sentry (unfinalized)
+        if: inputs.app == 'api'
+        uses: getsentry/action-release@ff07929a6537bac57790c3451cf4d364aca38528 # v3.7.0
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: freecodecamp
+          SENTRY_PROJECT: api-fastify
+        with:
+          release: ${{ env.tagname }}
+          set_commits: skip
+          finalize: false
+          sourcemaps: sentry-dist
