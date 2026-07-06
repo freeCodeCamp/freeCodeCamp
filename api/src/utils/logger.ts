@@ -87,7 +87,19 @@ export const genReqId = (req: {
   return inbound && REQUEST_ID_PATTERN.test(inbound) ? inbound : randomUUID();
 };
 
-const SENSITIVE_QUERY_PARAMS = ['token', 'email', 'code', 'key'];
+const SENSITIVE_QUERY_PARAMS = [
+  'token',
+  'email',
+  'code',
+  'key',
+  'state',
+  'id_token',
+  'access_token',
+  'refresh_token',
+  'password',
+  'secret',
+  'authorization'
+];
 
 /**
  * Build the pino options shared by all logger instances.

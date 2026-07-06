@@ -236,7 +236,7 @@ assert.ok(
 );
 export const SENTRY_TRACES_SAMPLE_RATE = _SENTRY_TRACES_SAMPLE_RATE;
 const _SENTRY_PROFILE_SESSION_SAMPLE_RATE = Number(
-  process.env.SENTRY_PROFILE_SESSION_SAMPLE_RATE ?? '1'
+  process.env.SENTRY_PROFILE_SESSION_SAMPLE_RATE ?? '0.1'
 );
 assert.ok(
   _SENTRY_PROFILE_SESSION_SAMPLE_RATE >= 0 &&
@@ -253,6 +253,14 @@ assert.ok(
   `SENTRY_LOGS_DEBUG_SAMPLE_RATE must be a number between 0 and 1. Found ${process.env.SENTRY_LOGS_DEBUG_SAMPLE_RATE}`
 );
 export const SENTRY_LOGS_DEBUG_SAMPLE_RATE = _SENTRY_LOGS_DEBUG_SAMPLE_RATE;
+const _SENTRY_LOGS_INFO_SAMPLE_RATE = Number(
+  process.env.SENTRY_LOGS_INFO_SAMPLE_RATE ?? '1.0'
+);
+assert.ok(
+  _SENTRY_LOGS_INFO_SAMPLE_RATE >= 0 && _SENTRY_LOGS_INFO_SAMPLE_RATE <= 1,
+  `SENTRY_LOGS_INFO_SAMPLE_RATE must be a number between 0 and 1. Found ${process.env.SENTRY_LOGS_INFO_SAMPLE_RATE}`
+);
+export const SENTRY_LOGS_INFO_SAMPLE_RATE = _SENTRY_LOGS_INFO_SAMPLE_RATE;
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;

@@ -7,16 +7,21 @@ import {
   SENTRY_ENVIRONMENT,
   SENTRY_SERVER_NAME,
   SENTRY_LOGS_DEBUG_SAMPLE_RATE,
+  SENTRY_LOGS_INFO_SAMPLE_RATE,
   SENTRY_PROFILE_SESSION_SAMPLE_RATE,
   SENTRY_TRACES_SAMPLE_RATE
 } from './utils/env.js';
 import {
   makeShouldSendLog,
   makeTracesSampler,
-  scrubRedundantLogAttributes
+  scrubRedundantLogAttributes,
+  scrubRequestPii
 } from './utils/sentry.js';
 
-const shouldSendLog = makeShouldSendLog(SENTRY_LOGS_DEBUG_SAMPLE_RATE);
+const shouldSendLog = makeShouldSendLog(
+  SENTRY_LOGS_DEBUG_SAMPLE_RATE,
+  SENTRY_LOGS_INFO_SAMPLE_RATE
+);
 
 const hasClientErrorStatus = (error: unknown): boolean =>
   typeof error === 'object' &&
@@ -39,10 +44,13 @@ Sentry.init({
     nodeProfilingIntegration(),
     Sentry.pinoIntegration({
       log: { levels: ['info', 'warn', 'error', 'fatal', 'debug'] }
-    })
+    }),
+    Sentry.requestDataIntegration({ include: { cookies: false } })
   ],
   beforeSend: (event, hint) =>
-    hasClientErrorStatus(hint.originalException) ? null : event,
+    hasClientErrorStatus(hint.originalException)
+      ? null
+      : scrubRequestPii(event),
   beforeSendLog: log =>
     shouldSendLog(log) ? scrubRedundantLogAttributes(log) : null
 });

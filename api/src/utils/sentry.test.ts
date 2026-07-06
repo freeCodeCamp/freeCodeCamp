@@ -1,10 +1,11 @@
-import type { Log } from '@sentry/node';
+import type { ErrorEvent, Log } from '@sentry/node';
 import { describe, expect, it, vi } from 'vitest';
 
 import {
   makeShouldSendLog,
   makeTracesSampler,
-  scrubRedundantLogAttributes
+  scrubRedundantLogAttributes,
+  scrubRequestPii
 } from './sentry.js';
 
 const makeLog = (overrides: Partial<Log> = {}): Log => ({
@@ -141,6 +142,67 @@ describe('makeShouldSendLog — debug sampling', () => {
   });
 });
 
+describe('makeShouldSendLog — info sampling', () => {
+  it('always keeps audit info logs even at a zero sample rate', () => {
+    expect(
+      makeShouldSendLog(1, 0)(makeLog({ attributes: { audit: true } }))
+    ).toBe(true);
+  });
+
+  it('always keeps audit info logs on an otherwise suppressed route', () => {
+    expect(
+      makeShouldSendLog(
+        1,
+        0
+      )(
+        makeLog({
+          attributes: { audit: true, route: '/some/route' }
+        })
+      )
+    ).toBe(true);
+  });
+
+  it('drops non-audit info logs at a zero sample rate', () => {
+    expect(
+      makeShouldSendLog(1, 0)(makeLog({ attributes: { traceId: 'abc' } }))
+    ).toBe(false);
+  });
+
+  it('keeps non-audit info logs at a sample rate of 1', () => {
+    expect(
+      makeShouldSendLog(1, 1)(makeLog({ attributes: { traceId: 'abc' } }))
+    ).toBe(true);
+  });
+
+  it('keeps info whose trace is sampled regardless of the info rate', () => {
+    expect(
+      makeShouldSendLog(
+        1,
+        0
+      )(makeLog({ attributes: { traceId: 'abc', traceSampled: true } }))
+    ).toBe(true);
+  });
+
+  it('samples non-audit info deterministically by traceId', () => {
+    const log = makeLog({ attributes: { traceId: 'deadbeef' } });
+    const first = makeShouldSendLog(1, 0.5)(log);
+    const second = makeShouldSendLog(1, 0.5)(log);
+    expect(first).toBe(second);
+  });
+
+  it('never touches warn/error/fatal regardless of the info rate', () => {
+    for (const level of ['warn', 'error', 'fatal'] as const) {
+      expect(makeShouldSendLog(1, 0)(makeLog({ level }))).toBe(true);
+    }
+  });
+
+  it('defaults to a sample rate of 1 when none is given', () => {
+    expect(
+      makeShouldSendLog(1)(makeLog({ attributes: { traceId: 'abc' } }))
+    ).toBe(true);
+  });
+});
+
 describe('scrubRedundantLogAttributes', () => {
   it('drops pino bindings duplicated by Sentry-native fields', () => {
     const result = scrubRedundantLogAttributes(
@@ -223,6 +285,85 @@ describe('scrubRedundantLogAttributes', () => {
       email: 'a@b.com',
       ip: '1.2.3.4',
       country: 'US'
+    });
+  });
+
+  it('redacts secret-token-shaped substrings found inside a string value', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({
+        attributes: { note: 'leaked key sk_live_ABC123 in the log' }
+      })
+    );
+
+    expect(result.attributes?.note).toBe('leaked key [REDACTED] in the log');
+  });
+
+  it('does not redact an email value as a secret-token substring', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({ attributes: { note: 'contact a@b.com for help' } })
+    );
+
+    expect(result.attributes?.note).toBe('contact a@b.com for help');
+  });
+});
+
+describe('scrubRequestPii', () => {
+  const eventWithRequest = (request: ErrorEvent['request']): ErrorEvent => ({
+    type: undefined,
+    request
+  });
+
+  it('is a no-op when the event has no request', () => {
+    const event = eventWithRequest(undefined);
+    expect(scrubRequestPii(event)).toEqual(event);
+  });
+
+  it('strips the query string entirely and the query portion of the url', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({
+        url: 'https://api.freecodecamp.org/donate?code=abc123',
+        query_string: 'code=abc123'
+      })
+    );
+
+    expect(result.request?.query_string).toBeUndefined();
+    expect(result.request?.url).toBe('https://api.freecodecamp.org/donate');
+  });
+
+  it('redacts PII- and secret-shaped keys from the request body', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({
+        data: {
+          paymentMethodId: 'pm_12345',
+          email: 'a@b.com',
+          name: 'Camper Bot',
+          code: 'oauth-code',
+          state: 'oauth-state',
+          amount: 500
+        }
+      })
+    );
+
+    expect(result.request?.data).toEqual({
+      paymentMethodId: '[REDACTED]',
+      email: '[REDACTED]',
+      name: '[REDACTED]',
+      code: '[REDACTED]',
+      state: '[REDACTED]',
+      amount: 500
+    });
+  });
+
+  it('redacts sensitive request headers', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({
+        headers: { authorization: 'Bearer sk_live_LEAK', 'user-agent': 'x' }
+      })
+    );
+
+    expect(result.request?.headers).toEqual({
+      authorization: '[REDACTED]',
+      'user-agent': 'x'
     });
   });
 });

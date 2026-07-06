@@ -257,6 +257,26 @@ describe('getLoggerOptions', () => {
     expect(parsed.req.query.page).toBe('1');
   });
 
+  it('redacts oauth state and id_token query parameters', () => {
+    const output = captureLog(logger =>
+      logger.info(
+        {
+          req: fakeRequest({
+            query: { state: 'csrf-state', id_token: 'jwt-secret', page: '1' }
+          })
+        },
+        'incoming request'
+      )
+    );
+
+    const parsed = JSON.parse(output) as {
+      req: { query: { state: string; id_token: string; page: string } };
+    };
+    expect(parsed.req.query.state).toBe('[REDACTED]');
+    expect(parsed.req.query.id_token).toBe('[REDACTED]');
+    expect(parsed.req.query.page).toBe('1');
+  });
+
   it('exposes a mixin that is safe to call without an active Sentry span', () => {
     const { mixin } = getLoggerOptions('info');
     expect(mixin).toBeTypeOf('function');

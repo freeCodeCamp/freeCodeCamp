@@ -1,4 +1,4 @@
-import type { Log } from '@sentry/node';
+import type { ErrorEvent, Log, RequestEventData } from '@sentry/node';
 
 const DROPPED_LOG_MESSAGES = new Set([
   'incoming request',
@@ -26,6 +26,8 @@ const traceIdOf = (log: Log): string | undefined =>
 const traceIsSampled = (log: Log): boolean =>
   log.attributes?.traceSampled === true;
 
+const isAuditLog = (log: Log): boolean => log.attributes?.audit === true;
+
 const hashUnit = (value: string): number => {
   let hash = 2166136261;
   for (let i = 0; i < value.length; i++) {
@@ -44,24 +46,35 @@ const shouldSendDebug = (log: Log, debugRate: number): boolean => {
   return roll < debugRate;
 };
 
+const shouldSendInfo = (log: Log, infoRate: number): boolean => {
+  if (traceIsSampled(log)) return true;
+  const traceId = traceIdOf(log);
+  const roll = traceId !== undefined ? hashUnit(traceId) : Math.random();
+  return roll < infoRate;
+};
+
 /**
  * Build the beforeSendLog filter. Warn, error and fatal always pass. Info
- * passes unless it is on a hot or health route. Debug is trace-aware: it is
- * kept in full for a sampled trace, otherwise sampled deterministically by
- * trace id at the given debug rate.
+ * passes unless it is on a hot or health route, and is otherwise sampled at
+ * the given info rate — unless it carries `audit: true`, which always
+ * passes. Debug is trace-aware: it is kept in full for a sampled trace,
+ * otherwise sampled deterministically by trace id at the given debug rate.
  *
  * @param debugRate The sample rate for debug logs not on a sampled trace.
+ * @param infoRate The sample rate for non-audit info logs not on a sampled
+ * trace. Defaults to 1 (send all), matching the pre-sampling behavior.
  * @returns A predicate deciding whether a log is forwarded to Sentry.
  */
 export const makeShouldSendLog =
-  (debugRate: number) =>
+  (debugRate: number, infoRate = 1) =>
   (log: Log): boolean => {
     if (DROPPED_LOG_MESSAGES.has(log.message)) return false;
     if (log.level === 'debug') return shouldSendDebug(log, debugRate);
     if (log.level !== 'info') return true;
     const route = routeOf(log);
     if (route !== undefined && DROPPED_LOG_ROUTES.has(route)) return false;
-    return true;
+    if (isAuditLog(log)) return true;
+    return shouldSendInfo(log, infoRate);
   };
 
 const REDUNDANT_LOG_ATTRIBUTES = ['msg', 'pino.logger.level'] as const;
@@ -69,18 +82,32 @@ const REDUNDANT_LOG_ATTRIBUTES = ['msg', 'pino.logger.level'] as const;
 const SECRET_KEY_PATTERN =
   /(client_?secret|secret|passwd|password|authorization|cookie|api[-_]?key|access[-_]?token|refresh[-_]?token|card[-_]?number|\bcvc\b|\bcvv\b|\btoken\b)/i;
 
-const scrubSecretsDeep = (value: unknown, depth = 0): unknown => {
-  if (depth > 6 || value === null || typeof value !== 'object') return value;
+const ISSUE_REQUEST_KEY_PATTERN =
+  /(client_?secret|secret|passwd|password|authorization|cookie|api[-_]?key|access[-_]?token|refresh[-_]?token|card[-_]?number|\bcvc\b|\bcvv\b|\btoken\b|email|name|payment_?method_?id|\bcode\b|\bstate\b)/i;
+
+const VALUE_SECRET_PATTERN =
+  /\bsk_(?:live|test)_[A-Za-z0-9]+\b|\bghp_[A-Za-z0-9]+\b|\bgithub_pat_[A-Za-z0-9_]+\b|\bxox[baprs]-[A-Za-z0-9-]+\b|Bearer [A-Za-z0-9._-]{20,}/g;
+
+const redactSecretSubstrings = (value: string): string =>
+  value.replace(VALUE_SECRET_PATTERN, '[REDACTED]');
+
+const redactDeep = (value: unknown, keyPattern: RegExp, depth = 0): unknown => {
+  if (depth > 6 || value === null) return value;
+  if (typeof value === 'string') return redactSecretSubstrings(value);
+  if (typeof value !== 'object') return value;
   if (Array.isArray(value))
-    return value.map(entry => scrubSecretsDeep(entry, depth + 1));
+    return value.map(entry => redactDeep(entry, keyPattern, depth + 1));
   const out: Record<string, unknown> = {};
   for (const [key, entry] of Object.entries(value as Record<string, unknown>)) {
-    out[key] = SECRET_KEY_PATTERN.test(key)
+    out[key] = keyPattern.test(key)
       ? '[REDACTED]'
-      : scrubSecretsDeep(entry, depth + 1);
+      : redactDeep(entry, keyPattern, depth + 1);
   }
   return out;
 };
+
+const scrubSecretsDeep = (value: unknown, depth = 0): unknown =>
+  redactDeep(value, SECRET_KEY_PATTERN, depth);
 
 /**
  * Remove pino bindings that Sentry already records as native log fields, then
@@ -96,6 +123,38 @@ export const scrubRedundantLogAttributes = (log: Log): Log => {
   }
   log.attributes = scrubSecretsDeep(log.attributes) as typeof log.attributes;
   return log;
+};
+
+const stripQueryFromUrl = (url: string): string => url.split('?', 1)[0] ?? url;
+
+const redactHeaders = (
+  headers: Record<string, string>
+): Record<string, string> => {
+  const out: Record<string, string> = {};
+  for (const [key, value] of Object.entries(headers)) {
+    out[key] = ISSUE_REQUEST_KEY_PATTERN.test(key) ? '[REDACTED]' : value;
+  }
+  return out;
+};
+
+// eslint-disable-next-line jsdoc/require-jsdoc
+export const scrubRequestPii = (event: ErrorEvent): ErrorEvent => {
+  const { request } = event;
+  if (request == null) return event;
+
+  const scrubbed: RequestEventData = { ...request };
+  delete scrubbed.query_string;
+  if (scrubbed.url !== undefined) {
+    scrubbed.url = stripQueryFromUrl(scrubbed.url);
+  }
+  if (scrubbed.data !== undefined) {
+    scrubbed.data = redactDeep(scrubbed.data, ISSUE_REQUEST_KEY_PATTERN);
+  }
+  if (scrubbed.headers !== undefined) {
+    scrubbed.headers = redactHeaders(scrubbed.headers);
+  }
+
+  return { ...event, request: scrubbed };
 };
 
 /**
