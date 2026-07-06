@@ -226,6 +226,34 @@ describe('auth0 plugin', () => {
       expect(captureException).not.toHaveBeenCalled();
     });
 
+    test('should capture Auth0 errors with reason invalid_request', async () => {
+      vi.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 400 Bad Request');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'invalid_request'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: invalid_request'
+      );
+
+      expect(res.statusCode).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
+    });
+
     test('should capture unexpected Auth0 errors', async () => {
       vi.spyOn(fastify.log, 'error');
       const auth0Error = Error('Response Error: 500 Internal Server Error');

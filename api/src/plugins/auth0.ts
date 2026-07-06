@@ -144,11 +144,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           req.log.warn(error, 'Auth failed: invalid state');
         } else if (Value.Check(Auth0ErrorSchema, error)) {
           const errorType = error.data.payload.error;
-          const expectedErrorTypes = [
-            'invalid_grant',
-            'invalid_request',
-            'access_denied'
-          ];
+          const expectedErrorTypes = ['invalid_grant', 'access_denied'];
           if (!expectedErrorTypes.includes(errorType)) {
             fastify.Sentry?.captureException(error);
           }
