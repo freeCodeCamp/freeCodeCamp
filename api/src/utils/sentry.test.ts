@@ -176,6 +176,21 @@ describe('makeShouldSendLog — info sampling', () => {
     ).toBe(true);
   });
 
+  it('keeps audit logs regardless of level, including debug on a suppressed route', () => {
+    expect(
+      makeShouldSendLog(
+        0,
+        0
+      )(
+        makeLog({
+          level: 'debug',
+          message: 'audit',
+          attributes: { audit: true, route: '/user/session-user' }
+        })
+      )
+    ).toBe(true);
+  });
+
   it('drops non-audit info logs at a zero sample rate', () => {
     expect(
       makeShouldSendLog(1, 0)(makeLog({ attributes: { traceId: 'abc' } }))
@@ -350,6 +365,16 @@ describe('scrubRequestPii', () => {
 
     expect(result.request?.query_string).toBeUndefined();
     expect(result.request?.url).toBe('https://api.freecodecamp.org/donate');
+  });
+
+  it('redacts an email embedded in the url path', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({ url: 'https://api.freecodecamp.org/u/foo@bar.com' })
+    );
+
+    expect(result.request?.url).toBe(
+      'https://api.freecodecamp.org/u/[REDACTED]'
+    );
   });
 
   it('redacts PII- and secret-shaped keys from the request body', () => {

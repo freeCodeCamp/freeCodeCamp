@@ -69,9 +69,9 @@ export const makeShouldSendLog =
   (debugRate: number, infoRate = 1) =>
   (log: Log): boolean => {
     if (DROPPED_LOG_MESSAGES.has(log.message)) return false;
+    if (isAuditLog(log)) return true;
     if (log.level === 'debug') return shouldSendDebug(log, debugRate);
     if (log.level !== 'info') return true;
-    if (isAuditLog(log)) return true;
     const route = routeOf(log);
     if (route !== undefined && DROPPED_LOG_ROUTES.has(route)) return false;
     return shouldSendInfo(log, infoRate);
@@ -190,13 +190,13 @@ export const scrubRequestPii = (event: ErrorEvent): ErrorEvent => {
     const scrubbed: RequestEventData = { ...request };
     delete scrubbed.query_string;
     delete scrubbed.cookies;
-    if (scrubbed.url !== undefined) {
-      scrubbed.url = stripQueryFromUrl(scrubbed.url);
+    if (scrubbed.url != null) {
+      scrubbed.url = redactIssueSubstrings(stripQueryFromUrl(scrubbed.url));
     }
-    if (scrubbed.data !== undefined) {
+    if (scrubbed.data != null) {
       scrubbed.data = scrubIssueBody(scrubbed.data);
     }
-    if (scrubbed.headers !== undefined) {
+    if (scrubbed.headers != null) {
       scrubbed.headers = redactHeaders(scrubbed.headers);
     }
     out.request = scrubbed;
