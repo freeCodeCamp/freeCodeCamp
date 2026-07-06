@@ -382,7 +382,14 @@ ${isLinkSentWithinLimitTTL}`
       ).every(key => validateSocialUrl(socials[key], key));
 
       if (!valid) {
-        req.log.warn({ socials }, 'Invalid social URL');
+        req.log.warn(
+          {
+            invalidSocials: (
+              ['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const
+            ).filter(key => !validateSocialUrl(socials[key], key))
+          },
+          'Invalid social URL'
+        );
         void reply.code(400);
         return reply.send({
           message: 'flash.wrong-updating',
@@ -522,7 +529,13 @@ ${isLinkSentWithinLimitTTL}`
       if (req.body.picture) {
         if (req.body.picture !== req.user!.picture) {
           if (!isValidPictureUrl(req.body.picture)) {
-            req.log.warn({ picture: req.body.picture }, 'Invalid picture URL');
+            req.log.warn(
+              {
+                hasPicture: !!req.body.picture,
+                pictureLength: req.body.picture?.length
+              },
+              'Invalid picture URL'
+            );
             void reply.code(400);
             return { message: 'flash.wrong-updating', type: 'danger' } as const;
           }
