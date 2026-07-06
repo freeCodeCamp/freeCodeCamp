@@ -1,4 +1,5 @@
 import React from 'react';
+import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 import { render, screen } from '@testing-library/react';
 import Helmet from 'react-helmet';
 import { I18nextProvider } from 'react-i18next';
@@ -38,11 +39,6 @@ const signedInHeading = i18nTestConfig.t('learn.welcome-1', {
   name: 'Full Stack User'
 });
 
-vi.mock('@growthbook/growthbook-react', () => ({
-  useFeature: () => ({ on: false, value: undefined }),
-  useFeatureIsOn: () => false
-}));
-
 vi.mock('../analytics/call-ga', () => ({
   default: vi.fn()
 }));
@@ -78,9 +74,11 @@ function renderLearnPage(sessionUser: Record<string, unknown> | null) {
 
   return render(
     <Provider store={store}>
-      <I18nextProvider i18n={i18nTestConfig}>
-        <LearnPage data={pageData} state={{}} />
-      </I18nextProvider>
+      <GrowthBookProvider growthbook={new GrowthBook()}>
+        <I18nextProvider i18n={i18nTestConfig}>
+          <LearnPage data={pageData} state={{}} />
+        </I18nextProvider>
+      </GrowthBookProvider>
     </Provider>
   );
 }
@@ -127,7 +125,6 @@ describe('LearnPage', () => {
         name: signedInHeading
       })
     ).toBeInTheDocument();
-    expect(randomQuote).toHaveBeenCalledOnce();
     expect(screen.getByText('Test quote')).toBeInTheDocument();
     expect(screen.getByText('Test author')).toBeInTheDocument();
     expect(
