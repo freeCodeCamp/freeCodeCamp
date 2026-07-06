@@ -21,6 +21,18 @@ vi.mock('../helpers/challenge-helpers', async () => {
   };
 });
 
+vi.mock('../../utils/exam.js', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('../../utils/exam.js')
+  >('../../utils/exam.js');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    generateRandomExam: vi.fn(originalModule.generateRandomExam)
+  };
+});
+
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash-es';
@@ -58,8 +70,10 @@ import { Answer } from '../../utils/exam-types.js';
 import type { getSessionUser } from '../../schemas/user/get-session-user.js';
 import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
 import { encodeUserToken } from '../../utils/tokens.js';
+import { generateRandomExam } from '../../utils/exam.js';
 
 const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
+const mockGenerateRandomExam = vi.mocked(generateRandomExam);
 
 const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
 const DATE_NOW = Date.now();
@@ -1779,6 +1793,33 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.statusCode).toBe(200);
+        });
+
+        test('GET captures unexpected errors when the generated exam fails validation', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          mockGenerateRandomExam.mockReturnValueOnce(
+            Array.from({ length: 3 }, (_, i) => ({
+              id: 'abcdefghij',
+              question: `Malformed question ${i}`,
+              answers: [{ id: 'abcdefghij', answer: 'Only one answer' }]
+            }))
+          );
+
+          const response = await superGet('/exam/647e22d18acb466c97ccbef8');
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to randomize the exam.'
+          });
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
       });
       describe('/ms-trophy-challenge-completed', () => {
