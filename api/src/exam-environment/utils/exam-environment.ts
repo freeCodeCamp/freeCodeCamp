@@ -446,6 +446,7 @@ export async function constructEnvExamAttempt(
   );
 
   if (maybeExam.hasError) {
+    fastify.Sentry?.captureException(maybeExam.error);
     logger.error(
       { err: maybeExam.error, attemptId: attempt.id, examId: attempt.examId },
       'Unable to query exam.'
@@ -461,6 +462,10 @@ export async function constructEnvExamAttempt(
   const exam = maybeExam.data;
 
   if (exam === null) {
+    fastify.Sentry?.captureException({
+      data: { examId: attempt.examId, attemptId: attempt.id },
+      message: 'Unreachable. Invalid exam id in attempt.'
+    });
     logger.error(
       { examId: attempt.examId, attemptId: attempt.id },
       'Unreachable. Invalid exam id in attempt.'
@@ -501,6 +506,7 @@ export async function constructEnvExamAttempt(
   );
 
   if (maybeMod.hasError) {
+    fastify.Sentry?.captureException(maybeMod.error);
     logger.error(
       { err: maybeMod.error, attemptId: attempt.id },
       'Unable to query exam moderation.'
@@ -561,6 +567,7 @@ export async function constructEnvExamAttempt(
   );
 
   if (maybeGeneratedExam.hasError) {
+    fastify.Sentry?.captureException(maybeGeneratedExam.error);
     logger.error(
       { err: maybeGeneratedExam.error, attemptId: attempt.id },
       'Unable to query generated exam.'
@@ -578,6 +585,14 @@ export async function constructEnvExamAttempt(
   const generatedExam = maybeGeneratedExam.data;
 
   if (!generatedExam) {
+    fastify.Sentry?.captureException({
+      data: {
+        attemptId: attempt.id,
+        generatedExamId: attempt.generatedExamId
+      },
+      message:
+        'Unreachable. Unable to find generated exam associated with exam attempt'
+    });
     logger.error(
       { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
       'Unreachable. Unable to find generated exam associated with exam attempt.'
