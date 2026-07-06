@@ -289,6 +289,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           { err: maybeReportedUsers.error, username },
           'Error finding reported user.'
         );
+        fastify.Sentry?.captureException(maybeReportedUsers.error);
         void reply.code(500);
         return {
           type: 'danger',

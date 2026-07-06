@@ -1466,6 +1466,29 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(400);
       });
 
+      test('POST captures unexpected errors when looking up the reported user', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.user, 'findMany')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superPost('/user/report-user').send({
+          username: testUserData.username,
+          reportDescription: 'Test Report'
+        });
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        spy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       test('POST returns 403 for users with no email', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
