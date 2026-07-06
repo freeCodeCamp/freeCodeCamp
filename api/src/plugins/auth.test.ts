@@ -410,6 +410,52 @@ describe('auth', () => {
     });
   });
 
+  describe('authorizeExamEnvironmentToken', () => {
+    beforeEach(() => {
+      fastify.get('/test', (_req, reply) => {
+        void reply.send({ ok: true });
+      });
+      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+    });
+
+    test('captures an Error if the decoded payload is not an object', async () => {
+      const captureException = vi.fn();
+      // @ts-expect-error Sentry isn't decorated in this minimal test app.
+      fastify.Sentry = { captureException };
+
+      const token = jwt.sign('just-a-string-payload', JWT_SECRET);
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        headers: { 'exam-environment-authorization-token': token }
+      });
+
+      expect(res.statusCode).toBe(500);
+      expect(captureException).toHaveBeenCalledExactlyOnceWith(
+        expect.objectContaining({
+          message:
+            'Unreachable: exam-environment token decoded payload is not an object'
+        })
+      );
+    });
+
+    test('does not capture an exception for expected token verification failures', async () => {
+      const captureException = vi.fn();
+      // @ts-expect-error Sentry isn't decorated in this minimal test app.
+      fastify.Sentry = { captureException };
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/test',
+        headers: { 'exam-environment-authorization-token': 'invalid-token' }
+      });
+
+      expect(res.statusCode).toBe(403);
+      expect(captureException).not.toHaveBeenCalled();
+    });
+  });
+
   describe('onRequest Hook', () => {
     test('should update the jwt_access_token to httpOnly and secure', async () => {
       const rawValue = 'should-not-change';

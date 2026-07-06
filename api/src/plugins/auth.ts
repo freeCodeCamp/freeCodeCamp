@@ -69,7 +69,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
   const TOKEN_EXPIRED = 'Access token is no longer valid';
 
   const setAccessDenied = (req: FastifyRequest, content: string) => {
-    fastify.Sentry?.metrics.count('auth.access_denied', 1, {
+    fastify.Sentry?.metrics?.count('auth.access_denied', 1, {
       attributes: { reason: content }
     });
     req.accessDeniedMessage = { type: 'info', content };
@@ -161,6 +161,11 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     if (typeof payload !== 'object' || payload === null) {
       req.log.error(
         'Unreachable: exam-environment token verified but decoded payload is not an object'
+      );
+      fastify.Sentry?.captureException(
+        new Error(
+          'Unreachable: exam-environment token decoded payload is not an object'
+        )
       );
       void reply.code(500);
       return reply.send(
