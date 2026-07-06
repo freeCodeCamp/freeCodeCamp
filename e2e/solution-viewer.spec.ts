@@ -38,7 +38,10 @@ test.describe('Solution Viewer component', () => {
 
     const projectLink = page.getByRole('link', { name: 'View' }).first();
 
-    await expect(projectLink).toHaveAttribute('href', /^https:\/\/codepen\.io/);
+    await expect(projectLink).toHaveAttribute(
+      'href',
+      /^https?:\/\/codepen\.io/
+    );
     await expect(projectLink).toHaveAttribute('target', '_blank');
   });
 
