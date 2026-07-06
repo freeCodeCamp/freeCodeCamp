@@ -8528,7 +8528,7 @@
         "title": "CSS Colors Review",
         "intro": [
           "Before you're quizzed on CSS colors, you should review what you've learned about them.",
-          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, hex codes, and more."
         ]
       },
       "quiz-css-colors": {
@@ -9836,7 +9836,7 @@
         "title": "CSS Colors Review",
         "intro": [
           "Before you're quizzed on CSS colors, you should review what you've learned about them.",
-          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, hex codes, and more."
         ]
       },
       "quiz-css-colors": {
