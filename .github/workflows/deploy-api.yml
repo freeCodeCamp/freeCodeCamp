@@ -190,7 +190,6 @@ jobs:
           # SOCRATES_API_KEY
           # SOCRATES_ENDPOINT
           # STRIPE_SECRET_KEY
-          # LOKI_URL
           # Variables set from SetupJob
           DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
@@ -261,7 +260,6 @@ jobs:
               \"SOCRATES_API_KEY\"
               \"SOCRATES_ENDPOINT\"
               \"STRIPE_SECRET_KEY\"
-              \"LOKI_URL\"
               \"DEPLOYMENT_VERSION\"
               \"DEPLOYMENT_TLD\"
               \"DEPLOYMENT_ENV\"
