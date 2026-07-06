@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "review-websockets",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6a21824eb1478204624f043f",
+      "title": "WebSockets Review"
+    }
+  ],
+  "blockLabel": "review"
+}

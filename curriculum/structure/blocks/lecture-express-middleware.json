@@ -1,0 +1,29 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-express-middleware",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "69f42cd936da600a74a84926",
+      "title": "What is Middleware and How Does it Work?"
+    },
+    {
+      "id": "69f42d414b7626e21a922792",
+      "title": "What is Application-level Middleware?"
+    },
+    {
+      "id": "69f42d414b7626e21a922793",
+      "title": "What is Router-level Middleware?"
+    },
+    {
+      "id": "69f42d414b7626e21a922794",
+      "title": "What is Error-handling Middleware?"
+    },
+    {
+      "id": "69f42d414b7626e21a922795",
+      "title": "What are Examples of Built-in and 3rd Party Middleware?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

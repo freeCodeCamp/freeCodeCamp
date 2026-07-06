@@ -25,10 +25,17 @@
     "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
-    "HTML-CSS": "German/HTML-CSS",
-    "JavaScript": "German/JavaScript",
-    "Python": "German/Python",
-    "Backend Development": "German/programming-help",
-    "English": "English"
+    "HTML-CSS": "world-languages/german",
+    "JavaScript": "world-languages/german",
+    "Python": "world-languages/german",
+    "Backend Development": "world-languages/german",
+    "C-Sharp": "world-languages/german",
+    "English": "world-languages/german",
+    "Spanish Curriculum": "world-languages/german",
+    "Chinese Curriculum": "world-languages/german",
+    "Odin": "world-languages/german",
+    "Euler": "world-languages/german",
+    "Rosetta": "world-languages/german",
+    "General": "world-languages/german"
   }
 }

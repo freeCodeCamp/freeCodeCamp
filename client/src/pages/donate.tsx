@@ -14,7 +14,8 @@ import {
   SupportBenefitsText,
   CurrentInitiativesText,
   CommunityAchievementsText,
-  GetSupporterBenefitsText
+  GetSupporterBenefitsText,
+  DonationPolicyDisclaimer
 } from '../components/Donation/donation-text-components';
 import { Loader } from '../components/helpers';
 import {
@@ -81,9 +82,12 @@ function DonatePage({
               </Col>
               <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
                 {!isDonating || donationFormState.success ? (
-                  <MultiTierDonationForm
-                    paymentContext={PaymentContext.DonatePage}
-                  />
+                  <>
+                    <MultiTierDonationForm
+                      paymentContext={PaymentContext.DonatePage}
+                    />
+                    <DonationPolicyDisclaimer />
+                  </>
                 ) : null}
               </Col>
             </Row>
