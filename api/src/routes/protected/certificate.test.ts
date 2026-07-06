@@ -239,6 +239,41 @@ describe('certificate routes', () => {
         expect(response.status).toBe(200);
       });
 
+      test('should capture an exception if the congratulations email fails to send', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ],
+            isFullStackDeveloperCertV9: true
+          }
+        });
+
+        vi.spyOn(fastifyTestInstance, 'sendEmail').mockRejectedValueOnce(
+          new Error('send failed')
+        );
+        const captureException = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
+
+        expect(captureException).toHaveBeenCalledOnce();
+        expect(response.status).toBe(200);
+      });
+
       test('should return 200 if all went well', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },

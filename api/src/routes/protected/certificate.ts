@@ -396,6 +396,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           await fastify.sendEmail(notifyUser);
         } catch (e) {
           req.log.error(e, 'Failed to send congratulations email');
+          fastify.Sentry?.captureException(e);
         }
       }
 
