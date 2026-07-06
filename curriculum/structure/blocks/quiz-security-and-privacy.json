@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "quiz-security-and-privacy",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "6a3cf203fc07d57eea6b51a0", "title": "Security and Privacy Quiz" }
+  ],
+  "blockLabel": "quiz"
+}
