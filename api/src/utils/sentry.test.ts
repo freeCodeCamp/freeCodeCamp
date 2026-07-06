@@ -162,6 +162,20 @@ describe('makeShouldSendLog — info sampling', () => {
     ).toBe(true);
   });
 
+  it('keeps audit info logs on a real suppressed route even at zero sample rates', () => {
+    expect(
+      makeShouldSendLog(
+        0,
+        0
+      )(
+        makeLog({
+          message: 'audit',
+          attributes: { audit: true, route: '/user/session-user' }
+        })
+      )
+    ).toBe(true);
+  });
+
   it('drops non-audit info logs at a zero sample rate', () => {
     expect(
       makeShouldSendLog(1, 0)(makeLog({ attributes: { traceId: 'abc' } }))
@@ -305,6 +319,14 @@ describe('scrubRedundantLogAttributes', () => {
 
     expect(result.attributes?.note).toBe('contact a@b.com for help');
   });
+
+  it('keeps email values unredacted on the Logs channel, unlike Issues', () => {
+    const result = scrubRedundantLogAttributes(
+      makeLog({ attributes: { email: 'keep@me.com' } })
+    );
+
+    expect(result.attributes?.email).toBe('keep@me.com');
+  });
 });
 
 describe('scrubRequestPii', () => {
@@ -365,6 +387,83 @@ describe('scrubRequestPii', () => {
       authorization: '[REDACTED]',
       'user-agent': 'x'
     });
+  });
+
+  it('redacts email and paymentMethodId when request data is a raw JSON string', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({
+        data: JSON.stringify({
+          email: 'a@b.com',
+          paymentMethodId: 'pm_123',
+          amount: 5
+        })
+      })
+    );
+
+    const data = result.request?.data;
+    const parsed = typeof data === 'string' ? JSON.parse(data) : data;
+
+    expect(parsed).toEqual({
+      email: '[REDACTED]',
+      paymentMethodId: '[REDACTED]',
+      amount: 5
+    });
+  });
+
+  it('always strips cookies regardless of their content', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({ cookies: { jwt_access_token: 'secret' } })
+    );
+
+    expect(result.request?.cookies).toBeUndefined();
+  });
+
+  it('redacts an email found inside a free-text data value', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({ data: { about: 'reach me at me@example.com' } })
+    );
+
+    expect(result.request?.data).toEqual({
+      about: 'reach me at [REDACTED]'
+    });
+  });
+
+  it('redacts a secret-shaped value in a header whose key is not sensitive', () => {
+    const result = scrubRequestPii(
+      eventWithRequest({
+        headers: { 'x-custom': 'Bearer abcdefghijklmnopqrstuvwxyz012345' }
+      })
+    );
+
+    expect(result.request?.headers).toEqual({ 'x-custom': '[REDACTED]' });
+  });
+
+  it('fail-safe redacts a value nested past the depth cap', () => {
+    const buildNested = (depth: number, leaf: unknown): unknown =>
+      depth <= 0 ? leaf : { nested: buildNested(depth - 1, leaf) };
+
+    const result = scrubRequestPii(
+      eventWithRequest({ data: buildNested(9, 'just-a-plain-value') })
+    );
+
+    const serialized = JSON.stringify(result.request?.data);
+    expect(serialized).toContain('[REDACTED]');
+    expect(serialized).not.toContain('just-a-plain-value');
+  });
+
+  it('redacts an email in the exception message and in extra', () => {
+    const event: ErrorEvent = {
+      type: undefined,
+      exception: { values: [{ value: 'failed for user x@y.com' }] },
+      extra: { email: 'z@z.com' }
+    };
+
+    const result = scrubRequestPii(event);
+
+    expect(result.exception?.values?.[0]?.value).toBe(
+      'failed for user [REDACTED]'
+    );
+    expect(result.extra?.email).toBe('[REDACTED]');
   });
 });
 
