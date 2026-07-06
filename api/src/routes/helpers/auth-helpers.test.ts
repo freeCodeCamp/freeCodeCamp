@@ -49,7 +49,7 @@ describe('findOrCreateUser', () => {
     vi.restoreAllMocks();
   });
 
-  test('should log an error if there are multiple users with the same email', async () => {
+  test('should log an error and capture an exception if there are multiple users with the same email', async () => {
     const user1 = await fastify.prisma.user.create({
       data: createUserInput(email)
     });
@@ -60,6 +60,9 @@ describe('findOrCreateUser', () => {
     const userIds = [user1.id, user2.id];
 
     const logError = vi.spyOn(fastify.log, 'error');
+    const captureException = vi.fn();
+    // @ts-expect-error - Only mocks part of the Sentry object.
+    fastify.Sentry = { captureException };
 
     await findOrCreateUser(fastify, email);
 
@@ -67,24 +70,35 @@ describe('findOrCreateUser', () => {
       { userIds, email },
       'Multiple user records found'
     );
+    expect(captureException).toHaveBeenCalledWith(
+      new Error('Multiple user records found for: ' + userIds.join(', '))
+    );
   });
 
-  test('should NOT log an error if there is only one user with the email', async () => {
+  test('should NOT log an error or capture an exception if there is only one user with the email', async () => {
     await fastify.prisma.user.create({ data: createUserInput(email) });
 
     const logError = vi.spyOn(fastify.log, 'error');
+    const captureException = vi.fn();
+    // @ts-expect-error - Only mocks part of the Sentry object.
+    fastify.Sentry = { captureException };
 
     await findOrCreateUser(fastify, email);
 
     expect(logError).not.toHaveBeenCalled();
+    expect(captureException).not.toHaveBeenCalled();
   });
 
-  test('should NOT log an error if there are no users with the email', async () => {
+  test('should NOT log an error or capture an exception if there are no users with the email', async () => {
     const logError = vi.spyOn(fastify.log, 'error');
+    const captureException = vi.fn();
+    // @ts-expect-error - Only mocks part of the Sentry object.
+    fastify.Sentry = { captureException };
 
     await findOrCreateUser(fastify, email);
 
     expect(logError).not.toHaveBeenCalled();
+    expect(captureException).not.toHaveBeenCalled();
   });
 
   describe('drip campaign logic', () => {

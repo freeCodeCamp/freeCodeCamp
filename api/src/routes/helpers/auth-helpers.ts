@@ -21,6 +21,9 @@ export const findOrCreateUser = async (
   if (existingUser.length > 1) {
     const userIds = existingUser.map(user => user.id);
     fastify.log.error({ userIds, email }, 'Multiple user records found');
+    fastify.Sentry?.captureException(
+      new Error('Multiple user records found for: ' + userIds.join(', '))
+    );
   }
 
   if (existingUser[0]) {
