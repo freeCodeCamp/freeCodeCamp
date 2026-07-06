@@ -250,7 +250,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           },
           'User has successfully donated'
         );
-        fastify.Sentry?.metrics.count('donation.created', 1, {
+        fastify.Sentry?.metrics?.count('donation.created', 1, {
           attributes: { flow: 'charge-stripe-card' }
         });
 
@@ -264,7 +264,10 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           userId: req.user?.id,
           ...clientNetInfo(req)
         };
-        if (error instanceof Stripe.errors.StripeError) {
+        if (
+          error instanceof Stripe.errors.StripeCardError ||
+          error instanceof Stripe.errors.StripeInvalidRequestError
+        ) {
           req.log.warn(ctx, 'Stripe upstream error charging card');
         } else {
           fastify.Sentry?.captureException(error);

@@ -91,7 +91,10 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           duration,
           ...clientNetInfo(req)
         };
-        if (err instanceof Stripe.errors.StripeError) {
+        if (
+          err instanceof Stripe.errors.StripeCardError ||
+          err instanceof Stripe.errors.StripeInvalidRequestError
+        ) {
           req.log.warn(ctx, 'Stripe upstream error creating payment intent');
         } else {
           fastify.Sentry?.captureException(err);
@@ -209,7 +212,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           },
           'Successfully processed donation'
         );
-        fastify.Sentry?.metrics.count('donation.created', 1, {
+        fastify.Sentry?.metrics?.count('donation.created', 1, {
           attributes: { flow: 'charge-stripe' }
         });
 
@@ -223,7 +226,10 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
           subscriptionId: req.body.subscriptionId,
           ...clientNetInfo(req)
         };
-        if (err instanceof Stripe.errors.StripeError) {
+        if (
+          err instanceof Stripe.errors.StripeCardError ||
+          err instanceof Stripe.errors.StripeInvalidRequestError
+        ) {
           req.log.warn(ctx, 'Stripe upstream error processing charge');
         } else {
           fastify.Sentry?.captureException(err);

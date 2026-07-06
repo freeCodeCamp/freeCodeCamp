@@ -67,9 +67,32 @@ const generateMockSubCreate = (status: string) => () =>
       }
     }
   });
+const {
+  StripeError,
+  StripeCardError,
+  StripeInvalidRequestError,
+  StripeAuthenticationError
+} = vi.hoisted(() => {
+  class StripeError extends Error {}
+  class StripeCardError extends StripeError {}
+  class StripeInvalidRequestError extends StripeError {}
+  class StripeAuthenticationError extends StripeError {}
+  return {
+    StripeError,
+    StripeCardError,
+    StripeInvalidRequestError,
+    StripeAuthenticationError
+  };
+});
+
 vi.mock('stripe', () => ({
   default: class {
-    static errors = { StripeError: class StripeError extends Error {} };
+    static errors = {
+      StripeError,
+      StripeCardError,
+      StripeInvalidRequestError,
+      StripeAuthenticationError
+    };
     constructor() {}
     customers = {
       create: mockCustomerCreate,
@@ -219,7 +242,7 @@ describe('Donate', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('charge-stripe does not capture Stripe upstream errors', async () => {
+      test('charge-stripe does not capture Stripe card decline errors', async () => {
         const originalSentry = fastifyTestInstance.Sentry;
         const captureException = vi.fn();
         fastifyTestInstance.Sentry = {
@@ -227,11 +250,11 @@ describe('Donate', () => {
           captureException
         };
 
-        const StripeError = Stripe.errors.StripeError as unknown as new (
+        const CardError = Stripe.errors.StripeCardError as unknown as new (
           m?: string
         ) => Error;
         mockSubRetrieve.mockImplementationOnce(() =>
-          Promise.reject(new StripeError('card_declined'))
+          Promise.reject(new CardError('card_declined'))
         );
         const response = await superRequest('/donate/charge-stripe', {
           method: 'POST',
@@ -240,6 +263,30 @@ describe('Donate', () => {
 
         expect(response.status).toBe(500);
         expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('charge-stripe captures Stripe infra errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const AuthError = Stripe.errors
+          .StripeAuthenticationError as unknown as new (m?: string) => Error;
+        mockSubRetrieve.mockImplementationOnce(() =>
+          Promise.reject(new AuthError('invalid api key'))
+        );
+        const response = await superRequest('/donate/charge-stripe', {
+          method: 'POST',
+          setCookies
+        }).send(chargeStripeReqBody);
+
+        expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
 
         fastifyTestInstance.Sentry = originalSentry;
       });
