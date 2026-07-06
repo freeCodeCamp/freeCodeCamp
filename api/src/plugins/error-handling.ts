@@ -17,8 +17,17 @@ declare module 'fastify' {
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done Callback to signal that the logic has completed.
  */
+export const isExpectedClientError = (error: unknown): boolean =>
+  typeof error === 'object' &&
+  error !== null &&
+  'statusCode' in error &&
+  typeof (error as { statusCode?: unknown }).statusCode === 'number' &&
+  (error as { statusCode: number }).statusCode < 500;
+
 const errorHandling: FastifyPluginCallback = (fastify, _options, done) => {
-  Sentry.setupFastifyErrorHandler(fastify);
+  Sentry.setupFastifyErrorHandler(fastify, {
+    shouldHandleError: error => !isExpectedClientError(error)
+  });
 
   fastify.decorate('Sentry', Sentry);
 

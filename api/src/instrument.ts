@@ -23,13 +23,6 @@ const shouldSendLog = makeShouldSendLog(
   SENTRY_LOGS_INFO_SAMPLE_RATE
 );
 
-const hasClientErrorStatus = (error: unknown): boolean =>
-  typeof error === 'object' &&
-  error !== null &&
-  'statusCode' in error &&
-  typeof error.statusCode === 'number' &&
-  error.statusCode < 500;
-
 Sentry.init({
   dsn: SENTRY_DSN,
   environment: SENTRY_ENVIRONMENT,
@@ -47,10 +40,7 @@ Sentry.init({
     }),
     Sentry.requestDataIntegration({ include: { cookies: false } })
   ],
-  beforeSend: (event, hint) =>
-    hasClientErrorStatus(hint.originalException)
-      ? null
-      : scrubRequestPii(event),
+  beforeSend: event => scrubRequestPii(event),
   beforeSendLog: log =>
     shouldSendLog(log) ? scrubRedundantLogAttributes(log) : null
 });

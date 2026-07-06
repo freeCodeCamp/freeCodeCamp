@@ -22,7 +22,7 @@ vi.mock('../utils/env.js', async importOriginal => {
 });
 
 import '../instrument';
-import errorHandling from './error-handling.js';
+import errorHandling, { isExpectedClientError } from './error-handling.js';
 import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -294,5 +294,39 @@ describe('errorHandling', () => {
 
       expect(await Promise.race([receivedRequest, delay(200)])).toBeUndefined();
     });
+  });
+});
+
+describe('isExpectedClientError', () => {
+  test('should return true for a 404 status code', () => {
+    expect(isExpectedClientError({ statusCode: 404 })).toBe(true);
+  });
+
+  test('should return true for a 400 status code', () => {
+    expect(isExpectedClientError({ statusCode: 400 })).toBe(true);
+  });
+
+  test('should return false for a 500 status code', () => {
+    expect(isExpectedClientError({ statusCode: 500 })).toBe(false);
+  });
+
+  test('should return false for a 503 status code', () => {
+    expect(isExpectedClientError({ statusCode: 503 })).toBe(false);
+  });
+
+  test('should return false for an error with no status code', () => {
+    expect(isExpectedClientError(new Error())).toBe(false);
+  });
+
+  test('should return false for null', () => {
+    expect(isExpectedClientError(null)).toBe(false);
+  });
+
+  test('should return false for undefined', () => {
+    expect(isExpectedClientError(undefined)).toBe(false);
+  });
+
+  test('should return false for a non-numeric status code', () => {
+    expect(isExpectedClientError({ statusCode: '404' })).toBe(false);
   });
 });
