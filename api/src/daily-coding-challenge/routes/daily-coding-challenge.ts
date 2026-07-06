@@ -65,6 +65,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         req.log.error(error, 'Failed to get daily coding challenge.');
+        fastify.Sentry?.captureException(error);
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -103,6 +104,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         req.log.error(error, "Failed to get today's daily coding challenge.");
+        fastify.Sentry?.captureException(error);
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -176,6 +178,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         return reply.send(response);
       } catch (error) {
         req.log.error(error, 'Failed to get monthly daily coding challenges.');
+        fastify.Sentry?.captureException(error);
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -228,6 +231,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         return reply.send(response);
       } catch (error) {
         req.log.error(error, 'Failed to get all daily coding challenges.');
+        fastify.Sentry?.captureException(error);
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -264,6 +268,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         return reply.send({ date: newestChallenge.date.toISOString() });
       } catch (error) {
         req.log.error(error, 'Failed to get newest daily coding challenge.');
+        fastify.Sentry?.captureException(error);
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });

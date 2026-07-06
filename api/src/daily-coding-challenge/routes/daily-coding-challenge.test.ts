@@ -382,4 +382,106 @@ describe('/daily-coding-challenge', () => {
       });
     });
   });
+
+  describe('Sentry Issue reporting', () => {
+    afterEach(() => {
+      vi.restoreAllMocks();
+    });
+
+    it('captures unexpected errors when getting a challenge by date', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest(
+        `/daily-coding-challenge/date/${todayDateParam}`,
+        { method: 'GET' }
+      ).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it("captures unexpected errors when getting today's challenge", async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/today', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('captures unexpected errors when getting a month of challenges', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findMany'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/month/2025-10', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('captures unexpected errors when getting all challenges', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findMany'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/all', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('captures unexpected errors when getting the newest challenge', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/newest', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+  });
 });
