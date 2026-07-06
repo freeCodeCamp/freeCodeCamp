@@ -700,7 +700,7 @@ async function postExamAttemptHandler(
     });
 
     // Link attempt with moderation id if it has not already been done
-    await this.prisma.examEnvironmentExamAttempt.update({
+    await this.prisma.examEnvironmentExamAttempt.updateMany({
       where: {
         id: latestAttempt.id,
         examModerationId: null
