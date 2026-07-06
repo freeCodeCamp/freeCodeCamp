@@ -684,6 +684,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             { examId: id, validationError: validExamFromDbSchema.error },
             'Error validating exam from database'
           );
+          fastify.Sentry?.captureException(
+            new Error(`Exam ${id} failed database schema validation`)
+          );
           void reply.code(500);
           return {
             error:
@@ -732,6 +735,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             validExamResults.error,
             'Error validating generated exam results'
           );
+          fastify.Sentry?.captureException(validExamResults.error);
           void reply.code(500);
           return {
             error: 'An error occurred validating the submitted exam.'

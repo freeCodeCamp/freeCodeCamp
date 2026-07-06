@@ -57,6 +57,7 @@ import {
   completedExamChallengeAllCorrect,
   completedTrophyChallenges,
   examChallengeId,
+  examJson,
   mockResultsZeroCorrect,
   mockResultsTwoCorrect,
   mockResultsAllCorrect,
@@ -586,6 +587,40 @@ describe('challengeRoutes', () => {
             isValidChallengeCompletionErrorMsg
           );
           expect(response_2.statusCode).toBe(403);
+        });
+
+        test('POST does not log the raw solution or githubLink on backEndProject validation failure', async () => {
+          const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
+          spy.mockClear();
+
+          const leakySolution =
+            'https://example.com/solution?api_key=super-secret';
+          const leakyGithubLink = 'not-a-valid-url-with-token-abc123';
+
+          const response = await superPost('/project-completed').send({
+            id: id1,
+            challengeType: challengeTypes.backEndProject,
+            solution: leakySolution,
+            githubLink: leakyGithubLink
+          });
+
+          expect(response.statusCode).toBe(403);
+
+          const call = spy.mock.calls.find(
+            ([, msg]) => msg === 'Invalid backEndProject submission'
+          );
+          expect(call).toBeDefined();
+          const [logObject] = call!;
+          expect(JSON.stringify(logObject)).not.toContain(leakySolution);
+          expect(JSON.stringify(logObject)).not.toContain(leakyGithubLink);
+          expect(JSON.stringify(logObject)).not.toContain('super-secret');
+          expect(JSON.stringify(logObject)).not.toContain('token-abc123');
+          expect(logObject).toEqual({
+            hasSolution: true,
+            solutionLength: leakySolution.length,
+            hasGithubLink: true,
+            githubLinkLength: leakyGithubLink.length
+          });
         });
 
         test('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
@@ -2279,6 +2314,54 @@ describe('challengeRoutes', () => {
 
           expect(response.body).toStrictEqual({
             error: `An error occurred trying to submit your exam.`
+          });
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
+
+        test('POST captures an exception when the exam from the database fails schema validation', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          const examSpy = vi
+            .spyOn(fastifyTestInstance.prisma.exam, 'findUnique')
+            .mockResolvedValueOnce({
+              ...examJson,
+              numberOfQuestionsInExam: 999
+            } as never);
+
+          const response = await superRequest('/exam-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: examChallengeId,
+            challengeType: 17,
+            userCompletedExam: {
+              examTimeInSeconds: 111,
+              userExamQuestions: [
+                {
+                  id: 'q-id',
+                  question: '?',
+                  answer: {
+                    id: 'a-id',
+                    answer: 'a'
+                  }
+                }
+              ]
+            }
+          });
+
+          examSpy.mockRestore();
+
+          expect(response.body).toStrictEqual({
+            error:
+              'An error occurred validating the exam information from the database.'
           });
           expect(response.statusCode).toBe(500);
           expect(captureException).toHaveBeenCalledOnce();

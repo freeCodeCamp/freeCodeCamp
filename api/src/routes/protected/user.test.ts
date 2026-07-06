@@ -1238,6 +1238,27 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(500);
       });
 
+      test('GET captures an exception if the username is missing', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: { username: '' }
+        });
+
+        const response = await superGet('/user/session-user');
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       test('GET captures unexpected errors', async () => {
         const originalSentry = fastifyTestInstance.Sentry;
         const captureException = vi.fn();

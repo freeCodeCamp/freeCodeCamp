@@ -80,16 +80,20 @@ describe('certificate routes', () => {
 
       // TODO: Revisit this test after deciding if we need/want to fetch the
       // entire user during authorization or just the user id.
-      test.todo('should return 500 if user not found in db', async () => {
-        vi.spyOn(
-          fastifyTestInstance.prisma.user,
-          'findUnique'
-        ).mockImplementation(
-          () =>
-            Promise.resolve(null) as ReturnType<
-              typeof fastifyTestInstance.prisma.user.findUnique
-            >
-        );
+      test('should return 500 and capture an exception if user not found in db', async () => {
+        const findUniqueForAuth =
+          fastifyTestInstance.prisma.user.findUnique.bind(
+            fastifyTestInstance.prisma.user
+          );
+
+        vi.spyOn(fastifyTestInstance.prisma.user, 'findUnique')
+          .mockImplementationOnce(findUniqueForAuth)
+          .mockResolvedValueOnce(null);
+
+        const captureException = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
@@ -97,11 +101,14 @@ describe('certificate routes', () => {
           certSlug: Certification.RespWebDesign
         });
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(response.body).toStrictEqual({
           message: 'flash.went-wrong',
           type: 'danger'
         });
         expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
       });
 
       test('should return 400 if user has not set a `name`', async () => {

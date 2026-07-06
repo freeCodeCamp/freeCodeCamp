@@ -808,6 +808,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (!user?.username) {
+        fastify.Sentry?.captureException(new Error('User has no username'));
         req.log.error('User has no username');
         void res.code(500);
         return { user: {}, result: '' };
