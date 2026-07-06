@@ -277,6 +277,52 @@ describe('socratesRoutes', () => {
             limit: 3
           });
         });
+
+        test('should not capture a fetch network failure', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          const networkError = Object.assign(new TypeError('fetch failed'), {
+            cause: Object.assign(new Error('connect ECONNREFUSED'), {
+              code: 'ECONNREFUSED'
+            })
+          });
+          mockedFetch.mockRejectedValueOnce(networkError);
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(captureException).not.toHaveBeenCalled();
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
+
+        test('should capture a genuine TypeError bug from the handler', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          const bugError = new TypeError(
+            "Cannot read properties of undefined (reading 'foo')"
+          );
+          mockedFetch.mockRejectedValueOnce(bugError);
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(captureException).toHaveBeenCalledExactlyOnceWith(bugError);
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
       });
 
       describe('daily usage entitlements', () => {

@@ -9,6 +9,29 @@ function getDailyLimit(isDonating: boolean): number {
   return isDonating ? DAILY_LIMITS.donor : DAILY_LIMITS.nonDonor;
 }
 
+const NETWORK_ERROR_CODES = new Set([
+  'ENOTFOUND',
+  'ECONNREFUSED',
+  'ECONNRESET',
+  'ETIMEDOUT',
+  'EAI_AGAIN'
+]);
+
+function isFetchNetworkError(error: unknown): boolean {
+  if (!(error instanceof TypeError)) {
+    return false;
+  }
+  const cause = (error as { cause?: unknown }).cause;
+  const code =
+    cause && typeof cause === 'object' && 'code' in cause
+      ? (cause as { code?: unknown }).code
+      : undefined;
+  if (typeof code === 'string') {
+    return code.startsWith('UND_ERR_') || NETWORK_ERROR_CODES.has(code);
+  }
+  return error.message === 'fetch failed';
+}
+
 /**
  *
  * @param fastify The Fastify instance.
@@ -200,7 +223,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
 
         return { hint, attempts, limit } as const;
       } catch (error) {
-        if (!(error instanceof TypeError)) {
+        if (!isFetchNetworkError(error)) {
           fastify.Sentry?.captureException(error);
         }
         req.log.error(
