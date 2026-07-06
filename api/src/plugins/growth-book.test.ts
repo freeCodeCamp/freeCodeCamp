@@ -16,7 +16,7 @@ describe('growth-book', () => {
     await fastify.close();
   });
 
-  test('should log the error without double-reporting if the GrowthBook initialization fails', async () => {
+  test('should log and capture the error if the GrowthBook initialization fails', async () => {
     const spy = vi.spyOn(fastify.log, 'error');
 
     await fastify.register(growthBook, {
@@ -25,6 +25,6 @@ describe('growth-book', () => {
     });
 
     expect(spy).toHaveBeenCalled();
-    expect(captureException).not.toHaveBeenCalled();
+    expect(captureException).toHaveBeenCalled();
   });
 });
