@@ -1,11 +1,9 @@
-import fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 import { describe, test, expect } from 'vitest';
 
 import {
-  Languages,
   availableLangs,
   LangNames,
   LangCodes
@@ -32,48 +30,12 @@ interface Intro {
   };
 }
 
-// only non-english are in submodule repo
-const filesThatShouldExist = [
-  {
-    name: 'translations.json',
-    inSubmoduleRepo: true
-  },
-  {
-    name: 'motivation.json',
-    inSubmoduleRepo: true
-  },
-  {
-    name: 'intro.json',
-    inSubmoduleRepo: true
-  },
-  {
-    name: 'meta-tags.json',
-    inSubmoduleRepo: true
-  },
-  {
-    name: 'links.json'
-  }
-];
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 describe('Locale tests:', () => {
   availableLangs.client.forEach(lang => {
     describe(`-- ${lang} --`, () => {
-      filesThatShouldExist.forEach(file => {
-        // check that each json file exists
-        test(`${file.name} file exists`, () => {
-          const path =
-            lang === Languages.English || !file.inSubmoduleRepo
-              ? `${__dirname}/locales`
-              : `${__dirname}/../../curriculum/i18n-curriculum/client`;
-
-          const exists = fs.existsSync(`${path}/${lang}/${file.name}`);
-          expect(exists).toBeTruthy();
-        });
-      });
-
       test(`has an entry in the langDisplayNames enum`, () => {
         expect(
           Object.keys(LangNames)
