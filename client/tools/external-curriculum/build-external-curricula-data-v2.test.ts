@@ -30,7 +30,7 @@ import {
   type GeneratedChapterBasedCurriculumProps,
   type OrderedSuperBlocks,
   buildExtCurriculumDataV2,
-  orderedSuperBlockInfo,
+  orderedSuperBlockInfo
 } from './build-external-curricula-data-v2';
 import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
 
