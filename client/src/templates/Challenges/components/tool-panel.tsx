@@ -47,7 +47,7 @@ interface ToolPanelProps {
   videoUrl?: string;
 }
 
-function ToolPanel({
+export function ToolPanel({
   saveSubmissionToDB,
   executeChallenge,
   saveChallenge,

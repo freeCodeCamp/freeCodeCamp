@@ -99,7 +99,7 @@ function Checkbox({
   );
 }
 
-function HelpModal({
+export function HelpModal({
   closeHelpModal,
   createQuestion,
   isOpen,

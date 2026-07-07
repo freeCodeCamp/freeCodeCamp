@@ -185,7 +185,7 @@ const LowerJawStatus = ({
 
 const isBlockCompleted = 100;
 
-const LowerJaw = ({
+export const LowerJaw = ({
   challengeMeta: { superBlock, block },
   completedPercent,
   openHelpModal,
