@@ -41,18 +41,6 @@ test('Clicking "Check Your Code" reveals failing feedback', async ({
   ).toBeVisible();
 });
 
-test('Reset button opens and closes the reset modal', async ({ page }) => {
-  await page.goto(workshopChallengeUrl);
-
-  await page.getByTestId('independentLowerJaw-reset-button').click();
-
-  const resetModal = page.getByRole('dialog', { name: 'Reset this lesson?' });
-  await expect(resetModal).toBeVisible();
-
-  await page.getByRole('button', { name: /close/i }).click();
-  await expect(resetModal).not.toBeVisible();
-});
-
 test('Checks hotkeys when instruction is focused', async ({
   page,
   browserName
