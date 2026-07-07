@@ -315,19 +315,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.German]: [],
   [Languages.Swahili]: [],
   [Languages.Korean]: [],
-  [Languages.Arabic]: [
-    SuperBlocks.FullStackOpen,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9,
-    SuperBlocks.LearnDataVisualizationWithD3,
-    SuperBlocks.A1Chinese
-  ]
+  // Arabic is new, so nothing is audited yet
+  [Languages.Arabic]: generateSuperBlockList({ showUpcomingChanges: true })
 };
 
 Object.freeze(notAuditedSuperBlocks);
