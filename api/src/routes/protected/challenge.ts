@@ -947,6 +947,7 @@ async function postCoderoadChallengeCompleted(
   try {
     const payload = jwt.verify(encodedUserToken, JWT_SECRET) as JwtPayload;
     userToken = payload.userToken;
+    if (!userToken || typeof userToken !== 'string') throw Error();
   } catch {
     logger.warn('Invalid user token');
     void reply.code(400);

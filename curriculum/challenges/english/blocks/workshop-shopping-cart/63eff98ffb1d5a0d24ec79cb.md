@@ -266,7 +266,6 @@ class ShoppingCart {
     this.taxRate = 8.25;
   }
 
---fcc-editable-region--
   addItem(id, products) {
     const product = products.find((item) => item.id === id);
     const { name, price } = product;
@@ -275,11 +274,12 @@ class ShoppingCart {
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
       totalCountPerProduct[dessert.id] = (totalCountPerProduct[dessert.id] || 0) + 1;
-    })
+    });
 
     const currentProductCount = totalCountPerProduct[product.id];
-
-  }
 --fcc-editable-region--
+    
+--fcc-editable-region--
+  }
 };
 ```
