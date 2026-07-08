@@ -308,7 +308,7 @@ assert(
       .toLowerCase()
       .replace(/\\s+/g, ' ') === 'cat lists'
 );",
-      "text": "<p>There should be an <code>h2</code> element with the text <code>Cat Lists</code> above the last <code>h3</code> element that is nested in the last <code>section</code> element'. You may have accidentally deleted the <code>h2</code> element.</p>",
+      "text": "<p>There should be an <code>h2</code> element with the text <code>Cat Lists</code> above the last <code>h3</code> element that is nested in the last <code>section</code> element. You may have accidentally deleted the <code>h2</code> element.</p>",
     },
   ],
 }
