@@ -109,6 +109,22 @@ describe('<ActionRow />', () => {
     ).not.toBeInTheDocument();
   });
 
+  it('renders notes control only when notes are available', async () => {
+    const user = userEvent.setup();
+    const togglePane = vi.fn();
+    renderActionRow({ hasNotes: true, showNotes: false, togglePane });
+
+    const notesButton = screen.getByRole('button', {
+      name: 'learn.editor-tabs.notes'
+    });
+
+    expect(notesButton).toHaveAttribute('aria-expanded', 'false');
+
+    await user.click(notesButton);
+
+    expect(togglePane).toHaveBeenCalledWith('showNotes');
+  });
+
   it('calls togglePane with the clicked pane name', async () => {
     const user = userEvent.setup();
     const togglePane = vi.fn();
