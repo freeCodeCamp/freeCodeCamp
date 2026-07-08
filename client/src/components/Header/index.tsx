@@ -61,7 +61,7 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
       // the search bar should not toggle the menu
       this.searchBarRef.current &&
       !this.searchBarRef.current.contains(eventTarget) &&
-      // don't count clicks on searcn bar inputs reset button
+      // don't count clicks on search bar inputs reset button
       !eventTarget.closest('.ais-SearchBox-reset') &&
       // don't count clicks on disabled elements
       !eventTarget.closest('[aria-disabled="true"]')
