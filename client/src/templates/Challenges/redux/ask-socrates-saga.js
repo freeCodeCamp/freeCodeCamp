@@ -104,7 +104,7 @@ export function* askSocratesSaga() {
     }
 
     callGA({
-      event: 'call_socrates',
+      event: 'send_socrates',
       action: 'Socrates Request Sent',
       is_donating: isDonating,
       attempts,
