@@ -160,6 +160,9 @@ const ShowBackEnd = (props: BackEndProps) => {
     updateSolutionFormValues
   } = props;
 
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )}: ${title}`;
   const guideUrl = getGuideUrl({
     forumTopicId,
     title,
