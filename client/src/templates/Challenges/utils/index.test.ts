@@ -22,5 +22,16 @@ describe('index', () => {
         `${forumLocation}/search?q=%26%20a%20sample%20title%3F%20in%3Atitle%20order%3Aviews`
       );
     });
+
+    it('should include block and superBlock translation in search endpoint', () => {
+      const value = getGuideUrl({
+        title: 'Step 19',
+        block: 'shortest-path-algorithm',
+        superBlock: 'python-v9'
+      });
+      expect(value).toEqual(
+        `${forumLocation}/search?q=intro%3Apython-v9.blocks.shortest-path-algorithm.title%20-%20Step%2019%20in%3Atitle%20order%3Aviews`
+      );
+    });
   });
 });

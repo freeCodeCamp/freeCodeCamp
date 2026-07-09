@@ -139,7 +139,9 @@ const ShowFrontEndProject = (props: ProjectProps) => {
   )}: ${title}`;
   const guideUrl = getGuideUrl({
     forumTopicId,
-    title: `${t(`intro:${superBlock}.blocks.${block}.title`)} - ${title}`
+    title,
+    block,
+    superBlock
   });
 
   return (
