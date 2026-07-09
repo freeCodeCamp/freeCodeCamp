@@ -12,7 +12,7 @@ import Fastify, { FastifyInstance } from 'fastify';
 import db from '../../db/prisma.js';
 import { createUserInput } from '../../utils/create-user.js';
 import { checkCanConnectToDb } from '../../../vitest.utils.js';
-import { findOrCreateUser } from './auth-helpers.js';
+import { DuplicateUserEmailError, findOrCreateUser } from './auth-helpers.js';
 import { assignVariantBucket } from '../../utils/drip-campaign.js';
 import growthBook from '../../plugins/growth-book.js';
 import {
@@ -64,11 +64,16 @@ describe('findOrCreateUser', () => {
 
     const ids = [user1.id, user2.id];
 
-    await findOrCreateUser(fastify, email);
+    await expect(findOrCreateUser(fastify, email)).rejects.toBeInstanceOf(
+      DuplicateUserEmailError
+    );
 
     expect(captureException).toHaveBeenCalledTimes(1);
     expect(captureException).toHaveBeenCalledWith(
-      new Error(`Multiple user records found for: ${ids.join(', ')}`)
+      expect.objectContaining({
+        name: 'DuplicateUserEmailError',
+        message: `Multiple user records found for ${email}: ${ids.join(', ')}`
+      })
     );
   });
 

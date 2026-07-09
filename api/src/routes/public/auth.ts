@@ -4,7 +4,7 @@ import validator from 'validator';
 import { AUTH0_DOMAIN } from '../../utils/env.js';
 import { auth0Client } from '../../plugins/auth0.js';
 import { createAccessToken } from '../../utils/tokens.js';
-import { findOrCreateUser } from '../helpers/auth-helpers.js';
+import { DuplicateUserEmailError, findOrCreateUser } from '../helpers/auth-helpers.js';
 
 const getEmailFromAuth0 = async (
   req: FastifyRequest
@@ -64,7 +64,20 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
       });
     }
 
-    const { id } = await findOrCreateUser(fastify, email);
+    let id: string;
+    try {
+      ({ id } = await findOrCreateUser(fastify, email));
+    } catch (error) {
+      logger.error(error, 'Failed to find or create user during mobile sign-in');
+      if (!(error instanceof DuplicateUserEmailError)) {
+        fastify.Sentry.captureException(error);
+      }
+
+      return reply.status(500).send({
+        message: 'We could not log you in, please try again in a moment.',
+        type: 'danger'
+      });
+    }
 
     reply.setAccessTokenCookie(createAccessToken(id));
   });

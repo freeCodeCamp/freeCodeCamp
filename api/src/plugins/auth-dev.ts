@@ -5,7 +5,10 @@ import {
   getPrefixedLandingPath,
   haveSamePath
 } from '../utils/redirection.js';
-import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
+import {
+  DuplicateUserEmailError,
+  findOrCreateUser
+} from '../routes/helpers/auth-helpers.js';
 import { createAccessToken } from '../utils/tokens.js';
 
 const trimTrailingSlash = (str: string) =>
@@ -37,7 +40,20 @@ export const devAuth: FastifyPluginCallbackTypebox = (
   fastify.get('/signin', async (req, reply) => {
     const email = 'foo@bar.com';
 
-    const { id } = await findOrCreateUser(fastify, email);
+    let id: string;
+    try {
+      ({ id } = await findOrCreateUser(fastify, email));
+    } catch (error) {
+      fastify.log.error(error, 'Failed to find or create user during dev sign-in');
+      if (!(error instanceof DuplicateUserEmailError)) {
+        fastify.Sentry.captureException(error);
+      }
+
+      return reply.status(500).send({
+        message: 'We could not log you in, please try again in a moment.',
+        type: 'danger'
+      });
+    }
 
     reply.setAccessTokenCookie(createAccessToken(id));
 

@@ -13,7 +13,10 @@ import {
   COOKIE_DOMAIN,
   HOME_LOCATION
 } from '../utils/env.js';
-import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
+import {
+  DuplicateUserEmailError,
+  findOrCreateUser
+} from '../routes/helpers/auth-helpers.js';
 import { createAccessToken } from '../utils/tokens.js';
 import { getLoginRedirectParams } from '../utils/redirection.js';
 
@@ -181,7 +184,19 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         });
       }
 
-      const { id } = await findOrCreateUser(fastify, email);
+      let id: string;
+      try {
+        ({ id } = await findOrCreateUser(fastify, email));
+      } catch (error) {
+        logger.error(error, 'Failed to find or create user during sign-in');
+        if (!(error instanceof DuplicateUserEmailError)) {
+          fastify.Sentry.captureException(error);
+        }
+        return reply.redirectWithMessage(returnTo, {
+          type: 'danger',
+          content: 'flash.generic-error'
+        });
+      }
 
       reply.setAccessTokenCookie(createAccessToken(id));
 

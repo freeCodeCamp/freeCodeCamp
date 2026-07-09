@@ -2,6 +2,13 @@ import { FastifyInstance } from 'fastify';
 import { createUserInput } from '../../utils/create-user.js';
 import { assignVariantBucket } from '../../utils/drip-campaign.js';
 
+export class DuplicateUserEmailError extends Error {
+  constructor(email: string, userIds: string[]) {
+    super(`Multiple user records found for ${email}: ${userIds.join(', ')}`);
+    this.name = 'DuplicateUserEmailError';
+  }
+}
+
 /**
  * Finds an existing user with the given email or creates a new user if none exists.
  * @param fastify - The Fastify instance.
@@ -12,18 +19,17 @@ export const findOrCreateUser = async (
   fastify: FastifyInstance,
   email: string
 ): Promise<{ id: string; acceptedPrivacyTerms: boolean }> => {
-  // TODO: handle the case where there are multiple users with the same email.
-  // e.g. use findMany and throw an error if more than one is found.
   const existingUser = await fastify.prisma.user.findMany({
     where: { email },
     select: { id: true, acceptedPrivacyTerms: true }
   });
   if (existingUser.length > 1) {
-    fastify.Sentry.captureException(
-      new Error(
-        `Multiple user records found for: ${existingUser.map(user => user.id).join(', ')}`
-      )
+    const error = new DuplicateUserEmailError(
+      email,
+      existingUser.map(user => user.id)
     );
+    fastify.Sentry.captureException(error);
+    throw error;
   }
 
   if (existingUser[0]) {

@@ -325,6 +325,27 @@ describe('auth0 plugin', () => {
       );
     });
 
+    test('should redirect with a generic error if duplicate users exist for the email', async () => {
+      await fastify.prisma.user.create({
+        data: createUserInput(email)
+      });
+      await fastify.prisma.user.create({
+        data: createUserInput(email)
+      });
+      mockAuthSuccess();
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid'
+      });
+
+      expect(res.headers.location).toMatch(
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
+      expect(res.statusCode).toBe(302);
+      expect(res.headers['set-cookie']).toBeUndefined();
+    });
+
     test('should use the login-returnto cookie if present and valid', async () => {
       mockAuthSuccess();
       await fastify.prisma.user.create({
