@@ -1,4 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import type { TFunction } from 'i18next';
+
+vi.mock('i18next', () => ({
+  default: {
+    t: ((key: string) => key) as unknown as TFunction
+  }
+}));
 import envData from '../../../../config/env.json';
 import { getGuideUrl } from './index';
 
