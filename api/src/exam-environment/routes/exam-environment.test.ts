@@ -237,6 +237,70 @@ describe('/exam-environment/', () => {
         expect(examModeration).not.toBeNull();
       });
 
+      it('should not error if an invalid attempt is submitted when the attempt is already linked to a moderation record', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: defaultUserId }
+          });
+
+        attempt.questionSets[0]!.id = mock.oid();
+
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt
+        };
+
+        // First invalid submission creates moderation record, and links it to attempt
+        const firstRes = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
+
+        expect(firstRes.status).toBe(400);
+
+        const examModeration =
+          await fastifyTestInstance.prisma.examEnvironmentExamModeration.findUnique(
+            {
+              where: {
+                examAttemptId: attempt.id
+              }
+            }
+          );
+        expect(examModeration).not.toBeNull();
+
+        const linkedAttempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findUnique(
+            {
+              where: { id: attempt.id }
+            }
+          );
+        expect(linkedAttempt?.examModerationId).toBe(examModeration!.id);
+
+        // Second invalid submission must not 500 trying to re-link the moderation record
+        const secondRes = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
+
+        expect(secondRes.body).toStrictEqual({
+          code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(secondRes.status).toBe(400);
+
+        const relinkedAttempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findUnique(
+            {
+              where: { id: attempt.id }
+            }
+          );
+        expect(relinkedAttempt?.examModerationId).toBe(examModeration!.id);
+      });
+
       it('should return 200 if request is valid, and update attempt in database', async () => {
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
