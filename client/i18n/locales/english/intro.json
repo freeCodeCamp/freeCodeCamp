@@ -9281,7 +9281,7 @@
       "lecture-understanding-the-html-boilerplate": {
         "title": "Understanding the HTML Boilerplate",
         "intro": [
-          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "In these lectures, you will learn about the HTML boilerplate, which is a ready-made template for your webpages.",
           "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
@@ -9301,13 +9301,13 @@
       "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
         "intro": [
-          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the <code>script</code> element, HTML entities, and more."
         ]
       },
       "workshop-bookstore-page": {
         "title": "Build a Bookstore Page",
         "intro": [
-          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+          "In this workshop, you will practice working with classes, ids, and the <code>div</code> element by building a bookstore page."
         ]
       },
       "lecture-understanding-how-html-affects-seo": {
