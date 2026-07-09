@@ -1,18 +1,44 @@
 import React from 'react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useStaticQuery } from 'gatsby';
 
 import type { ChallengeMeta, Test } from '../../../redux/prop-types';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import callGA from '../../../analytics/call-ga';
 import { IndependentLowerJaw } from './independent-lower-jaw';
 import { createStore } from '../../../redux/create-store';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { render } from '../../../../utils/test-utils';
 
 vi.mock('../../../components/Progress');
+vi.mock('../../../analytics/call-ga', () => ({
+  default: vi.fn()
+}));
+
+let showSocratesFlag = true;
+const envMock = vi.hoisted(() => ({
+  clientLocale: 'english',
+  apiLocation: 'http://localhost:3000'
+}));
+vi.mock('../../../../config/env.json', () => ({
+  get clientLocale() {
+    return envMock.clientLocale;
+  },
+  get apiLocation() {
+    return envMock.apiLocation;
+  },
+  get default() {
+    return envMock;
+  }
+}));
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: showSocratesFlag })
+}));
+const mockSubmitChallenge = vi.hoisted(() => vi.fn());
 vi.mock('../utils/fetch-all-curriculum-data', () => ({
-  useSubmit: () => vi.fn()
+  useSubmit: () => mockSubmitChallenge
 }));
 
 const baseChallengeMeta: ChallengeMeta = {
@@ -30,19 +56,41 @@ const baseProps = {
   openHelpModal: vi.fn(),
   openResetModal: vi.fn(),
   executeChallenge: vi.fn(),
+  submitChallenge: vi.fn(),
+  askSocrates: vi.fn(),
   saveChallenge: vi.fn(),
+  attempts: 0,
   tests: passingTests,
+  isDonating: false,
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
   completedPercent: 100,
   completedChallengeIds: ['id-1', 'test-challenge-id'],
-  currentBlockIds: ['id-1', 'test-challenge-id']
+  currentBlockIds: ['id-1', 'test-challenge-id'],
+  hasSocratesAccess: false,
+  socratesHintState: {
+    hint: null,
+    isLoading: false,
+    error: null,
+    attempts: null,
+    limit: null
+  }
 };
 
 vi.mock('../../../utils/get-words');
 
+const getLiveRegion = () => {
+  const region = screen.getByTestId('independent-lower-jaw-live-region');
+  expect(region).toHaveAttribute('aria-live', 'polite');
+  expect(region).toHaveAttribute('aria-atomic', 'true');
+  return region;
+};
+
 describe('<IndependentLowerJaw />', () => {
   beforeEach(() => {
+    showSocratesFlag = true;
+    envMock.clientLocale = 'english';
+    localStorage.clear();
     vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
   });
 
@@ -82,5 +130,421 @@ describe('<IndependentLowerJaw />', () => {
     );
 
     expect(screen.queryByTestId('share-on-x')).not.toBeInTheDocument();
+  });
+
+  it('shows socrates button when hasSocratesAccess is true and flag is on', () => {
+    render(
+      <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
+      createStore()
+    );
+
+    expect(screen.getByText('buttons.ask-socrates')).toBeInTheDocument();
+  });
+
+  it('tracks CallSocrates analytics when ask socrates button is clicked', async () => {
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: null,
+          attempts: 2,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'call_socrates',
+      action: 'Socrates LowerJaw Button Click',
+      is_donating: false,
+      attempts: 2,
+      limit: 3,
+      optimized_request: null
+    });
+    expect(baseProps.askSocrates).toHaveBeenCalled();
+  });
+
+  it('tracks check code analytics when the check button is clicked', async () => {
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={[{ pass: false, err: 'fail', text: 'test', testString: 'test' }]}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /check-code/ }));
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'challenge_test_code_button_click'
+    });
+  });
+
+  it('tracks submit code analytics when the submit button is clicked', async () => {
+    mockSubmitChallenge.mockClear();
+
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    await userEvent.click(
+      screen.getByRole('button', { name: /submit-continue/ })
+    );
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'challenge_submit_button_click'
+    });
+    expect(mockSubmitChallenge).toHaveBeenCalled();
+  });
+
+  it('hides socrates button when show-socrates flag is off', () => {
+    showSocratesFlag = false;
+
+    render(
+      <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
+      createStore()
+    );
+
+    expect(screen.queryByText('buttons.ask-socrates')).not.toBeInTheDocument();
+  });
+
+  it('hides socrates button when language is not english', () => {
+    envMock.clientLocale = 'espanol';
+
+    render(
+      <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
+      createStore()
+    );
+
+    expect(screen.queryByText('buttons.ask-socrates')).not.toBeInTheDocument();
+  });
+
+  it('hides socrates button when hasSocratesAccess is false', () => {
+    render(
+      <IndependentLowerJaw {...baseProps} hasSocratesAccess={false} />,
+      createStore()
+    );
+
+    expect(screen.queryByText('buttons.ask-socrates')).not.toBeInTheDocument();
+  });
+
+  it('displays usage counter when attempts and limit are set', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: 'Try a closing tag.',
+          isLoading: false,
+          error: null,
+          attempts: 2,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    // Click the socrates button to open the results panel
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(screen.getByText(/2\/3/)).toBeInTheDocument();
+    expect(screen.getByText(/learn\.hints-used-today/)).toBeInTheDocument();
+  });
+
+  it('shows Socrates donation CTA when the daily limit is reached', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: 'learn.socrates-daily-limit',
+          attempts: 3,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(screen.getByTestId('socrates-donation-cta')).toBeInTheDocument();
+    expect(
+      screen.getByText('learn.donor-socrates-benefit')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('link', { name: /donate.become-supporter/ })
+    ).toHaveAttribute('href', '/donate');
+  });
+
+  it('tracks donation_related analytics when become supporter link is clicked', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    vi.mocked(callGA).mockClear();
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: 'learn.socrates-daily-limit',
+          attempts: 3,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+    await userEvent.click(
+      screen.getByRole('link', { name: /donate.become-supporter/ })
+    );
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'donation_related',
+      action: 'Socrates LowerJaw Become Supporter Click'
+    });
+  });
+
+  it('hides Socrates donation CTA for supporters even when the limit is reached', async () => {
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        isDonating={true}
+        tests={failingTests}
+        hasSocratesAccess={true}
+        socratesHintState={{
+          hint: null,
+          isLoading: false,
+          error: 'learn.socrates-daily-limit',
+          attempts: 3,
+          limit: 3
+        }}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(
+      screen.queryByTestId('socrates-donation-cta')
+    ).not.toBeInTheDocument();
+  });
+
+  const twoFailedAttemptsProps = {
+    ...baseProps,
+    hasSocratesAccess: true,
+    attempts: 2,
+    tests: [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ] as Test[],
+    completedPercent: 50,
+    completedChallengeIds: ['id-1']
+  };
+
+  it('shows the Socrates feature-discovery dot after two failed checks', () => {
+    render(<IndependentLowerJaw {...twoFailedAttemptsProps} />, createStore());
+
+    expect(screen.getByTestId('socrates-feature-dot')).toBeInTheDocument();
+  });
+
+  it('does not show the dot before two failed checks', () => {
+    render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} attempts={1} />,
+      createStore()
+    );
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('does not show the dot when the challenge is complete', () => {
+    render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} tests={passingTests} />,
+      createStore()
+    );
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('hides the dot once the Socrates button is clicked and remembers it', async () => {
+    const { unmount } = render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} />,
+      createStore()
+    );
+
+    expect(screen.getByTestId('socrates-feature-dot')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+    expect(localStorage.getItem('fcc-socrates-discovered')).toBe('true');
+
+    // The dismissal persists across remounts (e.g. other challenges).
+    unmount();
+    render(<IndependentLowerJaw {...twoFailedAttemptsProps} />, createStore());
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('announces hint text through a live region', async () => {
+    const failingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+
+    render(
+      <IndependentLowerJaw {...baseProps} tests={failingTests} />,
+      createStore()
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+  });
+
+  it('re-announces the same hint after each check attempt', async () => {
+    const firstFailingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+    const thirdFailingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+    const secondFailingTests: Test[] = [
+      {
+        pass: false,
+        err: 'Use <code>&lt;main&gt;</code> here.',
+        message: 'Use <code>&lt;main&gt;</code> here.',
+        text: 'test',
+        testString: 'test'
+      }
+    ];
+
+    const { rerender } = render(
+      <IndependentLowerJaw {...baseProps} tests={firstFailingTests} />,
+      createStore()
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+
+    rerender(
+      <IndependentLowerJaw
+        {...baseProps}
+        attempts={1}
+        tests={secondFailingTests}
+      />
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+
+    rerender(
+      <IndependentLowerJaw
+        {...baseProps}
+        attempts={2}
+        tests={thirdFailingTests}
+      />
+    );
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent('Use <main> here.')
+    );
+  });
+
+  it('announces completion text through a hidden live region', async () => {
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    expect(getLiveRegion()).toHaveTextContent('');
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent(
+        /learn\.congratulations-code-passes .* learn\.percent-complete/
+      )
+    );
+  });
+
+  it('does not reset the completion live region on passing rerenders', async () => {
+    const firstPassingTests: Test[] = [
+      { pass: true, text: 'test', testString: 'test' }
+    ];
+    const secondPassingTests: Test[] = [
+      { pass: true, text: 'test', testString: 'test' }
+    ];
+
+    const { rerender } = render(
+      <IndependentLowerJaw {...baseProps} tests={firstPassingTests} />,
+      createStore()
+    );
+
+    await waitFor(() =>
+      expect(getLiveRegion()).toHaveTextContent(
+        /learn\.congratulations-code-passes .* learn\.percent-complete/
+      )
+    );
+
+    rerender(<IndependentLowerJaw {...baseProps} tests={secondPassingTests} />);
+
+    expect(getLiveRegion()).toHaveTextContent(
+      /learn\.congratulations-code-passes .* learn\.percent-complete/
+    );
   });
 });

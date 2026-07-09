@@ -1,5 +1,5 @@
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { FastifyInstance, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library.js';
@@ -21,7 +21,11 @@ import {
   normalizeBluesky,
   removeNulls
 } from '../../utils/normalize.js';
-import { mapErr, type UpdateReqType } from '../../utils/index.js';
+import {
+  mapErr,
+  type UpdateReqType,
+  type UpdateReplyType
+} from '../../utils/index.js';
 import {
   getCalendar,
   getPoints,
@@ -35,6 +39,7 @@ import {
   getExams
 } from '../../exam-environment/routes/exam-environment.js';
 import { ERRORS } from '../../exam-environment/utils/errors.js';
+import { getChallengeIdsByBlock } from '../../utils/get-challenges.js';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -195,6 +200,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
       return {};
     }
+  );
+
+  fastify.delete(
+    '/account/reset-module',
+    {
+      schema: schemas.resetModule
+    },
+    deleteResetModule
   );
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async (req, reply) => {
@@ -577,6 +590,60 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
+async function deleteResetModule(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.resetModule>,
+  reply: UpdateReplyType<typeof schemas.resetModule>
+) {
+  const logger = this.log.child({ req, res: reply });
+
+  const { blockIds } = req.body;
+  logger.info(
+    `User ${req.user?.id} requested module reset for blocks: ${blockIds.join(', ')}`
+  );
+
+  const resetSet = new Set(blockIds.flatMap(getChallengeIdsByBlock));
+
+  if (resetSet.size === 0) {
+    void reply.code(400);
+    return { message: 'No matching blocks found', type: 'error' };
+  }
+
+  const user = await this.prisma.user.findUniqueOrThrow({
+    where: { id: req.user!.id },
+    select: {
+      completedChallenges: true,
+      savedChallenges: true,
+      partiallyCompletedChallenges: true
+    }
+  });
+
+  const filteredCompletedChallenges = normalizeChallenges(
+    user.completedChallenges
+  ).filter(c => !resetSet.has(c.id));
+
+  const filteredSavedChallenges = user.savedChallenges.filter(
+    c => !resetSet.has(c.id)
+  );
+
+  const filteredPartiallyCompletedChallenges =
+    user.partiallyCompletedChallenges.filter(c => !resetSet.has(c.id));
+
+  await this.prisma.user.update({
+    where: { id: req.user!.id },
+    data: {
+      completedChallenges: filteredCompletedChallenges,
+      savedChallenges: filteredSavedChallenges,
+      partiallyCompletedChallenges: filteredPartiallyCompletedChallenges
+    },
+    select: {
+      id: true
+    }
+  });
+
+  return { removedChallengeIds: Array.from(resetSet) };
+}
+
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
@@ -651,196 +718,199 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.get(
-    '/user/get-session-user',
-    {
-      schema: schemas.getSessionUser
-    },
-    async (req, res) => {
-      const logger = fastify.log.child({ req, res });
-      // This is one of the most requested routes. To avoid spamming the logs
-      // with this route, we'll log requests at the debug level.
-      logger.debug({ userId: req.user?.id });
+  const getSessionUserHandler = async (
+    req: UpdateReqType<typeof schemas.getSessionUser>,
+    res: FastifyReply
+  ) => {
+    const logger = fastify.log.child({ req, res });
+    // This is one of the most requested routes. To avoid spamming the logs
+    // with this route, we'll log requests at the debug level.
+    logger.debug({ userId: req.user?.id });
 
-      // Handle unauthenticated users - this is not an error, it's how the client
-      // determines if they are signed in or not
-      if (!req.user?.id) {
-        logger.debug('Unauthenticated user requested session');
-        return { user: {}, result: '' };
-      }
+    // Handle unauthenticated users - this is not an error, it's how the client
+    // determines if they are signed in or not
+    if (!req.user?.id) {
+      logger.debug('Unauthenticated user requested session');
+      return { user: {}, result: '' };
+    }
 
-      try {
-        const userTokenP = fastify.prisma.userToken.findFirst({
-          where: { userId: req.user.id }
-        });
+    try {
+      const userTokenP = fastify.prisma.userToken.findFirst({
+        where: { userId: req.user.id }
+      });
 
-        const userP = fastify.prisma.user.findUnique({
-          where: { id: req.user.id },
-          select: {
-            about: true,
-            acceptedPrivacyTerms: true,
-            completedChallenges: true,
-            completedDailyCodingChallenges: true,
-            completedExams: true,
-            currentChallengeId: true,
-            quizAttempts: true,
-            email: true,
-            emailVerified: true,
-            githubProfile: true,
-            id: true,
-            is2018DataVisCert: true,
-            is2018FullStackCert: true,
-            isA2EnglishCert: true,
-            isApisMicroservicesCert: true,
-            isBackEndCert: true,
-            isCheater: true,
-            isCollegeAlgebraPyCertV8: true,
-            isDataAnalysisPyCertV7: true,
-            isDataVisCert: true,
-            isDonating: true,
-            isFoundationalCSharpCertV8: true,
-            isFrontEndCert: true,
-            isFrontEndLibsCert: true,
-            isFullStackCert: true,
-            isHonest: true,
-            isInfosecCertV7: true,
-            isInfosecQaCert: true,
-            isJavascriptCertV9: true,
-            isJsAlgoDataStructCert: true,
-            isJsAlgoDataStructCertV8: true,
-            isMachineLearningPyCertV7: true,
-            isPythonCertV9: true,
-            isQaCertV7: true,
-            isRelationalDatabaseCertV8: true,
-            isRelationalDatabaseCertV9: true,
-            isRespWebDesignCert: true,
-            isRespWebDesignCertV9: true,
-            isSciCompPyCertV7: true,
-            isFrontEndLibsCertV9: true,
-            isBackEndDevApisCertV9: true,
-            isFullStackDeveloperCertV9: true,
-            isB1EnglishCert: true,
-            isA2SpanishCert: true,
-            isA2ChineseCert: true,
-            isA1ChineseCert: true,
-            keyboardShortcuts: true,
-            linkedin: true,
-            location: true,
-            name: true,
-            partiallyCompletedChallenges: true,
-            picture: true,
-            portfolio: true,
-            experience: true,
-            profileUI: true,
-            progressTimestamps: true,
-            savedChallenges: true,
-            sendQuincyEmail: true,
-            theme: true,
-            twitter: true,
-            bluesky: true,
-            username: true,
-            usernameDisplay: true,
-            website: true,
-            yearsTopContributor: true
-          }
-        });
-
-        const completedSurveysP = fastify.prisma.survey.findMany({
-          where: { userId: req.user.id }
-        });
-
-        const msUsernameP = fastify.prisma.msUsername.findFirst({
-          where: { userId: req.user.id }
-        });
-
-        const [userToken, user, completedSurveys, msUsername] =
-          await Promise.all([
-            userTokenP,
-            userP,
-            completedSurveysP,
-            msUsernameP
-          ]);
-
-        if (!user?.username) {
-          logger.error(`User ${req.user?.id} has no username`);
-          void res.code(500);
-          return { user: {}, result: '' };
+      const userP = fastify.prisma.user.findUnique({
+        where: { id: req.user.id },
+        select: {
+          about: true,
+          acceptedPrivacyTerms: true,
+          completedChallenges: true,
+          completedDailyCodingChallenges: true,
+          completedExams: true,
+          currentChallengeId: true,
+          quizAttempts: true,
+          email: true,
+          emailVerified: true,
+          githubProfile: true,
+          id: true,
+          is2018DataVisCert: true,
+          is2018FullStackCert: true,
+          isA2EnglishCert: true,
+          isApisMicroservicesCert: true,
+          isBackEndCert: true,
+          isCheater: true,
+          isCollegeAlgebraPyCertV8: true,
+          isDataAnalysisPyCertV7: true,
+          isDataVisCert: true,
+          isDonating: true,
+          isFoundationalCSharpCertV8: true,
+          isFrontEndCert: true,
+          isFrontEndLibsCert: true,
+          isFullStackCert: true,
+          isClassroomAccount: true,
+          isHonest: true,
+          isInfosecCertV7: true,
+          isInfosecQaCert: true,
+          isJavascriptCertV9: true,
+          isJsAlgoDataStructCert: true,
+          isJsAlgoDataStructCertV8: true,
+          isMachineLearningPyCertV7: true,
+          isPythonCertV9: true,
+          isQaCertV7: true,
+          isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
+          isRespWebDesignCert: true,
+          isRespWebDesignCertV9: true,
+          isSciCompPyCertV7: true,
+          isFrontEndLibsCertV9: true,
+          isBackEndDevApisCertV9: true,
+          isFullStackDeveloperCertV9: true,
+          isB1EnglishCert: true,
+          isA2SpanishCert: true,
+          isA2ChineseCert: true,
+          isA1ChineseCert: true,
+          keyboardShortcuts: true,
+          linkedin: true,
+          location: true,
+          name: true,
+          partiallyCompletedChallenges: true,
+          picture: true,
+          portfolio: true,
+          experience: true,
+          profileUI: true,
+          progressTimestamps: true,
+          savedChallenges: true,
+          sendQuincyEmail: true,
+          socrates: true,
+          theme: true,
+          twitter: true,
+          bluesky: true,
+          username: true,
+          usernameDisplay: true,
+          website: true,
+          yearsTopContributor: true
         }
-        // TODO: DRY this (the creation of the response body) and
-        // get-public-profile's response body creation.
+      });
 
-        const encodedToken = userToken
-          ? encodeUserToken(userToken.id)
-          : undefined;
+      const completedSurveysP = fastify.prisma.survey.findMany({
+        where: { userId: req.user.id }
+      });
 
-        const [flags, rest] = splitUser(user);
+      const msUsernameP = fastify.prisma.msUsername.findFirst({
+        where: { userId: req.user.id }
+      });
 
-        const {
-          email,
-          emailVerified,
-          username,
-          usernameDisplay,
-          completedChallenges,
-          completedDailyCodingChallenges,
-          progressTimestamps,
-          twitter,
-          bluesky,
-          profileUI,
-          currentChallengeId,
-          location,
-          name,
-          theme,
-          experience,
-          ...publicUser
-        } = rest;
+      const [userToken, user, completedSurveys, msUsername] = await Promise.all(
+        [userTokenP, userP, completedSurveysP, msUsernameP]
+      );
 
-        await res.send({
-          user: {
-            [username]: {
-              ...removeNulls(publicUser),
-              sendQuincyEmail: publicUser.sendQuincyEmail,
-              ...normalizeFlags(flags),
-              picture: publicUser.picture ?? '',
-              email: email ?? '',
-              currentChallengeId: currentChallengeId ?? '',
-              completedChallenges: normalizeChallenges(completedChallenges),
-              completedChallengeCount: completedChallenges.length,
-              completedDailyCodingChallenges,
-              // This assertion is necessary until the database is normalized.
-              calendar: getCalendar(
-                progressTimestamps as ProgressTimestamp[] | null
-              ),
-              emailVerified: !!emailVerified,
-              // This assertion is necessary until the database is normalized.
-              points: getPoints(
-                progressTimestamps as ProgressTimestamp[] | null
-              ),
-              profileUI: normalizeProfileUI(profileUI),
-              // TODO(Post-MVP) remove this and just use emailVerified
-              isEmailVerified: !!emailVerified,
-              joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
-              location: location ?? '',
-              name: name ?? '',
-              theme: theme ?? 'default',
-              twitter: normalizeTwitter(twitter),
-              bluesky: normalizeBluesky(bluesky),
-              username,
-              usernameDisplay: usernameDisplay || username,
-              userToken: encodedToken,
-              completedSurveys: normalizeSurveys(completedSurveys),
-              experience: experience.map(removeNulls),
-              msUsername: msUsername?.msUsername
-            }
-          },
-          result: user.username
-        });
-      } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+      if (!user?.username) {
+        logger.error(`User ${req.user?.id} has no username`);
         void res.code(500);
         return { user: {}, result: '' };
       }
+      // TODO: DRY this (the creation of the response body) and
+      // get-public-profile's response body creation.
+
+      const encodedToken = userToken
+        ? encodeUserToken(userToken.id)
+        : undefined;
+
+      const [flags, rest] = splitUser(user);
+
+      const {
+        email,
+        emailVerified,
+        username,
+        usernameDisplay,
+        completedChallenges,
+        completedDailyCodingChallenges,
+        progressTimestamps,
+        twitter,
+        bluesky,
+        profileUI,
+        currentChallengeId,
+        location,
+        name,
+        theme,
+        experience,
+        socrates,
+        ...publicUser
+      } = rest;
+
+      await res.send({
+        user: {
+          [username]: {
+            ...removeNulls(publicUser),
+            sendQuincyEmail: publicUser.sendQuincyEmail,
+            ...normalizeFlags(flags),
+            picture: publicUser.picture ?? '',
+            email: email ?? '',
+            currentChallengeId: currentChallengeId ?? '',
+            completedChallenges: normalizeChallenges(completedChallenges),
+            completedChallengeCount: completedChallenges.length,
+            completedDailyCodingChallenges,
+            // This assertion is necessary until the database is normalized.
+            calendar: getCalendar(
+              progressTimestamps as ProgressTimestamp[] | null
+            ),
+            emailVerified: !!emailVerified,
+            // This assertion is necessary until the database is normalized.
+            points: getPoints(progressTimestamps as ProgressTimestamp[] | null),
+            profileUI: normalizeProfileUI(profileUI),
+            // TODO(Post-MVP) remove this and just use emailVerified
+            isEmailVerified: !!emailVerified,
+            joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+            location: location ?? '',
+            name: name ?? '',
+            theme: theme ?? 'default',
+            twitter: normalizeTwitter(twitter),
+            bluesky: normalizeBluesky(bluesky),
+            username,
+            usernameDisplay: usernameDisplay || username,
+            userToken: encodedToken,
+            completedSurveys: normalizeSurveys(completedSurveys),
+            experience: experience.map(removeNulls),
+            msUsername: msUsername?.msUsername,
+            socrates: socrates ?? true
+          }
+        },
+        result: user.username
+      });
+    } catch (err) {
+      logger.error(err);
+      fastify.Sentry.captureException(err);
+      void res.code(500);
+      return { user: {}, result: '' };
     }
+  };
+
+  fastify.get(
+    '/user/session-user',
+    {
+      schema: schemas.getSessionUser
+    },
+    getSessionUserHandler
   );
 
   done();

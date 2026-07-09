@@ -18,8 +18,7 @@ import addFormats from 'ajv-formats';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
-import { NodemailerProvider } from './plugins/mail-providers/nodemailer.js';
-import { SESProvider } from './plugins/mail-providers/ses.js';
+import { createMailProvider } from './plugins/mail-providers/nodemailer.js';
 import mailer from './plugins/mailer.js';
 import redirectWithMessage from './plugins/redirect-with-message.js';
 import security from './plugins/security.js';
@@ -30,17 +29,19 @@ import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
 import shadowCapture from './plugins/shadow-capture.js';
 import growthBook from './plugins/growth-book.js';
+import serviceBearerAuth from './plugins/service-bearer-auth.js';
 
 import * as publicRoutes from './routes/public/index.js';
 import * as protectedRoutes from './routes/protected/index.js';
+import { classroomRoutes } from './routes/apps/classroom.js';
 
 import {
   API_LOCATION,
-  EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
+  FCC_ENABLE_CLASSROOM,
   FREECODECAMP_NODE_ENV,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
@@ -135,9 +136,7 @@ export const build = async (
     clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
   });
 
-  const provider =
-    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
-  void fastify.register(mailer, { provider });
+  void fastify.register(mailer, { provider: createMailProvider() });
 
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI ?? fastify.gb.isOn('swagger-ui')) {
@@ -176,6 +175,7 @@ export const build = async (
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
   void fastify.register(bouncer);
+  await fastify.register(serviceBearerAuth);
 
   // Routes requiring authentication:
   void fastify.register(async function (fastify, _opts) {
@@ -191,6 +191,7 @@ export const build = async (
 
       await fastify.register(protectedRoutes.challengeRoutes);
       await fastify.register(protectedRoutes.donateRoutes);
+      await fastify.register(protectedRoutes.socratesRoutes);
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
       await fastify.register(protectedRoutes.settingRoutes);
       await fastify.register(protectedRoutes.userRoutes);
@@ -236,6 +237,14 @@ export const build = async (
     done();
   });
   void fastify.register(examEnvironmentOpenRoutes);
+
+  // Service-to-service app routes (API key auth), gated by the classroom flag:
+  if (FCC_ENABLE_CLASSROOM ?? fastify.gb.isOn('classroom-mode')) {
+    void fastify.register(async function (fastify) {
+      fastify.addHook('onRequest', fastify.validateBearerToken);
+      await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
+    });
+  }
 
   if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);

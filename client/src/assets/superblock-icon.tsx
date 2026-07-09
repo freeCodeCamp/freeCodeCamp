@@ -114,6 +114,7 @@ const iconMap = {
   [SuperBlocks.LearnRecursionWithJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: JavaScriptIcon,
   [SuperBlocks.IntroductionToAsynchronousJS]: JavaScriptIcon,
+  [SuperBlocks.LearnDataVisualizationWithD3]: D3Icon,
   [SuperBlocks.IntroductionToPythonBasics]: PythonIcon,
   [SuperBlocks.LearnPythonLoopsAndSequences]: PythonIcon,
   [SuperBlocks.LearnPythonDictionariesAndSets]: PythonIcon,

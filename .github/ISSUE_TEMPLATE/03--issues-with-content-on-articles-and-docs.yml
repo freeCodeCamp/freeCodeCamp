@@ -1,6 +1,7 @@
 name: Issues - Content in our Articles and other Documentation
 description: Report issues with content on a specific article, like broken links, typos, missing parts, etc.
-labels: ['type: bug', 'status: waiting triage']
+type: Bug
+labels: ['status: waiting triage']
 body:
   - type: markdown
     attributes:
@@ -17,7 +18,7 @@ body:
   - type: input
     attributes:
       label: Affected Page
-      description: Add a link to the coding challenge with the problem.
+      description: Add a link to the article or documentation page with the problem.
     validations:
       required: true
   - type: textarea

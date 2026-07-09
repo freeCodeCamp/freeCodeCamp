@@ -97,15 +97,21 @@
           "dashedName": "javascript-loops",
           "blocks": [
             "lecture-working-with-loops",
+            "workshop-word-counter",
             "workshop-sentence-analyzer",
+            "lab-traffic-light-sequencer",
             "workshop-space-mission-roster",
+            "workshop-heritage-library-catalog",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "workshop-festival-crowd-flow-simulator",
             "lab-missing-letter-detector",
+            "lab-smart-pantry-restocker",
+            "lab-proofreading-tool",
             "review-javascript-loops",
             "quiz-javascript-loops"
           ]
@@ -135,6 +141,7 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
+            "lab-playlist-remix-engine",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -149,7 +156,6 @@
             "lab-symmetric-difference",
             "lab-value-remover-function",
             "lab-matching-object-filter",
-            "lab-prime-number-sum-calculator",
             "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
             "lab-all-true-property-validator",
@@ -326,9 +332,9 @@
         },
         {
           "dashedName": "graphs-and-trees",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
+            "workshop-shortest-path-algorithm-js",
             "lab-adjacency-list-to-matrix-converter-js",
             "workshop-breadth-first-search-js",
             "lab-depth-first-search-js",
@@ -339,9 +345,10 @@
         },
         {
           "dashedName": "dynamic-programming",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming-js",
+            "lab-nth-fibonacci-number-js",
+            "lab-prime-number-sum-calculator",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]

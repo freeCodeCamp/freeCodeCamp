@@ -1,6 +1,7 @@
 name: Issue - User Interface on our Platforms
 description: Report a software bug on /learn, /news, Community Forum, Code Radio, or any of the platforms.
-labels: ['type: bug', 'status: waiting triage']
+type: Bug
+labels: ['status: waiting triage']
 body:
   - type: markdown
     attributes:
@@ -14,7 +15,7 @@ body:
   - type: input
     attributes:
       label: Affected Page
-      description: Add a link to the coding challenge with the problem.
+      description: Add a link to the page with the problem.
     validations:
       required: true
   - type: textarea

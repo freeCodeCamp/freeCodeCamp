@@ -1,0 +1,41 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-routing-in-express-js",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "69a848d4f1d1b4b9e176a026",
+      "title": "What Is Routing and How Do Route Methods Work in Express?"
+    },
+    {
+      "id": "69a9182c1bc7cc1a76116635",
+      "title": "What Are Route Paths in Express?"
+    },
+    {
+      "id": "69a91831ef910efdde054a5a",
+      "title": "What Are Route Parameters?"
+    },
+    {
+      "id": "69a918332f325a9cb8ffad18",
+      "title": "What Are Route Handlers?"
+    },
+    {
+      "id": "69a9183588765b5a18d20954",
+      "title": "What Are the Different Response Methods in Express?"
+    },
+    {
+      "id": "69a918497b6424e132898217",
+      "title": "How Can You Create Chainable Route Handlers Using app.route()?"
+    },
+    {
+      "id": "69a9184b42ae3947e4925016",
+      "title": "How Does express.Router Work?"
+    },
+    {
+      "id": "69a9184df26779d958824552",
+      "title": "How Can You Serve Static Files in Express?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

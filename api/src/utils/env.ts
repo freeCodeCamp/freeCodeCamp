@@ -63,6 +63,8 @@ assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
+assert.ok(process.env.SOCRATES_API_KEY);
+assert.ok(process.env.SOCRATES_ENDPOINT);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -92,12 +94,18 @@ assert.ok(
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
-  assert.ok(process.env.SES_ID);
-  assert.ok(process.env.SES_SECRET);
+  assert.ok(
+    process.env.SES_SMTP_USERNAME,
+    'SES_SMTP_USERNAME is required in production.'
+  );
+  assert.ok(
+    process.env.SES_SMTP_PASSWORD,
+    'SES_SMTP_PASSWORD is required in production.'
+  );
   assert.notEqual(
-    process.env.SES_SECRET,
-    'ses_secret_from_aws',
-    'The SES secret should be changed from the default value.'
+    process.env.SES_SMTP_PASSWORD,
+    'ses_smtp_password_from_aws',
+    'The SES SMTP password should be changed from the default value.'
   );
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
@@ -158,6 +166,17 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'fastify_api_sdk_client_key_from_growthbook_dashboard',
     'The GROWTHBOOK_FASTIFY_CLIENT_KEY env should be changed from the default value.'
   );
+  if (process.env.FCC_ENABLE_CLASSROOM === 'true') {
+    assert.ok(
+      process.env.TPA_API_BEARER_TOKEN,
+      'TPA_API_BEARER_TOKEN should be set.'
+    );
+    assert.notEqual(
+      process.env.TPA_API_BEARER_TOKEN,
+      'tpa_api_bearer_token_from_dashboard',
+      'The TPA_API_BEARER_TOKEN env should be changed from the default value.'
+    );
+  }
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
@@ -194,6 +213,9 @@ export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
 export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES
 );
+export const FCC_ENABLE_CLASSROOM = undefinedOrBool(
+  process.env.FCC_ENABLE_CLASSROOM
+);
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
 export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
 export const SENTRY_DSN =
@@ -207,9 +229,10 @@ export const SENTRY_ENVIRONMENT =
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
-export const SES_ID = process.env.SES_ID;
-export const SES_SECRET = process.env.SES_SECRET;
-export const SES_REGION = process.env.SES_REGION || 'us-east-1';
+export const SES_SMTP_USERNAME = process.env.SES_SMTP_USERNAME;
+export const SES_SMTP_PASSWORD = process.env.SES_SMTP_PASSWORD;
+export const SES_SMTP_HOST =
+  process.env.SES_SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
@@ -217,6 +240,9 @@ export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
 export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
   process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
+export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
+export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
+export const TPA_API_BEARER_TOKEN = process.env.TPA_API_BEARER_TOKEN;
 
 function undefinedOrBool(val: string | undefined): undefined | boolean {
   if (!val) {

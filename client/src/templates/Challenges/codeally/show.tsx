@@ -55,6 +55,7 @@ import { OnaInstructions } from './ona-instructions';
 
 import './codeally.css';
 import { CodespacesInstructions } from './codespaces-instructions';
+import { isCodeAllyProjectCompleted } from './project-submit';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -150,7 +151,6 @@ function ShowCodeAlly({
       }
     }
   } = data;
-
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
@@ -174,6 +174,7 @@ function ShowCodeAlly({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -189,15 +190,13 @@ function ShowCodeAlly({
   }: {
     showCompletionModal: boolean;
   }) => {
-    const isPartiallyCompleted = partiallyCompletedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    const isCompleted = completedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    if (!isPartiallyCompleted && !isCompleted) {
+    if (
+      !isCodeAllyProjectCompleted({
+        challengeId,
+        completedChallenges,
+        partiallyCompletedChallenges
+      })
+    ) {
       createFlashMessage({
         type: 'danger',
         message: FlashMessages.CompleteProjectFirst
