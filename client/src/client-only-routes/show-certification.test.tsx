@@ -1,12 +1,25 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
+import { Provider } from 'react-redux';
+import { http, HttpResponse } from 'msw';
+import { setupServer } from 'msw/node';
 import { Certification } from '@freecodecamp/shared/config/certification-settings';
-import { describe, expect, test, vi } from 'vitest';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  describe,
+  expect,
+  test,
+  vi
+} from 'vitest';
 
 import i18nTestConfig from '../../i18n/config-for-tests';
 import translations from '../../i18n/locales/english/translations.json';
-import {
+import { createStore } from '../redux/create-store';
+import { initialState } from '../redux';
+import ShowCertification, {
   CertificateDisplay,
   DonationSection,
   ShareCertBtns
@@ -21,6 +34,8 @@ i18nTestConfig.addResourceBundle(
   true,
   true
 );
+
+vi.mock('../utils/get-words');
 
 vi.mock('../components/Donation/multi-tier-donation-form', () => ({
   default: () => <div data-testid='donation-tier-selector' />
@@ -135,6 +150,101 @@ describe('<DonationSection />', () => {
     );
 
     expect(hideDonationSection).toHaveBeenCalledTimes(1);
+  });
+});
+
+const CERT_SLUG = 'responsive-web-design';
+const USERNAME = 'certifieduser';
+const PATHNAME = `/certification/${USERNAME}/${CERT_SLUG}`;
+
+const certData = {
+  username: USERNAME,
+  name: 'Certified User',
+  certSlug: CERT_SLUG,
+  certTitle: 'Legacy Responsive Web Design',
+  completionTime: 300,
+  date: new Date('2018-08-03').getTime()
+};
+
+const server = setupServer(
+  http.get(`*/certificate/showCert/${USERNAME}/${CERT_SLUG}`, () =>
+    HttpResponse.json(certData)
+  )
+);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+const certifiedUserProfile = {
+  username: USERNAME,
+  completedChallenges: [],
+  isDonating: true
+};
+
+const completedFetchState = { pending: false, complete: true, errored: false };
+
+function makeStore(
+  sessionUser: object | null,
+  otherUser: object | null = null
+) {
+  return createStore({
+    app: {
+      ...initialState,
+      user: { sessionUser, otherUser },
+      userFetchState: completedFetchState
+    }
+  });
+}
+
+const defaultProps = {
+  username: USERNAME,
+  certSlug: CERT_SLUG,
+  location: { pathname: PATHNAME }
+};
+
+const renderShowCertification = (store: ReturnType<typeof createStore>) =>
+  render(
+    <Provider store={store}>
+      <I18nextProvider i18n={i18nTestConfig}>
+        <ShowCertification {...defaultProps} />
+      </I18nextProvider>
+    </Provider>
+  );
+
+describe('<ShowCertification />', () => {
+  test("renders cert details when viewing someone else's cert", async () => {
+    renderShowCertification(makeStore(null, certifiedUserProfile));
+
+    expect(
+      await screen.findByTestId('successful-completion')
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('certification-title')).toBeInTheDocument();
+    expect(screen.getByTestId('issue-date')).toBeInTheDocument();
+  });
+
+  test("hides share buttons when viewing someone else's cert", async () => {
+    renderShowCertification(makeStore(null, certifiedUserProfile));
+
+    await screen.findByTestId('certification-title');
+    expect(screen.queryByTestId('linkedin-share-btn')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('twitter-share-btn')).not.toBeInTheDocument();
+  });
+
+  test('renders cert details when viewing your own cert', async () => {
+    renderShowCertification(makeStore(certifiedUserProfile));
+
+    expect(
+      await screen.findByTestId('successful-completion')
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('certification-title')).toBeInTheDocument();
+  });
+
+  test('shows share buttons when viewing your own cert', async () => {
+    renderShowCertification(makeStore(certifiedUserProfile));
+
+    expect(await screen.findByTestId('linkedin-share-btn')).toBeInTheDocument();
+    expect(screen.getByTestId('twitter-share-btn')).toBeInTheDocument();
   });
 });
 

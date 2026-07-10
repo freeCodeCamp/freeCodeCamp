@@ -12,6 +12,12 @@ const renderNodes = reactNodes => {
     return reactNodes;
   }
 
+  // a single element child (e.g. <h1><strong>text</strong></h1>) must be
+  // wrapped, otherwise Object.keys iterates the element object itself
+  if (React.isValidElement(reactNodes)) {
+    return renderNodes([reactNodes]);
+  }
+
   return Object.keys(reactNodes).map((key, i) => {
     const child = reactNodes[key];
     const isElement = React.isValidElement(child);
