@@ -9,6 +9,29 @@ function getDailyLimit(isDonating: boolean): number {
   return isDonating ? DAILY_LIMITS.donor : DAILY_LIMITS.nonDonor;
 }
 
+const NETWORK_ERROR_CODES = new Set([
+  'ENOTFOUND',
+  'ECONNREFUSED',
+  'ECONNRESET',
+  'ETIMEDOUT',
+  'EAI_AGAIN'
+]);
+
+function isFetchNetworkError(error: unknown): boolean {
+  if (!(error instanceof TypeError)) {
+    return false;
+  }
+  const cause = (error as { cause?: unknown }).cause;
+  const code =
+    cause && typeof cause === 'object' && 'code' in cause
+      ? (cause as { code?: unknown }).code
+      : undefined;
+  if (typeof code === 'string') {
+    return code.startsWith('UND_ERR_') || NETWORK_ERROR_CODES.has(code);
+  }
+  return error.message === 'fetch failed';
+}
+
 /**
  *
  * @param fastify The Fastify instance.
@@ -49,6 +72,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const limit = getDailyLimit(req.user.isDonating);
+      const donorStatus = req.user.isDonating ? 'donor' : 'non-donor';
       const now = new Date();
       const todayUTC = new Date(
         Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
@@ -61,6 +85,9 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (existing && existing.count >= limit) {
+        fastify.Sentry?.metrics?.count('socrates.rate_limit_hit', 1, {
+          attributes: { source: 'local', donorStatus }
+        });
         return reply.status(429).send({
           error: 'socrates-daily-limit',
           type: 'info',
@@ -94,6 +121,8 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         });
       };
 
+      const upstreamFetchStart = performance.now();
+
       try {
         const response = await fetch(`${SOCRATES_ENDPOINT}/hint`, {
           method: 'POST',
@@ -110,13 +139,19 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           })
         });
 
+        fastify.Sentry?.metrics?.distribution(
+          'socrates.upstream_latency_ms',
+          performance.now() - upstreamFetchStart,
+          { unit: 'millisecond', attributes: { result: 'success' } }
+        );
+
         const responseText = await response.text();
 
         if (!response.ok) {
           req.log.error(
             {
               status: response.status,
-              response: responseText || undefined
+              upstreamBody: responseText.slice(0, 500)
             },
             'Socrates API returned an error response.'
           );
@@ -124,6 +159,9 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           await rollbackUsage();
 
           if (response.status === 429) {
+            fastify.Sentry?.metrics?.count('socrates.rate_limit_hit', 1, {
+              attributes: { source: 'upstream', donorStatus }
+            });
             return reply.status(429).send({
               error: 'socrates-rate-limit',
               type: 'info',
@@ -142,6 +180,9 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
             } catch {
               // ignore parse errors
             }
+            fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
+              attributes: { reason: 'bad_status' }
+            });
             return reply.status(400).send({
               error: upstreamMessage || 'socrates-unable-to-generate',
               type: 'info',
@@ -150,6 +191,12 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
             });
           }
 
+          fastify.Sentry?.captureException(
+            new Error(`Socrates API returned status ${response.status}`)
+          );
+          fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
+            attributes: { reason: 'bad_status' }
+          });
           return reply.status(500).send({
             error: 'socrates-unavailable',
             type: 'danger',
@@ -162,10 +209,14 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         try {
           payload = responseText ? JSON.parse(responseText) : null;
         } catch (error) {
-          req.log.error({
-            err: error,
-            response: responseText || undefined
+          fastify.Sentry?.captureException(error);
+          fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
+            attributes: { reason: 'invalid_response' }
           });
+          req.log.error(
+            { err: error },
+            'Failed to parse Socrates API response.'
+          );
           await rollbackUsage();
           return reply.status(500).send({
             error: 'socrates-unavailable',
@@ -180,9 +231,16 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           typeof payload !== 'object' ||
           typeof (payload as { hint?: unknown }).hint !== 'string'
         ) {
+          fastify.Sentry?.captureException(
+            new Error('Socrates API did not return a hint')
+          );
+          fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
+            attributes: { reason: 'missing_hint' }
+          });
           req.log.error(
             {
-              response: payload
+              payloadType: payload === null ? 'null' : typeof payload,
+              hintType: typeof (payload as { hint?: unknown } | null)?.hint
             },
             'Socrates API did not return a hint.'
           );
@@ -197,8 +255,24 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
 
         const { hint } = payload as { hint: string };
 
+        fastify.Sentry?.metrics?.count('socrates.hint_granted', 1, {
+          attributes: { donorStatus }
+        });
         return { hint, attempts, limit } as const;
       } catch (error) {
+        fastify.Sentry?.metrics?.distribution(
+          'socrates.upstream_latency_ms',
+          performance.now() - upstreamFetchStart,
+          { unit: 'millisecond', attributes: { result: 'failure' } }
+        );
+        if (!isFetchNetworkError(error)) {
+          fastify.Sentry?.captureException(error);
+        }
+        fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
+          attributes: {
+            reason: isFetchNetworkError(error) ? 'network' : 'exception'
+          }
+        });
         req.log.error(
           { err: error },
           'Failed to fetch hint from Socrates API.'
