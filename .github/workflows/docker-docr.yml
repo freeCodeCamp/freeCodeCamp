@@ -96,26 +96,30 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Extract the compiled dist (with source maps) from the image we just
-      # pushed, so the maps match the exact artifact that ships. The release is
-      # uploaded here but left UNFINALIZED — deploy-api.yml finalizes it only
-      # after the rollout is verified live.
-      - name: Extract API dist for Sentry source maps
-        if: inputs.app == 'api'
-        run: |
-          IMAGE="registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}"
-          docker pull "$IMAGE"
-          container_id=$(docker create "$IMAGE")
-          mkdir -p sentry-dist
-          docker cp "$container_id:/home/node/fcc/api" sentry-dist/
-          docker rm "$container_id"
-
-      - name: Upload source maps to Sentry (unfinalized)
-        if: inputs.app == 'api'
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: freecodecamp
-          SENTRY_PROJECT: api-fastify
-        run: |
-          npx --yes @sentry/cli@3.6.0 releases new "${{ env.tagname }}"
-          npx --yes @sentry/cli@3.6.0 sourcemaps upload --release "${{ env.tagname }}" sentry-dist/api/dist
+      # TODO(o11y): source-map upload + release marking disabled pending a
+      # follow-up PR with a stable release-id scheme. Also fix the upload path
+      # when re-enabling: the image ships /home/node/fcc/api/src (dist flattened
+      # by the COPY in docker/api/Dockerfile), so `docker cp .../fcc/api` yields
+      # sentry-dist/api/src — the old upload pointed at sentry-dist/api/dist,
+      # which never exists (silent no-op, so maps never uploaded). Path below is
+      # pre-corrected to sentry-dist/api/src. See
+      # .scratchpad/o11y-cutover-review-2026-07-10.md.
+      # - name: Extract API dist for Sentry source maps
+      #   if: inputs.app == 'api'
+      #   run: |
+      #     IMAGE="registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}"
+      #     docker pull "$IMAGE"
+      #     container_id=$(docker create "$IMAGE")
+      #     mkdir -p sentry-dist
+      #     docker cp "$container_id:/home/node/fcc/api" sentry-dist/
+      #     docker rm "$container_id"
+      #
+      # - name: Upload source maps to Sentry (unfinalized)
+      #   if: inputs.app == 'api'
+      #   env:
+      #     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      #     SENTRY_ORG: freecodecamp
+      #     SENTRY_PROJECT: api-fastify
+      #   run: |
+      #     npx --yes @sentry/cli@3.6.0 releases new "${{ env.tagname }}"
+      #     npx --yes @sentry/cli@3.6.0 sourcemaps upload --release "${{ env.tagname }}" sentry-dist/api/src

@@ -314,17 +314,19 @@ jobs:
           # shellcheck disable=SC2029 # client-side expansion of REMOTE_SCRIPT is intended
           ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"
 
-      # Source maps for this release were uploaded (unfinalized) during the
-      # build job. Finalize the release once the stack deploy succeeds.
-      # TODO: gate on a rollback-safe convergence check (docker service state);
-      # the public-edge probe was removed because Cloudflare challenges the CI IP.
-      - name: Finalize Sentry release
-        env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: freecodecamp
-          SENTRY_PROJECT: api-fastify
-          RELEASE: ${{ needs.build.outputs.tagname }}
-          DEPLOY_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
-        run: |
-          npx --yes @sentry/cli@3.6.0 releases finalize "$RELEASE"
-          npx --yes @sentry/cli@3.6.0 releases deploys "$RELEASE" new -e "$DEPLOY_ENV"
+      # TODO(o11y): Sentry release finalize disabled pending a follow-up PR with
+      # a stable release-id scheme (source-map upload in docker-docr.yml is
+      # disabled alongside). Re-enabling should also gate on a rollback-safe
+      # convergence check (docker service state) before finalizing, since
+      # `docker stack deploy --detach=false` exits 0 through a healthcheck
+      # rollback. See .scratchpad/o11y-cutover-review-2026-07-10.md.
+      # - name: Finalize Sentry release
+      #   env:
+      #     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      #     SENTRY_ORG: freecodecamp
+      #     SENTRY_PROJECT: api-fastify
+      #     RELEASE: ${{ needs.build.outputs.tagname }}
+      #     DEPLOY_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+      #   run: |
+      #     npx --yes @sentry/cli@3.6.0 releases finalize "$RELEASE"
+      #     npx --yes @sentry/cli@3.6.0 releases deploys "$RELEASE" new -e "$DEPLOY_ENV"
