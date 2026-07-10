@@ -21,6 +21,18 @@ vi.mock('../helpers/challenge-helpers', async () => {
   };
 });
 
+vi.mock('../../utils/exam.js', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('../../utils/exam.js')
+  >('../../utils/exam.js');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    generateRandomExam: vi.fn(originalModule.generateRandomExam)
+  };
+});
+
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash-es';
@@ -45,6 +57,7 @@ import {
   completedExamChallengeAllCorrect,
   completedTrophyChallenges,
   examChallengeId,
+  examJson,
   mockResultsZeroCorrect,
   mockResultsTwoCorrect,
   mockResultsAllCorrect,
@@ -58,8 +71,10 @@ import { Answer } from '../../utils/exam-types.js';
 import type { getSessionUser } from '../../schemas/user/get-session-user.js';
 import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
 import { encodeUserToken } from '../../utils/tokens.js';
+import { generateRandomExam } from '../../utils/exam.js';
 
 const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
+const mockGenerateRandomExam = vi.mocked(generateRandomExam);
 
 const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
 const DATE_NOW = Date.now();
@@ -281,6 +296,13 @@ describe('challengeRoutes', () => {
       });
 
       test('should return 400 for invalid user tokens', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPost('/coderoad-challenge-completed')
           .set('coderoad-user-token', 'invalid')
           .send({
@@ -292,6 +314,10 @@ describe('challengeRoutes', () => {
           type: 'error'
         });
         expect(response.status).toBe(400);
+        expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
+          attributes: { reason: 'invalid_token' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return 400 for nonsensical user tokens', async () => {
@@ -318,6 +344,13 @@ describe('challengeRoutes', () => {
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPost('/coderoad-challenge-completed')
           .set('coderoad-user-token', token)
           .send({ tutorialId: 'invalid' });
@@ -327,6 +360,10 @@ describe('challengeRoutes', () => {
           type: 'error'
         });
         expect(response.status).toBe(400);
+        expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
+          attributes: { reason: 'untrusted_org' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return 400 if invalid tutorialId but is hosted on freeCodeCamp', async () => {
@@ -335,6 +372,13 @@ describe('challengeRoutes', () => {
         expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
 
         const response = await superPost('/coderoad-challenge-completed')
           .set('coderoad-user-token', token)
@@ -345,6 +389,10 @@ describe('challengeRoutes', () => {
           type: 'error'
         });
         expect(response.status).toBe(400);
+        expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
+          attributes: { reason: 'invalid_tutorial' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('Should complete challenge with code 200', async () => {
@@ -353,6 +401,13 @@ describe('challengeRoutes', () => {
         expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
 
         // This route is special since it does not have CSRF protection OR authN
         // protection. As such, we use a normal `request` to send the bare
@@ -380,6 +435,10 @@ describe('challengeRoutes', () => {
 
         expect(challengeCompleted).toBe(true);
         expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith('coderoad.challenge_completed', 1, {
+          attributes: { result: 'completed' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('Should complete project with code 200', async () => {
@@ -388,6 +447,13 @@ describe('challengeRoutes', () => {
         expect(tokenResponse.status).toBe(200);
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
 
         const response = await superPost('/coderoad-challenge-completed')
           .set('coderoad-user-token', token)
@@ -409,6 +475,10 @@ describe('challengeRoutes', () => {
         });
         expect(projectCompleted).toBe(true);
         expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith('coderoad.challenge_completed', 1, {
+          attributes: { result: 'partial' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       // This has to be the last test since vi.mockRestore replaces the original
@@ -416,6 +486,12 @@ describe('challengeRoutes', () => {
       // reason)
       test('Should return an error response if something goes wrong', async () => {
         const originalUserToken = fastifyTestInstance.prisma.userToken;
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
 
         vi.spyOn(
           fastifyTestInstance.prisma,
@@ -441,6 +517,9 @@ describe('challengeRoutes', () => {
           type: 'error'
         });
         expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       afterAll(async () => {
@@ -565,6 +644,40 @@ describe('challengeRoutes', () => {
           expect(response_2.statusCode).toBe(403);
         });
 
+        test('POST does not log the raw solution or githubLink on backEndProject validation failure', async () => {
+          const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
+          spy.mockClear();
+
+          const leakySolution =
+            'https://example.com/solution?api_key=super-secret';
+          const leakyGithubLink = 'not-a-valid-url-with-token-abc123';
+
+          const response = await superPost('/project-completed').send({
+            id: id1,
+            challengeType: challengeTypes.backEndProject,
+            solution: leakySolution,
+            githubLink: leakyGithubLink
+          });
+
+          expect(response.statusCode).toBe(403);
+
+          const call = spy.mock.calls.find(
+            ([, msg]) => msg === 'Invalid backEndProject submission'
+          );
+          expect(call).toBeDefined();
+          const [logObject] = call!;
+          expect(JSON.stringify(logObject)).not.toContain(leakySolution);
+          expect(JSON.stringify(logObject)).not.toContain(leakyGithubLink);
+          expect(JSON.stringify(logObject)).not.toContain('super-secret');
+          expect(JSON.stringify(logObject)).not.toContain('token-abc123');
+          expect(logObject).toEqual({
+            hasSolution: true,
+            solutionLength: leakySolution.length,
+            hasGithubLink: true,
+            githubLinkLength: leakyGithubLink.length
+          });
+        });
+
         test('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
           const response = await superPost('/project-completed').send({
             id: id1, // not a codeally challenge id, but does not matter
@@ -611,6 +724,13 @@ describe('challengeRoutes', () => {
 
         test('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
           const now = Date.now();
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+
           const response =
             await superPost('/project-completed').send(codeallyProject);
 
@@ -641,6 +761,10 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('challenge.completed', 1, {
+            attributes: { result: 'completed' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('POST accepts backend projects', async () => {
@@ -785,6 +909,12 @@ describe('challengeRoutes', () => {
 
         test('POST accepts backend challenges', async () => {
           const now = Date.now();
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
 
           const response = await superPost('/backend-challenge-completed').send(
             backendChallengeBody1
@@ -813,6 +943,10 @@ describe('challengeRoutes', () => {
             completedDate
           });
           expect(response.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('challenge.completed', 1, {
+            attributes: { result: 'completed' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('POST correctly handles multiple requests', async () => {
@@ -928,6 +1062,12 @@ describe('challengeRoutes', () => {
         // HTML(0), JS(1), Modern(6), Video(11), The Odin Project(15)
         test('POST accepts challenges without files present', async () => {
           const now = Date.now();
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
 
           const response = await superPost('/modern-challenge-completed').send(
             HtmlChallengeBody
@@ -957,6 +1097,10 @@ describe('challengeRoutes', () => {
             completedDate,
             savedChallenges: []
           });
+          expect(count).toHaveBeenCalledWith('challenge.completed', 1, {
+            attributes: { result: 'completed' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         // JS Project(5), Multi-file Cert Project(14)
@@ -1590,6 +1734,13 @@ describe('challengeRoutes', () => {
         });
 
         test('rejects requests for challenges that cannot be saved', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+
           const response = await superPost('/save-challenge').send({
             id: '66ebd4ae2812430bb883c786',
             files: multiFiles
@@ -1603,9 +1754,20 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
           expect(response.text).toEqual('That challenge type is not saveable.');
           expect(savedChallenges).toHaveLength(0);
+          expect(count).toHaveBeenCalledWith('challenge.saved', 1, {
+            attributes: { result: 'not_saveable' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('update the user savedchallenges and return them', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+
           const response = await superPost('/save-challenge').send({
             id: multiFileCertProjectId,
             files: updatedMultiFiles
@@ -1636,6 +1798,10 @@ describe('challengeRoutes', () => {
             ]
           });
           expect(response.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('challenge.saved', 1, {
+            attributes: { result: 'saved' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
       });
     });
@@ -1716,12 +1882,22 @@ describe('challengeRoutes', () => {
         });
 
         test('GET rejects requests with non-existent id param', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
           const response = await superGet('/exam/123412341234123412341234');
 
           expect(response.body).toStrictEqual({
             error: 'An error occurred trying to get the exam from the database.'
           });
           expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('GET rejects requests where camper has not completed prerequisites', async () => {
@@ -1770,6 +1946,33 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.statusCode).toBe(200);
+        });
+
+        test('GET captures unexpected errors when the generated exam fails validation', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          mockGenerateRandomExam.mockReturnValueOnce(
+            Array.from({ length: 3 }, (_, i) => ({
+              id: 'abcdefghij',
+              question: `Malformed question ${i}`,
+              answers: [{ id: 'abcdefghij', answer: 'Only one answer' }]
+            }))
+          );
+
+          const response = await superGet('/exam/647e22d18acb466c97ccbef8');
+
+          expect(response.body).toStrictEqual({
+            error: 'An error occurred trying to randomize the exam.'
+          });
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
       });
       describe('/ms-trophy-challenge-completed', () => {
@@ -1844,15 +2047,38 @@ describe('challengeRoutes', () => {
           });
 
           test('POST rejects requests if the user does not have a Microsoft username', async () => {
+            const count = vi.fn();
+            const originalSentry = fastifyTestInstance.Sentry;
+            fastifyTestInstance.Sentry = {
+              ...originalSentry,
+              metrics: { ...originalSentry.metrics, count }
+            };
+
             const res = await superPost('/ms-trophy-challenge-completed').send({
               id: trophyChallengeId
             });
 
             expect(res.body).toStrictEqual(userHasNotLinkedTheirAccount);
             expect(res.statusCode).toBe(403);
+            expect(count).toHaveBeenCalledWith(
+              'ms_trophy.verify_completed',
+              1,
+              {
+                attributes: { result: 'no_ms_username' }
+              }
+            );
+
+            fastifyTestInstance.Sentry = originalSentry;
           });
 
           test("POST rejects requests if Microsoft's api responds with an error", async () => {
+            const count = vi.fn();
+            const originalSentry = fastifyTestInstance.Sentry;
+            fastifyTestInstance.Sentry = {
+              ...originalSentry,
+              metrics: { ...originalSentry.metrics, count }
+            };
+
             const msUsername = 'ANRandom';
             await createMSUsernameRecord(msUsername);
             // This can be any error that the route can serialize. Other than
@@ -1875,9 +2101,27 @@ describe('challengeRoutes', () => {
 
             expect(res.body).toStrictEqual(verifyError);
             expect(res.statusCode).toBe(403);
+            expect(count).toHaveBeenCalledWith(
+              'ms_trophy.verify_completed',
+              1,
+              {
+                attributes: { result: 'verify_failed' }
+              }
+            );
+
+            fastifyTestInstance.Sentry = originalSentry;
           });
 
           test('POST handles unexpected errors', async () => {
+            const originalSentry = fastifyTestInstance.Sentry;
+            const captureException = vi.fn();
+            const distribution = vi.fn();
+            fastifyTestInstance.Sentry = {
+              ...originalSentry,
+              captureException,
+              metrics: { ...originalSentry.metrics, distribution }
+            };
+
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() => {
               throw new Error('Network error');
             });
@@ -1890,9 +2134,25 @@ describe('challengeRoutes', () => {
 
             expect(res.body).toStrictEqual(unexpectedError);
             expect(res.statusCode).toBe(500);
+            expect(captureException).toHaveBeenCalledOnce();
+            expect(distribution).toHaveBeenCalledWith(
+              'ms_trophy.verify_latency_ms',
+              expect.any(Number),
+              { unit: 'millisecond', attributes: { result: 'failure' } }
+            );
+
+            fastifyTestInstance.Sentry = originalSentry;
           });
 
           test('POST updates the user record with a new completed challenge', async () => {
+            const count = vi.fn();
+            const distribution = vi.fn();
+            const originalSentry = fastifyTestInstance.Sentry;
+            fastifyTestInstance.Sentry = {
+              ...originalSentry,
+              metrics: { ...originalSentry.metrics, count, distribution }
+            };
+
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
@@ -1932,6 +2192,20 @@ describe('challengeRoutes', () => {
                 }
               ]
             });
+            expect(count).toHaveBeenCalledWith(
+              'ms_trophy.verify_completed',
+              1,
+              {
+                attributes: { result: 'verified' }
+              }
+            );
+            expect(distribution).toHaveBeenCalledWith(
+              'ms_trophy.verify_latency_ms',
+              expect.any(Number),
+              { unit: 'millisecond', attributes: { result: 'success' } }
+            );
+
+            fastifyTestInstance.Sentry = originalSentry;
           });
 
           test('POST correctly handles multiple requests', async () => {
@@ -2182,6 +2456,13 @@ describe('challengeRoutes', () => {
         });
 
         test('POST rejects requests with invalid userCompletedExam values', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
@@ -2214,6 +2495,57 @@ describe('challengeRoutes', () => {
             error: `An error occurred trying to submit your exam.`
           });
           expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
+
+        test('POST captures an exception when the exam from the database fails schema validation', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          const examSpy = vi
+            .spyOn(fastifyTestInstance.prisma.exam, 'findUnique')
+            .mockResolvedValueOnce({
+              ...examJson,
+              numberOfQuestionsInExam: 999
+            } as never);
+
+          const response = await superRequest('/exam-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: examChallengeId,
+            challengeType: 17,
+            userCompletedExam: {
+              examTimeInSeconds: 111,
+              userExamQuestions: [
+                {
+                  id: 'q-id',
+                  question: '?',
+                  answer: {
+                    id: 'a-id',
+                    answer: 'a'
+                  }
+                }
+              ]
+            }
+          });
+
+          examSpy.mockRestore();
+
+          expect(response.body).toStrictEqual({
+            error:
+              'An error occurred validating the exam information from the database.'
+          });
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
       });
 
@@ -2251,6 +2583,12 @@ describe('challengeRoutes', () => {
 
         test('POST handles submitting a failing exam', async () => {
           const now = Date.now();
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
 
           // Submit exam with 0 correct answers
           const response = await submitExam(examWithZeroCorrect);
@@ -2285,6 +2623,10 @@ describe('challengeRoutes', () => {
             examResults: mockResultsZeroCorrect
           });
           expect(response.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('curriculum_exam.completed', 1, {
+            attributes: { result: 'failed' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test("POST always adds to the user's completedExams", async () => {
@@ -2326,6 +2668,13 @@ describe('challengeRoutes', () => {
         test('POST updates user progress if they have not completed the exam before', async () => {
           // Submit exam with 2/3 correct answers
           const now = Date.now();
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+
           const res = await submitExam(examWithTwoCorrect);
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -2351,6 +2700,10 @@ describe('challengeRoutes', () => {
             examResults: mockResultsTwoCorrect
           });
           expect(res.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('curriculum_exam.completed', 1, {
+            attributes: { result: 'completed' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('POST does not update user progress if new exam is not an improvement', async () => {
@@ -2360,6 +2713,13 @@ describe('challengeRoutes', () => {
           const user1 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { id: defaultUserId }
           });
+
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
 
           // Submit exam with 2/3 correct answers (no improvement)
           const res2 = await submitExam(examWithTwoCorrect);
@@ -2378,6 +2738,10 @@ describe('challengeRoutes', () => {
             examResults: mockResultsTwoCorrect
           });
           expect(res2.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('curriculum_exam.completed', 1, {
+            attributes: { result: 'already_completed' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('POST updates user progress if exam is an improvement', async () => {
@@ -2485,6 +2849,13 @@ describe('challengeRoutes', () => {
         });
 
         test('POST adds new attempt to quizAttempts', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+
           const response = await superPost('/submit-quiz-attempt').send({
             challengeId: '66df3b712c41c499e9d31e5b',
             quizId: '0'
@@ -2506,6 +2877,10 @@ describe('challengeRoutes', () => {
 
           expect(response.statusCode).toBe(200);
           expect(response.body).toStrictEqual({});
+          expect(count).toHaveBeenCalledWith('quiz.attempt_submitted', 1, {
+            attributes: { result: 'created' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('POST updates the timestamp of the existing attempt', async () => {
@@ -2526,6 +2901,13 @@ describe('challengeRoutes', () => {
               ]
             }
           });
+
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
 
           const response = await superPost('/submit-quiz-attempt').send({
             challengeId: '66df3b712c41c499e9d31e5b',
@@ -2553,6 +2935,10 @@ describe('challengeRoutes', () => {
 
           expect(response.statusCode).toBe(200);
           expect(response.body).toStrictEqual({});
+          expect(count).toHaveBeenCalledWith('quiz.attempt_submitted', 1, {
+            attributes: { result: 'updated' }
+          });
+          fastifyTestInstance.Sentry = originalSentry;
         });
       });
     });
