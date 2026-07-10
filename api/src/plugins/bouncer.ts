@@ -19,9 +19,7 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
     'send401IfNoUser',
     async function (req: FastifyRequest, reply: FastifyReply) {
       if (!req.user) {
-        const logger = fastify.log.child({ req, res: reply });
-
-        logger.trace(
+        req.log.trace(
           'Protected route accessed by unauthenticated user. Sent 401.'
         );
 
@@ -36,9 +34,8 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
   fastify.decorate(
     'redirectIfNoUser',
     async function (req: FastifyRequest, reply: FastifyReply) {
-      const logger = fastify.log.child({ req, res: reply });
       if (!req.user) {
-        logger.trace(
+        req.log.trace(
           'Protected route accessed by unauthenticated user. Redirecting to login.'
         );
         const { origin } = getRedirectParams(req);
@@ -55,11 +52,9 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
     'redirectIfSignedIn',
     async function (req: FastifyRequest, reply: FastifyReply) {
       if (req.user) {
-        const logger = fastify.log.child({ req, res: reply });
-
         const { returnTo } = getRedirectParams(req);
 
-        logger.trace(`User ${req.user?.id} redirected to: ${returnTo}`);
+        req.log.trace({ returnTo }, 'Signed-in user redirected');
 
         await reply.redirect(returnTo);
       }

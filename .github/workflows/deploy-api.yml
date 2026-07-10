@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       api_log_lvl:
-        description: "Log level for the API"
+        description: 'Log level for the API'
         type: choice
         options:
           - debug
@@ -12,7 +12,7 @@ on:
           - warn
         default: info
       show_upcoming_changes:
-        description: "Show upcoming changes (enables upcoming certifications and challenges)"
+        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
         type: boolean
         default: false
 
@@ -42,23 +42,23 @@ jobs:
 
           # Convert boolean input to string 'true' or 'false'
           if [[ "$SHOW_UPCOMING_CHANGES" == "true" ]]; then
-            echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
+            echo "show_upcoming_changes=true" >> "$GITHUB_OUTPUT"
           else
-            echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
+            echo "show_upcoming_changes=false" >> "$GITHUB_OUTPUT"
           fi
 
           case "$BRANCH" in
             "prod-current")
-              echo "site_tld=org" >> $GITHUB_OUTPUT
-              echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
-              echo "tgt_env_long=production" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=$API_LOG_LVL" >> $GITHUB_OUTPUT
+              echo "site_tld=org" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_short=prd" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_long=production" >> "$GITHUB_OUTPUT"
+              echo "api_log_lvl=$API_LOG_LVL" >> "$GITHUB_OUTPUT"
               ;;
             *)
-              echo "site_tld=dev" >> $GITHUB_OUTPUT
-              echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
-              echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=$API_LOG_LVL" >> $GITHUB_OUTPUT
+              echo "site_tld=dev" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_short=stg" >> "$GITHUB_OUTPUT"
+              echo "tgt_env_long=staging" >> "$GITHUB_OUTPUT"
+              echo "api_log_lvl=$API_LOG_LVL" >> "$GITHUB_OUTPUT"
               ;;
           esac
 
@@ -73,6 +73,7 @@ jobs:
     secrets:
       DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       DOCR_NAME: ${{ secrets.DOCR_NAME }}
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
@@ -134,22 +135,22 @@ jobs:
 
               if ! tailscale status | grep -q "$machine_name"; then
                 echo "Machine $machine_name not found in Tailscale network"
-                if [ $attempt -eq $max_retries ]; then
+                if [ "$attempt" -eq "$max_retries" ]; then
                   return 1
                 fi
-                sleep $retry_delay
+                sleep "$retry_delay"
                 continue
               fi
 
-              MACHINE_IP=$(tailscale ip -4 $machine_name)
-              if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
+              MACHINE_IP=$(tailscale ip -4 "$machine_name")
+              if ssh -o ConnectTimeout=10 -o BatchMode=yes "$TS_USERNAME@$MACHINE_IP" "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
                 echo "Successfully validated connection to $machine_name"
                 return 0
               fi
 
               echo "SSH validation failed for $machine_name"
-              if [ $attempt -lt $max_retries ]; then
-                sleep $retry_delay
+              if [ "$attempt" -lt "$max_retries" ]; then
+                sleep "$retry_delay"
               fi
             done
 
@@ -189,7 +190,6 @@ jobs:
           # SOCRATES_API_KEY
           # SOCRATES_ENDPOINT
           # STRIPE_SECRET_KEY
-          # LOKI_URL
           # Variables set from SetupJob
           DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
@@ -260,7 +260,6 @@ jobs:
               \"SOCRATES_API_KEY\"
               \"SOCRATES_ENDPOINT\"
               \"STRIPE_SECRET_KEY\"
-              \"LOKI_URL\"
               \"DEPLOYMENT_VERSION\"
               \"DEPLOYMENT_TLD\"
               \"DEPLOYMENT_ENV\"
@@ -311,5 +310,23 @@ jobs:
 
             echo -e '\nLOG:Finished deployment.'
           "
-          MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-          ssh $TS_USERNAME@$MACHINE_IP "$REMOTE_SCRIPT"
+          MACHINE_IP=$(tailscale ip -4 "$TS_MACHINE_NAME")
+          # shellcheck disable=SC2029 # client-side expansion of REMOTE_SCRIPT is intended
+          ssh "$TS_USERNAME@$MACHINE_IP" "$REMOTE_SCRIPT"
+
+      # TODO(o11y): Sentry release finalize disabled pending a follow-up PR with
+      # a stable release-id scheme (source-map upload in docker-docr.yml is
+      # disabled alongside). Re-enabling should also gate on a rollback-safe
+      # convergence check (docker service state) before finalizing, since
+      # `docker stack deploy --detach=false` exits 0 through a healthcheck
+      # rollback. See .scratchpad/o11y-cutover-review-2026-07-10.md.
+      # - name: Finalize Sentry release
+      #   env:
+      #     SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      #     SENTRY_ORG: freecodecamp
+      #     SENTRY_PROJECT: api-fastify
+      #     RELEASE: ${{ needs.build.outputs.tagname }}
+      #     DEPLOY_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+      #   run: |
+      #     npx --yes @sentry/cli@3.6.0 releases finalize "$RELEASE"
+      #     npx --yes @sentry/cli@3.6.0 releases deploys "$RELEASE" new -e "$DEPLOY_ENV"

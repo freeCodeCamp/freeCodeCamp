@@ -88,13 +88,26 @@ interface SignOut {
   user_id: undefined;
 }
 
-type CallSocratesAction =
-  | 'Socrates LowerJaw Button Click'
-  | 'Socrates Request Sent';
+interface ChallengeTestCodeButtonClickEvent {
+  event: 'challenge_test_code_button_click';
+}
+
+interface ChallengeSubmitButtonClickEvent {
+  event: 'challenge_submit_button_click';
+}
 
 interface CallSocratesEvent {
   event: 'call_socrates';
-  action: CallSocratesAction;
+  action: 'Socrates LowerJaw Button Click';
+  is_donating: boolean;
+  attempts: number | null;
+  limit: number | null;
+  optimized_request: Record<string, unknown> | null;
+}
+
+interface SendSocratesEvent {
+  event: 'send_socrates';
+  action: 'Socrates Request Sent';
   is_donating: boolean;
   attempts: number | null;
   limit: number | null;
@@ -111,7 +124,10 @@ export type GAevent =
   | UserData
   | SignOut
   | SignIn
-  | CallSocratesEvent;
+  | ChallengeTestCodeButtonClickEvent
+  | ChallengeSubmitButtonClickEvent
+  | CallSocratesEvent
+  | SendSocratesEvent;
 
 export default function callGA(payload: GAevent) {
   TagManager.dataLayer({

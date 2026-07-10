@@ -9,6 +9,7 @@ import {
 import * as schemas from '../../schemas.js';
 import { inLastFiveMinutes } from '../../utils/validate-donation.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';
+import { clientNetInfo } from '../../utils/logger.js';
 
 /**
  * Plugin for public donation endpoints.
@@ -35,10 +36,13 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const { email, name, amount, duration } = req.body;
-      const log = fastify.log.child({ req, email, amount, duration });
-      log.debug('Creating Stripe payment intent');
+      fastify.Sentry?.setUser({ email });
+      req.log.debug({ amount, duration }, 'Creating Stripe payment intent');
 
       if (!donationSubscriptionConfig.plans[duration].includes(amount)) {
+        fastify.Sentry?.metrics?.count('donation.intent_rejected', 1, {
+          attributes: { reason: 'invalid_amount' }
+        });
         void reply.code(400);
         return {
           error: 'The donation form had invalid values for this submission.'
@@ -74,7 +78,7 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         ) {
           const clientSecret =
             stripeSubscription.latest_invoice.payment_intent.client_secret;
-          log.info('Successfully created payment intent');
+          req.log.debug('Successfully created payment intent');
           return reply.send({
             subscriptionId: stripeSubscription.id,
             clientSecret
@@ -82,9 +86,24 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         } else {
           throw new Error('Stripe payment intent client secret is missing');
         }
-      } catch (error) {
-        log.error(error, 'Failed to create payment intent');
-        fastify.Sentry.captureException(error);
+      } catch (err) {
+        const ctx = {
+          audit: true,
+          err,
+          email: req.body.email,
+          amount,
+          duration,
+          ...clientNetInfo(req)
+        };
+        if (
+          err instanceof Stripe.errors.StripeCardError ||
+          err instanceof Stripe.errors.StripeInvalidRequestError
+        ) {
+          req.log.warn(ctx, 'Stripe upstream error creating payment intent');
+        } else {
+          fastify.Sentry?.captureException(err);
+          req.log.error(ctx, 'Failed to create payment intent');
+        }
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'
@@ -101,14 +120,11 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       try {
         const { email, amount, duration, subscriptionId } = req.body;
-        const log = fastify.log.child({
-          req,
-          email,
-          amount,
-          duration,
-          subscriptionId
-        });
-        log.debug('Processing Stripe charge');
+        fastify.Sentry?.setUser({ email });
+        req.log.debug(
+          { amount, duration, subscriptionId },
+          'Processing Stripe charge'
+        );
 
         const subscription =
           await stripe.subscriptions.retrieve(subscriptionId);
@@ -123,35 +139,59 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         const isValidCustomer = typeof subscription.customer === 'string';
 
         if (!isSubscriptionActive) {
-          log.warn(
+          req.log.warn(
             { status: subscription.status },
             'Invalid subscription status'
           );
-          throw new Error(
-            `Stripe subscription information is invalid: ${subscriptionId}`
+          fastify.Sentry?.captureException(
+            new Error(
+              `Stripe subscription information is invalid: ${subscriptionId}`
+            )
           );
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
         if (!isProductIdValid) {
-          log.warn({ productId }, 'Invalid product ID');
-          throw new Error(`Product ID is invalid: ${subscriptionId}`);
+          req.log.warn({ productId }, 'Invalid product ID');
+          fastify.Sentry?.captureException(
+            new Error(`Product ID is invalid: ${subscriptionId}`)
+          );
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
         if (!isStartedRecently) {
-          log.warn(
+          req.log.warn(
             { startTime: subscription.current_period_start },
             'Subscription not recent'
           );
-          throw new Error(`Subscription is not recent: ${subscriptionId}`);
+          fastify.Sentry?.captureException(
+            new Error(`Subscription is not recent: ${subscriptionId}`)
+          );
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
         if (!isValidCustomer) {
-          log.warn(
+          req.log.warn(
             { customerId: subscription.customer },
             'Invalid customer ID'
           );
-          throw new Error(`Customer ID is invalid: ${subscriptionId}`);
+          fastify.Sentry?.captureException(
+            new Error(`Customer ID is invalid: ${subscriptionId}`)
+          );
+          void reply.code(500);
+          return {
+            error: 'Donation failed due to a server error.'
+          } as const;
         }
 
         const user = await findOrCreateUser(fastify, email);
-        log.debug({ userId: user.id }, 'Found or created user');
+        req.log.debug({ userId: user.id }, 'Found or created user');
 
         const donation = {
           userId: user.id,
@@ -178,14 +218,42 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             isDonating: true
           }
         });
-        log.info('Successfully processed donation');
+        req.log.info(
+          {
+            audit: true,
+            userId: user.id,
+            email,
+            amount,
+            duration,
+            subscriptionId,
+            ...clientNetInfo(req)
+          },
+          'Successfully processed donation'
+        );
+        fastify.Sentry?.metrics?.count('donation.created', 1, {
+          attributes: { flow: 'charge-stripe' }
+        });
 
         return reply.send({
           isDonating: true
         });
-      } catch (error) {
-        fastify.log.error(error, 'Failed to process Stripe charge');
-        fastify.Sentry.captureException(error);
+      } catch (err) {
+        const ctx = {
+          audit: true,
+          err,
+          email: req.body.email,
+          subscriptionId: req.body.subscriptionId,
+          ...clientNetInfo(req)
+        };
+        if (
+          err instanceof Stripe.errors.StripeCardError ||
+          err instanceof Stripe.errors.StripeInvalidRequestError
+        ) {
+          req.log.warn(ctx, 'Stripe upstream error processing charge');
+        } else {
+          fastify.Sentry?.captureException(err);
+          req.log.error(ctx, 'Failed to process Stripe charge');
+        }
         void reply.code(500);
         return {
           error: 'Donation failed due to a server error.'
