@@ -74,32 +74,42 @@ const OtherWaysToSupport = (): JSX.Element => {
   );
 };
 
-const FaqItem = (
-  title: string,
-  text: JSX.Element,
-  key: number
-): JSX.Element => {
+type FaqItemProps = {
+  title: string;
+  text: JSX.Element;
+  index: number;
+};
+
+const FaqItem = ({
+  title,
+  text,
+  index
+}: FaqItemProps): JSX.Element => {
   const [isExpanded, setExpanded] = useState(false);
+
   return (
-    <div className={`faq-item ${isExpanded ? 'open' : ''}`} key={key}>
-      <button
-        className='map-title'
-        onClick={() => setExpanded(!isExpanded)}
-        aria-expanded={isExpanded}
-        aria-controls={`donate-faq-content-${key}`}
-      >
-        <Caret />
-        <h3>{title}</h3>
-      </button>
+    <div className={`faq-item ${isExpanded ? 'open' : ''}`}>
+      <h3 className='map-title'>
+        <button
+          onClick={() => setExpanded(!isExpanded)}
+          aria-expanded={isExpanded}
+          aria-controls={`donate-faq-content-${index}`}>
+          <Caret />
+          {title}
+        </button>
+      </h3>
+
       {isExpanded && (
-        <div className='map-challenges-ul' id={`donate-faq-content-${key}`}>
+        <div
+          className='map-challenges-ul'
+          id={`donate-faq-content-${index}`}
+        >
           {text}
         </div>
       )}
     </div>
   );
 };
-
 export const DonationFaqText = (): JSX.Element => {
   const { t } = useTranslation();
   const faqItems = [
@@ -240,7 +250,14 @@ export const DonationFaqText = (): JSX.Element => {
     <>
       <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
       <Spacer size='xs' />
-      {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
+     {faqItems.map((item, iterator) => (
+  <FaqItem
+    key={item.Q}
+    title={item.Q}
+    text={item.A}
+    index={iterator}
+  />
+))}
     </>
   );
 };
