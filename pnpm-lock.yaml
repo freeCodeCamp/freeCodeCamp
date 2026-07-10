@@ -661,6 +661,9 @@ importers:
       monaco-editor-webpack-plugin:
         specifier: 7.1.1
         version: 7.1.1(monaco-editor@0.55.1)(webpack@5.106.2)
+      msw:
+        specifier: ^2.14.2
+        version: 2.14.2(@types/node@25.6.0)(typescript@5.9.3)
       react-test-renderer:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
@@ -15491,7 +15494,6 @@ snapshots:
       '@inquirer/type': 4.0.5(@types/node@25.6.0)
     optionalDependencies:
       '@types/node': 25.6.0
-    optional: true
 
   '@inquirer/core@10.3.2(@types/node@25.6.0)':
     dependencies:
@@ -15529,7 +15531,6 @@ snapshots:
       signal-exit: 4.1.0
     optionalDependencies:
       '@types/node': 25.6.0
-    optional: true
 
   '@inquirer/editor@4.2.23(@types/node@25.6.0)':
     dependencies:
@@ -15633,7 +15634,6 @@ snapshots:
   '@inquirer/type@4.0.5(@types/node@25.6.0)':
     optionalDependencies:
       '@types/node': 25.6.0
-    optional: true
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -23260,7 +23260,6 @@ snapshots:
       typescript: 5.9.3
     transitivePeerDependencies:
       - '@types/node'
-    optional: true
 
   multer@2.0.2:
     dependencies:
