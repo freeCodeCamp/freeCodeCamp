@@ -147,7 +147,7 @@ const ShowGeneric = ({
 
   const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   const blockNameTitle =
-    blockTitle === title ? title : `${blockTitle} - ${title}`;
+    blockTitle === title ? title : `${blockTitle}: ${title}`;
 
   useEffect(() => {
     initTests(tests);
