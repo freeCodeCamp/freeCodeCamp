@@ -11,7 +11,8 @@ import {
   faZap,
   faSave,
   faClockRotateLeft,
-  faRotateLeft
+  faRotateLeft,
+  faDownload
 } from '@fortawesome/free-solid-svg-icons';
 import Progress from '../../../components/Progress';
 import {
@@ -20,9 +21,10 @@ import {
   isSignedInSelector,
   isSocratesOnSelector
 } from '../../../redux/selectors';
-import { ChallengeMeta, Test } from '../../../redux/prop-types';
+import { ChallengeFiles, ChallengeMeta, Test } from '../../../redux/prop-types';
 import {
   attemptsSelector,
+  challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
   completedPercentageSelector,
@@ -36,6 +38,7 @@ import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
+import { combineFileData } from './completion-modal';
 
 import './independent-lower-jaw.css';
 import Socrates from '../../../assets/icons/socrates';
@@ -88,6 +91,7 @@ const StatusAnnouncement = ({
 
 const mapStateToProps = createSelector(
   attemptsSelector,
+  challengeFilesSelector,
   challengeTestsSelector,
   isDonatingSelector,
   isSignedInSelector,
@@ -99,10 +103,11 @@ const mapStateToProps = createSelector(
   isSocratesOnSelector,
   (
     attempts: number,
+    challengeFiles: ChallengeFiles,
     tests: Test[],
     isDonating: boolean,
     isSignedIn: boolean,
-    challengeMeta: ChallengeMeta,
+    challengeMeta: ChallengeMeta & { dashedName: string },
     completedPercent: number,
     completedChallengeIds: string[],
     currentBlockIds: string[],
@@ -110,6 +115,7 @@ const mapStateToProps = createSelector(
     hasSocratesAccess: boolean
   ) => ({
     attempts,
+    challengeFiles,
     tests,
     isDonating,
     isSignedIn,
@@ -137,10 +143,11 @@ interface IndependentLowerJawProps {
   askSocrates: () => void;
   saveChallenge: () => void;
   attempts: number;
+  challengeFiles: ChallengeFiles;
   tests: Test[];
   isDonating: boolean;
   isSignedIn: boolean;
-  challengeMeta: ChallengeMeta;
+  challengeMeta: ChallengeMeta & { dashedName: string };
   completedPercent: number;
   completedChallengeIds: string[];
   currentBlockIds: string[];
@@ -154,6 +161,7 @@ export function IndependentLowerJaw({
   executeChallenge,
   saveChallenge,
   attempts,
+  challengeFiles,
   tests,
   isDonating,
   isSignedIn,
@@ -168,6 +176,21 @@ export function IndependentLowerJaw({
   const showSocratesFlag =
     useFeature('show-socrates').on && clientLocale === 'english';
   const submitChallenge = useSubmit();
+  const [downloadURL, setDownloadURL] = useState<string>();
+  // We can't useMemo here, because it does not guarantee that the URL object
+  // will be revoked when the dependencies change.
+  useEffect(() => {
+    // downloadURL is not in the dependency array because it should only change
+    // if the challengeFiles change. It is in the useEffect so that we cannot
+    // leak URL objects.
+    if (downloadURL) URL.revokeObjectURL(downloadURL);
+    if (challengeFiles?.length) {
+      const allFileContents = combineFileData(challengeFiles);
+      const blob = new Blob([allFileContents], { type: 'text/json' });
+      setDownloadURL(URL.createObjectURL(blob));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeFiles]);
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const sanitizedHint = React.useMemo(
@@ -552,6 +575,21 @@ export function IndependentLowerJaw({
               <FontAwesomeIcon icon={faRotateLeft} />
               <span className='tooltiptext'> {t('buttons.reset')}</span>
             </button>
+          )}
+          {downloadURL && (
+            <a
+              className='icon-button tooltip'
+              data-playwright-test-label='independentLowerJaw-download-button'
+              aria-label={t('learn.download-solution')}
+              download={`${challengeMeta.dashedName}.txt`}
+              href={downloadURL}
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              <span className='tooltiptext'>
+                {' '}
+                {t('learn.download-solution')}
+              </span>
+            </a>
           )}
           <button
             type='button'

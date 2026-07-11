@@ -4,7 +4,11 @@ import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useStaticQuery } from 'gatsby';
 
-import type { ChallengeMeta, Test } from '../../../redux/prop-types';
+import type {
+  ChallengeFiles,
+  ChallengeMeta,
+  Test
+} from '../../../redux/prop-types';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import callGA from '../../../analytics/call-ga';
 import { IndependentLowerJaw } from './independent-lower-jaw';
@@ -41,9 +45,10 @@ vi.mock('../utils/fetch-all-curriculum-data', () => ({
   useSubmit: () => mockSubmitChallenge
 }));
 
-const baseChallengeMeta: ChallengeMeta = {
+const baseChallengeMeta: ChallengeMeta & { dashedName: string } = {
   block: 'test-block',
   id: 'test-challenge-id',
+  dashedName: 'test-challenge',
   isFirstStep: false,
   superBlock: SuperBlocks.RespWebDesignV9,
   helpCategory: 'HTML-CSS',
@@ -60,6 +65,7 @@ const baseProps = {
   askSocrates: vi.fn(),
   saveChallenge: vi.fn(),
   attempts: 0,
+  challengeFiles: null as ChallengeFiles,
   tests: passingTests,
   isDonating: false,
   isSignedIn: true,
@@ -546,5 +552,42 @@ describe('<IndependentLowerJaw />', () => {
     expect(getLiveRegion()).toHaveTextContent(
       /learn\.congratulations-code-passes .* learn\.percent-complete/
     );
+  });
+
+  it('does not show a download button when there are no challenge files', () => {
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    expect(
+      screen.queryByLabelText('learn.download-solution')
+    ).not.toBeInTheDocument();
+  });
+
+  it('shows a download button linking to the solution when challenge files exist', () => {
+    const objectUrl = 'blob:mock-solution-url';
+    vi.stubGlobal('URL', {
+      ...URL,
+      createObjectURL: vi.fn().mockReturnValue(objectUrl),
+      revokeObjectURL: vi.fn()
+    });
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        challengeFiles={[
+          { name: 'index', ext: 'html', contents: '<h1>Hi</h1>' } as never
+        ]}
+      />,
+      createStore()
+    );
+
+    const downloadLink = screen.getByLabelText('learn.download-solution');
+    expect(downloadLink).toBeInTheDocument();
+    expect(downloadLink).toHaveAttribute('href', objectUrl);
+    expect(downloadLink).toHaveAttribute(
+      'download',
+      `${baseChallengeMeta.dashedName}.txt`
+    );
+
+    vi.unstubAllGlobals();
   });
 });

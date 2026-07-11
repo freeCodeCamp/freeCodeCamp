@@ -75,7 +75,8 @@
   border: 1px solid var(--quaternary-color);
 }
 
-.independent-lower-jaw .action-row-right button {
+.independent-lower-jaw .action-row-right button,
+.independent-lower-jaw .action-row-right a {
   height: 40px;
   width: 40px;
   display: flex;

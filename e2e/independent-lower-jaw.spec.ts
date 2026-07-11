@@ -41,6 +41,19 @@ test('Clicking "Check Your Code" reveals failing feedback', async ({
   ).toBeVisible();
 });
 
+test('Download button links to a file of the current solution', async ({
+  page
+}) => {
+  await page.goto(workshopChallengeUrl);
+
+  const downloadButton = page.getByTestId(
+    'independentLowerJaw-download-button'
+  );
+  await expect(downloadButton).toBeVisible();
+  await expect(downloadButton).toHaveAttribute('download', /\.txt$/);
+  await expect(downloadButton).toHaveAttribute('href', /^blob:/);
+});
+
 test('Reset button opens and closes the reset modal', async ({ page }) => {
   await page.goto(workshopChallengeUrl);
 
