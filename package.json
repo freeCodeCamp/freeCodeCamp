@@ -95,7 +95,7 @@
     "prettier": "3.8.2",
     "stylelint": "16.26.1",
     "tsx": "4.21.0",
-    "turbo": "^2.8.7",
+    "turbo": "2.10.0",
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
