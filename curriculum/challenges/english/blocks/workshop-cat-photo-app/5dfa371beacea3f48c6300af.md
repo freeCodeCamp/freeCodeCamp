@@ -48,7 +48,7 @@ assert.equal(
 );
 ```
 
-There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element'. You may have accidentally deleted the `h2` element.
+There should be an `h2` element with the text `Cat Lists` above the last `h3` element that is nested in the last `section` element. You may have accidentally deleted the `h2` element.
 
 ```js
 const secondSectionLastElemNode = document.querySelectorAll('main > section')[1]
