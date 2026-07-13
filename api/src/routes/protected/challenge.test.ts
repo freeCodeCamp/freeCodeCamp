@@ -1895,7 +1895,7 @@ describe('challengeRoutes', () => {
             error: 'An error occurred trying to get the exam from the database.'
           });
           expect(response.statusCode).toBe(500);
-          expect(captureException).toHaveBeenCalledOnce();
+          expect(captureException).not.toHaveBeenCalled();
 
           fastifyTestInstance.Sentry = originalSentry;
         });

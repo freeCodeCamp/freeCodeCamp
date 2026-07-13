@@ -238,7 +238,15 @@ describe('Donate', () => {
           }).send(chargeStripeReqBody);
 
           expect(response.status).toBe(500);
-          expect(captureException).toHaveBeenCalledOnce();
+          expect(captureException).toHaveBeenCalledExactlyOnceWith(
+            expect.any(Error),
+            {
+              extra: { subscriptionId: 'sub_test_id' }
+            }
+          );
+          const capturedError = captureException.mock
+            .calls[0]?.[0] as unknown as Error;
+          expect(capturedError.message).not.toContain('sub_test_id');
 
           fastifyTestInstance.Sentry = originalSentry;
         }
