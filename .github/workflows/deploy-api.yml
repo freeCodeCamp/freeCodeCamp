@@ -10,9 +10,13 @@ on:
           - debug
           - info
           - warn
-        default: info
+        default: debug
       show_upcoming_changes:
         description: 'Show upcoming changes (enables upcoming certifications and challenges)'
+        type: boolean
+        default: false
+      dump_stack_config:
+        description: 'Dump the docker stack config'
         type: boolean
         default: false
 
@@ -30,13 +34,15 @@ jobs:
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }}
       api_log_lvl: ${{ steps.setup.outputs.api_log_lvl }}
       show_upcoming_changes: ${{ steps.setup.outputs.show_upcoming_changes }}
+      dump_stack_config: ${{ steps.setup.outputs.dump_stack_config }}
     steps:
       - name: Setup
         id: setup
         env:
           BRANCH: ${{ github.ref_name }}
           SHOW_UPCOMING_CHANGES: ${{ inputs.show_upcoming_changes }}
-          API_LOG_LVL: ${{ inputs.api_log_lvl || 'info' }}
+          API_LOG_LVL: ${{ inputs.api_log_lvl || 'debug' }}
+          DUMP_STACK_CONFIG: ${{ inputs.dump_stack_config }}
         run: |
           echo "Current branch: $BRANCH"
 
@@ -45,6 +51,13 @@ jobs:
             echo "show_upcoming_changes=true" >> "$GITHUB_OUTPUT"
           else
             echo "show_upcoming_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          # Convert boolean input to string 'true' or 'false'
+          if [[ "$DUMP_STACK_CONFIG" == "true" ]]; then
+            echo "dump_stack_config=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "dump_stack_config=false" >> "$GITHUB_OUTPUT"
           fi
 
           case "$BRANCH" in
@@ -196,6 +209,7 @@ jobs:
           DEPLOYMENT_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
           FCC_API_LOG_LEVEL: ${{ needs.setup-jobs.outputs.api_log_lvl }}
           SHOW_UPCOMING_CHANGES: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
+          DUMP_STACK_CONFIG: ${{ needs.setup-jobs.outputs.dump_stack_config }}
           # Stack name
           STACK_NAME: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api
         run: |
@@ -298,8 +312,8 @@ jobs:
 
             echo -e '\nLOG:Checking stack configuration...'
             CONFIG_OUTPUT=\"/dev/null\"
-            if [[ \"\$FCC_API_LOG_LEVEL\" == \"debug\" ]]; then
-              CONFIG_FILENAME=\"debug-docker-stack-config-\${DEPLOYMENT_VERSION}.yml\"
+            if [[ \"$DUMP_STACK_CONFIG\" == \"true\" ]]; then
+              CONFIG_FILENAME=\"docker-stack-config-\${DEPLOYMENT_VERSION}.yml\"
               echo -e '\nLOG:Saving stack configuration for debugging...'
               CONFIG_OUTPUT=\"\$CONFIG_FILENAME\"
             fi
