@@ -83,7 +83,7 @@ body {
 
 .cat-left-ear {
 --fcc-editable-region--
-
+  
 --fcc-editable-region--
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
