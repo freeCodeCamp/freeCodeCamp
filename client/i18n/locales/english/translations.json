@@ -675,6 +675,40 @@
       "sub-step-5": "In the <0>Secret</0> field, paste your token",
       "summary": "Ona Setup"
     },
+    "freecodecamp-os": {
+      "token-modal": "When you run the course, a modal will appear asking for your user token. Paste the token you copied above into it. You only need to do this once per environment.",
+      "local": {
+        "intro": "This course runs in a dev container on your computer using the freeCodeCamp - Courses VS Code extension. To run the course, you first need to download each of the following if you don't already have them:",
+        "heading": "Then, follow these instructions to start the course:",
+        "step-1": "Open a terminal and clone the back-end-development-and-apis repo if you don't already have it with <0>git clone https://github.com/freeCodeCamp/back-end-development-and-apis</0>",
+        "step-2": "Navigate to the <0>back-end-development-and-apis</0> directory in the terminal with <1>cd back-end-development-and-apis</1>, and open VS Code with <2>code .</2>",
+        "step-3": "Open the command palette in VS Code by expanding the \"View\" menu and clicking \"Command Palette...\" and enter <0>Dev Containers: Rebuild and Reopen in Container</0> in the input.",
+        "step-4": "A new VS Code window will open and begin building the dev container. It will take several minutes the first time.",
+        "step-5": "Once it is finished building, open the command palette again and enter <0>freeCodeCamp: Run Course</0> to start the course.",
+        "step-6": "The Simple Browser will open when it is done. If it is a blank white page, use the refresh button to update it and see the course home page.",
+        "step-7": "Click on one of the available projects to start it, then follow the instructions in the project to complete it."
+      },
+      "codespaces": {
+        "intro": "This course runs in a virtual Linux machine using GitHub Codespaces and the freeCodeCamp - Courses VS Code extension. Follow these instructions to start the course:",
+        "step-1": "<0>Create a GitHub account</0> if you don't have one",
+        "step-2": "Click the start button below",
+        "step-3": "On the page that opens, click the create button",
+        "step-4": "Once the virtual Linux machine is finished loading, open the command palette and run the <0>freeCodeCamp: Run Course</0> command",
+        "step-5": "The Simple Browser will open when it is done. If it is a blank white page, use the refresh button to update it and see the course home page.",
+        "step-6": "Click on one of the available projects to start it, then follow the instructions in the project to complete it.",
+        "continue-project": "Clicking the start button below will start a new machine. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace."
+      },
+      "ona": {
+        "intro": "This course runs in a virtual Linux machine using Ona and the freeCodeCamp - Courses VS Code extension. Follow these instructions to start the course:",
+        "step-1": "<0>Create an Ona account</0> if you don't have one",
+        "step-2": "Click the start button below",
+        "step-3": "In the modal that pops up, click the create button",
+        "step-4": "Once the virtual Linux machine is finished loading, open the command palette and run the <0>freeCodeCamp: Run Course</0> command",
+        "step-5": "The Simple Browser will open when it is done. If it is a blank white page, use the refresh button to update it and see the course home page.",
+        "step-6": "Click on one of the available projects to start it, then follow the instructions in the project to complete it.",
+        "continue-project": "Clicking the start button below will start a new machine. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue."
+      }
+    },
     "local": {
       "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
       "download-vscode": "<0>VS Code</0> and the <1>Dev Containers</1> extension",
