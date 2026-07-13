@@ -144,9 +144,8 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             'Invalid subscription status'
           );
           fastify.Sentry?.captureException(
-            new Error(
-              `Stripe subscription information is invalid: ${subscriptionId}`
-            )
+            new Error('Stripe subscription information is invalid'),
+            { extra: { subscriptionId } }
           );
           void reply.code(500);
           return {
@@ -155,9 +154,9 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
         }
         if (!isProductIdValid) {
           req.log.warn({ productId }, 'Invalid product ID');
-          fastify.Sentry?.captureException(
-            new Error(`Product ID is invalid: ${subscriptionId}`)
-          );
+          fastify.Sentry?.captureException(new Error('Product ID is invalid'), {
+            extra: { subscriptionId }
+          });
           void reply.code(500);
           return {
             error: 'Donation failed due to a server error.'
@@ -169,7 +168,8 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             'Subscription not recent'
           );
           fastify.Sentry?.captureException(
-            new Error(`Subscription is not recent: ${subscriptionId}`)
+            new Error('Subscription is not recent'),
+            { extra: { subscriptionId } }
           );
           void reply.code(500);
           return {
@@ -182,7 +182,8 @@ export const chargeStripeRoute: FastifyPluginCallbackTypebox = (
             'Invalid customer ID'
           );
           fastify.Sentry?.captureException(
-            new Error(`Customer ID is invalid: ${subscriptionId}`)
+            new Error('Customer ID is invalid'),
+            { extra: { subscriptionId } }
           );
           void reply.code(500);
           return {
