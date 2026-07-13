@@ -1,4 +1,4 @@
-import type { ErrorEvent, Log, RequestEventData } from '@sentry/node';
+import type { ErrorEvent, Event, Log, RequestEventData } from '@sentry/node';
 
 const DROPPED_LOG_MESSAGES = new Set([
   'incoming request',
@@ -300,6 +300,29 @@ export const scrubRequestPii = (event: ErrorEvent): ErrorEvent => {
   }
 
   return out;
+};
+
+const MONGO_OBJECT_ID_PATTERN = /ObjectId\("[0-9a-f]{24}"\)/g;
+const MONGO_ISO_DATE_PATTERN = /ISODate\("[^"]+"\)/g;
+
+const scrubMongoLiterals = (text: string): string =>
+  text
+    .replace(MONGO_OBJECT_ID_PATTERN, 'ObjectId("?")')
+    .replace(MONGO_ISO_DATE_PATTERN, 'ISODate("?")');
+
+// workaround: getsentry/sentry#40650 — prismaIntegration sets the DB span description to raw query text, so a literal ObjectId splits the N+1 fingerprint into one issue group per user
+// eslint-disable-next-line jsdoc/require-jsdoc
+export const scrubSpanDescriptions = <E extends Event>(event: E): E => {
+  for (const span of event.spans ?? []) {
+    if (typeof span.description === 'string') {
+      span.description = scrubMongoLiterals(span.description);
+    }
+    const dbQueryText = span.data['db.query.text'];
+    if (typeof dbQueryText === 'string') {
+      span.data['db.query.text'] = scrubMongoLiterals(dbQueryText);
+    }
+  }
+  return event;
 };
 
 /**

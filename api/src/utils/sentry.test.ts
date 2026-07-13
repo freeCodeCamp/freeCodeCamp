@@ -1,11 +1,12 @@
-import type { ErrorEvent, Log } from '@sentry/node';
+import type { ErrorEvent, Event, Log } from '@sentry/node';
 import { describe, expect, it, vi } from 'vitest';
 
 import {
   makeShouldSendLog,
   makeTracesSampler,
   scrubRedundantLogAttributes,
-  scrubRequestPii
+  scrubRequestPii,
+  scrubSpanDescriptions
 } from './sentry.js';
 
 const makeLog = (overrides: Partial<Log> = {}): Log => ({
@@ -764,5 +765,79 @@ describe('makeTracesSampler', () => {
     const ctx = context('GET /user/session-user');
     expect(makeTracesSampler(0.1)(ctx)).toBe(0.1);
     expect(ctx.inheritOrSampleWith).toHaveBeenCalledWith(0.1);
+  });
+});
+
+describe('scrubSpanDescriptions', () => {
+  const makeTxn = (
+    spans: Array<{ description?: string; data?: Record<string, unknown> }>
+  ): Event =>
+    ({
+      type: 'transaction',
+      spans: spans.map(({ description, data }) => ({
+        span_id: 'a',
+        trace_id: 'b',
+        start_timestamp: 0,
+        description,
+        data: data ?? {}
+      }))
+    }) as unknown as Event;
+
+  it('replaces a Mongo ObjectId literal in a span description with a placeholder', () => {
+    const [span] =
+      scrubSpanDescriptions(
+        makeTxn([
+          {
+            description:
+              'aggregate [{"$match":{"_id":ObjectId("58dfb02b565f48223c4da7b5")}}]'
+          }
+        ])
+      ).spans ?? [];
+    expect(span?.description).toBe(
+      'aggregate [{"$match":{"_id":ObjectId("?")}}]'
+    );
+  });
+
+  it('produces identical descriptions for spans differing only by ObjectId', () => {
+    const scrub = (id: string): string | undefined =>
+      scrubSpanDescriptions(
+        makeTxn([{ description: `find ObjectId("${id}")` }])
+      ).spans?.[0]?.description;
+    expect(scrub('58dfb02b565f48223c4da7b5')).toBe(
+      scrub('58f2a1dc23aadf34519c26ba')
+    );
+  });
+
+  it('scrubs the db.query.text span attribute', () => {
+    const [span] =
+      scrubSpanDescriptions(
+        makeTxn([
+          {
+            description: 'q',
+            data: { 'db.query.text': 'ObjectId("58dfb02b565f48223c4da7b5")' }
+          }
+        ])
+      ).spans ?? [];
+    expect(span?.data['db.query.text']).toBe('ObjectId("?")');
+  });
+
+  it('replaces an ISODate literal', () => {
+    const [span] =
+      scrubSpanDescriptions(
+        makeTxn([{ description: 'ISODate("2026-07-13T00:00:00.000Z")' }])
+      ).spans ?? [];
+    expect(span?.description).toBe('ISODate("?")');
+  });
+
+  it('leaves a non-Mongo span description untouched', () => {
+    const [span] =
+      scrubSpanDescriptions(makeTxn([{ description: 'GET /learn' }])).spans ??
+      [];
+    expect(span?.description).toBe('GET /learn');
+  });
+
+  it('is a no-op when the event has no spans', () => {
+    const event = { type: 'transaction' } as unknown as Event;
+    expect(scrubSpanDescriptions(event).spans).toBeUndefined();
   });
 });
