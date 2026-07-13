@@ -319,6 +319,27 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
+// Superblocks deliberately hidden from the map when the client UI is in a
+// given language (e.g. a course teaching Spanish is not shown when the UI
+// itself is in Spanish). Unlike notAuditedSuperBlocks, entries here are
+// permanent policy, not pending translations.
+export const hiddenSuperBlocks: Partial<Record<Languages, SuperBlocks[]>> = {
+  [Languages.Espanol]: [SuperBlocks.A1Spanish, SuperBlocks.A2Spanish],
+  [Languages.Chinese]: [SuperBlocks.A1Chinese, SuperBlocks.A2Chinese],
+  [Languages.ChineseTraditional]: [SuperBlocks.A1Chinese, SuperBlocks.A2Chinese]
+};
+
+Object.freeze(hiddenSuperBlocks);
+
+export function isHiddenSuperBlock(
+  language: string,
+  superBlock: SuperBlocks
+): boolean {
+  return (
+    hiddenSuperBlocks[language as Languages]?.includes(superBlock) ?? false
+  );
+}
+
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackOpen,
   SuperBlocks.A1Spanish,

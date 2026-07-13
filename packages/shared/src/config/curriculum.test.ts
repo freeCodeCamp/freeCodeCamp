@@ -5,6 +5,8 @@ import {
   SuperBlockStage,
   superBlockStages,
   notAuditedSuperBlocks,
+  hiddenSuperBlocks,
+  isHiddenSuperBlock,
   generateSuperBlockList,
   getAuditedSuperBlocks
 } from './curriculum';
@@ -55,6 +57,49 @@ describe('Immutability of superBlockOrder, notAuditedSuperBlocks, and flatSuperB
     expect(() => {
       notAuditedSuperBlocks[Languages.English] = [];
     }).toThrow(TypeError);
+  });
+});
+
+describe('hiddenSuperBlocks', () => {
+  it('should not allow modification of hiddenSuperBlocks', () => {
+    expect(() => {
+      hiddenSuperBlocks[Languages.Espanol] = [];
+    }).toThrow(TypeError);
+  });
+
+  it('should only contain valid languages and superblocks', () => {
+    Object.entries(hiddenSuperBlocks).forEach(([language, superblocks]) => {
+      expect(Object.values(Languages)).toContain(language);
+      superblocks.forEach(superblock => {
+        expect(Object.values(SuperBlocks)).toContain(superblock);
+      });
+    });
+  });
+});
+
+describe('isHiddenSuperBlock', () => {
+  it('should hide a superblock only in its configured languages', () => {
+    expect(isHiddenSuperBlock(Languages.Espanol, SuperBlocks.A1Spanish)).toBe(
+      true
+    );
+    expect(isHiddenSuperBlock(Languages.Chinese, SuperBlocks.A1Chinese)).toBe(
+      true
+    );
+    expect(isHiddenSuperBlock(Languages.Espanol, SuperBlocks.A1Chinese)).toBe(
+      false
+    );
+    expect(isHiddenSuperBlock(Languages.English, SuperBlocks.A1Spanish)).toBe(
+      false
+    );
+  });
+
+  it('should return false for languages with no hidden superblocks', () => {
+    expect(
+      isHiddenSuperBlock(Languages.Portuguese, SuperBlocks.A1Spanish)
+    ).toBe(false);
+    expect(isHiddenSuperBlock('not-a-language', SuperBlocks.A1Spanish)).toBe(
+      false
+    );
   });
 });
 
