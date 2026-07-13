@@ -4,11 +4,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
-  "dashedName": "workshop-express-by-building-a-random-joke-app",
+  "dashedName": "workshop-build-a-submission-form",
   "challengeOrder": [
     {
-      "id": "3f9cf3e0706e5b0d679acbd2",
-      "title": "Learn Express by Building a Random Joke App"
+      "id": "64d7d73f8932c4087d7c08f4",
+      "title": "Build a Submission Form"
     }
   ],
   "helpCategory": "Backend Development"
