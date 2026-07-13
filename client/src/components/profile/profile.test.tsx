@@ -177,7 +177,7 @@ describe('<Profile/>', () => {
       screen.getByRole('button', { name: 'aria.edit-my-profile' })
     );
 
-    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(await screen.findByRole('dialog')).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: 'profile.edit-my-profile' })
     ).toBeInTheDocument();
