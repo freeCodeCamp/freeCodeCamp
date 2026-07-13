@@ -11,11 +11,13 @@ const runtimeMetrics: FastifyPluginCallback = (fastify, _options, done) => {
   const timer = setInterval(() => {
     fastify.Sentry?.metrics?.gauge(
       'runtime.memory_rss_bytes',
-      process.memoryUsage().rss
+      process.memoryUsage().rss,
+      { unit: 'byte' }
     );
     fastify.Sentry?.metrics?.gauge(
       'runtime.event_loop_delay_p99_ms',
-      loopDelay.percentile(99) / 1e6
+      loopDelay.percentile(99) / 1e6,
+      { unit: 'millisecond' }
     );
     loopDelay.reset();
   }, SAMPLE_INTERVAL_MS);
