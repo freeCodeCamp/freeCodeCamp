@@ -466,9 +466,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           { examId: id },
           'User requested an exam that does not exist'
         );
-        fastify.Sentry?.captureException(
-          new Error(`Exam ${id} not found in database`)
-        );
         void reply.code(500);
         return {
           error: 'An error occurred trying to get the exam from the database.'
