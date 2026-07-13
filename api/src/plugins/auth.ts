@@ -205,6 +205,10 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       });
 
     if (!token) {
+      req.log.warn(
+        { tokenId: examEnvironmentAuthorizationToken },
+        'Exam environment authorization token revoked or not found'
+      );
       void reply.code(403);
       return reply.send(
         ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
