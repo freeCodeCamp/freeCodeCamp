@@ -136,10 +136,15 @@
           "blocks": [
             "lecture-introduction-to-authentication-and-authorization",
             "workshop-jwt-protected-routes",
-            "lab-family-movie-watchlist-api",
             "review-authentication-and-authorization",
             "quiz-authentication-and-authorization"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-family-movie-watchlist-api",
+          "comingSoon": true,
+          "blocks": ["lab-family-movie-watchlist-api"]
         },
         {
           "moduleType": "review",
