@@ -19,7 +19,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-node-core-modules",
-            "workshop-nodejs-common-modules",
+            "workshop-build-a-file-processor",
             "review-node-js-core-modules",
             "quiz-node-js-core-modules"
           ]
@@ -30,7 +30,7 @@
           "blocks": [
             "lecture-introduction-to-npm",
             "lecture-working-with-npm-scripts",
-            "workshop-how-to-build-an-npm-module",
+            "workshop-build-a-case-converter",
             "lab-prime-number-checker-module",
             "review-npm",
             "quiz-npm"
@@ -43,7 +43,7 @@
             "lecture-understanding-how-http-dns-tcpip-work",
             "lecture-understanding-the-http-request-response-model",
             "lecture-understanding-the-web-standards-model",
-            "workshop-nodejs-by-building-a-web-server",
+            "workshop-build-a-web-server",
             "review-http-and-the-web-standards-model",
             "quiz-http-and-the-web-standards-model"
           ]
@@ -53,7 +53,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-rest-api-and-web-services",
-            "workshop-express-by-building-a-weather-service-api",
+            "workshop-build-a-weather-service-api",
             "lab-timestamp-microservice"
           ]
         },
@@ -63,7 +63,7 @@
           "blocks": [
             "lecture-working-with-express",
             "lecture-understanding-routing-in-express-js",
-            "workshop-express-by-building-a-random-joke-app",
+            "workshop-build-a-random-joke-app",
             "lab-personal-profile-app",
             "review-introduction-to-express",
             "quiz-introduction-to-express"
@@ -74,7 +74,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-error-handling-and-health-checks",
-            "workshop-error-handling-in-express-by-building-a-bank-api",
+            "workshop-build-a-bank-api",
             "review-error-handling-in-express",
             "quiz-error-handling-in-express"
           ]
@@ -84,7 +84,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-express-middleware",
-            "workshop-express-middleware-by-building-a-submission-form",
+            "workshop-build-a-submission-form",
             "lab-data-sanitizer",
             "review-express-middleware",
             "quiz-express-middleware"
@@ -95,7 +95,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-websockets",
-            "workshop-websockets-by-building-a-resource-monitor",
+            "workshop-build-a-resource-monitor",
             "lab-chat-app",
             "review-websockets",
             "quiz-websockets"

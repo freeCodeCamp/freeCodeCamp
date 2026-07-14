@@ -17,6 +17,10 @@ const codeAlly = path.resolve(
   __dirname,
   '../../src/templates/Challenges/codeally/show.tsx'
 );
+const freeCodeCampOs = path.resolve(
+  __dirname,
+  '../../src/templates/Challenges/freecodecamp-os/show.tsx'
+);
 const superBlockIntro = path.resolve(
   __dirname,
   '../../src/templates/Introduction/super-block-intro.tsx'
@@ -58,6 +62,7 @@ const views = {
   frontend,
   quiz,
   codeAlly,
+  freeCodeCampOs,
   exam,
   msTrophy,
   fillInTheBlank,
