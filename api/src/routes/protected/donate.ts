@@ -4,6 +4,7 @@ import Stripe from 'stripe';
 import * as schemas from '../../schemas.js';
 import { donationSubscriptionConfig } from '@freecodecamp/shared/config/donation-settings';
 import { STRIPE_SECRET_KEY, HOME_LOCATION } from '../../utils/env.js';
+import { clientNetInfo } from '../../utils/logger.js';
 
 /**
  * Plugin for the donation endpoints requiring auth.
@@ -29,13 +30,19 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.updateStripeCard
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       const donation = await fastify.prisma.donation.findFirst({
         where: { userId: req.user?.id, provider: 'stripe' }
       });
       if (!donation) {
-        logger.error(`Stripe donation record not found: ${req.user?.id}`);
-        throw Error(`Stripe donation record not found: ${req.user?.id}`);
+        req.log.warn(
+          { userId: req.user?.id },
+          'Stripe donation record not found'
+        );
+        fastify.Sentry?.metrics?.count('donation.card_update_requested', 1, {
+          attributes: { result: 'not_found' }
+        });
+        void reply.code(404);
+        return { message: 'flash.generic-error', type: 'danger' } as const;
       }
       const { customerId, subscriptionId } = donation;
       const session = await stripe.checkout.sessions.create({
@@ -51,7 +58,10 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         success_url: `${HOME_LOCATION}/update-stripe-card?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${HOME_LOCATION}/update-stripe-card`
       });
-      logger.info(`Stripe session created for user: ${req.user?.id}`);
+      req.log.info('Stripe session created');
+      fastify.Sentry?.metrics?.count('donation.card_update_requested', 1, {
+        attributes: { result: 'success' }
+      });
       return { sessionId: session.id } as const;
     }
   );
@@ -62,14 +72,13 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.addDonation
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         const user = await fastify.prisma.user.findUnique({
           where: { id: req.user?.id }
         });
 
         if (user?.isDonating) {
-          logger.info(`User ${req.user?.id} is already donating.`);
+          req.log.warn('User is already donating');
           void reply.code(400);
           return {
             type: 'info',
@@ -84,14 +93,17 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        logger.info(`User ${req.user?.id} is now donating`);
+        req.log.info({ audit: true }, 'User is now donating');
 
         return {
           isDonating: true
         } as const;
       } catch (error) {
-        logger.error(error, `User ${req.user?.id} failed to donate`);
-        fastify.Sentry.captureException(error);
+        fastify.Sentry?.captureException(error);
+        req.log.error(
+          { err: error, userId: req.user?.id, ...clientNetInfo(req) },
+          'User failed to donate'
+        );
         void reply.code(500);
         return {
           type: 'danger',
@@ -107,7 +119,6 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.chargeStripeCard
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         const { paymentMethodId, amount, duration } = req.body;
         const id = req.user!.id;
@@ -119,7 +130,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         const { email, name } = user;
 
         if (!email) {
-          logger.warn(`User ${id} has no email`);
+          req.log.warn('User has no email');
           void reply.code(403);
           return reply.send({
             error: {
@@ -131,8 +142,8 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         const threeChallengesCompleted = user.completedChallenges.length >= 3;
 
         if (!threeChallengesCompleted) {
-          logger.warn(
-            `User ${id} has tried to donate before completing 3 challenges`
+          req.log.warn(
+            'User has tried to donate before completing 3 challenges'
           );
           void reply.code(400);
           return {
@@ -144,7 +155,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
         }
 
         if (user.isDonating) {
-          logger.info(`User ${id} is already donating.`);
+          req.log.warn('User is already donating');
           void reply.code(400);
           return reply.send({
             error: {
@@ -182,7 +193,8 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           expand: ['latest_invoice.payment_intent']
         });
         if (status === 'requires_source_action') {
-          logger.info(`User ${id} payment requires user action`);
+          req.log.info('User payment requires user action');
+          fastify.Sentry?.metrics?.count('donation.action_required', 1);
           void reply.code(402);
           return reply.send({
             error: {
@@ -193,7 +205,10 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
             }
           });
         } else if (status === 'requires_source') {
-          logger.info(`User ${id} payment declined`);
+          req.log.warn('User payment declined');
+          fastify.Sentry?.metrics?.count('donation.declined', 1, {
+            attributes: { flow: 'charge-stripe-card' }
+          });
           void reply.code(402);
           return reply.send({
             error: {
@@ -230,15 +245,41 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
-        logger.info(`User ${id} has successfully donated`);
+        req.log.info(
+          {
+            audit: true,
+            userId: id,
+            email,
+            amount,
+            duration,
+            subscriptionId,
+            ...clientNetInfo(req)
+          },
+          'User has successfully donated'
+        );
+        fastify.Sentry?.metrics?.count('donation.created', 1, {
+          attributes: { flow: 'charge-stripe-card' }
+        });
 
         return reply.send({
           type: 'success',
           isDonating: true
         });
       } catch (error) {
-        logger.error(error, `User ${req.user?.id} failed to donate`);
-        fastify.Sentry.captureException(error);
+        const ctx = {
+          err: error,
+          userId: req.user?.id,
+          ...clientNetInfo(req)
+        };
+        if (
+          error instanceof Stripe.errors.StripeCardError ||
+          error instanceof Stripe.errors.StripeInvalidRequestError
+        ) {
+          req.log.warn(ctx, 'Stripe upstream error charging card');
+        } else {
+          fastify.Sentry?.captureException(error);
+          req.log.error(ctx, 'User failed to donate');
+        }
         void reply.code(500);
         return reply.send({
           error: 'Donation failed due to a server error.'

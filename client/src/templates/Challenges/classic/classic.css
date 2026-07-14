@@ -308,3 +308,19 @@
     padding: 2px 12px;
   }
 }
+
+.mobile-lang-selector-toggle {
+  background-color: var(--secondary-background);
+  border: 0;
+  border-right: 1px solid var(--quaternary-color);
+  color: var(--primary-color);
+  font-size: 0.8em;
+  height: 100%;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.mobile-lang-selector-toggle:hover {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
+}

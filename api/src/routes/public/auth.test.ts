@@ -65,6 +65,13 @@ describe('auth0 routes', () => {
 
     it('should return 401 if the authorization header is invalid', async () => {
       mockedFetch.mockResolvedValueOnce(mockAuth0NotOk());
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superGet('/mobile-login').set(
         'Authorization',
         'Bearer invalid-token'
@@ -75,10 +82,22 @@ describe('auth0 routes', () => {
         message: 'We could not log you in, please try again in a moment.'
       });
       expect(res.status).toBe(401);
+      expect(count).toHaveBeenCalledWith('auth.mobile_login_attempted', 1, {
+        attributes: { result: 'failure', reason: 'no_email' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should return 400 if the email is not valid', async () => {
       mockedFetch.mockResolvedValueOnce(mockAuth0InvalidEmail());
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superGet('/mobile-login').set(
         'Authorization',
         'Bearer valid-token'
@@ -89,10 +108,22 @@ describe('auth0 routes', () => {
         message: 'The email is incorrectly formatted'
       });
       expect(res.status).toBe(400);
+      expect(count).toHaveBeenCalledWith('auth.mobile_login_attempted', 1, {
+        attributes: { result: 'failure', reason: 'invalid_format' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should set the jwt_access_token cookie if the authorization header is valid', async () => {
       mockedFetch.mockResolvedValueOnce(mockAuth0ValidEmail());
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superGet('/mobile-login').set(
         'Authorization',
         'Bearer valid-token'
@@ -102,6 +133,11 @@ describe('auth0 routes', () => {
       expect(res.get('Set-Cookie')).toEqual(
         expect.arrayContaining([expect.stringMatching(/jwt_access_token=/)])
       );
+      expect(count).toHaveBeenCalledWith('auth.mobile_login_attempted', 1, {
+        attributes: { result: 'success' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should create a user if they do not exist', async () => {

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://v2-8-7.turborepo.dev/schema.json",
+  "$schema": "https://v2-10-0.turborepo.dev/schema.json",
   "extends": ["//"],
   "tasks": {
     "build": {
@@ -15,6 +15,7 @@
         "EMAIL_PROVIDER",
         "FCC_API_LOG_LEVEL",
         "FCC_API_LOG_TRANSPORT",
+        "FCC_ENABLE_CLASSROOM",
         "FCC_ENABLE_DEV_LOGIN_MODE",
         "FCC_ENABLE_SENTRY_ROUTES",
         "FCC_ENABLE_SHADOW_CAPTURE",
@@ -31,6 +32,11 @@
         "PORT",
         "SENTRY_DSN",
         "SENTRY_ENVIRONMENT",
+        "SENTRY_LOGS_DEBUG_SAMPLE_RATE",
+        "SENTRY_LOGS_INFO_SAMPLE_RATE",
+        "SENTRY_PROFILE_SESSION_SAMPLE_RATE",
+        "SENTRY_SERVER_NAME",
+        "SENTRY_TRACES_SAMPLE_RATE",
         "SES_ID",
         "SES_REGION",
         "SES_SECRET",
@@ -40,7 +46,8 @@
         "SHOW_UPCOMING_CHANGES",
         "SOCRATES_API_KEY",
         "SOCRATES_ENDPOINT",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     },
     "test": {
@@ -57,6 +64,7 @@
         "EMAIL_PROVIDER",
         "FCC_API_LOG_LEVEL",
         "FCC_API_LOG_TRANSPORT",
+        "FCC_ENABLE_CLASSROOM",
         "FCC_ENABLE_DEV_LOGIN_MODE",
         "FCC_ENABLE_SENTRY_ROUTES",
         "FCC_ENABLE_SHADOW_CAPTURE",
@@ -73,6 +81,11 @@
         "PORT",
         "SENTRY_DSN",
         "SENTRY_ENVIRONMENT",
+        "SENTRY_LOGS_DEBUG_SAMPLE_RATE",
+        "SENTRY_LOGS_INFO_SAMPLE_RATE",
+        "SENTRY_PROFILE_SESSION_SAMPLE_RATE",
+        "SENTRY_SERVER_NAME",
+        "SENTRY_TRACES_SAMPLE_RATE",
         "SES_ID",
         "SES_REGION",
         "SES_SECRET",
@@ -82,7 +95,8 @@
         "SHOW_UPCOMING_CHANGES",
         "SOCRATES_API_KEY",
         "SOCRATES_ENDPOINT",
-        "STRIPE_SECRET_KEY"
+        "STRIPE_SECRET_KEY",
+        "TPA_API_BEARER_TOKEN"
       ]
     }
   }

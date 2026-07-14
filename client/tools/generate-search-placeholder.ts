@@ -26,7 +26,7 @@ i18n
     initImmediate: false,
     preload: readdirSync(join(__dirname, '../i18n/locales')).filter(
       fileName => {
-        const joinedPath = join(join(__dirname, '../i18n/locales'), fileName);
+        const joinedPath = join(__dirname, '../i18n/locales', fileName);
         const isDirectory = lstatSync(joinedPath).isDirectory();
         return isDirectory;
       }

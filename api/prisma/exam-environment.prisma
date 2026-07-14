@@ -234,10 +234,12 @@ model ExamEnvironmentExamModeration {
   submissionDate    DateTime @default(now()) @db.Date
   /// Whether the `challengeId` for the `ExamEnvironmentChallenge` has been awarded to the user
   challengesAwarded Boolean  @default(false)
+  /// Score between 0 and 1 calculated by Exam Services
+  moderationScore   Float?
 
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version Int @default(2)
+  version Int @default(3)
 
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)

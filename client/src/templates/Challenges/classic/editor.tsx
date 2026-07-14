@@ -2,12 +2,16 @@ import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
 
 // eslint-disable-next-line import/no-duplicates
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api.js';
 import type {
   IRange,
   editor
   // eslint-disable-next-line import/no-duplicates
-} from 'monaco-editor/esm/vs/editor/editor.api';
+} from 'monaco-editor/esm/vs/editor/editor.api.js';
+import type {
+  json as monacoJsonApi,
+  typescript as monacoTypescriptApi
+} from 'monaco-editor/esm/vs/editor/editor.main.js';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
@@ -64,13 +68,37 @@ import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
+import { attachContentWidgetEvents } from './content-widget-events';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
 
 import './editor.css';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
-const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+let monacoJson: typeof monacoJsonApi | null = null;
+let monacoTypescript: typeof monacoTypescriptApi | null = null;
+
+// Monaco 0.55 exposes JSON and TypeScript defaults from their contribution
+// modules, so load those modules before react-monaco-editor mounts.
+const loadMonacoJson = async (): Promise<typeof monacoJsonApi> =>
+  (await import('monaco-editor/esm/vs/language/json/monaco.contribution.js')) as unknown as typeof monacoJsonApi;
+
+const loadMonacoTypescript = async (): Promise<typeof monacoTypescriptApi> =>
+  (await import('monaco-editor/esm/vs/language/typescript/monaco.contribution.js')) as unknown as typeof monacoTypescriptApi;
+
+const MonacoEditor = Loadable(async () => {
+  const [jsonContribution, typescriptContribution, editorModule] =
+    await Promise.all([
+      loadMonacoJson(),
+      loadMonacoTypescript(),
+      import('react-monaco-editor')
+    ]);
+
+  monacoJson = jsonContribution;
+  monacoTypescript = typescriptContribution;
+
+  return editorModule;
+});
 
 const monacoModelFileMap = {
   tsxFile: 'index.tsx',
@@ -315,6 +343,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const submitChallenge = useSubmit();
 
+  const detachUpperJawEventsRef = useRef<(() => void) | null>(null);
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -334,6 +363,13 @@ const Editor = (props: EditorProps): JSX.Element => {
   const attemptsRef = useRef<number>(0);
   attemptsRef.current = props.attempts;
 
+  useEffect(() => {
+    return () => {
+      detachUpperJawEventsRef.current?.();
+      detachUpperJawEventsRef.current = null;
+    };
+  }, []);
+
   const challengeFile = challengeFiles?.find(
     challengeFile => challengeFile.fileKey === fileKey
   );
@@ -347,6 +383,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
+    editContext: false,
     guides: {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
@@ -367,7 +404,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       verticalScrollbarSize: getScrollbarWidth(),
       // this helps the scroll bar fit properly between the arrows,
       // but doesn't do anything for the arrows themselves
-      arrowSize: getScrollbarWidth()
+      arrowSize: getScrollbarWidth(),
+      alwaysConsumeMouseWheel: false
     },
     parameterHints: {
       enabled: false
@@ -403,14 +441,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
-    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
-      ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
-      jsx: monaco.languages.typescript.JsxEmit.Preserve,
+    monacoTypescript?.typescriptDefaults.setCompilerOptions({
+      ...monacoTypescript.typescriptDefaults.getCompilerOptions(),
+      jsx: monacoTypescript.JsxEmit.Preserve,
       allowUmdGlobalAccess: true
     });
 
     // support JSONC:
-    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+    monacoJson?.jsonDefaults.setDiagnosticsOptions({
       allowComments: true
     });
 
@@ -623,6 +661,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
+        const shouldShowCompletionModal = !props.showIndependentLowerJaw;
         if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
@@ -630,7 +669,9 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({ showCompletionModal: true });
+          props.executeChallenge({
+            showCompletionModal: shouldShowCompletionModal
+          });
         }
       }
     });
@@ -880,6 +921,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       descContainer.classList.add('mathjax-support');
     }
     domNode.classList.add('editor-upper-jaw');
+    detachUpperJawEventsRef.current?.();
+    detachUpperJawEventsRef.current = attachContentWidgetEvents(domNode);
     domNode.appendChild(descContainer);
     if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
@@ -899,6 +942,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     obs.observe(domNode);
 
     domNode.style.userSelect = 'text';
+    domNode.style.webkitUserSelect = 'text';
 
     domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
     domNode.style.width = `${getEditorContentWidth(editor)}px`;
@@ -1151,7 +1195,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     domNode: HTMLDivElement,
     // If getTop function is not provided then no positioning will be done here.
     // This allows scroll gutter to do its positioning elsewhere.
-    getTop?: () => string
+    getTop?: () => string,
+    suppressMouseDown = false
   ) => {
     const getId = () => id;
     const getDomNode = () => domNode;
@@ -1175,7 +1220,8 @@ const Editor = (props: EditorProps): JSX.Element => {
       getId,
       getDomNode,
       getPosition,
-      afterRender
+      afterRender,
+      suppressMouseDown
     };
   };
 
@@ -1192,7 +1238,8 @@ const Editor = (props: EditorProps): JSX.Element => {
         editor,
         'description.widget',
         descriptionNode,
-        getDescriptionZoneTop
+        getDescriptionZoneTop,
+        true
       );
       // this order (add widget, change zone) is necessary, since the zone
       // relies on the domnode being in the DOM to calculate its height - that
@@ -1401,6 +1448,20 @@ const Editor = (props: EditorProps): JSX.Element => {
     return challengeIsComplete();
   };
 
+  const editorWillUnmount = (
+    currentEditor: editor.IStandaloneCodeEditor,
+    monaco: typeof monacoEditor
+  ) => {
+    // Any model we've created has to be manually disposed of to prevent
+    // memory leaks.
+    const language = modeMap[challengeFile?.ext ?? 'html'];
+    if (language === 'typescript') {
+      teardownTSModels(monaco);
+    } else {
+      currentEditor.getModel()?.dispose();
+    }
+  };
+
   const showFileName = challengeFile && props.challengeFiles!.length > 1;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
@@ -1411,16 +1472,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
-          editorWillUnmount={(editor, monaco) => {
-            // Any model we've created has to be manually disposed of to prevent
-            // memory leaks.
-            const language = modeMap[challengeFile?.ext ?? 'html'];
-            if (language === 'typescript') {
-              teardownTSModels(monaco);
-            } else {
-              editor.getModel()?.dispose();
-            }
-          }}
+          editorWillUnmount={editorWillUnmount}
           onChange={onChange}
           language={modeMap[challengeFile?.ext ?? 'html']}
           options={{ ...options, folding: !hasEditableRegion() }}

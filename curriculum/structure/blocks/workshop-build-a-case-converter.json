@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-build-a-case-converter",
+  "challengeOrder": [
+    {
+      "id": "8172c795e4486122416ef613",
+      "title": "Build a Case Converter"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

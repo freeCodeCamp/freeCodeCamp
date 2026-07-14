@@ -156,15 +156,6 @@ const BASE_LAYOUT = {
   testsPane: { flex: 0.3 }
 };
 
-// Used to prevent monaco from stealing mouse/touch events on the upper jaw
-// content widget so they can trigger their default actions. (Issue #46166)
-const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
-  const target = e.target as HTMLElement;
-  if (target?.closest('.editor-upper-jaw')) {
-    e.stopPropagation();
-  }
-};
-
 const StepPreview = ({
   dimensions,
   disableIframe,
@@ -254,7 +245,7 @@ function ShowClassic({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
 
-  const guideUrl = getGuideUrl({ forumTopicId, title });
+  const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -325,20 +316,16 @@ function ShowClassic({
   // Show test
 
   useEffect(() => {
-    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+    if (
+      isPreFetchEnabled &&
+      (envData as { clientLocale: string }).clientLocale === 'espanol'
+    ) {
       preloadPage(nextChallengePath);
     }
   }, [nextChallengePath, isPreFetchEnabled]);
 
   useEffect(() => {
     initializeComponent(title);
-    // Bug fix for the monaco content widget and touch devices/right mouse
-    // click. (Issue #46166)
-    document.addEventListener('mousedown', handleContentWidgetEvents, true);
-    document.addEventListener('contextmenu', handleContentWidgetEvents, true);
-    document.addEventListener('touchstart', handleContentWidgetEvents, true);
-    document.addEventListener('touchmove', handleContentWidgetEvents, true);
-    document.addEventListener('touchend', handleContentWidgetEvents, true);
 
     window.addEventListener('resize', setHtmlHeight);
     setHtmlHeight();
@@ -346,27 +333,6 @@ function ShowClassic({
     return () => {
       createFiles([]);
       cancelTests();
-      document.removeEventListener(
-        'mousedown',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'contextmenu',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'touchstart',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'touchmove',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener('touchend', handleContentWidgetEvents, true);
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -482,6 +448,7 @@ function ShowClassic({
       instructionsPanelRef={instructionsPanelRef}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
+      showIndependentLowerJaw={showIndependentLowerJaw}
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
@@ -493,6 +460,9 @@ function ShowClassic({
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             instructions={renderInstructionsPanel({
               toolPanel: null,
               hasDemo: demoType === 'onClick'
