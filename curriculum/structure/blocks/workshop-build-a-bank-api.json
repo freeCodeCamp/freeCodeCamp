@@ -4,11 +4,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
-  "dashedName": "workshop-express-by-building-a-weather-service-api",
+  "dashedName": "workshop-build-a-bank-api",
   "challengeOrder": [
     {
-      "id": "2ee4f38aa806d51f077d96cc",
-      "title": "Learn Express by Building a Weather Service API"
+      "id": "6c7ecaaa60c9a0918c1af380",
+      "title": "Build a Bank API"
     }
   ],
   "helpCategory": "Backend Development"
