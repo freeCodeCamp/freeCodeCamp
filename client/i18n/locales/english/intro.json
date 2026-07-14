@@ -7175,6 +7175,7 @@
       "websockets": "WebSockets",
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
+      "review-back-end-development-and-apis": "Back-End Development and APIs Review",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "module-intros": {
@@ -7248,6 +7249,12 @@
         "note": "Coming Late 2026",
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification."
+        ]
+      },
+      "review-back-end-development-and-apis": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
         ]
       }
     },
@@ -7506,6 +7513,12 @@
           "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
+      "lecture-understanding-security-and-privacy-in-web-applications": {
+        "title": "Understanding Security and Privacy in Web Applications",
+        "intro": [
+          "Learn how security and privacy work in web applications, covering HTTPS, cookies, CSP, common threats, privacy laws, and more."
+        ]
+      },
       "review-security-and-privacy": {
         "title": "Security and Privacy Review",
         "intro": [
@@ -7524,6 +7537,18 @@
           "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
         ]
       },
+      "workshop-jwt-protected-routes": {
+        "title": "Build JWT Protected Routes",
+        "intro": [
+          "You will learn authentication and role-based authorization by building an Express application with JWT-protected routes."
+        ]
+      },
+      "lab-family-movie-watchlist-api": {
+        "title": "Build a Family Movie Watchlist API",
+        "intro": [
+          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
+        ]
+      },
       "review-authentication-and-authorization": {
         "title": "Authentication and Authorization Review",
         "intro": [
@@ -7536,16 +7561,16 @@
           "Test your knowledge of authentication and authorization concepts covered in this module."
         ]
       },
+      "review-back-end-development-and-apis": {
+        "title": "Back-End Development and APIs Review",
+        "intro": [
+          "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back-End Development and APIs Certification Exam",
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification"
-        ]
-      },
-      "lecture-understanding-security-and-privacy-in-web-applications": {
-        "title": "Understanding Security and Privacy in Web Applications",
-        "intro": [
-          "Learn how security and privacy work in web applications, covering HTTPS, cookies, CSP, common threats, privacy laws, and more."
         ]
       }
     }
