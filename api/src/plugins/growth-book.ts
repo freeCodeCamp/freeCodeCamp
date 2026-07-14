@@ -2,8 +2,6 @@ import { GrowthBook, Options } from '@growthbook/growthbook';
 import { FastifyPluginAsync } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { FREECODECAMP_NODE_ENV } from '../utils/env.js';
-
 declare module 'fastify' {
   interface FastifyInstance {
     gb: GrowthBook;
@@ -18,9 +16,10 @@ const growthBook: FastifyPluginAsync<Options> = async (fastify, options) => {
   if (hasRequiredConfig) {
     const res = await gb.init({ timeout: 3000 });
 
-    if (res.error && FREECODECAMP_NODE_ENV === 'production') {
+    if (res.error) {
       fastify.log.error(res.error, 'Failed to initialize GrowthBook');
-      fastify.Sentry.captureException(res.error);
+      fastify.Sentry?.captureException(res.error);
+      fastify.Sentry?.metrics?.count('growthbook.init_failed', 1);
     }
   }
 
