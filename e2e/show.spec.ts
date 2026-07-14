@@ -76,7 +76,9 @@ test.describe('Quiz challenges - no duplicate title', () => {
   });
   test.describe('When the user is signed out', () => {
     test.use({ storageState: { cookies: [], origins: [] } });
-    test('should not duplicate the block name in the page title', async ({ page }) => {
+    test('should not duplicate the block name in the page title', async ({
+      page
+    }) => {
       await expect(page).toHaveTitle(
         'Tech Updates and Trends Quiz | Learn | freeCodeCamp.org'
       );
