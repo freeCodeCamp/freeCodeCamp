@@ -4,11 +4,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
-  "dashedName": "workshop-how-to-build-an-npm-module",
+  "dashedName": "workshop-build-a-web-server",
   "challengeOrder": [
     {
-      "id": "8172c795e4486122416ef613",
-      "title": "Learn How to Build an NPM Module"
+      "id": "e050e8ccbfc80e1a3561f787",
+      "title": "Build a Web Server"
     }
   ],
   "helpCategory": "Backend Development"
