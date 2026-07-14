@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "workshop-jwt-protected-routes",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [{ "id": "6a55c4b3102207cfc2491584", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
