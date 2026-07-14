@@ -4,11 +4,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
-  "dashedName": "workshop-nodejs-common-modules",
+  "dashedName": "workshop-build-a-case-converter",
   "challengeOrder": [
     {
-      "id": "6449710ece9a4dcdcf44f6e7",
-      "title": "Learn Node.js Common Modules"
+      "id": "8172c795e4486122416ef613",
+      "title": "Build a Case Converter"
     }
   ],
   "helpCategory": "Backend Development"
