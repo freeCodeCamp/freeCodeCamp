@@ -18,6 +18,10 @@ const getEmailFromAuth0 = async (
 
   if (!auth0Res.ok) {
     req.log.warn({ status: auth0Res.status }, 'Auth0 userinfo request failed');
+    req.server.Sentry?.captureException(
+      new Error('Auth0 userinfo request failed'),
+      { extra: { status: auth0Res.status } }
+    );
     return null;
   }
 

@@ -13,7 +13,8 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 const newUserEmail = 'a.n.random@user.com';
 
 const mockAuth0NotOk = () => ({
-  ok: false
+  ok: false,
+  status: 503
 });
 
 const mockAuth0InvalidEmail = () => ({
@@ -66,9 +67,11 @@ describe('auth0 routes', () => {
     it('should return 401 if the authorization header is invalid', async () => {
       mockedFetch.mockResolvedValueOnce(mockAuth0NotOk());
       const count = vi.fn();
+      const captureException = vi.fn();
       const originalSentry = fastifyTestInstance.Sentry;
       fastifyTestInstance.Sentry = {
         ...originalSentry,
+        captureException,
         metrics: { ...originalSentry.metrics, count }
       };
 
@@ -85,6 +88,10 @@ describe('auth0 routes', () => {
       expect(count).toHaveBeenCalledWith('auth.mobile_login_attempted', 1, {
         attributes: { result: 'failure', reason: 'no_email' }
       });
+      expect(captureException).toHaveBeenCalledWith(
+        new Error('Auth0 userinfo request failed'),
+        { extra: { status: 503 } }
+      );
 
       fastifyTestInstance.Sentry = originalSentry;
     });
