@@ -7537,6 +7537,18 @@
           "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
         ]
       },
+      "workshop-jwt-protected-routes": {
+        "title": "Build JWT Protected Routes",
+        "intro": [
+          "You will learn authentication and role-based authorization by building an Express application with JWT-protected routes."
+        ]
+      },
+      "lab-family-movie-watchlist-api": {
+        "title": "Build a Family Movie Watchlist API",
+        "intro": [
+          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
+        ]
+      },
       "review-authentication-and-authorization": {
         "title": "Authentication and Authorization Review",
         "intro": [

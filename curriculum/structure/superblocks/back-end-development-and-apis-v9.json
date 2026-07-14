@@ -115,6 +115,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-authentication-and-authorization",
+            "workshop-jwt-protected-routes",
+            "lab-family-movie-watchlist-api",
             "review-authentication-and-authorization",
             "quiz-authentication-and-authorization"
           ]
