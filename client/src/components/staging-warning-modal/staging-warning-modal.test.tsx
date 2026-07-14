@@ -30,6 +30,7 @@ describe('StagingWarningModal', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    store.remove('acceptedStagingWarning');
   });
 
   it('renders the modal successfully', () => {
@@ -51,6 +52,13 @@ describe('StagingWarningModal', () => {
     expect(modalContent).toHaveTextContent('staging-warning.p1');
     expect(modalContent).toHaveTextContent('staging-warning.p2');
     expect(modalContent).toHaveTextContent('staging-warning.p3');
+  });
+
+  it('does not render the modal when the warning was already accepted', () => {
+    store.set('acceptedStagingWarning', true);
+    render(<StagingWarningModal />);
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 
   it('accepts Warning, stores acceptance key in local storage, and closes the modal', () => {
