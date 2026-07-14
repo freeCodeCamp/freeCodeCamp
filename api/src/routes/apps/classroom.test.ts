@@ -104,12 +104,24 @@ describe('classroom routes', () => {
       });
 
       test('returns 200 with empty userId when no classroom account matches email', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await post('/apps/classroom/get-user-id').send({
           email: defaultUserEmail
         });
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(res.status).toBe(200);
         expect(res.body).toStrictEqual({ userId: '' });
+        expect(count).toHaveBeenCalledWith('classroom.user_looked_up', 1, {
+          attributes: { result: 'not_found' }
+        });
       });
 
       test('returns 200 with userId for a classroom account', async () => {
@@ -118,15 +130,31 @@ describe('classroom routes', () => {
           data: { isClassroomAccount: true }
         });
 
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await post('/apps/classroom/get-user-id').send({
           email: defaultUserEmail
         });
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(res.status).toBe(200);
         expect(res.body).toStrictEqual({ userId: defaultUserId });
+        expect(count).toHaveBeenCalledWith('classroom.user_looked_up', 1, {
+          attributes: { result: 'found' }
+        });
       });
 
-      test('returns 500 when the database query fails', async () => {
+      test('returns 500 and captures when the database query fails', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+
         const original = fastifyTestInstance.prisma.user.findFirst;
         fastifyTestInstance.prisma.user.findFirst = vi
           .fn()
@@ -137,11 +165,15 @@ describe('classroom routes', () => {
         });
 
         fastifyTestInstance.prisma.user.findFirst = original;
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(res.status).toBe(500);
         expect(res.body).toStrictEqual({
           error: 'Failed to retrieve user id'
         });
+        expect(captureException).toHaveBeenCalledExactlyOnceWith(
+          expect.objectContaining({ message: 'test' })
+        );
       });
     });
 
@@ -272,7 +304,11 @@ describe('classroom routes', () => {
         expect(Object.keys(challenge)).toStrictEqual(['id', 'completedDate']);
       });
 
-      test('returns 500 when the database query fails', async () => {
+      test('returns 500 and captures when the database query fails', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+
         const original = fastifyTestInstance.prisma.user.findMany;
         fastifyTestInstance.prisma.user.findMany = vi
           .fn()
@@ -283,11 +319,15 @@ describe('classroom routes', () => {
         });
 
         fastifyTestInstance.prisma.user.findMany = original;
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(res.status).toBe(500);
         expect(res.body).toStrictEqual({
           error: 'Failed to retrieve user data'
         });
+        expect(captureException).toHaveBeenCalledExactlyOnceWith(
+          expect.objectContaining({ message: 'test' })
+        );
       });
     });
   });

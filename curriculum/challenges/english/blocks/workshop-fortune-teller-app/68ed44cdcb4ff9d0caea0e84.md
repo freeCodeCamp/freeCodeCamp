@@ -448,7 +448,7 @@ const renderCard = (drawingType: string, isReversed: boolean, shortName: string,
       />
     </figure>
   </div>
-`
+`;
 
 enum DrawingType {
   Past = "past",

@@ -19,7 +19,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-node-core-modules",
-            "workshop-nodejs-common-modules",
+            "workshop-build-a-file-processor",
             "review-node-js-core-modules",
             "quiz-node-js-core-modules"
           ]
@@ -48,7 +48,7 @@
             "lecture-understanding-how-http-dns-tcpip-work",
             "lecture-understanding-the-http-request-response-model",
             "lecture-understanding-the-web-standards-model",
-            "workshop-nodejs-by-building-a-web-server",
+            "workshop-build-a-web-server",
             "review-http-and-the-web-standards-model",
             "quiz-http-and-the-web-standards-model"
           ]
@@ -89,7 +89,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-error-handling-and-health-checks",
-            "workshop-error-handling-in-express-by-building-a-bank-api",
+            "workshop-build-a-bank-api",
             "review-error-handling-in-express",
             "quiz-error-handling-in-express"
           ]
@@ -99,7 +99,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-express-middleware",
-            "workshop-express-middleware-by-building-a-submission-form",
+            "workshop-build-a-submission-form",
             "lab-data-sanitizer",
             "review-express-middleware",
             "quiz-express-middleware"
@@ -135,9 +135,17 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-authentication-and-authorization",
+            "workshop-jwt-protected-routes",
+            "lab-family-movie-watchlist-api",
             "review-authentication-and-authorization",
             "quiz-authentication-and-authorization"
           ]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-back-end-development-and-apis",
+          "comingSoon": true,
+          "blocks": ["review-back-end-development-and-apis"]
         }
       ]
     },

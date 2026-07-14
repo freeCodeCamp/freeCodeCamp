@@ -20,22 +20,22 @@
   },
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/japanese/index",
-    "forum": "https://forum.freecodecamp.org/c/japanese/552",
+    "forum": "https://forum.freecodecamp.org/",
     "news": "https://www.freecodecamp.org/japanese/news/",
     "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
-    "HTML-CSS": "world-languages/japanese",
-    "JavaScript": "world-languages/japanese",
-    "Python": "world-languages/japanese",
-    "Backend Development": "world-languages/japanese",
-    "C-Sharp": "world-languages/japanese",
-    "English": "world-languages/japanese",
-    "Spanish Curriculum": "world-languages/japanese",
-    "Chinese Curriculum": "world-languages/japanese",
-    "Odin": "world-languages/japanese",
-    "Euler": "world-languages/japanese",
-    "Rosetta": "world-languages/japanese",
-    "General": "world-languages/japanese"
+    "HTML-CSS": "curriculum-help",
+    "JavaScript": "curriculum-help",
+    "Python": "curriculum-help",
+    "Backend Development": "curriculum-help",
+    "C-Sharp": "curriculum-help",
+    "English": "curriculum-help",
+    "Spanish Curriculum": "curriculum-help",
+    "Chinese Curriculum": "curriculum-help",
+    "Odin": "curriculum-help",
+    "Euler": "curriculum-help",
+    "Rosetta": "curriculum-help",
+    "General": "curriculum-help"
   }
 }
