@@ -358,9 +358,10 @@ async function postExamGeneratedExamHandler(
       }
 
       if (generated.data === null) {
-        this.Sentry?.captureException({
-          generatedExamId: lastAttempt.generatedExamId
-        });
+        this.Sentry?.captureException(
+          new Error('Unreachable. Generated exam not found.'),
+          { extra: { generatedExamId: lastAttempt.generatedExamId } }
+        );
         req.log.error(
           { generatedExamId: lastAttempt.generatedExamId },
           'Unreachable. Generated exam not found.'
