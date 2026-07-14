@@ -73,7 +73,10 @@ describe('findOrCreateUser', () => {
     );
     expect(captureException).toHaveBeenCalledWith(
       new Error('Multiple user records found for the same email'),
-      { extra: { userIds } }
+      {
+        extra: { userIds },
+        fingerprint: ['dup-account-multiple-user-records']
+      }
     );
     expect(count).toHaveBeenCalledWith('user.duplicate_email_detected', 1);
   });
