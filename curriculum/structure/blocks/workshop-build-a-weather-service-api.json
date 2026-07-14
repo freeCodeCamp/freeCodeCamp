@@ -4,11 +4,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
-  "dashedName": "workshop-websockets-by-building-a-resource-monitor",
+  "dashedName": "workshop-build-a-weather-service-api",
   "challengeOrder": [
     {
-      "id": "a9f9d584b5593f84276f19fb",
-      "title": "Learn WebSockets by Building a Resource Monitor"
+      "id": "2ee4f38aa806d51f077d96cc",
+      "title": "Build a Weather Service API"
     }
   ],
   "helpCategory": "Backend Development"

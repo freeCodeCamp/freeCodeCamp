@@ -4,11 +4,11 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
-  "dashedName": "workshop-express-middleware-by-building-a-submission-form",
+  "dashedName": "workshop-build-a-file-processor",
   "challengeOrder": [
     {
-      "id": "64d7d73f8932c4087d7c08f4",
-      "title": "Learn Express Middleware by Building a Submission Form"
+      "id": "6449710ece9a4dcdcf44f6e7",
+      "title": "Build a File Processor"
     }
   ],
   "helpCategory": "Backend Development"
