@@ -270,6 +270,16 @@ export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
 export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
 export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
 export const TPA_API_BEARER_TOKEN = process.env.TPA_API_BEARER_TOKEN;
+/** Server grace timeout before force closing in-flight requests. */
+export const FCC_DRAIN_TIMEOUT_MS = parseNumber('FCC_DRAIN_TIMEOUT_MS', 20_000);
+
+function parseNumber(name: string, fallback: number): number {
+  const str = process.env[name];
+  if (str == null || str.trim() === '') return fallback;
+  const value = Number(str);
+  assert.ok(Number.isFinite(value), `${name} must be a number. Found ${str}`);
+  return value;
+}
 
 function undefinedOrBool(val: string | undefined): undefined | boolean {
   if (!val) {
