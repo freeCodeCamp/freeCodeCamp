@@ -118,6 +118,12 @@
             "review-authentication-and-authorization",
             "quiz-authentication-and-authorization"
           ]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-back-end-development-and-apis",
+          "comingSoon": true,
+          "blocks": ["review-back-end-development-and-apis"]
         }
       ]
     },
