@@ -25,17 +25,25 @@ import { isObjectID } from '../../utils/validation.js';
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
     fastify.setErrorHandler((error, req, res) => {
-      // If the error does not match the format {code: string; message: string}, coerce into:
       if (
-        !Object.hasOwnProperty.call(error, 'code') ||
-        !Object.hasOwnProperty.call(error, 'message')
+        Object.hasOwnProperty.call(error, 'code') &&
+        Object.hasOwnProperty.call(error, 'message')
       ) {
-        fastify.Sentry?.captureException(error);
-        req.log.error(error, 'Unhandled error in exam environment routes.');
-        const str = JSON.stringify(error);
-        res.code(500);
-        res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
+        const { code, message, statusCode } = error as {
+          code: string;
+          message: string;
+          statusCode?: number;
+        };
+        res.code(
+          typeof statusCode === 'number' && statusCode >= 400 ? statusCode : 500
+        );
+        return res.send({ code, message });
       }
+
+      req.log.error(error, 'Unhandled error in exam environment routes.');
+      const str = JSON.stringify(error);
+      res.code(500);
+      return res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
     });
 
     fastify.get(

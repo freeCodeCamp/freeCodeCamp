@@ -408,6 +408,22 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(404);
       });
 
+      it('should respond with the error, not hang, when a request fails schema validation', async () => {
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send({})
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(400);
+        expect(res.body).toMatchObject({
+          code: 'FST_ERR_VALIDATION',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+      }, 10000);
+
       it('should return an error if the exam prerequisites are not met', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
