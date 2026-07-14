@@ -66,3 +66,20 @@ test.describe('Odin challenges', () => {
     });
   });
 });
+
+// Tests that block name is not duplicated in page title when it matches the challenge title
+test.describe('Quiz challenges - no duplicate title', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(
+      '/learn/a2-english-for-developers/en-a2-quiz-discussing-new-ideas/tech-updates-and-trends-quiz'
+    );
+  });
+  test.describe('When the user is signed out', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+    test('should not duplicate the block name in the page title', async ({ page }) => {
+      await expect(page).toHaveTitle(
+        'Tech Updates and Trends Quiz | Learn | freeCodeCamp.org'
+      );
+    });
+  });
+});
