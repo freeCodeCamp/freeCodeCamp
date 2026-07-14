@@ -15,8 +15,8 @@ export const chargeStripeCard = {
       error: Type.Object({
         message: Type.String(),
         type: Type.Union([
-          Type.Literal('AlreadyDonatingError'),
-          Type.Literal('MethodRestrictionError')
+          Type.Literal('MethodRestrictionError'),
+          Type.Literal('EmailRequiredError')
         ])
       })
     }),
@@ -30,10 +30,10 @@ export const chargeStripeCard = {
         client_secret: Type.Optional(Type.String())
       })
     }),
-    403: Type.Object({
+    409: Type.Object({
       error: Type.Object({
         message: Type.String(),
-        type: Type.Literal('EmailRequiredError')
+        type: Type.Literal('AlreadyDonatingError')
       })
     }),
     500: Type.Object({

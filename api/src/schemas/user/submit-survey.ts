@@ -18,16 +18,14 @@ export const submitSurvey = {
       type: Type.Literal('success'),
       message: Type.Literal('flash.survey.success')
     }),
-    400: Type.Union([
-      Type.Object({
-        type: Type.Literal('error'),
-        message: Type.Literal('flash.survey.err-1')
-      }),
-      Type.Object({
-        type: Type.Literal('error'),
-        message: Type.Literal('flash.survey.err-2')
-      })
-    ]),
+    400: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal('flash.survey.err-1')
+    }),
+    409: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal('flash.survey.err-2')
+    }),
     500: Type.Object({
       type: Type.Literal('error'),
       message: Type.Literal('flash.survey.err-3')

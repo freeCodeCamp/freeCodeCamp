@@ -6,7 +6,7 @@ export const addDonation = {
     200: Type.Object({
       isDonating: Type.Boolean()
     }),
-    400: Type.Object({
+    409: Type.Object({
       message: Type.Literal('User is already donating.'),
       type: Type.Literal('info')
     }),

@@ -286,7 +286,7 @@ describe('Donate', () => {
         expect(response.status).toBe(402);
       });
 
-      test('should return 400 if the user is already donating', async () => {
+      test('should return 409 if the user is already donating', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('still does not matter')
         );
@@ -306,10 +306,10 @@ describe('Donate', () => {
             message: 'User is already donating.'
           }
         });
-        expect(failResponse.status).toBe(400);
+        expect(failResponse.status).toBe(409);
       });
 
-      test('should return 403 if the user has no email', async () => {
+      test('should return 400 if the user has no email', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: userWithProgress.email },
           data: { email: null }
@@ -323,7 +323,7 @@ describe('Donate', () => {
             message: 'User has not provided an email address'
           }
         });
-        expect(response.status).toBe(403);
+        expect(response.status).toBe(400);
       });
 
       test('should return 500 if Stripe encountes an error', async () => {
@@ -453,13 +453,13 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      test('should return 400 if the user is already donating', async () => {
+      test('should return 409 if the user is already donating', async () => {
         const successResponse = await superPost('/donate/add-donation').send(
           {}
         );
         expect(successResponse.status).toBe(200);
         const failResponse = await superPost('/donate/add-donation').send({});
-        expect(failResponse.status).toBe(400);
+        expect(failResponse.status).toBe(409);
       });
 
       test('should capture unexpected errors', async () => {

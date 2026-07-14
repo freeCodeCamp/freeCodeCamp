@@ -295,7 +295,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
       if (!user.email) {
         req.log.warn('User has no email');
-        void reply.code(403);
+        void reply.code(400);
         fastify.Sentry?.metrics?.count('user.report_submitted', 1, {
           attributes: { result: 'no_email' }
         });
@@ -493,7 +493,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
             attributes: { result: 'username_taken' }
           });
-          return reply.status(403).send({
+          return reply.status(409).send({
             type: 'error',
             message: 'flash.ms.transcript.link-err-4'
           });
@@ -571,7 +571,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         );
         if (surveyAlreadyTaken) {
           req.log.warn('Survey already taken');
-          return reply.code(400).send({
+          return reply.code(409).send({
             type: 'error',
             message: 'flash.survey.err-2'
           });

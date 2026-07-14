@@ -65,6 +65,11 @@ export type UpdateReplyType<Schema extends FastifySchema> = FastifyReply<
  * );
  *
  * if (maybeWhatIWant.hasError) {
+ *   if (isExpectedClientError(maybeWhatIWant.error)) {
+ *     void reply.code(400);
+ *     return reply.send({ type: 'error', message: 'Invalid request.' });
+ *   }
+ *
  *   void reply.code(500);
  *   return reply.send('Unable to generate exam, due to: ' +
  *     JSON.stringify(maybeWhatIWant.error)
@@ -98,6 +103,11 @@ export async function mapErr<T>(promise: Promise<T>): Promise<Result<T>> {
  * );
  *
  * if (maybeWhatIWant.hasError) {
+ *   if (isExpectedClientError(maybeWhatIWant.error)) {
+ *     void reply.code(400);
+ *     return reply.send({ type: 'error', message: 'Invalid request.' });
+ *   }
+ *
  *   void reply.code(500);
  *   return reply.send('Unable to generate exam, due to: ' +
  *     JSON.stringify(maybeWhatIWant.error)

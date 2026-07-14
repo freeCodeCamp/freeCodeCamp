@@ -1616,7 +1616,7 @@ describe('userRoutes', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('POST returns 403 for users with no email', async () => {
+      test('POST returns 400 for users with no email', async () => {
         const count = vi.fn();
         const originalSentry = fastifyTestInstance.Sentry;
         fastifyTestInstance.Sentry = {
@@ -1634,7 +1634,7 @@ describe('userRoutes', () => {
           reportDescription: 'Test Report'
         });
 
-        expect(response.statusCode).toBe(403);
+        expect(response.statusCode).toBe(400);
         expect(response.body).toStrictEqual({
           type: 'danger',
           message: 'flash.report-error'
@@ -1956,7 +1956,7 @@ Thanks and regards,
             message: 'flash.ms.transcript.link-err-4'
           });
 
-          expect(response.statusCode).toBe(403);
+          expect(response.statusCode).toBe(409);
           expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
             attributes: { result: 'username_taken' }
           });
@@ -2149,7 +2149,7 @@ Thanks and regards,
         });
       });
 
-      test('POST returns 400 if user already submitted survey', async () => {
+      test('POST returns 409 if user already submitted survey', async () => {
         // Submit survey for first time
         await superPost('/user/submit-survey').send({
           surveyResults: mockSurveyResults
@@ -2160,7 +2160,7 @@ Thanks and regards,
           surveyResults: mockSurveyResults
         });
 
-        expect(response.statusCode).toBe(400);
+        expect(response.statusCode).toBe(409);
         expect(response.body).toStrictEqual({
           type: 'error',
           message: 'flash.survey.err-2'
