@@ -27,7 +27,8 @@ Below that, create another new variable called `numRounded2` and assign the resu
 You should have a variable called `numRounded`.
 
 ```js
-assert.isNotNull(numRounded);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.variables.numRounded);
 ```
 
 You should assign the result of rounding the number `2.7` to the variable `numRounded`.
@@ -51,7 +52,8 @@ assert.match(code, /console\.log\(\s*numRounded\s*\)/);
 You should have a variable called `numRounded2`.
 
 ```js
-assert.isNotNull(numRounded2);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.variables.numRounded2);
 ```
 
 You should assign the result of rounding the number `11.2` to the variable `numRounded2`.
