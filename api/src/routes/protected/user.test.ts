@@ -439,6 +439,13 @@ describe('userRoutes', () => {
       });
 
       test('POST returns 200 status code with empty object', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const initialCount = await fastifyTestInstance.prisma.user.count();
         const response = await superPost('/account/delete');
         const finalCount = await fastifyTestInstance.prisma.user.count();
@@ -450,6 +457,36 @@ describe('userRoutes', () => {
         expect(response.status).toBe(200);
         expect(finalCount).toBe(initialCount - 1);
         expect(deletedUser).toBeNull();
+        expect(count).toHaveBeenCalledWith('account.deleted', 1, {
+          attributes: { endpoint: '/account/delete' }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('POST emits account.deleted_while_donating when a donating user is deleted', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: { isDonating: true }
+        });
+
+        const response = await superPost('/account/delete');
+
+        expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith(
+          'account.deleted_while_donating',
+          1,
+          { attributes: { endpoint: '/account/delete' } }
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('POST deletes Microsoft usernames associated with the user', async () => {
@@ -575,11 +612,9 @@ describe('userRoutes', () => {
           superPost('/account/delete')
         );
         await Promise.all(deletePromises);
-        const messages: string[] = spy.mock.calls.map(call =>
-          call.map(part => String(part)).join(' ')
-        );
-        const found = messages.some(m =>
-          m.includes(`User with id ${defaultUserId} not found for deletion.`)
+        // userId is auto-bound onto req.log by the auth plugin, not passed explicitly.
+        const found = spy.mock.calls.some(
+          ([firstArg]) => firstArg === 'User not found for deletion'
         );
         expect(found).toBe(true);
       });
@@ -597,6 +632,13 @@ describe('userRoutes', () => {
       });
 
       test('DELETE returns 204 status code with empty object', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superDelete(`/users/${defaultUserId}`);
         const userCount = await fastifyTestInstance.prisma.user.count({
           where: { email: testUserData.email }
@@ -605,6 +647,36 @@ describe('userRoutes', () => {
         expect(response.body).toStrictEqual({});
         expect(response.status).toBe(204);
         expect(userCount).toBe(0);
+        expect(count).toHaveBeenCalledWith('account.deleted', 1, {
+          attributes: { endpoint: '/users/:userId' }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('DELETE emits account.deleted_while_donating when a donating user is deleted', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: { isDonating: true }
+        });
+
+        const response = await superDelete(`/users/${defaultUserId}`);
+
+        expect(response.status).toBe(204);
+        expect(count).toHaveBeenCalledWith(
+          'account.deleted_while_donating',
+          1,
+          { attributes: { endpoint: '/users/:userId' } }
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('DELETE deletes Microsoft usernames associated with the user', async () => {
@@ -705,12 +777,11 @@ describe('userRoutes', () => {
 
         await Promise.all(deletePromises);
 
-        const messages = spy.mock.calls.flat().map(String);
-        expect(
-          messages.some(m =>
-            m.includes(`User with id ${defaultUserId} not found for deletion.`)
-          )
-        ).toBe(true);
+        // userId is auto-bound onto req.log by the auth plugin, not passed explicitly.
+        const found = spy.mock.calls.some(
+          ([firstArg]) => firstArg === 'User not found for deletion'
+        );
+        expect(found).toBe(true);
       });
 
       test('returns 403 if attempting to delete a different user', async () => {
@@ -745,6 +816,21 @@ describe('userRoutes', () => {
 
         expect(user?.progressTimestamps).toHaveLength(1);
         expect(user).toMatchObject(baseProgressData);
+      });
+
+      test('POST emits account.progress_reset metric', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        await superPost('/account/reset-progress');
+
+        expect(count).toHaveBeenCalledWith('account.progress_reset', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('POST deletes Microsoft usernames associated with the user', async () => {
@@ -1241,6 +1327,47 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(500);
       });
 
+      test('GET captures an exception if the username is missing', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: testUserData.email },
+          data: { username: '' }
+        });
+
+        const response = await superGet('/user/session-user');
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('GET captures unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.survey, 'findMany')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superGet('/user/session-user');
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        spy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       // This should help debugging, since this the route returns this if
       // anything throws in the handler.
       test('GET does not return the error response if the request is valid', async () => {
@@ -1428,6 +1555,13 @@ describe('userRoutes', () => {
       });
 
       test('POST returns 400 for empty username', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPost('/user/report-user').send({
           username: '',
           reportDescription: 'Test Report'
@@ -1438,6 +1572,11 @@ describe('userRoutes', () => {
           type: 'danger',
           message: 'flash.report-error'
         });
+        expect(count).toHaveBeenCalledWith('user.report_submitted', 1, {
+          attributes: { result: 'not_found' }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('POST returns 400 for empty report', async () => {
@@ -1449,7 +1588,42 @@ describe('userRoutes', () => {
         expect(response.statusCode).toBe(400);
       });
 
+      test('POST captures unexpected errors when looking up the reported user', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        const count = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException,
+          metrics: { ...originalSentry.metrics, count }
+        };
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.user, 'findMany')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superPost('/user/report-user').send({
+          username: testUserData.username,
+          reportDescription: 'Test Report'
+        });
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+        expect(count).toHaveBeenCalledWith('user.report_submitted', 1, {
+          attributes: { result: 'lookup_error' }
+        });
+
+        spy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       test('POST returns 403 for users with no email', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: testUserData.email },
           data: { email: null }
@@ -1465,6 +1639,11 @@ describe('userRoutes', () => {
           type: 'danger',
           message: 'flash.report-error'
         });
+        expect(count).toHaveBeenCalledWith('user.report_submitted', 1, {
+          attributes: { result: 'no_email' }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('POST sanitises report description', async () => {
@@ -1485,6 +1664,13 @@ describe('userRoutes', () => {
       });
 
       test('POST returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const testUser = await fastifyTestInstance.prisma.user.findFirstOrThrow(
           {
             where: { email: testUserData.email }
@@ -1527,6 +1713,11 @@ Thanks and regards,
           message: 'flash.report-sent',
           variables: { email: 'foo@bar.com' }
         });
+        expect(count).toHaveBeenCalledWith('user.report_submitted', 1, {
+          attributes: { result: 'success' }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
 
@@ -1571,6 +1762,26 @@ Thanks and regards,
 
           expect(msUsernames).toBe(1);
         });
+
+        test('captures unexpected errors', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+          const spy = vi
+            .spyOn(fastifyTestInstance.prisma.msUsername, 'deleteMany')
+            .mockRejectedValueOnce(new Error('DB error'));
+
+          const response = await superDelete('/user/ms-username');
+
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+
+          spy.mockRestore();
+          fastifyTestInstance.Sentry = originalSentry;
+        });
       });
 
       describe('POST', () => {
@@ -1599,6 +1810,13 @@ Thanks and regards,
         });
 
         test('handles invalid transcript urls', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+
           const response = await superPost('/user/ms-username').send({
             msTranscriptUrl: 'https://www.example.com'
           });
@@ -1608,9 +1826,77 @@ Thanks and regards,
             message: 'flash.ms.transcript.link-err-1'
           });
           expect(response.statusCode).toBe(400);
+          expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
+            attributes: { result: 'invalid_url' }
+          });
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
+
+        test('emits ms_username.link_completed with result fetch_failed when the Microsoft API request fails', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: false,
+              status: 404
+            })
+          );
+
+          const response = await superPost('/user/ms-username').send({
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo'
+          });
+
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-2'
+          });
+          expect(response.statusCode).toBe(404);
+          expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
+            attributes: { result: 'fetch_failed' }
+          });
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
+
+        test('emits ms_username.transcript_fetch_latency_ms distribution when the Microsoft API request throws', async () => {
+          const distribution = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, distribution }
+          };
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.reject(new Error('network error'))
+          );
+
+          const response = await superPost('/user/ms-username').send({
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo'
+          });
+
+          expect(response.statusCode).toBe(500);
+          expect(distribution).toHaveBeenCalledWith(
+            'ms_username.transcript_fetch_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond' }
+          );
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('handles the case that MS does not return a username', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
               ok: true,
@@ -1628,9 +1914,20 @@ Thanks and regards,
             message: 'flash.ms.transcript.link-err-3'
           });
           expect(response.statusCode).toBe(500);
+          expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
+            attributes: { result: 'missing_username' }
+          });
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('handles duplicate Microsoft usernames', async () => {
+          const count = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count }
+          };
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
               ok: true,
@@ -1660,9 +1957,21 @@ Thanks and regards,
           });
 
           expect(response.statusCode).toBe(403);
+          expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
+            attributes: { result: 'username_taken' }
+          });
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('returns the username on success', async () => {
+          const count = vi.fn();
+          const distribution = vi.fn();
+          const originalSentry = fastifyTestInstance.Sentry;
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            metrics: { ...originalSentry.metrics, count, distribution }
+          };
           const msUsername = 'ms-user';
           mockedFetch.mockImplementationOnce(() =>
             Promise.resolve({
@@ -1682,6 +1991,16 @@ Thanks and regards,
             msUsername
           });
           expect(response.statusCode).toBe(200);
+          expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
+            attributes: { result: 'success' }
+          });
+          expect(distribution).toHaveBeenCalledWith(
+            'ms_username.transcript_fetch_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond' }
+          );
+
+          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('creates a record of the linked account', async () => {
@@ -1774,6 +2093,40 @@ Thanks and regards,
 
           expect(mockedFetch).toHaveBeenCalledWith(msTranscriptApiUrl);
         });
+
+        test('captures unexpected errors', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          const count = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException,
+            metrics: { ...originalSentry.metrics, count }
+          };
+          mockedFetch.mockImplementationOnce(() =>
+            Promise.resolve({
+              ok: true,
+              json: () => Promise.resolve({ userName: 'super-user' })
+            })
+          );
+          const spy = vi
+            .spyOn(fastifyTestInstance.prisma.msUsername, 'create')
+            .mockRejectedValueOnce(new Error('DB error'));
+
+          const response = await superPost('/user/ms-username').send({
+            msTranscriptUrl:
+              'https://learn.microsoft.com/en-us/users/mot01/transcript/12345'
+          });
+
+          expect(response.statusCode).toBe(500);
+          expect(captureException).toHaveBeenCalledOnce();
+          expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
+            attributes: { result: 'error' }
+          });
+
+          spy.mockRestore();
+          fastifyTestInstance.Sentry = originalSentry;
+        });
       });
     });
 
@@ -1815,6 +2168,13 @@ Thanks and regards,
       });
 
       test('POST returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPost('/user/submit-survey').send({
           surveyResults: mockSurveyResults
         });
@@ -1824,6 +2184,33 @@ Thanks and regards,
           type: 'success',
           message: 'flash.survey.success'
         });
+        expect(count).toHaveBeenCalledWith('survey.submitted', 1, {
+          attributes: { surveyTitle: mockSurveyResults.title }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('POST captures unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.survey, 'create')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superPost('/user/submit-survey').send({
+          surveyResults: mockSurveyResults
+        });
+
+        expect(response.statusCode).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        spy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
 
@@ -1845,6 +2232,13 @@ Thanks and regards,
       });
 
       test('POST generates a new token if one does not exist', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         mockDeploymentEnv = 'production';
         const response = await superPost('/user/exam-environment/token');
         const { examEnvironmentAuthorizationToken } = response.body;
@@ -1865,6 +2259,9 @@ Thanks and regards,
         ).not.toThrow();
 
         expect(response.status).toBe(201);
+        expect(count).toHaveBeenCalledWith('exam.token_minted', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('POST only allows for one token per user id', async () => {

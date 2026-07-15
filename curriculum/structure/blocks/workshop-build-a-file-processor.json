@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-build-a-file-processor",
+  "challengeOrder": [
+    {
+      "id": "6449710ece9a4dcdcf44f6e7",
+      "title": "Build a File Processor"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}
