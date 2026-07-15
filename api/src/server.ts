@@ -24,7 +24,10 @@ const start = async () => {
       // Safety net: if in-flight requests do not finish in time, hard-close
       // whatever is left so Swarm's SIGKILL never fires mid-write.
       const forceClose = setTimeout(() => {
-        fastify!.log.warn('Drain timeout exceeded, force-closing connections');
+        fastify!.log.warn(
+          { signal, timeoutMs: FCC_DRAIN_TIMEOUT_MS },
+          'Drain timeout exceeded, force-closing connections'
+        );
         fastify!.server.closeAllConnections();
       }, FCC_DRAIN_TIMEOUT_MS);
       forceClose.unref();
