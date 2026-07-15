@@ -1,6 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved
+} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -64,14 +68,13 @@ describe('<FinishExamModal />', () => {
   it('closes when the user keeps working on the exam', async () => {
     const user = userEvent.setup();
     renderFinishExamModal();
+    const dialog = screen.getByRole('dialog', { name: modalName });
 
     await user.click(
       screen.getByRole('button', { name: 'learn.exam.finish-no' })
     );
 
-    expect(
-      screen.queryByRole('dialog', { name: modalName })
-    ).not.toBeInTheDocument();
+    await waitForElementToBeRemoved(dialog);
   });
 
   it('calls finishExam and closes when the user finishes the exam', async () => {
@@ -81,25 +84,23 @@ describe('<FinishExamModal />', () => {
       store.dispatch(closeModal('finishExam'));
     });
     renderFinishExamModal({ finishExam, store });
+    const dialog = screen.getByRole('dialog', { name: modalName });
 
     await user.click(
       screen.getByRole('button', { name: 'learn.exam.finish-yes' })
     );
 
     expect(finishExam).toHaveBeenCalledTimes(1);
-    expect(
-      screen.queryByRole('dialog', { name: modalName })
-    ).not.toBeInTheDocument();
+    await waitForElementToBeRemoved(dialog);
   });
 
   it('closes when the user clicks the header close button', async () => {
     const user = userEvent.setup();
     renderFinishExamModal();
+    const dialog = screen.getByRole('dialog', { name: modalName });
 
     await user.click(screen.getByRole('button', { name: 'Close' }));
 
-    expect(
-      screen.queryByRole('dialog', { name: modalName })
-    ).not.toBeInTheDocument();
+    await waitForElementToBeRemoved(dialog);
   });
 });
