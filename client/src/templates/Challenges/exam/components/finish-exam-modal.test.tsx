@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -69,9 +69,11 @@ describe('<FinishExamModal />', () => {
       screen.getByRole('button', { name: 'learn.exam.finish-no' })
     );
 
-    expect(
-      screen.queryByRole('dialog', { name: modalName })
-    ).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('dialog', { name: modalName })
+      ).not.toBeInTheDocument();
+    });
   });
 
   it('calls finishExam and closes when the user finishes the exam', async () => {
@@ -87,9 +89,12 @@ describe('<FinishExamModal />', () => {
     );
 
     expect(finishExam).toHaveBeenCalledTimes(1);
-    expect(
-      screen.queryByRole('dialog', { name: modalName })
-    ).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('dialog', { name: modalName })
+      ).not.toBeInTheDocument();
+    });
   });
 
   it('closes when the user clicks the header close button', async () => {
@@ -98,8 +103,10 @@ describe('<FinishExamModal />', () => {
 
     await user.click(screen.getByRole('button', { name: 'Close' }));
 
-    expect(
-      screen.queryByRole('dialog', { name: modalName })
-    ).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole('dialog', { name: modalName })
+      ).not.toBeInTheDocument();
+    });
   });
 });
