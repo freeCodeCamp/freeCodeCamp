@@ -1,5 +1,21 @@
-import { describe, it, expect } from 'vitest';
-import { validateDate } from './experience';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, it, expect, vi } from 'vitest';
+
+import { createStore } from '../../../redux/create-store';
+import Experience, { validateDate } from './experience';
+
+vi.mock('../../../utils/get-words');
+
+function renderExperience() {
+  render(
+    <Provider store={createStore()}>
+      <Experience autoAdd={true} experience={[]} />
+    </Provider>
+  );
+}
 
 describe('validateDate', () => {
   it('should return error for required empty date', () => {
@@ -72,5 +88,102 @@ describe('validateDate', () => {
       state: 'error',
       messageKey: 'validation.end-date-required'
     });
+  });
+});
+
+describe('<Experience /> validation', () => {
+  it('validates the company field', async () => {
+    const user = userEvent.setup();
+    renderExperience();
+    const company = screen.getByLabelText(/profile\.experience\.company/);
+
+    await user.type(company, 'A');
+    expect(screen.getByText('validation.company-short')).toBeInTheDocument();
+
+    await user.clear(company);
+    await user.type(company, 'A'.repeat(145));
+    expect(screen.getByText('validation.company-long')).toBeInTheDocument();
+
+    await user.clear(company);
+    await user.type(company, 'freeCodeCamp');
+    expect(
+      screen.queryByText('validation.company-short')
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('validation.company-long')
+    ).not.toBeInTheDocument();
+  });
+
+  it('validates the job title field', async () => {
+    const user = userEvent.setup();
+    renderExperience();
+    const jobTitle = screen.getByLabelText(/profile\.experience\.job-title/);
+
+    await user.type(jobTitle, 'A');
+    expect(screen.getByText('validation.title-short')).toBeInTheDocument();
+
+    await user.clear(jobTitle);
+    await user.type(jobTitle, 'A'.repeat(145));
+    expect(screen.getByText('validation.title-long')).toBeInTheDocument();
+
+    await user.clear(jobTitle);
+    await user.type(jobTitle, 'Software Engineer');
+    expect(
+      screen.queryByText('validation.title-short')
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText('validation.title-long')).not.toBeInTheDocument();
+  });
+
+  it('validates the start date field', async () => {
+    const user = userEvent.setup();
+    renderExperience();
+    const startDate = screen.getByLabelText(/profile\.experience\.start-date/);
+
+    await user.type(startDate, '13/2023');
+    expect(
+      screen.getByText('profile.experience.date-invalid')
+    ).toBeInTheDocument();
+
+    await user.clear(startDate);
+    await user.type(startDate, '01/2023');
+    expect(
+      screen.queryByText('profile.experience.date-invalid')
+    ).not.toBeInTheDocument();
+  });
+
+  it('validates the end date field', async () => {
+    const user = userEvent.setup();
+    renderExperience();
+    const endDate = screen.getByLabelText(/profile\.experience\.end-date/);
+
+    await user.type(endDate, '13/2023');
+    expect(
+      screen.getByText('profile.experience.date-invalid')
+    ).toBeInTheDocument();
+
+    await user.clear(endDate);
+    await user.type(endDate, '01/2023');
+    expect(
+      screen.queryByText('profile.experience.date-invalid')
+    ).not.toBeInTheDocument();
+  });
+
+  it('validates the description field', async () => {
+    const user = userEvent.setup();
+    renderExperience();
+    const description = screen.getByLabelText(
+      /profile\.experience\.description/
+    );
+
+    await user.type(description, 'A'.repeat(501));
+    expect(
+      screen.getByText('validation.max-characters-500')
+    ).toBeInTheDocument();
+
+    await user.clear(description);
+    await user.type(description, 'Worked on various projects');
+    expect(
+      screen.queryByText('validation.max-characters-500')
+    ).not.toBeInTheDocument();
   });
 });
