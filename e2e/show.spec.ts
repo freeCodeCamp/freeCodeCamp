@@ -71,7 +71,7 @@ test.describe('Odin challenges', () => {
 test.describe('Quiz challenges - no duplicate title', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
-      '/learn/a2-english-for-developers/en-a2-quiz-discussing-new-ideas/tech-updates-and-trends-quiz'
+      '/learn/a2-english-for-developers/en-a2-quiz-discussing-new-ideas/en-a2-quiz-discussing-new-ideas'
     );
   });
   test.describe('When the user is signed out', () => {
