@@ -9,7 +9,8 @@ export enum Languages {
   Japanese = 'japanese',
   German = 'german',
   Swahili = 'swahili',
-  Korean = 'korean'
+  Korean = 'korean',
+  Arabic = 'arabic'
 }
 
 /*
@@ -32,7 +33,8 @@ export const availableLangs = {
     Languages.Japanese,
     Languages.German,
     Languages.Swahili,
-    Languages.Korean
+    Languages.Korean,
+    Languages.Arabic
   ],
   curriculum: [
     Languages.English,
@@ -45,7 +47,8 @@ export const availableLangs = {
     Languages.Japanese,
     Languages.German,
     Languages.Swahili,
-    Languages.Korean
+    Languages.Korean,
+    Languages.Arabic
   ]
 };
 
@@ -68,7 +71,8 @@ export const i18nextCodes = {
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
   [Languages.Swahili]: 'sw',
-  [Languages.Korean]: 'ko'
+  [Languages.Korean]: 'ko',
+  [Languages.Arabic]: 'ar'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -83,7 +87,8 @@ export const LangNames: { [key: string]: string } = {
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
   [Languages.Swahili]: 'Swahili',
-  [Languages.Korean]: '한국어'
+  [Languages.Korean]: '한국어',
+  [Languages.Arabic]: 'العربية'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -101,18 +106,19 @@ export const LangCodes = {
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
   [Languages.Swahili]: 'sw',
-  [Languages.Korean]: 'ko'
+  [Languages.Korean]: 'ko',
+  [Languages.Arabic]: 'ar'
 };
 
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-export const hiddenLangs: Languages[] = [];
+export const hiddenLangs: Languages[] = [Languages.Arabic];
 
 /**
  * This array contains languages that use the RTL layouts.
  */
-export const rtlLangs: Languages[] = [];
+export const rtlLangs: Languages[] = [Languages.Arabic];
 
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values
