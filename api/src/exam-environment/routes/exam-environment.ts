@@ -1,6 +1,10 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library.js';
-import { type FastifyInstance, type FastifyReply } from 'fastify';
+import {
+  type FastifyError,
+  type FastifyInstance,
+  type FastifyReply
+} from 'fastify';
 import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
@@ -24,9 +28,18 @@ import { isObjectID } from '../../utils/validation.js';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
-    fastify.setErrorHandler((error, req, res) => {
-      // If the error does not match the format {code: string; message: string}, coerce into:
-      if (
+    fastify.setErrorHandler((error: FastifyError, req, res) => {
+      if (error.validation) {
+        req.log.warn(
+          { validationError: error.validation },
+          'Request validation failed in exam environment routes.'
+        );
+        void res.code(400);
+        void res.send({
+          code: 'FCC_ERR_VALIDATION',
+          message: error.message
+        });
+      } else if (
         !Object.hasOwnProperty.call(error, 'code') ||
         !Object.hasOwnProperty.call(error, 'message')
       ) {
@@ -35,6 +48,17 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
         const str = JSON.stringify(error);
         res.code(500);
         res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
+      } else {
+        const statusCode =
+          typeof error.statusCode === 'number' && error.statusCode >= 400
+            ? error.statusCode
+            : 500;
+        req.log.warn(error, 'Known error in exam environment routes.');
+        res.code(statusCode);
+        res.send({
+          code: error.code ?? 'FCC_ERR_UNKNOWN',
+          message: error.message ?? 'Unknown error'
+        });
       }
     });
 
