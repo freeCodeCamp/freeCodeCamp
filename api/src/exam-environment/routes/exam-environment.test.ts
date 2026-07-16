@@ -1630,7 +1630,7 @@ describe('/exam-environment/', () => {
         });
       });
 
-      it('should tell the requester if the token does not exist', async () => {
+      it('should reject a token whose payload is not an object id', async () => {
         const validToken = jwt.sign(
           { examEnvironmentAuthorizationToken: 'does-not-exist' },
           JWT_SECRET
@@ -1642,6 +1642,24 @@ describe('/exam-environment/', () => {
 
         expect(res).toMatchObject({
           status: 401,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
+          }
+        });
+      });
+
+      it('should tell the requester if the token does not exist', async () => {
+        const validToken = jwt.sign(
+          { examEnvironmentAuthorizationToken: '5fa5c1c3b1c9d40000000000' },
+          JWT_SECRET
+        );
+        const res = await superGet('/exam-environment/token-meta').set(
+          'exam-environment-authorization-token',
+          validToken
+        );
+
+        expect(res).toMatchObject({
+          status: 404,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
