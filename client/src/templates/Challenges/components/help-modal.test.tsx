@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeAll, afterEach } from 'vitest';
 import i18n from '../../../../i18n/config-for-tests';
@@ -199,7 +199,11 @@ describe('<HelpModal />', () => {
       name: translations.buttons.submit
     });
 
-    await userEvent.type(descriptionInput, validDescription);
+    // Set the whole description in one change event instead of typing it
+    // keystroke by keystroke, which times the test out on loaded CI runners.
+    fireEvent.change(descriptionInput, {
+      target: { value: validDescription }
+    });
 
     expect(submitButton).toHaveAttribute('aria-disabled', 'true');
 
@@ -248,7 +252,11 @@ describe('<HelpModal />', () => {
         name: translations.aria['similar-questions-checkbox']
       })
     );
-    await userEvent.type(getDescriptionInput(), validDescription);
+    // Set the whole description in one change event instead of typing it
+    // keystroke by keystroke, which times the test out on loaded CI runners.
+    fireEvent.change(getDescriptionInput(), {
+      target: { value: validDescription }
+    });
     await userEvent.click(
       screen.getByRole('button', { name: translations.buttons.submit })
     );

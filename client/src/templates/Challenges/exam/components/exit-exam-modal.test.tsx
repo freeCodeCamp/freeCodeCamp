@@ -62,7 +62,7 @@ describe('<ExitExamModal />', () => {
 
   it('closes when the user cancels', async () => {
     expect.hasAssertions();
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null });
     const { store } = setupExitExamModal();
 
     await user.click(
@@ -78,7 +78,7 @@ describe('<ExitExamModal />', () => {
 
   it('closes from the header close button', async () => {
     expect.hasAssertions();
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null });
     const { store } = setupExitExamModal();
 
     await user.click(screen.getByRole('button', { name: 'Close' }));
@@ -91,7 +91,7 @@ describe('<ExitExamModal />', () => {
   });
 
   it('calls exitExam when the user confirms', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null });
     const { exitExam } = setupExitExamModal();
 
     await user.click(
