@@ -6506,6 +6506,12 @@
           "In these lessons, you will learn about functions and scope in Python."
         ]
       },
+      "workshop-kitchen-inventory-tracker": {
+        "title": "Build a Kitchen Inventory Tracker",
+        "intro": [
+          "In this workshop, you will practice working with functions and scope in Python by building a kitchen inventory tracker."
+        ]
+      },
       "lab-discount-calculator": {
         "title": "Build an Apply Discount Function",
         "intro": [
@@ -6922,10 +6928,6 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
-      },
-      "workshop-kitchen-inventory-tracker": {
-        "title": "Build a Kitchen Inventory Tracker",
-        "intro": ["Build a Kitchen Inventory Tracker", ""]
       }
     }
   },
