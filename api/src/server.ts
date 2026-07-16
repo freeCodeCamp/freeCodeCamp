@@ -8,7 +8,8 @@ import {
   DEPLOYMENT_VERSION,
   HOST,
   PORT,
-  SENTRY_SERVER_NAME
+  SENTRY_SERVER_NAME,
+  FCC_DRAIN_TIMEOUT_MS
 } from './utils/env.js';
 
 const start = async () => {
@@ -20,7 +21,17 @@ const start = async () => {
     const stop = async (signal: NodeJS.Signals) => {
       fastify!.log.info({ signal }, 'Received signal, shutting down');
 
-      fastify!.server.closeAllConnections();
+      // Safety net: if in-flight requests do not finish in time, hard-close
+      // whatever is left so Swarm's SIGKILL never fires mid-write.
+      const forceClose = setTimeout(() => {
+        fastify!.log.warn(
+          { signal, timeoutMs: FCC_DRAIN_TIMEOUT_MS },
+          'Drain timeout exceeded, force-closing connections'
+        );
+        fastify!.server.closeAllConnections();
+      }, FCC_DRAIN_TIMEOUT_MS);
+      forceClose.unref();
+
       await new Promise<void>(resolve => {
         fastify!.server.close(() => resolve());
       });
@@ -30,6 +41,7 @@ const start = async () => {
       await new Promise<void>(resolve => setImmediate(resolve));
 
       await fastify!.close();
+      clearTimeout(forceClose);
       Sentry.metrics.count('server.shutdown_completed', 1, {
         attributes: { signal }
       });
