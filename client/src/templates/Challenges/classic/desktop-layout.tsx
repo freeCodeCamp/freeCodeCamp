@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import { isRtlLanguage } from '../../../utils/is-rtl-language';
 import {
   ChallengeFiles,
   DailyCodingChallengeLanguages,
@@ -277,6 +278,121 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.pyLab ||
     challengeType === challengeTypes.dailyChallengePy;
 
+  const panes = [
+    ...(areInstructionsDisplayable && showInstructions
+      ? [
+          <ReflexElement
+            key='instructionPane'
+            flex={instructionPane.flex}
+            {...resizeProps}
+            name='instructionPane'
+            data-playwright-test-label='instruction-pane'
+          >
+            {instructions}
+          </ReflexElement>,
+          <ReflexSplitter
+            key='instructionPaneSplitter'
+            propagate={true}
+            {...resizeProps}
+          />
+        ]
+      : []),
+    <ReflexElement
+      key='editorPane'
+      flex={editorPaneFlex}
+      name='editorPane'
+      {...resizeProps}
+      data-playwright-test-label='editor-pane'
+      className='editor-pane'
+    >
+      {!isEmpty(challengeFiles) && (
+        <ReflexContainer
+          key='codePane'
+          orientation='horizontal'
+          className='editor-pane-code'
+        >
+          <ReflexElement
+            name='codePane'
+            {...(displayEditorConsole && { flex: codePane.flex })}
+            {...reflexProps}
+            {...resizeProps}
+          >
+            {editor}
+          </ReflexElement>
+          {displayEditorConsole && (
+            <ReflexSplitter propagate={true} {...resizeProps} />
+          )}
+          {displayEditorConsole && (
+            <ReflexElement
+              flex={testsPane.flex}
+              {...reflexProps}
+              {...resizeProps}
+            >
+              {testOutput}
+            </ReflexElement>
+          )}
+        </ReflexContainer>
+      )}
+      {showIndependentLowerJaw && <IndependentLowerJaw />}
+    </ReflexElement>,
+    ...(displayNotes
+      ? [
+          <ReflexSplitter
+            key='notesPaneSplitter'
+            propagate={true}
+            {...resizeProps}
+          />,
+          <ReflexElement
+            key='notesPane'
+            name='notesPane'
+            flex={notesPane.flex}
+            {...resizeProps}
+          >
+            <Notes notes={notes} />
+          </ReflexElement>
+        ]
+      : []),
+    ...(displayPreviewPane || displayPreviewConsole
+      ? [
+          <ReflexSplitter
+            key='previewPaneSplitter'
+            data-playwright-test-label='preview-left-splitter'
+            propagate={true}
+            {...resizeProps}
+          />,
+          <ReflexElement
+            key='previewPane'
+            flex={previewPane.flex}
+            name='previewPane'
+            {...resizeProps}
+            data-playwright-test-label='preview-pane'
+          >
+            <ReflexContainer orientation='horizontal'>
+              {displayPreviewPane && (
+                <ReflexElement {...reflexProps}>{preview}</ReflexElement>
+              )}
+              {displayPreviewPane && displayPreviewConsole && (
+                <ReflexSplitter propagate={true} {...resizeProps} />
+              )}
+              {displayPreviewConsole && (
+                <ReflexElement
+                  name='testsPane'
+                  {...(displayPreviewPane && { flex: testsPane.flex })}
+                  {...resizeProps}
+                >
+                  {testOutput}
+                </ReflexElement>
+              )}
+            </ReflexContainer>
+          </ReflexElement>
+        ]
+      : [])
+  ];
+
+  if (isRtlLanguage) {
+    panes.reverse();
+  }
+
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
       {isProjectStyle && (
@@ -301,101 +417,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         orientation='vertical'
         data-playwright-test-label='main-container'
       >
-        {areInstructionsDisplayable && showInstructions && (
-          <ReflexElement
-            flex={instructionPane.flex}
-            {...resizeProps}
-            name='instructionPane'
-            data-playwright-test-label='instruction-pane'
-          >
-            {instructions}
-          </ReflexElement>
-        )}
-        {areInstructionsDisplayable && showInstructions && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
-        )}
-
-        <ReflexElement
-          flex={editorPaneFlex}
-          name='editorPane'
-          {...resizeProps}
-          data-playwright-test-label='editor-pane'
-          className='editor-pane'
-        >
-          {!isEmpty(challengeFiles) && (
-            <ReflexContainer
-              key='codePane'
-              orientation='horizontal'
-              className='editor-pane-code'
-            >
-              <ReflexElement
-                name='codePane'
-                {...(displayEditorConsole && { flex: codePane.flex })}
-                {...reflexProps}
-                {...resizeProps}
-              >
-                {editor}
-              </ReflexElement>
-              {displayEditorConsole && (
-                <ReflexSplitter propagate={true} {...resizeProps} />
-              )}
-              {displayEditorConsole && (
-                <ReflexElement
-                  flex={testsPane.flex}
-                  {...reflexProps}
-                  {...resizeProps}
-                >
-                  {testOutput}
-                </ReflexElement>
-              )}
-            </ReflexContainer>
-          )}
-          {showIndependentLowerJaw && <IndependentLowerJaw />}
-        </ReflexElement>
-        {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
-        {displayNotes && (
-          <ReflexElement
-            name='notesPane'
-            flex={notesPane.flex}
-            {...resizeProps}
-          >
-            <Notes notes={notes} />
-          </ReflexElement>
-        )}
-
-        {(displayPreviewPane || displayPreviewConsole) && (
-          <ReflexSplitter
-            data-playwright-test-label='preview-left-splitter'
-            propagate={true}
-            {...resizeProps}
-          />
-        )}
-        {(displayPreviewPane || displayPreviewConsole) && (
-          <ReflexElement
-            flex={previewPane.flex}
-            name='previewPane'
-            {...resizeProps}
-            data-playwright-test-label='preview-pane'
-          >
-            <ReflexContainer orientation='horizontal'>
-              {displayPreviewPane && (
-                <ReflexElement {...reflexProps}>{preview}</ReflexElement>
-              )}
-              {displayPreviewPane && displayPreviewConsole && (
-                <ReflexSplitter propagate={true} {...resizeProps} />
-              )}
-              {displayPreviewConsole && (
-                <ReflexElement
-                  name='testsPane'
-                  {...(displayPreviewPane && { flex: testsPane.flex })}
-                  {...resizeProps}
-                >
-                  {testOutput}
-                </ReflexElement>
-              )}
-            </ReflexContainer>
-          </ReflexElement>
-        )}
+        {panes}
       </ReflexContainer>
       {displayPreviewPortal && (
         <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
