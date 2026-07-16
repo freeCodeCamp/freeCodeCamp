@@ -339,7 +339,7 @@ describe('/daily-coding-challenge', () => {
       expect(res.status).toBe(200);
     });
 
-    it('should return 404 when no challenges exist for the given month', async () => {
+    it('should return 200 with an empty array when no challenges exist for the given month', async () => {
       const count = vi.fn();
       const originalSentry = fastifyTestInstance.Sentry;
       fastifyTestInstance.Sentry = {
@@ -351,11 +351,8 @@ describe('/daily-coding-challenge', () => {
         method: 'GET'
       }).send({});
 
-      expect(res.status).toBe(404);
-      expect(res.body).toEqual({
-        type: 'error',
-        message: 'No challenges found.'
-      });
+      expect(res.status).toBe(200);
+      expect(res.body).toEqual([]);
       expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
         attributes: { route: '/daily-coding-challenge/month/:month' }
       });
@@ -415,7 +412,7 @@ describe('/daily-coding-challenge', () => {
       fastifyTestInstance.Sentry = originalSentry;
     });
 
-    it('should return 404 when no challenges exist', async () => {
+    it('should return 200 with an empty array when no challenges exist', async () => {
       await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
 
       const count = vi.fn();
@@ -429,11 +426,8 @@ describe('/daily-coding-challenge', () => {
         method: 'GET'
       }).send({});
 
-      expect(res.status).toBe(404);
-      expect(res.body).toEqual({
-        type: 'error',
-        message: 'No challenges found.'
-      });
+      expect(res.status).toBe(200);
+      expect(res.body).toEqual([]);
       expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
         attributes: { route: '/daily-coding-challenge/all' }
       });
