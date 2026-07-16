@@ -173,7 +173,7 @@ describe('/exam-environment/', () => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           message: expect.any(String)
         });
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(410);
 
         expect(count).toHaveBeenCalledWith(
           'exam.attempt_submission_expired',
@@ -466,7 +466,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res).toMatchObject({
-          status: 403,
+          status: 409,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
           }
@@ -511,7 +511,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res).toMatchObject({
-          status: 429,
+          status: 403,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
@@ -544,7 +544,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res2).toMatchObject({
-          status: 429,
+          status: 403,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
@@ -1623,7 +1623,7 @@ describe('/exam-environment/', () => {
         );
 
         expect(res).toMatchObject({
-          status: 418,
+          status: 401,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
@@ -1641,7 +1641,7 @@ describe('/exam-environment/', () => {
         );
 
         expect(res).toMatchObject({
-          status: 418,
+          status: 401,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }

@@ -9,7 +9,7 @@ export const examEnvironmentTokenMeta = {
     200: Type.Object({
       expireAt: Type.String({ format: 'date-time' })
     }),
-    404: STANDARD_ERROR,
-    418: STANDARD_ERROR
+    401: STANDARD_ERROR,
+    404: STANDARD_ERROR
   }
 };

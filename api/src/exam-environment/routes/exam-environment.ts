@@ -136,7 +136,7 @@ async function tokenMetaHandler(
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
     req.log.warn(e, 'Invalid token provided.');
-    void reply.code(418);
+    void reply.code(401);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(JSON.stringify(e))
     );
@@ -144,7 +144,7 @@ async function tokenMetaHandler(
 
   if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
     req.log.warn('Token is not an object id.');
-    void reply.code(418);
+    void reply.code(401);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
         'Token is not valid'
@@ -304,7 +304,7 @@ async function postExamGeneratedExamHandler(
         'User has an exam attempt awaiting grading.'
       );
       this.Sentry?.metrics?.count('exam.attempt_blocked_pending_moderation', 1);
-      void reply.code(403);
+      void reply.code(409);
       return reply.send(
         // TODO: Better error type
         ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
@@ -328,7 +328,7 @@ async function postExamGeneratedExamHandler(
           'User has completed exam too recently to retake.'
         );
         this.Sentry?.metrics?.count('exam.retake_cooldown_blocked', 1);
-        void reply.code(429);
+        void reply.code(403);
         // TODO: Consider sending last completed time
         return reply.send(
           ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(
@@ -636,7 +636,7 @@ async function postExamAttemptHandler(
       'Attempt has exceeded submission time.'
     );
     this.Sentry?.metrics?.count('exam.attempt_submission_expired', 1);
-    void reply.code(403);
+    void reply.code(410);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
         'Attempt has exceeded submission time.'
