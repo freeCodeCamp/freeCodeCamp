@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 
@@ -175,7 +175,14 @@ describe('<Experience /> validation', () => {
       /profile\.experience\.description/
     );
 
-    await user.type(description, 'A'.repeat(501));
+    // Prefill to the limit so we only need to type the single character that
+    // crosses it, instead of 501 keystrokes (which times the test out in CI).
+    fireEvent.change(description, { target: { value: 'A'.repeat(500) } });
+    expect(
+      screen.queryByText('validation.max-characters-500')
+    ).not.toBeInTheDocument();
+
+    await user.type(description, 'A');
     expect(
       screen.getByText('validation.max-characters-500')
     ).toBeInTheDocument();
