@@ -4,10 +4,11 @@ import {
   upcomingCertifications,
   currentCertifications
 } from '@freecodecamp/shared/config/certification-settings';
+import { isHiddenCertification } from '@freecodecamp/shared/config/curriculum';
 
 import config from '../config/env.json';
 
-const { showUpcomingChanges } = config;
+const { showUpcomingChanges, clientLocale } = config;
 
 const responsiveWebBase =
   '/learn/responsive-web-design/responsive-web-design-projects';
@@ -1006,9 +1007,12 @@ const legacyCerts = allStandardCerts.filter((cert): cert is LegacyCert =>
 const upcomingCerts = allStandardCerts.filter((cert): cert is UpcomingCert =>
   upcomingCertifications.includes(cert.certSlug)
 );
-const liveCerts = showUpcomingChanges
-  ? [...currentCerts, ...legacyCerts, fullstackCert, ...upcomingCerts]
-  : [...currentCerts, ...legacyCerts, fullstackCert];
+// Certifications of superblocks hidden for this locale are not live here.
+const liveCerts = (
+  showUpcomingChanges
+    ? [...currentCerts, ...legacyCerts, fullstackCert, ...upcomingCerts]
+    : [...currentCerts, ...legacyCerts, fullstackCert]
+).filter(cert => !isHiddenCertification(clientLocale, cert.certSlug));
 const allCerts = [
   ...currentCerts,
   ...legacyCerts,

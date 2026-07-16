@@ -260,7 +260,17 @@ const createIdToPrevPathMap = nodes =>
     return map;
   }, {});
 
-exports.createPagesStatefully = async function ({ graphql, actions }) {
+// The "hiddenSuperBlocks" plugin option lists superblocks whose pages should
+// not be created (e.g. courses hidden for the current locale).
+function isHiddenChallenge(challenge, pluginOptions) {
+  const hiddenSuperBlocks = pluginOptions?.hiddenSuperBlocks ?? [];
+  return hiddenSuperBlocks.includes(challenge.superBlock);
+}
+
+exports.createPagesStatefully = async function (
+  { graphql, actions },
+  pluginOptions
+) {
   const result = await graphql(`
     {
       allChallengeNode(
@@ -322,9 +332,12 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
     }
   `);
 
-  allChallengeNodes = result.data.allChallengeNode.edges.map(
-    ({ node }) => node
-  );
+  // Hidden superblocks are excluded before the next/prev path maps are
+  // built, so no pages are created for them and the navigation of visible
+  // challenges skips over them.
+  allChallengeNodes = result.data.allChallengeNode.edges
+    .map(({ node }) => node)
+    .filter(({ challenge }) => !isHiddenChallenge(challenge, pluginOptions));
 
   const idToNextPathCurrentCurriculum =
     createIdToNextPathMap(allChallengeNodes);
@@ -340,11 +353,13 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
   allChallengeNodes.forEach(nodeToPage);
 };
 
-exports.createPages = function ({ actions }) {
+exports.createPages = function ({ actions }, pluginOptions) {
   if (!allChallengeNodes) return;
 
   // actions.createPage has to be called in the createPages hook
-  const newNodes = [...filePathToCreatedNodes.values()].flat();
+  const newNodes = [...filePathToCreatedNodes.values()]
+    .flat()
+    .filter(({ challenge }) => !isHiddenChallenge(challenge, pluginOptions));
   // Nodes need sorting so createChallengePages can find the first and last
   // challenges in a block.
   const sortedNodes = sortBy(

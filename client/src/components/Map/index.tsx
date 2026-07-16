@@ -8,12 +8,13 @@ import {
   SuperBlockStage,
   getStageOrder,
   superBlockStages,
-  archivedSuperBlocks
+  archivedSuperBlocks,
+  isHiddenSuperBlock
 } from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink, Link } from '../helpers';
-import { showUpcomingChanges } from '../../../config/env.json';
+import { showUpcomingChanges, clientLocale } from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
@@ -76,9 +77,11 @@ export function ArchiveMap() {
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       <ul>
-        {archivedSuperBlocks.map(superblock => (
-          <MapLi key={superblock} superBlock={superblock} landing={false} />
-        ))}
+        {archivedSuperBlocks
+          .filter(superblock => !isHiddenSuperBlock(clientLocale, superblock))
+          .map(superblock => (
+            <MapLi key={superblock} superBlock={superblock} landing={false} />
+          ))}
       </ul>
     </div>
   );
@@ -100,7 +103,9 @@ function Map({ forLanding = false }: MapProps) {
             stage !== SuperBlockStage.Catalog
         )
         .map(stage => {
-          const superblocks = superBlockStages[stage];
+          const superblocks = superBlockStages[stage].filter(
+            superblock => !isHiddenSuperBlock(clientLocale, superblock)
+          );
           if (superblocks.length === 0) {
             return null;
           }

@@ -319,6 +319,41 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
+// Superblocks deliberately hidden when the client UI is in a given language
+// (e.g. a course teaching Spanish is not shown when the UI itself is in
+// Spanish). Hidden superblocks are excluded from the map and their pages are
+// not created for that locale. Unlike notAuditedSuperBlocks, entries here are
+// permanent policy, not pending translations.
+export const hiddenSuperBlocks: Partial<Record<Languages, SuperBlocks[]>> = {
+  [Languages.Espanol]: [SuperBlocks.A1Spanish, SuperBlocks.A2Spanish],
+  [Languages.Chinese]: [SuperBlocks.A1Chinese, SuperBlocks.A2Chinese],
+  [Languages.ChineseTraditional]: [SuperBlocks.A1Chinese, SuperBlocks.A2Chinese]
+};
+
+Object.freeze(hiddenSuperBlocks);
+
+export function getHiddenSuperBlocks(language: string): SuperBlocks[] {
+  return hiddenSuperBlocks[language as Languages] ?? [];
+}
+
+export function isHiddenSuperBlock(
+  language: string,
+  superBlock: SuperBlocks
+): boolean {
+  return getHiddenSuperBlocks(language).includes(superBlock);
+}
+
+// Language certifications share their slug with the superblock they certify
+// (e.g. Certification.A2Spanish and SuperBlocks.A2Spanish are both
+// 'a2-professional-spanish'), so a certification is hidden exactly when its
+// slug matches a hidden superblock.
+export function isHiddenCertification(
+  language: string,
+  certSlug: string
+): boolean {
+  return (getHiddenSuperBlocks(language) as string[]).includes(certSlug);
+}
+
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackOpen,
   SuperBlocks.A1Spanish,

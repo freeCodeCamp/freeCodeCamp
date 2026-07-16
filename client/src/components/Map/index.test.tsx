@@ -17,6 +17,18 @@ import Map from './index';
 
 vi.unmock('react-i18next');
 
+// Pin the locale so the map (which hides some superblocks per locale) renders
+// the same regardless of the env.json the checkout was built with.
+vi.mock('../../../config/env.json', async importOriginal => {
+  const actual =
+    await importOriginal<typeof import('../../../config/env.json')>();
+  return {
+    ...actual,
+    default: { ...actual, clientLocale: 'english' },
+    clientLocale: 'english'
+  };
+});
+
 i18nTestConfig.addResourceBundle('en', 'intro', introTranslations, true, true);
 i18nTestConfig.addResourceBundle(
   'en',

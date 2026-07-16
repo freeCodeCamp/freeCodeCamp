@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
 import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
+import { isHiddenCertification } from '@freecodecamp/shared/config/curriculum';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -37,7 +38,11 @@ import SectionHeader from './section-header';
 
 import './certification.css';
 
-const { showUpcomingChanges } = env;
+const { showUpcomingChanges, clientLocale } = env;
+
+// Certifications of superblocks hidden for this locale are not offered here.
+const visibleCertifications = <T extends string>(certs: readonly T[]): T[] =>
+  certs.filter(cert => !isHiddenCertification(clientLocale, cert));
 
 const mapDispatchToProps = {
   openModal
@@ -324,7 +329,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
   return (
     <section className='certification-settings'>
       <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-      {currentCertifications.map(cert => (
+      {visibleCertifications(currentCertifications).map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       <Spacer size='m' />
@@ -332,11 +337,11 @@ function CertificationSettings(props: CertificationSettingsProps) {
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
       </Element>
       <LegacyFullStack {...props} />
-      {legacyCertifications.map(cert => (
+      {visibleCertifications(legacyCertifications).map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       {showUpcomingChanges &&
-        upcomingCertifications.map(cert => (
+        visibleCertifications(upcomingCertifications).map(cert => (
           <Certification key={cert} certSlug={cert} t={t} />
         ))}
       <ProjectModal

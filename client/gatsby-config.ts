@@ -1,6 +1,8 @@
 import path from 'path';
 import type { GatsbyConfig } from 'gatsby';
 
+import { getHiddenSuperBlocks } from '@freecodecamp/shared/config/curriculum';
+
 import envData from './config/env.json';
 import {
   buildChallenges,
@@ -9,7 +11,7 @@ import {
 } from './utils/build-challenges';
 import { pathPrefix } from './utils/gatsby/path-prefix';
 
-const { homeLocation } = envData;
+const { homeLocation, clientLocale } = envData;
 
 const config: GatsbyConfig = {
   flags: {
@@ -53,7 +55,9 @@ const config: GatsbyConfig = {
         name: 'challenges',
         source: buildChallenges,
         onSourceChange: replaceChallengeNodes(),
-        curriculumPath: localeChallengesRootDir
+        curriculumPath: localeChallengesRootDir,
+        // Superblocks whose pages should not be created for this locale
+        hiddenSuperBlocks: getHiddenSuperBlocks(clientLocale)
       }
     },
     'gatsby-plugin-remove-serviceworker',
