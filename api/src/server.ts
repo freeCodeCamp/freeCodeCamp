@@ -40,8 +40,7 @@ const start = async () => {
       await fastify!.Sentry.close(2000);
       // No process.exit(): once close() resolves, the loop drains and the
       // process exits 0 on its own. Hard-exiting here is what used to race
-      // pino's exit-time flush (see #66135); the watcher/orchestrator
-      // already force-kills us if something keeps the loop alive.
+      // pino's exit-time flush (see #66135).
     };
 
     process.on('SIGINT', signal => void stop(signal));
