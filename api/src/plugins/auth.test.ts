@@ -451,7 +451,7 @@ describe('auth', () => {
         headers: { 'exam-environment-authorization-token': 'invalid-token' }
       });
 
-      expect(res.statusCode).toBe(403);
+      expect(res.statusCode).toBe(401);
       expect(captureException).not.toHaveBeenCalled();
     });
 
@@ -487,7 +487,7 @@ describe('auth', () => {
       });
       await app.close();
 
-      expect(res.statusCode).toBe(403);
+      expect(res.statusCode).toBe(401);
       const warned = lines
         .map(line => JSON.parse(line) as Record<string, unknown>)
         .find(
