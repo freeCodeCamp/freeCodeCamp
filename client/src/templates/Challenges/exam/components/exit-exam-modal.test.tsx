@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
@@ -70,7 +70,10 @@ describe('<ExitExamModal />', () => {
     );
 
     expect(store.getState().challenge.modal.exitExam).toBe(false);
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('closes from the header close button', async () => {
@@ -81,7 +84,10 @@ describe('<ExitExamModal />', () => {
     await user.click(screen.getByRole('button', { name: 'Close' }));
 
     expect(store.getState().challenge.modal.exitExam).toBe(false);
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('calls exitExam when the user confirms', async () => {

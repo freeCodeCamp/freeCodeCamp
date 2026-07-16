@@ -7167,14 +7167,19 @@
       "introduction-to-nodejs": "Introduction to Node.js",
       "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
+      "lab-prime-number-checker-module": "Build a Prime Number Checker Module",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
+      "lab-timestamp-microservice": "Build a Timestamp Microservice",
       "introduction-to-express": "Introduction to Express",
+      "lab-personal-profile-app": "Build a Personal Profile App",
       "error-handling-in-express": "Error Handling in Express",
       "express-middleware": "Express Middleware",
       "websockets": "WebSockets",
+      "lab-chat-app": "Build a Chat App",
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
+      "lab-family-movie-watchlist-api": "Build a Family Movie Watchlist API",
       "review-back-end-development-and-apis": "Back-End Development and APIs Review",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
@@ -7197,6 +7202,12 @@
           "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
         ]
       },
+      "lab-prime-number-checker-module": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
+        ]
+      },
       "http-and-the-web-standards-model": {
         "note": "Coming Late 2026",
         "intro": [
@@ -7209,10 +7220,22 @@
           "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
         ]
       },
+      "lab-timestamp-microservice": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
       "introduction-to-express": {
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
+        ]
+      },
+      "lab-personal-profile-app": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "error-handling-in-express": {
@@ -7233,6 +7256,12 @@
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
+      "lab-chat-app": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
       "security-and-privacy": {
         "note": "Coming Late 2026",
         "intro": [
@@ -7243,6 +7272,12 @@
         "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+        ]
+      },
+      "lab-family-movie-watchlist-api": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
