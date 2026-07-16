@@ -16,6 +16,7 @@ export const examEnvironmentPostExamGeneratedExam = {
     403: STANDARD_ERROR,
     404: STANDARD_ERROR,
     409: STANDARD_ERROR,
-    500: STANDARD_ERROR
+    500: STANDARD_ERROR,
+    default: STANDARD_ERROR
   }
 };
