@@ -177,28 +177,28 @@ Which of the following is the correct way to access the third character of a str
 
 ```js
 const developer = "Jessica";
-developer[3];
+const thirdCharacter = developer[3];
 ```
 
 ---
 
 ```js
 const developer = "Jessica";
-developer[-1];
+const thirdCharacter = developer[-1];
 ```
 
 ---
 
 ```js
 const developer = "Jessica";
-developer[0];
+const thirdCharacter = developer[0];
 ```
 
 #### --answer--
 
 ```js
 const developer = "Jessica";
-developer[2];
+const thirdCharacter = developer[2];
 ```
 
 ### --question--
