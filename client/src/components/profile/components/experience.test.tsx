@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi } from 'vitest';
 
@@ -101,7 +101,8 @@ describe('<Experience /> validation', () => {
     expect(screen.getByText('validation.company-short')).toBeInTheDocument();
 
     await user.clear(company);
-    await user.type(company, 'A'.repeat(145));
+    // paste is preferrable since typing hundreds of characters is slow (each keystroke triggers a re-render)
+    await user.paste('A'.repeat(145));
     expect(screen.getByText('validation.company-long')).toBeInTheDocument();
 
     await user.clear(company);
@@ -123,7 +124,7 @@ describe('<Experience /> validation', () => {
     expect(screen.getByText('validation.title-short')).toBeInTheDocument();
 
     await user.clear(jobTitle);
-    await user.type(jobTitle, 'A'.repeat(145));
+    await user.paste('A'.repeat(145));
     expect(screen.getByText('validation.title-long')).toBeInTheDocument();
 
     await user.clear(jobTitle);
@@ -177,7 +178,8 @@ describe('<Experience /> validation', () => {
 
     // Prefill to the limit so we only need to type the single character that
     // crosses it, instead of 501 keystrokes (which times the test out in CI).
-    fireEvent.change(description, { target: { value: 'A'.repeat(500) } });
+    await user.click(description);
+    await user.paste('A'.repeat(500));
     expect(
       screen.queryByText('validation.max-characters-500')
     ).not.toBeInTheDocument();

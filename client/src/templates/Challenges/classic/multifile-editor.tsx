@@ -8,6 +8,7 @@ import {
   visibleEditorsSelector
 } from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
+import { isRtlLanguage } from '../../../utils/is-rtl-language';
 import './editor.css';
 import Editor, { type EditorProps } from './editor';
 
@@ -113,6 +114,10 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       return [...acc, `${key}-splitter`, key];
     }
   }, []);
+
+  if (isRtlLanguage) {
+    editorAndSplitterKeys.reverse();
+  }
 
   return (
     <ReflexContainer
