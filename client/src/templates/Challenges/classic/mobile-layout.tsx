@@ -26,6 +26,7 @@ import {
   showPreviewPaneSelector
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
+import { isRtlLanguage } from '../../../utils/is-rtl-language';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
@@ -248,6 +249,7 @@ export class MobileLayout extends Component<
       <>
         <Tabs
           id='mobile-layout'
+          dir={isRtlLanguage ? 'rtl' : 'ltr'}
           className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}

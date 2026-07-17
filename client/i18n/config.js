@@ -17,53 +17,47 @@ const { clientLocale } = envData;
 
 const i18nextCode = i18nextCodes[clientLocale];
 
+// Non-english locale resources are loaded via preval so that webpack only
+// bundles the single locale selected by CLIENT_LOCALE and the english fallback.
+// For english the preval returns undefined, so webpack will not bundle the
+// english resources twice.
 i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   lng: i18nextCode,
-  // we only load one language since each language will have it's own server
-  // They need to be evaluated ahead of time, to prevent Webpack from bundling
-  // the entire locales directory. To avoid double imports when the locale is
-  // english, we simply export nothing from the preval
   resources: {
     [i18nextCode]: {
       translations: preval`
-      const envData = require('../config/env.json');
-      const { clientLocale } = envData;
+      const { clientLocale } = require('../config/env.json');
       if (clientLocale !== 'english') {
-        module.exports = require('./../../curriculum/i18n-curriculum/client/' + clientLocale + '/translations.json');
+        module.exports = require('./locales/' + clientLocale + '/translations.json');
       }
     `,
       trending: preval`
-      const envData = require('../config/env.json');
-      const { clientLocale } = envData;
+      const { clientLocale } = require('../config/env.json');
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/trending.json');
       }
     `,
       intro: preval`
-      const envData = require('../config/env.json');
-      const { clientLocale } = envData;
+      const { clientLocale } = require('../config/env.json');
       if (clientLocale !== 'english') {
-        module.exports = require('./../../curriculum/i18n-curriculum/client/' + clientLocale + '/intro.json');
+        module.exports = require('./locales/' + clientLocale + '/intro.json');
       }
     `,
       metaTags: preval`
-      const envData = require('../config/env.json');
-      const { clientLocale } = envData;
+      const { clientLocale } = require('../config/env.json');
       if (clientLocale !== 'english') {
-        module.exports = require('./../../curriculum/i18n-curriculum/client/' + clientLocale + '/meta-tags.json');
+        module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
       }
     `,
       links: preval`
-      const envData = require('../config/env.json');
-      const { clientLocale } = envData;
+      const { clientLocale } = require('../config/env.json');
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/links.json');
       }
     `,
       'search-bar': preval`
-      const envData = require('../config/env.json');
-      const { clientLocale } = envData;
+      const { clientLocale } = require('../config/env.json');
       if (clientLocale !== 'english') {
         module.exports = require('./locales/' + clientLocale + '/search-bar.json');
       }
