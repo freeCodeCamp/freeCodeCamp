@@ -4,9 +4,6 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
 const env = require('./config/env.json');
-const {
-  isHiddenSuperBlock
-} = require('@freecodecamp/shared/config/curriculum');
 const { createSuperBlockIntroPages } = require('./utils/gatsby');
 
 exports.createPages = async function createPages({
@@ -60,13 +57,9 @@ exports.createPages = async function createPages({
     (node: { superBlock: string }) => node.superBlock
   );
 
-  superBlocks
-    .filter(
-      (superBlock: string) => !isHiddenSuperBlock(env.clientLocale, superBlock)
-    )
-    .forEach((superBlock: string) => {
-      createSuperBlockIntroPages(createPage)({ superBlock });
-    });
+  superBlocks.forEach((superBlock: string) => {
+    createSuperBlockIntroPages(createPage)({ superBlock });
+  });
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions }: any) => {

@@ -7,7 +7,8 @@ import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
 import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
-import { isHiddenCertification } from '@freecodecamp/shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { useAvailableSuperBlocks } from '../../utils/use-available-super-blocks';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -38,11 +39,9 @@ import SectionHeader from './section-header';
 
 import './certification.css';
 
-const { showUpcomingChanges, clientLocale } = env;
+const { showUpcomingChanges } = env;
 
-// Certifications of superblocks hidden for this locale are not offered here.
-const visibleCertifications = <T extends string>(certs: readonly T[]): T[] =>
-  certs.filter(cert => !isHiddenCertification(clientLocale, cert));
+const superBlockSlugs = new Set<string>(Object.values(SuperBlocks));
 
 const mapDispatchToProps = {
   openModal
@@ -172,6 +171,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
   const [solution, setSolution] = useState<string | null>();
   const [examResults, setExamResults] = useState<GeneratedExamResults | null>();
   const [isOpen, setIsOpen] = useState(false);
+  const availableSuperBlocks = useAvailableSuperBlocks();
   function initialiseState() {
     setProjectTitle('');
     setChallengeFiles(null);
@@ -325,6 +325,13 @@ function CertificationSettings(props: CertificationSettingsProps) {
   }
 
   const { t } = props;
+
+  // A certification tied to a superblock is only offered when this build's
+  // curriculum contains that superblock (it can be excluded per language).
+  const visibleCertifications = <T extends string>(certs: readonly T[]): T[] =>
+    certs.filter(
+      cert => !superBlockSlugs.has(cert) || availableSuperBlocks.has(cert)
+    );
 
   return (
     <section className='certification-settings'>

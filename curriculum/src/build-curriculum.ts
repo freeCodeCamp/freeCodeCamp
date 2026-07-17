@@ -5,7 +5,10 @@ import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
 import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
-import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import {
+  SuperBlocks,
+  getHiddenSuperBlocks
+} from '@freecodecamp/shared/config/curriculum';
 import {
   SuperblockCreator,
   BlockCreator,
@@ -414,6 +417,28 @@ export async function parseCurriculumStructure(filter?: Filter) {
   };
 }
 
+/**
+ * Removes superblocks that are hidden for the given language (e.g. a course
+ * teaching Spanish is not part of the Spanish curriculum). The clients simply
+ * render whatever the curriculum contains.
+ * @param {Array<Object>} superblocks - Array of superblock objects with a name
+ * @param {string} lang - The language the curriculum is being built for
+ * @returns {Array<Object>} Superblocks without the ones hidden for the language
+ */
+export function filterHiddenSuperblocks<T extends { name: string }>(
+  superblocks: T[],
+  lang: string
+): T[] {
+  const hiddenSuperBlocks = getHiddenSuperBlocks(lang) as string[];
+  return superblocks.filter(({ name }) => {
+    if (hiddenSuperBlocks.includes(name)) {
+      log(`Excluding superblock "${name}" (hidden for lang "${lang}")`);
+      return false;
+    }
+    return true;
+  });
+}
+
 export async function buildCurriculum(lang: string, filters?: Filter) {
   // Block validation assumes the entire block is being built, if that's not the
   // case, skip validation
@@ -434,7 +459,10 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     certifications: { blocks: {} }
   };
 
-  const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
+  const liveSuperblocks = filterHiddenSuperblocks(
+    fullSuperblockList,
+    lang
+  ).filter(({ name }) => {
     const superOrder = getSuperOrder(name);
     const upcomingSuperOrder = getSuperOrder(name, true);
 

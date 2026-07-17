@@ -18,6 +18,10 @@ const {
 // createPagesStatefully only runs once, but we need the following when
 // updating challenges, so they have to be stored in memory.
 let allChallengeNodes;
+// The superblocks the curriculum delivered challenges for. Structure nodes
+// are only created for these, so pages and maps follow the (per-language)
+// curriculum content.
+let sourcedSuperBlocks = new Set();
 const filepathToStatefullyCreatedNodes = new Map();
 const filePathToCreatedNodes = new Map();
 // reverse lookup, to detect if an updated file has "overwritten" another file
@@ -177,6 +181,9 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     return source()
       .then(challenges => Promise.all(challenges))
       .then(challenges => {
+        sourcedSuperBlocks = new Set(
+          challenges.map(({ superBlock }) => superBlock)
+        );
         // create challenge nodes
         challenges.forEach(challenge => {
           const newNode = reportNodeCreationToGatsby(challenge);
@@ -211,32 +218,34 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function createSuperBlockStructureNodes() {
-    Object.keys(superBlockToFilename).forEach(superBlock => {
-      const filename = superBlockToFilename[superBlock] || superBlock;
-      try {
-        const structure = getSuperblockStructure(filename);
+    Object.keys(superBlockToFilename)
+      .filter(superBlock => sourcedSuperBlocks.has(superBlock))
+      .forEach(superBlock => {
+        const filename = superBlockToFilename[superBlock] || superBlock;
+        try {
+          const structure = getSuperblockStructure(filename);
 
-        const nodeId = createNodeId(`SuperBlockStructure-${superBlock}`);
-        const nodeContent = JSON.stringify(structure);
+          const nodeId = createNodeId(`SuperBlockStructure-${superBlock}`);
+          const nodeContent = JSON.stringify(structure);
 
-        createNode({
-          ...structure,
-          superBlock,
-          id: nodeId,
-          parent: null,
-          children: [],
-          internal: {
-            type: 'SuperBlockStructure',
-            content: nodeContent,
-            contentDigest: createContentDigest(structure)
-          }
-        });
-      } catch (err) {
-        reporter.warn(
-          `Could not load structure for ${superBlock} (${filename}): ${err.message}`
-        );
-      }
-    });
+          createNode({
+            ...structure,
+            superBlock,
+            id: nodeId,
+            parent: null,
+            children: [],
+            internal: {
+              type: 'SuperBlockStructure',
+              content: nodeContent,
+              contentDigest: createContentDigest(structure)
+            }
+          });
+        } catch (err) {
+          reporter.warn(
+            `Could not load structure for ${superBlock} (${filename}): ${err.message}`
+          );
+        }
+      });
   }
 
   return new Promise((resolve, reject) => {
@@ -260,17 +269,7 @@ const createIdToPrevPathMap = nodes =>
     return map;
   }, {});
 
-// The "hiddenSuperBlocks" plugin option lists superblocks whose pages should
-// not be created (e.g. courses hidden for the current locale).
-function isHiddenChallenge(challenge, pluginOptions) {
-  const hiddenSuperBlocks = pluginOptions?.hiddenSuperBlocks ?? [];
-  return hiddenSuperBlocks.includes(challenge.superBlock);
-}
-
-exports.createPagesStatefully = async function (
-  { graphql, actions },
-  pluginOptions
-) {
+exports.createPagesStatefully = async function ({ graphql, actions }) {
   const result = await graphql(`
     {
       allChallengeNode(
@@ -332,12 +331,9 @@ exports.createPagesStatefully = async function (
     }
   `);
 
-  // Hidden superblocks are excluded before the next/prev path maps are
-  // built, so no pages are created for them and the navigation of visible
-  // challenges skips over them.
-  allChallengeNodes = result.data.allChallengeNode.edges
-    .map(({ node }) => node)
-    .filter(({ challenge }) => !isHiddenChallenge(challenge, pluginOptions));
+  allChallengeNodes = result.data.allChallengeNode.edges.map(
+    ({ node }) => node
+  );
 
   const idToNextPathCurrentCurriculum =
     createIdToNextPathMap(allChallengeNodes);
@@ -353,13 +349,11 @@ exports.createPagesStatefully = async function (
   allChallengeNodes.forEach(nodeToPage);
 };
 
-exports.createPages = function ({ actions }, pluginOptions) {
+exports.createPages = function ({ actions }) {
   if (!allChallengeNodes) return;
 
   // actions.createPage has to be called in the createPages hook
-  const newNodes = [...filePathToCreatedNodes.values()]
-    .flat()
-    .filter(({ challenge }) => !isHiddenChallenge(challenge, pluginOptions));
+  const newNodes = [...filePathToCreatedNodes.values()].flat();
   // Nodes need sorting so createChallengePages can find the first and last
   // challenges in a block.
   const sortedNodes = sortBy(

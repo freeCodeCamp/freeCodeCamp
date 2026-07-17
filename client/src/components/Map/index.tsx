@@ -8,13 +8,13 @@ import {
   SuperBlockStage,
   getStageOrder,
   superBlockStages,
-  archivedSuperBlocks,
-  isHiddenSuperBlock
+  archivedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink, Link } from '../helpers';
-import { showUpcomingChanges, clientLocale } from '../../../config/env.json';
+import { showUpcomingChanges } from '../../../config/env.json';
+import { useAvailableSuperBlocks } from '../../utils/use-available-super-blocks';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
@@ -74,11 +74,13 @@ function MapLi({
 
 // used on /learn/archive
 export function ArchiveMap() {
+  const availableSuperBlocks = useAvailableSuperBlocks();
+
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
       <ul>
         {archivedSuperBlocks
-          .filter(superblock => !isHiddenSuperBlock(clientLocale, superblock))
+          .filter(superblock => availableSuperBlocks.has(superblock))
           .map(superblock => (
             <MapLi key={superblock} superBlock={superblock} landing={false} />
           ))}
@@ -90,6 +92,9 @@ export function ArchiveMap() {
 // used on /learn and landing page
 function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
+  // The curriculum of this build may not contain every superblock (some are
+  // excluded per language), so only render the ones it delivered.
+  const availableSuperBlocks = useAvailableSuperBlocks();
 
   return (
     <div className='map-ui' data-test-label='curriculum-map'>
@@ -103,8 +108,8 @@ function Map({ forLanding = false }: MapProps) {
             stage !== SuperBlockStage.Catalog
         )
         .map(stage => {
-          const superblocks = superBlockStages[stage].filter(
-            superblock => !isHiddenSuperBlock(clientLocale, superblock)
+          const superblocks = superBlockStages[stage].filter(superblock =>
+            availableSuperBlocks.has(superblock)
           );
           if (superblocks.length === 0) {
             return null;

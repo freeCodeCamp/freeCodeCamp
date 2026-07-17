@@ -7,8 +7,6 @@ import {
   notAuditedSuperBlocks,
   hiddenSuperBlocks,
   getHiddenSuperBlocks,
-  isHiddenSuperBlock,
-  isHiddenCertification,
   generateSuperBlockList,
   getAuditedSuperBlocks
 } from './curriculum';
@@ -90,58 +88,6 @@ describe('getHiddenSuperBlocks', () => {
   it('should return an empty array for languages with no hidden superblocks', () => {
     expect(getHiddenSuperBlocks(Languages.English)).toEqual([]);
     expect(getHiddenSuperBlocks('not-a-language')).toEqual([]);
-  });
-});
-
-describe('isHiddenSuperBlock', () => {
-  it('should hide a superblock only in its configured languages', () => {
-    expect(isHiddenSuperBlock(Languages.Espanol, SuperBlocks.A1Spanish)).toBe(
-      true
-    );
-    expect(isHiddenSuperBlock(Languages.Chinese, SuperBlocks.A1Chinese)).toBe(
-      true
-    );
-    expect(isHiddenSuperBlock(Languages.Espanol, SuperBlocks.A1Chinese)).toBe(
-      false
-    );
-    expect(isHiddenSuperBlock(Languages.English, SuperBlocks.A1Spanish)).toBe(
-      false
-    );
-  });
-
-  it('should return false for languages with no hidden superblocks', () => {
-    expect(
-      isHiddenSuperBlock(Languages.Portuguese, SuperBlocks.A1Spanish)
-    ).toBe(false);
-    expect(isHiddenSuperBlock('not-a-language', SuperBlocks.A1Spanish)).toBe(
-      false
-    );
-  });
-});
-
-describe('isHiddenCertification', () => {
-  it('should hide certifications whose slug matches a hidden superblock', () => {
-    expect(
-      isHiddenCertification(Languages.Espanol, 'a2-professional-spanish')
-    ).toBe(true);
-    expect(
-      isHiddenCertification(Languages.Chinese, 'a1-professional-chinese')
-    ).toBe(true);
-    expect(
-      isHiddenCertification(Languages.Chinese, 'a2-professional-chinese')
-    ).toBe(true);
-  });
-
-  it('should not hide certifications in other languages', () => {
-    expect(
-      isHiddenCertification(Languages.English, 'a2-professional-spanish')
-    ).toBe(false);
-    expect(
-      isHiddenCertification(Languages.Espanol, 'a1-professional-chinese')
-    ).toBe(false);
-    expect(
-      isHiddenCertification(Languages.Espanol, 'a2-english-for-developers')
-    ).toBe(false);
   });
 });
 

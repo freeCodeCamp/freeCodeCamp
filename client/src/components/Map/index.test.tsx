@@ -1,9 +1,11 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
+import { useStaticQuery } from 'gatsby';
 import {
   getStageOrder,
   superBlockStages,
+  SuperBlocks,
   SuperBlockStage
 } from '@freecodecamp/shared/config/curriculum';
 import { describe, expect, it, vi } from 'vitest';
@@ -17,16 +19,12 @@ import Map from './index';
 
 vi.unmock('react-i18next');
 
-// Pin the locale so the map (which hides some superblocks per locale) renders
-// the same regardless of the env.json the checkout was built with.
-vi.mock('../../../config/env.json', async importOriginal => {
-  const actual =
-    await importOriginal<typeof import('../../../config/env.json')>();
-  return {
-    ...actual,
-    default: { ...actual, clientLocale: 'english' },
-    clientLocale: 'english'
-  };
+// The map only renders superblocks the curriculum delivered; make all of
+// them available so the full map is rendered.
+vi.mocked(useStaticQuery).mockReturnValue({
+  allSuperBlockStructure: {
+    nodes: Object.values(SuperBlocks).map(superBlock => ({ superBlock }))
+  }
 });
 
 i18nTestConfig.addResourceBundle('en', 'intro', introTranslations, true, true);
