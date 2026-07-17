@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { genericError } from '../types.js';
 
 export const msTrophyChallengeCompleted = {
   body: Type.Object({
@@ -40,7 +41,8 @@ export const msTrophyChallengeCompleted = {
         variables: Type.Object({
           msUsername: Type.String()
         })
-      })
+      }),
+      genericError
     ]),
     500: Type.Object({
       type: Type.Literal('error'),
