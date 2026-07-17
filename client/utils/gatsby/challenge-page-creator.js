@@ -88,6 +88,12 @@ exports.createChallengePages = function (
   createPage,
   { idToNextPathCurrentCurriculum, idToPrevPathCurrentCurriculum }
 ) {
+  // allChallengeNodes is the same array reference across every call in a
+  // given forEach, so the grouping only needs to be built once and reused,
+  // rather than re-filtering the entire node list for every single page.
+  let challengesByBlockSource = null;
+  let challengesByBlock = null;
+
   return function (node, index, allChallengeNodes) {
     const {
       dashedName,
@@ -106,6 +112,11 @@ exports.createChallengePages = function (
       isLastChallengeInBlock,
       saveSubmissionToDB
     } = node.challenge;
+
+    if (challengesByBlockSource !== allChallengeNodes) {
+      challengesByBlockSource = allChallengeNodes;
+      challengesByBlock = groupChallengesByBlock(allChallengeNodes);
+    }
 
     createPage({
       path: slug,
@@ -132,7 +143,7 @@ exports.createChallengePages = function (
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,
-          allChallengeNodes
+          challengesByBlock
         ),
         id: node.id
       }
@@ -140,13 +151,24 @@ exports.createChallengePages = function (
   };
 };
 
+function groupChallengesByBlock(allChallengeNodes) {
+  const challengesByBlock = new Map();
+  for (const { challenge } of allChallengeNodes) {
+    const existing = challengesByBlock.get(challenge.block);
+    if (existing) {
+      existing.push(challenge);
+    } else {
+      challengesByBlock.set(challenge.block, [challenge]);
+    }
+  }
+  return challengesByBlock;
+}
+
 // TODO: figure out a cleaner way to get the last challenge in a block.
-function getProjectPreviewConfig(challenge, allChallengeNodes) {
+function getProjectPreviewConfig(challenge, challengesByBlock) {
   const { block } = challenge;
 
-  const challengesInBlock = allChallengeNodes
-    .filter(({ challenge }) => challenge.block === block)
-    .map(({ challenge }) => challenge);
+  const challengesInBlock = challengesByBlock.get(block) ?? [];
   const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
   const solutionFiles = lastChallenge.solutions[0] ?? [];
   const lastChallengeFiles = lastChallenge.challengeFiles ?? [];
