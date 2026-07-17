@@ -4,6 +4,7 @@ import type { GatsbyConfig } from 'gatsby';
 import envData from './config/env.json';
 import {
   buildChallenges,
+  getCurriculumSuperBlocks,
   replaceChallengeNodes,
   localeChallengesRootDir
 } from './utils/build-challenges';
@@ -53,7 +54,8 @@ const config: GatsbyConfig = {
         name: 'challenges',
         source: buildChallenges,
         onSourceChange: replaceChallengeNodes(),
-        curriculumPath: localeChallengesRootDir
+        curriculumPath: localeChallengesRootDir,
+        getSuperBlocks: getCurriculumSuperBlocks
       }
     },
     'gatsby-plugin-remove-serviceworker',
