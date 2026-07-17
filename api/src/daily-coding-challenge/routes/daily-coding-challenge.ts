@@ -182,7 +182,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!challenges || challenges.length === 0) {
-          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+          fastify.Sentry?.metrics?.count('dcc.empty_result', 1, {
             attributes: { route: '/daily-coding-challenge/month/:month' }
           });
           return reply.send([]);
@@ -241,7 +241,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           });
 
         if (!allChallenges || allChallenges.length === 0) {
-          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+          fastify.Sentry?.metrics?.count('dcc.empty_result', 1, {
             attributes: { route: '/daily-coding-challenge/all' }
           });
           return reply.send([]);

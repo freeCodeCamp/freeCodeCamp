@@ -353,7 +353,7 @@ describe('/daily-coding-challenge', () => {
 
       expect(res.status).toBe(200);
       expect(res.body).toEqual([]);
-      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+      expect(count).toHaveBeenCalledWith('dcc.empty_result', 1, {
         attributes: { route: '/daily-coding-challenge/month/:month' }
       });
 
@@ -428,7 +428,7 @@ describe('/daily-coding-challenge', () => {
 
       expect(res.status).toBe(200);
       expect(res.body).toEqual([]);
-      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+      expect(count).toHaveBeenCalledWith('dcc.empty_result', 1, {
         attributes: { route: '/daily-coding-challenge/all' }
       });
 
