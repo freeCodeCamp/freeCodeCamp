@@ -422,7 +422,9 @@ async function postExamGeneratedExamHandler(
   if (generatedExams.length === 0) {
     const message =
       'Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.';
-    this.Sentry?.captureException({ data: { examId: exam.id }, message });
+    this.Sentry?.captureException(new Error(message), {
+      extra: { examId: exam.id }
+    });
     req.log.error({ examId: exam.id }, message);
     this.Sentry?.metrics?.count('exam.generated_exam_pool_exhausted', 1);
     void reply.code(500);
@@ -471,10 +473,10 @@ async function postExamGeneratedExamHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
-    this.Sentry?.captureException({
-      data: { generatedExamId: randomGeneratedExamId },
-      message: 'Unreachable. Generated exam not found.'
-    });
+    this.Sentry?.captureException(
+      new Error('Unreachable. Generated exam not found.'),
+      { extra: { generatedExamId: randomGeneratedExamId } }
+    );
     req.log.error(
       { generatedExamId: randomGeneratedExamId },
       'Unreachable. Generated exam not found.'
