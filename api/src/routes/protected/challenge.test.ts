@@ -395,7 +395,7 @@ describe('challengeRoutes', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('should return 404 if user token not found', async () => {
+      test('should return 401 if user token not found', async () => {
         const count = vi.fn();
         const originalSentry = fastifyTestInstance.Sentry;
         fastifyTestInstance.Sentry = {
@@ -416,7 +416,7 @@ describe('challengeRoutes', () => {
           msg: 'User token not found',
           type: 'error'
         });
-        expect(response.status).toBe(404);
+        expect(response.status).toBe(401);
         expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
           attributes: { reason: 'token_not_found' }
         });

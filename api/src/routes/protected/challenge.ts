@@ -1077,7 +1077,7 @@ async function postCoderoadChallengeCompleted(
 
     if (!tokenInfo) {
       req.log.warn('User token not found');
-      void reply.code(404);
+      void reply.code(401);
       this.Sentry?.metrics?.count('coderoad.request_rejected', 1, {
         attributes: { reason: 'token_not_found' }
       });
