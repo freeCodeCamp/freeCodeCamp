@@ -2498,10 +2498,50 @@ describe('challengeRoutes', () => {
           });
 
           expect(response.body).toStrictEqual({
-            error: `An error occurred trying to submit your exam.`
+            error: `An error occurred validating the submitted exam.`
           });
-          expect(response.statusCode).toBe(500);
-          expect(captureException).toHaveBeenCalledOnce();
+          expect(response.statusCode).toBe(400);
+          expect(captureException).not.toHaveBeenCalled();
+
+          fastifyTestInstance.Sentry = originalSentry;
+        });
+
+        test('POST returns 400 when a submitted question is not in the exam', async () => {
+          const originalSentry = fastifyTestInstance.Sentry;
+          const captureException = vi.fn();
+          fastifyTestInstance.Sentry = {
+            ...originalSentry,
+            captureException
+          };
+
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: completedTrophyChallenges
+            }
+          });
+
+          const tampered = {
+            ...examWithZeroCorrect,
+            userExamQuestions: examWithZeroCorrect.userExamQuestions.map(
+              (q, i) => (i === 0 ? { ...q, id: 'zzzzzzzzzz' } : q)
+            )
+          };
+
+          const response = await superRequest('/exam-challenge-completed', {
+            method: 'POST',
+            setCookies
+          }).send({
+            id: examChallengeId,
+            challengeType: 17,
+            userCompletedExam: tampered
+          });
+
+          expect(response.body).toStrictEqual({
+            error: `An error occurred creating the exam results.`
+          });
+          expect(response.statusCode).toBe(400);
+          expect(captureException).not.toHaveBeenCalled();
 
           fastifyTestInstance.Sentry = originalSentry;
         });
