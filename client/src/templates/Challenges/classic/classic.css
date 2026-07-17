@@ -202,13 +202,13 @@
 }
 
 #mobile-layout .tab-content[data-state='active'] {
-  padding-block-end: 37px;
   display: flex;
   flex-direction: column;
 }
 
-#mobile-layout.has-editable-boundaries .tab-content[data-state='active'] {
-  padding-block-end: 0px;
+#mobile-layout .independent-lower-jaw {
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 #mobile-layout .preview-external-window {

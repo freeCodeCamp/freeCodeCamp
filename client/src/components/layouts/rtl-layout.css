@@ -120,7 +120,6 @@ sections that need to stay left to right
 }
 
 [dir='rtl'] .description-container,
-[dir='rtl'] .action-row-container,
 [dir='rtl']
   .timeline-pagination_list
   .timeline-pagination_list_item:not(:has(button)) {
