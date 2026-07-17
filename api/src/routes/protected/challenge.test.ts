@@ -423,6 +423,46 @@ describe('challengeRoutes', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
+      test('should return 401 if the token user no longer exists', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        const orphanTokenId = 'aaaaaaaaaaaaaaaaaaaaaaaa';
+        await fastifyTestInstance.prisma.userToken.create({
+          data: {
+            id: orphanTokenId,
+            created: new Date(),
+            ttl: 1000,
+            userId: '5fa5c1c3b1c9d40000000000'
+          }
+        });
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', encodeUserToken(orphanTokenId))
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { id: orphanTokenId }
+        });
+
+        expect(response.body).toEqual({
+          type: 'error',
+          msg: 'User for user token not found'
+        });
+        expect(response.status).toBe(401);
+        expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
+          attributes: { reason: 'user_not_found' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       test('Should complete challenge with code 200', async () => {
         const tokenResponse = await superPost('/user/user-token');
         expect(tokenResponse.body).toHaveProperty('userToken');

@@ -1086,13 +1086,13 @@ async function postCoderoadChallengeCompleted(
 
     const { userId } = tokenInfo;
 
-    const user = await this.prisma.user.findFirstOrThrow({
+    const user = await this.prisma.user.findFirst({
       where: { id: userId }
     });
 
     if (!user) {
       req.log.warn('User not found');
-      void reply.code(400);
+      void reply.code(401);
       this.Sentry?.metrics?.count('coderoad.request_rejected', 1, {
         attributes: { reason: 'user_not_found' }
       });
