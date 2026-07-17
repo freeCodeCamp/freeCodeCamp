@@ -2,6 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { Provider } from 'react-redux';
+import { useStaticQuery } from 'gatsby';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import envData from '../../config/env.json';
 import ShowSettings from './show-settings';
 import { createStore } from '../redux/create-store';
@@ -17,6 +19,14 @@ vi.mock('@growthbook/growthbook-react', () => ({
     null
 }));
 vi.mock('../utils/get-words');
+
+// The certification settings only offer certs whose superblock is in the
+// curriculum; make all superblocks available.
+vi.mocked(useStaticQuery).mockReturnValue({
+  allSuperBlockStructure: {
+    nodes: Object.values(SuperBlocks).map(superBlock => ({ superBlock }))
+  }
+});
 
 const { apiLocation } = envData;
 
