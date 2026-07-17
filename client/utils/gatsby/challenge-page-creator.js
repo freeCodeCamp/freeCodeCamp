@@ -89,10 +89,10 @@ exports.createChallengePages = function (
   { idToNextPathCurrentCurriculum, idToPrevPathCurrentCurriculum }
 ) {
   // allChallengeNodes is the same array reference across every call in a
-  // given forEach, so the grouping only needs to be built once and reused,
-  // rather than re-filtering the entire node list for every single page.
-  let challengesByBlockSource = null;
-  let challengesByBlock = null;
+  // given forEach, so this only needs to be built once and reused, rather
+  // than re-filtering the entire node list for every single page.
+  let lastChallengeByBlockSource = null;
+  let lastChallengeByBlock = null;
 
   return function (node, index, allChallengeNodes) {
     const {
@@ -113,9 +113,9 @@ exports.createChallengePages = function (
       saveSubmissionToDB
     } = node.challenge;
 
-    if (challengesByBlockSource !== allChallengeNodes) {
-      challengesByBlockSource = allChallengeNodes;
-      challengesByBlock = groupChallengesByBlock(allChallengeNodes);
+    if (lastChallengeByBlockSource !== allChallengeNodes) {
+      lastChallengeByBlockSource = allChallengeNodes;
+      lastChallengeByBlock = getLastChallengeByBlock(allChallengeNodes);
     }
 
     createPage({
@@ -143,7 +143,7 @@ exports.createChallengePages = function (
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,
-          challengesByBlock
+          lastChallengeByBlock
         ),
         id: node.id
       }
@@ -151,25 +151,20 @@ exports.createChallengePages = function (
   };
 };
 
-function groupChallengesByBlock(allChallengeNodes) {
-  const challengesByBlock = new Map();
+// allChallengeNodes is in block order, so overwriting on every challenge
+// leaves each block's entry pointing at the last challenge seen for it.
+function getLastChallengeByBlock(allChallengeNodes) {
+  const lastChallengeByBlock = new Map();
   for (const { challenge } of allChallengeNodes) {
-    const existing = challengesByBlock.get(challenge.block);
-    if (existing) {
-      existing.push(challenge);
-    } else {
-      challengesByBlock.set(challenge.block, [challenge]);
-    }
+    lastChallengeByBlock.set(challenge.block, challenge);
   }
-  return challengesByBlock;
+  return lastChallengeByBlock;
 }
 
-// TODO: figure out a cleaner way to get the last challenge in a block.
-function getProjectPreviewConfig(challenge, challengesByBlock) {
+function getProjectPreviewConfig(challenge, lastChallengeByBlock) {
   const { block } = challenge;
 
-  const challengesInBlock = challengesByBlock.get(block) ?? [];
-  const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
+  const lastChallenge = lastChallengeByBlock.get(block);
   const solutionFiles = lastChallenge.solutions[0] ?? [];
   const lastChallengeFiles = lastChallenge.challengeFiles ?? [];
 
