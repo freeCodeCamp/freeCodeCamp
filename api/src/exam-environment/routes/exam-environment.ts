@@ -328,7 +328,7 @@ async function postExamGeneratedExamHandler(
           'User has completed exam too recently to retake.'
         );
         this.Sentry?.metrics?.count('exam.retake_cooldown_blocked', 1);
-        void reply.code(403);
+        void reply.code(429);
         // TODO: Consider sending last completed time
         return reply.send(
           ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES(

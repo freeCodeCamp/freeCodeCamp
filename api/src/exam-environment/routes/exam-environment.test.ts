@@ -511,7 +511,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res).toMatchObject({
-          status: 403,
+          status: 429,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
@@ -544,7 +544,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res2).toMatchObject({
-          status: 403,
+          status: 429,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
