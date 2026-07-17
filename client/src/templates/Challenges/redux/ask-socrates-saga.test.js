@@ -4,7 +4,8 @@ import * as matchers from 'redux-saga-test-plan/matchers';
 import { throwError } from 'redux-saga-test-plan/providers';
 import { describe, it, vi, expect } from 'vitest';
 
-import { askSocratesSaga } from './ask-socrates-saga';
+import { askSocratesSaga, createAskSocratesSaga } from './ask-socrates-saga';
+import { actionTypes } from './action-types';
 import callGA from '../../../analytics/call-ga';
 
 vi.mock('i18next', async () => ({
@@ -55,6 +56,12 @@ function reducer(state = baseState) {
 }
 
 describe('askSocratesSaga', () => {
+  it('watches askSocrates actions', () => {
+    expect(createAskSocratesSaga(actionTypes)[0].payload.args[0]).toBe(
+      actionTypes.askSocrates
+    );
+  });
+
   it('dispatches error when socrates is not enabled', () => {
     const state = {
       ...baseState,
@@ -202,7 +209,7 @@ describe('askSocratesSaga', () => {
       .silentRun();
 
     expect(callGA).toHaveBeenCalledWith({
-      event: 'call_socrates',
+      event: 'send_socrates',
       action: 'Socrates Request Sent',
       is_donating: false,
       attempts: null,

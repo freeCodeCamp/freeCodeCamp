@@ -19,11 +19,15 @@ export const findOrCreateUser = async (
     select: { id: true, acceptedPrivacyTerms: true }
   });
   if (existingUser.length > 1) {
-    fastify.Sentry.captureException(
-      new Error(
-        `Multiple user records found for: ${existingUser.map(user => user.id).join(', ')}`
-      )
+    const userIds = existingUser.map(user => user.id);
+    fastify.log.error(
+      { audit: true, userIds, email },
+      'Multiple user records found'
     );
+    fastify.Sentry?.captureException(
+      new Error('Multiple user records found for: ' + userIds.join(', '))
+    );
+    fastify.Sentry?.metrics?.count('user.duplicate_email_detected', 1);
   }
 
   if (existingUser[0]) {
@@ -35,6 +39,8 @@ export const findOrCreateUser = async (
     data: createUserInput(email),
     select: { id: true, acceptedPrivacyTerms: true }
   });
+
+  fastify.Sentry?.metrics?.count('user.created', 1);
 
   // Create drip campaign record if feature flag is enabled
   if (fastify.gb.isOn('drip-campaign')) {
@@ -48,15 +54,21 @@ export const findOrCreateUser = async (
         }
       });
       fastify.log.info(
-        `Drip campaign record created for user ${newUser.id} with variant ${variant}`
+        { userId: newUser.id, variant },
+        'Drip campaign record created for user'
       );
-    } catch (error) {
-      // Log the error but don't fail user creation
+      fastify.Sentry?.metrics?.count('growthbook.signup_flag_evaluated', 1, {
+        attributes: { flag: 'drip-campaign', result: 'success' }
+      });
+    } catch (err) {
+      fastify.Sentry?.captureException(err);
       fastify.log.error(
-        error,
-        `Failed to create drip campaign record for user ${newUser.id}`
+        { err, userId: newUser.id },
+        'Failed to create drip campaign record for user'
       );
-      fastify.Sentry.captureException(error);
+      fastify.Sentry?.metrics?.count('growthbook.signup_flag_evaluated', 1, {
+        attributes: { flag: 'drip-campaign', result: 'failed' }
+      });
     }
   }
 

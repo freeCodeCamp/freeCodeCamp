@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-build-a-weather-service-api",
+  "challengeOrder": [
+    {
+      "id": "2ee4f38aa806d51f077d96cc",
+      "title": "Build a Weather Service API"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}

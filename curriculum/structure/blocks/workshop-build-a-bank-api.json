@@ -1,0 +1,15 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-build-a-bank-api",
+  "challengeOrder": [
+    {
+      "id": "6c7ecaaa60c9a0918c1af380",
+      "title": "Build a Bank API"
+    }
+  ],
+  "helpCategory": "Backend Development"
+}
