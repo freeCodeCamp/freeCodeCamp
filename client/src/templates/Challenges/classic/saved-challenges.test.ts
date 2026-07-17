@@ -3,7 +3,7 @@ import type {
   ChallengeFile,
   SavedChallengeFile
 } from '../../../redux/prop-types';
-import { mergeChallengeFiles } from './saved-challenges';
+import { mergeChallengeFiles, hasUnsavedChanges } from './saved-challenges';
 
 const jsChallenge = {
   contents: 'js contents',
@@ -139,5 +139,39 @@ describe('mergeChallengeFiles', () => {
 
     expect(files).toEqual(filesCopy);
     expect(savedChallengeFiles).toEqual(savedFilesCopy);
+  });
+});
+
+describe('hasUnsavedChanges', () => {
+  it('should return false if challengeFiles is null or undefined', () => {
+    expect(hasUnsavedChanges(null, [jsChallenge])).toBe(false);
+    expect(hasUnsavedChanges(undefined, [jsChallenge])).toBe(false);
+  });
+
+  it('should return false if all file contents match the last saved files', () => {
+    const files: ChallengeFile[] = [jsChallenge, cssChallenge];
+    const lastSavedFiles: ChallengeFile[] = [
+      { ...cssChallenge },
+      { ...jsChallenge }
+    ];
+
+    expect(hasUnsavedChanges(files, lastSavedFiles)).toBe(false);
+  });
+
+  it('should return true if any file contents differ from the last saved files', () => {
+    const files: ChallengeFile[] = [
+      { ...jsChallenge, contents: 'edited js contents' },
+      cssChallenge
+    ];
+    const lastSavedFiles: ChallengeFile[] = [jsChallenge, cssChallenge];
+
+    expect(hasUnsavedChanges(files, lastSavedFiles)).toBe(true);
+  });
+
+  it('should return true if a file is missing from the last saved files', () => {
+    const files: ChallengeFile[] = [jsChallenge, cssChallenge];
+    const lastSavedFiles: ChallengeFile[] = [jsChallenge];
+
+    expect(hasUnsavedChanges(files, lastSavedFiles)).toBe(true);
   });
 });

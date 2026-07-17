@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -55,6 +55,7 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   setEditorFocusability,
   setIsAdvancing
 } from '../redux/actions';
@@ -70,11 +71,13 @@ import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import { usePageLeave } from '../hooks';
+import ExitProjectModal from './exit-project-modal';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
-import { mergeChallengeFiles } from './saved-challenges';
+import { mergeChallengeFiles, hasUnsavedChanges } from './saved-challenges';
 
 import './classic.css';
 import '../components/test-frame.css';
@@ -100,6 +103,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       cancelTests,
       previewMounted,
       openModal,
+      closeModal,
       setEditorFocusability,
       setIsAdvancing
     },
@@ -124,6 +128,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  closeModal: (modal: string) => void;
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
   ) => void;
@@ -206,7 +211,8 @@ function ShowClassic({
         notes,
         videoUrl,
         translationPending,
-        saveSubmissionToDB
+        saveSubmissionToDB,
+        fields
       }
     }
   },
@@ -227,6 +233,7 @@ function ShowClassic({
   setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
+  closeModal,
   setIsAdvancing,
   savedChallenges,
   isChallengeCompleted,
@@ -243,6 +250,55 @@ function ShowClassic({
   const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
+  });
+
+  // Warn campers before they leave a certification project page with changes
+  // they have not saved to their account, since those changes would be lost.
+  const exitConfirmed = useRef(false);
+  const [exitPathname, setExitPathname] = useState('');
+
+  const savedChallenge = savedChallenges?.find(
+    challenge => challenge.id === challengeMeta.id
+  );
+  const showLeaveWarning =
+    !!saveSubmissionToDB &&
+    hasUnsavedChanges(
+      challengeFiles,
+      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles)
+    );
+
+  const handleExitProject = () => {
+    exitConfirmed.current = true;
+    closeModal('exitProject');
+    void navigate(exitPathname || fields?.blockHashSlug || '/learn');
+  };
+
+  const onWindowClose = useCallback((event: BeforeUnloadEvent) => {
+    event.preventDefault();
+  }, []);
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string): boolean => {
+      if (exitConfirmed.current) {
+        return false;
+      }
+
+      // For link clicks, save the target pathname. For back button
+      // (empty targetPathname), keep the default (i.e. blockHashSlug).
+      if (targetPathname) {
+        setExitPathname(targetPathname);
+      }
+
+      openModal('exitProject');
+      return true;
+    },
+    [openModal]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange,
+    enabled: showLeaveWarning
   });
 
   const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
@@ -550,6 +606,7 @@ function ShowClassic({
         />
         <ShortcutsModal />
         <MobileAppModal superBlock={superBlock} />
+        {saveSubmissionToDB && <ExitProjectModal onExit={handleExitProject} />}
       </LearnLayout>
     </Hotkeys>
   );
@@ -585,6 +642,7 @@ export const query = graphql`
         }
         fields {
           slug
+          blockHashSlug
         }
         required {
           link
