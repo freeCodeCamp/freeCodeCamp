@@ -840,7 +840,7 @@ Happy coding!
         fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
-          message: 'flash.username-taken',
+          message: 'flash.username-restricted',
           type: 'info'
         });
         expect(response.statusCode).toEqual(400);
@@ -857,7 +857,7 @@ Happy coding!
         });
 
         expect(response.body).toEqual({
-          message: 'flash.username-taken',
+          message: 'flash.username-restricted',
           type: 'info'
         });
         expect(response.statusCode).toEqual(400);

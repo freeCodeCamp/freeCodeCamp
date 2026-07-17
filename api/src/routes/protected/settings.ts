@@ -542,7 +542,9 @@ ${isLinkSentWithinLimitTTL}`
           );
           void reply.code(400);
           return reply.send({
-            message: 'flash.username-taken',
+            message: usernameTaken
+              ? 'flash.username-taken'
+              : 'flash.username-restricted',
             type: 'info'
           });
         }
