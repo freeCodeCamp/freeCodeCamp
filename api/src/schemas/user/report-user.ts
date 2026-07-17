@@ -22,6 +22,7 @@ export const reportUser = {
       type: Type.Literal('danger'),
       message: Type.Literal('flash.report-error')
     }),
+    403: genericError,
     500: genericError
   }
 };

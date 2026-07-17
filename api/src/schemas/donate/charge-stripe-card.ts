@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { genericError } from '../types.js';
 
 export const chargeStripeCard = {
   body: Type.Object({
@@ -30,6 +31,7 @@ export const chargeStripeCard = {
         client_secret: Type.Optional(Type.String())
       })
     }),
+    403: genericError,
     409: Type.Object({
       error: Type.Object({
         message: Type.String(),

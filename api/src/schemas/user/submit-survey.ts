@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { surveyTitles } from '../types.js';
+import { genericError, surveyTitles } from '../types.js';
 
 export const submitSurvey = {
   body: Type.Object({
@@ -22,6 +22,7 @@ export const submitSurvey = {
       type: Type.Literal('error'),
       message: Type.Literal('flash.survey.err-1')
     }),
+    403: genericError,
     409: Type.Object({
       type: Type.Literal('error'),
       message: Type.Literal('flash.survey.err-2')

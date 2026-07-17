@@ -1,4 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
+import { genericError } from '../types.js';
 
 export const addDonation = {
   body: Type.Object({}),
@@ -6,6 +7,7 @@ export const addDonation = {
     200: Type.Object({
       isDonating: Type.Boolean()
     }),
+    403: genericError,
     409: Type.Object({
       message: Type.Literal('User is already donating.'),
       type: Type.Literal('info')
