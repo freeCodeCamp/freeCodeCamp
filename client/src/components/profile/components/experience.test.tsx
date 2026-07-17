@@ -93,12 +93,16 @@ describe('validateDate', () => {
 
 describe('<Experience /> validation', () => {
   it('validates the company field', async () => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup();
     renderExperience();
     const company = screen.getByLabelText(/profile\.experience\.company/);
 
     await user.type(company, 'A');
     expect(screen.getByText('validation.company-short')).toBeInTheDocument();
+
+    await user.clear(company);
+    await user.type(company, 'A'.repeat(145));
+    expect(screen.getByText('validation.company-long')).toBeInTheDocument();
 
     await user.clear(company);
     await user.type(company, 'freeCodeCamp');
@@ -108,15 +112,10 @@ describe('<Experience /> validation', () => {
     expect(
       screen.queryByText('validation.company-long')
     ).not.toBeInTheDocument();
-
-    // Set the over-limit value in one change event instead of 145 keystrokes,
-    // which times the test out on loaded CI runners.
-    fireEvent.change(company, { target: { value: 'A'.repeat(145) } });
-    expect(screen.getByText('validation.company-long')).toBeInTheDocument();
   });
 
   it('validates the job title field', async () => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup();
     renderExperience();
     const jobTitle = screen.getByLabelText(/profile\.experience\.job-title/);
 
@@ -124,20 +123,19 @@ describe('<Experience /> validation', () => {
     expect(screen.getByText('validation.title-short')).toBeInTheDocument();
 
     await user.clear(jobTitle);
+    await user.type(jobTitle, 'A'.repeat(145));
+    expect(screen.getByText('validation.title-long')).toBeInTheDocument();
+
+    await user.clear(jobTitle);
     await user.type(jobTitle, 'Software Engineer');
     expect(
       screen.queryByText('validation.title-short')
     ).not.toBeInTheDocument();
     expect(screen.queryByText('validation.title-long')).not.toBeInTheDocument();
-
-    // Set the over-limit value in one change event instead of 145 keystrokes,
-    // which times the test out on loaded CI runners.
-    fireEvent.change(jobTitle, { target: { value: 'A'.repeat(145) } });
-    expect(screen.getByText('validation.title-long')).toBeInTheDocument();
   });
 
   it('validates the start date field', async () => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup();
     renderExperience();
     const startDate = screen.getByLabelText(/profile\.experience\.start-date/);
 
@@ -154,7 +152,7 @@ describe('<Experience /> validation', () => {
   });
 
   it('validates the end date field', async () => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup();
     renderExperience();
     const endDate = screen.getByLabelText(/profile\.experience\.end-date/);
 
@@ -171,7 +169,7 @@ describe('<Experience /> validation', () => {
   });
 
   it('validates the description field', async () => {
-    const user = userEvent.setup({ delay: null });
+    const user = userEvent.setup();
     renderExperience();
     const description = screen.getByLabelText(
       /profile\.experience\.description/
@@ -189,9 +187,8 @@ describe('<Experience /> validation', () => {
       screen.getByText('validation.max-characters-500')
     ).toBeInTheDocument();
 
-    fireEvent.change(description, {
-      target: { value: 'Worked on various projects' }
-    });
+    await user.clear(description);
+    await user.type(description, 'Worked on various projects');
     expect(
       screen.queryByText('validation.max-characters-500')
     ).not.toBeInTheDocument();
