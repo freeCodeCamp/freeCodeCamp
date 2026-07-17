@@ -134,7 +134,6 @@ async function tokenMetaHandler(
   try {
     payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
   } catch (e) {
-    // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
     req.log.warn(e, 'Invalid token provided.');
     void reply.code(401);
     return reply.send(
