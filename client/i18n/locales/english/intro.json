@@ -5308,7 +5308,7 @@
       "workshop-debugging-library-search": {
         "title": "Design a Library Book Search",
         "intro": [
-          "In this workshop, you will learn how to handle errors gracefully in JavaScript.",
+          "In this workshop, you will practice handling errors gracefully in JavaScript.",
           "You will build a Library Book Search application and use <code>try...catch...finally</code> blocks, along with the <code>throw</code> statement, to catch and manage custom errors."
         ]
       },
