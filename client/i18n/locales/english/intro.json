@@ -5305,7 +5305,7 @@
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
-      "workshop-debugging-library-search": {
+      "workshop-library-search": {
         "title": "Design a Library Book Search",
         "intro": [
           "In this workshop, you will practice handling errors gracefully in JavaScript.",
