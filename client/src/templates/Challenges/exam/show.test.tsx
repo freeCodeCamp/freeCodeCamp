@@ -55,7 +55,7 @@ const examBlock = 'foundational-c-sharp-with-microsoft-certification-exam';
 const examTitle = t(
   `intro:${SuperBlocks.FoundationalCSharp}.blocks.${examBlock}.title`
 );
-const windowTitle = `${examTitle}: ${examTitle} | freeCodeCamp.org`;
+const windowTitle = `${examTitle} | freeCodeCamp.org`;
 const examDescription =
   'Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:';
 const prerequisite = {
