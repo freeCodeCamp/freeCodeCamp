@@ -1,4 +1,3 @@
-import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
@@ -25,6 +24,7 @@ import security from './plugins/security.js';
 import auth from './plugins/auth.js';
 import bouncer from './plugins/bouncer.js';
 import errorHandling from './plugins/error-handling.js';
+import runtimeMetrics from './plugins/runtime-metrics.js';
 import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
 import shadowCapture from './plugins/shadow-capture.js';
@@ -47,7 +47,8 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env.js';
 import { isObjectID } from './utils/validation.js';
-import { getLogger } from './utils/logger.js';
+import { bindRouteToLogger, genReqId, getLogger } from './utils/logger.js';
+import { recordHttpMetrics } from './utils/http-metrics.js';
 import {
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
@@ -86,9 +87,7 @@ export const buildOptions: FastifyHttpOptions<
   FastifyBaseLogger
 > = {
   loggerInstance: getLogger(),
-  genReqId: () => randomBytes(8).toString('hex'),
-  // disabled so we can customise the request/response logging
-  disableRequestLogging: true,
+  genReqId,
   // destroy all connections on close to avoid EADDRINUSE
   // on restart, in development. Leave default in production.
   forceCloseConnections:
@@ -110,22 +109,15 @@ export const build = async (
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
-  fastify.addHook('onRequest', (req, _reply, done) => {
-    const logger = fastify.log.child({ req });
-    logger.debug({ req }, 'received request');
-    done();
-  });
 
-  fastify.addHook('onResponse', (req, reply, done) => {
-    const logger = fastify.log.child({ res: reply });
-    logger.debug({ req, res: reply }, 'responding to request');
-    done();
-  });
+  fastify.addHook('onRequest', bindRouteToLogger);
+  fastify.addHook('onResponse', recordHttpMetrics);
 
   void fastify.register(redirectWithMessage);
   void fastify.register(security);
   void fastify.register(fastifyAccepts);
   void fastify.register(errorHandling);
+  void fastify.register(runtimeMetrics);
 
   await fastify.register(cors);
   await fastify.register(cookies);

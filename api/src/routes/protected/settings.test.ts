@@ -229,25 +229,53 @@ describe('settingRoutes', () => {
       });
 
       test('should reject requests which have an invalid email param', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await superGet(
           `/confirm-email?email=${notEmail}&token=${validToken}`
         );
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(res.headers.location).toBe(
           `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_confirm_rejected',
+          1,
+          { attributes: { reason: 'invalid_email' } }
+        );
       });
 
       test('should reject requests when the auth token is not in the database', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
         );
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(res.headers.location).toBe(
           `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_confirm_rejected',
+          1,
+          { attributes: { reason: 'no_token' } }
+        );
       });
 
       test('should reject requests when the auth token exists, but the user does not', async () => {
@@ -264,15 +292,28 @@ describe('settingRoutes', () => {
       test('should reject requests when the target user does not match the signed in user', async () => {
         // The signed in user is the default (foo@bar.com), but the token is for
         // a different user (another@user.com).
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
 
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${tokenWithDifferentUser}`
         );
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(res.headers.location).toBe(
           `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_confirm_rejected',
+          1,
+          { attributes: { reason: 'user_mismatch' } }
+        );
       });
 
       // TODO(Post-MVP): there's no need to keep the auth token around if,
@@ -287,20 +328,43 @@ describe('settingRoutes', () => {
           data: { newEmail: 'an@oth.er' }
         });
 
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(res.headers.location).toBe(
           `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
         );
         expect(res.status).toBe(302);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_confirm_rejected',
+          1,
+          { attributes: { reason: 'email_mismatch' } }
+        );
       });
 
       test('should reject requests if the auth token has expired', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${expiredToken}`
         );
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(res.headers.location).toBe(
           `${HOME_LOCATION}?` +
@@ -311,9 +375,21 @@ describe('settingRoutes', () => {
             })
         );
         expect(res.status).toBe(302);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_confirm_rejected',
+          1,
+          { attributes: { reason: 'expired' } }
+        );
       });
 
       test('should update the user email', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
@@ -321,10 +397,13 @@ describe('settingRoutes', () => {
           where: { id: defaultUserId }
         });
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(res.headers.location).toBe(
           `${HOME_LOCATION}?` + formatMessage(successMessage)
         );
         expect(user.email).toBe(newEmail);
+        expect(count).toHaveBeenCalledWith('settings.email_confirmed', 1);
       });
 
       test('should clean up the user record', async () => {
@@ -359,9 +438,18 @@ describe('settingRoutes', () => {
 
     describe('/update-my-profileui', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-profileui').send({
           profileUI
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: developerUserEmail }
@@ -373,6 +461,9 @@ describe('settingRoutes', () => {
         });
         expect(user?.profileUI).toEqual(profileUI);
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'profile_ui' }
+        });
       });
 
       test('PUT ignores invalid keys', async () => {
@@ -432,9 +523,18 @@ describe('settingRoutes', () => {
         });
       });
       test('PUT returns 200 status code with "info" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-email').send({
           email: 'foo@foo.com'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message:
@@ -442,6 +542,10 @@ describe('settingRoutes', () => {
           type: 'info'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith(
+          'settings.email_change_requested',
+          1
+        );
       });
 
       test("PUT updates the user's record in preparation for receiving auth email", async () => {
@@ -637,15 +741,27 @@ Happy coding!
 
     describe('/update-my-theme', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-theme').send({
           theme: 'night'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.updated-themes',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'theme' }
+        });
       });
 
       test('PUT returns 400 status code with invalid theme', async () => {
@@ -656,31 +772,83 @@ Happy coding!
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
+
+      test('PUT captures a Sentry Issue and returns 500 when the update fails', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+
+        const original = fastifyTestInstance.prisma.user.update;
+        fastifyTestInstance.prisma.user.update = vi
+          .fn()
+          .mockRejectedValue(new Error('db down')) as typeof original;
+
+        const response = await superPut('/update-my-theme').send({
+          theme: 'night'
+        });
+
+        fastifyTestInstance.prisma.user.update = original;
+        fastifyTestInstance.Sentry = originalSentry;
+
+        expect(response.statusCode).toEqual(500);
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(captureException).toHaveBeenCalledExactlyOnceWith(
+          expect.objectContaining({ message: 'db down' })
+        );
+      });
     });
 
     describe('/update-my-username', () => {
       test('PUT returns an error when the username uses special characters', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-username').send({
           username: 'twaha@'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'Username twaha@ contains invalid characters',
           type: 'info'
         });
         expect(response.statusCode).toEqual(400);
+        expect(count).toHaveBeenCalledWith(
+          'settings.username_change_rejected',
+          1,
+          { attributes: { reason: 'invalid' } }
+        );
       });
 
       test('PUT returns an error when the username is an endpoint', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-username').send({
           username: 'german'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.username-taken',
           type: 'info'
         });
         expect(response.statusCode).toEqual(400);
+        expect(count).toHaveBeenCalledWith(
+          'settings.username_change_rejected',
+          1,
+          { attributes: { reason: 'taken_or_restricted' } }
+        );
       });
 
       test('PUT returns an error when the username is a bad word', async () => {
@@ -720,9 +888,19 @@ Happy coding!
       });
 
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-username').send({
           username: 'TwaHa1'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
+
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
@@ -734,6 +912,9 @@ Happy coding!
           variables: { username: 'TwaHa1' }
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'username' }
+        });
       });
 
       test('PUT returns an error when the username is already used', async () => {
@@ -753,15 +934,29 @@ Happy coding!
         });
         await superPut('/update-my-username').send({ username: 'twaha2' });
 
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const secondUpdate = await superPut('/update-my-username').send({
           username: 'twaha2'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(secondUpdate.body).toEqual({
           message: 'flash.username-used',
           type: 'info'
         });
         expect(secondUpdate.statusCode).toEqual(400);
+        expect(count).toHaveBeenCalledWith(
+          'settings.username_change_rejected',
+          1,
+          { attributes: { reason: 'unchanged' } }
+        );
 
         // Not allowed because, while the usernameDisplay is different, the
         // username is not
@@ -792,15 +987,27 @@ Happy coding!
 
     describe('/update-my-keyboard-shortcuts', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-keyboard-shortcuts').send({
           keyboardShortcuts: true
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.keyboard-shortcut-updated',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'keyboard_shortcuts' }
+        });
       });
 
       test('PUT returns 400 status code with invalid shortcuts setting', async () => {
@@ -815,6 +1022,13 @@ Happy coding!
 
     describe('/update-my-socials', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-socials').send({
           website: 'https://www.freecodecamp.org/',
           twitter: 'https://twitter.com/ossia',
@@ -823,11 +1037,16 @@ Happy coding!
           githubProfile: 'https://github.com/QuincyLarson'
         });
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(response.body).toEqual({
           message: 'flash.updated-socials',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'socials' }
+        });
       });
 
       test('PUT accepts empty strings for socials', async () => {
@@ -860,6 +1079,13 @@ Happy coding!
       });
 
       test('PUT only accepts urls to certain domains', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-socials').send({
           website: '',
           twitter: '',
@@ -868,22 +1094,62 @@ Happy coding!
           githubProfile: 'https://x.com/should-be-github'
         });
 
+        fastifyTestInstance.Sentry = originalSentry;
+
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
+        expect(count).toHaveBeenCalledWith('settings.social_url_rejected', 1, {
+          attributes: { provider: 'githubProfile' }
+        });
+      });
+
+      test('PUT does not log raw social URLs on validation failure', async () => {
+        const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
+        const leakyUrl = 'https://x.com/should-be-github?api_key=super-secret';
+
+        const response = await superPut('/update-my-socials').send({
+          website: '',
+          twitter: '',
+          bluesky: '',
+          linkedin: '',
+          githubProfile: leakyUrl
+        });
+
+        expect(response.statusCode).toEqual(400);
+        const call = spy.mock.calls.find(
+          ([, msg]) => msg === 'Invalid social URL'
+        );
+        expect(call).toBeDefined();
+        const [logObject] = call!;
+        expect(JSON.stringify(logObject)).not.toContain(leakyUrl);
+        expect(JSON.stringify(logObject)).not.toContain('super-secret');
+        expect(logObject).toEqual({ invalidSocials: ['githubProfile'] });
       });
     });
 
     describe('/update-my-quincy-email', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-quincy-email').send({
           sendQuincyEmail: true
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.subscribe-to-quincy-updated',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'quincy_email' }
+        });
       });
 
       test('PUT returns 400 status code with invalid sendQuincyEmail', async () => {
@@ -896,8 +1162,41 @@ Happy coding!
       });
     });
 
+    describe('/update-socrates', () => {
+      test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        const response = await superPut('/update-socrates').send({
+          socrates: true
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
+
+        expect(response.body).toEqual({
+          message: 'flash.socrates-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'socrates' }
+        });
+      });
+    });
+
     describe('/update-my-about', () => {
       test('PUT updates the values in about settings', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
@@ -905,6 +1204,8 @@ Happy coding!
           picture:
             'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.updated-about-me',
@@ -922,6 +1223,9 @@ Happy coding!
           'https://cdn.freecodecamp.org/platform/english/images/quincy-larson-signature.svg'
         );
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'about' }
+        });
       });
 
       test('PUT returns 400 if the URL is invalid', async () => {
@@ -967,6 +1271,32 @@ Happy coding!
           type: 'danger'
         });
         expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT does not log the raw picture URL on validation failure', async () => {
+        const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
+        spy.mockClear();
+        const leakyUrl = 'https://example.com/file.txt?api_key=super-secret';
+
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: leakyUrl
+        });
+
+        expect(response.statusCode).toEqual(400);
+        const call = spy.mock.calls.find(
+          ([, msg]) => msg === 'Invalid picture URL'
+        );
+        expect(call).toBeDefined();
+        const [logObject] = call!;
+        expect(JSON.stringify(logObject)).not.toContain(leakyUrl);
+        expect(JSON.stringify(logObject)).not.toContain('super-secret');
+        expect(logObject).toEqual({
+          hasPicture: true,
+          pictureLength: leakyUrl.length
+        });
       });
 
       test('PUT accepts an image URL with query string', async () => {
@@ -1117,15 +1447,27 @@ Happy coding!
 
     describe('/update-my-honesty', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-honesty').send({
           isHonest: true
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'buttons.accepted-honesty',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'honesty' }
+        });
       });
 
       test('PUT returns 400 status code with invalid honesty', async () => {
@@ -1140,15 +1482,27 @@ Happy coding!
 
     describe('/update-privacy-terms', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-privacy-terms').send({
           quincyEmails: true
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.privacy-updated',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'privacy_terms' }
+        });
       });
 
       test('PUT returns 400 status code with non-boolean data', async () => {
@@ -1163,15 +1517,27 @@ Happy coding!
 
     describe('/update-my-portfolio', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-portfolio').send({
           portfolio: [{}]
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.portfolio-item-updated',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'portfolio' }
+        });
       });
 
       test('PUT returns 400 status code when the portfolio property is missing', async () => {
@@ -1210,13 +1576,25 @@ Happy coding!
           ]
         };
 
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-experience').send(payload);
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.experience-updated',
           type: 'success'
         });
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'experience' }
+        });
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: developerUserEmail },
@@ -1424,9 +1802,18 @@ Happy coding!
 
     describe('/update-my-classroom-mode', () => {
       test('PUT returns 200 status code with "success" message', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/update-my-classroom-mode').send({
           isClassroomAccount: true
         });
+
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
           message: 'flash.classroom-mode-updated',
@@ -1434,6 +1821,16 @@ Happy coding!
         });
 
         expect(response.statusCode).toEqual(200);
+        expect(count).toHaveBeenCalledWith(
+          'settings.classroom_mode_toggled',
+          1,
+          {
+            attributes: { enabled: true }
+          }
+        );
+        expect(count).toHaveBeenCalledWith('settings.updated', 1, {
+          attributes: { field: 'classroom_mode' }
+        });
       });
 
       test('PUT returns 400 status code with invalid classroom mode', async () => {

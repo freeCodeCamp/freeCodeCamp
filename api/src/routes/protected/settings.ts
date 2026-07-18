@@ -135,9 +135,11 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.setErrorHandler((error: FastifyError, request, reply) => {
-    const logger = fastify.log.child({ req: request });
     if (error.validation) {
-      logger.warn({ validationError: error.validation });
+      request.log.warn(
+        { validationError: error.validation },
+        'Request validation failed'
+      );
       void reply.code(400);
       void reply.send({ message: 'flash.wrong-updating', type: 'danger' });
     } else {
@@ -151,7 +153,6 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.updateMyProfileUI
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -172,14 +173,17 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'profile_ui' }
+        });
+
         return {
           message: 'flash.privacy-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error('Error updating profileUI');
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating profileUI');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -206,9 +210,8 @@ Happy coding!
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       if (req.validationError) {
-        logger.warn(`Invalid email ${req.body.email}`);
+        req.log.warn('Invalid email format');
         void reply.code(400);
         return { message: 'Email format is invalid', type: 'danger' } as const;
       }
@@ -229,7 +232,7 @@ Happy coding!
       const isVerifiedEmail = user.emailVerified;
       const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {
-        logger.warn(
+        req.log.warn(
           'New email address is already associated with this account'
         );
         void reply.code(400);
@@ -247,7 +250,7 @@ You can update a new email address instead.`
       });
 
       if (isResendUpdateToSameEmail && isLinkSentWithinLimitTTL) {
-        logger.warn(
+        req.log.warn(
           'Email confirmation link has been sent within the last 5 minutes'
         );
         void reply.code(429);
@@ -262,7 +265,7 @@ ${isLinkSentWithinLimitTTL}`
         (await fastify.prisma.user.count({ where: { email: newEmail } })) > 0;
 
       if (isEmailAlreadyTaken && !isOwnEmail) {
-        logger.warn(
+        req.log.warn(
           'New email address is already associated with another account'
         );
         void reply.code(400);
@@ -292,7 +295,7 @@ ${isLinkSentWithinLimitTTL}`
         });
 
         if (tooManyRequestsMessage) {
-          logger.warn(
+          req.log.warn(
             'Email confirmation link has been sent within the last 5 minutes'
           );
           void reply.code(429);
@@ -326,15 +329,16 @@ ${isLinkSentWithinLimitTTL}`
           text: createUpdateEmailText({ email: newEmail, id })
         });
 
+        fastify.Sentry?.metrics?.count('settings.email_change_requested', 1);
+
         await reply.send({
           message:
             'Check your email and click the link we sent you to confirm your new email address.',
           type: 'info'
         });
       } catch (err) {
-        logger.error(`Error updating user ${user.id}'s email address`);
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating email address');
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
@@ -347,7 +351,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyTheme
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -356,14 +359,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'theme' }
+        });
+
         return {
           message: 'flash.updated-themes',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(`Error updating user ${req.user?.id}'s theme`);
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating theme');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -376,8 +382,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMySocials
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-
       const socials = {
         twitter: req.body.twitter,
         bluesky: req.body.bluesky,
@@ -391,7 +395,21 @@ ${isLinkSentWithinLimitTTL}`
       ).every(key => validateSocialUrl(socials[key], key));
 
       if (!valid) {
-        logger.warn({ socials }, `Invalid social URL`);
+        req.log.warn(
+          {
+            invalidSocials: (
+              ['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const
+            ).filter(key => !validateSocialUrl(socials[key], key))
+          },
+          'Invalid social URL'
+        );
+        (['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const)
+          .filter(key => !validateSocialUrl(socials[key], key))
+          .forEach(provider => {
+            fastify.Sentry?.metrics?.count('settings.social_url_rejected', 1, {
+              attributes: { provider }
+            });
+          });
         void reply.code(400);
         return reply.send({
           message: 'flash.wrong-updating',
@@ -411,14 +429,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'socials' }
+        });
+
         return {
           message: 'flash.updated-socials',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(`Error updating user ${req.user?.id}'s socials`);
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating socials');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -432,8 +453,6 @@ ${isLinkSentWithinLimitTTL}`
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-
       try {
         const user = await fastify.prisma.user.findFirstOrThrow({
           where: { id: req.user?.id }
@@ -450,7 +469,14 @@ ${isLinkSentWithinLimitTTL}`
           newUsernameDisplay === oldUsernameDisplay;
 
         if (usernameUnchanged) {
-          logger.warn('Username is unchanged');
+          req.log.warn('Username is unchanged');
+          fastify.Sentry?.metrics?.count(
+            'settings.username_change_rejected',
+            1,
+            {
+              attributes: { reason: 'unchanged' }
+            }
+          );
           void reply.code(400);
           return {
             message: 'flash.username-used',
@@ -459,7 +485,10 @@ ${isLinkSentWithinLimitTTL}`
         }
 
         if (req.validationError) {
-          logger.warn(`Bad request. Supplied username: ${req.body.username}`);
+          req.log.warn(
+            { username: req.body.username },
+            'Bad request. Invalid username supplied'
+          );
           void reply.code(400);
           return {
             message: req.validationError.message,
@@ -470,7 +499,17 @@ ${isLinkSentWithinLimitTTL}`
         const validation = isValidUsername(newUsername);
 
         if (!validation.valid) {
-          logger.warn(`Invalid username ${newUsername}. ${validation.error}`);
+          req.log.warn(
+            { username: newUsername, validationError: validation.error },
+            'Invalid username'
+          );
+          fastify.Sentry?.metrics?.count(
+            'settings.username_change_rejected',
+            1,
+            {
+              attributes: { reason: 'invalid' }
+            }
+          );
           void reply.code(400);
           return reply.send({
             // TODO(Post-MVP): custom validation errors.
@@ -487,7 +526,17 @@ ${isLinkSentWithinLimitTTL}`
               });
 
         if (usernameTaken || isRestricted(newUsername)) {
-          logger.warn(`Username ${newUsername} is taken or restricted`);
+          req.log.warn(
+            { username: newUsername },
+            'Username is taken or restricted'
+          );
+          fastify.Sentry?.metrics?.count(
+            'settings.username_change_rejected',
+            1,
+            {
+              attributes: { reason: 'taken_or_restricted' }
+            }
+          );
           void reply.code(400);
           return reply.send({
             message: 'flash.username-taken',
@@ -503,14 +552,18 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'username' }
+        });
+
         return reply.send({
           message: 'flash.username-updated',
           type: 'success',
           variables: { username: newUsernameDisplay }
         });
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating username');
         void reply.code(500);
         await reply.send({ message: 'flash.wrong-updating', type: 'danger' });
       }
@@ -523,13 +576,17 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyAbout
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-
       // No need to validate if picture is being deleted.
       if (req.body.picture) {
         if (req.body.picture !== req.user!.picture) {
           if (!isValidPictureUrl(req.body.picture)) {
-            logger.warn(`Invalid picture URL: ${req.body.picture}`);
+            req.log.warn(
+              {
+                hasPicture: !!req.body.picture,
+                pictureLength: req.body.picture?.length
+              },
+              'Invalid picture URL'
+            );
             void reply.code(400);
             return { message: 'flash.wrong-updating', type: 'danger' } as const;
           }
@@ -547,13 +604,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'about' }
+        });
+
         return {
           message: 'flash.updated-about-me',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating about');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -566,7 +627,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyKeyboardShortcuts
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -575,13 +635,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'keyboard_shortcuts' }
+        });
+
         return {
           message: 'flash.keyboard-shortcut-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating keyboard shortcuts');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -594,7 +658,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyQuincyEmail
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -603,13 +666,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'quincy_email' }
+        });
+
         return {
           message: 'flash.subscribe-to-quincy-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating Quincy email preference');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -622,7 +689,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateSocrates
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -631,13 +697,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'socrates' }
+        });
+
         return {
           message: 'flash.socrates-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating Socrates preference');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -650,7 +720,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyHonesty
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -659,13 +728,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'honesty' }
+        });
+
         return {
           message: 'buttons.accepted-honesty',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating honesty');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -678,7 +751,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyPrivacyTerms
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -688,13 +760,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'privacy_terms' }
+        });
+
         return {
           message: 'flash.privacy-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating privacy terms');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -707,7 +783,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyPortfolio
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         // TODO(Post-MVP): make all properties required in the schema and use
         // req.body.portfolio directly.
@@ -727,13 +802,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'portfolio' }
+        });
+
         return {
           message: 'flash.portfolio-item-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating portfolio');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -746,7 +825,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyExperience
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         const { experience } = req.body;
 
@@ -757,13 +835,17 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'experience' }
+        });
+
         return {
           message: 'flash.experience-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating experience');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -777,7 +859,6 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyClassroomMode
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -786,13 +867,20 @@ ${isLinkSentWithinLimitTTL}`
           }
         });
 
+        fastify.Sentry?.metrics?.count('settings.classroom_mode_toggled', 1, {
+          attributes: { enabled: req.body.isClassroomAccount }
+        });
+        fastify.Sentry?.metrics?.count('settings.updated', 1, {
+          attributes: { field: 'classroom_mode' }
+        });
+
         return {
           message: 'flash.classroom-mode-updated',
           type: 'success'
         } as const;
       } catch (err) {
-        logger.error(err);
-        fastify.Sentry.captureException(err);
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error updating classroom mode');
         void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
@@ -861,9 +949,11 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
     {
       schema: schemas.confirmEmail,
       errorHandler(error, request, reply) {
-        const logger = fastify.log.child({ req: request });
         if (error.validation) {
-          logger.warn({ validationError: error.validation });
+          request.log.warn(
+            { validationError: error.validation },
+            'Request validation failed'
+          );
           const { origin } = getRedirectParams(request);
           void reply.redirectWithMessage(origin, redirectMessage);
         } else {
@@ -872,12 +962,14 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);
       if (!validator.default.isEmail(email)) {
-        logger.warn(`Invalid email ${email}`);
+        req.log.warn({ userId: req.user?.id }, 'Invalid email format');
+        fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
+          attributes: { reason: 'invalid_email' }
+        });
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
@@ -886,13 +978,19 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!authToken) {
-        logger.warn('No token found');
+        req.log.warn('No token found');
+        fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
+          attributes: { reason: 'no_token' }
+        });
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
       // TODO(Post-MVP): clean up expired auth tokens.
       if (isExpired(authToken)) {
-        logger.info('Token expired');
+        req.log.warn('Token expired');
+        fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
+          attributes: { reason: 'expired' }
+        });
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 
@@ -901,11 +999,17 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (targetUser?.id !== req.user?.id) {
-        logger.warn('Target user does not match signed in user');
+        req.log.warn('Target user does not match signed in user');
+        fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
+          attributes: { reason: 'user_mismatch' }
+        });
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
       if (targetUser?.newEmail !== email) {
+        fastify.Sentry?.metrics?.count('settings.email_confirm_rejected', 1, {
+          attributes: { reason: 'email_mismatch' }
+        });
         return reply.redirectWithMessage(origin, redirectMessage);
       }
 
@@ -915,6 +1019,8 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         updateEmail(fastify, { id: targetUser.id, email }),
         deleteAuthToken(fastify, { id: authToken.id })
       ]);
+
+      fastify.Sentry?.metrics?.count('settings.email_confirmed', 1);
 
       return reply.redirectWithMessage(origin, successMessage);
     }
