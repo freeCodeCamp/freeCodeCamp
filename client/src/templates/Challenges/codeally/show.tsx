@@ -153,7 +153,7 @@ function ShowCodeAlly({
   } = data;
   const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   const shouldAppendBlockNameToTitle = blockNameTitle !== title;
-  const windowTitle = `${shouldAppendBlockNameToTitle ? blockNameTitle + ' : ' : ''}${title} | freeCodeCamp.org`;
+  const windowTitle = `${shouldAppendBlockNameToTitle ? blockNameTitle + ': ' : ''}${title} | freeCodeCamp.org`;
 
   const isPartiallyCompleted = partiallyCompletedChallenges.some(
     challenge => challenge.id === challengeId
