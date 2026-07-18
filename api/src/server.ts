@@ -32,21 +32,15 @@ const start = async () => {
       }, FCC_DRAIN_TIMEOUT_MS);
       forceClose.unref();
 
-      await new Promise<void>(resolve => {
-        fastify!.server.close(() => resolve());
-      });
-
-      // Yield one tick so libuv can finalize uv_close() on the TCP handle
-      // before pino's autoEnd blocks the event loop via Atomics.wait().
-      await new Promise<void>(resolve => setImmediate(resolve));
-
       await fastify!.close();
       clearTimeout(forceClose);
       Sentry.metrics.count('server.shutdown_completed', 1, {
         attributes: { signal }
       });
       await fastify!.Sentry.close(2000);
-      process.exit(0);
+      // No process.exit(): once close() resolves, the loop drains and the
+      // process exits 0 on its own. Hard-exiting here is what used to race
+      // pino's exit-time flush (see #66135).
     };
 
     process.on('SIGINT', signal => void stop(signal));
