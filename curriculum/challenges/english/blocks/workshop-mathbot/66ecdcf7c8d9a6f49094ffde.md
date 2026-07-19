@@ -22,13 +22,6 @@ Create a new variable called `numRounded` and assign the result of rounding the 
 
 Below that, create another new variable called `numRounded2` and assign the result of rounding the number `11.2`. Then, log the value of `numRounded2` to the console.
 
-# --before-each--
-
-```js
-const spy = __helpers.spyOn(console, "log");
-const getLogs = () => spy.calls.map(call => call?.[0]);
-```
-
 # --hints--
 
 You should have a variable called `numRounded`.
@@ -55,7 +48,7 @@ assert.notEqual(numRounded?.value?.toString(), "3");
 You should log the value of `numRounded` to the console.
 
 ```js
-assert.equal(getLogs()[12], numRounded);
+assert.match(code, /console\.log\(\s*numRounded\s*\)/);
 ```
 
 You should have a variable called `numRounded2`.
@@ -82,7 +75,7 @@ assert.notEqual(numRounded2?.value?.toString(), "11");
 You should log the value of `numRounded2` to the console.
 
 ```js
-assert.equal(getLogs()[13], numRounded2);
+assert.match(code, /console\.log\(\s*numRounded2\s*\)/);
 ```
 
 # --seed--
