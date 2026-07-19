@@ -466,9 +466,6 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           { examId: id },
           'User requested an exam that does not exist'
         );
-        fastify.Sentry?.captureException(
-          new Error(`Exam ${id} not found in database`)
-        );
         void reply.code(500);
         return {
           error: 'An error occurred trying to get the exam from the database.'
@@ -1297,7 +1294,10 @@ async function postSaveChallenge(
     fastify.Sentry?.metrics?.count('challenge.saved', 1, {
       attributes: { result: 'not_saveable' }
     });
-    return void reply.code(400).send('That challenge type is not saveable.');
+    return void reply.code(400).send({
+      type: 'error',
+      message: 'That challenge type is not saveable.'
+    });
   }
 
   const userSavedChallenges = saveUserChallengeData(

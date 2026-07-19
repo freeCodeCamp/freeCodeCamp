@@ -15,7 +15,8 @@ import {
   makeShouldSendLog,
   makeTracesSampler,
   scrubRedundantLogAttributes,
-  scrubRequestPii
+  scrubRequestPii,
+  scrubSpanDescriptions
 } from './utils/sentry.js';
 
 const shouldSendLog = makeShouldSendLog(
@@ -41,6 +42,7 @@ Sentry.init({
     Sentry.requestDataIntegration({ include: { cookies: false } })
   ],
   beforeSend: event => scrubRequestPii(event),
+  beforeSendTransaction: event => scrubSpanDescriptions(event),
   beforeSendLog: log =>
     shouldSendLog(log) ? scrubRedundantLogAttributes(log) : null
 });

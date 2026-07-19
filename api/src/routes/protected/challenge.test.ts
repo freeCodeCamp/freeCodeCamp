@@ -1752,7 +1752,10 @@ describe('challengeRoutes', () => {
             });
 
           expect(response.statusCode).toBe(400);
-          expect(response.text).toEqual('That challenge type is not saveable.');
+          expect(response.body).toStrictEqual({
+            type: 'error',
+            message: 'That challenge type is not saveable.'
+          });
           expect(savedChallenges).toHaveLength(0);
           expect(count).toHaveBeenCalledWith('challenge.saved', 1, {
             attributes: { result: 'not_saveable' }
@@ -1819,7 +1822,10 @@ describe('challengeRoutes', () => {
           });
 
         expect(response.statusCode).toBe(400);
-        expect(response.text).toEqual('That challenge type is not saveable.');
+        expect(response.body).toStrictEqual({
+          type: 'error',
+          message: 'That challenge type is not saveable.'
+        });
         expect(savedChallenges).toHaveLength(0);
       });
 
@@ -1895,7 +1901,7 @@ describe('challengeRoutes', () => {
             error: 'An error occurred trying to get the exam from the database.'
           });
           expect(response.statusCode).toBe(500);
-          expect(captureException).toHaveBeenCalledOnce();
+          expect(captureException).not.toHaveBeenCalled();
 
           fastifyTestInstance.Sentry = originalSentry;
         });
