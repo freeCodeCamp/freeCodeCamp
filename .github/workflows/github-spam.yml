@@ -4,9 +4,7 @@ on:
     types:
       - labeled
 
-permissions:
-  contents: read
-
+permissions: {}
 jobs:
   is-spam:
     runs-on: ubuntu-24.04

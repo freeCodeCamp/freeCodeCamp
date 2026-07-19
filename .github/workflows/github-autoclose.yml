@@ -7,10 +7,8 @@ on:
       - '.gitignore'
 
 permissions:
-  contents: read
   issues: write
   pull-requests: write
-
 jobs:
   autoclose:
     runs-on: ubuntu-24.04
