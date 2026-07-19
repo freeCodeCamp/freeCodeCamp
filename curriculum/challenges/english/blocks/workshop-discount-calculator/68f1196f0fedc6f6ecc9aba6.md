@@ -41,6 +41,7 @@ class Product:
 --fcc-editable-region--
         self.name = name
         self.price = price
+
     def __str__(self):
         return f'{self.name} - ${self.price}'
 ```
