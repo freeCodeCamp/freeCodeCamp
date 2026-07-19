@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
+import { parseBool, parseInt } from './validation.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
@@ -200,21 +201,29 @@ export const PORT = process.env.PORT || '3000';
 // container.
 export const HOST = process.env.HOST || '0.0.0.0';
 export const API_LOCATION = process.env.API_LOCATION;
-export const FCC_ENABLE_SWAGGER_UI = undefinedOrBool(
-  process.env.FCC_ENABLE_SWAGGER_UI
+export const FCC_ENABLE_SWAGGER_UI = parseWith<boolean | undefined>(
+  'FCC_ENABLE_SWAGGER_UI',
+  undefined,
+  parseBool
 );
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
 export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
-export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
-  process.env.FCC_ENABLE_SHADOW_CAPTURE
+export const FCC_ENABLE_SHADOW_CAPTURE = parseWith<boolean | undefined>(
+  'FCC_ENABLE_SHADOW_CAPTURE',
+  undefined,
+  parseBool
 );
-export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
-  process.env.FCC_ENABLE_SENTRY_ROUTES
+export const FCC_ENABLE_SENTRY_ROUTES = parseWith<boolean | undefined>(
+  'FCC_ENABLE_SENTRY_ROUTES',
+  undefined,
+  parseBool
 );
-export const FCC_ENABLE_CLASSROOM = undefinedOrBool(
-  process.env.FCC_ENABLE_CLASSROOM
+export const FCC_ENABLE_CLASSROOM = parseWith<boolean | undefined>(
+  'FCC_ENABLE_CLASSROOM',
+  undefined,
+  parseBool
 );
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
 export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
@@ -226,6 +235,33 @@ export const SENTRY_ENVIRONMENT =
   process.env.SENTRY_ENVIRONMENT === 'development'
     ? ''
     : process.env.SENTRY_ENVIRONMENT;
+export const SENTRY_SERVER_NAME = process.env.SENTRY_SERVER_NAME;
+function parseUnitRate(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (raw == null || raw.trim() === '') return fallback;
+  const value = Number(raw);
+  assert.ok(
+    Number.isFinite(value) && value >= 0 && value <= 1,
+    `${name} must be a number between 0 and 1. Found ${raw}`
+  );
+  return value;
+}
+export const SENTRY_TRACES_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_TRACES_SAMPLE_RATE',
+  0.1
+);
+export const SENTRY_PROFILE_SESSION_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_PROFILE_SESSION_SAMPLE_RATE',
+  0.1
+);
+export const SENTRY_LOGS_DEBUG_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_LOGS_DEBUG_SAMPLE_RATE',
+  0.05
+);
+export const SENTRY_LOGS_INFO_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_LOGS_INFO_SAMPLE_RATE',
+  1.0
+);
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
@@ -243,12 +279,28 @@ export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
 export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
 export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
 export const TPA_API_BEARER_TOKEN = process.env.TPA_API_BEARER_TOKEN;
+/** Server grace timeout before force closing in-flight requests. */
+export const FCC_DRAIN_TIMEOUT_MS = parseWith(
+  'FCC_DRAIN_TIMEOUT_MS',
+  20_000,
+  parseInt
+);
 
-function undefinedOrBool(val: string | undefined): undefined | boolean {
-  if (!val) {
-    return undefined;
-  }
-
-  return val === 'true';
-}
 export const DEPLOYMENT_VERSION = process.env.DEPLOYMENT_VERSION || 'unknown';
+
+function parseWith<T>(
+  name: string,
+  fallback: T,
+  parserFunction: (str: string) => T
+): T {
+  const str = process.env[name];
+  if (str === undefined || str === null || str?.trim() === '') return fallback;
+  try {
+    return parserFunction(str);
+  } catch (e) {
+    if (e instanceof Error) {
+      throw new Error(`Failed to parse ${name}: ${e}`);
+    }
+    throw new Error(`Unhandled error parsing '${name}'`);
+  }
+}

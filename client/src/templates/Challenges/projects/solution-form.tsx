@@ -105,6 +105,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
         break;
 
       case challengeTypes.codeAllyCert:
+      case challengeTypes.freeCodeCampOsCert:
         formFields = solutionField;
         options.isEditorLinkAllowed = true;
         solutionLink = solutionLink + 'https://your-git-repo.url/files';
