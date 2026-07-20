@@ -132,7 +132,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run build
+          pnpm turbo build --filter=!@freecodecamp/client
 
   test:
     name: Test
