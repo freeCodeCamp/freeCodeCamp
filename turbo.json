@@ -11,6 +11,7 @@
     "test-gen": {
       "dependsOn": ["setup"],
       "env": ["SHOW_UPCOMING_CHANGES"],
+      "passThroughEnv": ["CURRICULUM_LOCALE"],
       "outputs": ["src/test/blocks-generated/**"]
     },
     "type-check": { "dependsOn": ["setup"] },
