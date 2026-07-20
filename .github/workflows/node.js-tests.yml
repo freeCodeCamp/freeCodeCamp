@@ -133,6 +133,8 @@ jobs:
         run: |
           pnpm install
           pnpm turbo build --filter=!@freecodecamp/client
+          pnpm turbo test-gen
+          SHOW_UPCOMING_CHANGES=true pnpm turbo test-gen
 
   test:
     name: Test

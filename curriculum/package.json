@@ -47,7 +47,7 @@
     "update-challenge-order": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
     "setup": "tsc",
-    "test": "NODE_OPTIONS='--max-old-space-size=7168' pnpm test-gen && vitest run",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' vitest run",
     "test:watch": "pnpm test-gen && vitest",
     "test-gen": "tsx ./src/test/utils/generate-block-tests.ts",
     "test-tooling": "pnpm test --project @freecodecamp/curriculum",
