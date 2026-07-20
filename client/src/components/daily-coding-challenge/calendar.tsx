@@ -141,7 +141,6 @@ function DailyCodingChallengeCalendar({
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [monthInfo, setMonthInfo] = useState<MonthInfo | null>(null);
   const [monthOffset, setMonthOffset] = useState(0);
   const [dailyChallengesMap, setDailyChallengesMap] = useState(
     () => new Map<string, DailyChallengeMap>()
@@ -170,18 +169,6 @@ function DailyCodingChallengeCalendar({
         });
 
         setDailyChallengesMap(newDailyChallengesMap);
-
-        // After getting the challenges and creating the map, set the initial month info -
-        // Display the month of the current US Central day because challenges are released
-        // at midnight US Central - so don't show the local month, show the US Central month
-        const [year, month] = todayUsCentral.split('-').map(Number);
-        const initialMonthInfo = getMonthInfo(
-          year,
-          month - 1, // Convert to 0-indexed month
-          newDailyChallengesMap
-        );
-
-        setMonthInfo(initialMonthInfo);
       } else {
         setError(true);
       }
@@ -198,27 +185,10 @@ function DailyCodingChallengeCalendar({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // we just need to change the month, the year can stay the same
-  // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
-  const nextMonth = () => {
-    if (lastDailyChallengeReleased) {
-      setMonthOffset(offset => Math.min(0, offset + 1));
-    } else {
-      setMonthInfo(
-        m => m && getMonthInfo(m.year, m.index + 1, dailyChallengesMap)
-      );
-    }
-  };
-
-  const prevMonth = () => {
-    if (lastDailyChallengeReleased) {
-      setMonthOffset(offset => Math.max(minMonthOffset, offset - 1));
-    } else {
-      setMonthInfo(
-        m => m && getMonthInfo(m.year, m.index - 1, dailyChallengesMap)
-      );
-    }
-  };
+  // The prev/next buttons are disabled outside the valid range, so these
+  // don't need to clamp the offset themselves
+  const nextMonth = () => setMonthOffset(offset => offset + 1);
+  const prevMonth = () => setMonthOffset(offset => offset - 1);
 
   const hasOlderChallenges = (
     map: DailyChallengesMap,
@@ -251,33 +221,26 @@ function DailyCodingChallengeCalendar({
   const isBoundaryMonth = minMonthOffset === -12 && monthOffset === -12;
 
   // After the last challenge is released, the current month only shows
-  // challenges through today
-  const evergreenMonthInfo = getMonthInfo(
+  // challenges through today, and the boundary month only shows the days
+  // still hidden in the current month
+  const displayedMonthInfo = getMonthInfo(
     todayYear,
     todayMonth - 1 + monthOffset,
     dailyChallengesMap,
-    monthOffset === 0 ? todayDay : undefined,
-    isBoundaryMonth ? todayDay : undefined
+    lastDailyChallengeReleased && monthOffset === 0 ? todayDay : undefined,
+    lastDailyChallengeReleased && isBoundaryMonth ? todayDay : undefined
   );
-
-  const displayedMonthInfo = lastDailyChallengeReleased
-    ? evergreenMonthInfo
-    : monthInfo;
 
   const showPrevButton = lastDailyChallengeReleased
     ? monthOffset > minMonthOffset
-    : monthInfo
-      ? hasOlderChallenges(dailyChallengesMap, monthInfo)
-      : false;
+    : hasOlderChallenges(dailyChallengesMap, displayedMonthInfo);
 
   const showNextButton = lastDailyChallengeReleased
     ? monthOffset < 0
-    : monthInfo
-      ? hasNewerChallenges(dailyChallengesMap, monthInfo)
-      : false;
+    : hasNewerChallenges(dailyChallengesMap, displayedMonthInfo);
 
   if (isLoading) return <Loader />;
-  if (error || !displayedMonthInfo) return <DailyCodingChallengeNotFound />;
+  if (error) return <DailyCodingChallengeNotFound />;
 
   return (
     <>
