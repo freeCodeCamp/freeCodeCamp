@@ -39,10 +39,9 @@ export function isValidMonthDayString(dayString: string) {
 
   const [month, day] = dayString.split('-').map(Number) as [number, number];
 
-  // Date.UTC silently rolls over values (e.g. month 13, or day
-  // 45) instead of rejecting them - this catches that.
   // 2000 is a leap year, so it keeps Feb 29 instead of rolling it over.
   const date = new Date(Date.UTC(2000, month - 1, day));
+  // Date.UTC silently rolls over out-of-range values - this catches that.
   return date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
 }
 

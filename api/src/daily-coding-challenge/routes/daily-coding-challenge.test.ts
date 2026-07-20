@@ -290,7 +290,6 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return a day once real time has passed the entire original run, even for days that were never released relative to the mocked "today" above', async () => {
-      // well after 2026-08-10, so every day has been released at least once
       vi.setSystemTime(addDays(todayUsCentral, 365));
 
       const res = await superRequest('/daily-coding-challenge/day/10-03', {
@@ -316,7 +315,6 @@ describe('/daily-coding-challenge', () => {
         data: [feb28Challenge]
       });
 
-      // well after Feb 28, 2026, so it's already been released
       vi.setSystemTime(new Date(Date.UTC(2028, 1, 29, 6)));
 
       const res = await superRequest('/daily-coding-challenge/day/02-29', {
@@ -606,8 +604,6 @@ describe('/daily-coding-challenge', () => {
 
       expect(res.status).toBe(200);
 
-      // All 3 mock challenges are now in the past (including tomorrow's,
-      // since a year has elapsed), newest first
       const expectedResponse = [
         {
           id: tomorrowsChallenge.id,

@@ -214,11 +214,11 @@ function DailyCodingChallengeCalendar({
     });
   };
 
-  // The furthest month back you can go only shows the days hidden in the current month
+  // The furthest month back only shows challenges after today
   const isBoundaryMonth = minMonthOffset === -12 && monthOffset === -12;
 
   // The current month only shows challenges through today
-  const displayedMonthInfo = getMonthInfo(
+  const monthInfo = getMonthInfo(
     todayYear,
     todayMonth - 1 + monthOffset,
     dailyChallengesMap,
@@ -228,11 +228,11 @@ function DailyCodingChallengeCalendar({
 
   const showPrevButton = lastDailyChallengeReleased
     ? monthOffset > minMonthOffset
-    : hasOlderChallenges(dailyChallengesMap, displayedMonthInfo);
+    : hasOlderChallenges(dailyChallengesMap, monthInfo);
 
   const showNextButton = lastDailyChallengeReleased
     ? monthOffset < 0
-    : hasNewerChallenges(dailyChallengesMap, displayedMonthInfo);
+    : hasNewerChallenges(dailyChallengesMap, monthInfo);
 
   if (isLoading) return <Loader />;
   if (error) return <DailyCodingChallengeNotFound />;
@@ -267,7 +267,7 @@ function DailyCodingChallengeCalendar({
           &lt;
         </Button>
 
-        <h2 className='text-center'>{displayedMonthInfo.name}</h2>
+        <h2 className='text-center'>{monthInfo.name}</h2>
         <Button
           aria-label={t('aria.next-month')}
           disabled={!showNextButton}
@@ -278,7 +278,7 @@ function DailyCodingChallengeCalendar({
       </div>
 
       <Spacer size='m' />
-      <div className='calendar-grid'>{displayedMonthInfo.days}</div>
+      <div className='calendar-grid'>{monthInfo.days}</div>
       <Spacer size='l' />
 
       {!isSignedIn && (
