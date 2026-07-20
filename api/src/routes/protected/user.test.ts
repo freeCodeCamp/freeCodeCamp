@@ -193,7 +193,7 @@ const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
   isEmailVerified: minimalUserData.emailVerified,
-  points: 1,
+  points: 0,
   // This is the default value if profileUI is missing. If individual properties
   // are missing from the db, they will be omitted from the response.
   profileUI: lockedProfileUI
