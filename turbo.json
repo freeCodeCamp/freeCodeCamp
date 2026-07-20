@@ -3,6 +3,7 @@
   "globalPassThroughEnv": ["MONGOHQ_URL"],
   "tasks": {
     "build": { "dependsOn": ["setup"], "outputs": ["dist/**"] },
+    "@freecodecamp/client#build": { "dependsOn": ["setup"], "outputs": ["public/**"] },
     "develop": { "dependsOn": ["setup"], "cache": false, "persistent": true },
     "lint": { "dependsOn": ["setup"] },
     "setup": { "dependsOn": ["^build"] },
