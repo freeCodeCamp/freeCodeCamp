@@ -6,6 +6,9 @@ on:
     paths:
       - '.gitignore'
 
+permissions:
+  issues: write
+  pull-requests: write
 jobs:
   autoclose:
     runs-on: ubuntu-24.04

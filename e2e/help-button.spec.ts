@@ -1,90 +1,76 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.describe('Mobile help-button tests for a page with three links (hint, help and video)', () => {
+test.describe('Mobile help-button tests', () => {
   test.use({
     viewport: { width: 393, height: 851 },
     isMobile: true
   });
-  test('should render the button, menu and the three links when video is available', async ({
-    page,
-    isMobile
+
+  test('should always be shown in the lower jaw', async ({ page }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    );
+    await expect(
+      page.getByRole('button', { name: translations.buttons.help })
+    ).toBeVisible();
+  });
+
+  test('should open help modal with video button when video is available', async ({
+    page
   }) => {
-    test.skip(!isMobile, 'Help dropdown only available on mobile');
     // visit the page with the video link
     await page.goto(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
     );
-    //The button is visible
-    const helpButton = page.getByTestId('get-help-dropdown');
+
+    const helpButton = page.getByRole('button', {
+      name: translations.buttons.help
+    });
     await expect(helpButton).toBeVisible();
-    //The button is clickable
     await helpButton.click();
-    //The menu items are visible
-    await expect(page.getByTestId('get-hint')).toBeVisible();
-    await expect(page.getByTestId('ask-for-help')).toBeVisible();
-    await expect(page.getByTestId('watch-a-video')).toBeVisible();
-  });
-});
 
-test.describe('Mobile help-button tests for a page with two links when video is not available', () => {
-  test.use({
-    viewport: { width: 393, height: 851 },
-    isMobile: true
+    await expect(
+      page.getByRole('dialog', { name: translations.buttons['get-help'] })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: translations.buttons['watch-video'] })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: translations.buttons['get-hint'] })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['create-post'] })
+    ).toBeVisible();
   });
-  test('should render the button, menu and the two links when video is not available', async ({
-    page,
-    isMobile
+
+  test('should open help modal without video button when video is not available', async ({
+    page
   }) => {
-    test.skip(!isMobile, 'Help dropdown only available on mobile');
-
     await page.goto(
       '/learn/front-end-development-libraries/bootstrap/apply-the-default-bootstrap-button-style'
     );
-    //The button is visible
-    const helpButton = page.getByTestId('get-help-dropdown');
-    await expect(helpButton).toBeVisible();
-    //The button is clickable
-    await helpButton.click();
-    //The menu items are visible
-    await expect(page.getByTestId('get-hint')).toBeVisible();
-    await expect(page.getByTestId('ask-for-help')).toBeVisible();
-    //The video link is hidden
-    await expect(page.getByTestId('watch-a-video')).toBeHidden();
-  });
-});
 
-test.describe('Mobile help-button tests for a page with a reset and help button', () => {
-  // Test the lower jaw on mobile viewport only
-  test.use({
-    viewport: { width: 393, height: 851 },
-    isMobile: true
-  });
-  test('should not be present before the user checks their code three times', async ({
-    page
-  }) => {
-    await page.goto(
-      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-8'
-    );
-    await expect(page.getByRole('button', { name: 'Help' })).toBeHidden();
-  });
-
-  test('should be present after the user checks their code three times', async ({
-    page
-  }) => {
-    await page.goto(
-      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
-    );
-    const checkButton = page.getByTestId('lowerJaw-check-button');
-    await checkButton.click();
-    await checkButton.click();
-    await checkButton.click();
-    const helpButton = page.getByRole('button', { name: 'Help' });
-    await expect(helpButton).toBeVisible();
-    const helpIconGroup = helpButton.getByRole('group', {
-      includeHidden: false
+    const helpButton = page.getByRole('button', {
+      name: translations.buttons.help
     });
-    await expect(helpIconGroup).toBeHidden();
+    await expect(helpButton).toBeVisible();
+    await helpButton.click();
+
+    await expect(
+      page.getByRole('dialog', { name: translations.buttons['get-help'] })
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: translations.buttons['watch-video'] })
+    ).toBeHidden();
+    await expect(
+      page.getByRole('link', { name: translations.buttons['get-hint'] })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['create-post'] })
+    ).toBeVisible();
   });
 });
 

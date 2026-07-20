@@ -1985,7 +1985,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -5866,7 +5866,7 @@
         ]
       },
       "lab-n-queens-problem-js": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -6873,7 +6873,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]

@@ -51,14 +51,12 @@ const replaceTextInCodeEditor = async ({
 const runChallengeTest = async (page: Page, isMobile: boolean) => {
   if (isMobile) {
     await page.getByRole('tab', { name: 'Console' }).click();
-    await page.getByText('Run').click();
-  } else {
-    await page
-      .getByRole('button', {
-        name: translations.buttons['check-code']
-      })
-      .click();
   }
+  await page
+    .getByRole('button', {
+      name: translations.buttons['check-code']
+    })
+    .click();
 };
 
 test.describe('For classic challenges', () => {
