@@ -171,6 +171,7 @@ describe('certificate routes', () => {
             isFoundationalCSharpCertV8: false,
             isFrontEndCert: false,
             isFrontEndLibsCert: false,
+            isFrontEndLibsCertV9: false,
             isFullStackCert: false,
             isInfosecCertV7: false,
             isInfosecQaCert: false,

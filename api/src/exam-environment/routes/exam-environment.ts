@@ -743,8 +743,8 @@ async function postExamAttemptHandler(
     );
   }
 
-  this.Sentry?.metrics?.count('exam.submitted', 1, {
-    attributes: { examId: attempt.examId }
+  this.Sentry?.metrics?.count('exam.attempt_updated', 1, {
+    attributes: { attemptId: latestAttempt.id }
   });
   return reply.code(200).send();
 }
