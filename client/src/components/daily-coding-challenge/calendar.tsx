@@ -185,8 +185,6 @@ function DailyCodingChallengeCalendar({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // The prev/next buttons are disabled outside the valid range, so these
-  // don't need to clamp the offset themselves
   const nextMonth = () => setMonthOffset(offset => offset + 1);
   const prevMonth = () => setMonthOffset(offset => offset - 1);
 
@@ -216,13 +214,10 @@ function DailyCodingChallengeCalendar({
     });
   };
 
-  // The boundary month (the furthest back you can go) only shows the days
-  // still hidden in the current month - the rest is already visible there
+  // The furthest month back you can go only shows the days hidden in the current month
   const isBoundaryMonth = minMonthOffset === -12 && monthOffset === -12;
 
-  // After the last challenge is released, the current month only shows
-  // challenges through today, and the boundary month only shows the days
-  // still hidden in the current month
+  // The current month only shows challenges through today
   const displayedMonthInfo = getMonthInfo(
     todayYear,
     todayMonth - 1 + monthOffset,
