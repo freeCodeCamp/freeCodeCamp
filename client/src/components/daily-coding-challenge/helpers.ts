@@ -59,6 +59,11 @@ export function toMonthDay(dateOrDayString: string) {
     : dateOrDayString;
 }
 
+// Get "MM-DD" today US Central
+export function getMonthDayUsCentral() {
+  return toMonthDay(getTodayUsCentral());
+}
+
 // Convert yyyy-MM-dd or MM-DD to display format (e.g: "January 1")
 export function formatDisplayDate(dateString: string) {
   const monthDay = toMonthDay(dateString);

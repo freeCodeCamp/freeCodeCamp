@@ -12,10 +12,7 @@ import introTranslations from '../../../i18n/locales/english/intro.json';
 import i18nTestConfig from '../../../i18n/config-for-tests';
 import translations from '../../../i18n/locales/english/translations.json';
 import { showUpcomingChanges } from '../../../config/env.json';
-import {
-  getTodayUsCentral,
-  toMonthDay
-} from '../daily-coding-challenge/helpers';
+import { getMonthDayUsCentral } from '../daily-coding-challenge/helpers';
 import Map from './index';
 
 vi.unmock('react-i18next');
@@ -104,7 +101,7 @@ describe('Map', () => {
       })
     ).toHaveAttribute(
       'href',
-      `/learn/daily-coding-challenge/${toMonthDay(getTodayUsCentral())}`
+      `/learn/daily-coding-challenge/${getMonthDayUsCentral()}`
     );
     expect(
       screen.getByRole('link', {
