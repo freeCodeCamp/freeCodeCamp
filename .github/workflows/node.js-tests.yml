@@ -145,6 +145,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [24]
+        shard: [1, 2, 3, 4]
 
     steps:
       - name: Checkout
@@ -187,7 +188,10 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        run: pnpm test
+        run: |
+          pnpm turbo test-gen
+          pnpm turbo test --filter=!@freecodecamp/curriculum
+          NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
 
   test-upcoming:
     name: Test - Upcoming Changes
@@ -198,6 +202,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [24]
+        shard: [1, 2, 3, 4]
 
     steps:
       - name: Checkout
@@ -240,7 +245,10 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        run: pnpm test
+        run: |
+          pnpm turbo test-gen
+          pnpm turbo test --filter=!@freecodecamp/curriculum
+          NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
 
   test-localization:
     name: Test - i18n
