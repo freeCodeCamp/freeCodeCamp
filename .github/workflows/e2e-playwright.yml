@@ -117,6 +117,7 @@ jobs:
         # Extend this to include firefox and webkit once chromium is working.
         browsers: [chromium]
         node-version: [24]
+        shard: [1, 2, 3]
 
     steps:
       - name: Set Action Environment Variables
@@ -180,11 +181,11 @@ jobs:
         run: pnpm run seed:certified-user
 
       - name: Run playwright tests
-        run: pnpm run playwright:run --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
+        run: pnpm run playwright:run --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts' --shard=${{ matrix.shard }}/3
 
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report-${{ matrix.browsers }}
+          name: playwright-report-${{ matrix.browsers }}-${{ matrix.shard }}
           path: e2e/playwright/reporter
           retention-days: 7
