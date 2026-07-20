@@ -96,7 +96,6 @@ jobs:
   # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
     name: Build
-    needs: lint
     runs-on: ubuntu-24.04
     strategy:
       matrix:
