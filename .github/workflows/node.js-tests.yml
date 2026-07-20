@@ -195,6 +195,21 @@ jobs:
           fi
           NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
 
+  test-complete:
+    name: Test
+    needs: [test]
+    if: always()
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+    steps:
+      - name: Check test shards
+        run: |
+          if [[ "${{ needs.test.result }}" != "success" ]]; then
+            exit 1
+          fi
+
   test-upcoming:
     name: Test - Upcoming Changes
     needs: build
