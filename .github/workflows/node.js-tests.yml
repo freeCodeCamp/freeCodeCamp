@@ -1,4 +1,4 @@
-name: CI - Node.js
+name: CI - Tests
 
 on:
   push:
@@ -190,7 +190,9 @@ jobs:
       - name: Run Tests
         run: |
           pnpm turbo test-gen
-          pnpm turbo test --filter=!@freecodecamp/curriculum
+          if [[ "${{ matrix.shard }}" == "1" ]]; then
+            pnpm turbo test --filter=!@freecodecamp/curriculum
+          fi
           NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
 
   test-upcoming:
@@ -247,7 +249,9 @@ jobs:
       - name: Run Tests
         run: |
           pnpm turbo test-gen
-          pnpm turbo test --filter=!@freecodecamp/curriculum
+          if [[ "${{ matrix.shard }}" == "1" ]]; then
+            pnpm turbo test --filter=!@freecodecamp/curriculum
+          fi
           NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
 
   test-localization:
