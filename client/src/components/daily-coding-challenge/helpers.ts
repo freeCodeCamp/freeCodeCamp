@@ -52,11 +52,12 @@ export function isValidDateOrMonthDayString(dateOrDayString: string) {
   );
 }
 
-// Get "MM-DD" from "yyyy-MM-dd" or "MM-DD"
+// Get "MM-DD" from "yyyy-MM-dd" or "MM-DD" + map Feb 29 to Feb 28
 export function toMonthDay(dateOrDayString: string) {
-  return isValidDateString(dateOrDayString)
+  const monthDay = isValidDateString(dateOrDayString)
     ? dateOrDayString.slice(5)
     : dateOrDayString;
+  return monthDay === '02-29' ? '02-28' : monthDay;
 }
 
 // Get "MM-DD" today US Central
@@ -67,8 +68,7 @@ export function getMonthDayUsCentral() {
 // Convert yyyy-MM-dd or MM-DD to display format (e.g: "January 1")
 export function formatDisplayDate(dateString: string) {
   const monthDay = toMonthDay(dateString);
-  // Reference year must be a leap year so "02-29" parses correctly
-  const parsedDate = parse(monthDay, 'MM-dd', new Date(Date.UTC(2000, 0, 1)));
+  const parsedDate = parse(monthDay, 'MM-dd', new Date(2000, 0, 1));
   if (!isValid(parsedDate)) {
     return 'Invalid date';
   }

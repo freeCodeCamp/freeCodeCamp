@@ -62,6 +62,12 @@ interface MonthInfo {
   year: number;
 }
 
+// Cap Feb to 28 days regardless of which "year" is displayed
+const getDaysInMonth = (year: number, monthIndex: number): number => {
+  const realDays = new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
+  return monthIndex === 1 ? 28 : realDays;
+};
+
 const getMonthInfo = (
   year: number,
   monthIndex: number,
@@ -73,11 +79,7 @@ const getMonthInfo = (
   const firstOfMonth = new Date(Date.UTC(year, monthIndex, 1));
   const utcYear = firstOfMonth.getUTCFullYear();
   const utcMonthIndex = firstOfMonth.getUTCMonth();
-
-  // Get number of days in the month (day 0 of next month = last day of current month)
-  const numberOfDays = new Date(
-    Date.UTC(utcYear, utcMonthIndex + 1, 0)
-  ).getUTCDate();
+  const numberOfDays = getDaysInMonth(utcYear, utcMonthIndex);
 
   const days: JSX.Element[] = [];
 
@@ -134,10 +136,8 @@ function DailyCodingChallengeCalendar({
     .split('-')
     .map(Number);
 
-  const daysInCurrentMonth = new Date(
-    Date.UTC(todayYear, todayMonth, 0)
-  ).getUTCDate();
-  const minMonthOffset = todayDay === daysInCurrentMonth ? -11 : -12;
+  const daysInCurrentMonth = getDaysInMonth(todayYear, todayMonth - 1);
+  const minMonthOffset = todayDay >= daysInCurrentMonth ? -11 : -12;
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
