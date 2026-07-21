@@ -279,7 +279,10 @@ async function populateTestsForLang({ lang, challenges, meta }) {
                   }
                 }
                 console.error = oldConsoleError;
-                expect(fails, 'Test suite should fail on the initial contents');
+                expect(
+                  fails,
+                  'Test suite should fail on the initial contents'
+                ).toBe(true);
               },
               timePerTest * tests.length + 20000
             );

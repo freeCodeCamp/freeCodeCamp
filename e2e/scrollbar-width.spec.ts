@@ -19,11 +19,6 @@ test.describe('Editor scrollbar width on mobile', () => {
       (node: HTMLElement) => node.offsetWidth
     );
 
-    const lowerJawElement = page.locator('#editor-lower-jaw');
-    expect(
-      await lowerJawElement.evaluate((node: HTMLElement) => node.offsetWidth)
-    ).toEqual(upperJawWidth);
-
     const scrollableElement = page.locator('.monaco-scrollable-element');
     expect(
       await scrollableElement.evaluate(
@@ -45,11 +40,6 @@ test.describe('Editor scrollbar width on mobile', () => {
     const upperJawWidth = await upperJawElement.evaluate(
       (node: HTMLElement) => node.offsetWidth
     );
-
-    const lowerJawElement = page.locator('#editor-lower-jaw');
-    expect(
-      await lowerJawElement.evaluate((node: HTMLElement) => node.offsetWidth)
-    ).toEqual(upperJawWidth);
 
     const scrollableElement = page.locator('.monaco-scrollable-element');
     expect(

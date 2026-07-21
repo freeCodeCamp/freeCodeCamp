@@ -60,7 +60,8 @@ export const currentCertifications = [
   Certification.JsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,
-  Certification.RespWebDesignV9
+  Certification.RespWebDesignV9,
+  Certification.FrontEndDevLibsV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -236,9 +237,9 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
   [Certification.JsV9]: 'isJavascriptCertV9',
+  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
 
   // upcoming
-  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
   [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
   [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
   [Certification.B1English]: 'isB1EnglishCert',

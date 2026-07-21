@@ -202,13 +202,13 @@
 }
 
 #mobile-layout .tab-content[data-state='active'] {
-  padding-block-end: 37px;
   display: flex;
   flex-direction: column;
 }
 
-#mobile-layout.has-editable-boundaries .tab-content[data-state='active'] {
-  padding-block-end: 0px;
+#mobile-layout .independent-lower-jaw {
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 #mobile-layout .preview-external-window {
@@ -224,7 +224,7 @@
 #mobile-layout .portal-button-wrap {
   position: absolute;
   top: auto;
-  right: 0;
+  inset-inline-end: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
 }

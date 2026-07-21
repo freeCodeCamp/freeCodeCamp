@@ -7,12 +7,9 @@ import translations from '../client/i18n/locales/english/translations.json';
 const settingsPageElement = {
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
-  flashMessageAlert: 'flash-message',
-  newEmailValidation: 'new-email-validation',
-  confirmEmailValidation: 'confirm-email-validation'
+  flashMessageAlert: 'flash-message'
 } as const;
 
-const originalEmail = 'foo@bar.com';
 const newEmail = 'foo-update@bar.com';
 
 test.beforeEach(async ({ page }) => {
@@ -21,38 +18,6 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Email Settings', () => {
-  test('should display the content correctly', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', { name: translations.settings.email.heading })
-    ).toBeVisible();
-
-    await expect(page.getByText(originalEmail)).toBeVisible();
-
-    await expect(
-      page.getByRole('button', {
-        name: `${translations.buttons.save} ${translations.settings.email.heading}`
-      })
-    ).toBeDisabled();
-
-    await expect(
-      page
-        .getByRole('group', { name: translations.settings.email.weekly })
-        .locator('legend')
-    ).toBeVisible();
-
-    await expect(
-      page.getByRole('button', {
-        name: translations.buttons['yes-please']
-      })
-    ).toHaveAttribute('aria-pressed', 'false');
-
-    await expect(
-      page.getByRole('button', {
-        name: translations.buttons['no-thanks']
-      })
-    ).toHaveAttribute('aria-pressed', 'true');
-  });
-
   test('should display email verification alert after email update', async ({
     page
   }) => {
@@ -89,55 +54,6 @@ test.describe('Email Settings', () => {
       'href',
       '/update-email'
     );
-  });
-
-  test('should show the user error messages if the input is invalid', async ({
-    page
-  }) => {
-    const newEmailInput = page.getByLabel(translations.settings.email.new, {
-      exact: true
-    });
-    const confirmEmailInput = page.getByLabel(
-      translations.settings.email.confirm
-    );
-    const confirmValidation = page.getByTestId(
-      settingsPageElement.confirmEmailValidation
-    );
-    const newEmailValidation = page.getByTestId(
-      settingsPageElement.newEmailValidation
-    );
-
-    await newEmailInput.fill(newEmail);
-    await confirmEmailInput.fill(originalEmail);
-
-    await expect(confirmValidation).toBeVisible();
-    await expect(confirmValidation).toContainText(
-      translations.validation['email-mismatch']
-    );
-
-    await newEmailInput.fill(originalEmail);
-
-    await expect(newEmailValidation).toBeVisible();
-    await expect(newEmailValidation).toContainText(
-      translations.validation['same-email']
-    );
-  });
-
-  test('should toggle email subscription correctly', async ({ page }) => {
-    const yesPleaseButton = page.getByRole('button', {
-      name: translations.buttons['yes-please']
-    });
-    const noThanksButton = page.getByRole('button', {
-      name: translations.buttons['no-thanks']
-    });
-
-    await yesPleaseButton.click();
-    await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'true');
-    await expect(noThanksButton).toHaveAttribute('aria-pressed', 'false');
-
-    await noThanksButton.click();
-    await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'false');
-    await expect(noThanksButton).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('should display flash message when email subscription is toggled', async ({

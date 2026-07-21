@@ -271,18 +271,13 @@ export function IndependentLowerJaw({
     setWasCheckButtonClicked(false);
   }, [isChallengeComplete, isSignedIn, wasCheckButtonClicked]);
 
-  const handleCheckButtonClick = () => {
-    setWasCheckButtonClicked(true);
-    setShowSocratesResults(false);
-    executeChallenge();
-  };
-
-  const isMobile =
+  const isMobile = 
     typeof navigator !== 'undefined' &&
     /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   const isMacOS =
     typeof navigator !== 'undefined' &&
     (/Mac/i.test(navigator.platform) || navigator.userAgent.includes('Mac OS'));
+  
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const shouldShowSocratesDonateCta =
     !isDonating &&
@@ -314,6 +309,22 @@ export function IndependentLowerJaw({
     setShowSubmissionHint(false);
     if (socratesHintState.isLoading) return;
     askSocrates();
+  };
+
+  const handleCheckButtonClick = () => {
+    callGA({
+      event: 'challenge_test_code_button_click'
+    });
+    setWasCheckButtonClicked(true);
+    setShowSocratesResults(false);
+    executeChallenge();
+  };
+
+  const handleSubmitButtonClick = () => {
+    callGA({
+      event: 'challenge_submit_button_click'
+    });
+    submitChallenge();
   };
 
   return (
@@ -472,7 +483,7 @@ export function IndependentLowerJaw({
               className={isSignedIn ? 'btn-cta' : undefined}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
-              onClick={() => submitChallenge()}
+              onClick={handleSubmitButtonClick}
               ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
