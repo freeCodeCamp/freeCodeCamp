@@ -5,10 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import DailyCodingChallengeAll from './[...]';
 
-const navigateMock = vi.hoisted(() => vi.fn());
-
 vi.mock('gatsby', () => ({
-  navigate: navigateMock,
   withPrefix: (path: string) => path
 }));
 
@@ -23,31 +20,34 @@ vi.mock('../../../components/redirect-daily-challenge-archive', () => ({
 }));
 
 describe('DailyCodingChallengeAll', () => {
+  const replaceStateSpy = vi.spyOn(window.history, 'replaceState');
+
   afterEach(() => {
-    navigateMock.mockClear();
+    replaceStateSpy.mockClear();
   });
 
   it('redirects to the archive for an invalid param', () => {
     render(<DailyCodingChallengeAll params={{ '*': 'not-a-date' }} />);
 
     expect(screen.getByTestId('archive-redirect')).toBeInTheDocument();
-    expect(navigateMock).not.toHaveBeenCalled();
+    expect(replaceStateSpy).not.toHaveBeenCalled();
   });
 
-  it('redirects a full "yyyy-MM-dd" date to its year-agnostic "MM-DD" form', () => {
+  it('swaps a full "yyyy-MM-dd" date to its year-agnostic "MM-DD" form in the address bar', () => {
     render(<DailyCodingChallengeAll params={{ '*': '2027-07-01' }} />);
 
-    expect(navigateMock).toHaveBeenCalledWith(
-      '/learn/daily-coding-challenge/07-01',
-      { replace: true }
+    expect(replaceStateSpy).toHaveBeenCalledWith(
+      null,
+      '',
+      '/learn/daily-coding-challenge/07-01'
     );
-    expect(screen.queryByTestId('challenge')).not.toBeInTheDocument();
+    expect(screen.getByTestId('challenge')).toHaveTextContent('07-01');
   });
 
   it('renders the challenge directly for an already year-agnostic "MM-DD" param', () => {
     render(<DailyCodingChallengeAll params={{ '*': '07-01' }} />);
 
-    expect(navigateMock).not.toHaveBeenCalled();
+    expect(replaceStateSpy).not.toHaveBeenCalled();
     expect(screen.getByTestId('challenge')).toHaveTextContent('07-01');
   });
 });

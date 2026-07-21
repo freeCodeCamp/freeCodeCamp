@@ -1,12 +1,11 @@
 /* eslint-disable filenames-simple/naming-convention */
-import React from 'react';
-import { navigate, withPrefix } from 'gatsby';
+import React, { useEffect } from 'react';
+import { withPrefix } from 'gatsby';
 
 import ShowDailyCodingChallenge from '../../../client-only-routes/show-daily-coding-challenge';
 import RedirectToArchive from '../../../components/redirect-daily-challenge-archive';
 import {
   isValidDateOrMonthDayString,
-  isValidDateString,
   toMonthDay
 } from '../../../components/daily-coding-challenge/helpers';
 
@@ -18,23 +17,25 @@ interface Props {
 
 function DailyCodingChallengeAll(props: Props): JSX.Element | null {
   const param = props.params['*'];
+  const isValid = isValidDateOrMonthDayString(param);
+  const monthDay = isValid ? toMonthDay(param) : param;
 
-  if (!isValidDateOrMonthDayString(param)) {
+  // Swap "YYYY-MM-DD" links to their "MM-DD" equivalent in the address bar
+  useEffect(() => {
+    if (isValid && monthDay !== param) {
+      window.history.replaceState(
+        null,
+        '',
+        withPrefix(`/learn/daily-coding-challenge/${monthDay}`)
+      );
+    }
+  }, [isValid, monthDay, param]);
+
+  if (!isValid) {
     return <RedirectToArchive />;
   }
 
-  // Redirect "YYYY-MM-DD" params to their "MM-DD" equivalent
-  if (isValidDateString(param)) {
-    if (typeof window !== 'undefined') {
-      void navigate(
-        withPrefix(`/learn/daily-coding-challenge/${toMonthDay(param)}`),
-        { replace: true }
-      );
-    }
-    return null;
-  }
-
-  return <ShowDailyCodingChallenge date={param} />;
+  return <ShowDailyCodingChallenge date={monthDay} />;
 }
 
 DailyCodingChallengeAll.displayName = 'DailyCodingChallengeAll';
