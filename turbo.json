@@ -11,7 +11,7 @@
     "lint": { "dependsOn": ["setup"] },
     "setup": { "dependsOn": ["^build"] },
     "test": { "dependsOn": ["test-gen", "setup"], "cache": false },
-    "test-content": { "dependsOn": ["setup"] },
+    "test-content": { "dependsOn": ["setup"], "cache": false },
     "test-gen": {
       "dependsOn": ["setup"],
       "env": ["SHOW_UPCOMING_CHANGES"],

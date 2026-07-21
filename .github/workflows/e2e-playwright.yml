@@ -168,9 +168,6 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install
-        run: pnpm install
-
       - name: Start apps
         run: |
           docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d
