@@ -1,7 +1,7 @@
 {
   "blockLabel": "exam",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "exam-back-end-development-and-apis-certification",
   "helpCategory": "Backend Development",
   "challengeOrder": [
