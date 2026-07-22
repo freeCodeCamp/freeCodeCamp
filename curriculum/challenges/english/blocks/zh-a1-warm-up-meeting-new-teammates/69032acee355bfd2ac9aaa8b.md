@@ -1,8 +1,8 @@
 ---
 id: 69032acee355bfd2ac9aaa8b
-title: Task 16
+title: Task 13
 challengeType: 24
-dashedName: task-16
+dashedName: task-13
 lang: zh-CN
 ---
 
@@ -27,4 +27,4 @@ This tone change is a natural adjustment in speech to make pronunciation smoothe
 
 # --assignment--
 
-Listen to the audio and read the example syllables.
+I've read this Pinyin rule.

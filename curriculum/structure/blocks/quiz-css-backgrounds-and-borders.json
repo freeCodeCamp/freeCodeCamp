@@ -1,5 +1,4 @@
 {
-  "name": "CSS Backgrounds and Borders Quiz",
   "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
@@ -7,7 +6,7 @@
   "challengeOrder": [
     {
       "id": "66ed8fd7f45ce3ece4053eb0",
-      "title": "CSS Backgrounds and Borders Quiz"
+      "title": "Lists, Links, Backgrounds and Borders Quiz"
     }
   ],
   "helpCategory": "HTML-CSS"

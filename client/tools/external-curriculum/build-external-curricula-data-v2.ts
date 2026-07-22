@@ -1,15 +1,25 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
-import { submitTypes } from '../../../shared-dist/config/challenge-types';
+import { submitTypes } from '@freecodecamp/shared/config/challenge-types';
 import { type ChallengeNode } from '../../src/redux/prop-types';
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../../shared-dist/config/curriculum';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
-import { patchBlock } from './patches';
+} from '@freecodecamp/shared/config/curriculum';
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
+import {
+  availableBackgrounds,
+  availableAudios
+} from '../../../curriculum/schema/scene-assets.js';
+import {
+  characterAssets,
+  sounds,
+  backgrounds,
+  domain
+} from '../../src/templates/Challenges/components/scene/scene-assets.js';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros
@@ -92,6 +102,8 @@ interface GeneratedBlock {
 enum SuperBlockStage {
   Core = 'core',
   English = 'english',
+  Spanish = 'spanish',
+  Chinese = 'chinese',
   Professional = 'professional',
   Extra = 'extra',
   Legacy = 'legacy'
@@ -106,187 +118,218 @@ const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
 const dataPath = `${staticFolderPath}/curriculum-data/`;
-const blockIntroPath = resolve(
-  __dirname,
-  '../../../client/i18n/locales/english/intro.json'
-);
-const intros = JSON.parse(
-  readFileSync(blockIntroPath, 'utf-8')
-) as CurriculumIntros;
+const intros = readCurriculumIntros(getCurriculumLocale());
 
-export const orderedSuperBlockInfo: OrderedSuperBlocks = {
-  [SuperBlockStage.Core]: [
-    {
-      dashedName: SuperBlocks.RespWebDesignV9,
-      public: false,
-      title: intros[SuperBlocks.RespWebDesignV9].title
-    },
-    {
-      dashedName: SuperBlocks.JsV9,
-      public: false,
-      title: intros[SuperBlocks.JsV9].title
-    },
-    {
-      dashedName: SuperBlocks.FrontEndDevLibsV9,
-      public: false,
-      title: intros[SuperBlocks.FrontEndDevLibsV9].title
-    },
-    {
-      dashedName: SuperBlocks.PythonV9,
-      public: false,
-      title: intros[SuperBlocks.PythonV9].title
-    },
-    {
-      dashedName: SuperBlocks.RelationalDbV9,
-      public: false,
-      title: intros[SuperBlocks.RelationalDbV9].title
-    },
-    {
-      dashedName: SuperBlocks.BackEndDevApisV9,
-      public: false,
-      title: intros[SuperBlocks.BackEndDevApisV9].title
-    },
-    {
-      dashedName: SuperBlocks.FullStackDeveloperV9,
-      public: false,
-      title: intros[SuperBlocks.FullStackDeveloperV9].title
-    }
-  ],
+export function getCurriculumLocale(): Languages {
+  const { CURRICULUM_LOCALE } = process.env;
 
-  [SuperBlockStage.English]: [
-    {
-      dashedName: SuperBlocks.A2English,
-      public: true,
-      title: intros[SuperBlocks.A2English].title
-    },
-    {
-      dashedName: SuperBlocks.B1English,
-      public: true,
-      title: intros[SuperBlocks.B1English].title
-    }
-  ],
+  return availableLangs.curriculum.includes(CURRICULUM_LOCALE as Languages)
+    ? (CURRICULUM_LOCALE as Languages)
+    : Languages.English;
+}
 
-  [SuperBlockStage.Extra]: [
-    {
-      dashedName: SuperBlocks.TheOdinProject,
-      public: true,
-      title: intros[SuperBlocks.TheOdinProject].title
-    },
-    {
-      dashedName: SuperBlocks.CodingInterviewPrep,
-      public: false,
-      title: intros[SuperBlocks.CodingInterviewPrep].title
-    },
-    {
-      dashedName: SuperBlocks.ProjectEuler,
-      public: false,
-      title: intros[SuperBlocks.ProjectEuler].title
-    },
-    {
-      dashedName: SuperBlocks.RosettaCode,
-      public: false,
-      title: intros[SuperBlocks.RosettaCode].title
-    }
-  ],
+export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+  const blockIntroPath = resolve(
+    __dirname,
+    `../../../client/i18n/locales/${lang}/intro.json`
+  );
 
-  [SuperBlockStage.Legacy]: [
-    {
-      dashedName: SuperBlocks.RespWebDesignNew,
-      public: true,
-      title: intros[SuperBlocks.RespWebDesignNew].title
-    },
-    {
-      dashedName: SuperBlocks.JsAlgoDataStructNew,
-      public: false,
-      title: intros[SuperBlocks.JsAlgoDataStructNew].title
-    },
-    {
-      dashedName: SuperBlocks.FrontEndDevLibs,
-      public: false,
-      title: intros[SuperBlocks.FrontEndDevLibs].title
-    },
-    {
-      dashedName: SuperBlocks.DataVis,
-      public: false,
-      title: intros[SuperBlocks.DataVis].title
-    },
-    {
-      dashedName: SuperBlocks.RelationalDb,
-      public: false,
-      title: intros[SuperBlocks.RelationalDb].title
-    },
-    {
-      dashedName: SuperBlocks.BackEndDevApis,
-      public: false,
-      title: intros[SuperBlocks.BackEndDevApis].title
-    },
-    {
-      dashedName: SuperBlocks.QualityAssurance,
-      public: false,
-      title: intros[SuperBlocks.QualityAssurance].title
-    },
-    {
-      dashedName: SuperBlocks.SciCompPy,
-      public: false,
-      title: intros[SuperBlocks.SciCompPy].title
-    },
-    {
-      dashedName: SuperBlocks.DataAnalysisPy,
-      public: true,
-      title: intros[SuperBlocks.DataAnalysisPy].title
-    },
-    {
-      dashedName: SuperBlocks.InfoSec,
-      public: false,
-      title: intros[SuperBlocks.InfoSec].title
-    },
-    {
-      dashedName: SuperBlocks.MachineLearningPy,
-      public: true,
-      title: intros[SuperBlocks.MachineLearningPy].title
-    },
-    {
-      dashedName: SuperBlocks.CollegeAlgebraPy,
-      public: true,
-      title: intros[SuperBlocks.CollegeAlgebraPy].title
-    },
-    {
-      dashedName: SuperBlocks.RespWebDesign,
-      public: true,
-      title: intros[SuperBlocks.RespWebDesign].title
-    },
-    {
-      dashedName: SuperBlocks.JsAlgoDataStruct,
-      public: false,
-      title: intros[SuperBlocks.JsAlgoDataStruct].title
-    },
-    {
-      dashedName: SuperBlocks.PythonForEverybody,
-      public: true,
-      title: intros[SuperBlocks.PythonForEverybody].title
-    }
-  ],
+  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as CurriculumIntros;
+}
 
-  [SuperBlockStage.Professional]: [
-    {
-      dashedName: SuperBlocks.FoundationalCSharp,
-      public: false,
-      title: intros[SuperBlocks.FoundationalCSharp].title
-    }
-  ]
-};
+export function orderedSuperBlockInfo(
+  intros: CurriculumIntros = readCurriculumIntros(getCurriculumLocale())
+): OrderedSuperBlocks {
+  return {
+    [SuperBlockStage.Core]: [
+      {
+        dashedName: SuperBlocks.RespWebDesignV9,
+        public: true,
+        title: intros[SuperBlocks.RespWebDesignV9].title
+      },
+      {
+        dashedName: SuperBlocks.JsV9,
+        public: true,
+        title: intros[SuperBlocks.JsV9].title
+      },
+      {
+        dashedName: SuperBlocks.PythonV9,
+        public: true,
+        title: intros[SuperBlocks.PythonV9].title
+      },
+      {
+        dashedName: SuperBlocks.FrontEndDevLibsV9,
+        public: false,
+        title: intros[SuperBlocks.FrontEndDevLibsV9].title
+      },
+      {
+        dashedName: SuperBlocks.RelationalDbV9,
+        public: false,
+        title: intros[SuperBlocks.RelationalDbV9].title
+      },
+      {
+        dashedName: SuperBlocks.BackEndDevApisV9,
+        public: false,
+        title: intros[SuperBlocks.BackEndDevApisV9].title
+      },
+      {
+        dashedName: SuperBlocks.FullStackDeveloperV9,
+        public: false,
+        title: intros[SuperBlocks.FullStackDeveloperV9].title
+      }
+    ],
 
-export const superBlockDashedNames = Object.keys(orderedSuperBlockInfo).reduce(
-  (acc, superBlockStage) => {
-    const dashedNames = orderedSuperBlockInfo[superBlockStage].map(
+    [SuperBlockStage.English]: [
+      {
+        dashedName: SuperBlocks.A2English,
+        public: true,
+        title: intros[SuperBlocks.A2English].title
+      },
+      {
+        dashedName: SuperBlocks.B1English,
+        public: true,
+        title: intros[SuperBlocks.B1English].title
+      }
+    ],
+
+    [SuperBlockStage.Spanish]: [
+      {
+        dashedName: SuperBlocks.A1Spanish,
+        public: true,
+        title: intros[SuperBlocks.A1Spanish].title
+      }
+    ],
+
+    [SuperBlockStage.Chinese]: [
+      {
+        dashedName: SuperBlocks.A1Chinese,
+        public: false,
+        title: intros[SuperBlocks.A1Chinese].title
+      }
+    ],
+
+    [SuperBlockStage.Extra]: [
+      {
+        dashedName: SuperBlocks.TheOdinProject,
+        public: true,
+        title: intros[SuperBlocks.TheOdinProject].title
+      },
+      {
+        dashedName: SuperBlocks.CodingInterviewPrep,
+        public: false,
+        title: intros[SuperBlocks.CodingInterviewPrep].title
+      },
+      {
+        dashedName: SuperBlocks.ProjectEuler,
+        public: false,
+        title: intros[SuperBlocks.ProjectEuler].title
+      },
+      {
+        dashedName: SuperBlocks.RosettaCode,
+        public: false,
+        title: intros[SuperBlocks.RosettaCode].title
+      }
+    ],
+
+    [SuperBlockStage.Legacy]: [
+      {
+        dashedName: SuperBlocks.RespWebDesignNew,
+        public: true,
+        title: intros[SuperBlocks.RespWebDesignNew].title
+      },
+      {
+        dashedName: SuperBlocks.JsAlgoDataStructNew,
+        public: false,
+        title: intros[SuperBlocks.JsAlgoDataStructNew].title
+      },
+      {
+        dashedName: SuperBlocks.FrontEndDevLibs,
+        public: false,
+        title: intros[SuperBlocks.FrontEndDevLibs].title
+      },
+      {
+        dashedName: SuperBlocks.DataVis,
+        public: false,
+        title: intros[SuperBlocks.DataVis].title
+      },
+      {
+        dashedName: SuperBlocks.RelationalDb,
+        public: false,
+        title: intros[SuperBlocks.RelationalDb].title
+      },
+      {
+        dashedName: SuperBlocks.BackEndDevApis,
+        public: false,
+        title: intros[SuperBlocks.BackEndDevApis].title
+      },
+      {
+        dashedName: SuperBlocks.QualityAssurance,
+        public: false,
+        title: intros[SuperBlocks.QualityAssurance].title
+      },
+      {
+        dashedName: SuperBlocks.SciCompPy,
+        public: false,
+        title: intros[SuperBlocks.SciCompPy].title
+      },
+      {
+        dashedName: SuperBlocks.DataAnalysisPy,
+        public: true,
+        title: intros[SuperBlocks.DataAnalysisPy].title
+      },
+      {
+        dashedName: SuperBlocks.InfoSec,
+        public: false,
+        title: intros[SuperBlocks.InfoSec].title
+      },
+      {
+        dashedName: SuperBlocks.MachineLearningPy,
+        public: true,
+        title: intros[SuperBlocks.MachineLearningPy].title
+      },
+      {
+        dashedName: SuperBlocks.CollegeAlgebraPy,
+        public: true,
+        title: intros[SuperBlocks.CollegeAlgebraPy].title
+      },
+      {
+        dashedName: SuperBlocks.RespWebDesign,
+        public: true,
+        title: intros[SuperBlocks.RespWebDesign].title
+      },
+      {
+        dashedName: SuperBlocks.JsAlgoDataStruct,
+        public: false,
+        title: intros[SuperBlocks.JsAlgoDataStruct].title
+      },
+      {
+        dashedName: SuperBlocks.PythonForEverybody,
+        public: true,
+        title: intros[SuperBlocks.PythonForEverybody].title
+      }
+    ],
+
+    [SuperBlockStage.Professional]: [
+      {
+        dashedName: SuperBlocks.FoundationalCSharp,
+        public: false,
+        title: intros[SuperBlocks.FoundationalCSharp].title
+      }
+    ]
+  };
+}
+
+export const superBlockDashedNames = (() => {
+  const info = orderedSuperBlockInfo();
+  return Object.keys(info).reduce((acc, superBlockStage) => {
+    const dashedNames = info[superBlockStage].map(
       superBlock => superBlock.dashedName
     );
     acc.push(...dashedNames);
 
     return acc;
-  },
-  [] as SuperBlocks[]
-);
+  }, [] as SuperBlocks[]);
+})();
 
 export function buildExtCurriculumDataV2(
   curriculum: Curriculum<CurriculumProps>
@@ -295,6 +338,7 @@ export function buildExtCurriculumDataV2(
 
   parseCurriculumData();
   getSubmitTypes();
+  getSceneAssets();
 
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
@@ -302,7 +346,7 @@ export function buildExtCurriculumDataV2(
     );
 
     writeToFile('available-superblocks', {
-      superblocks: orderedSuperBlockInfo
+      superblocks: orderedSuperBlockInfo()
     });
 
     for (const superBlockKey of superBlockKeys) {
@@ -348,11 +392,15 @@ export function buildExtCurriculumDataV2(
                   .filter(block => blocksWithData[block])
                   .map(block => {
                     const blockData = blocksWithData[block];
+                    const blockIntro = superBlockIntros.blocks[block];
                     return {
-                      intro: superBlockIntros.blocks[block].intro,
-                      meta: patchBlock(
-                        omit(blockData.meta, ['chapter', 'module'])
-                      )
+                      intro: blockIntro.intro,
+                      // Keep `meta.name` for backward compatibility with
+                      // consumers that have not migrated to intro-based titles.
+                      meta: {
+                        ...omit(blockData.meta, ['chapter', 'module']),
+                        name: blockIntro.title
+                      }
                     };
                   })
           }))
@@ -372,10 +420,13 @@ export function buildExtCurriculumDataV2(
     const blockNames = Object.keys(curriculum[superBlockKey].blocks);
     const blocks = blockNames.map(blockName => {
       const blockData = curriculum[superBlockKey].blocks[blockName];
+      const blockIntro = intros[superBlockKey].blocks[blockName];
 
       return {
-        intro: intros[superBlockKey].blocks[blockName].intro,
-        meta: patchBlock(blockData.meta)
+        intro: blockIntro.intro,
+        // Keep `meta.name` for backward compatibility with
+        // consumers that have not migrated to intro-based titles.
+        meta: { ...blockData.meta, name: blockIntro.title }
       };
     });
 
@@ -414,6 +465,22 @@ export function buildExtCurriculumDataV2(
     writeFileSync(
       `${dataPath}/${ver}/submit-types.json`,
       JSON.stringify(submitTypes, null, 2)
+    );
+  }
+
+  function getSceneAssets() {
+    const sceneAssets = {
+      domain,
+      backgrounds,
+      sounds,
+      availableBackgrounds,
+      availableAudios,
+      characterAssets
+    };
+
+    writeFileSync(
+      `${dataPath}/${ver}/scene-assets.json`,
+      JSON.stringify(sceneAssets, null, 2)
     );
   }
 }

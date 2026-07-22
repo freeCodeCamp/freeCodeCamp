@@ -3,12 +3,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
+import { parseBool, parseInt } from './validation.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
-if (error && process.env.FREECODECAMP_NODE_ENV !== 'production') {
+if (
+  error &&
+  process.env.FREECODECAMP_NODE_ENV == 'production' &&
+  process.env.NODE_ENV !== 'test'
+) {
   console.warn(`
   ----------------------------------------------------
   Warning: .env file not found.
@@ -59,6 +64,8 @@ assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
+assert.ok(process.env.SOCRATES_API_KEY);
+assert.ok(process.env.SOCRATES_ENDPOINT);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -88,12 +95,18 @@ assert.ok(
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
-  assert.ok(process.env.SES_ID);
-  assert.ok(process.env.SES_SECRET);
+  assert.ok(
+    process.env.SES_SMTP_USERNAME,
+    'SES_SMTP_USERNAME is required in production.'
+  );
+  assert.ok(
+    process.env.SES_SMTP_PASSWORD,
+    'SES_SMTP_PASSWORD is required in production.'
+  );
   assert.notEqual(
-    process.env.SES_SECRET,
-    'ses_secret_from_aws',
-    'The SES secret should be changed from the default value.'
+    process.env.SES_SMTP_PASSWORD,
+    'ses_smtp_password_from_aws',
+    'The SES SMTP password should be changed from the default value.'
   );
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
@@ -154,17 +167,23 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'fastify_api_sdk_client_key_from_growthbook_dashboard',
     'The GROWTHBOOK_FASTIFY_CLIENT_KEY env should be changed from the default value.'
   );
+  if (process.env.FCC_ENABLE_CLASSROOM === 'true') {
+    assert.ok(
+      process.env.TPA_API_BEARER_TOKEN,
+      'TPA_API_BEARER_TOKEN should be set.'
+    );
+    assert.notEqual(
+      process.env.TPA_API_BEARER_TOKEN,
+      'tpa_api_bearer_token_from_dashboard',
+      'The TPA_API_BEARER_TOKEN env should be changed from the default value.'
+    );
+  }
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 // Mailpit is used in development and test environments, hence the localhost
 // default.
-// TODO: Remove MAILHOG_HOST in a few months
-// We renamed MailHog to MailPit, but kept the same port and API
-// This is to keep backward compatibility with existing setups
-// that might still use MAILHOG_HOST environment variable
-export const MAILPIT_HOST =
-  process.env.MAILPIT_HOST ?? process.env.MAILHOG_HOST ?? 'localhost';
+export const MAILPIT_HOST = process.env.MAILPIT_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
@@ -182,18 +201,29 @@ export const PORT = process.env.PORT || '3000';
 // container.
 export const HOST = process.env.HOST || '0.0.0.0';
 export const API_LOCATION = process.env.API_LOCATION;
-export const FCC_ENABLE_SWAGGER_UI = undefinedOrBool(
-  process.env.FCC_ENABLE_SWAGGER_UI
+export const FCC_ENABLE_SWAGGER_UI = parseWith<boolean | undefined>(
+  'FCC_ENABLE_SWAGGER_UI',
+  undefined,
+  parseBool
 );
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
 export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
-export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
-  process.env.FCC_ENABLE_SHADOW_CAPTURE
+export const FCC_ENABLE_SHADOW_CAPTURE = parseWith<boolean | undefined>(
+  'FCC_ENABLE_SHADOW_CAPTURE',
+  undefined,
+  parseBool
 );
-export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
-  process.env.FCC_ENABLE_SENTRY_ROUTES
+export const FCC_ENABLE_SENTRY_ROUTES = parseWith<boolean | undefined>(
+  'FCC_ENABLE_SENTRY_ROUTES',
+  undefined,
+  parseBool
+);
+export const FCC_ENABLE_CLASSROOM = parseWith<boolean | undefined>(
+  'FCC_ENABLE_CLASSROOM',
+  undefined,
+  parseBool
 );
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
 export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
@@ -205,12 +235,40 @@ export const SENTRY_ENVIRONMENT =
   process.env.SENTRY_ENVIRONMENT === 'development'
     ? ''
     : process.env.SENTRY_ENVIRONMENT;
+export const SENTRY_SERVER_NAME = process.env.SENTRY_SERVER_NAME;
+function parseUnitRate(name: string, fallback: number): number {
+  const raw = process.env[name];
+  if (raw == null || raw.trim() === '') return fallback;
+  const value = Number(raw);
+  assert.ok(
+    Number.isFinite(value) && value >= 0 && value <= 1,
+    `${name} must be a number between 0 and 1. Found ${raw}`
+  );
+  return value;
+}
+export const SENTRY_TRACES_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_TRACES_SAMPLE_RATE',
+  0.1
+);
+export const SENTRY_PROFILE_SESSION_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_PROFILE_SESSION_SAMPLE_RATE',
+  0.1
+);
+export const SENTRY_LOGS_DEBUG_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_LOGS_DEBUG_SAMPLE_RATE',
+  0.05
+);
+export const SENTRY_LOGS_INFO_SAMPLE_RATE = parseUnitRate(
+  'SENTRY_LOGS_INFO_SAMPLE_RATE',
+  1.0
+);
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
-export const SES_ID = process.env.SES_ID;
-export const SES_SECRET = process.env.SES_SECRET;
-export const SES_REGION = process.env.SES_REGION || 'us-east-1';
+export const SES_SMTP_USERNAME = process.env.SES_SMTP_USERNAME;
+export const SES_SMTP_PASSWORD = process.env.SES_SMTP_PASSWORD;
+export const SES_SMTP_HOST =
+  process.env.SES_SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
@@ -218,12 +276,31 @@ export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
 export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
   process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
+export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
+export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
+export const TPA_API_BEARER_TOKEN = process.env.TPA_API_BEARER_TOKEN;
+/** Server grace timeout before force closing in-flight requests. */
+export const FCC_DRAIN_TIMEOUT_MS = parseWith(
+  'FCC_DRAIN_TIMEOUT_MS',
+  20_000,
+  parseInt
+);
 
-function undefinedOrBool(val: string | undefined): undefined | boolean {
-  if (!val) {
-    return undefined;
-  }
-
-  return val === 'true';
-}
 export const DEPLOYMENT_VERSION = process.env.DEPLOYMENT_VERSION || 'unknown';
+
+function parseWith<T>(
+  name: string,
+  fallback: T,
+  parserFunction: (str: string) => T
+): T {
+  const str = process.env[name];
+  if (str === undefined || str === null || str?.trim() === '') return fallback;
+  try {
+    return parserFunction(str);
+  } catch (e) {
+    if (e instanceof Error) {
+      throw new Error(`Failed to parse ${name}: ${e}`);
+    }
+    throw new Error(`Unhandled error parsing '${name}'`);
+  }
+}

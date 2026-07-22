@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
-import { hardGoTo as navigate, closeSignoutModal } from '../../redux/actions';
+import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
@@ -20,20 +20,31 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators(
     {
-      navigate,
       closeSignoutModal
     },
     dispatch
   );
 
 type SignoutModalProps = {
-  navigate: (path: string) => void;
   closeSignoutModal: () => void;
   show: boolean;
 };
 
+export const pathAfterSignout = (currentPath: string): string => {
+  // These pages try to sign in the user automatically if they are signed out,
+  // so, to respect the user's intention to sign out, we redirect them to /learn
+  // instead.
+  const redirectedPaths = ['/settings', '/update-email'];
+  const allPaths = [
+    ...redirectedPaths,
+    ...redirectedPaths.map(path => `${path}/`)
+  ];
+
+  return allPaths.some(path => currentPath === path) ? '/learn' : currentPath;
+};
+
 function SignoutModal(props: SignoutModalProps): JSX.Element {
-  const { show, closeSignoutModal, navigate } = props;
+  const { show, closeSignoutModal } = props;
   const { t } = useTranslation();
 
   const handleModalHide = () => {
@@ -43,7 +54,15 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
   const handleSignout = () => {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
-    navigate(`${apiLocation}/signout`);
+    const redirect = () => {
+      window.location.pathname = pathAfterSignout(window.location.pathname);
+    };
+    void fetch(`${apiLocation}/signout`, {
+      method: 'GET',
+      credentials: 'include'
+    })
+      .then(redirect)
+      .catch(redirect);
   };
 
   return (

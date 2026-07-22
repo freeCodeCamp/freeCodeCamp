@@ -46,12 +46,12 @@ assert.isTrue(containerFirstChild?.classList?.contains('red'));
     <div class="container">
       --fcc-editable-region--
       <div class="marker one">
+      --fcc-editable-region--
       </div>
       <div class="marker two">
       </div>
       <div class="marker three">
       </div>
-      --fcc-editable-region--
     </div>
   </body>
 </html>

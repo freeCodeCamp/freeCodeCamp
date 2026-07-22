@@ -11,6 +11,8 @@ import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
 import importPlugin from 'eslint-plugin-import';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
+import turbo from 'eslint-plugin-turbo';
+import htmlReact from '@html-eslint/eslint-plugin-react';
 
 import { FlatCompat } from '@eslint/eslintrc';
 
@@ -32,6 +34,7 @@ const testFiles = [
 
 const base = defineConfig(
   globalIgnores(['dist', '.turbo']),
+  turbo.configs['flat/recommended'],
   js.configs.recommended,
   eslintConfigPrettier,
   {
@@ -129,7 +132,17 @@ export const configReact = [
     compat.extends(
       'plugin:react-hooks/recommended' // Note: at time of testing, upgrading to v5 creates false positives
     )
-  )
+  ),
+  {
+    plugins: {
+      '@html-eslint/react': htmlReact
+    },
+    rules: {
+      '@html-eslint/react/no-duplicate-classname': 'error',
+      '@html-eslint/react/classname-spacing': 'error',
+      '@html-eslint/react/no-ineffective-attrs': 'error'
+    }
+  }
 ];
 
 export const configTestingLibrary = defineConfig({

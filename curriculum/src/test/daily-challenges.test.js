@@ -4,12 +4,11 @@ vi.stubEnv('SHOW_UPCOMING_CHANGES', 'true');
 
 // We need to use dynamic imports here to ensure the environment variable is set
 // before the module is loaded.
-const { testedLang } = await import('../config.js');
+const { CURRICULUM_LOCALE } = await import('../config.js');
 const { getChallenges } = await import('./test-challenges.js');
 
 describe('Daily Coding Challenges', async () => {
-  const lang = testedLang();
-  const challenges = await getChallenges(lang, {
+  const challenges = await getChallenges(CURRICULUM_LOCALE, {
     superBlock: 'dev-playground'
   });
 
@@ -57,7 +56,7 @@ describe('Daily Coding Challenges', async () => {
       }
 
       // skip these for non-English for now.
-      if (lang !== 'english') continue;
+      if (CURRICULUM_LOCALE !== 'english') continue;
 
       if (jsChallenge.title !== pyChallenge.title) {
         errors.push(

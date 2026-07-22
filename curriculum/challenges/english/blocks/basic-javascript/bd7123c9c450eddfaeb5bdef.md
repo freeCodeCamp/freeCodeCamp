@@ -43,12 +43,6 @@ assert(__helpers.removeJSComments(code).match(/thirdLetterOfLastName\s*=\s*lastN
 
 # --seed--
 
-## --after-user-code--
-
-```js
-(function(v){return v;})(thirdLetterOfLastName);
-```
-
 ## --seed-contents--
 
 ```js

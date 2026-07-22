@@ -2,9 +2,10 @@ import type { CompletedChallenge } from '@prisma/client';
 import validator from 'validator';
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { getChallenges } from '../../utils/get-challenges.js';
+import { challenges, getChallenges } from '../../utils/get-challenges.js';
 import {
   Certification,
+  type CertificationFlags,
   certSlugTypeMap,
   certToIdMap,
   certToTitleMap,
@@ -12,7 +13,7 @@ import {
   legacyCertifications,
   legacyFullStackCertification,
   upcomingCertifications
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 
 import * as schemas from '../../schemas.js';
 import { normalizeChallenges, removeNulls } from '../../utils/normalize.js';
@@ -43,13 +44,11 @@ function renderCertifiedEmail({
 }) {
   const certifiedEmailTemplate = `Hi ${name || username},
 
-Congratulations on completing all of the freeCodeCamp certifications!
+Congratulations on completing the Certified Full-Stack Developer Curriculum!
 
 All of your certifications are now live at: https://www.freecodecamp.org/${username}
 
 Please tell me a bit more about you and your near-term goals.
-
-Are you interested in contributing to our open source projects used by nonprofits?
 
 Also, check out https://contribute.freecodecamp.org/ for some fun and convenient ways you can contribute to the community.
 
@@ -121,80 +120,73 @@ export function createCertLookup(
   return certLookup;
 }
 
-interface CertI {
-  isA2EnglishCert?: boolean;
-  isRespWebDesignCert?: boolean;
-  isJsAlgoDataStructCert?: boolean;
-  isJsAlgoDataStructCertV8?: boolean;
-  isFrontEndLibsCert?: boolean;
-  is2018DataVisCert?: boolean;
-  isApisMicroservicesCert?: boolean;
-  isInfosecQaCert?: boolean;
-  isQaCertV7?: boolean;
-  isInfosecCertV7?: boolean;
-  isFrontEndCert?: boolean;
-  isBackEndCert?: boolean;
-  isDataVisCert?: boolean;
-  isFullStackCert?: boolean;
-  isSciCompPyCertV7?: boolean;
-  isDataAnalysisPyCertV7?: boolean;
-  isMachineLearningPyCertV7?: boolean;
-  isRelationalDatabaseCertV8?: boolean;
-  isCollegeAlgebraPyCertV8?: boolean;
-  isFoundationalCSharpCertV8?: boolean;
-  isJavascriptCertV9?: boolean;
-  isRespWebDesignCertV9?: boolean;
-}
-
-function getUserIsCertMap(user: CertI) {
+function getUserIsCertMap(user: Partial<CertificationFlags>) {
   const {
+    is2018DataVisCert = false,
+    isA1ChineseCert = false,
+    isA2ChineseCert = false,
     isA2EnglishCert = false,
-    isRespWebDesignCert = false,
+    isA2SpanishCert = false,
+    isApisMicroservicesCert = false,
+    isB1EnglishCert = false,
+    isBackEndCert = false,
+    isBackEndDevApisCertV9 = false,
+    isCollegeAlgebraPyCertV8 = false,
+    isDataAnalysisPyCertV7 = false,
+    isDataVisCert = false,
+    isFoundationalCSharpCertV8 = false,
+    isFrontEndCert = false,
+    isFrontEndLibsCert = false,
+    isFrontEndLibsCertV9 = false,
+    isFullStackCert = false,
+    isFullStackDeveloperCertV9 = false,
+    isInfosecCertV7 = false,
+    isInfosecQaCert = false,
+    isJavascriptCertV9 = false,
     isJsAlgoDataStructCert = false,
     isJsAlgoDataStructCertV8 = false,
-    isFrontEndLibsCert = false,
-    is2018DataVisCert = false,
-    isApisMicroservicesCert = false,
-    isInfosecQaCert = false,
-    isQaCertV7 = false,
-    isInfosecCertV7 = false,
-    isFrontEndCert = false,
-    isBackEndCert = false,
-    isDataVisCert = false,
-    isFullStackCert = false,
-    isSciCompPyCertV7 = false,
-    isDataAnalysisPyCertV7 = false,
     isMachineLearningPyCertV7 = false,
+    isPythonCertV9 = false,
+    isQaCertV7 = false,
     isRelationalDatabaseCertV8 = false,
-    isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false,
-    isJavascriptCertV9 = false,
-    isRespWebDesignCertV9 = false
+    isRelationalDatabaseCertV9 = false,
+    isRespWebDesignCert = false,
+    isRespWebDesignCertV9 = false,
+    isSciCompPyCertV7 = false
   } = user;
 
   return {
+    is2018DataVisCert,
+    isA1ChineseCert,
+    isA2ChineseCert,
     isA2EnglishCert,
-    isRespWebDesignCert,
+    isA2SpanishCert,
+    isApisMicroservicesCert,
+    isB1EnglishCert,
+    isBackEndCert,
+    isBackEndDevApisCertV9,
+    isCollegeAlgebraPyCertV8,
+    isDataAnalysisPyCertV7,
+    isDataVisCert,
+    isFoundationalCSharpCertV8,
+    isFrontEndCert,
+    isFrontEndLibsCert,
+    isFrontEndLibsCertV9,
+    isFullStackCert,
+    isFullStackDeveloperCertV9,
+    isInfosecCertV7,
+    isInfosecQaCert,
+    isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isJsAlgoDataStructCertV8,
-    isFrontEndLibsCert,
-    is2018DataVisCert,
-    isApisMicroservicesCert,
-    isInfosecQaCert,
-    isQaCertV7,
-    isInfosecCertV7,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFullStackCert,
-    isSciCompPyCertV7,
-    isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
+    isPythonCertV9,
+    isQaCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJavascriptCertV9,
-    isRespWebDesignCertV9
+    isRelationalDatabaseCertV9,
+    isRespWebDesignCert,
+    isRespWebDesignCertV9,
+    isSciCompPyCertV7
   };
 }
 
@@ -210,7 +202,6 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  const challenges = getChallenges();
   const certLookup = createCertLookup(challenges);
 
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
@@ -234,11 +225,13 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       const { certSlug } = req.body;
 
       if (!isKnownCertSlug(certSlug) || !isCertAllowed(certSlug)) {
-        logger.warn(`Unknown certificate slug "${certSlug}"`);
+        req.log.warn({ certSlug }, 'Unknown certificate slug');
+        fastify.Sentry?.metrics?.count('certificate.claim_blocked', 1, {
+          attributes: { reason: 'unknown_slug' }
+        });
         void reply.code(400);
         return {
           response: {
@@ -259,8 +252,11 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       if (!user) {
         void reply.code(500);
-        logger.error(`User with id ${req.user?.id} not found`);
-        fastify.Sentry.captureException(Error('User not found'));
+        fastify.Sentry?.captureException(
+          new Error('User not found when claiming certificate')
+        );
+        fastify.Sentry?.metrics?.count('certificate.claim_user_missing', 1);
+        req.log.error('User not found');
         return {
           type: 'danger',
           // message: 'User not found'
@@ -272,7 +268,10 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       // TODO: Discuss if this is a requirement still
       if (!user.name) {
-        logger.warn(`${user.id} does not have a name property`);
+        req.log.warn('User does not have a name property');
+        fastify.Sentry?.metrics?.count('certificate.claim_blocked', 1, {
+          attributes: { certSlug, reason: 'name_missing' }
+        });
         void reply.code(400);
         return {
           response: {
@@ -285,7 +284,10 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user[certType]) {
-        logger.info(`${user.id} has already claimed ${certName}`);
+        req.log.debug({ certName }, 'User has already claimed certificate');
+        fastify.Sentry?.metrics?.count('certificate.claim_blocked', 1, {
+          attributes: { certSlug, reason: 'already_claimed' }
+        });
         void reply.code(200);
         return {
           response: {
@@ -307,7 +309,13 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       );
 
       if (!hasCompletedTestRequirements) {
-        logger.info(`${user.id} has not completed the tests for ${certName}`);
+        req.log.warn(
+          { certName },
+          'User has not completed the tests for certificate'
+        );
+        fastify.Sentry?.metrics?.count('certificate.claim_blocked', 1, {
+          attributes: { certSlug, reason: 'incomplete_steps' }
+        });
         void reply.code(400);
         return {
           response: {
@@ -335,33 +343,42 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           }
         },
         select: {
-          username: true,
+          completedChallenges: true,
           email: true,
           name: true,
-          completedChallenges: true,
+          username: true,
           is2018DataVisCert: true,
           is2018FullStackCert: true,
+          isA1ChineseCert: true,
+          isA2ChineseCert: true,
           isA2EnglishCert: true,
+          isA2SpanishCert: true,
           isApisMicroservicesCert: true,
+          isB1EnglishCert: true,
           isBackEndCert: true,
-          isDataVisCert: true,
+          isBackEndDevApisCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isDataAnalysisPyCertV7: true,
+          isDataVisCert: true,
           isFoundationalCSharpCertV8: true,
           isFrontEndCert: true,
           isFrontEndLibsCert: true,
+          isFrontEndLibsCertV9: true,
           isFullStackCert: true,
+          isFullStackDeveloperCertV9: true,
           isInfosecCertV7: true,
           isInfosecQaCert: true,
+          isJavascriptCertV9: true,
           isJsAlgoDataStructCert: true,
           isJsAlgoDataStructCertV8: true,
           isMachineLearningPyCertV7: true,
+          isPythonCertV9: true,
           isQaCertV7: true,
           isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
           isRespWebDesignCert: true,
-          isSciCompPyCertV7: true,
-          isJavascriptCertV9: true,
-          isRespWebDesignCertV9: true
+          isRespWebDesignCertV9: true,
+          isSciCompPyCertV7: true
         }
       });
 
@@ -370,18 +387,17 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const updatedIsCertMap = getUserIsCertMap(updatedUserSansNull);
 
       // TODO(POST-MVP): Consider sending email based on `user.isEmailVerified` as well
-      const hasCompletedAllCerts = currentCertifications
-        .map(x => certSlugTypeMap[x])
-        .every(certType => updatedIsCertMap[certType]);
+      const fullStackV9Claimed = updatedIsCertMap.isFullStackDeveloperCertV9;
+
       const shouldSendCertifiedEmailToCamper =
-        email && validator.default.isEmail(email) && hasCompletedAllCerts;
+        email && validator.default.isEmail(email) && fullStackV9Claimed;
 
       if (shouldSendCertifiedEmailToCamper) {
         const notifyUser = {
           to: email,
           from: 'quincy@freecodecamp.org',
           subject:
-            'Congratulations on completing all of the freeCodeCamp certifications!',
+            'Congratulations on completing the Certified Full-Stack Developer Curriculum!',
           text: renderCertifiedEmail({
             username: updatedUser.username,
             // Safety: `user.name` is required to exist earlier. TODO: Assert
@@ -391,16 +407,19 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
         // Failed email should not prevent successful response.
         try {
-          logger.info(`Sending congratulations email to ${user.id}`);
+          req.log.debug('Sending congratulations email');
           // TODO(POST-MVP): Ensure Camper knows they **have** claimed the cert, but the email failed to send.
           await fastify.sendEmail(notifyUser);
         } catch (e) {
-          logger.error(e);
-          fastify.Sentry.captureException(e);
+          req.log.error(e, 'Failed to send congratulations email');
+          fastify.Sentry?.captureException(e);
         }
       }
 
-      logger.info(`${user.id} has claimed ${certName}`);
+      req.log.info({ certName, audit: true }, 'User has claimed certificate');
+      fastify.Sentry?.metrics?.count('certificate.claimed', 1, {
+        attributes: { certSlug }
+      });
       void reply.code(200);
       return {
         response: {

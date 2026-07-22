@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from '@gatsbyjs/reach-router';
 import store from 'store';
 import ShowClassic from '../templates/Challenges/classic/show';
 import { Loader } from '../components/helpers';
@@ -10,7 +9,10 @@ import {
 } from '../redux/prop-types';
 import DailyCodingChallengeNotFound from '../components/daily-coding-challenge/not-found';
 import { apiLocation } from '../../config/env.json';
-import { isValidDateString } from '../components/daily-coding-challenge/helpers';
+import {
+  isValidDateOrMonthDayString,
+  toMonthDay
+} from '../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
   type DailyCodingChallengeFromDb
@@ -69,6 +71,7 @@ function formatChallengeData({
       superBlock: 'daily-coding-challenge',
       block: 'daily-coding-challenge',
       disableLoopProtectTests: true,
+      dashedName: `challenge-${challengeNumber}`,
 
       // props to satisfy the show classic component
       isFirstStep: false,
@@ -97,8 +100,6 @@ function formatChallengeData({
                 name: 'script',
                 ext: 'js',
                 contents: javascript.challengeFiles[0].contents,
-                head: '',
-                tail: '',
                 path: '',
                 history: ['script.js'],
                 fileKey: 'scriptjs'
@@ -123,9 +124,7 @@ function formatChallengeData({
                 ext: 'py',
                 name: 'main',
                 contents: python.challengeFiles[0].contents,
-                head: '',
                 path: '',
-                tail: '',
                 editableRegionBoundaries: [],
                 history: ['main.py']
               }
@@ -140,9 +139,7 @@ function formatChallengeData({
   return props;
 }
 
-function ShowDailyCodingChallenge(): JSX.Element {
-  const { date } = useParams<{ date?: string }>();
-
+function ShowDailyCodingChallenge({ date }: { date: string }): JSX.Element {
   const initLanguage =
     (store.get(
       'dailyCodingChallengeLanguage'
@@ -157,8 +154,9 @@ function ShowDailyCodingChallenge(): JSX.Element {
 
   const fetchChallenge = async (date: string) => {
     try {
+      const monthDay = toMonthDay(date);
       const response = await fetch(
-        `${apiLocation}/daily-coding-challenge/date/${date}`
+        `${apiLocation}/daily-coding-challenge/day/${monthDay}`
       );
       const challengeData = await response.json();
 
@@ -192,7 +190,7 @@ function ShowDailyCodingChallenge(): JSX.Element {
 
   useEffect(() => {
     // If date is invalid, stop loading/fetching and show the not found page
-    if (!date || !isValidDateString(date)) {
+    if (!date || !isValidDateOrMonthDayString(date)) {
       setIsLoading(false);
       setChallengeFound(false);
       return;

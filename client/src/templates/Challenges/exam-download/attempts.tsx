@@ -58,8 +58,9 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       case 'InProgress':
         return t('exam.in-progress');
       case 'PendingModeration':
-        return t('exam.pending');
+      case 'AwaitingChallenges':
       case 'Expired':
+      default:
         return t('exam.pending');
     }
   }
@@ -75,8 +76,9 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       case 'InProgress':
         return t('exam.in-progress');
       case 'PendingModeration':
-        return t('exam.pending');
+      case 'AwaitingChallenges':
       case 'Expired':
+      default:
         return t('exam.pending');
     }
   }
@@ -93,7 +95,7 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       <tbody>
         {attempts.map(attempt => (
           <tr key={attempt.startTime}>
-            <td>{new Date(attempt.startTime).toTimeString()}</td>
+            <td>{new Date(attempt.startTime).toLocaleString()}</td>
             <td>{renderScore(attempt)}</td>
             <td>{renderStatus(attempt)}</td>
           </tr>

@@ -9,6 +9,7 @@ import {
   vi
 } from 'vitest';
 import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
+import { PrismaClientValidationError } from '@prisma/client/runtime/library.js';
 import { Static } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
 
@@ -23,8 +24,9 @@ import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGeneratedExam
 } from '../schemas/index.js';
-import * as mock from '../../../__mocks__/exam-environment-exam.js';
+import * as mock from '../../../__fixtures__/exam-environment-exam.js';
 import { constructUserExam } from '../utils/exam-environment.js';
+import { getExamAttemptsHandler } from './exam-environment.js';
 import { JWT_SECRET } from '../../utils/env.js';
 import { ExamAttemptStatus } from '../schemas/exam-environment-exam-attempt.js';
 
@@ -50,11 +52,20 @@ describe('/exam-environment/', () => {
       superGet = createSuperRequest({ method: 'GET', setCookies });
       // Add exam environment authorization token
       const res = await superPost('/user/exam-environment/token');
-      expect(res.status).toBe(201);
+      if (res.status !== 201) {
+        throw new Error(
+          `Expected exam environment token request to return 201, got ${res.status}`
+        );
+      }
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       examEnvironmentAuthorizationToken =
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         res.body.examEnvironmentAuthorizationToken;
+
+      await fastifyTestInstance.prisma.user.update({
+        where: { id: defaultUserId },
+        data: { isHonest: true }
+      });
     });
 
     afterAll(async () => {
@@ -128,6 +139,13 @@ describe('/exam-environment/', () => {
       });
 
       it('should return an error if the attempt has expired', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         // Create exam attempt with expired time
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
           data: {
@@ -156,6 +174,13 @@ describe('/exam-environment/', () => {
           message: expect.any(String)
         });
         expect(res.status).toBe(403);
+
+        expect(count).toHaveBeenCalledWith(
+          'exam.attempt_submission_expired',
+          1
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       it('should return an error if there is no matching generated exam', async () => {
@@ -190,6 +215,13 @@ describe('/exam-environment/', () => {
       });
 
       it('should return an error if the attempt does not match the generated exam', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
             data: { ...mock.examAttempt, userId: defaultUserId }
@@ -226,6 +258,74 @@ describe('/exam-environment/', () => {
             }
           );
         expect(examModeration).not.toBeNull();
+
+        expect(count).toHaveBeenCalledWith('exam.moderation_flagged', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      it('should not error if an invalid attempt is submitted when the attempt is already linked to a moderation record', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: { ...mock.examAttempt, userId: defaultUserId }
+          });
+
+        attempt.questionSets[0]!.id = mock.oid();
+
+        const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
+          attempt
+        };
+
+        // First invalid submission creates moderation record, and links it to attempt
+        const firstRes = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
+
+        expect(firstRes.status).toBe(400);
+
+        const examModeration =
+          await fastifyTestInstance.prisma.examEnvironmentExamModeration.findUnique(
+            {
+              where: {
+                examAttemptId: attempt.id
+              }
+            }
+          );
+        expect(examModeration).not.toBeNull();
+
+        const linkedAttempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findUnique(
+            {
+              where: { id: attempt.id }
+            }
+          );
+        expect(linkedAttempt?.examModerationId).toBe(examModeration!.id);
+
+        // Second invalid submission must not 500 trying to re-link the moderation record
+        const secondRes = await superPost('/exam-environment/exam/attempt')
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          )
+          .send(body);
+
+        expect(secondRes.body).toStrictEqual({
+          code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+        expect(secondRes.status).toBe(400);
+
+        const relinkedAttempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findUnique(
+            {
+              where: { id: attempt.id }
+            }
+          );
+        expect(relinkedAttempt?.examModerationId).toBe(examModeration!.id);
       });
 
       it('should return 200 if request is valid, and update attempt in database', async () => {
@@ -284,6 +384,8 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
+        // Verifies cascading cleanup of moderation records when attempt data is removed in teardown.
+        // eslint-disable-next-line vitest/no-standalone-expect
         expect(a).toHaveLength(0);
       });
 
@@ -332,7 +434,60 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(403);
       });
 
+      it('should track a metric when an attempt is blocked due to pending moderation', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: mock.examAttempt
+          });
+
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+
+        const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
+          examId: mock.examId
+        };
+
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res).toMatchObject({
+          status: 403,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
+          }
+        });
+
+        expect(count).toHaveBeenCalledWith(
+          'exam.attempt_blocked_pending_moderation',
+          1
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
       it('should return an error if the exam has been attempted too recently to retake', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
         const recentExamAttempt = {
@@ -394,6 +549,10 @@ describe('/exam-environment/', () => {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_PREREQUISITES'
           }
         });
+
+        expect(count).toHaveBeenCalledWith('exam.retake_cooldown_blocked', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       it('should use a new exam attempt if all previous attempts were started > 24 hours ago', async () => {
@@ -440,6 +599,13 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the current attempt if it is still ongoing', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const latestAttempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
             data: mock.examAttempt
@@ -462,6 +628,10 @@ describe('/exam-environment/', () => {
             examAttempt: serializeDates(latestAttempt)
           }
         });
+
+        expect(count).toHaveBeenCalledWith('exam.attempt_resumed', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       it('should prioritise not-yet-taken generated exams, and reuse completed ones if necessary', async () => {
@@ -556,6 +726,13 @@ describe('/exam-environment/', () => {
       });
 
       it('should record the fact the user has started an exam by creating an exam attempt', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -590,15 +767,24 @@ describe('/exam-environment/', () => {
           userId: defaultUserId,
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
+          examModerationId: null,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTime: expect.any(Date),
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           version: expect.any(Number)
         });
+
+        expect(count).toHaveBeenCalledWith('exam.attempt_created', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       it('should unwind (delete) the exam attempt if the user exam cannot be constructed', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+
         const _mockConstructUserExam = vi
           .spyOn(
             await import('../utils/exam-environment.js'),
@@ -619,6 +805,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
 
         const examAttempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findFirst(
@@ -628,6 +815,39 @@ describe('/exam-environment/', () => {
           );
 
         expect(examAttempt).toBeNull();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      it('should track a metric when the generated exam pool is exhausted', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.deleteMany(
+          {}
+        );
+
+        const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
+          examId: mock.examId
+        };
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(500);
+        expect(count).toHaveBeenCalledWith(
+          'exam.generated_exam_pool_exhausted',
+          1
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       it('should return the user exam with the exam attempt', async () => {
@@ -694,6 +914,11 @@ describe('/exam-environment/', () => {
           where: { id: mock.examId },
           data: { deprecated: false }
         });
+
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isHonest: true }
+        });
       });
 
       it('should return 200', async () => {
@@ -705,6 +930,34 @@ describe('/exam-environment/', () => {
         expect(res.body).toStrictEqual([
           {
             canTake: true,
+            config: {
+              name: mock.exam.config.name,
+              note: mock.exam.config.note,
+              passingPercent: mock.exam.config.passingPercent,
+              totalTimeInS: mock.exam.config.totalTimeInS,
+              retakeTimeInS: mock.exam.config.retakeTimeInS
+            },
+            id: mock.examId,
+            prerequisites: mock.exam.prerequisites
+          }
+        ]);
+
+        expect(res.status).toBe(200);
+      });
+
+      it('should return all exams as unable to take, if user has not accepted academic honesty policy', async () => {
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isHonest: false }
+        });
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.body).toStrictEqual([
+          {
+            canTake: false,
             config: {
               name: mock.exam.config.name,
               note: mock.exam.config.note,
@@ -881,6 +1134,7 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
+        // eslint-disable-next-line vitest/no-standalone-expect
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -957,15 +1211,17 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
 
-      it.skip('TODO: (once serialization is serializable) should return 400 if no attempt id is given', async () => {
-        const res = await superGet('/exam-environment/exam/attempt/').set(
-          'exam-environment-authorization-token',
-          examEnvironmentAuthorizationToken
-        );
+      it.todo(
+        '(once serialization is serializable) should return 400 if no attempt id is given',
+        async () => {
+          const res = await superGet('/exam-environment/exam/attempt/').set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
 
-        expect(res.status).toBe(400);
-      });
-
+          expect(res.status).toBe(400);
+        }
+      );
       it('should return the attempt without results, if the attempt has not been moderated', async () => {
         const startTime = new Date(
           Date.now() - mock.exam.config.totalTimeInS * 1000
@@ -1016,7 +1272,8 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            status: ExamEnvironmentExamModerationStatus.Approved
+            status: ExamEnvironmentExamModerationStatus.Approved,
+            challengesAwarded: true
           }
         });
 
@@ -1054,6 +1311,7 @@ describe('/exam-environment/', () => {
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
           );
+        // eslint-disable-next-line vitest/no-standalone-expect
         expect(moderationRecords).toHaveLength(0);
       });
 
@@ -1142,7 +1400,7 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
 
-      it('should return the attempts with results, if they have been moderated', async () => {
+      it('should return the attempts without results, if they have been moderated && challenges have not been awarded', async () => {
         const examAttempt = structuredClone(mock.examAttempt);
         const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
@@ -1155,7 +1413,46 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            status: ExamEnvironmentExamModerationStatus.Approved
+            status: ExamEnvironmentExamModerationStatus.Approved,
+            challengesAwarded: false
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
+          result: null,
+          startTime: attempt.startTime,
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number),
+          status: ExamAttemptStatus.AwaitingChallenges
+        };
+
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempts with results, if they have been moderated && challenges have been awarded', async () => {
+        const examAttempt = structuredClone(mock.examAttempt);
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
+        examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: examAttempt
+          });
+
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Approved,
+            challengesAwarded: true
           }
         });
 
@@ -1233,6 +1530,87 @@ describe('/exam-environment/', () => {
 
         expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
+      });
+    });
+
+    describe('Sentry Issue reporting', () => {
+      afterEach(() => {
+        vi.restoreAllMocks();
+      });
+
+      it('captures unexpected errors when querying exams fails', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+        vi.spyOn(
+          fastifyTestInstance.prisma.examEnvironmentExam,
+          'findMany'
+        ).mockRejectedValueOnce(new Error('DB error'));
+
+        const res = await superGet('/exam-environment/exams').set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        expect(res.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      it('does not capture an expected invalid exam id error', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = { ...originalSentry, captureException };
+        vi.spyOn(
+          fastifyTestInstance.prisma.examEnvironmentExam,
+          'findUnique'
+        ).mockRejectedValueOnce(
+          new PrismaClientValidationError('Invalid exam id', {
+            clientVersion: '5.0.0'
+          })
+        );
+
+        const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
+          examId: mock.examId
+        };
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(400);
+        expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      it('captures an exception when no user is present on the request', async () => {
+        const captureException = vi.fn();
+        const fastify = {
+          ...fastifyTestInstance,
+          Sentry: { ...fastifyTestInstance.Sentry, captureException }
+        };
+        const req = {
+          user: null,
+          log: fastifyTestInstance.log
+        } as unknown as Parameters<typeof getExamAttemptsHandler>[0];
+        const send = vi.fn();
+        const reply = {
+          code: vi.fn(),
+          send
+        } as unknown as Parameters<typeof getExamAttemptsHandler>[1];
+
+        await getExamAttemptsHandler.call(fastify, req, reply);
+
+        expect(captureException).toHaveBeenCalledWith(
+          'No user found in request.'
+        );
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        expect(reply.code).toHaveBeenCalledWith(500);
+        expect(send).toHaveBeenCalledOnce();
       });
     });
   });

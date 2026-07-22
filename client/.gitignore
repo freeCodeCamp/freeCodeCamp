@@ -8,11 +8,21 @@ yarn-error.log
 .DS_Store
 
 /static/js
-./static/_redirects
-static/curriculum-data
+/static/css
+/static/curriculum-data
 
-# Generated config
-config/browser-scripts/*.json
+# i18n build script copies non-English translations from i18n-curriculum submodule
+/i18n/locales/*/translations.json
+/i18n/locales/*/intro.json
+/i18n/locales/*/meta-tags.json
+/i18n/locales/*/motivation.json
+# english is a special case and is commited in this repo
+!/i18n/locales/english/translations.json
+!/i18n/locales/english/intro.json
+!/i18n/locales/english/meta-tags.json
+!/i18n/locales/english/motivation.json
+
+# Generated for all locales
 i18n/locales/**/trending.json
 i18n/locales/**/search-bar.json
 

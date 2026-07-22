@@ -21,11 +21,11 @@ function getCompletedIds(completedChallenges: { id: string }[]): string[] {
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('failed update flushing', () => {
@@ -35,7 +35,7 @@ test.describe('failed update flushing', () => {
   }) => {
     // Initially, the user has no completed challenges.
     const userRes = await request.get(
-      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
+      new URL('/user/session-user', process.env.API_LOCATION).toString()
     );
     const completedChallenges = (await userRes.json()).user.developmentuser
       .completedChallenges;
@@ -74,7 +74,7 @@ test.describe('failed update flushing', () => {
     await submitRes;
 
     const updatedUserRes = await request.get(
-      new URL('/user/get-session-user', process.env.API_LOCATION).toString()
+      new URL('/user/session-user', process.env.API_LOCATION).toString()
     );
 
     // Now the user should have both completed challenges.

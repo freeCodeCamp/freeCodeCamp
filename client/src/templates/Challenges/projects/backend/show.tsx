@@ -112,7 +112,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, tests, title }
+          challenge: { challengeType, helpCategory, description, tests, title }
         }
       },
       pageContext: { challengeMeta }
@@ -127,10 +127,13 @@ const ShowBackEnd = (props: BackEndProps) => {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -141,6 +144,7 @@ const ShowBackEnd = (props: BackEndProps) => {
           challengeType,
           forumTopicId,
           title,
+          id,
           description,
           instructions,
           translationPending,
@@ -180,6 +184,8 @@ const ShowBackEnd = (props: BackEndProps) => {
                 superBlock={superBlock}
                 description={description}
                 instructions={instructions}
+                block={block}
+                challengeId={id}
               />
               <Spacer size='m' />
               <SolutionForm
@@ -188,7 +194,12 @@ const ShowBackEnd = (props: BackEndProps) => {
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title })}
+                guideUrl={getGuideUrl({
+                  forumTopicId,
+                  title,
+                  block,
+                  superBlock
+                })}
               />
               <br />
               <Output

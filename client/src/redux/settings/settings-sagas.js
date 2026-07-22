@@ -10,17 +10,20 @@ import {
 import store from 'store';
 import { navigate } from 'gatsby';
 
-import { Certification } from '../../../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
+  putUpdateMyClassroomMode,
   putUpdateMyHonesty,
   putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
+  putUpdateMyExperience,
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
+  putUpdateMySocrates,
   putUpdateMySocials,
   putUpdateMyUsername,
   putVerifyCert
@@ -35,14 +38,20 @@ import {
   submitNewUsernameError,
   submitProfileUIComplete,
   submitProfileUIError,
+  updateMyClassroomModeComplete,
+  updateMyClassroomModeError,
   updateMyHonestyComplete,
   updateMyHonestyError,
   updateMyKeyboardShortcutsComplete,
   updateMyKeyboardShortcutsError,
   updateMyPortfolioComplete,
   updateMyPortfolioError,
+  updateMyExperienceComplete,
+  updateMyExperienceError,
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
+  updateMySocratesComplete,
+  updateMySocratesError,
   updateMySocialsComplete,
   updateMySocialsError,
   updateMySoundComplete,
@@ -139,6 +148,16 @@ function* updateMyKeyboardShortcutsSaga({ payload: update }) {
   }
 }
 
+function* updateMyClassroomModeSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyClassroomMode, update);
+    yield put(updateMyClassroomModeComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyClassroomModeError);
+  }
+}
+
 function* updateMyHonestySaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyHonesty, update);
@@ -159,6 +178,16 @@ function* updateMyQuincyEmailSaga({ payload: update }) {
   }
 }
 
+function* updateMySocratesSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMySocrates, update);
+    yield put(updateMySocratesComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMySocratesError);
+  }
+}
+
 function* updateMyPortfolioSaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyPortfolio, update);
@@ -166,6 +195,16 @@ function* updateMyPortfolioSaga({ payload: update }) {
     yield put(createFlashMessage({ ...data }));
   } catch {
     yield put(updateMyPortfolioError);
+  }
+}
+
+function* updateMyExperienceSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyExperience, update);
+    yield put(updateMyExperienceComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyExperienceError);
   }
 }
 
@@ -232,12 +271,15 @@ function* verifyCertificationSaga({ payload }) {
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateMySocials, updateMySocialsSaga),
+    takeEvery(types.updateMyClassroomMode, updateMyClassroomModeSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
     takeEvery(types.resetMyEditorLayout, resetMyEditorLayoutSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
+    takeEvery(types.updateMySocrates, updateMySocratesSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
+    takeEvery(types.updateMyExperience, updateMyExperienceSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     debounce(2000, types.validateUsername, validateUsernameSaga),

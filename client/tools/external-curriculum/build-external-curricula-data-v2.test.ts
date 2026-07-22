@@ -1,39 +1,43 @@
 import path from 'path';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 import readdirp from 'readdirp';
-import { describe, test, expect } from 'vitest';
+import { afterEach, describe, test, expect, vi } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
 } from './external-data-schema-v2';
 import {
-  type CurriculumIntros,
   type Curriculum,
   type GeneratedCurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo,
-  OrderedSuperBlocks
+  OrderedSuperBlocks,
+  readCurriculumIntros,
+  getCurriculumLocale,
+  CurriculumIntros
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
-const intros = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
-    'utf-8'
-  )
-) as CurriculumIntros;
+const intros = readCurriculumIntros(getCurriculumLocale());
+
+const dummyIntro = Object.values(SuperBlocks)
+  .map(s => ({ [s]: { title: s } }))
+  .reduce((prev, curr) => ({ ...prev, ...curr }), {}) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
 
   const validateSuperBlock = superblockSchemaValidator();
@@ -161,21 +165,17 @@ describe('external curriculum data build', () => {
         superBlock
       ] as GeneratedBlockBasedCurriculumProps;
 
-      // Temporary skip these checks to keep CI stable.
-      // TODO: uncomment these once https://github.com/freeCodeCamp/freeCodeCamp/issues/60660 is completed.
-
-      // Randomly pick a block to check its data.
-      // const blocks = superBlockData.blocks;
-      // const randomBlockIndex = Math.floor(Math.random() * blocks.length);
-      // const randomBlock = blocks[randomBlockIndex];
-
       expect(superBlockData.intro).toEqual(intros[superBlock].intro);
-      // expect(superBlockData.blocks[randomBlockIndex].intro).toEqual(
-      //   intros[superBlock].blocks[randomBlock.meta.dashedName as string].intro
-      // );
-      // expect(superBlockData.blocks[randomBlockIndex].meta.name).toEqual(
-      //   intros[superBlock].blocks[randomBlock.meta.dashedName as string].title
-      // );
+      const blocks = superBlockData.blocks;
+
+      for (const block of blocks) {
+        expect(block.intro).toEqual(
+          intros[superBlock].blocks[block.meta.dashedName as string].intro
+        );
+        expect(block.meta.name).toEqual(
+          intros[superBlock].blocks[block.meta.dashedName as string].title
+        );
+      }
     });
   });
 
@@ -244,22 +244,22 @@ describe('external curriculum data build', () => {
             });
         });
 
-      // Temporary skip these checks to keep CI stable.
-      // TODO: uncomment these once https://github.com/freeCodeCamp/freeCodeCamp/issues/60660 is completed.
+      for (const chapter of superBlockData.chapters) {
+        if (chapter.comingSoon) continue;
 
-      // Check block data
-      // expect(
-      //   superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
-      //     .blocks[randomBlockIndex].intro
-      // ).toEqual(
-      //   superBlockIntros.blocks[randomBlock.meta.dashedName as string].intro
-      // );
-      // expect(
-      //   superBlockData.chapters[randomChapterIndex].modules[randomModuleIndex]
-      //     .blocks[randomBlockIndex].meta.name
-      // ).toEqual(
-      //   superBlockIntros.blocks[randomBlock.meta.dashedName as string].title
-      // );
+        for (const module of chapter.modules) {
+          if (module.comingSoon) continue;
+
+          for (const block of module.blocks) {
+            expect(block.intro).toEqual(
+              superBlockIntros.blocks[block.meta.dashedName as string].intro
+            );
+            expect(block.meta.name).toEqual(
+              superBlockIntros.blocks[block.meta.dashedName as string].title
+            );
+          }
+        }
+      }
     });
   });
 
@@ -269,6 +269,8 @@ describe('external curriculum data build', () => {
     const superBlockStageStringMap: Record<string, SuperBlockStage> = {
       core: SuperBlockStage.Core,
       english: SuperBlockStage.English,
+      spanish: SuperBlockStage.Spanish,
+      chinese: SuperBlockStage.Chinese,
       professional: SuperBlockStage.Professional,
       extra: SuperBlockStage.Extra,
       legacy: SuperBlockStage.Legacy,
@@ -276,13 +278,14 @@ describe('external curriculum data build', () => {
       next: SuperBlockStage.Next
     };
 
-    const stages = Object.keys(orderedSuperBlockInfo);
+    const info = orderedSuperBlockInfo();
+    const stages = Object.keys(info);
 
     expect(stages).not.toContain('next');
     expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
-      const superBlockDashedNames = orderedSuperBlockInfo[stage]?.map(
+      const superBlockDashedNames = info[stage]?.map(
         superBlock => superBlock.dashedName
       );
 
@@ -307,5 +310,14 @@ describe('external curriculum data build', () => {
         `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
       ).length
     ).toBeGreaterThan(0);
+  });
+
+  test('orderedSuperBlockInfo should use intro argument', () => {
+    const info = orderedSuperBlockInfo(dummyIntro);
+
+    expect(info.core[0]).toMatchObject({
+      dashedName: SuperBlocks.RespWebDesignV9,
+      title: dummyIntro[SuperBlocks.RespWebDesignV9].title
+    });
   });
 });

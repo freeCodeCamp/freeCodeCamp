@@ -8,10 +8,10 @@ import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
 import store from 'store';
 import { editor } from 'monaco-editor';
-import type { FitAddon } from 'xterm-addon-fit';
+import type { FitAddon } from '@xterm/addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
@@ -37,6 +37,7 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import Output from '../components/output';
 import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
@@ -66,7 +67,6 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
-import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
@@ -155,15 +155,6 @@ const BASE_LAYOUT = {
   testsPane: { flex: 0.3 }
 };
 
-// Used to prevent monaco from stealing mouse/touch events on the upper jaw
-// content widget so they can trigger their default actions. (Issue #46166)
-const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
-  const target = e.target as HTMLElement;
-  if (target?.closest('.editor-upper-jaw')) {
-    e.stopPropagation();
-  }
-};
-
 const StepPreview = ({
   dimensions,
   disableIframe,
@@ -202,6 +193,7 @@ function ShowClassic({
         title,
         description,
         instructions,
+        id,
         hooks,
         tests,
         challengeType,
@@ -212,7 +204,8 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
-        translationPending
+        translationPending,
+        saveSubmissionToDB
       }
     }
   },
@@ -251,7 +244,7 @@ function ShowClassic({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
 
-  const guideUrl = getGuideUrl({ forumTopicId, title });
+  const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -313,29 +306,22 @@ function ShowClassic({
 
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
-  const isIndependentLowerJawEnabled = useFeature('independent-lower-jaw').on;
 
-  // Independent lower jaw is only enabled for the urriculum outline workshop
-  const showIndependentLowerJaw =
-    block === 'workshop-curriculum-outline' &&
-    isIndependentLowerJawEnabled &&
-    !isMobile;
+  const showSidePanelTests = isMobile || !hasEditableBoundaries;
+
+  // Show test
 
   useEffect(() => {
-    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+    if (
+      isPreFetchEnabled &&
+      (envData as { clientLocale: string }).clientLocale === 'espanol'
+    ) {
       preloadPage(nextChallengePath);
     }
   }, [nextChallengePath, isPreFetchEnabled]);
 
   useEffect(() => {
     initializeComponent(title);
-    // Bug fix for the monaco content widget and touch devices/right mouse
-    // click. (Issue #46166)
-    document.addEventListener('mousedown', handleContentWidgetEvents, true);
-    document.addEventListener('contextmenu', handleContentWidgetEvents, true);
-    document.addEventListener('touchstart', handleContentWidgetEvents, true);
-    document.addEventListener('touchmove', handleContentWidgetEvents, true);
-    document.addEventListener('touchend', handleContentWidgetEvents, true);
 
     window.addEventListener('resize', setHtmlHeight);
     setHtmlHeight();
@@ -343,27 +329,6 @@ function ShowClassic({
     return () => {
       createFiles([]);
       cancelTests();
-      document.removeEventListener(
-        'mousedown',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'contextmenu',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'touchstart',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'touchmove',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener('touchend', handleContentWidgetEvents, true);
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -398,19 +363,14 @@ function ShowClassic({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     setIsAdvancing(false);
   };
 
-  const renderInstructionsPanel = ({
-    toolPanel,
-    hasDemo
-  }: {
-    toolPanel: React.ReactNode;
-    hasDemo: boolean;
-  }) => {
+  const renderInstructionsPanel = ({ hasDemo }: { hasDemo: boolean }) => {
     return (
       <SidePanel
         challengeDescription={
@@ -418,6 +378,8 @@ function ShowClassic({
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            challengeId={id}
+            block={block}
           />
         }
         challengeTitle={
@@ -429,9 +391,8 @@ function ShowClassic({
           </ChallengeTitle>
         }
         instructionsPanelRef={instructionsPanelRef}
-        toolPanel={toolPanel}
         hasDemo={hasDemo}
-        showIndependentLowerJaw={showIndependentLowerJaw}
+        showSidePanelTests={showSidePanelTests}
       />
     );
   };
@@ -456,11 +417,16 @@ function ShowClassic({
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={demoType === 'onLoad'}
-          showIndependentLowerJaw={showIndependentLowerJaw}
         />
       )
     );
   };
+
+  const usesTerminal =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
 
   return (
     <Hotkeys
@@ -471,9 +437,9 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout>
         <Helmet title={windowTitle} />
-        {isMobile && (
+        {isMobile ? (
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
@@ -481,8 +447,10 @@ function ShowClassic({
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             instructions={renderInstructionsPanel({
-              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             notes={notes}
@@ -499,14 +467,11 @@ function ShowClassic({
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
-            toolPanel={
-              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
-            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
+            usesTerminal={usesTerminal}
           />
-        )}
-        {!isMobile && (
+        ) : (
           <DesktopLayout
             challengeFiles={challengeFiles}
             challengeType={challengeType}
@@ -517,7 +482,6 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
               hasDemo: demoType === 'onClick'
             })}
             isDailyCodingChallenge={isDailyCodingChallenge}
@@ -541,7 +505,6 @@ function ShowClassic({
             }
             windowTitle={windowTitle}
             startWithConsoleShown={openConsole}
-            showIndependentLowerJaw={showIndependentLowerJaw}
           />
         )}
         <CompletionModal />
@@ -549,9 +512,14 @@ function ShowClassic({
           challengeTitle={title}
           challengeBlock={block}
           superBlock={superBlock}
+          guideUrl={guideUrl}
+          videoUrl={videoUrl}
         />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} challengeTitle={title} />
+        <ResetModal
+          saveSubmissionToDB={saveSubmissionToDB}
+          challengeTitle={title}
+        />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
@@ -562,6 +530,7 @@ function ShowClassic({
           }
         />
         <ShortcutsModal />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );
@@ -613,6 +582,7 @@ export const query = graphql`
           editableRegionBoundaries
           history
         }
+        saveSubmissionToDB
         tests {
           text
           testString

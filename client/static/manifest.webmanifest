@@ -1,0 +1,51 @@
+{
+  "name": "freeCodeCamp",
+  "short_name": "fCC",
+  "start_url": "/",
+  "theme_color": "#0a0a23",
+  "background_color": "#fff",
+  "display": "minimal-ui",
+  "cacheDigest": "6cba562cbd10e31af925a976f3db73f7",
+  "icons": [
+    {
+      "src": "icons/icon-48x48.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-72x72.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-96x96.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-144x144.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192x192.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-256x256.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-384x384.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png?v=6cba562cbd10e31af925a976f3db73f7",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

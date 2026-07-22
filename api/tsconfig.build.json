@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "../",
-    "noEmit": false
+    "noEmit": false,
+    "sourceMap": true
   },
   "include": ["src"],
   "exclude": ["**/*.test.*"]

@@ -1,0 +1,199 @@
+---
+id: 697f1bf725c3210ceab3c440
+title: How Do Web Services Work?
+challengeType: 19
+dashedName: how-do-web-services-work
+---
+
+# --description--
+
+Web services and REST APIs power most of the apps and websites you use every day. They allow different applications to communicate with each other and share data over a network, most commonly the internet.
+
+An API (Application Programming Interface) is a general way for software to communicate with other software. A web service is a specific type of API that uses web technologies, such as HTTP, to exchange data over a network, usually the internet. Because of this, every web service is an API—but not every API is a web service. REST APIs are a common type of web service that follow a specific set of rules for how data is requested and returned.
+
+This lesson will focus on what web services are at a high level, and the next one will go into more details about how REST APIs work.
+
+You can think of a web service as a software-to-software bridge. It has no user interface and is not meant to be used directly. Instead, it is focused entirely on exchanging data between applications.
+
+For any system to be considered a web service, it must have the following characteristics:
+
+* **Runs on a server**: a web service must be hosted online like a website, but instead of pages that users can see, it exposes data or some functionality
+    
+* **Machine-to-machine communication**: a web service is not made for humans to view directly, but for mobile apps and web apps to consume, so they can expose some data or functionality that the user can finally view
+    
+* **Language-agnostic**: a web service can be written in any language such as Java or C#, and any app should be able to interact with it, even if it's written in a different language
+    
+* **Platform-agnostic**: it doesn't matter which platform the machines run on. For example, a web service running on Linux should not prevent a device running Windows from communicating with it
+    
+* **Use standard web protocols**: a web service should typically use HTTP/HTTPS to transfer data over the internet, FTP for file transfer, and SMTP for email
+    
+
+**REST** and **SOAP** are two of the most well-known types of web services, although other approaches exist, such as **XML-RPC**.
+
+**REST**, which stands for **Representational State Transfer**, is by far the most widely used today. Most modern applications rely on RESTful web services because they are simple, flexible, and work naturally with the web.
+
+REST APIs expose resources, which are usually represented by URL paths such as `/users` or `/users/20`. When a client requests a resource, the server returns a representation of that resource. This representation is often in JSON, but it can also be in formats like XML or even plain text.
+
+Clients can specify the format they want by using HTTP headers, such as the `Accept` header. For example, a client can request a JSON response by setting the appropriate `Accept` value.
+
+```bash
+Accept: application/json
+```
+
+And you can specify you want XML this way:
+
+```bash
+Accept: application/xml
+```
+
+The resource you get back can look like this if it is JSON:
+
+```json
+{
+  "id": 20,
+  "name": "John Doe",
+  "email": "john@example.com",
+  "role": "admin",
+  "createdAt": "2025-09-22T10:30:00Z"
+}
+```
+
+And this, if it is XML:
+
+```xml
+<user>
+  <id>20</id>
+  <name>John Doe</name>
+  <email>john@example.com</email>
+  <role>admin</role>
+  <createdAt>2025-09-22T10:30:00Z</createdAt>
+</user>
+```
+
+SOAP stands for **Simple Object Access Protocol**. It only uses XML data format, and it is the most common in enterprise-level systems that need more strict standards and security.
+
+Here's what SOAP data could look like:
+
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <getUser>
+         <userId>20</userId>
+      </getUser>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+XML-RPC uses XML to encode its requests and responses. This makes it lightweight but less flexible than REST. 
+
+As for UDDI, it is not a data exchange service but an XML-based directory where businesses can list, discover, and describe their available web services.
+
+# --questions--
+
+## --text--
+
+What does **SOAP** stand for?
+
+## --answers--
+
+Structured Object Authorization Process
+
+### --feedback--
+
+Think of SOAP as a protocol that uses XML for exchanging structured data over a network.
+
+---
+
+Server-Oriented API Protocol
+
+### --feedback--
+
+Think of SOAP as a protocol that uses XML for exchanging structured data over a network.
+
+---
+
+Simple Object Access Protocol
+
+---
+
+Service-Oriented Application Procedure
+
+### --feedback--
+
+Think of SOAP as a protocol that uses XML for exchanging structured data over a network.
+
+## --video-solution--
+
+3
+
+## --text--
+
+What does REST expose that clients can interact with, such as `/users` or `/users/20`?
+
+## --answers--
+
+Functions
+
+### --feedback--
+
+Think of what `/users` represents — it's not code or a database, but the thing being represented.
+
+---
+
+Resources
+
+---
+
+Classes
+
+### --feedback--
+
+Think of what `/users` represents — it's not code or a database, but the thing being represented.
+
+---
+
+Endpoint
+
+### --feedback--
+
+Think of what `/users` represents — it's not code or a database, but the thing being represented.
+
+## --video-solution--
+
+2
+
+## --text--
+
+Which of the following is **not** a characteristic of a web service?
+
+## --answers--
+
+It must have a user interface for humans to interact with.
+
+---
+
+It runs on a server and exposes data or functionality.
+
+### --feedback--
+
+Think about the features that define web services.
+
+---
+
+It supports machine-to-machine communication.
+
+### --feedback--
+
+Think about the features that define web services.
+
+---
+
+It is language-agnostic and platform-agnostic.
+
+### --feedback--
+
+Think about the features that define web services.
+
+## --video-solution--
+
+1

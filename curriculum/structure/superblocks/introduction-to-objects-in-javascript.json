@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    "lecture-introduction-to-javascript-objects-and-their-properties",
+    "workshop-wildlife-tracker",
+    "lab-cargo-manifest-validator",
+    "lecture-working-with-json",
+    "lecture-working-with-optional-chaining-and-object-destructuring",
+    "workshop-recipe-tracker",
+    "lab-quiz-game",
+    "lab-record-collection",
+    "review-javascript-objects",
+    "quiz-javascript-objects"
+  ]
+}

@@ -32,12 +32,6 @@ assert(welcomeToBooleans() === true);
 
 # --seed--
 
-## --after-user-code--
-
-```js
-welcomeToBooleans();
-```
-
 ## --seed-contents--
 
 ```js

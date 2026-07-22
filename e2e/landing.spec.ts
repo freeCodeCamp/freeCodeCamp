@@ -1,7 +1,7 @@
 import { expect, Page, test } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const landingPageElements = {
@@ -27,6 +27,8 @@ const nonArchivedSuperBlocks = [
   intro[SuperBlocks.FullStackDeveloperV9].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
+  intro[SuperBlocks.A1Spanish].title,
+  intro[SuperBlocks.A1Chinese].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
   intro[SuperBlocks.ProjectEuler].title,
@@ -195,7 +197,9 @@ test.describe('Landing Page', () => {
   });
 
   test('Links to all non-archived superblocks in order', async ({ page }) => {
-    const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
+    const curriculumBtns = page.locator(
+      `[data-testid="${landingPageElements.curriculumBtns}"]`
+    );
     await expect(curriculumBtns).toHaveCount(nonArchivedSuperBlocks.length);
     for (let index = 0; index < nonArchivedSuperBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);

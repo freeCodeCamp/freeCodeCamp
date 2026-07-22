@@ -11,7 +11,7 @@ import {
   environment
 } from '../config/env.json';
 import { newsIndex } from '../src/utils/algolia-locale-setup';
-import { i18nextCodes } from '../../shared-dist/config/i18n';
+import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
 
 const i18nextCode = i18nextCodes[clientLocale as keyof typeof i18nextCodes];
 
@@ -26,7 +26,7 @@ i18n
     initImmediate: false,
     preload: readdirSync(join(__dirname, '../i18n/locales')).filter(
       fileName => {
-        const joinedPath = join(join(__dirname, '../i18n/locales'), fileName);
+        const joinedPath = join(__dirname, '../i18n/locales', fileName);
         const isDirectory = lstatSync(joinedPath).isDirectory();
         return isDirectory;
       }

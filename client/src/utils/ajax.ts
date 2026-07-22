@@ -13,7 +13,7 @@ import type {
   SurveyResults,
   User
 } from '../redux/prop-types';
-import { DonationDuration } from '../../../shared-dist/config/donation-settings';
+import { DonationDuration } from '@freecodecamp/shared/config/donation-settings';
 
 const { apiLocation } = envData;
 
@@ -106,7 +106,7 @@ type SavedChallengeFromApi = {
   files: Array<Omit<SavedChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<SavedChallenge, 'challengeFiles'>;
 
-type ApiUser = Omit<User, 'completedChallenges' & 'savedChallenges'> & {
+type ApiUser = Omit<User, 'completedChallenges' | 'savedChallenges'> & {
   completedChallenges?: CompleteChallengeFromApi[];
   savedChallenges?: SavedChallengeFromApi[];
 };
@@ -153,7 +153,7 @@ export function getSessionUser(
   signal?: AbortSignal
 ): Promise<ResponseWithData<User | null>> {
   const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
-    '/user/get-session-user',
+    '/user/session-user',
     signal
   );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
@@ -229,7 +229,12 @@ export type Attempt = {
 } & (
   | {
       result: null;
-      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
+      status:
+        | 'InProgress'
+        | 'Expired'
+        | 'PendingModeration'
+        | 'Denied'
+        | 'AwaitingChallenges';
     }
   | {
       status: 'Approved';
@@ -259,6 +264,21 @@ interface Donation {
   customerId: string;
   startDate: Date;
 }
+
+interface SocratesHintPayload {
+  userInput: string;
+  seed: string;
+  description: string;
+  hints: Array<{ text: string; failed?: boolean }>;
+}
+
+interface SocratesHintResponse {
+  hint?: string;
+  error?: string;
+  type?: string;
+  attempts?: number;
+  limit?: number;
+}
 // TODO: Verify if the body has and needs this Donation type. The api seems to
 // just need the body to exist, but doesn't seem to use the properties.
 export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
@@ -285,6 +305,11 @@ export function generateExamToken(): Promise<
   ResponseWithData<ExamTokenResponse>
 > {
   return post('/user/exam-environment/token', {});
+}
+export function getSocratesHint(
+  body: SocratesHintPayload
+): Promise<ResponseWithData<SocratesHintResponse>> {
+  return put('/socrates/get-hint', body);
 }
 
 type PaymentIntentResponse = Promise<
@@ -328,6 +353,12 @@ export function postDeleteAccount(): Promise<ResponseWithData<void>> {
 
 export function postResetProgress(): Promise<ResponseWithData<void>> {
   return post('/account/reset-progress', {});
+}
+
+export function deleteResetModule(body: {
+  blockIds: string[];
+}): Promise<ResponseWithData<{ removedChallengeIds: string[] }>> {
+  return deleteRequest('/account/reset-module', body);
 }
 
 export function postUserToken(): Promise<ResponseWithData<void>> {
@@ -391,6 +422,12 @@ export function putUpdateMyKeyboardShortcuts(
   return put('/update-my-keyboard-shortcuts', update);
 }
 
+export function putUpdateMyClassroomMode(update: {
+  isClassroomAccount: true;
+}): Promise<ResponseWithData<void>> {
+  return put('/update-my-classroom-mode', update);
+}
+
 export function putUpdateMyHonesty(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
@@ -403,10 +440,22 @@ export function putUpdateMyQuincyEmail(update: {
   return put('/update-my-quincy-email', update);
 }
 
+export function putUpdateMySocrates(update: {
+  socrates: boolean;
+}): Promise<ResponseWithData<void>> {
+  return put('/update-socrates', { socrates: update.socrates });
+}
+
 export function putUpdateMyPortfolio(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-portfolio', update);
+}
+
+export function putUpdateMyExperience(
+  update: Record<string, string>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-experience', update);
 }
 
 export function putUserUpdateEmail(

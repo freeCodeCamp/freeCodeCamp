@@ -1,12 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link as ScrollLink } from 'react-scroll';
+
+import SidebarPanel, { useStickyScrollOffset } from '../sidebar-panel';
 import {
   currentCertifications,
   legacyCertifications,
   legacyFullStackCertification,
   upcomingCertifications
-} from '../../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
+import { IfFeatureEnabled } from '@growthbook/growthbook-react';
 import env from '../../../config/env.json';
 
 type SettingsSidebarNavProps = {
@@ -19,21 +22,37 @@ function SettingsSidebarNav({
   userToken
 }: SettingsSidebarNavProps): JSX.Element {
   const { t } = useTranslation();
+  const scrollOffset = useStickyScrollOffset(['--header-height']);
   const allLegacyCertifications = [
     ...legacyFullStackCertification,
     ...legacyCertifications
   ];
 
   return (
-    <aside className='settings-sidebar-nav'>
+    <SidebarPanel className='settings-sidebar-nav'>
       <ul>
-        <li>
+        <SidebarPanel.Item>
+          <ScrollLink
+            to='personal'
+            href='#personal'
+            className='sidebar-nav-section-heading'
+            smooth={true}
+            offset={scrollOffset}
+            duration={300}
+            spy={true}
+            hashSpy={true}
+            activeClass='active'
+          >
+            {t('settings.headings.personal')}
+          </ScrollLink>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
           <ScrollLink
             to='account'
             href='#account'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -41,14 +60,14 @@ function SettingsSidebarNav({
           >
             {t('settings.headings.account')}
           </ScrollLink>
-        </li>
-        <li>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
           <ScrollLink
             to='privacy'
             href='#privacy'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -56,14 +75,14 @@ function SettingsSidebarNav({
           >
             {t('settings.headings.privacy')}
           </ScrollLink>
-        </li>
-        <li>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
           <ScrollLink
             to='email'
             href='#email'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -71,14 +90,14 @@ function SettingsSidebarNav({
           >
             {t('settings.email.heading')}
           </ScrollLink>
-        </li>
-        <li>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
           <ScrollLink
             to='honesty'
             href='#honesty'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -86,14 +105,31 @@ function SettingsSidebarNav({
           >
             {t('settings.headings.honesty')}
           </ScrollLink>
-        </li>
-        <li>
+        </SidebarPanel.Item>
+        <IfFeatureEnabled feature='classroom-mode'>
+          <SidebarPanel.Item>
+            <ScrollLink
+              to='classroom-mode'
+              href='#classroom-mode'
+              className='sidebar-nav-section-heading'
+              smooth={true}
+              offset={scrollOffset}
+              duration={300}
+              spy={true}
+              hashSpy={true}
+              activeClass='active'
+            >
+              {t('settings.classroom-mode.heading')}
+            </ScrollLink>
+          </SidebarPanel.Item>
+        </IfFeatureEnabled>
+        <SidebarPanel.Item>
           <ScrollLink
             to='exam-token'
             href='#exam-token'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -101,14 +137,14 @@ function SettingsSidebarNav({
           >
             {t('exam-token.exam-token')}
           </ScrollLink>
-        </li>
-        <li>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
           <ScrollLink
             to='certifications'
             href='#certifications'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -118,13 +154,13 @@ function SettingsSidebarNav({
           </ScrollLink>
           <ul>
             {currentCertifications.map(slug => (
-              <li key={slug}>
+              <SidebarPanel.Item key={slug}>
                 <ScrollLink
                   to={`cert-${slug}`}
                   href={`#cert-${slug}`}
                   className={'sidebar-nav-anchor-btn'}
                   smooth={true}
-                  offset={-48}
+                  offset={scrollOffset}
                   duration={300}
                   spy={true}
                   hashSpy={true}
@@ -132,17 +168,17 @@ function SettingsSidebarNav({
                 >
                   {t(`certification.title.${slug}`, slug)}
                 </ScrollLink>
-              </li>
+              </SidebarPanel.Item>
             ))}
           </ul>
-        </li>
-        <li>
+        </SidebarPanel.Item>
+        <SidebarPanel.Item>
           <ScrollLink
             to='legacy-certifications'
             href='#legacy-certifications'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -152,13 +188,13 @@ function SettingsSidebarNav({
           </ScrollLink>
           <ul>
             {allLegacyCertifications.map(slug => (
-              <li key={slug}>
+              <SidebarPanel.Item key={slug}>
                 <ScrollLink
                   to={`cert-${slug}`}
                   href={`#cert-${slug}`}
                   className={'sidebar-nav-anchor-btn'}
                   smooth={true}
-                  offset={-48}
+                  offset={scrollOffset}
                   duration={300}
                   spy={true}
                   hashSpy={true}
@@ -166,19 +202,19 @@ function SettingsSidebarNav({
                 >
                   {t(`certification.title.${slug}`, slug)}
                 </ScrollLink>
-              </li>
+              </SidebarPanel.Item>
             ))}
           </ul>
           <ul>
             {showUpcomingChanges &&
               upcomingCertifications.map(slug => (
-                <li key={slug}>
+                <SidebarPanel.Item key={slug}>
                   <ScrollLink
                     to={`cert-${slug}`}
                     href={`#cert-${slug}`}
                     className={'sidebar-nav-anchor-btn'}
                     smooth={true}
-                    offset={-48}
+                    offset={scrollOffset}
                     duration={300}
                     spy={true}
                     hashSpy={true}
@@ -186,18 +222,18 @@ function SettingsSidebarNav({
                   >
                     {t(`certification.title.${slug}`, slug)}
                   </ScrollLink>
-                </li>
+                </SidebarPanel.Item>
               ))}
           </ul>
-        </li>
+        </SidebarPanel.Item>
         {userToken && (
-          <li>
+          <SidebarPanel.Item>
             <ScrollLink
               to='user-token'
               href='#user-token'
               className='sidebar-nav-section-heading'
               smooth={true}
-              offset={-48}
+              offset={scrollOffset}
               duration={300}
               spy={true}
               hashSpy={true}
@@ -205,15 +241,15 @@ function SettingsSidebarNav({
             >
               {t('user-token.title')}
             </ScrollLink>
-          </li>
+          </SidebarPanel.Item>
         )}
-        <li>
+        <SidebarPanel.Item>
           <ScrollLink
             to='danger-zone'
             href='#danger-zone'
             className='sidebar-nav-section-heading'
             smooth={true}
-            offset={-48}
+            offset={scrollOffset}
             duration={300}
             spy={true}
             hashSpy={true}
@@ -221,9 +257,9 @@ function SettingsSidebarNav({
           >
             {t('settings.danger.heading')}
           </ScrollLink>
-        </li>
+        </SidebarPanel.Item>
       </ul>
-    </aside>
+    </SidebarPanel>
   );
 }
 

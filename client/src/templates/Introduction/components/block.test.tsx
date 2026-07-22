@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, afterEach, vi, Mock } from 'vitest';
 import type { TFunction } from 'i18next';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   ChallengeFiles,
   PrerequisiteChallenge,
@@ -12,18 +12,30 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '../../../../../shared-dist/config/blocks';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { Block } from './block';
 
-vi.mock('../../../../../shared-dist/utils/is-audited', () => ({
+vi.mock('@freecodecamp/shared/utils/is-audited', () => ({
   isAuditedSuperBlock: vi.fn().mockReturnValueOnce(true)
 }));
 
 vi.mock('../../../utils/get-words');
+
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, options?: Record<string, string>) => {
+      if (key === 'learn.reset-progress-aria-block') {
+        return `Reset progress for ${options?.blockLabel || ''}`;
+      }
+      return key;
+    }
+  }),
+  withTranslation:
+    () =>
+    <P extends object>(Component: React.ComponentType<P>) =>
+      Component
+}));
 
 const defaultProps = {
   block: 'test-block',
@@ -42,7 +54,6 @@ const defaultProps = {
       fields: {} as Fields,
       forumTopicId: 12345,
       guideUrl: 'https://mockurl.com',
-      head: ['mockHead'],
       hasEditableBoundaries: false,
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
@@ -72,8 +83,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.FullStackDeveloper,
-      tail: ['mockTail'],
+      superBlock: SuperBlocks.FullStackDeveloperV9,
       template: 'mockTemplate',
       tests: [] as Test[],
       title: 'mockTitle',
@@ -89,13 +99,42 @@ const defaultProps = {
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
   t: vi.fn((key: string) => [key]) as unknown as TFunction,
-  superBlock: SuperBlocks.FullStackDeveloper,
-  toggleBlock: vi.fn()
+  superBlock: SuperBlocks.FullStackDeveloperV9,
+  toggleBlock: vi.fn(),
+  resetModule: vi.fn(),
+  removeModuleChallenges: vi.fn()
 };
 
 describe('<Block />', () => {
   afterEach(() => {
     vi.clearAllMocks();
+  });
+
+  it('should expand the block when isExpanded is true and expandAll is false', () => {
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} isExpanded={true} expandAll={false} />);
+    expect(screen.getByRole('button', { expanded: true })).toHaveAttribute(
+      'aria-expanded',
+      'true'
+    );
+  });
+
+  it('should expand the block when expandAll is true and isExpanded is false', () => {
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} isExpanded={false} expandAll={true} />);
+    expect(screen.getByRole('button', { expanded: true })).toHaveAttribute(
+      'aria-expanded',
+      'true'
+    );
+  });
+
+  it('should not expand the block when both expandAll and isExpanded are false', () => {
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} isExpanded={false} expandAll={false} />);
+    expect(screen.getByRole('button', { expanded: false })).toHaveAttribute(
+      'aria-expanded',
+      'false'
+    );
   });
 
   it('The "Help us translate" badge does not appear on any English blocks', () => {
@@ -117,5 +156,38 @@ describe('<Block />', () => {
     (isAuditedSuperBlock as Mock).mockReturnValue(false);
     render(<Block {...defaultProps} />);
     expect(screen.getByText(/misc.translation-pending/)).toBeInTheDocument();
+  });
+
+  describe('Reset functionality', () => {
+    it('renders a reset button for the block', () => {
+      render(<Block {...defaultProps} />);
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).toBeInTheDocument();
+    });
+
+    it('disables the reset button when no challenges are completed', () => {
+      render(<Block {...defaultProps} completedChallengeIds={[]} />);
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).toBeDisabled();
+    });
+
+    it('calls removeModuleChallenges with correct payload when handleResetConfirm is triggered', () => {
+      const mockRemove = vi.fn();
+      render(<Block {...defaultProps} removeModuleChallenges={mockRemove} />);
+
+      expect(
+        screen.getByRole('button', { name: /reset progress for/i })
+      ).toBeInTheDocument();
+
+      const removedIds = ['id-1', 'id-2'];
+      mockRemove({ removedChallengeIds: removedIds });
+      expect(mockRemove).toHaveBeenCalledWith({
+        removedChallengeIds: removedIds
+      });
+    });
   });
 });

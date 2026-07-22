@@ -15,7 +15,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
@@ -45,7 +45,7 @@ import ProjectToolPanel from '../projects/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
 import RdbStep1Instructions from './rdb-step-1-instructions';
@@ -55,6 +55,7 @@ import { OnaInstructions } from './ona-instructions';
 
 import './codeally.css';
 import { CodespacesInstructions } from './codespaces-instructions';
+import { isCodeAllyProjectCompleted } from './project-submit';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -150,7 +151,6 @@ function ShowCodeAlly({
       }
     }
   } = data;
-
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
@@ -174,10 +174,13 @@ function ShowCodeAlly({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -187,15 +190,13 @@ function ShowCodeAlly({
   }: {
     showCompletionModal: boolean;
   }) => {
-    const isPartiallyCompleted = partiallyCompletedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    const isCompleted = completedChallenges.some(
-      challenge => challenge.id === challengeId
-    );
-
-    if (!isPartiallyCompleted && !isCompleted) {
+    if (
+      !isCodeAllyProjectCompleted({
+        challengeId,
+        completedChallenges,
+        partiallyCompletedChallenges
+      })
+    ) {
       createFlashMessage({
         type: 'danger',
         message: FlashMessages.CompleteProjectFirst

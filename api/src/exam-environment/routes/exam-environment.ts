@@ -24,6 +24,20 @@ import { isObjectID } from '../../utils/validation.js';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
+    fastify.setErrorHandler((error, req, res) => {
+      // If the error does not match the format {code: string; message: string}, coerce into:
+      if (
+        !Object.hasOwnProperty.call(error, 'code') ||
+        !Object.hasOwnProperty.call(error, 'message')
+      ) {
+        fastify.Sentry?.captureException(error);
+        req.log.error(error, 'Unhandled error in exam environment routes.');
+        const str = JSON.stringify(error);
+        res.code(500);
+        res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
+      }
+    });
+
     fastify.get(
       '/exam-environment/exams',
       {
@@ -113,19 +127,15 @@ async function tokenMetaHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentTokenMeta>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
   const { 'exam-environment-authorization-token': encodedToken } = req.headers;
-  logger.info({ encodedToken });
+  req.log.debug('Received exam environment token meta request.');
 
   let payload: JwtPayload;
   try {
     payload = jwt.verify(encodedToken, JWT_SECRET) as JwtPayload;
   } catch (e) {
     // Server refuses to brew (verify) coffee (jwts) with a teapot (random strings)
-    logger.warn(
-      { examEnvironmentAuthorizationTokenError: e },
-      'Invalid token provided.'
-    );
+    req.log.warn(e, 'Invalid token provided.');
     void reply.code(418);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(JSON.stringify(e))
@@ -133,13 +143,7 @@ async function tokenMetaHandler(
   }
 
   if (!isObjectID(payload.examEnvironmentAuthorizationToken)) {
-    logger.warn(
-      {
-        examEnvironmentAuthorizationToken:
-          payload.examEnvironmentAuthorizationToken
-      },
-      'Token is not an object id.'
-    );
+    req.log.warn('Token is not an object id.');
     void reply.code(418);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
@@ -156,7 +160,7 @@ async function tokenMetaHandler(
 
   if (!token) {
     // Endpoint is valid, but resource does not exists
-    logger.warn('Token does not appear to exist.');
+    req.log.warn('Token does not appear to exist.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
@@ -181,8 +185,16 @@ async function postExamGeneratedExamHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentPostExamGeneratedExam>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
+
+  if (!user) {
+    this.Sentry?.captureException('No user found in request.');
+    req.log.error('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  req.log.debug('Generating exam for user.');
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
@@ -194,13 +206,13 @@ async function postExamGeneratedExamHandler(
   );
   if (maybeExam.hasError) {
     if (maybeExam.error instanceof PrismaClientValidationError) {
-      logger.warn(maybeExam.error, 'Invalid exam id given.');
+      req.log.warn(maybeExam.error, 'Invalid exam id given.');
       void reply.code(400);
       return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
     }
 
-    logger.error(maybeExam.error);
-    this.Sentry.captureException(maybeExam.error);
+    this.Sentry?.captureException(maybeExam.error);
+    req.log.error(maybeExam.error, 'Unable to query exam.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -210,7 +222,7 @@ async function postExamGeneratedExamHandler(
   const exam = maybeExam.data;
 
   if (!exam) {
-    logger.warn({ examId }, 'No exam with given id.');
+    req.log.warn({ examId }, 'No exam with given id.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM('Invalid exam id given.')
@@ -218,11 +230,10 @@ async function postExamGeneratedExamHandler(
   }
 
   // Check user has completed prerequisites
-  const user = req.user!;
   const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
-    logger.warn(
+    req.log.warn(
       { examId: exam.id },
       'User has not completed prerequisites to take exam.'
     );
@@ -247,8 +258,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeExamAttempts.hasError) {
-    logger.error(maybeExamAttempts.error, 'Unable to query exam attempts.');
-    this.Sentry.captureException(maybeExamAttempts.error);
+    this.Sentry?.captureException(maybeExamAttempts.error);
+    req.log.error(maybeExamAttempts.error, 'Unable to query exam attempts.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExamAttempts.error))
@@ -277,8 +288,8 @@ async function postExamGeneratedExamHandler(
     );
 
     if (maybeMod.hasError) {
-      logger.error(maybeMod.error);
-      this.Sentry.captureException(maybeMod.error);
+      this.Sentry?.captureException(maybeMod.error);
+      req.log.error(maybeMod.error, 'Unable to query exam moderation.');
       void reply.code(500);
       return reply.send(
         ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeMod.error))
@@ -288,10 +299,11 @@ async function postExamGeneratedExamHandler(
     const moderation = maybeMod.data;
 
     if (moderation !== null) {
-      logger.warn(
+      req.log.warn(
         { examAttemptId: lastAttempt.id },
         'User has an exam attempt awaiting grading.'
       );
+      this.Sentry?.metrics?.count('exam.attempt_blocked_pending_moderation', 1);
       void reply.code(403);
       return reply.send(
         // TODO: Better error type
@@ -311,10 +323,11 @@ async function postExamGeneratedExamHandler(
         examExpirationTime + examRetakeTimeInMS < Date.now();
 
       if (!retakeAllowed) {
-        logger.warn(
+        req.log.warn(
           { examExpirationTime },
           'User has completed exam too recently to retake.'
         );
+        this.Sentry?.metrics?.count('exam.retake_cooldown_blocked', 1);
         void reply.code(429);
         // TODO: Consider sending last completed time
         return reply.send(
@@ -336,8 +349,8 @@ async function postExamGeneratedExamHandler(
       );
 
       if (generated.hasError) {
-        logger.error(generated.error, 'Unable to query generated exam.');
-        this.Sentry.captureException(generated.error);
+        this.Sentry?.captureException(generated.error);
+        req.log.error(generated.error, 'Unable to query generated exam.');
         void reply.code(500);
         return reply.send(
           ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(generated.error))
@@ -345,18 +358,24 @@ async function postExamGeneratedExamHandler(
       }
 
       if (generated.data === null) {
-        const error = {
-          data: { generatedExamId: lastAttempt.generatedExamId },
-          message: 'Unreachable. Generated exam not found.'
-        };
-        logger.error(error.data, error.message);
-        this.Sentry.captureException(error.data);
+        this.Sentry?.captureException({
+          generatedExamId: lastAttempt.generatedExamId
+        });
+        req.log.error(
+          { generatedExamId: lastAttempt.generatedExamId },
+          'Unreachable. Generated exam not found.'
+        );
         void reply.code(500);
-        return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
+        return reply.send(
+          ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+            'Unreachable. Generated exam not found.'
+          )
+        );
       }
 
       const userExam = constructUserExam(generated.data, exam);
 
+      this.Sentry?.metrics?.count('exam.attempt_resumed', 1);
       return reply.send({
         exam: userExam,
         examAttempt: lastAttempt
@@ -378,8 +397,11 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExams.hasError) {
-    logger.error(maybeGeneratedExams.error);
-    this.Sentry.captureException(maybeGeneratedExams.error);
+    this.Sentry?.captureException(maybeGeneratedExams.error);
+    req.log.error(
+      maybeGeneratedExams.error,
+      'Unable to query generated exams.'
+    );
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(maybeGeneratedExams.error)
@@ -389,14 +411,13 @@ async function postExamGeneratedExamHandler(
   const generatedExams = maybeGeneratedExams.data;
 
   if (generatedExams.length === 0) {
-    const error = {
-      data: { examId: exam.id },
-      message: `Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.`
-    };
-    logger.error(error.data, error.message);
-    this.Sentry.captureException(error);
+    const message =
+      'Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.';
+    this.Sentry?.captureException({ data: { examId: exam.id }, message });
+    req.log.error({ examId: exam.id }, message);
+    this.Sentry?.metrics?.count('exam.generated_exam_pool_exhausted', 1);
     void reply.code(500);
-    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
+    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(message));
   }
 
   // Randomly pick an exam from available generations, prioritising generations not already taken
@@ -405,9 +426,9 @@ async function postExamGeneratedExamHandler(
   );
   let randomGeneratedExamId: string;
   if (untakenGeneratedExams.length === 0) {
-    logger.info(
-      `User has taken all generated exams. Reusing previously taken generated exams.`
-    );
+    this.Sentry?.metrics?.count('exam.generated_exam_reused', 1, {
+      attributes: { examId: exam.id }
+    });
     randomGeneratedExamId =
       generatedExams[Math.floor(Math.random() * generatedExams.length)]!.id;
   } else {
@@ -426,8 +447,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error(maybeGeneratedExam.error);
-    this.Sentry.captureException(maybeGeneratedExam.error);
+    this.Sentry?.captureException(maybeGeneratedExam.error);
+    req.log.error(maybeGeneratedExam.error, 'Unable to query generated exam.');
     void reply.code(500);
     return reply.send(
       // TODO: Consider more specific code
@@ -441,14 +462,18 @@ async function postExamGeneratedExamHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
-    const error = {
+    this.Sentry?.captureException({
       data: { generatedExamId: randomGeneratedExamId },
       message: 'Unreachable. Generated exam not found.'
-    };
-    logger.error(error.data, 'Unreachable. Generated exam not found.');
-    this.Sentry.captureException(error);
+    });
+    req.log.error(
+      { generatedExamId: randomGeneratedExamId },
+      'Unreachable. Generated exam not found.'
+    );
     void reply.code(500);
-    return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('Unreachable. Generated exam not found.')
+    );
   }
 
   // Create exam attempt so, even if user disconnects, their attempt is still recorded:
@@ -458,6 +483,7 @@ async function postExamGeneratedExamHandler(
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
+        examModerationId: null,
         startTime: new Date(),
         questionSets: []
       }
@@ -465,8 +491,8 @@ async function postExamGeneratedExamHandler(
   );
 
   if (attempt.hasError) {
-    logger.error(attempt.error);
-    this.Sentry.captureException(attempt.error);
+    this.Sentry?.captureException(attempt.error);
+    req.log.error(attempt.error, 'Unable to create exam attempt.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_CREATE_EXAM_ATTEMPT(
@@ -481,14 +507,14 @@ async function postExamGeneratedExamHandler(
   );
 
   if (maybeUserExam.hasError) {
-    logger.error(maybeUserExam.error);
+    this.Sentry?.captureException(maybeUserExam.error);
+    req.log.error(maybeUserExam.error, 'Unable to construct user exam.');
     // TODO: Consider handling this failing
     await this.prisma.examEnvironmentExamAttempt.delete({
       where: {
         id: attempt.data.id
       }
     });
-    this.Sentry.captureException(maybeUserExam.error);
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUserExam.error))
@@ -497,6 +523,7 @@ async function postExamGeneratedExamHandler(
 
   const userExam = maybeUserExam.data;
 
+  this.Sentry?.metrics?.count('exam.attempt_created', 1);
   void reply.code(200);
   return reply.send({
     exam: userExam,
@@ -512,18 +539,25 @@ async function postExamGeneratedExamHandler(
  * TODO: Consider validating req.user.id == lastAttempt.user_id?
  *
  * NOTE: Currently, questions can be _unanswered_ - taken away from a previous attempt submission.
- * Theorectically, this is fine. Practically, it is unclear when that would be useful.
+ * Theoretically, this is fine. Practically, it is unclear when that would be useful.
  */
 async function postExamAttemptHandler(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentPostExamAttempt>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
-  const { attempt } = req.body;
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    this.Sentry?.captureException('No user found in request.');
+    req.log.error('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  req.log.debug('Updating exam attempt for user.');
+
+  const { attempt } = req.body;
 
   const maybeAttempts = await mapErr(
     this.prisma.examEnvironmentExamAttempt.findMany({
@@ -535,8 +569,8 @@ async function postExamAttemptHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(maybeAttempts.error);
-    this.Sentry.captureException(maybeAttempts.error);
+    this.Sentry?.captureException(maybeAttempts.error);
+    req.log.error(maybeAttempts.error, 'Unable to query exam attempts.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -546,7 +580,7 @@ async function postExamAttemptHandler(
   const attempts = maybeAttempts.data;
 
   if (attempts.length === 0) {
-    logger.warn({ examId: attempt.examId }, 'No attempts found for user.');
+    req.log.warn({ examId: attempt.examId }, 'No attempts found for user.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
@@ -573,7 +607,8 @@ async function postExamAttemptHandler(
   );
 
   if (maybeExam.hasError) {
-    logger.error(maybeExam.error);
+    this.Sentry?.captureException(maybeExam.error);
+    req.log.error(maybeExam.error, 'Unable to query exam.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
@@ -583,7 +618,7 @@ async function postExamAttemptHandler(
   const exam = maybeExam.data;
 
   if (exam === null) {
-    logger.warn({ examId: attempt.examId }, 'Invalid exam id given.');
+    req.log.warn({ examId: attempt.examId }, 'Invalid exam id given.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM('Invalid exam id given.')
@@ -596,10 +631,11 @@ async function postExamAttemptHandler(
     latestAttemptStartTime + examTotalTimeInMS < Date.now();
 
   if (isAttemptExpired) {
-    logger.warn(
+    req.log.warn(
       { examAttemptId: latestAttempt.id },
       'Attempt has exceeded submission time.'
     );
+    this.Sentry?.metrics?.count('exam.attempt_submission_expired', 1);
     void reply.code(403);
     return reply.send(
       ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(
@@ -618,7 +654,8 @@ async function postExamAttemptHandler(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error(maybeGeneratedExam.error);
+    this.Sentry?.captureException(maybeGeneratedExam.error);
+    req.log.error(maybeGeneratedExam.error, 'Unable to query generated exam.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeGeneratedExam.error))
@@ -628,7 +665,7 @@ async function postExamAttemptHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
-    logger.warn(
+    req.log.warn(
       { generatedExamId: latestAttempt.generatedExamId },
       'Generated exam not found.'
     );
@@ -650,23 +687,38 @@ async function postExamAttemptHandler(
   );
 
   if (maybeValidExamAttempt.hasError) {
-    logger.warn(
-      { validExamAttemptError: maybeValidExamAttempt.error },
-      'Invalid exam attempt.'
-    );
-    // As attempt is invalid, create moderation record to investigate
-    await this.prisma.examEnvironmentExamModeration.create({
-      data: {
-        examAttemptId: latestAttempt.id,
-        status: ExamEnvironmentExamModerationStatus.Pending
-      }
-    });
-
-    void reply.code(400);
     const message =
       maybeValidExamAttempt.error instanceof Error
         ? maybeValidExamAttempt.error.message
         : 'Unknown attempt validation error';
+    req.log.warn({ validExamAttemptError: message }, 'Invalid exam attempt.');
+    // As attempt is invalid, create moderation record to investigate or update existing record
+    const moderation = await this.prisma.examEnvironmentExamModeration.upsert({
+      where: { examAttemptId: latestAttempt.id },
+      create: {
+        examAttemptId: latestAttempt.id,
+        status: ExamEnvironmentExamModerationStatus.Pending,
+        feedback: message
+      },
+      update: {
+        feedback: message
+      }
+    });
+
+    this.Sentry?.metrics?.count('exam.moderation_flagged', 1);
+
+    // Link attempt with moderation id if it has not already been done
+    await this.prisma.examEnvironmentExamAttempt.updateMany({
+      where: {
+        id: latestAttempt.id,
+        examModerationId: null
+      },
+      data: {
+        examModerationId: moderation.id
+      }
+    });
+
+    void reply.code(400);
     return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
   }
 
@@ -683,13 +735,17 @@ async function postExamAttemptHandler(
   );
 
   if (maybeUpdatedAttempt.hasError) {
-    logger.error({ updatedAttemptError: maybeUpdatedAttempt.error });
+    this.Sentry?.captureException(maybeUpdatedAttempt.error);
+    req.log.error(maybeUpdatedAttempt.error, 'Unable to update exam attempt.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUpdatedAttempt.error))
     );
   }
 
+  this.Sentry?.metrics?.count('exam.attempt_updated', 1, {
+    attributes: { attemptId: latestAttempt.id }
+  });
   return reply.code(200).send();
 }
 
@@ -702,10 +758,17 @@ export async function getExams(
   req: UpdateReqType<typeof schemas.examEnvironmentExams>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    this.Sentry?.captureException('No user found in request.');
+    req.log.error('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  req.log.debug('Fetching available exams for user.');
+
   const maybeExams = await mapErr(
     this.prisma.examEnvironmentExam.findMany({
       where: {
@@ -720,8 +783,8 @@ export async function getExams(
   );
 
   if (maybeExams.hasError) {
-    logger.error(maybeExams.error);
-    this.Sentry.captureException(maybeExams.error);
+    this.Sentry?.captureException(maybeExams.error);
+    req.log.error(maybeExams.error, 'Unable to query exams.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExams.error))
@@ -744,8 +807,8 @@ export async function getExams(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(maybeAttempts.error);
-    this.Sentry.captureException(maybeAttempts.error);
+    this.Sentry?.captureException(maybeAttempts.error);
+    req.log.error(maybeAttempts.error, 'Unable to query exam attempts.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -771,8 +834,9 @@ export async function getExams(
     };
 
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
-    logger.info(
-      `Prerequisites for exam ${exam.id} ${isExamPrerequisitesMet ? 'met' : 'unmet'}.`
+    req.log.debug(
+      { examId: exam.id, isExamPrerequisitesMet },
+      'Evaluated exam prerequisites.'
     );
 
     if (!isExamPrerequisitesMet) {
@@ -794,7 +858,7 @@ export async function getExams(
       : null;
 
     if (!lastAttempt) {
-      logger.info(`No prior attempts for exam ${exam.id}`);
+      req.log.debug({ examId: exam.id }, 'No prior attempts for exam.');
       availableExam.canTake = true;
       availableExams.push(availableExam);
       continue;
@@ -809,7 +873,7 @@ export async function getExams(
     const lastAttemptExpired =
       Date.now() > lastAttemptStartTime + examTotalTimeInMS;
     if (!lastAttemptExpired) {
-      logger.info(`Exam ${exam.id} in progress.`);
+      req.log.debug({ examId: exam.id }, 'Exam in progress.');
       availableExam.canTake = true;
       availableExams.push(availableExam);
       continue;
@@ -817,7 +881,10 @@ export async function getExams(
 
     const isRetakeTimePassed = Date.now() > retakeDateInMS;
     if (!isRetakeTimePassed) {
-      logger.info(`Time until retake: ${retakeDateInMS - Date.now()} [ms]`);
+      req.log.debug(
+        { examId: exam.id, retakeInMs: retakeDateInMS - Date.now() },
+        'Exam retake time has not yet passed.'
+      );
       availableExam.canTake = false;
       availableExams.push(availableExam);
       continue;
@@ -833,8 +900,11 @@ export async function getExams(
     );
 
     if (maybeModerations.hasError) {
-      logger.error(maybeModerations.error);
-      this.Sentry.captureException(maybeModerations.error);
+      this.Sentry?.captureException(maybeModerations.error);
+      req.log.error(
+        maybeModerations.error,
+        'Unable to query exam moderations.'
+      );
       void reply.code(500);
       return reply.send(
         ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeModerations.error))
@@ -844,7 +914,10 @@ export async function getExams(
     const moderations = maybeModerations.data;
 
     if (moderations.length > 0) {
-      logger.info(`Exam Moderation records found: ${moderations.length}`);
+      req.log.debug(
+        { examId: exam.id, count: moderations.length },
+        'Exam moderation records found.'
+      );
       availableExam.canTake = false;
       availableExams.push(availableExam);
       continue;
@@ -867,10 +940,16 @@ export async function getExamAttemptsHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempts>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    this.Sentry?.captureException('No user found in request.');
+    req.log.error('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  req.log.debug('Fetching exam attempts for user.');
 
   // Send all relevant exam attempts
   const envExamAttempts = [];
@@ -883,8 +962,8 @@ export async function getExamAttemptsHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(maybeAttempts.error);
-    this.Sentry.captureException(maybeAttempts.error);
+    this.Sentry?.captureException(maybeAttempts.error);
+    req.log.error(maybeAttempts.error, 'Unable to query exam attempts.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -894,7 +973,7 @@ export async function getExamAttemptsHandler(
   const attempts = maybeAttempts.data;
 
   if (!attempts.length) {
-    logger.warn({ userId: user.id }, 'No exam attempts found.');
+    req.log.warn('No exam attempts found.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT('No exam attempt found.')
@@ -905,7 +984,7 @@ export async function getExamAttemptsHandler(
     const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
       this,
       attempt,
-      logger
+      req.log
     );
     if (error) {
       void reply.code(error.code);
@@ -927,10 +1006,16 @@ export async function getExamAttemptHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttempt>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    this.Sentry?.captureException('No user found in request.');
+    req.log.error('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+  req.log.debug('Fetching exam attempt for user.');
+
   const { attemptId } = req.params;
 
   // If attempt id is given, only return that attempt
@@ -944,8 +1029,8 @@ export async function getExamAttemptHandler(
   );
 
   if (maybeAttempt.hasError) {
-    logger.error(maybeAttempt.error);
-    this.Sentry.captureException(maybeAttempt.error);
+    this.Sentry?.captureException(maybeAttempt.error);
+    req.log.error(maybeAttempt.error, 'Unable to query exam attempt.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempt.error))
@@ -955,7 +1040,7 @@ export async function getExamAttemptHandler(
   const attempt = maybeAttempt.data;
 
   if (!attempt) {
-    logger.warn({ attemptId }, 'No exam attempt found.');
+    req.log.warn({ attemptId }, 'No exam attempt found.');
     void reply.code(404);
     return reply.send(
       ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_EXAM_ATTEMPT('No exam attempt found.')
@@ -965,7 +1050,7 @@ export async function getExamAttemptHandler(
   const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
     this,
     attempt,
-    logger
+    req.log
   );
 
   if (error) {
@@ -986,12 +1071,18 @@ export async function getExamAttemptsByExamIdHandler(
   req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttemptsByExamId>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    this.Sentry?.captureException('No user found in request.');
+    req.log.error('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
   const { examId } = req.params;
 
-  logger.info({ examId, userId: user.id });
+  req.log.debug({ examId }, 'Fetching exam attempts by exam id.');
 
   // If attempt id is given, only return that attempt
   const maybeAttempts = await mapErr(
@@ -1004,8 +1095,8 @@ export async function getExamAttemptsByExamIdHandler(
   );
 
   if (maybeAttempts.hasError) {
-    logger.error(maybeAttempts.error);
-    this.Sentry.captureException(maybeAttempts.error);
+    this.Sentry?.captureException(maybeAttempts.error);
+    req.log.error(maybeAttempts.error, 'Unable to query exam attempts.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
@@ -1019,7 +1110,7 @@ export async function getExamAttemptsByExamIdHandler(
     const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
       this,
       attempt,
-      logger
+      req.log
     );
 
     if (error) {
@@ -1041,13 +1132,12 @@ export async function getExamChallenge(
   req: UpdateReqType<typeof schemas.examEnvironmentGetExamChallenge>,
   reply: FastifyReply
 ) {
-  const logger = this.log.child({ req });
   const { challengeId, examId } = req.query;
 
-  logger.info({ challengeId, examId });
+  req.log.debug({ challengeId, examId }, 'Fetching exam challenge relations.');
 
   if (!challengeId && !examId) {
-    logger.warn('No challenge or exam id provided.');
+    req.log.warn('No challenge or exam id provided.');
     void reply.code(400);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
@@ -1066,8 +1156,8 @@ export async function getExamChallenge(
   );
 
   if (maybeData.hasError) {
-    logger.error(maybeData.error);
-    this.Sentry.captureException(maybeData.error);
+    this.Sentry?.captureException(maybeData.error);
+    req.log.error(maybeData.error, 'Unable to query exam challenge relations.');
     void reply.code(500);
     return reply.send(
       ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeData.error))

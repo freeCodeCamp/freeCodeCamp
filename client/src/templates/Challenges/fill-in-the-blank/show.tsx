@@ -10,9 +10,12 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import ShortcutsModal from '../components/shortcuts-modal';
+
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 // Local Utilities
+import ShortcutsModal from '../components/shortcuts-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -38,7 +41,6 @@ import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
-import { ChallengeLang } from '../../../../../shared-dist/config/curriculum';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -90,6 +92,7 @@ const ShowFillInTheBlank = ({
         translationPending,
         challengeType,
         fillInTheBlank,
+        inputType,
         helpCategory,
         scene,
         tests,
@@ -106,7 +109,6 @@ const ShowFillInTheBlank = ({
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
   const emptyArray = fillInTheBlank.blanks.map(() => null);
-
   const [showWrong, setShowWrong] = useState(false);
   const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
   const [answersCorrect, setAnswersCorrect] =
@@ -127,10 +129,13 @@ const ShowFillInTheBlank = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -177,7 +182,7 @@ const ShowFillInTheBlank = ({
       const answer = blankAnswers[i];
       const normalizedUserAnswer = userAnswer.trim().toLowerCase();
 
-      if (fillInTheBlank.inputType === 'pinyin-to-hanzi') {
+      if (inputType === 'pinyin-to-hanzi') {
         const pairs = parseHanziPinyinPairs(answer);
         if (pairs.length === 1) {
           const hanziPinyin = pairs[0];
@@ -187,7 +192,7 @@ const ShowFillInTheBlank = ({
             hanzi.replace(/\s+/g, '')
           );
         }
-      } else if (fillInTheBlank.inputType === 'pinyin-tone') {
+      } else if (inputType === 'pinyin-tone') {
         // Ignore spaces to allow both syllable formats:
         // spaced (e.g., 'nǐ hǎo') and unspaced (e.g., 'nǐhǎo').
         return (
@@ -279,7 +284,12 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
+              {transcript && (
+                <ChallengeTranscript
+                  transcript={transcript}
+                  isDialogue={true}
+                />
+              )}
 
               {instructions && (
                 <>
@@ -293,6 +303,7 @@ const ShowFillInTheBlank = ({
               <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
                 <FillInTheBlanks
                   fillInTheBlank={fillInTheBlank}
+                  inputType={inputType}
                   answersCorrect={answersCorrect}
                   showFeedback={showFeedback}
                   feedback={feedback}
@@ -330,6 +341,7 @@ const ShowFillInTheBlank = ({
           </Row>
         </Container>
         <ShortcutsModal />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );
@@ -361,8 +373,8 @@ export const query = graphql`
             answer
             feedback
           }
-          inputType
         }
+        inputType
         tests {
           text
           testString

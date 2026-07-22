@@ -21,3 +21,13 @@
   font-size: 1rem;
   margin: 0 0 1.2rem;
 }
+
+.quiz-answer-label:has(ruby) {
+  line-height: 1.7rem;
+}
+
+/* Override global button:hover for the play/pause button in the Quiz component */
+.quiz-challenge-container button:has(svg.svg-inline--fa):hover {
+  background-color: unset;
+  color: unset;
+}

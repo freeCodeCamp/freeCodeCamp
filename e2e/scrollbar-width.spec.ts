@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Editor scrollbar width', () => {
+test.describe('Editor scrollbar width on mobile', () => {
+  test.use({
+    viewport: { width: 393, height: 851 }
+  });
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
   });
@@ -15,11 +18,6 @@ test.describe('Editor scrollbar width', () => {
     const upperJawWidth = await upperJawElement.evaluate(
       (node: HTMLElement) => node.offsetWidth
     );
-
-    const lowerJawElement = page.locator('#editor-lower-jaw');
-    expect(
-      await lowerJawElement.evaluate((node: HTMLElement) => node.offsetWidth)
-    ).toEqual(upperJawWidth);
 
     const scrollableElement = page.locator('.monaco-scrollable-element');
     expect(
@@ -42,11 +40,6 @@ test.describe('Editor scrollbar width', () => {
     const upperJawWidth = await upperJawElement.evaluate(
       (node: HTMLElement) => node.offsetWidth
     );
-
-    const lowerJawElement = page.locator('#editor-lower-jaw');
-    expect(
-      await lowerJawElement.evaluate((node: HTMLElement) => node.offsetWidth)
-    ).toEqual(upperJawWidth);
 
     const scrollableElement = page.locator('.monaco-scrollable-element');
     expect(

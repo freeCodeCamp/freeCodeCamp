@@ -5,7 +5,7 @@ challengeType: 31
 dashedName: review-css-variables
 ---
 
-# --description--
+# --interactive--
 
 ## CSS Custom Properties (CSS Variables)
 
@@ -40,13 +40,17 @@ body {
 }
 ```
 
-- **`--property-name`**: This is the name of the custom property you're defining. Like all custom properties, it must start with two dashes. `--property-name` can be things like `<color>`, `<length>`, `<number>`, `<percentage>`, or more complex types.
-- **`syntax`**: This defines the type of the property. 
+- **`--property-name`**: This is the name of the custom property you're defining. Like all custom properties, it must start with two dashes.
+**`syntax`**: This defines the type of the property, which can be things like `<color>`, `<length>`, `<number>`, `<percentage>`, or more complex types.
 - **`inherits`**: This specifies whether the property should inherit its value from its parent element. 
 - **`initial-value`**: This sets the default value of the property.
 - **Gradient Example Using the `@property` Rule**: This example creates a gradient that smoothly animates when the element is hovered over.
 
+:::interactive_editor
+
 ```html
+<link rel="stylesheet" href="styles.css">
+
 <div class="gradient-box"></div>
 ```
 
@@ -68,6 +72,8 @@ body {
   --gradient-angle: 90deg;
 }
 ```
+
+:::
 
 - **Fallbacks**: When using the custom property, you can provide a fallback value using the `var()` function, just as you would with standard custom properties:
 

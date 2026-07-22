@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Callout } from '@freecodecamp/ui';
 
 import { Link } from '../helpers';
@@ -7,12 +7,12 @@ import { Link } from '../helpers';
 import './index.css';
 
 const ArchivedWarning = () => {
+  const { t } = useTranslation();
   return (
-    <Callout variant='info'>
-      <p className='text-center archived-warning'>
+    <Callout variant='note' label={t('misc.note')}>
+      <p className='archived-warning'>
         <Trans i18nKey='learn.archive.content-not-updated'>
-          <strong>placeholder</strong>
-          <Link to={'/learn/full-stack-developer'}>placeholder</Link>
+          <Link to={'/learn'}>placeholder</Link>
         </Trans>
       </p>
     </Callout>

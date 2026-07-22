@@ -3,10 +3,8 @@ import path from 'node:path';
 import sirv from 'sirv';
 import polka from 'polka';
 import puppeteer from 'puppeteer';
-
-import { helperVersion } from '../../../client/src/templates/Challenges/utils/frame';
-
-const clientPath = path.resolve(__dirname, '../../../client');
+import { cpSync, mkdirSync, rmSync } from 'node:fs';
+import { version } from '@freecodecamp/browser-scripts/test-runner';
 
 async function createBrowser() {
   return puppeteer.launch({
@@ -21,6 +19,20 @@ async function createBrowser() {
 
 let browser, server;
 
+function setupStubs() {
+  const browserScriptDist = path.resolve(
+    __dirname,
+    '../../../tools/client-plugins/browser-scripts/dist'
+  );
+  const destArtifactsDir = path.resolve(__dirname, 'stubs/js');
+
+  rmSync(destArtifactsDir, { recursive: true, force: true });
+  mkdirSync(destArtifactsDir, { recursive: true });
+  cpSync(path.resolve(browserScriptDist, 'js'), destArtifactsDir, {
+    recursive: true
+  });
+}
+
 async function startServer() {
   const host = '127.0.0.1';
   const port = 8080;
@@ -29,16 +41,16 @@ async function startServer() {
 
   // Mount static files used by the tests
   app.use(
-    '/dist',
-    sirv(path.join(clientPath, `static/js/test-runner/${helperVersion}`))
+    '/dist', // the runner is mounted at dist so we don't need to specify the asset path when initializing
+    sirv(path.resolve(__dirname, `stubs/js/test-runner/${version}`))
   );
-  app.use('/js', sirv(path.join(clientPath, 'static/js')));
   app.use('/', sirv(path.resolve(__dirname, 'stubs')));
   app.listen(port, host);
   return app.server;
 }
 
 export async function setup() {
+  setupStubs();
   server = await startServer();
   browser = await createBrowser();
   // Sharing the Websocket endpoint so that setup files can connect. This allows

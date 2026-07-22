@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regenerateMissingProperties } from '../../../../../shared-dist/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import type {
   ChallengeData,
@@ -21,7 +21,6 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -40,6 +39,7 @@ const ITEMS_PER_PAGE = 15;
 
 interface TimelineProps {
   completedMap: CompletedChallenge[];
+  isPrivate?: boolean;
   openModal: (arg: string) => void;
   t: TFunction;
   username: string;
@@ -60,6 +60,7 @@ interface NameMap {
 function TimelineInner({
   completedMap,
   idToNameMap,
+  isPrivate,
   openModal,
   sortedTimeline,
   totalPages,
@@ -181,7 +182,14 @@ function TimelineInner({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.timeline')}</h2>
+        <div className='profile-section-heading'>
+          <h2>{t('profile.timeline')}</h2>
+          {isPrivate && (
+            <span className='profile-private-badge'>
+              {t('buttons.private')}
+            </span>
+          )}
+        </div>
         <Spacer size='s' />
         {completedMap.length === 0 ? (
           <p className='text-center'>
@@ -290,15 +298,12 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug },
-          // @ts-expect-error Graphql needs typing
-          hasEditableBoundaries
+          fields: { slug }
         }
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-      const shouldAppendBlockNameToTitle =
-        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
+      const shouldAppendBlockNameToTitle = blockNameTitle !== title;
       idToNameMap.set(id, {
         challengeTitle: `${
           shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''

@@ -5,7 +5,7 @@ test.describe('When the user HAS NOT claimed their cert', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.beforeEach(async ({ page }) => {
@@ -27,7 +27,7 @@ test.describe('When the user HAS NOT claimed their cert', () => {
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 });
 

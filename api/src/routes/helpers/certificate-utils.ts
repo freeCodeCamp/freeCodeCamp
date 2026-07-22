@@ -3,7 +3,7 @@ import {
   certSlugTypeMap,
   certToIdMap,
   Certification
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 import { normalizeDate } from '../../utils/normalize.js';
 
 const fullStackCertificateIds = [
@@ -21,9 +21,7 @@ const fullStackCertificateIds = [
  * @param certSlug - The certification slug to check.
  * @returns True if the certification slug is known, otherwise false.
  */
-export function isKnownCertSlug(
-  certSlug: string
-): certSlug is keyof typeof certSlugTypeMap {
+export function isKnownCertSlug(certSlug: string): certSlug is Certification {
   return certSlug in certSlugTypeMap;
 }
 

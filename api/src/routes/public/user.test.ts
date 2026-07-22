@@ -1,5 +1,5 @@
 import type { Prisma } from '@prisma/client';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { omit } from 'lodash-es';
 import {
   describe,
@@ -74,6 +74,16 @@ const testUserData: Prisma.userCreateInput = {
       }
     }
   ],
+  experience: [
+    {
+      id: 'exp1',
+      title: 'Software Engineer',
+      company: 'Company A',
+      startDate: '2020-01-01',
+      endDate: '2021-01-01',
+      description: 'Worked on various projects.'
+    }
+  ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   completedExams: [],
   githubProfile: 'github.com/foobar',
@@ -127,6 +137,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -184,10 +195,12 @@ const publicUserData = {
   ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
+  experience: testUserData.experience,
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
   isA2EnglishCert: testUserData.isA2EnglishCert,
+  isB1EnglishCert: testUserData.isB1EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -198,6 +211,7 @@ const publicUserData = {
   isFoundationalCSharpCertV8: testUserData.isFoundationalCSharpCertV8,
   isFrontEndCert: testUserData.isFrontEndCert,
   isFrontEndLibsCert: testUserData.isFrontEndLibsCert,
+  isFrontEndLibsCertV9: testUserData.isFrontEndLibsCertV9,
   isFullStackCert: testUserData.isFullStackCert,
   isJavascriptCertV9: testUserData.isJavascriptCertV9,
   isHonest: testUserData.isHonest,
@@ -206,8 +220,10 @@ const publicUserData = {
   isJsAlgoDataStructCert: testUserData.isJsAlgoDataStructCert,
   isJsAlgoDataStructCertV8: testUserData.isJsAlgoDataStructCertV8,
   isMachineLearningPyCertV7: testUserData.isMachineLearningPyCertV7,
+  isPythonCertV9: testUserData.isPythonCertV9,
   isQaCertV7: testUserData.isQaCertV7,
   isRelationalDatabaseCertV8: testUserData.isRelationalDatabaseCertV8,
+  isRelationalDatabaseCertV9: testUserData.isRelationalDatabaseCertV9,
   isRespWebDesignCert: testUserData.isRespWebDesignCert,
   isRespWebDesignCertV9: testUserData.isRespWebDesignCertV9,
   isSciCompPyCertV7: testUserData.isSciCompPyCertV7,
@@ -218,7 +234,7 @@ const publicUserData = {
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  twitter: 'https://twitter.com/foobar',
+  twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
@@ -243,13 +259,22 @@ describe('userRoutes', () => {
       const lockedUserProfileUI = {
         isLocked: true,
         showAbout: true,
-        showPortfolio: false
+        showCerts: true,
+        showDonation: true,
+        showExperience: true,
+        showHeatMap: true,
+        showLocation: true,
+        showName: true,
+        showPoints: true,
+        showPortfolio: true,
+        showTimeLine: true
       };
       const unlockedUserProfileUI = {
         isLocked: false,
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showExperience: true,
         showHeatMap: true,
         showLocation: true,
         showName: true,
@@ -367,7 +392,7 @@ describe('userRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
         // TODO: create a list of public properties like the api-server and use that
-        // to restrict the output of this and get-session-user.
+        // to restrict the output of this and session-user.
         test('returns 200 status code with public user object', async () => {
           const testUser =
             await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -482,6 +507,17 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      experience: [
+        {
+          id: 'exp1',
+          title: 'Developer',
+          company: 'Company',
+          location: 'Location',
+          startDate: '01/2020',
+          endDate: '12/2022',
+          description: 'Description'
+        }
+      ],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -492,7 +528,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showExperience: true
       }
     };
 
@@ -591,6 +628,16 @@ describe('get-public-profile helpers', () => {
       };
       expect(replacePrivateData(userWithoutPortfolio)).toMatchObject({
         portfolio: []
+      });
+    });
+
+    test('returns [] for experience if showExperience is not true', () => {
+      const userWithoutExperience = {
+        ...user,
+        profileUI: { ...user.profileUI, showExperience: false }
+      };
+      expect(replacePrivateData(userWithoutExperience)).toMatchObject({
+        experience: []
       });
     });
 

@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 10px;
+  padding: 0 10px 10px;
   border-bottom: 1px solid var(--quaternary-background);
   background-color: var(--secondary-background);
 }
@@ -78,6 +78,10 @@
   display: flex;
   justify-content: center;
   gap: 3px;
+  /* these three center the middle items on the page */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tabs-row-right {
@@ -94,9 +98,12 @@
   margin-inline-end: auto;
 }
 
-.panel-display-tabs button:first-child,
-.tabs-row > button:first-child {
+.panel-display-tabs button:first-child {
   margin: 0 10px 0 0;
+}
+
+.panel-display-tabs button:last-child {
+  margin: 0;
 }
 
 .panel-display-tabs button:last-of-type {
@@ -109,6 +116,11 @@
 
 .panel-display-tabs button:nth-last-child(2) {
   border-inline-end-width: 1px;
+}
+
+.interactive-editor-tab {
+  /* Ensure the right group pins to the end even when no left/middle items exist */
+  margin-left: auto;
 }
 
 .restart-step-tab {
@@ -190,15 +202,13 @@
 }
 
 #mobile-layout .tab-content[data-state='active'] {
-  padding-block-end: 37px;
   display: flex;
   flex-direction: column;
 }
 
-#learn-app-wrapper[data-has-editable-boundaries='true']
-  #mobile-layout
-  .tab-content[data-state='active'] {
-  padding-block-end: 0px;
+#mobile-layout .independent-lower-jaw {
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 #mobile-layout .preview-external-window {
@@ -214,7 +224,7 @@
 #mobile-layout .portal-button-wrap {
   position: absolute;
   top: auto;
-  right: 0;
+  inset-inline-end: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
 }
@@ -297,4 +307,20 @@
   .monaco-editor-tabs button {
     padding: 2px 12px;
   }
+}
+
+.mobile-lang-selector-toggle {
+  background-color: var(--secondary-background);
+  border: 0;
+  border-right: 1px solid var(--quaternary-color);
+  color: var(--primary-color);
+  font-size: 0.8em;
+  height: 100%;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+
+.mobile-lang-selector-toggle:hover {
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
 }

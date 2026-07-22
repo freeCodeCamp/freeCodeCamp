@@ -100,6 +100,17 @@ describe('convertToHanzi', () => {
       '你好'
     );
   });
+
+  test('should convert "v" to "ü" and support tone marks', () => {
+    // Correct tone gets converted to hanzi
+    expect(convertToHanzi('nv3', { hanzi: '女', pinyin: 'nǚ' })).toBe('女');
+
+    // Incorrect tones stay as pinyin
+    expect(convertToHanzi('nv1', { hanzi: '女', pinyin: 'nǚ' })).toBe('nǖ');
+    expect(convertToHanzi('nv2', { hanzi: '女', pinyin: 'nǚ' })).toBe('nǘ');
+    expect(convertToHanzi('nv4', { hanzi: '女', pinyin: 'nǚ' })).toBe('nǜ');
+    expect(convertToHanzi('nv5', { hanzi: '女', pinyin: 'nǚ' })).toBe('nü');
+  });
 });
 
 describe('PinyinToHanziInput component', () => {
@@ -126,12 +137,9 @@ describe('PinyinToHanziInput component', () => {
       );
 
       const input = screen.getByLabelText<HTMLInputElement>('blank');
-
-      if (expectedAriaInvalid) {
-        expect(input).toHaveAttribute('aria-invalid', 'true');
-      } else {
-        expect(input).not.toHaveAttribute('aria-invalid');
-      }
+      expect(input.getAttribute('aria-invalid')).toBe(
+        expectedAriaInvalid ? 'true' : null
+      );
     }
   );
 

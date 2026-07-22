@@ -123,7 +123,7 @@ const InternetSettings = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormPristine() && isFormValid()) {
-      // Only submit the form if is has changed, and if it is valid
+      // Only submit the form if it has changed, and if it is valid
       updateMySocials({ ...formValues });
     }
     setIsEditing(false);
@@ -204,12 +204,10 @@ const InternetSettings = ({
               controlId='internet-twitter'
               validationState={twitterValidation}
             >
-              <ControlLabel htmlFor='internet-twitter-input'>
-                Twitter
-              </ControlLabel>
+              <ControlLabel htmlFor='internet-twitter-input'>X</ControlLabel>
               <FormControl
                 onChange={createHandleChange('twitter')}
-                placeholder='https://twitter.com/user-name'
+                placeholder='https://x.com/user-name'
                 type='url'
                 value={formValues.twitter}
                 id='internet-twitter-input'

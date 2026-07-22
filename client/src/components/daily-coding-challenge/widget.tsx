@@ -6,12 +6,11 @@ import { ButtonLink } from '../helpers';
 import DailyCodingChallengeIcon from '../../assets/icons/daily-coding-challenge';
 import LinkButton from '../../assets/icons/link-button';
 import CalendarIcon from '../../assets/icons/calendar';
-import { getTodayUsCentral } from './helpers';
+import { getMonthDayUsCentral } from './helpers';
 
 import './widget.css';
 
-interface DailyCodingChallengeWidgetProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+interface DailyCodingChallengeWidgetProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   forLanding: boolean;
 }
 
@@ -30,7 +29,7 @@ function DailyCodingChallengeWidget({
           block
           size='large'
           className='map-superblock-link'
-          href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
+          href={`/learn/daily-coding-challenge/${getMonthDayUsCentral()}`}
         >
           <div className='daily-coding-challenge-button'>
             <DailyCodingChallengeIcon className='map-icon' />

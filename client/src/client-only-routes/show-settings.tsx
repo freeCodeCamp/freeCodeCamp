@@ -1,15 +1,16 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Spacer } from '@freecodecamp/ui';
+import { IfFeatureEnabled } from '@growthbook/growthbook-react';
 import store from 'store';
 import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader } from '../components/helpers';
+import { FullWidthRow, Loader } from '../components/helpers';
 import Certification from '../components/settings/certification';
 import Account from '../components/settings/account';
 import DangerZone from '../components/settings/danger-zone';
@@ -19,16 +20,18 @@ import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
 import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
+import About from '../components/profile/components/about';
+import ClassroomMode from '../components/settings/classroom-mode';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
   userTokenSelector
 } from '../redux/selectors';
 import type { User } from '../redux/prop-types';
 import {
   submitNewAbout,
+  updateMyClassroomMode,
   updateMyHonesty,
   updateMyQuincyEmail,
   updateMySound,
@@ -44,12 +47,12 @@ const { apiLocation } = envData;
 // TODO: update types for actions
 type ShowSettingsProps = {
   createFlashMessage: typeof createFlashMessage;
-  isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
   resetEditorLayout: () => void;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
+  updateIsClassroomAccount: () => void;
   updateIsHonest: () => void;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   user: User | null;
@@ -61,17 +64,10 @@ type ShowSettingsProps = {
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
   userTokenSelector,
-  (
-    showLoading: boolean,
-    user: User | null,
-    isSignedIn,
-    userToken: string | null
-  ) => ({
+  (showLoading: boolean, user: User | null, userToken: string | null) => ({
     showLoading,
     user,
-    isSignedIn,
     userToken
   })
 );
@@ -83,6 +79,8 @@ const mapDispatchToProps = {
   toggleSoundMode: (sound: boolean) => updateMySound({ sound }),
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) =>
     updateMyKeyboardShortcuts({ keyboardShortcuts }),
+  updateIsClassroomAccount: () =>
+    updateMyClassroomMode({ isClassroomAccount: true }),
   updateIsHonest: updateMyHonesty,
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
     updateMyQuincyEmail({ sendQuincyEmail }),
@@ -94,7 +92,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
-    isSignedIn,
     toggleSoundMode,
     toggleKeyboardShortcuts,
     resetEditorLayout,
@@ -102,12 +99,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     navigate,
     showLoading,
     updateQuincyEmail,
+    updateIsClassroomAccount,
     updateIsHonest,
     verifyCert,
     userToken
   } = props;
-
-  const isSignedInRef = useRef(isSignedIn);
 
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
@@ -127,12 +123,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  if (showLoading || !user) {
-    return <Loader fullScreen={true} />;
-  }
+  useEffect(() => {
+    if (!user) navigate(`${apiLocation}/signin`);
+  }, [user, navigate]);
 
-  if (!isSignedInRef.current) {
-    navigate(`${apiLocation}/signin`);
+  if (showLoading || !user) {
     return <Loader fullScreen={true} />;
   }
 
@@ -154,6 +149,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFullStackCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -161,11 +158,20 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8,
+    isFrontEndLibsCertV9,
+    isBackEndDevApisCertV9,
+    isFullStackDeveloperCertV9,
+    isB1EnglishCert,
+    isA2SpanishCert,
+    isA2ChineseCert,
+    isA1ChineseCert,
     isEmailVerified,
+    isClassroomAccount,
     isHonest,
     sendQuincyEmail,
     username,
-    keyboardShortcuts
+    keyboardShortcuts,
+    socrates
   } = user;
 
   const sound = (store.get('fcc-sound') as boolean) ?? false;
@@ -177,17 +183,34 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
         <SettingsSidebarNav userToken={userToken} />
         <main className='settings-main'>
           <Spacer size='l' />
-          <ScrollElement name='username'>
-            <h1
-              id='content-start'
-              className='text-center'
-              style={{ overflowWrap: 'break-word' }}
-              data-playwright-test-label='settings-heading'
-            >
-              {t('settings.for', { username: username })}
-            </h1>
+          <FullWidthRow>
+            <ScrollElement name='username'>
+              <h1
+                id='content-start'
+                className='text-center'
+                style={{ overflowWrap: 'break-word' }}
+                data-playwright-test-label='settings-heading'
+              >
+                {t('settings.for', { username: username })}
+              </h1>
+              <Trans
+                i18nKey='settings.profile-note'
+                parent='p'
+                className='text-center'
+              >
+                <a href={`/${username}`}>your profile</a>
+              </Trans>
+            </ScrollElement>
+          </FullWidthRow>
+          <Spacer size='l' />
+          <ScrollElement name='personal'>
+            <About
+              user={user}
+              setIsEditing={() => {}}
+              sectionTitle={t('settings.headings.personal')}
+            />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='account'>
             <Account
               keyboardShortcuts={keyboardShortcuts}
@@ -196,13 +219,14 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               resetEditorLayout={resetEditorLayout}
               toggleKeyboardShortcuts={toggleKeyboardShortcuts}
               toggleSoundMode={toggleSoundMode}
+              socrates={socrates}
             />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='privacy'>
             <Privacy />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='email'>
             <Email
               email={email}
@@ -211,15 +235,24 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               updateQuincyEmail={updateQuincyEmail}
             />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='honesty'>
             <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           </ScrollElement>
-          <Spacer size='m' />
+          <ScrollElement name='classroom-mode'>
+            <IfFeatureEnabled feature='classroom-mode'>
+              <Spacer size='m' />
+              <ClassroomMode
+                isClassroomAccount={isClassroomAccount}
+                updateIsClassroomAccount={updateIsClassroomAccount}
+              />
+            </IfFeatureEnabled>
+          </ScrollElement>
+          <Spacer size='l' />
           <ScrollElement name='exam-token'>
             <ExamToken email={email} />
           </ScrollElement>
-          <Spacer size='m' />
+          <Spacer size='l' />
           <ScrollElement name='certifications'>
             <Certification
               completedChallenges={completedChallenges}
@@ -241,24 +274,32 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isInfosecQaCert={isInfosecQaCert}
               isJsAlgoDataStructCert={isJsAlgoDataStructCert}
               isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isPythonCertV9={isPythonCertV9}
               isQaCertV7={isQaCertV7}
               isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
               isRespWebDesignCert={isRespWebDesignCert}
               isRespWebDesignCertV9={isRespWebDesignCertV9}
               isSciCompPyCertV7={isSciCompPyCertV7}
               isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              isFrontEndLibsCertV9={isFrontEndLibsCertV9}
+              isBackEndDevApisCertV9={isBackEndDevApisCertV9}
+              isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
+              isB1EnglishCert={isB1EnglishCert}
+              isA2SpanishCert={isA2SpanishCert}
+              isA2ChineseCert={isA2ChineseCert}
+              isA1ChineseCert={isA1ChineseCert}
               username={username}
               verifyCert={verifyCert}
-              isEmailVerified={isEmailVerified}
             />
-            <Spacer size='m' />
+            <Spacer size='l' />
           </ScrollElement>
           {userToken && (
             <>
               <ScrollElement name='user-token'>
                 <UserToken />
               </ScrollElement>
-              <Spacer size='m' />
+              <Spacer size='l' />
             </>
           )}
           <ScrollElement name='danger-zone'>

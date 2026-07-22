@@ -16,12 +16,11 @@ import {
   msTrophyVerified
 } from '../../../utils/error-messages';
 import {
-  canSaveToDB,
   challengeTypes,
   getIsDailyCodingChallenge,
   getDailyCodingChallengeLanguage,
   submitTypes
-} from '../../../../../shared-dist/config/challenge-types';
+} from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowSectionDonationRequests,
@@ -35,7 +34,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
-import { chapterBasedSuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -119,7 +118,8 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id, block, challengeType } = challengeMetaSelector(state);
+      const { id, challengeType, saveSubmissionToDB } =
+        challengeMetaSelector(state);
 
       let update;
 
@@ -140,10 +140,7 @@ function submitModern(type, state) {
         const challengeFiles = challengeFilesSelector(state);
 
         let body;
-        if (
-          block === 'javascript-algorithms-and-data-structures-projects' ||
-          canSaveToDB(challengeType)
-        ) {
+        if (saveSubmissionToDB) {
           body = standardizeRequestBody({ id, challengeType, challengeFiles });
         } else {
           body = {

@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -22,7 +22,6 @@ import {
   updateChallengeMeta,
   openModal,
   updateSolutionFormValues,
-  submitChallenge,
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
@@ -32,6 +31,8 @@ import {
   msUsernameSelector
 } from '../../../redux/selectors';
 import LinkMsUser from './link-ms-user';
+import TrophyButtons from './trophy-buttons';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -58,8 +59,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       updateSolutionFormValues,
       openCompletionModal: () => openModal('completion'),
       openHelpModal: () => openModal('help'),
-      setIsProcessing,
-      submitChallenge
+      setIsProcessing
     },
     dispatch
   );
@@ -78,7 +78,6 @@ interface MsTrophyProps {
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
-  submitChallenge: () => void;
   t: TFunction;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
 }
@@ -92,12 +91,15 @@ function MsTrophy(props: MsTrophyProps) {
       }
     }
   } = props;
+
+  const submitChallenge = useSubmit();
+
   useEffect(() => {
     const {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, title, challengeType, helpCategory }
+          challenge: { tests, title, challengeType, helpCategory, description }
         }
       },
       pageContext: { challengeMeta },
@@ -113,16 +115,19 @@ function MsTrophy(props: MsTrophyProps) {
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = () => {
-    const { setIsProcessing, submitChallenge } = props;
+    const { setIsProcessing } = props;
 
     setIsProcessing(true);
     submitChallenge();
@@ -135,6 +140,7 @@ function MsTrophy(props: MsTrophyProps) {
           description,
           instructions,
           superBlock,
+          id,
           block,
           translationPending
         }
@@ -171,27 +177,16 @@ function MsTrophy(props: MsTrophyProps) {
                 superBlock={superBlock}
                 description={description}
                 instructions={instructions}
+                block={block}
+                challengeId={id}
               />
               <LinkMsUser />
               <hr />
-              <Button
-                block={true}
-                variant='primary'
-                data-playwright-test-label='verify-trophy-button'
+              <TrophyButtons
                 disabled={!msUsername || isProcessing}
-                onClick={handleSubmit}
-              >
-                {t('buttons.verify-trophy')}
-              </Button>
-              <Spacer size='xxs' />
-              <Button
-                block={true}
-                variant='primary'
-                data-playwright-test-label='ask-for-help-button'
-                onClick={openHelpModal}
-              >
-                {t('buttons.ask-for-help')}
-              </Button>
+                onAskForHelp={openHelpModal}
+                onVerifyTrophy={handleSubmit}
+              />
               <br />
               <Spacer size='m' />
             </Col>

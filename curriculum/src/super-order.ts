@@ -1,4 +1,4 @@
-import { generateSuperBlockList } from '../../shared-dist/config/curriculum.js';
+import { generateSuperBlockList } from '@freecodecamp/shared/config/curriculum';
 import { SHOW_UPCOMING_CHANGES } from './config.js';
 
 export function createSuperOrder(superBlocks: string[]) {

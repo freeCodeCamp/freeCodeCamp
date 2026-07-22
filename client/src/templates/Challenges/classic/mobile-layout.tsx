@@ -1,10 +1,19 @@
 import i18next from 'i18next';
-import React, { Component, type ReactNode } from 'react';
+import React, { Component } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { Tabs, TabsContent, TabsTrigger, TabsList } from '@freecodecamp/ui';
+import store from 'store';
+import {
+  Tabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList,
+  Dropdown,
+  MenuItem
+} from '@freecodecamp/ui';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 
 import {
   removePortalWindow,
@@ -16,9 +25,10 @@ import {
   showPreviewPortalSelector,
   showPreviewPaneSelector
 } from '../redux/selectors';
-import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
+import { isRtlLanguage } from '../../../utils/is-rtl-language';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
@@ -26,13 +36,17 @@ interface MobileLayoutProps {
   hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
+  isDailyCodingChallenge?: boolean;
+  dailyCodingChallengeLanguage?: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage?: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   notes: string;
   preview: JSX.Element;
   onPreviewResize: () => void;
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
-  toolPanel: ReactNode;
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
@@ -40,6 +54,7 @@ interface MobileLayoutProps {
   updateUsingKeyboardInTablist: (arg0: boolean) => void;
   testOutput: JSX.Element;
   usesMultifileEditor: boolean;
+  usesTerminal: boolean;
 }
 
 const tabs = {
@@ -78,10 +93,11 @@ const mapStateToProps = createSelector(
   })
 );
 
-class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
+export class MobileLayout extends Component<
+  MobileLayoutProps,
+  MobileLayoutState
+> {
   static displayName: string;
-
-  #toolPanelGroup!: HTMLElement;
 
   state: MobileLayoutState = {
     currentTab: this.props.hasEditableBoundaries
@@ -94,52 +110,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       currentTab: tab as Tab
     });
   };
-
-  // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
-  setToolPanelPosition = (): void => {
-    // Detect the appearance of the mobile virtual keyboard.
-    if (visualViewport?.height && window.innerHeight > visualViewport.height) {
-      setTimeout(() => {
-        if (visualViewport?.height !== undefined && this.#toolPanelGroup) {
-          this.#toolPanelGroup.style.top =
-            String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
-        }
-      }, 200);
-    } else {
-      if (visualViewport?.height !== undefined) {
-        // restore the height of html element on Firefox.
-        document.documentElement.style.height = '100%';
-        if (this.#toolPanelGroup)
-          this.#toolPanelGroup.style.top =
-            String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
-      }
-    }
-  };
-
-  isMobileDevice = (): RegExpExecArray | null =>
-    /iPhone|Android.+Mobile/.exec(navigator.userAgent);
-
-  componentDidMount(): void {
-    this.#toolPanelGroup = (
-      document.getElementsByClassName(
-        'tool-panel-group-mobile'
-      ) as HTMLCollectionOf<HTMLElement>
-    )[0];
-
-    if (this.isMobileDevice()) {
-      visualViewport?.addEventListener('resize', this.setToolPanelPosition);
-      if (this.#toolPanelGroup)
-        this.#toolPanelGroup.style.top =
-          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
-    }
-  }
-
-  componentWillUnmount(): void {
-    if (this.isMobileDevice()) {
-      visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
-      document.documentElement.style.height = '100%';
-    }
-  }
 
   handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
 
@@ -158,14 +128,26 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       onPreviewResize,
       showPreviewPane,
       showPreviewPortal,
-      toolPanel,
       removePortalWindow,
       setShowPreviewPane,
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
-      usesMultifileEditor
+      usesMultifileEditor,
+      usesTerminal,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage,
+      setDailyCodingChallengeLanguage
     } = this.props;
+
+    const handleLanguageChange = (
+      language: DailyCodingChallengeLanguages
+    ): void => {
+      store.set('dailyCodingChallengeLanguage', language);
+      if (setDailyCodingChallengeLanguage) {
+        setDailyCodingChallengeLanguage(language);
+      }
+    };
 
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
@@ -206,13 +188,19 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       return portalBtnSrText;
     }
 
+    const previewTriggerText =
+      usesTerminal == false
+        ? 'learn.editor-tabs.preview'
+        : 'learn.editor-tabs.terminal';
+
     // Unlike the desktop layout the mobile version does not have an ActionRow,
     // but still needs a way to switch between the different tabs.
-
     return (
       <>
         <Tabs
           id='mobile-layout'
+          dir={isRtlLanguage ? 'rtl' : 'ltr'}
+          className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}
@@ -221,6 +209,26 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList className='nav-lists'>
+            {isDailyCodingChallenge && (
+              <Dropdown>
+                <Dropdown.Toggle
+                  className='mobile-lang-selector-toggle'
+                  id='mobile-language-selector'
+                >
+                  {dailyCodingChallengeLanguage === 'javascript'
+                    ? 'JS'
+                    : 'PY'}{' '}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <MenuItem onClick={() => handleLanguageChange('javascript')}>
+                    JavaScript
+                  </MenuItem>
+                  <MenuItem onClick={() => handleLanguageChange('python')}>
+                    Python
+                  </MenuItem>
+                </Dropdown.Menu>
+              </Dropdown>
+            )}
             {!hasEditableBoundaries && (
               <TabsTrigger value={tabs.instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
@@ -239,7 +247,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             </TabsTrigger>
             {hasPreview && (
               <TabsTrigger value={tabs.preview}>
-                {i18next.t('learn.editor-tabs.preview')}
+                {i18next.t(previewTriggerText)}
               </TabsTrigger>
             )}
           </TabsList>
@@ -306,7 +314,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               )}
             </TabsContent>
           )}
-          {!hasEditableBoundaries && toolPanel}
+          <IndependentLowerJaw />
           {hasPreview && this.state.currentTab !== 'preview' && (
             <div className='portal-button-wrap'>
               <button

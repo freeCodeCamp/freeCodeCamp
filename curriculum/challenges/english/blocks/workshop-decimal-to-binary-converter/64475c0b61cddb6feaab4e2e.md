@@ -213,7 +213,7 @@ const checkUserInput = () => {
     parseInt(numberInput.value) < 0
   ) {
     --fcc-editable-region--
-
+    
     --fcc-editable-region--
   }
 

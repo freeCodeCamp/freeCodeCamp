@@ -17,7 +17,7 @@ import { isSpeakingModalOpenSelector } from '../redux/selectors';
 import {
   SuperBlocks,
   superBlockToSpeechLang
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import {
   compareTexts,
   type ComparisonResult,
@@ -151,6 +151,7 @@ const SpeakingModal = ({
     useState<ComparisonResult | null>(null);
   const [hasStartedRecording, setHasStartedRecording] = useState(false);
   const [previouslyListening, setPreviouslyListening] = useState(false);
+  const playButtonRef = useRef<HTMLButtonElement | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const stopListeningTimeoutRef = useRef<
     ReturnType<typeof setTimeout> | undefined
@@ -162,8 +163,6 @@ const SpeakingModal = ({
     resetTranscript,
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
-
-  console.log('Speech recognition transcript:', transcript);
 
   const handleAudioEnded = useCallback(() => {
     setIsPlaying(false);
@@ -313,7 +312,12 @@ const SpeakingModal = ({
   };
 
   return (
-    <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
+    <Modal
+      onClose={closeSpeakingModal}
+      open={isSpeakingModalOpen}
+      size='large'
+      initialFocus={playButtonRef}
+    >
       <Modal.Header closeButtonClassNames='close'>
         {t('speaking-modal.heading')}
       </Modal.Header>
@@ -325,6 +329,7 @@ const SpeakingModal = ({
             {sentence}
           </p>
           <Button
+            ref={playButtonRef}
             size='medium'
             onClick={() => void handlePlay()}
             aria-describedby='speaking-sentence'

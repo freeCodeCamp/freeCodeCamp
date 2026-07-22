@@ -1,7 +1,7 @@
 import {
   DonationAmount,
   DonationDuration
-} from '../../../shared-dist/config/donation-settings';
+} from '@freecodecamp/shared/config/donation-settings';
 import { ChallengeFiles } from '../redux/prop-types';
 import TagManager from '.';
 
@@ -30,6 +30,7 @@ type DonationRelatedEventAction =
   | 'Learn Donation Alert Click'
   | 'Certification Donation Alert Click'
   | 'Modal Become Supporter Click'
+  | 'Socrates LowerJaw Become Supporter Click'
   | 'Donate Page Patreon Payment Redirection'
   | 'Modal Patreon Payment Redirection'
   | 'Amount Confirmation Clicked'
@@ -87,6 +88,32 @@ interface SignOut {
   user_id: undefined;
 }
 
+interface ChallengeTestCodeButtonClickEvent {
+  event: 'challenge_test_code_button_click';
+}
+
+interface ChallengeSubmitButtonClickEvent {
+  event: 'challenge_submit_button_click';
+}
+
+interface CallSocratesEvent {
+  event: 'call_socrates';
+  action: 'Socrates LowerJaw Button Click';
+  is_donating: boolean;
+  attempts: number | null;
+  limit: number | null;
+  optimized_request: Record<string, unknown> | null;
+}
+
+interface SendSocratesEvent {
+  event: 'send_socrates';
+  action: 'Socrates Request Sent';
+  is_donating: boolean;
+  attempts: number | null;
+  limit: number | null;
+  optimized_request: Record<string, unknown> | null;
+}
+
 export type GAevent =
   | DonationViewEvent
   | DonationEvent
@@ -96,7 +123,11 @@ export type GAevent =
   | ChallengeFailedEvent
   | UserData
   | SignOut
-  | SignIn;
+  | SignIn
+  | ChallengeTestCodeButtonClickEvent
+  | ChallengeSubmitButtonClickEvent
+  | CallSocratesEvent
+  | SendSocratesEvent;
 
 export default function callGA(payload: GAevent) {
   TagManager.dataLayer({

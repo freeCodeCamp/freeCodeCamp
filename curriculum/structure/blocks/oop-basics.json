@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "oop-basics",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "69ae9744a9e6da4eb0d5f7f6",
+      "title": "Introduction to Object-Oriented Programming"
+    },
+    {
+      "id": "69ae96daa9e6da4eb0d5f7f4",
+      "title": "Getting Started with Classes"
+    },
+    {
+      "id": "69ae96dfa9e6da4eb0d5f7f5",
+      "title": "Using Constructors"
+    }
+  ]
+}

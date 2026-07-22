@@ -55,11 +55,12 @@ assert.strictEqual(new __helpers.CSSHelp(document).getStyle('h1')?.backgroundCol
 ```
 
 ```css
---fcc-editable-region--
 h1 {
   text-align: center;
-}
 --fcc-editable-region--
+  
+--fcc-editable-region--
+}
 
 .container {
   background-color: rgb(255, 255, 255);

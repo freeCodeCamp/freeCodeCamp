@@ -7,23 +7,24 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import envData from '../../../../config/env.json';
-import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
+import { removeModuleChallenges } from '../../../redux/actions';
 import {
   BlockLayouts,
   BlockLabel as BlockLabelType
-} from '../../../../../shared-dist/config/blocks';
+} from '@freecodecamp/shared/config/blocks';
 import CheckMark from './check-mark';
 import {
   GridMapChallenges,
@@ -32,6 +33,7 @@ import {
 } from './challenges';
 import BlockLabel from './block-label';
 import BlockHeader from './block-header';
+import ResetProgressModal from './reset-progress-modal';
 
 import '../intro.css';
 import './block.css';
@@ -48,11 +50,11 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
       isExpanded,
       completedChallengeIds: completedChallenges.map(({ id }) => id)
     })
-  )(state as Record<string, unknown>);
+  )(state);
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ toggleBlock }, dispatch);
+  bindActionCreators({ toggleBlock, removeModuleChallenges }, dispatch);
 
 interface ChallengeInfo {
   id: string;
@@ -73,16 +75,32 @@ interface BlockProps {
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
+  removeModuleChallenges: typeof removeModuleChallenges;
   accordion?: boolean;
+  /**
+   * When true, expands all chapters and modules and hides those with no matching challenges.
+   * Used during search/filter.
+   */
+  expandAll?: boolean;
 }
 
-export class Block extends Component<BlockProps> {
+interface BlockState {
+  showResetModal: boolean;
+}
+
+export class Block extends Component<BlockProps, BlockState> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);
 
+    this.state = {
+      showResetModal: false
+    };
     this.handleBlockClick = this.handleBlockClick.bind(this);
-    this.handleBlockHover = this.handleBlockHover.bind(this);
+    this.handleChallengeClick = this.handleChallengeClick.bind(this);
+    this.handleResetClick = this.handleResetClick.bind(this);
+    this.handleResetConfirm = this.handleResetConfirm.bind(this);
+    this.handleResetModalClose = this.handleResetModalClose.bind(this);
   }
 
   handleBlockClick = (): void => {
@@ -91,18 +109,26 @@ export class Block extends Component<BlockProps> {
     toggleBlock(block);
   };
 
-  /*
-   * This function handles the block hover event.
-   * It also updates the URL hash to reflect the current block.
-   */
-  handleBlockHover = (): void => {
+  handleChallengeClick = (): void => {
     const { block } = this.props;
-    // Convert block to dashed format
     const dashedBlock = block
       .toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
     window.history.pushState(null, '', `#${dashedBlock}`);
+  };
+
+  handleResetClick = (): void => {
+    this.setState({ showResetModal: true });
+  };
+
+  handleResetConfirm = (removedChallengeIds: string[]): void => {
+    const { removeModuleChallenges } = this.props;
+    removeModuleChallenges({ removedChallengeIds });
+  };
+
+  handleResetModalClose = (): void => {
+    this.setState({ showResetModal: false });
   };
 
   render(): ReactNode {
@@ -111,11 +137,14 @@ export class Block extends Component<BlockProps> {
       blockLabel,
       completedChallengeIds,
       challenges,
-      isExpanded,
+      isExpanded: isExpandedProp,
       superBlock,
       t,
-      accordion = false
+      accordion = false,
+      expandAll = false
     } = this.props;
+
+    const isExpanded = expandAll || isExpandedProp;
 
     let completedCount = 0;
     let stepNumber = 0;
@@ -181,11 +210,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeListBlock = (
       <Element name={block}>
-        <div
-          className={`block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className={`block ${isExpanded ? 'open' : ''}`}>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockLabel && <BlockLabel blockLabel={blockLabel} />}
@@ -224,7 +249,12 @@ export class Block extends Component<BlockProps> {
               </span>
             </div>
           </button>
-          {isExpanded && <ChallengesList challenges={extendedChallenges} />}
+          {isExpanded && (
+            <ChallengesList
+              challenges={extendedChallenges}
+              onChallengeClick={this.handleChallengeClick}
+            />
+          )}
         </div>
       </Element>
     );
@@ -236,11 +266,7 @@ export class Block extends Component<BlockProps> {
      */
     const ProjectListBlock = (
       <Element name={block}>
-        <div
-          className='block'
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className='block'>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockLabel && <BlockLabel blockLabel={blockLabel} />}
@@ -255,7 +281,10 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          <ChallengesList challenges={extendedChallenges} />
+          <ChallengesList
+            challenges={extendedChallenges}
+            onChallengeClick={this.handleChallengeClick}
+          />
         </div>
       </Element>
     );
@@ -267,11 +296,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeGridBlock = (
       <Element name={block}>
-        <div
-          className={`block block-grid ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
@@ -284,6 +309,8 @@ export class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={!accordion ? blockIntroArr : undefined}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -305,6 +332,7 @@ export class Block extends Component<BlockProps> {
                   challenges={extendedChallenges}
                   isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
+                  onChallengeClick={this.handleChallengeClick}
                 />
               </div>
             </>
@@ -333,6 +361,8 @@ export class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={!accordion ? blockIntroArr : undefined}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -353,6 +383,7 @@ export class Block extends Component<BlockProps> {
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
                   jumpLink={!accordion}
+                  onChallengeClick={this.handleChallengeClick}
                 />
               </div>
             </>
@@ -368,11 +399,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyLinkBlock = (
       <Element name={block}>
-        <div
-          className='block block-grid grid-project-block'
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}
@@ -394,9 +421,7 @@ export class Block extends Component<BlockProps> {
             <h3 className='block-grid-title'>
               <Link
                 className='block-header'
-                onClick={() => {
-                  this.handleBlockClick();
-                }}
+                onClick={this.handleChallengeClick}
                 to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
@@ -423,8 +448,6 @@ export class Block extends Component<BlockProps> {
         </Element>
         <div
           className={`block block-grid block-grid-no-border challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
@@ -437,6 +460,8 @@ export class Block extends Component<BlockProps> {
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
             accordion={accordion}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -461,9 +486,13 @@ export class Block extends Component<BlockProps> {
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
                     jumpLink={false}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 ) : (
-                  <ChallengesList challenges={extendedChallenges} />
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    onChallengeClick={this.handleChallengeClick}
+                  />
                 )}
               </div>
             </div>
@@ -477,8 +506,6 @@ export class Block extends Component<BlockProps> {
         </Element>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
@@ -492,6 +519,8 @@ export class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={blockIntroArr}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -516,9 +545,13 @@ export class Block extends Component<BlockProps> {
                     challenges={extendedChallenges}
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 ) : (
-                  <ChallengesList challenges={extendedChallenges} />
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    onChallengeClick={this.handleChallengeClick}
+                  />
                 )}
               </div>
             </div>
@@ -539,11 +572,14 @@ export class Block extends Component<BlockProps> {
           completedCount={completedCount}
           courseCompletionStatus={courseCompletionStatus()}
           handleClick={this.handleBlockClick}
+          onLinkClick={this.handleChallengeClick}
           isCompleted={isBlockCompleted}
           isExpanded={isExpanded}
           percentageCompleted={percentageCompleted}
           accordion={accordion}
           blockUrl={challenges?.[0]?.fields?.slug ?? ''}
+          isResetDisabled={completedCount === 0}
+          onResetClick={this.handleResetClick}
         />
       </>
     );
@@ -566,6 +602,14 @@ export class Block extends Component<BlockProps> {
           {!chapterBasedSuperBlocks.includes(superBlock) && (
             <Spacer size='xs' />
           )}
+          <ResetProgressModal
+            blockTitle={blockTitle}
+            blockDashedName={block}
+            superBlock={superBlock}
+            show={this.state.showResetModal}
+            onHide={this.handleResetModalClose}
+            onResetComplete={this.handleResetConfirm}
+          />
         </>
       )
     );

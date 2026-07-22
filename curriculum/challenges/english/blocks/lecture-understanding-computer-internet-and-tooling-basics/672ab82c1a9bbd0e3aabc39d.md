@@ -21,7 +21,9 @@ While prices for these devices can vary and may be a costly purchase for your cu
 
 Another tip is to keep your mouse the same height as your keyboard. You don't want to have to reach up or down to use the mouse, as this can strain your wrist and arm muscles over time.
 
-You also want to be mindful of your overall posture when sitting at the computer for hours on end. Being slouched over your computer and putting your wrist in an unnatural position at the keyboard will lead to long-term health issues. So, you want to make sure to sit up straight when working at your computer and maintain a healthy and natural wrist position.
+You also want to be mindful of your overall posture when sitting at the computer for long periods. Being slouched over your computer and putting your wrists in an unnatural position at the keyboard can lead to long-term health issues.
+
+While maintaining good posture is important, modern ergonomics emphasizes the importance of movement and dynamic sitting. The human body is designed for movement, and staying in any fixed position, even a straight one, for too long can place continuous pressure on the spine. Taking regular breaks, adjusting your position throughout the day, and maintaining a natural wrist position can help improve circulation, reduce fatigue, and support long-term spinal health.
 
 The last tip would be to use keyboard shortcuts whenever possible to help minimize typing. There are dozens of shortcuts available for tasks such as navigating the web, navigating around your operating system, working within a code editor, and more. So, it’s best to research some of these keyboard shortcuts and start incorporating them into your daily computer usage.
 

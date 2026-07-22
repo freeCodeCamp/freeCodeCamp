@@ -6,7 +6,7 @@ import { Element } from 'react-scroll';
 import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
-import { regenerateMissingProperties } from '../../../../shared-dist/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -17,16 +17,16 @@ import { FullWidthRow, Link } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
-  certSlugTypeMap,
   currentCertifications,
+  isCertified,
   legacyCertifications,
-  upcomingCertifications
-} from '../../../../shared-dist/config/certification-settings';
+  upcomingCertifications,
+  type CertificationFlags
+} from '@freecodecamp/shared/config/certification-settings';
 import env from '../../../config/env.json';
 
 import type {
   ChallengeData,
-  ClaimedCertifications,
   CompletedChallenge,
   GeneratedExamResults,
   User
@@ -43,67 +43,6 @@ const mapDispatchToProps = {
   openModal
 };
 
-const createCertifiedMap = ({
-  is2018DataVisCert,
-  isA2EnglishCert,
-  isApisMicroservicesCert,
-  isJavascriptCertV9,
-  isJsAlgoDataStructCert,
-  isInfosecQaCert,
-  isQaCertV7,
-  isInfosecCertV7,
-  isFrontEndLibsCert,
-  isRespWebDesignCert,
-  isRespWebDesignCertV9,
-  isDataVisCert,
-  isFrontEndCert,
-  isBackEndCert,
-  isSciCompPyCertV7,
-  isDataAnalysisPyCertV7,
-  isMachineLearningPyCertV7,
-  isRelationalDatabaseCertV8,
-  isCollegeAlgebraPyCertV8,
-  isFoundationalCSharpCertV8,
-  isJsAlgoDataStructCertV8
-}: ClaimedCertifications): Record<
-  Exclude<Certification, Certification.LegacyFullStack>,
-  boolean
-> => ({
-  [Certification.RespWebDesign]: isRespWebDesignCert,
-  [Certification.JsAlgoDataStruct]: isJsAlgoDataStructCert,
-  [Certification.FrontEndDevLibs]: isFrontEndLibsCert,
-  [Certification.DataVis]: is2018DataVisCert,
-  [Certification.BackEndDevApis]: isApisMicroservicesCert,
-  [Certification.QualityAssurance]: isQaCertV7,
-  [Certification.InfoSec]: isInfosecCertV7,
-  [Certification.SciCompPy]: isSciCompPyCertV7,
-  [Certification.DataAnalysisPy]: isDataAnalysisPyCertV7,
-  [Certification.MachineLearningPy]: isMachineLearningPyCertV7,
-  [Certification.RelationalDb]: isRelationalDatabaseCertV8,
-  [Certification.CollegeAlgebraPy]: isCollegeAlgebraPyCertV8,
-  [Certification.FoundationalCSharp]: isFoundationalCSharpCertV8,
-  [Certification.LegacyFrontEnd]: isFrontEndCert,
-  [Certification.LegacyDataVis]: isDataVisCert,
-  [Certification.LegacyBackEnd]: isBackEndCert,
-  [Certification.LegacyInfoSecQa]: isInfosecQaCert,
-  // LegacyFullStack cannot be handled by this because there are no projects to
-  // be rendered. The new FullStackDeveloper certification is a normal
-  // certification with projects.
-  [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
-  [Certification.JsV9]: isJavascriptCertV9,
-  [Certification.FrontEndDevLibsV9]: false,
-  [Certification.PythonV9]: false,
-  [Certification.RelationalDbV9]: false,
-  [Certification.BackEndDevApisV9]: false,
-  [Certification.FullStackDeveloperV9]: false,
-  [Certification.A2English]: isA2EnglishCert,
-  [Certification.B1English]: false,
-  [Certification.A2Spanish]: false,
-  [Certification.A2Chinese]: false,
-  [Certification.A1Chinese]: false,
-  [Certification.JsAlgoDataStructNew]: isJsAlgoDataStructCertV8
-});
-
 const honestyInfoMessage = {
   type: 'info',
   message: FlashMessages.HonestFirst
@@ -114,7 +53,7 @@ type CertificationSettingsProps = {
   t: TFunction;
   verifyCert: typeof verifyCert;
   openModal: typeof openModal;
-} & ClaimedCertifications &
+} & CertificationFlags &
   Pick<User, 'completedChallenges' | 'isHonest' | 'username'>;
 
 const LegacyFullStack = (props: CertificationSettingsProps) => {
@@ -145,8 +84,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
   const certLocation = `/certification/${username}/${certSlug}`;
 
   const handleClaim =
-    (certSlug: keyof typeof certSlugTypeMap) =>
-    (e: MouseEvent<HTMLButtonElement>) => {
+    (certSlug: Certification) => (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
 
       return isHonest
@@ -239,7 +177,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
   const handleSolutionModalHide = () => initialiseState();
 
-  const isCertifiedMap = createCertifiedMap(props);
   const getProjectSolution = (projectId: string, projectTitle: string) => {
     const { completedChallenges, openModal } = props;
     const completedProject = find(
@@ -276,7 +213,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
     const showExamResults = () => {
       setProjectTitle(projectTitle);
-      setExamResults(examResults as GeneratedExamResults);
+      setExamResults(examResults);
       openModal('examResults');
     };
 
@@ -317,7 +254,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
               <tbody>
                 <ProjectsFor
                   certSlug={certSlug}
-                  isCert={isCertifiedMap[certSlug]}
+                  isCert={isCertified(props, certSlug)}
                 />
               </tbody>
             </Table>

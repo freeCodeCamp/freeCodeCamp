@@ -1,0 +1,11 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-scatterplot-graph",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "bd7178d8c242eddfaeb5bd13", "title": "Build a Scatterplot Graph" }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

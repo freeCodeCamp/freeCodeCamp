@@ -14,6 +14,10 @@ export const reportUser = {
         email: Type.String()
       })
     }),
+    403: Type.Object({
+      type: Type.Literal('danger'),
+      message: Type.Literal('flash.report-error')
+    }),
     404: Type.Object({
       type: Type.Literal('danger'),
       message: Type.Literal('flash.report-error')

@@ -14,7 +14,8 @@ import {
   SupportBenefitsText,
   CurrentInitiativesText,
   CommunityAchievementsText,
-  GetSupporterBenefitsText
+  GetSupporterBenefitsText,
+  DonationPolicyDisclaimer
 } from '../components/Donation/donation-text-components';
 import { Loader } from '../components/helpers';
 import {
@@ -22,7 +23,7 @@ import {
   userSelector,
   donationFormStateSelector
 } from '../redux/selectors';
-import { PaymentContext } from '../../../shared-dist/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import { DonateFormState } from '../redux/types';
 import callGA from '../analytics/call-ga';
 import type { User } from '../redux/prop-types';
@@ -81,9 +82,12 @@ function DonatePage({
               </Col>
               <Col lg={6} lgOffset={0} md={8} mdOffset={1} sm={12}>
                 {!isDonating || donationFormState.success ? (
-                  <MultiTierDonationForm
-                    paymentContext={PaymentContext.DonatePage}
-                  />
+                  <>
+                    <MultiTierDonationForm
+                      paymentContext={PaymentContext.DonatePage}
+                    />
+                    <DonationPolicyDisclaimer />
+                  </>
                 ) : null}
               </Col>
             </Row>

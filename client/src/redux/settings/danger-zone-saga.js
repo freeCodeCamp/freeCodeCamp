@@ -17,9 +17,13 @@ function* deleteAccountSaga() {
         message: FlashMessages.AccountDeleted
       })
     );
-    // remove current user information from application state
+    // Navigate before signing out, since /settings will attempt to sign users
+    // back in if resetUserData fires while still on /settings.
+    void navigate('/learn');
+    // Wait for Gatsby to complete the route transition before clearing user
+    // data, ensuring /settings is unmounted and won't re-authenticate.
+    yield take(appTypes.routeUpdated);
     yield put(resetUserData());
-    yield call(navigate, '/learn');
   } catch (e) {
     yield put(deleteAccountError(e));
   }

@@ -24,6 +24,10 @@ What should Anna say to agree with Bob?
 
 `I don't understand.`
 
+### --audio-id--
+
+ENd6da13d0
+
 ### --feedback--
 
 This phrase suggests confusion, but Anna needs to show agreement with Bob's idea.
@@ -31,6 +35,10 @@ This phrase suggests confusion, but Anna needs to show agreement with Bob's idea
 ---
 
 `That makes sense.`
+
+### --audio-id--
+
+ENc50c4990
 
 ## --video-solution--
 
@@ -40,9 +48,9 @@ This phrase suggests confusion, but Anna needs to show agreement with Bob's idea
 
 `That makes sense` is a natural way to show agreement. People use this phrase in conversations when they accept or understand a suggestion. For example:
 
-- Person 1: `We should optimize the code before adding new features to avoid performance issues.`
+- **Developer:** `We should optimize the code before adding new features to avoid performance issues.`
 
-- Person 2: `That makes sense. A slow app will frustrate users.` - This person agrees and understands why optimizing the code first is a good idea.
+- **Manager:** `That makes sense. A slow app will frustrate users.` - This person agrees and understands why optimizing the code first is a good idea.
 
 # --scene--
 

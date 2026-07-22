@@ -6,7 +6,7 @@ import {
   actionTypes as challengeTypes,
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
-import { getIsDailyCodingChallenge } from '../../../shared-dist/config/challenge-types';
+import { getIsDailyCodingChallenge } from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
@@ -49,7 +49,8 @@ export const defaultDonationFormState = {
   }
 };
 
-const initialState = {
+// exported for testing purposes.
+export const initialState = {
   isRandomCompletionThreshold: false,
   donatableSectionRecentlyCompleted: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
@@ -63,10 +64,6 @@ const initialState = {
   user: { sessionUser: null, otherUser: null },
   userFetchState: {
     ...defaultFetchState
-  },
-  allChallengesInfo: {
-    challengeNodes: [],
-    certificateNodes: []
   },
   userProfileFetchState: {
     ...defaultFetchState
@@ -168,10 +165,6 @@ export const reducer = handleActions(
       ...state,
       donationFormState: { ...defaultDonationFormState, error: payload }
     }),
-    [actionTypes.updateAllChallengesInfo]: (state, { payload }) => ({
-      ...state,
-      allChallengesInfo: { ...payload }
-    }),
     [actionTypes.fetchUser]: state => ({
       ...state,
       userFetchState: { ...defaultFetchState }
@@ -271,6 +264,33 @@ export const reducer = handleActions(
       ...state,
       isRandomCompletionThreshold: payload
     }),
+    [actionTypes.removeModuleChallenges]: (
+      state,
+      { payload: { removedChallengeIds } }
+    ) => {
+      const removedSet = new Set(removedChallengeIds);
+      const sessionUser = state.user.sessionUser;
+      if (!sessionUser) return state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: {
+            ...sessionUser,
+            completedChallenges: sessionUser.completedChallenges.filter(
+              c => !removedSet.has(c.id)
+            ),
+            savedChallenges: sessionUser.savedChallenges.filter(
+              c => !removedSet.has(c.id)
+            ),
+            partiallyCompletedChallenges:
+              sessionUser.partiallyCompletedChallenges.filter(
+                c => !removedSet.has(c.id)
+              )
+          }
+        }
+      };
+    },
     [actionTypes.resetUserData]: state => ({
       ...state,
       user: { ...state.user, sessionUser: null }
@@ -490,11 +510,17 @@ export const reducer = handleActions(
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyKeyboardShortcutsComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyClassroomModeComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyHonestyComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyQuincyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMySocratesComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyPortfolioComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyExperienceComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.resetMyEditorLayoutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

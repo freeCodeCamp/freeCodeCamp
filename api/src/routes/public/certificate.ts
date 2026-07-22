@@ -8,7 +8,7 @@ import {
   certToIdMap,
   completionHours,
   oldDataVizId
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 import {
   getFallbackFullStackDate,
   isKnownCertSlug
@@ -33,12 +33,14 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.certSlug
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
       const username = req.params.username.toLowerCase();
       const certSlug = req.params.certSlug;
 
       if (!isKnownCertSlug(certSlug)) {
-        logger.warn(`Unknown certSlug: ${certSlug}`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'unknown_cert_slug' }
+        });
+        req.log.warn({ certSlug }, 'Unknown certSlug');
         void reply.code(404);
         return reply.send({
           messages: [
@@ -54,7 +56,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const certType = certSlugTypeMap[certSlug];
       const certId = certToIdMap[certSlug];
       const certTitle = certToTitleMap[certSlug];
-      const completionTime = completionHours[certType] || 300;
+      const completionTime = completionHours[certSlug] || 300;
       const user = await fastify.prisma.user.findFirst({
         where: { username },
         select: {
@@ -74,14 +76,23 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           is2018DataVisCert: true,
           isApisMicroservicesCert: true,
           isInfosecQaCert: true,
+          isPythonCertV9: true,
           isQaCertV7: true,
           isInfosecCertV7: true,
           isSciCompPyCertV7: true,
           isDataAnalysisPyCertV7: true,
           isMachineLearningPyCertV7: true,
           isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isFoundationalCSharpCertV8: true,
+          isFrontEndLibsCertV9: true,
+          isBackEndDevApisCertV9: true,
+          isFullStackDeveloperCertV9: true,
+          isB1EnglishCert: true,
+          isA2SpanishCert: true,
+          isA2ChineseCert: true,
+          isA1ChineseCert: true,
           isHonest: true,
           username: true,
           name: true,
@@ -91,7 +102,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (user === null) {
-        logger.info(`User ${username} not found.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'user_not_found' }
+        });
+        req.log.debug({ username }, 'User not found');
         return reply.send({
           messages: [
             {
@@ -104,7 +118,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user.isCheater || user.isBanned) {
-        logger.info(`User ${username} is banned or a cheater.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'user_ineligible' }
+        });
+        req.log.debug({ username }, 'User is banned or a cheater');
         return reply.send({
           messages: [
             {
@@ -116,7 +133,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.isHonest) {
-        logger.info(`User ${username} has not accepted honesty policy.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'not_honest' }
+        });
+        req.log.debug({ username }, 'User has not accepted honesty policy');
         return reply.send({
           messages: [
             {
@@ -129,7 +149,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (user.profileUI?.isLocked) {
-        logger.info(`User ${username} has a locked profile.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'profile_locked' }
+        });
+        req.log.debug({ username }, 'User has a locked profile');
         return reply.send({
           messages: [
             {
@@ -142,7 +165,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.name) {
-        logger.info(`User ${username} has not added a name.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'missing_name' }
+        });
+        req.log.debug({ username }, 'User has not added a name');
         return reply.send({
           messages: [
             {
@@ -154,7 +180,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.profileUI?.showCerts) {
-        logger.info(`User ${username} has private certs.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'certs_private' }
+        });
+        req.log.debug({ username }, 'User has private certs');
         return reply.send({
           messages: [
             {
@@ -167,7 +196,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user.profileUI?.showTimeLine) {
-        logger.info(`User ${username} has private timeline.`);
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'timeline_private' }
+        });
+        req.log.debug({ username }, 'User has private timeline');
         return reply.send({
           messages: [
             {
@@ -180,8 +212,12 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user[certType]) {
-        logger.info(
-          `User ${username} has not completed the ${certTitle} certification.`
+        fastify.Sentry?.metrics?.count('certificate.public_view_blocked', 1, {
+          attributes: { reason: 'cert_not_completed' }
+        });
+        req.log.debug(
+          { username, certTitle },
+          'User has not completed the certification'
         );
         return reply.send({
           messages: [
@@ -225,7 +261,10 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const { name } = user;
 
       if (!user.profileUI.showName) {
-        logger.info(`User ${username} has private name.`);
+        req.log.debug({ username }, 'User has private name');
+        fastify.Sentry?.metrics?.count('certificate.public_viewed', 1, {
+          attributes: { certSlug, nameVisibility: 'hidden' }
+        });
         void reply.code(200);
         return reply.send({
           certSlug,
@@ -236,6 +275,9 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         });
       }
 
+      fastify.Sentry?.metrics?.count('certificate.public_viewed', 1, {
+        attributes: { certSlug, nameVisibility: 'shown' }
+      });
       void reply.code(200);
       return reply.send({
         certSlug,

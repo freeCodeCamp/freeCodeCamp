@@ -1,6 +1,6 @@
 import type { FastifyPluginCallback } from 'fastify';
 
-import { getRedirectParams } from '../../utils/redirection.js';
+import { signout } from '../../schemas.js';
 
 /**
  * Route handler for signing out.
@@ -15,13 +15,18 @@ export const signoutRoute: FastifyPluginCallback = (
   _options,
   done
 ) => {
-  fastify.get('/signout', async (req, reply) => {
-    const logger = fastify.log.child({ req, res: reply });
+  fastify.get(
+    '/signout',
+    {
+      schema: signout
+    },
+    async (req, reply) => {
+      void reply.clearOurCookies();
+      fastify.Sentry?.metrics?.count('auth.signed_out', 1);
+      req.log.info({ audit: true }, 'User signed out');
 
-    void reply.clearOurCookies();
-    logger.info('User signed out');
-    const { returnTo } = getRedirectParams(req);
-    await reply.redirect(returnTo);
-  });
+      await reply.send({});
+    }
+  );
   done();
 };

@@ -96,7 +96,7 @@ function App() {
 export default App;
 ```
 
-The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function runs any time it runs, even when you don't increase the `num` state variable.
+The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function run any time it runs, even when you don't increase the `num` state variable.
 
 To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency:
 
@@ -124,9 +124,7 @@ function ExpensiveSquare({ num }) {
 export default ExpensiveSquare;
 ```
 
-This will make sure the function is memoized by caching the result, so calculation happens only when the `num` variable changes, not when anything changes in the component it's being used in.
-
-The `calculateSquare` function call is not running any time `timer` changes anymore but on the initial render and when `num` changes.
+This will make sure the function is memoized by caching the result. Even though the `ExpensiveSquare` component still re-renders every time the parent's `timer` state updates, the `calculateSquare` computation only re-runs on the initial render and when `num` changes.
 
 # --questions--
 

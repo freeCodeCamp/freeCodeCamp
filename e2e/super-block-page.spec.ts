@@ -5,11 +5,11 @@ test.describe('Super Block Page - Authenticated User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test.describe('Super Block in List View', () => {
@@ -32,7 +32,7 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -51,7 +51,7 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -66,13 +66,13 @@ test.describe('Super Block Page - Authenticated User', () => {
       // The first block is expanded by default
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'false');
 
@@ -90,13 +90,13 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
         })
       ).toHaveAttribute('aria-expanded', 'false');
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -128,14 +128,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Module
       await expect(
         page.getByRole('button', {
-          name: 'Basic CSS'
+          name: /^Basic CSS/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Block
       await expect(
         page.getByRole('button', {
-          name: 'Design a Cafe Menu'
+          name: /^Design a Cafe Menu/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -160,14 +160,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Basic HTML module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /^Basic HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: 'Understanding HTML Attributes'
+          name: /^Understanding HTML Attributes/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -187,14 +187,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /^Basic HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: 'Build a Curriculum Outline'
+          name: /^Build a Curriculum Outline/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -218,7 +218,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Cat Blog Page block
       await expect(
         page.getByRole('button', {
-          name: 'Build a Cat Blog Page'
+          name: /^Build a Cat Blog Page/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -236,7 +236,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -244,7 +244,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Greetings in your First Day at the Office'
+          name: /^Learn Greetings in your First Day at the Office/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -264,16 +264,86 @@ test.describe('Super Block Page - Unauthenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /^Basic HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: 'Build a Curriculum Outline'
+          name: /^Build a Curriculum Outline/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
+  });
+});
+
+test.describe('Super Block Page - Search Lessons', () => {
+  test('should filter and restore blocks on a block-based superblock', async ({
+    page
+  }) => {
+    const searchTerm = '401';
+
+    await page.goto('/learn/project-euler/');
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).toBeVisible();
+
+    await page
+      .getByRole('searchbox', { name: /Search lessons/i })
+      .fill(searchTerm);
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 401 to 480' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(
+        new RegExp(`showing .+ matching lessons for "${searchTerm}"`, 'i')
+      )
+    ).toBeVisible();
+
+    await page.getByRole('button', { name: 'Clear search terms' }).click();
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).toBeVisible();
+  });
+
+  test('should filter blocks and auto-expand matching modules on a chapter-based superblock', async ({
+    page
+  }) => {
+    const searchTerm = 'Greeting Bot';
+
+    await page.goto('/learn/javascript-v9/');
+
+    await expect(
+      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+    ).toBeVisible();
+
+    await page
+      .getByRole('searchbox', { name: /Search lessons/i })
+      .fill(searchTerm);
+
+    await expect(
+      page.getByRole('heading', { name: 'Build a Greeting Bot' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(
+        new RegExp(`showing .+ matching lessons for "${searchTerm}"`, 'i')
+      )
+    ).toBeVisible();
+
+    await page.getByRole('button', { name: 'Clear search terms' }).click();
+
+    await expect(
+      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+    ).toBeVisible();
   });
 });

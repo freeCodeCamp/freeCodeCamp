@@ -8,6 +8,7 @@ import {
   visibleEditorsSelector
 } from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
+import { isRtlLanguage } from '../../../utils/is-rtl-language';
 import './editor.css';
 import Editor, { type EditorProps } from './editor';
 
@@ -19,6 +20,7 @@ export type VisibleEditors = {
   indexts?: boolean;
   indextsx?: boolean;
   mainpy?: boolean;
+  tsconfigjson?: boolean;
 };
 type MultifileEditorProps = Pick<
   EditorProps,
@@ -37,7 +39,6 @@ type MultifileEditorProps = Pick<
   | 'description'
   // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
-  | 'showIndependentLowerJaw'
 > & {
   visibleEditors: VisibleEditors;
 };
@@ -72,11 +73,11 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       indexts,
       indexjsx,
       indextsx,
-      mainpy
+      mainpy,
+      tsconfigjson
     },
     usesMultifileEditor,
-    showProjectPreview,
-    showIndependentLowerJaw
+    showProjectPreview
   } = props;
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
@@ -102,6 +103,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
+  if (tsconfigjson) editorKeys.push('tsconfigjson');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
@@ -110,6 +112,10 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       return [...acc, `${key}-splitter`, key];
     }
   }, []);
+
+  if (isRtlLanguage) {
+    editorAndSplitterKeys.reverse();
+  }
 
   return (
     <ReflexContainer
@@ -151,7 +157,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
-                    showIndependentLowerJaw={showIndependentLowerJaw}
                   />
                 </ReflexElement>
               );

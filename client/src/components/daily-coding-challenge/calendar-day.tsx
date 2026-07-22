@@ -1,52 +1,48 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '@freecodecamp/ui';
 import { Link } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
 import JavaScriptIcon from '../../assets/icons/javascript';
 import PythonIcon from '../../assets/icons/python';
-import { formatDisplayDate } from './helpers';
+import { formatDisplayDate, toMonthDay, truncate } from './helpers';
 
 interface CalendarDayProps {
   dayNumber: number;
-  date?: string;
+  date: string;
   challengeNumber?: number;
   completedLanguages?: string[];
   isAvailable?: boolean;
   title?: string;
 }
 
-function Checkmark({ completed }: { completed: boolean }): JSX.Element {
-  return completed ? (
+function Checkmark({ isCompleted }: { isCompleted: boolean }) {
+  return isCompleted ? (
     <span
-      className='dc-checkmark dc-small-checkmark completed'
+      className='dc-checkmark completed'
       data-playwright-test-label='calendar-day-completed'
     >
       <GreenPass />
     </span>
   ) : (
     <span
-      className='dc-checkmark dc-small-checkmark not-completed'
+      className='dc-checkmark not-completed'
       data-playwright-test-label='calendar-day-not-completed'
     >
       <GreenNotCompleted />
     </span>
   );
 }
-
 function DailyCodingChallengeCalendarDay({
   dayNumber,
   date,
   isAvailable = false,
-  title,
+  title = '',
   completedLanguages = [],
   challengeNumber
 }: CalendarDayProps): JSX.Element {
   const { t } = useTranslation();
-
-  // dayNumber = 0 -> render nothing
-  if (dayNumber === 0) return <div></div>;
+  const completed = completedLanguages.length > 0;
 
   if (!isAvailable)
     return (
@@ -54,7 +50,7 @@ function DailyCodingChallengeCalendarDay({
         disabled
         className='calendar-day not-available'
         data-playwright-test-label='calendar-day'
-        aria-label={`${date && formatDisplayDate(date)}, (${t('aria.not-available')})`}
+        aria-label={`${formatDisplayDate(date)}, (${t('aria.not-available')})`}
       >
         <span className='calendar-day-number' aria-hidden='true'>
           {dayNumber}
@@ -65,49 +61,38 @@ function DailyCodingChallengeCalendarDay({
   // isAvailable -> render link to challenge
   return (
     <Link
-      to={`/learn/daily-coding-challenge/${date}`}
+      to={`/learn/daily-coding-challenge/${toMonthDay(date)}`}
       className='calendar-day available'
       data-playwright-test-label='calendar-day'
-      aria-label={`${date && formatDisplayDate(date)}`}
+      aria-label={formatDisplayDate(date)}
     >
       <span className='calendar-day-number' aria-hidden='true'>
         {dayNumber}
       </span>
 
-      <div className='dc-number'>#{challengeNumber}</div>
+      <span className='dc-number'>#{challengeNumber}</span>
 
       <div className='dc-info'>
-        <div className='dc-title'>{title}</div>
+        <div className='dc-title-wrap'>
+          <div className='dc-title'>{truncate(title)}</div>
+        </div>
 
-        {completedLanguages.length === 2 ? (
-          <span className='dc-checkmark dc-big-checkmark completed'>
-            <span className='dc-spacer'>
-              <Spacer size='s' />
-            </span>
-            <GreenPass />
-          </span>
-        ) : (
-          <div className='dc-languages'>
-            <hr />
-            <div className='dc-language'>
-              <div className='dc-language-icon'>
-                <JavaScriptIcon />
-              </div>
-              <div className='dc-language-name'>JavaScript</div>
-              <Checkmark
-                completed={completedLanguages.includes('javascript')}
-              />
-            </div>
+        <Checkmark isCompleted={completed} />
 
-            <div className='dc-language'>
-              <div className='dc-language-icon'>
-                <PythonIcon />
-              </div>
-              <div className='dc-language-name'>Python</div>
-              <Checkmark completed={completedLanguages.includes('python')} />
+        <div className='dc-languages'>
+          {completedLanguages.includes('javascript') && (
+            <div className='dc-language-icon'>
+              <JavaScriptIcon />
+              <span className='sr-only'>JavaScript</span>
             </div>
-          </div>
-        )}
+          )}
+          {completedLanguages.includes('python') && (
+            <div className='dc-language-icon'>
+              <PythonIcon />
+              <span className='sr-only'>Python</span>
+            </div>
+          )}
+        </div>
       </div>
     </Link>
   );
