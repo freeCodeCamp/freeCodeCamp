@@ -140,7 +140,7 @@ exports.createChallengePages = function (
   };
 };
 
-// TODO: figure out a cleaner way to get the last challenge in a block.
+
 function getProjectPreviewConfig(challenge, allChallengeNodes) {
   const { block } = challenge;
 
