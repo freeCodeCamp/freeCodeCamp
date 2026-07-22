@@ -122,6 +122,13 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return 404 for a date without a challenge', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest(
         `/daily-coding-challenge/date/${twoDaysAgoDateParam}`,
         {
@@ -134,9 +141,21 @@ describe('/daily-coding-challenge', () => {
         type: 'error',
         message: 'Challenge not found.'
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+        attributes: { route: '/daily-coding-challenge/date/:date' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should return a challenge for a valid date', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest(
         `/daily-coding-challenge/date/${todayDateParam}`,
         {
@@ -149,6 +168,11 @@ describe('/daily-coding-challenge', () => {
         ...todaysChallenge,
         date: todaysChallenge.date.toISOString()
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_viewed', 1, {
+        attributes: { route: '/daily-coding-challenge/date/:date' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should not return a challenge for a future date relative to US Central', async () => {
@@ -177,6 +201,13 @@ describe('/daily-coding-challenge', () => {
     });
 
     it("should return today's challenge", async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest('/daily-coding-challenge/today', {
         method: 'GET'
       }).send({});
@@ -186,10 +217,22 @@ describe('/daily-coding-challenge', () => {
         ...todaysChallenge,
         date: todaysChallenge.date.toISOString()
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_viewed', 1, {
+        attributes: { route: '/daily-coding-challenge/today' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should return 404 when no challenge exists for today', async () => {
       await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
+
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
 
       const res = await superRequest('/daily-coding-challenge/today', {
         method: 'GET'
@@ -200,6 +243,11 @@ describe('/daily-coding-challenge', () => {
         type: 'error',
         message: 'Challenge not found.'
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+        attributes: { route: '/daily-coding-challenge/today' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
   });
 
@@ -234,6 +282,13 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return two challenges on the second day of the month', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest(`/daily-coding-challenge/month/2025-10`, {
         method: 'GET'
       }).send({});
@@ -256,6 +311,11 @@ describe('/daily-coding-challenge', () => {
 
       expect(res.body).toEqual(expectedResponse);
       expect(res.status).toBe(200);
+      expect(count).toHaveBeenCalledWith('dcc.challenge_viewed', 1, {
+        attributes: { route: '/daily-coding-challenge/month/:month' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should return one challenge on the first day of the month', async () => {
@@ -280,6 +340,13 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return 404 when no challenges exist for the given month', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest('/daily-coding-challenge/month/2024-01', {
         method: 'GET'
       }).send({});
@@ -289,6 +356,11 @@ describe('/daily-coding-challenge', () => {
         type: 'error',
         message: 'No challenges found.'
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+        attributes: { route: '/daily-coding-challenge/month/:month' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
   });
 
@@ -304,6 +376,13 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return { _id, date, challengeNumber, title } for all challenges up to today US Central', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest('/daily-coding-challenge/all', {
         method: 'GET'
       }).send({});
@@ -329,10 +408,22 @@ describe('/daily-coding-challenge', () => {
 
       expect(res.body).toHaveLength(2);
       expect(res.body).toEqual(expectedResponse);
+      expect(count).toHaveBeenCalledWith('dcc.challenge_viewed', 1, {
+        attributes: { route: '/daily-coding-challenge/all' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should return 404 when no challenges exist', async () => {
       await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
+
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
 
       const res = await superRequest('/daily-coding-challenge/all', {
         method: 'GET'
@@ -343,6 +434,11 @@ describe('/daily-coding-challenge', () => {
         type: 'error',
         message: 'No challenges found.'
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+        attributes: { route: '/daily-coding-challenge/all' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
   });
 
@@ -358,6 +454,13 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return { date } of the newest challenge in the database', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const res = await superRequest('/daily-coding-challenge/newest', {
         method: 'GET'
       }).send({});
@@ -366,10 +469,22 @@ describe('/daily-coding-challenge', () => {
       expect(res.body).toEqual({
         date: tomorrowsChallenge.date.toISOString()
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_viewed', 1, {
+        attributes: { route: '/daily-coding-challenge/newest' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     it('should return 404 when no challenges exist', async () => {
       await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
+
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
 
       const res = await superRequest('/daily-coding-challenge/newest', {
         method: 'GET'
@@ -380,6 +495,153 @@ describe('/daily-coding-challenge', () => {
         type: 'error',
         message: 'No challenges found.'
       });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+        attributes: { route: '/daily-coding-challenge/newest' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+  });
+
+  describe('Sentry Issue reporting', () => {
+    afterEach(() => {
+      vi.restoreAllMocks();
+    });
+
+    it('captures unexpected errors when getting a challenge by date', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest(
+        `/daily-coding-challenge/date/${todayDateParam}`,
+        { method: 'GET' }
+      ).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('dcc.request_failed', 1, {
+        attributes: { route: '/daily-coding-challenge/date/:date' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it("captures unexpected errors when getting today's challenge", async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/today', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('dcc.request_failed', 1, {
+        attributes: { route: '/daily-coding-challenge/today' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('captures unexpected errors when getting a month of challenges', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findMany'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/month/2025-10', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('dcc.request_failed', 1, {
+        attributes: { route: '/daily-coding-challenge/month/:month' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('captures unexpected errors when getting all challenges', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findMany'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/all', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('dcc.request_failed', 1, {
+        attributes: { route: '/daily-coding-challenge/all' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('captures unexpected errors when getting the newest challenge', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      vi.spyOn(
+        fastifyTestInstance.prisma.dailyCodingChallenges,
+        'findFirst'
+      ).mockRejectedValueOnce(new Error('DB error'));
+
+      const res = await superRequest('/daily-coding-challenge/newest', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(500);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('dcc.request_failed', 1, {
+        attributes: { route: '/daily-coding-challenge/newest' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
   });
 });

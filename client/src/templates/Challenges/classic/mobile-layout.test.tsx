@@ -10,6 +10,10 @@ vi.mock('i18next', () => ({
   }
 }));
 
+vi.mock('../components/independent-lower-jaw', () => ({
+  default: () => <div data-testid='independent-lower-jaw' />
+}));
+
 const mockProps = {
   editor: <div>Editor</div>,
   hasEditableBoundaries: false,
@@ -21,7 +25,6 @@ const mockProps = {
   windowTitle: 'Test Title',
   showPreviewPortal: false,
   showPreviewPane: false,
-  toolPanel: <div>ToolPanel</div>,
   removePortalWindow: vi.fn(),
   setShowPreviewPortal: vi.fn(),
   setShowPreviewPane: vi.fn(),
@@ -32,34 +35,87 @@ const mockProps = {
   usesTerminal: false
 };
 
+const renderMobileLayout = (
+  props: Partial<React.ComponentProps<typeof MobileLayout>> = {}
+) => render(<MobileLayout {...mockProps} {...props} />);
+
 describe('<MobileLayout />', () => {
+  it('renders instructions, code, console, preview, portal controls, and the lower jaw when preview is available', () => {
+    renderMobileLayout({
+      hasPreview: true,
+      showPreviewPane: true
+    });
+
+    expect(screen.getByRole('tablist')).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.instructions' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.code' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.console' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.preview' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'aria.move-preview-to-new-window' })
+    ).toBeInTheDocument();
+    expect(screen.getByTestId('independent-lower-jaw')).toBeInTheDocument();
+  });
+
+  it('renders instructions, code, console, and the lower jaw when preview is unavailable', () => {
+    renderMobileLayout({
+      hasPreview: false
+    });
+
+    expect(screen.getByRole('tablist')).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.instructions' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.code' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('tab', { name: 'learn.editor-tabs.console' })
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole('tab', { name: 'learn.editor-tabs.preview' })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('button', { name: 'aria.move-preview-to-new-window' })
+    ).not.toBeInTheDocument();
+    expect(screen.getByTestId('independent-lower-jaw')).toBeInTheDocument();
+  });
+
+  it('renders the lower jaw for challenges with editable boundaries', () => {
+    renderMobileLayout({ hasEditableBoundaries: true });
+
+    expect(screen.getByTestId('independent-lower-jaw')).toBeInTheDocument();
+  });
+
   it('should render language selector when isDailyCodingChallenge is true', () => {
-    render(
-      <MobileLayout
-        {...mockProps}
-        isDailyCodingChallenge={true}
-        dailyCodingChallengeLanguage='javascript'
-      />
-    );
+    renderMobileLayout({
+      isDailyCodingChallenge: true,
+      dailyCodingChallengeLanguage: 'javascript'
+    });
     expect(screen.getByText('JS')).toBeInTheDocument();
   });
 
   it('should not render language selector when isDailyCodingChallenge is false', () => {
-    render(<MobileLayout {...mockProps} isDailyCodingChallenge={false} />);
+    renderMobileLayout({ isDailyCodingChallenge: false });
     expect(screen.queryByText('JS')).not.toBeInTheDocument();
     expect(screen.queryByText('PY')).not.toBeInTheDocument();
   });
 
   it('should call setDailyCodingChallengeLanguage when a language is selected', () => {
     const setDailyCodingChallengeLanguage = vi.fn();
-    render(
-      <MobileLayout
-        {...mockProps}
-        isDailyCodingChallenge={true}
-        dailyCodingChallengeLanguage='javascript'
-        setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
-      />
-    );
+    renderMobileLayout({
+      isDailyCodingChallenge: true,
+      dailyCodingChallengeLanguage: 'javascript',
+      setDailyCodingChallengeLanguage
+    });
 
     // Open dropdown
     fireEvent.click(screen.getByText('JS'));

@@ -32,13 +32,40 @@ vi.mock('./reset-progress-modal', () => ({
 
 vi.mock('react-i18next', () => ({
   useTranslation: () => ({
-    t: (key: string, options?: Record<string, string>) => {
+    t: (
+      key: string,
+      options?: {
+        chapterLabel?: string;
+        moduleLabel?: string;
+        returnObjects?: boolean;
+      }
+    ) => {
+      if (
+        options?.returnObjects &&
+        key ===
+          'intro:full-stack-developer-v9.module-intros.certified-full-stack-developer-exam'
+      ) {
+        return {
+          note: 'Coming Late 2026',
+          intro: [
+            'This exam will test what you have learned throughout the previous six certifications.'
+          ]
+        };
+      }
       // Only translate aria labels for reset buttons, return key for everything else
       if (key === 'learn.reset-progress-aria-chapter') {
         return `Reset progress for ${options?.chapterLabel || ''}`;
       }
       if (key === 'learn.reset-progress-aria-module') {
         return `Reset progress for ${options?.moduleLabel || ''}`;
+      }
+      if (
+        key ===
+          'intro:full-stack-developer-v9.chapters.certified-full-stack-developer-exam' ||
+        key ===
+          'intro:full-stack-developer-v9.modules.certified-full-stack-developer-exam'
+      ) {
+        return 'Certified Full-Stack Developer Exam';
       }
       if (key.startsWith('intro:')) {
         return key.split('.').pop() || key;
@@ -91,6 +118,41 @@ const mockChallenge = {
   challengeType: 0,
   blockLayout: BlockLayouts.ChallengeList,
   superBlock: SuperBlocks.RespWebDesign
+};
+
+const fullStackExamSlug =
+  '/learn/full-stack-developer-v9/exam-certified-full-stack-developer/exam-certified-full-stack-developer';
+
+const fullStackExamChallenge = {
+  ...mockChallenge,
+  id: 'full-stack-exam-id',
+  block: 'exam-certified-full-stack-developer',
+  blockLabel: BlockLabel.exam,
+  title: 'Certified Full-Stack Developer Exam',
+  fields: {
+    slug: fullStackExamSlug
+  },
+  dashedName: 'exam-certified-full-stack-developer',
+  challengeType: 30,
+  superBlock: SuperBlocks.FullStackDeveloperV9
+};
+
+const fullStackExamStructure = {
+  superBlock: SuperBlocks.FullStackDeveloperV9,
+  chapters: [
+    {
+      chapterType: 'exam',
+      dashedName: 'certified-full-stack-developer-exam',
+      comingSoon: true,
+      modules: [
+        {
+          dashedName: 'certified-full-stack-developer-exam',
+          comingSoon: true,
+          blocks: ['exam-certified-full-stack-developer']
+        }
+      ]
+    }
+  ]
 };
 
 describe('SuperBlockAccordion', () => {
@@ -583,5 +645,42 @@ describe('SuperBlockAccordion', () => {
     expect(
       screen.queryByRole('button', { name: 'mod-two' })
     ).not.toBeInTheDocument();
+  });
+
+  it('links directly to the full-stack exam when the exam challenge is available', () => {
+    renderWithProvider(
+      <SuperBlockAccordion
+        challenges={[fullStackExamChallenge]}
+        superBlock={SuperBlocks.FullStackDeveloperV9}
+        structure={fullStackExamStructure}
+        chosenBlock=''
+        completedChallengeIds={[]}
+      />
+    );
+
+    expect(
+      screen.getByRole('link', {
+        name: /Certified Full-Stack Developer Exam/i
+      })
+    ).toHaveAttribute('href', fullStackExamSlug);
+  });
+
+  it('shows the full-stack exam coming soon intro when the exam challenge is unavailable', () => {
+    renderWithProvider(
+      <SuperBlockAccordion
+        challenges={[]}
+        superBlock={SuperBlocks.FullStackDeveloperV9}
+        structure={fullStackExamStructure}
+        chosenBlock='exam-certified-full-stack-developer'
+        completedChallengeIds={[]}
+      />
+    );
+
+    expect(screen.getByText('Coming Late 2026')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        'This exam will test what you have learned throughout the previous six certifications.'
+      )
+    ).toBeInTheDocument();
   });
 });
