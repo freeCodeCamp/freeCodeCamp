@@ -2188,25 +2188,25 @@
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code> and <code>blockquote</code> elements and more."
         ]
       },
       "workshop-quincys-job-tips": {
         "title": "Build Quincy's Job Tips Page",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code>, and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
-          "In this lesson, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "In this lesson, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements,q and more."
         ]
       },
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -7928,13 +7928,13 @@
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code> and <code>blockquote</code> elements, and more."
         ]
       },
       "workshop-quincys-job-tips": {
         "title": "Build Quincy's Job Tips Page",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code>, and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -7946,7 +7946,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -9017,7 +9017,7 @@
       "cat-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "event-hub": {
@@ -9049,7 +9049,7 @@
       "cat-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       }
     },
