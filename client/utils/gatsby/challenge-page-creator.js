@@ -88,11 +88,6 @@ exports.createChallengePages = function (
   createPage,
   { idToNextPathCurrentCurriculum, idToPrevPathCurrentCurriculum }
 ) {
-  // allChallengeNodes is the same array reference across every call in a
-  // given forEach, so this only needs to be built once and reused, rather
-  // than re-filtering the entire node list for every single page.
-  let lastChallengeByBlock = null;
-
   return function (node, index, allChallengeNodes) {
     const {
       dashedName,
@@ -111,10 +106,6 @@ exports.createChallengePages = function (
       isLastChallengeInBlock,
       saveSubmissionToDB
     } = node.challenge;
-
-    if (lastChallengeByBlock === null) {
-      lastChallengeByBlock = getLastChallengeByBlock(allChallengeNodes);
-    }
 
     createPage({
       path: slug,
@@ -141,7 +132,7 @@ exports.createChallengePages = function (
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,
-          lastChallengeByBlock
+          allChallengeNodes
         ),
         id: node.id
       }
@@ -149,20 +140,14 @@ exports.createChallengePages = function (
   };
 };
 
-// allChallengeNodes is in block order, so overwriting on every challenge
-// leaves each block's entry pointing at the last challenge seen for it.
-function getLastChallengeByBlock(allChallengeNodes) {
-  const lastChallengeByBlock = new Map();
-  for (const { challenge } of allChallengeNodes) {
-    lastChallengeByBlock.set(challenge.block, challenge);
-  }
-  return lastChallengeByBlock;
-}
-
-function getProjectPreviewConfig(challenge, lastChallengeByBlock) {
+// TODO: figure out a cleaner way to get the last challenge in a block.
+function getProjectPreviewConfig(challenge, allChallengeNodes) {
   const { block } = challenge;
 
-  const lastChallenge = lastChallengeByBlock.get(block);
+  const challengesInBlock = allChallengeNodes
+    .filter(({ challenge }) => challenge.block === block)
+    .map(({ challenge }) => challenge);
+  const lastChallenge = challengesInBlock[challengesInBlock.length - 1];
   const solutionFiles = lastChallenge.solutions[0] ?? [];
   const lastChallengeFiles = lastChallenge.challengeFiles ?? [];
 
