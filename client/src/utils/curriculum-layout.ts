@@ -16,15 +16,17 @@ const projectBasedChallengeTypes = [
   challengeTypes.jsLab,
   challengeTypes.pyLab,
   challengeTypes.dailyChallengeJs,
-  challengeTypes.dailyChallengePy
+  challengeTypes.dailyChallengePy,
+  challengeTypes.freeCodeCampOsPractice,
+  challengeTypes.freeCodeCampOsCert
 ];
 
 export const isProjectBased = (
   challengeType: number,
   blockDashedName: unknown = null
 ) => {
-  // Is project based but should be collapsable, this differs from the
-  // other projects which are not collapsable.
+  // Is project based but should be collapsible, this differs from the
+  // other projects which are not collapsible.
   if (blockDashedName === 'take-home-projects') return false;
 
   return projectBasedChallengeTypes.includes(challengeType);

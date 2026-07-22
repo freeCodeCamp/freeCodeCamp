@@ -54,20 +54,29 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
+// Test helpers parse sources.contents across all files. Without this boundary,
+// an index.ts first-line declaration can be concatenated onto empty/no-newline
+// HTML or CSS, so AST checks fail.
+const joinWithFileBoundaries = (contents: string[]) => contents.join('\n');
+
 function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
-  const source: Source | undefined = challengeFiles?.reduce(
-    (sources, challengeFile) => {
-      sources.index += challengeFile.source || '';
-      sources.contents = sources.index;
-      sources.editableContents += challengeFile.editableContents || '';
-      return sources;
-    },
-    {
-      index: '',
-      editableContents: ''
-    } as Source
+  const index = joinWithFileBoundaries(
+    challengeFiles.map(challengeFile => challengeFile.source ?? '')
   );
+  const editableContents = joinWithFileBoundaries(
+    challengeFiles.map(challengeFile => challengeFile.editableContents ?? '')
+  );
+  const source: Source | undefined = challengeFiles.length
+    ? {
+        index,
+        contents: index,
+        editableContents
+      }
+    : {
+        index,
+        editableContents
+      };
   return source;
 }
 
@@ -155,7 +164,9 @@ export const runnerTypes: Record<
   [challengeTypes.pyLab]: 'python',
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python',
-  [challengeTypes.review]: 'dom'
+  [challengeTypes.review]: 'dom',
+  [challengeTypes.freeCodeCampOsPractice]: 'dom',
+  [challengeTypes.freeCodeCampOsCert]: 'dom'
 };
 
 type BuildResult = {

@@ -2,16 +2,19 @@ import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
 
 // eslint-disable-next-line import/no-duplicates
-import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api.js';
 import type {
   IRange,
   editor
   // eslint-disable-next-line import/no-duplicates
-} from 'monaco-editor/esm/vs/editor/editor.api';
+} from 'monaco-editor/esm/vs/editor/editor.api.js';
+import type {
+  json as monacoJsonApi,
+  typescript as monacoTypescriptApi
+} from 'monaco-editor/esm/vs/editor/editor.main.js';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
-import { createPortal } from 'react-dom';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import store from 'store';
@@ -41,11 +44,9 @@ import {
   updateFile,
   initTests,
   stopResetting,
-  openModal,
   resetAttempts
 } from '../redux/actions';
 import {
-  attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
   challengeTestsSelector,
@@ -62,8 +63,6 @@ import {
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
-import envConfig from '../../../../config/env.json';
-import LowerJaw from './lower-jaw';
 import { attachContentWidgetEvents } from './content-widget-events';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
@@ -71,7 +70,30 @@ import reactTypes from './react-types.json';
 import './editor.css';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
-const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+let monacoJson: typeof monacoJsonApi | null = null;
+let monacoTypescript: typeof monacoTypescriptApi | null = null;
+
+// Monaco 0.55 exposes JSON and TypeScript defaults from their contribution
+// modules, so load those modules before react-monaco-editor mounts.
+const loadMonacoJson = async (): Promise<typeof monacoJsonApi> =>
+  (await import('monaco-editor/esm/vs/language/json/monaco.contribution.js')) as unknown as typeof monacoJsonApi;
+
+const loadMonacoTypescript = async (): Promise<typeof monacoTypescriptApi> =>
+  (await import('monaco-editor/esm/vs/language/typescript/monaco.contribution.js')) as unknown as typeof monacoTypescriptApi;
+
+const MonacoEditor = Loadable(async () => {
+  const [jsonContribution, typescriptContribution, editorModule] =
+    await Promise.all([
+      loadMonacoJson(),
+      loadMonacoTypescript(),
+      import('react-monaco-editor')
+    ]);
+
+  monacoJson = jsonContribution;
+  monacoTypescript = typescriptContribution;
+
+  return editorModule;
+});
 
 const monacoModelFileMap = {
   tsxFile: 'index.tsx',
@@ -79,7 +101,6 @@ const monacoModelFileMap = {
 };
 
 export interface EditorProps {
-  attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
   challengeType: number;
@@ -98,8 +119,6 @@ export interface EditorProps {
   isResetting: boolean;
   isSignedIn: boolean;
   isUsingKeyboardInTablist: boolean;
-  openHelpModal: () => void;
-  openResetModal: () => void;
   resizeProps: ResizeProps;
   saveChallenge: () => void;
   saveEditorContent: () => void;
@@ -119,7 +138,6 @@ export interface EditorProps {
   }) => void;
   usesMultifileEditor?: boolean;
   isChallengeCompleted: boolean;
-  showIndependentLowerJaw?: boolean;
 }
 
 interface MonacoInstances {
@@ -134,12 +152,6 @@ interface DescriptionZoneState {
   widget?: editor.IContentWidget;
 }
 
-interface OutputZoneState {
-  zoneId: string;
-  top: number;
-  widget?: editor.IOverlayWidget;
-}
-
 interface EditableRegionState {
   decorationId: string;
 }
@@ -147,12 +159,10 @@ interface EditableRegionState {
 interface EditorState {
   monaco: MonacoInstances;
   descriptionZone: DescriptionZoneState;
-  outputZone: OutputZoneState;
   editableRegion: EditableRegionState;
 }
 
 const mapStateToProps = createSelector(
-  attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
   isDonationModalOpenSelector,
@@ -163,7 +173,6 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   themeSelector,
   (
-    attempts: number,
     canFocus: boolean,
     {
       challengeType,
@@ -177,7 +186,6 @@ const mapStateToProps = createSelector(
     isChallengeCompleted: boolean,
     theme: LocalStorageThemes
   ) => ({
-    attempts,
     canFocus: open ? false : canFocus,
     challengeType,
     saveSubmissionToDB,
@@ -200,9 +208,7 @@ const mapDispatchToProps = {
   updateFile,
   initTests,
   stopResetting,
-  resetAttempts,
-  openHelpModal: () => openModal('help'),
-  openResetModal: () => openModal('reset')
+  resetAttempts
 };
 
 const setupTSModels = (monaco: typeof monacoEditor) => {
@@ -280,10 +286,6 @@ const createInitialEditorState = (): EditorState => ({
     zoneId: '',
     top: 0
   },
-  outputZone: {
-    zoneId: '',
-    top: 0
-  },
   editableRegion: {
     decorationId: ''
   }
@@ -311,8 +313,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
   const dataRef = useRef<EditorState>(createInitialEditorState());
-  const [lowerJawContainer, setLowerJawContainer] =
-    React.useState<HTMLDivElement | null>(null);
 
   const submitChallenge = useSubmit();
 
@@ -333,8 +333,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
   testRef.current = props.tests;
-  const attemptsRef = useRef<number>(0);
-  attemptsRef.current = props.attempts;
 
   useEffect(() => {
     return () => {
@@ -356,6 +354,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     selectionHighlight: false,
     overviewRulerBorder: false,
     hideCursorInOverviewRuler: true,
+    editContext: false,
     guides: {
       highlightActiveIndentation:
         props.challengeType === challengeTypes.python ||
@@ -413,14 +412,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
-    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
-      ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
-      jsx: monaco.languages.typescript.JsxEmit.Preserve,
+    monacoTypescript?.typescriptDefaults.setCompilerOptions({
+      ...monacoTypescript.typescriptDefaults.getCompilerOptions(),
+      jsx: monacoTypescript.JsxEmit.Preserve,
       allowUmdGlobalAccess: true
     });
 
     // support JSONC:
-    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+    monacoJson?.jsonDefaults.setDiagnosticsOptions({
       allowComments: true
     });
 
@@ -500,7 +499,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (hasEditableRegion()) {
       initializeRegions();
-      if (!props.showIndependentLowerJaw) {
+      if (isMobileLayout) {
         addWidgetsToRegions();
       }
       addContentChangeListener();
@@ -633,7 +632,6 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        const shouldShowCompletionModal = !props.showIndependentLowerJaw;
         if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
@@ -641,9 +639,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({
-            showCompletionModal: shouldShowCompletionModal
-          });
+          props.executeChallenge({ showCompletionModal: false });
         }
       }
     });
@@ -830,37 +826,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const tryToSubmitChallenge = submitChallenge;
 
-  // TODO: there's a potential performance gain to be had by only updating when
-  // the outputViewZone has actually changed.
-  const updateOutputViewZone = (
-    lowerJawContainer: HTMLDivElement,
-    editor?: editor.IStandaloneCodeEditor
-  ) => {
-    if (!editor) return;
-    // make sure the overlayWidget has resized before using it to set the height
-    lowerJawContainer.style.width = `${getEditorContentWidth(editor)}px`;
-    // We have to wait for the viewZone to finish rendering before adjusting the
-    // position of the overlayWidget (i.e. trigger it via onComputedHeight). If
-    // not the editor may report the wrong value for position of the lines.
-    editor.changeViewZones(changeAccessor => {
-      changeAccessor.removeZone(dataRef.current.outputZone.zoneId);
-      const viewZone = {
-        afterLineNumber: getLastLineOfEditableRegion(),
-        heightInPx: lowerJawContainer.offsetHeight,
-        domNode: document.createElement('div'),
-        onComputedHeight: () =>
-          dataRef.current.outputZone.widget &&
-          editor.layoutOverlayWidget(dataRef.current.outputZone.widget),
-        onDomNodeTop: (top: number) => {
-          dataRef.current.outputZone.top = top;
-          if (dataRef.current.outputZone.widget)
-            editor.layoutOverlayWidget(dataRef.current.outputZone.widget);
-        }
-      };
-      dataRef.current.outputZone.zoneId = changeAccessor.addZone(viewZone);
-    });
-  };
-
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionZone.node)
       return dataRef.current.descriptionZone.node;
@@ -927,18 +892,6 @@ const Editor = (props: EditorProps): JSX.Element => {
   // Take the current scrollbar width into account
   function getEditorContentWidth(editor: editor.IStandaloneCodeEditor) {
     return editor.getLayoutInfo().contentWidth - getScrollbarWidth();
-  }
-
-  function createLowerJawContainer(editor: editor.IStandaloneCodeEditor) {
-    if (lowerJawContainer) return lowerJawContainer;
-    const container = document.createElement('div');
-    container.classList.add('editor-lower-jaw');
-    container.setAttribute('id', 'editor-lower-jaw');
-    container.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    container.style.width = `${getEditorContentWidth(editor)}px`;
-    container.style.top = getOutputZoneTop();
-    setLowerJawContainer(container);
-    return container;
   }
 
   function createScrollGutterNode(
@@ -1077,22 +1030,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     return `${dataRef.current.descriptionZone.top}px`;
   }
 
-  function getOutputZoneTop() {
-    return `${dataRef.current.outputZone.top}px`;
-  }
-
   function getLineBeforeEditableRegion() {
     const range = dataRef.current.monaco.model?.getDecorationRange(
       dataRef.current.editableRegion.decorationId
     );
     return range ? range.startLineNumber - 1 : 1;
-  }
-
-  function getLastLineOfEditableRegion() {
-    const range = dataRef.current.monaco.model?.getDecorationRange(
-      dataRef.current.editableRegion.decorationId
-    );
-    return range ? range.endLineNumber : 1;
   }
 
   // This Range covers all the text in the editable region,
@@ -1203,8 +1145,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const descriptionNode = createDescription(editor);
 
-    const lowerJawNode = createLowerJawContainer(editor);
-
     if (!dataRef.current.descriptionZone.widget) {
       dataRef.current.descriptionZone.widget = createWidget(
         editor,
@@ -1218,29 +1158,11 @@ const Editor = (props: EditorProps): JSX.Element => {
       // doesn't happen until the widget is added.
       editor.addContentWidget(dataRef.current.descriptionZone.widget);
       editor.changeViewZones(descriptionZoneCallback);
-      // Now that the description zone is in place, the browser knows its height
-      // and we can use that to calculate the top of the output zone.  If we do
-      // not do this the output zone will be on top of the description zone,
-      // initially.
-      dataRef.current.outputZone.top = editor.getTopForLineNumber(
-        getLastLineOfEditableRegion() + 1
-      );
-    }
-    if (!dataRef.current.outputZone.widget) {
-      dataRef.current.outputZone.widget = createWidget(
-        editor,
-        'output.widget',
-        lowerJawNode,
-        getOutputZoneTop
-      );
-      editor.addOverlayWidget(dataRef.current.outputZone.widget);
     }
 
     editor.onDidScrollChange(() => {
       if (dataRef.current.descriptionZone.widget)
         editor.layoutContentWidget(dataRef.current.descriptionZone.widget);
-      if (dataRef.current.outputZone.widget)
-        editor.layoutOverlayWidget(dataRef.current.outputZone.widget);
     });
   }
 
@@ -1340,7 +1262,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
         initializeRegions();
-        if (!props.showIndependentLowerJaw) {
+        if (isMobileLayout) {
           addWidgetsToRegions();
         }
         updateDescriptionZone();
@@ -1349,7 +1271,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.challengeFiles, props.isResetting, props.showIndependentLowerJaw]);
+  }, [props.challengeFiles, props.isResetting]);
 
   useEffect(() => {
     const { showProjectPreview, previewOpen } = props;
@@ -1409,15 +1331,18 @@ const Editor = (props: EditorProps): JSX.Element => {
         ? 'vs-custom'
         : editorSystemTheme;
 
-  const firstFailedTest = props.tests.find(test => !!test.err);
-
-  const handleSubmitAndGoButtonBoolean = () => {
-    const canShowModal = sessionStorage.getItem('canOpenModal');
-
-    if (canShowModal === 'false' && envConfig.environment === 'development') {
-      return false;
+  const editorWillUnmount = (
+    currentEditor: editor.IStandaloneCodeEditor,
+    monaco: typeof monacoEditor
+  ) => {
+    // Any model we've created has to be manually disposed of to prevent
+    // memory leaks.
+    const language = modeMap[challengeFile?.ext ?? 'html'];
+    if (language === 'typescript') {
+      teardownTSModels(monaco);
+    } else {
+      currentEditor.getModel()?.dispose();
     }
-    return challengeIsComplete();
   };
 
   const showFileName = challengeFile && props.challengeFiles!.length > 1;
@@ -1430,43 +1355,13 @@ const Editor = (props: EditorProps): JSX.Element => {
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
-          editorWillUnmount={(editor, monaco) => {
-            // Any model we've created has to be manually disposed of to prevent
-            // memory leaks.
-            const language = modeMap[challengeFile?.ext ?? 'html'];
-            if (language === 'typescript') {
-              teardownTSModels(monaco);
-            } else {
-              editor.getModel()?.dispose();
-            }
-          }}
+          editorWillUnmount={editorWillUnmount}
           onChange={onChange}
           language={modeMap[challengeFile?.ext ?? 'html']}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
         />
       </span>
-      {lowerJawContainer !== null &&
-        createPortal(
-          <LowerJaw
-            openHelpModal={props.openHelpModal}
-            openResetModal={props.openResetModal}
-            tryToExecuteChallenge={tryToExecuteChallenge}
-            hint={firstFailedTest?.message}
-            testsLength={props.tests.length}
-            attempts={attemptsRef.current}
-            challengeIsCompleted={handleSubmitAndGoButtonBoolean()}
-            tryToSubmitChallenge={tryToSubmitChallenge}
-            isSignedIn={props.isSignedIn}
-            updateContainer={() =>
-              updateOutputViewZone(
-                lowerJawContainer,
-                dataRef.current.monaco.editor
-              )
-            }
-          />,
-          lowerJawContainer
-        )}
     </Suspense>
   );
 };

@@ -18,17 +18,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6
         id: pnpm-install
         with:
           run_install: false

@@ -111,17 +111,7 @@
           "blocks": ["lab-digital-pet-game"]
         },
         {
-          "dashedName": "data-visualization",
-          "comingSoon": true,
-          "blocks": [
-            "lecture-introduction-to-data-visualization",
-            "lab-bar-chart",
-            "lab-scatterplot-graph"
-          ]
-        },
-        {
           "moduleType": "review",
-          "comingSoon": true,
           "dashedName": "review-front-end-libraries",
           "blocks": ["review-front-end-libraries"]
         }
@@ -130,10 +120,8 @@
     {
       "chapterType": "exam",
       "dashedName": "front-end-development-libraries-certification-exam",
-      "comingSoon": true,
       "modules": [
         {
-          "comingSoon": true,
           "dashedName": "front-end-development-libraries-certification-exam",
           "blocks": ["exam-front-end-development-libraries-certification"]
         }

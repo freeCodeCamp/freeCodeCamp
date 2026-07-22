@@ -10,11 +10,6 @@ Increase the spacing in paragraphs
 Intro project buttons and headings 
 */
 
-[dir='rtl'] .monaco-editor-tabs {
-  /* need to remove the margin because the editor is reversed */
-  margin-inline-end: 0;
-}
-
 [dir='rtl'] .map-ui .superblock-link > svg {
   transform: rotate(180deg);
 }
@@ -125,16 +120,15 @@ sections that need to stay left to right
 }
 
 [dir='rtl'] .description-container,
-[dir='rtl'] .action-row-container,
 [dir='rtl']
   .timeline-pagination_list
   .timeline-pagination_list_item:not(:has(button)) {
   direction: rtl;
 }
 
-/* Revert the editor layout to account for reverted splitter */
+/* react-reflex splitters need panes laid out LTR in DOM order, so the panes
+are kept physically LTR and mirrored by reversing their order in the JSX */
 
-[dir='rtl'] .desktop-layout .tabs-row,
 [dir='rtl'] .desktop-layout .reflex-container:not(.horizontal) {
   flex-direction: row-reverse;
 }
