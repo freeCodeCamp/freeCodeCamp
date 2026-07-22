@@ -13,6 +13,7 @@ concurrency:
 
 permissions:
   contents: read
+            write 
   packages: read
 
 jobs:
