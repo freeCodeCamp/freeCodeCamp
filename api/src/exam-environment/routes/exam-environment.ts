@@ -25,6 +25,11 @@ import { isObjectID } from '../../utils/validation.js';
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
     fastify.setErrorHandler((error, req, res) => {
+      // Fastify validation errors (e.g. schema validation) always have code + message
+      if (error.statusCode === 400) {
+        void res.code(400).send({ code: error.code, message: error.message });
+        return;
+      }
       // If the error does not match the format {code: string; message: string}, coerce into:
       if (
         !Object.hasOwnProperty.call(error, 'code') ||

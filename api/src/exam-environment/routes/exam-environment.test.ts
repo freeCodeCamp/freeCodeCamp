@@ -1640,6 +1640,15 @@ describe('/exam-environment/', () => {
 
         expect(res.status).toBe(403);
       });
+
+      it('should return 400 if the request body is empty', async () => {
+        const res = await superPost('/exam-environment/exam/attempt')
+          .send({})
+          .set('exam-environment-authorization-token', 'invalid-token');
+
+        expect(res.status).toBe(400);
+        expect(res.body).toHaveProperty('code');
+      });
     });
 
     describe('POST /exam-environment/exam/generated-exam', () => {
