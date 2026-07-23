@@ -271,13 +271,13 @@ export function IndependentLowerJaw({
     setWasCheckButtonClicked(false);
   }, [isChallengeComplete, isSignedIn, wasCheckButtonClicked]);
 
-  const isMobile = 
+  const isMobile =
     typeof navigator !== 'undefined' &&
     /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   const isMacOS =
     typeof navigator !== 'undefined' &&
     (/Mac/i.test(navigator.platform) || navigator.userAgent.includes('Mac OS'));
-  
+
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const shouldShowSocratesDonateCta =
     !isDonating &&
