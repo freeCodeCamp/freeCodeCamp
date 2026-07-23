@@ -1,41 +1,104 @@
+version: "3.9"
+
 services:
   devcontainer:
     image: ghcr.io/freecodecamp/devcontainer:latest
-    depends_on:
-      - db
-      - setup
-    volumes:
-      - ..:/workspaces/freeCodeCamp:cached
-    network_mode: service:db
-    command: sleep infinity
+    container_name: freecodecamp-dev
 
-  db:
-    image: mongo:8.2
-    command: mongod --replSet rs0
-    restart: unless-stopped
-    hostname: mongodb
-    volumes:
-      - db-data:/data/db
-    healthcheck:
-      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
-      interval: 2s
-      retries: 5
-      start_period: 10s
-
-  setup:
-    image: mongo:8.2
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure:5
-    command: >
-      mongosh --host mongodb:27017 --eval '
+      setup:
+        condition: service_completed_successfully
+
+    volumes:
+      - ..:/workspaces/freeCodeCamp:cached
+
+    working_dir: /workspaces/freeCodeCamp
+
+    command: sleep infinity
+
+    environment:
+      NODE_ENV: development
+      MONGO_URI: mongodb://mongodb:27017/freecodecamp?replicaSet=rs0
+
+    networks:
+      - freecodecamp-network
+
+  db:
+    image: mongo:8.2.1
+    container_name: freecodecamp-db
+
+    hostname: mongodb
+
+    command:
+      - mongod
+      - --bind_ip_all
+      - --replSet
+      - rs0
+
+    restart: unless-stopped
+
+    volumes:
+      - db-data:/data/db
+
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "--eval",
+          "db.adminCommand('ping').ok"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    networks:
+      - freecodecamp-network
+
+  setup:
+    image: mongo:8.2.1
+    container_name: freecodecamp-setup
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    restart: "on-failure:5"
+
+    entrypoint: >
+      bash -c "
+      mongosh mongodb://mongodb:27017 <<EOF
+      try {
         rs.initiate({
-          _id: "rs0",
-          members: [{ _id: 0, host: "mongodb:27017" }]
-        }).ok || rs.status().ok
-      '
+          _id: 'rs0',
+          members: [
+            {
+              _id: 0,
+              host: 'mongodb:27017'
+            }
+          ]
+        });
+      } catch (e) {
+        print('Replica Set Already Initialized');
+      }
+      EOF
+      "
+
+    networks:
+      - freecodecamp-network
 
 volumes:
   db-data:
-    driver: local
+
+networks:
+  freecodecamp-network:
+    driver: bridge
