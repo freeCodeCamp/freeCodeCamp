@@ -1294,7 +1294,10 @@ async function postSaveChallenge(
     fastify.Sentry?.metrics?.count('challenge.saved', 1, {
       attributes: { result: 'not_saveable' }
     });
-    return void reply.code(400).send('That challenge type is not saveable.');
+    return void reply.code(400).send({
+      type: 'error',
+      message: 'That challenge type is not saveable.'
+    });
   }
 
   const userSavedChallenges = saveUserChallengeData(
