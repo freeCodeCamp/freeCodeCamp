@@ -27,19 +27,23 @@ assert.match(
 The `user` object should include a `"name"` property with the value of the `name` variable.
 
 ```js
-assert.match(
-  code,
-  /const\s+user\s*=\s*\{[\s\S]*?name\s*:\s*name/
-);
+const objectMatch = code.match(/const\s+user\s*=\s*(\{[^}]*\})/);
+assert.exists(objectMatch);
+const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
+const { name } = explorer.variables.user.value.objectProps;
+assert.exists(name);
+assert.isTrue(name.value.matches("name"));
 ```
 
 The `user` object should include an `"age"` property with the value of the `age` variable.
 
 ```js
-assert.match(
-  code,
-  /const\s+user\s*=\s*\{[\s\S]*?age\s*:\s*age/
-);
+const objectMatch = code.match(/const\s+user\s*=\s*(\{[^}]*\})/);
+assert.exists(objectMatch);
+const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
+const { age } = explorer.variables.user.value.objectProps;
+assert.exists(age);
+assert.isTrue(age.value.matches("age"));
 ```
 
 # --seed--
