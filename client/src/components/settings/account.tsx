@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
+import { clientLocale } from '../../../config/env.json';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow } from '../helpers';
 
@@ -30,7 +31,8 @@ const MiscSettings = ({
   socrates
 }: MiscSettingsProps) => {
   const { t } = useTranslation();
-  const showSocratesFlag = useFeature('show-socrates').on;
+  const showSocratesFlag =
+    useFeature('show-socrates').on && clientLocale === 'english';
 
   return (
     <div className='account-settings'>

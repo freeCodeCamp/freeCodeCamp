@@ -66,6 +66,7 @@ export const getPublicProfile = {
               isFoundationalCSharpCertV8: Type.Boolean(),
               isFrontEndCert: Type.Boolean(),
               isFrontEndLibsCert: Type.Boolean(),
+              isFrontEndLibsCertV9: Type.Boolean(),
               isFullStackCert: Type.Boolean(),
               isJavascriptCertV9: Type.Boolean(),
               isHonest: Type.Boolean(),

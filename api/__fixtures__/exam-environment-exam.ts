@@ -9,7 +9,7 @@ import {
   ExamEnvironmentQuestionSet,
   ExamEnvironmentChallenge
 } from '@prisma/client';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
 
 const defaultUserId = '5bd30e0f1caf6ac3ddddddb5';

@@ -79,6 +79,9 @@ export const reportUser = createAction(actionTypes.reportUser);
 export const reportUserComplete = createAction(actionTypes.reportUserComplete);
 export const reportUserError = createAction(actionTypes.reportUserError);
 
+export const removeModuleChallenges = createAction(
+  actionTypes.removeModuleChallenges
+);
 export const resetUserData = createAction(actionTypes.resetUserData);
 export const routeUpdated = createAction(actionTypes.routeUpdated);
 

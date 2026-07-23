@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { isEqual } from 'lodash';
 import store from 'store';
@@ -38,6 +38,7 @@ import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import MobileAppModal from '../components/mobile-app-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
+import GenericChallengeButtons from './challenge-buttons';
 import ContentOutline from './content-outline';
 
 // Styles
@@ -377,15 +378,11 @@ const ShowGeneric = ({
           <p className='text-center'>{t('learn.answered-mcq')}</p>
         )}
 
-        <Button block={true} variant='primary' onClick={handleSubmit}>
-          {questions.length == 0
-            ? t('buttons.submit')
-            : t('buttons.check-answer')}
-        </Button>
-        <Spacer size='xxs' />
-        <Button block={true} variant='primary' onClick={openHelpModal}>
-          {t('buttons.ask-for-help')}
-        </Button>
+        <GenericChallengeButtons
+          hasQuestions={questions.length > 0}
+          onHelp={openHelpModal}
+          onSubmit={handleSubmit}
+        />
 
         <Spacer size='l' />
       </Col>

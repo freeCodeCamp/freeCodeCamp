@@ -5,6 +5,7 @@ import { AUTH0_DOMAIN } from '../../utils/env.js';
 import { auth0Client } from '../../plugins/auth0.js';
 import { createAccessToken } from '../../utils/tokens.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';
+import { clientNetInfo } from '../../utils/logger.js';
 
 const getEmailFromAuth0 = async (
   req: FastifyRequest
@@ -15,7 +16,10 @@ const getEmailFromAuth0 = async (
     }
   });
 
-  if (!auth0Res.ok) return null;
+  if (!auth0Res.ok) {
+    req.log.warn({ status: auth0Res.status }, 'Auth0 userinfo request failed');
+    return null;
+  }
 
   // For now, we assume the response is a JSON object. If not, we can't proceed
   // and the only safe thing to do is to throw.
@@ -43,12 +47,17 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
   fastify.get('/mobile-login', async (req, reply) => {
     const email = await getEmailFromAuth0(req);
 
-    const logger = fastify.log.child({ req, res: reply });
-
-    logger.info('Mobile app login attempt');
+    req.log.debug('Mobile app login attempt');
 
     if (!email) {
-      logger.error('Could not get email from Auth0 to log in');
+      req.log.error(
+        clientNetInfo(req),
+        'Could not get email from Auth0 to log in'
+      );
+
+      fastify.Sentry?.metrics?.count('auth.mobile_login_attempted', 1, {
+        attributes: { result: 'failure', reason: 'no_email' }
+      });
 
       return reply.status(401).send({
         message: 'We could not log you in, please try again in a moment.',
@@ -56,7 +65,14 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
       });
     }
     if (!validator.default.isEmail(email)) {
-      logger.error('Email is incorrectly formatted for login');
+      req.log.warn(
+        clientNetInfo(req),
+        'Email is incorrectly formatted for login'
+      );
+
+      fastify.Sentry?.metrics?.count('auth.mobile_login_attempted', 1, {
+        attributes: { result: 'failure', reason: 'invalid_format' }
+      });
 
       return reply.status(400).send({
         message: 'The email is incorrectly formatted',
@@ -65,6 +81,10 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
     }
 
     const { id } = await findOrCreateUser(fastify, email);
+
+    fastify.Sentry?.metrics?.count('auth.mobile_login_attempted', 1, {
+      attributes: { result: 'success' }
+    });
 
     reply.setAccessTokenCookie(createAccessToken(id));
   });

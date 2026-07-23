@@ -1,0 +1,29 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-authentication-and-authorization",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6a290c7a7adc85e3f23ec260",
+      "title": "How does Authentication and Authorization Work?"
+    },
+    {
+      "id": "6a290e7af9e4fd527cf870a1",
+      "title": "What Are JSON Web Tokens?"
+    },
+    {
+      "id": "6a290e7a20f70a7f5f3dff15",
+      "title": "What is Cross-Site Request Forgery?"
+    },
+    {
+      "id": "6a290e7b29cad670ec639331",
+      "title": "What is Passport.js Used For?"
+    },
+    {
+      "id": "6a290e7cf46119363b72f33b",
+      "title": "What is Helmet.js Used For?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

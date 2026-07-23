@@ -18,6 +18,8 @@ strictPeerDependencies: false
 # A lot of our scripts rely on pre and post scripts.
 enablePrePostScripts: true
 minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@freecodecamp/curriculum-helpers'
 
 overrides:
   # Pin transitive deps to mature releases so Renovate can refresh lockfiles.

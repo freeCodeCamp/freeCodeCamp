@@ -360,6 +360,12 @@ export const catalog: Catalog[] = [
     topic: Topic.Js
   },
   {
+    superBlock: SuperBlocks.LearnDataVisualizationWithD3,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.D3
+  },
+  {
     superBlock: SuperBlocks.LearnOOPWithPython,
     level: Levels.Intermediate,
     hours: 3,

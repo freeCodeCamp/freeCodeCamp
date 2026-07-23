@@ -28,19 +28,19 @@ function binarySearch(searchList, value) {
   let pathToTarget = [];
   let low = 0;
   let high = searchList.length - 1;
+  
   while (low <= high) {
     let mid = Math.floor((low + high) / 2);
     let valueAtMiddle = searchList[mid];
     pathToTarget.push(valueAtMiddle);
-
+    
     if (value === valueAtMiddle) {
       return pathToTarget;
     } else if (value > valueAtMiddle) {
 --fcc-editable-region--
-        
+      
 --fcc-editable-region--     
     }
-    
     break;
   }
   return [];

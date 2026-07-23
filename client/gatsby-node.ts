@@ -95,7 +95,8 @@ exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
         util: 'util/util',
         buffer: 'buffer',
         stream: 'stream-browserify',
-        process: 'process/browser'
+        process: 'process/browser',
+        url: 'url'
       }
     },
     plugins: newPlugins,

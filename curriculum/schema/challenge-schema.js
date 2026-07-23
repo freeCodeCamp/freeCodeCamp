@@ -177,7 +177,7 @@ export const schema = Joi.object().keys({
   }),
   certification: Joi.string().regex(slugWithSlashRE),
   isExam: Joi.boolean(),
-  challengeType: Joi.number().min(0).max(31).required(),
+  challengeType: Joi.number().min(0).max(33).required(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
   demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -248,8 +248,7 @@ export const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required(),
-    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
+      .required()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
@@ -262,13 +261,17 @@ export const schema = Joi.object().keys({
     is: challengeTypes.fillInTheBlank,
     then: Joi.when('superBlock', {
       is: Joi.valid(SuperBlocks.A1Chinese, SuperBlocks.A2Chinese),
-      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional(),
+      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').required(),
       otherwise: Joi.forbidden()
     }),
     otherwise: Joi.forbidden()
   }),
   instructions: Joi.string().when('challengeType', {
-    is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
+    is: [
+      challengeTypes.pythonProject,
+      challengeTypes.codeAllyCert,
+      challengeTypes.freeCodeCampOsCert
+    ],
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
@@ -392,7 +395,12 @@ export const schema = Joi.object().keys({
   }),
   translationPending: Joi.bool().required(),
   url: Joi.when('challengeType', {
-    is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
+    is: [
+      challengeTypes.codeAllyPractice,
+      challengeTypes.codeAllyCert,
+      challengeTypes.freeCodeCampOsPractice,
+      challengeTypes.freeCodeCampOsCert
+    ],
     then: Joi.string().required()
   }),
   usesMultifileEditor: Joi.boolean()
