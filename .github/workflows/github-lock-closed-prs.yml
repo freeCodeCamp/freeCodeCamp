@@ -6,6 +6,7 @@ on:
 
 permissions:
   issues: write
+  pull-requests: write
 jobs:
   lock:
     name: Lock Closed PR
