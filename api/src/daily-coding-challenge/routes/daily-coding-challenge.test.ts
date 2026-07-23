@@ -189,6 +189,146 @@ describe('/daily-coding-challenge', () => {
     });
   });
 
+  describe('GET /daily-coding-challenge/day/:day', () => {
+    beforeEach(async () => {
+      await fastifyTestInstance.prisma.dailyCodingChallenges.createMany({
+        data: mockChallenges
+      });
+    });
+
+    afterEach(async () => {
+      await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
+    });
+
+    it('should return 400 for an invalid day format', async () => {
+      const invalidFormats = [
+        'invalid-format',
+        '2025-10-02',
+        '010-02',
+        '2025-10',
+        '10-2',
+        '1-02',
+        '13-45',
+        '04-31',
+        '00-15'
+      ];
+
+      for (const invalidFormat of invalidFormats) {
+        const res = await superRequest(
+          `/daily-coding-challenge/day/${invalidFormat}`,
+          {
+            method: 'GET'
+          }
+        ).send({});
+
+        expect(res.status).toBe(400);
+        expect(res.body).toEqual({
+          type: 'error',
+          message: 'Invalid date format. Please use MM-DD.'
+        });
+      }
+    });
+
+    it('should return 404 for a day without a challenge', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
+      const res = await superRequest('/daily-coding-challenge/day/09-30', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(404);
+      expect(res.body).toEqual({
+        type: 'error',
+        message: 'Challenge not found.'
+      });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_not_found', 1, {
+        attributes: { route: '/daily-coding-challenge/day/:day' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('should return a challenge for a valid day request', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
+      const res = await superRequest('/daily-coding-challenge/day/10-02', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(200);
+      expect(res.body).toMatchObject({
+        ...todaysChallenge,
+        date: todaysChallenge.date.toISOString()
+      });
+      expect(count).toHaveBeenCalledWith('dcc.challenge_viewed', 1, {
+        attributes: { route: '/daily-coding-challenge/day/:day' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it("should not return a day's challenge if it hasn't been released even once yet (temporary, until the original run finishes on 2026-08-10)", async () => {
+      const res = await superRequest('/daily-coding-challenge/day/10-03', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(404);
+      expect(res.body).toEqual({
+        type: 'error',
+        message: 'Challenge not found.'
+      });
+    });
+
+    it('should return a day once real time has passed the entire original run, even for days that were never released relative to the mocked "today" above', async () => {
+      vi.setSystemTime(addDays(todayUsCentral, 365));
+
+      const res = await superRequest('/daily-coding-challenge/day/10-03', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(200);
+      expect(res.body).toMatchObject({
+        ...tomorrowsChallenge,
+        date: tomorrowsChallenge.date.toISOString()
+      });
+    });
+
+    it('should map a Feb 29 day request to the Feb 28 challenge', async () => {
+      await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
+
+      const feb28UtcMidnight = new Date(Date.UTC(2026, 1, 28));
+      const feb28Challenge = {
+        ...todaysChallenge,
+        date: feb28UtcMidnight
+      };
+      await fastifyTestInstance.prisma.dailyCodingChallenges.createMany({
+        data: [feb28Challenge]
+      });
+
+      vi.setSystemTime(new Date(Date.UTC(2028, 1, 29, 6)));
+
+      const res = await superRequest('/daily-coding-challenge/day/02-29', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(200);
+      expect(res.body).toMatchObject({
+        ...feb28Challenge,
+        date: feb28UtcMidnight.toISOString()
+      });
+    });
+  });
+
   describe('GET /daily-coding-challenge/today', () => {
     beforeEach(async () => {
       await fastifyTestInstance.prisma.dailyCodingChallenges.createMany({
@@ -248,6 +388,20 @@ describe('/daily-coding-challenge', () => {
       });
 
       fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it("should loop back to last year's challenge on the same month/day, returning the source date rather than a real requested year", async () => {
+      vi.setSystemTime(addDays(todayUsCentral, 365));
+
+      const res = await superRequest('/daily-coding-challenge/today', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(200);
+      expect(res.body).toMatchObject({
+        ...todaysChallenge,
+        date: todaysChallenge.date.toISOString()
+      });
     });
   });
 
@@ -439,6 +593,40 @@ describe('/daily-coding-challenge', () => {
       });
 
       fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('should include every challenge once real time has passed all of their release dates', async () => {
+      vi.setSystemTime(addDays(todayUsCentral, 365));
+
+      const res = await superRequest('/daily-coding-challenge/all', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(200);
+
+      const expectedResponse = [
+        {
+          id: tomorrowsChallenge.id,
+          challengeNumber: tomorrowsChallenge.challengeNumber,
+          date: tomorrowsChallenge.date.toISOString(),
+          title: tomorrowsChallenge.title
+        },
+        {
+          id: todaysChallenge.id,
+          challengeNumber: todaysChallenge.challengeNumber,
+          date: todaysChallenge.date.toISOString(),
+          title: todaysChallenge.title
+        },
+        {
+          id: yesterdaysChallenge.id,
+          challengeNumber: yesterdaysChallenge.challengeNumber,
+          date: yesterdaysChallenge.date.toISOString(),
+          title: yesterdaysChallenge.title
+        }
+      ];
+
+      expect(res.body).toHaveLength(3);
+      expect(res.body).toEqual(expectedResponse);
     });
   });
 

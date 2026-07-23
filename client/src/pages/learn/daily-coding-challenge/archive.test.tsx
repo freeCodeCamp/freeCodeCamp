@@ -12,7 +12,8 @@ import {
 } from '../../../../utils/test-utils';
 import {
   formatDate,
-  getTodayUsCentral
+  getTodayUsCentral,
+  toMonthDay
 } from '../../../components/daily-coding-challenge/helpers';
 import Archive from './archive';
 
@@ -100,7 +101,7 @@ describe('<DailyCodingChallengeArchive />', () => {
       screen.getByRole('link', { name: 'buttons.go-to-dcc-today' })
     ).toHaveAttribute(
       'href',
-      `/learn/daily-coding-challenge/${todayUsCentral}`
+      `/learn/daily-coding-challenge/${toMonthDay(todayUsCentral)}`
     );
 
     await waitFor(() => {
