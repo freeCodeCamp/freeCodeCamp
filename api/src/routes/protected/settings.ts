@@ -277,19 +277,13 @@ ${isLinkSentWithinLimitTTL}`
 
       // ToDo(MVP): email the new email and wait user to confirm it, before we update the user schema.
       try {
-        await fastify.prisma.user.update({
-          where: { id: user.id },
-          data: {
-            newEmail,
-            emailVerified: false,
-            emailVerifyTTL: new Date()
-          }
-        });
-
         // TODO: combine emailVerifyTTL and emailAuthLinkTTL? I'm not sure why
         // we need emailVeriftyTTL given that the main thing we want is to
         // restrict the rate of attempts and the emailAuthLinkTTL already does
         // that.
+        // This check has to happen before the user is updated, otherwise a
+        // rate-limited request would still overwrite the pending email and
+        // invalidate the confirmation link sent for it.
         const tooManyRequestsMessage = getWaitMessage({
           sentAt: user.emailAuthLinkTTL
         });
@@ -304,6 +298,15 @@ ${isLinkSentWithinLimitTTL}`
             message: tooManyRequestsMessage
           });
         }
+
+        await fastify.prisma.user.update({
+          where: { id: user.id },
+          data: {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date()
+          }
+        });
 
         // Update the emailAuthLinkTTL to ensure we don't send too many emails.
         await fastify.prisma.user.update({
