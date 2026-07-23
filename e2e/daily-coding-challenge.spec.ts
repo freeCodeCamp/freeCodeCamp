@@ -4,7 +4,7 @@ import {
   formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 
-const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
+const dateRouteRe = /.*\/daily-coding-challenge\/day\/.*/;
 
 const todayUsCentral = getTodayUsCentral();
 
