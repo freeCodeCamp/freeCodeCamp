@@ -307,7 +307,6 @@ const addOrUpdateTask = () => {
 
 --fcc-editable-region--
 
---fcc-editable-region--
 
 const reset = () => {
   titleInput.value = "";
@@ -353,6 +352,7 @@ taskForm.addEventListener("submit", (e) => {
       `
     }
   );
+  --fcc-editable-region--
 
   reset()
 });
