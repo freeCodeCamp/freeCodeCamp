@@ -65,11 +65,22 @@ type Experience {
   description String
 }
 
+type Education {
+  id          String
+  institution String
+  degree      String
+  location    String?
+  startDate   String
+  endDate     String?
+  description String
+}
+
 type ProfileUI {
   isLocked       Boolean? // Undefined
   showAbout      Boolean? // Undefined
   showCerts      Boolean? // Undefined
   showDonation   Boolean? // Undefined
+  showEducation  Boolean? // Undefined
   showHeatMap    Boolean? // Undefined
   showLocation   Boolean? // Undefined
   showName       Boolean? // Undefined
@@ -148,10 +159,10 @@ model user {
   isFrontEndLibsCertV9           Boolean? // Undefined
   isBackEndDevApisCertV9         Boolean? // Undefined
   isFullStackDeveloperCertV9     Boolean? // Undefined
-  isB1EnglishCert              Boolean? // Undefined
-  isA2SpanishCert              Boolean? // Undefined
-  isA2ChineseCert              Boolean? // Undefined
-  isA1ChineseCert              Boolean? // Undefined
+  isB1EnglishCert                Boolean? // Undefined
+  isA2SpanishCert                Boolean? // Undefined
+  isA2ChineseCert                Boolean? // Undefined
+  isA1ChineseCert                Boolean? // Undefined
   // isUpcomingPythonCertV8         Boolean? // Undefined. It is in the db but has never been used.
   keyboardShortcuts              Boolean? // Undefined
   linkedin                       String? // Null | Undefined
@@ -163,6 +174,7 @@ model user {
   password                       String? // Undefined
   picture                        String?
   portfolio                      Portfolio[]
+  education                      Education[]
   experience                     Experience[]
   profileUI                      ProfileUI? // Undefined
   progressTimestamps             Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE

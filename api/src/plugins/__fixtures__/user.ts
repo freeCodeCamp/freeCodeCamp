@@ -21,6 +21,7 @@ export const newUser = (email: string) => ({
   emailAuthLinkTTL: null,
   emailVerified: true,
   emailVerifyTTL: null,
+  education: [],
   experience: [],
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   externalId: expect.stringMatching(uuidRe),
@@ -81,6 +82,7 @@ export const newUser = (email: string) => ({
     showAbout: false,
     showCerts: false,
     showDonation: false,
+    showEducation: false,
     showExperience: false,
     showHeatMap: false,
     showLocation: false,

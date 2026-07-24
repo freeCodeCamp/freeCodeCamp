@@ -178,6 +178,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showEducation: false,
   showExperience: false,
   showHeatMap: false,
   showLocation: false,
@@ -274,6 +275,7 @@ const publicUserData = {
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
   quizAttempts: testUserData.quizAttempts,
+  education: [],
   experience: [],
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
@@ -1479,6 +1481,7 @@ describe('userRoutes', () => {
           completedDailyCodingChallenges: [],
           completedExams: [],
           completedSurveys: [],
+          education: [],
           experience: [],
           partiallyCompletedChallenges: [],
           portfolio: [],

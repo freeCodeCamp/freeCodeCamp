@@ -74,6 +74,16 @@ const testUserData: Prisma.userCreateInput = {
       }
     }
   ],
+  education: [
+    {
+      id: 'edu1',
+      institution: 'University',
+      degree: 'Computer Science',
+      startDate: '2020-01-01',
+      endDate: '2021-01-01',
+      description: 'Studied software engineering.'
+    }
+  ],
   experience: [
     {
       id: 'exp1',
@@ -137,6 +147,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showEducation: false,
   showExperience: false,
   showHeatMap: false,
   showLocation: false,
@@ -195,6 +206,7 @@ const publicUserData = {
   ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
+  education: testUserData.education,
   experience: testUserData.experience,
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
@@ -261,6 +273,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showEducation: true,
         showExperience: true,
         showHeatMap: true,
         showLocation: true,
@@ -274,6 +287,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showEducation: true,
         showExperience: true,
         showHeatMap: true,
         showLocation: true,
@@ -507,6 +521,17 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      education: [
+        {
+          id: 'edu1',
+          institution: 'University',
+          degree: 'Computer Science',
+          location: 'Location',
+          startDate: '01/2020',
+          endDate: '12/2022',
+          description: 'Description'
+        }
+      ],
       experience: [
         {
           id: 'exp1',
@@ -523,6 +548,7 @@ describe('get-public-profile helpers', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showEducation: true,
         showHeatMap: true,
         showLocation: true,
         showName: true,
@@ -638,6 +664,16 @@ describe('get-public-profile helpers', () => {
       };
       expect(replacePrivateData(userWithoutExperience)).toMatchObject({
         experience: []
+      });
+    });
+
+    test('returns [] for education if showEducation is not true', () => {
+      const userWithoutEducation = {
+        ...user,
+        profileUI: { ...user.profileUI, showEducation: false }
+      };
+      expect(replacePrivateData(userWithoutEducation)).toMatchObject({
+        education: []
       });
     });
 
