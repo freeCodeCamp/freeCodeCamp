@@ -17,26 +17,12 @@ vi.mock('react-helmet', () => ({
   )
 }));
 
-vi.mock('gatsby', () => ({
-  graphql: vi.fn()
-}));
-
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeatureValue: () => []
 }));
 
-vi.mock('react-scroll', () => ({
-  scroller: { scrollTo: vi.fn() }
-}));
-
 vi.mock('../../components/Donation/donation-modal', () => ({
   default: () => null
-}));
-
-vi.mock('../../components/Header/components/login', () => ({
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <span>{children}</span>
-  )
 }));
 
 vi.mock('../../components/Map', () => ({
@@ -51,19 +37,7 @@ vi.mock('./components/cert-challenge', () => ({
   default: () => null
 }));
 
-vi.mock('./components/help-translate', () => ({
-  default: () => null
-}));
-
 vi.mock('./components/legacy-links', () => ({
-  default: () => null
-}));
-
-vi.mock('./components/super-block-accordion', () => ({
-  SuperBlockAccordion: () => null
-}));
-
-vi.mock('./components/super-block-search', () => ({
   default: () => null
 }));
 
@@ -84,6 +58,13 @@ const translationMap: Record<string, unknown> = {
   'intro:responsive-web-design': {
     title: 'Responsive Web Design',
     intro: ['Create responsive layouts across devices.'],
+    note: ''
+  },
+  'intro:2022/responsive-web-design': {
+    title: 'Legacy Responsive Web Design V8',
+    intro: [
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
+    ],
     note: ''
   },
   'intro:a2-english-for-developers': {
@@ -130,44 +111,6 @@ vi.mock('react-i18next', () => ({
     <span>{children}</span>
   ),
   withTranslation: () => (Component: React.ComponentType<unknown>) => Component
-}));
-
-vi.mock('@freecodecamp/ui', () => ({
-  Callout: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Spacer: () => null,
-  Container: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Row: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Col: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
-}));
-
-vi.mock('../../assets/superblock-icon', () => ({
-  SuperBlockIcon: () => <div />
-}));
-
-vi.mock('../../assets/icons/cap', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/dumbbell', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/community', () => ({ default: () => <div /> }));
-vi.mock('../../components/archived-warning', () => ({
-  default: () => <div />
-}));
-
-vi.mock('../../components/helpers', () => ({
-  Link: ({
-    children,
-    to,
-    ...rest
-  }: {
-    children: React.ReactNode;
-    to: string;
-  }) => (
-    <a href={to} {...rest}>
-      {children}
-    </a>
-  )
 }));
 
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
@@ -451,6 +394,23 @@ describe('SuperBlockIntroductionPage', () => {
     expect(
       await screen.findByText(
         "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
+      )
+    ).toBeInTheDocument();
+  });
+
+  it('renders the Legacy Responsive Web Design V8 page title and intro copy', async () => {
+    const superBlock = SuperBlocks.RespWebDesignNew;
+    const setup = createSetup(superBlock);
+    const props = createPageProps(setup, superBlock);
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    expect(
+      screen.getByText('Legacy Responsive Web Design V8 | freeCodeCamp.org')
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText(
+        "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
       )
     ).toBeInTheDocument();
   });
