@@ -66,6 +66,7 @@ export const getSessionUser = {
             })
           ),
           currentChallengeId: Type.String(),
+          lastActivityUrl: Type.Optional(Type.String()),
           email: Type.String(),
           emailVerified: Type.Boolean(),
           githubProfile: Type.Optional(Type.String()),
