@@ -5418,6 +5418,13 @@
           "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
+      "workshop-library-search": {
+        "title": "Design a Library Book Search",
+        "intro": [
+          "In this workshop, you will practice handling errors gracefully in JavaScript.",
+          "You will build a Library Book Search application and use <code>try...catch...finally</code> blocks, along with the <code>throw</code> statement, to catch and manage custom errors."
+        ]
+      },
       "lab-random-background-color-changer": {
         "title": "Debug a Random Background Color Changer",
         "intro": [
