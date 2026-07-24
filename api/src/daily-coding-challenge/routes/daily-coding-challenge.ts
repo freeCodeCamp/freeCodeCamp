@@ -4,7 +4,9 @@ import * as schemas from '../schemas/index.js';
 import {
   getNowUsCentral,
   getUtcMidnight,
-  dateStringToUtcMidnight
+  dateStringToUtcMidnight,
+  monthDayStringToUtcDate,
+  getSourceDate
 } from '../utils/helpers.js';
 
 /**
@@ -22,13 +24,13 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   fastify.get(
+    // Will stop returning challenges if param is after aug 10, 2026 - the last challenge date.
     '/daily-coding-challenge/date/:date',
     {
       schema: schemas.dailyCodingChallenge.date
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-      logger.info(
+      req.log.info(
         { date: req.params.date },
         'Received request for daily coding challenge'
       );
@@ -39,7 +41,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         const parsedDate = dateStringToUtcMidnight(date);
 
         if (!parsedDate) {
-          logger.warn({ date }, 'Invalid date format requested');
+          req.log.warn({ date }, 'Invalid date format requested');
           return reply.status(400).send({
             type: 'error',
             message: 'Invalid date format. Please use YYYY-MM-DD.'
@@ -54,18 +56,102 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
 
         // don't return challenges > today US Central
         if (!challenge || challenge.date > getUtcMidnight(getNowUsCentral())) {
-          logger.warn({ date: parsedDate }, 'Challenge not found for date');
+          req.log.warn({ date: parsedDate }, 'Challenge not found for date');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/date/:date' }
+          });
           return reply
             .status(404)
             .send({ type: 'error', message: 'Challenge not found.' });
         }
 
+        fastify.Sentry?.metrics?.count('dcc.challenge_viewed', 1, {
+          attributes: { route: '/daily-coding-challenge/date/:date' }
+        });
         return reply.send({
           ...challenge,
           date: challenge.date.toISOString()
         });
       } catch (error) {
-        logger.error(error, 'Failed to get daily coding challenge.');
+        req.log.error(error, 'Failed to get daily coding challenge.');
+        fastify.Sentry?.captureException(error);
+        fastify.Sentry?.metrics?.count('dcc.request_failed', 1, {
+          attributes: { route: '/daily-coding-challenge/date/:date' }
+        });
+        await reply
+          .status(500)
+          .send({ type: 'error', message: 'Internal server error.' });
+      }
+    }
+  );
+
+  fastify.get(
+    '/daily-coding-challenge/day/:day',
+    {
+      schema: schemas.dailyCodingChallenge.day
+    },
+    async (req, reply) => {
+      req.log.info(
+        { day: req.params.day },
+        'Received request for daily coding challenge by day'
+      );
+
+      const { day } = req.params;
+
+      try {
+        const monthDay = monthDayStringToUtcDate(day);
+
+        if (!monthDay) {
+          req.log.warn({ day }, 'Invalid day format requested');
+          return reply.status(400).send({
+            type: 'error',
+            message: 'Invalid date format. Please use MM-DD.'
+          });
+        }
+
+        const sourceDate = getSourceDate(monthDay);
+
+        // TEMPORARY: blocks days for not yet released challenges
+        // Safe to delete after 2026-08-10 (all challenges released)
+        if (sourceDate > getUtcMidnight(getNowUsCentral())) {
+          req.log.warn({ day }, 'Challenge not found for day');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/day/:day' }
+          });
+          return reply
+            .status(404)
+            .send({ type: 'error', message: 'Challenge not found.' });
+        }
+
+        const challenge = await fastify.prisma.dailyCodingChallenges.findFirst({
+          where: {
+            date: sourceDate
+          }
+        });
+
+        if (!challenge) {
+          req.log.warn({ day }, 'Challenge not found for day');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/day/:day' }
+          });
+          return reply
+            .status(404)
+            .send({ type: 'error', message: 'Challenge not found.' });
+        }
+
+        fastify.Sentry?.metrics?.count('dcc.challenge_viewed', 1, {
+          attributes: { route: '/daily-coding-challenge/day/:day' }
+        });
+        return reply.send({
+          ...challenge,
+          date: challenge.date.toISOString()
+        });
+      } catch (error) {
+        req.log.error(error, 'Failed to get daily coding challenge by day.');
+        fastify.Sentry?.captureException(error);
+        fastify.Sentry?.metrics?.count('dcc.request_failed', 1, {
+          attributes: { route: '/daily-coding-challenge/day/:day' }
+        });
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -79,32 +165,42 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.dailyCodingChallenge.today
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-      logger.info("Received request for today's daily coding challenge");
+      req.log.info("Received request for today's daily coding challenge");
 
       const today = getUtcMidnight(getNowUsCentral());
+      const sourceDate = getSourceDate(today);
 
       try {
         const todaysChallenge =
           await fastify.prisma.dailyCodingChallenges.findFirst({
             where: {
-              date: today
+              date: sourceDate
             }
           });
 
         if (!todaysChallenge) {
-          logger.warn({ date: today }, 'Challenge not found for today');
+          req.log.warn({ date: today }, 'Challenge not found for today');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/today' }
+          });
           return reply
             .status(404)
             .send({ type: 'error', message: 'Challenge not found.' });
         }
 
+        fastify.Sentry?.metrics?.count('dcc.challenge_viewed', 1, {
+          attributes: { route: '/daily-coding-challenge/today' }
+        });
         return reply.send({
           ...todaysChallenge,
           date: todaysChallenge.date.toISOString()
         });
       } catch (error) {
-        logger.error(error, "Failed to get today's daily coding challenge.");
+        req.log.error(error, "Failed to get today's daily coding challenge.");
+        fastify.Sentry?.captureException(error);
+        fastify.Sentry?.metrics?.count('dcc.request_failed', 1, {
+          attributes: { route: '/daily-coding-challenge/today' }
+        });
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -118,8 +214,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.dailyCodingChallenge.month
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-      logger.info(
+      req.log.info(
         { month: req.params.month },
         'Received request for month of daily coding challenges'
       );
@@ -134,7 +229,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
 
         // Validate month range
         if (parsedMonth < 1 || parsedMonth > 12) {
-          logger.warn({ month }, 'Invalid month value requested');
+          req.log.warn({ month }, 'Invalid month value requested');
           return reply.status(400).send({
             type: 'error',
             message: 'Invalid date format. Please use YYYY-MM.'
@@ -165,7 +260,10 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!challenges || challenges.length === 0) {
-          logger.warn({ month }, 'No challenges found for month');
+          req.log.warn({ month }, 'No challenges found for month');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/month/:month' }
+          });
           return reply
             .status(404)
             .send({ type: 'error', message: 'No challenges found.' });
@@ -176,9 +274,16 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           date: challenge.date.toISOString()
         }));
 
+        fastify.Sentry?.metrics?.count('dcc.challenge_viewed', 1, {
+          attributes: { route: '/daily-coding-challenge/month/:month' }
+        });
         return reply.send(response);
       } catch (error) {
-        logger.error(error, 'Failed to get monthly daily coding challenges.');
+        req.log.error(error, 'Failed to get monthly daily coding challenges.');
+        fastify.Sentry?.captureException(error);
+        fastify.Sentry?.metrics?.count('dcc.request_failed', 1, {
+          attributes: { route: '/daily-coding-challenge/month/:month' }
+        });
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -192,8 +297,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.dailyCodingChallenge.all
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-      logger.info('Received request for all daily coding challenges');
+      req.log.info('Received request for all daily coding challenges');
 
       const today = getUtcMidnight(getNowUsCentral());
 
@@ -218,7 +322,10 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           });
 
         if (!allChallenges || allChallenges.length === 0) {
-          logger.warn({ date: today }, 'No challenges found.');
+          req.log.warn({ date: today }, 'No challenges found.');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/all' }
+          });
           return reply
             .status(404)
             .send({ type: 'error', message: 'No challenges found.' });
@@ -229,9 +336,16 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           date: challenge.date.toISOString()
         }));
 
+        fastify.Sentry?.metrics?.count('dcc.challenge_viewed', 1, {
+          attributes: { route: '/daily-coding-challenge/all' }
+        });
         return reply.send(response);
       } catch (error) {
-        logger.error(error, 'Failed to get all daily coding challenges.');
+        req.log.error(error, 'Failed to get all daily coding challenges.');
+        fastify.Sentry?.captureException(error);
+        fastify.Sentry?.metrics?.count('dcc.request_failed', 1, {
+          attributes: { route: '/daily-coding-challenge/all' }
+        });
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });
@@ -245,8 +359,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.dailyCodingChallenge.newest
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-      logger.info('Received request for newest daily coding challenge');
+      req.log.info('Received request for newest daily coding challenge');
 
       try {
         const newestChallenge =
@@ -260,15 +373,25 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           });
 
         if (!newestChallenge) {
-          logger.warn('No challenges found.');
+          req.log.warn('No challenges found.');
+          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+            attributes: { route: '/daily-coding-challenge/newest' }
+          });
           return reply
             .status(404)
             .send({ type: 'error', message: 'No challenges found.' });
         }
 
+        fastify.Sentry?.metrics?.count('dcc.challenge_viewed', 1, {
+          attributes: { route: '/daily-coding-challenge/newest' }
+        });
         return reply.send({ date: newestChallenge.date.toISOString() });
       } catch (error) {
-        logger.error(error, 'Failed to get newest daily coding challenge.');
+        req.log.error(error, 'Failed to get newest daily coding challenge.');
+        fastify.Sentry?.captureException(error);
+        fastify.Sentry?.metrics?.count('dcc.request_failed', 1, {
+          attributes: { route: '/daily-coding-challenge/newest' }
+        });
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });

@@ -164,7 +164,9 @@ export const runnerTypes: Record<
   [challengeTypes.pyLab]: 'python',
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python',
-  [challengeTypes.review]: 'dom'
+  [challengeTypes.review]: 'dom',
+  [challengeTypes.freeCodeCampOsPractice]: 'dom',
+  [challengeTypes.freeCodeCampOsCert]: 'dom'
 };
 
 type BuildResult = {

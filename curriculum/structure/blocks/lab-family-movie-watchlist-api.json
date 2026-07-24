@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lab-family-movie-watchlist-api",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6a55c79b579b9101d31815f7",
+      "title": "Build a Family Movie Watchlist API"
+    }
+  ],
+  "blockLabel": "lab"
+}

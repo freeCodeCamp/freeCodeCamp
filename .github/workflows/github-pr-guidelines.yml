@@ -13,7 +13,7 @@ jobs:
     outputs:
       is_allow_listed: ${{ steps.pr_author.outputs.is_allow_listed }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -83,7 +83,7 @@ jobs:
     needs: no-web-commits
     if: needs.no-web-commits.result == 'success' && github.event.action != 'edited'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -107,7 +107,7 @@ jobs:
     outputs:
       failure_reason: ${{ steps.check.outputs.failure_reason }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -129,7 +129,7 @@ jobs:
     outputs:
       failure_reason: ${{ steps.check.outputs.failure_reason }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -150,7 +150,7 @@ jobs:
     needs: [no-web-commits, check-pr-template, check-linked-issue]
     if: always() && needs.no-web-commits.result == 'success'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false

@@ -29,7 +29,6 @@ const challengeFiles = [
 ];
 
 const defaultProps = {
-  areInstructionsDisplayable: true,
   dailyCodingChallengeLanguage: 'javascript' as const,
   hasNotes: false,
   hasPreview: true,
