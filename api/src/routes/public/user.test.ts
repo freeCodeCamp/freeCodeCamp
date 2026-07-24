@@ -203,6 +203,7 @@ const publicUserData = {
   isB1EnglishCert: testUserData.isB1EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
+  isBackEndDevApisCertV9: testUserData.isBackEndDevApisCertV9,
   isCheater: testUserData.isCheater,
   isCollegeAlgebraPyCertV8: testUserData.isCollegeAlgebraPyCertV8,
   isDataAnalysisPyCertV7: testUserData.isDataAnalysisPyCertV7,

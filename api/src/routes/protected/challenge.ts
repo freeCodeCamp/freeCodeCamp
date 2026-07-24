@@ -144,7 +144,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (
-        challengeType === challengeTypes.codeAllyCert &&
+        (challengeType === challengeTypes.codeAllyCert ||
+          challengeType === challengeTypes.freeCodeCampOsCert) &&
         !canSubmitCodeRoadCertProject(projectId, user)
       ) {
         req.log.warn(
@@ -1053,7 +1054,9 @@ async function postCoderoadChallengeCompleted(
   const codeRoadChallenges = challenges.filter(
     ({ challengeType }) =>
       challengeType === challengeTypes.codeAllyPractice ||
-      challengeType === challengeTypes.codeAllyCert
+      challengeType === challengeTypes.codeAllyCert ||
+      challengeType === challengeTypes.freeCodeCampOsPractice ||
+      challengeType === challengeTypes.freeCodeCampOsCert
   );
 
   const challenge = codeRoadChallenges.find(challenge => {
@@ -1110,7 +1113,11 @@ async function postCoderoadChallengeCompleted(
       challenge => challenge.id === challengeId
     );
 
-    if (challengeType === challengeTypes.codeAllyCert && !isCompleted) {
+    if (
+      (challengeType === challengeTypes.codeAllyCert ||
+        challengeType === challengeTypes.freeCodeCampOsCert) &&
+      !isCompleted
+    ) {
       const finalChallenge = {
         id: challengeId,
         completedDate

@@ -355,6 +355,7 @@ const baseProgressData = {
   is2018FullStackCert: false,
   isFrontEndCert: false,
   isBackEndCert: false,
+  isBackEndDevApisCertV9: false,
   isDataVisCert: false,
   isFullStackCert: false,
   isJavascriptCertV9: false,
