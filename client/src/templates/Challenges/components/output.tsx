@@ -10,10 +10,20 @@ interface OutputProps {
   output: string;
 }
 
+const htmlEntityRegex = /&(#\d+|#x[\da-f]+|[a-z][\da-z]+);/gi;
+
+function preserveHtmlEntities(message: string): string {
+  return message.replace(htmlEntityRegex, '&amp;$1;');
+}
+
 function Output({ defaultOutput, output }: OutputProps): JSX.Element {
-  const message = sanitizeHtml(!isEmpty(output) ? output : defaultOutput, {
-    allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
-  });
+  const message = sanitizeHtml(
+    preserveHtmlEntities(!isEmpty(output) ? output : defaultOutput),
+    {
+      allowedTags: ['b', 'i', 'em', 'strong', 'code', 'wbr']
+    }
+  );
+
   return (
     <pre
       className='output-text'
