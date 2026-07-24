@@ -667,6 +667,15 @@ Please wait 5 minutes to resend an authentication link.`
           type: 'info',
           message: `Please wait 5 minutes to resend an authentication link.`
         });
+
+        // The rate-limited request must not overwrite the pending email,
+        // otherwise the confirmation link sent to the first address stops
+        // working.
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: developerUserEmail },
+          select: { newEmail: true }
+        });
+        expect(user.newEmail).toEqual(unusedEmailOne);
       });
 
       test('PUT creates an auth token record for the requesting user', async () => {
