@@ -153,7 +153,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       jwt.verify(encodedToken, JWT_SECRET);
     } catch (e) {
       req.log.warn({ err: e }, 'Exam environment token verification failed');
-      void reply.code(403);
+      void reply.code(401);
       return reply.send(
         ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
           JSON.stringify(e)
@@ -205,7 +205,11 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       });
 
     if (!token) {
-      void reply.code(403);
+      req.log.warn(
+        { tokenId: examEnvironmentAuthorizationToken },
+        'Exam environment authorization token revoked or not found'
+      );
+      void reply.code(401);
       return reply.send(
         ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
           'Provided token is revoked.'

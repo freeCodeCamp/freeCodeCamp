@@ -1169,6 +1169,7 @@
     "theme-updated": "Your theme has been updated!",
     "username-used": "Username is already associated with this account",
     "username-taken": "Username is already associated with a different account",
+    "username-restricted": "That username is reserved and can't be used.",
     "username-updated": "We have updated your username to {{username}}",
     "privacy-updated": "We have updated your privacy settings",
     "could-not-logout": "We could not log you out, please try again in a moment",

@@ -408,6 +408,22 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(404);
       });
 
+      it('should respond with the error, not hang, when a request fails schema validation', async () => {
+        const res = await superPost('/exam-environment/exam/generated-exam')
+          .send({})
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res.status).toBe(400);
+        expect(res.body).toMatchObject({
+          code: 'FST_ERR_VALIDATION',
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          message: expect.any(String)
+        });
+      }, 10000);
+
       it('should return an error if the exam prerequisites are not met', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
@@ -1627,7 +1643,7 @@ describe('/exam-environment/', () => {
       await mock.seedEnvExam();
     });
     describe('POST /exam-environment/exam/attempt', () => {
-      it('should return 403', async () => {
+      it('should return 401', async () => {
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
           attempt: {
             examId: mock.oid(),
@@ -1638,12 +1654,12 @@ describe('/exam-environment/', () => {
           .send(body)
           .set('exam-environment-authorization-token', 'invalid-token');
 
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(401);
       });
     });
 
     describe('POST /exam-environment/exam/generated-exam', () => {
-      it('should return 403', async () => {
+      it('should return 401', async () => {
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.oid()
         };
@@ -1651,7 +1667,7 @@ describe('/exam-environment/', () => {
           .send(body)
           .set('exam-environment-authorization-token', 'invalid-token');
 
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(401);
       });
     });
 
@@ -1690,34 +1706,34 @@ describe('/exam-environment/', () => {
     });
 
     describe('GET /exam-environment/exams', () => {
-      it('should return 403', async () => {
+      it('should return 401', async () => {
         const res = await superGet('/exam-environment/exams').set(
           'exam-environment-authorization-token',
           'invalid-token'
         );
 
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(401);
       });
     });
 
     describe('GET /exam-environment/exam/attempt/:attemptId', () => {
-      it('should return 403', async () => {
+      it('should return 401', async () => {
         const res = await superGet(
           `/exam-environment/exam/attempt/${mock.oid()}`
         ).set('exam-environment-authorization-token', 'invalid-token');
 
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(401);
       });
     });
 
     describe('GET /exam-environment/exam/attempts', () => {
-      it('should return 403', async () => {
+      it('should return 401', async () => {
         const res = await superGet('/exam-environment/exam/attempts').set(
           'exam-environment-authorization-token',
           'invalid-token'
         );
 
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(401);
       });
     });
 

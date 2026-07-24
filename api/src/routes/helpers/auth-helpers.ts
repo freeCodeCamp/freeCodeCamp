@@ -25,7 +25,11 @@ export const findOrCreateUser = async (
       'Multiple user records found'
     );
     fastify.Sentry?.captureException(
-      new Error('Multiple user records found for: ' + userIds.join(', '))
+      new Error('Multiple user records found for the same email'),
+      {
+        extra: { userIds },
+        fingerprint: ['dup-account-multiple-user-records']
+      }
     );
     fastify.Sentry?.metrics?.count('user.duplicate_email_detected', 1);
   }

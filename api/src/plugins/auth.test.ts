@@ -451,8 +451,52 @@ describe('auth', () => {
         headers: { 'exam-environment-authorization-token': 'invalid-token' }
       });
 
-      expect(res.statusCode).toBe(403);
+      expect(res.statusCode).toBe(401);
       expect(captureException).not.toHaveBeenCalled();
+    });
+
+    test('logs a warning when the token is revoked or not found', async () => {
+      const lines: string[] = [];
+      const sink = new Writable({
+        write(chunk: Buffer, _enc, cb) {
+          lines.push(chunk.toString());
+          cb();
+        }
+      });
+      const app = Fastify({
+        loggerInstance: pino(getLoggerOptions('info'), sink)
+      });
+      await app.register(cookies);
+      await app.register(auth);
+      const prismaMock = {
+        examEnvironmentAuthorizationToken: { findFirst: () => null }
+      };
+      // @ts-expect-error prisma isn't built in this minimal test app.
+      app.prisma = prismaMock;
+      app.addHook('onRequest', app.authorizeExamEnvironmentToken);
+      app.get('/test', () => ({ ok: true }));
+
+      const token = jwt.sign(
+        { examEnvironmentAuthorizationToken: 'nonexistent-token-id' },
+        JWT_SECRET
+      );
+      const res = await app.inject({
+        method: 'GET',
+        url: '/test',
+        headers: { 'exam-environment-authorization-token': token }
+      });
+      await app.close();
+
+      expect(res.statusCode).toBe(401);
+      const warned = lines
+        .map(line => JSON.parse(line) as Record<string, unknown>)
+        .find(
+          entry =>
+            entry.msg ===
+            'Exam environment authorization token revoked or not found'
+        );
+      expect(warned).toBeDefined();
+      expect(warned?.level).toBe(40);
     });
   });
 
