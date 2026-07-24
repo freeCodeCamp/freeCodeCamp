@@ -271,7 +271,13 @@ export function IndependentLowerJaw({
     setWasCheckButtonClicked(false);
   }, [isChallengeComplete, isSignedIn, wasCheckButtonClicked]);
 
-  const isMacOS = navigator.userAgent.includes('Mac OS');
+  const isMobile =
+    typeof navigator !== 'undefined' &&
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const isMacOS =
+    typeof navigator !== 'undefined' &&
+    (/Mac/i.test(navigator.platform) || navigator.userAgent.includes('Mac OS'));
+
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const shouldShowSocratesDonateCta =
     !isDonating &&
@@ -281,6 +287,7 @@ export function IndependentLowerJaw({
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
+  const shortcutHint = isMobile ? null : checkButtonText;
 
   const askSocratesAttempt = () => {
     if (!socratesDiscovered) {
@@ -473,30 +480,24 @@ export function IndependentLowerJaw({
           {isChallengeComplete ? (
             <Button
               block
-              className={`${isSignedIn && 'btn-cta'} tooltip`}
+              className={isSignedIn ? 'btn-cta' : undefined}
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
-              aria-label={t('buttons.submit-continue')}
               onClick={handleSubmitButtonClick}
               ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              {shortcutHint ? ` (${shortcutHint})` : ''}
             </Button>
           ) : (
             <button
               type='button'
-              className='btn-cta tooltip'
+              className='btn-cta'
               data-playwright-test-label='independentLowerJaw-check-button'
-              aria-label={t('buttons.check-code')}
               onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip'>
-                {checkButtonText}
-              </span>
+              {shortcutHint ? ` (${shortcutHint})` : ''}
             </button>
           )}
         </div>
