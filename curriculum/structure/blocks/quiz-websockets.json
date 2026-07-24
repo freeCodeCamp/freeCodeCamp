@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "quiz-websockets",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6a226d36b5d21265afeadc82",
+      "title": "WebSockets Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

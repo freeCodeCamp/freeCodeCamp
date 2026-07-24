@@ -50,6 +50,7 @@ import {
   initLogs,
   logsToConsole,
   openModal,
+  setProjectPreviewLoading,
   updateConsole,
   updateLogs,
   updateTests
@@ -420,10 +421,11 @@ function* updatePython(challengeData) {
 }
 
 function* previewProjectSolutionSaga({ payload }) {
-  if (!payload?.challengeData) return;
-  const { challengeData } = payload;
-
+  yield put(setProjectPreviewLoading(true));
   try {
+    if (!payload?.challengeData) return;
+    const { challengeData } = payload;
+
     if (canBuildChallenge(challengeData)) {
       const buildData = yield buildChallengeData(challengeData);
       if (buildData.error) throw Error(buildData.error);
@@ -438,6 +440,8 @@ function* previewProjectSolutionSaga({ payload }) {
   } catch (err) {
     console.error('Unable to show project preview');
     console.error(err);
+  } finally {
+    yield put(setProjectPreviewLoading(false));
   }
 }
 

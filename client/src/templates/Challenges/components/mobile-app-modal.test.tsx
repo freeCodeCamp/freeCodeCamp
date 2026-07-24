@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { renderToString } from 'react-dom/server';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import {
   describe,
   it,
@@ -75,6 +76,14 @@ describe('MobileAppModal', () => {
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
+  it('does not render before mount', () => {
+    // useEffect does not run during server-side rendering, so the 'mounted'
+    // flag stays false and the component should produce no output.
+    expect(
+      renderToString(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />)
+    ).toBe('');
+  });
+
   it('does not render on a desktop OS', () => {
     Object.defineProperty(navigator, 'userAgent', {
       value: DESKTOP_UA,
@@ -114,24 +123,36 @@ describe('MobileAppModal', () => {
     expect(dialog).toHaveTextContent('mobile-app-modal.body');
   });
 
-  it('closes the modal without persisting when X is clicked', () => {
+  it('closes the modal without persisting when X is clicked', async () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     fireEvent.click(screen.getByText('Close'));
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
     expect(store.get(STORE_KEY)).toBeUndefined();
   });
 
-  it('closes the modal without persisting when the store link is clicked', () => {
+  it('closes the modal without persisting when the store link is clicked', async () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     fireEvent.click(screen.getByRole('link'));
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
     expect(store.get(STORE_KEY)).toBeUndefined();
   });
 
-  it('closes the modal and stores a timestamp when "do not show" is clicked', () => {
+  it('closes the modal and stores a timestamp when "do not show" is clicked', async () => {
     render(<MobileAppModal superBlock={MOBILE_SUPERBLOCK} />);
     fireEvent.click(screen.getByText('mobile-app-modal.do-not-show'));
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
+
     const stored = store.get(STORE_KEY) as number;
     expect(stored).toBeGreaterThan(0);
     expect(Date.now() - stored).toBeLessThan(1000);

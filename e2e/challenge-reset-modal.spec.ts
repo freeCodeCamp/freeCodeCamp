@@ -75,6 +75,12 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
     .getByTestId('editor-container-indexhtml')
     .getByText(updatedText);
 
+  // The first failing hint of the challenge, shown in the lower jaw after the
+  // code is checked
+  const failingHint = page.getByText(
+    'Your p element should have an opening tag'
+  );
+
   await page.goto(
     '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
   );
@@ -97,6 +103,8 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
     })
     .click();
 
+  await expect(failingHint).toBeVisible();
+
   // Reset the challenge
   await page.getByRole('button', { name: translations.buttons.reset }).click();
   await page
@@ -105,9 +113,7 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
 
   // Check it's back to the initial state
   await expect(initialEditorText).toBeVisible();
-  await expect(
-    page.getByText(translations.learn['sorry-keep-trying'])
-  ).not.toBeVisible();
+  await expect(failingHint).not.toBeVisible();
 });
 
 test.describe('When the user is not logged in', () => {
@@ -145,9 +151,9 @@ test.describe('When the user is not logged in', () => {
     await focusEditor({ page, isMobile });
     await getEditors(page).fill(challengeSolution);
 
-    const submitButton = isMobile
-      ? page.getByRole('button', { name: translations.buttons.run })
-      : page.getByRole('button', { name: translations.buttons['check-code'] });
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['check-code']
+    });
 
     await submitButton.click();
 

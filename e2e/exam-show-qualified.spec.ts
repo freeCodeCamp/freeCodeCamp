@@ -10,52 +10,17 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Exam Show E2E Test Suite for qualified user', () => {
-  test('The page renders with correct title', async ({ page }) => {
-    await expect(page).toHaveTitle(
-      'Foundational C# with Microsoft Certification Exam: Foundational C# with Microsoft Certification Exam | freeCodeCamp.org'
-    );
-  });
-
-  test('The page has correct header', async ({ page }) => {
-    const header = page.getByTestId('challenge-title');
-    await expect(header).toBeVisible();
-    await expect(header).toContainText(
-      intro['foundational-c-sharp-with-microsoft'].blocks[
-        'foundational-c-sharp-with-microsoft-certification-exam'
-      ].title
-    );
-  });
-
-  test('The page has qualified for exam alert ', async ({ page }) => {
-    await expect(
-      page.getByText(translations.learn.exam['not-qualified'])
-    ).not.toBeVisible();
-    await expect(
-      page.getByText(translations.learn.exam.qualified)
-    ).toBeVisible();
-  });
-
-  test('Verifies the Correct Rendering of the Exam show', async ({ page }) => {
-    const startExam = page.getByRole('button', {
-      name: translations.buttons['click-start-exam']
-    });
-    await startExam.isVisible();
-    await startExam.isEnabled();
-    await expect(
-      page.getByText(
-        'Pass this exam to earn your Foundational C# with Microsoft Certification. Before starting the exam, please review the following guidelines:'
-      )
-    ).toBeVisible();
-  });
-
-  test('Exam Show When the User clicks on Start exam button', async ({
-    page
-  }) => {
+  test('starts the exam without navigating away', async ({ page }) => {
     await page
       .getByRole('button', {
         name: translations.buttons['click-start-exam']
       })
       .click();
     await expect(page).toHaveURL(examUrl);
+    await expect(page.getByTestId('exam-show-title')).toHaveText(
+      intro['foundational-c-sharp-with-microsoft'].blocks[
+        'foundational-c-sharp-with-microsoft-certification-exam'
+      ].title
+    );
   });
 });

@@ -39,7 +39,7 @@ export default function ScrollbarWidthSettings(): JSX.Element {
         {t('settings.scrollbar-width')}:
         <span
           className='scrollbar-width-preview'
-          style={{ width: `${scrollbarWidth}px` } as React.CSSProperties}
+          style={{ width: `${scrollbarWidth}px` }}
         />
       </label>
       <div className='scrollbar-width-container'>

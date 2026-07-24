@@ -3,7 +3,8 @@
   margin-bottom: 40px;
   border: 1px solid #31708f;
   color: #31708f;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       -10deg,
       rgba(217, 237, 247, 1) 35%,
       rgba(237, 202, 216, 0) 75%,

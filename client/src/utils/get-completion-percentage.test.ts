@@ -84,6 +84,22 @@ describe('get-completion-percentage', () => {
 
       expect(result).toBe(33);
     });
+
+    it('reports 100% when resubmitting an already-completed single-challenge lab block', () => {
+      // Regression test for #67867: a completed lab whose block contains only
+      // the lab itself should read 100%, not 0%, on resubmission.
+      const labId = 'lab-challenge';
+      const completedChallengesIds = [labId];
+      const currentBlockIds = [labId];
+
+      const result = getCompletedPercentage(
+        completedChallengesIds,
+        currentBlockIds,
+        labId
+      );
+
+      expect(result).toBe(100);
+    });
   });
 
   describe('getCompletedChallengesInBlock', () => {
@@ -251,6 +267,40 @@ describe('get-completion-percentage', () => {
       expect(result).toEqual(['project-1', 'project-2']);
     });
 
+    // Regression test for #67867: labs are project-based but each is its own
+    // standalone block, so they must use their block IDs rather than the
+    // certification's tests (otherwise resubmitting a completed lab reads 0%).
+    it('returns block IDs for labs even when a certificate is available', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          {
+            challenge: {
+              id: 'lab-challenge',
+              block: 'lab-all-true-property-validator',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: [
+          {
+            challenge: {
+              certification: Certification.JsV9,
+              tests: [{ id: 'javascript-certification-exam' }]
+            }
+          }
+        ]
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'lab-all-true-property-validator',
+        Certification.JsV9,
+        challengeTypes.jsLab
+      );
+
+      expect(result).toEqual(['lab-challenge']);
+    });
+
     it('returns empty array when no matching challenges found', () => {
       const allChallengesInfo: AllChallengesInfo = {
         challengeNodes: [
@@ -273,6 +323,57 @@ describe('get-completion-percentage', () => {
       );
 
       expect(result).toEqual([]);
+    });
+
+    it('only counts challenges from the current superblock when a block is shared across superblocks', () => {
+      // This tests the fix for the bug where blocks shared between superblocks
+      // (e.g. javascript-v9 and introduction-to-variables-and-strings-in-javascript)
+      // caused currentBlockIds.length to be doubled, making the progress bar
+      // show 7% instead of 14% for 1/7 challenges.
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          // Challenges from the current superblock (javascript-v9)
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          // Same block, but from a different superblock — should be excluded
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'workshop-greeting-bot',
+        Certification.JsV9,
+        challengeTypes.step
+      );
+
+      expect(result).toEqual(['challenge-1', 'challenge-2']);
     });
   });
 });

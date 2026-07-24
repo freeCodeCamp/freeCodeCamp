@@ -2,14 +2,14 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-import { configure } from './index.js';
+import { configure, processLintErrors } from './index.js';
 
 const argv = yargs(hideBin(process.argv))
   .options({ config: { type: 'string' } })
   .parseSync();
 
 const configPath = argv.config;
-const files = argv._;
+const files = argv._ as string[];
 
 if (!configPath) {
   console.error(
@@ -25,6 +25,17 @@ if (files.length === 0) {
 
 const { lint } = configure(configPath);
 
-files.forEach(filePath => {
-  lint({ path: filePath });
-});
+const runLint = async () => {
+  const results = await lint(files);
+  const errors = processLintErrors(results);
+
+  if (errors.length > 0) {
+    errors.forEach(({ file, errors: fileErrors }) => {
+      console.log('Errors in file', file);
+      console.log(fileErrors);
+    });
+    process.exit(1);
+  }
+};
+
+void runLint();

@@ -79,7 +79,7 @@
   border-bottom: calc(1.2rem / 2) solid transparent;
   border-inline-start: calc(1.1rem / 2) solid var(--quaternary-background);
   height: 100%;
-  margin-left: 3px;
+  margin-inline-start: 3px;
 }
 
 .breadcrumb-right {

@@ -1,15 +1,21 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { Provider } from 'react-redux';
 import envData from '../../config/env.json';
 import ShowSettings from './show-settings';
-
 import { createStore } from '../redux/create-store';
 import { initialState } from '../redux';
 
 const testUsername = 'testuser';
 
+vi.mock('../analytics');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: false }),
+  useFeatureIsOn: () => false,
+  IfFeatureEnabled: ({ children: _children }: { children: React.ReactNode }) =>
+    null
+}));
 vi.mock('../utils/get-words');
 
 const { apiLocation } = envData;
@@ -80,5 +86,87 @@ describe('<ShowSettings />', () => {
     // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
     const profileLink = container.querySelector(`a[href="/${testUsername}"]`);
     expect(profileLink).toBeInTheDocument();
+  });
+
+  it('does not render the Classroom Mode section when the feature flag is off', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // classroom-mode is gated behind IfFeatureEnabled('classroom-mode'), and the
+    // flag defaults to off, so the section must be fully absent from the DOM.
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const classroomSection = container.querySelector('#classroom-mode-policy');
+    expect(classroomSection).not.toBeInTheDocument();
+  });
+
+  it('renders the Personal section with About form', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // The About component renders a heading using the sectionTitle prop
+    expect(
+      screen.getByRole('heading', { name: 'settings.headings.personal' })
+    ).toBeInTheDocument();
+  });
+
+  it('renders a Personal link in the settings sidebar navigation', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // SettingsSidebarNav renders a ScrollLink with href="#personal"
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const personalLink = container.querySelector('a[href="#personal"]');
+    expect(personalLink).toBeInTheDocument();
   });
 });

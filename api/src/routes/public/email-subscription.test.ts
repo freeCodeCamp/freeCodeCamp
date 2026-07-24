@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import type { Prisma } from '@prisma/client';
-import { describe, test, expect } from 'vitest';
+import { describe, test, expect, vi } from 'vitest';
 import { setupServer, superRequest } from '../../../vitest.utils.js';
 import { HOME_LOCATION } from '../../utils/env.js';
 import { createUserInput } from '../../utils/create-user.js';
@@ -74,17 +74,36 @@ describe('Email Subscription endpoints', () => {
     });
 
     test('should 302 redirect with info message if bad ID', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const response = await superRequest('/ue/54321edcba', { method: 'GET' });
       expect(response.headers.location).toStrictEqual(
         `${HOME_LOCATION}${urlEncodedInfoMessage1}`
       );
       expect(response.status).toBe(302);
+      expect(count).toHaveBeenCalledWith('email_subscription.unsubscribed', 1, {
+        attributes: { result: 'not_found' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     test("1: should set 'sendQuincyEmail' to 'false' for users with matching email and 302 redirect with success message", async () => {
       await fastifyTestInstance.prisma.user.createMany({
         data: testUserData1
       });
+
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
 
       const response = await superRequest(`/ue/${unsubscribeId1}`, {
         method: 'GET'
@@ -101,19 +120,32 @@ describe('Email Subscription endpoints', () => {
       });
 
       expect(users).toHaveLength(4);
-      users.forEach(user => {
-        if (['user1@freecodecamp.org'].includes(user.email!)) {
-          expect(user.sendQuincyEmail).toBe(false);
-        } else {
-          expect(user.sendQuincyEmail).toBe(true);
-        }
-      });
+      const unsubscribedUsers = users.filter(
+        user => user.email === 'user1@freecodecamp.org'
+      );
+      const remainingUsers = users.filter(
+        user => user.email !== 'user1@freecodecamp.org'
+      );
+
+      expect(unsubscribedUsers).toHaveLength(2);
+      expect(
+        unsubscribedUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([false, false]);
+
+      expect(remainingUsers).toHaveLength(2);
+      expect(
+        remainingUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([true, true]);
 
       expect(response.headers.location).toStrictEqual(
         `${HOME_LOCATION}/unsubscribed/${unsubscribeId1}${urlEncodedSuccessMessage1}`
       );
 
       expect(response.status).toBe(302);
+      expect(count).toHaveBeenCalledWith('email_subscription.unsubscribed', 1, {
+        attributes: { result: 'success' }
+      });
+      fastifyTestInstance.Sentry = originalSentry;
       // TODO: If any assertions fail before this call, other tests will fail for no actual reason.
       await fastifyTestInstance.prisma.user.deleteMany({
         where: {
@@ -146,17 +178,27 @@ describe('Email Subscription endpoints', () => {
       });
 
       expect(users).toHaveLength(4);
-      users.forEach(user => {
-        if (
-          ['user1@freecodecamp.org', 'user2@freecodecamp.org'].includes(
+      const unsubscribedUsers = users.filter(user =>
+        ['user1@freecodecamp.org', 'user2@freecodecamp.org'].includes(
+          user.email!
+        )
+      );
+      const remainingUsers = users.filter(
+        user =>
+          !['user1@freecodecamp.org', 'user2@freecodecamp.org'].includes(
             user.email!
           )
-        ) {
-          expect(user.sendQuincyEmail).toBe(false);
-        } else {
-          expect(user.sendQuincyEmail).toBe(true);
-        }
-      });
+      );
+
+      expect(unsubscribedUsers).toHaveLength(3);
+      expect(
+        unsubscribedUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([false, false, false]);
+
+      expect(remainingUsers).toHaveLength(1);
+      expect(
+        remainingUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([true]);
 
       expect(response.headers.location).toStrictEqual(
         `${HOME_LOCATION}/unsubscribed/${unsubscribeId2}${urlEncodedSuccessMessage1}`
@@ -186,6 +228,13 @@ describe('Email Subscription endpoints', () => {
     });
 
     test('should 302 redirect with info message if bad ID', async () => {
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
       const response = await superRequest('/resubscribe/54321edcba', {
         method: 'GET'
       });
@@ -193,12 +242,24 @@ describe('Email Subscription endpoints', () => {
         `${HOME_LOCATION}${urlEncodedInfoMessage3}`
       );
       expect(response.status).toBe(302);
+      expect(count).toHaveBeenCalledWith('email_subscription.resubscribed', 1, {
+        attributes: { result: 'not_found' }
+      });
+
+      fastifyTestInstance.Sentry = originalSentry;
     });
 
     test("should set 'sendQuincyEmail' to 'true' for user with matching ID and 302 redirect with success message", async () => {
       await fastifyTestInstance.prisma.user.createMany({
         data: testUserData2
       });
+
+      const count = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        metrics: { ...originalSentry.metrics, count }
+      };
 
       const response = await superRequest(`/resubscribe/${unsubscribeId1}`, {
         method: 'GET'
@@ -214,19 +275,32 @@ describe('Email Subscription endpoints', () => {
       });
 
       expect(users).toHaveLength(3);
-      users.forEach(user => {
-        if (user.unsubscribeId === unsubscribeId1) {
-          expect(user.sendQuincyEmail).toBe(true);
-        } else {
-          expect(user.sendQuincyEmail).toBe(false);
-        }
-      });
+      const resubscribedUsers = users.filter(
+        user => user.unsubscribeId === unsubscribeId1
+      );
+      const remainingUsers = users.filter(
+        user => user.unsubscribeId !== unsubscribeId1
+      );
+
+      expect(resubscribedUsers).toHaveLength(1);
+      expect(
+        resubscribedUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([true]);
+
+      expect(remainingUsers).toHaveLength(2);
+      expect(
+        remainingUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([false, false]);
 
       expect(response.headers.location).toStrictEqual(
         `${HOME_LOCATION}${urlEncodedSuccessMessage2}`
       );
 
       expect(response.status).toBe(302);
+      expect(count).toHaveBeenCalledWith('email_subscription.resubscribed', 1, {
+        attributes: { result: 'success' }
+      });
+      fastifyTestInstance.Sentry = originalSentry;
       await fastifyTestInstance.prisma.user.deleteMany({
         where: {
           OR: [
@@ -256,13 +330,22 @@ describe('Email Subscription endpoints', () => {
       });
 
       expect(users).toHaveLength(3);
-      users.forEach(user => {
-        if (user.email === 'user2@freecodecamp.org') {
-          expect(user.sendQuincyEmail).toBe(true);
-        } else {
-          expect(user.sendQuincyEmail).toBe(false);
-        }
-      });
+      const resubscribedUsers = users.filter(
+        user => user.email === 'user2@freecodecamp.org'
+      );
+      const remainingUsers = users.filter(
+        user => user.email !== 'user2@freecodecamp.org'
+      );
+
+      expect(resubscribedUsers).toHaveLength(1);
+      expect(
+        resubscribedUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([true]);
+
+      expect(remainingUsers).toHaveLength(2);
+      expect(
+        remainingUsers.map(({ sendQuincyEmail }) => sendQuincyEmail)
+      ).toStrictEqual([false, false]);
 
       expect(response.headers.location).toStrictEqual(
         `${HOME_LOCATION}${urlEncodedSuccessMessage2}`
@@ -277,6 +360,62 @@ describe('Email Subscription endpoints', () => {
           ]
         }
       });
+    });
+  });
+
+  describe('Sentry Issue reporting', () => {
+    test('unsubscribe captures unexpected errors', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      const spy = vi
+        .spyOn(fastifyTestInstance.prisma.user, 'findMany')
+        .mockRejectedValueOnce(new Error('DB error'));
+
+      const response = await superRequest(`/ue/${unsubscribeId1}`, {
+        method: 'GET'
+      });
+
+      expect(response.status).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('email_subscription.unsubscribed', 1, {
+        attributes: { result: 'error' }
+      });
+
+      spy.mockRestore();
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    test('resubscribe captures unexpected errors', async () => {
+      const originalSentry = fastifyTestInstance.Sentry;
+      const captureException = vi.fn();
+      const count = vi.fn();
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+      const spy = vi
+        .spyOn(fastifyTestInstance.prisma.user, 'findFirst')
+        .mockRejectedValueOnce(new Error('DB error'));
+
+      const response = await superRequest(`/resubscribe/${unsubscribeId1}`, {
+        method: 'GET'
+      });
+
+      expect(response.status).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(count).toHaveBeenCalledWith('email_subscription.resubscribed', 1, {
+        attributes: { result: 'error' }
+      });
+
+      spy.mockRestore();
+      fastifyTestInstance.Sentry = originalSentry;
     });
   });
 });

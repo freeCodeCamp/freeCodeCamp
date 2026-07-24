@@ -1,7 +1,21 @@
 import nodemailer, { Transporter } from 'nodemailer';
 
 import { MailProvider, SendEmailArgs } from '../mailer.js';
-import { MAILPIT_HOST } from '../../utils/env.js';
+import {
+  EMAIL_PROVIDER,
+  MAILPIT_HOST,
+  SES_SMTP_HOST,
+  SES_SMTP_USERNAME,
+  SES_SMTP_PASSWORD
+} from '../../utils/env.js';
+
+export type NodemailerConfig = {
+  host: string;
+  port: number;
+  secure: boolean;
+  auth: { user: string; pass: string };
+  tls?: { rejectUnauthorized: boolean };
+};
 
 /**
  * NodemailerProvider is a wrapper around nodemailer that provides a clean
@@ -11,22 +25,12 @@ export class NodemailerProvider implements MailProvider {
   private transporter: Transporter;
 
   /**
-   * Sets up nodemailer, with hardcoded configuration. This is intended for
-   * use in development with Mailpit.
+   * Sets up nodemailer with the provided configuration.
+   *
+   * @param config - The nodemailer transport configuration.
    */
-  constructor() {
-    this.transporter = nodemailer.createTransport({
-      host: MAILPIT_HOST,
-      secure: false,
-      port: 1025,
-      auth: {
-        user: 'test',
-        pass: 'test'
-      },
-      tls: {
-        rejectUnauthorized: false
-      }
-    });
+  constructor(config: NodemailerConfig) {
+    this.transporter = nodemailer.createTransport(config);
   }
 
   /**
@@ -48,4 +52,27 @@ export class NodemailerProvider implements MailProvider {
       cc
     });
   }
+}
+
+/**
+ * Creates a mail provider based on the EMAIL_PROVIDER environment variable.
+ */
+export function createMailProvider(): NodemailerProvider {
+  return EMAIL_PROVIDER === 'ses'
+    ? new NodemailerProvider({
+        host: SES_SMTP_HOST,
+        port: 465,
+        secure: true,
+        auth: {
+          user: SES_SMTP_USERNAME ?? '',
+          pass: SES_SMTP_PASSWORD ?? ''
+        }
+      })
+    : new NodemailerProvider({
+        host: MAILPIT_HOST,
+        port: 1025,
+        secure: false,
+        auth: { user: 'test', pass: 'test' },
+        tls: { rejectUnauthorized: false }
+      });
 }

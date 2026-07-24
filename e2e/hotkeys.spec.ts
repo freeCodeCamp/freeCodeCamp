@@ -2,7 +2,7 @@ import { test, expect, type Page } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
-import { getEditors } from './utils/editor';
+import { clearEditor, getEditors } from './utils/editor';
 import { alertToBeVisible } from './utils/alerts';
 
 const links = {
@@ -25,7 +25,9 @@ const links = {
   multipleChoiceQuestion:
     '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-7',
   assignment:
-    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
+    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html',
+  multifileLab:
+    '/learn/responsive-web-design-v9/lab-debug-camperbots-profile-page/lab-debug-camperbots-profile-page'
 };
 
 const titles = {
@@ -36,6 +38,15 @@ const titles = {
   video2: /Introduction: Hardware Architecture/
 };
 type PageId = keyof typeof titles;
+
+const multifileLabSolution = `<h1>Hello from Camperbot!</h1>
+
+<h2>About</h2>
+
+<p>My name is Camperbot and I love learning new things.</p>
+
+<h3>Background and Interests</h3>
+<p>I enjoy solving puzzles.</p>`;
 
 // The hotkeys are attached to specific elements, so we need to wait for the
 // wrapper to be focused before we can test the hotkeys.
@@ -48,6 +59,31 @@ const waitUntilHydrated = async (page: Page, pageId: PageId) => {
   await page.waitForURL(links[pageId]);
   await expect(page).toHaveTitle(titles[pageId]);
   await waitUntilListening(page);
+};
+
+const completeMultifileLabWithHotkey = async ({
+  browserName,
+  hotkey,
+  page
+}: {
+  browserName: string;
+  hotkey: 'Control+Enter' | 'Meta+Enter';
+  page: Page;
+}) => {
+  await page.goto(links.multifileLab);
+
+  const editor = getEditors(page);
+  await editor.focus();
+  await expect(editor).toBeFocused();
+  await clearEditor({ page, browserName });
+  await editor.fill(multifileLabSolution);
+
+  await page.keyboard.press(hotkey);
+
+  await expect(
+    page.getByTestId('independentLowerJaw-submit-button')
+  ).toBeVisible();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
 };
 
 test.beforeAll(async ({ request }) => {
@@ -214,4 +250,26 @@ test('User can use Cmd+Enter to submit their answer in an assignment-type challe
 
   // Completion modal shows up
   await expect(page.getByRole('dialog')).toBeVisible();
+});
+
+test('Ctrl+Enter should not open completion modal in multifile editor (uses lower jaw)', async ({
+  page,
+  browserName
+}) => {
+  await completeMultifileLabWithHotkey({
+    browserName,
+    hotkey: 'Control+Enter',
+    page
+  });
+});
+
+test('Cmd+Enter should not open completion modal in multifile editor (uses lower jaw)', async ({
+  page,
+  browserName
+}) => {
+  await completeMultifileLabWithHotkey({
+    browserName,
+    hotkey: 'Meta+Enter',
+    page
+  });
 });

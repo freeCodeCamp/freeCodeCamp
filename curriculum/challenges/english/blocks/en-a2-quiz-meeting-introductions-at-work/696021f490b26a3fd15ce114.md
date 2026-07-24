@@ -14,6 +14,8 @@ To pass the quiz, you must correctly answer at least 18 of the 20 questions belo
 
 Read each question and choose the correct answer. There's only one correct answer for each question.
 
+For accessibility, transcripts are available for learners with hearing impairments; we recommend using them only if needed.
+
 # --quizzes--
 
 ## --quiz--

@@ -16,12 +16,14 @@ import { liveCerts } from '../../../config/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
+  putUpdateMyClassroomMode,
   putUpdateMyHonesty,
   putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
   putUpdateMyExperience,
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
+  putUpdateMySocrates,
   putUpdateMySocials,
   putUpdateMyUsername,
   putVerifyCert
@@ -36,6 +38,8 @@ import {
   submitNewUsernameError,
   submitProfileUIComplete,
   submitProfileUIError,
+  updateMyClassroomModeComplete,
+  updateMyClassroomModeError,
   updateMyHonestyComplete,
   updateMyHonestyError,
   updateMyKeyboardShortcutsComplete,
@@ -46,6 +50,8 @@ import {
   updateMyExperienceError,
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
+  updateMySocratesComplete,
+  updateMySocratesError,
   updateMySocialsComplete,
   updateMySocialsError,
   updateMySoundComplete,
@@ -142,6 +148,16 @@ function* updateMyKeyboardShortcutsSaga({ payload: update }) {
   }
 }
 
+function* updateMyClassroomModeSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyClassroomMode, update);
+    yield put(updateMyClassroomModeComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyClassroomModeError);
+  }
+}
+
 function* updateMyHonestySaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyHonesty, update);
@@ -159,6 +175,16 @@ function* updateMyQuincyEmailSaga({ payload: update }) {
     yield put(createFlashMessage({ ...data }));
   } catch {
     yield put(updateMyQuincyEmailError);
+  }
+}
+
+function* updateMySocratesSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMySocrates, update);
+    yield put(updateMySocratesComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMySocratesError);
   }
 }
 
@@ -245,11 +271,13 @@ function* verifyCertificationSaga({ payload }) {
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateMySocials, updateMySocialsSaga),
+    takeEvery(types.updateMyClassroomMode, updateMyClassroomModeSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
     takeEvery(types.resetMyEditorLayout, resetMyEditorLayoutSaga),
     takeEvery(types.updateMyKeyboardShortcuts, updateMyKeyboardShortcutsSaga),
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
+    takeEvery(types.updateMySocrates, updateMySocratesSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeEvery(types.updateMyExperience, updateMyExperienceSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),

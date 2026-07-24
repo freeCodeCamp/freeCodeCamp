@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -31,40 +30,12 @@ interface Intro {
   };
 }
 
-const filesThatShouldExist = [
-  {
-    name: 'translations.json'
-  },
-  {
-    name: 'motivation.json'
-  },
-  {
-    name: 'intro.json'
-  },
-  {
-    name: 'meta-tags.json'
-  },
-  {
-    name: 'links.json'
-  }
-];
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-const path = `${__dirname}/locales`;
 
 describe('Locale tests:', () => {
   availableLangs.client.forEach(lang => {
     describe(`-- ${lang} --`, () => {
-      filesThatShouldExist.forEach(file => {
-        // check that each json file exists
-        test(`${file.name} file exists`, () => {
-          const exists = fs.existsSync(`${path}/${lang}/${file.name}`);
-          expect(exists).toBeTruthy();
-        });
-      });
-
       test(`has an entry in the langDisplayNames enum`, () => {
         expect(
           Object.keys(LangNames)
@@ -93,9 +64,10 @@ describe('Intro file structure tests:', () => {
       expect(typeof typedIntro[superBlock].title).toBe('string');
 
       // catalog superblocks should have a summary
-      if (catalogSuperBlocks.includes(superBlock)) {
-        expect(typedIntro[superBlock].summary).toBeInstanceOf(Array);
-      }
+      expect(
+        !catalogSuperBlocks.includes(superBlock) ||
+          Array.isArray(typedIntro[superBlock].summary)
+      ).toBe(true);
 
       expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
       expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);

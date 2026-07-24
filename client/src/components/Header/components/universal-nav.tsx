@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Loadable from '@loadable/component';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +6,6 @@ import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
 import FreeCodeCampLogo from '../../../assets/icons/freecodecamp-logo';
-import SupporterBadge from '../../../assets/icons/supporter-badge';
 import MenuButton from './menu-button';
 import NavLinks from './nav-links';
 import AuthOrProfile from './auth-or-profile';
@@ -57,8 +54,6 @@ const UniversalNav = ({
   ) : (
     <SearchBar innerRef={searchBarRef} />
   );
-
-  const isDonating: boolean = user?.isDonating;
   return (
     <nav
       aria-label={t('aria.primary-nav')}
@@ -91,30 +86,6 @@ const UniversalNav = ({
               innerRef={menuButtonRef}
               showMenu={showMenu}
             />
-            <Link
-              className={`nav-donate-btn signup-btn btn-cta ${
-                isDonating && 'nav-link-supporter'
-              }`}
-              sameTab={false}
-              to={isDonating ? '/supporters' : '/donate'}
-              data-playwright-test-label={
-                isDonating ? 'header-support-button' : 'header-donate-button'
-              }
-            >
-              <span className='menu-btn-icon'>
-                {isDonating ? (
-                  <SupporterBadge />
-                ) : (
-                  <FontAwesomeIcon icon={faHeart} />
-                )}
-                <span className='sr-only'>
-                  {isDonating ? t('buttons.supporters') : t('buttons.donate')}
-                </span>
-              </span>
-              <span className='menu-btn-text'>
-                {isDonating ? t('buttons.supporters') : t('buttons.donate')}
-              </span>
-            </Link>
             {!isSearchExposedWidth && search}
             <NavLinks
               displayMenu={displayMenu}

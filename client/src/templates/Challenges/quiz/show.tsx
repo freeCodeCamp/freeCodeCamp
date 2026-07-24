@@ -98,6 +98,7 @@ const ShowQuiz = ({
         description,
         challengeType,
         helpCategory,
+        id,
         superBlock,
         block,
         tests,
@@ -236,6 +237,7 @@ const ShowQuiz = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -355,6 +357,8 @@ const ShowQuiz = ({
               <ChallengeDescription
                 description={description}
                 superBlock={superBlock}
+                block={block}
+                challengeId={id}
               />
               <Spacer size='l' />
               <ObserveKeys>
