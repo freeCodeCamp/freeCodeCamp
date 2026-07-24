@@ -1489,6 +1489,50 @@ describe('challengeRoutes', () => {
         });
         expect(resUpdate.statusCode).toBe(200);
       });
+
+      test('POST concurrent requests for different challenges should not lose completions', async () => {
+        // Send multiple simultaneous requests for different challenges.
+        // The read-then-write pattern in updateUserChallengeData means
+        // concurrent requests can read stale state and overwrite each
+        // other's completions.
+        const challengeIds = [
+          'aaa174fcf86c76b9248c6eb0',
+          'aaa174fcf86c76b9248c6eb1',
+          'aaa174fcf86c76b9248c6eb2',
+          'aaa174fcf86c76b9248c6eb3',
+          'aaa174fcf86c76b9248c6eb4',
+          'aaa174fcf86c76b9248c6eb4'
+        ];
+
+        const responses = await Promise.all(
+          challengeIds.map(id =>
+            superPost('/encoded/modern-challenge-completed').send({
+              challengeType: challengeTypes.html,
+              id
+            })
+          )
+        );
+
+        for (const res of responses) {
+          expect(res.statusCode).toBe(200);
+        }
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        // Every challenge should be recorded. If the race condition
+        // causes lost updates, this count will be less than 5.
+        expect(user.completedChallenges).toHaveLength(challengeIds.length);
+
+        const completedIds = user.completedChallenges.map(c => c.id);
+        for (const id of challengeIds) {
+          expect(completedIds).toContain(id);
+        }
+
+        // Each completion should add a progress timestamp
+        expect(user.progressTimestamps).toHaveLength(challengeIds.length);
+      });
     });
 
     describe('/daily-coding-challenge-completed', () => {
