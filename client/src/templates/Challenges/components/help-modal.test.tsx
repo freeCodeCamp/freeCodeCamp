@@ -199,7 +199,11 @@ describe('<HelpModal />', () => {
       name: translations.buttons.submit
     });
 
-    await userEvent.type(descriptionInput, validDescription);
+    // paste is preferable since typing the whole description is slow (each
+    // keystroke triggers a re-render) and times the test out on loaded CI
+    // runners
+    await userEvent.click(descriptionInput);
+    await userEvent.paste(validDescription);
 
     expect(submitButton).toHaveAttribute('aria-disabled', 'true');
 
@@ -248,7 +252,11 @@ describe('<HelpModal />', () => {
         name: translations.aria['similar-questions-checkbox']
       })
     );
-    await userEvent.type(getDescriptionInput(), validDescription);
+    // paste is preferable since typing the whole description is slow (each
+    // keystroke triggers a re-render) and times the test out on loaded CI
+    // runners
+    await userEvent.click(getDescriptionInput());
+    await userEvent.paste(validDescription);
     await userEvent.click(
       screen.getByRole('button', { name: translations.buttons.submit })
     );

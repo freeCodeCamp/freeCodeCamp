@@ -62,7 +62,7 @@ describe('<FinishExamModal />', () => {
   });
 
   it('closes when the user keeps working on the exam', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null });
     renderFinishExamModal();
 
     await user.click(
@@ -77,7 +77,7 @@ describe('<FinishExamModal />', () => {
   });
 
   it('calls finishExam and closes when the user finishes the exam', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null });
     const store = createOpenModalStore();
     const finishExam = vi.fn(() => {
       store.dispatch(closeModal('finishExam'));
@@ -98,7 +98,7 @@ describe('<FinishExamModal />', () => {
   });
 
   it('closes when the user clicks the header close button', async () => {
-    const user = userEvent.setup();
+    const user = userEvent.setup({ delay: null });
     renderFinishExamModal();
 
     await user.click(screen.getByRole('button', { name: 'Close' }));
