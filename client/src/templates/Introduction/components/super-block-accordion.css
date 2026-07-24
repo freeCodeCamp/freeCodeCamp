@@ -32,11 +32,7 @@
 .super-block-accordion .module-header-wrapper .module-button-main {
   flex: 1;
   min-width: 0;
-}
-
-.super-block-accordion .chapter-header-wrapper .chapter-button-toggle,
-.super-block-accordion .module-header-wrapper .module-button-toggle {
-  flex-shrink: 0;
+  justify-content: space-between;
 }
 
 .super-block-accordion .chapter-header-wrapper {
@@ -49,10 +45,6 @@
   padding: 16px;
   display: flex;
   align-items: center;
-}
-
-.super-block-accordion .chapter-button-toggle {
-  padding-left: 0;
 }
 
 .super-block-accordion .chapter-link {
@@ -131,10 +123,6 @@ button .block-header-button-text {
   font-weight: normal;
   gap: 10px;
   color: var(--primary-color);
-}
-
-.super-block-accordion .module-button-toggle {
-  padding-left: 0;
 }
 
 .super-block-accordion .block-header {

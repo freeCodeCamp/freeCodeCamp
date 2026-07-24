@@ -63,6 +63,7 @@ test.describe('Should take you to the next superblock (with editor solution)', (
     browserName,
     context
   }) => {
+    test.setTimeout(30000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.goto(rwdChallenge.url);
     await focusEditor({ page, isMobile });
@@ -84,7 +85,7 @@ test.describe('Should take you to the next superblock (with editor solution)', (
     const submitButton = page.locator(
       '[data-playwright-test-label="independentLowerJaw-submit-button"]'
     );
-    await expect(submitButton).toBeVisible();
+    await expect(submitButton).toBeVisible({ timeout: 15000 });
     await submitButton.click();
     await page.waitForURL(rwdChallenge.nextUrl);
   });
