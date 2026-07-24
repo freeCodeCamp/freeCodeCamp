@@ -6928,6 +6928,12 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
+      },
+      "workshop-employee-profile-validator": {
+        "title": "Build an Employee Profile Validator",
+        "intro": [
+          "In this workshop, you will use Python string methods to validate and format data from an employee profile."
+        ]
       }
     }
   },
