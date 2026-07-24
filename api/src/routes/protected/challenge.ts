@@ -42,7 +42,11 @@ import {
   decodeFiles,
   verifyTrophyWithMicrosoft
 } from '../helpers/challenge-helpers.js';
-import { UpdateReplyType, UpdateReqType } from '../../utils/index.js';
+import {
+  syncMapErr,
+  UpdateReplyType,
+  UpdateReqType
+} from '../../utils/index.js';
 import {
   normalizeChallengeType,
   normalizeDate
@@ -769,7 +773,18 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           };
         }
 
-        const examResults = createExamResults(userCompletedExam, examFromDb);
+        const maybeExamResults = syncMapErr(() =>
+          createExamResults(userCompletedExam, examFromDb)
+        );
+        if (maybeExamResults.hasError) {
+          req.log.warn(
+            maybeExamResults.error,
+            'Error creating exam results from submission'
+          );
+          void reply.code(400);
+          return { error: 'An error occurred creating the exam results.' };
+        }
+        const examResults = maybeExamResults.data;
 
         const validExamResults = validateExamResultsSchema(examResults);
         if ('error' in validExamResults) {
