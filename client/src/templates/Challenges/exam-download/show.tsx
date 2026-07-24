@@ -186,14 +186,15 @@ interface ShowExamDownloadProps {
 
 function normalizeArch(name: string): string {
   const archMatch = name.match(
-    /(aarch64|arm|arm64|amd64|x86_64|x64|x86|i386|i686)/i
+    /(aarch64|arm64|arm|amd64|x86_64|x64|x86|i386|i686)/i
   );
 
   const token = archMatch?.[0];
 
   if (!token) return '';
   const t = token.toLowerCase();
-  if (/aarch64|arm64|arm/i.test(t)) return 'arm';
+  if (/aarch64|arm64/i.test(t)) return 'arm64';
+  if (/arm/i.test(t)) return 'arm';
   if (/x86_64|x64|amd64/i.test(t)) return 'x64';
   if (/x86|i386|i686/i.test(t)) return 'x86';
   return t;
@@ -441,10 +442,12 @@ function getRecommendedOs({
   } as const;
   const archToHuman: Record<string, string> = {
     x64: '64-bit',
-    aarch64: 'ARM',
+    aarch64: 'ARM64',
+    arm64: 'ARM64',
     amd64: '64-bit',
     i386: '32-bit',
-    x86: '32-bit'
+    x86: '32-bit',
+    arm: 'ARM'
   };
 
   const os = Object.entries(osToExt).find(([_, exts]) => exts.includes(ext));

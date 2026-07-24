@@ -20,15 +20,22 @@
   },
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/ukrainian/index",
-    "forum": "https://forum.freecodecamp.org/c/ukrainian/",
+    "forum": "https://forum.freecodecamp.org/",
     "news": "https://www.freecodecamp.org/ukrainian/news/",
     "podcast": "https://freecodecamp.libsyn.com/"
   },
   "help": {
-    "HTML-CSS": "Ukrainian/HTML-CSS",
-    "JavaScript": "Ukrainian/JavaScript",
-    "Python": "Ukrainian/Python",
-    "Backend Development": "Ukrainian/programming-help",
-    "English": "English"
+    "HTML-CSS": "curriculum-help",
+    "JavaScript": "curriculum-help",
+    "Python": "curriculum-help",
+    "Backend Development": "curriculum-help",
+    "C-Sharp": "curriculum-help",
+    "English": "curriculum-help",
+    "Spanish Curriculum": "curriculum-help",
+    "Chinese Curriculum": "curriculum-help",
+    "Odin": "curriculum-help",
+    "Euler": "curriculum-help",
+    "Rosetta": "curriculum-help",
+    "General": "curriculum-help"
   }
 }

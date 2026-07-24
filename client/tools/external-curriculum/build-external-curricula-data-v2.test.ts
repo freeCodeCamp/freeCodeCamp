@@ -1,8 +1,8 @@
 import path from 'path';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 import readdirp from 'readdirp';
-import { describe, test, expect } from 'vitest';
+import { afterEach, describe, test, expect, vi } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
@@ -15,25 +15,29 @@ import {
   availableSuperBlocksValidator
 } from './external-data-schema-v2';
 import {
-  type CurriculumIntros,
   type Curriculum,
   type GeneratedCurriculumProps,
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
   orderedSuperBlockInfo,
-  OrderedSuperBlocks
+  OrderedSuperBlocks,
+  readCurriculumIntros,
+  getCurriculumLocale,
+  CurriculumIntros
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
-const intros = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
-    'utf-8'
-  )
-) as CurriculumIntros;
+const intros = readCurriculumIntros(getCurriculumLocale());
+
+const dummyIntro = Object.values(SuperBlocks)
+  .map(s => ({ [s]: { title: s } }))
+  .reduce((prev, curr) => ({ ...prev, ...curr }), {}) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
 
   const validateSuperBlock = superblockSchemaValidator();
@@ -274,13 +278,14 @@ describe('external curriculum data build', () => {
       next: SuperBlockStage.Next
     };
 
-    const stages = Object.keys(orderedSuperBlockInfo);
+    const info = orderedSuperBlockInfo();
+    const stages = Object.keys(info);
 
     expect(stages).not.toContain('next');
     expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
-      const superBlockDashedNames = orderedSuperBlockInfo[stage]?.map(
+      const superBlockDashedNames = info[stage]?.map(
         superBlock => superBlock.dashedName
       );
 
@@ -305,5 +310,14 @@ describe('external curriculum data build', () => {
         `${clientStaticPath}/curriculum-data/${VERSION}/challenges`
       ).length
     ).toBeGreaterThan(0);
+  });
+
+  test('orderedSuperBlockInfo should use intro argument', () => {
+    const info = orderedSuperBlockInfo(dummyIntro);
+
+    expect(info.core[0]).toMatchObject({
+      dashedName: SuperBlocks.RespWebDesignV9,
+      title: dummyIntro[SuperBlocks.RespWebDesignV9].title
+    });
   });
 });

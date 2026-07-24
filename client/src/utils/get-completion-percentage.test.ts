@@ -84,6 +84,22 @@ describe('get-completion-percentage', () => {
 
       expect(result).toBe(33);
     });
+
+    it('reports 100% when resubmitting an already-completed single-challenge lab block', () => {
+      // Regression test for #67867: a completed lab whose block contains only
+      // the lab itself should read 100%, not 0%, on resubmission.
+      const labId = 'lab-challenge';
+      const completedChallengesIds = [labId];
+      const currentBlockIds = [labId];
+
+      const result = getCompletedPercentage(
+        completedChallengesIds,
+        currentBlockIds,
+        labId
+      );
+
+      expect(result).toBe(100);
+    });
   });
 
   describe('getCompletedChallengesInBlock', () => {
@@ -249,6 +265,40 @@ describe('get-completion-percentage', () => {
       );
 
       expect(result).toEqual(['project-1', 'project-2']);
+    });
+
+    // Regression test for #67867: labs are project-based but each is its own
+    // standalone block, so they must use their block IDs rather than the
+    // certification's tests (otherwise resubmitting a completed lab reads 0%).
+    it('returns block IDs for labs even when a certificate is available', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          {
+            challenge: {
+              id: 'lab-challenge',
+              block: 'lab-all-true-property-validator',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: [
+          {
+            challenge: {
+              certification: Certification.JsV9,
+              tests: [{ id: 'javascript-certification-exam' }]
+            }
+          }
+        ]
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'lab-all-true-property-validator',
+        Certification.JsV9,
+        challengeTypes.jsLab
+      );
+
+      expect(result).toEqual(['lab-challenge']);
     });
 
     it('returns empty array when no matching challenges found', () => {

@@ -55,7 +55,7 @@ function MapLi({
   return (
     <li
       data-test-label='curriculum-map-button'
-      data-playwright-test-label='curriculum-map-button'
+      data-testid='curriculum-map-button'
     >
       <ButtonLink
         block

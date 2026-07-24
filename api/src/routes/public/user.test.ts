@@ -1,5 +1,5 @@
 import type { Prisma } from '@prisma/client';
-import { ObjectId } from 'mongodb';
+import { ObjectId } from 'bson';
 import { omit } from 'lodash-es';
 import {
   describe,
@@ -211,6 +211,7 @@ const publicUserData = {
   isFoundationalCSharpCertV8: testUserData.isFoundationalCSharpCertV8,
   isFrontEndCert: testUserData.isFrontEndCert,
   isFrontEndLibsCert: testUserData.isFrontEndLibsCert,
+  isFrontEndLibsCertV9: testUserData.isFrontEndLibsCertV9,
   isFullStackCert: testUserData.isFullStackCert,
   isJavascriptCertV9: testUserData.isJavascriptCertV9,
   isHonest: testUserData.isHonest,
