@@ -5022,6 +5022,13 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "lab-data-sanitizer-sweep": {
+        "title": "Implement Data Sanitizer Sweep Process",
+        "intro": [
+          "In this lab, you will build two functions that will replace certain characters in a log string and entire log files.",
+          "You will practice string manipulation to change individual strings and loops to repeat the same process across multiple strings (i.e., an entire log file)."
+        ]
+      },
       "lab-repeat-a-string": {
         "title": "Build a String Repeating Function",
         "intro": [
