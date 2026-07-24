@@ -4,6 +4,9 @@ on:
   pull_request_target:
     types: [closed]
 
+permissions:
+  issues: write
+  pull-requests: write
 jobs:
   lock:
     name: Lock Closed PR
