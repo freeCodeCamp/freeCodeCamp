@@ -1,9 +1,11 @@
 import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
+import { useStaticQuery } from 'gatsby';
 import {
   getStageOrder,
   superBlockStages,
+  SuperBlocks,
   SuperBlockStage
 } from '@freecodecamp/shared/config/curriculum';
 import { describe, expect, it, vi } from 'vitest';
@@ -16,6 +18,14 @@ import { getMonthDayUsCentral } from '../daily-coding-challenge/helpers';
 import Map from './index';
 
 vi.unmock('react-i18next');
+
+// The map only renders superblocks the curriculum delivered; make all of
+// them available so the full map is rendered.
+vi.mocked(useStaticQuery).mockReturnValue({
+  allSuperBlockStructure: {
+    nodes: Object.values(SuperBlocks).map(superBlock => ({ superBlock }))
+  }
+});
 
 i18nTestConfig.addResourceBundle('en', 'intro', introTranslations, true, true);
 i18nTestConfig.addResourceBundle(

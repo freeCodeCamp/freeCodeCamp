@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
+import { useStaticQuery } from 'gatsby';
 import { archivedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import ArchivePage from './archive';
@@ -35,6 +36,14 @@ vi.mock('../../components/layouts/learn', () => ({
     <main>{children}</main>
   )
 }));
+
+// The archive map only renders superblocks the curriculum delivered; make all
+// archived superblocks available.
+vi.mocked(useStaticQuery).mockReturnValue({
+  allSuperBlockStructure: {
+    nodes: archivedSuperBlocks.map(superBlock => ({ superBlock }))
+  }
+});
 
 describe('ArchivePage', () => {
   test('renders the archive page heading and current curriculum link', () => {

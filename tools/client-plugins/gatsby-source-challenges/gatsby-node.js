@@ -18,6 +18,10 @@ const {
 // createPagesStatefully only runs once, but we need the following when
 // updating challenges, so they have to be stored in memory.
 let allChallengeNodes;
+// The superblocks this build's curriculum contains (including ones whose
+// challenges are all coming soon). Structure nodes are only created for
+// these, so pages and maps follow the (per-language) curriculum content.
+let curriculumSuperBlocks = new Set();
 const filepathToStatefullyCreatedNodes = new Map();
 const filePathToCreatedNodes = new Map();
 // reverse lookup, to detect if an updated file has "overwritten" another file
@@ -30,11 +34,19 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
 ) {
-  const { source, onSourceChange, curriculumPath } = pluginOptions;
+  const { source, onSourceChange, curriculumPath, getSuperBlocks } =
+    pluginOptions;
   if (typeof source !== 'function') {
     reporter.panic(`
     "source" is a required option for fcc-source-challenges. It must be a
     function that delivers challenge objects to the plugin
+    `);
+  }
+  if (typeof getSuperBlocks !== 'function') {
+    reporter.panic(`
+    "getSuperBlocks" is a required option for fcc-source-challenges. It must
+    be a function that delivers the curriculum's superblock names to the
+    plugin
     `);
   }
   if (typeof onSourceChange !== 'function') {
@@ -176,7 +188,8 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   function sourceAndCreateNodes() {
     return source()
       .then(challenges => Promise.all(challenges))
-      .then(challenges => {
+      .then(async challenges => {
+        curriculumSuperBlocks = new Set(await getSuperBlocks());
         // create challenge nodes
         challenges.forEach(challenge => {
           const newNode = reportNodeCreationToGatsby(challenge);
@@ -211,32 +224,34 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function createSuperBlockStructureNodes() {
-    Object.keys(superBlockToFilename).forEach(superBlock => {
-      const filename = superBlockToFilename[superBlock] || superBlock;
-      try {
-        const structure = getSuperblockStructure(filename);
+    Object.keys(superBlockToFilename)
+      .filter(superBlock => curriculumSuperBlocks.has(superBlock))
+      .forEach(superBlock => {
+        const filename = superBlockToFilename[superBlock] || superBlock;
+        try {
+          const structure = getSuperblockStructure(filename);
 
-        const nodeId = createNodeId(`SuperBlockStructure-${superBlock}`);
-        const nodeContent = JSON.stringify(structure);
+          const nodeId = createNodeId(`SuperBlockStructure-${superBlock}`);
+          const nodeContent = JSON.stringify(structure);
 
-        createNode({
-          ...structure,
-          superBlock,
-          id: nodeId,
-          parent: null,
-          children: [],
-          internal: {
-            type: 'SuperBlockStructure',
-            content: nodeContent,
-            contentDigest: createContentDigest(structure)
-          }
-        });
-      } catch (err) {
-        reporter.warn(
-          `Could not load structure for ${superBlock} (${filename}): ${err.message}`
-        );
-      }
-    });
+          createNode({
+            ...structure,
+            superBlock,
+            id: nodeId,
+            parent: null,
+            children: [],
+            internal: {
+              type: 'SuperBlockStructure',
+              content: nodeContent,
+              contentDigest: createContentDigest(structure)
+            }
+          });
+        } catch (err) {
+          reporter.warn(
+            `Could not load structure for ${superBlock} (${filename}): ${err.message}`
+          );
+        }
+      });
   }
 
   return new Promise((resolve, reject) => {
