@@ -10,7 +10,6 @@ import {
   SuperBlockStage,
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
-import { Languages } from '@freecodecamp/shared/config/i18n';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -24,11 +23,16 @@ import {
   orderedSuperBlockInfo,
   OrderedSuperBlocks,
   readCurriculumIntros,
-  getCurriculumLocale
+  getCurriculumLocale,
+  CurriculumIntros
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
 const intros = readCurriculumIntros(getCurriculumLocale());
+
+const dummyIntro = Object.values(SuperBlocks)
+  .map(s => ({ [s]: { title: s } }))
+  .reduce((prev, curr) => ({ ...prev, ...curr }), {}) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
   afterEach(() => {
@@ -308,19 +312,12 @@ describe('external curriculum data build', () => {
     ).toBeGreaterThan(0);
   });
 
-  test('available superblocks should use the configured curriculum locale', () => {
-    vi.stubEnv('CURRICULUM_LOCALE', Languages.Espanol);
+  test('orderedSuperBlockInfo should use intro argument', () => {
+    const info = orderedSuperBlockInfo(dummyIntro);
 
-    const spanishOrderedSuperBlockInfo = orderedSuperBlockInfo();
-    const spanishIntros = readCurriculumIntros(Languages.Espanol);
-    const englishIntros = readCurriculumIntros(Languages.English);
-
-    expect(spanishOrderedSuperBlockInfo.core[0]).toMatchObject({
+    expect(info.core[0]).toMatchObject({
       dashedName: SuperBlocks.RespWebDesignV9,
-      title: spanishIntros[SuperBlocks.RespWebDesignV9].title
+      title: dummyIntro[SuperBlocks.RespWebDesignV9].title
     });
-    expect(spanishOrderedSuperBlockInfo.core[0]?.title).not.toEqual(
-      englishIntros[SuperBlocks.RespWebDesignV9].title
-    );
   });
 });
