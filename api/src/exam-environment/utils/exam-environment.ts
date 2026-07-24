@@ -446,8 +446,11 @@ export async function constructEnvExamAttempt(
   );
 
   if (maybeExam.hasError) {
-    logger.error(maybeExam.error);
-    fastify.Sentry.captureException(maybeExam.error);
+    fastify.Sentry?.captureException(maybeExam.error);
+    logger.error(
+      { err: maybeExam.error, attemptId: attempt.id, examId: attempt.examId },
+      'Unable to query exam.'
+    );
     return {
       error: {
         code: 500,
@@ -459,17 +462,21 @@ export async function constructEnvExamAttempt(
   const exam = maybeExam.data;
 
   if (exam === null) {
-    const error = {
+    fastify.Sentry?.captureException({
       data: { examId: attempt.examId, attemptId: attempt.id },
       message: 'Unreachable. Invalid exam id in attempt.'
-    };
-    logger.error(error.data, error.message);
-    fastify.Sentry.captureException(error);
+    });
+    logger.error(
+      { examId: attempt.examId, attemptId: attempt.id },
+      'Unreachable. Invalid exam id in attempt.'
+    );
 
     return {
       error: {
         code: 500,
-        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(error.message)
+        data: ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_MISSING_EXAM(
+          'Unreachable. Invalid exam id in attempt.'
+        )
       }
     };
   }
@@ -499,8 +506,11 @@ export async function constructEnvExamAttempt(
   );
 
   if (maybeMod.hasError) {
-    logger.error(maybeMod.error);
-    fastify.Sentry.captureException(maybeMod.error);
+    fastify.Sentry?.captureException(maybeMod.error);
+    logger.error(
+      { err: maybeMod.error, attemptId: attempt.id },
+      'Unable to query exam moderation.'
+    );
     return {
       error: {
         code: 500,
@@ -548,6 +558,21 @@ export async function constructEnvExamAttempt(
     };
   }
 
+  // Handle case where attempt is approved, but the cron to award completed challenges has not run yet - result should not be shown, as certification is not claimable
+  if (
+    moderation.status === ExamEnvironmentExamModerationStatus.Approved &&
+    moderation.challengesAwarded === false
+  ) {
+    return {
+      examEnvironmentExamAttempt: {
+        ...omitAttemptReferenceIds(attempt),
+        result: null,
+        status: ExamAttemptStatus.AwaitingChallenges
+      },
+      error: null
+    };
+  }
+
   const maybeGeneratedExam = await mapErr(
     fastify.prisma.examEnvironmentGeneratedExam.findUnique({
       where: {
@@ -557,8 +582,11 @@ export async function constructEnvExamAttempt(
   );
 
   if (maybeGeneratedExam.hasError) {
-    logger.error(maybeGeneratedExam.error);
-    fastify.Sentry.captureException(maybeGeneratedExam.error);
+    fastify.Sentry?.captureException(maybeGeneratedExam.error);
+    logger.error(
+      { err: maybeGeneratedExam.error, attemptId: attempt.id },
+      'Unable to query generated exam.'
+    );
     return {
       error: {
         code: 500,
@@ -572,17 +600,24 @@ export async function constructEnvExamAttempt(
   const generatedExam = maybeGeneratedExam.data;
 
   if (!generatedExam) {
-    const error = {
-      data: { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
+    fastify.Sentry?.captureException({
+      data: {
+        attemptId: attempt.id,
+        generatedExamId: attempt.generatedExamId
+      },
       message:
         'Unreachable. Unable to find generated exam associated with exam attempt'
-    };
-    logger.error(error.data, error.message);
-    fastify.Sentry.captureException(error);
+    });
+    logger.error(
+      { attemptId: attempt.id, generatedExamId: attempt.generatedExamId },
+      'Unreachable. Unable to find generated exam associated with exam attempt.'
+    );
     return {
       error: {
         code: 500,
-        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
+        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+          'Unreachable. Unable to find generated exam associated with exam attempt'
+        )
       }
     };
   }

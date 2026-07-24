@@ -1,12 +1,68 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import { of } from 'rxjs';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { transformEditorLink } from '../utils';
-import {
+import createQuestionEpic, {
   insertEditableRegions,
   getGithubLinkBlock
 } from './create-question-epic';
+import { closeModal, createQuestion } from './actions';
+import { ns } from './action-types';
 
 describe('create-question-epic', () => {
+  it('opens a forum new-topic page and closes the help modal', async () => {
+    const windowMock = {
+      encodeURIComponent,
+      open: vi.fn(),
+      navigator: { userAgent: 'Vitest browser' },
+      location: {
+        origin: 'https://www.freecodecamp.org',
+        pathname:
+          '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
+      }
+    };
+    const state$ = {
+      value: {
+        [ns]: {
+          challengeFiles: [
+            {
+              contents: '<h1>Hello</h1>',
+              editableRegionBoundaries: [],
+              ext: 'html',
+              name: 'index'
+            }
+          ],
+          challengeMeta: {
+            block: 'basic-html-and-html5',
+            challengeType: challengeTypes.html,
+            helpCategory: 'HTML-CSS',
+            id: 'test-challenge-id',
+            superBlock: 'responsive-web-design',
+            title: 'Say Hello to HTML Elements'
+          },
+          projectFormValues: {}
+        }
+      }
+    };
+
+    const result = await new Promise(resolve => {
+      createQuestionEpic(
+        of(createQuestion('I need help with my HTML heading.')),
+        state$,
+        { window: windowMock }
+      ).subscribe(resolve);
+    });
+
+    expect(windowMock.open).toHaveBeenCalledWith(
+      expect.stringMatching(/^https:\/\/forum\.freecodecamp\.org\/new-topic\?/),
+      '_blank'
+    );
+    expect(windowMock.open.mock.calls[0][0]).toContain(
+      'I%20need%20help%20with%20my%20HTML%20heading'
+    );
+    expect(result).toEqual(closeModal('help'));
+  });
+
   describe('getGithubLinkBlock', () => {
     it('should map a JavaScript daily coding challenge to its language-specific block', () => {
       expect(

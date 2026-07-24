@@ -177,7 +177,7 @@ export const schema = Joi.object().keys({
   }),
   certification: Joi.string().regex(slugWithSlashRE),
   isExam: Joi.boolean(),
-  challengeType: Joi.number().min(0).max(31).required(),
+  challengeType: Joi.number().min(0).max(33).required(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
   demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -267,7 +267,11 @@ export const schema = Joi.object().keys({
     otherwise: Joi.forbidden()
   }),
   instructions: Joi.string().when('challengeType', {
-    is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
+    is: [
+      challengeTypes.pythonProject,
+      challengeTypes.codeAllyCert,
+      challengeTypes.freeCodeCampOsCert
+    ],
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
@@ -391,7 +395,12 @@ export const schema = Joi.object().keys({
   }),
   translationPending: Joi.bool().required(),
   url: Joi.when('challengeType', {
-    is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
+    is: [
+      challengeTypes.codeAllyPractice,
+      challengeTypes.codeAllyCert,
+      challengeTypes.freeCodeCampOsPractice,
+      challengeTypes.freeCodeCampOsCert
+    ],
     then: Joi.string().required()
   }),
   usesMultifileEditor: Joi.boolean()
