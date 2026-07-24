@@ -260,13 +260,10 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!challenges || challenges.length === 0) {
-          req.log.warn({ month }, 'No challenges found for month');
-          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+          fastify.Sentry?.metrics?.count('dcc.empty_result', 1, {
             attributes: { route: '/daily-coding-challenge/month/:month' }
           });
-          return reply
-            .status(404)
-            .send({ type: 'error', message: 'No challenges found.' });
+          return reply.send([]);
         }
 
         const response = challenges.map(challenge => ({
@@ -322,13 +319,10 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           });
 
         if (!allChallenges || allChallenges.length === 0) {
-          req.log.warn({ date: today }, 'No challenges found.');
-          fastify.Sentry?.metrics?.count('dcc.challenge_not_found', 1, {
+          fastify.Sentry?.metrics?.count('dcc.empty_result', 1, {
             attributes: { route: '/daily-coding-challenge/all' }
           });
-          return reply
-            .status(404)
-            .send({ type: 'error', message: 'No challenges found.' });
+          return reply.send([]);
         }
 
         const response = allChallenges.map(challenge => ({
