@@ -84,6 +84,7 @@
     "vitest": "4.1.5"
   },
   "dependencies": {
-    "@types/node": "24.12.2"
+    "@types/node": "24.12.2",
+    "workerpool": "^10.0.3"
   }
 }
