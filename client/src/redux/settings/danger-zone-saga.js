@@ -1,29 +1,33 @@
 import { navigate } from 'gatsby';
-import { call, put, take, takeEvery } from 'redux-saga/effects';
+import { call, put, select, take, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
+import {
+  getSignout,
+  postDeleteAccount,
+  postResetProgress
+} from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
-import { fetchUser, resetUserData } from '../actions';
+import { fetchUser, hardGoTo } from '../actions';
+import { userIdSelector } from '../selectors';
 import { deleteAccountError, resetProgressError } from './actions';
 
-function* deleteAccountSaga() {
+export function* deleteAccountSaga() {
   try {
-    yield call(postDeleteAccount);
+    const userId = yield select(userIdSelector);
+    if (!userId) {
+      throw new Error('Unable to delete account: no user id found');
+    }
+    yield call(postDeleteAccount, userId);
+    yield call(getSignout);
     yield put(
       createFlashMessage({
         type: 'info',
         message: FlashMessages.AccountDeleted
       })
     );
-    // Navigate before signing out, since /settings will attempt to sign users
-    // back in if resetUserData fires while still on /settings.
-    void navigate('/learn');
-    // Wait for Gatsby to complete the route transition before clearing user
-    // data, ensuring /settings is unmounted and won't re-authenticate.
-    yield take(appTypes.routeUpdated);
-    yield put(resetUserData());
+    yield put(hardGoTo('/learn'));
   } catch (e) {
     yield put(deleteAccountError(e));
   }
