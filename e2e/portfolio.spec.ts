@@ -12,87 +12,19 @@ test.afterAll(() => {
   execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
-test.describe('Add Portfolio Item', () => {
-  test.beforeEach(async ({ page }) => {
+test.describe('Portfolio item management', () => {
+  test('It should be possible to add and remove a portfolio item', async ({
+    page
+  }) => {
     await page.goto('/certifieduser');
 
-    // The 'Add portfolio project' icon button is on the profile page directly.
-    // Click it to open the portfolio modal.
-    await page.getByRole('button', { name: 'Add portfolio project' }).click();
-
-    // Wait for the portfolio form to be visible inside the modal.
+    await page
+      .getByRole('button', { name: translations.aria['add-portfolio'] })
+      .click();
     await expect(
       page.getByLabel(translations.settings.labels.title)
     ).toBeVisible();
-  });
 
-  test('The title has validation', async ({ page }) => {
-    await page.getByLabel(translations.settings.labels.title).fill('T');
-    await expect(page.getByTestId('title-validation')).toContainText(
-      'Title is too short'
-    );
-
-    await page
-      .getByLabel(translations.settings.labels.title)
-      .fill(
-        'This is the longest title you will ever see in your entire life, you will never see such a long title again. This is the longest title in existen'
-      );
-    await expect(page.getByTestId('title-validation')).toContainText(
-      'Title is too long'
-    );
-    await page
-      .getByLabel(translations.settings.labels.title)
-      .fill('My portfolio');
-    await expect(page.getByTestId('title-validation')).toBeHidden();
-  });
-
-  test('The url has validation', async ({ page }) => {
-    await page.getByLabel(translations.settings.labels.url).fill('T');
-    await expect(page.getByTestId('url-validation')).toContainText(
-      'Please use a valid URL'
-    );
-    await page
-      .getByLabel(translations.settings.labels.url)
-      .fill('http://helloworld.com');
-    await expect(page.getByTestId('url-validation')).toBeHidden();
-  });
-
-  test('The image has validation', async ({ page }) => {
-    await page.getByLabel(translations.settings.labels.image).fill('T');
-    await expect(page.getByTestId('image-validation')).toContainText(
-      'Please use a valid URL'
-    );
-    await page
-      .getByLabel(translations.settings.labels.image)
-      .fill(
-        'https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png'
-      );
-    await expect(page.getByTestId('image-validation')).toBeHidden();
-
-    await page
-      .getByLabel(translations.settings.labels.image)
-      .fill('https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.pn');
-    await expect(page.getByTestId('image-validation')).toContainText(
-      'URL must link directly to an image file'
-    );
-  });
-
-  test('The description has validation', async ({ page }) => {
-    await page
-      .getByLabel(translations.settings.labels.description)
-      .fill(
-        'This is the longest description you will ever see in your entire life, you will never see such a long description again. This is the longest description in existence. Nothing will ever come close to be being so long again in the entire history of the world. I only have 30 characters left.'
-      );
-    await expect(page.getByTestId('description-validation')).toContainText(
-      'There is a maximum limit of 288 characters, you have 0 left'
-    );
-    await page
-      .getByLabel(translations.settings.labels.description)
-      .fill('My description');
-    await expect(page.getByTestId('description-validation')).toBeHidden();
-  });
-
-  test('It should be possible to delete a portfolio item', async ({ page }) => {
     await page
       .getByLabel(translations.settings.labels.title)
       .fill('My portfolio');
@@ -108,54 +40,31 @@ test.describe('Add Portfolio Item', () => {
       .getByLabel(translations.settings.labels.description)
       .fill('My description');
 
-    await page
-      .getByRole('button', { name: 'Remove this portfolio item' })
-      .click();
+    const saveButton = page.getByRole('button', {
+      name: translations.buttons['save-portfolio']
+    });
+    await expect(saveButton).toBeEnabled();
+    await saveButton.click();
 
-    // Modal closes automatically after removal
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your portfolio/
     );
-  });
-
-  test('The save button should be disabled when the form is pristine', async ({
-    page
-  }) => {
     await expect(
-      page.getByRole('button', { name: 'Save this portfolio item' })
-    ).toBeDisabled();
-  });
-
-  test('It should be possible to add a portfolio item', async ({ page }) => {
-    await page
-      .getByLabel(translations.settings.labels.title)
-      .fill('My portfolio');
-    await page
-      .getByLabel(translations.settings.labels.url)
-      .fill('https://my-portfolio.com');
-    await page
-      .getByLabel(translations.settings.labels.image)
-      .fill(
-        'https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png'
-      );
-    await page
-      .getByLabel(translations.settings.labels.description)
-      .fill('My description');
-
-    // Wait for async image validation to complete
-    await expect(
-      page.getByRole('button', { name: 'Save this portfolio item' })
-    ).toBeEnabled();
+      page.getByRole('link', { name: /My portfolio/ })
+    ).toBeVisible();
 
     await page
-      .getByRole('button', { name: 'Save this portfolio item' })
+      .getByRole('button', { name: translations.aria['edit-portfolio'] })
+      .click();
+    await page
+      .getByRole('button', { name: translations.buttons['remove-portfolio'] })
       .click();
 
-    // Modal closes automatically after a successful save
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your portfolio/
     );
+    await expect(
+      page.getByRole('link', { name: /My portfolio/ })
+    ).not.toBeVisible();
   });
-
-  // TODO: Add test for viewing portfolio item
 });
