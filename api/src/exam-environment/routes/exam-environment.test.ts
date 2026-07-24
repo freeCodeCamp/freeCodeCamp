@@ -173,7 +173,7 @@ describe('/exam-environment/', () => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           message: expect.any(String)
         });
-        expect(res.status).toBe(403);
+        expect(res.status).toBe(410);
 
         expect(count).toHaveBeenCalledWith(
           'exam.attempt_submission_expired',
@@ -466,7 +466,7 @@ describe('/exam-environment/', () => {
           );
 
         expect(res).toMatchObject({
-          status: 403,
+          status: 409,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT'
           }
@@ -1663,14 +1663,14 @@ describe('/exam-environment/', () => {
         );
 
         expect(res).toMatchObject({
-          status: 418,
+          status: 401,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
         });
       });
 
-      it('should tell the requester if the token does not exist', async () => {
+      it('should reject a token whose payload is not an object id', async () => {
         const validToken = jwt.sign(
           { examEnvironmentAuthorizationToken: 'does-not-exist' },
           JWT_SECRET
@@ -1681,7 +1681,25 @@ describe('/exam-environment/', () => {
         );
 
         expect(res).toMatchObject({
-          status: 418,
+          status: 401,
+          body: {
+            code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
+          }
+        });
+      });
+
+      it('should tell the requester if the token does not exist', async () => {
+        const validToken = jwt.sign(
+          { examEnvironmentAuthorizationToken: '5fa5c1c3b1c9d40000000000' },
+          JWT_SECRET
+        );
+        const res = await superGet('/exam-environment/token-meta').set(
+          'exam-environment-authorization-token',
+          validToken
+        );
+
+        expect(res).toMatchObject({
+          status: 404,
           body: {
             code: 'FCC_EINVAL_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN'
           }
