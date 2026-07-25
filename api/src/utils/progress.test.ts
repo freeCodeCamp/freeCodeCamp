@@ -30,8 +30,8 @@ describe('utils/progress', () => {
   });
 
   describe('getPoints', () => {
-    test('should return 1 if there are no progressTimestamps', () => {
-      expect(getPoints(null)).toEqual(1);
+    test('should return 0 if there are no progressTimestamps', () => {
+      expect(getPoints(null)).toEqual(0);
     });
     test('should return then number of progressTimestamps if there are any', () => {
       expect(getPoints([0, 1, 2])).toEqual(3);

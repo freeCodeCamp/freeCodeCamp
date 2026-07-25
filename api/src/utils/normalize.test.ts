@@ -199,6 +199,10 @@ describe('normalize', () => {
     test('should handle string numbers', () => {
       expect(normalizeDate('1696118400000')).toEqual(1696118400000);
     });
+
+    test('should throw an error for an empty string', () => {
+      expect(() => normalizeDate('')).toThrow('Unexpected date value: ""');
+    });
   });
 
   describe('normalizeChallengeType', () => {
