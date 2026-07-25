@@ -74,7 +74,8 @@
   },
   "dependencies": {
     "dotenv": "16.6.1",
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.1",
+    "sanitize-html": "2.17.4"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
