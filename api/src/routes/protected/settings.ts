@@ -529,20 +529,25 @@ ${isLinkSentWithinLimitTTL}`
               });
 
         if (usernameTaken || isRestricted(newUsername)) {
+          const reason = usernameTaken
+            ? 'username_taken'
+            : 'username_restricted';
           req.log.warn(
-            { username: newUsername },
+            { username: newUsername, reason },
             'Username is taken or restricted'
           );
           fastify.Sentry?.metrics?.count(
             'settings.username_change_rejected',
             1,
             {
-              attributes: { reason: 'taken_or_restricted' }
+              attributes: { reason }
             }
           );
           void reply.code(400);
           return reply.send({
-            message: 'flash.username-taken',
+            message: usernameTaken
+              ? 'flash.username-taken'
+              : 'flash.username-restricted',
             type: 'info'
           });
         }
