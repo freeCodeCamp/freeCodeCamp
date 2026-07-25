@@ -849,14 +849,14 @@ Happy coding!
         fastifyTestInstance.Sentry = originalSentry;
 
         expect(response.body).toEqual({
-          message: 'flash.username-taken',
+          message: 'flash.username-restricted',
           type: 'info'
         });
         expect(response.statusCode).toEqual(400);
         expect(count).toHaveBeenCalledWith(
           'settings.username_change_rejected',
           1,
-          { attributes: { reason: 'taken_or_restricted' } }
+          { attributes: { reason: 'username_restricted' } }
         );
       });
 
@@ -866,7 +866,7 @@ Happy coding!
         });
 
         expect(response.body).toEqual({
-          message: 'flash.username-taken',
+          message: 'flash.username-restricted',
           type: 'info'
         });
         expect(response.statusCode).toEqual(400);
@@ -969,15 +969,26 @@ Happy coding!
 
         // Not allowed because, while the usernameDisplay is different, the
         // username is not
+        const takenCount = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count: takenCount }
+        };
         const existingUser = await superPut('/update-my-username').send({
           username: 'SemBauke'
         });
+        fastifyTestInstance.Sentry = originalSentry;
 
         expect(existingUser.body).toEqual({
           message: 'flash.username-taken',
           type: 'info'
         });
         expect(existingUser.statusCode).toEqual(400);
+        expect(takenCount).toHaveBeenCalledWith(
+          'settings.username_change_rejected',
+          1,
+          { attributes: { reason: 'username_taken' } }
+        );
       });
 
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
