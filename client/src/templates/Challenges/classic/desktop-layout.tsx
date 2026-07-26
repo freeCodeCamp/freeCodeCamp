@@ -64,7 +64,6 @@ interface DesktopLayoutProps {
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
-  showIndependentLowerJaw: boolean;
 }
 
 const reflexProps = {
@@ -105,7 +104,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPortal,
     portalWindow,
     startWithConsoleShown,
-    showIndependentLowerJaw,
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage
@@ -243,8 +241,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   }, []);
 
   const projectBasedChallenge = hasEditableBoundaries;
-  const areInstructionsDisplayable =
-    !projectBasedChallenge || showIndependentLowerJaw;
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
@@ -279,7 +275,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.dailyChallengePy;
 
   const panes = [
-    ...(areInstructionsDisplayable && showInstructions
+    ...(showInstructions
       ? [
           <ReflexElement
             key='instructionPane'
@@ -333,7 +329,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           )}
         </ReflexContainer>
       )}
-      {showIndependentLowerJaw && <IndependentLowerJaw />}
+      <IndependentLowerJaw />
     </ReflexElement>,
     ...(displayNotes
       ? [
@@ -399,7 +395,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         <ActionRow
           hasPreview={hasPreview}
           hasNotes={!!notes}
-          areInstructionsDisplayable={areInstructionsDisplayable}
           isDailyCodingChallenge={isDailyCodingChallenge}
           dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
           setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}

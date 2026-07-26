@@ -79,7 +79,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
 
         if (user?.isDonating) {
           req.log.warn('User is already donating');
-          void reply.code(400);
+          void reply.code(409);
           return {
             type: 'info',
             message: 'User is already donating.'
@@ -131,7 +131,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
 
         if (!email) {
           req.log.warn('User has no email');
-          void reply.code(403);
+          void reply.code(400);
           return reply.send({
             error: {
               type: 'EmailRequiredError',
@@ -156,7 +156,7 @@ export const donateRoutes: FastifyPluginCallbackTypebox = (
 
         if (user.isDonating) {
           req.log.warn('User is already donating');
-          void reply.code(400);
+          void reply.code(409);
           return reply.send({
             error: {
               type: 'AlreadyDonatingError',

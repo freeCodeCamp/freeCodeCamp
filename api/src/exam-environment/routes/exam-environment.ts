@@ -25,17 +25,25 @@ import { isObjectID } from '../../utils/validation.js';
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
     fastify.setErrorHandler((error, req, res) => {
-      // If the error does not match the format {code: string; message: string}, coerce into:
       if (
-        !Object.hasOwnProperty.call(error, 'code') ||
-        !Object.hasOwnProperty.call(error, 'message')
+        Object.hasOwnProperty.call(error, 'code') &&
+        Object.hasOwnProperty.call(error, 'message')
       ) {
-        fastify.Sentry?.captureException(error);
-        req.log.error(error, 'Unhandled error in exam environment routes.');
-        const str = JSON.stringify(error);
-        res.code(500);
-        res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
+        const { code, message, statusCode } = error as {
+          code: string;
+          message: string;
+          statusCode?: number;
+        };
+        res.code(
+          typeof statusCode === 'number' && statusCode >= 400 ? statusCode : 500
+        );
+        return res.send({ code, message });
       }
+
+      req.log.error(error, 'Unhandled error in exam environment routes.');
+      const str = JSON.stringify(error);
+      res.code(500);
+      return res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
     });
 
     fastify.get(
@@ -358,9 +366,10 @@ async function postExamGeneratedExamHandler(
       }
 
       if (generated.data === null) {
-        this.Sentry?.captureException({
-          generatedExamId: lastAttempt.generatedExamId
-        });
+        this.Sentry?.captureException(
+          new Error('Unreachable. Generated exam not found.'),
+          { extra: { generatedExamId: lastAttempt.generatedExamId } }
+        );
         req.log.error(
           { generatedExamId: lastAttempt.generatedExamId },
           'Unreachable. Generated exam not found.'
@@ -413,7 +422,9 @@ async function postExamGeneratedExamHandler(
   if (generatedExams.length === 0) {
     const message =
       'Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.';
-    this.Sentry?.captureException({ data: { examId: exam.id }, message });
+    this.Sentry?.captureException(new Error(message), {
+      extra: { examId: exam.id }
+    });
     req.log.error({ examId: exam.id }, message);
     this.Sentry?.metrics?.count('exam.generated_exam_pool_exhausted', 1);
     void reply.code(500);
@@ -462,10 +473,10 @@ async function postExamGeneratedExamHandler(
   const generatedExam = maybeGeneratedExam.data;
 
   if (generatedExam === null) {
-    this.Sentry?.captureException({
-      data: { generatedExamId: randomGeneratedExamId },
-      message: 'Unreachable. Generated exam not found.'
-    });
+    this.Sentry?.captureException(
+      new Error('Unreachable. Generated exam not found.'),
+      { extra: { generatedExamId: randomGeneratedExamId } }
+    );
     req.log.error(
       { generatedExamId: randomGeneratedExamId },
       'Unreachable. Generated exam not found.'

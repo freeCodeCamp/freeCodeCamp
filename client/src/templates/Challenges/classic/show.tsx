@@ -67,7 +67,6 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
-import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
@@ -308,9 +307,6 @@ function ShowClassic({
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
 
-  // Independent lower jaw is only enabled for desktop.
-  const showIndependentLowerJaw = !isMobile;
-
   const showSidePanelTests = isMobile || !hasEditableBoundaries;
 
   // Show test
@@ -374,13 +370,7 @@ function ShowClassic({
     setIsAdvancing(false);
   };
 
-  const renderInstructionsPanel = ({
-    toolPanel,
-    hasDemo
-  }: {
-    toolPanel: React.ReactNode;
-    hasDemo: boolean;
-  }) => {
+  const renderInstructionsPanel = ({ hasDemo }: { hasDemo: boolean }) => {
     return (
       <SidePanel
         challengeDescription={
@@ -401,7 +391,6 @@ function ShowClassic({
           </ChallengeTitle>
         }
         instructionsPanelRef={instructionsPanelRef}
-        toolPanel={toolPanel}
         hasDemo={hasDemo}
         showSidePanelTests={showSidePanelTests}
       />
@@ -428,7 +417,6 @@ function ShowClassic({
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={demoType === 'onLoad'}
-          showIndependentLowerJaw={showIndependentLowerJaw}
         />
       )
     );
@@ -448,7 +436,6 @@ function ShowClassic({
       instructionsPanelRef={instructionsPanelRef}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
-      showIndependentLowerJaw={showIndependentLowerJaw}
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
@@ -464,7 +451,6 @@ function ShowClassic({
             dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
             setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             instructions={renderInstructionsPanel({
-              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             notes={notes}
@@ -481,9 +467,6 @@ function ShowClassic({
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
-            toolPanel={
-              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
-            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
             usesTerminal={usesTerminal}
@@ -499,7 +482,6 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             isDailyCodingChallenge={isDailyCodingChallenge}
@@ -523,7 +505,6 @@ function ShowClassic({
             }
             windowTitle={windowTitle}
             startWithConsoleShown={openConsole}
-            showIndependentLowerJaw={showIndependentLowerJaw}
           />
         )}
         <CompletionModal />

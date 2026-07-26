@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import React, { Component, type ReactNode } from 'react';
+import React, { Component } from 'react';
 import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { createSelector } from 'reselect';
@@ -25,10 +25,10 @@ import {
   showPreviewPortalSelector,
   showPreviewPaneSelector
 } from '../redux/selectors';
-import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
 import { isRtlLanguage } from '../../../utils/is-rtl-language';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
@@ -47,7 +47,6 @@ interface MobileLayoutProps {
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
-  toolPanel: ReactNode;
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
@@ -100,8 +99,6 @@ export class MobileLayout extends Component<
 > {
   static displayName: string;
 
-  #toolPanelGroup!: HTMLElement;
-
   state: MobileLayoutState = {
     currentTab: this.props.hasEditableBoundaries
       ? tabs.editor
@@ -113,52 +110,6 @@ export class MobileLayout extends Component<
       currentTab: tab as Tab
     });
   };
-
-  // Keep the tool panel visible when mobile address bar and/or keyboard are in view.
-  setToolPanelPosition = (): void => {
-    // Detect the appearance of the mobile virtual keyboard.
-    if (visualViewport?.height && window.innerHeight > visualViewport.height) {
-      setTimeout(() => {
-        if (visualViewport?.height !== undefined && this.#toolPanelGroup) {
-          this.#toolPanelGroup.style.top =
-            String(visualViewport.height - TOOL_PANEL_HEIGHT) + 'px';
-        }
-      }, 200);
-    } else {
-      if (visualViewport?.height !== undefined) {
-        // restore the height of html element on Firefox.
-        document.documentElement.style.height = '100%';
-        if (this.#toolPanelGroup)
-          this.#toolPanelGroup.style.top =
-            String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
-      }
-    }
-  };
-
-  isMobileDevice = (): RegExpExecArray | null =>
-    /iPhone|Android.+Mobile/.exec(navigator.userAgent);
-
-  componentDidMount(): void {
-    this.#toolPanelGroup = (
-      document.getElementsByClassName(
-        'tool-panel-group-mobile'
-      ) as HTMLCollectionOf<HTMLElement>
-    )[0];
-
-    if (this.isMobileDevice()) {
-      visualViewport?.addEventListener('resize', this.setToolPanelPosition);
-      if (this.#toolPanelGroup)
-        this.#toolPanelGroup.style.top =
-          String(window.innerHeight - TOOL_PANEL_HEIGHT) + 'px';
-    }
-  }
-
-  componentWillUnmount(): void {
-    if (this.isMobileDevice()) {
-      visualViewport?.removeEventListener('resize', this.setToolPanelPosition);
-      document.documentElement.style.height = '100%';
-    }
-  }
 
   handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
 
@@ -177,7 +128,6 @@ export class MobileLayout extends Component<
       onPreviewResize,
       showPreviewPane,
       showPreviewPortal,
-      toolPanel,
       removePortalWindow,
       setShowPreviewPane,
       setShowPreviewPortal,
@@ -364,7 +314,7 @@ export class MobileLayout extends Component<
               )}
             </TabsContent>
           )}
-          {!hasEditableBoundaries && toolPanel}
+          <IndependentLowerJaw />
           {hasPreview && this.state.currentTab !== 'preview' && (
             <div className='portal-button-wrap'>
               <button

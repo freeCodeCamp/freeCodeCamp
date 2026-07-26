@@ -107,6 +107,32 @@ describe('<ShowDailyCodingChallenge />', () => {
     expect(showClassic).not.toHaveBeenCalled();
   });
 
+  it('fetches the challenge by year-agnostic month-day, not the full date', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      json: vi.fn().mockResolvedValue(mockDailyChallenge)
+    } as unknown as Response);
+
+    render(<ShowDailyCodingChallenge date='2026-06-22' />);
+
+    await waitFor(() => expect(fetchSpy).toHaveBeenCalled());
+
+    const requestedUrl = fetchSpy.mock.calls[0]?.[0] as string;
+    expect(requestedUrl).toMatch(/\/daily-coding-challenge\/day\/06-22$/);
+  });
+
+  it('also accepts a bare "MM-DD" date prop, unchanged', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      json: vi.fn().mockResolvedValue(mockDailyChallenge)
+    } as unknown as Response);
+
+    render(<ShowDailyCodingChallenge date='06-22' />);
+
+    expect(await screen.findByText('classic challenge')).toBeInTheDocument();
+
+    const requestedUrl = fetchSpy.mock.calls[0]?.[0] as string;
+    expect(requestedUrl).toMatch(/\/daily-coding-challenge\/day\/06-22$/);
+  });
+
   it('formats valid API data before rendering the daily challenge', async () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue({
       json: vi.fn().mockResolvedValue(mockDailyChallenge)
