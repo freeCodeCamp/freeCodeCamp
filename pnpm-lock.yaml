@@ -19,9 +19,6 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.4(jiti@2.6.1)
-      sanitize-html:
-        specifier: 2.17.4
-        version: 2.17.4
     devDependencies:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
@@ -514,8 +511,8 @@ importers:
         specifier: 6.6.7
         version: 6.6.7
       sanitize-html:
-        specifier: 2.17.3
-        version: 2.17.3
+        specifier: 2.17.4
+        version: 2.17.4
       store:
         specifier: 2.0.12
         version: 2.0.12
@@ -10730,9 +10727,6 @@ packages:
 
   sanitize-html@2.17.0:
     resolution: {integrity: sha512-dLAADUSS8rBwhaevT12yCezvioCA+bmUTPH/u57xKPT8d++voeYE6HeluA/bPbQ15TwDBG2ii+QZIEmYx8VdxA==}
-
-  sanitize-html@2.17.3:
-    resolution: {integrity: sha512-Kn4srCAo2+wZyvCNKCSyB2g8RQ8IkX/gQs2uqoSRNu5t9I2qvUyAVvRDiFUVAiX3N3PNuwStY0eNr+ooBHVWEg==}
 
   sanitize-html@2.17.4:
     resolution: {integrity: sha512-2HW7v2ol/uAM7sX4hbD8Z59OGWmAPrvjL8E71UWlBcj6m+kcF6ilQBLny+cIgY214QJeJT5tQuxKKqX0SQqjGQ==}
@@ -21023,7 +21017,7 @@ snapshots:
       remark-retext: 4.0.0
       remark-stringify: 9.0.1
       retext-english: 3.0.4
-      sanitize-html: 2.17.3
+      sanitize-html: 2.17.4
       underscore.string: 3.3.6
       unified: 9.2.2
       unist-util-remove-position: 3.0.0
@@ -24985,15 +24979,6 @@ snapshots:
       deepmerge: 4.3.1
       escape-string-regexp: 4.0.0
       htmlparser2: 8.0.2
-      is-plain-object: 5.0.0
-      parse-srcset: 1.0.2
-      postcss: 8.5.13
-
-  sanitize-html@2.17.3:
-    dependencies:
-      deepmerge: 4.3.1
-      escape-string-regexp: 4.0.0
-      htmlparser2: 10.1.0
       is-plain-object: 5.0.0
       parse-srcset: 1.0.2
       postcss: 8.5.13
