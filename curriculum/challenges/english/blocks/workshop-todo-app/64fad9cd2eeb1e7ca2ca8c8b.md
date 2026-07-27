@@ -322,7 +322,7 @@ const reset = () => {
   descriptionInput.value = "";
   taskForm.classList.toggle("hidden");
   currentTask = {};
-}
+};
 
 openTaskFormBtn.addEventListener("click", () =>
   taskForm.classList.toggle("hidden")
@@ -341,7 +341,7 @@ cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
 discardBtn.addEventListener("click", () => {
   confirmCloseDialog.close();
-  reset()
+  reset();
 });
 
 taskForm.addEventListener("submit", (e) => {
@@ -357,10 +357,10 @@ taskForm.addEventListener("submit", (e) => {
           <button type="button" class="btn">Edit</button>
           <button type="button" class="btn">Delete</button>
         </div>
-      `
+      `;
     }
   );
 
-  reset()
+  reset();
 });
 ```

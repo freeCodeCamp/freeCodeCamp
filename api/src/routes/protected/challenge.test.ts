@@ -1568,9 +1568,8 @@ describe('challengeRoutes', () => {
           'aaa174fcf86c76b9248c6eb1',
           'aaa174fcf86c76b9248c6eb2',
           'aaa174fcf86c76b9248c6eb3',
-          'aaa174fcf86c76b9248c6eb4',
           'aaa174fcf86c76b9248c6eb4'
-        ];
+        ]; // these must be unique since it's possible for duplicate requests to update challenges or push new ones depending on timing.
 
         const responses = await Promise.all(
           challengeIds.map(id =>
