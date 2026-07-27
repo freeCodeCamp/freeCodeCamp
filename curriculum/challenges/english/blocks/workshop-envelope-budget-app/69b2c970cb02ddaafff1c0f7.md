@@ -16,7 +16,7 @@ Open up the console and you should see the original string followed by the clean
 You should have a `console.log(cleanInputString("+-99"))` statement.
 
 ```js
-assert.match(code, /console\.log\(\s*cleanInputString\(\s*('|")\s*\+\-9\s*9\s*\1\s*\)\s*\);?/);
+assert.match(code, /console\.log\(\s*cleanInputString\(\s*('|")\+\-99\1\s*\)\s*\);?/);
 ```
 
 # --seed--

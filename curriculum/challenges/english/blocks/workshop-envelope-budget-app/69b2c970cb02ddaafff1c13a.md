@@ -32,13 +32,13 @@ Wrap your `inputContainers` query selector in `Array.from()`. Do this on the sam
 You should wrap your `querySelectorAll` in `Array.from()`.
 
 ```js
-assert.match(clearForm, /Array\.from\(\s*document\.querySelectorAll\(\s*('|")\.input-container*\1\s*\)\s*\)/);
+assert.match(clearForm, /Array\.from\(\s*document\.querySelectorAll\(\s*('|")\.input-container\1\s*\)\s*\)/);
 ```
 
 You should assign the result of `Array.from()` to your `inputContainers` variable.
 
 ```js
-assert.match(clearForm, /inputContainers\s*=\s*Array\.from\(\s*document\.querySelectorAll\(\s*('|")\.input-container*\1\s*\)\s*\)/);
+assert.match(clearForm, /inputContainers\s*=\s*Array\.from\(\s*document\.querySelectorAll\(\s*('|")\.input-container\1\s*\)\s*\)/);
 ```
 
 # --seed--

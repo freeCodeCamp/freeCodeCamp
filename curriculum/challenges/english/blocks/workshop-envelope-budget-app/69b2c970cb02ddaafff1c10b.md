@@ -7,7 +7,7 @@ dashedName: step-46
 
 # --description--
 
-Inside your template literal, create a `label` element and give it the text `Entry # Name`. Using your template literal syntax, replace `#` with the value of `entryNumber`.
+Inside your template literal, create a `label` element and give it the text `Expense # Name`. Using your template literal syntax, replace `#` with the value of `entryNumber`.
 
 # --hints--
 
@@ -17,10 +17,10 @@ You should have a `label` element inside your template literal.
 assert.match(code, /HTMLString\s*=\s*`\n\s*<label>.*<\/label>/);
 ```
 
-Your `label` element should have the text `Entry ${entryNumber} Name`.
+Your `label` element should have the text `Expense ${entryNumber} Name`.
 
 ```js
-assert.match(code, /HTMLString\s*=\s*`\n\s*<label>\s*Entry\s\$\{entryNumber\}\sName\s*<\/label>/);
+assert.match(code, /HTMLString\s*=\s*`\n\s*<label>\s*Expense\s\$\{entryNumber\}\sName\s*<\/label>/);
 ```
 
 # --seed--

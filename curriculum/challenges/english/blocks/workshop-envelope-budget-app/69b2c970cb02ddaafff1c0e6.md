@@ -79,6 +79,12 @@ Your new `button` element should have an `id` attribute set to `add-entry`.
 assert.equal(document.querySelector('.controls > span > button')?.getAttribute('id'), 'add-entry');
 ```
 
+Your new `button` element should have a `type` attribute set to `button`.
+
+```js
+assert.equal(document.querySelector('.controls > span > button')?.getAttribute('type'), 'button');
+```
+
 Your new `button` element should have the text `Add Entry`.
 
 ```js
