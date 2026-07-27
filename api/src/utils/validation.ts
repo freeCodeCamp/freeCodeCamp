@@ -1,4 +1,5 @@
 import { ObjectId } from 'bson';
+import assert from 'node:assert';
 
 // This is trivial, but makes it simple to refactor if we swap monogodb for
 // bson, say.
@@ -45,3 +46,19 @@ export const trimTags = (value: string): string => {
 
   return value.replace(/</g, '&lt;');
 };
+
+/**
+ * Parses and asserts input string to integer.
+ */
+export function parseInt(str: string): number {
+  const n = Number(str);
+  assert.ok(Number.isInteger(n), `expected '${str}' to be an integer`);
+  return n;
+}
+
+/**
+ * Parses input string into boolean. `true` if `"true"`, otherwise `false`.
+ */
+export function parseBool(str: string): boolean {
+  return str === 'true';
+}

@@ -46,6 +46,27 @@ const date = {
   }
 };
 
+const day = {
+  params: Type.Object({
+    day: Type.String({ pattern: '^\\d{2}-\\d{2}$' })
+  }),
+  response: {
+    200: singleChallengeResponse,
+    400: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal('Invalid date format. Please use MM-DD.')
+    }),
+    404: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal('Challenge not found.')
+    }),
+    500: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal('Internal server error.')
+    })
+  }
+};
+
 const today = {
   response: {
     200: singleChallengeResponse,
@@ -122,6 +143,7 @@ const newest = {
 
 export const dailyCodingChallenge = {
   date,
+  day,
   today,
   month,
   all,

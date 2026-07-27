@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           persist-credentials: false
 
@@ -32,7 +32,7 @@ jobs:
           PROJECT_NAME: 'client'
 
       - name: Crowdin Upload
-        uses: crowdin/github-action@8868a33591d21088edfc398968173a3b98d51706 # v2.16.2
+        uses: crowdin/github-action@52aa776766211d83d975df51f3b9c53c2f8ba35f # v2.16.3
         # options: https://github.com/crowdin/github-action/blob/master/action.yml
         with:
           # uploads

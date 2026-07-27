@@ -20,22 +20,22 @@
   },
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/espanol/index",
-    "forum": "https://forum.freecodecamp.org/c/espanol/",
+    "forum": "https://forum.freecodecamp.org/",
     "news": "https://freecodecamp.org/espanol/news/",
     "podcast": "https://www.freecodecamp.org/espanol/news/el-podcast-de-freecodecamp-en-espanol/"
   },
   "help": {
-    "HTML-CSS": "world-languages/espanol",
-    "JavaScript": "world-languages/espanol",
-    "Python": "world-languages/espanol",
-    "Backend Development": "world-languages/espanol",
-    "C-Sharp": "world-languages/espanol",
-    "English": "world-languages/espanol",
-    "Spanish Curriculum": "world-languages/espanol",
-    "Chinese Curriculum": "world-languages/espanol",
-    "Odin": "world-languages/espanol",
-    "Euler": "world-languages/espanol",
-    "Rosetta": "world-languages/espanol",
-    "General": "world-languages/espanol"
+    "HTML-CSS": "curriculum-help",
+    "JavaScript": "curriculum-help",
+    "Python": "curriculum-help",
+    "Backend Development": "curriculum-help",
+    "C-Sharp": "curriculum-help",
+    "English": "curriculum-help",
+    "Spanish Curriculum": "curriculum-help",
+    "Chinese Curriculum": "curriculum-help",
+    "Odin": "curriculum-help",
+    "Euler": "curriculum-help",
+    "Rosetta": "curriculum-help",
+    "General": "curriculum-help"
   }
 }

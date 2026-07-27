@@ -60,7 +60,7 @@ function initializeThroughput(gates) {
 function processGateFlow(gate, tickIndex) {
   let currentTickQueue = gate.queue[tickIndex];
 --fcc-editable-region--
-
+  
 --fcc-editable-region--
 }
 ```

@@ -126,8 +126,10 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-      logger.info({ username: req.query.username });
+      req.log.debug(
+        { username: req.query.username },
+        'Fetching public profile'
+      );
       // TODO(Post-MVP): look for duplicates unless we can make username unique in the db.
       const user = await fastify.prisma.user.findFirst({
         where: { username: req.query.username }
@@ -136,7 +138,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       });
 
       if (!user) {
-        logger.warn('User not found');
+        req.log.warn('User not found');
         void reply.code(404);
         return reply.send({});
       }
@@ -179,17 +181,16 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           result: user.username
         });
       } else {
-        const progressTimestamps = user.progressTimestamps as
-          | ProgressTimestamp[]
-          | null;
         const sharedUser = replacePrivateData({
           ...user,
-          calendar: getCalendar(progressTimestamps),
+          calendar: getCalendar(
+            user.progressTimestamps as (ProgressTimestamp | null)[]
+          ),
           completedChallenges: normalizeChallenges(user.completedChallenges),
           location: user.location ?? '',
           joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
           name: user.name ?? '',
-          points: getPoints(progressTimestamps),
+          points: getPoints(user.progressTimestamps),
           profileUI: normalizedProfileUI,
           experience: user.experience.map(removeNulls) ?? []
         });
@@ -229,13 +230,9 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-
       if (req.validationError) {
         void reply.code(400);
-        logger
-          .child({ res: reply })
-          .warn('Validation error: No username provided');
+        req.log.warn('Validation error: No username provided');
         return await reply.send({
           type: 'danger',
           message: 'username parameter is required'
@@ -245,7 +242,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
       const username = req.query.username.toLowerCase();
 
       if (isRestricted(username)) {
-        logger.info(`Restricted username: ${username}`);
+        req.log.debug({ username }, 'Restricted username');
         return await reply.send({ exists: true });
       }
 
@@ -255,9 +252,9 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         })) > 0;
 
       if (exists) {
-        logger.info(`User exists for username: ${username}`);
+        req.log.debug({ username }, 'User exists for username');
       } else {
-        logger.info(`User does not exist for username: ${username}`);
+        req.log.debug({ username }, 'User does not exist for username');
       }
       await reply.send({ exists });
     }

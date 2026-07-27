@@ -1,4 +1,5 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest';
+import Stripe from 'stripe';
 import {
   createSuperRequest,
   devLogin,
@@ -124,8 +125,33 @@ const generateMockSubCreate = (status: string) => () =>
 const defaultError = () =>
   Promise.reject(new Error('Stripe encountered an error'));
 
+const {
+  StripeError,
+  StripeCardError,
+  StripeInvalidRequestError,
+  StripeAuthenticationError
+} = vi.hoisted(() => {
+  class StripeError extends Error {}
+  class StripeCardError extends StripeError {}
+  class StripeInvalidRequestError extends StripeError {}
+  class StripeAuthenticationError extends StripeError {}
+  return {
+    StripeError,
+    StripeCardError,
+    StripeInvalidRequestError,
+    StripeAuthenticationError
+  };
+});
+
 vi.mock('stripe', () => ({
   default: class {
+    static errors = {
+      StripeError,
+      StripeCardError,
+      StripeInvalidRequestError,
+      StripeAuthenticationError
+    };
+
     constructor() {}
 
     customers = {
@@ -216,6 +242,13 @@ describe('Donate', () => {
       });
 
       test('should return 402 with client_secret if subscription status requires source action', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const count = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('requires_source_action')
         );
@@ -231,6 +264,9 @@ describe('Donate', () => {
           }
         });
         expect(response.status).toBe(402);
+        expect(count).toHaveBeenCalledWith('donation.action_required', 1);
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return 402 if subscription status requires source', async () => {
@@ -250,7 +286,7 @@ describe('Donate', () => {
         expect(response.status).toBe(402);
       });
 
-      test('should return 400 if the user is already donating', async () => {
+      test('should return 409 if the user is already donating', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('still does not matter')
         );
@@ -270,10 +306,10 @@ describe('Donate', () => {
             message: 'User is already donating.'
           }
         });
-        expect(failResponse.status).toBe(400);
+        expect(failResponse.status).toBe(409);
       });
 
-      test('should return 403 if the user has no email', async () => {
+      test('should return 400 if the user has no email', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: userWithProgress.email },
           data: { email: null }
@@ -287,10 +323,17 @@ describe('Donate', () => {
             message: 'User has not provided an email address'
           }
         });
-        expect(response.status).toBe(403);
+        expect(response.status).toBe(400);
       });
 
       test('should return 500 if Stripe encountes an error', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
         mockSubCreate.mockImplementationOnce(defaultError);
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
@@ -300,6 +343,79 @@ describe('Donate', () => {
         expect(response.body).toEqual({
           error: 'Donation failed due to a server error.'
         });
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('should not capture Stripe card decline errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const CardError = Stripe.errors.StripeCardError as unknown as new (
+          m?: string
+        ) => Error;
+        mockSubCreate.mockImplementationOnce(() =>
+          Promise.reject(new CardError('card_declined'))
+        );
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+
+        expect(response.status).toBe(500);
+        expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('should not capture Stripe invalid request errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const InvalidRequestError = Stripe.errors
+          .StripeInvalidRequestError as unknown as new (m?: string) => Error;
+        mockSubCreate.mockImplementationOnce(() =>
+          Promise.reject(new InvalidRequestError('invalid_request'))
+        );
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+
+        expect(response.status).toBe(500);
+        expect(captureException).not.toHaveBeenCalled();
+
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('should capture Stripe infra errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+
+        const AuthError = Stripe.errors
+          .StripeAuthenticationError as unknown as new (m?: string) => Error;
+        mockSubCreate.mockImplementationOnce(() =>
+          Promise.reject(new AuthError('invalid api key'))
+        );
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+
+        expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return 400 if user has not completed challenges', async () => {
@@ -337,18 +453,45 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      test('should return 400 if the user is already donating', async () => {
+      test('should return 409 if the user is already donating', async () => {
         const successResponse = await superPost('/donate/add-donation').send(
           {}
         );
         expect(successResponse.status).toBe(200);
         const failResponse = await superPost('/donate/add-donation').send({});
-        expect(failResponse.status).toBe(400);
+        expect(failResponse.status).toBe(409);
+      });
+
+      test('should capture unexpected errors', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const captureException = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          captureException
+        };
+        const updateSpy = vi
+          .spyOn(fastifyTestInstance.prisma.user, 'update')
+          .mockRejectedValueOnce(new Error('DB error'));
+
+        const response = await superPost('/donate/add-donation').send({});
+
+        expect(response.status).toBe(500);
+        expect(captureException).toHaveBeenCalledOnce();
+
+        updateSpy.mockRestore();
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
 
     describe('PUT /donate/update-stripe-card', () => {
       test('should return 200 and return session id', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const count = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         await fastifyTestInstance.prisma.donation.create({
           data: donationMock
         });
@@ -369,14 +512,39 @@ describe('Donate', () => {
         });
         expect(response.body).toEqual({ sessionId: 'checkout_session_id' });
         expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith(
+          'donation.card_update_requested',
+          1,
+          {
+            attributes: { result: 'success' }
+          }
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
-      test('should return 500 if there is no donation record', async () => {
+      test('should return 404 if there is no donation record', async () => {
+        const originalSentry = fastifyTestInstance.Sentry;
+        const count = vi.fn();
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superPut('/donate/update-stripe-card').send({});
         expect(response.body).toEqual({
           message: 'flash.generic-error',
           type: 'danger'
         });
-        expect(response.status).toBe(500);
+        expect(response.status).toBe(404);
+        expect(count).toHaveBeenCalledWith(
+          'donation.card_update_requested',
+          1,
+          {
+            attributes: { result: 'not_found' }
+          }
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
 

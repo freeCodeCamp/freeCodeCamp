@@ -14,12 +14,8 @@ interface Motivation {
 declare const preval: (s: TemplateStringsArray) => Motivation;
 
 const words = preval`
-  const config = require('../../config/env.json');
-  const { clientLocale } = config;
-  const path = clientLocale === 'english' ? '../../i18n/locales/' : '../../../curriculum/i18n-curriculum/client/';
-  const target = path + clientLocale + '/motivation.json';
-  const words = require(target);
-  module.exports = words;
+  const { clientLocale } = require('../../config/env.json');
+  module.exports = require('../../i18n/locales/' + clientLocale + '/motivation.json');
 `;
 
 function randomItem<T>(arr: T[]): T {
