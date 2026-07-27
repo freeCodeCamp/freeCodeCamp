@@ -58,20 +58,24 @@ export type UpdateReplyType<Schema extends FastifySchema> = FastifyReply<
  * ## Example:
  *
  * ```ts
- * const maybeWhatIWant = await mapErr(
- *   this.prisma.whatIWantCollection.create({
- *     data: {}
- *   })
+ * const maybeExam = await mapErr(
+ *   this.prisma.examEnvironmentExam.findUnique({ where: { id: examId } })
  * );
  *
- * if (maybeWhatIWant.hasError) {
+ * if (maybeExam.hasError) {
+ *   if (maybeExam.error instanceof PrismaClientValidationError) {
+ *     void reply.code(400);
+ *     return reply.send(ERRORS.FCC_EINVAL_EXAM_ID(maybeExam.error.message));
+ *   }
+ *
+ *   this.Sentry?.captureException(maybeExam.error);
  *   void reply.code(500);
- *   return reply.send('Unable to generate exam, due to: ' +
- *     JSON.stringify(maybeWhatIWant.error)
+ *   return reply.send(
+ *     ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeExam.error))
  *   );
  * }
  *
- * const whatIWant = maybeWhatIWant.data;
+ * const exam = maybeExam.data;
  * ```
  *
  * @param promise - any promise to be tried.
@@ -93,18 +97,19 @@ export async function mapErr<T>(promise: Promise<T>): Promise<Result<T>> {
  * ## Example:
  *
  * ```ts
- * const maybeWhatIWant = await syncMapErr(
- *   () => chai.assert.deepEqual({}, {})
+ * const maybeUserExam = syncMapErr(() =>
+ *   constructUserExam(generatedExam, exam)
  * );
  *
- * if (maybeWhatIWant.hasError) {
+ * if (maybeUserExam.hasError) {
+ *   this.Sentry?.captureException(maybeUserExam.error);
  *   void reply.code(500);
- *   return reply.send('Unable to generate exam, due to: ' +
- *     JSON.stringify(maybeWhatIWant.error)
+ *   return reply.send(
+ *     ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeUserExam.error))
  *   );
  * }
  *
- * const whatIWant = maybeWhatIWant.data;
+ * const userExam = maybeUserExam.data;
  * ```
  *
  * @param fn - any function to be tried.

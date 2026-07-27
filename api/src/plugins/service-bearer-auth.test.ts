@@ -14,9 +14,14 @@ import serviceBearerAuth from './service-bearer-auth.js';
 describe('service-bearer-auth plugin', () => {
   let fastify: FastifyInstance;
 
+  let captureException: ReturnType<typeof vi.fn>;
+
   beforeEach(async () => {
     fastify = Fastify();
     await fastify.register(serviceBearerAuth);
+    captureException = vi.fn();
+    // @ts-expect-error Sentry isn't decorated in this minimal test app.
+    fastify.Sentry = { captureException };
     fastify.addHook('onRequest', fastify.validateBearerToken);
     fastify.get('/test', (_req, reply) => {
       void reply.send({ ok: true });
@@ -38,6 +43,7 @@ describe('service-bearer-auth plugin', () => {
 
     expect(res.statusCode).toEqual(200);
     expect(res.json()).toEqual({ ok: true });
+    expect(captureException).not.toHaveBeenCalled();
   });
 
   test('should return 401 when authorization header is missing', async () => {
@@ -120,6 +126,9 @@ describe('service-bearer-auth plugin without a configured token', () => {
     const { default: plugin } = await import('./service-bearer-auth.js');
     const fastify = Fastify();
     await fastify.register(plugin);
+    const captureException = vi.fn();
+    // @ts-expect-error Sentry isn't decorated in this minimal test app.
+    fastify.Sentry = { captureException };
     fastify.addHook('onRequest', fastify.validateBearerToken);
     fastify.get('/test', (_req, reply) => {
       void reply.send({ ok: true });
@@ -137,6 +146,10 @@ describe('service-bearer-auth plugin without a configured token', () => {
     expect(res.json()).toEqual({
       error: 'Service authentication not configured'
     });
+    expect(captureException).toHaveBeenCalledTimes(1);
+    expect(captureException).toHaveBeenCalledWith(
+      new Error('TPA_API_BEARER_TOKEN is not configured')
+    );
 
     await fastify.close();
   });
