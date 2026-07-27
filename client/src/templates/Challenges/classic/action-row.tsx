@@ -4,14 +4,12 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
-import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import EditorTabs from './editor-tabs';
 
 interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
   hasPreview: boolean;
-  areInstructionsDisplayable: boolean;
   isDailyCodingChallenge: boolean;
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
@@ -21,9 +19,9 @@ interface ClassicLayoutProps {
   showInstructions: boolean;
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
-  challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
+  usesTerminal: boolean;
   hasContentOutline?: never;
 }
 
@@ -99,7 +97,6 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     togglePane,
     hasPreview,
     hasNotes,
-    areInstructionsDisplayable,
     showConsole,
     showNotes,
     showInstructions,
@@ -108,7 +105,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage,
-    challengeType
+    usesTerminal
   } = props;
 
   // sets screen reader text for the two preview buttons
@@ -119,49 +116,51 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
       portal: t('aria.open-preview-in-new-window')
     };
 
-    // preview open in main window
+    // open in main window
     if (showPreviewPane && !showPreviewPortal) {
-      previewBtnsSrText.pane = t('aria.hide-preview');
-      previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
-
-      // preview open in external window
+      if (usesTerminal) {
+        previewBtnsSrText.pane = t('aria.hide-terminal');
+        previewBtnsSrText.portal = t('aria.move-terminal-to-new-window');
+      } else {
+        previewBtnsSrText.pane = t('aria.hide-preview');
+        previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
+      }
+      // open in external window
     } else if (showPreviewPortal && !showPreviewPane) {
-      previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-preview-window');
+      if (usesTerminal) {
+        previewBtnsSrText.pane = t('aria.move-terminal-to-main-window');
+        previewBtnsSrText.portal = t('aria.close-external-terminal-window');
+      } else {
+        previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
+        previewBtnsSrText.portal = t('aria.close-external-preview-window');
+      }
     }
 
     return previewBtnsSrText;
   }
-
-  const isPythonChallenge =
-    challengeType === challengeTypes.python ||
-    challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.pyLab ||
-    challengeType === challengeTypes.dailyChallengePy;
-
-  const previewButtonText = isPythonChallenge
-    ? t('learn.editor-tabs.terminal')
-    : t('learn.editor-tabs.preview');
 
   const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
     store.set('dailyCodingChallengeLanguage', language);
     setDailyCodingChallengeLanguage(language);
   };
 
+  const previewPaneButtonText =
+    usesTerminal == false
+      ? 'learn.editor-tabs.preview'
+      : 'learn.editor-tabs.terminal';
+
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
         {/* left */}
         <div className='tabs-row-left'>
-          {areInstructionsDisplayable && (
-            <button
-              data-playwright-test-label='instructions-button'
-              aria-expanded={!!showInstructions}
-              onClick={() => togglePane('showInstructions')}
-            >
-              {t('learn.editor-tabs.instructions')}
-            </button>
-          )}
+          <button
+            data-playwright-test-label='instructions-button'
+            aria-expanded={!!showInstructions}
+            onClick={() => togglePane('showInstructions')}
+          >
+            {t('learn.editor-tabs.instructions')}
+          </button>
           <EditorTabs data-playwright-test-label='editor-tabs' />
         </div>
         {/* middle - only used with daily coding challenges for now */}
@@ -207,7 +206,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 onClick={() => togglePane('showPreviewPane')}
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-                <span aria-hidden='true'>{previewButtonText}</span>
+                <span aria-hidden='true'>{t(previewPaneButtonText)}</span>
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}

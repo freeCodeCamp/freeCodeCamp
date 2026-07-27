@@ -93,6 +93,7 @@ export const newUser = (email: string) => ({
   rand: null, // TODO(Post-MVP): delete from schema (it's not used or required).
   savedChallenges: [],
   sendQuincyEmail: null,
+  socrates: null,
   theme: 'default',
   timezone: null,
   twitter: null,

@@ -40,6 +40,7 @@ import { usePageLeave } from '../hooks';
 import { sounds } from '../components/scene/scene-assets';
 import ExitQuizModal from './exit-quiz-modal';
 import FinishQuizModal from './finish-quiz-modal';
+import MobileAppModal from '../components/mobile-app-modal';
 
 import './show.css';
 
@@ -97,6 +98,7 @@ const ShowQuiz = ({
         description,
         challengeType,
         helpCategory,
+        id,
         superBlock,
         block,
         tests,
@@ -235,6 +237,7 @@ const ShowQuiz = ({
       title,
       challengeType,
       helpCategory,
+      description,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -354,6 +357,8 @@ const ShowQuiz = ({
               <ChallengeDescription
                 description={description}
                 superBlock={superBlock}
+                block={block}
+                challengeId={id}
               />
               <Spacer size='l' />
               <ObserveKeys>
@@ -393,6 +398,7 @@ const ShowQuiz = ({
         <CompletionModal />
         <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
         <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
+        <MobileAppModal superBlock={superBlock} />
       </LearnLayout>
     </Hotkeys>
   );

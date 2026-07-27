@@ -35,8 +35,16 @@ const renderNodes = reactNodes => {
 };
 
 const withTranslation = () => Component => {
-  Component.defaultProps = { ...Component.defaultProps, t: str => str };
-  return Component;
+  const WrappedComponent = props =>
+    React.createElement(Component, {
+      ...props,
+      t: props.t ?? (str => str)
+    });
+
+  WrappedComponent.WrappedComponent = Component;
+  WrappedComponent.displayName = `withTranslation(${Component.displayName || Component.name || 'Component'})`;
+
+  return WrappedComponent;
 };
 
 const useTranslation = () => {

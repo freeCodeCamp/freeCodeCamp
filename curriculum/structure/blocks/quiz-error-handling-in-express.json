@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "quiz-error-handling-in-express",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "6a04bbc9815e737ed711622e",
+      "title": "Error Handling in Express Quiz"
+    }
+  ]
+}

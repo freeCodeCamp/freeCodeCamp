@@ -73,7 +73,7 @@ if age >= 18:
 print('You are an adult') # IndentationError: expected an indented block after 'if' statement on line 3
 ```
 
-Though you can use any number spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
+Though you can use any number of spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
 
 Blocks are also found in loops and functions, which you'll learn about in future lessons.
 
@@ -144,7 +144,7 @@ else:
     print('You are a child') # You are a child
 ```
 
-Note that you can use as many `elif` statements as you want:
+Note that you can use as many `elif` clauses as you want:
 
 ```python
 age = 2

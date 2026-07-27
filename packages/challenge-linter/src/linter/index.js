@@ -1,29 +1,22 @@
-import markdownlint from 'markdownlint';
+import { lint as markdownlint } from 'markdownlint/promise';
 
 import * as lintPrism from './markdown-prism.js';
 import * as lintYAML from './markdown-yaml.js';
 import * as fencedCodeBlock from './fenced-code-block.js';
 
+const markdownItFactory = () =>
+  import('markdown-it').then(module => module.default({ html: true }));
+
 export function linter(rules) {
-  const lint = (file, next) => {
+  const lint = async files => {
     const options = {
-      files: [file.path],
+      files,
       config: rules,
-      customRules: [lintYAML, lintPrism, fencedCodeBlock]
+      customRules: [lintYAML, lintPrism, fencedCodeBlock],
+      markdownItFactory
     };
 
-    markdownlint(options, function callback(err, result) {
-      const resultString = (result || '').toString();
-      if (resultString) {
-        process.exitCode = 1;
-        console.log(resultString);
-      }
-      if (err) {
-        process.exitCode = 1;
-        console.error(err);
-      }
-      if (next) next(err, file);
-    });
+    return await markdownlint(options);
   };
   return lint;
 }

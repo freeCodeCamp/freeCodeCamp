@@ -213,7 +213,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
     const showExamResults = () => {
       setProjectTitle(projectTitle);
-      setExamResults(examResults as GeneratedExamResults);
+      setExamResults(examResults);
       openModal('examResults');
     };
 

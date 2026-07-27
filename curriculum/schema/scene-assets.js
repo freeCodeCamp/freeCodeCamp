@@ -25,7 +25,6 @@ const availableCharacters = [
   'Tom',
 
   // Spanish
-  'Alex',
   'Ángela',
   'Camila',
   'Carlos',
@@ -45,12 +44,14 @@ const availableCharacters = [
 
   // Chinese
   'Chen Na',
+  'Huang Jingyi',
   'Li Hong',
   'Li Ping',
   'Lin Yating',
   'Liu Ming',
   'Wang Hua',
   'Zhang Wei',
+  'Zhou Jia',
   'Zhou Yongjie'
 ];
 

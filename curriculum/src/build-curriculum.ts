@@ -208,7 +208,6 @@ export const superBlockNames = {
   'introduction-to-algorithms-and-data-structures':
     SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
   'introduction-to-precalculus': SuperBlocks.IntroductionToPrecalculus,
-  'lab-survey-form': SuperBlocks.LabSurveyForm,
   'html-and-accessibility': SuperBlocks.HtmlAndAccessibility,
   'computer-basics': SuperBlocks.ComputerBasics,
   'basic-css': SuperBlocks.BasicCss,
@@ -219,17 +218,13 @@ export const superBlockNames = {
   'styling-forms': SuperBlocks.StylingForms,
   'css-box-model': SuperBlocks.CssBoxModel,
   'css-flexbox': SuperBlocks.CssFlexbox,
-  'lab-page-of-playing-cards': SuperBlocks.LabPageOfPlayingCards,
   'css-typography': SuperBlocks.CssTypography,
   'css-and-accessibility': SuperBlocks.CssAndAccessibility,
   'css-positioning': SuperBlocks.CssPositioning,
   'attribute-selectors': SuperBlocks.AttributeSelectors,
-  'lab-book-inventory-app': SuperBlocks.LabBookInventoryApp,
   'responsive-design': SuperBlocks.ResponsiveDesign,
-  'lab-technical-documentation-page': SuperBlocks.LabTechnicalDocumentationPage,
   'css-variables': SuperBlocks.CssVariables,
   'css-grid': SuperBlocks.CssGrid,
-  'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
   'css-animations': SuperBlocks.CssAnimations,
   'learn-oop-with-python': SuperBlocks.LearnOOPWithPython,
   'learn-rag-mcp-fundamentals': SuperBlocks.LearnRAGAndMCPFundamentals,
@@ -240,7 +235,6 @@ export const superBlockNames = {
   'learn-sql-and-bash': SuperBlocks.LearnSQLAndBash,
   'introduction-to-nano': SuperBlocks.IntroductionToNano,
   'introduction-to-git-and-github': SuperBlocks.IntroductionToGitAndGithub,
-  'learn-prompting-fundamentals': SuperBlocks.LearnPromptingFundamentals,
   'introduction-to-variables-and-strings-in-javascript':
     SuperBlocks.IntroductionToVariablesAndStringsInJS,
   'introduction-to-booleans-and-numbers-in-javascript':
@@ -274,6 +268,7 @@ export const superBlockNames = {
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
   'introduction-to-asynchronous-javascript':
     SuperBlocks.IntroductionToAsynchronousJS,
+  'learn-data-visualization-with-d3': SuperBlocks.LearnDataVisualizationWithD3,
   'introduction-to-python-basics': SuperBlocks.IntroductionToPythonBasics,
   'learn-python-loops-and-sequences': SuperBlocks.LearnPythonLoopsAndSequences,
   'learn-python-dictionaries-and-sets':
@@ -409,6 +404,9 @@ export async function parseCurriculumStructure(filter?: Filter) {
     addSuperblockStructure(curriculum.superblocks)
   );
   const refinedFilter = closestFilters(superblockList, filter);
+  if (!isEmpty(filter)) {
+    console.log('Applied filter:', refinedFilter);
+  }
   const fullSuperblockList = applyFilters(superblockList, refinedFilter);
   return {
     fullSuperblockList,

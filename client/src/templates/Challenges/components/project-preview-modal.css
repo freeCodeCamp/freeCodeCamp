@@ -1,6 +1,22 @@
 .project-preview-modal-body {
+  position: relative;
   line-height: 0;
   padding: 0;
   min-height: 70vh;
   height: 70vh;
+}
+
+.project-preview-modal-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: var(--primary-background);
+}
+
+.project-preview-modal-content {
+  height: 100%;
+}
+
+.project-preview-modal-content.is-loading {
+  opacity: 0;
 }

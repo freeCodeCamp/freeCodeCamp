@@ -4,13 +4,17 @@ import { Spacer } from '@freecodecamp/ui';
 
 import { parseBlanks, parseAnswer } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
-import { FillInTheBlank } from '../../../redux/prop-types';
+import {
+  FillInTheBlankInputType,
+  FillInTheBlank
+} from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
 import PinyinToHanziInput from './pinyin-to-hanzi-input';
 import PinyinToneInput from './pinyin-tone-input';
 
 type FillInTheBlankProps = {
   fillInTheBlank: FillInTheBlank;
+  inputType?: FillInTheBlankInputType;
   answersCorrect: (boolean | null)[];
   showFeedback: boolean;
   feedback: string | null;
@@ -103,7 +107,8 @@ const BlankInput = ({
 };
 
 function FillInTheBlanks({
-  fillInTheBlank: { sentence, blanks, inputType },
+  fillInTheBlank: { sentence, blanks },
+  inputType,
   answersCorrect,
   showFeedback,
   feedback,

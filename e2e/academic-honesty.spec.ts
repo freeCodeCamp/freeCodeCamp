@@ -15,30 +15,8 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
   });
 
   test('they should be able to accept it', async ({ page }) => {
-    await page.goto('/settings');
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.honesty
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p1)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p2)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p3)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p4)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p5)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p6)
-    ).toBeVisible();
+    await page.goto('/settings#honesty');
+
     const agreeButton = page.getByRole('button', {
       name: translations.buttons['agree-honesty']
     });

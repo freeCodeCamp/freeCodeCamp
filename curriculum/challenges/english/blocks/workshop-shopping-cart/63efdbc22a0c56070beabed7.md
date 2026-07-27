@@ -1,28 +1,28 @@
 ---
 id: 63efdbc22a0c56070beabed7
-title: Step 23
+title: Step 24
 challengeType: 0
-dashedName: step-23
+dashedName: step-24
 ---
 
 # --description--
 
-You’re on the right track! However, let’s take a moment to address a common issue when working with objects in JavaScript.
+You're on the right track! However, let's take a moment to address a common issue when working with objects in JavaScript.
 
-When you try to access an object property that doesn’t exist, JavaScript returns `undefined`. If you then attempt to perform arithmetic operations on `undefined`, it can lead to unexpected results, such as `NaN`.
+When you try to access an object property that doesn't exist, JavaScript returns `undefined`. If you then attempt to perform arithmetic operations on `undefined`, it can lead to unexpected results, such as `NaN`.
 
 To prevent this, you can use the `||` (logical OR) operator to provide a default value.
 
 ```js
-  let scores = {}; 
-  let players = ["Alice", "Bob", "Charlie"];
+let scores = {};
+let players = ["Alice", "Bob", "Charlie"];
 
-  players.forEach(player => {
-    scores[player] = scores[player] || 0;
-  });
+players.forEach(player => {
+  scores[player] = scores[player] || 0;
+});
 ```
 
-Now, let’s apply this concept to your `totalCountPerProduct` object in the `forEach` callback. Make sure that each `dessert.id` property is initialized properly.
+Now, let's apply this concept to your `totalCountPerProduct` object in the `forEach` callback. Make sure that each `dessert.id` property is initialized properly.
 
 Initialize `totalCountPerProduct[dessert.id]` with a default value of `0` using the `||` operator.
 
@@ -218,79 +218,28 @@ const cartTotal = document.getElementById("total");
 const showHideCartSpan = document.getElementById("show-hide-cart");
 let isCartShowing = false;
 
+class Dessert {
+  constructor(id, name, price, category) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.category = category;
+  }
+}
+
 const products = [
-  {
-    id: 1,
-    name: "Vanilla Cupcakes (6 Pack)",
-    price: 12.99,
-    category: "Cupcake",
-  },
-  {
-    id: 2,
-    name: "French Macaron",
-    price: 3.99,
-    category: "Macaron",
-  },
-  {
-    id: 3,
-    name: "Pumpkin Cupcake",
-    price: 3.99,
-    category: "Cupcake",
-  },
-  {
-    id: 4,
-    name: "Chocolate Cupcake",
-    price: 5.99,
-    category: "Cupcake",
-  },
-  {
-    id: 5,
-    name: "Chocolate Pretzels (4 Pack)",
-    price: 10.99,
-    category: "Pretzel",
-  },
-  {
-    id: 6,
-    name: "Strawberry Ice Cream",
-    price: 2.99,
-    category: "Ice Cream",
-  },
-  {
-    id: 7,
-    name: "Chocolate Macarons (4 Pack)",
-    price: 9.99,
-    category: "Macaron",
-  },
-  {
-    id: 8,
-    name: "Strawberry Pretzel",
-    price: 4.99,
-    category: "Pretzel",
-  },
-  {
-    id: 9,
-    name: "Butter Pecan Ice Cream",
-    price: 2.99,
-    category: "Ice Cream",
-  },
-  {
-    id: 10,
-    name: "Rocky Road Ice Cream",
-    price: 2.99,
-    category: "Ice Cream",
-  },
-  {
-    id: 11,
-    name: "Vanilla Macarons (5 Pack)",
-    price: 11.99,
-    category: "Macaron",
-  },
-  {
-    id: 12,
-    name: "Lemon Cupcakes (4 Pack)",
-    price: 12.99,
-    category: "Cupcake",
-  },
+  new Dessert(1, "Vanilla Cupcakes (6 Pack)", 12.99, "Cupcake"),
+  new Dessert(2, "French Macaron", 3.99, "Macaron"),
+  new Dessert(3, "Pumpkin Cupcake", 3.99, "Cupcake"),
+  new Dessert(4, "Chocolate Cupcake", 5.99, "Cupcake"),
+  new Dessert(5, "Chocolate Pretzels (4 Pack)", 10.99, "Pretzel"),
+  new Dessert(6, "Strawberry Ice Cream", 2.99, "Ice Cream"),
+  new Dessert(7, "Chocolate Macarons (4 Pack)", 9.99, "Macaron"),
+  new Dessert(8, "Strawberry Pretzel", 4.99, "Pretzel"),
+  new Dessert(9, "Butter Pecan Ice Cream", 2.99, "Ice Cream"),
+  new Dessert(10, "Rocky Road Ice Cream", 2.99, "Ice Cream"),
+  new Dessert(11, "Vanilla Macarons (5 Pack)", 11.99, "Macaron"),
+  new Dessert(12, "Lemon Cupcakes (4 Pack)", 12.99, "Cupcake"),
 ];
 
 products.forEach(
@@ -316,7 +265,6 @@ class ShoppingCart {
     this.taxRate = 8.25;
   }
 
---fcc-editable-region--
   addItem(id, products) {
     const product = products.find((item) => item.id === id);
     const { name, price } = product;
@@ -324,9 +272,10 @@ class ShoppingCart {
 
     const totalCountPerProduct = {};
     this.items.forEach((dessert) => {
-      
-    })
-  }
 --fcc-editable-region--
+      
+--fcc-editable-region--
+    });
+  }
 };
 ```

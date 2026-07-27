@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-personal-profile-app",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "b010923c48c8ae2e5bfcf50f",
+      "title": "Build a Personal Profile App"
+    }
+  ]
+}

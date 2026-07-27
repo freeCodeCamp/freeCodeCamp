@@ -19,7 +19,7 @@ describe('client/src utilities', () => {
 
     describe('isHandledError', () => {
       it('returns a boolean', () => {
-        expect(typeof isHandledError({} as Error)).toEqual('boolean');
+        expect(typeof isHandledError({})).toEqual('boolean');
       });
 
       it('returns false for an unhandled error', () => {
@@ -39,14 +39,14 @@ describe('client/src utilities', () => {
       // we need to make these tests more robust 💪
       it('returns an error with a handledError property', () => {
         const handledError = wrapHandledError(
-          new Error() as HandledError,
+          new Error(),
           mockHandledErrorData
         );
         expect(handledErrorSymbol in handledError).toEqual(true);
       });
       it('assigns error handling details to the handledError property', () => {
         const handledError = wrapHandledError(
-          new Error() as HandledError,
+          new Error(),
           mockHandledErrorData
         );
         expect(handledError[handledErrorSymbol]).toEqual(mockHandledErrorData);

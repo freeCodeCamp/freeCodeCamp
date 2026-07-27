@@ -60,7 +60,8 @@ export const currentCertifications = [
   Certification.JsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,
-  Certification.RespWebDesignV9
+  Certification.RespWebDesignV9,
+  Certification.FrontEndDevLibsV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -236,9 +237,9 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
   [Certification.JsV9]: 'isJavascriptCertV9',
+  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
 
   // upcoming
-  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
   [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
   [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
   [Certification.B1English]: 'isB1EnglishCert',
@@ -343,7 +344,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.DevPlayground]: null,
   [SuperBlocks.FullStackOpen]: null,
   [SuperBlocks.HtmlFormsAndTables]: null,
-  [SuperBlocks.LabSurveyForm]: null,
   [SuperBlocks.HtmlAndAccessibility]: null,
   [SuperBlocks.ComputerBasics]: null,
   [SuperBlocks.BasicCss]: null,
@@ -354,17 +354,13 @@ export const superBlockToCertMap: {
   [SuperBlocks.StylingForms]: null,
   [SuperBlocks.CssBoxModel]: null,
   [SuperBlocks.CssFlexbox]: null,
-  [SuperBlocks.LabPageOfPlayingCards]: null,
   [SuperBlocks.CssTypography]: null,
   [SuperBlocks.CssAndAccessibility]: null,
   [SuperBlocks.CssPositioning]: null,
   [SuperBlocks.AttributeSelectors]: null,
-  [SuperBlocks.LabBookInventoryApp]: null,
   [SuperBlocks.ResponsiveDesign]: null,
-  [SuperBlocks.LabTechnicalDocumentationPage]: null,
   [SuperBlocks.CssVariables]: null,
   [SuperBlocks.CssGrid]: null,
-  [SuperBlocks.LabProductLandingPage]: null,
   [SuperBlocks.CssAnimations]: null,
   [SuperBlocks.LearnPythonForBeginners]: null,
   [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: null,
@@ -377,7 +373,6 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnSQLAndBash]: null,
   [SuperBlocks.IntroductionToNano]: null,
   [SuperBlocks.IntroductionToGitAndGithub]: null,
-  [SuperBlocks.LearnPromptingFundamentals]: null,
   [SuperBlocks.IntroductionToVariablesAndStringsInJS]: null,
   [SuperBlocks.IntroductionToBooleansAndNumbersInJS]: null,
   [SuperBlocks.IntroductionToFunctionsInJS]: null,
@@ -398,6 +393,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.LearnRecursionWithJS]: null,
   [SuperBlocks.IntroductionToFunctionalProgrammingWithJS]: null,
   [SuperBlocks.IntroductionToAsynchronousJS]: null,
+  [SuperBlocks.LearnDataVisualizationWithD3]: null,
   [SuperBlocks.IntroductionToPythonBasics]: null,
   [SuperBlocks.LearnPythonLoopsAndSequences]: null,
   [SuperBlocks.LearnPythonDictionariesAndSets]: null,

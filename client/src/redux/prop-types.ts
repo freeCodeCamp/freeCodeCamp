@@ -15,6 +15,7 @@ import { UserThemes } from './types';
 export type { ChallengeFile, Ext };
 
 export type Steps = {
+  isClassroomAccount?: boolean;
   isHonest?: boolean;
   currentCerts?: Array<CurrentCert>;
   isShowCerts?: boolean;
@@ -43,8 +44,9 @@ export type Question = {
 export type FillInTheBlank = {
   sentence: string;
   blanks: MultipleChoiceAnswer[];
-  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi';
 };
+
+export type FillInTheBlankInputType = 'pinyin-tone' | 'pinyin-to-hanzi';
 
 export type Fields = {
   slug: string;
@@ -117,7 +119,6 @@ export type Characters =
   | 'Tom'
 
   // Spanish
-  | 'Alex'
   | 'Ángela'
   | 'Camila'
   | 'Carlos'
@@ -137,12 +138,14 @@ export type Characters =
 
   // Chinese
   | 'Chen Na'
+  | 'Huang Jingyi'
   | 'Li Hong'
   | 'Li Ping'
   | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
   | 'Zhang Wei'
+  | 'Zhou Jia'
   | 'Zhou Yongjie';
 
 interface SetupCharacter {
@@ -215,6 +218,7 @@ export type ChallengeNode = {
     helpCategory: string;
     hooks?: Hooks;
     id: string;
+    inputType?: FillInTheBlankInputType;
     lang?: ChallengeLang;
     instructions: string;
     internal?: {
@@ -434,6 +438,7 @@ export type User = {
   isBanned: boolean;
   isCheater: boolean;
   isDonating: boolean;
+  isClassroomAccount: boolean;
   isHonest: boolean;
   joinDate: string;
   linkedin: string;
@@ -450,6 +455,7 @@ export type User = {
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;
+  socrates: boolean;
   twitter: string;
   bluesky: string;
   username: string;
@@ -515,6 +521,7 @@ export type ChallengeMeta = {
   title?: string;
   challengeType?: number;
   helpCategory: string;
+  description?: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
   saveSubmissionToDB?: boolean;

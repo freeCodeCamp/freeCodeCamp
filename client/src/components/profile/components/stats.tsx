@@ -17,6 +17,7 @@ import './stats.css';
 interface StatsProps {
   points: number;
   calendar: Record<string, number>;
+  isPrivate?: boolean;
 }
 
 export const calculateStreaks = (calendar: Record<string, number>) => {
@@ -56,7 +57,7 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
   return { longestStreak, currentStreak: streakExpired ? 0 : currentStreak };
 };
 
-function Stats({ points, calendar }: StatsProps): JSX.Element {
+function Stats({ points, calendar, isPrivate }: StatsProps): JSX.Element {
   const { t } = useTranslation();
 
   const [currentStreak, setCurrentStreak] = useState(0);
@@ -72,7 +73,14 @@ function Stats({ points, calendar }: StatsProps): JSX.Element {
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>{t('profile.stats')}</h2>
+        <div className='profile-section-heading'>
+          <h2>{t('profile.stats')}</h2>
+          {isPrivate && (
+            <span className='profile-private-badge'>
+              {t('buttons.private')}
+            </span>
+          )}
+        </div>
         <Spacer size='s' />
         <dl className='stats'>
           <div>

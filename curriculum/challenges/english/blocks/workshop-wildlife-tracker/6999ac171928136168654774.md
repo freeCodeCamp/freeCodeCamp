@@ -1,0 +1,94 @@
+---
+id: 6999ac171928136168654774
+title: Step 6
+challengeType: 1
+dashedName: step-6
+---
+
+# --description--
+
+In this step, you will create a function to access the `species` property of an object.
+
+Here is a small example of accessing a property from an object:
+
+```js
+const dog = {
+  species: "Dog"
+};
+const getAnimalSpecies = (pet) => {
+  return pet.species; // access species using dot notation
+};
+console.log(getAnimalSpecies(dog)); // Dog
+```
+
+In this example, the function takes an object as a parameter and returns its `species` property.
+
+Now create a function called `getSpecies`.
+
+The function should take one parameter named `animal`.
+
+Return the `species` property of the `animal` using dot notation.
+
+After creating the function, use `console.log` to call `getSpecies(tiger)` so you can see the result in the console.
+
+# --hints--
+
+You should create a function named `getSpecies`.
+
+```js
+assert.isFunction(getSpecies);
+```
+
+The `getSpecies` function should have a single parameter, `animal`.
+
+```js
+const regex = __helpers.functionRegex('getSpecies', ['animal']);
+assert.match(__helpers.removeJSComments(code), regex);
+```
+
+You should log `getSpecies(tiger)` to the console.
+
+```js
+assert.match(code, /console\s*\.\s*log\s*\(\s*getSpecies\s*\(\s*tiger\s*\)\s*\)/);
+```
+
+`getSpecies` should access the species property using dot notation.
+
+```js
+assert.match(code, /animal\.species/);
+```
+
+Calling `getSpecies(tiger)` should return `"Tiger"`.
+
+```js
+assert.strictEqual(getSpecies(tiger), "Tiger");
+```
+
+`getSpecies` should use the function parameter and work with any object.
+
+```js
+const lion = { species: "Lion" };
+assert.strictEqual(getSpecies(lion), "Lion");
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const tiger = {
+  species: "Tiger",
+  age: 5,
+  isEndangered: true
+};
+
+const elephant = {
+  species: "Elephant",
+  age: 10,
+  isEndangered: true
+};
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

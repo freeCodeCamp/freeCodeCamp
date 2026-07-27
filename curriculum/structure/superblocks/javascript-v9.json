@@ -82,6 +82,8 @@
           "dashedName": "javascript-objects",
           "blocks": [
             "lecture-introduction-to-javascript-objects-and-their-properties",
+            "workshop-wildlife-tracker",
+            "lab-cargo-manifest-validator",
             "lecture-working-with-json",
             "lecture-working-with-optional-chaining-and-object-destructuring",
             "workshop-recipe-tracker",
@@ -95,15 +97,21 @@
           "dashedName": "javascript-loops",
           "blocks": [
             "lecture-working-with-loops",
+            "workshop-word-counter",
             "workshop-sentence-analyzer",
+            "lab-traffic-light-sequencer",
             "workshop-space-mission-roster",
+            "workshop-heritage-library-catalog",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
             "lab-mutations",
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "workshop-festival-crowd-flow-simulator",
             "lab-missing-letter-detector",
+            "lab-smart-pantry-restocker",
+            "lab-proofreading-tool",
             "review-javascript-loops",
             "quiz-javascript-loops"
           ]
@@ -120,6 +128,7 @@
             "lab-slice-and-splice",
             "lab-pyramid-generator",
             "lab-gradebook-app",
+            "lab-story-fragment-restoration",
             "lecture-the-var-keyword-and-hoisting",
             "lab-title-case-converter",
             "lab-falsy-remover",
@@ -133,6 +142,7 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
+            "lab-playlist-remix-engine",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -147,7 +157,6 @@
             "lab-symmetric-difference",
             "lab-value-remover-function",
             "lab-matching-object-filter",
-            "lab-prime-number-sum-calculator",
             "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
             "lab-all-true-property-validator",
@@ -298,10 +307,11 @@
         },
         {
           "dashedName": "data-structures",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures-js",
+            "workshop-linked-list-js",
             "lab-linked-list-operations",
+            "lab-implement-a-stack",
             "lab-implement-a-queue",
             "review-data-structures-js",
             "quiz-data-structures-js"
@@ -309,9 +319,10 @@
         },
         {
           "dashedName": "algorithms",
-          "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-common-searching-and-sorting-algorithms",
+            "workshop-binary-search-js",
+            "workshop-merge-sort-js",
             "lab-bubble-sort-algorithm",
             "lab-selection-sort-js",
             "lab-insertion-sort",
@@ -322,20 +333,23 @@
         },
         {
           "dashedName": "graphs-and-trees",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees-js",
+            "workshop-shortest-path-algorithm-js",
             "lab-adjacency-list-to-matrix-converter-js",
+            "workshop-breadth-first-search-js",
             "lab-depth-first-search-js",
             "lab-n-queens-problem-js",
-            "review-graphs-and-trees-js"
+            "review-graphs-and-trees-js",
+            "quiz-graph-and-trees-js"
           ]
         },
         {
           "dashedName": "dynamic-programming",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming-js",
+            "lab-nth-fibonacci-number-js",
+            "lab-prime-number-sum-calculator",
             "review-dynamic-programming-js",
             "quiz-dynamic-programming-js"
           ]

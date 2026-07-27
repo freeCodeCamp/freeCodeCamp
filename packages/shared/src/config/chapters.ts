@@ -30,7 +30,9 @@ export enum FsdChapters {
 export enum A1ChineseChapters {
   zhA1Welcome = 'zh-a1-chapter-welcome-to-a1-professional-chinese',
   zhA1PinYin = 'zh-a1-chapter-pinyin',
-  zhA1Greetings = 'zh-a1-chapter-greeting-and-self-introduction',
+  zhA1Greetings = 'zh-a1-chapter-greetings-and-introductions',
+  zhA1GreetingsLegacy = 'zh-a1-chapter-greeting-and-self-introduction',
+  zhA1NumbersAndPersonalInformation = 'zh-a1-chapter-numbers-and-personal-information',
   zhA1Family = 'zh-a1-chapter-introducing-colleagues-and-family',
   zhA1Expressing = 'zh-a1-chapter-expressing-what-you-can-and-cant-do'
 }

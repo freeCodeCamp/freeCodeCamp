@@ -20,8 +20,7 @@ import {
   faCubes,
   faDoorOpen,
   faHands,
-  faIdCard,
-  faPeopleGroup
+  faIdCard
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -47,7 +46,9 @@ const iconMap = {
   [A1ChineseChapters.zhA1Welcome]: faDoorOpen,
   [A1ChineseChapters.zhA1PinYin]: faCubes,
   [A1ChineseChapters.zhA1Greetings]: faComments,
-  [A1ChineseChapters.zhA1Family]: faPeopleGroup,
+  [A1ChineseChapters.zhA1GreetingsLegacy]: faComments,
+  [A1ChineseChapters.zhA1NumbersAndPersonalInformation]: faIdCard,
+  [A1ChineseChapters.zhA1Family]: faIdCard,
   [A1ChineseChapters.zhA1Expressing]: faHands,
   [A1SpanishChapters.esA1Welcome]: faDoorOpen,
   [A1SpanishChapters.esA1Fundamentals]: faCubes,

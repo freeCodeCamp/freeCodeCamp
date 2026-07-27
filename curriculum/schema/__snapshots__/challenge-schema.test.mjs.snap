@@ -141,6 +141,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "relational-databases-v9",
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
+              "learn-data-visualization-with-d3",
               "a1-professional-chinese",
             ],
             "flags": {
@@ -293,7 +294,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
         },
         {
           "args": {
-            "limit": 31,
+            "limit": 33,
           },
           "name": "max",
         },
@@ -318,6 +319,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "relational-databases-v9",
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
+              "learn-data-visualization-with-d3",
               "a1-professional-chinese",
             ],
             "flags": {
@@ -476,17 +478,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
           ],
           "type": "array",
         },
-        "inputType": {
-          "allow": [
-            "pinyin-tone",
-            "pinyin-to-hanzi",
-          ],
-          "flags": {
-            "only": true,
-            "presence": "optional",
-          },
-          "type": "string",
-        },
         "sentence": {
           "flags": {
             "presence": "required",
@@ -629,7 +620,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
                   ],
                   "flags": {
                     "only": true,
-                    "presence": "optional",
+                    "presence": "required",
                   },
                   "type": "string",
                 },
@@ -650,6 +641,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               },
               10,
               13,
+              33,
             ],
             "flags": {
               "only": true,
@@ -760,6 +752,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               "relational-databases-v9",
               "back-end-development-and-apis-v9",
               "full-stack-developer-v9",
+              "learn-data-visualization-with-d3",
               "a1-professional-chinese",
             ],
             "flags": {
@@ -1414,7 +1407,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "Second Candidate",
                     "Sophie",
                     "Tom",
-                    "Alex",
                     "Ángela",
                     "Camila",
                     "Carlos",
@@ -1432,12 +1424,14 @@ exports[`challenge schema > should not be changed without informing the mobile t
                     "Diego",
                     "Valeria",
                     "Chen Na",
+                    "Huang Jingyi",
                     "Li Hong",
                     "Li Ping",
                     "Lin Yating",
                     "Liu Ming",
                     "Wang Hua",
                     "Zhang Wei",
+                    "Zhou Jia",
                     "Zhou Yongjie",
                   ],
                   "flags": {
@@ -1910,7 +1904,6 @@ exports[`challenge schema > should not be changed without informing the mobile t
                         "Second Candidate",
                         "Sophie",
                         "Tom",
-                        "Alex",
                         "Ángela",
                         "Camila",
                         "Carlos",
@@ -1928,12 +1921,14 @@ exports[`challenge schema > should not be changed without informing the mobile t
                         "Diego",
                         "Valeria",
                         "Chen Na",
+                        "Huang Jingyi",
                         "Li Hong",
                         "Li Ping",
                         "Lin Yating",
                         "Liu Ming",
                         "Wang Hua",
                         "Zhang Wei",
+                        "Zhou Jia",
                         "Zhou Yongjie",
                       ],
                       "flags": {
@@ -2213,6 +2208,8 @@ exports[`challenge schema > should not be changed without informing the mobile t
               },
               12,
               13,
+              32,
+              33,
             ],
             "flags": {
               "only": true,

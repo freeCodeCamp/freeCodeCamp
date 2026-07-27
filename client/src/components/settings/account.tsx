@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
+import { clientLocale } from '../../../config/env.json';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow } from '../helpers';
 
@@ -7,11 +9,13 @@ import SoundSettings from './sound';
 import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import ScrollbarWidthSettings from './scrollbar-width';
 import SectionHeader from './section-header';
+import SocratesSettings from './socrates';
 
 type MiscSettingsProps = {
   keyboardShortcuts: boolean;
   sound: boolean;
   editorLayout: boolean | null;
+  socrates: boolean;
   toggleKeyboardShortcuts: (keyboardShortcuts: boolean) => void;
   toggleSoundMode: (sound: boolean) => void;
   resetEditorLayout: () => void;
@@ -23,14 +27,18 @@ const MiscSettings = ({
   editorLayout,
   resetEditorLayout,
   toggleKeyboardShortcuts,
-  toggleSoundMode
+  toggleSoundMode,
+  socrates
 }: MiscSettingsProps) => {
   const { t } = useTranslation();
+  const showSocratesFlag =
+    useFeature('show-socrates').on && clientLocale === 'english';
 
   return (
     <div className='account-settings'>
       <SectionHeader>{t('settings.headings.account')}</SectionHeader>
       <FullWidthRow>
+        {showSocratesFlag && <SocratesSettings socrates={socrates} />}
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings
           keyboardShortcuts={keyboardShortcuts}

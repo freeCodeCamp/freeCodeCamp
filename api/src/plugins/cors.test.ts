@@ -1,4 +1,12 @@
-import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterAll,
+  afterEach,
+  vi
+} from 'vitest';
 import Fastify, { FastifyInstance, LogLevel } from 'fastify';
 import cors from './cors.js';
 
@@ -21,10 +29,15 @@ describe('cors', () => {
     await fastify.close();
   });
 
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
   test('should only debug log for /status/* routes', async () => {
-    const logger = fastify.log.child({ req: { url: '/status/ping' } });
-    const spies = NON_DEBUG_LOG_LEVELS.map(level => vi.spyOn(logger, level));
-    const debugSpy = vi.spyOn(logger, 'debug');
+    const spies = NON_DEBUG_LOG_LEVELS.map(level =>
+      vi.spyOn(fastify.log, level)
+    );
+    const debugSpy = vi.spyOn(fastify.log, 'debug');
     await fastify.inject({
       url: '/status/ping'
     });
@@ -36,9 +49,10 @@ describe('cors', () => {
   });
 
   test('should debug log if the origin is undefined', async () => {
-    const logger = fastify.log.child({ req: { url: '/api/some-endpoint' } });
-    const spies = NON_DEBUG_LOG_LEVELS.map(level => vi.spyOn(logger, level));
-    const debugSpy = vi.spyOn(logger, 'debug');
+    const spies = NON_DEBUG_LOG_LEVELS.map(level =>
+      vi.spyOn(fastify.log, level)
+    );
+    const debugSpy = vi.spyOn(fastify.log, 'debug');
     await fastify.inject({
       url: '/api/some-endpoint'
     });
@@ -47,5 +61,18 @@ describe('cors', () => {
       expect(spy).not.toHaveBeenCalled();
     });
     expect(debugSpy).toHaveBeenCalled();
+  });
+
+  test('should warn on a request from a disallowed origin', async () => {
+    const warnSpy = vi.spyOn(fastify.log, 'warn');
+    await fastify.inject({
+      url: '/api/some-endpoint',
+      headers: { origin: 'https://disallowed.example.com' }
+    });
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      { origin: 'https://disallowed.example.com' },
+      'Received request from disallowed origin'
+    );
   });
 });

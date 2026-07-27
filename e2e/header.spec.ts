@@ -138,7 +138,7 @@ test.describe('Header', () => {
     await expect(menuButton).toBeFocused();
   });
 
-  test('The menu should contain links to: donate, curriculum, forum, news, radio, contribute, and podcast', async ({
+  test('The menu should contain links to: donate, curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
     page
   }) => {
     const menuButton = page.getByTestId(headerComponentElements.menuButton);
@@ -156,6 +156,10 @@ test.describe('Header', () => {
       {
         name: translations.buttons.curriculum,
         href: '/learn'
+      },
+      {
+        name: translations.buttons.catalog,
+        href: '/catalog'
       },
       {
         name: translations.buttons.forum,

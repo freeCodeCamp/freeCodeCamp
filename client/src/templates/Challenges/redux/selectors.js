@@ -17,6 +17,7 @@ import { ns } from './action-types';
 
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
+export const socratesHintStateSelector = state => state[ns].socratesHintState;
 export const challengeHooksSelector = state => state[ns].challengeHooks;
 export const challengeTestsSelector = state => state[ns].challengeTests;
 export const consoleOutputSelector = state => {
@@ -51,6 +52,8 @@ export const isFinishQuizModalOpenSelector = state =>
   state[ns].modal.finishQuiz;
 export const isProjectPreviewModalOpenSelector = state =>
   state[ns].modal.projectPreview;
+export const isProjectPreviewLoadingSelector = state =>
+  state[ns].isProjectPreviewLoading;
 export const isShortcutsModalOpenSelector = state => state[ns].modal.shortcuts;
 export const isSpeakingModalOpenSelector = state => state[ns].modal.speaking;
 export const isSubmittingSelector = state => state[ns].isSubmitting;

@@ -9,7 +9,7 @@ dashedName: step-8
 
 The bill is split, but division often results in long decimal numbers. Since money is typically represented with two decimal places, you should round the final result.
 
-Python provides a built-in `round()` function for this. It takes two arguments: the number you want to round and the number of decimal places to keep. Here's an example:
+In an earlier lesson, you learned about the `round()` function which takes two arguments: the number you want to round and the number of decimal places to keep. Here's an example:
 
 ```py
 num = 4.815162342
@@ -48,8 +48,18 @@ You should use `print()` to display the string `Each person pays:` followed by a
 
 ```js
 ({
-    test: () => assert(runPython(`
-    _Node(_code).has_call("print('Each person pays:', each_pays)") or _Node(_code).has_call("print(f'Each person pays: {each_pays}')")`))
+    test: () => runPython(`
+import io, contextlib, re
+
+buffer = io.StringIO()
+with contextlib.redirect_stdout(buffer):
+    exec(_code)
+
+match = re.search(r"Each person pays: ([0-9]+(?:\\.[0-9]+)?)", buffer.getvalue())
+
+assert match
+assert abs(float(match.group(1)) - 62.13) < 1e-6
+`)
 })
 ```
 
