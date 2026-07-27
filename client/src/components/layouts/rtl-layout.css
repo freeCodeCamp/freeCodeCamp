@@ -32,7 +32,8 @@ Intro project buttons and headings
   margin-right: -120px;
 }
 
-[dir='rtl'] .landing-top .landing-top-two-column figure {
+[dir='rtl'] .landing-top .landing-top-two-column figure,
+[dir='rtl'] .landing-top .landing-top-two-column figure img {
   -webkit-mask-image: linear-gradient(to left, transparent 0%, black 20%);
   mask-image: linear-gradient(to left, transparent 0%, black 20%);
 }
