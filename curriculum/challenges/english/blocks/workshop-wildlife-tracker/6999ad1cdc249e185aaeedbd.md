@@ -49,8 +49,12 @@ assert.isFunction(addHabitat);
 The `addHabitat` function should have two parameters: `animal` and `habitat`.
 
 ```js
-const regex = __helpers.functionRegex('addHabitat', ['animal', 'habitat']);
-assert.match(__helpers.removeJSComments(code), regex);
+const explorer = await __helpers.Explorer(code);
+const fn = explorer.allFunctions.addHabitat;
+assert.exists(fn);
+assert.equal(fn.parameters.length, 2);
+assert.equal(fn.parameters[0].toString(), 'animal');
+assert.equal(fn.parameters[1].toString(), 'habitat');
 ```
 
 The `addHabitat` function should return the updated `animal` object.
