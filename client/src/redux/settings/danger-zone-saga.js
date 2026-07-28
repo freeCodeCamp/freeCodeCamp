@@ -3,11 +3,7 @@ import { call, put, select, take, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import {
-  getSignout,
-  postDeleteAccount,
-  postResetProgress
-} from '../../utils/ajax';
+import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
 import { fetchUser, hardGoTo } from '../actions';
 import { userIdSelector } from '../selectors';
@@ -20,7 +16,6 @@ export function* deleteAccountSaga() {
       throw new Error('Unable to delete account: no user id found');
     }
     yield call(postDeleteAccount, userId);
-    yield call(getSignout);
     yield put(
       createFlashMessage({
         type: 'info',

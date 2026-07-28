@@ -175,10 +175,6 @@ export function getSessionUser(
   });
 }
 
-export function getSignout(): Promise<ResponseWithData<void>> {
-  return get('/signout');
-}
-
 type UserProfileResponse = {
   entities: Omit<ApiUserResponse, 'result'>;
   result: string | undefined;

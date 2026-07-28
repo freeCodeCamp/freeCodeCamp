@@ -7,13 +7,13 @@ vi.mock('nanoid', () => ({
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { getSignout, postDeleteAccount } from '../../utils/ajax';
+import { postDeleteAccount } from '../../utils/ajax';
 import { hardGoTo } from '../actions';
 import { userIdSelector } from '../selectors';
 import { deleteAccountSaga } from './danger-zone-saga';
 
 describe('deleteAccountSaga', () => {
-  it('signs out before redirecting to learn', () => {
+  it('redirects to learn after deleting the account', () => {
     const userId = '5fa2db00a25c1c1fa49ce067';
 
     expect(() => {
@@ -22,8 +22,6 @@ describe('deleteAccountSaga', () => {
         .select(userIdSelector)
         .next(userId)
         .call(postDeleteAccount, userId)
-        .next()
-        .call(getSignout)
         .next()
         .put(
           createFlashMessage({
