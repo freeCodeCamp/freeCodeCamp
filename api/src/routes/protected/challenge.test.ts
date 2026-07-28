@@ -276,7 +276,7 @@ describe('challengeRoutes', () => {
         expect(response.status).toBe(400);
       });
 
-      test('should return 400 if the token is valid, but has no userToken property', async () => {
+      test('should return 401 if the token is valid, but has no userToken property', async () => {
         // @ts-expect-error TS is trying to protect us, but we need to test this
         // edge case.
         const emptyToken = encodeUserToken(undefined);
@@ -292,10 +292,10 @@ describe('challengeRoutes', () => {
           msg: 'invalid user token',
           type: 'error'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
       });
 
-      test('should return 400 for invalid user tokens', async () => {
+      test('should return 401 for invalid user tokens', async () => {
         const count = vi.fn();
         const originalSentry = fastifyTestInstance.Sentry;
         fastifyTestInstance.Sentry = {
@@ -313,14 +313,14 @@ describe('challengeRoutes', () => {
           msg: 'invalid user token',
           type: 'error'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
         expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
           attributes: { reason: 'invalid_token' }
         });
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('should return 400 for nonsensical user tokens', async () => {
+      test('should return 401 for nonsensical user tokens', async () => {
         // @ts-expect-error TS is trying to protect us, but we need to test this
         // edge case.
         const weirdToken = encodeUserToken({});
@@ -334,7 +334,7 @@ describe('challengeRoutes', () => {
           msg: 'invalid user token',
           type: 'error'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(401);
       });
 
       test('should return 400 if invalid tutorialId', async () => {
@@ -366,7 +366,7 @@ describe('challengeRoutes', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('should return 400 if invalid tutorialId but is hosted on freeCodeCamp', async () => {
+      test('should return 404 if invalid tutorialId but is hosted on freeCodeCamp', async () => {
         const tokenResponse = await superPost('/user/user-token');
         expect(tokenResponse.body).toHaveProperty('userToken');
         expect(tokenResponse.status).toBe(200);
@@ -388,9 +388,77 @@ describe('challengeRoutes', () => {
           msg: 'Tutorial name is not valid',
           type: 'error'
         });
-        expect(response.status).toBe(400);
+        expect(response.status).toBe(404);
         expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
           attributes: { reason: 'invalid_tutorial' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('should return 401 if user token not found', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        const nonexistentToken = encodeUserToken('5fa5c1c3b1c9d40000000000');
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', nonexistentToken)
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+
+        expect(response.body).toEqual({
+          msg: 'User token not found',
+          type: 'error'
+        });
+        expect(response.status).toBe(401);
+        expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
+          attributes: { reason: 'token_not_found' }
+        });
+        fastifyTestInstance.Sentry = originalSentry;
+      });
+
+      test('should return 401 if the token user no longer exists', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
+        const orphanTokenId = 'aaaaaaaaaaaaaaaaaaaaaaaa';
+        await fastifyTestInstance.prisma.userToken.create({
+          data: {
+            id: orphanTokenId,
+            created: new Date(),
+            ttl: 1000,
+            userId: '5fa5c1c3b1c9d40000000000'
+          }
+        });
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', encodeUserToken(orphanTokenId))
+          .send({
+            tutorialId:
+              'freeCodeCamp/learn-bash-by-building-a-boilerplate:v1.0.0'
+          });
+
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { id: orphanTokenId }
+        });
+
+        expect(response.body).toEqual({
+          type: 'error',
+          msg: 'User for user token not found'
+        });
+        expect(response.status).toBe(401);
+        expect(count).toHaveBeenCalledWith('coderoad.request_rejected', 1, {
+          attributes: { reason: 'user_not_found' }
         });
         fastifyTestInstance.Sentry = originalSentry;
       });
@@ -1488,6 +1556,49 @@ describe('challengeRoutes', () => {
           ]
         });
         expect(resUpdate.statusCode).toBe(200);
+      });
+
+      test('POST concurrent requests for different challenges should not lose completions', async () => {
+        // Send multiple simultaneous requests for different challenges.
+        // The read-then-write pattern in updateUserChallengeData means
+        // concurrent requests can read stale state and overwrite each
+        // other's completions.
+        const challengeIds = [
+          'aaa174fcf86c76b9248c6eb0',
+          'aaa174fcf86c76b9248c6eb1',
+          'aaa174fcf86c76b9248c6eb2',
+          'aaa174fcf86c76b9248c6eb3',
+          'aaa174fcf86c76b9248c6eb4'
+        ]; // these must be unique since it's possible for duplicate requests to update challenges or push new ones depending on timing.
+
+        const responses = await Promise.all(
+          challengeIds.map(id =>
+            superPost('/encoded/modern-challenge-completed').send({
+              challengeType: challengeTypes.html,
+              id
+            })
+          )
+        );
+
+        for (const res of responses) {
+          expect(res.statusCode).toBe(200);
+        }
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        // Every challenge should be recorded. If the race condition
+        // causes lost updates, this count will be less than 5.
+        expect(user.completedChallenges).toHaveLength(challengeIds.length);
+
+        const completedIds = user.completedChallenges.map(c => c.id);
+        for (const id of challengeIds) {
+          expect(completedIds).toContain(id);
+        }
+
+        // Each completion should add a progress timestamp
+        expect(user.progressTimestamps).toHaveLength(challengeIds.length);
       });
     });
 

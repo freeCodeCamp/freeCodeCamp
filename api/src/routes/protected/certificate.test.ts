@@ -165,6 +165,7 @@ describe('certificate routes', () => {
             isB1EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
+            isBackEndDevApisCertV9: false,
             isCollegeAlgebraPyCertV8: false,
             isDataAnalysisPyCertV7: false,
             isDataVisCert: false,

@@ -24,7 +24,7 @@ Listen to the audio and complete the sentence below.
 
 ### --feedback--
 
-This is a type of cyberattack where a hacker secretly gets in the middle of two people or systems talking to each other. The hacker can see, change, or steal information being shared without anyone knowing. This is a compound word, remember to use `-`. The first letters of the first and the forth word are capitalized.
+This is a type of cyberattack where a hacker secretly gets in the middle of two people or systems talking to each other. The hacker can see, change, or steal information being shared without either side knowing. This is a compound word, so remember to use `-`. The first letters of the first and fourth words are capitalized.
 
 ---
 

@@ -1,4 +1,4 @@
-export type ProgressTimestamp = number | { timestamp: number } | null;
+export type ProgressTimestamp = number | { timestamp: number }; // they can be null in the db, but we handle that as ProgressTimestamp | null, not by folding null into the type.
 export type Calendar = Record<number, 1>;
 /**
  * Converts a ProgressTimestamp array to a object with keys based on the timestamps.
@@ -7,7 +7,7 @@ export type Calendar = Record<number, 1>;
  * @returns The object with keys based on the timestamps.
  */
 export const getCalendar = (
-  progressTimestamps: ProgressTimestamp[] | null
+  progressTimestamps: (ProgressTimestamp | null)[]
 ): Calendar => {
   const calendar: Calendar = {};
 
@@ -29,8 +29,6 @@ export const getCalendar = (
  * @param progressTimestamps The ProgressTimestamp array.
  * @returns The number of points.
  */
-export const getPoints = (
-  progressTimestamps: ProgressTimestamp[] | null
-): number => {
-  return progressTimestamps?.length ?? 1;
+export const getPoints = (progressTimestamps: unknown[]): number => {
+  return progressTimestamps.length;
 };

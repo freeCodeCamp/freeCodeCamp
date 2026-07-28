@@ -63,7 +63,6 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"good"` should have the text `"Good"`.
 
 ```js
-
 assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]')?.textContent.trim(), 'Good');
 ```
 
