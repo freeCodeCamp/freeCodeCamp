@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
 import Login from '../Header/components/login';
-import { Link, Loader } from '../helpers';
+import { ButtonLink, FullWidthRow, Link, Loader } from '../helpers';
 
 import './intro.css';
 import EmailSignUpAlert from './email-sign-up-alert';
@@ -19,6 +19,7 @@ interface IntroProps {
   username?: string;
   onLearnDonationAlertClick: () => void;
   isDonating: boolean;
+  resumeUrl?: string;
 }
 
 const Intro = ({
@@ -29,7 +30,8 @@ const Intro = ({
   completedChallengeCount,
   slug,
   onLearnDonationAlertClick,
-  isDonating
+  isDonating,
+  resumeUrl
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
@@ -51,6 +53,16 @@ const Intro = ({
             : `${t('learn.welcome-2')}`}
         </h1>
         <Spacer size='m' />
+        {resumeUrl ? (
+          <>
+            <FullWidthRow>
+              <ButtonLink block href={resumeUrl} size='large'>
+                {t('buttons.current-challenge')}
+              </ButtonLink>
+            </FullWidthRow>
+            <Spacer size='m' />
+          </>
+        ) : null}
         <div className='text-center quote-partial'>
           <blockquote className='blockquote' data-testid='quote-block'>
             <span>
