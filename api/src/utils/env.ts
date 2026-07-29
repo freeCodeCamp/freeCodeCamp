@@ -66,6 +66,9 @@ assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
 assert.ok(process.env.SOCRATES_API_KEY);
 assert.ok(process.env.SOCRATES_ENDPOINT);
+assert.ok(process.env.CLICKHOUSE_URL);
+assert.ok(process.env.CLICKHOUSE_USERNAME);
+assert.ok(process.env.CLICKHOUSE_DATABASE);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -191,6 +194,10 @@ export const MONGOHQ_URL =
         process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
+export const CLICKHOUSE_URL = process.env.CLICKHOUSE_URL;
+export const CLICKHOUSE_USERNAME = process.env.CLICKHOUSE_USERNAME;
+export const CLICKHOUSE_PASSWORD = process.env.CLICKHOUSE_PASSWORD ?? '';
+export const CLICKHOUSE_DATABASE = process.env.CLICKHOUSE_DATABASE;
 
 export const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
 export const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
