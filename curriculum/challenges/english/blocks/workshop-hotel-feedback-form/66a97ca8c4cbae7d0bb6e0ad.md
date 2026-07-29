@@ -181,11 +181,11 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
           <label for="service">How was the service?</label>
 
           <select name="service" id="service">
-            <option value="poor">Poor</option>
-            <option value="satisfactory">Satisfactory</option>
-            <option value="good">Good</option>
-            <option value="very-good">Very Good</option>
-            <option selected value="excellent">Excellent</option>
+            <option value="Poor">Poor</option>
+            <option value="Satisfactory">Satisfactory</option>
+            <option value="Good">Good</option>
+            <option value="Very Good">Very Good</option>
+            <option selected value="Excellent">Excellent</option>
           </select>
 
           <label for="food">How was the food?</label>
