@@ -863,8 +863,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           experience: true,
           profileUI: true,
           progressTimestamps: true,
-          activityTimestamps: true,
-          lastActivityUrl: true,
+          activityTrackingId: true,
           savedChallenges: true,
           sendQuincyEmail: true,
           socrates: true,
@@ -913,8 +912,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         completedChallenges,
         completedDailyCodingChallenges,
         progressTimestamps,
-        activityTimestamps,
-        lastActivityUrl,
+        activityTrackingId,
         twitter,
         bluesky,
         profileUI,
@@ -926,6 +924,52 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         socrates,
         ...publicUser
       } = rest;
+
+      let resumeUrl: string | undefined;
+      if (activityTrackingId) {
+        const queryStart = performance.now();
+        try {
+          const result = await fastify.clickhouse.query({
+            query: `
+              SELECT url
+              FROM activity_events
+              WHERE tracking_id = {trackingId: String}
+              ORDER BY occurred_at DESC, ingested_at DESC, event_id DESC
+              LIMIT 1
+            `,
+            format: 'JSONEachRow',
+            query_params: { trackingId: activityTrackingId }
+          });
+          const [latestActivity] = await result.json<{ url: string }>();
+          resumeUrl = latestActivity?.url;
+          fastify.Sentry.metrics.distribution(
+            'clickhouse.query_duration_ms',
+            performance.now() - queryStart,
+            {
+              unit: 'millisecond',
+              attributes: {
+                operation: 'select_latest_activity',
+                result: 'success'
+              }
+            }
+          );
+        } catch (error) {
+          fastify.Sentry.metrics.count('clickhouse.select_failed', 1);
+          fastify.Sentry.metrics.distribution(
+            'clickhouse.query_duration_ms',
+            performance.now() - queryStart,
+            {
+              unit: 'millisecond',
+              attributes: {
+                operation: 'select_latest_activity',
+                result: 'failure'
+              }
+            }
+          );
+          req.log.error(error, 'Unable to fetch latest activity');
+          fastify.Sentry.captureException(error);
+        }
+      }
 
       await res.send({
         user: {
@@ -941,10 +985,9 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             completedDailyCodingChallenges,
             // This assertion is necessary until the database is normalized.
             calendar: getCalendar(
-              progressTimestamps as ProgressTimestamp[] | null,
-              activityTimestamps as number[] | null
+              progressTimestamps as ProgressTimestamp[] | null
             ),
-            lastActivityUrl: lastActivityUrl ?? undefined,
+            resumeUrl,
             emailVerified: !!emailVerified,
             // This assertion is necessary until the database is normalized.
             points: getPoints(progressTimestamps as ProgressTimestamp[] | null),
