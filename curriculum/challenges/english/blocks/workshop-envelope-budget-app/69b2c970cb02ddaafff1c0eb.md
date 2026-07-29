@@ -22,12 +22,7 @@ assert.isDefined(budgetForm);
 You should have `document.getElementById('budget-form')` in your code.
 
 ```js
-const explorer = await __helpers.Explorer(code);
-assert.isTrue(
-  explorer.variables.budgetForm?.value.matches(
-    "document.getElementById('budget-form')"
-  )
-);
+assert.match(code, /document\.getElementById\(\s*('|")budget-form\1\s*\)/g);
 ```
 
 You should assign `document.getElementById('budget-form')` to your `budgetForm` variable.

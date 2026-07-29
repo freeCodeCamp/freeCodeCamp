@@ -20,12 +20,7 @@ assert.isDefined(addEntryButton);
 You should use `document.getElementById()` to get the `#add-entry` element.
 
 ```js
-const explorer = await __helpers.Explorer(code);
-assert.isTrue(
-  explorer.variables.addEntryButton?.value.matches(
-    "document.getElementById('add-entry')"
-  )
-);
+assert.match(code, /document\.getElementById\(\s*('|")add-entry\1\s*\)/g);
 ```
 
 You should assign the `#add-entry` element to `addEntryButton`.
@@ -43,12 +38,7 @@ assert.isDefined(clearButton);
 You should use `document.getElementById()` to get the `#clear` element.
 
 ```js
-const explorer = await __helpers.Explorer(code);
-assert.isTrue(
-  explorer.variables.clearButton?.value.matches(
-    "document.getElementById('clear')"
-  )
-);
+assert.match(code, /document\.getElementById\(\s*('|")clear\1\s*\)/g);
 ```
 
 You should assign the `#clear` element to `clearButton`.
@@ -67,12 +57,7 @@ assert.exists(explorer.variables.output);
 You should use `document.getElementById()` to get the `#output` element.
 
 ```js
-const explorer = await __helpers.Explorer(code);
-assert.isTrue(
-  explorer.variables.output?.value.matches(
-    "document.getElementById('output')"
-  )
-);
+assert.match(code, /document\.getElementById\(\s*('|")output\1\s*\)/g);
 ```
 
 You should assign the `#output` element to `output`.
