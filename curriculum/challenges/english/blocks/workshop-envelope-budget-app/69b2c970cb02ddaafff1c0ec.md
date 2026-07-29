@@ -20,7 +20,12 @@ assert.isDefined(incomeInput);
 You should use `document.getElementById()` to get the `#income` element.
 
 ```js
-assert.match(code, /document\.getElementById\(\s*('|")income\1\s*\)/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.incomeInput?.value.matches(
+    "document.getElementById('income')"
+  )
+);
 ```
 
 You should assign the `#income` element to `incomeInput`.
@@ -38,7 +43,12 @@ assert.isDefined(rentInput);
 You should use `document.getElementById()` to get the `#rent-amount` element.
 
 ```js
-assert.match(code, /document\.getElementById\(\s*('|")rent-amount\1\s*\)/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.rentInput?.value.matches(
+    "document.getElementById('rent-amount')"
+  )
+);
 ```
 
 You should assign the `#rent-amount` element to `rentInput`.
@@ -56,7 +66,12 @@ assert.isDefined(entryDropdown);
 You should use `document.getElementById()` to get the `#entry-dropdown` element.
 
 ```js
-assert.match(code, /document\.getElementById\(\s*('|")entry-dropdown\1\s*\)/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.entryDropdown?.value.matches(
+    "document.getElementById('entry-dropdown')"
+  )
+);
 ```
 
 You should assign the `#entry-dropdown` element to `entryDropdown`.

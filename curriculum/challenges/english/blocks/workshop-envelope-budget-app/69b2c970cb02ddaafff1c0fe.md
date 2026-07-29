@@ -20,7 +20,12 @@ assert.match(isInvalidInput.toString(), /regex\s*=\s*\/\\d\+e/);
 You should replace the `[0-9]` character class after `e` with `\d` in your regular expression.
 
 ```js
-assert.match(isInvalidInput.toString(), /regex\s*=\s*\/\\d\+e\\d\+\//);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.isInvalidInput?.variables.regex?.value.matches(
+    '/\\d+e\\d+/i'
+  )
+);
 ```
 
 # --seed--

@@ -14,7 +14,8 @@ It is time to start preparing your calculations. Start by declaring an `expenses
 The function should have an `expenses` variable.  
 
 ```js
-assert.match(calculateBudget.toString(), /expenses\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.calculateBudget?.variables.expenses);
 ```
 
 The `expenses` variable should come after your `if` statement.  
@@ -32,7 +33,12 @@ assert.match(calculateBudget.toString(), /rent\s*\+\s*food\s*\+\s*utilities\s*\+
 You should assign the sum of `rent`, `food`, `utilities`, and `entertainment` to `expenses`.  
 
 ```js
-assert.match(calculateBudget.toString(), /expenses\s*=\s*rent\s*\+\s*food\s*\+\s*utilities\s*\+\s*entertainment\s*;?\s*$/m);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.calculateBudget?.variables.expenses?.value.matches(
+    'rent + food + utilities + entertainment'
+  )
+);
 ```
 
 # --seed--

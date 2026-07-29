@@ -14,7 +14,8 @@ Now declare a `netRemaining` variable, and give it the value of subtracting `exp
 Your `calculateBudget` function should have a `netRemaining` variable.
 
 ```js
-assert.match(calculateBudget.toString(), /netRemaining\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.calculateBudget?.variables.netRemaining);
 ```
 
 You should find the value of `income - expenses`.
@@ -26,7 +27,12 @@ assert.match(calculateBudget.toString(), /income\s*-\s*expenses/);
 You should assign the value of `income - expenses` to `netRemaining`.
 
 ```js
-assert.match(calculateBudget.toString(), /netRemaining\s*=\s*income\s*-\s*expenses/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.calculateBudget?.variables.netRemaining?.value.matches(
+    'income - expenses'
+  )
+);
 ```
 
 # --seed--

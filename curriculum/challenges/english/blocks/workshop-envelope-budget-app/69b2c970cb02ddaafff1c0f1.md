@@ -16,7 +16,10 @@ Note that you need to use the backslash `\` character to <dfn>escape</dfn> the `
 Your `regex` variable should be set to the regular expression `/\+-/`.
 
 ```js
-assert.match(cleanInputString.toString(), /regex\s*=\s*\/\\\+-\//);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.cleanInputString?.variables.regex?.value.matches('/\\+-/')
+);
 ```
 
 # --seed--

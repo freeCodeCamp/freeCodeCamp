@@ -20,7 +20,12 @@ assert.isDefined(addEntryButton);
 You should use `document.getElementById()` to get the `#add-entry` element.
 
 ```js
-assert.match(code, /document\.getElementById\(\s*('|")add-entry\1\s*\)/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.addEntryButton?.value.matches(
+    "document.getElementById('add-entry')"
+  )
+);
 ```
 
 You should assign the `#add-entry` element to `addEntryButton`.
@@ -38,7 +43,12 @@ assert.isDefined(clearButton);
 You should use `document.getElementById()` to get the `#clear` element.
 
 ```js
-assert.match(code, /document\.getElementById\(\s*('|")clear\1\s*\)/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.clearButton?.value.matches(
+    "document.getElementById('clear')"
+  )
+);
 ```
 
 You should assign the `#clear` element to `clearButton`.
@@ -50,19 +60,30 @@ assert.deepEqual(clearButton, document.getElementById('clear'));
 You should declare a variable called `output`.
 
 ```js
-assert.match(code, /const\s+output/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.variables.output);
 ```
 
 You should use `document.getElementById()` to get the `#output` element.
 
 ```js
-assert.match(code, /document\.getElementById\(\s*('|")output\1\s*\)/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.output?.value.matches(
+    "document.getElementById('output')"
+  )
+);
 ```
 
 You should assign the `#output` element to `output`.
 
 ```js
-assert.match(code, /const\s+output\s*=\s*document.getElementById\(('|")output\1\)/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.output?.matches(
+    "const output = document.getElementById('output')"
+  )
+);
 ```
 
 # --seed--
