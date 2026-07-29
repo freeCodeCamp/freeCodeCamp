@@ -50,11 +50,10 @@ The `addHabitat` function should have two parameters: `animal` and `habitat`.
 
 ```js
 const explorer = await __helpers.Explorer(code);
-const fn = explorer.allFunctions.addHabitat;
-assert.exists(fn);
-assert.equal(fn.parameters.length, 2);
-assert.equal(fn.parameters[0].toString(), 'animal');
-assert.equal(fn.parameters[1].toString(), 'habitat');
+const { addHabitat } = explorer.allFunctions;
+assert.equal(addHabitat?.parameters.length, 2);
+assert.equal(addHabitat?.parameters[0].toString(), 'animal');
+assert.equal(addHabitat?.parameters[1].toString(), 'habitat');
 ```
 
 The `addHabitat` function should return the updated `animal` object.
