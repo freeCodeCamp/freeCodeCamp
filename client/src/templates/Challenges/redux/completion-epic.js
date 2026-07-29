@@ -5,6 +5,7 @@ import { empty, of } from 'rxjs';
 import {
   catchError,
   concat,
+  map,
   retry,
   switchMap,
   tap,
@@ -251,6 +252,7 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
 
       const {
+        id,
         isLastChallengeInBlock,
         nextChallengePath,
         challengeType,
@@ -304,6 +306,11 @@ export default function completionEpic(action$, state$) {
       };
 
       return submitter(type, state).pipe(
+        map(action =>
+          action.type === actionTypes.submitChallengeComplete
+            ? submitChallengeComplete({ challengeId: id, nextChallengePath })
+            : action
+        ),
         concat(
           of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
         ),
