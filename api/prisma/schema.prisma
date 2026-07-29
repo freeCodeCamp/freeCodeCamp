@@ -165,7 +165,7 @@ model user {
   portfolio                      Portfolio[]
   experience                     Experience[]
   profileUI                      ProfileUI? // Undefined
-  progressTimestamps             Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
+  progressTimestamps             Json[] // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
   /// A random number between 0 and 1.
   ///
   /// Valuable for selectively performing random logic.

@@ -30,14 +30,14 @@ assert.isNull(profile?.mood);
 ## --seed-contents--
 
 ```ts
---fcc-editable-region--
 const profile = {
   username: "codeLearner",
   age: 25,
   isLoggedIn: false,
-
-}
 --fcc-editable-region--
+  
+--fcc-editable-region--
+}
 
 console.log(profile);
 ```

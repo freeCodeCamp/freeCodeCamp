@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "review-security-and-privacy",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "6a3ce12475aec05ee56492ef", "title": "Security and Privacy Review" }
+  ],
+  "blockLabel": "review"
+}

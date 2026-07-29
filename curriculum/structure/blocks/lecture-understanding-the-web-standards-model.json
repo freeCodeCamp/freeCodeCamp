@@ -1,0 +1,25 @@
+{
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-the-web-standards-model",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "69fc74d0fc8a6b0727f288fd",
+      "title": "How do Standards Bodies Operate?"
+    },
+    {
+      "id": "69fc757399f4066e674a5160",
+      "title": "What's the Process for Creating Web Standards?"
+    },
+    {
+      "id": "69fc757399f4066e674a5161",
+      "title": "What Does the Lifecycle of Web Standards Features Look Like?"
+    },
+    {
+      "id": "69fc757399f4066e674a5162",
+      "title": "What are the Key Principles that Web Standards are Built On?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

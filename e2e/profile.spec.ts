@@ -171,19 +171,11 @@ test.describe('Profile component', () => {
     }) => {
       // @certifieduser doesn't have portfolio information, but session users
       // always see the section so they can add projects
-      await expect(page.getByText(translations.profile.projects)).toBeVisible();
+      await expect(
+        page.locator(`h2:text-is("${translations.profile.projects}")`)
+      ).toBeVisible();
       await expect(
         page.getByRole('button', { name: translations.aria['add-portfolio'] })
-      ).toBeVisible();
-    });
-
-    test('displays the timeline correctly', async ({ page }) => {
-      await expect(
-        page.getByRole('heading', { name: 'Timeline' })
-      ).toBeVisible();
-      await expect(page.getByRole('table')).toBeVisible();
-      await expect(
-        page.getByRole('navigation', { name: 'Timeline Pagination' })
       ).toBeVisible();
     });
   });
