@@ -1492,7 +1492,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn what Python is and how to set up your development environment."
+          "In these lessons, you will learn what Python is and some common uses in the industry."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -1985,7 +1985,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -5120,6 +5120,13 @@
           "You'll practice conditionals to determine the student's grade based on their score."
         ]
       },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
+        ]
+      },
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
@@ -5496,10 +5503,10 @@
           "In these lectures, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
-      "workshop-calorie-counter": {
-        "title": "Build a Calorie Counter",
+      "workshop-envelope-budget-app": {
+        "title": "Build an Envelope Budget App",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this envelope budget app workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
           "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
@@ -5866,7 +5873,7 @@
         ]
       },
       "lab-n-queens-problem-js": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -6873,7 +6880,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -8189,13 +8196,13 @@
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code> and <code>blockquote</code> elements, and more."
         ]
       },
       "workshop-quincys-job-tips": {
         "title": "Build Quincy's Job Tips Page",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code>, and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -8207,7 +8214,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -9490,13 +9497,13 @@
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code> and <code>blockquote</code> elements, and more."
         ]
       },
       "workshop-quincys-job-tips": {
         "title": "Build Quincy's Job Tips Page",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code>, and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -9508,7 +9515,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -10429,7 +10436,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       }
     },

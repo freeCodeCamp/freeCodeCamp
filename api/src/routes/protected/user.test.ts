@@ -193,7 +193,7 @@ const computedProperties = {
   calendar: {},
   completedChallengeCount: 0,
   isEmailVerified: minimalUserData.emailVerified,
-  points: 1,
+  points: 0,
   // This is the default value if profileUI is missing. If individual properties
   // are missing from the db, they will be omitted from the response.
   profileUI: lockedProfileUI
@@ -346,6 +346,7 @@ const baseProgressData = {
   isRespWebDesignCert: false,
   is2018DataVisCert: false,
   isFrontEndLibsCert: false,
+  isFrontEndLibsCertV9: false,
   isJsAlgoDataStructCert: false,
   isApisMicroservicesCert: false,
   isInfosecQaCert: false,
@@ -354,6 +355,7 @@ const baseProgressData = {
   is2018FullStackCert: false,
   isFrontEndCert: false,
   isBackEndCert: false,
+  isBackEndDevApisCertV9: false,
   isDataVisCert: false,
   isFullStackCert: false,
   isJavascriptCertV9: false,
@@ -1616,7 +1618,7 @@ describe('userRoutes', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('POST returns 403 for users with no email', async () => {
+      test('POST returns 400 for users with no email', async () => {
         const count = vi.fn();
         const originalSentry = fastifyTestInstance.Sentry;
         fastifyTestInstance.Sentry = {
@@ -1634,7 +1636,7 @@ describe('userRoutes', () => {
           reportDescription: 'Test Report'
         });
 
-        expect(response.statusCode).toBe(403);
+        expect(response.statusCode).toBe(400);
         expect(response.body).toStrictEqual({
           type: 'danger',
           message: 'flash.report-error'
@@ -1956,7 +1958,7 @@ Thanks and regards,
             message: 'flash.ms.transcript.link-err-4'
           });
 
-          expect(response.statusCode).toBe(403);
+          expect(response.statusCode).toBe(409);
           expect(count).toHaveBeenCalledWith('ms_username.link_completed', 1, {
             attributes: { result: 'username_taken' }
           });
@@ -2149,7 +2151,7 @@ Thanks and regards,
         });
       });
 
-      test('POST returns 400 if user already submitted survey', async () => {
+      test('POST returns 409 if user already submitted survey', async () => {
         // Submit survey for first time
         await superPost('/user/submit-survey').send({
           surveyResults: mockSurveyResults
@@ -2160,7 +2162,7 @@ Thanks and regards,
           surveyResults: mockSurveyResults
         });
 
-        expect(response.statusCode).toBe(400);
+        expect(response.statusCode).toBe(409);
         expect(response.body).toStrictEqual({
           type: 'error',
           message: 'flash.survey.err-2'

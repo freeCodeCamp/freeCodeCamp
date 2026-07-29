@@ -10,6 +10,10 @@ vi.mock('i18next', () => ({
   }
 }));
 
+vi.mock('../components/independent-lower-jaw', () => ({
+  default: () => <div data-testid='independent-lower-jaw' />
+}));
+
 const mockProps = {
   editor: <div>Editor</div>,
   hasEditableBoundaries: false,
@@ -21,7 +25,6 @@ const mockProps = {
   windowTitle: 'Test Title',
   showPreviewPortal: false,
   showPreviewPane: false,
-  toolPanel: <div>ToolPanel</div>,
   removePortalWindow: vi.fn(),
   setShowPreviewPortal: vi.fn(),
   setShowPreviewPane: vi.fn(),
@@ -37,17 +40,10 @@ const renderMobileLayout = (
 ) => render(<MobileLayout {...mockProps} {...props} />);
 
 describe('<MobileLayout />', () => {
-  it('renders instructions, code, console, preview, portal, and tool panel controls when preview is available', () => {
+  it('renders instructions, code, console, preview, portal controls, and the lower jaw when preview is available', () => {
     renderMobileLayout({
       hasPreview: true,
-      showPreviewPane: true,
-      toolPanel: (
-        <div>
-          <button>buttons.help</button>
-          <button>buttons.save</button>
-          <button>buttons.run</button>
-        </div>
-      )
+      showPreviewPane: true
     });
 
     expect(screen.getByRole('tablist')).toBeInTheDocument();
@@ -66,27 +62,12 @@ describe('<MobileLayout />', () => {
     expect(
       screen.getByRole('button', { name: 'aria.move-preview-to-new-window' })
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'buttons.help' })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'buttons.save' })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'buttons.run' })
-    ).toBeInTheDocument();
+    expect(screen.getByTestId('independent-lower-jaw')).toBeInTheDocument();
   });
 
-  it('renders instructions, code, console, and tool panel controls when preview is unavailable', () => {
+  it('renders instructions, code, console, and the lower jaw when preview is unavailable', () => {
     renderMobileLayout({
-      hasPreview: false,
-      toolPanel: (
-        <div>
-          <button>buttons.help</button>
-          <button>buttons.reset</button>
-          <button>buttons.run</button>
-        </div>
-      )
+      hasPreview: false
     });
 
     expect(screen.getByRole('tablist')).toBeInTheDocument();
@@ -105,15 +86,13 @@ describe('<MobileLayout />', () => {
     expect(
       screen.queryByRole('button', { name: 'aria.move-preview-to-new-window' })
     ).not.toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'buttons.help' })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'buttons.reset' })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole('button', { name: 'buttons.run' })
-    ).toBeInTheDocument();
+    expect(screen.getByTestId('independent-lower-jaw')).toBeInTheDocument();
+  });
+
+  it('renders the lower jaw for challenges with editable boundaries', () => {
+    renderMobileLayout({ hasEditableBoundaries: true });
+
+    expect(screen.getByTestId('independent-lower-jaw')).toBeInTheDocument();
   });
 
   it('should render language selector when isDailyCodingChallenge is true', () => {
