@@ -17,7 +17,7 @@ You should replace the `[0-9]` character class before `e` with `\d` in your regu
 assert.match(isInvalidInput.toString(), /regex\s*=\s*\/\\d\+e/);
 ```
 
-You should replace the `[0-9]` character class after `e` with `\d` in your regular expression.
+You should replace the `[0-9]` character class after `e` with `\d`, so your `regex` value is `/\d+e\d+/i`.
 
 ```js
 const explorer = await __helpers.Explorer(code);

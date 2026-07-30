@@ -19,7 +19,7 @@ You should add the `[0-9]` character class before `e` in your regular expression
 assert.match(isInvalidInput.toString(), /regex\s*=\s*\/\[0-9\]e/);
 ```
 
-You should add the `[0-9]` character class after `e` in your regular expression.
+You should add the `[0-9]` character class after `e`, so your `regex` value is `/[0-9]e[0-9]/i`.
 
 ```js
 const explorer = await __helpers.Explorer(code);
