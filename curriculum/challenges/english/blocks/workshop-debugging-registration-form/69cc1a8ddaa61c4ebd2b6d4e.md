@@ -15,7 +15,7 @@ Inside the `try` block, declare a `const` object called `user` with `name` and `
 
 # --hints--
 
-You should create a `user` object inside the `try` block.
+You should declare `user` as a `const` set to an object, inside the `try` block.
 
 ```js
 assert.match(
@@ -31,8 +31,7 @@ const objectMatch = code.match(/const\s+user\s*=\s*(\{[^}]*\})/);
 assert.exists(objectMatch);
 const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
 const { name } = explorer.variables.user.value.objectProps;
-assert.exists(name);
-assert.isTrue(name.value.matches("name"));
+assert.isTrue(name?.value.matches("name"));
 ```
 
 The `user` object should include an `"age"` property with the value of the `age` variable.
@@ -42,8 +41,7 @@ const objectMatch = code.match(/const\s+user\s*=\s*(\{[^}]*\})/);
 assert.exists(objectMatch);
 const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
 const { age } = explorer.variables.user.value.objectProps;
-assert.exists(age);
-assert.isTrue(age.value.matches("age"));
+assert.isTrue(age?.value.matches("age"));
 ```
 
 # --seed--
