@@ -7665,7 +7665,7 @@
         "title": "Build a Hotel Feedback Form",
         "intro": [
           "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
       "lecture-working-with-tables": {
@@ -8247,7 +8247,7 @@
         "title": "Build a Hotel Feedback Form",
         "intro": [
           "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
       "lecture-working-with-tables": {
