@@ -2482,10 +2482,6 @@
       "quiz-javascript-objects": {
         "title": "JavaScript Objects Quiz",
         "intro": ["Test your knowledge of JavaScript objects with this quiz."]
-      },
-      "workshop-smart-campus-directory": {
-        "title": "Build a Campus Directory Normalizer",
-        "intro": ["Build a Campus Directory Normalizer", ""]
       }
     }
   },
