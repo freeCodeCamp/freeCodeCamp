@@ -13,16 +13,10 @@ Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
 
 # --hints--
 
-Your opening `<div>` tag should have an `id` attribute set to `menu`.
+Your code should have a `div` element with an `id` set to `menu`.
 
 ```js
 assert.strictEqual(document.querySelector('div')?.id, 'menu');
-```
-
-You should have a closing `</div>` tag.
-
-```js
-assert.exists(document.querySelector('div'));
 ```
 
 You should not change your existing `body` element. Make sure you did not delete the closing tag.
