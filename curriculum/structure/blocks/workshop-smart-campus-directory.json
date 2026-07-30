@@ -1,0 +1,10 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "workshop-smart-campus-directory",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "6a6b0a80d50f2685dcaad2e3", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
