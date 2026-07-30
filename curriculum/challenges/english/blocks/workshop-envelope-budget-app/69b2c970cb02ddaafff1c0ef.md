@@ -24,7 +24,10 @@ assert.isFunction(cleanInputString);
 Your `cleanInputString` function should take a `str` parameter.
 
 ```js
-assert.match(cleanInputString?.toString(), /\(\s*str\s*\)/);
+const explorer = await __helpers.Explorer(code);
+const parameters = explorer.allFunctions.cleanInputString?.parameters;
+assert.lengthOf(parameters, 1);
+assert.equal(parameters[0].toString(), 'str');
 ```
 
 `cleanInputString` should be an empty function.

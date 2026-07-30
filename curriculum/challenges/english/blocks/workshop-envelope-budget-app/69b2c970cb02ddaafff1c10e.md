@@ -14,21 +14,27 @@ Create another `label` element (on a new line) at the end of your `HTMLString`. 
 You should have two `label` elements in your `HTMLString`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.equal(HTMLstring.match(/<label/g).length, 2);
 ```
 
 Your new `label` element should be on a new line.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.equal(HTMLstring.match(/\n\s*<label/g).length, 2);
 ```
 
 Your new `label` element should come after your `input` element.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputIndex = HTMLstring.indexOf("<input");
 const labelIndex = HTMLstring.lastIndexOf("<label");
 assert.isBelow(inputIndex, labelIndex);
@@ -37,7 +43,9 @@ assert.isBelow(inputIndex, labelIndex);
 Your new `label` element should have a `for` attribute set to `${category}-${entryNumber}-amount`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const label = HTMLstring.match(/<label.*>.*<\/label>/g)[1];
 assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>/);
 ```
@@ -45,7 +53,9 @@ assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>/
 Your new `label` element should have the text `Expense ${entryNumber} Amount`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const label = HTMLstring.match(/<label.*>.*<\/label>/g)[1];
 assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>Expense\s\$\{entryNumber\}\sAmount<\/label>/);
 ```
@@ -53,7 +63,9 @@ assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>E
 You should not modify your existing elements.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.match(HTMLstring, /`\n\s*<label\s+for="\$\{category\}-\$\{entryNumber\}-name"\s*>Expense\s\$\{entryNumber\}\sName<\/label>\n\s*<input\stype="text"\sid="\$\{category\}-\$\{entryNumber\}-name"\splaceholder="Name"\s\/>\n\s*<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>Expense\s\$\{entryNumber\}\sAmount<\/label>/);
 ```
 

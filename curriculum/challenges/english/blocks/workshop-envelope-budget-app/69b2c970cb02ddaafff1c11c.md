@@ -22,13 +22,17 @@ assert.match(getTotalFromInputs.toString(), /if\s*\(\s*invalidInputMatch\s*\)\s*
 You should use a template literal to pass the `"Invalid Input: "` message to the `alert()` function.
 
 ```js
-assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: /);
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: /);
 ```
 
 You should display the first element of the `invalidInputMatch` array after the `"Invalid Input: "` text by using a template literal.
 
 ```js
-assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)/);
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)/);
 ```
 
 # --seed--

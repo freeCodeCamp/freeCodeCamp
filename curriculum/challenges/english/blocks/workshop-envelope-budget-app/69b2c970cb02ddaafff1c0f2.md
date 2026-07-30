@@ -16,7 +16,12 @@ Shorthand character classes are preceded with a backslash (`\`). The character c
 Your `regex` variable should be set to the regular expression `/\+-\s/`.
 
 ```js
-assert.match(cleanInputString.toString(), /regex\s*=\s*\/\\\+-\\s\//)
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.cleanInputString?.variables.regex?.value.matches(
+    '/\\+-\\s/'
+  )
+);
 ```
 
 # --seed--
