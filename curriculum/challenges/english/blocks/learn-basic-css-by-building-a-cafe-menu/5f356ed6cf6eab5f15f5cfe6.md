@@ -22,7 +22,7 @@ assert.strictEqual(document.querySelector('div')?.id, 'menu');
 You should have a closing `</div>` tag.
 
 ```js
-assert(code.match(/<\/div>/i));
+assert.exists(document.querySelector('div'));
 ```
 
 You should not change your existing `body` element. Make sure you did not delete the closing tag.

@@ -14,13 +14,13 @@ You will come back to styling the menu in a few steps, but for now, go ahead and
 You should have an opening `section` tag.
 
 ```js
-assert.lengthOf(code.match(/<section>/ig) ,2);
+assert.lengthOf(document.querySelectorAll('section'), 2);
 ```
 
 You should have a closing `section` tag.
 
 ```js
-assert.lengthOf(code.match(/<\/section>/ig) ,2);
+assert.lengthOf(document.querySelectorAll('section'), 2);
 ```
 
 You should not change the existing `main` element.
