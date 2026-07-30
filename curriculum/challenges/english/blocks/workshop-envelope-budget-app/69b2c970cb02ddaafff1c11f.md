@@ -14,7 +14,8 @@ After your `for` loop has completed, return the `total` value.
 You should `return` the `total` value.
 
 ```js
-assert.match(getTotalFromInputs.toString(), /return\s+total/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(explorer.allFunctions.getTotalFromInputs?.hasReturn('total'));
 ```
 
 # --seed--

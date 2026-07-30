@@ -34,7 +34,10 @@ assert.match(isInvalidInput.toString(), /str\.match\(\s*regex\s*\)/);
 Your `isInvalidInput` function should directly return the result of the `.match()` call.
 
 ```js
-assert.match(isInvalidInput.toString(), /return\s+str\.match\(\s*regex\s*\)/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.allFunctions.isInvalidInput?.hasReturn('str.match(regex)')
+);
 ```
 
 # --seed--

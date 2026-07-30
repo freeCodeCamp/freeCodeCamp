@@ -14,7 +14,8 @@ Now you need to build your dynamic HTML string to add to the webpage. Declare a 
 Your `addEntry` function should have an `HTMLString` variable.
 
 ```js
-assert.match(addEntry.toString(), /HTMLString\s*=/)
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.addEntry?.variables.HTMLString);
 ```
 
 Your `HTMLString` should be an empty template literal.

@@ -37,7 +37,8 @@ assert.isFalse(isError);
 You should use `let` to declare your `isError` variable.
 
 ```js
-assert.match(code, /let\s+isError\s*=\s*false/g);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(explorer.variables.isError?.matches('let isError = false'));
 ```
 
 # --seed--
