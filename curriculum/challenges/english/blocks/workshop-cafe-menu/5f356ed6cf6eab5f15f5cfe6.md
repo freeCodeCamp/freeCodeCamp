@@ -13,7 +13,7 @@ Inside the opening `div` tag, add the `id` attribute with a value of `menu`.
 
 # --hints--
 
-Your code should have a `div` element with an `id` set to `menu`.
+Your opening `<div>` tag should have an `id` attribute set to `menu`.
 
 ```js
 assert.strictEqual(document.querySelector('div')?.id, 'menu');
