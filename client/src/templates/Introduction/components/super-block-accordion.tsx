@@ -158,11 +158,20 @@ const Chapter = ({
       {isLinkChapter && examSlug && (
         <BlockLabelComponent blockLabel={BlockLabel.exam} />
       )}
+      {!comingSoon && !isLinkChapter && (
+        <span className='sr-only'>
+          {' '}
+          {t('learn.steps-completed', {
+            totalSteps,
+            completedSteps
+          })}
+        </span>
+      )}
     </div>
   );
 
   const chapterButtonRightContent = (
-    <div className='chapter-button-right'>
+    <div className='chapter-button-right' aria-hidden='true'>
       {!comingSoon && !isLinkChapter && (
         <span className='chapter-steps'>
           {t('learn.steps-completed', {
@@ -310,6 +319,15 @@ const Module = ({
               <CheckMark isCompleted={isComplete} />
             </span>
             {moduleLabel}
+            {!comingSoon && !!totalSteps && (
+              <span className='sr-only'>
+                {' '}
+                {t('learn.steps-completed', {
+                  totalSteps,
+                  completedSteps
+                })}
+              </span>
+            )}
           </div>
         </button>
         {resetButton}
@@ -322,7 +340,7 @@ const Module = ({
           onClick={toggleOpen}
           type='button'
         >
-          <div className='module-button-right'>
+          <div className='module-button-right' aria-hidden='true'>
             {!comingSoon && !!totalSteps && (
               <span className='module-steps'>
                 {t('learn.steps-completed', {
