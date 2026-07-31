@@ -2,7 +2,7 @@
 applyTo: "**/*.{ts,tsx,js,jsx}"
 ---
 
-# Test Coverage Review Instructions
+## Test Coverage Review Instructions
 
 Review code changes for adequate test coverage using freeCodeCamp's testing conventions.
 
@@ -27,7 +27,7 @@ Comment on missing tests if ALL of these are true:
 - New utility functions in `api/src/utils/` or `client/src/utils/`
 - New API route handlers in `api/src/routes/`
 - New React components with logic in `client/src/components/`
-- Bug fixes that change application behavior
+- Bug fixes that change application behaviour
 - New validation logic or data transformations
 
 ## When NOT to Flag
@@ -38,7 +38,7 @@ Do not comment on test coverage if:
 - PR already includes appropriate test coverage
 - Changes are to test files themselves
 - Changes are trivial:
-  - Import reorganization
+  - Import reorganisation
   - Formatting changes
   - Type-only changes (interfaces, type definitions)
   - Comment updates
@@ -52,9 +52,9 @@ Do not comment on test coverage if:
 Flag if existing tests may be outdated:
 
 - Test file exists for modified source but doesn't cover the changed functionality
-- Test assertions reference behavior that is being changed
+- Test assertions reference behaviour that is being changed
 - Mock data doesn't reflect new data structures or API responses
-- Test descriptions no longer match actual test behavior
+- Test descriptions no longer match actual test behaviour
 
 ### Example Comment for Outdated Tests
 
