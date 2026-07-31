@@ -2055,7 +2055,7 @@
       "lecture-introduction-to-strings": {
         "title": "Introduction to Strings",
         "intro": [
-          "In these lessons, you will learn how to work with strings and string concatenation."
+          "In these lessons, you will learn how to work with strings, string concatenation, and <code>console.log()</code>."
         ]
       },
       "lecture-understanding-code-clarity": {
