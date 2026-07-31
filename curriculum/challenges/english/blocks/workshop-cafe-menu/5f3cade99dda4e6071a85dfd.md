@@ -17,7 +17,7 @@ You should have two `section` elements.
 assert.lengthOf(document.querySelectorAll('section'), 2);
 ```
 
-You should have a closing `section` tag.
+You should have a second closing `section` tag.
 
 ```js
 assert.lengthOf(code.match(/<\/section>/ig) ,2);
