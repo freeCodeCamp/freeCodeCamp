@@ -11,7 +11,7 @@ You will come back to styling the menu in a few steps, but for now, go ahead and
 
 # --hints--
 
-You should have two `section` elements.
+You should add a second `section` element.
 
 ```js
 assert.lengthOf(document.querySelectorAll('section'), 2);
