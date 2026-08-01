@@ -610,8 +610,12 @@ describe('SuperBlockAccordion', () => {
     );
 
     // When expandAll=true, both chapters are open so their module main buttons are visible
-    expect(screen.getByRole('button', { name: 'mod-one' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'mod-two' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^mod-one/ })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^mod-two/ })
+    ).toBeInTheDocument();
   });
 
   it('should not render a module when all its challenges are filtered out', () => {
@@ -639,11 +643,13 @@ describe('SuperBlockAccordion', () => {
     );
 
     // mod-one has a challenge — its main module button should render
-    expect(screen.getByRole('button', { name: 'mod-one' })).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /^mod-one/ })
+    ).toBeInTheDocument();
 
     // mod-two has no challenges — its main module button should not render
     expect(
-      screen.queryByRole('button', { name: 'mod-two' })
+      screen.queryByRole('button', { name: /^mod-two/ })
     ).not.toBeInTheDocument();
   });
 
