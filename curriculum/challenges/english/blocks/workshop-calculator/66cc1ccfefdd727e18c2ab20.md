@@ -7,20 +7,24 @@ dashedName: step-14
 
 # --description--
 
-Your `calculateQuotient` appears to be working correctly but there is one case that you have not tested yet.
+Your `calculateQuotient` appears to be working correctly, but there is one case that you have not tested yet.
 
 Add a `console.log` that calls the `calculateQuotient` function with the arguments `3` and `0`.
 
 Make sure to take a close look at the output of this call.
+
+# --before-each--
+
+```js
+const spy = __helpers.spyOn(console, 'log');
+```
 
 # --hints--
 
 You should have a `console.log` that calls the `calculateQuotient` function with the arguments `3` and `0`.
 
 ```js
-const strippedCode = __helpers.removeWhiteSpace(__helpers.removeJSComments(code));
-const expectedStatement = "console.log(calculateQuotient(3,0))";
-assert.include(strippedCode, expectedStatement);
+assert.deepInclude(spy.calls, [calculateQuotient(3, 0)]);
 ```
 
 # --seed--
