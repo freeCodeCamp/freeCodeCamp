@@ -20,7 +20,12 @@ Add the `g` flag to your regex pattern.
 You should add the `g` flag to your `regex` value.
 
 ```js
-assert.match(cleanInputString.toString(), /regex\s*=\s*\/\[\+-\\s\]\/g/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.cleanInputString?.variables.regex?.value.matches(
+    '/[+-\\s]/g'
+  )
+);
 ```
 
 # --seed--

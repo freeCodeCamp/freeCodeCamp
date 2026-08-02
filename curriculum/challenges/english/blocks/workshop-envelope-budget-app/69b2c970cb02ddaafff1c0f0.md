@@ -22,13 +22,17 @@ Declare a `regex` variable and assign it the value from the example above. In fu
 You should declare a `regex` variable.
 
 ```js
-assert.match(cleanInputString.toString(), /regex\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.cleanInputString?.variables.regex);
 ```
 
 Your `regex` variable should be set to the regular expression `/hello/`.
 
 ```js
-assert.match(cleanInputString.toString(), /regex\s*=\s*\/hello\//);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.cleanInputString?.variables.regex?.value.matches('/hello/')
+);
 ```
 
 # --seed--
