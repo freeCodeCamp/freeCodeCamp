@@ -2,11 +2,9 @@
   "chapters": [
     {
       "dashedName": "back-end-development-and-apis",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "introduction-to-nodejs",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-nodejs-and-event-driven-architecture",
             "workshop-nodejs-repl",
@@ -16,7 +14,6 @@
         },
         {
           "dashedName": "nodejs-core-modules",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-node-core-modules",
             "workshop-build-a-file-processor",
@@ -26,7 +23,6 @@
         },
         {
           "dashedName": "node-package-manager",
-          "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-npm",
             "lecture-working-with-npm-scripts",
@@ -38,12 +34,10 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-prime-number-checker-module",
-          "comingSoon": true,
           "blocks": ["lab-prime-number-checker-module"]
         },
         {
           "dashedName": "http-and-the-web-standards-model",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-how-http-dns-tcpip-work",
             "lecture-understanding-the-http-request-response-model",
@@ -55,7 +49,6 @@
         },
         {
           "dashedName": "rest-api-and-web-services",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-rest-api-and-web-services",
             "workshop-build-a-weather-service-api"
@@ -64,12 +57,10 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-timestamp-microservice",
-          "comingSoon": true,
           "blocks": ["lab-timestamp-microservice"]
         },
         {
           "dashedName": "introduction-to-express",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-express",
             "lecture-understanding-routing-in-express-js",
@@ -81,12 +72,10 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-personal-profile-app",
-          "comingSoon": true,
           "blocks": ["lab-personal-profile-app"]
         },
         {
           "dashedName": "error-handling-in-express",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-error-handling-and-health-checks",
             "workshop-build-a-bank-api",
@@ -96,7 +85,6 @@
         },
         {
           "dashedName": "express-middleware",
-          "comingSoon": true,
           "blocks": [
             "lecture-express-middleware",
             "workshop-build-a-submission-form",
@@ -107,7 +95,6 @@
         },
         {
           "dashedName": "websockets",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-websockets",
             "workshop-build-a-resource-monitor",
@@ -118,12 +105,10 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-chat-app",
-          "comingSoon": true,
           "blocks": ["lab-chat-app"]
         },
         {
           "dashedName": "security-and-privacy",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-security-and-privacy-in-web-applications",
             "review-security-and-privacy",
@@ -132,7 +117,6 @@
         },
         {
           "dashedName": "authentication",
-          "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-authentication-and-authorization",
             "workshop-jwt-protected-routes",
@@ -143,13 +127,11 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-family-movie-watchlist-api",
-          "comingSoon": true,
           "blocks": ["lab-family-movie-watchlist-api"]
         },
         {
           "moduleType": "review",
           "dashedName": "review-back-end-development-and-apis",
-          "comingSoon": true,
           "blocks": ["review-back-end-development-and-apis"]
         }
       ]
@@ -157,10 +139,8 @@
     {
       "chapterType": "exam",
       "dashedName": "back-end-development-and-apis-certification-exam",
-      "comingSoon": true,
       "modules": [
         {
-          "comingSoon": true,
           "dashedName": "back-end-development-and-apis-certification-exam",
           "blocks": ["exam-back-end-development-and-apis-certification"]
         }
