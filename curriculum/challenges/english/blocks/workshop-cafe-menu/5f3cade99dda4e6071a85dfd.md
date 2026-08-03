@@ -11,13 +11,13 @@ You will come back to styling the menu in a few steps, but for now, go ahead and
 
 # --hints--
 
-You should have an opening `section` tag.
+You should add a second `section` element.
 
 ```js
-assert.lengthOf(code.match(/<section>/ig) ,2);
+assert.lengthOf(document.querySelectorAll('section'), 2);
 ```
 
-You should have a closing `section` tag.
+You should have a second closing `section` tag.
 
 ```js
 assert.lengthOf(code.match(/<\/section>/ig) ,2);
@@ -33,7 +33,7 @@ Your new `section` element should be nested in the `main` element.
 
 ```js
 const main = document.querySelector('main');
-const sections = main?.querySelectorAll(`:scope ${'section'}`);
+const sections = main?.querySelectorAll('section');
 assert.lengthOf(sections,2);
 ```
 
@@ -109,7 +109,7 @@ h1, h2, p {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 ```
 
