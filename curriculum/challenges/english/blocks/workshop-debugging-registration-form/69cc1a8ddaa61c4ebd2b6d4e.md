@@ -11,7 +11,7 @@ Now that all the input data has been validated, you can store it for further use
 
 In JavaScript, objects are used to group related data together. In this case, the user's name and age both belong to the same user, so it makes sense to store them in a single object.
 
-Inside the `try` block, declare a `const` object called `user` with `name` and `age` as its properties. This way, `user` would only be created upon successful input validation.
+Inside the `try` block, declare a `const` object called `user` with `name` and `age` as its properties. This way, `user` will only be created upon successful input validation.
 
 # --hints--
 
