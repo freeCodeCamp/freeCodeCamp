@@ -27,7 +27,9 @@ assert.match(
 The `user` object should include a `"name"` property with the value of the `name` variable.
 
 ```js
-const objectMatch = code.match(/const\s+user\s*=\s*(\{[^}]*\})/);
+const objectMatch = code.match(
+  /const\s+user\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\})/
+);
 assert.exists(objectMatch);
 const explorer = await __helpers.Explorer(`const user = ${objectMatch[1]}`);
 const { name } = explorer.variables.user.value.objectProps;
