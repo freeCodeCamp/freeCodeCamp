@@ -24,7 +24,7 @@ assert.match(
 );
 ```
 
-The `user` object should include a `"name"` property with the value of the `name` variable.
+Your `user` object should include a `"name"` property with the value of the `name` variable.
 
 ```js
 const objectMatch = code.match(
