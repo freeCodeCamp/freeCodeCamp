@@ -36,7 +36,7 @@ const { name } = explorer.variables.user.value.objectProps;
 assert.isTrue(name?.value.matches("name"));
 ```
 
-The `user` object should include an `"age"` property with the value of the `age` variable.
+Your `user` object should include an `"age"` property with the value of the `age` variable.
 
 ```js
 const objectMatch = code.match(
