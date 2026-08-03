@@ -91,11 +91,6 @@ const translationMap: Record<string, unknown> = {
     intro: ['Learn workplace English at the A2 level.'],
     note: 'This certification is currently in beta.'
   },
-  'intro:front-end-development-libraries-v9': {
-    title: 'Front-End Development Libraries Certification',
-    intro: ['Learn the libraries developers use to build webpages.'],
-    note: ''
-  },
   'intro:coding-interview-prep': {
     title: 'Coding Interview Prep',
     intro: [
@@ -559,7 +554,7 @@ describe('SuperBlockIntroductionPage', () => {
 
     it('should render the unfinished-certification donation copy and Donate Now button for a non-donor on an unfinished certification', async () => {
       renderForSuperBlock({
-        superBlock: SuperBlocks.FrontEndDevLibsV9,
+        superBlock: SuperBlocks.FullStackDeveloperV9,
         isDonating: false
       });
 
