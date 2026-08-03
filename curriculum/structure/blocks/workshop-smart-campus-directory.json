@@ -6,7 +6,10 @@
   "challengeOrder": [
     { "id": "6a6b0a80d50f2685dcaad2e3", "title": "Step 1" },
     { "id": "6a7050a3eea4b3ab9ebfb889", "title": "Step 2" },
-    { "id": "6a705f3f4d36006ee0d90f87", "title": "Step 3" }
+    { "id": "6a705f3f4d36006ee0d90f87", "title": "Step 3" },
+    { "id": "6a7061b30dc6edf4528c6a07", "title": "Step 4" },
+    { "id": "6a7062c294fd4d17c9cc6db3", "title": "Step 5" },
+    { "id": "6a70655455cb163db5e1b482", "title": "Step 6" }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
