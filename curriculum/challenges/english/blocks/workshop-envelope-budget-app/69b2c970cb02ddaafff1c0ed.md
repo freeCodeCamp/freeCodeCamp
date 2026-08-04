@@ -50,7 +50,8 @@ assert.deepEqual(clearButton, document.getElementById('clear'));
 You should declare a variable called `output`.
 
 ```js
-assert.match(code, /const\s+output/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.variables.output);
 ```
 
 You should use `document.getElementById()` to get the `#output` element.
@@ -62,7 +63,12 @@ assert.match(code, /document\.getElementById\(\s*('|")output\1\s*\)/g);
 You should assign the `#output` element to `output`.
 
 ```js
-assert.match(code, /const\s+output\s*=\s*document.getElementById\(('|")output\1\)/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.variables.output?.matches(
+    "const output = document.getElementById('output')"
+  )
+);
 ```
 
 # --seed--

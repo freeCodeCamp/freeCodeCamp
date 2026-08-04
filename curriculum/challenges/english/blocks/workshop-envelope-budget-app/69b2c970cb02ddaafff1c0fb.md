@@ -22,7 +22,10 @@ Add the `i` flag to your regex pattern.
 Your `regex` value should have the `i` flag.
 
 ```js
-assert.match(isInvalidInput.toString(), /regex\s*=\s*\/e\/i/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.isInvalidInput?.variables.regex?.value.matches('/e/i')
+);
 ```
 
 # --seed--
