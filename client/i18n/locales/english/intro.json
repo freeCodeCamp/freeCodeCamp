@@ -6375,6 +6375,12 @@
           "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
         ]
       },
+      "workshop-employee-profile-validator": {
+        "title": "Build an Employee Profile Validator",
+        "intro": [
+          "In this workshop, you will use Python string methods to validate and format data from an employee profile."
+        ]
+      },
       "lecture-numbers-and-mathematical-operations": {
         "title": "Numbers and Mathematical Operations",
         "intro": [
