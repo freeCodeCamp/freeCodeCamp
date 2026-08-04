@@ -120,7 +120,7 @@ function UpdateStripeCard({
   return (
     <>
       <Helmet>
-        <title>{t('misc.update-your-card')} | freeCodeCamp.org</title>
+        <title>{`${t('misc.update-your-card')} | freeCodeCamp.org`}</title>
       </Helmet>
       <Container className='page-wrapper-80'>
         <Row>

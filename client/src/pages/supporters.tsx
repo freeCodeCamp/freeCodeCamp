@@ -106,7 +106,7 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
   return (
     <>
       <Helmet>
-        <title>{t('misc.supporters-page-title')} | freeCodeCamp.org</title>
+        <title>{`${t('misc.supporters-page-title')} | freeCodeCamp.org`}</title>
       </Helmet>
       <Container
         fluid={true}

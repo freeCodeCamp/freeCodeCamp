@@ -282,7 +282,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   return (
     <>
       <Helmet>
-        <title>{i18nTitle} | freeCodeCamp.org</title>
+        <title>{`${i18nTitle} | freeCodeCamp.org`}</title>
       </Helmet>
       <Container>
         <main>

@@ -10,11 +10,33 @@ vi.mock('react-redux', () => ({
   useSelector: () => ({})
 }));
 
+// react-helmet sets document.title imperatively rather than rendering a
+// <title> element into the tree, so this mock does the same. (Rendering a
+// <title> with multiple children directly hits a React 19 limitation where
+// only a single static text child is hoisted to the real document head.)
+const { HelmetMock } = vi.hoisted(() => {
+  const HelmetMock = ({ children }: { children?: React.ReactNode }) => {
+    React.useEffect(() => {
+      React.Children.forEach(children, child => {
+        if (React.isValidElement(child) && child.type === 'title') {
+          const titleProps = child.props as { children?: React.ReactNode };
+          // Reading a React element's props, not a DOM/testing-library node.
+          // eslint-disable-next-line testing-library/no-node-access
+          const titleChildren = titleProps.children;
+          document.title = React.Children.toArray(titleChildren)
+            .map(node => (typeof node === 'string' ? node : ''))
+            .join('');
+        }
+      });
+    });
+    return null;
+  };
+  return { HelmetMock };
+});
+
 vi.mock('react-helmet', () => ({
   __esModule: true,
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <div>{children}</div>
-  )
+  default: HelmetMock
 }));
 
 vi.mock('gatsby', () => ({
@@ -440,9 +462,7 @@ describe('SuperBlockIntroductionPage', () => {
 
     render(<SuperBlockIntroductionPage {...props} />);
 
-    expect(
-      screen.getByText('Coding Interview Prep | freeCodeCamp.org')
-    ).toBeInTheDocument();
+    expect(document.title).toBe('Coding Interview Prep | freeCodeCamp.org');
     expect(
       await screen.findByText(
         "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
