@@ -11,23 +11,13 @@ vi.mock('react-redux', () => ({
 }));
 
 // react-helmet sets document.title imperatively rather than rendering a
-// <title> element into the tree, so this mock does the same. (Rendering a
-// <title> with multiple children directly hits a React 19 limitation where
-// only a single static text child is hoisted to the real document head.)
+// <title> element into the tree, so this mock does the same.
 const { HelmetMock } = vi.hoisted(() => {
-  const HelmetMock = ({ children }: { children?: React.ReactNode }) => {
+  const HelmetMock = ({ title }: { title?: string }) => {
     React.useEffect(() => {
-      React.Children.forEach(children, child => {
-        if (React.isValidElement(child) && child.type === 'title') {
-          const titleProps = child.props as { children?: React.ReactNode };
-          // Reading a React element's props, not a DOM/testing-library node.
-          // eslint-disable-next-line testing-library/no-node-access
-          const titleChildren = titleProps.children;
-          document.title = React.Children.toArray(titleChildren)
-            .map(node => (typeof node === 'string' ? node : ''))
-            .join('');
-        }
-      });
+      if (title !== undefined) {
+        document.title = title;
+      }
     });
     return null;
   };
