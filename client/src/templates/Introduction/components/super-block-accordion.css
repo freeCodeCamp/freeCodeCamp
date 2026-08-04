@@ -35,6 +35,11 @@
   justify-content: space-between;
 }
 
+.super-block-accordion .chapter-button-right,
+.super-block-accordion .module-button-right {
+  flex-shrink: 0;
+}
+
 .super-block-accordion .chapter-header-wrapper {
   background-color: var(--primary-background);
 }

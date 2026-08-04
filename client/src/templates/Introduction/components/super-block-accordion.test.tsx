@@ -611,10 +611,10 @@ describe('SuperBlockAccordion', () => {
 
     // When expandAll=true, both chapters are open so their module main buttons are visible
     expect(
-      screen.getByRole('button', { name: /^mod-one/ })
+      screen.getByRole('button', { name: 'mod-one learn.steps-completed' })
     ).toBeInTheDocument();
     expect(
-      screen.getByRole('button', { name: /^mod-two/ })
+      screen.getByRole('button', { name: 'mod-two learn.steps-completed' })
     ).toBeInTheDocument();
   });
 
@@ -644,7 +644,7 @@ describe('SuperBlockAccordion', () => {
 
     // mod-one has a challenge — its main module button should render
     expect(
-      screen.getByRole('button', { name: /^mod-one/ })
+      screen.getByRole('button', { name: 'mod-one learn.steps-completed' })
     ).toBeInTheDocument();
 
     // mod-two has no challenges — its main module button should not render
