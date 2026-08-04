@@ -45,7 +45,7 @@ interface AllDailyChallengeFromDb {
   title: string;
 }
 
-interface DailyChallengeMap {
+export interface DailyChallengeMap {
   id: string;
   date: string;
   challengeNumber: number;
@@ -63,12 +63,12 @@ interface MonthInfo {
 }
 
 // Cap Feb to 28 days regardless of which "year" is displayed
-const getDaysInMonth = (year: number, monthIndex: number): number => {
+export const getDaysInMonth = (year: number, monthIndex: number): number => {
   const realDays = new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
   return monthIndex === 1 ? 28 : realDays;
 };
 
-const getMonthInfo = (
+export const getMonthInfo = (
   year: number,
   monthIndex: number,
   dailyChallengesMap: DailyChallengesMap,
