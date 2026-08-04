@@ -207,7 +207,7 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
+    // module-button-right is a plain div inside the main toggle button, not a separate button.
     const moduleRight = screen.getByTestId('module-button-right');
     const moduleSteps = within(moduleRight).getByText(
       /learn\.steps-completed/i
@@ -246,7 +246,7 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
+    // module-button-right is a plain div inside the main toggle button, not a separate button.
     const moduleRight = screen.getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
   });
@@ -281,7 +281,7 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    // The module-button-right is now a separate toggle button with the testid
+    // module-button-right is a plain div inside the main toggle button, not a separate button.
     const moduleRight = screen.getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
   });

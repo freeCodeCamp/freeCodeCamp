@@ -131,19 +131,32 @@ const Chapter = ({
 
   const toggleOpen = () => setOpen(o => !o);
 
-  const resetButton = showResetButton ? (
+  // Always render the same button markup so the row keeps a fixed-width slot for it:
+  // `chapter-button-main` uses `justify-content: space-between` and would otherwise grow to
+  // fill the gap on comingSoon/link chapters, shifting the chevron out of line with rows that
+  // do have a reset button. `visibility: hidden` reserves the layout box without making the
+  // placeholder hoverable, focusable, or visible to assistive tech.
+  const resetButton = (
     <button
-      className='block-reset-button'
-      onClick={handleResetClick}
-      aria-label={t('learn.reset-progress-aria-chapter', {
-        chapterLabel
-      })}
+      className={
+        showResetButton
+          ? 'block-reset-button'
+          : 'block-reset-button block-reset-button--placeholder'
+      }
+      onClick={showResetButton ? handleResetClick : undefined}
+      aria-label={
+        showResetButton
+          ? t('learn.reset-progress-aria-chapter', { chapterLabel })
+          : undefined
+      }
+      aria-hidden={!showResetButton}
+      tabIndex={showResetButton ? undefined : -1}
       type='button'
-      disabled={isResetDisabled}
+      disabled={!showResetButton || isResetDisabled}
     >
       <Reset />
     </button>
-  ) : null;
+  );
 
   const chapterButtonLeftContent = (
     <div className='chapter-button-left'>
@@ -264,17 +277,28 @@ const Module = ({
 
   const toggleOpen = () => setOpen(o => !o);
 
-  const resetButton = showResetButton ? (
+  // Same fixed-slot reasoning as the Chapter component above.
+  const resetButton = (
     <button
-      className='block-reset-button'
-      onClick={handleResetClick}
-      aria-label={t('learn.reset-progress-aria-module', { moduleLabel })}
+      className={
+        showResetButton
+          ? 'block-reset-button'
+          : 'block-reset-button block-reset-button--placeholder'
+      }
+      onClick={showResetButton ? handleResetClick : undefined}
+      aria-label={
+        showResetButton
+          ? t('learn.reset-progress-aria-module', { moduleLabel })
+          : undefined
+      }
+      aria-hidden={!showResetButton}
+      tabIndex={showResetButton ? undefined : -1}
       type='button'
-      disabled={isResetDisabled}
+      disabled={!showResetButton || isResetDisabled}
     >
       <Reset />
     </button>
-  ) : null;
+  );
 
   return (
     <li>

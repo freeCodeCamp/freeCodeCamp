@@ -86,6 +86,14 @@
   background-color: transparent;
 }
 
+/* Reserves the reset button's layout box on rows where it does not apply (comingSoon/link
+   chapters, comingSoon modules), so the main button's content does not shift when it grows to
+   fill the gap. `visibility: hidden` keeps the box without making it hoverable, focusable, or
+   visible to assistive tech — it wins over the opacity rules above regardless of hover state. */
+.block-reset-button--placeholder {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 767px) {
   .block-reset-button {
     display: none;
