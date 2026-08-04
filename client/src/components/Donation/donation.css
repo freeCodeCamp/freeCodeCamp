@@ -586,8 +586,10 @@ a.patreon-button:hover {
   margin-inline-start: 0.25em;
 }
 
-.faq-item h3 {
+.faq-item .faq-question-title {
+  color: var(--secondary-color);
   font-size: 1rem;
+  font-weight: 700;
   line-height: 1.5;
   margin: 0;
 }

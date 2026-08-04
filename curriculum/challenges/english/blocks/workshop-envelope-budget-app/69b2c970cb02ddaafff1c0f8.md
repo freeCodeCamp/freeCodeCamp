@@ -268,5 +268,5 @@ function cleanInputString(str) {
 }
 
 console.log(cleanInputString("+-99"));
---fcc-editable-region--
+--/fcc-editable-region--
 ```
