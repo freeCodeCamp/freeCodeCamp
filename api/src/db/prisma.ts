@@ -24,6 +24,9 @@ const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
     })
   );
 
+
+  // this is just for check
+
   await prisma.$connect().catch((err: unknown) => {
     Sentry.metrics.count('db.connect_failed', 1);
     server.log.error(err, 'Prisma connection failed');
