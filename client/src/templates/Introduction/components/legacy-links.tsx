@@ -6,7 +6,6 @@ import { isRelationalDbCert, isExamCert } from '../../../utils/is-a-cert';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import envData from '../../../../config/env.json';
-import { OnaNote } from '../../../components/growth-book/ona-note';
 
 const { clientLocale } = envData;
 
