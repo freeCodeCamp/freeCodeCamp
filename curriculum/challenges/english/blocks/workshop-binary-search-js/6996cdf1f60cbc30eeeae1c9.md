@@ -19,9 +19,6 @@ You should update the `low` variable to `mid + 1`.
 const explorer = await __helpers.Explorer(code);
 const { binarySearch } = explorer.allFunctions;
 const codeWithoutComments = __helpers.removeJSComments(binarySearch?.toString());
-// Match the following variations:
-// "else if (ANYTHING) {ANYTHING; low = mid + 1; ANYTHING}"
-// "else if (ANYTHING) {ANYTHING; low = 1 + mid; ANYTHING}"
 assert.match(
   codeWithoutComments,
   /else\s+if\s*\([^)]*\)\s*\{[\s\S]*?low\s*=\s*(?:mid\s*\+\s*1|1\s*\+\s*mid)[\s\S]*?\}/
