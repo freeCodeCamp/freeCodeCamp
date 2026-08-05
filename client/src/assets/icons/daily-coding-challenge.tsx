@@ -1,7 +1,7 @@
 import React from 'react';
 
 function DailyCodingChallengeIcon(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+  props: React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
     <svg

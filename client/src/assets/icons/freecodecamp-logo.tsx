@@ -1,8 +1,6 @@
 import React from 'react';
 
-function FreeCodeCampLogo(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function FreeCodeCampLogo(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       height={24}
