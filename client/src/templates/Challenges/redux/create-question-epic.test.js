@@ -60,6 +60,7 @@ describe('create-question-epic', () => {
     expect(windowMock.open.mock.calls[0][0]).toContain(
       'I%20need%20help%20with%20my%20HTML%20heading'
     );
+    expect(windowMock.open.mock.calls[0][0]).toContain('&tags=html-css&');
     expect(result).toEqual(closeModal('help'));
   });
 
