@@ -27,6 +27,7 @@ import {
   type BlockStructure
 } from './file-handler.js';
 import { SHOW_UPCOMING_CHANGES } from './config.js';
+import type { Parser } from './generate/parser-pool.js';
 const log = debug('fcc:build-curriculum');
 
 /**
@@ -42,7 +43,8 @@ const log = debug('fcc:build-curriculum');
 export const getBlockCreator = (
   lang: string,
   skipValidation?: boolean,
-  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string }
+  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string },
+  parser?: Parser
 ) => {
   const {
     blockContentDir,
@@ -62,7 +64,8 @@ export const getBlockCreator = (
       dictionariesDir,
       targetDictionariesDir
     ),
-    skipValidation: skipValidation ?? false
+    skipValidation: skipValidation ?? false,
+    parser
   });
 };
 
@@ -414,14 +417,18 @@ export async function parseCurriculumStructure(filter?: Filter) {
   };
 }
 
-export async function buildCurriculum(lang: string, filters?: Filter) {
+export async function buildCurriculum(
+  lang: string,
+  filters?: Filter,
+  parser?: Parser
+) {
   // Block validation assumes the entire block is being built, if that's not the
   // case, skip validation
   const skipBlockValidation = filters?.challengeId !== undefined;
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, skipBlockValidation)
+    getBlockCreator(lang, skipBlockValidation, undefined, parser)
   );
 
   const { fullSuperblockList, certifications } =
@@ -444,10 +451,13 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     return !isUndefined(superOrder);
   });
 
-  for (const superblock of liveSuperblocks) {
-    const processedSuperblock = await builder.processSuperblock(superblock);
-    fullCurriculum[superblock.name] = processedSuperblock;
-  }
+  const processedSuperblocks = await Promise.all(
+    liveSuperblocks.map(superblock => builder.processSuperblock(superblock))
+  );
+
+  liveSuperblocks.forEach((superblock, i) => {
+    fullCurriculum[superblock.name] = processedSuperblocks[i];
+  });
 
   for (const cert of certifications) {
     const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
