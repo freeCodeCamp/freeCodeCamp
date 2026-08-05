@@ -9,7 +9,6 @@
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
-  "packageManager": "pnpm@10.20.0",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",

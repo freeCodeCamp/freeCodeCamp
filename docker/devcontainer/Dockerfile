@@ -20,10 +20,10 @@ RUN curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | gpg --dearmor
     && rm -rf /var/lib/apt/lists/*
 
 # renovate: datasource=npm depName=pnpm
-RUN npm install -g pnpm@10.28.1
+RUN npm install -g pnpm@11.22.0
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
-ENV npm_config_store_dir=/home/node/.local/share/pnpm/store
+ENV pnpm_config_store_dir=/home/node/.local/share/pnpm/store
 
 # =============================================================================
 # BUILDER - Install dependencies and build to populate caches (disposable)
