@@ -370,7 +370,7 @@ function clearForm() {
 addEntryButton.addEventListener("click", addEntry);
 budgetForm.addEventListener("submit", calculateBudget);
 --fcc-editable-region--
-
+    
 --fcc-editable-region--
 ```
 
