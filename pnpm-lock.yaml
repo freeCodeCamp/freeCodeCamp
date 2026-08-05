@@ -384,6 +384,9 @@ importers:
       gatsby-transformer-remark:
         specifier: 6.16.0
         version: 6.16.0(gatsby@5.16.1(babel-eslint@10.1.0(eslint@9.39.4(jiti@2.6.1)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(type-fest@2.19.0)(typescript@5.9.3))
+      htmlparser2:
+        specifier: 10.1.0
+        version: 10.1.0
       i18next:
         specifier: 25.10.10
         version: 25.10.10(typescript@5.9.3)
