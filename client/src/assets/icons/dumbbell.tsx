@@ -1,7 +1,5 @@
 import React from 'react';
-function DumbbellIcon(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function DumbbellIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       aria-hidden='true'

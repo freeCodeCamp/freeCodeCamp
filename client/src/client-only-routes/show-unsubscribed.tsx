@@ -19,9 +19,9 @@ function ShowUnsubscribed({
   const { t } = useTranslation();
   return (
     <>
-      <Helmet>
-        <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
-      </Helmet>
+      <Helmet
+        title={`${t('metaTags:youre-unsubscribed')} | freeCodeCamp.org`}
+      />
       <Container>
         <main>
           <FullWidthRow>

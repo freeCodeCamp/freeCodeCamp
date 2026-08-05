@@ -10,11 +10,23 @@ vi.mock('react-redux', () => ({
   useSelector: () => ({})
 }));
 
+// react-helmet sets document.title imperatively rather than rendering a
+// <title> element into the tree, so this mock does the same.
+const { HelmetMock } = vi.hoisted(() => {
+  const HelmetMock = ({ title }: { title?: string }) => {
+    React.useEffect(() => {
+      if (title !== undefined) {
+        document.title = title;
+      }
+    });
+    return null;
+  };
+  return { HelmetMock };
+});
+
 vi.mock('react-helmet', () => ({
   __esModule: true,
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <div>{children}</div>
-  )
+  default: HelmetMock
 }));
 
 vi.mock('gatsby', () => ({
@@ -90,11 +102,6 @@ const translationMap: Record<string, unknown> = {
     title: 'A2 English for Developers',
     intro: ['Learn workplace English at the A2 level.'],
     note: 'This certification is currently in beta.'
-  },
-  'intro:front-end-development-libraries-v9': {
-    title: 'Front-End Development Libraries Certification',
-    intro: ['Learn the libraries developers use to build webpages.'],
-    note: ''
   },
   'intro:coding-interview-prep': {
     title: 'Coding Interview Prep',
@@ -445,9 +452,7 @@ describe('SuperBlockIntroductionPage', () => {
 
     render(<SuperBlockIntroductionPage {...props} />);
 
-    expect(
-      screen.getByText('Coding Interview Prep | freeCodeCamp.org')
-    ).toBeInTheDocument();
+    expect(document.title).toBe('Coding Interview Prep | freeCodeCamp.org');
     expect(
       await screen.findByText(
         "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
@@ -559,7 +564,7 @@ describe('SuperBlockIntroductionPage', () => {
 
     it('should render the unfinished-certification donation copy and Donate Now button for a non-donor on an unfinished certification', async () => {
       renderForSuperBlock({
-        superBlock: SuperBlocks.FrontEndDevLibsV9,
+        superBlock: SuperBlocks.FullStackDeveloperV9,
         isDonating: false
       });
 
