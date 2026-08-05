@@ -20,11 +20,7 @@ You should have a `console.log` that calls the `calculateQuotient` function with
 ```js
 const strippedCode = __helpers.removeWhiteSpace(__helpers.removeJSComments(code));
 const expectedStatement = "console.log(calculateQuotient(3,0))";
-assert.include(
-  strippedCode,
-  expectedStatement,
-  `Expected ${expectedStatement} to be present.`
-);
+assert.include(strippedCode, expectedStatement);
 ```
 
 # --seed--
