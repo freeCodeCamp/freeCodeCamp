@@ -11,6 +11,7 @@ const unlockedProfile = {
   showAbout: true,
   showCerts: true,
   showDonation: true,
+  showEducation: true,
   showHeatMap: true,
   showLocation: true,
   showName: true,

@@ -132,6 +132,7 @@ export const normalizeProfileUI = (
         showAbout: false,
         showCerts: false,
         showDonation: false,
+        showEducation: false,
         showHeatMap: false,
         showLocation: false,
         showName: false,
