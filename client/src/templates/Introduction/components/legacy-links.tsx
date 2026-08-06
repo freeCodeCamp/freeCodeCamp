@@ -13,7 +13,7 @@ interface LegacyLinksProps {
   superBlock: SuperBlocks;
 }
 
-function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
+function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element | null {
   const { t } = useTranslation();
 
   if (isRelationalDbCert(superBlock)) {
@@ -33,9 +33,9 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         <p>{t('intro:misc-text.exam-english-only')}</p>
       </Callout>
     );
-  } else {
-    return <OnaNote superBlock={superBlock} />;
   }
+
+  return null;
 }
 
 export default LegacyLinks;
