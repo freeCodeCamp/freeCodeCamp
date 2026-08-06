@@ -63,7 +63,6 @@ const mapDispatchToProps = {
 interface ShowQuizProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
