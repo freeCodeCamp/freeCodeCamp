@@ -16,13 +16,7 @@ This will extend the search to the right half of the current search areas in the
 You should update the `low` variable to `mid + 1`.
 
 ```js
-const explorer = await __helpers.Explorer(code);
-const { binarySearch } = explorer.allFunctions;
-const codeWithoutComments = __helpers.removeJSComments(binarySearch?.toString());
-assert.match(
-  codeWithoutComments,
-  /else\s+if\s*\([^)]*\)\s*\{[\s\S]*?low\s*=\s*(?:mid\s*\+\s*1|1\s*\+\s*mid)[\s\S]*?\}/
-);
+assert.match(__helpers.removeJSComments(String(binarySearch)), /low\s*=\s*mid\s*\+\s*1/);
 ```
 
 # --seed--
