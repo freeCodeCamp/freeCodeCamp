@@ -1,9 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function Initial(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function Initial(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   const { t } = useTranslation();
 
   return (

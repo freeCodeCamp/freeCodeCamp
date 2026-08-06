@@ -1,8 +1,6 @@
 import React from 'react';
 
-function CSharpLogo(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function CSharpLogo(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       aria-hidden='true'

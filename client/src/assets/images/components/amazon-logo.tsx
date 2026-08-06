@@ -1,8 +1,6 @@
 import React from 'react';
 
-const AmazonLogo = (
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element => (
+const AmazonLogo = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
     id='amazon-logo'
     viewBox='93.907 250 1350 472'
