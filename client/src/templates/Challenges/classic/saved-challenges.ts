@@ -28,3 +28,16 @@ export function mergeChallengeFiles(
       sortedSavedChallengeFiles[index].editableRegionBoundaries
   }));
 }
+
+export function hasUnsavedChanges(
+  challengeFiles: ChallengeFile[] | null | undefined,
+  lastSavedFiles: ChallengeFile[]
+): boolean {
+  if (!challengeFiles) return false;
+  return challengeFiles.some(file => {
+    const savedFile = lastSavedFiles.find(
+      saved => saved.fileKey === file.fileKey
+    );
+    return savedFile?.contents !== file.contents;
+  });
+}
