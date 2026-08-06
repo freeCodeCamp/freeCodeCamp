@@ -81,9 +81,7 @@ function ShowUpdateEmail({
 
   return (
     <>
-      <Helmet>
-        <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
-      </Helmet>
+      <Helmet title={`${t('misc.update-email-1')} | freeCodeCamp.org`} />
       <Container>
         <Spacer size='m' />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>

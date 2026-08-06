@@ -1,8 +1,6 @@
 import React from 'react';
 
-function CollegeAlgebra(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function CollegeAlgebra(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       aria-hidden='true'

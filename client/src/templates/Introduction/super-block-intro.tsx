@@ -281,9 +281,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   return (
     <>
-      <Helmet>
-        <title>{i18nTitle} | freeCodeCamp.org</title>
-      </Helmet>
+      <Helmet title={`${i18nTitle} | freeCodeCamp.org`} />
       <Container>
         <main>
           <Row className='super-block-intro-page'>
