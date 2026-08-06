@@ -42,7 +42,10 @@ assert.match(cleanInputString.toString(), /str\.replace\(\s*regex\s*,\s*("|')\1\
 Your `cleanInputString` function should directly return the result of your `replace` method.
 
 ```js
-assert.match(cleanInputString.toString(), /return\s+str\.replace\(\s*regex\s*,\s*("|')\1\s*\)/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.allFunctions.cleanInputString?.hasReturn("str.replace(regex, '')")
+);
 ```
 
 # --seed--

@@ -237,7 +237,7 @@ function ShowClassic({
   const [resizing, setResizing] = useState(false);
   const [usingKeyboardInTablist, setUsingKeyboardInTablist] = useState(false);
   const containerRef = useRef<HTMLElement>(null);
-  const editorRef = useRef<editor.IStandaloneCodeEditor>();
+  const editorRef = useRef<editor.IStandaloneCodeEditor>(undefined);
   const instructionsPanelRef = useRef<HTMLDivElement>(null);
   const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({

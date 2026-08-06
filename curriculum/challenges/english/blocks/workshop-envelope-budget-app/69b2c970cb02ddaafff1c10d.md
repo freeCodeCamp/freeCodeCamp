@@ -26,7 +26,9 @@ assert.match(code, /HTMLString\s*=\s*`\n\s*<label\s+for\s*=\s*"\$\{category\}-\$
 Your `input` element should have a `type` attribute set to `text`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+.*/)[0];
 assert.match(inputAttributes, /type\s*=\s*"text"/);
 ```
@@ -34,7 +36,9 @@ assert.match(inputAttributes, /type\s*=\s*"text"/);
 Your `input` element should have a `placeholder` attribute set to `Name`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+.*/)[0];
 assert.match(inputAttributes, /placeholder\s*=\s*"Name"/);
 ```
@@ -42,7 +46,9 @@ assert.match(inputAttributes, /placeholder\s*=\s*"Name"/);
 Your `input` element should have an `id` attribute set to `${category}-${entryNumber}-name`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+.*/)[0];
 assert.match(inputAttributes, /id\s*=\s*"\${category}-\${entryNumber}-name"/);
 ```

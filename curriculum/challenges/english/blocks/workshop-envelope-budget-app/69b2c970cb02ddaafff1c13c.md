@@ -26,8 +26,9 @@ assert.match(clearForm.toString(), /incomeInput\.value\s*=\s*('|"|`)\1/);
 You should modify the `incomeInput` after your `for` loop.
 
 ```js
-const clearForm = code.split("function clearForm()")[1];
-const afterLoop = clearForm.split("}")[1];
+const explorer = await __helpers.Explorer(code);
+const clearFormBody = explorer.functions.clearForm.toString();
+const afterLoop = clearFormBody.split("}")[1];
 assert.match(afterLoop, /incomeInput\.value/);
 ```
 
@@ -46,8 +47,9 @@ assert.match(clearForm.toString(), /rentInput\.value\s*=\s*('|"|`)\1/);
 You should modify the `rentInput` after your `for` loop.
 
 ```js
-const clearForm = code.split("function clearForm()")[1];
-const afterLoop = clearForm.split("}")[1];
+const explorer = await __helpers.Explorer(code);
+const clearFormBody = explorer.functions.clearForm.toString();
+const afterLoop = clearFormBody.split("}")[1];
 assert.match(afterLoop, /rentInput\.value/);
 ```
 

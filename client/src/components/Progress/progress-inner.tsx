@@ -14,7 +14,7 @@ const easing = BezierEasing(0.2, 0.5, 0.4, 1);
 const intervalLength = 10;
 let percent = 0;
 
-function useIsInViewport(ref: React.RefObject<HTMLDivElement>) {
+function useIsInViewport(ref: React.RefObject<HTMLDivElement | null>) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   const observer = useMemo(

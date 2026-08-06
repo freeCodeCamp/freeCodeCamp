@@ -22,7 +22,7 @@ type UniversalNavProps = {
   displayMenu: boolean;
   showMenu: () => void;
   hideMenu: () => void;
-  menuButtonRef: React.RefObject<HTMLButtonElement>;
+  menuButtonRef: React.RefObject<HTMLButtonElement | null>;
   user: {
     isDonating: boolean;
     username: string;
@@ -30,7 +30,7 @@ type UniversalNavProps = {
     yearsTopContributor: string[];
   };
   fetchState: { pending: boolean };
-  searchBarRef: React.RefObject<HTMLDivElement>;
+  searchBarRef: React.RefObject<HTMLDivElement | null>;
   pathname: string;
 };
 const UniversalNav = ({
