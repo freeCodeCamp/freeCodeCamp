@@ -281,6 +281,7 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
@@ -288,7 +289,7 @@ function addEntry() {
   <input 
     type="number" 
     min="0" 
-    id="${category}-${entryNumber}-amount" placeholder="Amount" 
+    id="${category}-${entryNumber}-amount" placeholder="Amount"
     />`;
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 }
@@ -316,7 +317,7 @@ function calculateBudget(e) {
 
   let statusText = "";
   let statusClass = "";
-  
+
   if (netRemaining < 0) {
     statusText = `Over Budget by $${Math.abs(netRemaining)}`;
     statusClass = "deficit";
@@ -333,7 +334,6 @@ function calculateBudget(e) {
   `;
 
   output.classList.remove("hide");
-
 }
 
 function getTotalFromInputs(list) {
@@ -358,7 +358,6 @@ function clearForm() {
 --fcc-editable-region--
 
 --fcc-editable-region--
-
 }
 
 addEntryButton.addEventListener("click", addEntry);

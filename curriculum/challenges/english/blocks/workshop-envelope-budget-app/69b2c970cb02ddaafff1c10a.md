@@ -273,9 +273,7 @@ function isInvalidInput(str) {
 
 function addEntry() {
   const category = entryDropdown.value;
-  const targetInputContainer = document.querySelector(
-    `#${category} .input-container`
-  );
+  const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
   --fcc-editable-region--
 

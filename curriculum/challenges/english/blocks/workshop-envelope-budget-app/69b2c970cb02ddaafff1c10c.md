@@ -274,6 +274,7 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+
   const HTMLString = `
   --fcc-editable-region--
   <label>Expense ${entryNumber} Name</label>`;
