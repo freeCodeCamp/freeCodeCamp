@@ -321,6 +321,24 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
+// Superblocks excluded from the curriculum build for a given language
+// (e.g. a course teaching Spanish is not part of the Spanish curriculum).
+// The clients render whatever the curriculum contains, so excluded
+// superblocks have no pages, no map entry, and their certifications are not
+// offered. Unlike notAuditedSuperBlocks, entries here are permanent policy,
+// not pending translations.
+export const hiddenSuperBlocks: Partial<Record<Languages, SuperBlocks[]>> = {
+  [Languages.Espanol]: [SuperBlocks.A1Spanish, SuperBlocks.A2Spanish],
+  [Languages.Chinese]: [SuperBlocks.A1Chinese, SuperBlocks.A2Chinese],
+  [Languages.ChineseTraditional]: [SuperBlocks.A1Chinese, SuperBlocks.A2Chinese]
+};
+
+Object.freeze(hiddenSuperBlocks);
+
+export function getHiddenSuperBlocks(language: string): SuperBlocks[] {
+  return hiddenSuperBlocks[language as Languages] ?? [];
+}
+
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackOpen,
   SuperBlocks.A1Spanish,

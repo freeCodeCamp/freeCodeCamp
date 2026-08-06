@@ -2,6 +2,8 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { describe, it, expect, vi } from 'vitest';
+import { useStaticQuery } from 'gatsby';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 vi.mock('../../utils/get-words');
 
@@ -13,6 +15,14 @@ import { createFlashMessage } from '../Flash/redux';
 import CertificationSettings from './certification';
 
 vi.mock('../../analytics');
+
+// Certifications are only offered when their superblock is in the curriculum;
+// make all superblocks available.
+vi.mocked(useStaticQuery).mockReturnValue({
+  allSuperBlockStructure: {
+    nodes: Object.values(SuperBlocks).map(superBlock => ({ superBlock }))
+  }
+});
 
 function renderWithRedux(ui: JSX.Element) {
   return render(<Provider store={createStore()}>{ui}</Provider>);

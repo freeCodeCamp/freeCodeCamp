@@ -69,13 +69,25 @@ exports.replaceChallengeNodes = () => {
   };
 };
 
+let curriculumPromise;
+function loadGeneratedCurriculum() {
+  curriculumPromise ??= readFile(
+    path.resolve(CURRICULUM_DIR, 'generated', 'curriculum.json'),
+    'utf-8'
+  ).then(JSON.parse);
+  return curriculumPromise;
+}
+
+// The superblocks this build's curriculum contains, including ones whose
+// challenges are all coming soon. Structure nodes (and hence superblock
+// pages) are created for exactly these.
+exports.getCurriculumSuperBlocks = async function getCurriculumSuperBlocks() {
+  const curriculum = await loadGeneratedCurriculum();
+  return Object.keys(curriculum).filter(key => key !== 'certifications');
+};
+
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = JSON.parse(
-    await readFile(
-      path.resolve(CURRICULUM_DIR, 'generated', 'curriculum.json'),
-      'utf-8'
-    )
-  );
+  const curriculum = await loadGeneratedCurriculum();
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)
