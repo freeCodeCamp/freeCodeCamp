@@ -60,7 +60,7 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "eslint": "^9.39.1",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "unist-util-select": "3.0.4",
     "vitest": "^4.0.15"
   }

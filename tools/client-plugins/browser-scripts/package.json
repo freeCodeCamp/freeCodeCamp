@@ -46,7 +46,7 @@
     "eslint": "^9.39.1",
     "process": "0.11.10",
     "tsx": "^4.21.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "util": "0.12.5",
     "webpack": "5.106.2",
     "webpack-cli": "4.10.0"

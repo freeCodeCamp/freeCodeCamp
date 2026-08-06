@@ -16,7 +16,7 @@
     "eslint": "^9.39.1",
     "mongodb": "6.21.0",
     "tsx": "4.21.0",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   },
   "type": "module"
 }

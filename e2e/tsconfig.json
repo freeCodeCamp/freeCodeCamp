@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5", "dom", "ES2017"],
+    "target": "es2017",
+    "lib": ["ES2017", "dom"],
     "module": "node16",
     "moduleResolution": "node16"
   },

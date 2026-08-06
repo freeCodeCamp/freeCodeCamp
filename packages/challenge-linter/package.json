@@ -37,7 +37,7 @@
     "eslint": "9.39.4",
     "markdownlint": "0.40.0",
     "prismjs": "1.30.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "3.2.4",
     "yargs": "17.7.2"
   },

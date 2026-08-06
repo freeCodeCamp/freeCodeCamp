@@ -4,6 +4,7 @@
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
+    "rootDir": "./src",
     "module": "es2020",
     "moduleResolution": "bundler",
     "outDir": "dist",

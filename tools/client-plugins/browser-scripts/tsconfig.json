@@ -10,6 +10,8 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "noEmit": true,
+    // TypeScript 6 no longer picks these up automatically under pnpm's layout.
+    "types": ["node"],
     "paths": {
       "pyodide/ffi": ["./node_modules/pyodide/ffi.d.ts"] // Remove after updating pyodide (later versions correctly export ffi)
     }
