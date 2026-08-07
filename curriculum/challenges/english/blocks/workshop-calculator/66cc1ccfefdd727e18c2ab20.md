@@ -13,12 +13,6 @@ Add a `console.log` that calls the `calculateQuotient` function with the argumen
 
 Make sure to take a close look at the output of this call.
 
-# --before-each--
-
-```js
-const spy = __helpers.spyOn(console, 'log');
-```
-
 # --hints--
 
 You should have a `console.log` that calls the `calculateQuotient` function with the arguments `3` and `0`.
