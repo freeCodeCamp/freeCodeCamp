@@ -1,7 +1,5 @@
 import React from 'react';
-function FreeIcon(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function FreeIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
