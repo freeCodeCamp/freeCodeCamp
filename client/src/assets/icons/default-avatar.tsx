@@ -1,9 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-function DefaultAvatar(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function DefaultAvatar(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   const { t } = useTranslation();
 
   return (

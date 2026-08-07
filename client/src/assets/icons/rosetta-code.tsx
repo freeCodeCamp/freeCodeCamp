@@ -1,8 +1,6 @@
 import React from 'react';
 
-function RosettaCodeIcon(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function RosettaCodeIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       aria-hidden='true'

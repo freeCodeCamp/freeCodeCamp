@@ -25,9 +25,7 @@ const UnconnectedTestWrapper = ({
   user,
   userFetchState
 }: TestWrapperProps) => (
-  <GrowthBookWrapper
-    {...({ user, userFetchState } as unknown as Record<string, unknown>)}
-  >
+  <GrowthBookWrapper {...{ user, userFetchState }}>
     {children}
   </GrowthBookWrapper>
 );

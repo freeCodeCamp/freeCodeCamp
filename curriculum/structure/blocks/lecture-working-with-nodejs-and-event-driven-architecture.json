@@ -6,15 +6,15 @@
   "challengeOrder": [
     {
       "id": "68ff6d2f232c60f0fa68ef86",
-      "title": "What is Node and What are Some Differences Between the Browser and Node Runtime Environment?"
+      "title": "What Is Node and What Are Some Differences Between the Browser and Node Runtime Environment?"
     },
     {
       "id": "68ff6d372ad364f285f0522e",
-      "title": "What are the Advantages and Disadvantages to Using Node on the back-end?"
+      "title": "What Are the Advantages and Disadvantages of Using Node on the Back-End?"
     },
     {
       "id": "68ff6d39d7ed9ef36ff281f3",
-      "title": "How can you Install Node on your Computer?"
+      "title": "How Can You Install Node on Your Computer?"
     }
   ],
   "blockLabel": "lecture"
