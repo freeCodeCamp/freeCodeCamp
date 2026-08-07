@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 interface MenuButtonProps {
   className?: string;
   displayMenu?: boolean;
-  innerRef?: RefObject<HTMLButtonElement>;
+  innerRef?: RefObject<HTMLButtonElement | null>;
   showMenu: () => void;
   hideMenu: () => void;
 }
