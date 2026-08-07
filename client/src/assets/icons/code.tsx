@@ -1,8 +1,6 @@
 import React from 'react';
 
-function Code(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function Code(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

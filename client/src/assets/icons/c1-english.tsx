@@ -1,8 +1,6 @@
 import React from 'react';
 
-function C1EnglishIcon(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function C1EnglishIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       viewBox='0 0 175 170'
