@@ -32,3 +32,21 @@ packageExtensions:
 
 hoistPattern:
   - '!*eslint*'
+allowBuilds:
+  '@parcel/watcher': false
+  '@prisma/client': true
+  '@prisma/engines': true
+  '@sentry-internal/node-cpu-profiler': false
+  core-js: false
+  core-js-pure: false
+  es5-ext: false
+  esbuild: true
+  gatsby: true
+  gatsby-cli: true
+  lmdb: true
+  msgpackr-extract: true
+  msw: true
+  prisma: true
+  puppeteer: true
+  sharp: false
+  unrs-resolver: true
