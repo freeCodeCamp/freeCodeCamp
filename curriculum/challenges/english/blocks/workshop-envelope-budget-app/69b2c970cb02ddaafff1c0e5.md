@@ -56,7 +56,6 @@ assert.exists(document.querySelector('form > div > span'));
     <main>
       <h1>Envelope Budgeter</h1>
       <div class="container">
-
         <form id="budget-form">
           <label for="income">Total Monthly Income</label>
           <input 
@@ -87,7 +86,7 @@ assert.exists(document.querySelector('form > div > span'));
             <legend>Entertainment</legend>
             <div class="input-container"></div>
           </fieldset>
-          
+
           --fcc-editable-region--
           
           --fcc-editable-region--

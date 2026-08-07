@@ -699,7 +699,7 @@ function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
 
   for (const container of inputContainers) {
-      container.innerHTML = '';
+    container.innerHTML = '';
   }
 
   incomeInput.value = '';
