@@ -6,6 +6,7 @@ import userEvent from '@testing-library/user-event';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { createStore } from '../../../redux/create-store';
+import type { Question } from '../../../redux/prop-types';
 import MultipleChoiceQuestions from './multiple-choice-questions';
 
 vi.mock('../../../utils/get-words');
@@ -57,10 +58,15 @@ const questionsWithoutAudio = Array.from({ length: 3 }, (_, questionIndex) => ({
 
 function renderQuestions({
   questions = questionsWithAudio,
-  selectedOptions = questions.map(() => null),
-  submittedMcqAnswers = questions.map(() => null),
+  selectedOptions,
+  submittedMcqAnswers,
   showFeedback = false
-}: Partial<React.ComponentProps<typeof MultipleChoiceQuestions>> = {}) {
+}: {
+  questions?: Question[];
+  selectedOptions?: (number | null)[];
+  submittedMcqAnswers?: (number | null)[];
+  showFeedback?: boolean;
+} = {}) {
   const store = createStore();
   const handleOptionChange = vi.fn();
 
@@ -68,9 +74,9 @@ function renderQuestions({
     <Provider store={store}>
       <MultipleChoiceQuestions
         questions={questions}
-        selectedOptions={selectedOptions}
+        selectedOptions={selectedOptions ?? questions.map(() => null)}
         handleOptionChange={handleOptionChange}
-        submittedMcqAnswers={submittedMcqAnswers}
+        submittedMcqAnswers={submittedMcqAnswers ?? questions.map(() => null)}
         showFeedback={showFeedback}
         superBlock={SuperBlocks.B1English}
       />
