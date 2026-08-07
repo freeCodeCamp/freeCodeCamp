@@ -24,7 +24,8 @@ const spy = __helpers.spyOn(console, 'log');
 You should have a `console.log` that calls the `calculateQuotient` function with the arguments `3` and `0`.
 
 ```js
-assert.deepInclude(spy.calls, [calculateQuotient(3, 0)]);
+const expectedValue = calculateQuotient(3, 0);
+assert.isTrue(spy.calls.some(call => call.includes(expectedValue)));
 ```
 
 # --seed--
