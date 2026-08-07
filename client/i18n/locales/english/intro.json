@@ -4943,6 +4943,12 @@
           "In this lab you will build a function to manage a record collection."
         ]
       },
+      "workshop-artifact-provenance-auditor": {
+        "title": "Build an Artifact Provenance Auditor",
+        "intro": [
+          "In this workshop, you will build an artifact provenance auditor to look up, tag, move, and summarize museum artifacts."
+        ]
+      },
       "review-javascript-objects": {
         "title": "JavaScript Objects Review",
         "intro": [
