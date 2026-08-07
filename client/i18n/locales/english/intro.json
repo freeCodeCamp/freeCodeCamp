@@ -6287,12 +6287,6 @@
           "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
         ]
       },
-      "lab-photography-exhibit": {
-        "title": "Design a Photography Exhibit",
-        "intro": [
-          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
-        ]
-      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -6304,6 +6298,12 @@
         "title": "CSS Libraries and Frameworks Quiz",
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
+        ]
+      },
+      "lab-photography-exhibit": {
+        "title": "Design a Photography Exhibit",
+        "intro": [
+          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -6372,18 +6372,6 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
-      "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
-        "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
-        ]
-      },
-      "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
-        "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
-        ]
-      },
       "workshop-build-a-football-player-card-builder": {
         "title": "Build a Football Player Card Builder",
         "intro": [
@@ -6400,6 +6388,18 @@
       "quiz-typescript": {
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7284,7 +7284,7 @@
     },
     "blocks": {
       "lecture-working-with-nodejs-and-event-driven-architecture": {
-        "title": "Working with NodeJS and event driven architecture",
+        "title": "Working with Node.js and Event-Driven Architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
