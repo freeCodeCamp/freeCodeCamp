@@ -6372,18 +6372,6 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
-      "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
-        "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
-        ]
-      },
-      "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
-        "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
-        ]
-      },
       "workshop-build-a-football-player-card-builder": {
         "title": "Build a Football Player Card Builder",
         "intro": [
@@ -6400,6 +6388,18 @@
       "quiz-typescript": {
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
