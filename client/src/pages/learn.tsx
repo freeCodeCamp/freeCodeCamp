@@ -29,6 +29,7 @@ type MaybeUser = {
   username: string;
   completedChallengeCount: number;
   isDonating: boolean;
+  resumeUrl?: string;
 } | null;
 
 const mapStateToProps = createSelector(
@@ -60,7 +61,12 @@ interface LearnPageProps {
   };
 }
 
-const EMPTY_USER = { name: '', completedChallengeCount: 0, isDonating: false };
+const EMPTY_USER = {
+  name: '',
+  completedChallengeCount: 0,
+  isDonating: false,
+  resumeUrl: undefined
+};
 
 function LearnPage({
   isSignedIn,
@@ -68,7 +74,8 @@ function LearnPage({
   user,
   data: { challengeNode }
 }: LearnPageProps) {
-  const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
+  const { name, completedChallengeCount, isDonating, resumeUrl } =
+    user ?? EMPTY_USER;
 
   const { t } = useTranslation();
   useClaimableCertsNotification();
@@ -96,6 +103,7 @@ function LearnPage({
               slug={slug}
               onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
+              resumeUrl={resumeUrl}
             />
             <Map />
             <Spacer size='l' />

@@ -384,6 +384,17 @@ export function postSubmitSurvey(body: {
   return post('/user/submit-survey', body);
 }
 
+export function postActivity(body: {
+  eventId: string;
+  eventType: 'challenge_submit';
+  challengeId: string;
+  url: string;
+  occurredAt: string;
+  timezone: string;
+}): Promise<ResponseWithData<void>> {
+  return post('/activity', body);
+}
+
 /** PUT **/
 
 interface MyAbout {

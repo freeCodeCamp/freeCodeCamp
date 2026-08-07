@@ -15,6 +15,7 @@ import { Ajv } from 'ajv';
 import addFormats from 'ajv-formats';
 
 import prismaPlugin from './db/prisma.js';
+import clickhousePlugin from './db/clickhouse.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
 import { createMailProvider } from './plugins/mail-providers/nodemailer.js';
@@ -166,6 +167,7 @@ export const build = async (
   void fastify.register(auth);
   void fastify.register(notFound);
   void fastify.register(prismaPlugin);
+  void fastify.register(clickhousePlugin);
   void fastify.register(bouncer);
   await fastify.register(serviceBearerAuth);
 
@@ -187,6 +189,7 @@ export const build = async (
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
       await fastify.register(protectedRoutes.settingRoutes);
       await fastify.register(protectedRoutes.userRoutes);
+      await fastify.register(protectedRoutes.activityRoutes);
     });
 
     // Routes that redirect if access is denied:

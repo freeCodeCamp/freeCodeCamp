@@ -39,23 +39,41 @@ describe('<Intro />', () => {
   });
 
   it('has a blockquote when loggedIn', () => {
-    // Provide a minimal preloaded state so connected components expecting a
-    // sessionUser (e.g. EmailSignUpAlert) do not receive null.
-    const preloadedState = {
-      app: {
-        user: {
-          sessionUser: {
-            completedChallenges: [{}],
-            sendQuincyEmail: null
-          }
-        }
-      }
-    };
-    renderWithRedux(<Intro {...loggedInProps} />, preloadedState);
+    renderWithRedux(<Intro {...loggedInProps} />, signedInState);
     expect(screen.getByTestId('quote-block')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
+
+  it('links to the latest activity when one is available', () => {
+    renderWithRedux(
+      <Intro {...loggedInProps} resumeUrl='/learn/resume-this-challenge' />,
+      signedInState
+    );
+
+    expect(
+      screen.getByRole('link', { name: 'buttons.current-challenge' })
+    ).toHaveAttribute('href', '/learn/resume-this-challenge');
+  });
+
+  it('does not show a resume link without an activity URL', () => {
+    renderWithRedux(<Intro {...loggedInProps} />, signedInState);
+
+    expect(
+      screen.queryByRole('link', { name: 'buttons.current-challenge' })
+    ).not.toBeInTheDocument();
+  });
 });
+
+const signedInState = {
+  app: {
+    user: {
+      sessionUser: {
+        completedChallenges: [{}],
+        sendQuincyEmail: null
+      }
+    }
+  }
+};
 
 const loggedInProps = {
   complete: true,
