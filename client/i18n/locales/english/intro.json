@@ -7284,7 +7284,7 @@
     },
     "blocks": {
       "lecture-working-with-nodejs-and-event-driven-architecture": {
-        "title": "Working with NodeJS and event driven architecture",
+        "title": "Working with Node.js and Event-Driven Architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
