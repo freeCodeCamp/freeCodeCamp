@@ -29,7 +29,7 @@
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-testing-library": "7.16.2",
     "eslint-plugin-turbo": "^2.8.3",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "typescript-eslint": "^8.47.0"
   }
 }

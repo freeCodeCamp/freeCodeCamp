@@ -21,7 +21,7 @@ vi.mock('../utils/env.js', async importOriginal => {
   };
 });
 
-import '../instrument';
+import '../instrument.js';
 import errorHandling, { isExpectedClientError } from './error-handling.js';
 import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 

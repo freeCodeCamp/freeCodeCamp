@@ -3,7 +3,7 @@
     "lib": ["WebWorker", "DOM", "DOM.Iterable"],
     "target": "es2020",
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "allowJs": true,
     "jsx": "react",
     "strict": true,

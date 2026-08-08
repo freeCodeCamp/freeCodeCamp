@@ -14,6 +14,6 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
     "eslint": "^9.39.1",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   }
 }
