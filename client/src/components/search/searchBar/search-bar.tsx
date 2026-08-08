@@ -141,8 +141,9 @@ export function SearchBar({
       const hoveredIndex = targetText ? hitsTitles.indexOf(targetText) : -1;
 
       setIndex(hoveredIndex);
+    } else {
+      setIndex(-1);
     }
-    setIndex(-1);
   };
 
   const handleMouseLeave = () => {
