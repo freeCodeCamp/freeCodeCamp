@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 
@@ -39,17 +39,18 @@ ${t('learn.exam.percent-correct', { n: percentCorrect })}
 ${t('learn.exam.time', { t: formatSecondsToTime(examTimeInSeconds) })}
 `;
 
-  const blob = new Blob([downloadContent], {
-    type: 'text/plain'
-  });
-  const downloadURL = URL.createObjectURL(blob);
+  const downloadURL = useMemo(() => {
+    const blob = new Blob([downloadContent], {
+      type: 'text/plain'
+    });
+    return URL.createObjectURL(blob);
+  }, [downloadContent]);
 
   useEffect(() => {
     return () => {
       URL.revokeObjectURL(downloadURL);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [downloadURL]);
 
   const examResultsMessage = passed
     ? t('learn.exam.passed-message')
