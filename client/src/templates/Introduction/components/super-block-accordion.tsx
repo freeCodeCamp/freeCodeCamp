@@ -310,6 +310,14 @@ const Module = ({
               <CheckMark isCompleted={isComplete} />
             </span>
             {moduleLabel}
+            {!comingSoon && !!totalSteps && (
+              <span className='sr-only'>
+                {`, ${t('learn.steps-completed', {
+                  totalSteps,
+                  completedSteps
+                })}`}
+              </span>
+            )}
           </div>
         </button>
         {resetButton}
