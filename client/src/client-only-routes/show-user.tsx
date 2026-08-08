@@ -94,9 +94,7 @@ export function ShowUser({
 
   return (
     <>
-      <Helmet>
-        <title>{t('report.portfolio')} | freeCodeCamp.org</title>
-      </Helmet>
+      <Helmet title={`${t('report.portfolio')} | freeCodeCamp.org`} />
       <Spacer size='l' />
       <Row className='text-center overflow-fix'>
         <Col sm={8} smOffset={2} xs={12}>
