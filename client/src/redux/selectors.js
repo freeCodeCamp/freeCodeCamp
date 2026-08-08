@@ -156,14 +156,13 @@ export const completionStateSelector = createSelector(
             ({ block: blockName }) => blockName === block
           );
 
-          const completedBlockChallenges = blockChallenges.every(({ id }) =>
-            completedChallengesIds.includes(id)
-          );
-
           return {
             name: block,
             isCompleted:
-              completedBlockChallenges.length === blockChallenges.length
+              blockChallenges.length > 0 &&
+              blockChallenges.every(({ id }) =>
+                completedChallengesIds.includes(id)
+              )
           };
         });
 
