@@ -4924,6 +4924,13 @@
           "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
         ]
       },
+      "lab-device-loan-ledger": {
+        "title": "Build a Device Loan Ledger",
+        "intro": [
+          "In this lab, you will build a device loan ledger to manage IT hardware provisioned by your company's Service Desk.",
+          "You will practice working with nested objects and JSON by implementing functions to check devices in and out, track overdue loans, and convert between JSON strings and JavaScript objects."
+        ]
+      },
       "workshop-recipe-tracker": {
         "title": "Build a Recipe Tracker",
         "intro": [
