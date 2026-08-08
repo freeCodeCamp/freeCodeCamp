@@ -258,30 +258,30 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
         throw err;
       }
     } catch (err) {
-      const { actual, expected, type } = err;
-
-      newTest.message = text
-        .replace('--fcc-expected--', expected)
-        .replace('--fcc-actual--', actual);
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
-        newTest.message = `${newTest.message} (${newTest.err})`;
+        newTest.message = `${text} (${newTest.err})`;
       } else {
-        const { message, stack } = err;
+        const { actual, expected, type, message, stack } = err;
+
+        newTest.message = text
+          .replace('--fcc-expected--', expected)
+          .replace('--fcc-actual--', actual);
+
         newTest.err = message + '\n' + stack;
         newTest.stack = stack;
-      }
 
-      if (
-        type === 'IndentationError' ||
-        type === 'SyntaxError' ||
-        type === 'NameError'
-      ) {
-        const msgKey =
-          type === 'IndentationError'
-            ? 'learn.indentation-error'
-            : 'learn.syntax-error';
-        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
+        if (
+          type === 'IndentationError' ||
+          type === 'SyntaxError' ||
+          type === 'NameError'
+        ) {
+          const msgKey =
+            type === 'IndentationError'
+              ? 'learn.indentation-error'
+              : 'learn.syntax-error';
+          newTest.message = `<p>${i18next.t(msgKey)}</p>`;
+        }
       }
 
       const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
