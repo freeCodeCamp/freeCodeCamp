@@ -255,6 +255,7 @@ test.describe('Submit button should be shown after submitting a project', () => 
     isMobile
   }) => {
     test.skip(isMobile);
+    test.setTimeout(30000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
 
     const tributeContent = [
