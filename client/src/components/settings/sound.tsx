@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 
@@ -22,8 +22,8 @@ export default function SoundSettings({
   );
   const [mayPlay, setMayPlay] = useState(true);
 
-  function handleVolumeChange(event: ChangeEvent<HTMLInputElement>) {
-    const inputValue = Number(event.target.value);
+  function handleVolumeChange(event: React.InputEvent<HTMLInputElement>) {
+    const inputValue = Number(event.currentTarget.value);
 
     store.set('soundVolume', inputValue);
 

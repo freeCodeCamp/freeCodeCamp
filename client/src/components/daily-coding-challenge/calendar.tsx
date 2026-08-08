@@ -45,7 +45,7 @@ interface AllDailyChallengeFromDb {
   title: string;
 }
 
-interface DailyChallengeMap {
+export interface DailyChallengeMap {
   id: string;
   date: string;
   challengeNumber: number;
@@ -63,17 +63,18 @@ interface MonthInfo {
 }
 
 // Cap Feb to 28 days regardless of which "year" is displayed
-const getDaysInMonth = (year: number, monthIndex: number): number => {
+export const getDaysInMonth = (year: number, monthIndex: number): number => {
   const realDays = new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
   return monthIndex === 1 ? 28 : realDays;
 };
 
-const getMonthInfo = (
+export const getMonthInfo = (
   year: number,
   monthIndex: number,
   dailyChallengesMap: DailyChallengesMap,
   hideDaysAfter?: number,
-  hideDaysThrough?: number
+  hideDaysThrough?: number,
+  requireExactYear?: boolean
 ) => {
   // Create date for first of the month (handles rollover automatically)
   const firstOfMonth = new Date(Date.UTC(year, monthIndex, 1));
@@ -95,6 +96,7 @@ const getMonthInfo = (
     const title = challengeData?.title || '';
     const isAvailable =
       challengeData !== undefined &&
+      (!requireExactYear || challengeData.date === formattedDate) &&
       (hideDaysAfter === undefined || day <= hideDaysAfter) &&
       (hideDaysThrough === undefined || day > hideDaysThrough);
     const challengeNumber = challengeData?.challengeNumber;
@@ -223,7 +225,8 @@ function DailyCodingChallengeCalendar({
     todayMonth - 1 + monthOffset,
     dailyChallengesMap,
     lastDailyChallengeReleased && monthOffset === 0 ? todayDay : undefined,
-    lastDailyChallengeReleased && isBoundaryMonth ? todayDay : undefined
+    lastDailyChallengeReleased && isBoundaryMonth ? todayDay : undefined,
+    !lastDailyChallengeReleased
   );
 
   const showPrevButton = lastDailyChallengeReleased
