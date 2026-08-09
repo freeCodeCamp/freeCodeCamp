@@ -21,7 +21,14 @@
     { "id": "6a70a88fe27c85f91d5137e8", "title": "Step 15" },
     { "id": "6a70ad7439aa38c7878b4323", "title": "Step 16" },
     { "id": "6a70b10d9a1a0ff3cb4775b8", "title": "Step 17" },
-    { "id": "6a70b2e4b65f00de6f414041", "title": "Step 18" }
+    { "id": "6a70b2e4b65f00de6f414041", "title": "Step 18" },
+    { "id": "6a7848aad918b10afae7d1f0", "title": "Step 19" },
+    { "id": "6a784abd17e5d29909e33564", "title": "Step 20" },
+    { "id": "6a784bd0d86389ad5528535c", "title": "Step 21" },
+    { "id": "6a78513949298537bfa222b6", "title": "Step 22" },
+    { "id": "6a78523edb374913e58d71d9", "title": "Step 23" },
+    { "id": "6a78549572797d79eedc16e5", "title": "Step 24" },
+    { "id": "6a7857f3a0819ed988102785", "title": "Step 25" }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
