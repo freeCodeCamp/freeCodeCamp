@@ -5,6 +5,8 @@ import {
   SuperBlockStage,
   superBlockStages,
   notAuditedSuperBlocks,
+  hiddenSuperBlocks,
+  getHiddenSuperBlocks,
   generateSuperBlockList,
   getAuditedSuperBlocks
 } from './curriculum';
@@ -55,6 +57,37 @@ describe('Immutability of superBlockOrder, notAuditedSuperBlocks, and flatSuperB
     expect(() => {
       notAuditedSuperBlocks[Languages.English] = [];
     }).toThrow(TypeError);
+  });
+});
+
+describe('hiddenSuperBlocks', () => {
+  it('should not allow modification of hiddenSuperBlocks', () => {
+    expect(() => {
+      hiddenSuperBlocks[Languages.Espanol] = [];
+    }).toThrow(TypeError);
+  });
+
+  it('should only contain valid languages and superblocks', () => {
+    Object.entries(hiddenSuperBlocks).forEach(([language, superblocks]) => {
+      expect(Object.values(Languages)).toContain(language);
+      superblocks.forEach(superblock => {
+        expect(Object.values(SuperBlocks)).toContain(superblock);
+      });
+    });
+  });
+});
+
+describe('getHiddenSuperBlocks', () => {
+  it('should return the configured superblocks for a language', () => {
+    expect(getHiddenSuperBlocks(Languages.Espanol)).toEqual([
+      SuperBlocks.A1Spanish,
+      SuperBlocks.A2Spanish
+    ]);
+  });
+
+  it('should return an empty array for languages with no hidden superblocks', () => {
+    expect(getHiddenSuperBlocks(Languages.English)).toEqual([]);
+    expect(getHiddenSuperBlocks('not-a-language')).toEqual([]);
   });
 });
 

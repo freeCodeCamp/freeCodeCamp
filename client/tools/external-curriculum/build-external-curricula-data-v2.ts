@@ -341,12 +341,21 @@ export function buildExtCurriculumDataV2(
   getSceneAssets();
 
   function parseCurriculumData() {
-    const superBlockKeys = Object.values(SuperBlocks).filter(x =>
-      superBlockDashedNames.includes(x)
+    // The curriculum may not contain every superblock (some are excluded per
+    // language), so only build data for the ones it delivered.
+    const superBlockKeys = Object.values(SuperBlocks).filter(
+      x => superBlockDashedNames.includes(x) && x in curriculum
     );
 
+    const availableSuperBlockInfo = orderedSuperBlockInfo();
+    for (const stage of Object.keys(availableSuperBlockInfo)) {
+      availableSuperBlockInfo[stage] = availableSuperBlockInfo[stage].filter(
+        ({ dashedName }) => dashedName in curriculum
+      );
+    }
+
     writeToFile('available-superblocks', {
-      superblocks: orderedSuperBlockInfo()
+      superblocks: availableSuperBlockInfo
     });
 
     for (const superBlockKey of superBlockKeys) {

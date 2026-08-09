@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
 import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { useAvailableSuperBlocks } from '../../utils/use-available-super-blocks';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -38,6 +40,8 @@ import SectionHeader from './section-header';
 import './certification.css';
 
 const { showUpcomingChanges } = env;
+
+const superBlockSlugs = new Set<string>(Object.values(SuperBlocks));
 
 const mapDispatchToProps = {
   openModal
@@ -167,6 +171,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
   const [solution, setSolution] = useState<string | null>();
   const [examResults, setExamResults] = useState<GeneratedExamResults | null>();
   const [isOpen, setIsOpen] = useState(false);
+  const availableSuperBlocks = useAvailableSuperBlocks();
   function initialiseState() {
     setProjectTitle('');
     setChallengeFiles(null);
@@ -321,10 +326,17 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
   const { t } = props;
 
+  // A certification tied to a superblock is only offered when this build's
+  // curriculum contains that superblock (it can be excluded per language).
+  const visibleCertifications = <T extends string>(certs: readonly T[]): T[] =>
+    certs.filter(
+      cert => !superBlockSlugs.has(cert) || availableSuperBlocks.has(cert)
+    );
+
   return (
     <section className='certification-settings'>
       <SectionHeader>{t('settings.headings.certs')}</SectionHeader>
-      {currentCertifications.map(cert => (
+      {visibleCertifications(currentCertifications).map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       <Spacer size='m' />
@@ -332,11 +344,11 @@ function CertificationSettings(props: CertificationSettingsProps) {
         <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
       </Element>
       <LegacyFullStack {...props} />
-      {legacyCertifications.map(cert => (
+      {visibleCertifications(legacyCertifications).map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       {showUpcomingChanges &&
-        upcomingCertifications.map(cert => (
+        visibleCertifications(upcomingCertifications).map(cert => (
           <Certification key={cert} certSlug={cert} t={t} />
         ))}
       <ProjectModal

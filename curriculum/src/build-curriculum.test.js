@@ -5,6 +5,7 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createCommentMap,
   addBlockStructure,
+  filterHiddenSuperblocks,
   getSuperblocks,
   superBlockNames
 } from './build-curriculum.js';
@@ -182,5 +183,36 @@ describe('superBlockNames', () => {
 
     expect(names).toHaveLength(superBlocks.length);
     expect(names).toEqual(expect.arrayContaining(superBlocks));
+  });
+});
+
+describe('filterHiddenSuperblocks', () => {
+  const superblocks = [
+    { name: SuperBlocks.RespWebDesignV9 },
+    { name: SuperBlocks.A1Spanish },
+    { name: SuperBlocks.A2Spanish },
+    { name: SuperBlocks.A1Chinese }
+  ];
+
+  it('should exclude superblocks hidden for the given language', () => {
+    expect(filterHiddenSuperblocks(superblocks, 'espanol')).toEqual([
+      { name: SuperBlocks.RespWebDesignV9 },
+      { name: SuperBlocks.A1Chinese }
+    ]);
+
+    expect(filterHiddenSuperblocks(superblocks, 'chinese')).toEqual([
+      { name: SuperBlocks.RespWebDesignV9 },
+      { name: SuperBlocks.A1Spanish },
+      { name: SuperBlocks.A2Spanish }
+    ]);
+  });
+
+  it('should keep every superblock for languages with nothing hidden', () => {
+    expect(filterHiddenSuperblocks(superblocks, 'english')).toEqual(
+      superblocks
+    );
+    expect(filterHiddenSuperblocks(superblocks, 'portuguese')).toEqual(
+      superblocks
+    );
   });
 });
