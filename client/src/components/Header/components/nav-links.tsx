@@ -20,7 +20,7 @@ export interface NavLinksProps {
   showMenu: () => void;
   hideMenu: () => void;
   user?: { isDonating: boolean; username: string };
-  menuButtonRef: React.RefObject<HTMLButtonElement | null>;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
   theme: LocalStorageThemes;
   toggleTheme: () => void;

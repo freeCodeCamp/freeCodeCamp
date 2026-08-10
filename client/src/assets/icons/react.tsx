@@ -1,6 +1,8 @@
 import React from 'react';
 
-function ReactIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function ReactIcon(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       aria-hidden='true'

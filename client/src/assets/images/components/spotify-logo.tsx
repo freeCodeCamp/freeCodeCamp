@@ -1,6 +1,8 @@
 import React from 'react';
 
-const SpotifyLogo = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+const SpotifyLogo = (
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element => (
   <svg
     id='spotify-logo'
     viewBox='3018 235.379 1525 572'
