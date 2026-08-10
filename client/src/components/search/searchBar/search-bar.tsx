@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
   bindActionCreators({ toggleSearchDropdown, toggleSearchFocused }, dispatch);
 
 type SearchBarProps = {
-  innerRef?: React.RefObject<HTMLDivElement>;
+  innerRef?: React.RefObject<HTMLDivElement | null>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
   isDropdownEnabled?: boolean;

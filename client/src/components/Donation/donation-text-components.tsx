@@ -89,7 +89,7 @@ const FaqItem = (
         aria-controls={`donate-faq-content-${key}`}
       >
         <Caret />
-        <h3>{title}</h3>
+        <span className='faq-question-title'>{title}</span>
       </button>
       {isExpanded && (
         <div className='map-challenges-ul' id={`donate-faq-content-${key}`}>

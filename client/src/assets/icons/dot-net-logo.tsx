@@ -1,8 +1,6 @@
 import React from 'react';
 
-function DotNetLogo(
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element {
+function DotNetLogo(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg
       role='img'

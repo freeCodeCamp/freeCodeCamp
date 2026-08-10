@@ -1,8 +1,6 @@
 import React from 'react';
 
-const AppleLogo = (
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-): JSX.Element => (
+const AppleLogo = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
     id='apple-logo'
     viewBox='450 0 500 650'

@@ -2055,7 +2055,7 @@
       "lecture-introduction-to-strings": {
         "title": "Introduction to Strings",
         "intro": [
-          "In these lessons, you will learn how to work with strings and string concatenation."
+          "In these lessons, you will learn how to work with strings, string concatenation, and <code>console.log()</code>."
         ]
       },
       "lecture-understanding-code-clarity": {
@@ -6287,12 +6287,6 @@
           "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
         ]
       },
-      "lab-photography-exhibit": {
-        "title": "Design a Photography Exhibit",
-        "intro": [
-          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
-        ]
-      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -6304,6 +6298,12 @@
         "title": "CSS Libraries and Frameworks Quiz",
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
+        ]
+      },
+      "lab-photography-exhibit": {
+        "title": "Design a Photography Exhibit",
+        "intro": [
+          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -6372,18 +6372,6 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
-      "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
-        "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
-        ]
-      },
-      "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
-        "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
-        ]
-      },
       "workshop-build-a-football-player-card-builder": {
         "title": "Build a Football Player Card Builder",
         "intro": [
@@ -6400,6 +6388,18 @@
       "quiz-typescript": {
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7192,109 +7192,91 @@
     },
     "module-intros": {
       "introduction-to-nodejs": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn the basics of working with Node.js."
         ]
       },
       "nodejs-core-modules": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
         ]
       },
       "lab-prime-number-checker-module": {
-        "note": "Coming Late 2026",
         "intro": [
           "Practice building and exporting an NPM module by creating a prime number checker."
         ]
       },
       "http-and-the-web-standards-model": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
         ]
       },
       "rest-api-and-web-services": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
         ]
       },
       "lab-timestamp-microservice": {
-        "note": "Coming Late 2026",
         "intro": [
           "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
         ]
       },
       "introduction-to-express": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
         ]
       },
       "lab-personal-profile-app": {
-        "note": "Coming Late 2026",
         "intro": [
           "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "error-handling-in-express": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
       "express-middleware": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
         ]
       },
       "websockets": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
       "lab-chat-app": {
-        "note": "Coming Late 2026",
         "intro": [
           "Practice building a real-time multi-client chat server using Node.js WebSockets."
         ]
       },
       "security-and-privacy": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
         ]
       },
       "authentication": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
       "lab-family-movie-watchlist-api": {
-        "note": "Coming Late 2026",
         "intro": [
           "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
-        "note": "Coming Late 2026",
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification."
         ]
       },
       "review-back-end-development-and-apis": {
-        "note": "Coming Late 2026",
         "intro": [
           "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
         ]
@@ -7302,7 +7284,7 @@
     },
     "blocks": {
       "lecture-working-with-nodejs-and-event-driven-architecture": {
-        "title": "Working with NodeJS and event driven architecture",
+        "title": "Working with Node.js and Event-Driven Architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
@@ -7665,7 +7647,7 @@
         "title": "Build a Hotel Feedback Form",
         "intro": [
           "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
       "lecture-working-with-tables": {
@@ -8247,7 +8229,7 @@
         "title": "Build a Hotel Feedback Form",
         "intro": [
           "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
       "lecture-working-with-tables": {
@@ -8427,7 +8409,7 @@
         "title": "Design a Cafe Menu",
         "intro": [
           "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe."
         ]
       },
       "lab-business-card": {
@@ -9695,7 +9677,7 @@
         "title": "Design a Cafe Menu",
         "intro": [
           "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe."
         ]
       },
       "lab-business-card": {

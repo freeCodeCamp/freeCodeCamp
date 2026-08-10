@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-interface GreenNotCompletedProps
-  extends JSX.IntrinsicAttributes, React.SVGProps<SVGSVGElement> {
+interface GreenNotCompletedProps extends React.SVGProps<SVGSVGElement> {
   hushScreenReaderText?: boolean;
 }
 

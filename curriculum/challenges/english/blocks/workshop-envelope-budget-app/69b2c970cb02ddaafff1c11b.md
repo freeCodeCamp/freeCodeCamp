@@ -26,7 +26,8 @@ Add an `if` statement that checks if `invalidInputMatch` is truthy.
 You should add an `if` statement to your `getTotalFromInputs` function.
 
 ```js
-const functionCode = code.split(/getTotalFromInputs/)?.[1]?.split(/\}\s*\}/)?.[0];
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
 assert.match(functionCode, /if\s*\(/);
 ```
 
@@ -39,7 +40,9 @@ assert.match(getTotalFromInputs.toString(), /if\s*\(\s*invalidInputMatch\s*\)/);
 Your `if` statement should be inside your `for` loop.
 
 ```js
-const forCode = code.split(/getTotalFromInputs/)?.[1]?.split(/for\s*\(/)?.[1]?.split(/\}/)?.[0];
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+const forCode = functionCode.split(/for\s*\(/)?.[1]?.split(/\}/)?.[0];
 assert.match(forCode, /if\s*\(\s*invalidInputMatch\s*\)/);
 ```
 

@@ -16,27 +16,33 @@ Declare two variables: `statusText` and `statusClass`. Initialize both as empty 
 Your `calculateBudget` function should have a `statusText` variable.
 
 ```js
-assert.match(calculateBudget.toString(), /statusText\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.calculateBudget?.variables.statusText);
 ```
 
 Your `calculateBudget` function should have a `statusClass` variable.
 
 ```js
-assert.match(calculateBudget.toString(), /statusClass\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.calculateBudget?.variables.statusClass);
 ```
 
 You should initialize `statusText` and `statusClass` as empty strings.
 
 ```js
-assert.match(code, /statusText\s*=\s*('|")\1/);
-assert.match(code, /statusClass\s*=\s*('|")\1/);
+const explorer = await __helpers.Explorer(code);
+const { statusText, statusClass } = explorer.functions.calculateBudget.variables;
+assert.isTrue(statusText?.value.matches('""'));
+assert.isTrue(statusClass?.value.matches('""'));
 ```
 
 Both variables should be declared using `let`.
 
 ```js
-assert.match(code, /let\s+statusText\s*=\s*('|")\1/);
-assert.match(code, /let\s+statusClass\s*=\s*('|")\1/);
+const explorer = await __helpers.Explorer(code);
+const { statusText, statusClass } = explorer.functions.calculateBudget.variables;
+assert.isTrue(statusText?.matches('let statusText = ""'));
+assert.isTrue(statusClass?.matches('let statusClass = ""'));
 ```
 
 # --seed--
