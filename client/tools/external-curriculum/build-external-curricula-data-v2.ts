@@ -116,9 +116,12 @@ export type OrderedSuperBlocks = Record<
 
 const ver = 'v2';
 
-const staticFolderPath = resolve(__dirname, '../../../client/static');
-const dataPath = `${staticFolderPath}/curriculum-data/`;
-const intros = readCurriculumIntros(getCurriculumLocale());
+export interface BuildOptions {
+  /** Directory to write output into (default: client/static/curriculum-data) */
+  dataPath?: string;
+  /** Pre-loaded intro data (default: read from disk for current locale) */
+  intros?: CurriculumIntros;
+}
 
 export function getCurriculumLocale(): Languages {
   const { CURRICULUM_LOCALE } = process.env;
@@ -332,8 +335,14 @@ export const superBlockDashedNames = (() => {
 })();
 
 export function buildExtCurriculumDataV2(
-  curriculum: Curriculum<CurriculumProps>
+  curriculum: Curriculum<CurriculumProps>,
+  options: BuildOptions = {}
 ): void {
+  const dataPath =
+    options.dataPath ??
+    resolve(__dirname, '../../../client/static/curriculum-data/');
+  const intros = options.intros ?? readCurriculumIntros(getCurriculumLocale());
+
   mkdirSync(dataPath, { recursive: true });
 
   parseCurriculumData();
