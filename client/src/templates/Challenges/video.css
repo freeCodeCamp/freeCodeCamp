@@ -152,6 +152,12 @@ input:focus-visible + .video-quiz-input-visible {
   flex: 1;
 }
 
+/* LTR answers sit at the far edge; the radio stays at the inline-start. Must be
+   physical: dir='auto' resolves these to LTR, so a logical margin would flip. */
+[dir='rtl'] .mcq-option-label .video-quiz-option[dir='auto'] {
+  margin-right: auto;
+}
+
 .mcq-correct {
   color: var(--success-color);
   border-left-color: var(--success-background);
