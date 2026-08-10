@@ -35,7 +35,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
-          submodules: 'recursive'
           persist-credentials: false
 
       - name: Check number of lockfiles
@@ -82,21 +81,54 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm lint
 
-      # This is populate the cache, otherwise local runs with upcoming changes
-      # will not benefit.
-      - name: Set UPCOMING_CHANGES
+  lint-upcoming:
+    name: Lint - Upcoming Changes
+    # Skip PR runs for Renovate since push already triggered CI
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+      fail-fast: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
         run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
           echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
+      - name: Install node_modules
+        run: pnpm install
+
       - name: Lint Upcoming Changes
-        run: |
-          pnpm lint
+        run: pnpm lint
 
   # DONT REMOVE THIS JOB.
   # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
     name: Build
-    needs: lint
     runs-on: ubuntu-24.04
     strategy:
       matrix:
@@ -106,7 +138,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
-          submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -133,7 +164,9 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run build
+          pnpm turbo build --filter=!@freecodecamp/client
+          pnpm turbo test-gen
+          SHOW_UPCOMING_CHANGES=true pnpm turbo test-gen
 
   test:
     name: Test
@@ -144,12 +177,12 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [24]
+        shard: [1, 2, 3, 4]
 
     steps:
       - name: Checkout
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
-          submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -186,7 +219,70 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        run: pnpm test
+        run: |
+          pnpm turbo test-gen
+          NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
+
+  test-other:
+    name: Test - Other
+    needs: build
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
+
+      - name: Start MongoDB
+        run: docker compose -f docker/docker-compose.yml up -d
+
+      - name: Install Dependencies
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm install
+
+      - name: Run Tests
+        run: pnpm turbo test --filter=!@freecodecamp/curriculum
+
+  test-complete:
+    name: Test
+    needs: [test, test-other]
+    if: always()
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+    steps:
+      - name: Check test results
+        run: |
+          if [[ "${{ needs.test.result }}" != "success" || "${{ needs.test-other.result }}" != "success" ]]; then
+            exit 1
+          fi
 
   test-upcoming:
     name: Test - Upcoming Changes
@@ -197,12 +293,12 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [24]
+        shard: [1, 2, 3, 4]
 
     steps:
       - name: Checkout
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
-          submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -239,7 +335,9 @@ jobs:
         run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
-        run: pnpm test
+        run: |
+          pnpm turbo test-gen
+          NODE_OPTIONS='--max-old-space-size=7168' pnpm -F=@freecodecamp/curriculum exec vitest run --shard=${{ matrix.shard }}/4
 
   test-localization:
     name: Test - i18n
