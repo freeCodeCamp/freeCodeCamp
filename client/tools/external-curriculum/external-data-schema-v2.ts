@@ -1,5 +1,6 @@
 import Joi from 'joi';
 import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import { Levels, Topic } from '@freecodecamp/shared/config/catalog';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
@@ -122,6 +123,19 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
+const catalogSchema = Joi.object({
+  catalog: Joi.array().items(
+    Joi.object({
+      dashedName: Joi.string().regex(slugRE).required(),
+      title: Joi.string().required(),
+      summary: Joi.array().items(Joi.string()).required(),
+      level: Joi.valid(...Object.values(Levels)).required(),
+      hours: Joi.number().required(),
+      topic: Joi.valid(...Object.values(Topic)).required()
+    })
+  )
+});
+
 export const superblockSchemaValidator =
   () => (superBlock: Record<string, unknown>) => {
     const superBlockName = Object.keys(superBlock)[0];
@@ -135,3 +149,6 @@ export const superblockSchemaValidator =
 
 export const availableSuperBlocksValidator = () => (data: unknown) =>
   availableSuperBlocksSchema.validate(data);
+
+export const catalogValidator = () => (data: unknown) =>
+  catalogSchema.validate(data);
