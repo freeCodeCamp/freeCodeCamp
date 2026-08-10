@@ -281,7 +281,7 @@ function isInvalidInput(str) {
 function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
-  const entryNumber = targetInputContainer.querySelectorAll("input[type='text']").length + 1;
+  const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
 
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
