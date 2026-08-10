@@ -1,6 +1,8 @@
 import React from 'react';
 
-function MicrosoftLogo(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function MicrosoftLogo(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       version='1.1'

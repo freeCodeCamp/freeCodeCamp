@@ -1,6 +1,8 @@
 import React from 'react';
 
-function LanguageGlobe(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function LanguageGlobe(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       aria-hidden={true}
