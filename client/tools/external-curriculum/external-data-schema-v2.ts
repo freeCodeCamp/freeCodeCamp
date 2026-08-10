@@ -129,9 +129,13 @@ const catalogSchema = Joi.object({
       dashedName: Joi.string().regex(slugRE).required(),
       title: Joi.string().required(),
       summary: Joi.array().items(Joi.string()).required(),
-      level: Joi.valid(...Object.values(Levels)).required(),
+      level: Joi.valid(
+        ...Object.values(Levels as Record<string, string>)
+      ).required(),
       hours: Joi.number().required(),
-      topic: Joi.valid(...Object.values(Topic)).required()
+      topic: Joi.valid(
+        ...Object.values(Topic as Record<string, string>)
+      ).required()
     })
   )
 });
