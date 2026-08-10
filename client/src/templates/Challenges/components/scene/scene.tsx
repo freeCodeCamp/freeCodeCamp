@@ -31,10 +31,12 @@ const initDialogue = { label: '', text: '', align: 'left' };
 
 export function Scene({
   scene,
-  sceneSubject
+  sceneSubject,
+  superBlock
 }: {
   scene: FullScene;
   sceneSubject: SceneSubject;
+  superBlock?: string;
 }): JSX.Element {
   const { t } = useTranslation();
   const canPauseRef = useRef(false);
@@ -437,7 +439,11 @@ export function Scene({
           </button>
         )}
       </div>
-      <ChallengeTranscript transcript={transcriptText} isDialogue={true} />
+      <ChallengeTranscript
+        transcript={transcriptText}
+        isDialogue={true}
+        superBlock={superBlock}
+      />
       <Spacer size='m' />
     </Col>
   );
