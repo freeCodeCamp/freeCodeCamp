@@ -302,7 +302,7 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function calculateBudget(e) {
@@ -324,7 +324,7 @@ function calculateBudget(e) {
   }
 
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
 }
 

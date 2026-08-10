@@ -284,8 +284,8 @@ function cleanInputString(str) {
 
 function isInvalidInput(str) {
   const regex = /\d+e\d+/i;
---fcc-editable-region--
-
---fcc-editable-region--
+  --fcc-editable-region--
+  
+  --fcc-editable-region--
 }
 ```

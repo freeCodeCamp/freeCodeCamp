@@ -92,9 +92,9 @@ assert.equal(document.querySelectorAll('form fieldset')[2]?.querySelector('div')
             <div class="input-container"></div>
           </fieldset>
 
---fcc-editable-region--
-
---fcc-editable-region--
+          --fcc-editable-region--
+          
+          --fcc-editable-region--
         </form>
       </div>
     </main>

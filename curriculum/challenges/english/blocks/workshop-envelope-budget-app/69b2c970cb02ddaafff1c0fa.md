@@ -270,8 +270,8 @@ function cleanInputString(str) {
 }
 
 function isInvalidInput(str) {
---fcc-editable-region--
-
---fcc-editable-region--
+  --fcc-editable-region--
+  
+  --fcc-editable-region--
 }
 ```

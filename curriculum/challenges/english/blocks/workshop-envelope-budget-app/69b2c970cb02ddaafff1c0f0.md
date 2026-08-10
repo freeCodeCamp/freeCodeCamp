@@ -273,8 +273,8 @@ const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
---fcc-editable-region--
-
---fcc-editable-region--
+  --fcc-editable-region--
+  
+  --fcc-editable-region--
 }
 ```

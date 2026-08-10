@@ -325,7 +325,7 @@ function addEntry() {
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
   `;
 }

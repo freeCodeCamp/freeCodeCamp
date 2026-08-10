@@ -291,7 +291,7 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function calculateBudget(e) {
@@ -355,9 +355,9 @@ function getTotalFromInputs(list) {
 
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll(".input-container"));
---fcc-editable-region--
-
---fcc-editable-region--
+  --fcc-editable-region--
+  
+  --fcc-editable-region--
 }
 
 addEntryButton.addEventListener("click", addEntry);

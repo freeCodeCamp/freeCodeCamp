@@ -296,7 +296,7 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function getTotalFromInputs(list) {
@@ -308,7 +308,7 @@ function getTotalFromInputs(list) {
 
     if (invalidInputMatch) {
       --fcc-editable-region--
-
+      
       --fcc-editable-region--
     }
   }

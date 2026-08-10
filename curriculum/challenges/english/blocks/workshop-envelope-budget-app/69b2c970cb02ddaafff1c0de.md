@@ -47,7 +47,7 @@ assert.equal(document.querySelector('form')?.id, 'budget-form');
       <h1>Envelope Budgeter</h1>
       <div class="container">
       --fcc-editable-region--
-
+      
       --fcc-editable-region--
       </div>
     </main>

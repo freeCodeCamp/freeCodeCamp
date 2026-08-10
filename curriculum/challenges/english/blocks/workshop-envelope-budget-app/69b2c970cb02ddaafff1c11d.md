@@ -290,7 +290,7 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function getTotalFromInputs(list) {
@@ -303,7 +303,7 @@ function getTotalFromInputs(list) {
     if (invalidInputMatch) {
       alert(`Invalid Input: ${invalidInputMatch[0]}`);
       --fcc-editable-region--
-
+      
       --fcc-editable-region--
     }
   }

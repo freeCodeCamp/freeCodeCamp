@@ -106,9 +106,9 @@ assert.equal(document.querySelector('.container > div')?.innerHTML.trim(), '');
           </div>
         </form>
 
---fcc-editable-region--
-
---fcc-editable-region--
+        --fcc-editable-region--
+        
+        --fcc-editable-region--
       </div>
     </main>
   </body>

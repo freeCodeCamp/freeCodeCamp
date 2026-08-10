@@ -277,7 +277,7 @@ function addEntry() {
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
 
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
 }
 ```

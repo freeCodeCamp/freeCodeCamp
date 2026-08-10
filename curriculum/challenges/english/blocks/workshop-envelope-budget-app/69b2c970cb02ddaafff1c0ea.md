@@ -99,9 +99,9 @@ assert.match(bodyEnding, /<script\s*src\s*=\s*('|")(\.\/)?script\.js\1\s*>\s*<\/
         
       </div>
     </main>
---fcc-editable-region--
-
---fcc-editable-region--
+    --fcc-editable-region--
+    
+    --fcc-editable-region--
   </body>
 </html>
 ```

@@ -277,7 +277,7 @@ function addEntry() {
 
   const HTMLString = `
   --fcc-editable-region--
-  <label>Expense ${entryNumber} Name</label>`;
+  <label>Expense ${entryNumber} Name</label>
   --fcc-editable-region--
   `;
 }

@@ -320,7 +320,7 @@ function addEntry() {
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
   `;
 }

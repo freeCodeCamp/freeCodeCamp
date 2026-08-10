@@ -260,7 +260,7 @@ const clearButton = document.getElementById("clear");
 const output = document.getElementById("output");
 let isError = false;
 
-  --fcc-editable-region--
+--fcc-editable-region--
 function cleanInputString(str) {
   console.log("original string: ", str);
   const regex = /[+-\s]/g;

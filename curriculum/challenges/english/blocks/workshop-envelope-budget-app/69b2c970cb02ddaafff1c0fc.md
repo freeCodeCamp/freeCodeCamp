@@ -273,8 +273,8 @@ function cleanInputString(str) {
 }
 
 function isInvalidInput(str) {
---fcc-editable-region--
+  --fcc-editable-region--
   const regex = /e/i;
---fcc-editable-region--
+  --fcc-editable-region--
 }
 ```
