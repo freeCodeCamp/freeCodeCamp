@@ -118,6 +118,11 @@ input:focus-visible + .video-quiz-input-visible {
   border-bottom: 2px solid var(--tertiary-background);
 }
 
+/* Without a speaking button the second column collapses, but its gap survives. */
+.mcq-option-row:not(:has(.mcq-speaking-button-wrapper)) {
+  column-gap: 0;
+}
+
 .mcq-option-row:first-child {
   border-top: 4px solid var(--tertiary-background);
 }
