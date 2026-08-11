@@ -7,7 +7,7 @@ import { searchPageUrl } from '../../../utils/algolia-locale-setup';
 const SearchBarOptimized = ({
   innerRef
 }: {
-  innerRef: React.RefObject<HTMLDivElement | null>;
+  innerRef: React.RefObject<HTMLDivElement>;
 }): JSX.Element => {
   const { t } = useTranslation();
   // TODO: Refactor this fallback when all translation files are synced

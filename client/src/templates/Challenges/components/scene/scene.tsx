@@ -131,9 +131,9 @@ export function Scene({
   const [background, setBackground] = useState(initBackground);
   const startClocktimeRef = useRef<number>(0);
   const pausedAtRef = useRef<number>(0);
-  const startTimerRef = useRef<number>(undefined);
-  const finishTimerRef = useRef<number>(undefined);
-  const animationRef = useRef<number>(undefined);
+  const startTimerRef = useRef<number>();
+  const finishTimerRef = useRef<number>();
+  const animationRef = useRef<number>();
   const usedCommandsRef = useRef(new Set<number>());
 
   const [currentTime, setCurrentTime] = useState(0);

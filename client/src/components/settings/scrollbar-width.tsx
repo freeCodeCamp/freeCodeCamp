@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { ChangeEvent, useState, useRef } from 'react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
@@ -12,8 +12,8 @@ export default function ScrollbarWidthSettings(): JSX.Element {
   const [scrollbarWidth, setScrollbarWidth] = useState(getScrollbarWidth());
   const rangeRef = useRef<HTMLInputElement>(null);
 
-  function handleChange(event: React.InputEvent<HTMLInputElement>) {
-    const inputValue = Number(event.currentTarget.value);
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    const inputValue = Number(event.target.value);
     setScrollbarWidth(inputValue);
     store.set('monacoScrollbarWidth', inputValue);
   }
