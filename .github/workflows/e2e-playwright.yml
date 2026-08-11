@@ -61,21 +61,6 @@ jobs:
         run: |
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
-      - name: Set Payment Provider Test Credentials
-        # "sb" is PayPal's public sandbox client ID, and
-        # pk_test_TYooMQauvdEDq54NiTphI7jx is Stripe's well-known public
-        # example publishable key (used throughout Stripe's own docs).
-        # Neither is a secret - only PayPal's client secret and Stripe's
-        # secret key are sensitive, and neither is needed to render these
-        # widgets. This lets e2e tests make real calls to both SDKs to
-        # verify the donate page's payment widgets actually render.
-        # PATREON_CLIENT_ID doesn't need to be real at all - it's only used
-        # to build a static link, never sent to a real API during rendering.
-        run: |
-          echo "PAYPAL_CLIENT_ID=sb" >> $GITHUB_ENV
-          echo "STRIPE_PUBLIC_KEY=pk_test_TYooMQauvdEDq54NiTphI7jx" >> $GITHUB_ENV
-          echo "PATREON_CLIENT_ID=e2e-test-patreon-client-id" >> $GITHUB_ENV
-
       - name: Install and Build
         run: |
           pnpm install
