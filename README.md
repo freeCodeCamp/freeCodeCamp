@@ -14,8 +14,8 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 - [Certifications](#certifications)
 - [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
+- [Reporting Bugs & Issues](#reporting-bugs-and-issues)
+- [Security & Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
 - [Contributing](#contributing)
 - [License](#license)
 
