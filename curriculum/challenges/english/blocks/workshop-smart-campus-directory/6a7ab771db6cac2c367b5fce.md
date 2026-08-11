@@ -1,15 +1,28 @@
 ---
-id: 6a788fc485e0b9181f53cb07
-title: Step 30
+id: 6a7ab771db6cac2c367b5fce
+title: Step 32
 challengeType: 1
-dashedName: step-30
+dashedName: step-32
 ---
 
 # --description--
 
-Now that you know `instructorId` is valid, use it to look up the full instructor object. 
-Declare a variable called `instructor` and set it to `normalizedData.instructorsById[instructorId]` and 
-log `instructor` to the console.
+Some `instructors` are missing `officeHours`, and it's possible for other fields 
+to be missing too. The `nullish coalescing operator (??)` returns its left-hand value 
+unless that value is `null` or `undefined`, in which case it returns the right-hand value 
+instead. Unlike ||, it doesn't treat other falsy values (like 0 or "") as missing.
+
+```js
+const officeHours = null;
+const result = officeHours ?? "Not Available";
+console.log(result); // "Not Available"
+```
+
+Now you should return an object from `getInstructorByEmail` function with three properties:
+
+`name`: `instructor.name`, falling back to "Unknown Instructor"  
+`officeHours`: `instructor.officeHours`, falling back to "Not Available"  
+`department`: `department.name`, falling back to "Unknown Department"  
 
 # --hints--
 
@@ -124,11 +137,13 @@ function getInstructorByEmail(email, normalizedData) {
     return "Instructor not found";
   }
 
---fcc-editable-region--
+  const instructor = normalizedData.instructorsById[instructorId];
+  const department = normalizedData.departmentsById[instructor.departmentId];
+  console.log(department);
 
 --fcc-editable-region--
-
   return null;
+--fcc-editable-region--
 }
 
 console.log( getInstructorByEmail("fatima@edu.com", normalizedData));

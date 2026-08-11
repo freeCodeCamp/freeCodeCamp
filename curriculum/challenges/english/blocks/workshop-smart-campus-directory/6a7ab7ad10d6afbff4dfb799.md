@@ -1,15 +1,16 @@
 ---
-id: 6a788fc485e0b9181f53cb07
-title: Step 30
+id: 6a7ab7ad10d6afbff4dfb799
+title: Step 33
 challengeType: 1
-dashedName: step-30
+dashedName: step-33
 ---
 
 # --description--
 
-Now that you know `instructorId` is valid, use it to look up the full instructor object. 
-Declare a variable called `instructor` and set it to `normalizedData.instructorsById[instructorId]` and 
-log `instructor` to the console.
+Test your function with two calls to `getInstructorByEmail`: one using an email you know 
+exists in rawData, and one using an email that doesn't exist. Log both results to confirm 
+the function returns the correct shaped object for a known email, 
+and `Instructor not found` for an unknown one.
 
 # --hints--
 
@@ -124,12 +125,18 @@ function getInstructorByEmail(email, normalizedData) {
     return "Instructor not found";
   }
 
---fcc-editable-region--
+  const instructor = normalizedData.instructorsById[instructorId];
+  const department = normalizedData.departmentsById[instructor.departmentId];
 
---fcc-editable-region--
 
-  return null;
+  return {
+    name: instructor.name ?? "Unknown Instructor",
+    officeHours: instructor.officeHours ?? "Not Available",
+    department: department.name ?? "Unknown Department",
+  };
 }
 
-console.log( getInstructorByEmail("fatima@edu.com", normalizedData));
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```

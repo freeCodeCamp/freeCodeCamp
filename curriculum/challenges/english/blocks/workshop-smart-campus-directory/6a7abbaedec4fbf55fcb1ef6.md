@@ -1,15 +1,13 @@
 ---
-id: 6a788fc485e0b9181f53cb07
-title: Step 30
+id: 6a7abbaedec4fbf55fcb1ef6
+title: Step 35
 challengeType: 1
-dashedName: step-30
+dashedName: step-35
 ---
 
 # --description--
 
-Now that you know `instructorId` is valid, use it to look up the full instructor object. 
-Declare a variable called `instructor` and set it to `normalizedData.instructorsById[instructorId]` and 
-log `instructor` to the console.
+step 35 instructions
 
 # --hints--
 
@@ -117,6 +115,7 @@ function normalizeDirectory(rawData) {
 
 const normalizedData = normalizeDirectory(rawData);
 
+
 function getInstructorByEmail(email, normalizedData) {
   const instructorId = normalizedData.instructorsByEmail[email];
 
@@ -124,12 +123,20 @@ function getInstructorByEmail(email, normalizedData) {
     return "Instructor not found";
   }
 
---fcc-editable-region--
+  const instructor = normalizedData.instructorsById[instructorId];
+  const department = normalizedData.departmentsById[instructor.departmentId];
 
---fcc-editable-region--
 
-  return null;
+  return {
+    name: instructor.name ?? "Unknown Instructor",
+    officeHours: instructor.officeHours ?? "Not Available",
+    department: department.name ?? "Unknown Department",
+  };
 }
+
+--fcc-editable-region--
+
+--fcc-editable-region--
 
 console.log( getInstructorByEmail("fatima@edu.com", normalizedData));
 ```
