@@ -106,7 +106,6 @@ assert.isTrue(
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -273,8 +272,8 @@ const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
-  --fcc-editable-region--
+--fcc-editable-region--
   
-  --fcc-editable-region--
+--fcc-editable-region--
 }
 ```

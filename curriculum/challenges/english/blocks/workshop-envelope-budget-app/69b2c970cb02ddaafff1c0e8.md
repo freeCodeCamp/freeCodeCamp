@@ -123,9 +123,9 @@ assert.equal(document.querySelectorAll('form > div')?.[1]?.querySelectorAll('but
             </span>
           </div>
 
-          --fcc-editable-region--
+--fcc-editable-region--
           
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </div>
     </main>

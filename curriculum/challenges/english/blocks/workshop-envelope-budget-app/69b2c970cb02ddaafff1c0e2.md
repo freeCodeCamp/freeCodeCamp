@@ -89,9 +89,9 @@ assert.equal(document.querySelectorAll('form fieldset')[1]?.querySelector('div')
             <input type="number" min="0" id="rent-amount" placeholder="e.g. 1000" />
           </fieldset>
 
-          --fcc-editable-region--
+--fcc-editable-region--
           
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </div>
     </main>

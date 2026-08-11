@@ -107,7 +107,6 @@ assert.match(cleanInputString?.toString(), /\{\s*\}/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -272,6 +271,7 @@ const addEntryButton = document.getElementById("add-entry");
 const clearButton = document.getElementById("clear");
 const output = document.getElementById("output");
 let isError = false;
+
 --fcc-editable-region--
 
 --fcc-editable-region--

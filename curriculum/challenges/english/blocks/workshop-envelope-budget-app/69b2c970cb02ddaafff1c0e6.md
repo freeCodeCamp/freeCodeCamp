@@ -142,9 +142,9 @@ assert.equal(document.querySelector('.controls > span > button')?.innerText, 'Ad
 
           <div class="controls">
             <span>
-            --fcc-editable-region--
-            
-            --fcc-editable-region--
+--fcc-editable-region--
+              
+--fcc-editable-region--
             </span>
           </div>
         </form>

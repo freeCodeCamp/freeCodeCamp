@@ -87,9 +87,9 @@ assert.exists(document.querySelector('form > div > span'));
             <div class="input-container"></div>
           </fieldset>
 
-          --fcc-editable-region--
+--fcc-editable-region--
           
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </div>
     </main>

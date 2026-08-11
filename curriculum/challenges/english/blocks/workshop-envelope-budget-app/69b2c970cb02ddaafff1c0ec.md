@@ -136,7 +136,6 @@ assert.deepEqual(entryDropdown, document.getElementById('entry-dropdown'));
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
