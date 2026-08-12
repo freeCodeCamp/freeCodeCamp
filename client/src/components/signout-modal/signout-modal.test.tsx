@@ -128,6 +128,8 @@ describe('<SignoutModal />', () => {
 
     await user.click(screen.getByRole('button', { name: t('buttons.close') }));
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 });
