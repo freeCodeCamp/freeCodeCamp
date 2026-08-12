@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { create, ReactTestRendererJSON } from 'react-test-renderer';
 import { describe, expect, it, vi } from 'vitest';
 import AuthOrProfile from './components/auth-or-profile';
 
@@ -42,27 +42,45 @@ vi.mock('../../analytics');
 
 describe('<AuthOrProfile />', () => {
   it('has avatar with default border for default users', () => {
-    render(<AuthOrProfile {...defaultUserProps} />);
-    expect(avatarHasClass('default-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...defaultUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'default-border')).toBeTruthy();
   });
 
   it('has avatar with gold border for donating users', () => {
-    render(<AuthOrProfile {...donatingUserProps} />);
-    expect(avatarHasClass('gold-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...donatingUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'gold-border')).toBeTruthy();
   });
 
   it('has avatar with blue border for top contributors', () => {
-    render(<AuthOrProfile {...topContributorUserProps} />);
-    expect(avatarHasClass('blue-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...topContributorUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'blue-border')).toBeTruthy();
   });
 
   it('has avatar with purple border for donating top contributors', () => {
-    render(<AuthOrProfile {...topDonatingContributorUserProps} />);
-    expect(avatarHasClass('purple-border')).toBeTruthy();
+    const componentTree = create(
+      <AuthOrProfile {...topDonatingContributorUserProps} />
+    ).toJSON();
+    expect(avatarHasClass(componentTree, 'purple-border')).toBeTruthy();
   });
 });
 
-const avatarHasClass = (borderClass: string) => {
-  const avatar = screen.getByTestId('avatar-container');
-  return avatar.className === 'avatar-container ' + borderClass;
+type Component = {
+  children: { props: { className: string } }[];
+};
+const profileNavItem = (component: Component) => component.children[0];
+
+const avatarHasClass = (
+  componentTree: ReactTestRendererJSON | ReactTestRendererJSON[] | null,
+  classes: string
+) => {
+  return (
+    profileNavItem(componentTree as unknown as Component).props.className ===
+    'avatar-container ' + classes
+  );
 };

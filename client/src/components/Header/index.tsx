@@ -36,7 +36,7 @@ type Props = PropsFromRedux & {
 };
 
 class Header extends React.Component<Props, { displayMenu: boolean }> {
-  menuButtonRef: React.RefObject<HTMLButtonElement | null>;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
   constructor(props: Props) {

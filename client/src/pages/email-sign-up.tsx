@@ -53,7 +53,9 @@ function EmailSignUp({
     <RedirectToLearn />
   ) : (
     <>
-      <Helmet title={`${t('misc.email-signup')} | freeCodeCamp.org`} />
+      <Helmet>
+        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
+      </Helmet>
       <Container>
         <Spacer size='l' />
         {showLoading ? (
