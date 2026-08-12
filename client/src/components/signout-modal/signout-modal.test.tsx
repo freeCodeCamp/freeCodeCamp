@@ -117,7 +117,9 @@ describe('<SignoutModal />', () => {
       screen.getByRole('button', { name: t('signout.nevermind') })
     );
 
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+    });
   });
 
   it('closes the modal with the header close button', async () => {
