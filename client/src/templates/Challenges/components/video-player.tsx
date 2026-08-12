@@ -6,15 +6,10 @@ import Loader from '../../../components/helpers/loader';
 import envData from '../../../../config/env.json';
 import type { BilibiliIds, VideoLocaleIds } from '../../../redux/prop-types';
 
-// TODO: pull these types from all-langs
+import { Languages } from '@freecodecamp/shared/config/i18n';
+
 const { clientLocale } = envData as {
-  clientLocale:
-    | 'english'
-    | 'chinese'
-    | 'chinese-traditional'
-    | 'espanol'
-    | 'italian'
-    | 'portuguese';
+  clientLocale: Languages;
 };
 
 interface VideoPlayerProps {
