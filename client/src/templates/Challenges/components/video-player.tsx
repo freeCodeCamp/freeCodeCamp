@@ -2,11 +2,10 @@ import React from 'react';
 import YouTube, { YouTubeEvent } from 'react-youtube';
 import store from 'store';
 
+import { type Languages } from '@freecodecamp/shared/config/i18n';
 import Loader from '../../../components/helpers/loader';
 import envData from '../../../../config/env.json';
 import type { BilibiliIds, VideoLocaleIds } from '../../../redux/prop-types';
-
-import { Languages } from '@freecodecamp/shared/config/i18n';
 
 const { clientLocale } = envData as {
   clientLocale: Languages;
