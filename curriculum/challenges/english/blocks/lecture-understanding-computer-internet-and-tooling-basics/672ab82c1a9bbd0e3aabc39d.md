@@ -109,7 +109,7 @@ What is the recommendation for the height of your mouse in relation to your keyb
 
 ## --answers--
 
-The mouse should be far above the keyboard.
+The height of the mouse does not matter.
 
 ### --feedback--
 
@@ -129,7 +129,7 @@ Think about how to position your mouse to avoid wrist and arm strain.
 
 ---
 
-The height of the mouse does not matter.
+The mouse should be higher than the keyboard.
 
 ### --feedback--
 
