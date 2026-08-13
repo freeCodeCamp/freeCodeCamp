@@ -3781,16 +3781,16 @@
           "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
         ]
       },
-      "top-introduction-to-flexbox": {
-        "title": "Introduction to Flexbox",
-        "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
-        ]
-      },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
         ]
       },
       "top-learn-variables-and-operators": {
