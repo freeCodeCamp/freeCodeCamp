@@ -28,7 +28,12 @@ assert.match(cleanInputString.toString(), /regex\s*=\s*\/\[\\?\+-\\s\]\//)
 You should not escape the `+` character in your regular expression.
 
 ```js
-assert.match(cleanInputString.toString(), /regex\s*=\s*\/\[\+-\\s\]\//);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.cleanInputString?.variables.regex?.value.matches(
+    '/[+-\\s]/'
+  )
+);
 ```
 
 # --seed--
