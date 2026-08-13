@@ -7424,12 +7424,6 @@
           "You will learn basic Express routing and response methods by building a random joke app."
         ]
       },
-      "workshop-build-a-weather-service-api": {
-        "title": "Build a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
-        ]
-      },
       "review-introduction-to-express": {
         "title": "Introduction to Express Review",
         "intro": [
@@ -7458,6 +7452,12 @@
         "title": "Build a Submission Form",
         "intro": [
           "You will learn application-level and router-level middleware by building a structured submission form."
+        ]
+      },
+      "workshop-build-a-weather-service-api": {
+        "title": "Build a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
         ]
       },
       "lab-data-sanitizer": {

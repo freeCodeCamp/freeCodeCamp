@@ -53,7 +53,6 @@
             "lecture-working-with-express",
             "lecture-understanding-routing-in-express-js",
             "workshop-build-a-random-joke-app",
-            "workshop-build-a-weather-service-api",
             "review-introduction-to-express",
             "quiz-introduction-to-express"
           ]
@@ -68,6 +67,7 @@
           "blocks": [
             "lecture-express-middleware",
             "workshop-build-a-submission-form",
+            "workshop-build-a-weather-service-api",
             "lab-data-sanitizer",
             "review-express-middleware",
             "quiz-express-middleware"
