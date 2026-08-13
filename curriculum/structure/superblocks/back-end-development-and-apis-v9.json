@@ -67,7 +67,6 @@
           "blocks": [
             "lecture-express-middleware",
             "workshop-build-a-submission-form",
-            "workshop-build-a-weather-service-api",
             "lab-data-sanitizer",
             "review-express-middleware",
             "quiz-express-middleware"
@@ -77,6 +76,7 @@
           "dashedName": "rest-api-and-web-services",
           "blocks": [
             "lecture-understanding-rest-api-and-web-services",
+            "workshop-build-a-weather-service-api",
             "review-rest-api-and-web-services"
           ]
         },

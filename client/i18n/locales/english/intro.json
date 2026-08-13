@@ -7454,12 +7454,6 @@
           "You will learn application-level and router-level middleware by building a structured submission form."
         ]
       },
-      "workshop-build-a-weather-service-api": {
-        "title": "Build a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
-        ]
-      },
       "lab-data-sanitizer": {
         "title": "Build a Data Sanitizer",
         "intro": [
@@ -7482,6 +7476,12 @@
         "title": "Understanding the REST API and Web Services",
         "intro": [
           "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
+      "workshop-build-a-weather-service-api": {
+        "title": "Build a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
         ]
       },
       "review-rest-api-and-web-services": {
