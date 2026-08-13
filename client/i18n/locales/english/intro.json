@@ -7417,6 +7417,12 @@
           "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
         ]
       },
+      "review-rest-api-and-web-services": {
+        "title": "REST API and Web Services Review",
+        "intro": [
+          "Review web services, the REST architecture, HTTP status codes, and microservices."
+        ]
+      },
       "lab-timestamp-microservice": {
         "title": "Build a Timestamp Microservice",
         "intro": [
@@ -7451,7 +7457,7 @@
       "review-introduction-to-express": {
         "title": "Introduction to Express Review",
         "intro": [
-          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+          "Review Express.js, routing, response methods, and serving static files before you take the quiz."
         ]
       },
       "quiz-introduction-to-express": {
