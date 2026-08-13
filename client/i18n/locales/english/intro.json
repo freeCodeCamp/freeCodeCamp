@@ -1352,12 +1352,6 @@
           "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
         ]
       },
-      "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
-        "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
-        ]
-      },
       "workshop-kitty-ipsum-translator": {
         "title": "Build a Kitty Ipsum Translator",
         "intro": [
@@ -1369,6 +1363,12 @@
         "title": "Build a Bike Rental Shop",
         "intro": [
           "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
         ]
       },
       "lab-salon-appointment-scheduler": {
@@ -2669,6 +2669,13 @@
           "You'll practice conditionals to determine the student's grade based on their score."
         ]
       },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
+        ]
+      },
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
@@ -3774,16 +3781,16 @@
           "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
         ]
       },
-      "top-introduction-to-flexbox": {
-        "title": "Introduction to Flexbox",
-        "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
-        ]
-      },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
         ]
       },
       "top-learn-variables-and-operators": {
@@ -7410,6 +7417,12 @@
           "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
         ]
       },
+      "review-rest-api-and-web-services": {
+        "title": "REST API and Web Services Review",
+        "intro": [
+          "Review web services, the REST architecture, HTTP status codes, and microservices."
+        ]
+      },
       "lab-timestamp-microservice": {
         "title": "Build a Timestamp Microservice",
         "intro": [
@@ -7444,7 +7457,7 @@
       "review-introduction-to-express": {
         "title": "Introduction to Express Review",
         "intro": [
-          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+          "Review Express.js, routing, response methods, and serving static files before you take the quiz."
         ]
       },
       "quiz-introduction-to-express": {

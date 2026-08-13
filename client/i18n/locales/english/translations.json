@@ -662,25 +662,6 @@
       "sub-step-7": "Click the <0>Add secret</0> button",
       "summary": "Codespaces Setup"
     },
-    "ona": {
-      "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
-      "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
-      "step-3": "In the modal that pops up, click the create button",
-      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
-      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
-      "step-6": "Going to the <0>View</0> menu,",
-      "step-7": "Clicking on the <0>Command Palette</0> option,",
-      "step-8": "and running the <0>CodeRoad: Start</0> command",
-      "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the start button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
-      "learn-more": "Learn more about <0>Ona workspaces.</0>",
-      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
-      "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
-      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Secret</0> field, paste your token",
-      "summary": "Ona Setup"
-    },
     "freecodecamp-os": {
       "token-modal": "When you run the course, a modal will appear asking for your user token. Paste the token you copied above into it. You only need to do this once per environment.",
       "local": {
@@ -703,16 +684,6 @@
         "step-5": "The Simple Browser will open when it is done. If it is a blank white page, use the refresh button to update it and see the course home page.",
         "step-6": "Click on one of the available projects to start it, then follow the instructions in the project to complete it.",
         "continue-project": "Clicking the start button below will start a new machine. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace."
-      },
-      "ona": {
-        "intro": "This course runs in a virtual Linux machine using Ona and the freeCodeCamp - Courses VS Code extension. Follow these instructions to start the course:",
-        "step-1": "<0>Create an Ona account</0> if you don't have one",
-        "step-2": "Click the start button below",
-        "step-3": "In the modal that pops up, click the create button",
-        "step-4": "Once the virtual Linux machine is finished loading, open the command palette and run the <0>freeCodeCamp: Run Course</0> command",
-        "step-5": "The Simple Browser will open when it is done. If it is a blank white page, use the refresh button to update it and see the course home page.",
-        "step-6": "Click on one of the available projects to start it, then follow the instructions in the project to complete it.",
-        "continue-project": "Clicking the start button below will start a new machine. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue."
       }
     },
     "local": {
