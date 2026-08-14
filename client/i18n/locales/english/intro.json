@@ -1352,12 +1352,6 @@
           "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
         ]
       },
-      "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
-        "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
-        ]
-      },
       "workshop-kitty-ipsum-translator": {
         "title": "Build a Kitty Ipsum Translator",
         "intro": [
@@ -1369,6 +1363,12 @@
         "title": "Build a Bike Rental Shop",
         "intro": [
           "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
         ]
       },
       "lab-salon-appointment-scheduler": {
@@ -2669,6 +2669,13 @@
           "You'll practice conditionals to determine the student's grade based on their score."
         ]
       },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
+        ]
+      },
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
@@ -3774,16 +3781,16 @@
           "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
         ]
       },
-      "top-introduction-to-flexbox": {
-        "title": "Introduction to Flexbox",
-        "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
-        ]
-      },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
         ]
       },
       "top-learn-variables-and-operators": {
@@ -6287,12 +6294,6 @@
           "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
         ]
       },
-      "lab-photography-exhibit": {
-        "title": "Design a Photography Exhibit",
-        "intro": [
-          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
-        ]
-      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -6304,6 +6305,12 @@
         "title": "CSS Libraries and Frameworks Quiz",
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
+        ]
+      },
+      "lab-photography-exhibit": {
+        "title": "Design a Photography Exhibit",
+        "intro": [
+          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -6372,18 +6379,6 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
-      "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
-        "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
-        ]
-      },
-      "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
-        "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
-        ]
-      },
       "workshop-build-a-football-player-card-builder": {
         "title": "Build a Football Player Card Builder",
         "intro": [
@@ -6400,6 +6395,18 @@
       "quiz-typescript": {
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -7176,12 +7183,12 @@
       "node-package-manager": "Node Package Manager",
       "lab-prime-number-checker-module": "Build a Prime Number Checker Module",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
-      "rest-api-and-web-services": "REST API and Web Services",
-      "lab-timestamp-microservice": "Build a Timestamp Microservice",
       "introduction-to-express": "Introduction to Express",
       "lab-personal-profile-app": "Build a Personal Profile App",
-      "error-handling-in-express": "Error Handling in Express",
       "express-middleware": "Express Middleware",
+      "rest-api-and-web-services": "REST API and Web Services",
+      "lab-timestamp-microservice": "Build a Timestamp Microservice",
+      "error-handling-in-express": "Error Handling in Express",
       "websockets": "WebSockets",
       "lab-chat-app": "Build a Chat App",
       "security-and-privacy": "Security and Privacy",
@@ -7216,16 +7223,6 @@
           "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
         ]
       },
-      "rest-api-and-web-services": {
-        "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
       "introduction-to-express": {
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
@@ -7236,14 +7233,24 @@
           "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
-      "error-handling-in-express": {
-        "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
-        ]
-      },
       "express-middleware": {
         "intro": [
           "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+        ]
+      },
+      "rest-api-and-web-services": {
+        "intro": [
+          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
+      "error-handling-in-express": {
+        "intro": [
+          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
       "websockets": {
@@ -7284,7 +7291,7 @@
     },
     "blocks": {
       "lecture-working-with-nodejs-and-event-driven-architecture": {
-        "title": "Working with NodeJS and event driven architecture",
+        "title": "Working with Node.js and Event-Driven Architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
@@ -7398,24 +7405,6 @@
           ""
         ]
       },
-      "lecture-understanding-rest-api-and-web-services": {
-        "title": "Understanding the REST API and Web Services",
-        "intro": [
-          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
-        ]
-      },
-      "workshop-build-a-weather-service-api": {
-        "title": "Build a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
       "lecture-working-with-express": {
         "title": "Working with Express",
         "intro": [
@@ -7435,16 +7424,10 @@
           "You will learn basic Express routing and response methods by building a random joke app."
         ]
       },
-      "lab-personal-profile-app": {
-        "title": "Build a Personal Profile App",
-        "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
-        ]
-      },
       "review-introduction-to-express": {
         "title": "Introduction to Express Review",
         "intro": [
-          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+          "Review Express.js, routing, response methods, and serving static files before you take the quiz."
         ]
       },
       "quiz-introduction-to-express": {
@@ -7453,28 +7436,10 @@
           "Test your knowledge of web services, REST, microservices, Express.js, and routing."
         ]
       },
-      "lecture-understanding-error-handling-and-health-checks": {
-        "title": "Understanding Error Handling and Health Checks",
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
         "intro": [
-          "In these lessons, you'll learn about error handling and health checks in Express."
-        ]
-      },
-      "workshop-build-a-bank-api": {
-        "title": "Build a Bank API",
-        "intro": [
-          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
-        ]
-      },
-      "review-error-handling-in-express": {
-        "title": "Error Handling in Express Review",
-        "intro": [
-          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
-        ]
-      },
-      "quiz-error-handling-in-express": {
-        "title": "Error Handling in Express Quiz",
-        "intro": [
-          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "lecture-express-middleware": {
@@ -7505,6 +7470,54 @@
         "title": "Express Middleware Quiz",
         "intro": [
           "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
+        ]
+      },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
+      "workshop-build-a-weather-service-api": {
+        "title": "Build a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "review-rest-api-and-web-services": {
+        "title": "REST API and Web Services Review",
+        "intro": [
+          "Review web services, the REST architecture, HTTP status codes, and microservices."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "workshop-build-a-bank-api": {
+        "title": "Build a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
       "lecture-understanding-websockets": {
