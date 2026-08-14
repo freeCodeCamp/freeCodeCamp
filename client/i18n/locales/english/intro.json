@@ -7183,12 +7183,12 @@
       "node-package-manager": "Node Package Manager",
       "lab-prime-number-checker-module": "Build a Prime Number Checker Module",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
-      "rest-api-and-web-services": "REST API and Web Services",
-      "lab-timestamp-microservice": "Build a Timestamp Microservice",
       "introduction-to-express": "Introduction to Express",
       "lab-personal-profile-app": "Build a Personal Profile App",
-      "error-handling-in-express": "Error Handling in Express",
       "express-middleware": "Express Middleware",
+      "rest-api-and-web-services": "REST API and Web Services",
+      "lab-timestamp-microservice": "Build a Timestamp Microservice",
+      "error-handling-in-express": "Error Handling in Express",
       "websockets": "WebSockets",
       "lab-chat-app": "Build a Chat App",
       "security-and-privacy": "Security and Privacy",
@@ -7223,16 +7223,6 @@
           "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
         ]
       },
-      "rest-api-and-web-services": {
-        "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
       "introduction-to-express": {
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
@@ -7243,14 +7233,24 @@
           "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
-      "error-handling-in-express": {
-        "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
-        ]
-      },
       "express-middleware": {
         "intro": [
           "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+        ]
+      },
+      "rest-api-and-web-services": {
+        "intro": [
+          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
+      "error-handling-in-express": {
+        "intro": [
+          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
         ]
       },
       "websockets": {
@@ -7405,30 +7405,6 @@
           ""
         ]
       },
-      "lecture-understanding-rest-api-and-web-services": {
-        "title": "Understanding the REST API and Web Services",
-        "intro": [
-          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
-        ]
-      },
-      "workshop-build-a-weather-service-api": {
-        "title": "Build a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
-        ]
-      },
-      "review-rest-api-and-web-services": {
-        "title": "REST API and Web Services Review",
-        "intro": [
-          "Review web services, the REST architecture, HTTP status codes, and microservices."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
       "lecture-working-with-express": {
         "title": "Working with Express",
         "intro": [
@@ -7448,12 +7424,6 @@
           "You will learn basic Express routing and response methods by building a random joke app."
         ]
       },
-      "lab-personal-profile-app": {
-        "title": "Build a Personal Profile App",
-        "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
-        ]
-      },
       "review-introduction-to-express": {
         "title": "Introduction to Express Review",
         "intro": [
@@ -7466,28 +7436,10 @@
           "Test your knowledge of web services, REST, microservices, Express.js, and routing."
         ]
       },
-      "lecture-understanding-error-handling-and-health-checks": {
-        "title": "Understanding Error Handling and Health Checks",
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
         "intro": [
-          "In these lessons, you'll learn about error handling and health checks in Express."
-        ]
-      },
-      "workshop-build-a-bank-api": {
-        "title": "Build a Bank API",
-        "intro": [
-          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
-        ]
-      },
-      "review-error-handling-in-express": {
-        "title": "Error Handling in Express Review",
-        "intro": [
-          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
-        ]
-      },
-      "quiz-error-handling-in-express": {
-        "title": "Error Handling in Express Quiz",
-        "intro": [
-          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "lecture-express-middleware": {
@@ -7518,6 +7470,54 @@
         "title": "Express Middleware Quiz",
         "intro": [
           "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
+        ]
+      },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
+      "workshop-build-a-weather-service-api": {
+        "title": "Build a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "review-rest-api-and-web-services": {
+        "title": "REST API and Web Services Review",
+        "intro": [
+          "Review web services, the REST architecture, HTTP status codes, and microservices."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "workshop-build-a-bank-api": {
+        "title": "Build a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
         ]
       },
       "lecture-understanding-websockets": {
