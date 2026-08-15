@@ -7278,14 +7278,14 @@
           "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
         ]
       },
-      "back-end-development-and-apis-certification-exam": {
-        "intro": [
-          "Pass this exam to earn your Back-End Development and APIs Certification."
-        ]
-      },
       "review-back-end-development-and-apis": {
         "intro": [
           "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
+        ]
+      },
+      "back-end-development-and-apis-certification-exam": {
+        "intro": [
+          "Pass this exam to earn your Back-End Development and APIs Certification."
         ]
       }
     },
