@@ -155,7 +155,7 @@ const SpeakingModal = ({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const stopListeningTimeoutRef = useRef<
     ReturnType<typeof setTimeout> | undefined
-  >(undefined);
+  >();
 
   const {
     transcript,

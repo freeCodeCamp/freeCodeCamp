@@ -333,9 +333,11 @@ function ShowExamDownload({
 
   return (
     <LearnLayout>
-      <Helmet
-        title={title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
-      />
+      <Helmet>
+        <title>
+          {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
+        </title>
+      </Helmet>
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

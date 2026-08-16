@@ -41,10 +41,7 @@ function AvatarRenderer({
     !isPictureValid || /example.com|identicon.org|^$/.test(picture);
 
   return (
-    <div
-      className={`avatar-container ${borderColor}`}
-      data-testid='avatar-container'
-    >
+    <div className={`avatar-container ${borderColor}`}>
       <span className='sr-only'>{t('buttons.profile')}</span>
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar' />

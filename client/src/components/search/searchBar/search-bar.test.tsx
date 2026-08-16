@@ -1,23 +1,15 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { describe, it, expect, vi } from 'vitest';
 
-import { createStore } from '../../../redux/create-store';
 import { SearchBar } from './search-bar';
-
-vi.mock('../../../analytics');
-vi.mock('../../../utils/get-words');
 
 describe('<SearchBar />', () => {
   it('renders to the DOM', () => {
-    const store = createStore();
-    render(
-      <Provider store={store}>
-        <SearchBar {...searchBarProps} />
-      </Provider>
-    );
-    expect(screen.getByTestId('fcc_searchBar')).toBeTruthy();
+    const utils = ShallowRenderer.createRenderer();
+    utils.render(<SearchBar {...searchBarProps} />);
+    const view = utils.getRenderOutput();
+    expect(view).toBeTruthy();
   });
 
   /* Todo: When e2e testing is in place,

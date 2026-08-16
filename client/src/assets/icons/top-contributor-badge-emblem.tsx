@@ -1,7 +1,7 @@
 import React from 'react';
 
 function TopContributorBadgeEmblem(
-  props: React.SVGProps<SVGSVGElement>
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
     <svg

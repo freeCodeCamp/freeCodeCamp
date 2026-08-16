@@ -10,23 +10,11 @@ vi.mock('react-redux', () => ({
   useSelector: () => ({})
 }));
 
-// react-helmet sets document.title imperatively rather than rendering a
-// <title> element into the tree, so this mock does the same.
-const { HelmetMock } = vi.hoisted(() => {
-  const HelmetMock = ({ title }: { title?: string }) => {
-    React.useEffect(() => {
-      if (title !== undefined) {
-        document.title = title;
-      }
-    });
-    return null;
-  };
-  return { HelmetMock };
-});
-
 vi.mock('react-helmet', () => ({
   __esModule: true,
-  default: HelmetMock
+  default: ({ children }: { children?: React.ReactNode }) => (
+    <div>{children}</div>
+  )
 }));
 
 vi.mock('@growthbook/growthbook-react', () => ({
@@ -395,7 +383,9 @@ describe('SuperBlockIntroductionPage', () => {
 
     render(<SuperBlockIntroductionPage {...props} />);
 
-    expect(document.title).toBe('Coding Interview Prep | freeCodeCamp.org');
+    expect(
+      screen.getByText('Coding Interview Prep | freeCodeCamp.org')
+    ).toBeInTheDocument();
     expect(
       await screen.findByText(
         "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."

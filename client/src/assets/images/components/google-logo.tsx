@@ -1,6 +1,8 @@
 import React from 'react';
 
-const GoogleLogo = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
+const GoogleLogo = (
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element => (
   <svg
     id='google-logo'
     viewBox='1635 200 1185 600'
