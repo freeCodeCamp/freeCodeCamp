@@ -7278,14 +7278,14 @@
           "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
         ]
       },
-      "back-end-development-and-apis-certification-exam": {
-        "intro": [
-          "Pass this exam to earn your Back-End Development and APIs Certification."
-        ]
-      },
       "review-back-end-development-and-apis": {
         "intro": [
           "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
+        ]
+      },
+      "back-end-development-and-apis-certification-exam": {
+        "intro": [
+          "Pass this exam to earn your Back-End Development and APIs Certification."
         ]
       }
     },
@@ -7354,12 +7354,6 @@
           "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
         ]
       },
-      "lab-prime-number-checker-module": {
-        "title": "Build a Prime Number Checker Module",
-        "intro": [
-          "Practice building and exporting an NPM module by creating a prime number checker."
-        ]
-      },
       "review-npm": {
         "title": "NPM Review",
         "intro": ["Review npm concepts to prepare for the upcoming quiz."]
@@ -7367,6 +7361,12 @@
       "quiz-npm": {
         "title": "NPM Quiz",
         "intro": ["Test what you have learned about npm in this quiz."]
+      },
+      "lab-prime-number-checker-module": {
+        "title": "Build a Prime Number Checker Module",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
+        ]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
         "title": "Understanding how HTTP, DNS and TCP/IP work",
@@ -7532,12 +7532,6 @@
           "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
         ]
       },
-      "lab-chat-app": {
-        "title": "Build a Chat App",
-        "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
-        ]
-      },
       "review-websockets": {
         "title": "WebSockets Review",
         "intro": [
@@ -7548,6 +7542,12 @@
         "title": "WebSockets Quiz",
         "intro": [
           "Test your knowledge of WebSockets and Pub/Sub with this quiz."
+        ]
+      },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
         ]
       },
       "lecture-understanding-security-and-privacy-in-web-applications": {
@@ -7580,12 +7580,6 @@
           "You will learn authentication and role-based authorization by building an Express application with JWT-protected routes."
         ]
       },
-      "lab-family-movie-watchlist-api": {
-        "title": "Build a Family Movie Watchlist API",
-        "intro": [
-          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
-        ]
-      },
       "review-authentication-and-authorization": {
         "title": "Authentication and Authorization Review",
         "intro": [
@@ -7596,6 +7590,12 @@
         "title": "Authentication and Authorization Quiz",
         "intro": [
           "Test your knowledge of authentication and authorization concepts covered in this module."
+        ]
+      },
+      "lab-family-movie-watchlist-api": {
+        "title": "Build a Family Movie Watchlist API",
+        "intro": [
+          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
         ]
       },
       "review-back-end-development-and-apis": {
