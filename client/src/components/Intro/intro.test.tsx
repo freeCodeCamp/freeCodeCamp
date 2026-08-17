@@ -55,6 +55,35 @@ describe('<Intro />', () => {
     ).toHaveAttribute('href', '/learn/resume-this-challenge');
   });
 
+  it('shows curriculum context and progress in the resume card', () => {
+    renderWithRedux(
+      <Intro
+        {...loggedInProps}
+        resumeCard={{
+          courseTitle: 'Learn JavaScript',
+          progress: 6
+        }}
+        resumeUrl='/learn/resume-this-challenge'
+      />,
+      signedInState
+    );
+
+    expect(screen.getByText('Learn JavaScript')).toBeInTheDocument();
+    expect(screen.getByText('misc.continue-learning')).toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toHaveAttribute(
+      'aria-valuenow',
+      '6'
+    );
+    expect(
+      screen.getByRole('link', { name: /buttons.resume-progress/ })
+    ).toHaveAttribute('href', '/learn/resume-this-challenge');
+
+    const headings = screen.getAllByRole('heading');
+    expect(headings[0]).toHaveTextContent('learn.welcome-1');
+    expect(headings[1]).toHaveTextContent('misc.continue-learning');
+    expect(headings[2]).toHaveTextContent('misc.email-signup');
+  });
+
   it('does not show a resume link without an activity URL', () => {
     renderWithRedux(<Intro {...loggedInProps} />, signedInState);
 

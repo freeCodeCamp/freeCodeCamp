@@ -8,6 +8,12 @@ import { ButtonLink, FullWidthRow, Link, Loader } from '../helpers';
 import './intro.css';
 import EmailSignUpAlert from './email-sign-up-alert';
 import LearnAlert from './learn-alert';
+import { ResumeCard } from './resume-card';
+
+interface ResumeCardData {
+  courseTitle: string;
+  progress: number;
+}
 
 interface IntroProps {
   complete?: boolean;
@@ -20,6 +26,7 @@ interface IntroProps {
   onLearnDonationAlertClick: () => void;
   isDonating: boolean;
   resumeUrl?: string;
+  resumeCard?: ResumeCardData | null;
 }
 
 const Intro = ({
@@ -31,7 +38,8 @@ const Intro = ({
   slug,
   onLearnDonationAlertClick,
   isDonating,
-  resumeUrl
+  resumeUrl,
+  resumeCard
 }: IntroProps): JSX.Element => {
   const { t } = useTranslation();
   if (pending && !complete) {
@@ -53,16 +61,6 @@ const Intro = ({
             : `${t('learn.welcome-2')}`}
         </h1>
         <Spacer size='m' />
-        {resumeUrl ? (
-          <>
-            <FullWidthRow>
-              <ButtonLink block href={resumeUrl} size='large'>
-                {t('buttons.current-challenge')}
-              </ButtonLink>
-            </FullWidthRow>
-            <Spacer size='m' />
-          </>
-        ) : null}
         <div className='text-center quote-partial'>
           <blockquote className='blockquote' data-testid='quote-block'>
             <span>
@@ -73,11 +71,36 @@ const Intro = ({
             </span>
           </blockquote>
         </div>
+        {resumeUrl && resumeCard ? (
+          <>
+            <ResumeCard
+              {...resumeCard}
+              labels={{
+                continueLearning: t('misc.continue-learning'),
+                progress: t('learn.percent-complete', {
+                  percent: resumeCard.progress
+                }),
+                resume: t('buttons.resume-progress')
+              }}
+              resumeUrl={resumeUrl}
+            />
+            <Spacer size='m' />
+          </>
+        ) : resumeUrl ? (
+          <>
+            <FullWidthRow>
+              <ButtonLink block href={resumeUrl} size='large'>
+                {t('buttons.current-challenge')}
+              </ButtonLink>
+            </FullWidthRow>
+            <Spacer size='m' />
+          </>
+        ) : null}
+        <EmailSignUpAlert />
         <LearnAlert
           onLearnDonationAlertClick={onLearnDonationAlertClick}
           isDonating={isDonating}
         />
-        <EmailSignUpAlert />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer size='m' />
