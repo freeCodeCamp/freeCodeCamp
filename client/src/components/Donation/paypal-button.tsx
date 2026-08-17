@@ -1,11 +1,17 @@
-import React, { Component, Ref } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
+  DISPATCH_ACTION,
+  PayPalButtons,
+  PayPalScriptProvider,
+  usePayPalScriptReducer,
+  type ReactPayPalScriptOptions
+} from '@paypal/react-paypal-js';
+import {
   paypalConfigurator,
   paypalConfigTypes,
-  defaultDonation,
   PaymentProvider,
   type DonationDuration,
   type DonationAmount
@@ -15,7 +21,6 @@ import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { LocalStorageThemes } from '../../redux/types';
 import type { User } from '../../redux/prop-types';
 import { DonationApprovalData, PostPayment } from './types';
-import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
 type PaypalButtonProps = {
   donationAmount: DonationAmount;
@@ -32,20 +37,17 @@ type PaypalButtonProps = {
     success: boolean;
     error: string | null;
   }) => void;
-  isPaypalLoading: boolean;
   t: (label: string) => string;
-  ref?: Ref<PaypalButton>;
   theme: LocalStorageThemes;
-  isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
   isMinimalForm: boolean | undefined;
   postPayment: (arg0: PostPayment) => void;
 };
 
-type PaypalButtonState = {
-  amount: number;
-  duration: string;
-  planId: string | null;
+type ButtonStyle = {
+  color: 'gold' | 'white';
+  height: number;
+  tagline: boolean;
 };
 
 const {
@@ -57,96 +59,173 @@ const {
     deploymentEnv: 'staging' | 'production';
   };
 
-class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
-  static displayName = 'PaypalButton';
-  state: PaypalButtonState = {
-    amount: defaultDonation.donationAmount,
-    duration: defaultDonation.donationDuration,
-    planId: null
+// The minimal form disables `card` too, since it has its own Stripe card form.
+const alwaysDisabledFunding = [
+  'credit',
+  'bancontact',
+  'blik',
+  'eps',
+  'giropay',
+  'ideal',
+  'mybank',
+  'p24',
+  'sepa',
+  'sofort',
+  'venmo'
+];
+
+function getScriptOptions({
+  clientId,
+  isSubscription,
+  isMinimalForm
+}: {
+  clientId: string;
+  isSubscription: boolean;
+  isMinimalForm: boolean | undefined;
+}): ReactPayPalScriptOptions {
+  return {
+    clientId,
+    disableFunding: [
+      ...(isMinimalForm ? ['card'] : []),
+      ...alwaysDisabledFunding
+    ].join(','),
+    // undefined values are dropped from the query string.
+    vault: isSubscription ? true : undefined,
+    intent: isSubscription ? 'subscription' : undefined
   };
-  constructor(props: PaypalButtonProps) {
-    super(props);
-  }
+}
 
-  static getDerivedStateFromProps(
-    props: Readonly<PaypalButtonProps>
-  ): PaypalButtonState {
-    const { donationAmount, donationDuration } = props;
-    const configurationObj: {
-      amount: DonationAmount;
-      duration: DonationDuration;
-      planId: string | null;
-    } = paypalConfigurator(
-      donationAmount,
-      donationDuration,
-      paypalConfigTypes[deploymentEnv || 'staging']
-    );
-    // re-implement it as a deep comparison.
-    // if (state === configurationObj) {
-    //   return null;
-    // }
-    return { ...configurationObj };
-  }
+type ButtonsProps = {
+  amount: DonationAmount;
+  planId: string | null;
+  isSubscription: boolean;
+  scriptOptions: ReactPayPalScriptOptions;
+  style: ButtonStyle;
+  handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
+  onApprove: (data: DonationApprovalData) => void;
+  onCancel: () => void;
+  onError: () => void;
+};
 
-  render(): JSX.Element | null {
-    const { duration, planId, amount } = this.state;
-    const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
-    const isSubscription = duration !== 'one-time';
-    const buttonColor = theme === LocalStorageThemes.Dark ? 'white' : 'gold';
-    if (!paypalClientId) {
-      return null;
-    }
+function Buttons({
+  amount,
+  planId,
+  isSubscription,
+  scriptOptions,
+  style,
+  handlePaymentButtonLoad,
+  onApprove,
+  onCancel,
+  onError
+}: ButtonsProps): JSX.Element {
+  const [{ isResolved }, dispatch] = usePayPalScriptReducer();
 
-    return (
-      <div className={'paypal-buttons-container'}>
-        <PayPalButtonScriptLoader
-          clientId={paypalClientId}
-          createOrder={(
-            data: unknown,
-            actions: {
-              order: {
-                create: (arg0: {
-                  purchase_units: {
-                    amount: { currency_code: string; value: string };
-                  }[];
-                }) => unknown;
-              };
-            }
-          ) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  amount: {
-                    currency_code: 'USD',
-                    value: (amount / 100).toString()
+  // These options are part of the SDK's query string, so changing them has to
+  // reload the script rather than just re-render the buttons.
+  const optionsKey = [
+    scriptOptions.vault,
+    scriptOptions.intent,
+    scriptOptions.disableFunding
+  ].join('|');
+  const loadedOptionsKey = useRef(optionsKey);
+
+  useEffect(() => {
+    if (loadedOptionsKey.current === optionsKey) return;
+    loadedOptionsKey.current = optionsKey;
+    dispatch({ type: DISPATCH_ACTION.RESET_OPTIONS, value: scriptOptions });
+  }, [optionsKey, scriptOptions, dispatch]);
+
+  useEffect(() => {
+    if (isResolved) handlePaymentButtonLoad('paypal');
+  }, [isResolved, handlePaymentButtonLoad]);
+
+  return (
+    <PayPalButtons
+      forceReRender={[amount, planId, isSubscription, style.color]}
+      style={style}
+      createOrder={
+        isSubscription
+          ? undefined
+          : (_data, actions) =>
+              actions.order.create({
+                intent: 'CAPTURE',
+                purchase_units: [
+                  {
+                    amount: {
+                      currency_code: 'USD',
+                      value: (amount / 100).toString()
+                    }
                   }
-                }
-              ]
-            });
-          }}
-          createSubscription={(
-            data: unknown,
-            actions: {
-              subscription: {
-                create: (arg0: { plan_id: string | null }) => unknown;
-              };
-            }
-          ) => {
-            return actions.subscription.create({
-              plan_id: planId
-            });
-          }}
-          isMinimalForm={isMinimalForm}
-          isPaypalLoading={isPaypalLoading}
+                ]
+              })
+      }
+      createSubscription={
+        isSubscription
+          ? (_data, actions) =>
+              actions.subscription.create({ plan_id: planId as string })
+          : undefined
+      }
+      onApprove={async (data, actions) => {
+        if (isSubscription) {
+          onApprove(data as unknown as DonationApprovalData);
+          return;
+        }
+        const details = await actions.order?.capture();
+        // TODO: passing details looks wrong, but the api ignores it for now.
+        onApprove(details as unknown as DonationApprovalData);
+      }}
+      onCancel={onCancel}
+      onError={onError}
+    />
+  );
+}
+
+function PaypalButton({
+  donationAmount,
+  donationDuration,
+  t,
+  theme,
+  isMinimalForm,
+  handlePaymentButtonLoad,
+  onDonationStateChange,
+  postPayment
+}: PaypalButtonProps): JSX.Element | null {
+  const { amount, duration, planId } = paypalConfigurator(
+    donationAmount,
+    donationDuration,
+    paypalConfigTypes[deploymentEnv || 'staging']
+  );
+  const isSubscription = duration !== 'one-time';
+
+  if (!paypalClientId) {
+    return null;
+  }
+
+  const scriptOptions = getScriptOptions({
+    clientId: paypalClientId,
+    isSubscription,
+    isMinimalForm
+  });
+
+  return (
+    <div className={'paypal-buttons-container'}>
+      <PayPalScriptProvider options={scriptOptions}>
+        <Buttons
+          amount={amount}
+          planId={planId}
           isSubscription={isSubscription}
-          onApprove={(data: DonationApprovalData) => {
-            this.props.postPayment({
-              paymentProvider: PaymentProvider.Paypal,
-              data
-            });
+          scriptOptions={scriptOptions}
+          style={{
+            tagline: false,
+            height: 43,
+            color: theme === LocalStorageThemes.Dark ? 'white' : 'gold'
+          }}
+          handlePaymentButtonLoad={handlePaymentButtonLoad}
+          onApprove={data => {
+            postPayment({ paymentProvider: PaymentProvider.Paypal, data });
           }}
           onCancel={() => {
-            this.props.onDonationStateChange({
+            onDonationStateChange({
               redirecting: false,
               processing: false,
               success: false,
@@ -154,25 +233,18 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
             });
           }}
           onError={() => {
-            this.props.handlePaymentButtonLoad('paypal');
-            this.props.onDonationStateChange({
+            handlePaymentButtonLoad('paypal');
+            onDonationStateChange({
               redirecting: false,
               processing: false,
               success: false,
               error: t('donate.try-again')
             });
           }}
-          onLoad={() => this.props.handlePaymentButtonLoad('paypal')}
-          planId={planId}
-          style={{
-            tagline: false,
-            height: 43,
-            color: buttonColor
-          }}
         />
-      </div>
-    );
-  }
+      </PayPalScriptProvider>
+    </div>
+  );
 }
 
 const mapStateToProps = createSelector(
