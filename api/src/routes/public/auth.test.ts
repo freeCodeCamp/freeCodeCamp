@@ -13,7 +13,13 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 const newUserEmail = 'a.n.random@user.com';
 
 const mockAuth0NotOk = () => ({
-  ok: false
+  ok: false,
+  status: 503
+});
+
+const mockAuth0Unauthorized = () => ({
+  ok: false,
+  status: 401
 });
 
 const mockAuth0InvalidEmail = () => ({
@@ -63,12 +69,14 @@ describe('auth0 routes', () => {
       });
     });
 
-    it('should return 401 if the authorization header is invalid', async () => {
+    it('should capture and return 401 when Auth0 userinfo is down (5xx)', async () => {
       mockedFetch.mockResolvedValueOnce(mockAuth0NotOk());
       const count = vi.fn();
+      const captureException = vi.fn();
       const originalSentry = fastifyTestInstance.Sentry;
       fastifyTestInstance.Sentry = {
         ...originalSentry,
+        captureException,
         metrics: { ...originalSentry.metrics, count }
       };
 
@@ -85,6 +93,32 @@ describe('auth0 routes', () => {
       expect(count).toHaveBeenCalledWith('auth.mobile_login_attempted', 1, {
         attributes: { result: 'failure', reason: 'no_email' }
       });
+      expect(captureException).toHaveBeenCalledWith(
+        new Error('Auth0 userinfo request failed'),
+        { extra: { status: 503 } }
+      );
+
+      fastifyTestInstance.Sentry = originalSentry;
+    });
+
+    it('should not capture to Sentry for an expected Auth0 4xx (invalid or expired token)', async () => {
+      mockedFetch.mockResolvedValueOnce(mockAuth0Unauthorized());
+      const count = vi.fn();
+      const captureException = vi.fn();
+      const originalSentry = fastifyTestInstance.Sentry;
+      fastifyTestInstance.Sentry = {
+        ...originalSentry,
+        captureException,
+        metrics: { ...originalSentry.metrics, count }
+      };
+
+      const res = await superGet('/mobile-login').set(
+        'Authorization',
+        'Bearer invalid-token'
+      );
+
+      expect(res.status).toBe(401);
+      expect(captureException).not.toHaveBeenCalled();
 
       fastifyTestInstance.Sentry = originalSentry;
     });

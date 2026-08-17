@@ -57,6 +57,7 @@ export const getPublicProfile = {
               isB1EnglishCert: Type.Boolean(),
               isApisMicroservicesCert: Type.Boolean(),
               isBackEndCert: Type.Boolean(),
+              isBackEndDevApisCertV9: Type.Boolean(),
               isCheater: Type.Boolean(),
               isCollegeAlgebraPyCertV8: Type.Boolean(),
               isDataAnalysisPyCertV7: Type.Boolean(),

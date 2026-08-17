@@ -71,7 +71,7 @@ describe('cors', () => {
     });
 
     expect(warnSpy).toHaveBeenCalledWith(
-      { origin: 'https://disallowed.example.com' },
+      { _origin: 'https://disallowed.example.com' },
       'Received request from disallowed origin'
     );
   });
