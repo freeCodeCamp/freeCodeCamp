@@ -40,7 +40,7 @@ assert.match(document.querySelectorAll('h2')?.[1]?.innerText, /Desserts/i);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
     <div class="menu">
@@ -103,7 +103,7 @@ h1, h2, p {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 ```
 
