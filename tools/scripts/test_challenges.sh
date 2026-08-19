@@ -5,10 +5,10 @@ echo "Enter the ids of the challenges you wish to test (separated by commas) and
 read -r input
 
 
-IFS=',' challengeIDS=($input)
+IFS=',' read -ra challengeIDS <<< "$input"
 
 for challengeID in "${challengeIDS[@]}";
 do
   challengeID="$(tr -d ' ' <<< "$challengeID")"
-  FCC_CHALLENGE_ID=$challengeID pnpm turbo -F=@freecodecamp/curriculum test
+  FCC_CHALLENGE_ID="$challengeID" pnpm turbo -F=@freecodecamp/curriculum test
 done
