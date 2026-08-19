@@ -14,13 +14,17 @@ Declare a `regex` variable, and assign it a regex that matches the character `e`
 Your `isInvalidInput` function should have a `regex` variable.
 
 ```js
-assert.match(isInvalidInput.toString(), /regex\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.isInvalidInput?.variables.regex);
 ```
 
 Your `regex` variable should be set to `/e/`.
 
 ```js
-assert.match(isInvalidInput.toString(), /regex\s*=\s*\/e\//);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.isInvalidInput?.variables.regex?.value.matches('/e/')
+);
 ```
 
 # --seed--
