@@ -7,9 +7,7 @@ dashedName: step-33
 
 # --description--
 
-Test your function with two calls to `getInstructorByEmail`: one using an email you know 
-exists in rawData, and one using an email that doesn't exist. Log both results to confirm 
-the function returns the correct shaped object for a known email, 
+Test your function with two calls to `getInstructorByEmail`: one using an email `"fatima@edu.com"`, and one using an email `"not_found@edu.com"`. Log both results to confirm the function returns the correct shaped object for a known email, 
 and `Instructor not found` for an unknown one.
 
 # --hints--
