@@ -1,15 +1,13 @@
 ---
-id: 6a86ee0538cb4b63e2f01b78
-title: Step 41
+id: 6a86f8da7ddbb5463cb7fcb0
+title: Step 49
 challengeType: 1
-dashedName: step-41
+dashedName: step-49
 ---
 
 # --description--
 
-Test your function with two calls to `listRoomsByBuilding`: one using `"CSE"`, and one using `"BBA"`.  
-
-Log both results to confirm the function returns the correct sorted list of rooms for each building.
+Inside the loop, check if `programValues[i].room == null`. If `true`, increment `programsWithoutRooms` by 1.
 
 # --hints--
 
@@ -156,7 +154,28 @@ function listRoomsByBuilding(buildingCode, normalizedData) {
   return rooms;
 }
 
---fcc-editable-region--
-    
---fcc-editable-region--
+function renderDirectorySummary(normalizedData) {
+  const departments = Object.keys(normalizedData.departmentsById).length;
+  const programs = Object.keys(normalizedData.programsById).length;
+  const instructors = Object.keys(normalizedData.instructorsById).length;
+
+  const instructorValues = Object.values(normalizedData.instructorsById);
+  let missingOfficeHours = 0;
+
+  for (let i = 0; i < instructorValues.length; i++) {
+    if (instructorValues[i].officeHours == null) {
+      missingOfficeHours++;
+    }
+  }
+
+  const programValues = Object.values(normalizedData.programsById);
+  let programsWithoutRooms = 0;
+
+  for (let i = 0; i < programValues.length; i++) {
+    --fcc-editable-region--
+            
+    --fcc-editable-region--
+  }
+
+}
 ```
