@@ -48,19 +48,6 @@
           ]
         },
         {
-          "dashedName": "rest-api-and-web-services",
-          "blocks": [
-            "lecture-understanding-rest-api-and-web-services",
-            "workshop-build-a-weather-service-api",
-            "review-rest-api-and-web-services"
-          ]
-        },
-        {
-          "moduleType": "cert-project",
-          "dashedName": "lab-timestamp-microservice",
-          "blocks": ["lab-timestamp-microservice"]
-        },
-        {
           "dashedName": "introduction-to-express",
           "blocks": [
             "lecture-working-with-express",
@@ -76,15 +63,6 @@
           "blocks": ["lab-personal-profile-app"]
         },
         {
-          "dashedName": "error-handling-in-express",
-          "blocks": [
-            "lecture-understanding-error-handling-and-health-checks",
-            "workshop-build-a-bank-api",
-            "review-error-handling-in-express",
-            "quiz-error-handling-in-express"
-          ]
-        },
-        {
           "dashedName": "express-middleware",
           "blocks": [
             "lecture-express-middleware",
@@ -92,6 +70,28 @@
             "lab-data-sanitizer",
             "review-express-middleware",
             "quiz-express-middleware"
+          ]
+        },
+        {
+          "dashedName": "rest-api-and-web-services",
+          "blocks": [
+            "lecture-understanding-rest-api-and-web-services",
+            "workshop-build-a-weather-service-api",
+            "review-rest-api-and-web-services"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-timestamp-microservice",
+          "blocks": ["lab-timestamp-microservice"]
+        },
+        {
+          "dashedName": "error-handling-in-express",
+          "blocks": [
+            "lecture-understanding-error-handling-and-health-checks",
+            "workshop-build-a-bank-api",
+            "review-error-handling-in-express",
+            "quiz-error-handling-in-express"
           ]
         },
         {
