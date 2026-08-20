@@ -4924,10 +4924,6 @@
           "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
         ]
       },
-      "workshop-smart-campus-directory": {
-        "title": "Build a Campus Directory Normalizer",
-        "intro": ["Build a Campus Directory Normalizer", ""]
-      },
       "workshop-recipe-tracker": {
         "title": "Build a Recipe Tracker",
         "intro": [
@@ -5025,6 +5021,10 @@
         "intro": [
           "In this lab, you'll create a function that looks up profile information."
         ]
+      },
+      "workshop-smart-campus-directory": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": ["Build a Campus Directory Normalizer", ""]
       },
       "lab-repeat-a-string": {
         "title": "Build a String Repeating Function",
