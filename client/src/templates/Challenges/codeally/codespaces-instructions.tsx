@@ -164,27 +164,33 @@ interface CodespacesContinueAlertProps {
 function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
   const { t } = useTranslation();
   return (
-    <Callout variant='note' label={t('misc.note')}>
-      <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
-        <a
-          href='https://github.com/freeCodeCamp/rdb-alpha'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          placeholder
-        </a>
-      </Trans>
-      <Spacer size='m' />
-      <Trans i18nKey='learn.codespaces.learn-more'>
-        <a
-          href='https://forum.freecodecamp.org/t/relational-database-curriculum-in-codespaces/761449'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          placeholder
-        </a>
-      </Trans>
-    </Callout>
+    <>
+      <Callout variant='note' label={t('misc.note')}>
+        <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
+          <a
+            href='https://github.com/codespaces'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            placeholder
+          </a>
+        </Trans>
+        <Spacer size='m' />
+        <Trans i18nKey='learn.codespaces.learn-more'>
+          <a
+            href='https://forum.freecodecamp.org/t/relational-database-curriculum-in-codespaces/761449'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            placeholder
+          </a>
+        </Trans>
+      </Callout>
+      <Spacer size='xs' />
+      <Callout variant='caution' label={t('misc.caution')}>
+        {t('learn.codespaces.reuse-tab-warning')}
+      </Callout>
+    </>
   );
 }
 
