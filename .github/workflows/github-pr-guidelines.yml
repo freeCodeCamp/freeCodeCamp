@@ -13,7 +13,7 @@ jobs:
     outputs:
       is_allow_listed: ${{ steps.pr_author.outputs.is_allow_listed }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -82,7 +82,7 @@ jobs:
     name: No PRs from Main Branch
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -143,7 +143,7 @@ jobs:
     needs: [no-web-commits, no-main-branch]
     if: needs.no-web-commits.result == 'success' && needs.no-main-branch.result == 'success' && github.event.action != 'edited'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -167,7 +167,7 @@ jobs:
     outputs:
       failure_reason: ${{ steps.check.outputs.failure_reason }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -189,7 +189,7 @@ jobs:
     outputs:
       failure_reason: ${{ steps.check.outputs.failure_reason }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
@@ -210,7 +210,7 @@ jobs:
     needs: [no-web-commits, no-main-branch, check-pr-template, check-linked-issue]
     if: always() && needs.no-web-commits.result == 'success' && needs.no-main-branch.result == 'success'
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           sparse-checkout: .github/scripts/pr-guidelines
           sparse-checkout-cone-mode: false
