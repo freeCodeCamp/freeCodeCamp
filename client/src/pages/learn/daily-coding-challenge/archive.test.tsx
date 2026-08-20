@@ -12,7 +12,8 @@ import {
 } from '../../../../utils/test-utils';
 import {
   formatDate,
-  getTodayUsCentral
+  getTodayUsCentral,
+  toMonthDay
 } from '../../../components/daily-coding-challenge/helpers';
 import Archive from './archive';
 
@@ -100,7 +101,7 @@ describe('<DailyCodingChallengeArchive />', () => {
       screen.getByRole('link', { name: 'buttons.go-to-dcc-today' })
     ).toHaveAttribute(
       'href',
-      `/learn/daily-coding-challenge/${todayUsCentral}`
+      `/learn/daily-coding-challenge/${toMonthDay(todayUsCentral)}`
     );
 
     await waitFor(() => {
@@ -113,6 +114,20 @@ describe('<DailyCodingChallengeArchive />', () => {
   it('renders the not found page when the API response is invalid', async () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue({
       json: vi.fn().mockResolvedValue({ invalid: 'data structure' })
+    } as unknown as Response);
+
+    renderArchive();
+
+    expect(
+      await screen.findByRole('heading', {
+        name: 'daily-coding-challenges.not-found'
+      })
+    ).toBeInTheDocument();
+  });
+
+  it('renders the not found page when there are no challenges', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      json: vi.fn().mockResolvedValue([])
     } as unknown as Response);
 
     renderArchive();

@@ -54,7 +54,7 @@ assert.lengthOf(document.querySelector('body > div#menu > main')?.children, 3);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cafe Menu</title>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
 --fcc-editable-region--
