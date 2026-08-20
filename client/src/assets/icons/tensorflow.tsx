@@ -1,6 +1,8 @@
 import React from 'react';
 
-function TensorflowIcon(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+function TensorflowIcon(
+  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+): JSX.Element {
   return (
     <svg
       aria-hidden='true'

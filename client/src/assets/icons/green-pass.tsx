@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-interface GreenPassProps extends React.SVGProps<SVGSVGElement> {
+interface GreenPassProps
+  extends JSX.IntrinsicAttributes, React.SVGProps<SVGSVGElement> {
   hushScreenReaderText?: boolean;
 }
 function GreenPass(props: GreenPassProps): JSX.Element {

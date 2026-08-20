@@ -31,10 +31,12 @@ const initDialogue = { label: '', text: '', align: 'left' };
 
 export function Scene({
   scene,
-  sceneSubject
+  sceneSubject,
+  superBlock
 }: {
   scene: FullScene;
   sceneSubject: SceneSubject;
+  superBlock?: string;
 }): JSX.Element {
   const { t } = useTranslation();
   const canPauseRef = useRef(false);
@@ -131,9 +133,9 @@ export function Scene({
   const [background, setBackground] = useState(initBackground);
   const startClocktimeRef = useRef<number>(0);
   const pausedAtRef = useRef<number>(0);
-  const startTimerRef = useRef<number>(undefined);
-  const finishTimerRef = useRef<number>(undefined);
-  const animationRef = useRef<number>(undefined);
+  const startTimerRef = useRef<number>();
+  const finishTimerRef = useRef<number>();
+  const animationRef = useRef<number>();
   const usedCommandsRef = useRef(new Set<number>());
 
   const [currentTime, setCurrentTime] = useState(0);
@@ -437,7 +439,11 @@ export function Scene({
           </button>
         )}
       </div>
-      <ChallengeTranscript transcript={transcriptText} isDialogue={true} />
+      <ChallengeTranscript
+        transcript={transcriptText}
+        isDialogue={true}
+        superBlock={superBlock}
+      />
       <Spacer size='m' />
     </Col>
   );

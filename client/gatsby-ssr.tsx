@@ -51,7 +51,7 @@ export const onPreRenderHTML: GatsbySSR['onPreRenderHTML'] = ({
     key === 'bootstrap-min-preload' || key === 'bootstrap-min';
 
   const headComponents = getHeadComponents();
-  void headComponents.sort((x, y) => {
+  headComponents.sort((x, y) => {
     const xKey = React.isValidElement(x) ? x.key : null;
     const yKey = React.isValidElement(y) ? y.key : null;
 
