@@ -36,8 +36,9 @@ vi.mock('../../../../config/env.json', () => ({
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeature: () => ({ on: showSocratesFlag })
 }));
+const mockSubmitChallenge = vi.hoisted(() => vi.fn());
 vi.mock('../utils/fetch-all-curriculum-data', () => ({
-  useSubmit: () => vi.fn()
+  useSubmit: () => mockSubmitChallenge
 }));
 
 const baseChallengeMeta: ChallengeMeta = {
@@ -89,6 +90,7 @@ describe('<IndependentLowerJaw />', () => {
   beforeEach(() => {
     showSocratesFlag = true;
     envMock.clientLocale = 'english';
+    localStorage.clear();
     vi.mocked(useStaticQuery).mockReturnValue(mockCurriculumData);
   });
 
@@ -130,6 +132,30 @@ describe('<IndependentLowerJaw />', () => {
     expect(screen.queryByTestId('share-on-x')).not.toBeInTheDocument();
   });
 
+  it('shows reset and help buttons by default', () => {
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    expect(
+      screen.getByRole('button', { name: 'buttons.reset' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'buttons.help' })
+    ).toBeInTheDocument();
+  });
+
+  it('opens the help modal when the help button is clicked', async () => {
+    const openHelpModal = vi.fn();
+
+    render(
+      <IndependentLowerJaw {...baseProps} openHelpModal={openHelpModal} />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'buttons.help' }));
+
+    expect(openHelpModal).toHaveBeenCalledTimes(1);
+  });
+
   it('shows socrates button when hasSocratesAccess is true and flag is on', () => {
     render(
       <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
@@ -165,6 +191,38 @@ describe('<IndependentLowerJaw />', () => {
       limit: 3,
       optimized_request: null
     });
+    expect(baseProps.askSocrates).toHaveBeenCalled();
+  });
+
+  it('tracks check code analytics when the check button is clicked', async () => {
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={[{ pass: false, err: 'fail', text: 'test', testString: 'test' }]}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /check-code/ }));
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'challenge_test_code_button_click'
+    });
+  });
+
+  it('tracks submit code analytics when the submit button is clicked', async () => {
+    mockSubmitChallenge.mockClear();
+
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    await userEvent.click(
+      screen.getByRole('button', { name: /submit-continue/ })
+    );
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'challenge_submit_button_click'
+    });
+    expect(mockSubmitChallenge).toHaveBeenCalled();
   });
 
   it('hides socrates button when show-socrates flag is off', () => {
@@ -318,6 +376,69 @@ describe('<IndependentLowerJaw />', () => {
 
     expect(
       screen.queryByTestId('socrates-donation-cta')
+    ).not.toBeInTheDocument();
+  });
+
+  const twoFailedAttemptsProps = {
+    ...baseProps,
+    hasSocratesAccess: true,
+    attempts: 2,
+    tests: [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ] as Test[],
+    completedPercent: 50,
+    completedChallengeIds: ['id-1']
+  };
+
+  it('shows the Socrates feature-discovery dot after two failed checks', () => {
+    render(<IndependentLowerJaw {...twoFailedAttemptsProps} />, createStore());
+
+    expect(screen.getByTestId('socrates-feature-dot')).toBeInTheDocument();
+  });
+
+  it('does not show the dot before two failed checks', () => {
+    render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} attempts={1} />,
+      createStore()
+    );
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('does not show the dot when the challenge is complete', () => {
+    render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} tests={passingTests} />,
+      createStore()
+    );
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+  });
+
+  it('hides the dot once the Socrates button is clicked and remembers it', async () => {
+    const { unmount } = render(
+      <IndependentLowerJaw {...twoFailedAttemptsProps} />,
+      createStore()
+    );
+
+    expect(screen.getByTestId('socrates-feature-dot')).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: /ask-socrates/ }));
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
+    ).not.toBeInTheDocument();
+    expect(localStorage.getItem('fcc-socrates-discovered')).toBe('true');
+
+    // The dismissal persists across remounts (e.g. other challenges).
+    unmount();
+    render(<IndependentLowerJaw {...twoFailedAttemptsProps} />, createStore());
+
+    expect(
+      screen.queryByTestId('socrates-feature-dot')
     ).not.toBeInTheDocument();
   });
 

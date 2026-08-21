@@ -90,6 +90,38 @@
   display: inline-block;
 }
 
+.independent-lower-jaw .socrates-feature-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--red80);
+  pointer-events: none;
+  animation: socrates-dot-pulse 2s ease-out infinite;
+}
+
+@keyframes socrates-dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--red80);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(248, 33, 83, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(248, 33, 83, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .independent-lower-jaw .socrates-feature-dot {
+    animation: none;
+  }
+}
+
 /* Tooltip text */
 .independent-lower-jaw .tooltip .tooltiptext {
   visibility: hidden;

@@ -270,7 +270,6 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             postPayment={this.postPayment}
             isMinimalForm={showMinimalPayments}
-            isPaypalLoading={loading.paypal}
             onDonationStateChange={this.onDonationStateChange}
             theme={priorityTheme}
           />

@@ -31,6 +31,8 @@ const dailyChallengeJs = 28;
 const dailyChallengePy = 29;
 const examDownload = 30;
 const review = 31;
+const freeCodeCampOsPractice = 32;
+const freeCodeCampOsCert = 33;
 
 export const challengeTypes = {
   html,
@@ -65,7 +67,9 @@ export const challengeTypes = {
   dailyChallengeJs,
   dailyChallengePy,
   examDownload,
-  review
+  review,
+  freeCodeCampOsPractice,
+  freeCodeCampOsCert
 };
 
 export const hasNoSolution = (challengeType: number): boolean => {
@@ -90,7 +94,9 @@ export const hasNoSolution = (challengeType: number): boolean => {
     fillInTheBlank,
     generic,
     examDownload,
-    review
+    review,
+    freeCodeCampOsPractice,
+    freeCodeCampOsCert
   ];
 
   return noSolutions.includes(challengeType);
@@ -128,7 +134,9 @@ export const viewTypes = {
   [dailyChallengeJs]: 'classic',
   [dailyChallengePy]: 'classic',
   [examDownload]: 'examDownload',
-  [review]: 'generic'
+  [review]: 'generic',
+  [freeCodeCampOsPractice]: 'freeCodeCampOs',
+  [freeCodeCampOsCert]: 'freeCodeCampOs'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -167,7 +175,8 @@ export const submitTypes = {
   [dailyChallengeJs]: 'tests',
   [dailyChallengePy]: 'tests',
   [examDownload]: 'examDownload',
-  [review]: 'tests'
+  [review]: 'tests',
+  [freeCodeCampOsCert]: 'project.frontEnd'
 };
 
 const dailyCodingChallengeTypes = [
