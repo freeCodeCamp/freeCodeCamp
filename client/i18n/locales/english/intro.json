@@ -1352,12 +1352,6 @@
           "In this 140-lesson workshop, you will complete your student database while diving deeper into SQL commands."
         ]
       },
-      "lab-world-cup-database": {
-        "title": "Build a World Cup Database",
-        "intro": [
-          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
-        ]
-      },
       "workshop-kitty-ipsum-translator": {
         "title": "Build a Kitty Ipsum Translator",
         "intro": [
@@ -1369,6 +1363,12 @@
         "title": "Build a Bike Rental Shop",
         "intro": [
           "In this 210-lesson workshop, you will build an interactive Bash program that stores rental information for your bike rental shop using PostgreSQL."
+        ]
+      },
+      "lab-world-cup-database": {
+        "title": "Build a World Cup Database",
+        "intro": [
+          "For this project, you will create a Bash script that enters information from World Cup games into PostgreSQL, then query the database for useful statistics."
         ]
       },
       "lab-salon-appointment-scheduler": {
@@ -1492,7 +1492,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn what Python is and how to set up your development environment."
+          "In these lessons, you will learn what Python is and some common uses in the industry."
         ]
       },
       "lecture-understanding-variables-and-data-types": {
@@ -1985,7 +1985,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -2055,7 +2055,7 @@
       "lecture-introduction-to-strings": {
         "title": "Introduction to Strings",
         "intro": [
-          "In these lessons, you will learn how to work with strings and string concatenation."
+          "In these lessons, you will learn how to work with strings, string concatenation, and <code>console.log()</code>."
         ]
       },
       "lecture-understanding-code-clarity": {
@@ -2667,6 +2667,13 @@
         "intro": [
           "For this lab, you'll create a gradebook app.",
           "You'll practice conditionals to determine the student's grade based on their score."
+        ]
+      },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
         ]
       },
       "lecture-the-var-keyword-and-hoisting": {
@@ -3774,16 +3781,16 @@
           "Learn the CSS box model with this course. Understand how elements are rendered on the web, and learn to manipulate spacing, borders, and padding to achieve your desired layout and design."
         ]
       },
-      "top-introduction-to-flexbox": {
-        "title": "Introduction to Flexbox",
-        "intro": [
-          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
-        ]
-      },
       "top-learn-block-and-inline": {
         "title": "Learn the difference between Block and Inline",
         "intro": [
           "Explore the distinctions between block and inline elements in HTML and CSS. This course provides insights into how these display types affect layout and behavior, empowering you to make informed design decisions."
+        ]
+      },
+      "top-introduction-to-flexbox": {
+        "title": "Introduction to Flexbox",
+        "intro": [
+          "Discover the power of Flexbox, a layout model that simplifies the design of flexible and responsive web layouts. Learn how to create dynamic and adaptive page structures with ease."
         ]
       },
       "top-learn-variables-and-operators": {
@@ -5120,6 +5127,13 @@
           "You'll practice conditionals to determine the student's grade based on their score."
         ]
       },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
+        ]
+      },
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
@@ -5496,10 +5510,10 @@
           "In these lectures, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
-      "workshop-calorie-counter": {
-        "title": "Build a Calorie Counter",
+      "workshop-envelope-budget-app": {
+        "title": "Build an Envelope Budget App",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this envelope budget app workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
           "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
@@ -5866,7 +5880,7 @@
         ]
       },
       "lab-n-queens-problem-js": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -6039,7 +6053,6 @@
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Coming 2026",
         "intro": [
           "Pass this exam to earn your Front-End Development Libraries Certification."
         ]
@@ -6281,12 +6294,6 @@
           "You will practice working with Tailwind CSS utility classes for flexbox layouts, colors, breakpoints and more."
         ]
       },
-      "lab-photography-exhibit": {
-        "title": "Design a Photography Exhibit",
-        "intro": [
-          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
-        ]
-      },
       "review-css-libraries-and-frameworks": {
         "title": "CSS Libraries and Frameworks Review",
         "intro": [
@@ -6298,6 +6305,12 @@
         "title": "CSS Libraries and Frameworks Quiz",
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
+        ]
+      },
+      "lab-photography-exhibit": {
+        "title": "Design a Photography Exhibit",
+        "intro": [
+          "In this lab, you will practice working with Tailwind CSS by designing a photography exhibit webpage."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -6366,18 +6379,6 @@
           "In this workshop, you will continue to practice working with TypeScript by building a fortune telling app."
         ]
       },
-      "lab-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
-        "intro": [
-          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
-        ]
-      },
-      "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
-        "intro": [
-          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
-        ]
-      },
       "workshop-build-a-football-player-card-builder": {
         "title": "Build a Football Player Card Builder",
         "intro": [
@@ -6394,6 +6395,18 @@
       "quiz-typescript": {
         "title": "TypeScript Quiz",
         "intro": ["Test what you've learned on TypeScript with this quiz."]
+      },
+      "lab-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this lab, you will practice using TypeScript by building a flashcard quiz app."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "In this lab, you'll practice what you learned about TypeScript and React by building a digital pet game."
+        ]
       },
       "review-front-end-libraries": {
         "title": "Front-End Libraries Review",
@@ -6874,7 +6887,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -7168,85 +7181,109 @@
       "introduction-to-nodejs": "Introduction to Node.js",
       "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
+      "lab-prime-number-checker-module": "Build a Prime Number Checker Module",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
-      "rest-api-and-web-services": "REST API and Web Services",
       "introduction-to-express": "Introduction to Express",
-      "error-handling-in-express": "Error Handling in Express",
+      "lab-personal-profile-app": "Build a Personal Profile App",
       "express-middleware": "Express Middleware",
+      "rest-api-and-web-services": "REST API and Web Services",
+      "lab-timestamp-microservice": "Build a Timestamp Microservice",
+      "error-handling-in-express": "Error Handling in Express",
       "websockets": "WebSockets",
+      "lab-chat-app": "Build a Chat App",
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
+      "lab-family-movie-watchlist-api": "Build a Family Movie Watchlist API",
+      "review-back-end-development-and-apis": "Back-End Development and APIs Review",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn the basics of working with Node.js."
         ]
       },
       "nodejs-core-modules": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
         ]
       },
+      "lab-prime-number-checker-module": {
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
+        ]
+      },
       "http-and-the-web-standards-model": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
         ]
       },
-      "rest-api-and-web-services": {
-        "note": "Coming Late 2026",
-        "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
-        ]
-      },
       "introduction-to-express": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
         ]
       },
-      "error-handling-in-express": {
-        "note": "Coming Late 2026",
+      "lab-personal-profile-app": {
         "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "express-middleware": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
         ]
       },
+      "rest-api-and-web-services": {
+        "intro": [
+          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
+      "error-handling-in-express": {
+        "intro": [
+          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+        ]
+      },
       "websockets": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
+      "lab-chat-app": {
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
       "security-and-privacy": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
         ]
       },
       "authentication": {
-        "note": "Coming Late 2026",
         "intro": [
           "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
         ]
       },
+      "lab-family-movie-watchlist-api": {
+        "intro": [
+          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
+        ]
+      },
+      "review-back-end-development-and-apis": {
+        "intro": [
+          "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
+        ]
+      },
       "back-end-development-and-apis-certification-exam": {
-        "note": "Coming Late 2026",
         "intro": [
           "Pass this exam to earn your Back-End Development and APIs Certification."
         ]
@@ -7254,7 +7291,7 @@
     },
     "blocks": {
       "lecture-working-with-nodejs-and-event-driven-architecture": {
-        "title": "Working with NodeJS and event driven architecture",
+        "title": "Working with Node.js and Event-Driven Architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the back-end."
         ]
@@ -7281,8 +7318,8 @@
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
         ]
       },
-      "workshop-nodejs-common-modules": {
-        "title": "Learn Node.js Common Modules",
+      "workshop-build-a-file-processor": {
+        "title": "Build a File Processor",
         "intro": [
           "You will learn Node.js built-in modules like <code>fs</code>, <code>path</code>, and <code>crypto</code> by using them for file operations and data processing."
         ]
@@ -7311,16 +7348,10 @@
           "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
-      "workshop-how-to-build-an-npm-module": {
-        "title": "Learn How to Build an NPM Module",
+      "workshop-build-a-case-converter": {
+        "title": "Build a Case Converter",
         "intro": [
           "You will learn how to initialize, configure, and publish an NPM module by building a case converter."
-        ]
-      },
-      "lab-prime-number-checker-module": {
-        "title": "Build a Prime Number Checker Module",
-        "intro": [
-          "Practice building and exporting an NPM module by creating a prime number checker."
         ]
       },
       "review-npm": {
@@ -7330,6 +7361,12 @@
       "quiz-npm": {
         "title": "NPM Quiz",
         "intro": ["Test what you have learned about npm in this quiz."]
+      },
+      "lab-prime-number-checker-module": {
+        "title": "Build a Prime Number Checker Module",
+        "intro": [
+          "Practice building and exporting an NPM module by creating a prime number checker."
+        ]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
         "title": "Understanding how HTTP, DNS and TCP/IP work",
@@ -7349,8 +7386,8 @@
           "In these lectures, you will learn about the web standard model, standard bodies, the process, lifecycle, and the principles behind web stadards."
         ]
       },
-      "workshop-nodejs-by-building-a-web-server": {
-        "title": "Learn Node.js by Building a Web Server",
+      "workshop-build-a-web-server": {
+        "title": "Build a Web Server",
         "intro": [
           "You will learn the Node.js <code>http</code> module by building a web server to serve a multi-page client application."
         ]
@@ -7368,24 +7405,6 @@
           ""
         ]
       },
-      "lecture-understanding-rest-api-and-web-services": {
-        "title": "Understanding the REST API and Web Services",
-        "intro": [
-          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
-        ]
-      },
-      "workshop-express-by-building-a-weather-service-api": {
-        "title": "Learn Express by Building a Weather Service API",
-        "intro": [
-          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "title": "Build a Timestamp Microservice",
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
       "lecture-working-with-express": {
         "title": "Working with Express",
         "intro": [
@@ -7399,22 +7418,16 @@
           "In these lessons, you will learn about routing in ExpressJS, which is how you define the different endpoints of your web application and how they respond to client requests."
         ]
       },
-      "workshop-express-by-building-a-random-joke-app": {
-        "title": "Learn Express by Building a Random Joke App",
+      "workshop-build-a-random-joke-app": {
+        "title": "Build a Random Joke App",
         "intro": [
           "You will learn basic Express routing and response methods by building a random joke app."
-        ]
-      },
-      "lab-personal-profile-app": {
-        "title": "Build a Personal Profile App",
-        "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "review-introduction-to-express": {
         "title": "Introduction to Express Review",
         "intro": [
-          "Review web services, REST, microservices, and Express.js routing before you take the quiz."
+          "Review Express.js, routing, response methods, and serving static files before you take the quiz."
         ]
       },
       "quiz-introduction-to-express": {
@@ -7423,28 +7436,10 @@
           "Test your knowledge of web services, REST, microservices, Express.js, and routing."
         ]
       },
-      "lecture-understanding-error-handling-and-health-checks": {
-        "title": "Understanding Error Handling and Health Checks",
+      "lab-personal-profile-app": {
+        "title": "Build a Personal Profile App",
         "intro": [
-          "In these lessons, you'll learn about error handling and health checks in Express."
-        ]
-      },
-      "workshop-error-handling-in-express-by-building-a-bank-api": {
-        "title": "Learn Error Handling in Express by Building a Bank API",
-        "intro": [
-          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
-        ]
-      },
-      "review-error-handling-in-express": {
-        "title": "Error Handling in Express Review",
-        "intro": [
-          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
-        ]
-      },
-      "quiz-error-handling-in-express": {
-        "title": "Error Handling in Express Quiz",
-        "intro": [
-          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+          "Practice building an Express server and JSON API by creating a personal profile application."
         ]
       },
       "lecture-express-middleware": {
@@ -7453,8 +7448,8 @@
           "In these lessons, you will learn how middleware works in Express, including application-level, router-level, and error-handling middleware, as well as examples of built-in and third-party middleware."
         ]
       },
-      "workshop-express-middleware-by-building-a-submission-form": {
-        "title": "Learn Express Middleware by Building a Submission Form",
+      "workshop-build-a-submission-form": {
+        "title": "Build a Submission Form",
         "intro": [
           "You will learn application-level and router-level middleware by building a structured submission form."
         ]
@@ -7477,22 +7472,64 @@
           "Test your knowledge of Express middleware, including application-level, router-level, error-handling, and built-in and third-party middleware."
         ]
       },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": [
+          "In these lessons, you will learn about REST APIs and web services, and how they allow different applications to communicate with each other over the internet."
+        ]
+      },
+      "workshop-build-a-weather-service-api": {
+        "title": "Build a Weather Service API",
+        "intro": [
+          "You will learn route parameters and modular routing with <code>express.Router</code> by building a weather service API."
+        ]
+      },
+      "review-rest-api-and-web-services": {
+        "title": "REST API and Web Services Review",
+        "intro": [
+          "Review web services, the REST architecture, HTTP status codes, and microservices."
+        ]
+      },
+      "lab-timestamp-microservice": {
+        "title": "Build a Timestamp Microservice",
+        "intro": [
+          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
+        ]
+      },
+      "lecture-understanding-error-handling-and-health-checks": {
+        "title": "Understanding Error Handling and Health Checks",
+        "intro": [
+          "In these lessons, you'll learn about error handling and health checks in Express."
+        ]
+      },
+      "workshop-build-a-bank-api": {
+        "title": "Build a Bank API",
+        "intro": [
+          "You will learn Express 5 error handling, health checks, and graceful shutdowns by building a bank API."
+        ]
+      },
+      "review-error-handling-in-express": {
+        "title": "Error Handling in Express Review",
+        "intro": [
+          "Review HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns before you take the quiz."
+        ]
+      },
+      "quiz-error-handling-in-express": {
+        "title": "Error Handling in Express Quiz",
+        "intro": [
+          "Test your knowledge of HTTP status codes, error handling, debugging, logging, health checks, and graceful shutdowns."
+        ]
+      },
       "lecture-understanding-websockets": {
         "title": "Understanding WebSockets",
         "intro": [
           "Learn how WebSockets enable real-time, bidirectional communication between clients and servers, and how the Pub/Sub messaging architecture routes messages to the right subscribers in real-time applications."
         ]
       },
-      "workshop-websockets-by-building-a-resource-monitor": {
-        "title": "Learn WebSockets by Building a Resource Monitor",
+      "workshop-build-a-resource-monitor": {
+        "title": "Build a Resource Monitor",
         "intro": [
           "You will learn Node.js WebSockets and real-time data streaming by building a system resource monitor."
-        ]
-      },
-      "lab-chat-app": {
-        "title": "Build a Chat App",
-        "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
         ]
       },
       "review-websockets": {
@@ -7507,10 +7544,40 @@
           "Test your knowledge of WebSockets and Pub/Sub with this quiz."
         ]
       },
+      "lab-chat-app": {
+        "title": "Build a Chat App",
+        "intro": [
+          "Practice building a real-time multi-client chat server using Node.js WebSockets."
+        ]
+      },
+      "lecture-understanding-security-and-privacy-in-web-applications": {
+        "title": "Understanding Security and Privacy in Web Applications",
+        "intro": [
+          "Learn how security and privacy work in web applications, covering HTTPS, cookies, CSP, common threats, privacy laws, and more."
+        ]
+      },
+      "review-security-and-privacy": {
+        "title": "Security and Privacy Review",
+        "intro": [
+          "Review security and privacy concepts covered in the lectures before taking the quiz."
+        ]
+      },
+      "quiz-security-and-privacy": {
+        "title": "Security and Privacy Quiz",
+        "intro": [
+          "Test your knowledge of security and privacy concepts covered in this module."
+        ]
+      },
       "lecture-introduction-to-authentication-and-authorization": {
         "title": "Introduction to Authentication and Authorization",
         "intro": [
           "Learn how authentication and authorization work, how JWTs protect your API routes, how to defend against CSRF attacks, and how to use Passport.js and Helmet.js to secure your Node.js applications."
+        ]
+      },
+      "workshop-jwt-protected-routes": {
+        "title": "Build JWT Protected Routes",
+        "intro": [
+          "You will learn authentication and role-based authorization by building an Express application with JWT-protected routes."
         ]
       },
       "review-authentication-and-authorization": {
@@ -7523,6 +7590,18 @@
         "title": "Authentication and Authorization Quiz",
         "intro": [
           "Test your knowledge of authentication and authorization concepts covered in this module."
+        ]
+      },
+      "lab-family-movie-watchlist-api": {
+        "title": "Build a Family Movie Watchlist API",
+        "intro": [
+          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
+        ]
+      },
+      "review-back-end-development-and-apis": {
+        "title": "Back-End Development and APIs Review",
+        "intro": [
+          "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7581,7 +7660,7 @@
         "title": "Build a Hotel Feedback Form",
         "intro": [
           "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
       "lecture-working-with-tables": {
@@ -8112,13 +8191,13 @@
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code> and <code>blockquote</code> elements, and more."
         ]
       },
       "workshop-quincys-job-tips": {
         "title": "Build Quincy's Job Tips Page",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code>, and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -8130,7 +8209,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -8163,7 +8242,7 @@
         "title": "Build a Hotel Feedback Form",
         "intro": [
           "In this workshop, you will build a Hotel Feedback Form.",
-          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+          "You will practice working with the <code>label</code>, <code>input</code>, <code>fieldset</code>, <code>legend</code>, <code>textarea</code>, and <code>button</code> elements."
         ]
       },
       "lecture-working-with-tables": {
@@ -8343,7 +8422,7 @@
         "title": "Design a Cafe Menu",
         "intro": [
           "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe."
         ]
       },
       "lab-business-card": {
@@ -8528,7 +8607,7 @@
         "title": "CSS Colors Review",
         "intro": [
           "Before you're quizzed on CSS colors, you should review what you've learned about them.",
-          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, hex codes, and more."
         ]
       },
       "quiz-css-colors": {
@@ -9264,7 +9343,7 @@
       "lecture-understanding-the-html-boilerplate": {
         "title": "Understanding the HTML Boilerplate",
         "intro": [
-          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "In these lectures, you will learn about the HTML boilerplate, which is a ready-made template for your webpages.",
           "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
@@ -9284,13 +9363,13 @@
       "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
         "intro": [
-          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the <code>script</code> element, HTML entities, and more."
         ]
       },
       "workshop-bookstore-page": {
         "title": "Build a Bookstore Page",
         "intro": [
-          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+          "In this workshop, you will practice working with classes, ids, and the <code>div</code> element by building a bookstore page."
         ]
       },
       "lecture-understanding-how-html-affects-seo": {
@@ -9302,13 +9381,13 @@
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
+          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>a</code> element, and more."
         ]
       },
       "lecture-working-with-audio-and-video-elements": {
         "title": "Working with Audio and Video Elements",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+          "In this lecture, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
         ]
       },
       "workshop-html-music-player": {
@@ -9334,13 +9413,13 @@
       "lecture-working-with-images-and-svgs": {
         "title": "Working with Images and SVGs",
         "intro": [
-          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+          "In these lectures, you will learn how to work with SVGs and explore techniques for optimizing your images."
         ]
       },
       "workshop-build-a-heart-icon": {
         "title": "Build a Heart Icon",
         "intro": [
-          "In this workshop, you will practice working with SVGs by building a heart icon"
+          "In this workshop, you will practice working with SVGs by building a heart icon."
         ]
       },
       "lecture-working-with-media": {
@@ -9364,7 +9443,7 @@
       "lecture-working-with-links": {
         "title": "Working with Links",
         "intro": [
-          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
+          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute and relative paths, and more."
         ]
       },
       "review-basic-html": {
@@ -9413,13 +9492,13 @@
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code> and <code>blockquote</code> elements, and more."
         ]
       },
       "workshop-quincys-job-tips": {
         "title": "Build Quincy's Job Tips Page",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code>, and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -9431,7 +9510,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       },
       "lab-event-hub": {
@@ -9562,7 +9641,7 @@
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
-          "In these lessons, you will learn about the computer, its different parts, internet service providers (ISPs), and the tools professional developers use."
+          "In these lessons, you will learn about computers and their different parts, how to work safely with a keyboard and mouse, how to sign into your computer securely, internet service providers (ISPs), and the tools professional developers use."
         ]
       },
       "lecture-working-with-file-systems": {
@@ -9611,7 +9690,7 @@
         "title": "Design a Cafe Menu",
         "intro": [
           "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
-          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe."
         ]
       },
       "lab-business-card": {
@@ -9836,7 +9915,7 @@
         "title": "CSS Colors Review",
         "intro": [
           "Before you're quizzed on CSS colors, you should review what you've learned about them.",
-          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, hex codes, and more."
         ]
       },
       "quiz-css-colors": {
@@ -10352,7 +10431,7 @@
       "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
-          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+          "In this workshop, you will build an HTML-only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code>, and <code>footer</code> elements."
         ]
       }
     },

@@ -227,7 +227,9 @@ function createQuestionEpic(action$, state$, { window }) {
       );
 
       const category = window.encodeURIComponent(
-        i18next.t('links:help.' + helpCategory || 'Help')
+        i18next.t('links:help.' + helpCategory, {
+          defaultValue: 'curriculum-help'
+        })
       );
 
       const studentCode = window.encodeURIComponent(textMessage);

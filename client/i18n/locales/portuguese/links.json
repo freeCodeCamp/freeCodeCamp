@@ -20,22 +20,22 @@
   },
   "nav": {
     "contribute": "https://contribute.freecodecamp.org/#/i18n/portuguese/index",
-    "forum": "https://forum.freecodecamp.org/c/portugues/",
+    "forum": "https://forum.freecodecamp.org/",
     "news": "https://freecodecamp.org/portuguese/news/",
     "podcast": "https://open.spotify.com/show/70m92At5oht4zY4f87lLEE?si=6tozUAOBQFSVyaqixy6aCg"
   },
   "help": {
-    "HTML-CSS": "world-languages/portugues",
-    "JavaScript": "world-languages/portugues",
-    "Python": "world-languages/portugues",
-    "Backend Development": "world-languages/portugues",
-    "C-Sharp": "world-languages/portugues",
-    "English": "world-languages/portugues",
-    "Spanish Curriculum": "world-languages/portugues",
-    "Chinese Curriculum": "world-languages/portugues",
-    "Odin": "world-languages/portugues",
-    "Euler": "world-languages/portugues",
-    "Rosetta": "world-languages/portugues",
-    "General": "world-languages/portugues"
+    "HTML-CSS": "curriculum-help",
+    "JavaScript": "curriculum-help",
+    "Python": "curriculum-help",
+    "Backend Development": "curriculum-help",
+    "C-Sharp": "curriculum-help",
+    "English": "curriculum-help",
+    "Spanish Curriculum": "curriculum-help",
+    "Chinese Curriculum": "curriculum-help",
+    "Odin": "curriculum-help",
+    "Euler": "curriculum-help",
+    "Rosetta": "curriculum-help",
+    "General": "curriculum-help"
   }
 }

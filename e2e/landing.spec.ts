@@ -197,7 +197,9 @@ test.describe('Landing Page', () => {
   });
 
   test('Links to all non-archived superblocks in order', async ({ page }) => {
-    const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
+    const curriculumBtns = page.locator(
+      `[data-testid="${landingPageElements.curriculumBtns}"]`
+    );
     await expect(curriculumBtns).toHaveCount(nonArchivedSuperBlocks.length);
     for (let index = 0; index < nonArchivedSuperBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);
