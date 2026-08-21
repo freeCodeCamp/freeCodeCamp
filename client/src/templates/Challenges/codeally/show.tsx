@@ -51,7 +51,6 @@ import { postUserToken } from '../../../utils/ajax';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
 import { LocalInstructions } from './local-instructions';
-import { OnaInstructions } from './ona-instructions';
 
 import './codeally.css';
 import { CodespacesInstructions } from './codespaces-instructions';
@@ -208,7 +207,6 @@ function ShowCodeAlly({
 
   const rdbLocalInstructions = useFeature('rdb-local-instructions');
   const rdbCodespacesInstructions = useFeature('rdb-codespaces-instructions');
-  const rdbOnaInstructions = useFeature('rdb-ona-instructions');
 
   const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
 
@@ -274,11 +272,6 @@ function ShowCodeAlly({
       name: t('learn.local.summary'),
       component: LocalInstructions,
       on: rdbLocalInstructions.on
-    },
-    {
-      name: t('learn.ona.summary'),
-      component: OnaInstructions,
-      on: rdbOnaInstructions.on
     }
   ];
 
