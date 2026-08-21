@@ -353,9 +353,7 @@ export function postReportUser(body: Report): Promise<ResponseWithData<void>> {
   return post('/user/report-user', body);
 }
 
-// Both are called without a payload in danger-zone-saga,
-// which suggests both are sent without any body.
-export function postDeleteAccount(
+export function deleteMyAccount(
   userId: string
 ): Promise<ResponseWithData<void>> {
   return deleteRequest(`/users/${userId}`, {});
