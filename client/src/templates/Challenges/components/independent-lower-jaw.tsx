@@ -271,12 +271,6 @@ export function IndependentLowerJaw({
     setWasCheckButtonClicked(false);
   }, [isChallengeComplete, isSignedIn, wasCheckButtonClicked]);
 
-  const handleCheckButtonClick = () => {
-    setWasCheckButtonClicked(true);
-    setShowSocratesResults(false);
-    executeChallenge();
-  };
-
   const isMacOS = navigator.userAgent.includes('Mac OS');
   const showRevertButton = isSignedIn && challengeMeta.saveSubmissionToDB;
   const shouldShowSocratesDonateCta =
@@ -308,6 +302,22 @@ export function IndependentLowerJaw({
     setShowSubmissionHint(false);
     if (socratesHintState.isLoading) return;
     askSocrates();
+  };
+
+  const handleCheckButtonClick = () => {
+    callGA({
+      event: 'challenge_test_code_button_click'
+    });
+    setWasCheckButtonClicked(true);
+    setShowSocratesResults(false);
+    executeChallenge();
+  };
+
+  const handleSubmitButtonClick = () => {
+    callGA({
+      event: 'challenge_submit_button_click'
+    });
+    submitChallenge();
   };
 
   return (
@@ -467,7 +477,7 @@ export function IndependentLowerJaw({
               id='independent-lower-jaw-submit-button'
               data-playwright-test-label='independentLowerJaw-submit-button'
               aria-label={t('buttons.submit-continue')}
-              onClick={() => submitChallenge()}
+              onClick={handleSubmitButtonClick}
               ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
