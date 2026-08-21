@@ -154,7 +154,7 @@ tr:nth-child(odd) {
 
 :::
 
-## The `:first-child`, `:last-child` and `:only-child` Pseudo-classes
+## The `:first-child`, `:last-child`, and `:only-child` Pseudo-classes
 
 The `:first-child`, `:last-child`, and `:only-child` pseudo-classes all act on items within a parent container or the entire document.
 
