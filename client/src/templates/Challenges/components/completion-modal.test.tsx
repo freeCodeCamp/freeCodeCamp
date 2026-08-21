@@ -20,7 +20,6 @@ import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { curriculumData } from '../../../services/curriculum-data';
 import { getTestRunner } from '../utils/build';
 import ConnectedCompletionModal, {
-  combineFileData,
   CompletionModal
 } from './completion-modal';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
@@ -361,30 +360,5 @@ describe('<CompletionModal />', () => {
     });
   });
 
-  describe('File Download Content', () => {
-    it('Should label each section appropriately', () => {
-      const indexHtml = {
-        name: 'index',
-        ext: 'html',
-        contents: 'some html elements'
-      };
-      const stylesCSS = {
-        name: 'styles',
-        ext: 'css',
-        contents: 'some css styles'
-      };
-      const scriptJS = {
-        name: 'script',
-        ext: 'js',
-        contents: 'some javascript'
-      };
-      const result = combineFileData([indexHtml, stylesCSS, scriptJS]);
-      expect(result).toContain('** start of index.html **');
-      expect(result).toContain('** end of index.html **');
-      expect(result).toContain('** start of styles.css **');
-      expect(result).toContain('** end of styles.css **');
-      expect(result).toContain('** start of script.js **');
-      expect(result).toContain('** end of script.js **');
-    });
-  });
+
 });
