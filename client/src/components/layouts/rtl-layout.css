@@ -22,6 +22,19 @@ Intro project buttons and headings
   transform: rotate(180deg);
 }
 
+[dir='rtl'] .landing-top figure img {
+  transform: scaleX(-1);
+}
+
+[dir='rtl'] .landing-top .landing-top-two-column figure {
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 20%);
+  mask-image: linear-gradient(to left, transparent 0%, black 20%);
+}
+
+[dir='rtl'] .catalog-item-see-all > svg {
+  transform: rotate(180deg);
+}
+
 /* 
 this is used to rotate arrow mark in certification block and donation
 the "not" and "is" selector is used to stop it from affecting other section and pages

@@ -9,6 +9,7 @@ import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import { apiLocation } from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
+import { pathAfterSignout } from './path-after-signout';
 
 const mapStateToProps = createSelector(
   isSignoutModalOpenSelector,
@@ -28,19 +29,6 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
 type SignoutModalProps = {
   closeSignoutModal: () => void;
   show: boolean;
-};
-
-export const pathAfterSignout = (currentPath: string): string => {
-  // These pages try to sign in the user automatically if they are signed out,
-  // so, to respect the user's intention to sign out, we redirect them to /learn
-  // instead.
-  const redirectedPaths = ['/settings', '/update-email'];
-  const allPaths = [
-    ...redirectedPaths,
-    ...redirectedPaths.map(path => `${path}/`)
-  ];
-
-  return allPaths.some(path => currentPath === path) ? '/learn' : currentPath;
 };
 
 function SignoutModal(props: SignoutModalProps): JSX.Element {
