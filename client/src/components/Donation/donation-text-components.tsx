@@ -74,25 +74,30 @@ const OtherWaysToSupport = (): JSX.Element => {
   );
 };
 
-const FaqItem = (
-  title: string,
-  text: JSX.Element,
-  key: number
-): JSX.Element => {
+type FaqItemProps = {
+  title: string;
+  text: JSX.Element;
+  index: number;
+};
+
+const FaqItem = ({ title, text, index }: FaqItemProps): JSX.Element => {
   const [isExpanded, setExpanded] = useState(false);
+  const contentId = `donate-faq-content-${index}`;
   return (
-    <div className={`faq-item ${isExpanded ? 'open' : ''}`} key={key}>
-      <button
-        className='map-title'
-        onClick={() => setExpanded(!isExpanded)}
-        aria-expanded={isExpanded}
-        aria-controls={`donate-faq-content-${key}`}
-      >
-        <Caret />
-        <span className='faq-question-title'>{title}</span>
-      </button>
+    <div className={`faq-item ${isExpanded ? 'open' : ''}`}>
+      <h3 className='faq-question-heading'>
+        <button
+          className='map-title'
+          onClick={() => setExpanded(!isExpanded)}
+          aria-expanded={isExpanded}
+          aria-controls={contentId}
+        >
+          <Caret />
+          <span className='faq-question-title'>{title}</span>
+        </button>
+      </h3>
       {isExpanded && (
-        <div className='map-challenges-ul' id={`donate-faq-content-${key}`}>
+        <div className='map-challenges-ul' id={contentId}>
           {text}
         </div>
       )}
@@ -240,7 +245,9 @@ export const DonationFaqText = (): JSX.Element => {
     <>
       <h2 data-playwright-test-label='faq-head'>{t('donate.faq')}</h2>
       <Spacer size='xs' />
-      {faqItems.map((item, iterator) => FaqItem(item.Q, item.A, iterator))}
+      {faqItems.map((item, iterator) => (
+        <FaqItem key={iterator} title={item.Q} text={item.A} index={iterator} />
+      ))}
     </>
   );
 };
