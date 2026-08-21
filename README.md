@@ -70,7 +70,7 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 
 ### Reporting Security Issues and Responsible Disclosure
 
-We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+We appreciate responsible disclosure of the vulnerabilities that might impact the integrity of our platforms and users.
 
 > #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
