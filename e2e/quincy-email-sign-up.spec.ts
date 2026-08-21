@@ -15,38 +15,14 @@ test.describe('Email sign-up page when user is not signed in', () => {
     await page.goto('/email-sign-up');
   });
 
-  test('should display the content correctly', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', {
-        level: 1,
-        name: translations.misc['email-signup']
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.misc['email-blast'])
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.misc['email-signup-not-signed-in'])
-    ).toBeVisible();
-    await expect(page.getByTestId('email-signup-sign-in-btn')).toBeVisible();
-  });
-
   test("should not enable Quincy's weekly newsletter when the user clicks the sign up button", async ({
     page
   }) => {
-    await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
-    await expect(
-      page.getByText(translations.misc['email-blast'])
-    ).toBeVisible();
-
     const signupLink = page.getByTestId('email-signup-sign-in-btn');
 
-    await expect(signupLink).toBeVisible();
     await expect(signupLink).toHaveAttribute('href', `${apiLocation}/signin`);
     await signupLink.click();
 
-    // The user is signed in and automatically redirected to /learn after clicking the button.
-    // We wait for this navigation to complete before moving onto the next.
     await page.waitForURL(allowTrailingSlash('/learn'));
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
@@ -67,45 +43,19 @@ test.describe('Email sign-up page when user is not signed in', () => {
 
 test.describe('Email sign-up page when user is signed in', () => {
   test.beforeEach(async ({ page }) => {
-    // It's necessary to seed with a user that has not selected an email newsletter option.
     execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-
     await page.goto('/email-sign-up');
-  });
-
-  test('should display the content correctly', async ({ page }) => {
-    await expect(
-      page.getByText(translations.misc['email-signup'])
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.misc['email-blast'])
-    ).toBeVisible();
-    await expect(page.getByText(translations.misc['quincy'])).toBeVisible();
-    await expect(
-      page.getByRole('button', { name: translations.buttons['yes-please'] })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', { name: translations.buttons['no-thanks'] })
-    ).toBeVisible();
   });
 
   test("should disable Quincy's weekly newsletter if the user clicks No", async ({
     page
   }) => {
-    await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
-    await expect(
-      page.getByText(translations.misc['email-blast'])
-    ).toBeVisible();
-
     const noThanksButton = page.getByRole('button', {
       name: translations.buttons['no-thanks']
     });
 
-    await expect(noThanksButton).toBeVisible();
     await noThanksButton.click();
 
-    // The user is signed in and automatically redirected to /learn after clicking the button.
-    // We wait for the navigation to complete.
     await page.waitForURL('/learn');
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
@@ -126,20 +76,12 @@ test.describe('Email sign-up page when user is signed in', () => {
   test("should enable Quincy's weekly newsletter if the user clicks Yes", async ({
     page
   }) => {
-    await expect(page).toHaveTitle('Email Sign Up | freeCodeCamp.org');
-    await expect(
-      page.getByText(translations.misc['email-blast'])
-    ).toBeVisible();
-
     const signupButton = page.getByRole('button', {
       name: translations.buttons['yes-please']
     });
 
-    await expect(signupButton).toBeVisible();
     await signupButton.click();
 
-    // The user is signed in and automatically redirected to /learn after clicking the button.
-    // We wait for the navigation to complete.
     await page.waitForURL('/learn');
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User' })

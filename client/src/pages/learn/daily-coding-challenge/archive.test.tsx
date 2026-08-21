@@ -124,4 +124,18 @@ describe('<DailyCodingChallengeArchive />', () => {
       })
     ).toBeInTheDocument();
   });
+
+  it('renders the not found page when there are no challenges', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      json: vi.fn().mockResolvedValue([])
+    } as unknown as Response);
+
+    renderArchive();
+
+    expect(
+      await screen.findByRole('heading', {
+        name: 'daily-coding-challenges.not-found'
+      })
+    ).toBeInTheDocument();
+  });
 });

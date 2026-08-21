@@ -17,26 +17,12 @@ vi.mock('react-helmet', () => ({
   )
 }));
 
-vi.mock('gatsby', () => ({
-  graphql: vi.fn()
-}));
-
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeatureValue: () => []
 }));
 
-vi.mock('react-scroll', () => ({
-  scroller: { scrollTo: vi.fn() }
-}));
-
 vi.mock('../../components/Donation/donation-modal', () => ({
   default: () => null
-}));
-
-vi.mock('../../components/Header/components/login', () => ({
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <span>{children}</span>
-  )
 }));
 
 vi.mock('../../components/Map', () => ({
@@ -51,19 +37,7 @@ vi.mock('./components/cert-challenge', () => ({
   default: () => null
 }));
 
-vi.mock('./components/help-translate', () => ({
-  default: () => null
-}));
-
 vi.mock('./components/legacy-links', () => ({
-  default: () => null
-}));
-
-vi.mock('./components/super-block-accordion', () => ({
-  SuperBlockAccordion: () => null
-}));
-
-vi.mock('./components/super-block-search', () => ({
   default: () => null
 }));
 
@@ -86,15 +60,17 @@ const translationMap: Record<string, unknown> = {
     intro: ['Create responsive layouts across devices.'],
     note: ''
   },
+  'intro:2022/responsive-web-design': {
+    title: 'Legacy Responsive Web Design V8',
+    intro: [
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
+    ],
+    note: ''
+  },
   'intro:a2-english-for-developers': {
     title: 'A2 English for Developers',
     intro: ['Learn workplace English at the A2 level.'],
     note: 'This certification is currently in beta.'
-  },
-  'intro:front-end-development-libraries-v9': {
-    title: 'Front-End Development Libraries Certification',
-    intro: ['Learn the libraries developers use to build webpages.'],
-    note: ''
   },
   'intro:coding-interview-prep': {
     title: 'Coding Interview Prep',
@@ -130,44 +106,6 @@ vi.mock('react-i18next', () => ({
     <span>{children}</span>
   ),
   withTranslation: () => (Component: React.ComponentType<unknown>) => Component
-}));
-
-vi.mock('@freecodecamp/ui', () => ({
-  Callout: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Spacer: () => null,
-  Container: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Row: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Col: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
-}));
-
-vi.mock('../../assets/superblock-icon', () => ({
-  SuperBlockIcon: () => <div />
-}));
-
-vi.mock('../../assets/icons/cap', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/dumbbell', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/community', () => ({ default: () => <div /> }));
-vi.mock('../../components/archived-warning', () => ({
-  default: () => <div />
-}));
-
-vi.mock('../../components/helpers', () => ({
-  Link: ({
-    children,
-    to,
-    ...rest
-  }: {
-    children: React.ReactNode;
-    to: string;
-  }) => (
-    <a href={to} {...rest}>
-      {children}
-    </a>
-  )
 }));
 
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
@@ -455,6 +393,23 @@ describe('SuperBlockIntroductionPage', () => {
     ).toBeInTheDocument();
   });
 
+  it('renders the Legacy Responsive Web Design V8 page title and intro copy', async () => {
+    const superBlock = SuperBlocks.RespWebDesignNew;
+    const setup = createSetup(superBlock);
+    const props = createPageProps(setup, superBlock);
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    expect(document.title).toBe(
+      'Legacy Responsive Web Design V8 | freeCodeCamp.org'
+    );
+    expect(
+      await screen.findByText(
+        "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
+      )
+    ).toBeInTheDocument();
+  });
+
   it.each(scenariosWithCta)('$description', async scenario => {
     const { superBlock, completedOrders, expected } = scenario;
     const setup = createSetup(superBlock);
@@ -559,7 +514,7 @@ describe('SuperBlockIntroductionPage', () => {
 
     it('should render the unfinished-certification donation copy and Donate Now button for a non-donor on an unfinished certification', async () => {
       renderForSuperBlock({
-        superBlock: SuperBlocks.FrontEndDevLibsV9,
+        superBlock: SuperBlocks.FullStackDeveloperV9,
         isDonating: false
       });
 
