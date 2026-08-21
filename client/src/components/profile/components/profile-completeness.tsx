@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import isURL from 'validator/lib/isURL';
 import type {
+  EducationData,
   PortfolioProjectData,
   ExperienceData
 } from '../../../redux/prop-types';
@@ -22,6 +23,7 @@ interface ProfileCompletenessProps {
   bluesky: string;
   website: string;
   portfolio: PortfolioProjectData[];
+  education: EducationData[];
   experience: ExperienceData[];
   isLocked: boolean;
 }
@@ -56,6 +58,7 @@ export const ProfileCompleteness = ({
   bluesky,
   website,
   portfolio,
+  education,
   experience,
   isLocked
 }: ProfileCompletenessProps): JSX.Element | null => {
@@ -102,6 +105,12 @@ export const ProfileCompleteness = ({
       translationKey: 'profile.completeness.portfolio',
       isComplete: portfolio.length > 0,
       weight: 15
+    },
+    {
+      key: 'education',
+      translationKey: 'profile.completeness.education',
+      isComplete: education.length > 0,
+      weight: 10
     },
     {
       key: 'experience',

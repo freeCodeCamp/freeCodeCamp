@@ -98,6 +98,15 @@ export const updateMyPortfolioError = createAction(
   types.updateMyPortfolioError
 );
 
+export const updateMyEducation = createAction(types.updateMyEducation);
+export const updateMyEducationComplete = createAction(
+  types.updateMyEducationComplete,
+  checkForSuccessPayload
+);
+export const updateMyEducationError = createAction(
+  types.updateMyEducationError
+);
+
 export const updateMyExperience = createAction(types.updateMyExperience);
 export const updateMyExperienceComplete = createAction(
   types.updateMyExperienceComplete,
