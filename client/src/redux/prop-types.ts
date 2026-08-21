@@ -441,6 +441,7 @@ export type User = {
   isClassroomAccount: boolean;
   isHonest: boolean;
   joinDate: string;
+  resumeUrl?: string;
   linkedin: string;
   location: string;
   name: string;
