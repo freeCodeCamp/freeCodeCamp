@@ -21,7 +21,7 @@
     "onAutoForward": "silent"
   },
   "onCreateCommand": "sudo chown node:node node_modules && ([ ! -f .env ] && cp sample.env .env || true)",
-  "updateContentCommand": "pnpm install --prefer-offline",
+  "updateContentCommand": "pnpm install --prefer-offline --config.confirm-modules-purge=false",
   "postCreateCommand": "rsync -a --include='*/' --include='.turbo/***' --exclude='*' /home/node/.cache/fcc/ ./ && set -a && . ./.env && set +a && until mongosh --eval 'rs.status().ok' 2>/dev/null; do sleep 1; done && pnpm seed",
   "customizations": {
     "vscode": {
