@@ -2,17 +2,21 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { apiLocation } from '../../config/env.json';
+import callGA from '../analytics/call-ga';
 
 interface EmailListOptInProps {
   isSignedIn: boolean;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
+  isPage?: boolean;
 }
 
 export function EmailListOptIn({
   isSignedIn,
-  updateQuincyEmail
+  updateQuincyEmail,
+  isPage
 }: EmailListOptInProps) {
   const { t } = useTranslation();
+  const source = isPage ? 'page' : 'alert';
 
   if (isSignedIn) {
     return (
@@ -21,7 +25,10 @@ export function EmailListOptIn({
           <Button
             block={true}
             variant='primary'
-            onClick={() => updateQuincyEmail(true)}
+            onClick={() => {
+              callGA({ event: 'email_sign_up_choice', choice: 'yes', source });
+              updateQuincyEmail(true);
+            }}
           >
             {t('buttons.yes-please')}
           </Button>
@@ -31,7 +38,10 @@ export function EmailListOptIn({
           <Button
             block={true}
             variant='primary'
-            onClick={() => updateQuincyEmail(false)}
+            onClick={() => {
+              callGA({ event: 'email_sign_up_choice', choice: 'no', source });
+              updateQuincyEmail(false);
+            }}
           >
             {t('buttons.no-thanks')}
           </Button>
@@ -99,6 +109,7 @@ function EmailOptions({
       <EmailListOptIn
         isSignedIn={isSignedIn}
         updateQuincyEmail={updateQuincyEmail}
+        isPage={isPage}
       />
     </>
   );
