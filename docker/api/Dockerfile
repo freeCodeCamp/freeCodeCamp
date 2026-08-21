@@ -3,6 +3,9 @@ RUN apt-get update && apt-get install -y jq
 # global installs need root permissions, so have to happen before we switch to
 # the node user
 RUN npm i -g pnpm@10
+# TODO(o11y): re-enable Sentry source maps + release marking in a follow-up PR
+# (needs a stable release-id scheme). See .scratchpad/o11y-cutover-review-2026-07-10.md
+# RUN npm i -g @sentry/cli@3.6.0
 # node images create a non-root user that we can use
 USER node
 WORKDIR /home/node/build
@@ -30,6 +33,9 @@ ARG CURRICULUM_LOCALE=english
 ENV CURRICULUM_LOCALE=$CURRICULUM_LOCALE
 
 RUN pnpm turbo -F=@freecodecamp/api build
+
+# TODO(o11y): re-enable in the source-maps follow-up PR
+# RUN sentry-cli sourcemaps inject api/dist
 
 FROM node:24-bookworm AS deps
 RUN apt-get update && apt-get install -y jq

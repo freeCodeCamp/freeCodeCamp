@@ -48,7 +48,7 @@ const mapDispatchToProps = {
   openModal
 };
 
-const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
+export const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const [solutionState, setSolutionState] = useState(initSolutionState);
 
   const handleSolutionModalHide = () => setSolutionState(initSolutionState);
@@ -183,7 +183,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
     : null;
 
   return (
-    <div data-playwright-test-label='project-links'>
+    <div data-testid='project-links'>
       {t(getCertHeading(certSlug), { user: name })}
       <Spacer size='m' />
       <Table striped>
