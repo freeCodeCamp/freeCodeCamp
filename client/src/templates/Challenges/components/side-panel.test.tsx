@@ -39,8 +39,6 @@ const tests: Test[] = [
   }
 ];
 
-const toolPanelText = 'Tool panel placeholder';
-
 function renderSidePanel({
   hasDemo = false,
   showSidePanelTests = true,
@@ -69,7 +67,6 @@ function renderSidePanel({
         }
         instructionsPanelRef={React.createRef()}
         hasDemo={hasDemo}
-        toolPanel={<div>{toolPanelText}</div>}
         tests={tests}
         openModal={openModal}
         showSidePanelTests={showSidePanelTests}
@@ -79,7 +76,7 @@ function renderSidePanel({
 }
 
 describe('<SidePanel />', () => {
-  it('renders the challenge title, description, tool panel, and test results', () => {
+  it('renders the challenge title, description, and test results', () => {
     renderSidePanel();
 
     expect(
@@ -88,7 +85,6 @@ describe('<SidePanel />', () => {
     expect(screen.getByText(description)).toBeInTheDocument();
     expect(screen.getByText(instructions)).toBeInTheDocument();
 
-    expect(screen.getByText(toolPanelText)).toBeInTheDocument();
     expect(
       screen.getByRole('heading', { name: t('learn.editor-tabs.tests') })
     ).toBeInTheDocument();
@@ -97,7 +93,7 @@ describe('<SidePanel />', () => {
     expect(screen.queryByRole('button')).not.toBeInTheDocument();
   });
 
-  it('hides the tool panel and test results when side panel tests are disabled', () => {
+  it('hides the test results when side panel tests are disabled', () => {
     renderSidePanel({ showSidePanelTests: false });
 
     expect(
@@ -105,7 +101,6 @@ describe('<SidePanel />', () => {
     ).toBeInTheDocument();
     expect(screen.getByText(description)).toBeInTheDocument();
 
-    expect(screen.queryByText(toolPanelText)).not.toBeInTheDocument();
     expect(
       screen.queryByRole('heading', { name: t('learn.editor-tabs.tests') })
     ).not.toBeInTheDocument();
