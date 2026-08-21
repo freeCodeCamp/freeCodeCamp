@@ -36,8 +36,9 @@ vi.mock('../../../../config/env.json', () => ({
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeature: () => ({ on: showSocratesFlag })
 }));
+const mockSubmitChallenge = vi.hoisted(() => vi.fn());
 vi.mock('../utils/fetch-all-curriculum-data', () => ({
-  useSubmit: () => vi.fn()
+  useSubmit: () => mockSubmitChallenge
 }));
 
 const baseChallengeMeta: ChallengeMeta = {
@@ -131,6 +132,30 @@ describe('<IndependentLowerJaw />', () => {
     expect(screen.queryByTestId('share-on-x')).not.toBeInTheDocument();
   });
 
+  it('shows reset and help buttons by default', () => {
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    expect(
+      screen.getByRole('button', { name: 'buttons.reset' })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: 'buttons.help' })
+    ).toBeInTheDocument();
+  });
+
+  it('opens the help modal when the help button is clicked', async () => {
+    const openHelpModal = vi.fn();
+
+    render(
+      <IndependentLowerJaw {...baseProps} openHelpModal={openHelpModal} />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'buttons.help' }));
+
+    expect(openHelpModal).toHaveBeenCalledTimes(1);
+  });
+
   it('shows socrates button when hasSocratesAccess is true and flag is on', () => {
     render(
       <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,
@@ -166,6 +191,38 @@ describe('<IndependentLowerJaw />', () => {
       limit: 3,
       optimized_request: null
     });
+    expect(baseProps.askSocrates).toHaveBeenCalled();
+  });
+
+  it('tracks check code analytics when the check button is clicked', async () => {
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        tests={[{ pass: false, err: 'fail', text: 'test', testString: 'test' }]}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: /check-code/ }));
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'challenge_test_code_button_click'
+    });
+  });
+
+  it('tracks submit code analytics when the submit button is clicked', async () => {
+    mockSubmitChallenge.mockClear();
+
+    render(<IndependentLowerJaw {...baseProps} />, createStore());
+
+    await userEvent.click(
+      screen.getByRole('button', { name: /submit-continue/ })
+    );
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'challenge_submit_button_click'
+    });
+    expect(mockSubmitChallenge).toHaveBeenCalled();
   });
 
   it('hides socrates button when show-socrates flag is off', () => {

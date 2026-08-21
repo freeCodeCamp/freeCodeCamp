@@ -128,6 +128,7 @@
             "lab-slice-and-splice",
             "lab-pyramid-generator",
             "lab-gradebook-app",
+            "lab-story-fragment-restoration",
             "lecture-the-var-keyword-and-hoisting",
             "lab-title-case-converter",
             "lab-falsy-remover",
@@ -223,7 +224,7 @@
           "dashedName": "form-validation",
           "blocks": [
             "lecture-understanding-form-validation",
-            "workshop-calorie-counter",
+            "workshop-envelope-budget-app",
             "lab-customer-complaint-form",
             "review-form-validation-with-javascript",
             "quiz-form-validation-with-javascript"
