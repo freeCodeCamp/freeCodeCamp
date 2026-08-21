@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults, experience } from '../types.js';
+import { profileUI, examResults, education, experience } from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
@@ -47,6 +47,7 @@ export const getPublicProfile = {
                   examResults
                 })
               ),
+              education: Type.Array(education),
               experience: Type.Array(experience),
               // TODO(Post-MVP): return completedSurveys? Presumably not, since why
               // would this need to be public.
