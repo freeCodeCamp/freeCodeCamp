@@ -131,7 +131,6 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   return (
     <>
       <button
-        data-playwright-test-label='header-toggle-lang-button'
         id='toggle-lang-button'
         className='lang-button-nav'
         title={t('buttons.change-language')}
@@ -145,7 +144,6 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         <LanguageGlobe />
       </button>
       <ul
-        data-playwright-test-label='header-lang-list'
         id='nav-lang-list'
         className='nav-list'
         aria-labelledby='toggle-lang-button'
@@ -153,7 +151,6 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         {locales.map((lang, index) => (
           <li key={'lang-' + lang}>
             <button
-              data-playwright-test-label='header-lang-list-option'
               className='nav-link nav-lang-list-option'
               data-value={lang}
               onClick={handleLanguageChange}
