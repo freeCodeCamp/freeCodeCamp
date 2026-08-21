@@ -19,6 +19,7 @@ interface LoginProps {
   block?: boolean;
   children?: ReactNode;
   'data-test-label'?: string;
+  'data-testid'?: string;
   isSignedIn?: boolean;
 }
 
@@ -26,6 +27,7 @@ const Login = ({
   block,
   children,
   'data-test-label': dataTestLabel,
+  'data-testid': dataTestId,
   isSignedIn
 }: LoginProps): JSX.Element => {
   const { t } = useTranslation();
@@ -34,6 +36,7 @@ const Login = ({
     <a
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
+      data-testid={dataTestId}
       data-playwright-test-label={
         dataTestLabel ? dataTestLabel : 'sign-in-button'
       }
