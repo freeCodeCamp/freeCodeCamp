@@ -14,6 +14,7 @@ export const actionTypes = createTypes(
     'initLogs',
     'initVisibleEditors',
     'updateConsole',
+    'updateConsoleMarkup',
     'updateChallengeMeta',
     'updateFile',
     'updateSolutionFormValues',
