@@ -304,6 +304,7 @@ export type DailyCodingChallengeNode = {
     videoUrl?: string;
     translationPending: false;
     saveSubmissionToDB?: boolean;
+    fields?: Fields;
   };
 };
 
