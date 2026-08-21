@@ -154,7 +154,7 @@ tr:nth-child(odd) {
 
 :::
 
-## The `:first-child` and `:last-child` Pseudo-classes
+## The `:first-child`, `:last-child` and `:only-child` Pseudo-classes
 
 The `:first-child`, `:last-child`, and `:only-child` pseudo-classes all act on items within a parent container or the entire document.
 
@@ -188,8 +188,6 @@ li:last-child {
 :::
 
 If you have more unordered lists on the page, you have to be more specific with the selection: 
-
-## The `:only-child` Pseudo-class
 
 To show you how the `:only-child` pseudo-class works, here's an HTML example with two separate `div` elements. Using the `:only-child` pseudo-class ensures only the `div` element with a single child is selected:
 
