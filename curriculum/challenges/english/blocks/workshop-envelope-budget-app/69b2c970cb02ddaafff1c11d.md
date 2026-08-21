@@ -16,13 +16,17 @@ Still within your `if` block, set `isError` to `true` and return `null`.
 After your `alert`, you should set `isError` to `true`.
 
 ```js
-assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)\s*;?\s*isError\s*=\s*true/);
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)\s*;?\s*isError\s*=\s*true/);
 ```
 
 After you modify `isError`, you should `return` the value `null`.
 
 ```js
-assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)\s*;?\s*isError\s*=\s*true\s*;?\s*return\s+null\s*;?\s*\}/);
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)\s*;?\s*isError\s*=\s*true\s*;?\s*return\s+null\s*;?\s*\}/);
 ```
 
 # --seed--

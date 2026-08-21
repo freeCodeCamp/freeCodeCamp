@@ -16,14 +16,16 @@ Inside the loop, set the `innerHTML` property of the `container` to an empty str
 Your `for...of` loop should iterate through the `inputContainers` array. The loop's variable name should be `container`.
 
 ```js
-const clearForm = code.split("function clearForm()")[1];
+const explorer = await __helpers.Explorer(code);
+const clearForm = explorer.functions.clearForm.toString();
 assert.match(clearForm, /for\s*\(\s*(const|let|var)\s+container\s+of\s+inputContainers\s*\)/);
 ```
 
 Your `for...of` loop should set the `innerHTML` property of `container` to an empty string.
 
 ```js
-const clearForm = code.split("function clearForm()")[1];
+const explorer = await __helpers.Explorer(code);
+const clearForm = explorer.functions.clearForm.toString();
 const forOfLoop = clearForm.split("for")[1];
 assert.match(forOfLoop, /container\s*\.\s*innerHTML\s*=\s*(`|'|")\1\s*/);
 ```
