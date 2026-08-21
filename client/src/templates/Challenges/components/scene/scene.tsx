@@ -14,6 +14,7 @@ import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
 import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
 import ChallengeTranscript from '../challenge-transcript';
+import { getChallengeContentLangProps } from '../../../../utils/challenge-content-lang';
 import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
@@ -398,6 +399,7 @@ export function Scene({
                 <div
                   className='scene-dialogue-text'
                   dangerouslySetInnerHTML={{ __html: dialogue.text }}
+                  {...getChallengeContentLangProps(superBlock)}
                 />
               </div>
             )}
