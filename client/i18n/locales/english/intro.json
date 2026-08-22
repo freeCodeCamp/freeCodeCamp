@@ -6813,6 +6813,12 @@
           "In this workshop, you will build a function that uses recursion to create a list of numbers."
         ]
       },
+      "lab-range-of-numbers-python": {
+        "title": "Build a Range of Numbers Generator",
+        "intro": [
+          "In this lab, you will use recursion to generate a list of numbers within a specified range."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [

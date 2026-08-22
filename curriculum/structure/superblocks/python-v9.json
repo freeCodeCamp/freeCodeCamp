@@ -121,7 +121,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack-python",
-            "workshop-countup-python"
+            "workshop-countup-python",
+            "lab-range-of-numbers-python"
           ]
         },
         {
