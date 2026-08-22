@@ -46,6 +46,22 @@ export function CodespacesInstructions({
             </a>
           </Trans>
         </li>
+        <li>{t('learn.freecodecamp-os.codespaces.step-2')}</li>
+        <li style={{ listStyle: 'none' }}>
+          <Spacer size='xxs' />
+          <CodeAllyButton
+            challengeType={challengeType}
+            onClick={openCodespaces}
+          />
+        </li>
+      </ol>
+      <ol start={3}>
+        <li>{t('learn.freecodecamp-os.codespaces.step-3')}</li>
+        <li>
+          <Trans i18nKey='learn.freecodecamp-os.codespaces.step-4'>
+            <code>placeholder</code>
+          </Trans>
+        </li>
         {isSignedIn && (
           <>
             <Spacer size='xs' />
@@ -78,22 +94,6 @@ export function CodespacesInstructions({
             <Spacer size='s' />
           </>
         )}
-        <li>{t('learn.freecodecamp-os.codespaces.step-2')}</li>
-        <li style={{ listStyle: 'none' }}>
-          <Spacer size='xxs' />
-          <CodeAllyButton
-            challengeType={challengeType}
-            onClick={openCodespaces}
-          />
-        </li>
-      </ol>
-      <ol start={3}>
-        <li>{t('learn.freecodecamp-os.codespaces.step-3')}</li>
-        <li>
-          <Trans i18nKey='learn.freecodecamp-os.codespaces.step-4'>
-            <code>placeholder</code>
-          </Trans>
-        </li>
         <li>{t('learn.freecodecamp-os.codespaces.step-5')}</li>
         <li>{t('learn.freecodecamp-os.codespaces.step-6')}</li>
       </ol>
