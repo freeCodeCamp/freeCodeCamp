@@ -6807,6 +6807,12 @@
           "In this lecture, you will learn how recursive functions and the call stack work in Python."
         ]
       },
+      "workshop-countup-python": {
+        "title": "Build a Countup Function",
+        "intro": [
+          "In this workshop, you will build a function that uses recursion to create a list of numbers."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
