@@ -117,6 +117,13 @@
           "blocks": ["lab-hash-table"]
         },
         {
+          "dashedName": "python-recursion",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-recursion-and-the-call-stack-python"
+          ]
+        },
+        {
           "dashedName": "python-algorithms",
           "blocks": [
             "lecture-searching-and-sorting-algorithms",
