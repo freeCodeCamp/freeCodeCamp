@@ -122,7 +122,9 @@
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack-python",
             "workshop-countup-python",
-            "lab-range-of-numbers-python"
+            "lab-range-of-numbers-python",
+            "review-recursion-python",
+            "quiz-recursion-python"
           ]
         },
         {

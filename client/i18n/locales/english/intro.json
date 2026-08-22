@@ -6819,6 +6819,18 @@
           "In this lab, you will use recursion to generate a list of numbers within a specified range."
         ]
       },
+      "review-recursion-python": {
+        "title": "Review Recursion",
+        "intro": [
+          "Review the concepts of recursion, base cases, and the call stack."
+        ]
+      },
+      "quiz-recursion-python": {
+        "title": "Recursion Quiz",
+        "intro": [
+          "Test your understanding of recursion, base cases, and the call stack."
+        ]
+      },
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
