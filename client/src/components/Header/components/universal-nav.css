@@ -259,6 +259,27 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 }
 
 /**
+ * Donate button
+ */
+
+.nav-donate-btn .menu-btn-text {
+  display: none;
+}
+
+@media (min-width: 601px) {
+  .nav-donate-btn .menu-btn-icon {
+    display: none;
+  }
+  .nav-donate-btn .menu-btn-text {
+    display: inline-block;
+  }
+}
+
+.nav-donate-btn .fa-heart {
+  color: #ff5e5e;
+}
+
+/**
  * User thumbnail
  */
 .avatar-nav-link {
