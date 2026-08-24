@@ -62,6 +62,62 @@ jobs:
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
+        # Keep this in sync with the blocks referenced by the E2E suite.
+        # The full production build is still exercised by CI - Node.js.
+        env:
+          FCC_BLOCK: >-
+            applied-visual-design,
+            back-end-development-and-apis-projects,
+            basic-html-and-html5,
+            basic-javascript,
+            bootstrap,
+            build-a-cash-register-project,
+            build-a-data-graph-explorer-project,
+            build-a-palindrome-checker-project,
+            build-a-personal-portfolio-webpage-project,
+            build-a-survey-form-project,
+            build-a-tribute-page-project,
+            data-analysis-with-python-projects,
+            foundational-c-sharp-with-microsoft-certification-exam,
+            front-end-development-libraries-projects,
+            javascript-algorithms-and-data-structures-projects,
+            jquery,
+            lab-debug-camperbots-profile-page,
+            lab-drum-machine,
+            lab-event-flyer-page,
+            lab-markdown-to-html-converter,
+            lab-palindrome-checker,
+            lab-survey-form,
+            learn-about-adverbial-phrases,
+            learn-bash-by-building-a-boilerplate,
+            learn-basic-css-by-building-a-cafe-menu,
+            learn-basic-javascript-by-building-a-role-playing-game,
+            learn-css-transforms-by-building-a-penguin,
+            learn-greetings-in-your-first-day-at-the-office,
+            learn-html-by-building-a-cat-photo-app,
+            learn-introductory-javascript-by-building-a-pyramid-generator,
+            lecture-understanding-html-attributes,
+            lecture-what-is-css,
+            lecture-working-with-code-editors-and-ides,
+            machine-learning-with-python-projects,
+            managing-packages-with-npm,
+            project-euler-problems-1-to-100,
+            project-euler-problems-401-to-480,
+            python-for-everybody,
+            quiz-basic-html,
+            responsive-web-design-principles,
+            review-basic-html,
+            review-html,
+            review-semantic-html,
+            rosetta-code-challenges,
+            sass,
+            workshop-blog-page,
+            workshop-caesar-cipher,
+            workshop-cafe-menu,
+            workshop-cat-photo-app,
+            workshop-curriculum-outline,
+            workshop-greeting-bot,
+            write-your-first-code-using-c-sharp
         run: |
           pnpm install
           pnpm run build

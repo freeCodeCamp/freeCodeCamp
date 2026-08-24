@@ -1,11 +1,12 @@
 /**
- * Filters the superblocks array to include any superblocks with the specified block.
+ * Filters the superblocks array to include any superblocks with the specified block(s).
  * If no block is provided, returns the original superblocks array.
+ * Supports comma-separated block names for filtering multiple blocks.
  *
  * @param {Array<Object>} superblocks - Array of superblock objects, each containing a blocks array.
  * @param {Object} [options] - Options object
- * @param {string} [options.block] - The dashedName of the block to filter for (in kebab case).
- * @returns {Array<Object>} Array with one superblock containing the specified block, or the original array if block is not provided.
+ * @param {string} [options.block] - The dashedName(s) of the block(s) to filter for (comma-separated for multiple).
+ * @returns {Array<Object>} Filtered superblocks containing the specified block(s), or the original array if block is not provided.
  */
 export function filterByBlock<T extends { blocks: { dashedName: string }[] }>(
   superblocks: T[],
@@ -13,10 +14,17 @@ export function filterByBlock<T extends { blocks: { dashedName: string }[] }>(
 ): T[] {
   if (!block) return superblocks;
 
+  const blockList = block
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean);
+
   const remainingSuperblocks = superblocks
     .map(superblock => ({
       ...superblock,
-      blocks: superblock.blocks.filter(({ dashedName }) => dashedName === block)
+      blocks: superblock.blocks.filter(({ dashedName }) =>
+        blockList.includes(dashedName)
+      )
     }))
     .filter(superblock => superblock.blocks.length > 0);
 
@@ -229,6 +237,11 @@ export function closestFilters(
     const blocks = superblocks.flatMap(({ blocks }) =>
       blocks.map(({ dashedName }) => dashedName)
     );
+
+    // If there are multiple blocks, do not attempt to find a closest match.
+    if (target.block.includes(',')) {
+      return target;
+    }
 
     const { closest, score } = closestMatch(target.block, blocks);
 

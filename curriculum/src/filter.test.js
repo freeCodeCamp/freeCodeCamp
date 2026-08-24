@@ -149,6 +149,32 @@ describe('filters', () => {
       ]);
     });
 
+    it('returns multiple specified blocks', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        },
+        {
+          name: 'superblock-2',
+          blocks: [{ dashedName: 'block-2' }, { dashedName: 'block-3' }]
+        }
+      ];
+      const filtered = filterByBlock(superblocks, {
+        block: 'block-1, block-3'
+      });
+      expect(filtered).toEqual([
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }]
+        },
+        {
+          name: 'superblock-2',
+          blocks: [{ dashedName: 'block-3' }]
+        }
+      ]);
+    });
+
     it('returns an empty array if no blocks match the specified block', () => {
       const superblocks = [
         {
@@ -269,6 +295,21 @@ describe('filters', () => {
       expect(closestFilters(superblocks, { block: 'basic-javascr' })).toEqual({
         block: 'basic-javascript'
       });
+    });
+
+    it('does not alter a multiple block filter', () => {
+      const superblocks = [
+        {
+          name: 'responsive-web-design',
+          blocks: [
+            { dashedName: 'basic-html-and-html5', challengeOrder: [] },
+            { dashedName: 'css-flexbox', challengeOrder: [] }
+          ]
+        }
+      ];
+      const target = { block: 'basic-html-and-html5,css-flexbox' };
+
+      expect(closestFilters(superblocks, target)).toEqual(target);
     });
 
     it('should throw if the closest match has Dice-Sørensen score below the threshold', () => {
