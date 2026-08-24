@@ -1,10 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
-import {
-  test as base,
-  type APIRequestContext,
-  type TestInfo
-} from '@playwright/test';
+import { test as base, type APIRequestContext } from '@playwright/test';
 
 type UserStorageState = Awaited<ReturnType<APIRequestContext['storageState']>>;
 
@@ -21,8 +17,7 @@ const apiLocation = process.env.API_LOCATION ?? 'http://localhost:3000';
 
 const getApiUrl = (path: string) => new URL(path, apiLocation).toString();
 
-const createEmail = (testInfo: TestInfo) =>
-  `e2e-w${testInfo.workerIndex}-${randomUUID()}@example.com`;
+const createEmail = () => `${randomUUID()}@example.com`;
 
 const getCsrfToken = async (request: APIRequestContext) =>
   (await request.storageState()).cookies.find(
@@ -51,13 +46,12 @@ async function deleteAccount(request: APIRequestContext) {
 }
 
 export const test = base.extend<IsolatedUserFixtures>({
-  isolatedUser: async ({ playwright }, use, testInfo) => {
-    const email = createEmail(testInfo);
+  isolatedUser: async ({ playwright }, use) => {
+    const email = createEmail();
     const request = await playwright.request.newContext({
       storageState: { cookies: [], origins: [] }
     });
     let signedIn = false;
-    let cleanupError: Error | undefined;
 
     try {
       const signInUrl = new URL('/signin', apiLocation);
@@ -87,28 +81,9 @@ export const test = base.extend<IsolatedUserFixtures>({
     } finally {
       try {
         if (signedIn) await deleteAccount(request);
-      } catch (error) {
-        cleanupError =
-          error instanceof Error ? error : new Error(String(error));
-      }
-
-      try {
+      } finally {
         await request.dispose();
-      } catch (error) {
-        cleanupError ??=
-          error instanceof Error ? error : new Error(String(error));
       }
-
-      if (cleanupError && testInfo.status !== testInfo.expectedStatus) {
-        await testInfo.attach('isolated-user-cleanup-error', {
-          body: cleanupError.stack ?? cleanupError.message,
-          contentType: 'text/plain'
-        });
-      }
-    }
-
-    if (cleanupError && testInfo.status === testInfo.expectedStatus) {
-      throw cleanupError;
     }
   },
 
