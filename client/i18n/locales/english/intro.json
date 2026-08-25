@@ -1504,7 +1504,7 @@
       "workshop-report-card-printer": {
         "title": "Build a Report Card Printer",
         "intro": [
-          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+          "In this workshop, you will practice working with primitive data types in Python by creating and printing data for a simple report card."
         ]
       },
       "lecture-introduction-to-python-strings": {
@@ -6470,7 +6470,7 @@
       "workshop-report-card-printer": {
         "title": "Build a Report Card Printer",
         "intro": [
-          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+          "In this workshop, you will practice working with primitive data types in Python by creating and printing data for a simple report card."
         ]
       },
       "lecture-introduction-to-python-strings": {
