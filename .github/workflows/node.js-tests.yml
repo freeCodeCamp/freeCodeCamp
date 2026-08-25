@@ -131,9 +131,16 @@ jobs:
           sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
+        # No test task depends on the client (Gatsby) build: `turbo test` only
+        # pulls in `setup` and the builds of each package's dependencies, and
+        # nothing depends on @freecodecamp/client. On pull requests it is
+        # skipped here because CI - E2E - Playwright already builds the client.
+        # E2E does not run on push, so those events keep the full build.
+        env:
+          BUILD_FILTER: ${{ github.event_name == 'pull_request' && '--filter=!@freecodecamp/client' || '' }}
         run: |
           pnpm install
-          pnpm run build
+          pnpm turbo build $BUILD_FILTER
 
   test:
     name: Test
