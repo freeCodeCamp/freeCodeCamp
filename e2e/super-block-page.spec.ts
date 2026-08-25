@@ -316,7 +316,7 @@ test.describe('Super Block Page - Search Lessons', () => {
   test('should filter blocks and auto-expand matching modules on a chapter-based superblock', async ({
     page
   }) => {
-    const searchTerm = 'Greeting Bot';
+    const searchTerm = 'Binary Search';
 
     await page.goto('/learn/javascript-v9/');
 
@@ -329,7 +329,9 @@ test.describe('Super Block Page - Search Lessons', () => {
       .fill(searchTerm);
 
     await expect(
-      page.getByRole('heading', { name: 'Build a Greeting Bot' })
+      page.getByRole('heading', {
+        name: 'Introduction to Common Searching and Sorting Algorithms'
+      })
     ).toBeVisible();
     await expect(
       page.getByRole('button', { name: /^Booleans and Numbers$/ })
