@@ -1,13 +1,16 @@
 ---
 id: 6a7ab7ad10d6afbff4dfb799
-title: Step 33
+title: Step 34
 challengeType: 1
-dashedName: step-33
+dashedName: step-34
 ---
 
 # --description--
 
-Test your function with two calls to `getInstructorByEmail`: one using an email `"fatima@edu.com"`, and one using an email `"not_found@edu.com"`. Log both results to confirm the function returns the correct shaped object for a known email, 
+Test your function with two calls to `getInstructorByEmail`: one using an email `"fatima@edu.com"` and `normalizedData`, 
+then another using an email `"not_found@edu.com"` and `normalizedData`.  
+
+Log both results to confirm the function returns the correct shaped object for a known email, 
 and `Instructor not found` for an unknown one.
 
 # --hints--

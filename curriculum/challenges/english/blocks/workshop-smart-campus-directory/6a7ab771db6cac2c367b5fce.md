@@ -1,8 +1,8 @@
 ---
 id: 6a7ab771db6cac2c367b5fce
-title: Step 32
+title: Step 33
 challengeType: 1
-dashedName: step-32
+dashedName: step-33
 ---
 
 # --description--
@@ -10,12 +10,14 @@ dashedName: step-32
 Some `instructors` are missing `officeHours`, and it's possible for other fields 
 to be missing too. The `nullish coalescing operator (??)` returns its left-hand value 
 unless that value is `null` or `undefined`, in which case it returns the right-hand value 
-instead. Unlike ||, it doesn't treat other falsy values (like 0 or "") as missing.
+instead.  
+
+Unlike `||`, it doesn't treat other falsy values (like `0` or `""`) as missing.
 
 ```js
-const officeHours = null;
-const result = officeHours ?? "Not Available";
-console.log(result); // "Not Available"
+const userName = null;
+const displayName = userName ?? "Guest";
+console.log(displayName); // "Guest"
 ```
 
 Now you should return an object from `getInstructorByEmail` function with three properties:
