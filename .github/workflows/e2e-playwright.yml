@@ -121,6 +121,7 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+          node e2e/verify-build.mjs
 
       - name: Move serve.json to Public Folder
         run: cp client-config/serve.json client/public/serve.json
