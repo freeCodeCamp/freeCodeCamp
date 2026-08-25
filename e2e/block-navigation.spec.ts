@@ -55,19 +55,30 @@ test.describe('Block Navigation - Hash Updates', () => {
   }) => {
     await page.goto('/learn/javascript-v9');
 
-    await page.getByRole('button', { name: /^Build a Greeting Bot/ }).click();
+    await page.getByRole('button', { name: 'Algorithms', exact: true }).click();
 
-    // Click on step 1 in the accordion
-    const step1Link = page.getByRole('link', { name: 'Step 1 Not Passed' });
-    await expect(step1Link).toBeVisible();
-    await step1Link.click();
+    await page
+      .getByRole('button', {
+        name: /^Introduction to Common Searching and Sorting Algorithms/
+      })
+      .click();
+
+    const challengeLink = page.getByRole('link', {
+      name: /What Is Binary Search and How Does It Differ From Linear Search\?/
+    });
+    await expect(challengeLink).toBeVisible();
+    await challengeLink.click();
 
     // Wait for navigation
-    await page.waitForURL(/step-1$/);
+    await page.waitForURL(
+      /what-is-binary-search-and-how-does-it-differ-from-linear-search$/
+    );
 
     // Go back to verify the hash persists in history
     await page.goBack();
-    await expect(page).toHaveURL(/#workshop-greeting-bot$/);
+    await expect(page).toHaveURL(
+      /#lecture-introduction-to-common-searching-and-sorting-algorithms$/
+    );
   });
 
   test('should update URL hash when clicking on a certification project in accordion layout (v9)', async ({

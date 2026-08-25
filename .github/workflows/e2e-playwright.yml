@@ -96,6 +96,7 @@ jobs:
             learn-greetings-in-your-first-day-at-the-office,
             learn-html-by-building-a-cat-photo-app,
             learn-introductory-javascript-by-building-a-pyramid-generator,
+            lecture-introduction-to-common-searching-and-sorting-algorithms,
             lecture-understanding-html-attributes,
             lecture-what-is-css,
             lecture-working-with-code-editors-and-ides,
@@ -116,7 +117,6 @@ jobs:
             workshop-cafe-menu,
             workshop-cat-photo-app,
             workshop-curriculum-outline,
-            workshop-greeting-bot,
             write-your-first-code-using-c-sharp
         run: |
           pnpm install

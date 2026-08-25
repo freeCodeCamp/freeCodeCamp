@@ -22,13 +22,14 @@ const unlockedProfile = {
 
 async function expectPreviewToBeShown(page: Page) {
   await page
-    .getByRole('button', { name: 'View Solution for Build a Tribute Page' })
+    .getByRole('button', {
+      name: /View Solution for .*Build a Tribute Page$/
+    })
     .first()
     .click();
   await page.getByRole('menuitem', { name: 'View Project' }).click();
   const modalHeading = page.getByRole('heading', {
-    name: 'Build a Tribute Page',
-    exact: true
+    name: /Build a Tribute Page$/
   });
   await expect(modalHeading).toBeVisible();
 
