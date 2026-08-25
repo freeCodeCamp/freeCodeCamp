@@ -711,6 +711,32 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       }
     });
+    // Monaco's built-in context menu "Paste" action relies on
+    // document.execCommand('paste'), which most modern browsers silently
+    // block. Overriding it with the same id swaps in the async Clipboard
+    // API, which browsers do allow from a genuine user gesture such as a
+    // context menu click. Ctrl+V is unaffected, since it's handled natively
+    // by the browser rather than through this action.
+    editor.addAction({
+      id: 'editor.action.clipboardPasteAction',
+      label: 'Paste',
+      contextMenuGroupId: '9_cutcopypaste',
+      contextMenuOrder: 2,
+      run: () => {
+        navigator.clipboard
+          .readText()
+          .then(text => {
+            const selection = editor.getSelection();
+            if (selection) {
+              editor.executeEdits('paste-from-clipboard', [
+                { range: selection, text, forceMoveMarkers: true }
+              ]);
+              editor.pushUndoStop();
+            }
+          })
+          .catch(err => console.error(err));
+      }
+    });
     editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
 
     // aria-roledescription is on (true) by default, check if it needs
