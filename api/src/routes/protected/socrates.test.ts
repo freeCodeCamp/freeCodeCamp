@@ -170,6 +170,36 @@ describe('socratesRoutes', () => {
           expect(body.userId).not.toBe('attacker-id');
         });
 
+        test('should drop unknown keys before the upstream call (locks removeAdditional: all)', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            challengeType: 'rust',
+            hints: [{ text: 'Check your spelling', failed: true, id: 7 }]
+          });
+
+          const fetchCall = mockedFetch.mock.calls[0]!;
+          const body = JSON.parse(fetchCall[1].body as string) as Record<
+            string,
+            unknown
+          >;
+          expect(Object.keys(body).sort()).toStrictEqual([
+            'description',
+            'hints',
+            'seed',
+            'userId',
+            'userInput'
+          ]);
+          expect(body.hints).toStrictEqual([
+            { text: 'Check your spelling', failed: true }
+          ]);
+        });
+
         test('should return 429 when Socrates API rate limits', async () => {
           const originalSentry = fastifyTestInstance.Sentry;
           const count = vi.fn();
@@ -201,60 +231,51 @@ describe('socratesRoutes', () => {
           });
         });
 
-        test('should forward upstream error message on 400', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
-          const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
-            metrics: { ...originalSentry.metrics, count }
-          };
+        test.each([
+          [
+            'a Socrates JSON body',
+            JSON.stringify({
+              message: 'Prompt too long: 43531 characters (max 32000)',
+              status: 400
+            })
+          ],
+          ['an empty body', ''],
+          ['an HTML body', '<!DOCTYPE html><html><body>Blocked</body></html>']
+        ])(
+          'should send the generic client error on 400 with %s',
+          async (_label, upstreamBody) => {
+            const originalSentry = fastifyTestInstance.Sentry;
+            const count = vi.fn();
+            fastifyTestInstance.Sentry = {
+              ...originalSentry,
+              metrics: { ...originalSentry.metrics, count }
+            };
 
-          mockedFetch.mockResolvedValueOnce({
-            ok: false,
-            status: 400,
-            text: () =>
-              Promise.resolve(
-                JSON.stringify({ error: 'Input too short for analysis.' })
-              )
-          });
+            mockedFetch.mockResolvedValueOnce({
+              ok: false,
+              status: 400,
+              text: () => Promise.resolve(upstreamBody)
+            });
 
-          const response =
-            await superPut('/socrates/get-hint').send(validPayload);
+            const response =
+              await superPut('/socrates/get-hint').send(validPayload);
 
-          fastifyTestInstance.Sentry = originalSentry;
+            fastifyTestInstance.Sentry = originalSentry;
 
-          expect(response.status).toBe(400);
-          expect(response.body).toStrictEqual({
-            error: 'Input too short for analysis.',
-            type: 'info',
-            attempts: 0,
-            limit: 3
-          });
-          expect(count).toHaveBeenCalledWith(
-            'socrates.upstream_call_failed',
-            1,
-            { attributes: { reason: 'bad_status' } }
-          );
-        });
-
-        test('should use fallback message on 400 with no upstream error', async () => {
-          mockedFetch.mockResolvedValueOnce({
-            ok: false,
-            status: 400,
-            text: () => Promise.resolve('')
-          });
-
-          const response =
-            await superPut('/socrates/get-hint').send(validPayload);
-
-          expect(response.status).toBe(400);
-          expect(response.body).toStrictEqual({
-            error: 'socrates-unable-to-generate',
-            type: 'info',
-            attempts: 0,
-            limit: 3
-          });
-        });
+            expect(response.status).toBe(400);
+            expect(response.body).toStrictEqual({
+              error: 'socrates-unable-to-generate',
+              type: 'info',
+              attempts: 0,
+              limit: 3
+            });
+            expect(count).toHaveBeenCalledWith(
+              'socrates.upstream_call_failed',
+              1,
+              { attributes: { reason: 'bad_status' } }
+            );
+          }
+        );
 
         test('should return 500 and capture on other Socrates API errors', async () => {
           const originalSentry = fastifyTestInstance.Sentry;
