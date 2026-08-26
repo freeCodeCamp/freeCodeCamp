@@ -101,6 +101,7 @@ type IndexData = {
     key: Record<string, 1>;
     name: string;
     expireAfterSeconds?: number;
+    unique?: boolean;
   }[];
 };
 const indexData: IndexData[] = [
@@ -129,7 +130,8 @@ const indexData: IndexData[] = [
     indexes: [
       {
         key: { userId: 1, date: 1 },
-        name: 'userId_date_unique'
+        name: 'userId_date_unique',
+        unique: true
       }
     ]
   },
