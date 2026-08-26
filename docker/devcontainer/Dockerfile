@@ -15,12 +15,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | gpg --dearmor -o /usr/share/keyrings/mongodb-archive-keyring.gpg \
     && echo "deb [signed-by=/usr/share/keyrings/mongodb-archive-keyring.gpg] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" > /etc/apt/sources.list.d/mongodb-org-8.0.list \
+    && curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg -o /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" > /etc/apt/sources.list.d/github-cli.list \
     && apt-get update \
-    && apt-get install -y --no-install-recommends mongodb-mongosh \
+    && apt-get install -y --no-install-recommends mongodb-mongosh gh \
     && rm -rf /var/lib/apt/lists/*
 
-# renovate: datasource=npm depName=pnpm
-RUN npm install -g pnpm@10.28.1
+COPY package.json /tmp/package.json
+RUN npm install -g "pnpm@$(node -p 'require("/tmp/package.json").packageManager.split("@")[1]')" \
+    && rm /tmp/package.json
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
 ENV npm_config_store_dir=/home/node/.local/share/pnpm/store
