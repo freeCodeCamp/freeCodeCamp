@@ -17,26 +17,12 @@ vi.mock('react-helmet', () => ({
   )
 }));
 
-vi.mock('gatsby', () => ({
-  graphql: vi.fn()
-}));
-
 vi.mock('@growthbook/growthbook-react', () => ({
   useFeatureValue: () => []
 }));
 
-vi.mock('react-scroll', () => ({
-  scroller: { scrollTo: vi.fn() }
-}));
-
 vi.mock('../../components/Donation/donation-modal', () => ({
   default: () => null
-}));
-
-vi.mock('../../components/Header/components/login', () => ({
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <span>{children}</span>
-  )
 }));
 
 vi.mock('../../components/Map', () => ({
@@ -51,16 +37,8 @@ vi.mock('./components/cert-challenge', () => ({
   default: () => null
 }));
 
-vi.mock('./components/help-translate', () => ({
-  default: () => null
-}));
-
 vi.mock('./components/legacy-links', () => ({
   default: () => null
-}));
-
-vi.mock('./components/super-block-accordion', () => ({
-  SuperBlockAccordion: () => null
 }));
 
 const translationMap: Record<string, unknown> = {
@@ -82,8 +60,32 @@ const translationMap: Record<string, unknown> = {
     intro: ['Create responsive layouts across devices.'],
     note: ''
   },
+  'intro:2022/responsive-web-design': {
+    title: 'Legacy Responsive Web Design V8',
+    intro: [
+      "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
+    ],
+    note: ''
+  },
+  'intro:a2-english-for-developers': {
+    title: 'A2 English for Developers',
+    intro: ['Learn workplace English at the A2 level.'],
+    note: 'This certification is currently in beta.'
+  },
+  'intro:coding-interview-prep': {
+    title: 'Coding Interview Prep',
+    intro: [
+      "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
+    ],
+    note: ''
+  },
   'misc.fsd-b-cta': 'Start Learning',
-  'misc.continue-learning': 'Continue Learning'
+  'misc.continue-learning': 'Continue Learning',
+  'donate.consider-donating':
+    'Please consider donating to support the completion of its development.',
+  'donate.consider-donating-2':
+    'If you want to help us speed up development of this curriculum, please consider becoming a supporter of our charity.',
+  'buttons.donate-now': 'Donate Now'
 };
 
 const mockT = vi.fn((key: string, options?: { returnObjects?: boolean }) => {
@@ -104,44 +106,6 @@ vi.mock('react-i18next', () => ({
     <span>{children}</span>
   ),
   withTranslation: () => (Component: React.ComponentType<unknown>) => Component
-}));
-
-vi.mock('@freecodecamp/ui', () => ({
-  Callout: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Spacer: () => null,
-  Container: ({ children }: { children: React.ReactNode }) => (
-    <div>{children}</div>
-  ),
-  Row: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Col: ({ children }: { children: React.ReactNode }) => <div>{children}</div>
-}));
-
-vi.mock('../../assets/superblock-icon', () => ({
-  SuperBlockIcon: () => <div />
-}));
-
-vi.mock('../../assets/icons/cap', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/dumbbell', () => ({ default: () => <div /> }));
-vi.mock('../../assets/icons/community', () => ({ default: () => <div /> }));
-vi.mock('../../components/archived-warning', () => ({
-  default: () => <div />
-}));
-
-vi.mock('../../components/helpers', () => ({
-  Link: ({
-    children,
-    to,
-    ...rest
-  }: {
-    children: React.ReactNode;
-    to: string;
-  }) => (
-    <a href={to} {...rest}>
-      {children}
-    </a>
-  )
 }));
 
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
@@ -412,6 +376,40 @@ const scenariosWithoutCta = scenarios.filter(
 );
 
 describe('SuperBlockIntroductionPage', () => {
+  it('renders the Coding Interview Prep page title and intro copy', async () => {
+    const superBlock = SuperBlocks.CodingInterviewPrep;
+    const setup = createSetup(superBlock);
+    const props = createPageProps(setup, superBlock);
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    expect(
+      screen.getByText('Coding Interview Prep | freeCodeCamp.org')
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText(
+        "If you're looking for free coding exercises to prepare for your next job interview, we've got you covered."
+      )
+    ).toBeInTheDocument();
+  });
+
+  it('renders the Legacy Responsive Web Design V8 page title and intro copy', async () => {
+    const superBlock = SuperBlocks.RespWebDesignNew;
+    const setup = createSetup(superBlock);
+    const props = createPageProps(setup, superBlock);
+
+    render(<SuperBlockIntroductionPage {...props} />);
+
+    expect(document.title).toBe(
+      'Legacy Responsive Web Design V8 | freeCodeCamp.org'
+    );
+    expect(
+      await screen.findByText(
+        "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design."
+      )
+    ).toBeInTheDocument();
+  });
+
   it.each(scenariosWithCta)('$description', async scenario => {
     const { superBlock, completedOrders, expected } = scenario;
     const setup = createSetup(superBlock);
@@ -449,6 +447,100 @@ describe('SuperBlockIntroductionPage', () => {
       throw new Error(`Missing challenge for order ${expected.nextOrder}`);
     }
     expect(cta).toHaveAttribute('href', nextChallenge.fields.slug);
+  });
+
+  describe('note and donation callout', () => {
+    const renderForSuperBlock = ({
+      superBlock,
+      isDonating
+    }: {
+      superBlock: SuperBlocks;
+      isDonating: boolean;
+    }) => {
+      const setup = createSetup(superBlock);
+      const props = createPageProps(setup, superBlock, {
+        user: {
+          completedChallenges: [],
+          isDonating
+        }
+      });
+      render(<SuperBlockIntroductionPage {...props} />);
+    };
+
+    it('should render the note text for a certification with a note', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.A2English,
+        isDonating: false
+      });
+
+      expect(
+        await screen.findByText('This certification is currently in beta.')
+      ).toBeInTheDocument();
+    });
+
+    it('should render the beta donation copy and Donate Now button for a non-donor on a beta certification', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.A2English,
+        isDonating: false
+      });
+
+      await screen.findByText('This certification is currently in beta.');
+      expect(
+        screen.getByText(
+          'Please consider donating to support the completion of its development.'
+        )
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole('link', { name: 'Donate Now' })
+      ).toBeInTheDocument();
+    });
+
+    it('should not render the donation copy or Donate Now button for a donor on a beta certification', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.A2English,
+        isDonating: true
+      });
+
+      await screen.findByText('This certification is currently in beta.');
+      expect(
+        screen.queryByText(
+          'Please consider donating to support the completion of its development.'
+        )
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('link', { name: 'Donate Now' })
+      ).not.toBeInTheDocument();
+    });
+
+    it('should render the unfinished-certification donation copy and Donate Now button for a non-donor on an unfinished certification', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.FullStackDeveloperV9,
+        isDonating: false
+      });
+
+      expect(
+        await screen.findByRole('link', { name: 'Donate Now' })
+      ).toBeInTheDocument();
+      expect(screen.getByText('placeholder')).toBeInTheDocument();
+      expect(
+        screen.queryByText(
+          'Please consider donating to support the completion of its development.'
+        )
+      ).not.toBeInTheDocument();
+    });
+
+    it('should not render any callout when the certification has no note and is not eligible for the donation callout', async () => {
+      renderForSuperBlock({
+        superBlock: SuperBlocks.RespWebDesign,
+        isDonating: false
+      });
+
+      await waitFor(() => {
+        expect(
+          screen.queryByRole('link', { name: 'Donate Now' })
+        ).not.toBeInTheDocument();
+      });
+    });
   });
 
   it.each(scenariosWithoutCta)('$description', async scenario => {

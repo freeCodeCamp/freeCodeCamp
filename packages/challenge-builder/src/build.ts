@@ -5,6 +5,7 @@ import { concatHtml } from './builders.js';
 import {
   getTransformers,
   embedFilesInHtml,
+  getLocalSourceWarnings,
   getPythonTransformers,
   getMultifileJSXTransformers
 } from './transformers.js';
@@ -54,20 +55,29 @@ const applyFunction =
 const composeFunctions = (...fns: ApplyFunctionProps[]) =>
   fns.map(applyFunction).reduce((f, g) => x => f(x).then(g));
 
+// Test helpers parse sources.contents across all files. Without this boundary,
+// an index.ts first-line declaration can be concatenated onto empty/no-newline
+// HTML or CSS, so AST checks fail.
+const joinWithFileBoundaries = (contents: string[]) => contents.join('\n');
+
 function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   // TODO: rename sources.index to sources.contents.
-  const source: Source | undefined = challengeFiles?.reduce(
-    (sources, challengeFile) => {
-      sources.index += challengeFile.source || '';
-      sources.contents = sources.index;
-      sources.editableContents += challengeFile.editableContents || '';
-      return sources;
-    },
-    {
-      index: '',
-      editableContents: ''
-    } as Source
+  const index = joinWithFileBoundaries(
+    challengeFiles.map(challengeFile => challengeFile.source ?? '')
   );
+  const editableContents = joinWithFileBoundaries(
+    challengeFiles.map(challengeFile => challengeFile.editableContents ?? '')
+  );
+  const source: Source | undefined = challengeFiles.length
+    ? {
+        index,
+        contents: index,
+        editableContents
+      }
+    : {
+        index,
+        editableContents
+      };
   return source;
 }
 
@@ -155,7 +165,9 @@ export const runnerTypes: Record<
   [challengeTypes.pyLab]: 'python',
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python',
-  [challengeTypes.review]: 'dom'
+  [challengeTypes.review]: 'dom',
+  [challengeTypes.freeCodeCampOsPractice]: 'dom',
+  [challengeTypes.freeCodeCampOsCert]: 'dom'
 };
 
 type BuildResult = {
@@ -164,6 +176,12 @@ type BuildResult = {
   sources: Source | undefined;
   loadEnzyme?: boolean;
   error?: unknown;
+  warnings?: {
+    type: 'unavailable-local-resource';
+    source: string;
+    resourceType: 'stylesheet' | 'script';
+    allowedSources: string[];
+  }[];
 };
 
 function hasTS(challengeFiles: ChallengeFile[]) {
@@ -229,6 +247,7 @@ async function buildDOMChallenge(
   const pipeLine = composeFunctions(...transformers);
   const finalFiles = await Promise.all(sourceFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
+  const warnings = getLocalSourceWarnings(finalFiles);
   const contents = (await embedFilesInHtml(finalFiles)) as string;
 
   // if there is an error, we just build the test runner so that it can be
@@ -250,7 +269,8 @@ async function buildDOMChallenge(
     build: concatHtml(toBuild),
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
-    error
+    error,
+    warnings
   };
 }
 

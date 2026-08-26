@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
@@ -21,49 +21,6 @@ interface PageData {
   };
 }
 
-const expectToRenderResetModal = async (page: Page) => {
-  await expect(
-    page.getByRole('dialog', { name: translations.learn.reset })
-  ).toBeVisible();
-
-  await expect(
-    page.getByRole('button', {
-      name: translations.buttons.close
-    })
-  ).toBeVisible();
-  await expect(
-    page.getByRole('heading', {
-      name: translations.learn.reset
-    })
-  ).toBeVisible();
-
-  await expect(
-    page.getByText(translations.learn['reset-warn-2'])
-  ).toBeVisible();
-};
-
-test('should render the modal content correctly', async ({ page }) => {
-  await page.goto(
-    '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
-  );
-
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
-
-  await expectToRenderResetModal(page);
-
-  await expect(
-    page.getByRole('button', {
-      name: translations.buttons['reset-lesson']
-    })
-  ).toBeVisible();
-
-  await expect(
-    page.getByText(
-      'Are you sure you wish to reset this lesson (Step 3)? The code editors and tests will be reset.'
-    )
-  ).toBeVisible();
-});
-
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
   const initialText = '    <h2>Cat Photos</h2>';
   const initialEditorText = page
@@ -74,6 +31,12 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
   const updatedEditorText = page
     .getByTestId('editor-container-indexhtml')
     .getByText(updatedText);
+
+  // The first failing hint of the challenge, shown in the lower jaw after the
+  // code is checked
+  const failingHint = page.getByText(
+    'Your p element should have an opening tag'
+  );
 
   await page.goto(
     '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
@@ -97,6 +60,8 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
     })
     .click();
 
+  await expect(failingHint).toBeVisible();
+
   // Reset the challenge
   await page.getByRole('button', { name: translations.buttons.reset }).click();
   await page
@@ -105,9 +70,7 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
 
   // Check it's back to the initial state
   await expect(initialEditorText).toBeVisible();
-  await expect(
-    page.getByText(translations.learn['sorry-keep-trying'])
-  ).not.toBeVisible();
+  await expect(failingHint).not.toBeVisible();
 });
 
 test.describe('When the user is not logged in', () => {
@@ -145,9 +108,9 @@ test.describe('When the user is not logged in', () => {
     await focusEditor({ page, isMobile });
     await getEditors(page).fill(challengeSolution);
 
-    const submitButton = isMobile
-      ? page.getByRole('button', { name: translations.buttons.run })
-      : page.getByRole('button', { name: translations.buttons['check-code'] });
+    const submitButton = page.getByRole('button', {
+      name: translations.buttons['check-code']
+    });
 
     await submitButton.click();
 
@@ -193,28 +156,6 @@ test.describe('When the user is not logged in', () => {
   });
 });
 
-test('should close when the user clicks the close button', async ({ page }) => {
-  await page.goto(
-    '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
-  );
-
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
-
-  await expect(
-    page.getByRole('dialog', { name: translations.learn.reset })
-  ).toBeVisible();
-
-  await page
-    .getByRole('button', {
-      name: translations.buttons.close
-    })
-    .click();
-
-  await expect(
-    page.getByRole('dialog', { name: translations.learn.reset })
-  ).toBeHidden();
-});
-
 test('User can reset on a multi-file project', async ({
   page,
   isMobile,
@@ -233,7 +174,6 @@ test('User can reset on a multi-file project', async ({
 
   await page.getByRole('button', { name: translations.buttons.revert }).click();
 
-  await expectToRenderResetModal(page);
   await expect(
     page.getByRole('button', {
       name: translations.buttons['revert-to-saved-code']

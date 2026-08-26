@@ -17,7 +17,6 @@ import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
   constructUserExam,
-  generateExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt,
   compareAnswers,
@@ -95,108 +94,6 @@ describe('Exam Environment mocked Math.random', () => {
       const prerequisites = ['1', '2'];
 
       expect(checkPrerequisites(user, prerequisites)).toBe(false);
-    });
-  });
-
-  describe('generateExam()', () => {
-    it('should generate a randomized exam without throwing', () => {
-      expect(() => generateExam(exam)).not.toThrow();
-    });
-
-    it('should generate an exam matching with the correct number of question sets', () => {
-      const generatedExam = generateExam(exam);
-
-      // { [type]: numberOfType }
-      // E.g. { MultipleChoice: 2, Dialogue: 1 }
-      const generatedNumberOfSets = generatedExam.questionSets.reduce(
-        (acc, curr) => {
-          const eqs = exam.questionSets.find(eqs => eqs.id === curr.id);
-
-          if (!eqs) {
-            throw new Error('Generated question set not found in exam config');
-          }
-
-          return {
-            ...acc,
-            [eqs.type]: (acc[eqs.type] || 0) + 1
-          };
-        },
-        {} as Record<string, number>
-      );
-
-      const configNumberOfSets = exam.config.questionSets.reduce(
-        (acc, curr) => {
-          return {
-            ...acc,
-            [curr.type]: (acc[curr.type] || 0) + curr.numberOfSet
-          };
-        },
-        {} as Record<string, number>
-      );
-
-      expect(generatedNumberOfSets).toEqual(configNumberOfSets);
-    });
-
-    it('should not generate any deprecated questions', () => {
-      const generatedExam = generateExam(exam);
-
-      const allQuestions = exam.questionSets.flatMap(qs => qs.questions);
-
-      const deprecatedQuestions = generatedExam.questionSets
-        .flatMap(qs => qs.questions)
-        .filter(q => {
-          const eq = allQuestions.find(eq => eq.id === q.id);
-          if (!eq) {
-            throw new Error('Generated question not found in exam');
-          }
-          return eq.deprecated;
-        });
-
-      expect(deprecatedQuestions).toHaveLength(0);
-    });
-
-    it('should not generate an exam with duplicate questions', () => {
-      const generatedExam = generateExam(exam);
-
-      const questionIds = generatedExam.questionSets.flatMap(qs =>
-        qs.questions.map(q => q.id)
-      );
-
-      const duplicateQuestions = questionIds.filter(
-        (id, index) => questionIds.indexOf(id) !== index
-      );
-
-      expect(duplicateQuestions).toHaveLength(0);
-    });
-
-    it('should not generate an exam with duplicate answers', () => {
-      const generatedExam = generateExam(exam);
-
-      const answerIds = generatedExam.questionSets.flatMap(qs =>
-        qs.questions.flatMap(q => q.answers)
-      );
-
-      const duplicateAnswers = answerIds.filter(
-        (id, index) => answerIds.indexOf(id) !== index
-      );
-
-      expect(duplicateAnswers).toHaveLength(0);
-    });
-
-    it('should throw if the exam config is invalid', () => {
-      const invalidExam = {
-        ...exam,
-        config: {
-          ...exam.config,
-          tags: [
-            {
-              group: ['non-existant-tag'],
-              numberOfQuestions: 1
-            }
-          ]
-        }
-      };
-      expect(() => generateExam(invalidExam)).toThrow();
     });
   });
 

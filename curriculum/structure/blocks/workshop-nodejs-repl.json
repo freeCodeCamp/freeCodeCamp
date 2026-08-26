@@ -1,0 +1,12 @@
+{
+  "blockLabel": "workshop",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": false,
+  "hasEditableBoundaries": false,
+  "dashedName": "workshop-nodejs-repl",
+  "challengeOrder": [
+    { "id": "da3ca414c3729ac814b1293e", "title": "Learn Node.js REPL" }
+  ],
+  "helpCategory": "Backend Development"
+}

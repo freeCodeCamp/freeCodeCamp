@@ -104,6 +104,7 @@ a.portfolio-card:focus img {
 
 .timeline-row > td {
   vertical-align: middle !important;
+  width: 100%;
 }
 
 .timeline-cert-link {

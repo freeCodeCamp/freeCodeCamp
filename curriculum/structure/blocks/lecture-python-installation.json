@@ -1,0 +1,21 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lecture-python-installation",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-list",
+  "blockLabel": "lecture",
+  "challengeOrder": [
+    {
+      "id": "67fe8567f141d632afaeb71b",
+      "title": "How Do You Install, Configure and Use Python in Your Local Environment?"
+    },
+    {
+      "id": "69fd6b21fcaa14b089c27182",
+      "title": "How to Run Python Scripts"
+    },
+    {
+      "id": "69fd75321df075656f836fff",
+      "title": "How to Use the Python Interactive Shell"
+    }
+  ]
+}

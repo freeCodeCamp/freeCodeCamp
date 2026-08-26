@@ -24,7 +24,7 @@ assert.match(code, /const\s+reset\s*=\s*\(\s*\)\s*=>\s*\{\s*/)
 Your `reset` function should be empty.
 
 ```js
-assert.match(reset.toString(), /\(\s*\)\s*\{\s*\}/);
+assert.match(reset.toString(), /\(\s*\)\s*=>\s*\{\s*\}/);
 ```
 
 # --seed--
@@ -314,7 +314,6 @@ discardBtn.addEventListener("click", () => {
   taskForm.classList.toggle("hidden");
 });
 
-
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -326,7 +325,7 @@ taskForm.addEventListener("submit", (e) => {
     description: descriptionInput.value,
   };
 
-   if (dataArrIndex === -1) {
+  if (dataArrIndex === -1) {
     taskData.unshift(taskObj);
   }
 
@@ -339,8 +338,8 @@ taskForm.addEventListener("submit", (e) => {
           <button type="button" class="btn">Edit</button>
           <button type="button" class="btn">Delete</button>
         </div>
-      `
-    } 
+      `;
+    }
   );
 
   taskForm.classList.toggle("hidden");
