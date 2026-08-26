@@ -58,15 +58,6 @@ For curriculum tests:
 pnpm -F=curriculum install-puppeteer
 ```
 
-## How the container is built
-
-- `docker/docker-compose.yml` defines MongoDB, the replica-set initialiser, and Mailpit. Contributors who work without a container use the same file.
-- `.devcontainer/docker-compose.yml` adds the development container itself. The container and Mailpit share the database container's network namespace, so `MONGOHQ_URL` and `MAILPIT_HOST` in `sample.env` need no change, and no port is published to your machine. Do not remove `network_mode: service:db`.
-- `.devcontainer/on-create.sh` creates `.env` from `sample.env`.
-- `.devcontainer/codespace-env.sh` rewrites `HOME_LOCATION` and `API_LOCATION` to the forwarded port URLs, but only inside a Codespace, because `localhost` in a browser tab points at your own machine. It does nothing anywhere else.
-- `.devcontainer/post-create.sh` restores the Turbo cache baked into the image, runs `codespace-env.sh`, waits for MongoDB, and seeds the database. The Codespace URL rewrite belongs to `postCreateCommand`, not `onCreateCommand`, because a prebuild snapshots the container after `onCreateCommand` and would freeze the wrong hostname.
-- `docker/devcontainer/Dockerfile` builds the image that `.devcontainer/docker-compose.yml` pulls from GHCR.
-
 ## More information
 
 For the full contribution guide, see

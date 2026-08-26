@@ -6,8 +6,6 @@ services:
     command: mongod --replSet rs0
     restart: unless-stopped
     hostname: mongodb
-    ports:
-      - 27017:27017
     volumes:
       - db-data:/data/db
     healthcheck:
@@ -34,9 +32,6 @@ services:
   mailpit:
     image: axllent/mailpit
     restart: unless-stopped
-    ports:
-      - '1025:1025'
-      - '8025:8025'
 
 volumes:
   db-data:

@@ -20,6 +20,9 @@
   "otherPortsAttributes": { "onAutoForward": "silent" },
   "onCreateCommand": ".devcontainer/on-create.sh",
   "updateContentCommand": "pnpm install --prefer-offline",
+  // post-create.sh runs codespace-env.sh. That rewrite must not move to
+  // onCreateCommand: a prebuild snapshots the container after onCreateCommand
+  // and would freeze the wrong hostname.
   "postCreateCommand": ".devcontainer/post-create.sh",
   "customizations": {
     "vscode": {

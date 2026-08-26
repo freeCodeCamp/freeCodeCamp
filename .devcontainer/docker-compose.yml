@@ -5,6 +5,9 @@ services:
     image: ghcr.io/freecodecamp/devcontainer:latest
     volumes:
       - ..:/workspaces/freeCodeCamp:cached
+    # Shares the db network namespace so MONGOHQ_URL and MAILPIT_HOST in
+    # sample.env resolve on localhost. A service in that namespace cannot
+    # publish a port, which is why the host ports live in a separate overlay.
     network_mode: service:db
     command: sleep infinity
     depends_on:
@@ -15,12 +18,9 @@ services:
       mailpit:
         condition: service_started
 
-  db:
-    ports: !reset []
-
   mailpit:
+    # Same namespace, for MAILPIT_HOST=localhost.
     network_mode: service:db
-    ports: !reset []
     depends_on:
       db:
         condition: service_healthy
