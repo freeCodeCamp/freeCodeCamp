@@ -1,11 +1,11 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
 import * as schemas from '../../schemas.js';
-import { getActivityDate, isValidTimeZone } from '../../utils/activity-date.js';
-import { generateNanoId } from '../../utils/ids.js';
-
-const MAX_EVENT_AGE_MS = 7 * 24 * 60 * 60 * 1000;
-const MAX_FUTURE_SKEW_MS = 5 * 60 * 1000;
+import {
+  getRequestTimezone,
+  insertActivityEvent,
+  qualifyActivityStreak
+} from '../../data/activity.js';
 
 /**
  * Plugin for the activity tracking endpoint.
@@ -26,16 +26,8 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const { eventId, eventType, challengeId, url, occurredAt, timezone } =
-        req.body;
-      const eventDate = new Date(occurredAt);
-      const now = Date.now();
-
-      if (
-        !isValidTimeZone(timezone) ||
-        eventDate.getTime() < now - MAX_EVENT_AGE_MS ||
-        eventDate.getTime() > now + MAX_FUTURE_SKEW_MS
-      ) {
+      const { eventId, eventType, subjectId, url } = req.body;
+      if (eventType === 'challenge_submit' && (!subjectId || !url)) {
         void reply.code(400);
         return reply.send({
           message: 'flash.generic-error',
@@ -44,81 +36,15 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
       }
 
       try {
-        let user = await fastify.prisma.user.findFirst({
-          where: { id: req.user?.id },
-          select: { activityTrackingId: true }
+        await insertActivityEvent(fastify, {
+          userId: req.user!.id,
+          eventId,
+          eventType,
+          source: 'client',
+          subjectId,
+          url,
+          timezone: getRequestTimezone(req)
         });
-
-        if (!user) {
-          throw new Error('Authenticated user does not exist');
-        }
-
-        if (!user.activityTrackingId) {
-          const activityTrackingId = generateNanoId();
-          await fastify.prisma.user.updateMany({
-            where: {
-              id: req.user?.id,
-              OR: [
-                { activityTrackingId: null },
-                { activityTrackingId: { isSet: false } }
-              ]
-            },
-            data: { activityTrackingId }
-          });
-          user = await fastify.prisma.user.findFirst({
-            where: { id: req.user?.id },
-            select: { activityTrackingId: true }
-          });
-        }
-
-        if (!user?.activityTrackingId) {
-          throw new Error('Unable to initialize activity tracking ID');
-        }
-
-        const insertStart = performance.now();
-        try {
-          await fastify.clickhouse.insert({
-            table: 'activity_events',
-            format: 'JSONEachRow',
-            values: [
-              {
-                event_id: eventId,
-                tracking_id: user.activityTrackingId,
-                event_type: eventType,
-                challenge_id: challengeId,
-                url,
-                occurred_at: eventDate.toISOString(),
-                activity_date: getActivityDate(eventDate, timezone),
-                timezone
-              }
-            ]
-          });
-          fastify.Sentry.metrics.distribution(
-            'clickhouse.query_duration_ms',
-            performance.now() - insertStart,
-            {
-              unit: 'millisecond',
-              attributes: {
-                operation: 'insert_activity',
-                result: 'success'
-              }
-            }
-          );
-        } catch (error) {
-          fastify.Sentry.metrics.count('clickhouse.insert_failed', 1);
-          fastify.Sentry.metrics.distribution(
-            'clickhouse.query_duration_ms',
-            performance.now() - insertStart,
-            {
-              unit: 'millisecond',
-              attributes: {
-                operation: 'insert_activity',
-                result: 'failure'
-              }
-            }
-          );
-          throw error;
-        }
       } catch (err) {
         logger.error(err);
         fastify.Sentry.captureException(err);
@@ -133,6 +59,51 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
         message: 'flash.activity-updated' as const,
         type: 'success' as const
       });
+    }
+  );
+
+  fastify.post(
+    '/activity/streak',
+    {
+      schema: schemas.qualifyActivityStreak
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+
+      try {
+        const result = await qualifyActivityStreak(
+          fastify,
+          req.user!.id,
+          getRequestTimezone(req)
+        );
+
+        if (result.status === 'not_ready') {
+          fastify.Sentry.metrics.count('activity.streak_qualification', 1, {
+            attributes: { result: 'not_ready' }
+          });
+          void reply.code(409);
+          return reply.send({
+            message: 'flash.generic-error',
+            type: 'danger'
+          } as const);
+        }
+
+        fastify.Sentry.metrics.count('activity.streak_qualification', 1, {
+          attributes: { result: result.status }
+        });
+        return reply.send({ activityStreak: result.activityStreak });
+      } catch (err) {
+        logger.error(err, 'Unable to qualify activity streak');
+        fastify.Sentry.captureException(err);
+        fastify.Sentry.metrics.count('activity.streak_qualification', 1, {
+          attributes: { result: 'failure' }
+        });
+        void reply.code(503);
+        return reply.send({
+          message: 'flash.generic-error',
+          type: 'danger'
+        } as const);
+      }
     }
   );
 
