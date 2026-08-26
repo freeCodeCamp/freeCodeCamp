@@ -5,6 +5,10 @@ on:
     paths:
       - '.devcontainer/**'
       - 'docker/devcontainer/**'
+      - 'docker/docker-compose.yml'
+      - '.github/workflows/devcontainer-ci.yml'
+      - 'sample.env'
+      - 'package.json'
   workflow_dispatch:
 
 concurrency:
@@ -13,7 +17,6 @@ concurrency:
 
 permissions:
   contents: read
-  packages: read
 
 jobs:
   validate:
@@ -24,19 +27,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
-      - name: Login to GHCR
-        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4
 
       - name: Install devcontainer CLI
         # renovate: datasource=npm depName=@devcontainers/cli
         run: npm install -g @devcontainers/cli@0.83.0
 
-      - name: Build devcontainer
-        run: devcontainer build --workspace-folder .
+      - name: Build the devcontainer image from this branch
+        uses: docker/bake-action@d3418bd7d0e9324001bca92fa8ba175ea7e6dc9b # v7
+        with:
+          files: docker/devcontainer/docker-bake.hcl
+          targets: local-devcontainer
+          load: true
 
       - name: Start devcontainer
         run: devcontainer up --workspace-folder .
@@ -48,16 +51,36 @@ jobs:
           devcontainer exec --workspace-folder . mongosh --version
           devcontainer exec --workspace-folder . node --version
           devcontainer exec --workspace-folder . git --version
+          devcontainer exec --workspace-folder . gh --version
 
-      - name: Validate MongoDB replica set
+      - name: Validate MongoDB is writable
         run: |
           for i in $(seq 1 30); do
-            if devcontainer exec --workspace-folder . mongosh --eval "rs.status().ok" 2>/dev/null; then
-              echo "Replica set is ready"
+            if devcontainer exec --workspace-folder . mongosh --quiet --eval 'if (!db.hello().isWritablePrimary) quit(1)'; then
+              echo "Replica set is writable"
               exit 0
             fi
-            echo "Waiting for replica set... (attempt $i/30)"
+            echo "Waiting for a writable primary... (attempt $i/30)"
             sleep 2
           done
           echo "Replica set failed to initialize"
           exit 1
+
+      - name: Validate Mailpit is reachable
+        run: |
+          devcontainer exec --workspace-folder . bash -c 'exec 3<>/dev/tcp/localhost/1025 && head -1 <&3'
+          devcontainer exec --workspace-folder . bash -c 'exec 3<>/dev/tcp/localhost/8025'
+
+      - name: Validate the generated .env
+        run: |
+          devcontainer exec --workspace-folder . grep -q '^MAILPIT_HOST=localhost$' .env
+          devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=http://localhost:8000$' .env
+
+      - name: Validate the Codespaces URL rewrite
+        run: |
+          devcontainer exec --workspace-folder . env \
+            CODESPACE_NAME=ci-probe \
+            GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN=app.github.dev \
+            .devcontainer/codespace-env.sh
+          devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=https://ci-probe-8000.app.github.dev$' .env
+          devcontainer exec --workspace-folder . grep -q '^API_LOCATION=https://ci-probe-3000.app.github.dev$' .env

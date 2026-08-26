@@ -175,7 +175,7 @@ jobs:
           cat sample.env
 
       - name: Start MongoDB
-        run: docker compose -f docker/docker-compose.yml up -d
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
         run: |
@@ -228,7 +228,7 @@ jobs:
           echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
       - name: Start MongoDB
-        run: docker compose -f docker/docker-compose.yml up -d
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
         run: |
