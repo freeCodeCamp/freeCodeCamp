@@ -1,18 +1,21 @@
 import { runSaga } from 'redux-saga';
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, throttle } from 'redux-saga/effects';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-import { postActivity } from '../../../utils/ajax';
+import {
+  recordClientActivity,
+  signalMeaningfulActivity
+} from '../../../utils/activity';
 import { updateResumeUrl } from '../../../redux/actions';
 import {
   createCurrentChallengeSaga,
   updateActivityOnSubmitSaga
 } from './current-challenge-saga';
 
-vi.mock('uuid', () => ({ v4: () => '00000000-0000-4000-8000-000000000001' }));
 vi.mock('../../../utils/get-words', () => ({ randomCompliment: () => '' }));
-vi.mock('../../../utils/ajax', () => ({
-  postActivity: vi.fn()
+vi.mock('../../../utils/activity', () => ({
+  recordClientActivity: vi.fn(),
+  signalMeaningfulActivity: vi.fn()
 }));
 
 const createState = (sessionUser = { id: 'user-id' }) => ({
@@ -22,10 +25,9 @@ const createState = (sessionUser = { id: 'user-id' }) => ({
 
 describe('current challenge activity', () => {
   beforeEach(() => {
-    vi.mocked(postActivity).mockReset();
-    vi.mocked(postActivity).mockResolvedValue({
-      response: { ok: true }
-    });
+    vi.mocked(recordClientActivity).mockReset();
+    vi.mocked(recordClientActivity).mockResolvedValue({ recorded: true });
+    vi.mocked(signalMeaningfulActivity).mockReset();
   });
 
   test('reports the next URL after a successful submission', async () => {
@@ -44,22 +46,18 @@ describe('current challenge activity', () => {
       { payload: activity }
     ).toPromise();
 
-    expect(postActivity).toHaveBeenCalledWith(
-      expect.objectContaining({
-        eventId: '00000000-0000-4000-8000-000000000001',
-        eventType: 'challenge_submit',
-        challengeId: 'submitted-challenge',
-        url: '/learn/next-challenge',
-        occurredAt: expect.any(String),
-        timezone: expect.any(String)
-      })
-    );
+    expect(recordClientActivity).toHaveBeenCalledWith('challenge_submit', {
+      subjectId: 'submitted-challenge',
+      url: '/learn/next-challenge'
+    });
+    expect(signalMeaningfulActivity).toHaveBeenCalledOnce();
     expect(dispatched).toContainEqual(updateResumeUrl('/learn/next-challenge'));
   });
 
   test('reports activity only after submission completes', () => {
     const types = {
       challengeMounted: 'challenge-mounted',
+      updateFile: 'update-file',
       submitChallenge: 'submit-challenge',
       submitChallengeComplete: 'submit-challenge-complete'
     };
@@ -70,6 +68,9 @@ describe('current challenge activity', () => {
     );
     expect(effects).not.toContainEqual(
       takeEvery(types.submitChallenge, updateActivityOnSubmitSaga)
+    );
+    expect(effects).toContainEqual(
+      throttle(60_000, types.updateFile, expect.any(Function))
     );
   });
 
@@ -85,7 +86,8 @@ describe('current challenge activity', () => {
       { payload: activity }
     ).toPromise();
 
-    expect(postActivity).not.toHaveBeenCalled();
+    expect(recordClientActivity).not.toHaveBeenCalled();
+    expect(signalMeaningfulActivity).not.toHaveBeenCalled();
   });
 
   test('does not fail the submission flow when reporting fails', async () => {
@@ -93,7 +95,7 @@ describe('current challenge activity', () => {
       challengeId: 'submitted-challenge',
       nextChallengePath: '/learn/next-challenge'
     };
-    vi.mocked(postActivity).mockRejectedValueOnce(
+    vi.mocked(recordClientActivity).mockRejectedValueOnce(
       new Error('Activity API unavailable')
     );
 
@@ -102,7 +104,7 @@ describe('current challenge activity', () => {
         payload: activity
       }).toPromise()
     ).resolves.toBeUndefined();
-    expect(postActivity).toHaveBeenCalledOnce();
+    expect(recordClientActivity).toHaveBeenCalledOnce();
   });
 
   test('does not update the resume URL when persistence fails', async () => {
@@ -110,9 +112,7 @@ describe('current challenge activity', () => {
       challengeId: 'submitted-challenge',
       nextChallengePath: '/learn/next-challenge'
     };
-    vi.mocked(postActivity).mockResolvedValueOnce({
-      response: { ok: false }
-    });
+    vi.mocked(recordClientActivity).mockResolvedValueOnce({ recorded: false });
     const dispatched = [];
 
     await runSaga(

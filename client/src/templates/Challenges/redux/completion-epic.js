@@ -308,7 +308,13 @@ export default function completionEpic(action$, state$) {
       return submitter(type, state).pipe(
         map(action =>
           action.type === actionTypes.submitChallengeComplete
-            ? submitChallengeComplete({ challengeId: id, nextChallengePath })
+            ? submitChallengeComplete({
+                challengeId: id,
+                nextChallengePath,
+                ...(isModuleNewlyCompletedSelector(state)
+                  ? { moduleCompleted: true }
+                  : {})
+              })
             : action
         ),
         concat(

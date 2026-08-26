@@ -14,7 +14,10 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 
-import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  challengeTypes,
+  getIsDailyCodingChallenge
+} from '@freecodecamp/shared/config/challenge-types';
 import {
   buildChallenge,
   canBuildChallenge
@@ -42,6 +45,8 @@ import {
 } from '../utils/python-worker-handler';
 import { fireConfetti } from '../../../utils/fire-confetti';
 import callGA from '../../../analytics/call-ga';
+import { recordClientActivity } from '../../../utils/activity';
+import { isSignedInSelector } from '../../../redux/selectors';
 import { actionTypes } from './action-types';
 import {
   disableBuildOnError,
@@ -139,6 +144,17 @@ export function* executeChallengeSaga({ payload }) {
     const testRunner = yield call(getTestRunner, { ...buildData, hooks });
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
+
+    const isSignedIn = yield select(isSignedInSelector);
+    if (isSignedIn) {
+      yield call(
+        recordClientActivity,
+        getIsDailyCodingChallenge(challengeMeta.challengeType)
+          ? 'daily_challenge_attempted'
+          : 'test_run',
+        { subjectId: challengeMeta.id }
+      );
+    }
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);

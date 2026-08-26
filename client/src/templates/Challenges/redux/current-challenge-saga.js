@@ -1,12 +1,15 @@
-import { call, put, select, takeEvery } from 'redux-saga/effects';
+import { call, put, select, takeEvery, throttle } from 'redux-saga/effects';
 import store from 'store';
-import { v4 as uuid } from 'uuid';
 
 import { randomCompliment } from '../../../utils/get-words';
-import { postActivity } from '../../../utils/ajax';
+import {
+  recordClientActivity,
+  signalMeaningfulActivity
+} from '../../../utils/activity';
 import { updateResumeUrl } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
 import { CURRENT_CHALLENGE_KEY } from './action-types';
+import { challengeMetaSelector } from './selectors';
 import { updateSuccessMessage } from './actions';
 
 function* currentChallengeSaga({ payload: id }) {
@@ -17,26 +20,38 @@ function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 
-const getTimezone = () =>
-  Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
-
-export function* updateActivityOnSubmitSaga({
-  payload: { challengeId, nextChallengePath }
-}) {
+function* recordChallengeWorkSaga() {
   const isSignedIn = yield select(isSignedInSelector);
   if (!isSignedIn) return;
+  const { id } = yield select(challengeMetaSelector);
+  yield call(recordClientActivity, 'challenge_work', {
+    subjectId: id
+  });
+}
+
+export function* updateActivityOnSubmitSaga({ payload = {} }) {
+  const { challengeId, nextChallengePath, moduleCompleted } = payload;
+  const isSignedIn = yield select(isSignedInSelector);
+  if (!isSignedIn) return;
+
+  // This saga only runs after a successful server submission. The server
+  // completion event is the persisted fact; this signal starts the local timer.
+  yield call(signalMeaningfulActivity);
+
+  if (moduleCompleted) {
+    yield call(recordClientActivity, 'module_completed', {
+      subjectId: challengeId
+    });
+  }
+
   if (!nextChallengePath) return;
 
   try {
-    const { response } = yield call(postActivity, {
-      eventId: uuid(),
-      eventType: 'challenge_submit',
-      challengeId,
-      url: nextChallengePath,
-      occurredAt: new Date().toISOString(),
-      timezone: getTimezone()
+    const result = yield call(recordClientActivity, 'challenge_submit', {
+      subjectId: challengeId,
+      url: nextChallengePath
     });
-    if (response.ok) {
+    if (result?.recorded) {
       yield put(updateResumeUrl(nextChallengePath));
     }
   } catch {
@@ -48,6 +63,7 @@ export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
     takeEvery(types.challengeMounted, updateSuccessMessageSaga),
+    throttle(60_000, types.updateFile, recordChallengeWorkSaga),
     takeEvery(types.submitChallengeComplete, updateActivityOnSubmitSaga)
   ];
 }
