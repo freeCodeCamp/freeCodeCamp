@@ -24,11 +24,14 @@
   // onCreateCommand: a prebuild snapshots the container after onCreateCommand
   // and would freeze the wrong hostname.
   "postCreateCommand": ".devcontainer/post-create.sh",
+  // Codespaces resets port visibility on stop, and postCreateCommand does
+  // not run again on a restart.
+  "postStartCommand": ".devcontainer/post-start.sh",
+  "postAttachCommand": ".devcontainer/welcome.sh",
   "customizations": {
     "vscode": {
       "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
       "settings": {
-        "task.allowAutomaticTasks": "on",
         "tasks": {
           "version": "2.0.0",
           "tasks": [
@@ -39,13 +42,6 @@
               "isBackground": true,
               "problemMatcher": [],
               "presentation": { "reveal": "always", "panel": "dedicated" }
-            },
-            {
-              "label": "Open README",
-              "type": "shell",
-              "command": "code .devcontainer/README.md",
-              "presentation": { "reveal": "silent", "close": true },
-              "runOptions": { "runOn": "folderOpen" }
             }
           ]
         }

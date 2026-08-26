@@ -9,6 +9,10 @@ on:
       - '.github/workflows/devcontainer-ci.yml'
       - 'sample.env'
       - 'package.json'
+      - 'turbo.json'
+      - 'pnpm-lock.yaml'
+      - 'client/package.json'
+      - 'client/turbo.json'
   workflow_dispatch:
 
 concurrency:
@@ -75,6 +79,28 @@ jobs:
         run: |
           devcontainer exec --workspace-folder . grep -q '^MAILPIT_HOST=localhost$' .env
           devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=http://localhost:8000$' .env
+
+      - name: Validate the client answers on IPv4 loopback
+        run: |
+          devcontainer exec --workspace-folder . bash -c '
+            FCC_SUPERBLOCK=responsive-web-design pnpm run develop > /tmp/develop.log 2>&1 &
+            pid=$!
+            deadline=$((SECONDS + 2400))
+            while [ "$SECONDS" -lt "$deadline" ]; do
+              if ! kill -0 "$pid" 2>/dev/null; then
+                echo "pnpm run develop exited before the client answered"
+                cat /tmp/develop.log
+                exit 1
+              fi
+              if curl -sf -o /dev/null --max-time 10 http://127.0.0.1:8000/; then
+                echo "The client answers on 127.0.0.1:8000"
+                exit 0
+              fi
+              sleep 5
+            done
+            echo "The client never answered on 127.0.0.1:8000"
+            cat /tmp/develop.log
+            exit 1'
 
       - name: Validate the Codespaces URL rewrite
         run: |
