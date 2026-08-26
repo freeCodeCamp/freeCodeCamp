@@ -35,9 +35,14 @@ The client calls the API from your browser, across two different forwarded
 origins. A private port answers that call with a GitHub sign-in redirect, and
 the browser reports it as a CORS error.
 
-`post-create.sh` tries to set port 3000 to public for you. If it cannot, open
-the **Ports** panel, right click port `3000`, then choose **Port Visibility >
-Public**.
+`post-create.sh` attempts this, but the token a codespace provides does not
+carry the `codespace` scope, so the attempt usually fails. Open the **Ports**
+panel, right click port `3000`, then choose **Port Visibility > Public**. Run
+`gh auth login -s codespace` once if you want the script to do it for you.
+
+A public port is reachable by anybody who has the URL, and `sample.env` sets
+`FCC_ENABLE_DEV_LOGIN_MODE=true`, which serves a sign-in route that needs no
+password. Stop the codespace when you finish working.
 
 ## Optional setup
 
@@ -57,8 +62,9 @@ pnpm -F=curriculum install-puppeteer
 
 - `docker/docker-compose.yml` defines MongoDB, the replica-set initialiser, and Mailpit. Contributors who work without a container use the same file.
 - `.devcontainer/docker-compose.yml` adds the development container itself. The container and Mailpit share the database container's network namespace, so `MONGOHQ_URL` and `MAILPIT_HOST` in `sample.env` need no change, and no port is published to your machine. Do not remove `network_mode: service:db`.
-- `.devcontainer/on-create.sh` creates `.env`. In a GitHub Codespace it rewrites `HOME_LOCATION` and `API_LOCATION` to the forwarded port URLs, because `localhost` in a browser tab points at your own machine, not at the Codespace.
-- `.devcontainer/post-create.sh` restores the Turbo cache baked into the image, waits for MongoDB, and seeds the database.
+- `.devcontainer/on-create.sh` creates `.env` from `sample.env`.
+- `.devcontainer/codespace-env.sh` rewrites `HOME_LOCATION` and `API_LOCATION` to the forwarded port URLs, but only inside a Codespace, because `localhost` in a browser tab points at your own machine. It does nothing anywhere else.
+- `.devcontainer/post-create.sh` restores the Turbo cache baked into the image, runs `codespace-env.sh`, waits for MongoDB, and seeds the database. The Codespace URL rewrite belongs to `postCreateCommand`, not `onCreateCommand`, because a prebuild snapshots the container after `onCreateCommand` and would freeze the wrong hostname.
 - `docker/devcontainer/Dockerfile` builds the image that `.devcontainer/docker-compose.yml` pulls from GHCR.
 
 ## More information

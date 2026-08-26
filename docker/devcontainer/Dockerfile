@@ -22,9 +22,8 @@ RUN curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | gpg --dearmor
     && apt-get install -y --no-install-recommends mongodb-mongosh gh \
     && rm -rf /var/lib/apt/lists/*
 
-COPY package.json /tmp/package.json
-RUN npm install -g "pnpm@$(node -p 'require("/tmp/package.json").packageManager.split("@")[1]')" \
-    && rm /tmp/package.json
+RUN --mount=type=bind,source=package.json,target=/tmp/package.json \
+    npm install -g "pnpm@$(node -p 'require("/tmp/package.json").packageManager.split("@")[1]')"
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
 ENV npm_config_store_dir=/home/node/.local/share/pnpm/store

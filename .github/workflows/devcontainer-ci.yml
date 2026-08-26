@@ -7,6 +7,8 @@ on:
       - 'docker/devcontainer/**'
       - 'docker/docker-compose.yml'
       - '.github/workflows/devcontainer-ci.yml'
+      - 'sample.env'
+      - 'package.json'
   workflow_dispatch:
 
 concurrency:
@@ -15,7 +17,6 @@ concurrency:
 
 permissions:
   contents: read
-  packages: read
 
 jobs:
   validate:
@@ -25,13 +26,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-
-      - name: Login to GHCR
-        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4
@@ -81,3 +75,12 @@ jobs:
         run: |
           devcontainer exec --workspace-folder . grep -q '^MAILPIT_HOST=localhost$' .env
           devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=http://localhost:8000$' .env
+
+      - name: Validate the Codespaces URL rewrite
+        run: |
+          devcontainer exec --workspace-folder . env \
+            CODESPACE_NAME=ci-probe \
+            GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN=app.github.dev \
+            .devcontainer/codespace-env.sh
+          devcontainer exec --workspace-folder . grep -q '^HOME_LOCATION=https://ci-probe-8000.app.github.dev$' .env
+          devcontainer exec --workspace-folder . grep -q '^API_LOCATION=https://ci-probe-3000.app.github.dev$' .env
