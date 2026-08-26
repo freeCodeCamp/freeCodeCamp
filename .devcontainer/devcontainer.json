@@ -1,79 +1,48 @@
 {
   "name": "freeCodeCamp",
-  "dockerComposeFile": "docker-compose.yml",
+  "dockerComposeFile": ["../docker/docker-compose.yml", "docker-compose.yml"],
   "service": "devcontainer",
   "workspaceFolder": "/workspaces/freeCodeCamp",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
   "mounts": [
     "source=fcc-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
-  "forwardPorts": [3000, 8000],
+  "forwardPorts": [8000, 3000, 8025],
   "portsAttributes": {
-    "3000": {
-      "label": "API",
-      "onAutoForward": "silent"
-    },
-    "8000": {
-      "label": "Client",
-      "onAutoForward": "notify"
-    }
+    "8000": { "label": "Client", "onAutoForward": "notify" },
+    "3000": { "label": "API", "onAutoForward": "silent" },
+    "8025": { "label": "Mailpit", "onAutoForward": "silent" }
   },
-  "otherPortsAttributes": {
-    "onAutoForward": "silent"
-  },
-  "onCreateCommand": "sudo chown node:node node_modules && ([ ! -f .env ] && cp sample.env .env || true)",
+  "otherPortsAttributes": { "onAutoForward": "silent" },
+  "onCreateCommand": ".devcontainer/on-create.sh",
   "updateContentCommand": "pnpm install --prefer-offline",
-  "postCreateCommand": "rsync -a --include='*/' --include='.turbo/***' --exclude='*' /home/node/.cache/fcc/ ./ && set -a && . ./.env && set +a && until mongosh --eval 'rs.status().ok' 2>/dev/null; do sleep 1; done && pnpm seed",
+  "postCreateCommand": ".devcontainer/post-create.sh",
   "customizations": {
     "vscode": {
-      "extensions": [
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
-      ],
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
       "settings": {
         "task.allowAutomaticTasks": "on",
         "tasks": {
           "version": "2.0.0",
           "tasks": [
             {
-              "label": "Start API Server",
+              "label": "Start freeCodeCamp",
               "type": "shell",
-              "command": "pnpm run develop:api",
+              "command": "pnpm run develop",
               "isBackground": true,
               "problemMatcher": [],
-              "presentation": {
-                "reveal": "always",
-                "panel": "dedicated",
-                "group": "develop"
-              }
-            },
-            {
-              "label": "Start Client Server",
-              "type": "shell",
-              "command": "pnpm run develop:client",
-              "isBackground": true,
-              "problemMatcher": [],
-              "presentation": {
-                "reveal": "always",
-                "panel": "dedicated",
-                "group": "develop"
-              }
-            },
-            {
-              "label": "Start Development",
-              "dependsOn": ["Start API Server", "Start Client Server"],
-              "problemMatcher": []
+              "presentation": { "reveal": "always", "panel": "dedicated" }
             },
             {
               "label": "Open README",
               "type": "shell",
               "command": "code .devcontainer/README.md",
-              "presentation": {
-                "reveal": "silent",
-                "close": true
-              },
-              "runOptions": {
-                "runOn": "folderOpen"
-              }
+              "presentation": { "reveal": "silent", "close": true },
+              "runOptions": { "runOn": "folderOpen" }
             }
           ]
         }

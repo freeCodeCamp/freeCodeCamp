@@ -1,41 +1,26 @@
+name: freecodecamp-devcontainer
+
 services:
   devcontainer:
     image: ghcr.io/freecodecamp/devcontainer:latest
-    depends_on:
-      - db
-      - setup
     volumes:
       - ..:/workspaces/freeCodeCamp:cached
     network_mode: service:db
     command: sleep infinity
-
-  db:
-    image: mongo:8.2
-    command: mongod --replSet rs0
-    restart: unless-stopped
-    hostname: mongodb
-    volumes:
-      - db-data:/data/db
-    healthcheck:
-      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
-      interval: 2s
-      retries: 5
-      start_period: 10s
-
-  setup:
-    image: mongo:8.2
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure:5
-    command: >
-      mongosh --host mongodb:27017 --eval '
-        rs.initiate({
-          _id: "rs0",
-          members: [{ _id: 0, host: "mongodb:27017" }]
-        }).ok || rs.status().ok
-      '
+      setup:
+        condition: service_completed_successfully
+      mailpit:
+        condition: service_started
 
-volumes:
-  db-data:
-    driver: local
+  db:
+    ports: !reset []
+
+  mailpit:
+    network_mode: service:db
+    ports: !reset []
+    depends_on:
+      db:
+        condition: service_healthy
