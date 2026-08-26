@@ -41,6 +41,44 @@ const topDonatingContributorUserProps = {
 vi.mock('../../analytics');
 
 describe('<AuthOrProfile />', () => {
+  it('shows a flame on the avatar when the user has a current streak', () => {
+    const componentTree = create(
+      <AuthOrProfile
+        user={{
+          ...defaultUserProps.user,
+          activityStreak: {
+            current: 2,
+            longest: 2,
+            activeSession: true
+          }
+        }}
+      />
+    ).toJSON();
+
+    expect(
+      treeHasClass(componentTree, 'header-activity-streak-badge')
+    ).toBeTruthy();
+  });
+
+  it('does not show a flame when the session is not active', () => {
+    const componentTree = create(
+      <AuthOrProfile
+        user={{
+          ...defaultUserProps.user,
+          activityStreak: {
+            current: 2,
+            longest: 2,
+            activeSession: false
+          }
+        }}
+      />
+    ).toJSON();
+
+    expect(
+      treeHasClass(componentTree, 'header-activity-streak-badge')
+    ).toBeFalsy();
+  });
+
   it('has avatar with default border for default users', () => {
     const componentTree = create(
       <AuthOrProfile {...defaultUserProps} />
@@ -82,5 +120,21 @@ const avatarHasClass = (
   return (
     profileNavItem(componentTree as unknown as Component).props.className ===
     'avatar-container ' + classes
+  );
+};
+
+const treeHasClass = (
+  tree: ReactTestRendererJSON | ReactTestRendererJSON[] | null,
+  className: string
+): boolean => {
+  if (!tree) return false;
+  if (Array.isArray(tree)) {
+    return tree.some(node => treeHasClass(node, className));
+  }
+  if (tree.props.className === className) return true;
+  return Boolean(
+    tree.children?.some(
+      child => typeof child !== 'string' && treeHasClass(child, className)
+    )
   );
 };

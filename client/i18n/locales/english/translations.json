@@ -447,6 +447,7 @@
     "fcc-certs": "freeCodeCamp Certifications",
     "longest-streak": "Longest Streak:",
     "current-streak": "Current Streak:",
+    "activity-streak-label": "Learning streak active for this session.",
     "portfolio": "Portfolio",
     "badges": "Badges",
     "donated": "Donated to the community",
