@@ -3,7 +3,6 @@ name: freecodecamp-local
 services:
   db:
     image: mongo:8.2
-    container_name: mongodb
     command: mongod --replSet rs0
     restart: unless-stopped
     hostname: mongodb
@@ -15,32 +14,26 @@ services:
       test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 2s
       retries: 5
+      start_period: 10s
 
   setup:
     image: mongo:8.2
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure
-    # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+    restart: on-failure:5
     command: >
       mongosh --host mongodb:27017 --eval '
-        var cfg = {
-          _id: "rs0",
-          members: [
-            { _id: 0, host: "mongodb:27017" }
-          ]
-        };
         try {
-          rs.initiate(cfg);
+          rs.initiate({ _id: "rs0", members: [{ _id: 0, host: "mongodb:27017" }] });
         } catch (err) {
-          if(err.codeName !== "AlreadyInitialized") throw err;
+          if (err.codeName !== "AlreadyInitialized") throw err;
         }
       '
 
   mailpit:
-    restart: unless-stopped
     image: axllent/mailpit
+    restart: unless-stopped
     ports:
       - '1025:1025'
       - '8025:8025'
