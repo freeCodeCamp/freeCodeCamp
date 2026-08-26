@@ -6,7 +6,7 @@ cat <<'MSG'
   freeCodeCamp is ready. Dependencies are installed, MongoDB is running,
   and a test user is seeded.
 
-  Start the application:
+  Open a new terminal and start the development script:
 
       pnpm run develop
 
