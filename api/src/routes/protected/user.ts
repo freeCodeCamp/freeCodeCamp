@@ -32,6 +32,7 @@ import {
   getPoints,
   ProgressTimestamp
 } from '../../utils/progress.js';
+import { getActivityStreak, getResumeUrl } from '../../data/activity.js';
 import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
 import {
   getExamAttemptHandler,
@@ -926,22 +927,14 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       } = rest;
 
       let resumeUrl: string | undefined;
+      let activityStreak;
       if (activityTrackingId) {
         const queryStart = performance.now();
         try {
-          const result = await fastify.clickhouse.query({
-            query: `
-              SELECT url
-              FROM activity_events
-              WHERE tracking_id = {trackingId: String}
-              ORDER BY occurred_at DESC, ingested_at DESC, event_id DESC
-              LIMIT 1
-            `,
-            format: 'JSONEachRow',
-            query_params: { trackingId: activityTrackingId }
-          });
-          const [latestActivity] = await result.json<{ url: string }>();
-          resumeUrl = latestActivity?.url;
+          [resumeUrl, activityStreak] = await Promise.all([
+            getResumeUrl(fastify, activityTrackingId),
+            getActivityStreak(fastify, activityTrackingId)
+          ]);
           fastify.Sentry.metrics.distribution(
             'clickhouse.query_duration_ms',
             performance.now() - queryStart,
@@ -988,6 +981,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               progressTimestamps as ProgressTimestamp[] | null
             ),
             resumeUrl,
+            activityStreak,
             emailVerified: !!emailVerified,
             // This assertion is necessary until the database is normalized.
             points: getPoints(progressTimestamps as ProgressTimestamp[] | null),
