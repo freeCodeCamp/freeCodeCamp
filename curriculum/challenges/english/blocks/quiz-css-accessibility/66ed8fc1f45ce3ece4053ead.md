@@ -61,7 +61,7 @@ WebAIM's Color Contrast Checker
 
 #### --text--
 
-Which of the following tools allows you to pick background and foreground colors from content displayed on your screen and check for their contrast ratio?
+Which of the following tools allows you to pick background and foreground colors from content displayed on your screen and check their contrast ratio?
 
 #### --distractors--
 
@@ -165,7 +165,7 @@ img {
 
 #### --text--
 
-Which of the following `scroll-behavior` value allows a smooth scrolling behavior?
+Which of the following `scroll-behavior` values allows a smooth scrolling behavior?
 
 #### --distractors--
 
@@ -203,7 +203,7 @@ Which of the following features is used to detect the user's animation preferenc
 
 #### --answer--
 
-`prefers-reduce-motion`
+`prefers-reduced-motion`
 
 ### --question--
 

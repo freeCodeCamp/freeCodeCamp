@@ -9,6 +9,7 @@ export const getCertifications = (user: User) => {
     isRespWebDesignCertV9,
     is2018DataVisCert,
     isFrontEndLibsCert,
+    isFrontEndLibsCertV9,
     isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
@@ -36,6 +37,7 @@ export const getCertifications = (user: User) => {
       isB1EnglishCert ||
       isRespWebDesignCertV9 ||
       isJavascriptCertV9 ||
+      isFrontEndLibsCertV9 ||
       isFoundationalCSharpCertV8 ||
       isPythonCertV9 ||
       isRelationalDatabaseCertV9,
@@ -79,6 +81,11 @@ export const getCertifications = (user: User) => {
         show: isJavascriptCertV9,
         title: 'JavaScript Certification',
         certSlug: Certification.JsV9
+      },
+      {
+        show: isFrontEndLibsCertV9,
+        title: 'Front End Developer Libraries Certification',
+        certSlug: Certification.FrontEndDevLibsV9
       },
       {
         show: isFoundationalCSharpCertV8,

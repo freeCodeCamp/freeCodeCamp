@@ -49,6 +49,13 @@ describe('certificate routes', () => {
         });
       });
       test('should return user not found if the user cannot be found', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superRequest(
           '/certificate/showCert/not-a-valid-user-name/javascript-algorithms-and-data-structures',
           {
@@ -65,6 +72,15 @@ describe('certificate routes', () => {
           ]
         });
         expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith(
+          'certificate.public_view_blocked',
+          1,
+          {
+            attributes: { reason: 'user_not_found' }
+          }
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
       test('should ask user to add name if there is no name', async () => {
         await fastifyTestInstance.prisma.user.update({
@@ -226,6 +242,13 @@ describe('certificate routes', () => {
       });
 
       test('should not return user full name if `showName` is `false`', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
@@ -256,9 +279,24 @@ describe('certificate routes', () => {
         expect(response.body).toHaveProperty('username', 'foobar');
         expect(response.body).not.toHaveProperty('name');
         expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith('certificate.public_viewed', 1, {
+          attributes: {
+            certSlug: 'javascript-algorithms-and-data-structures',
+            nameVisibility: 'hidden'
+          }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return user full name if `showName` is `true`', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: {
@@ -287,9 +325,24 @@ describe('certificate routes', () => {
 
         expect(response.body).toHaveProperty('name', 'foobar');
         expect(response.status).toBe(200);
+        expect(count).toHaveBeenCalledWith('certificate.public_viewed', 1, {
+          attributes: {
+            certSlug: 'javascript-algorithms-and-data-structures',
+            nameVisibility: 'shown'
+          }
+        });
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
 
       test('should return cert-not-found if there is no cert with that slug', async () => {
+        const count = vi.fn();
+        const originalSentry = fastifyTestInstance.Sentry;
+        fastifyTestInstance.Sentry = {
+          ...originalSentry,
+          metrics: { ...originalSentry.metrics, count }
+        };
+
         const response = await superRequest(
           '/certificate/showCert/foobar/not-a-valid-cert-slug',
           {
@@ -306,6 +359,15 @@ describe('certificate routes', () => {
           ]
         });
         expect(response.status).toBe(404);
+        expect(count).toHaveBeenCalledWith(
+          'certificate.public_view_blocked',
+          1,
+          {
+            attributes: { reason: 'unknown_cert_slug' }
+          }
+        );
+
+        fastifyTestInstance.Sentry = originalSentry;
       });
     });
   });

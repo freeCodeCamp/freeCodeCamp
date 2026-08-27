@@ -1,4 +1,5 @@
 import { type Certification } from '@freecodecamp/shared/config/certification-settings';
+import { getIsLabChallenge } from '@freecodecamp/shared/config/challenge-types';
 import { AllChallengesInfo } from '../redux/prop-types';
 import { isProjectBased } from './curriculum-layout';
 
@@ -53,7 +54,10 @@ export const getCurrentBlockIds = (
     )
     .map(node => node.challenge.id);
 
-  if (isProjectBased(challengeType)) {
+  // Labs are project-based, but each lab is its own standalone block rather than
+  // part of a certification's project list. Excluding them keeps the progress bar
+  // accurate (otherwise an already-completed lab reads 0% on resubmit). See #67867.
+  if (isProjectBased(challengeType) && !getIsLabChallenge(challengeType)) {
     return currentCertificateIds.length > 0
       ? currentCertificateIds
       : currentBlockIds;

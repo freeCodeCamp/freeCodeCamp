@@ -82,6 +82,7 @@ const superblocks = [
   'learn-recursion-with-javascript',
   'introduction-to-functional-programming-with-javascript',
   'introduction-to-asynchronous-javascript',
+  'learn-data-visualization-with-d3',
   'introduction-to-python-basics',
   'learn-python-loops-and-sequences',
   'learn-python-dictionaries-and-sets',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
+import envData from '../../../config/env.json';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow } from '../helpers';
 
@@ -9,6 +10,8 @@ import KeyboardShortcutsSettings from './keyboard-shortcuts';
 import ScrollbarWidthSettings from './scrollbar-width';
 import SectionHeader from './section-header';
 import SocratesSettings from './socrates';
+
+const { clientLocale } = envData;
 
 type MiscSettingsProps = {
   keyboardShortcuts: boolean;
@@ -30,7 +33,8 @@ const MiscSettings = ({
   socrates
 }: MiscSettingsProps) => {
   const { t } = useTranslation();
-  const showSocratesFlag = useFeature('show-socrates').on;
+  const showSocratesFlag =
+    useFeature('show-socrates').on && clientLocale === 'english';
 
   return (
     <div className='account-settings'>

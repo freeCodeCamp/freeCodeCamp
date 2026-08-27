@@ -82,4 +82,5 @@ print(f'Base salary: ${charlie_brown.salary}')
 --fcc-editable-region--
 
 --fcc-editable-region--
+
 ```

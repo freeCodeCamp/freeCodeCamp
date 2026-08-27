@@ -48,8 +48,18 @@ You should use `print()` to display the string `Each person pays:` followed by a
 
 ```js
 ({
-    test: () => assert(runPython(`
-    _Node(_code).has_call("print('Each person pays:', each_pays)") or _Node(_code).has_call("print(f'Each person pays: {each_pays}')")`))
+    test: () => runPython(`
+import io, contextlib, re
+
+buffer = io.StringIO()
+with contextlib.redirect_stdout(buffer):
+    exec(_code)
+
+match = re.search(r"Each person pays: ([0-9]+(?:\\.[0-9]+)?)", buffer.getvalue())
+
+assert match
+assert abs(float(match.group(1)) - 62.13) < 1e-6
+`)
 })
 ```
 

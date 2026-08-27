@@ -9,11 +9,17 @@ dashedName: what-are-examples-of-element-user-action-pseudo-classes
 
 User feedback is a crucial element of web design. For instance, it's important for users to receive visual cues when they interact with elements on a website, such as hovering over a button or clicking a link. This feedback helps users understand the state of interactive elements, like indicating whether a link has been visited or not.
 
+## Understanding User Action Pseudo-Classes
+
 User action pseudo-classes in CSS are special keywords that allow you to provide this kind of feedback without needing JavaScript or other programming languages.
 
 These pseudo-classes include `:hover`, `:active`, `:focus`, and `:visited`, among others. They enable you to change the appearance of elements based on user interactions, improving the overall user experience.
 
 Let's dive into some of the user action pseudo-classes we have and see how they work.
+
+## Common User Action Pseudo-Classes
+
+### `:active`
 
 The `:active` pseudo-class applies styles when an element is activated by the user. For example, when the user clicks a button or a link, it provides immediate visual feedback, showing users that their actions are being recognized.
 
@@ -31,6 +37,8 @@ a:active {
 ```
 
 :::
+
+### `:hover`
 
 The `:hover` pseudo-class is triggered when a user hovers over an element with their mouse or other pointing device. Developers often use it to create visual feedback for buttons, links, or any element that should respond to user attention. Here's a button a user would hover over before clicking:
 
@@ -50,6 +58,8 @@ The `:hover` pseudo-class is triggered when a user hovers over an element with t
 ```
 
 :::
+
+### `:focus`
 
 The `:focus` pseudo-class applies styles when an element gains focus, typically through keyboard navigation or when a user clicks into a form input. This is not just for feedback but also crucial for accessibility. It ensures that users who rely heavily on keyboards can easily identify which element they are interacting with. 
 
@@ -73,6 +83,8 @@ input:focus {
 
 :::
 
+### `:visited`
+
 The `:visited` pseudo-class targets a link the user has visited. This can be useful for helping users distinguish between pages they have already visited and the ones they are yet to visit. Here is an example of changing the anchor text color to cyan when the link is visited:
 
 :::interactive_editor
@@ -89,6 +101,8 @@ a:visited {
 ```
 
 :::
+
+### `:checked`
 
 The `:checked` pseudo-class in CSS allows you to style form elements such as checkboxes and radio buttons when they are selected (checked). This pseudo-class is useful for customizing the appearance of these elements to enhance user experience, even though browsers provide default styles for them.
 
@@ -152,6 +166,8 @@ Here is an example with a checkbox to agree to terms on a website.
 :::
 
 In this example, we are using the `appearance` property set to `none` to remove the default styling applied by the browser to checkbox inputs. When the user checks the box, it will have a background color of `green`.
+
+## Other Action Pseudo-Classes
 
 Other examples of action pseudo-classes are:
 
