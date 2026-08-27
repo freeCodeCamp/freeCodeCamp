@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { withTranslation } from 'react-i18next';
-import { clientLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import {
   availableLangs,
   LangNames,
@@ -12,6 +12,8 @@ import {
 import { hardGoTo as navigate } from '../../../redux/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import LanguageGlobe from '../../../assets/icons/language-globe';
+
+const { clientLocale } = envData;
 
 const locales = availableLangs.client.filter(
   lang => !hiddenLangs.includes(lang)
