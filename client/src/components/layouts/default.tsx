@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
-import envData, { clientLocale } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
 import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
@@ -60,6 +60,8 @@ import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
 import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
+
+const { clientLocale } = envData;
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
