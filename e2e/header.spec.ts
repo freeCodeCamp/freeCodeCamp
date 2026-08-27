@@ -14,7 +14,7 @@ const headerComponentElements = {
   examNavLogo: 'header-exam-nav-microsoft-logo',
   universalNav: 'header-universal-nav',
   universalNavLogo: 'header-universal-nav-logo',
-  toggleLangButton: 'header-toggle-lang-button',
+  langButton: 'header-toggle-lang-button',
   languageList: 'header-lang-list',
   languageButton: 'header-lang-list-option',
   menuButton: 'header-menu-button',
@@ -46,6 +46,26 @@ test.describe('Header', () => {
     await expect(skipContent).toHaveAttribute('href', '#content-start');
   });
 
+  test('Should display universal nav Donate button', async ({ page }) => {
+    const donateButton = page.getByTestId('header-donate-button');
+    await expect(donateButton).toBeVisible();
+    await expect(donateButton).toHaveAttribute('href', '/donate');
+  });
+
+  test('Should show "Donate" text on desktop and Heart icon on mobile in the header', async ({
+    page,
+    isMobile
+  }) => {
+    const donateButton = page.getByTestId('header-donate-button');
+    const donateText = donateButton.locator('.menu-btn-text');
+
+    if (isMobile) {
+      await expect(donateText).toBeHidden();
+    } else {
+      await expect(donateText).toBeVisible();
+    }
+  });
+
   test('Renders universal nav by default', async ({ page }) => {
     const universalNavigation = page.getByTestId(
       headerComponentElements.universalNav
@@ -74,16 +94,22 @@ test.describe('Header', () => {
     }
   });
 
-  test('Clicking the "Change Language" button should open the language list', async ({
+  test('Clicking the language and menu buttons should hide the menu and language list respectively', async ({
     page
   }) => {
-    const toggleLangButton = page.getByTestId(
-      headerComponentElements.toggleLangButton
-    );
-    await expect(toggleLangButton).toBeVisible();
-    await toggleLangButton.click();
+    const langButton = page.getByTestId(headerComponentElements.langButton);
+    const menuButton = page.getByTestId(headerComponentElements.menuButton);
     const langList = page.getByTestId(headerComponentElements.languageList);
+    const menuList = page.getByTestId(headerComponentElements.menu);
+
+    await langButton.click();
     await expect(langList).toBeVisible();
+    await expect(menuList).not.toBeVisible();
+
+    // and back again
+    await menuButton.click();
+    await expect(menuList).toBeVisible();
+    await expect(langList).not.toBeVisible();
   });
 
   test('The language list should contain a button for each available language', async ({
@@ -94,9 +120,8 @@ test.describe('Header', () => {
     );
 
     const toggleLangButton = page.getByTestId(
-      headerComponentElements.toggleLangButton
+      headerComponentElements.langButton
     );
-    await expect(toggleLangButton).toBeVisible();
     await toggleLangButton.click();
     const langList = page.getByTestId(headerComponentElements.languageList);
     await expect(langList).toBeVisible();
@@ -109,6 +134,7 @@ test.describe('Header', () => {
     for (let i = 0; i < locales.length; i++) {
       const btn = langButtons.nth(i);
       await expect(btn).toContainText(LangNames[locales[i]]);
+      await expect(btn).toBeVisible();
     }
   });
 
@@ -129,7 +155,9 @@ test.describe('Header', () => {
     await expect(menuButton).toBeVisible();
     await menuButton.click();
 
-    const link = menu.getByRole('link', { name: translations.buttons.donate });
+    const link = menu.getByRole('link', {
+      name: translations.buttons.curriculum
+    });
     await link.focus();
 
     await page.keyboard.press('Escape');
@@ -138,7 +166,7 @@ test.describe('Header', () => {
     await expect(menuButton).toBeFocused();
   });
 
-  test('The menu should contain links to: donate, curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
+  test('The menu should contain links to: curriculum, catalog, forum, news, radio, contribute, and podcast', async ({
     page
   }) => {
     const menuButton = page.getByTestId(headerComponentElements.menuButton);
@@ -148,11 +176,6 @@ test.describe('Header', () => {
     await expect(menu).toBeVisible();
 
     const menuLinks = [
-      { name: translations.buttons.profile, href: '/developmentuser' },
-      {
-        name: translations.buttons.donate,
-        href: '/donate'
-      },
       {
         name: translations.buttons.curriculum,
         href: '/learn'
