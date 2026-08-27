@@ -52,7 +52,7 @@ RUN npm i -g pnpm@10
 # consistency.
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=api -F=packages/shared --frozen-lockfile
-RUN cd api && PRISMA_VERSION=$(jq -r '.devDependencies.prisma' < package.json) && echo "Resolved prisma version: '$PRISMA_VERSION'" && npx --yes prisma@$PRISMA_VERSION generate
+RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 FROM node:24-bookworm
 USER node
