@@ -27,12 +27,24 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'disabled',
-        // It doesn't matter if the file is generated or not as far as caching
-        // is concerned. It doesn't affect any tasks in any way, so we can
-        // ignore it.
+        // Stats are diagnostic output and do not affect downstream tasks, so
+        // CI does not need to participate in the Turbo input hash.
 
         // eslint-disable-next-line turbo/no-undeclared-env-vars
-        generateStatsFile: process.env.CI
+        generateStatsFile: process.env.CI,
+        // Only include the data consumed by webpack-bundle-analyzer. The
+        // default stats contain hundreds of MB of duplicate module metadata.
+        statsOptions: {
+          all: false,
+          assets: true,
+          children: true,
+          chunkModules: false,
+          chunks: true,
+          entrypoints: true,
+          ids: true,
+          modules: true,
+          nestedModules: true
+        }
       }
     },
     'gatsby-plugin-react-helmet',
