@@ -41,8 +41,6 @@ import './independent-lower-jaw.css';
 import Socrates from '../../../assets/icons/socrates';
 import OutlineLightbulb from '../../../assets/icons/outline-lightbulb';
 
-const { apiLocation, clientLocale } = envData;
-
 const SOCRATES_DISCOVERED_KEY = 'fcc-socrates-discovered';
 
 type SocratesHintState = {
@@ -167,6 +165,7 @@ export function IndependentLowerJaw({
   hasSocratesAccess
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
+  const { apiLocation, clientLocale } = envData;
   const showSocratesFlag =
     useFeature('show-socrates').on && clientLocale === 'english';
   const submitChallenge = useSubmit();
