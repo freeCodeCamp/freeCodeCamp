@@ -14,19 +14,19 @@ Below your `.text` element, create a new `section` element and give it a `class`
 You should create a new `section` element.
 
 ```js
-assert.lengthOf(document.querySelectorAll('section'), 4);
+assert.lengthOf(document.querySelectorAll('section'), 3);
 ```
 
 Your new `section` element should come after your `.text` element.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className, 'text');
+assert.equal(document.querySelectorAll('section')?.[1]?.previousElementSibling?.className, 'text');
 ```
 
 Your new `section` element should have the `class` set to `text text-with-images`.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.className, 'text text-with-images');
+assert.equal(document.querySelectorAll('section')?.[1]?.className, 'text text-with-images');
 ```
 
 Your new `.text-with-images` element should have a `section` element.
@@ -83,7 +83,6 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
   <body>
     <main>
       <article>
-        <section class="heading">
         <header class="hero">
           <img
             src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
@@ -126,7 +125,6 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
           </a>
         </nav>
         </header>
-      </section>
       <section class="text">
         <p class="first-paragraph">
           Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
