@@ -18,6 +18,9 @@
   .footer-top {
     grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
   }
+  .trending-guides-articles {
+    text-align: center;
+  }
 }
 
 .footer-top,
