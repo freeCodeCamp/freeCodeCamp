@@ -16,8 +16,8 @@ You should declare a `totalCountPerProduct` variable in your `addItem` function.
 ```js
 const explorer = await __helpers.Explorer(code);
 const cartClass = explorer.classes.ShoppingCart;
-const addItemMethod = cartClass?.methods?.addItem;
-assert.exists(addItemMethod?.variables?.totalCountPerProduct);
+const addItemMethod = cartClass?.methods.addItem;
+assert.exists(addItemMethod?.variables.totalCountPerProduct);
 ```
 
 You should use `const` to declare `totalCountPerProduct`.
@@ -25,8 +25,8 @@ You should use `const` to declare `totalCountPerProduct`.
 ```js
 const explorer = await __helpers.Explorer(code);
 const cartClass = explorer.classes.ShoppingCart;
-const addItemMethod = cartClass?.methods?.addItem;
-const totalCountPerProductVariable = addItemMethod?.variables?.totalCountPerProduct;
+const addItemMethod = cartClass?.methods.addItem;
+const totalCountPerProductVariable = addItemMethod?.variables.totalCountPerProduct;
 assert.isTrue(totalCountPerProductVariable?.toString().startsWith('const'));
 ```
 
