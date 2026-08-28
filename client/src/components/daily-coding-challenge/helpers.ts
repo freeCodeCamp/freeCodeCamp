@@ -18,12 +18,6 @@ export function getTodayUsCentral(dateObj: Date = new Date()) {
   return format(zonedDate, 'yyyy-MM-dd');
 }
 
-const LAST_DAY_OF_NEW_DAILY_CHALLENGES = '2026-08-10';
-
-export function lastDailyChallengeIsReleased() {
-  return getTodayUsCentral() > LAST_DAY_OF_NEW_DAILY_CHALLENGES;
-}
-
 // Validate that dateString is in the format yyyy-MM-dd
 // Leading zero's are accepted for single digit month/day
 export function isValidDateString(dateString: string) {
