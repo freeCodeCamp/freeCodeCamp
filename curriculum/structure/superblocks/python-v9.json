@@ -118,7 +118,6 @@
         },
         {
           "dashedName": "python-recursion",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack-python",
             "workshop-countup-python",

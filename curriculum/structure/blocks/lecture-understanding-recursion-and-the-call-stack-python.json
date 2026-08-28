@@ -1,7 +1,7 @@
 {
   "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-recursion-and-the-call-stack-python",
   "challengeOrder": [
     {
