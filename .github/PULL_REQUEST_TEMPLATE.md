@@ -4,6 +4,7 @@ Checklist:
 
 - [ ] I have read and followed the [contribution guidelines](https://contribute.freecodecamp.org).
 - [ ] I have read and followed the [how to open a pull request guide](https://contribute.freecodecamp.org/how-to-open-a-pull-request/).
+- [ ] I understand that AI-generated or AI-assisted code must still follow the contribution guidelines and has been reviewed carefully.
 - [ ] My pull request targets the `main` branch of freeCodeCamp.
 - [ ] I have tested these changes either locally on my machine, or GitHub Codespaces.
 
