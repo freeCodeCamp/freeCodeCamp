@@ -95,7 +95,7 @@ const mapStateToProps = createSelector(
   })
 );
 
-const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
+export const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const {
     showPreviewPane,
     showPreviewPortal,
