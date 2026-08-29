@@ -777,7 +777,7 @@ What does `repeat(3, minmax(100px, 1fr))` create when used with `grid-template-c
 
 #### --distractors--
 
-Three columns that can't shrink below `100px`.
+Three columns that can't grow larger than `100px`.
 
 ---
 
