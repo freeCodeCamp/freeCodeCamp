@@ -90,7 +90,6 @@ assert.match(cleanInputString.toString(), /console\.log\(('|")original\s+string:
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

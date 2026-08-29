@@ -94,7 +94,6 @@ assert.notMatch(cleanInputString.toString(), /console\.log\(('|")original\s+stri
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

@@ -90,7 +90,6 @@ assert.match(code, /console\.log\(\s*cleanInputString\(\s*('|")\+\-99\1\s*\)\s*\
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
