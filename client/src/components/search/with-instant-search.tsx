@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import { createSelector } from 'reselect';
 import { Configure, InstantSearch } from 'react-instantsearch';
-import { algoliaAppId, algoliaAPIKey } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import { newsIndex } from '../../utils/algolia-locale-setup';
 
 import {
@@ -17,6 +17,8 @@ import {
   toggleSearchDropdown,
   updateSearchQuery
 } from './redux';
+
+const { algoliaAppId, algoliaAPIKey } = envData;
 
 const mockSearchClient = {
   // When Algolia is not configured, the client will still render,
@@ -81,7 +83,7 @@ function InstantSearchRoot({
   });
 
   // https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state
-  const prevLocationRef = useRef<InstantSearchRootProps['location']>(undefined);
+  const prevLocationRef = useRef<InstantSearchRootProps['location']>();
   useEffect(() => {
     prevLocationRef.current = location;
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -36,7 +36,7 @@ type Props = PropsFromRedux & {
 };
 
 class Header extends React.Component<Props, { displayMenu: boolean }> {
-  menuButtonRef: React.RefObject<HTMLButtonElement | null>;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
   searchBarRef: React.RefObject<any>;
   static displayName: string;
   constructor(props: Props) {
@@ -88,11 +88,7 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
       this.props;
     return (
       <header className='site-header'>
-        <a
-          href='#content-start'
-          className='skip-to-content-button'
-          data-playwright-test-label='header-skip-content'
-        >
+        <a href='#content-start' className='skip-to-content-button'>
           {skipButtonText}
         </a>
         {examInProgress ? (

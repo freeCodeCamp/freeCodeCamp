@@ -8,19 +8,21 @@ import React from 'react';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { radioLocation } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import { openSignoutModal, toggleTheme } from '../../../redux/actions';
 import { Link } from '../../helpers';
 import { LocalStorageThemes } from '../../../redux/types';
 import { themeSelector } from '../../../redux/selectors';
 import SupporterBadge from '../../../assets/icons/supporter-badge';
 
+const { radioLocation } = envData;
+
 export interface NavLinksProps {
   displayMenu: boolean;
   showMenu: () => void;
   hideMenu: () => void;
   user?: { isDonating: boolean; username: string };
-  menuButtonRef: React.RefObject<HTMLButtonElement | null>;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
   openSignoutModal: () => void;
   theme: LocalStorageThemes;
   toggleTheme: () => void;

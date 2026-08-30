@@ -1,22 +1,27 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { describe, it, expect } from 'vitest';
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { create } from 'react-test-renderer';
 
 import Link from './link';
 
 describe('<Link />', () => {
+  const externalLink = create(<Link external={true} to='/home' />).toJSON();
+  const gatsbyLink = create(<Link to='/home' />).toJSON();
+
   it('renders to the DOM', () => {
-    render(<Link to='/home' />);
-    expect(screen.getByRole('link')).toBeTruthy();
+    expect(gatsbyLink).toBeTruthy();
   });
 
   it('sets target for external links', () => {
-    render(<Link external={true} to='/home' />);
-    expect(screen.getByRole('link')).toHaveAttribute('target', '_blank');
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    expect(externalLink.props.target).toEqual('_blank');
   });
 
   it('does not specify target in gatsbyLink', () => {
-    render(<Link to='/home' />);
-    expect(screen.getByRole('link')).not.toHaveAttribute('target');
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    expect(gatsbyLink.props.target).toBeFalsy();
   });
 });
