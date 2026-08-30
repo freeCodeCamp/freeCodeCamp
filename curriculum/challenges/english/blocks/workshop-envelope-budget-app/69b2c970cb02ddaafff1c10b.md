@@ -94,7 +94,6 @@ assert.match(code, /HTMLString\s*=\s*`\n\s*<label>\s*Expense\s\$\{entryNumber\}\
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

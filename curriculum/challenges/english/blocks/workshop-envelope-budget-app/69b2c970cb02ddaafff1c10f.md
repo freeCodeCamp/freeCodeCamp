@@ -151,7 +151,6 @@ assert.match(inputAttributes, /min\s*=\s*"0"/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -337,7 +336,7 @@ function addEntry() {
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
   <label for="${category}-${entryNumber}-amount">Expense ${entryNumber} Amount</label>
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
   `;
 }
