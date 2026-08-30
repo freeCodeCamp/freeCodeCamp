@@ -71,6 +71,8 @@ If you're confident it's a new bug and have confirmed that someone else is facin
 ### Reporting Security Issues and Responsible Disclosure
 
 We appreciate responsible disclosure of vulnerabilities that might impact the integrity of our platforms and users.
+> **Note**: Before opening a new issue, please verify that the issue has not already been reported by searching the open issue tracker.
+
 
 > #### [Read our security policy and follow these steps to report a vulnerability](https://contribute.freecodecamp.org/#/security).
 
