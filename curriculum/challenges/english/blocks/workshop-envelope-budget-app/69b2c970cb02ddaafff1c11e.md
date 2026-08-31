@@ -117,7 +117,6 @@ assert.match(getTotalFromInputs.toString(), /total\s*\+=\s*Number\(\s*currVal\s*
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

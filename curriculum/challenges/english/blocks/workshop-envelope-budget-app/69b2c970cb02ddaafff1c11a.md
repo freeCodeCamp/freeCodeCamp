@@ -100,7 +100,6 @@ assert.match(getTotalFromInputs.toString(), /invalidInputMatch\s*=\s*isInvalidIn
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

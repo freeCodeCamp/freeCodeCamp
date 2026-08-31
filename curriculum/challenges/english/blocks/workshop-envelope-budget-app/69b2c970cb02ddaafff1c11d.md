@@ -100,7 +100,6 @@ assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: 
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

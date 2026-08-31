@@ -116,7 +116,6 @@ assert.isTrue(statusClass?.matches('let statusClass = ""'));
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
