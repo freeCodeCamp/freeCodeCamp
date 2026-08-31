@@ -7,9 +7,11 @@ import { Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
-import { apiLocation } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
 import { pathAfterSignout } from './path-after-signout';
+
+const { apiLocation } = envData;
 
 const mapStateToProps = createSelector(
   isSignoutModalOpenSelector,

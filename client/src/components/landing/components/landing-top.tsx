@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
-import { clientLocale } from '../../../../config/env.json';
+import envData from '../../../../config/env.json';
 import {
   AmazonLogo,
   AppleLogo,
@@ -15,6 +15,8 @@ import {
 import BigCallToAction from './big-call-to-action';
 import TwoButtonCTA from './two-button-cta';
 import CampersImage from './campers-image';
+
+const { clientLocale } = envData;
 
 function LandingTop(): JSX.Element {
   const { t } = useTranslation();
