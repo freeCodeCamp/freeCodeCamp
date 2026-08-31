@@ -6447,12 +6447,20 @@
       "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Linear Data Structures",
       "lab-hash-table": "Build a Hash Table",
+      "python-recursion": "Recursion",
       "python-algorithms": "Algorithms",
       "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
+    },
+    "module-intros": {
+      "python-recursion": {
+        "intro": [
+          "In this module, you will learn how recursion and the call stack work in Python."
+        ]
+      }
     },
     "blocks": {
       "lecture-introduction-to-python": {
@@ -6791,6 +6799,36 @@
         "intro": [
           "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
           "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "lecture-understanding-recursion-and-the-call-stack-python": {
+        "title": "Understanding Recursion and the Call Stack",
+        "intro": [
+          "In this lecture, you will learn how recursive functions and the call stack work in Python."
+        ]
+      },
+      "workshop-countup-python": {
+        "title": "Build a Countup Function",
+        "intro": [
+          "In this workshop, you will build a function that uses recursion to create a list of numbers."
+        ]
+      },
+      "lab-range-of-numbers-python": {
+        "title": "Build a Range of Numbers Generator",
+        "intro": [
+          "In this lab, you will use recursion to generate a list of numbers within a specified range."
+        ]
+      },
+      "review-recursion-python": {
+        "title": "Review Recursion",
+        "intro": [
+          "Review the concepts of recursion, base cases, and the call stack."
+        ]
+      },
+      "quiz-recursion-python": {
+        "title": "Recursion Quiz",
+        "intro": [
+          "Test your understanding of recursion, base cases, and the call stack."
         ]
       },
       "lecture-searching-and-sorting-algorithms": {
