@@ -8,7 +8,7 @@ import {
   DailyCodingChallengePageContext
 } from '../redux/prop-types';
 import DailyCodingChallengeNotFound from '../components/daily-coding-challenge/not-found';
-import { apiLocation } from '../../config/env.json';
+import envData from '../../config/env.json';
 import {
   isValidDateOrMonthDayString,
   toMonthDay
@@ -17,6 +17,8 @@ import {
   validateDailyCodingChallengeSchema,
   type DailyCodingChallengeFromDb
 } from '../utils/daily-coding-challenge-validator';
+
+const { apiLocation } = envData;
 
 interface DailyCodingChallengeLanguageData {
   data: {
