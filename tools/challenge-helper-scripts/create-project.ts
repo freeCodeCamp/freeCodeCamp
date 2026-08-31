@@ -9,6 +9,7 @@ import {
   chapterBasedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   createBlockFolder,
   writeBlockStructure
@@ -16,11 +17,12 @@ import {
 import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import {
   createQuizFile,
+  createLabFile,
+  createReviewFile,
   createStepFile,
   validateBlockName,
   getAllBlocks
 } from './utils.js';
-import { getBaseMeta } from './helpers/get-base-meta.js';
 import { parseIntroJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
@@ -28,6 +30,11 @@ import {
   updateSimpleSuperblockStructure
 } from './helpers/create-project.js';
 import { withTrace } from './helpers/utils.js';
+import {
+  buildProjectMeta,
+  getDefaultBlockLayout,
+  isLabChallengeType
+} from './helpers/project-type.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -45,8 +52,9 @@ interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  blockLabel?: string;
-  blockLayout?: string;
+  blockLabel?: BlockLabel;
+  blockLayout?: BlockLayouts;
+  labChallengeType?: number;
   questionCount?: number;
   order?: number;
   chapter?: string;
@@ -56,26 +64,77 @@ interface CreateProjectArgs {
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
-  if (!projectArgs.title) {
-    projectArgs.title = projectArgs.block;
-  }
-
+  const title = projectArgs.title ?? projectArgs.block;
   const order = projectArgs.order;
   const chapter = projectArgs.chapter;
   const module = projectArgs.module;
   const position = projectArgs.position;
+  const questionCount = projectArgs.questionCount;
+  const labChallengeType = projectArgs.labChallengeType;
+  const isChapterBased = chapterBasedSuperBlocks.includes(
+    projectArgs.superBlock
+  );
+
+  if (isChapterBased && (!projectArgs.blockLabel || !projectArgs.blockLayout)) {
+    throw new Error(
+      'Missing one of the following arguments: blockLabel, blockLayout'
+    );
+  }
+
+  const createChallenge = (() => {
+    switch (projectArgs.blockLabel) {
+      case BlockLabel.quiz: {
+        if (questionCount == null) {
+          throw new Error(
+            'Property `questionCount` is null when creating new Quiz Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createQuizChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title,
+            questionCount
+          });
+      }
+      case BlockLabel.lab: {
+        if (!isLabChallengeType(labChallengeType)) {
+          throw new Error(
+            'Property `labChallengeType` is invalid when creating new Lab Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createLabChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title,
+            challengeType: labChallengeType
+          });
+      }
+      case BlockLabel.review:
+        return (challengeId: ObjectId) =>
+          createReviewChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title
+          });
+      default:
+        return (challengeId: ObjectId) =>
+          createFirstChallenge({ block: projectArgs.block, challengeId });
+    }
+  })();
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
-  if (chapterBasedSuperBlocks.includes(projectArgs.superBlock)) {
+  if (isChapterBased) {
     if (!chapter || !module || typeof position == 'undefined') {
       throw Error(
         'Missing one of the following arguments: chapter, module, position'
       );
     }
-    void updateChapterModuleSuperblockStructure(
+    await updateChapterModuleSuperblockStructure(
       projectArgs.block,
       // Convert human-friendly (1-based) position to 0-based index for insertion.
       { order: position - 1, chapter, module },
@@ -85,62 +144,24 @@ async function createProject(projectArgs: CreateProjectArgs) {
     if (typeof order == 'undefined') {
       throw Error('Missing argument: order');
     }
-    void updateSimpleSuperblockStructure(
+    await updateSimpleSuperblockStructure(
       projectArgs.block,
       { order },
       superblockFilename
     );
   }
 
-  void updateIntroJson(
-    projectArgs.superBlock,
-    projectArgs.block,
-    projectArgs.title
-  );
+  await updateIntroJson(projectArgs.superBlock, projectArgs.block, title);
 
   const challengeId = new ObjectId();
+  const createMetaJsonArgs = {
+    ...projectArgs,
+    title,
+    challengeId
+  };
 
-  if (projectArgs.blockLabel === BlockLabel.quiz) {
-    if (projectArgs.questionCount == null) {
-      throw new Error(
-        'Property `questionCount` is null when creating new Quiz Challenge'
-      );
-    }
-    await createMetaJson(
-      projectArgs.superBlock,
-      projectArgs.block,
-      projectArgs.title,
-      projectArgs.helpCategory,
-      challengeId
-    );
-    await createQuizChallenge({
-      challengeId,
-      block: projectArgs.block,
-      title: projectArgs.title,
-      questionCount: projectArgs.questionCount
-    });
-  } else {
-    await createMetaJson(
-      projectArgs.superBlock,
-      projectArgs.block,
-      projectArgs.title,
-      projectArgs.helpCategory,
-      challengeId,
-      projectArgs.order,
-      projectArgs.blockLabel,
-      projectArgs.blockLayout
-    );
-    await createFirstChallenge({ block: projectArgs.block, challengeId });
-  }
-
-  if (
-    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
-      projectArgs.blockLabel) == null
-  ) {
-    throw new Error(
-      'Missing argument: blockLabel when updating intro markdown'
-    );
-  }
+  await createMetaJson(createMetaJsonArgs);
+  await createChallenge(challengeId);
 }
 
 async function updateIntroJson(
@@ -157,46 +178,38 @@ async function updateIntroJson(
     title,
     intro: [title, '']
   };
-  void withTrace(
+  await withTrace(
     fs.writeFile,
     introJsonPath,
     await format(JSON.stringify(newIntro), { parser: 'json' })
   );
 }
 
-async function createMetaJson(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string,
-  helpCategory: string,
-  challengeId: ObjectId,
-  order?: number,
-  blockLabel?: string,
-  blockLayout?: string
-) {
-  let newMeta;
-  if (chapterBasedSuperBlocks.includes(superBlock)) {
-    const blockTypeToMetaType: Record<
-      string,
-      'Lab' | 'Workshop' | 'Lecture' | 'FullStack'
-    > = {
-      [BlockLabel.lab]: 'Lab',
-      [BlockLabel.workshop]: 'Workshop',
-      [BlockLabel.lecture]: 'Lecture'
-    };
+type CreateMetaJsonArgs = CreateProjectArgs & {
+  title: string;
+  challengeId: ObjectId;
+};
 
-    const metaType = blockTypeToMetaType[blockLabel ?? ''] ?? 'FullStack';
-    newMeta = getBaseMeta(metaType);
-    newMeta.blockLabel = blockLabel as BlockLabel;
-    newMeta.blockLayout = blockLayout;
-  } else {
-    newMeta = getBaseMeta('Step');
-    newMeta.order = order;
-  }
-  newMeta.dashedName = block;
-  newMeta.helpCategory = helpCategory;
-
-  newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
+async function createMetaJson({
+  superBlock,
+  block,
+  title,
+  helpCategory,
+  challengeId,
+  order,
+  blockLabel,
+  blockLayout
+}: CreateMetaJsonArgs) {
+  const newMeta = buildProjectMeta({
+    isChapterBased: chapterBasedSuperBlocks.includes(superBlock),
+    block,
+    title,
+    helpCategory,
+    challengeId: challengeId.toString(),
+    order,
+    blockLabel,
+    blockLayout
+  });
 
   await writeBlockStructure(block, newMeta);
 }
@@ -245,6 +258,43 @@ async function createQuizChallenge({
     title: title,
     dashedName: block,
     questionCount: questionCount
+  });
+}
+
+async function createLabChallenge({
+  challengeId,
+  block,
+  title,
+  challengeType
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+  challengeType: number;
+}): Promise<ObjectId> {
+  return createLabFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title,
+    dashedName: block,
+    challengeType
+  });
+}
+
+async function createReviewChallenge({
+  challengeId,
+  block,
+  title
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+}): Promise<ObjectId> {
+  return createReviewFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title,
+    dashedName: block
   });
 }
 
@@ -308,6 +358,7 @@ void getAllBlocks()
     let blockLabel: BlockLabel | undefined;
     let blockLayout: BlockLayouts | undefined;
     let questionCount: number | undefined;
+    let labChallengeType: number | undefined;
     let chapter: string | undefined;
     let module: string | undefined;
     let position: number | undefined;
@@ -325,10 +376,7 @@ void getAllBlocks()
 
       blockLayout = await select<BlockLayouts>({
         message: 'Choose a block layout',
-        default:
-          blockLabel === BlockLabel.quiz
-            ? BlockLayouts.Link
-            : BlockLayouts.ChallengeList,
+        default: getDefaultBlockLayout(blockLabel),
         choices: Object.values(BlockLayouts).map(value => ({
           name: value,
           value
@@ -342,6 +390,18 @@ void getAllBlocks()
           choices: [
             { name: '10', value: 10 },
             { name: '20', value: 20 }
+          ]
+        });
+      }
+
+      if (blockLabel === BlockLabel.lab) {
+        labChallengeType = await select<number>({
+          message: 'Choose a lab challenge type',
+          default: challengeTypes.lab,
+          choices: [
+            { name: 'HTML/CSS', value: challengeTypes.lab },
+            { name: 'JavaScript', value: challengeTypes.jsLab },
+            { name: 'Python', value: challengeTypes.pyLab }
           ]
         });
       }
@@ -391,6 +451,7 @@ void getAllBlocks()
       blockLabel,
       blockLayout,
       questionCount,
+      labChallengeType,
       chapter,
       module,
       position,

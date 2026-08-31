@@ -13,6 +13,7 @@ interface ChallengeOptions {
   questionCount?: number;
   challengeLang?: ChallengeLang;
   inputType?: string;
+  demoType?: 'onClick' | 'onLoad';
 }
 
 const buildFrontMatter = ({
@@ -21,7 +22,8 @@ const buildFrontMatter = ({
   dashedName,
   challengeType,
   challengeLang,
-  inputType
+  inputType,
+  demoType
 }: ChallengeOptions) => {
   const langString = challengeLang
     ? `
@@ -31,12 +33,16 @@ lang: ${challengeLang}`
     ? `
 inputType: ${inputType}`
     : '';
+  const demoTypeString = demoType
+    ? `
+demoType: ${demoType}`
+    : '';
 
   return `---
 id: ${challengeId.toString()}
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
-dashedName: ${dashedName}${langString}${inputTypeString}
+dashedName: ${dashedName}${langString}${inputTypeString}${demoTypeString}
 ---`;
 };
 
@@ -193,6 +199,71 @@ Placeholder distractor 3
 Placeholder answer
 `;
 };
+
+const getLabChallengeTemplate = (options: ChallengeOptions): string => {
+  const challengeTypeToLanguage: Record<string, string> = {
+    '25': 'html',
+    '26': 'js',
+    '27': 'py'
+  };
+  const language = challengeTypeToLanguage[options.challengeType] ?? 'html';
+  const frontMatterOptions =
+    options.challengeType === '25'
+      ? { ...options, demoType: 'onClick' as const }
+      : options;
+
+  return `${buildFrontMatter(frontMatterOptions)}
+
+# --description--
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories:**
+
+1.
+
+# --hints--
+
+Hint text
+
+\`\`\`js
+
+\`\`\`
+
+# --seed--
+
+## --seed-contents--
+
+\`\`\`${language}
+
+\`\`\`
+
+# --solutions--
+
+\`\`\`${language}
+
+\`\`\`
+`;
+};
+
+const getReviewChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatter(options)}
+
+# --description--
+
+## Some topic
+
+- **Some topic**: Description
+
+\`\`\`md
+Some code example
+\`\`\`
+
+# --assignment--
+
+Review the ${options.title} topics and concepts.
+`;
 
 const getVideoChallengeTemplate = (
   options: ChallengeOptions
@@ -537,5 +608,12 @@ const challengeTypeToTemplate: {
   21: getDialogueChallengeTemplate,
   22: getFillInTheBlankChallengeTemplate,
   23: null,
-  24: getGenericChallengeTemplate
+  24: getGenericChallengeTemplate,
+  25: getLabChallengeTemplate,
+  26: getLabChallengeTemplate,
+  27: getLabChallengeTemplate,
+  28: null,
+  29: null,
+  30: null,
+  31: getReviewChallengeTemplate
 };
