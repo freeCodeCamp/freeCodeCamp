@@ -171,20 +171,11 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           }
 
           if (response.status === 400) {
-            let upstreamMessage: string | undefined;
-            try {
-              const parsed = responseText
-                ? (JSON.parse(responseText) as { error?: string })
-                : null;
-              upstreamMessage = parsed?.error;
-            } catch {
-              // ignore parse errors
-            }
             fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
               attributes: { reason: 'bad_status' }
             });
             return reply.status(400).send({
-              error: upstreamMessage || 'socrates-unable-to-generate',
+              error: 'socrates-unable-to-generate',
               type: 'info',
               attempts: attempts - 1,
               limit
