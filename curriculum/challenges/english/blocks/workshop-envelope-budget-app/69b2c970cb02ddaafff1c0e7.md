@@ -9,59 +9,47 @@ dashedName: step-10
 
 Your select menu needs an option for each of the envelope `fieldset` elements you created in the previous steps. Use the `option` element to create a new option for each `fieldset`. The `value` attribute of each option should be the `id` of the `fieldset`, and the text of each option should be the text of the `legend`.
 
-Set the `Rent` option as the `selected` option.
+Set the `Food` option as the `selected` option.
 
 # --hints--
 
-You should create four `option` elements within your `select` element.
+You should create three `option` elements within your `select` element.
 
 ```js
-assert.equal(document.querySelectorAll('.controls select option')?.length, 4);
+assert.equal(document.querySelectorAll('.controls select option')?.length, 3);
 ```
 
-Your first `option` should have the text `Rent`.
-
-```js
-assert.equal(document.querySelectorAll('.controls select option')?.[0]?.textContent?.trim(), 'Rent');
-```
-
-Your first `option` should have the `value` attribute set to `rent`.
-
-```js
-assert.equal(document.querySelectorAll('.controls select option')?.[0]?.value, 'rent');
-```
-
-Your second `option` should have the text `Food`.
+Your first `option` should have the text `Food`.
 
 ```js
 assert.equal(document.querySelectorAll('.controls select option')?.[1]?.textContent?.trim(), 'Food');
 ```
 
-Your second `option` should have the `value` attribute set to `food`.
+Your first `option` should have the `value` attribute set to `food`.
 
 ```js
 assert.equal(document.querySelectorAll('.controls select option')?.[1]?.value, 'food');
 ```
 
-Your third `option` should have the text `Utilities`.
+Your second `option` should have the text `Utilities`.
 
 ```js
 assert.equal(document.querySelectorAll('.controls select option')?.[2]?.textContent?.trim(), 'Utilities');
 ```
 
-Your third `option` should have the `value` attribute set to `utilities`.
+Your second `option` should have the `value` attribute set to `utilities`.
 
 ```js
 assert.equal(document.querySelectorAll('.controls select option')?.[2]?.value, 'utilities');
 ```
 
-Your fourth `option` should have the text `Entertainment`.
+Your third `option` should have the text `Entertainment`.
 
 ```js
 assert.equal(document.querySelectorAll('.controls select option')?.[3]?.textContent?.trim(), 'Entertainment');
 ```
 
-Your fourth `option` should have the `value` attribute set to `entertainment`.
+Your third `option` should have the `value` attribute set to `entertainment`.
 
 ```js
 assert.equal(document.querySelectorAll('.controls select option')?.[3]?.value, 'entertainment');
