@@ -92,3 +92,32 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2014 freeCodeCamp.org
+
+
+## 🌐 Web Resources & Interactive Index
+- [SITEMAP](https://brainquests.vercel.app/sitemap.html)
+- [SITEMAP](https://brainquests.github.io/sitemap.html)
+- [ONLINE PORTAL](https://brainquests-fb2c5.web.app/)
+- [SITEMAP](https://cryptotify.vercel.app/sitemap.html)
+- [SITEMAP](https://brainquests.netlify.app/sitemap.html)
+- [ONLINE PORTAL](https://brainquests.netlify.app/)
+- [SITEMAP](https://QuizVerses.github.io/sitemap.html)
+- [ONLINE PORTAL](https://cryptotify.github.io/)
+- [SITEMAP](https://cryptotify.github.io/sitemap.html)
+- [SITEMAP](https://cryptotify9.onrender.com/sitemap.html)
+- [ONLINE PORTAL](https://cryptotify.web.app/)
+- [SITEMAP](https://brainquests.pages.dev/sitemap.html)
+- [SITEMAP](https://brainquests-fb2c5.web.app/sitemap.html)
+- [ONLINE PORTAL](https://brainquests.onrender.com/)
+- [ONLINE PORTAL](https://cryptotify.pages.dev/)
+- [SITEMAP](https://cryptotify.pages.dev/sitemap.html)
+- [ONLINE PORTAL](https://cryptotify.netlify.app/)
+- [ONLINE PORTAL](https://brainquests.pages.dev/)
+- [ONLINE PORTAL](https://QuizVerses.github.io/)
+- [SITEMAP](https://cryptotify.netlify.app/sitemap.html)
+- [ONLINE PORTAL](https://brainquests.vercel.app/)
+- [SITEMAP](https://cryptotify.web.app/sitemap.html)
+- [ONLINE PORTAL](https://cryptotify.vercel.app/)
+- [ONLINE PORTAL](https://cryptotify9.onrender.com/)
+- [ONLINE PORTAL](https://brainquests.github.io/)
+- [SITEMAP](https://brainquests.onrender.com/sitemap.html)
