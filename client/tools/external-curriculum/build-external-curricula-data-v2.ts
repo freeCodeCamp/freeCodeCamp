@@ -134,6 +134,10 @@ const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
 const dataPath = `${staticFolderPath}/curriculum-data/`;
+const introsByLanguage = new Map<Languages, CurriculumIntros>();
+const FALLBACK_REPORT_LIMIT = 20;
+const SUPER_BLOCK_INTRO_RECORDS: string[] = ['blocks', 'chapters', 'modules'];
+const BLOCK_INTRO_FIELDS = ['title', 'intro'] as const;
 const intros = readCurriculumIntros(getCurriculumLocale());
 
 export function getCurriculumLocale(): Languages {
@@ -220,12 +224,109 @@ export function fillIntrosFromEnglish(
   return filled;
 }
 
+export function collectIntroFallbacks(
+  localised: Record<SuperBlocks, SuperBlockIntro>,
+  english: Record<SuperBlocks, SuperBlockIntro>
+): string[] {
+  const fallbacks: string[] = [];
+
+  for (const key of Object.keys(english) as SuperBlocks[]) {
+    const englishSuperBlock = english[key];
+    const localisedSuperBlock = localised[key];
+
+    if (!localisedSuperBlock) {
+      fallbacks.push(key);
+      continue;
+    }
+
+    const englishFields = englishSuperBlock as unknown as Record<
+      string,
+      unknown
+    >;
+    const localisedFields = localisedSuperBlock as unknown as Record<
+      string,
+      unknown
+    >;
+
+    for (const field of Object.keys(englishFields)) {
+      if (SUPER_BLOCK_INTRO_RECORDS.includes(field)) continue;
+
+      if (localisedFields[field] === undefined) {
+        fallbacks.push(`${key} > ${field}`);
+      }
+    }
+
+    for (const field of ['chapters', 'modules'] as SuperBlockIntroRecord[]) {
+      for (const name of Object.keys(englishSuperBlock[field] ?? {})) {
+        if (localisedSuperBlock[field]?.[name] === undefined) {
+          fallbacks.push(`${key} > ${field} > ${name}`);
+        }
+      }
+    }
+
+    for (const [name, englishBlock] of Object.entries(
+      englishSuperBlock.blocks ?? {}
+    )) {
+      const localisedBlock = localisedSuperBlock.blocks?.[name];
+
+      if (!localisedBlock) {
+        fallbacks.push(`${key} > blocks > ${name}`);
+        continue;
+      }
+
+      for (const field of BLOCK_INTRO_FIELDS) {
+        if (
+          englishBlock[field] !== undefined &&
+          localisedBlock[field] === undefined
+        ) {
+          fallbacks.push(`${key} > blocks > ${name} > ${field}`);
+        }
+      }
+    }
+  }
+
+  return fallbacks;
+}
+
+function reportIntroFallbacks(lang: Languages, fallbacks: string[]): void {
+  if (fallbacks.length === 0) return;
+
+  console.log(
+    `::warning::[${lang}] ${fallbacks.length} curriculum intro entries fell back to English. ` +
+      'This is expected for newly added curriculum. ' +
+      'The next i18n-curriculum sync resolves it.'
+  );
+
+  for (const fallback of fallbacks.slice(0, FALLBACK_REPORT_LIMIT)) {
+    console.log(`  ${fallback.replace(/[\r\n]+/g, ' ')}`);
+  }
+
+  const hidden = fallbacks.length - FALLBACK_REPORT_LIMIT;
+
+  if (hidden > 0) console.log(`  ... ${hidden} more`);
+}
+
 export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+  const cached = introsByLanguage.get(lang);
+
+  if (cached) return cached;
+
   const localised = readIntroFile(lang);
 
-  if (lang === Languages.English) return localised;
+  if (lang === Languages.English) {
+    introsByLanguage.set(lang, localised);
+    return localised;
+  }
 
-  return fillIntrosFromEnglish(localised, readIntroFile(Languages.English));
+  const english = readIntroFile(Languages.English);
+
+  reportIntroFallbacks(lang, collectIntroFallbacks(localised, english));
+
+  const intros = fillIntrosFromEnglish(localised, english);
+
+  introsByLanguage.set(lang, intros);
+
+  return intros;
 }
 
 export function orderedSuperBlockInfo(
