@@ -28,6 +28,9 @@
     "develop": {
       "env": ["FCC_*", "GATSBY_HOST"]
     },
+    "test": {
+      "env": ["CLIENT_LOCALE", "CURRICULUM_LOCALE"]
+    },
     "setup": {
       "env": [
         "FCC_*",
