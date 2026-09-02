@@ -64,7 +64,10 @@ import {
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../redux/selectors';
-import { savedChallengesSelector } from '../../../redux/selectors';
+import {
+  isSignedInSelector,
+  savedChallengesSelector
+} from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
@@ -84,6 +87,7 @@ import '../components/test-frame.css';
 
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
+  isSignedIn: isSignedInSelector(state),
   output: consoleOutputSelector(state) as string,
   isChallengeCompleted: isChallengeCompletedSelector(state),
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
@@ -123,6 +127,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: Hooks) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
+  isSignedIn: boolean;
   isDailyCodingChallenge?: boolean;
   output: string;
   pageContext: PageContext | DailyCodingChallengePageContext;
@@ -237,6 +242,7 @@ function ShowClassic({
   setIsAdvancing,
   savedChallenges,
   isChallengeCompleted,
+  isSignedIn,
   output,
   executeChallenge,
   previewMounted
@@ -253,19 +259,34 @@ function ShowClassic({
   });
 
   // Warn campers before they leave a certification project page with changes
-  // they have not saved to their account, since those changes would be lost.
+  // that would actually be lost. Only signed-in campers can save to their
+  // account, and the code-storage epic mirrors the editor contents to
+  // localStorage when they run the tests, so the warning arms only when the
+  // contents differ from both of those recoverable copies.
   const exitConfirmed = useRef(false);
   const [exitPathname, setExitPathname] = useState('');
 
-  const savedChallenge = savedChallenges?.find(
-    challenge => challenge.id === challengeMeta.id
-  );
-  const showLeaveWarning =
-    !!saveSubmissionToDB &&
-    hasUnsavedChanges(
-      challengeFiles,
-      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles)
+  const hasChangesToLose = (): boolean => {
+    const savedChallenge = savedChallenges?.find(
+      challenge => challenge.id === challengeMeta.id
     );
+    const storedFiles: unknown = store.get(challengeMeta.id);
+    const localStorageFiles = Array.isArray(storedFiles)
+      ? (storedFiles as { fileKey?: unknown; contents?: unknown }[]).filter(
+          (file): file is { fileKey: string; contents: string } =>
+            typeof file?.fileKey === 'string' &&
+            typeof file?.contents === 'string'
+        )
+      : [];
+
+    return hasUnsavedChanges(challengeFiles, [
+      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles),
+      localStorageFiles
+    ]);
+  };
+
+  const showLeaveWarning =
+    !!saveSubmissionToDB && isSignedIn && hasChangesToLose();
 
   const handleExitProject = () => {
     exitConfirmed.current = true;
