@@ -278,6 +278,5 @@ function addEntry() {
   --fcc-editable-region--
   <label>Expense ${entryNumber} Name</label>`;
   --fcc-editable-region--
-  `;
 }
 ```
