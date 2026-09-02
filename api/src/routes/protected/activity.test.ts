@@ -190,7 +190,7 @@ describe('Activity Routes', () => {
 
       const result = await fastifyTestInstance.clickhouse.query({
         query: `
-          SELECT toString(event_id) AS event_id
+          SELECT toString(event_id) AS event_id_string
           FROM activity_events
           WHERE event_id IN ({firstEventId: UUID}, {secondEventId: UUID})
           ORDER BY event_id
@@ -201,9 +201,11 @@ describe('Activity Routes', () => {
           secondEventId: eventIds[1]
         }
       });
-      const rows = await result.json<{ event_id: string }>();
+      const rows = await result.json<{ event_id_string: string }>();
 
-      expect(rows.map(row => row.event_id).sort()).toEqual(eventIds.sort());
+      expect(rows.map(row => row.event_id_string).sort()).toEqual(
+        eventIds.sort()
+      );
     });
 
     test('returns 503 when ClickHouse cannot persist the event', async () => {

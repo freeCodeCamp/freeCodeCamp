@@ -4,9 +4,13 @@ export const activityStreak = Type.Object({
   current: Type.Number(),
   longest: Type.Number(),
   activeSession: Type.Boolean(),
-  lastQualifiedAt: Type.Optional(Type.String({ format: 'date-time' })),
-  canIncrementAt: Type.Optional(Type.String({ format: 'date-time' })),
-  expiresAt: Type.Optional(Type.String({ format: 'date-time' }))
+  lastQualifiedAt: Type.Optional(
+    Type.String({ format: 'date-time', maxLength: 24 })
+  ),
+  canIncrementAt: Type.Optional(
+    Type.String({ format: 'date-time', maxLength: 24 })
+  ),
+  expiresAt: Type.Optional(Type.String({ format: 'date-time', maxLength: 24 }))
 });
 
 export const genericError = Type.Object({
