@@ -9,6 +9,7 @@ import {
   getContext,
   put,
   select,
+  spawn,
   take,
   takeEvery,
   takeLatest
@@ -145,16 +146,7 @@ export function* executeChallengeSaga({ payload }) {
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
 
-    const isSignedIn = yield select(isSignedInSelector);
-    if (isSignedIn) {
-      yield call(
-        recordClientActivity,
-        getIsDailyCodingChallenge(challengeMeta.challengeType)
-          ? 'daily_challenge_attempted'
-          : 'test_run',
-        { subjectId: challengeMeta.id }
-      );
-    }
+    yield* recordTestRunActivitySaga(challengeMeta);
 
     const challengeComplete = testResults.every(test => test.pass && !test.err);
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
@@ -186,6 +178,19 @@ export function* executeChallengeSaga({ payload }) {
     yield put(executeChallengeComplete());
     consoleProxy.close();
   }
+}
+
+export function* recordTestRunActivitySaga(challengeMeta) {
+  const isSignedIn = yield select(isSignedInSelector);
+  if (!isSignedIn) return;
+
+  yield spawn(
+    recordClientActivity,
+    getIsDailyCodingChallenge(challengeMeta.challengeType)
+      ? 'daily_challenge_attempted'
+      : 'test_run',
+    { subjectId: challengeMeta.id }
+  );
 }
 
 function* takeEveryConsole(channel) {
