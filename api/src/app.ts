@@ -28,7 +28,6 @@ import errorHandling from './plugins/error-handling.js';
 import runtimeMetrics from './plugins/runtime-metrics.js';
 import csrf from './plugins/csrf.js';
 import notFound from './plugins/not-found.js';
-import shadowCapture from './plugins/shadow-capture.js';
 import growthBook from './plugins/growth-book.js';
 import serviceBearerAuth from './plugins/service-bearer-auth.js';
 
@@ -40,7 +39,6 @@ import {
   API_LOCATION,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
-  FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
   FCC_ENABLE_CLASSROOM,
   FREECODECAMP_NODE_ENV,
@@ -158,10 +156,6 @@ export const build = async (
       }
     });
     fastify.log.info(`Swagger UI available at ${API_LOCATION}/documentation`);
-  }
-
-  if (FCC_ENABLE_SHADOW_CAPTURE ?? fastify.gb.isOn('shadow-capture')) {
-    void fastify.register(shadowCapture);
   }
 
   void fastify.register(auth);
