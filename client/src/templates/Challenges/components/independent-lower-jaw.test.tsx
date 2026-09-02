@@ -156,6 +156,79 @@ describe('<IndependentLowerJaw />', () => {
     expect(openHelpModal).toHaveBeenCalledTimes(1);
   });
 
+  it('checks the challenge when the check button is clicked', async () => {
+    const executeChallenge = vi.fn();
+    const failingTests: Test[] = [
+      { pass: false, err: 'fail', text: 'test', testString: 'test' }
+    ];
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        executeChallenge={executeChallenge}
+        tests={failingTests}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(
+      screen.getByRole('button', { name: 'buttons.check-code' })
+    );
+
+    expect(executeChallenge).toHaveBeenCalled();
+  });
+
+  it('opens the reset modal when the reset button is clicked', async () => {
+    const openResetModal = vi.fn();
+
+    render(
+      <IndependentLowerJaw {...baseProps} openResetModal={openResetModal} />,
+      createStore()
+    );
+
+    await userEvent.click(
+      screen.getByRole('button', { name: 'buttons.reset' })
+    );
+
+    expect(openResetModal).toHaveBeenCalled();
+  });
+
+  it('saves the challenge when the save button is clicked', async () => {
+    const saveChallenge = vi.fn();
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        challengeMeta={{ ...baseChallengeMeta, saveSubmissionToDB: true }}
+        saveChallenge={saveChallenge}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(screen.getByRole('button', { name: 'buttons.save' }));
+
+    expect(saveChallenge).toHaveBeenCalled();
+  });
+
+  it('opens the reset modal when the revert button is clicked', async () => {
+    const openResetModal = vi.fn();
+
+    render(
+      <IndependentLowerJaw
+        {...baseProps}
+        challengeMeta={{ ...baseChallengeMeta, saveSubmissionToDB: true }}
+        openResetModal={openResetModal}
+      />,
+      createStore()
+    );
+
+    await userEvent.click(
+      screen.getByRole('button', { name: 'buttons.revert' })
+    );
+
+    expect(openResetModal).toHaveBeenCalled();
+  });
+
   it('shows socrates button when hasSocratesAccess is true and flag is on', () => {
     render(
       <IndependentLowerJaw {...baseProps} hasSocratesAccess={true} />,

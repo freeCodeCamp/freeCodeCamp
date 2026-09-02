@@ -19,6 +19,7 @@ on:
           - german
           - swahili
           - korean
+          - arabic
         default: all
       show_upcoming_changes:
         description: 'Show upcoming changes (enables upcoming certifications and challenges)'
@@ -104,7 +105,8 @@ jobs:
               'japanese': 'jpn',
               'german': 'ger',
               'swahili': 'swa',
-              'korean': 'kor'
+              'korean': 'kor',
+              'arabic': 'ara'
             };
 
             const allLanguages = Object.keys(languageMap);
