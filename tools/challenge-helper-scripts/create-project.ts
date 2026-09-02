@@ -32,9 +32,15 @@ import {
 import { withTrace } from './helpers/utils.js';
 import {
   buildProjectMeta,
-  getDefaultBlockLayout,
-  isLabChallengeType
+  getDefaultBlockLayout
 } from './helpers/project-type.js';
+import {
+  getProjectChallengeType,
+  getProjectSeedFiles,
+  isProjectContentType,
+  projectContentTypeChoices,
+  type ProjectContentType
+} from './helpers/project-content-type.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -54,7 +60,7 @@ interface CreateProjectArgs {
   helpCategory: string;
   blockLabel?: BlockLabel;
   blockLayout?: BlockLayouts;
-  labChallengeType?: number;
+  projectContentType?: ProjectContentType;
   questionCount?: number;
   order?: number;
   chapter?: string;
@@ -70,7 +76,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
   const module = projectArgs.module;
   const position = projectArgs.position;
   const questionCount = projectArgs.questionCount;
-  const labChallengeType = projectArgs.labChallengeType;
+  const projectContentType = projectArgs.projectContentType;
   const isChapterBased = chapterBasedSuperBlocks.includes(
     projectArgs.superBlock
   );
@@ -98,9 +104,9 @@ async function createProject(projectArgs: CreateProjectArgs) {
           });
       }
       case BlockLabel.lab: {
-        if (!isLabChallengeType(labChallengeType)) {
+        if (!isProjectContentType(projectContentType)) {
           throw new Error(
-            'Property `labChallengeType` is invalid when creating new Lab Challenge'
+            'Property `projectContentType` is invalid when creating new Lab Challenge'
           );
         }
         return (challengeId: ObjectId) =>
@@ -108,7 +114,29 @@ async function createProject(projectArgs: CreateProjectArgs) {
             challengeId,
             block: projectArgs.block,
             title,
-            challengeType: labChallengeType
+            challengeType: getProjectChallengeType(
+              BlockLabel.lab,
+              projectContentType
+            ),
+            contentType: projectContentType
+          });
+      }
+      case BlockLabel.workshop: {
+        if (!isProjectContentType(projectContentType)) {
+          throw new Error(
+            'Property `projectContentType` is invalid when creating new Workshop Challenge'
+          );
+        }
+        return (challengeId: ObjectId) =>
+          createFirstChallenge({
+            block: projectArgs.block,
+            challengeId,
+            title,
+            challengeType: getProjectChallengeType(
+              BlockLabel.workshop,
+              projectContentType
+            ),
+            contentType: projectContentType
           });
       }
       case BlockLabel.review:
@@ -120,7 +148,13 @@ async function createProject(projectArgs: CreateProjectArgs) {
           });
       default:
         return (challengeId: ObjectId) =>
-          createFirstChallenge({ block: projectArgs.block, challengeId });
+          createFirstChallenge({
+            block: projectArgs.block,
+            challengeId,
+            title,
+            challengeType: challengeTypes.html,
+            contentType: 'html'
+          });
     }
   })();
 
@@ -216,28 +250,32 @@ async function createMetaJson({
 
 async function createFirstChallenge({
   block,
-  challengeId
+  challengeId,
+  title,
+  challengeType,
+  contentType
 }: {
   block: string;
   challengeId: ObjectId;
+  title: string;
+  challengeType: number;
+  contentType: ProjectContentType;
 }) {
-  // TODO: would be nice if the extension made sense for the challenge, but, at
-  // least until react I think they're all going to be html anyway.
-  const challengeSeeds = [
-    {
-      contents: '',
-      ext: 'html',
-      editableRegionBoundaries: [0, 2]
-    }
-  ];
+  const challengeSeeds = getProjectSeedFiles(contentType, title).map(
+    ({ contents, ext, editableRegionBoundaries }) => ({
+      contents,
+      ext,
+      editableRegionBoundaries: editableRegionBoundaries ?? []
+    })
+  );
   // including trailing slash for compatibility with createStepFile
   createStepFile({
     challengeId,
     projectPath: await createBlockFolder(block),
     stepNum: 1,
-    challengeType: 0,
+    challengeType,
     challengeSeeds,
-    isFirstChallenge: true
+    isFirstChallenge: challengeType === challengeTypes.html
   });
 }
 
@@ -265,19 +303,22 @@ async function createLabChallenge({
   challengeId,
   block,
   title,
-  challengeType
+  challengeType,
+  contentType
 }: {
   challengeId: ObjectId;
   block: string;
   title: string;
   challengeType: number;
+  contentType: ProjectContentType;
 }): Promise<ObjectId> {
   return createLabFile({
     challengeId,
     projectPath: await createBlockFolder(block),
     title,
     dashedName: block,
-    challengeType
+    challengeType,
+    contentType
   });
 }
 
@@ -358,7 +399,7 @@ void getAllBlocks()
     let blockLabel: BlockLabel | undefined;
     let blockLayout: BlockLayouts | undefined;
     let questionCount: number | undefined;
-    let labChallengeType: number | undefined;
+    let projectContentType: ProjectContentType | undefined;
     let chapter: string | undefined;
     let module: string | undefined;
     let position: number | undefined;
@@ -394,15 +435,11 @@ void getAllBlocks()
         });
       }
 
-      if (blockLabel === BlockLabel.lab) {
-        labChallengeType = await select<number>({
-          message: 'Choose a lab challenge type',
-          default: challengeTypes.lab,
-          choices: [
-            { name: 'HTML/CSS', value: challengeTypes.lab },
-            { name: 'JavaScript', value: challengeTypes.jsLab },
-            { name: 'Python', value: challengeTypes.pyLab }
-          ]
+      if (blockLabel === BlockLabel.lab || blockLabel === BlockLabel.workshop) {
+        projectContentType = await select<ProjectContentType>({
+          message: 'Choose a project content type',
+          default: 'html',
+          choices: projectContentTypeChoices
         });
       }
 
@@ -451,7 +488,7 @@ void getAllBlocks()
       blockLabel,
       blockLayout,
       questionCount,
-      labChallengeType,
+      projectContentType,
       chapter,
       module,
       position,

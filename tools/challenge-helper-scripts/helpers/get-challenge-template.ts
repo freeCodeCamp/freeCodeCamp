@@ -1,5 +1,9 @@
 import { ObjectId } from 'bson';
 import type { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import {
+  getProjectSeedFiles,
+  type ProjectContentType
+} from './project-content-type.js';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
@@ -14,6 +18,7 @@ interface ChallengeOptions {
   challengeLang?: ChallengeLang;
   inputType?: string;
   demoType?: 'onClick' | 'onLoad';
+  contentType?: ProjectContentType;
 }
 
 const buildFrontMatter = ({
@@ -201,16 +206,27 @@ Placeholder answer
 };
 
 const getLabChallengeTemplate = (options: ChallengeOptions): string => {
-  const challengeTypeToLanguage: Record<string, string> = {
+  const challengeTypeToContentType: Record<string, ProjectContentType> = {
     '25': 'html',
-    '26': 'js',
-    '27': 'py'
+    '26': 'javascript',
+    '27': 'python'
   };
-  const language = challengeTypeToLanguage[options.challengeType] ?? 'html';
+  const contentType =
+    options.contentType ??
+    challengeTypeToContentType[options.challengeType] ??
+    'html';
+  const seedFiles = getProjectSeedFiles(contentType, options.title);
+  const seedContents = seedFiles
+    .map(({ ext, contents }) => `\`\`\`${ext}\n${contents}\n\`\`\``)
+    .join('\n\n');
   const frontMatterOptions =
     options.challengeType === '25'
       ? { ...options, demoType: 'onClick' as const }
       : options;
+  const hintCode =
+    contentType === 'python'
+      ? '({ test: () => assert(runPython(`<python expression that returns truthy>`)) });'
+      : '';
 
   return `${buildFrontMatter(frontMatterOptions)}
 
@@ -228,21 +244,18 @@ Hint text
 
 \`\`\`js
 
+${hintCode}
 \`\`\`
 
 # --seed--
 
 ## --seed-contents--
 
-\`\`\`${language}
-
-\`\`\`
+${seedContents}
 
 # --solutions--
 
-\`\`\`${language}
-
-\`\`\`
+${seedContents}
 `;
 };
 

@@ -130,7 +130,8 @@ describe('Challenge utils helper scripts', () => {
         projectPath: `${projectPath}/`,
         title: 'JavaScript Lab',
         dashedName: 'javascript-lab',
-        challengeType: challengeTypes.jsLab
+        challengeType: challengeTypes.jsLab,
+        contentType: 'javascript'
       });
 
       expect(fs.writeFileSync).toHaveBeenCalledWith(

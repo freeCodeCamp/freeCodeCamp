@@ -16,6 +16,7 @@ import {
   getTaskNumberFromTitle
 } from './helpers/task-helpers.js';
 import { getTemplate } from './helpers/get-challenge-template.js';
+import type { ProjectContentType } from './helpers/project-content-type.js';
 
 interface Options {
   challengeId: ObjectId;
@@ -45,6 +46,7 @@ interface SingleChallengeOptions {
 
 interface LabOptions extends SingleChallengeOptions {
   challengeType: number;
+  contentType: ProjectContentType;
 }
 
 export async function getAllBlocks() {
@@ -118,14 +120,16 @@ const createLabFile = ({
   projectPath = getProjectPath(),
   title,
   dashedName,
-  challengeType
+  challengeType,
+  contentType
 }: LabOptions): ObjectId => {
   const template = getTemplate(challengeType.toString());
   const labText = template({
     challengeId,
     challengeType: challengeType.toString(),
     title,
-    dashedName
+    dashedName,
+    contentType
   });
 
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, labText);
