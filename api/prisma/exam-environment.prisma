@@ -18,6 +18,9 @@ model ExamEnvironmentExam {
   generatedExams           ExamEnvironmentGeneratedExam[]
   examAttempts             ExamEnvironmentExamAttempt[]
   ExamEnvironmentChallenge ExamEnvironmentChallenge[]
+
+  @@index([version], map: "version_1")
+  @@index([deprecated], map: "deprecated_1")
 }
 
 /// A grouping of one or more questions of a given type
@@ -143,6 +146,13 @@ model ExamEnvironmentExamAttempt {
   // Error parsing attribute "@relation": The relation fields `examAttempt` on Model `ExamEnvironmentExamModeration` and `examModeration` on Model `ExamEnvironmentExamAttempt` both provide the `references` argument in the @relation attribute. You have to provide it only on one of the two fields.
   // examModeration ExamEnvironmentExamModeration? @relation(fields: [examModerationId], references: [id])
   examEnvironmentExamModeration ExamEnvironmentExamModeration?
+
+  @@index([userId], map: "userId_1")
+  @@index([examId], map: "examId_1")
+  @@index([generatedExamId], map: "generatedExamId_1")
+  @@index([version], map: "version_1")
+  @@index([examModerationId], map: "examModerationId_1")
+  @@index([startTime], map: "startTime_1")
 }
 
 type ExamEnvironmentQuestionSetAttempt {
@@ -178,6 +188,10 @@ model ExamEnvironmentGeneratedExam {
   // Relations
   exam           ExamEnvironmentExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
   EnvExamAttempt ExamEnvironmentExamAttempt[]
+
+  @@index([deprecated], map: "deprecated_1")
+  @@index([examId], map: "examId_1")
+  @@index([version], map: "version_1")
 }
 
 type ExamEnvironmentGeneratedQuestionSet {
@@ -203,6 +217,10 @@ model ExamEnvironmentChallenge {
   version Int @default(1)
 
   exam ExamEnvironmentExam @relation(fields: [examId], references: [id], onDelete: Cascade)
+
+  @@index([examId], map: "examId_1")
+  @@index([challengeId], map: "challengeId_1")
+  @@index([version], map: "version_1")
 }
 
 model ExamEnvironmentAuthorizationToken {
@@ -211,10 +229,15 @@ model ExamEnvironmentAuthorizationToken {
   /// Used to set an `expireAt` index to delete documents
   expireAt DateTime @db.Date
   userId   String   @unique @db.ObjectId
+  /// NOTE: uniqueness is not enforced on the above field in the database.
+  /// Production has a non-unique `userId_1` index. TODO: create a new unique
+  /// index, switch to that, and drop the non-unique `userId_1` one.
   version  Int      @default(1)
 
   // Relations
   user user @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([expireAt], map: "expireAt_1")
 }
 
 model ExamEnvironmentExamModeration {
@@ -223,6 +246,9 @@ model ExamEnvironmentExamModeration {
   status         ExamEnvironmentExamModerationStatus
   /// Foreign key to exam attempt
   examAttemptId  String                              @unique @db.ObjectId
+  /// NOTE: uniqueness is not enforced on the above field in the database.
+  /// Production has a non-unique `examAttemptId_1` index. TODO: create a new
+  /// unique index, switch to that, and drop the non-unique `examAttemptId_1` one.
   /// Optional feedback/note about the moderation decision
   feedback       String?
   /// Date the exam attempt was moderated
@@ -243,6 +269,10 @@ model ExamEnvironmentExamModeration {
 
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
+
+  @@index([status], map: "status_1")
+  @@index([version], map: "version_1")
+  @@index([challengesAwarded], map: "challengesAwarded_1")
 }
 
 enum ExamEnvironmentExamModerationStatus {

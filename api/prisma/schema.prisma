@@ -193,6 +193,18 @@ model user {
   // Relations
   examAttempts                      ExamEnvironmentExamAttempt[]
   examEnvironmentAuthorizationToken ExamEnvironmentAuthorizationToken?
+
+  @@index([sendQuincyEmail, email], map: "mailing-list-pull")
+  @@index([email], map: "email_1")
+  @@index([isDonating], map: "isDonating_1")
+  @@index([username], map: "username_1")
+  @@index([unsubscribeId], map: "unsubscribeId_1")
+  @@index([needsModeration], map: "needsModeration_1")
+  @@index([completedExams], map: "completedExams_1")
+  @@index([isFoundationalCSharpCertV8], map: "isFoundationalCSharpCertV8_1")
+  @@index([completedExams.id], map: "completedExams.id_1")
+  @@index([profileUI.isLocked], map: "profileUI.isLocked_1")
+  @@index([completedDailyCodingChallenges.id], map: "completedDailyCodingChallenges.id_1")
 }
 
 // -----------------------------------
@@ -204,6 +216,7 @@ model AccessToken {
   userId  String   @db.ObjectId
 
   @@index([userId], map: "userId_1")
+  @@index([created], map: "created_1")
 }
 
 model AuthToken {
@@ -211,6 +224,8 @@ model AuthToken {
   created DateTime @db.Date
   ttl     Int
   userId  String   @db.ObjectId
+
+  @@index([created], map: "created_1")
 }
 
 model Donation {
@@ -227,6 +242,7 @@ model Donation {
 
   @@index([email], map: "email_1")
   @@index([userId], map: "userId_1")
+  @@index([subscriptionId], map: "subscriptionId_1")
 }
 
 model SocratesUsage {
@@ -237,7 +253,8 @@ model SocratesUsage {
   /// Number of hints used on this day.
   count  Int      @default(0)
 
-  @@unique([userId, date])
+  @@index([date], map: "date_1")
+  @@unique([date, userId], map: "date_1_userId_1")
 }
 
 model UserToken {
