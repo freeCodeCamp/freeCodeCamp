@@ -276,7 +276,8 @@ function addEntry() {
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
   const HTMLString = `
   --fcc-editable-region--
-  <label>Expense ${entryNumber} Name</label>`;
+  <label>Expense ${entryNumber} Name</label>
   --fcc-editable-region--
+  `;
 }
 ```
