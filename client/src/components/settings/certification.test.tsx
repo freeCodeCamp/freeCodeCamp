@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { describe, it, expect, vi } from 'vitest';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 vi.mock('../../utils/get-words');
 
@@ -9,6 +11,7 @@ import { createStore } from '../../redux/create-store';
 import { Ext } from '../../redux/prop-types';
 import { verifyCert } from '../../redux/settings/actions';
 import { createFlashMessage } from '../Flash/redux';
+import { FlashMessages } from '../Flash/redux/flash-messages';
 
 import CertificationSettings from './certification';
 
@@ -74,6 +77,50 @@ describe('<certification />', () => {
         name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
       })
     ).toHaveAttribute('href', 'https://github.com/freeCodeCamp/freeCodeCamp');
+  });
+
+  it('blocks a certification claim until the honesty policy is accepted', async () => {
+    const user = userEvent.setup();
+    const createFlashMessage = vi.fn();
+    const verifyCert = vi.fn();
+    renderWithRedux(
+      <CertificationSettings
+        {...fullStackClaimableProps}
+        createFlashMessage={createFlashMessage}
+        verifyCert={verifyCert}
+      />
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: /buttons.claim-cert.*full-stack/ })
+    );
+
+    expect(createFlashMessage).toHaveBeenCalledWith({
+      type: 'info',
+      message: FlashMessages.HonestFirst
+    });
+    expect(verifyCert).not.toHaveBeenCalled();
+  });
+
+  it('submits a certification claim after the honesty policy is accepted', async () => {
+    const user = userEvent.setup();
+    const createFlashMessage = vi.fn();
+    const verifyCert = vi.fn();
+    renderWithRedux(
+      <CertificationSettings
+        {...fullStackClaimableProps}
+        isHonest={true}
+        createFlashMessage={createFlashMessage}
+        verifyCert={verifyCert}
+      />
+    );
+
+    await user.click(
+      screen.getByRole('button', { name: /buttons.claim-cert.*full-stack/ })
+    );
+
+    expect(verifyCert).toHaveBeenCalledWith(Certification.LegacyFullStack);
+    expect(createFlashMessage).not.toHaveBeenCalled();
   });
 });
 
@@ -336,4 +383,14 @@ const propsForOnlySolution = {
       ]
     }
   ]
+};
+
+const fullStackClaimableProps = {
+  ...defaultTestProps,
+  is2018DataVisCert: true,
+  isApisMicroservicesCert: true,
+  isFrontEndLibsCert: true,
+  isInfosecQaCert: true,
+  isJsAlgoDataStructCert: true,
+  isRespWebDesignCert: true
 };
