@@ -62,7 +62,7 @@ assert.notMatch(code, /<\/input>/);
 The `input` element should have the closing `>`.
 
 ```js
-assert.match(code, /HTMLString\s*=\s*`\n\s*<label\s+for\s*=\s*"\$\{category\}-\$\{entryNumber\}-name"\s*>Expense\s\$\{entryNumber\}\sName<\/label>\n\s*<input\s+[^>]*\/>/);
+assert.match(code, /HTMLString\s*=\s*`\n\s*<label\s+for\s*=\s*"\$\{category\}-\$\{entryNumber\}-name"\s*>Expense\s\$\{entryNumber\}\sName<\/label>\n\s*<input\s+[^>]*>/);
 ```
 
 # --seed--
@@ -118,8 +118,7 @@ assert.match(code, /HTMLString\s*=\s*`\n\s*<label\s+for\s*=\s*"\$\{category\}-\$
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>

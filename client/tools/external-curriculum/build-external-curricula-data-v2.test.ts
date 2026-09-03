@@ -10,9 +10,11 @@ import {
   SuperBlockStage,
   superBlockStages
 } from '@freecodecamp/shared/config/curriculum';
+import { catalog } from '@freecodecamp/shared/config/catalog';
 import {
   superblockSchemaValidator,
-  availableSuperBlocksValidator
+  availableSuperBlocksValidator,
+  catalogValidator
 } from './external-data-schema-v2';
 import {
   type Curriculum,
@@ -20,11 +22,15 @@ import {
   type GeneratedBlockBasedCurriculumProps,
   type GeneratedChapterBasedCurriculumProps,
   type ChapterBasedCurriculumIntros,
+  type CatalogCourse,
   orderedSuperBlockInfo,
   OrderedSuperBlocks,
+  catalogCourses,
   readCurriculumIntros,
   getCurriculumLocale,
-  CurriculumIntros
+  CurriculumIntros,
+  fillIntrosFromEnglish,
+  type SuperBlockIntro
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
@@ -88,6 +94,79 @@ describe('external curriculum data build', () => {
 
     expect(result.error?.details).toBeUndefined();
     expect(result.error).toBeFalsy();
+  });
+
+  test('the catalog file should have the correct structure and data', async () => {
+    const validateCatalog = catalogValidator();
+    const catalogFile = JSON.parse(
+      await fs.promises.readFile(
+        `${clientStaticPath}/curriculum-data/${VERSION}/catalog.json`,
+        'utf-8'
+      )
+    ) as { catalog: CatalogCourse[] };
+
+    const result = validateCatalog(catalogFile);
+
+    expect(result.error?.details).toBeUndefined();
+    expect(result.error).toBeFalsy();
+
+    expect(catalogFile.catalog).toHaveLength(catalog.length);
+
+    catalogFile.catalog.forEach((course, index) => {
+      const { superBlock, level, hours, topic } = catalog[index];
+
+      expect(course).toEqual({
+        dashedName: superBlock,
+        title: intros[superBlock].title,
+        summary: intros[superBlock].summary,
+        level,
+        hours,
+        topic
+      });
+    });
+  });
+
+  test('every catalog course should have its blocks and challenges generated', () => {
+    catalog.forEach(({ superBlock }) => {
+      const superBlockPath = `${clientStaticPath}/curriculum-data/${VERSION}/${superBlock}.json`;
+
+      expect(fs.existsSync(superBlockPath)).toBe(true);
+
+      const fileContent = JSON.parse(
+        fs.readFileSync(superBlockPath, 'utf-8')
+      ) as Curriculum<GeneratedCurriculumProps>;
+      const superBlockData = fileContent[superBlock];
+
+      const blocks = chapterBasedSuperBlocks.includes(superBlock)
+        ? (
+            superBlockData as GeneratedChapterBasedCurriculumProps
+          ).chapters.flatMap(chapter =>
+            chapter.modules.flatMap(module => module.blocks)
+          )
+        : (superBlockData as GeneratedBlockBasedCurriculumProps).blocks;
+
+      blocks.forEach(block => {
+        const challengeOrder = block.meta.challengeOrder as { id: string }[];
+
+        challengeOrder.forEach(({ id }) => {
+          expect(
+            fs.existsSync(
+              `${clientStaticPath}/curriculum-data/${VERSION}/challenges/${superBlock}/${block.meta.dashedName as string}/${id}.json`
+            )
+          ).toBe(true);
+        });
+      });
+    });
+  });
+
+  test('catalogCourses should use intro argument', () => {
+    const courses = catalogCourses(dummyIntro);
+
+    expect(courses[0]).toMatchObject({
+      dashedName: catalog[0].superBlock,
+      title: dummyIntro[catalog[0].superBlock].title,
+      summary: []
+    });
   });
 
   test('the super block files generated should have the correct schema', async () => {
@@ -319,5 +398,106 @@ describe('external curriculum data build', () => {
       dashedName: SuperBlocks.RespWebDesignV9,
       title: dummyIntro[SuperBlocks.RespWebDesignV9].title
     });
+  });
+});
+
+describe('fillIntrosFromEnglish', () => {
+  const english = {
+    [SuperBlocks.PythonV9]: {
+      title: 'Python',
+      intro: ['English superblock intro'],
+      chapters: { 'python-basics': 'Python Basics' },
+      modules: { 'python-recursion': 'Recursion' },
+      blocks: {
+        'quiz-recursion-python': {
+          title: 'Recursion Quiz',
+          intro: ['English quiz intro']
+        },
+        'review-recursion-python': {
+          title: 'Review Recursion',
+          intro: ['English review intro']
+        }
+      }
+    },
+    [SuperBlocks.RosettaCode]: {
+      title: 'Rosetta Code',
+      intro: ['English superblock intro'],
+      blocks: {
+        'rosetta-code': { title: 'Rosetta Code', intro: ['English'] }
+      }
+    },
+    [SuperBlocks.ProjectEuler]: {
+      title: 'Project Euler',
+      intro: ['English superblock intro'],
+      blocks: {
+        'project-euler': { title: 'Project Euler', intro: ['English'] }
+      }
+    }
+  } as unknown as Record<SuperBlocks, SuperBlockIntro>;
+
+  const localised = {
+    [SuperBlocks.PythonV9]: {
+      title: 'Python (translated)',
+      intro: ['Translated superblock intro'],
+      chapters: { 'python-basics': 'Python Basics (translated)' },
+      modules: {},
+      blocks: {
+        'quiz-recursion-python': { title: 'Recursion Quiz (translated)' }
+      }
+    },
+    [SuperBlocks.RosettaCode]: {
+      title: 'Rosetta Code (translated)',
+      intro: ['Translated superblock intro'],
+      blocks: {}
+    }
+  } as unknown as Record<SuperBlocks, SuperBlockIntro>;
+
+  test('fills blocks and modules that only exist in english', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(
+      filled[SuperBlocks.PythonV9].blocks['review-recursion-python']
+    ).toEqual(english[SuperBlocks.PythonV9].blocks['review-recursion-python']);
+    expect(filled[SuperBlocks.PythonV9].modules).toEqual({
+      'python-recursion': 'Recursion'
+    });
+  });
+
+  test('keeps the english intro when only the block title is translated', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(
+      filled[SuperBlocks.PythonV9].blocks['quiz-recursion-python']
+    ).toEqual({
+      title: 'Recursion Quiz (translated)',
+      intro: ['English quiz intro']
+    });
+  });
+
+  test('keeps the translation when one exists', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(filled[SuperBlocks.PythonV9].title).toBe('Python (translated)');
+    expect(filled[SuperBlocks.PythonV9].chapters).toEqual({
+      'python-basics': 'Python Basics (translated)'
+    });
+  });
+
+  test('falls back to english for an untranslated superblock', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(filled[SuperBlocks.ProjectEuler]).toEqual(
+      english[SuperBlocks.ProjectEuler]
+    );
+  });
+
+  test('does not add chapter records to block based superblocks', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(filled[SuperBlocks.RosettaCode].title).toBe(
+      'Rosetta Code (translated)'
+    );
+    expect(filled[SuperBlocks.RosettaCode]).not.toHaveProperty('chapters');
+    expect(filled[SuperBlocks.RosettaCode]).not.toHaveProperty('modules');
   });
 });
