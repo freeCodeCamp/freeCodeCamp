@@ -9,7 +9,7 @@ import { closeSignoutModal } from '../../redux/actions';
 import { isSignoutModalOpenSelector } from '../../redux/selectors';
 import envData from '../../../config/env.json';
 import callGA from '../../analytics/call-ga';
-import { pathAfterSignout, searchAfterSignout } from './path-after-signout';
+import { pathAfterSignout } from './path-after-signout';
 
 const { apiLocation } = envData;
 
@@ -45,7 +45,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
     closeSignoutModal();
     callGA({ event: 'sign_out', user_id: undefined });
     const redirect = () => {
-      window.location.href = pathAfterSignout(pathname);
+      window.location.href = pathAfterSignout(window.location.pathname);
     };
     void fetch(`${apiLocation}/signout`, {
       method: 'GET',
