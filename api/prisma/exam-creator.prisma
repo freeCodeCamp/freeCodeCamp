@@ -15,6 +15,9 @@ model ExamCreatorExam {
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
   version       Int                          @default(3)
+
+  @@index([version], map: "version_1")
+  @@index([deprecated], map: "deprecated_1")
 }
 
 /// Exam Creator application collection to store authZ users.
@@ -33,6 +36,9 @@ model ExamCreatorUser {
   version   Int                     @default(2)
 
   ExamCreatorSession ExamCreatorSession[]
+
+  @@index([email], map: "email_1")
+  @@index([version], map: "version_1")
 }
 
 type ExamCreatorUserSettings {
@@ -55,4 +61,7 @@ model ExamCreatorSession {
   version Int @default(1)
 
   ExamCreatorUser ExamCreatorUser @relation(fields: [user_id], references: [id])
+
+  @@index([expires_at], map: "expires_at_1")
+  @@index([session_id], map: "session_id_1")
 }
