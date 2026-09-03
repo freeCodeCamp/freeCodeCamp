@@ -77,7 +77,8 @@
           "blocks": [
             "lecture-understanding-rest-api-and-web-services",
             "workshop-build-a-weather-service-api",
-            "review-rest-api-and-web-services"
+            "review-rest-api-and-web-services",
+            "quiz-rest-api-and-web-services"
           ]
         },
         {

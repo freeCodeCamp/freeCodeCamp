@@ -93,10 +93,8 @@ jobs:
           pnpm lint
 
   # DONT REMOVE THIS JOB.
-  # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
     name: Build
-    needs: lint
     runs-on: ubuntu-24.04
     strategy:
       matrix:
@@ -134,6 +132,49 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+
+      - name: Upload Client Artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: client-artifact
+          path: client/public
+          retention-days: 1
+
+  build-e2e-api:
+    name: Build E2E API (Container)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          submodules: 'recursive'
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-api \
+            -f docker/api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-api > api-artifact.tar
+
+      - name: Upload API Artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: api-artifact
+          path: api-artifact.tar
+          retention-days: 1
+
+  e2e:
+    name: E2E
+    if: github.event_name == 'pull_request'
+    needs: [build, build-e2e-api]
+    uses: ./.github/workflows/e2e-playwright.yml
+    secrets: inherit
 
   test:
     name: Test
