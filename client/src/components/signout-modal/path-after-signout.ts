@@ -10,3 +10,11 @@ export const pathAfterSignout = (currentPath: string): string => {
 
   return allPaths.some(path => currentPath === path) ? '/learn' : currentPath;
 };
+
+export const searchAfterSignout = (currentSearch: string): string => {
+  const searchParams = new URLSearchParams(currentSearch);
+  searchParams.delete('messages');
+
+  const search = searchParams.toString();
+  return search ? `?${search}` : '';
+};

@@ -10,7 +10,7 @@ import translations from '../../../i18n/locales/english/translations.json';
 import { initialState as appInitialState } from '../../redux';
 import { createStore } from '../../redux/create-store';
 import SignoutModal from '.';
-import { pathAfterSignout } from './path-after-signout';
+import { pathAfterSignout, searchAfterSignout } from './path-after-signout';
 
 vi.unmock('react-i18next');
 
@@ -50,6 +50,16 @@ describe('pathAfterSignout', () => {
     const newPaths = similarPaths.map(pathAfterSignout);
 
     expect(newPaths).toEqual(similarPaths);
+  });
+});
+
+describe('searchAfterSignout', () => {
+  it('removes flash messages while preserving other query parameters', () => {
+    expect(
+      searchAfterSignout(
+        '?date=2026-09-03&messages=success%3Dflash.signin-success&view=compact'
+      )
+    ).toBe('?date=2026-09-03&view=compact');
   });
 });
 
