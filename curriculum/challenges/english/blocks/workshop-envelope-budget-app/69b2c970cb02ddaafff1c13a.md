@@ -112,7 +112,6 @@ assert.match(clearForm, /inputContainers\s*=\s*Array\.from\(\s*document\.querySe
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

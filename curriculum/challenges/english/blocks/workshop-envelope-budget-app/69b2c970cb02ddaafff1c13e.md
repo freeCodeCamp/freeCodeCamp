@@ -102,7 +102,6 @@ assert.match(clearForm.toString(), /output\.classList\.add\(\s*('|")hide\1\s*\)/
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>

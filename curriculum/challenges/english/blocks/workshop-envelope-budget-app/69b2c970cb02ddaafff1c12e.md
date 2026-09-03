@@ -108,7 +108,6 @@ assert.match(code, /statusText\s*=\s*`Over\s+Budget\s+by\s+\$\$\{Math\.abs\(netR
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
