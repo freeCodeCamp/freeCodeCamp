@@ -198,6 +198,41 @@ describe('createMdastToHtml', () => {
     );
   });
 
+  it('should preserve characters the tokenizer does not capture, like digits and dashes', () => {
+    const toHtml = createMdastToHtml('zh-CN');
+    const withDigitsAndDash = [
+      {
+        type: 'paragraph',
+        children: [{ type: 'inlineCode', value: '90 - 九十 (jiǔ shí)' }]
+      }
+    ];
+    expect(toHtml(withDigitsAndDash)).toBe(
+      '<p>90 - <ruby>九十<rp>(</rp><rt>jiǔ shí</rt><rp>)</rp></ruby></p>'
+    );
+
+    const withUnderscores = [
+      {
+        type: 'paragraph',
+        children: [
+          { type: 'inlineCode', value: '____, 十一 (shí yī)，十七 (shí qī)' }
+        ]
+      }
+    ];
+    expect(toHtml(withUnderscores)).toBe(
+      '<p>____, <ruby>十一<rp>(</rp><rt>shí yī</rt><rp>)</rp></ruby>，<ruby>十七<rp>(</rp><rt>shí qī</rt><rp>)</rp></ruby></p>'
+    );
+
+    const withTrailingHanzi = [
+      {
+        type: 'paragraph',
+        children: [{ type: 'inlineCode', value: '你好 (nǐ hǎo)，你' }]
+      }
+    ];
+    expect(toHtml(withTrailingHanzi)).toBe(
+      '<p><ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，你</p>'
+    );
+  });
+
   it('should fallback to span element if pattern does not match', () => {
     const toHtml = createMdastToHtml('zh-CN');
     const nodes = [
