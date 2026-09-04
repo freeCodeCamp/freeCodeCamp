@@ -10539,8 +10539,7 @@
       "Complete the required projects and pass the exam to earn the Algorithms and Data Structure Certification."
     ],
     "chapters": {
-      "python": "Algorithms and Data Structure",
-      "python-certification-exam": "Algorithms and Data Structure Certification Exam"
+      "python": "Algorithms and Data Structure"
     },
     "modules": {
       "python-linear-data-structures": "Linear Data Structures",
@@ -10550,8 +10549,7 @@
       "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
-      "review-python": "Python Review",
-      "python-certification-exam": "Algorithms and Data Structure Certification Exam"
+      "review-python": "Python Review"
     },
     "module-intros": {
       "python-recursion": {
