@@ -100,7 +100,6 @@ assert.match(forOfLoop, /container\s*\.\s*innerHTML\s*=\s*(`|'|")\1\s*/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -257,18 +256,18 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.replace(regex, '');
+  return str.replace(regex, "");
 }
 
 function isInvalidInput(str) {
@@ -280,6 +279,7 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
@@ -289,7 +289,7 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function calculateBudget(e) {
@@ -315,7 +315,7 @@ function calculateBudget(e) {
 
   let statusText = "";
   let statusClass = "";
-  
+
   if (netRemaining < 0) {
     statusText = `Over Budget by $${Math.abs(netRemaining)}`;
     statusClass = "deficit";
@@ -332,7 +332,6 @@ function calculateBudget(e) {
   `;
 
   output.classList.remove("hide");
-
 }
 
 function getTotalFromInputs(list) {
@@ -353,11 +352,10 @@ function getTotalFromInputs(list) {
 }
 
 function clearForm() {
-  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
---fcc-editable-region--
-
---fcc-editable-region--
-
+  const inputContainers = Array.from(document.querySelectorAll(".input-container"));
+  --fcc-editable-region--
+  
+  --fcc-editable-region--
 }
 
 addEntryButton.addEventListener("click", addEntry);
