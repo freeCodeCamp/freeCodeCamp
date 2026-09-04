@@ -51,21 +51,9 @@ function chineseInlineCodeHandler(state, node) {
 
   if (rubyPairs.length > 0) {
     const matches = [...node.value.matchAll(HANZI_PINYIN_REGEX)];
-    const nodes = [];
-    let lastIndex = 0;
-
-    for (const fullMatch of matches) {
-      // Preserve any text (e.g. digits or dashes) the regex does not capture
-      if (fullMatch.index > lastIndex) {
-        nodes.push({
-          type: 'text',
-          value: node.value.slice(lastIndex, fullMatch.index)
-        });
-      }
-      lastIndex = fullMatch.index + fullMatch[0].length;
-
+    const nodes = matches.map(fullMatch => {
       if (fullMatch[1] && fullMatch[2]) {
-        nodes.push({
+        return {
           type: 'element',
           tagName: 'ruby',
           properties: {},
@@ -90,16 +78,12 @@ function chineseInlineCodeHandler(state, node) {
               children: [{ type: 'text', value: ')' }]
             }
           ]
-        });
-      } else {
-        // Other captures (BLANK, punctuation, other text including spaces) should preserve exactly
-        nodes.push({ type: 'text', value: fullMatch[0] });
+        };
       }
-    }
 
-    if (lastIndex < node.value.length) {
-      nodes.push({ type: 'text', value: node.value.slice(lastIndex) });
-    }
+      // Other captures (BLANK, punctuation, other text including spaces) should preserve exactly
+      return { type: 'text', value: fullMatch[0] };
+    });
 
     return nodes.length === 1 ? nodes[0] : nodes;
   }
