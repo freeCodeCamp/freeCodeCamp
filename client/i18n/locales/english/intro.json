@@ -4537,32 +4537,6 @@
       "review-javascript": "JavaScript Review",
       "javascript-certification-exam": "JavaScript Certification Exam"
     },
-    "module-intros": {
-      "data-structures": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about linked lists, stacks, queues and more."
-        ]
-      },
-      "algorithms": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
-        ]
-      },
-      "graphs-and-trees": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about graphs, trees and tries."
-        ]
-      },
-      "dynamic-programming": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn how dynamic programming works."
-        ]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
