@@ -100,7 +100,7 @@ function LinkMsUser({
         block={true}
         variant='primary'
         disabled={isProcessing}
-        onClick={unlinkMsUsername}
+        onClick={() => unlinkMsUsername()}
       >
         {t('buttons.unlink-account')}
       </Button>
