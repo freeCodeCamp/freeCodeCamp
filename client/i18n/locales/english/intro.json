@@ -7528,6 +7528,12 @@
           "Review web services, the REST architecture, HTTP status codes, and microservices."
         ]
       },
+      "quiz-rest-api-and-web-services": {
+        "title": "REST API and Web Services Quiz",
+        "intro": [
+          "Test your knowledge of web services, the REST architecture, HTTP status codes, and monoliths vs. microservices."
+        ]
+      },
       "lab-timestamp-microservice": {
         "title": "Build a Timestamp Microservice",
         "intro": [
