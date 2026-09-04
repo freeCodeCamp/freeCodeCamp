@@ -6455,13 +6455,6 @@
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
     },
-    "module-intros": {
-      "python-recursion": {
-        "intro": [
-          "In this module, you will learn how recursion and the call stack work in Python."
-        ]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
