@@ -10576,9 +10576,7 @@
       },
       "lecture-introduction-to-python-strings": {
         "title": "Introduction to Strings",
-        "intro": [
-          "In these lessons, you will learn about strings in Python."
-        ]
+        "intro": ["In these lessons, you will learn about strings in Python."]
       },
       "workshop-employee-profile-generator": {
         "title": "Build an Employee Profile Generator",
@@ -10685,9 +10683,7 @@
       },
       "lab-number-pattern-generator": {
         "title": "Build a Number Pattern Generator",
-        "intro": [
-          "In this lab you will build a number pattern generator."
-        ]
+        "intro": ["In this lab you will build a number pattern generator."]
       },
       "review-loops-and-sequences": {
         "title": "Loops and Sequences Review",
@@ -10710,9 +10706,7 @@
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": [
-          "Learn about working with modules in these lessons."
-        ]
+        "intro": ["Learn about working with modules in these lessons."]
       },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
@@ -10765,9 +10759,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": [
-          "Learn about classes and objects in these lessons."
-        ]
+        "intro": ["Learn about classes and objects in these lessons."]
       },
       "workshop-musical-instrument-inventory": {
         "title": "Build a Musical Instrument Inventory",
@@ -10838,9 +10830,7 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": [
-          "Learn about understanding abstraction in these lessons."
-        ]
+        "intro": ["Learn about understanding abstraction in these lessons."]
       },
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
@@ -10870,12 +10860,6 @@
         "title": "Build a Polygon Area Calculator",
         "intro": [
           "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
-        ]
-      },
-      "exam-python-programming-certification": {
-        "title": "Python Programming Certification Exam",
-        "intro": [
-          "Pass this exam to earn your Python Programming Certification."
         ]
       }
     }
@@ -11108,15 +11092,7 @@
       },
       "review-python": {
         "title": "Python Review",
-        "intro": [
-          "Review Python concepts to prepare for the upcoming exam."
-        ]
-      },
-      "exam-python-certification": {
-        "title": "Algorithms and Data Structure Certification Exam",
-        "intro": [
-          "Pass this exam to earn your Algorithms and Data Structure Certification."
-        ]
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
       }
     }
   }

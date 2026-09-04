@@ -15,9 +15,7 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-hash-table",
-          "blocks": [
-            "lab-hash-table"
-          ]
+          "blocks": ["lab-hash-table"]
         },
         {
           "dashedName": "python-recursion",
@@ -46,9 +44,7 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-tower-of-hanoi",
-          "blocks": [
-            "lab-tower-of-hanoi"
-          ]
+          "blocks": ["lab-tower-of-hanoi"]
         },
         {
           "dashedName": "python-graphs-and-trees",
@@ -75,23 +71,7 @@
         {
           "moduleType": "review",
           "dashedName": "review-python",
-          "blocks": [
-            "review-python"
-          ]
-        }
-      ]
-    },
-    {
-      "chapterType": "exam",
-      "dashedName": "python-certification-exam",
-      "comingSoon": false,
-      "modules": [
-        {
-          "comingSoon": false,
-          "dashedName": "python-certification-exam",
-          "blocks": [
-            "exam-python-certification"
-          ]
+          "blocks": ["review-python"]
         }
       ]
     }

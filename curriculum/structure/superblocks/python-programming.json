@@ -55,9 +55,7 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-user-configuration-manager",
-          "blocks": [
-            "lab-user-configuration-manager"
-          ]
+          "blocks": ["lab-user-configuration-manager"]
         },
         {
           "dashedName": "python-error-handling",
@@ -82,9 +80,7 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-budget-app",
-          "blocks": [
-            "lab-budget-app"
-          ]
+          "blocks": ["lab-budget-app"]
         },
         {
           "dashedName": "python-object-oriented-programming",
@@ -104,23 +100,7 @@
         {
           "moduleType": "cert-project",
           "dashedName": "lab-polygon-area-calculator",
-          "blocks": [
-            "lab-polygon-area-calculator"
-          ]
-        }
-      ]
-    },
-    {
-      "chapterType": "exam",
-      "dashedName": "python-programming-certification-exam",
-      "comingSoon": false,
-      "modules": [
-        {
-          "comingSoon": false,
-          "dashedName": "python-programming-certification-exam",
-          "blocks": [
-            "exam-python-programming-certification"
-          ]
+          "blocks": ["lab-polygon-area-calculator"]
         }
       ]
     }
