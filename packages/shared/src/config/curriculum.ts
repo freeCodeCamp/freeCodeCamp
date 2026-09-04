@@ -38,7 +38,6 @@ export enum SuperBlocks {
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
-  PythonProgramming = 'python-programming',
   AlgorithmsAndDataStructure = 'algorithms-and-data-structure',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
@@ -225,7 +224,6 @@ export const superBlockStages: StageMap = {
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.DevPlayground,
-    SuperBlocks.PythonProgramming,
     SuperBlocks.AlgorithmsAndDataStructure
   ],
   // Catalog is treated like upcoming for now
@@ -331,7 +329,6 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.JsV9,
   SuperBlocks.FrontEndDevLibsV9,
   SuperBlocks.PythonV9,
-  SuperBlocks.PythonProgramming,
   SuperBlocks.AlgorithmsAndDataStructure,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
