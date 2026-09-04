@@ -79,7 +79,6 @@ assert.equal(document.querySelectorAll('form > div')?.[1]?.querySelectorAll('but
     <main>
       <h1>Envelope Budgeter</h1>
       <div class="container">
-
         <form id="budget-form">
           <label for="income">Total Monthly Income</label>
           <input 
@@ -122,10 +121,10 @@ assert.equal(document.querySelectorAll('form > div')?.[1]?.querySelectorAll('but
               <button type="button" id="add-entry">Add Entry</button>
             </span>
           </div>
+
+--fcc-editable-region--
           
-          --fcc-editable-region--
-          
-          --fcc-editable-region--
+--fcc-editable-region--
         </form>
       </div>
     </main>
