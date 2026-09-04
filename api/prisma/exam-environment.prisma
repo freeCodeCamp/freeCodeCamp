@@ -231,7 +231,7 @@ model ExamEnvironmentAuthorizationToken {
   userId   String   @unique @db.ObjectId
   /// NOTE: uniqueness is not enforced on the above field in the database.
   /// Production has a non-unique `userId_1` index. TODO: create a new unique
-  /// index, switch to that, and drop the non-unique `userId_1` one.
+  /// index, switch to that, and drop the non-unique `userId_1` one?
   version  Int      @default(1)
 
   // Relations
@@ -248,7 +248,7 @@ model ExamEnvironmentExamModeration {
   examAttemptId  String                              @unique @db.ObjectId
   /// NOTE: uniqueness is not enforced on the above field in the database.
   /// Production has a non-unique `examAttemptId_1` index. TODO: create a new
-  /// unique index, switch to that, and drop the non-unique `examAttemptId_1` one.
+  /// unique index, switch to that, and drop the non-unique `examAttemptId_1` one?
   /// Optional feedback/note about the moderation decision
   feedback       String?
   /// Date the exam attempt was moderated
