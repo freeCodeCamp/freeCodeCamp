@@ -6046,18 +6046,6 @@
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
-    "module-intros": {
-      "typescript-fundamentals": {
-        "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
-        ]
-      },
-      "front-end-development-libraries-certification-exam": {
-        "intro": [
-          "Pass this exam to earn your Front-End Development Libraries Certification."
-        ]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
