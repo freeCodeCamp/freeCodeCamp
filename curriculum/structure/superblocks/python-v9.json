@@ -177,10 +177,8 @@
     {
       "chapterType": "exam",
       "dashedName": "python-certification-exam",
-      "comingSoon": false,
       "modules": [
         {
-          "comingSoon": false,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }
