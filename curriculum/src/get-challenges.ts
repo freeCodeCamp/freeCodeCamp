@@ -6,6 +6,7 @@ import { availableLangs } from '@freecodecamp/shared/config/i18n';
 import { buildCurriculum } from './build-curriculum.js';
 import { curriculumFilter } from './config.js';
 import type { Filter } from './filter.js';
+import type { Parser } from './generate/parser-pool.js';
 
 const { curriculum: curriculumLangs } = availableLangs;
 
@@ -13,14 +14,15 @@ const access = promisify(_access);
 
 export async function getChallengesForLang(
   lang: string,
-  filters: Filter = curriculumFilter // default to global curriculum filter, but allow override (e.g. when testing specific blocks)
+  filters: Filter = curriculumFilter, // default to global curriculum filter, but allow override (e.g. when testing specific blocks)
+  parser?: Parser
 ) {
   const invalidLang = !curriculumLangs.includes(lang);
   if (invalidLang)
     throw Error(`${lang} is not an accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
 
-  return buildCurriculum(lang, filters);
+  return buildCurriculum(lang, filters, parser);
 }
 
 export async function hasEnglishSource(
