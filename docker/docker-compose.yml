@@ -29,10 +29,40 @@ services:
         }
       '
 
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.8-alpine
+    container_name: clickhouse
+    restart: unless-stopped
+    ports:
+      - 8123:8123
+      - 9000:9000
+    environment:
+      CLICKHOUSE_DB: freecodecamp
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: clickhouse
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+      - ../api/clickhouse/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'clickhouse-client',
+          '--password',
+          'clickhouse',
+          '--query',
+          'SELECT 1'
+        ]
+      interval: 2s
+      retries: 10
+
   mailpit:
     image: axllent/mailpit
     restart: unless-stopped
 
 volumes:
   db-data:
+    driver: local
+  clickhouse-data:
     driver: local

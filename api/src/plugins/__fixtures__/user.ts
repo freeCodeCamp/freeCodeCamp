@@ -1,6 +1,6 @@
 import { expect } from 'vitest';
 
-import { nanoidCharSet } from '../../utils/create-user.js';
+import { nanoidCharSet } from '../../utils/ids.js';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
@@ -65,6 +65,8 @@ export const newUser = (email: string) => ({
   isA2ChineseCert: false,
   isA1ChineseCert: false,
   keyboardShortcuts: false,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  activityTrackingId: expect.any(String),
   linkedin: null,
   location: '',
   name: '',
