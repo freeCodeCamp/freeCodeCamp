@@ -112,6 +112,8 @@ sections that need to stay left to right
 [dir='rtl'] :has(#learn-app-wrapper) pre,
 /* Code snippet*/
 [dir='rtl'] code,
+/* Language course spans preserved in the language to be taught*/
+[dir='rtl'] .highlighted-text,
 /* trending articles */
 [dir='rtl'] .trending-guides .trending-guides-row div a,
 [dir='rtl'] .overflow-guard,
@@ -121,7 +123,8 @@ sections that need to stay left to right
   direction: ltr;
 }
 
-[dir='rtl'] code {
+[dir='rtl'] code,
+[dir='rtl'] .highlighted-text {
   word-break: normal;
   unicode-bidi: isolate;
 }
