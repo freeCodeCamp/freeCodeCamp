@@ -217,7 +217,7 @@ test.describe('Super Block Page - Search Lessons', () => {
     await page.goto('/learn/javascript-v9/');
 
     await expect(
-      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+      page.getByRole('button', { name: /^Booleans and Numbers/i })
     ).toBeVisible();
 
     await page
@@ -228,7 +228,7 @@ test.describe('Super Block Page - Search Lessons', () => {
       page.getByRole('heading', { name: 'Build a Greeting Bot' })
     ).toBeVisible();
     await expect(
-      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+      page.getByRole('button', { name: /^Booleans and Numbers/i })
     ).not.toBeVisible();
     await expect(
       page.getByText(
@@ -239,7 +239,7 @@ test.describe('Super Block Page - Search Lessons', () => {
     await page.getByRole('button', { name: 'Clear search terms' }).click();
 
     await expect(
-      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+      page.getByRole('button', { name: /^Booleans and Numbers/i })
     ).toBeVisible();
   });
 });

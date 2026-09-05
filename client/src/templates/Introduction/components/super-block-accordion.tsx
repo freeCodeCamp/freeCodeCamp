@@ -255,9 +255,6 @@ const Module = ({
   const panelId = `module-panel-${dashedName}`;
   const isComplete = totalSteps === 0 ? false : completedSteps === totalSteps;
   const moduleLabel = t(`intro:${superBlock}.modules.${dashedName}`);
-  const toggleLabel = open
-    ? t('intro:misc-text.collapse')
-    : t('intro:misc-text.expand');
   const { note, intro } = t(`intro:${superBlock}.module-intros.${dashedName}`, {
     returnObjects: true
   }) as {
@@ -301,6 +298,7 @@ const Module = ({
           className='module-button module-button-main'
           onClick={toggleOpen}
           type='button'
+          data-testid='module-button'
         >
           <div className='module-button-left'>
             <span className='dropdown-wrap'>
@@ -311,28 +309,16 @@ const Module = ({
             </span>
             {moduleLabel}
           </div>
+          {!comingSoon && !!totalSteps && (
+            <span className='module-steps'>
+              {t('learn.steps-completed', {
+                completed: completedSteps,
+                total: totalSteps
+              })}
+            </span>
+          )}
         </button>
         {resetButton}
-        <button
-          aria-controls={panelId}
-          aria-expanded={open}
-          aria-label={`${toggleLabel} ${moduleLabel}`}
-          className='module-button module-button-toggle'
-          data-testid='module-button-right'
-          onClick={toggleOpen}
-          type='button'
-        >
-          <div className='module-button-right'>
-            {!comingSoon && !!totalSteps && (
-              <span className='module-steps'>
-                {t('learn.steps-completed', {
-                  totalSteps,
-                  completedSteps
-                })}
-              </span>
-            )}
-          </div>
-        </button>
       </div>
       {open && (
         <ul className='module-panel' id={panelId}>
