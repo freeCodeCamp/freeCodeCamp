@@ -3,7 +3,7 @@ import Fastify, { type FastifyInstance } from 'fastify';
 
 import { COOKIE_DOMAIN } from '../utils/env.js';
 import cookies from './cookies.js';
-import csrf, { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf.js';
+import csrf, { CSRF_COOKIE, CSRF_SECRET_COOKIE, CSRF_HEADER } from './csrf.js';
 
 vi.mock('../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../utils/env.js')>();
@@ -24,6 +24,12 @@ async function setupServer() {
   fastify.get('/', (_req, reply) => {
     void reply.send({ foo: 'bar' });
   });
+
+  // Mock signout route for the exemption test
+  fastify.get('/signout', (_req, reply) => {
+    void reply.send({ ok: true });
+  });
+
   return fastify;
 }
 
@@ -32,21 +38,24 @@ describe('CSRF protection', () => {
   beforeEach(async () => {
     fastify = await setupServer();
   });
+
   test('should receive a new CSRF token with the expected properties', async () => {
     const response = await fastify.inject({
       method: 'GET',
       url: '/'
     });
-    const newCookies = response.cookies;
-    const csrfTokenCookie = newCookies.find(
+
+    // onRequest generates the token even if the unauthenticated request returns 403
+    expect(response.statusCode).toEqual(403);
+
+    const csrfTokenCookie = response.cookies.find(
       cookie => cookie.name === CSRF_COOKIE
     );
 
+    expect(csrfTokenCookie).toBeDefined();
     const { value, ...rest } = csrfTokenCookie!;
 
-    // The value is a random string - it's enough to check that it's not empty
     expect(value).toHaveLength(52);
-
     expect(rest).toStrictEqual({
       name: CSRF_COOKIE,
       path: '/',
@@ -63,8 +72,6 @@ describe('CSRF protection', () => {
     });
 
     expect(response.statusCode).toEqual(403);
-    // The response body is determined by the error-handling plugin, so we don't
-    // check it here.
   });
 
   test('should return 403 if the csrf_token is invalid', async () => {
@@ -72,11 +79,27 @@ describe('CSRF protection', () => {
       method: 'GET',
       url: '/',
       cookies: {
-        _csrf: 'foo',
-        csrf_token: 'bar'
+        _csrf: 'foo'
+      },
+      headers: {
+        [CSRF_HEADER]: 'invalid-token-signature'
       }
     });
+
     expect(response.statusCode).toEqual(403);
+  });
+
+  test('should not set CSRF cookie on /signout even with query parameters', async () => {
+    const response = await fastify.inject({
+      method: 'GET',
+      url: '/signout?redirect=true'
+    });
+
+    const csrfTokenCookie = response.cookies.find(
+      cookie => cookie.name === CSRF_COOKIE
+    );
+
+    expect(csrfTokenCookie).toBeUndefined();
   });
 
   test('should allow the request if the csrf_token is valid', async () => {
@@ -92,6 +115,9 @@ describe('CSRF protection', () => {
       cookie => cookie.name === CSRF_SECRET_COOKIE
     );
 
+    expect(csrfTokenCookie).toBeDefined();
+    expect(csrfSecretCookie).toBeDefined();
+
     const res = await fastify.inject({
       method: 'GET',
       url: '/',
@@ -99,7 +125,7 @@ describe('CSRF protection', () => {
         _csrf: csrfSecretCookie!.value
       },
       headers: {
-        'csrf-token': csrfTokenCookie!.value
+        [CSRF_HEADER]: csrfTokenCookie!.value
       }
     });
 
