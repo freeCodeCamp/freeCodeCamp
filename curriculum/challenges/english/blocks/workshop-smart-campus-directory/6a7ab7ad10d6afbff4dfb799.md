@@ -15,10 +15,28 @@ and `Instructor not found` for an unknown one.
 
 # --hints--
 
-Test 1
+You should call `getInstructorByEmail` with `"fatima@edu.com"` and `normalizedData` as arguments.
 
 ```js
+assert.match(code, /getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)/);
+```
 
+You should call `console.log()` with the result of that call as the argument.
+
+```js
+assert.match(code, /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/);
+```
+
+You should call `getInstructorByEmail` with `"not_found@edu.com"` and `normalizedData` as arguments.
+
+```js
+assert.match(code, /getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)/);
+```
+
+You should call `console.log()` with the result of that call as the argument.
+
+```js
+assert.match(code, /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/);
 ```
 
 # --seed--

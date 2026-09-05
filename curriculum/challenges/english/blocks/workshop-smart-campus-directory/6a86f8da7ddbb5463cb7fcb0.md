@@ -11,10 +11,22 @@ Inside the loop, check if `programValues[i].room == null`. If `true`, increment 
 
 # --hints--
 
-Test 1
+You should use an `if` statement.
 
 ```js
+assert.match(code, /if\s*\(/);
+```
 
+Your `if` statement should check `programValues[i].room == null`.
+
+```js
+assert.match(code, /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*==\s*null\s*\)/);
+```
+
+Inside the `if` block, you should increment `programsWithoutRooms`.
+
+```js
+assert.match(code, /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*==\s*null\s*\)\s*{\s*programsWithoutRooms\s*(\+\+|\+=\s*1)/);
 ```
 
 # --seed--

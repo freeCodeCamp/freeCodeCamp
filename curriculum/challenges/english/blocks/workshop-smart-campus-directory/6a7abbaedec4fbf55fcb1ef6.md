@@ -13,10 +13,16 @@ Declare a variable called `programValues` and set it to `Object.values(normalize
 
 # --hints--
 
-Test 1
+You should declare a variable called `programValues`.
 
 ```js
+assert.match(code, /const\s+programValues\s*=/);
+```
 
+`programValues` should be set to `Object.values(normalizedData.programsById)`.
+
+```js
+assert.match(code, /const\s+programValues\s*=\s*Object\s*\.\s*values\s*\(\s*normalizedData\.programsById\s*\)/);
 ```
 
 # --seed--
