@@ -5003,6 +5003,10 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "workshop-smart-campus-directory": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": ["Build a Campus Directory Normalizer", ""]
+      },
       "lab-repeat-a-string": {
         "title": "Build a String Repeating Function",
         "intro": [
