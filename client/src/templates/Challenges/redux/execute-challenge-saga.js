@@ -371,7 +371,7 @@ function* previewChallengeSaga() {
           );
           const output = logs?.map(log => log.msg).join('\n');
 
-          yield put(updateConsole(output));
+          yield put(updateConsole(escape(output)));
         }
       }
     }
