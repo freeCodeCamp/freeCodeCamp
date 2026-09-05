@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby';
-import React, { useState, useEffect, useRef } from 'react';
+import { graphql, navigate } from 'gatsby';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -55,6 +55,7 @@ import {
   previewMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   setEditorFocusability,
   setIsAdvancing
 } from '../redux/actions';
@@ -63,23 +64,29 @@ import {
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../redux/selectors';
-import { savedChallengesSelector } from '../../../redux/selectors';
+import {
+  isSignedInSelector,
+  savedChallengesSelector
+} from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import { usePageLeave } from '../hooks';
+import ExitProjectModal from './exit-project-modal';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
-import { mergeChallengeFiles } from './saved-challenges';
+import { mergeChallengeFiles, hasUnsavedChanges } from './saved-challenges';
 
 import './classic.css';
 import '../components/test-frame.css';
 
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
+  isSignedIn: isSignedInSelector(state),
   output: consoleOutputSelector(state) as string,
   isChallengeCompleted: isChallengeCompletedSelector(state),
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
@@ -99,6 +106,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       cancelTests,
       previewMounted,
       openModal,
+      closeModal,
       setEditorFocusability,
       setIsAdvancing
     },
@@ -118,11 +126,13 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initHooks: (hooks?: Hooks) => void;
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
+  isSignedIn: boolean;
   isDailyCodingChallenge?: boolean;
   output: string;
   pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  closeModal: (modal: string) => void;
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
   ) => void;
@@ -205,7 +215,8 @@ function ShowClassic({
         notes,
         videoUrl,
         translationPending,
-        saveSubmissionToDB
+        saveSubmissionToDB,
+        fields
       }
     }
   },
@@ -226,9 +237,11 @@ function ShowClassic({
   setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
+  closeModal,
   setIsAdvancing,
   savedChallenges,
   isChallengeCompleted,
+  isSignedIn,
   output,
   executeChallenge,
   previewMounted
@@ -242,6 +255,70 @@ function ShowClassic({
   const xtermFitRef = useRef<FitAddon | null>(null);
   const isMobile = useMediaQuery({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
+  });
+
+  // Warn campers before they leave a certification project page with changes
+  // that would actually be lost. Only signed-in campers can save to their
+  // account, and the code-storage epic mirrors the editor contents to
+  // localStorage when they run the tests, so the warning arms only when the
+  // contents differ from both of those recoverable copies.
+  const exitConfirmed = useRef(false);
+  const [exitPathname, setExitPathname] = useState('');
+
+  const hasChangesToLose = (): boolean => {
+    const savedChallenge = savedChallenges?.find(
+      challenge => challenge.id === challengeMeta.id
+    );
+    const storedFiles: unknown = store.get(challengeMeta.id);
+    const localStorageFiles = Array.isArray(storedFiles)
+      ? (storedFiles as { fileKey?: unknown; contents?: unknown }[]).filter(
+          (file): file is { fileKey: string; contents: string } =>
+            typeof file?.fileKey === 'string' &&
+            typeof file?.contents === 'string'
+        )
+      : [];
+
+    return hasUnsavedChanges(challengeFiles, [
+      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles),
+      localStorageFiles
+    ]);
+  };
+
+  const showLeaveWarning =
+    !!saveSubmissionToDB && isSignedIn && hasChangesToLose();
+
+  const handleExitProject = () => {
+    exitConfirmed.current = true;
+    closeModal('exitProject');
+    void navigate(exitPathname || fields?.blockHashSlug || '/learn');
+  };
+
+  const onWindowClose = useCallback((event: BeforeUnloadEvent) => {
+    event.preventDefault();
+  }, []);
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string): boolean => {
+      if (exitConfirmed.current) {
+        return false;
+      }
+
+      // For link clicks, save the target pathname. For back button
+      // (empty targetPathname), keep the default (i.e. blockHashSlug).
+      if (targetPathname) {
+        setExitPathname(targetPathname);
+      }
+
+      openModal('exitProject');
+      return true;
+    },
+    [openModal]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange,
+    enabled: showLeaveWarning
   });
 
   const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
@@ -531,6 +608,7 @@ function ShowClassic({
         />
         <ShortcutsModal />
         <MobileAppModal superBlock={superBlock} />
+        {saveSubmissionToDB && <ExitProjectModal onExit={handleExitProject} />}
       </LearnLayout>
     </Hotkeys>
   );
@@ -566,6 +644,7 @@ export const query = graphql`
         }
         fields {
           slug
+          blockHashSlug
         }
         required {
           link
