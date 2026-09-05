@@ -23,6 +23,12 @@ describe('isValidUsername', () => {
     expect(isValidUsername('429')).toStrictEqual(usernameIsHttpStatusCode);
     expect(isValidUsername('789')).toStrictEqual(validationSuccess);
   });
+  it('accepts strings which merely start with a status code', () => {
+    expect(isValidUsername('500px')).toStrictEqual(validationSuccess);
+    expect(isValidUsername('404notfound')).toStrictEqual(validationSuccess);
+    expect(isValidUsername('404_foo')).toStrictEqual(validationSuccess);
+    expect(isValidUsername('0500')).toStrictEqual(validationSuccess);
+  });
   it('rejects non-ASCII characters', () => {
     expect(isValidUsername('👀👂👄')).toStrictEqual(invalidCharError);
   });
