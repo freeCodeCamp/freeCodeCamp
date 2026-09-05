@@ -1,0 +1,79 @@
+{
+  "chapters": [
+    {
+      "dashedName": "python",
+      "modules": [
+        {
+          "dashedName": "python-linear-data-structures",
+          "blocks": [
+            "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
+            "review-data-structures",
+            "quiz-data-structures"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-hash-table",
+          "blocks": ["lab-hash-table"]
+        },
+        {
+          "dashedName": "python-recursion",
+          "blocks": [
+            "lecture-understanding-recursion-and-the-call-stack-python",
+            "workshop-countup-python",
+            "lab-range-of-numbers-python",
+            "review-recursion-python",
+            "quiz-recursion-python"
+          ]
+        },
+        {
+          "dashedName": "python-algorithms",
+          "blocks": [
+            "lecture-searching-and-sorting-algorithms",
+            "workshop-binary-search",
+            "lab-bisection-method",
+            "workshop-merge-sort",
+            "lab-quicksort",
+            "lab-selection-sort",
+            "lab-luhn-algorithm",
+            "review-searching-and-sorting-algorithms",
+            "quiz-searching-and-sorting-algorithms"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-tower-of-hanoi",
+          "blocks": ["lab-tower-of-hanoi"]
+        },
+        {
+          "dashedName": "python-graphs-and-trees",
+          "blocks": [
+            "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
+            "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
+            "lab-depth-first-search",
+            "lab-n-queens-problem",
+            "review-graphs-and-trees",
+            "quiz-graphs-and-trees"
+          ]
+        },
+        {
+          "dashedName": "python-dynamic-programming",
+          "blocks": [
+            "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
+            "review-dynamic-programming",
+            "quiz-dynamic-programming"
+          ]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-python",
+          "blocks": ["review-python"]
+        }
+      ]
+    }
+  ]
+}
