@@ -14,13 +14,16 @@ A shopping cart does not serve much purpose without products. Declare a `product
 You should declare a `products` variable with `const`.
 
 ```js
-assert.match(code, /const\s+products\b/);
+const explorer = await __helpers.Explorer(code);
+const { products } = explorer.variables;
+assert.isTrue(products?.toString().startsWith('const'));
 ```
 
 You should set the `products` variable to an empty array.
 
 ```js
-assert.match(code, /const\s+products\s*=\s*\[\s*\]/);
+assert.isArray(products);
+assert.isEmpty(products);
 ```
 
 # --seed--
