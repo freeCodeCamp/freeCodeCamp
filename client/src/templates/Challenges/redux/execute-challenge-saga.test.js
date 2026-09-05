@@ -66,7 +66,7 @@ describe('executeTests generator', () => {
 
     return expectSaga(executeTests, mockTestRunner, tests)
       .put({
-        type: 'challenge.updateConsole',
+        type: 'challenge.updateConsoleMarkup',
         payload: '<p>1. learn.indentation-error</p>'
       })
       .returns([

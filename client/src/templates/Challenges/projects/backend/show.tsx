@@ -37,6 +37,7 @@ import {
 
 import { getGuideUrl } from '../../utils';
 import { getChallengePaths } from '../../utils/challenge-paths';
+import type { ConsoleOutput } from '../../utils/console-output';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 
@@ -49,7 +50,7 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   (
-    output: string,
+    output: ConsoleOutput[],
     tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean
@@ -82,7 +83,7 @@ interface BackEndProps {
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
-  output: string;
+  output: ConsoleOutput[];
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
