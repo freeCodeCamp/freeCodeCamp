@@ -28,7 +28,7 @@ const Faq = (): JSX.Element => {
       {faqItems.map((faq, i) => (
         <div
           data-test-label='landing-page-faq'
-          data-playwright-test-label='landing-page-faq'
+          data-testid='landing-page-faq'
           key={i}
         >
           <h3 className='faq-question'>{faq.question}</h3>

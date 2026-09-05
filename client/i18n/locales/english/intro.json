@@ -1504,7 +1504,7 @@
       "workshop-report-card-printer": {
         "title": "Build a Report Card Printer",
         "intro": [
-          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+          "In this workshop, you will practice working with primitive data types in Python by creating and printing data for a simple report card."
         ]
       },
       "lecture-introduction-to-python-strings": {
@@ -4537,32 +4537,6 @@
       "review-javascript": "JavaScript Review",
       "javascript-certification-exam": "JavaScript Certification Exam"
     },
-    "module-intros": {
-      "data-structures": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about linked lists, stacks, queues and more."
-        ]
-      },
-      "algorithms": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
-        ]
-      },
-      "graphs-and-trees": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about graphs, trees and tries."
-        ]
-      },
-      "dynamic-programming": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn how dynamic programming works."
-        ]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
@@ -6052,18 +6026,6 @@
       "review-front-end-libraries": "Front-End Libraries Review",
       "front-end-development-libraries-certification-exam": "Front-End Development Libraries Certification Exam"
     },
-    "module-intros": {
-      "typescript-fundamentals": {
-        "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
-        ]
-      },
-      "front-end-development-libraries-certification-exam": {
-        "intro": [
-          "Pass this exam to earn your Front-End Development Libraries Certification."
-        ]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
@@ -6453,6 +6415,7 @@
       "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Linear Data Structures",
       "lab-hash-table": "Build a Hash Table",
+      "python-recursion": "Recursion",
       "python-algorithms": "Algorithms",
       "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Graphs and Trees",
@@ -6476,7 +6439,7 @@
       "workshop-report-card-printer": {
         "title": "Build a Report Card Printer",
         "intro": [
-          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+          "In this workshop, you will practice working with primitive data types in Python by creating and printing data for a simple report card."
         ]
       },
       "lecture-introduction-to-python-strings": {
@@ -6797,6 +6760,36 @@
         "intro": [
           "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
           "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "lecture-understanding-recursion-and-the-call-stack-python": {
+        "title": "Understanding Recursion and the Call Stack",
+        "intro": [
+          "In this lecture, you will learn how recursive functions and the call stack work in Python."
+        ]
+      },
+      "workshop-countup-python": {
+        "title": "Build a Countup Function",
+        "intro": [
+          "In this workshop, you will build a function that uses recursion to create a list of numbers."
+        ]
+      },
+      "lab-range-of-numbers-python": {
+        "title": "Build a Range of Numbers Generator",
+        "intro": [
+          "In this lab, you will use recursion to generate a list of numbers within a specified range."
+        ]
+      },
+      "review-recursion-python": {
+        "title": "Review Recursion",
+        "intro": [
+          "Review the concepts of recursion, base cases, and the call stack."
+        ]
+      },
+      "quiz-recursion-python": {
+        "title": "Recursion Quiz",
+        "intro": [
+          "Test your understanding of recursion, base cases, and the call stack."
         ]
       },
       "lecture-searching-and-sorting-algorithms": {
@@ -7203,98 +7196,6 @@
       "review-back-end-development-and-apis": "Back-End Development and APIs Review",
       "back-end-development-and-apis-certification-exam": "Back-End Development and APIs Certification Exam"
     },
-    "module-intros": {
-      "introduction-to-nodejs": {
-        "intro": [
-          "In this module, you will learn the basics of working with Node.js."
-        ]
-      },
-      "nodejs-core-modules": {
-        "intro": [
-          "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
-        ]
-      },
-      "node-package-manager": {
-        "intro": [
-          "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
-        ]
-      },
-      "lab-prime-number-checker-module": {
-        "intro": [
-          "Practice building and exporting an NPM module by creating a prime number checker."
-        ]
-      },
-      "http-and-the-web-standards-model": {
-        "intro": [
-          "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
-        ]
-      },
-      "introduction-to-express": {
-        "intro": [
-          "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
-        ]
-      },
-      "lab-personal-profile-app": {
-        "intro": [
-          "Practice building an Express server and JSON API by creating a personal profile application."
-        ]
-      },
-      "express-middleware": {
-        "intro": [
-          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
-        ]
-      },
-      "rest-api-and-web-services": {
-        "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "lab-timestamp-microservice": {
-        "intro": [
-          "Practice building a RESTful API with date parsing logic by creating a timestamp microservice."
-        ]
-      },
-      "error-handling-in-express": {
-        "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
-        ]
-      },
-      "websockets": {
-        "intro": [
-          "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
-        ]
-      },
-      "lab-chat-app": {
-        "intro": [
-          "Practice building a real-time multi-client chat server using Node.js WebSockets."
-        ]
-      },
-      "security-and-privacy": {
-        "intro": [
-          "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "authentication": {
-        "intro": [
-          "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
-        ]
-      },
-      "lab-family-movie-watchlist-api": {
-        "intro": [
-          "Practice implementing authentication and authorization in an Express application by building a family movie watchlist API."
-        ]
-      },
-      "review-back-end-development-and-apis": {
-        "intro": [
-          "Review Back-End Development and APIs concepts to prepare for the upcoming exam."
-        ]
-      },
-      "back-end-development-and-apis-certification-exam": {
-        "intro": [
-          "Pass this exam to earn your Back-End Development and APIs Certification."
-        ]
-      }
-    },
     "blocks": {
       "lecture-working-with-nodejs-and-event-driven-architecture": {
         "title": "Working with Node.js and Event-Driven Architecture",
@@ -7494,6 +7395,12 @@
         "title": "REST API and Web Services Review",
         "intro": [
           "Review web services, the REST architecture, HTTP status codes, and microservices."
+        ]
+      },
+      "quiz-rest-api-and-web-services": {
+        "title": "REST API and Web Services Quiz",
+        "intro": [
+          "Test your knowledge of web services, the REST architecture, HTTP status codes, and monoliths vs. microservices."
         ]
       },
       "lab-timestamp-microservice": {
