@@ -10,12 +10,9 @@ const AsSeenIn = (): JSX.Element => {
     <Container
       fluid={true}
       className='as-seen-in text-center'
-      data-playwright-test-label='landing-as-seen-in-container'
+      data-testid='landing-as-seen-in-container'
     >
-      <h2
-        className='big-heading'
-        data-playwright-test-label='landing-as-seen-in-text'
-      >
+      <h2 className='big-heading' data-testid='landing-as-seen-in-text'>
         {t('landing.as-seen-in')}
       </h2>
       <AsSeenInText fill='light' />
