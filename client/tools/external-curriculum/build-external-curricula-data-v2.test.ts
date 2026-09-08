@@ -96,17 +96,15 @@ function buildFixtureIntros(): CurriculumIntros {
   };
 
   stub[CATALOG_SB] = {
-    title: "Learn Python for Beginners",
-    intro: ["Learn python"],
+    title: 'Learn Python for Beginners',
+    intro: ['Learn python'],
     blocks: {
       'test-catalog-block': {
         title: 'Catalog block title',
         intro: ['Catalog block intro.']
       }
-
-
     }
-  }
+  };
 
   return stub as CurriculumIntros;
 }
@@ -163,7 +161,6 @@ function buildFixtureCurriculum(): Curriculum<CurriculumProps> {
       }
     }
   };
-
 
   stub[CATALOG_SB] = {
     intro: ['unused'],
@@ -247,10 +244,7 @@ describe('buildExtCurriculumDataV2', () => {
     const filePath = path.join(tmpDir, VERSION, 'catalog.json');
     const validateCatalog = catalogValidator();
     const catalogFile = JSON.parse(
-      await fs.promises.readFile(
-        filePath,
-        'utf-8'
-      )
+      await fs.promises.readFile(filePath, 'utf-8')
     ) as { catalog: CatalogCourse[] };
 
     const result = validateCatalog(catalogFile);
@@ -262,7 +256,6 @@ describe('buildExtCurriculumDataV2', () => {
 
     catalogFile.catalog.forEach((course, index) => {
       const { superBlock, level, hours, topic } = catalog[index];
-
       expect(course).toEqual({
         dashedName: superBlock,
         title: superBlock,
@@ -274,7 +267,7 @@ describe('buildExtCurriculumDataV2', () => {
     });
   });
 
-  test.only('catalog courses should have their blocks and challenges generated', () => {
+  test('catalog courses should have their blocks and challenges generated', () => {
     catalog.forEach(({ superBlock }) => {
       const filePath = path.join(tmpDir, VERSION, `${superBlock}.json`);
 
@@ -287,20 +280,29 @@ describe('buildExtCurriculumDataV2', () => {
 
       const blocks = chapterBasedSuperBlocks.includes(superBlock)
         ? (
-          superBlockData as GeneratedChapterBasedCurriculumProps
-        ).chapters.flatMap(chapter =>
-          chapter.modules.flatMap(module => module.blocks)
-        )
+            superBlockData as GeneratedChapterBasedCurriculumProps
+          ).chapters.flatMap(chapter =>
+            chapter.modules.flatMap(module => module.blocks)
+          )
         : (superBlockData as GeneratedBlockBasedCurriculumProps).blocks;
 
       blocks.forEach(block => {
         const challengeOrder = block.meta.challengeOrder as { id: string }[];
 
-        expect(challengeOrder.length).toBeGreaterThan(0)
+        expect(challengeOrder.length).toBeGreaterThan(0);
 
         challengeOrder.forEach(({ id }) => {
           expect(
-            fs.existsSync(path.join(tmpDir, VERSION, 'challenges', superBlock, block.meta.dashedName as string, `${id}.json`))
+            fs.existsSync(
+              path.join(
+                tmpDir,
+                VERSION,
+                'challenges',
+                superBlock,
+                block.meta.dashedName as string,
+                `${id}.json`
+              )
+            )
           ).toBe(true);
         });
       });
