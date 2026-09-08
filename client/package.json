@@ -57,6 +57,7 @@
     "@gatsbyjs/reach-router": "1.3.9",
     "@growthbook/growthbook-react": "1.6.5",
     "@loadable/component": "5.16.7",
+    "@paypal/react-paypal-js": "10.3.0",
     "@redux-devtools/extension": "3.3.0",
     "@redux-saga/core": "^1.4.2",
     "@reduxjs/toolkit": "2.11.2",
@@ -183,7 +184,6 @@
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
     "url": "0.11.4",
-    "vitest": "^4.0.15",
-    "webpack": "5.106.2"
+    "vitest": "^4.0.15"
   }
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import { apiLocation } from '../../config/env.json';
+import envData from '../../config/env.json';
 import callGA from '../analytics/call-ga';
+
+const { apiLocation } = envData;
 
 interface EmailListOptInProps {
   isSignedIn: boolean;

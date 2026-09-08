@@ -9,6 +9,7 @@ import { Question } from '../../../redux/prop-types';
 import { openModal } from '../redux/actions';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
@@ -39,6 +40,7 @@ function MultipleChoiceQuestions({
   superBlock
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
+  const contentLangProps = getChallengeContentLangProps(superBlock);
 
   useEffect(() => {
     if (isMathJaxAllowed(superBlock)) {
@@ -85,7 +87,11 @@ function MultipleChoiceQuestions({
       {questions.map((question, questionIndex) => (
         <fieldset key={questionIndex} className='mcq-fieldset'>
           <legend className='mcq-question-text'>
-            <PrismFormatted className={'line-numbers'} text={question.text} />
+            <PrismFormatted
+              className={'line-numbers'}
+              text={question.text}
+              {...contentLangProps}
+            />
           </legend>
           <div className='video-quiz-options'>
             {question.answers.map(({ answer }, answerIndex) => {
@@ -136,6 +142,7 @@ function MultipleChoiceQuestions({
                           text={removeParagraphTags(answer)}
                           useSpan
                           noAria
+                          {...contentLangProps}
                         />
                       </label>
                     </div>
@@ -159,6 +166,7 @@ function MultipleChoiceQuestions({
                               text={removeParagraphTags(feedback)}
                               useSpan
                               noAria
+                              {...contentLangProps}
                             />
                           </p>
                         )}

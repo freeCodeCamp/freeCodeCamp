@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-range-of-numbers-python",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6a89c69cbe1bb69845992d8b",
+      "title": "Build a Range of Numbers Generator"
+    }
+  ],
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "usesMultifileEditor": true
+}

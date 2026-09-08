@@ -28,7 +28,9 @@ import {
   catalogCourses,
   readCurriculumIntros,
   getCurriculumLocale,
-  CurriculumIntros
+  CurriculumIntros,
+  fillIntrosFromEnglish,
+  type SuperBlockIntro
 } from './build-external-curricula-data-v2';
 
 const VERSION = 'v2';
@@ -396,5 +398,106 @@ describe('external curriculum data build', () => {
       dashedName: SuperBlocks.RespWebDesignV9,
       title: dummyIntro[SuperBlocks.RespWebDesignV9].title
     });
+  });
+});
+
+describe('fillIntrosFromEnglish', () => {
+  const english = {
+    [SuperBlocks.PythonV9]: {
+      title: 'Python',
+      intro: ['English superblock intro'],
+      chapters: { 'python-basics': 'Python Basics' },
+      modules: { 'python-recursion': 'Recursion' },
+      blocks: {
+        'quiz-recursion-python': {
+          title: 'Recursion Quiz',
+          intro: ['English quiz intro']
+        },
+        'review-recursion-python': {
+          title: 'Review Recursion',
+          intro: ['English review intro']
+        }
+      }
+    },
+    [SuperBlocks.RosettaCode]: {
+      title: 'Rosetta Code',
+      intro: ['English superblock intro'],
+      blocks: {
+        'rosetta-code': { title: 'Rosetta Code', intro: ['English'] }
+      }
+    },
+    [SuperBlocks.ProjectEuler]: {
+      title: 'Project Euler',
+      intro: ['English superblock intro'],
+      blocks: {
+        'project-euler': { title: 'Project Euler', intro: ['English'] }
+      }
+    }
+  } as unknown as Record<SuperBlocks, SuperBlockIntro>;
+
+  const localised = {
+    [SuperBlocks.PythonV9]: {
+      title: 'Python (translated)',
+      intro: ['Translated superblock intro'],
+      chapters: { 'python-basics': 'Python Basics (translated)' },
+      modules: {},
+      blocks: {
+        'quiz-recursion-python': { title: 'Recursion Quiz (translated)' }
+      }
+    },
+    [SuperBlocks.RosettaCode]: {
+      title: 'Rosetta Code (translated)',
+      intro: ['Translated superblock intro'],
+      blocks: {}
+    }
+  } as unknown as Record<SuperBlocks, SuperBlockIntro>;
+
+  test('fills blocks and modules that only exist in english', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(
+      filled[SuperBlocks.PythonV9].blocks['review-recursion-python']
+    ).toEqual(english[SuperBlocks.PythonV9].blocks['review-recursion-python']);
+    expect(filled[SuperBlocks.PythonV9].modules).toEqual({
+      'python-recursion': 'Recursion'
+    });
+  });
+
+  test('keeps the english intro when only the block title is translated', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(
+      filled[SuperBlocks.PythonV9].blocks['quiz-recursion-python']
+    ).toEqual({
+      title: 'Recursion Quiz (translated)',
+      intro: ['English quiz intro']
+    });
+  });
+
+  test('keeps the translation when one exists', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(filled[SuperBlocks.PythonV9].title).toBe('Python (translated)');
+    expect(filled[SuperBlocks.PythonV9].chapters).toEqual({
+      'python-basics': 'Python Basics (translated)'
+    });
+  });
+
+  test('falls back to english for an untranslated superblock', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(filled[SuperBlocks.ProjectEuler]).toEqual(
+      english[SuperBlocks.ProjectEuler]
+    );
+  });
+
+  test('does not add chapter records to block based superblocks', () => {
+    const filled = fillIntrosFromEnglish(localised, english);
+
+    expect(filled[SuperBlocks.RosettaCode].title).toBe(
+      'Rosetta Code (translated)'
+    );
+    expect(filled[SuperBlocks.RosettaCode]).not.toHaveProperty('chapters');
+    expect(filled[SuperBlocks.RosettaCode]).not.toHaveProperty('modules');
   });
 });

@@ -21,12 +21,6 @@ async function expectRealPaypalButtonToBeVisible(page: Page) {
   await expect(paypalButton).toHaveAttribute('aria-label', 'PayPal');
 }
 
-// PayPal's SDK is consumed two different ways across the codebase's history:
-// the legacy \`Buttons.driver('react', { React, ReactDOM })\` API (which
-// returns a React component, and is what production currently uses), and
-// the plain \`Buttons({...}).render(container)\` API (imperative, no React
-// involved). This fake supports both call shapes so the test keeps working
-// across that implementation detail.
 const FAKE_APPROVE_DATA = `{ orderID: 'FAKE_ORDER_ID', subscriptionID: 'FAKE_SUBSCRIPTION_ID' }`;
 const FAKE_APPROVE_ACTIONS = `{ order: { capture: function () { return Promise.resolve({}); } } }`;
 const FAKE_PAYPAL_SDK = `
@@ -43,20 +37,13 @@ const FAKE_PAYPAL_SDK = `
           options.onApprove(${FAKE_APPROVE_DATA}, ${FAKE_APPROVE_ACTIONS});
         };
         container.appendChild(btn);
+        // The SDK's render() is async, and react-paypal-js chains .catch().
+        return Promise.resolve();
       },
+      isEligible: function () { return true; },
       close: function () { return Promise.resolve(); }
     };
   }
-  FakeButtons.driver = function (reactString, deps) {
-    return function FakeDriverButton(props) {
-      return deps.React.createElement('button', {
-        'data-playwright-test-label': 'fake-paypal-approve',
-        onClick: function () {
-          props.onApprove(${FAKE_APPROVE_DATA}, ${FAKE_APPROVE_ACTIONS});
-        }
-      }, 'Fake PayPal Approve');
-    };
-  };
   window.paypal = {
     Buttons: FakeButtons
   };

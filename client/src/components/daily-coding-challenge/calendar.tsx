@@ -14,12 +14,7 @@ import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 import Login from '../Header/components/login';
 import CalendarDay from './calendar-day';
-import {
-  getTodayUsCentral,
-  toMonthDay,
-  formatDate,
-  lastDailyChallengeIsReleased
-} from './helpers';
+import { getTodayUsCentral, toMonthDay, formatDate } from './helpers';
 
 import './calendar.css';
 import DailyCodingChallengeNotFound from './not-found';
@@ -55,13 +50,6 @@ export interface DailyChallengeMap {
 
 type DailyChallengesMap = Map<string, DailyChallengeMap>;
 
-interface MonthInfo {
-  days: JSX.Element[];
-  index: number;
-  name: string;
-  year: number;
-}
-
 // Cap Feb to 28 days regardless of which "year" is displayed
 export const getDaysInMonth = (year: number, monthIndex: number): number => {
   const realDays = new Date(Date.UTC(year, monthIndex + 1, 0)).getUTCDate();
@@ -73,8 +61,7 @@ export const getMonthInfo = (
   monthIndex: number,
   dailyChallengesMap: DailyChallengesMap,
   hideDaysAfter?: number,
-  hideDaysThrough?: number,
-  requireExactYear?: boolean
+  hideDaysThrough?: number
 ) => {
   // Create date for first of the month (handles rollover automatically)
   const firstOfMonth = new Date(Date.UTC(year, monthIndex, 1));
@@ -96,7 +83,6 @@ export const getMonthInfo = (
     const title = challengeData?.title || '';
     const isAvailable =
       challengeData !== undefined &&
-      (!requireExactYear || challengeData.date === formattedDate) &&
       (hideDaysAfter === undefined || day <= hideDaysAfter) &&
       (hideDaysThrough === undefined || day > hideDaysThrough);
     const challengeNumber = challengeData?.challengeNumber;
@@ -132,7 +118,6 @@ function DailyCodingChallengeCalendar({
   const { t } = useTranslation();
 
   const todayUsCentral = getTodayUsCentral();
-  const lastDailyChallengeReleased = lastDailyChallengeIsReleased();
 
   const [todayYear, todayMonth, todayDay] = todayUsCentral
     .split('-')
@@ -190,32 +175,6 @@ function DailyCodingChallengeCalendar({
   const nextMonth = () => setMonthOffset(offset => offset + 1);
   const prevMonth = () => setMonthOffset(offset => offset - 1);
 
-  const hasOlderChallenges = (
-    map: DailyChallengesMap,
-    monthInfo: MonthInfo
-  ): boolean => {
-    return Array.from(map.values()).some(({ date }) => {
-      const [year, month] = date.split('-').map(Number);
-      return (
-        year < monthInfo.year ||
-        (year === monthInfo.year && month - 1 < monthInfo.index)
-      );
-    });
-  };
-
-  const hasNewerChallenges = (
-    map: DailyChallengesMap,
-    monthInfo: MonthInfo
-  ): boolean => {
-    return Array.from(map.values()).some(({ date }) => {
-      const [year, month] = date.split('-').map(Number);
-      return (
-        year > monthInfo.year ||
-        (year === monthInfo.year && month - 1 > monthInfo.index)
-      );
-    });
-  };
-
   // The furthest month back only shows challenges after today
   const isBoundaryMonth = minMonthOffset === -12 && monthOffset === -12;
 
@@ -224,18 +183,13 @@ function DailyCodingChallengeCalendar({
     todayYear,
     todayMonth - 1 + monthOffset,
     dailyChallengesMap,
-    lastDailyChallengeReleased && monthOffset === 0 ? todayDay : undefined,
-    lastDailyChallengeReleased && isBoundaryMonth ? todayDay : undefined,
-    !lastDailyChallengeReleased
+    monthOffset === 0 ? todayDay : undefined,
+    isBoundaryMonth ? todayDay : undefined
   );
 
-  const showPrevButton = lastDailyChallengeReleased
-    ? monthOffset > minMonthOffset
-    : hasOlderChallenges(dailyChallengesMap, monthInfo);
+  const showPrevButton = monthOffset > minMonthOffset;
 
-  const showNextButton = lastDailyChallengeReleased
-    ? monthOffset < 0
-    : hasNewerChallenges(dailyChallengesMap, monthInfo);
+  const showNextButton = monthOffset < 0;
 
   if (isLoading) return <Loader />;
   if (error) return <DailyCodingChallengeNotFound />;

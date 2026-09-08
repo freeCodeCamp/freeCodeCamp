@@ -144,13 +144,88 @@ export function getCurriculumLocale(): Languages {
     : Languages.English;
 }
 
-export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+export type SuperBlockIntro = {
+  title: string;
+  summary?: string[];
+  intro: string[];
+  blocks: Record<string, { title: string; intro: string[] }>;
+  chapters?: Record<string, string>;
+  modules?: Record<string, string>;
+};
+
+type SuperBlockIntroRecord = 'chapters' | 'modules';
+
+function readIntroFile(lang: Languages): Record<SuperBlocks, SuperBlockIntro> {
   const blockIntroPath = resolve(
     __dirname,
     `../../../client/i18n/locales/${lang}/intro.json`
   );
 
-  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as CurriculumIntros;
+  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Record<
+    SuperBlocks,
+    SuperBlockIntro
+  >;
+}
+
+function mergeIntroRecord(
+  field: SuperBlockIntroRecord,
+  english: SuperBlockIntro,
+  localised: SuperBlockIntro
+): Partial<SuperBlockIntro> {
+  if (!(field in english) && !(field in localised)) return {};
+
+  return { [field]: { ...english[field], ...localised[field] } };
+}
+
+function mergeBlockIntros(
+  english: SuperBlockIntro['blocks'] = {},
+  localised: SuperBlockIntro['blocks'] = {}
+): SuperBlockIntro['blocks'] {
+  const merged = { ...english, ...localised };
+
+  for (const [name, englishBlock] of Object.entries(english)) {
+    merged[name] = { ...englishBlock, ...localised[name] };
+  }
+
+  return merged;
+}
+
+export function fillIntrosFromEnglish(
+  localised: Record<SuperBlocks, SuperBlockIntro>,
+  english: Record<SuperBlocks, SuperBlockIntro>
+): Record<SuperBlocks, SuperBlockIntro> {
+  const filled = {} as Record<SuperBlocks, SuperBlockIntro>;
+
+  for (const key of Object.keys(english) as SuperBlocks[]) {
+    const englishSuperBlock = english[key];
+    const localisedSuperBlock = localised[key];
+
+    if (!localisedSuperBlock) {
+      filled[key] = englishSuperBlock;
+      continue;
+    }
+
+    filled[key] = {
+      ...englishSuperBlock,
+      ...localisedSuperBlock,
+      blocks: mergeBlockIntros(
+        englishSuperBlock.blocks,
+        localisedSuperBlock.blocks
+      ),
+      ...mergeIntroRecord('chapters', englishSuperBlock, localisedSuperBlock),
+      ...mergeIntroRecord('modules', englishSuperBlock, localisedSuperBlock)
+    };
+  }
+
+  return filled;
+}
+
+export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+  const localised = readIntroFile(lang);
+
+  if (lang === Languages.English) return localised;
+
+  return fillIntrosFromEnglish(localised, readIntroFile(Languages.English));
 }
 
 export function orderedSuperBlockInfo(
@@ -341,7 +416,6 @@ export function catalogCourses(
   return catalog.map(({ superBlock, level, hours, topic }) => ({
     dashedName: superBlock,
     title: intros[superBlock].title,
-    // Not every language has translated summaries yet.
     summary: intros[superBlock].summary ?? [],
     level,
     hours,

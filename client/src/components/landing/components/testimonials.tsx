@@ -14,18 +14,15 @@ const Testimonials = (): JSX.Element => {
     <div className='testimonials'>
       <h2
         className='big-heading text-center'
-        data-playwright-test-label='testimonials-section-header'
+        data-testid='testimonials-section-header'
       >
         {t('landing.testimonials.heading')}
       </h2>
       <div className='testimonials-row' data-test-label='testimonial-cards'>
-        <div
-          className='testimonial-card'
-          data-playwright-test-label='testimonial-card'
-        >
+        <div className='testimonial-card' data-testid='testimonial-card'>
           <div
             className='testimonial-card-header'
-            data-playwright-test-label='testimonials-endorser-image-container'
+            data-testid='testimonials-endorser-image-container'
           >
             <LazyImage
               alt={t('landing.testimonials.shawn.img-alt')}
@@ -36,16 +33,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <h3 data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-testid='testimonials-endorser-location'>
                 <Trans>landing.testimonials.shawn.location</Trans>
               </h3>
-              <p data-playwright-test-label='testimonials-endorser-occupation'>
+              <p data-testid='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.shawn.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
               <blockquote>
-                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                <p data-testid='testimonials-endorser-testimony'>
                   <Trans>landing.testimonials.shawn.testimony</Trans>
                 </p>
               </blockquote>
@@ -53,13 +50,10 @@ const Testimonials = (): JSX.Element => {
           </div>
         </div>
 
-        <div
-          className='testimonial-card'
-          data-playwright-test-label='testimonial-card'
-        >
+        <div className='testimonial-card' data-testid='testimonial-card'>
           <div
             className='testimonial-card-header'
-            data-playwright-test-label='testimonials-endorser-image-container'
+            data-testid='testimonials-endorser-image-container'
           >
             <LazyImage
               alt={t('landing.testimonials.sarah.img-alt')}
@@ -70,16 +64,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <h3 data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-testid='testimonials-endorser-location'>
                 <Trans>landing.testimonials.sarah.location</Trans>
               </h3>
-              <p data-playwright-test-label='testimonials-endorser-occupation'>
+              <p data-testid='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.sarah.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
               <blockquote>
-                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                <p data-testid='testimonials-endorser-testimony'>
                   <Trans>landing.testimonials.sarah.testimony</Trans>
                 </p>
               </blockquote>
@@ -87,13 +81,10 @@ const Testimonials = (): JSX.Element => {
           </div>
         </div>
 
-        <div
-          className='testimonial-card'
-          data-playwright-test-label='testimonial-card'
-        >
+        <div className='testimonial-card' data-testid='testimonial-card'>
           <div
             className='testimonial-card-header'
-            data-playwright-test-label='testimonials-endorser-image-container'
+            data-testid='testimonials-endorser-image-container'
           >
             <LazyImage
               alt={t('landing.testimonials.emma.img-alt')}
@@ -104,16 +95,16 @@ const Testimonials = (): JSX.Element => {
 
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
-              <h3 data-playwright-test-label='testimonials-endorser-location'>
+              <h3 data-testid='testimonials-endorser-location'>
                 <Trans>landing.testimonials.emma.location</Trans>
               </h3>
-              <p data-playwright-test-label='testimonials-endorser-occupation'>
+              <p data-testid='testimonials-endorser-occupation'>
                 <Trans>landing.testimonials.emma.occupation</Trans>
               </p>
             </div>
             <div className='testimony'>
               <blockquote>
-                <p data-playwright-test-label='testimonials-endorser-testimony'>
+                <p data-testid='testimonials-endorser-testimony'>
                   <Trans>landing.testimonials.emma.testimony</Trans>
                 </p>
               </blockquote>

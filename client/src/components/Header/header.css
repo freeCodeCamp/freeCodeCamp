@@ -11,17 +11,17 @@
   font-weight: 600;
   padding-block: 1em;
   padding-inline: 1.5em;
-  left: -1000px;
+  inset-inline-start: -1000px;
 }
 
 @media screen and (min-width: 980px) {
   .skip-to-content-button:focus {
-    left: 15px;
+    inset-inline-start: 15px;
   }
 }
 
 @media screen and (max-width: 979px) {
   .skip-to-content-button:focus {
-    left: 5px;
+    inset-inline-start: 5px;
   }
 }

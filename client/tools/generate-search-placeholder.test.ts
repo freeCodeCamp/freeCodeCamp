@@ -1,11 +1,13 @@
 import { describe, test, expect } from 'vitest';
 
-import { clientLocale } from '../config/env.json';
+import envData from '../config/env.json';
 import {
   convertToLocalizedString,
   generateSearchPlaceholder,
   roundDownToNearestHundred
 } from './generate-search-placeholder';
+
+const { clientLocale } = envData;
 
 describe('Search bar placeholder tests:', () => {
   describe('Number rounding', () => {

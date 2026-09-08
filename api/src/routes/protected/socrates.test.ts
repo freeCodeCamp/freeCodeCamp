@@ -16,7 +16,7 @@ import {
 } from '../../../vitest.utils.js';
 
 const mockedFetch = vi.fn();
-vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+vi.stubGlobal('fetch', mockedFetch);
 
 const validPayload = {
   description: 'Make the text say hello',
@@ -38,6 +38,7 @@ describe('socratesRoutes', () => {
 
     afterEach(() => {
       vi.clearAllMocks();
+      vi.restoreAllMocks();
     });
 
     describe('PUT /socrates/get-hint', () => {
@@ -94,13 +95,13 @@ describe('socratesRoutes', () => {
         });
 
         test('should return hint on successful Socrates API response', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const count = vi.fn();
           const distribution = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
-            metrics: { ...originalSentry.metrics, count, distribution }
-          };
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            metrics: { ...Sentry.metrics, count, distribution }
+          });
 
           mockedFetch.mockResolvedValueOnce({
             ok: true,
@@ -113,8 +114,6 @@ describe('socratesRoutes', () => {
 
           const response =
             await superPut('/socrates/get-hint').send(validPayload);
-
-          fastifyTestInstance.Sentry = originalSentry;
 
           expect(response.status).toBe(200);
           expect(response.body).toStrictEqual({
@@ -170,13 +169,43 @@ describe('socratesRoutes', () => {
           expect(body.userId).not.toBe('attacker-id');
         });
 
+        test('should drop unknown keys before the upstream call (locks removeAdditional: all)', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            challengeType: 'rust',
+            hints: [{ text: 'Check your spelling', failed: true, id: 7 }]
+          });
+
+          const fetchCall = mockedFetch.mock.calls[0]!;
+          const body = JSON.parse(fetchCall[1].body as string) as Record<
+            string,
+            unknown
+          >;
+          expect(Object.keys(body).sort()).toStrictEqual([
+            'description',
+            'hints',
+            'seed',
+            'userId',
+            'userInput'
+          ]);
+          expect(body.hints).toStrictEqual([
+            { text: 'Check your spelling', failed: true }
+          ]);
+        });
+
         test('should return 429 when Socrates API rate limits', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
-            metrics: { ...originalSentry.metrics, count }
-          };
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            metrics: { ...Sentry.metrics, count }
+          });
 
           mockedFetch.mockResolvedValueOnce({
             ok: false,
@@ -186,8 +215,6 @@ describe('socratesRoutes', () => {
 
           const response =
             await superPut('/socrates/get-hint').send(validPayload);
-
-          fastifyTestInstance.Sentry = originalSentry;
 
           expect(response.status).toBe(429);
           expect(response.body).toStrictEqual({
@@ -201,70 +228,59 @@ describe('socratesRoutes', () => {
           });
         });
 
-        test('should forward upstream error message on 400', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
-          const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
-            metrics: { ...originalSentry.metrics, count }
-          };
+        test.each([
+          [
+            'a Socrates JSON body',
+            JSON.stringify({
+              message: 'Prompt too long: 43531 characters (max 32000)',
+              status: 400
+            })
+          ],
+          ['an empty body', ''],
+          ['an HTML body', '<!DOCTYPE html><html><body>Blocked</body></html>']
+        ])(
+          'should send the generic client error on 400 with %s',
+          async (_label, upstreamBody) => {
+            const { Sentry } = fastifyTestInstance;
+            const count = vi.fn();
+            vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+              ...Sentry,
+              metrics: { ...Sentry.metrics, count }
+            });
 
-          mockedFetch.mockResolvedValueOnce({
-            ok: false,
-            status: 400,
-            text: () =>
-              Promise.resolve(
-                JSON.stringify({ error: 'Input too short for analysis.' })
-              )
-          });
+            mockedFetch.mockResolvedValueOnce({
+              ok: false,
+              status: 400,
+              text: () => Promise.resolve(upstreamBody)
+            });
 
-          const response =
-            await superPut('/socrates/get-hint').send(validPayload);
+            const response =
+              await superPut('/socrates/get-hint').send(validPayload);
 
-          fastifyTestInstance.Sentry = originalSentry;
-
-          expect(response.status).toBe(400);
-          expect(response.body).toStrictEqual({
-            error: 'Input too short for analysis.',
-            type: 'info',
-            attempts: 0,
-            limit: 3
-          });
-          expect(count).toHaveBeenCalledWith(
-            'socrates.upstream_call_failed',
-            1,
-            { attributes: { reason: 'bad_status' } }
-          );
-        });
-
-        test('should use fallback message on 400 with no upstream error', async () => {
-          mockedFetch.mockResolvedValueOnce({
-            ok: false,
-            status: 400,
-            text: () => Promise.resolve('')
-          });
-
-          const response =
-            await superPut('/socrates/get-hint').send(validPayload);
-
-          expect(response.status).toBe(400);
-          expect(response.body).toStrictEqual({
-            error: 'socrates-unable-to-generate',
-            type: 'info',
-            attempts: 0,
-            limit: 3
-          });
-        });
+            expect(response.status).toBe(400);
+            expect(response.body).toStrictEqual({
+              error: 'socrates-unable-to-generate',
+              type: 'info',
+              attempts: 0,
+              limit: 3
+            });
+            expect(count).toHaveBeenCalledWith(
+              'socrates.upstream_call_failed',
+              1,
+              { attributes: { reason: 'bad_status' } }
+            );
+          }
+        );
 
         test('should return 500 and capture on other Socrates API errors', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const captureException = vi.fn();
           const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
             captureException,
-            metrics: { ...originalSentry.metrics, count }
-          };
+            metrics: { ...Sentry.metrics, count }
+          });
 
           mockedFetch.mockResolvedValueOnce({
             ok: false,
@@ -274,8 +290,6 @@ describe('socratesRoutes', () => {
 
           const response =
             await superPut('/socrates/get-hint').send(validPayload);
-
-          fastifyTestInstance.Sentry = originalSentry;
 
           expect(response.status).toBe(500);
           expect(response.body).toStrictEqual({
@@ -297,14 +311,14 @@ describe('socratesRoutes', () => {
         });
 
         test('should return 500 and capture when Socrates API returns invalid JSON', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const captureException = vi.fn();
           const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
             captureException,
-            metrics: { ...originalSentry.metrics, count }
-          };
+            metrics: { ...Sentry.metrics, count }
+          });
 
           mockedFetch.mockResolvedValueOnce({
             ok: true,
@@ -314,8 +328,6 @@ describe('socratesRoutes', () => {
 
           const response =
             await superPut('/socrates/get-hint').send(validPayload);
-
-          fastifyTestInstance.Sentry = originalSentry;
 
           expect(response.status).toBe(500);
           expect(response.body.type).toBe('danger');
@@ -332,14 +344,14 @@ describe('socratesRoutes', () => {
         });
 
         test('should return 500 and capture when Socrates API returns no hint', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const captureException = vi.fn();
           const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
             captureException,
-            metrics: { ...originalSentry.metrics, count }
-          };
+            metrics: { ...Sentry.metrics, count }
+          });
 
           mockedFetch.mockResolvedValueOnce({
             ok: true,
@@ -349,8 +361,6 @@ describe('socratesRoutes', () => {
 
           const response =
             await superPut('/socrates/get-hint').send(validPayload);
-
-          fastifyTestInstance.Sentry = originalSentry;
 
           expect(response.status).toBe(500);
           expect(response.body.type).toBe('danger');
@@ -384,15 +394,15 @@ describe('socratesRoutes', () => {
         });
 
         test('should not capture a fetch network failure', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const captureException = vi.fn();
           const count = vi.fn();
           const distribution = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
             captureException,
-            metrics: { ...originalSentry.metrics, count, distribution }
-          };
+            metrics: { ...Sentry.metrics, count, distribution }
+          });
 
           const networkError = Object.assign(new TypeError('fetch failed'), {
             cause: Object.assign(new Error('connect ECONNREFUSED'), {
@@ -416,19 +426,17 @@ describe('socratesRoutes', () => {
             expect.any(Number),
             { unit: 'millisecond', attributes: { result: 'failure' } }
           );
-
-          fastifyTestInstance.Sentry = originalSentry;
         });
 
         test('should capture a genuine TypeError bug from the handler', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const captureException = vi.fn();
           const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
             captureException,
-            metrics: { ...originalSentry.metrics, count }
-          };
+            metrics: { ...Sentry.metrics, count }
+          });
 
           const bugError = new TypeError(
             "Cannot read properties of undefined (reading 'foo')"
@@ -445,8 +453,6 @@ describe('socratesRoutes', () => {
             1,
             { attributes: { reason: 'exception' } }
           );
-
-          fastifyTestInstance.Sentry = originalSentry;
         });
       });
 
@@ -496,12 +502,12 @@ describe('socratesRoutes', () => {
         });
 
         test('should return 429 when non-donor exceeds 3 hints/day', async () => {
-          const originalSentry = fastifyTestInstance.Sentry;
+          const { Sentry } = fastifyTestInstance;
           const count = vi.fn();
-          fastifyTestInstance.Sentry = {
-            ...originalSentry,
-            metrics: { ...originalSentry.metrics, count }
-          };
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            metrics: { ...Sentry.metrics, count }
+          });
 
           mockedFetch.mockResolvedValue({
             ok: true,
@@ -515,8 +521,6 @@ describe('socratesRoutes', () => {
 
           const response =
             await superPut('/socrates/get-hint').send(validPayload);
-
-          fastifyTestInstance.Sentry = originalSentry;
 
           expect(response.status).toBe(429);
           expect(response.body.attempts).toBe(3);
