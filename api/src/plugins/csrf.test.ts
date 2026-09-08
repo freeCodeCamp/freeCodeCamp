@@ -55,6 +55,7 @@ describe('CSRF protection', () => {
     expect(csrfTokenCookie).toBeDefined();
     const { value, ...rest } = csrfTokenCookie!;
 
+    // The value is a random string - it's enough to check that it's not empty
     expect(value).toHaveLength(52);
     expect(rest).toStrictEqual({
       name: CSRF_COOKIE,
@@ -71,6 +72,8 @@ describe('CSRF protection', () => {
       url: '/'
     });
 
+    // The response body is determined by the error-handling plugin, so we don't
+    // check it here.
     expect(response.statusCode).toEqual(403);
   });
 
