@@ -36,6 +36,7 @@ import type {
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { getNextUncompletedChallenge } from '../../utils/get-next-uncompleted-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
@@ -252,36 +253,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   };
 
   const hasNotstarted = completedChallenges.length === 0;
-  const nextChallengeSlug = useMemo(() => {
-    if (hasNotstarted) return superBlockChallenges[0]?.fields.slug || null;
-    const lastCompletedChallenge = completedChallenges.reduce<
-      (typeof completedChallenges)[number] | null
-    >((latest, challenge) => {
-      if (!challenge?.completedDate) return latest;
-      if (
-        !latest?.completedDate ||
-        challenge.completedDate > latest.completedDate
-      ) {
-        return challenge;
-      }
-      return latest;
-    }, null);
-
-    const completedChallengeIds = new Set(completedChallenges.map(c => c.id));
-    const lastCompletedIndex = superBlockChallenges.findIndex(
-      ({ id }) => id === lastCompletedChallenge?.id
-    );
-
-    // Continue forward before returning to any earlier gaps in the course.
-    const nextChallenge =
-      superBlockChallenges.find(
-        ({ id }, index) =>
-          index > lastCompletedIndex && !completedChallengeIds.has(id)
-      ) ??
-      superBlockChallenges.find(({ id }) => !completedChallengeIds.has(id));
-
-    return nextChallenge?.fields.slug || null;
-  }, [completedChallenges, superBlockChallenges, hasNotstarted]);
+  const nextUncompletedChallengeSlug = useMemo(
+    () =>
+      getNextUncompletedChallenge(superBlockChallenges, completedChallenges)
+        ?.fields.slug || null,
+    [completedChallenges, superBlockChallenges]
+  );
 
   return (
     <>
@@ -301,7 +278,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 }
                 isDonating={user?.isDonating ?? false}
                 hasNotstarted={hasNotstarted}
-                nextChallengeSlug={nextChallengeSlug}
+                nextUncompletedChallengeSlug={nextUncompletedChallengeSlug}
               />
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
