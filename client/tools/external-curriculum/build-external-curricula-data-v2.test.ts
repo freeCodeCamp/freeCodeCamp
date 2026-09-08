@@ -188,9 +188,13 @@ function buildFixtureCurriculum(): Curriculum<CurriculumProps> {
 
 describe('buildExtCurriculumDataV2', () => {
   let tmpDir: string;
+  let fixtureIntros: CurriculumIntros;
+  let fixtureCurriculum: Curriculum<CurriculumProps>;
 
   beforeAll(() => {
     tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ext-curriculum-test-'));
+    fixtureIntros = buildFixtureIntros();
+    fixtureCurriculum = buildFixtureCurriculum();
 
     vi.mocked(getSuperblockStructure).mockImplementation(key => {
       if (key === (CHAPTER_BASED_SB as string)) {
@@ -216,9 +220,9 @@ describe('buildExtCurriculumDataV2', () => {
       return { chapters: [] };
     });
 
-    buildExtCurriculumDataV2(buildFixtureCurriculum(), {
+    buildExtCurriculumDataV2(fixtureCurriculum, {
       dataPath: tmpDir,
-      intros: buildFixtureIntros()
+      intros: fixtureIntros
     });
   });
 
@@ -258,7 +262,7 @@ describe('buildExtCurriculumDataV2', () => {
       const { superBlock, level, hours, topic } = catalog[index];
       expect(course).toEqual({
         dashedName: superBlock,
-        title: superBlock,
+        title: fixtureIntros[superBlock].title,
         summary: [],
         level,
         hours,
