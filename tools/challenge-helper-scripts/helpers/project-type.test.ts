@@ -36,61 +36,65 @@ describe('project type helpers', () => {
     }
   );
 
-  it.each([
-    {
-      blockLabel: BlockLabel.workshop,
-      blockLayout: BlockLayouts.ChallengeGrid,
-      expectedTitle: 'Step 1',
-      expectedProperties: {
-        usesMultifileEditor: true,
-        hasEditableBoundaries: true
+  describe.each([true, false])('isChapterBased: %s', isChapterBased => {
+    it.each([
+      {
+        blockLabel: BlockLabel.workshop,
+        blockLayout: BlockLayouts.ChallengeGrid,
+        expectedTitle: 'Step 1',
+        expectedProperties: {
+          usesMultifileEditor: true,
+          hasEditableBoundaries: true
+        }
+      },
+      {
+        blockLabel: BlockLabel.lab,
+        blockLayout: BlockLayouts.Link,
+        expectedTitle: 'Project title',
+        expectedProperties: { usesMultifileEditor: true }
+      },
+      {
+        blockLabel: BlockLabel.review,
+        blockLayout: BlockLayouts.Link,
+        expectedTitle: 'Project title',
+        expectedProperties: {}
+      },
+      {
+        blockLabel: BlockLabel.quiz,
+        blockLayout: BlockLayouts.Link,
+        expectedTitle: 'Project title',
+        expectedProperties: {}
       }
-    },
-    {
-      blockLabel: BlockLabel.lab,
-      blockLayout: BlockLayouts.Link,
-      expectedTitle: 'Project title',
-      expectedProperties: { usesMultifileEditor: true }
-    },
-    {
-      blockLabel: BlockLabel.review,
-      blockLayout: BlockLayouts.Link,
-      expectedTitle: 'Project title',
-      expectedProperties: {}
-    },
-    {
-      blockLabel: BlockLabel.quiz,
-      blockLayout: BlockLayouts.Link,
-      expectedTitle: 'Project title',
-      expectedProperties: {}
-    }
-  ])(
-    'builds metadata for $blockLabel blocks',
-    ({ blockLabel, blockLayout, expectedTitle, expectedProperties }) => {
-      const meta = buildProjectMeta({
-        isChapterBased: true,
-        block: `${blockLabel}-project`,
-        title: 'Project title',
-        helpCategory: 'JavaScript',
-        challengeId: '507f1f77bcf86cd799439011',
-        blockLabel,
-        blockLayout
-      });
+    ])(
+      'builds metadata for $blockLabel blocks',
+      ({ blockLabel, blockLayout, expectedTitle, expectedProperties }) => {
+        const meta = buildProjectMeta({
+          isChapterBased,
+          order: 3,
+          block: `${blockLabel}-project`,
+          title: 'Project title',
+          helpCategory: 'JavaScript',
+          challengeId: '507f1f77bcf86cd799439011',
+          blockLabel,
+          blockLayout
+        });
 
-      expect(meta).toEqual({
-        isUpcomingChange: true,
-        dashedName: `${blockLabel}-project`,
-        helpCategory: 'JavaScript',
-        blockLabel,
-        blockLayout,
-        challengeOrder: [
-          { id: '507f1f77bcf86cd799439011', title: expectedTitle }
-        ],
-        ...expectedProperties
-      });
-      expect(meta).not.toHaveProperty('superBlock');
-    }
-  );
+        expect(meta).toEqual({
+          isUpcomingChange: true,
+          dashedName: `${blockLabel}-project`,
+          helpCategory: 'JavaScript',
+          blockLabel,
+          blockLayout,
+          challengeOrder: [
+            { id: '507f1f77bcf86cd799439011', title: expectedTitle }
+          ],
+          ...expectedProperties,
+          ...(!isChapterBased ? { order: 3 } : {})
+        });
+        expect(meta).not.toHaveProperty('superBlock');
+      }
+    );
+  });
 
   it('builds metadata for a flat superblock without chapter metadata', () => {
     expect(

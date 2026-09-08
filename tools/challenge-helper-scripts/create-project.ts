@@ -396,8 +396,6 @@ void getAllBlocks()
       }))
     });
 
-    let blockLabel: BlockLabel | undefined;
-    let blockLayout: BlockLayouts | undefined;
     let questionCount: number | undefined;
     let projectContentType: ProjectContentType | undefined;
     let chapter: string | undefined;
@@ -405,44 +403,44 @@ void getAllBlocks()
     let position: number | undefined;
     let order: number | undefined;
 
+    const blockLabel = await select<BlockLabel>({
+      message: 'Choose a block label',
+      default: BlockLabel.lab,
+      choices: Object.values(BlockLabel).map(value => ({
+        name: value,
+        value
+      }))
+    });
+
+    const blockLayout = await select<BlockLayouts>({
+      message: 'Choose a block layout',
+      default: getDefaultBlockLayout(blockLabel),
+      choices: Object.values(BlockLayouts).map(value => ({
+        name: value,
+        value
+      }))
+    });
+
+    if (blockLabel === BlockLabel.quiz) {
+      questionCount = await select<number>({
+        message: 'Choose a question count',
+        default: 20,
+        choices: [
+          { name: '10', value: 10 },
+          { name: '20', value: 20 }
+        ]
+      });
+    }
+
+    if (blockLabel === BlockLabel.lab || blockLabel === BlockLabel.workshop) {
+      projectContentType = await select<ProjectContentType>({
+        message: 'Choose a project content type',
+        default: 'html',
+        choices: projectContentTypeChoices
+      });
+    }
+
     if (chapterBasedSuperBlocks.includes(superBlock)) {
-      blockLabel = await select<BlockLabel>({
-        message: 'Choose a block label',
-        default: BlockLabel.lab,
-        choices: Object.values(BlockLabel).map(value => ({
-          name: value,
-          value
-        }))
-      });
-
-      blockLayout = await select<BlockLayouts>({
-        message: 'Choose a block layout',
-        default: getDefaultBlockLayout(blockLabel),
-        choices: Object.values(BlockLayouts).map(value => ({
-          name: value,
-          value
-        }))
-      });
-
-      if (blockLabel === BlockLabel.quiz) {
-        questionCount = await select<number>({
-          message: 'Choose a question count',
-          default: 20,
-          choices: [
-            { name: '10', value: 10 },
-            { name: '20', value: 20 }
-          ]
-        });
-      }
-
-      if (blockLabel === BlockLabel.lab || blockLabel === BlockLabel.workshop) {
-        projectContentType = await select<ProjectContentType>({
-          message: 'Choose a project content type',
-          default: 'html',
-          choices: projectContentTypeChoices
-        });
-      }
-
       const chapters = await getChapters(superBlock);
       chapter = await select({
         message: 'What chapter should this project go in?',

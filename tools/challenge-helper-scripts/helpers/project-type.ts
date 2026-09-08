@@ -81,16 +81,16 @@ export function buildProjectMeta({
     );
   }
 
-  const baseMeta =
-    isChapterBased && blockLabel
-      ? getBaseMeta(getProjectMetaType(blockLabel))
-      : getBaseMeta('Step');
+  const baseMeta = blockLabel
+    ? getBaseMeta(getProjectMetaType(blockLabel))
+    : getBaseMeta('Step');
 
   return {
     ...baseMeta,
     dashedName: block,
     helpCategory,
-    ...(isChapterBased ? { blockLabel, blockLayout } : { order }),
+    ...(blockLabel ? { blockLabel, blockLayout } : {}),
+    ...(!isChapterBased ? { order } : {}),
     challengeOrder: [
       {
         id: challengeId,
