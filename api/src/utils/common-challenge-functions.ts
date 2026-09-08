@@ -119,7 +119,12 @@ export async function updateUserChallengeData(
   fastify: FastifyInstance,
   user: Pick<
     user,
-    'id' | 'completedChallenges' | 'needsModeration' | 'savedChallenges'
+    | 'id'
+    | 'completedChallenges'
+    | 'needsModeration'
+    | 'savedChallenges'
+    | 'progressTimestamps'
+    | 'partiallyCompletedChallenges'
   >,
   challengeId: string,
   _completedChallenge: CompletedChallenge
@@ -151,7 +156,9 @@ export async function updateUserChallengeData(
   const {
     completedChallenges = [],
     needsModeration = false,
-    savedChallenges = []
+    savedChallenges = [],
+    progressTimestamps = [],
+    partiallyCompletedChallenges = []
   } = user;
 
   let savedChallengesUpdate: Prisma.userUpdateInput['savedChallenges'];
@@ -171,8 +178,21 @@ export async function updateUserChallengeData(
   // check and update some property of the user record such that the same update
   // can't be applied twice.
   const userCompletedChallenges = alreadyCompleted
-    ? { updateMany: { where: { id: challengeId }, data: finalChallenge } }
+    ? completedChallenges.map(x =>
+        x.id === challengeId
+          ? finalChallenge
+          : { ...x, completedDate: normalizeDate(x.completedDate) }
+      )
     : { push: finalChallenge };
+
+  // We can't use push, because progressTimestamps is a JSON blob and, until
+  // we convert it to an array, push is not available. Since this could result
+  // in the completedChallenges and progressTimestamps arrays being out of sync,
+  // we should prioritize normalizing the data structure.
+  const userProgressTimestamps =
+    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
+      ? [...progressTimestamps, newProgressTimeStamp]
+      : progressTimestamps;
 
   if (savableChallenges.has(challengeId)) {
     const challengeToSave: SavedChallenge = {
@@ -186,9 +206,14 @@ export async function updateUserChallengeData(
     const isSaved = savedChallenges.some(({ id }) => challengeId === id);
 
     savedChallengesUpdate = isSaved
-      ? { updateMany: { where: { id: challengeId }, data: challengeToSave } }
+      ? savedChallenges.map(x => (x.id === challengeId ? challengeToSave : x))
       : { push: challengeToSave };
   }
+
+  // remove from partiallyCompleted on submit
+  const userPartiallyCompletedChallenges = partiallyCompletedChallenges.filter(
+    challenge => challenge.id !== challengeId
+  );
 
   const { savedChallenges: userSavedChallenges } =
     await fastify.prisma.user.update({
@@ -199,14 +224,8 @@ export async function updateUserChallengeData(
         //       `undefined` in Prisma is a no-op
         needsModeration: needsModeration || undefined,
         savedChallenges: savedChallengesUpdate,
-        // Use atomic deleteMany instead of read-filter-write to avoid
-        // concurrent requests overwriting each other's removals.
-        partiallyCompletedChallenges: {
-          deleteMany: { where: { id: challengeId } }
-        },
-        progressTimestamps: alreadyCompleted
-          ? undefined
-          : { push: newProgressTimeStamp }
+        progressTimestamps: userProgressTimestamps,
+        partiallyCompletedChallenges: userPartiallyCompletedChallenges
       },
       select: {
         savedChallenges: true

@@ -19,12 +19,16 @@ This property can be set on the universal selector (`*`) to apply to all the ele
 
 The value of the `box-sizing` property is `content-box` by default, but you can choose `border-box` if you need to. We will explore `content-box` first and then we will go into `border-box`.
 
+## Reviewing the CSS Box Model
+
 To understand how the models work, you need to be familiar with the four core concepts from the CSS box model. Let's review them quickly.
 
 - The content area is the space occupied by the element's content.
 - The padding is the space between the content area and the border.
 - The border is the outline that surrounds the content area and the padding.
 - The margin is the space outside the border that separates the element from other elements.
+
+## How `content-box` Works
 
 In the `content-box` model, the width and height that you set for an element determine the dimensions of the content area, but they don't include the padding, border, or margin. Use `content-box` when you need precise control over the content area. When you set `width` and `height`, you're only setting the size of the content itself.
 
@@ -52,9 +56,13 @@ div {
 
 In this case, if `content-box` is used the content area will be 300px by 200px. The total rendered size includes padding and borders — for example, total width = 300px (content) + 40px (padding) + 8px (borders) = 348px; the total height is calculated in the same way.
 
+## How `border-box` Works
+
 Great! Now let's explore `border-box`. It's different because the width and height you set include the element's content, padding, and border (but not its margin). Use `border-box` when you want the element's total size to stay fixed even if padding or borders change — that's often helpful in responsive layouts.
 
 With `border-box`, padding and borders are included inside the element's specified size. The `width` and `height` you set become the element's total dimensions: content + padding + border; margins remain excluded.
+
+## Comparing the Two Models
 
 In the following example, there are two `div` elements with the same dimensions but different `box-sizing` values. Notice how this results in different total sizes when viewed in the browser:
 

@@ -7,11 +7,11 @@ dashedName: how-to-effectively-work-with-your-keyboard-mouse-and-other-pointing-
 
 # --description--
 
-Many of you have been used to working with your keyboard and mouse for years on end for a variety of activities like gaming, performing tasks for work, or surfing the web.
+Many of you have been working with your keyboard and mouse for years for a variety of activities like gaming, performing tasks for work, or surfing the web.
 
 But prolonged misuse of these devices can lead to serious health problems down the road.
 
-In this lesson, we will cover ways to work with your computer’s keyboard and mouse in healthy ways.
+In this lesson, we will cover ways to work with your computer's keyboard and mouse in healthy ways.
 
 The first tip is to be mindful of the mouse grip. When working on serious tasks for work or during intense gaming moments, you may tend to grip the mouse too hard. However, this can lead to serious hand and wrist issues. To prevent this, you want to make sure to hold the mouse gently and keep your fingers nice and relaxed.
 
@@ -25,7 +25,7 @@ You also want to be mindful of your overall posture when sitting at the computer
 
 While maintaining good posture is important, modern ergonomics emphasizes the importance of movement and dynamic sitting. The human body is designed for movement, and staying in any fixed position, even a straight one, for too long can place continuous pressure on the spine. Taking regular breaks, adjusting your position throughout the day, and maintaining a natural wrist position can help improve circulation, reduce fatigue, and support long-term spinal health.
 
-The last tip would be to use keyboard shortcuts whenever possible to help minimize typing. There are dozens of shortcuts available for tasks such as navigating the web, navigating around your operating system, working within a code editor, and more. So, it’s best to research some of these keyboard shortcuts and start incorporating them into your daily computer usage.
+The last tip is to use keyboard shortcuts whenever possible to cut down on reaching for the mouse. There are dozens of shortcuts available for tasks such as navigating the web, navigating around your operating system, working within a code editor, and more. So, it's best to research some of these keyboard shortcuts and start incorporating them into your daily computer usage.
 
 As you continue using your mouse and keyboard for upcoming coding projects and other activities, remember to keep these health tips in mind.
 
@@ -109,7 +109,7 @@ What is the recommendation for the height of your mouse in relation to your keyb
 
 ## --answers--
 
-The mouse should be far above the keyboard.
+The height of the mouse does not matter.
 
 ### --feedback--
 

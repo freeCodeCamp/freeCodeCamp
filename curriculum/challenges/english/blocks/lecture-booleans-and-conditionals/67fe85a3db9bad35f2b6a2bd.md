@@ -49,7 +49,7 @@ if condition:
     
 * `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
 
-* The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. In Python, the level of indentation is what defines a code block.
+* The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. Spaces at the beginning of a line are called indentation. In Python, indentation determines which statements belong to a code block.
     
 In the example above, the body of the `if` statement contains a `pass` statement. When a `pass` statement is executed, nothing happens. This is a special keyword that can be used as a placeholder for future code and it is useful when empty code blocks are not allowed.
 
@@ -62,7 +62,7 @@ if age >= 18:
     print('You are an adult') # You are an adult
 ```
 
-Notice the indentation before `print('You are an adult')`. While other programming languages use characters like curly braces to define code blocks, and just use indentation for readability, in Python, code blocks are determined by indentation.
+The four spaces before `print('You are an adult')` indent that line and place it inside the `if` block.
 
 The following code would raise an `IndentationError`, which is Python's way to signal that indentation is required at a certain point of the code:
 
@@ -220,7 +220,7 @@ else:
 
 ## --answers--
 
-`You are an adult` will be printed to the console.
+`You are an adult` will be printed to the terminal.
 
 ### --feedback--
 
@@ -228,7 +228,7 @@ Review the last part of the lesson for the correct answer.
 
 ---
 
-`You are a teenager` will be printed to the console.
+`You are a teenager` will be printed to the terminal.
 
 ### --feedback--
 
@@ -236,11 +236,11 @@ Review the last part of the lesson for the correct answer.
 
 ---
 
-`You are a child` will be printed to the console.
+`You are a child` will be printed to the terminal.
 
 ---
 
-An error will be printed to the console.
+An error will be printed to the terminal.
 
 ### --feedback--
 

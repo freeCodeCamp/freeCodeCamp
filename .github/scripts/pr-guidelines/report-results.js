@@ -33,32 +33,11 @@ const MESSAGES = {
     'Please edit your PR description to include the following template with the checklist items completed.',
     '',
     TEMPLATE_BLOCK
-  ].join('\n'),
-
-  no_linked_issue: [
-    '**Linked Issue:** We kindly ask that contributors open an issue before submitting a PR so the change can be discussed and approved before work begins. This helps avoid situations where significant effort goes into something we ultimately cannot merge.',
-    '',
-    'Please open an issue first and allow it to be triaged. Once the issue is open for contribution, you are welcome to update this pull request to reflect the issue consensus. Until then, we will not be able to review your pull request.'
-  ].join('\n'),
-
-  waiting_triage: [
-    '**Linked Issue:** The linked issue has not been triaged yet, and a solution has not been agreed upon. Once the issue is open for contribution, you are welcome to update this pull request to reflect the issue consensus. Until then, we will not be able to review your pull request.'
-  ].join('\n'),
-
-  not_open_for_contribution:
-    '**Linked Issue:** The linked issue is not open for contribution. If you are looking for issues to contribute to, please check out issues labeled [`help wanted`](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) or [`first timers only`](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aissue+is%3Aopen+label%3A%22first+timers+only%22).'
+  ].join('\n')
 };
 
-module.exports = async ({
-  github,
-  context,
-  templateResult,
-  templateReason,
-  linkedIssueResult,
-  linkedIssueReason
-}) => {
-  const allPassed =
-    templateResult === 'success' && linkedIssueResult === 'success';
+module.exports = async ({ github, context, templateResult, templateReason }) => {
+  const allPassed = templateResult === 'success';
 
   if (allPassed) {
     try {
@@ -80,9 +59,6 @@ module.exports = async ({
   const sections = [];
   if (templateResult === 'failure' && MESSAGES[templateReason]) {
     sections.push(MESSAGES[templateReason]);
-  }
-  if (linkedIssueResult === 'failure' && MESSAGES[linkedIssueReason]) {
-    sections.push(MESSAGES[linkedIssueReason]);
   }
 
   if (sections.length === 0) return;

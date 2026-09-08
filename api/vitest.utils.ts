@@ -186,6 +186,12 @@ export function setupServer(): void {
     }
     fastify = await build(buildOptions);
     await fastify.ready();
+    // Supertest does not handle multiple concurrent requests gracefully
+    // https://github.com/forwardemail/supertest/issues/709
+    // it calls `server.close` and can end up killing live connections.
+    // By listening to 0, we keep the ephemeral port generation, but the fact
+    // it is listening means supertest will not attempt to close it.
+    fastify.server.listen(0);
 
     await checkCanConnectToDb(fastify.prisma);
 

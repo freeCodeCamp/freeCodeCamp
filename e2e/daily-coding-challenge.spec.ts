@@ -1,8 +1,12 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
 import {
   getTodayUsCentral,
   formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
+import translations from '../client/i18n/locales/english/translations.json';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/day\/.*/;
 
@@ -45,6 +49,11 @@ const mockApiChallenge = {
     ]
   }
 };
+
+const dailyChallengeRoute = '/learn/daily-coding-challenge/08-11';
+
+const solution =
+  "function isBalanced(s) { const h = s.length >> 1, v = x => [...x].filter(c => 'aeiou'.includes(c.toLowerCase())).length; return v(s.slice(0, h)) === v(s.slice(s.length - h)); }";
 
 // Temporarily disabled
 // const runChallengeTest = async (page: Page, isMobile: boolean) => {
@@ -133,6 +142,60 @@ test.describe('Daily Coding Challenges', () => {
     await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
 
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
+  });
+});
+
+test.describe('Daily Coding Challenge completion persistence', () => {
+  test.use({ storageState: 'playwright/.auth/development-user.json' });
+
+  test.beforeAll(() => {
+    execSync('node ../tools/scripts/seed/seed-daily-coding-challenge');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
+  });
+
+  test.afterAll(() => {
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
+  test('persists a completed daily coding challenge in the archive', async ({
+    page,
+    browserName,
+    isMobile
+  }) => {
+    await page.goto(dailyChallengeRoute);
+    await expect(
+      page.getByRole('heading', { name: /vowel balance/i })
+    ).toBeVisible();
+
+    await focusEditor({ page, isMobile });
+    await expect(async () => {
+      await clearEditor({ page, browserName, isMobile });
+      await getEditors(page).fill(solution);
+      await expect(page.getByTestId('editor-container-scriptjs')).toContainText(
+        solution
+      );
+    }).toPass();
+
+    await page
+      .getByRole('button', { name: translations.buttons['check-code'] })
+      .click();
+
+    await expect(
+      page.getByText(translations.learn['congratulations-code-passes']).first()
+    ).toBeVisible();
+
+    await page
+      .getByRole('button', { name: translations.buttons['submit-continue'] })
+      .click();
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
+
+    await page.reload();
+    await page.getByRole('button', { name: 'Previous month' }).click();
+
+    const completedDay = page.getByRole('link', { name: 'August 11' });
+    await expect(
+      completedDay.getByTestId('calendar-day-completed')
+    ).toBeVisible();
   });
 });
 

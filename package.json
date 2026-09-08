@@ -100,19 +100,5 @@
     "webpack-bundle-analyzer": "4.10.2",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.33.3",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@prisma/client",
-      "@prisma/engines",
-      "esbuild",
-      "gatsby",
-      "lmdb",
-      "msgpackr-extract",
-      "msw",
-      "prisma",
-      "puppeteer",
-      "unrs-resolver"
-    ]
-  }
+  "packageManager": "pnpm@10.33.3"
 }

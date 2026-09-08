@@ -1,41 +1,33 @@
+name: freecodecamp-devcontainer
+
 services:
   devcontainer:
     image: ghcr.io/freecodecamp/devcontainer:latest
-    depends_on:
-      - db
-      - setup
+    # gatsby develop defaults to host `localhost`. Where the network namespace
+    # has IPv6, glibc RFC 6724 precedence resolves that to ::1 first, so the
+    # dev server binds IPv6 loopback only and port forwarding, which connects
+    # over IPv4, is refused. 0.0.0.0 needs no AF_INET6 socket, so it also holds
+    # where IPv6 is switched off.
+    environment:
+      GATSBY_HOST: 0.0.0.0
     volumes:
       - ..:/workspaces/freeCodeCamp:cached
+    # Shares the db network namespace so MONGOHQ_URL and MAILPIT_HOST in
+    # sample.env resolve on localhost. A service in that namespace cannot
+    # publish a port, which is why the host ports live in a separate overlay.
     network_mode: service:db
     command: sleep infinity
-
-  db:
-    image: mongo:8.2
-    command: mongod --replSet rs0
-    restart: unless-stopped
-    hostname: mongodb
-    volumes:
-      - db-data:/data/db
-    healthcheck:
-      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
-      interval: 2s
-      retries: 5
-      start_period: 10s
-
-  setup:
-    image: mongo:8.2
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure:5
-    command: >
-      mongosh --host mongodb:27017 --eval '
-        rs.initiate({
-          _id: "rs0",
-          members: [{ _id: 0, host: "mongodb:27017" }]
-        }).ok || rs.status().ok
-      '
+      setup:
+        condition: service_completed_successfully
+      mailpit:
+        condition: service_started
 
-volumes:
-  db-data:
-    driver: local
+  mailpit:
+    # Same namespace, for MAILPIT_HOST=localhost.
+    network_mode: service:db
+    depends_on:
+      db:
+        condition: service_healthy

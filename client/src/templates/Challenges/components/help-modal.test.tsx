@@ -143,6 +143,42 @@ describe('<HelpModal />', () => {
     ).toBeInTheDocument();
   });
 
+  it('renders a guide link and video button when video is available', async () => {
+    const { helpModalProps } = renderHelpModal({
+      guideUrl: 'https://forum.example.com/guide',
+      videoUrl: 'https://example.com/video'
+    });
+
+    const dialog = screen.getByRole('dialog', {
+      name: translations.buttons['get-help']
+    });
+
+    expect(
+      within(dialog).getByRole('link', {
+        name: translations.buttons['get-hint']
+      })
+    ).toHaveAttribute('href', 'https://forum.example.com/guide');
+
+    await userEvent.click(
+      within(dialog).getByRole('button', {
+        name: translations.buttons['watch-video']
+      })
+    );
+
+    expect(helpModalProps.openVideoModal).toHaveBeenCalledTimes(1);
+    expect(helpModalProps.closeHelpModal).toHaveBeenCalledTimes(1);
+  });
+
+  it('omits the video button when video is unavailable', () => {
+    renderHelpModal();
+
+    expect(
+      screen.queryByRole('button', {
+        name: translations.buttons['watch-video']
+      })
+    ).not.toBeInTheDocument();
+  });
+
   it('closes from the cancel and header close buttons', async () => {
     const { helpModalProps, unmount } = renderHelpModal();
 

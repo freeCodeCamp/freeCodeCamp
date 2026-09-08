@@ -21,6 +21,19 @@ minimumReleaseAge: 10080
 minimumReleaseAgeExclude:
   - '@freecodecamp/curriculum-helpers'
 
+# Dependencies allowed to run their build scripts.
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  esbuild: true
+  gatsby: true
+  lmdb: true
+  msgpackr-extract: true
+  msw: true
+  prisma: true
+  puppeteer: true
+  unrs-resolver: true
+
 overrides:
   # Pin transitive deps to mature releases so Renovate can refresh lockfiles.
   caniuse-lite: 1.0.30001791

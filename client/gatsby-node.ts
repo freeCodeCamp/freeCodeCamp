@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-require-imports, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
 
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
-const webpack = require('webpack');
 
 const env = require('./config/env.json');
 const { createSuperBlockIntroPages } = require('./utils/gatsby');
@@ -62,13 +61,13 @@ exports.createPages = async function createPages({
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions }: any) => {
+exports.onCreateWebpackConfig = ({ stage, actions, plugins }: any) => {
   const newPlugins = [
     // We add the shims of the node globals to the global scope
-    new webpack.ProvidePlugin({
+    plugins.provide({
       Buffer: ['buffer', 'Buffer']
     }),
-    new webpack.ProvidePlugin({
+    plugins.provide({
       process: 'process/browser'
     })
   ];

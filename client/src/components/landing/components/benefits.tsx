@@ -37,10 +37,7 @@ const Benefits = (): JSX.Element => {
             {benefitItems.map((benefit, index) => {
               const IconComponent = iconsList[index % iconsList.length]; // Get the correct icon component based on index
               return (
-                <div
-                  key={index}
-                  data-playwright-test-label='landing-page-description'
-                >
+                <div key={index} data-testid='landing-page-description'>
                   <IconComponent /> {/* Dynamically render the icon */}
                   <Spacer size='xs' />
                   <h3>{benefit.title}</h3>

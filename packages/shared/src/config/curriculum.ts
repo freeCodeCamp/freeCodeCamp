@@ -315,8 +315,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.German]: [],
   [Languages.Swahili]: [],
   [Languages.Korean]: [],
-  // Arabic is new, so nothing is audited yet
-  [Languages.Arabic]: generateSuperBlockList({ showUpcomingChanges: true })
+  [Languages.Arabic]: []
 };
 
 Object.freeze(notAuditedSuperBlocks);

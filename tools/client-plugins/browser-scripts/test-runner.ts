@@ -1,3 +1,5 @@
+import curriculumHelpers from '@freecodecamp/curriculum-helpers/package.json';
+
 export type { FCCTestRunner } from '@freecodecamp/curriculum-helpers/test-runner.js';
 
-export { version } from '@freecodecamp/curriculum-helpers/package.json';
+export const version = curriculumHelpers.version;

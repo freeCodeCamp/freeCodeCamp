@@ -57,11 +57,12 @@ export const currentCertifications = [
   Certification.A2English,
   Certification.B1English,
   Certification.FoundationalCSharp,
+  Certification.RespWebDesignV9,
   Certification.JsV9,
+  Certification.FrontEndDevLibsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,
-  Certification.RespWebDesignV9,
-  Certification.FrontEndDevLibsV9
+  Certification.BackEndDevApisV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -95,8 +96,6 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
-  Certification.FrontEndDevLibsV9,
-  Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
   Certification.A2Spanish,
   Certification.A2Chinese,
@@ -238,9 +237,9 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
   [Certification.JsV9]: 'isJavascriptCertV9',
   [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
+  [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
 
   // upcoming
-  [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
   [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
   [Certification.B1English]: 'isB1EnglishCert',
   [Certification.A2Spanish]: 'isA2SpanishCert',

@@ -26,6 +26,7 @@ import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
 import ChallengeTranscript from '../components/challenge-transcript';
 import PrismFormatted from '../components/prism-formatted';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -277,23 +278,36 @@ const ShowFillInTheBlank = ({
             </ChallengeTitle>
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <PrismFormatted text={description} />
+              <PrismFormatted
+                text={description}
+                {...getChallengeContentLangProps(superBlock)}
+              />
               <Spacer size='m' />
             </Col>
 
-            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
+            {scene && (
+              <Scene
+                scene={scene}
+                sceneSubject={sceneSubject}
+                superBlock={superBlock}
+              />
+            )}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               {transcript && (
                 <ChallengeTranscript
                   transcript={transcript}
                   isDialogue={true}
+                  superBlock={superBlock}
                 />
               )}
 
               {instructions && (
                 <>
-                  <PrismFormatted text={instructions} />
+                  <PrismFormatted
+                    text={instructions}
+                    {...getChallengeContentLangProps(superBlock)}
+                  />
                   <Spacer size='xs' />
                 </>
               )}
@@ -309,11 +323,15 @@ const ShowFillInTheBlank = ({
                   feedback={feedback}
                   showWrong={showWrong}
                   handleInputChange={handleInputChange}
+                  superBlock={superBlock}
                 />
               </ObserveKeys>
 
               {explanation ? (
-                <ChallegeExplanation explanation={explanation} />
+                <ChallegeExplanation
+                  explanation={explanation}
+                  superBlock={superBlock}
+                />
               ) : (
                 <Spacer size='m' />
               )}

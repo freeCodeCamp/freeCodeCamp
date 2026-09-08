@@ -210,11 +210,6 @@ export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
 export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
-export const FCC_ENABLE_SHADOW_CAPTURE = parseWith<boolean | undefined>(
-  'FCC_ENABLE_SHADOW_CAPTURE',
-  undefined,
-  parseBool
-);
 export const FCC_ENABLE_SENTRY_ROUTES = parseWith<boolean | undefined>(
   'FCC_ENABLE_SENTRY_ROUTES',
   undefined,
