@@ -147,7 +147,10 @@ type TestSetup = {
   };
 };
 
-const createSetup = (superBlock: SuperBlocks): TestSetup => {
+const createSetup = (
+  superBlock: SuperBlocks,
+  challengeCount = 3
+): TestSetup => {
   const makeChallengeNode = (order: number): ChallengeNode => ({
     challenge: {
       id: `${superBlock}-challenge-${order}`,
@@ -168,7 +171,9 @@ const createSetup = (superBlock: SuperBlocks): TestSetup => {
     }
   });
 
-  const challengeNodes = [1, 2, 3].map(makeChallengeNode);
+  const challengeNodes = Array.from({ length: challengeCount }, (_, index) =>
+    makeChallengeNode(index + 1)
+  );
   const challengeByOrder = new Map(
     challengeNodes.map(node => [node.challenge.order, node.challenge])
   );
@@ -447,6 +452,166 @@ describe('SuperBlockIntroductionPage', () => {
       throw new Error(`Missing challenge for order ${expected.nextOrder}`);
     }
     expect(cta).toHaveAttribute('href', nextChallenge.fields.slug);
+  });
+
+  describe('Continue Learning destination', () => {
+    const superBlock = SuperBlocks.RespWebDesign;
+    const createProgressProps = (
+      setup: TestSetup,
+      completions: [order: number, completedDate: number][]
+    ) =>
+      createPageProps(setup, superBlock, {
+        user: {
+          completedChallenges: completions.map(([order, completedDate]) => ({
+            id: setup.challengeByOrder.get(order)!.id,
+            completedDate
+          })),
+          isDonating: false
+        }
+      });
+
+    it.each<{
+      description: string;
+      completions: [number, number][];
+      nextOrder: number;
+    }>([
+      {
+        description: 'skips a successor completed before the latest challenge',
+        completions: [
+          [1, 200],
+          [2, 100]
+        ],
+        nextOrder: 3
+      },
+      {
+        description:
+          'skips completed successors before returning to earlier gaps',
+        completions: [
+          [2, 200],
+          [3, 100]
+        ],
+        nextOrder: 4
+      },
+      {
+        description: 'skips completed successors with tied timestamps',
+        completions: [
+          [1, 100],
+          [2, 100]
+        ],
+        nextOrder: 3
+      },
+      {
+        description: 'handles tied timestamps in reverse completion order',
+        completions: [
+          [2, 100],
+          [1, 100]
+        ],
+        nextOrder: 3
+      },
+      {
+        description:
+          'returns to the first gap when the last challenge is complete',
+        completions: [
+          [2, 100],
+          [3, 200],
+          [4, 300]
+        ],
+        nextOrder: 1
+      },
+      {
+        description:
+          'returns to the first gap when every successor is complete',
+        completions: [
+          [2, 300],
+          [3, 200],
+          [4, 100]
+        ],
+        nextOrder: 1
+      },
+      {
+        description:
+          'finds an incomplete challenge without usable completion dates',
+        completions: [
+          [1, 0],
+          [2, 0]
+        ],
+        nextOrder: 3
+      }
+    ])('$description', async ({ completions, nextOrder }) => {
+      const setup = createSetup(superBlock, 4);
+      setup.challengeNodes[3].challenge.block = 'block-two';
+      setup.challengeNodes[3].challenge.module = 'module-two';
+      setup.structureNode.chapters[0].modules.push({
+        dashedName: 'module-two',
+        comingSoon: false,
+        moduleType: 'core',
+        blocks: ['block-two']
+      });
+
+      render(
+        <SuperBlockIntroductionPage
+          {...createProgressProps(setup, completions)}
+        />
+      );
+
+      expect(
+        await screen.findByRole('link', { name: 'Continue Learning' })
+      ).toHaveAttribute(
+        'href',
+        setup.challengeByOrder.get(nextOrder)!.fields.slug
+      );
+    });
+
+    it('hides the button when all challenges are complete out of order', () => {
+      const setup = createSetup(superBlock);
+
+      render(
+        <SuperBlockIntroductionPage
+          {...createProgressProps(setup, [
+            [1, 300],
+            [2, 200],
+            [3, 100]
+          ])}
+        />
+      );
+
+      expect(
+        screen.queryByRole('link', { name: 'Continue Learning' })
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole('link', { name: 'Start Learning' })
+      ).not.toBeInTheDocument();
+    });
+
+    it('keeps the next incomplete destination when a refetch restores the original completion date', async () => {
+      const setup = createSetup(superBlock);
+      const { rerender } = render(
+        <SuperBlockIntroductionPage
+          {...createProgressProps(setup, [
+            [1, 200],
+            [2, 300]
+          ])}
+        />
+      );
+      const expectedSlug = setup.challengeByOrder.get(3)!.fields.slug;
+
+      expect(
+        await screen.findByRole('link', { name: 'Continue Learning' })
+      ).toHaveAttribute('href', expectedSlug);
+
+      rerender(
+        <SuperBlockIntroductionPage
+          {...createProgressProps(setup, [
+            [1, 200],
+            [2, 100]
+          ])}
+        />
+      );
+
+      expect(
+        await screen.findByRole('link', { name: 'Continue Learning' })
+      ).toHaveAttribute('href', expectedSlug);
+    });
   });
 
   describe('note and donation callout', () => {

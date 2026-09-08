@@ -267,16 +267,20 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       return latest;
     }, null);
 
-    const nextChallenge = () => {
-      if (!lastCompletedChallenge?.id) return null;
-      const lastCompletedIndex = superBlockChallenges.findIndex(
-        ({ id }) => id === lastCompletedChallenge?.id
-      );
-      if (lastCompletedIndex === -1) return null;
-      return superBlockChallenges[lastCompletedIndex + 1] ?? null;
-    };
+    const completedChallengeIds = new Set(completedChallenges.map(c => c.id));
+    const lastCompletedIndex = superBlockChallenges.findIndex(
+      ({ id }) => id === lastCompletedChallenge?.id
+    );
 
-    return nextChallenge()?.fields.slug || null;
+    // Continue forward before returning to any earlier gaps in the course.
+    const nextChallenge =
+      superBlockChallenges.find(
+        ({ id }, index) =>
+          index > lastCompletedIndex && !completedChallengeIds.has(id)
+      ) ??
+      superBlockChallenges.find(({ id }) => !completedChallengeIds.has(id));
+
+    return nextChallenge?.fields.slug || null;
   }, [completedChallenges, superBlockChallenges, hasNotstarted]);
 
   return (
