@@ -113,6 +113,7 @@ function SelectionTabs({
                 value={value.toString()}
               >
                 <p>{donationDescription}</p>
+                <p>{t('donate.repeats-monthly')}</p>
               </TabsContent>
             );
           })}
