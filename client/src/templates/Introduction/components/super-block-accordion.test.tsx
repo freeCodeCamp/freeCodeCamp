@@ -691,12 +691,11 @@ describe('SuperBlockAccordion', () => {
     // The collapsed chapter's module is not rendered; the expanded chapter
     // reveals its module, which is expanded as well
     expect(
-      screen.queryByRole('button', { name: 'mod-one' })
+      screen.queryByRole('button', { name: 'mod-one learn.steps-completed' })
     ).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'mod-two' })).toHaveAttribute(
-      'aria-expanded',
-      'true'
-    );
+    expect(
+      screen.getByRole('button', { name: 'mod-two learn.steps-completed' })
+    ).toHaveAttribute('aria-expanded', 'true');
   });
 
   it('links directly to the full-stack exam when the exam challenge is available', () => {
