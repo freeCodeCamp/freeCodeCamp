@@ -16,6 +16,7 @@ interface SolutionFormProps extends WithTranslation {
   challengeType: number;
   description?: string;
   onSubmit: (arg0: SubmitProps) => void;
+  onUnsavedChanges?: (hasUnsavedChanges: boolean) => void;
   updateSolutionForm: (arg0: Record<string, unknown>) => void;
 }
 
@@ -43,7 +44,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
   };
 
   render(): JSX.Element {
-    const { challengeType, description, t } = this.props;
+    const { challengeType, description, onUnsavedChanges, t } = this.props;
 
     // back end challenges and frontend projects use a single form field
     const solutionField = [
@@ -122,6 +123,7 @@ export class SolutionForm extends Component<SolutionFormProps> {
         buttonText={`${buttonCopy}`}
         formFields={formFields}
         id={solutionFormID}
+        onUnsavedChanges={onUnsavedChanges}
         options={{
           ...options,
           placeholders: {

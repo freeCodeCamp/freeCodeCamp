@@ -99,6 +99,54 @@ describe('<StrictSolutionForm />', () => {
     );
   });
 
+  test('reports unsaved changes until the form is submitted', () => {
+    const onUnsavedChanges = vi.fn();
+
+    render(
+      <StrictSolutionForm
+        {...defaultTestProps}
+        onUnsavedChanges={onUnsavedChanges}
+      />
+    );
+
+    expect(onUnsavedChanges).toHaveBeenLastCalledWith(false);
+
+    const websiteInput = screen.getByLabelText(/WebSite label/);
+    fireEvent.change(websiteInput, { target: { value: 'http://mysite.com' } });
+
+    expect(onUnsavedChanges).toHaveBeenLastCalledWith(true);
+
+    fireEvent.click(screen.getByText(/submit/i));
+
+    expect(onUnsavedChanges).toHaveBeenLastCalledWith(false);
+
+    fireEvent.change(websiteInput, {
+      target: { value: 'http://mysite.com/other' }
+    });
+
+    expect(onUnsavedChanges).toHaveBeenLastCalledWith(true);
+  });
+
+  test('keeps reporting unsaved changes when the values cannot be saved', () => {
+    const onUnsavedChanges = vi.fn();
+
+    render(
+      <StrictSolutionForm
+        {...defaultTestProps}
+        onUnsavedChanges={onUnsavedChanges}
+      />
+    );
+
+    // A half typed url throws while being normalized, so it never reaches the
+    // store and has to stay flagged as unsaved.
+    fireEvent.change(screen.getByLabelText(/WebSite label/), {
+      target: { value: 'http://' }
+    });
+    fireEvent.click(screen.getByText(/submit/i));
+
+    expect(onUnsavedChanges).toHaveBeenLastCalledWith(true);
+  });
+
   test('renders only the solution link when the source code link is ignored', () => {
     render(
       <StrictSolutionForm
