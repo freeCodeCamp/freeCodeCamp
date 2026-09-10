@@ -27,7 +27,12 @@ export const usePageLeave = ({
     const handlePopState = () => {
       // The argument should be an empty string, so that onHistoryChange knows
       // to use the default navigation target
-      onHistoryChange('');
+      const blocked = onHistoryChange('');
+      // Going back consumes the dummy state, so put it back while we are still
+      // blocking. Without this only the first back press is guarded.
+      if (blocked) {
+        window.history.pushState({}, curLocation.pathname);
+      }
     };
 
     window.addEventListener('popstate', handlePopState);

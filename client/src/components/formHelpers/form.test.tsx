@@ -139,12 +139,18 @@ describe('<StrictSolutionForm />', () => {
 
     // A half typed url throws while being normalized, so it never reaches the
     // store and has to stay flagged as unsaved.
-    fireEvent.change(screen.getByLabelText(/WebSite label/), {
-      target: { value: 'http://' }
-    });
+    const websiteInput = screen.getByLabelText(/WebSite label/);
+    fireEvent.change(websiteInput, { target: { value: 'http://' } });
     fireEvent.click(screen.getByText(/submit/i));
 
     expect(onUnsavedChanges).toHaveBeenLastCalledWith(true);
+
+    // The failed submit must not lock the button, otherwise there is no way to
+    // correct the url.
+    expect(screen.getByText(/submit/i)).toBeEnabled();
+
+    fireEvent.change(websiteInput, { target: { value: 'http://mysite.com' } });
+    expect(screen.getByText(/submit/i)).toBeEnabled();
   });
 
   test('renders only the solution link when the source code link is ignored', () => {

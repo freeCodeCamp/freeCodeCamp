@@ -1,6 +1,5 @@
 import { navigate } from 'gatsby';
 import { useCallback, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import { usePageLeave } from '../hooks';
 
@@ -15,19 +14,16 @@ export const useUnsavedSolutionWarning = ({
   openExitProjectModal,
   closeExitProjectModal
 }: Props) => {
-  const { t } = useTranslation();
-
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
   const [exitPathname, setExitPathname] = useState('');
   const exitConfirmed = useRef(false);
 
-  const onWindowClose = useCallback(
-    (event: BeforeUnloadEvent) => {
-      event.preventDefault();
-      window.confirm(t('misc.navigation-warning'));
-    },
-    [t]
-  );
+  const onWindowClose = useCallback((event: BeforeUnloadEvent) => {
+    // Browsers show their own copy here and ignore ours, they only need the
+    // default to be prevented to know the page should not be left silently.
+    event.preventDefault();
+    event.returnValue = '';
+  }, []);
 
   const onHistoryChange = useCallback(
     (targetPathname: string): boolean => {
@@ -35,11 +31,9 @@ export const useUnsavedSolutionWarning = ({
         return false;
       }
 
-      // For link clicks, save the target pathname. For the back button the
-      // pathname is empty, so fall back to the learn map.
-      if (targetPathname) {
-        setExitPathname(targetPathname);
-      }
+      // Link clicks come with a target, the back button does not. Always store
+      // it so a target left over from an earlier click is not reused.
+      setExitPathname(targetPathname);
 
       openExitProjectModal();
       return true;
