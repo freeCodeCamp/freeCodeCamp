@@ -1,7 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer, Dropdown, MenuItem, Alert } from '@freecodecamp/ui';
-import { catalog } from '@freecodecamp/shared/config/catalog';
+import {
+  catalog,
+  CourseType
+} from '@freecodecamp/shared/config/catalog';
 import CatalogItem from '../components/catalog-item';
 
 import './catalog.css';
@@ -11,8 +14,11 @@ const CatalogPage = () => {
 
   const [selectedLevels, setSelectedLevels] = useState<string[]>(['all']);
   const [selectedTopics, setSelectedTopics] = useState<string[]>(['all']);
+  const [selectedCourseTypes, setSelectedCourseTypes] = useState<string[]>([
+    'all'
+  ]);
 
-  // Extract unique levels and topics from catalog
+  // Extract unique levels, topics, and course types from catalog
   const uniqueLevels = useMemo(() => {
     const levels = [...new Set(catalog.map(item => item.level))];
     return levels.sort();
@@ -21,6 +27,13 @@ const CatalogPage = () => {
   const uniqueTopics = useMemo(() => {
     const topics = [...new Set(catalog.map(item => item.topic))];
     return topics.sort();
+  }, []);
+
+  const uniqueCourseTypes = useMemo(() => {
+    const sourceValues = [
+      ...new Set(catalog.map(item => item.source ?? CourseType.Catalog))
+    ];
+    return sourceValues.sort();
   }, []);
 
   // Handle level filter change
@@ -57,15 +70,34 @@ const CatalogPage = () => {
     }
   };
 
+  const handleCourseTypeChange = (courseType: string) => {
+    if (courseType === 'all') {
+      setSelectedCourseTypes(['all']);
+    } else {
+      setSelectedCourseTypes(prev => {
+        const filtered = prev.filter(t => t !== 'all');
+        if (filtered.includes(courseType)) {
+          const updated = filtered.filter(t => t !== courseType);
+          return updated.length === 0 ? ['all'] : updated;
+        } else {
+          return [...filtered, courseType];
+        }
+      });
+    }
+  };
+
   const filteredCatalog = useMemo(() => {
     return catalog.filter(course => {
+      const courseTypeMatch =
+        selectedCourseTypes.includes('all') ||
+        selectedCourseTypes.includes(course.source ?? CourseType.Catalog);
       const levelMatch =
         selectedLevels.includes('all') || selectedLevels.includes(course.level);
       const topicMatch =
         selectedTopics.includes('all') || selectedTopics.includes(course.topic);
-      return levelMatch && topicMatch;
+      return courseTypeMatch && levelMatch && topicMatch;
     });
-  }, [selectedLevels, selectedTopics]);
+  }, [selectedCourseTypes, selectedLevels, selectedTopics]);
 
   return (
     <main>
@@ -131,6 +163,39 @@ const CatalogPage = () => {
                     className='filter-checkbox'
                   />
                   {t(`curriculum.catalog.topic.${topic}`)}
+                </MenuItem>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          <Dropdown block={true}>
+            <Dropdown.Toggle id='course-type-filter-dropdown'>
+              Course Type:{' '}
+              {selectedCourseTypes.includes('all')
+                ? 'All'
+                : `${selectedCourseTypes.length} selected`}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <MenuItem onClick={() => handleCourseTypeChange('all')}>
+                <input
+                  type='checkbox'
+                  checked={selectedCourseTypes.includes('all')}
+                  onChange={() => {}}
+                  className='filter-checkbox'
+                />
+                All
+              </MenuItem>
+              {uniqueCourseTypes.map(courseType => (
+                <MenuItem
+                  key={courseType}
+                  onClick={() => handleCourseTypeChange(courseType)}
+                >
+                  <input
+                    type='checkbox'
+                    checked={selectedCourseTypes.includes(courseType)}
+                    onChange={() => {}}
+                    className='filter-checkbox'
+                  />
+                  {t(`curriculum.catalog.courseType.${courseType}`)}
                 </MenuItem>
               ))}
             </Dropdown.Menu>

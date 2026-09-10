@@ -37,4 +37,16 @@ describe('CatalogPage', () => {
     expect(screen.getByText(/Level:/)).toBeInTheDocument();
     expect(screen.getByText(/Topic:/)).toBeInTheDocument();
   });
+
+  test('renders a course-type filter and records source metadata', () => {
+    render(<CatalogPage />);
+
+    expect(
+      screen.getByRole('button', {
+        name: /Course Type:/i
+      })
+    ).toBeInTheDocument();
+    expect(catalog.some(course => course.source === 'full-stack')).toBe(true);
+    expect(catalog.some(course => course.source === 'catalog')).toBe(true);
+  });
 });

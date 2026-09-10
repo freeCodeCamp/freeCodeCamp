@@ -1608,6 +1608,10 @@
       "duration-singular": "{{duration}} hour",
       "duration": "{{duration}} hours",
       "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "courseType": {
+        "full-stack": "Full Stack Curriculum",
+        "catalog": "Catalog Courses"
+      },
       "topic": {
         "html": "HTML",
         "css": "CSS",
