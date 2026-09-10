@@ -1,5 +1,6 @@
 const path = require('path');
 const { MongoClient } = require('mongodb');
+const _ = require('lodash');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const {
@@ -22,7 +23,8 @@ const presets = {
 };
 
 /**
- * Apply a preset to an existing isolated account without changing its identity.
+ * Apply a preset to an existing isolated account, preserving its identity unless
+ * explicitly overridden.
  *
  * @param {string} email
  * @param {UserPreset} preset
@@ -30,8 +32,6 @@ const presets = {
  * @returns {Promise<void>}
  */
 async function seedIsolatedUser(email, preset, overrides) {
-  if (preset === 'new' && Object.keys(overrides).length === 0) return;
-
   const client = new MongoClient(process.env.MONGOHQ_URL);
 
   try {
@@ -42,18 +42,17 @@ async function seedIsolatedUser(email, preset, overrides) {
       throw new Error(`Could not find isolated user with email ${email}.`);
     }
 
-    const seed = { ...structuredClone(presets[preset]), ...overrides };
-
-    for (const identityField of [
-      '_id',
-      'id',
-      'email',
-      'username',
-      'usernameDisplay',
-      'unsubscribeId'
-    ]) {
-      delete seed[identityField];
-    }
+    const seed = {
+      ..._.omit(presets[preset], [
+        '_id',
+        'id',
+        'email',
+        'username',
+        'usernameDisplay',
+        'unsubscribeId'
+      ]),
+      ...overrides
+    };
 
     await user.updateOne({ _id: existingUser._id }, { $set: seed });
   } finally {

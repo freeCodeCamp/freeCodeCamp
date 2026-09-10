@@ -3,7 +3,7 @@ import { test as base, type APIRequestContext } from '@playwright/test';
 import {
   seedIsolatedUser,
   type UserPreset
-} from '../../tools/scripts/seed/seed-isolated-user';
+} from '@freecodecamp/scripts-seed/seed-isolated-user';
 
 type UserStorageState = Awaited<ReturnType<APIRequestContext['storageState']>>;
 
