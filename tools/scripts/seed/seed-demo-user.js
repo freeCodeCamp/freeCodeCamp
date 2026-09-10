@@ -16,8 +16,6 @@ const {
 } = require('./user-data');
 
 const options = {
-  email: { type: 'string' },
-  'new-user': { type: 'boolean' },
   'set-true': { type: 'string', multiple: true },
   'top-contributor': { type: 'boolean' },
   'set-false': { type: 'string', multiple: true },
@@ -85,7 +83,7 @@ const trophyChallenges = [
   }
 ];
 
-const applySeedOptions = user => {
+[demoUser, blankUser, fullyCertifiedUser].forEach(user => {
   if (argValues['top-contributor']) {
     user.yearsTopContributor = ['2017', '2018', '2019'];
   }
@@ -98,52 +96,12 @@ const applySeedOptions = user => {
   if (argValues['--seed-trophy-challenges']) {
     user.completedChallenges = trophyChallenges;
   }
-};
-
-[demoUser, blankUser, fullyCertifiedUser].forEach(applySeedOptions);
+});
 
 const client = new MongoClient(MONGOHQ_URL);
 
 const db = client.db('freecodecamp');
 const user = db.collection('user');
-
-const getSeedUser = () => {
-  if (argValues['new-user']) return null;
-  if (argValues['certified-user']) return fullyCertifiedUser;
-  if (argValues['almost-certified-user']) return almostFullyCertifiedUser;
-  if (argValues['unclaimed-user']) return unclaimedUser;
-  return demoUser;
-};
-
-const updateIsolatedUser = async email => {
-  const existingUser = await user.findOne({ email });
-
-  if (!existingUser) {
-    throw new Error(`Could not find isolated user with email ${email}.`);
-  }
-
-  const seedUser = getSeedUser();
-  const preset = seedUser ? structuredClone(seedUser) : {};
-
-  applySeedOptions(preset);
-
-  for (const identityField of [
-    '_id',
-    'email',
-    'username',
-    'usernameDisplay',
-    'unsubscribeId'
-  ]) {
-    delete preset[identityField];
-  }
-
-  await user.updateOne(
-    { _id: existingUser._id },
-    {
-      $set: preset
-    }
-  );
-};
 
 const dropUserTokens = async function () {
   await db.collection('UserToken').deleteMany({
@@ -164,12 +122,6 @@ const dropUsers = async function () {
 const run = async () => {
   await client.db('admin').command({ ping: 1 });
   log('Connected successfully to mongo');
-
-  if (argValues.email) {
-    await updateIsolatedUser(argValues.email);
-    log('isolated auth user seed complete');
-    return;
-  }
 
   await dropUserTokens();
   await dropUsers();
