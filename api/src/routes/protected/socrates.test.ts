@@ -564,6 +564,53 @@ describe('socratesRoutes', () => {
           expect(response.body.limit).toBe(10);
         });
 
+        test('should enforce the non-donor limit for concurrent requests', async () => {
+          mockedFetch.mockResolvedValue({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          const results = await Promise.allSettled(
+            Array.from({ length: 20 }, () =>
+              superPut('/socrates/get-hint').send(validPayload)
+            )
+          );
+          const rejected = results.filter(
+            result => result.status === 'rejected'
+          );
+          expect(rejected).toEqual([]);
+          const responses = results
+            .filter(result => result.status === 'fulfilled')
+            .map(result => result.value);
+
+          expect(responses.filter(({ status }) => status === 200)).toHaveLength(
+            3
+          );
+          expect(responses.filter(({ status }) => status === 429)).toHaveLength(
+            17
+          );
+          expect(mockedFetch).toHaveBeenCalledTimes(3);
+
+          const now = new Date();
+          const usage =
+            await fastifyTestInstance.prisma.socratesUsage.findUniqueOrThrow({
+              where: {
+                userId_date: {
+                  userId: defaultUserId,
+                  date: new Date(
+                    Date.UTC(
+                      now.getUTCFullYear(),
+                      now.getUTCMonth(),
+                      now.getUTCDate()
+                    )
+                  )
+                }
+              }
+            });
+          expect(usage.count).toBe(3);
+        });
+
         test('should allow 10 hints/day for donors', async () => {
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },
