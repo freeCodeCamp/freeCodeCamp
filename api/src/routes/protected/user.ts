@@ -32,7 +32,7 @@ import {
   getPoints,
   ProgressTimestamp
 } from '../../utils/progress.js';
-import { getResumeUrl } from '../../data/activity.js';
+import { getActivityStreak, getResumeUrl } from '../../data/activity.js';
 import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
 import {
   getExamAttemptHandler,
@@ -927,10 +927,14 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       } = rest;
 
       let resumeUrl: string | undefined;
+      let activityStreak;
       if (activityTrackingId) {
         const queryStart = performance.now();
         try {
-          resumeUrl = await getResumeUrl(fastify, activityTrackingId);
+          [resumeUrl, activityStreak] = await Promise.all([
+            getResumeUrl(fastify, activityTrackingId),
+            getActivityStreak(fastify, activityTrackingId)
+          ]);
           fastify.Sentry.metrics.distribution(
             'clickhouse.query_duration_ms',
             performance.now() - queryStart,
@@ -955,7 +959,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               }
             }
           );
-          req.log.error(error, 'Unable to fetch resume URL');
+          req.log.error(error, 'Unable to fetch latest activity');
           fastify.Sentry.captureException(error);
         }
       }
@@ -977,6 +981,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               progressTimestamps as ProgressTimestamp[] | null
             ),
             resumeUrl,
+            activityStreak,
             emailVerified: !!emailVerified,
             // This assertion is necessary until the database is normalized.
             points: getPoints(progressTimestamps as ProgressTimestamp[] | null),

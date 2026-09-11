@@ -2,6 +2,8 @@ import crypto from 'node:crypto';
 
 import { beforeAll, describe, expect, test, vi } from 'vitest';
 
+import { insertActivityEvent } from '../../data/activity.js';
+
 import {
   defaultUserId,
   devLogin,
@@ -11,7 +13,17 @@ import {
 
 interface SessionUserBody {
   result: string;
-  user: Record<string, { resumeUrl?: string }>;
+  user: Record<
+    string,
+    {
+      resumeUrl?: string;
+      activityStreak?: {
+        current: number;
+        longest: number;
+        activeSession: boolean;
+      };
+    }
+  >;
 }
 
 const createBody = (
@@ -150,6 +162,54 @@ describe('Activity Routes', () => {
       expect(sessionBody.user[sessionBody.result]?.resumeUrl).toBe(recentUrl);
     });
 
+    test('accepts meaningful events without resume data', async () => {
+      const response = await superRequest('/activity', {
+        method: 'POST',
+        setCookies
+      }).send({ eventId: crypto.randomUUID(), eventType: 'test_run' });
+
+      expect(response.status).toBe(200);
+    });
+
+    test('persists repeated meaningful events', async () => {
+      const eventIds = [crypto.randomUUID(), crypto.randomUUID()];
+      for (const eventId of eventIds) {
+        const response = await superRequest('/activity', {
+          method: 'POST',
+          setCookies
+        }).send({ eventId, eventType: 'test_run' });
+        expect(response.status).toBe(200);
+      }
+
+      const result = await fastifyTestInstance.clickhouse.query({
+        query: `
+          SELECT toString(event_id) AS event_id_string
+          FROM activity_events
+          WHERE event_id IN ({firstEventId: UUID}, {secondEventId: UUID})
+          ORDER BY event_id
+        `,
+        format: 'JSONEachRow',
+        query_params: {
+          firstEventId: eventIds[0],
+          secondEventId: eventIds[1]
+        }
+      });
+      const rows = await result.json<{ event_id_string: string }>();
+
+      expect(rows.map(row => row.event_id_string).sort()).toEqual(
+        eventIds.sort()
+      );
+    });
+
+    test('requires resume data for challenge submissions', async () => {
+      const response = await superRequest('/activity', {
+        method: 'POST',
+        setCookies
+      }).send({ eventId: crypto.randomUUID(), eventType: 'challenge_submit' });
+
+      expect(response.status).toBe(400);
+    });
+
     test('returns 503 when ClickHouse cannot persist the event', async () => {
       const insert = vi
         .spyOn(fastifyTestInstance.clickhouse, 'insert')
@@ -182,6 +242,97 @@ describe('Activity Routes', () => {
 
         expect(response.status).toBe(200);
         expect(user).not.toHaveProperty('resumeUrl');
+      } finally {
+        query.mockRestore();
+      }
+    });
+  });
+
+  describe('POST /activity/streak', () => {
+    test('returns 401 for unauthenticated requests', async () => {
+      const res = await superRequest('/status/ping', { method: 'GET' });
+      const csrfCookies = res.get('Set-Cookie');
+
+      const response = await superRequest('/activity/streak', {
+        method: 'POST',
+        setCookies: csrfCookies
+      }).send({});
+
+      expect(response.status).toBe(401);
+    });
+
+    test('does not qualify a streak before five minutes', async () => {
+      const response = await superRequest('/activity/streak', {
+        method: 'POST',
+        setCookies
+      }).send({});
+
+      expect(response.status).toBe(409);
+    });
+
+    test('qualifies once a meaningful event is at least five minutes old', async () => {
+      await insertActivityEvent(fastifyTestInstance, {
+        userId: defaultUserId,
+        eventType: 'challenge_work',
+        source: 'client',
+        timezone: 'UTC',
+        occurredAt: new Date(Date.now() - 6 * 60 * 1000)
+      });
+
+      const response = await superRequest('/activity/streak', {
+        method: 'POST',
+        setCookies
+      })
+        .set('X-FCC-Timezone', 'UTC')
+        .send({});
+
+      expect(response.status).toBe(200);
+      expect(response.body).toMatchObject({
+        activityStreak: { current: 1, longest: 1, activeSession: true }
+      });
+
+      const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+        where: { id: defaultUserId }
+      });
+      const result = await fastifyTestInstance.clickhouse.query({
+        query: `
+          SELECT source, event_version
+          FROM activity_events
+          WHERE tracking_id = {trackingId: String}
+            AND event_type = 'streak_qualified'
+        `,
+        format: 'JSONEachRow',
+        query_params: { trackingId: user.activityTrackingId }
+      });
+      const rows = await result.json<{
+        source: string;
+        event_version: number;
+      }>();
+
+      expect(rows).toContainEqual({ source: 'server', event_version: 1 });
+    });
+
+    test('requires new meaningful activity for another qualification', async () => {
+      const response = await superRequest('/activity/streak', {
+        method: 'POST',
+        setCookies
+      }).send({});
+
+      expect(response.status).toBe(409);
+    });
+
+    test('returns 503 when ClickHouse cannot verify the streak', async () => {
+      const query = vi
+        .spyOn(fastifyTestInstance.clickhouse, 'query')
+        .mockRejectedValueOnce(new Error('ClickHouse unavailable'));
+
+      try {
+        const response = await superRequest('/activity/streak', {
+          method: 'POST',
+          setCookies
+        }).send({});
+
+        expect(response.status).toBe(503);
       } finally {
         query.mockRestore();
       }

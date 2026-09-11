@@ -3,8 +3,43 @@ import { type FastifyInstance, type FastifyRequest } from 'fastify';
 import { getActivityDate, isValidTimeZone } from '../utils/activity-date.js';
 import { generateNanoId } from '../utils/ids.js';
 
-export type ActivityEventType = 'challenge_submit';
+export const meaningfulActivityEventTypes = [
+  'challenge_work',
+  'test_run',
+  'challenge_completed',
+  'daily_challenge_attempted',
+  'daily_challenge_completed',
+  'module_completed',
+  'project_submitted',
+  'ms_trophy_completed',
+  'exam_completed'
+] as const;
+
+export const activityEventTypes = [
+  ...meaningfulActivityEventTypes,
+  'streak_qualified',
+  'challenge_submit'
+] as const;
+
+export type ActivityEventType = (typeof activityEventTypes)[number];
 export type ActivityEventSource = 'client' | 'server';
+
+export const clientActivityEventTypes = [
+  'challenge_work',
+  'test_run',
+  'daily_challenge_attempted',
+  'module_completed',
+  'challenge_submit'
+] as const satisfies readonly ActivityEventType[];
+
+export type ActivityStreak = {
+  current: number;
+  longest: number;
+  activeSession: boolean;
+  lastQualifiedAt?: string;
+  canIncrementAt?: string;
+  expiresAt?: string;
+};
 
 type ActivityEvent = {
   userId: string;
@@ -17,7 +52,16 @@ type ActivityEvent = {
   occurredAt?: Date;
 };
 
+type StreakQualification = {
+  occurred_at_milliseconds: string | number;
+};
+
 const EVENT_VERSION = 1;
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+const GRACE_WINDOW_MS = 48 * 60 * 60 * 1000;
+const meaningfulEventTypeList = meaningfulActivityEventTypes
+  .map(eventType => `'${eventType}'`)
+  .join(', ');
 
 /**
  * Gets a valid camper timezone from a request, falling back to UTC.
@@ -122,6 +166,24 @@ export async function insertActivityEvent(
   }
 }
 
+/** Persists a non-critical server event without failing its primary request. */
+export async function insertActivityEventSafely(
+  fastify: FastifyInstance,
+  req: FastifyRequest,
+  event: Omit<ActivityEvent, 'source' | 'timezone'> & { timezone?: string }
+): Promise<void> {
+  try {
+    await insertActivityEvent(fastify, {
+      ...event,
+      source: 'server',
+      timezone: event.timezone ?? getRequestTimezone(req)
+    });
+  } catch (error) {
+    req.log.error(error, 'Unable to record activity event');
+    fastify.Sentry.captureException(error);
+  }
+}
+
 /**
  * Gets the latest recorded resume URL for a camper.
  * @param fastify The Fastify instance.
@@ -147,4 +209,125 @@ export async function getResumeUrl(
   });
   const [latestActivity] = await result.json<{ url: string }>();
   return latestActivity?.url;
+}
+
+/** Calculates a streak using a 24-hour increment and 48-hour grace window. */
+export function calculateActivityStreak(
+  qualifications: StreakQualification[],
+  now: Date = new Date()
+): ActivityStreak {
+  const qualificationTimes = [
+    ...new Set(
+      qualifications
+        .map(({ occurred_at_milliseconds }) => Number(occurred_at_milliseconds))
+        .filter(Number.isFinite)
+    )
+  ].sort((first, second) => first - second);
+
+  let longest = 0;
+  let run = 0;
+  let lastIncrementedAt: number | undefined;
+  for (const qualificationTime of qualificationTimes) {
+    if (lastIncrementedAt === undefined) {
+      run = 1;
+      lastIncrementedAt = qualificationTime;
+    } else {
+      const elapsed = qualificationTime - lastIncrementedAt;
+      if (elapsed < ONE_DAY_MS) continue;
+
+      run = elapsed <= GRACE_WINDOW_MS ? run + 1 : 1;
+      lastIncrementedAt = qualificationTime;
+    }
+    longest = Math.max(longest, run);
+  }
+
+  if (lastIncrementedAt === undefined) {
+    return { current: 0, longest: 0, activeSession: false };
+  }
+
+  const expiresAt = lastIncrementedAt + GRACE_WINDOW_MS;
+  const latestQualification = qualificationTimes.at(-1)!;
+
+  return {
+    current: now.getTime() <= expiresAt ? run : 0,
+    longest,
+    activeSession: false,
+    lastQualifiedAt: new Date(latestQualification).toISOString(),
+    canIncrementAt: new Date(lastIncrementedAt + ONE_DAY_MS).toISOString(),
+    expiresAt: new Date(expiresAt).toISOString()
+  };
+}
+
+/** Returns the rolling streak calculated from server qualification events. */
+export async function getActivityStreak(
+  fastify: FastifyInstance,
+  trackingId: string | null | undefined
+): Promise<ActivityStreak> {
+  if (!trackingId) {
+    return { current: 0, longest: 0, activeSession: false };
+  }
+
+  const result = await fastify.clickhouse.query({
+    query: `
+      SELECT
+        toString(toUnixTimestamp64Milli(occurred_at))
+          AS occurred_at_milliseconds
+      FROM activity_events
+      WHERE tracking_id = {trackingId: String}
+        AND event_type = 'streak_qualified'
+      ORDER BY occurred_at
+    `,
+    format: 'JSONEachRow',
+    query_params: { trackingId }
+  });
+  const qualifications = await result.json<StreakQualification>();
+  return calculateActivityStreak(qualifications);
+}
+
+export type StreakQualificationResult =
+  | { status: 'not_ready' }
+  | { status: 'qualified'; activityStreak: ActivityStreak };
+
+/** Qualifies a session once a recent meaningful event is five minutes old. */
+export async function qualifyActivityStreak(
+  fastify: FastifyInstance,
+  userId: string,
+  timezone: string
+): Promise<StreakQualificationResult> {
+  const trackingId = await getActivityTrackingId(fastify, userId);
+  const result = await fastify.clickhouse.query({
+    query: `
+      SELECT count() AS eligible_count
+      FROM activity_events
+      WHERE tracking_id = {trackingId: String}
+        AND event_type IN (${meaningfulEventTypeList})
+        AND occurred_at <= now64(3) - INTERVAL 5 MINUTE
+        AND occurred_at >= now64(3) - INTERVAL 24 HOUR
+        AND occurred_at > (
+          SELECT max(occurred_at)
+          FROM activity_events
+          WHERE tracking_id = {trackingId: String}
+            AND event_type = 'streak_qualified'
+        )
+    `,
+    format: 'JSONEachRow',
+    query_params: { trackingId }
+  });
+  const [counts] = await result.json<{ eligible_count: string | number }>();
+
+  if (Number(counts?.eligible_count) === 0) return { status: 'not_ready' };
+
+  await insertActivityEvent(fastify, {
+    userId,
+    eventType: 'streak_qualified',
+    source: 'server',
+    timezone
+  });
+  return {
+    status: 'qualified',
+    activityStreak: {
+      ...(await getActivityStreak(fastify, trackingId)),
+      activeSession: true
+    }
+  };
 }

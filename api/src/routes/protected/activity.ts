@@ -3,7 +3,8 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import * as schemas from '../../schemas.js';
 import {
   getRequestTimezone,
-  insertActivityEvent
+  insertActivityEvent,
+  qualifyActivityStreak
 } from '../../data/activity.js';
 
 /**
@@ -26,6 +27,13 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
       const { eventId, eventType, subjectId, url } = req.body;
+      if (eventType === 'challenge_submit' && (!subjectId || !url)) {
+        void reply.code(400);
+        return reply.send({
+          message: 'flash.generic-error',
+          type: 'danger'
+        } as const);
+      }
 
       try {
         await insertActivityEvent(fastify, {
@@ -51,6 +59,49 @@ export const activityRoutes: FastifyPluginCallbackTypebox = (
         message: 'flash.activity-updated' as const,
         type: 'success' as const
       });
+    }
+  );
+
+  fastify.post(
+    '/activity/streak',
+    { schema: schemas.qualifyActivityStreak },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+
+      try {
+        const result = await qualifyActivityStreak(
+          fastify,
+          req.user!.id,
+          getRequestTimezone(req)
+        );
+
+        if (result.status === 'not_ready') {
+          fastify.Sentry.metrics.count('activity.streak_qualification', 1, {
+            attributes: { result: 'not_ready' }
+          });
+          void reply.code(409);
+          return reply.send({
+            message: 'flash.generic-error',
+            type: 'danger'
+          } as const);
+        }
+
+        fastify.Sentry.metrics.count('activity.streak_qualification', 1, {
+          attributes: { result: 'qualified' }
+        });
+        return reply.send({ activityStreak: result.activityStreak });
+      } catch (err) {
+        logger.error(err, 'Unable to qualify activity streak');
+        fastify.Sentry.captureException(err);
+        fastify.Sentry.metrics.count('activity.streak_qualification', 1, {
+          attributes: { result: 'failure' }
+        });
+        void reply.code(503);
+        return reply.send({
+          message: 'flash.generic-error',
+          type: 'danger'
+        } as const);
+      }
     }
   );
 
