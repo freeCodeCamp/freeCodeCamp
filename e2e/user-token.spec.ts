@@ -2,6 +2,8 @@ import translations from '../client/i18n/locales/english/translations.json';
 import { expect, test } from './fixtures/isolated-user';
 import { alertToBeVisible } from './utils/alerts';
 
+test.use({ userPreset: 'new' });
+
 test('can create and delete a user token', async ({ page }) => {
   const userTokenHeading = page
     .getByRole('main')

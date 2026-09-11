@@ -1,5 +1,5 @@
 const path = require('path');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 const _ = require('lodash');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
@@ -12,6 +12,7 @@ const {
 
 /**
  * @typedef {'new' | 'development' | 'certified' | 'almost-certified' | 'unclaimed'} UserPreset
+ * @typedef {{ msUsername?: boolean, completedSurvey?: boolean }} UserRelations
  */
 
 const presets = {
@@ -29,9 +30,10 @@ const presets = {
  * @param {string} email
  * @param {UserPreset} preset
  * @param {Record<string, boolean>} overrides
- * @returns {Promise<void>}
+ * @param {UserRelations} [relations]
+ * @returns {Promise<{ unsubscribeId: string }>}
  */
-async function seedIsolatedUser(email, preset, overrides) {
+async function seedIsolatedUser(email, preset, overrides, relations = {}) {
   const client = new MongoClient(process.env.MONGOHQ_URL);
 
   try {
@@ -55,9 +57,77 @@ async function seedIsolatedUser(email, preset, overrides) {
     };
 
     await user.updateOne({ _id: existingUser._id }, { $set: seed });
+
+    if (relations.msUsername) {
+      await client
+        .db('freecodecamp')
+        .collection('MsUsername')
+        .updateOne(
+          { userId: existingUser._id },
+          {
+            $set: {
+              msUsername: existingUser.username,
+              ttl: 77760000000
+            }
+          },
+          { upsert: true }
+        );
+    }
+
+    if (relations.completedSurvey) {
+      await client
+        .db('freecodecamp')
+        .collection('Survey')
+        .updateOne(
+          { userId: existingUser._id },
+          {
+            $set: {
+              title: 'Foundational C# with Microsoft Survey',
+              responses: []
+            }
+          },
+          { upsert: true }
+        );
+    }
+
+    return { unsubscribeId: existingUser.unsubscribeId };
   } finally {
     await client.close();
   }
 }
 
-module.exports = { seedIsolatedUser };
+/**
+ * Clean up by immutable ID, including after a test renames or deletes its user.
+ * Fall back to email only when setup failed before obtaining the ID.
+ *
+ * @param {{ id: string } | { email: string }} identifier
+ * @returns {Promise<void>}
+ */
+async function removeIsolatedUser(identifier) {
+  const client = new MongoClient(process.env.MONGOHQ_URL);
+
+  try {
+    const db = client.db('freecodecamp');
+    const userId =
+      'id' in identifier
+        ? new ObjectId(identifier.id)
+        : (
+            await db
+              .collection('user')
+              .findOne({ email: identifier.email }, { projection: { _id: 1 } })
+          )?._id;
+
+    if (!userId) return;
+
+    await Promise.all(
+      ['UserToken', 'AuthToken', 'MsUsername', 'Survey', 'DripCampaign'].map(
+        collection => db.collection(collection).deleteMany({ userId })
+      )
+    );
+    await db.collection('user').deleteOne({ _id: userId });
+  } finally {
+    await client.close();
+  }
+}
+
+module.exports = { seedIsolatedUser, removeIsolatedUser };
