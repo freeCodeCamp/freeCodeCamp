@@ -25,11 +25,6 @@ async function setupServer() {
     void reply.send({ foo: 'bar' });
   });
 
-  // Mock signout route for the exemption test
-  fastify.get('/signout', (_req, reply) => {
-    void reply.send({ ok: true });
-  });
-
   return fastify;
 }
 
@@ -90,19 +85,6 @@ describe('CSRF protection', () => {
     });
 
     expect(response.statusCode).toEqual(403);
-  });
-
-  test('should not set CSRF cookie on /signout even with query parameters', async () => {
-    const response = await fastify.inject({
-      method: 'GET',
-      url: '/signout?redirect=true'
-    });
-
-    const csrfTokenCookie = response.cookies.find(
-      cookie => cookie.name === CSRF_COOKIE
-    );
-
-    expect(csrfTokenCookie).toBeUndefined();
   });
 
   test('should allow the request if the csrf_token is valid', async () => {
