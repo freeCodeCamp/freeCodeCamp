@@ -310,6 +310,44 @@ describe('<NavLinks />', () => {
 });
 
 describe('<AuthOrProfile />', () => {
+  it('shows a flame on the avatar when the user has an active session', () => {
+    renderWithStore(
+      <AuthOrProfile
+        user={{
+          ...defaultUser,
+          activityStreak: {
+            current: 2,
+            longest: 2,
+            activeSession: true
+          }
+        }}
+      />
+    );
+
+    expect(
+      screen.getByLabelText(translations.profile['activity-streak-label'])
+    ).toBeInTheDocument();
+  });
+
+  it('does not show a flame when the session is not active', () => {
+    renderWithStore(
+      <AuthOrProfile
+        user={{
+          ...defaultUser,
+          activityStreak: {
+            current: 2,
+            longest: 2,
+            activeSession: false
+          }
+        }}
+      />
+    );
+
+    expect(
+      screen.queryByLabelText(translations.profile['activity-streak-label'])
+    ).not.toBeInTheDocument();
+  });
+
   it('links signed-in users to their profile with an avatar', () => {
     renderWithStore(<AuthOrProfile user={defaultUser} />);
 
