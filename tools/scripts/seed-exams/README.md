@@ -1,4 +1,4 @@
-## WARNING: Never change any of the ID's or delete anything. Mark things as deprecated instead.
+## WARNING: Never change any of the IDs or delete anything. Mark things as deprecated instead.
 
 ### How to create a new exam:
 
@@ -23,7 +23,7 @@
 
 - `answer`: This is one of the multiple choice options
 
-5. Add the ID's:
+5. Add the IDs:
 
 - Change the `examPath` variable in the `add-nano-ids.js` file to the name of the new exam file
 - Run it with `node add-nano-ids.js`. It will add an `id` to each `question`, and each `answer`.
