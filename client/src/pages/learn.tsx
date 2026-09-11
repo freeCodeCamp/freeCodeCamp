@@ -17,6 +17,7 @@ import {
 
 import callGA from '../analytics/call-ga';
 import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
+import { getResumeData } from '../utils/get-resume-data';
 
 interface FetchState {
   pending: boolean;
@@ -29,7 +30,17 @@ type MaybeUser = {
   username: string;
   completedChallengeCount: number;
   isDonating: boolean;
+  completedChallenges: { id: string }[];
+  resumeUrl?: string;
 } | null;
+
+interface ChallengeNode {
+  challenge: {
+    id: string;
+    superBlock: string;
+    fields: Slug;
+  };
+}
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
@@ -57,23 +68,45 @@ interface LearnPageProps {
         fields: Slug;
       };
     } | null;
+    allChallengeNode: { nodes: ChallengeNode[] };
   };
 }
 
-const EMPTY_USER = { name: '', completedChallengeCount: 0, isDonating: false };
+const EMPTY_USER = {
+  name: '',
+  completedChallengeCount: 0,
+  completedChallenges: [],
+  isDonating: false,
+  resumeUrl: undefined
+};
 
 function LearnPage({
   isSignedIn,
   fetchState: { pending, complete },
   user,
-  data: { challengeNode }
+  data: { challengeNode, allChallengeNode }
 }: LearnPageProps) {
-  const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
+  const {
+    name,
+    completedChallengeCount,
+    completedChallenges = [],
+    isDonating,
+    resumeUrl
+  } = user ?? EMPTY_USER;
 
   const { t } = useTranslation();
   useClaimableCertsNotification();
 
   const slug = challengeNode?.challenge?.fields?.slug || '';
+  const resumeData = resumeUrl
+    ? getResumeData(resumeUrl, allChallengeNode.nodes, completedChallenges)
+    : null;
+  const resumeCard = resumeData
+    ? {
+        courseTitle: t(`intro:${resumeData.superBlock}.title`),
+        progress: resumeData.progress
+      }
+    : null;
 
   const onLearnDonationAlertClick = () => {
     callGA({
@@ -96,6 +129,8 @@ function LearnPage({
               slug={slug}
               onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
+              resumeCard={resumeCard}
+              resumeUrl={resumeUrl}
             />
             <Map />
             <Spacer size='l' />
@@ -112,6 +147,17 @@ export default connect(mapStateToProps)(LearnPage);
 
 export const query = graphql`
   query LearnPageQuery {
+    allChallengeNode {
+      nodes {
+        challenge {
+          id
+          superBlock
+          fields {
+            slug
+          }
+        }
+      }
+    }
     challengeNode(
       challenge: {
         superOrder: { eq: 0 }
