@@ -23,6 +23,15 @@ const presets = {
   unclaimed: unclaimedUser
 };
 
+const identityFields = [
+  '_id',
+  'id',
+  'email',
+  'username',
+  'usernameDisplay',
+  'unsubscribeId'
+];
+
 /**
  * Apply a preset to an existing isolated account, preserving its identity unless
  * explicitly overridden.
@@ -37,60 +46,49 @@ async function seedIsolatedUser(email, preset, overrides, relations = {}) {
   const client = new MongoClient(process.env.MONGOHQ_URL);
 
   try {
-    const user = client.db('freecodecamp').collection('user');
-    const existingUser = await user.findOne({ email });
+    const db = client.db('freecodecamp');
+    const users = db.collection('user');
+    const existingUser = await users.findOne({ email });
 
     if (!existingUser) {
       throw new Error(`Could not find isolated user with email ${email}.`);
     }
 
-    const seed = {
-      ..._.omit(presets[preset], [
-        '_id',
-        'id',
-        'email',
-        'username',
-        'usernameDisplay',
-        'unsubscribeId'
-      ]),
+    const { _id: userId, username, unsubscribeId } = existingUser;
+    const userUpdates = {
+      ..._.omit(presets[preset], identityFields),
       ...overrides
     };
 
-    await user.updateOne({ _id: existingUser._id }, { $set: seed });
+    await users.updateOne({ _id: userId }, { $set: userUpdates });
 
     if (relations.msUsername) {
-      await client
-        .db('freecodecamp')
-        .collection('MsUsername')
-        .updateOne(
-          { userId: existingUser._id },
-          {
-            $set: {
-              msUsername: existingUser.username,
-              ttl: 77760000000
-            }
-          },
-          { upsert: true }
-        );
+      await db.collection('MsUsername').updateOne(
+        { userId },
+        {
+          $set: {
+            msUsername: username,
+            ttl: 77760000000
+          }
+        },
+        { upsert: true }
+      );
     }
 
     if (relations.completedSurvey) {
-      await client
-        .db('freecodecamp')
-        .collection('Survey')
-        .updateOne(
-          { userId: existingUser._id },
-          {
-            $set: {
-              title: 'Foundational C# with Microsoft Survey',
-              responses: []
-            }
-          },
-          { upsert: true }
-        );
+      await db.collection('Survey').updateOne(
+        { userId },
+        {
+          $set: {
+            title: 'Foundational C# with Microsoft Survey',
+            responses: []
+          }
+        },
+        { upsert: true }
+      );
     }
 
-    return { unsubscribeId: existingUser.unsubscribeId };
+    return { unsubscribeId };
   } finally {
     await client.close();
   }
@@ -108,23 +106,35 @@ async function removeIsolatedUser(identifier) {
 
   try {
     const db = client.db('freecodecamp');
-    const userId =
-      'id' in identifier
-        ? new ObjectId(identifier.id)
-        : (
-            await db
-              .collection('user')
-              .findOne({ email: identifier.email }, { projection: { _id: 1 } })
-          )?._id;
+    const users = db.collection('user');
+    let userId;
+
+    if ('id' in identifier) {
+      userId = new ObjectId(identifier.id);
+    } else {
+      const existingUser = await users.findOne(
+        { email: identifier.email },
+        { projection: { _id: 1 } }
+      );
+      userId = existingUser?._id;
+    }
 
     if (!userId) return;
 
+    const relatedCollections = [
+      'UserToken',
+      'AuthToken',
+      'MsUsername',
+      'Survey',
+      'DripCampaign'
+    ];
+
     await Promise.all(
-      ['UserToken', 'AuthToken', 'MsUsername', 'Survey', 'DripCampaign'].map(
-        collection => db.collection(collection).deleteMany({ userId })
+      relatedCollections.map(collection =>
+        db.collection(collection).deleteMany({ userId })
       )
     );
-    await db.collection('user').deleteOne({ _id: userId });
+    await users.deleteOne({ _id: userId });
   } finally {
     await client.close();
   }

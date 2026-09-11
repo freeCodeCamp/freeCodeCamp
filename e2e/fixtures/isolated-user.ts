@@ -45,14 +45,20 @@ async function signIn(request: APIRequestContext, email: string) {
   url.searchParams.set('email', email);
 
   const response = await request.get(url.toString(), { maxRedirects: 0 });
+  if (response.status() !== 302) {
+    throw new Error(
+      `Could not sign in the isolated user: /signin returned ${response.status()}.`
+    );
+  }
+
   const storageState = await request.storageState();
   const hasAccessToken = storageState.cookies.some(
     cookie => cookie.name === 'jwt_access_token'
   );
 
-  if (response.status() !== 302 || !hasAccessToken) {
+  if (!hasAccessToken) {
     throw new Error(
-      `Could not sign in the isolated user: /signin returned ${response.status()}.`
+      'Could not sign in the isolated user: /signin did not set an access token.'
     );
   }
 
@@ -61,6 +67,12 @@ async function signIn(request: APIRequestContext, email: string) {
 
 async function getSessionUser(request: APIRequestContext) {
   const response = await request.get(getApiUrl('/user/session-user'));
+  if (response.status() !== 200) {
+    throw new Error(
+      `Could not get the isolated user: /user/session-user returned ${response.status()}.`
+    );
+  }
+
   const body = (await response.json()) as {
     result?: string;
     user?: Record<string, { id: string }>;
@@ -68,7 +80,7 @@ async function getSessionUser(request: APIRequestContext) {
   const username = body.result;
   const user = username ? body.user?.[username] : undefined;
 
-  if (response.status() !== 200 || !username || !user?.id) {
+  if (!username || !user?.id) {
     throw new Error('Could not get the isolated user from /user/session-user.');
   }
 
@@ -82,8 +94,9 @@ export const test = base.extend<IsolatedUserFixtures>({
 
   createUser: async ({ playwright }, use, testInfo) => {
     const createdUsers: CreatedUser[] = [];
+    const pendingCreations: Promise<IsolatedUser>[] = [];
 
-    async function createUser({
+    async function createIsolatedUser({
       preset = 'new',
       overrides = {},
       relations = {}
@@ -117,9 +130,18 @@ export const test = base.extend<IsolatedUserFixtures>({
       }
     }
 
+    function createUser(options?: UserOptions) {
+      const creation = createIsolatedUser(options);
+      pendingCreations.push(creation);
+      return creation;
+    }
+
     try {
       await use(createUser);
     } finally {
+      // Promise.all in a test can reject while another signup is still running.
+      // Let every signup finish before deleting the accounts it created.
+      await Promise.allSettled(pendingCreations);
       await Promise.all(
         createdUsers.map(({ email, id }) =>
           removeIsolatedUser(id ? { id } : { email })
@@ -144,27 +166,20 @@ export const test = base.extend<IsolatedUserFixtures>({
     await use(isolatedUser.storageState);
   },
 
-  page: async ({ page, isolatedUser, storageState }, use) => {
-    // Signed-out tests still sign in through the real dev-auth endpoint, using
-    // their own account when a link or redirect takes them to /signin.
-    // Routing disables the browser cache, so only install it for signed-out tests.
-    const isSignedOut =
-      typeof storageState !== 'string' &&
-      !storageState?.cookies.some(cookie => cookie.name === 'jwt_access_token');
-
-    if (isSignedOut) {
-      await page.route(
-        url =>
-          url.origin === new URL(apiLocation).origin &&
-          url.pathname === '/signin',
-        async route => {
-          const url = new URL(route.request().url());
-          url.searchParams.set('email', isolatedUser.email);
-          await route.continue({ url: url.toString() });
-        }
-      );
-    }
-    await use(page);
+  context: async ({ context, isolatedUser }, use) => {
+    // Keep sign-in tied to this account on every page, including popups and
+    // signing back in after logout. Initial cookies do not determine identity.
+    await context.route(
+      url =>
+        url.origin === new URL(apiLocation).origin &&
+        url.pathname === '/signin',
+      async route => {
+        const url = new URL(route.request().url());
+        url.searchParams.set('email', isolatedUser.email);
+        await route.continue({ url: url.toString() });
+      }
+    );
+    await use(context);
   }
 });
 
