@@ -222,6 +222,18 @@ export const reducer = handleActions(
           : null
       }
     }),
+    [actionTypes.updateActivityStreak]: (state, { payload }) => ({
+      ...state,
+      user: {
+        ...state.user,
+        sessionUser: state.user.sessionUser
+          ? {
+              ...state.user.sessionUser,
+              activityStreak: payload
+            }
+          : null
+      }
+    }),
     [actionTypes.fetchProfileForUserComplete]: (
       state,
       { payload: { user } }

@@ -35,3 +35,28 @@ describe('updateResumeUrl reducer', () => {
     expect(result.user.sessionUser).toBeNull();
   });
 });
+
+describe('updateActivityStreak reducer', () => {
+  it('updates the streak while preserving the session user', () => {
+    const sessionUser = { username: 'test-user' };
+    const state = {
+      ...initialState,
+      user: { ...initialState.user, sessionUser }
+    };
+    const activityStreak = {
+      current: 2,
+      longest: 4,
+      activeSession: true
+    };
+
+    const result = reducer(state, {
+      type: actionTypes.updateActivityStreak,
+      payload: activityStreak
+    });
+
+    expect(result.user.sessionUser).toEqual({
+      ...sessionUser,
+      activityStreak
+    });
+  });
+});
