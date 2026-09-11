@@ -1,8 +1,11 @@
 import { runSaga } from 'redux-saga';
-import { takeEvery } from 'redux-saga/effects';
+import { takeEvery, throttle } from 'redux-saga/effects';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-import { recordClientActivity } from '../../../utils/activity';
+import {
+  recordClientActivity,
+  signalMeaningfulActivity
+} from '../../../utils/activity';
 import { updateResumeUrl } from '../../../redux/actions';
 import {
   createCurrentChallengeSaga,
@@ -11,7 +14,8 @@ import {
 
 vi.mock('../../../utils/get-words', () => ({ randomCompliment: () => '' }));
 vi.mock('../../../utils/activity', () => ({
-  recordClientActivity: vi.fn()
+  recordClientActivity: vi.fn(),
+  signalMeaningfulActivity: vi.fn()
 }));
 
 const createState = (sessionUser = { id: 'user-id' }) => ({
@@ -23,6 +27,7 @@ describe('current challenge activity', () => {
   beforeEach(() => {
     vi.mocked(recordClientActivity).mockReset();
     vi.mocked(recordClientActivity).mockResolvedValue({ recorded: true });
+    vi.mocked(signalMeaningfulActivity).mockReset();
   });
 
   test('records the next URL after a successful submission', async () => {
@@ -41,16 +46,18 @@ describe('current challenge activity', () => {
       }
     ).toPromise();
 
-    expect(recordClientActivity).toHaveBeenCalledWith(
-      'submitted-challenge',
-      '/learn/next-challenge'
-    );
+    expect(recordClientActivity).toHaveBeenCalledWith('challenge_submit', {
+      subjectId: 'submitted-challenge',
+      url: '/learn/next-challenge'
+    });
+    expect(signalMeaningfulActivity).toHaveBeenCalledOnce();
     expect(dispatched).toContainEqual(updateResumeUrl('/learn/next-challenge'));
   });
 
   test('records activity only after submission completes', () => {
     const types = {
       challengeMounted: 'challenge-mounted',
+      updateFile: 'update-file',
       submitChallenge: 'submit-challenge',
       submitChallengeComplete: 'submit-challenge-complete'
     };
@@ -61,6 +68,9 @@ describe('current challenge activity', () => {
     );
     expect(effects).not.toContainEqual(
       takeEvery(types.submitChallenge, updateActivityOnSubmitSaga)
+    );
+    expect(effects).toContainEqual(
+      throttle(60_000, types.updateFile, expect.any(Function))
     );
   });
 
@@ -77,6 +87,7 @@ describe('current challenge activity', () => {
     ).toPromise();
 
     expect(recordClientActivity).not.toHaveBeenCalled();
+    expect(signalMeaningfulActivity).not.toHaveBeenCalled();
   });
 
   test('does not fail completion or update state when recording fails', async () => {
@@ -101,5 +112,28 @@ describe('current challenge activity', () => {
       ).toPromise()
     ).resolves.toBeUndefined();
     expect(dispatched).toHaveLength(0);
+  });
+
+  test('does not update the resume URL when persistence is rejected', async () => {
+    vi.mocked(recordClientActivity).mockResolvedValueOnce({ recorded: false });
+    const dispatched = [];
+
+    await runSaga(
+      {
+        getState: () => createState(),
+        dispatch: action => dispatched.push(action)
+      },
+      updateActivityOnSubmitSaga,
+      {
+        payload: {
+          challengeId: 'submitted-challenge',
+          nextChallengePath: '/learn/next-challenge'
+        }
+      }
+    ).toPromise();
+
+    expect(dispatched).not.toContainEqual(
+      updateResumeUrl('/learn/next-challenge')
+    );
   });
 });

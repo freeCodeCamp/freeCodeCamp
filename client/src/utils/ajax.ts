@@ -11,7 +11,8 @@ import type {
   SavedChallenge,
   SavedChallengeFile,
   SurveyResults,
-  User
+  User,
+  ActivityStreak
 } from '../redux/prop-types';
 import { DonationDuration } from '@freecodecamp/shared/config/donation-settings';
 
@@ -404,11 +405,22 @@ export function postSubmitSurvey(body: {
 
 export function postActivity(body: {
   eventId: string;
-  eventType: 'challenge_submit';
-  subjectId: string;
-  url: string;
+  eventType:
+    | 'challenge_work'
+    | 'test_run'
+    | 'daily_challenge_attempted'
+    | 'module_completed'
+    | 'challenge_submit';
+  subjectId?: string;
+  url?: string;
 }): Promise<ResponseWithData<void>> {
   return post('/activity', body);
+}
+
+export function postActivityStreak(): Promise<
+  ResponseWithData<{ activityStreak: ActivityStreak }>
+> {
+  return post('/activity/streak', {});
 }
 
 /** PUT **/

@@ -423,6 +423,15 @@ type CertTest = {
   title: string;
 };
 
+export type ActivityStreak = {
+  current: number;
+  longest: number;
+  activeSession: boolean;
+  lastQualifiedAt?: string;
+  canIncrementAt?: string;
+  expiresAt?: string;
+};
+
 export type User = {
   calendar: Record<string, number>;
   about: string;
@@ -442,6 +451,7 @@ export type User = {
   isHonest: boolean;
   joinDate: string;
   resumeUrl?: string;
+  activityStreak?: ActivityStreak;
   linkedin: string;
   location: string;
   name: string;

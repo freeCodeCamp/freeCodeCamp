@@ -310,7 +310,10 @@ export default function completionEpic(action$, state$) {
           action.type === actionTypes.submitChallengeComplete
             ? submitChallengeComplete({
                 challengeId: id,
-                nextChallengePath
+                nextChallengePath,
+                ...(isModuleNewlyCompletedSelector(state)
+                  ? { moduleCompleted: true }
+                  : {})
               })
             : action
         ),

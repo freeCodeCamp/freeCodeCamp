@@ -1,7 +1,10 @@
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { postActivity } from './ajax';
-import { recordClientActivity } from './activity';
+import {
+  recordClientActivity,
+  subscribeToMeaningfulActivity
+} from './activity';
 
 vi.mock('./ajax', () => ({ postActivity: vi.fn() }));
 
@@ -18,20 +21,40 @@ describe('recordClientActivity', () => {
     });
   });
 
-  test('records an online submission with a generated ID', async () => {
+  test('records an online event with a generated ID', async () => {
     await expect(
-      recordClientActivity('challenge-id', '/learn/course/challenge')
+      recordClientActivity('test_run', { subjectId: 'challenge-id' })
     ).resolves.toEqual({ recorded: true });
 
     expect(postActivity).toHaveBeenCalledOnce();
     expect(vi.mocked(postActivity).mock.calls[0]?.[0]).toMatchObject({
-      eventType: 'challenge_submit',
-      subjectId: 'challenge-id',
-      url: '/learn/course/challenge'
+      eventType: 'test_run',
+      subjectId: 'challenge-id'
     });
     expect(vi.mocked(postActivity).mock.calls[0]?.[0].eventId).toMatch(
       /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
     );
+  });
+
+  test('records repeated events instead of suppressing them', async () => {
+    await recordClientActivity('challenge_work');
+    await recordClientActivity('challenge_work');
+
+    expect(postActivity).toHaveBeenCalledTimes(2);
+  });
+
+  test('signals meaningful activity only after it is persisted', async () => {
+    const listener = vi.fn();
+    const unsubscribe = subscribeToMeaningfulActivity(listener);
+
+    await recordClientActivity('test_run');
+    await recordClientActivity('challenge_submit', {
+      subjectId: 'challenge-id',
+      url: '/learn/course/challenge'
+    });
+
+    expect(listener).toHaveBeenCalledOnce();
+    unsubscribe();
   });
 
   test('does not record while offline', async () => {
@@ -40,18 +63,14 @@ describe('recordClientActivity', () => {
       value: false
     });
 
-    await expect(
-      recordClientActivity('challenge-id', '/learn/course/challenge')
-    ).resolves.toBeUndefined();
+    await expect(recordClientActivity('test_run')).resolves.toBeUndefined();
     expect(postActivity).not.toHaveBeenCalled();
   });
 
   test('does not retry a failed request', async () => {
     vi.mocked(postActivity).mockRejectedValueOnce(new Error('offline'));
 
-    await expect(
-      recordClientActivity('challenge-id', '/learn/course/challenge')
-    ).resolves.toBeUndefined();
+    await expect(recordClientActivity('test_run')).resolves.toBeUndefined();
     expect(postActivity).toHaveBeenCalledOnce();
   });
 });
