@@ -7,7 +7,7 @@
   "private": false,
   "engines": {
     "node": ">=24",
-    "pnpm": ">=10"
+    "pnpm": ">=11"
   },
   "scripts": {
     "build": "tsdown --log-level warn --no-clean --format cjs --format esm",

@@ -8,7 +8,6 @@
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
-  "packageManager": "pnpm@10.20.0",
   "devDependencies": {
     "@babel/eslint-parser": "7.26.5",
     "@babel/preset-react": "7.26.3",

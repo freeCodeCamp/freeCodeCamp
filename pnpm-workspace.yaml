@@ -21,17 +21,25 @@ minimumReleaseAge: 10080
 minimumReleaseAgeExclude:
   - '@freecodecamp/curriculum-helpers'
 
-# Dependencies allowed to run their build scripts.
+# Dependencies allowed (true) or denied (false) to run their build scripts.
+# pnpm 11 errors on a script-bearing dependency that is absent from this map.
 allowBuilds:
+  '@parcel/watcher': false
   '@prisma/client': true
   '@prisma/engines': true
+  '@sentry-internal/node-cpu-profiler': false
+  core-js: false
+  core-js-pure: false
+  es5-ext: false
   esbuild: true
   gatsby: true
+  gatsby-cli: false
   lmdb: true
   msgpackr-extract: true
   msw: true
   prisma: true
   puppeteer: true
+  sharp: false
   unrs-resolver: true
 
 overrides:

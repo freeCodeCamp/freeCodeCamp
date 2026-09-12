@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=24",
-    "pnpm": ">=10"
+    "pnpm": ">=11"
   },
   "files": [
     "dist"

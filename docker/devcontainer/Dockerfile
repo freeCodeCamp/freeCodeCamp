@@ -26,7 +26,7 @@ RUN --mount=type=bind,source=package.json,target=/tmp/package.json \
     npm install -g "pnpm@$(node -p 'require("/tmp/package.json").packageManager.split("@")[1]')"
 
 ENV PLAYWRIGHT_BROWSERS_PATH=/home/node/.cache/ms-playwright
-ENV npm_config_store_dir=/home/node/.local/share/pnpm/store
+ENV pnpm_config_store_dir=/home/node/.local/share/pnpm/store
 
 # =============================================================================
 # BUILDER - Install dependencies and build to populate caches (disposable)

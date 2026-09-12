@@ -7,7 +7,7 @@
   "private": false,
   "engines": {
     "node": ">=24",
-    "pnpm": ">=10"
+    "pnpm": ">=11"
   },
   "exports": {
     "./build": "./dist/build.js",
