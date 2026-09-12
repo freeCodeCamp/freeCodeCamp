@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 const hex = '[0-9a-f]';
 const tempUserRegex = new RegExp(`^fcc${hex}{8}-(${hex}{4}-){3}${hex}{12}$`);
 
-class UsernameSettings extends Component<UsernameProps, UsernameState> {
+export class UsernameSettings extends Component<UsernameProps, UsernameState> {
   static displayName: string;
   constructor(props: UsernameProps) {
     super(props);
