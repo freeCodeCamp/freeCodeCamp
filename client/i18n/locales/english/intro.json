@@ -5017,6 +5017,13 @@
           "In this lab, you'll create a function that looks up profile information."
         ]
       },
+      "workshop-smart-campus-directory": {
+        "title": "Build a Campus Directory Normalizer",
+        "intro": [
+          "Build a Campus Directory Normalizer",
+          "In this workshop, you will normalise a nested data into some independent and easy to use lookup tables."
+        ]
+      },
       "lab-repeat-a-string": {
         "title": "Build a String Repeating Function",
         "intro": [
