@@ -49,4 +49,14 @@ describe('getChallengeIdsByBlock', () => {
     const ids = getChallengeIdsByBlock('');
     expect(ids).toEqual([]);
   });
+
+  test.each([
+    'constructor',
+    'toString',
+    'valueOf',
+    'hasOwnProperty',
+    '__proto__'
+  ])('returns empty array for the inherited property %s', blockId => {
+    expect(getChallengeIdsByBlock(blockId)).toEqual([]);
+  });
 });
