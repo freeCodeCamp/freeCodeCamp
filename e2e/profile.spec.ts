@@ -1,11 +1,14 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 test.describe('Profile page', () => {
-  test('loads my own profile from the signed-in session', async ({ page }) => {
-    await page.goto('/certifieduser');
+  test('loads my own profile from the signed-in session', async ({
+    isolatedUser,
+    page
+  }) => {
+    await page.goto(`/${isolatedUser.username}`);
 
     await expect(
-      page.getByRole('heading', { name: '@certifieduser' })
+      page.getByRole('heading', { name: `@${isolatedUser.username}` })
     ).toBeVisible();
   });
 
