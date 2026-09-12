@@ -246,9 +246,9 @@ function ShowClassic({
 
   const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  const blockNameTitle =
+    blockTitle === title ? title : `${blockTitle}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
