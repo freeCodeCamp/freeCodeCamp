@@ -30,6 +30,7 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
+  closeModal,
   updateSolutionFormValues,
   initTests
 } from '../redux/actions';
@@ -44,6 +45,8 @@ import {
 import ProjectToolPanel from '../projects/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import SolutionForm from '../projects/solution-form';
+import ExitProjectModal from '../projects/exit-project-modal';
+import { useUnsavedSolutionWarning } from '../projects/use-unsaved-solution-warning';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
@@ -84,6 +87,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       challengeMounted,
       createFlashMessage,
       openCompletionModal: () => openModal('completion'),
+      openExitProjectModal: () => openModal('exitProject'),
+      closeExitProjectModal: () => closeModal('exitProject'),
       initTests,
       updateUserToken,
       updateChallengeMeta,
@@ -102,6 +107,8 @@ interface ShowCodeAllyProps {
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
   openCompletionModal: () => void;
+  openExitProjectModal: () => void;
+  closeExitProjectModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -128,9 +135,16 @@ function ShowCodeAlly({
   initTests,
   pageContext: { challengeMeta },
   updateChallengeMeta,
-  openCompletionModal
+  openCompletionModal,
+  openExitProjectModal,
+  closeExitProjectModal
 }: ShowCodeAllyProps) {
   const container = useRef<HTMLElement>(null);
+
+  const { onUnsavedChanges, confirmExit } = useUnsavedSolutionWarning({
+    openExitProjectModal,
+    closeExitProjectModal
+  });
 
   const {
     challengeNode: {
@@ -346,6 +360,7 @@ function ShowCodeAlly({
                     challengeType={challengeType}
                     description={description}
                     onSubmit={handleSubmit}
+                    onUnsavedChanges={onUnsavedChanges}
                     updateSolutionForm={updateSolutionFormValues}
                   />
                 </>
@@ -356,6 +371,7 @@ function ShowCodeAlly({
               <Spacer size='m' />
             </Col>
             <CompletionModal />
+            <ExitProjectModal onExit={confirmExit} />
             <HelpModal
               challengeTitle={title}
               challengeBlock={block}
