@@ -33,6 +33,14 @@ function isAllowedEnv(env: string): env is 'development' | 'production' {
 const _EMAIL_PROVIDER = process.env.EMAIL_PROVIDER || 'ses';
 const _FREECODECAMP_NODE_ENV =
   process.env.FREECODECAMP_NODE_ENV || 'production';
+const GROWTHBOOK_API_HOST_PLACEHOLDER =
+  'fastify_api_sdk_api_host_from_growthbook_dashboard';
+const GROWTHBOOK_CLIENT_KEY_PLACEHOLDER =
+  'fastify_api_sdk_client_key_from_growthbook_dashboard';
+
+function ignorePlaceholder(value: string | undefined, placeholder: string) {
+  return value === placeholder ? undefined : value;
+}
 
 function isAllowedProvider(provider: string): provider is 'ses' | 'nodemailer' {
   return ['ses', 'nodemailer'].includes(provider);
@@ -155,7 +163,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
   assert.notEqual(
     process.env.GROWTHBOOK_FASTIFY_API_HOST,
-    'fastify_api_sdk_api_host_from_growthbook_dashboard',
+    GROWTHBOOK_API_HOST_PLACEHOLDER,
     'The GROWTHBOOK_FASTIFY_API_HOST env should be changed from the default value.'
   );
   assert.ok(
@@ -164,7 +172,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   );
   assert.notEqual(
     process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
-    'fastify_api_sdk_client_key_from_growthbook_dashboard',
+    GROWTHBOOK_CLIENT_KEY_PLACEHOLDER,
     'The GROWTHBOOK_FASTIFY_CLIENT_KEY env should be changed from the default value.'
   );
   if (process.env.FCC_ENABLE_CLASSROOM === 'true') {
@@ -267,10 +275,14 @@ export const SES_SMTP_HOST =
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
-export const GROWTHBOOK_FASTIFY_API_HOST =
-  process.env.GROWTHBOOK_FASTIFY_API_HOST;
-export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
-  process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
+export const GROWTHBOOK_FASTIFY_API_HOST = ignorePlaceholder(
+  process.env.GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_API_HOST_PLACEHOLDER
+);
+export const GROWTHBOOK_FASTIFY_CLIENT_KEY = ignorePlaceholder(
+  process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
+  GROWTHBOOK_CLIENT_KEY_PLACEHOLDER
+);
 export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
 export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
 export const TPA_API_BEARER_TOKEN = process.env.TPA_API_BEARER_TOKEN;
