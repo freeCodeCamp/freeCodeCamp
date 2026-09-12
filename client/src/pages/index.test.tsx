@@ -46,10 +46,6 @@ vi.mock('@growthbook/growthbook-react', () => ({
   useGrowthBook: growthBookMocks.useGrowthBook
 }));
 
-vi.mock('react-responsive', () => ({
-  default: ({ children }: { children: React.ReactNode }) => children
-}));
-
 vi.mock('../analytics/call-ga', () => ({
   default: vi.fn()
 }));
@@ -71,9 +67,11 @@ const expectedLandingSuperBlocks = getStageOrder({ showUpcomingChanges })
 
 function renderLanding({
   growthBookReady = true,
+  userFetchComplete = true,
   showTwoButtonCTA = false
 }: {
   growthBookReady?: boolean;
+  userFetchComplete?: boolean;
   showTwoButtonCTA?: boolean;
 } = {}) {
   growthBookMocks.useFeature.mockReturnValue({
@@ -92,8 +90,8 @@ function renderLanding({
         sessionUser: null
       },
       userFetchState: {
-        pending: false,
-        complete: true,
+        pending: !userFetchComplete,
+        complete: userFetchComplete,
         errored: false,
         error: null
       }
@@ -114,6 +112,27 @@ describe('IndexPage', () => {
     growthBookMocks.getFeatureValue.mockReset();
     growthBookMocks.useFeature.mockReset();
     growthBookMocks.useGrowthBook.mockReset();
+  });
+
+  it.each([
+    { growthBookReady: false, userFetchComplete: true },
+    { growthBookReady: true, userFetchComplete: false }
+  ])('renders public content while loading %j', loadingState => {
+    renderLanding(loadingState);
+
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: translations.landing['big-heading-1-b']
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId('testimonials-section-header')
+    ).toBeInTheDocument();
+    expect(screen.queryByTestId('landing-top-big-cta')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('landing-google-cta')).not.toBeInTheDocument();
+    expect(growthBookMocks.getFeatureValue).not.toHaveBeenCalled();
+    expect(growthBookMocks.useFeature).not.toHaveBeenCalled();
   });
 
   it('renders landing page copy and static sections', () => {
