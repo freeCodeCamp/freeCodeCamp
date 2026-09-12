@@ -188,6 +188,7 @@ model user {
   verificationToken              String? // Undefined
   website                        String? // Undefined
   yearsTopContributor            String[] // Undefined | String[]
+  activityTrackingId             String?
   isClassroomAccount             Boolean? // Undefined
 
   // Relations

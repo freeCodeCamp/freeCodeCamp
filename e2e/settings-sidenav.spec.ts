@@ -18,7 +18,7 @@ test.describe('Settings SideNav Component', () => {
     page,
     isMobile
   }) => {
-    test.setTimeout(30000);
+    test.setTimeout(60000);
     test.skip(isMobile, 'Sidebar is hidden on mobile');
 
     const sideNav = page.getByRole('complementary');

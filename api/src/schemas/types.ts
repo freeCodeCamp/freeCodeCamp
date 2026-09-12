@@ -1,5 +1,18 @@
 import { Type } from '@fastify/type-provider-typebox';
 
+export const activityStreak = Type.Object({
+  current: Type.Number(),
+  longest: Type.Number(),
+  activeSession: Type.Boolean(),
+  lastQualifiedAt: Type.Optional(
+    Type.String({ format: 'date-time', maxLength: 24 })
+  ),
+  canIncrementAt: Type.Optional(
+    Type.String({ format: 'date-time', maxLength: 24 })
+  ),
+  expiresAt: Type.Optional(Type.String({ format: 'date-time', maxLength: 24 }))
+});
+
 export const genericError = Type.Object({
   message: Type.Literal('flash.generic-error'),
   type: Type.Literal('danger')

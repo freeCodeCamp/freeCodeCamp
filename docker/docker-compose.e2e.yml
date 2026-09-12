@@ -4,8 +4,12 @@ services:
   api:
     restart: unless-stopped
     depends_on:
-      - db
-      - mailpit
+      db:
+        condition: service_healthy
+      clickhouse:
+        condition: service_healthy
+      mailpit:
+        condition: service_started
     image: fcc-api
     env_file:
       - ../.env
@@ -13,6 +17,7 @@ services:
       # The api cannot connect to mongodb or mailpit via localhost from inside the
       # container, so we have to override these variables.
       - MONGOHQ_URL=mongodb://mongodb:27017/freecodecamp?replicaSet=rs0
+      - CLICKHOUSE_URL=http://clickhouse:8123
       - MAILPIT_HOST=mailpit
       - HOST=0.0.0.0
     ports:

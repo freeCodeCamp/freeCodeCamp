@@ -46,6 +46,9 @@ vi.mock('../analytics/call-ga', () => ({
 vi.mock('../utils/get-words');
 
 const pageData = {
+  allChallengeNode: {
+    nodes: []
+  },
   challengeNode: {
     challenge: {
       fields: {

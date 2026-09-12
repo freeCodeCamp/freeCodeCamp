@@ -158,6 +158,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
         'unsubscribeId',
         'donationEmails',
         'externalId',
+        'activityTrackingId',
         'isBanned'
       ]);
 
