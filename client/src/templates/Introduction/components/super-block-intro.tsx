@@ -26,7 +26,7 @@ interface SuperBlockIntroProps {
   onCertificationDonationAlertClick: () => void;
   isDonating: boolean;
   hasNotstarted: boolean;
-  nextChallengeSlug: string | null;
+  nextUncompletedChallengeSlug: string | null;
 }
 
 export const ConditionalDonationAlert = ({
@@ -104,7 +104,7 @@ function SuperBlockIntro({
   onCertificationDonationAlertClick,
   isDonating,
   hasNotstarted,
-  nextChallengeSlug
+  nextUncompletedChallengeSlug
 }: SuperBlockIntroProps): JSX.Element {
   const { t } = useTranslation();
   const superBlockIntroObj: {
@@ -174,10 +174,10 @@ function SuperBlockIntro({
           </Container>
         </Container>
       )}
-      {nextChallengeSlug && !fsd && (
+      {nextUncompletedChallengeSlug && !fsd && (
         <Link
           className={'btn-cta-big btn-block signup-btn btn-cta intro-top-cta'}
-          to={nextChallengeSlug}
+          to={nextUncompletedChallengeSlug}
           data-test-label={
             hasNotstarted ? 'start-learning' : 'continue-learning'
           }
