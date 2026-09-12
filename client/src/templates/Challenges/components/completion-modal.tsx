@@ -71,12 +71,6 @@ interface CompletionModalProps extends StateProps {
   t: TFunction;
 }
 
-interface DownloadableChallengeFile {
-  name: string;
-  ext: string;
-  contents: string;
-}
-
 export function CompletionModal({
   challengeFiles,
   close,
@@ -92,14 +86,21 @@ export function CompletionModal({
   // We can't useMemo here, because it does not guarantee that the URL object
   // will be revoked when the dependencies change.
   useEffect(() => {
-    // downloadURL is not in the dependency array because it should only change
-    // if the challengeFiles change. It is in the useEffect so that we cannot
-    // leak URL objects.
     if (downloadURL) URL.revokeObjectURL(downloadURL);
     if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], { type: 'text/json' });
-      setDownloadURL(URL.createObjectURL(blob));
+      const generateZip = async () => {
+        const JSZip = (await import('jszip')).default;
+        const zip = new JSZip();
+
+        challengeFiles.forEach(file => {
+          zip.file(`${file.name}.${file.ext}`, file.contents);
+        });
+
+        const blob = await zip.generateAsync({ type: 'blob' });
+        setDownloadURL(URL.createObjectURL(blob));
+      };
+
+      generateZip().catch(console.error);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [challengeFiles]);
@@ -194,7 +195,7 @@ export function CompletionModal({
             block={true}
             size='large'
             variant='primary'
-            download={`${dashedName}.txt`}
+            download={`${dashedName}.zip`}
             href={downloadURL}
           >
             {t('learn.download-solution')}
@@ -211,18 +212,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
-
-export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
-  return challengeFiles.reduce<string>(function (
-    allFiles: string,
-    currentFile: DownloadableChallengeFile
-  ) {
-    const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    allFiles +=
-      challengeFiles.length > 0
-        ? `${beforeText}${currentFile.contents}${afterText}`
-        : currentFile.contents;
-    return allFiles;
-  }, '');
-}
