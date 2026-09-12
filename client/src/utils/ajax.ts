@@ -142,6 +142,33 @@ function parseApiResponseToClientUser(data: ApiUserResponse): User | null {
     : null;
 }
 
+type SessionUserResponse = {
+  user: ApiUser | { [username: string]: ApiUser } | Record<string, never>;
+  result?: string;
+};
+
+function isApiUser(user: SessionUserResponse['user']): user is ApiUser {
+  return 'username' in user;
+}
+
+// TODO(Post-MVP): once /user/session-user always returns the user object
+// directly (i.e. `{ user }`, not `{ user: { [username]: user }, result }`),
+// drop the `isApiUser` check and the fallback to `parseApiResponseToClientUser`.
+function parseSessionUserResponse(data: SessionUserResponse): User | null {
+  const { user } = data;
+  if (isApiUser(user)) {
+    return {
+      ...user,
+      completedChallenges: mapFilesToChallengeFiles(user.completedChallenges),
+      savedChallenges: mapFilesToChallengeFiles(user.savedChallenges)
+    };
+  }
+  return parseApiResponseToClientUser({
+    user,
+    result: data.result
+  });
+}
+
 // TODO: this at least needs a few aliases so it's human readable
 export function mapFilesToChallengeFiles<File, Rest>(
   fileContainer: ({ files: (File & { key: string })[] } & Rest)[] = []
@@ -161,13 +188,13 @@ function mapKeyToFileKey<K>(
 export function getSessionUser(
   signal?: AbortSignal
 ): Promise<ResponseWithData<User | null>> {
-  const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
+  const responseWithData: Promise<ResponseWithData<SessionUserResponse>> = get(
     '/user/session-user',
     signal
   );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return responseWithData.then(({ response, data }) => {
-    const user = parseApiResponseToClientUser(data);
+    const user = parseSessionUserResponse(data);
     return {
       response,
       data: user
