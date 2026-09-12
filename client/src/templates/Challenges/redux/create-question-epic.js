@@ -232,13 +232,17 @@ function createQuestionEpic(action$, state$, { window }) {
         })
       );
 
+      const tags = window.encodeURIComponent(
+        helpCategory.toLowerCase().replace(/\s+/g, '-')
+      );
+
       const studentCode = window.encodeURIComponent(textMessage);
       const editableRegionCode = window.encodeURIComponent(
         textMessageOnlyEditableRegion
       );
       const altStudentCode = window.encodeURIComponent(altTextMessage);
 
-      const baseURI = `${forumLocation}/new-topic?category=${category}&title=${titleText}&body=`;
+      const baseURI = `${forumLocation}/new-topic?category=${category}&tags=${tags}&title=${titleText}&body=`;
       const defaultURI = `${baseURI}${studentCode}`;
       const onlyEditableRegionURI = `${baseURI}${editableRegionCode}`;
       const altURI = `${baseURI}${altStudentCode}`;
