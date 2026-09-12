@@ -352,8 +352,9 @@ export default connect(
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
 
 export const query = graphql`
-  query SuperBlockIntroPageQuery {
+  query SuperBlockIntroPageQuery($superBlock: String!) {
     allChallengeNode(
+      filter: { challenge: { superBlock: { eq: $superBlock } } }
       sort: [
         { challenge: { superOrder: ASC } }
         { challenge: { order: ASC } }
@@ -379,7 +380,7 @@ export const query = graphql`
         }
       }
     }
-    allSuperBlockStructure {
+    allSuperBlockStructure(filter: { superBlock: { eq: $superBlock } }) {
       nodes {
         superBlock
         chapters {

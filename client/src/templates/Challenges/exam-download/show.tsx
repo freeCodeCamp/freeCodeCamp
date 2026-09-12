@@ -483,7 +483,7 @@ export default connect(mapStateToProps)(withTranslation()(ShowExamDownload));
 
 // GraphQL
 export const query = graphql`
-  query ExamEnvironmentExam($id: String!) {
+  query ExamEnvironmentExam($id: String!, $superBlock: String!) {
     challengeNode(id: { eq: $id }) {
       challenge {
         id
@@ -492,7 +492,9 @@ export const query = graphql`
         translationPending
       }
     }
-    allChallengeNode {
+    allChallengeNode(
+      filter: { challenge: { superBlock: { eq: $superBlock } } }
+    ) {
       nodes {
         challenge {
           id
