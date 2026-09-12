@@ -2,6 +2,8 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 
 import * as schemas from '../../schemas.js';
 import { SOCRATES_API_KEY, SOCRATES_ENDPOINT } from '../../utils/env.js';
+import { mapErr } from '../../utils/index.js';
+import { Prisma } from '@prisma/client';
 
 const DAILY_LIMITS = { donor: 10, nonDonor: 3 } as const;
 
@@ -77,40 +79,52 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
       const todayUTC = new Date(
         Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
       );
+      const userId = req.user.id;
 
-      const existing = await fastify.prisma.socratesUsage.findUnique({
-        where: {
-          userId_date: { userId: req.user.id, date: todayUTC }
+      const res = await mapErr(
+        fastify.prisma.$runCommandRaw({
+          findAndModify: 'SocratesUsage',
+          query: {
+            userId: { $oid: userId },
+            date: { $date: todayUTC.toISOString() },
+            count: { $lt: limit }
+          },
+          update: { $inc: { count: 1 } },
+          upsert: true,
+          new: true
+        })
+      );
+
+      if (res.hasError) {
+        const error = res.error;
+        // Doc exists but is at the limit.
+        // - query does not match
+        // - upsert tries insert
+        // - unique index rejects
+        if (
+          error instanceof Prisma.PrismaClientKnownRequestError &&
+          error.code === 'P2010' &&
+          /11000|DuplicateKey/.test(error.message)
+        ) {
+          fastify.Sentry?.metrics?.count('socrates.rate_limit_hit', 1, {
+            attributes: { source: 'local', donorStatus }
+          });
+          return reply.status(429).send({
+            error: 'socrates-daily-limit',
+            type: 'info',
+            attempts: limit,
+            limit
+          });
         }
-      });
 
-      if (existing && existing.count >= limit) {
-        fastify.Sentry?.metrics?.count('socrates.rate_limit_hit', 1, {
-          attributes: { source: 'local', donorStatus }
-        });
-        return reply.status(429).send({
-          error: 'socrates-daily-limit',
-          type: 'info',
-          attempts: limit,
-          limit
-        });
+        // Bad error running query.
+        throw error;
       }
 
-      const usage = await fastify.prisma.socratesUsage.upsert({
-        where: {
-          userId_date: { userId: req.user.id, date: todayUTC }
-        },
-        create: {
-          userId: req.user.id,
-          date: todayUTC,
-          count: 1
-        },
-        update: {
-          count: { increment: 1 }
-        }
-      });
+      type FindAndModifyResult = { value: { count: number } };
+      const data = res.data as FindAndModifyResult;
 
-      const attempts = usage.count;
+      const attempts = data.value.count;
 
       const rollbackUsage = async () => {
         await fastify.prisma.socratesUsage.update({
