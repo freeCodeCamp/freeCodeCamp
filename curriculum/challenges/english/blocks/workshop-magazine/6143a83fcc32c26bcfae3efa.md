@@ -7,7 +7,7 @@ dashedName: step-17
 
 # --description--
 
-Below your `.text` element, create a new `section` element and give it a `class` of `text text-with-images`. Within that, create an `article` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
+Below your `.text` element, create a new `section` element and give it a `class` of `text text-with-images`. Within that, create another `section` element with a `class` set to `brief-history`, and an `aside` element with the `class` set to `image-wrapper`.
 
 # --hints--
 
@@ -20,19 +20,19 @@ assert.lengthOf(document.querySelectorAll('section'), 3);
 Your new `section` element should come after your `.text` element.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.previousElementSibling?.className, 'text');
+assert.equal(document.querySelectorAll('section')?.[1]?.previousElementSibling?.className, 'text');
 ```
 
 Your new `section` element should have the `class` set to `text text-with-images`.
 
 ```js
-assert.equal(document.querySelectorAll('section')?.[2]?.className, 'text text-with-images');
+assert.equal(document.querySelectorAll('section')?.[1]?.className, 'text text-with-images');
 ```
 
-Your new `section` element should have an `article` element.
+Your new `.text-with-images` element should have a `section` element.
 
 ```js
-assert.exists(document.querySelector('.text-with-images article'));
+assert.exists(document.querySelector('.text-with-images > section'));
 ```
 
 Your new `section` element should have an `aside` element.
@@ -41,16 +41,16 @@ Your new `section` element should have an `aside` element.
 assert.exists(document.querySelector('.text-with-images aside'));
 ```
 
-The `article` element should come before the `aside` element.
+The inner `section` element should come before the `aside` element.
 
 ```js
-assert.equal(document.querySelector('.text-with-images article')?.nextElementSibling?.localName, 'aside');
+assert.equal(document.querySelector('.text-with-images > section')?.nextElementSibling?.localName, 'aside');
 ```
 
-Your `article` element should have the `class` set to `brief-history`.
+Your inner `section` element should have the `class` set to `brief-history`.
 
 ```js
-assert.equal(document.querySelector('.text-with-images article')?.className, 'brief-history');
+assert.equal(document.querySelector('.text-with-images > section')?.className, 'brief-history');
 ```
 
 Your `aside` element should have the `class` set to `image-wrapper`.
@@ -82,7 +82,7 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
   </head>
   <body>
     <main>
-      <section class="heading">
+      <article>
         <header class="hero">
           <img
             src="https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png"
@@ -91,39 +91,40 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
             class="hero-img"
             width="400"
           />
-          <h1 class="hero-title">OUR NEW CURRICULUM</h1>
-          <p class="hero-subtitle">
+          <hgroup class="hero-title">
+            <h1>OUR NEW CURRICULUM</h1>
+            <p class="hero-subtitle">
             Our efforts to restructure our curriculum with a more project-based
             focus
-          </p>
-        </header>
-        <div class="author">
+            </p>
+          </hgroup>
+          <address class="author">
           <p class="author-name">
             By
-            <a href="https://freecodecamp.org" target="_blank" rel="noreferrer"
+            <a href="https://freecodecamp.org" target="_blank" rel="author noreferrer"
               >freeCodeCamp</a
             >
           </p>
-          <p class="publish-date">March 7, 2019</p>
-        </div>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/freecodecamp/">
-            <i class="fab fa-facebook-f"></i>
+          </address>
+          <p class="publish-date"><time datetime="2019-03-07">March 7, 2019</time></p>
+        <nav aria-label="Social media links" class="social-icons">
+          <a href="https://www.facebook.com/freecodecamp/" aria-label="freeCodeCamp Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
           </a>
-          <a href="https://twitter.com/freecodecamp/">
-            <i class="fab fa-twitter"></i>
+          <a href="https://twitter.com/freecodecamp/" aria-label="freeCodeCamp Twitter">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
           </a>
-          <a href="https://instagram.com/freecodecamp">
-            <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/freecodecamp" aria-label="freeCodeCamp Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>
-          <a href="https://www.linkedin.com/school/free-code-camp/">
-            <i class="fab fa-linkedin-in"></i>
+          <a href="https://www.linkedin.com/school/free-code-camp/" aria-label="freeCodeCamp LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
-          <a href="https://www.youtube.com/freecodecamp">
-            <i class="fab fa-youtube"></i>
+          <a href="https://www.youtube.com/freecodecamp" aria-label="freeCodeCamp YouTube">
+            <i class="fab fa-youtube" aria-hidden="true"></i>
           </a>
-        </div>
-      </section>
+        </nav>
+        </header>
       <section class="text">
         <p class="first-paragraph">
           Soon the freeCodeCamp curriculum will be 100% project-driven learning. Instead of a series of coding challenges, you'll learn through building projects - step by step. Before we get into the details, let me emphasize: we are not changing the certifications. All 6 certifications will still have the same 5 required projects. We are only changing the optional coding challenges.
@@ -156,6 +157,7 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
 --fcc-editable-region--
       
 --fcc-editable-region--
+      </article>
     </main>
   </body>
 </html>
