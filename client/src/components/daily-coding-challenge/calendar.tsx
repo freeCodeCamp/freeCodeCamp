@@ -239,12 +239,14 @@ function DailyCodingChallengeCalendar({
       <Spacer size='l' />
 
       {!isSignedIn && (
-        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-          <Spacer size='m' />
-          <div className='completion-modal-login-btn'>
-            <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
-          </div>
-        </Col>
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+            </Col>
+          </Row>
+        </Container>
       )}
     </>
   );
