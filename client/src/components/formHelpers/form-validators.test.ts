@@ -78,7 +78,12 @@ describe('Form validators', () => {
       'http://127.0.0.1:3000',
       'https://127.0.0.1',
       'https://127.0.0.1:3000',
-      'http://[::1]:3000'
+      'http://[::1]:3000',
+      'http://localhost',
+      'http://localhost/',
+      'http://10.0.0.1/app',
+      'http://192.168.1.10:3000',
+      'https://172.16.0.1:8080/'
     ];
 
     const publicAddresses = [
@@ -99,7 +104,11 @@ describe('Form validators', () => {
   });
 
   test('httpValidator', () => {
-    const allowedHttpAddresses = ['http://[::1]:3000', 'http://localhost:3000'];
+    const allowedHttpAddresses = [
+      'http://[::1]:3000',
+      'http://localhost:3000',
+      'http://192.168.1.10:3000'
+    ];
 
     const disallowedHttpAddresses = [
       'http://example.com',

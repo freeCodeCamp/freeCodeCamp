@@ -13,11 +13,10 @@ MODIFIED FROM: https://github.com/indutny/node-ip
 */
 
 export function isPrivate(address: string) {
-  // Strip `https?` prefix
-  let addr = address.replace(/^https?:\/\//, '');
+  let addr = getHost(address);
 
   // Check if localhost
-  if (/^localhost:/.test(addr)) {
+  if (addr === 'localhost' || /^localhost:/.test(addr)) {
     return true;
   }
   // Check loopback addresses first
@@ -48,6 +47,20 @@ export function isPrivate(address: string) {
     /^::1$/.test(addr) ||
     /^::$/.test(addr)
   );
+}
+
+// The validators pass full URLs, so only the hostname is kept: a port or a path
+// would otherwise stop the private range checks from matching.
+function getHost(address: string) {
+  if (/^https?:\/\//.test(address)) {
+    try {
+      // IPv6 hostnames keep their brackets, e.g. `[::1]`
+      return new URL(address).hostname.replace(/^\[(.*)\]$/, '$1');
+    } catch {
+      // Not a valid URL, fall back to the address without its protocol
+    }
+  }
+  return address.replace(/^https?:\/\//, '');
 }
 
 function isLoopback(addr: string) {
