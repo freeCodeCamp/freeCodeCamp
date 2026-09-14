@@ -1,18 +1,9 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 
 test.describe('When the user has not accepted the Academic Honesty Policy', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
+  test.use({ userPreset: 'development' });
 
   test('they should be able to accept it', async ({ page }) => {
     await page.goto('/settings#honesty');
