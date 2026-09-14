@@ -1,11 +1,13 @@
-import { execSync } from 'child_process';
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
-import { clearEditor, focusEditor } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
+
+test.use({ userPreset: 'certified' });
 
 const completeFrontEndCert = async (page: Page, number?: number) => {
   await page.goto(
@@ -13,19 +15,23 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
   );
 
   const projects = [
-    'random-quote-machine',
-    'markdown-previewer',
-    'drum-machine',
-    'javascript-calculator',
-    '25--5-clock'
+    { slug: 'random-quote-machine', title: 'Build a Random Quote Machine' },
+    { slug: 'markdown-previewer', title: 'Build a Markdown Previewer' },
+    { slug: 'drum-machine', title: 'Build a Drum Machine' },
+    { slug: 'javascript-calculator', title: 'Build a JavaScript Calculator' },
+    { slug: '25--5-clock', title: 'Build a 25 + 5 Clock' }
   ];
 
   const loopNumber = number || projects.length;
   for (let i = 0; i < loopNumber; i++) {
     await page.waitForURL(
       allowTrailingSlash(
-        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
+        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i].slug}`
       )
+    );
+    // The route changes before the next project resets its solution input.
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+      projects[i].title
     );
     await page
       .getByRole('textbox', { name: 'solution' })
@@ -42,42 +48,52 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
 const challenges = [
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
+    title: 'Comment Your JavaScript Code',
     solution: `// some comment\n/* some comment */`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
+    title: 'Declare JavaScript Variables',
     solution: 'var myName;'
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
+    title: 'Storing Values with the Assignment Operator',
     solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another',
+    title: 'Assigning the Value of One Variable to Another',
     solution: `// Setup\nvar a;\na = 7;\nvar b;\n\n// Only change code below this line\nb = a;`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator',
+    title: 'Initializing Variables with the Assignment Operator',
     solution: 'var a = 9;'
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables',
+    title: 'Declare String Variables',
     solution: `var myFirstName = 'foo';\nvar myLastName = 'bar';`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables',
+    title: 'Understanding Uninitialized Variables',
     solution: `// Only change code below this line\nvar a = 5;\nvar b = 10;\nvar c = 'I am a';\n// Only change code above this line\n\na = a + 1;\nb = b + 5;\nc = c + " String!";`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables',
+    title: 'Understanding Case Sensitivity in Variables',
     solution: `// Variable declarations\nvar studlyCapVar;\nvar properCamelCase;\nvar titleCaseOver;\n\n// Variable assignments\nstudlyCapVar = 10;\nproperCamelCase = "A String";\ntitleCaseOver = 9000;`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords',
+    title: 'Explore Differences Between the var and let Keywords',
     solution: `let catName = "Oliver";\nlet catSound = "Meow!";`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword',
+    title: 'Declare a Read-Only Variable with the const Keyword',
     solution: `const FCC = "freeCodeCamp";\n// Change this line\nlet fact = "is cool!";\n// Change this line\nfact = "is awesome!";\nconsole.log(FCC, fact);\n// Change this line`
   }
 ];
@@ -96,6 +112,10 @@ const completeChallenges = async ({
   await page.goto(challenges[0].url);
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(allowTrailingSlash(challenge.url));
+    // Gatsby updates the URL before the next challenge and its editor render.
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+      challenge.title
+    );
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
     await page.evaluate(
@@ -103,6 +123,7 @@ const completeChallenges = async ({
       challenge.solution
     );
     await page.keyboard.press('ControlOrMeta+V');
+    await expect(getEditors(page)).toHaveValue(challenge.solution);
     await page.getByRole('button', { name: 'Check Your Code' }).click();
     await page.getByRole('button', { name: 'Submit and continue' }).click();
   }
@@ -196,17 +217,9 @@ test.describe('Donation modal display', () => {
 });
 
 test.describe('Donation modal appearance logic - New user', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
+  test.use({ userPreset: 'development' });
   test.beforeEach(async ({ context }) => {
     await addGrowthbookCookie({ context, variation: 'B' });
-  });
-
-  test.beforeEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear if the user has less than 10 completed challenges in total and has just completed 3 challenges', async ({
@@ -273,12 +286,7 @@ test.describe('Donation modal appearance logic - New user', () => {
 });
 
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  test.beforeEach(() =>
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
-    )
-  );
+  test.use({ userPreset: 'almost-certified' });
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
     page,
@@ -346,12 +354,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
 });
 
 test.describe('Donation modal appearance logic - Certified user claiming a new module', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  test.beforeEach(() =>
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
-    )
-  );
+  test.use({ userPreset: 'almost-certified' });
 
   test('should appear if the user has just completed a new module', async ({
     page
@@ -441,15 +444,7 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 });
 
 test.describe('Donation modal appearance logic - Donor user', () => {
-  test.beforeAll(() => {
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
-    );
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
+  test.use({ userOverrides: { isDonating: true } });
 
   test('should not appear', async ({
     page,

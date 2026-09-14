@@ -1,6 +1,4 @@
-import { execSync } from 'node:child_process';
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { allowTrailingSlash } from './utils/url';
@@ -8,9 +6,7 @@ import { allowTrailingSlash } from './utils/url';
 const nextChallengeURL =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects/demographic-data-analyzer';
 
-test.beforeAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
@@ -86,14 +82,14 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   test('should submit and go to the next challenge when the user presses Ctrl + Enter', async ({
     page
   }) => {
-    await page.keyboard.press('Control+Enter');
+    await page.getByRole('dialog').press('Control+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
 
   test('should submit and go to the next challenge when the user presses Command + Enter', async ({
     page
   }) => {
-    await page.keyboard.press('Meta+Enter');
+    await page.getByRole('dialog').press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
 });
