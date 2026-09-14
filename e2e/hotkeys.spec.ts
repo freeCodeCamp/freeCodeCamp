@@ -1,7 +1,7 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { authedRequest } from './utils/request';
 import { clearEditor, getEditors } from './utils/editor';
 import { alertToBeVisible } from './utils/alerts';
 
@@ -86,15 +86,9 @@ const completeMultifileLabWithHotkey = async ({
   await expect(page.getByRole('dialog')).toHaveCount(0);
 };
 
-test.beforeAll(async ({ request }) => {
-  await authedRequest({
-    request,
-    endpoint: 'update-my-keyboard-shortcuts',
-    method: 'put',
-    data: {
-      keyboardShortcuts: false
-    }
-  });
+test.use({
+  userPreset: 'certified',
+  userOverrides: { keyboardShortcuts: false }
 });
 
 test.beforeEach(async ({ page }) => {
@@ -108,18 +102,6 @@ test.beforeEach(async ({ page }) => {
   // wait for the client to register the change:
   await alertToBeVisible(page, translations.flash['keyboard-shortcut-updated']);
 });
-
-test.afterEach(
-  async ({ request }) =>
-    await authedRequest({
-      request,
-      method: 'put',
-      endpoint: 'update-my-keyboard-shortcuts',
-      data: {
-        keyboardShortcuts: false
-      }
-    })
-);
 
 // TODO: handle keyboard shortcuts on mobile
 test.skip(({ isMobile }) => isMobile, 'Only test on desktop');
