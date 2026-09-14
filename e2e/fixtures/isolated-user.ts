@@ -1,40 +1,23 @@
-import { randomUUID } from 'node:crypto';
 import { test as base, type APIRequestContext } from '@playwright/test';
 
 import {
   removeIsolatedUser,
   seedIsolatedUser,
-  type UserPreset,
-  type UserRelations
+  type UserPreset
 } from '@freecodecamp/scripts-seed/seed-isolated-user';
 
 type UserStorageState = Awaited<ReturnType<APIRequestContext['storageState']>>;
 
 type IsolatedUser = {
   email: string;
-  id: string;
   storageState: UserStorageState;
   username: string;
-  unsubscribeId: string;
-};
-
-type UserOptions = {
-  preset?: UserPreset;
-  overrides?: Record<string, boolean>;
-  relations?: UserRelations;
-};
-
-type CreatedUser = {
-  email: string;
-  id?: string;
 };
 
 type IsolatedUserFixtures = {
-  createUser: (options?: UserOptions) => Promise<IsolatedUser>;
   isolatedUser: IsolatedUser;
   userOverrides: Record<string, boolean>;
   userPreset: UserPreset;
-  userRelations: UserRelations;
 };
 
 const apiLocation = process.env.API_LOCATION ?? 'http://localhost:3000';
@@ -88,78 +71,36 @@ async function getSessionUser(request: APIRequestContext) {
 }
 
 export const test = base.extend<IsolatedUserFixtures>({
-  userPreset: ['certified', { option: true }],
+  userPreset: ['new', { option: true }],
   userOverrides: [{}, { option: true }],
-  userRelations: [{}, { option: true }],
 
-  createUser: async ({ playwright }, use, testInfo) => {
-    const createdUsers: CreatedUser[] = [];
-    const pendingCreations: Promise<IsolatedUser>[] = [];
+  isolatedUser: async (
+    { playwright, userOverrides, userPreset },
+    use,
+    testInfo
+  ) => {
+    // Tests in a worker run sequentially and delete the account after each test.
+    const email = `test-user-${testInfo.workerIndex}@example.com`;
+    const request = await playwright.request.newContext({
+      storageState: { cookies: [], origins: [] }
+    });
+    let id: string | undefined;
 
-    async function createIsolatedUser({
-      preset = 'new',
-      overrides = {},
-      relations = {}
-    }: UserOptions = {}): Promise<IsolatedUser> {
-      // Also isolate retries, browser projects and separate test invocations.
-      const email = `test-user-${testInfo.workerIndex}-${randomUUID()}@example.com`;
-      const user: CreatedUser = { email };
-      // Register before sign-in so cleanup also covers failed setup.
-      createdUsers.push(user);
+    try {
+      const storageState = await signIn(request, email);
+      const user = await getSessionUser(request);
+      // Keep the ID for cleanup even if the test renames or deletes the user.
+      id = user.id;
 
-      const request = await playwright.request.newContext({
-        storageState: { cookies: [], origins: [] }
-      });
-
+      await seedIsolatedUser(email, userPreset, userOverrides);
+      await use({ email, storageState, username: user.username });
+    } finally {
       try {
-        const storageState = await signIn(request, email);
-        const { id, username } = await getSessionUser(request);
-        // Use the ID for cleanup even if the test renames or deletes the user.
-        user.id = id;
-
-        const { unsubscribeId } = await seedIsolatedUser(
-          email,
-          preset,
-          overrides,
-          relations
-        );
-
-        return { id, email, username, unsubscribeId, storageState };
+        await removeIsolatedUser(id ? { id } : { email });
       } finally {
         await request.dispose();
       }
     }
-
-    function createUser(options?: UserOptions) {
-      const creation = createIsolatedUser(options);
-      pendingCreations.push(creation);
-      return creation;
-    }
-
-    try {
-      await use(createUser);
-    } finally {
-      // Promise.all in a test can reject while another signup is still running.
-      // Let every signup finish before deleting the accounts it created.
-      await Promise.allSettled(pendingCreations);
-      await Promise.all(
-        createdUsers.map(({ email, id }) =>
-          removeIsolatedUser(id ? { id } : { email })
-        )
-      );
-    }
-  },
-
-  isolatedUser: async (
-    { createUser, userOverrides, userPreset, userRelations },
-    use
-  ) => {
-    const user = await createUser({
-      preset: userPreset,
-      overrides: userOverrides,
-      relations: userRelations
-    });
-    await use(user);
   },
 
   storageState: async ({ isolatedUser }, use) => {

@@ -1,3 +1,4 @@
+import { test as baseTest } from '@playwright/test';
 import { test, expect } from './fixtures/isolated-user';
 
 test.describe('Profile page', () => {
@@ -21,10 +22,10 @@ test.describe('Profile page', () => {
       ).toBeVisible();
     });
 
-    test.describe('logged out', () => {
-      test.use({ storageState: { cookies: [], origins: [] } });
+    baseTest.describe('logged out', () => {
+      baseTest.use({ storageState: { cookies: [], origins: [] } });
 
-      test('loads the public profile', async ({ page }) => {
+      baseTest('loads the public profile', async ({ page }) => {
         await page.goto('/publicUser');
 
         await expect(

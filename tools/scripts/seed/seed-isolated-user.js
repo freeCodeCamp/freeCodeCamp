@@ -12,7 +12,6 @@ const {
 
 /**
  * @typedef {'new' | 'development' | 'certified' | 'almost-certified' | 'unclaimed'} UserPreset
- * @typedef {{ msUsername?: boolean, completedSurvey?: boolean }} UserRelations
  */
 
 const presets = {
@@ -23,15 +22,6 @@ const presets = {
   unclaimed: unclaimedUser
 };
 
-const identityFields = [
-  '_id',
-  'id',
-  'email',
-  'username',
-  'usernameDisplay',
-  'unsubscribeId'
-];
-
 /**
  * Apply a preset to an existing isolated account, preserving its identity unless
  * explicitly overridden.
@@ -39,56 +29,32 @@ const identityFields = [
  * @param {string} email
  * @param {UserPreset} preset
  * @param {Record<string, boolean>} overrides
- * @param {UserRelations} [relations]
- * @returns {Promise<{ unsubscribeId: string }>}
+ * @returns {Promise<void>}
  */
-async function seedIsolatedUser(email, preset, overrides, relations = {}) {
+async function seedIsolatedUser(email, preset, overrides) {
   const client = new MongoClient(process.env.MONGOHQ_URL);
 
   try {
-    const db = client.db('freecodecamp');
-    const users = db.collection('user');
-    const existingUser = await users.findOne({ email });
+    const user = client.db('freecodecamp').collection('user');
+    const existingUser = await user.findOne({ email });
 
     if (!existingUser) {
       throw new Error(`Could not find isolated user with email ${email}.`);
     }
 
-    const { _id: userId, username, unsubscribeId } = existingUser;
-    const userUpdates = {
-      ..._.omit(presets[preset], identityFields),
+    const seed = {
+      ..._.omit(presets[preset], [
+        '_id',
+        'id',
+        'email',
+        'username',
+        'usernameDisplay',
+        'unsubscribeId'
+      ]),
       ...overrides
     };
 
-    await users.updateOne({ _id: userId }, { $set: userUpdates });
-
-    if (relations.msUsername) {
-      await db.collection('MsUsername').updateOne(
-        { userId },
-        {
-          $set: {
-            msUsername: username,
-            ttl: 77760000000
-          }
-        },
-        { upsert: true }
-      );
-    }
-
-    if (relations.completedSurvey) {
-      await db.collection('Survey').updateOne(
-        { userId },
-        {
-          $set: {
-            title: 'Foundational C# with Microsoft Survey',
-            responses: []
-          }
-        },
-        { upsert: true }
-      );
-    }
-
-    return { unsubscribeId };
+    await user.updateOne({ _id: existingUser._id }, { $set: seed });
   } finally {
     await client.close();
   }
