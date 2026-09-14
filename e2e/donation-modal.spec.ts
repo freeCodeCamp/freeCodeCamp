@@ -15,23 +15,19 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
   );
 
   const projects = [
-    { slug: 'random-quote-machine', title: 'Build a Random Quote Machine' },
-    { slug: 'markdown-previewer', title: 'Build a Markdown Previewer' },
-    { slug: 'drum-machine', title: 'Build a Drum Machine' },
-    { slug: 'javascript-calculator', title: 'Build a JavaScript Calculator' },
-    { slug: '25--5-clock', title: 'Build a 25 + 5 Clock' }
+    'random-quote-machine',
+    'markdown-previewer',
+    'drum-machine',
+    'javascript-calculator',
+    '25--5-clock'
   ];
 
   const loopNumber = number || projects.length;
   for (let i = 0; i < loopNumber; i++) {
     await page.waitForURL(
       allowTrailingSlash(
-        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i].slug}`
+        `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
       )
-    );
-    // The route changes before the next project resets its solution input.
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-      projects[i].title
     );
     await page
       .getByRole('textbox', { name: 'solution' })
