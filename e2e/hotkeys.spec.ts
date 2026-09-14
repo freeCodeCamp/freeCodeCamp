@@ -86,10 +86,7 @@ const completeMultifileLabWithHotkey = async ({
   await expect(page.getByRole('dialog')).toHaveCount(0);
 };
 
-test.use({
-  userPreset: 'certified',
-  userOverrides: { keyboardShortcuts: false }
-});
+test.use({ userPreset: 'certified' });
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/settings');
