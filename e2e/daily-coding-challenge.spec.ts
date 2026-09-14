@@ -1,12 +1,14 @@
 import { execSync } from 'child_process';
 
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import {
   getTodayUsCentral,
   formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 const dateRouteRe = /.*\/daily-coding-challenge\/day\/.*/;
 
@@ -146,15 +148,10 @@ test.describe('Daily Coding Challenges', () => {
 });
 
 test.describe('Daily Coding Challenge completion persistence', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
+  test.use({ userPreset: 'development' });
 
   test.beforeAll(() => {
     execSync('node ../tools/scripts/seed/seed-daily-coding-challenge');
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('persists a completed daily coding challenge in the archive', async ({
