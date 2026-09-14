@@ -29,7 +29,10 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
         `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
       )
     );
-    const heading = page.getByRole('heading', { level: 1 });
+    const heading = page.getByRole('heading', {
+      level: 1,
+      includeHidden: true
+    });
     const title = await heading.innerText();
     await page
       .getByRole('textbox', { name: 'solution' })
@@ -101,7 +104,10 @@ const completeChallenges = async ({
   await page.goto(challenges[0].url);
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(allowTrailingSlash(challenge.url));
-    const heading = page.getByRole('heading', { level: 1 });
+    const heading = page.getByRole('heading', {
+      level: 1,
+      includeHidden: true
+    });
     const title = await heading.innerText();
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
