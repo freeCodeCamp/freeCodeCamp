@@ -2,11 +2,18 @@
 /* ---------------------------------------------------------- */
 
 .site-footer {
-  color: var(--tertiary-color);
-  background: var(--tertiary-background);
+  color: var(--gray-10);
+  background: var(--gray-80);
   line-height: 1.6;
   padding: 40px 15px;
   font-size: 16px;
+}
+
+.light-palette .site-footer {
+  /* Force dark mode colors for the footer even in light palette */
+  --tertiary-color: var(--gray-10);
+  --tertiary-background: var(--gray-80);
+  --quaternary-background: var(--gray-75);
 }
 
 .footer-top {
@@ -44,6 +51,7 @@
 
 .site-footer .col-header,
 .trending-guides .col-header {
+  color: var(--gray-10);
   text-align: center;
   font-weight: 700;
   font-size: 16px;

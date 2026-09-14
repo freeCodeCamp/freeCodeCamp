@@ -60,17 +60,21 @@ const UniversalNav = ({
       className='universal-nav'
       id='universal-nav'
     >
+      <div className='universal-nav-left'>
+        <Link
+          className='universal-nav-logo'
+          id='universal-nav-logo'
+          to='/learn'
+          data-playwright-test-label='header-universal-nav-logo'
+        >
+          <FreeCodeCampLogo aria-label={t('aria.fcc-curriculum')} />
+        </Link>
+      </div>
+
       {isSearchExposedWidth && (
-        <div className='universal-nav-left'>{search}</div>
+        <div className='universal-nav-middle'>{search}</div>
       )}
-      <Link
-        className='universal-nav-logo'
-        id='universal-nav-logo'
-        to='/learn'
-        data-playwright-test-label='header-universal-nav-logo'
-      >
-        <FreeCodeCampLogo aria-label={t('aria.fcc-curriculum')} />
-      </Link>
+
       <div className='universal-nav-right main-nav'>
         {pending ? (
           <div className='nav-skeleton'>
@@ -78,6 +82,7 @@ const UniversalNav = ({
           </div>
         ) : (
           <>
+            {!isSearchExposedWidth && search}
             <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
@@ -85,7 +90,6 @@ const UniversalNav = ({
               innerRef={menuButtonRef}
               showMenu={showMenu}
             />
-            {!isSearchExposedWidth && search}
             <NavLinks
               displayMenu={displayMenu}
               hideMenu={hideMenu}

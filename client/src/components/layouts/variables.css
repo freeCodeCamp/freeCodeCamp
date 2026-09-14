@@ -33,9 +33,9 @@
   --focus-outline-color: var(--blue-mid);
   --font-family-sans-serif: 'Lato', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
-  --header-element-size: 28px;
+  --header-element-size: 36px;
   --header-sub-element-size: 45px;
-  --header-height: 38px;
+  --header-height: 60px;
   --breadcrumbs-height: 44px;
   --action-row-height: 54px;
   --z-index-breadcrumbs: 100;

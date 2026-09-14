@@ -35,6 +35,8 @@
   grid-template-areas: 'submit input reset';
   grid-template-columns: 26px auto 36px;
   margin-bottom: 0;
+  border-radius: 20px;
+  padding: 0 10px;
 }
 
 .ais-SearchBox-input {
@@ -46,13 +48,19 @@
   height: var(--header-element-size);
   text-wrap: nowrap;
   text-overflow: ellipsis;
+  outline: none;
+  background-color: transparent;
+}
+
+.fcc_searchBar .ais-SearchBox-form:focus-within {
+  box-shadow: 0 0 0 2px var(--focus-outline-color);
 }
 
 .ais-SearchBox-submit,
 .ais-SearchBox-reset {
   height: var(--header-element-size);
   width: 26px;
-  background-color: var(--gray-75);
+  background-color: transparent;
 }
 
 .ais-SearchBox-submit {
@@ -79,11 +87,20 @@
   fill: var(--gray-00);
 }
 
-.fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
   z-index: 100;
   background-color: var(--gray-75);
   color: var(--gray-00);
+}
+
+.fcc_searchBar .ais-SearchBox-input {
+  z-index: 100;
+  background-color: transparent;
+  color: var(--gray-00);
+}
+
+.fcc_searchBar .ais-SearchBox-input:focus {
+  outline: none;
 }
 
 /* hits */
