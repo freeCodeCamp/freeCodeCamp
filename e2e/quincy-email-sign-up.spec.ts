@@ -11,7 +11,8 @@ test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test.beforeEach(async ({ page, isolatedUser }) => {
-    // Development sign-in must return to this test's account.
+    // This browser starts signed out, so it cannot use the fixture's session.
+    // Without an email, development sign-in would select the shared account.
     await page.route(`${apiLocation}/signin`, route => {
       const signInUrl = new URL(route.request().url());
       signInUrl.searchParams.set('email', isolatedUser.email);

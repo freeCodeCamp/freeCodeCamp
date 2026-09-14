@@ -12,12 +12,9 @@ const settingsPageElement = {
 
 const newEmail = 'foo-update@bar.com';
 
-test.beforeEach(async ({ page, isolatedUser }) => {
-  // Settings redirects to sign-in if the initial session fetch is still pending.
+test.beforeEach(async ({ page }) => {
+  // The Settings link appears after the session loads; navigation keeps that state.
   await page.goto('/learn');
-  await expect(
-    page.getByRole('link', { name: translations.buttons.profile, exact: true })
-  ).toHaveAttribute('href', `/${isolatedUser.username}`);
   await page
     .getByRole('button', { name: translations.buttons.menu, exact: true })
     .click();
