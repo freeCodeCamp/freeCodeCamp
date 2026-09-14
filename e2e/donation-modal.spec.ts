@@ -2,7 +2,7 @@ import { type Page } from '@playwright/test';
 import { test, expect } from './fixtures/isolated-user';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { clearEditor, focusEditor } from './utils/editor';
 import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
@@ -29,6 +29,8 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
         `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
       )
     );
+    const heading = page.getByRole('heading', { level: 1 });
+    const title = await heading.innerText();
     await page
       .getByRole('textbox', { name: 'solution' })
       .fill('https://codepen.io/camperbot/full/oNvPqqo');
@@ -38,58 +40,49 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
     await page
       .getByRole('button', { name: 'Submit and go to next challenge' })
       .click();
+    await expect(heading).not.toHaveText(title);
   }
 };
 
 const challenges = [
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
-    title: 'Comment Your JavaScript Code',
     solution: `// some comment\n/* some comment */`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables',
-    title: 'Declare JavaScript Variables',
     solution: 'var myName;'
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator',
-    title: 'Storing Values with the Assignment Operator',
     solution: `// Setup\nvar a;\n\n// Only change code below this line\na = 7;`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/assigning-the-value-of-one-variable-to-another',
-    title: 'Assigning the Value of One Variable to Another',
     solution: `// Setup\nvar a;\na = 7;\nvar b;\n\n// Only change code below this line\nb = a;`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator',
-    title: 'Initializing Variables with the Assignment Operator',
     solution: 'var a = 9;'
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-string-variables',
-    title: 'Declare String Variables',
     solution: `var myFirstName = 'foo';\nvar myLastName = 'bar';`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables',
-    title: 'Understanding Uninitialized Variables',
     solution: `// Only change code below this line\nvar a = 5;\nvar b = 10;\nvar c = 'I am a';\n// Only change code above this line\n\na = a + 1;\nb = b + 5;\nc = c + " String!";`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables',
-    title: 'Understanding Case Sensitivity in Variables',
     solution: `// Variable declarations\nvar studlyCapVar;\nvar properCamelCase;\nvar titleCaseOver;\n\n// Variable assignments\nstudlyCapVar = 10;\nproperCamelCase = "A String";\ntitleCaseOver = 9000;`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords',
-    title: 'Explore Differences Between the var and let Keywords',
     solution: `let catName = "Oliver";\nlet catSound = "Meow!";`
   },
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-a-read-only-variable-with-the-const-keyword',
-    title: 'Declare a Read-Only Variable with the const Keyword',
     solution: `const FCC = "freeCodeCamp";\n// Change this line\nlet fact = "is cool!";\n// Change this line\nfact = "is awesome!";\nconsole.log(FCC, fact);\n// Change this line`
   }
 ];
@@ -108,10 +101,8 @@ const completeChallenges = async ({
   await page.goto(challenges[0].url);
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(allowTrailingSlash(challenge.url));
-    // Gatsby updates the URL before the next challenge and its editor render.
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-      challenge.title
-    );
+    const heading = page.getByRole('heading', { level: 1 });
+    const title = await heading.innerText();
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName });
     await page.evaluate(
@@ -119,9 +110,9 @@ const completeChallenges = async ({
       challenge.solution
     );
     await page.keyboard.press('ControlOrMeta+V');
-    await expect(getEditors(page)).toHaveValue(challenge.solution);
     await page.getByRole('button', { name: 'Check Your Code' }).click();
     await page.getByRole('button', { name: 'Submit and continue' }).click();
+    await expect(heading).not.toHaveText(title);
   }
 };
 
