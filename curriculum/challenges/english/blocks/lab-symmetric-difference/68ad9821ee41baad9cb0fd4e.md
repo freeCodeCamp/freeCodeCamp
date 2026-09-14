@@ -39,7 +39,13 @@ assert.isFunction(diffArray);
 Your `diffArray` function should use the `filter` method.
 
 ```js
-assert.match(diffArray.toString(), /\.filter\(/);
+const spy = __helpers.spyOn(Array.prototype, 'filter');
+try {
+  diffArray([1, 2], [2, 3]);
+  assert.isAbove(spy.calls.length, 0);
+} finally {
+  spy.restore();
+}
 ```
 
 `diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])` should return `["pink wool"]`.
