@@ -1,5 +1,5 @@
 const path = require('path');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 const _ = require('lodash');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
@@ -29,7 +29,7 @@ const presets = {
  * @param {string} email
  * @param {UserPreset} preset
  * @param {Record<string, boolean>} overrides
- * @returns {Promise<void>}
+ * @returns {Promise<string>} The account ID, which remains stable after renames.
  */
 async function seedIsolatedUser(email, preset, overrides) {
   const client = new MongoClient(process.env.MONGOHQ_URL);
@@ -55,9 +55,70 @@ async function seedIsolatedUser(email, preset, overrides) {
     };
 
     await user.updateOne({ _id: existingUser._id }, { $set: seed });
+    return existingUser._id.toString();
   } finally {
     await client.close();
   }
 }
 
-module.exports = { seedIsolatedUser };
+/** @param {string} id */
+async function isolatedUserExists(id) {
+  const client = new MongoClient(process.env.MONGOHQ_URL);
+  try {
+    const user = await client
+      .db('freecodecamp')
+      .collection('user')
+      .findOne({ _id: new ObjectId(id) }, { projection: { _id: 1 } });
+    return user !== null;
+  } finally {
+    await client.close();
+  }
+}
+
+/**
+ * @param {string} email
+ * @returns {Promise<string>}
+ */
+async function getUnsubscribeId(email) {
+  const client = new MongoClient(process.env.MONGOHQ_URL);
+  try {
+    const user = await client
+      .db('freecodecamp')
+      .collection('user')
+      .findOne({ email });
+    if (typeof user?.unsubscribeId !== 'string') {
+      throw new Error(`Could not find an unsubscribe ID for ${email}.`);
+    }
+    return user.unsubscribeId;
+  } finally {
+    await client.close();
+  }
+}
+
+/** @param {string} email */
+async function seedMsUsername(email) {
+  const client = new MongoClient(process.env.MONGOHQ_URL);
+  try {
+    const db = client.db('freecodecamp');
+    const user = await db.collection('user').findOne({ email });
+    if (!user)
+      throw new Error(`Could not find isolated user with email ${email}.`);
+
+    await db
+      .collection('MsUsername')
+      .updateOne(
+        { userId: user._id },
+        { $set: { msUsername: user.username, ttl: 77760000000 } },
+        { upsert: true }
+      );
+  } finally {
+    await client.close();
+  }
+}
+
+module.exports = {
+  seedIsolatedUser,
+  isolatedUserExists,
+  getUnsubscribeId,
+  seedMsUsername
+};

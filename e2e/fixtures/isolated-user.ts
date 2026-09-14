@@ -2,6 +2,7 @@ import { test as base, type APIRequestContext } from '@playwright/test';
 
 import {
   seedIsolatedUser,
+  isolatedUserExists,
   type UserPreset
 } from '@freecodecamp/scripts-seed/seed-isolated-user';
 
@@ -48,7 +49,7 @@ const getCsrfToken = async (request: APIRequestContext) =>
     cookie => cookie.name === 'csrf_token'
   )?.value;
 
-async function deleteAccount(request: APIRequestContext) {
+async function deleteAccount(request: APIRequestContext, userId?: string) {
   const csrfToken = await getCsrfToken(request);
   if (!csrfToken) {
     throw new Error(
@@ -60,6 +61,16 @@ async function deleteAccount(request: APIRequestContext) {
     data: {},
     headers: { 'csrf-token': csrfToken }
   });
+
+  // Account-deletion tests have already removed the user. Check the immutable
+  // ID so other authentication failures still fail cleanup.
+  if (
+    response.status() === 401 &&
+    userId &&
+    !(await isolatedUserExists(userId))
+  ) {
+    return;
+  }
 
   if (response.status() !== 200) {
     const body = await response.text();
@@ -84,6 +95,7 @@ export const test = base.extend<IsolatedUserFixtures>({
       storageState: { cookies: [], origins: [] }
     });
     let signedIn = false;
+    let userId: string | undefined;
 
     try {
       const signInUrl = new URL('/signin', apiLocation);
@@ -109,13 +121,13 @@ export const test = base.extend<IsolatedUserFixtures>({
         );
       }
 
-      await seedIsolatedUser(email, userPreset, userOverrides);
+      userId = await seedIsolatedUser(email, userPreset, userOverrides);
       const username = await getUsername(request);
 
       await use({ email, storageState, username });
     } finally {
       try {
-        if (signedIn) await deleteAccount(request);
+        if (signedIn) await deleteAccount(request, userId);
       } finally {
         await request.dispose();
       }
