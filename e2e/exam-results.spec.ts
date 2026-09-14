@@ -1,13 +1,27 @@
 import * as fs from 'fs';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import intro from '../client/i18n/locales/english/intro.json';
+import { authedRequest } from './utils/request';
+
+test.use({ userPreset: 'certified' });
 
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
 test.describe('Exam Results E2E Test Suite', () => {
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, request }) => {
+    await authedRequest({
+      request,
+      method: 'post',
+      endpoint: '/user/submit-survey',
+      data: {
+        surveyResults: {
+          title: 'Foundational C# with Microsoft Survey',
+          responses: []
+        }
+      }
+    });
     await page.goto(examUrl);
     await page
       .getByRole('button', {
@@ -97,7 +111,7 @@ test.describe('Exam Results E2E Test Suite', () => {
   test.describe('Exam Results E2E Test Suite', () => {
     test('Exam Results When the User clicks on Download button', async ({
       page
-    }) => {
+    }, testInfo) => {
       const [download] = await Promise.all([
         page.waitForEvent('download'),
         page
@@ -106,8 +120,9 @@ test.describe('Exam Results E2E Test Suite', () => {
           .click()
       ]);
       const suggestedFileName = download.suggestedFilename();
-      await download.saveAs(suggestedFileName);
-      expect(fs.existsSync(suggestedFileName)).toBeTruthy();
+      const downloadPath = testInfo.outputPath(suggestedFileName);
+      await download.saveAs(downloadPath);
+      expect(fs.existsSync(downloadPath)).toBeTruthy();
       await download.delete();
     });
   });
