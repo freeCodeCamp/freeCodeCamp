@@ -1,7 +1,6 @@
 import { test as base, type APIRequestContext } from '@playwright/test';
 
 import {
-  removeIsolatedUser,
   seedIsolatedUser,
   type UserPreset
 } from '@freecodecamp/scripts-seed/seed-isolated-user';
@@ -21,53 +20,53 @@ type IsolatedUserFixtures = {
 };
 
 const apiLocation = process.env.API_LOCATION ?? 'http://localhost:3000';
+
 const getApiUrl = (path: string) => new URL(path, apiLocation).toString();
 
-async function signIn(request: APIRequestContext, email: string) {
-  const url = new URL('/signin', apiLocation);
-  url.searchParams.set('email', email);
-
-  const response = await request.get(url.toString(), { maxRedirects: 0 });
-  if (response.status() !== 302) {
-    throw new Error(
-      `Could not sign in the isolated user: /signin returned ${response.status()}.`
-    );
-  }
-
-  const storageState = await request.storageState();
-  const hasAccessToken = storageState.cookies.some(
-    cookie => cookie.name === 'jwt_access_token'
-  );
-
-  if (!hasAccessToken) {
-    throw new Error(
-      'Could not sign in the isolated user: /signin did not set an access token.'
-    );
-  }
-
-  return storageState;
-}
-
-async function getSessionUser(request: APIRequestContext) {
+async function getUsername(request: APIRequestContext) {
   const response = await request.get(getApiUrl('/user/session-user'));
+
   if (response.status() !== 200) {
     throw new Error(
       `Could not get the isolated user: /user/session-user returned ${response.status()}.`
     );
   }
 
-  const body = (await response.json()) as {
-    result?: string;
-    user?: Record<string, { id: string }>;
-  };
-  const username = body.result;
-  const user = username ? body.user?.[username] : undefined;
+  const body = (await response.json()) as { result?: unknown };
 
-  if (!username || !user?.id) {
-    throw new Error('Could not get the isolated user from /user/session-user.');
+  if (typeof body.result !== 'string') {
+    throw new Error(
+      'Could not get the isolated user: /user/session-user did not return a username.'
+    );
   }
 
-  return { id: user.id, username };
+  return body.result;
+}
+
+const getCsrfToken = async (request: APIRequestContext) =>
+  (await request.storageState()).cookies.find(
+    cookie => cookie.name === 'csrf_token'
+  )?.value;
+
+async function deleteAccount(request: APIRequestContext) {
+  const csrfToken = await getCsrfToken(request);
+  if (!csrfToken) {
+    throw new Error(
+      'Could not clean up the isolated user: CSRF token missing.'
+    );
+  }
+
+  const response = await request.post(getApiUrl('/account/delete'), {
+    data: {},
+    headers: { 'csrf-token': csrfToken }
+  });
+
+  if (response.status() !== 200) {
+    const body = await response.text();
+    throw new Error(
+      `Could not clean up the isolated user: /account/delete returned ${response.status()}: ${body}`
+    );
+  }
 }
 
 export const test = base.extend<IsolatedUserFixtures>({
@@ -84,19 +83,39 @@ export const test = base.extend<IsolatedUserFixtures>({
     const request = await playwright.request.newContext({
       storageState: { cookies: [], origins: [] }
     });
-    let id: string | undefined;
+    let signedIn = false;
 
     try {
-      const storageState = await signIn(request, email);
-      const user = await getSessionUser(request);
-      // Keep the ID for cleanup even if the test renames or deletes the user.
-      id = user.id;
+      const signInUrl = new URL('/signin', apiLocation);
+      signInUrl.searchParams.set('email', email);
+
+      const response = await request.get(signInUrl.toString(), {
+        maxRedirects: 0
+      });
+      const storageState = await request.storageState();
+      signedIn = storageState.cookies.some(
+        cookie => cookie.name === 'jwt_access_token'
+      );
+
+      if (response.status() !== 302) {
+        throw new Error(
+          `Could not create the isolated user: /signin returned ${response.status()}.`
+        );
+      }
+
+      if (!signedIn) {
+        throw new Error(
+          'Could not create the isolated user: /signin did not set an access token.'
+        );
+      }
 
       await seedIsolatedUser(email, userPreset, userOverrides);
-      await use({ email, storageState, username: user.username });
+      const username = await getUsername(request);
+
+      await use({ email, storageState, username });
     } finally {
       try {
-        await removeIsolatedUser(id ? { id } : { email });
+        if (signedIn) await deleteAccount(request);
       } finally {
         await request.dispose();
       }
@@ -105,22 +124,6 @@ export const test = base.extend<IsolatedUserFixtures>({
 
   storageState: async ({ isolatedUser }, use) => {
     await use(isolatedUser.storageState);
-  },
-
-  context: async ({ context, isolatedUser }, use) => {
-    // Keep sign-in tied to this account on every page, including popups and
-    // signing back in after logout. Initial cookies do not determine identity.
-    await context.route(
-      url =>
-        url.origin === new URL(apiLocation).origin &&
-        url.pathname === '/signin',
-      async route => {
-        const url = new URL(route.request().url());
-        url.searchParams.set('email', isolatedUser.email);
-        await route.continue({ url: url.toString() });
-      }
-    );
-    await use(context);
   }
 });
 
