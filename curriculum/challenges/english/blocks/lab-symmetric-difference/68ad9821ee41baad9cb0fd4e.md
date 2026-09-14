@@ -26,7 +26,7 @@ Example:
 3. Your function should make use of the `filter` method.
 4. Your function should return the symmetric difference of the two arrays.
 5. Your function should return an empty array if there is no symmetric difference.
-6. Your function should list the items found only in the first array before the items found only in the second array.
+6. Your function should list the items found only in the first array before the items found only in the second array, preserving their original order within each array.
 
 # --hints--
 
