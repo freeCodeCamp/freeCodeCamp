@@ -60,4 +60,49 @@ async function seedIsolatedUser(email, preset, overrides) {
   }
 }
 
-module.exports = { seedIsolatedUser };
+/**
+ * @param {string} email
+ * @returns {Promise<string>}
+ */
+async function getUnsubscribeId(email) {
+  const client = new MongoClient(process.env.MONGOHQ_URL);
+  try {
+    const user = await client
+      .db('freecodecamp')
+      .collection('user')
+      .findOne({ email });
+    if (typeof user?.unsubscribeId !== 'string') {
+      throw new Error(`Could not find an unsubscribe ID for ${email}.`);
+    }
+    return user.unsubscribeId;
+  } finally {
+    await client.close();
+  }
+}
+
+/** @param {string} email */
+async function seedMsUsername(email) {
+  const client = new MongoClient(process.env.MONGOHQ_URL);
+  try {
+    const db = client.db('freecodecamp');
+    const user = await db.collection('user').findOne({ email });
+    if (!user)
+      throw new Error(`Could not find isolated user with email ${email}.`);
+
+    await db
+      .collection('MsUsername')
+      .updateOne(
+        { userId: user._id },
+        { $set: { msUsername: user.username, ttl: 77760000000 } },
+        { upsert: true }
+      );
+  } finally {
+    await client.close();
+  }
+}
+
+module.exports = {
+  seedIsolatedUser,
+  getUnsubscribeId,
+  seedMsUsername
+};
