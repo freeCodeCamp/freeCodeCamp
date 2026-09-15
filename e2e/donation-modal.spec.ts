@@ -2,7 +2,7 @@ import { type Page } from '@playwright/test';
 import { test, expect } from './fixtures/isolated-user';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { clearEditor, focusEditor } from './utils/editor';
 import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
@@ -29,9 +29,6 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
         `/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-${projects[i]}`
       )
     );
-    const solutionInput = await page
-      .getByRole('textbox', { name: 'solution' })
-      .evaluateHandle(input => input);
     await page
       .getByRole('textbox', { name: 'solution' })
       .fill('https://codepen.io/camperbot/full/oNvPqqo');
@@ -41,8 +38,6 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
     await page
       .getByRole('button', { name: 'Submit and go to next challenge' })
       .click();
-    // Wait for this form to unmount before using the next one.
-    await page.waitForFunction(input => !input.isConnected, solutionInput);
   }
 };
 
@@ -104,7 +99,6 @@ const completeChallenges = async ({
   for (const challenge of challenges.slice(0, number)) {
     await page.waitForURL(allowTrailingSlash(challenge.url));
     await focusEditor({ page, isMobile });
-    const editor = await getEditors(page).evaluateHandle(input => input);
     await clearEditor({ page, browserName });
     await page.evaluate(
       async contents => await navigator.clipboard.writeText(contents),
@@ -113,8 +107,6 @@ const completeChallenges = async ({
     await page.keyboard.press('ControlOrMeta+V');
     await page.getByRole('button', { name: 'Check Your Code' }).click();
     await page.getByRole('button', { name: 'Submit and continue' }).click();
-    // Wait for this editor to unmount before entering the next solution.
-    await page.waitForFunction(input => !input.isConnected, editor);
   }
 };
 

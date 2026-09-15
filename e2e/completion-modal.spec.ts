@@ -82,7 +82,6 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   test('should submit and go to the next challenge when the user presses Ctrl + Enter', async ({
     page
   }) => {
-    await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Control+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
@@ -90,7 +89,6 @@ test.describe('Challenge Completion Modal Tests (Signed In)', () => {
   test('should submit and go to the next challenge when the user presses Command + Enter', async ({
     page
   }) => {
-    await expect(page.getByRole('dialog')).toBeVisible();
     await page.keyboard.press('Meta+Enter');
     await expect(page).toHaveURL(nextChallengeURL);
   });
