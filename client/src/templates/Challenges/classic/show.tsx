@@ -67,6 +67,7 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
+import type { ConsoleOutput } from '../utils/console-output';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
@@ -80,7 +81,7 @@ import '../components/test-frame.css';
 
 const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
-  output: consoleOutputSelector(state) as string,
+  output: consoleOutputSelector(state),
   isChallengeCompleted: isChallengeCompletedSelector(state),
   savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
@@ -119,7 +120,7 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   isDailyCodingChallenge?: boolean;
-  output: string;
+  output: ConsoleOutput[];
   pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;

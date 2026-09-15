@@ -3,6 +3,10 @@ import { handleActions } from 'redux-actions';
 
 import { getLines } from '@freecodecamp/shared/utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
+import {
+  createFormattedOutput,
+  createTextOutput
+} from '../utils/console-output';
 import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';
 import completionEpic from './completion-epic';
@@ -144,11 +148,18 @@ export const reducer = handleActions(
     }),
     [actionTypes.initConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: payload ? [payload] : []
+      consoleOut: payload ? [createTextOutput(payload)] : []
     }),
     [actionTypes.updateConsole]: (state, { payload }) => ({
       ...state,
-      consoleOut: state.consoleOut.concat(payload)
+      consoleOut:
+        payload == null || payload === ''
+          ? state.consoleOut
+          : state.consoleOut.concat(createTextOutput(payload))
+    }),
+    [actionTypes.updateConsoleMarkup]: (state, { payload }) => ({
+      ...state,
+      consoleOut: state.consoleOut.concat(createFormattedOutput(payload))
     }),
     [actionTypes.initLogs]: state => ({
       ...state,
@@ -162,7 +173,10 @@ export const reducer = handleActions(
       ...state,
       consoleOut: isEmpty(state.logsOut)
         ? state.consoleOut
-        : state.consoleOut.concat(payload, state.logsOut)
+        : state.consoleOut.concat(
+            createTextOutput(payload),
+            createTextOutput(state.logsOut.join('\n'))
+          )
     }),
     [actionTypes.initVisibleEditors]: state => {
       let persistingVisibleEditors = {};
