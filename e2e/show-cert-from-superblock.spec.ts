@@ -1,12 +1,7 @@
-import { execSync } from 'child_process';
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 
 test.describe('When the user HAS NOT claimed their cert', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
+  test.use({ userPreset: 'development' });
 
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn/front-end-development-libraries');
@@ -25,19 +20,18 @@ test.describe('When the user HAS NOT claimed their cert', () => {
       '/settings#cert-front-end-development-libraries'
     );
   });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
 });
 
 test.describe('When the user HAS claimed their cert', () => {
+  test.use({ userPreset: 'certified' });
+
   test.beforeEach(async ({ page }) => {
     await page.goto('/learn/front-end-development-libraries');
   });
 
-  test('should see a "Show Certification" link pointing to "/certification/certifieduser/front-end-development-libraries"', async ({
-    page
+  test('should see a "Show Certification" link pointing to their certification', async ({
+    page,
+    isolatedUser
   }) => {
     const link = page.getByRole('link', {
       name: 'Show Certification'
@@ -46,7 +40,7 @@ test.describe('When the user HAS claimed their cert', () => {
     await expect(link).toBeVisible();
     await expect(link).toHaveAttribute(
       'href',
-      '/certification/certifieduser/front-end-development-libraries'
+      `/certification/${isolatedUser.username}/front-end-development-libraries`
     );
   });
 });
