@@ -91,6 +91,12 @@ export function getChallengeIdsByBlock(blockId: string): string[] {
   const curricula = Object.values(curriculum);
 
   for (const superBlock of curricula) {
+    // `blocks` is parsed from JSON, so it inherits from Object.prototype. Without
+    // this check, a blockId such as 'constructor' would resolve to an inherited
+    // property rather than a block.
+    if (!Object.prototype.hasOwnProperty.call(superBlock.blocks, blockId))
+      continue;
+
     const block = superBlock.blocks[blockId];
     if (block) {
       return block.challenges.map(challenge => challenge.id);
