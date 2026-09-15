@@ -596,7 +596,7 @@ describe('socratesRoutes', () => {
           const usage =
             await fastifyTestInstance.prisma.socratesUsage.findUniqueOrThrow({
               where: {
-                userId_date: {
+                date_userId: {
                   userId: defaultUserId,
                   date: new Date(
                     Date.UTC(
