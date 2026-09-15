@@ -21,6 +21,7 @@ import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-Ze
 import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
 
 import { isBrowser } from '../../../utils';
+import { isLanding } from '../../utils/path-parsers';
 import {
   fetchUser,
   initializeTheme,
@@ -184,8 +185,9 @@ function DefaultLayout({
   };
 
   const isJapanese = clientLocale === 'japanese';
+  const canRenderContent = fetchState.complete || isLanding(pathname);
 
-  if (!fetchState.complete) {
+  if (!canRenderContent) {
     return <Loader fullScreen={true} messageDelay={5000} />;
   } else {
     return (
@@ -315,7 +317,7 @@ function DefaultLayout({
               <Spacer size={isExSmallViewportHeight ? 'xxs' : 'xs'} />
             ))
           )}
-          {fetchState.complete && children}
+          {children}
         </div>
         {showFooter && <Footer />}
       </div>

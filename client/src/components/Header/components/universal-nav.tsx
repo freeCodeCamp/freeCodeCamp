@@ -60,7 +60,7 @@ const UniversalNav = ({
       className='universal-nav'
       id='universal-nav'
     >
-      {isSearchExposedWidth && (
+      {isSearchExposedWidth && !pending && (
         <div className='universal-nav-left'>{search}</div>
       )}
       <Link
