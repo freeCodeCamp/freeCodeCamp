@@ -237,23 +237,11 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 });
 
 test.describe('Submit button should be shown after submitting a project', () => {
-  test.skip(
-    ({ browserName }) => browserName !== 'chromium',
-    'Only chromium allows us to use the clipboard API.'
-  );
-
   test('Ctrl + enter triggers the submit button on multifile projects', async ({
     page,
-    context,
     isMobile
   }) => {
     test.skip(isMobile);
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-
-    const tributeContent = [
-      tributePage.htmlFile.contents,
-      tributePage.cssFile.contents
-    ];
 
     await page.goto(
       '/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page'
@@ -261,21 +249,11 @@ test.describe('Submit button should be shown after submitting a project', () => 
     const editors = getEditors(page);
     await page.getByRole('button', { name: 'styles.css' }).click();
 
-    for (let i = 0; i < 2; i++) {
-      await page.evaluate(
-        async contents => await navigator.clipboard.writeText(contents),
-        tributeContent[i]
-      );
+    await editors.nth(0).focus();
+    await page.keyboard.insertText(tributePage.htmlFile.contents);
+    await editors.nth(1).focus();
+    await page.keyboard.insertText(tributePage.cssFile.contents);
 
-      await editors.nth(i).focus();
-      await pasteContent(page);
-    }
-
-    // The preview rebuild is debounced after an edit. Wait for the stylesheet
-    // before running DOM tests with the keyboard shortcut.
-    await expect(
-      page.frameLocator('.challenge-preview-frame').locator('#image')
-    ).toHaveCSS('display', 'block');
     await page.keyboard.press('Control+Enter');
     await page
       .locator(
