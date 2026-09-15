@@ -264,7 +264,29 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 .avatar-nav-link {
   display: block;
   height: var(--header-element-size);
+  position: relative;
   width: var(--header-element-size);
+}
+
+.header-activity-streak-badge {
+  align-items: center;
+  background: var(--yellow-gold);
+  border: 1px solid var(--gray-90);
+  bottom: 1px;
+  color: var(--gray-90);
+  display: flex;
+  height: 15px;
+  inset-inline-end: 1px;
+  justify-content: center;
+  pointer-events: none;
+  position: absolute;
+  width: 15px;
+  z-index: 1;
+}
+
+.header-activity-streak-badge svg {
+  height: 11px;
+  width: 8px;
 }
 
 .avatar-nav-link:hover,
@@ -487,6 +509,12 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 
   .avatar-container {
     border-color: ButtonText;
+  }
+
+  .header-activity-streak-badge {
+    background: Canvas;
+    border-color: ButtonText;
+    color: ButtonText;
   }
 
   .signup-btn {
