@@ -1,6 +1,6 @@
 import React from 'react';
 import Loadable from '@loadable/component';
-import type { EditorWillMount, monaco } from 'react-monaco-editor';
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api.js';
 import { useActiveCode, useSandpack } from '@codesandbox/sandpack-react';
 import './custom-monaco-editor.css';
 
@@ -29,7 +29,7 @@ const CustomMonacoEditor = () => {
     }
   };
   // theme
-  const FCC_DARK_CUSTOM: monaco.editor.IStandaloneThemeData = {
+  const FCC_DARK_CUSTOM: monacoEditor.editor.IStandaloneThemeData = {
     base: 'vs-dark',
     inherit: true,
     rules: [
@@ -68,7 +68,7 @@ const CustomMonacoEditor = () => {
     }
   };
 
-  const handleEditor: EditorWillMount = monaco => {
+  const handleEditor = (monaco: typeof monacoEditor) => {
     monaco.editor.defineTheme('fcc-dark', FCC_DARK_CUSTOM);
   };
 

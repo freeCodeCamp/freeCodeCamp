@@ -14,7 +14,7 @@ export const reportUser = {
         email: Type.String()
       })
     }),
-    403: Type.Object({
+    400: Type.Object({
       type: Type.Literal('danger'),
       message: Type.Literal('flash.report-error')
     }),
@@ -22,6 +22,7 @@ export const reportUser = {
       type: Type.Literal('danger'),
       message: Type.Literal('flash.report-error')
     }),
+    403: genericError,
     500: genericError
   }
 };

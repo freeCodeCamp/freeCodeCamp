@@ -50,6 +50,10 @@ const algoliaIndices = {
   swahili: {
     name: 'news',
     searchPage: 'https://www.freecodecamp.org/news/search/'
+  },
+  arabic: {
+    name: 'news',
+    searchPage: 'https://www.freecodecamp.org/news/search/'
   }
 };
 

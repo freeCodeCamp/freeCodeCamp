@@ -1,44 +1,13 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 
 test.describe('When the user has not accepted the Academic Honesty Policy', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
+  test.use({ userPreset: 'development' });
 
   test('they should be able to accept it', async ({ page }) => {
-    await page.goto('/settings');
-    await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.honesty
-      })
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p1)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p2)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p3)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p4)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p5)
-    ).toBeVisible();
-    await expect(
-      page.getByText(translations.settings.honesty.p6)
-    ).toBeVisible();
+    await page.goto('/settings#honesty');
+
     const agreeButton = page.getByRole('button', {
       name: translations.buttons['agree-honesty']
     });

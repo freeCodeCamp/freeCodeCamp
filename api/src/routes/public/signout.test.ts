@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { devLogin, setupServer, superRequest } from '../../../vitest.utils.js';
 
 describe('GET /signout', () => {
@@ -32,5 +32,20 @@ describe('GET /signout', () => {
     const res = await superRequest('/signout', { method: 'GET' });
     expect(res.body).toEqual({});
     expect(res.status).toBe(200);
+  });
+
+  it('counts an auth.signed_out metric', async () => {
+    const count = vi.fn();
+    const originalSentry = fastifyTestInstance.Sentry;
+    fastifyTestInstance.Sentry = {
+      ...originalSentry,
+      metrics: { ...originalSentry.metrics, count }
+    };
+
+    await superRequest('/signout', { method: 'GET' });
+
+    expect(count).toHaveBeenCalledWith('auth.signed_out', 1);
+
+    fastifyTestInstance.Sentry = originalSentry;
   });
 });

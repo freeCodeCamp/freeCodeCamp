@@ -223,7 +223,7 @@ All of the other choices.
 
 ---
 
-Pressing the `Backspace` key on the keyboard.
+Pressing the <kbd>Backspace</kbd> key on the keyboard.
 
 ---
 
@@ -695,7 +695,7 @@ Bitbucket
 
 #### --answer--
 
-Ona
+Sublime Text
 
 ### --question--
 

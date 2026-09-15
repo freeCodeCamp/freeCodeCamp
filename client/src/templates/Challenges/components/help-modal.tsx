@@ -99,7 +99,7 @@ function Checkbox({
   );
 }
 
-function HelpModal({
+export function HelpModal({
   closeHelpModal,
   createQuestion,
   isOpen,
@@ -303,7 +303,6 @@ function HelpModal({
               href={hintUrl}
               target='_blank'
               rel='noopener noreferrer'
-              data-playwright-test-label='get-hint-modal-button'
             >
               {t('buttons.get-hint')}
             </Button>
@@ -327,7 +326,6 @@ function HelpModal({
               size='large'
               variant='primary'
               onClick={() => setShowHelpForm(true)}
-              data-playwright-test-label='create-post-modal-button'
             >
               {t('buttons.create-post')}
             </Button>

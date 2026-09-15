@@ -10,11 +10,13 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
   });
 
   fastify.addHook('onRequest', async (req, reply) => {
-    const logger = fastify.log.child({ req });
-    const origin = req.headers.origin;
-    if (origin && allowedOrigins.includes(origin)) {
-      logger.debug(`Allowing access to origin: ${origin}`);
-      void reply.header('Access-Control-Allow-Origin', origin);
+    // `origin` is an undocumented reserved keyword in Sentry
+    // if used as attribute name in logs, it is overwritten in queries
+    // https://github.com/getsentry/sentry/issues/120640
+    const _origin = req.headers.origin;
+    if (_origin && allowedOrigins.includes(_origin)) {
+      req.log.debug({ _origin }, 'Allowing access to origin');
+      void reply.header('Access-Control-Allow-Origin', _origin);
     } else {
       // TODO: Discuss if this is the correct approach. Standard practice is to
       // reflect one of a list of allowed origins and handle development
@@ -22,10 +24,10 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
       // @fastify/cors instead.
       void reply.header('Access-Control-Allow-Origin', HOME_LOCATION);
 
-      if (origin && !req.url?.startsWith('/status/')) {
-        logger.info(`Received request from disallowed origin: ${origin}`);
+      if (_origin && !req.url?.startsWith('/status/')) {
+        req.log.warn({ _origin }, 'Received request from disallowed origin');
       } else {
-        logger.debug(`Unknown or missing origin: ${origin}`);
+        req.log.debug({ _origin }, 'Unknown or missing origin');
       }
     }
 

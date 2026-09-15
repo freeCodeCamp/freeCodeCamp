@@ -2,13 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Helmet from 'react-helmet';
 import { describe, it, expect, vi, afterEach } from 'vitest';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
-import SEO from './index';
+import SEO, { type ListItem } from './index';
 
 const mockUseStaticQuery = {
   site: {
     siteMetadata: {
-      title: 'freeCodeCamp'
+      title: 'freeCodeCamp',
+      siteUrl: 'https://www.freecodecamp.org'
     }
   }
 };
@@ -56,5 +58,42 @@ describe('<SEO />', () => {
     );
 
     expect(structuredDataScript).toBeTruthy();
+  });
+
+  it('injects valid JSON-LD with one ItemList entry per superblock', () => {
+    render(<SEO />);
+
+    const helmet = Helmet.peek();
+    const script = helmet.scriptTags.find(
+      ({ type }) => type === 'application/ld+json'
+    );
+    expect(script).toBeTruthy();
+
+    const data = JSON.parse(script!.innerHTML) as {
+      '@context': string;
+      '@type': string;
+      itemListElement: ListItem[];
+    };
+
+    expect(data['@context']).toBe('https://schema.org');
+    expect(data['@type']).toBe('ItemList');
+    expect(data.itemListElement).toHaveLength(
+      Object.values(SuperBlocks).length
+    );
+
+    data.itemListElement.forEach((listItem, index) => {
+      expect(listItem['@type']).toBe('ListItem');
+      expect(listItem.position).toBe(index + 1);
+
+      const { item } = listItem;
+      expect(item['@type']).toBe('Course');
+      expect(item.url).toContain(`/learn/${Object.values(SuperBlocks)[index]}`);
+      expect(item.name).toBeTruthy();
+      expect(item.description).toBeTruthy();
+      expect(item.provider['@type']).toBe('Organization');
+      expect(item.provider.name).toBe('freeCodeCamp');
+      expect(item.provider.sameAs).toBe('https://freecodecamp.org');
+      expect(item.provider.nonprofitStatus).toBe('Nonprofit501c3');
+    });
   });
 });

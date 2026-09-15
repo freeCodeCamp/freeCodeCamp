@@ -45,20 +45,15 @@
   }
 }
 
-.editor-upper-jaw,
-.editor-lower-jaw {
+.editor-upper-jaw {
   padding-inline: 0 15px;
   padding-block: 15px;
-}
-
-.editor-upper-jaw {
   max-width: unset !important;
   -webkit-user-select: text;
   user-select: text;
 }
 
-.editor-upper-jaw code,
-.editor-lower-jaw code {
+.editor-upper-jaw code {
   white-space: pre-wrap;
 }
 
@@ -75,7 +70,6 @@
   overflow: hidden;
 }
 
-.action-row-container,
 .description-container {
   background-color: var(--secondary-background);
   padding: 1rem;
@@ -153,10 +147,6 @@
   animation-delay: 0.5s;
 }
 
-.action-row-container button[aria-hidden='true'] {
-  display: none;
-}
-
 @keyframes example {
   from {
     background-color: var(--highlight-background);
@@ -191,37 +181,6 @@
   z-index: 1;
 }
 
-.test-feedback {
-  display: flex;
-  padding: 0;
-  flex-direction: column;
-}
-
-.test-feedback p {
-  margin: 0.45rem 0 0;
-}
-
-.test-feedback svg {
-  height: 1.5rem;
-  width: auto;
-  margin-top: 0.5rem;
-}
-
-.test-feedback .test-status,
-.test-feedback .hint-status {
-  display: flex;
-  gap: 0.5rem;
-  flex-direction: row;
-  margin-top: 1rem;
-}
-
-.test-status-description,
-.hint-description {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-}
-
 .fade-in {
   animation-name: FadeIn;
   animation-duration: 0.5s;
@@ -243,59 +202,8 @@
   }
 }
 
-.utility-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.utility-bar .utility-bar-top {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.utility-bar .utility-bar-top a {
-  width: 30%;
-}
-
-.utility-bar .utility-bar-top svg {
-  display: block;
-  margin: 0 auto;
-}
-
-.utility-bar .utility-bar-bottom {
-  width: 100%;
-  display: flex;
-  gap: 0.75rem;
-}
-
-.utility-bar .utility-bar-bottom button {
-  display: flex;
-  width: 50%;
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.3rem;
-}
-
 .progress-bar-container {
   text-align: center;
-}
-
-.editor-lower-jaw .progress-bar-wrap-container {
-  width: 100% !important;
-  margin: 32px 0px;
-}
-
-.editor-lower-jaw .progress-bar-background-container {
-  width: 100% !important;
-}
-
-.hint-status {
-  margin-bottom: 18px;
 }
 
 .code-details {

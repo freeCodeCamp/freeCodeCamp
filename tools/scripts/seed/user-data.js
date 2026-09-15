@@ -301,12 +301,23 @@ module.exports.unclaimedUser = {
   isFrontEndLibsCert: false
 };
 
+// The excluded challenges are the ones the donation-modal e2e tests complete to
+// trigger the "claim a new block/module" donation modal, so they must be left
+// incomplete here:
+// - bd7158d8c442eddfaeb5bd13: a Front-End Development Libraries project (claim a new block)
+// - 672d457bcdd8b350ec2b6254: the last Code Editors lecture (claim a new module)
+const almostFullyCertifiedExcludedChallenges = [
+  'bd7158d8c442eddfaeb5bd13',
+  '672d457bcdd8b350ec2b6254'
+];
+
 module.exports.almostFullyCertifiedUser = {
   ...module.exports.fullyCertifiedUser,
   id: almostFullyCertifiedUserId,
   completedChallenges:
     module.exports.fullyCertifiedUser.completedChallenges.filter(
-      challenge => challenge.id !== 'bd7158d8c442eddfaeb5bd13'
+      challenge =>
+        !almostFullyCertifiedExcludedChallenges.includes(challenge.id)
     )
 };
 

@@ -225,5 +225,4 @@ export const ShoppingList = () => {
     </div>
   );
 };
-
 ```

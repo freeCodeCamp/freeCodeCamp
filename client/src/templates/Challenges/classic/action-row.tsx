@@ -10,7 +10,6 @@ interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
   hasPreview: boolean;
-  areInstructionsDisplayable: boolean;
   isDailyCodingChallenge: boolean;
   setDailyCodingChallengeLanguage: (
     language: DailyCodingChallengeLanguages
@@ -98,7 +97,6 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     togglePane,
     hasPreview,
     hasNotes,
-    areInstructionsDisplayable,
     showConsole,
     showNotes,
     showInstructions,
@@ -156,15 +154,13 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
         {/* left */}
         <div className='tabs-row-left'>
-          {areInstructionsDisplayable && (
-            <button
-              data-playwright-test-label='instructions-button'
-              aria-expanded={!!showInstructions}
-              onClick={() => togglePane('showInstructions')}
-            >
-              {t('learn.editor-tabs.instructions')}
-            </button>
-          )}
+          <button
+            data-playwright-test-label='instructions-button'
+            aria-expanded={!!showInstructions}
+            onClick={() => togglePane('showInstructions')}
+          >
+            {t('learn.editor-tabs.instructions')}
+          </button>
           <EditorTabs data-playwright-test-label='editor-tabs' />
         </div>
         {/* middle - only used with daily coding challenges for now */}

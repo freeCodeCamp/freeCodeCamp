@@ -2,9 +2,11 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import * as matchers from 'redux-saga-test-plan/matchers';
 import { throwError } from 'redux-saga-test-plan/providers';
-import { describe, it, vi } from 'vitest';
+import { describe, it, vi, expect } from 'vitest';
 
-import { askSocratesSaga } from './ask-socrates-saga';
+import { askSocratesSaga, createAskSocratesSaga } from './ask-socrates-saga';
+import { actionTypes } from './action-types';
+import callGA from '../../../analytics/call-ga';
 
 vi.mock('i18next', async () => ({
   default: {
@@ -18,6 +20,10 @@ vi.mock('@freecodecamp/challenge-builder/build', () => ({
 
 vi.mock('../../../utils/ajax', () => ({
   getSocratesHint: vi.fn()
+}));
+
+vi.mock('../../../analytics/call-ga', () => ({
+  default: vi.fn()
 }));
 
 const baseState = {
@@ -50,6 +56,12 @@ function reducer(state = baseState) {
 }
 
 describe('askSocratesSaga', () => {
+  it('watches askSocrates actions', () => {
+    expect(createAskSocratesSaga(actionTypes)[0].payload.args[0]).toBe(
+      actionTypes.askSocrates
+    );
+  });
+
   it('dispatches error when socrates is not enabled', () => {
     const state = {
       ...baseState,
@@ -168,11 +180,12 @@ describe('askSocratesSaga', () => {
   });
 
   it('dispatches complete with hint on successful API response', async () => {
+    vi.mocked(callGA).mockClear();
     const { buildChallenge } =
       await import('@freecodecamp/challenge-builder/build');
     const { getSocratesHint } = await import('../../../utils/ajax');
 
-    return expectSaga(askSocratesSaga)
+    await expectSaga(askSocratesSaga)
       .withReducer(reducer)
       .provide([
         [
@@ -194,6 +207,20 @@ describe('askSocratesSaga', () => {
         payload: { hint: 'Try adding a closing tag.', attempts: 1, limit: 3 }
       })
       .silentRun();
+
+    expect(callGA).toHaveBeenCalledWith({
+      event: 'send_socrates',
+      action: 'Socrates Request Sent',
+      is_donating: false,
+      attempts: null,
+      limit: null,
+      optimized_request: {
+        seed: '<h1>Hello</h1>',
+        description: 'Make the text say hello',
+        hints: [{ text: 'Test 1', failed: true }, { text: 'Test 2' }],
+        userInput: 'Hello world'
+      }
+    });
   });
 
   it('dispatches error with attempts/limit on API error response', async () => {

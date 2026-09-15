@@ -35,12 +35,13 @@ Your `__init__` method should have a return type hint of `None`.
 ## --seed-contents--
 
 ```py
---fcc-editable-region--
 class Product:
+--fcc-editable-region--
     def __init__(self, name: str, price: float):
+--fcc-editable-region--
         self.name = name
         self.price = price
---fcc-editable-region--
+
     def __str__(self):
         return f'{self.name} - ${self.price}'
 ```

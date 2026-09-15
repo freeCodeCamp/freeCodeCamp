@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -31,6 +31,7 @@ import {
   msUsernameSelector
 } from '../../../redux/selectors';
 import LinkMsUser from './link-ms-user';
+import TrophyButtons from './trophy-buttons';
 import { useSubmit } from '../utils/fetch-all-curriculum-data';
 
 // Redux Setup
@@ -181,24 +182,11 @@ function MsTrophy(props: MsTrophyProps) {
               />
               <LinkMsUser />
               <hr />
-              <Button
-                block={true}
-                variant='primary'
-                data-playwright-test-label='verify-trophy-button'
+              <TrophyButtons
                 disabled={!msUsername || isProcessing}
-                onClick={handleSubmit}
-              >
-                {t('buttons.verify-trophy')}
-              </Button>
-              <Spacer size='xxs' />
-              <Button
-                block={true}
-                variant='primary'
-                data-playwright-test-label='ask-for-help-button'
-                onClick={openHelpModal}
-              >
-                {t('buttons.ask-for-help')}
-              </Button>
+                onAskForHelp={openHelpModal}
+                onVerifyTrophy={handleSubmit}
+              />
               <br />
               <Spacer size='m' />
             </Col>

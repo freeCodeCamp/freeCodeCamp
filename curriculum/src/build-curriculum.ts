@@ -404,6 +404,9 @@ export async function parseCurriculumStructure(filter?: Filter) {
     addSuperblockStructure(curriculum.superblocks)
   );
   const refinedFilter = closestFilters(superblockList, filter);
+  if (!isEmpty(filter)) {
+    console.log('Applied filter:', refinedFilter);
+  }
   const fullSuperblockList = applyFilters(superblockList, refinedFilter);
   return {
     fullSuperblockList,

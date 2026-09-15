@@ -210,7 +210,7 @@ const decimalToBinary = (input) => {
 
   while (input > 0) {
     --fcc-editable-region--
-
+    
     --fcc-editable-region--
 
     input = 0;

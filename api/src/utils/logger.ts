@@ -1,118 +1,174 @@
-import { Transform, TransformCallback, TransformOptions } from 'stream';
-import { FastifyRequest, FastifyReply } from 'fastify';
+import { randomUUID } from 'crypto';
+import * as Sentry from '@sentry/node';
+import { FastifyRequest, FastifyReply, HookHandlerDoneFunction } from 'fastify';
 import { isEmpty } from 'lodash-es';
-import type {
-  TransportTargetOptions,
-  // DestinationStream,
-  LoggerOptions,
-  DestinationStream
-} from 'pino';
-import { pino, transport } from 'pino';
+import type { Logger, LoggerOptions } from 'pino';
+import { pino } from 'pino';
+
 import { FCC_API_LOG_LEVEL, FCC_API_LOG_TRANSPORT } from './env.js';
 
-const serializers = {
-  req: (req: FastifyRequest) => {
-    const id = req.id || 'ID not found';
-    const method = req.method || 'METHOD not found';
-    const url = req.url || 'URL not found';
-    const xForwardedFor = Array.isArray(req.headers['x-forwarded-for'])
-      ? req.headers['x-forwarded-for'][0]
-        ? req.headers['x-forwarded-for'][0]
-        : req.headers['x-forwarded-for']
-      : req.headers['x-forwarded-for'];
-    const ip =
-      req.headers['cf-connecting-ip'] ||
-      xForwardedFor ||
-      req.headers['x-real-ip'] ||
-      req.ip ||
-      'IP not found';
-    const userAgent = req.headers['user-agent'] || 'USER_AGENT not found';
-    const country = req.headers['cf-ipcountry'] || 'COUNTRY not found';
-    const query = isEmpty(req.query) ? 'QUERY not found' : req.query;
+const firstValue = (
+  value: string | string[] | undefined
+): string | undefined => (Array.isArray(value) ? value[0] : value);
 
+const firstHop = (value: string | string[] | undefined): string | undefined =>
+  firstValue(value)?.split(',')[0]?.trim();
+
+const clientIp = (req: FastifyRequest): string | undefined =>
+  firstValue(req.headers['cf-connecting-ip']) ??
+  firstHop(req.headers['x-forwarded-for']) ??
+  firstValue(req.headers['x-real-ip']) ??
+  req.ip;
+
+/**
+ * Extract the client IP and country from proxy headers for fraud triage.
+ *
+ * @param req The incoming request.
+ * @returns The client IP and ISO country code, when present.
+ */
+export const clientNetInfo = (
+  req: FastifyRequest
+): { ip: string | undefined; country: string | undefined } => ({
+  ip: clientIp(req),
+  country: firstValue(req.headers['cf-ipcountry'])
+});
+
+type SerializedRequest = {
+  method: string;
+  url: string;
+  route?: string;
+  ip: string | undefined;
+  userAgent: string | undefined;
+  country: string | undefined;
+  query?: unknown;
+};
+
+const errSerializer = (err: unknown, depth = 0): Record<string, unknown> => {
+  if (typeof err !== 'object' || err === null) return { message: String(err) };
+  const e = err as Record<string, unknown>;
+  const safe: Record<string, unknown> = {
+    type: (e.constructor as { name?: string } | undefined)?.name ?? e.name,
+    message: e.message,
+    stack: e.stack
+  };
+  for (const key of ['code', 'statusCode', 'requestId'] as const) {
+    if (e[key] !== undefined) safe[key] = e[key];
+  }
+  if (depth < 3 && e.cause != null)
+    safe.cause = errSerializer(e.cause, depth + 1);
+  return safe;
+};
+
+export const serializers = {
+  req: (req: FastifyRequest): SerializedRequest => ({
+    method: req.method,
+    url: req.url.split('?')[0] ?? req.url,
+    ...(req.routeOptions?.url ? { route: req.routeOptions.url } : {}),
+    ip: clientIp(req),
+    userAgent: firstValue(req.headers['user-agent']),
+    country: firstValue(req.headers['cf-ipcountry']),
+    ...(isEmpty(req.query) ? {} : { query: req.query })
+  }),
+  res: (reply: FastifyReply): { statusCode: number } => ({
+    statusCode: reply.statusCode
+  }),
+  err: errSerializer
+};
+
+const REQUEST_ID_PATTERN = /^[\w-]{1,64}$/;
+
+/**
+ * Generate a request id, preferring the Cloudflare edge ray id. A
+ * client-supplied x-request-id is not trusted (spoofable / collidable).
+ *
+ * @param req The incoming request.
+ * @returns The edge-set ray id when valid, otherwise a random UUID.
+ */
+export const genReqId = (req: {
+  headers: Record<string, string | string[] | undefined>;
+}): string => {
+  const edgeId = firstValue(req.headers['cf-ray']);
+  return edgeId && REQUEST_ID_PATTERN.test(edgeId) ? edgeId : randomUUID();
+};
+
+const SENSITIVE_QUERY_PARAMS = [
+  'token',
+  'email',
+  'code',
+  'key',
+  'state',
+  'id_token',
+  'access_token',
+  'refresh_token',
+  'password',
+  'secret',
+  'authorization'
+];
+
+/**
+ * Build the pino options shared by all logger instances.
+ *
+ * @param level The minimum log level.
+ * @returns The pino logger options.
+ */
+export const getLoggerOptions = (level: string): LoggerOptions => ({
+  level,
+  serializers,
+  mixin: () => {
+    const spanContext = Sentry.getActiveSpan()?.spanContext();
+    if (!spanContext) return {};
     return {
-      REQ_METHOD: method,
-      REQ_URL: url,
-      REQ_IP: ip,
-      REQ_USER_AGENT: userAgent,
-      REQ_COUNTRY: country,
-      REQ_QUERY: query,
-      REQ_ID: id
+      traceId: spanContext.traceId,
+      traceSampled: (spanContext.traceFlags & 0x1) === 1
     };
   },
-  res: (res: FastifyReply) => {
-    return {
-      RES_STATUS_CODE: res.statusCode,
-      RES_ELAPSED_TIME: res.elapsedTime
-    };
+  redact: {
+    paths: SENSITIVE_QUERY_PARAMS.map(param => `req.query.${param}`),
+    censor: '[REDACTED]'
   }
+});
+
+/**
+ * Bind the matched route onto the request logger so per-route policies apply.
+ *
+ * @param req The incoming request.
+ * @param reply The reply whose logger is rebound alongside the request logger.
+ * @param done The hook completion callback.
+ */
+export const bindRouteToLogger = (
+  req: FastifyRequest,
+  reply: FastifyReply,
+  done: HookHandlerDoneFunction
+): void => {
+  const route = req.routeOptions?.url;
+  if (route) {
+    req.log = reply.log = req.log.child({ route });
+  }
+  done();
 };
-
-const prettyTarget: TransportTargetOptions = {
-  target: 'pino-pretty',
-  options: {
-    singleLine: true,
-    translateTime: 'HH:MM:ss Z',
-    ignore: 'pid,hostname',
-    colorize: true
-  }
-};
-
-class DeduplicatingTransform extends Transform {
-  constructor(options?: TransformOptions) {
-    super({ ...options, objectMode: false });
-  }
-
-  _transform(
-    chunk: Buffer | string,
-    encoding: BufferEncoding,
-    callback: TransformCallback
-  ): void {
-    try {
-      const logString = Buffer.isBuffer(chunk) ? chunk.toString() : chunk;
-      logString.split('\n').forEach(line => {
-        if (line.trim() === '') return;
-        const logObject = JSON.parse(line);
-        const processedLog = JSON.parse(JSON.stringify(logObject));
-        this.push(JSON.stringify(processedLog) + '\n');
-      });
-      callback();
-    } catch (_err) {
-      // If parsing or processing fails, pass the original chunk through
-      // In a production scenario, you might want to log this internal error
-      // to a different stream or use a fallback mechanism.
-      this.push(chunk);
-      callback();
-    }
-  }
-}
 
 /**
  * Get a logger instance.
  *
  * @returns A logger instance.
  */
-export const getLogger = () => {
-  const isPretty = FCC_API_LOG_TRANSPORT === 'pretty';
-  const options: LoggerOptions = {
-    level: FCC_API_LOG_LEVEL || 'info',
-    serializers
-  };
+export const getLogger = (): Logger => {
+  const options = getLoggerOptions(FCC_API_LOG_LEVEL || 'info');
 
-  if (isPretty) {
-    const stream = transport({ targets: [prettyTarget] }) as
-      | DestinationStream
-      | undefined;
-
-    return pino(options, stream);
-  } else {
-    // For non-pretty, use the custom de-duplicating transform stream
-    // This logger will write to a stream that then pipes to our de-duplicator
-    const deduplicator = new DeduplicatingTransform();
-    // Pino writes NDJSON, so our transform needs to handle that.
-    // The pino instance itself doesn't need a complex transport, it writes to the stream.
-    const logger = pino(options, deduplicator);
-    deduplicator.pipe(process.stdout);
-    return logger;
+  if (FCC_API_LOG_TRANSPORT === 'pretty') {
+    return pino({
+      ...options,
+      transport: {
+        target: 'pino-pretty',
+        options: {
+          singleLine: true,
+          translateTime: 'HH:MM:ss Z',
+          ignore: 'pid,hostname',
+          colorize: true
+        }
+      }
+    });
   }
+
+  return pino(options);
 };

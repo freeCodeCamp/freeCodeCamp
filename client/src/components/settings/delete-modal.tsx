@@ -27,6 +27,11 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
     setVerifyText(event.target.value);
   };
 
+  const handleDeleteAccount = () => {
+    props.delete();
+    props.onHide();
+  };
+
   return (
     <Modal onClose={onHide} open={show} variant='danger' size='large'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
@@ -72,7 +77,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           block={true}
           size='large'
           variant='danger'
-          onClick={() => props.delete()}
+          onClick={handleDeleteAccount}
           disabled={verifyText !== t('settings.danger.verify-delete-text')}
           type='button'
         >

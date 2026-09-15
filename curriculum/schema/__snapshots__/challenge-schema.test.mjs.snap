@@ -294,7 +294,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
         },
         {
           "args": {
-            "limit": 31,
+            "limit": 33,
           },
           "name": "max",
         },
@@ -641,6 +641,7 @@ exports[`challenge schema > should not be changed without informing the mobile t
               },
               10,
               13,
+              33,
             ],
             "flags": {
               "only": true,
@@ -2207,6 +2208,8 @@ exports[`challenge schema > should not be changed without informing the mobile t
               },
               12,
               13,
+              32,
+              33,
             ],
             "flags": {
               "only": true,

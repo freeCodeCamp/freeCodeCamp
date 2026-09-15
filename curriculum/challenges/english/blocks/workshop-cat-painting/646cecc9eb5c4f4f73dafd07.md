@@ -37,23 +37,23 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.cat-left-ear')?.left, '-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>fCC Cat Painting</title>
-    <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <title>fCC Cat Painting</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <main>
-      <div class="cat-head">
-        <div class="cat-ears">
-          <div class="cat-left-ear">
-            <div class="cat-left-inner-ear"></div>
-          </div>
-          <div class="cat-right-ear">
-            <div class="cat-right-inner-ear"></div>
-          </div>
+  <main>
+    <div class="cat-head">
+      <div class="cat-ears">
+        <div class="cat-left-ear">
+          <div class="cat-left-inner-ear"></div>
+        </div>
+        <div class="cat-right-ear">
+          <div class="cat-right-inner-ear"></div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 </body>
 </html>
 ```
@@ -81,12 +81,12 @@ body {
   border-radius: 46%;
 }
 
---fcc-editable-region--
 .cat-left-ear {
+--fcc-editable-region--
   
+--fcc-editable-region--
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 70px solid #5e5e5e;
 }
---fcc-editable-region--
 ```

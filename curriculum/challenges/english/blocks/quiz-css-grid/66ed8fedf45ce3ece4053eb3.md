@@ -139,7 +139,7 @@ What is the shorthand for the `column-gap` and `row-gap` properties?
 
 ---
 
-`grid-gap`
+`grid-space`
 
 #### --answer--
 
@@ -773,11 +773,11 @@ How would you create a grid with 3 equal columns and a `20px` gap between them?
 
 #### --text--
 
-What does `repeat(3, minmax(100px, 1fr))` create?
+What does `repeat(3, minmax(100px, 1fr))` create when used with `grid-template-columns`?
 
 #### --distractors--
 
-Three columns that can't shrink below `100px`.
+Three columns that can't grow larger than `100px`.
 
 ---
 
@@ -857,7 +857,7 @@ Creates columns that are exactly `1fr` wide regardless of content.
 
 ---
 
-Creates a maximum of one column per `150px` of available width.
+Fills each row with as many `150px` columns as possible, reserving empty tracks when there are not enough items to fill them.
 
 #### --answer--
 
@@ -901,7 +901,7 @@ Offsets it by 2 pixels.
 
 ---
 
-Positions it starting at the second vertical grid line.
+Makes it start at the second row line.
 
 #### --answer--
 

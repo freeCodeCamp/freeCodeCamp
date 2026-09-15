@@ -314,7 +314,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Japanese]: [],
   [Languages.German]: [],
   [Languages.Swahili]: [],
-  [Languages.Korean]: []
+  [Languages.Korean]: [],
+  [Languages.Arabic]: []
 };
 
 Object.freeze(notAuditedSuperBlocks);

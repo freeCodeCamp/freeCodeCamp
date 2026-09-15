@@ -3,6 +3,7 @@ import { HOME_LOCATION, FREECODECAMP_NODE_ENV } from './env.js';
 const ALLOWED_ORIGINS = [
   'https://www.freecodecamp.dev',
   'https://www.freecodecamp.org',
+  'https://exam.freecodecamp.org',
   // pretty sure the rest of these can go?
   'https://beta.freecodecamp.dev',
   'https://beta.freecodecamp.org',

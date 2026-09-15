@@ -53,7 +53,7 @@ describe('redirection', () => {
       expect(
         getReturnTo(encryptedReturnTo, validJWTSecret, defaultOrigin)
       ).toStrictEqual(defaultObject);
-      expect(console.log).toHaveBeenCalled();
+      expect(console.log).not.toHaveBeenCalled();
       console.log = oldLog;
     });
 

@@ -433,7 +433,7 @@ figcaption.caption {
 
 .landing-top .landing-top-two-column figure,
 .landing-top .landing-top-two-column figure img {
-  margin-left: -120px;
+  margin-inline-start: -120px;
   margin-top: 0px;
   height: 550px;
   width: 850px;
