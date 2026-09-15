@@ -2,26 +2,14 @@ import * as fs from 'fs';
 import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import intro from '../client/i18n/locales/english/intro.json';
-import { authedRequest } from './utils/request';
 
-test.use({ userPreset: 'certified' });
+test.use({ userPreset: 'certified-with-survey' });
 
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 
 test.describe('Exam Results E2E Test Suite', () => {
-  test.beforeEach(async ({ page, request }) => {
-    await authedRequest({
-      request,
-      method: 'post',
-      endpoint: '/user/submit-survey',
-      data: {
-        surveyResults: {
-          title: 'Foundational C# with Microsoft Survey',
-          responses: []
-        }
-      }
-    });
+  test.beforeEach(async ({ page }) => {
     await page.goto(examUrl);
     await page
       .getByRole('button', {
