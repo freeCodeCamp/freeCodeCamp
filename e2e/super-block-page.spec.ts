@@ -166,8 +166,6 @@ test.describe('Super Block Page - Authenticated User', () => {
 });
 
 test.describe('Super Block Page - Search Lessons', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('should filter and restore blocks on a block-based superblock', async ({
     page
   }) => {
