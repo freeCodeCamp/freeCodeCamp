@@ -1,5 +1,5 @@
 const path = require('path');
-const { MongoClient, ObjectId } = require('mongodb');
+const { MongoClient } = require('mongodb');
 const _ = require('lodash');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
@@ -29,7 +29,7 @@ const presets = {
  * @param {string} email
  * @param {UserPreset} preset
  * @param {Record<string, boolean>} overrides
- * @returns {Promise<string>} The account ID, which remains stable after renames.
+ * @returns {Promise<void>}
  */
 async function seedIsolatedUser(email, preset, overrides) {
   const client = new MongoClient(process.env.MONGOHQ_URL);
@@ -55,21 +55,6 @@ async function seedIsolatedUser(email, preset, overrides) {
     };
 
     await user.updateOne({ _id: existingUser._id }, { $set: seed });
-    return existingUser._id.toString();
-  } finally {
-    await client.close();
-  }
-}
-
-/** @param {string} id */
-async function isolatedUserExists(id) {
-  const client = new MongoClient(process.env.MONGOHQ_URL);
-  try {
-    const user = await client
-      .db('freecodecamp')
-      .collection('user')
-      .findOne({ _id: new ObjectId(id) }, { projection: { _id: 1 } });
-    return user !== null;
   } finally {
     await client.close();
   }
@@ -118,7 +103,6 @@ async function seedMsUsername(email) {
 
 module.exports = {
   seedIsolatedUser,
-  isolatedUserExists,
   getUnsubscribeId,
   seedMsUsername
 };
