@@ -210,14 +210,14 @@ module.exports.demoUser = {
   unsubscribeId: 'ecJxUi7OM49f24hTpauP8'
 };
 
-const pregeneratedCompletedChallenges = require('./pregenerated-completed-challenges');
+const pregeneratedChallengeData = require('./pregenerated-completed-challenges');
 const {
   buildCertifiedChallengeData
 } = require('./generate-certified-challenges');
 const {
   completedChallenges: certifiedCompletedChallenges,
   completedDailyCodingChallenges: certifiedDailyCodingChallenges
-} = buildCertifiedChallengeData(pregeneratedCompletedChallenges);
+} = buildCertifiedChallengeData(pregeneratedChallengeData);
 
 const {
   certSlugTypeMap

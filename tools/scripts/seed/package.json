@@ -9,7 +9,8 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "lint": "eslint --max-warnings 0"
+    "lint": "eslint --max-warnings 0",
+    "test": "node --test *.test.js"
   },
   "repository": {
     "type": "git",
