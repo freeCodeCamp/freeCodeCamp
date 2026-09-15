@@ -2,7 +2,7 @@ import { isEmpty } from 'lodash-es';
 import { QRCodeSVG } from 'qrcode.react';
 import React, { useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
+import { ConnectedProps, connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
@@ -55,38 +55,15 @@ type Cert = {
   completionTime: number;
   date: number;
 };
-interface ShowCertificationProps {
-  cert: Cert;
-  certDashedName: string;
+interface OwnProps {
   certSlug: string;
-  createFlashMessage: typeof createFlashMessage;
-  fetchProfileForUser: (username: string) => void;
-  fetchState: {
-    pending: boolean;
-    complete: boolean;
-    errored: boolean;
-  };
-  isDonating: boolean;
-  isValidCert: boolean;
-  isSignedIn: boolean;
   location: {
     pathname: string;
   };
-  showCert: ({
-    username,
-    certSlug
-  }: {
-    username: string;
-    certSlug: string;
-  }) => void;
-  signedInUserName: string;
-  user: User | null;
-  userFetchState: UserFetchState;
-  userFullName: string;
   username: string;
 }
 
-const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
+const mapStateToProps = (_state: unknown, props: OwnProps) => {
   const isValidCert = liveCerts.some(
     ({ certSlug }) => String(certSlug) === props.certSlug
   );
@@ -107,7 +84,7 @@ const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
     isSignedInSelector,
     (
       cert: Cert,
-      fetchState: ShowCertificationProps['fetchState'],
+      fetchState: { pending: boolean; complete: boolean; errored: boolean },
       signedInUserName: string,
       user: User | null,
       userFetchState: UserFetchState,
@@ -131,6 +108,10 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     { createFlashMessage, showCert, fetchProfileForUser },
     dispatch
   );
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type ShowCertificationProps = ConnectedProps<typeof connector> & OwnProps;
 
 const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
   const { t } = useTranslation();
@@ -588,4 +569,4 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
 ShowCertification.displayName = 'ShowCertification';
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowCertification);
+export default connector(ShowCertification);
