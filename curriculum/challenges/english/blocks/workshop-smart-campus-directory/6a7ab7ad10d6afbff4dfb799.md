@@ -10,8 +10,7 @@ dashedName: step-34
 Test your function with two calls to `getInstructorByEmail`: one using an email `"fatima@edu.com"` and `normalizedData`, 
 then another using an email `"not_found@edu.com"` and `normalizedData`.  
 
-Log both results to confirm the function returns the correct shaped object for a known email, 
-and `Instructor not found` for an unknown one.
+Log both results to confirm the function returns an object with the expected properties for a known email and `Instructor not found` for an unknown one.
 
 # --hints--
 
