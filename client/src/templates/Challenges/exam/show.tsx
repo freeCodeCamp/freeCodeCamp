@@ -553,7 +553,7 @@ function ShowExam(props: ShowExamProps) {
 
   // TODO: If already taken exam, show different messages
 
-  return examInProgress ? (
+  return examInProgress && generatedExamQuestions.length ? (
     <Container>
       <Row>
         <Spacer size='m' />
