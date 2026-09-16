@@ -99,7 +99,7 @@ test.describe('Exam Results E2E Test Suite', () => {
   test.describe('Exam Results E2E Test Suite', () => {
     test('Exam Results When the User clicks on Download button', async ({
       page
-    }, testInfo) => {
+    }) => {
       const [download] = await Promise.all([
         page.waitForEvent('download'),
         page
@@ -107,11 +107,10 @@ test.describe('Exam Results E2E Test Suite', () => {
           .getByTestId('download-exam-results')
           .click()
       ]);
-      const suggestedFileName = download.suggestedFilename();
-      const downloadPath = testInfo.outputPath(suggestedFileName);
-      await download.saveAs(downloadPath);
-      expect(fs.existsSync(downloadPath)).toBeTruthy();
-      await download.delete();
+      const file = fs.readFileSync(await download.path(), { encoding: 'utf8' });
+      expect(file).toContain(
+        'Foundational C# with Microsoft Certification Exam'
+      );
     });
   });
 });

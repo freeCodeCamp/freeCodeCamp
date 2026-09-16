@@ -14,7 +14,7 @@ const {
  * @typedef {'new' | 'development' | 'certified' | 'certified-with-survey' | 'almost-certified' | 'unclaimed'} UserPreset
  */
 
-const presets = {
+const testUserData = {
   new: {},
   development: demoUser,
   certified: fullyCertifiedUser,
@@ -44,7 +44,7 @@ async function seedIsolatedUser(email, preset, overrides) {
     }
 
     const seed = {
-      ..._.omit(presets[preset], [
+      ..._.omit(testUserData[preset], [
         '_id',
         'id',
         'email',
