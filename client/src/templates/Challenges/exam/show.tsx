@@ -141,11 +141,8 @@ function convertMd(md: string): string {
 }
 
 interface ExamQuestionsProps {
-  currentQuestionIndex: number;
   examTimeInSeconds: number;
   generatedExamQuestions: GeneratedExamQuestion[];
-  goToNextQuestion: () => void;
-  goToPreviousQuestion: () => void;
   openExitExamModal: () => void;
   openFinishExamModal: () => void;
   selectAnswer: (index: number, id: string, answer: string) => void;
@@ -155,11 +152,8 @@ interface ExamQuestionsProps {
 }
 
 function ExamQuestions({
-  currentQuestionIndex,
   examTimeInSeconds,
   generatedExamQuestions,
-  goToNextQuestion,
-  goToPreviousQuestion,
   openExitExamModal,
   openFinishExamModal,
   selectAnswer,
@@ -167,10 +161,19 @@ function ExamQuestions({
   title,
   userExamQuestions
 }: ExamQuestionsProps) {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = generatedExamQuestions[currentQuestionIndex];
   const currentAnswer = userExamQuestions[currentQuestionIndex].answer;
   const isLastQuestion =
     currentQuestionIndex === generatedExamQuestions.length - 1;
+
+  const goToPreviousQuestion = () => {
+    setCurrentQuestionIndex(index => index - 1);
+  };
+
+  const goToNextQuestion = () => {
+    setCurrentQuestionIndex(index => index + 1);
+  };
 
   return (
     <div className='exam-wrapper'>
@@ -378,7 +381,6 @@ function ShowExam(props: ShowExamProps) {
   const submitChallenge = useSubmit();
 
   const [examTimeInSeconds, setExamTimeInSeconds] = useState(0);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [generatedExamQuestions, setGeneratedExamQuestions] = useState<
     GeneratedExamQuestion[]
   >([]);
@@ -490,19 +492,10 @@ function ShowExam(props: ShowExamProps) {
     setUserExamQuestions(newUserExamQuestions);
   };
 
-  const goToPreviousQuestion = () => {
-    setCurrentQuestionIndex(currentQuestionIndex - 1);
-  };
-
-  const goToNextQuestion = () => {
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-  };
-
   const cleanUp = () => {
     clearInterval(timerInterval);
 
     setExamTimeInSeconds(0);
-    setCurrentQuestionIndex(0);
 
     window.removeEventListener('beforeunload', stopWindowCloseRef.current);
     window.removeEventListener('popstate', stopBrowserBackRef.current);
@@ -574,11 +567,8 @@ function ShowExam(props: ShowExamProps) {
             />
           ) : (
             <ExamQuestions
-              currentQuestionIndex={currentQuestionIndex}
               examTimeInSeconds={examTimeInSeconds}
               generatedExamQuestions={generatedExamQuestions}
-              goToNextQuestion={goToNextQuestion}
-              goToPreviousQuestion={goToPreviousQuestion}
               openExitExamModal={openExitExamModal}
               openFinishExamModal={openFinishExamModal}
               selectAnswer={selectAnswer}
