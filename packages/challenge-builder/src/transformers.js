@@ -96,17 +96,19 @@ const testJSX = matchesProperty('ext', 'jsx');
 const testTSX = matchesProperty('ext', 'tsx');
 const testTypeScript = matchesProperty('ext', 'ts');
 const testHTML = matchesProperty('ext', 'html');
-const testHTML$JS$JSX$TS$TSX = overSome(
+const testPython = matchesProperty('ext', 'py');
+const testHTML$JS$JSX$TS$TSX$PY = overSome(
   testHTML,
   testJS,
   testJSX,
   testTypeScript,
-  testTSX
+  testTSX,
+  testPython
 );
 
 const replaceNBSP = cond([
   [
-    testHTML$JS$JSX$TS$TSX,
+    testHTML$JS$JSX$TS$TSX$PY,
     partial(transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]

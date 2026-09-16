@@ -9,6 +9,7 @@ import {
   embedFilesInHtml,
   embedScript,
   getLocalSourceWarnings,
+  getPythonTransformers,
   getTransformers
 } from './transformers';
 
@@ -214,5 +215,28 @@ describe('embedScript', () => {
     expect(script.getAttribute('defer')).toBe('true');
     expect(script.getAttribute('src')).toBeNull();
     expect(script.textContent).toContain(rawScript);
+  });
+});
+
+const applyPythonTransformers = challengeFile =>
+  getPythonTransformers().reduce(
+    (fileP, transformer) => fileP.then(file => transformer(file)),
+    Promise.resolve(challengeFile)
+  );
+
+describe('getPythonTransformers', () => {
+  it('replaces non-breaking spaces in Python files', async () => {
+    const file = createPoly({
+      name: 'main',
+      ext: 'py',
+      contents: 'if True:\n\u00a0\u00a0\u00a0\u00a0print("hi")',
+      head: '',
+      tail: ''
+    });
+
+    const transformed = await applyPythonTransformers(file);
+
+    expect(transformed.contents).not.toContain('\u00a0');
+    expect(transformed.contents).toBe('if True:\n    print("hi")');
   });
 });
