@@ -45,20 +45,22 @@ afterAll(() => {
   vi.useRealTimers();
 });
 
-function renderArchive() {
+function renderArchive(isSignedIn = true) {
   const store = createStore({
     [MainApp]: {
       ...initialState,
       user: {
         ...initialState.user,
-        sessionUser: {
-          completedDailyCodingChallenges: [
-            {
-              id: 'completed-challenge-id',
-              languages: ['javascript']
+        sessionUser: isSignedIn
+          ? {
+              completedDailyCodingChallenges: [
+                {
+                  id: 'completed-challenge-id',
+                  languages: ['javascript']
+                }
+              ]
             }
-          ]
-        }
+          : null
       }
     }
   });
@@ -114,12 +116,32 @@ describe('<DailyCodingChallengeArchive />', () => {
       'href',
       `/learn/daily-coding-challenge/${toMonthDay(todayUsCentral)}`
     );
-
     await waitFor(() => {
       expect(screen.getAllByTestId('calendar-day')).toHaveLength(daysInMonth);
     });
     expect(screen.getAllByTestId('calendar-day-completed')).toHaveLength(1);
     expect(screen.getAllByTestId('calendar-day-not-completed')).toHaveLength(1);
+  });
+
+  it('does not apply completion modal styles to the sign in button', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      json: vi.fn().mockResolvedValue([
+        {
+          id: 'not-completed-challenge-id',
+          date: todayMidnight,
+          challengeNumber: 1,
+          title: 'Today challenge'
+        }
+      ])
+    } as unknown as Response);
+
+    renderArchive(false);
+
+    const signInButton = await screen.findByRole('link', {
+      name: 'buttons.logged-out-cta-btn'
+    });
+
+    expect(signInButton.closest('.completion-modal-login-btn')).toBeNull();
   });
 
   it('renders the not found page when the API response is invalid', async () => {
