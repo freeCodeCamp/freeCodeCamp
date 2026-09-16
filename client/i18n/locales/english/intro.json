@@ -2485,7 +2485,6 @@
           "In this workshop, you will build an artifact provenance auditor to look up, tag, move, and summarize museum artifacts."
         ]
       },
-
       "review-javascript-objects": {
         "title": "JavaScript Objects Review",
         "intro": [
