@@ -2,6 +2,7 @@
 import { graphql, navigate } from 'gatsby';
 
 import React, { useEffect, useRef, useState } from 'react';
+import type { RefObject } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -137,6 +138,211 @@ interface ShowExamProps {
 
 function convertMd(md: string): string {
   return micromark(md);
+}
+
+interface ExamQuestionsProps {
+  currentQuestionIndex: number;
+  examTimeInSeconds: number;
+  generatedExamQuestions: GeneratedExamQuestion[];
+  goToNextQuestion: () => void;
+  goToPreviousQuestion: () => void;
+  openExitExamModal: () => void;
+  openFinishExamModal: () => void;
+  selectAnswer: (index: number, id: string, answer: string) => void;
+  t: TFunction;
+  title: string;
+  userExamQuestions: UserExamQuestion[];
+}
+
+function ExamQuestions({
+  currentQuestionIndex,
+  examTimeInSeconds,
+  generatedExamQuestions,
+  goToNextQuestion,
+  goToPreviousQuestion,
+  openExitExamModal,
+  openFinishExamModal,
+  selectAnswer,
+  t,
+  title,
+  userExamQuestions
+}: ExamQuestionsProps) {
+  const currentQuestion = generatedExamQuestions[currentQuestionIndex];
+  const currentAnswer = userExamQuestions[currentQuestionIndex].answer;
+  const isLastQuestion =
+    currentQuestionIndex === generatedExamQuestions.length - 1;
+
+  return (
+    <div className='exam-wrapper'>
+      <div className='exam-header'>
+        <div data-playwright-test-label='exam-show-title'>{title}</div>
+        <span>|</span>
+        <div data-playwright-test-label='exam-show-question-time'>
+          {t('learn.exam.time', {
+            t: formatSecondsToTime(examTimeInSeconds)
+          })}
+        </div>
+        <span>|</span>
+        <div>
+          {t('learn.exam.questions', {
+            n: currentQuestionIndex + 1,
+            t: generatedExamQuestions.length
+          })}
+        </div>
+      </div>
+      <hr />
+      <Spacer size='m' />
+
+      <div className='exam-questions'>
+        <PrismFormatted text={convertMd(currentQuestion.question)} />
+
+        <Spacer size='l' />
+        <div className='exam-answers'>
+          {currentQuestion.answers.map(({ answer, id }) => (
+            <label className='exam-answer-label' key={id}>
+              <input
+                checked={currentAnswer.id === id}
+                className='sr-only'
+                name={id}
+                onChange={() => selectAnswer(currentQuestionIndex, id, answer)}
+                type='radio'
+                value={id}
+              />{' '}
+              <span className='exam-answer-input-visible'>
+                {currentAnswer.id === id ? (
+                  <span className='exam-answer-input-selected' />
+                ) : null}
+              </span>
+              <PrismFormatted text={convertMd(answer)} />
+            </label>
+          ))}
+        </div>
+      </div>
+      <Spacer size='l' />
+
+      <div className='exam-buttons'>
+        <Button
+          block={true}
+          className='exam-button'
+          disabled={currentQuestionIndex <= 0}
+          variant='primary'
+          onClick={goToPreviousQuestion}
+        >
+          {t('buttons.previous-question')}
+        </Button>
+
+        <Button
+          block={true}
+          disabled={!currentAnswer.id}
+          className='exam-button'
+          variant='primary'
+          onClick={isLastQuestion ? openFinishExamModal : goToNextQuestion}
+        >
+          {t(isLastQuestion ? 'buttons.finish-exam' : 'buttons.next-question')}
+        </Button>
+      </div>
+
+      <Spacer size='m' />
+
+      <div className='exam-buttons'>
+        <Button
+          block={true}
+          className='exam-button'
+          variant='primary'
+          onClick={openExitExamModal}
+        >
+          {t('buttons.exit-exam')}
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+interface ExamIntroductionProps {
+  block: string;
+  container: RefObject<HTMLElement>;
+  description: string;
+  instructions: string;
+  isChallengeCompleted: boolean;
+  missingPrerequisites: PrerequisiteChallenge[];
+  prerequisitesComplete: boolean;
+  qualifiedForExam: boolean;
+  runExam: () => Promise<void>;
+  superBlock: string;
+  t: TFunction;
+  title: string;
+  translationPending: boolean;
+  windowTitle: string;
+}
+
+function ExamIntroduction({
+  block,
+  container,
+  description,
+  instructions,
+  isChallengeCompleted,
+  missingPrerequisites,
+  prerequisitesComplete,
+  qualifiedForExam,
+  runExam,
+  superBlock,
+  t,
+  title,
+  translationPending,
+  windowTitle
+}: ExamIntroductionProps) {
+  return (
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet title={windowTitle} />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <Spacer size='m' />
+
+              {qualifiedForExam ? (
+                <Callout variant='note' label={t('misc.note')}>
+                  <p>{t('learn.exam.qualified')}</p>
+                </Callout>
+              ) : !prerequisitesComplete ? (
+                <MissingPrerequisites
+                  missingPrerequisites={missingPrerequisites}
+                />
+              ) : (
+                <FoundationalCSharpSurveyAlert />
+              )}
+              <PrismFormatted text={description} />
+              <Spacer size='m' />
+              <PrismFormatted text={instructions} />
+
+              <Button
+                block={true}
+                variant='primary'
+                disabled={!qualifiedForExam}
+                // `runExam` being an async callback is acceptable
+                //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                onClick={runExam}
+              >
+                {t('buttons.click-start-exam')}
+              </Button>
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
+  );
 }
 
 function ShowExam(props: ShowExamProps) {
@@ -367,116 +573,19 @@ function ShowExam(props: ShowExamProps) {
               exitExam={exitExam}
             />
           ) : (
-            <div className='exam-wrapper'>
-              <div className='exam-header'>
-                <div data-playwright-test-label='exam-show-title'>{title}</div>
-                <span>|</span>
-                <div data-playwright-test-label='exam-show-question-time'>
-                  {t('learn.exam.time', {
-                    t: formatSecondsToTime(examTimeInSeconds)
-                  })}
-                </div>
-                <span>|</span>
-                <div>
-                  {t('learn.exam.questions', {
-                    n: currentQuestionIndex + 1,
-                    t: generatedExamQuestions.length
-                  })}
-                </div>
-              </div>
-              <hr />
-              <Spacer size='m' />
-
-              <div className='exam-questions'>
-                <PrismFormatted
-                  text={convertMd(
-                    generatedExamQuestions[currentQuestionIndex].question
-                  )}
-                />
-
-                <Spacer size='l' />
-                <div className='exam-answers'>
-                  {generatedExamQuestions[currentQuestionIndex].answers.map(
-                    ({ answer, id }) => (
-                      <label className='exam-answer-label' key={id}>
-                        <input
-                          checked={
-                            userExamQuestions[currentQuestionIndex].answer
-                              .id === id
-                          }
-                          className='sr-only'
-                          name={id}
-                          onChange={() =>
-                            selectAnswer(currentQuestionIndex, id, answer)
-                          }
-                          type='radio'
-                          value={id}
-                        />{' '}
-                        <span className='exam-answer-input-visible'>
-                          {userExamQuestions[currentQuestionIndex].answer.id ===
-                          id ? (
-                            <span className='exam-answer-input-selected' />
-                          ) : null}
-                        </span>
-                        <PrismFormatted text={convertMd(answer)} />
-                      </label>
-                    )
-                  )}
-                </div>
-              </div>
-              <Spacer size='l' />
-
-              <div className='exam-buttons'>
-                <Button
-                  block={true}
-                  className='exam-button'
-                  disabled={currentQuestionIndex <= 0}
-                  variant='primary'
-                  onClick={goToPreviousQuestion}
-                >
-                  {t('buttons.previous-question')}
-                </Button>
-
-                {currentQuestionIndex === generatedExamQuestions.length - 1 ? (
-                  <Button
-                    block={true}
-                    disabled={
-                      !userExamQuestions[currentQuestionIndex].answer.id
-                    }
-                    className='exam-button'
-                    variant='primary'
-                    onClick={openFinishExamModal}
-                  >
-                    {t('buttons.finish-exam')}
-                  </Button>
-                ) : (
-                  <Button
-                    block={true}
-                    disabled={
-                      !userExamQuestions[currentQuestionIndex].answer.id
-                    }
-                    className='exam-button'
-                    variant='primary'
-                    onClick={goToNextQuestion}
-                  >
-                    {t('buttons.next-question')}
-                  </Button>
-                )}
-              </div>
-
-              <Spacer size='m' />
-
-              <div className='exam-buttons'>
-                <Button
-                  block={true}
-                  className='exam-button'
-                  variant='primary'
-                  onClick={openExitExamModal}
-                >
-                  {t('buttons.exit-exam')}
-                </Button>
-              </div>
-            </div>
+            <ExamQuestions
+              currentQuestionIndex={currentQuestionIndex}
+              examTimeInSeconds={examTimeInSeconds}
+              generatedExamQuestions={generatedExamQuestions}
+              goToNextQuestion={goToNextQuestion}
+              goToPreviousQuestion={goToPreviousQuestion}
+              openExitExamModal={openExitExamModal}
+              openFinishExamModal={openFinishExamModal}
+              selectAnswer={selectAnswer}
+              t={t}
+              title={title}
+              userExamQuestions={userExamQuestions}
+            />
           )}
         </Col>
         <ExitExamModal exitExam={exitExam} />
@@ -484,56 +593,22 @@ function ShowExam(props: ShowExamProps) {
       </Row>
     </Container>
   ) : (
-    <Hotkeys containerRef={container}>
-      <LearnLayout>
-        <Helmet title={windowTitle} />
-        <Container>
-          <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
-              <Spacer size='m' />
-
-              {qualifiedForExam ? (
-                <Callout variant='note' label={t('misc.note')}>
-                  <p>{t('learn.exam.qualified')}</p>
-                </Callout>
-              ) : !prerequisitesComplete ? (
-                <MissingPrerequisites
-                  missingPrerequisites={missingPrerequisites}
-                />
-              ) : (
-                <FoundationalCSharpSurveyAlert />
-              )}
-              <PrismFormatted text={description} />
-              <Spacer size='m' />
-              <PrismFormatted text={instructions} />
-
-              <Button
-                block={true}
-                variant='primary'
-                disabled={!qualifiedForExam}
-                // `runExam` being an async callback is acceptable
-                //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                onClick={runExam}
-              >
-                {t('buttons.click-start-exam')}
-              </Button>
-            </Col>
-            <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
-          </Row>
-        </Container>
-      </LearnLayout>
-    </Hotkeys>
+    <ExamIntroduction
+      block={block}
+      container={container}
+      description={description}
+      instructions={instructions}
+      isChallengeCompleted={isChallengeCompleted}
+      missingPrerequisites={missingPrerequisites}
+      prerequisitesComplete={prerequisitesComplete}
+      qualifiedForExam={qualifiedForExam}
+      runExam={runExam}
+      superBlock={superBlock}
+      t={t}
+      title={title}
+      translationPending={translationPending}
+      windowTitle={windowTitle}
+    />
   );
 }
 
