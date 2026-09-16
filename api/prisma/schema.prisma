@@ -398,7 +398,4 @@ model DripCampaign {
   creationDate DateTime @default(now()) @db.Date
   email        String
   variant      String
-
-  @@index([userId], map: "userId_1")
-  @@index([email], map: "email_1")
 }
