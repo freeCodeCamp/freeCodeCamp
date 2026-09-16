@@ -1,10 +1,10 @@
-import { execSync } from 'child_process';
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { alertToBeVisible } from './utils/alerts';
+
+test.use({ userPreset: 'certified' });
 
 interface ChallengeTest {
   text: string;
@@ -191,15 +191,7 @@ test('User can reset on a multi-file project', async ({
 });
 
 test.describe('Signed in user', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
+  test.use({ userPreset: 'development' });
 
   test('User can reset on a multi-file project after reloading and saving', async ({
     page,
