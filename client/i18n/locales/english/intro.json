@@ -10402,7 +10402,7 @@
       "Complete the required projects and pass the exam to earn the Algorithms and Data Structure Certification."
     ],
     "chapters": {
-      "python": "Algorithms and Data Structure"
+      "algorithms-and-data-structure": "Algorithms and Data Structure"
     },
     "modules": {
       "python-linear-data-structures": "Linear Data Structures",
