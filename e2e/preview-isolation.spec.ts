@@ -78,6 +78,10 @@ test.describe('Project preview isolation', () => {
     }
   });
 
+  test.afterAll(() => {
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
   test('a stored project cannot reach the viewer document', async ({
     page
   }) => {

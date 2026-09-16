@@ -1,5 +1,4 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 const failedUpdates = [
   {
@@ -18,27 +17,21 @@ const storeKey = 'fcc-failed-updates';
 function getCompletedIds(completedChallenges: { id: string }[]): string[] {
   return completedChallenges.map(challenge => challenge.id);
 }
-test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-test.beforeAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user');
-});
-
-test.afterAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'development' });
 
 test.describe('failed update flushing', () => {
   test('should resubmit failed updates to the api and clear the store', async ({
     page,
-    request
+    request,
+    isolatedUser
   }) => {
     // Initially, the user has no completed challenges.
     const userRes = await request.get(
       new URL('/user/session-user', process.env.API_LOCATION).toString()
     );
-    const completedChallenges = (await userRes.json()).user.developmentuser
-      .completedChallenges;
+    const completedChallenges = (await userRes.json()).user[
+      isolatedUser.username
+    ].completedChallenges;
     expect(completedChallenges).toEqual([]);
 
     // It's necessary to wait until the page has loaded before setting the
@@ -78,8 +71,9 @@ test.describe('failed update flushing', () => {
     );
 
     // Now the user should have both completed challenges.
-    const updatedCompletedChallenges = (await updatedUserRes.json()).user
-      .developmentuser.completedChallenges;
+    const updatedCompletedChallenges = (await updatedUserRes.json()).user[
+      isolatedUser.username
+    ].completedChallenges;
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const completedIds = getCompletedIds(updatedCompletedChallenges);
 
