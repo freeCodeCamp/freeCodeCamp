@@ -16,11 +16,11 @@ const {
   preparation
 } = vi.hoisted(() => {
   const preparation: {
-    promise: Promise<void>;
-    resolve: () => void;
+    promise: Promise<boolean>;
+    resolve: (isReady: boolean) => void;
     isResolved: boolean;
   } = {
-    promise: Promise.resolve(),
+    promise: Promise.resolve(true),
     resolve: () => undefined,
     isResolved: true
   };
@@ -66,10 +66,10 @@ const AUDIO_URL = 'https://example.com/campfire.mp3';
 
 const holdPreparation = () => {
   preparation.isResolved = false;
-  preparation.promise = new Promise<void>(resolve => {
-    preparation.resolve = () => {
-      preparation.isResolved = true;
-      resolve();
+  preparation.promise = new Promise<boolean>(resolve => {
+    preparation.resolve = (isReady: boolean) => {
+      preparation.isResolved = isReady;
+      resolve(isReady);
     };
   });
 };
@@ -101,7 +101,7 @@ describe('campfire ambience settings integration', () => {
     feature.on = true;
     feature.value = AUDIO_URL;
     preparation.isResolved = true;
-    preparation.promise = Promise.resolve();
+    preparation.promise = Promise.resolve(true);
   });
 
   it('offers no ambience control when the feature is off', () => {
@@ -138,10 +138,38 @@ describe('campfire ambience settings integration', () => {
     );
     expect(ambienceToggle()).not.toBeInTheDocument();
 
-    preparation.resolve();
+    preparation.resolve(true);
 
     await waitFor(() => expect(ambienceToggle()).toBeInTheDocument());
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  });
+
+  it('reports a failed load and recovers when the retry succeeds', async () => {
+    holdPreparation();
+
+    renderPage();
+
+    expect(screen.getByRole('status')).toHaveTextContent(
+      'settings.ambient-sound-preparing'
+    );
+
+    preparation.resolve(false);
+
+    // The setting must not sit on "preparing" forever.
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('settings.ambient-sound-unavailable');
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(ambienceToggle()).not.toBeInTheDocument();
+
+    const retry = screen.getByRole('button', { name: 'buttons.try-again' });
+    // The manager prepares too, so count the retry rather than total calls.
+    const callsBeforeRetry = mockPrepare.mock.calls.length;
+    preparation.promise = Promise.resolve(true);
+    fireEvent.click(retry);
+
+    await waitFor(() => expect(ambienceToggle()).toBeInTheDocument());
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(mockPrepare.mock.calls.length).toBe(callsBeforeRetry + 1);
   });
 
   it('starts the ambience from the toggle interaction itself', () => {

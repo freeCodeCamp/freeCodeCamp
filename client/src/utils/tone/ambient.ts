@@ -214,12 +214,14 @@ function releasePlayer(): void {
 
 /**
  * Loads Tone ahead of time so that a later toggle can open the audio context
- * within the click that asked for it. This never produces sound.
+ * within the click that asked for it. This never produces sound. Resolves to
+ * whether the module is ready, so a caller can report a failed load and offer
+ * to try again rather than waiting forever.
  */
-export function prepareCampfireAmbience(): Promise<void> {
+export function prepareCampfireAmbience(): Promise<boolean> {
   return loadTone().then(
-    () => undefined,
-    () => undefined
+    () => true,
+    () => false
   );
 }
 
@@ -248,7 +250,13 @@ export function startCampfireAmbience(audioUrl: string): Promise<void> {
     if (tone.getContext().state === 'running') {
       // Already allowed to make sound, so there is nothing to unblock.
       stopListeningForGesture();
-      return resumePlayback(tone, audioUrl, requestId).then(() => undefined);
+      return resumePlayback(tone, audioUrl, requestId).then(
+        () => undefined,
+        // A failed load must not surface as an unhandled rejection, and this
+        // request is finished either way: the guards in resumePlayback keep it
+        // away from whatever player a newer request has put in place.
+        () => undefined
+      );
     }
 
     if (hasUserActivation()) {

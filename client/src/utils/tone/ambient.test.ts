@@ -515,6 +515,44 @@ describe('campfire ambience', () => {
     });
   });
 
+  describe('load failures on a running context', () => {
+    it('settles instead of leaving an unhandled rejection', async () => {
+      mockLoaded.mockRejectedValueOnce(new Error('network'));
+
+      await expect(startCampfireAmbience(AUDIO_URL)).resolves.toBeUndefined();
+      expect(mockStart).not.toHaveBeenCalled();
+
+      // The failure is recoverable: a later request still starts.
+      await startCampfireAmbience(AUDIO_URL);
+
+      expect(mockStart).toHaveBeenCalledOnce();
+    });
+
+    it('keeps a failed request away from the player a newer one built', async () => {
+      const Tone = await import('tone');
+      let rejectFirstLoad: (error: Error) => void = () => undefined;
+      mockLoaded.mockReturnValueOnce(
+        new Promise<void>((_resolve, reject) => {
+          rejectFirstLoad = reject;
+        })
+      );
+
+      const firstRequest = startCampfireAmbience(AUDIO_URL);
+      await flushAsync();
+
+      await startCampfireAmbience(OTHER_AUDIO_URL);
+
+      rejectFirstLoad(new Error('network'));
+      await expect(firstRequest).resolves.toBeUndefined();
+
+      expect(Tone.Player).toHaveBeenCalledTimes(2);
+      // Only the newer request played, and only its own stale predecessor was
+      // disposed.
+      expect(mockStart).toHaveBeenCalledOnce();
+      expect(mockDispose).toHaveBeenCalledOnce();
+    });
+  });
+
   describe('module readiness', () => {
     it('prepares the module without making any sound', async () => {
       await prepareCampfireAmbience();

@@ -35,6 +35,9 @@ export default function SoundSettings({
   const [isAmbientSoundReady, setIsAmbientSoundReady] = useState(
     isCampfireAmbienceReady
   );
+  // Counts preparation attempts so that retrying re-runs the effect below.
+  const [prepareAttempt, setPrepareAttempt] = useState(0);
+  const [hasPrepareFailed, setHasPrepareFailed] = useState(false);
   const [ambientSound, setAmbientSound] = useState(
     Boolean(store.get('fcc-ambient-sound'))
   );
@@ -47,14 +50,21 @@ export default function SoundSettings({
     if (!isAmbientSoundAvailable || isAmbientSoundReady) return;
 
     let isCurrent = true;
-    void prepareCampfireAmbience().then(() => {
-      if (isCurrent) setIsAmbientSoundReady(isCampfireAmbienceReady());
+    void prepareCampfireAmbience().then(isReady => {
+      if (!isCurrent) return;
+      setIsAmbientSoundReady(isReady);
+      setHasPrepareFailed(!isReady);
     });
 
     return () => {
       isCurrent = false;
     };
-  }, [isAmbientSoundAvailable, isAmbientSoundReady]);
+  }, [isAmbientSoundAvailable, isAmbientSoundReady, prepareAttempt]);
+
+  function handleAmbientSoundRetry() {
+    setHasPrepareFailed(false);
+    setPrepareAttempt(attempt => attempt + 1);
+  }
 
   function handleVolumeChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = Number(event.target.value);
@@ -110,6 +120,14 @@ export default function SoundSettings({
             onLabel={t('buttons.on')}
             toggleFlag={handleAmbientSoundToggle}
           />
+        ) : hasPrepareFailed ? (
+          // A failed load must not leave the setting stuck on "preparing".
+          <div role='alert'>
+            <p>{t('settings.ambient-sound-unavailable')}</p>
+            <button type='button' onClick={handleAmbientSoundRetry}>
+              {t('buttons.try-again')}
+            </button>
+          </div>
         ) : (
           // Showing a working-looking toggle before the audio module is ready
           // would swallow the click that is meant to start the ambience.
