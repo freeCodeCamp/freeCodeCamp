@@ -6988,7 +6988,7 @@
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
-          "In these lessons, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
+          "In these lessons, you will learn how to work with code editors and IDEs. You will learn how to install VS Code, create a project, use keyboard shortcuts, and work with extensions."
         ]
       },
       "lecture-understanding-the-command-line-and-working-with-bash": {
