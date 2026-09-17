@@ -51,11 +51,7 @@ test.describe('Settings SideNav Component', () => {
       const href = await link.getAttribute('href');
       await link.click();
 
-      // Wait for scroll animation
-      // Playwright performs click very fast, which could lead to URL check before scroll ends
-      await page.waitForTimeout(300);
-
-      await expect(page).toHaveURL(new RegExp(href + '$'));
+      await page.waitForURL(new RegExp(href + '$'));
     }
   });
 });
