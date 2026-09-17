@@ -833,12 +833,32 @@
           "By building this project, you'll gain experience working with numerical computations and string manipulation."
         ]
       },
+      "learn-lambda-functions-by-building-an-expense-tracker": {
+        "title": "Learn Lambda Functions by Building an Expense Tracker",
+        "intro": [
+          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
+        ]
+      },
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
           "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
           "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
+        ]
+      },
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
@@ -869,6 +889,12 @@
           "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
         ]
       },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
         "title": "Learn Classes and Objects by Building a Sudoku Solver",
         "intro": [
@@ -883,48 +909,10 @@
           "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
         ]
       },
-      "learn-lambda-functions-by-building-an-expense-tracker": {
-        "title": "Learn Lambda Functions by Building an Expense Tracker",
-        "intro": [
-          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
-          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
-        ]
-      },
-      "build-an-arithmetic-formatter-project": {
-        "title": "Build an Arithmetic Formatter Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
-      "build-a-time-calculator-project": {
-        "title": "Build a Time Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
       "build-a-budget-app-project": {
         "title": "Build a Budget App Project",
         "intro": [
           "This is one of the required projects to claim your certification."
-        ]
-      },
-      "build-a-polygon-area-calculator-project": {
-        "title": "Build a Polygon Area Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
-      "build-a-probability-calculator-project": {
-        "title": "Build a Probability Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
-      "learn-interfaces-by-building-an-equation-solver": {
-        "title": "Learn Interfaces by Building an Equation Solver",
-        "intro": [
-          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
-          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
         ]
       },
       "learn-special-methods-by-building-a-vector-space": {
@@ -934,6 +922,19 @@
           "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Learn Interfaces by Building an Equation Solver",
+        "intro": [
+          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
       "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
         "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
         "intro": [
@@ -941,11 +942,10 @@
           "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
         ]
       },
-      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
-        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
         "intro": [
-          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
-          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
+          "This is one of the required projects to claim your certification."
         ]
       }
     }
@@ -2477,6 +2477,12 @@
         "title": "Build a Record Collection",
         "intro": [
           "In this lab you will build a function to manage a record collection."
+        ]
+      },
+      "workshop-artifact-provenance-auditor": {
+        "title": "Build an Artifact Provenance Auditor",
+        "intro": [
+          "In this workshop, you will build an artifact provenance auditor to look up, tag, move, and summarize museum artifacts."
         ]
       },
       "review-javascript-objects": {
@@ -6044,7 +6050,7 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
-          "In these lessons, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular front-end JavaScript library."
+          "In these lessons, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single-page applications (SPAs) and the issue surrounding them, and React, the most popular front-end JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
@@ -6982,7 +6988,7 @@
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
-          "In these lessons, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
+          "In these lessons, you will learn how to work with code editors and IDEs. You will learn how to install VS Code, create a project, use keyboard shortcuts, and work with extensions."
         ]
       },
       "lecture-understanding-the-command-line-and-working-with-bash": {
@@ -7667,21 +7673,41 @@
       "es-a1-module-describing-a-company": "Describing a Company",
       "es-a1-module-describing-people-at-work": "Describing People at Work"
     },
-    "module-intros": {
-      "es-a1-module-describing-a-company": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
-        ]
-      },
-      "es-a1-module-describing-people-at-work": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
-        ]
-      }
-    },
     "blocks": {
+      "es-a1-learn-certification-introduction": {
+        "title": "Certification Introduction",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-vowels": { "title": "Vowels", "intro": ["", ""] },
+      "es-a1-learn-consonants-and-special-characters": {
+        "title": "Consonants and Special Characters",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-alphabet": {
+        "title": "The Spanish Alphabet Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-the-first-ten-numbers": {
+        "title": "The First Ten Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-first-ten-numbers": {
+        "title": "The First Ten Numbers Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-alphabet-and-accents": {
+        "title": "Alphabet and Accents",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
+      "es-a1-review-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Quiz",
+        "intro": ["", ""]
+      },
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
         "intro": ["", ""]
@@ -7700,19 +7726,6 @@
       },
       "es-a1-quiz-greetings-and-farewells": {
         "title": "Greetings and Farewells Quiz",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-certification-introduction": {
-        "title": "Certification Introduction",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-alphabet-and-accents": {
-        "title": "Alphabet and Accents",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
-      "es-a1-quiz-spanish-fundamentals": {
-        "title": "Spanish Fundamentals Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
@@ -7755,19 +7768,6 @@
       },
       "es-a1-quiz-first-questions": {
         "title": "First Questions Quiz",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-vowels": { "title": "Vowels", "intro": ["", ""] },
-      "es-a1-learn-consonants-and-special-characters": {
-        "title": "Consonants and Special Characters",
-        "intro": ["", ""]
-      },
-      "es-a1-review-spanish-fundamentals": {
-        "title": "Spanish Fundamentals Review",
-        "intro": ["", ""]
-      },
-      "es-a1-practice-the-alphabet": {
-        "title": "The Spanish Alphabet Practice",
         "intro": ["", ""]
       },
       "es-a1-warm-up-remember-first-numbers": {
@@ -7814,20 +7814,8 @@
         "title": "Sharing Your Personal Details Quiz",
         "intro": ["", ""]
       },
-      "es-a1-learn-the-first-ten-numbers": {
-        "title": "The First Ten Numbers",
-        "intro": ["", ""]
-      },
-      "es-a1-practice-the-first-ten-numbers": {
-        "title": "The First Ten Numbers Practice",
-        "intro": ["", ""]
-      },
       "es-a1-learn-numbers-30-to-60": {
         "title": "Numbers 30 to 60",
-        "intro": ["", ""]
-      },
-      "es-a1-warm-up-describing-a-company-basics": {
-        "title": "Describing a Company Basics",
         "intro": ["", ""]
       },
       "es-a1-learn-numbers-61-to-100": {
@@ -7846,8 +7834,16 @@
         "title": "Numbers 30 to 100 Quiz",
         "intro": ["", ""]
       },
+      "es-a1-warm-up-describing-a-company-basics": {
+        "title": "Describing a Company Basics",
+        "intro": ["", ""]
+      },
       "es-a1-learn-what-the-company-does": {
         "title": "What the Company Does",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-what-departments-do": {
+        "title": "What Departments Do",
         "intro": ["", ""]
       },
       "es-a1-learn-asking-about-a-company": {
@@ -7874,6 +7870,10 @@
         "title": "Mini Biographies ",
         "intro": ["", ""]
       },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
+        "intro": ["", ""]
+      },
       "es-a1-practice-asking-about-mini-biographies": {
         "title": "Asking About Mini Biographies",
         "intro": ["", ""]
@@ -7892,14 +7892,6 @@
       },
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-talking-about-colleagues": {
-        "title": "Talking About Colleagues",
-        "intro": ["", ""]
-      },
-      "es-a1-practice-what-departments-do": {
-        "title": "What Departments Do",
         "intro": ["", ""]
       }
     }
@@ -9015,18 +9007,6 @@
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
     },
     "module-intros": {
-      "zh-a1-module-introducing-others": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will practice understanding short monologues that introduce information about other people, such as name, role, nationality, and age."
-        ]
-      },
-      "zh-a1-module-getting-to-know-the-team": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
-        ]
-      },
       "zh-a1-module-communicating-personal-information": {
         "note": "Coming 2026",
         "intro": [
@@ -9064,6 +9044,14 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
+        "intro": ["", ""]
+      },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
@@ -9084,20 +9072,12 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
+      "zh-a1-warm-up-meeting-new-teammates": {
+        "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-understanding-questions-and-answers": {
         "title": "Understanding Questions and Answers",
-        "intro": ["", ""]
-      },
-      "zh-a1-practice-exchanging-basic-information": {
-        "title": "Exchanging Basic Information",
-        "intro": ["", ""]
-      },
-      "zh-a1-review-introduction-questions": {
-        "title": "Introduction Questions Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-introduction-questions": {
-        "title": "Introduction Questions Quiz",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-introducing-others-basics": {
@@ -9145,6 +9125,50 @@
         "title": "Team Introduction Quiz",
         "intro": ["", ""]
       },
+      "zh-a1-practice-exchanging-basic-information": {
+        "title": "Exchanging Basic Information",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-introduction-questions": {
+        "title": "Introduction Questions Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-introduction-questions": {
+        "title": "Introduction Questions Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-0-to-10": {
+        "title": "Numbers 0 to 10",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-0-to-10": {
+        "title": "Numbers 0 to 10 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-11-to-19": {
+        "title": "Numbers 11 to 19",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-11-to-19": {
+        "title": "Numbers 11 to 19 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-numbers-20-to-99": {
+        "title": "Numbers 20 to 99",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-numbers-20-to-99": {
+        "title": "Numbers 20 to 99 Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-numbers-below-100": {
+        "title": "Numbers Below 100 Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-numbers-below-100": {
+        "title": "Numbers Below 100 Quiz",
+        "intro": ["", ""]
+      },
       "zh-a1-warm-up-personal-skills-basics": {
         "title": "Personal Skills Basics",
         "intro": ["", ""]
@@ -9183,50 +9207,6 @@
       },
       "zh-a1-quiz-discussing-team-skills": {
         "title": "Discussing Team Skills Quiz",
-        "intro": ["", ""]
-      },
-      "zh-a1-warm-up-meeting-new-teammates": {
-        "title": "Meeting New Teammates",
-        "intro": ["", ""]
-      },
-      "zh-a1-learn-special-spelling-rules": {
-        "title": "Special Spelling Rules",
-        "intro": ["", ""]
-      },
-      "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
-        "intro": ["", ""]
-      },
-      "zh-a1-learn-numbers-0-to-10": {
-        "title": "Numbers 0 to 10",
-        "intro": ["", ""]
-      },
-      "zh-a1-practice-numbers-0-to-10": {
-        "title": "Numbers 0 to 10 Practice",
-        "intro": ["", ""]
-      },
-      "zh-a1-learn-numbers-11-to-19": {
-        "title": "Numbers 11 to 19",
-        "intro": ["", ""]
-      },
-      "zh-a1-practice-numbers-11-to-19": {
-        "title": "Numbers 11 to 19 Practice",
-        "intro": ["", ""]
-      },
-      "zh-a1-learn-numbers-20-to-99": {
-        "title": "Numbers 20 to 99",
-        "intro": ["", ""]
-      },
-      "zh-a1-practice-numbers-20-to-99": {
-        "title": "Numbers 20 to 99 Practice",
-        "intro": ["", ""]
-      },
-      "zh-a1-review-numbers-below-100": {
-        "title": "Numbers Below 100 Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-numbers-below-100": {
-        "title": "Numbers Below 100 Quiz",
         "intro": ["", ""]
       }
     }
@@ -10414,5 +10394,235 @@
     "enable-cookies": "You must enable third-party cookies before starting.",
     "english-only": "The courses in this section are only available in English. We are only able to translate the titles and introductions at the moment, not the lessons themselves.",
     "exam-english-only": "Please note that the certification exam is currently available only in English. The rest of the courses are available in some languages."
+  },
+  "algorithms-and-data-structure": {
+    "title": "Algorithms and Data Structure Certification",
+    "intro": [
+      "This course covers data structures and algorithms in Python.",
+      "Complete the required projects and pass the exam to earn the Algorithms and Data Structure Certification."
+    ],
+    "chapters": {
+      "algorithms-and-data-structure": "Algorithms and Data Structure"
+    },
+    "modules": {
+      "python-linear-data-structures": "Linear Data Structures",
+      "lab-hash-table": "Build a Hash Table",
+      "python-recursion": "Recursion",
+      "python-algorithms": "Algorithms",
+      "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
+      "python-graphs-and-trees": "Graphs and Trees",
+      "python-dynamic-programming": "Dynamic Programming",
+      "review-python": "Python Review"
+    },
+    "module-intros": {
+      "python-recursion": {
+        "intro": [
+          "In this module, you will learn how recursion and the call stack work in Python."
+        ]
+      }
+    },
+    "blocks": {
+      "lecture-working-with-common-data-structures": {
+        "title": "Working with Common Data Structures",
+        "intro": [
+          "Learn about working with common data structures in these lessons."
+        ]
+      },
+      "workshop-linked-list-class": {
+        "title": "Build a Linked List",
+        "intro": [
+          "In this workshop, you'll practice working with data structures by building a linked list."
+        ]
+      },
+      "review-data-structures": {
+        "title": "Data Structures Review",
+        "intro": [
+          "Before you're quizzed on data structures, you should review what you've learned about them.",
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
+        ]
+      },
+      "quiz-data-structures": {
+        "title": "Data Structures Quiz",
+        "intro": [
+          "Test what you've learned about data structures in Python with this quiz."
+        ]
+      },
+      "lab-hash-table": {
+        "title": "Build a Hash Table",
+        "intro": [
+          "A hash table is a data structure that is used to store key-value pairs and is optimized for quick lookups.",
+          "In this lab, you will use your knowledge about data structures to build a hash table."
+        ]
+      },
+      "lecture-understanding-recursion-and-the-call-stack-python": {
+        "title": "Understanding Recursion and the Call Stack",
+        "intro": [
+          "In this lecture, you will learn how recursive functions and the call stack work in Python."
+        ]
+      },
+      "workshop-countup-python": {
+        "title": "Build a Countup Function",
+        "intro": [
+          "In this workshop, you will build a function that uses recursion to create a list of numbers."
+        ]
+      },
+      "lab-range-of-numbers-python": {
+        "title": "Build a Range of Numbers Generator",
+        "intro": [
+          "In this lab, you will use recursion to generate a list of numbers within a specified range."
+        ]
+      },
+      "review-recursion-python": {
+        "title": "Review Recursion",
+        "intro": [
+          "Review the concepts of recursion, base cases, and the call stack."
+        ]
+      },
+      "quiz-recursion-python": {
+        "title": "Recursion Quiz",
+        "intro": [
+          "Test your understanding of recursion, base cases, and the call stack."
+        ]
+      },
+      "lecture-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
+      "workshop-binary-search": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
+      "lab-bisection-method": {
+        "title": "Implement the Bisection Method",
+        "intro": [
+          "In this lab, you will implement the bisection method to find the square root of a number."
+        ]
+      },
+      "workshop-merge-sort": {
+        "title": "Implement the Merge Sort Algorithm",
+        "intro": [
+          "The merge sort algorithm is a sorting algorithm based on the divide and conquer principle.",
+          "In this workshop, you'll implement the merge sort algorithm to sort a list of random numbers."
+        ]
+      },
+      "lab-quicksort": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort a list of integers."
+        ]
+      },
+      "lab-selection-sort": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
+      "lab-luhn-algorithm": {
+        "title": "Implement the Luhn Algorithm",
+        "intro": [
+          "In this lab, you will implement the Luhn algorithm to validate identification numbers such as credit card numbers."
+        ]
+      },
+      "review-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": [
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
+        ]
+      },
+      "quiz-searching-and-sorting-algorithms": {
+        "title": "Searching and Sorting Algorithms Quiz",
+        "intro": [
+          "Test what you've learned about searching and sorting algorithms in Python with this quiz."
+        ]
+      },
+      "lab-tower-of-hanoi": {
+        "title": "Implement the Tower of Hanoi Algorithm",
+        "intro": [
+          "In this lab, you will implement an algorithm to solve the Tower of Hanoi puzzle."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [
+          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
+        ]
+      },
+      "lab-adjacency-list-to-matrix-converter": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
+      "workshop-breadth-first-search": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
+      },
+      "lab-depth-first-search": {
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement the Depth-First Search Algorithm."
+        ]
+      },
+      "lab-n-queens-problem": {
+        "title": "Implement the N-Queens Algorithm",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
+      "review-graphs-and-trees": {
+        "title": "Graphs and Trees Review",
+        "intro": [
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
+        ]
+      },
+      "quiz-graphs-and-trees": {
+        "title": "Graphs and Trees Quiz",
+        "intro": [
+          "Test what you've learned about graphs and trees in Python with this quiz."
+        ]
+      },
+      "lecture-understanding-dynamic-programming": {
+        "title": "Understanding Dynamic Programming",
+        "intro": [
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+        ]
+      },
+      "lab-nth-fibonacci-number": {
+        "title": "Build an Nth Fibonacci Number Calculator",
+        "intro": [
+          "In this lab you will implement a Fibonacci sequence calculator using a dynamic programming approach."
+        ]
+      },
+      "review-dynamic-programming": {
+        "title": "Dynamic Programming Review",
+        "intro": [
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
+        ]
+      },
+      "quiz-dynamic-programming": {
+        "title": "Dynamic Programming Quiz",
+        "intro": [
+          "Test what you've learned about dynamic programming in python with this quiz."
+        ]
+      },
+      "review-python": {
+        "title": "Python Review",
+        "intro": ["Review Python concepts to prepare for the upcoming exam."]
+      }
+    }
   }
 }
