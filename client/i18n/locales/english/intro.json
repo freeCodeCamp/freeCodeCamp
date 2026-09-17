@@ -833,12 +833,32 @@
           "By building this project, you'll gain experience working with numerical computations and string manipulation."
         ]
       },
+      "learn-lambda-functions-by-building-an-expense-tracker": {
+        "title": "Learn Lambda Functions by Building an Expense Tracker",
+        "intro": [
+          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
+          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
+        ]
+      },
       "learn-list-comprehension-by-building-a-case-converter-program": {
         "title": "Learn Python List Comprehension by Building a Case Converter Program",
         "intro": [
           "List Comprehension is a way to construct a new Python list from an iterable types: lists, tuples, and strings. All without using a for loop or the <code>.append()</code> list method.",
           "In this project, you'll write a program that takes a string formatted in Camel Case or Pascal Case, then converts it into Snake Case.",
           "The project has two phases: first you'll use a for loop to implement the program. Then you'll learn how to use List Comprehension instead of a loop to achieve the same results."
+        ]
+      },
+      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
+        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+        "intro": [
+          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
+          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
+        ]
+      },
+      "build-an-arithmetic-formatter-project": {
+        "title": "Build an Arithmetic Formatter Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
         ]
       },
       "learn-regular-expressions-by-building-a-password-generator": {
@@ -869,6 +889,12 @@
           "In this project, you'll learn how to interact with data structures by sorting a list of random numbers using the Merge Sort Algorithm."
         ]
       },
+      "build-a-time-calculator-project": {
+        "title": "Build a Time Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
       "learn-classes-and-objects-by-building-a-sudoku-solver": {
         "title": "Learn Classes and Objects by Building a Sudoku Solver",
         "intro": [
@@ -883,48 +909,10 @@
           "In this project, you'll learn how to construct your own BST and perform an in-order traversal. You'll also learn key operations like insertion, search, and deletion."
         ]
       },
-      "learn-lambda-functions-by-building-an-expense-tracker": {
-        "title": "Learn Lambda Functions by Building an Expense Tracker",
-        "intro": [
-          "Lambda functions give you a concise way to write small, throwaway functions in your code.",
-          "In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations."
-        ]
-      },
-      "build-an-arithmetic-formatter-project": {
-        "title": "Build an Arithmetic Formatter Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
-      "build-a-time-calculator-project": {
-        "title": "Build a Time Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
       "build-a-budget-app-project": {
         "title": "Build a Budget App Project",
         "intro": [
           "This is one of the required projects to claim your certification."
-        ]
-      },
-      "build-a-polygon-area-calculator-project": {
-        "title": "Build a Polygon Area Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
-      "build-a-probability-calculator-project": {
-        "title": "Build a Probability Calculator Project",
-        "intro": [
-          "This is one of the required projects to claim your certification."
-        ]
-      },
-      "learn-interfaces-by-building-an-equation-solver": {
-        "title": "Learn Interfaces by Building an Equation Solver",
-        "intro": [
-          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
-          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
         ]
       },
       "learn-special-methods-by-building-a-vector-space": {
@@ -934,6 +922,19 @@
           "In this project, you are going to explore some of the most common special methods while learning about vectors by building a vector space."
         ]
       },
+      "learn-interfaces-by-building-an-equation-solver": {
+        "title": "Learn Interfaces by Building an Equation Solver",
+        "intro": [
+          "Abstract classes enable you to define formal interfaces - objects acting as blueprints for classes.",
+          "In this project, you'll discover how to implement an interface in Python while building a simple equation solver program."
+        ]
+      },
+      "build-a-polygon-area-calculator-project": {
+        "title": "Build a Polygon Area Calculator Project",
+        "intro": [
+          "This is one of the required projects to claim your certification."
+        ]
+      },
       "learn-encapsulation-by-building-a-projectile-trajectory-calculator": {
         "title": "Learn Encapsulation by Building a Projectile Trajectory Calculator",
         "intro": [
@@ -941,11 +942,10 @@
           "In this project, you'll discover new concepts related to encapsulation, such as getters, setters, and name mangling, and you'll use them together with what you already learned to create a program that calculates a projectile trajectory."
         ]
       },
-      "learn-the-bisection-method-by-finding-the-square-root-of-a-number": {
-        "title": "Learn the Bisection Method by Finding the Square Root of a Number",
+      "build-a-probability-calculator-project": {
+        "title": "Build a Probability Calculator Project",
         "intro": [
-          "Numerical methods are used to approximate solutions to mathematical problems that are difficult or impossible to solve analytically.",
-          "In this project, you will explore the numerical method of bisection to find the square root of a number by iteratively narrowing down the possible range of values that contain the square root."
+          "This is one of the required projects to claim your certification."
         ]
       }
     }
