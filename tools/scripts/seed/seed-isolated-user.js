@@ -11,13 +11,14 @@ const {
 } = require('./user-data');
 
 /**
- * @typedef {'new' | 'development' | 'certified' | 'almost-certified' | 'unclaimed'} UserPreset
+ * @typedef {'new' | 'development' | 'certified' | 'certified-with-survey' | 'almost-certified' | 'unclaimed'} UserPreset
  */
 
-const presets = {
+const testUserData = {
   new: {},
   development: demoUser,
   certified: fullyCertifiedUser,
+  'certified-with-survey': fullyCertifiedUser,
   'almost-certified': almostFullyCertifiedUser,
   unclaimed: unclaimedUser
 };
@@ -43,7 +44,7 @@ async function seedIsolatedUser(email, preset, overrides) {
     }
 
     const seed = {
-      ..._.omit(presets[preset], [
+      ..._.omit(testUserData[preset], [
         '_id',
         'id',
         'email',
@@ -55,6 +56,14 @@ async function seedIsolatedUser(email, preset, overrides) {
     };
 
     await user.updateOne({ _id: existingUser._id }, { $set: seed });
+
+    if (preset === 'certified-with-survey') {
+      await client.db('freecodecamp').collection('Survey').insertOne({
+        userId: existingUser._id,
+        title: 'Foundational C# with Microsoft Survey',
+        responses: []
+      });
+    }
   } finally {
     await client.close();
   }
