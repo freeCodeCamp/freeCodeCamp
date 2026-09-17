@@ -1,6 +1,5 @@
-import { execSync } from 'node:child_process';
-
-import { test, expect, Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import tributePage from './fixtures/tribute-page.json';
 
@@ -37,11 +36,9 @@ async function expectPreviewToBeShown(page: Page) {
 }
 
 test.describe('Completed project preview', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
+  test.use({ userPreset: 'development' });
 
   test.beforeEach(async ({ request }) => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-
     await authedRequest({
       request,
       method: 'post',
@@ -63,11 +60,14 @@ test.describe('Completed project preview', () => {
     });
   });
 
-  test('it should be viewable on the timeline', async ({ page }) => {
-    await page.goto('/developmentuser');
+  test('it should be viewable on the timeline', async ({
+    isolatedUser,
+    page
+  }) => {
+    await page.goto(`/${isolatedUser.username}`);
 
     await expect(
-      page.getByRole('heading', { name: '@developmentuser' })
+      page.getByRole('heading', { name: `@${isolatedUser.username}` })
     ).toBeVisible();
 
     await expectPreviewToBeShown(page);
