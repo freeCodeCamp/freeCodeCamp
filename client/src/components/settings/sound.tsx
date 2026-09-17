@@ -83,8 +83,13 @@ export default function SoundSettings({
       />
       {ambientSoundFeature.on && (
         <ToggleButtonSetting
-          action={t('settings.labels.ambient-sound-mode')}
-          explain={t('settings.ambient-sound-mode')}
+          action={t('settings.labels.ambient-sound-mode', {
+            defaultValue: 'Campfire Ambience'
+          })}
+          explain={t('settings.ambient-sound-mode', {
+            defaultValue:
+              'Play a looping campfire ambience while Campfire Mode is enabled.'
+          })}
           flag={ambientSound}
           flagName='ambientSound'
           offLabel={t('buttons.off')}
