@@ -15,6 +15,8 @@ While this is often used for fetching data from a server, it's not limited to th
 
 Let's take a look at what the `useOptimistic` hook is and how it contributes to making snappy and responsive UIs. 
 
+## What Is the `useOptimistic` Hook?
+
 The `useOptimistic` hook helps manage "optimistic updates" in the UI, a strategy in which you provide immediate updates to the UI based on the expected outcome of an action, like waiting for a server response.
 
 Here's the basic syntax of the `useOptimistic` hook:
@@ -38,6 +40,8 @@ A loading state controls whether you see a spinner, message, or some other indic
 However, the `useOptimistic` hook updates the UI instantaneously based on an expected outcome, even before you, say, make a call to an API. This hook gives you a chance to show a loading indicator or message, handle potential errors gracefully, and show instant feedback to make the UI feel snappy.
 
 This will become clearer as we go through some examples showing how the `useOptimistic` hook works.
+
+## Implementing Optimistic Updates
 
 Here's an action that simulates saving a task to a server. It returns the task after a 1 second delay, as it could happen with a real-world API request:
 
@@ -165,6 +169,8 @@ export default function Tasks() {
 ```
 
 This ensures snappy UI updates by showing instant feedback instead of waiting for a response. Once the task is saved, the `pending` property is removed, and the final task list updates accordingly.
+
+## Handling Transitions and Visibility
 
 In the UI, there are two things happening that are not supposed to happen. First, you can't see the `Adding Task...` text since it appears and disappears too quickly. Next, there's an error occurring after adding the task.
 

@@ -9,6 +9,8 @@ dashedName: how-do-conditional-statements-and-logical-operators-work
 
 Conditional statements, or conditionals, let you control the flow of your program based on whether certain conditions are true or false.
 
+## Comparison Operators
+
 But before we get into all that, let's go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.
 
 In a previous lesson, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
@@ -37,6 +39,8 @@ print(3 <= 4) # True
 ```
 
 These operators can be used in conditionals to compare values and run certain code based on whether the conditional evaluates to `True` or `False`.
+
+## The `if` Statement
 
 In Python, the most basic conditional is the `if` statement. Here's the basic syntax:
 
@@ -86,6 +90,8 @@ if age >= 18:
     print('You are an adult') # Nothing shows up in the terminal
 ```
 
+## The `else` Clause
+
 But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if…else` statement:
 
 ```python
@@ -117,6 +123,8 @@ print('Almost there!')
 else: # SyntaxError: invalid syntax
     print('You are not an adult yet')
 ```
+
+## The `elif` Clause
 
 There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your if statement with the `elif` (else if) keyword.
 
