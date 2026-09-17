@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useFeature } from '@growthbook/growthbook-react';
 import store from 'store';
 
@@ -7,6 +7,7 @@ import {
   SOUND_MODE_TOGGLE_EVENT,
   SOUND_VOLUME_EVENT,
   disposeCampfireAmbience,
+  prepareCampfireAmbience,
   startCampfireAmbience,
   stopCampfireAmbience,
   updateCampfireAmbienceVolume
@@ -24,6 +25,10 @@ export default function CampfireAmbience(): null {
       disposeCampfireAmbience();
       return;
     }
+
+    // Loading Tone up front lets a later toggle click open the audio context
+    // within that same interaction. It makes no sound on its own.
+    void prepareCampfireAmbience();
 
     const syncPlayback = (ambientEnabled: boolean, soundEnabled: boolean) => {
       if (ambientEnabled && soundEnabled) {
@@ -58,7 +63,10 @@ export default function CampfireAmbience(): null {
     window.addEventListener(SOUND_VOLUME_EVENT, handleVolumeChange);
 
     return () => {
-      window.removeEventListener(AMBIENT_SOUND_TOGGLE_EVENT, handleAmbientToggle);
+      window.removeEventListener(
+        AMBIENT_SOUND_TOGGLE_EVENT,
+        handleAmbientToggle
+      );
       window.removeEventListener(SOUND_MODE_TOGGLE_EVENT, handleSoundToggle);
       window.removeEventListener(SOUND_VOLUME_EVENT, handleVolumeChange);
       disposeCampfireAmbience();

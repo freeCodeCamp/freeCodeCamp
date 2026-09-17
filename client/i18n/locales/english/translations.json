@@ -295,6 +295,8 @@
     "profile-note": "You can go to <0>your profile</0> to update your personal information.",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
+    "ambient-sound-mode": "Play a looping campfire ambience while Campfire Mode is enabled.",
+    "ambient-sound-preparing": "Preparing campfire ambience...",
     "scrollbar-width": "Editor Scrollbar Width",
     "reset-editor-layout-tooltip": "Reset the editor layout to its default state",
     "reset-editor-layout": "Reset Editor Layout",
@@ -337,6 +339,7 @@
       "my-donations": "My donations",
       "night-mode": "Night Mode",
       "sound-mode": "Campfire Mode",
+      "ambient-sound-mode": "Campfire Ambience",
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
