@@ -1,12 +1,21 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import store from 'store';
 
-const mockStart = vi.fn();
-const mockStop = vi.fn();
-const mockDispose = vi.fn();
-const mockToDestination = vi.fn();
-const mockLoaded = vi.fn();
-const mockVolume = { value: 0 };
+const {
+  mockStart,
+  mockStop,
+  mockDispose,
+  mockToDestination,
+  mockLoaded,
+  mockVolume
+} = vi.hoisted(() => ({
+  mockStart: vi.fn(),
+  mockStop: vi.fn(),
+  mockDispose: vi.fn(),
+  mockToDestination: vi.fn(),
+  mockLoaded: vi.fn(),
+  mockVolume: { value: 0 }
+}));
 
 vi.mock('store', () => ({
   default: {
@@ -39,12 +48,11 @@ import {
 
 describe('campfire ambience', () => {
   beforeEach(() => {
+    disposeCampfireAmbience();
     vi.clearAllMocks();
     mockVolume.value = 0;
     vi.mocked(store.get).mockReturnValue(50);
     mockLoaded.mockResolvedValue(undefined);
-    disposeCampfireAmbience();
-    vi.clearAllMocks();
   });
 
   it('creates a looping player and starts it with the stored volume', async () => {
