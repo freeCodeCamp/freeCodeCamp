@@ -7667,20 +7667,6 @@
       "es-a1-module-describing-a-company": "Describing a Company",
       "es-a1-module-describing-people-at-work": "Describing People at Work"
     },
-    "module-intros": {
-      "es-a1-module-describing-a-company": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
-        ]
-      },
-      "es-a1-module-describing-people-at-work": {
-        "note": "Coming 2026",
-        "intro": [
-          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
-        ]
-      }
-    },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
