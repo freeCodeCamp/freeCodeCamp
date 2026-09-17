@@ -4,7 +4,6 @@ import store from 'store';
 
 import {
   AMBIENT_SOUND_TOGGLE_EVENT,
-  SOUND_MODE_TOGGLE_EVENT,
   SOUND_VOLUME_EVENT,
   disposeCampfireAmbience,
   prepareCampfireAmbience,
@@ -30,27 +29,20 @@ export default function CampfireAmbience(): null {
     // within that same interaction. It makes no sound on its own.
     void prepareCampfireAmbience();
 
-    const syncPlayback = (ambientEnabled: boolean, soundEnabled: boolean) => {
-      if (ambientEnabled && soundEnabled) {
+    // The ambience has its own preference. Campfire Mode covers the sounds the
+    // editor makes as you work, which is a separate thing to want.
+    const syncPlayback = (ambientEnabled: boolean) => {
+      if (ambientEnabled) {
         void startCampfireAmbience(audioUrl);
       } else {
         stopCampfireAmbience();
       }
     };
 
-    syncPlayback(
-      isEnabled(store.get('fcc-ambient-sound')),
-      isEnabled(store.get('fcc-sound'))
-    );
+    syncPlayback(isEnabled(store.get('fcc-ambient-sound')));
 
     const handleAmbientToggle = (event: Event) => {
-      const ambientEnabled = Boolean((event as CustomEvent<boolean>).detail);
-      syncPlayback(ambientEnabled, isEnabled(store.get('fcc-sound')));
-    };
-
-    const handleSoundToggle = (event: Event) => {
-      const soundEnabled = Boolean((event as CustomEvent<boolean>).detail);
-      syncPlayback(isEnabled(store.get('fcc-ambient-sound')), soundEnabled);
+      syncPlayback(Boolean((event as CustomEvent<boolean>).detail));
     };
 
     const handleVolumeChange = (event: Event) => {
@@ -59,7 +51,6 @@ export default function CampfireAmbience(): null {
     };
 
     window.addEventListener(AMBIENT_SOUND_TOGGLE_EVENT, handleAmbientToggle);
-    window.addEventListener(SOUND_MODE_TOGGLE_EVENT, handleSoundToggle);
     window.addEventListener(SOUND_VOLUME_EVENT, handleVolumeChange);
 
     return () => {
@@ -67,7 +58,6 @@ export default function CampfireAmbience(): null {
         AMBIENT_SOUND_TOGGLE_EVENT,
         handleAmbientToggle
       );
-      window.removeEventListener(SOUND_MODE_TOGGLE_EVENT, handleSoundToggle);
       window.removeEventListener(SOUND_VOLUME_EVENT, handleVolumeChange);
       disposeCampfireAmbience();
     };

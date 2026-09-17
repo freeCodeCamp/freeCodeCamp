@@ -1,7 +1,6 @@
 import store from 'store';
 
 export const AMBIENT_SOUND_TOGGLE_EVENT = 'fcc-ambient-sound-toggle';
-export const SOUND_MODE_TOGGLE_EVENT = 'fcc-sound-mode-toggle';
 export const SOUND_VOLUME_EVENT = 'fcc-sound-volume-change';
 
 type ToneModule = typeof import('tone');

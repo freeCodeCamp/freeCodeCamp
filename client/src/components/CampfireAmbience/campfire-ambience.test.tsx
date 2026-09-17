@@ -52,7 +52,6 @@ vi.mock('../../utils/tone/ambient', async importOriginal => {
 
   return {
     AMBIENT_SOUND_TOGGLE_EVENT: actual.AMBIENT_SOUND_TOGGLE_EVENT,
-    SOUND_MODE_TOGGLE_EVENT: actual.SOUND_MODE_TOGGLE_EVENT,
     SOUND_VOLUME_EVENT: actual.SOUND_VOLUME_EVENT,
     disposeCampfireAmbience: mockDispose,
     isCampfireAmbienceReady: mockIsReady,
@@ -146,9 +145,6 @@ describe('campfire ambience settings integration', () => {
   });
 
   it('starts the ambience from the toggle interaction itself', () => {
-    // Campfire mode has to be on for the ambience to be audible at all.
-    localStorage.setItem('fcc-sound', 'true');
-
     renderPage();
 
     fireEvent.click(ambienceOnButton());
@@ -159,7 +155,6 @@ describe('campfire ambience settings integration', () => {
 
   it('stops the ambience when the toggle is switched off', () => {
     localStorage.setItem('fcc-ambient-sound', 'true');
-    localStorage.setItem('fcc-sound', 'true');
 
     renderPage();
 
@@ -179,15 +174,26 @@ describe('campfire ambience settings integration', () => {
     expect(mockUpdateVolume).toHaveBeenCalledWith(80);
   });
 
-  it('stops the ambience when campfire mode itself is switched off', () => {
+  it('keeps the ambience playing when campfire mode is switched off', () => {
     localStorage.setItem('fcc-ambient-sound', 'true');
     localStorage.setItem('fcc-sound', 'true');
 
     renderPage(true);
+    mockStop.mockClear();
 
+    // Campfire Mode covers the editor's own sounds; the ambience is a separate
+    // preference and must not be switched off with it.
     fireEvent.click(screen.getAllByRole('button', { name: 'buttons.off' })[0]);
 
-    expect(mockStop).toHaveBeenCalled();
+    expect(mockStop).not.toHaveBeenCalled();
+  });
+
+  it('starts the ambience while campfire mode is off', () => {
+    renderPage(false);
+
+    fireEvent.click(ambienceOnButton());
+
+    expect(mockStart).toHaveBeenCalledWith(AUDIO_URL);
   });
 
   it('tears the ambience down when the manager unmounts', () => {
