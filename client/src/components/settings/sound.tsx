@@ -1,10 +1,16 @@
 import React, { ChangeEvent, useState } from 'react';
+import { useFeature } from '@growthbook/growthbook-react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 
 import './sound.css';
 import { Spacer } from '@freecodecamp/ui';
 import { playTone } from '../../utils/tone';
+import {
+  AMBIENT_SOUND_TOGGLE_EVENT,
+  SOUND_MODE_TOGGLE_EVENT,
+  SOUND_VOLUME_EVENT
+} from '../../utils/tone/ambient';
 import ToggleButtonSetting from './toggle-button-setting';
 
 type SoundProps = {
@@ -17,6 +23,10 @@ export default function SoundSettings({
   toggleSoundMode
 }: SoundProps): JSX.Element {
   const { t } = useTranslation();
+  const ambientSoundFeature = useFeature('ambient-sound');
+  const [ambientSound, setAmbientSound] = useState(
+    Boolean(store.get('fcc-ambient-sound'))
+  );
   const [volumeDisplay, setVolumeDisplay] = useState(
     (store.get('soundVolume') as number) ?? 50
   );
@@ -26,6 +36,9 @@ export default function SoundSettings({
     const inputValue = Number(event.target.value);
 
     store.set('soundVolume', inputValue);
+    window.dispatchEvent(
+      new CustomEvent<number>(SOUND_VOLUME_EVENT, { detail: inputValue })
+    );
 
     setVolumeDisplay((store.get('soundVolume') as number) ?? 50);
 
@@ -38,6 +51,25 @@ export default function SoundSettings({
     }
   }
 
+  function handleSoundToggle() {
+    const nextSound = !sound;
+    toggleSoundMode(nextSound);
+    window.dispatchEvent(
+      new CustomEvent<boolean>(SOUND_MODE_TOGGLE_EVENT, { detail: nextSound })
+    );
+  }
+
+  function handleAmbientSoundToggle() {
+    const nextAmbientSound = !ambientSound;
+    store.set('fcc-ambient-sound', nextAmbientSound);
+    setAmbientSound(nextAmbientSound);
+    window.dispatchEvent(
+      new CustomEvent<boolean>(AMBIENT_SOUND_TOGGLE_EVENT, {
+        detail: nextAmbientSound
+      })
+    );
+  }
+
   return (
     <>
       <ToggleButtonSetting
@@ -47,10 +79,19 @@ export default function SoundSettings({
         flagName='sound'
         offLabel={t('buttons.off')}
         onLabel={t('buttons.on')}
-        toggleFlag={() => {
-          toggleSoundMode(sound ? false : true);
-        }}
+        toggleFlag={handleSoundToggle}
       />
+      {ambientSoundFeature.on && (
+        <ToggleButtonSetting
+          action={t('settings.labels.ambient-sound-mode')}
+          explain={t('settings.ambient-sound-mode')}
+          flag={ambientSound}
+          flagName='ambientSound'
+          offLabel={t('buttons.off')}
+          onLabel={t('buttons.on')}
+          toggleFlag={handleAmbientSoundToggle}
+        />
+      )}
       <label htmlFor='volumeslider'>
         {t('settings.sound-volume')}{' '}
         <span aria-hidden='true'>{volumeDisplay}</span>
