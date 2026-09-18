@@ -7,6 +7,8 @@ import { Prisma } from '@prisma/client';
 
 const DAILY_LIMITS = { donor: 10, nonDonor: 3 } as const;
 
+const SOCRATES_TIMEOUT_MS = 90_000;
+
 function getDailyLimit(isDonating: boolean): number {
   return isDonating ? DAILY_LIMITS.donor : DAILY_LIMITS.nonDonor;
 }
@@ -18,6 +20,14 @@ const NETWORK_ERROR_CODES = new Set([
   'ETIMEDOUT',
   'EAI_AGAIN'
 ]);
+
+function hasContent(value: string | undefined): boolean {
+  return typeof value === 'string' && /\S/.test(value);
+}
+
+function isUpstreamTimeout(error: unknown): boolean {
+  return error instanceof DOMException && error.name === 'TimeoutError';
+}
 
 function isFetchNetworkError(error: unknown): boolean {
   if (!(error instanceof TypeError)) {
@@ -80,6 +90,18 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate())
       );
       const userId = req.user.id;
+
+      if (!hasContent(req.body.userInput) && !hasContent(req.body.seed)) {
+        const usage = await fastify.prisma.socratesUsage.findUnique({
+          where: { userId_date: { userId, date: todayUTC } }
+        });
+        return reply.status(400).send({
+          error: 'socrates-invalid-request',
+          type: 'info',
+          attempts: usage?.count ?? 0,
+          limit
+        });
+      }
 
       const res = await mapErr(
         fastify.prisma.$runCommandRaw({
@@ -150,18 +172,22 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
             seed: req.body.seed,
             hints: req.body.hints,
             userId: req.user.id
-          })
+          }),
+          signal: AbortSignal.timeout(SOCRATES_TIMEOUT_MS)
         });
 
-        fastify.Sentry?.metrics?.distribution(
-          'socrates.upstream_latency_ms',
-          performance.now() - upstreamFetchStart,
-          { unit: 'millisecond', attributes: { result: 'success' } }
-        );
+        const upstreamLatencyMs = performance.now() - upstreamFetchStart;
+        const recordLatency = (result: 'success' | 'failure') =>
+          fastify.Sentry?.metrics?.distribution(
+            'socrates.upstream_latency_ms',
+            upstreamLatencyMs,
+            { unit: 'millisecond', attributes: { result } }
+          );
 
         const responseText = await response.text();
 
         if (!response.ok) {
+          recordLatency('failure');
           req.log.error(
             {
               status: response.status,
@@ -197,7 +223,8 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           }
 
           fastify.Sentry?.captureException(
-            new Error(`Socrates API returned status ${response.status}`)
+            new Error('Socrates API returned an error status'),
+            { tags: { socrates_upstream_status: String(response.status) } }
           );
           fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
             attributes: { reason: 'bad_status' }
@@ -214,6 +241,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
         try {
           payload = responseText ? JSON.parse(responseText) : null;
         } catch (error) {
+          recordLatency('failure');
           fastify.Sentry?.captureException(error);
           fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
             attributes: { reason: 'invalid_response' }
@@ -236,6 +264,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           typeof payload !== 'object' ||
           typeof (payload as { hint?: unknown }).hint !== 'string'
         ) {
+          recordLatency('failure');
           fastify.Sentry?.captureException(
             new Error('Socrates API did not return a hint')
           );
@@ -258,8 +287,30 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        const { hint } = payload as { hint: string };
+        const { hint, model_used: modelUsed } = payload as {
+          hint: string;
+          model_used?: string;
+        };
 
+        if (modelUsed === 'fallback') {
+          recordLatency('failure');
+          fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
+            attributes: { reason: 'fallback' }
+          });
+          req.log.warn(
+            { userId, donorStatus },
+            'Socrates served a fallback hint.'
+          );
+          await rollbackUsage();
+          return reply.status(500).send({
+            error: 'socrates-unavailable',
+            type: 'danger',
+            attempts: attempts - 1,
+            limit
+          });
+        }
+
+        recordLatency('success');
         fastify.Sentry?.metrics?.count('socrates.hint_granted', 1, {
           attributes: { donorStatus }
         });
@@ -270,13 +321,16 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
           performance.now() - upstreamFetchStart,
           { unit: 'millisecond', attributes: { result: 'failure' } }
         );
-        if (!isFetchNetworkError(error)) {
+        const reason = isUpstreamTimeout(error)
+          ? 'timeout'
+          : isFetchNetworkError(error)
+            ? 'network'
+            : 'exception';
+        if (reason === 'exception') {
           fastify.Sentry?.captureException(error);
         }
         fastify.Sentry?.metrics?.count('socrates.upstream_call_failed', 1, {
-          attributes: {
-            reason: isFetchNetworkError(error) ? 'network' : 'exception'
-          }
+          attributes: { reason }
         });
         req.log.error(
           { err: error },

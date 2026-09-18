@@ -131,6 +131,100 @@ describe('socratesRoutes', () => {
           );
         });
 
+        test('should not consume an attempt when Socrates serves a fallback hint', async () => {
+          const { Sentry } = fastifyTestInstance;
+          const count = vi.fn();
+          const distribution = vi.fn();
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            metrics: { ...Sentry.metrics, count, distribution }
+          });
+
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () =>
+              Promise.resolve(
+                JSON.stringify({
+                  hint: 'The hint service is temporarily unavailable.',
+                  model_used: 'fallback'
+                })
+              )
+          });
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-unavailable',
+            type: 'danger',
+            attempts: 0,
+            limit: 3
+          });
+          expect(count).toHaveBeenCalledWith(
+            'socrates.upstream_call_failed',
+            1,
+            {
+              attributes: { reason: 'fallback' }
+            }
+          );
+          expect(count).not.toHaveBeenCalledWith(
+            'socrates.hint_granted',
+            1,
+            expect.anything()
+          );
+          expect(distribution).toHaveBeenCalledWith(
+            'socrates.upstream_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond', attributes: { result: 'failure' } }
+          );
+          expect(distribution).not.toHaveBeenCalledWith(
+            'socrates.upstream_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond', attributes: { result: 'success' } }
+          );
+        });
+
+        test('should give the upstream call a 90 second deadline', async () => {
+          const timeout = vi.spyOn(AbortSignal, 'timeout');
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+
+          await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(timeout).toHaveBeenCalledWith(90_000);
+          const fetchCall = mockedFetch.mock.calls[0]!;
+          expect(fetchCall[1].signal).toBe(timeout.mock.results[0]!.value);
+        });
+
+        test('should label upstream latency as a failure on a bad status', async () => {
+          const { Sentry } = fastifyTestInstance;
+          const distribution = vi.fn();
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            captureException: vi.fn(),
+            metrics: { ...Sentry.metrics, count: vi.fn(), distribution }
+          });
+
+          mockedFetch.mockResolvedValueOnce({
+            ok: false,
+            status: 503,
+            text: () => Promise.resolve('Service Unavailable')
+          });
+
+          await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(distribution).toHaveBeenCalledWith(
+            'socrates.upstream_latency_ms',
+            expect.any(Number),
+            { unit: 'millisecond', attributes: { result: 'failure' } }
+          );
+        });
+
         test('should pass session userId, not client-supplied userId', async () => {
           mockedFetch.mockResolvedValueOnce({
             ok: true,
@@ -300,8 +394,9 @@ describe('socratesRoutes', () => {
           });
           expect(captureException).toHaveBeenCalledExactlyOnceWith(
             expect.objectContaining({
-              message: 'Socrates API returned status 503'
-            })
+              message: 'Socrates API returned an error status'
+            }),
+            { tags: { socrates_upstream_status: '503' } }
           );
           expect(count).toHaveBeenCalledWith(
             'socrates.upstream_call_failed',
@@ -452,6 +547,40 @@ describe('socratesRoutes', () => {
             'socrates.upstream_call_failed',
             1,
             { attributes: { reason: 'exception' } }
+          );
+        });
+
+        test('should not capture an upstream timeout', async () => {
+          const { Sentry } = fastifyTestInstance;
+          const captureException = vi.fn();
+          const count = vi.fn();
+          vi.spyOn(fastifyTestInstance, 'Sentry', 'get').mockReturnValue({
+            ...Sentry,
+            captureException,
+            metrics: { ...Sentry.metrics, count }
+          });
+
+          const timeoutError = new DOMException(
+            'The operation was aborted due to timeout',
+            'TimeoutError'
+          );
+          mockedFetch.mockRejectedValueOnce(timeoutError);
+
+          const response =
+            await superPut('/socrates/get-hint').send(validPayload);
+
+          expect(response.status).toBe(500);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-unavailable',
+            type: 'danger',
+            attempts: 0,
+            limit: 3
+          });
+          expect(captureException).not.toHaveBeenCalled();
+          expect(count).toHaveBeenCalledWith(
+            'socrates.upstream_call_failed',
+            1,
+            { attributes: { reason: 'timeout' } }
           );
         });
       });
@@ -687,7 +816,10 @@ describe('socratesRoutes', () => {
         beforeEach(async () => {
           await fastifyTestInstance.prisma.user.update({
             where: { id: defaultUserId },
-            data: { socrates: true }
+            data: { socrates: true, isDonating: false }
+          });
+          await fastifyTestInstance.prisma.socratesUsage.deleteMany({
+            where: { userId: defaultUserId }
           });
         });
 
@@ -736,6 +868,76 @@ describe('socratesRoutes', () => {
 
           expect(response.status).toBe(400);
           expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should return 400 when userInput and seed are both blank', async () => {
+          const response = await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            userInput: ' ',
+            seed: '\n'
+          });
+
+          expect(response.status).toBe(400);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-invalid-request',
+            type: 'info',
+            attempts: 0,
+            limit: 3
+          });
+          expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should report real usage counters when input is blank', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () => Promise.resolve(JSON.stringify({ hint: 'A hint.' }))
+          });
+          await superPut('/socrates/get-hint').send(validPayload);
+
+          const response = await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            userInput: ' ',
+            seed: ' '
+          });
+
+          expect(response.status).toBe(400);
+          expect(response.body).toStrictEqual({
+            error: 'socrates-invalid-request',
+            type: 'info',
+            attempts: 1,
+            limit: 3
+          });
+        });
+
+        test('should return 400 when seed is blank and userInput is absent', async () => {
+          const { userInput: _unused, ...rest } = validPayload;
+          const response = await superPut('/socrates/get-hint').send({
+            ...rest,
+            seed: ' '
+          });
+
+          expect(response.status).toBe(400);
+          expect(mockedFetch).not.toHaveBeenCalled();
+        });
+
+        test('should accept a blank seed when userInput has content', async () => {
+          mockedFetch.mockResolvedValueOnce({
+            ok: true,
+            status: 200,
+            text: () =>
+              Promise.resolve(
+                JSON.stringify({ hint: 'Try adding a closing tag.' })
+              )
+          });
+
+          const response = await superPut('/socrates/get-hint').send({
+            ...validPayload,
+            seed: ' '
+          });
+
+          expect(response.status).toBe(200);
+          expect(mockedFetch).toHaveBeenCalledTimes(1);
         });
 
         test('should return 400 when description is empty', async () => {

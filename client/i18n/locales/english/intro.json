@@ -8010,7 +8010,7 @@
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
+          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>a</code> element, and more."
         ]
       },
       "lecture-working-with-audio-and-video-elements": {
@@ -8048,7 +8048,7 @@
       "workshop-build-a-heart-icon": {
         "title": "Build a Heart Icon",
         "intro": [
-          "In this workshop, you will practice working with SVGs by building a heart icon"
+          "In this workshop, you will practice working with SVGs by building a heart icon."
         ]
       },
       "lecture-working-with-media": {
@@ -8098,7 +8098,7 @@
       "lecture-understanding-nuanced-semantic-elements": {
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "In these lectures, you will learn when to use the <code>em</code> element instead of the <code>i</code> element. You will also learn about description lists and other semantic HTML elements."
         ]
       },
       "workshop-major-browsers-list": {
@@ -8122,7 +8122,7 @@
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code>, and more."
         ]
       },
       "workshop-blog-page": {
@@ -8334,7 +8334,7 @@
       "lecture-what-is-css": {
         "title": "What Is CSS?",
         "intro": [
-          "The following lectures are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
+          "The following lectures are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and much more."
         ]
       },
       "workshop-cafe-menu": {
@@ -9387,7 +9387,7 @@
       "lecture-understanding-nuanced-semantic-elements": {
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "In these lectures, you will learn when to use the <code>em</code> element instead of the <code>i</code> element. You will also learn about description lists and other semantic HTML elements."
         ]
       },
       "workshop-major-browsers-list": {
@@ -9411,7 +9411,7 @@
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code>, and more."
         ]
       },
       "workshop-blog-page": {
@@ -9590,7 +9590,7 @@
       "lecture-what-is-css": {
         "title": "What Is CSS?",
         "intro": [
-          "The following lessons are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
+          "The following lessons are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and much more."
         ]
       },
       "workshop-cafe-menu": {
