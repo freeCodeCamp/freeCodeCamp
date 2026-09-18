@@ -8098,7 +8098,7 @@
       "lecture-understanding-nuanced-semantic-elements": {
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "In these lectures, you will learn when to use the <code>em</code> element instead of the <code>i</code> element. You will also learn about description lists and other semantic HTML elements."
         ]
       },
       "workshop-major-browsers-list": {
@@ -8122,7 +8122,7 @@
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code>, and more."
         ]
       },
       "workshop-blog-page": {
@@ -9387,7 +9387,7 @@
       "lecture-understanding-nuanced-semantic-elements": {
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "In these lectures, you will learn when to use the <code>em</code> element instead of the <code>i</code> element. You will also learn about description lists and other semantic HTML elements."
         ]
       },
       "workshop-major-browsers-list": {
@@ -9411,7 +9411,7 @@
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code>, and more."
         ]
       },
       "workshop-blog-page": {
