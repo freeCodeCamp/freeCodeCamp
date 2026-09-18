@@ -1,7 +1,16 @@
 import React from 'react';
 import type { TFunction } from 'i18next';
 import { runSaga } from 'redux-saga';
-import { describe, test, it, expect, beforeEach, vi, type Mock } from 'vitest';
+import {
+  describe,
+  test,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  vi,
+  type Mock
+} from 'vitest';
 import { fireEvent, render, screen } from '../../../../utils/test-utils';
 
 import { getCompletedPercentage } from '../../../utils/get-completion-percentage';
@@ -19,10 +28,9 @@ import {
 import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { curriculumData } from '../../../services/curriculum-data';
 import { getTestRunner } from '../utils/build';
-import ConnectedCompletionModal, {
-  combineFileData,
-  CompletionModal
-} from './completion-modal';
+import ConnectedCompletionModal, { CompletionModal } from './completion-modal';
+import { strFromU8 } from 'fflate';
+import { buildZipEntries } from './use-solution-download';
 import { mockCurriculumData } from '../utils/__fixtures__/curriculum-data';
 import { useStaticQuery } from 'gatsby';
 import { ChallengeNode, SuperBlockStructure } from '../../../redux/prop-types';
@@ -126,6 +134,54 @@ describe('<CompletionModal />', () => {
   });
 
   describe('rendering', () => {
+    afterEach(() => {
+      vi.unstubAllGlobals();
+    });
+
+    it.each([
+      {
+        isOpen: true,
+        filename: 'mock-challenge.zip',
+        href: 'blob:solution',
+        urlCount: 1
+      },
+      { isOpen: false, filename: undefined, href: undefined, urlCount: 0 }
+    ])(
+      'offers a download only when open: $isOpen',
+      ({ isOpen, filename, href, urlCount }) => {
+        const createObjectURL = vi.fn(() => 'blob:solution');
+        vi.stubGlobal(
+          'URL',
+          class extends URL {
+            static createObjectURL = createObjectURL;
+            static revokeObjectURL = vi.fn();
+          }
+        );
+
+        renderCompletionModal({
+          isOpen,
+          challengeFiles: [
+            {
+              name: 'main',
+              ext: 'js',
+              contents: 'var myName;',
+              fileKey: 'mainjs',
+              path: 'main.js',
+              history: ['main.js']
+            }
+          ]
+        });
+
+        const download = screen.queryByRole('link', {
+          name: 'learn.download-solution'
+        });
+        expect(download !== null).toBe(isOpen);
+        expect(download?.getAttribute('download')).toBe(filename);
+        expect(download?.getAttribute('href')).toBe(href);
+        expect(createObjectURL).toHaveBeenCalledTimes(urlCount);
+      }
+    );
+
     it('renders the signed-out completion state', () => {
       renderCompletionModal({ isSignedIn: false });
 
@@ -361,30 +417,38 @@ describe('<CompletionModal />', () => {
     });
   });
 
-  describe('File Download Content', () => {
-    it('Should label each section appropriately', () => {
-      const indexHtml = {
-        name: 'index',
-        ext: 'html',
-        contents: 'some html elements'
-      };
-      const stylesCSS = {
-        name: 'styles',
-        ext: 'css',
-        contents: 'some css styles'
-      };
-      const scriptJS = {
-        name: 'script',
-        ext: 'js',
-        contents: 'some javascript'
-      };
-      const result = combineFileData([indexHtml, stylesCSS, scriptJS]);
-      expect(result).toContain('** start of index.html **');
-      expect(result).toContain('** end of index.html **');
-      expect(result).toContain('** start of styles.css **');
-      expect(result).toContain('** end of styles.css **');
-      expect(result).toContain('** start of script.js **');
-      expect(result).toContain('** end of script.js **');
+  describe('buildZipEntries', () => {
+    it('uses name.ext as the filename for each entry', () => {
+      const files = [
+        { name: 'index', ext: 'html', contents: 'some html elements' },
+        { name: 'styles', ext: 'css', contents: 'some css styles' },
+        { name: 'script', ext: 'js', contents: 'some javascript' }
+      ];
+      const entries = buildZipEntries(files);
+      expect(Object.keys(entries)).toEqual([
+        'index.html',
+        'styles.css',
+        'script.js'
+      ]);
+    });
+
+    it('preserves file contents in each entry', () => {
+      const files = [
+        { name: 'index', ext: 'html', contents: 'some html elements' },
+        { name: 'styles', ext: 'css', contents: 'some css styles' },
+        { name: 'script', ext: 'js', contents: 'some javascript' }
+      ];
+      const entries = buildZipEntries(files);
+      expect(strFromU8(entries['index.html'])).toBe('some html elements');
+      expect(strFromU8(entries['styles.css'])).toBe('some css styles');
+      expect(strFromU8(entries['script.js'])).toBe('some javascript');
+    });
+
+    it('works for a single-file challenge', () => {
+      const files = [{ name: 'main', ext: 'py', contents: 'print("hello")' }];
+      const entries = buildZipEntries(files);
+      expect(Object.keys(entries)).toEqual(['main.py']);
+      expect(strFromU8(entries['main.py'])).toBe('print("hello")');
     });
   });
 });

@@ -4,7 +4,11 @@ import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { useStaticQuery } from 'gatsby';
 
-import type { ChallengeMeta, Test } from '../../../redux/prop-types';
+import type {
+  ChallengeFiles,
+  ChallengeMeta,
+  Test
+} from '../../../redux/prop-types';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import callGA from '../../../analytics/call-ga';
 import { IndependentLowerJaw } from './independent-lower-jaw';
@@ -41,8 +45,9 @@ vi.mock('../utils/fetch-all-curriculum-data', () => ({
   useSubmit: () => mockSubmitChallenge
 }));
 
-const baseChallengeMeta: ChallengeMeta = {
+const baseChallengeMeta: ChallengeMeta & { dashedName: string } = {
   block: 'test-block',
+  dashedName: 'test-challenge',
   id: 'test-challenge-id',
   isFirstStep: false,
   superBlock: SuperBlocks.RespWebDesignV9,
@@ -60,6 +65,7 @@ const baseProps = {
   askSocrates: vi.fn(),
   saveChallenge: vi.fn(),
   attempts: 0,
+  challengeFiles: [] as ChallengeFiles,
   tests: passingTests,
   isDonating: false,
   isSignedIn: true,
@@ -96,6 +102,45 @@ describe('<IndependentLowerJaw />', () => {
 
   afterEach(() => {
     vi.resetAllMocks();
+    vi.unstubAllGlobals();
+  });
+
+  it('keeps the ZIP download available after dismissing the completion hint', async () => {
+    const user = userEvent.setup();
+    vi.stubGlobal(
+      'URL',
+      class extends URL {
+        static createObjectURL = vi.fn(() => 'blob:solution');
+        static revokeObjectURL = vi.fn();
+      }
+    );
+    const challengeFiles: ChallengeFiles = [
+      {
+        name: 'main',
+        ext: 'py',
+        contents: 'print("hello")',
+        fileKey: 'mainpy',
+        path: 'main.py',
+        history: ['main.py']
+      }
+    ];
+
+    render(
+      <IndependentLowerJaw {...{ ...baseProps, challengeFiles }} />,
+      createStore()
+    );
+
+    const download = screen.getByRole('link', {
+      name: 'learn.download-solution'
+    });
+    expect(download).toHaveAttribute('download', 'test-challenge.zip');
+    expect(download).toHaveAttribute('href', 'blob:solution');
+
+    await user.click(screen.getByRole('button', { name: 'buttons.close' }));
+
+    expect(
+      screen.getByRole('link', { name: 'learn.download-solution' })
+    ).toBeVisible();
   });
 
   it('shows share buttons when the block is completed on the last step', () => {
