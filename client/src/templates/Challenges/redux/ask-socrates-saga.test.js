@@ -129,6 +129,27 @@ describe('askSocratesSaga', () => {
       .silentRun();
   });
 
+  it('dispatches error when buildChallenge returns a blank seed', async () => {
+    const { buildChallenge } =
+      await import('@freecodecamp/challenge-builder/build');
+
+    return expectSaga(askSocratesSaga)
+      .withReducer(reducer)
+      .provide([
+        [
+          matchers.call.fn(buildChallenge),
+          { sources: { editableContents: 'Hello world' }, build: '  \n ' }
+        ]
+      ])
+      .put({
+        type: 'challenge.askSocratesError',
+        payload: {
+          error: 'learn.socrates-write-code-first'
+        }
+      })
+      .silentRun();
+  });
+
   it('dispatches error when buildChallenge returns no seed', async () => {
     const { buildChallenge } =
       await import('@freecodecamp/challenge-builder/build');
