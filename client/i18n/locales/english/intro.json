@@ -8010,7 +8010,7 @@
       "lab-travel-agency-page": {
         "title": "Build a Travel Agency Page",
         "intro": [
-          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
+          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>a</code> element, and more."
         ]
       },
       "lecture-working-with-audio-and-video-elements": {
@@ -8048,7 +8048,7 @@
       "workshop-build-a-heart-icon": {
         "title": "Build a Heart Icon",
         "intro": [
-          "In this workshop, you will practice working with SVGs by building a heart icon"
+          "In this workshop, you will practice working with SVGs by building a heart icon."
         ]
       },
       "lecture-working-with-media": {
