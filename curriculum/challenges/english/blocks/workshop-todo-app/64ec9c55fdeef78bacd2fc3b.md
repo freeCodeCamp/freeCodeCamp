@@ -18,13 +18,19 @@ Use arrow syntax to create a `reset` function and set it to a pair of curly brac
 You should use `const` and arrow syntax to create a `reset` function.
 
 ```js
-assert.match(code, /const\s+reset\s*=\s*\(\s*\)\s*=>\s*\{\s*/)
+const explorer = await __helpers.Explorer(code);
+const { reset } = explorer.variables;
+assert.exists(explorer.allFunctions.reset);
+assert.isTrue(reset?.toString().startsWith('const'));
+assert.isFalse(reset?.value.toString().startsWith('function'));
 ```
 
 Your `reset` function should be empty.
 
 ```js
-assert.match(reset.toString(), /\(\s*\)\s*=>\s*\{\s*\}/);
+const explorer = await __helpers.Explorer(code);
+const { reset } = explorer.allFunctions;
+assert.isTrue(reset?.matches("const reset = () => {}"));
 ```
 
 # --seed--
