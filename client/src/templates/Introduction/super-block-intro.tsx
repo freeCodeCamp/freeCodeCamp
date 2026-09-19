@@ -36,6 +36,7 @@ import type {
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
 import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { getNextUncompletedChallenge } from '../../utils/get-next-uncompleted-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
@@ -252,32 +253,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   };
 
   const hasNotstarted = completedChallenges.length === 0;
-  const nextChallengeSlug = useMemo(() => {
-    if (hasNotstarted) return superBlockChallenges[0]?.fields.slug || null;
-    const lastCompletedChallenge = completedChallenges.reduce<
-      (typeof completedChallenges)[number] | null
-    >((latest, challenge) => {
-      if (!challenge?.completedDate) return latest;
-      if (
-        !latest?.completedDate ||
-        challenge.completedDate > latest.completedDate
-      ) {
-        return challenge;
-      }
-      return latest;
-    }, null);
-
-    const nextChallenge = () => {
-      if (!lastCompletedChallenge?.id) return null;
-      const lastCompletedIndex = superBlockChallenges.findIndex(
-        ({ id }) => id === lastCompletedChallenge?.id
-      );
-      if (lastCompletedIndex === -1) return null;
-      return superBlockChallenges[lastCompletedIndex + 1] ?? null;
-    };
-
-    return nextChallenge()?.fields.slug || null;
-  }, [completedChallenges, superBlockChallenges, hasNotstarted]);
+  const nextUncompletedChallengeSlug = useMemo(
+    () =>
+      getNextUncompletedChallenge(superBlockChallenges, completedChallenges)
+        ?.fields.slug || null,
+    [completedChallenges, superBlockChallenges]
+  );
 
   return (
     <>
@@ -297,7 +278,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 }
                 isDonating={user?.isDonating ?? false}
                 hasNotstarted={hasNotstarted}
-                nextChallengeSlug={nextChallengeSlug}
+                nextUncompletedChallengeSlug={nextUncompletedChallengeSlug}
               />
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
