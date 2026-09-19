@@ -1,16 +1,14 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { allowTrailingSlash } from './utils/url';
 import {
-  deleteAllEmails,
-  getAllEmails,
+  deleteEmailsForAddress,
+  getEmailsForAddress,
   getFirstEmail,
   getSubject
 } from './utils/email';
 
-test.beforeEach(async () => {
-  await deleteAllEmails();
-});
+test.use({ userPreset: 'certified' });
 
 test.describe('The update-email page when the user is signed in', () => {
   test.beforeEach(async ({ page }) => {
@@ -53,17 +51,20 @@ test.describe('The update-email page when the user is signed in', () => {
     await expect(submitButton).toBeEnabled();
   });
 
-  test('actually sends an email', async ({ page }) => {
+  test('actually sends an email', async ({ page, isolatedUser }) => {
+    const updatedEmail = `updated-${isolatedUser.email}`;
+    // Worker addresses are reused, so remove messages from earlier runs.
+    await deleteEmailsForAddress(updatedEmail);
     const emailInput = page.getByLabel(translations.misc.email);
     const submitButton = page.getByRole('button', { name: 'Update my Email' });
 
     await expect(submitButton).toBeDisabled();
     await emailInput.fill('123');
     await expect(submitButton).toBeDisabled();
-    await emailInput.fill('123@gmail.com');
+    await emailInput.fill(updatedEmail);
     await submitButton.click();
     await expect(async () => {
-      const emails = await getAllEmails();
+      const emails = await getEmailsForAddress(updatedEmail);
       expect(emails.messages).toHaveLength(1);
       expect(getSubject(getFirstEmail(emails))).toBe(
         'Please confirm your updated email address for freeCodeCamp.org'
