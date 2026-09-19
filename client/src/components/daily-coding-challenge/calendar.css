@@ -159,6 +159,11 @@
   color: var(--quaternary-background);
 }
 
+.daily-coding-challenge-login-btn {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 500px) {
   .calendar-day {
     min-height: 75px;
