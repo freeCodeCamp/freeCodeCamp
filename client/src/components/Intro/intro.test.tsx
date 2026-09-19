@@ -55,7 +55,58 @@ describe('<Intro />', () => {
     expect(screen.getByTestId('quote-block')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
+
+  it('links to the latest activity when curriculum data is unavailable', () => {
+    renderWithRedux(
+      <Intro {...loggedInProps} resumeUrl='/learn/resume-this-challenge' />,
+      signedInState
+    );
+
+    expect(
+      screen.getByRole('link', { name: 'buttons.current-challenge' })
+    ).toHaveAttribute('href', '/learn/resume-this-challenge');
+  });
+
+  it('shows course context and progress in the resume card', () => {
+    renderWithRedux(
+      <Intro
+        {...loggedInProps}
+        resumeCard={{ courseTitle: 'Learn JavaScript', progress: 6 }}
+        resumeUrl='/learn/resume-this-challenge'
+      />,
+      signedInState
+    );
+
+    expect(screen.getByText('Learn JavaScript')).toBeInTheDocument();
+    expect(screen.getByText('misc.continue-learning')).toBeInTheDocument();
+    expect(screen.getByRole('progressbar')).toHaveAttribute(
+      'aria-valuenow',
+      '6'
+    );
+    expect(
+      screen.getByRole('link', { name: /buttons.resume-progress/ })
+    ).toHaveAttribute('href', '/learn/resume-this-challenge');
+  });
+
+  it('does not show a resume link without an activity URL', () => {
+    renderWithRedux(<Intro {...loggedInProps} />, signedInState);
+
+    expect(
+      screen.queryByRole('link', { name: 'buttons.current-challenge' })
+    ).not.toBeInTheDocument();
+  });
 });
+
+const signedInState = {
+  app: {
+    user: {
+      sessionUser: {
+        completedChallenges: [{}],
+        sendQuincyEmail: null
+      }
+    }
+  }
+};
 
 const loggedInProps = {
   complete: true,

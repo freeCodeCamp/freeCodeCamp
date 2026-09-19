@@ -210,6 +210,18 @@ export const reducer = handleActions(
         error: payload
       }
     }),
+    [actionTypes.updateResumeUrl]: (state, { payload }) => ({
+      ...state,
+      user: {
+        ...state.user,
+        sessionUser: state.user.sessionUser
+          ? {
+              ...state.user.sessionUser,
+              resumeUrl: payload
+            }
+          : null
+      }
+    }),
     [actionTypes.fetchProfileForUserComplete]: (
       state,
       { payload: { user } }
