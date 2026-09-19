@@ -27,7 +27,10 @@ describe('completionEpic', () => {
       const output$ = completionEpic(action$, state$);
 
       expectObservable(output$).toBe('a', {
-        a: submitChallengeComplete()
+        a: submitChallengeComplete({
+          challengeId: undefined,
+          nextChallengePath: undefined
+        })
       });
     });
   });

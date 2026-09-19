@@ -4,6 +4,7 @@
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
   "dependencies": {
+    "@clickhouse/client": "1.23.1",
     "@fastify/accepts": "5.0.4",
     "@fastify/cookie": "11.0.2",
     "@fastify/csrf-protection": "7.1.0",
@@ -78,6 +79,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "clickhouse:migrate": "tsx tools/clickhouse/migrate.ts",
     "clean": "rm -rf dist",
     "develop": "tsx watch --clear-screen=false src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",

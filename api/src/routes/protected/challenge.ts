@@ -47,6 +47,7 @@ import {
   normalizeChallengeType,
   normalizeDate
 } from '../../utils/normalize.js';
+import { insertActivityEventSafely } from '../../data/activity.js';
 
 interface JwtPayload {
   userToken: string;
@@ -176,6 +177,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         challenge
       );
 
+      if (!alreadyCompleted) {
+        await insertActivityEventSafely(fastify, req, {
+          userId: req.user!.id,
+          eventType: 'project_submitted',
+          subjectId: projectId
+        });
+      }
+
       fastify.Sentry?.metrics?.count('challenge.completed', 1, {
         attributes: {
           result: alreadyCompleted ? 'already_completed' : 'completed'
@@ -243,6 +252,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         completedChallenge
       );
 
+      if (!alreadyCompleted) {
+        await insertActivityEventSafely(fastify, req, {
+          userId: req.user!.id,
+          eventType: 'challenge_completed',
+          subjectId: req.body.id
+        });
+      }
+
       fastify.Sentry?.metrics?.count('challenge.completed', 1, {
         attributes: {
           result: alreadyCompleted ? 'already_completed' : 'completed'
@@ -292,12 +309,20 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         });
       }
 
-      return await postModernChallengeCompleted(fastify, {
+      const result = await postModernChallengeCompleted(fastify, {
         id,
         files,
         challengeType,
         userId: req.user!.id
       });
+      if (!result.alreadyCompleted) {
+        await insertActivityEventSafely(fastify, req, {
+          userId: req.user!.id,
+          eventType: 'challenge_completed',
+          subjectId: id
+        });
+      }
+      return result;
     }
   );
 
@@ -337,12 +362,20 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const files = encodedFiles ? decodeFiles(encodedFiles) : undefined;
-      return await postModernChallengeCompleted(fastify, {
+      const result = await postModernChallengeCompleted(fastify, {
         id,
         files,
         challengeType,
         userId: req.user!.id
       });
+      if (!result.alreadyCompleted) {
+        await insertActivityEventSafely(fastify, req, {
+          userId: req.user!.id,
+          eventType: 'challenge_completed',
+          subjectId: id
+        });
+      }
+      return result;
     }
   );
 
@@ -639,6 +672,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             completedChallenge
           );
 
+        if (!alreadyCompleted) {
+          await insertActivityEventSafely(fastify, req, {
+            userId: req.user!.id,
+            eventType: 'ms_trophy_completed',
+            subjectId: challengeId
+          });
+        }
+
         fastify.Sentry?.metrics?.count('ms_trophy.verify_completed', 1, {
           attributes: {
             result: alreadyCompleted ? 'already_claimed' : 'verified'
@@ -870,6 +911,12 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
                   newCompletedChallenge.completedDate
                 ]
               }
+            });
+
+            await insertActivityEventSafely(fastify, req, {
+              userId: req.user!.id,
+              eventType: 'exam_completed',
+              subjectId: id
             });
           }
 
@@ -1259,6 +1306,11 @@ async function postDailyCodingChallengeCompleted(
         completedDailyCodingChallenges: newCompletedChallenges,
         progressTimestamps: newProgressTimestamps
       }
+    });
+    await insertActivityEventSafely(this, req, {
+      userId: req.user!.id,
+      eventType: 'daily_challenge_completed',
+      subjectId: id
     });
     return reply.send({
       alreadyCompleted,
