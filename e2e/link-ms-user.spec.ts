@@ -1,20 +1,18 @@
-import { execSync } from 'child_process';
-
-import { test, expect } from '@playwright/test';
+import { seedMsUsername } from '@freecodecamp/scripts-seed/seed-isolated-user';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
 
-test.beforeEach(async ({ page }) => {
+test.use({ userPreset: 'certified' });
+
+test.beforeEach(async ({ page, isolatedUser }) => {
+  await seedMsUsername(isolatedUser.email);
   await page.goto(
     '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/trophy-write-your-first-code-using-c-sharp'
   );
 });
 
 test.describe('Link MS user component unlink flow', () => {
-  test.afterEach(() => {
-    execSync('node ../tools/scripts/seed/seed-ms-username');
-  });
-
   test('should allow the user to unlink their MS account and display a form for relinking', async ({
     page
   }) => {
