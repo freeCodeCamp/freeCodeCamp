@@ -1,6 +1,6 @@
 ---
 id: 67fe85a3db9bad35f2b6a2bd
-title: How Do Conditional Statements and Logical Operators Work?
+title: How Do Conditional Statements and Comparison Operators Work?
 challengeType: 19
 dashedName: how-do-conditional-statements-and-logical-operators-work
 ---
@@ -118,7 +118,7 @@ else: # SyntaxError: invalid syntax
     print('You are not an adult yet')
 ```
 
-There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your if statement with the `elif` (else if) keyword.
+There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your `if` statement with the `elif` (else if) keyword.
 
 Here's the syntax:
 
@@ -163,7 +163,7 @@ else:
     print('You are a toddler or an infant') # You are a toddler or an infant
 ```
 
-Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you’re comparing values or branching through multiple conditions, these tools are the foundation to writing flexible, responsive code.
+Now that you understand how comparison operators and conditional statements work in Python, you can start writing programs that make decisions based on logic and input. Whether you're comparing values or branching through multiple conditions, these tools are the foundation to writing flexible, responsive code.
 
 # --questions--
 
