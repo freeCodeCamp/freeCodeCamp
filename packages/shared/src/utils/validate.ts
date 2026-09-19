@@ -25,10 +25,11 @@ export const usernameIsHttpStatusCode: Invalid = {
 };
 
 const validCharsRE = /^[a-zA-Z0-9\-_+]*$/;
-export const isHttpStatusCode = (str: string): boolean => {
-  const output = parseInt(str, 10);
-  return !isNaN(output) && output >= 100 && output <= 599;
-};
+// The whole string has to be a status code. parseInt would stop at the first
+// non-digit, making '500px' look like the status code 500.
+const httpStatusCodeRE = /^[1-5][0-9]{2}$/;
+export const isHttpStatusCode = (str: string): boolean =>
+  httpStatusCodeRE.test(str);
 
 export const isValidUsername = (str: string): Validated => {
   if (!validCharsRE.test(str)) return invalidCharError;
