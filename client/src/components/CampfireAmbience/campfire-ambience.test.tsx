@@ -1,0 +1,242 @@
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+
+import CampfireAmbience from './index';
+import SoundSettings from '../settings/sound';
+
+const {
+  mockDispose,
+  mockPrepare,
+  mockStart,
+  mockStop,
+  mockUpdateVolume,
+  mockIsReady,
+  feature,
+  preparation
+} = vi.hoisted(() => {
+  const preparation: {
+    promise: Promise<boolean>;
+    resolve: (isReady: boolean) => void;
+    isResolved: boolean;
+  } = {
+    promise: Promise.resolve(true),
+    resolve: () => undefined,
+    isResolved: true
+  };
+
+  return {
+    mockDispose: vi.fn(),
+    mockPrepare: vi.fn(() => preparation.promise),
+    mockStart: vi.fn(() => Promise.resolve()),
+    mockStop: vi.fn(),
+    mockUpdateVolume: vi.fn(),
+    mockIsReady: vi.fn(() => preparation.isResolved),
+    feature: { on: true, value: 'https://example.com/campfire.mp3' },
+    preparation
+  };
+});
+
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => feature
+}));
+
+vi.mock('../../utils/tone', () => ({
+  playTone: vi.fn(() => Promise.resolve())
+}));
+
+vi.mock('../../utils/tone/ambient', async importOriginal => {
+  // The event names are the real contract between the two components.
+  const actual =
+    await importOriginal<typeof import('../../utils/tone/ambient')>();
+
+  return {
+    AMBIENT_SOUND_TOGGLE_EVENT: actual.AMBIENT_SOUND_TOGGLE_EVENT,
+    SOUND_VOLUME_EVENT: actual.SOUND_VOLUME_EVENT,
+    disposeCampfireAmbience: mockDispose,
+    isCampfireAmbienceReady: mockIsReady,
+    prepareCampfireAmbience: mockPrepare,
+    startCampfireAmbience: mockStart,
+    stopCampfireAmbience: mockStop,
+    updateCampfireAmbienceVolume: mockUpdateVolume
+  };
+});
+
+const AUDIO_URL = 'https://example.com/campfire.mp3';
+
+const holdPreparation = () => {
+  preparation.isResolved = false;
+  preparation.promise = new Promise<boolean>(resolve => {
+    preparation.resolve = (isReady: boolean) => {
+      preparation.isResolved = isReady;
+      resolve(isReady);
+    };
+  });
+};
+
+function renderPage(sound = true) {
+  const toggleSoundMode = vi.fn();
+  const view = render(
+    <>
+      <CampfireAmbience />
+      <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
+    </>
+  );
+  return { ...view, toggleSoundMode };
+}
+
+const ambienceToggle = () =>
+  screen.queryByRole('group', { name: /ambient-sound-mode/ });
+
+const ambienceOnButton = () =>
+  screen.getAllByRole('button', { name: 'buttons.on' })[1];
+
+const ambienceOffButton = () =>
+  screen.getAllByRole('button', { name: 'buttons.off' })[1];
+
+describe('campfire ambience settings integration', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    localStorage.clear();
+    feature.on = true;
+    feature.value = AUDIO_URL;
+    preparation.isResolved = true;
+    preparation.promise = Promise.resolve(true);
+  });
+
+  it('offers no ambience control when the feature is off', () => {
+    feature.on = false;
+
+    renderPage();
+
+    expect(ambienceToggle()).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('settings.ambient-sound-preparing')
+    ).not.toBeInTheDocument();
+    // The campfire mode toggle is still there, so this is not a render failure.
+    expect(
+      screen.getByRole('group', { name: /sound-mode/ })
+    ).toBeInTheDocument();
+  });
+
+  it('offers no ambience control when the feature has no audio url', () => {
+    feature.value = '   ';
+
+    renderPage();
+
+    expect(ambienceToggle()).not.toBeInTheDocument();
+    expect(mockStart).not.toHaveBeenCalled();
+  });
+
+  it('shows a preparing status instead of a dead toggle', async () => {
+    holdPreparation();
+
+    renderPage();
+
+    expect(screen.getByRole('status')).toHaveTextContent(
+      'settings.ambient-sound-preparing'
+    );
+    expect(ambienceToggle()).not.toBeInTheDocument();
+
+    preparation.resolve(true);
+
+    await waitFor(() => expect(ambienceToggle()).toBeInTheDocument());
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+  });
+
+  it('reports a failed load and recovers when the retry succeeds', async () => {
+    holdPreparation();
+
+    renderPage();
+
+    expect(screen.getByRole('status')).toHaveTextContent(
+      'settings.ambient-sound-preparing'
+    );
+
+    preparation.resolve(false);
+
+    // The setting must not sit on "preparing" forever.
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('settings.ambient-sound-unavailable');
+    expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(ambienceToggle()).not.toBeInTheDocument();
+
+    const retry = screen.getByRole('button', { name: 'buttons.try-again' });
+    // The manager prepares too, so count the retry rather than total calls.
+    const callsBeforeRetry = mockPrepare.mock.calls.length;
+    preparation.promise = Promise.resolve(true);
+    fireEvent.click(retry);
+
+    await waitFor(() => expect(ambienceToggle()).toBeInTheDocument());
+    expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+    expect(mockPrepare.mock.calls.length).toBe(callsBeforeRetry + 1);
+  });
+
+  it('starts the ambience from the toggle interaction itself', () => {
+    renderPage();
+
+    fireEvent.click(ambienceOnButton());
+
+    expect(mockStart).toHaveBeenCalledWith(AUDIO_URL);
+    expect(localStorage.getItem('fcc-ambient-sound')).toBe('true');
+  });
+
+  it('stops the ambience when the toggle is switched off', () => {
+    localStorage.setItem('fcc-ambient-sound', 'true');
+
+    renderPage();
+
+    fireEvent.click(ambienceOffButton());
+
+    expect(mockStop).toHaveBeenCalled();
+    expect(localStorage.getItem('fcc-ambient-sound')).toBe('false');
+  });
+
+  it('passes volume changes through to the running ambience', () => {
+    renderPage();
+
+    fireEvent.input(screen.getByLabelText(/settings.sound-volume/), {
+      target: { value: '80' }
+    });
+
+    expect(mockUpdateVolume).toHaveBeenCalledWith(80);
+  });
+
+  it('keeps the ambience playing when campfire mode is switched off', () => {
+    localStorage.setItem('fcc-ambient-sound', 'true');
+    localStorage.setItem('fcc-sound', 'true');
+
+    renderPage(true);
+    mockStop.mockClear();
+
+    // Campfire Mode covers the editor's own sounds; the ambience is a separate
+    // preference and must not be switched off with it.
+    fireEvent.click(screen.getAllByRole('button', { name: 'buttons.off' })[0]);
+
+    expect(mockStop).not.toHaveBeenCalled();
+  });
+
+  it('starts the ambience while campfire mode is off', () => {
+    renderPage(false);
+
+    fireEvent.click(ambienceOnButton());
+
+    expect(mockStart).toHaveBeenCalledWith(AUDIO_URL);
+  });
+
+  it('tears the ambience down when the manager unmounts', () => {
+    const { unmount } = renderPage();
+
+    mockDispose.mockClear();
+    unmount();
+
+    expect(mockDispose).toHaveBeenCalled();
+  });
+
+  it('prepares the audio module while the feature is usable', () => {
+    renderPage();
+
+    expect(mockPrepare).toHaveBeenCalled();
+    expect(mockStart).not.toHaveBeenCalled();
+  });
+});
