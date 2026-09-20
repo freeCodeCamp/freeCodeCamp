@@ -1,5 +1,4 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import {
@@ -8,23 +7,21 @@ import {
 } from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
+test.use({ userPreset: 'certified' });
+
 // In order to claim the Full-Stack cert, the user needs to complete 6 certs.
 // Instead of simulating 6 cert claim flows,
 // we use the data of Certified User but remove the Full-Stack cert.
 test.describe('Settings - Certified User without Full-Stack Certification', () => {
+  test.use({ userOverrides: { isFullStackCert: false } });
+
   test.beforeEach(async ({ page }) => {
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
-    );
     await page.goto('/settings');
   });
 
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
-
   test('should allow claiming Full-Stack cert if the user has completed all requirements', async ({
-    page
+    page,
+    isolatedUser
   }) => {
     const claimButton = page.getByRole('button', {
       name: 'Claim Certification Legacy Full-Stack'
@@ -39,13 +36,13 @@ test.describe('Settings - Certified User without Full-Stack Certification', () =
 
     await alertToBeVisible(
       page,
-      '@certifieduser, you have successfully claimed the Legacy Full-Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+      `@${isolatedUser.username}, you have successfully claimed the Legacy Full-Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!`
     );
     await expect(claimButton).toBeHidden();
     await expect(showButton).toBeVisible();
     await expect(showButton).toHaveAttribute(
       'href',
-      '/certification/certifieduser/full-stack'
+      `/certification/${isolatedUser.username}/full-stack`
     );
   });
 });

@@ -1,9 +1,9 @@
-import { execSync } from 'child_process';
-
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { allowTrailingSlash } from './utils/url';
+
+test.use({ userPreset: 'certified' });
 
 const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 
@@ -11,7 +11,6 @@ test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/email-sign-up');
   });
 
@@ -43,7 +42,6 @@ test.describe('Email sign-up page when user is not signed in', () => {
 
 test.describe('Email sign-up page when user is signed in', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/email-sign-up');
   });
 
@@ -74,7 +72,8 @@ test.describe('Email sign-up page when user is signed in', () => {
   });
 
   test("should enable Quincy's weekly newsletter if the user clicks Yes", async ({
-    page
+    page,
+    isolatedUser
   }) => {
     const signupButton = page.getByRole('button', {
       name: translations.buttons['yes-please']
@@ -93,7 +92,7 @@ test.describe('Email sign-up page when user is signed in', () => {
       const response = await route.fetch();
       const json = await response.json();
 
-      json.user.certifieduser.sendQuincyEmail = true;
+      json.user[isolatedUser.username].sendQuincyEmail = true;
       await route.fulfill({ json });
     });
 

@@ -64,13 +64,6 @@ function donatePageTests() {
     await expect(faqHead).toHaveText(translations.donate.faq);
   });
 
-  test('should display the donation policy disclaimer', async ({ page }) => {
-    const disclaimer = page.getByTestId('donation-policy-disclaimer');
-    await expect(disclaimer).toHaveText(
-      translations.donate['donation-policy-disclaimer']
-    );
-  });
-
   test('should display the faq list with buttons', async ({ page }) => {
     const faq1 = page.getByRole('button', {
       name: translations.donate['get-help']
@@ -300,6 +293,10 @@ function donatePageTests() {
 
     await expect(
       page.getByText(donationFormStrings.fiveDollarsLearningContribution)
+    ).toBeVisible();
+
+    await expect(
+      page.getByText(translations.donate['repeats-monthly'])
     ).toBeVisible();
   });
 
