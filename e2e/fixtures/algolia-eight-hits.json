@@ -1,0 +1,332 @@
+{
+  "results": [
+    {
+      "hits": [
+        {
+          "title": "How to Scrape Wikipedia Articles with Python",
+          "author": {
+            "name": "Dirk Hoekstra",
+            "url": "https://www.freecodecamp.org/news/author/dirk/",
+            "profileImage": "https://www.gravatar.com/avatar/70c37f72ed7bd4bde1524f41f385ee46?s=250&d=mm&r=x"
+          },
+          "tags": [
+            {
+              "name": "Web Scraping",
+              "url": "https://www.freecodecamp.org/news/tag/web-scraping/"
+            },
+            {
+              "name": "Python",
+              "url": "https://www.freecodecamp.org/news/tag/python/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/scraping-wikipedia-articles-with-python/",
+          "featureImage": "https://www.freecodecamp.org/news/content/images/2020/08/artem-maltsev-vgQFlPq8tVQ-unsplash-1.jpg",
+          "publishedAt": "2020-08-24T17:24:24.000Z",
+          "publishedAtTimestamp": 1598289864,
+          "filterTerms": [],
+          "objectID": "5f9c9913740569d1a4ca1db1",
+          "_highlightResult": {
+            "title": {
+              "value": "How to Scrape Wikipedia __ais-highlight__Article__/ais-highlight__s with Python",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "How to Give Feedback on a freeCodeCamp Article",
+          "author": {
+            "name": "freeCodeCamp.org",
+            "url": "https://www.freecodecamp.org/news/author/freecodecamp/",
+            "profileImage": "https://www.gravatar.com/avatar/fcda43852608626fe46d7fd43145766e?s=250&d=mm&r=x"
+          },
+          "tags": [
+            {
+              "name": "Community",
+              "url": "https://www.freecodecamp.org/news/tag/community/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/how-to-give-feedback-on-a-freecodecamp-article/",
+          "featureImage": "https://images.unsplash.com/photo-1504618223053-559bdef9dd5a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
+          "publishedAt": "2020-04-08T17:16:00.000Z",
+          "publishedAtTimestamp": 1586366160,
+          "filterTerms": [],
+          "objectID": "5f9c9bb8740569d1a4ca2d7f",
+          "_highlightResult": {
+            "title": {
+              "value": "How to Give Feedback on a freeCodeCamp __ais-highlight__Article__/ais-highlight__",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "How To Embed Multiple Choice Quiz Questions into Your Article",
+          "author": {
+            "name": "Alexander Arobelidze",
+            "url": "https://www.freecodecamp.org/news/author/alex-arobelidze/",
+            "profileImage": "https://www.freecodecamp.org/news/content/images/2020/02/fcc-1.JPG"
+          },
+          "tags": [
+            {
+              "name": "Blog",
+              "url": "https://www.freecodecamp.org/news/tag/blog/"
+            },
+            {
+              "name": "Blogging",
+              "url": "https://www.freecodecamp.org/news/tag/blogging/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/multiple-choice-quiz-template/",
+          "featureImage": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
+          "publishedAt": "2020-04-06T08:30:53.000Z",
+          "publishedAtTimestamp": 1586161853,
+          "filterTerms": [],
+          "objectID": "5f9c9bc5740569d1a4ca2dcf",
+          "_highlightResult": {
+            "title": {
+              "value": "How To Embed Multiple Choice Quiz Questions into Your __ais-highlight__Article__/ais-highlight__",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "How to Add a Table of Contents to Your Blog Post or Article",
+          "author": {
+            "name": "Colby Fayock",
+            "url": "https://www.freecodecamp.org/news/author/colbyfayock/",
+            "profileImage": "https://www.freecodecamp.org/news/content/images/2020/03/star-wars-hug-yellow-cropped.png"
+          },
+          "tags": [
+            {
+              "name": "Writing",
+              "url": "https://www.freecodecamp.org/news/tag/writing/"
+            },
+            {
+              "name": "Technical Writing",
+              "url": "https://www.freecodecamp.org/news/tag/technical-writing/"
+            },
+            {
+              "name": "Writing Tips",
+              "url": "https://www.freecodecamp.org/news/tag/writing-tips/"
+            },
+            {
+              "name": "Blog",
+              "url": "https://www.freecodecamp.org/news/tag/blog/"
+            },
+            {
+              "name": "Blogger",
+              "url": "https://www.freecodecamp.org/news/tag/blogger/"
+            },
+            {
+              "name": "Blogging",
+              "url": "https://www.freecodecamp.org/news/tag/blogging/"
+            },
+            {
+              "name": "Publishing",
+              "url": "https://www.freecodecamp.org/news/tag/publishing/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/how-to-add-a-table-of-contents-to-your-blog-post-or-article/",
+          "featureImage": "https://www.freecodecamp.org/news/content/images/2020/02/table-of-contents.jpg",
+          "publishedAt": "2020-02-12T15:45:00.000Z",
+          "publishedAtTimestamp": 1581522300,
+          "filterTerms": [],
+          "objectID": "5f9c9c9d740569d1a4ca332b",
+          "_highlightResult": {
+            "title": {
+              "value": "How to Add a Table of Contents to Your Blog Post or __ais-highlight__Article__/ais-highlight__",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "What 500+ blog posts taught me about writing great articles",
+          "author": {
+            "name": "Burke Holland",
+            "url": "https://www.freecodecamp.org/news/author/burkeholland/",
+            "profileImage": "https://www.gravatar.com/avatar/59247a80fdf2632dfea43b8824e07cdb?s=250&d=mm&r=x"
+          },
+          "tags": [
+            {
+              "name": "Writing",
+              "url": "https://www.freecodecamp.org/news/tag/writing/"
+            },
+            {
+              "name": "Technical Writing",
+              "url": "https://www.freecodecamp.org/news/tag/technical-writing/"
+            },
+            {
+              "name": "Blogging",
+              "url": "https://www.freecodecamp.org/news/tag/blogging/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/what-500-blog-posts-taught-me-about-writing-great-articles/",
+          "featureImage": "https://www.freecodecamp.org/news/content/images/2019/07/writing-technical-articles-banner.png",
+          "publishedAt": "2019-07-31T15:00:00.000Z",
+          "publishedAtTimestamp": 1564585200,
+          "filterTerms": [],
+          "objectID": "5f9ca121740569d1a4ca4cde",
+          "_highlightResult": {
+            "title": {
+              "value": "What 500+ blog posts taught me about writing great __ais-highlight__article__/ais-highlight__s",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "What 500+ blog posts taught me about writing great articles",
+          "author": {
+            "name": "Burke Holland",
+            "url": "https://www.freecodecamp.org/news/author/burkeholland/",
+            "profileImage": "https://www.gravatar.com/avatar/59247a80fdf2632dfea43b8824e07cdb?s=250&d=mm&r=x"
+          },
+          "tags": [
+            {
+              "name": "Writing",
+              "url": "https://www.freecodecamp.org/news/tag/writing/"
+            },
+            {
+              "name": "Technical Writing",
+              "url": "https://www.freecodecamp.org/news/tag/technical-writing/"
+            },
+            {
+              "name": "Blogging",
+              "url": "https://www.freecodecamp.org/news/tag/blogging/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/what-500-blog-posts-taught-me-about-writing-great-articles/",
+          "featureImage": "https://www.freecodecamp.org/news/content/images/2019/07/writing-technical-articles-banner.png",
+          "publishedAt": "2019-07-31T15:00:00.000Z",
+          "publishedAtTimestamp": 1564585200,
+          "filterTerms": [],
+          "objectID": "5f9ca121740569d1a4ca4cde",
+          "_highlightResult": {
+            "title": {
+              "value": "What 500+ blog posts taught me about writing great __ais-highlight__article__/ais-highlight__s",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "What 500+ blog posts taught me about writing great articles",
+          "author": {
+            "name": "Burke Holland",
+            "url": "https://www.freecodecamp.org/news/author/burkeholland/",
+            "profileImage": "https://www.gravatar.com/avatar/59247a80fdf2632dfea43b8824e07cdb?s=250&d=mm&r=x"
+          },
+          "tags": [
+            {
+              "name": "Writing",
+              "url": "https://www.freecodecamp.org/news/tag/writing/"
+            },
+            {
+              "name": "Technical Writing",
+              "url": "https://www.freecodecamp.org/news/tag/technical-writing/"
+            },
+            {
+              "name": "Blogging",
+              "url": "https://www.freecodecamp.org/news/tag/blogging/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/what-500-blog-posts-taught-me-about-writing-great-articles/",
+          "featureImage": "https://www.freecodecamp.org/news/content/images/2019/07/writing-technical-articles-banner.png",
+          "publishedAt": "2019-07-31T15:00:00.000Z",
+          "publishedAtTimestamp": 1564585200,
+          "filterTerms": [],
+          "objectID": "5f9ca121740569d1a4ca4cde",
+          "_highlightResult": {
+            "title": {
+              "value": "What 500+ blog posts taught me about writing great __ais-highlight__article__/ais-highlight__s",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        },
+        {
+          "title": "What 500+ blog posts taught me about writing great articles",
+          "author": {
+            "name": "Burke Holland",
+            "url": "https://www.freecodecamp.org/news/author/burkeholland/",
+            "profileImage": "https://www.gravatar.com/avatar/59247a80fdf2632dfea43b8824e07cdb?s=250&d=mm&r=x"
+          },
+          "tags": [
+            {
+              "name": "Writing",
+              "url": "https://www.freecodecamp.org/news/tag/writing/"
+            },
+            {
+              "name": "Technical Writing",
+              "url": "https://www.freecodecamp.org/news/tag/technical-writing/"
+            },
+            {
+              "name": "Blogging",
+              "url": "https://www.freecodecamp.org/news/tag/blogging/"
+            }
+          ],
+          "url": "https://www.freecodecamp.org/news/what-500-blog-posts-taught-me-about-writing-great-articles/",
+          "featureImage": "https://www.freecodecamp.org/news/content/images/2019/07/writing-technical-articles-banner.png",
+          "publishedAt": "2019-07-31T15:00:00.000Z",
+          "publishedAtTimestamp": 1564585200,
+          "filterTerms": [],
+          "objectID": "5f9ca121740569d1a4ca4cde",
+          "_highlightResult": {
+            "title": {
+              "value": "What 500+ blog posts taught me about writing great __ais-highlight__article__/ais-highlight__s",
+              "matchLevel": "full",
+              "fullyHighlighted": false,
+              "matchedWords": [
+                "article"
+              ]
+            }
+          }
+        }
+      ],
+      "nbHits": 30,
+      "page": 0,
+      "nbPages": 6,
+      "hitsPerPage": 5,
+      "exhaustiveNbHits": true,
+      "exhaustiveTypo": true,
+      "exhaustive": {
+        "nbHits": true,
+        "typo": true
+      },
+      "query": "article",
+      "params": "highlightPostTag=__%2Fais-highlight__&highlightPreTag=__ais-highlight__&hitsPerPage=5&query=article",
+      "index": "news",
+      "renderingContent": {},
+      "processingTimeMS": 1,
+      "processingTimingsMS": {
+        "_request": {
+          "roundTrip": 90
+        }
+      }
+    }
+  ]
+}

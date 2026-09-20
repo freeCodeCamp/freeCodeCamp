@@ -1,0 +1,22 @@
+.character-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  transition: all 0.5s ease;
+}
+
+.character-wrap-hidden {
+  visibility: hidden;
+}
+
+.character-feature {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transform-origin: left;
+}

@@ -1,0 +1,357 @@
+name: CI - Node.js
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'prod-**'
+      - 'renovate/**'
+      - 'hotfix-**'
+      - 'temp-**'
+  pull_request:
+    branches:
+      - 'main'
+      - 'temp-**' # Temporary branches allowed on Upstream
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
+  cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint
+    # Skip PR runs for Renovate since push already triggered CI
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+      fail-fast: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+          persist-credentials: false
+
+      - name: Check number of lockfiles
+        run: |
+          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 0 ]
+          then
+            echo -e 'Error: found package-lock files in the repository.\nWe use pnpm workspaces to manage packages so all dependencies should be added via pnpm add'
+            exit 1
+          fi
+
+      - name: Check format of sample.env
+        run: docker run --rm -v `pwd`:/app -w /app dotenvlinter/dotenv-linter check --ignore-checks UnorderedKey sample.env
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+
+      - name: Install node_modules
+        run: pnpm install
+
+      - name: Check formatting
+        run: |
+          pnpm prettier --check . || [ $? -eq 1 ] && printf "\nTip: Run 'pnpm run format' in your terminal to fix this.\n\n"
+
+      - name: Lint Source Files
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm lint
+
+      # This is populate the cache, otherwise local runs with upcoming changes
+      # will not benefit.
+      - name: Set UPCOMING_CHANGES
+        run: |
+          echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
+
+      - name: Lint Upcoming Changes
+        run: |
+          pnpm lint
+
+  # DONT REMOVE THIS JOB.
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set freeCodeCamp Environment Variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+
+      - name: Install and Build
+        run: |
+          pnpm install
+          pnpm run build
+
+      - name: Upload Client Artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: client-artifact
+          path: client/public
+          retention-days: 1
+
+  build-e2e-api:
+    name: Build E2E API (Container)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          submodules: 'recursive'
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-api \
+            -f docker/api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-api > api-artifact.tar
+
+      - name: Upload API Artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: api-artifact
+          path: api-artifact.tar
+          retention-days: 1
+
+  e2e:
+    name: E2E
+    if: github.event_name == 'pull_request'
+    needs: [build, build-e2e-api]
+    uses: ./.github/workflows/e2e-playwright.yml
+    secrets: inherit
+
+  test:
+    name: Test
+    needs: build
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [24]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
+
+      - name: Start MongoDB
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
+
+      - name: Install Dependencies
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm install
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
+
+      - name: Run Tests
+        run: pnpm test
+
+  test-upcoming:
+    name: Test - Upcoming Changes
+    needs: build
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [24]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
+
+      - name: Start MongoDB
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
+
+      - name: Install Dependencies
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm install
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
+
+      - name: Run Tests
+        run: pnpm test
+
+  test-localization:
+    name: Test - i18n
+    needs: build
+    runs-on: ubuntu-24.04
+    if: github.event.pull_request.user.login == 'camperbot' && github.head_ref == 'chore/update-i18n-curriculum-submodule'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [24]
+        locale: [portuguese, italian]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+          persist-credentials: false
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
+
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1
+        with:
+          mongodb-version: 8.0
+          mongodb-replica-set: test-rs
+          mongodb-port: 27017
+
+      - name: Install Dependencies
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          echo pnpm version $(pnpm -v)
+          pnpm install
+
+      # DONT REMOVE THIS STEP.
+      # TODO: Refactor and use re-usable workflow and shared artifacts
+      - name: Build Client in ${{ matrix.locale }}
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          pnpm run build
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
+
+      - name: Run Tests
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: pnpm test

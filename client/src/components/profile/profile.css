@@ -1,0 +1,40 @@
+.button-fit {
+  width: 30px;
+  height: fit-content;
+  padding: 0 !important;
+}
+
+.card {
+  margin: 0;
+  padding: 1em;
+  box-shadow: none;
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  margin-bottom: 1em;
+}
+
+.card-header {
+  position: relative;
+}
+
+.profile-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.profile-section-heading h2 {
+  margin: 0;
+}
+
+.profile-private-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--quaternary-color);
+  border: 1px solid var(--quaternary-color);
+  white-space: nowrap;
+}

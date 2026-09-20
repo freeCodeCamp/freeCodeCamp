@@ -1,0 +1,47 @@
+packages:
+  - 'api'
+  - 'client'
+  - 'curriculum'
+  - 'e2e'
+  - 'shared'
+  - 'tools/challenge-helper-scripts'
+  - 'tools/challenge-parser'
+  - 'tools/client-plugins/*'
+  - 'tools/crowdin'
+  - 'tools/daily-challenges'
+  - 'tools/scripts/seed'
+  - 'tools/scripts/seed-exams'
+  - 'packages/*'
+
+# Disable until we can enable this again.
+strictPeerDependencies: false
+# A lot of our scripts rely on pre and post scripts.
+enablePrePostScripts: true
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@freecodecamp/curriculum-helpers'
+
+# Dependencies allowed to run their build scripts.
+allowBuilds:
+  '@prisma/client': true
+  '@prisma/engines': true
+  esbuild: true
+  gatsby: true
+  lmdb: true
+  msgpackr-extract: true
+  msw: true
+  prisma: true
+  puppeteer: true
+  unrs-resolver: true
+
+overrides:
+  # Pin transitive deps to mature releases so Renovate can refresh lockfiles.
+  caniuse-lite: 1.0.30001791
+
+packageExtensions:
+  '@testing-library/jest-dom':
+    peerDependencies:
+      vitest: '*'
+
+hoistPattern:
+  - '!*eslint*'

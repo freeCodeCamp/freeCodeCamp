@@ -1,0 +1,135 @@
+---
+id: 6396e33fe478dd264ebbf278
+title: Step 34
+challengeType: 0
+dashedName: step-34
+---
+
+# --description--
+
+Create a new `.calories-info` selector and give it a `display` property set to `flex`. Also give it a `justify-content` property set to `space-between` and `align-items` property set to `flex-end`.
+
+# --hints--
+
+You should create a `.calories-info` selector.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info'));
+```
+
+Your `.calories-info` selector should have a `display` property set to `flex`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info')?.display === 'flex');
+```
+
+Your `.calories-info` selector should have a `justify-content` property set to `space-between`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info')?.justifyContent === 'space-between');
+```
+
+Your `.calories-info` selector should have a `align-items` property set to `flex-end`.
+
+```js
+assert(new __helpers.CSSHelp(document).getStyle('.calories-info')?.alignItems === 'flex-end');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Nutrition Label</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="label">
+    <header>
+      <h1 class="bold">Nutrition Facts</h1>
+      <div class="divider"></div>
+      <p>8 servings per container</p>
+      <p class="bold">Serving size <span>2/3 cup (55g)</span></p>
+    </header>
+    <div class="divider large"></div>
+    <div class="calories-info">
+      <div class="left-container">
+        <h2 class="bold small-text">Amount per serving</h2>
+        <p>Calories</p>
+      </div>
+      <span>230</span>
+    </div>
+  </div>
+</body>
+</html>
+```
+
+```css
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.label {
+  border: 2px solid black;
+  width: 270px;
+  margin: 20px auto;
+  padding: 0 7px;
+}
+
+header h1 {
+  text-align: center;
+  margin: -4px 0;
+  letter-spacing: 0.15px
+}
+
+p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  border-bottom: 1px solid #888989;
+  margin: 2px 0;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.large {
+  height: 10px;
+}
+
+.large, .medium {
+  background-color: black;
+  border: 0;
+}
+
+.small-text {
+  font-size: 0.85rem;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+.calories-info h2 {
+  margin: 0;
+}
+```

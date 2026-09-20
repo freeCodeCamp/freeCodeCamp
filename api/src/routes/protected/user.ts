@@ -1,0 +1,1019 @@
+import { performance } from 'node:perf_hooks';
+import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
+import { ObjectId } from 'bson';
+import { FastifyInstance, FastifyReply } from 'fastify';
+import jwt from 'jsonwebtoken';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library.js';
+
+import * as schemas from '../../schemas.js';
+import * as examEnvironmentSchemas from '../../exam-environment/schemas/index.js';
+import { createResetProperties } from '../../utils/create-user.js';
+import { customNanoid } from '../../utils/ids.js';
+import { encodeUserToken } from '../../utils/tokens.js';
+import { trimTags } from '../../utils/validation.js';
+import { generateReportEmail } from '../../utils/email-templates.js';
+import { splitUser } from '../helpers/user-utils.js';
+import {
+  normalizeChallenges,
+  normalizeFlags,
+  normalizeProfileUI,
+  normalizeSurveys,
+  normalizeTwitter,
+  normalizeBluesky,
+  removeNulls
+} from '../../utils/normalize.js';
+import {
+  mapErr,
+  type UpdateReqType,
+  type UpdateReplyType
+} from '../../utils/index.js';
+import {
+  getCalendar,
+  getPoints,
+  ProgressTimestamp
+} from '../../utils/progress.js';
+import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
+import {
+  getExamAttemptHandler,
+  getExamAttemptsByExamIdHandler,
+  getExamAttemptsHandler,
+  getExams
+} from '../../exam-environment/routes/exam-environment.js';
+import { ERRORS } from '../../exam-environment/utils/errors.js';
+import { getChallengeIdsByBlock } from '../../utils/get-challenges.js';
+
+/**
+ * Helper function to get the api url from the shared transcript link.
+ * Example msTranscriptUrl: https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo.
+ *
+ * @param msTranscript Shared transcript link.
+ * @returns Microsoft transcript api url.
+ */
+export function getMsTranscriptApiUrl(msTranscript: string) {
+  try {
+    const url = new URL(msTranscript);
+    const transcriptUrlRegex = /\/transcript\/([^/]+)\/?/;
+    const id = transcriptUrlRegex.exec(url.pathname)?.[1];
+    if (!id) {
+      return { error: `Invalid transcript URL: ${msTranscript}`, data: null };
+    }
+    return {
+      error: null,
+      data: `https://learn.microsoft.com/api/profiles/transcript/share/${id}`
+    };
+  } catch (e) {
+    return {
+      error: `Invalid transcript URL: ${msTranscript}\n${JSON.stringify(e)}`,
+      data: null
+    };
+  }
+}
+
+/**
+ * Wrapper for endpoints related to user account management,
+ * such as account deletion.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Fastify options I guess?
+ * @param done Callback to signal that the logic has completed.
+ */
+export const userRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  fastify.post(
+    '/account/delete',
+    {
+      schema: schemas.deleteMyAccount
+    },
+    async (req, reply) => {
+      req.log.info({ audit: true }, 'User requested account deletion');
+      await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.msUsername.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.survey.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      try {
+        const userBeforeDelete = await fastify.prisma.user.findUnique({
+          where: { id: req.user!.id },
+          select: { isDonating: true }
+        });
+        if (userBeforeDelete?.isDonating) {
+          fastify.Sentry?.metrics?.count('account.deleted_while_donating', 1, {
+            attributes: { endpoint: '/account/delete' }
+          });
+        }
+        await fastify.prisma.user.delete({
+          where: { id: req.user!.id }
+        });
+        fastify.Sentry?.metrics?.count('account.deleted', 1, {
+          attributes: { endpoint: '/account/delete' }
+        });
+      } catch (err) {
+        if (
+          err instanceof PrismaClientKnownRequestError &&
+          err.code === 'P2025'
+        ) {
+          req.log.warn('User not found for deletion');
+        } else {
+          req.log.error(err, 'Error deleting user account');
+          throw err;
+        }
+      }
+      reply.clearOurCookies();
+
+      return {};
+    }
+  );
+
+  fastify.delete(
+    '/users/:userId',
+    {
+      schema: schemas.deleteUser
+    },
+    async (req, reply) => {
+      const { userId } = req.params;
+
+      if (userId !== req.user?.id) {
+        req.log.warn(
+          { requestedUserId: userId },
+          'User attempted to delete an account they do not have authorization to.'
+        );
+        void reply.code(403);
+        return { type: 'error', message: 'forbidden' } as const;
+      }
+
+      req.log.info({ audit: true }, 'User requested account deletion');
+      try {
+        await fastify.prisma.userToken.deleteMany({
+          where: { userId: req.user.id }
+        });
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.user.id }
+        });
+        await fastify.prisma.survey.deleteMany({
+          where: { userId: req.user.id }
+        });
+        const userBeforeDelete = await fastify.prisma.user.findUnique({
+          where: { id: req.user.id },
+          select: { isDonating: true }
+        });
+        if (userBeforeDelete?.isDonating) {
+          fastify.Sentry?.metrics?.count('account.deleted_while_donating', 1, {
+            attributes: { endpoint: '/users/:userId' }
+          });
+        }
+        await fastify.prisma.user.delete({
+          where: { id: req.user.id }
+        });
+        fastify.Sentry?.metrics?.count('account.deleted', 1, {
+          attributes: { endpoint: '/users/:userId' }
+        });
+      } catch (err) {
+        // Whilst this is behind auth, this should never happen
+        if (
+          err instanceof PrismaClientKnownRequestError &&
+          err.code === 'P2025'
+        ) {
+          req.log.warn('User not found for deletion');
+          return reply.code(404).send({ type: 'error', message: 'not found' });
+        } else {
+          req.log.error(err, 'Error deleting user account');
+          throw err;
+        }
+      }
+      reply.clearOurCookies();
+
+      return reply.code(204).send(null);
+    }
+  );
+
+  fastify.post(
+    '/account/reset-progress',
+    {
+      schema: schemas.resetMyProgress
+    },
+    async (req, _reply) => {
+      req.log.info({ audit: true }, 'User requested progress reset');
+      await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.msUsername.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.survey.deleteMany({
+        where: { userId: req.user!.id }
+      });
+      await fastify.prisma.user.update({
+        where: { id: req.user!.id },
+        data: createResetProperties()
+      });
+
+      fastify.Sentry?.metrics?.count('account.progress_reset', 1);
+
+      return {};
+    }
+  );
+
+  fastify.delete(
+    '/account/reset-module',
+    {
+      schema: schemas.resetModule
+    },
+    deleteResetModule
+  );
+  // TODO(Post-MVP): POST -> PUT
+  fastify.post('/user/user-token', async (req, _reply) => {
+    req.log.info({ audit: true }, 'User requested a new user token');
+
+    await fastify.prisma.userToken.deleteMany({
+      where: { userId: req.user?.id }
+    });
+
+    const token = await fastify.prisma.userToken.create({
+      data: {
+        created: new Date(),
+        id: customNanoid(),
+        userId: req.user!.id,
+        // TODO(Post-MVP): expire after ttl has passed.
+        ttl: 77760000000 // 900 * 24 * 60 * 60 * 1000
+      }
+    });
+
+    return {
+      userToken: encodeUserToken(token.id)
+    };
+  });
+
+  fastify.delete(
+    '/user/user-token',
+    {
+      schema: schemas.deleteUserToken
+    },
+    async (req, reply) => {
+      req.log.info({ audit: true }, 'User requested token deletion');
+
+      const { count } = await fastify.prisma.userToken.deleteMany({
+        where: { userId: req.user?.id }
+      });
+
+      if (count === 0) {
+        req.log.warn('No userToken found for deletion');
+        void reply.code(404);
+        return {
+          message: 'userToken not found',
+          type: 'info'
+        } as const;
+      }
+      return { userToken: null };
+    }
+  );
+
+  fastify.post(
+    '/user/report-user',
+    {
+      schema: schemas.reportUser,
+      preHandler: (req, _reply, done) => {
+        req.body.reportDescription = trimTags(req.body.reportDescription);
+        done();
+      }
+    },
+    async (req, reply) => {
+      req.log.info(
+        { reportedUsername: req.body.username },
+        'User reported another user'
+      );
+
+      const user = await fastify.prisma.user.findUniqueOrThrow({
+        where: { id: req.user?.id }
+      });
+
+      if (!user.email) {
+        req.log.warn('User has no email');
+        void reply.code(400);
+        fastify.Sentry?.metrics?.count('user.report_submitted', 1, {
+          attributes: { result: 'no_email' }
+        });
+        return reply.send({
+          type: 'danger',
+          message: 'flash.report-error'
+        });
+      }
+
+      const { username, reportDescription: report } = req.body;
+
+      // TODO: `findUnique` once db migration forces unique usernames
+      const maybeReportedUsers = await mapErr(
+        fastify.prisma.user.findMany({
+          where: { username }
+        })
+      );
+
+      if (maybeReportedUsers.hasError) {
+        req.log.error(
+          { err: maybeReportedUsers.error, username },
+          'Error finding reported user.'
+        );
+        fastify.Sentry?.captureException(maybeReportedUsers.error);
+        void reply.code(500);
+        fastify.Sentry?.metrics?.count('user.report_submitted', 1, {
+          attributes: { result: 'lookup_error' }
+        });
+        return {
+          type: 'danger',
+          message: 'flash.generic-error'
+        } as const;
+      }
+
+      const reportedUsers = maybeReportedUsers.data;
+
+      if (reportedUsers.length !== 1) {
+        req.log.warn({ username }, 'Reported user not found');
+        void reply.code(404);
+        fastify.Sentry?.metrics?.count('user.report_submitted', 1, {
+          attributes: { result: 'not_found' }
+        });
+        return {
+          type: 'danger',
+          message: 'flash.report-error'
+        } as const;
+      }
+
+      const reportedUser = reportedUsers[0]!;
+
+      await fastify.sendEmail({
+        from: 'team@freecodecamp.org',
+        to: 'support@freecodecamp.org',
+        cc: user.email,
+        subject: `Abuse Report : Reporting ${reportedUser.username}'s profile.`,
+        text: generateReportEmail(user, reportedUser, report)
+      });
+
+      fastify.Sentry?.metrics?.count('user.report_submitted', 1, {
+        attributes: { result: 'success' }
+      });
+
+      reply.send({
+        type: 'info',
+        message: 'flash.report-sent',
+        variables: { email: user.email }
+      });
+    }
+  );
+
+  fastify.delete(
+    '/user/ms-username',
+    {
+      schema: schemas.deleteMsUsername
+    },
+    async (req, reply) => {
+      req.log.info({ audit: true }, 'User requested unlinking of msUsername');
+
+      try {
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.user?.id }
+        });
+
+        // TODO(Post-MVP): return a generic success message.
+        return { msUsername: null };
+      } catch (err) {
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error unlinking msUsername');
+        void reply.code(500);
+        void reply.send({
+          message: 'flash.ms.transcript.unlink-err',
+          type: 'error'
+        });
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/ms-username',
+    {
+      schema: schemas.postMsUsername,
+      errorHandler(error, req, reply) {
+        if (error.validation) {
+          req.log.warn(
+            { validationError: error.validation },
+            'Request validation failed'
+          );
+          void reply.code(400).send({
+            message: 'flash.ms.transcript.link-err-1',
+            type: 'error'
+          });
+        } else {
+          fastify.errorHandler(error, req, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      req.log.info({ audit: true }, 'User requested linking of msUsername');
+
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.user?.id }
+        });
+
+        const maybeTranscriptUrl = getMsTranscriptApiUrl(
+          req.body.msTranscriptUrl
+        );
+
+        if (maybeTranscriptUrl.error !== null) {
+          req.log.warn('Unable to parse Microsoft transcript URL');
+          fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
+            attributes: { result: 'invalid_url' }
+          });
+          return reply
+            .status(400)
+            .send({ type: 'error', message: 'flash.ms.transcript.link-err-1' });
+        }
+
+        const transcriptUrl = maybeTranscriptUrl.data;
+
+        const startTime = performance.now();
+        const msApiRes = await fetch(transcriptUrl).catch(err => {
+          fastify.Sentry?.metrics?.distribution(
+            'ms_username.transcript_fetch_latency_ms',
+            performance.now() - startTime,
+            { unit: 'millisecond' }
+          );
+          throw err;
+        });
+        fastify.Sentry?.metrics?.distribution(
+          'ms_username.transcript_fetch_latency_ms',
+          performance.now() - startTime,
+          { unit: 'millisecond' }
+        );
+
+        if (!msApiRes.ok) {
+          req.log.warn(
+            { status: msApiRes.status },
+            "Unable to fetch user's Microsoft transcript"
+          );
+          fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
+            attributes: { result: 'fetch_failed' }
+          });
+          return reply
+            .status(404)
+            .send({ type: 'error', message: 'flash.ms.transcript.link-err-2' });
+        }
+
+        const { userName } = (await msApiRes.json()) as { userName: string };
+
+        if (!userName) {
+          fastify.Sentry?.captureException(
+            new Error('No userName found in Microsoft transcript response')
+          );
+          req.log.error('No userName found in Microsoft transcript response');
+          fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
+            attributes: { result: 'missing_username' }
+          });
+          return reply.status(500).send({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-3'
+          });
+        }
+
+        // TODO(Post-MVP): make msUsername unique, then we can simply try to
+        // create the record and catch the error.
+        const usernameUsed = !!(await fastify.prisma.msUsername.findFirst({
+          where: {
+            msUsername: userName
+          }
+        }));
+
+        if (usernameUsed) {
+          req.log.warn('msUsername already in use');
+          fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
+            attributes: { result: 'username_taken' }
+          });
+          return reply.status(409).send({
+            type: 'error',
+            message: 'flash.ms.transcript.link-err-4'
+          });
+        }
+
+        // TODO(Post-MVP): do we need to store tll in the database? We aren't
+        // storing the creation date, so we can't expire it.
+
+        // 900 days in ms
+        const ttl = 900 * 24 * 60 * 60 * 1000;
+
+        // TODO(Post-MVP): make userId unique and then we can upsert.
+
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: user.id }
+        });
+
+        await fastify.prisma.msUsername.create({
+          data: {
+            msUsername: userName,
+            ttl,
+            userId: user.id
+          }
+        });
+
+        fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
+          attributes: { result: 'success' }
+        });
+
+        return { msUsername: userName };
+      } catch (err) {
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error linking msUsername');
+        fastify.Sentry?.metrics?.count('ms_username.link_completed', 1, {
+          attributes: { result: 'error' }
+        });
+        return reply.code(500).send({
+          type: 'error',
+          message: 'flash.ms.transcript.link-err-6'
+        });
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/submit-survey',
+    {
+      schema: schemas.submitSurvey,
+      errorHandler(error, request, reply) {
+        if (error.validation) {
+          void reply.code(400).send({
+            type: 'error',
+            message: 'flash.survey.err-1'
+          });
+        } else {
+          fastify.errorHandler(error, request, reply);
+        }
+      }
+    },
+    async (req, reply) => {
+      req.log.info('User submitted a survey');
+      try {
+        const user = await fastify.prisma.user.findUniqueOrThrow({
+          where: { id: req.user?.id }
+        });
+        const { surveyResults } = req.body;
+        const { title } = surveyResults;
+
+        const completedSurveys = await fastify.prisma.survey.findMany({
+          where: { userId: user.id }
+        });
+
+        const surveyAlreadyTaken = completedSurveys.some(
+          s => s.title === title
+        );
+        if (surveyAlreadyTaken) {
+          req.log.warn('Survey already taken');
+          return reply.code(409).send({
+            type: 'error',
+            message: 'flash.survey.err-2'
+          });
+        }
+
+        const newSurvey = {
+          ...surveyResults,
+          userId: user.id
+        };
+
+        await fastify.prisma.survey.create({
+          data: newSurvey
+        });
+
+        fastify.Sentry?.metrics?.count('survey.submitted', 1, {
+          attributes: { surveyTitle: title }
+        });
+
+        return {
+          type: 'success',
+          message: 'flash.survey.success'
+        } as const;
+      } catch (err) {
+        fastify.Sentry?.captureException(err);
+        req.log.error(err, 'Error submitting survey');
+        void reply.code(500);
+        return {
+          type: 'error',
+          message: 'flash.survey.err-3'
+        } as const;
+      }
+    }
+  );
+
+  fastify.post(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.userExamEnvironmentToken
+    },
+    examEnvironmentTokenHandler
+  );
+
+  fastify.get(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.getUserExamEnvironmentToken
+    },
+    getExamEnvironmentToken
+  );
+
+  fastify.get(
+    '/user/exam-environment/exam/attempts',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempts
+    },
+    getExamAttemptsHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exam/attempt/:attemptId',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttempt
+    },
+    getExamAttemptHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exams/:examId/attempts',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttemptsByExamId
+    },
+    getExamAttemptsByExamIdHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exams',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentExams
+    },
+    getExams
+  );
+
+  done();
+};
+
+async function deleteResetModule(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.resetModule>,
+  reply: UpdateReplyType<typeof schemas.resetModule>
+) {
+  const { blockIds } = req.body;
+  req.log.info(
+    { audit: true, blockIds },
+    'User requested module reset for blocks'
+  );
+
+  const resetSet = new Set(blockIds.flatMap(getChallengeIdsByBlock));
+
+  if (resetSet.size === 0) {
+    void reply.code(400);
+    return { message: 'No matching blocks found', type: 'error' };
+  }
+
+  const user = await this.prisma.user.findUniqueOrThrow({
+    where: { id: req.user!.id },
+    select: {
+      completedChallenges: true,
+      savedChallenges: true,
+      partiallyCompletedChallenges: true
+    }
+  });
+
+  const filteredCompletedChallenges = normalizeChallenges(
+    user.completedChallenges
+  ).filter(c => !resetSet.has(c.id));
+
+  const filteredSavedChallenges = user.savedChallenges.filter(
+    c => !resetSet.has(c.id)
+  );
+
+  const filteredPartiallyCompletedChallenges =
+    user.partiallyCompletedChallenges.filter(c => !resetSet.has(c.id));
+
+  await this.prisma.user.update({
+    where: { id: req.user!.id },
+    data: {
+      completedChallenges: filteredCompletedChallenges,
+      savedChallenges: filteredSavedChallenges,
+      partiallyCompletedChallenges: filteredPartiallyCompletedChallenges
+    },
+    select: {
+      id: true
+    }
+  });
+
+  return { removedChallengeIds: Array.from(resetSet) };
+}
+
+/**
+ * Generate a new authorization token for the given user, and invalidates any existing tokens.
+ *
+ * Requires the user to be authenticated.
+ */
+async function examEnvironmentTokenHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.userExamEnvironmentToken>,
+  reply: FastifyReply
+) {
+  req.log.info({ audit: true }, 'User requested a new exam environment token');
+  const userId = req.user?.id;
+  if (!userId) {
+    throw new Error('Unreachable. User should be authenticated.');
+  }
+
+  // In non-production environments, only staff are allowed to generate a token
+  if (
+    DEPLOYMENT_ENV !== 'production' &&
+    (!req.user?.email?.endsWith('@freecodecamp.org') ||
+      !req.user?.emailVerified)
+  ) {
+    req.log.warn(
+      { deploymentEnv: DEPLOYMENT_ENV },
+      'User not allowed to generate authorization token'
+    );
+    void reply.code(403);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        `User not allowed to generate authorization token in ${DEPLOYMENT_ENV} environment.`
+      )
+    );
+  }
+
+  // Delete (invalidate) any existing tokens for the user.
+  await this.prisma.examEnvironmentAuthorizationToken.deleteMany({
+    where: {
+      userId
+    }
+  });
+
+  const ONE_YEAR_IN_MS = 365 * 24 * 60 * 60 * 1000;
+
+  const token = await this.prisma.examEnvironmentAuthorizationToken.create({
+    data: {
+      expireAt: new Date(Date.now() + ONE_YEAR_IN_MS),
+      userId
+    }
+  });
+
+  this.Sentry?.metrics?.count('exam.token_minted', 1);
+
+  const examEnvironmentAuthorizationToken = jwt.sign(
+    { examEnvironmentAuthorizationToken: token.id },
+    JWT_SECRET
+  );
+
+  void reply.code(201);
+  void reply.send({
+    examEnvironmentAuthorizationToken
+  });
+}
+
+/**
+ * Plugin containing GET routes for user account management. They are kept
+ * separate because they do not require CSRF protection.
+ *
+ * @param fastify The Fastify instance.
+ * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
+ * @param done Callback to signal that the logic has completed.
+ */
+export const userGetRoutes: FastifyPluginCallbackTypebox = (
+  fastify,
+  _options,
+  done
+) => {
+  const getSessionUserHandler = async (
+    req: UpdateReqType<typeof schemas.getSessionUser>,
+    res: FastifyReply
+  ) => {
+    // This is one of the most requested routes. To avoid spamming the logs
+    // with this route, we'll log requests at the debug level.
+    req.log.debug('User requested session');
+
+    // Handle unauthenticated users - this is not an error, it's how the client
+    // determines if they are signed in or not
+    if (!req.user?.id) {
+      req.log.debug('Unauthenticated user requested session');
+      return { user: {}, result: '' };
+    }
+
+    try {
+      const userTokenP = fastify.prisma.userToken.findFirst({
+        where: { userId: req.user.id }
+      });
+
+      const userP = fastify.prisma.user.findUnique({
+        where: { id: req.user.id },
+        select: {
+          about: true,
+          acceptedPrivacyTerms: true,
+          completedChallenges: true,
+          completedDailyCodingChallenges: true,
+          completedExams: true,
+          currentChallengeId: true,
+          quizAttempts: true,
+          email: true,
+          emailVerified: true,
+          githubProfile: true,
+          id: true,
+          is2018DataVisCert: true,
+          is2018FullStackCert: true,
+          isA2EnglishCert: true,
+          isApisMicroservicesCert: true,
+          isBackEndCert: true,
+          isCheater: true,
+          isCollegeAlgebraPyCertV8: true,
+          isDataAnalysisPyCertV7: true,
+          isDataVisCert: true,
+          isDonating: true,
+          isFoundationalCSharpCertV8: true,
+          isFrontEndCert: true,
+          isFrontEndLibsCert: true,
+          isFullStackCert: true,
+          isClassroomAccount: true,
+          isHonest: true,
+          isInfosecCertV7: true,
+          isInfosecQaCert: true,
+          isJavascriptCertV9: true,
+          isJsAlgoDataStructCert: true,
+          isJsAlgoDataStructCertV8: true,
+          isMachineLearningPyCertV7: true,
+          isPythonCertV9: true,
+          isQaCertV7: true,
+          isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
+          isRespWebDesignCert: true,
+          isRespWebDesignCertV9: true,
+          isSciCompPyCertV7: true,
+          isFrontEndLibsCertV9: true,
+          isBackEndDevApisCertV9: true,
+          isFullStackDeveloperCertV9: true,
+          isB1EnglishCert: true,
+          isA2SpanishCert: true,
+          isA2ChineseCert: true,
+          isA1ChineseCert: true,
+          keyboardShortcuts: true,
+          linkedin: true,
+          location: true,
+          name: true,
+          partiallyCompletedChallenges: true,
+          picture: true,
+          portfolio: true,
+          experience: true,
+          profileUI: true,
+          progressTimestamps: true,
+          savedChallenges: true,
+          sendQuincyEmail: true,
+          socrates: true,
+          theme: true,
+          twitter: true,
+          bluesky: true,
+          username: true,
+          usernameDisplay: true,
+          website: true,
+          yearsTopContributor: true
+        }
+      });
+
+      const completedSurveysP = fastify.prisma.survey.findMany({
+        where: { userId: req.user.id }
+      });
+
+      const msUsernameP = fastify.prisma.msUsername.findFirst({
+        where: { userId: req.user.id }
+      });
+
+      const [userToken, user, completedSurveys, msUsername] = await Promise.all(
+        [userTokenP, userP, completedSurveysP, msUsernameP]
+      );
+
+      if (!user?.username) {
+        fastify.Sentry?.captureException(new Error('User has no username'));
+        req.log.error('User has no username');
+        void res.code(500);
+        return { user: {}, result: '' };
+      }
+      // TODO: DRY this (the creation of the response body) and
+      // get-public-profile's response body creation.
+
+      const encodedToken = userToken
+        ? encodeUserToken(userToken.id)
+        : undefined;
+
+      const [flags, rest] = splitUser(user);
+
+      const {
+        email,
+        emailVerified,
+        username,
+        usernameDisplay,
+        completedChallenges,
+        completedDailyCodingChallenges,
+        progressTimestamps,
+        twitter,
+        bluesky,
+        profileUI,
+        currentChallengeId,
+        location,
+        name,
+        theme,
+        experience,
+        socrates,
+        ...publicUser
+      } = rest;
+
+      await res.send({
+        user: {
+          [username]: {
+            ...removeNulls(publicUser),
+            sendQuincyEmail: publicUser.sendQuincyEmail,
+            ...normalizeFlags(flags),
+            picture: publicUser.picture ?? '',
+            email: email ?? '',
+            currentChallengeId: currentChallengeId ?? '',
+            completedChallenges: normalizeChallenges(completedChallenges),
+            completedChallengeCount: completedChallenges.length,
+            completedDailyCodingChallenges,
+            // This assertion is necessary until the database is normalized.
+            calendar: getCalendar(
+              progressTimestamps as ProgressTimestamp[] | null
+            ),
+            emailVerified: !!emailVerified,
+            // This assertion is necessary until the database is normalized.
+            points: getPoints(progressTimestamps as ProgressTimestamp[] | null),
+            profileUI: normalizeProfileUI(profileUI),
+            // TODO(Post-MVP) remove this and just use emailVerified
+            isEmailVerified: !!emailVerified,
+            joinDate: new ObjectId(user.id).getTimestamp().toISOString(),
+            location: location ?? '',
+            name: name ?? '',
+            theme: theme ?? 'default',
+            twitter: normalizeTwitter(twitter),
+            bluesky: normalizeBluesky(bluesky),
+            username,
+            usernameDisplay: usernameDisplay || username,
+            userToken: encodedToken,
+            completedSurveys: normalizeSurveys(completedSurveys),
+            experience: experience.map(removeNulls),
+            msUsername: msUsername?.msUsername,
+            socrates: socrates ?? true
+          }
+        },
+        result: user.username
+      });
+    } catch (err) {
+      fastify.Sentry?.captureException(err);
+      req.log.error(err, 'Error fetching session user');
+      void res.code(500);
+      return { user: {}, result: '' };
+    }
+  };
+
+  fastify.get(
+    '/user/session-user',
+    {
+      schema: schemas.getSessionUser
+    },
+    getSessionUserHandler
+  );
+
+  done();
+};
+
+async function getExamEnvironmentToken(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.getUserExamEnvironmentToken>,
+  reply: FastifyReply
+) {
+  req.log.info('User requested their exam environment token');
+  const userId = req.user?.id;
+  if (!userId) {
+    throw new Error('Unreachable. User should be authenticated.');
+  }
+
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
+    where: {
+      userId,
+      expireAt: {
+        gt: new Date()
+      }
+    }
+  });
+
+  if (!token) {
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('No valid token found for user.')
+    );
+  }
+
+  const examEnvironmentAuthorizationToken = jwt.sign(
+    { examEnvironmentAuthorizationToken: token.id },
+    JWT_SECRET
+  );
+
+  return reply.send({
+    examEnvironmentAuthorizationToken
+  });
+}

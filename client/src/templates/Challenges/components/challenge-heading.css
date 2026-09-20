@@ -1,0 +1,10 @@
+.challenge-heading-wrap {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-heading {
+  font-size: 16px;
+}

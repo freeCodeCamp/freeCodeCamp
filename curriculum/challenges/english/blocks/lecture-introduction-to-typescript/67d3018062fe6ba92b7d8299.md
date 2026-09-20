@@ -1,0 +1,189 @@
+---
+id: 67d3018062fe6ba92b7d8299
+title: How Do Primitive Types Work in TypeScript?
+challengeType: 19
+dashedName: how-do-primitive-types-work-in-typescript
+---
+
+# --description--
+
+In this lesson, you will learn how to work with basic primitive types and how type annotations work for variables.
+
+For the primitive data types `string`, `null`, `undefined`, `number`, `boolean`, and `bigint`, TypeScript offers corresponding type keywords. 
+
+For this lesson, we will focus on the commonly used primitives and not go into much detail for `bigint`. The `bigint` data type is a numeric data type in JavaScript to represent numbers larger than the standard integer type. 
+
+Let's take a look at each of these primitive types starting with `string`. Here is how you can type a string in TypeScript:
+
+```ts
+let firstName: string = "Angie";
+```
+
+Unlike vanilla JavaScript, the variable `firstName` is expecting a `string` type. So if you try to reassign it with a value of a number, then you will get an error like this:
+
+```ts
+let firstName: string = "Angie";
+firstName = 9 // Type 'number' is not assignable to type 'string'.
+```
+
+The next type we will look at is the `number` type. Here is an example:
+
+```ts
+let age: number = 16;
+```
+
+You can assign integer and floats to the `number` type. But if you were to try and reassign a value that is a `bigint` type, then you will get an error like this:
+
+```ts
+let age: number = 16;
+
+// Type 'bigint' is not assignable to type 'number'.
+age = 123n;
+```
+
+The next type we will look at is the `boolean` type. Here are some examples:
+
+```ts
+let isLoggedIn: boolean = true;
+let isAdmin: boolean = false;
+```
+
+The last two types are the `null` and `undefined` types. 
+
+As you recall from earlier JavaScript lessons, `null` represents an intentional absence of a value. `undefined` means a variable has been declared but has not been assigned a value.
+
+You will see examples of how to work with these types later on when you learn about function types and union types.
+
+Now that you have seen how type annotations work with variables, the question arises on if you need to always explicitly type out your variables. 
+
+If you have a simple type annotation like this, then you might not need to use an explicit type.
+
+```ts
+let firstName: string = "Angie";
+```
+
+Reason being is because TypeScript will try to automatically infer the types based on its value. So if you write this, TypeScript will understand it is a string.
+
+```js
+let firstName = "Angie";
+```
+
+You should explicitly type your variables when TypeScript cannot clearly infer the type or when you want to enforce a specific type for situations like function parameters or complex objects.
+
+# --questions--
+
+## --text--
+
+Which of the following is the correct way to explicitly add a type annotation to a number variable?
+
+## --answers--
+
+```ts
+let age: number = 16;
+```
+
+---
+
+```ts
+let age<> number = 16;
+```
+
+### --feedback--
+
+Refer back to the beginning of the lesson for number types.
+
+---
+
+```ts
+let age>> number = 16;
+```
+
+### --feedback--
+
+Refer back to the beginning of the lesson for number types.
+
+---
+
+```ts
+let age == number = 16;
+```
+
+### --feedback--
+
+Refer back to the beginning of the lesson for number types.
+
+## --video-solution--
+
+1
+
+## --text--
+
+Which of the following is NOT a primitive data type?
+
+## --answers--
+
+`string`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+`boolean`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+---
+
+`object`
+
+---
+
+`number`
+
+### --feedback--
+
+Refer back to the beginning of the lesson.
+
+## --video-solution--
+
+3
+
+## --text--
+
+When should you explicitly type your variables in TypeScript?
+
+## --answers--
+
+When you are working with `number` and `bigint` types.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+When you are working with `null` and `undefined` types.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+---
+
+When TypeScript cannot clearly infer the type.
+
+---
+
+You should always have explicit types in your code.
+
+### --feedback--
+
+Refer back to the end of the lesson.
+
+## --video-solution--
+
+3

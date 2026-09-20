@@ -1,0 +1,78 @@
+---
+id: 69182f75cc96e43363541510
+title: Task 7
+challengeType: 22
+dashedName: task-7
+lang: zh-CN
+inputType: pinyin-to-hanzi
+---
+
+<!-- (No Audio) -->
+
+# --description--
+
+Anna has just started learning Chinese. Today is her first day at her new company. She wants to greet her colleague in simple Chinese and introduce herself politely.
+
+# --instructions--
+
+Find the correct words from the list below to help Anna complete the short conversation.  
+
+**IMPORTANT**: You can only use each word **once**.
+
+`请问 (qǐng wèn)`, `我也是 (wǒ yě shì)`, `叫什么 (jiào shén me)`, `你呢 (nǐ ne)`
+
+# --fillInTheBlank--
+
+## --sentence--
+
+`Anna: 你好 (nǐ hǎo)，我是 (wǒ shì) Anna。BLANK 你 (nǐ) BLANK 名字 (míng zi)？`
+
+`Liu Ming: 你好 (nǐ hǎo)，我叫刘明 (wǒ jiào liú míng)。`
+
+`Anna: 我是数据分析师 (wǒ shì shù jù fēn xī shī)。BLANK？`
+
+`Liu Ming: 我是 (wǒ shì) UI 设计师 (shè jì shī)。很高兴认识你 (hěn gāo xìng rèn shì nǐ)，Anna。`
+
+`Anna: BLANK`
+
+## --blanks--
+
+`请问 (qǐng wèn)`
+
+### --feedback--
+
+This is used at the beginning of a question to make it more polite.
+
+---
+
+`叫什么 (jiào shén me)`
+
+### --feedback--
+
+This phrase is used when asking for someone's name. Don't forget to type 5 at the end for neutral tone syllables.
+
+---
+
+`你呢 (nǐ ne)`
+
+### --feedback--
+
+This is used to ask about the same information from the other person. Don't forget to type 5 at the end for neutral tone syllables.
+
+---
+
+`我也是 (wǒ yě shì)`
+
+### --feedback--
+
+This means "likewise", used to express that you feel the same way as the other person.
+
+# --explanation--
+
+If you want to ask a question, don't forget to first introduce the question politely with `请问 (qǐng wèn)` and then ask it.
+
+In order to know a person's name, you can use `叫什么 (jiào shén me)`.
+
+If you've just introduced yourself and want to ask the other person the same, simply say `你呢 (nǐ ne)?`.
+
+To express that you feel the same way as the other person, you can say `我也是 (wǒ yě shì)`.

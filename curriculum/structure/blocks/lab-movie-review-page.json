@@ -1,0 +1,14 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-movie-review-page",
+  "challengeOrder": [
+    {
+      "id": "67ef8f695db52583424bd118",
+      "title": "Design a Movie Review Page"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

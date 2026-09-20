@@ -1,0 +1,236 @@
+import { expect, test } from './fixtures/isolated-user';
+
+test.describe('Super Block Page - Authenticated User', () => {
+  test.use({ userPreset: 'development' });
+
+  test.describe('Super Block in List View', () => {
+    test('should expand the correct block when user goes to the page from breadcrumb click', async ({
+      page
+    }) => {
+      await page.goto(
+        '/learn/javascript-algorithms-and-data-structures-v8/learn-basic-javascript-by-building-a-role-playing-game/step-2'
+      );
+
+      await page
+        .getByRole('link', {
+          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+        })
+        .click();
+
+      await page.waitForURL(
+        '/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game'
+      );
+
+      await expect(
+        page.getByRole('button', {
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    test('should expand the block of the most recently viewed challenge', async ({
+      page
+    }) => {
+      test.setTimeout(20000);
+
+      await page.goto('/learn/javascript-algorithms-and-data-structures-v8');
+
+      // The first block is expanded by default
+      await expect(
+        page.getByRole('button', {
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      await expect(
+        page.getByRole('button', {
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
+        })
+      ).toHaveAttribute('aria-expanded', 'false');
+
+      await page.goto(
+        '/learn/javascript-algorithms-and-data-structures-v8/learn-basic-javascript-by-building-a-role-playing-game/step-2'
+      );
+
+      // Wait for the page to finish loading so that the current challenge ID can be registered.
+      await expect(
+        page.getByRole('heading', { name: 'Step 2', level: 1 })
+      ).toBeVisible();
+
+      // Go back to the super block page
+      await page.goto('/learn/javascript-algorithms-and-data-structures-v8');
+
+      await expect(
+        page.getByRole('button', {
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
+        })
+      ).toHaveAttribute('aria-expanded', 'false');
+
+      await expect(
+        page.getByRole('button', {
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+    });
+  });
+
+  test.describe('Super Block in Accordion View', () => {
+    test('should expand the correct block when user goes to the page from breadcrumb click', async ({
+      page
+    }) => {
+      await page.goto(
+        `/learn/responsive-web-design-v9/workshop-cafe-menu/step-2`
+      );
+
+      await page
+        .getByRole('link', {
+          name: 'Design a Cafe Menu'
+        })
+        .click();
+
+      await page.waitForURL(
+        '/learn/responsive-web-design-v9/#workshop-cafe-menu'
+      );
+
+      // Chapter
+      await expect(
+        page.getByTestId('chapter-button').filter({ hasText: /CSS/ })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // Module
+      await expect(
+        page.getByRole('button', {
+          name: /^Basic CSS/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // Block
+      await expect(
+        page.getByRole('button', {
+          name: /^Design a Cafe Menu/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    test('should expand the block of the most recently viewed challenge', async ({
+      page
+    }) => {
+      test.setTimeout(20000);
+
+      await page.goto('/learn/responsive-web-design-v9');
+
+      // HTML chapter
+      await expect(
+        page.getByTestId('chapter-button').filter({ hasText: /HTML/ })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // First module
+      await expect(
+        page.getByRole('button', {
+          name: /^Basic HTML/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // First block
+      await expect(
+        page.getByRole('button', {
+          name: /^Build a Curriculum Outline/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      await page.goto(
+        '/learn/responsive-web-design-v9/workshop-blog-page/step-2'
+      );
+
+      // Wait for the page to finish loading so that the current challenge ID can be registered.
+      await expect(
+        page.getByRole('heading', { name: 'Step 2', level: 1 })
+      ).toBeVisible();
+
+      // Go back to the super block page
+      await page.goto('/learn/responsive-web-design-v9');
+
+      // Semantic HTML module
+      await expect(
+        page.getByRole('button', { name: /^Semantic HTML/ })
+      ).toHaveAttribute('aria-expanded', 'true');
+
+      // Cat Blog Page block
+      await expect(
+        page.getByRole('button', {
+          name: /^Build a Cat Blog Page/
+        })
+      ).toHaveAttribute('aria-expanded', 'true');
+    });
+  });
+});
+
+test.describe('Super Block Page - Search Lessons', () => {
+  test('should filter and restore blocks on a block-based superblock', async ({
+    page
+  }) => {
+    const searchTerm = '401';
+
+    await page.goto('/learn/project-euler/');
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).toBeVisible();
+
+    await page
+      .getByRole('searchbox', { name: /Search lessons/i })
+      .fill(searchTerm);
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 401 to 480' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(
+        new RegExp(`showing .+ matching lessons for "${searchTerm}"`, 'i')
+      )
+    ).toBeVisible();
+
+    await page.getByRole('button', { name: 'Clear search terms' }).click();
+
+    await expect(
+      page.getByRole('heading', { name: 'Project Euler Problems 1 to 100' })
+    ).toBeVisible();
+  });
+
+  test('should filter blocks and auto-expand matching modules on a chapter-based superblock', async ({
+    page
+  }) => {
+    const searchTerm = 'Greeting Bot';
+
+    await page.goto('/learn/javascript-v9/');
+
+    await expect(
+      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+    ).toBeVisible();
+
+    await page
+      .getByRole('searchbox', { name: /Search lessons/i })
+      .fill(searchTerm);
+
+    await expect(
+      page.getByRole('heading', { name: 'Build a Greeting Bot' })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(
+        new RegExp(`showing .+ matching lessons for "${searchTerm}"`, 'i')
+      )
+    ).toBeVisible();
+
+    await page.getByRole('button', { name: 'Clear search terms' }).click();
+
+    await expect(
+      page.getByRole('button', { name: /^Booleans and Numbers$/ })
+    ).toBeVisible();
+  });
+});

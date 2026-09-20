@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "lab-debug-donation-form",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "690ddb5e6ee94eb73ed172b0",
+      "title": "Debug a Donation Form"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

@@ -1,0 +1,457 @@
+import { graphql, navigate } from 'gatsby';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Helmet from 'react-helmet';
+import { ObserveKeys } from 'react-hotkeys';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
+import {
+  Container,
+  Col,
+  Row,
+  Button,
+  Quiz,
+  useQuiz,
+  Spacer
+} from '@freecodecamp/ui';
+
+// Local Utilities
+import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
+import LearnLayout from '../../../components/layouts/learn';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import ChallengeDescription from '../components/challenge-description';
+import Hotkeys from '../components/hotkeys';
+import ChallengeTitle from '../components/challenge-title';
+import CompletionModal from '../components/completion-modal';
+import { getChallengePaths } from '../utils/challenge-paths';
+import {
+  challengeMounted,
+  updateChallengeMeta,
+  openModal,
+  closeModal,
+  updateSolutionFormValues,
+  initTests
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
+import PrismFormatted from '../components/prism-formatted';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
+import { usePageLeave } from '../hooks';
+import { sounds } from '../components/scene/scene-assets';
+import ExitQuizModal from './exit-quiz-modal';
+import FinishQuizModal from './finish-quiz-modal';
+import MobileAppModal from '../components/mobile-app-modal';
+
+import './show.css';
+
+// Redux Setup
+const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
+  (isChallengeCompleted: boolean) => ({
+    isChallengeCompleted
+  })
+);
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      initTests,
+      updateChallengeMeta,
+      challengeMounted,
+      updateSolutionFormValues,
+      openCompletionModal: () => openModal('completion'),
+      openExitQuizModal: () => openModal('exitQuiz'),
+      closeExitQuizModal: () => closeModal('exitQuiz'),
+      openFinishQuizModal: () => openModal('finishQuiz'),
+      closeFinishQuizModal: () => closeModal('finishQuiz')
+    },
+    dispatch
+  );
+
+// Types
+interface ShowQuizProps {
+  challengeMounted: (arg0: string) => void;
+  data: { challengeNode: ChallengeNode };
+  description: string;
+  initTests: (xs: Test[]) => void;
+  isChallengeCompleted: boolean;
+  pageContext: {
+    challengeMeta: ChallengeMeta;
+  };
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
+  updateSolutionFormValues: () => void;
+  openCompletionModal: () => void;
+  openExitQuizModal: () => void;
+  closeExitQuizModal: () => void;
+  openFinishQuizModal: () => void;
+  closeFinishQuizModal: () => void;
+}
+
+const removeParagraphTags = (text: string) => text.replace(/^<p>|<\/p>$/g, '');
+
+const ShowQuiz = ({
+  challengeMounted,
+  data: {
+    challengeNode: {
+      challenge: {
+        fields: { blockHashSlug },
+        title,
+        description,
+        challengeType,
+        helpCategory,
+        id,
+        superBlock,
+        block,
+        tests,
+        translationPending,
+        quizzes
+      }
+    }
+  },
+  pageContext: { challengeMeta },
+  initTests,
+  updateChallengeMeta,
+  isChallengeCompleted,
+  openCompletionModal,
+  openExitQuizModal,
+  closeExitQuizModal,
+  openFinishQuizModal,
+  closeFinishQuizModal
+}: ShowQuizProps) => {
+  const { t } = useTranslation();
+  const container = useRef<HTMLElement | null>(null);
+
+  // Campers are not allowed to change their answers once the quiz is submitted.
+  // `hasSubmitted` is used as a flag to disable the quiz.
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
+  // `isPassed` is used as a flag to conditionally render the test or submit button.
+  const [isPassed, setIsPassed] = useState(false);
+
+  const [showUnanswered, setShowUnanswered] = useState(false);
+
+  const exitConfirmed = useRef(false);
+
+  const [exitPathname, setExitPathname] = useState(blockHashSlug);
+
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
+
+  const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
+  const quiz = quizzes[quizId].questions;
+
+  const contentLangProps = getChallengeContentLangProps(superBlock);
+
+  // Initialize the data passed to `useQuiz`
+  const [initialQuizData] = useState(
+    quiz.map(question => {
+      const distractors = question.distractors.map((distractor, index) => {
+        return {
+          label: (
+            <PrismFormatted
+              className='quiz-answer-label'
+              text={removeParagraphTags(distractor)}
+              useSpan
+              noAria
+              {...contentLangProps}
+            />
+          ),
+          value: index + 1
+        };
+      });
+
+      const answer = {
+        label: (
+          <PrismFormatted
+            className='quiz-answer-label'
+            text={removeParagraphTags(question.answer)}
+            useSpan
+            noAria
+            {...contentLangProps}
+          />
+        ),
+        value: 4
+      };
+
+      const allAnswers = shuffleArray([...distractors, answer]);
+
+      const audioData = question.audioData?.audio?.filename
+        ? {
+            audioUrl: `${sounds}/${question.audioData.audio.filename}`,
+            audioStartTime:
+              question.audioData.audio.startTimestamp ?? undefined,
+            audioFinishTime:
+              question.audioData.audio.finishTimestamp ?? undefined,
+            transcript: question.audioData.transcript.length
+              ? question.audioData.transcript
+                  .map(line => `<p><b>${line.character}</b>: ${line.text}</p>`)
+                  .join('')
+              : undefined
+          }
+        : {};
+
+      const questionData = {
+        question: (
+          <PrismFormatted
+            className='quiz-question-label'
+            text={question.text}
+            {...contentLangProps}
+          />
+        ),
+        answers: allAnswers,
+        correctAnswer: answer.value,
+        ...audioData
+      };
+
+      return questionData;
+    })
+  );
+
+  const {
+    questions: quizData,
+    validateAnswers,
+    validated,
+    correctAnswerCount
+  } = useQuiz({
+    initialQuestions: initialQuizData,
+    showCorrectAnswersOnSuccess: true,
+    validationMessages: {
+      correct: t('learn.quiz.correct-answer'),
+      incorrect: t('learn.quiz.incorrect-answer')
+    },
+    passingPercent: 90,
+    onSuccess: () => {
+      openCompletionModal();
+      setIsPassed(true);
+    },
+    onFailure: () => setIsPassed(false)
+  });
+
+  const unanswered = quizData.reduce<number[]>(
+    (acc, curr, id) => (curr.selectedAnswer == null ? [...acc, id + 1] : acc),
+    []
+  );
+
+  useEffect(() => {
+    initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory,
+      description,
+      ...challengePaths
+    });
+    challengeMounted(challengeMeta.id);
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleFinishQuiz = () => {
+    setShowUnanswered(true);
+
+    if (unanswered.length === 0) {
+      openFinishQuizModal();
+    }
+  };
+
+  const handleFinishQuizModalBtnClick = () => {
+    validateAnswers();
+    setHasSubmitted(true);
+    closeFinishQuizModal();
+  };
+
+  const handleSubmitAndGo = () => {
+    openCompletionModal();
+  };
+
+  const handleExitQuiz = () => {
+    openExitQuizModal();
+  };
+
+  const handleExitQuizModalBtnClick = () => {
+    exitConfirmed.current = true;
+    void navigate(exitPathname || '/learn', { replace: true });
+    closeExitQuizModal();
+  };
+
+  const onWindowClose = useCallback(
+    (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      window.confirm(t('misc.navigation-warning'));
+    },
+    [t]
+  );
+
+  const onHistoryChange = useCallback(
+    (targetPathname: string): boolean => {
+      // We don't block navigation in the following cases.
+      // - When campers have submitted the quiz:
+      //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
+      //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
+      // - When they have clicked the exit button on the exit modal
+      if (hasSubmitted || exitConfirmed.current) {
+        return false;
+      }
+
+      // For link clicks, save the target pathname. For back button
+      // (empty targetPathname), keep the default (i.e. blockHashSlug).
+      if (targetPathname) {
+        setExitPathname(targetPathname);
+      }
+
+      openExitQuizModal();
+      return true;
+    },
+    [hasSubmitted, openExitQuizModal]
+  );
+
+  usePageLeave({
+    onWindowClose,
+    onHistoryChange
+  });
+
+  function getErrorMessage() {
+    if (showUnanswered && unanswered.length > 0) {
+      return t('learn.quiz.unanswered-questions', {
+        unansweredQuestions: unanswered.join(', ')
+      });
+    }
+
+    if (validated) {
+      // TODO: Update the message to include link(s) to the review materials
+      // if campers didn't pass the quiz.
+      return t('learn.quiz.have-n-correct-questions', {
+        correctAnswerCount,
+        total: quiz.length
+      });
+    }
+
+    return '';
+  }
+
+  const errorMessage = getErrorMessage();
+
+  return (
+    <Hotkeys
+      executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
+      containerRef={container}
+    >
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container className='quiz-challenge-container'>
+          <Row>
+            <Spacer size='m' />
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
+
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeDescription
+                description={description}
+                superBlock={superBlock}
+                block={block}
+                challengeId={id}
+              />
+              <Spacer size='l' />
+              <ObserveKeys>
+                <Quiz questions={quizData} disabled={hasSubmitted} />
+              </ObserveKeys>
+              <Spacer size='m' />
+              <div aria-live='polite' aria-atomic='true'>
+                {errorMessage}
+              </div>
+              <Spacer size='m' />
+              {!isPassed ? (
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleFinishQuiz}
+                  disabled={hasSubmitted}
+                >
+                  {t('buttons.finish-quiz')}
+                </Button>
+              ) : (
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleSubmitAndGo}
+                >
+                  {t('buttons.submit-and-go')}
+                </Button>
+              )}
+              <Spacer size='xxs' />
+              <Button block={true} variant='primary' onClick={handleExitQuiz}>
+                {t('buttons.exit-quiz')}
+              </Button>
+              <Spacer size='l' />
+            </Col>
+          </Row>
+        </Container>
+        <CompletionModal />
+        <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
+        <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
+        <MobileAppModal superBlock={superBlock} />
+      </LearnLayout>
+    </Hotkeys>
+  );
+};
+
+ShowQuiz.displayName = 'ShowQuiz';
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShowQuiz);
+
+export const query = graphql`
+  query QuizChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
+      challenge {
+        title
+        description
+        challengeType
+        helpCategory
+        superBlock
+        block
+        fields {
+          blockHashSlug
+          slug
+        }
+        quizzes {
+          questions {
+            distractors
+            text
+            answer
+            audioData {
+              audio {
+                filename
+                startTimestamp
+                finishTimestamp
+              }
+              transcript {
+                character
+                text
+              }
+            }
+          }
+        }
+        tests {
+          text
+          testString
+        }
+        translationPending
+      }
+    }
+  }
+`;

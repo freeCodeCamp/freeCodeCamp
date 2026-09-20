@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    "lecture-searching-and-sorting-algorithms",
+    "workshop-binary-search",
+    "lab-bisection-method",
+    "workshop-merge-sort",
+    "lab-quicksort",
+    "lab-selection-sort",
+    "lab-luhn-algorithm",
+    "lab-tower-of-hanoi",
+    "review-searching-and-sorting-algorithms",
+    "quiz-searching-and-sorting-algorithms"
+  ]
+}

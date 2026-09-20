@@ -1,0 +1,1371 @@
+import * as ReactDOMServer from 'react-dom/server';
+import Loadable from '@loadable/component';
+
+// eslint-disable-next-line import/no-duplicates
+import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api.js';
+import type {
+  IRange,
+  editor
+  // eslint-disable-next-line import/no-duplicates
+} from 'monaco-editor/esm/vs/editor/editor.api.js';
+import type {
+  json as monacoJsonApi,
+  typescript as monacoTypescriptApi
+} from 'monaco-editor/esm/vs/editor/editor.main.js';
+import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
+import Prism from 'prismjs';
+import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import store from 'store';
+
+import { useTranslation } from 'react-i18next';
+import { Loader } from '../../../components/helpers';
+import { LocalStorageThemes } from '../../../redux/types';
+import { saveChallenge } from '../../../redux/actions';
+import {
+  isDonationModalOpenSelector,
+  isSignedInSelector,
+  themeSelector
+} from '../../../redux/selectors';
+import type {
+  ChallengeFiles,
+  Dimensions,
+  ResizeProps,
+  Test
+} from '../../../redux/prop-types';
+import { editorToneOptions } from '../../../utils/tone/editor-config';
+import { editorNotes } from '../../../utils/tone/editor-notes';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  executeChallenge,
+  saveEditorContent,
+  setEditorFocusability,
+  updateFile,
+  initTests,
+  stopResetting,
+  resetAttempts
+} from '../redux/actions';
+import {
+  canFocusEditorSelector,
+  challengeMetaSelector,
+  challengeTestsSelector,
+  isResettingSelector,
+  isProjectPreviewModalOpenSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
+import GreenPass from '../../../assets/icons/green-pass';
+import {
+  enhancePrismAccessibility,
+  makePrismCollapsible,
+  setScrollbarArrowStyles
+} from '../utils/index';
+import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
+import { getScrollbarWidth } from '../../../utils/scrollbar-width';
+import { isProjectBased } from '../../../utils/curriculum-layout';
+import { attachContentWidgetEvents } from './content-widget-events';
+// Direct from npm, license in react-types-licence
+import reactTypes from './react-types.json';
+
+import './editor.css';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
+
+let monacoJson: typeof monacoJsonApi | null = null;
+let monacoTypescript: typeof monacoTypescriptApi | null = null;
+
+// Monaco 0.55 exposes JSON and TypeScript defaults from their contribution
+// modules, so load those modules before react-monaco-editor mounts.
+const loadMonacoJson = async (): Promise<typeof monacoJsonApi> =>
+  (await import('monaco-editor/esm/vs/language/json/monaco.contribution.js')) as unknown as typeof monacoJsonApi;
+
+const loadMonacoTypescript = async (): Promise<typeof monacoTypescriptApi> =>
+  (await import('monaco-editor/esm/vs/language/typescript/monaco.contribution.js')) as unknown as typeof monacoTypescriptApi;
+
+const MonacoEditor = Loadable(async () => {
+  const [jsonContribution, typescriptContribution, editorModule] =
+    await Promise.all([
+      loadMonacoJson(),
+      loadMonacoTypescript(),
+      import('react-monaco-editor')
+    ]);
+
+  monacoJson = jsonContribution;
+  monacoTypescript = typescriptContribution;
+
+  return editorModule;
+});
+
+const monacoModelFileMap = {
+  tsxFile: 'index.tsx',
+  reactTypes: 'react.d.ts'
+};
+
+export interface EditorProps {
+  canFocus: boolean;
+  challengeFiles: ChallengeFiles;
+  challengeType: number;
+  containerRef?: React.RefObject<HTMLElement>;
+  block: string;
+  superBlock: string;
+  description: string;
+  dimensions?: Dimensions;
+  editorRef: MutableRefObject<editor.IStandaloneCodeEditor | undefined>;
+  executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  fileKey: string;
+  canFocusOnMountRef: MutableRefObject<boolean>;
+  initTests: (tests: Test[]) => void;
+  initialTests: Test[];
+  isMobileLayout: boolean;
+  isResetting: boolean;
+  isSignedIn: boolean;
+  isUsingKeyboardInTablist: boolean;
+  resizeProps: ResizeProps;
+  saveChallenge: () => void;
+  saveEditorContent: () => void;
+  saveSubmissionToDB?: boolean;
+  setEditorFocusability: (isFocusable: boolean) => void;
+  stopResetting: () => void;
+  resetAttempts: () => void;
+  tests: Test[];
+  theme: LocalStorageThemes;
+  title: string;
+  showProjectPreview: boolean;
+  previewOpen: boolean;
+  updateFile: (object: {
+    fileKey: string;
+    contents: string;
+    editableRegionBoundaries?: number[];
+  }) => void;
+  usesMultifileEditor?: boolean;
+  isChallengeCompleted: boolean;
+}
+
+interface MonacoInstances {
+  editor?: editor.IStandaloneCodeEditor;
+  model?: editor.ITextModel;
+}
+
+interface DescriptionZoneState {
+  zoneId: string;
+  top: number;
+  node?: HTMLDivElement;
+  widget?: editor.IContentWidget;
+}
+
+interface EditableRegionState {
+  decorationId: string;
+}
+
+interface EditorState {
+  monaco: MonacoInstances;
+  descriptionZone: DescriptionZoneState;
+  editableRegion: EditableRegionState;
+}
+
+const mapStateToProps = createSelector(
+  canFocusEditorSelector,
+  challengeMetaSelector,
+  isDonationModalOpenSelector,
+  isProjectPreviewModalOpenSelector,
+  isResettingSelector,
+  isSignedInSelector,
+  challengeTestsSelector,
+  isChallengeCompletedSelector,
+  themeSelector,
+  (
+    canFocus: boolean,
+    {
+      challengeType,
+      saveSubmissionToDB
+    }: { challengeType: number; saveSubmissionToDB?: boolean },
+    open,
+    previewOpen: boolean,
+    isResetting: boolean,
+    isSignedIn: boolean,
+    tests: [{ text: string; testString: string; message?: string }],
+    isChallengeCompleted: boolean,
+    theme: LocalStorageThemes
+  ) => ({
+    canFocus: open ? false : canFocus,
+    challengeType,
+    saveSubmissionToDB,
+    previewOpen,
+    isResetting,
+    isSignedIn,
+    tests,
+    isChallengeCompleted,
+    theme
+  })
+);
+
+// type ActionDispatchGeneric<P, T> = (payload: P) => ({type: T, payload: P});
+
+const mapDispatchToProps = {
+  executeChallenge,
+  saveChallenge,
+  saveEditorContent,
+  setEditorFocusability,
+  updateFile,
+  initTests,
+  stopResetting,
+  resetAttempts
+};
+
+const setupTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  monaco.editor.createModel(reactTypes['react-18'], 'typescript', reactFile);
+
+  const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+  return monaco.editor.createModel('', 'typescript', file);
+};
+
+const teardownTSModels = (monaco: typeof monacoEditor) => {
+  const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+  const tsxFile = monaco.Uri.file(monacoModelFileMap.tsxFile);
+
+  const reactModel = monaco.editor.getModel(reactFile);
+  const tsxModel = monaco.editor.getModel(tsxFile);
+
+  reactModel?.dispose();
+  tsxModel?.dispose();
+};
+
+const modeMap = {
+  css: 'css',
+  html: 'html',
+  js: 'javascript',
+  jsx: 'javascript',
+  ts: 'typescript',
+  tsx: 'typescript',
+  py: 'python',
+  python: 'python',
+  json: 'json'
+};
+
+let monacoThemesDefined = false;
+const defineMonacoThemes = (
+  monaco: typeof monacoEditor,
+  options: { usesMultifileEditor: boolean }
+) => {
+  if (monacoThemesDefined) {
+    return;
+  }
+  monacoThemesDefined = true;
+  const yellowColor = 'FFFF00';
+  const lightBlueColor = '9CDCFE';
+  const darkBlueColor = '00107E';
+  monaco.editor.defineTheme('vs-dark-custom', {
+    base: 'vs-dark',
+    inherit: true,
+    colors: {
+      'editor.background': '#2a2a40',
+      'editor.lineHighlightBorder': '#0e4470'
+    },
+    rules: [
+      { token: 'delimiter.js', foreground: lightBlueColor },
+      { token: 'delimiter.parenthesis.js', foreground: yellowColor },
+      { token: 'delimiter.array.js', foreground: yellowColor },
+      { token: 'delimiter.bracket.js', foreground: yellowColor }
+    ]
+  });
+  monaco.editor.defineTheme('vs-custom', {
+    base: 'vs',
+    inherit: true,
+    // TODO: Use actual color from style-guide
+    colors: {
+      'editor.background': options.usesMultifileEditor ? '#eeeeee' : '#ffffff',
+      'editor.lineHighlightBorder': '#cee8fc'
+    },
+    rules: [{ token: 'identifier.js', foreground: darkBlueColor }]
+  });
+};
+
+const createInitialEditorState = (): EditorState => ({
+  monaco: {},
+  descriptionZone: {
+    zoneId: '',
+    top: 0
+  },
+  editableRegion: {
+    decorationId: ''
+  }
+});
+
+const Editor = (props: EditorProps): JSX.Element => {
+  const { t } = useTranslation();
+  const {
+    editorRef,
+    initTests,
+    resetAttempts,
+    isMobileLayout,
+    challengeFiles,
+    fileKey
+  } = props;
+  // These refs are used during initialisation of the editor as well as by
+  // callbacks.  Since they have to be initialised before editorWillMount and
+  // editorDidMount are called, we cannot use useState.  Reason being that will
+  // only take effect during the next render, which is too late. We could use
+  // plain objects here, but useRef is shared between instances, so avoids
+  // unnecessary object creation.
+  // Each Editor instance (e.g. per file in MultifileEditor) must get its own
+  // nested state; a shallow copy would share refs across instances and cause
+  // "element was detached" and wrong-editor behavior.
+  const monacoRef: MutableRefObject<typeof monacoEditor | null> =
+    useRef<typeof monacoEditor>(null);
+  const dataRef = useRef<EditorState>(createInitialEditorState());
+
+  const submitChallenge = useSubmit();
+
+  const detachUpperJawEventsRef = useRef<(() => void) | null>(null);
+  const player = useRef<{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    sampler: any;
+    noteIndex: number;
+    shouldPlay: boolean | undefined;
+  }>({
+    sampler: undefined,
+    noteIndex: 0,
+    shouldPlay: store.get('fcc-sound') as boolean | undefined
+  });
+
+  // since editorDidMount runs once with the initial props object, it keeps a
+  // reference to *those* props. If we want it to use the latest props, we can
+  // use a ref, since it will be updated on every render.
+  const testRef = useRef<Test[]>([]);
+  testRef.current = props.tests;
+
+  useEffect(() => {
+    return () => {
+      detachUpperJawEventsRef.current?.();
+      detachUpperJawEventsRef.current = null;
+    };
+  }, []);
+
+  const challengeFile = challengeFiles?.find(
+    challengeFile => challengeFile.fileKey === fileKey
+  );
+
+  const ariaEditorName = `${challengeFile?.name}.${challengeFile?.ext}`;
+
+  const options: editor.IStandaloneEditorConstructionOptions = {
+    fontSize: 18,
+    fontFamily: 'Hack-ZeroSlash, monospace',
+    scrollBeyondLastLine: true,
+    selectionHighlight: false,
+    overviewRulerBorder: false,
+    hideCursorInOverviewRuler: true,
+    editContext: false,
+    guides: {
+      highlightActiveIndentation:
+        props.challengeType === challengeTypes.python ||
+        props.challengeType === challengeTypes.multifilePythonCertProject ||
+        props.challengeType === challengeTypes.pyLab ||
+        props.challengeType === challengeTypes.dailyChallengePy
+    },
+    minimap: {
+      enabled: false
+    },
+    selectOnLineNumbers: true,
+    wordWrap: 'on',
+    scrollbar: {
+      horizontal: 'hidden',
+      vertical: 'visible',
+      verticalHasArrows: true,
+      useShadows: false,
+      verticalScrollbarSize: getScrollbarWidth(),
+      // this helps the scroll bar fit properly between the arrows,
+      // but doesn't do anything for the arrows themselves
+      arrowSize: getScrollbarWidth(),
+      alwaysConsumeMouseWheel: false
+    },
+    parameterHints: {
+      enabled: false
+    },
+    tabSize:
+      props.challengeType !== challengeTypes.python &&
+      props.challengeType !== challengeTypes.multifilePythonCertProject &&
+      props.challengeType !== challengeTypes.pyLab &&
+      props.challengeType !== challengeTypes.dailyChallengePy
+        ? 2
+        : 4,
+    dragAndDrop: true,
+    lightbulb: {
+      enabled: 'off' as editor.ShowLightbulbIconMode
+    },
+    hover: {
+      enabled: false
+    },
+    quickSuggestions: false,
+    suggestOnTriggerCharacters: false,
+    lineNumbersMinChars: 2
+  };
+
+  const getEditableRegionFromRedux = () => {
+    const { challengeFiles, fileKey } = props;
+    const edRegBounds = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
+    )?.editableRegionBoundaries;
+    return edRegBounds ? [...edRegBounds] : [];
+  };
+
+  const editorWillMount = (monaco: typeof monacoEditor) => {
+    const { usesMultifileEditor = false } = props;
+
+    monacoRef.current = monaco;
+    monacoTypescript?.typescriptDefaults.setCompilerOptions({
+      ...monacoTypescript.typescriptDefaults.getCompilerOptions(),
+      jsx: monacoTypescript.JsxEmit.Preserve,
+      allowUmdGlobalAccess: true
+    });
+
+    // support JSONC:
+    monacoJson?.jsonDefaults.setDiagnosticsOptions({
+      allowComments: true
+    });
+
+    defineMonacoThemes(monaco, { usesMultifileEditor });
+    // If a model is not provided, then the editor 'owns' the model it creates
+    // and will dispose of that model if it is replaced. Since we intend to
+    // swap and reuse models, we have to create our own models to prevent
+    // disposal.
+
+    function createModel(contents: string, language: string) {
+      if (language !== 'typescript') {
+        return monaco.editor.createModel(contents, language);
+      } else {
+        const model = setupTSModels(monaco);
+        model.setValue(contents);
+        return model;
+      }
+    }
+
+    const model =
+      dataRef.current.monaco.model ||
+      createModel(
+        challengeFile?.contents ?? '',
+        modeMap[challengeFile?.ext ?? 'html']
+      );
+    dataRef.current.monaco.model = model;
+
+    if (player.current.shouldPlay && !player.current.sampler) {
+      void import('tone').then(tone => {
+        const newSound = new tone.Sampler(editorToneOptions).toDestination();
+        player.current.sampler = newSound;
+
+        const storedVolume = (store.get('soundVolume') as number) ?? 50;
+        const calculateDecibel = -60 * (1 - storedVolume / 100);
+
+        newSound.volume.value = calculateDecibel;
+      });
+    }
+
+    // TODO: do we need to return this?
+    return { model };
+  };
+
+  // Updates the model if the contents has changed. This is only necessary for
+  // changes coming from outside the editor (such as code resets).
+  const resetEditorValues = () => {
+    const { challengeFiles, fileKey } = props;
+    const { model } = dataRef.current.monaco;
+
+    const initialContents = challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === fileKey
+    )?.contents;
+    if (model?.getValue() !== initialContents) {
+      model?.setValue(initialContents ?? '');
+    }
+  };
+
+  const isTabTrapped = () => !!(store.get('monacoTabTrapped') ?? true);
+
+  // Monaco uses the contextKey 'editorTabMovesFocus' to control how it
+  // reacts to the Tab key. Setting it to true allows the user to tab
+  // out of the editor. False keeps it inside the editor and creates a tab.
+  const setMonacoTabTrapped = (trapped: boolean) =>
+    dataRef.current.monaco.editor?.createContextKey(
+      'editorTabMovesFocus',
+      !trapped
+    );
+
+  const editorDidMount = (
+    editor: editor.IStandaloneCodeEditor,
+    monaco: typeof monacoEditor
+  ) => {
+    const { isMobileLayout, isUsingKeyboardInTablist } = props;
+    // TODO this should *probably* be set on focus
+    editorRef.current = editor;
+    dataRef.current.monaco.editor = editor;
+
+    if (hasEditableRegion()) {
+      initializeRegions();
+      if (isMobileLayout) {
+        addWidgetsToRegions();
+      }
+      addContentChangeListener();
+      resetAttempts();
+      showEditableRegion(editor);
+      if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
+        initializeMathJax();
+      }
+    }
+
+    const storedAccessibilityMode = () => {
+      const accessibility = store.get('accessibilityMode') as boolean;
+
+      const isMacOS = navigator.userAgent.includes('Mac OS');
+      const a11yOffText = isMacOS
+        ? t('aria.editor-a11y-off-macos', { editorName: ariaEditorName })
+        : t('aria.editor-a11y-off-non-macos', { editorName: ariaEditorName });
+      const a11yOnText = isMacOS
+        ? t('aria.editor-a11y-on-macos', { editorName: ariaEditorName })
+        : t('aria.editor-a11y-on-non-macos', { editorName: ariaEditorName });
+
+      if (!accessibility) {
+        store.set('accessibilityMode', false);
+
+        editor.updateOptions({
+          ariaLabel: a11yOffText
+        });
+      }
+
+      if (accessibility) {
+        editor.updateOptions({
+          ariaLabel: a11yOnText
+        });
+      }
+
+      return accessibility;
+    };
+
+    const setTabTrapped = (
+      trapped: boolean,
+      opts: { announce: boolean } = { announce: true }
+    ) => {
+      setMonacoTabTrapped(trapped);
+      store.set('monacoTabTrapped', trapped);
+      if (opts.announce) {
+        ariaAlert(
+          `${
+            trapped
+              ? t('learn.editor-alerts.tab-trapped')
+              : t('learn.editor-alerts.tab-free')
+          }`
+        );
+      }
+    };
+
+    // By default, Tab will be trapped in the monaco editor, so we only need to
+    // check if the user has turned this off.
+    if (!isTabTrapped()) {
+      setTabTrapped(false, { announce: false });
+    }
+
+    const accessibilityMode = storedAccessibilityMode();
+    editor.updateOptions({
+      accessibilitySupport: accessibilityMode ? 'on' : 'auto'
+    });
+
+    document.fonts.ready
+      .then(() => monaco.editor.remeasureFonts())
+      .catch(err => console.error(err));
+
+    // Focus should not automatically leave the 'Code' tab when using a keyboard
+    // to navigate the tablist.
+    if (!isMobileLayout || !isUsingKeyboardInTablist) {
+      // Users who are using screen readers should not have to move focus from
+      // the editor to the description every time they open a challenge.
+      if (props.canFocus && !accessibilityMode) {
+        focusIfTargetEditor();
+      } else focusOnHotkeys();
+    }
+    // Removes keybind for intellisense
+    // Private method - hopefully changes with future version
+    // ref: https://github.com/microsoft/monaco-editor/issues/102
+    /* eslint-disable */
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-editor.action.triggerSuggest',
+      0,
+      () => {}
+    );
+    const newLine = editor.getAction('editor.action.insertLineAfter');
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-editor.action.insertLineAfter',
+      0,
+      () => {}
+    );
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      'editor.action.insertLineAfter',
+      monaco.KeyMod.Alt | monaco.KeyCode.Enter,
+      () => {
+        void newLine?.run();
+      }
+    );
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      '-actions.find',
+      0,
+      () => {}
+    );
+    // Make toggle tab setting in editor permanent
+    const tabFocusHotkeys =
+      OS === 2 /* Macintosh/iOS */
+        ? monaco.KeyMod.WinCtrl | monaco.KeyMod.Shift | monaco.KeyCode.KeyM
+        : monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyM;
+    // @ts-ignore
+    editor._standaloneKeybindingService.addDynamicKeybinding(
+      'editor.action.toggleTabFocusMode',
+      tabFocusHotkeys,
+      () => {
+        setTabTrapped(!isTabTrapped());
+      }
+    );
+    /* eslint-enable */
+    editor.addAction({
+      id: 'execute-challenge',
+      label: 'Run tests',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
+      ],
+      run: () => {
+        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
+          if (challengeIsComplete()) {
+            tryToSubmitChallenge();
+          } else {
+            tryToExecuteChallenge();
+          }
+        } else {
+          props.executeChallenge({ showCompletionModal: false });
+        }
+      }
+    });
+    editor.addAction({
+      id: 'leave-editor',
+      label: 'Leave editor',
+      keybindings: [monaco.KeyCode.Escape],
+      run: () => {
+        focusOnHotkeys();
+        props.setEditorFocusability(false);
+      }
+    });
+    editor.addAction({
+      id: 'save-editor-content',
+      label: 'Save editor content',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
+      ],
+      run: () =>
+        props.saveSubmissionToDB && props.isSignedIn
+          ? // save to database
+            props.saveChallenge()
+          : // save to local storage
+            props.saveEditorContent()
+    });
+    editor.addAction({
+      id: 'toggle-accessibility',
+      label: 'Toggle Accessibility Mode',
+      keybindings: [
+        monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyE,
+        monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyE
+      ],
+      run: () => {
+        const currentAccessibility = storedAccessibilityMode();
+
+        store.set('accessibilityMode', !currentAccessibility);
+
+        editor.updateOptions({
+          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto'
+        });
+      }
+    });
+    // Introduced as a work around for a bug in JAWS 2022
+    // https://github.com/FreedomScientific/VFO-standards-support/issues/598
+    editor.addAction({
+      id: 'toggle-aria-roledescription',
+      label: 'Toggle aria-roledescription',
+      keybindings: [
+        monaco.KeyMod.Shift | monaco.KeyMod.Alt | monaco.KeyCode.KeyR
+      ],
+      run: toggleAriaRoledescription
+    });
+    editor.addAction({
+      id: 'select-all-and-copy',
+      label: 'Select All and Copy',
+      contextMenuGroupId: '9_cutcopypaste',
+      contextMenuOrder: 3,
+      run: () => {
+        const fullSelection = editor.getModel()?.getFullModelRange();
+        if (fullSelection) {
+          editor.setSelection(fullSelection);
+          const data = editor.getModel()?.getValueInRange(fullSelection);
+          if (data) {
+            navigator.clipboard
+              .writeText(data)
+              .catch(err => console.error(err));
+          }
+        }
+      }
+    });
+    editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
+
+    // aria-roledescription is on (true) by default, check if it needs
+    // to be removed.
+    if (!getStoredAriaRoledescription()) {
+      setAriaRoledescription(false);
+    }
+
+    // Add invisible content widget over line numbers so touch users will
+    // always have a place to vertically scroll the editor.
+    const scrollGutterNode = createScrollGutterNode(editor);
+    const scrollGutterWidget = createWidget(
+      editor,
+      'scrollgutter.widget',
+      scrollGutterNode
+    );
+    editor.addContentWidget(scrollGutterWidget);
+
+    // update scrollbar arrows
+    setScrollbarArrowStyles(getScrollbarWidth());
+  };
+
+  const toggleAriaRoledescription = () => {
+    const newRoledescription = !getStoredAriaRoledescription();
+    setAriaRoledescription(newRoledescription);
+    ariaAlert(
+      `aria-roledescription has been turned ${
+        newRoledescription ? 'on' : 'off'
+      }`
+    );
+  };
+
+  const setAriaRoledescription = (value: boolean) => {
+    const textareas = document.querySelectorAll('.monaco-editor textarea');
+    textareas.forEach(textarea => {
+      if (value) {
+        textarea.setAttribute('aria-roledescription', 'editor');
+      } else {
+        textarea.removeAttribute('aria-roledescription');
+      }
+    });
+    store.set('ariaRoledescription', value);
+  };
+
+  const getStoredAriaRoledescription = () =>
+    !!(store.get('ariaRoledescription') ?? true);
+
+  // Borrowed from
+  // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
+  // Uses the aria live region provided by monaco.
+  const ariaAlert = (message: string) => {
+    const ariaLive: NodeListOf<HTMLDivElement> =
+      document.querySelectorAll('.monaco-alert');
+    if (ariaLive.length > 0) {
+      const liveText = ariaLive[0];
+      liveText.textContent = message;
+      // Hack used by monaco to force older browsers to announce the update to
+      // the live region.
+      // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
+      liveText.style.visibility = 'hidden';
+      liveText.style.visibility = 'visible';
+      // Need to remove message after a few seconds so screen readers don't
+      // run into it.
+      // First, track the latest message so it is shown for the full duration.
+      const time = `t${Date.now()}`;
+      liveText.dataset.timestamp = time;
+      setTimeout(function () {
+        // Now, only the latest message will have this timestamp.
+        if (liveText.dataset.timestamp === time) {
+          liveText.textContent = '';
+        }
+      }, 3000);
+    }
+  };
+
+  const descriptionZoneCallback = (
+    changeAccessor: editor.IViewZoneChangeAccessor
+  ) => {
+    const editor = dataRef.current.monaco.editor;
+    if (!editor) return;
+    const domNode = createDescription(editor);
+
+    // make sure the content widget has resized before using it to set the height
+
+    domNode.style.width = `${getEditorContentWidth(editor)}px`;
+    domNode.style.display = 'block';
+    domNode.style.visibility = 'visible';
+
+    // We have to wait for the viewZone to finish rendering before adjusting the
+    // position of the content widget (i.e. trigger it via onDomNodeTop). If
+    // not the editor may report the wrong value for position of the lines.
+    const viewZone = {
+      afterLineNumber: getLineBeforeEditableRegion(),
+      heightInPx: domNode.offsetHeight,
+      domNode: document.createElement('div'),
+      // This is called when the editor dimensions change and AFTER the
+      // text in the editor has shifted.
+      onDomNodeTop: () => {
+        dataRef.current.descriptionZone.top =
+          editor.getTopForLineNumber(getLineBeforeEditableRegion() + 1) -
+          domNode.offsetHeight;
+        if (dataRef.current.descriptionZone.widget)
+          editor.layoutContentWidget(dataRef.current.descriptionZone.widget);
+      }
+    };
+
+    dataRef.current.descriptionZone.zoneId = changeAccessor.addZone(viewZone);
+  };
+
+  function tryToExecuteChallenge() {
+    props.executeChallenge();
+  }
+
+  const tryToSubmitChallenge = submitChallenge;
+
+  function createDescription(editor: editor.IStandaloneCodeEditor) {
+    if (dataRef.current.descriptionZone.node)
+      return dataRef.current.descriptionZone.node;
+    const { description, title, isChallengeCompleted } = props;
+    const jawHeading = isChallengeCompleted
+      ? document.createElement('div')
+      : document.createElement('h1');
+    jawHeading.setAttribute('id', 'content-start');
+    if (isChallengeCompleted) {
+      jawHeading.classList.add('challenge-description-header');
+      const challengeTitle = document.createElement('h1');
+      challengeTitle.innerHTML = `${title} <span class='sr-only'>${t(
+        'icons.passed'
+      )}</span>`;
+      jawHeading.appendChild(challengeTitle);
+      const checkmark = ReactDOMServer.renderToStaticMarkup(
+        <GreenPass hushScreenReaderText />
+      );
+      const completedChallengeHeader = document.createElement('div');
+      completedChallengeHeader.innerHTML = checkmark;
+      jawHeading.appendChild(completedChallengeHeader);
+    } else {
+      jawHeading.innerText = title;
+    }
+    const domNode = document.createElement('div');
+    const desc = document.createElement('div');
+    const descContainer = document.createElement('div');
+    descContainer.classList.add('description-container');
+    if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
+      descContainer.classList.add('mathjax-support');
+    }
+    domNode.classList.add('editor-upper-jaw');
+    detachUpperJawEventsRef.current?.();
+    detachUpperJawEventsRef.current = attachContentWidgetEvents(domNode);
+    domNode.appendChild(descContainer);
+    if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
+    descContainer.appendChild(jawHeading);
+    descContainer.appendChild(desc);
+    desc.innerHTML = description;
+    Prism.hooks.add('complete', enhancePrismAccessibility);
+
+    // To reduce confusion on the first workshop. Will need to find a better solution.
+    if (props.block !== 'workshop-curriculum-outline') {
+      Prism.hooks.add('complete', makePrismCollapsible);
+    }
+    Prism.highlightAllUnder(desc);
+
+    // Since the description can be resized without React knowing about it, the
+    // zone needs updating in response.
+    const obs = new ResizeObserver(() => updateDescriptionZone());
+    obs.observe(domNode);
+
+    domNode.style.userSelect = 'text';
+    domNode.style.webkitUserSelect = 'text';
+
+    domNode.style.left = `${editor.getLayoutInfo().contentLeft}px`;
+    domNode.style.width = `${getEditorContentWidth(editor)}px`;
+
+    domNode.style.top = getDescriptionZoneTop();
+    dataRef.current.descriptionZone.node = domNode;
+    return domNode;
+  }
+
+  // Take the current scrollbar width into account
+  function getEditorContentWidth(editor: editor.IStandaloneCodeEditor) {
+    return editor.getLayoutInfo().contentWidth - getScrollbarWidth();
+  }
+
+  function createScrollGutterNode(
+    editor: editor.IStandaloneCodeEditor
+  ): HTMLDivElement {
+    const scrollGutterNode = document.createElement('div');
+    const lineGutterWidth = editor.getLayoutInfo().contentLeft;
+    scrollGutterNode.style.width = `${lineGutterWidth}px`;
+    scrollGutterNode.style.left = `-${lineGutterWidth}px`;
+    scrollGutterNode.style.top = '0';
+    scrollGutterNode.style.height = '10000px';
+    scrollGutterNode.style.background = 'transparent';
+    return scrollGutterNode;
+  }
+
+  function resetMarginDecorations() {
+    const { model } = dataRef.current.monaco;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range) {
+      updateEditableRegion(range, { model });
+    }
+  }
+
+  function focusOnHotkeys() {
+    const currContainerRef = props.containerRef?.current;
+    if (currContainerRef) {
+      currContainerRef.focus();
+    }
+  }
+
+  const onChange = (contents: string) => {
+    const { updateFile, fileKey, isResetting } = props;
+    if (isResetting) return;
+    // TODO: now that we have getCurrentEditableRegion, should the overlays
+    // follow that directly? We could subscribe to changes to that and redraw if
+    // those imply that the positions have changed (i.e. if the content height
+    // has changed or if content is dragged between regions)
+
+    const coveringRange = getLinesCoveringEditableRegion();
+    const editableRegionBoundaries = coveringRange
+      ? [coveringRange.startLineNumber - 1, coveringRange.endLineNumber + 1]
+      : [];
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if (player.current.sampler?.loaded && player.current.shouldPlay) {
+      void import('tone').then(tone => {
+        if (tone.context.state !== 'running') void tone.context.resume();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+        player.current.sampler?.triggerAttack(
+          editorNotes[player.current.noteIndex]
+        );
+        player.current.noteIndex++;
+        if (player.current.noteIndex >= editorNotes.length) {
+          player.current.noteIndex = 0;
+        }
+      });
+    }
+    updateFile({ fileKey, contents, editableRegionBoundaries });
+  };
+
+  function createBreadcrumb(): HTMLElement {
+    const { block, superBlock } = props;
+    const breadcrumb = document.createElement('nav');
+    breadcrumb.setAttribute('aria-label', `${t('aria.breadcrumb-nav')}`);
+    const breadcrumbList = document.createElement('ol'),
+      breadcrumbLeft = document.createElement('li'),
+      breadcrumbLeftLink = document.createElement('a'),
+      breadcrumbRight = document.createElement('li'),
+      breadcrumbRightLink = document.createElement('a');
+    breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
+    breadcrumbRightLink.innerHTML = t(
+      `intro:${superBlock}.blocks.${block}.title`
+    );
+    breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
+    breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
+    breadcrumbLeft.appendChild(breadcrumbLeftLink);
+    breadcrumbRight.appendChild(breadcrumbRightLink);
+    breadcrumbList.setAttribute(
+      'data-playwright-test-label',
+      'breadcrumb-mobile'
+    );
+    breadcrumbList.className = 'breadcrumbs';
+    breadcrumbList.appendChild(breadcrumbLeft);
+    breadcrumbList.appendChild(breadcrumbRight);
+    breadcrumb.appendChild(breadcrumbList);
+
+    return breadcrumb;
+  }
+
+  // TODO: DRY this and the update function
+  function initializeEditableRegion(
+    range: IRange,
+    modelContext: {
+      monaco: typeof monacoEditor;
+      model: editor.ITextModel;
+    }
+  ) {
+    const { monaco, model } = modelContext;
+    const lineDecoration = {
+      range,
+      options: {
+        isWholeLine: true,
+        className: 'editable-region',
+        linesDecorationsClassName: 'myEditableLineDecoration',
+        stickiness:
+          monaco.editor.TrackedRangeStickiness.AlwaysGrowsWhenTypingAtEdges
+      }
+    };
+
+    return model.deltaDecorations([], [lineDecoration]);
+  }
+
+  function updateEditableRegion(
+    range: IRange,
+    modelContext: {
+      model?: editor.ITextModel;
+    },
+    options: editor.IModelDecorationOptions = {}
+  ) {
+    const { model } = modelContext;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
+
+    const oldOptions = model?.getDecorationOptions(insideEditDecId);
+    const lineDecoration = {
+      range,
+      options: {
+        ...oldOptions,
+        ...options
+      }
+    };
+    model?.deltaDecorations([insideEditDecId], [lineDecoration]);
+  }
+
+  function getDescriptionZoneTop() {
+    return `${dataRef.current.descriptionZone.top}px`;
+  }
+
+  function getLineBeforeEditableRegion() {
+    const range = dataRef.current.monaco.model?.getDecorationRange(
+      dataRef.current.editableRegion.decorationId
+    );
+    return range ? range.startLineNumber - 1 : 1;
+  }
+
+  // This Range covers all the text in the editable region,
+  const getLinesCoveringEditableRegion = () => {
+    const monaco = monacoRef.current;
+    const { model } = dataRef.current.monaco;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
+    // TODO: this is a little low-level, but we should bail if there is no
+    // editable region defined.
+    if (!insideEditDecId || !model || !monaco) {
+      return null;
+    } else {
+      const currentRange = model.getDecorationRange(insideEditDecId);
+
+      if (currentRange) {
+        return new monaco.Range(
+          currentRange.startLineNumber,
+          1,
+          currentRange.endLineNumber,
+          model.getLineLength(currentRange.endLineNumber) + 1
+        );
+      }
+      return null;
+    }
+  };
+
+  // Currently, only practice project parts have editable region markers
+  // This function is used to enable multiple editor tabs, jaws, etc.
+  function hasEditableRegion() {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+    return editableRegionBoundaries.length === 2;
+  }
+
+  function focusIfTargetEditor() {
+    const { editor } = dataRef.current.monaco;
+    const { canFocusOnMountRef } = props;
+    if (!editor || !canFocusOnMountRef.current) return;
+    if (!props.usesMultifileEditor) {
+      // Only one editor? Focus it.
+      // Use requestAnimationFrame to ensure focus works in browsers like
+      // Firefox that have stricter programmatic focus policies.
+      requestAnimationFrame(() => editor.focus());
+      canFocusOnMountRef.current = false;
+    } else if (hasEditableRegion()) {
+      requestAnimationFrame(() => editor.focus());
+      canFocusOnMountRef.current = false;
+    }
+  }
+
+  function initializeRegions() {
+    const { model, editor } = dataRef.current.monaco;
+    const monaco = monacoRef.current;
+    if (!model || !monaco || !editor) return;
+    const editableRegion = getEditableRegionFromRedux();
+    const editableRange = positionsToRange(monaco, model, [
+      editableRegion[0] + 1,
+      editableRegion[1] - 1
+    ]);
+
+    dataRef.current.editableRegion.decorationId = initializeEditableRegion(
+      editableRange,
+      {
+        monaco,
+        model
+      }
+    )[0];
+  }
+
+  const createWidget = (
+    editor: editor.IStandaloneCodeEditor,
+    id: string,
+    domNode: HTMLDivElement,
+    // If getTop function is not provided then no positioning will be done here.
+    // This allows scroll gutter to do its positioning elsewhere.
+    getTop?: () => string,
+    suppressMouseDown = false
+  ) => {
+    const getId = () => id;
+    const getDomNode = () => domNode;
+    const getPosition = () => {
+      if (getTop) {
+        domNode.style.width = `${getEditorContentWidth(editor)}px`;
+        domNode.style.top = getTop();
+      }
+      // must return null, so that Monaco knows the widget will position
+      // itself.
+      return null;
+    };
+
+    const afterRender = () => {
+      if (getTop) {
+        domNode.style.left = '0';
+      }
+    };
+
+    return {
+      getId,
+      getDomNode,
+      getPosition,
+      afterRender,
+      suppressMouseDown
+    };
+  };
+
+  function addWidgetsToRegions() {
+    const editor = dataRef.current.monaco.editor;
+    if (!editor) return;
+
+    const descriptionNode = createDescription(editor);
+
+    if (!dataRef.current.descriptionZone.widget) {
+      dataRef.current.descriptionZone.widget = createWidget(
+        editor,
+        'description.widget',
+        descriptionNode,
+        getDescriptionZoneTop,
+        true
+      );
+      // this order (add widget, change zone) is necessary, since the zone
+      // relies on the domnode being in the DOM to calculate its height - that
+      // doesn't happen until the widget is added.
+      editor.addContentWidget(dataRef.current.descriptionZone.widget);
+      editor.changeViewZones(descriptionZoneCallback);
+    }
+
+    editor.onDidScrollChange(() => {
+      if (dataRef.current.descriptionZone.widget)
+        editor.layoutContentWidget(dataRef.current.descriptionZone.widget);
+    });
+  }
+
+  function addContentChangeListener() {
+    const { model } = dataRef.current.monaco;
+    const monaco = monacoRef.current;
+    if (!monaco) return;
+
+    model?.onDidChangeContent(() => {
+      const redecorateEditableRegion = () => {
+        const coveringRange = getLinesCoveringEditableRegion();
+        if (coveringRange) {
+          updateEditableRegion(coveringRange, { model });
+        }
+      };
+      // If the content has changed, the zones may need moving. Rather than
+      // working out if they have to for a particular content change, we simply
+      // ask monaco to update regardless.
+      redecorateEditableRegion();
+      updateDescriptionZone();
+    });
+  }
+
+  function showEditableRegion(editor: editor.IStandaloneCodeEditor) {
+    const editableRegionBoundaries = getEditableRegionFromRedux();
+    // TODO: The heuristic has been commented out for now because the cursor
+    // position is not saved at the moment, so it's redundant. I'm leaving it
+    // here for now, in case we decide to save it in future.
+    // this is a heuristic: if the cursor is at the start of the page, chances
+    // are the user has not edited yet. If so, move to the start of the editable
+    // region.
+    // if (
+    //  isEqual({ ..._editor.getPosition() }, { lineNumber: 1, column: 1 })
+    // ) {
+    const [top, bottom] = editableRegionBoundaries;
+    editor.setPosition({
+      lineNumber: top + 1,
+      column: 1
+    });
+
+    // To prevent descriptionWidget from being out of view
+    editor.revealLinesInCenter(top, top === 0 ? 1 : bottom);
+    // }
+  }
+
+  // creates a range covering all the lines in 'positions'
+  // NOTE: positions is an array of [startLine, endLine]
+  function positionsToRange(
+    monaco: typeof monacoEditor,
+    model: editor.ITextModel,
+    [start, end]: [number, number]
+  ) {
+    // convert to [startLine, startColumn, endLine, endColumn]
+    const range = new monaco.Range(start, 1, end, 1);
+
+    // Protect against ranges that extend outside the editor
+    const startLineNumber = Math.max(1, range.startLineNumber);
+    const endLineNumber = Math.min(model.getLineCount(), range.endLineNumber);
+    const endColumnText = model.getLineContent(endLineNumber);
+    // NOTE: the end column is incremented by 2 so that the dangerous range
+    // extends far enough to capture new text added to the end.
+    // NOTE: according to the spec, it should only need to be +1, but in
+    // practice that's not enough.
+    return range
+      .setStartPosition(startLineNumber, 1)
+      .setEndPosition(range.endLineNumber, endColumnText.length + 2);
+  }
+
+  function challengeIsComplete() {
+    const tests = testRef.current;
+    return tests.every(test => test.pass && !test.err);
+  }
+
+  // We need to set initialize the tests, but only once
+  useEffect(() => {
+    initTests(props.initialTests);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // runs every update to the editor and when the challenge is reset
+  useEffect(() => {
+    // If a challenge is reset, it needs to communicate that change to the
+    // editor.
+    const { editor } = dataRef.current.monaco;
+
+    if (props.isResetting) {
+      // NOTE: this looks a lot like a race condition, since stopResetting gets
+      // called in each editor and changes isResetting. However, all open editor
+      // are rendered in a batch (before stopResetting talks to redux), so they
+      // all get to this point. Also stopResetting is idempotent, so it doesn't
+      // matter that each editor calls it.
+      props.stopResetting();
+      resetEditorValues();
+      focusIfTargetEditor();
+    }
+
+    if (hasEditableRegion() && editor) {
+      if (props.isResetting) {
+        initializeRegions();
+        if (isMobileLayout) {
+          addWidgetsToRegions();
+        }
+        updateDescriptionZone();
+        showEditableRegion(editor);
+        resetMarginDecorations();
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.challengeFiles, props.isResetting]);
+
+  useEffect(() => {
+    const { showProjectPreview, previewOpen } = props;
+    if (!previewOpen && showProjectPreview) {
+      const description = document.getElementsByClassName(
+        'description-container'
+      )?.[0];
+      description?.classList.add('description-highlighter');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.previewOpen]);
+
+  useEffect(() => {
+    const { model } = dataRef.current.monaco;
+    const { decorationId: insideEditDecId } = dataRef.current.editableRegion;
+    const isChallengeComplete = challengeIsComplete();
+    const range = model?.getDecorationRange(insideEditDecId);
+    if (range && isChallengeComplete) {
+      updateEditableRegion(
+        range,
+        { model },
+        {
+          linesDecorationsClassName: 'myEditableLineDecoration tests-passed'
+        }
+      );
+    }
+  }, [props.tests]);
+
+  useEffect(() => {
+    const editor = dataRef.current.monaco.editor;
+    editor?.layout();
+    // layout() resets the monaco tab trapping back to default (true), so we
+    // need to untrap it if the user had it set to false.
+    if (!isTabTrapped()) {
+      setMonacoTabTrapped(false);
+    }
+  }, [props.dimensions]);
+
+  function updateDescriptionZone() {
+    const editor = dataRef.current.monaco.editor;
+    editor?.changeViewZones(changeAccessor => {
+      changeAccessor.removeZone(dataRef.current.descriptionZone.zoneId);
+      descriptionZoneCallback(changeAccessor);
+    });
+  }
+
+  const { theme } = props;
+
+  const preferDarkScheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+  const editorSystemTheme = preferDarkScheme ? 'vs-dark-custom' : 'vs-custom';
+  const editorTheme =
+    theme === LocalStorageThemes.Dark
+      ? 'vs-dark-custom'
+      : theme === LocalStorageThemes.Light
+        ? 'vs-custom'
+        : editorSystemTheme;
+
+  const editorWillUnmount = (
+    currentEditor: editor.IStandaloneCodeEditor,
+    monaco: typeof monacoEditor
+  ) => {
+    // Any model we've created has to be manually disposed of to prevent
+    // memory leaks.
+    const language = modeMap[challengeFile?.ext ?? 'html'];
+    if (language === 'typescript') {
+      teardownTSModels(monaco);
+    } else {
+      currentEditor.getModel()?.dispose();
+    }
+  };
+
+  const showFileName = challengeFile && props.challengeFiles!.length > 1;
+  return (
+    <Suspense fallback={<Loader loaderDelay={600} />}>
+      {showFileName && (
+        <div className='editor-file-name'>{`${challengeFile.name}.${challengeFile.ext}`}</div>
+      )}
+      <span className='notranslate'>
+        <MonacoEditor
+          editorDidMount={editorDidMount}
+          editorWillMount={editorWillMount}
+          editorWillUnmount={editorWillUnmount}
+          onChange={onChange}
+          language={modeMap[challengeFile?.ext ?? 'html']}
+          options={{ ...options, folding: !hasEditableRegion() }}
+          theme={editorTheme}
+        />
+      </span>
+    </Suspense>
+  );
+};
+
+Editor.displayName = 'Editor';
+
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);

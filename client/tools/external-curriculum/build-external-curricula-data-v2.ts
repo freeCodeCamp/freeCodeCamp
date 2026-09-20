@@ -1,0 +1,597 @@
+import { mkdirSync, writeFileSync, readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { omit } from 'lodash';
+import { submitTypes } from '@freecodecamp/shared/config/challenge-types';
+import { type ChallengeNode } from '../../src/redux/prop-types';
+import {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} from '@freecodecamp/shared/config/curriculum';
+import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
+import {
+  catalog,
+  type Levels,
+  type Topic
+} from '@freecodecamp/shared/config/catalog';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
+import {
+  availableBackgrounds,
+  availableAudios
+} from '../../../curriculum/schema/scene-assets.js';
+import {
+  characterAssets,
+  sounds,
+  backgrounds,
+  domain
+} from '../../src/templates/Challenges/components/scene/scene-assets.js';
+
+export type CurriculumIntros =
+  | BlockBasedCurriculumIntros
+  | ChapterBasedCurriculumIntros;
+
+type BlockBasedCurriculumIntros = {
+  [keyValue in SuperBlocks]: {
+    title: string;
+    summary?: string[];
+    intro: string[];
+    blocks: Record<string, { title: string; intro: string[] }>;
+  };
+};
+
+export type ChapterBasedCurriculumIntros = {
+  [keyValue in SuperBlocks]: {
+    title: string;
+    summary?: string[];
+    intro: string[];
+    chapters: Record<string, string>;
+    modules: Record<string, string>;
+    blocks: Record<string, { title: string; intro: string[] }>;
+  };
+};
+
+export type Curriculum<T> = {
+  [keyValue in SuperBlocks]: T extends CurriculumProps
+    ? CurriculumProps
+    : GeneratedCurriculumProps;
+};
+
+export interface CurriculumProps {
+  intro: string[];
+  blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
+}
+
+interface Block<T> {
+  desc: string[];
+  intro: string[];
+  challenges: T;
+  meta: Record<string, unknown>;
+}
+
+export type GeneratedCurriculumProps =
+  | GeneratedBlockBasedCurriculumProps
+  | GeneratedChapterBasedCurriculumProps;
+
+export interface GeneratedBlockBasedCurriculumProps {
+  intro: string[];
+  blocks: GeneratedBlock[];
+}
+
+export interface GeneratedChapterBasedCurriculumProps {
+  intro: string[];
+  chapters: GeneratedChapter[];
+}
+
+interface GeneratedChapter {
+  dashedName: string;
+  name: string;
+  comingSoon?: boolean;
+  modules: GeneratedModule[];
+  chapterType?: string;
+}
+
+interface GeneratedModule {
+  dashedName: string;
+  name: string;
+  comingSoon?: boolean;
+  blocks: GeneratedBlock[];
+  moduleType?: string;
+}
+
+interface GeneratedBlock {
+  dashedName: string;
+  intro: string;
+  meta: Record<string, unknown>;
+}
+
+// This enum is based on the `SuperBlockStage` enum in shared/config,
+// but with string value instead of number.
+enum SuperBlockStage {
+  Core = 'core',
+  English = 'english',
+  Spanish = 'spanish',
+  Chinese = 'chinese',
+  Professional = 'professional',
+  Extra = 'extra',
+  Legacy = 'legacy'
+}
+
+export type OrderedSuperBlocks = Record<
+  string,
+  Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
+>;
+
+export interface CatalogCourse {
+  dashedName: SuperBlocks;
+  title: string;
+  summary: string[];
+  level: Levels;
+  hours: number;
+  topic: Topic;
+}
+
+const ver = 'v2';
+
+const staticFolderPath = resolve(__dirname, '../../../client/static');
+const dataPath = `${staticFolderPath}/curriculum-data/`;
+const intros = readCurriculumIntros(getCurriculumLocale());
+
+export function getCurriculumLocale(): Languages {
+  const { CURRICULUM_LOCALE } = process.env;
+
+  return availableLangs.curriculum.includes(CURRICULUM_LOCALE as Languages)
+    ? (CURRICULUM_LOCALE as Languages)
+    : Languages.English;
+}
+
+export type SuperBlockIntro = {
+  title: string;
+  summary?: string[];
+  intro: string[];
+  blocks: Record<string, { title: string; intro: string[] }>;
+  chapters?: Record<string, string>;
+  modules?: Record<string, string>;
+};
+
+type SuperBlockIntroRecord = 'chapters' | 'modules';
+
+function readIntroFile(lang: Languages): Record<SuperBlocks, SuperBlockIntro> {
+  const blockIntroPath = resolve(
+    __dirname,
+    `../../../client/i18n/locales/${lang}/intro.json`
+  );
+
+  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Record<
+    SuperBlocks,
+    SuperBlockIntro
+  >;
+}
+
+function mergeIntroRecord(
+  field: SuperBlockIntroRecord,
+  english: SuperBlockIntro,
+  localised: SuperBlockIntro
+): Partial<SuperBlockIntro> {
+  if (!(field in english) && !(field in localised)) return {};
+
+  return { [field]: { ...english[field], ...localised[field] } };
+}
+
+function mergeBlockIntros(
+  english: SuperBlockIntro['blocks'] = {},
+  localised: SuperBlockIntro['blocks'] = {}
+): SuperBlockIntro['blocks'] {
+  const merged = { ...english, ...localised };
+
+  for (const [name, englishBlock] of Object.entries(english)) {
+    merged[name] = { ...englishBlock, ...localised[name] };
+  }
+
+  return merged;
+}
+
+export function fillIntrosFromEnglish(
+  localised: Record<SuperBlocks, SuperBlockIntro>,
+  english: Record<SuperBlocks, SuperBlockIntro>
+): Record<SuperBlocks, SuperBlockIntro> {
+  const filled = {} as Record<SuperBlocks, SuperBlockIntro>;
+
+  for (const key of Object.keys(english) as SuperBlocks[]) {
+    const englishSuperBlock = english[key];
+    const localisedSuperBlock = localised[key];
+
+    if (!localisedSuperBlock) {
+      filled[key] = englishSuperBlock;
+      continue;
+    }
+
+    filled[key] = {
+      ...englishSuperBlock,
+      ...localisedSuperBlock,
+      blocks: mergeBlockIntros(
+        englishSuperBlock.blocks,
+        localisedSuperBlock.blocks
+      ),
+      ...mergeIntroRecord('chapters', englishSuperBlock, localisedSuperBlock),
+      ...mergeIntroRecord('modules', englishSuperBlock, localisedSuperBlock)
+    };
+  }
+
+  return filled;
+}
+
+export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+  const localised = readIntroFile(lang);
+
+  if (lang === Languages.English) return localised;
+
+  return fillIntrosFromEnglish(localised, readIntroFile(Languages.English));
+}
+
+export function orderedSuperBlockInfo(
+  intros: CurriculumIntros = readCurriculumIntros(getCurriculumLocale())
+): OrderedSuperBlocks {
+  return {
+    [SuperBlockStage.Core]: [
+      {
+        dashedName: SuperBlocks.RespWebDesignV9,
+        public: true,
+        title: intros[SuperBlocks.RespWebDesignV9].title
+      },
+      {
+        dashedName: SuperBlocks.JsV9,
+        public: true,
+        title: intros[SuperBlocks.JsV9].title
+      },
+      {
+        dashedName: SuperBlocks.PythonV9,
+        public: true,
+        title: intros[SuperBlocks.PythonV9].title
+      },
+      {
+        dashedName: SuperBlocks.FrontEndDevLibsV9,
+        public: false,
+        title: intros[SuperBlocks.FrontEndDevLibsV9].title
+      },
+      {
+        dashedName: SuperBlocks.RelationalDbV9,
+        public: false,
+        title: intros[SuperBlocks.RelationalDbV9].title
+      },
+      {
+        dashedName: SuperBlocks.BackEndDevApisV9,
+        public: false,
+        title: intros[SuperBlocks.BackEndDevApisV9].title
+      },
+      {
+        dashedName: SuperBlocks.FullStackDeveloperV9,
+        public: false,
+        title: intros[SuperBlocks.FullStackDeveloperV9].title
+      }
+    ],
+
+    [SuperBlockStage.English]: [
+      {
+        dashedName: SuperBlocks.A2English,
+        public: true,
+        title: intros[SuperBlocks.A2English].title
+      },
+      {
+        dashedName: SuperBlocks.B1English,
+        public: true,
+        title: intros[SuperBlocks.B1English].title
+      }
+    ],
+
+    [SuperBlockStage.Spanish]: [
+      {
+        dashedName: SuperBlocks.A1Spanish,
+        public: true,
+        title: intros[SuperBlocks.A1Spanish].title
+      }
+    ],
+
+    [SuperBlockStage.Chinese]: [
+      {
+        dashedName: SuperBlocks.A1Chinese,
+        public: false,
+        title: intros[SuperBlocks.A1Chinese].title
+      }
+    ],
+
+    [SuperBlockStage.Extra]: [
+      {
+        dashedName: SuperBlocks.TheOdinProject,
+        public: true,
+        title: intros[SuperBlocks.TheOdinProject].title
+      },
+      {
+        dashedName: SuperBlocks.CodingInterviewPrep,
+        public: false,
+        title: intros[SuperBlocks.CodingInterviewPrep].title
+      },
+      {
+        dashedName: SuperBlocks.ProjectEuler,
+        public: false,
+        title: intros[SuperBlocks.ProjectEuler].title
+      },
+      {
+        dashedName: SuperBlocks.RosettaCode,
+        public: false,
+        title: intros[SuperBlocks.RosettaCode].title
+      }
+    ],
+
+    [SuperBlockStage.Legacy]: [
+      {
+        dashedName: SuperBlocks.RespWebDesignNew,
+        public: true,
+        title: intros[SuperBlocks.RespWebDesignNew].title
+      },
+      {
+        dashedName: SuperBlocks.JsAlgoDataStructNew,
+        public: false,
+        title: intros[SuperBlocks.JsAlgoDataStructNew].title
+      },
+      {
+        dashedName: SuperBlocks.FrontEndDevLibs,
+        public: false,
+        title: intros[SuperBlocks.FrontEndDevLibs].title
+      },
+      {
+        dashedName: SuperBlocks.DataVis,
+        public: false,
+        title: intros[SuperBlocks.DataVis].title
+      },
+      {
+        dashedName: SuperBlocks.RelationalDb,
+        public: false,
+        title: intros[SuperBlocks.RelationalDb].title
+      },
+      {
+        dashedName: SuperBlocks.BackEndDevApis,
+        public: false,
+        title: intros[SuperBlocks.BackEndDevApis].title
+      },
+      {
+        dashedName: SuperBlocks.QualityAssurance,
+        public: false,
+        title: intros[SuperBlocks.QualityAssurance].title
+      },
+      {
+        dashedName: SuperBlocks.SciCompPy,
+        public: false,
+        title: intros[SuperBlocks.SciCompPy].title
+      },
+      {
+        dashedName: SuperBlocks.DataAnalysisPy,
+        public: true,
+        title: intros[SuperBlocks.DataAnalysisPy].title
+      },
+      {
+        dashedName: SuperBlocks.InfoSec,
+        public: false,
+        title: intros[SuperBlocks.InfoSec].title
+      },
+      {
+        dashedName: SuperBlocks.MachineLearningPy,
+        public: true,
+        title: intros[SuperBlocks.MachineLearningPy].title
+      },
+      {
+        dashedName: SuperBlocks.CollegeAlgebraPy,
+        public: true,
+        title: intros[SuperBlocks.CollegeAlgebraPy].title
+      },
+      {
+        dashedName: SuperBlocks.RespWebDesign,
+        public: true,
+        title: intros[SuperBlocks.RespWebDesign].title
+      },
+      {
+        dashedName: SuperBlocks.JsAlgoDataStruct,
+        public: false,
+        title: intros[SuperBlocks.JsAlgoDataStruct].title
+      },
+      {
+        dashedName: SuperBlocks.PythonForEverybody,
+        public: true,
+        title: intros[SuperBlocks.PythonForEverybody].title
+      }
+    ],
+
+    [SuperBlockStage.Professional]: [
+      {
+        dashedName: SuperBlocks.FoundationalCSharp,
+        public: false,
+        title: intros[SuperBlocks.FoundationalCSharp].title
+      }
+    ]
+  };
+}
+
+export function catalogCourses(
+  intros: CurriculumIntros = readCurriculumIntros(getCurriculumLocale())
+): CatalogCourse[] {
+  return catalog.map(({ superBlock, level, hours, topic }) => ({
+    dashedName: superBlock,
+    title: intros[superBlock].title,
+    summary: intros[superBlock].summary ?? [],
+    level,
+    hours,
+    topic
+  }));
+}
+
+export const superBlockDashedNames = (() => {
+  const info = orderedSuperBlockInfo();
+  return Object.keys(info).reduce((acc, superBlockStage) => {
+    const dashedNames = info[superBlockStage].map(
+      superBlock => superBlock.dashedName
+    );
+    acc.push(...dashedNames);
+
+    return acc;
+  }, [] as SuperBlocks[]);
+})();
+
+export const catalogDashedNames = catalog.map(({ superBlock }) => superBlock);
+
+export function buildExtCurriculumDataV2(
+  curriculum: Curriculum<CurriculumProps>
+): void {
+  mkdirSync(dataPath, { recursive: true });
+
+  parseCurriculumData();
+  getSubmitTypes();
+  getSceneAssets();
+
+  function parseCurriculumData() {
+    // Catalog super blocks are deliberately absent from
+    // `available-superblocks.json`, but their block and challenge data still
+    // needs to be written so that consumers of `catalog.json` can reach it.
+    const superBlockKeys = Object.values(SuperBlocks).filter(
+      x => superBlockDashedNames.includes(x) || catalogDashedNames.includes(x)
+    );
+
+    writeToFile('available-superblocks', {
+      superblocks: orderedSuperBlockInfo()
+    });
+
+    writeToFile('catalog', { catalog: catalogCourses(intros) });
+
+    for (const superBlockKey of superBlockKeys) {
+      if (chapterBasedSuperBlocks.includes(superBlockKey)) {
+        buildChapterBasedCurriculum(superBlockKey);
+      } else {
+        buildBlockBasedCurriculum(superBlockKey);
+      }
+
+      buildChallengeFiles(superBlockKey);
+    }
+  }
+
+  function buildChapterBasedCurriculum(superBlockKey: SuperBlocks) {
+    const { chapters } = getSuperblockStructure(superBlockKey) as {
+      chapters: Chapter[];
+    };
+    const blocksWithData = curriculum[superBlockKey].blocks;
+
+    const superBlockIntros = intros[
+      superBlockKey
+    ] as ChapterBasedCurriculumIntros[SuperBlocks];
+
+    // Skip upcoming chapter/module as the metadata of their blocks
+    // is not included in the `curriculum` object.
+    const allChapters = chapters.map(chapter => ({
+      dashedName: chapter.dashedName,
+      name: superBlockIntros.chapters[chapter.dashedName],
+      comingSoon: chapter.comingSoon,
+      chapterType: chapter.chapterType,
+      modules: chapter.comingSoon
+        ? []
+        : chapter.modules.map(module => ({
+            dashedName: module.dashedName,
+            name: superBlockIntros.modules[module.dashedName],
+            comingSoon: module.comingSoon,
+            moduleType: module.moduleType,
+            blocks: module.comingSoon
+              ? []
+              : module.blocks
+                  // Upcoming blocks aren't included in blocksWithData
+                  // and thus they have no metadata and need to be filtered out.
+                  .filter(block => blocksWithData[block])
+                  .map(block => {
+                    const blockData = blocksWithData[block];
+                    const blockIntro = superBlockIntros.blocks[block];
+                    return {
+                      intro: blockIntro.intro,
+                      // Keep `meta.name` for backward compatibility with
+                      // consumers that have not migrated to intro-based titles.
+                      meta: {
+                        ...omit(blockData.meta, ['chapter', 'module']),
+                        name: blockIntro.title
+                      }
+                    };
+                  })
+          }))
+    }));
+
+    const superBlock = {
+      [superBlockKey]: {
+        intro: intros[superBlockKey].intro,
+        chapters: allChapters
+      }
+    };
+
+    writeToFile(superBlockKey, superBlock);
+  }
+
+  function buildBlockBasedCurriculum(superBlockKey: SuperBlocks) {
+    const blockNames = Object.keys(curriculum[superBlockKey].blocks);
+    const blocks = blockNames.map(blockName => {
+      const blockData = curriculum[superBlockKey].blocks[blockName];
+      const blockIntro = intros[superBlockKey].blocks[blockName];
+
+      return {
+        intro: blockIntro.intro,
+        // Keep `meta.name` for backward compatibility with
+        // consumers that have not migrated to intro-based titles.
+        meta: { ...blockData.meta, name: blockIntro.title }
+      };
+    });
+
+    const superBlock = {
+      [superBlockKey]: {
+        intro: intros[superBlockKey].intro,
+        blocks
+      }
+    };
+
+    writeToFile(superBlockKey, superBlock);
+  }
+
+  function buildChallengeFiles(superBlockKey: SuperBlocks) {
+    const blocks = Object.keys(curriculum[superBlockKey].blocks);
+
+    for (const block of blocks) {
+      const challenges = curriculum[superBlockKey]['blocks'][block].challenges;
+
+      for (const challenge of challenges) {
+        const challengeId = challenge.id;
+        const challengePath = `challenges/${superBlockKey}/${block}/${challengeId}`;
+
+        writeToFile(challengePath, challenge);
+      }
+    }
+  }
+
+  function writeToFile(fileName: string, data: Record<string, unknown>): void {
+    const filePath = `${dataPath}/${ver}/${fileName}.json`;
+    mkdirSync(dirname(filePath), { recursive: true });
+    writeFileSync(filePath, JSON.stringify(data, null, 2));
+  }
+
+  function getSubmitTypes() {
+    writeFileSync(
+      `${dataPath}/${ver}/submit-types.json`,
+      JSON.stringify(submitTypes, null, 2)
+    );
+  }
+
+  function getSceneAssets() {
+    const sceneAssets = {
+      domain,
+      backgrounds,
+      sounds,
+      availableBackgrounds,
+      availableAudios,
+      characterAssets
+    };
+
+    writeFileSync(
+      `${dataPath}/${ver}/scene-assets.json`,
+      JSON.stringify(sceneAssets, null, 2)
+    );
+  }
+}

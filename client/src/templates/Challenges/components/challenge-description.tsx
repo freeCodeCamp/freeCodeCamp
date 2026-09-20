@@ -1,0 +1,50 @@
+import React, { useEffect } from 'react';
+import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
+import PrismFormatted from './prism-formatted';
+import './challenge-description.css';
+import { generateGithubLink } from '../../../components/create-github-link';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
+
+type Props = {
+  description?: string;
+  instructions?: string;
+  superBlock?: string;
+  challengeId: string;
+  block: string;
+};
+
+const ChallengeDescription = ({
+  description,
+  instructions,
+  superBlock,
+  challengeId,
+  block
+}: Props) => {
+  useEffect(() => {
+    if (superBlock && isMathJaxAllowed(superBlock)) {
+      initializeMathJax();
+    }
+  }, [superBlock]);
+
+  const githubLink = generateGithubLink(challengeId, block);
+  const contentLangProps = getChallengeContentLangProps(superBlock);
+  return (
+    <div
+      className={'challenge-instructions mathjax-support'}
+      data-playwright-test-label='challenge-description'
+      data-github-link={githubLink}
+    >
+      {description && (
+        <PrismFormatted text={description} {...contentLangProps} />
+      )}
+      {instructions && description && <hr />}
+      {instructions && (
+        <PrismFormatted text={instructions} {...contentLangProps} />
+      )}
+    </div>
+  );
+};
+
+ChallengeDescription.displayName = 'ChallengeDescription';
+
+export default ChallengeDescription;

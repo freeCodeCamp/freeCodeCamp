@@ -1,0 +1,75 @@
+# Caching Behaviour:
+#   ┌─────────────────────────┬─────────────────┬──────────────────┐
+#   │         Context         │ Can Read Cache? │ Can Write Cache? │
+#   ├─────────────────────────┼─────────────────┼──────────────────┤
+#   │ main (push)             │ YES             │ YES              │
+#   ├─────────────────────────┼─────────────────┼──────────────────┤
+#   │ PRs / temp-* / hotfix-* │ YES             │ NO               │
+#   ├─────────────────────────┼─────────────────┼──────────────────┤
+#   │ prod-*                  │ NO              │ NO               │
+#   ├─────────────────────────┼─────────────────┼──────────────────┤
+#   │ Fork PRs                │ NO              │ NO               │
+#   └─────────────────────────┴─────────────────┴──────────────────┘
+
+name: 'Setup Turbo Remote Cache'
+description: 'Conditionally configure Turbo remote cache based on branch and event context'
+
+inputs:
+  turbo-token:
+    description: 'Turbo remote cache authentication token'
+    required: true
+  turbo-signature-key:
+    description: 'Turbo remote cache signature key for artifact signing/verification'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Configure Turbo Remote Cache
+      shell: bash
+      env:
+        TURBO_TOKEN: ${{ inputs.turbo-token }}
+        TURBO_SIGNATURE_KEY: ${{ inputs.turbo-signature-key }}
+        GITHUB_REF_NAME: ${{ github.ref_name }}
+        GITHUB_EVENT_NAME: ${{ github.event_name }}
+        GITHUB_BASE_REF: ${{ github.base_ref }}
+      run: |
+        echo "::group::Turbo Cache Configuration"
+        echo "Branch: $GITHUB_REF_NAME"
+        echo "Event: $GITHUB_EVENT_NAME"
+        echo "Base ref: $GITHUB_BASE_REF"
+
+        # Skip for deployment branches (pure builds)
+        if [[ "$GITHUB_REF_NAME" == prod-* ]]; then
+          echo "::notice::Deployment branch detected - Turbo cache DISABLED for pure build"
+          echo "::endgroup::"
+          exit 0
+        fi
+
+        # Skip if secrets are not available (fork PRs)
+        if [[ -z "$TURBO_TOKEN" || -z "$TURBO_SIGNATURE_KEY" ]]; then
+          echo "::notice::Turbo secrets not available (likely a fork PR) - Turbo cache DISABLED"
+          echo "::endgroup::"
+          exit 0
+        fi
+
+        # Base configuration for all other contexts
+        echo "TURBO_API=https://turbo-cache.freecodecamp.net" >> $GITHUB_ENV
+        echo "TURBO_TEAM=team_freecodecamp" >> $GITHUB_ENV
+        echo "TURBO_TOKEN=$TURBO_TOKEN" >> $GITHUB_ENV
+        echo "TURBO_REMOTE_CACHE_SIGNATURE_KEY=$TURBO_SIGNATURE_KEY" >> $GITHUB_ENV
+        echo "TURBO_TELEMETRY_DISABLED=1" >> $GITHUB_ENV
+
+        # Determine if this context should have write access
+        # Write access: main branch push
+        # Read-only: PRs and other branches (can read from cache, can't pollute it)
+        if [[ "$GITHUB_REF_NAME" == "main" && "$GITHUB_EVENT_NAME" == "push" ]]; then
+          echo "::notice::Main branch push - Turbo cache READ/WRITE enabled"
+        else
+          # All other contexts: read-only
+          # Use TURBO_CACHE=remote:r for read-only remote cache (local still read/write)
+          echo "TURBO_CACHE=local:rw,remote:r" >> $GITHUB_ENV
+          echo "::notice::PR/other branch - Turbo cache READ-ONLY enabled"
+        fi
+
+        echo "::endgroup::"

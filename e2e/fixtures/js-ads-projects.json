@@ -1,0 +1,646 @@
+{
+  "javascript-algorithms-and-data-structures-projects": {
+    "meta": {
+      "name": "JavaScript Algorithms and Data Structures Projects",
+      "isUpcomingChange": false,
+      "dashedName": "javascript-algorithms-and-data-structures-projects",
+      "helpCategory": "JavaScript",
+      "order": 9,
+      "time": "50 hours",
+      "template": "",
+      "required": [],
+      "superBlock": "javascript-algorithms-and-data-structures",
+      "challengeOrder": [
+        {
+          "id": "aaa48de84e1ecc7c742e1124",
+          "title": "Palindrome Checker"
+        },
+        {
+          "id": "a7f4d8f2483413a6ce226cac",
+          "title": "Roman Numeral Converter"
+        },
+        {
+          "id": "56533eb9ac21ba0edf2244e2",
+          "title": "Caesars Cipher"
+        },
+        {
+          "id": "aff0395860f5d3034dc0bfc9",
+          "title": "Telephone Number Validator"
+        },
+        {
+          "id": "aa2e6f85cab2ab736c9a9b24",
+          "title": "Cash Register"
+        }
+      ]
+    },
+    "challenges": [
+      {
+        "id": "56533eb9ac21ba0edf2244e2",
+        "title": "Caesars Cipher",
+        "challengeType": 5,
+        "forumTopicId": 16003,
+        "dashedName": "caesars-cipher",
+        "challengeFiles": [
+          {
+            "head": "",
+            "tail": "",
+            "id": "",
+            "editableRegionBoundaries": [],
+            "history": ["script.js"],
+            "name": "script",
+            "ext": "js",
+            "path": "script.js",
+            "fileKey": "scriptjs",
+            "contents": "function rot13(str) {\n  return str;\n}\n\nrot13(\"SERR PBQR PNZC\");",
+            "error": null,
+            "seed": "function rot13(str) {\n  return str;\n}\n\nrot13(\"SERR PBQR PNZC\");"
+          }
+        ],
+        "solutions": [
+          [
+            {
+              "head": "",
+              "tail": "",
+              "id": "",
+              "history": ["script.js"],
+              "name": "script",
+              "ext": "js",
+              "path": "script.js",
+              "fileKey": "scriptjs",
+              "contents": "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M'\n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n\n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}",
+              "error": null,
+              "seed": "var lookup = {\n  'A': 'N','B': 'O','C': 'P','D': 'Q',\n  'E': 'R','F': 'S','G': 'T','H': 'U',\n  'I': 'V','J': 'W','K': 'X','L': 'Y',\n  'M': 'Z','N': 'A','O': 'B','P': 'C',\n  'Q': 'D','R': 'E','S': 'F','T': 'G',\n  'U': 'H','V': 'I','W': 'J','X': 'K',\n  'Y': 'L','Z': 'M'\n};\n\nfunction rot13(encodedStr) {\n  var codeArr = encodedStr.split(\"\");  // String to Array\n  var decodedArr = []; // Your Result goes here\n  // Only change code below this line\n\n  decodedArr = codeArr.map(function(letter) {\n    if(lookup.hasOwnProperty(letter)) {\n      letter = lookup[letter];\n    }\n    return letter;\n  });\n\n  // Only change code above this line\n  return decodedArr.join(\"\"); // Array to String\n}"
+            }
+          ]
+        ],
+        "assignments": [],
+        "tests": [
+          {
+            "text": "<p><code>rot13(\"SERR PBQR PNZC\")</code> should decode to the string <code>FREE CODE CAMP</code></p>",
+            "testString": "assert(rot13('SERR PBQR PNZC') === 'FREE CODE CAMP');"
+          },
+          {
+            "text": "<p><code>rot13(\"SERR CVMMN!\")</code> should decode to the string <code>FREE PIZZA!</code></p>",
+            "testString": "assert(rot13('SERR CVMMN!') === 'FREE PIZZA!');"
+          },
+          {
+            "text": "<p><code>rot13(\"SERR YBIR?\")</code> should decode to the string <code>FREE LOVE?</code></p>",
+            "testString": "assert(rot13('SERR YBIR?') === 'FREE LOVE?');"
+          },
+          {
+            "text": "<p><code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to the string <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code></p>",
+            "testString": "assert(\n  rot13('GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.') ===\n    'THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.'\n);"
+          }
+        ],
+        "description": "<section id=\"description\">\n<p>One of the simplest and most widely known <dfn>ciphers</dfn> is a <dfn>Caesar cipher</dfn>, also known as a <dfn>shift cipher</dfn>. In a shift cipher the meanings of the letters are shifted by some set amount.</p>\n<p>A common modern use is the <a href=\"https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">ROT13</a> cipher, where the values of the letters are shifted by 13 places. Thus <code>A ↔ N</code>, <code>B ↔ O</code> and so on.</p>\n<p>Write a function which takes a <a href=\"https://www.freecodecamp.org/news/how-to-code-the-caesar-cipher-an-introduction-to-basic-encryption-3bf77b4e19f7/\" target=\"_blank\" rel=\"noopener noreferrer nofollow\">ROT13</a> encoded string as input and returns a decoded string.</p>\n<p>All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.</p>\n</section>",
+        "translationPending": false,
+        "block": "javascript-algorithms-and-data-structures-projects",
+        "hasEditableBoundaries": false,
+        "order": 9,
+        "superOrder": 19,
+        "certification": "javascript-algorithms-and-data-structures",
+        "superBlock": "javascript-algorithms-and-data-structures",
+        "challengeOrder": 2,
+        "required": [],
+        "template": "",
+        "time": "50 hours",
+        "helpCategory": "JavaScript",
+        "usesMultifileEditor": false,
+        "disableLoopProtectTests": false,
+        "disableLoopProtectPreview": false
+      },
+      {
+        "id": "aa2e6f85cab2ab736c9a9b24",
+        "title": "Cash Register",
+        "challengeType": 5,
+        "forumTopicId": 16012,
+        "dashedName": "cash-register",
+        "challengeFiles": [
+          {
+            "head": "",
+            "tail": "",
+            "id": "",
+            "editableRegionBoundaries": [],
+            "history": ["script.js"],
+            "name": "script",
+            "ext": "js",
+            "path": "script.js",
+            "fileKey": "scriptjs",
+            "contents": "function checkCashRegister(price, cash, cid) {\n  let change;\n  return change;\n}\n\ncheckCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]]);",
+            "error": null,
+            "seed": "function checkCashRegister(price, cash, cid) {\n  let change;\n  return change;\n}\n\ncheckCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]]);"
+          }
+        ],
+        "solutions": [
+          [
+            {
+              "head": "",
+              "tail": "",
+              "id": "",
+              "history": ["script.js"],
+              "name": "script",
+              "ext": "js",
+              "path": "script.js",
+              "fileKey": "scriptjs",
+              "contents": "const denom = [\n  { name: \"ONE HUNDRED\", val: 100 },\n  { name: \"TWENTY\", val: 20 },\n  { name: \"TEN\", val: 10 },\n  { name: \"FIVE\", val: 5 },\n  { name: \"ONE\", val: 1 },\n  { name: \"QUARTER\", val: 0.25 },\n  { name: \"DIME\", val: 0.1 },\n  { name: \"NICKEL\", val: 0.05 },\n  { name: \"PENNY\", val: 0.01 },\n];\n\nfunction checkCashRegister(price, cash, cid) {\n  const output = { status: null, change: [] };\n  let change = cash - price;\n  const register = cid.reduce(\n    function (acc, curr) {\n      acc.total += curr[1];\n      acc[curr[0]] = curr[1];\n      return acc;\n    },\n    { total: 0 }\n  );\n  if (register.total === change) {\n    output.status = \"CLOSED\";\n    output.change = cid;\n    return output;\n  }\n  if (register.total < change) {\n    output.status = \"INSUFFICIENT_FUNDS\";\n    return output;\n  }\n  const change_arr = denom.reduce(function (acc, curr) {\n    let value = 0;\n    while (register[curr.name] > 0 && change >= curr.val) {\n      change -= curr.val;\n      register[curr.name] -= curr.val;\n      value += curr.val;\n      change = Math.round(change * 100) / 100;\n    }\n    if (value > 0) {\n      acc.push([curr.name, value]);\n    }\n    return acc;\n  }, []);\n  if (change_arr.length < 1 || change > 0) {\n    output.status = \"INSUFFICIENT_FUNDS\";\n    return output;\n  }\n  output.status = \"OPEN\";\n  output.change = change_arr;\n  return output;\n}",
+              "error": null,
+              "seed": "const denom = [\n  { name: \"ONE HUNDRED\", val: 100 },\n  { name: \"TWENTY\", val: 20 },\n  { name: \"TEN\", val: 10 },\n  { name: \"FIVE\", val: 5 },\n  { name: \"ONE\", val: 1 },\n  { name: \"QUARTER\", val: 0.25 },\n  { name: \"DIME\", val: 0.1 },\n  { name: \"NICKEL\", val: 0.05 },\n  { name: \"PENNY\", val: 0.01 },\n];\n\nfunction checkCashRegister(price, cash, cid) {\n  const output = { status: null, change: [] };\n  let change = cash - price;\n  const register = cid.reduce(\n    function (acc, curr) {\n      acc.total += curr[1];\n      acc[curr[0]] = curr[1];\n      return acc;\n    },\n    { total: 0 }\n  );\n  if (register.total === change) {\n    output.status = \"CLOSED\";\n    output.change = cid;\n    return output;\n  }\n  if (register.total < change) {\n    output.status = \"INSUFFICIENT_FUNDS\";\n    return output;\n  }\n  const change_arr = denom.reduce(function (acc, curr) {\n    let value = 0;\n    while (register[curr.name] > 0 && change >= curr.val) {\n      change -= curr.val;\n      register[curr.name] -= curr.val;\n      value += curr.val;\n      change = Math.round(change * 100) / 100;\n    }\n    if (value > 0) {\n      acc.push([curr.name, value]);\n    }\n    return acc;\n  }, []);\n  if (change_arr.length < 1 || change > 0) {\n    output.status = \"INSUFFICIENT_FUNDS\";\n    return output;\n  }\n  output.status = \"OPEN\";\n  output.change = change_arr;\n  return output;\n}"
+            }
+          ]
+        ],
+        "assignments": [],
+        "tests": [
+          {
+            "text": "<p><code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return an object.</p>",
+            "testString": "assert.deepEqual(\n  Object.prototype.toString.call(\n    checkCashRegister(19.5, 20, [\n      ['PENNY', 1.01],\n      ['NICKEL', 2.05],\n      ['DIME', 3.1],\n      ['QUARTER', 4.25],\n      ['ONE', 90],\n      ['FIVE', 55],\n      ['TEN', 20],\n      ['TWENTY', 60],\n      ['ONE HUNDRED', 100]\n    ])\n  ),\n  '[object Object]'\n);"
+          },
+          {
+            "text": "<p><code>checkCashRegister(19.5, 20, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"QUARTER\", 0.5]]}</code>.</p>",
+            "testString": "assert.deepEqual(\n  checkCashRegister(19.5, 20, [\n    ['PENNY', 1.01],\n    ['NICKEL', 2.05],\n    ['DIME', 3.1],\n    ['QUARTER', 4.25],\n    ['ONE', 90],\n    ['FIVE', 55],\n    ['TEN', 20],\n    ['TWENTY', 60],\n    ['ONE HUNDRED', 100]\n  ]),\n  { status: 'OPEN', change: [['QUARTER', 0.5]] }\n);"
+          },
+          {
+            "text": "<p><code>checkCashRegister(3.26, 100, [[\"PENNY\", 1.01], [\"NICKEL\", 2.05], [\"DIME\", 3.1], [\"QUARTER\", 4.25], [\"ONE\", 90], [\"FIVE\", 55], [\"TEN\", 20], [\"TWENTY\", 60], [\"ONE HUNDRED\", 100]])</code> should return <code>{status: \"OPEN\", change: [[\"TWENTY\", 60], [\"TEN\", 20], [\"FIVE\", 15], [\"ONE\", 1], [\"QUARTER\", 0.5], [\"DIME\", 0.2], [\"PENNY\", 0.04]]}</code>.</p>",
+            "testString": "assert.deepEqual(\n  checkCashRegister(3.26, 100, [\n    ['PENNY', 1.01],\n    ['NICKEL', 2.05],\n    ['DIME', 3.1],\n    ['QUARTER', 4.25],\n    ['ONE', 90],\n    ['FIVE', 55],\n    ['TEN', 20],\n    ['TWENTY', 60],\n    ['ONE HUNDRED', 100]\n  ]),\n  {\n    status: 'OPEN',\n    change: [\n      ['TWENTY', 60],\n      ['TEN', 20],\n      ['FIVE', 15],\n      ['ONE', 1],\n      ['QUARTER', 0.5],\n      ['DIME', 0.2],\n      ['PENNY', 0.04]\n    ]\n  }\n);"
+          },
+          {
+            "text": "<p><code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.</p>",
+            "testString": "assert.deepEqual(\n  checkCashRegister(19.5, 20, [\n    ['PENNY', 0.01],\n    ['NICKEL', 0],\n    ['DIME', 0],\n    ['QUARTER', 0],\n    ['ONE', 0],\n    ['FIVE', 0],\n    ['TEN', 0],\n    ['TWENTY', 0],\n    ['ONE HUNDRED', 0]\n  ]),\n  { status: 'INSUFFICIENT_FUNDS', change: [] }\n);"
+          },
+          {
+            "text": "<p><code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.01], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 1], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code>.</p>",
+            "testString": "assert.deepEqual(\n  checkCashRegister(19.5, 20, [\n    ['PENNY', 0.01],\n    ['NICKEL', 0],\n    ['DIME', 0],\n    ['QUARTER', 0],\n    ['ONE', 1],\n    ['FIVE', 0],\n    ['TEN', 0],\n    ['TWENTY', 0],\n    ['ONE HUNDRED', 0]\n  ]),\n  { status: 'INSUFFICIENT_FUNDS', change: [] }\n);"
+          },
+          {
+            "text": "<p><code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}</code>.</p>",
+            "testString": "assert.deepEqual(\n  checkCashRegister(19.5, 20, [\n    ['PENNY', 0.5],\n    ['NICKEL', 0],\n    ['DIME', 0],\n    ['QUARTER', 0],\n    ['ONE', 0],\n    ['FIVE', 0],\n    ['TEN', 0],\n    ['TWENTY', 0],\n    ['ONE HUNDRED', 0]\n  ]),\n  {\n    status: 'CLOSED',\n    change: [\n      ['PENNY', 0.5],\n      ['NICKEL', 0],\n      ['DIME', 0],\n      ['QUARTER', 0],\n      ['ONE', 0],\n      ['FIVE', 0],\n      ['TEN', 0],\n      ['TWENTY', 0],\n      ['ONE HUNDRED', 0]\n    ]\n  }\n);"
+          }
+        ],
+        "description": "<section id=\"description\">\n<p>Design a cash register drawer function <code>checkCashRegister()</code> that accepts purchase price as the first argument (<code>price</code>), payment as the second argument (<code>cash</code>), and cash-in-drawer (<code>cid</code>) as the third argument.</p>\n<p><code>cid</code> is a 2D array listing available currency.</p>\n<p>The <code>checkCashRegister()</code> function should always return an object with a <code>status</code> key and a <code>change</code> key.</p>\n<p>Return <code>{status: \"INSUFFICIENT_FUNDS\", change: []}</code> if cash-in-drawer is less than the change due, or if you cannot return the exact change.</p>\n<p>Return <code>{status: \"CLOSED\", change: [...]}</code> with cash-in-drawer as the value for the key <code>change</code> if it is equal to the change due.</p>\n<p>Otherwise, return <code>{status: \"OPEN\", change: [...]}</code>, with the change due in coins and bills, sorted in highest to lowest order, as the value of the <code>change</code> key.</p>\n<table><tbody><tr><th>Currency Unit</th><th>Amount</th></tr><tr><td>Penny</td><td>$0.01 (PENNY)</td></tr><tr><td>Nickel</td><td>$0.05 (NICKEL)</td></tr><tr><td>Dime</td><td>$0.1 (DIME)</td></tr><tr><td>Quarter</td><td>$0.25 (QUARTER)</td></tr><tr><td>Dollar</td><td>$1 (ONE)</td></tr><tr><td>Five Dollars</td><td>$5 (FIVE)</td></tr><tr><td>Ten Dollars</td><td>$10 (TEN)</td></tr><tr><td>Twenty Dollars</td><td>$20 (TWENTY)</td></tr><tr><td>One-hundred Dollars</td><td>$100 (ONE HUNDRED)</td></tr></tbody></table>\n<p>See below for an example of a cash-in-drawer array:</p>\n<pre><code class=\"language-js\">[\n  [\"PENNY\", 1.01],\n  [\"NICKEL\", 2.05],\n  [\"DIME\", 3.1],\n  [\"QUARTER\", 4.25],\n  [\"ONE\", 90],\n  [\"FIVE\", 55],\n  [\"TEN\", 20],\n  [\"TWENTY\", 60],\n  [\"ONE HUNDRED\", 100]\n]\n</code></pre>\n</section>",
+        "translationPending": false,
+        "block": "javascript-algorithms-and-data-structures-projects",
+        "hasEditableBoundaries": false,
+        "order": 9,
+        "superOrder": 19,
+        "certification": "javascript-algorithms-and-data-structures",
+        "superBlock": "javascript-algorithms-and-data-structures",
+        "challengeOrder": 4,
+        "required": [],
+        "template": "",
+        "time": "50 hours",
+        "helpCategory": "JavaScript",
+        "usesMultifileEditor": false,
+        "disableLoopProtectTests": false,
+        "disableLoopProtectPreview": false
+      },
+      {
+        "id": "aaa48de84e1ecc7c742e1124",
+        "title": "Palindrome Checker",
+        "challengeType": 5,
+        "forumTopicId": 16004,
+        "dashedName": "palindrome-checker",
+        "challengeFiles": [
+          {
+            "head": "",
+            "tail": "",
+            "id": "",
+            "editableRegionBoundaries": [],
+            "history": ["script.js"],
+            "name": "script",
+            "ext": "js",
+            "path": "script.js",
+            "fileKey": "scriptjs",
+            "contents": "function palindrome(str) {\n  return true;\n}\n\npalindrome(\"eye\");",
+            "error": null,
+            "seed": "function palindrome(str) {\n  return true;\n}\n\npalindrome(\"eye\");"
+          }
+        ],
+        "solutions": [
+          [
+            {
+              "head": "",
+              "tail": "",
+              "id": "",
+              "history": ["script.js"],
+              "name": "script",
+              "ext": "js",
+              "path": "script.js",
+              "fileKey": "scriptjs",
+              "contents": "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}",
+              "error": null,
+              "seed": "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
+            }
+          ]
+        ],
+        "assignments": [],
+        "tests": [
+          {
+            "text": "<p><code>palindrome(\"eye\")</code> should return a boolean.</p>",
+            "testString": "assert(typeof palindrome('eye') === 'boolean');"
+          },
+          {
+            "text": "<p><code>palindrome(\"eye\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('eye') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"_eye\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('_eye') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"race car\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('race car') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"not a palindrome\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(palindrome('not a palindrome') === false);"
+          },
+          {
+            "text": "<p><code>palindrome(\"A man, a plan, a canal. Panama\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('A man, a plan, a canal. Panama') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"never odd or even\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('never odd or even') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"nope\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(palindrome('nope') === false);"
+          },
+          {
+            "text": "<p><code>palindrome(\"almostomla\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(palindrome('almostomla') === false);"
+          },
+          {
+            "text": "<p><code>palindrome(\"My age is 0, 0 si ega ym.\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('My age is 0, 0 si ega ym.') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"1 eye for of 1 eye.\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(palindrome('1 eye for of 1 eye.') === false);"
+          },
+          {
+            "text": "<p><code>palindrome(\"0_0 (: /-\\ :) 0-0\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(palindrome('0_0 (: /- :) 0-0') === true);"
+          },
+          {
+            "text": "<p><code>palindrome(\"five|\\_/|four\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(palindrome('five|_/|four') === false);"
+          }
+        ],
+        "description": "<section id=\"description\">\n<p>Return <code>true</code> if the given string is a palindrome. Otherwise, return <code>false</code>.</p>\n<p>A <dfn>palindrome</dfn> is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.</p>\n<p><strong>Note:</strong> You'll need to remove <strong>all non-alphanumeric characters</strong> (punctuation, spaces and symbols) and turn everything into the same case (lower or upper case) in order to check for palindromes.</p>\n<p>We'll pass strings with varying formats, such as <code>racecar</code>, <code>RaceCar</code>, and <code>race CAR</code> among others.</p>\n<p>We'll also pass strings with special symbols, such as <code>2A3*3a2</code>, <code>2A3 3a2</code>, and <code>2_A3*3#A2</code>.</p>\n</section>",
+        "translationPending": false,
+        "block": "javascript-algorithms-and-data-structures-projects",
+        "hasEditableBoundaries": false,
+        "order": 9,
+        "superOrder": 19,
+        "certification": "javascript-algorithms-and-data-structures",
+        "superBlock": "javascript-algorithms-and-data-structures",
+        "challengeOrder": 0,
+        "required": [],
+        "template": "",
+        "time": "50 hours",
+        "helpCategory": "JavaScript",
+        "usesMultifileEditor": false,
+        "disableLoopProtectTests": false,
+        "disableLoopProtectPreview": false
+      },
+      {
+        "id": "a7f4d8f2483413a6ce226cac",
+        "title": "Roman Numeral Converter",
+        "challengeType": 5,
+        "forumTopicId": 16044,
+        "dashedName": "roman-numeral-converter",
+        "challengeFiles": [
+          {
+            "head": "",
+            "tail": "",
+            "id": "",
+            "editableRegionBoundaries": [],
+            "history": ["script.js"],
+            "name": "script",
+            "ext": "js",
+            "path": "script.js",
+            "fileKey": "scriptjs",
+            "contents": "function convertToRoman(num) {\n return num;\n}\n\nconvertToRoman(36);",
+            "error": null,
+            "seed": "function convertToRoman(num) {\n return num;\n}\n\nconvertToRoman(36);"
+          }
+        ],
+        "solutions": [
+          [
+            {
+              "head": "",
+              "tail": "",
+              "id": "",
+              "history": ["script.js"],
+              "name": "script",
+              "ext": "js",
+              "path": "script.js",
+              "fileKey": "scriptjs",
+              "contents": "function convertToRoman(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}",
+              "error": null,
+              "seed": "function convertToRoman(num) {\n  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];\n  var res = [];\n  ref.forEach(function(p) {\n    while (num >= p[1]) {\n      res.push(p[0]);\n      num -= p[1];\n    }\n  });\n  return res.join('');\n}"
+            }
+          ]
+        ],
+        "assignments": [],
+        "tests": [
+          {
+            "text": "<p><code>convertToRoman(2)</code> should return the string <code>II</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(2), 'II');"
+          },
+          {
+            "text": "<p><code>convertToRoman(3)</code> should return the string <code>III</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(3), 'III');"
+          },
+          {
+            "text": "<p><code>convertToRoman(4)</code> should return the string <code>IV</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(4), 'IV');"
+          },
+          {
+            "text": "<p><code>convertToRoman(5)</code> should return the string <code>V</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(5), 'V');"
+          },
+          {
+            "text": "<p><code>convertToRoman(9)</code> should return the string <code>IX</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(9), 'IX');"
+          },
+          {
+            "text": "<p><code>convertToRoman(12)</code> should return the string <code>XII</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(12), 'XII');"
+          },
+          {
+            "text": "<p><code>convertToRoman(16)</code> should return the string <code>XVI</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(16), 'XVI');"
+          },
+          {
+            "text": "<p><code>convertToRoman(29)</code> should return the string <code>XXIX</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(29), 'XXIX');"
+          },
+          {
+            "text": "<p><code>convertToRoman(44)</code> should return the string <code>XLIV</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(44), 'XLIV');"
+          },
+          {
+            "text": "<p><code>convertToRoman(45)</code> should return the string <code>XLV</code>.</p>",
+            "testString": "assert.deepEqual(convertToRoman(45), 'XLV');"
+          },
+          {
+            "text": "<p><code>convertToRoman(68)</code> should return the string <code>LXVIII</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(68), 'LXVIII');"
+          },
+          {
+            "text": "<p><code>convertToRoman(83)</code> should return the string <code>LXXXIII</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(83), 'LXXXIII');"
+          },
+          {
+            "text": "<p><code>convertToRoman(97)</code> should return the string <code>XCVII</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(97), 'XCVII');"
+          },
+          {
+            "text": "<p><code>convertToRoman(99)</code> should return the string <code>XCIX</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(99), 'XCIX');"
+          },
+          {
+            "text": "<p><code>convertToRoman(400)</code> should return the string <code>CD</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(400), 'CD');"
+          },
+          {
+            "text": "<p><code>convertToRoman(500)</code> should return the string <code>D</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(500), 'D');"
+          },
+          {
+            "text": "<p><code>convertToRoman(501)</code> should return the string <code>DI</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(501), 'DI');"
+          },
+          {
+            "text": "<p><code>convertToRoman(649)</code> should return the string <code>DCXLIX</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(649), 'DCXLIX');"
+          },
+          {
+            "text": "<p><code>convertToRoman(798)</code> should return the string <code>DCCXCVIII</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(798), 'DCCXCVIII');"
+          },
+          {
+            "text": "<p><code>convertToRoman(891)</code> should return the string <code>DCCCXCI</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(891), 'DCCCXCI');"
+          },
+          {
+            "text": "<p><code>convertToRoman(1000)</code> should return the string <code>M</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(1000), 'M');"
+          },
+          {
+            "text": "<p><code>convertToRoman(1004)</code> should return the string <code>MIV</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(1004), 'MIV');"
+          },
+          {
+            "text": "<p><code>convertToRoman(1006)</code> should return the string <code>MVI</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(1006), 'MVI');"
+          },
+          {
+            "text": "<p><code>convertToRoman(1023)</code> should return the string <code>MXXIII</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(1023), 'MXXIII');"
+          },
+          {
+            "text": "<p><code>convertToRoman(2014)</code> should return the string <code>MMXIV</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(2014), 'MMXIV');"
+          },
+          {
+            "text": "<p><code>convertToRoman(3999)</code> should return the string <code>MMMCMXCIX</code></p>",
+            "testString": "assert.deepEqual(convertToRoman(3999), 'MMMCMXCIX');"
+          }
+        ],
+        "description": "<section id=\"description\">\n<p>Convert the given number into a roman numeral.</p>\n<table>\n<thead>\n<tr>\n<th>Roman numerals</th>\n<th>Arabic numerals</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>M</td>\n<td>1000</td>\n</tr>\n<tr>\n<td>CM</td>\n<td>900</td>\n</tr>\n<tr>\n<td>D</td>\n<td>500</td>\n</tr>\n<tr>\n<td>CD</td>\n<td>400</td>\n</tr>\n<tr>\n<td>C</td>\n<td>100</td>\n</tr>\n<tr>\n<td>XC</td>\n<td>90</td>\n</tr>\n<tr>\n<td>L</td>\n<td>50</td>\n</tr>\n<tr>\n<td>XL</td>\n<td>40</td>\n</tr>\n<tr>\n<td>X</td>\n<td>10</td>\n</tr>\n<tr>\n<td>IX</td>\n<td>9</td>\n</tr>\n<tr>\n<td>V</td>\n<td>5</td>\n</tr>\n<tr>\n<td>IV</td>\n<td>4</td>\n</tr>\n<tr>\n<td>I</td>\n<td>1</td>\n</tr>\n</tbody>\n</table>\n<p>All roman numerals answers should be provided in upper-case.</p>\n</section>",
+        "translationPending": false,
+        "block": "javascript-algorithms-and-data-structures-projects",
+        "hasEditableBoundaries": false,
+        "order": 9,
+        "superOrder": 19,
+        "certification": "javascript-algorithms-and-data-structures",
+        "superBlock": "javascript-algorithms-and-data-structures",
+        "challengeOrder": 1,
+        "required": [],
+        "template": "",
+        "time": "50 hours",
+        "helpCategory": "JavaScript",
+        "usesMultifileEditor": false,
+        "disableLoopProtectTests": false,
+        "disableLoopProtectPreview": false
+      },
+      {
+        "id": "aff0395860f5d3034dc0bfc9",
+        "title": "Telephone Number Validator",
+        "challengeType": 5,
+        "forumTopicId": 16090,
+        "dashedName": "telephone-number-validator",
+        "challengeFiles": [
+          {
+            "head": "",
+            "tail": "",
+            "id": "",
+            "editableRegionBoundaries": [],
+            "history": ["script.js"],
+            "name": "script",
+            "ext": "js",
+            "path": "script.js",
+            "fileKey": "scriptjs",
+            "contents": "function telephoneCheck(str) {\n  return true;\n}\n\ntelephoneCheck(\"555-555-5555\");",
+            "error": null,
+            "seed": "function telephoneCheck(str) {\n  return true;\n}\n\ntelephoneCheck(\"555-555-5555\");"
+          }
+        ],
+        "solutions": [
+          [
+            {
+              "head": "",
+              "tail": "",
+              "id": "",
+              "history": ["script.js"],
+              "name": "script",
+              "ext": "js",
+              "path": "script.js",
+              "fileKey": "scriptjs",
+              "contents": "var re = /^([+]?1[\\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\\s.-]?){1}([0-9]{4}){1}$/;\n\nfunction telephoneCheck(str) {\n  return re.test(str);\n}\n\ntelephoneCheck(\"555-555-5555\");",
+              "error": null,
+              "seed": "var re = /^([+]?1[\\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\\s.-]?){1}([0-9]{4}){1}$/;\n\nfunction telephoneCheck(str) {\n  return re.test(str);\n}\n\ntelephoneCheck(\"555-555-5555\");"
+            }
+          ]
+        ],
+        "assignments": [],
+        "tests": [
+          {
+            "text": "<p><code>telephoneCheck(\"555-555-5555\")</code> should return a boolean.</p>",
+            "testString": "assert(typeof telephoneCheck('555-555-5555') === 'boolean');"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"1 555-555-5555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('1 555-555-5555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"1 (555) 555-5555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('1 (555) 555-5555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"5555555555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('5555555555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"555-555-5555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('555-555-5555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"(555)555-5555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('(555)555-5555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"1(555)555-5555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('1(555)555-5555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"555-5555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('555-5555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"5555555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('5555555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"1 555)555-5555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('1 555)555-5555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"1 555 555 5555\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('1 555 555 5555') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"1 456 789 4444\")</code> should return <code>true</code>.</p>",
+            "testString": "assert(telephoneCheck('1 456 789 4444') === true);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"123**&#x26;!!asdf#\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('123**&!!asdf#') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"55555555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('55555555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"(6054756961)\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('(6054756961)') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"2 (757) 622-7382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('2 (757) 622-7382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"0 (757) 622-7382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('0 (757) 622-7382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"-1 (757) 622-7382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('-1 (757) 622-7382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"2 757 622-7382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('2 757 622-7382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"10 (757) 622-7382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('10 (757) 622-7382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"27576227382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('27576227382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"(275)76227382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('(275)76227382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"2(757)6227382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('2(757)6227382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"2(757)622-7382\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('2(757)622-7382') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"555)-555-5555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('555)-555-5555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"(555-555-5555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('(555-555-5555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('(555)5(55?)-5555') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"55 55-55-555-5\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('55 55-55-555-5') === false);"
+          },
+          {
+            "text": "<p><code>telephoneCheck(\"11 555-555-5555\")</code> should return <code>false</code>.</p>",
+            "testString": "assert(telephoneCheck('11 555-555-5555') === false);"
+          }
+        ],
+        "description": "<section id=\"description\">\n<p>Return <code>true</code> if the passed string looks like a valid US phone number.</p>\n<p>The user may fill out the form field any way they choose as long as it has the format of a valid US number. The following are examples of valid formats for US numbers (refer to the tests below for other variants):</p>\n<blockquote>555-555-5555<br>(555)555-5555<br>(555) 555-5555<br>555 555 5555<br>5555555555<br>1 555 555 5555</blockquote>\n<p>For this challenge you will be presented with a string such as <code>800-692-7753</code> or <code>8oo-six427676;laskdjf</code>. Your job is to validate or reject the US phone number based on any combination of the formats provided above. The area code is required. If the country code is provided, you must confirm that the country code is <code>1</code>. Return <code>true</code> if the string is a valid US phone number; otherwise return <code>false</code>.</p>\n</section>",
+        "translationPending": false,
+        "block": "javascript-algorithms-and-data-structures-projects",
+        "hasEditableBoundaries": false,
+        "order": 9,
+        "superOrder": 19,
+        "certification": "javascript-algorithms-and-data-structures",
+        "superBlock": "javascript-algorithms-and-data-structures",
+        "challengeOrder": 3,
+        "required": [],
+        "template": "",
+        "time": "50 hours",
+        "helpCategory": "JavaScript",
+        "usesMultifileEditor": false,
+        "disableLoopProtectTests": false,
+        "disableLoopProtectPreview": false
+      }
+    ]
+  }
+}

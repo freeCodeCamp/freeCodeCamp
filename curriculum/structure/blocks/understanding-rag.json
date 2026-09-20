@@ -1,0 +1,25 @@
+{
+  "isUpcomingChange": false,
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "understanding-rag",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "69ae5c648491ca1dcd31440b",
+      "title": "Introduction"
+    },
+    {
+      "id": "69ae5c6d8491ca1dcd31440c",
+      "title": "Simple Explanation of RAG"
+    },
+    {
+      "id": "69ae5c728491ca1dcd31440d",
+      "title": "When Not To RAG"
+    },
+    {
+      "id": "69ae5c768491ca1dcd31440e",
+      "title": "What Is RAG?"
+    }
+  ]
+}

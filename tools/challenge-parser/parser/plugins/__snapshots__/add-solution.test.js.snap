@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`add solution plugin > should have an output to match the snapshot 1`] = `
+{
+  "solutions": [
+    [
+      {
+        "contents": "<html>
+  <body>
+  </body>
+</html>",
+        "ext": "html",
+        "id": "html-key",
+        "name": "index",
+      },
+      {
+        "contents": "body {
+  background: white;
+}",
+        "ext": "css",
+        "id": "",
+        "name": "styles",
+      },
+      {
+        "contents": "var x = 'y';",
+        "ext": "js",
+        "id": "",
+        "name": "script",
+      },
+    ],
+  ],
+}
+`;

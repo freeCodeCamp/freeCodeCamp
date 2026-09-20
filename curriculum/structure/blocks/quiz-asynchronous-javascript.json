@@ -1,0 +1,13 @@
+{
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-asynchronous-javascript",
+  "challengeOrder": [
+    {
+      "id": "66edd630f7666cfa54b404d0",
+      "title": "Asynchronous JavaScript Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

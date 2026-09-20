@@ -1,0 +1,38 @@
+name: freecodecamp-local
+
+services:
+  db:
+    image: mongo:8.2
+    command: mongod --replSet rs0
+    restart: unless-stopped
+    hostname: mongodb
+    volumes:
+      - db-data:/data/db
+    healthcheck:
+      test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
+      interval: 2s
+      retries: 5
+      start_period: 10s
+
+  setup:
+    image: mongo:8.2
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure:5
+    command: >
+      mongosh --host mongodb:27017 --eval '
+        try {
+          rs.initiate({ _id: "rs0", members: [{ _id: 0, host: "mongodb:27017" }] });
+        } catch (err) {
+          if (err.codeName !== "AlreadyInitialized") throw err;
+        }
+      '
+
+  mailpit:
+    image: axllent/mailpit
+    restart: unless-stopped
+
+volumes:
+  db-data:
+    driver: local

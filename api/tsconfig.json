@@ -1,0 +1,14 @@
+{
+  "include": ["**/*.ts"],
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "nodenext",
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true
+  }
+}

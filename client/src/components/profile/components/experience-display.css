@@ -1,0 +1,26 @@
+.experience-item-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.experience-item-wrapper .experience-item {
+  flex: 1;
+  min-width: 0;
+}
+
+.experience-company {
+  font-weight: normal;
+  margin-bottom: 0rem;
+}
+
+.experience-date {
+  color: #858591;
+  font-size: 0.9rem;
+  margin-bottom: 0rem;
+}
+
+.experience-description {
+  margin-top: 0.75rem;
+  white-space: pre-wrap;
+}

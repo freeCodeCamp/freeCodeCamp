@@ -1,0 +1,12 @@
+.certification-settings table {
+  display: table;
+  width: 100%;
+}
+
+.certification-settings tr {
+  height: 57px;
+}
+
+.certification-settings .project-title > a {
+  line-height: 40px;
+}

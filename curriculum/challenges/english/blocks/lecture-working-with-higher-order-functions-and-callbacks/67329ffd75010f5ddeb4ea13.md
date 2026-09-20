@@ -1,0 +1,190 @@
+---
+id: 67329ffd75010f5ddeb4ea13
+title: What Is a Callback Function, and How Does It Work with the forEach Method?
+challengeType: 19
+dashedName: what-is-a-callback-function-and-how-does-it-work-with-the-foreach-method
+---
+
+# --interactive--
+
+In JavaScript, a callback function is a function that is passed as an argument to another function, so that the outer function can invoke it at a specific point.
+
+This concept is fundamental to understanding many aspects of JavaScript, including how the `forEach` method works.
+
+Let's start by understanding what a callback function is in a simple context.
+
+Imagine you have a function, and within the function you want to do something multiple times. Instead of writing all the code in one big function, you can pass a second function (the callback) to be executed whenever you need that specific something to be done. This allows for more flexible and modular code.
+
+Now, let's introduce the `forEach` method. `forEach` is a built-in method for arrays in JavaScript. It allows you to iterate over each element in an array and perform an operation on each element. The operation you want to perform is defined in a callback function that you provide to `forEach`.
+
+Here's an example of how `forEach` works with a callback function:
+
+:::interactive_editor
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach(function(number) {
+  console.log(number * 2);
+});
+```
+
+:::
+
+In this example, we have an array of numbers. We use the `forEach` method on this array, and we provide a callback function as an argument to `forEach`.
+
+This callback function takes one parameter, which represents each element in the array. The `forEach` method will call this callback function once for each element in the array.
+
+The callback function in this case multiplies each number by `2` and logs the result. So, when this code runs, it will output:
+
+```md
+2
+4
+6
+8
+10
+```
+
+It's important to understand that the callback function is called once for each element in the array, in order. `forEach` takes care of the looping for you, so you don't have to write a `for` loop yourself.
+
+You can also use an arrow function as the callback, which can make your code even more concise:
+
+:::interactive_editor
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach(number => console.log(number * 2));
+```
+
+:::
+
+This does exactly the same thing as the previous example, but with less code.
+
+The callback function in `forEach` can actually take up to three arguments: the current element, the index of the current element, and the array that `forEach` was called upon.
+
+Here's an example using all three:
+
+:::interactive_editor
+
+```js
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach((number, index, array) => {
+  console.log(`Element ${number} is at index ${index} in array ${array}`);
+});
+```
+
+:::
+
+This would log information about each element, its index, and the original array.
+
+Understanding callback functions and methods like `forEach` is important as you progress in JavaScript. They form the basis for many more advanced concepts in the language, particularly in asynchronous programming which you will learn about in future lessons.
+
+# --questions--
+
+## --text--
+
+What is the primary purpose of a callback function in JavaScript?
+
+## --answers--
+
+To create a new array.
+
+### --feedback--
+
+Think about why we might want to pass a function as an argument to another function.
+
+---
+
+To allow a function to run another piece of code at a later point.
+
+---
+
+To define a new variable.
+
+### --feedback--
+
+Think about why we might want to pass a function as an argument to another function.
+
+---
+
+To replace a `for` loop.
+
+### --feedback--
+
+Think about why we might want to pass a function as an argument to another function.
+
+## --video-solution--
+
+2
+
+## --text--
+
+How many times does the callback function in `forEach` get called?
+
+## --answers--
+
+Once.
+
+### --feedback--
+
+Consider how `forEach` iterates over an array.
+
+---
+
+Twice.
+
+### --feedback--
+
+Consider how `forEach` iterates over an array.
+
+---
+
+Once for each element in the array.
+
+---
+
+It depends on the size of the array.
+
+### --feedback--
+
+Consider how `forEach` iterates over an array.
+
+## --video-solution--
+
+3
+
+## --text--
+
+Which of the following is NOT a parameter that can be passed to the callback function in `forEach`?
+
+## --answers--
+
+The current element.
+
+### --feedback--
+
+Remember the three parameters we mentioned that `forEach` can provide to its callback.
+
+---
+
+The index of the current element.
+
+### --feedback--
+
+Remember the three parameters we mentioned that `forEach` can provide to its callback.
+
+---
+
+The array `forEach` was called on.
+
+### --feedback--
+
+Remember the three parameters we mentioned that `forEach` can provide to its callback.
+
+---
+
+The length of the array.
+
+## --video-solution--
+
+4

@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
+import { allowTrailingSlash } from './utils/url';
+
+test.beforeEach(async ({ page }) => {
+  await page.goto('/');
+});
+
+test.describe('Signout Modal component', () => {
+  test('signs out and redirects to / after user confirms they want to sign out', async ({
+    page
+  }) => {
+    await page.getByRole('button', { name: translations.buttons.menu }).click();
+    await page
+      .getByRole('button', { name: translations.buttons['sign-out'] })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: translations.signout.heading })
+    ).toBeVisible();
+
+    await page
+      .getByRole('button', { name: translations.signout.certain })
+      .click();
+
+    await expect(
+      page.getByRole('dialog', { name: translations.signout.heading })
+    ).not.toBeVisible();
+    await expect(page).toHaveURL(allowTrailingSlash(''));
+  });
+});

@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-customer-complaint-form",
+  "challengeOrder": [
+    {
+      "id": "67279fe50237291f80eed8b8",
+      "title": "Build a Customer Complaint Form"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

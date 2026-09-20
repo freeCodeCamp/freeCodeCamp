@@ -1,0 +1,13 @@
+{
+  "blockLabel": "exam",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "exam-relational-databases-certification",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "68e6bf3f20effa1586e79859",
+      "title": "Relational Databases Certification Exam"
+    }
+  ]
+}

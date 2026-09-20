@@ -1,0 +1,14 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-unique-sorted-union",
+  "challengeOrder": [
+    {
+      "id": "a105e963526e7de52b219be9",
+      "title": "Implement a Unique Sorted Union"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

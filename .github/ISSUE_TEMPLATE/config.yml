@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Request programming help with coding challenges
+    url: https://forum.freecodecamp.org
+    about: Please visit this page for general support and programming help on coding challenges.
+  - name: Report issues with content on /news articles
+    url: https://mailxto.com/lkj5n7
+    about: Please fill out an email to our editorial team to report issues on specific articles on our technical publication (link opens an email template)
+  - name: Request technical support for your freeCodeCamp account
+    url: https://www.freecodecamp.org/support
+    about: Please visit this page for requesting technical support related to your freeCodeCamp account.

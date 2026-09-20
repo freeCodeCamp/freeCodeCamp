@@ -1,0 +1,71 @@
+---
+id: 69728acd91a7f312029b658e
+title: Task 10
+challengeType: 24
+dashedName: task-10
+lang: es
+---
+
+<!-- (AUDIO) Elena: Sesenta. -->
+
+# --description--
+
+The number 60 is called `sesenta` in Spanish.
+
+You'll learn more about the numbers 61-69 in the coming section.
+
+# --instructions--
+
+Listen to the audio and practice pronouncing this number.
+
+# --assignment--
+
+I've practiced pronouncing the number 60.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company3-reception.png",
+    "characters": [
+      {
+        "character": "Elena",
+        "position": {
+          "x": 50,
+          "y": 25,
+          "z": 1.5
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ES_A1_describing_company_and_people_numbers_21_100.mp3",
+      "startTime": 1,
+      "startTimestamp": 87.09,
+      "finishTimestamp": 88.12
+    }
+  },
+  "commands": [
+    {
+      "character": "Elena",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Elena",
+      "startTime": 1,
+      "finishTime": 2.03,
+      "dialogue": {
+        "text": "Sesenta",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "opacity": 0,
+      "startTime": 2.53
+    }
+  ]
+}
+```

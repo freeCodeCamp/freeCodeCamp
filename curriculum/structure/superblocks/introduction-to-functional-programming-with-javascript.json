@@ -1,0 +1,10 @@
+{
+  "blocks": [
+    "lecture-understanding-functional-programming",
+    "workshop-recipe-ingredient-converter",
+    "lab-optional-arguments-sum-function",
+    "lab-sorting-visualizer",
+    "review-javascript-functional-programming",
+    "quiz-javascript-functional-programming"
+  ]
+}

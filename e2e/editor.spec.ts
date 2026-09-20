@@ -1,0 +1,227 @@
+import { type APIRequestContext } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
+
+import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { authedRequest } from './utils/request';
+
+test.use({ userPreset: 'certified' });
+
+const setTheme = async (
+  request: APIRequestContext,
+  theme: 'default' | 'night'
+) =>
+  authedRequest({
+    request,
+    endpoint: '/update-my-theme',
+    method: 'put',
+    data: {
+      theme
+    }
+  });
+
+const testPage =
+  '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3';
+
+test.describe('Editor Component', () => {
+  test('should allow the user to insert text', async ({ page, isMobile }) => {
+    await page.goto(testPage);
+
+    await focusEditor({ page, isMobile });
+    await page.keyboard.insertText('<h2>FreeCodeCamp</h2>');
+    const text = page.getByText('<h2>FreeCodeCamp</h2>');
+    await expect(text).toBeVisible();
+  });
+});
+
+test.describe('Python Terminal', () => {
+  test('should only have output if the python code generates it', async ({
+    page,
+    browserName,
+    isMobile
+  }) => {
+    await page.goto('/learn/python-v9/workshop-caesar-cipher/step-2');
+
+    // First enter code that does not generate output
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    await getEditors(page).fill('no = "output"');
+
+    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
+
+    const terminal = page.getByTestId('xterm-terminal');
+    // Ensure there is no output
+    await expect(async () => {
+      const text = await terminal.innerText();
+      expect(text.trim()).toBe('');
+    }).toPass();
+
+    if (isMobile) await page.getByRole('tab', { name: 'Code' }).click();
+
+    // Now enter code that does generate output
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    await getEditors(page).fill('some = "output"\nprint(some)');
+
+    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
+    // Since the invisible characters are still there, we have to use "contain",
+    // not "have"
+    await expect(terminal).toContainText('output');
+  });
+
+  test('should display error message when the user enters invalid code', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    await page.goto('learn/python-v9/workshop-caesar-cipher/step-2');
+
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    // Then enter invalid code
+    await getEditors(page).fill('def');
+
+    if (isMobile) {
+      await page.getByRole('tab', { name: 'Preview' }).click();
+    }
+
+    const terminal = page.getByTestId('xterm-terminal');
+
+    // While it's displayed on multiple lines, the string itself has no newlines, hence:
+    const error = `Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
+    // It shouldn't take this long, but the Python worker can be slow to respond.
+    await expect(terminal.getByText(error)).toContainText(error, {
+      timeout: 15000
+    });
+  });
+});
+
+test.describe('Editor theme if the system theme is dark', () => {
+  test.use({ colorScheme: 'dark' });
+
+  test.describe('If the user is signed in', () => {
+    test('should respect the user settings', async ({ page, request }) => {
+      const editor = page.locator("div[role='code'].monaco-editor");
+
+      await setTheme(request, 'night');
+      await page.goto(testPage);
+
+      await expect(editor).toHaveClass(/vs-dark/);
+
+      await setTheme(request, 'default');
+      await page.reload();
+
+      await expect(editor).toHaveClass(/vs(?!\w)/);
+    });
+  });
+
+  test.describe('If the user is signed out and has no local storage data', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+
+    test('should be in dark mode', async ({ page }) => {
+      await page.goto(testPage);
+      const editor = page.locator("div[role='code'].monaco-editor");
+      await expect(editor).toHaveClass(/vs-dark/);
+    });
+  });
+
+  test.describe('if the user is signed out and has a dark theme set in local storage', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+
+    test('should be in dark mode', async ({ page }) => {
+      // go to the test page
+      await page.goto(testPage);
+
+      // set the dark theme in local storage
+      await page.evaluate(() => {
+        localStorage.setItem('theme', 'dark');
+      });
+
+      // reload the page to apply the local storage changes
+      await page.reload();
+
+      // check if the editor is in dark mode
+      const editor = page.locator("div[role='code'].monaco-editor");
+      await expect(editor).toHaveClass(/vs-dark/);
+    });
+  });
+});
+
+test.describe('Editor theme if the system theme is light', () => {
+  test.use({ colorScheme: 'light' });
+
+  test.describe('If the user is signed in', () => {
+    test('should respect the user settings', async ({ page, request }) => {
+      const editor = page.locator("div[role='code'].monaco-editor");
+
+      await setTheme(request, 'night');
+      await page.goto(testPage);
+
+      await expect(editor).toHaveClass(/vs-dark/);
+
+      await setTheme(request, 'default');
+      await page.reload();
+
+      await expect(editor).toHaveClass(/vs(?!\w)/);
+    });
+
+    // This should be true for both system themes, but we're only testing light mode to save time.
+    test('should switch the editor theme when the user toggles the theme', async ({
+      page,
+      request
+    }) => {
+      await setTheme(request, 'default');
+      await page.goto(testPage);
+      const editorContent = getEditors(page);
+      // Wait for the editor's mount-time autofocus
+      // so it cannot steal focus from the menu after we open it.
+      await expect(editorContent).toBeFocused();
+
+      // Open the nav menu and toggle the theme
+      const menuButton = page.getByRole('button', { name: 'Menu' });
+      await menuButton.click();
+      const menu = page.getByRole('list', { name: 'Menu' });
+      await expect(menu).toBeVisible();
+
+      const toggle = menu.getByRole('button', { name: 'Night Mode' });
+      await expect(toggle).toBeVisible();
+      await toggle.click();
+
+      // Ensure that the action is completed before checking the editor.
+      await expect(page.getByText('We have updated your theme')).toBeVisible();
+
+      const editor = page.locator("div[role='code'].monaco-editor");
+      await expect(editor).toHaveClass(/vs-dark/);
+    });
+  });
+
+  test.describe('If the user is signed out and has no local storage value', () => {
+    test.use({ storageState: { cookies: [], origins: [] } });
+
+    test('should be in light mode', async ({ page }) => {
+      await page.goto(testPage);
+      const editor = page.locator("div[role='code'].monaco-editor");
+      await expect(editor).toHaveClass(/vs(?!\w)/);
+    });
+
+    test.describe('if the user is signed out and has a light theme set in local storage', () => {
+      test.use({ storageState: { cookies: [], origins: [] } });
+
+      test('should be in light mode', async ({ page }) => {
+        // go to the test page
+        await page.goto(testPage);
+
+        // set the light theme in local storage
+        await page.evaluate(() => {
+          localStorage.setItem('theme', 'light');
+        });
+
+        // reload the page to apply the local storage changes
+        await page.reload();
+
+        // check if the editor is in light mode
+        const editor = page.locator("div[role='code'].monaco-editor");
+        await expect(editor).toHaveClass(/vs(?!\w)/);
+      });
+    });
+  });
+});

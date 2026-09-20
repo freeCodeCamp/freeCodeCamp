@@ -1,0 +1,14 @@
+{
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-quicksort",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "challengeOrder": [
+    {
+      "id": "681dbcca65bbda5f286dc0ca",
+      "title": "Implement the Quicksort Algorithm"
+    }
+  ],
+  "helpCategory": "Python"
+}

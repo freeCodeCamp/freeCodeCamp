@@ -1,0 +1,91 @@
+/* global preval */
+
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
+
+import translations from './locales/english/translations.json';
+import trending from './locales/english/trending.json';
+import intro from './locales/english/intro.json';
+import metaTags from './locales/english/meta-tags.json';
+import links from './locales/english/links.json';
+import searchBar from './locales/english/search-bar.json';
+
+import envData from '../config/env.json';
+
+const { clientLocale } = envData;
+
+const i18nextCode = i18nextCodes[clientLocale];
+
+// Non-english locale resources are loaded via preval so that webpack only
+// bundles the single locale selected by CLIENT_LOCALE and the english fallback.
+// For english the preval returns undefined, so webpack will not bundle the
+// english resources twice.
+i18n.use(initReactI18next).init({
+  fallbackLng: 'en',
+  lng: i18nextCode,
+  resources: {
+    [i18nextCode]: {
+      translations: preval`
+      const { clientLocale } = require('../config/env.json');
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/translations.json');
+      }
+    `,
+      trending: preval`
+      const { clientLocale } = require('../config/env.json');
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/trending.json');
+      }
+    `,
+      intro: preval`
+      const { clientLocale } = require('../config/env.json');
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/intro.json');
+      }
+    `,
+      metaTags: preval`
+      const { clientLocale } = require('../config/env.json');
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/meta-tags.json');
+      }
+    `,
+      links: preval`
+      const { clientLocale } = require('../config/env.json');
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/links.json');
+      }
+    `,
+      'search-bar': preval`
+      const { clientLocale } = require('../config/env.json');
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/search-bar.json');
+      }
+    `
+    },
+    en: {
+      translations,
+      trending,
+      intro,
+      metaTags,
+      links,
+      'search-bar': searchBar
+    }
+  },
+  ns: ['translations', 'trending', 'intro', 'metaTags', 'links', 'search-bar'],
+  defaultNS: 'translations',
+  returnObjects: true,
+  // Uncomment the next line for debug logging
+  // debug: true,
+  interpolation: {
+    escapeValue: false
+  },
+  react: {
+    useSuspense: true
+  },
+  returnNull: false
+});
+
+i18n.languages = clientLocale;
+
+export default i18n;

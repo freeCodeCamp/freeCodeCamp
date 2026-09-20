@@ -1,0 +1,78 @@
+name: CI - Node.js - i18n - Submodule
+
+on:
+  # Run on push events, but only for the below branches
+  push:
+    branches:
+      - 'chore/update-i18n-curriculum-submodule'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-curriculum:
+    name: Test Curriculum
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [24]
+        # Exclude the languages that we currently run in the full CI suite.
+        locale:
+          - 'chinese'
+          - 'espanol'
+          - 'ukrainian'
+          - 'japanese'
+          - 'german'
+          - 'swahili'
+          - 'korean'
+          - 'arabic'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set Environment variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+
+      - name: Install node_modules
+        run: pnpm install
+
+      # DONT REMOVE THIS STEP.
+      # TODO: Refactor and use re-usable workflow and shared artifacts
+      - name: Build Client in ${{ matrix.locale }}
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: |
+          pnpm run build
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
+
+      - name: Run Tests
+        env:
+          CURRICULUM_LOCALE: ${{ matrix.locale }}
+          CLIENT_LOCALE: ${{ matrix.locale }}
+        run: pnpm -F=curriculum test-content

@@ -1,0 +1,103 @@
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../helpers';
+import GreenPass from '../../assets/icons/green-pass';
+import GreenNotCompleted from '../../assets/icons/green-not-completed';
+import JavaScriptIcon from '../../assets/icons/javascript';
+import PythonIcon from '../../assets/icons/python';
+import { formatDisplayDate, toMonthDay, truncate } from './helpers';
+
+interface CalendarDayProps {
+  dayNumber: number;
+  date: string;
+  challengeNumber?: number;
+  completedLanguages?: string[];
+  isAvailable?: boolean;
+  title?: string;
+}
+
+function Checkmark({ isCompleted }: { isCompleted: boolean }) {
+  return isCompleted ? (
+    <span
+      className='dc-checkmark completed'
+      data-playwright-test-label='calendar-day-completed'
+    >
+      <GreenPass />
+    </span>
+  ) : (
+    <span
+      className='dc-checkmark not-completed'
+      data-playwright-test-label='calendar-day-not-completed'
+    >
+      <GreenNotCompleted />
+    </span>
+  );
+}
+function DailyCodingChallengeCalendarDay({
+  dayNumber,
+  date,
+  isAvailable = false,
+  title = '',
+  completedLanguages = [],
+  challengeNumber
+}: CalendarDayProps): JSX.Element {
+  const { t } = useTranslation();
+  const completed = completedLanguages.length > 0;
+
+  if (!isAvailable)
+    return (
+      <button
+        disabled
+        className='calendar-day not-available'
+        data-playwright-test-label='calendar-day'
+        aria-label={`${formatDisplayDate(date)}, (${t('aria.not-available')})`}
+      >
+        <span className='calendar-day-number' aria-hidden='true'>
+          {dayNumber}
+        </span>
+      </button>
+    );
+
+  // isAvailable -> render link to challenge
+  return (
+    <Link
+      to={`/learn/daily-coding-challenge/${toMonthDay(date)}`}
+      className='calendar-day available'
+      data-playwright-test-label='calendar-day'
+      aria-label={formatDisplayDate(date)}
+    >
+      <span className='calendar-day-number' aria-hidden='true'>
+        {dayNumber}
+      </span>
+
+      <span className='dc-number'>#{challengeNumber}</span>
+
+      <div className='dc-info'>
+        <div className='dc-title-wrap'>
+          <div className='dc-title'>{truncate(title)}</div>
+        </div>
+
+        <Checkmark isCompleted={completed} />
+
+        <div className='dc-languages'>
+          {completedLanguages.includes('javascript') && (
+            <div className='dc-language-icon'>
+              <JavaScriptIcon />
+              <span className='sr-only'>JavaScript</span>
+            </div>
+          )}
+          {completedLanguages.includes('python') && (
+            <div className='dc-language-icon'>
+              <PythonIcon />
+              <span className='sr-only'>Python</span>
+            </div>
+          )}
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+DailyCodingChallengeCalendarDay.displayName = 'DailyCodingChallengeCalendarDay';
+
+export default DailyCodingChallengeCalendarDay;

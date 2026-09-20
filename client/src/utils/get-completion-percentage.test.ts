@@ -1,0 +1,379 @@
+import { describe, it, expect } from 'vitest';
+import type { AllChallengesInfo, ChallengeNode } from '../redux/prop-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  getCompletedPercentage,
+  getCompletedChallengesInBlock,
+  getCurrentBlockIds
+} from './get-completion-percentage';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
+
+describe('get-completion-percentage', () => {
+  describe('getCompletedPercentage', () => {
+    it('calculates percentage when challenge not yet completed', () => {
+      const completedChallengesIds = ['challenge-1', 'challenge-2'];
+      const currentBlockIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3',
+        'challenge-4',
+        'challenge-5'
+      ];
+      const currentChallengeId = 'challenge-3';
+
+      const result = getCompletedPercentage(
+        completedChallengesIds,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(60);
+    });
+
+    it('calculates percentage when challenge already completed', () => {
+      const completedChallengesIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3'
+      ];
+      const currentBlockIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3',
+        'challenge-4',
+        'challenge-5'
+      ];
+      const currentChallengeId = 'challenge-3';
+
+      const result = getCompletedPercentage(
+        completedChallengesIds,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(60);
+    });
+
+    it('caps percentage at 100', () => {
+      const completedChallengesIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3'
+      ];
+      const currentBlockIds = ['challenge-1', 'challenge-2'];
+      const currentChallengeId = 'challenge-3';
+
+      const result = getCompletedPercentage(
+        completedChallengesIds,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(100);
+    });
+
+    it('handles undefined completedChallengesIds', () => {
+      const currentBlockIds = ['challenge-1', 'challenge-2', 'challenge-3'];
+      const currentChallengeId = 'challenge-1';
+
+      const result = getCompletedPercentage(
+        undefined,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(33);
+    });
+
+    it('reports 100% when resubmitting an already-completed single-challenge lab block', () => {
+      // Regression test for #67867: a completed lab whose block contains only
+      // the lab itself should read 100%, not 0%, on resubmission.
+      const labId = 'lab-challenge';
+      const completedChallengesIds = [labId];
+      const currentBlockIds = [labId];
+
+      const result = getCompletedPercentage(
+        completedChallengesIds,
+        currentBlockIds,
+        labId
+      );
+
+      expect(result).toBe(100);
+    });
+  });
+
+  describe('getCompletedChallengesInBlock', () => {
+    it('counts new challenge when not already completed', () => {
+      const completedChallengesIds = ['challenge-1', 'challenge-2'];
+      const currentBlockIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3',
+        'challenge-4'
+      ];
+      const currentChallengeId = 'challenge-3';
+
+      const result = getCompletedChallengesInBlock(
+        completedChallengesIds,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(3);
+    });
+
+    it('does not double-count when challenge already completed', () => {
+      const completedChallengesIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3'
+      ];
+      const currentBlockIds = [
+        'challenge-1',
+        'challenge-2',
+        'challenge-3',
+        'challenge-4'
+      ];
+      const currentChallengeId = 'challenge-3';
+
+      const result = getCompletedChallengesInBlock(
+        completedChallengesIds,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(3);
+    });
+
+    it('only counts challenges in the current block', () => {
+      const completedChallengesIds = [
+        'block1-challenge-1',
+        'block1-challenge-2',
+        'block2-challenge-1',
+        'block2-challenge-2'
+      ];
+      const currentBlockIds = ['block1-challenge-1', 'block1-challenge-2'];
+      const currentChallengeId = 'block1-challenge-3';
+
+      const result = getCompletedChallengesInBlock(
+        completedChallengesIds,
+        currentBlockIds,
+        currentChallengeId
+      );
+
+      expect(result).toBe(3);
+    });
+  });
+
+  describe('getCurrentBlockIds', () => {
+    it('returns block IDs for non-project-based challenges', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          {
+            challenge: {
+              id: 'block-challenge-1',
+              block: 'basic-html',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'block-challenge-2',
+              block: 'basic-html',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'other-block-challenge',
+              block: 'basic-css',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'basic-html',
+        Certification.RespWebDesignV9,
+        challengeTypes.step
+      );
+
+      expect(result).toEqual(['block-challenge-1', 'block-challenge-2']);
+    });
+
+    it('returns certificate IDs for project-based challenges when available', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [],
+        certificateNodes: [
+          {
+            challenge: {
+              certification: Certification.RespWebDesignV9,
+              tests: [
+                { id: 'cert-project-1' },
+                { id: 'cert-project-2' },
+                { id: 'cert-project-3' }
+              ]
+            }
+          }
+        ]
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'responsive-web-design-projects',
+        Certification.RespWebDesignV9,
+        challengeTypes.frontEndProject
+      );
+
+      expect(result).toEqual([
+        'cert-project-1',
+        'cert-project-2',
+        'cert-project-3'
+      ]);
+    });
+
+    // this is a provisional fix to the issue mentioned in #63773
+    it('falls back to block IDs when certificate not available', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          {
+            challenge: {
+              id: 'project-1',
+              block: 'back-end-projects',
+              certification: Certification.BackEndDevApisV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'project-2',
+              block: 'back-end-projects',
+              certification: Certification.BackEndDevApisV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'back-end-projects',
+        Certification.BackEndDevApisV9,
+        challengeTypes.backEndProject
+      );
+
+      expect(result).toEqual(['project-1', 'project-2']);
+    });
+
+    // Regression test for #67867: labs are project-based but each is its own
+    // standalone block, so they must use their block IDs rather than the
+    // certification's tests (otherwise resubmitting a completed lab reads 0%).
+    it('returns block IDs for labs even when a certificate is available', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          {
+            challenge: {
+              id: 'lab-challenge',
+              block: 'lab-all-true-property-validator',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: [
+          {
+            challenge: {
+              certification: Certification.JsV9,
+              tests: [{ id: 'javascript-certification-exam' }]
+            }
+          }
+        ]
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'lab-all-true-property-validator',
+        Certification.JsV9,
+        challengeTypes.jsLab
+      );
+
+      expect(result).toEqual(['lab-challenge']);
+    });
+
+    it('returns empty array when no matching challenges found', () => {
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'different-block',
+              certification: 'responsive-web-design'
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'non-existent-block',
+        Certification.RespWebDesignV9,
+        challengeTypes.step
+      );
+
+      expect(result).toEqual([]);
+    });
+
+    it('only counts challenges from the current superblock when a block is shared across superblocks', () => {
+      // This tests the fix for the bug where blocks shared between superblocks
+      // (e.g. javascript-v9 and introduction-to-variables-and-strings-in-javascript)
+      // caused currentBlockIds.length to be doubled, making the progress bar
+      // show 7% instead of 14% for 1/7 challenges.
+      const allChallengesInfo: AllChallengesInfo = {
+        challengeNodes: [
+          // Challenges from the current superblock (javascript-v9)
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.JsV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          // Same block, but from a different superblock — should be excluded
+          {
+            challenge: {
+              id: 'challenge-1',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode,
+          {
+            challenge: {
+              id: 'challenge-2',
+              block: 'workshop-greeting-bot',
+              certification: Certification.RespWebDesignV9
+            }
+          } as Partial<ChallengeNode> as ChallengeNode
+        ],
+        certificateNodes: []
+      };
+
+      const result = getCurrentBlockIds(
+        allChallengesInfo,
+        'workshop-greeting-bot',
+        Certification.JsV9,
+        challengeTypes.step
+      );
+
+      expect(result).toEqual(['challenge-1', 'challenge-2']);
+    });
+  });
+});

@@ -1,0 +1,224 @@
+import React, { useState } from 'react';
+import Helmet from 'react-helmet';
+import type { TFunction } from 'i18next';
+import { useTranslation } from 'react-i18next';
+import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
+import { FullWidthRow, Link } from '../helpers';
+import UsernameSettings from './components/username';
+import About from './components/about';
+import Internet from './components/internet';
+import { User } from './../../redux/prop-types';
+import Timeline from './components/time-line';
+import Camper from './components/camper';
+import Certifications from './components/certifications';
+import Stats from './components/stats';
+import HeatMap from './components/heat-map';
+import './profile.css';
+import { PortfolioProjects } from './components/portfolio-projects';
+import { ExperienceDisplay } from './components/experience-display';
+import { ProfileCompleteness } from './components/profile-completeness';
+import { ProfilePrivacy } from './components/profile-privacy';
+
+interface ProfileProps {
+  isSessionUser: boolean;
+  user: User;
+}
+
+interface EditModalProps {
+  user: User;
+  isEditing: boolean;
+  isSessionUser: boolean;
+  setIsEditing: (isEditing: boolean) => void;
+}
+interface MessageProps {
+  isSessionUser: boolean;
+  t: TFunction;
+  username: string;
+}
+
+const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
+  return (
+    <FullWidthRow>
+      <Callout variant='note' label={t('misc.note')}>
+        {t('profile.you-change-privacy')}
+      </Callout>
+      <Spacer size='xl' />
+    </FullWidthRow>
+  );
+};
+
+const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
+  const { username } = user;
+  const { t } = useTranslation();
+  return (
+    <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
+      <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
+      <Modal.Body alignment='left'>
+        <UsernameSettings username={username} setIsEditing={setIsEditing} />
+        <Spacer size='m' />
+        <About user={user} setIsEditing={setIsEditing} />
+        <Spacer size='m' />
+        <Internet user={user} setIsEditing={setIsEditing} />
+      </Modal.Body>
+    </Modal>
+  );
+};
+
+const VisitorMessage = ({
+  t,
+  username
+}: Omit<MessageProps, 'isSessionUser'>) => {
+  return (
+    <FullWidthRow>
+      <Callout variant='note' label={t('misc.note')}>
+        {t('profile.username-change-privacy', { username })}
+      </Callout>
+      <Spacer size='m' />
+    </FullWidthRow>
+  );
+};
+
+const Message = ({ isSessionUser, t, username }: MessageProps) => {
+  if (isSessionUser) {
+    return <UserMessage t={t} />;
+  }
+  return <VisitorMessage t={t} username={username} />;
+};
+
+function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const {
+    profileUI: {
+      isLocked,
+      showCerts,
+      showHeatMap,
+      showPoints,
+      showPortfolio,
+      showExperience,
+      showTimeLine
+    },
+    about,
+    calendar,
+    completedChallenges,
+    name,
+    picture,
+    points,
+    portfolio,
+    experience,
+    username
+  } = user;
+
+  return (
+    <>
+      {isSessionUser && (
+        <EditModal
+          user={user}
+          isEditing={isEditing}
+          isSessionUser={isSessionUser}
+          setIsEditing={setIsEditing}
+        />
+      )}
+      {isSessionUser && (
+        <ProfileCompleteness
+          name={name}
+          about={about}
+          picture={picture}
+          location={user.location}
+          githubProfile={user.githubProfile}
+          linkedin={user.linkedin}
+          twitter={user.twitter}
+          bluesky={user.bluesky}
+          website={user.website}
+          portfolio={portfolio}
+          experience={experience || []}
+          isLocked={isLocked}
+        />
+      )}
+      {isSessionUser && <ProfilePrivacy />}
+      <Camper
+        user={user}
+        isSessionUser={isSessionUser}
+        setIsEditing={setIsEditing}
+      />
+      {showPoints || isSessionUser ? (
+        <Stats
+          points={points}
+          calendar={calendar}
+          isPrivate={isSessionUser && !showPoints}
+        />
+      ) : null}
+      {showHeatMap || isSessionUser ? (
+        <HeatMap
+          calendar={calendar}
+          isPrivate={isSessionUser && !showHeatMap}
+        />
+      ) : null}
+      {showPortfolio || isSessionUser ? (
+        <PortfolioProjects
+          portfolioProjects={portfolio}
+          isPrivate={isSessionUser && !showPortfolio}
+          isSessionUser={isSessionUser}
+        />
+      ) : null}
+      {showExperience || isSessionUser ? (
+        <ExperienceDisplay
+          experience={experience || []}
+          isPrivate={isSessionUser && !showExperience}
+          isSessionUser={isSessionUser}
+        />
+      ) : null}
+      {showCerts || isSessionUser ? (
+        <Certifications user={user} isPrivate={isSessionUser && !showCerts} />
+      ) : null}
+      {showTimeLine || isSessionUser ? (
+        <Timeline
+          completedMap={completedChallenges}
+          username={username}
+          isPrivate={isSessionUser && !showTimeLine}
+        />
+      ) : null}
+      <Spacer size='m' />
+    </>
+  );
+}
+
+function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
+  const { t } = useTranslation();
+  const {
+    profileUI: { isLocked },
+    username
+  } = user;
+
+  const showUserProfile = !isLocked || isSessionUser;
+
+  return (
+    <>
+      <Helmet>
+        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
+      </Helmet>
+      <Spacer size='m' />
+      <Container>
+        <Spacer size='m' />
+        {isLocked && (
+          <Message username={username} isSessionUser={isSessionUser} t={t} />
+        )}
+        {showUserProfile && (
+          <UserProfile user={user} isSessionUser={isSessionUser} />
+        )}
+        {!isSessionUser && (
+          <Row className='text-center'>
+            <Link to={`/user/${username}/report-user`}>
+              {t('buttons.flag-user')}
+            </Link>
+          </Row>
+        )}
+        <Spacer size='m' />
+      </Container>
+    </>
+  );
+}
+
+Profile.displayName = 'Profile';
+
+export default Profile;

@@ -1,0 +1,50 @@
+name: i18n - Build Validation
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Validate i18n Builds
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        node-version: [24]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
+      - name: Set freeCodeCamp Environment Variables
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Validate Challenge Files
+        run: pnpm run audit-challenges

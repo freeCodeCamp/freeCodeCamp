@@ -1,0 +1,231 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
+import fs from 'fs';
+import path, { join } from 'path';
+import matter from 'gray-matter';
+import { ObjectId } from 'bson';
+import { vi, describe, it, expect, afterEach } from 'vitest';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+
+vi.mock('fs', () => {
+  return {
+    default: {
+      writeFileSync: vi.fn(),
+      readdirSync: vi.fn()
+    }
+  };
+});
+
+vi.mock('gray-matter', () => {
+  return {
+    default: {
+      read: vi.fn(),
+      stringify: vi.fn()
+    }
+  };
+});
+
+vi.mock('./helpers/get-step-template', () => {
+  return {
+    getStepTemplate: vi.fn()
+  };
+});
+
+const mockMeta = {
+  challengeOrder: [{ id: 'abc', title: 'mock title' }]
+};
+
+vi.mock('./helpers/project-metadata', () => {
+  return {
+    getMetaData: vi.fn(() => mockMeta),
+    updateMetaData: vi.fn()
+  };
+});
+
+import { getStepTemplate } from './helpers/get-step-template.js';
+import {
+  createChallengeFile,
+  createLabFile,
+  createReviewFile,
+  createStepFile,
+  insertStepIntoMeta,
+  updateStepTitles,
+  validateBlockName
+} from './utils.js';
+import { updateMetaData } from './helpers/project-metadata.js';
+
+const block = 'utils-project';
+const projectPath = join(
+  'curriculum',
+  'challenges',
+  'english',
+  'blocks',
+  block
+);
+
+describe('Challenge utils helper scripts', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+  describe('createStepFile util', () => {
+    it('should create next step', () => {
+      process.env.INIT_CWD = projectPath;
+      const mockTemplate = 'Mock template...';
+      (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
+        mockTemplate
+      );
+
+      const challengeId = new ObjectId();
+
+      createStepFile({
+        challengeId,
+        stepNum: 3,
+        challengeType: 0
+      });
+
+      // Internal tasks
+      // - Should generate a template for the step that is being created
+      expect(getStepTemplate).toHaveBeenCalledTimes(1);
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        mockTemplate
+      );
+    });
+  });
+
+  describe('createProject util', () => {
+    it('should allow alphanumerical names with trailing whitespace', () => {
+      expect(
+        validateBlockName('learn-callbacks-by-creating-a-bookshelf ', [])
+      ).toBe(true);
+    });
+    it('should allow alphanumerical names with no trailing whitespace', () => {
+      expect(
+        validateBlockName('learn-callbacks-by-creating-a-bookshelf', [])
+      ).toBe(true);
+    });
+    it('should not allow non-kebab case names', () => {
+      expect(validateBlockName('learnCallbacksBetter', [])).toBe(
+        'please use alphanumerical characters and kebab case'
+      );
+    });
+    it('should not allow white space names', () => {
+      expect(validateBlockName(' ', [])).toBe('please enter a dashed name');
+    });
+    it('should not allow empty names', () => {
+      expect(validateBlockName('', [])).toBe('please enter a dashed name');
+    });
+    it('should not allow names that already exist', () => {
+      expect(validateBlockName('name', ['name'])).toBe(
+        'a block with this name already exists'
+      );
+    });
+  });
+
+  describe('single-challenge project files', () => {
+    it('creates a lab file with the selected lab challenge type', () => {
+      const challengeId = new ObjectId();
+
+      createLabFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'JavaScript Lab',
+        dashedName: 'javascript-lab',
+        challengeType: challengeTypes.jsLab,
+        contentType: 'javascript'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.stringContaining(`challengeType: ${challengeTypes.jsLab}`)
+      );
+    });
+
+    it('creates a review file with the review challenge type', () => {
+      const challengeId = new ObjectId();
+
+      createReviewFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'JavaScript Review',
+        dashedName: 'javascript-review'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.stringContaining(`challengeType: ${challengeTypes.review}`)
+      );
+    });
+  });
+
+  describe('createChallengeFile util', () => {
+    it('should create the challenge using an ObjectId string as the filename', () => {
+      process.env.INIT_CWD = projectPath;
+      const template = 'pretend this is a template';
+      const challengeId = new ObjectId();
+
+      createChallengeFile(challengeId.toString(), template);
+      // - Should write a file named after the ObjectId with the given template
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        template
+      );
+    });
+  });
+
+  describe('insertStepIntoMeta util', () => {
+    it('should call updateMetaData with a new file id and name', async () => {
+      process.env.INIT_CWD = projectPath;
+
+      const stepId = new ObjectId();
+
+      await insertStepIntoMeta({
+        stepNum: 3,
+        stepId
+      });
+
+      expect(updateMetaData).toHaveBeenCalledWith({
+        challengeOrder: [
+          { id: 'abc', title: 'Step 1' }, // title gets overwritten
+          { id: stepId.toString(), title: 'Step 2' }
+        ]
+      });
+    });
+  });
+
+  describe('updateStepTitles util', () => {
+    it('should apply meta.challengeOrder to step files', () => {
+      process.env.INIT_CWD = projectPath;
+      (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
+        'Mock template...'
+      );
+      (fs.readdirSync as ReturnType<typeof vi.fn>).mockReturnValue([
+        'name.md',
+        'another-name.md'
+      ]);
+      (matter.read as ReturnType<typeof vi.fn>).mockReturnValue({
+        data: { id: 'abc' },
+        content: 'goes here'
+      });
+
+      updateStepTitles();
+
+      expect(fs.readdirSync).toHaveBeenCalledWith(projectPath + '/');
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        path.join(projectPath, 'name.md'),
+        undefined
+      );
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        path.join(projectPath, 'another-name.md'),
+        undefined
+      );
+      expect(matter.stringify).toHaveBeenCalledWith('goes here', {
+        dashedName: 'step-1',
+        id: 'abc',
+        title: 'Step 1'
+      });
+    });
+  });
+  afterEach(() => {
+    delete process.env.INIT_CWD;
+  });
+});

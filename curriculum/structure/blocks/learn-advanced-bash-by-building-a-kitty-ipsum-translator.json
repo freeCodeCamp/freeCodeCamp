@@ -1,0 +1,12 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "learn-advanced-bash-by-building-a-kitty-ipsum-translator",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "602da0de22201c65d2a019f6",
+      "title": "Build a Kitty Ipsum Translator"
+    }
+  ],
+  "blockLayout": "project-list"
+}

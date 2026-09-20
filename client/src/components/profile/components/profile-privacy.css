@@ -1,0 +1,51 @@
+.profile-privacy {
+  padding: 1em;
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  margin-bottom: 1.5em;
+}
+
+.profile-privacy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.profile-privacy-header:hover {
+  background: none;
+  color: var(--primary-color);
+}
+
+.profile-privacy-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.profile-privacy-chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  transform: rotate(180deg);
+}
+
+.profile-privacy-chevron svg {
+  width: 15px;
+  height: 15px;
+}
+
+.profile-privacy-chevron.expanded {
+  transform: rotate(0deg);
+}
+
+.profile-privacy-content {
+  margin-top: 1rem;
+}

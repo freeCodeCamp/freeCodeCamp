@@ -1,0 +1,11 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-fortune-teller",
+  "challengeOrder": [
+    { "id": "66c06d618d075c7f7f1b890a", "title": "Build a Fortune Teller" }
+  ],
+  "helpCategory": "JavaScript"
+}

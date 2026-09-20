@@ -1,0 +1,171 @@
+---
+id: 697287d4ace09b16d0778d54
+title: Task 7
+challengeType: 24
+dashedName: task-7
+lang: es
+---
+
+<!-- (AUDIO) Elena: Cincuenta, Cincuenta y uno, Cincuenta y dos, Cincuenta y tres, Cincuenta y cuatro, Cincuenta y cinco, Cincuenta y seis, Cincuenta y siete, Cincuenta y ocho, Cincuenta y nueve. -->
+
+# --description--
+
+Now let's go to numbers in the 50s.
+
+In Spanish, the number 50 is called `cincuenta`.
+
+Numbers from 51 to 59 are formed by using the tens word `cincuenta` (50), followed by the conjunction `y` ("and"), and then the units digit (1-9).
+
+| Number | Spanish |
+| :--- | :--- |
+| 50 | `Cincuenta` |
+| 51 | `Cincuenta y uno` |
+| 52 | `Cincuenta y dos` |
+| 53 | `Cincuenta y tres` |
+| 54 | `Cincuenta y cuatro` |
+| 55 | `Cincuenta y cinco` |
+| 56 | `Cincuenta y seis` |
+| 57 | `Cincuenta y siete` |
+| 58 | `Cincuenta y ocho` |
+| 59 | `Cincuenta y nueve` |
+
+The number `cincuenta y uno` (51) is unique in this range because it becomes `cincuenta y un` before a masculine noun. For example:
+
+`Cincuenta y un años` - Fifty-one years.
+
+# --instructions--
+
+Listen to the audio and practice pronouncing these numbers.
+
+# --assignment--
+
+I've practiced pronouncing the numbers from 50 to 59.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company3-reception.png",
+    "characters": [
+      {
+        "character": "Elena",
+        "position": {
+          "x": 50,
+          "y": 25,
+          "z": 1.5
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ES_A1_describing_company_and_people_numbers_21_100.mp3",
+      "startTime": 1,
+      "startTimestamp": 64.31,
+      "finishTimestamp": 85.98
+    }
+  },
+  "commands": [
+    {
+      "character": "Elena",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Elena",
+      "startTime": 1,
+      "finishTime": 2.03,
+      "dialogue": {
+        "text": "Cincuenta",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 2.69,
+      "finishTime": 4.04,
+      "dialogue": {
+        "text": "Cincuenta y uno",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 4.75,
+      "finishTime": 6.21,
+      "dialogue": {
+        "text": "Cincuenta y dos",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 7.01,
+      "finishTime": 8.41,
+      "dialogue": {
+        "text": "Cincuenta y tres",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 9.17,
+      "finishTime": 10.79,
+      "dialogue": {
+        "text": "Cincuenta y cuatro",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 11.53,
+      "finishTime": 13.04,
+      "dialogue": {
+        "text": "Cincuenta y cinco",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 13.81,
+      "finishTime": 15.33,
+      "dialogue": {
+        "text": "Cincuenta y seis",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 16.36,
+      "finishTime": 17.84,
+      "dialogue": {
+        "text": "Cincuenta y siete",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 18.83,
+      "finishTime": 20.34,
+      "dialogue": {
+        "text": "Cincuenta y ocho",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "startTime": 21.25,
+      "finishTime": 22.67,
+      "dialogue": {
+        "text": "Cincuenta y nueve",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Elena",
+      "opacity": 0,
+      "startTime": 23.17
+    }
+  ]
+}
+```

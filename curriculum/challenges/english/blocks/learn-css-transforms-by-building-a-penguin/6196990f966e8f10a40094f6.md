@@ -1,0 +1,75 @@
+---
+id: 6196990f966e8f10a40094f6
+title: Step 11
+challengeType: 0
+dashedName: step-11
+---
+
+# --description--
+
+Target the `.penguin` element, and set its `width` and `height` to `300px`.
+
+# --hints--
+
+You should use the `.penguin` selector.
+
+```js
+assert.match(code, /\.penguin\s*\{/);
+```
+
+You should give `.penguin` a `width` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.width, '300px');
+```
+
+You should give `.penguin` a `height` of `300px`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.penguin')?.height, '300px');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Penguin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="penguin"></div>
+    <div class="ground"></div>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+
+.ground {
+  width: 100vw;
+  height: 400px;
+  background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
+  z-index: 3;
+  position: absolute;
+}
+```

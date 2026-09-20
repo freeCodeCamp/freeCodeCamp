@@ -1,0 +1,632 @@
+import { HandlerProps } from 'react-reflex';
+import type {
+  ChallengeLang,
+  SuperBlocks
+} from '@freecodecamp/shared/config/curriculum';
+import type {
+  Certification,
+  CertificationFlags
+} from '@freecodecamp/shared/config/certification-settings';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
+import { UserThemes } from './types';
+
+export type { ChallengeFile, Ext };
+
+export type Steps = {
+  isClassroomAccount?: boolean;
+  isHonest?: boolean;
+  currentCerts?: Array<CurrentCert>;
+  isShowCerts?: boolean;
+  isShowName?: boolean;
+  isShowProfile?: boolean;
+};
+
+export type CurrentCert = {
+  show: boolean;
+  title: string;
+  certSlug: string;
+};
+
+type MultipleChoiceAnswer = {
+  answer: string;
+  feedback: string | null;
+  audioId: string | null;
+};
+
+export type Question = {
+  text: string;
+  answers: MultipleChoiceAnswer[];
+  solution: number;
+};
+
+export type FillInTheBlank = {
+  sentence: string;
+  blanks: MultipleChoiceAnswer[];
+};
+
+export type FillInTheBlankInputType = 'pinyin-tone' | 'pinyin-to-hanzi';
+
+export type Fields = {
+  slug: string;
+  blockHashSlug: string;
+};
+type Required = {
+  link: string;
+  raw: boolean;
+  src: string;
+  crossDomain?: boolean;
+};
+export interface BilibiliIds {
+  aid: string;
+  bvid: string;
+  cid: string;
+}
+
+export interface VideoLocaleIds {
+  espanol?: string;
+  italian?: string;
+  portuguese?: string;
+}
+
+// English types for animations
+export interface Dialogue {
+  text: string;
+  align: 'left' | 'right' | 'center';
+}
+
+export interface CharacterPosition {
+  x?: number;
+  y?: number;
+  z?: number;
+}
+
+export interface SceneCommand {
+  background?: string;
+  character: string;
+  position?: CharacterPosition;
+  opacity?: number;
+  startTime: number;
+  finishTime?: number;
+  dialogue?: Dialogue;
+}
+
+export type Characters =
+  // English
+  | 'Alice'
+  | 'Amy'
+  | 'Anna'
+  | 'Bob'
+  | 'Brian'
+  | 'Candidate'
+  | 'David'
+  | 'Delivery Man'
+  | 'Expert'
+  | 'Jake'
+  | 'James'
+  | 'Jessica'
+  | 'Jim'
+  | 'Josh'
+  | 'Linda'
+  | 'Lisa'
+  | 'Maria'
+  | 'Mark'
+  | 'Riker'
+  | 'Sarah'
+  | 'Second Candidate'
+  | 'Sophie'
+  | 'Tom'
+
+  // Spanish
+  | 'Ángela'
+  | 'Camila'
+  | 'Carlos'
+  | 'Elena'
+  | 'Esteban'
+  | 'Joaquín'
+  | 'Julieta'
+  | 'Luis'
+  | 'Luna'
+  | 'Marisol'
+  | 'Mateo'
+  | 'Noelia'
+  | 'René'
+  | 'Sebastián'
+  | 'Diego'
+  | 'Valeria'
+
+  // Chinese
+  | 'Chen Na'
+  | 'Huang Jingyi'
+  | 'Li Hong'
+  | 'Li Ping'
+  | 'Lin Yating'
+  | 'Liu Ming'
+  | 'Wang Hua'
+  | 'Zhang Wei'
+  | 'Zhou Jia'
+  | 'Zhou Yongjie';
+
+interface SetupCharacter {
+  character: Characters;
+  position: CharacterPosition;
+  opacity: number;
+  isTalking?: boolean;
+}
+
+interface SetupAudio {
+  filename: string;
+  startTime: number;
+  startTimestamp: number | null;
+  finishTimestamp: number | null;
+}
+
+interface SceneSetup {
+  background: string;
+  characters: SetupCharacter[];
+  audio: SetupAudio;
+  alwaysShowDialogue?: boolean;
+}
+
+export interface FullScene {
+  setup: SceneSetup;
+  commands: SceneCommand[];
+}
+
+export interface PrerequisiteChallenge {
+  id: string;
+  title: string;
+  slug?: string;
+}
+
+type Nodule = ParagraphNodule | InteractiveEditorNodule;
+
+type ParagraphNodule = {
+  type: 'paragraph';
+  contents: string;
+};
+
+type InteractiveEditorNodule = {
+  type: 'interactiveEditor';
+  files: {
+    ext: Ext;
+    name: string;
+    contents: string;
+    contentsHtml: string;
+  }[];
+};
+
+export type ChallengeNode = {
+  challenge: {
+    block: string;
+    blockLabel?: BlockLabel;
+    blockLayout: BlockLayouts;
+    certification: Certification;
+    challengeOrder: number;
+    challengeType: number;
+    dashedName: string;
+    demoType: 'onClick' | 'onLoad' | null;
+    description: string;
+    challengeFiles: ChallengeFiles;
+    nodules: Nodule[];
+    explanation: string;
+    fields: Fields;
+    fillInTheBlank: FillInTheBlank;
+    forumTopicId: number;
+    hasEditableBoundaries: boolean;
+    helpCategory: string;
+    hooks?: Hooks;
+    id: string;
+    inputType?: FillInTheBlankInputType;
+    lang?: ChallengeLang;
+    instructions: string;
+    internal?: {
+      content: string;
+      contentDigest: string;
+      description: string;
+      fieldOwners: string[];
+      ignoreType: boolean | null;
+      mediaType: string;
+      owner: string;
+      type: string;
+    };
+    msTrophyId: string;
+    notes: string;
+    prerequisites: PrerequisiteChallenge[];
+    isLocked: boolean;
+    order: number;
+    questions: Question[];
+    quizzes: Quiz[];
+    assignments: string[];
+    required: Required[];
+    saveSubmissionToDB?: boolean;
+    scene: FullScene;
+    solutions: {
+      [T: string]: FileKeyChallenge;
+    };
+    sourceInstanceName: string;
+    superOrder: number;
+    superBlock: SuperBlocks;
+    template: string;
+    tests: Test[];
+    title: string;
+    transcript: string;
+    translationPending: boolean;
+    url: string;
+    usesMultifileEditor: boolean;
+    videoId: string;
+    videoLocaleIds?: VideoLocaleIds;
+    bilibiliIds?: BilibiliIds;
+    videoUrl: string;
+    chapter?: string;
+    module?: string;
+  };
+};
+
+export interface Hooks {
+  beforeAll?: string;
+  beforeEach?: string;
+  afterEach?: string;
+  afterAll?: string;
+}
+
+export type PageContext = {
+  challengeMeta: ChallengeMeta;
+  projectPreview: {
+    challengeData: ChallengeData;
+  };
+};
+
+export type DailyCodingChallengeNode = {
+  challenge: {
+    date: string;
+    id: string;
+    challengeNumber: number;
+    title: string;
+    description: string;
+    superBlock: 'daily-coding-challenge';
+    block: 'daily-coding-challenge';
+    usesMultifileEditor: true;
+
+    helpCategory: 'JavaScript' | 'Python';
+    challengeType: 28 | 29;
+    tests: Test[];
+    challengeFiles: ChallengeFiles;
+
+    // props to satisfy the show classic component
+    instructions: string;
+    demoType: null;
+    hooks?: { beforeAll: string };
+    hasEditableBoundaries?: false;
+    forumTopicId?: number;
+    notes: string;
+    videoUrl?: string;
+    translationPending: false;
+    saveSubmissionToDB?: boolean;
+  };
+};
+
+export type DailyCodingChallengePageContext = {
+  challengeMeta: {
+    block: 'daily-coding-challenge';
+    id: string;
+    superBlock: 'daily-coding-challenge';
+    disableLoopProtectTests: boolean;
+    dashedName: string;
+
+    // props to satisfy the show classic component
+    isFirstStep: boolean;
+    nextChallengePath?: string;
+    prevChallengePath?: string;
+    disableLoopProtectPreview: boolean;
+  };
+
+  // props to satisfy the show classic component
+  projectPreview: {
+    challengeData?: null;
+  };
+};
+
+export type DailyCodingChallengeLanguages = 'javascript' | 'python';
+
+export interface CompletedDailyCodingChallenge {
+  id: string;
+  completedDate: number;
+  languages: DailyCodingChallengeLanguages[];
+}
+
+type Quiz = {
+  questions: QuizQuestion[];
+};
+
+type QuizAudio = {
+  filename: string;
+  startTimestamp?: number | null;
+  finishTimestamp?: number | null;
+};
+
+type QuizTranscriptLine = {
+  character: string;
+  text: string;
+};
+
+type QuizAudioData = {
+  audio: QuizAudio;
+  transcript: QuizTranscriptLine[];
+};
+
+type QuizQuestion = {
+  text: string;
+  distractors: string[];
+  answer: string;
+  audioData?: QuizAudioData | null;
+};
+
+export type CertificateNode = {
+  challenge: {
+    certification: Certification;
+    tests: { id: string }[];
+  };
+};
+
+export type AllChallengesInfo = {
+  challengeNodes: ChallengeNode[];
+  certificateNodes: CertificateNode[];
+};
+
+export type ChapterBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  chapters: Chapter[];
+};
+
+export type BlockBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  blocks: string[];
+};
+
+export type SuperBlockStructure =
+  | ChapterBasedSuperBlockStructure
+  | BlockBasedSuperBlockStructure;
+
+export type AllChallengeNode = {
+  edges: [
+    {
+      node: ChallengeNode;
+    }
+  ];
+};
+
+export type ResizeProps = {
+  onStopResize: (arg0: HandlerProps) => void;
+  onResize: () => void;
+};
+
+export type Dimensions = {
+  height: number;
+  width: number;
+};
+
+export type Test = {
+  pass?: boolean;
+  err?: string;
+  message?: string;
+} & (ChallengeTest | CertTest);
+
+export type ChallengeTest = {
+  text: string;
+  testString: string;
+};
+
+type CertTest = {
+  id: string;
+  title: string;
+};
+
+export type User = {
+  calendar: Record<string, number>;
+  about: string;
+  acceptedPrivacyTerms: boolean;
+  completedChallenges: CompletedChallenge[];
+  completedChallengeCount: number;
+  completedSurveys: SurveyResults[];
+  currentChallengeId: string;
+  email: string;
+  emailVerified: boolean;
+  githubProfile: string;
+  isEmailVerified: boolean;
+  isBanned: boolean;
+  isCheater: boolean;
+  isDonating: boolean;
+  isClassroomAccount: boolean;
+  isHonest: boolean;
+  joinDate: string;
+  linkedin: string;
+  location: string;
+  name: string;
+  picture: string;
+  points: number;
+  portfolio: PortfolioProjectData[];
+  experience?: ExperienceData[];
+  profileUI: ProfileUI;
+  progressTimestamps: Array<unknown>;
+  savedChallenges: SavedChallenges;
+  sendQuincyEmail: boolean | null;
+  sound: boolean;
+  theme: UserThemes;
+  keyboardShortcuts: boolean;
+  socrates: boolean;
+  twitter: string;
+  bluesky: string;
+  username: string;
+  website: string;
+  yearsTopContributor: string[];
+} & CertificationFlags;
+
+export type ProfileUI = {
+  isLocked: boolean;
+  showAbout: boolean;
+  showCerts: boolean;
+  showDonation: boolean;
+  showHeatMap: boolean;
+  showLocation: boolean;
+  showName: boolean;
+  showPoints: boolean;
+  showPortfolio: boolean;
+  showExperience: boolean;
+  showTimeLine: boolean;
+};
+
+type SavedChallenges = SavedChallenge[];
+
+export type SavedChallenge = {
+  id: string;
+  challengeFiles: SavedChallengeFiles;
+};
+
+// TODO: remove unused properties and stop returning them from api? (e.g.
+// history, ext, name)
+export type SavedChallengeFile = {
+  fileKey: string;
+  ext: Ext;
+  name: string;
+  history?: string[];
+  editableRegionBoundaries?: number[];
+  contents: string;
+};
+
+export type SavedChallengeFiles = SavedChallengeFile[];
+
+export interface CompletedChallenge {
+  id: string;
+  solution?: string | null;
+  githubLink?: string;
+  challengeType?: number;
+  completedDate: number;
+  challengeFiles:
+    | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
+    | null;
+  examResults?: GeneratedExamResults;
+}
+
+export interface ChallengeData extends CompletedChallenge {
+  challengeFiles: ChallengeFile[] | null;
+}
+
+export type ChallengeMeta = {
+  block: string;
+  id: string;
+  isFirstStep: boolean;
+  superBlock: SuperBlocks | 'daily-coding-challenge';
+  title?: string;
+  challengeType?: number;
+  helpCategory: string;
+  description?: string;
+  disableLoopProtectTests: boolean;
+  disableLoopProtectPreview: boolean;
+  saveSubmissionToDB?: boolean;
+} & NavigationPaths;
+
+export type NavigationPaths = {
+  nextChallengePath?: string;
+  prevChallengePath?: string;
+};
+
+export type PortfolioProjectData = {
+  id: string;
+  title: string;
+  url: string;
+  image: string;
+  description: string;
+};
+
+export type ExperienceData = {
+  id: string;
+  title: string;
+  company: string;
+  location?: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+};
+
+export type FileKeyChallenge = {
+  contents: string;
+  ext: Ext;
+  id: string;
+  key: string;
+  name: string;
+};
+
+export type ChallengeFiles = ChallengeFile[] | null;
+
+export interface UserFetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+  error: string | null;
+}
+
+// Exam Related Types:
+interface GeneratedExamAnswer {
+  id: string;
+  answer: string;
+}
+
+// Generated Exam (from API)
+export interface GeneratedExamQuestion {
+  id: string;
+  question: string;
+  answers: GeneratedExamAnswer[];
+}
+
+interface GenerateExamResponse {
+  error?: string;
+  generatedExam?: GeneratedExamQuestion[];
+}
+
+export interface GenerateExamResponseWithData {
+  response: Response;
+  data: GenerateExamResponse;
+}
+
+export interface ExamTokenResponse {
+  examEnvironmentAuthorizationToken: string;
+}
+// User Exam (null until they answer the question)
+interface UserExamAnswer {
+  id: string | null;
+  answer: string | null;
+}
+
+export interface UserExamQuestion {
+  id: string;
+  question: string;
+  answer: UserExamAnswer;
+}
+
+export interface UserExam {
+  examTimeInSeconds: number;
+  userExamQuestions: UserExamQuestion[];
+}
+
+// Exam Results (from API)
+export interface GeneratedExamResults {
+  numberOfCorrectAnswers: number;
+  numberOfQuestionsInExam: number;
+  percentCorrect: number;
+  passingPercent: number;
+  passed: boolean;
+  examTimeInSeconds: number;
+}
+
+// Survey related types
+export interface SurveyResponse {
+  question: string;
+  response: string;
+}
+
+export interface SurveyResults {
+  title: string;
+  responses: SurveyResponse[];
+}

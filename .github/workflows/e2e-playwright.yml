@@ -1,0 +1,98 @@
+name: CI - E2E - Playwright
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  playwright-run:
+    name: Run Playwright Tests
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        # Extend this to include firefox and webkit once chromium is working.
+        browsers: [chromium]
+        node-version: [24]
+
+    steps:
+      - name: Set Action Environment Variables
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Checkout Source Files
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Download Client Artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: client-artifact
+          path: client/public
+
+      - name: Checkout client-config
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: freeCodeCamp/client-config
+          path: client-config
+          persist-credentials: false
+
+      - name: Move serve.json to Public Folder
+        run: cp client-config/serve.json client/public/serve.json
+
+      - name: Download Api Artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: api-artifact
+          path: api-artifact
+
+      - name: Load API Image
+        run: |
+          docker load < api-artifact/api-artifact.tar
+          rm api-artifact/api-artifact.tar
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+        id: pnpm-install
+        with:
+          run_install: false
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Set freeCodeCamp Environment Variables (needed by api)
+        run: |
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cp sample.env .env # for docker compose
+
+      - name: Install playwright dependencies
+        run: npx playwright install --with-deps
+
+      - name: Install
+        run: pnpm install
+
+      - name: Start apps
+        run: |
+          docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml -f docker/docker-compose.e2e.yml up -d
+          pnpm run serve:client-ci &
+          sleep 10
+
+      - name: Seed Database with Certified User
+        run: pnpm run seed:certified-user
+
+      - name: Run playwright tests
+        run: pnpm run playwright:run --project=${{ matrix.browsers }}
+
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report-${{ matrix.browsers }}
+          path: e2e/playwright/reporter
+          retention-days: 7

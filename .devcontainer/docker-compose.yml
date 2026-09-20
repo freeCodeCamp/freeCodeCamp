@@ -1,0 +1,33 @@
+name: freecodecamp-devcontainer
+
+services:
+  devcontainer:
+    image: ghcr.io/freecodecamp/devcontainer:latest
+    # gatsby develop defaults to host `localhost`. Where the network namespace
+    # has IPv6, glibc RFC 6724 precedence resolves that to ::1 first, so the
+    # dev server binds IPv6 loopback only and port forwarding, which connects
+    # over IPv4, is refused. 0.0.0.0 needs no AF_INET6 socket, so it also holds
+    # where IPv6 is switched off.
+    environment:
+      GATSBY_HOST: 0.0.0.0
+    volumes:
+      - ..:/workspaces/freeCodeCamp:cached
+    # Shares the db network namespace so MONGOHQ_URL and MAILPIT_HOST in
+    # sample.env resolve on localhost. A service in that namespace cannot
+    # publish a port, which is why the host ports live in a separate overlay.
+    network_mode: service:db
+    command: sleep infinity
+    depends_on:
+      db:
+        condition: service_healthy
+      setup:
+        condition: service_completed_successfully
+      mailpit:
+        condition: service_started
+
+  mailpit:
+    # Same namespace, for MAILPIT_HOST=localhost.
+    network_mode: service:db
+    depends_on:
+      db:
+        condition: service_healthy

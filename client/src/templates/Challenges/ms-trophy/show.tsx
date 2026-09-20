@@ -1,0 +1,230 @@
+import { graphql } from 'gatsby';
+import React, { useEffect, useRef } from 'react';
+import Helmet from 'react-helmet';
+import type { TFunction } from 'i18next';
+import { withTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
+import { createSelector } from 'reselect';
+
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import LearnLayout from '../../../components/layouts/learn';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import ChallengeDescription from '../components/challenge-description';
+import Hotkeys from '../components/hotkeys';
+import ChallengeTitle from '../components/challenge-title';
+import CompletionModal from '../components/completion-modal';
+import { getChallengePaths } from '../utils/challenge-paths';
+import HelpModal from '../components/help-modal';
+import {
+  challengeMounted,
+  updateChallengeMeta,
+  openModal,
+  updateSolutionFormValues,
+  initTests
+} from '../redux/actions';
+import { isChallengeCompletedSelector } from '../redux/selectors';
+import { setIsProcessing } from '../../../redux/actions';
+import {
+  isProcessingSelector,
+  msUsernameSelector
+} from '../../../redux/selectors';
+import LinkMsUser from './link-ms-user';
+import TrophyButtons from './trophy-buttons';
+import { useSubmit } from '../utils/fetch-all-curriculum-data';
+
+// Redux Setup
+const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
+  isProcessingSelector,
+  msUsernameSelector,
+  (
+    isChallengeCompleted: boolean,
+    isProcessing: boolean,
+    msUsername: string | undefined | null
+  ) => ({
+    isChallengeCompleted,
+    isProcessing,
+    msUsername
+  })
+);
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      initTests,
+      updateChallengeMeta,
+      challengeMounted,
+      updateSolutionFormValues,
+      openCompletionModal: () => openModal('completion'),
+      openHelpModal: () => openModal('help'),
+      setIsProcessing
+    },
+    dispatch
+  );
+
+// Types
+interface MsTrophyProps {
+  challengeMounted: (arg0: string) => void;
+  data: { challengeNode: ChallengeNode };
+  initTests: (xs: Test[]) => void;
+  isChallengeCompleted: boolean;
+  isProcessing: boolean;
+  setIsProcessing: (arg0: boolean) => void;
+  msUsername: string | undefined | null;
+  openCompletionModal: () => void;
+  openHelpModal: () => void;
+  pageContext: {
+    challengeMeta: ChallengeMeta;
+  };
+  t: TFunction;
+  updateChallengeMeta: (arg0: ChallengeMeta) => void;
+}
+
+function MsTrophy(props: MsTrophyProps) {
+  const container = useRef<HTMLElement>(null);
+  const {
+    data: {
+      challengeNode: {
+        challenge: { title }
+      }
+    }
+  } = props;
+
+  const submitChallenge = useSubmit();
+
+  useEffect(() => {
+    const {
+      challengeMounted,
+      data: {
+        challengeNode: {
+          challenge: { tests, title, challengeType, helpCategory, description }
+        }
+      },
+      pageContext: { challengeMeta },
+      initTests,
+      updateChallengeMeta
+    } = props;
+    initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
+    updateChallengeMeta({
+      ...challengeMeta,
+      title,
+      challengeType,
+      helpCategory,
+      description,
+      ...challengePaths
+    });
+    challengeMounted(challengeMeta.id);
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSubmit = () => {
+    const { setIsProcessing } = props;
+
+    setIsProcessing(true);
+    submitChallenge();
+  };
+
+  const {
+    data: {
+      challengeNode: {
+        challenge: {
+          description,
+          instructions,
+          superBlock,
+          id,
+          block,
+          translationPending
+        }
+      }
+    },
+    isChallengeCompleted,
+    isProcessing,
+    msUsername,
+    openHelpModal,
+    t
+  } = props;
+
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
+
+  return (
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <ChallengeDescription
+                superBlock={superBlock}
+                description={description}
+                instructions={instructions}
+                block={block}
+                challengeId={id}
+              />
+              <LinkMsUser />
+              <hr />
+              <TrophyButtons
+                disabled={!msUsername || isProcessing}
+                onAskForHelp={openHelpModal}
+                onVerifyTrophy={handleSubmit}
+              />
+              <br />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
+  );
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withTranslation()(MsTrophy));
+
+export const query = graphql`
+  query MsTrophyChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
+      challenge {
+        title
+        description
+        instructions
+        challengeType
+        helpCategory
+        superBlock
+        block
+        translationPending
+        tests {
+          text
+          testString
+        }
+      }
+    }
+  }
+`;

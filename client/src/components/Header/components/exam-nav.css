@@ -1,0 +1,18 @@
+.exam-nav {
+  align-items: center;
+  background-color: var(--theme-color);
+  display: flex;
+  height: var(--header-height);
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+@media (min-width: 401px) {
+  .exam-nav {
+    padding: 0 15px;
+  }
+}
+
+.exam-nav svg {
+  height: 32px;
+}

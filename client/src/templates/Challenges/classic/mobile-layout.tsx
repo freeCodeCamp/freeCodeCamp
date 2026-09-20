@@ -1,0 +1,343 @@
+import i18next from 'i18next';
+import React, { Component } from 'react';
+import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
+import store from 'store';
+import {
+  Tabs,
+  TabsContent,
+  TabsTrigger,
+  TabsList,
+  Dropdown,
+  MenuItem
+} from '@freecodecamp/ui';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
+
+import {
+  removePortalWindow,
+  setShowPreviewPortal,
+  setShowPreviewPane
+} from '../redux/actions';
+import {
+  portalWindowSelector,
+  showPreviewPortalSelector,
+  showPreviewPaneSelector
+} from '../redux/selectors';
+import { isRtlLanguage } from '../../../utils/is-rtl-language';
+import PreviewPortal from '../components/preview-portal';
+import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
+import EditorTabs from './editor-tabs';
+
+interface MobileLayoutProps {
+  editor: JSX.Element | null;
+  hasEditableBoundaries: boolean;
+  hasPreview: boolean;
+  instructions: JSX.Element;
+  isDailyCodingChallenge?: boolean;
+  dailyCodingChallengeLanguage?: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage?: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
+  notes: string;
+  preview: JSX.Element;
+  onPreviewResize: () => void;
+  windowTitle: string;
+  showPreviewPortal: boolean;
+  showPreviewPane: boolean;
+  removePortalWindow: () => void;
+  setShowPreviewPortal: (arg: boolean) => void;
+  setShowPreviewPane: (arg: boolean) => void;
+  portalWindow: null | Window;
+  updateUsingKeyboardInTablist: (arg0: boolean) => void;
+  testOutput: JSX.Element;
+  usesMultifileEditor: boolean;
+  usesTerminal: boolean;
+}
+
+const tabs = {
+  editor: 'editor',
+  preview: 'preview',
+  console: 'console',
+  notes: 'notes',
+  instructions: 'instructions'
+} as const;
+
+type Tab = keyof typeof tabs;
+
+interface MobileLayoutState {
+  currentTab: Tab;
+}
+
+const mapDispatchToProps = {
+  removePortalWindow,
+  setShowPreviewPortal,
+  setShowPreviewPane
+};
+
+const mapStateToProps = createSelector(
+  showPreviewPortalSelector,
+  showPreviewPaneSelector,
+  portalWindowSelector,
+
+  (
+    showPreviewPortal: boolean,
+    showPreviewPane: boolean,
+    portalWindow: null | Window
+  ) => ({
+    showPreviewPortal,
+    showPreviewPane,
+    portalWindow
+  })
+);
+
+export class MobileLayout extends Component<
+  MobileLayoutProps,
+  MobileLayoutState
+> {
+  static displayName: string;
+
+  state: MobileLayoutState = {
+    currentTab: this.props.hasEditableBoundaries
+      ? tabs.editor
+      : tabs.instructions
+  };
+
+  switchTab = (tab: string): void => {
+    this.setState({
+      currentTab: tab as Tab
+    });
+  };
+
+  handleKeyDown = (): void => this.props.updateUsingKeyboardInTablist(true);
+
+  handleClick = (): void => this.props.updateUsingKeyboardInTablist(false);
+
+  render(): JSX.Element {
+    const { currentTab } = this.state;
+    const {
+      hasEditableBoundaries,
+      instructions,
+      editor,
+      testOutput,
+      hasPreview,
+      notes,
+      preview,
+      onPreviewResize,
+      showPreviewPane,
+      showPreviewPortal,
+      removePortalWindow,
+      setShowPreviewPane,
+      setShowPreviewPortal,
+      portalWindow,
+      windowTitle,
+      usesMultifileEditor,
+      usesTerminal,
+      isDailyCodingChallenge,
+      dailyCodingChallengeLanguage,
+      setDailyCodingChallengeLanguage
+    } = this.props;
+
+    const handleLanguageChange = (
+      language: DailyCodingChallengeLanguages
+    ): void => {
+      store.set('dailyCodingChallengeLanguage', language);
+      if (setDailyCodingChallengeLanguage) {
+        setDailyCodingChallengeLanguage(language);
+      }
+    };
+
+    const displayPreviewPane = hasPreview && showPreviewPane;
+    const displayPreviewPortal = hasPreview && showPreviewPortal;
+
+    const togglePane = (pane: string): void => {
+      if (pane === 'showPreviewPane') {
+        if (!showPreviewPane && showPreviewPortal) {
+          setShowPreviewPortal(false);
+        }
+        setShowPreviewPane(!showPreviewPane);
+        portalWindow?.close();
+        removePortalWindow();
+      } else if (pane === 'showPreviewPortal') {
+        if (!showPreviewPortal && showPreviewPane) {
+          setShowPreviewPane(false);
+        }
+        setShowPreviewPortal(!showPreviewPortal);
+        if (showPreviewPortal) {
+          portalWindow?.close();
+          removePortalWindow();
+        }
+      } else {
+        setShowPreviewPane(true);
+        setShowPreviewPortal(false);
+      }
+    };
+
+    // sets screen reader text for the portal button
+    function getPortalBtnSrText() {
+      // preview open in main window
+      let portalBtnSrText = i18next.t('aria.move-preview-to-new-window');
+
+      // preview open in external window
+      if (showPreviewPortal && !showPreviewPane) {
+        portalBtnSrText = i18next.t('aria.close-external-preview-window');
+      }
+
+      return portalBtnSrText;
+    }
+
+    const previewTriggerText =
+      usesTerminal == false
+        ? 'learn.editor-tabs.preview'
+        : 'learn.editor-tabs.terminal';
+
+    // Unlike the desktop layout the mobile version does not have an ActionRow,
+    // but still needs a way to switch between the different tabs.
+    return (
+      <>
+        <Tabs
+          id='mobile-layout'
+          dir={isRtlLanguage ? 'rtl' : 'ltr'}
+          className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
+          onKeyDown={this.handleKeyDown}
+          onMouseDown={this.handleClick}
+          onTouchStart={this.handleClick}
+          defaultValue={currentTab}
+          onValueChange={this.switchTab}
+          {...(hasPreview && { 'data-haspreview': 'true' })}
+        >
+          <TabsList className='nav-lists'>
+            {isDailyCodingChallenge && (
+              <Dropdown>
+                <Dropdown.Toggle
+                  className='mobile-lang-selector-toggle'
+                  id='mobile-language-selector'
+                >
+                  {dailyCodingChallengeLanguage === 'javascript'
+                    ? 'JS'
+                    : 'PY'}{' '}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <MenuItem onClick={() => handleLanguageChange('javascript')}>
+                    JavaScript
+                  </MenuItem>
+                  <MenuItem onClick={() => handleLanguageChange('python')}>
+                    Python
+                  </MenuItem>
+                </Dropdown.Menu>
+              </Dropdown>
+            )}
+            {!hasEditableBoundaries && (
+              <TabsTrigger value={tabs.instructions}>
+                {i18next.t('learn.editor-tabs.instructions')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={tabs.editor}>
+              {i18next.t('learn.editor-tabs.code')}
+            </TabsTrigger>
+            {!!notes && usesMultifileEditor && (
+              <TabsTrigger value={tabs.notes}>
+                {i18next.t('learn.editor-tabs.notes')}
+              </TabsTrigger>
+            )}
+            <TabsTrigger value={tabs.console}>
+              {i18next.t('learn.editor-tabs.console')}
+            </TabsTrigger>
+            {hasPreview && (
+              <TabsTrigger value={tabs.preview}>
+                {i18next.t(previewTriggerText)}
+              </TabsTrigger>
+            )}
+          </TabsList>
+
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.editor}
+          >
+            {usesMultifileEditor && <EditorTabs />}
+            {editor}
+          </TabsContent>
+          {!hasEditableBoundaries && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.instructions}
+            >
+              {instructions}
+            </TabsContent>
+          )}
+          <TabsContent
+            tabIndex={-1}
+            className='tab-content'
+            value={tabs.console}
+          >
+            {testOutput}
+          </TabsContent>
+          {!!notes && usesMultifileEditor && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              value={tabs.notes}
+            >
+              <Notes notes={notes} />
+            </TabsContent>
+          )}
+          {hasPreview && (
+            <TabsContent
+              tabIndex={-1}
+              className='tab-content'
+              data-playwright-test-label='preview-pane'
+              value={tabs.preview}
+              forceMount
+              // forceMount causes the preview tabpanel to never be hidden,
+              // so we need to manually add it when preview is not active.
+              {...(this.state.currentTab === 'preview' ? {} : { hidden: true })}
+            >
+              <div className='portal-button-wrap'>
+                <button
+                  className='portal-button'
+                  aria-expanded={!!showPreviewPortal}
+                  onClick={() => togglePane('showPreviewPortal')}
+                >
+                  <span className='sr-only'>{getPortalBtnSrText()}</span>
+                  <FontAwesomeIcon icon={faWindowRestore} />
+                </button>
+              </div>
+              {displayPreviewPane && preview}
+              {showPreviewPortal && (
+                <p className='preview-external-window'>
+                  {i18next.t('learn.preview-external-window')}
+                </p>
+              )}
+            </TabsContent>
+          )}
+          <IndependentLowerJaw />
+          {hasPreview && this.state.currentTab !== 'preview' && (
+            <div className='portal-button-wrap'>
+              <button
+                className='portal-button'
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPortalBtnSrText()}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </div>
+          )}
+        </Tabs>
+        {displayPreviewPortal && (
+          <PreviewPortal onResize={onPreviewResize} windowTitle={windowTitle}>
+            {preview}
+          </PreviewPortal>
+        )}
+      </>
+    );
+  }
+}
+
+MobileLayout.displayName = 'MobileLayout';
+
+export default connect(mapStateToProps, mapDispatchToProps)(MobileLayout);
