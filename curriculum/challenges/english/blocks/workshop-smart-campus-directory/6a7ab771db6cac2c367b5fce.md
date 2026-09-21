@@ -26,30 +26,53 @@ Now you should return an object from `getInstructorByEmail` function with three 
 `officeHours`: `instructor.officeHours`, falling back to "Not Available"  
 `department`: `department.name`, falling back to "Unknown Department"  
 
+Before returning the object, delete `console.log(department)` from the previous step.
+
 # --hints--
+
+You should delete `console.log(department);`.
+
+```js
+assert.notMatch(
+  __helpers.removeJSComments(code),
+  /console\s*\.\s*log\s*\(\s*department\s*\)/
+);
+```
 
 You should use a `return` statement to return an object.
 
 ```js
-assert.match(code, /return\s*{/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /return\s*{/
+);
 ```
 
 The object should have a `name` property set to `instructor.name ?? "Unknown Instructor"`.
 
 ```js
-assert.match(code, /name\s*:\s*instructor\.name\s*\?\?\s*["']Unknown Instructor["']/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /name\s*:\s*instructor\.name\s*\?\?\s*["']Unknown Instructor["']/
+);
 ```
 
 The object should have an `officeHours` property set to `instructor.officeHours ?? "Not Available"`.
 
 ```js
-assert.match(code, /officeHours\s*:\s*instructor\.officeHours\s*\?\?\s*["']Not Available["']/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /officeHours\s*:\s*instructor\.officeHours\s*\?\?\s*["']Not Available["']/
+);
 ```
 
 The object should have a `department` property set to `department.name ?? "Unknown Department"`.
 
 ```js
-assert.match(code, /department\s*:\s*department\.name\s*\?\?\s*["']Unknown Department["']/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /department\s*:\s*department\.name\s*\?\?\s*["']Unknown Department["']/
+);
 ```
 
 # --seed--

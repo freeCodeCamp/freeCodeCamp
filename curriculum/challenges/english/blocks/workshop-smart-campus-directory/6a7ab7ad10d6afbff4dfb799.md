@@ -7,7 +7,7 @@ dashedName: step-34
 
 # --description--
 
-Test your function with two calls to `getInstructorByEmail`: one using an email `"fatima@edu.com"` and `normalizedData`, 
+Test your function with two calls to `getInstructorByEmail`: one using an email `"alejandro@edu.com"` and `normalizedData`, 
 then another using an email `"not_found@edu.com"` and `normalizedData`.  
 
 Log both results to confirm the function returns an object with the expected properties for a known email and `Instructor not found` for an unknown one.
@@ -17,25 +17,37 @@ Log both results to confirm the function returns an object with the expected pro
 You should call `getInstructorByEmail` with `"fatima@edu.com"` and `normalizedData` as arguments.
 
 ```js
-assert.match(code, /getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)/
+);
 ```
 
 You should call `console.log()` with the result of that call as the argument.
 
 ```js
-assert.match(code, /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+);
 ```
 
 You should call `getInstructorByEmail` with `"not_found@edu.com"` and `normalizedData` as arguments.
 
 ```js
-assert.match(code, /getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)/
+);
 ```
 
 You should call `console.log()` with the result of that call as the argument.
 
 ```js
-assert.match(code, /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/);
+assert.match(
+  __helpers.removeJSComments(code),
+  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+);
 ```
 
 # --seed--
@@ -154,6 +166,7 @@ function getInstructorByEmail(email, normalizedData) {
   };
 }
 
+console.log( getInstructorByEmail("fatima@edu.com", normalizedData));
 --fcc-editable-region--
 
 --fcc-editable-region--
