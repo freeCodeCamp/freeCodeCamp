@@ -119,7 +119,6 @@ export const build = async (
 
   await fastify.register(cors);
   await fastify.register(cookies);
-  await fastify.register(csrf);
 
   await fastify.register(growthBook, {
     apiHost: GROWTHBOOK_FASTIFY_API_HOST,
@@ -163,88 +162,95 @@ export const build = async (
   void fastify.register(bouncer);
   await fastify.register(serviceBearerAuth);
 
-  // Routes requiring authentication:
-  void fastify.register(async function (fastify, _opts) {
-    fastify.addHook('onRequest', fastify.authorize);
-    // CSRF protection enabled:
-    await fastify.register(async function (fastify, _opts) {
-      // TODO: bounce unauthed requests before checking CSRF token. This will
-      // mean moving csrfProtection into custom plugin and testing separately,
-      // because it's a pain to mess around with other cookies/hook order.
-      // eslint-disable-next-line @typescript-eslint/unbound-method
-      fastify.addHook('onRequest', fastify.csrfProtection);
+  // Routes requiring csrf cookie
+  await fastify.register(async function (fastify) {
+    await fastify.register(csrf);
+
+    // Routes requiring authentication:
+    void fastify.register(async function (fastify, _opts) {
+      fastify.addHook('onRequest', fastify.authorize);
+      // CSRF protection enabled:
+      await fastify.register(async function (fastify, _opts) {
+        // TODO: bounce unauthed requests before checking CSRF token. This will
+        // mean moving csrfProtection into custom plugin and testing separately,
+        // because it's a pain to mess around with other cookies/hook order.
+        // eslint-disable-next-line @typescript-eslint/unbound-method
+        fastify.addHook('onRequest', fastify.csrfProtection);
+        fastify.addHook('onRequest', fastify.send401IfNoUser);
+
+        await fastify.register(protectedRoutes.challengeRoutes);
+        await fastify.register(protectedRoutes.donateRoutes);
+        await fastify.register(protectedRoutes.socratesRoutes);
+        await fastify.register(protectedRoutes.protectedCertificateRoutes);
+        await fastify.register(protectedRoutes.settingRoutes);
+        await fastify.register(protectedRoutes.userRoutes);
+      });
+
+      // Routes that redirect if access is denied:
+      await fastify.register(async function (fastify, _opts) {
+        fastify.addHook('onRequest', fastify.redirectIfNoUser);
+
+        await fastify.register(protectedRoutes.settingRedirectRoutes);
+      });
+    });
+
+    // TODO: The route should not handle its own AuthZ
+    await fastify.register(protectedRoutes.challengeTokenRoutes);
+
+    // CSRF protection disabled:
+    // Routes that work for both authenticated and unauthenticated users:
+    void fastify.register(async function (fastify) {
+      fastify.addHook('onRequest', fastify.authorize);
+
+      await fastify.register(protectedRoutes.userGetRoutes);
+    });
+
+    // Routes for signed out users:
+    void fastify.register(async function (fastify) {
+      fastify.addHook('onRequest', fastify.authorize);
+      // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
+      // mobileAuth0Routes and authRoutes plugins.
+      await fastify.register(publicRoutes.mobileAuth0Routes);
+      if (FCC_ENABLE_DEV_LOGIN_MODE) {
+        await fastify.register(publicRoutes.devAuthRoutes);
+      } else {
+        await fastify.register(publicRoutes.authRoutes);
+      }
+    });
+
+    void fastify.register(function (fastify, _opts, done) {
+      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
-      await fastify.register(protectedRoutes.challengeRoutes);
-      await fastify.register(protectedRoutes.donateRoutes);
-      await fastify.register(protectedRoutes.socratesRoutes);
-      await fastify.register(protectedRoutes.protectedCertificateRoutes);
-      await fastify.register(protectedRoutes.settingRoutes);
-      await fastify.register(protectedRoutes.userRoutes);
+      void fastify.register(examEnvironmentValidatedTokenRoutes);
+      done();
     });
+    void fastify.register(examEnvironmentOpenRoutes);
 
-    // Routes that redirect if access is denied:
-    await fastify.register(async function (fastify, _opts) {
-      fastify.addHook('onRequest', fastify.redirectIfNoUser);
-
-      await fastify.register(protectedRoutes.settingRedirectRoutes);
-    });
-  });
-
-  // TODO: The route should not handle its own AuthZ
-  await fastify.register(protectedRoutes.challengeTokenRoutes);
-
-  // CSRF protection disabled:
-  // Routes that work for both authenticated and unauthenticated users:
-  void fastify.register(async function (fastify) {
-    fastify.addHook('onRequest', fastify.authorize);
-
-    await fastify.register(protectedRoutes.userGetRoutes);
-  });
-
-  // Routes for signed out users:
-  void fastify.register(async function (fastify) {
-    fastify.addHook('onRequest', fastify.authorize);
-    // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
-    // mobileAuth0Routes and authRoutes plugins.
-    await fastify.register(publicRoutes.mobileAuth0Routes);
-    if (FCC_ENABLE_DEV_LOGIN_MODE) {
-      await fastify.register(publicRoutes.devAuthRoutes);
-    } else {
-      await fastify.register(publicRoutes.authRoutes);
+    // Service-to-service app routes (API key auth), gated by the classroom flag:
+    if (FCC_ENABLE_CLASSROOM ?? fastify.gb.isOn('classroom-mode')) {
+      void fastify.register(async function (fastify) {
+        fastify.addHook('onRequest', fastify.validateBearerToken);
+        await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
+      });
     }
+
+    if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
+      void fastify.register(publicRoutes.sentryRoutes);
+    }
+
+    void fastify.register(publicRoutes.chargeStripeRoute);
+    void fastify.register(publicRoutes.emailSubscribtionRoutes);
+    void fastify.register(publicRoutes.userPublicGetRoutes);
+    void fastify.register(publicRoutes.unprotectedCertificateRoutes);
+    void fastify.register(publicRoutes.deprecatedEndpoints);
+    void fastify.register(publicRoutes.statusRoute);
+    void fastify.register(publicRoutes.unsubscribeDeprecated);
+    void fastify.register(dailyCodingChallengeRoutes);
   });
 
-  void fastify.register(function (fastify, _opts, done) {
-    fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
-    fastify.addHook('onRequest', fastify.send401IfNoUser);
-
-    void fastify.register(examEnvironmentValidatedTokenRoutes);
-    done();
-  });
-  void fastify.register(examEnvironmentOpenRoutes);
-
-  // Service-to-service app routes (API key auth), gated by the classroom flag:
-  if (FCC_ENABLE_CLASSROOM ?? fastify.gb.isOn('classroom-mode')) {
-    void fastify.register(async function (fastify) {
-      fastify.addHook('onRequest', fastify.validateBearerToken);
-      await fastify.register(classroomRoutes, { prefix: '/apps/classroom' });
-    });
-  }
-
-  if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
-    void fastify.register(publicRoutes.sentryRoutes);
-  }
-
-  void fastify.register(publicRoutes.chargeStripeRoute);
+  // Registered outside the CSRF scope. Signing out clears the CSRF cookies.
   void fastify.register(publicRoutes.signoutRoute);
-  void fastify.register(publicRoutes.emailSubscribtionRoutes);
-  void fastify.register(publicRoutes.userPublicGetRoutes);
-  void fastify.register(publicRoutes.unprotectedCertificateRoutes);
-  void fastify.register(publicRoutes.deprecatedEndpoints);
-  void fastify.register(publicRoutes.statusRoute);
-  void fastify.register(publicRoutes.unsubscribeDeprecated);
-  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };
