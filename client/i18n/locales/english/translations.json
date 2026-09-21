@@ -814,6 +814,8 @@
   "donate": {
     "title": "Support our charity",
     "processing": "We are processing your donation.",
+    "confirming": "Confirming Your Donation",
+    "confirming-body": "Thank you for your donation. We are waiting for PayPal to confirm your payment. Refresh your browser shortly to see your donor status.",
     "redirecting": "Redirecting...",
     "thanks": "Thanks for donating",
     "thank-you": "Thank You for Being a Supporter",
