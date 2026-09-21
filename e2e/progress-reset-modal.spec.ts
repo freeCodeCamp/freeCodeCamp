@@ -1,13 +1,7 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const execP = promisify(exec);
-
-test.afterEach(async () => {
-  await execP('node ../tools/scripts/seed/seed-demo-user --certified-user');
-});
+test.use({ userPreset: 'certified' });
 
 test.describe('Progress reset modal', () => {
   test('should reset the progress if the user fills the verify input text and clicks the reset button', async ({
