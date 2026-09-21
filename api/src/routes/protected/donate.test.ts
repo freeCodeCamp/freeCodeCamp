@@ -77,6 +77,9 @@ const createStripePaymentIntentReqBody = {
   ...sharedDonationReqBody
 };
 const mockSubCreate = vi.fn();
+const { mockVerifyStripePaymentIntent } = vi.hoisted(() => ({
+  mockVerifyStripePaymentIntent: vi.fn()
+}));
 const mockAttachPaymentMethod = vi.fn(() =>
   Promise.resolve({
     id: 'pm_1MqLiJLkdIwHu7ixUEgbFdYF',
@@ -143,6 +146,10 @@ const {
   };
 });
 
+vi.mock('../../utils/donation-verification.js', () => ({
+  verifyStripePaymentIntent: mockVerifyStripePaymentIntent
+}));
+
 vi.mock('stripe', () => ({
   default: class {
     static errors = {
@@ -196,6 +203,15 @@ describe('Donate', () => {
       expect(typeof donation?.subscriptionId).toBe('string');
       expect(donation?.customerId).toBe(testCustomerId);
       expect(donation?.provider).toBe('stripe');
+      // The subscription is claimed, so it cannot be redeemed a second time.
+      const claims = await fastifyTestInstance.prisma.donationClaim.findMany({
+        where: { userId: user?.id }
+      });
+      expect(claims).toHaveLength(1);
+      expect(claims[0]).toMatchObject({
+        provider: 'stripe',
+        reference: donation?.subscriptionId
+      });
     };
     const verifyNoUpdatedUserAndNoNewDonation = async (email: string) => {
       const user = await fastifyTestInstance.prisma.user.findFirst({
@@ -226,12 +242,14 @@ describe('Donate', () => {
         where: { email: testEWalletEmail }
       });
       await fastifyTestInstance.prisma.donation.deleteMany({});
+      await fastifyTestInstance.prisma.donationClaim.deleteMany({});
+      mockVerifyStripePaymentIntent.mockReset();
     });
 
     describe('POST /donate/charge-stripe-card', () => {
       test('should return 200 and update the user', async () => {
         mockSubCreate.mockImplementationOnce(
-          generateMockSubCreate('we only care about specific error cases')
+          generateMockSubCreate('succeeded')
         );
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
@@ -241,7 +259,7 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      test('should return 402 with client_secret if subscription status requires source action', async () => {
+      test('should return 402 with client_secret if subscription status requires action', async () => {
         const originalSentry = fastifyTestInstance.Sentry;
         const count = vi.fn();
         fastifyTestInstance.Sentry = {
@@ -250,7 +268,7 @@ describe('Donate', () => {
         };
 
         mockSubCreate.mockImplementationOnce(
-          generateMockSubCreate('requires_source_action')
+          generateMockSubCreate('requires_action')
         );
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
@@ -269,9 +287,9 @@ describe('Donate', () => {
         fastifyTestInstance.Sentry = originalSentry;
       });
 
-      test('should return 402 if subscription status requires source', async () => {
+      test('should return 402 if subscription status requires payment method', async () => {
         mockSubCreate.mockImplementationOnce(
-          generateMockSubCreate('requires_source')
+          generateMockSubCreate('requires_payment_method')
         );
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
@@ -288,7 +306,7 @@ describe('Donate', () => {
 
       test('should return 409 if the user is already donating', async () => {
         mockSubCreate.mockImplementationOnce(
-          generateMockSubCreate('still does not matter')
+          generateMockSubCreate('succeeded')
         );
         const successResponse = await superPost(
           '/donate/charge-stripe-card'
@@ -307,6 +325,21 @@ describe('Donate', () => {
           }
         });
         expect(failResponse.status).toBe(409);
+      });
+
+      test('should reject unexpected subscription statuses', async () => {
+        mockSubCreate.mockImplementationOnce(
+          generateMockSubCreate('processing')
+        );
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+
+        await verifyNoUpdatedUserAndNoNewDonation(userWithProgress.email);
+        expect(response.body).toEqual({
+          error: 'Donation failed due to a server error.'
+        });
+        expect(response.status).toBe(500);
       });
 
       test('should return 400 if the user has no email', async () => {
@@ -435,30 +468,262 @@ describe('Donate', () => {
         });
         expect(failResponse.status).toBe(400);
       });
+
+      // Donor benefits cost money, so the client cannot choose what it is
+      // charged. Without this the plan string reaches Stripe and fails there.
+      test('should return 400 for an amount we do not offer', async () => {
+        mockSubCreate.mockClear();
+
+        const failResponse = await superPost('/donate/charge-stripe-card').send(
+          { ...chargeStripeCardReqBody, amount: 100 }
+        );
+
+        await verifyNoUpdatedUserAndNoNewDonation(userWithProgress.email);
+        expect(mockSubCreate).not.toHaveBeenCalled();
+        expect(failResponse.body).toEqual({
+          error: {
+            type: 'InvalidDonationError',
+            message: 'Donation amount is not one we offer'
+          }
+        });
+        expect(failResponse.status).toBe(400);
+      });
     });
 
     describe('POST /donate/add-donation', () => {
-      test('should return 200 and update the user', async () => {
+      test('should return 200 and record a verified donation', async () => {
+        mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+          ok: true,
+          provider: 'stripe',
+          reference: 'sub_test_id',
+          amount: 500,
+          currency: 'usd',
+          customerId: 'cust_test_id'
+        });
+
         const response = await superPost('/donate/add-donation').send({
-          anything: true,
-          itIs: 'ignored'
+          ...sharedDonationReqBody,
+          stripePaymentIntentId: 'pi_test_id'
         });
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: userWithProgress.email }
         });
+        const claim = await fastifyTestInstance.prisma.donationClaim.findFirst({
+          where: { reference: 'sub_test_id' }
+        });
+        // charge-stripe-card records nothing when the card needs 3D Secure,
+        // so without this the donor has no history and cannot update a card.
+        const donation = await fastifyTestInstance.prisma.donation.findFirst({
+          where: { userId: defaultUserId }
+        });
+
         expect(user?.isDonating).toBe(true);
+        expect(claim).toMatchObject({
+          provider: 'stripe',
+          reference: 'sub_test_id',
+          userId: defaultUserId
+        });
+        expect(donation).toMatchObject({
+          provider: 'stripe',
+          subscriptionId: 'sub_test_id',
+          customerId: 'cust_test_id',
+          amount: 500,
+          duration: 'month',
+          userId: defaultUserId
+        });
         expect(response.body).toEqual({
           isDonating: true
         });
         expect(response.status).toBe(200);
       });
 
+      // Donor status for PayPal comes from the activation webhook, so the
+      // route must not accept a subscription id from the client at all.
+      test('should reject a PayPal subscription id', async () => {
+        const response = await superPost('/donate/add-donation').send({
+          ...sharedDonationReqBody,
+          paypalSubscriptionId: 'I-PAYPALSUBSCRIPTION'
+        });
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: userWithProgress.email }
+        });
+
+        expect(user?.isDonating).toBe(false);
+        expect(response.status).toBe(400);
+      });
+
+      test('should reject an empty body', async () => {
+        const response = await superPost('/donate/add-donation').send({});
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: userWithProgress.email }
+        });
+
+        expect(user?.isDonating).toBe(false);
+        expect(response.status).toBe(400);
+      });
+
+      test('should reject failed provider verification results', async () => {
+        const providerErrors = [
+          'incomplete_payment',
+          'refunded_payment',
+          'api_failure'
+        ];
+
+        for (const error of providerErrors) {
+          mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+            ok: false,
+            provider: 'stripe',
+            error
+          });
+
+          const response = await superPost('/donate/add-donation').send({
+            ...sharedDonationReqBody,
+            stripePaymentIntentId: `pi_test_${error}`
+          });
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: userWithProgress.email }
+          });
+
+          expect(user?.isDonating).toBe(false);
+          expect(response.body).toEqual({
+            message: 'flash.generic-error',
+            type: 'danger'
+          });
+          expect(response.status).toBe(403);
+        }
+      });
+
+      test('should reject mismatched payment details', async () => {
+        const invalidPayments = [
+          { amount: 600, currency: 'usd' },
+          { amount: 500, currency: 'eur' },
+          { amount: 500, currency: 'gbp' }
+        ];
+
+        for (const payment of invalidPayments) {
+          mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+            ok: true,
+            provider: 'stripe',
+            reference: `pi_test_${payment.amount}_${payment.currency}`,
+            ...payment
+          });
+
+          const response = await superPost('/donate/add-donation').send({
+            ...sharedDonationReqBody,
+            stripePaymentIntentId: `pi_test_${payment.amount}_${payment.currency}`
+          });
+          const user = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: userWithProgress.email }
+          });
+
+          expect(user?.isDonating).toBe(false);
+          expect(response.status).toBe(403);
+        }
+      });
+
+      test('should reject duplicate provider references', async () => {
+        mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+          ok: true,
+          provider: 'stripe',
+          reference: 'pi_test_id',
+          amount: 500,
+          currency: 'usd'
+        });
+        await fastifyTestInstance.prisma.donationClaim.create({
+          data: {
+            provider: 'stripe',
+            reference: 'pi_test_id',
+            userId: defaultUserId
+          }
+        });
+
+        const response = await superPost('/donate/add-donation').send({
+          ...sharedDonationReqBody,
+          stripePaymentIntentId: 'pi_test_id'
+        });
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: userWithProgress.email }
+        });
+
+        expect(user?.isDonating).toBe(false);
+        expect(response.status).toBe(409);
+      });
+
+      // A reference is claimable once, by anyone. Someone who gets hold of
+      // another person's subscription id must not be able to redeem it.
+      test('should reject a reference already claimed by another user', async () => {
+        mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+          ok: true,
+          provider: 'stripe',
+          reference: 'pi_test_id',
+          amount: 500,
+          currency: 'usd'
+        });
+        await fastifyTestInstance.prisma.donationClaim.create({
+          data: {
+            provider: 'stripe',
+            reference: 'pi_test_id',
+            userId: '5fa2db00a25c1c1fa49ce1a5'
+          }
+        });
+
+        const response = await superPost('/donate/add-donation').send({
+          ...sharedDonationReqBody,
+          stripePaymentIntentId: 'pi_test_id'
+        });
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: userWithProgress.email }
+        });
+        const claims = await fastifyTestInstance.prisma.donationClaim.findMany({
+          where: { reference: 'pi_test_id' }
+        });
+
+        expect(user?.isDonating).toBe(false);
+        expect(claims).toHaveLength(1);
+        expect(claims[0]?.userId).toBe('5fa2db00a25c1c1fa49ce1a5');
+        expect(response.status).toBe(409);
+      });
+
+      // A card donation that needed 3D Secure resolves to the subscription the
+      // charge-stripe routes already claimed, so it cannot be claimed twice.
+      test('should reject a Stripe subscription already claimed by another route', async () => {
+        mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+          ok: true,
+          provider: 'stripe',
+          reference: 'sub_test_duplicate',
+          amount: 500,
+          currency: 'usd'
+        });
+        await fastifyTestInstance.prisma.donationClaim.create({
+          data: {
+            provider: 'stripe',
+            reference: 'sub_test_duplicate',
+            userId: defaultUserId
+          }
+        });
+
+        const response = await superPost('/donate/add-donation').send({
+          ...sharedDonationReqBody,
+          stripePaymentIntentId: 'pi_test_duplicate'
+        });
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: userWithProgress.email }
+        });
+
+        expect(user?.isDonating).toBe(false);
+        expect(response.status).toBe(409);
+      });
+
       test('should return 409 if the user is already donating', async () => {
-        const successResponse = await superPost('/donate/add-donation').send(
-          {}
-        );
-        expect(successResponse.status).toBe(200);
-        const failResponse = await superPost('/donate/add-donation').send({});
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: { isDonating: true }
+        });
+
+        const failResponse = await superPost('/donate/add-donation').send({
+          ...sharedDonationReqBody,
+          stripePaymentIntentId: 'pi_test_id'
+        });
         expect(failResponse.status).toBe(409);
       });
 
@@ -469,16 +734,26 @@ describe('Donate', () => {
           ...originalSentry,
           captureException
         };
-        const updateSpy = vi
-          .spyOn(fastifyTestInstance.prisma.user, 'update')
+        mockVerifyStripePaymentIntent.mockResolvedValueOnce({
+          ok: true,
+          provider: 'stripe',
+          reference: 'pi_test_id',
+          amount: 500,
+          currency: 'usd'
+        });
+        const transactionSpy = vi
+          .spyOn(fastifyTestInstance.prisma, '$transaction')
           .mockRejectedValueOnce(new Error('DB error'));
 
-        const response = await superPost('/donate/add-donation').send({});
+        const response = await superPost('/donate/add-donation').send({
+          ...sharedDonationReqBody,
+          stripePaymentIntentId: 'pi_test_id'
+        });
 
         expect(response.status).toBe(500);
         expect(captureException).toHaveBeenCalledOnce();
 
-        updateSpy.mockRestore();
+        transactionSpy.mockRestore();
         fastifyTestInstance.Sentry = originalSentry;
       });
     });
