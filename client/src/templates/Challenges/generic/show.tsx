@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { ObserveKeys } from 'react-hotkeys';
@@ -31,6 +32,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { getChallengeContentLangProps } from '../../../utils/challenge-content-lang';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
@@ -38,6 +40,7 @@ import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import MobileAppModal from '../components/mobile-app-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
+import GenericChallengeButtons from './challenge-buttons';
 import ContentOutline from './content-outline';
 
 // Styles
@@ -62,7 +65,6 @@ const mapDispatchToProps = {
 interface ShowQuizProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
@@ -76,13 +78,17 @@ interface ShowQuizProps {
 
 function renderNodule(
   nodule: ChallengeNode['challenge']['nodules'][number],
-  showInteractiveEditor: boolean
+  showInteractiveEditor: boolean,
+  superBlock: SuperBlocks
 ) {
   switch (nodule.type) {
     case 'paragraph':
       return (
         <Col xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
-          <PrismFormatted text={nodule.contents} />
+          <PrismFormatted
+            text={nodule.contents}
+            {...getChallengeContentLangProps(superBlock)}
+          />
         </Col>
       );
     case 'interactiveEditor':
@@ -308,7 +314,7 @@ const ShowGeneric = ({
       {nodules?.map((nodule, i) => {
         return (
           <React.Fragment key={i}>
-            {renderNodule(nodule, showInteractiveEditor)}
+            {renderNodule(nodule, showInteractiveEditor, superBlock)}
           </React.Fragment>
         );
       })}
@@ -329,10 +335,21 @@ const ShowGeneric = ({
         )}
       </Col>
 
-      {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
+      {scene && (
+        <Scene
+          scene={scene}
+          sceneSubject={sceneSubject}
+          superBlock={superBlock}
+        />
+      )}
 
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        {transcript && <ChallengeTranscript transcript={transcript} />}
+        {transcript && (
+          <ChallengeTranscript
+            transcript={transcript}
+            superBlock={superBlock}
+          />
+        )}
 
         {instructions && (
           <>
@@ -352,6 +369,7 @@ const ShowGeneric = ({
               assignments={assignments}
               allAssignmentsCompleted={allAssignmentsCompleted}
               handleAssignmentChange={handleAssignmentChange}
+              superBlock={superBlock}
             />
           </ObserveKeys>
         )}
@@ -370,22 +388,21 @@ const ShowGeneric = ({
         )}
 
         {explanation ? (
-          <ChallengeExplanation explanation={explanation} />
+          <ChallengeExplanation
+            explanation={explanation}
+            superBlock={superBlock}
+          />
         ) : null}
 
         {!hasAnsweredMcqCorrectly && (
           <p className='text-center'>{t('learn.answered-mcq')}</p>
         )}
 
-        <Button block={true} variant='primary' onClick={handleSubmit}>
-          {questions.length == 0
-            ? t('buttons.submit')
-            : t('buttons.check-answer')}
-        </Button>
-        <Spacer size='xxs' />
-        <Button block={true} variant='primary' onClick={openHelpModal}>
-          {t('buttons.ask-for-help')}
-        </Button>
+        <GenericChallengeButtons
+          hasQuestions={questions.length > 0}
+          onHelp={openHelpModal}
+          onSubmit={handleSubmit}
+        />
 
         <Spacer size='l' />
       </Col>

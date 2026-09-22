@@ -170,7 +170,7 @@ let isCheckpointCollisionDetectionActive = true;
 
 const proportionalSize = (size) => {
   return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
-}
+};
 
 class Player {
   constructor() {
@@ -223,7 +223,7 @@ const animate = () => {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-}
+};
 
 --fcc-editable-region--
 
@@ -231,7 +231,7 @@ const startGame = () => {
   canvas.style.display = "block";
   startScreen.style.display = "none";
   player.draw();
-}
+};
 
 startBtn.addEventListener("click", startGame);
 

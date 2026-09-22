@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-prime-number-checker-module",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "15722224eb735613bc8dd803",
+      "title": "Build a Prime Number Checker Module"
+    }
+  ]
+}

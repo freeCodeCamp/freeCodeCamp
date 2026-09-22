@@ -1,0 +1,19 @@
+{
+  "chapters": [
+    {
+      "dashedName": "learn-data-visualization-with-d3",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "introduction-to-d3",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-data-visualization",
+            "lab-bar-chart",
+            "lab-scatterplot-graph"
+          ]
+        }
+      ]
+    }
+  ]
+}

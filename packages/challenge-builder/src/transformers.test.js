@@ -3,12 +3,48 @@
  */
 
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { createPoly } from '@freecodecamp/shared/utils/polyvinyl';
 
-import { embedFilesInHtml, embedScript } from './transformers';
+import {
+  embedFilesInHtml,
+  embedScript,
+  getLocalSourceWarnings,
+  getTransformers
+} from './transformers';
 
 const parseHtml = html => new DOMParser().parseFromString(html, 'text/html');
+const defaultLoopProtectOptions = {
+  preview: false,
+  disableLoopProtectTests: false,
+  disableLoopProtectPreview: false
+};
+
+const applyTransformers = challengeFile => {
+  const transformers = getTransformers(defaultLoopProtectOptions);
+  return transformers.reduce(
+    (fileP, transformer) => fileP.then(file => transformer(file)),
+    Promise.resolve(challengeFile)
+  );
+};
 
 describe('embedFilesInHtml', () => {
+  it('does not transpile const declarations to var', async () => {
+    const file = createPoly({
+      name: 'script',
+      ext: 'js',
+      contents:
+        'const location = []; const copiedLocation = { ...window.location };',
+      head: '',
+      tail: ''
+    });
+
+    const transformed = await applyTransformers(file);
+
+    expect(transformed.contents).toMatch(/\bconst\s+location\b/);
+    expect(transformed.contents).not.toMatch(/\bvar\s+location\b/);
+    expect(transformed.contents).toMatch(/\.\.\.\s*window\.location/);
+  });
+
   it('keeps deferred script.js in place', async () => {
     const result = await embedFilesInHtml([
       {
@@ -54,6 +90,79 @@ describe('embedFilesInHtml', () => {
     expect(script?.getAttribute('src')).toBeNull();
     expect(script?.parentElement?.tagName).toBe('HEAD');
     expect(doc.body.lastElementChild?.id).toBe('app');
+  });
+});
+
+describe('getLocalSourceWarnings', () => {
+  it('warns when unexpected local style and script files are sourced', () => {
+    const warnings = getLocalSourceWarnings([
+      {
+        fileKey: 'indexhtml',
+        contents:
+          '<!doctype html><html><head><link rel="stylesheet" href="style.css"><script src="./scripts.js"></script></head><body></body></html>'
+      },
+      {
+        fileKey: 'stylescss',
+        contents: 'body { color: red; }'
+      },
+      {
+        fileKey: 'scriptjs',
+        contents: 'console.log("hi");'
+      }
+    ]);
+
+    expect(warnings).toEqual(
+      expect.arrayContaining([
+        {
+          type: 'unavailable-local-resource',
+          source: 'style.css',
+          resourceType: 'stylesheet',
+          allowedSources: ['styles.css']
+        },
+        {
+          type: 'unavailable-local-resource',
+          source: './scripts.js',
+          resourceType: 'script',
+          allowedSources: ['script.js']
+        }
+      ])
+    );
+  });
+
+  it('does not warn for expected local files or external urls', () => {
+    const warnings = getLocalSourceWarnings([
+      {
+        fileKey: 'indexhtml',
+        contents:
+          '<!doctype html><html><head><link rel="stylesheet" href="./styles.css?v=1"><script src="/script.js#v=2"></script><script src="https://cdn.example.com/script.js"></script></head><body></body></html>'
+      },
+      {
+        fileKey: 'stylescss',
+        contents: 'body { color: red; }'
+      },
+      {
+        fileKey: 'scriptjs',
+        contents: 'console.log("hi");'
+      }
+    ]);
+
+    expect(warnings).toEqual([]);
+  });
+
+  it('does not warn for local script sources when script.js is not part of the challenge', () => {
+    const warnings = getLocalSourceWarnings([
+      {
+        fileKey: 'indexhtml',
+        contents:
+          '<!doctype html><html><head><script src="custom.js"></script></head><body></body></html>'
+      },
+      {
+        fileKey: 'stylescss',
+        contents: 'body { color: red; }'
+      }
+    ]);
+
+    expect(warnings).toEqual([]);
   });
 });
 

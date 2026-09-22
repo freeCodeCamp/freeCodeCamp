@@ -359,7 +359,7 @@ It disables all other CSS properties applied to the same element, effectively ma
 
 ---
 
-It applies on to a certain selector or group of elements.
+It applies only to a certain selector or group of elements.
 
 #### --answer--
 
@@ -593,7 +593,7 @@ It has the highest specificity because it can style all the elements on a page.
 
 ---
 
-It contributes 1 to all parts of the specificity value. 
+It contributes 1 to all parts of the specificity value.
 
 ---
 
@@ -655,7 +655,7 @@ Where does the `margin` apply styling properties?
 
 #### --distractors--
 
-The space inside element.
+The space inside the element.
 
 ---
 
@@ -677,7 +677,7 @@ Where does the `padding` property apply styling?
 
 #### --distractors--
 
-Between the elements border and the surrounding elements.
+Between the element's border and the surrounding elements.
 
 ---
 
@@ -703,7 +703,7 @@ They can stretch to fit the width of their container.
 
 ---
 
-Common block level elements include `div`, `paragraph`, and `section`.
+Common block-level elements include `div`, `p`, and `section`.
 
 ---
 
@@ -733,7 +733,7 @@ Elements retain inline flow but allow setting `width` and `height`.
 
 #### --answer--
 
-They do not share properties with inline or block level elements.
+They do not share properties with inline or block-level elements.
 
 ### --question--
 
@@ -783,7 +783,7 @@ What character precedes a class selector name?
 
 #### --text--
 
-Which is FALSE about inline level elements?
+Which is FALSE about inline-level elements?
 
 #### --distractors--
 
@@ -827,7 +827,7 @@ They are written within the `style` section within the `head` element.
 
 #### --text--
 
-What is the order for applying the `padding` property when using the shorthand syntax? 
+What is the order for applying the `padding` property when using the shorthand syntax?
 
 #### --distractors--
 
@@ -849,7 +849,7 @@ What is the order for applying the `padding` property when using the shorthand s
 
 #### --text--
 
-What is the order for applying the `margin` property when using the shorthand syntax? 
+What is the order for applying the `margin` property when using the shorthand syntax?
 
 #### --distractors--
 

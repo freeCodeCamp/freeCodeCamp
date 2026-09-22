@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           submodules: 'recursive'
           persist-credentials: false
@@ -50,12 +50,12 @@ jobs:
         run: docker run --rm -v `pwd`:/app -w /app dotenvlinter/dotenv-linter check --ignore-checks UnorderedKey sample.env
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         id: pnpm-install
         with:
           run_install: false
@@ -93,10 +93,8 @@ jobs:
           pnpm lint
 
   # DONT REMOVE THIS JOB.
-  # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
     name: Build
-    needs: lint
     runs-on: ubuntu-24.04
     strategy:
       matrix:
@@ -104,18 +102,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         id: pnpm-install
         with:
           run_install: false
@@ -135,6 +133,49 @@ jobs:
           pnpm install
           pnpm run build
 
+      - name: Upload Client Artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: client-artifact
+          path: client/public
+          retention-days: 1
+
+  build-e2e-api:
+    name: Build E2E API (Container)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          submodules: 'recursive'
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-api \
+            -f docker/api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-api > api-artifact.tar
+
+      - name: Upload API Artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: api-artifact
+          path: api-artifact.tar
+          retention-days: 1
+
+  e2e:
+    name: E2E
+    if: github.event_name == 'pull_request'
+    needs: [build, build-e2e-api]
+    uses: ./.github/workflows/e2e-playwright.yml
+    secrets: inherit
+
   test:
     name: Test
     needs: build
@@ -147,18 +188,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         id: pnpm-install
         with:
           run_install: false
@@ -175,7 +216,7 @@ jobs:
           cat sample.env
 
       - name: Start MongoDB
-        run: docker compose -f docker/docker-compose.yml up -d
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
         run: |
@@ -200,18 +241,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         id: pnpm-install
         with:
           run_install: false
@@ -228,7 +269,7 @@ jobs:
           echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
       - name: Start MongoDB
-        run: docker compose -f docker/docker-compose.yml up -d
+        run: docker compose -f docker/docker-compose.yml -f docker/docker-compose.ports.yml up -d
 
       - name: Install Dependencies
         run: |
@@ -255,18 +296,18 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           submodules: 'recursive'
           persist-credentials: false
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@91ab88e2619ed1f46221f0ba42d1492c02baf788 # v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         id: pnpm-install
         with:
           run_install: false

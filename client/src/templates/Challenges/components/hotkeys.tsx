@@ -167,7 +167,7 @@ function Hotkeys({
           executeChallenge();
         }
       } else {
-        executeChallenge({ showCompletionModal: true });
+        executeChallenge({ showCompletionModal: false });
       }
     },
     ...(keyboardShortcuts

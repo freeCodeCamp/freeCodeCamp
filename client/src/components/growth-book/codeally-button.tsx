@@ -19,7 +19,8 @@ export function CodeAllyButton({
   const { t } = useTranslation();
 
   const text =
-    challengeType === challengeTypes.codeAllyCert
+    challengeType === challengeTypes.codeAllyCert ||
+    challengeType === challengeTypes.freeCodeCampOsCert
       ? t('buttons.click-start-project')
       : t('buttons.click-start-course');
 

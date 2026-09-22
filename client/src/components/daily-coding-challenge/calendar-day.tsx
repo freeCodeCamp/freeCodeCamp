@@ -5,11 +5,11 @@ import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
 import JavaScriptIcon from '../../assets/icons/javascript';
 import PythonIcon from '../../assets/icons/python';
-import { formatDisplayDate, truncate } from './helpers';
+import { formatDisplayDate, toMonthDay, truncate } from './helpers';
 
 interface CalendarDayProps {
   dayNumber: number;
-  date?: string;
+  date: string;
   challengeNumber?: number;
   completedLanguages?: string[];
   isAvailable?: boolean;
@@ -44,16 +44,13 @@ function DailyCodingChallengeCalendarDay({
   const { t } = useTranslation();
   const completed = completedLanguages.length > 0;
 
-  // dayNumber = 0 -> render nothing
-  if (dayNumber === 0) return <div></div>;
-
   if (!isAvailable)
     return (
       <button
         disabled
         className='calendar-day not-available'
         data-playwright-test-label='calendar-day'
-        aria-label={`${date && formatDisplayDate(date)}, (${t('aria.not-available')})`}
+        aria-label={`${formatDisplayDate(date)}, (${t('aria.not-available')})`}
       >
         <span className='calendar-day-number' aria-hidden='true'>
           {dayNumber}
@@ -64,10 +61,10 @@ function DailyCodingChallengeCalendarDay({
   // isAvailable -> render link to challenge
   return (
     <Link
-      to={`/learn/daily-coding-challenge/${date}`}
+      to={`/learn/daily-coding-challenge/${toMonthDay(date)}`}
       className='calendar-day available'
       data-playwright-test-label='calendar-day'
-      aria-label={`${date && formatDisplayDate(date)}`}
+      aria-label={formatDisplayDate(date)}
     >
       <span className='calendar-day-number' aria-hidden='true'>
         {dayNumber}

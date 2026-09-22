@@ -21,7 +21,10 @@ export const saveChallenge = {
         ),
         type: Type.Literal('error')
       }),
-      Type.Literal('That challenge type is not saveable.')
+      Type.Object({
+        message: Type.Literal('That challenge type is not saveable.'),
+        type: Type.Literal('error')
+      })
     ]),
     default: genericError
   }

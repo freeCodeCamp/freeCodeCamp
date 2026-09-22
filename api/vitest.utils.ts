@@ -101,6 +101,7 @@ type IndexData = {
     key: Record<string, 1>;
     name: string;
     expireAfterSeconds?: number;
+    unique?: boolean;
   }[];
 };
 const indexData: IndexData[] = [
@@ -121,6 +122,17 @@ const indexData: IndexData[] = [
     ]
   },
   {
+    collection: 'DonationClaim',
+    indexes: [
+      {
+        key: { provider: 1, reference: 1 },
+        name: 'provider_1_reference_1',
+        unique: true
+      },
+      { key: { userId: 1 }, name: 'userId_1' }
+    ]
+  },
+  {
     collection: 'MsUsername',
     indexes: [{ key: { userId: 1, id: 1 }, name: 'userId_1__id_1' }]
   },
@@ -129,7 +141,8 @@ const indexData: IndexData[] = [
     indexes: [
       {
         key: { userId: 1, date: 1 },
-        name: 'userId_date_unique'
+        name: 'userId_date_unique',
+        unique: true
       }
     ]
   },
@@ -186,6 +199,12 @@ export function setupServer(): void {
     }
     fastify = await build(buildOptions);
     await fastify.ready();
+    // Supertest does not handle multiple concurrent requests gracefully
+    // https://github.com/forwardemail/supertest/issues/709
+    // it calls `server.close` and can end up killing live connections.
+    // By listening to 0, we keep the ephemeral port generation, but the fact
+    // it is listening means supertest will not attempt to close it.
+    fastify.server.listen(0);
 
     await checkCanConnectToDb(fastify.prisma);
 

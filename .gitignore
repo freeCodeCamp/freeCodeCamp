@@ -203,3 +203,4 @@ api/logs/
 
 ### Turborepo
 .turbo
+test-results

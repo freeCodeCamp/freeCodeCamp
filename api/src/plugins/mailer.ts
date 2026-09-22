@@ -29,9 +29,15 @@ const plugin: FastifyPluginCallback<{ provider: MailProvider }> = (
   const { provider } = options;
 
   fastify.decorate('sendEmail', async (args: SendEmailArgs) => {
-    const logger = fastify.log.child({ args });
-    logger.info('Sending Email');
-    return await provider.send(args);
+    fastify.log.info({ subject: args.subject }, 'Sending email');
+    try {
+      return await provider.send(args);
+    } catch (error) {
+      fastify.Sentry?.metrics?.count('mailer.send_failed', 1, {
+        attributes: { result: 'error' }
+      });
+      throw error;
+    }
   });
 
   done();

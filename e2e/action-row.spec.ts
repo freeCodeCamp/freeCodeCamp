@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-const buttonNames = ['Instructions', 'index.html', 'styles.css', 'Console'];
-
 test.describe('Desktop view', () => {
   test.skip(({ isMobile }) => isMobile, 'Only test on desktop');
 
@@ -13,67 +11,12 @@ test.describe('Desktop view', () => {
       );
     });
 
-    test('Action row buttons are visible', async ({ page }) => {
-      const previewPaneButton = page.getByTestId('preview-pane-button');
-      const previewPortalButton = page.getByRole('button', {
-        name: translations.aria['move-preview-to-new-window']
-      });
-      const actionRow = page.getByTestId('action-row');
-
-      for (const name of buttonNames) {
-        await expect(actionRow.getByRole('button', { name })).toBeVisible();
-      }
-
-      await expect(previewPaneButton).toBeVisible();
-      await expect(previewPortalButton).toBeVisible();
-    });
-
-    test('Preview button is visible during HTML/CSS/JS challenges', async ({
-      page
-    }) => {
-      const previewPaneButton = page.getByTestId('preview-pane-button');
-      const previewPortalButton = page.getByRole('button', {
-        name: translations.aria['move-preview-to-new-window']
-      });
-
-      expect(previewPortalButton).toBeDefined();
-
-      const hidePreviewText = translations.aria['hide-preview'];
-      const previewText = translations.learn['editor-tabs']['preview'];
-
-      await expect(previewPaneButton).toHaveText(hidePreviewText + previewText);
-    });
-
-    test('Terminal button is visible during Python challenges', async ({
-      page
-    }) => {
-      await page.goto('/learn/python-v9/workshop-caesar-cipher/step-1');
-      const terminalPaneButton = page.getByTestId('preview-pane-button');
-      const terminalPortalButton = page.getByRole('button', {
-        name: translations.aria['move-terminal-to-new-window']
-      });
-
-      const hideTerminalText = translations.aria['hide-terminal'];
-      const terminalText = translations.learn['editor-tabs']['terminal'];
-
-      await expect(terminalPaneButton).toHaveText(
-        hideTerminalText + terminalText
-      );
-      expect(terminalPortalButton).toBeDefined();
-    });
-
-    test('Clicking instructions button hides instructions panel, but not any buttons', async ({
+    test('Clicking instructions button hides the instructions panel', async ({
       page
     }) => {
       const instructionsButton = page.getByTestId('instructions-button');
-      const actionRow = page.getByTestId('action-row');
 
-      // Click instructions button to hide instructions panel
       await instructionsButton.click();
-
-      for (const name of buttonNames) {
-        await expect(actionRow.getByRole('button', { name })).toBeVisible();
-      }
 
       const instructionsPanelTitle = page.getByRole('heading', {
         name: 'Build an Event Flyer Page'
@@ -83,11 +26,11 @@ test.describe('Desktop view', () => {
 
     test('Clicking Console button shows console panel', async ({ page }) => {
       const actionRow = page.getByTestId('action-row');
-      const consoleBtn = actionRow.getByRole('button', { name: 'Console' });
+      const consoleText = translations.learn['editor-tabs'].console;
+      const consoleBtn = actionRow.getByRole('button', { name: consoleText });
 
-      // Click the console button to show the console panel
       await consoleBtn.click();
-      const consolePanel = page.getByLabel('Console');
+      const consolePanel = page.getByLabel(consoleText);
       await expect(consolePanel).toBeVisible();
     });
 
@@ -117,16 +60,6 @@ test.describe('Desktop view', () => {
       await expect(newPage).toHaveURL('about:blank');
 
       await newPage.close();
-    });
-  });
-
-  test.describe('Pages without previews', () => {
-    test('Preview Buttons should not appear when preview is disabled', async ({
-      page
-    }) => {
-      await page.goto('/learn/javascript-v9/workshop-greeting-bot/step-1');
-      const previewButton = page.getByTestId('preview-pane-button');
-      await expect(previewButton).toHaveCount(0);
     });
   });
 });

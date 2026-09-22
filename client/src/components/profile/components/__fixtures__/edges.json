@@ -18790,6 +18790,8 @@
   {
     "node": {
       "challenge": {
+        "block": "learn-accessibility-by-building-a-quiz",
+        "superBlock": "2022/responsive-web-design",
         "fields": {
           "slug": "/learn/2022/responsive-web-design/learn-accessibility-by-building-a-quiz/step-41"
         },

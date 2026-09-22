@@ -200,6 +200,7 @@ export const superBlockNames = {
   'responsive-web-design-v9': SuperBlocks.RespWebDesignV9,
   'front-end-development-libraries-v9': SuperBlocks.FrontEndDevLibsV9,
   'python-v9': SuperBlocks.PythonV9,
+  'algorithms-and-data-structure': SuperBlocks.AlgorithmsAndDataStructure,
   'relational-databases-v9': SuperBlocks.RelationalDbV9,
   'back-end-development-and-apis-v9': SuperBlocks.BackEndDevApisV9,
   'full-stack-developer-v9': SuperBlocks.FullStackDeveloperV9,
@@ -268,6 +269,7 @@ export const superBlockNames = {
     SuperBlocks.IntroductionToFunctionalProgrammingWithJS,
   'introduction-to-asynchronous-javascript':
     SuperBlocks.IntroductionToAsynchronousJS,
+  'learn-data-visualization-with-d3': SuperBlocks.LearnDataVisualizationWithD3,
   'introduction-to-python-basics': SuperBlocks.IntroductionToPythonBasics,
   'learn-python-loops-and-sequences': SuperBlocks.LearnPythonLoopsAndSequences,
   'learn-python-dictionaries-and-sets':
@@ -403,6 +405,9 @@ export async function parseCurriculumStructure(filter?: Filter) {
     addSuperblockStructure(curriculum.superblocks)
   );
   const refinedFilter = closestFilters(superblockList, filter);
+  if (!isEmpty(filter)) {
+    console.log('Applied filter:', refinedFilter);
+  }
   const fullSuperblockList = applyFilters(superblockList, refinedFilter);
   return {
     fullSuperblockList,

@@ -81,7 +81,7 @@
 
 .toggle-radio-group input {
   position: absolute;
-  left: -9999px;
+  inset-inline-start: -9999px;
 }
 
 .custom-circle {

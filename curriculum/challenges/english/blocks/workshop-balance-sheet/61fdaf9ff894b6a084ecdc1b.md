@@ -168,16 +168,16 @@ assert.strictEqual(
 ```
 
 ```css
---fcc-editable-region--
 span[class~="sr-only"] {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
   height: 1px;
   width: 1px;
-  
-}
 --fcc-editable-region--
+  
+--fcc-editable-region--
+}
 
 html {
   box-sizing: border-box;

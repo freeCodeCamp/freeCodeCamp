@@ -12,6 +12,16 @@ describe('<Honesty />', () => {
     expect(
       screen.getByRole('heading', { name: 'settings.headings.honesty' })
     ).toBeInTheDocument();
+    [
+      'settings.honesty.p1',
+      'settings.honesty.p2',
+      'settings.honesty.p3',
+      'settings.honesty.p4',
+      'settings.honesty.p5',
+      'settings.honesty.p6'
+    ].forEach(policyText => {
+      expect(screen.getByText(policyText)).toBeInTheDocument();
+    });
     expect(
       screen.getByRole('button', { name: 'buttons.agree-honesty' })
     ).toBeEnabled();

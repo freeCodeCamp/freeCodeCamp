@@ -42,6 +42,8 @@ export const defaultDonationFormState = {
   redirecting: false,
   processing: false,
   success: false,
+  // Paid, but we have not been told the subscription is active yet.
+  pending: false,
   error: '',
   loading: {
     stripe: true,
@@ -147,6 +149,12 @@ export const reducer = handleActions(
     [actionTypes.postChargeProcessing]: state => ({
       ...state,
       donationFormState: { ...defaultDonationFormState, processing: true }
+    }),
+    // The donation was paid for but is not confirmed yet, so donor status is
+    // deliberately not set here.
+    [actionTypes.postChargePending]: state => ({
+      ...state,
+      donationFormState: { ...defaultDonationFormState, pending: true }
     }),
     [actionTypes.postChargeComplete]: state => {
       const sessionUser = state.user.sessionUser
@@ -264,6 +272,33 @@ export const reducer = handleActions(
       ...state,
       isRandomCompletionThreshold: payload
     }),
+    [actionTypes.removeModuleChallenges]: (
+      state,
+      { payload: { removedChallengeIds } }
+    ) => {
+      const removedSet = new Set(removedChallengeIds);
+      const sessionUser = state.user.sessionUser;
+      if (!sessionUser) return state;
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: {
+            ...sessionUser,
+            completedChallenges: sessionUser.completedChallenges.filter(
+              c => !removedSet.has(c.id)
+            ),
+            savedChallenges: sessionUser.savedChallenges.filter(
+              c => !removedSet.has(c.id)
+            ),
+            partiallyCompletedChallenges:
+              sessionUser.partiallyCompletedChallenges.filter(
+                c => !removedSet.has(c.id)
+              )
+          }
+        }
+      };
+    },
     [actionTypes.resetUserData]: state => ({
       ...state,
       user: { ...state.user, sessionUser: null }
@@ -482,6 +517,8 @@ export const reducer = handleActions(
     [settingsTypes.updateMySoundComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyKeyboardShortcutsComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyClassroomModeComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyHonestyComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,

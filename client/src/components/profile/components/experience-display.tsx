@@ -119,7 +119,7 @@ export const ExperienceDisplay = ({
               onClick={openAddModal}
               aria-label={t('aria.add-experience')}
               type='button'
-              style={{ marginLeft: 'auto' }}
+              style={{ marginInlineStart: 'auto' }}
             >
               <FontAwesomeIcon icon={faPlus} />
             </Button>

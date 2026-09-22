@@ -3,13 +3,18 @@ import { takeEvery, select, call, put } from 'redux-saga/effects';
 import {
   challengeDataSelector,
   challengeTestsSelector,
-  challengeMetaSelector
+  challengeMetaSelector,
+  socratesHintStateSelector
 } from './selectors';
 
 import { buildChallenge } from '@freecodecamp/challenge-builder/build';
 import { getSocratesHint } from '../../../utils/ajax';
+import callGA from '../../../analytics/call-ga';
 
-import { isSocratesOnSelector } from '../../../redux/selectors';
+import {
+  isDonatingSelector,
+  isSocratesOnSelector
+} from '../../../redux/selectors';
 import { askSocratesError, askSocratesComplete } from './actions';
 
 // Maps server-side error keys to client-side translation keys.
@@ -21,6 +26,10 @@ const serverErrorKeyMap = {
   'socrates-unavailable': 'learn.socrates-unavailable',
   'socrates-invalid-request': 'learn.socrates-invalid-request'
 };
+
+function hasContent(value) {
+  return typeof value === 'string' && /\S/.test(value);
+}
 
 function translateServerError(errorKey) {
   const translationKey = serverErrorKeyMap[errorKey];
@@ -42,6 +51,9 @@ export function* askSocratesSaga() {
     const challengeData = yield select(challengeDataSelector);
     const tests = yield select(challengeTestsSelector);
     const { description } = yield select(challengeMetaSelector);
+    const isDonating = !!(yield select(isDonatingSelector));
+    const socratesHintState = (yield select(socratesHintStateSelector)) || {};
+    const { attempts = null, limit = null } = socratesHintState;
 
     const hasCheckedCode = tests.some(test => test.pass || test.err);
     if (!hasCheckedCode) {
@@ -68,7 +80,7 @@ export function* askSocratesSaga() {
     const seed = build;
     const userInput = sources?.editableContents;
 
-    if (!seed) {
+    if (!hasContent(seed)) {
       yield put(
         askSocratesError({
           error: i18next.t('learn.socrates-write-code-first')
@@ -91,9 +103,18 @@ export function* askSocratesSaga() {
       hints
     };
 
-    if (userInput) {
+    if (hasContent(userInput)) {
       optimizedPayload.userInput = userInput;
     }
+
+    callGA({
+      event: 'send_socrates',
+      action: 'Socrates Request Sent',
+      is_donating: isDonating,
+      attempts,
+      limit,
+      optimized_request: optimizedPayload
+    });
 
     const response = yield call(getSocratesHint, optimizedPayload);
     const responseData = response?.data;

@@ -14,6 +14,7 @@ export { saveChallenge } from './schemas/challenge/save-challenge.js';
 export { submitQuizAttempt } from './schemas/challenge/submit-quiz-attempt.js';
 export { deprecatedEndpoints } from './schemas/deprecated/index.js';
 export { addDonation } from './schemas/donate/add-donation.js';
+export { createPaypalSubscription } from './schemas/donate/create-paypal-subscription.js';
 export { chargeStripeCard } from './schemas/donate/charge-stripe-card.js';
 export { chargeStripe } from './schemas/donate/charge-stripe.js';
 export { createStripePaymentIntent } from './schemas/donate/create-stripe-payment-intent.js';
@@ -46,6 +47,7 @@ export { getSessionUser } from './schemas/user/get-session-user.js';
 export { postMsUsername } from './schemas/user/post-ms-username.js';
 export { reportUser } from './schemas/user/report-user.js';
 export { resetMyProgress } from './schemas/user/reset-my-progress.js';
+export { resetModule } from './schemas/user/reset-module.js';
 export { submitSurvey } from './schemas/user/submit-survey.js';
 export {
   userExamEnvironmentToken,
@@ -53,3 +55,7 @@ export {
 } from './schemas/user/exam-environment-token.js';
 export { sentryPostEvent } from './schemas/sentry/event.js';
 export { signout } from './schemas/signout/signout.js';
+export {
+  classroomGetUserIdSchema,
+  classroomGetUserDataSchema
+} from './schemas/classroom/classroom.js';

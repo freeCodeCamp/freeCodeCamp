@@ -40,6 +40,9 @@ describe('auth0 plugin', () => {
   beforeAll(async () => {
     fastify = Fastify();
 
+    // @ts-expect-error - Only mocks part of the Sentry object.
+    fastify.Sentry = { captureException: () => '' };
+
     await fastify.register(cookies);
     await fastify.register(redirectWithMessage);
     await fastify.register(auth);
@@ -126,6 +129,7 @@ describe('auth0 plugin', () => {
     const email = 'new@user.com';
     let getAccessTokenFromAuthorizationCodeFlowSpy: MockInstance;
     let userinfoSpy: MockInstance;
+    let captureException: ReturnType<typeof vi.fn>;
 
     const mockAuthSuccess = () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
@@ -140,8 +144,9 @@ describe('auth0 plugin', () => {
         'getAccessTokenFromAuthorizationCodeFlow'
       );
       userinfoSpy = vi.spyOn(fastify.auth0OAuth, 'userinfo');
+      captureException = vi.fn();
       // @ts-expect-error - Only mocks part of the Sentry object.
-      fastify.Sentry = { captureException: () => '' };
+      fastify.Sentry = { captureException };
     });
 
     afterEach(async () => {
@@ -163,6 +168,7 @@ describe('auth0 plugin', () => {
         `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
     });
 
     test('should redirect to the client if the state is invalid', async () => {
@@ -177,17 +183,19 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    test('should log an error if the state is invalid', async () => {
-      vi.spyOn(fastify.log, 'error');
+    test('should log a warning if the state is invalid', async () => {
+      vi.spyOn(fastify.log, 'warn');
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
       });
 
-      expect(fastify.log.error).toHaveBeenCalledWith(
+      expect(fastify.log.warn).toHaveBeenCalledWith(
+        expect.any(Error),
         'Auth failed: invalid state'
       );
       expect(res.statusCode).toBe(302);
+      expect(captureException).not.toHaveBeenCalled();
     });
 
     test('should log expected Auth0 errors', async () => {
@@ -215,6 +223,63 @@ describe('auth0 plugin', () => {
       );
 
       expect(res.statusCode).toBe(302);
+      expect(captureException).not.toHaveBeenCalled();
+    });
+
+    test('should capture Auth0 errors with reason invalid_request', async () => {
+      vi.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 400 Bad Request');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'invalid_request'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: invalid_request'
+      );
+
+      expect(res.statusCode).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
+    });
+
+    test('should capture unexpected Auth0 errors', async () => {
+      vi.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 500 Internal Server Error');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'server_error'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: server_error'
+      );
+
+      expect(res.statusCode).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
     });
 
     test('should not create a user if the state is invalid', async () => {
@@ -262,6 +327,10 @@ describe('auth0 plugin', () => {
       });
       userinfoSpy.mockResolvedValueOnce(Promise.reject(Error('any error')));
       const returnTo = 'https://www.freecodecamp.org/espanol/learn';
+      const count = vi.fn();
+      const distribution = vi.fn();
+      // @ts-expect-error - Only mocks part of the Sentry object.
+      fastify.Sentry = { ...fastify.Sentry, metrics: { count, distribution } };
 
       const res = await fastify.inject({
         method: 'GET',
@@ -275,6 +344,34 @@ describe('auth0 plugin', () => {
       );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
+      expect(captureException).toHaveBeenCalledOnce();
+      expect(distribution).toHaveBeenCalledWith(
+        'auth.login_latency_ms',
+        expect.any(Number),
+        {
+          unit: 'millisecond',
+          attributes: { provider: 'auth0', result: 'failure' }
+        }
+      );
+    });
+
+    test('captures userinfo errors carrying innerError', async () => {
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
+        token: 'any token'
+      });
+      userinfoSpy.mockRejectedValueOnce(
+        Object.assign(new Error('upstream'), { innerError: new Error('inner') })
+      );
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
+      });
+
+      expect(res.statusCode).toBe(302);
+      expect(captureException).toHaveBeenCalledOnce();
     });
 
     test('handles invalid userinfo responses', async () => {
@@ -300,6 +397,10 @@ describe('auth0 plugin', () => {
 
     test('redirects with the signin-success message on success', async () => {
       mockAuthSuccess();
+      const count = vi.fn();
+      const distribution = vi.fn();
+      // @ts-expect-error - Only mocks part of the Sentry object.
+      fastify.Sentry = { ...fastify.Sentry, metrics: { count, distribution } };
 
       const res = await fastify.inject({
         method: 'GET',
@@ -310,6 +411,17 @@ describe('auth0 plugin', () => {
         `?${formatMessage({ type: 'success', content: 'flash.signin-success' })}`
       );
       expect(res.statusCode).toBe(302);
+      expect(count).toHaveBeenCalledWith('auth.login_succeeded', 1, {
+        attributes: { provider: 'auth0' }
+      });
+      expect(distribution).toHaveBeenCalledWith(
+        'auth.login_latency_ms',
+        expect.any(Number),
+        {
+          unit: 'millisecond',
+          attributes: { provider: 'auth0', result: 'success' }
+        }
+      );
     });
 
     test('should set the jwt_access_token cookie', async () => {

@@ -18,11 +18,20 @@
             "workshop-movie-ticket-booking-calculator",
             "lab-travel-weather-planner",
             "lecture-understanding-functions-and-scope",
+            "workshop-kitchen-inventory-tracker",
             "lab-discount-calculator",
             "workshop-caesar-cipher",
             "lab-rpg-character",
             "review-python-basics",
             "quiz-python-basics"
+          ]
+        },
+        {
+          "dashedName": "python-installation",
+          "blocks": [
+            "lecture-python-installation",
+            "review-python-installation",
+            "quiz-python-installation"
           ]
         },
         {
@@ -110,6 +119,16 @@
           "blocks": ["lab-hash-table"]
         },
         {
+          "dashedName": "python-recursion",
+          "blocks": [
+            "lecture-understanding-recursion-and-the-call-stack-python",
+            "workshop-countup-python",
+            "lab-range-of-numbers-python",
+            "review-recursion-python",
+            "quiz-recursion-python"
+          ]
+        },
+        {
           "dashedName": "python-algorithms",
           "blocks": [
             "lecture-searching-and-sorting-algorithms",
@@ -160,10 +179,8 @@
     {
       "chapterType": "exam",
       "dashedName": "python-certification-exam",
-      "comingSoon": false,
       "modules": [
         {
-          "comingSoon": false,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }

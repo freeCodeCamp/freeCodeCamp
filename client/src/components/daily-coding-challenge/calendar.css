@@ -1,12 +1,3 @@
-.calendar-weekday-labels {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  text-align: center;
-  margin: 0 auto;
-  max-width: 1500px;
-  padding: 0 20px;
-}
-
 .calendar-head {
   display: flex;
   justify-content: center;

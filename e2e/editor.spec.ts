@@ -1,7 +1,10 @@
-import { APIRequestContext, expect, test } from '@playwright/test';
+import { type APIRequestContext } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { authedRequest } from './utils/request';
+
+test.use({ userPreset: 'certified' });
 
 const setTheme = async (
   request: APIRequestContext,

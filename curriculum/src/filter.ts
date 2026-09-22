@@ -163,11 +163,14 @@ function getSimilarityScore(a: string, b: string): number {
   return (2 * intersection) / (a.length + b.length - 2);
 }
 
-export function closestMatch(target: string, xs: string[]): string {
+export function closestMatch(
+  target: string,
+  xs: string[]
+): { closest: string; score: number } {
   const [firstCandidate, ...rest] = xs;
 
   if (!firstCandidate) {
-    return target;
+    return { closest: target, score: 0 };
   }
 
   const normalizedTarget = normalizeForComparison(target);
@@ -190,13 +193,16 @@ export function closestMatch(target: string, xs: string[]): string {
     }
   }
 
-  return closest;
+  return { closest, score: closestScore };
 }
 
 export function closestFilters(
   superblocks: Filterable[],
   target?: Filter
 ): Filter | undefined {
+  // This is subjective, but should allow through typos while rejecting overly vague or unrelated filters.
+  const diceSorensenThreshold = 0.7;
+
   if (target?.superBlock) {
     const superblockNames = superblocks.map(({ name }) => name);
 
@@ -205,9 +211,17 @@ export function closestFilters(
       return target;
     }
 
+    const { closest, score } = closestMatch(target.superBlock, superblockNames);
+
+    if (score < diceSorensenThreshold) {
+      throw Error(
+        `No close match found for superBlock: ${target.superBlock}. Found "${closest}", is that what you meant?`
+      );
+    }
+
     return {
       ...target,
-      superBlock: closestMatch(target.superBlock, superblockNames)
+      superBlock: closest
     };
   }
 
@@ -215,9 +229,18 @@ export function closestFilters(
     const blocks = superblocks.flatMap(({ blocks }) =>
       blocks.map(({ dashedName }) => dashedName)
     );
+
+    const { closest, score } = closestMatch(target.block, blocks);
+
+    if (score < diceSorensenThreshold) {
+      throw Error(
+        `No close match found for block: ${target.block}. Found "${closest}", is that what you meant?`
+      );
+    }
+
     return {
       ...target,
-      block: closestMatch(target.block, blocks)
+      block: closest
     };
   }
 

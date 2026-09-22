@@ -67,7 +67,6 @@ import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
-import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
@@ -154,15 +153,6 @@ const BASE_LAYOUT = {
   previewPane: { flex: 0.7 },
   notesPane: { flex: 0.7 },
   testsPane: { flex: 0.3 }
-};
-
-// Used to prevent monaco from stealing mouse/touch events on the upper jaw
-// content widget so they can trigger their default actions. (Issue #46166)
-const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
-  const target = e.target as HTMLElement;
-  if (target?.closest('.editor-upper-jaw')) {
-    e.stopPropagation();
-  }
 };
 
 const StepPreview = ({
@@ -254,7 +244,7 @@ function ShowClassic({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
 
-  const guideUrl = getGuideUrl({ forumTopicId, title });
+  const guideUrl = getGuideUrl({ forumTopicId, title, block, superBlock });
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -317,28 +307,21 @@ function ShowClassic({
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
 
-  // Independent lower jaw is only enabled for desktop.
-  const showIndependentLowerJaw = !isMobile;
-
   const showSidePanelTests = isMobile || !hasEditableBoundaries;
 
   // Show test
 
   useEffect(() => {
-    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+    if (
+      isPreFetchEnabled &&
+      (envData as { clientLocale: string }).clientLocale === 'espanol'
+    ) {
       preloadPage(nextChallengePath);
     }
   }, [nextChallengePath, isPreFetchEnabled]);
 
   useEffect(() => {
     initializeComponent(title);
-    // Bug fix for the monaco content widget and touch devices/right mouse
-    // click. (Issue #46166)
-    document.addEventListener('mousedown', handleContentWidgetEvents, true);
-    document.addEventListener('contextmenu', handleContentWidgetEvents, true);
-    document.addEventListener('touchstart', handleContentWidgetEvents, true);
-    document.addEventListener('touchmove', handleContentWidgetEvents, true);
-    document.addEventListener('touchend', handleContentWidgetEvents, true);
 
     window.addEventListener('resize', setHtmlHeight);
     setHtmlHeight();
@@ -346,27 +329,6 @@ function ShowClassic({
     return () => {
       createFiles([]);
       cancelTests();
-      document.removeEventListener(
-        'mousedown',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'contextmenu',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'touchstart',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener(
-        'touchmove',
-        handleContentWidgetEvents,
-        true
-      );
-      document.removeEventListener('touchend', handleContentWidgetEvents, true);
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -408,13 +370,7 @@ function ShowClassic({
     setIsAdvancing(false);
   };
 
-  const renderInstructionsPanel = ({
-    toolPanel,
-    hasDemo
-  }: {
-    toolPanel: React.ReactNode;
-    hasDemo: boolean;
-  }) => {
+  const renderInstructionsPanel = ({ hasDemo }: { hasDemo: boolean }) => {
     return (
       <SidePanel
         challengeDescription={
@@ -435,7 +391,6 @@ function ShowClassic({
           </ChallengeTitle>
         }
         instructionsPanelRef={instructionsPanelRef}
-        toolPanel={toolPanel}
         hasDemo={hasDemo}
         showSidePanelTests={showSidePanelTests}
       />
@@ -462,7 +417,6 @@ function ShowClassic({
           title={title}
           usesMultifileEditor={usesMultifileEditor}
           showProjectPreview={demoType === 'onLoad'}
-          showIndependentLowerJaw={showIndependentLowerJaw}
         />
       )
     );
@@ -493,8 +447,10 @@ function ShowClassic({
             })}
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             instructions={renderInstructionsPanel({
-              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             notes={notes}
@@ -511,9 +467,6 @@ function ShowClassic({
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
-            toolPanel={
-              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
-            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
             usesTerminal={usesTerminal}
@@ -529,7 +482,6 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             isDailyCodingChallenge={isDailyCodingChallenge}
@@ -553,7 +505,6 @@ function ShowClassic({
             }
             windowTitle={windowTitle}
             startWithConsoleShown={openConsole}
-            showIndependentLowerJaw={showIndependentLowerJaw}
           />
         )}
         <CompletionModal />

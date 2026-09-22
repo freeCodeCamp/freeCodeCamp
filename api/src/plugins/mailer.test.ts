@@ -20,4 +20,28 @@ describe('mailer', () => {
 
     expect(send).toHaveBeenCalledWith(data);
   });
+
+  test('should emit a Sentry counter and re-throw when the provider fails to send', async () => {
+    const fastify = Fastify();
+    const sendError = new Error('send failed');
+    const send = vi.fn().mockRejectedValue(sendError);
+    await fastify.register(mailer, { provider: { send } });
+
+    const count = vi.fn();
+    // @ts-expect-error - Only mocks part of the Sentry object.
+    fastify.Sentry = { metrics: { count } };
+
+    const data = {
+      to: 'test@add.ress',
+      from: 'team@freecodecamp.org',
+      subject: 'test',
+      text: 'test'
+    };
+
+    await expect(fastify.sendEmail(data)).rejects.toThrow(sendError);
+
+    expect(count).toHaveBeenCalledWith('mailer.send_failed', 1, {
+      attributes: { result: 'error' }
+    });
+  });
 });

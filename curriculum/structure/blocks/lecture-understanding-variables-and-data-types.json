@@ -14,7 +14,11 @@
     },
     {
       "id": "67fe859a00971c34a23abd43",
-      "title": "What Are Common Data Types in Python and How Do You Get the Type of a Variable?"
+      "title": "What Are Common Data Types in Python?"
+    },
+    {
+      "id": "6a03f5d143c8688a9265c0a0",
+      "title": "How Do the type() and isinstance() Functions Work?"
     }
   ],
   "blockLabel": "lecture"

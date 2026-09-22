@@ -1,6 +1,8 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Progress bar component in editor', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
@@ -34,12 +36,12 @@ test.describe('Progress bar component in editor', () => {
   });
 });
 
-test.describe('Progress bar component in modal', () => {
+test.describe('Progress bar component on mobile', () => {
   test.use({
     viewport: { width: 393, height: 851 },
     isMobile: true
   });
-  test('should appear in the completion modal after user has submitted their code', async ({
+  test('should appear in the lower jaw after user has submitted their code', async ({
     page,
     isMobile,
     browserName
@@ -52,25 +54,13 @@ test.describe('Progress bar component in modal', () => {
 
     await page.keyboard.insertText('var myName;');
 
-    if (isMobile) {
-      await page
-        .getByRole('button', {
-          name: 'Run',
-          exact: false
-        })
-        .click();
-    } else {
-      await page
-        .getByRole('button', { name: translations.buttons['check-code'] })
-        .click();
-    }
-
-    await expect(page.locator('.completion-block-meta')).toContainText(
-      /\d% complete/
-    );
-
     await page
-      .getByRole('button', { name: 'Submit and go to next challenge' })
+      .getByRole('button', { name: translations.buttons['check-code'] })
       .click();
+
+    const progressBarContainer = page.getByTestId('progress-bar-container');
+    await expect(progressBarContainer).toContainText(/\d% complete/);
+
+    await page.getByRole('button', { name: 'Submit and continue' }).click();
   });
 });

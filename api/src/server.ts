@@ -1,34 +1,75 @@
 import './instrument.js';
 
+import os from 'node:os';
+
+import * as Sentry from '@sentry/node';
 import { build, buildOptions } from './app.js';
-import { HOST, PORT } from './utils/env.js';
+import {
+  DEPLOYMENT_VERSION,
+  HOST,
+  PORT,
+  SENTRY_SERVER_NAME,
+  FCC_DRAIN_TIMEOUT_MS
+} from './utils/env.js';
 
 const start = async () => {
-  const fastify = await build(buildOptions);
-
-  const stop = async (signal: NodeJS.Signals) => {
-    fastify.log.info(`Received ${signal}, shutting down.`);
-
-    fastify.server.closeAllConnections();
-    await new Promise<void>(resolve => {
-      fastify.server.close(() => resolve());
-    });
-
-    // Yield one tick so libuv can finalize uv_close() on the TCP handle
-    // before pino's autoEnd blocks the event loop via Atomics.wait().
-    await new Promise<void>(resolve => setImmediate(resolve));
-
-    await fastify.close();
-    process.exit(0);
-  };
-
-  process.on('SIGINT', signal => void stop(signal));
-  process.on('SIGTERM', signal => void stop(signal));
+  let fastify: Awaited<ReturnType<typeof build>> | undefined;
 
   try {
-    await fastify.listen({ port: Number(PORT), host: HOST });
+    fastify = await build(buildOptions);
+
+    const stop = async (signal: NodeJS.Signals) => {
+      fastify!.log.info({ signal }, 'Received signal, shutting down');
+
+      // Safety net: if in-flight requests do not finish in time, hard-close
+      // whatever is left so Swarm's SIGKILL never fires mid-write.
+      const forceClose = setTimeout(() => {
+        fastify!.log.warn(
+          { signal, timeoutMs: FCC_DRAIN_TIMEOUT_MS },
+          'Drain timeout exceeded, force-closing connections'
+        );
+        fastify!.server.closeAllConnections();
+      }, FCC_DRAIN_TIMEOUT_MS);
+      forceClose.unref();
+
+      await fastify!.close();
+      clearTimeout(forceClose);
+      Sentry.metrics.count('server.shutdown_completed', 1, {
+        attributes: { signal }
+      });
+      await fastify!.Sentry.close(2000);
+      // No process.exit(): once close() resolves, the loop drains and the
+      // process exits 0 on its own. Hard-exiting here is what used to race
+      // pino's exit-time flush (see #66135).
+    };
+
+    process.on('SIGINT', signal => void stop(signal));
+    process.on('SIGTERM', signal => void stop(signal));
+
+    const address = await fastify.listen({ port: Number(PORT), host: HOST });
+    fastify.log.info(
+      {
+        audit: true,
+        version: DEPLOYMENT_VERSION,
+        instanceId: SENTRY_SERVER_NAME ?? os.hostname(),
+        address
+      },
+      'API server started'
+    );
+    Sentry.metrics.count('server.boot', 1, {
+      attributes: { result: 'success' }
+    });
   } catch (err) {
-    fastify.log.error(err);
+    if (fastify) {
+      fastify.log.error(err, 'Failed to start server');
+    } else {
+      console.error('Failed to start server', err);
+    }
+    Sentry.metrics.count('server.boot', 1, {
+      attributes: { result: 'failure' }
+    });
+    Sentry.captureException(err);
+    await (fastify?.Sentry ?? Sentry).close(2000);
     process.exit(1);
   }
 };

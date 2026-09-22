@@ -1,12 +1,12 @@
 import { SuperBlocks } from './curriculum';
 
-enum Levels {
+export enum Levels {
   Beginner = 'beginner',
   Intermediate = 'intermediate',
   Advanced = 'advanced'
 }
 
-enum Topic {
+export enum Topic {
   Html = 'html',
   CSS = 'css',
   Js = 'js',
@@ -27,7 +27,7 @@ enum Topic {
   AI = 'ai'
 }
 
-interface Catalog {
+export interface Catalog {
   superBlock: SuperBlocks;
   level: Levels;
   hours: number;
@@ -358,6 +358,12 @@ export const catalog: Catalog[] = [
     level: Levels.Intermediate,
     hours: 40,
     topic: Topic.Js
+  },
+  {
+    superBlock: SuperBlocks.LearnDataVisualizationWithD3,
+    level: Levels.Intermediate,
+    hours: 20,
+    topic: Topic.D3
   },
   {
     superBlock: SuperBlocks.LearnOOPWithPython,

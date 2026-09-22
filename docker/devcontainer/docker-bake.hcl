@@ -43,8 +43,9 @@ target "devcontainer" {
 
 // Native platform only (fast local builds)
 target "local-devcontainer" {
-  inherits = ["_common"]
-  target   = "devcontainer"
-  output   = ["type=docker"]
-  tags     = ["ghcr.io/freecodecamp/devcontainer:latest"]
+  inherits   = ["_common"]
+  target     = "devcontainer"
+  output     = ["type=docker"]
+  cache-from = ["type=gha"]
+  tags       = ["ghcr.io/freecodecamp/devcontainer:latest"]
 }

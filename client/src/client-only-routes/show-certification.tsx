@@ -144,7 +144,7 @@ const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
   );
 };
 
-const DonationSection = ({
+export const DonationSection = ({
   isDonationSubmitted,
   handleProcessing,
   hideDonationSection
@@ -156,17 +156,12 @@ const DonationSection = ({
   const { t } = useTranslation();
 
   return (
-    <div
-      className='donation-section'
-      data-playwright-test-label='donation-section'
-    >
+    <div className='donation-section' data-testid='donation-section'>
       <Spacer size='l' />
       {!isDonationSubmitted && (
         <Row>
           <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <p data-playwright-test-label='donation-text'>
-              {t('donate.only-you')}
-            </p>
+            <p data-testid='donation-text'>{t('donate.only-you')}</p>
           </Col>
         </Row>
       )}
@@ -177,7 +172,7 @@ const DonationSection = ({
           sm={10}
           smOffset={1}
           xs={12}
-          data-playwright-test-label='donation-form'
+          data-testid='donation-form'
         >
           <MultiTierDonationForm
             defaultTheme={LocalStorageThemes.Light}
@@ -200,7 +195,7 @@ const DonationSection = ({
   );
 };
 
-const ShareCertBtns = ({
+export const ShareCertBtns = ({
   username,
   certDate,
   certTitle,
@@ -231,7 +226,7 @@ const ShareCertBtns = ({
             certMonth + 1
           }&certUrl=${certURL}&certId=${linkedInCredentialId}`}
           target='_blank'
-          data-playwright-test-label='linkedin-share-btn'
+          data-testid='linkedin-share-btn'
         >
           {t('profile.add-linkedin')}
         </Button>
@@ -245,7 +240,7 @@ const ShareCertBtns = ({
             certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='twitter-share-btn'
+          data-testid='twitter-share-btn'
         >
           {t('profile.add-twitter')}
         </Button>
@@ -259,7 +254,7 @@ const ShareCertBtns = ({
             certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='bluesky-share-btn'
+          data-testid='bluesky-share-btn'
         >
           {t('profile.add-bluesky')}
         </Button>
@@ -273,7 +268,7 @@ const ShareCertBtns = ({
             certURL
           })}`}
           target='_blank'
-          data-playwright-test-label='thread-share-btn'
+          data-testid='thread-share-btn'
         >
           {t('profile.add-threads')}
         </Button>
@@ -283,8 +278,172 @@ const ShareCertBtns = ({
   );
 };
 
-const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
+interface CertificateDisplayProps {
+  certDate: Date;
+  certSlug: CertSlug;
+  certTitle: string;
+  certURL: string;
+  completionTime: number;
+  displayName: string;
+}
+
+export function CertificateDisplay({
+  certDate,
+  certSlug,
+  certTitle,
+  certURL,
+  completionTime,
+  displayName
+}: CertificateDisplayProps): JSX.Element {
   const { t } = useTranslation();
+  const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
+  const isLanguageCert = [
+    Certification.A1Chinese,
+    Certification.A2Chinese,
+    Certification.A2English,
+    Certification.A2Spanish,
+    Certification.B1English
+  ].includes(certSlug);
+
+  return (
+    <div className='certificate-wrapper' data-testid='cert-wrapper'>
+      <div className='certification-namespace'>
+        <header data-testid='cert-header'>
+          <Col sm={12}>
+            {isMicrosoftCert ? (
+              <>
+                <div className='dual-logo fcc-logo' data-testid='cert-fcc-logo'>
+                  <FreeCodeCampLogo aria-hidden='true' />
+                </div>
+                <div
+                  className='dual-logo ms-logo'
+                  data-testid='cert-microsoft-logo'
+                >
+                  <MicrosoftLogo aria-hidden='true' />
+                </div>
+              </>
+            ) : (
+              <div className='logo' data-testid='cert-fcc-logo'>
+                <FreeCodeCampLogo aria-hidden='true' />
+              </div>
+            )}
+          </Col>
+        </header>
+        <main className='information'>
+          <div
+            className='information-container'
+            data-testid='cert-info-container'
+          >
+            <Trans
+              i18nKey={
+                isMicrosoftCert
+                  ? 'certification.fulltextNoHours'
+                  : isLanguageCert
+                    ? 'certification.fulltextLanguageExam'
+                    : 'certification.fulltext'
+              }
+              title={t(`certification.title.${certSlug}`, certTitle)}
+              values={{
+                user: displayName,
+                title: t(`certification.title.${certSlug}`, certTitle),
+                time: certDate.toLocaleString([localeCode, 'en-US'], {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                }),
+                completionTime
+              }}
+            >
+              <h3>placeholder</h3>
+              <h1>
+                <strong>{'{{user}}'}</strong>
+              </h1>
+              <h3 data-testid='successful-completion'>placeholder</h3>
+              <h1 data-testid='certification-title'>
+                <strong>{'{{title}}'}</strong>
+              </h1>
+              <h4 data-testid='issue-date'>{'{{time}}'}</h4>
+              <h5 style={{ marginTop: '15px' }}>{'{{completionTime}}'}</h5>
+            </Trans>
+          </div>
+        </main>
+        <footer data-testid='cert-footer'>
+          <div className='signatures'>
+            {isMicrosoftCert ? (
+              <>
+                <div>
+                  <Image
+                    data-testid='quincy-signature'
+                    alt={t('certification.quincy-larson-signature')}
+                    src={
+                      'https://cdn.freecodecamp.org' +
+                      '/platform/english/images/quincy-larson-signature.svg'
+                    }
+                  />
+                  <p className='signee-name'>
+                    <strong>Quincy Larson</strong>
+                  </p>
+                  <p className='signee-role'>{t('certification.executive')}</p>
+                </div>
+                <div className='microsoft-signature'>
+                  <Image
+                    data-testid='microsoft-signature'
+                    alt={t('certification.julia-liuson-signature')}
+                    src={
+                      'https://cdn.freecodecamp.org' +
+                      '/platform/english/images/microsoft-signature.png'
+                    }
+                  />
+                  <div className='signature-underline'></div>
+                  <p className='signee-name'>
+                    <strong>Julia Liuson</strong>
+                  </p>
+                  <p className='signee-role'>
+                    {t('certification.ms-president')}
+                  </p>
+                </div>
+              </>
+            ) : (
+              <div>
+                <Image
+                  data-testid='quincy-signature'
+                  alt={t('certification.quincy-larson-signature')}
+                  src={
+                    'https://cdn.freecodecamp.org' +
+                    '/platform/english/images/quincy-larson-signature.svg'
+                  }
+                />
+                <p className='signee-name'>
+                  <strong>Quincy Larson</strong>
+                </p>
+                <p className='signee-role'>{t('certification.executive')}</p>
+              </div>
+            )}
+          </div>
+          {!isMicrosoftCert && (
+            <>
+              <span className='ribbon-wrap'>
+                <Image alt='' className='ribbon' src={ribbon} />
+              </span>
+              <span className='qr-wrap'>
+                <QRCodeSVG className='qr-code' value={certURL} />
+              </span>
+            </>
+          )}
+          <Row>
+            <p className='verify'>
+              {t('certification.verify')}
+              <br />
+              {certURL}
+            </p>
+          </Row>
+        </footer>
+      </div>
+    </div>
+  );
+}
+
+const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
   const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
   const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
   const [isDonationClosed, setIsDonationClosed] = useState(false);
@@ -387,16 +546,6 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const certURL = `https://freecodecamp.org${pathname}`;
 
-  const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
-
-  const isLanguageCert = [
-    Certification.A1Chinese,
-    Certification.A2Chinese,
-    Certification.A2English,
-    Certification.A2Spanish,
-    Certification.B1English
-  ].includes(certSlug);
-
   return (
     <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? (
@@ -408,157 +557,15 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       ) : (
         ''
       )}
-      <div
-        className='certificate-wrapper'
-        data-playwright-test-label='cert-wrapper'
-      >
-        <div className='certification-namespace'>
-          <header data-playwright-test-label='cert-header'>
-            <Col sm={12}>
-              {isMicrosoftCert ? (
-                <>
-                  <div
-                    className='dual-logo fcc-logo'
-                    data-playwright-test-label='cert-fcc-logo'
-                  >
-                    <FreeCodeCampLogo aria-hidden='true' />
-                  </div>
-                  <div
-                    className='dual-logo ms-logo'
-                    data-playwright-test-label='cert-microsoft-logo'
-                  >
-                    <MicrosoftLogo aria-hidden='true' />
-                  </div>
-                </>
-              ) : (
-                <div
-                  className='logo'
-                  data-playwright-test-label='cert-fcc-logo'
-                >
-                  <FreeCodeCampLogo aria-hidden='true' />
-                </div>
-              )}
-            </Col>
-          </header>
-          <main className='information'>
-            <div
-              className='information-container'
-              data-playwright-test-label='cert-info-container'
-            >
-              <Trans
-                i18nKey={
-                  isMicrosoftCert
-                    ? 'certification.fulltextNoHours'
-                    : isLanguageCert
-                      ? 'certification.fulltextLanguageExam'
-                      : 'certification.fulltext'
-                }
-                title={t(`certification.title.${certSlug}`, certTitle)}
-                values={{
-                  user: displayName,
-                  title: t(`certification.title.${certSlug}`, certTitle),
-                  time: certDate.toLocaleString([localeCode, 'en-US'], {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  }),
-                  completionTime
-                }}
-              >
-                <h3>placeholder</h3>
-                <h1>
-                  <strong>{'{{user}}'}</strong>
-                </h1>
-                <h3 data-playwright-test-label='successful-completion'>
-                  placeholder
-                </h3>
-                <h1 data-playwright-test-label='certification-title'>
-                  <strong>{'{{title}}'}</strong>
-                </h1>
-                <h4 data-playwright-test-label='issue-date'>{'{{time}}'}</h4>
-                <h5 style={{ marginTop: '15px' }}>{'{{completionTime}}'}</h5>
-              </Trans>
-            </div>
-          </main>
-          <footer data-playwright-test-label='cert-footer'>
-            <div className='signatures'>
-              {isMicrosoftCert ? (
-                <>
-                  <div>
-                    <Image
-                      data-playwright-test-label='quincy-signature'
-                      alt={t('certification.quincy-larson-signature')}
-                      src={
-                        'https://cdn.freecodecamp.org' +
-                        '/platform/english/images/quincy-larson-signature.svg'
-                      }
-                    />
-                    <p className='signee-name'>
-                      <strong>Quincy Larson</strong>
-                    </p>
-                    <p className='signee-role'>
-                      {t('certification.executive')}
-                    </p>
-                  </div>
-                  <div className='microsoft-signature'>
-                    <Image
-                      data-playwright-test-label='microsoft-signature'
-                      alt={t('certification.julia-liuson-signature')}
-                      src={
-                        'https://cdn.freecodecamp.org' +
-                        '/platform/english/images/microsoft-signature.png'
-                      }
-                    />
-                    <div className='signature-underline'></div>
-                    <p className='signee-name'>
-                      <strong>Julia Liuson</strong>
-                    </p>
-                    <p className='signee-role'>
-                      {t('certification.ms-president')}
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <div>
-                  <Image
-                    data-playwright-test-label='quincy-signature'
-                    alt={t('certification.quincy-larson-signature')}
-                    src={
-                      'https://cdn.freecodecamp.org' +
-                      '/platform/english/images/quincy-larson-signature.svg'
-                    }
-                  />
-                  <p className='signee-name'>
-                    <strong>Quincy Larson</strong>
-                  </p>
-                  <p className='signee-role'>{t('certification.executive')}</p>
-                </div>
-              )}
-            </div>
-            {!isMicrosoftCert && (
-              <>
-                <span className='ribbon-wrap'>
-                  <Image alt='' className='ribbon' src={ribbon} />
-                </span>
-                <span className='qr-wrap'>
-                  <QRCodeSVG className='qr-code' value={certURL} />
-                </span>
-              </>
-            )}
-            <Row>
-              <p className='verify'>
-                {t('certification.verify')}
-                <br />
-                {certURL}
-              </p>
-            </Row>
-          </footer>
-        </div>
-      </div>
-      <div
-        className='row certificate-links'
-        data-playwright-test-label='cert-links'
-      >
+      <CertificateDisplay
+        certDate={certDate}
+        certSlug={certSlug}
+        certTitle={certTitle}
+        certURL={certURL}
+        completionTime={completionTime}
+        displayName={displayName}
+      />
+      <div className='row certificate-links' data-testid='cert-links'>
         <Spacer size='l' />
         {signedInUserName === username ? (
           <ShareCertBtns
