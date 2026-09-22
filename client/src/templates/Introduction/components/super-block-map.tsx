@@ -52,7 +52,7 @@ type SuperBlockMapProps = {
   showCertification: boolean;
   structure?: ChapterBasedSuperBlockStructure;
   superBlock: SuperBlocks;
-  superBlockChallenges: Challenge[];
+  superBlockChallenges: Omit<Challenge, 'superBlock'>[];
   user: User | null;
 };
 

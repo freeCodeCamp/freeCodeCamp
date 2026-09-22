@@ -37,7 +37,6 @@ import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
 import { Link, Loader } from '../../../components/helpers';
-import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const { deploymentEnv } = envData;
 
@@ -55,7 +54,6 @@ function PrerequisitesCallout({
   id,
   completedChallenges,
   challenges,
-  examSuperBlock,
   isSignedIn,
   isHonest
 }: ExamPrerequisitesProps & {
@@ -84,7 +82,6 @@ function PrerequisitesCallout({
       id={id}
       completedChallenges={completedChallenges}
       challenges={challenges}
-      examSuperBlock={examSuperBlock}
     />
   );
 }
@@ -93,14 +90,12 @@ interface ExamPrerequisitesProps {
   id: string;
   completedChallenges: CompletedChallenge[];
   challenges: ChallengeNode['challenge'][];
-  examSuperBlock: SuperBlocks;
 }
 
 function ExamPrerequisites({
   id,
   completedChallenges,
-  challenges,
-  examSuperBlock
+  challenges
 }: ExamPrerequisitesProps) {
   const { t } = useTranslation();
   const getExamsQuery = examAttempts.useGetExamsQuery();
@@ -131,10 +126,8 @@ function ExamPrerequisites({
   const unmetPrerequisites = exam.prerequisites.filter(
     prereq => !completedChallenges.some(challenge => challenge.id === prereq)
   );
-  const unmetChallenges = challenges.filter(
-    challenge =>
-      unmetPrerequisites?.includes(challenge.id) &&
-      challenge.superBlock === examSuperBlock
+  const unmetChallenges = challenges.filter(challenge =>
+    unmetPrerequisites?.includes(challenge.id)
   );
   const missingPrerequisites = unmetChallenges.map(challenge => {
     return {
@@ -261,7 +254,7 @@ export function handleDownloadLink(
 function ShowExamDownload({
   data: {
     challengeNode: {
-      challenge: { id, superBlock: examSuperBlock, title, translationPending }
+      challenge: { id, title, translationPending }
     },
     allChallengeNode: { nodes }
   },
@@ -355,7 +348,6 @@ function ShowExamDownload({
               id={id}
               challenges={nodes.map(({ challenge }) => challenge)}
               completedChallenges={completedChallenges}
-              examSuperBlock={examSuperBlock}
             />
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
@@ -487,7 +479,6 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         id
-        superBlock
         title
         translationPending
       }
@@ -502,7 +493,6 @@ export const query = graphql`
           fields {
             slug
           }
-          superBlock
         }
       }
     }

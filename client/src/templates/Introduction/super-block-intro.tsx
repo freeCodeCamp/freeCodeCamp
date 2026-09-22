@@ -59,7 +59,6 @@ type ChallengeNode = {
     challengeType: number;
     title: string;
     order: number;
-    superBlock: SuperBlocks;
     dashedName: string;
     blockLayout: BlockLayouts;
     chapter: string;
@@ -163,14 +162,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     location
   } = props;
 
-  const allChallenges = useMemo(
+  const superBlockChallenges = useMemo(
     () => nodes.map(({ challenge }) => challenge),
     [nodes]
   );
-  const superBlockChallenges = useMemo(
-    () => allChallenges.filter(c => c.superBlock === superBlock),
-    [allChallenges, superBlock]
-  );
+
   const completedChallenges = useMemo(
     () =>
       (user?.completedChallenges ?? []).filter(completedChallenge =>
@@ -181,9 +177,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
 
-  const currentSuperBlockStructure = allSuperBlockStructure.nodes.find(
-    node => node.superBlock === superBlock
-  );
+  const currentSuperBlockStructure = allSuperBlockStructure.nodes[0];
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
@@ -372,7 +366,6 @@ export const query = graphql`
           challengeType
           title
           order
-          superBlock
           dashedName
           blockLayout
           chapter
@@ -382,7 +375,6 @@ export const query = graphql`
     }
     allSuperBlockStructure(filter: { superBlock: { eq: $superBlock } }) {
       nodes {
-        superBlock
         chapters {
           dashedName
           comingSoon
