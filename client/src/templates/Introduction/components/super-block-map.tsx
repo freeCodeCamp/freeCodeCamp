@@ -41,7 +41,6 @@ type Challenge = {
   id: string;
   module: string;
   order: number;
-  superBlock: SuperBlocks;
   title: string;
 };
 
@@ -52,7 +51,7 @@ type SuperBlockMapProps = {
   showCertification: boolean;
   structure?: ChapterBasedSuperBlockStructure;
   superBlock: SuperBlocks;
-  superBlockChallenges: Omit<Challenge, 'superBlock'>[];
+  superBlockChallenges: Challenge[];
   user: User | null;
 };
 
