@@ -1504,7 +1504,7 @@
       "workshop-report-card-printer": {
         "title": "Build a Report Card Printer",
         "intro": [
-          "In this workshop, you will practice working with primitive data types in Python by creating and printing data for a simple report card."
+          "In this workshop, you will practice working with built-in data types in Python by creating and printing data for a simple report card."
         ]
       },
       "lecture-introduction-to-python-strings": {
@@ -1551,6 +1551,12 @@
         "title": "Understanding Functions and Scope",
         "intro": [
           "In these lessons, you will learn about functions and scope in Python."
+        ]
+      },
+      "workshop-kitchen-inventory-tracker": {
+        "title": "Build a Kitchen Inventory Tracker",
+        "intro": [
+          "In this workshop, you will practice working with functions and scope in Python by building a kitchen inventory tracker."
         ]
       },
       "lab-discount-calculator": {
@@ -2457,13 +2463,6 @@
         "title": "Build a Recipe Tracker",
         "intro": [
           "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
-        ]
-      },
-      "lab-device-loan-ledger": {
-        "title": "Build a Device Loan Ledger",
-        "intro": [
-          "In this lab, you will build a device loan ledger to manage IT hardware provisioned by your company's Service Desk.",
-          "You will practice working with nested objects and JSON by implementing functions to check devices in and out, track overdue loans, and convert between JSON strings and JavaScript objects."
         ]
       },
       "lab-quiz-game": {
@@ -4924,13 +4923,6 @@
           "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
         ]
       },
-      "lab-device-loan-ledger": {
-        "title": "Build a Device Loan Ledger",
-        "intro": [
-          "In this lab, you will build a device loan ledger to manage IT hardware provisioned by your company's Service Desk.",
-          "You will practice working with nested objects and JSON by implementing functions to check devices in and out, track overdue loans, and convert between JSON strings and JavaScript objects."
-        ]
-      },
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
         "intro": [
@@ -4973,22 +4965,66 @@
           "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
         ]
       },
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": [
+          "In this lab, you'll build a factorial calculator.",
+          "You'll practice using loops and conditionals to calculate the factorial of a number."
+        ]
+      },
+      "lab-repeat-a-string": {
+        "title": "Build a String Repeating Function",
+        "intro": [
+          "In this lab, you will implement loops to repeat a string a specified number of times."
+        ]
+      },
       "workshop-sentence-analyzer": {
         "title": "Build a Sentence Analyzer",
         "intro": [
           "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
         ]
       },
-      "lab-traffic-light-sequencer": {
-        "title": "Build a Traffic Light Sequencer",
+      "lab-longest-word-in-a-string": {
+        "title": "Build a Longest Word Finder App",
         "intro": [
-          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
+          "In this lab, you will use JavaScript loops to find the length of the longest word in the given sentence."
+        ]
+      },
+      "lab-mutations": {
+        "title": "Implement the Mutations Algorithm",
+        "intro": [
+          "In this lab, you will practice iterating over two different strings to compare their characters."
+        ]
+      },
+      "lab-missing-letter-detector": {
+        "title": "Build a Missing Letter Detector",
+        "intro": [
+          "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+        ]
+      },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
         ]
       },
       "workshop-space-mission-roster": {
         "title": "Build a Space Mission Roster",
         "intro": [
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
+        ]
+      },
+      "lab-chunky-monkey": {
+        "title": "Implement the Chunky Monkey Algorithm",
+        "intro": [
+          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+        ]
+      },
+      "lab-device-loan-ledger": {
+        "title": "Build a Device Loan Ledger",
+        "intro": [
+          "In this lab, you will build a device loan ledger to manage IT hardware provisioned by your company's Service Desk.",
+          "You will practice working with nested objects and JSON by implementing functions to check devices in and out, track overdue loans, and convert between JSON strings and JavaScript objects."
         ]
       },
       "workshop-heritage-library-catalog": {
@@ -4998,41 +5034,10 @@
           "You will practice using loops, objects, and string methods to parse raw text data, search and group entries, render formatted output, and export to JSON and CSV."
         ]
       },
-      "lab-longest-word-in-a-string": {
-        "title": "Build a Longest Word Finder App",
+      "lab-smart-pantry-restocker": {
+        "title": "Build a Smart Pantry Restocker",
         "intro": [
-          "In this lab, you will use JavaScript loops to find the length of the longest word in the given sentence."
-        ]
-      },
-      "lab-factorial-calculator": {
-        "title": "Build a Factorial Calculator ",
-        "intro": [
-          "In this lab, you'll build a factorial calculator.",
-          "You'll practice using loops and conditionals to calculate the factorial of a number."
-        ]
-      },
-      "lab-mutations": {
-        "title": "Implement the Mutations Algorithm",
-        "intro": [
-          "In this lab, you will practice iterating over two different strings to compare their characters."
-        ]
-      },
-      "lab-chunky-monkey": {
-        "title": "Implement the Chunky Monkey Algorithm",
-        "intro": [
-          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
-        ]
-      },
-      "lab-profile-lookup": {
-        "title": "Build a Profile Lookup",
-        "intro": [
-          "In this lab, you'll create a function that looks up profile information."
-        ]
-      },
-      "lab-repeat-a-string": {
-        "title": "Build a String Repeating Function",
-        "intro": [
-          "In this lab, you will implement loops to repeat a string a specified number of times."
+          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
         ]
       },
       "workshop-festival-crowd-flow-simulator": {
@@ -5041,16 +5046,10 @@
           "In this workshop, you will use JavaScript to simulate the flow of attendants at a music festival."
         ]
       },
-      "lab-missing-letter-detector": {
-        "title": "Build a Missing Letter Detector",
+      "lab-traffic-light-sequencer": {
+        "title": "Build a Traffic Light Sequencer",
         "intro": [
-          "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
-        ]
-      },
-      "lab-smart-pantry-restocker": {
-        "title": "Build a Smart Pantry Restocker",
-        "intro": [
-          "In this lab, you will build a small pantry management program using basic JavaScript concepts like arrays, objects, loops, and conditionals."
+          "In this lab, you will use JavaScript loops to build a traffic light sequencer."
         ]
       },
       "lab-proofreading-tool": {
