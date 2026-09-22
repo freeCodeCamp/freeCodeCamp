@@ -91,8 +91,8 @@ assert.equal(document.querySelector('.text-with-images aside')?.className, 'imag
             class="hero-img"
             width="400"
           />
-          <hgroup class="hero-title">
-            <h1>OUR NEW CURRICULUM</h1>
+          <hgroup>
+            <h1 class="hero-title">OUR NEW CURRICULUM</h1>
             <p class="hero-subtitle">
             Our efforts to restructure our curriculum with a more project-based
             focus
