@@ -1504,7 +1504,7 @@
       "workshop-report-card-printer": {
         "title": "Build a Report Card Printer",
         "intro": [
-          "In this workshop, you will practice working with primitive data types in Python by creating and printing data for a simple report card."
+          "In this workshop, you will practice working with built-in data types in Python by creating and printing data for a simple report card."
         ]
       },
       "lecture-introduction-to-python-strings": {
@@ -1551,6 +1551,12 @@
         "title": "Understanding Functions and Scope",
         "intro": [
           "In these lessons, you will learn about functions and scope in Python."
+        ]
+      },
+      "workshop-kitchen-inventory-tracker": {
+        "title": "Build a Kitchen Inventory Tracker",
+        "intro": [
+          "In this workshop, you will practice working with functions and scope in Python by building a kitchen inventory tracker."
         ]
       },
       "lab-discount-calculator": {
@@ -2457,13 +2463,6 @@
         "title": "Build a Recipe Tracker",
         "intro": [
           "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
-        ]
-      },
-      "lab-device-loan-ledger": {
-        "title": "Build a Device Loan Ledger",
-        "intro": [
-          "In this lab, you will build a device loan ledger to manage IT hardware provisioned by your company's Service Desk.",
-          "You will practice working with nested objects and JSON by implementing functions to check devices in and out, track overdue loans, and convert between JSON strings and JavaScript objects."
         ]
       },
       "lab-quiz-game": {
@@ -6506,6 +6505,12 @@
         "title": "Understanding Functions and Scope",
         "intro": [
           "In these lessons, you will learn about functions and scope in Python."
+        ]
+      },
+      "workshop-kitchen-inventory-tracker": {
+        "title": "Build a Kitchen Inventory Tracker",
+        "intro": [
+          "In this workshop, you will practice working with functions and scope in Python by building a kitchen inventory tracker."
         ]
       },
       "lab-discount-calculator": {
