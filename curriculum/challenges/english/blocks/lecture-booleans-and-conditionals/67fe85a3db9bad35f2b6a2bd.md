@@ -13,6 +13,8 @@ But before we get into all that, let's go over the basic building blocks of cond
 
 In a previous lesson, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
 
+## Using Comparison Operators
+
 Here's a table with the comparison operators in Python:
 
 | Operator | Name | Description |
@@ -35,6 +37,8 @@ print(3 != 4) # True
 print(3 >= 4) # False
 print(3 <= 4) # True
 ```
+
+## Using `if` Statements
 
 These operators can be used in conditionals to compare values and run certain code based on whether the conditional evaluates to `True` or `False`.
 
@@ -86,6 +90,8 @@ if age >= 18:
     print('You are an adult') # Nothing shows up in the terminal
 ```
 
+## Adding an `else` Clause
+
 But what if you also want to print something if `age` is less than `18`? That's where the `else` clause comes in. The `else` clause runs when the `if` condition is false. Here's the syntax for an `if…else` statement:
 
 ```python
@@ -117,6 +123,8 @@ print('Almost there!')
 else: # SyntaxError: invalid syntax
     print('You are not an adult yet')
 ```
+
+## Adding `elif` Clauses
 
 There might be situations in which you want to account for multiple conditions. To do that, Python lets you extend your `if` statement with the `elif` (else if) keyword.
 
