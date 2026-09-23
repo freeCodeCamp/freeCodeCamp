@@ -228,10 +228,10 @@ model ExamEnvironmentAuthorizationToken {
   id       String   @id @default(auto()) @map("_id") @db.ObjectId
   /// Used to set an `expireAt` index to delete documents
   expireAt DateTime @db.Date
-  userId   String   @unique @db.ObjectId
-  /// NOTE: uniqueness is not enforced on the above field in the database.
+  /// NOTE: uniqueness is not enforced on the field below in the database.
   /// Production has a non-unique `userId_1` index. TODO: create a new unique
   /// index, switch to that, and drop the non-unique `userId_1` one?
+  userId   String   @unique @db.ObjectId
   version  Int      @default(1)
 
   // Relations
@@ -245,10 +245,11 @@ model ExamEnvironmentExamModeration {
   /// Whether or not the item is approved
   status         ExamEnvironmentExamModerationStatus
   /// Foreign key to exam attempt
-  examAttemptId  String                              @unique @db.ObjectId
-  /// NOTE: uniqueness is not enforced on the above field in the database.
+  ///
+  /// NOTE: uniqueness is not enforced on the field below in the database.
   /// Production has a non-unique `examAttemptId_1` index. TODO: create a new
   /// unique index, switch to that, and drop the non-unique `examAttemptId_1` one?
+  examAttemptId  String                              @unique @db.ObjectId
   /// Optional feedback/note about the moderation decision
   feedback       String?
   /// Date the exam attempt was moderated
@@ -270,9 +271,8 @@ model ExamEnvironmentExamModeration {
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
 
-  @@index([status], map: "status_1")
+  @@index([status, challengesAwarded], map: "status_1_challengesAwarded_1")
   @@index([version], map: "version_1")
-  @@index([challengesAwarded], map: "challengesAwarded_1")
 }
 
 enum ExamEnvironmentExamModerationStatus {
