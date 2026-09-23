@@ -335,6 +335,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloperV9,
   SuperBlocks.LearnDataVisualizationWithD3,
   SuperBlocks.A1Chinese
+  SuperBlocks.IntroductionToLoopsInJS
 ];
 Object.freeze(chapterBasedSuperBlocks);
 

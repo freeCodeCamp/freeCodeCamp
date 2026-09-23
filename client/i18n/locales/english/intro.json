@@ -2434,6 +2434,12 @@
           "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
         ]
       },
+  "introduction-to-loops-in-javascript": {
+      "title": "Introduction to Loops in JavaScript",
+      "intro": [
+        "In this superblock, you will learn how to use loops in JavaScript to repeat tasks and iterate through data structures efficiently."
+      ]
+    },
       "workshop-wildlife-tracker": {
         "title": "Build a Wildlife Tracker",
         "intro": [
