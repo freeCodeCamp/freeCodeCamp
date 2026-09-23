@@ -93,7 +93,7 @@ export const socratesRoutes: FastifyPluginCallbackTypebox = (
 
       if (!hasContent(req.body.userInput) && !hasContent(req.body.seed)) {
         const usage = await fastify.prisma.socratesUsage.findUnique({
-          where: { userId_date: { userId, date: todayUTC } }
+          where: { date_userId: { userId, date: todayUTC } }
         });
         return reply.status(400).send({
           error: 'socrates-invalid-request',
