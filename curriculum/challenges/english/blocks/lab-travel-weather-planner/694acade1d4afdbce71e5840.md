@@ -664,7 +664,7 @@ run_case(
 `) })
 ```
 
-When the distance is greater than `6` miles and no car nor a ride share app is available, the program should print `False`.
+When the distance is greater than `6` miles and neither a car nor a ride-share app is available, the program should print `False`.
 
 ```js
 ({ test: () => runPython(`
