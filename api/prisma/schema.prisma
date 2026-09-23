@@ -205,6 +205,7 @@ model user {
   @@index([completedExams.id], map: "completedExams.id_1")
   @@index([profileUI.isLocked], map: "profileUI.isLocked_1")
   @@index([completedDailyCodingChallenges.id], map: "completedDailyCodingChallenges.id_1")
+  @@index([sendQuincyEmail, email, unsubscribeId], map: "sendQuincyEmail_1_email_1_unsubscribeId_1")
 }
 
 // -----------------------------------
