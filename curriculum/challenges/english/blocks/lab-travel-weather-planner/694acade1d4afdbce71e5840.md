@@ -325,7 +325,7 @@ run_case(
 `) })
 ```
 
-When the distance is between `1` mile (excluded) and `6` miles (included), and it is raining with no bike, the program should print `False`.
+When the distance is between `1` mile (excluded) and `6` miles (included) and it is raining, the program should print `False` regardless of bike availability.
 
 ```js
 ({ test: () => runPython(`
@@ -389,6 +389,17 @@ run_case(
         "has_bike": False,
         "has_car": True,
         "has_ride_share_app": True
+    },
+    "False"
+)
+
+run_case(
+    {
+        "distance_mi": 2,
+        "is_raining": True,
+        "has_bike": True,
+        "has_car": False,
+        "has_ride_share_app": False
     },
     "False"
 )
@@ -578,6 +589,17 @@ run_case(
     },
     "True"
 )
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
+        "has_bike": False,
+        "has_car": False,
+        "has_ride_share_app": True
+    },
+    "True"
+)
 `) })
 ```
 
@@ -621,6 +643,17 @@ run_case(
         "distance_mi": 12,
         "is_raining": False,
         "has_bike": True,
+        "has_car": True,
+        "has_ride_share_app": False
+    },
+    "True"
+)
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
+        "has_bike": False,
         "has_car": True,
         "has_ride_share_app": False
     },
