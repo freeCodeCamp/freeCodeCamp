@@ -12,12 +12,14 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ## Table of Contents
 
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [License](#license)
+- [freeCodeCamp.org's open-source codebase and curriculum](#freecodecamporgs-open-source-codebase-and-curriculum)
+- [Table of Contents](#table-of-contents)
+  - [Certifications](#certifications)
+  - [The Learning Platform](#the-learning-platform)
+  - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
+  - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ### Certifications
 
@@ -64,7 +66,7 @@ Our community also has:
 
 ### Reporting Bugs and Issues
 
-If you think you've found a bug, first read the [How to Report a Bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
+If you think you've found a bug, first read the [How to report a bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
 If you're confident it's a new bug and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
