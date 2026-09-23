@@ -1,4 +1,6 @@
-import type { ExamResults, user, Prisma } from '@prisma/client';
+import { setTimeout } from 'node:timers/promises';
+
+import { Prisma, type ExamResults, type user } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash-es';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
@@ -215,8 +217,8 @@ export async function updateUserChallengeData(
     challenge => challenge.id !== challengeId
   );
 
-  const { savedChallenges: userSavedChallenges } =
-    await fastify.prisma.user.update({
+  const updateUser = () =>
+    fastify.prisma.user.update({
       where: { id: user.id },
       data: {
         completedChallenges: userCompletedChallenges,
@@ -231,6 +233,20 @@ export async function updateUserChallengeData(
         savedChallenges: true
       }
     });
+
+  const { savedChallenges: userSavedChallenges } = await updateUser().catch(
+    async (error: unknown) => {
+      if (
+        !(error instanceof Prisma.PrismaClientKnownRequestError) ||
+        error.code !== 'P2034'
+      ) {
+        throw error;
+      }
+
+      await setTimeout(1000);
+      return updateUser();
+    }
+  );
 
   return {
     alreadyCompleted,
