@@ -53,14 +53,16 @@ For the first `console.log`, we are looking for the number `30` starting at inde
 
 The same is true for the second `console.log`. We are looking for the number `30` starting at index `4`. Since the number `30` does appear after that index, then it will return `true`. 
 
-It's worth noting that `includes()` uses the strict equality comparison (`===`), which means it can distinguish between different types. For example:
+It's worth noting that `includes()` method considers values of different data types to be different values, similar to strict equality (`===`) in JavaScript, except that `NaN` is considered equal to `NaN`. For example:
 
 :::interactive_editor
 
 ```js
-let mixedArray = [1, "2", 3, "4", 5];
+let mixedArray = [1, "2", 3, "4", 5, NaN];
 console.log(mixedArray.includes(2));  // false
 console.log(mixedArray.includes("2")); // true
+console.log(mixedArray.includes(NaN)); // true
+console.log(NaN === NaN); // false
 ```
 
 :::
