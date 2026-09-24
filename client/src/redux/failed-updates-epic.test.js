@@ -9,12 +9,16 @@ import failedUpdatesEpic from './failed-updates-epic';
 
 vi.mock('../analytics');
 
+const delay = timeout => new Promise(resolve => setTimeout(resolve, timeout));
+
 const key = 'fcc-failed-updates';
 
 describe('failed-updates-epic', () => {
   const action$ = ActionsObservable.of({
     type: actionTypes.updateComplete
   });
+  let warnSpy;
+  let fetchSpy;
 
   const failRes = () =>
     new Response(JSON.stringify({ message: 'flash.generic-error' }), {
@@ -23,6 +27,11 @@ describe('failed-updates-epic', () => {
 
   beforeEach(() => {
     vi.spyOn(console, 'info').mockImplementation(() => {});
+
+    warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockRejectedValue(Error('something went wrong'));
     vi.useFakeTimers();
   });
 
@@ -35,7 +44,6 @@ describe('failed-updates-epic', () => {
 
   it('should remove faulty backend challenges from localStorage', async () => {
     store.set(key, failedSubmissions);
-
     const state$ = new StateObservable(new Subject(), initialState);
     const epic$ = failedUpdatesEpic(action$, state$);
 
@@ -45,43 +53,69 @@ describe('failed-updates-epic', () => {
   });
 
   it('should remove successfully retried failures from storage (even if the retry fails)', async () => {
-    const fetchSpy = vi
-      .spyOn(globalThis, 'fetch')
+    fetchSpy
       .mockResolvedValueOnce(new Response('{}', { status: 200 }))
       .mockResolvedValueOnce(failRes())
       .mockResolvedValueOnce(failRes());
-
     store.set(key, validSubmissions);
-
     const state$ = new StateObservable(new Subject(), initialState);
     const epic$ = failedUpdatesEpic(action$, state$);
 
-    await epic$.toPromise();
+    epic$.subscribe();
+
     // first confirm that the submissions are all valid:
     expect(store.get(key)).toEqual(validSubmissions);
     await vi.runAllTimersAsync();
-
     expect(fetchSpy).toHaveBeenCalledTimes(validSubmissions.length);
     expect(store.get(key)).toEqual([]);
   });
 
+  it('should warn when a progress update fails', async () => {
+    const error = new Error('Unable to reach the server');
+    fetchSpy.mockRejectedValue(error);
+    store.set(key, validSubmissions.slice(0, 1));
+    const state$ = new StateObservable(new Subject(), initialState);
+
+    await failedUpdatesEpic(action$, state$).toPromise();
+
+    expect(warnSpy).toHaveBeenCalledWith(
+      'unable to process progress update',
+      error.message
+    );
+  });
+
   it('should NOT remove updates that do not reach the server', async () => {
-    const fetchSpy = vi
-      .spyOn(globalThis, 'fetch')
+    fetchSpy
       .mockResolvedValueOnce(new Response('{}', { status: 200 }))
       .mockRejectedValue(new TypeError());
-
     store.set(key, validSubmissions);
-
     const state$ = new StateObservable(new Subject(), initialState);
     const epic$ = failedUpdatesEpic(action$, state$);
 
-    await epic$.toPromise();
+    epic$.subscribe();
+
     expect(store.get(key)).toEqual(validSubmissions);
     await vi.runAllTimersAsync();
-
     expect(fetchSpy).toHaveBeenCalledTimes(validSubmissions.length);
     expect(store.get(key)).toEqual(validSubmissions.slice(1));
+  });
+
+  it('should wait for each fetch call to settle before making another call', async () => {
+    fetchSpy.mockImplementation(() => delay(1000).then(() => new Response()));
+    store.set(key, validSubmissions);
+    const state$ = new StateObservable(new Subject(), initialState);
+    const epic$ = failedUpdatesEpic(action$, state$);
+
+    epic$.subscribe();
+
+    expect(store.get(key)).toEqual(validSubmissions);
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(store.get(key)).toEqual(validSubmissions.slice(1));
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(store.get(key)).toEqual(validSubmissions.slice(2));
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(fetchSpy).toHaveBeenCalledTimes(validSubmissions.length);
+    expect(store.get(key)).toEqual([]);
   });
 });
 
