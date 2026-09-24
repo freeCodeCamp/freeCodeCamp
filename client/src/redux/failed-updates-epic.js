@@ -3,6 +3,7 @@ import { merge, from, EMPTY } from 'rxjs';
 import {
   catchError,
   concatMap,
+  delay,
   exhaustMap,
   filter,
   ignoreElements,
@@ -20,6 +21,7 @@ import { serverStatusChange } from './actions';
 import { isServerOnlineSelector, isSignedInSelector } from './selectors';
 
 const key = 'fcc-failed-updates';
+const UPDATE_DELAY = 100; // 100 ms delay to avoid spamming the server
 
 function getFailedUpdates() {
   let failures = store.get(key);
@@ -40,7 +42,6 @@ function handleUpdateResponse({ data, response }, update) {
     const newFailures = failures.filter(x => x.id !== update.id);
     store.set(key, newFailures);
   }
-  return EMPTY;
 }
 
 // check if backendEndProjects have a solution
@@ -76,7 +77,8 @@ function failedUpdateEpic(action$, state$) {
             catchError(err => {
               console.warn('unable to process progress update', err.message);
               return EMPTY;
-            })
+            }),
+            delay(UPDATE_DELAY)
           )
         )
       )

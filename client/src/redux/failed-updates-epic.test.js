@@ -47,7 +47,7 @@ describe('failed-updates-epic', () => {
     const state$ = new StateObservable(new Subject(), initialState);
     const epic$ = failedUpdatesEpic(action$, state$);
 
-    await epic$.toPromise();
+    epic$.subscribe();
 
     expect(store.get(key)).toEqual(submitableChallenges);
   });
@@ -76,7 +76,10 @@ describe('failed-updates-epic', () => {
     store.set(key, validSubmissions.slice(0, 1));
     const state$ = new StateObservable(new Subject(), initialState);
 
-    await failedUpdatesEpic(action$, state$).toPromise();
+    failedUpdatesEpic(action$, state$).subscribe();
+
+    // allow time for delays betwwen failures
+    await vi.runAllTimersAsync();
 
     expect(warnSpy).toHaveBeenCalledWith(
       'unable to process progress update',
@@ -101,6 +104,8 @@ describe('failed-updates-epic', () => {
   });
 
   it('should wait for each fetch call to settle before making another call', async () => {
+    // it also has to wait for the delay between requests as well as the requests
+    const UPDATE_DELAY = 100;
     fetchSpy.mockImplementation(() => delay(1000).then(() => new Response()));
     store.set(key, validSubmissions);
     const state$ = new StateObservable(new Subject(), initialState);
@@ -109,13 +114,46 @@ describe('failed-updates-epic', () => {
     epic$.subscribe();
 
     expect(store.get(key)).toEqual(validSubmissions);
-    await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(1000 + UPDATE_DELAY);
     expect(store.get(key)).toEqual(validSubmissions.slice(1));
-    await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(1000 + UPDATE_DELAY);
     expect(store.get(key)).toEqual(validSubmissions.slice(2));
-    await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(1000 + UPDATE_DELAY);
     expect(fetchSpy).toHaveBeenCalledTimes(validSubmissions.length);
     expect(store.get(key)).toEqual([]);
+  });
+
+  it('should wait 100ms between each request', async () => {
+    const UPDATE_DELAY = 100;
+    fetchSpy.mockImplementation(() => new Response());
+    store.set(key, validSubmissions);
+    const state$ = new StateObservable(new Subject(), initialState);
+    const epic$ = failedUpdatesEpic(action$, state$);
+
+    epic$.subscribe();
+
+    await vi.advanceTimersByTimeAsync(UPDATE_DELAY - 1);
+    expect(fetchSpy).toHaveBeenCalledOnce();
+    await vi.advanceTimersByTimeAsync(1);
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+    await vi.advanceTimersByTimeAsync(UPDATE_DELAY);
+    expect(fetchSpy).toHaveBeenCalledTimes(3);
+  });
+
+  it('should wait 100ms between each failed request', async () => {
+    const UPDATE_DELAY = 100;
+    store.set(key, validSubmissions);
+    const state$ = new StateObservable(new Subject(), initialState);
+    const epic$ = failedUpdatesEpic(action$, state$);
+
+    epic$.subscribe();
+
+    await vi.advanceTimersByTimeAsync(UPDATE_DELAY - 1);
+    expect(fetchSpy).toHaveBeenCalledOnce();
+    await vi.advanceTimersByTimeAsync(1);
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+    await vi.advanceTimersByTimeAsync(UPDATE_DELAY);
+    expect(fetchSpy).toHaveBeenCalledTimes(3);
   });
 });
 
