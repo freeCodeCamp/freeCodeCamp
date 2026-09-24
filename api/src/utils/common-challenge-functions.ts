@@ -257,10 +257,8 @@ export async function updateUserChallengeData(
       }
     });
 
-  const { savedChallenges: userSavedChallenges } = await retryIfWriteConflict(
-    updateUser,
-    1000
-  );
+  const { savedChallenges: userSavedChallenges } =
+    await retryIfWriteConflict(updateUser);
 
   return {
     alreadyCompleted,
