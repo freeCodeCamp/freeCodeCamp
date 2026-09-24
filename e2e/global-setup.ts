@@ -22,8 +22,8 @@ setup.describe('developmentuser', () => {
   // As the certified user now has the default storage state.
   setup.use({ storageState: { cookies: [], origins: [] } });
 
-  // We can only sign in as a single user (one with email: 'foo@bar.com'), so
-  // changing users means changing the record with that email in the database.
+  // This legacy auth state still signs in without an email query, so it uses
+  // whichever seeded user currently owns foo@bar.com.
   setup.beforeAll(() => {
     execSync('node ../tools/scripts/seed/seed-demo-user');
   });

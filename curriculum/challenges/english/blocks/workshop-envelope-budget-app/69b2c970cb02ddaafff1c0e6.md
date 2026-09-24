@@ -109,7 +109,6 @@ assert.equal(document.querySelector('.controls > span > button')?.innerText, 'Ad
     <main>
       <h1>Envelope Budgeter</h1>
       <div class="container">
-
         <form id="budget-form">
           <label for="income">Total Monthly Income</label>
           <input 
@@ -143,9 +142,9 @@ assert.equal(document.querySelector('.controls > span > button')?.innerText, 'Ad
 
           <div class="controls">
             <span>
-            --fcc-editable-region--
-            
-            --fcc-editable-region--
+--fcc-editable-region--
+              
+--fcc-editable-region--
             </span>
           </div>
         </form>

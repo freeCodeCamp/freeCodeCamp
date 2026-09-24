@@ -1,19 +1,15 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.beforeEach(async ({ page }) => {
-  execSync(
-    'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
-  );
-
-  await page.goto('/certifieduser');
-
-  await page.getByRole('button', { name: 'Edit my profile' }).click();
+test.use({
+  userPreset: 'certified',
+  userOverrides: { isFullStackCert: false }
 });
 
-test.afterAll(() => {
-  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+test.beforeEach(async ({ page, isolatedUser }) => {
+  await page.goto(`/${isolatedUser.username}`);
+
+  await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
 test('Should allow empty string in any field in about settings', async ({

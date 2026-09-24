@@ -22,7 +22,10 @@ Add the `i` flag to your regex pattern.
 Your `regex` value should have the `i` flag.
 
 ```js
-assert.match(isInvalidInput.toString(), /regex\s*=\s*\/e\/i/);
+const explorer = await __helpers.Explorer(code);
+assert.isTrue(
+  explorer.functions.isInvalidInput?.variables.regex?.value.matches('/e/i')
+);
 ```
 
 # --seed--
@@ -78,8 +81,7 @@ assert.match(isInvalidInput.toString(), /regex\s*=\s*\/e\/i/);
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>
@@ -96,7 +98,6 @@ assert.match(isInvalidInput.toString(), /regex\s*=\s*\/e\/i/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -253,23 +254,23 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.replace(regex, '');
+  return str.replace(regex, "");
 }
 
 function isInvalidInput(str) {
---fcc-editable-region--
+  --fcc-editable-region--
   const regex = /e/;
---fcc-editable-region--
+  --fcc-editable-region--
 }
 ```

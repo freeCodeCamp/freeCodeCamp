@@ -4,14 +4,11 @@ import algoliasearch from 'algoliasearch';
 import i18n from 'i18next';
 import backend from 'i18next-fs-backend';
 
-import {
-  algoliaAppId,
-  algoliaAPIKey,
-  clientLocale,
-  environment
-} from '../config/env.json';
+import envData from '../config/env.json';
 import { newsIndex } from '../src/utils/algolia-locale-setup';
 import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
+
+const { algoliaAppId, algoliaAPIKey, clientLocale, environment } = envData;
 
 const i18nextCode = i18nextCodes[clientLocale as keyof typeof i18nextCodes];
 

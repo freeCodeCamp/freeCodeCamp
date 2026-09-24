@@ -14,7 +14,7 @@ Now apply the `established` class to the `Est. 2020` text.
 You should set the `class` of the `p` element to `established`.
 
 ```js
-assert.match(code,/<p class=('|")established\1>/i);
+assert.exists(document.querySelector('p.established'));
 ```
 
 Your `established` class should be on the element with the text `Est. 2020`.
@@ -129,6 +129,6 @@ h1, h2 {
 
 .price {
   text-align: right;
-  width: 25%
+  width: 25%;
 }
 ```

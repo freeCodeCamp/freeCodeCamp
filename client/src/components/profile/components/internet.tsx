@@ -154,7 +154,7 @@ const InternetSettings = ({
         <form
           id='internet-presence'
           onSubmit={handleSubmit}
-          data-playwright-test-label='internet-presence'
+          data-testid='internet-presence'
         >
           <div role='group' aria-label={t('settings.headings.internet')}>
             <FormGroup
@@ -165,7 +165,7 @@ const InternetSettings = ({
                 GitHub
               </ControlLabel>
               <FormControl
-                data-playwright-test-label='internet-github-input'
+                data-testid='internet-github-input'
                 onChange={createHandleChange('githubProfile')}
                 placeholder='https://github.com/user-name'
                 type='url'
@@ -175,7 +175,7 @@ const InternetSettings = ({
               <Check
                 url={formValues.githubProfile}
                 validation={githubProfileValidation}
-                dataPlaywrightTestLabel='internet-github-check'
+                dataTestId='internet-github-check'
               />
               <Info message={githubProfileValidationMessage} />
             </FormGroup>
@@ -196,7 +196,7 @@ const InternetSettings = ({
               <Check
                 url={formValues.linkedin}
                 validation={linkedinValidation}
-                dataPlaywrightTestLabel='internet-linkedin-check'
+                dataTestId='internet-linkedin-check'
               />
               <Info message={linkedinValidationMessage} />
             </FormGroup>
@@ -215,7 +215,7 @@ const InternetSettings = ({
               <Check
                 url={formValues.twitter}
                 validation={twitterValidation}
-                dataPlaywrightTestLabel='internet-twitter-check'
+                dataTestId='internet-twitter-check'
               />
               <Info message={twitterValidationMessage} />
             </FormGroup>
@@ -236,7 +236,7 @@ const InternetSettings = ({
               <Check
                 url={formValues.bluesky}
                 validation={blueskyValidation}
-                dataPlaywrightTestLabel='internet-bluesky-check'
+                dataTestId='internet-bluesky-check'
               />
               <Info message={blueskyValidationMessage} />
             </FormGroup>
@@ -257,7 +257,7 @@ const InternetSettings = ({
               <Check
                 url={formValues.website}
                 validation={websiteValidation}
-                dataPlaywrightTestLabel='internet-website-check'
+                dataTestId='internet-website-check'
               />
               <Info message={websiteValidationMessage} />
             </FormGroup>
@@ -279,20 +279,16 @@ const InternetSettings = ({
 const Check = ({
   url,
   validation,
-  dataPlaywrightTestLabel
+  dataTestId
 }: {
   url: string;
   validation: URLValidation['state'];
-  dataPlaywrightTestLabel: string;
+  dataTestId: string;
 }) =>
   url && validation === 'success' ? (
     <FormControl.Feedback>
       <span>
-        <FontAwesomeIcon
-          data-playwright-test-label={dataPlaywrightTestLabel}
-          icon={faCheck}
-          size='1x'
-        />
+        <FontAwesomeIcon data-testid={dataTestId} icon={faCheck} size='1x' />
       </span>
     </FormControl.Feedback>
   ) : null;

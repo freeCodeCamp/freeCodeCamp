@@ -14,21 +14,27 @@ Finally, on a new line after your second `label`, create another `input` element
 You should have two `input` elements in your `HTMLString`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.equal(HTMLstring.match(/<input/g).length, 2);
 ```
 
 Your new `input` element should be on a new line.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.equal(HTMLstring.match(/\n\s*<input/g).length, 2);
 ```
 
 Your new `input` element should come after your second `label` element.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputIndex = HTMLstring.lastIndexOf("<input");
 const labelIndex = HTMLstring.lastIndexOf("<label");
 assert.isAbove(inputIndex, labelIndex);
@@ -37,7 +43,9 @@ assert.isAbove(inputIndex, labelIndex);
 Your new `input` element should have a `type` attribute set to `number`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+[^>]*>/g)[1];
 assert.match(inputAttributes, /type\s*=\s*"number"/);
 ```
@@ -45,7 +53,9 @@ assert.match(inputAttributes, /type\s*=\s*"number"/);
 Your `input` element should have a `placeholder` attribute set to `Amount`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+[^>]*>/g)[1];
 assert.match(inputAttributes, /placeholder\s*=\s*"Amount"/);
 ```
@@ -53,7 +63,9 @@ assert.match(inputAttributes, /placeholder\s*=\s*"Amount"/);
 Your `input` element should have an `id` attribute set to `${category}-${entryNumber}-amount`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+[^>]*>/g)[1];
 assert.match(inputAttributes, /id\s*=\s*"\${category}-\${entryNumber}-amount"/);
 ```
@@ -61,7 +73,9 @@ assert.match(inputAttributes, /id\s*=\s*"\${category}-\${entryNumber}-amount"/);
 Your new `input` element should have a `min` attribute set to `0`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputAttributes = HTMLstring.match(/<input\s+[^>]*>/g)[1];
 assert.match(inputAttributes, /min\s*=\s*"0"/);
 ```
@@ -119,8 +133,7 @@ assert.match(inputAttributes, /min\s*=\s*"0"/);
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>
@@ -137,7 +150,6 @@ assert.match(inputAttributes, /min\s*=\s*"0"/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -294,18 +306,18 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.replace(regex, '');
+  return str.replace(regex, "");
 }
 
 function isInvalidInput(str) {
@@ -317,12 +329,13 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
   <label for="${category}-${entryNumber}-amount">Expense ${entryNumber} Amount</label>
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
   `;
 }

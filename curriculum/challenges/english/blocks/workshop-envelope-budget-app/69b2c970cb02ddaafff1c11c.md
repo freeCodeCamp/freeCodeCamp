@@ -22,13 +22,17 @@ assert.match(getTotalFromInputs.toString(), /if\s*\(\s*invalidInputMatch\s*\)\s*
 You should use a template literal to pass the `"Invalid Input: "` message to the `alert()` function.
 
 ```js
-assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: /);
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: /);
 ```
 
 You should display the first element of the `invalidInputMatch` array after the `"Invalid Input: "` text by using a template literal.
 
 ```js
-assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)/);
+const explorer = await __helpers.Explorer(code);
+const functionCode = explorer.functions.getTotalFromInputs.toString();
+assert.match(functionCode, /(?:window\.|globalThis\.)?alert\(\s*`Invalid Input: \${invalidInputMatch\s*\[\s*0\s*\]\s*}`\s*\)/);
 ```
 
 # --seed--
@@ -84,8 +88,7 @@ assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|global
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>
@@ -102,7 +105,6 @@ assert.match(code.split(/function\s+getTotalFromInputs/)[1], /(?:window\.|global
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -259,18 +261,18 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.replace(regex, '');
+  return str.replace(regex, "");
 }
 
 function isInvalidInput(str) {
@@ -282,6 +284,7 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
@@ -291,17 +294,19 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function getTotalFromInputs(list) {
   let total = 0;
+
   for (const item of list) {
     const currVal = cleanInputString(item.value);
     const invalidInputMatch = isInvalidInput(currVal);
+
     if (invalidInputMatch) {
       --fcc-editable-region--
-
+      
       --fcc-editable-region--
     }
   }

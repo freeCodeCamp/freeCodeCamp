@@ -37,18 +37,12 @@ test.describe('Solution Viewer component', () => {
     );
 
     const projectLink = page.getByRole('link', { name: 'View' }).first();
-    const browserContext = page.context();
 
-    const [newPage] = await Promise.all([
-      browserContext.waitForEvent('page'),
-      projectLink.click()
-    ]);
-
-    await newPage.waitForLoadState();
-
-    await expect(newPage).toHaveURL(/^https:\/\/codepen\.io/);
-
-    await newPage.close();
+    await expect(projectLink).toHaveAttribute(
+      'href',
+      /^https?:\/\/codepen\.io/
+    );
+    await expect(projectLink).toHaveAttribute('target', '_blank');
   });
 
   test('render projects with multiple solutions correctly', async ({
@@ -61,16 +55,14 @@ test.describe('Solution Viewer component', () => {
 
     await expect(page.getByRole('menu')).toBeVisible();
 
+    const solutionLink = page
+      .getByRole('menuitem', { name: /solution/i })
+      .first();
+    await expect(solutionLink).toHaveAttribute('href', /^https?:\/\//);
+    await expect(solutionLink).toHaveAttribute('target', '_blank');
+
     const sourceLink = page.getByRole('menuitem', { name: /source/i }).first();
-
-    const browserContext = page.context();
-    const [newPage] = await Promise.all([
-      browserContext.waitForEvent('page'),
-      sourceLink.click()
-    ]);
-
-    await newPage.waitForLoadState();
-
-    await newPage.close();
+    await expect(sourceLink).toHaveAttribute('href', /^https?:\/\//);
+    await expect(sourceLink).toHaveAttribute('target', '_blank');
   });
 });

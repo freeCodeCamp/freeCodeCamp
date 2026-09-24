@@ -131,6 +131,17 @@ describe('ResetProgressModal', () => {
     expect(resetButton).toHaveAttribute('aria-disabled', 'true');
   });
 
+  it('keeps the reset button disabled when the wrong phrase is typed', () => {
+    renderModal();
+    fireEvent.change(screen.getByRole('textbox'), {
+      target: { value: 'wrong text' }
+    });
+
+    expect(
+      screen.getByRole('button', { name: /reset my progress/i })
+    ).toHaveAttribute('aria-disabled', 'true');
+  });
+
   it('enables the reset button when the correct phrase is typed', () => {
     renderModal();
     typeVerifyPhrase();

@@ -14,21 +14,27 @@ Create another `label` element (on a new line) at the end of your `HTMLString`. 
 You should have two `label` elements in your `HTMLString`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.equal(HTMLstring.match(/<label/g).length, 2);
 ```
 
 Your new `label` element should be on a new line.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.equal(HTMLstring.match(/\n\s*<label/g).length, 2);
 ```
 
 Your new `label` element should come after your `input` element.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const inputIndex = HTMLstring.indexOf("<input");
 const labelIndex = HTMLstring.lastIndexOf("<label");
 assert.isBelow(inputIndex, labelIndex);
@@ -37,7 +43,9 @@ assert.isBelow(inputIndex, labelIndex);
 Your new `label` element should have a `for` attribute set to `${category}-${entryNumber}-amount`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const label = HTMLstring.match(/<label.*>.*<\/label>/g)[1];
 assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>/);
 ```
@@ -45,7 +53,9 @@ assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>/
 Your new `label` element should have the text `Expense ${entryNumber} Amount`.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 const label = HTMLstring.match(/<label.*>.*<\/label>/g)[1];
 assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>Expense\s\$\{entryNumber\}\sAmount<\/label>/);
 ```
@@ -53,7 +63,9 @@ assert.match(label, /<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>E
 You should not modify your existing elements.
 
 ```js
-const HTMLstring = code.split(/HTMLString\s*=/)[1];
+const explorer = await __helpers.Explorer(code);
+const HTMLstring =
+  explorer.functions.addEntry.variables.HTMLString.value.toString();
 assert.match(HTMLstring, /`\n\s*<label\s+for="\$\{category\}-\$\{entryNumber\}-name"\s*>Expense\s\$\{entryNumber\}\sName<\/label>\n\s*<input\stype="text"\sid="\$\{category\}-\$\{entryNumber\}-name"\splaceholder="Name"\s\/>\n\s*<label\s+for="\$\{category\}-\$\{entryNumber\}-amount"\s*>Expense\s\$\{entryNumber\}\sAmount<\/label>/);
 ```
 
@@ -110,8 +122,7 @@ assert.match(HTMLstring, /`\n\s*<label\s+for="\$\{category\}-\$\{entryNumber\}-n
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>
@@ -128,7 +139,6 @@ assert.match(HTMLstring, /`\n\s*<label\s+for="\$\{category\}-\$\{entryNumber\}-n
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -285,18 +295,18 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.replace(regex, '');
+  return str.replace(regex, "");
 }
 
 function isInvalidInput(str) {
@@ -308,11 +318,12 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
   `;
 }

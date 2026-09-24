@@ -13,10 +13,13 @@ import {
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink, Link } from '../helpers';
-import { showUpcomingChanges } from '../../../config/env.json';
+import envData from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
+
+const { showUpcomingChanges } = envData;
+
 interface MapProps {
   forLanding?: boolean;
 }

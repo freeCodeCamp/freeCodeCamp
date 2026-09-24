@@ -24,7 +24,10 @@ assert.isFunction(cleanInputString);
 Your `cleanInputString` function should take a `str` parameter.
 
 ```js
-assert.match(cleanInputString?.toString(), /\(\s*str\s*\)/);
+const explorer = await __helpers.Explorer(code);
+const parameters = explorer.allFunctions.cleanInputString?.parameters;
+assert.lengthOf(parameters, 1);
+assert.equal(parameters[0].toString(), 'str');
 ```
 
 `cleanInputString` should be an empty function.
@@ -86,8 +89,7 @@ assert.match(cleanInputString?.toString(), /\{\s*\}/);
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>
@@ -104,7 +106,6 @@ assert.match(cleanInputString?.toString(), /\{\s*\}/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -261,13 +262,13 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 --fcc-editable-region--

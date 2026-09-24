@@ -1,5 +1,5 @@
 {
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-jwt-protected-routes",
   "helpCategory": "Backend Development",
   "blockLayout": "link",

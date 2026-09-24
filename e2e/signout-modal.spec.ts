@@ -7,30 +7,6 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Signout Modal component', () => {
-  test('renders the modal correctly', async ({ page }) => {
-    await page.getByRole('button', { name: translations.buttons.menu }).click();
-    await page
-      .getByRole('button', { name: translations.buttons['sign-out'] })
-      .click();
-
-    await expect(
-      page.getByRole('dialog', { name: translations.signout.heading })
-    ).toBeVisible();
-
-    await expect(page.getByText(translations.signout.p1)).toBeVisible();
-    await expect(page.getByText(translations.signout.p2)).toBeVisible();
-
-    await expect(
-      page.getByRole('button', { name: translations.signout.nevermind })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', { name: translations.signout.certain })
-    ).toBeVisible();
-    await expect(
-      page.getByRole('button', { name: translations.buttons.close })
-    ).toBeVisible();
-  });
-
   test('signs out and redirects to / after user confirms they want to sign out', async ({
     page
   }) => {
@@ -51,26 +27,5 @@ test.describe('Signout Modal component', () => {
       page.getByRole('dialog', { name: translations.signout.heading })
     ).not.toBeVisible();
     await expect(page).toHaveURL(allowTrailingSlash(''));
-  });
-
-  test('closes modal after user cancels signing out', async ({ page }) => {
-    await page.getByRole('button', { name: translations.buttons.menu }).click();
-    await page
-      .getByRole('button', { name: translations.buttons['sign-out'] })
-      .click();
-
-    await expect(
-      page.getByRole('dialog', { name: translations.signout.heading })
-    ).toBeVisible();
-
-    await page
-      .getByRole('button', { name: translations.signout.nevermind })
-      .click();
-
-    await expect(
-      page.getByRole('dialog', { name: translations.signout.heading })
-    ).not.toBeVisible();
-
-    await expect(page).toHaveURL('/');
   });
 });

@@ -16,6 +16,7 @@ import {
   getTaskNumberFromTitle
 } from './helpers/task-helpers.js';
 import { getTemplate } from './helpers/get-challenge-template.js';
+import type { ProjectContentType } from './helpers/project-content-type.js';
 
 interface Options {
   challengeId: ObjectId;
@@ -34,6 +35,18 @@ interface QuizOptions {
   dashedName: string;
   questionCount: number;
   challengeLang?: ChallengeLang;
+}
+
+interface SingleChallengeOptions {
+  challengeId: ObjectId;
+  projectPath?: string;
+  title: string;
+  dashedName: string;
+}
+
+interface LabOptions extends SingleChallengeOptions {
+  challengeType: number;
+  contentType: ProjectContentType;
 }
 
 export async function getAllBlocks() {
@@ -99,6 +112,46 @@ const createQuizFile = ({
   });
 
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, quizText);
+  return challengeId;
+};
+
+const createLabFile = ({
+  challengeId,
+  projectPath = getProjectPath(),
+  title,
+  dashedName,
+  challengeType,
+  contentType
+}: LabOptions): ObjectId => {
+  const template = getTemplate(challengeType.toString());
+  const labText = template({
+    challengeId,
+    challengeType: challengeType.toString(),
+    title,
+    dashedName,
+    contentType
+  });
+
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, labText);
+  return challengeId;
+};
+
+const createReviewFile = ({
+  challengeId,
+  projectPath = getProjectPath(),
+  title,
+  dashedName
+}: SingleChallengeOptions): ObjectId => {
+  const challengeType = challengeTypes.review.toString();
+  const template = getTemplate(challengeType);
+  const reviewText = template({
+    challengeId,
+    challengeType,
+    title,
+    dashedName
+  });
+
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, reviewText);
   return challengeId;
 };
 
@@ -313,5 +366,7 @@ export {
   deleteChallengeFromMeta,
   deleteStepFromMeta,
   validateBlockName,
-  createQuizFile
+  createQuizFile,
+  createLabFile,
+  createReviewFile
 };

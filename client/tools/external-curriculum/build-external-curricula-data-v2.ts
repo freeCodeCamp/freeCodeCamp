@@ -8,6 +8,11 @@ import {
   chapterBasedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 import { availableLangs, Languages } from '@freecodecamp/shared/config/i18n';
+import {
+  catalog,
+  type Levels,
+  type Topic
+} from '@freecodecamp/shared/config/catalog';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
 import {
@@ -28,6 +33,7 @@ export type CurriculumIntros =
 type BlockBasedCurriculumIntros = {
   [keyValue in SuperBlocks]: {
     title: string;
+    summary?: string[];
     intro: string[];
     blocks: Record<string, { title: string; intro: string[] }>;
   };
@@ -36,6 +42,7 @@ type BlockBasedCurriculumIntros = {
 export type ChapterBasedCurriculumIntros = {
   [keyValue in SuperBlocks]: {
     title: string;
+    summary?: string[];
     intro: string[];
     chapters: Record<string, string>;
     modules: Record<string, string>;
@@ -114,6 +121,15 @@ export type OrderedSuperBlocks = Record<
   Array<{ dashedName: SuperBlocks; public: boolean; title: string }>
 >;
 
+export interface CatalogCourse {
+  dashedName: SuperBlocks;
+  title: string;
+  summary: string[];
+  level: Levels;
+  hours: number;
+  topic: Topic;
+}
+
 const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
@@ -128,13 +144,88 @@ export function getCurriculumLocale(): Languages {
     : Languages.English;
 }
 
-export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+export type SuperBlockIntro = {
+  title: string;
+  summary?: string[];
+  intro: string[];
+  blocks: Record<string, { title: string; intro: string[] }>;
+  chapters?: Record<string, string>;
+  modules?: Record<string, string>;
+};
+
+type SuperBlockIntroRecord = 'chapters' | 'modules';
+
+function readIntroFile(lang: Languages): Record<SuperBlocks, SuperBlockIntro> {
   const blockIntroPath = resolve(
     __dirname,
     `../../../client/i18n/locales/${lang}/intro.json`
   );
 
-  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as CurriculumIntros;
+  return JSON.parse(readFileSync(blockIntroPath, 'utf-8')) as Record<
+    SuperBlocks,
+    SuperBlockIntro
+  >;
+}
+
+function mergeIntroRecord(
+  field: SuperBlockIntroRecord,
+  english: SuperBlockIntro,
+  localised: SuperBlockIntro
+): Partial<SuperBlockIntro> {
+  if (!(field in english) && !(field in localised)) return {};
+
+  return { [field]: { ...english[field], ...localised[field] } };
+}
+
+function mergeBlockIntros(
+  english: SuperBlockIntro['blocks'] = {},
+  localised: SuperBlockIntro['blocks'] = {}
+): SuperBlockIntro['blocks'] {
+  const merged = { ...english, ...localised };
+
+  for (const [name, englishBlock] of Object.entries(english)) {
+    merged[name] = { ...englishBlock, ...localised[name] };
+  }
+
+  return merged;
+}
+
+export function fillIntrosFromEnglish(
+  localised: Record<SuperBlocks, SuperBlockIntro>,
+  english: Record<SuperBlocks, SuperBlockIntro>
+): Record<SuperBlocks, SuperBlockIntro> {
+  const filled = {} as Record<SuperBlocks, SuperBlockIntro>;
+
+  for (const key of Object.keys(english) as SuperBlocks[]) {
+    const englishSuperBlock = english[key];
+    const localisedSuperBlock = localised[key];
+
+    if (!localisedSuperBlock) {
+      filled[key] = englishSuperBlock;
+      continue;
+    }
+
+    filled[key] = {
+      ...englishSuperBlock,
+      ...localisedSuperBlock,
+      blocks: mergeBlockIntros(
+        englishSuperBlock.blocks,
+        localisedSuperBlock.blocks
+      ),
+      ...mergeIntroRecord('chapters', englishSuperBlock, localisedSuperBlock),
+      ...mergeIntroRecord('modules', englishSuperBlock, localisedSuperBlock)
+    };
+  }
+
+  return filled;
+}
+
+export function readCurriculumIntros(lang: Languages): CurriculumIntros {
+  const localised = readIntroFile(lang);
+
+  if (lang === Languages.English) return localised;
+
+  return fillIntrosFromEnglish(localised, readIntroFile(Languages.English));
 }
 
 export function orderedSuperBlockInfo(
@@ -319,6 +410,19 @@ export function orderedSuperBlockInfo(
   };
 }
 
+export function catalogCourses(
+  intros: CurriculumIntros = readCurriculumIntros(getCurriculumLocale())
+): CatalogCourse[] {
+  return catalog.map(({ superBlock, level, hours, topic }) => ({
+    dashedName: superBlock,
+    title: intros[superBlock].title,
+    summary: intros[superBlock].summary ?? [],
+    level,
+    hours,
+    topic
+  }));
+}
+
 export const superBlockDashedNames = (() => {
   const info = orderedSuperBlockInfo();
   return Object.keys(info).reduce((acc, superBlockStage) => {
@@ -331,6 +435,8 @@ export const superBlockDashedNames = (() => {
   }, [] as SuperBlocks[]);
 })();
 
+export const catalogDashedNames = catalog.map(({ superBlock }) => superBlock);
+
 export function buildExtCurriculumDataV2(
   curriculum: Curriculum<CurriculumProps>
 ): void {
@@ -341,13 +447,18 @@ export function buildExtCurriculumDataV2(
   getSceneAssets();
 
   function parseCurriculumData() {
-    const superBlockKeys = Object.values(SuperBlocks).filter(x =>
-      superBlockDashedNames.includes(x)
+    // Catalog super blocks are deliberately absent from
+    // `available-superblocks.json`, but their block and challenge data still
+    // needs to be written so that consumers of `catalog.json` can reach it.
+    const superBlockKeys = Object.values(SuperBlocks).filter(
+      x => superBlockDashedNames.includes(x) || catalogDashedNames.includes(x)
     );
 
     writeToFile('available-superblocks', {
       superblocks: orderedSuperBlockInfo()
     });
+
+    writeToFile('catalog', { catalog: catalogCourses(intros) });
 
     for (const superBlockKey of superBlockKeys) {
       if (chapterBasedSuperBlocks.includes(superBlockKey)) {

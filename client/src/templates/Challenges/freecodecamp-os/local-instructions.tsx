@@ -65,6 +65,17 @@ export function LocalInstructions({
             <code>placeholder</code>
           </Trans>
         </li>
+        <li>
+          <Trans i18nKey='learn.freecodecamp-os.local.step-3'>
+            <code>placeholder</code>
+          </Trans>
+        </li>
+        <li>{t('learn.freecodecamp-os.local.step-4')}</li>
+        <li>
+          <Trans i18nKey='learn.freecodecamp-os.local.step-5'>
+            <code>placeholder</code>
+          </Trans>
+        </li>
         {isSignedIn && (
           <>
             <Spacer size='s' />
@@ -97,17 +108,6 @@ export function LocalInstructions({
             <Spacer size='s' />
           </>
         )}
-        <li>
-          <Trans i18nKey='learn.freecodecamp-os.local.step-3'>
-            <code>placeholder</code>
-          </Trans>
-        </li>
-        <li>{t('learn.freecodecamp-os.local.step-4')}</li>
-        <li>
-          <Trans i18nKey='learn.freecodecamp-os.local.step-5'>
-            <code>placeholder</code>
-          </Trans>
-        </li>
         <li>{t('learn.freecodecamp-os.local.step-6')}</li>
         <li>{t('learn.freecodecamp-os.local.step-7')}</li>
       </ol>

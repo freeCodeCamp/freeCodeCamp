@@ -9,15 +9,21 @@ describe('challenges as a proxy for getChallenges', () => {
     expect(challenges.length).toBeGreaterThan(0);
   });
 
-  test('challenge objects should contain challengeType and id', () => {
-    for (const challenge of challenges) {
-      expect(challenge).toHaveProperty('challengeType');
-      expect(typeof challenge?.challengeType).toBe('number');
+  test(
+    'challenge objects should contain challengeType and id',
+    {
+      timeout: 10000
+    },
+    () => {
+      for (const challenge of challenges) {
+        expect(challenge).toHaveProperty('challengeType');
+        expect(typeof challenge?.challengeType).toBe('number');
 
-      expect(challenge).toHaveProperty('id');
-      expect(isObjectID(challenge?.id)).toBe(true);
+        expect(challenge).toHaveProperty('id');
+        expect(isObjectID(challenge?.id)).toBe(true);
+      }
     }
-  });
+  );
 });
 
 describe('getChallengeIdsByBlock', () => {

@@ -16,27 +16,33 @@ Declare two variables: `statusText` and `statusClass`. Initialize both as empty 
 Your `calculateBudget` function should have a `statusText` variable.
 
 ```js
-assert.match(calculateBudget.toString(), /statusText\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.calculateBudget?.variables.statusText);
 ```
 
 Your `calculateBudget` function should have a `statusClass` variable.
 
 ```js
-assert.match(calculateBudget.toString(), /statusClass\s*=/);
+const explorer = await __helpers.Explorer(code);
+assert.exists(explorer.functions.calculateBudget?.variables.statusClass);
 ```
 
 You should initialize `statusText` and `statusClass` as empty strings.
 
 ```js
-assert.match(code, /statusText\s*=\s*('|")\1/);
-assert.match(code, /statusClass\s*=\s*('|")\1/);
+const explorer = await __helpers.Explorer(code);
+const { statusText, statusClass } = explorer.functions.calculateBudget.variables;
+assert.isTrue(statusText?.value.matches('""'));
+assert.isTrue(statusClass?.value.matches('""'));
 ```
 
 Both variables should be declared using `let`.
 
 ```js
-assert.match(code, /let\s+statusText\s*=\s*('|")\1/);
-assert.match(code, /let\s+statusClass\s*=\s*('|")\1/);
+const explorer = await __helpers.Explorer(code);
+const { statusText, statusClass } = explorer.functions.calculateBudget.variables;
+assert.isTrue(statusText?.matches('let statusText = ""'));
+assert.isTrue(statusClass?.matches('let statusClass = ""'));
 ```
 
 # --seed--
@@ -92,8 +98,7 @@ assert.match(code, /let\s+statusClass\s*=\s*('|")\1/);
             <span>
               <label for="entry-dropdown">Add expense to:</label>
               <select id="entry-dropdown" name="options">
-                <option value="rent" selected>Rent</option>
-                <option value="food">Food</option>
+                <option value="food" selected>Food</option>
                 <option value="utilities">Utilities</option>
                 <option value="entertainment">Entertainment</option>
               </select>
@@ -110,7 +115,6 @@ assert.match(code, /let\s+statusClass\s*=\s*('|")\1/);
         </form>
 
         <div id="output" class="output hide"></div>
-        
       </div>
     </main>
     <script src="./script.js"></script>
@@ -267,18 +271,18 @@ button:hover {
 ```
 
 ```js
-const budgetForm = document.getElementById('budget-form');
+const budgetForm = document.getElementById("budget-form");
 const incomeInput = document.getElementById("income");
 const rentInput = document.getElementById("rent-amount");
 const entryDropdown = document.getElementById("entry-dropdown");
-const addEntryButton = document.getElementById('add-entry');
-const clearButton = document.getElementById('clear');
-const output = document.getElementById('output');
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output");
 let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g;
-  return str.replace(regex, '');
+  return str.replace(regex, "");
 }
 
 function isInvalidInput(str) {
@@ -290,6 +294,7 @@ function addEntry() {
   const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
+
   const HTMLString = `
   <label for="${category}-${entryNumber}-name">Expense ${entryNumber} Name</label>
   <input type="text" id="${category}-${entryNumber}-name" placeholder="Name" />
@@ -299,7 +304,7 @@ function addEntry() {
     min="0" 
     id="${category}-${entryNumber}-amount" placeholder="Amount" 
     />`;
-    targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
+  targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
 function calculateBudget(e) {
@@ -324,7 +329,7 @@ function calculateBudget(e) {
   const netRemaining = income - expenses;
 
   --fcc-editable-region--
-
+  
   --fcc-editable-region--
 }
 

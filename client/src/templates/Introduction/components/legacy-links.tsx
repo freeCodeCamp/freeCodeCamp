@@ -6,7 +6,6 @@ import { isRelationalDbCert, isExamCert } from '../../../utils/is-a-cert';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import envData from '../../../../config/env.json';
-import { OnaNote } from '../../../components/growth-book/ona-note';
 
 const { clientLocale } = envData;
 
@@ -14,7 +13,7 @@ interface LegacyLinksProps {
   superBlock: SuperBlocks;
 }
 
-function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
+function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element | null {
   const { t } = useTranslation();
 
   if (isRelationalDbCert(superBlock)) {
@@ -34,9 +33,9 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
         <p>{t('intro:misc-text.exam-english-only')}</p>
       </Callout>
     );
-  } else {
-    return <OnaNote superBlock={superBlock} />;
   }
+
+  return null;
 }
 
 export default LegacyLinks;

@@ -166,7 +166,8 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         id: projectId,
         completedDate: Date.now()
       };
-      const points = getPoints(user.progressTimestamps);
+      const progressTimestamps = user.progressTimestamps as ProgressTimestamp[];
+      const points = getPoints(progressTimestamps);
 
       const { alreadyCompleted, completedDate } = await updateUserChallengeData(
         fastify,
@@ -225,7 +226,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         select: userChallengeSelect
       });
-      const points = getPoints(user.progressTimestamps);
+      const progressTimestamps = user.progressTimestamps as
+        | ProgressTimestamp[]
+        | null;
+      const points = getPoints(progressTimestamps);
 
       const completedChallenge = {
         completedDate: Date.now(),
@@ -618,6 +622,9 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           select: userChallengeSelect
         });
 
+        const progressTimestamps =
+          user.progressTimestamps as ProgressTimestamp[];
+
         const completedChallenge = {
           id: challengeId,
           solution: msTrophyStatus.msUserAchievementsApiUrl,
@@ -640,8 +647,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
 
         reply.send({
           alreadyCompleted,
-          points:
-            getPoints(user.progressTimestamps) + (alreadyCompleted ? 0 : 1),
+          points: getPoints(progressTimestamps) + (alreadyCompleted ? 0 : 1),
           completedDate: normalizeDate(completedDate)
         });
       } catch (error) {
@@ -790,6 +796,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             };
           });
         const newCompletedExams: CompletedExam[] = completedExams;
+        const newProgressTimeStamps = progressTimestamps as ProgressTimestamp[];
         const completedDate = Date.now();
 
         const newCompletedChallenge = {
@@ -859,7 +866,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
                 completedExams: newCompletedExams,
                 completedChallenges: newCompletedChallenges,
                 progressTimestamps: [
-                  ...(progressTimestamps as ProgressTimestamp[]),
+                  ...newProgressTimeStamps,
                   newCompletedChallenge.completedDate
                 ]
               }
@@ -876,7 +883,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
-        const points = getPoints(progressTimestamps);
+        const points = getPoints(newProgressTimeStamps);
 
         fastify.Sentry?.metrics?.count('curriculum_exam.completed', 1, {
           attributes: {
@@ -1182,9 +1189,7 @@ async function postDailyCodingChallengeCompleted(
 
   const { completedDailyCodingChallenges, progressTimestamps = [] } = user;
 
-  const points = getPoints(
-    progressTimestamps.filter((ts): ts is ProgressTimestamp => ts !== null)
-  );
+  const points = getPoints(progressTimestamps as ProgressTimestamp[]);
   const oldCompletedChallenge = completedDailyCodingChallenges.find(
     c => c.id === id
   );
@@ -1245,12 +1250,7 @@ async function postDailyCodingChallengeCompleted(
     ];
 
     const newProgressTimestamps = Array.isArray(progressTimestamps)
-      ? [
-          ...progressTimestamps.filter(
-            (ts): ts is ProgressTimestamp => ts !== null
-          ),
-          newCompletedDate
-        ]
+      ? [...progressTimestamps, newCompletedDate]
       : [newCompletedDate];
 
     await this.prisma.user.update({
@@ -1345,7 +1345,9 @@ async function postModernChallengeCompleted(
     where: { id: userId },
     select: userChallengeSelect
   });
-  const RawProgressTimestamp = user.progressTimestamps;
+  const RawProgressTimestamp = user.progressTimestamps as
+    | ProgressTimestamp[]
+    | null;
   const points = getPoints(RawProgressTimestamp);
 
   const completedChallenge: CompletedChallenge = {
