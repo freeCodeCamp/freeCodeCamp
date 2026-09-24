@@ -108,6 +108,29 @@ export function saveUserChallengeData(
 }
 
 /**
+ * Retries function iff it fails due to a deadlock or write conflict.
+ * @param fn The function that could fail.
+ * @param timeout Delay before retrying (optional defaulting to 1000).
+ * @returns Promise returned by fn().
+ */
+export async function retryIfWriteConflict<T>(
+  fn: () => Promise<T>,
+  timeout = 1000
+): Promise<T> {
+  return await fn().catch(async (error: unknown) => {
+    if (
+      !(error instanceof Prisma.PrismaClientKnownRequestError) ||
+      error.code !== 'P2034'
+    ) {
+      throw error;
+    }
+
+    await setTimeout(timeout);
+    return fn();
+  });
+}
+
+/**
  * Helper function to update a user's challenge data. Used in challenge
  * submission endpoints.
  * TODO: Keep refactoring. This function does too much.
@@ -234,18 +257,9 @@ export async function updateUserChallengeData(
       }
     });
 
-  const { savedChallenges: userSavedChallenges } = await updateUser().catch(
-    async (error: unknown) => {
-      if (
-        !(error instanceof Prisma.PrismaClientKnownRequestError) ||
-        error.code !== 'P2034'
-      ) {
-        throw error;
-      }
-
-      await setTimeout(1000);
-      return updateUser();
-    }
+  const { savedChallenges: userSavedChallenges } = await retryIfWriteConflict(
+    updateUser,
+    1000
   );
 
   return {
