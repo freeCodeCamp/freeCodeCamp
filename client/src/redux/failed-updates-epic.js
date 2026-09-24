@@ -1,9 +1,8 @@
 import { ofType } from 'redux-observable';
-import { merge, from, EMPTY } from 'rxjs';
+import { merge, from, EMPTY, timer } from 'rxjs';
 import {
   catchError,
   concatMap,
-  delay,
   exhaustMap,
   filter,
   ignoreElements,
@@ -69,18 +68,26 @@ function failedUpdateEpic(action$, state$) {
     filter(() => isServerOnlineSelector(state$.value)),
     exhaustMap(() =>
       from(getFailedUpdates()).pipe(
-        concatMap(update =>
-          postUpdate$(update).pipe(
-            tap(payload => {
-              handleUpdateResponse(payload, update);
-            }),
-            catchError(err => {
-              console.warn('unable to process progress update', err.message);
-              return EMPTY;
-            }),
-            delay(UPDATE_DELAY)
-          )
-        )
+        concatMap((update, i) => {
+          const wait = Math.min((UPDATE_DELAY * (i * (i + 1))) / 2, 2000);
+
+          return timer(wait).pipe(
+            concatMap(() =>
+              postUpdate$(update).pipe(
+                tap(payload => {
+                  handleUpdateResponse(payload, update);
+                }),
+                catchError(err => {
+                  console.warn(
+                    'unable to process progress update',
+                    err.message
+                  );
+                  return EMPTY;
+                })
+              )
+            )
+          );
+        })
       )
     ),
     ignoreElements()

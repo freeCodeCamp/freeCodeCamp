@@ -11,6 +11,9 @@ vi.mock('../analytics');
 
 const delay = timeout => new Promise(resolve => setTimeout(resolve, timeout));
 
+// This makes it easier to write tests - the actual delay has an explicit test that doesn't rely on the helper.
+const expectedDelay = n => (100 * (n * (n + 1))) / 2;
+
 const key = 'fcc-failed-updates';
 
 describe('failed-updates-epic', () => {
@@ -78,7 +81,7 @@ describe('failed-updates-epic', () => {
 
     failedUpdatesEpic(action$, state$).subscribe();
 
-    // allow time for delays betwwen failures
+    // Run the scheduled request.
     await vi.runAllTimersAsync();
 
     expect(warnSpy).toHaveBeenCalledWith(
@@ -104,8 +107,6 @@ describe('failed-updates-epic', () => {
   });
 
   it('should wait for each fetch call to settle before making another call', async () => {
-    // it also has to wait for the delay between requests as well as the requests
-    const UPDATE_DELAY = 100;
     fetchSpy.mockImplementation(() => delay(1000).then(() => new Response()));
     store.set(key, validSubmissions);
     const state$ = new StateObservable(new Subject(), initialState);
@@ -114,46 +115,39 @@ describe('failed-updates-epic', () => {
     epic$.subscribe();
 
     expect(store.get(key)).toEqual(validSubmissions);
-    await vi.advanceTimersByTimeAsync(1000 + UPDATE_DELAY);
+    await vi.advanceTimersByTimeAsync(1000);
     expect(store.get(key)).toEqual(validSubmissions.slice(1));
-    await vi.advanceTimersByTimeAsync(1000 + UPDATE_DELAY);
+    await vi.advanceTimersByTimeAsync(1000 + expectedDelay(1));
     expect(store.get(key)).toEqual(validSubmissions.slice(2));
-    await vi.advanceTimersByTimeAsync(1000 + UPDATE_DELAY);
+    await vi.advanceTimersByTimeAsync(1000 + expectedDelay(2));
     expect(fetchSpy).toHaveBeenCalledTimes(validSubmissions.length);
     expect(store.get(key)).toEqual([]);
   });
 
-  it('should wait 100ms between each request', async () => {
-    const UPDATE_DELAY = 100;
-    fetchSpy.mockImplementation(() => new Response());
-    store.set(key, validSubmissions);
+  it('should wait progressively larger amounts between each failed request', async () => {
+    // capped at two seconds.
+    const expectedGaps = [100, 300, 600, 1000, 1500, 2000, 2000, 2000];
+    const complete = vi.fn();
+    const manySubmissions = [
+      ...validSubmissions,
+      ...validSubmissions,
+      ...validSubmissions
+    ];
+    store.set(key, manySubmissions);
     const state$ = new StateObservable(new Subject(), initialState);
     const epic$ = failedUpdatesEpic(action$, state$);
 
-    epic$.subscribe();
+    epic$.subscribe({ complete });
 
-    await vi.advanceTimersByTimeAsync(UPDATE_DELAY - 1);
+    await vi.advanceTimersByTimeAsync(0);
     expect(fetchSpy).toHaveBeenCalledOnce();
-    await vi.advanceTimersByTimeAsync(1);
-    expect(fetchSpy).toHaveBeenCalledTimes(2);
-    await vi.advanceTimersByTimeAsync(UPDATE_DELAY);
-    expect(fetchSpy).toHaveBeenCalledTimes(3);
-  });
-
-  it('should wait 100ms between each failed request', async () => {
-    const UPDATE_DELAY = 100;
-    store.set(key, validSubmissions);
-    const state$ = new StateObservable(new Subject(), initialState);
-    const epic$ = failedUpdatesEpic(action$, state$);
-
-    epic$.subscribe();
-
-    await vi.advanceTimersByTimeAsync(UPDATE_DELAY - 1);
-    expect(fetchSpy).toHaveBeenCalledOnce();
-    await vi.advanceTimersByTimeAsync(1);
-    expect(fetchSpy).toHaveBeenCalledTimes(2);
-    await vi.advanceTimersByTimeAsync(UPDATE_DELAY);
-    expect(fetchSpy).toHaveBeenCalledTimes(3);
+    for (const [index, gap] of expectedGaps.entries()) {
+      await vi.advanceTimersByTimeAsync(gap - 1);
+      expect(fetchSpy).toHaveBeenCalledTimes(index + 1);
+      await vi.advanceTimersByTimeAsync(1);
+      expect(fetchSpy).toHaveBeenCalledTimes(index + 2);
+    }
+    expect(complete).toHaveBeenCalledOnce();
   });
 });
 
