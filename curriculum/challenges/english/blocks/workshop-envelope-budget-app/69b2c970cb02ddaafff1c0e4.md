@@ -71,7 +71,6 @@ assert.equal(document.querySelectorAll('form fieldset')[3]?.querySelector('div')
     <main>
       <h1>Envelope Budgeter</h1>
       <div class="container">
-
         <form id="budget-form">
           <label for="income">Total Monthly Income</label>
           <input 
@@ -97,9 +96,9 @@ assert.equal(document.querySelectorAll('form fieldset')[3]?.querySelector('div')
             <legend>Utilities</legend>
             <div class="input-container"></div>
           </fieldset>
-          
---fcc-editable-region--
 
+--fcc-editable-region--
+          
 --fcc-editable-region--
         </form>
       </div>

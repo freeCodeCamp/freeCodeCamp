@@ -1,8 +1,11 @@
-import { APIRequestContext, Page, expect, test } from '@playwright/test';
+import { type APIRequestContext, type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import translations from '../client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { getEditors } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 const course =
   '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code';

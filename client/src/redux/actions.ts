@@ -55,6 +55,7 @@ export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(
   actionTypes.postChargeProcessing
 );
+export const postChargePending = createAction(actionTypes.postChargePending);
 export const postChargeComplete = createAction(actionTypes.postChargeComplete);
 export const postChargeError = createAction(actionTypes.postChargeError);
 
