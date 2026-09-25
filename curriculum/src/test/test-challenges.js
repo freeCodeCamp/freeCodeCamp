@@ -28,7 +28,9 @@ const { flatten, isEmpty, cloneDeep } = lodash;
 
 // Content tests reuse this module across block files within each worker.
 // Validate and load the full structure once, then filter it for each block.
-const curriculumStructure = parseCurriculumStructure();
+// Watch mode must keep reading metadata changes between reruns.
+const curriculumStructure =
+  process.env.VITEST_MODE === 'WATCH' ? undefined : parseCurriculumStructure();
 
 vi.mock(
   '@freecodecamp/challenge-builder/typescript-worker-handler',
