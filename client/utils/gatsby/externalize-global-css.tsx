@@ -4,7 +4,7 @@ export const externalizeGlobalCss = (
   headComponents: React.ReactNode[]
 ): React.ReactNode[] =>
   headComponents.map(component => {
-    if (!React.isValidElement(component)) {
+    if (!React.isValidElement<Record<string, unknown>>(component)) {
       return component;
     }
 
