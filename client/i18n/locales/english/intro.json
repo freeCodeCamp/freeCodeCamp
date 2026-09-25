@@ -7984,7 +7984,7 @@
       "lecture-understanding-the-html-boilerplate": {
         "title": "Understanding the HTML Boilerplate",
         "intro": [
-          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "In these lectures, you will learn about the HTML boilerplate, which is a ready-made template for your webpages.",
           "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
@@ -8066,7 +8066,7 @@
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+          "In these lectures, you will learn how to work with the <code>iframe</code> element, which is used to embed an external site on your web page."
         ]
       },
       "workshop-build-a-video-display-using-iframe": {
@@ -8084,7 +8084,7 @@
       "lecture-working-with-links": {
         "title": "Working with Links",
         "intro": [
-          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
+          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute and relative paths, and more."
         ]
       },
       "review-basic-html": {
@@ -9344,7 +9344,7 @@
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+          "In these lectures, you will learn how to work with the <code>iframe</code> element, which is used to embed an external site on your web page."
         ]
       },
       "workshop-build-a-video-display-using-iframe": {
