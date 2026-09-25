@@ -11,6 +11,7 @@ import { getLines } from '@freecodecamp/shared/utils/get-lines';
 import { prefixDoctype } from '@freecodecamp/challenge-builder/build';
 
 import { getChallengesForLang } from '../get-challenges.js';
+import { parseCurriculumStructure } from '../build-curriculum.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
 
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
@@ -24,6 +25,10 @@ import createPseudoWorker from './utils/pseudo-worker.js';
 import { sortChallenges } from './utils/sort-challenges.js';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
+
+// Content tests reuse this module across block files within each worker.
+// Validate and load the full structure once, then filter it for each block.
+const curriculumStructure = parseCurriculumStructure();
 
 vi.mock(
   '@freecodecamp/challenge-builder/typescript-worker-handler',
@@ -139,7 +144,8 @@ export async function defineTestsForBlock(testFilter) {
 }
 
 export async function getChallenges(lang, filters) {
-  const challenges = await getChallengesForLang(lang, filters).then(
+  const structure = await curriculumStructure;
+  const challenges = await getChallengesForLang(lang, filters, structure).then(
     curriculum => {
       // If there are filters, we're testing a single challenge or block, so we
       // can skip the validation.

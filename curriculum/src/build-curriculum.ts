@@ -389,7 +389,7 @@ function validateBlocks(superblocks: SuperBlocks[], blockStructureDir: string) {
   }
 }
 
-export async function parseCurriculumStructure(filter?: Filter) {
+function loadCurriculumStructure() {
   const curriculum = getCurriculumStructure();
   const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
@@ -404,18 +404,37 @@ export async function parseCurriculumStructure(filter?: Filter) {
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
-  const refinedFilter = closestFilters(superblockList, filter);
-  if (!isEmpty(filter)) {
-    console.log('Applied filter:', refinedFilter);
-  }
-  const fullSuperblockList = applyFilters(superblockList, refinedFilter);
   return {
-    fullSuperblockList,
+    fullSuperblockList: superblockList,
     certifications: curriculum.certifications
   };
 }
 
-export async function buildCurriculum(lang: string, filters?: Filter) {
+export type CurriculumStructure = ReturnType<typeof loadCurriculumStructure>;
+
+export async function parseCurriculumStructure(
+  filter?: Filter,
+  structure: CurriculumStructure = loadCurriculumStructure()
+) {
+  const refinedFilter = closestFilters(structure.fullSuperblockList, filter);
+  if (!isEmpty(filter)) {
+    console.log('Applied filter:', refinedFilter);
+  }
+  const fullSuperblockList = applyFilters(
+    structure.fullSuperblockList,
+    refinedFilter
+  );
+  return {
+    fullSuperblockList,
+    certifications: structure.certifications
+  };
+}
+
+export async function buildCurriculum(
+  lang: string,
+  filters?: Filter,
+  structure?: CurriculumStructure
+) {
   // Block validation assumes the entire block is being built, if that's not the
   // case, skip validation
   const skipBlockValidation = filters?.challengeId !== undefined;
@@ -425,8 +444,10 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     getBlockCreator(lang, skipBlockValidation)
   );
 
-  const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(filters);
+  const { fullSuperblockList, certifications } = await parseCurriculumStructure(
+    filters,
+    structure
+  );
 
   const fullCurriculum: {
     [key: string]: unknown;
