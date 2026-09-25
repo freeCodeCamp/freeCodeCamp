@@ -1,15 +1,10 @@
 import React from 'react';
 
-interface GatsbyGlobalStyleProps {
-  'data-href'?: unknown;
-  'data-identity'?: unknown;
-}
-
 export const externalizeGlobalCss = (
   headComponents: React.ReactNode[]
 ): React.ReactNode[] =>
   headComponents.map(component => {
-    if (!React.isValidElement<GatsbyGlobalStyleProps>(component)) {
+    if (!React.isValidElement(component)) {
       return component;
     }
 
