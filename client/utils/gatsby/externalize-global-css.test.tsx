@@ -5,9 +5,10 @@ import { externalizeGlobalCss } from './externalize-global-css';
 
 describe('externalizeGlobalCss', () => {
   test('replaces Gatsby global styles with a stylesheet link', () => {
+    const dataHref = '/any-style-filename.css';
     const globalStyle = (
       <style
-        data-href='/styles.css'
+        data-href={dataHref}
         data-identity='gatsby-global-css'
         dangerouslySetInnerHTML={{ __html: '.foo { color: red; }' }}
         key='global-css'
@@ -23,7 +24,7 @@ describe('externalizeGlobalCss', () => {
     expect(stylesheet).toMatchObject({
       key: 'global-css',
       props: {
-        href: '/styles.css',
+        href: dataHref,
         rel: 'stylesheet'
       },
       type: 'link'
