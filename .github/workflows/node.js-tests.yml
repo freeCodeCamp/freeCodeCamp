@@ -190,7 +190,6 @@ jobs:
 
   test:
     name: Test
-    needs: build
     runs-on: ubuntu-24.04
 
     strategy:
@@ -255,7 +254,6 @@ jobs:
 
   test-upcoming:
     name: Test - Upcoming Changes
-    needs: build
     runs-on: ubuntu-24.04
 
     strategy:
