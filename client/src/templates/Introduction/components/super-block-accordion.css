@@ -32,6 +32,7 @@
 .super-block-accordion .module-header-wrapper .module-button-main {
   flex: 1;
   min-width: 0;
+  justify-content: space-between;
 }
 
 .super-block-accordion .chapter-header-wrapper .chapter-button-toggle,
