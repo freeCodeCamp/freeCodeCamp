@@ -64,7 +64,7 @@
   },
   "engines": {
     "node": ">=24",
-    "npm": ">=8"
+    "pnpm": ">=11"
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "license": "BSD-3-Clause",
