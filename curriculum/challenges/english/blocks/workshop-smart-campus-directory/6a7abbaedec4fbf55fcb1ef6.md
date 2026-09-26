@@ -18,7 +18,7 @@ You should declare a variable called `programValues`.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /const\s+programValues\s*=/
+  /(?:const|let)\s+programValues\s*=/
 );
 ```
 
@@ -27,7 +27,7 @@ assert.match(
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /const\s+programValues\s*=\s*Object\s*\.\s*values\s*\(\s*normalizedData\.programsById\s*\)/
+  /(?:const|let)\s+programValues\s*=\s*Object\s*\.\s*values\s*\(\s*normalizedData\.programsById\s*\)/
 );
 ```
 

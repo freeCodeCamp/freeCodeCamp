@@ -42,10 +42,12 @@ assert.notMatch(
 You should use a `return` statement to return an object.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /return\s*{/
-);
+const explorer = await __helpers.Explorer(code);
+const fn = explorer.functions.getInstructorByEmail;
+
+const fnSource = fn.toString();
+
+assert.match(fnSource, /return\s*{/);
 ```
 
 The object should have a `name` property set to `instructor.name ?? "Unknown Instructor"`.

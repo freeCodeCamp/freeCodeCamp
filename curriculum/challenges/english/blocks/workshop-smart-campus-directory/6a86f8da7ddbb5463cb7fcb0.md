@@ -7,25 +7,16 @@ dashedName: step-50
 
 # --description--
 
-Inside the loop, check if `programValues[i].room == null`. If `true`, increment `programsWithoutRooms` by 1.
+Inside the loop, check if `programValues[i].room === null`. If `true`, increment `programsWithoutRooms` by 1.
 
 # --hints--
 
-You should use an `if` statement.
+Your `if` statement should check `programValues[i].room === null`.
 
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /if\s*\(/
-);
-```
-
-Your `if` statement should check `programValues[i].room == null`.
-
-```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*==\s*null\s*\)/
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)/
 );
 ```
 
@@ -34,7 +25,7 @@ Inside the `if` block, you should increment `programsWithoutRooms`.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*==\s*null\s*\)\s*{\s*programsWithoutRooms\s*(\+\+|\+=\s*1)/
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)\s*{\s*programsWithoutRooms\s*(\+\+|\+=\s*1)/
 );
 ```
 
