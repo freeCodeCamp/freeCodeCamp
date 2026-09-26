@@ -1198,9 +1198,15 @@ importers:
 
   tools/scripts/seed:
     devDependencies:
+      '@freecodecamp/challenge-parser':
+        specifier: workspace:*
+        version: link:../../challenge-parser
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../../../packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../../../packages/shared
       debug:
         specifier: 4.4.3
         version: 4.4.3(supports-color@8.1.1)
@@ -1210,6 +1216,9 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.4(jiti@2.6.1)
+      js-yaml:
+        specifier: 3.14.2
+        version: 3.14.2
       lodash:
         specifier: 4.18.1
         version: 4.18.1
