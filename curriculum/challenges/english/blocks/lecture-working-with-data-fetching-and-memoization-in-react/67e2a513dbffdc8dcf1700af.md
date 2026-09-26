@@ -15,7 +15,11 @@ While this is often used for fetching data from a server, it's not limited to th
 
 Let's take a look at what the `useOptimistic` hook is and how it contributes to making snappy and responsive UIs. 
 
+## The `useOptimistic` Hook
+
 The `useOptimistic` hook helps manage "optimistic updates" in the UI, a strategy in which you provide immediate updates to the UI based on the expected outcome of an action, like waiting for a server response.
+
+### Basic Syntax
 
 Here's the basic syntax of the `useOptimistic` hook:
 
@@ -31,6 +35,8 @@ const [optimisticState, addOptimistic] = useOptimistic(actualState, updateFuncti
 
 - `updateFunction` is the function that determines how the optimistic state should update when called.
 
+## Optimistic Updates vs. Loading States
+
 At first glance, it might seem like the `useOptimistic` hook is just another way to handle loading states in React. But it's more than that.
 
 A loading state controls whether you see a spinner, message, or some other indicator in the UI while something happens in the background. 
@@ -38,6 +44,8 @@ A loading state controls whether you see a spinner, message, or some other indic
 However, the `useOptimistic` hook updates the UI instantaneously based on an expected outcome, even before you, say, make a call to an API. This hook gives you a chance to show a loading indicator or message, handle potential errors gracefully, and show instant feedback to make the UI feel snappy.
 
 This will become clearer as we go through some examples showing how the `useOptimistic` hook works.
+
+## Building an Example
 
 Here's an action that simulates saving a task to a server. It returns the task after a 1 second delay, as it could happen with a real-world API request:
 
@@ -48,6 +56,8 @@ export async function saveTask(task) {
   return task;
 }
 ```
+
+### Setting Up the Hook
 
 Here's the code that sets up the `useOptimistic` hook by importing and initializing it, with an `handleSubmit` function that sends an input to the action:
 
@@ -81,6 +91,8 @@ In the code, the `useOptimistic` hook keeps a temporary list of tasks that updat
 The line, `(state, newTask) => [...state, { text: newTask, pending: true }]` ensures that a new task appears with a pending status even before the server confirms something is coming from the form.
 
 When the form is submitted, the `handleSubmit` function extracts the task and adds it "optimistically" with the `addOptimisticTask` parameter. Then `addTask` is passed as a prop which sends the task to the server. Finally, the form is reset by calling `e.target.reset()`.
+
+### The `TaskList` Component
 
 Here's the `TaskList` component:
 
@@ -141,6 +153,8 @@ export default function TaskList({ tasks, addTask }) {
 
 Here, we are looping through the `optimisticTask` parameter to display the task. When `task.pending` is `true`, the text `Adding Task...` is displayed next to the task, confirming that the task has been added optimistically before the server confirms it.
 
+### The `Tasks` Component
+
 Here's the `Task` component that manages the state for the form. It calls the `saveTask` function from the action so it can add the task, and appends the new task once it is received by the server:
 
 ```jsx
@@ -165,6 +179,8 @@ export default function Tasks() {
 ```
 
 This ensures snappy UI updates by showing instant feedback instead of waiting for a response. Once the task is saved, the `pending` property is removed, and the final task list updates accordingly.
+
+## Fixing Common Issues
 
 In the UI, there are two things happening that are not supposed to happen. First, you can't see the `Adding Task...` text since it appears and disappears too quickly. Next, there's an error occurring after adding the task.
 
