@@ -3,7 +3,8 @@ import {
   examResults,
   profileUI,
   savedChallenge,
-  experience
+  experience,
+  activityStreak
 } from '../types.js';
 
 const languages = Type.Array(
@@ -66,6 +67,8 @@ export const getSessionUser = {
             })
           ),
           currentChallengeId: Type.String(),
+          resumeUrl: Type.Optional(Type.String()),
+          activityStreak: Type.Optional(activityStreak),
           email: Type.String(),
           emailVerified: Type.Boolean(),
           githubProfile: Type.Optional(Type.String()),
