@@ -107,6 +107,18 @@ jobs:
           submodules: 'recursive'
           persist-credentials: false
 
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
@@ -193,6 +205,18 @@ jobs:
           submodules: 'recursive'
           persist-credentials: false
 
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
@@ -245,6 +269,18 @@ jobs:
         with:
           submodules: 'recursive'
           persist-credentials: false
+
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -300,6 +336,18 @@ jobs:
         with:
           submodules: 'recursive'
           persist-credentials: false
+
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
