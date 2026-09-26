@@ -1,11 +1,12 @@
 import { ofType } from 'redux-observable';
-import { empty, merge } from 'rxjs';
+import { merge, from, EMPTY, timer } from 'rxjs';
 import {
   catchError,
+  concatMap,
+  exhaustMap,
   filter,
   ignoreElements,
   map,
-  switchMap,
   tap
 } from 'rxjs/operators';
 import store from 'store';
@@ -19,9 +20,27 @@ import { serverStatusChange } from './actions';
 import { isServerOnlineSelector, isSignedInSelector } from './selectors';
 
 const key = 'fcc-failed-updates';
+const UPDATE_DELAY = 100; // 100 ms delay to avoid spamming the server
 
-function delay(time = 0, fn) {
-  return setTimeout(fn, time);
+function getFailedUpdates() {
+  let failures = store.get(key);
+  failures = Array.isArray(failures) ? failures : [];
+
+  let submitableFailures = failures.filter(isSubmitable);
+
+  // delete unsubmittable failed challenges
+  store.set(key, submitableFailures);
+  return submitableFailures;
+}
+
+function handleUpdateResponse({ data, response }, update) {
+  if (data?.message || isGoodXHRStatus(response?.status)) {
+    console.info(`${update.id} succeeded`);
+    // the request completed successfully
+    const failures = store.get(key) || [];
+    const newFailures = failures.filter(x => x.id !== update.id);
+    store.set(key, newFailures);
+  }
 }
 
 // check if backendEndProjects have a solution
@@ -47,53 +66,30 @@ function failedUpdateEpic(action$, state$) {
     filter(() => isSignedInSelector(state$.value)),
     filter(() => store.get(key)),
     filter(() => isServerOnlineSelector(state$.value)),
-    tap(() => {
-      let failures = store.get(key);
-      failures = Array.isArray(failures) ? failures : [];
+    exhaustMap(() =>
+      from(getFailedUpdates()).pipe(
+        concatMap((update, i) => {
+          const wait = Math.min((UPDATE_DELAY * (i * (i + 1))) / 2, 2000);
 
-      let submitableFailures = failures.filter(isSubmitable);
-
-      // delete unsubmittable failed challenges
-      store.set(key, submitableFailures);
-      failures = submitableFailures;
-
-      let delayTime = 100;
-      const batch = failures.map((update, i) => {
-        // we stagger the updates here so we don't hammer the server
-        // *********************************************************
-        // progressively increase additional delay by the amount of updates
-        // 1st: 100ms delay
-        // 2nd: 200ms delay
-        // 3rd: 400ms delay
-        // 4th: 700ms delay
-        // 5th: 1100ms delay
-        // 6th: 1600ms delay
-        // and so-on
-        delayTime += 100 * i;
-        return delay(delayTime, () =>
-          postUpdate$(update)
-            .pipe(
-              switchMap(({ response, data }) => {
-                if (data?.message || isGoodXHRStatus(response?.status)) {
-                  console.info(`${update.id} succeeded`);
-                  // the request completed successfully
-                  const failures = store.get(key) || [];
-                  const newFailures = failures.filter(x => x.id !== update.id);
-                  store.set(key, newFailures);
-                }
-                return empty();
-              }),
-              catchError(() => empty())
+          return timer(wait).pipe(
+            concatMap(() =>
+              postUpdate$(update).pipe(
+                tap(payload => {
+                  handleUpdateResponse(payload, update);
+                }),
+                catchError(err => {
+                  console.warn(
+                    'unable to process progress update',
+                    err.message
+                  );
+                  return EMPTY;
+                })
+              )
             )
-            .toPromise()
-        );
-      });
-      Promise.all(batch)
-        .then(() => console.info('progress updates processed where possible'))
-        .catch(err =>
-          console.warn('unable to process progress updates', err.message)
-        );
-    }),
+          );
+        })
+      )
+    ),
     ignoreElements()
   );
 
