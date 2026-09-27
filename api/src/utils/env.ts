@@ -55,6 +55,10 @@ If so, ensure that the environment variable VITEST_WORKER_ID is set.`
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
 assert.ok(process.env.DEPLOYMENT_ENV);
+// Donations cannot be created without these, so fail at boot rather than at
+// the first donation.
+assert.ok(process.env.PAYPAL_CLIENT_ID);
+assert.ok(process.env.PAYPAL_CLIENT_SECRET);
 assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
@@ -266,6 +270,10 @@ export const SES_SMTP_HOST =
   process.env.SES_SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
+export const PAYPAL_API_URL =
+  process.env.PAYPAL_API_URL ?? 'https://api-m.paypal.com';
+export const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID;
+export const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET;
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
