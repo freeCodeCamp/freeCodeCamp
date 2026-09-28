@@ -400,6 +400,7 @@ const ShowGeneric = ({
 
         <GenericChallengeButtons
           hasQuestions={questions.length > 0}
+          superBlock={superBlock}
           onHelp={openHelpModal}
           onSubmit={handleSubmit}
         />

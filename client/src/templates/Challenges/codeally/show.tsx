@@ -351,7 +351,7 @@ function ShowCodeAlly({
                 </>
               )}
 
-              <ProjectToolPanel />
+              <ProjectToolPanel superBlock={superBlock} />
               <br />
               <Spacer size='m' />
             </Col>

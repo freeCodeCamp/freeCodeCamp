@@ -5,6 +5,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { Button, Spacer } from '@freecodecamp/ui';
 
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+
+import ChallengeHelp from '../../../components/challenge-help';
+
 import { openModal } from '../redux/actions';
 
 const mapStateToProps = () => ({});
@@ -19,12 +23,14 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 interface ToolPanelProps {
   guideUrl?: string;
+  superBlock: SuperBlocks;
   openHelpModal: () => void;
   t: TFunction;
 }
 
 function ToolPanel({
   guideUrl,
+  superBlock,
   openHelpModal,
   t
 }: ToolPanelProps): JSX.Element {
@@ -43,9 +49,7 @@ function ToolPanel({
           <Spacer size='xxs' />
         </>
       )}
-      <Button block={true} variant='primary' onClick={openHelpModal}>
-        {t('buttons.ask-for-help')}
-      </Button>
+      <ChallengeHelp superBlock={superBlock} onAskForHelp={openHelpModal} />
     </div>
   );
 }

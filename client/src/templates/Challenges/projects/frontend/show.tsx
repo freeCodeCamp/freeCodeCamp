@@ -169,6 +169,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
                 updateSolutionForm={updateSolutionFormValues}
               />
               <ProjectToolPanel
+                superBlock={superBlock}
                 guideUrl={getGuideUrl({
                   forumTopicId,
                   title,
