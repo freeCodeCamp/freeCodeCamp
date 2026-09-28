@@ -4,7 +4,8 @@ import {
   buildProjectMeta,
   getChallengeOrderTitle,
   getDefaultBlockLayout,
-  getProjectMetaType
+  getProjectMetaType,
+  titleToDashedName
 } from './project-type.js';
 
 describe('project type helpers', () => {
@@ -21,6 +22,15 @@ describe('project type helpers', () => {
       expect(getDefaultBlockLayout(blockLabel)).toBe(blockLayout);
     }
   );
+
+  it.each([
+    ['What Are IDs?', 'what-are-ids'],
+    ["What's New in HTML5?", 'whats-new-in-html5'],
+    ['ARIA & the DOM', 'aria-the-dom'],
+    ['  First Lecture  ', 'first-lecture']
+  ])('converts the title %s to a dashed name', (title, dashedName) => {
+    expect(titleToDashedName(title)).toBe(dashedName);
+  });
 
   it.each([
     [BlockLabel.workshop, 'Step 1'],
@@ -56,7 +66,7 @@ describe('project type helpers', () => {
     {
       blockLabel: BlockLabel.lecture,
       blockLayout: BlockLayouts.ChallengeList,
-      expectedTitle: 'Project title',
+      expectedTitle: 'First lecture title',
       expectedProperties: {}
     },
     {
@@ -74,6 +84,8 @@ describe('project type helpers', () => {
   ])(
     'builds metadata for $blockLabel blocks',
     ({ blockLabel, blockLayout, expectedTitle, expectedProperties }) => {
+      const challengeTitle =
+        blockLabel === BlockLabel.lecture ? 'First lecture title' : undefined;
       const meta = buildProjectMeta({
         isChapterBased: true,
         block: `${blockLabel}-project`,
@@ -81,7 +93,8 @@ describe('project type helpers', () => {
         helpCategory: 'JavaScript',
         challengeId: '507f1f77bcf86cd799439011',
         blockLabel,
-        blockLayout
+        blockLayout,
+        challengeTitle
       });
 
       expect(meta).toEqual({
