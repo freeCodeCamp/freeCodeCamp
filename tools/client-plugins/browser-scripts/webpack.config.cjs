@@ -51,7 +51,12 @@ module.exports = (env = {}) => {
     },
     plugins: [
       new webpack.ProvidePlugin({
-        process: 'process/browser'
+        process: 'process/browser.js'
+      }),
+      // Pyodide's Node-only imports are never used in a browser worker.
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^node:/,
+        contextRegExp: /[\\/]pyodide$/
       }),
       new webpack.ProvidePlugin({
         Buffer: ['buffer', 'Buffer']
