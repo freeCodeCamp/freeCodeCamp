@@ -18,6 +18,7 @@ import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum'
 import {
   createQuizFile,
   createLabFile,
+  createLectureFile,
   createReviewFile,
   createStepFile,
   validateBlockName,
@@ -139,6 +140,13 @@ async function createProject(projectArgs: CreateProjectArgs) {
             contentType: projectContentType
           });
       }
+      case BlockLabel.lecture:
+        return (challengeId: ObjectId) =>
+          createLectureChallenge({
+            challengeId,
+            block: projectArgs.block,
+            title
+          });
       case BlockLabel.review:
         return (challengeId: ObjectId) =>
           createReviewChallenge({
@@ -332,6 +340,23 @@ async function createReviewChallenge({
   title: string;
 }): Promise<ObjectId> {
   return createReviewFile({
+    challengeId,
+    projectPath: await createBlockFolder(block),
+    title,
+    dashedName: block
+  });
+}
+
+async function createLectureChallenge({
+  challengeId,
+  block,
+  title
+}: {
+  challengeId: ObjectId;
+  block: string;
+  title: string;
+}): Promise<ObjectId> {
+  return createLectureFile({
     challengeId,
     projectPath: await createBlockFolder(block),
     title,

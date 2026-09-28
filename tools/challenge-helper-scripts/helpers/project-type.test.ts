@@ -25,6 +25,7 @@ describe('project type helpers', () => {
   it.each([
     [BlockLabel.workshop, 'Step 1'],
     [BlockLabel.lab, 'Project title'],
+    [BlockLabel.lecture, 'Project title'],
     [BlockLabel.review, 'Project title'],
     [BlockLabel.quiz, 'Project title']
   ] as const)(
@@ -51,6 +52,12 @@ describe('project type helpers', () => {
       blockLayout: BlockLayouts.Link,
       expectedTitle: 'Project title',
       expectedProperties: { usesMultifileEditor: true }
+    },
+    {
+      blockLabel: BlockLabel.lecture,
+      blockLayout: BlockLayouts.ChallengeList,
+      expectedTitle: 'Project title',
+      expectedProperties: {}
     },
     {
       blockLabel: BlockLabel.review,

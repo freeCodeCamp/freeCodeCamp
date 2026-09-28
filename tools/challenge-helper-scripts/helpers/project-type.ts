@@ -48,6 +48,7 @@ export function getChallengeOrderTitle(
   title: string
 ): string {
   return blockLabel === BlockLabel.lab ||
+    blockLabel === BlockLabel.lecture ||
     blockLabel === BlockLabel.review ||
     blockLabel === BlockLabel.quiz
     ? title
