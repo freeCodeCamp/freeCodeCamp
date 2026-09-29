@@ -78,7 +78,10 @@ In addition, the `join()` method automatically fixes wrong slashes and removes e
 const wrongPath = path.join("/src//", "assets", "text-files");
 console.log(wrongPath); // /src/assets/text-files
 ```
+
+
 The `resolve()` method turns a sequence of path segments into an absolute path. It processes the segments from right to left until it constructs an absolute path. If it reaches the beginning without constructing an absolute path, it uses the current working directory:
+
 ```js
 const absolutePath = path.resolve("assets", "src", "text-files");
 console.log(absolutePath);
@@ -86,6 +89,7 @@ console.log(absolutePath);
 ```
 
 Unlike `join()`, which joins and normalizes path segments and can return either a relative or an absolute path, `resolve()` always returns an absolute path.
+
 Lastly, there are the `parse()` and `format()` methods.
 
 `parse()` takes a directory or file and returns an object that contains the breakdown of its parts, such as the system root, its directory, extension, and the filename:
