@@ -5063,7 +5063,7 @@
         "title": "Build a Campus Directory Normalizer",
         "intro": [
           "Build a Campus Directory Normalizer",
-          "In this workshop, you will normalise a nested data into some independent and easy to use lookup tables."
+          "In this workshop, you will normalize nested data into independent, easy-to-use lookup tables."
         ]
       },
       "lab-proofreading-tool": {

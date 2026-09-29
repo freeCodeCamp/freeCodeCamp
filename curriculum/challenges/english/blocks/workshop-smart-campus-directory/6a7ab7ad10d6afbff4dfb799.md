@@ -14,12 +14,12 @@ Log both results to confirm the function returns an object with the expected pro
 
 # --hints--
 
-You should call `getInstructorByEmail` with `"fatima@edu.com"` and `normalizedData` as arguments.
+You should call `getInstructorByEmail` with `"alejandro@edu.com"` and `normalizedData` as arguments.
 
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)/
+  /getInstructorByEmail\s*\(\s*["']alejandro@edu\.com["']\s*,\s*normalizedData\s*\)/
 );
 ```
 
@@ -28,7 +28,7 @@ You should call `console.log()` with the result of that call as the argument.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']fatima@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']alejandro@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/
 );
 ```
 
