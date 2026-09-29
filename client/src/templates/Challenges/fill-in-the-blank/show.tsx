@@ -13,6 +13,8 @@ import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 
 import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
+import ChallengeHelp from '../../../components/challenge-help';
+
 // Local Utilities
 import ShortcutsModal from '../components/shortcuts-modal';
 import MobileAppModal from '../components/mobile-app-modal';
@@ -345,9 +347,10 @@ const ShowFillInTheBlank = ({
                 {t('buttons.check-answer')}
               </Button>
               <Spacer size='xxs' />
-              <Button block={true} variant='primary' onClick={openHelpModal}>
-                {t('buttons.ask-for-help')}
-              </Button>
+              <ChallengeHelp
+                superBlock={superBlock}
+                onAskForHelp={openHelpModal}
+              />
               <Spacer size='l' />
             </Col>
             <CompletionModal />

@@ -1,15 +1,21 @@
-import React from 'react';
+﻿import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+
+import ChallengeHelp from '../../../components/challenge-help';
+
 interface TrophyButtonsProps {
   disabled: boolean;
+  superBlock: SuperBlocks;
   onAskForHelp: () => void;
   onVerifyTrophy: () => void;
 }
 
 function TrophyButtons({
   disabled,
+  superBlock,
   onAskForHelp,
   onVerifyTrophy
 }: TrophyButtonsProps): JSX.Element {
@@ -27,14 +33,11 @@ function TrophyButtons({
         {t('buttons.verify-trophy')}
       </Button>
       <Spacer size='xxs' />
-      <Button
-        block={true}
-        variant='primary'
-        data-playwright-test-label='ask-for-help-button'
-        onClick={onAskForHelp}
-      >
-        {t('buttons.ask-for-help')}
-      </Button>
+      <ChallengeHelp
+        superBlock={superBlock}
+        onAskForHelp={onAskForHelp}
+        dataPlaywrightTestLabel='ask-for-help-button'
+      />
     </>
   );
 }

@@ -1,6 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
+
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import GenericChallengeButtons from './challenge-buttons';
 
@@ -12,6 +14,7 @@ describe('GenericChallengeButtons', () => {
     render(
       <GenericChallengeButtons
         hasQuestions={true}
+        superBlock={SuperBlocks.RespWebDesignV9}
         onHelp={onHelp}
         onSubmit={onSubmit}
       />
@@ -32,6 +35,7 @@ describe('GenericChallengeButtons', () => {
     render(
       <GenericChallengeButtons
         hasQuestions={false}
+        superBlock={SuperBlocks.RespWebDesignV9}
         onHelp={vi.fn()}
         onSubmit={vi.fn()}
       />

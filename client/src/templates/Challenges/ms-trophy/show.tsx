@@ -186,6 +186,7 @@ function MsTrophy(props: MsTrophyProps) {
                 disabled={!msUsername || isProcessing}
                 onAskForHelp={openHelpModal}
                 onVerifyTrophy={handleSubmit}
+                superBlock={superBlock}
               />
               <br />
               <Spacer size='m' />

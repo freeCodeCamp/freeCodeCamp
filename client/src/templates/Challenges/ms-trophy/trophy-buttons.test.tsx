@@ -2,6 +2,8 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
 
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+
 import TrophyButtons from './trophy-buttons';
 
 describe('TrophyButtons', () => {
@@ -12,6 +14,7 @@ describe('TrophyButtons', () => {
     render(
       <TrophyButtons
         disabled={false}
+        superBlock={SuperBlocks.FoundationalCSharp}
         onAskForHelp={onAskForHelp}
         onVerifyTrophy={onVerifyTrophy}
       />
@@ -32,6 +35,7 @@ describe('TrophyButtons', () => {
     render(
       <TrophyButtons
         disabled={true}
+        superBlock={SuperBlocks.FoundationalCSharp}
         onAskForHelp={vi.fn()}
         onVerifyTrophy={vi.fn()}
       />
