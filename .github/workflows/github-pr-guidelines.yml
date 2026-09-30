@@ -4,6 +4,10 @@ on:
   pull_request_target:
     types: [opened, reopened, edited]
 
+concurrency:
+  group: pr-label-writes-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
+  cancel-in-progress: false
+
 jobs:
   # Ensures PR commits were not added via the GitHub Web UI, which typically indicates
   # the contributor hasn't tested their changes in a local development environment.
