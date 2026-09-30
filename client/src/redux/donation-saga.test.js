@@ -8,6 +8,7 @@ import {
   postChargeStripe,
   postChargeStripeCard,
   addDonation,
+  getSessionUser,
   updateStripeCard
 } from '../utils/ajax';
 import callGA from '../analytics/call-ga';
@@ -17,7 +18,9 @@ import {
   updateCardSaga
 } from './donation-saga.js';
 import {
+  fetchUserComplete,
   postChargeComplete,
+  postChargePending,
   postChargeProcessing,
   updateCardRedirecting,
   updateCardError
@@ -127,24 +130,108 @@ describe('donation-saga', () => {
       .run();
   });
 
-  it('calls addDonate for Paypal if user signed in', () => {
-    const paypalDataMock = {
-      payload: { ...postChargeDataMock.payload, paymentProvider: 'paypal' }
+  // The 3D Secure flow is the only one that reports a payment to the api, and
+  // post() resolves for 4xx, so a rejected donation has to be turned into an
+  // error rather than read as success.
+  const stripeCardAuthMock = addDonationResult => {
+    const payload = {
+      ...postChargeDataMock.payload,
+      paymentProvider: 'stripe card',
+      handleAuthentication: vi.fn().mockResolvedValue({
+        paymentIntent: { id: 'pi_test', status: 'succeeded' }
+      })
     };
+
+    postChargeStripeCard.mockResolvedValueOnce({
+      data: { error: { type: 'UserActionRequired', client_secret: 'secret' } },
+      paymentMethodId: '123456'
+    });
+    addDonation.mockResolvedValueOnce(addDonationResult);
+
+    return { payload };
+  };
+
+  it('completes when the api accepts a 3D Secure donation', () => {
+    const dataMock = stripeCardAuthMock({ response: { ok: true }, data: {} });
+
+    return expectSaga(postChargeSaga, dataMock)
+      .withState(signedInStoreMock)
+      .call.fn(addDonation)
+      .put(postChargeComplete())
+      .run();
+  });
+
+  it('errors when the api rejects a 3D Secure donation', () => {
+    const dataMock = stripeCardAuthMock({
+      response: { ok: false, status: 403 },
+      data: {}
+    });
+
+    return expectSaga(postChargeSaga, dataMock)
+      .withState(signedInStoreMock)
+      .call.fn(addDonation)
+      .not.put(postChargeComplete())
+      .run();
+  });
+
+  const paypalPayload = () => ({
+    payload: {
+      ...postChargeDataMock.payload,
+      paymentProvider: 'paypal',
+      data: { subscriptionID: 'paypal_subscription_id' }
+    }
+  });
+
+  // Donor status for PayPal is granted by the activation webhook, so the
+  // client reports nothing and only waits for the flag.
+  it('does not tell the api about a Paypal payment', () => {
+    getSessionUser.mockResolvedValue({
+      response: { ok: true },
+      data: { isDonating: true }
+    });
 
     const paypalAnalyticsDataMock = analyticsDataMock;
     paypalAnalyticsDataMock.action = 'Donate Page Paypal Payment Submission';
 
-    const { amount, duration } = paypalDataMock.payload;
-    return expectSaga(postChargeSaga, paypalDataMock)
+    return expectSaga(postChargeSaga, paypalPayload())
       .withState(signedInStoreMock)
       .put(postChargeProcessing())
-      .call(addDonation, { amount, duration })
+      .not.call.fn(addDonation)
       .put(postChargeComplete())
       .call(setDonationCookie)
       .call(callGA, paypalAnalyticsDataMock)
-      .run();
+      .run({ timeout: 3000 });
   });
+
+  // The activation webhook sets isDonating, so the poll has to put the
+  // refreshed user into the store or the flag only shows after a reload.
+  it('puts the user in the store once the donation activates', () => {
+    getSessionUser.mockResolvedValue({
+      response: { ok: true },
+      data: { isDonating: true }
+    });
+
+    return expectSaga(postChargeSaga, paypalPayload())
+      .withState(signedInStoreMock)
+      .put(fetchUserComplete({ user: { isDonating: true } }))
+      .run({ timeout: 3000 });
+  });
+
+  // Approval only means the donor authorised the subscription. Claiming
+  // success before the webhook confirms it would tell them they are a
+  // supporter when they may not be.
+  it('does not claim success while the donation is unconfirmed', () => {
+    getSessionUser.mockResolvedValue({
+      response: { ok: true },
+      data: { isDonating: false }
+    });
+
+    return expectSaga(postChargeSaga, paypalPayload())
+      .withState(signedInStoreMock)
+      .put(postChargePending())
+      .not.put(postChargeComplete())
+      .run({ timeout: 15000 });
+  }, 20000); // The poll runs its full course before giving up.
 
   it('does not call addDonate for Paypal if user not signed in', () => {
     const paypalDataMock = {

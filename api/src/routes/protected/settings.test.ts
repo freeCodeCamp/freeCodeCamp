@@ -1913,6 +1913,7 @@ Happy coding!
     const endpoints: { path: string; method: 'PUT' }[] = [
       { path: '/update-my-profileui', method: 'PUT' },
       { path: '/update-my-theme', method: 'PUT' },
+      { path: '/update-my-email', method: 'PUT' },
       { path: '/update-my-username', method: 'PUT' },
       { path: '/update-my-keyboard-shortcuts', method: 'PUT' },
       { path: '/update-my-socials', method: 'PUT' },
@@ -1921,7 +1922,9 @@ Happy coding!
       { path: '/update-my-honesty', method: 'PUT' },
       { path: '/update-privacy-terms', method: 'PUT' },
       { path: '/update-my-portfolio', method: 'PUT' },
-      { path: '/update-my-experience', method: 'PUT' }
+      { path: '/update-my-experience', method: 'PUT' },
+      { path: '/update-socrates', method: 'PUT' },
+      { path: '/update-my-classroom-mode', method: 'PUT' }
     ];
 
     endpoints.forEach(({ path, method }) => {

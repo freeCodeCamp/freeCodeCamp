@@ -178,8 +178,8 @@ describe('external curriculum data build', () => {
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
-          const isSuperBlock = superBlocks.some(superBlock =>
-            entry.basename.includes(superBlock)
+          const isSuperBlock = superBlocks.some(
+            superBlock => entry.basename === `${superBlock}.json`
           );
 
           return isSuperBlock;
@@ -213,13 +213,13 @@ describe('external curriculum data build', () => {
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
-          const isSuperBlock = superBlocks.some(superBlock =>
-            entry.basename.includes(superBlock)
+          const isSuperBlock = superBlocks.some(
+            superBlock => entry.basename === `${superBlock}.json`
           );
 
           const isChapterBasedSuperBlock = chapterBasedSuperBlocks.some(
             chapterBasedSuperBlock =>
-              entry.basename.includes(chapterBasedSuperBlock)
+              entry.basename === `${chapterBasedSuperBlock}.json`
           );
 
           return isSuperBlock && !isChapterBasedSuperBlock;
@@ -267,13 +267,13 @@ describe('external curriculum data build', () => {
         fileFilter: entry => {
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
-          const isSuperBlock = superBlocks.some(superBlock =>
-            entry.basename.includes(superBlock)
+          const isSuperBlock = superBlocks.some(
+            superBlock => entry.basename === `${superBlock}.json`
           );
 
           const isChapterBasedSuperBlock = chapterBasedSuperBlocks.some(
             chapterBasedSuperBlock =>
-              entry.basename.includes(chapterBasedSuperBlock)
+              entry.basename === `${chapterBasedSuperBlock}.json`
           );
 
           return isSuperBlock && isChapterBasedSuperBlock;
