@@ -1,7 +1,7 @@
 {
   "chapters": [
     {
-      "dashedName": "python",
+      "dashedName": "python-programming-fundamentals",
       "modules": [
         {
           "dashedName": "python-basics",
@@ -105,7 +105,7 @@
         },
         {
           "moduleType": "review",
-          "dashedName": "review-python",
+          "dashedName": "review-python-programming-fundamentals",
           "blocks": ["review-python"]
         }
       ]

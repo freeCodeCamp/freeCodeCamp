@@ -10414,7 +10414,7 @@
       "Complete the required projects and pass the exam to earn the Python Programming Fundamentals Certification."
     ],
     "chapters": {
-      "python": "Python Programming Fundamentals"
+      "python-programming-fundamentals": "Python Programming Fundamentals"
     },
     "modules": {
       "python-basics": "Python Basics",
@@ -10742,8 +10742,8 @@
           "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
         ]
       },
-      "review-python": {
-        "title": "Python Review",
+      "review-python-programming-fundamentals": {
+        "title": "Python Programming Fundamentals Review",
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
       }
     }
