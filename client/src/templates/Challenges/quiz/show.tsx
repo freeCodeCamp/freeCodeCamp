@@ -371,7 +371,7 @@ const ShowQuiz = ({
                 <Quiz questions={quizData} disabled={hasSubmitted} />
               </ObserveKeys>
               <Spacer size='m' />
-              <div aria-live='polite' aria-atomic='true'>
+              <div role='status' aria-live='assertive' aria-atomic='true'>
                 {errorMessage}
               </div>
               <Spacer size='m' />
@@ -401,7 +401,9 @@ const ShowQuiz = ({
             </Col>
           </Row>
         </Container>
-        <CompletionModal />
+        <CompletionModal
+          scoreMessage={validated ? errorMessage : undefined}
+        />
         <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
         <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
         <MobileAppModal superBlock={superBlock} />

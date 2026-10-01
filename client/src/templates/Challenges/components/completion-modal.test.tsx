@@ -156,6 +156,18 @@ describe('<CompletionModal />', () => {
       ).toBeInTheDocument();
     });
 
+    it('announces a quiz score to screen readers', () => {
+      renderCompletionModal({
+        scoreMessage: 'You have 19 out of 20 questions correct.'
+      });
+
+      expect(
+        screen.getByRole('status', {
+          name: 'You have 19 out of 20 questions correct.'
+        })
+      ).toHaveAttribute('aria-live', 'assertive');
+    });
+
     it('uses mobile button text when signed out on small screens', () => {
       Object.defineProperty(window, 'innerWidth', {
         configurable: true,

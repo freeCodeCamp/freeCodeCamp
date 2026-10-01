@@ -68,6 +68,7 @@ type StateProps = ReturnType<typeof mapStateToProps>;
 
 interface CompletionModalProps extends StateProps {
   close: () => void;
+  scoreMessage?: string;
   t: TFunction;
 }
 
@@ -85,6 +86,7 @@ export function CompletionModal({
   isSignedIn,
   isSubmitting,
   message,
+  scoreMessage,
   t
 }: CompletionModalProps): JSX.Element {
   const [downloadURL, setDownloadURL] = useState<string>();
@@ -163,6 +165,11 @@ export function CompletionModal({
     >
       <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
       <Modal.Body className='completion-modal-body'>
+        {scoreMessage ? (
+          <p role='status' aria-live='assertive'>
+            {scoreMessage}
+          </p>
+        ) : null}
         <GreenPass
           className='completion-success-icon'
           data-testid='fcc-completion-success-icon'
