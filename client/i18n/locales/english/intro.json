@@ -10427,7 +10427,7 @@
       "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
       "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
-      "review-python": "Python Review"
+      "review-python-programming-fundamentals": "Python Review"
     },
     "blocks": {
       "lecture-introduction-to-python": {
@@ -10742,7 +10742,7 @@
           "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
         ]
       },
-      "review-python-programming-fundamentals": {
+      "review-python": {
         "title": "Python Programming Fundamentals Review",
         "intro": ["Review Python concepts to prepare for the upcoming exam."]
       }
