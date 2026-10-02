@@ -535,6 +535,54 @@ run_case(
 `) })
 ```
 
+When the distance is between `1` mile (excluded) and `6` miles (included), a bike is available, and it is raining, the program should print `False`.
+
+```js
+({ test: () => runPython(`
+import ast, io, contextlib
+
+VARIABLES = {
+    "distance_mi",
+    "is_raining",
+    "has_bike",
+    "has_car",
+    "has_ride_share_app"
+}
+
+def run_case(env, expected):
+    tree = ast.parse(_code)
+
+    tree.body = [
+        node for node in tree.body
+        if not (
+            isinstance(node, ast.Assign)
+            and isinstance(node.targets[0], ast.Name)
+            and node.targets[0].id in VARIABLES
+        )
+    ]
+
+    clean_code = compile(tree, "<ast>", "exec")
+
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
+        exec(clean_code, env)
+
+    assert buffer.getvalue().strip() == expected
+
+
+run_case(
+    {
+        "distance_mi": 2,
+        "is_raining": True,
+        "has_bike": True,
+        "has_car": False,
+        "has_ride_share_app": False
+    },
+    "False"
+)
+`) })
+```
+
 When the distance is greater than `6` miles and a ride share app is available, the program should print `True`.
 
 ```js
@@ -574,6 +622,17 @@ run_case(
     {
         "distance_mi": 12,
         "is_raining": False,
+        "has_bike": False,
+        "has_car": False,
+        "has_ride_share_app": True
+    },
+    "True"
+)
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
         "has_bike": False,
         "has_car": False,
         "has_ride_share_app": True
@@ -628,6 +687,17 @@ run_case(
     },
     "True"
 )
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
+        "has_bike": False,
+        "has_car": True,
+        "has_ride_share_app": False
+    },
+    "True"
+)
 `) })
 ```
 
@@ -675,39 +745,6 @@ run_case(
         "has_ride_share_app": False
     },
     "False"
-)
-
-run_case(
-    {
-        "distance_mi": 2,
-        "is_raining": True,
-        "has_bike": True,
-        "has_car": False,
-        "has_ride_share_app": False
-    },
-    "False"
-)
-
-run_case(
-    {
-        "distance_mi": 12,
-        "is_raining": True,
-        "has_bike": False,
-        "has_car": True,
-        "has_ride_share_app": False
-    },
-    "True"
-)
-
-run_case(
-    {
-        "distance_mi": 12,
-        "is_raining": True,
-        "has_bike": False,
-        "has_car": False,
-        "has_ride_share_app": True
-    },
-    "True"
 )
 `) })
 ```
