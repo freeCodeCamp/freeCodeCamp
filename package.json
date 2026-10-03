@@ -84,6 +84,7 @@
     "@testing-library/jest-dom": "6.9.1",
     "@types/lodash": "4.17.24",
     "@types/node": "^24.10.8",
+    "cross-env": "^10.1.0",
     "debug": "4.4.3",
     "globals": "^15.14.0",
     "husky": "9.1.7",

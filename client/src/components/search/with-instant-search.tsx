@@ -41,11 +41,28 @@ const mockSearchClient = {
   // TODO: mock this in the tests.
 } as unknown as SearchClient;
 
-// If a key is missing, searches will fail, but the client will still render.
-const searchClient =
+const baseSearchClient =
   algoliaAppId && algoliaAPIKey
     ? algoliasearch(algoliaAppId, algoliaAPIKey)
     : mockSearchClient;
+
+const searchClient = {
+  ...baseSearchClient,
+  search(requests: Array<{ indexName: string; params: SearchOptions }>) {
+    return baseSearchClient.search(requests).catch((err: any) => {
+      if (err.name === 'ApiError' || err.status === 403) {
+        return {
+          results: requests.map(() => ({
+            hits: [],
+            nbHits: 0,
+            processingTimeMS: 0
+          }))
+        };
+      }
+      throw err;
+    });
+  }
+} as unknown as SearchClient;
 
 const mapStateToProps = createSelector(
   searchQuerySelector,
