@@ -93,7 +93,7 @@ export const scrollManager = new ScrollManager();
 export const mainPreviewId = 'fcc-main-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
-const previewSandboxTokens = ['allow-scripts', 'allow-forms'] as const;
+const previewSandboxTokens = ['allow-scripts', 'allow-forms', 'allow-same-origin'] as const;
 export const previewSandbox = previewSandboxTokens.join(' ');
 
 const ASSET_PATH = `${pathPrefix}/js/test-runner/${helperVersion}/`;
