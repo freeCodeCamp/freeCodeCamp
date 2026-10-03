@@ -74,6 +74,12 @@ describe('<Footer />', () => {
     });
     const trendingLinks = within(trendingList).getAllByRole('link');
     expect(trendingLinks).toHaveLength(30);
+
+    // Let each link's language determine its direction in RTL locales
+    // since trending links can be in different languages.
+    trendingLinks.forEach(link => {
+      expect(link).toHaveAttribute('dir', 'auto');
+    });
     expect(trendingLinks[0]).toHaveAttribute('href', 'trending:article0link');
     expect(trendingLinks[29]).toHaveAttribute('href', 'trending:article29link');
   });

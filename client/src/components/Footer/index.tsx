@@ -36,152 +36,232 @@ function Footer(): JSX.Element {
             className='trending-guides-articles'
           >
             <li>
-              <Link external={false} to={t('trending:article0link')}>
+              <Link dir='auto' external={false} to={t('trending:article0link')}>
                 {t('trending:article0title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article1link')}>
+              <Link dir='auto' external={false} to={t('trending:article1link')}>
                 {t('trending:article1title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article2link')}>
+              <Link dir='auto' external={false} to={t('trending:article2link')}>
                 {t('trending:article2title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article3link')}>
+              <Link dir='auto' external={false} to={t('trending:article3link')}>
                 {t('trending:article3title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article4link')}>
+              <Link dir='auto' external={false} to={t('trending:article4link')}>
                 {t('trending:article4title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article5link')}>
+              <Link dir='auto' external={false} to={t('trending:article5link')}>
                 {t('trending:article5title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article6link')}>
+              <Link dir='auto' external={false} to={t('trending:article6link')}>
                 {t('trending:article6title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article7link')}>
+              <Link dir='auto' external={false} to={t('trending:article7link')}>
                 {t('trending:article7title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article8link')}>
+              <Link dir='auto' external={false} to={t('trending:article8link')}>
                 {t('trending:article8title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article9link')}>
+              <Link dir='auto' external={false} to={t('trending:article9link')}>
                 {t('trending:article9title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article10link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article10link')}
+              >
                 {t('trending:article10title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article11link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article11link')}
+              >
                 {t('trending:article11title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article12link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article12link')}
+              >
                 {t('trending:article12title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article13link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article13link')}
+              >
                 {t('trending:article13title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article14link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article14link')}
+              >
                 {t('trending:article14title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article15link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article15link')}
+              >
                 {t('trending:article15title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article16link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article16link')}
+              >
                 {t('trending:article16title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article17link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article17link')}
+              >
                 {t('trending:article17title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article18link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article18link')}
+              >
                 {t('trending:article18title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article19link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article19link')}
+              >
                 {t('trending:article19title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article20link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article20link')}
+              >
                 {t('trending:article20title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article21link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article21link')}
+              >
                 {t('trending:article21title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article22link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article22link')}
+              >
                 {t('trending:article22title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article23link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article23link')}
+              >
                 {t('trending:article23title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article24link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article24link')}
+              >
                 {t('trending:article24title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article25link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article25link')}
+              >
                 {t('trending:article25title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article26link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article26link')}
+              >
                 {t('trending:article26title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article27link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article27link')}
+              >
                 {t('trending:article27title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article28link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article28link')}
+              >
                 {t('trending:article28title')}
               </Link>
             </li>
             <li>
-              <Link external={false} to={t('trending:article29link')}>
+              <Link
+                dir='auto'
+                external={false}
+                to={t('trending:article29link')}
+              >
                 {t('trending:article29title')}
               </Link>
             </li>
