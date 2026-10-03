@@ -41,7 +41,6 @@ type Challenge = {
   id: string;
   module: string;
   order: number;
-  superBlock: SuperBlocks;
   title: string;
 };
 
