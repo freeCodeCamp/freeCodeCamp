@@ -208,9 +208,9 @@ function getInstructorByEmail(email, normalizedData) {
 
   const instructor = normalizedData.instructorsById[instructorId];
   const department = normalizedData.departmentsById[instructor.departmentId];
-  console.log(department);
 
 --fcc-editable-region--
+  console.log(department);
   return null;
 --fcc-editable-region--
 }
