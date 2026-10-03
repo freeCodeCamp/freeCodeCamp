@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { escape, isEmpty } from 'lodash-es';
+import { isEmpty } from 'lodash-es';
 import { channel } from 'redux-saga';
 import {
   call,
@@ -52,6 +52,7 @@ import {
   openModal,
   setProjectPreviewLoading,
   updateConsole,
+  updateConsoleMarkup,
   updateLogs,
   updateTests
 } from './actions';
@@ -173,10 +174,8 @@ export function* executeChallengeSaga({ payload }) {
 }
 
 function* takeEveryConsole(channel) {
-  // TODO: move all stringifying and escaping into the reducer so there is a
-  // single place responsible for formatting the console output.
   yield takeEvery(channel, function* (args) {
-    yield put(updateConsole(escape(args)));
+    yield put(updateConsole(args));
   });
 }
 
@@ -285,7 +284,7 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
       }
 
       const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
-      yield put(updateConsole(withIndex));
+      yield put(updateConsoleMarkup(withIndex));
     } finally {
       testResults.push(newTest);
     }
@@ -383,7 +382,7 @@ function* previewChallengeSaga() {
     // If the preview fails, the most useful thing to do is to show the learner
     // what the error is. As such, we replace whatever is in the console with
     // the error message.
-    yield put(initConsole(escape(err)));
+    yield put(initConsole(err));
   }
 }
 
