@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>freecodecamp/renovate-config"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Track the package managers pinned by a `# renovate:` comment in Dockerfiles and workflows.",
+      "managerFilePatterns": [
+        "**/Dockerfile",
+        ".github/workflows/*.yml",
+        ".github/workflows/*.yaml"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)[^\\n]*\\s+(?:RUN|run:)\\s+npm (?:i|install) -g \\S+@(?<currentValue>[^\\s\"']+)"
+      ]
+    }
+  ],
   "packageRules": [
     {
       "description": "Keep typebox on a weekly cadence to avoid noisy daily PRs.",
