@@ -79,7 +79,7 @@ const wrongPath = path.join("/src//", "assets", "text-files");
 console.log(wrongPath); // /src/assets/text-files
 ```
 
-The `resolve()` method turns a sequence of path segments into an absolute path. It starts from your current working directory and results in a full path that points to the exact location on the device:
+The `resolve()` method turns a sequence of path segments into an absolute path. It processes the segments from right to left until it constructs an absolute path. If it reaches the beginning without constructing an absolute path, it uses the current working directory:
 
 ```js
 const absolutePath = path.resolve("assets", "src", "text-files");
@@ -87,7 +87,7 @@ console.log(absolutePath);
 // /Users/user/Desktop/fCC/script-code/node/node-path/assets/src/text-files
 ```
 
-The difference between `join()` and `resolve()` is that `join()` creates a relative path, while `resolve()` returns an absolute path.
+Unlike `join()`, which joins and normalizes path segments and can return either a relative or an absolute path, `resolve()` always returns an absolute path.
 
 Lastly, there are the `parse()` and `format()` methods.
 
