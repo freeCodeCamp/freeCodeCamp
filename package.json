@@ -59,6 +59,7 @@
     "seed:daily-challenges": "cd tools/daily-challenges && pnpm seed-daily-challenges",
     "seed:exams": "DEBUG=fcc:* node tools/scripts/seed-exams/create-exams",
     "seed:env-exam": "cd api && pnpm run seed:env-exam",
+    "preseed:surveys": "turbo -F=@freecodecamp/scripts-seed setup",
     "seed:surveys": "DEBUG=fcc:* node ./tools/scripts/seed/seed-surveys",
     "seed:ms-username": "DEBUG=fcc:* node ./tools/scripts/seed/seed-ms-username",
     "serve:client": "cd ./client && pnpm run serve",
