@@ -61,7 +61,8 @@ async function deleteAccount(request: APIRequestContext) {
     headers: { 'csrf-token': csrfToken }
   });
 
-  if (response.status() !== 200) {
+  // Cleanup returns 401 when the test has already deleted its account.
+  if (response.status() !== 200 && response.status() !== 401) {
     const body = await response.text();
     throw new Error(
       `Could not clean up the isolated user: /account/delete returned ${response.status()}: ${body}`
