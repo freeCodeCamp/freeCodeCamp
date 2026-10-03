@@ -23,6 +23,10 @@ export const setIsRandomCompletionThreshold = createAction(
 export const updateDonationFormState = createAction(
   actionTypes.updateDonationFormState
 );
+export const updateResumeUrl = createAction(actionTypes.updateResumeUrl);
+export const updateActivityStreak = createAction(
+  actionTypes.updateActivityStreak
+);
 
 export const onlineStatusChange = createAction(actionTypes.onlineStatusChange);
 export const serverStatusChange = createAction(actionTypes.serverStatusChange);

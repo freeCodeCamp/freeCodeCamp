@@ -9,6 +9,7 @@ import { examInProgressSelector } from '../../redux/selectors';
 
 import UniversalNav from './components/universal-nav';
 import ExamNav from './components/exam-nav';
+import type { ActivityStreak } from '../../redux/prop-types';
 
 import './header.css';
 
@@ -30,6 +31,7 @@ type Props = PropsFromRedux & {
     username: string;
     picture: string;
     yearsTopContributor: string[];
+    activityStreak?: ActivityStreak;
   };
   skipButtonText: string;
   pathname: string;
