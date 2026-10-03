@@ -150,9 +150,9 @@ const ShowGeneric = ({
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  const blockNameTitle =
+    blockTitle === title ? title : `${blockTitle} - ${title}`;
 
   useEffect(() => {
     initTests(tests);
