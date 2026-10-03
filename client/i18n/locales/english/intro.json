@@ -10430,7 +10430,7 @@
       "review-python-programming-fundamentals": "Python Review"
     },
     "blocks": {
-      "build-your-first-python-program": {
+      "workshop-first-python-program": {
         "title": "Build Your First Python Program",
         "intro": [
           "For this workshop, you'll build your first program in Python."

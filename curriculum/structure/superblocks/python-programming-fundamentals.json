@@ -6,7 +6,7 @@
         {
           "dashedName": "python-basics",
           "blocks": [
-            "build-your-first-python-program",
+            "workshop-first-python-program",
             "lecture-introduction-to-python",
             "lecture-understanding-variables-and-data-types",
             "workshop-report-card-printer",
