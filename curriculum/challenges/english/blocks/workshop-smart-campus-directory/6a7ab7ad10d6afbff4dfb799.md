@@ -7,19 +7,19 @@ dashedName: step-34
 
 # --description--
 
-Test your function with two calls to `getInstructorByEmail`: one using an email `"alejandro@edu.com"` and `normalizedData`, 
-then another using an email `"not_found@edu.com"` and `normalizedData`.  
+Test your function with two calls to `getInstructorByEmail`: one using an email `"alejandro@example.com"` and `normalizedData`, 
+then another using an email `"not_found@example.com"` and `normalizedData`.  
 
 Log both results to confirm the function returns an object with the expected properties for a known email and `Instructor not found` for an unknown one.
 
 # --hints--
 
-You should call `getInstructorByEmail` with `"alejandro@edu.com"` and `normalizedData` as arguments.
+You should call `getInstructorByEmail` with `"alejandro@example.com"` and `normalizedData` as arguments.
 
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /getInstructorByEmail\s*\(\s*["']alejandro@edu\.com["']\s*,\s*normalizedData\s*\)/
+  /getInstructorByEmail\s*\(\s*["']alejandro@example\.com["']\s*,\s*normalizedData\s*\)/
 );
 ```
 
@@ -28,16 +28,16 @@ You should call `console.log()` with the result of that call as the argument.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']alejandro@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']alejandro@example\.com["']\s*,\s*normalizedData\s*\)\s*\)/
 );
 ```
 
-You should call `getInstructorByEmail` with `"not_found@edu.com"` and `normalizedData` as arguments.
+You should call `getInstructorByEmail` with `"not_found@example.com"` and `normalizedData` as arguments.
 
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)/
+  /getInstructorByEmail\s*\(\s*["']not_found@example\.com["']\s*,\s*normalizedData\s*\)/
 );
 ```
 
@@ -46,7 +46,7 @@ You should call `console.log()` with the result of that call as the argument.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']not_found@edu\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']not_found@example\.com["']\s*,\s*normalizedData\s*\)\s*\)/
 );
 ```
 
@@ -64,7 +64,7 @@ const rawData = {
         name: "Database Management System",
         room: "405",
         instructors: [
-          { id: "INS001", name: "Alejandro", email: "alejandro@edu.com", officeHours: "Sun-Tue 10AM-12PM" },
+          { id: "INS001", name: "Alejandro", email: "alejandro@example.com", officeHours: "Sun-Tue 10AM-12PM" },
           { id: "INS002", name: "Kenji", officeHours: null },
         ],
       },
@@ -73,7 +73,7 @@ const rawData = {
         name: "Data Structures",
         room: null,
         instructors: [
-          { id: "INS003", name: "Fatima", email: "fatima@edu.com", officeHours: "Mon-Wed 10AM-2PM" },
+          { id: "INS003", name: "Fatima", email: "fatima@example.com", officeHours: "Mon-Wed 10AM-2PM" },
         ],
       },
       {
@@ -81,7 +81,7 @@ const rawData = {
         name: "Operating Systems",
         room: "401",
         instructors: [
-          { id: "INS005", name: "Wei", email: "wei@edu.com", officeHours: "Thu 1PM-3PM" },
+          { id: "INS005", name: "Wei", email: "wei@example.com", officeHours: "Thu 1PM-3PM" },
         ],
       },
     ],
@@ -93,14 +93,14 @@ const rawData = {
         id: "BBA101",
         name: "Financial Accounting",
         room: "201",
-        instructors: [{ id: "INS004", name: "Sofia", email: "sofia@edu.com" }],
+        instructors: [{ id: "INS004", name: "Sofia", email: "sofia@example.com" }],
       },
       {
         id: "BBA102",
         name: "Marketing Management",
         room: "204",
         instructors: [
-          { id: "INS006", name: "Robin", email: "robin@edu.com", officeHours: "Tue-Thu 9AM-11AM" },
+          { id: "INS006", name: "Robin", email: "robin@example.com", officeHours: "Tue-Thu 9AM-11AM" },
         ],
       },
       {
@@ -108,7 +108,7 @@ const rawData = {
         name: "Business Law",
         room: "203",
         instructors: [
-          { id: "INS007", name: "Priya", email: "priya@edu.com", officeHours: "Mon 2PM-4PM" },
+          { id: "INS007", name: "Priya", email: "priya@example.com", officeHours: "Mon 2PM-4PM" },
         ],
       },
     ],
@@ -190,7 +190,7 @@ function getInstructorByEmail(email, normalizedData) {
   };
 }
 
-console.log( getInstructorByEmail("fatima@edu.com", normalizedData));
+console.log( getInstructorByEmail("fatima@example.com", normalizedData));
 --fcc-editable-region--
 
 --fcc-editable-region--
