@@ -61,15 +61,23 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 10px;
   background-color: var(--background-secondary);
   border: var(--background-quaternary) 1px solid;
   padding: 12px;
+}
+
+.independent-lower-jaw .action-row-left {
+  flex: 1;
+  max-width: max-content;
 }
 
 .action-row-right {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-left: auto;
 }
 
 .independent-lower-jaw .hint-container button {
@@ -80,7 +88,8 @@
   border: 1px solid var(--quaternary-color);
 }
 
-.independent-lower-jaw .action-row-right button {
+.independent-lower-jaw .action-row-right button,
+.independent-lower-jaw .action-row-right .solution-download {
   height: 40px;
   width: 40px;
   display: flex;
@@ -88,6 +97,10 @@
   align-items: center;
   border: none;
   margin-left: 10px;
+}
+
+.independent-lower-jaw .solution-download {
+  padding: 0;
 }
 
 .independent-lower-jaw .tooltip {
@@ -148,6 +161,11 @@
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease 1s;
+}
+
+.independent-lower-jaw .solution-download:focus-visible .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* .independent-lower-jaw  */
