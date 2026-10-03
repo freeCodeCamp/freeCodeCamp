@@ -1,10 +1,17 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useFeature } from '@growthbook/growthbook-react';
 import store from 'store';
 import { useTranslation } from 'react-i18next';
 
 import './sound.css';
 import { Spacer } from '@freecodecamp/ui';
 import { playTone } from '../../utils/tone';
+import {
+  AMBIENT_SOUND_TOGGLE_EVENT,
+  SOUND_VOLUME_EVENT,
+  isCampfireAmbienceReady,
+  prepareCampfireAmbience
+} from '../../utils/tone/ambient';
 import ToggleButtonSetting from './toggle-button-setting';
 
 type SoundProps = {
@@ -17,15 +24,55 @@ export default function SoundSettings({
   toggleSoundMode
 }: SoundProps): JSX.Element {
   const { t } = useTranslation();
+  const ambientSoundFeature = useFeature('ambient-sound');
+  const ambientAudioUrl =
+    typeof ambientSoundFeature.value === 'string'
+      ? ambientSoundFeature.value.trim()
+      : '';
+  // Without a usable audio url there is nothing the toggle could play, so no
+  // control is offered at all.
+  const isAmbientSoundAvailable = ambientSoundFeature.on && !!ambientAudioUrl;
+  const [isAmbientSoundReady, setIsAmbientSoundReady] = useState(
+    isCampfireAmbienceReady
+  );
+  // Counts preparation attempts so that retrying re-runs the effect below.
+  const [prepareAttempt, setPrepareAttempt] = useState(0);
+  const [hasPrepareFailed, setHasPrepareFailed] = useState(false);
+  const [ambientSound, setAmbientSound] = useState(
+    Boolean(store.get('fcc-ambient-sound'))
+  );
   const [volumeDisplay, setVolumeDisplay] = useState(
     (store.get('soundVolume') as number) ?? 50
   );
   const [mayPlay, setMayPlay] = useState(true);
 
+  useEffect(() => {
+    if (!isAmbientSoundAvailable || isAmbientSoundReady) return;
+
+    let isCurrent = true;
+    void prepareCampfireAmbience().then(isReady => {
+      if (!isCurrent) return;
+      setIsAmbientSoundReady(isReady);
+      setHasPrepareFailed(!isReady);
+    });
+
+    return () => {
+      isCurrent = false;
+    };
+  }, [isAmbientSoundAvailable, isAmbientSoundReady, prepareAttempt]);
+
+  function handleAmbientSoundRetry() {
+    setHasPrepareFailed(false);
+    setPrepareAttempt(attempt => attempt + 1);
+  }
+
   function handleVolumeChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = Number(event.target.value);
 
     store.set('soundVolume', inputValue);
+    window.dispatchEvent(
+      new CustomEvent<number>(SOUND_VOLUME_EVENT, { detail: inputValue })
+    );
 
     setVolumeDisplay((store.get('soundVolume') as number) ?? 50);
 
@@ -36,6 +83,17 @@ export default function SoundSettings({
         setMayPlay(true);
       }, 200);
     }
+  }
+
+  function handleAmbientSoundToggle() {
+    const nextAmbientSound = !ambientSound;
+    store.set('fcc-ambient-sound', nextAmbientSound);
+    setAmbientSound(nextAmbientSound);
+    window.dispatchEvent(
+      new CustomEvent<boolean>(AMBIENT_SOUND_TOGGLE_EVENT, {
+        detail: nextAmbientSound
+      })
+    );
   }
 
   return (
@@ -51,6 +109,30 @@ export default function SoundSettings({
           toggleSoundMode(sound ? false : true);
         }}
       />
+      {isAmbientSoundAvailable &&
+        (isAmbientSoundReady ? (
+          <ToggleButtonSetting
+            action={t('settings.labels.ambient-sound-mode')}
+            explain={t('settings.ambient-sound-mode')}
+            flag={ambientSound}
+            flagName='ambientSound'
+            offLabel={t('buttons.off')}
+            onLabel={t('buttons.on')}
+            toggleFlag={handleAmbientSoundToggle}
+          />
+        ) : hasPrepareFailed ? (
+          // A failed load must not leave the setting stuck on "preparing".
+          <div role='alert'>
+            <p>{t('settings.ambient-sound-unavailable')}</p>
+            <button type='button' onClick={handleAmbientSoundRetry}>
+              {t('buttons.try-again')}
+            </button>
+          </div>
+        ) : (
+          // Showing a working-looking toggle before the audio module is ready
+          // would swallow the click that is meant to start the ambience.
+          <p role='status'>{t('settings.ambient-sound-preparing')}</p>
+        ))}
       <label htmlFor='volumeslider'>
         {t('settings.sound-volume')}{' '}
         <span aria-hidden='true'>{volumeDisplay}</span>
