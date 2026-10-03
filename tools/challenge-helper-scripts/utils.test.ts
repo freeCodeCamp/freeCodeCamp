@@ -4,6 +4,7 @@ import path, { join } from 'path';
 import matter from 'gray-matter';
 import { ObjectId } from 'bson';
 import { vi, describe, it, expect, afterEach } from 'vitest';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 vi.mock('fs', () => {
   return {
@@ -43,6 +44,8 @@ vi.mock('./helpers/project-metadata', () => {
 import { getStepTemplate } from './helpers/get-step-template.js';
 import {
   createChallengeFile,
+  createLabFile,
+  createReviewFile,
   createStepFile,
   insertStepIntoMeta,
   updateStepTitles,
@@ -114,6 +117,42 @@ describe('Challenge utils helper scripts', () => {
     it('should not allow names that already exist', () => {
       expect(validateBlockName('name', ['name'])).toBe(
         'a block with this name already exists'
+      );
+    });
+  });
+
+  describe('single-challenge project files', () => {
+    it('creates a lab file with the selected lab challenge type', () => {
+      const challengeId = new ObjectId();
+
+      createLabFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'JavaScript Lab',
+        dashedName: 'javascript-lab',
+        challengeType: challengeTypes.jsLab,
+        contentType: 'javascript'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.stringContaining(`challengeType: ${challengeTypes.jsLab}`)
+      );
+    });
+
+    it('creates a review file with the review challenge type', () => {
+      const challengeId = new ObjectId();
+
+      createReviewFile({
+        challengeId,
+        projectPath: `${projectPath}/`,
+        title: 'JavaScript Review',
+        dashedName: 'javascript-review'
+      });
+
+      expect(fs.writeFileSync).toHaveBeenCalledWith(
+        `${projectPath}/${challengeId.toString()}.md`,
+        expect.stringContaining(`challengeType: ${challengeTypes.review}`)
       );
     });
   });

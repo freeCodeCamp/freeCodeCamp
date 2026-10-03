@@ -52,7 +52,7 @@ RUN npm i -g pnpm@10
 # consistency.
 RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --prod --ignore-scripts -F=api -F=packages/shared --frozen-lockfile
-RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
+RUN cd api && pnpm dlx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 FROM node:24-bookworm
 USER node

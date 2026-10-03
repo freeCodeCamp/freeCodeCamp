@@ -1,0 +1,13 @@
+{
+  "isUpcomingChange": false,
+  "dashedName": "quiz-rest-api-and-web-services",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "6a980e80b99b61fdfcd29dbc",
+      "title": "REST API and Web Services Quiz"
+    }
+  ]
+}

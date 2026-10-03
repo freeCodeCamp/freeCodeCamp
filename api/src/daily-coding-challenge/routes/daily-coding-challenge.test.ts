@@ -277,32 +277,6 @@ describe('/daily-coding-challenge', () => {
       fastifyTestInstance.Sentry = originalSentry;
     });
 
-    it("should not return a day's challenge if it hasn't been released even once yet (temporary, until the original run finishes on 2026-08-10)", async () => {
-      const res = await superRequest('/daily-coding-challenge/day/10-03', {
-        method: 'GET'
-      }).send({});
-
-      expect(res.status).toBe(404);
-      expect(res.body).toEqual({
-        type: 'error',
-        message: 'Challenge not found.'
-      });
-    });
-
-    it('should return a day once real time has passed the entire original run, even for days that were never released relative to the mocked "today" above', async () => {
-      vi.setSystemTime(addDays(todayUsCentral, 365));
-
-      const res = await superRequest('/daily-coding-challenge/day/10-03', {
-        method: 'GET'
-      }).send({});
-
-      expect(res.status).toBe(200);
-      expect(res.body).toMatchObject({
-        ...tomorrowsChallenge,
-        date: tomorrowsChallenge.date.toISOString()
-      });
-    });
-
     it('should map a Feb 29 day request to the Feb 28 challenge', async () => {
       await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
 

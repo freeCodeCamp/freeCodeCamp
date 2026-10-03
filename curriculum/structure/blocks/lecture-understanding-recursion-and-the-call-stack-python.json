@@ -1,0 +1,13 @@
+{
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-recursion-and-the-call-stack-python",
+  "challengeOrder": [
+    {
+      "id": "6a89c69c2abed81397a6c99e",
+      "title": "What Is Recursion, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}

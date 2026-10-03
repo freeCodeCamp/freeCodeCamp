@@ -38,6 +38,8 @@ export enum SuperBlocks {
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
+  PythonProgrammingFundamentals = 'python-programming-fundamentals',
+  AlgorithmsAndDataStructure = 'algorithms-and-data-structure',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
@@ -222,7 +224,9 @@ export const superBlockStages: StageMap = {
     SuperBlocks.FullStackOpen,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.PythonProgrammingFundamentals,
+    SuperBlocks.AlgorithmsAndDataStructure
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -315,8 +319,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.German]: [],
   [Languages.Swahili]: [],
   [Languages.Korean]: [],
-  // Arabic is new, so nothing is audited yet
-  [Languages.Arabic]: generateSuperBlockList({ showUpcomingChanges: true })
+  [Languages.Arabic]: []
 };
 
 Object.freeze(notAuditedSuperBlocks);
@@ -328,6 +331,8 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.JsV9,
   SuperBlocks.FrontEndDevLibsV9,
   SuperBlocks.PythonV9,
+  SuperBlocks.PythonProgrammingFundamentals,
+  SuperBlocks.AlgorithmsAndDataStructure,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
   SuperBlocks.FullStackDeveloperV9,

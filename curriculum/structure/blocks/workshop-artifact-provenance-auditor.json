@@ -1,0 +1,31 @@
+{
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-artifact-provenance-auditor",
+  "challengeOrder": [
+    { "id": "6a57c265abbc95dfebc05098", "title": "Step 1" },
+    { "id": "6a57c331ae94fa4631b60861", "title": "Step 2" },
+    { "id": "6a57c331ae94fa4631b60862", "title": "Step 3" },
+    { "id": "6a57c331ae94fa4631b60863", "title": "Step 4" },
+    { "id": "6a57c331ae94fa4631b60864", "title": "Step 5" },
+    { "id": "6a57c331ae94fa4631b60865", "title": "Step 6" },
+    { "id": "6a57c331ae94fa4631b60866", "title": "Step 7" },
+    { "id": "6a57c331ae94fa4631b60867", "title": "Step 8" },
+    { "id": "6a57c331ae94fa4631b60868", "title": "Step 9" },
+    { "id": "6a57c331ae94fa4631b60869", "title": "Step 10" },
+    { "id": "6a57c331ae94fa4631b6086a", "title": "Step 11" },
+    { "id": "6a57c331ae94fa4631b6086b", "title": "Step 12" },
+    { "id": "6a57c331ae94fa4631b6086c", "title": "Step 13" },
+    { "id": "6a57c331ae94fa4631b6086d", "title": "Step 14" },
+    { "id": "6a57c331ae94fa4631b6086e", "title": "Step 15" },
+    { "id": "6a57c331ae94fa4631b6086f", "title": "Step 16" },
+    { "id": "6a57c331ae94fa4631b60870", "title": "Step 17" },
+    { "id": "6a57c331ae94fa4631b60871", "title": "Step 18" },
+    { "id": "6a57c331ae94fa4631b60872", "title": "Step 19" },
+    { "id": "6a57c331ae94fa4631b60873", "title": "Step 20" }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLabel": "workshop"
+}

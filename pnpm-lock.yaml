@@ -779,6 +779,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
+      '@freecodecamp/scripts-seed':
+        specifier: workspace:*
+        version: link:../tools/scripts/seed
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -1207,6 +1210,9 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.4(jiti@2.6.1)
+      lodash:
+        specifier: 4.18.1
+        version: 4.18.1
       mongodb:
         specifier: 6.21.0
         version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)

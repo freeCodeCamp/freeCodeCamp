@@ -1,16 +1,13 @@
-import { execSync } from 'child_process';
-import { test, expect } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 
 test.describe('Donate page', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
-
-  test.beforeEach(async ({ page }) => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --set-true isDonating');
-    await page.goto('/donate');
+  test.use({
+    userPreset: 'development',
+    userOverrides: { isDonating: true }
   });
 
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/donate');
   });
 
   test('should render the donate page correctly', async ({ page }) => {

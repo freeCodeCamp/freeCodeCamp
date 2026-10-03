@@ -754,10 +754,11 @@ describe('userRoutes', () => {
 
       test("only deletes the logged in user's data", async () => {
         const initialCount = await fastifyTestInstance.prisma.user.count();
+        const otherEmail = 'an.random@user';
         await fastifyTestInstance.prisma.user.create({
           data: {
             ...testUserData,
-            email: 'an.random@user'
+            email: otherEmail
           }
         });
         expect(await fastifyTestInstance.prisma.user.count()).toBe(
@@ -768,6 +769,29 @@ describe('userRoutes', () => {
 
         const userCount = await fastifyTestInstance.prisma.user.count();
         expect(userCount).toBe(initialCount);
+        const remaining = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: otherEmail }
+        });
+        expect(remaining).not.toBeNull();
+      });
+
+      test('handles concurrent requests to delete the same user', async () => {
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superDelete(`/users/${defaultUserId}`)
+        );
+
+        const responses = await Promise.all(deletePromises);
+
+        const userCount = await fastifyTestInstance.prisma.user.count({
+          where: { email: testUserData.email }
+        });
+        // Both requests race: one deletes the user and returns 204. The other
+        // gets a 401 if the auth middleware queries the DB after the delete, or
+        // a 404 if it clears auth but finds no user left to delete.
+        responses.forEach(response => {
+          expect([204, 401, 404]).toContain(response.status);
+        });
+        expect(userCount).toBe(0);
       });
 
       test('logs if it is asked to delete a non-existent user', async () => {
@@ -784,6 +808,34 @@ describe('userRoutes', () => {
           ([firstArg]) => firstArg === 'User not found for deletion'
         );
         expect(found).toBe(true);
+      });
+
+      // Pins the P2025 check itself: without it the handler would report every
+      // database failure as a 404, silently leaving the account in place.
+      test('rethrows if the delete fails for any other reason', async () => {
+        const errorLog = vi.spyOn(fastifyTestInstance.log, 'error');
+        const spy = vi
+          .spyOn(fastifyTestInstance.prisma.user, 'delete')
+          .mockRejectedValueOnce(new Error('connection reset'));
+
+        try {
+          const res = await superDelete(`/users/${defaultUserId}`);
+
+          expect(res.status).toBe(500);
+          expect(res.body).not.toStrictEqual({
+            type: 'error',
+            message: 'not found'
+          });
+          expect(errorLog).toHaveBeenCalled();
+          // The account must survive a failure the handler does not understand.
+          const stillThere = await fastifyTestInstance.prisma.user.findFirst({
+            where: { email: testUserData.email }
+          });
+          expect(stillThere).not.toBeNull();
+        } finally {
+          spy.mockRestore();
+          errorLog.mockRestore();
+        }
       });
 
       test('returns 403 if attempting to delete a different user', async () => {

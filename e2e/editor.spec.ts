@@ -1,7 +1,10 @@
-import { APIRequestContext, expect, test } from '@playwright/test';
+import { type APIRequestContext } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { authedRequest } from './utils/request';
+
+test.use({ userPreset: 'certified' });
 
 const setTheme = async (
   request: APIRequestContext,
@@ -82,13 +85,26 @@ test.describe('Python Terminal', () => {
     }
 
     const terminal = page.getByTestId('xterm-terminal');
+    const screenReaderOutput = terminal.getByRole('region', {
+      name: 'Terminal output'
+    });
 
     // While it's displayed on multiple lines, the string itself has no newlines, hence:
     const error = `Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
     // It shouldn't take this long, but the Python worker can be slow to respond.
-    await expect(terminal.getByText(error)).toContainText(error, {
+    // The screen reader region also contains the output, so it is excluded here.
+    await expect(
+      terminal.getByText(error).and(terminal.locator(':not([role="region"])'))
+    ).toContainText(error, {
       timeout: 15000
     });
+
+    // Every line of the output should be available to screen readers,
+    // not just the last one.
+    await expect(screenReaderOutput.locator('p')).toContainText([
+      'Traceback (most recent call last):',
+      'SyntaxError: invalid syntax'
+    ]);
   });
 });
 

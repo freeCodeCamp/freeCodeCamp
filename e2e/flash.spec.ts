@@ -1,5 +1,8 @@
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
+
+test.use({ userPreset: 'certified' });
 
 const checkFlashMessageVisibility = async (page: Page, translation: string) => {
   const flashMessage = page.getByText(translation);

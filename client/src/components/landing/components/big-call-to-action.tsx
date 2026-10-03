@@ -12,11 +12,7 @@ const BigCallToAction = ({
   const { t } = useTranslation();
 
   return (
-    <Login
-      block={true}
-      data-test-label={testLabel}
-      data-playwright-test-label={testLabel}
-    >
+    <Login block={true} data-test-label={testLabel} data-testid={testLabel}>
       {text ? text : t('buttons.logged-in-cta-btn')}
     </Login>
   );

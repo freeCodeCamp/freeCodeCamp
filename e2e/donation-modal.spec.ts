@@ -1,11 +1,13 @@
-import { execSync } from 'child_process';
-import { test, expect, type Page } from '@playwright/test';
+import { type Page } from '@playwright/test';
+import { test, expect } from './fixtures/isolated-user';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 import { clearEditor, focusEditor } from './utils/editor';
 import { allowTrailingSlash } from './utils/url';
 
 const slowExpect = expect.configure({ timeout: 25000 });
+
+test.use({ userPreset: 'certified' });
 
 const completeFrontEndCert = async (page: Page, number?: number) => {
   await page.goto(
@@ -196,17 +198,9 @@ test.describe('Donation modal display', () => {
 });
 
 test.describe('Donation modal appearance logic - New user', () => {
-  test.use({ storageState: 'playwright/.auth/development-user.json' });
+  test.use({ userPreset: 'development' });
   test.beforeEach(async ({ context }) => {
     await addGrowthbookCookie({ context, variation: 'B' });
-  });
-
-  test.beforeEach(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user');
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear if the user has less than 10 completed challenges in total and has just completed 3 challenges', async ({
@@ -273,12 +267,7 @@ test.describe('Donation modal appearance logic - New user', () => {
 });
 
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  test.beforeEach(() =>
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
-    )
-  );
+  test.use({ userPreset: 'almost-certified' });
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
     page,
@@ -346,12 +335,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
 });
 
 test.describe('Donation modal appearance logic - Certified user claiming a new module', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-  test.beforeEach(() =>
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
-    )
-  );
+  test.use({ userPreset: 'almost-certified' });
 
   test('should appear if the user has just completed a new module', async ({
     page
@@ -441,15 +425,7 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 });
 
 test.describe('Donation modal appearance logic - Donor user', () => {
-  test.beforeAll(() => {
-    execSync(
-      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
-    );
-  });
-
-  test.afterAll(() => {
-    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
-  });
+  test.use({ userOverrides: { isDonating: true } });
 
   test('should not appear', async ({
     page,

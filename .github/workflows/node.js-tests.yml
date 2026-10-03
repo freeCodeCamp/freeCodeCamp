@@ -93,10 +93,8 @@ jobs:
           pnpm lint
 
   # DONT REMOVE THIS JOB.
-  # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
     name: Build
-    needs: lint
     runs-on: ubuntu-24.04
     strategy:
       matrix:
@@ -108,6 +106,18 @@ jobs:
         with:
           submodules: 'recursive'
           persist-credentials: false
+
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -135,6 +145,49 @@ jobs:
           pnpm install
           pnpm run build
 
+      - name: Upload Client Artifact
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: client-artifact
+          path: client/public
+          retention-days: 1
+
+  build-e2e-api:
+    name: Build E2E API (Container)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          submodules: 'recursive'
+
+      - name: Create Image
+        run: |
+          docker build \
+            -t fcc-api \
+            -f docker/api/Dockerfile .
+
+      - name: Save Image
+        run: docker save fcc-api > api-artifact.tar
+
+      - name: Upload API Artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: api-artifact
+          path: api-artifact.tar
+          retention-days: 1
+
+  e2e:
+    name: E2E
+    if: github.event_name == 'pull_request'
+    needs: [build, build-e2e-api]
+    uses: ./.github/workflows/e2e-playwright.yml
+    secrets: inherit
+
   test:
     name: Test
     needs: build
@@ -151,6 +204,18 @@ jobs:
         with:
           submodules: 'recursive'
           persist-credentials: false
+
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -204,6 +269,18 @@ jobs:
         with:
           submodules: 'recursive'
           persist-credentials: false
+
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -259,6 +336,18 @@ jobs:
         with:
           submodules: 'recursive'
           persist-credentials: false
+
+      - name: Turbo Local Cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        # prod branches should not use any caching
+        if: ${{ ! startsWith(github.ref_name, 'prod') }}
+        with:
+          path: .turbo
+          # The purpose is to cache within the action and share between jobs, so the
+          # key should reflect that.
+          key: turbo-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            turbo-${{ github.ref_name }}-
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6

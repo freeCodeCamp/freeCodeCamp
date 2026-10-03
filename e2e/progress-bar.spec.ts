@@ -1,6 +1,8 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures/isolated-user';
 import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor } from './utils/editor';
+
+test.use({ userPreset: 'certified' });
 
 test.describe('Progress bar component in editor', () => {
   test('Should appear with the correct content after the user has submitted their code', async ({
