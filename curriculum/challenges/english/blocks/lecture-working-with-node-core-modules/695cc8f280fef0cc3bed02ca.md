@@ -87,7 +87,7 @@ console.log(absolutePath);
 // /Users/user/Desktop/fCC/script-code/node/node-path/assets/src/text-files
 ```
 
-The difference between `join()` and `resolve()` is that `join()` creates a relative path, while `resolve()` returns an absolute path.
+The difference between `join()` and `resolve()` is that `join()` concatenates and normalizes path segments, returning a relative or absolute path depending on the inputs, while `resolve()` resolves a path sequence into an absolute path by processing segments from right to left and prepending the working directory if necessary.
 
 Lastly, there are the `parse()` and `format()` methods.
 
