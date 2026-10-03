@@ -114,6 +114,12 @@ interface SendSocratesEvent {
   optimized_request: Record<string, unknown> | null;
 }
 
+interface EmailSignUpChoiceEvent {
+  event: 'email_sign_up_choice';
+  choice: 'yes' | 'no';
+  source: 'page' | 'alert';
+}
+
 export type GAevent =
   | DonationViewEvent
   | DonationEvent
@@ -127,7 +133,8 @@ export type GAevent =
   | ChallengeTestCodeButtonClickEvent
   | ChallengeSubmitButtonClickEvent
   | CallSocratesEvent
-  | SendSocratesEvent;
+  | SendSocratesEvent
+  | EmailSignUpChoiceEvent;
 
 export default function callGA(payload: GAevent) {
   TagManager.dataLayer({
