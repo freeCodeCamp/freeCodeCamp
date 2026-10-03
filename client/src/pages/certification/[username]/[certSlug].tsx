@@ -19,7 +19,7 @@ const CertificationPage = ({ params, location }: CertificationPageProps) => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - Redux connect() provides remaining props
     <ShowCertification
-      username={username}
+      username={username?.toLowerCase() ?? ''}
       certSlug={certSlug}
       location={location}
     />
