@@ -12,6 +12,8 @@ then another using an email `"not_found@example.com"` and `normalizedData`.
 
 Log both results to confirm the function returns an object with the expected properties for a known email and `Instructor not found` for an unknown one.
 
+The console will show `Alejandro's` instructor summary for the known email, followed by `Instructor not found` for the unknown email.
+
 # --hints--
 
 You should call `getInstructorByEmail` with `"alejandro@example.com"` and `normalizedData` as arguments.
