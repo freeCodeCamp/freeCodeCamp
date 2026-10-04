@@ -5021,8 +5021,8 @@
           "In this lab, you will practice using string manipulation and loops to replace characters in log strings and entire log files."
         ]
       },
-      "lab-repeat-a-string": {
-        "title": "Build a String Repeating Function",
+      "workshop-space-mission-roster": {
+        "title": "Build a Space Mission Roster",
         "intro": [
           "In this workshop, you'll leverage JavaScript loops to build a space mission roster."
         ]
