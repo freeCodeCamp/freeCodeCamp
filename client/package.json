@@ -152,7 +152,7 @@
     "@types/loadable__component": "5.13.10",
     "@types/lodash-es": "^4.17.6",
     "@types/prismjs": "^1.26.0",
-    "@types/react": "18.3.28",
+    "@types/react": "18.3.31",
     "@types/react-dom": "18.3.7",
     "@types/react-gtm-module": "2.0.4",
     "@types/react-helmet": "6.1.11",
