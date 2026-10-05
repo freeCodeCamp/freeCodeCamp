@@ -505,6 +505,18 @@ code {
   border: 1px solid var(--gray-45);
 }
 
+kbd {
+  padding: 1px 4px;
+  background-color: var(--background-primary);
+  color: var(--primary-color);
+  border: 1px solid var(--gray-45);
+  border-bottom-width: 2px;
+  border-radius: 0;
+  font-family: var(--font-family-monospace);
+  font-size: 90%;
+  white-space: nowrap;
+}
+
 .challenge-instructions code {
   white-space: break-spaces;
 }
