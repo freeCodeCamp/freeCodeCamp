@@ -1,14 +1,53 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { completionStateSelector } from '../../../redux/selectors';
 import { curriculumData } from '../../../services/curriculum-data';
+import type { ChallengeNode } from '../../../redux/prop-types';
 import {
   isBlockNewlyCompletedSelector,
   isModuleNewlyCompletedSelector
 } from './selectors';
 
-const makeNode = (id, block) => ({ challenge: { id, block } });
+interface TestState {
+  app: { user: { sessionUser: { completedChallenges: { id: string }[] } } };
+  challenge: {
+    challengeMeta: {
+      id: string;
+      superBlock: string;
+      chapter: string;
+      module: string;
+      block: string;
+      challengeType: number;
+    };
+  };
+}
 
-const buildState = ({ completedIds, currentId }) => ({
+interface CompletionBlock {
+  name: string;
+  isCompleted: boolean;
+}
+
+interface CompletionModule {
+  name: string;
+  blocks: CompletionBlock[];
+  isCompleted: boolean;
+}
+
+interface CompletionChapter {
+  name: string;
+  modules: CompletionModule[];
+  isCompleted: boolean;
+}
+
+const makeNode = (id: string, block: string) =>
+  ({ challenge: { id, block } }) as ChallengeNode;
+
+const buildState = ({
+  completedIds,
+  currentId
+}: {
+  completedIds: string[];
+  currentId: string;
+}): TestState => ({
   app: {
     user: {
       sessionUser: {
@@ -52,7 +91,7 @@ describe('module completion selectors', () => {
             }
           ]
         }
-      }
+      } as never
     });
   });
 
@@ -63,7 +102,7 @@ describe('module completion selectors', () => {
         currentId: 'c4'
       });
 
-      const [chapter] = completionStateSelector(state);
+      const [chapter] = completionStateSelector(state) as CompletionChapter[];
       const [module] = chapter.modules;
 
       expect(module.blocks).toEqual([
@@ -79,7 +118,7 @@ describe('module completion selectors', () => {
         currentId: 'c4'
       });
 
-      const [chapter] = completionStateSelector(state);
+      const [chapter] = completionStateSelector(state) as CompletionChapter[];
 
       expect(chapter.modules[0].isCompleted).toBe(true);
       expect(chapter.isCompleted).toBe(true);
