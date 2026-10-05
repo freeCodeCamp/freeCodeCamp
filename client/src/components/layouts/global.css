@@ -491,7 +491,8 @@ input:focus {
   font-size: 90%;
 }
 
-code {
+code,
+kbd {
   padding: 1px 4px;
   background-color: var(--tertiary-background);
   color: var(--tertiary-color);
@@ -501,7 +502,8 @@ code {
   font-size: 90%;
 }
 
-:not(pre) > code {
+:not(pre) > code,
+:not(pre) > kbd {
   border: 1px solid var(--gray-45);
 }
 
