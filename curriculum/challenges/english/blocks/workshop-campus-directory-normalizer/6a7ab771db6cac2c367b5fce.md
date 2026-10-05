@@ -200,6 +200,7 @@ function normalizeDirectory(rawData) {
 
 const normalizedData = normalizeDirectory(rawData);
 
+
 function getInstructorByEmail(email, normalizedData) {
   const instructorId = normalizedData.instructorsByEmail[email];
 
