@@ -8,6 +8,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faClose,
+  faDownload,
   faZap,
   faSave,
   faClockRotateLeft,
@@ -20,9 +21,10 @@ import {
   isSignedInSelector,
   isSocratesOnSelector
 } from '../../../redux/selectors';
-import { ChallengeMeta, Test } from '../../../redux/prop-types';
+import { ChallengeFiles, ChallengeMeta, Test } from '../../../redux/prop-types';
 import {
   attemptsSelector,
+  challengeFilesSelector,
   challengeMetaSelector,
   challengeTestsSelector,
   completedPercentageSelector,
@@ -40,6 +42,7 @@ import { useSubmit } from '../utils/fetch-all-curriculum-data';
 import './independent-lower-jaw.css';
 import Socrates from '../../../assets/icons/socrates';
 import OutlineLightbulb from '../../../assets/icons/outline-lightbulb';
+import { useSolutionDownloadUrl } from './use-solution-download';
 
 const SOCRATES_DISCOVERED_KEY = 'fcc-socrates-discovered';
 
@@ -97,17 +100,19 @@ const mapStateToProps = createSelector(
   currentBlockIdsSelector,
   socratesHintStateSelector,
   isSocratesOnSelector,
+  challengeFilesSelector,
   (
     attempts: number,
     tests: Test[],
     isDonating: boolean,
     isSignedIn: boolean,
-    challengeMeta: ChallengeMeta,
+    challengeMeta: ChallengeMeta & { dashedName: string },
     completedPercent: number,
     completedChallengeIds: string[],
     currentBlockIds: string[],
     socratesHintState: SocratesHintState,
-    hasSocratesAccess: boolean
+    hasSocratesAccess: boolean,
+    challengeFiles: ChallengeFiles
   ) => ({
     attempts,
     tests,
@@ -118,7 +123,8 @@ const mapStateToProps = createSelector(
     completedChallengeIds,
     currentBlockIds,
     socratesHintState,
-    hasSocratesAccess
+    hasSocratesAccess,
+    challengeFiles
   })
 );
 
@@ -140,12 +146,13 @@ interface IndependentLowerJawProps {
   tests: Test[];
   isDonating: boolean;
   isSignedIn: boolean;
-  challengeMeta: ChallengeMeta;
+  challengeMeta: ChallengeMeta & { dashedName: string };
   completedPercent: number;
   completedChallengeIds: string[];
   currentBlockIds: string[];
   socratesHintState: SocratesHintState;
   hasSocratesAccess: boolean;
+  challengeFiles: ChallengeFiles;
 }
 export function IndependentLowerJaw({
   openHelpModal,
@@ -162,7 +169,8 @@ export function IndependentLowerJaw({
   completedChallengeIds,
   currentBlockIds,
   socratesHintState,
-  hasSocratesAccess
+  hasSocratesAccess,
+  challengeFiles
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
   const { apiLocation, clientLocale } = envData;
@@ -198,6 +206,9 @@ export function IndependentLowerJaw({
   const [socratesDiscovered, setSocratesDiscovered] = React.useState(false);
 
   const isChallengeComplete = tests.every(test => test.pass);
+  const downloadUrl = useSolutionDownloadUrl(
+    isChallengeComplete ? challengeFiles : null
+  );
   // Feature-discovery nudge: after two failed checks on a challenge, flash a dot
   // on the Socrates button until the learner clicks it for the first time.
   const showSocratesDot =
@@ -518,6 +529,19 @@ export function IndependentLowerJaw({
               <Socrates />
               <span className='tooltiptext'>{t('buttons.ask-socrates')}</span>
             </button>
+          )}
+          {downloadUrl && (
+            <a
+              className='btn icon-button tooltip solution-download'
+              aria-label={t('learn.download-solution')}
+              download={`${challengeMeta.dashedName}.zip`}
+              href={downloadUrl}
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              <span className='tooltiptext' aria-hidden='true'>
+                {t('learn.download-solution')}
+              </span>
+            </a>
           )}
           {showRevertButton ? (
             <>
