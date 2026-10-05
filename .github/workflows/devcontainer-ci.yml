@@ -32,14 +32,14 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@bb05f3f5519dd87d3ba754cc423b652a5edd6d2c # v4
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4
 
       - name: Install devcontainer CLI
         # renovate: datasource=npm depName=@devcontainers/cli
         run: npm install -g @devcontainers/cli@0.83.0
 
       - name: Build the devcontainer image from this branch
-        uses: docker/bake-action@d3418bd7d0e9324001bca92fa8ba175ea7e6dc9b # v7
+        uses: docker/bake-action@018cb6412ab401ebaa809aa5f85966b74628600f # v7
         with:
           files: docker/devcontainer/docker-bake.hcl
           targets: local-devcontainer
