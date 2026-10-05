@@ -143,6 +143,7 @@ const rawData = {
   },
 };
 
+
 function normalizeDirectory(rawData) {
   const departmentsById = {};
   const programsById = {};
@@ -195,8 +196,8 @@ function normalizeDirectory(rawData) {
     instructorsById,
     instructorsByEmail,
   };
-
 }
+
 
 const normalizedData = normalizeDirectory(rawData);
 

@@ -96,6 +96,7 @@ const rawData = {
   },
 };
 
+
 function normalizeDirectory(rawData) {
   const departmentsById = {};
   const programsById = {};
@@ -148,8 +149,8 @@ function normalizeDirectory(rawData) {
     instructorsById,
     instructorsByEmail,
   };
-
 }
+
 
 const normalizedData = normalizeDirectory(rawData);
 
@@ -163,7 +164,6 @@ function getInstructorByEmail(email, normalizedData) {
 
   const instructor = normalizedData.instructorsById[instructorId];
   const department = normalizedData.departmentsById[instructor.departmentId];
-
 
   return {
     name: instructor.name ?? "Unknown Instructor",
