@@ -166,7 +166,7 @@ importers:
         version: 4.18.1
       nanoid:
         specifier: '3'
-        version: 3.3.12
+        version: 3.3.19
       no-profanity:
         specifier: 1.5.1
         version: 1.5.1
@@ -407,7 +407,7 @@ importers:
         version: 0.55.1
       nanoid:
         specifier: 3.3.12
-        version: 3.3.12
+        version: 3.3.19
       normalize-url:
         specifier: 6.1.0
         version: 6.1.0
@@ -1245,7 +1245,7 @@ importers:
         version: 6.21.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.7)
       nanoid:
         specifier: 4.0.2
-        version: 4.0.2
+        version: 3.3.19
 
 packages:
 
@@ -9404,14 +9404,9 @@ packages:
     resolution: {integrity: sha512-dkEJPVvun4FryqBmZ5KhDo0K9iDXAwn08tMLDinNdRBNPcYEDiWYysLcc6k3mjTMlbP9KyylvRpd4wFtwrT9rw==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  nanoid@3.3.12:
-    resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
+  nanoid@3.3.19:
+    resolution: {integrity: sha512-Y2tUNy4ouw6tq5oDSKeQYGOyhkUBhNOcGV/02KC+6kd9eDGqdZd++mjMiIDilrBYvjEnCYvVtsuHCuP+okSfug==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
-  nanoid@4.0.2:
-    resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
-    engines: {node: ^14 || ^16 || >=18}
     hasBin: true
 
   napi-build-utils@2.0.0:
@@ -24205,9 +24200,7 @@ snapshots:
 
   mute-stream@3.0.0: {}
 
-  nanoid@3.3.12: {}
-
-  nanoid@4.0.2: {}
+  nanoid@3.3.19: {}
 
   napi-build-utils@2.0.0: {}
 
@@ -24954,7 +24947,7 @@ snapshots:
 
   postcss@8.5.13:
     dependencies:
-      nanoid: 3.3.12
+      nanoid: 3.3.19
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
