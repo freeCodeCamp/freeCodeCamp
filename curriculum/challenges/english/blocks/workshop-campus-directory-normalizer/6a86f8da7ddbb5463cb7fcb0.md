@@ -16,7 +16,7 @@ Your `if` statement should check `programValues[i].room === null`.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)/
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)/,
 );
 ```
 
@@ -25,7 +25,7 @@ Inside the `if` block, you should increment `programsWithoutRooms`.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)\s*{\s*programsWithoutRooms\s*(\+\+|\+=\s*1)/
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)\s*\{\s*(?:\+\+\s*programsWithoutRooms\b|programsWithoutRooms\s*(?:\+\+|\+=\s*1(?=\s*[;}]|\s*$)|=\s*programsWithoutRooms\s*\+\s*1(?=\s*[;}]|\s*$)|=\s*1\s*\+\s*programsWithoutRooms\b))/m,
 );
 ```
 
@@ -209,7 +209,7 @@ function renderDirectorySummary(normalizedData) {
 
   for (let i = 0; i < programValues.length; i++) {
     --fcc-editable-region--
-            
+    
     --fcc-editable-region--
   }
 

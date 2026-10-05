@@ -12,6 +12,19 @@ then another using an email `"not_found@example.com"` and `normalizedData`.
 
 Log both results to confirm the function returns an object with the expected properties for a known email and `Instructor not found` for an unknown one.
 
+# --before-each--
+
+```js
+globalThis.spy = __helpers.spyOn(console, 'log');
+```
+
+# --after-each--
+
+```js
+globalThis.spy.restore();
+delete globalThis.spy;
+```
+
 # --hints--
 
 You should call `getInstructorByEmail` with `"alejandro@example.com"` and `normalizedData` as arguments.
@@ -19,16 +32,16 @@ You should call `getInstructorByEmail` with `"alejandro@example.com"` and `norma
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /getInstructorByEmail\s*\(\s*["']alejandro@example\.com["']\s*,\s*normalizedData\s*\)/
+  /getInstructorByEmail\s*\(\s*["']alejandro@example\.com["']\s*,\s*normalizedData\s*\)/,
 );
 ```
 
 You should call `console.log()` with the result of that call as the argument.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']alejandro@example\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+assert.deepInclude(
+  spy.calls.flat(),
+  getInstructorByEmail('alejandro@example.com', normalizedData),
 );
 ```
 
@@ -37,16 +50,16 @@ You should call `getInstructorByEmail` with `"not_found@example.com"` and `norma
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /getInstructorByEmail\s*\(\s*["']not_found@example\.com["']\s*,\s*normalizedData\s*\)/
+  /getInstructorByEmail\s*\(\s*["']not_found@example\.com["']\s*,\s*normalizedData\s*\)/,
 );
 ```
 
 You should call `console.log()` with the result of that call as the argument.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /console\s*\.\s*log\s*\(\s*getInstructorByEmail\s*\(\s*["']not_found@example\.com["']\s*,\s*normalizedData\s*\)\s*\)/
+assert.deepInclude(
+  spy.calls.flat(),
+  getInstructorByEmail('not_found@example.com', normalizedData),
 );
 ```
 

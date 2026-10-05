@@ -153,7 +153,6 @@ function normalizeDirectory(rawData) {
 
 const normalizedData = normalizeDirectory(rawData);
 
-
 function getInstructorByEmail(email, normalizedData) {
   const instructorId = normalizedData.instructorsByEmail[email];
 
@@ -171,7 +170,6 @@ function getInstructorByEmail(email, normalizedData) {
     department: department.name ?? "Unknown Department",
   };
 }
-
 
 function listRoomsByBuilding(buildingCode, normalizedData) {
   

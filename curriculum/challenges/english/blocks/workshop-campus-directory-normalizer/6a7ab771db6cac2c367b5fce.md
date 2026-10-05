@@ -35,46 +35,47 @@ You should delete `console.log(department);`.
 ```js
 assert.notMatch(
   __helpers.removeJSComments(code),
-  /console\s*\.\s*log\s*\(\s*department\s*\)/
+  /console\s*\.\s*log\s*\(\s*department\s*\)/,
 );
 ```
 
-You should use a `return` statement to return an object.
+For `"fatima@example.com"`, your function should return Fatima's name, office hours, and department name.
 
 ```js
-const explorer = await __helpers.Explorer(code);
-const fn = explorer.functions.getInstructorByEmail;
-
-const fnSource = fn.toString();
-
-assert.match(fnSource, /return\s*{/);
+assert.deepEqual(getInstructorByEmail('fatima@example.com', normalizedData), {
+  name: 'Fatima',
+  officeHours: 'Mon-Wed 10AM-2PM',
+  department: 'Computer Science',
+});
 ```
 
-The object should have a `name` property set to `instructor.name ?? "Unknown Instructor"`.
+For `"sofia@example.com"`, your function should return Sofia's name and department name, with `"Not Available"` for the missing office hours.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /name\s*:\s*instructor\.name\s*\?\?\s*["']Unknown Instructor["']/
-);
+assert.deepEqual(getInstructorByEmail('sofia@example.com', normalizedData), {
+  name: 'Sofia',
+  officeHours: 'Not Available',
+  department: 'Business Administration',
+});
 ```
 
-The object should have an `officeHours` property set to `instructor.officeHours ?? "Not Available"`.
+Your function should use the fallback text for `null` or `undefined` fields and preserve other falsy values.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /officeHours\s*:\s*instructor\.officeHours\s*\?\?\s*["']Not Available["']/
-);
-```
-
-The object should have a `department` property set to `department.name ?? "Unknown Department"`.
-
-```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /department\s*:\s*department\.name\s*\?\?\s*["']Unknown Department["']/
-);
+for (const value of [null, undefined, '', 0, false]) {
+  const fixture = {
+    instructorsByEmail: { 'test@example.com': 'I' },
+    instructorsById: {
+      I: { name: value, officeHours: value, departmentId: 'D' },
+    },
+    departmentsById: { D: { name: value } },
+  };
+  assert.deepEqual(getInstructorByEmail('test@example.com', fixture), {
+    name: value ?? 'Unknown Instructor',
+    officeHours: value ?? 'Not Available',
+    department: value ?? 'Unknown Department',
+  });
+}
 ```
 
 # --seed--
