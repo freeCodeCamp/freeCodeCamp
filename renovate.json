@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>freecodecamp/renovate-config"],
+  "extends": [
+    "github>freecodecamp/renovate-config",
+    ":pinAllExceptPeerDependencies"
+  ],
   "packageRules": [
     {
       "description": "Keep typebox on a weekly cadence to avoid noisy daily PRs.",
