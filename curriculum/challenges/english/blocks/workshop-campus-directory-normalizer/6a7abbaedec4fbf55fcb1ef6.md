@@ -16,19 +16,22 @@ Declare a variable called `programValues` and set it to `Object.values(normalize
 You should declare a variable called `programValues`.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /(?:const|let)\s+programValues\s*=/
-);
+const explorer = await __helpers.Explorer(code);
+const fn = explorer.allFunctions.listRoomsByBuilding;
+assert.exists(fn);
+const variable = fn.variables.programValues;
+assert.exists(variable);
 ```
 
 `programValues` should be set to `Object.values(normalizedData.programsById)`.
 
 ```js
-assert.match(
-  __helpers.removeJSComments(code),
-  /(?:const|let)\s+programValues\s*=\s*Object\s*\.\s*values\s*\(\s*normalizedData\.programsById\s*\)/
-);
+const explorer = await __helpers.Explorer(code);
+const fn = explorer.allFunctions.listRoomsByBuilding;
+assert.exists(fn);
+const variable = fn.variables.programValues;
+assert.exists(variable);
+assert.isTrue(variable.value.matches('Object.values(normalizedData.programsById)'));
 ```
 
 # --seed--

@@ -25,7 +25,7 @@ Inside the `if` block, you should increment `programsWithoutRooms`.
 ```js
 assert.match(
   __helpers.removeJSComments(code),
-  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)\s*\{\s*(?:\+\+\s*programsWithoutRooms\b|programsWithoutRooms\s*(?:\+\+|\+=\s*1(?=\s*[;}]|\s*$)|=\s*programsWithoutRooms\s*\+\s*1(?=\s*[;}]|\s*$)|=\s*1\s*\+\s*programsWithoutRooms\b))/m,
+  /if\s*\(\s*programValues\s*\[\s*i\s*\]\s*\.\s*room\s*===\s*null\s*\)\s*(?:\{\s*)?(?:\+\+\s*programsWithoutRooms\b|programsWithoutRooms\s*(?:\+\+|\+=\s*1(?=\s*[;}]|\s*$)|=\s*programsWithoutRooms\s*\+\s*1(?=\s*[;}]|\s*$)|=\s*1\s*\+\s*programsWithoutRooms\b))/m,
 );
 ```
 
