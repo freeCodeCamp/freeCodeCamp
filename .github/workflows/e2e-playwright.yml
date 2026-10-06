@@ -14,7 +14,7 @@ jobs:
       matrix:
         # Extend this to include firefox and webkit once chromium is working.
         browsers: [chromium]
-        node-version: [24]
+        node-version: [26]
 
     steps:
       - name: Set Action Environment Variables

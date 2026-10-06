@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [24]
+        node-version: [26]
       fail-fast: false
 
     steps:
@@ -98,7 +98,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [24]
+        node-version: [26]
 
     steps:
       - name: Checkout
@@ -196,7 +196,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [24]
+        node-version: [26]
 
     steps:
       - name: Checkout
@@ -261,7 +261,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [24]
+        node-version: [26]
 
     steps:
       - name: Checkout
@@ -327,7 +327,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [24]
+        node-version: [26]
         locale: [portuguese, italian]
 
     steps:
