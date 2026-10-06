@@ -6,8 +6,14 @@ exports.translateComments = (text, lang, dict, codeLang) => {
   const input = { text };
   switch (codeLang) {
     case 'js':
+    case 'ts':
     case 'jsx':
+    case 'tsx':
       return transMultiline(transInline(input, config), config);
+    case 'css':
+      return transMultiline(input, config);
+    case 'py':
+      return transPython(input, config);
     case 'html':
       return transScript(transHTML(transCSS(input, config), config), config);
     default:
@@ -43,6 +49,10 @@ function transInline(input, config) {
 
 function transMultiline(input, config) {
   return translateGeneric(input, config, '(/\\*\\s*)', '(\\s*\\*/)');
+}
+
+function transPython(input, config) {
+  return translateGeneric(input, config, '(#\\s*)', '(\\s*$)');
 }
 
 // CSS has to be handled separately since it is looking for comments inside tags

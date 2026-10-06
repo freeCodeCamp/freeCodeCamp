@@ -62,6 +62,20 @@ describe('translation parser', () => {
       ).toBe(transSeed);
     });
 
+    it.each(['py', 'ts', 'tsx', 'css'])(
+      'replaces English comments in %s seeds with their translations',
+      codeLang => {
+        const comment = codeLang === 'py' ? '# ' : '/* ';
+        const commentEnd = codeLang === 'py' ? '' : ' */';
+        const seed = `${comment}Add your code below this line${commentEnd}`;
+        const transSeed = `${comment}(Chinese) Add your code below this line (Chinese)${commentEnd}`;
+
+        expect(
+          translateComments(seed, 'chinese', SIMPLE_TRANSLATION, codeLang).text
+        ).toBe(transSeed);
+      }
+    );
+
     it('does not translate urls', () => {
       const seed = `http:// Add your code below this line
       Add your code above this line `;
@@ -319,6 +333,17 @@ describe('translation parser', () => {
       ).toThrow();
       expect(() =>
         translateComments(seedScript, 'chinese', SIMPLE_TRANSLATION, 'html')
+      ).toThrow();
+    });
+
+    it.each([
+      ['py', '# this is not a comment'],
+      ['ts', '// this is not a comment'],
+      ['tsx', '{ /* this is not a comment */ }'],
+      ['css', '/* this is not a comment */']
+    ])('throws for unregistered %s comments', (codeLang, seed) => {
+      expect(() =>
+        translateComments(seed, 'chinese', SIMPLE_TRANSLATION, codeLang)
       ).toThrow();
     });
   });
