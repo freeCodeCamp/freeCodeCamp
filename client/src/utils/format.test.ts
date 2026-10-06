@@ -27,6 +27,17 @@ describe('format', () => {
     expect(format(new Set())).toBe('Set(0) {}');
     expect(format(new Set([1, 2]))).toBe('Set(2) {1, 2}');
   });
+  it('formats Map objects', () => {
+    expect(format(new Map())).toBe('Map(0) {})');
+    expect(
+      format(
+        new Map([
+          ['a', 1],
+          ['b', 2]
+        ])
+      )
+    ).toBe('Map(2) {a => 1, b => 2})');
+  });
   it('formats functions the same way as console.log', () => {
     expect(format(simpleFun)).toBe('[Function: simpleFun]');
   });
