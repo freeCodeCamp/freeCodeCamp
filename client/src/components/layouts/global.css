@@ -510,8 +510,7 @@ kbd {
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
   padding: 2px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 2px 0;
   display: inline-block;
 }
 
