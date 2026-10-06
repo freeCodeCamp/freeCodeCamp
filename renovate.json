@@ -6,6 +6,11 @@
   ],
   "packageRules": [
     {
+      "description": "Keep .nvmrc on a major-only Node version instead of an exact pin.",
+      "matchManagers": ["nvm"],
+      "rangeStrategy": "auto"
+    },
+    {
       "description": "Keep typebox on a weekly cadence to avoid noisy daily PRs.",
       "groupName": "weekly-cadence",
       "matchPackageNames": ["typebox"],
