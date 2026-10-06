@@ -12,12 +12,16 @@
 # -------------------------------------------------
 
 # --- All files
-* @freecodecamp/dev-team @freecodecamp/curriculum
+* @freecodecamp/dev-team
+
+/curriculum/challenges/ @freecodecamp/curriculum
+/curriculum/structure/ @freecodecamp/curriculum
 
 # --- Package files for negation ---
 
 **/package.json @freecodecamp/none
 **/pnpm-lock.yaml @freecodecamp/none
+/pnpm-workspace.yaml @freecodecamp/none
 
 # -------------------------------------------------
 # Files that need attention from i18n & dev team
