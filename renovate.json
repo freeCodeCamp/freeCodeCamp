@@ -20,11 +20,6 @@
       ]
     },
     {
-      "description": "Playwright runner + browsers must move in lockstep.",
-      "groupName": "playwright",
-      "matchPackageNames": ["@playwright/**", "playwright", "playwright-**"]
-    },
-    {
       "description": "Gatsby core + plugins + scoped @gatsbyjs/* packages are version-coupled.",
       "groupName": "gatsby",
       "matchPackageNames": ["gatsby", "gatsby-**", "@gatsbyjs/**"]
@@ -38,11 +33,6 @@
       "groupName": "transitive-pins",
       "matchFileNames": ["pnpm-workspace.yaml"],
       "matchDepTypes": ["pnpm-workspace.overrides"]
-    },
-    {
-      "description": "Testing Library packages share peer-dep ranges and break together.",
-      "groupName": "testing-library",
-      "matchPackageNames": ["@testing-library/**"]
     },
     {
       "description": "Fastify core + official plugins.",
@@ -139,16 +129,6 @@
       "description": "nodemailer runtime + its types (overrides the generic types group via merge precedence).",
       "groupName": "nodemailer",
       "matchPackageNames": ["nodemailer", "@types/nodemailer"]
-    },
-    {
-      "description": "FontAwesome icon packs + React component must match major.",
-      "groupName": "fortawesome",
-      "matchPackageNames": ["@fortawesome/**"]
-    },
-    {
-      "description": "xterm.js core + addons.",
-      "groupName": "xterm",
-      "matchPackageNames": ["@xterm/**"]
     },
     {
       "description": "Sandpack React + themes.",
