@@ -175,6 +175,7 @@ function getInstructorByEmail(email, normalizedData) {
   };
 }
 
+
 function listRoomsByBuilding(buildingCode, normalizedData) {
   
   --fcc-editable-region--

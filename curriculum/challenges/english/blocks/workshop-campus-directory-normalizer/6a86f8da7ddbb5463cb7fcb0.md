@@ -189,6 +189,7 @@ function listRoomsByBuilding(buildingCode, normalizedData) {
   return rooms;
 }
 
+
 function renderDirectorySummary(normalizedData) {
   const departments = Object.keys(normalizedData.departmentsById).length;
   const programs = Object.keys(normalizedData.programsById).length;
@@ -213,4 +214,5 @@ function renderDirectorySummary(normalizedData) {
   }
 
 }
+
 ```
