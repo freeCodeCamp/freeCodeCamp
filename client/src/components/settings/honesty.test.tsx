@@ -25,10 +25,9 @@ describe('<Honesty />', () => {
     expect(
       screen.getByRole('button', { name: 'buttons.agree-honesty' })
     ).toBeEnabled();
-    expect(screen.getByRole('link', { name: '{{email}}' })).toHaveAttribute(
-      'href',
-      'mailto:support@freecodecamp.org'
-    );
+    expect(
+      screen.getByRole('link', { name: 'support@freecodecamp.org' })
+    ).toHaveAttribute('href', 'mailto:support@freecodecamp.org');
   });
 
   test('renders accepted honesty state', () => {
